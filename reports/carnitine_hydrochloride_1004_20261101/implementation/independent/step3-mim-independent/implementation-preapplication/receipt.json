@@ -1,0 +1,274 @@
+{
+  "at": "2026-11-01T09:12:34.569988+00:00",
+  "verdict": "PASS_PREAPPLICATION_IMPLEMENTATION",
+  "base": "99fe4b44d78126d78041a69eeb366c52bedf0caa",
+  "final_head_review": false,
+  "production_application_reviewed": false,
+  "scientific_or_release_approval": false,
+  "current_findings": [],
+  "source_hashes": {
+    "scripts/merge_carnitine_hydrochloride.py": "2598d9390087071fcff2a188bd4d4312a935576b8ae4fa15a9239dede7529158",
+    "tests/test_merge_carnitine_hydrochloride.py": "75c18a469d6056972ee5a60ec3d46d2c219c7980111c85af7bc42b663df20a60",
+    "tests/fixtures/issue1004-before/Carnitine_Dl_Hydrochloride.yaml": "8a7e0ac23a72c403bf9cce38a20abe817ee83e0231b558f2ca07ed05d134d190",
+    "tests/fixtures/issue1004-before/Carnitine_Hydrochloride.yaml": "c03c1c66b9e70436da2e841d1edf2a700f05830674c715fc265ac7fde9705722",
+    "tests/fixtures/issue1004-before/NLDM_metabolites.yaml": "7332021e0d760384bc0381f5e00e3a87bd4dfe4b7c5b2eb1140853f7c17d78a0",
+    "tests/fixtures/issue1004-before/README.md": "44579559d365e73919bd576ca9b4f6d3f97c1a6a86949b59730b4ec1495b1746",
+    "tests/fixtures/issue1004-before/culturemech_recipe_membership.tsv.gz": "f9633b52c6550c3fdf7c454dc37836be6efe66712860ee885d58c387463b424c",
+    "tests/fixtures/issue1004-before/ingredient_mappings.sssom.tsv.gz": "8c09a86e5b41d2c9a585660397028352f8d9eb66458fd4e1a5568ff5e3a2ef46",
+    "tests/fixtures/issue1004-before/manifest.json": "7c36e370a593bb7063670e2fa44484e576d1bc25a05c1a7e5f9fa57402f33d93",
+    "tests/fixtures/issue1004-before/other_cross_record_baseline.tsv": "170368983e4105773348122d44da5417745e675dfa9151f72270f19da7a26008",
+    "tests/fixtures/issue1004-before/unified_mapping_rejections.tsv": "717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d",
+    "src/mediaingredientmech/utils/culturemech_occurrences.py": "d8b5b0ea02bf6c885d9627357dba04c2ba59626ca9bf12062ac70e7d6bed8c68",
+    "tests/test_carnitine_occurrence_routing.py": "886042936835d7a5cd92aa566d7e8107f40047ee136aa23063891bfc5a2e3443",
+    "tests/test_carnitine_merge_dependencies.py": "89c37f67ef98c0e96b8c359df8138ceb579d1962bae0d7f52290219b2d9da042",
+    "tests/fixtures/issue1004-routing-dependencies.json.gz": "45e583e9168ee45124d59543dfd371d3919b359435e652e5fb948ff9557c3811",
+    "tests/fixtures/issue1004-routing-manifest.json": "6d999758413f6b6bb42db709c1b97a08c313cff10bbfa3a987aa15f61b1860a9",
+    "tests/fixtures/issue1004-routing-occurrences.tsv": "e7fdbba52261189a462da2e4ada8f80f99c5b047dbb3d2627c29b545478f2c35"
+  },
+  "source_count": 17,
+  "source_evidence_manifest_sha256": "d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911",
+  "source_evidence_files": {
+    "chebi-48601-primary.json": "b2ccf5a651f0b3aa875440c5caee4c03eeb78e02e82b344a3278b6b4f935d6cd",
+    "chebi-48601-primary.json.receipt.json": "a37c32754843862073e8833c9278d11ea26af4f5c505ce4119934af586f04c2f",
+    "ncit-c216679.json": "3c2bbdefd80f43e183e5710bc34afcd24d4af9769cbbd966b8387b90d72a7db0",
+    "ncit-c216679.json.receipt.json": "724418e5f5fab7a63ea9cc61df436580eca791bd79659461a0aefb9a432d7927",
+    "pubchem-288-properties.json": "37e10b81d61f327bad86e2367d8d5f2b2d053f2f841941c3159814fff53570f0",
+    "pubchem-288-properties.json.receipt.json": "2541b0bfd1eb44bd17a4b16f2c74c4326bb5ab920f350828ff56a2b116c05b27",
+    "pubchem-5970-properties.json": "deccda58718bdec8e08efcd641918524dd5c8ed5cc05bfb7fbc3c1ccbec2064c",
+    "pubchem-5970-properties.json.receipt.json": "2a865a973b9d6550e9f14e12b4ec61c34c7cb621dd474a053346768de31d0c79",
+    "pubchem-5970-synonyms.json": "6687dc9bf22813e53e3db3bf8d41cfb17ebf347ff3632aed9e86fbc6251b4e80",
+    "pubchem-5970-synonyms.json.receipt.json": "defac89b19c1d3038632c59630b3f6210231b2e1d3d1810326c5631ad11b9b12",
+    "pubchem-cas-461-05-2.json": "d7760ddfaff2de1febd179fbb96b0e384920cbf78ab910bec3e722059cb649df",
+    "pubchem-cas-461-05-2.json.receipt.json": "2f8a49420d0b8edc0387d06c4d59cce2534f47ead20101a3ca3a0c6ceecf81e0",
+    "pubchem-cas-461-06-3.json": "b9a1509861112a8e100a7edf2a83a14e1dfc9f3d6d2ab93c1e959a105773c4ea",
+    "pubchem-cas-461-06-3.json.receipt.json": "a05518f1a84e4b7e36290aae5e68da1c2ad9f6fdef16316306a1613fb45651ae",
+    "compound_cas_corrections.tsv": "10147dabecb0da6c50ca35445faafc514719a7cd3e25bf7b7bebe3c4b8685b27",
+    "selected-source-rows.json": "7c36a19ccd5562abf7ef533df5251a35cfeaf23dbbd2ef78fe5d733093b2f50c",
+    "sigma-c9500-facts.json": "28efc0cdd5b8538d4f51730b4344ac20829b8903eb8ef42c2b6216e4c08293b6",
+    "approved-decision.md": "aee19d779a2980d1b2f9cb65eae352c3519ddd76d177db46db82186721342805",
+    "routing-decision.md": "e2d6f4a0ffde1ca0f8291aacc2b2b7759b31ef30d8df438b0d1efd14e638072e"
+  },
+  "helper_hashes": {
+    "guarded_unified_carnitine.py": "9ebeb9ce10dd432ac5767c82f24a6d245a71189b83289f19f92507bfe1230710",
+    "make_step3_receipt.py": "066c666c180ce559c7ac19c85707e8251045bb5e52a145d602dce4096bafae21",
+    "generate_candidate.py": "d8e7a2299eb593c9aa1c341bafd6dcd5d2f6a71c6e4aaeff3f3ce325a04981bc"
+  },
+  "baseline_inputs_unchanged": {
+    "data/ingredients/mapped/Carnitine_Hydrochloride.yaml": "c03c1c66b9e70436da2e841d1edf2a700f05830674c715fc265ac7fde9705722",
+    "data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml": "8a7e0ac23a72c403bf9cce38a20abe817ee83e0231b558f2ca07ed05d134d190",
+    "data/ingredients/mapped/NLDM_metabolites.yaml": "7332021e0d760384bc0381f5e00e3a87bd4dfe4b7c5b2eb1140853f7c17d78a0",
+    "data/ingredients/mapped/Dl-carnitine.yaml": "e225138c2ef6bc64d01bd2102058cc5725185201fa1d32ca9a1ae1aee6b1ecab",
+    "data/ingredients/mapped/L-Carnitine.yaml": "83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754",
+    "data/ingredients/mapped/L-Carnitine_Hydrochloride.yaml": "516a885435fc23a3c3c1842783d8ba0d03b60eb8e227687468df45038006c5ff",
+    "mappings/unified_mapping_rejections.tsv": "717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d",
+    "mappings/culturemech_recipe_membership.tsv": "55ce5fabd42eb4cc1df628d4fd6a45b813caccbc7d7773105ece5633dd313897",
+    "mappings/other_cross_record_baseline.tsv": "170368983e4105773348122d44da5417745e675dfa9151f72270f19da7a26008",
+    "mappings/duplicate_identifier_baseline.tsv": "723f613de746bf44b38e19be9786cd1ee7fb719256fbc6195b8b1e20477d5720",
+    "mappings/ingredient_mappings.sssom.tsv": "68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67",
+    "reports/ingredient_bundle_20261101_ncit875/review.json": "7ea74db32bcc33b464a39101e9d81319729dcc73ffd2eba997fa8c99cfb735f5",
+    "reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json": "3e422eeffe4ba4415a46314cd69f086a23d46ce3e164bb06aa1782eeb1c15a09",
+    ".github/workflows/qc-reviewed-sssom.yaml": "70a6cf78722adb6f29630c8c032403641026b7bb2554578cd91fafdcd0a82321",
+    "docs/INGREDIENT_BUNDLE.md": "03cbd45a57a57de8acc3cfe01bcdcf50f4b9fdefdc664552bfd679eb8eeb88b9",
+    "reports/sssom_completion_20260921/review.json": "368aa926912b7ff675849fbe3491230eb9083af473efdca9d10ae4c11f91b5b0",
+    "reports/sssom_completion_20260921/mapping-evidence.json": "0e30206fe5a040f46aff6d2ce7002592ec0a05d259d7ea9bc26f922c915e7ca4",
+    "reports/sssom_completion_20260921/assemble_review.py": "6165143f5058d6e1f0fa51bbf4aaa5265dbdc9b8f510a63ed80579577b8aad88",
+    "reports/sssom_completion_20260921/mapping_changes/make_receipt.py": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121",
+    "reports/semantic_review_20260921/resolution/build_review.py": "84a955e55929c5ae8dc6df6e813aaddd13dc4dfd38d81bc63a8172067c00fd59",
+    "reports/semantic_review_20260921/resolution/current-review.json": "2bc6fd01874ae295fd8812ff6249ea96e3163623957d51d622c85a398e69cb4a",
+    "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv": "1fc422a342632befd63d7632002fb95f4c0ee49a42d0baacdff8dbf2a70daa62",
+    "scripts/promote_heptahydrate_ncit.py": "768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee",
+    "scripts/repair_heptahydrate_membership.py": "a3a8af0acfd2daa94a5da70270f0fd0923b7be0da644a4878688cac2c4aaad17",
+    "scripts/build_culturemech_membership.py": "07de538679cce3b9e9bba63ef2ab718297ed5807a83b6469e1e7fe31c5ce43ba",
+    "scripts/check_unified_rejections.py": "4f7faf1f103f50be1a59e826b0238061d1a9214afcec9d1cf0b029237e71238c",
+    "scripts/validate_component_partonomy.py": "5a39cc6e2a26cddf0af8affdcb9efa856b07f5af24cda83bb369b9581ca757c9",
+    "scripts/browser_export.py": "a834b3510161a20c027eb8fcb858d7a35f32caba7bd93d3cd74503a2e12302c2",
+    "scripts/export_lists.py": "24230cbb1e57dcc76f97c7809763e67e60d6f95987371b1450579036ed9c9fcc",
+    "src/mediaingredientmech/record_refresh.py": "999e4e2bf2a257a26172096221c6472c10782fd67bc00d6857c42e3a80ad63f2",
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": "58193f16b7231aba75932bf7316c1bf8394709bc7cff96687accb11eb6963946",
+    "src/mediaingredientmech/ingredient_bundle_contract.py": "9285d9d2423d108e0b1e3a960ddcbdd5e9b94eb44e099632042fc7e1e95e51b2",
+    "src/mediaingredientmech/export/reviewed_sssom.py": "ab74bae77709ba59623b2aa4612a16b692361c4f46bbb9b5a597f31bd6716ec3",
+    "src/mediaingredientmech/validation/write_validated.py": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+    "UNIFIED_INGREDIENT_MAPPING.tsv": "6126d33febe2a577ff60295a36d6e5dd649a39e73c218f4d18468f3813adbce9",
+    "UNIFIED_INGREDIENT_MAPPING.provenance.json": "0f828858e17f867db967f589a72cdb0e6a8fbc3091aae63a2a4ab730094e7108"
+  },
+  "protected_intel_unchanged": {
+    "reviews/workflow/mech-goal-sequence-20261019/cycle-000013/stage-03/revision-0001/coverage_report.md": "4f771f03988e940c0f926c114eb9b57c332d15b62562e1d84e08c6f31eed6104",
+    "reviews/workflow/mech-goal-sequence-20261019/cycle-000013/stage-03/revision-0001/validation.md": "0ad7742eae1360bf2a4ed93e5f490a28c780e04e15d28fdf240ad9075bdff81d"
+  },
+  "checks": {
+    "step3-independent-final-writer-dependency-tests": {
+      "name": "step3-independent-final-writer-dependency-tests",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_merge_carnitine_hydrochloride.py",
+        "tests/test_carnitine_occurrence_routing.py",
+        "tests/test_carnitine_merge_dependencies.py",
+        "--basetemp=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/native-tests"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim",
+      "started_at": "2026-11-01T09:10:49.523093+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T09:11:38.350852+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step3-independent-final-writer-dependency-tests.log",
+      "log_sha256": "46c805aeb3b6a808328629fe1077c79546246411d10dfad55d740c6354613971"
+    },
+    "step3-independent-native-boundaries": {
+      "name": "step3-independent-native-boundaries",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/native-boundaries/probe.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim",
+      "started_at": "2026-11-01T09:11:35.593809+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T09:11:38.516777+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step3-independent-native-boundaries.log",
+      "log_sha256": "24ec8afa9843745519e045ee48295627d50a667f74488a71ab8194e9f3d8c317"
+    },
+    "step3-independent-unified-orchestration-recheck-v2": {
+      "name": "step3-independent-unified-orchestration-recheck-v2",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/probe_unified.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim",
+      "started_at": "2026-11-01T09:10:27.903859+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T09:10:28.470579+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step3-independent-unified-orchestration-recheck-v2.log",
+      "log_sha256": "e9b86be21d36072dbf337c6328e4824c594d48362c596e46d5ad33154fb7994e"
+    },
+    "step3-independent-receipt-orchestration-recheck": {
+      "name": "step3-independent-receipt-orchestration-recheck",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/probe_receipt.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim",
+      "started_at": "2026-11-01T09:10:27.903842+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T09:10:28.176639+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step3-independent-receipt-orchestration-recheck.log",
+      "log_sha256": "e565f2eae03c4cdd2da749bfe975c62bd801593437ea31c8fcdacb11adcec84c"
+    }
+  },
+  "author_mutation_logs_independently_verified": [
+    {
+      "name": "completed_receipt_binding_removed",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/completed_receipt_binding_removed.log",
+      "log_sha256": "90da81f1e6841c23a89263781299e9c99a4a91101638a2df579867788aaa219a",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "callback_removed",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/callback_removed.log",
+      "log_sha256": "1c755fed902bb279eb8d10d6d651e260beb16ba941ebf72e58d443fbee808d02",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "history_erased",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/history_erased.log",
+      "log_sha256": "01b25affdbb5da53461f655e4a3766f847a7a9760fecd55b6b822da56494e1bf",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "free_chemistry_retained",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/free_chemistry_retained.log",
+      "log_sha256": "a21da71bc121d135fc7a41d6aadec2f788f0f3b30bc28ad5d405e952ee7da354",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "membership_migration_omitted",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/membership_migration_omitted.log",
+      "log_sha256": "992aa7785f6e9f638bde53594fbbdaf31522f9472ed9e20467359e3e5a871938",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "amide_ledger_rejection_omitted",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/amide_ledger_rejection_omitted.log",
+      "log_sha256": "051878834ec9b530a1fd17e10c3bb83a6b8c2c784bf6c31c0abbf72c62275615",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "candidate_claim_checks_removed",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/candidate_claim_checks_removed.log",
+      "log_sha256": "7618256a86ba02e2ca64d3fe36ac655f38948bc7908eb45651028f12397d28ac",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "completed_anchor_check_removed",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/completed_anchor_check_removed.log",
+      "log_sha256": "5e334059155c7fc435571afd2ed3e9df604b08c6185bb4929b81e9633a8bea1f",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "reservation_rechecks_removed",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-writer-evidence/revision-1036/mutations/reservation_rechecks_removed.log",
+      "log_sha256": "d17536e0cb6f5cdc9fce9ed340aab4ebf8f64314101883c41888ea6a828cd97c",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "remove_salt_routing",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/output/issue1004-dependency-tests/mutations/remove_salt_routing/pytest.log",
+      "log_sha256": "45ee5bfbfb24590c8a4a02af8ae3f0d5eb4c1a5469fda2ef53f95b52ac3578c7",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "broaden_old_id_group",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/output/issue1004-dependency-tests/mutations/broaden_old_id_group/pytest.log",
+      "log_sha256": "78aff33f11c5883e5094a9a85abdd23465d4a552fa5c5b22e6ad5b300389aa94",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "count_rejected_tombstone",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/output/issue1004-dependency-tests/mutations/count_rejected_tombstone/pytest.log",
+      "log_sha256": "e6f0586b833c11e1773aa754a67e77a6b31c8ef6b1bbadf1febbf8cd65e90603",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "allow_changed_owner_approval",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/output/issue1004-dependency-tests/mutations/allow_changed_owner_approval/pytest.log",
+      "log_sha256": "1f55b67bf2160c81430314ec62ddcd11f1162cef29dee03bd4125a26c94c3774",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "allow_mapping_approval_carry",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/output/issue1004-dependency-tests/mutations/allow_mapping_approval_carry/pytest.log",
+      "log_sha256": "4f1fab9de4baa26880e9c18f3e5357410b8a8d931fb9444c121d4fde74515e4d",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    },
+    {
+      "name": "skip_explicit_plan_validation",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/output/issue1004-dependency-tests/mutations/skip_explicit_plan_validation/pytest.log",
+      "log_sha256": "0758b907cbdb79f04846a5346155dff690fce977b7db3007d5bc3d35c9ecb3fa",
+      "attribution": "author-run isolated mutation; independently hash/log checked"
+    }
+  ],
+  "issue_dispositions": [
+    {
+      "issue": 1036,
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1036",
+      "status": "fixed in reviewed source; independent original/fixed native repro"
+    },
+    {
+      "issue": 1037,
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1037",
+      "status": "fixed in reviewed unpublished orchestration; independent original/fixed native publication repro"
+    }
+  ],
+  "limitations": [
+    "No production application, complete generated candidate/canonical products, full post-application QC, final review bundle or committed feature head yet.",
+    "Native row-producer dry-run uses actual merged Claw file and real publication code with external fixtures; it is not full-corpus generation.",
+    "Unified race fixtures simulate producer/checker subprocesses, Git/settings and caller lock; publication/reservation/native transaction are real. Receipt race fixtures execute actual native maker/publisher but use a minimal synthetic historical chain, not the complete production receipt chain.",
+    "Author mutation executions are credited to authors; reviewer checked receipts/log hashes and actual failure summaries.",
+    "The 176-test runner uses pinned Claw16fd for validator environment; its SSSOM producer bytes equal merged6a (cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e). Separate independent native probe explicitly imports merged6a producer.",
+    "Old empty Sigma HTML is a failed capture; successful rendered factual extract and original-source CAS caveats remain explicit."
+  ]
+}

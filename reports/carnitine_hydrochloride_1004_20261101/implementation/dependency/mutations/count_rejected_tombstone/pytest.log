@@ -1,0 +1,79 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_native_future_membership_growth_is_counted_not_refused[new_recipe-expected0] _
+
+producer = <module 'carnitine_membership_producer' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/build_culturemech_membership.py'>
+frozen_occurrences = [{'recipe_id': 'CultureMech:000962', 'recipe_label': 'omiz_pat_medium_modified', 'recipe_category': 'BACTERIAL', 'sour...ined_novitamin', 'recipe_category': 'SPECIALIZED', 'source_path': 'specialized/nldm_defined_novitamin.yaml', ...}, ...]
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8336/test_native_future_membership_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b510180>
+growth = 'new_recipe', expected = (15, 15)
+
+    @pytest.mark.parametrize("growth,expected", [("new_recipe", (15, 15)), ("extra_listing", (14, 15))])
+    def test_native_future_membership_growth_is_counted_not_refused(producer, frozen_occurrences, tmp_path, monkeypatch, growth, expected):
+        salt = next(row for row in frozen_occurrences if row["preferred_term"] == NAMES[0])
+        extra = {**salt, "preferred_term": NAMES[1], "resolved_identifier": "cas:461-06-3"}
+        if growth == "new_recipe":
+            extra["recipe_id"] = "CultureMech:999999"
+        path = write_occurrences(tmp_path / "occurrences.tsv", [*frozen_occurrences, extra])
+        edges, unknown = producer.collect(path, {NEW, "CHEBI:17126"})
+        assert unknown == {} and all(identity != OLD for identity, _ in edges)
+        membership = tmp_path / "membership.tsv"
+        monkeypatch.setattr(producer, "OUTPUT", membership)
+        producer.write(edges, "synthetic future cohort based on frozen #1004 source excerpt")
+        counts = membership_counts(membership)
+        assert counts[NEW] == expected
+        active = {"identifier": NEW, "mapping_status": "MAPPED", "occurrence_statistics": {"media_count": 14, "total_occurrences": 14}}
+        tombstone = {"identifier": NEW, "mapping_status": "REJECTED", "occurrence_statistics": {"media_count": 0, "total_occurrences": 0}}
+        assert effective_occurrence_statistics(active, counts) == expected
+>       assert effective_occurrence_statistics(tombstone, counts) == (0, 0)
+E       assert (15, 15) == (0, 0)
+E         
+E         At index 0 diff: 15 != 0
+E         Use -v to get more diff
+
+tests/test_carnitine_occurrence_routing.py:95: AssertionError
+_ test_native_future_membership_growth_is_counted_not_refused[extra_listing-expected1] _
+
+producer = <module 'carnitine_membership_producer' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/build_culturemech_membership.py'>
+frozen_occurrences = [{'recipe_id': 'CultureMech:000962', 'recipe_label': 'omiz_pat_medium_modified', 'recipe_category': 'BACTERIAL', 'sour...ined_novitamin', 'recipe_category': 'SPECIALIZED', 'source_path': 'specialized/nldm_defined_novitamin.yaml', ...}, ...]
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8336/test_native_future_membership_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b33a650>
+growth = 'extra_listing', expected = (14, 15)
+
+    @pytest.mark.parametrize("growth,expected", [("new_recipe", (15, 15)), ("extra_listing", (14, 15))])
+    def test_native_future_membership_growth_is_counted_not_refused(producer, frozen_occurrences, tmp_path, monkeypatch, growth, expected):
+        salt = next(row for row in frozen_occurrences if row["preferred_term"] == NAMES[0])
+        extra = {**salt, "preferred_term": NAMES[1], "resolved_identifier": "cas:461-06-3"}
+        if growth == "new_recipe":
+            extra["recipe_id"] = "CultureMech:999999"
+        path = write_occurrences(tmp_path / "occurrences.tsv", [*frozen_occurrences, extra])
+        edges, unknown = producer.collect(path, {NEW, "CHEBI:17126"})
+        assert unknown == {} and all(identity != OLD for identity, _ in edges)
+        membership = tmp_path / "membership.tsv"
+        monkeypatch.setattr(producer, "OUTPUT", membership)
+        producer.write(edges, "synthetic future cohort based on frozen #1004 source excerpt")
+        counts = membership_counts(membership)
+        assert counts[NEW] == expected
+        active = {"identifier": NEW, "mapping_status": "MAPPED", "occurrence_statistics": {"media_count": 14, "total_occurrences": 14}}
+        tombstone = {"identifier": NEW, "mapping_status": "REJECTED", "occurrence_statistics": {"media_count": 0, "total_occurrences": 0}}
+        assert effective_occurrence_statistics(active, counts) == expected
+>       assert effective_occurrence_statistics(tombstone, counts) == (0, 0)
+E       assert (14, 15) == (0, 0)
+E         
+E         At index 0 diff: 14 != 0
+E         Use -v to get more diff
+
+tests/test_carnitine_occurrence_routing.py:95: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_carnitine_occurrence_routing.py::test_native_future_membership_growth_is_counted_not_refused[new_recipe-expected0]
+FAILED tests/test_carnitine_occurrence_routing.py::test_native_future_membership_growth_is_counted_not_refused[extra_listing-expected1]
+2 failed, 36 deselected, 1 warning in 0.04s

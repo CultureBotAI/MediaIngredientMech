@@ -1,0 +1,123 @@
+FFFF..                                                                   [100%]
+=================================== FAILURES ===================================
+_ test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_pol...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_policy_reject0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+subject = 'MIM:NLDM_metabolites', stamp = ''
+
+    @pytest.mark.parametrize("subject,stamp", [
+        (writer.COMPONENT_SUBJECT, ""),
+        (writer.COMPONENT_SUBJECT, "arbitrary|APPROVED|2026-11-01"),
+        (writer.COMPONENT_SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-07"),
+        (writer.COMPONENT_SUBJECT, "manual:reconcile_sssom|PREDICATE|2026-09-20"),
+        (writer.SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"),
+        (writer.SUBJECT, "none|UNKNOWN_TERM|2026-07-07"),
+    ])
+    def test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps(case, before, subject, stamp):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        next(r for r in rows if r["subject_id"] == subject)["validation_method"] = stamp
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="bounded native claim"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:434: Failed
+_ test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-arbitrary|APPROVED|2026-11-01] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_pol...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_policy_reject1/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+subject = 'MIM:NLDM_metabolites', stamp = 'arbitrary|APPROVED|2026-11-01'
+
+    @pytest.mark.parametrize("subject,stamp", [
+        (writer.COMPONENT_SUBJECT, ""),
+        (writer.COMPONENT_SUBJECT, "arbitrary|APPROVED|2026-11-01"),
+        (writer.COMPONENT_SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-07"),
+        (writer.COMPONENT_SUBJECT, "manual:reconcile_sssom|PREDICATE|2026-09-20"),
+        (writer.SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"),
+        (writer.SUBJECT, "none|UNKNOWN_TERM|2026-07-07"),
+    ])
+    def test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps(case, before, subject, stamp):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        next(r for r in rows if r["subject_id"] == subject)["validation_method"] = stamp
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="bounded native claim"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:434: Failed
+_ test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-manual:promote_resolved_unmapped|PROMOTED|2026-08-07] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_pol...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_policy_reject2/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+subject = 'MIM:NLDM_metabolites'
+stamp = 'manual:promote_resolved_unmapped|PROMOTED|2026-08-07'
+
+    @pytest.mark.parametrize("subject,stamp", [
+        (writer.COMPONENT_SUBJECT, ""),
+        (writer.COMPONENT_SUBJECT, "arbitrary|APPROVED|2026-11-01"),
+        (writer.COMPONENT_SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-07"),
+        (writer.COMPONENT_SUBJECT, "manual:reconcile_sssom|PREDICATE|2026-09-20"),
+        (writer.SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"),
+        (writer.SUBJECT, "none|UNKNOWN_TERM|2026-07-07"),
+    ])
+    def test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps(case, before, subject, stamp):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        next(r for r in rows if r["subject_id"] == subject)["validation_method"] = stamp
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="bounded native claim"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:434: Failed
+_ test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-manual:reconcile_sssom|PREDICATE|2026-09-20] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_pol...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8358/test_prior_stamp_policy_reject3/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+subject = 'MIM:NLDM_metabolites'
+stamp = 'manual:reconcile_sssom|PREDICATE|2026-09-20'
+
+    @pytest.mark.parametrize("subject,stamp", [
+        (writer.COMPONENT_SUBJECT, ""),
+        (writer.COMPONENT_SUBJECT, "arbitrary|APPROVED|2026-11-01"),
+        (writer.COMPONENT_SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-07"),
+        (writer.COMPONENT_SUBJECT, "manual:reconcile_sssom|PREDICATE|2026-09-20"),
+        (writer.SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"),
+        (writer.SUBJECT, "none|UNKNOWN_TERM|2026-07-07"),
+    ])
+    def test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps(case, before, subject, stamp):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        next(r for r in rows if r["subject_id"] == subject)["validation_method"] = stamp
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="bounded native claim"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:434: Failed
+=============================== warnings summary ===============================
+../../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-arbitrary|APPROVED|2026-11-01]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-manual:promote_resolved_unmapped|PROMOTED|2026-08-07]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-manual:reconcile_sssom|PREDICATE|2026-09-20]
+4 failed, 2 passed, 126 deselected, 13 warnings in 2.75s

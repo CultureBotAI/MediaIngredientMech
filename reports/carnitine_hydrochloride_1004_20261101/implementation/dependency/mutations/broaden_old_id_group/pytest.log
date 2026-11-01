@@ -1,0 +1,126 @@
+....FFFFF                                                                [100%]
+=================================== FAILURES ===================================
+_ test_other_source_routes_keep_their_incoming_identity[Carnitine-kgmicrobe.compound:carnitine_hydrochloride] _
+
+name = 'Carnitine', upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name,upstream", [
+        ("DL-carnitine", "CHEBI:17126"), ("L-Carnitine", "CHEBI:16347"),
+        ("L-Carnitine hydrochloride", "CHEBI:91318"),
+        ("carnitinamide chloride", "CHEBI:48601"),
+        ("Carnitine", OLD), ("Carnitine (D) Hydrochloride", OLD),
+        ("DL-Carnitine Hydrochloride", OLD), ("Carnitine Hydrochloride stock", OLD),
+        ("", OLD),
+    ])
+    def test_other_source_routes_keep_their_incoming_identity(name, upstream):
+        # Preservation is not new scientific approval of a sibling's upstream ID.
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == upstream
+E       AssertionError: assert 'NCIT:C216679' == 'kgmicrobe.co...hydrochloride'
+E         
+E         - kgmicrobe.compound:carnitine_hydrochloride
+E         + NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:64: AssertionError
+_ test_other_source_routes_keep_their_incoming_identity[Carnitine (D) Hydrochloride-kgmicrobe.compound:carnitine_hydrochloride] _
+
+name = 'Carnitine (D) Hydrochloride'
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name,upstream", [
+        ("DL-carnitine", "CHEBI:17126"), ("L-Carnitine", "CHEBI:16347"),
+        ("L-Carnitine hydrochloride", "CHEBI:91318"),
+        ("carnitinamide chloride", "CHEBI:48601"),
+        ("Carnitine", OLD), ("Carnitine (D) Hydrochloride", OLD),
+        ("DL-Carnitine Hydrochloride", OLD), ("Carnitine Hydrochloride stock", OLD),
+        ("", OLD),
+    ])
+    def test_other_source_routes_keep_their_incoming_identity(name, upstream):
+        # Preservation is not new scientific approval of a sibling's upstream ID.
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == upstream
+E       AssertionError: assert 'NCIT:C216679' == 'kgmicrobe.co...hydrochloride'
+E         
+E         - kgmicrobe.compound:carnitine_hydrochloride
+E         + NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:64: AssertionError
+_ test_other_source_routes_keep_their_incoming_identity[DL-Carnitine Hydrochloride-kgmicrobe.compound:carnitine_hydrochloride] _
+
+name = 'DL-Carnitine Hydrochloride'
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name,upstream", [
+        ("DL-carnitine", "CHEBI:17126"), ("L-Carnitine", "CHEBI:16347"),
+        ("L-Carnitine hydrochloride", "CHEBI:91318"),
+        ("carnitinamide chloride", "CHEBI:48601"),
+        ("Carnitine", OLD), ("Carnitine (D) Hydrochloride", OLD),
+        ("DL-Carnitine Hydrochloride", OLD), ("Carnitine Hydrochloride stock", OLD),
+        ("", OLD),
+    ])
+    def test_other_source_routes_keep_their_incoming_identity(name, upstream):
+        # Preservation is not new scientific approval of a sibling's upstream ID.
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == upstream
+E       AssertionError: assert 'NCIT:C216679' == 'kgmicrobe.co...hydrochloride'
+E         
+E         - kgmicrobe.compound:carnitine_hydrochloride
+E         + NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:64: AssertionError
+_ test_other_source_routes_keep_their_incoming_identity[Carnitine Hydrochloride stock-kgmicrobe.compound:carnitine_hydrochloride] _
+
+name = 'Carnitine Hydrochloride stock'
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name,upstream", [
+        ("DL-carnitine", "CHEBI:17126"), ("L-Carnitine", "CHEBI:16347"),
+        ("L-Carnitine hydrochloride", "CHEBI:91318"),
+        ("carnitinamide chloride", "CHEBI:48601"),
+        ("Carnitine", OLD), ("Carnitine (D) Hydrochloride", OLD),
+        ("DL-Carnitine Hydrochloride", OLD), ("Carnitine Hydrochloride stock", OLD),
+        ("", OLD),
+    ])
+    def test_other_source_routes_keep_their_incoming_identity(name, upstream):
+        # Preservation is not new scientific approval of a sibling's upstream ID.
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == upstream
+E       AssertionError: assert 'NCIT:C216679' == 'kgmicrobe.co...hydrochloride'
+E         
+E         - kgmicrobe.compound:carnitine_hydrochloride
+E         + NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:64: AssertionError
+_ test_other_source_routes_keep_their_incoming_identity[-kgmicrobe.compound:carnitine_hydrochloride] _
+
+name = '', upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name,upstream", [
+        ("DL-carnitine", "CHEBI:17126"), ("L-Carnitine", "CHEBI:16347"),
+        ("L-Carnitine hydrochloride", "CHEBI:91318"),
+        ("carnitinamide chloride", "CHEBI:48601"),
+        ("Carnitine", OLD), ("Carnitine (D) Hydrochloride", OLD),
+        ("DL-Carnitine Hydrochloride", OLD), ("Carnitine Hydrochloride stock", OLD),
+        ("", OLD),
+    ])
+    def test_other_source_routes_keep_their_incoming_identity(name, upstream):
+        # Preservation is not new scientific approval of a sibling's upstream ID.
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == upstream
+E       AssertionError: assert 'NCIT:C216679' == 'kgmicrobe.co...hydrochloride'
+E         
+E         - kgmicrobe.compound:carnitine_hydrochloride
+E         + NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:64: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_carnitine_occurrence_routing.py::test_other_source_routes_keep_their_incoming_identity[Carnitine-kgmicrobe.compound:carnitine_hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_other_source_routes_keep_their_incoming_identity[Carnitine (D) Hydrochloride-kgmicrobe.compound:carnitine_hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_other_source_routes_keep_their_incoming_identity[DL-Carnitine Hydrochloride-kgmicrobe.compound:carnitine_hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_other_source_routes_keep_their_incoming_identity[Carnitine Hydrochloride stock-kgmicrobe.compound:carnitine_hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_other_source_routes_keep_their_incoming_identity[-kgmicrobe.compound:carnitine_hydrochloride]
+5 failed, 4 passed, 29 deselected, 1 warning in 0.05s

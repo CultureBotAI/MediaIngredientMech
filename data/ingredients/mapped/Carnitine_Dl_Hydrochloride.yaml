@@ -1,10 +1,10 @@
-identifier: cas:461-06-3
+identifier: NCIT:C216679
 preferred_term: Carnitine (Dl) Hydrochloride
 ontology_mapping:
-  ontology_id: CHEBI:17126
-  ontology_label: carnitine
-  ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  ontology_id: NCIT:C216679
+  ontology_label: DL-Carnitine Hydrochloride
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -14,11 +14,27 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via PubChem (pubchem-xref)
     notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 288'
+  - evidence_type: DATABASE_MATCH
+    source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full
+    notes: 'Supersedes prior identity interpretation without erasing it. NCI EVS NCIt
+      26.10d NCIT:C216679 ''DL-Carnitine Hydrochloride'' is active, CAS 461-05-2,
+      UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full.
+      PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol:
+      https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct
+      carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601.
+      Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json
+      (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma
+      C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV
+      is a hash-bound local snapshot associated with checkout context, not a commit-attested
+      blob. Direct CAS API returned 401; no CAS Registry verification is claimed.
+      Historical CHEBI/KG source tokens are retained provenance, not independent support
+      for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867.
+      No scientific/release approval is asserted.'
 synonyms:
 - synonym_text: 3-hydroxy-4-(trimethylammonio)butanoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -50,12 +66,34 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:17126 (pubchem-xref)
   llm_assisted: false
-chemical_properties:
-  cas_rn: 461-06-3
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C7H15NO3
-  smiles: C[N+](C)(C)CC(CC(=O)[O-])O
-  inchi: InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3
-  pubchem_cid: 288
+- timestamp: '2026-11-01T09:12:54.622469+00:00'
+  curator: Codex
+  action: CORRECTED_AND_MERGED_CARNITINE_HYDROCHLORIDE
+  changes: 'Merged into data/ingredients/mapped/Carnitine_Hydrochloride.yaml with
+    corrected identity/representative NCIT:C216679, REJECTED status and zero counts.
+    Rejected the free-substance systematic name; removed active CID 288/free-parent
+    chemistry. Exact prior chemical_properties preserved here and in the immutable
+    preimage: {"cas_rn": "461-06-3", "data_source": "CultureBotHT compounds_to_cas.csv",
+    "inchi": "InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3", "molecular_formula":
+    "C7H15NO3", "pubchem_cid": 288, "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+    "smiles": "C[N+](C)(C)CC(CC(=O)[O-])O"}. Prior identifier cas:461-06-3 is historical,
+    not current salt identity. Supersedes the 2026-07-05 surface-form non-merge ruling;
+    all prior history and mapping evidence remain. NCI EVS NCIt 26.10d NCIT:C216679
+    ''DL-Carnitine Hydrochloride'' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full.
+    PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol:
+    https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide
+    chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601.
+    Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json
+    (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma
+    C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is
+    a hash-bound local snapshot associated with checkout context, not a commit-attested
+    blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical
+    CHEBI/KG source tokens are retained provenance, not independent support for the
+    NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867.
+    No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
 ingredient_type: SINGLE_INGREDIENT
+representative: NCIT:C216679

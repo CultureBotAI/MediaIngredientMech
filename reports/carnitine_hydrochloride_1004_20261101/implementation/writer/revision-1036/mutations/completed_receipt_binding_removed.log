@@ -1,0 +1,563 @@
+FFFFFFFFFFFFF                                                            [100%]
+=================================== FAILURES ===================================
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[timestamps] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = 'timestamps'
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[missing_receipt] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req1/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = 'missing_receipt'
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[failed_receipt] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req2/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = 'failed_receipt'
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[missing_nldm] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req3/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = 'missing_nldm'
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[changed_receipt_hash] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req4/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = 'changed_receipt_hash'
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[receipt_symlink] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req5/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = 'receipt_symlink'
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect6] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req6/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect7] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req7/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect8] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req8/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('data/ingredients/mapped/NLDM_metabolites.yaml')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect9] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req9/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('mappings/unified_mapping_rejections.tsv')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect10] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req10/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('mappings/culturemech_recipe_membership.tsv')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect11] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req11/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('mappings/ingredient_mappings.sssom.tsv')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+_ test_completed_source_noop_requires_original_receipt_and_all_preimages[defect12] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_sourc...w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8348/test_completed_source_noop_req12/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+defect = PosixPath('mappings/other_cross_record_baseline.tsv')
+
+    @pytest.mark.parametrize("defect", ["timestamps", "missing_receipt", "failed_receipt", "missing_nldm", "changed_receipt_hash", "receipt_symlink",
+                                      *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE])
+    def test_completed_source_noop_requires_original_receipt_and_all_preimages(case, before, defect):
+        root, evidence, log = case
+        apply(case)
+        if defect == "timestamps":
+            revised = writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
+                                              before[writer.MEMBERSHIP], timestamp="2026-11-02T00:00:00+00:00")
+            for p in writer.OWNERS:
+                (root / p).write_bytes(revised[p])
+        elif defect == "missing_receipt":
+            log.unlink()
+        elif defect == "receipt_symlink":
+            competitor = log.with_name("competitor.json")
+            log.rename(competitor)
+            log.symlink_to(competitor)
+        elif isinstance(defect, Path):
+            backup = writer.backup_paths(log, (defect,))[defect]
+            backup.write_bytes(backup.read_bytes() + b"changed preimage\n")
+        else:
+            receipt = json.loads(log.read_text())
+            if defect == "failed_receipt":
+                receipt["state"] = "failed"
+            elif defect == "missing_nldm":
+                receipt["records"] = receipt["records"][:2]
+            else:
+                receipt["output_sha256"][str(writer.SURVIVOR)] = "0" * 64
+            log.write_text(json.dumps(receipt))
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        evidence_before = {p: p.read_bytes() for p in log.parent.iterdir() if p.is_file()}
+>       with pytest.raises((ValueError, FileNotFoundError), match="receipt|preimage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+tests/test_merge_carnitine_hydrochloride.py:494: Failed
+=============================== warnings summary ===============================
+../../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[timestamps]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[missing_receipt]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[failed_receipt]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[missing_nldm]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[changed_receipt_hash]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[receipt_symlink]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect6]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect7]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect8]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect9]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect10]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect11]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_completed_source_noop_requires_original_receipt_and_all_preimages[defect12]
+13 failed, 113 deselected, 13 warnings in 4.55s

@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-11-01T06:11:00.461229+00:00
+Generated: 2026-11-01T09:17:27.047123+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -661,8 +661,6 @@ Total: 2680 ingredients
 | CHEBI:16526 | CHEBI:16526 | Carbon dioxide gas | MAPPED | CHEBI | EXACT_MATCH | 862 |
 | CHEBI:234035 | CHEBI:234035 | Carboxymethyl cellulose | MAPPED | CHEBI | SYNONYM_MATCH | 8 |
 | kgmicrobe.compound:carcinomycin | kgmicrobe.compound:carcinomycin | Carcinomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| cas:461-06-3 | CHEBI:17126 | Carnitine (Dl) Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| kgmicrobe.compound:carnitine_hydrochloride | CHEBI:17126 | Carnitine Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 14 |
 | CHEBI:65585 | CHEBI:65585 | Carnosic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C72000 | NCIT:C72000 | Carrot | MAPPED | NCIT | EXACT_MATCH | 5 |
 | kgmicrobe.compound:caryomycin | kgmicrobe.compound:caryomycin | Caryomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2685,3 +2683,5 @@ Total: 2680 ingredients
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | NARROW_MATCH | 20 |
 | NCIT:C61946 | NCIT:C61946 | Na2HPO4 x 7 H2O | MAPPED | NCIT | EXACT_MATCH | 32 |
+| NCIT:C216679 | NCIT:C216679 | Carnitine (Dl) Hydrochloride | REJECTED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C216679 | NCIT:C216679 | Carnitine Hydrochloride | MAPPED | NCIT | EXACT_MATCH | 14 |

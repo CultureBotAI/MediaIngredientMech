@@ -1,0 +1,35 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_exact_source_proposal_preserves_history_and_scientific_boundaries ____
+
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+proposal = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b"identifier: NCIT:C216679\npreferred_term: Carnit...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+
+    def test_exact_source_proposal_preserves_history_and_scientific_boundaries(before, proposal):
+        old = {p: yaml.safe_load(before[p]) for p in writer.OWNERS}
+        new = {p: yaml.safe_load(proposal[p]) for p in writer.OWNERS}
+        assert set(proposal) == set(writer.SOURCE_PATHS)
+        for path in writer.OWNERS:
+>           assert new[path]["curation_history"][:-1] == old[path]["curation_history"]
+E           AssertionError: assert [] == [{'timestamp'....', ...}, ...]
+E             
+E             Right contains 8 more items, first extra item: {'timestamp': '2026-04-29T06:34:31.158938+00:00', 'curator': 'audit_cas_chebi_followup', 'action': 'CREATED_FROM_CAS_L... mapping resolved via OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80metals, FEBA_carbon, FEBA_nitrogen.', ...}
+E             Use -v to get more diff
+
+tests/test_merge_carnitine_hydrochloride.py:92: AssertionError
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_exact_source_proposal_preserves_history_and_scientific_boundaries
+1 failed, 112 deselected, 13 warnings in 0.92s

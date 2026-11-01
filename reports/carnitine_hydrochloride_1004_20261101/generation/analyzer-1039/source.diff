@@ -1,0 +1,69 @@
+--- original/analyze_step3_final.py
++++ fixed/analyze_step3_final.py
+@@ -76,8 +76,20 @@
+     return json.loads(Path(path).read_bytes())
+ 
+ 
+-def table(data):
+-    content = "".join(line for line in data.decode().splitlines(keepends=True) if not line.startswith("#"))
++def table(data, *, format):
++    """Parse an explicit transport format; a leading # in a data row is data.
++
++    SSSOM and native membership permit a leading comment prelude. Plain TSV
++    (including unified mappings and the rejection ledger) has no such prelude.
++    Never discard hash-prefixed rows once the table header has been reached.
++    """
++    require(format in {"plain", "sssom", "commented-membership"}, "Unknown TSV format")
++    content = data.decode()
++    if format != "plain":
++        lines = content.splitlines(keepends=True)
++        while lines and lines[0].startswith("#"):
++            lines.pop(0)
++        content = "".join(lines)
+     reader = csv.DictReader(io.StringIO(content), delimiter="\t")
+     records = list(reader)
+     require(bool(reader.fieldnames) and all(None not in row and None not in row.values() for row in records), "Malformed TSV")
+@@ -195,8 +207,8 @@
+ 
+ def membership_check():
+     original, amended = old(MEMBERSHIP), current(MEMBERSHIP)
+-    fields, prior = table(original)
+-    new_fields, subsequent = table(amended)
++    fields, prior = table(original, format="commented-membership")
++    new_fields, subsequent = table(amended, format="commented-membership")
+     require(fields == new_fields == ["mim_identifier", "recipe_id", "occurrences"], "Membership schema changed")
+     cohort = [row for row in prior if row["mim_identifier"] == OLD]
+     require(len(cohort) == 14 and {row["recipe_id"] for row in cohort} == RECIPE_IDS and all(row["occurrences"] == "1" for row in cohort), "Historical cohort drift")
+@@ -215,8 +227,8 @@
+ 
+ def ledger_check():
+     original, amended = old(LEDGER), current(LEDGER)
+-    fields, prior = table(original)
+-    new_fields, subsequent = table(amended)
++    fields, prior = table(original, format="plain")
++    new_fields, subsequent = table(amended, format="plain")
+     require(fields == new_fields, "Ledger schema changed")
+     was = [row for row in prior if row["ingredient_name"] == NAME]
+     now = [row for row in subsequent if row["ingredient_name"] == NAME]
+@@ -231,8 +243,8 @@
+ 
+ def mapping_check(source, after, receipt_path):
+     original, amended = old(CANONICAL), current(CANONICAL)
+-    fields, prior = table(original)
+-    new_fields, subsequent = table(amended)
++    fields, prior = table(original, format="sssom")
++    new_fields, subsequent = table(amended, format="sssom")
+     require(fields == new_fields, "Canonical field order changed")
+     require(outside(original, SUBJECTS) == outside(amended, SUBJECTS), "Unrelated canonical rows or header bytes changed")
+     maker = load(ROOT / MAPROOT / "mapping_changes/make_receipt.py", "step3_final_native_mapping_alignment")
+@@ -282,8 +294,8 @@
+ def unified_check(after_records):
+     path = "UNIFIED_INGREDIENT_MAPPING.tsv"
+     original, amended = old(path), current(path)
+-    fields, prior = table(original)
+-    new_fields, subsequent = table(amended)
++    fields, prior = table(original, format="plain")
++    new_fields, subsequent = table(amended, format="plain")
+     require(fields == new_fields, "Unified schema changed")
+     old_rows = {row["ingredient_name"]: row for row in prior}
+     new_rows = {row["ingredient_name"]: row for row in subsequent}

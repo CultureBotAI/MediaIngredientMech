@@ -1,0 +1,10 @@
+Failed to acquire lock mediaingredientmech: conflicts with mediaingredientmech
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-cas-guard/../guarded_unified_carnitine.py", line 52, in <module>
+    with LockManager({"my_id": "codex-approved-plan"}).lock("mediaingredientmech", "approved_unified_rebuild"):
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-cas-guard/plugins/lock_manager.py", line 346, in lock
+    raise RuntimeError(f"Failed to acquire lock on {resource}")
+RuntimeError: Failed to acquire lock on mediaingredientmech

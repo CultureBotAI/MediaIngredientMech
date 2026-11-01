@@ -1,0 +1,241 @@
+[
+  {
+    "command": [
+      "python",
+      "reports/sssom_completion_20260921/assemble_review.py"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-assemble-review.log",
+    "log_hash_verified": true,
+    "log_sha256": "623224fefd78d12969ac84056e2194844977c5c701550885daf1b401a62ca382",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-assemble-review.json",
+    "receipt_sha256": "c23df9a081230a35e669cbae039a4a12003a64b3348bdba6f1819ccb179f6387"
+  },
+  {
+    "command": [
+      "just",
+      "export-kgx",
+      "output/mim-kgx-710-full"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-full-kgx.log",
+    "log_hash_verified": true,
+    "log_sha256": "308a823acf7e18474b76c9e547ec336af6c28bb777a47ebe53271bc5f22565ed",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-full-kgx.json",
+    "receipt_sha256": "5a1a4f9c1376124969e063611222552bdf52f926712e076c03ba78411fc8c345"
+  },
+  {
+    "command": [
+      "python",
+      "reports/semantic_review_20260921/resolution/build_review.py",
+      "--bundle",
+      "output/mim-kgx-710-full"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-semantic-build.log",
+    "log_hash_verified": true,
+    "log_sha256": "9ad3af191a6b02eb58ee21ee25ee417d62e4d52653cd5f9dff02d09a20477f19",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-semantic-build.json",
+    "receipt_sha256": "8ef9e5815ff99e8fadfc80994c4f5bd09ffc669ff708d50093e79bf0126392bf"
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "mediaingredientmech.validation.semantic_release",
+      "--root",
+      ".",
+      "--report",
+      "reports/semantic_review_20260921/resolution/current-review.json"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-semantic-integrity.log",
+    "log_hash_verified": true,
+    "log_sha256": "b2f1341524d27201138e509b4ca6c7d3c0a14c4874543aa6cabe488eb049ddab",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-semantic-integrity.json",
+    "receipt_sha256": "25748c1ba5c9c83e11daf7f98af8f421196f40cf352da72f8b0ebee140c00387"
+  },
+  {
+    "command": [
+      "just",
+      "export-reviewed-sssom"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-reviewed-sssom-export.log",
+    "log_hash_verified": true,
+    "log_sha256": "ea42c3393adad836b0a987a5588f98dc8ffbfb3b34adea118141cbb379e4f621",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-reviewed-sssom-export.json",
+    "receipt_sha256": "b53b47c83408e6b7d36f4eafa32a8bf88ab9cf91de80fb98b8a751609b1b5f5a"
+  },
+  {
+    "command": [
+      "just",
+      "qc-reviewed-sssom"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-reviewed-sssom-qc.log",
+    "log_hash_verified": true,
+    "log_sha256": "af9b5a362fad00b223ca94107d3d90ff26e370d1c36eaa78c42d9b11e70ba186",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-reviewed-sssom-qc.json",
+    "receipt_sha256": "6bd6d71f70d47331914911d12eb46aca6704948eaaf87a5f114d82b170517fe9"
+  },
+  {
+    "command": [
+      "just",
+      "export-supported-kgx",
+      "reports/semantic_review_20260921/resolution/current-review.json",
+      "output/step2-supported-kgx"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-supported-kgx-export.log",
+    "log_hash_verified": true,
+    "log_sha256": "383a95ae1e74d795bac34d09234a474f8e2856f566fe06cd1d1a94caa1afbbc2",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-supported-kgx-export.json",
+    "receipt_sha256": "7026887988fb2727ff0a4de5c31406cea9e265e397e4afc83d00e9bb7540af93"
+  },
+  {
+    "command": [
+      "just",
+      "qc-supported-kgx",
+      "reports/semantic_review_20260921/resolution/current-review.json",
+      "output/step2-supported-kgx"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-supported-kgx-qc.log",
+    "log_hash_verified": true,
+    "log_sha256": "76585cbf11b4249faf99cb3c31583d72dfc51dc094902f6e4f9dd4e2084816b7",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-supported-kgx-qc.json",
+    "receipt_sha256": "df9bca33a2d4b53b949e07c5020301b11717bdbc5cf178b43e206327c8ec3ad6"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/refresh_unchanged_cohort.py",
+      "--baseline",
+      "40b787d37d33d544551389ff019f2d64ad63d7cc",
+      "--prior-review",
+      "reports/ingredient_bundle_20261101_followup/review.json",
+      "--output",
+      "reports/ingredient_bundle_20261101_ncit875/review.json",
+      "--receipt",
+      "reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json",
+      "--prior-copy",
+      "reports/ingredient_bundle_20261101_ncit875/prior-review.json"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-companion-refresh.log",
+    "log_hash_verified": true,
+    "log_sha256": "44150a692785956fdd4b537d4b037590de05f14a3729d97d409f62e9f064a7fa",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-companion-refresh.json",
+    "receipt_sha256": "a6b657db189aaad21d30501e38512be24d74d0694989dad01150c6de73a8d1c2"
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "mediaingredientmech.export.ingredient_bundle",
+      "export",
+      "--review",
+      "reports/ingredient_bundle_20261101_ncit875/review.json",
+      "--output",
+      "output/step2-ingredient-bundle"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-companion-export.log",
+    "log_hash_verified": true,
+    "log_sha256": "3e86f5a9b08481d3e0845ef5787355048f4a1d36a5af9946ec02ffe1b4b605c8",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-companion-export.json",
+    "receipt_sha256": "ca972edd1d6aec3f0b769202450b83dc3233a49636bfa8c56e4a3ff71a60a527"
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "mediaingredientmech.export.ingredient_bundle",
+      "validate",
+      "output/step2-ingredient-bundle",
+      "--manifest-sha256",
+      "ffb67b060ba8c574e0ebe8cfb83fb5d5b2bbd90adb0d5ac13acfc8bbf0a370ae"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-companion-validate.log",
+    "log_hash_verified": true,
+    "log_sha256": "ce1e341213b171743cc30ebffe8905ffed4d4d4edbf8ab4d35f184dfdf154d41",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-companion-validate.json",
+    "receipt_sha256": "ecfa9021094032cf3aa228402f473143781a036fba398568c9befd7ddca0d785"
+  },
+  {
+    "command": [
+      "just",
+      "sync-curated"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-sync-curated.log",
+    "log_hash_verified": true,
+    "log_sha256": "a6a4d17209dc246ccc51a5153e7a31a709534dc9f78b949c863455a3493a75ad",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-sync-curated.json",
+    "receipt_sha256": "d1e5408602dd7277118b60975158d2b1614ce93954cb065d90c0e43f379c8c3c"
+  },
+  {
+    "command": [
+      "just",
+      "export-indexes",
+      "export-lists",
+      "export-browser"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-flat-exports.log",
+    "log_hash_verified": true,
+    "log_sha256": "9a0c78e24e2f881ac79a428e4191b387e5c4c7fd61a2d240dba80d1cebe091bc",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-flat-exports.json",
+    "receipt_sha256": "4383d560bffa3f9b66824528aff75bd8a89d21fc58e2927cd4f97b9c5b883e5b"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/refresh_visualization_metadata.py"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-visualization-metadata.log",
+    "log_hash_verified": true,
+    "log_sha256": "43b707c879588b6e3de22422f59d81996e6e8fa558d339707a3c1ef579f7cc2c",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-visualization-metadata.json",
+    "receipt_sha256": "959682b8ce312d865698bca28e799739bf072a449876f407c2c0a0214c297912"
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "-o",
+      "addopts=",
+      "-p",
+      "no:cacheprovider",
+      "tests/test_mapping_change_receipt.py",
+      "tests/test_reviewed_sssom.py",
+      "tests/test_semantic_review_builder.py",
+      "tests/test_semantic_mapping_review.py",
+      "tests/test_unified_rejections.py",
+      "tests/test_unified_source_holds.py"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-receipt-regression-tests-after-generation.log",
+    "log_hash_verified": true,
+    "log_sha256": "e3c6db86bd88d95a35de6b4f30e2eff3ee427ab94874b85fc2acf85336ece906",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-receipt-regression-tests-after-generation.json",
+    "receipt_sha256": "a7bd727afa4725d6782e83d2428acf87fcd0dec9d224efba03f846e8a639abe6"
+  },
+  {
+    "command": [
+      "just",
+      "qc"
+    ],
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-full-qc-after-exports.log",
+    "log_hash_verified": true,
+    "log_sha256": "717f4c100ff3dc91fa8f46eefd4674294f4c2f0b5a2efa838ac74c1a6c11fefe",
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-full-qc-after-exports.json",
+    "receipt_sha256": "af40b8b3761d54be0b96a9b7a5bbebb922d6c02d33be72453e81955c2ec9187d"
+  }
+]

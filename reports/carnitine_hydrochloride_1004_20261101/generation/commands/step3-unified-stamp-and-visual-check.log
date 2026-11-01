@@ -1,0 +1,12 @@
+uv run --frozen python scripts/check_unified_freshness.py --stamp
+Stamped UNIFIED_INGREDIENT_MAPPING.provenance.json:
+  artifact_rows: 4170
+  mim_record_count: 2955
+  mim_rev: 99fe4b44
+  artifact_sha256: ca62e2f031eb
+  mim_inputs_digest: 61a381598973
+uv run python scripts/check_visualization_currency.py --strict
+  ok     ingredient_umap.json     nodes  2339  naming missing records    0 (0%)  duplicate keys   0  blank keys   0  invalid entries   0  wrong metadata   0
+  ok     ingredient_graph.json    nodes  2339  naming missing records    0 (0%)  duplicate keys   0  blank keys   0  invalid entries   0  wrong metadata   0
+
+OK: every published node names one live record and carries its metadata.

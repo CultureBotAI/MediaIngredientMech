@@ -1,0 +1,398 @@
+FFFFFFFFFFFFFFF.FF.FFFF                                                  [100%]
+=================================== FAILURES ===================================
+______ test_plain_unified_keeps_all_four_hash_names_and_seven_occurrences ______
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+
+    def test_plain_unified_keeps_all_four_hash_names_and_seven_occurrences(analyzer, fixture_bytes):
+        raw = fixture_bytes["unified-after.tsv.gz"]
+        expected = list(csv.DictReader(io.StringIO(raw.decode()), delimiter="\t"))
+        fields, rows = analyzer.table(raw, format="plain")
+>       assert rows == expected
+E       AssertionError: assert [{'ingredient...8', ...}, ...] == [{'ingredient...8', ...}, ...]
+E         
+E         At index 1892 diff: {'ingredient_name': 'R2A', 'occurrence_count': '3', 'chebi_id': '', 'cas_rn': '', 'kg_microbe_node_id': '', 'mim_id': '', 'culturemech_term_id': '', 'mapping_status': 'UNMAPPED', 'synonyms': '', 'example_media': 'CultureMech:015693; CultureMech:015694; CultureMech:015695'} != {'ingredient_name': '#N2', 'occurrence_count': '3', 'chebi_id': 'CHEBI:17997', 'cas_rn': '', 'kg_microbe_node_id': '', 'mim_id': 'CHEBI:17997', 'culturemech_term_id': 'CHEBI:17997', 'mapping_status': 'MAPPED', 'synonyms': '#N2|N#N|N(2)|N2|Nitrogen|Nitrogen (gas)|dinitrogen|molec...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+../step3-analyzer-1039/test_analyzer_parser.py:56: AssertionError
+______ test_native_unified_comparison_reports_complete_fixture_population ______
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10747b490>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+
+    def test_native_unified_comparison_reports_complete_fixture_population(analyzer, monkeypatch, fixture_bytes):
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes)
+        result = analyzer.unified_check(records)
+>       assert result["rows"] == 4170
+E       assert 4166 == 4170
+
+../step3-analyzer-1039/test_analyzer_parser.py:80: AssertionError
+__ test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#N2] __
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10736a060>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#N2', field = 'occurrence_count', value = '999'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+_ test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#N2O] __
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1070468d0>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#N2O', field = 'occurrence_count', value = '999'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+_ test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#argon] _
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10711e140>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#argon', field = 'occurrence_count', value = '999'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+__ test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#Ar] __
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10711e250>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#Ar', field = 'occurrence_count', value = '999'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+_ test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#N2] _
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107681e50>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#N2', field = 'cas_rn', value = 'not-the-original-value'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+_ test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#N2O] _
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10725f950>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#N2O', field = 'cas_rn', value = 'not-the-original-value'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+_ test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#argon] _
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107635c70>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#argon', field = 'cas_rn', value = 'not-the-original-value'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+_ test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#Ar] _
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107e628a0>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#Ar', field = 'cas_rn', value = 'not-the-original-value'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    @pytest.mark.parametrize("field,value", [("occurrence_count", "999"), ("cas_rn", "not-the-original-value")])
+    def test_hash_row_change_is_detected_in_parsed_scope(analyzer, monkeypatch, fixture_bytes, name, field, value):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, field, value)
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified changed more than the one approved name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified changed more than the one approved name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:110: AssertionError
+______________ test_hash_row_removal_is_a_population_change[#N2] _______________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107037a10>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#N2'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    def test_hash_row_removal_is_a_population_change(analyzer, monkeypatch, fixture_bytes, name):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, "REMOVE", "")
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified ingredient population changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified ingredient population changed'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:118: AssertionError
+______________ test_hash_row_removal_is_a_population_change[#N2O] ______________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1076f09f0>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#N2O'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    def test_hash_row_removal_is_a_population_change(analyzer, monkeypatch, fixture_bytes, name):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, "REMOVE", "")
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified ingredient population changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified ingredient population changed'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:118: AssertionError
+_____________ test_hash_row_removal_is_a_population_change[#argon] _____________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107d04bb0>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#argon'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    def test_hash_row_removal_is_a_population_change(analyzer, monkeypatch, fixture_bytes, name):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, "REMOVE", "")
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified ingredient population changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified ingredient population changed'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:118: AssertionError
+______________ test_hash_row_removal_is_a_population_change[#Ar] _______________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10846f410>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+name = '#Ar'
+
+    @pytest.mark.parametrize("name", HASH_NAMES)
+    def test_hash_row_removal_is_a_population_change(analyzer, monkeypatch, fixture_bytes, name):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], name, "REMOVE", "")
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Unified ingredient population changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unified ingredient population changed'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:118: AssertionError
+_______________ test_hash_row_duplicate_is_not_silently_filtered _______________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107027350>
+fixture_bytes = {'canonical-after.sssom.tsv.gz': b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http...co)|yeast extract (BD-Difco)|yeast extract (Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)\tCultureMech:008773\n'}
+
+    def test_hash_row_duplicate_is_not_silently_filtered(analyzer, monkeypatch, fixture_bytes):
+        changed = change_hash_row(fixture_bytes["unified-after.tsv.gz"], "#N2", "DUPLICATE", "")
+        records = bind_unified(analyzer, monkeypatch, fixture_bytes, changed)
+>       with pytest.raises(ValueError, match="Duplicate unified ingredient name"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Duplicate unified ingredient name'
+E         Actual message: 'Unrelated unified row/order/header bytes changed'
+
+../step3-analyzer-1039/test_analyzer_parser.py:125: AssertionError
+____ test_comment_enabled_transport_preserves_hash_data_after_header[sssom] ____
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+format = 'sssom'
+
+    @pytest.mark.parametrize("format", ["sssom", "commented-membership"])
+    def test_comment_enabled_transport_preserves_hash_data_after_header(analyzer, format):
+        # This is a transport-only fixture, not a claim that '#literal' is a CURIE.
+        raw = b"# example: metadata\nname\tvalue\n#literal\t2\nordinary\t3\n"
+        fields, rows = analyzer.table(raw, format=format)
+        assert fields == ["name", "value"]
+>       assert rows == [{"name": "#literal", "value": "2"}, {"name": "ordinary", "value": "3"}]
+E       AssertionError: assert [{'name': 'or...'value': '3'}] == [{'name': '#l...'value': '3'}]
+E         
+E         At index 0 diff: {'name': 'ordinary', 'value': '3'} != {'name': '#literal', 'value': '2'}
+E         Right contains one more item: {'name': 'ordinary', 'value': '3'}
+E         Use -v to get more diff
+
+../step3-analyzer-1039/test_analyzer_parser.py:145: AssertionError
+_ test_comment_enabled_transport_preserves_hash_data_after_header[commented-membership] _
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+format = 'commented-membership'
+
+    @pytest.mark.parametrize("format", ["sssom", "commented-membership"])
+    def test_comment_enabled_transport_preserves_hash_data_after_header(analyzer, format):
+        # This is a transport-only fixture, not a claim that '#literal' is a CURIE.
+        raw = b"# example: metadata\nname\tvalue\n#literal\t2\nordinary\t3\n"
+        fields, rows = analyzer.table(raw, format=format)
+        assert fields == ["name", "value"]
+>       assert rows == [{"name": "#literal", "value": "2"}, {"name": "ordinary", "value": "3"}]
+E       AssertionError: assert [{'name': 'or...'value': '3'}] == [{'name': '#l...'value': '3'}]
+E         
+E         At index 0 diff: {'name': 'ordinary', 'value': '3'} != {'name': '#literal', 'value': '2'}
+E         Right contains one more item: {'name': 'ordinary', 'value': '3'}
+E         Use -v to get more diff
+
+../step3-analyzer-1039/test_analyzer_parser.py:145: AssertionError
+_____________ test_plain_header_and_name_can_both_begin_with_hash ______________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+
+    def test_plain_header_and_name_can_both_begin_with_hash(analyzer):
+>       fields, rows = analyzer.table(b"#name\tcount\n#N2\t3\n", format="plain")
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../step3-analyzer-1039/test_analyzer_parser.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../step3-analyzer-1039/negative-controls/old-parser-with-current-api.py:89: in table
+    require(bool(reader.fieldnames) and all(None not in row and None not in row.values() for row in records), "Malformed TSV")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Malformed TSV'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Malformed TSV
+
+../step3-analyzer-1039/negative-controls/old-parser-with-current-api.py:60: ValueError
+______________________ test_rejection_ledger_is_plain_tsv ______________________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+
+    def test_rejection_ledger_is_plain_tsv(analyzer):
+        raw = b"ingredient_name\trejected_id\tmim_id\treason\n#gas\tCHEBI:1\tNCIT:1\tfixture\n"
+        _, rows = analyzer.table(raw, format="plain")
+>       assert rows[0]["ingredient_name"] == "#gas"
+               ^^^^^^^
+E       IndexError: list index out of range
+
+../step3-analyzer-1039/test_analyzer_parser.py:164: IndexError
+____________ test_format_is_required_and_unknown_format_is_rejected ____________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+
+    def test_format_is_required_and_unknown_format_is_rejected(analyzer):
+        with pytest.raises(TypeError):
+            analyzer.table(b"name\tcount\nname\t1\n")
+>       with pytest.raises(ValueError, match="Unknown TSV format"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+../step3-analyzer-1039/test_analyzer_parser.py:170: Failed
+__________________ test_plain_malformed_row_remains_rejected ___________________
+
+analyzer = <module 'run_owned_analyzer_1039' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-analyzer-1039/negative-controls/old-parser-with-current-api.py'>
+
+    def test_plain_malformed_row_remains_rejected(analyzer):
+>       with pytest.raises(ValueError, match="Malformed TSV"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+../step3-analyzer-1039/test_analyzer_parser.py:175: Failed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_plain_unified_keeps_all_four_hash_names_and_seven_occurrences
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_native_unified_comparison_reports_complete_fixture_population
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#N2]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#N2O]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#argon]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[occurrence_count-999-#Ar]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#N2]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#N2O]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#argon]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_change_is_detected_in_parsed_scope[cas_rn-not-the-original-value-#Ar]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_removal_is_a_population_change[#N2]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_removal_is_a_population_change[#N2O]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_removal_is_a_population_change[#argon]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_removal_is_a_population_change[#Ar]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_hash_row_duplicate_is_not_silently_filtered
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_comment_enabled_transport_preserves_hash_data_after_header[sssom]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_comment_enabled_transport_preserves_hash_data_after_header[commented-membership]
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_plain_header_and_name_can_both_begin_with_hash
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_rejection_ledger_is_plain_tsv
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_format_is_required_and_unknown_format_is_rejected
+FAILED ../step3-analyzer-1039/test_analyzer_parser.py::test_plain_malformed_row_remains_rejected
+21 failed, 2 passed, 1 warning in 0.52s

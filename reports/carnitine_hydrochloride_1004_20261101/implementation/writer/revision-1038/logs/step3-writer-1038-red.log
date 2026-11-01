@@ -1,0 +1,114 @@
+F.....F                                                                  [100%]
+=================================== FAILURES ===================================
+_ test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8354/test_prior_stamp_pol...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8354/test_prior_stamp_policy_reject0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+subject = 'MIM:NLDM_metabolites', stamp = ''
+
+    @pytest.mark.parametrize("subject,stamp", [
+        (writer.COMPONENT_SUBJECT, ""),
+        (writer.COMPONENT_SUBJECT, "arbitrary|APPROVED|2026-11-01"),
+        (writer.COMPONENT_SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-07"),
+        (writer.COMPONENT_SUBJECT, "manual:reconcile_sssom|PREDICATE|2026-09-20"),
+        (writer.SUBJECT, "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"),
+        (writer.SUBJECT, "none|UNKNOWN_TERM|2026-07-07"),
+    ])
+    def test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps(case, before, subject, stamp):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        next(r for r in rows if r["subject_id"] == subject)["validation_method"] = stamp
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="bounded native claim"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:434: Failed
+_____ test_real_native_builder_prior_stamp_replay_emits_the_bounded_claims _____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8354/test_real_native_bui...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8354/test_real_native_builder_prior0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d78fa50>
+
+    def test_real_native_builder_prior_stamp_replay_emits_the_bounded_claims(case, before, monkeypatch):
+        source_root = os.environ.get("MIM_CARNITINE_PRODUCER_ROOT") or os.environ.get("CLAW_ROOT")
+        if not source_root:
+            pytest.skip("Native Claw producer source is not configured")
+        path = Path(source_root) / "scripts/build_mim_ingredient_sssom.py"
+        monkeypatch.syspath_prepend(str(path.parent))
+        spec = importlib.util.spec_from_file_location("native_carnitine_sssom", path)
+        native = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(native)
+        apply(case)
+        root = case[0]
+        rows = []
+        for owner in writer.OWNERS:
+            rows += native._row_from_yaml(root / owner, {}, {}, {}, {})
+        assert all(row["validation_method"] == "" for row in rows)
+        # Exercise the supported main() path after row construction. Historical
+        # validation survives an unchanged NLDM triple, not a new NCIT target.
+        prior = native._load_existing_validation_method(root / writer.SSSOM)
+        outcomes = native.apply_replayed_stamps(rows, prior)
+        assert outcomes == {"replayed": 1, "carried": 0, "reset": 0, "absent": 1}
+        assert next(r for r in rows if r["subject_id"] == writer.SUBJECT)["validation_method"] == ""
+        assert next(r for r in rows if r["subject_id"] == writer.COMPONENT_SUBJECT)["validation_method"] == "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+        expected = writer.table(candidate_for(root, before))[1]
+        assert rows == expected
+        fields = writer.table(before[writer.SSSOM])[0]
+        candidate = tsv(fields, rows)
+>       result = writer.promoted_sssom(before[writer.SSSOM], candidate, {p: (root / p).read_bytes() for p in writer.OWNERS})
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_merge_carnitine_hydrochloride.py:571: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+before = b'# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http://purl.obolibrary.org/obo/FOODON...e.compound:na2-citrate alongside parent CHEBI:30769.\tCAS:144-33-2\tmanual:apply_669_704_rulings|REGISTRY|2026-09-24\n'
+candidate = b'subject_id\tsubject_label\tpredicate_id\tobject_id\tobject_label\tobject_source\tmapping_justification\tsource\tmapp...MIM:MIM curation (#114)|MIM:curator=Codex\t2026-11-01\t0.9\t\t\tmanual:promote_resolved_unmapped|PROMOTED|2026-08-06\n'
+owners = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: NCIT:C216679\npreferred_term: Carnit...: CultureBotHT includes sn-glycero-3-phosphocholine as a phosphorus-containing\n      NLDM_metabolites constituent.\n'}
+
+    def promoted_sssom(before: bytes, candidate: bytes, owners: dict[Path, bytes]) -> bytes:
+        if digest(before) != BEFORE[SSSOM]:
+            raise ValueError("Canonical SSSOM preimage changed")
+        fields, rows = table(before)
+        candidate_fields, candidates = table(candidate)
+        selected = [r for r in candidates if r["subject_id"] in SUBJECTS]
+        if candidate_fields != fields or len(selected) != 2 or {r["subject_id"] for r in selected} != {SUBJECT, COMPONENT_SUBJECT}:
+            raise ValueError("Native candidate must have one survivor, one NLDM and no tombstone row")
+        corrected = {}
+        for path, subject in ((SURVIVOR, SUBJECT), (COMPONENT_OWNER, COMPONENT_SUBJECT)):
+            record = yaml.safe_load(owners[path])
+            row = dict(next(r for r in selected if r["subject_id"] == subject))
+            old = [r for r in rows if r["subject_id"] == subject]
+            evidence = {"MIM:" + e["source"] for e in record["ontology_mapping"]["evidence"]}
+            if set(row["source"].split("|")) != evidence | {"MIM:curator=Codex"}:
+                raise ValueError("Candidate lacks exact source/curator provenance")
+            date = max(e["timestamp"][:10] for e in record["curation_history"])
+            expected = ({"subject_label": NAME, "predicate_id": "skos:exactMatch", "object_id": NEW,
+                         "object_label": LABEL, "object_source": "obo:ncit.owl", "mapping_justification": "semapv:LexicalMatching",
+                         "confidence": "0.99", "comment": "", "other": RAW_NAME + "|CAS:461-05-2"}
+                        if path == SURVIVOR else {k: v for k, v in old[0].items()
+                                                 if k not in {"source", "mapping_date", "validation_method"}})
+            expected.update(mapping_date=date, validation_method="")
+            if any(row.get(k) != v for k, v in expected.items()):
+>               raise ValueError(f"Candidate differs from the bounded native claim: {subject}")
+E               ValueError: Candidate differs from the bounded native claim: MIM:NLDM_metabolites
+
+scripts/merge_carnitine_hydrochloride.py:410: ValueError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_prior_stamp_policy_rejects_changed_missing_and_cross_subject_stamps[MIM:NLDM_metabolites-]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_real_native_builder_prior_stamp_replay_emits_the_bounded_claims
+2 failed, 5 passed, 125 deselected, 13 warnings in 2.76s

@@ -1,0 +1,81 @@
+{
+  "orchestration_sha256": "9ebeb9ce10dd432ac5767c82f24a6d245a71189b83289f19f92507bfe1230710",
+  "native_publisher_sha256": "768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee",
+  "cases": [
+    {
+      "case": "control",
+      "failure": null,
+      "receipt_state": "complete",
+      "injected_paths": [],
+      "canonical_unchanged": false,
+      "canonical_sha256": "15b9f0f3e42e5f138542348034a0d71771809e1ce4e2ea2896590bee0874e2fa"
+    },
+    {
+      "case": "candidate_during_checker",
+      "failure": {
+        "type": "AssertionError",
+        "message": "Candidate changed during validation"
+      },
+      "receipt_state": null,
+      "injected_paths": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/candidate_during_checker/evidence/unified-candidate.tsv"
+      ],
+      "canonical_unchanged": true,
+      "canonical_sha256": "a425610cf999bd7b73e6716970ab3667b3b382659e174739d10c2cac092ffc65"
+    },
+    {
+      "case": "candidate_after_validation",
+      "failure": {
+        "type": "ValueError",
+        "message": "A frozen input changed before write"
+      },
+      "receipt_state": "failed",
+      "injected_paths": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/candidate_after_validation/evidence/unified-candidate.tsv"
+      ],
+      "canonical_unchanged": true,
+      "canonical_sha256": "a425610cf999bd7b73e6716970ab3667b3b382659e174739d10c2cac092ffc65"
+    },
+    {
+      "case": "new_input_after_snapshot",
+      "failure": {
+        "type": "ValidationFailed",
+        "message": "1 staged change(s) failed validation and nothing was written:\n  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/new_input_after_snapshot/mim/UNIFIED_INGREDIENT_MAPPING.tsv: Producer input paths or bytes changed before publication"
+      },
+      "receipt_state": "failed",
+      "injected_paths": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/new_input_after_snapshot/culture/data/normalized_yaml/new-medium.yaml"
+      ],
+      "canonical_unchanged": true,
+      "canonical_sha256": "a425610cf999bd7b73e6716970ab3667b3b382659e174739d10c2cac092ffc65"
+    },
+    {
+      "case": "new_code_after_snapshot",
+      "failure": {
+        "type": "ValidationFailed",
+        "message": "1 staged change(s) failed validation and nothing was written:\n  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/new_code_after_snapshot/mim/UNIFIED_INGREDIENT_MAPPING.tsv: Producer input paths or bytes changed before publication"
+      },
+      "receipt_state": "failed",
+      "injected_paths": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/new_code_after_snapshot/mim/src/new_dependency.py"
+      ],
+      "canonical_unchanged": true,
+      "canonical_sha256": "a425610cf999bd7b73e6716970ab3667b3b382659e174739d10c2cac092ffc65"
+    },
+    {
+      "case": "changed_code_after_snapshot",
+      "failure": {
+        "type": "ValueError",
+        "message": "A frozen input changed before write"
+      },
+      "receipt_state": "failed",
+      "injected_paths": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/orchestration-recheck/unified-cases/changed_code_after_snapshot/mim/src/fixture_dependency.py"
+      ],
+      "canonical_unchanged": true,
+      "canonical_sha256": "a425610cf999bd7b73e6716970ab3667b3b382659e174739d10c2cac092ffc65"
+    }
+  ],
+  "production_edits": false,
+  "scope": "Exercise the exact orchestration with real native publishing in external fixtures.\n\nOnly producer/checker subprocesses, Git metadata and caller lock/settings are\nsimulated. The proposal publisher, output reservation and native transaction run.\n"
+}

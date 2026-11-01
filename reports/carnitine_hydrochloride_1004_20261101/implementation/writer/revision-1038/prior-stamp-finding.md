@@ -1,0 +1,9 @@
+The first full native #1004 candidate generation exposed an over-strict condition in the unpublished carnitine promotion writer. The guard correctly stopped before any canonical write.
+
+The merged Claw producer `6a7172585eb68da7f4fe01aee75a82458ddd470c` was run with its supported `--prior-stamps-from` option and the actual original canonical SSSOM. For `MIM:NLDM_metabolites`, the resulting identity/predicate/labels and payload are unchanged; only `source` and `mapping_date` change. The producer correctly retains the prior `validation_method` value `manual:promote_resolved_unmapped|PROMOTED|2026-08-06`. The new writer instead requires an empty value for every selected row, so its dry-run rejects this legitimate unchanged-identity stamp.
+
+Reproduction: `output/approved-plan-20261101T031134Z/logs/step3-promotion-dry-run.log`, SHA256 `23bd121fbd29bf5c6fff455a08ce92673480156298df94a685a40228700acdb9`; candidate SHA256 `02b40e540b0663944500071e5725004ec0610e46bf3dd0b83cd4987820af7736`; writer SHA256 `2598d9390087071fcff2a188bd4d4312a935576b8ae4fa15a9239dede7529158`. Source application and synchronization succeeded; canonical SSSOM remains its original bytes.
+
+Fix the bounded NLDM expectation to preserve exactly its original stamp when replaying the supported native prior-stamp path. Continue requiring an empty prior stamp for the newly re-grounded NCIT salt row. Reject arbitrary, changed or cross-subject stamps. Add a regression through the actual native prior-stamp carry-forward path, not only the lower-level row constructor, and independently re-review.
+
+This stamp records historical validation and does not carry scientific release approval. NLDM's changed owner must still be recorded in receipt 17 so its mapping and all 68 component/role approvals are withdrawn by the existing review chain. Do not change that requirement, the NLDM identity, or its other fields. Related to #1004.

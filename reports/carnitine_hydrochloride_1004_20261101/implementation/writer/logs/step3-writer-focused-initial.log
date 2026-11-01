@@ -1,0 +1,858 @@
+...........................FFFFFF................................F       [100%]
+=================================== FAILURES ===================================
+__ test_native_valid_competing_owner_is_rechecked_before_commit[True-sources] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_co...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d8e1fd0>
+phase = 'sources', late = True
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("late", [False, True])
+    def test_native_valid_competing_owner_is_rechecked_before_commit(case, before, monkeypatch, phase, late):
+        root, evidence, log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            call = lambda: writer.promote(*args, apply=True)
+        else:
+            call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        if late:
+            original = writer.guarded.reserve_receipt_outputs
+            @contextmanager
+            def race(*args, **kwargs):
+                with original(*args, **kwargs) as handles:
+                    native_competitor(root)
+                    yield handles
+            monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", race)
+        else:
+            native_competitor(root)
+        with pytest.raises(ValueError, match="already held"):
+>           call()
+
+tests/test_merge_carnitine_hydrochloride.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_merge_carnitine_hydrochloride.py:231: in <lambda>
+    call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/merge_carnitine_hydrochloride.py:329: in apply_sources
+    return guarded.publish(root, output, inputs, log, backups, result, apply=apply,
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/py...t1\nmesh:D011136\tCultureMech:004429\t1\nmesh:D011136\tCultureMech:013713\t1\nmesh:D014131\tCultureMech:007462\t1\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 5 staged change(s) failed validation and nothing was written:
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/.ignored/nested/Competitor.yaml
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/mapped/Carnitine_Hydrochloride.yaml: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/.ignored/nested/Competitor.yaml
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/mapped/NLDM_metabolites.yaml: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/.ignored/nested/Competitor.yaml
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/mappings/culturemech_recipe_membership.tsv: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/.ignored/nested/Competitor.yaml
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/mappings/unified_mapping_rejections.tsv: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow2/data/ingredients/.ignored/nested/Competitor.yaml
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+__ test_native_valid_competing_owner_is_rechecked_before_commit[True-promote] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_co...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow3/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111d8f8c0>
+phase = 'promote', late = True
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("late", [False, True])
+    def test_native_valid_competing_owner_is_rechecked_before_commit(case, before, monkeypatch, phase, late):
+        root, evidence, log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            call = lambda: writer.promote(*args, apply=True)
+        else:
+            call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        if late:
+            original = writer.guarded.reserve_receipt_outputs
+            @contextmanager
+            def race(*args, **kwargs):
+                with original(*args, **kwargs) as handles:
+                    native_competitor(root)
+                    yield handles
+            monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", race)
+        else:
+            native_competitor(root)
+        with pytest.raises(ValueError, match="already held"):
+>           call()
+
+tests/test_merge_carnitine_hydrochloride.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_merge_carnitine_hydrochloride.py:229: in <lambda>
+    call = lambda: writer.promote(*args, apply=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/merge_carnitine_hydrochloride.py:439: in promote
+    return guarded.publish(root, output, inputs, log,
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/py...ces_Orientalis\tVancomycin Hydrochloride Hydrate\tMIM:Vancomycin_Hydrochloride_Hydrate\tHYDRATE_FAMILY_UNREVIEWED\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 2 staged change(s) failed validation and nothing was written:
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow3/mappings/ingredient_mappings.sssom.tsv: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow3/data/ingredients/.ignored/nested/Competitor.yaml
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow3/mappings/other_cross_record_baseline.tsv: Destination identity already held by another owner: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_valid_competing_ow3/data/ingredients/.ignored/nested/Competitor.yaml
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+_ test_native_reservation_replacements_never_false_complete[False-False-sources] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10e191400>
+phase = 'sources', symlink = False, after_commit = False
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, symlink, after_commit):
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            call = lambda: writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        # Every reserved path is independently parametrized in the collision test;
+        # here exercise the race at both native transaction boundaries.
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            log.unlink()
+            if symlink:
+                log.symlink_to(victim)
+            else:
+                log.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+        with pytest.raises(ValueError, match="Reserved evidence"):
+>           call()
+
+tests/test_merge_carnitine_hydrochloride.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_merge_carnitine_hydrochloride.py:262: in <lambda>
+    call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/merge_carnitine_hydrochloride.py:329: in apply_sources
+    return guarded.publish(root, output, inputs, log, backups, result, apply=apply,
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_merge_carnitine_hydrochloride.py:281: in racing_commit
+    result = commit(apply=apply)
+             ^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/py...t1\nmesh:D011136\tCultureMech:004429\t1\nmesh:D011136\tCultureMech:013713\t1\nmesh:D014131\tCultureMech:007462\t1\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 5 staged change(s) failed validation and nothing was written:
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/data/ingredients/mapped/Carnitine_Hydrochloride.yaml: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/data/ingredients/mapped/NLDM_metabolites.yaml: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/mappings/culturemech_recipe_membership.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/mappings/unified_mapping_rejections.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac0/receipts/apply.json
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+_ test_native_reservation_replacements_never_false_complete[False-False-promote] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac1/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111ccfa80>
+phase = 'promote', symlink = False, after_commit = False
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, symlink, after_commit):
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            call = lambda: writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        # Every reserved path is independently parametrized in the collision test;
+        # here exercise the race at both native transaction boundaries.
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            log.unlink()
+            if symlink:
+                log.symlink_to(victim)
+            else:
+                log.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+        with pytest.raises(ValueError, match="Reserved evidence"):
+>           call()
+
+tests/test_merge_carnitine_hydrochloride.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_merge_carnitine_hydrochloride.py:259: in <lambda>
+    call = lambda: writer.promote(*args, apply=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/merge_carnitine_hydrochloride.py:439: in promote
+    return guarded.publish(root, output, inputs, log,
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_merge_carnitine_hydrochloride.py:281: in racing_commit
+    result = commit(apply=apply)
+             ^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/py...ces_Orientalis\tVancomycin Hydrochloride Hydrate\tMIM:Vancomycin_Hydrochloride_Hydrate\tHYDRATE_FAMILY_UNREVIEWED\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 2 staged change(s) failed validation and nothing was written:
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac1/mappings/ingredient_mappings.sssom.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac1/receipts/promote.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac1/mappings/other_cross_record_baseline.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac1/receipts/promote.json
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+_ test_native_reservation_replacements_never_false_complete[False-True-sources] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111cce350>
+phase = 'sources', symlink = True, after_commit = False
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, symlink, after_commit):
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            call = lambda: writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        # Every reserved path is independently parametrized in the collision test;
+        # here exercise the race at both native transaction boundaries.
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            log.unlink()
+            if symlink:
+                log.symlink_to(victim)
+            else:
+                log.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+        with pytest.raises(ValueError, match="Reserved evidence"):
+>           call()
+
+tests/test_merge_carnitine_hydrochloride.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_merge_carnitine_hydrochloride.py:262: in <lambda>
+    call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/merge_carnitine_hydrochloride.py:329: in apply_sources
+    return guarded.publish(root, output, inputs, log, backups, result, apply=apply,
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_merge_carnitine_hydrochloride.py:281: in racing_commit
+    result = commit(apply=apply)
+             ^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/py...t1\nmesh:D011136\tCultureMech:004429\t1\nmesh:D011136\tCultureMech:013713\t1\nmesh:D014131\tCultureMech:007462\t1\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 5 staged change(s) failed validation and nothing was written:
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/data/ingredients/mapped/Carnitine_Hydrochloride.yaml: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/data/ingredients/mapped/NLDM_metabolites.yaml: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/mappings/culturemech_recipe_membership.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/receipts/apply.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/mappings/unified_mapping_rejections.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac2/receipts/apply.json
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+_ test_native_reservation_replacements_never_false_complete[False-True-promote] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac3/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10de08c90>
+phase = 'promote', symlink = True, after_commit = False
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, symlink, after_commit):
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            call = lambda: writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        # Every reserved path is independently parametrized in the collision test;
+        # here exercise the race at both native transaction boundaries.
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            log.unlink()
+            if symlink:
+                log.symlink_to(victim)
+            else:
+                log.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+        with pytest.raises(ValueError, match="Reserved evidence"):
+>           call()
+
+tests/test_merge_carnitine_hydrochloride.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_merge_carnitine_hydrochloride.py:259: in <lambda>
+    call = lambda: writer.promote(*args, apply=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/merge_carnitine_hydrochloride.py:439: in promote
+    return guarded.publish(root, output, inputs, log,
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_merge_carnitine_hydrochloride.py:281: in racing_commit
+    result = commit(apply=apply)
+             ^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/py...ces_Orientalis\tVancomycin Hydrochloride Hydrate\tMIM:Vancomycin_Hydrochloride_Hydrate\tHYDRATE_FAMILY_UNREVIEWED\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 2 staged change(s) failed validation and nothing was written:
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac3/mappings/ingredient_mappings.sssom.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac3/receipts/promote.json
+E             /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac3/mappings/other_cross_record_baseline.tsv: Reserved evidence output was replaced or removed: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_native_reservation_replac3/receipts/promote.json
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+______________ test_real_native_builder_emits_the_bounded_claims _______________
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_real_native_bui...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8328/test_real_native_builder_emits0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+
+    def test_real_native_builder_emits_the_bounded_claims(case, before):
+        source_root = os.environ.get("CLAW_ROOT")
+        if not source_root:
+            pytest.skip("Native Claw producer source is not configured")
+        path = Path(source_root) / "scripts/build_mim_ingredient_sssom.py"
+        spec = importlib.util.spec_from_file_location("native_carnitine_sssom", path)
+        native = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(native)
+
+tests/test_merge_carnitine_hydrochloride.py:410: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    Build the canonical MIM → ingredient-ontology SSSOM mapping file.
+    
+    This is the authoritative cross-repo ingredient mapping artifact. Every
+    MediaIngredientMech record whose `ontology_mapping.ontology_id` starts
+    with a supported ingredient ontology prefix (CHEBI / FOODON; UBERON /
+    ENVO when populated) becomes one SSSOM row with:
+    
+      subject_id        MIM:<safe_stem>         -- stable per-YAML CURIE
+      subject_label     preferred_term
+      predicate_id      skos:exactMatch         -- default
+                        skos:broadMatch         -- MIM is more specific; the object is
+                                                   the broader parent (SKOS reading,
+                                                   declared in the header; MIM#390)
+                        skos:narrowMatch        -- MIM is less specific than the object
+                        skos:closeMatch         -- SYMMETRIC (both defensible)
+      object_id         <CHEBI|FOODON|...>:X
+      object_label      canonical rdfs:label from OAK/OLS (fallback: MIM label)
+      object_source     per-row ontology OWL URI (CHEBI/FOODON/... differ per row)
+      mapping_justification  semapv:ManualMappingCuration | semapv:LexicalMatching
+      source            MIM:<evidence>|MIM:curator=...|kgm:<sources>  (extension)
+      mapping_date      latest valid curation-history calendar date (ISO)
+      confidence        0.99 EXACT_MATCH / 0.9 CONSIDER_SPECIFIC / 0.8 SYMMETRIC
+      comment           short human-readable rationale
+      other             pipe-separated alternate labels (kg-microbe side, etc.),
+                        plus `CAS:<rn>` on symmetric rows — kg-microbe turns these
+                        into synonyms on the ontology entity, and from there KGX
+    
+    Inputs (all read-only):
+      MIM/data/ingredients/mapped/*.yaml
+      kg-microbe/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz  (CHEBI-only)
+      workspace/reports/kg_microbe_residual_p25_categorized.json   (optional)
+          — enriches predicate / confidence for the 303 triaged CHEBI cases
+    
+    Outputs:
+      workspace/reports/mim_ingredient_mappings.sssom.tsv
+          — working copy, regenerated on every run
+          — validated with `sssom validate` before being written
+    
+    Use `just publish-sssom` to promote the working copy to
+      MediaIngredientMech/mappings/ingredient_mappings.sssom.tsv
+    after it passes `sssom validate` + `synonym-review`.
+    """
+    
+    from __future__ import annotations
+    
+    import argparse
+    import json
+    import os
+    import re
+    import subprocess
+    import sys
+    from datetime import date
+    from pathlib import Path
+    
+    import yaml
+>   from kgm_unified_mappings import load_kgm_labels, load_kgm_source_index
+E   ModuleNotFoundError: No module named 'kgm_unified_mappings'
+
+../claw/scripts/build_mim_ingredient_sssom.py:57: ModuleNotFoundError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.2-final-0 _______________
+
+Name                                                          Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------
+scripts/_edison_capture.py                                      244    244     0%   43-544
+scripts/add_culturemech_gap_labels.py                           139    139     0%   91-450
+scripts/add_match_level.py                                       92     92     0%   9-221
+scripts/add_water_of_hydration.py                               104    104     0%   38-218
+scripts/aggregate_records.py                                    147    147     0%   20-368
+scripts/analyze_batch1.py                                        62     62     0%   4-133
+scripts/analyze_culturemech_roles.py                            137    137     0%   15-413
+scripts/analyze_unmapped.py                                     163    163     0%   12-360
+scripts/anchor_cas_hydrate_records.py                           120    120     0%   18-192
+scripts/apply_312_batch1.py                                     248    248     0%   30-513
+scripts/apply_312_batch2.py                                     366    366     0%   47-714
+scripts/apply_312_batch3.py                                     349    349     0%   36-571
+scripts/apply_312_batch4.py                                     198    198     0%   46-336
+scripts/apply_669_704_rulings.py                                316    316     0%   39-509
+scripts/apply_claude_suggestions.py                             239    239     0%   9-500
+scripts/apply_culturemech_aliases.py                            167    167     0%   32-301
+scripts/apply_curated_decompositions.py                          50     50     0%   46-257
+scripts/apply_edison_cas_enrichment.py                           49     49     0%   25-180
+scripts/apply_edison_contextual_parents.py                       53     53     0%   33-183
+scripts/apply_edison_identity_findings.py                        78     78     0%   24-200
+scripts/apply_insession_role_curation.py                         42     42     0%   19-117
+scripts/apply_kgmicrobe_identity_reviews.py                     118    118     0%   8-336
+scripts/apply_kgmicrobe_scope_decisions.py                      111    111     0%   8-238
+scripts/apply_locant_corrections.py                             127    127     0%   30-336
+scripts/apply_microbedecoder_residual_merges.py                 109    109     0%   23-240
+scripts/apply_ncit_grounding_ruling.py                           63     63     0%   50-192
+scripts/apply_role_research_results.py                          199    199     0%   64-442
+scripts/apply_synonym_review.py                                  65     65     0%   17-100
+scripts/audit_duplicate_identifiers.py                          165    165     0%   65-335
+scripts/audit_kg_microbe_node_ids.py                             86     86     0%   14-175
+scripts/audit_occurrence_stats.py                                66     66     0%   21-121
+scripts/audit_role_plausibility.py                               29     29     0%   16-106
+scripts/audit_writers.py                                         85     85     0%   33-236
+scripts/auto_correct.py                                          76     76     0%   12-177
+scripts/auto_merge_ready_prs.py                                 505    505     0%   14-667
+scripts/backfill_ontology_labels.py                             109    109     0%   18-197
+scripts/backfill_source_occurrences.py                           70     70     0%   20-119
+scripts/backfill_sssom_surface_forms.py                         175    175     0%   36-323
+scripts/batch_curate.py                                         146    146     0%   12-345
+scripts/batch_curate_unmapped.py                                237    237     0%   13-599
+scripts/batch_review.py                                         144    144     0%   15-433
+scripts/browser_export.py                                       126    126     0%   8-282
+scripts/build_culturemech_membership.py                          82     82     0%   35-171
+scripts/build_curie_alias_map.py                                 94     94     0%   44-195
+scripts/build_pages_site.py                                     126    126     0%   4-231
+scripts/build_research_worklist.py                               68     68     0%   23-130
+scripts/build_review_round.py                                   354    354     0%   11-773
+scripts/bump_sssom_header.py                                     58     26    55%   41, 44, 71, 79-102, 106
+scripts/categorize_unmapped.py                                  152    152     0%   4-268
+scripts/check_chebi_currency.py                                 106    106     0%   37-237
+scripts/check_curation_targets.py                                64     64     0%   33-154
+scripts/check_flat_export_coverage.py                           130    130     0%   30-236
+scripts/check_hydrate_water.py                                  109    109     0%   36-182
+scripts/check_instruction_refs.py                               225    225     0%   48-397
+scripts/check_record_filename_case.py                            96     96     0%   59-199
+scripts/check_sssom_subject_files.py                             25     25     0%   31-65
+scripts/check_truncated_locants.py                               60     60     0%   25-136
+scripts/check_unified_freshness.py                              115    115     0%   31-299
+scripts/check_unified_rejections.py                              68     68     0%   7-93
+scripts/check_vendored_sync.py                                  402    402     0%   10-668
+scripts/check_visualization_currency.py                         107    107     0%   47-250
+scripts/chem_formula.py                                         149    149     0%   23-311
+scripts/classify_ingredient_type.py                              89     89     0%   41-189
+scripts/classify_solution_types.py                               79     79     0%   8-194
+scripts/compare_with_culturemech.py                             294    294     0%   9-611
+scripts/correct_stale_ontology_labels.py                         84     84     0%   33-164
+scripts/create_records_from_groundings.py                       145    145     0%   27-277
+scripts/cross_reference_culturemech.py                          199    199     0%   14-480
+scripts/curate_unmapped.py                                      218    218     0%   9-390
+scripts/decompose_py_media_and_ground_categories.py              31     31     0%   57-258
+scripts/decompose_substrate_combinations.py                      40     40     0%   37-201
+scripts/deduplicate_ingredients.py                              153    153     0%   16-345
+scripts/deep_research_contract.py                               167    167     0%   13-339
+scripts/deep_research_provider.py                               209    209     0%   9-640
+scripts/demote_alphabet_letter_mapping.py                        70     70     0%   52-163
+scripts/download_ontologies.py                                  127    127     0%   13-254
+scripts/drop_implausible_roles.py                                41     41     0%   14-92
+scripts/embed_map.py                                             56     56     0%   4-125
+scripts/embed_records.py                                        142    142     0%   10-256
+scripts/enrich_chemical_properties.py                           126    126     0%   9-286
+scripts/enrich_edison_response.py                               169    169     0%   42-349
+scripts/enrich_existing_roles.py                                114    114     0%   11-295
+scripts/enrich_from_ols.py                                      116    116     0%   12-263
+scripts/enrich_with_concentration_notes.py                       15     15     0%   10-45
+scripts/example_role_queries.py                                 123    123     0%   8-210
+scripts/export_individual_records.py                            256    256     0%   14-606
+scripts/export_lists.py                                         239    239     0%   8-625
+scripts/export_reviewed_sssom.py                                  3      3     0%   3-6
+scripts/extract_all_roles.py                                    123    123     0%   16-343
+scripts/extract_roles_from_synonyms.py                           81     81     0%   11-223
+scripts/extract_top100_roles.py                                 132    132     0%   11-305
+scripts/fix_cas_counterion_identity_conflicts.py                246    246     0%   22-734
+scripts/fix_cas_stereochemical_identity_conflicts.py            278    278     0%   25-955
+scripts/fix_cow_manure_records.py                                88     88     0%   52-213
+scripts/fix_dead_chebi_ids.py                                    70     70     0%   26-142
+scripts/fix_dihydroxyflavone_wrong_compound.py                   71     71     0%   41-167
+scripts/fix_element_atom_overclaims.py                          290    290     0%   4-674
+scripts/fix_hydrate_collapse.py                                 101    101     0%   39-203
+scripts/fix_hydrate_local_identities.py                         465    465     0%   17-949
+scripts/fix_hydrate_terms_and_twins.py                           98     98     0%   39-207
+scripts/fix_kg_microbe_node_id_drift.py                          62     62     0%   3-102
+scripts/fix_lipoic_stereochemistry.py                           267    267     0%   4-503
+scripts/fix_malformed_hydrate_identities.py                     339    339     0%   22-729
+scripts/fix_merge_tombstone_resolution.py                        97     97     0%   41-377
+scripts/fix_parent_inherited_formulas.py                         44     44     0%   41-122
+scripts/fix_registry_row_predicates.py                           58     58     0%   34-120
+scripts/fix_remaining_hydrate_regroundings.py                   291    291     0%   28-585
+scripts/fix_salt_ion_identity_overclaims.py                     332    332     0%   20-765
+scripts/fix_scrambled_hydrate_cas.py                             61     61     0%   41-165
+scripts/fix_stereoisomer_remaps.py                               44     44     0%   21-105
+scripts/fix_sulfur_family.py                                    241    241     0%   4-469
+scripts/fix_tombstone_pointers.py                               118    118     0%   42-231
+scripts/fix_variable_sulfate_hydrates.py                        193    193     0%   23-380
+scripts/fix_wrong_compound_cas.py                                58     58     0%   37-148
+scripts/generate_complex_media_report.py                        140    140     0%   14-302
+scripts/generate_index_files.py                                 132    132     0%   8-269
+scripts/generate_ingredient_umap.py                             270    270     0%   4-585
+scripts/generate_report.py                                       88     88     0%   4-153
+scripts/generate_role_statistics.py                             112    112     0%   14-282
+scripts/identify_complex_media.py                                97     97     0%   16-271
+scripts/import_from_culturemech.py                               17     17     0%   10-51
+scripts/import_pfas_roles.py                                     90     90     0%   14-180
+scripts/infer_energy_source.py                                   35     35     0%   19-99
+scripts/infer_roles_from_chebi.py                                68     68     0%   45-192
+scripts/infer_roles_from_name_lists.py                           63     63     0%   39-234
+scripts/llm_curate_unmapped.py                                  210    210     0%   11-558
+scripts/make_record_refresh_receipt.py                           70     70     0%   14-138
+scripts/map_batch_priority.py                                    77     77     0%   4-172
+scripts/map_final_two.py                                         89     89     0%   4-180
+scripts/map_incomplete_formulas.py                              104    104     0%   8-332
+scripts/map_other_category.py                                    81     81     0%   4-194
+scripts/merge_aldehydo_duplicates.py                             74     74     0%   47-191
+scripts/merge_carnitine_hydrochloride.py                        315     47    85%   112, 146, 159, 165, 168, 171, 177, 194, 201, 246-247, 280, 297, 339, 344, 350, 388, 391, 415, 419, 445-473, 477
+scripts/merge_cas_conflict_duplicates.py                         80     80     0%   46-191
+scripts/merge_culturemech_updates.py                             16     16     0%   10-51
+scripts/merge_mapped_records.py                                 161    161     0%   34-283
+scripts/merge_minted_hydrate_duplicates.py                       77     77     0%   37-175
+scripts/merge_salt_label_duplicates.py                           95     95     0%   33-197
+scripts/merge_unmapped_into_mapped.py                           112    112     0%   30-194
+scripts/migrate_component_partonomy.py                          158    158     0%   10-404
+scripts/migrate_drop_legacy_ontology_id.py                       61     61     0%   27-127
+scripts/migrate_media_roles_to_facets.py                        165    165     0%   34-387
+scripts/move_mapped_out_of_unmapped_collection.py                90     90     0%   34-184
+scripts/move_nah2po4_hydrate_labels.py                          150    150     0%   28-228
+scripts/partition_class_term_cohort.py                           68     68     0%   41-161
+scripts/prepare_for_claude_curation.py                           59     59     0%   8-200
+scripts/prepare_unmapped_for_curation.py                         13     13     0%   10-39
+scripts/promote_heptahydrate_ncit.py                            283    160    43%   100-103, 107-116, 120-160, 164-172, 177-186, 191, 205-206, 220, 252, 271-272, 278-300, 309, 314-356, 361-390, 396-423, 427
+scripts/promote_microbedecoder_residual.py                      107    107     0%   55-215
+scripts/promote_microbedecoder_reviewed.py                      155    155     0%   55-347
+scripts/promote_resolved_unmapped.py                            173    173     0%   29-410
+scripts/propose_residual_groundings.py                          262    262     0%   27-513
+scripts/publish_cas_as_synonym.py                                73     73     0%   45-154
+scripts/reconcile_sssom.py                                      215    215     0%   30-400
+scripts/record_review.py                                        606    606     0%   8-806
+scripts/refresh_occurrence_statistics.py                        120    120     0%   40-260
+scripts/refresh_unchanged_cohort.py                               3      3     0%   3-6
+scripts/refresh_visualization_metadata.py                        52     52     0%   10-84
+scripts/regrade_hydrate_to_close_match.py                        63     63     0%   38-142
+scripts/regrade_identical_formula_parents.py                     65     65     0%   36-170
+scripts/regrade_sssom_columns.py                                 60     60     0%   24-103
+scripts/regrade_synonym_matches.py                              217    217     0%   44-551
+scripts/reground_aromatic_hydrocarbon.py                         67     67     0%   58-174
+scripts/reground_aspartate.py                                    58     58     0%   37-131
+scripts/reground_compositional_classes.py                        66     66     0%   30-157
+scripts/reground_mapped_record.py                               202    202     0%   46-404
+scripts/reject_carnitinamide_synonym.py                          68     68     0%   8-121
+scripts/reject_hidden_hydrate_synonym_collapses.py              146    146     0%   14-306
+scripts/relabel_mapped_record.py                                 77     77     0%   21-136
+scripts/remap_peptones_to_micro.py                               47     47     0%   22-121
+scripts/remove_duplicate_unmapped.py                             54     54     0%   4-87
+scripts/render_claude_research_prompt.py                         58     58     0%   19-118
+scripts/repair_comma_split_labels.py                             66     66     0%   52-189
+scripts/repair_heptahydrate_membership.py                        82     82     0%   9-133
+scripts/repair_incomplete_formulas.py                           175    175     0%   11-425
+scripts/report_hydrate_grounding.py                             206    206     0%   18-469
+scripts/report_residual_near_matches.py                         164    164     0%   38-307
+scripts/research_ingredient.py                                  286    286     0%   3-552
+scripts/research_ingredient_edison.py                           229    229     0%   48-484
+scripts/research_ingredient_roles_edison.py                      23     23     0%   30-66
+scripts/restore_carnitine_mapping_provenance.py                  85     85     0%   9-125
+scripts/restore_culturemech_grounding_evidence.py                61     61     0%   23-134
+scripts/restore_micro_source_identities.py                      107    107     0%   9-151
+scripts/retire_assay_labels.py                                   78     78     0%   50-220
+scripts/retire_parent_names_on_forms.py                          40     40     0%   29-90
+scripts/retire_reviewed_generated_aliases.py                    117    117     0%   8-250
+scripts/retire_wrong_compound_synonyms.py                        65     65     0%   46-186
+scripts/retire_wrong_form_names.py                              127    127     0%   34-237
+scripts/review_ingredient.py                                    121    121     0%   11-251
+scripts/run_shared_evidence_validator.py                        185    185     0%   10-262
+scripts/score_causal_graph_readiness.py                         260    260     0%   17-533
+scripts/sfdp_layout.py                                           24     24     0%   7-37
+scripts/strip_cas_leading_zeros.py                               94     94     0%   45-176
+scripts/test_llm_curator.py                                      85     85     0%   4-189
+scripts/test_synonym_preservation.py                             65     65     0%   4-153
+scripts/triage_culturemech_residual.py                          135    135     0%   28-261
+scripts/update_water_quality.py                                  55     55     0%   4-98
+scripts/validate_all.py                                         126    126     0%   12-216
+scripts/validate_component_partonomy.py                          25     25     0%   4-47
+scripts/validate_id_label_correspondence.py                     360    360     0%   89-1073
+scripts/validate_merge_integrity.py                              51     51     0%   4-88
+scripts/validate_published_curies.py                             59     59     0%   38-143
+scripts/validate_records_against_research.py                    295    295     0%   34-720
+scripts/validate_reviewed_sssom_schema.py                        62     62     0%   9-106
+scripts/validate_roles.py                                       160    160     0%   8-299
+scripts/validate_sssom_invariants.py                            517    517     0%   117-1377
+scripts/validate_strict.py                                      123    123     0%   28-277
+scripts/validate_synonyms.py                                    129    129     0%   12-285
+scripts/verify_merge_integrity.py                               218    218     0%   16-326
+scripts/verify_micro_ids.py                                      71     71     0%   9-95
+scripts/verify_roundtrip.py                                     126    126     0%   21-304
+src/mediaingredientmech/__init__.py                               0      0   100%
+src/mediaingredientmech/curate/__init__.py                        0      0   100%
+src/mediaingredientmech/curate/apply_receipt.py                  38      3    92%   12-13, 49
+src/mediaingredientmech/curate/curation_event.py                 27      5    81%   41, 94, 97-103
+src/mediaingredientmech/curation/__init__.py                     11     11     0%   3-28
+src/mediaingredientmech/curation/chebi_deduplicator.py          129    129     0%   3-334
+src/mediaingredientmech/curation/hydrate_guard.py                53     53     0%   29-198
+src/mediaingredientmech/curation/ingredient_curator.py          360    360     0%   3-927
+src/mediaingredientmech/curation/solution_matcher.py             99     99     0%   3-267
+src/mediaingredientmech/curation/synonym_manager.py             125    125     0%   3-244
+src/mediaingredientmech/curie.py                                129    129     0%   23-387
+src/mediaingredientmech/export/__init__.py                        0      0   100%
+src/mediaingredientmech/export/ingredient_bundle.py              65     65     0%   3-142
+src/mediaingredientmech/export/kgx.py                           310    310     0%   8-654
+src/mediaingredientmech/export/report_generator.py              134    134     0%   3-218
+src/mediaingredientmech/export/reviewed_sssom.py                252    252     0%   8-399
+src/mediaingredientmech/export/supported_kgx.py                 166    166     0%   7-350
+src/mediaingredientmech/import_quality.py                        11     11     0%   13-42
+src/mediaingredientmech/ingredient_bundle_contract.py           383    383     0%   3-664
+src/mediaingredientmech/ingredient_bundle_refresh.py            181    181     0%   8-337
+src/mediaingredientmech/mapping_scope.py                        224    224     0%   3-299
+src/mediaingredientmech/micro_source.py                          50     50     0%   9-82
+src/mediaingredientmech/record_refresh.py                       114    114     0%   17-205
+src/mediaingredientmech/render_ingredient_pages.py              147    147     0%   14-312
+src/mediaingredientmech/review_claims.py                         36     36     0%   3-72
+src/mediaingredientmech/schema/__init__.py                        0      0   100%
+src/mediaingredientmech/schema_site.py                           22     22     0%   3-54
+src/mediaingredientmech/sssom_grading.py                         32     32     0%   33-134
+src/mediaingredientmech/synonym_policy.py                        23     23     0%   3-57
+src/mediaingredientmech/utils/__init__.py                         2      2     0%   3-5
+src/mediaingredientmech/utils/chemical_normalizer.py            112    112     0%   11-377
+src/mediaingredientmech/utils/chemical_properties_client.py     167    167     0%   3-323
+src/mediaingredientmech/utils/culturemech_occurrences.py         67     67     0%   3-205
+src/mediaingredientmech/utils/doi_resolver.py                   163    163     0%   11-370
+src/mediaingredientmech/utils/fleet_paths.py                     19     19     0%   22-81
+src/mediaingredientmech/utils/kg_microbe_searcher.py             97     97     0%   3-199
+src/mediaingredientmech/utils/llm_curator.py                     82     82     0%   8-296
+src/mediaingredientmech/utils/oaklib_cache.py                    21     21     0%   25-84
+src/mediaingredientmech/utils/object_source.py                   13     13     0%   22-72
+src/mediaingredientmech/utils/ontology_client.py                 84     84     0%   3-162
+src/mediaingredientmech/utils/purity_detector.py                 98     98     0%   12-341
+src/mediaingredientmech/utils/role_facets.py                     31     31     0%   19-112
+src/mediaingredientmech/utils/role_iteration.py                  11     11     0%   14-64
+src/mediaingredientmech/utils/yaml_handler.py                    41     41     0%   10-114
+src/mediaingredientmech/validation/__init__.py                    3      0   100%
+src/mediaingredientmech/validation/component_partonomy.py       131    131     0%   9-242
+src/mediaingredientmech/validation/ingredient_reviewer.py       389    389     0%   12-1054
+src/mediaingredientmech/validation/kg_microbe_dict.py           264    200    24%   121-126, 141-145, 154-155, 165-167, 182-190, 203-271, 287-299, 309-342, 358, 374-381, 389-394, 415-424, 432-435, 448-470, 485-537, 551-565, 568-582, 586-599, 603, 614-616, 619, 622, 626, 630-633
+src/mediaingredientmech/validation/ontology_validator.py        116     87    25%   53, 57, 62-81, 90-98, 103-109, 114-139, 154-218
+src/mediaingredientmech/validation/schema_validator.py          183    121    34%   56, 60, 64, 91, 95-96, 105-108, 118-120, 137-139, 149-165, 171-193, 197-202, 206-212, 216-233, 237-273, 289-328, 333-347
+src/mediaingredientmech/validation/semantic_release.py          386    386     0%   8-916
+src/mediaingredientmech/validation/write_validated.py            48     12    75%   52-54, 57-65, 92, 94, 127
+-------------------------------------------------------------------------------------------
+TOTAL                                                         33957  33283     2%
+Coverage HTML written to dir htmlcov
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_valid_competing_owner_is_rechecked_before_commit[True-sources]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_valid_competing_owner_is_rechecked_before_commit[True-promote]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[False-False-sources]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[False-False-promote]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[False-True-sources]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[False-True-promote]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_real_native_builder_emits_the_bounded_claims
+7 failed, 59 passed, 13 warnings in 23.14s

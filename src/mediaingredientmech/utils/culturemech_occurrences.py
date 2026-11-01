@@ -58,6 +58,10 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("NaNO"): "CHEBI:63005",
     _source_label_key("Sodium phosphate dibasic"): "CHEBI:34683",
     _source_label_key("Sodium dihydrogen phosphate"): "CHEBI:37585",
+    # #1004: only the two reviewed hydrochloride source labels follow the
+    # merged exact salt identity; free and L-form source routes stay distinct.
+    _source_label_key("Carnitine Hydrochloride"): "NCIT:C216679",
+    _source_label_key("Carnitine (Dl) Hydrochloride"): "NCIT:C216679",
     # #875/#1031: preserve the exact accepted heptahydrate labels when an
     # upstream index still returns the retired local identity or parent.
     _source_label_key("Na2HPO4 x 7 H2O"): DISODIUM_PHOSPHATE_HEPTAHYDRATE_ID,

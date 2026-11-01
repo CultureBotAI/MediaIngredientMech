@@ -1,0 +1,38 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_native_nldm_all_68_nonmapping_approvals_are_withdrawn __________
+
+proposal = (<module 'carnitine_deps_merge_carnitine_hydrochloride' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngred...ltureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...})
+evidence = {'base_revision': '99fe4b44d78126d78041a69eeb366c52bedf0caa', 'component_disposition': {'change_plan': '', 'current_re...tches', 'llm_assisted': False, ...}], 'identifier': 'CHEBI:233463', 'ingredient_type': 'SINGLE_INGREDIENT', ...}}, ...}
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8337/test_native_nldm_all_68_nonmap0')
+
+    def test_native_nldm_all_68_nonmapping_approvals_are_withdrawn(proposal, evidence, tmp_path):
+        writer, before, after = proposal
+        builder = load("reports/semantic_review_20260921/resolution/build_review.py")
+        owner = str(OWNER)
+        old_hash, new_hash = sha(before[OWNER]), sha(after[OWNER])
+        eligible = historical_eligibility(builder, evidence, tmp_path / "before", old_hash)
+        assert eligible
+>       assert historical_eligibility(builder, evidence, tmp_path / "after", new_hash) == []
+E       AssertionError: assert [{'assertion_...8', ...}, ...] == []
+E         
+E         Left contains 69 more items, first extra item: {'assertion_sha256': 'dd280a530a88024bb567908b2c1cba2ee1850f62633459fd94696cb9f9e6b091', 'assertion_type': 'component'...ge_id': 'MIM.assertion:01d488f96e943adc938e6aa228159f183f7f614b42a61b648aa8b20866aec79f', 'object': 'CHEBI:16467', ...}
+E         Use -v to get more diff
+
+tests/test_carnitine_merge_dependencies.py:199: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_carnitine_merge_dependencies.py: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_carnitine_merge_dependencies.py::test_native_nldm_all_68_nonmapping_approvals_are_withdrawn
+1 failed, 11 deselected, 13 warnings in 1.40s

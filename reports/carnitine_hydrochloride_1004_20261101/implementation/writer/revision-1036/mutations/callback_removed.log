@@ -1,0 +1,91 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__ test_native_valid_competing_owner_is_rechecked_before_commit[True-sources] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8349/test_native_valid_co...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8349/test_native_valid_competing_ow0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10df79e00>
+phase = 'sources', late = True
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("late", [False, True])
+    def test_native_valid_competing_owner_is_rechecked_before_commit(case, before, monkeypatch, phase, late):
+        from kg_microbe_write.transaction import ValidationFailed
+        root, evidence, log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            def call():
+                return writer.promote(*args, apply=True)
+        else:
+            def call():
+                return writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        if late:
+            original = writer.guarded.reserve_receipt_outputs
+            @contextmanager
+            def race(*args, **kwargs):
+                with original(*args, **kwargs) as handles:
+                    native_competitor(root)
+                    yield handles
+            monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", race)
+        else:
+            native_competitor(root)
+>       with pytest.raises((ValueError, ValidationFailed), match="already held"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, ValidationFailed)
+
+tests/test_merge_carnitine_hydrochloride.py:264: Failed
+__ test_native_valid_competing_owner_is_rechecked_before_commit[True-promote] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8349/test_native_valid_co...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8349/test_native_valid_competing_ow1/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bb169e0>
+phase = 'promote', late = True
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("late", [False, True])
+    def test_native_valid_competing_owner_is_rechecked_before_commit(case, before, monkeypatch, phase, late):
+        from kg_microbe_write.transaction import ValidationFailed
+        root, evidence, log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            def call():
+                return writer.promote(*args, apply=True)
+        else:
+            def call():
+                return writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        if late:
+            original = writer.guarded.reserve_receipt_outputs
+            @contextmanager
+            def race(*args, **kwargs):
+                with original(*args, **kwargs) as handles:
+                    native_competitor(root)
+                    yield handles
+            monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", race)
+        else:
+            native_competitor(root)
+>       with pytest.raises((ValueError, ValidationFailed), match="already held"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, ValidationFailed)
+
+tests/test_merge_carnitine_hydrochloride.py:264: Failed
+=============================== warnings summary ===============================
+../../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_valid_competing_owner_is_rechecked_before_commit[True-sources]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_valid_competing_owner_is_rechecked_before_commit[True-promote]
+2 failed, 124 deselected, 13 warnings in 1.36s

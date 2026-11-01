@@ -1,0 +1,30 @@
+uv run python scripts/validate_published_curies.py
+OK: 2982 rows, 5964 CURIEs in ingredient_mappings.sssom.tsv match _CURIE_RE and use a known prefix.
+uv run python -m pytest tests/test_curie_normalizer.py -q --no-cov
+...............s.....                                                    [100%]
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 1 skipped, 1 warning in 0.05s
+uv run python scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml
+
+id↔label correspondence summary:
+          OK_CANONICAL: 6823
+            OK_ID_ONLY: 4469
+          OK_EXCEPTION: 20
+     IMPLAUSIBLE_LABEL: 69
+  LABEL_SUBSCRIPTS_LOST: 3
+  HYDRATE_ON_ANHYDROUS_TERM: 26
+  ANHYDROUS_ON_HYDRATE_TERM: 2
+  HYDRATION_STATE_MISMATCH: 1
+    SKIPPED_NO_ADAPTER: 5305
+
+⚠️  101 non-blocking id↔label warning(s) (plausibility_severity=error); see the report for detail.
+
+✅ All id↔label pairs correspond.

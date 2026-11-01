@@ -1,7 +1,7 @@
 # Reviewed MIM SSSOM
 
-The current standalone release has a decision for every one of the 2,986 MIM
-mapping rows: **1,740 supported** and **1,246 withheld**. Use the supported table for
+The current standalone release has a decision for every one of the 2,982 MIM
+mapping rows: **1,739 supported** and **1,243 withheld**. Use the supported table for
 mapping. The withheld table preserves complete source rows for further curation;
 it is not an approved mapping set.
 
@@ -48,6 +48,13 @@ than a false assertion.
 The #875 receipt replaces the Na2HPO4·7H2O parent mapping and local registry
 identity with one exact NCIT:C61946 mapping. That row remains withheld pending
 mapping-specific review; its unresolved chemistry and BUFFER claims remain open.
+
+The #1004 receipt replaces five carnitine salt rows with one exact NCIT:C216679
+row, preserves the duplicate as a rejected tombstone, and removes the wrong
+free-carnitine CAS and aliases. The corrected salt mapping remains withheld.
+Retargeting NLDM's component reference changes its owner bytes, so its mapping
+and all 68 component/role approvals also withdraw. Its original validation stamp
+remains historical provenance; it does not approve the changed owner.
 
 Review is agent-assisted and includes adversarial review; structural validation
 alone is not scientific approval. Source confidence and earlier validation

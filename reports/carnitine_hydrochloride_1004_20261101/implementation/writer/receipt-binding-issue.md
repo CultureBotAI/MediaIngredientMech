@@ -1,0 +1,9 @@
+The proposed guarded #1004 writer has a reproducible no-op receipt-binding gap before production application. This is an implementation finding on the unpublished `fix/carnitine-hydrochloride-1004-20261101` worktree, not a claim that the current main writer or published data is affected.
+
+At writer SHA256 `cc83d006402bf44db0ea6311f5b341b53e7c8fb8b7bbd35d71cb8533f767cd1c`, after a successful fixture application, replacing the new event timestamp consistently in all three owner proposals makes `apply_sources` return `changed: false` even though the current owner hashes no longer match the original completed source receipt. The no-op path reconstructs a semantically complete proposal but does not require its original receipt to bind those exact bytes. The promotion path already refuses that mismatch; this finding does not demonstrate unauthorized publication or approval carryover.
+
+Reproduction retained at `output/approved-plan-20261101T031134Z/step3-writer-evidence/probe_completed_receipt_binding.py` and `completed-receipt-binding-probe.json`. The actual probe used timestamp `2026-11-02T00:00:00+00:00` in an isolated fixture, reported `current_owners_match_actual_receipt: false`, and still returned a successful no-op. No production records changed.
+
+Require the completed source receipt on every completed-source no-op: complete/applied state, exact three current owner hashes and other output hashes, original timestamp, evidence manifest, and preserved beforeimages. Missing, stale, altered or partially bound receipts must fail without rewriting current records or historical evidence. Add regression tests and fresh-process negative controls, then independently re-review before applying #1004.
+
+Related to #1004; the correction will be included in its focused mapping PR. No scientific approval is implied.

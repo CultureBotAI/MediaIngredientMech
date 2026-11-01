@@ -1,8 +1,8 @@
 # Complete Ingredients Index
 **Total Records**: 2955
-**Mapped**: 2611 (88.4%)
+**Mapped**: 2610 (88.3%)
 **Unmapped**: 262 (8.9%)
-**Other statuses**: 82 (2.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 83 (2.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 223,062
 
 ---
@@ -653,8 +653,6 @@
 | CHEBI:16526 | Carbon dioxide gas | CHEBI:16526 | CHEBI | EXACT_MATCH | 862 |
 | CHEBI:234035 | Carboxymethyl cellulose | CHEBI:234035 | CHEBI | SYNONYM_MATCH | 8 |
 | kgmicrobe.compound:carcinomycin | Carcinomycin | kgmicrobe.compound:carcinomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
-| cas:461-06-3 | Carnitine (Dl) Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 0 |
-| kgmicrobe.compound:carnitine_hydrochloride | Carnitine Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 14 |
 | CHEBI:65585 | Carnosic Acid | CHEBI:65585 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C72000 | Carrot | NCIT:C72000 | NCIT | EXACT_MATCH | 5 |
 | kgmicrobe.compound:caryomycin | Caryomycin | kgmicrobe.compound:caryomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2622,6 +2620,7 @@
 | NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 20 |
 | NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 32 |
+| NCIT:C216679 | Carnitine Hydrochloride | NCIT:C216679 | NCIT | EXACT_MATCH | 14 |
 
 ## Unmapped Ingredients
 
@@ -2963,6 +2962,7 @@
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 | CHEBI:35697 | 0 |
 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 | CHEBI:114249 | 0 |
+| NCIT:C216679 | Carnitine (Dl) Hydrochloride | REJECTED | NCIT:C216679 | NCIT:C216679 | 0 |
 | UNMAPPED_0049 | Ca | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 0129 (2 | REJECTED |  |  | 0 |
 | UNMAPPED_0736 | 3-methylacetate | REJECTED |  |  | 0 |

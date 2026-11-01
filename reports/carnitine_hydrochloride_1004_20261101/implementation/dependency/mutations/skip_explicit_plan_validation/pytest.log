@@ -1,0 +1,69 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_native_explicit_plan_guard_remains_strict_without_nldm_bypass[component_plan] _
+
+proposal = (<module 'carnitine_deps_merge_carnitine_hydrochloride' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngred...ltureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...})
+evidence = {'base_revision': '99fe4b44d78126d78041a69eeb366c52bedf0caa', 'component_disposition': {'change_plan': '', 'current_re...tches', 'llm_assisted': False, ...}], 'identifier': 'CHEBI:233463', 'ingredient_type': 'SINGLE_INGREDIENT', ...}}, ...}
+plan_kind = 'component_plan'
+
+    @pytest.mark.parametrize("plan_kind", ["component_plan", "component_disposition"])
+    def test_native_explicit_plan_guard_remains_strict_without_nldm_bypass(proposal, evidence, plan_kind):
+        writer, before, after = proposal
+        builder = load("reports/semantic_review_20260921/resolution/build_review.py")
+        records = {path: yaml.safe_load(content) for path, content in evidence["explicit_plan_owner_bytes"].items()}
+        hashes = {path: sha(content.encode()) for path, content in evidence["explicit_plan_owner_bytes"].items()}
+        records[str(OWNER)] = yaml.safe_load(after[OWNER])
+        hashes[str(OWNER)] = sha(after[OWNER])
+        plan, disposition = evidence["component_plan"], evidence["component_disposition"]
+        plan_owner = plan.get("after_path", plan["source_record"])
+        assert str(OWNER) not in {plan_owner, disposition["current_record"]}
+        builder.validate_explicit_plans(records, hashes, [], {}, [plan], [disposition])
+        wrong = dict(hashes)
+        wrong[plan_owner if plan_kind == "component_plan" else disposition["current_record"]] = "stale fixture proof"
+>       with pytest.raises(ValueError, match="Component plan no longer|Stale component disposition"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_carnitine_merge_dependencies.py:227: Failed
+_ test_native_explicit_plan_guard_remains_strict_without_nldm_bypass[component_disposition] _
+
+proposal = (<module 'carnitine_deps_merge_carnitine_hydrochloride' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngred...ltureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...})
+evidence = {'base_revision': '99fe4b44d78126d78041a69eeb366c52bedf0caa', 'component_disposition': {'change_plan': '', 'current_re...tches', 'llm_assisted': False, ...}], 'identifier': 'CHEBI:233463', 'ingredient_type': 'SINGLE_INGREDIENT', ...}}, ...}
+plan_kind = 'component_disposition'
+
+    @pytest.mark.parametrize("plan_kind", ["component_plan", "component_disposition"])
+    def test_native_explicit_plan_guard_remains_strict_without_nldm_bypass(proposal, evidence, plan_kind):
+        writer, before, after = proposal
+        builder = load("reports/semantic_review_20260921/resolution/build_review.py")
+        records = {path: yaml.safe_load(content) for path, content in evidence["explicit_plan_owner_bytes"].items()}
+        hashes = {path: sha(content.encode()) for path, content in evidence["explicit_plan_owner_bytes"].items()}
+        records[str(OWNER)] = yaml.safe_load(after[OWNER])
+        hashes[str(OWNER)] = sha(after[OWNER])
+        plan, disposition = evidence["component_plan"], evidence["component_disposition"]
+        plan_owner = plan.get("after_path", plan["source_record"])
+        assert str(OWNER) not in {plan_owner, disposition["current_record"]}
+        builder.validate_explicit_plans(records, hashes, [], {}, [plan], [disposition])
+        wrong = dict(hashes)
+        wrong[plan_owner if plan_kind == "component_plan" else disposition["current_record"]] = "stale fixture proof"
+>       with pytest.raises(ValueError, match="Component plan no longer|Stale component disposition"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_carnitine_merge_dependencies.py:227: Failed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_carnitine_merge_dependencies.py: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_carnitine_merge_dependencies.py::test_native_explicit_plan_guard_remains_strict_without_nldm_bypass[component_plan]
+FAILED tests/test_carnitine_merge_dependencies.py::test_native_explicit_plan_guard_remains_strict_without_nldm_bypass[component_disposition]
+2 failed, 10 deselected, 13 warnings in 1.40s

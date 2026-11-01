@@ -1,0 +1,237 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_native_reservation_replacements_never_false_complete[False-False-sources-None] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservation_replac0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109375e00>
+phase = 'sources', replaced_path = None, symlink = False, after_commit = False
+
+    @pytest.mark.parametrize("phase,replaced_path", [
+        *(('sources', p) for p in (None, *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE)),
+        *(('promote', p) for p in (None, writer.SSSOM, writer.BASELINE)),
+    ])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, replaced_path, symlink, after_commit):
+        from kg_microbe_write.transaction import ValidationFailed
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            def call():
+                return writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            def call():
+                return writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        replaced = log if replaced_path is None else writer.backup_paths(log, (replaced_path,))[replaced_path]
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+>       with pytest.raises((ValueError, ValidationFailed), match="Reserved evidence"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, ValidationFailed)
+
+tests/test_merge_carnitine_hydrochloride.py:314: Failed
+_ test_native_reservation_replacements_never_false_complete[False-True-sources-None] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservation_replac1/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x106e829e0>
+phase = 'sources', replaced_path = None, symlink = True, after_commit = False
+
+    @pytest.mark.parametrize("phase,replaced_path", [
+        *(('sources', p) for p in (None, *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE)),
+        *(('promote', p) for p in (None, writer.SSSOM, writer.BASELINE)),
+    ])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, replaced_path, symlink, after_commit):
+        from kg_microbe_write.transaction import ValidationFailed
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            def call():
+                return writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            def call():
+                return writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        replaced = log if replaced_path is None else writer.backup_paths(log, (replaced_path,))[replaced_path]
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+>       with pytest.raises((ValueError, ValidationFailed), match="Reserved evidence"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, ValidationFailed)
+
+tests/test_merge_carnitine_hydrochloride.py:314: Failed
+_ test_native_reservation_replacements_never_false_complete[True-False-sources-None] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservation_replac2/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109c87bf0>
+phase = 'sources', replaced_path = None, symlink = False, after_commit = True
+
+    @pytest.mark.parametrize("phase,replaced_path", [
+        *(('sources', p) for p in (None, *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE)),
+        *(('promote', p) for p in (None, writer.SSSOM, writer.BASELINE)),
+    ])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, replaced_path, symlink, after_commit):
+        from kg_microbe_write.transaction import ValidationFailed
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            def call():
+                return writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            def call():
+                return writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        replaced = log if replaced_path is None else writer.backup_paths(log, (replaced_path,))[replaced_path]
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+>       with pytest.raises((ValueError, ValidationFailed), match="Reserved evidence"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, ValidationFailed)
+
+tests/test_merge_carnitine_hydrochloride.py:314: Failed
+_ test_native_reservation_replacements_never_false_complete[True-True-sources-None] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservat...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8343/test_native_reservation_replac3/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1094856a0>
+phase = 'sources', replaced_path = None, symlink = True, after_commit = True
+
+    @pytest.mark.parametrize("phase,replaced_path", [
+        *(('sources', p) for p in (None, *writer.SOURCE_PATHS, writer.SSSOM, writer.BASELINE)),
+        *(('promote', p) for p in (None, writer.SSSOM, writer.BASELINE)),
+    ])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("after_commit", [False, True])
+    def test_native_reservation_replacements_never_false_complete(case, before, monkeypatch, phase, replaced_path, symlink, after_commit):
+        from kg_microbe_write.transaction import ValidationFailed
+        root, evidence, source_log = case
+        if phase == "promote":
+            args = promoted_case(case, before)
+            log = args[3]
+            def call():
+                return writer.promote(*args, apply=True)
+        else:
+            log = source_log
+            def call():
+                return writer.apply_sources(root, evidence, log, apply=True)
+        snapshots = {p: (root / p).read_bytes() for p in before}
+        replaced = log if replaced_path is None else writer.backup_paths(log, (replaced_path,))[replaced_path]
+        original = writer.guarded.new_transaction
+        victim = root / "competitor-evidence"
+        victim.write_bytes(b"competing evidence")
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing evidence")
+        def transaction(*args, **kwargs):
+            native = original(*args, **kwargs)
+            commit = native.commit
+            def racing_commit(apply=False):
+                if apply and not after_commit:
+                    replace()
+                result = commit(apply=apply)
+                if apply and after_commit:
+                    replace()
+                return result
+            native.commit = racing_commit
+            return native
+        monkeypatch.setattr(writer.guarded, "new_transaction", transaction)
+>       with pytest.raises((ValueError, ValidationFailed), match="Reserved evidence"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, ValidationFailed)
+
+tests/test_merge_carnitine_hydrochloride.py:314: Failed
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[False-False-sources-None]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[False-True-sources-None]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[True-False-sources-None]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_native_reservation_replacements_never_false_complete[True-True-sources-None]
+4 failed, 109 deselected, 13 warnings in 1.23s

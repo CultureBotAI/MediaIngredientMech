@@ -1,0 +1,34 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_historical_membership_migration_preserves_exact_pairs_and_unrelated_bytes _
+
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+proposal = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: NCIT:C216679\npreferred_term: Carnit...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+
+    def test_historical_membership_migration_preserves_exact_pairs_and_unrelated_bytes(before, proposal):
+        before_rows = writer.table(before[writer.MEMBERSHIP])[1]
+        after_rows = writer.table(proposal[writer.MEMBERSHIP])[1]
+        old = [r for r in before_rows if r["mim_identifier"] == writer.OLD]
+        new = [r for r in after_rows if r["mim_identifier"] == writer.NEW]
+>       assert len(old) == len(new) == 14
+E       AssertionError: assert 14 == 0
+E        +  where 14 = len([{'mim_identifier': 'kgmicrobe.compound:carnitine_hydrochloride', 'recipe_id': 'CultureMech:015654', 'occurrences': '1...identifier': 'kgmicrobe.compound:carnitine_hydrochloride', 'recipe_id': 'CultureMech:015667', 'occurrences': '1'}, ...])
+E        +  and   0 = len([])
+
+tests/test_merge_carnitine_hydrochloride.py:129: AssertionError
+=============================== warnings summary ===============================
+../../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_historical_membership_migration_preserves_exact_pairs_and_unrelated_bytes
+1 failed, 125 deselected, 13 warnings in 0.74s
