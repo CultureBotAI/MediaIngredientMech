@@ -1,0 +1,157 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[False-symlink] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme0')
+replacement = 'symlink', callback_raises = False
+
+    @pytest.mark.parametrize("replacement", ["symlink", "regular"])
+    @pytest.mark.parametrize("callback_raises", [False, True])
+    def test_reserved_output_replacement_never_overwrites_or_deletes_other_writer(
+        tmp_path, replacement, callback_raises
+    ):
+        victim = tmp_path / "immutable-review.json"
+        victim.write_bytes(b"original immutable review")
+        outputs = [tmp_path / name for name in ("new-review.json", "new-receipt.json", "prior-copy.json")]
+        replaced = outputs[0]
+    
+        def replace_reservation():
+            replaced.unlink()
+            if replacement == "symlink":
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing writer's output")
+            if callback_raises:
+                raise ValueError("input snapshot changed")
+    
+>       with pytest.raises(ValueError, match="input snapshot changed|Output reservation changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_ingredient_bundle_dependency_refresh.py:485: Failed
+_ test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[False-regular] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme1')
+replacement = 'regular', callback_raises = False
+
+    @pytest.mark.parametrize("replacement", ["symlink", "regular"])
+    @pytest.mark.parametrize("callback_raises", [False, True])
+    def test_reserved_output_replacement_never_overwrites_or_deletes_other_writer(
+        tmp_path, replacement, callback_raises
+    ):
+        victim = tmp_path / "immutable-review.json"
+        victim.write_bytes(b"original immutable review")
+        outputs = [tmp_path / name for name in ("new-review.json", "new-receipt.json", "prior-copy.json")]
+        replaced = outputs[0]
+    
+        def replace_reservation():
+            replaced.unlink()
+            if replacement == "symlink":
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing writer's output")
+            if callback_raises:
+                raise ValueError("input snapshot changed")
+    
+>       with pytest.raises(ValueError, match="input snapshot changed|Output reservation changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_ingredient_bundle_dependency_refresh.py:485: Failed
+_ test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[True-symlink] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme2')
+replacement = 'symlink', callback_raises = True
+
+    @pytest.mark.parametrize("replacement", ["symlink", "regular"])
+    @pytest.mark.parametrize("callback_raises", [False, True])
+    def test_reserved_output_replacement_never_overwrites_or_deletes_other_writer(
+        tmp_path, replacement, callback_raises
+    ):
+        victim = tmp_path / "immutable-review.json"
+        victim.write_bytes(b"original immutable review")
+        outputs = [tmp_path / name for name in ("new-review.json", "new-receipt.json", "prior-copy.json")]
+        replaced = outputs[0]
+    
+        def replace_reservation():
+            replaced.unlink()
+            if replacement == "symlink":
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing writer's output")
+            if callback_raises:
+                raise ValueError("input snapshot changed")
+    
+        with pytest.raises(ValueError, match="input snapshot changed|Output reservation changed"):
+            refresh.publish_new_files([(p, b"our new bytes") for p in outputs], replace_reservation)
+        assert victim.read_bytes() == b"original immutable review"
+        if replacement == "symlink":
+>           assert replaced.is_symlink()
+E           AssertionError: assert False
+E            +  where False = is_symlink()
+E            +    where is_symlink = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme2/new-review.json').is_symlink
+
+tests/test_ingredient_bundle_dependency_refresh.py:489: AssertionError
+_ test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[True-regular] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme3')
+replacement = 'regular', callback_raises = True
+
+    @pytest.mark.parametrize("replacement", ["symlink", "regular"])
+    @pytest.mark.parametrize("callback_raises", [False, True])
+    def test_reserved_output_replacement_never_overwrites_or_deletes_other_writer(
+        tmp_path, replacement, callback_raises
+    ):
+        victim = tmp_path / "immutable-review.json"
+        victim.write_bytes(b"original immutable review")
+        outputs = [tmp_path / name for name in ("new-review.json", "new-receipt.json", "prior-copy.json")]
+        replaced = outputs[0]
+    
+        def replace_reservation():
+            replaced.unlink()
+            if replacement == "symlink":
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competing writer's output")
+            if callback_raises:
+                raise ValueError("input snapshot changed")
+    
+        with pytest.raises(ValueError, match="input snapshot changed|Output reservation changed"):
+            refresh.publish_new_files([(p, b"our new bytes") for p in outputs], replace_reservation)
+        assert victim.read_bytes() == b"original immutable review"
+        if replacement == "symlink":
+            assert replaced.is_symlink()
+            assert replaced.readlink() == victim
+        else:
+>           assert replaced.read_bytes() == b"competing writer's output"
+                   ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ingredient_bundle_dependency_refresh.py:492: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme3/new-review.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8115/test_reserved_output_replaceme3/new-review.json'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[False-symlink]
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[False-regular]
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[True-symlink]
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_reserved_output_replacement_never_overwrites_or_deletes_other_writer[True-regular]
+4 failed, 32 deselected in 0.09s

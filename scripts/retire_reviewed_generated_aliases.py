@@ -10,9 +10,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "src"))
+
+from mediaingredientmech.curate.apply_receipt import reserve_receipt_outputs  # noqa: E402
+
 PLANS = [{'subject_id': 'MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt',
   'predicate_id': 'skos:broadMatch',
   'object_id': 'CHEBI:48430',
@@ -221,18 +226,22 @@ def main() -> int:
         "approval": "NONE; existing withheld decisions remain withheld",
     }
     if args.apply:
-        args.log.parent.mkdir(parents=True, exist_ok=True)
-        if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
-            raise ValueError("Refusing to overwrite existing audit evidence")
-        # Validate the complete operation before writing either maintained output.
-        if canonical.read_bytes() != before or baseline.read_bytes() != baseline_before:
-            raise ValueError("A maintained input changed during review")
-        verified_owners(ROOT)
-        args.log.with_suffix(".before.tsv").write_bytes(before)
-        args.log.with_suffix(".baseline-before.tsv").write_bytes(baseline_before)
-        canonical.write_bytes(after)
-        baseline.write_bytes(baseline_after)
-        args.log.write_text(json.dumps(receipt, indent=2) + "\n")
+        backup_paths = (args.log.with_suffix(".before.tsv"),
+                        args.log.with_suffix(".baseline-before.tsv"))
+        with reserve_receipt_outputs(args.log, backup_paths=backup_paths) as (
+            receipt_handle, canonical_backup, baseline_backup,
+        ):
+            # Reserve all evidence outputs before touching either maintained source.
+            if canonical.read_bytes() != before or baseline.read_bytes() != baseline_before:
+                raise ValueError("A maintained input changed during review")
+            verified_owners(ROOT)
+            canonical_backup.write(before)
+            canonical_backup.flush()
+            baseline_backup.write(baseline_before)
+            baseline_backup.flush()
+            canonical.write_bytes(after)
+            baseline.write_bytes(baseline_after)
+            receipt_handle.write(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps({"applied": args.apply, **receipt}, indent=2))
     return 0
 

@@ -1,12 +1,17 @@
 """An unrelated batch cannot renew or alter a companion scientific approval."""
 
-import importlib.util
+import csv
+import io
+import subprocess
 import sys
 from copy import deepcopy
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
+import yaml
 
+from mediaingredientmech import ingredient_bundle_refresh as refresh
 from mediaingredientmech.ingredient_bundle_contract import (
     _base_table,
     content_sha256,
@@ -15,33 +20,115 @@ from mediaingredientmech.ingredient_bundle_contract import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-HELPER = ROOT / "reports/ingredient_bundle_20261101/refresh_unchanged_cohort.py"
-spec = importlib.util.spec_from_file_location("refresh_unchanged_cohort", HELPER)
-refresh = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(refresh)
+HELPER = ROOT / "scripts/refresh_unchanged_cohort.py"
+HISTORICAL = "reports/ingredient_bundle_20261101/review.json"
+EVIDENCE = "reports/sssom_completion_20260921/mapping-evidence.json"
+SOURCE = "mappings/ingredient_mappings.sssom.tsv"
+EXTRA_OWNER = "data/ingredients/mapped/Refresh_Unselected_Fixture.yaml"
+
+
+def table_bytes(metadata, fields, rows):
+    header = "".join(
+        "# " + line + "\n" for line in yaml.safe_dump(metadata, sort_keys=False).splitlines()
+    )
+    stream = io.StringIO()
+    writer = csv.DictWriter(stream, fieldnames=fields, delimiter="\t", lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    return (header + stream.getvalue()).encode()
+
+
+def advance_unselected_generation(review, sources, new_date):
+    """Produce a fully valid fixture change outside the selected cohort."""
+    result = dict(sources)
+    base = read_json(result[review["base_review"]])
+    source = base["source_sssom"]
+    metadata, fields, rows = _base_table(result[source])
+    rows[-1]["mapping_date"] = new_date.isoformat()
+    metadata.update(mapping_date=new_date.isoformat(), mapping_set_version=new_date.isoformat())
+    result[source] = table_bytes(metadata, fields, rows)
+    evidence = read_json(result[EVIDENCE])
+    decision = base["decisions"][-1]
+    digest = content_sha256(refresh.canonical_json(rows[-1]))
+    decision["row_sha256"] = digest
+    evidence["entries"][decision["evidence_key"]]["row_sha256"] = digest
+    result[EVIDENCE] = refresh.encode(evidence)
+    base["source_sha256"] = content_sha256(result[source])
+    base["inputs"][EVIDENCE] = content_sha256(result[EVIDENCE])
+    result[review["base_review"]] = refresh.encode(base)
+    return result
 
 
 @pytest.fixture(scope="module")
 def cohort():
-    """Portable synthetic history, without git objects or external providers."""
-    current_review = read_json((ROOT / refresh.SUCCESSOR).read_bytes())
-    current = {p: (ROOT / p).read_bytes() for p in refresh.source_names(current_review)}
-    prior = deepcopy(current_review)
-    before = dict(current)
-    base_path = prior["base_review"]
-    base = read_json(before[base_path])
-    source = base["source_sssom"]
-    # Current batch's newest date belongs only to owners outside this cohort.
-    before[source] = before[source].replace(b"2026-11-01", b"2026-10-15")
-    evidence = read_json(before[refresh.EVIDENCE])
-    evidence["fixture_marker"] = "unselected container-only historical change"
-    before[refresh.EVIDENCE] = refresh.encode(evidence)
-    base["source_sha256"] = content_sha256(before[source])
-    base["inputs"][refresh.EVIDENCE] = content_sha256(before[refresh.EVIDENCE])
-    before[base_path] = refresh.encode(base)
-    prior["base_review_sha256"] = content_sha256(before[base_path])
-    prior["inputs"][source] = content_sha256(before[source])
-    prior["inputs"][refresh.EVIDENCE] = content_sha256(before[refresh.EVIDENCE])
+    """Synthetic base review; no dependency on the live canonical header/date."""
+    prior = read_json((ROOT / HISTORICAL).read_bytes())
+    before = {p: (ROOT / p).read_bytes() for p in refresh.source_names(prior)}
+    archived = read_json(
+        (ROOT / "reports/ingredient_bundle_20261101/dependency-refresh.json").read_bytes()
+    )
+    selected = archived["selected_mapping_evidence_unchanged"]
+    fields = archived["columns_unchanged"]
+    rows = [deepcopy(entry["original_row"]) for entry in selected]
+    baseline_date = max(date.fromisoformat(row["mapping_date"]) for row in rows) + timedelta(days=1)
+    metadata = deepcopy(archived["semantic_metadata_unchanged"])
+    metadata.update(
+        mapping_date=baseline_date.isoformat(), mapping_set_version=baseline_date.isoformat()
+    )
+    extra = dict.fromkeys(fields, "")
+    extra.update(
+        subject_id="MIM:Refresh_Unselected_Fixture",
+        subject_label="Refresh Unselected Fixture",
+        predicate_id="skos:closeMatch",
+        object_id="CHEBI:17126",
+        object_label="carnitine",
+        object_source="CHEBI",
+        mapping_date=baseline_date.isoformat(),
+        confidence="0.5",
+    )
+    rows.append(extra)
+    extra_owner = b"preferred_term: Refresh Unselected Fixture\nmapping_status: MAPPED\nidentifier: CHEBI:17126\n"
+    before[EXTRA_OWNER] = extra_owner
+    prior["inputs"][EXTRA_OWNER] = content_sha256(extra_owner)
+    decisions = []
+    entries = {}
+    for position, entry in enumerate(selected, 1):
+        decision = deepcopy(entry["base_decision"])
+        decision["source_position"] = position
+        decisions.append(decision)
+        entries[decision["evidence_key"]] = entry["base_evidence"]
+    extra_decision = {
+        "source_position": len(rows),
+        "row_sha256": content_sha256(refresh.canonical_json(extra)),
+        "owner_record": EXTRA_OWNER,
+        "disposition": "WITHHOLD",
+        "review_reason": "Synthetic unselected fixture, never scientific approval",
+        "review_evidence": EVIDENCE,
+        "evidence_key": "unselected-fixture",
+    }
+    decisions.append(extra_decision)
+    entries["unselected-fixture"] = {
+        k: v
+        for k, v in extra_decision.items()
+        if k not in {"source_position", "review_evidence", "evidence_key"}
+    }
+    entries["unselected-fixture"]["owner_record_sha256"] = content_sha256(extra_owner)
+    before[EVIDENCE] = refresh.encode({"schema_version": 1, "entries": entries})
+    before[SOURCE] = table_bytes(metadata, fields, rows)
+    base = {
+        "schema_version": 1,
+        "scope": "Synthetic test history; no curation approval",
+        "source_sssom": SOURCE,
+        "source_sha256": content_sha256(before[SOURCE]),
+        "inputs": {EVIDENCE: content_sha256(before[EVIDENCE])},
+        "record_inputs": {**prior["record_inputs"], EXTRA_OWNER: content_sha256(extra_owner)},
+        "decisions": decisions,
+    }
+    before[prior["base_review"]] = refresh.encode(base)
+    prior["base_review_sha256"] = content_sha256(before[prior["base_review"]])
+    for path in (SOURCE, EVIDENCE):
+        prior["inputs"][path] = content_sha256(before[path])
+    current = advance_unselected_generation(prior, before, baseline_date + timedelta(days=5))
     contracts = {p: (ROOT / p).read_bytes() for p in refresh.CONTRACTS}
     reviewed_products(prior, before)
     return prior, before, current, contracts
@@ -78,7 +165,7 @@ def test_only_dependency_hashes_change(cohort):
     assert successor["claims_sha256"] == prior["claims_sha256"]
     assert set(receipt["dependency_changes"]) == {
         prior["base_review"],
-        refresh.EVIDENCE,
+        EVIDENCE,
         "mappings/ingredient_mappings.sssom.tsv",
     }
     assert len(receipt["selected_mapping_evidence_unchanged"]) == 20
@@ -158,21 +245,21 @@ def test_selected_evidence_basis_change_refused(cohort):
         verify(cohort, current)
 
 
-@pytest.mark.parametrize(
-    "old,new",
-    [
-        (b"# predicate_semantics: skos", b"# predicate_semantics: inverted"),
-        (b"http://purl.obolibrary.org/obo/CHEBI_", b"https://incorrect.example/CHEBI_"),
-        (b"subject_id\tsubject_label", b"subject_id\tchanged_column"),
-        (b'# mapping_date: "2026-11-01"', b'# mapping_date: "2026-02-30"'),
-    ],
-)
-def test_semantics_columns_and_invalid_date_refused(cohort, old, new):
+@pytest.mark.parametrize("change", ["predicate_semantics", "prefix", "column", "invalid_date"])
+def test_semantics_columns_and_invalid_date_refused(cohort, change):
     _, _, source, _ = cohort
     current = dict(source)
-    name = "mappings/ingredient_mappings.sssom.tsv"
-    assert old in current[name]
-    current[name] = current[name].replace(old, new)
+    metadata, fields, rows = _base_table(current[SOURCE])
+    if change == "predicate_semantics":
+        metadata["predicate_semantics"] = "inverted"
+    elif change == "prefix":
+        metadata["curie_map"]["CHEBI"] = "https://incorrect.example/CHEBI_"
+    elif change == "column":
+        fields.append("unreviewed_column")
+    else:
+        year = date.fromisoformat(str(metadata["mapping_date"])).year
+        metadata["mapping_date"] = f"{year}-02-30"
+    current[SOURCE] = table_bytes(metadata, fields, rows)
     with pytest.raises(ValueError):
         verify(cohort, current)
 
@@ -180,15 +267,29 @@ def test_semantics_columns_and_invalid_date_refused(cohort, old, new):
 def test_valid_but_stale_header_refused(cohort):
     _, _, source, _ = cohort
     current = dict(source)
-    name = "mappings/ingredient_mappings.sssom.tsv"
-    current[name] = current[name].replace(
-        b'# mapping_date: "2026-11-01"', b'# mapping_date: "2026-11-02"'
-    )
-    current[name] = current[name].replace(
-        b'# mapping_set_version: "2026-11-01"', b'# mapping_set_version: "2026-11-02"'
-    )
+    metadata, fields, rows = _base_table(current[SOURCE])
+    stale = max(date.fromisoformat(r["mapping_date"]) for r in rows) + timedelta(days=1)
+    metadata.update(mapping_date=stale.isoformat(), mapping_set_version=stale.isoformat())
+    current[SOURCE] = table_bytes(metadata, fields, rows)
     with pytest.raises(ValueError, match="Rule G"):
         verify(cohort, current)
+
+
+def test_later_header_date_still_tests_actual_rule_g(cohort):
+    prior, before, current, contracts = cohort
+    _, _, rows = _base_table(current[SOURCE])
+    later = max(date.fromisoformat(r["mapping_date"]) for r in rows) + timedelta(days=400)
+    advanced = advance_unselected_generation(prior, current, later)
+    successor, _ = refresh.verify_unchanged_cohort(prior, before, advanced, contracts, contracts)
+    reviewed_products(successor, advanced)
+    metadata, fields, rows = _base_table(advanced[SOURCE])
+    metadata.update(
+        mapping_date=(later + timedelta(days=1)).isoformat(),
+        mapping_set_version=(later + timedelta(days=1)).isoformat(),
+    )
+    advanced[SOURCE] = table_bytes(metadata, fields, rows)
+    with pytest.raises(ValueError, match="Rule G"):
+        verify(cohort, advanced)
 
 
 @pytest.mark.parametrize("contract", refresh.CONTRACTS)
@@ -234,6 +335,10 @@ def test_main_duplicate_destinations_refused_before_any_write(
             str(HELPER),
             "--root",
             str(tmp_path),
+            "--baseline",
+            "HEAD",
+            "--prior-review",
+            "history/prior.json",
             "--output",
             str(outputs[0]),
             "--receipt",
@@ -245,3 +350,146 @@ def test_main_duplicate_destinations_refused_before_any_write(
     with pytest.raises(ValueError, match="Output paths collide"):
         refresh.main()
     assert list(tmp_path.iterdir()) == []
+
+
+@pytest.mark.parametrize("pair", [(0, 1), (0, 2), (1, 2)])
+def test_main_symlink_alias_destinations_refused_without_writes(tmp_path, pair):
+    real = tmp_path / "real"
+    real.mkdir()
+    alias = tmp_path / "alias"
+    alias.symlink_to(real, target_is_directory=True)
+    outputs = [real / name for name in ("review.json", "receipt.json", "prior.json")]
+    outputs[pair[1]] = alias / outputs[pair[0]].name
+    with pytest.raises(ValueError, match="Output paths collide"):
+        refresh.main(
+            [
+                "--root",
+                str(tmp_path),
+                "--baseline",
+                "HEAD",
+                "--prior-review",
+                "history/prior.json",
+                "--output",
+                str(outputs[0]),
+                "--receipt",
+                str(outputs[1]),
+                "--prior-copy",
+                str(outputs[2]),
+            ]
+        )
+    assert list(real.iterdir()) == []
+    assert alias.is_symlink()
+
+
+def test_reusable_cli_across_two_baselines_prior_paths_and_later_dates(cohort, tmp_path):
+    prior, before, current, contracts = cohort
+
+    def write_sources(sources):
+        for name, content in sources.items():
+            path = tmp_path / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(content)
+
+    def git(*args):
+        return subprocess.check_output(["git", "-C", str(tmp_path), *args]).decode().strip()
+
+    def commit(message):
+        git("add", ".")
+        git(
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-qm",
+            message,
+        )
+        return git("rev-parse", "HEAD")
+
+    def invoke(baseline, old, output):
+        args = [
+            sys.executable,
+            str(HELPER),
+            "--root",
+            str(tmp_path),
+            "--baseline",
+            baseline,
+            "--prior-review",
+            old,
+            "--output",
+            output,
+            "--receipt",
+            output + ".receipt.json",
+            "--prior-copy",
+            output + ".prior.json",
+        ]
+        completed = subprocess.run(args, cwd=ROOT, capture_output=True, text=True)
+        assert completed.returncode == 0, completed.stderr
+        return read_json((tmp_path / output).read_bytes()), read_json(
+            (tmp_path / (output + ".receipt.json")).read_bytes()
+        )
+
+    first_path = "history/first.json"
+    write_sources(before | contracts | {first_path: refresh.encode(prior)})
+    git("init", "-q")
+    first_baseline = commit("Synthetic initial reviewed inputs")
+    write_sources(current)
+    first, first_receipt = invoke(first_baseline, first_path, "history/second.json")
+    assert first_receipt["historical_commit"] == first_baseline
+    assert first_receipt["prior_review"] == first_path
+    assert (tmp_path / first_path).read_bytes() == refresh.encode(prior)
+    second_baseline = commit("Synthetic unchanged-cohort successor")
+    _, _, rows = _base_table(current[SOURCE])
+    later = max(date.fromisoformat(r["mapping_date"]) for r in rows) + timedelta(days=400)
+    advanced = advance_unselected_generation(first, current, later)
+    write_sources(advanced)
+    second, second_receipt = invoke(second_baseline, "history/second.json", "history/third.json")
+    assert second_receipt["historical_commit"] == second_baseline != first_baseline
+    assert second_receipt["prior_review"] == "history/second.json"
+    assert second_receipt["header_date_changes"]["mapping_date"]["after"] == later.isoformat()
+    assert second["decisions"] == prior["decisions"] == first["decisions"]
+    assert second["record_inputs"] == prior["record_inputs"]
+    assert (tmp_path / "history/third.json.prior.json").read_bytes() == refresh.encode(first)
+    reviewed_products(second, advanced)
+
+
+def test_original_review_scope_change_refused(cohort):
+    prior, _, source, _ = cohort
+    current = dict(source)
+    base = read_json(current[prior["base_review"]])
+    base["scope"] = "Expanded scope is not an unchanged dependency refresh"
+    current[prior["base_review"]] = refresh.encode(base)
+    with pytest.raises(ValueError, match="Original review scope or contract changed"):
+        verify(cohort, current)
+
+
+@pytest.mark.parametrize("replacement", ["symlink", "regular"])
+@pytest.mark.parametrize("callback_raises", [False, True])
+def test_reserved_output_replacement_never_overwrites_or_deletes_other_writer(
+    tmp_path, replacement, callback_raises
+):
+    victim = tmp_path / "immutable-review.json"
+    victim.write_bytes(b"original immutable review")
+    outputs = [
+        tmp_path / name for name in ("new-review.json", "new-receipt.json", "prior-copy.json")
+    ]
+    replaced = outputs[0]
+
+    def replace_reservation():
+        replaced.unlink()
+        if replacement == "symlink":
+            replaced.symlink_to(victim)
+        else:
+            replaced.write_bytes(b"competing writer's output")
+        if callback_raises:
+            raise ValueError("input snapshot changed")
+
+    with pytest.raises(ValueError, match="input snapshot changed|Output reservation changed"):
+        refresh.publish_new_files([(p, b"our new bytes") for p in outputs], replace_reservation)
+    assert victim.read_bytes() == b"original immutable review"
+    if replacement == "symlink":
+        assert replaced.is_symlink()
+        assert replaced.readlink() == victim
+    else:
+        assert replaced.read_bytes() == b"competing writer's output"
+    assert all(not p.exists() for p in outputs[1:])

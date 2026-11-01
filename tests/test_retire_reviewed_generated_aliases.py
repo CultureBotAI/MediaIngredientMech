@@ -101,8 +101,8 @@ def test_refuses_changed_owner_and_never_writes_it(tmp_path, monkeypatch):
     assert owner.read_bytes() == b"concurrent curation\n"
 
 
-@pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
-def test_cli_refuses_evidence_collision_before_any_maintained_write(tmp_path, monkeypatch, collision):
+@pytest.fixture
+def alias_apply_case(tmp_path, monkeypatch):
     mappings = tmp_path / "mappings"
     mappings.mkdir()
     canonical = mappings / "ingredient_mappings.sssom.tsv"
@@ -120,11 +120,207 @@ def test_cli_refuses_evidence_collision_before_any_maintained_write(tmp_path, mo
     monkeypatch.setattr(mod, "PLANS", plans)
     monkeypatch.setattr(mod, "ROOT", tmp_path)
     receipt = tmp_path / "apply.json"
-    path = {"receipt": receipt, "canonical_backup": receipt.with_suffix(".before.tsv"),
-            "baseline_backup": receipt.with_suffix(".baseline-before.tsv")}[collision]
-    path.write_bytes(b"preserved earlier evidence\n")
-    before = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
     monkeypatch.setattr(sys, "argv", ["script", "--apply", "--candidate", str(candidate), "--log", str(receipt)])
-    with pytest.raises(ValueError, match="Refusing to overwrite"):
+    outputs = {"receipt": receipt, "canonical_backup": receipt.with_suffix(".before.tsv"),
+               "baseline_backup": receipt.with_suffix(".baseline-before.tsv")}
+    sources = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
+    return outputs, sources, canonical, baseline
+
+
+@pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+@pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+def test_cli_refuses_evidence_collision_before_any_source_write(
+    alias_apply_case, tmp_path, monkeypatch, collision, kind,
+):
+    outputs, sources, _, _ = alias_apply_case
+    path = outputs[collision]
+    marker = b"preserved earlier evidence\n"
+    target = tmp_path / "other-evidence"
+    if kind == "file":
+        path.write_bytes(marker)
+    elif kind == "directory":
+        path.mkdir()
+    else:
+        if kind == "symlink":
+            target.write_bytes(marker)
+        path.symlink_to(target)
+    writes = []
+    original_write = Path.write_bytes
+
+    def observe_write(self, data):
+        if self in sources:
+            writes.append(self)
+        return original_write(self, data)
+
+    monkeypatch.setattr(Path, "write_bytes", observe_write)
+    with pytest.raises(FileExistsError):
         mod.main()
-    assert {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()} == before
+    assert writes == []
+    assert {p: p.read_bytes() for p in sources} == sources
+    assert all(not p.exists() for p in outputs.values() if p != path)
+    if kind == "file":
+        assert path.read_bytes() == marker
+    elif kind == "directory":
+        assert path.is_dir()
+    else:
+        assert path.is_symlink()
+        assert path.readlink() == target
+        if kind == "symlink":
+            assert target.read_bytes() == marker
+        else:
+            assert not target.exists()
+
+
+@pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+def test_concurrent_evidence_creation_cannot_be_overwritten(alias_apply_case, monkeypatch, collision):
+    outputs, sources, _, _ = alias_apply_case
+    path = outputs[collision]
+    original_open = Path.open
+    injected = False
+
+    def racing_open(self, mode="r", *args, **kwargs):
+        nonlocal injected
+        if self == path and not injected and any(flag in mode for flag in "wxa"):
+            injected = True
+            with original_open(path, "xb") as handle:
+                handle.write(b"another writer won the reservation\n")
+        return original_open(self, mode, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", racing_open)
+    with pytest.raises(FileExistsError):
+        mod.main()
+    assert injected
+    assert path.read_bytes() == b"another writer won the reservation\n"
+    assert {p: p.read_bytes() for p in sources} == sources
+    assert all(not p.exists() for p in outputs.values() if p != path)
+
+
+def test_late_reservation_failure_cleans_only_new_reservations(alias_apply_case, monkeypatch):
+    outputs, sources, _, _ = alias_apply_case
+    original_open = Path.open
+
+    def denied_open(self, mode="r", *args, **kwargs):
+        if self == outputs["baseline_backup"] and any(flag in mode for flag in "wxa"):
+            raise PermissionError("simulated third reservation failure")
+        return original_open(self, mode, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", denied_open)
+    with pytest.raises(PermissionError, match="third reservation"):
+        mod.main()
+    assert {p: p.read_bytes() for p in sources} == sources
+    assert all(not path.exists() for path in outputs.values())
+
+
+def test_success_reserves_all_outputs_and_flushes_both_backups_before_mutation(
+    alias_apply_case, monkeypatch,
+):
+    outputs, sources, canonical, baseline = alias_apply_case
+    original_open, original_write = Path.open, Path.write_bytes
+    reservations = []
+    writes = []
+
+    def observe_open(self, mode="r", *args, **kwargs):
+        if self in outputs.values() and any(flag in mode for flag in "wxa"):
+            reservations.append((self, mode))
+        return original_open(self, mode, *args, **kwargs)
+
+    def guarded_write(self, data):
+        if self in {canonical, baseline}:
+            assert reservations == [(outputs["receipt"], "x"),
+                                    (outputs["canonical_backup"], "xb"),
+                                    (outputs["baseline_backup"], "xb")]
+            assert outputs["canonical_backup"].read_bytes() == sources[canonical]
+            assert outputs["baseline_backup"].read_bytes() == sources[baseline]
+            writes.append(self)
+        return original_write(self, data)
+
+    monkeypatch.setattr(Path, "open", observe_open)
+    monkeypatch.setattr(Path, "write_bytes", guarded_write)
+    assert mod.main() == 0
+    assert writes == [canonical, baseline]
+    assert canonical.read_bytes() == mapping_fixture(candidate=True)
+    assert baseline.read_bytes() == mod.transform_baseline(sources[baseline])
+    assert outputs["receipt"].read_text().endswith("\n")
+    assert {p: p.read_bytes() for p in sources if p not in {canonical, baseline}} == {
+        p: data for p, data in sources.items() if p not in {canonical, baseline}
+    }
+
+
+@pytest.mark.parametrize("replaced", ["receipt", "canonical_backup"])
+@pytest.mark.parametrize("replacement", ["file", "symlink", "removed"])
+@pytest.mark.parametrize("late_open", ["failure", "success"])
+def test_reservation_replacement_preserves_competitor_and_refuses_source_writes(
+    alias_apply_case, tmp_path, monkeypatch, replaced, replacement, late_open,
+):
+    outputs, sources, _, _ = alias_apply_case
+    path = outputs[replaced]
+    immutable = tmp_path / "historical-review.yaml"
+    immutable.write_bytes(b"historical review must not change\n")
+    original_open, original_write = Path.open, Path.write_bytes
+    injected = False
+    writes = []
+
+    def racing_open(self, mode="r", *args, **kwargs):
+        nonlocal injected
+        if self == outputs["baseline_backup"] and mode == "xb" and not injected:
+            injected = True
+            path.unlink()
+            if replacement == "file":
+                with original_open(path, "xb") as handle:
+                    handle.write(b"competing writer's evidence\n")
+            elif replacement == "symlink":
+                path.symlink_to(immutable)
+            if late_open == "failure":
+                raise PermissionError("later backup reservation failed")
+        return original_open(self, mode, *args, **kwargs)
+
+    def observe_write(self, data):
+        if self in sources:
+            writes.append(self)
+        return original_write(self, data)
+
+    monkeypatch.setattr(Path, "open", racing_open)
+    monkeypatch.setattr(Path, "write_bytes", observe_write)
+    error = PermissionError if late_open == "failure" else ValueError
+    with pytest.raises(error):
+        mod.main()
+    assert injected
+    assert writes == []
+    assert {p: p.read_bytes() for p in sources} == sources
+    assert immutable.read_bytes() == b"historical review must not change\n"
+    if replacement == "file":
+        assert path.read_bytes() == b"competing writer's evidence\n"
+    elif replacement == "symlink":
+        assert path.is_symlink() and path.readlink() == immutable
+    else:
+        assert not path.exists()
+    assert all(not p.exists() for p in outputs.values() if p != path)
+
+
+def test_owned_cleanup_runs_while_exclusive_handles_remain_open(alias_apply_case, monkeypatch):
+    outputs, sources, _, _ = alias_apply_case
+    original_open, original_unlink = Path.open, Path.unlink
+    handles = []
+    cleaned = []
+
+    def fail_last_open(self, mode="r", *args, **kwargs):
+        if self == outputs["baseline_backup"] and mode == "xb":
+            raise PermissionError("last reservation denied")
+        handle = original_open(self, mode, *args, **kwargs)
+        if self in outputs.values() and mode in {"x", "xb"}:
+            handles.append(handle)
+        return handle
+
+    def observe_cleanup(self, *args, **kwargs):
+        if self in outputs.values():
+            assert handles and all(not handle.closed for handle in handles)
+            cleaned.append(self)
+        return original_unlink(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", fail_last_open)
+    monkeypatch.setattr(Path, "unlink", observe_cleanup)
+    with pytest.raises(PermissionError, match="last reservation denied"):
+        mod.main()
+    assert set(cleaned) == {outputs["receipt"], outputs["canonical_backup"]}
+    assert all(handle.closed for handle in handles)
+    assert {p: p.read_bytes() for p in sources} == sources

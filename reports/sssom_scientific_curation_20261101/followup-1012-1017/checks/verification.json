@@ -1,0 +1,1130 @@
+{
+  "execution_head": "612860e467aff74ecc1339df7c3c32b1bf940b95",
+  "source_state": "working_tree",
+  "commands": [
+    {
+      "receipt": "followup-format-check-online.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "black",
+        "--check",
+        "src/mediaingredientmech/ingredient_bundle_refresh.py",
+        "src/mediaingredientmech/curate/apply_receipt.py"
+      ],
+      "log_sha256": "4a5fc18fee2a67ffdccc0e848f94767f7dc9db38e8412be925bcdeaec1d8cae9"
+    },
+    {
+      "receipt": "followup-format-check.json",
+      "exit_code": 1,
+      "argv": [
+        "uvx",
+        "--offline",
+        "black",
+        "--check",
+        "src/mediaingredientmech/ingredient_bundle_refresh.py",
+        "src/mediaingredientmech/curate/apply_receipt.py"
+      ],
+      "log_sha256": "51de76ab79062c49d0e8f86dc0a4d8d179099057d9c7b7471fe652226014c1a8"
+    },
+    {
+      "receipt": "followup-full-format.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "--offline",
+        "black",
+        "--check",
+        "src/mediaingredientmech"
+      ],
+      "log_sha256": "d11359bb762585719915d9cf73b2eea8dca135ee78f4bd90fa4f8407ffa05465"
+    },
+    {
+      "receipt": "followup-full-graph.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "mediaingredientmech.export.kgx",
+        "--output",
+        "output/mim-kgx-710-full"
+      ],
+      "log_sha256": "c0e35108b0df8c8f7c2b311057cad2badd54385fa389b3ba3a4824008ddd8396"
+    },
+    {
+      "receipt": "followup-full-lint.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "--offline",
+        "ruff",
+        "check",
+        "src/mediaingredientmech"
+      ],
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "receipt": "followup-full-qc.json",
+      "exit_code": 0,
+      "argv": [
+        "just",
+        "qc"
+      ],
+      "log_sha256": "8f5177be2974fcf25998666f6a9123a65e2f1de92ef1746ea8e0e02338f29c06"
+    },
+    {
+      "receipt": "followup-full-tests.json",
+      "exit_code": 0,
+      "argv": [
+        "env",
+        "-u",
+        "MEDIAINGREDIENTMECH_ROOT",
+        "-u",
+        "CULTUREMECH_ROOT",
+        "-u",
+        "KGMICROBE_ROOT",
+        "-u",
+        "CLAW_ROOT",
+        "-u",
+        "CLAW_SRC",
+        "-u",
+        "OPENCLAW_ORCHESTRATION_ROOT",
+        "-u",
+        "OPENCLAW_WORKSPACE",
+        "RECORD_REVIEW_BASE=4625afd492b6cf43e3b499d1425d2453d490009d",
+        "uv",
+        "run",
+        "--with",
+        "pytest",
+        "--with",
+        "pytest-cov",
+        "pytest"
+      ],
+      "log_sha256": "affa913d9c282570a69abeeb526684586864e8653a9cdceebe4a3198130b4580"
+    },
+    {
+      "receipt": "followup-legacy-coverage.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "pytest",
+        "--with",
+        "pytest-cov",
+        "coverage",
+        "report",
+        "--include=scripts/*"
+      ],
+      "log_sha256": "1517668d86811bbf0c2a3eac591afdeffaf09b2f225312a29a2495c326954f9c"
+    },
+    {
+      "receipt": "followup-package-coverage.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "pytest",
+        "--with",
+        "pytest-cov",
+        "coverage",
+        "report",
+        "--include=src/mediaingredientmech/*",
+        "--fail-under=35"
+      ],
+      "log_sha256": "67646653df9163fe3014eb5737220202a44d88b33eeaedcdd808b36dd5540a70"
+    },
+    {
+      "receipt": "followup-promotion-audit.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "../followup-1012-1017/recompute_promotion.py",
+        "ready"
+      ],
+      "log_sha256": "5a87dd1f88018779c25e5acf82c5a31773d7ea5fece4e020be18b1f7970adc30"
+    },
+    {
+      "receipt": "followup-python-lint.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "--offline",
+        "ruff",
+        "check",
+        "src/mediaingredientmech/ingredient_bundle_refresh.py",
+        "src/mediaingredientmech/curate/apply_receipt.py",
+        "scripts/refresh_unchanged_cohort.py",
+        "scripts/restore_carnitine_mapping_provenance.py",
+        "scripts/retire_reviewed_generated_aliases.py",
+        "reports/sssom_completion_20260921/assemble_review.py",
+        "tests/test_ingredient_bundle_dependency_refresh.py",
+        "tests/test_ingredient_bundle.py",
+        "tests/test_restore_carnitine_mapping_provenance.py",
+        "tests/test_retire_reviewed_generated_aliases.py",
+        "tests/test_mapping_change_receipt.py"
+      ],
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "receipt": "followup-refresh-final-replay.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "scripts/refresh_unchanged_cohort.py",
+        "--baseline",
+        "612860e467aff74ecc1339df7c3c32b1bf940b95",
+        "--prior-review",
+        "reports/ingredient_bundle_20261101/review.json",
+        "--output",
+        "../followup-1012-1017/final-replay-review.json",
+        "--receipt",
+        "../followup-1012-1017/final-replay-receipt.json",
+        "--prior-copy",
+        "../followup-1012-1017/final-replay-prior.json"
+      ],
+      "log_sha256": "3fbf7141e83e8ec95ff418cc0cc0ce03f9308c45a490585a9640ca16fc314df3"
+    },
+    {
+      "receipt": "followup-refresh-final-tests.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "tests/test_ingredient_bundle_dependency_refresh.py",
+        "tests/test_ingredient_bundle.py",
+        "-q"
+      ],
+      "log_sha256": "175559255234c45dc574ecfec55cca5a66055fbf24a04576ba8773ec9b933428"
+    },
+    {
+      "receipt": "followup-reviewed-export.json",
+      "exit_code": 0,
+      "argv": [
+        "just",
+        "export-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/mim-reviewed-1014"
+      ],
+      "log_sha256": "a66626045e4eb717eb204825aff16e29b3de912d11c9e1cecf01bb3dc6524906"
+    },
+    {
+      "receipt": "followup-reviewed-validate.json",
+      "exit_code": 0,
+      "argv": [
+        "just",
+        "qc-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/mim-reviewed-1014"
+      ],
+      "log_sha256": "f5faa6c28be05c18d7be47c6c067a42828331c91043927ddf262f17760858f18"
+    },
+    {
+      "receipt": "followup-semantic-build.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "reports/semantic_review_20260921/resolution/build_review.py",
+        "--bundle",
+        "output/mim-kgx-710-full"
+      ],
+      "log_sha256": "45227309c3e4b80579e6e6a46a429d26cf6fd2d3ace7e1f1ba28aa63b8fcc16f"
+    },
+    {
+      "receipt": "followup-semantic-integrity.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "mediaingredientmech.validation.semantic_release",
+        "--root",
+        ".",
+        "--report",
+        "reports/semantic_review_20260921/resolution/current-review.json"
+      ],
+      "log_sha256": "90eb85ea6aac322e5f500e252bac25fb0cde9acbc1817fba8d2bd9d0ebfcee81"
+    },
+    {
+      "receipt": "followup-supported-export.json",
+      "exit_code": 0,
+      "argv": [
+        "just",
+        "export-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/mim-supported-1014"
+      ],
+      "log_sha256": "99b23ef78d62cb2caabc6b3f70cb31889213a4bc4a73a766314b76acca2e2013"
+    },
+    {
+      "receipt": "followup-supported-validate.json",
+      "exit_code": 0,
+      "argv": [
+        "just",
+        "qc-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/mim-supported-1014"
+      ],
+      "log_sha256": "afdef6db20674d2a32fd778f72d78356e71850824c2fbd29889d4a1638fab428"
+    },
+    {
+      "receipt": "followup-typecheck-final.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "mypy==1.19.1",
+        "mypy",
+        "src/mediaingredientmech"
+      ],
+      "log_sha256": "0f0451a70963ae73be675ad208919e74e8bf1cfecdd4689aabe892085d717fc7"
+    },
+    {
+      "receipt": "followup-typecheck-overlay.json",
+      "exit_code": 1,
+      "argv": [
+        "uv",
+        "run",
+        "--with",
+        "mypy==1.19.1",
+        "mypy",
+        "src/mediaingredientmech"
+      ],
+      "log_sha256": "95bebd47e118e67d42264c8c40163e9f8b2a051b1e026072f79edd8a76d2e3cd"
+    },
+    {
+      "receipt": "followup-typecheck.json",
+      "exit_code": 2,
+      "argv": [
+        "just",
+        "typecheck"
+      ],
+      "log_sha256": "3d26669326245155efb2d0e7a3122c10a91a8e45342124cb838a99ab550fea31"
+    },
+    {
+      "receipt": "followup1014-apply.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "scripts/restore_carnitine_mapping_provenance.py",
+        "--log",
+        "../followup-1012-1017/provenance-restoration.json",
+        "--apply"
+      ],
+      "log_sha256": "b98a526c0b90cfabcaf2985f2a94ca706f24d610ea50f37ad32aeaa8d8425840"
+    },
+    {
+      "receipt": "followup1014-assemble-check.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "reports/sssom_completion_20260921/assemble_review.py",
+        "--check"
+      ],
+      "log_sha256": "710484b8faef7b4592edeb4f762119c2b8f7863c30a31709de9f808a75ae599e"
+    },
+    {
+      "receipt": "followup1014-assemble.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "reports/sssom_completion_20260921/assemble_review.py"
+      ],
+      "log_sha256": "74bcf3a43bd46c4741e54693e9db8208148c16f2ff3ff54a6e60890c31703c2c"
+    },
+    {
+      "receipt": "followup1014-receipt.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "reports/sssom_completion_20260921/mapping_changes/make_receipt.py",
+        "--batch",
+        "issue1014-provenance-restoration",
+        "--sequence",
+        "15",
+        "--issue",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1014",
+        "--scope",
+        "Restore the original source tokens on both carnitine rows and the historical #390 comment; preserve the nine-row correction, dates and all scientific holds.",
+        "--before-sssom",
+        "../followup-1012-1017/provenance-restoration.before.tsv",
+        "--apply-log",
+        "../followup-1012-1017/provenance-restoration.json"
+      ],
+      "log_sha256": "2262a693f8ba71f056e816a758cc1cb645407ec23c17d4bfa0aca5e330156453"
+    },
+    {
+      "receipt": "followup1014-ruff-offline.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "--offline",
+        "ruff",
+        "check",
+        "scripts/restore_carnitine_mapping_provenance.py",
+        "tests/test_restore_carnitine_mapping_provenance.py"
+      ],
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "receipt": "followup1014-ruff.json",
+      "exit_code": 2,
+      "argv": [
+        "uvx",
+        "ruff",
+        "check",
+        "scripts/restore_carnitine_mapping_provenance.py",
+        "tests/test_restore_carnitine_mapping_provenance.py"
+      ],
+      "log_sha256": "ab960078234ac3697fb507c8fdadea23ac7e81c44106a364eadf43bd5b0a42b6"
+    },
+    {
+      "receipt": "followup1014-tests.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "tests/test_restore_carnitine_mapping_provenance.py",
+        "-q"
+      ],
+      "log_sha256": "393293b479e82097aa9f94cde722e6d3874ae866a0a54dae74acf04f75bfb8d1"
+    },
+    {
+      "receipt": "issue1015_green.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "pytest",
+        "-q",
+        "--no-cov",
+        "tests/test_retire_reviewed_generated_aliases.py",
+        "tests/test_curation_receipt_collisions.py",
+        "tests/test_reject_carnitinamide_synonym.py"
+      ],
+      "log_sha256": "1af1478405cd59061cad7ba41ad454f3b14435eceafc02f68e12ef14d68d2401"
+    },
+    {
+      "receipt": "issue1015_lint.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "--offline",
+        "ruff",
+        "check",
+        "scripts/retire_reviewed_generated_aliases.py",
+        "src/mediaingredientmech/curate/apply_receipt.py",
+        "tests/test_retire_reviewed_generated_aliases.py"
+      ],
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "receipt": "issue1015_red.json",
+      "exit_code": 1,
+      "argv": [
+        "uv",
+        "run",
+        "pytest",
+        "-q",
+        "--no-cov",
+        "tests/test_retire_reviewed_generated_aliases.py"
+      ],
+      "log_sha256": "1bf14d75079a06e6ba64e079be2efa26aa67796ce6817c08c7d2a89ea15a4179"
+    },
+    {
+      "receipt": "issue1017_receipt_suite.json",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_mapping_change_receipt.py",
+        "tests/test_mapping_followup.py",
+        "tests/test_record_refresh.py",
+        "--no-cov",
+        "-q"
+      ],
+      "log_sha256": "4157a126f35629a82329961a3bce5a8927ef0fab56d0ccafaf7652f932008206"
+    },
+    {
+      "receipt": "issue1017_regression_green.json",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_mapping_change_receipt.py",
+        "-k",
+        "assembled_evidence",
+        "--no-cov",
+        "-q"
+      ],
+      "log_sha256": "e78ec817b39f99132ad170284772c2f3486c56d06e8a8d87a867ba272bba7a5e"
+    },
+    {
+      "receipt": "issue1017_regression_red.json",
+      "exit_code": 1,
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_mapping_change_receipt.py",
+        "-k",
+        "assembled_evidence",
+        "--no-cov",
+        "-q"
+      ],
+      "log_sha256": "af5c1897d4a9bbbbc933a4dcc650fd072a01cf29bfa5ef387054d4e1218d8190"
+    },
+    {
+      "receipt": "issue1018_receipt_green.json",
+      "exit_code": 0,
+      "argv": [
+        "uv",
+        "run",
+        "pytest",
+        "-q",
+        "--no-cov",
+        "tests/test_retire_reviewed_generated_aliases.py",
+        "tests/test_curation_receipt_collisions.py",
+        "tests/test_reject_carnitinamide_synonym.py",
+        "tests/test_restore_carnitine_mapping_provenance.py"
+      ],
+      "log_sha256": "04e179c1859d0c7c3e60d480ef38c6f12eb8b86fb1b007a152873d03bf009071"
+    },
+    {
+      "receipt": "issue1018_receipt_lint.json",
+      "exit_code": 0,
+      "argv": [
+        "uvx",
+        "--offline",
+        "ruff",
+        "check",
+        "scripts/retire_reviewed_generated_aliases.py",
+        "src/mediaingredientmech/curate/apply_receipt.py",
+        "tests/test_retire_reviewed_generated_aliases.py"
+      ],
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "receipt": "issue1018_receipt_red.json",
+      "exit_code": 1,
+      "argv": [
+        "uv",
+        "run",
+        "pytest",
+        "-q",
+        "--no-cov",
+        "tests/test_retire_reviewed_generated_aliases.py"
+      ],
+      "log_sha256": "717826029b3555c36f5732a3527d0de63146167b7ee33229b06e16e42d6dad6d"
+    }
+  ],
+  "publication_inputs": [
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-format-check-online.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-format-check-online.json",
+      "sha256": "218c5b23506a640f3ac5b0a0c781f1b09c082be9e7c3654d54875d9ee1479c4b",
+      "bytes": 749
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-format-check-online.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-format-check-online.log",
+      "sha256": "4a5fc18fee2a67ffdccc0e848f94767f7dc9db38e8412be925bcdeaec1d8cae9",
+      "bytes": 129
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-format-check.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-format-check.json",
+      "sha256": "17ae01957e31f69c14382de24dd46814e6aafb8e91fe88304e30bbb271b17b0e",
+      "bytes": 752
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-format-check.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-format-check.log",
+      "sha256": "51de76ab79062c49d0e8f86dc0a4d8d179099057d9c7b7471fe652226014c1a8",
+      "bytes": 363
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-format.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-format.json",
+      "sha256": "fc6328e8826e5668a974b12e7f3c4afa798c642d2bd4d1c8efcde7a542e3f8d1",
+      "bytes": 666
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-format.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-format.log",
+      "sha256": "d11359bb762585719915d9cf73b2eea8dca135ee78f4bd90fa4f8407ffa05465",
+      "bytes": 57
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-graph.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-graph.json",
+      "sha256": "5bc376071dd6e191197733270ce3bcc4318757e49736b5dd9d441e87bd4fbd11",
+      "bytes": 707
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-graph.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-graph.log",
+      "sha256": "c0e35108b0df8c8f7c2b311057cad2badd54385fa389b3ba3a4824008ddd8396",
+      "bytes": 898
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-lint.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-lint.json",
+      "sha256": "684898aafb57aec01bb761f67d807c2435bb77a7f245e643c35cc70df32317e6",
+      "bytes": 659
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-lint.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-qc.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-qc.json",
+      "sha256": "24281111d8565c540df0eaf556b692f223f153f5bd4a9d63a23bb32db8c8404d",
+      "bytes": 593
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-qc.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-qc.log",
+      "sha256": "8f5177be2974fcf25998666f6a9123a65e2f1de92ef1746ea8e0e02338f29c06",
+      "bytes": 295903
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-tests.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-tests.json",
+      "sha256": "f7666606a9c84e37556b1812f4383197df8085854f6e1a452282f82239c1c44f",
+      "bytes": 992
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-full-tests.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-full-tests.log",
+      "sha256": "affa913d9c282570a69abeeb526684586864e8653a9cdceebe4a3198130b4580",
+      "bytes": 52857
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-legacy-coverage.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-legacy-coverage.json",
+      "sha256": "6e4b0fb634c7b43c74eb2c96a20ceafecd73124a55d25312aabb7b7a37ea9f3e",
+      "bytes": 742
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-legacy-coverage.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-legacy-coverage.log",
+      "sha256": "1517668d86811bbf0c2a3eac591afdeffaf09b2f225312a29a2495c326954f9c",
+      "bytes": 15825
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-package-coverage.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-package-coverage.json",
+      "sha256": "1ba8344ea8acf4bfe4f40694948269a435d0f2d61c4ec5208add1e9b541965c1",
+      "bytes": 783
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-package-coverage.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-package-coverage.log",
+      "sha256": "67646653df9163fe3014eb5737220202a44d88b33eeaedcdd808b36dd5540a70",
+      "bytes": 4592
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-promotion-audit.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-promotion-audit.json",
+      "sha256": "1301d8ddced82d1044645c05b04ed57ba9d49b656761ae1cee94bc078fd04ea8",
+      "bytes": 687
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-promotion-audit.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-promotion-audit.log",
+      "sha256": "5a87dd1f88018779c25e5acf82c5a31773d7ea5fece4e020be18b1f7970adc30",
+      "bytes": 1490
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-python-lint.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-python-lint.json",
+      "sha256": "6262260c0fdb77100788a00d1fd63c9af12095520cc4862000136fe23677bddf",
+      "bytes": 1211
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-python-lint.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-python-lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-refresh-final-replay.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-refresh-final-replay.json",
+      "sha256": "39367fcd14f8a6156a7b1dca126da8c4ef1b8ba9f666eaa8a8895f1f3e762b29",
+      "bytes": 1032
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-refresh-final-replay.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-refresh-final-replay.log",
+      "sha256": "3fbf7141e83e8ec95ff418cc0cc0ce03f9308c45a490585a9640ca16fc314df3",
+      "bytes": 239
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-refresh-final-tests.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-refresh-final-tests.json",
+      "sha256": "1e510c983b3db301af353f2e146caf8b6466b9441af64022fa98db92e173af47",
+      "bytes": 787
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-refresh-final-tests.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-refresh-final-tests.log",
+      "sha256": "175559255234c45dc574ecfec55cca5a66055fbf24a04576ba8773ec9b933428",
+      "bytes": 836
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-reviewed-export.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-reviewed-export.json",
+      "sha256": "b11a906b3c506c00d1c020408f8ff4551c20044bd5800e0255808e72fa2898ab",
+      "bytes": 713
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-reviewed-export.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-reviewed-export.log",
+      "sha256": "a66626045e4eb717eb204825aff16e29b3de912d11c9e1cecf01bb3dc6524906",
+      "bytes": 1098
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-reviewed-validate.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-reviewed-validate.json",
+      "sha256": "c56a91e69b0c2ed3eb6fd5c3d383b0a30d5696dde2d14f54f11a2133057b2ff2",
+      "bytes": 713
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-reviewed-validate.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-reviewed-validate.log",
+      "sha256": "f5faa6c28be05c18d7be47c6c067a42828331c91043927ddf262f17760858f18",
+      "bytes": 2718
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-semantic-build.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-semantic-build.json",
+      "sha256": "0e7bd6173eafd6495574313a88170008d79a7717481c2567f1e31334de4fe118",
+      "bytes": 734
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-semantic-build.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-semantic-build.log",
+      "sha256": "45227309c3e4b80579e6e6a46a429d26cf6fd2d3ace7e1f1ba28aa63b8fcc16f",
+      "bytes": 260
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-semantic-integrity.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-semantic-integrity.json",
+      "sha256": "a2f688b594a356af2479df852a2faea95c63aad5ddfb4b1d5a2798d5be4190b7",
+      "bytes": 803
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-semantic-integrity.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-semantic-integrity.log",
+      "sha256": "90eb85ea6aac322e5f500e252bac25fb0cde9acbc1817fba8d2bd9d0ebfcee81",
+      "bytes": 292
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-supported-export.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-supported-export.json",
+      "sha256": "80c3b45eb16e340dccb4a5ccd563a636191943836bedd56a1cd7c51fd1536cd8",
+      "bytes": 733
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-supported-export.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-supported-export.log",
+      "sha256": "99b23ef78d62cb2caabc6b3f70cb31889213a4bc4a73a766314b76acca2e2013",
+      "bytes": 4337
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-supported-validate.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-supported-validate.json",
+      "sha256": "6a5e6d9c9075a3fc045c9a7ae8c83cae476d171ec109800d85312ea9d9a4df88",
+      "bytes": 733
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-supported-validate.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-supported-validate.log",
+      "sha256": "afdef6db20674d2a32fd778f72d78356e71850824c2fbd29889d4a1638fab428",
+      "bytes": 579
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-typecheck-final.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-typecheck-final.json",
+      "sha256": "3586ec138aed6d350b22d1a60177b1ba8253766fbb21c585d1f473d71bb86a91",
+      "bytes": 702
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-typecheck-final.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-typecheck-final.log",
+      "sha256": "0f0451a70963ae73be675ad208919e74e8bf1cfecdd4689aabe892085d717fc7",
+      "bytes": 44
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-typecheck-overlay.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-typecheck-overlay.json",
+      "sha256": "1fee4a54cf1d029a991682bcb3ddd55d5e9fa02fab7e5ea5b8f95b8c911e6da0",
+      "bytes": 689
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-typecheck-overlay.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-typecheck-overlay.log",
+      "sha256": "95bebd47e118e67d42264c8c40163e9f8b2a051b1e026072f79edd8a76d2e3cd",
+      "bytes": 280
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-typecheck.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-typecheck.json",
+      "sha256": "a12cc75f1a5b4fc2d9f103e0d6e02f546cd9caa38acb5a76b6bd2669f34a75b2",
+      "bytes": 604
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup-typecheck.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup-typecheck.log",
+      "sha256": "3d26669326245155efb2d0e7a3122c10a91a8e45342124cb838a99ab550fea31",
+      "bytes": 202
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-apply.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-apply.json",
+      "sha256": "28d40fd1b9fb33815611c2c295d48008e62d40dc5c9f6ca563fdd0bbc51d31f4",
+      "bytes": 750
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-apply.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-apply.log",
+      "sha256": "b98a526c0b90cfabcaf2985f2a94ca706f24d610ea50f37ad32aeaa8d8425840",
+      "bytes": 1334
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-assemble-check.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-assemble-check.json",
+      "sha256": "e39a0be7a4228799b0d33e353ea89baa4f1798ba84ae2ecb601a27b8739a9408",
+      "bytes": 703
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-assemble-check.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-assemble-check.log",
+      "sha256": "710484b8faef7b4592edeb4f762119c2b8f7863c30a31709de9f808a75ae599e",
+      "bytes": 118
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-assemble.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-assemble.json",
+      "sha256": "026b39f150ebc504c0f266f70f19ad163467f9dac7275c6cac1aad8ad64bef30",
+      "bytes": 676
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-assemble.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-assemble.log",
+      "sha256": "74bcf3a43bd46c4741e54693e9db8208148c16f2ff3ff54a6e60890c31703c2c",
+      "bytes": 119
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-receipt.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-receipt.json",
+      "sha256": "d6040b94089405e71508f510f6533013838a193ea23f2d590e83f05167472f71",
+      "bytes": 1196
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-receipt.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-receipt.log",
+      "sha256": "2262a693f8ba71f056e816a758cc1cb645407ec23c17d4bfa0aca5e330156453",
+      "bytes": 916
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-ruff-offline.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-ruff-offline.json",
+      "sha256": "4b82241fb3b803bd35d21dac879b5505da205882b201508b71ef2496d77f2542",
+      "bytes": 755
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-ruff-offline.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-ruff-offline.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-ruff.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-ruff.json",
+      "sha256": "5717362372b4b6d33e4636b5a276194b97764103e4df0ef1f8b4dd3e5f7cb447",
+      "bytes": 722
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-ruff.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-ruff.log",
+      "sha256": "ab960078234ac3697fb507c8fdadea23ac7e81c44106a364eadf43bd5b0a42b6",
+      "bytes": 463
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-tests.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-tests.json",
+      "sha256": "b11128dea83c15419cb1ea1cf5556548d188b6766d0648671bc8c026915a3cde",
+      "bytes": 728
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup1014-tests.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup1014-tests.log",
+      "sha256": "393293b479e82097aa9f94cde722e6d3874ae866a0a54dae74acf04f75bfb8d1",
+      "bytes": 754
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1015_green.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1015_green.json",
+      "sha256": "2b11884e34239e4c99375057a5e0b95c989fb260587855cf818a4bb2fa83c70e",
+      "bytes": 784
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1015_green.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1015_green.log",
+      "sha256": "1af1478405cd59061cad7ba41ad454f3b14435eceafc02f68e12ef14d68d2401",
+      "bytes": 1669
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1015_lint.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1015_lint.json",
+      "sha256": "3b3d6324c18b073c72bad52b0cf63d902fec9439602601c3a62baa9b22594d9e",
+      "bytes": 782
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1015_lint.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1015_lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1015_red.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1015_red.json",
+      "sha256": "304d140b1face45dce34c3d47442bd58b62e92314e6034b380ae02f94b129869",
+      "bytes": 681
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1015_red.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1015_red.log",
+      "sha256": "1bf14d75079a06e6ba64e079be2efa26aa67796ce6817c08c7d2a89ea15a4179",
+      "bytes": 122872
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1017_receipt_suite.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1017_receipt_suite.json",
+      "sha256": "11a84af1022ba93e1b283cc94ede966510df6c2d6a48d2d6ee04d16fc8130f89",
+      "bytes": 767
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1017_receipt_suite.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1017_receipt_suite.log",
+      "sha256": "4157a126f35629a82329961a3bce5a8927ef0fab56d0ccafaf7652f932008206",
+      "bytes": 755
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1017_regression_green.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1017_regression_green.json",
+      "sha256": "41932db23d7ddd83a5a0b8441a170c20e75b77f163fcfd73e4a2791f61f18bae",
+      "bytes": 735
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1017_regression_green.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1017_regression_green.log",
+      "sha256": "e78ec817b39f99132ad170284772c2f3486c56d06e8a8d87a867ba272bba7a5e",
+      "bytes": 769
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1017_regression_red.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1017_regression_red.json",
+      "sha256": "7b3878c2bf73debdcdb71cc1df4bf37e7c13c6e243bb6666fe543c21759938fd",
+      "bytes": 731
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1017_regression_red.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1017_regression_red.log",
+      "sha256": "af5c1897d4a9bbbbc933a4dcc650fd072a01cf29bfa5ef387054d4e1218d8190",
+      "bytes": 6841
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1018_receipt_green.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1018_receipt_green.json",
+      "sha256": "576b23c9b814ce51e71c6f07937b890b885ff05e6446b69fbfcc62da40da5ee0",
+      "bytes": 858
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1018_receipt_green.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1018_receipt_green.log",
+      "sha256": "04e179c1859d0c7c3e60d480ef38c6f12eb8b86fb1b007a152873d03bf009071",
+      "bytes": 1669
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1018_receipt_lint.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1018_receipt_lint.json",
+      "sha256": "f07c2e70862f97bf8e4d6dbd4b094ee781a05d5b1d4996261e68408fc62609b1",
+      "bytes": 798
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1018_receipt_lint.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1018_receipt_lint.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1018_receipt_red.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1018_receipt_red.json",
+      "sha256": "d1c22a8512dda864b48e42e829aa1997fa96bb3271f17bafa412524011e5ae3c",
+      "bytes": 697
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/issue1018_receipt_red.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/issue1018_receipt_red.log",
+      "sha256": "717826029b3555c36f5732a3527d0de63146167b7ee33229b06e16e42d6dad6d",
+      "bytes": 119337
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/provenance-restoration.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/provenance-restoration.json",
+      "sha256": "cae4ebdac309dd94f6d19de1ada7049ad03a9cf50cea05c843641a85f0b5c412",
+      "bytes": 1315
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/final-replay-receipt.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/final-replay-receipt.json",
+      "sha256": "f0c46615b19bdcad6ea502114c6fea1f05505ecef78ca9d8e0b71e33c014a87c",
+      "bytes": 92285
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/ready-promotion-summary.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/ready-promotion-summary.json",
+      "sha256": "5a87dd1f88018779c25e5acf82c5a31773d7ea5fece4e020be18b1f7970adc30",
+      "bytes": 1490
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/ready-promotion-row-delta.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/ready-promotion-row-delta.json",
+      "sha256": "69d2a453fe537f36d217f500f7ba01f13b51e947fe2b9a52c1e80221a16f3093",
+      "bytes": 1768782
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/ready-candidate-drift.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/ready-candidate-drift.json",
+      "sha256": "2429604ab6b30758b72696906bcc2a341cacb8d1a01a9047409cb360a82fd4d1",
+      "bytes": 83
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/native-review/audit_targets.py",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/audit_targets.py",
+      "sha256": "9719f28aea4d26b65156b9846822201ce0166c05dc7f515d85877ef4060d3803",
+      "bytes": 7423
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/native-review/target-audit.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/target-audit.json",
+      "sha256": "10b20a6045105ee22fced93eff91f8b17c78622fb0292ce8e4b198cd0972b482",
+      "bytes": 12059
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/native-review/inspection-initial.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/inspection-initial.json",
+      "sha256": "49f2376475cd4af86e110dd08675a4fd0a5f6478d7a4036a46f73efaee7d13ea",
+      "bytes": 15746
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup_native_target_audit.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup_native_target_audit.json",
+      "sha256": "c5299b28eafe143f15e5b87d0287e1bcd41adb3c4b9d056e8efb84eb4c9586ba",
+      "bytes": 670
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/logs/followup_native_target_audit.log",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/followup_native_target_audit.log",
+      "sha256": "d1d4e80ee60cddd22ad7817867f37fbce6d16c02790d30da9455fb88247cc408",
+      "bytes": 292
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/independent-review/output-reservation-symlink-race.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/output-reservation-symlink-race.json",
+      "sha256": "48ebd7a6865726365f81d5d77fa38c63cdb730f3cd0a3769f0b76dd6c719915c",
+      "bytes": 314
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/independent-review/receipt-reservation-cleanup-race.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/receipt-reservation-cleanup-race.json",
+      "sha256": "527537c521b87604ed2cf4770a9c6bf2b5817988c63bc3bb6fc11da007c887d7",
+      "bytes": 242
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/independent-review/receipt-reservation-cleanup-fixed.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/receipt-reservation-cleanup-fixed.json",
+      "sha256": "f294d1fb36fa1460cdbf3fb88058d61f5ca897d5ef3ea96b73fadf4839bdc0bb",
+      "bytes": 739
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/followup-1012-1017/independent-review/reservation-reprobe-firstfix.json",
+      "published": "reports/sssom_scientific_curation_20261101/followup-1012-1017/checks/reservation-reprobe-firstfix.json",
+      "sha256": "2b137b18e89e521fce359492820a4abcccf673e32ca6ab7a74e0230f2141c97c",
+      "bytes": 531
+    }
+  ],
+  "current_source_sha256": {
+    "MAPPING_SEMANTICS.md": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805",
+    "mappings/ingredient_mappings.sssom.tsv": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": "a86dd3995bc47ab053f372cdff5251e6d53e8c10f9aa433d631920b6941d4acb",
+    "src/mediaingredientmech/curate/apply_receipt.py": "6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f",
+    "scripts/restore_carnitine_mapping_provenance.py": "0284caea353d355ea341344201902dac8029c19df9fb027d3595ae2159ea1d9d",
+    "scripts/retire_reviewed_generated_aliases.py": "e3192528e66ad0f671ce1ea3d9ee7dc620110df8fab7b057f7b465fc9302d88c",
+    "scripts/refresh_unchanged_cohort.py": "40d29bc094aa20fd8d1c4501a30bf5f754e4bc23247762df53ada5541068ecdf",
+    "reports/sssom_completion_20260921/assemble_review.py": "64d1816c9a299898e1422b01cff5c5707733e96134942937b08be091434f7f91",
+    "reports/sssom_completion_20260921/review.json": "36a22b230bd9bc4c82a1816438d21e28a0aa2fcf21f21e63cd30b6459bb8d23c",
+    "reports/sssom_completion_20260921/mapping-evidence.json": "554206d28461b7dd713da20333c20706c25d6b057d91ad3871aa3bb5025e0ef6",
+    "reports/ingredient_bundle_20261101_followup/review.json": "d391ec9e0dc004494431f76a81c392efef114746e7bf1eca57c7ce4dc7dec14c"
+  },
+  "full_suite_summary": "=========== 3276 passed, 6 skipped, 32 warnings in 708.71s (0:11:48) ===========",
+  "scientific_dispositions": {
+    "SUPPORTED": 1740,
+    "WITHHOLD": 1247
+  },
+  "complete_semantic_release": "FAIL; existing 1733 findings and 2272 assertions retained",
+  "canonical_rows": 2987,
+  "changed_positions_from_original_base": [
+    184,
+    258,
+    535,
+    648,
+    649,
+    901,
+    1728,
+    2528,
+    2588
+  ],
+  "annotation_note": "The final BinaryIO/local-list annotation was added during the broad suite, without changing executable writer logic. The final annotated module separately passed all82 bundle tests, mypy and a byte-identical native successor replay; final-head independent checks follow.",
+  "initial_failed_commands": "Red regressions and unavailable-tool/network setup attempts are retained, not represented as final passing checks."
+}

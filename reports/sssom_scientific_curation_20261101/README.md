@@ -1,5 +1,10 @@
 # Scoped mapping corrections and publication decision
 
+This report records the initial PR evidence through `612860e4`.
+The [adversarial-review follow-up](followup-1012-1017/README.md) supersedes the
+canonical provenance hashes and current companion pointer below, while
+preserving the nine-row scientific scope and all earlier evidence.
+
 This standalone batch starts from MIM main `4625afd492b6cf43e3b499d1425d2453d490009d`
 and uses an isolated Claw checkout at merged commit
 `d8f95e7ec5769d6c49ead59663ac67e323868b72`. It neither advances a cycle nor

@@ -1,0 +1,1998 @@
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/pytest:10: PytestRemovedIn10Warning: pytest.console_main() is deprecated and will be removed in pytest 10.
+It was never intended for programmatic use; use pytest.main() instead.
+See https://docs.pytest.org/en/stable/deprecations.html#console-main
+  sys.exit(console_main())
+...............FFFFFFFFFFFFFFFFF                                         [100%]
+=================================== FAILURES ===================================
+__ test_cli_refuses_evidence_collision_before_any_source_write[file-receipt] ___
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll0/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109c949f0>
+collision = 'receipt', kind = 'file'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[file-canonical_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll1/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109c8e850>
+collision = 'canonical_backup', kind = 'file'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[file-baseline_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll2/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109c43d90>
+collision = 'baseline_backup', kind = 'file'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[directory-receipt] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll3/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109b57f50>
+collision = 'receipt', kind = 'directory'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[directory-canonical_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll4/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109deb7d0>
+collision = 'canonical_backup', kind = 'directory'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[directory-baseline_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll5/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll5')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109deb150>
+collision = 'baseline_backup', kind = 'directory'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[symlink-receipt] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll6/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll6')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109afc0c0>
+collision = 'receipt', kind = 'symlink'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[symlink-canonical_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll7/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll7')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109afc750>
+collision = 'canonical_backup', kind = 'symlink'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[symlink-baseline_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll8/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll8')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109ac7700>
+collision = 'baseline_backup', kind = 'symlink'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+        with pytest.raises(FileExistsError):
+>           mod.main()
+
+tests/test_retire_reviewed_generated_aliases.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main() -> int:
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--candidate", type=Path, required=True)
+        parser.add_argument("--log", type=Path, required=True)
+        parser.add_argument("--apply", action="store_true")
+        args = parser.parse_args()
+        canonical = ROOT / "mappings/ingredient_mappings.sssom.tsv"
+        baseline = ROOT / "mappings/other_cross_record_baseline.tsv"
+        before, baseline_before = canonical.read_bytes(), baseline.read_bytes()
+        candidate_bytes = args.candidate.read_bytes()
+        records = verified_owners(ROOT)
+        after = transform_sssom(before, candidate_bytes)
+        baseline_after = transform_baseline(baseline_before)
+        receipt = {
+            "records": records,
+            "candidate_path": str(args.candidate.resolve()), "candidate_sha256": digest(candidate_bytes),
+            "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
+            "baseline_before_sha256": digest(baseline_before), "baseline_after_sha256": digest(baseline_after),
+            "baseline_before_count": 45, "baseline_after_count": 38,
+            "changed_rows": 7, "removed_tokens": 7, "plans": PLANS,
+            "approval": "NONE; existing withheld decisions remain withheld",
+        }
+        if args.apply:
+            args.log.parent.mkdir(parents=True, exist_ok=True)
+            if args.log.exists() or args.log.with_suffix(".before.tsv").exists() or args.log.with_suffix(".baseline-before.tsv").exists():
+>               raise ValueError("Refusing to overwrite existing audit evidence")
+E               ValueError: Refusing to overwrite existing audit evidence
+
+scripts/retire_reviewed_generated_aliases.py:226: ValueError
+_ test_cli_refuses_evidence_collision_before_any_source_write[dangling_symlink-receipt] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll9/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll9')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109ac6120>
+collision = 'receipt', kind = 'dangling_symlink'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+>       with pytest.raises(FileExistsError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE FileExistsError
+
+tests/test_retire_reviewed_generated_aliases.py:156: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "applied": true,
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "after_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "after_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "after_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "after_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "after_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "after_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "after_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ],
+  "candidate_path": "/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll9/candidate.tsv",
+  "candidate_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "sssom_before_sha256": "0a19ba0845891046878865a2d1db7bd91901e90f064e33310ef5672093e8e783",
+  "sssom_after_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "baseline_before_sha256": "bcc07291dcbf59dfa10b5f5439ed258a10ddfbddcb03d2b2a28000dad2ff7c0a",
+  "baseline_after_sha256": "46a25469b9e3b60e1877b7e295e6ff29986ca35de81cc9eb7cd94f25702b6cbf",
+  "baseline_before_count": 45,
+  "baseline_after_count": 38,
+  "changed_rows": 7,
+  "removed_tokens": 7,
+  "plans": [
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:48430",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "owner_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "evidence_files": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:32139",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "owner_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "evidence_files": [
+        "sources/CHEBI_32139.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17750",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "owner_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "evidence_files": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17369",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "owner_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "evidence_files": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:39005",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "owner_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "evidence_files": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:15978",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "owner_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "evidence_files": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:132103",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "owner_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "evidence_files": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    }
+  ],
+  "approval": "NONE; existing withheld decisions remain withheld"
+}
+_ test_cli_refuses_evidence_collision_before_any_source_write[dangling_symlink-canonical_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...hw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll10/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll10')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109ac1cc0>
+collision = 'canonical_backup', kind = 'dangling_symlink'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+>       with pytest.raises(FileExistsError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE FileExistsError
+
+tests/test_retire_reviewed_generated_aliases.py:156: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "applied": true,
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "after_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "after_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "after_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "after_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "after_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "after_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "after_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ],
+  "candidate_path": "/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll10/candidate.tsv",
+  "candidate_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "sssom_before_sha256": "0a19ba0845891046878865a2d1db7bd91901e90f064e33310ef5672093e8e783",
+  "sssom_after_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "baseline_before_sha256": "bcc07291dcbf59dfa10b5f5439ed258a10ddfbddcb03d2b2a28000dad2ff7c0a",
+  "baseline_after_sha256": "46a25469b9e3b60e1877b7e295e6ff29986ca35de81cc9eb7cd94f25702b6cbf",
+  "baseline_before_count": 45,
+  "baseline_after_count": 38,
+  "changed_rows": 7,
+  "removed_tokens": 7,
+  "plans": [
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:48430",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "owner_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "evidence_files": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:32139",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "owner_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "evidence_files": [
+        "sources/CHEBI_32139.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17750",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "owner_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "evidence_files": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17369",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "owner_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "evidence_files": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:39005",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "owner_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "evidence_files": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:15978",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "owner_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "evidence_files": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:132103",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "owner_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "evidence_files": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    }
+  ],
+  "approval": "NONE; existing withheld decisions remain withheld"
+}
+_ test_cli_refuses_evidence_collision_before_any_source_write[dangling_symlink-baseline_backup] _
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli...hw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll11/mappings/other_cross_record_baseline.tsv'))
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll11')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109ac16a0>
+collision = 'baseline_backup', kind = 'dangling_symlink'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling_symlink"])
+    def test_cli_refuses_evidence_collision_before_any_source_write(
+        alias_apply_case, tmp_path, monkeypatch, collision, kind,
+    ):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        marker = b"preserved earlier evidence\n"
+        target = tmp_path / "other-evidence"
+        if kind == "file":
+            path.write_bytes(marker)
+        elif kind == "directory":
+            path.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(marker)
+            path.symlink_to(target)
+        writes = []
+        original_write = Path.write_bytes
+    
+        def observe_write(self, data):
+            if self in sources:
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "write_bytes", observe_write)
+>       with pytest.raises(FileExistsError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE FileExistsError
+
+tests/test_retire_reviewed_generated_aliases.py:156: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "applied": true,
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "after_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "after_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "after_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "after_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "after_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "after_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "after_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ],
+  "candidate_path": "/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_cli_refuses_evidence_coll11/candidate.tsv",
+  "candidate_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "sssom_before_sha256": "0a19ba0845891046878865a2d1db7bd91901e90f064e33310ef5672093e8e783",
+  "sssom_after_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "baseline_before_sha256": "bcc07291dcbf59dfa10b5f5439ed258a10ddfbddcb03d2b2a28000dad2ff7c0a",
+  "baseline_after_sha256": "46a25469b9e3b60e1877b7e295e6ff29986ca35de81cc9eb7cd94f25702b6cbf",
+  "baseline_before_count": 45,
+  "baseline_after_count": 38,
+  "changed_rows": 7,
+  "removed_tokens": 7,
+  "plans": [
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:48430",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "owner_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "evidence_files": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:32139",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "owner_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "evidence_files": [
+        "sources/CHEBI_32139.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17750",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "owner_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "evidence_files": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17369",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "owner_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "evidence_files": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:39005",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "owner_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "evidence_files": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:15978",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "owner_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "evidence_files": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:132103",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "owner_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "evidence_files": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    }
+  ],
+  "approval": "NONE; existing withheld decisions remain withheld"
+}
+_______ test_concurrent_evidence_creation_cannot_be_overwritten[receipt] _______
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_con...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_concurrent_evidence_creat0/mappings/other_cross_record_baseline.tsv'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109afcec0>
+collision = 'receipt'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    def test_concurrent_evidence_creation_cannot_be_overwritten(alias_apply_case, monkeypatch, collision):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        original_open = Path.open
+        injected = False
+    
+        def racing_open(self, mode="r", *args, **kwargs):
+            nonlocal injected
+            if self == path and not injected and any(flag in mode for flag in "wxa"):
+                injected = True
+                with original_open(path, "xb") as handle:
+                    handle.write(b"another writer won the reservation\n")
+            return original_open(self, mode, *args, **kwargs)
+    
+        monkeypatch.setattr(Path, "open", racing_open)
+>       with pytest.raises(FileExistsError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE FileExistsError
+
+tests/test_retire_reviewed_generated_aliases.py:190: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "applied": true,
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "after_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "after_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "after_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "after_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "after_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "after_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "after_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ],
+  "candidate_path": "/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_concurrent_evidence_creat0/candidate.tsv",
+  "candidate_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "sssom_before_sha256": "0a19ba0845891046878865a2d1db7bd91901e90f064e33310ef5672093e8e783",
+  "sssom_after_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "baseline_before_sha256": "bcc07291dcbf59dfa10b5f5439ed258a10ddfbddcb03d2b2a28000dad2ff7c0a",
+  "baseline_after_sha256": "46a25469b9e3b60e1877b7e295e6ff29986ca35de81cc9eb7cd94f25702b6cbf",
+  "baseline_before_count": 45,
+  "baseline_after_count": 38,
+  "changed_rows": 7,
+  "removed_tokens": 7,
+  "plans": [
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:48430",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "owner_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "evidence_files": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:32139",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "owner_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "evidence_files": [
+        "sources/CHEBI_32139.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17750",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "owner_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "evidence_files": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17369",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "owner_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "evidence_files": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:39005",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "owner_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "evidence_files": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:15978",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "owner_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "evidence_files": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:132103",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "owner_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "evidence_files": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    }
+  ],
+  "approval": "NONE; existing withheld decisions remain withheld"
+}
+__ test_concurrent_evidence_creation_cannot_be_overwritten[canonical_backup] ___
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_con...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_concurrent_evidence_creat1/mappings/other_cross_record_baseline.tsv'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109aceeb0>
+collision = 'canonical_backup'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    def test_concurrent_evidence_creation_cannot_be_overwritten(alias_apply_case, monkeypatch, collision):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        original_open = Path.open
+        injected = False
+    
+        def racing_open(self, mode="r", *args, **kwargs):
+            nonlocal injected
+            if self == path and not injected and any(flag in mode for flag in "wxa"):
+                injected = True
+                with original_open(path, "xb") as handle:
+                    handle.write(b"another writer won the reservation\n")
+            return original_open(self, mode, *args, **kwargs)
+    
+        monkeypatch.setattr(Path, "open", racing_open)
+>       with pytest.raises(FileExistsError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE FileExistsError
+
+tests/test_retire_reviewed_generated_aliases.py:190: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "applied": true,
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "after_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "after_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "after_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "after_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "after_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "after_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "after_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ],
+  "candidate_path": "/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_concurrent_evidence_creat1/candidate.tsv",
+  "candidate_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "sssom_before_sha256": "0a19ba0845891046878865a2d1db7bd91901e90f064e33310ef5672093e8e783",
+  "sssom_after_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "baseline_before_sha256": "bcc07291dcbf59dfa10b5f5439ed258a10ddfbddcb03d2b2a28000dad2ff7c0a",
+  "baseline_after_sha256": "46a25469b9e3b60e1877b7e295e6ff29986ca35de81cc9eb7cd94f25702b6cbf",
+  "baseline_before_count": 45,
+  "baseline_after_count": 38,
+  "changed_rows": 7,
+  "removed_tokens": 7,
+  "plans": [
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:48430",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "owner_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "evidence_files": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:32139",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "owner_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "evidence_files": [
+        "sources/CHEBI_32139.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17750",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "owner_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "evidence_files": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17369",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "owner_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "evidence_files": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:39005",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "owner_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "evidence_files": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:15978",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "owner_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "evidence_files": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:132103",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "owner_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "evidence_files": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    }
+  ],
+  "approval": "NONE; existing withheld decisions remain withheld"
+}
+___ test_concurrent_evidence_creation_cannot_be_overwritten[baseline_backup] ___
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_con...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_concurrent_evidence_creat2/mappings/other_cross_record_baseline.tsv'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109afe900>
+collision = 'baseline_backup'
+
+    @pytest.mark.parametrize("collision", ["receipt", "canonical_backup", "baseline_backup"])
+    def test_concurrent_evidence_creation_cannot_be_overwritten(alias_apply_case, monkeypatch, collision):
+        outputs, sources, _, _ = alias_apply_case
+        path = outputs[collision]
+        original_open = Path.open
+        injected = False
+    
+        def racing_open(self, mode="r", *args, **kwargs):
+            nonlocal injected
+            if self == path and not injected and any(flag in mode for flag in "wxa"):
+                injected = True
+                with original_open(path, "xb") as handle:
+                    handle.write(b"another writer won the reservation\n")
+            return original_open(self, mode, *args, **kwargs)
+    
+        monkeypatch.setattr(Path, "open", racing_open)
+>       with pytest.raises(FileExistsError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE FileExistsError
+
+tests/test_retire_reviewed_generated_aliases.py:190: Failed
+----------------------------- Captured stdout call -----------------------------
+{
+  "applied": true,
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "after_yaml_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "after_yaml_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "after_yaml_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "after_yaml_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "after_yaml_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "after_yaml_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "after_yaml_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ],
+  "candidate_path": "/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_concurrent_evidence_creat2/candidate.tsv",
+  "candidate_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "sssom_before_sha256": "0a19ba0845891046878865a2d1db7bd91901e90f064e33310ef5672093e8e783",
+  "sssom_after_sha256": "5e7dd69b1ea9c4a244b4b5bb7d0783b3e22e78543583b8ad36feafa4945c880f",
+  "baseline_before_sha256": "bcc07291dcbf59dfa10b5f5439ed258a10ddfbddcb03d2b2a28000dad2ff7c0a",
+  "baseline_after_sha256": "46a25469b9e3b60e1877b7e295e6ff29986ca35de81cc9eb7cd94f25702b6cbf",
+  "baseline_before_count": 45,
+  "baseline_after_count": 38,
+  "changed_rows": 7,
+  "removed_tokens": 7,
+  "plans": [
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:48430",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "owner_sha256": "c8aa76d207074bc59d82fc41da7d3ebf466e0044cd458d7173b25378b8131b38",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "evidence_files": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:32139",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "owner_sha256": "cfeff9287fedd1e7e6d62e0d01e704506b3dfb0b8096f70105092eb9b2adcebe",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "evidence_files": [
+        "sources/CHEBI_32139.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17750",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "owner_sha256": "54aa391a62a9f02dcdb4fd7cd346efd646b89901800bd73704ff1c6df7e25466",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "evidence_files": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:17369",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "owner_sha256": "8d5f19e4b3f4ece9661bda71a59f717be963febf1a5362deaf27629471c0da7d",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "evidence_files": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:39005",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "owner_sha256": "8db1ffd20ec0d328ea9cc7e9f3126729241ee60948434da91e95c4b1f9d07376",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "evidence_files": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:15978",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "owner_sha256": "594c68e664987904fd79e767e915e814275f2ff9be1b7802b454deb533cf70aa",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "evidence_files": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ],
+      "baseline_disposition": "UNREVIEWED"
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:132103",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "owner_sha256": "339a5628451d71b0a3724fae5ab6df3458d4a58b89b3d85644b0bcad61dc6b76",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "evidence_files": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ],
+      "baseline_disposition": "HYDRATE_FAMILY_UNREVIEWED"
+    }
+  ],
+  "approval": "NONE; existing withheld decisions remain withheld"
+}
+__________ test_late_reservation_failure_cleans_only_new_reservations __________
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_lat...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_late_reservation_failure_0/mappings/other_cross_record_baseline.tsv'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109afef20>
+
+    def test_late_reservation_failure_cleans_only_new_reservations(alias_apply_case, monkeypatch):
+        outputs, sources, _, _ = alias_apply_case
+        original_open = Path.open
+    
+        def denied_open(self, mode="r", *args, **kwargs):
+            if self == outputs["baseline_backup"] and any(flag in mode for flag in "wxa"):
+                raise PermissionError("simulated third reservation failure")
+            return original_open(self, mode, *args, **kwargs)
+    
+        monkeypatch.setattr(Path, "open", denied_open)
+        with pytest.raises(PermissionError, match="third reservation"):
+            mod.main()
+        assert {p: p.read_bytes() for p in sources} == sources
+>       assert all(not path.exists() for path in outputs.values())
+E       assert False
+E        +  where False = all(<generator object test_late_reservation_failure_cleans_only_new_reservations.<locals>.<genexpr> at 0x1099b0d40>)
+
+tests/test_retire_reviewed_generated_aliases.py:211: AssertionError
+__ test_success_reserves_all_outputs_and_flushes_both_backups_before_mutation __
+
+alias_apply_case = ({'receipt': PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_suc...nhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_success_reserves_all_outp0/mappings/other_cross_record_baseline.tsv'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109ac60b0>
+
+    def test_success_reserves_all_outputs_and_flushes_both_backups_before_mutation(
+        alias_apply_case, monkeypatch,
+    ):
+        outputs, sources, canonical, baseline = alias_apply_case
+        original_open, original_write = Path.open, Path.write_bytes
+        reservations = []
+        writes = []
+    
+        def observe_open(self, mode="r", *args, **kwargs):
+            if self in outputs.values() and any(flag in mode for flag in "wxa"):
+                reservations.append((self, mode))
+            return original_open(self, mode, *args, **kwargs)
+    
+        def guarded_write(self, data):
+            if self in {canonical, baseline}:
+                assert reservations == [(outputs["receipt"], "x"),
+                                        (outputs["canonical_backup"], "xb"),
+                                        (outputs["baseline_backup"], "xb")]
+                assert outputs["canonical_backup"].read_bytes() == sources[canonical]
+                assert outputs["baseline_backup"].read_bytes() == sources[baseline]
+                writes.append(self)
+            return original_write(self, data)
+    
+        monkeypatch.setattr(Path, "open", observe_open)
+        monkeypatch.setattr(Path, "write_bytes", guarded_write)
+>       assert mod.main() == 0
+               ^^^^^^^^^^
+
+tests/test_retire_reviewed_generated_aliases.py:239: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/retire_reviewed_generated_aliases.py:233: in main
+    canonical.write_bytes(after)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_success_reserves_all_outp0/mappings/ingredient_mappings.sssom.tsv')
+data = b'# preserved metadata\r\nsubject_id\tpredicate_id\tobject_id\tother\tcomment\r\nMIM:4-Methyl-2-oxopentanoic_Acid_Sodi...CHEBI:132103\tkeep-one|keep-two\tunchanged\r\nMIM:unrelated\tskos:exactMatch\tCHEBI:1\tretain|all\tquoted "detail"\r\n'
+
+    def guarded_write(self, data):
+        if self in {canonical, baseline}:
+>           assert reservations == [(outputs["receipt"], "x"),
+                                    (outputs["canonical_backup"], "xb"),
+                                    (outputs["baseline_backup"], "xb")]
+E           AssertionError: assert [(PosixPath('....tsv'), 'wb')] == [(PosixPath('....tsv'), 'xb')]
+E             
+E             At index 0 diff: (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_success_reserves_all_outp0/apply.before.tsv'), 'wb') != (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_success_reserves_all_outp0/apply.json'), 'x')
+E             Right contains one more item: (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8108/test_success_reserves_all_outp0/apply.baseline-before.tsv'), 'xb')
+E             Use -v to get more diff
+
+tests/test_retire_reviewed_generated_aliases.py:229: AssertionError
+=============================== warnings summary ===============================
+../../../.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[file-receipt]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[file-canonical_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[file-baseline_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[directory-receipt]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[directory-canonical_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[directory-baseline_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[symlink-receipt]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[symlink-canonical_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[symlink-baseline_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[dangling_symlink-receipt]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[dangling_symlink-canonical_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_cli_refuses_evidence_collision_before_any_source_write[dangling_symlink-baseline_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_concurrent_evidence_creation_cannot_be_overwritten[receipt]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_concurrent_evidence_creation_cannot_be_overwritten[canonical_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_concurrent_evidence_creation_cannot_be_overwritten[baseline_backup]
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_late_reservation_failure_cleans_only_new_reservations
+FAILED tests/test_retire_reviewed_generated_aliases.py::test_success_reserves_all_outputs_and_flushes_both_backups_before_mutation
+17 failed, 15 passed, 1 warning in 0.14s
