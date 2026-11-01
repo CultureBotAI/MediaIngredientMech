@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v3
       - name: Install locked runtime
         run: uv sync --frozen
@@ -35,7 +37,7 @@ jobs:
       - name: Export and replay the opt-in scoped ingredient cohort
         run: |
           uv run --frozen python -m mediaingredientmech.export.ingredient_bundle export \
-            --review reports/ingredient_bundle_20261101_strict_receipts764_types1069/review.json \
+            --review reports/ingredient_bundle_20261101_melezitose901_pin1074/review.json \
             --output output/mim-reviewed-ingredient-bundle
       - name: Upload scoped cohort candidate for consumer acceptance
         uses: actions/upload-artifact@v4

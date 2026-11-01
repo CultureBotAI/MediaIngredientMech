@@ -55,3 +55,35 @@ def is_resolving_synonym(synonym: Mapping[str, Any]) -> bool:
     if synonym_type in NON_RESOLVING_SYNONYM_TYPES:
         return False
     return is_resolving_synonym_text(synonym.get("synonym_text"))
+
+
+def preferred_term_owners(records: Mapping[str, Mapping[str, Any]]) -> dict[str, frozenset[str]]:
+    """Native Rule K ownership, including credited or unresolved tombstones.
+
+    Callers supply the complete mapped-directory snapshot, keyed by forward
+    escaped MIM subjects. An explicit representative takes precedence even when
+    empty or unresolved; only an absent representative permits legacy fallback.
+    """
+
+    def rejected(data: Mapping[str, Any]) -> bool:
+        return str(data.get("mapping_status") or "").strip().upper() == "REJECTED"
+
+    live_by_identifier: dict[str, set[str]] = {}
+    for subject, data in records.items():
+        identifier = str(data.get("identifier") or "").strip()
+        if identifier and not rejected(data):
+            live_by_identifier.setdefault(identifier, set()).add(subject)
+    owners: dict[str, set[str]] = {}
+    for subject, data in records.items():
+        term = str(data.get("preferred_term") or "").strip()
+        if not term:
+            continue
+        if rejected(data):
+            target = (
+                data.get("representative") if "representative" in data else data.get("identifier")
+            )
+            credited = live_by_identifier.get(str(target or "").strip())
+            owners.setdefault(term.casefold(), set()).update(credited or {subject})
+        else:
+            owners.setdefault(term.casefold(), set()).add(subject)
+    return {term: frozenset(subjects) for term, subjects in owners.items()}

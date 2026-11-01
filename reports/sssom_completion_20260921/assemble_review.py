@@ -15,6 +15,7 @@ from collections import Counter
 from pathlib import Path
 
 from mediaingredientmech.export.reviewed_sssom import _owners, digest, read_sssom, row_sha256
+from mediaingredientmech.form_mapping_review import FormFollowups
 from mediaingredientmech.record_refresh import RecordRefreshes
 from mediaingredientmech.validation.mapping_change_receipts import (
     record_supersession,
@@ -32,9 +33,13 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "38173b2206a3d60615fca7d6d7861e777bd9905c58ec9d0b55d6a89a8c325b1c"
+REVIEWED_SOURCE = "51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
+# Admission is explicit; discovering an arbitrary report never grants authority.
+FORM_FOLLOWUP_FILES = (
+    "reports/sssom_completion_20260921/mapping_review/form_reviews/901-melezitose-v1.json",
+)
 
 
 def read(name):
@@ -273,6 +278,9 @@ def assemble():
             raise ValueError("Duplicate mapping follow-up")
         followups_by_key[key] = item
     used_followups = set()
+    form_followups = FormFollowups(
+        ROOT, FORM_FOLLOWUP_FILES, chain, mappings, owners, records, record_hashes,
+    )
     entries, decisions = {}, []
     for current_position, (mapping, owner) in enumerate(zip(mappings, owners, strict=True), 1):
         # ``position`` is the baseline position every cohort, hold and prior
@@ -309,6 +317,20 @@ def assemble():
                     "identity_review": followup["identity_review"],
                 }
                 used_followups.add(followup_key)
+            form = form_followups.apply(
+                mapping, owner, record_hashes[owner], records[owner],
+                current_position=current_position,
+                negative_reviews=[
+                    negative
+                    for old_position, old_row in enumerate(baseline["rows"], 1)
+                    if old_row["subject_id"] == mapping["subject_id"]
+                    for negative in explicit_holds.get(old_position, [])
+                ],
+            )
+            if form:
+                if followup_key in followups_by_key:
+                    raise ValueError("Claim has both legacy and form review authorities")
+                entry["disposition"], entry["review_reason"], entry["basis"]["form_followup"] = form
             entries[key] = entry
             decisions.append(
                 {
@@ -498,6 +520,19 @@ def assemble():
             }
             if disposition == "SUPPORTED" and "negative_reviews" in basis:
                 basis["resolved_prior_negative_reviews"] = basis.pop("negative_reviews")
+        form = form_followups.apply(
+            mapping, owner, record_hashes[owner], records[owner],
+            current_position=current_position, negative_reviews=explicit_holds.get(position, []),
+        )
+        if form:
+            if followup_key in followups_by_key:
+                raise ValueError("Claim has both legacy and form review authorities")
+            disposition, reason, basis["form_followup"] = form
+            if disposition == "SUPPORTED":
+                if "policy" in basis:
+                    basis["resolved_relation_policy"] = basis.pop("policy")
+                if "negative_reviews" in basis:
+                    basis["resolved_prior_negative_reviews"] = basis.pop("negative_reviews")
         key = str(current_position)
         entry = {
             "row_sha256": row_sha256(mapping),
@@ -542,6 +577,7 @@ def assemble():
         ROOT / "src/mediaingredientmech/review_claims.py",
         ROOT / "src/mediaingredientmech/synonym_policy.py",
         ROOT / "src/mediaingredientmech/record_refresh.py",
+        ROOT / "src/mediaingredientmech/form_mapping_review.py",
         ROOT / "src/mediaingredientmech/validation/mapping_change_receipts.py",
         ROOT / "scripts/validate_reviewed_sssom_schema.py",
         ROOT / "reports/semantic_review_20260921/records.tsv",
@@ -549,6 +585,7 @@ def assemble():
     ):
         inputs[relative(p)] = digest(p)
     inputs.update(chain["input_hashes"])
+    inputs.update(form_followups.inputs)
     for decision in baseline["decisions"]:
         if decision["resolution_status"] == "APPROVED":
             path = ROOT / decision["review_evidence"]
@@ -567,6 +604,7 @@ def assemble():
         "record_inputs": dict(sorted(record_hashes.items())),
         "decisions": decisions,
     }
+    form_followups.finish()
     return {
         "mapping-evidence.json": evidence_bytes,
         "review.json": (json.dumps(review, indent=2) + "\n").encode(),

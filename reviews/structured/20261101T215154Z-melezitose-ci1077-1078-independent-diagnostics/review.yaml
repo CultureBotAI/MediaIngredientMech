@@ -1,0 +1,727 @@
+schema_version: 1.0.0
+review_id: 20261101T215154Z-melezitose-ci1077-1078-independent-diagnostics
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: Independent CI portability follow-up for melezitose PR1076:1077/1078
+started_at: '2026-11-01T21:50:51.599712Z'
+finished_at: '2026-11-01T21:51:54.566668Z'
+reviewer:
+  identity: Codex independent reviewer /root/step4_design_review
+  kind: agent
+  independence: independent
+  independence_basis: Independent of workflow/report/test repair and appendix authors.
+    Authored only read-only adversarial probes,isolated clean replay,byte comparisons
+    and this native diagnostic; no maintained implementation,scientific authority
+    orGitHub mutation.
+skill: .claude/skills/review-sssom-output/SKILL.md
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Six bounded CI repair and evidence targets PASS; scientific_review:false;
+  final repaired commit and remoteCI/queue remain separate future gates
+scientific_review: false
+summary: Actual six-file repair and published appendix pass independent review in
+  a real durable-e568 working-tree capture with47native input hashes. Both native
+  workflow sequences and three regressions pass in a clean5da-plus-overlay checkout.
+  Scientific payloads and all prior review authority remain unchanged; no scientific
+  approval is created.
+source:
+  git_revision: e568dbf0e0f759431ed317b973675680f031dd1d
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: .github/workflows/qc-evidence.yaml
+    sha256: 288ef1795582105763952c4104d1455c1fef273a65528949f1e558d39c7306f3
+    role: context
+  - path: .github/workflows/qc-reviewed-sssom.yaml
+    sha256: fbe6eb1c1b6fd54ccfadcdeddbf37eb1b4509e81b25415830f23eddf7fa764c2
+    role: target
+  - path: .github/workflows/qc-supported-kgx.yaml
+    sha256: 909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b
+    role: context
+  - path: .github/workflows/tests.yaml
+    sha256: 3970d6ce1552239627688b94aee272258c3b729f4a96813c6bae3f022bdab84c
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+    sha256: 172242cd48ffab819d3bd48fa43882adef4eebd622b2046da04f5d3dc28d4349
+    role: context
+  - path: UNIFIED_INGREDIENT_MAPPING.tsv
+    sha256: 169a722670cf2bb7851d180c19c29b82a9b1e5f72c59b05abf57e28a38d1593a
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+    sha256: 206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28
+    role: target
+  - path: mappings/ingredient_mappings.sssom.tsv.manifest.json
+    sha256: d12d0ce5a97650d2bc7f224f93e1394949029668546be1178fe1a7e22af4f091
+    role: context
+  - path: mappings/other_cross_record_baseline.tsv
+    sha256: f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb
+    role: context
+  - path: mappings/suppressed_aliases.tsv
+    sha256: 3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84
+    role: context
+  - path: output/mim-kgx-710-full/manifest.json
+    sha256: 42d0583b9da53a2e536086146f807469e41fc911d7df4e4be3c84719567b75ac
+    role: context
+  - path: reports/melezitose_form_901_20261101/ci1077_1078/README.md
+    sha256: ef2d6ddc9a58c7903562bc821bdb6db9923c0a59a68458fa8ac1049bb53c7088
+    role: context
+  - path: reports/melezitose_form_901_20261101/ci1077_1078/manifest.json
+    sha256: 2be2da54ddd4adbc22ee55dbaf2888d2eacaaf56e4190e6bad17336f11bc7611
+    role: target
+  - path: reports/melezitose_form_901_20261101/ci1077_1078/payloads.tar.gz
+    sha256: 879de472f0cf63e7ca3c11d7a5e4630d8cb2eb8e4e146dd386305f9af5232e46
+    role: context
+  - path: reports/melezitose_form_901_20261101/execution/README.md
+    sha256: 4fa248df6b795121478a861d17cc482aeab0adb0005eb3b1a9d37b3999ce6a16
+    role: context
+  - path: reports/melezitose_form_901_20261101/execution/final-inputs.json
+    sha256: b9f0d202ef3b0e4f79dd0e2092d99370909a2ac5017f0ca17c6a830d355f5f7c
+    role: context
+  - path: reports/melezitose_form_901_20261101/execution/manifest.json
+    sha256: 507c51ede5df43d48cd2211a22635088de78bdb4090e67c6dabb3dfa6490abb7
+    role: target
+  - path: reports/melezitose_form_901_20261101/execution/payloads.tar.gz
+    sha256: 2660740d4357bdae99e367759baa07c4c538cbf3621e0c23f38e856a7f903347
+    role: context
+  - path: reports/melezitose_form_901_20261101/execution/selection.final.json
+    sha256: 823443b135ede82e2922c4f2ca78118ddbf0689f4ffc28b41f1f0fccce0120a0
+    role: context
+  - path: reports/melezitose_form_901_20261101/execution/verify.py
+    sha256: 93418bae86768bde3b4c7a5d1421e16edad3319e5a25169d5479d3923911f90d
+    role: context
+  - path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+    sha256: 88afcabb1f357aa98e0a05b250918deecac2a1ec53dc34119a5e76c0cc1b7701
+    role: context
+  - path: reports/semantic_review_20260921/resolution/build_review.py
+    sha256: 53e9ebc1fa521839839cef23e2a738bfc89cfcae5c90534c77727a825e788d97
+    role: context
+  - path: reports/semantic_review_20260921/resolution/current-review.json
+    sha256: 562309195975881cff0dd93ce862c7c7ff502a006e304b8511fadd86442b2e47
+    role: target
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: d9ddb42716cd9daf1c2e04dad6ab7c5f949e9f0f69b6b4f0fd614bf90bafa64e
+    role: context
+  - path: reports/sssom_completion_20260921/assemble_review.py
+    sha256: 212581a4a0215f1e3e26e449cafe93c35223bd4adcc38db2ffa6bfc3f7df2f60
+    role: context
+  - path: reports/sssom_completion_20260921/mapping-evidence.json
+    sha256: 303a58b43fbeccb32f124282b67cd5e8da73aa147e8989ed29b430c327c1e46e
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json
+    sha256: 019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/form_reviews/901-melezitose-v1.json
+    sha256: b816491e4b606aecf9fdc982c5557439e37d1ce61a006185b259036fbad672ef
+    role: context
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: 754146c4de60a13fe49f276a27d31f64aee05679d25864a12774fb5ccb89577f
+    role: context
+  - path: reviews/structured/20261101T202408Z-melezitose-901-form-mapping/review.md
+    sha256: 8eb7c050fd892f1e524e81ba776f0a893b752f225358a4f6a1572ee1f99664c0
+    role: context
+  - path: reviews/structured/20261101T202408Z-melezitose-901-form-mapping/review.yaml
+    sha256: 5eb85ebf5fb6724f92bfda57bd97805a281e48e3a82675f26bbcdd1f56bb470c
+    role: context
+  - path: reviews/structured/20261101T203438Z-melezitose-901-sssom-diagnostics/review.md
+    sha256: 849c8ffcc58b60d6013a8021e4242e56b08f0eed98c945b186835564b1cd1807
+    role: context
+  - path: reviews/structured/20261101T203438Z-melezitose-901-sssom-diagnostics/review.yaml
+    sha256: 86360733a0eddf2fa31eb95c8bdae4f0fe8f3a2656790549ca26ff96861e7591
+    role: context
+  - path: reviews/structured/20261101T212612Z-melezitose901-final-independent-diagnostics/review.md
+    sha256: e37038c2224ca1b072f02defc94ea6ee52ae5f2825fd6e04bbbe570407491693
+    role: context
+  - path: reviews/structured/20261101T212612Z-melezitose901-final-independent-diagnostics/review.yaml
+    sha256: 764c2fd968cd8002b458a1b942d5194db0ec43e8c2511ac8b25758764837664e
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/form_mapping_review.py
+    sha256: c83a7c57839528f99bdb5fe376cd4b4bd7c8ba73530fa7e5e441787237178c4a
+    role: context
+  - path: src/mediaingredientmech/validation/semantic_release.py
+    sha256: a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867
+    role: context
+  - path: tests/test_ci_review_replay_contract.py
+    sha256: e063c89802f1e1e78fa540c18eddccef40d1c0898d6c7ac4dd70a326e3bf1556
+    role: target
+scope:
+  description: Narrow CI prerequisite repairs and appended evidence,not renewed ingredient/scientific
+    curation.
+  selection: Six explicit workflow,semantic report,regression,appendix,historical-package
+    and unchanged canonical targets. Forty-seven inputs include exact retained review
+    pairs,controls and current native graph manifest.
+  coverage: full
+  population_size: 6
+  reviewed_target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  exclusions:
+  - target: Fresh scientific approval or entire corpus reassessment
+    reason: Current source/claim/role authority remains unchanged; this diagnostic
+      proves bounded preservation only.
+  - target: Final repaired committed head and remoteCI/merge queue
+    reason: This real capture is e568 plus current reviewed working bytes; later actual
+      commit and remote events require separate attestation.
+targets:
+- target_id: melezitose-ci:checkout
+  path: .github/workflows/qc-reviewed-sssom.yaml
+  label: Durable history checkout prerequisite
+  kind: maintained
+  ownership_note: 'Workflow owner; verify #1078 history correction without changing
+    native provenance validation.'
+- target_id: melezitose-ci:semantic-report
+  path: reports/semantic_review_20260921/resolution/current-review.json
+  label: Native semantic report at workflow graph path
+  kind: generated
+  ownership_note: 'Native resolution/build_review.py owns this report; assess #1077
+    path-only delta and unchanged scientific dispositions.'
+- target_id: melezitose-ci:regressions
+  path: tests/test_ci_review_replay_contract.py
+  label: Three bounded replay prerequisite regressions
+  kind: maintained
+  ownership_note: Test owner; inspect historical negatives and actual passing tests
+    without weakening native runtime guards.
+- target_id: melezitose-ci:ci-evidence
+  path: reports/melezitose_form_901_20261101/ci1077_1078/manifest.json
+  label: Actual appended CI repair evidence
+  kind: generated
+  ownership_note: Inspect only after root publication and independent actual-byte
+    verification; no package approval can substitute for scientific authority.
+- target_id: melezitose-ci:historical-package
+  path: reports/melezitose_form_901_20261101/execution/manifest.json
+  label: Preserved historical execution package
+  kind: generated
+  ownership_note: Verify immutable historical package and precise two-binding scope
+    delta; old --current-scope is not claimed current.
+- target_id: melezitose-ci:canonical
+  path: mappings/ingredient_mappings.sssom.tsv
+  label: Unchanged canonical SSSOM product
+  kind: generated
+  ownership_note: Exact hash/payload preservation control only; no fresh chemical,
+    mapping or role approval.
+checks:
+- check_id: check-qc
+  name: melezitose-ci-repair-native-qc
+  status: passed
+  required: true
+  summary: Actual repaired-state just qc passes. This is not a new full-suite run;
+    context was captured after launch under a no-edit hold.
+  command: just qc
+  exit_code: 0
+  expected_exit_code: 0
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - cmd-qc
+  - log-qc
+- check_id: check-semantic
+  name: melezitose-ci-repair-semantic-integrity
+  status: passed
+  required: true
+  summary: Native semantic integrity passes; full scientific release remains FAIL
+    with existing holds.
+  command: uv run --frozen python -m mediaingredientmech.validation.semantic_release
+    --root . --report reports/semantic_review_20260921/resolution/current-review.json
+  exit_code: 0
+  expected_exit_code: 0
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - cmd-semantic
+  - log-semantic
+- check_id: check-clean-workflows
+  name: melezitose-independent-clean-workflows-1077-1078-v2
+  status: passed
+  required: true
+  summary: Both exact workflow run sequences plus three regressions and explicit native
+    companion validation pass,66fresh outputs,no ignored output copies.
+  command: python -B /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-clean-workflows-1077-1078-v2/replay.py
+  exit_code: 0
+  expected_exit_code: 0
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - cmd-clean-workflows
+  - log-clean-workflows
+- check_id: check-product-comparison
+  name: melezitose-independent-clean-workflow-comparison
+  status: passed
+  required: true
+  summary: Strict complete product comparison passes. Scientific payloads,canonical/owner/authority,oldpackage
+    and all earlier native reviews unchanged.
+  command: python -B /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-clean-workflows-1077-1078-v2/compare.py
+  exit_code: 0
+  expected_exit_code: 0
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - cmd-product-comparison
+  - log-product-comparison
+- check_id: check-quality
+  name: melezitose-ci-contract-quality
+  status: passed
+  required: true
+  summary: Locked Black/Ruff checks for the new bounded regression pass.
+  command: python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-ci-contract-tests/quality.py
+  exit_code: 0
+  expected_exit_code: 0
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - cmd-quality
+  - log-quality
+- check_id: check-historical-package
+  name: melezitose-ci-repair-historical-package
+  status: passed
+  required: true
+  summary: Original portable package verifies with require-tracked in historical mode.
+    Old current-scope is not asserted after two intentional binding changes.
+  command: python -B reports/melezitose_form_901_20261101/execution/verify.py verify
+    --package reports/melezitose_form_901_20261101/execution --repository . --require-tracked
+  exit_code: 0
+  expected_exit_code: 0
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - cmd-historical-package
+  - log-historical-package
+- check_id: check-publication-capture
+  name: Actual appendix and native capture byte verification
+  status: passed
+  required: true
+  summary: Actual publication,47native input hashes and exact six-file overlay independently
+    verified; old pairs preserved.
+  target_ids:
+  - melezitose-ci:checkout
+  - melezitose-ci:semantic-report
+  - melezitose-ci:regressions
+  - melezitose-ci:ci-evidence
+  - melezitose-ci:historical-package
+  - melezitose-ci:canonical
+  evidence_ids:
+  - publication
+  - capture
+  - freeze
+evidence:
+- evidence_id: source-review
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-clean-workflows-1077-1078-v2/source-review.json
+  locator: SHA-256 5080089dc5e9698a972d0a31d937f8508e180ad7674d57c93d8ca4aa52fe4e2f;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: 'Independent source review: workflow adds only fetch-depth0; semantic report
+    changes only bundle and matching manifest input key; three regression tests pass.
+    No runtime guard weakened.'
+  snapshot_sha256: 5080089dc5e9698a972d0a31d937f8508e180ad7674d57c93d8ca4aa52fe4e2f
+- evidence_id: shallow-proof
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-ci-shallow-diagnosis-v2/result.json
+  locator: SHA-256 60eab4d0847889a0b1290e381b1a75ec2370b028777ceeedecd40eaee824be01;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Actual shallow5da clone refuses missing durable e568 through native provenance
+    and read_review, then passes after fetching only that base, with HEAD and bytes
+    unchanged.
+  snapshot_sha256: 60eab4d0847889a0b1290e381b1a75ec2370b028777ceeedecd40eaee824be01
+- evidence_id: clean-replay
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-clean-workflows-1077-1078-v2/review.json
+  locator: SHA-256 26912dc24dca62ed9d683ec62cfe20037da7b5722b61ab2e03f9685d064bc724;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Every native run block from both workflows passes in an empty-output5da
+    clone plus exact three-file overlay. Full graph5,reviewed SSSOM4,companion51files
+    exact. Supported rows/nodes/edges unchanged; provenance-only manifest/backlog/archive
+    differences explicitly compared.
+  snapshot_sha256: 26912dc24dca62ed9d683ec62cfe20037da7b5722b61ab2e03f9685d064bc724
+- evidence_id: historical-delta
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-clean-workflows-1077-1078-v2/historical-package-scope-delta.json
+  locator: SHA-256 bad2d4210ed7cf8392137d172acf985466e20adf1477aeae265af6842344d376;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: 'All3586 original scope hashes checked: precisely workflow and semantic
+    report differ; new regression file was not in historical scope. Original archive
+    is retained as historical,not falsely current.'
+  snapshot_sha256: bad2d4210ed7cf8392137d172acf985466e20adf1477aeae265af6842344d376
+- evidence_id: selection
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-ci-appendix-v2/review.json
+  locator: SHA-256 f1f76cfa56839d18f697c2e91811593bae63cd50f5cdd3a2e62630c1954eae2d;
+    post-selection/external review evidence, not claimed as raw archived original
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: 120selected originals/112blobs/27command links verified. Corrected only
+    reversed issue descriptions after filed finding; original versions remain qualified
+    and immutable.
+  snapshot_sha256: f1f76cfa56839d18f697c2e91811593bae63cd50f5cdd3a2e62630c1954eae2d
+- evidence_id: publication
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-ci-appendix-actual/review.json
+  locator: SHA-256 bb6f433ffc2f96587cb00473e9c8aa71e8cc5bb05cd11d56d6704c1ea669e3fe;
+    post-selection/external review evidence, not claimed as raw archived original
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Actual published three files equal reviewed in-memory bytes;113regular
+    archive members verified. Six repair paths and12original package/three-native-pair
+    files remain bound; no scientific payload changes.
+  snapshot_sha256: bb6f433ffc2f96587cb00473e9c8aa71e8cc5bb05cd11d56d6704c1ea669e3fe
+- evidence_id: capture
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/melezitose-ci-native-followup/capture.json
+  locator: SHA-256 58032b0945de68f2587811adcbb3e6b8efe4d499205f9ec6a15767ee2fe39cd0;
+    post-selection/external review evidence, not claimed as raw archived original
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Actual new detached-e568 working-tree overlay matches5da plus exact six
+    frozen repair files. Native inspect captures6targets47inputs; original W index
+    unchanged.
+  snapshot_sha256: 58032b0945de68f2587811adcbb3e6b8efe4d499205f9ec6a15767ee2fe39cd0
+- evidence_id: freeze
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-ci-repair/six-file-freeze.json
+  locator: SHA-256 da9881500bff315f78182c42a42cc53556d10d767bb800a6abfad51a1c8d778f;
+    post-selection/external review evidence, not claimed as raw archived original
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Root frozen six-file inventory before this native review; no index mutation.
+    Exact native capture/working bytes rechecked.
+  snapshot_sha256: da9881500bff315f78182c42a42cc53556d10d767bb800a6abfad51a1c8d778f
+- evidence_id: path-migration
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-ci-repair/native-path-comparison.json
+  locator: SHA-256 f40eeeba95be6725c7879a0231eb8115f09c64240bf6d296b0603f4d04718c5d;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Native regeneration changes only semantic report bundle value/manifest
+    input key. Five raw graph members and eight other captured scientific bindings
+    are unchanged.
+  snapshot_sha256: f40eeeba95be6725c7879a0231eb8115f09c64240bf6d296b0603f4d04718c5d
+- evidence_id: failure-supported
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-ci-supported-graph-failure/failed.log
+  locator: SHA-256 a82adf83b91b18015ec77a2b9dcd11b074cc7369731fbd305918d47d0938eea6;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Original actual PR1076 supported-graph CI fails on missing task-specific
+    graph path. Retained as historical failed execution; current repair replay is
+    separate.
+  snapshot_sha256: a82adf83b91b18015ec77a2b9dcd11b074cc7369731fbd305918d47d0938eea6
+- evidence_id: failure-reviewed
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-ci-reviewed-sssom-failure/failed.log
+  locator: SHA-256 9a956c5889d20e612766b2472724a42c200833106b46686e6d2b2a976cddd18b;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Original actual PR1076 reviewed-SSSOM CI fails native provenance because
+    checkout omits durable base. Guard remains strict; current native clone proof
+    and repaired workflow replay are separate.
+  snapshot_sha256: 9a956c5889d20e612766b2472724a42c200833106b46686e6d2b2a976cddd18b
+- evidence_id: cmd-qc
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-repair-native-qc.json
+  locator: SHA-256 dc156433ccea87a16737155caf9f45c51c0a5e14f0a154781b44baab69d19921;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Actual repaired-state just qc passes. This is not a new full-suite run;
+    context was captured after launch under a no-edit hold.
+  snapshot_sha256: dc156433ccea87a16737155caf9f45c51c0a5e14f0a154781b44baab69d19921
+- evidence_id: log-qc
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-repair-native-qc.log
+  locator: SHA-256 5c3b8029d4b0a5c0ae0e6c9ea29490504ac136cc664d879c99b63b11bdd74eb1;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Actual repaired-state just qc passes. This is not a new full-suite run;
+    context was captured after launch under a no-edit hold.
+  snapshot_sha256: 5c3b8029d4b0a5c0ae0e6c9ea29490504ac136cc664d879c99b63b11bdd74eb1
+- evidence_id: cmd-semantic
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-repair-semantic-integrity.json
+  locator: SHA-256 6ca64b5e9b4897b9aa7ba88e0ae447dabdfecfef37792c94efefc7024ef42652;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Native semantic integrity passes; full scientific release remains FAIL
+    with existing holds.
+  snapshot_sha256: 6ca64b5e9b4897b9aa7ba88e0ae447dabdfecfef37792c94efefc7024ef42652
+- evidence_id: log-semantic
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-repair-semantic-integrity.log
+  locator: SHA-256 9170f21f8ca834707d9884ff603d7efbbbd08c0bbf9b08c97c8603ac34e8c9cf;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Native semantic integrity passes; full scientific release remains FAIL
+    with existing holds.
+  snapshot_sha256: 9170f21f8ca834707d9884ff603d7efbbbd08c0bbf9b08c97c8603ac34e8c9cf
+- evidence_id: cmd-clean-workflows
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-independent-clean-workflows-1077-1078-v2.json
+  locator: SHA-256 61268a2f96b5836293d8926a450042bf2666b724bef299c06665d0c4a2c86077;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Both exact workflow run sequences plus three regressions and explicit native
+    companion validation pass,66fresh outputs,no ignored output copies.
+  snapshot_sha256: 61268a2f96b5836293d8926a450042bf2666b724bef299c06665d0c4a2c86077
+- evidence_id: log-clean-workflows
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-independent-clean-workflows-1077-1078-v2.log
+  locator: SHA-256 372e53f5c3ade096dd00f033a60752ce28042079bff1d2ef3f483997c4338fd3;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Both exact workflow run sequences plus three regressions and explicit native
+    companion validation pass,66fresh outputs,no ignored output copies.
+  snapshot_sha256: 372e53f5c3ade096dd00f033a60752ce28042079bff1d2ef3f483997c4338fd3
+- evidence_id: cmd-product-comparison
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-independent-clean-workflow-comparison.json
+  locator: SHA-256 c0146055e945f0c4c44bb47c97eb767575dec352c94ccce4ffd3de42f1ed3dcc;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Strict complete product comparison passes. Scientific payloads,canonical/owner/authority,oldpackage
+    and all earlier native reviews unchanged.
+  snapshot_sha256: c0146055e945f0c4c44bb47c97eb767575dec352c94ccce4ffd3de42f1ed3dcc
+- evidence_id: log-product-comparison
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-independent-clean-workflow-comparison.log
+  locator: SHA-256 ecf2abcc4aa037d69887b5cb958053124ab5500b4d1e781a6df7cb7bf088ca29;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Strict complete product comparison passes. Scientific payloads,canonical/owner/authority,oldpackage
+    and all earlier native reviews unchanged.
+  snapshot_sha256: ecf2abcc4aa037d69887b5cb958053124ab5500b4d1e781a6df7cb7bf088ca29
+- evidence_id: cmd-quality
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-contract-quality.json
+  locator: SHA-256 486afa4e7d53c87f10e05656650169e34a8be48fc3d24ea842217b22c0e4ab36;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Locked Black/Ruff checks for the new bounded regression pass.
+  snapshot_sha256: 486afa4e7d53c87f10e05656650169e34a8be48fc3d24ea842217b22c0e4ab36
+- evidence_id: log-quality
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-contract-quality.log
+  locator: SHA-256 d248f53c778214ef5029cbfcf47bbf8f0656302f24b8741a4f4ad860c4c69b65;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Locked Black/Ruff checks for the new bounded regression pass.
+  snapshot_sha256: d248f53c778214ef5029cbfcf47bbf8f0656302f24b8741a4f4ad860c4c69b65
+- evidence_id: cmd-historical-package
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-repair-historical-package.json
+  locator: SHA-256 b2d6d654af6bdc8aa1cc61f2639829149ab6a8805bd8eea176d2468bde52baff;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Original portable package verifies with require-tracked in historical mode.
+    Old current-scope is not asserted after two intentional binding changes.
+  snapshot_sha256: b2d6d654af6bdc8aa1cc61f2639829149ab6a8805bd8eea176d2468bde52baff
+- evidence_id: log-historical-package
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/melezitose-ci-repair-historical-package.log
+  locator: SHA-256 3f211025d1355ae7a180dfbcacf0b6ec8b8390c0a032d8df012f95f7fdff2f51;
+    exact selected original in CI appendix
+  accessed_at: '2026-11-01T21:51:54.566668Z'
+  support: supports
+  summary: Original portable package verifies with require-tracked in historical mode.
+    Old current-scope is not asserted after two intentional binding changes.
+  snapshot_sha256: 3f211025d1355ae7a180dfbcacf0b6ec8b8390c0a032d8df012f95f7fdff2f51
+assessments:
+- assessment_id: assessment-checkout
+  area: consistency
+  topic: Durable Git history prerequisite
+  outcome: supported
+  summary: A real shallow clone proves that missing e568 is the cause of provenance
+    refusal. Only fetch-depth0 was added; native verification remains fail-closed.
+  target_ids:
+  - melezitose-ci:checkout
+  evidence_ids:
+  - source-review
+  - shallow-proof
+  - clean-replay
+- assessment_id: assessment-semantic-report
+  area: consistency
+  topic: Workflow source graph path
+  outcome: supported
+  summary: Native report now binds output/mim-kgx-710-full. Only bundle/manifest-input-key
+    change; all scientific dispositions and graph payloads remain exact.
+  target_ids:
+  - melezitose-ci:semantic-report
+  evidence_ids:
+  - source-review
+  - path-migration
+  - clean-replay
+- assessment_id: assessment-regressions
+  area: consistency
+  topic: Executable workflow contracts
+  outcome: supported
+  summary: Three passing regressions cover actual report/producer path,checkout history,and
+    genuine native shallow refusal/restored-base success. Historical controls retain
+    expected failures.
+  target_ids:
+  - melezitose-ci:regressions
+  evidence_ids:
+  - source-review
+  - shallow-proof
+  - clean-replay
+- assessment_id: assessment-ci-evidence
+  area: consistency
+  topic: Appended immutable repair evidence
+  outcome: supported
+  summary: Actual120-version/112blob archive and27commands are verified. One reversed
+    issue association was corrected with old versions retained; no new scientific
+    approval.
+  target_ids:
+  - melezitose-ci:ci-evidence
+  evidence_ids:
+  - selection
+  - publication
+- assessment_id: assessment-historical-package
+  area: consistency
+  topic: Historical scope and native pair preservation
+  outcome: supported
+  summary: Old package and all three prior native pairs remain byte-exact. Two old
+    current-scope bindings changed; the new test was absent fromold scope. Historical
+    integrity is distinct from current-scope validation.
+  target_ids:
+  - melezitose-ci:historical-package
+  evidence_ids:
+  - historical-delta
+  - publication
+  - clean-replay
+- assessment_id: assessment-canonical
+  area: consistency
+  topic: Preserved scientific products
+  outcome: supported
+  summary: Canonical mappings,owner,FORM authority,mapping decisions,assertion/finding
+    payloads and supported row/node/edge bytes remain unchanged. No mapping,role or
+    whole-record approval is added.
+  target_ids:
+  - melezitose-ci:canonical
+  evidence_ids:
+  - path-migration
+  - clean-replay
+  - publication
+findings: []
+actions: []
+limitations:
+- Original PR5da CI failures remain retained and are not represented as passing. Clean
+  replay proves corrected local prerequisite behavior; no future remoteCI/queue success
+  is asserted.
+- Clean replay used5da plus exactthree-file overlay,an empty output directory and
+  existing maintained Python3.13 runtime. It did not reinstall dependencies or claim
+  a repaired committed head.
+- The earlier fullsuite4196passed/1skip/33warnings is historical unchanged-source
+  context,not rerun for this repair. Current repair checks are three regressions,actual
+  workflow sequences,QC,semantic integrity andlocked targetedquality.
+- Root three-file context was captured afterQC launch under no-edit hold; captured/current
+  hash equality is established,not continuous pre-capture observation.
+- Original execution package stays immutable historical evidence. Its old current-scope
+  is intentionally stale for two bindings; the new test is outside that old inventory.
+  No verifier waiver or rewriting occurs.
+- Native provenance requires durablee568 available. A shallow tip without that base
+  correctly refuses; history is a workflow prerequisite. The47input capture truthfully
+  uses actual detached-e568 working_tree.
+- Ignored full-graph manifest42d058 was copied only into the review overlay from this
+  independent native clean generation and checked againstW. It is not falsely claimed
+  a tracked Git blob.
+- Full scientific graph release remains FAIL with existing1732blockingfindings/2334blockingassertions;
+  supported1741mapping/2153edge subset remains separate. Carbon-source role and both
+  targetfindings remain OPEN.
+- Earlier B4 absentBTO/MICRO coverage,23deferredaliases and101labelwarnings remain
+  historical diagnostics; no new scientific claim or providerresearch performed.
+- This native pair and postpublication capture/readback receipts are outside the already
+  frozen appendix unless explicitly selected. No circular archive membership or supervisor
+  binding is invented.
+notes:
+- All three existing scientific/diagnostic pairs and original execution package remain
+  immutable; this follow-up does not supersede their authority.
+- The initial reviewer clone harness stopped before native commands on a tracked directory
+  symlink; the corrected harness preserved it as an operator diagnostic. A shallow-proof
+  harness initially overrequired historical non-evidence equality; corrected proof
+  follows the unchanged native provenance contract.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/pull/1076
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1077
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1078
+tags:
+- melezitose
+- ci-portability
+- independent-review
+- scientific-review-false
+- append-only-followup

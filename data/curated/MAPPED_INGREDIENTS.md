@@ -792,7 +792,7 @@
 | CHEBI:16217 | D-(+)-Gluconic acid gamma-lactone | CHEBI:16217 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:207511-10-2 | D-(+)-Melezitose hydrate | CHEBI:6731 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:32528 | D-(+)-Turanose | CHEBI:32528 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:10030-67-8 | D-(+)-melezitose monohydrate | CHEBI:6731 | CHEBI | CLOSE_MATCH | 0 |
+| cas:10030-67-8 | D-(+)-melezitose monohydrate | CHEBI:6731 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16719 | D-(-)-Pantolactone | CHEBI:16719 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:4249 | D-(-)-tagatose | CHEBI:4249 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28797 | D-2-Aminobutyric acid | CHEBI:28797 | CHEBI | CAS_RN_LOOKUP | 0 |

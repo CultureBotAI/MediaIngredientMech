@@ -22530,11 +22530,11 @@
       }
     },
     "914": {
-      "row_sha256": "462644d024dde42b341ec747f2c4cfa90f6861fce844ab5bd8ebaccd5a8d9d0e",
+      "row_sha256": "bf4990db504f0338c6ece439092954d1104e4916712ff1227b6d844b68fe0f62",
       "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
-      "owner_record_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
-      "disposition": "WITHHOLD",
-      "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. The historical report validates a parent or nearby target but this focused review has not independently established the actual broadMatch/closeMatch relation with the required supplied-form or material scope. No nonexact relation is promoted from mapping grade or term existence alone.",
+      "owner_record_sha256": "206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c",
+      "disposition": "SUPPORTED",
+      "review_reason": "Fresh row-specific assessment supports the monohydrate-to-melezitose form-of relation. The inspected monohydrate InChI minus its one water component equals both PubChem CID 92817 and active CHEBI:6731 exactly, including stereochemistry. MAPPING_SEMANTICS sections 1-3 require NARROW_MATCH to emit skos:broadMatch with a B1 handle; this is neither exact parent identity nor an ontology subclass claim. The actual parent row publishes no other tokens.",
       "basis": {
         "baseline_position": 930,
         "previous_decision": {
@@ -22549,19 +22549,42 @@
           "review_evidence": ""
         },
         "historical_record_review": "reports/yaml_record_review/D-_-melezitose_Monohydrate.md",
+        "mapping_change": "issue901-melezitose-form",
         "scoped_review": {
           "file": "mapping_review/nonmapping_cohorts.json",
           "position": 930
         },
-        "policy": "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
+        "form_followup": {
+          "file": "reports/sssom_completion_20260921/mapping_review/form_reviews/901-melezitose-v1.json",
+          "claim_kind": "form_parent",
+          "row_sha256": "bf4990db504f0338c6ece439092954d1104e4916712ff1227b6d844b68fe0f62",
+          "native_review": {
+            "path": "reviews/structured/20261101T202408Z-melezitose-901-form-mapping/review.yaml",
+            "sha256": "5eb85ebf5fb6724f92bfda57bd97805a281e48e3a82675f26bbcdd1f56bb470c",
+            "markdown_sha256": "8eb7c050fd892f1e524e81ba776f0a893b752f225358a4f6a1572ee1f99664c0"
+          },
+          "assessment_id": "assessment-melezitose-parent",
+          "checkpoint": {
+            "sequence": 20,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
+            "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+            "after_sha256": "51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28"
+          },
+          "prior_basis": {
+            "path": "reports/melezitose_form_901_20261101/prior-mapping-basis.json",
+            "evidence_key": "914"
+          },
+          "continuation": []
+        },
+        "resolved_relation_policy": "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
       }
     },
     "915": {
-      "row_sha256": "1e5aaffe48b98b5733dc82a8eebaeb64243446731d40be430f2b55f0f169307f",
+      "row_sha256": "a644bad003f578f4a63e861ec0ba09cffc2f16459b5b476a275a845c685ed8e5",
       "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
-      "owner_record_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+      "owner_record_sha256": "206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c",
       "disposition": "SUPPORTED",
-      "review_reason": "Mapping-only review supports the exact source identity using the archived target/registry identity evidence quoted here. The complete current other payload was read against the identity, registry and synonym evidence; the quoted sections cover the exported same-subject tokens. Unresolved role, recipe, component, occurrence or curation-metadata findings remain outside this row-scoped decision.",
+      "review_reason": "Fresh assessment of corrected owner bytes supports exact cas:10030-67-8 identity for D-(+)-melezitose monohydrate. PubChem CID 16217716 names this CAS through its ChemIDplus, FDA GSRS and NZ EPA annotations and has the matching monohydrate formula and stereochemical InChI; CultureBotHT row 1142 separately records the same supplied form and CAS. The actual CAS:10030-67-8 other token is a same-subject display label. This conclusion replaces, rather than inherits, the withdrawn old-owner approval.",
       "basis": {
         "baseline_position": 931,
         "previous_decision": {
@@ -22576,9 +22599,77 @@
           "review_evidence": ""
         },
         "historical_record_review": "reports/yaml_record_review/D-_-melezitose_Monohydrate.md",
+        "mapping_change": "issue901-melezitose-form",
+        "superseded_scoped_review": {
+          "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+          "reviewed_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+          "current_sha256": "206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c",
+          "baseline_position": 931,
+          "current_position": 915,
+          "owner_supersession": {
+            "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+            "reviewed_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+            "current_sha256": "206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c",
+            "receipts": [
+              {
+                "sequence": 20,
+                "path": "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
+                "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+                "before_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+                "after_sha256": "206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c"
+              }
+            ],
+            "reason": "Exact owner-byte chain supersedes this archived pin; no approval is renewed"
+          },
+          "receipt_inputs": {
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch1.json": "0554d4d32924eec4c9909d3c0ff36c8dd9d44ce426011ba42f0122d9172a41a0",
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch2.json": "c10ef0d7f577190f0d97a95c0482011d6abfaaf03fba2c509f98eec66694c373",
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch3.json": "aff24cdc08d1cb979795ffad227c03e9622733438ec7f94c5669ea05da6bfe88",
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch4.json": "2779f46e8ff8a2d0429fa382ce67dec6f7b2b43b02be3c316c5a7bdcf2138409",
+            "reports/sssom_completion_20260921/mapping_changes/issue232-wrong-form-names.json": "a94aab0d6d9e5cbf6fec1c6d3829981630bd2c40434b868a8d20526f4a7db985",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-704-rulings.json": "0870e436e4f03a1ef2377a957fedab70b42d201b6f9b8935478c40ac647c90d8",
+            "reports/sssom_completion_20260921/mapping_changes/issue759-micro-source.json": "75008d33a173155a6bdccafb64bbee96b0a457f9da5b761bd7ee2aa9b74100aa",
+            "reports/sssom_completion_20260921/mapping_changes/chemical-scopes-20260923.json": "a31d5bae53211a7cdc008008b4eb8dd49d9e2ec3a62773c912dbdab8d0d0b7ae",
+            "reports/sssom_completion_20260921/mapping_changes/ingredient-identities-20260924.json": "1cf4c94c4ff4704c642297aafbc48d05b1978fcd67cbe88ff076e4def9c4be5b",
+            "reports/sssom_completion_20260921/mapping_changes/data-license-20261001.json": "6d89e96b3560bb2b237fc9a358b1ef68986f1361dc536a4e5872661aaf459403",
+            "reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json": "9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226",
+            "reports/sssom_completion_20260921/mapping_changes/claw571-hydrate-parent-identities.json": "2eeb7e2b9da164403cc715e6cc1b3a8c36f6f35d173bc1d740f8b90f7ce3d762",
+            "reports/sssom_completion_20260921/mapping_changes/issue878-hydrate-contradictions.json": "cdd362a5f2d34ebf6676a098869995ce41a8059285cbffc2f92bbc3e49c86ec3",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json": "00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34",
+            "reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json": "fbeec3fbfee71be85541353683df135f96dc1d0021c6bfb3877bcc5eca8813d0",
+            "reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json": "28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8",
+            "reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json": "e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c",
+            "reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json": "2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-owned-name-policy.json": "0ece81a8c97723fef6aeaff73693fa013aac1589727ed896400198ff8d4b98f7",
+            "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87"
+          },
+          "reason": "Archived scoped approval withdrawn after verified correction; no approval renewed"
+        },
         "scoped_review": {
           "file": "mapping_review/nonmapping_cohorts.json",
           "position": 931
+        },
+        "form_followup": {
+          "file": "reports/sssom_completion_20260921/mapping_review/form_reviews/901-melezitose-v1.json",
+          "claim_kind": "primary_identity",
+          "row_sha256": "a644bad003f578f4a63e861ec0ba09cffc2f16459b5b476a275a845c685ed8e5",
+          "native_review": {
+            "path": "reviews/structured/20261101T202408Z-melezitose-901-form-mapping/review.yaml",
+            "sha256": "5eb85ebf5fb6724f92bfda57bd97805a281e48e3a82675f26bbcdd1f56bb470c",
+            "markdown_sha256": "8eb7c050fd892f1e524e81ba776f0a893b752f225358a4f6a1572ee1f99664c0"
+          },
+          "assessment_id": "assessment-melezitose-cas",
+          "checkpoint": {
+            "sequence": 20,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
+            "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+            "after_sha256": "51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28"
+          },
+          "prior_basis": {
+            "path": "reports/melezitose_form_901_20261101/prior-mapping-basis.json",
+            "evidence_key": "915"
+          },
+          "continuation": []
         }
       }
     },
@@ -72884,6 +72975,36 @@
       "basis": {
         "baseline_position": null,
         "mapping_change": "issue669-704-rulings"
+      }
+    },
+    "2982": {
+      "row_sha256": "4e15d8eb5e7cd78d2e9219b175a32daa9b1a47eb14618b16ae2a157036218447",
+      "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+      "owner_record_sha256": "206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c",
+      "disposition": "SUPPORTED",
+      "review_reason": "Fresh assessment supports the actual native-generated kgmicrobe.compound:d-_-melezitose_monohydrate exact handle for this same CAS-primary supplied-form subject. PubChem chemistry establishes one defined chemical and the owner is SINGLE_INGREDIENT; the handle preserves the subject slug and satisfies the repository section 2/section 3 step 2 B1 contract without collapsing the hydrate into CHEBI:6731. Receipt 20 proves this exact full row was newly added. The CAS display token denotes the same monohydrate; no prior handle approval is inherited.",
+      "basis": {
+        "baseline_position": null,
+        "mapping_change": "issue901-melezitose-form",
+        "form_followup": {
+          "file": "reports/sssom_completion_20260921/mapping_review/form_reviews/901-melezitose-v1.json",
+          "claim_kind": "registry_handle",
+          "row_sha256": "4e15d8eb5e7cd78d2e9219b175a32daa9b1a47eb14618b16ae2a157036218447",
+          "native_review": {
+            "path": "reviews/structured/20261101T202408Z-melezitose-901-form-mapping/review.yaml",
+            "sha256": "5eb85ebf5fb6724f92bfda57bd97805a281e48e3a82675f26bbcdd1f56bb470c",
+            "markdown_sha256": "8eb7c050fd892f1e524e81ba776f0a893b752f225358a4f6a1572ee1f99664c0"
+          },
+          "assessment_id": "assessment-melezitose-b1",
+          "checkpoint": {
+            "sequence": 20,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
+            "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+            "after_sha256": "51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28"
+          },
+          "prior_basis": null,
+          "continuation": []
+        }
       }
     }
   }
