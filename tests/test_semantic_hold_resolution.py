@@ -318,3 +318,92 @@ def test_full_gate_rejects_rehashed_rewrite_of_original_negative_payload(resolve
     path.write_text(json.dumps(report))
     with pytest.raises(ValueError):
         gate.validate(root, path)
+
+
+@pytest.fixture
+def moved_full_review(resolved_full_review, monkeypatch):
+    """An actual two-link replay moves a fixed held row from position two to one."""
+    from mediaingredientmech.export.reviewed_sssom import _tsv, read_sssom
+    from mediaingredientmech.validation import mapping_change_receipts as receipts
+
+    root, report_path = resolved_full_review
+    report = json.loads(report_path.read_text())
+    source = root / receipts.SSSOM_SOURCE
+    _, fields, current = read_sssom(source)
+    before = [dict(current[0], other="unrelated removed alias"), current[0]]
+    metadata = "".join(line for line in source.read_text().splitlines(keepends=True) if line.startswith("#"))
+    before_sha = hashlib.sha256(metadata.encode() + _tsv(fields, before)).hexdigest()
+    first_path = receipts.RECEIPTS_DIR + "/checkpoint.json"
+    last_path = receipts.RECEIPTS_DIR + "/remove-unrelated.json"
+    first = {"schema_version": 1, "batch": "checkpoint", "sequence": 1, "approval": "NONE", "before_sha256": before_sha, "after_sha256": before_sha, "before_row_count": 2, "after_row_count": 2, "position_map": [1, 2], "changed_rows": 0, "added_rows": 0, "removed_rows": 0, "changes": [], "records": []}
+    last = {"schema_version": 1, "batch": "remove-unrelated", "sequence": 2, "approval": "NONE", "before_sha256": before_sha, "after_sha256": gate.sha(source), "before_row_count": 2, "after_row_count": 1, "position_map": [None, 1], "changed_rows": 0, "added_rows": 0, "removed_rows": 1, "changes": [{"kind": "removed", "before_position": 1, "after_position": None, "before": before[0], "after": None}], "records": []}
+    prefix = {"schema_version": 1, "before_sha256": before_sha, "after_sha256": before_sha, "row_count": 2, "changed_rows": 0, "changes": []}
+    documents = {receipts.BASELINE: {"schema_version": 1, "source_sha256": before_sha, "rows": before}, receipts.TRAIT_REFRESH: prefix, receipts.PARENT_REFRESH: prefix, first_path: first, last_path: last}
+    for name, document in documents.items():
+        path = root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(document))
+        report["inputs"][name] = gate.sha(path)
+    edges = gate.rows(root / "bundle/mim_edges.tsv", kgx=True)
+    current_assertions = gate.rows(root / "assertions.tsv")
+    document = json.loads((root / "holds.json").read_text())
+    resolution = document["resolutions"][0]
+    frozen_id = receipts.assertion_identity(receipts.SSSOM_SOURCE, "mapping", 2, resolution["assertion_sha256"])
+    resolution.update(assertion_id=frozen_id, edge_id=receipts._edge_id_at(edges[0], 2))
+    monkeypatch.setitem(gate.FROZEN_RELEASE_HOLD_RESOLUTIONS, resolution["hold_id"], {key: value for key, value in resolution.items() if key != "hold_id"})
+    checkpoint = {"sequence": 1, "path": first_path, "sha256": gate.sha(root / first_path), "after_sha256": before_sha, "position": 2}
+    monkeypatch.setitem(receipts.HOLD_CHECKPOINTS, frozen_id, checkpoint)
+    (root / "holds.json").write_text(json.dumps(document))
+    report["inputs"]["holds.json"] = gate.sha(root / "holds.json")
+    report["mapping_change_receipts"] = [first_path, last_path]
+    report["release_hold_lineage"] = receipts.hold_lineage(receipts.verify_mapping_chain(root), current_assertions, edges, document["resolutions"], owners={current[0]["subject_id"]: resolution["owner_record"]}, record_hashes=report["record_inputs"])
+    report_path.write_text(json.dumps(report))
+    return root, report_path
+
+
+def test_full_gate_recomputes_moved_hold_without_granting_new_approval(moved_full_review):
+    root, path = moved_full_review
+    report = json.loads(path.read_text())
+    lineage = next(iter(report["release_hold_lineage"].values()))
+    assert lineage["baseline_position"] == 2 and lineage["current_position"] == 1
+    assert len(lineage["receipts"]) == 1
+    assert gate.validate(root, path)["semantic_release"] == "PASS"
+
+
+@pytest.mark.parametrize("tamper", ["report_position", "report_checkpoint", "missing_lineage", "checkpoint_bytes", "held_replacement"])
+def test_full_gate_refuses_unproven_hold_retargeting(moved_full_review, tamper):
+    from mediaingredientmech.validation import mapping_change_receipts as receipts
+
+    root, path = moved_full_review
+    report = json.loads(path.read_text())
+    if tamper == "missing_lineage":
+        report["release_hold_lineage"] = {}
+    elif tamper.startswith("report_"):
+        lineage = next(iter(report["release_hold_lineage"].values()))
+        if tamper == "report_position":
+            lineage["current_position"] = 2
+        else:
+            lineage["checkpoint"]["position"] = 1
+    else:
+        name = report["mapping_change_receipts"][0 if tamper == "checkpoint_bytes" else 1]
+        receipt = json.loads((root / name).read_text())
+        if tamper == "checkpoint_bytes":
+            receipt["batch"] = "unreviewed replacement checkpoint"
+        else:
+            # Same final payload/position, but the resolved row was deleted and
+            # replaced rather than continuously preserved by the receipt.
+            held = json.loads((root / report["mapping_change_receipts"][0]).read_text())
+            before = json.loads((root / receipts.BASELINE).read_text())["rows"][1]
+            assert held["position_map"] == [1, 2]
+            receipt["position_map"] = [None, None]
+            receipt["removed_rows"] = 2
+            receipt["added_rows"] = 1
+            receipt["changes"].extend([
+                {"kind": "removed", "before_position": 2, "after_position": None, "before": before, "after": None},
+                {"kind": "added", "before_position": None, "after_position": 1, "before": None, "after": before},
+            ])
+        (root / name).write_text(json.dumps(receipt))
+        report["inputs"][name] = gate.sha(root / name)
+    path.write_text(json.dumps(report))
+    with pytest.raises(ValueError, match="lineage|checkpoint|held row"):
+        gate.validate(root, path)

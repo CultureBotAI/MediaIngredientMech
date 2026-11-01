@@ -17,6 +17,12 @@ from pathlib import Path
 import yaml
 
 from mediaingredientmech.sssom_grading import predicate_for
+from mediaingredientmech.validation.mapping_change_receipts import (
+    assertion_identity,
+    hold_lineage,
+    receipt_paths,
+    verify_mapping_chain,
+)
 from mediaingredientmech.validation.write_validated import DEFAULT_SCHEMA_PATH
 
 # Negative scientific review must survive edits to both a report and its ledger.
@@ -172,10 +178,9 @@ def current_assertions(records, mappings, record_hashes, sssom_sha):
     ):
         require(count == 1, "Repeated assertion inventory key")
         payload_sha = hashlib.sha256(payload.encode()).hexdigest()
-        identity = json.dumps([source, kind, position, payload_sha], separators=(",", ":"))
         result.append(
             {
-                "assertion_id": "MIM.review:" + hashlib.sha256(identity.encode()).hexdigest(),
+                "assertion_id": assertion_identity(source, kind, position, payload_sha),
                 "source_record": source,
                 "source_record_sha256": hashes[source],
                 "assertion_type": kind,
@@ -581,7 +586,15 @@ def adjudicate_findings(
 
 
 def validate_release_holds(
-    document, assertions, edges, owners, record_hashes, dispositions=None, evidence_path=None
+    document,
+    assertions,
+    edges,
+    owners,
+    record_hashes,
+    dispositions=None,
+    evidence_path=None,
+    *,
+    lineage=None,
 ):
     """Bind negative review to the exact current claim and prevent approval overrides."""
     require(document.get("schema_version") == 1, "Unsupported release-hold schema")
@@ -634,6 +647,9 @@ def validate_release_holds(
                 all(by_hold_id[policy_id].get(field) == value for field, value in policy.items()),
                 "Maintained release-hold policy was altered or retargeted",
             )
+    lineage = lineage or {}
+    expected_lineage_ids = {item["assertion_id"] for item in resolutions}
+    require(set(lineage) <= expected_lineage_ids, "Unexpected release-hold lineage")
     identities = {row["assertion_id"]: row for row in assertions}
     require(len(identities) == len(assertions), "Duplicate current assertion for release holds")
     edge_index = {
@@ -643,7 +659,8 @@ def validate_release_holds(
     require(len(edge_index) == len(edges), "Duplicate graph assertion for release holds")
     for key, resolution in by_resolution.items():
         require(key in FROZEN_RELEASE_HOLD_RESOLUTIONS, "Unknown release-hold resolution")
-        identity = identities.get(resolution.get("assertion_id"), {})
+        moved = lineage.get(resolution["assertion_id"], {})
+        identity = identities.get(moved.get("assertion_id", resolution["assertion_id"]), {})
         require(
             identity.get("assertion_sha256") == resolution["assertion_sha256"],
             "Resolved release hold has no matching current assertion",
@@ -656,7 +673,10 @@ def validate_release_holds(
             ),
             {},
         )
-        require(edge.get("id") == resolution["edge_id"], "Resolved release-hold edge changed")
+        require(
+            edge.get("id") == moved.get("edge_id", resolution["edge_id"]),
+            "Resolved release-hold edge changed",
+        )
         claim = json.loads(edge.get("assertion_json", "{}"))
         require(
             owners.get(claim.get("subject_id")) == resolution["owner_record"],
@@ -747,12 +767,32 @@ def validate(root: Path, report_path: Path) -> dict:
         report["release_holds"],
         "mappings/ingredient_mappings.sssom.tsv",
         report["bundle"] + "/manifest.json",
+        "src/mediaingredientmech/validation/semantic_release.py",
+        "src/mediaingredientmech/validation/mapping_change_receipts.py",
     }
     if report.get("record_lineage"):
         required_inputs.add(report["record_lineage"])
     require(required_inputs <= inputs.keys(), "Missing required review input")
     for name, expected in inputs.items():
         require(sha(local(root, name)) == expected, f"Stale review input: {name}")
+    recorded_receipts = report.get("mapping_change_receipts")
+    require(
+        isinstance(recorded_receipts, list)
+        and all(isinstance(name, str) for name in recorded_receipts),
+        "Missing mapping-change receipt inventory",
+    )
+    require(
+        len(recorded_receipts) == len(set(recorded_receipts)),
+        "Duplicate mapping-change receipt input",
+    )
+    require(recorded_receipts == receipt_paths(root), "Mapping-change receipt inventory differs")
+    require(set(recorded_receipts) <= inputs.keys(), "Missing bound mapping-change receipt")
+    chain = verify_mapping_chain(root)
+    require(recorded_receipts == chain["receipt_paths"], "Mapping-change receipt inventory changed")
+    require(
+        all(inputs.get(name) == expected for name, expected in chain["input_hashes"].items()),
+        "Missing or stale receipt replay input",
+    )
     baseline_manifest = json.loads(local(root, report["baseline_manifest"]).read_text())
     baseline_name = Path(report["baseline_findings"]).name
     require(
@@ -831,16 +871,29 @@ def validate(root: Path, report_path: Path) -> dict:
     )
     assertion_decisions = rows(local(root, report["assertion_dispositions"]))
     blocking_assertions = adjudicate_assertions(current, assertion_decisions, inputs)
+    hold_document = json.loads(local(root, report["release_holds"]).read_text())
+    resolved_lineage = hold_lineage(
+        chain,
+        current,
+        edges,
+        hold_document.get("resolutions", []),
+        owners={node["id"]: node["source_record"] for node in ingredients},
+        record_hashes=record_hashes,
+    )
+    require(
+        report.get("release_hold_lineage") == resolved_lineage,
+        "Release-hold lineage differs from independently verified receipts",
+    )
     validate_release_holds(
-        json.loads(local(root, report["release_holds"]).read_text()),
+        hold_document,
         current,
         edges,
         {node["id"]: node["source_record"] for node in ingredients},
         record_hashes,
         assertion_decisions,
         report["release_holds"],
+        lineage=resolved_lineage,
     )
-    hold_document = json.loads(local(root, report["release_holds"]).read_text())
     for resolution in hold_document.get("resolutions", []):
         require(
             inputs.get(resolution["evidence"]) == resolution["evidence_sha256"],

@@ -13,6 +13,7 @@ first ``after`` and not the baseline.
 from __future__ import annotations
 
 import csv
+import hashlib
 import importlib.util
 import io
 import json
@@ -93,8 +94,8 @@ def _receipt(batch, sequence, before, after, changes, position_map, before_rows,
         "batch": batch,
         "sequence": sequence,
         "approval": "NONE: withheld pending mapping-specific review",
-        "before_sha256": before,
-        "after_sha256": after,
+        "before_sha256": before if len(before) == 64 else hashlib.sha256(before.encode()).hexdigest(),
+        "after_sha256": after if len(after) == 64 else hashlib.sha256(after.encode()).hexdigest(),
         "before_row_count": before_rows,
         "after_row_count": after_rows,
         "records": [],
@@ -131,7 +132,8 @@ def _second_batch():
 
 def _walk(receipts, reviewed="s2", refreshed=None):
     return assemble.walk_mapping_changes(
-        receipts, start_sha256="s0", reviewed_sha256=reviewed, baseline_rows=BASE,
+        receipts, start_sha256=hashlib.sha256(b"s0").hexdigest(),
+        reviewed_sha256=hashlib.sha256(reviewed.encode()).hexdigest(), baseline_rows=BASE,
         refreshed_rows=refreshed or {},
     )
 
@@ -168,8 +170,8 @@ def test_receipt_before_must_match_the_synonym_refreshed_row():
     [
         (lambda r: r.update(sequence=2), "numbered 1..n"),
         (lambda r: r.update(approval="SUPPORTED: verified"), "approval-free"),
-        (lambda r: r.update(before_sha256="stale"), "does not chain from the previous link"),
-        (lambda r: r.update(after_sha256="other"), "does not produce the reviewed source"),
+        (lambda r: r.update(before_sha256=hashlib.sha256(b"stale").hexdigest()), "does not chain from the previous link"),
+        (lambda r: r.update(after_sha256=hashlib.sha256(b"other").hexdigest()), "does not produce the reviewed source"),
         (lambda r: r.update(position_map=[1, 2, 3]), "position map is incomplete"),
         (lambda r: r.update(position_map=[1, 2, 2, 4]), "not injective"),
         (lambda r: r["changes"].append({"kind": "added", "before_position": None, "after_position": 1,
@@ -200,8 +202,9 @@ def test_no_receipts_is_the_identity_walk():
 
 
 @pytest.mark.parametrize("synonym_corrected,mapping_changed", [(True, True), (True, False), (False, True), (False, False)])
+@pytest.mark.parametrize("cohort", [None, "nonmapping_cohorts", "changed-owner-review"])
 def test_assembled_evidence_preserves_every_applicable_correction_basis(
-    tmp_path, monkeypatch, synonym_corrected, mapping_changed,
+    tmp_path, monkeypatch, synonym_corrected, mapping_changed, cohort, prepare=None,
 ):
     """A later mapping receipt must not hide an earlier synonym correction (#1017).
 
@@ -236,16 +239,20 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
     write(assemble.SOURCE, sssom(current))
     current_sha = assemble.digest(tmp_path / assemble.SOURCE)
     parent_sha = receipt_mod.digest(sssom(corrected).encode())
+    baseline_sha = receipt_mod.digest(sssom(baseline).encode())
     document("baseline-mapping-review.json", {
+        "schema_version": 1, "source_sha256": baseline_sha,
         "rows": [baseline], "record_inputs": {owner: owner_sha},
         "decisions": [{"source_position": 1, "resolution_status": "APPROVED",
                        "review_reason": "Prior exact-payload review", "review_evidence": "prior-review.md"}],
     })
     document("trait_synonyms/decisions.json", {"records": []})
     document("parent_names/decisions.json", {"records": []})
-    document("trait-synonym-refresh.json", {"after_sha256": "trait-sha", "changes": []})
+    document("trait-synonym-refresh.json", {"schema_version": 1, "before_sha256": baseline_sha, "after_sha256": baseline_sha,
+                                            "row_count": 1, "changed_rows": 0, "changes": [], "records": []})
     document("parent-name-refresh.json", {
-        "before_sha256": "trait-sha", "after_sha256": parent_sha,
+        "schema_version": 1, "before_sha256": baseline_sha, "after_sha256": parent_sha,
+        "row_count": 1, "changed_rows": int(synonym_corrected), "records": [],
         "changes": [{"source_position": 1, "before": baseline, "after": corrected,
                      "removed_tokens": ["rejected"]}] if synonym_corrected else [],
     })
@@ -254,9 +261,18 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
             "provenance-repair", 1, parent_sha, current_sha,
             [{"kind": "changed", "before_position": 1, "after_position": 1,
               "before": corrected, "after": current}], [1], 1, 1,
+            changed_rows=1, added_rows=0, removed_rows=0,
         ))
     for name in ("concern_cohorts", "nonmapping_cohorts", "changed-owner-review"):
         document(f"mapping_review/{name}.json", {"rows": []})
+    if cohort:
+        entry = {"disposition": "SUPPORTED", "reason": "Exact historical mapping review",
+                 "owner_record_sha256": owner_sha, "mapping": baseline}
+        if cohort == "nonmapping_cohorts":
+            entry.update(owner_record=owner, source_position=1, source_sssom_sha256=baseline_sha)
+        else:
+            entry.update(owner=owner, decision={"source_position": "1", "source_record_sha256": baseline_sha})
+        document(f"mapping_review/{cohort}.json", {"rows": [entry]})
     document("mapping_review/issue-intersections.json", {
         "issue_669_all_baseline_intersections": [],
         "issue_232_conflicting_label_intersections": [], "findings": [],
@@ -270,6 +286,7 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
         "src/mediaingredientmech/export/reviewed_sssom.py",
         "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
         "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
+        "src/mediaingredientmech/validation/mapping_change_receipts.py",
         "reports/semantic_review_20260921/resolution/historical-review-evidence.json",
     ):
         write(path, "fixture context\n")
@@ -277,6 +294,8 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
     monkeypatch.setattr(assemble, "HERE", here)
     monkeypatch.setattr(assemble, "REVIEWED_SOURCE", current_sha)
 
+    if prepare is not None:
+        prepare(here)
     products = assemble.assemble()
     entry = json.loads(products["mapping-evidence.json"])["entries"]["1"]
     basis = entry["basis"]
@@ -285,5 +304,55 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
     assert entry["disposition"] == ("WITHHOLD" if synonym_corrected or mapping_changed else "SUPPORTED")
     assert entry["row_sha256"] == assemble.row_sha256(current)
     assert entry["owner_record_sha256"] == owner_sha
-    if mapping_changed:
+    if mapping_changed and not cohort:
         assert entry["review_reason"].startswith("Mapping corrected by receipt provenance-repair:")
+    if cohort and (mapping_changed or synonym_corrected):
+        assert basis["superseded_scoped_review"]["reviewed_sha256"] == owner_sha
+        assert basis["superseded_scoped_review"]["current_sha256"] == owner_sha
+        assert "superseded" in entry["review_reason"]
+
+
+@pytest.mark.parametrize("tamper", ["owner", "row", "source", "hash", "position"])
+def test_scoped_withdrawal_refuses_unbound_archived_claim(tamper):
+    owner = "data/ingredients/mapped/A.yaml"
+    old, current = _row("MIM:A", "CHEBI:1"), _row("MIM:A", "CHEBI:2")
+    digest = hashlib.sha256(b"owner").hexdigest()
+    source = hashlib.sha256(b"baseline").hexdigest()
+    entry = {"owner_record": owner, "owner_record_sha256": digest, "mapping": old,
+             "source_position": 1, "source_sssom_sha256": source}
+    proof = {"baseline_rows": [old], "state": [current], "forward": [1],
+             "owner_chains": {}, "receipt_inputs": {"receipt.json": hashlib.sha256(b"receipt").hexdigest()}}
+    if tamper == "owner":
+        entry["owner_record"] = "data/ingredients/mapped/Other.yaml"
+    elif tamper == "row":
+        entry["mapping"] = dict(old, other="unreviewed")
+    elif tamper == "source":
+        entry["source_sssom_sha256"] = hashlib.sha256(b"other source").hexdigest()
+    elif tamper == "hash":
+        entry["owner_record_sha256"] = hashlib.sha256(b"different owner").hexdigest()
+    else:
+        proof["forward"] = [None]
+    with pytest.raises(ValueError, match="archived row and owner|byte-chain"):
+        assemble.withdraw_stale_cohort(entry, current, owner, digest, proof,
+                                      {"source_sha256": source}, current_position=1)
+
+
+@pytest.mark.parametrize("cohort", ["nonmapping_cohorts", "changed-owner-review"])
+@pytest.mark.parametrize("reverse", [False, True])
+@pytest.mark.parametrize("conflicting", [False, True])
+def test_assembler_rejects_duplicate_cohort_positions_before_projection(tmp_path, monkeypatch, cohort, reverse, conflicting):
+    def duplicate(here):
+        path = here / f"mapping_review/{cohort}.json"
+        document = json.loads(path.read_text())
+        original = document["rows"][0]
+        repeated = json.loads(json.dumps(original))
+        if conflicting:
+            repeated.update(disposition="WITHHOLD", reason="Conflicting prior scientific decision")
+            repeated["mapping"]["other"] = "Unbound competing mapping payload"
+        document["rows"] = [repeated, original] if not reverse else [original, repeated]
+        path.write_text(json.dumps(document))
+
+    with pytest.raises(ValueError, match=f"Duplicate source position in {cohort}.json"):
+        test_assembled_evidence_preserves_every_applicable_correction_basis(
+            tmp_path, monkeypatch, False, False, cohort, prepare=duplicate,
+        )

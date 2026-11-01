@@ -2,7 +2,7 @@
 
 Issue [#729](https://github.com/CultureBotAI/MediaIngredientMech/issues/729)
 finalizes the standalone MIM SSSOM. Every source row has an explicit disposition:
-1,739 supported and 1,243 withheld, out of 2,982. Unsupported claims remain in a
+1,739 supported and 1,242 withheld, out of 2,981. Unsupported claims remain in a
 separate, lossless SSSOM backlog, as requested. Completing disposition coverage
 does not mean every source mapping has been scientifically approved.
 
@@ -46,7 +46,7 @@ above. The earlier published release remains a historical snapshot; these
 decisions supersede it for current SSSOM use.
 
 The complete source SSSOM SHA-256 is
-`d5cd812a8c44c85438d73c68c7a8c3067a505765e4cd54e3a64cef029f2d8ed6`.
+`38173b2206a3d60615fca7d6d7861e777bd9905c58ec9d0b55d6a89a8c325b1c`.
 The original negative aromatic-compound review (#724/#725) is retained, with a
 separate, exact source-correction resolution. Removing a hold or rehashing its
 old payload cannot release that unsupported claim.
@@ -79,8 +79,8 @@ duplicate's raw salt name as a synonym; each record retains its own full prior
 history, and the duplicate remains as a rejected tombstone.
 
 Native semantic integrity passes, while the complete graph remains FAIL with
-1,732 blocking findings and 2,336 blocking assertions. The assertion ledger's
-2,982 mapping-source hashes bind the changed canonical table; they are not new
+1,732 blocking findings and 2,335 blocking assertions. The assertion ledger's
+2,981 mapping-source hashes bind the changed canonical table; they are not new
 scientific approvals or cleared backlog findings.
 
 Adversarial review [#730](https://github.com/CultureBotAI/MediaIngredientMech/issues/730)
@@ -91,3 +91,24 @@ the integrity failures. This is agent-assisted evidence review, not human
 curator sign-off or new experimental evidence.
 
 See [the release guide](../../docs/SSSOM_RELEASE.md) for use and validation.
+
+
+## Strict receipt withdrawal
+
+The #764 port follows #817's exact-byte approval model. A complete verified
+owner-byte chain may supersede an archived review pin, but it withdraws that
+approval rather than renewing it. A stale scoped cohort decision becomes
+WITHHOLD only after its exact original row, owner and source position are
+proved through the native receipt chain. Its prior evidence and all synonym
+and mapping corrections remain visible. Missing pins, gaps, unrelated owners
+and unaccounted row changes fail. The special Aromatic/Arsenate scientific
+reviews still require their exact reviewed owner bytes.
+
+The shared `mapping_change_receipts` utility validates integer positions,
+operation accounting, owner links and complete replay (#1063). Both producers
+bind its bytes and every replay input in existing review inputs; this does not
+change the mapping-review protocol or create a scientific approval. The native
+semantic gate independently verifies its own code, utility code and exact
+receipt inventory, including an empty inventory (#766). Section-refresh
+receipts remain audit-only. New scientific approval must separately bind the
+corrected mapping; it cannot approve unrelated role or component claims.

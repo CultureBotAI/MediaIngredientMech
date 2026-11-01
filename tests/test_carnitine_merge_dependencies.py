@@ -248,13 +248,14 @@ def mapping_fixture(tmp_path, monkeypatch, proposal, evidence):
         put_json(here, relative, value)
     # A reduced replay of the frozen positive NLDM review, not a new approval.
     assert evidence["mapping_decision"]["disposition"] == "SUPPORTED"
-    document("baseline-mapping-review.json", {"rows": [mapping], "record_inputs": {owner: sha(before[OWNER])},
+    document("baseline-mapping-review.json", {"schema_version": 1, "source_sha256": source_sha, "rows": [mapping], "record_inputs": {owner: sha(before[OWNER])},
         "decisions": [{"source_position": 1, "resolution_status": "APPROVED", "review_reason": evidence["mapping_decision"]["review_reason"],
                        "review_evidence": "prior-review.md"}]})
     for name in ("trait_synonyms", "parent_names"):
         document(f"{name}/decisions.json", {"records": []})
-    document("trait-synonym-refresh.json", {"after_sha256": source_sha, "changes": []})
-    document("parent-name-refresh.json", {"before_sha256": source_sha, "after_sha256": source_sha, "changes": []})
+    for name in ("trait-synonym-refresh.json", "parent-name-refresh.json"):
+        document(name, {"schema_version": 1, "before_sha256": source_sha, "after_sha256": source_sha,
+                        "row_count": 1, "changed_rows": 0, "changes": [], "records": []})
     for name in ("concern_cohorts", "nonmapping_cohorts", "changed-owner-review"):
         document(f"mapping_review/{name}.json", {"rows": []})
     document("mapping_review/issue-intersections.json", {"issue_669_all_baseline_intersections": [],
@@ -266,7 +267,9 @@ def mapping_fixture(tmp_path, monkeypatch, proposal, evidence):
     put(tmp_path, "prior-review.md", evidence["historical_report"]["text"].encode())
     for name in ("MAPPING_SEMANTICS.md", "src/mediaingredientmech/export/reviewed_sssom.py",
                  "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
-                 "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py"):
+                 "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
+                 "src/mediaingredientmech/validation/mapping_change_receipts.py",
+                 "src/mediaingredientmech/validation/semantic_release.py"):
         put(tmp_path, name, (SOURCE_ROOT / name).read_bytes())
     put_json(tmp_path, "reports/semantic_review_20260921/resolution/historical-review-evidence.json",
              {"reports": {evidence["historical_original_record"]["review_report"]: evidence["historical_report"]}})
@@ -307,6 +310,26 @@ def test_native_owner_only_receipt_withdraws_nldm_mapping_approval(proposal, evi
     # The original frozen owner still earns the captured approval with no correction receipt.
     put(tmp_path, OWNER, old_owner)
     assert json.loads(assembler.assemble()["review.json"])["decisions"][0]["disposition"] == "SUPPORTED"
+
+
+@pytest.mark.parametrize("document_name,field,message", [
+    ("baseline-mapping-review.json", "schema_version", "Unsupported baseline schema"),
+    ("baseline-mapping-review.json", "source_sha256", "Invalid SHA256"),
+    ("trait-synonym-refresh.json", "before_sha256", "Invalid SHA256"),
+    ("parent-name-refresh.json", "schema_version", "Unsupported synonym refresh schema"),
+])
+def test_owner_only_mapping_fixture_requires_complete_native_history(
+    proposal, evidence, tmp_path, monkeypatch, document_name, field, message,
+):
+    assembler, receipt, source, old_owner = mapping_fixture(tmp_path, monkeypatch, proposal, evidence)
+    canonical = source.read_bytes()
+    path = assembler.HERE / document_name
+    document = json.loads(path.read_text())
+    document.pop(field)
+    path.write_text(json.dumps(document))
+    with pytest.raises(ValueError, match=message):
+        assembler.assemble()
+    assert source.read_bytes() == canonical
 
 
 @pytest.mark.parametrize("name", ["Carnitine Hydrochloride", "Carnitine (Dl) Hydrochloride"])
