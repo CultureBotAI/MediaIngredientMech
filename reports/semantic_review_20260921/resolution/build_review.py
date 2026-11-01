@@ -15,6 +15,11 @@ import yaml
 
 from mediaingredientmech.export.reviewed_sssom import load_review
 from mediaingredientmech.sssom_grading import predicate_for
+from mediaingredientmech.validation.mapping_change_receipts import (
+    hold_lineage,
+    record_supersession,
+    verify_mapping_chain,
+)
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
     adjudicate_findings,
@@ -59,11 +64,11 @@ def write_rows(path, entries):
         writer.writerows(entries)
 
 
-def apply_release_holds(document, assertions, edges, owners, record_hashes, evidence_path):
+def apply_release_holds(document, assertions, edges, owners, record_hashes, evidence_path, *, lineage=None):
     """Apply the frozen negative review after every positive approval path."""
     if document.get("required_hold_ids") != [FROZEN_RELEASE_HOLD_ID]:
         raise ValueError("Missing frozen release hold #724")
-    held = validate_release_holds(document, assertions, edges, owners, record_hashes)
+    held = validate_release_holds(document, assertions, edges, owners, record_hashes, lineage=lineage)
     if not held:
         # The gate independently accepts only the exact source correction in
         # maintained policy; this is not permission to clear an active hold.
@@ -77,7 +82,7 @@ def apply_release_holds(document, assertions, edges, owners, record_hashes, evid
     for decision in assertions:
         if decision["assertion_id"] in held:
             decision.update(resolution_status="OPEN", review_reason=hold["review_reason"], review_evidence=evidence_path)
-    validate_release_holds(document, assertions, edges, owners, record_hashes, assertions, evidence_path)
+    validate_release_holds(document, assertions, edges, owners, record_hashes, assertions, evidence_path, lineage=lineage)
 
 
 def has_mechanical_evidence_gap(kind, assertion):
@@ -180,27 +185,78 @@ def role_supported(item, name, record, record_hash, position, assertion):
             and assertion == item.get("after_assertion"))
 
 
-def validate_explicit_plans(records, hashes, roles, identity_support, component_plans, component_dispositions):
-    """Fail stale evidence before it can close either findings or current assertions."""
+def role_plan_for_disposition(disposition, plans):
+    """Bind an old zero-based role finding to its exact one-based curation plan."""
+    try:
+        position = str(int(disposition["source_position"]) + 1)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("Role disposition lacks its exact historical position") from exc
+    matches = []
+    for plan in plans:
+        before = json.dumps(plan.get("before_assertion"), sort_keys=True, separators=(",", ":")).replace("|", "\\u007c")
+        if (disposition.get("facet") == "cellular_metabolic_roles"
+                and plan.get("source_path") == disposition.get("source_record")
+                and str(plan.get("source_position")) == position
+                and plan.get("before_sha256") == disposition.get("record_before_sha256")
+                and hashlib.sha256(before.encode()).hexdigest() == disposition.get("assertion_before_sha256")):
+            matches.append(plan)
+    if len(matches) != 1:
+        raise ValueError("Role disposition does not identify exactly one archived role plan")
+    return matches[0]
+
+
+def plan_superseded(superseded, kind, owner, reviewed_sha256, *, source_position=None):
+    return any(item["plan_kind"] == kind and item["owner_record"] == owner
+               and item["reviewed_sha256"] == reviewed_sha256
+               and (source_position is None or item.get("source_position") == str(source_position))
+               for item in superseded)
+
+
+def validate_explicit_plans(records, hashes, roles, identity_support, component_plans, component_dispositions, *, chain=None):
+    """Withdraw only proven stale pins; exact current pins still bind their payload."""
+    superseded = []
+
+    def withdrawn(kind, name, reviewed_hash, message, **claim):
+        proof = record_supersession(chain, owner=name, reviewed_sha256=reviewed_hash,
+                                    current_sha256=hashes.get(name)) if chain is not None else None
+        if proof is None:
+            raise ValueError(message)
+        superseded.append(dict(proof, plan_kind=kind, **claim))
+
     for item in roles:
         name = item["source_path"]
-        if (not _reviewed(name, hashes.get(name), item["after_sha256"])
+        if (not _reviewed(name, hashes.get(name), item.get("after_sha256"))
                 or records.get(name) != item["after_record"]):
-            raise ValueError(f"Role plan no longer describes current record: {name}")
+            withdrawn("role", name, item.get("after_sha256"), f"Role plan no longer describes current record: {name}",
+                      source_position=str(item["source_position"]),
+                      assertion_sha256=hashlib.sha256(json.dumps(item["after_assertion"], sort_keys=True, separators=(",", ":")).encode()).hexdigest())
+            continue
         position = int(item["source_position"]) - 1
         if records[name]["cellular_metabolic_roles"][position] != item["after_assertion"]:
             raise ValueError(f"Role plan position changed: {name}")
     for name, item in identity_support.items():
         if not identity_plan_supported(item, records.get(name), hashes.get(name)):
-            raise ValueError(f"Identity plan no longer describes current record: {name}")
+            withdrawn("identity", name, item.get("after_sha256"), f"Identity plan no longer describes current record: {name}")
     for item in component_plans:
         name = item.get("after_path", item["source_record"])
-        if (not _reviewed(name, hashes.get(name), item["after_sha256"])
+        if (not _reviewed(name, hashes.get(name), item.get("after_sha256"))
                 or records.get(name) != item["after"]):
-            raise ValueError(f"Component plan no longer describes current record: {name}")
+            withdrawn("component", name, item.get("after_sha256"), f"Component plan no longer describes current record: {name}")
     for item in component_dispositions:
-        if not _reviewed(item["current_record"], hashes.get(item["current_record"]), item["current_record_sha256"]):
-            raise ValueError(f"Stale component disposition: {item['finding_id']}")
+        name = item["current_record"]
+        if not _reviewed(name, hashes.get(name), item.get("current_record_sha256")):
+            withdrawn("component_disposition", name, item.get("current_record_sha256"), f"Stale component disposition: {item['finding_id']}")
+    return superseded
+
+
+def require_unique_identity_owners(records, archive):
+    """Reject ambiguous archive entries before any owner-keyed projection."""
+    seen = set()
+    for record in records:
+        owner = record["destination_path"]
+        if owner in seen:
+            raise ValueError(f"Duplicate destination owner in {archive}: {owner}")
+        seen.add(owner)
 
 
 def main():
@@ -218,6 +274,8 @@ def main():
     original_records = {r["source_record"]: r for r in rows(BASE / "records.tsv")}
     initial_plan = json.loads((BASE / "corrections/identity-plan.json").read_text())["records"]
     recovered = json.loads((HERE / "identities/identity-plan.json").read_text())["records"]
+    require_unique_identity_owners(initial_plan, "initial identity archive")
+    require_unique_identity_owners(recovered, "recovered identity archive")
     roles = json.loads((HERE / "roles/cellular-role-plan.json").read_text())["records"]
     components = rows(HERE / "components/dispositions.tsv")
     current_components = json.loads((HERE / "components/applied-changes.json").read_text())
@@ -226,20 +284,34 @@ def main():
     # approval hashes from the mutable current records.
     initial_review_path = BASE / "corrections/current-review.json"
     initial_hashes = json.loads(initial_review_path.read_text())["record_inputs"]
-    identity_support = {
+    initial_identity_support = {
         item["destination_path"]: {
             "after_record": item["after_record"],
             "after_sha256": initial_hashes.get(item["destination_path"]),
         }
         for item in initial_plan if item["after_record"]["mapping_status"] == "MAPPED"
     }
-    identity_support.update({
+    recovered_identity_support = {
         item["destination_path"]: {
             "after_record": item["after_record"], "after_sha256": item["after_sha256"],
         }
         for item in recovered if item["after_record"]["mapping_status"] == "MAPPED"
-    })
-    validate_explicit_plans(records, hashes, roles, identity_support, current_components, components)
+    }
+    chain = verify_mapping_chain(ROOT)
+    initial_superseded = validate_explicit_plans(
+        records, hashes, roles, initial_identity_support, current_components, components, chain=chain,
+    )
+    recovered_superseded = validate_explicit_plans(
+        records, hashes, [], recovered_identity_support, [], [], chain=chain,
+    )
+    for proofs, evidence in (
+        (initial_superseded, BASE / "corrections/identity-plan.json"),
+        (recovered_superseded, HERE / "identities/identity-plan.json"),
+    ):
+        for proof in proofs:
+            if proof["plan_kind"] == "identity":
+                proof["plan_evidence"] = relative(evidence)
+    superseded = initial_superseded + recovered_superseded
     component_index = {r["finding_id"]: r for r in components}
     role_index = {r["before_edge_id"]: r for r in rows(HERE / "roles/role-dispositions.tsv")}
     move_map = {item["source_path"]: item["destination_path"] for item in initial_plan + recovered}
@@ -275,21 +347,41 @@ def main():
         elif finding["finding_id"] in initial_decisions:
             prior = initial_decisions[finding["finding_id"]]
             if prior["disposition"] == "IDENTITY_CORRECTED":
-                proof = BASE / "corrections/identity-plan.json"
-                reason = prior["reason"]
+                pin = initial_identity_support.get(name)
+                if pin is None:
+                    raise ValueError(f"Initial identity finding lacks its own archived plan: {name}")
+                if plan_superseded(initial_superseded, "identity", name, pin["after_sha256"]):
+                    decision["resolution_reason"] = "Archived initial identity pin superseded by an exact owner-byte chain; finding reopened pending fresh review."
+                else:
+                    proof = BASE / "corrections/identity-plan.json"
+                    reason = prior["reason"]
             elif name in recovered_names:
-                proof = HERE / "identities/identity-plan.json"
-                reason = "Original source identity recovered and independently matched to the published target; see identity evidence."
+                pin = recovered_identity_support.get(name)
+                if pin is None:
+                    raise ValueError(f"Recovered identity finding lacks its own archived plan: {name}")
+                if plan_superseded(recovered_superseded, "identity", name, pin["after_sha256"]):
+                    decision["resolution_reason"] = "Archived recovered identity pin superseded by an exact owner-byte chain; finding reopened pending fresh review."
+                else:
+                    proof = HERE / "identities/identity-plan.json"
+                    reason = "Original source identity recovered and independently matched to the published target; see identity evidence."
         elif finding["finding_id"] in component_index:
             item = component_index[finding["finding_id"]]
-            if item["disposition"] != "OPEN_SOURCE_VERIFICATION":
+            if plan_superseded(superseded, "component_disposition", item["current_record"], item["current_record_sha256"]):
+                decision["resolution_reason"] = "Archived component disposition superseded by an exact owner-byte chain; finding reopened pending fresh review."
+            elif item["disposition"] != "OPEN_SOURCE_VERIFICATION":
                 proof = HERE / "components/dispositions.tsv"
                 reason = item["reason"]
         elif finding["kind"] == "role_evidence":
             item = role_index.get(finding["affected_unit"], {})
             if item.get("disposition") == "SUPPORTED_IN_STATED_CONTEXT":
-                proof = HERE / "roles/cellular-role-plan.json"
-                reason = item["reason"]
+                pin = role_plan_for_disposition(item, roles)
+                if pin["source_path"] != name:
+                    raise ValueError("Role finding was moved to a different plan owner")
+                if plan_superseded(superseded, "role", name, pin["after_sha256"], source_position=pin["source_position"]):
+                    decision["resolution_reason"] = "Archived role pin superseded by an exact owner-byte chain; finding reopened pending fresh review."
+                else:
+                    proof = HERE / "roles/cellular-role-plan.json"
+                    reason = item["reason"]
         if proof:
             decision.update(resolution_status="RESOLVED", resolution_reason=reason, resolution_evidence=relative(proof))
         decisions.append(decision)
@@ -312,7 +404,6 @@ def main():
     for edge in graph_edges:
         normal = json.dumps(json.loads(edge["assertion_json"]), sort_keys=True, separators=(",", ":"))
         payloads[(edge["source_record"], edge["assertion_type"], edge["source_position"])] = (normal, edge)
-    role_support = {item["source_path"]: item for item in roles}
     gyps = next(item for item in current_components if item["source_record"].endswith("/GYPS.yaml"))
     for decision in assertion_rows:
         name, kind = decision["source_record"], decision["assertion_type"]
@@ -327,18 +418,26 @@ def main():
             proof = role_review_path if kind.endswith("_roles") else historical_evidence
             reason = ("Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment."
                       if kind.endswith("_roles") else "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.")
-        if kind == "cellular_metabolic_roles" and role_supported(role_support.get(name, {}), name, records[name], hashes[name], decision["source_position"], assertion):
+        if kind == "cellular_metabolic_roles" and any(
+                role_supported(pin, name, records[name], hashes[name], decision["source_position"], assertion)
+                for pin in roles):
             proof = HERE / "roles/cellular-role-plan.json"
             reason = "Primary evidence inspected for the explicit organism and conditions; supplied-hydrate extensions are documented inferences."
-        elif kind == "mapping" and owner in identity_support:
-            source_name = owner
-            if not identity_plan_supported(identity_support[source_name], records[source_name], hashes[source_name]):
-                raise ValueError(f"Identity plan no longer describes current record: {source_name}")
-            record = identity_support[source_name]["after_record"]
-            if identity_mapping_supported(record, assertion):
-                proof = HERE / "identities/identity-plan.json" if source_name in recovered_names else BASE / "corrections/identity-plan.json"
-                reason = "This exact target, predicate and label are supported by the explicit chemical identity correction plan; this does not approve separate roles or other targets."
-        elif kind == "component" and name.endswith("/GYPS.yaml"):
+        elif kind == "mapping":
+            for pins, stale_pins, evidence in (
+                (initial_identity_support, initial_superseded, BASE / "corrections/identity-plan.json"),
+                (recovered_identity_support, recovered_superseded, HERE / "identities/identity-plan.json"),
+            ):
+                pin = pins.get(owner)
+                if pin is None or plan_superseded(stale_pins, "identity", owner, pin.get("after_sha256")):
+                    continue
+                if not identity_plan_supported(pin, records[owner], hashes[owner]):
+                    raise ValueError(f"Identity plan no longer describes current record: {owner}")
+                if identity_mapping_supported(pin["after_record"], assertion):
+                    proof = evidence
+                    reason = "This exact target, predicate and label are supported by the explicit chemical identity correction plan; this does not approve separate roles or other targets."
+        elif (kind == "component" and name.endswith("/GYPS.yaml")
+              and not plan_superseded(superseded, "component", name, gyps.get("after_sha256"))):
             if not _reviewed(name, hashes[name], gyps["after_sha256"]) or records[name] != gyps["after"]:
                 raise ValueError("GYPS differs from reviewed recipe correction")
             proof = HERE / "components/applied-changes.json"
@@ -354,8 +453,11 @@ def main():
             decision.update(resolution_status="APPROVED" if scoped["disposition"] == "SUPPORTED" else "OPEN",
                             review_reason=scoped["review_reason"], review_evidence=relative(mapping_review_path))
     release_holds_path = HERE / "release-holds.json"
-    apply_release_holds(json.loads(release_holds_path.read_text()), assertion_rows, graph_edges,
-                        graph_owners, hashes, relative(release_holds_path))
+    hold_document = json.loads(release_holds_path.read_text())
+    resolved_lineage = hold_lineage(chain, assertion_rows, graph_edges, hold_document.get("resolutions", []),
+                                  owners=graph_owners, record_hashes=hashes)
+    apply_release_holds(hold_document, assertion_rows, graph_edges,
+                        graph_owners, hashes, relative(release_holds_path), lineage=resolved_lineage)
     write_rows(HERE / "assertion-dispositions.tsv", assertion_rows)
     proof_files = [BASE / "manifest.json", BASE / "findings.tsv", BASE / "kgx_assertions.tsv", BASE / "records.tsv",
                    BASE / "corrections/identity-plan.json", initial_review_path, HERE / "finding-dispositions.tsv", HERE / "assertion-dispositions.tsv",
@@ -363,7 +465,8 @@ def main():
                    historical_evidence,
                    release_holds_path,
                    ROOT / "src/mediaingredientmech/validation/semantic_release.py",
-                   ROOT / "src/mediaingredientmech/record_refresh.py"]
+                   ROOT / "src/mediaingredientmech/record_refresh.py",
+                   ROOT / "src/mediaingredientmech/validation/mapping_change_receipts.py"]
     proof_files.append(mapping_review_path)
     proof_files.extend(ROOT / name for name in mapping_review["review"]["inputs"])
     for resolution in json.loads(release_holds_path.read_text()).get("resolutions", []):
@@ -371,6 +474,7 @@ def main():
     for folder in ("identities", "roles", "components"):
         proof_files.extend(path for path in (HERE / folder).iterdir() if path.is_file())
     inputs = {relative(path): sha(path) for path in sorted(set(proof_files))}
+    inputs.update(chain["input_hashes"])
     blocking = adjudicate_findings(rows(BASE / "findings.tsv"), decisions, records, hashes, inputs,
                                    baseline_hashes=historical["inputs"], lineage=lineage)
     blocking_assertions = adjudicate_assertions(current_assertions(records, mappings, hashes, sha(sssom_path)), assertion_rows, inputs)
@@ -379,6 +483,8 @@ def main():
                   baseline_manifest=relative(BASE / "manifest.json"), baseline_findings=relative(BASE / "findings.tsv"),
                   finding_dispositions=relative(HERE / "finding-dispositions.tsv"), assertion_dispositions=relative(HERE / "assertion-dispositions.tsv"),
                   release_holds=relative(release_holds_path),
+                  mapping_change_receipts=chain["receipt_paths"],
+                  superseded_plans=superseded, release_hold_lineage=resolved_lineage,
                   mapping_review=relative(mapping_review_path),
                   record_lineage=relative(HERE / "record-lineage.json"), bundle=relative(bundle), inputs=inputs, record_inputs=hashes,
                   blocking_finding_ids=blocking, blocking_assertion_ids=blocking_assertions, evidence_gaps=gaps)

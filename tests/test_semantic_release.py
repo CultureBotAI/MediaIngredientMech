@@ -3,6 +3,7 @@
 import copy
 import csv
 import hashlib
+import io
 import json
 import os
 import subprocess
@@ -257,12 +258,13 @@ def reviewed_bundle(tmp_path):
         "predicate_id": "skos:exactMatch",
         "object_id": "CHEBI:15377",
         "object_label": "water",
+        "other": "",
     }
     (root / "mappings").mkdir()
     sssom = root / "mappings/ingredient_mappings.sssom.tsv"
     _table(sssom, [mapping], list(mapping))
     sssom.write_text(
-        "# predicate_semantics: skos\n# curie_map:\n#   MIM: https://example.test/mim/\n#   CHEBI: http://purl.obolibrary.org/obo/CHEBI_\n"
+        "# mapping_set_id: https://example.test/semantic-review\n# predicate_semantics: skos\n# curie_map:\n#   MIM: https://example.test/mim/\n#   CHEBI: http://purl.obolibrary.org/obo/CHEBI_\n"
         + sssom.read_text()
     )
     export_graph(root, root / "bundle")
@@ -301,8 +303,16 @@ def reviewed_bundle(tmp_path):
         "mappings/ingredient_mappings.sssom.tsv",
         "bundle/manifest.json",
     ]
+    for module in ("semantic_release", "mapping_change_receipts"):
+        name = f"src/mediaingredientmech/validation/{module}.py"
+        target = root / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((Path(__file__).parents[1] / name).read_bytes())
+        inputs.append(name)
     report = {
         "schema_version": 1,
+        "mapping_change_receipts": [],
+        "release_hold_lineage": {},
         "baseline_findings": "findings.tsv",
         "baseline_manifest": "baseline.json",
         "finding_dispositions": "dispositions.tsv",
@@ -351,4 +361,113 @@ def test_review_evidence_changes_invalidate_current_approvals(reviewed_bundle):
     root, path = reviewed_bundle
     (root / "evidence.md").write_text("Changed evidence\n")
     with pytest.raises(ValueError, match="Stale review input: evidence.md"):
+        validate(root, path)
+
+
+@pytest.mark.parametrize("removed", [
+    ["semantic_release"], ["mapping_change_receipts"],
+    ["semantic_release", "mapping_change_receipts"],
+])
+def test_full_gate_requires_both_code_inputs_even_without_receipts(reviewed_bundle, removed):
+    root, path = reviewed_bundle
+    document = json.loads(path.read_text())
+    for module in removed:
+        document["inputs"].pop(f"src/mediaingredientmech/validation/{module}.py")
+    path.write_text(json.dumps(document))
+    with pytest.raises(ValueError, match="Missing required review input"):
+        validate(root, path)
+
+
+@pytest.mark.parametrize("module", ["semantic_release", "mapping_change_receipts"])
+def test_full_gate_rejects_changed_bound_code_without_receipts(reviewed_bundle, module):
+    root, path = reviewed_bundle
+    target = root / f"src/mediaingredientmech/validation/{module}.py"
+    target.write_bytes(target.read_bytes() + b"\n# altered bound module\n")
+    with pytest.raises(ValueError, match="Stale review input"):
+        validate(root, path)
+
+
+@pytest.mark.parametrize("inventory", [None, ["unexpected.json"], ["extra.json", "extra.json"]])
+def test_full_gate_requires_exact_empty_receipt_inventory(reviewed_bundle, inventory):
+    root, path = reviewed_bundle
+    document = json.loads(path.read_text())
+    if inventory is None:
+        document.pop("mapping_change_receipts")
+    else:
+        document["mapping_change_receipts"] = inventory
+    path.write_text(json.dumps(document))
+    with pytest.raises(ValueError, match="receipt inventory|receipt input"):
+        validate(root, path)
+
+
+def test_full_gate_refuses_report_invented_hold_lineage(reviewed_bundle):
+    root, path = reviewed_bundle
+    document = json.loads(path.read_text())
+    document["release_hold_lineage"] = {"invented": {"current_position": 1}}
+    path.write_text(json.dumps(document))
+    with pytest.raises(ValueError, match="independently verified receipts"):
+        validate(root, path)
+
+
+def _add_verified_mapping_chain(root, report_path):
+    """Add a real native one-link history to a current reviewed gate fixture."""
+    from mediaingredientmech.export.reviewed_sssom import read_sssom
+
+    source = root / "mappings/ingredient_mappings.sssom.tsv"
+    _, fields, current = read_sssom(source)
+    before = [dict(current[0], other="historical alias")]
+    serialized = io.StringIO()
+    serialized.write("".join(line for line in source.read_text().splitlines(keepends=True) if line.startswith("#")))
+    writer = csv.DictWriter(serialized, fieldnames=fields, delimiter="\t", lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(before)
+    old_sha = hashlib.sha256(serialized.getvalue().encode()).hexdigest()
+    folder = root / "reports/sssom_completion_20260921"
+    receipt_name = "reports/sssom_completion_20260921/mapping_changes/fixture.json"
+    documents = {
+        "baseline-mapping-review.json": {"schema_version": 1, "rows": before, "source_sha256": old_sha},
+        "trait-synonym-refresh.json": {"schema_version": 1, "before_sha256": old_sha,
+            "after_sha256": old_sha, "row_count": 1, "changed_rows": 0, "changes": []},
+        "parent-name-refresh.json": {"schema_version": 1, "before_sha256": old_sha,
+            "after_sha256": old_sha, "row_count": 1, "changed_rows": 0, "changes": []},
+        "mapping_changes/fixture.json": {"schema_version": 1, "batch": "fixture", "sequence": 1,
+            "approval": "NONE", "before_sha256": old_sha, "after_sha256": _hash(source),
+            "before_row_count": 1, "after_row_count": 1, "position_map": [1],
+            "changed_rows": 1, "added_rows": 0, "removed_rows": 0, "records": [],
+            "changes": [{"kind": "changed", "before_position": 1, "after_position": 1,
+                         "before": before[0], "after": current[0]}]},
+    }
+    report = json.loads(report_path.read_text())
+    for name, document in documents.items():
+        target = folder / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(document))
+        report["inputs"][str(target.relative_to(root))] = _hash(target)
+    report["mapping_change_receipts"] = [receipt_name]
+    report_path.write_text(json.dumps(report))
+    assert validate(root, report_path)["integrity"] == "PASS"
+    return receipt_name
+
+
+@pytest.mark.parametrize("tamper", ["omit", "duplicate", "extra", "delete_all", "partial_history"])
+def test_full_gate_checks_receipt_inventory_and_historical_context(reviewed_bundle, tamper):
+    root, path = reviewed_bundle
+    receipt = _add_verified_mapping_chain(root, path)
+    report = json.loads(path.read_text())
+    if tamper == "omit":
+        report["mapping_change_receipts"] = []
+    elif tamper == "duplicate":
+        report["mapping_change_receipts"] = [receipt, receipt]
+    elif tamper == "extra":
+        report["mapping_change_receipts"].append("unexpected.json")
+    elif tamper == "delete_all":
+        (root / receipt).unlink()
+        report["mapping_change_receipts"] = []
+        report["inputs"].pop(receipt)
+    else:
+        name = "reports/sssom_completion_20260921/parent-name-refresh.json"
+        (root / name).unlink()
+        report["inputs"].pop(name)
+    path.write_text(json.dumps(report))
+    with pytest.raises(ValueError, match="receipt inventory|receipt input|reviewed source|historical mapping context"):
         validate(root, path)

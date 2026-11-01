@@ -4,13 +4,14 @@ This opt-in export carries a reviewed scoped cohort, registry claims and source
 occurrences together. It does not replace the complete legacy SSSOM release or
 promote its withheld rows. The initial cohort contains the 20 reviewed
 KG-Microbe cases under issues #769 and #770. The current immutable review
-successor is [the #669 current-metadata compatibility review](../reports/ingredient_bundle_20261101_owned_names669/README.md).
-The owned-name policy marker required fresh independent metadata review; the
-existing claim decisions and all earlier reviews remain preserved.
+successor is [the #764 strict-receipt dependency refresh](../reports/ingredient_bundle_20261101_strict_receipts764/README.md).
+This successor updates only the complete base mapping-review dependency after
+receipt validation code changed. The existing claim decisions, owner bytes,
+owned-name policy metadata and all earlier reviews remain preserved.
 
 ```bash
 python -m mediaingredientmech.export.ingredient_bundle export \
-  --review reports/ingredient_bundle_20261101_owned_names669/review.json \
+  --review reports/ingredient_bundle_20261101_strict_receipts764/review.json \
   --output output/ingredient-bundle-v1
 python -m mediaingredientmech.export.ingredient_bundle validate \
   output/ingredient-bundle-v1 --manifest-sha256 <exported-manifest-sha256>
@@ -122,7 +123,7 @@ The output parent directories must already exist.
 ```bash
 PYTHONPATH=src python scripts/refresh_unchanged_cohort.py \
   --baseline <commit-containing-prior-inputs> \
-  --prior-review reports/ingredient_bundle_20261101_owned_names669/review.json \
+  --prior-review reports/ingredient_bundle_20261101_strict_receipts764/review.json \
   --output output/next-companion-review.json \
   --receipt output/next-companion-dependency-refresh.json \
   --prior-copy output/prior-companion-review.json

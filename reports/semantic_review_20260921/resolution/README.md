@@ -157,3 +157,30 @@ roles, 24 additional unsupported role promotions, 43 source-unverified component
 and the unresolved record-level findings. These overlapping findings remain
 explicit in the full ledger. New evidence can admit a claim into the supported
 release only after another content-bound review.
+
+
+## Current strict receipt integration
+
+The #764/#766 port preserves #817's requirement for fresh approval after every
+record-byte change. It can withdraw a superseded role, identity, component or
+component-disposition plan only from that plan's exact archived hash through a
+complete native mapping-change chain. Its stale finding basis is reopened;
+stale plans cannot grant assertion approval. Inherited reviews still require
+identical current owner bytes and claim payloads. A separate mapping-specific
+review applies only to mapping assertions. Counts above describing the dated
+release remain historical.
+
+`current-review.json` binds the complete receipt inventory, both the semantic
+gate and `mapping_change_receipts` utility, and all baseline, synonym-prefix and
+canonical replay inputs. The gate requires these inputs even for a minimal
+zero-receipt fixture and independently recomputes the reported lineage. A real
+historical prefix cannot be discarded by deleting the receipt directory;
+partial history or a prefix whose endpoint differs from current canonical fails.
+
+The retained aromatic resolution is anchored at receipt 11, position 431, not
+at the original negative-review position 437 or receipt 12's identical digest.
+The exact checkpoint and frozen scientific payload/owner remain bound. Only a
+verified positional move may derive current assertion/edge IDs. A changed,
+removed, substituted or deleted-and-readded held row fails even if its apparent
+final IDs match. Native eleven-field KGX identity and pipe escaping are preserved
+(#765). The original negative review remains immutable; lineage is not approval.

@@ -16,6 +16,13 @@ from pathlib import Path
 
 from mediaingredientmech.export.reviewed_sssom import _owners, digest, read_sssom, row_sha256
 from mediaingredientmech.record_refresh import RecordRefreshes
+from mediaingredientmech.validation.mapping_change_receipts import (
+    record_supersession,
+    verify_mapping_chain,
+)
+from mediaingredientmech.validation.mapping_change_receipts import (
+    walk_mapping_changes as walk_mapping_changes,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
@@ -38,81 +45,47 @@ def relative(path):
     return str(path.relative_to(ROOT))
 
 
-def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_rows, refreshed_rows):
-    """Verify the mapping-change receipts as one chain and replay them over the rows.
+def require_unique_source_positions(positions, cohort):
+    """Reject duplicate cohort keys before they can discard an archived claim."""
+    seen = set()
+    for position in positions:
+        if position in seen:
+            raise ValueError(f"Duplicate source position in {cohort}: {position}")
+        seen.add(position)
 
-    ``receipts`` are the ``mapping_changes/*.json`` documents (any order);
-    ``start_sha256`` is the SSSOM digest the last synonym refresh produced;
-    ``refreshed_rows`` maps a baseline position to the row as the synonym
-    refreshes left it. Every receipt must chain by digest, be numbered without
-    gaps, carry no approval, and describe each touched row's ``before`` exactly
-    as the previous link left it -- a row corrected twice chains through its
-    first correction, not back to the baseline (#742).
 
-    Returns ``(forward, last, state)``: the baseline-to-current position map
-    (``None`` for removed rows), the last receipt change per current position
-    for rows a receipt changed or added, and the replayed rows, which the caller
-    compares to the current source.
-    """
-    receipts = sorted(receipts, key=lambda receipt: receipt["sequence"])
-    if [r["sequence"] for r in receipts] != list(range(1, len(receipts) + 1)):
-        raise ValueError("Mapping-change receipts must be numbered 1..n without gaps")
-    state = [dict(refreshed_rows.get(position, row)) for position, row in enumerate(baseline_rows, 1)]
-    forward = list(range(1, len(baseline_rows) + 1))
-    last = {}
-    link = start_sha256
-    for receipt in receipts:
-        batch = receipt.get("batch")
-        if receipt.get("schema_version") != 1 or str(receipt.get("approval", "")).split(":")[0] != "NONE":
-            raise ValueError(f"Mapping-change receipt {batch} is not an approval-free link")
-        if receipt["before_sha256"] != link:
-            raise ValueError(f"Mapping-change receipt {batch} does not chain from the previous link")
-        link = receipt["after_sha256"]
-        position_map = receipt["position_map"]
-        if len(position_map) != receipt["before_row_count"] or receipt["before_row_count"] != len(state):
-            raise ValueError(f"Mapping-change receipt {batch} position map is incomplete")
-        after_count = receipt["after_row_count"]
-        new_state = [None] * after_count
-        for position, row in enumerate(state, 1):
-            target = position_map[position - 1]
-            if target is None:
-                continue
-            if not 1 <= target <= after_count or new_state[target - 1] is not None:
-                raise ValueError(f"Mapping-change receipt {batch} position map is not injective")
-            new_state[target - 1] = row
-        moved = {}
-        for current, change in last.items():
-            target = position_map[current - 1]
-            if target is not None:
-                moved[target] = change
-        for change in receipt["changes"]:
-            kind = change["kind"]
-            if kind in {"changed", "removed"}:
-                before = change["before_position"]
-                if state[before - 1] != change["before"]:
-                    raise ValueError(f"Mapping-change receipt {batch} does not chain from the reviewed row")
-                target = position_map[before - 1]
-                if kind == "removed":
-                    if target is not None:
-                        raise ValueError(f"Mapping-change receipt {batch} removes a row its position map keeps")
-                    continue
-                if target != change["after_position"]:
-                    raise ValueError(f"Mapping-change receipt {batch} moves a changed row inconsistently")
-            elif kind == "added":
-                target = change["after_position"]
-                if not 1 <= target <= after_count or new_state[target - 1] is not None:
-                    raise ValueError(f"Mapping-change receipt {batch} adds a row onto an occupied position")
-            else:
-                raise ValueError(f"Mapping-change receipt {batch} has an unknown change kind {kind!r}")
-            new_state[target - 1] = change["after"]
-            moved[target] = dict(change, receipt=batch)
-        if any(row is None for row in new_state):
-            raise ValueError(f"Mapping-change receipt {batch} leaves a hole in the row order")
-        forward = [position_map[p - 1] if p is not None else None for p in forward]
-        last, state = moved, new_state
-    if link != reviewed_sha256:
-        raise ValueError("The last chain link does not produce the reviewed source")
-    return forward, last, state
+def withdraw_stale_cohort(entry, mapping, owner, owner_hash, chain, baseline, *, current_position):
+    """Withdraw a scoped decision only from its exact archived owner and row."""
+    reviewed_owner = entry.get("owner_record", entry.get("owner"))
+    reviewed_hash = entry.get("owner_record_sha256")
+    historical = entry.get("decision", {})
+    position = entry.get("source_position", historical.get("source_position"))
+    source_sha = entry.get("source_sssom_sha256", historical.get("source_record_sha256"))
+    try:
+        position = int(position)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Scoped review has no archived row position") from exc
+    if (
+        reviewed_owner != owner or not reviewed_hash or not owner_hash
+        or source_sha != baseline["source_sha256"]
+        or not 1 <= position <= len(chain["baseline_rows"])
+        or chain["baseline_rows"][position - 1] != entry.get("mapping")
+        or chain["forward"][position - 1] != current_position
+        or chain["state"][current_position - 1] != mapping
+    ):
+        raise ValueError("Scoped review does not bind the verified archived row and owner")
+    owner_proof = record_supersession(
+        chain, owner=owner, reviewed_sha256=reviewed_hash, current_sha256=owner_hash,
+    )
+    if reviewed_hash != owner_hash and owner_proof is None:
+        raise ValueError("Scoped review owner has no exact byte-chain supersession")
+    return {
+        "owner_record": owner, "reviewed_sha256": reviewed_hash,
+        "current_sha256": owner_hash, "baseline_position": position,
+        "current_position": current_position, "owner_supersession": owner_proof,
+        "receipt_inputs": chain["receipt_inputs"],
+        "reason": "Archived scoped approval withdrawn after verified correction; no approval renewed",
+    }
 
 
 def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=()):
@@ -176,9 +149,8 @@ def assemble():
     # synonym refreshes. They are explicit links, never approvals: every row a
     # receipt touches is withheld below, and every owner it touches loses the
     # byte-identical carry-forward.
-    mapping_changes = [
-        json.loads(path.read_text()) for path in sorted((HERE / "mapping_changes").glob("*.json"))
-    ]
+    chain = verify_mapping_chain(ROOT)
+    mapping_changes = chain["receipts"]
     # Section receipts remain audit inputs, but every approval and chain link
     # binds exact record bytes. They cannot bridge a reviewed-hash mismatch.
     refreshes = RecordRefreshes(ROOT)
@@ -217,13 +189,9 @@ def assemble():
             merged["before"] = changed_rows[position]["before"]
             merged["removed_tokens"] = sorted(set(changed_rows[position]["removed_tokens"]) | set(item["removed_tokens"]))
         changed_rows[position] = merged
-    forward, mapping_changed_rows, replayed = walk_mapping_changes(
-        mapping_changes,
-        start_sha256=parent_refresh["after_sha256"],
-        reviewed_sha256=REVIEWED_SOURCE,
-        baseline_rows=baseline["rows"],
-        refreshed_rows={position: item["after"] for position, item in changed_rows.items()},
-    )
+    forward, mapping_changed_rows, replayed = chain["forward"], chain["last"], chain["state"]
+    if chain["refreshed_rows"] != {position: item["after"] for position, item in changed_rows.items()}:
+        raise ValueError("Synonym-prefix replay differs from the verified receipt chain")
     if replayed != mappings:
         raise ValueError("Current source rows differ from the reviewed chain's replay")
     baseline_of = {current: bp for bp, current in enumerate(forward, 1) if current is not None}
@@ -236,13 +204,17 @@ def assemble():
     concerns = {
         r["source_position"]: r for r in read("mapping_review/concern_cohorts.json")["rows"]
     }
-    candidates = {
-        r["source_position"]: r for r in read("mapping_review/nonmapping_cohorts.json")["rows"]
-    }
-    changed = {
-        int(r["decision"]["source_position"]): r
-        for r in read("mapping_review/changed-owner-review.json")["rows"]
-    }
+    candidate_entries = read("mapping_review/nonmapping_cohorts.json")["rows"]
+    changed_owner_entries = read("mapping_review/changed-owner-review.json")["rows"]
+    require_unique_source_positions(
+        (entry["source_position"] for entry in candidate_entries), "nonmapping_cohorts.json",
+    )
+    require_unique_source_positions(
+        (int(entry["decision"]["source_position"]) for entry in changed_owner_entries),
+        "changed-owner-review.json",
+    )
+    candidates = {r["source_position"]: r for r in candidate_entries}
+    changed = {int(r["decision"]["source_position"]): r for r in changed_owner_entries}
     for cohort in (concerns, candidates, changed):
         for position, entry in cohort.items():
             owner = entry.get("owner_record", entry.get("owner", entry.get("source_record")))
@@ -403,9 +375,15 @@ def assemble():
             entry = candidates[position]
             disposition, reason = entry["disposition"], entry["reason"]
             if disposition == "SUPPORTED" and (
-                entry["mapping"] != mapping or not refreshes.matches(owner, entry["owner_record_sha256"])
+                entry["mapping"] != mapping or entry["owner_record"] != owner
+                or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
-                raise ValueError("Nonmapping-cohort approval has stale owner or row")
+                basis["superseded_scoped_review"] = withdraw_stale_cohort(
+                    entry, mapping, owner, record_hashes[owner], chain, baseline,
+                    current_position=current_position,
+                )
+                disposition = "WITHHOLD"
+                reason = "The exact archived cohort approval was superseded by a verified correction; fresh mapping-specific review is required."
             basis["scoped_review"] = {
                 "file": "mapping_review/nonmapping_cohorts.json",
                 "position": position,
@@ -418,7 +396,12 @@ def assemble():
                 or entry["owner"] != owner
                 or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
-                raise ValueError("Changed-owner approval has stale row or owner")
+                basis["superseded_scoped_review"] = withdraw_stale_cohort(
+                    entry, mapping, owner, record_hashes[owner], chain, baseline,
+                    current_position=current_position,
+                )
+                disposition = "WITHHOLD"
+                reason = "The exact archived changed-owner approval was superseded by a verified correction; fresh mapping-specific review is required."
             basis["scoped_review"] = {
                 "file": "mapping_review/changed-owner-review.json",
                 "position": position,
@@ -559,11 +542,13 @@ def assemble():
         ROOT / "src/mediaingredientmech/review_claims.py",
         ROOT / "src/mediaingredientmech/synonym_policy.py",
         ROOT / "src/mediaingredientmech/record_refresh.py",
+        ROOT / "src/mediaingredientmech/validation/mapping_change_receipts.py",
         ROOT / "scripts/validate_reviewed_sssom_schema.py",
         ROOT / "reports/semantic_review_20260921/records.tsv",
         ROOT / "reports/semantic_review_20260921/resolution/historical-review-evidence.json",
     ):
         inputs[relative(p)] = digest(p)
+    inputs.update(chain["input_hashes"])
     for decision in baseline["decisions"]:
         if decision["resolution_status"] == "APPROVED":
             path = ROOT / decision["review_evidence"]
