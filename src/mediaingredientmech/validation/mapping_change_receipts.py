@@ -11,6 +11,24 @@ import json
 import re
 from collections import Counter
 from pathlib import Path, PurePosixPath
+from typing import Any, TypedDict, cast
+
+
+class HoldCheckpoint(TypedDict):
+    sequence: int
+    path: str
+    sha256: str
+    after_sha256: str
+    position: int
+
+
+class OwnerLink(TypedDict):
+    sequence: int
+    receipt_path: str
+    receipt_sha256: str
+    before_sha256: str | None
+    after_sha256: str
+
 
 RECEIPTS_DIR = "reports/sssom_completion_20260921/mapping_changes"
 SSSOM_SOURCE = "mappings/ingredient_mappings.sssom.tsv"
@@ -21,7 +39,7 @@ HISTORICAL_CONTEXT = (BASELINE, TRAIT_REFRESH, PARENT_REFRESH)
 
 # The resolution was reviewed at receipt 11, not the original negative row 437.
 # Receipt 12 has the same after digest: digest equality cannot select a checkpoint.
-HOLD_CHECKPOINTS = {
+HOLD_CHECKPOINTS: dict[str, HoldCheckpoint] = {
     "MIM.review:e619555259b8de4a7aed8090e7ac32562f3df3a23c34371cd9cf28647f6ef26f": {
         "sequence": 11,
         "path": RECEIPTS_DIR + "/review-record-issues-20261003.json",
@@ -144,7 +162,7 @@ def _validate_receipt(receipt, *, complete):
     changes = receipt.get("changes")
     _require(isinstance(changes, list), "Receipt changes must be a list")
     touched, removed, added = set(), set(), set()
-    counts = Counter()
+    counts: Counter[str] = Counter()
     for change in changes:
         _require(isinstance(change, dict), "Receipt change must be an object")
         kind = change.get("kind")
@@ -244,7 +262,7 @@ def _names(root):
     return [p.relative_to(root).as_posix() for p in paths]
 
 
-def _capture(root):
+def _capture(root: Path) -> tuple[list[str], list[dict[str, Any]], dict[str, bytes]]:
     names = _names(root)
     contents = {name: _read(root, name) for name in names}
     documents = {name: _json(raw) for name, raw in contents.items()}
@@ -293,14 +311,18 @@ def _replay(receipts, start, end, baseline_rows, refreshed_rows):
     for position, row in refreshed_rows.items():
         _position(position, len(baseline_rows))
         _row(row)
-    state = [dict(refreshed_rows.get(i, row)) for i, row in enumerate(baseline_rows, 1)]
+    state: list[dict[str, str]] = [
+        dict(refreshed_rows.get(i, row)) for i, row in enumerate(baseline_rows, 1)
+    ]
+    forward: list[int | None]
+    last: dict[int, dict[str, Any]]
     forward, last, link = list(range(1, len(state) + 1)), {}, start
     states = {0: list(state)}
     for receipt in receipts:
         _require(receipt["before_sha256"] == link, "Receipt does not chain from the previous link")
         _require(receipt["before_row_count"] == len(state), "Receipt position map is incomplete")
         positions = receipt["position_map"]
-        new_state = [None] * receipt["after_row_count"]
+        new_state: list[dict[str, str] | None] = [None] * receipt["after_row_count"]
         for position, row in enumerate(state, 1):
             target = positions[position - 1]
             if target is not None:
@@ -322,7 +344,8 @@ def _replay(receipts, start, end, baseline_rows, refreshed_rows):
             all(row is not None for row in new_state), "Receipt leaves a hole in the row order"
         )
         forward = [positions[p - 1] if p is not None else None for p in forward]
-        state, last, link = new_state, moved, receipt["after_sha256"]
+        # The preceding hole check proves every slot contains a validated row.
+        state, last, link = cast(list[dict[str, str]], new_state), moved, receipt["after_sha256"]
         states[receipt["sequence"]] = list(state)
     _require(link == end, "The last chain link does not produce the reviewed source")
     return forward, last, state, states
@@ -336,7 +359,7 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
 
 
 def _owner_chains(receipts, paths, hashes):
-    chains = {}
+    chains: dict[str, list[OwnerLink]] = {}
     for receipt, path in zip(receipts, paths, strict=True):
         for entry in receipt.get("records", []):
             links = chains.setdefault(entry["source_record"], [])
@@ -521,6 +544,8 @@ def hold_lineage(proof, assertions, edges, resolutions, *, owners, record_hashes
         _require(frozen_id not in lineage, "Duplicate frozen hold resolution")
         checkpoint = HOLD_CHECKPOINTS.get(frozen_id)
         _require(checkpoint is not None, "No maintained receipt checkpoint for hold resolution")
+        # _require raises for None; mypy cannot infer that custom guard's narrowing.
+        checkpoint = cast(HoldCheckpoint, checkpoint)
         sequence = checkpoint["sequence"]
         _require(len(proof["receipts"]) >= sequence, "Missing frozen checkpoint receipt prefix")
         receipt = proof["receipts"][sequence - 1]

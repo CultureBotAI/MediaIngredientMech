@@ -1,0 +1,36 @@
+check	Run static quality checks	﻿2026-11-01T18:07:44.8429090Z ##[group]Run just lint format-check typecheck
+check	Run static quality checks	2026-11-01T18:07:44.8429395Z ^[[36;1mjust lint format-check typecheck^[[0m
+check	Run static quality checks	2026-11-01T18:07:44.8446828Z shell: /usr/bin/bash -e {0}
+check	Run static quality checks	2026-11-01T18:07:44.8447032Z env:
+check	Run static quality checks	2026-11-01T18:07:44.8447193Z   UV_PYTHON: 3.13
+check	Run static quality checks	2026-11-01T18:07:44.8447399Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+check	Run static quality checks	2026-11-01T18:07:44.8447660Z ##[endgroup]
+check	Run static quality checks	2026-11-01T18:07:44.8529675Z uv run --frozen --extra dev ruff check src/mediaingredientmech
+check	Run static quality checks	2026-11-01T18:07:44.9264419Z All checks passed!
+check	Run static quality checks	2026-11-01T18:07:44.9294203Z uv run --frozen --extra dev black --check src/mediaingredientmech
+check	Run static quality checks	2026-11-01T18:07:45.8835855Z All done! ✨ 🍰 ✨
+check	Run static quality checks	2026-11-01T18:07:45.8836301Z 53 files would be left unchanged.
+check	Run static quality checks	2026-11-01T18:07:45.9096028Z uv run --frozen --extra dev mypy src/mediaingredientmech
+check	Run static quality checks	2026-11-01T18:07:49.6659299Z src/mediaingredientmech/validation/mapping_change_receipts.py:147: error: Need type annotation for "counts"  [var-annotated]
+check	Run static quality checks	2026-11-01T18:07:49.6660872Z src/mediaingredientmech/validation/mapping_change_receipts.py:272: error: Returning Any from function declared to return "list[dict[Any, Any]]"  [no-any-return]
+check	Run static quality checks	2026-11-01T18:07:49.6662203Z src/mediaingredientmech/validation/mapping_change_receipts.py:281: error: Returning Any from function declared to return "list[str]"  [no-any-return]
+check	Run static quality checks	2026-11-01T18:07:49.6663010Z src/mediaingredientmech/validation/mapping_change_receipts.py:297: error: Need type annotation for "last" (hint: "last: dict[<type>, <type>] = ...")  [var-annotated]
+check	Run static quality checks	2026-11-01T18:07:49.6663923Z src/mediaingredientmech/validation/mapping_change_receipts.py:325: error: Incompatible types in assignment (expression has type "list[None]", variable has type "list[dict[Any, Any]]")  [assignment]
+check	Run static quality checks	2026-11-01T18:07:49.6664877Z src/mediaingredientmech/validation/mapping_change_receipts.py:339: error: Need type annotation for "chains" (hint: "chains: dict[<type>, <type>] = ...")  [var-annotated]
+check	Run static quality checks	2026-11-01T18:07:49.6665676Z src/mediaingredientmech/validation/mapping_change_receipts.py:524: error: Value of type "dict[str, object] | None" is not indexable  [index]
+check	Run static quality checks	2026-11-01T18:07:49.6666384Z src/mediaingredientmech/validation/mapping_change_receipts.py:525: error: Unsupported operand types for >= ("int" and "object")  [operator]
+check	Run static quality checks	2026-11-01T18:07:49.6667028Z src/mediaingredientmech/validation/mapping_change_receipts.py:525: note: Right operand is of type "object | Any"
+check	Run static quality checks	2026-11-01T18:07:49.6667702Z src/mediaingredientmech/validation/mapping_change_receipts.py:526: error: Unsupported operand types for - ("object" and "int")  [operator]
+check	Run static quality checks	2026-11-01T18:07:49.6668631Z src/mediaingredientmech/validation/mapping_change_receipts.py:526: note: Left operand is of type "object | Any"
+check	Run static quality checks	2026-11-01T18:07:49.6669278Z src/mediaingredientmech/validation/mapping_change_receipts.py:529: error: Unsupported operand types for - ("object" and "int")  [operator]
+check	Run static quality checks	2026-11-01T18:07:49.6669914Z src/mediaingredientmech/validation/mapping_change_receipts.py:529: note: Left operand is of type "object | Any"
+check	Run static quality checks	2026-11-01T18:07:49.6670841Z src/mediaingredientmech/validation/mapping_change_receipts.py:529: error: Value of type "dict[str, object] | None" is not indexable  [index]
+check	Run static quality checks	2026-11-01T18:07:49.6671532Z src/mediaingredientmech/validation/mapping_change_receipts.py:530: error: Value of type "dict[str, object] | None" is not indexable  [index]
+check	Run static quality checks	2026-11-01T18:07:49.6672203Z src/mediaingredientmech/validation/mapping_change_receipts.py:531: error: Value of type "dict[str, object] | None" is not indexable  [index]
+check	Run static quality checks	2026-11-01T18:07:49.6672876Z src/mediaingredientmech/validation/mapping_change_receipts.py:542: error: Value of type "dict[str, object] | None" is not indexable  [index]
+check	Run static quality checks	2026-11-01T18:07:49.6673648Z src/mediaingredientmech/validation/mapping_change_receipts.py:551: error: Argument 1 to "range" has incompatible type "object | Any"; expected "SupportsIndex"  [arg-type]
+check	Run static quality checks	2026-11-01T18:07:49.6674564Z src/mediaingredientmech/validation/mapping_change_receipts.py:612: error: Argument 1 to "dict" has incompatible type "dict[str, object] | None"; expected "SupportsKeysAndGetItem[str, object]"  [arg-type]
+check	Run static quality checks	2026-11-01T18:07:49.6675721Z src/mediaingredientmech/validation/mapping_change_receipts.py:612: error: Argument 1 to "dict" has incompatible type "dict[str, object] | None"; expected "SupportsKeysAndGetItem[Any, Any]"  [arg-type]
+check	Run static quality checks	2026-11-01T18:07:52.1034892Z Found 17 errors in 1 file (checked 53 source files)
+check	Run static quality checks	2026-11-01T18:07:52.1288400Z error: recipe `typecheck` failed on line 732 with exit code 1
+check	Run static quality checks	2026-11-01T18:07:52.1296040Z ##[error]Process completed with exit code 1.
