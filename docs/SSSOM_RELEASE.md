@@ -1,7 +1,7 @@
 # Reviewed MIM SSSOM
 
-The standalone release has a decision for every one of the 3,018 MIM mapping
-rows: **1,763 supported** and **1,255 withheld**. Use the supported table for
+The current standalone release has a decision for every one of the 2,987 MIM
+mapping rows: **1,740 supported** and **1,247 withheld**. Use the supported table for
 mapping. The withheld table preserves complete source rows for further curation;
 it is not an approved mapping set.
 
@@ -16,7 +16,7 @@ The default output is `output/mim-reviewed-sssom/`:
 | --- | --- |
 | `ingredient_mappings.sssom.tsv` | Supported mappings with SSSOM metadata |
 | `withheld_mappings.sssom.tsv` | Separate, lossless mapping review backlog |
-| `mapping-dispositions.tsv` | All 3,018 decisions, reasons, source positions, owners and evidence references |
+| `mapping-dispositions.tsv` | All source-row decisions, reasons, positions, owners and evidence references |
 | `manifest.json` | Counts, distinct mapping-set identifiers and SHA-256 checksums |
 
 These are MIM-only mappings. No KG-Microbe export or KGX installation is needed.
@@ -29,6 +29,13 @@ assembler checks the completed review against its frozen source boundary; it
 does not assign scientific approval to new or changed records. The exporter
 checks all evidence hashes and independently reproduces both partitions. CI
 also runs SSSOM JSON Schema, prefix-map and CURIE validation.
+
+These are the current content-bound counts, not the historical September
+release counts. The scoped #669/#1003 correction receipt preserves all rows
+and withdraws the carnitine registry row's prior approval after its owner
+changes. The corrected aliases remain withheld pending complete mapping review.
+The melezitose proposal is excluded until the approval supersession mechanism
+in PR #764 is available; its old approval is not transferred to changed bytes.
 
 The review corrects 46 activity phrases that had been published as ingredient
 synonyms, retaining them as rejected provenance. It separates mapping evidence

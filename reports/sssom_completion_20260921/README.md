@@ -2,7 +2,7 @@
 
 Issue [#729](https://github.com/CultureBotAI/MediaIngredientMech/issues/729)
 finalizes the standalone MIM SSSOM. Every source row has an explicit disposition:
-1,741 supported and 1,246 withheld, out of 2,987. Unsupported claims remain in a
+1,740 supported and 1,247 withheld, out of 2,987. Unsupported claims remain in a
 separate, lossless SSSOM backlog, as requested. Completing disposition coverage
 does not mean every source mapping has been scientifically approved.
 
@@ -46,10 +46,25 @@ above. The earlier published release remains a historical snapshot; these
 decisions supersede it for current SSSOM use.
 
 The complete source SSSOM SHA-256 is
-`89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9`.
+`f408f36b9de77c2089a07907b40d6a27401087e13528f0597a6cf7b386048ac0`.
 The original negative aromatic-compound review (#724/#725) is retained, with a
 separate, exact source-correction resolution. Removing a hold or rehashing its
 old payload cannot release that unsupported claim.
+
+Receipt `issue669-1003-scoped-alias-corrections` records nine changed rows across
+eight owners, with no added or removed rows and every source position retained.
+The changed carnitine hydrochloride owner withdraws one prior registry-row
+approval; the remaining corrected rows were already withheld. The unresolved
+historical `DL-carnitine` alias stays withheld, without new identity support.
+The proposed melezitose correction was blocked by the existing approval pin
+and restored to its original bytes; its unpublished evidence is retained under
+`reports/sssom_scientific_curation_20261101/audit901/blocked-proposal/` pending
+the native supersession mechanism in PR #764.
+
+Native semantic integrity passes, while the complete graph remains FAIL with
+1,733 blocking findings and 2,272 blocking assertions. The assertion ledger's
+2,987 mapping-source hash updates bind the changed canonical table; they are
+not new scientific approvals or cleared backlog findings.
 
 Adversarial review [#730](https://github.com/CultureBotAI/MediaIngredientMech/issues/730)
 identified relation-strengthening errors, formula/catalog and preparation-alias

@@ -1,0 +1,1072 @@
+{
+  "captured_at": "2026-11-01T00:38:03.420403+00:00",
+  "pairs": [
+    {
+      "subject_id": "MIM:Beta-lactose",
+      "token": "lactose",
+      "subject_chebi_id": "CHEBI:36218",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:36218",
+      "generic_chebi_ids": [
+        "CHEBI:17716"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "LACTOSE",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "pdb-ccd",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Lactose",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:17716",
+          "preferred_term": "Lactose",
+          "ontology_id": "CHEBI:17716",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "lactose",
+          "match_type": "synonym",
+          "identifier": "CHEBI:36218",
+          "preferred_term": "Beta-Lactose",
+          "ontology_id": "CHEBI:36218",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Beta-lactose.yaml",
+          "sha256": "f1c39640418e71ea7999184bcb97d44bb238c7eef405a5ff7c80864e7a7bad86",
+          "identifier": "CHEBI:36218",
+          "preferred_term": "Beta-Lactose",
+          "chemical_properties": {
+            "cas_rn": "5965-66-2",
+            "data_source": "FEBA ontology enrichment (via PubChem)",
+            "retrieval_date": "2026-04-07T10:19:05.502625+00:00",
+            "molecular_formula": "C12H22O11",
+            "inchi": "InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5+,6+,7-,8-,9-,10-,11-,12+/m1/s1",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@H]1O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "CAS_RN_CROSS_REFERENCE",
+              "source": "PubChem",
+              "cas_rn": "5965-66-2",
+              "notes": "ChEBI ID CHEBI:36218 found via PubChem CAS-RN cross-reference"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:48.063624+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:200-559-2 from PubChem API via name lookup (lactose)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-09T00:32:50.689620+00:00",
+              "curator": "enrich_mim_cas_rn_batch",
+              "action": "CAS_RN_ADDED",
+              "changes": "Added CAS-RN 5965-66-2 from PubChem (via CHEBI:36218)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Lactose",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Lactose.yaml",
+          "sha256": "03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec",
+          "identifier": "CHEBI:17716",
+          "preferred_term": "Lactose",
+          "chemical_properties": {
+            "cas_rn": "63-42-3",
+            "data_source": "PubChem (via CHEBI:17716)",
+            "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+            "molecular_formula": "C12H22O11",
+            "inchi": "InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5+,6+,7-,8-,9-,10-,11?,12+/m1/s1",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)C(O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@H]1O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "LITERATURE",
+              "source": "PubMed search ('Lactose')",
+              "pmid": "15915565",
+              "supports": "SUPPORT",
+              "snippet": "Investigation of factors that affect stability, growth, and induction of T7 expression strains in shaking vessels led to the recognition that sporadic, unintended induction of expression in complex media, previously reported by others, is almost certainly caused by small amounts of lactose.",
+              "explanation": "Auto-proposed; curator should rephrase or remove."
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:47.460837+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:200-559-2 from PubChem API via name lookup (Lactose)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-09T00:32:50.689620+00:00",
+              "curator": "enrich_mim_cas_rn_batch",
+              "action": "CAS_RN_ADDED",
+              "changes": "Added CAS-RN 63-42-3 from PubChem (via CHEBI:17716)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "MIM:D-mannitol",
+      "token": "Mannitol",
+      "subject_chebi_id": "CHEBI:16899",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:16899",
+      "generic_chebi_ids": [
+        "CHEBI:29864"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "Mannitol",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "KEGG_COMPOUND",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "mannitol",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "ChEMBL",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "Mannitol",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "kegg.compound",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "mannitol",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "chembl",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Mannitol",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:29864",
+          "preferred_term": "Mannitol",
+          "ontology_id": "CHEBI:29864",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "Mannitol",
+          "match_type": "synonym",
+          "identifier": "CHEBI:16899",
+          "preferred_term": "D-Mannitol",
+          "ontology_id": "CHEBI:16899",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/D-mannitol.yaml",
+          "sha256": "0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9",
+          "identifier": "CHEBI:16899",
+          "preferred_term": "D-Mannitol",
+          "chemical_properties": {
+            "cas_rn": "69-65-8",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:51:44.708557+00:00",
+            "molecular_formula": "C6H14O6",
+            "inchi": "InChI=1S/C6H14O6/c7-1-3(9)5(11)6(12)4(10)2-8/h3-12H,1-2H2/t3-,4-,5-,6-/m1/s1",
+            "smiles": "OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:51:44.708609+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:69-65-8 from PubChem API via name lookup (D-Mannitol)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Mannitol",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Mannitol.yaml",
+          "sha256": "ecc07b7b800770b32335c03b1d6aea5031adda31c592b9f4d4046bbca07277f5",
+          "identifier": "CHEBI:29864",
+          "preferred_term": "Mannitol",
+          "chemical_properties": {
+            "cas_rn": "69-65-8",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:52:53.192108+00:00",
+            "molecular_formula": "C6H14O6"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:53.192131+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:69-65-8 from PubChem API via name lookup (Mannitol)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:54:20.629102+00:00",
+              "curator": "fetch_cas_rn_from_cactus",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:133-43-7 from NCI CACTUS via name lookup (mannitol)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-19T07:39:40.088267+00:00",
+              "curator": "audit_resolve_risky_cas_rn",
+              "action": "RESOLVED_CAS_RN_CONFLICT",
+              "changes": "CAS-RN conflict across merged group (133-43-7|69-65-8) resolved via OAK canonical xref: UNKNOWN (no_oak_cas)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "MIM:L-asparagine",
+      "token": "ASPARAGINE",
+      "subject_chebi_id": "CHEBI:17196",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17196",
+      "generic_chebi_ids": [
+        "CHEBI:22653"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "ASPARAGINE",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "PDBeChem",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "ASPARAGINE",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "pdb-ccd",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Asparagine",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:22653",
+          "preferred_term": "Asparagine",
+          "ontology_id": "CHEBI:22653",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "ASPARAGINE",
+          "match_type": "synonym",
+          "identifier": "CHEBI:17196",
+          "preferred_term": "L-Asparagine",
+          "ontology_id": "CHEBI:17196",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/L-asparagine.yaml",
+          "sha256": "c936ac6337e4d867601ba73d3378e7370518a218e34fc41cbf0bdc506d375b7c",
+          "identifier": "CHEBI:17196",
+          "preferred_term": "L-Asparagine",
+          "chemical_properties": {
+            "cas_rn": "70-47-3",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-05T21:48:45.242102+00:00",
+            "molecular_formula": "C4H8N2O3",
+            "inchi": "InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H2,6,7)(H,8,9)/t2-/m0/s1",
+            "smiles": "NC(=O)C[C@H](N)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:37.192603+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:70-47-3 from PubChem API via name lookup (L-Asparagin)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:45.242106+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:70-47-3 from CultureBotHT compounds_to_cas.csv (matched: L-Asparagine)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Asparagine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Asparagine.yaml",
+          "sha256": "230bf341a7759b1f6b6b29460d49f47ca56bccf375bc43768fbda08cf9103f79",
+          "identifier": "CHEBI:22653",
+          "preferred_term": "Asparagine",
+          "chemical_properties": {
+            "cas_rn": "3130-87-8",
+            "data_source": "OAK/CHEBI xref (overrode 5794-13-8|70-47-3)",
+            "retrieval_date": "2026-04-19T07:39:40.088267+00:00",
+            "molecular_formula": "C4H8N2O3",
+            "inchi": "InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H2,6,7)(H,8,9)",
+            "smiles": "NC(=O)CC(N)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:51:09.926294+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:70-47-3 from PubChem API via name lookup (Asparagine)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T23:44:09.338227+00:00",
+              "curator": "fetch_cas_rn_with_preprocessing",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:5794-13-8 from PubChem API (preprocessed) via name preprocessing (DL-Asparagine x H2O)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-19T07:39:40.088267+00:00",
+              "curator": "audit_resolve_risky_cas_rn",
+              "action": "RESOLVED_CAS_RN_CONFLICT",
+              "changes": "CAS-RN conflict across merged group (5794-13-8|70-47-3) resolved via OAK canonical xref: 3130-87-8 (override)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "MIM:L-cysteine",
+      "token": "CYSTEINE",
+      "subject_chebi_id": "CHEBI:17561",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17561",
+      "generic_chebi_ids": [
+        "CHEBI:15356"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "CYSTEINE",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "PDBeChem",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "CYSTEINE",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "pdb-ccd",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Cysteine",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:15356",
+          "preferred_term": "Cysteine",
+          "ontology_id": "CHEBI:15356",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "CYSTEINE",
+          "match_type": "synonym",
+          "identifier": "CHEBI:17561",
+          "preferred_term": "L-Cysteine",
+          "ontology_id": "CHEBI:17561",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/L-cysteine.yaml",
+          "sha256": "8c24e38f13a5574684dda7aae35813c6f417016f5ce47089070ccb607aed6e79",
+          "identifier": "CHEBI:17561",
+          "preferred_term": "L-Cysteine",
+          "chemical_properties": {
+            "cas_rn": "52-90-4",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-05T21:48:45.250014+00:00",
+            "molecular_formula": "C3H7NO2S",
+            "inchi": "InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1",
+            "smiles": "N[C@@H](CS)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T21:48:45.250016+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:52-90-4 from CultureBotHT compounds_to_cas.csv (matched: L-Cysteine)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:45.251906+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:52-90-4 from CultureBotHT compounds_to_cas.csv (matched: L-cysteine)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Cysteine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Cysteine.yaml",
+          "sha256": "91eebbb9397c2f88e483ebe2a97c96546138be9d09e72cab5b667154443055ed",
+          "identifier": "CHEBI:15356",
+          "preferred_term": "Cysteine",
+          "chemical_properties": {
+            "cas_rn": "3374-22-9",
+            "data_source": "PubChem (via CHEBI:15356)",
+            "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+            "molecular_formula": "C3H7NO2S",
+            "inchi": "InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)",
+            "smiles": "NC(CS)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:51:39.769170+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:52-90-4 from PubChem API via name lookup (Cystein)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T23:44:02.487622+00:00",
+              "curator": "fetch_cas_rn_with_preprocessing",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:52-90-4 from PubChem API (ontology label) via name preprocessing (cysteine)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-09T00:32:50.689620+00:00",
+              "curator": "enrich_mim_cas_rn_batch",
+              "action": "CAS_RN_ADDED",
+              "changes": "Added CAS-RN 3374-22-9 from PubChem (via CHEBI:15356)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-19T07:39:40.088267+00:00",
+              "curator": "audit_resolve_risky_cas_rn",
+              "action": "RESOLVED_CAS_RN_CONFLICT",
+              "changes": "CAS-RN conflict across merged group (3374-22-9|52-90-4) resolved via OAK canonical xref: 3374-22-9 (match)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "MIM:L-glutamic_Acid",
+      "token": "GLUTAMIC ACID",
+      "subject_chebi_id": "CHEBI:16015",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:16015",
+      "generic_chebi_ids": [
+        "CHEBI:18237"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "GLUTAMIC ACID",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "PDBeChem",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "GLUTAMIC ACID",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "pdb-ccd",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "glutamic acid",
+          "scope": "hasRelatedSynonym",
+          "type": "INN",
+          "xrefs": [
+            {
+              "database": null,
+              "id": "chebi",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Glutamic acid",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:18237",
+          "preferred_term": "Glutamic acid",
+          "ontology_id": "CHEBI:18237",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "GLUTAMIC ACID",
+          "match_type": "synonym",
+          "identifier": "CHEBI:16015",
+          "preferred_term": "L-Glutamic acid",
+          "ontology_id": "CHEBI:16015",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/L-glutamic_Acid.yaml",
+          "sha256": "1abbfb5fd04f94d5f684108d4304267a5d8c972a9d9a629d60ba755198c6edbb",
+          "identifier": "CHEBI:16015",
+          "preferred_term": "L-Glutamic acid",
+          "chemical_properties": {
+            "cas_rn": "56-86-0",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:52:38.758181+00:00",
+            "molecular_formula": "C5H9NO4",
+            "inchi": "InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)/t3-/m0/s1",
+            "smiles": "N[C@@H](CCC(=O)O)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:38.758216+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:56-86-0 from PubChem API via name lookup (L-Glutamic acid)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:45.260865+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:56-86-0 from CultureBotHT compounds_to_cas.csv (matched: L-Glutamic Acid)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Glutamic_Acid",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Glutamic_Acid.yaml",
+          "sha256": "6659214935592ce3ea2d7e3391ccdb615679b32eca645fe6cb3dd685b2f61320",
+          "identifier": "CHEBI:18237",
+          "preferred_term": "Glutamic acid",
+          "chemical_properties": {
+            "cas_rn": "56-86-0",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:52:15.643400+00:00",
+            "molecular_formula": "C5H9NO4",
+            "inchi": "InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)",
+            "smiles": "NC(CCC(=O)O)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:15.643435+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:56-86-0 from PubChem API via name lookup (Glutamic acid)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:45.141713+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:56-86-0 from CultureBotHT compounds_to_cas.csv (matched: glutamic acid)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "MIM:L-proline",
+      "token": "PROLINE",
+      "subject_chebi_id": "CHEBI:17203",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17203",
+      "generic_chebi_ids": [
+        "CHEBI:26271"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "PROLINE",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "PDBeChem",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "PROLINE",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "pdb-ccd",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "proline",
+          "scope": "hasRelatedSynonym",
+          "type": "INN",
+          "xrefs": [
+            {
+              "database": null,
+              "id": "chemidplus",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Proline",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:26271",
+          "preferred_term": "Proline",
+          "ontology_id": "CHEBI:26271",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "PROLINE",
+          "match_type": "synonym",
+          "identifier": "CHEBI:17203",
+          "preferred_term": "L-Proline",
+          "ontology_id": "CHEBI:17203",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/L-proline.yaml",
+          "sha256": "5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8",
+          "identifier": "CHEBI:17203",
+          "preferred_term": "L-Proline",
+          "chemical_properties": {
+            "cas_rn": "147-85-3",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:52:42.606440+00:00",
+            "molecular_formula": "C5H9NO2",
+            "inchi": "InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)/t4-/m0/s1",
+            "smiles": "O=C(O)[C@@H]1CCCN1"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:42.606449+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:147-85-3 from PubChem API via name lookup (L-Proline)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Proline",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Proline.yaml",
+          "sha256": "3e61bdcb6aaa68b6f0d188489811526edd438ec7ccab6574a601effa9dd62df2",
+          "identifier": "CHEBI:26271",
+          "preferred_term": "Proline",
+          "chemical_properties": {
+            "cas_rn": "147-85-3",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:53:40.881038+00:00",
+            "molecular_formula": "C5H9NO2",
+            "inchi": "InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)",
+            "smiles": "O=C(O)C1CCCN1"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:53:40.881062+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:147-85-3 from PubChem API via name lookup (Proline)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "MIM:L-tryptophan",
+      "token": "Tryptophan",
+      "subject_chebi_id": "CHEBI:16828",
+      "specific_chebi_source": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:16828",
+      "generic_chebi_ids": [
+        "CHEBI:27897"
+      ],
+      "current_chebi_matching_synonym_assertions": [
+        {
+          "name": "Tryptophan",
+          "scope": "hasExactSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "KEGG_COMPOUND",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "TRYPTOPHAN",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "pdb-ccd",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "Tryptophan",
+          "scope": "hasRelatedSynonym",
+          "type": null,
+          "xrefs": [
+            {
+              "database": null,
+              "id": "kegg.compound",
+              "description": null,
+              "url": null
+            }
+          ]
+        },
+        {
+          "name": "tryptophan",
+          "scope": "hasRelatedSynonym",
+          "type": "INN",
+          "xrefs": [
+            {
+              "database": null,
+              "id": "kegg.drug",
+              "description": null,
+              "url": null
+            }
+          ]
+        }
+      ],
+      "current_label_index_rows": [
+        {
+          "label": "Tryptophan",
+          "match_type": "preferred_term",
+          "identifier": "CHEBI:27897",
+          "preferred_term": "Tryptophan",
+          "ontology_id": "CHEBI:27897",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        },
+        {
+          "label": "Tryptophan",
+          "match_type": "synonym",
+          "identifier": "CHEBI:16828",
+          "preferred_term": "L-Tryptophan",
+          "ontology_id": "CHEBI:16828",
+          "mapping_status": "MAPPED",
+          "ambiguity": "resolved:owned"
+        }
+      ],
+      "records": [
+        {
+          "role": "specific",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/L-tryptophan.yaml",
+          "sha256": "9e95fed47a3744d5ca9420212a63488f02af4050687ee078f892f2a1b17c25e0",
+          "identifier": "CHEBI:16828",
+          "preferred_term": "L-Tryptophan",
+          "chemical_properties": {
+            "cas_rn": "73-22-3",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:52:45.060964+00:00",
+            "molecular_formula": "C11H12N2O2",
+            "inchi": "InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1",
+            "smiles": "N[C@@H](Cc1cnc2ccccc12)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:52:45.061007+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:73-22-3 from PubChem API via name lookup (L-Tryptophan)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:45.284100+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:73-22-3 from CultureBotHT compounds_to_cas.csv (matched: L-tryptophan)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        },
+        {
+          "role": "MIM:Tryptophan",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Tryptophan.yaml",
+          "sha256": "33eb945268c2de48a4141c357266d845d83c9d2eb82c121584bb1e65f5b8c543",
+          "identifier": "CHEBI:27897",
+          "preferred_term": "Tryptophan",
+          "chemical_properties": {
+            "cas_rn": "73-22-3",
+            "data_source": "PubChem API",
+            "retrieval_date": "2026-04-05T19:54:09.428332+00:00",
+            "molecular_formula": "C11H12N2O2",
+            "inchi": "InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)",
+            "smiles": "NC(Cc1cnc2ccccc12)C(=O)O"
+          },
+          "supplied_form": null,
+          "mapping_evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ],
+          "cas_related_history": [
+            {
+              "timestamp": "2026-04-05T19:54:09.428382+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:73-22-3 from PubChem API via name lookup (Tryptophan)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T23:47:09.873882+00:00",
+              "curator": "fetch_cas_rn_with_preprocessing",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:73-22-3 from PubChem API (ontology label) via name preprocessing (tryptophan)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

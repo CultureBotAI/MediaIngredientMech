@@ -1,0 +1,17 @@
+Before applying the bounded correction, the authorized scope is now exactly **seven `other` tokens on seven canonical rows**, plus their seven Rule K baseline entries (45→38). The seven YAML-backed generic-policy cases remain unchanged.
+
+All seven source-owner YAML hashes still match the frozen release pins, all 18 existing rows belonging to those owners are `WITHHOLD`, and none of their subject/owner records overlaps #912 or #914. Shared-file overlap is handled by a selector-specific transformation; no broader generated candidate promotion or record-family curation is included.
+
+| Exact subject / predicate / object selector | Token to retire | Inspected evidence |
+| --- | --- | --- |
+| `MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430` | `4-Methyl-2-oxovaleric acid` | PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt. |
+| `MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139` | `NaHCO3` | The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling. |
+| `MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750` | `Betaine x H2O` | PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ. |
+| `MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369` | `Mannose-6-Phosphate` | PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material. |
+| `MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005` | `MES [2-(N-morpholino) ethane sulfonic acid]` | PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability. |
+| `MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978` | `Glycerol 3-phosphate` | PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity. |
+| `MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103` | `Sodium perchlorate monohydrate` | PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject. |
+
+Implementation guards will require one exact matching canonical row and baseline entry per pair, unchanged reviewed owner bytes, and proof that each token is absent from the final native merged-generator candidate. The transformation preserves every other row field, all nonselected rows and all YAML, creates before/after receipts, and leaves all seven rows withheld. It does **not** invent YAML `REJECTED_LABEL` entries for names never stored there. The native mapping-change receipt will explicitly bind unchanged owner hashes and changed row payloads.
+
+The remaining 31 generated-only cases and seven YAML policy cases stay open. #1004/#1005 remain identity questions; #1003 is the separate sourced amide correction. This is an alias-specific scientific ruling, not general record, role, identity-family or release approval.

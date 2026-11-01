@@ -1,0 +1,120 @@
+identifier: cas:7791-07-3
+preferred_term: Sodium perchlorate monohydrate
+ontology_mapping:
+  ontology_id: CHEBI:132103
+  ontology_label: sodium perchlorate
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 7791-07-3 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
+      Hans80metals, FEBA_stress. Used in 2 CultureBot media; samples: ALP defined
+      perchlorate, ALP_defined_perchlorate. Curator can promote to a CHEBI primary
+      if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Sodium perchlorate
+      monohydrate'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:132103 (''sodium perchlorate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:7791-07-3 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.333317+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:19.817943+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=ClH2NaO5; smiles=O.[O-]Cl(=O)(=O)=O.[Na+]; inchi=InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.482136+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:01:16.847686+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:132103 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248215+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR ->
+    cellular_metabolic_roles.ELECTRON_ACCEPTOR'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519868+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 7791-07-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: ClH2NaO5
+  smiles: O.[O-]Cl(=O)(=O)=O.[Na+]
+  inchi: InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1H2/q;+1;/p-1
+  pubchem_cid: 516899
+ingredient_type: SINGLE_INGREDIENT
+cellular_metabolic_roles:
+- role: ELECTRON_ACCEPTOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1128/AEM.68.9.4425-4430.2002
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/
+    reference_text: Chaudhuri et al. (2002). Environmental factors that control microbial
+      perchlorate reduction.
+    curator_note: Extending the demonstrated sodium-perchlorate role to the dissolved
+      monohydrate is a chemical inference about perchlorate supply. The paper does
+      not identify the monohydrate reagent or establish solid-form identity.
+  metabolic_context: Dissolved perchlorate acceptor for Dechlorosoma suillum PS and
+    Dechloromonas agitata CKB under the studied anoxic, acetate-fed conditions.

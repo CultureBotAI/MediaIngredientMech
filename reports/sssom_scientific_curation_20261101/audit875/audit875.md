@@ -1,0 +1,17 @@
+# Issue #875 scientific audit
+
+The supported primary identity is **NCIT:C61946 — Sodium Phosphate, Dibasic, Heptahydrate**, not the CAS fallback proposed by the issue. NCI's active 26.10d record explicitly binds the exact name, CAS 7782-85-6, seven-water formula 2Na.HO4P.7H2O and FDA UNII 70WT22SF4B. MAPPING_SEMANTICS §3 step 1 therefore precedes step 2.
+
+Inspected primary sources: [NCI EVS](https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full), [FDA UNII](https://precision.fda.gov/uniisearch/srs/unii/70WT22SF4B), [PubChem CAS resolution](https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/7782-85-6/cids/JSON), [PubChem CID6096963](https://pubchem.ncbi.nlm.nih.gov/compound/6096963), and [ChEBI anhydrous parent](https://www.ebi.ac.uk/chebi/CHEBI:34683). Raw responses, URLs, timestamps and SHA256 digests are retained under sources/. CAS Common Chemistry was inaccessible (HTTP 403 for the page; 401 for the API); this is an access limitation, not negative evidence.
+
+NCIT denotes the complete hydrate. CHEBI:34683 denotes the anhydrous salt and cannot become its exact identity. Any separately retained parent/component assertion needs its own honest nonidentity representation; do not turn the current CLOSE_MATCH into broadMatch merely because CAS is verified. The repository's singular ontology_mapping can point to the exact NCI term; any legacy parent relation must follow a supported separate representation or stay historical.
+
+No other maintained record owns NCIT:C61946 or current CAS 7782-85-6 in an ignored-inclusive record search. The 0.02 M stock is a distinct prepared solution and must remain separate. Current CultureMech output has 35 explicitly heptahydrate occurrences across 35 recipes:28 preferred formula,4 dot notation,3 middle-dot notation. Of these, 32 already resolve to the local heptahydrate identity, 2 are unresolved and 1 still carries anhydrous CHEBI:34683. The stored 26 occurrences are historical and not current; this audit did not update them.
+
+The YAML and aggregate agree. Its InChI/SMILES are byte-equivalent to anhydrous ChEBI:34683, whereas PubChem 6096963 carries seven waters, H15Na2O11P,268.07 g/mol and InChIKey PYLIXCKOHOHGKQ-UHFFFAOYSA-L. That structure repair is separately supported and tracked in prior review and #871. The provisional BUFFER evidence was not reassessed. Existing SEM:cb9ec35166086d936f70 covers all three topics, so identity alone cannot close it.
+
+PR #914 exact overlap: target YAML and target aggregate entry are unchanged. Its ledger target row is unchanged context, so sharing the ledger file is not itself a semantic conflict. However, PR #914 changes the exact unified heptahydrate row's occurrence_count from 19 to 28 and rebuilds the unified snapshot/provenance; identity promotion would change that row and aliases too. The required unified rebuild remains coordination work. Claw rejects a primary/ledger mismatch, so the target's existing ledger mim_id must move atomically with any promotion.
+
+Recommended now: keep this evidence/report, preserve the exact NCIT decision, and coordinate the atomic target+ledger+SSSOM receipt+unified-refresh change with PR #914. Do not independently apply a CAS-only promotion or overwrite its unified work. No scientific inputs were edited.
+
+Detailed evidence, scope, bounded ChEBI search, prior decisions and proposed acceptance scope: audit875.json. Native structured review is being consolidated by the root agent.

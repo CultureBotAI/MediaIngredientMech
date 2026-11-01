@@ -1,4 +1,4 @@
-generation_date: '2026-10-15T02:37:35.785775+00:00'
+generation_date: '2026-11-01T00:52:44.815911+00:00'
 total_count: 2680
 mapped_count: 2611
 unmapped_count: 0
@@ -52577,7 +52577,7 @@ ingredients:
         backfill removed.'
   synonyms:
   - synonym_text: 4-amino-2-hydroxy-N,N,N-trimethyl-4-oxobutan-1-aminium chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -52634,6 +52634,23 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-11-01T00:43:57.290667+00:00'
+    curator: reject_carnitinamide_synonym.py
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYM
+    changes: 'Retyped ''4-amino-2-hydroxy-N,N,N-trimethyl-4-oxobutan-1-aminium chloride''
+      from EXACT_SYNONYM to REJECTED_LABEL, preserving its original chebi_synonym_review
+      source (#1003; #669). Official ChEBI:48601 assigns this exact IUPAC name to
+      carnitinamide chloride (C7H17N2O2.Cl), whereas CHEBI:17126 carnitine is C7H15NO3.
+      The amide name survived this record''s 2026-07-05 correction of the erroneous
+      CHEBI:48601 mapping. Sources inspected 2026-11-01: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:48601
+      ; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17126 .
+      Preserved the current identifier, parent mapping, status and occurrences; unresolved
+      salt/CAS/stereochemistry questions are not adjudicated, and no scientific or
+      release approval is asserted.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:65585
   preferred_term: Carnosic Acid

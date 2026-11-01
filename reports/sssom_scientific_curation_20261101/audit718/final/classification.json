@@ -1,0 +1,136 @@
+{
+  "created_at": "2026-11-01T00:55:43.714546+00:00",
+  "phase": "final",
+  "repository_head": "4625afd492b6cf43e3b499d1425d2453d490009d",
+  "scientific_review": false,
+  "scope": "All native mapping dispositions at the captured source and review hashes; reason classification only, without reassessing the archived scientific evidence or changing any disposition.",
+  "excluded": [
+    "Role and component assertions",
+    "KGX or downstream media approval",
+    "Scientific re-review of withheld or supported rows",
+    "Any source data or native review mutation"
+  ],
+  "counts": {
+    "source": 2987,
+    "supported": 1740,
+    "withhold": 1247
+  },
+  "withheld_owner_records": 1001,
+  "withheld_predicates": {
+    "skos:exactMatch": 998,
+    "skos:broadMatch": 152,
+    "skos:closeMatch": 97
+  },
+  "supported_predicates": {
+    "skos:exactMatch": 1740
+  },
+  "exclusive_reason_categories": {
+    "synonym_payload_incomplete": 196,
+    "record_specific_concern": 548,
+    "nonexact_relation_scope": 202,
+    "other_preserved_reason": 96,
+    "cross_record_obligation": 56,
+    "changed_or_new_receipt": 21,
+    "chemistry_conflict": 39,
+    "no_positive_mapping_disposition": 5,
+    "weak_grounding_grade": 35,
+    "preparation_synonym_scope": 49
+  },
+  "classification_rules": [
+    {
+      "category": "changed_or_new_receipt",
+      "definition": "Review no longer binds changed/new row or owner",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "Mapping corrected by receipt",
+        "Row added by mapping-change receipt"
+      ]
+    },
+    {
+      "category": "nonexact_relation_scope",
+      "definition": "Prior review does not establish current non-exact relation and synonym scope",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "The prior record review does not settle this non-exact relation"
+      ]
+    },
+    {
+      "category": "record_specific_concern",
+      "definition": "Existing record-specific mapping, identity, alias or evidence concern",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern:"
+      ]
+    },
+    {
+      "category": "synonym_payload_incomplete",
+      "definition": "Complete other-token payload lacks individual same-subject documentation",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "The available report does not individually document every current other token"
+      ]
+    },
+    {
+      "category": "cross_record_obligation",
+      "definition": "Cross-record baseline remains an explicit unresolved review obligation",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "Cross-record baseline is an unresolved review obligation"
+      ]
+    },
+    {
+      "category": "chemistry_conflict",
+      "definition": "Label-index different-substance chemistry conflict needs per-record review",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "Different-substance chemistry conflict remains in label index"
+      ]
+    },
+    {
+      "category": "weak_grounding_grade",
+      "definition": "Lexical or close grounding does not establish exact equivalence",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "The source grounding grade is"
+      ]
+    },
+    {
+      "category": "no_positive_mapping_disposition",
+      "definition": "Assertion lacks mapping-specific positive disposition",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "This assertion lacks a mapping-specific positive disposition"
+      ]
+    },
+    {
+      "category": "preparation_synonym_scope",
+      "definition": "Preparation/concentration/instruction tokens need same-subject review",
+      "match": "first matching case-sensitive prefix in this order",
+      "prefixes": [
+        "Preparation/concentration/instruction tokens remain in the synonym channel"
+      ]
+    },
+    {
+      "category": "other_preserved_reason",
+      "definition": "No listed prefix matches; exact native reason retained for individual interpretation"
+    }
+  ],
+  "unique_withheld_reasons": 754,
+  "manifest_verification": "Source, review and every published partition file match the native manifest; counts independently recomputed from all dispositions.",
+  "input_sha256": {
+    "output/mim-reviewed-sssom/manifest.json": "1d55565fc13cc618a7e51bd38b2cb3f41aa633cc17ef939a2c0747c19d992a4a",
+    "output/mim-reviewed-sssom/mapping-dispositions.tsv": "2563018613ca6b73ed1dd939f1c716258cfd656427fac86caa64973e1ef32fca",
+    "output/mim-reviewed-sssom/ingredient_mappings.sssom.tsv": "1e97fce0cd17836e8528a01cc17e734677b1d56c53104bf5190369b7ce5e041d",
+    "output/mim-reviewed-sssom/withheld_mappings.sssom.tsv": "519d82e56079fdf28fc1615121aad1714733a6afd81aa6ee6a004dca80892232",
+    "mappings/ingredient_mappings.sssom.tsv": "f408f36b9de77c2089a07907b40d6a27401087e13528f0597a6cf7b386048ac0",
+    "reports/sssom_completion_20260921/review.json": "0cc2c8742f905458ebb15ed0195aa0744662f29d6019bad03690f8095904ac40",
+    "reports/sssom_completion_20260921/mapping-evidence.json": "b3430c54ecfe78ec629f7ae5b0c24ed6e761088421cc870e78def7c128ccb275",
+    "docs/SSSOM_RELEASE.md": "7f818575b1afe568b7bf8273b4c89c6e86e2eaed1fda845718157b7c1e8e9ec9"
+  },
+  "limitations": [
+    "Categories reflect recorded reason text, not a new finding that the underlying assertion is false.",
+    "A row can carry multiple concerns; exclusive categories use the first recorded leading reason. Full reasons remain available in the row-level TSV.",
+    "Counts are snapshot-bound and will change when content-bound mapping receipts are assembled.",
+    "This diagnostic is input for the root combined native structured review, not a separate native review bundle or scientific approval."
+  ]
+}

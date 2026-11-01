@@ -1,0 +1,23 @@
+uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2"
+{
+  "counts": {
+    "source": 2987,
+    "supported": 1741,
+    "withhold": 1246
+  },
+  "files": {
+    "ingredient_mappings.sssom.tsv": "017a7669b276d0f85f06b3df5e620ba173ca24ea2b59fcb71d1eda4bb0109832",
+    "mapping-dispositions.tsv": "9c2d5e8fe37c193c6133af57e929b32ed00aef421de42ab19443f515b84b4898",
+    "withheld_mappings.sssom.tsv": "5d610d6f0c1baba22168165bfe03432195d35a30945e795fefd8596895047df1"
+  },
+  "mapping_set_ids": {
+    "supported": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/reviewed-supported",
+    "withhold": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/withheld-backlog"
+  },
+  "review_sha256": "6c74c7cc3eb8075ec18e20ab594a9b5eae9910b08b98c9d0746b3374af6c7ac6",
+  "schema_version": 1,
+  "scope": "MIM-only reviewed SSSOM; no KGX dependency",
+  "semantic_status": "PASS_SUPPORTED_SUBSET",
+  "source_sha256": "89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9",
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv"
+}

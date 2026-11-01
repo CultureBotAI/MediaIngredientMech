@@ -1,0 +1,98 @@
+uv run python scripts/generate_index_files.py
+================================================================================
+GENERATING INDEX FILES
+================================================================================
+
+Loaded 2680 mapped ingredients
+Loaded 273 unmapped ingredients
+
+Total: 2953 ingredients
+
+Generating JSON indexes...
+✓ Created data/curated/mapped_ingredients_index.json (2680 records)
+✓ Created data/curated/unmapped_ingredients_index.json (273 records)
+✓ Created data/curated/all_ingredients_index.json (2953 records)
+
+Generating CSV indexes...
+✓ Created data/curated/mapped_ingredients_index.csv (2680 records)
+✓ Created data/curated/unmapped_ingredients_index.csv (273 records)
+✓ Created data/curated/all_ingredients_index.csv (2953 records)
+
+Generating Markdown indexes...
+✓ Created data/curated/MAPPED_INGREDIENTS.md
+✓ Created data/curated/UNMAPPED_INGREDIENTS.md
+✓ Created data/curated/ALL_INGREDIENTS.md
+
+================================================================================
+✓ ALL INDEX FILES GENERATED
+================================================================================
+
+Files created in data/curated/:
+  JSON: *_index.json (machine-readable)
+  CSV:  *_index.csv (spreadsheet-compatible)
+  MD:   *.md (human-readable)
+uv run python scripts/export_lists.py
+
+Ingredient List Exporter
+
+Loading mapped ingredients from data/curated/mapped_ingredients.yaml...
+  Found 2680 mapped ingredients
+
+Loading unmapped ingredients from data/curated/unmapped_ingredients.yaml...
+  Found 273 unmapped ingredients
+
+Total: 2953 ingredients
+
+Exporting JSON files...
+  ✓ docs/data/mapped_ingredients.json (2680 records)
+  ✓ docs/data/unmapped_ingredients.json (273 records)
+  ✓ docs/data/all_ingredients.json (2953 records)
+
+Exporting CSV files...
+  ✓ docs/data/mapped_ingredients.csv (2680 records)
+  ✓ docs/data/unmapped_ingredients.csv (273 records)
+  ✓ docs/data/all_ingredients.csv (2953 records)
+  ✓ docs/data/label_index.csv (9056 labels)
+
+Exporting MARKDOWN files...
+  ✓ docs/data/mapped_ingredients.md (2680 records)
+  ✓ docs/data/unmapped_ingredients.md (273 records)
+  ✓ docs/data/all_ingredients.md (2953 records)
+
+✅ Export complete!
+
+Files saved to: docs/data
+
+Sample Records:
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Identifier           ┃ Ontology ID           ┃ Preferred Term       ┃ Status ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ kgmicrobe.compound:… │ CHEBI:15978           │ Na2 beta-glycerol    │ MAPPED │
+│                      │                       │ PO4 x 5 H2O          │        │
+│ MICRO:0000610        │ MICRO:0000610         │ Ox-bile              │ MAPPED │
+│ MICRO:0001348        │ MICRO:0001348         │ BG-11 Medium         │ MAPPED │
+│ kgmicrobe.ingredien… │ kgmicrobe.ingredient… │ Marine broth 2216    │ MAPPED │
+│ kgmicrobe.ingredien… │ kgmicrobe.ingredient… │ Marine agar 2216     │ MAPPED │
+└──────────────────────┴───────────────────────┴──────────────────────┴────────┘
+
+... and 2948 more
+uv run python scripts/browser_export.py
+
+Browser Export: Ingredients → JSON
+Source: 
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-cu
+ration-20261101T003435Z/mim/data/ingredients
+Output: 
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-cu
+ration-20261101T003435Z/mim/docs/data/ingredients.json
+
+⠧ Exported 2953 ingredients
+
+Summary:
+  Total ingredients: 2953
+  Mapped: 2611
+  Unmapped: 260
+
+✓ Browser data written to: 
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-cu
+ration-20261101T003435Z/mim/docs/data/ingredients.json

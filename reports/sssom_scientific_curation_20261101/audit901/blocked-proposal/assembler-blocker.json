@@ -1,0 +1,111 @@
+{
+  "error": "Nonmapping-cohort approval has stale owner or row",
+  "line": 404,
+  "position": 931,
+  "current_position": 919,
+  "owner": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+  "entry": {
+    "review_index": 196,
+    "source_position": 931,
+    "disposition": "SUPPORTED",
+    "reason": "Mapping-only review supports the exact source identity using the archived target/registry identity evidence quoted here. The complete current other payload was read against the identity, registry and synonym evidence; the quoted sections cover the exported same-subject tokens. Unresolved role, recipe, component, occurrence or curation-metadata findings remain outside this row-scoped decision.",
+    "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+    "owner_record_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+    "owner_record_current_sha256_at_review": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+    "source_row_sha256": "1e5aaffe48b98b5733dc82a8eebaeb64243446731d40be430f2b55f0f169307f",
+    "source_sssom_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+    "assertion_id": "MIM.review:4bbcb9ead80b9947664dd05d1a01908dc13bfb84057e089db5c74166d23577ff",
+    "mapping": {
+      "comment": "Registry/identity row preserving cas:10030-67-8 alongside parent CHEBI:6731.",
+      "confidence": "0.99",
+      "mapping_date": "2026-08-13",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "object_id": "cas:10030-67-8",
+      "object_label": "D-(+)-melezitose monohydrate",
+      "object_source": "registry:cas",
+      "other": "CAS:10030-67-8",
+      "predicate_id": "skos:exactMatch",
+      "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[kegg_compound]",
+      "subject_id": "MIM:D-_-melezitose_Monohydrate",
+      "subject_label": "D-(+)-melezitose monohydrate",
+      "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+    },
+    "report": {
+      "path": "reports/yaml_record_review/D-_-melezitose_Monohydrate.md",
+      "sha256": "43ebf1701ee64044bacffdd86568342e78a6c80d31344960b2cf26d61b93a027"
+    },
+    "evidence_excerpts": {
+      "Identity": "- Reviewed record:\n  `data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml`.\n- Current identifier and grounding: `identifier: cas:10030-67-8`,\n  `ontology_mapping.ontology_id: CHEBI:6731`,\n  `ontology_label: melezitose`, `ontology_source: CHEBI`,\n  `mapping_quality: CLOSE_MATCH`, and `mapping_status: MAPPED`.\n- Live OLS lookup by `CHEBI:6731` returns active `CHEBI:6731` labelled\n  `melezitose` with formula `C18H32O16`, confirming it is the anhydrous parent,\n  not an exact monohydrate term.\n- PubChem CID `16217716` returns formula `C18H34O17` and a canonical SMILES\n  string with one dot-separated water, matching the YAML formula and SMILES.\n- Live OLS searches for exact `D-(+)-melezitose monohydrate` and for CAS\n  `10030-67-8` found no CHEBI term, so the CAS-primary record remains needed.",
+      "Validation": "- `uv run --frozen python scripts/validate_strict.py data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml data/ingredients/mapped/D-_-pantolactone.yaml data/ingredients/mapped/D-_-tagatose.yaml data/ingredients/mapped/D-_-turanose.yaml data/ingredients/mapped/D-apiose.yaml`:\n  passed; 5 files scanned and 0 ERROR rows.\n- `uv run --frozen linkml-term-validator validate-data data/ingredients/mapped/D-_-pantolactone.yaml data/ingredients/mapped/D-_-tagatose.yaml data/ingredients/mapped/D-_-turanose.yaml data/ingredients/mapped/D-apiose.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml -t IngredientRecord --labels`:\n  exited 0 with no failures for the four CHEBI-primary records in this batch.\n  This CAS-primary registry record was skipped because `cas:` is outside the\n  CHEBI/OBO term-validator scope.\n- `uv run --frozen python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir /tmp/mim_qc_roundtrip.wqYt47`\n  followed by\n  `uv run --frozen python scripts/verify_roundtrip.py --original-dir data/curated --aggregated-dir /tmp/mim_qc_roundtrip.wqYt47`:\n  passed before this read-only report batch; both curated collection files had\n  0 data differences and only expected scratch `generation_date` metadata\n  differences.\n- `uv run --frozen python scripts/validate_sssom_invariants.py`: passed Rules\n  A, B1, B2, B3, C, D, E, F, G, H, I, J, and K before this read-only report\n  batch. Rule B4 was skipped because the sibling kg-microbe ontology transforms\n  were absent.",
+      "Evidence": "- The current `CLOSE_MATCH` parent relation is supported by the 2026-08-13\n  `MIM curation (#342)` evidence, which records that a hydrate is similar to\n  but not subsumed by its anhydrous form.\n- The hidden/ignored-inclusive membership search found no `cas:10030-67-8`\n  rows in `mappings/culturemech_recipe_membership.tsv`, matching the record's\n  0/0 `occurrence_statistics`.\n- The final SSSOM rows publish\n  `MIM:D-_-melezitose_Monohydrate skos:closeMatch CHEBI:6731` and an exact\n  `cas:10030-67-8` registry row. The only final `other` token is\n  `CAS:10030-67-8`, which is safe for the monohydrate subject.\n- The `CARBON_SOURCE` facet is supported only by `COMPUTATIONAL_PREDICTION`\n  from a curated name-pattern rule and its own `curator_note` calls it\n  provisional.",
+      "Completeness": "- The current row honestly represents the identity as a CAS monohydrate with a\n  close anhydrous parent. No exact CHEBI term was found by the live OLS\n  searches for the exact label or CAS.\n- The aggregate record in `data/curated/mapped_ingredients.yaml` matches the\n  per-record YAML for this reviewed entry."
+    },
+    "alias_review": {
+      "tokens": [
+        "CAS:10030-67-8"
+      ],
+      "coverage": "ALL_TOKENS_MENTIONED",
+      "missing_literal_tokens": [],
+      "literal_mentions_are_not_identity_evidence": true
+    },
+    "review_method": "manual_mapping_scoped_evidence_review",
+    "triage_cohort": "role_component_only_review_summary_candidate",
+    "unresolved_nonmapping_finding_ids": [
+      "SEM:d2e2a0eef35747b36f91",
+      "SEM:3c13edcba734032a4e08"
+    ],
+    "historical_assertion_sha256": "1e5aaffe48b98b5733dc82a8eebaeb64243446731d40be430f2b55f0f169307f"
+  },
+  "mapping_change": {
+    "kind": "changed",
+    "before_position": 919,
+    "after_position": 919,
+    "before": {
+      "subject_id": "MIM:D-_-melezitose_Monohydrate",
+      "subject_label": "D-(+)-melezitose monohydrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "cas:10030-67-8",
+      "object_label": "D-(+)-melezitose monohydrate",
+      "object_source": "registry:cas",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[kegg_compound]",
+      "mapping_date": "2026-08-13",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving cas:10030-67-8 alongside parent CHEBI:6731.",
+      "other": "CAS:10030-67-8",
+      "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+    },
+    "after": {
+      "subject_id": "MIM:D-_-melezitose_Monohydrate",
+      "subject_label": "D-(+)-melezitose monohydrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "cas:10030-67-8",
+      "object_label": "D-(+)-melezitose monohydrate",
+      "object_source": "registry:cas",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:MIM curation (#901); PubChem CID 16217716; ChEBI:6731|MIM:curator=correct_melezitose_parent.py|kgm:mediaingredientmech_reviewed[manifest=9bb29d5605d93dea351be9624d99c5d8ada57d4b9831b22764957b784bd685af]|kgm:native_ontology:chebi",
+      "mapping_date": "2026-11-01",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving cas:10030-67-8 alongside parent CHEBI:6731.",
+      "other": "CAS:10030-67-8",
+      "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+    },
+    "receipt": "issue901-1003-669-scientific-curation"
+  },
+  "mapping": {
+    "subject_id": "MIM:D-_-melezitose_Monohydrate",
+    "subject_label": "D-(+)-melezitose monohydrate",
+    "predicate_id": "skos:exactMatch",
+    "object_id": "cas:10030-67-8",
+    "object_label": "D-(+)-melezitose monohydrate",
+    "object_source": "registry:cas",
+    "mapping_justification": "semapv:ManualMappingCuration",
+    "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:MIM curation (#901); PubChem CID 16217716; ChEBI:6731|MIM:curator=correct_melezitose_parent.py|kgm:mediaingredientmech_reviewed[manifest=9bb29d5605d93dea351be9624d99c5d8ada57d4b9831b22764957b784bd685af]|kgm:native_ontology:chebi",
+    "mapping_date": "2026-11-01",
+    "confidence": "0.99",
+    "comment": "Registry/identity row preserving cas:10030-67-8 alongside parent CHEBI:6731.",
+    "other": "CAS:10030-67-8",
+    "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+  },
+  "source_hash": "134f384b3aa5df4b85eb715ff92111d8991375a25c0950b559adb88355bd9afc"
+}
