@@ -30,10 +30,10 @@ onto the merge target:
 * ``Calcium_Chloride`` (``CHEBI:3312``): ``CaCl22H2O`` (dihydrate ``CHEBI:86158``
   label on the anhydrous tombstone; live ``Cacl2_X_2_H2o`` holds ``CaCl22H2O``);
 * ``Na-glutamate`` (``CHEBI:64243``): ``(2S)-2-aminopentanedioate``,
-  ``L-glutamic acid dianion`` (``CHEBI:29984`` dianion names on the monosodium
+  ``L-glutamic acid dianion`` (``CHEBI:29988`` dianion names on the monosodium
   salt tombstone);
-* ``Sodium_Citrate`` (``CHEBI:32142``): ``Na2citrate`` (disodium citrate
-  ``CHEBI:63041`` shorthand on the trisodium citrate dihydrate tombstone).
+* ``Sodium_Citrate`` (``CHEBI:32142``): ``Na2citrate`` (two-sodium shorthand
+  with different stoichiometry from the trisodium citrate dihydrate tombstone).
 
 Dry-run by default; pass ``--apply`` to write records.
 """
@@ -158,7 +158,8 @@ TARGETS: tuple[TombstoneFix, ...] = (
         rationale=(
             "Set explicit representative CHEBI:64243 (Sodium_L-glutamate) so the post-merge "
             "REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target, "
-            "and retype L-glutamate(2-) CHEBI:29984 dianion EXACT_SYNONYM tokens to REJECTED_LABEL"
+            "and retype L-glutamate(2-) CHEBI:29988 dianion EXACT_SYNONYM tokens to REJECTED_LABEL "
+            "(https://www.ebi.ac.uk/chebi/CHEBI:29988)"
         ),
     ),
     TombstoneFix(
@@ -169,7 +170,8 @@ TARGETS: tuple[TombstoneFix, ...] = (
         rationale=(
             "Set explicit representative CHEBI:32142 (Na3-citrate_X_2_H2o) so the post-merge "
             "REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target, "
-            "and retype disodium citrate CHEBI:63041 token Na2citrate to REJECTED_LABEL"
+            "and retype Na2citrate to REJECTED_LABEL because its two-sodium stoichiometry "
+            "differs from the trisodium citrate dihydrate target"
         ),
     ),
     TombstoneFix(
@@ -194,10 +196,13 @@ TARGETS: tuple[TombstoneFix, ...] = (
     ),
 )
 
+# 0819 and 0820 were retired by Hydroxystreptomycin and Isophthalate.
+# The #1021 inventory includes ignored backups and Git history through 0850;
+# these two new records must not reuse those historical identities.
 UNMAPPED_HYDRATE_SPECS: tuple[UnmappedHydrateSpec, ...] = (
     UnmappedHydrateSpec(
         slug="Na2moo4_X_H2o",
-        identifier="UNMAPPED_0819",
+        identifier="UNMAPPED_0851",
         preferred_term="Na2MoO4 x H2O",
         synonyms=(
             ("Na2MoO4 x H2O", "RAW_TEXT", "CultureMech"),
@@ -221,7 +226,7 @@ UNMAPPED_HYDRATE_SPECS: tuple[UnmappedHydrateSpec, ...] = (
     ),
     UnmappedHydrateSpec(
         slug="Trisodium_Citrate_X_3_H2o",
-        identifier="UNMAPPED_0820",
+        identifier="UNMAPPED_0852",
         preferred_term="Trisodium citrate x 3 H2O",
         synonyms=(
             ("Trisodium citrate x 3 H2O", "RAW_TEXT", "CultureMech"),
@@ -306,10 +311,8 @@ def main(argv: list[str] | None = None) -> int:
             print(f"SKIP   {spec.slug}: already repaired")
             continue
 
-        history = record.get("curation_history") or []
-        if history and history[-1].get("action") == "REPAIRED_TOMBSTONE_RESOLUTION":
-            history.pop()
-
+        # Preserve every prior repair event; a necessary later repair appends
+        # its own evidence. The no-change branch above makes reruns idempotent.
         # Do NOT set new_status="REJECTED" on non-merge events (#882).
         record_curation_event(
             record,

@@ -1,4 +1,4 @@
-identifier: UNMAPPED_0819
+identifier: UNMAPPED_0851
 preferred_term: Na2MoO4 x H2O
 synonyms:
 - synonym_text: Na2MoO4 x H2O
@@ -33,6 +33,18 @@ curation_history:
   new_status: UNMAPPED
   llm_assisted: true
   llm_model: claude-opus-4-6
+- timestamp: '2026-11-01T03:15:52.480154+00:00'
+  curator: Codex
+  action: CORRECTED_IDENTIFIER
+  changes: 'Replace reused placeholder UNMAPPED_0819 with previously unassigned UNMAPPED_0851
+    (#1021) while porting #914. The retired identifier belonged to Hydroxystreptomycin;
+    the inventory included ignored YAML backups and reachable Git history, whose highest
+    assigned placeholder was UNMAPPED_0850. Preserve the original creation event and
+    the unresolved hydrate identity.'
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: GPT-6 (Codex)
 notes: Sodium molybdate monohydrate surface forms split out from anhydrous Na2moo4
   (CHEBI:75215) and dihydrate Na2moo42h2o / Na2moo4_X_2_H2o (CHEBI:75213) so recipes
   carrying stale anhydrous term.id CHEBI:75215 resolve to UNMAPPED rather than collapsing

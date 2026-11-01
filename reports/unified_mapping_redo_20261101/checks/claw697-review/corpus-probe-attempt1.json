@@ -1,0 +1,11 @@
+{
+  "exit_code": 1,
+  "error": "AssertionError: Existing ledger behavior changed",
+  "cause": "Reviewer harness passed new-module MIMNameIndex to old-module live_records, so old-module isinstance rejected catalog and omitted retired source rows. Corrected by loading separate indexes with each revision.",
+  "classification": "review harness error; no product defect established",
+  "diagnostic_probe": {
+    "result": "Confirmed with synthetic MIMNameIndex: owner module live_records returns 2 retired owner keys; the other loaded revision sees 0 because isinstance fails.",
+    "exit_code": 0,
+    "repository_code_changed": false
+  }
+}

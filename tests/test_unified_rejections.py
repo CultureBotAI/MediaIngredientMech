@@ -78,6 +78,27 @@ def test_committed_export_respects_rejections():
     assert gate.check() == []
 
 
+def test_issue_882_nine_tombstones_keep_explicit_representatives():
+    import yaml
+
+    expected = {
+        "Cocl2_X_6_H2o": "CHEBI:53503",
+        "Na2moo42h2o": "CHEBI:75213",
+        "Mgcl2x_6_H2o": "CHEBI:86345",
+        "Trisodium_Citrate_X_2_H2o": "CHEBI:32142",
+        "Calcium_Chloride": "CHEBI:3312",
+        "Na-glutamate": "CHEBI:64243",
+        "Sodium_Citrate": "CHEBI:32142",
+        "Nah2po4h2o": "CHEBI:114249",
+        "Cinnamic_Acid": "CHEBI:35697",
+    }
+    root = Path(__file__).parents[1] / "data/ingredients/mapped"
+    for slug, target in expected.items():
+        record = yaml.safe_load((root / f"{slug}.yaml").read_text())
+        assert record["mapping_status"] == "REJECTED", slug
+        assert record.get("representative") == target, slug
+
+
 def test_issue_894_hydrate_and_tombstone_identities():
     with gate.ARTIFACT.open(encoding="utf-8", newline="") as handle:
         rows = {r["ingredient_name"]: r for r in csv.DictReader(handle, delimiter="\t")}
@@ -186,13 +207,13 @@ def test_issue_882_merge_tombstones_and_unified_identities():
         assert row["chebi_id"] == exp_chebi, label
 
     expected_unmapped = {
-        "Na2MoO4 x H2O": "UNMAPPED_0819",
-        "Na2MoO4.H2O": "UNMAPPED_0819",
-        "Na2MoO4 × H2O": "UNMAPPED_0819",
-        "Na2MoO4 . H2O": "UNMAPPED_0819",
-        "Na2MoO4 · H2O": "UNMAPPED_0819",
-        "Trisodium citrate・3H2O": "UNMAPPED_0820",
-        "Trisodium citrate x 3 H2O": "UNMAPPED_0820",
+        "Na2MoO4 x H2O": "UNMAPPED_0851",
+        "Na2MoO4.H2O": "UNMAPPED_0851",
+        "Na2MoO4 × H2O": "UNMAPPED_0851",
+        "Na2MoO4 . H2O": "UNMAPPED_0851",
+        "Na2MoO4 · H2O": "UNMAPPED_0851",
+        "Trisodium citrate・3H2O": "UNMAPPED_0852",
+        "Trisodium citrate x 3 H2O": "UNMAPPED_0852",
     }
     for label, exp_mim in expected_unmapped.items():
         row = rows[label]
@@ -231,7 +252,7 @@ def test_issue_869_and_808_no_stale_chebi_on_local_or_hydrate_records(export):
     artifact, ledger = export()
     ledger.write_text(
         "ingredient_name\trejected_id\tmim_id\treason\n"
-        "Na2MoO4 x H2O\tCHEBI:75215\tUNMAPPED_0819\tunmapped rejection not allowed\n"
+        "Na2MoO4 x H2O\tCHEBI:75215\tUNMAPPED_0851\tunmapped rejection not allowed\n"
     )
     assert gate.check(artifact, ledger) == [f"{ledger}: duplicate or invalid rejection"]
 

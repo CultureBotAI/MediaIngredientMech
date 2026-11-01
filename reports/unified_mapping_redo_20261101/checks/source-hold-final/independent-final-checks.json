@@ -1,0 +1,52 @@
+{
+  "recorded_at": "2026-11-01T03:52:15.886260+00:00",
+  "head": "9e16535f3d35264dfdc0eda058897da5aa5504b1",
+  "state": "working_tree",
+  "input_sha256": {
+    "UNIFIED_INGREDIENT_MAPPING.tsv": "fd9a44beb940d8bc484a633f562de95a13e1f75a6e01c42b8965356800f1b215",
+    "UNIFIED_INGREDIENT_MAPPING.provenance.json": "aa8222c699ba234974469641baa275689b1b7c9c8e2cbe3c1530b0e6be93757f",
+    "scripts/check_unified_rejections.py": "4f7faf1f103f50be1a59e826b0238061d1a9214afcec9d1cf0b029237e71238c",
+    "mappings/unified_mapping_rejections.tsv": "82d7d79172a5efd966f0a6a97ead4faae186128f6d6fdb327366f041ad06aba4",
+    "tests/test_fix_merge_tombstone_resolution.py": "d44736cc03159677c69bfbe2e6043924cb61a2295e7499658976b1cd971d3205",
+    "tests/test_merge_mapped_records.py": "c9637e1467cb67903f79ed4fe0e2e3d2e87aec75141c51e0101653e43b808888",
+    "tests/test_unified_rejections.py": "bbe49bccf9e17587cb110adc4ec98a1f2f14223caddd2c53eb18bb879c9760ad",
+    "tests/test_unified_source_holds.py": "bbdb713efce35ac87ec68e1dd5f6ffc9397fb3cdc20870992796368f630a0ec7"
+  },
+  "checks": [
+    {
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-independent/verify_step1.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim",
+      "started_at": "2026-11-01T03:52:05.148217+00:00",
+      "finished_at": "2026-11-01T03:52:09.969617+00:00",
+      "exit_code": 0,
+      "output": "final-acceptance.json",
+      "output_sha256": "d7193668156e09fcdffc3407508e72c4dc5efbfc47a84649a26a1d0538a874d2"
+    },
+    {
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_fix_merge_tombstone_resolution.py",
+        "tests/test_merge_mapped_records.py",
+        "tests/test_unified_rejections.py",
+        "tests/test_unified_source_holds.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim",
+      "started_at": "2026-11-01T03:52:09.969687+00:00",
+      "finished_at": "2026-11-01T03:52:15.885321+00:00",
+      "exit_code": 0,
+      "output": "final-tests.log",
+      "output_sha256": "f2533ee162109748fd8a3952cb4d608e21e8f6c7b902caa398257250d717abf7"
+    }
+  ]
+}

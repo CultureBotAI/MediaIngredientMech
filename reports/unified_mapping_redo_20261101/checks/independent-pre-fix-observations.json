@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-11-01T03:18:15.482131+00:00",
+  "git_revision": "9e16535f3d35264dfdc0eda058897da5aa5504b1",
+  "scope": "Pre-final adversarial observations of approved-plan step1; not a native saved verdict",
+  "inputs": [
+    {
+      "path": "scripts/fix_merge_tombstone_resolution.py",
+      "sha256": "a6ceb20e4add0bf560846a6169e45bf84998713554ca7630d4e785459c19e85a"
+    },
+    {
+      "path": "data/ingredients/mapped/Na-glutamate.yaml",
+      "sha256": "dcaf1304f4c3e04dc2e13dd4500575250357d2cddeed1e91001d03d8b1f29f2a"
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Citrate.yaml",
+      "sha256": "a0c628e0200dff60a691a87bcf6f7623258d35a43496d7a0682d2fb3a288ef86"
+    }
+  ],
+  "findings": [
+    {
+      "key": "tombstone-repair-deletes-history",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1022",
+      "severity": "major",
+      "summary": "A subsequent required repair discards prior repair audit event through history.pop().",
+      "reproduction": "history-reproduction.json"
+    },
+    {
+      "key": "tombstone-repair-wrong-rationale-curies",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1023",
+      "severity": "minor",
+      "summary": "New repair rationale misnames CHEBI:29984 as L-glutamate dianion and CHEBI:63041 as disodium citrate. Correct L-glutamate dianion term is CHEBI:29988. Primary identifiers and representative mappings themselves remain unchanged.",
+      "evidence": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:63041",
+        "https://www.ebi.ac.uk/chebi/CHEBI:29988",
+        "chebi-cache-verification.json"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "command": "PYTHONPATH=$PWD/src /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python -m pytest -q -o addopts='' -p no:cacheprovider tests/test_merge_mapped_records.py tests/test_unified_rejections.py -k 'not committed_export and not issue_894 and not issue_882 and not issue_869'",
+      "exit_code": 0,
+      "summary": "20 passed, 4 deselected; generated snapshots deferred to regeneration."
+    }
+  ]
+}

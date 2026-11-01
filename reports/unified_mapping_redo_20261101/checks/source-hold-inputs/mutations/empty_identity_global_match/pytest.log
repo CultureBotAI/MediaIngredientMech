@@ -1,0 +1,69 @@
+.......F....FFFFFF...............                                        [100%]
+=================================== FAILURES ===================================
+___________ test_source_hold_never_matches_other_empty_identity_rows ___________
+tests/test_unified_source_holds.py:85: in test_source_hold_never_matches_other_empty_identity_rows
+    assert gate.check(*export(
+E   AssertionError: assert ['/private/va...mech_term_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_never_matches0/unified.tsv:3: Unrelated source label republishes rejected CHEBI:9 in culturemech_term_id'
+E     Use -v to get more diff
+____ test_source_hold_does_not_discard_qualifiers[1 M reagent-2 M reagent] _____
+tests/test_unified_source_holds.py:120: in test_source_hold_does_not_discard_qualifiers
+    assert gate.check(*export({"ingredient_name": other, "chebi_id": "CHEBI:9"},
+E   AssertionError: assert ['/private/va... in chebi_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_does_not_disc0/unified.tsv:2: 2 M reagent republishes rejected CHEBI:9 in chebi_id'
+E     Use -v to get more diff
+_____ test_source_hold_does_not_discard_qualifiers[Reagent\xb7H2O-Reagent] _____
+tests/test_unified_source_holds.py:120: in test_source_hold_does_not_discard_qualifiers
+    assert gate.check(*export({"ingredient_name": other, "chebi_id": "CHEBI:9"},
+E   AssertionError: assert ['/private/va... in chebi_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_does_not_disc1/unified.tsv:2: Reagent republishes rejected CHEBI:9 in chebi_id'
+E     Use -v to get more diff
+______ test_source_hold_does_not_discard_qualifiers[D-Reagent-L-Reagent] _______
+tests/test_unified_source_holds.py:120: in test_source_hold_does_not_discard_qualifiers
+    assert gate.check(*export({"ingredient_name": other, "chebi_id": "CHEBI:9"},
+E   AssertionError: assert ['/private/va... in chebi_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_does_not_disc2/unified.tsv:2: L-Reagent republishes rejected CHEBI:9 in chebi_id'
+E     Use -v to get more diff
+____ test_source_hold_does_not_discard_qualifiers[Reagent (stock)-Reagent] _____
+tests/test_unified_source_holds.py:120: in test_source_hold_does_not_discard_qualifiers
+    assert gate.check(*export({"ingredient_name": other, "chebi_id": "CHEBI:9"},
+E   AssertionError: assert ['/private/va... in chebi_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_does_not_disc3/unified.tsv:2: Reagent republishes rejected CHEBI:9 in chebi_id'
+E     Use -v to get more diff
+__ test_source_hold_does_not_discard_qualifiers[Reagent x H2O-Reagent\xb7H2O] __
+tests/test_unified_source_holds.py:120: in test_source_hold_does_not_discard_qualifiers
+    assert gate.check(*export({"ingredient_name": other, "chebi_id": "CHEBI:9"},
+E   AssertionError: assert ['/private/va... in chebi_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_does_not_disc4/unified.tsv:2: Reagent·H2O republishes rejected CHEBI:9 in chebi_id'
+E     Use -v to get more diff
+____ test_source_hold_does_not_discard_qualifiers[1 M reagent-1  M reagent] ____
+tests/test_unified_source_holds.py:120: in test_source_hold_does_not_discard_qualifiers
+    assert gate.check(*export({"ingredient_name": other, "chebi_id": "CHEBI:9"},
+E   AssertionError: assert ['/private/va... in chebi_id'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8174/test_source_hold_does_not_disc5/unified.tsv:2: 1  M reagent republishes rejected CHEBI:9 in chebi_id'
+E     Use -v to get more diff
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_unified_source_holds.py::test_source_hold_never_matches_other_empty_identity_rows
+FAILED tests/test_unified_source_holds.py::test_source_hold_does_not_discard_qualifiers[1 M reagent-2 M reagent]
+FAILED tests/test_unified_source_holds.py::test_source_hold_does_not_discard_qualifiers[Reagent\xb7H2O-Reagent]
+FAILED tests/test_unified_source_holds.py::test_source_hold_does_not_discard_qualifiers[D-Reagent-L-Reagent]
+FAILED tests/test_unified_source_holds.py::test_source_hold_does_not_discard_qualifiers[Reagent (stock)-Reagent]
+FAILED tests/test_unified_source_holds.py::test_source_hold_does_not_discard_qualifiers[Reagent x H2O-Reagent\xb7H2O]
+FAILED tests/test_unified_source_holds.py::test_source_hold_does_not_discard_qualifiers[1 M reagent-1  M reagent]
+7 failed, 26 passed, 1 deselected, 1 warning in 0.05s

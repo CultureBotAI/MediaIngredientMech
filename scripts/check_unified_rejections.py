@@ -1,16 +1,26 @@
 #!/usr/bin/env python3
-"""Reject reviewed bad identities in the unified export, without external deps."""
+"""Reject reviewed bad identities in the unified export, without external deps.
+
+See docs/UNIFIED_MAPPING_REJECTIONS.md for identity and exact-label scopes.
+"""
 
 from __future__ import annotations
 
 import argparse
 import csv
 from pathlib import Path
+import re
+import unicodedata
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "mappings/unified_mapping_rejections.tsv"
 ARTIFACT = ROOT / "UNIFIED_INGREDIENT_MAPPING.tsv"
 IDENTITY_COLUMNS = ("chebi_id", "culturemech_term_id", "mim_id", "kg_microbe_node_id", "cas_rn")
+REJECTION_ID = re.compile(r"[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*\Z")
+
+
+def _label_key(name: str) -> str:
+    return unicodedata.normalize("NFC", name).strip().casefold()
 
 
 def check(artifact: Path = ARTIFACT, ledger: Path = LEDGER) -> list[str]:
@@ -26,11 +36,19 @@ def check(artifact: Path = ARTIFACT, ledger: Path = LEDGER) -> list[str]:
         rejections = []
         seen = set()
         for row in raw_rejections:
-            if None in row or any(not (row.get(c) or "").strip() for c in columns):
+            if (
+                None in row
+                or any(row.get(c) is None for c in columns)
+                or any(not row[c].strip() for c in columns if c != "mim_id")
+            ):
                 return [f"{ledger}: incomplete rejection"]
             row = {key: value.strip() for key, value in row.items()}
-            key = (row["mim_id"], row["rejected_id"])
-            if key in seen or ":" not in row["rejected_id"] or row["mim_id"].startswith("UNMAPPED"):
+            key = (
+                (row["mim_id"], row["rejected_id"])
+                if row["mim_id"]
+                else ("source_label", _label_key(row["ingredient_name"]), row["rejected_id"])
+            )
+            if key in seen or not REJECTION_ID.fullmatch(row["rejected_id"]) or row["mim_id"].startswith("UNMAPPED"):
                 return [f"{ledger}: duplicate or invalid rejection"]
             if row["rejected_id"] == row["mim_id"]:
                 return [f"{ledger}: rejected ID equals corrected identity"]
@@ -44,11 +62,11 @@ def check(artifact: Path = ARTIFACT, ledger: Path = LEDGER) -> list[str]:
                 if None in row or any(row[c] is None for c in ("ingredient_name", *IDENTITY_COLUMNS)):
                     return [f"{artifact}:{line}: malformed export row"]
                 for rejected in rejections:
-                    same_label = row["ingredient_name"].strip().casefold() == rejected["ingredient_name"].strip().casefold()
-                    same_identity = row["mim_id"] == rejected["mim_id"]
+                    same_label = _label_key(row["ingredient_name"]) == _label_key(rejected["ingredient_name"])
+                    same_identity = bool(rejected["mim_id"]) and row["mim_id"] == rejected["mim_id"]
                     if not (same_label or same_identity):
                         continue
-                    if same_label and not same_identity:
+                    if same_label and rejected["mim_id"] and not same_identity:
                         problems.append(f"{artifact}:{line}: {row['ingredient_name']} lost its curated identity {rejected['mim_id']}")
                     for column in IDENTITY_COLUMNS:
                         if row[column] == rejected["rejected_id"]:

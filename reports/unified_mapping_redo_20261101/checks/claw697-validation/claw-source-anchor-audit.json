@@ -1,0 +1,15 @@
+{
+  "name": "claw-source-anchor-audit",
+  "argv": [
+    "python",
+    "-c",
+    "import hashlib, importlib.util, json; from pathlib import Path; p=Path(\"scripts/build_unified_ingredient_mapping.py\"); s=importlib.util.spec_from_file_location(\"anchor_audit\",p); b=importlib.util.module_from_spec(s); s.loader.exec_module(b); root=Path(\"../step1-mim\"); indexes=b.load_mim_index(root); labels=b.load_mim_label_index(root); live=b.live_records(*indexes); cohort=Path(\"../step1-independent/proposed-source-holds.json\"); proposals=json.loads(cohort.read_text())[\"rows\"]; results=[]\nfor item in proposals:\n name=item[\"ingredient_name\"]; anchor=b._anchor_record(name,indexes[0],labels,live); results.append({\"ingredient_name\":name,\"rejected_id\":item[\"rejected_id\"],\"normalized_key\":b._normalize(name),\"anchor\":None if anchor is None else {k:anchor.get(k) for k in (\"mim_id\",\"preferred_term\",\"mapping_status\")}})\nout=Path(\"../claw-source-evidence\"); out.mkdir(exist_ok=True); receipt={\"builder_sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"cohort_sha256\":hashlib.sha256(cohort.read_bytes()).hexdigest(),\"rows\":results,\"count\":len(results),\"independent_owners\":sum(x[\"anchor\"] is not None for x in results)}; (out/\"anchor-audit.json\").write_text(json.dumps(receipt,indent=2)+\"\\n\"); print(json.dumps(receipt,indent=2))"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-source",
+  "started_at": "2026-11-01T03:30:59.979804+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T03:31:04.467622+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/claw-source-anchor-audit.log",
+  "log_sha256": "66bd45b90363309511977fc6af7e1dde297e421736d3ab6c9ebaeee1ea189e66"
+}

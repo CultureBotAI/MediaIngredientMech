@@ -1,0 +1,48 @@
+============================================================
+BUILDING UNIFIED INGREDIENT MAPPING
+============================================================
+
+Loading MIM ingredient records...
+  2955 MIM records → 7934 name entries, 1782 CHEBI, 2610 ontology IDs
+
+  8731 MIM label-index labels (trusted verdicts outrank recipe term.ids)
+Scanning CultureMech ingredient occurrences...
+  15915 records → 201119 root and 8211 inline-stock occurrences, 4170 unique ingredient names
+
+Resolved: 2871 matched to MIM, 1299 not in MIM
+
+============================================================
+UNIFIED MAPPING COVERAGE REPORT
+============================================================
+Total unique ingredient names:  4170
+Have CHEBI ID:                  2081  (49%)
+  - from CultureMech term.id:   1707
+  - from MIM (fallback):        374
+Have CAS-RN:                    1918  (45%)
+Have KG-Microbe node ID:        1242  (29%)
+Matched to MIM record:          2871  (68%)
+Fully mapped (CHEBI + CAS):     1790  (42%)
+
+Status breakdown:
+  MAPPED                    2661
+  UNMAPPED                  1391
+  TERM_ID_NO_MIM            94
+  CHEBI_NO_MIM              24
+
+
+✅ TSV written to /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-evidence/unified-candidate.tsv  (4170 rows)
+Unified export respects reviewed identity rejections.
+{
+  "timestamp": "2026-11-01T03:20:55.834339+00:00",
+  "operation": "native_unified_generation_with_validated_atomic_publication",
+  "before_sha256": "f8cf75ee8c38aed57aa1fcfe63e2a7913b62bd69ddba0c9bb046a4fb7460016e",
+  "after_sha256": "e5c4bd6b5512606857feded03a45591476ce64626c261315f7ed2bed1f742f8a",
+  "rows": 4170,
+  "occurrences": 209330,
+  "rejected_empty_identity": 0,
+  "local_compound_chebi_leaks": 0,
+  "approved_plan_sha256": "99b7746742f70c7896ed163a833a8b214282dba84567dc3213ec0a2b194e4d90",
+  "mim_head": "9e16535f3d35264dfdc0eda058897da5aa5504b1",
+  "claw_head": "16fd7c9484d98b14a53aec55616d26dae70a0af7",
+  "culturemech_head": "a74dd489720c9df96cc073ffd11568d407d3c06c"
+}

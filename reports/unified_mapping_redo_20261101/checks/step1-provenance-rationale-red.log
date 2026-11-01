@@ -1,0 +1,95 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_future_repair_uses_corrected_synonym_rationale[Na-glutamate-CHEBI:29984] _
+
+producer = <module 'tombstone_repair_1021' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim/scripts/fix_merge_tombstone_resolution.py'>
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8145/test_future_repair_uses_correc0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b2c1810>
+slug = 'Na-glutamate', wrong_id = 'CHEBI:29984'
+
+    @pytest.mark.parametrize("slug,wrong_id", [("Na-glutamate", "CHEBI:29984"), ("Sodium_Citrate", "CHEBI:63041")])
+    def test_future_repair_uses_corrected_synonym_rationale(producer, tmp_path, monkeypatch, slug, wrong_id):
+        """A future necessary repair must not repeat the false ontology citations (#1023)."""
+        repair = next(spec for spec in producer.TARGETS if spec.slug == slug)
+        record = yaml.safe_load((ROOT / "data/ingredients/mapped" / f"{slug}.yaml").read_text())
+        history = copy.deepcopy(record["curation_history"])
+        record.pop("representative")
+        source = tmp_path / f"{slug}.yaml"
+        source.write_text(yaml.safe_dump(record, sort_keys=False))
+        target = tmp_path / f"{repair.target_slug}.yaml"
+        target.write_bytes((ROOT / "data/ingredients/mapped" / target.name).read_bytes())
+        monkeypatch.setattr(producer, "MAPPED_DIR", tmp_path)
+        monkeypatch.setattr(producer, "TARGETS", (repair,))
+        monkeypatch.setattr(producer, "UNMAPPED_HYDRATE_SPECS", ())
+    
+        assert producer.main(["--apply"]) == 0
+        repaired = yaml.safe_load(source.read_text())
+        assert repaired["curation_history"][:-1] == history
+        changes = repaired["curation_history"][-1]["changes"]
+>       assert wrong_id not in changes
+E       AssertionError: assert 'CHEBI:29984' not in 'Set explici...ABEL (#882).'
+E         
+E         'CHEBI:29984' is contained here:
+E           amate(2-) CHEBI:29984 dianion EXACT_SYNONYM tokens to REJECTED_LABEL (#882).
+E         ?           +++++++++++
+
+tests/test_fix_merge_tombstone_resolution.py:101: AssertionError
+----------------------------- Captured stdout call -----------------------------
+REPAIR Na-glutamate -> CHEBI:64243 (Sodium_L-glutamate): representative=CHEBI:64243
+
+Applied 1 tombstone repair(s), 0 unmapped hydrate record(s).
+_ test_future_repair_uses_corrected_synonym_rationale[Sodium_Citrate-CHEBI:63041] _
+
+producer = <module 'tombstone_repair_1021' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim/scripts/fix_merge_tombstone_resolution.py'>
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8145/test_future_repair_uses_correc1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b2c1350>
+slug = 'Sodium_Citrate', wrong_id = 'CHEBI:63041'
+
+    @pytest.mark.parametrize("slug,wrong_id", [("Na-glutamate", "CHEBI:29984"), ("Sodium_Citrate", "CHEBI:63041")])
+    def test_future_repair_uses_corrected_synonym_rationale(producer, tmp_path, monkeypatch, slug, wrong_id):
+        """A future necessary repair must not repeat the false ontology citations (#1023)."""
+        repair = next(spec for spec in producer.TARGETS if spec.slug == slug)
+        record = yaml.safe_load((ROOT / "data/ingredients/mapped" / f"{slug}.yaml").read_text())
+        history = copy.deepcopy(record["curation_history"])
+        record.pop("representative")
+        source = tmp_path / f"{slug}.yaml"
+        source.write_text(yaml.safe_dump(record, sort_keys=False))
+        target = tmp_path / f"{repair.target_slug}.yaml"
+        target.write_bytes((ROOT / "data/ingredients/mapped" / target.name).read_bytes())
+        monkeypatch.setattr(producer, "MAPPED_DIR", tmp_path)
+        monkeypatch.setattr(producer, "TARGETS", (repair,))
+        monkeypatch.setattr(producer, "UNMAPPED_HYDRATE_SPECS", ())
+    
+        assert producer.main(["--apply"]) == 0
+        repaired = yaml.safe_load(source.read_text())
+        assert repaired["curation_history"][:-1] == history
+        changes = repaired["curation_history"][-1]["changes"]
+>       assert wrong_id not in changes
+E       AssertionError: assert 'CHEBI:63041' not in 'Set explici...ABEL (#882).'
+E         
+E         'CHEBI:63041' is contained here:
+E           m citrate CHEBI:63041 token Na2citrate to REJECTED_LABEL (#882).
+E         ?           +++++++++++
+
+tests/test_fix_merge_tombstone_resolution.py:101: AssertionError
+----------------------------- Captured stdout call -----------------------------
+REPAIR Sodium_Citrate -> CHEBI:32142 (Na3-citrate_X_2_H2o): representative=CHEBI:32142
+
+Applied 1 tombstone repair(s), 0 unmapped hydrate record(s).
+=============================== warnings summary ===============================
+../../../.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_fix_merge_tombstone_resolution.py: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_fix_merge_tombstone_resolution.py::test_future_repair_uses_corrected_synonym_rationale[Na-glutamate-CHEBI:29984]
+FAILED tests/test_fix_merge_tombstone_resolution.py::test_future_repair_uses_corrected_synonym_rationale[Sodium_Citrate-CHEBI:63041]
+2 failed, 4 deselected, 13 warnings in 0.45s

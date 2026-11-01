@@ -1,0 +1,55 @@
+.FFFFF...F.F.....................                                        [100%]
+=================================== FAILURES ===================================
+_______ test_source_hold_catches_leak_in_every_identity_column[chebi_id] _______
+tests/test_unified_source_holds.py:77: in test_source_hold_catches_leak_in_every_identity_column
+    assert any(f"republishes rejected CHEBI:9 in {column}" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_catches_leak_in_every_identity_column.<locals>.<genexpr> at 0x1075e6330>)
+_ test_source_hold_catches_leak_in_every_identity_column[culturemech_term_id] __
+tests/test_unified_source_holds.py:77: in test_source_hold_catches_leak_in_every_identity_column
+    assert any(f"republishes rejected CHEBI:9 in {column}" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_catches_leak_in_every_identity_column.<locals>.<genexpr> at 0x107820520>)
+________ test_source_hold_catches_leak_in_every_identity_column[mim_id] ________
+tests/test_unified_source_holds.py:77: in test_source_hold_catches_leak_in_every_identity_column
+    assert any(f"republishes rejected CHEBI:9 in {column}" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_catches_leak_in_every_identity_column.<locals>.<genexpr> at 0x1078213c0>)
+__ test_source_hold_catches_leak_in_every_identity_column[kg_microbe_node_id] __
+tests/test_unified_source_holds.py:77: in test_source_hold_catches_leak_in_every_identity_column
+    assert any(f"republishes rejected CHEBI:9 in {column}" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_catches_leak_in_every_identity_column.<locals>.<genexpr> at 0x10780a8e0>)
+________ test_source_hold_catches_leak_in_every_identity_column[cas_rn] ________
+tests/test_unified_source_holds.py:77: in test_source_hold_catches_leak_in_every_identity_column
+    assert any(f"republishes rejected CHEBI:9 in {column}" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_catches_leak_in_every_identity_column.<locals>.<genexpr> at 0x1078085f0>)
+_________________ test_distinct_holds_can_share_a_rejected_id __________________
+tests/test_unified_source_holds.py:98: in test_distinct_holds_can_share_a_rejected_id
+    assert any("republishes rejected" in problem for problem in gate.check(*export(
+E   assert False
+E    +  where False = any(<generator object test_distinct_holds_can_share_a_rejected_id.<locals>.<genexpr> at 0x1075e1080>)
+_______________ test_source_hold_keys_use_nfc_trim_and_casefold ________________
+tests/test_unified_source_holds.py:111: in test_source_hold_keys_use_nfc_trim_and_casefold
+    assert any("republishes rejected" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_keys_use_nfc_trim_and_casefold.<locals>.<genexpr> at 0x1075e0ba0>)
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_unified_source_holds.py::test_source_hold_catches_leak_in_every_identity_column[chebi_id]
+FAILED tests/test_unified_source_holds.py::test_source_hold_catches_leak_in_every_identity_column[culturemech_term_id]
+FAILED tests/test_unified_source_holds.py::test_source_hold_catches_leak_in_every_identity_column[mim_id]
+FAILED tests/test_unified_source_holds.py::test_source_hold_catches_leak_in_every_identity_column[kg_microbe_node_id]
+FAILED tests/test_unified_source_holds.py::test_source_hold_catches_leak_in_every_identity_column[cas_rn]
+FAILED tests/test_unified_source_holds.py::test_distinct_holds_can_share_a_rejected_id
+FAILED tests/test_unified_source_holds.py::test_source_hold_keys_use_nfc_trim_and_casefold
+7 failed, 26 passed, 1 deselected, 1 warning in 0.05s

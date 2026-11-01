@@ -1,0 +1,19 @@
+{
+  "issue": "https://github.com/CultureBotAI/culturebotai-claw/issues/697",
+  "argv": [
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_unified_mapping_source_holds.py",
+    "-k",
+    "source_hold_withholds",
+    "--no-cov",
+    "-q"
+  ],
+  "removed_guard": "        if ('source_label', _label_key(name), term_id) in (rejections or {}):\n            # Hold this exact pair before source-ID lookup can lend a different\n            # record's identity/metadata, or raw publication can reassert the ID.\n            # Independent name ownership still follows the ordinary resolver.\n            term_id = ''\n",
+  "exit_code": 1,
+  "result": "2 failed, 29 deselected",
+  "mutant_sha256": "537f4bae9b9efcc1c2677775dc5eb98e9505937a71377edf4916fbd1bcb047a6",
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-source-evidence/guard-removed/pytest.log",
+  "log_sha256": "9014a56113df857a3b37e415236f4d609b1cb74263d19f74c63230858b41424a"
+}

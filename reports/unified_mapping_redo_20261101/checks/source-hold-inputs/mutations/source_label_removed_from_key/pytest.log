@@ -1,0 +1,21 @@
+.........F.......................                                        [100%]
+=================================== FAILURES ===================================
+_________________ test_distinct_holds_can_share_a_rejected_id __________________
+tests/test_unified_source_holds.py:97: in test_distinct_holds_can_share_a_rejected_id
+    assert gate.check(*export({"ingredient_name": "Held preparation"}, {"ingredient_name": "Other preparation"}, ledger_rows=rows)) == []
+E   AssertionError: assert ['/private/va...id rejection'] == []
+E     
+E     Left contains one more item: '/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8177/test_distinct_holds_can_share_0/holds.tsv: duplicate or invalid rejection'
+E     Use -v to get more diff
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_unified_source_holds.py::test_distinct_holds_can_share_a_rejected_id
+1 failed, 32 passed, 1 deselected, 1 warning in 0.04s
