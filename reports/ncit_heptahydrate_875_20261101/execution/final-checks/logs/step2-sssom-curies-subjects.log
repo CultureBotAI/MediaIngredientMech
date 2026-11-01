@@ -1,0 +1,14 @@
+uv run python scripts/validate_published_curies.py
+OK: 2986 rows, 5972 CURIEs in ingredient_mappings.sssom.tsv match _CURIE_RE and use a known prefix.
+uv run python -m pytest tests/test_curie_normalizer.py -q --no-cov
+...............s.....                                                    [100%]
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 1 skipped, 1 warning in 0.12s

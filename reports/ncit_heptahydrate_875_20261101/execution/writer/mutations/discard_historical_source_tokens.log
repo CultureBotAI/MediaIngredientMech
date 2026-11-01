@@ -1,0 +1,22 @@
+.......................F...........                                      [100%]
+=================================== FAILURES ===================================
+___ test_native_candidate_promotion_preserves_other_rows_and_source_lineage ____
+tests/test_promote_heptahydrate_ncit.py:255: in test_native_candidate_promotion_preserves_other_rows_and_source_lineage
+    assert "MIM:old-curator|kgm:old-lineage" in target[0]["source"]
+E   AssertionError: assert 'MIM:old-curator|kgm:old-lineage' in 'MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full|MIM:curator=Codex'
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_promote_heptahydrate_ncit.py::test_native_candidate_promotion_preserves_other_rows_and_source_lineage
+1 failed, 34 passed, 1 deselected, 13 warnings in 1.74s

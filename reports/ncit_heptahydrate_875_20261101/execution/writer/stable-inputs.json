@@ -1,0 +1,305 @@
+{
+  "created_at": "2026-11-01T05:22:01.131405+00:00",
+  "author": "Codex",
+  "model": "gpt-6",
+  "llm_assisted": true,
+  "head": "40b787d37d33d544551389ff019f2d64ad63d7cc",
+  "production_application_performed": false,
+  "scientific_approval": false,
+  "independent_review": false,
+  "files": {
+    "scripts/promote_heptahydrate_ncit.py": "a66389a3379a761ee263aceb08222b6508f57cb9b8e69e996e82af732b59bb85",
+    "tests/test_promote_heptahydrate_ncit.py": "b096d62ccc357e646726354c3e6af4a8d66dad7c0c5052c598081c9f9c7996ca",
+    "tests/fixtures/issue875-owner-before.yaml": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+    "reports/ncit_heptahydrate_875_20261101/README.md": "1e04dc58c21b76fc7d5fb90c49b7f8f4e8141417f868eb69680e897dd6785e7e",
+    "reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json": "a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83",
+    "reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946-receipt.json": "9e6c6364182d4450114a8662eecf9a1db38d16a47cdcbbfc3f71cce21bb1bebb"
+  },
+  "unchanged_production_inputs": {
+    "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+    "mappings/unified_mapping_rejections.tsv": "82d7d79172a5efd966f0a6a97ead4faae186128f6d6fdb327366f041ad06aba4",
+    "mappings/ingredient_mappings.sssom.tsv": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722"
+  },
+  "checks": {
+    "step2-writer-focused-green": {
+      "name": "step2-writer-focused-green",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_promote_heptahydrate_ncit.py",
+        "-k",
+        "not committed_surfaces",
+        "--no-cov",
+        "-q"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+      "started_at": "2026-11-01T05:19:41.092221+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T05:19:43.144710+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-writer-focused-green.log",
+      "log_sha256": "8870c877b6b2d0fd7a0b9139049846469dd898094c832e71fea0814f360edb0f"
+    },
+    "step2-writer-committed-preapply-red": {
+      "name": "step2-writer-committed-preapply-red",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_promote_heptahydrate_ncit.py",
+        "-k",
+        "committed_surfaces",
+        "--no-cov",
+        "-q"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+      "started_at": "2026-11-01T05:19:42.251434+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T05:19:43.563529+00:00",
+      "exit_code": 1,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-writer-committed-preapply-red.log",
+      "log_sha256": "93765aa69cb6548ac775832e8331290b9ac569230602f87ee02a02820b0e2c38"
+    },
+    "step2-writer-lint-final": {
+      "name": "step2-writer-lint-final",
+      "argv": [
+        "uvx",
+        "--offline",
+        "ruff",
+        "check",
+        "scripts/promote_heptahydrate_ncit.py",
+        "tests/test_promote_heptahydrate_ncit.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+      "started_at": "2026-11-01T05:20:07.707040+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T05:20:07.789998+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-writer-lint-final.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "step2-writer-config-preflight": {
+      "name": "step2-writer-config-preflight",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/openclaw-cli",
+        "config",
+        "validate"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+      "started_at": "2026-11-01T05:21:29.298208+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T05:21:29.546837+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-writer-config-preflight.log",
+      "log_sha256": "8530b860a1a29e581c4807df15a46ddfbbe0a16a8485e6339366c14ca44cb24c"
+    },
+    "step2-writer-production-dry-run": {
+      "name": "step2-writer-production-dry-run",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python",
+        "scripts/promote_heptahydrate_ncit.py",
+        "sources",
+        "--log",
+        "../step2-writer-evidence/not-applied-source.json"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+      "started_at": "2026-11-01T05:21:30.199196+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T05:21:36.226555+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-writer-production-dry-run.log",
+      "log_sha256": "0a0ca1ef7778474090114ae71a5463f8d385a5be886d1e583908ed13af3e635e"
+    },
+    "step2-writer-mutations": {
+      "name": "step2-writer-mutations",
+      "argv": [
+        "python",
+        "../step2-writer-evidence/run_mutations.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+      "started_at": "2026-11-01T05:20:53.042726+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T05:21:09.428278+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-writer-mutations.log",
+      "log_sha256": "3663dba44bb71689cb65d3e041fa9e61ed6b341132263f9ee6ae888dd751df23"
+    }
+  },
+  "mutations": {
+    "completed_at": "2026-11-01T05:21:09.424890+00:00",
+    "working_source_unchanged": true,
+    "fresh_python_process_each": true,
+    "results": [
+      {
+        "case": "positive",
+        "exit_code": 0,
+        "source_sha256": "a66389a3379a761ee263aceb08222b6508f57cb9b8e69e996e82af732b59bb85",
+        "log_sha256": "0cb0b5615da6633a9ef2268d92555af73f841232945127c140ebc8cccff260e7",
+        "summary": "35 passed, 1 deselected, 13 warnings in 1.92s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/positive",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      },
+      {
+        "case": "omit_ledger_migration",
+        "exit_code": 1,
+        "source_sha256": "91b01aec8e23ce3f43e04b69885e7f2794127c9e2e9989c830aef77e69b34d20",
+        "log_sha256": "c46e45ead354d08cfde65790f23931df278033ab5558bbddb063608a7504b90c",
+        "summary": "29 failed, 6 passed, 1 deselected, 13 warnings in 1.63s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/omit_ledger_migration",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      },
+      {
+        "case": "discard_previous_history",
+        "exit_code": 1,
+        "source_sha256": "94707dde69fefa69c24e868f94afd99e409068fcdee5424f5a98a27cbd81750c",
+        "log_sha256": "d28af8c7d38856fc16cb96abac6659fa60c6ed680c671409f2a62225c8f5d139",
+        "summary": "4 failed, 31 passed, 1 deselected, 13 warnings in 1.57s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/discard_previous_history",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      },
+      {
+        "case": "discard_historical_source_tokens",
+        "exit_code": 1,
+        "source_sha256": "5e40a3390fd3b9bbf89236f961480e09715bbacb228214796fe5d33b3ace6769",
+        "log_sha256": "15a9c09d9f01d48be25ee8d69b7ad67cc87ddd150f5e1013fb18ae7e57e0152a",
+        "summary": "1 failed, 34 passed, 1 deselected, 13 warnings in 1.74s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/discard_historical_source_tokens",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      },
+      {
+        "case": "allow_inherited_validation_stamp",
+        "exit_code": 1,
+        "source_sha256": "6a3b0976410f4bf8f83599fd9433f8bc527fa94090d4e2359096f00cd3f3d843",
+        "log_sha256": "9742cb8f33ff2271d1e5005bccdb6bf7811f7be720db3c80f5b8b2e79d4db412",
+        "summary": "1 failed, 34 passed, 1 deselected, 13 warnings in 1.76s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/allow_inherited_validation_stamp",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      },
+      {
+        "case": "ignore_input_race",
+        "exit_code": 1,
+        "source_sha256": "d6f1f7469b0700e150c3015dd16d158ca83f611662006c549d729afd3098144b",
+        "log_sha256": "466f869c031c02bf078d9ed442a5e8cd97cd9770f5eed8689ec7d66dcd23c568",
+        "summary": "1 failed, 34 passed, 1 deselected, 13 warnings in 1.78s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/ignore_input_race",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      },
+      {
+        "case": "ignore_candidate_hash",
+        "exit_code": 1,
+        "source_sha256": "c855714d3579cc3def8d060fc335973a4dfe2d5e5ae482d96ce23b853224f20e",
+        "log_sha256": "aceefb26bba15cd6b13fe3429db70a680a69b9dd3c2170db561169c04a9f5210",
+        "summary": "1 failed, 34 passed, 1 deselected, 13 warnings in 1.81s",
+        "argv": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+          "-m",
+          "pytest",
+          "tests/test_promote_heptahydrate_ncit.py",
+          "-k",
+          "not committed_surfaces",
+          "-c",
+          "/dev/null",
+          "--confcutdir",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-writer-evidence/mutations/ignore_candidate_hash",
+          "--no-cov",
+          "-q",
+          "--tb=short",
+          "-p",
+          "no:cacheprovider"
+        ]
+      }
+    ]
+  },
+  "pending": "Root reviews/applies the writer and regenerates; committed-surfaces regression then must turn green."
+}

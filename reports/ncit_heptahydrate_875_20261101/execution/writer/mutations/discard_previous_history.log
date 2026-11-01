@@ -1,0 +1,58 @@
+.FFF...................F...........                                      [100%]
+=================================== FAILURES ===================================
+____________ test_sources_preserve_history_fields_and_coupled_scope ____________
+tests/test_promote_heptahydrate_ncit.py:110: in test_sources_preserve_history_fields_and_coupled_scope
+    assert new["curation_history"][:-1] == old["curation_history"]
+E   AssertionError: assert [] == [{'timestamp'...)', ...}, ...]
+E     
+E     Right contains 17 more items, first extra item: {'timestamp': '2026-03-09T06:54:18.022301+00:00', 'curator': 'import_from_culturemech', 'action': 'IMPORTED', 'changes': 'Initial import from CultureMech pipeline', ...}
+E     Use -v to get more diff
+______________________ test_source_repeat_is_a_true_noop _______________________
+tests/test_promote_heptahydrate_ncit.py:134: in test_source_repeat_is_a_true_noop
+    assert writer.apply_sources(root, log, apply=True)["changed"] is False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:233: in apply_sources
+    owner = corrected_record(inputs[root / OWNER])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:141: in corrected_record
+    raise ValueError("Prior correction changed unreviewed owner content")
+E   ValueError: Prior correction changed unreviewed owner content
+_________________ test_partial_source_migration_refuses[owner] _________________
+tests/test_promote_heptahydrate_ncit.py:145: in test_partial_source_migration_refuses
+    with pytest.raises(ValueError, match="migrate together"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'migrate together'
+E     Actual message: 'Prior correction changed unreviewed owner content'
+___ test_native_candidate_promotion_preserves_other_rows_and_source_lineage ____
+tests/test_promote_heptahydrate_ncit.py:250: in test_native_candidate_promotion_preserves_other_rows_and_source_lineage
+    report = writer.promote(root, promotion_log, log, candidate, writer.digest(candidate.read_bytes()), apply=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:329: in promote
+    after = promoted_sssom(before, proposed, owner)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:278: in promoted_sssom
+    if corrected_record(owner) != owner or record["identifier"] != NEW:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:141: in corrected_record
+    raise ValueError("Prior correction changed unreviewed owner content")
+E   ValueError: Prior correction changed unreviewed owner content
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_promote_heptahydrate_ncit.py::test_sources_preserve_history_fields_and_coupled_scope
+FAILED tests/test_promote_heptahydrate_ncit.py::test_source_repeat_is_a_true_noop
+FAILED tests/test_promote_heptahydrate_ncit.py::test_partial_source_migration_refuses[owner]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_native_candidate_promotion_preserves_other_rows_and_source_lineage
+4 failed, 31 passed, 1 deselected, 13 warnings in 1.57s

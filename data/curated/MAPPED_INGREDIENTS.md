@@ -3,7 +3,7 @@
 **Mapped**: 2611 (97.4%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 69 (2.6%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 222,468
+**Total Occurrences**: 222,462
 
 ---
 
@@ -1463,7 +1463,6 @@
 | CHEBI:91258 | Na2HPO4 x 2 H2O | CHEBI:91258 | CHEBI | EXACT_MATCH | 312 |
 | kgmicrobe.compound:na2hpo4_x_3_h2o | Na2HPO4 x 3 H2O | CHEBI:34683 | CHEBI | CLOSE_MATCH | 4 |
 | kgmicrobe.compound:na2hpo4_x_6_h2o | Na2HPO4 x 6 H2O | CHEBI:34683 | CHEBI | CLOSE_MATCH | 7 |
-| kgmicrobe.compound:na2hpo4_x_7_h2o | Na2HPO4 x 7 H2O | CHEBI:34683 | CHEBI | CLOSE_MATCH | 32 |
 | CHEBI:75215 | Na2MoO4 | CHEBI:75215 | CHEBI | SYNONYM_MATCH | 216 |
 | CHEBI:75213 | Na2MoO4 x 2 H2O | CHEBI:75213 | CHEBI | EXACT_MATCH | 4259 |
 | CHEBI:86473 | Na2MoO4 x 7 H2O | CHEBI:86473 | CHEBI | EXACT_MATCH | 6 |
@@ -2622,6 +2621,7 @@
 | CHEBI:39063 | Tricine | CHEBI:39063 | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 20 |
+| NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 26 |
 
 ## Other Statuses
 

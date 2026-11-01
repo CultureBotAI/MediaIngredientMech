@@ -4,12 +4,12 @@ This opt-in export carries a reviewed scoped cohort, registry claims and source
 occurrences together. It does not replace the complete legacy SSSOM release or
 promote its withheld rows. The initial cohort contains the 20 reviewed
 KG-Microbe cases under issues #769 and #770. The current immutable review
-successor is [the 2026-11-01 follow-up](../reports/ingredient_bundle_20261101_followup/README.md);
-the original 2026-09-24 and first 2026-11-01 reviews remain preserved.
+successor is [the #875 dependency refresh](../reports/ingredient_bundle_20261101_ncit875/README.md);
+all earlier reviews remain preserved.
 
 ```bash
 python -m mediaingredientmech.export.ingredient_bundle export \
-  --review reports/ingredient_bundle_20261101_followup/review.json \
+  --review reports/ingredient_bundle_20261101_ncit875/review.json \
   --output output/ingredient-bundle-v1
 python -m mediaingredientmech.export.ingredient_bundle validate \
   output/ingredient-bundle-v1 --manifest-sha256 <exported-manifest-sha256>
@@ -121,7 +121,7 @@ The output parent directories must already exist.
 ```bash
 PYTHONPATH=src python scripts/refresh_unchanged_cohort.py \
   --baseline <commit-containing-prior-inputs> \
-  --prior-review reports/ingredient_bundle_20261101_followup/review.json \
+  --prior-review reports/ingredient_bundle_20261101_ncit875/review.json \
   --output output/next-companion-review.json \
   --receipt output/next-companion-dependency-refresh.json \
   --prior-copy output/prior-companion-review.json
@@ -131,7 +131,9 @@ The command validates the complete current base review, then proves that selecte
 original rows, owner bytes, scientific decisions and evidence entries remain
 unchanged. It also compares columns, semantic metadata and packaged schema/profile
 bytes; only valid date/version drift and verified global dependency hashes may
-change. The receipt binds the resolved baseline commit, exact prior/current hashes
+change. Source positions and evidence keys may relocate only when each decision
+resolves its own identical complete evidence entry; the receipt records both
+locations. The receipt binds the resolved baseline commit, exact prior/current hashes
 and producer code. Exact, lexical and symlink aliases between output destinations
 are rejected before writing; existing artifacts are never overwritten.
 

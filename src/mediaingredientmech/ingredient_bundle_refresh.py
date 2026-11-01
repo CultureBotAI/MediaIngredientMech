@@ -130,12 +130,22 @@ def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts
             next(d for d in base["decisions"] if d["source_position"] == position)
             for base, position in zip((old_base, new_base), positions, strict=True)
         ]
-        if decisions[0] != decisions[1] or decisions[1]["disposition"] != "SUPPORTED":
+        # A source insertion/removal/reorder can move an unchanged selected row
+        # and its evidence entry. Compare the scientific decision separately
+        # from those locators, then resolve each locator in its own snapshot.
+        location_fields = {"source_position", "evidence_key"}
+        scientific_decisions = [
+            {key: value for key, value in decision.items() if key not in location_fields}
+            for decision in decisions
+        ]
+        if (
+            scientific_decisions[0] != scientific_decisions[1]
+            or decisions[1]["disposition"] != "SUPPORTED"
+        ):
             raise ValueError("Selected original scientific decision changed")
-        decision = decisions[0]
         entries = [
             read_json(sources[decision["review_evidence"]])["entries"][decision["evidence_key"]]
-            for sources in (before, current)
+            for sources, decision in zip((before, current), decisions, strict=True)
         ]
         if entries[0] != entries[1]:
             raise ValueError("Selected original scientific evidence changed")
@@ -143,7 +153,11 @@ def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts
             {
                 "claim_id": claim["claim_id"],
                 "original_row": row,
-                "base_decision": decision,
+                "base_decision": decisions[0],
+                "base_decision_locations": {
+                    name: {key: decision[key] for key in sorted(location_fields)}
+                    for name, decision in zip(("before", "after"), decisions, strict=True)
+                },
                 "base_evidence": entries[0],
             }
         )

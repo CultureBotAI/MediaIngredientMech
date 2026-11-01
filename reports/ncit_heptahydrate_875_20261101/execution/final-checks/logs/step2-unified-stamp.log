@@ -1,0 +1,11 @@
+uv run --frozen python scripts/check_unified_freshness.py --stamp
+Stamped UNIFIED_INGREDIENT_MAPPING.provenance.json:
+  artifact_rows: 4170
+  mim_record_count: 2955
+  mim_rev: 40b787d3
+  artifact_sha256: 6126d33febe2
+  mim_inputs_digest: aa41a131369c
+uv run --frozen python scripts/check_unified_rejections.py
+Unified export respects reviewed identity rejections.
+uv run --frozen python scripts/check_unified_freshness.py --check
+OK: UNIFIED_INGREDIENT_MAPPING.tsv is within its drift budget.

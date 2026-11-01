@@ -1,0 +1,31 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_issue875_committed_surfaces_use_exact_ncit_identity ___________
+
+    def test_issue875_committed_surfaces_use_exact_ncit_identity():
+        """Becomes green only after root applies, synchronizes and regenerates."""
+        record = yaml.safe_load((ROOT / writer.OWNER).read_bytes())
+        before = yaml.safe_load((ROOT / "tests/fixtures/issue875-owner-before.yaml").read_bytes())
+>       assert record["identifier"] == record["ontology_mapping"]["ontology_id"] == writer.NEW
+E       AssertionError: assert 'kgmicrobe.co...2hpo4_x_7_h2o' == 'CHEBI:34683'
+E         
+E         - CHEBI:34683
+E         + kgmicrobe.compound:na2hpo4_x_7_h2o
+
+tests/test_promote_heptahydrate_ncit.py:316: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_promote_heptahydrate_ncit.py::test_issue875_committed_surfaces_use_exact_ncit_identity
+1 failed, 35 deselected, 13 warnings in 0.90s
