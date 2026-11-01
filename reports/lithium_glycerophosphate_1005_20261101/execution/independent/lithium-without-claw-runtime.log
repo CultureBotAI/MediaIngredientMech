@@ -1,0 +1,39 @@
+..F
+=================================== FAILURES ===================================
+________________ test_dry_run_and_complete_source_receipt_noop _________________
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8409/test_dry_run_and_com...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+
+    def test_dry_run_and_complete_source_receipt_noop(case):
+        root, evidence, log, before = case
+>       result = writer.apply_sources(root, evidence, log)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_curate_lithium_glycerophosphate.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/curate_lithium_glycerophosphate.py:332: in apply_sources
+    return guarded.publish(root, {OWNER: current}, inputs, log,
+scripts/promote_heptahydrate_ncit.py:226: in publish
+    transaction = new_transaction(root, validate, log.parent / f"{log.stem}-journal")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8409/test_dry_run_and_complete_sour0')
+validator = <function publish.<locals>.validate at 0x10956f880>
+journal = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8409/test_dry_run_and_complete_sour0/receipts/source-journal')
+
+    def new_transaction(root: Path, validator, journal: Path):
+>       from kg_microbe_write import ValidatedWriteTransaction
+E       ModuleNotFoundError: No module named 'kg_microbe_write'
+
+scripts/promote_heptahydrate_ncit.py:195: ModuleNotFoundError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_curate_lithium_glycerophosphate.py::test_dry_run_and_complete_source_receipt_noop
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 2 passed, 12 warnings in 0.47s

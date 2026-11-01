@@ -1,0 +1,250 @@
+{
+  "name": "step4-gates-v1-focused-regressions",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_curate_lithium_glycerophosphate.py",
+    "tests/test_mapping_change_receipt.py",
+    "tests/test_reviewed_sssom.py",
+    "tests/test_semantic_review_builder.py",
+    "tests/test_semantic_mapping_review.py",
+    "tests/test_ingredient_bundle.py",
+    "tests/test_ingredient_bundle_dependency_refresh.py",
+    "tests/test_unified_rejections.py",
+    "tests/test_unified_source_holds.py"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:06:50.160164+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:07:18.294809+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-focused-regressions.log",
+  "log_sha256": "76d19d6761c6d0a82d2f89dac5e3d22316227892de05156139d229bd8cfbaea3"
+}
+........................................................................ [ 20%]
+........................................................................ [ 41%]
+........................................................................ [ 61%]
+........................................................................ [ 82%]
+...............................................................          [100%]
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+351 passed, 13 warnings in 27.68s
+
+{
+  "name": "step4-gates-v1-full-qc",
+  "argv": [
+    "just",
+    "qc"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:07:18.392713+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:09:30.891007+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-full-qc.log",
+  "log_sha256": "9304f7eb287d0526721bcfa311bbaccca7fc46c2ec28fbf7aa0eda8bc827e02d"
+}
+26493
+    same name, different identifiers: soilwatergrmedium -> UNMAPPED_0012, UNMAPPED_0078
+
+OK: duplicate identifiers match the tracked baseline exactly.
+uv run --frozen python scripts/audit_kg_microbe_node_ids.py --check
+6 kg_microbe_node_id mismatch(es)
+  0 same-prefix mismatch(es)
+  6 cross-prefix mismatch(es)
+uv run --frozen python scripts/validate_component_partonomy.py
+component partonomy: 2955 records, 83 decompositions, 502 components, 0 violation(s)
+uv run --frozen python scripts/check_flat_export_coverage.py
+freshness: 8 regenerated artifact(s) match their producers
+coverage: all_ingredients.csv        8310/8310 curated label(s) resolvable
+  note: 24 published label(s) map to more than one identifier — see #232 for the triage
+coverage: mapped_ingredients.csv     7948/7948 curated label(s) resolvable
+coverage: unmapped_ingredients.csv   369/369 curated label(s) resolvable
+coverage: label_index.csv            8310/8310 curated label(s) indexed
+
+OK: docs/data/ is fresh and every curated label is published.
+# Agent-instruction files are executable in practice: an agent reads them and
+# does what they say, so when they drift they fail silently rather than
+# loudly. .claude/commands/ground-or-propose-ingredient.md kept recommending
+# the export/aggregate pairing that silently reverted 55 curation events long
+# after it was identified (#148), and needed correcting twice because a human
+# happened to notice. This is the mechanical version. Issue #185.
+uv run --frozen python scripts/check_instruction_refs.py 
+Scanned 52 agent-instruction file(s) against 88 recipes.
+  (19 `../` reference(s) point outside the repo and were not verified.)
+OK: every referenced recipe, path, and Python CLI option exists.
+# The curation-history advisory COUNTS matches and never asserts, so a spec
+# matching nothing yields 0 and reads exactly like "this PR changed no
+# records" — the check looks healthiest when it has stopped working.
+# `data/custom/*.yaml` matched zero tracked files for its whole life (#180).
+# Issue #181.
+uv run --frozen python scripts/check_curation_targets.py 
+Checking 5 curation-target pathspec(s) from curation_targets.txt:
+  OK data/ingredients/**/*.yaml       2955 tracked file(s)
+  OK data/curated/*.yaml              7 tracked file(s)
+  OK data/custom                      4 tracked file(s)
+  OK mappings/**                      47 tracked file(s)
+  OK history/**/*.yaml                11 tracked file(s)
+
+Every pathspec matches at least one tracked file.
+
+{
+  "name": "step4-gates-v1-curies-and-products",
+  "argv": [
+    "just",
+    "curie-validate",
+    "validate-products"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:09:31.040040+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:10:26.673566+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-curies-and-products.log",
+  "log_sha256": "a7736d0d7696832ff5c53917cc7eb9f9fa0817e7a1932483483623b8858918d6"
+}
+uv run python scripts/validate_published_curies.py
+OK: 2981 rows, 5962 CURIEs in ingredient_mappings.sssom.tsv match _CURIE_RE and use a known prefix.
+uv run python -m pytest tests/test_curie_normalizer.py -q --no-cov
+...............s.....                                                    [100%]
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+20 passed, 1 skipped, 1 warning in 0.06s
+uv run python scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml
+
+id↔label correspondence summary:
+          OK_CANONICAL: 6823
+            OK_ID_ONLY: 4469
+          OK_EXCEPTION: 20
+     IMPLAUSIBLE_LABEL: 69
+  LABEL_SUBSCRIPTS_LOST: 3
+  HYDRATE_ON_ANHYDROUS_TERM: 26
+  ANHYDROUS_ON_HYDRATE_TERM: 2
+  HYDRATION_STATE_MISMATCH: 1
+    SKIPPED_NO_ADAPTER: 5303
+
+⚠️  101 non-blocking id↔label warning(s) (plausibility_severity=error); see the report for detail.
+
+✅ All id↔label pairs correspond.
+
+{
+  "name": "step4-gates-v1-unified-gates",
+  "argv": [
+    "just",
+    "check-unified-rejections",
+    "check-unified-freshness"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:10:26.771802+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:10:26.993133+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-unified-gates.log",
+  "log_sha256": "1b460ced48db7f99a526afe938bf8a09e84af240ffda8ebb7ff5ecac67f7b10a"
+}
+uv run --frozen python scripts/check_unified_rejections.py
+Unified export respects reviewed identity rejections.
+uv run --frozen python scripts/check_unified_freshness.py --check
+OK: UNIFIED_INGREDIENT_MAPPING.tsv is within its drift budget.
+
+{
+  "name": "step4-gates-v1-writer-audit",
+  "argv": [
+    "just",
+    "audit-writers"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:10:27.089956+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:10:27.164784+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-writer-audit.log",
+  "log_sha256": "d31d26ce06162f82bdfcc0da42eeb72a81bd1e14b5afdae25bfeda82098e8552"
+}
+uv run python scripts/audit_writers.py --out reports/pipeline_writers_audit.tsv
+Wrote 123 rows to reports/pipeline_writers_audit.tsv
+
+=== writers audit summary (123 writers) ===
+  target kind:                ingredient=92 mixed=24 report=5 unknown=2
+  appends curation_history:   90 / 123
+  (ingredient writers only) appends curation_history: 89 / 116
+  has --dry-run:              19 / 123
+  validates before write:     57 / 123
+  wired into justfile:        8 / 123
+
+{
+  "name": "step4-gates-v1-full-suite",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:10:27.257706+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:16:43.339114+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-full-suite.log",
+  "log_sha256": "2b37863ff9369aac544a94327be6f3fa1ae6c799a8246a198ea3ebc49718cbd3"
+}
+y/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20: DeprecationWarning: The LinkML dataclass extension patch is deprecated and will be removed in a future release.
+  If you're currently using Python < 3.13, where this patch still applies, you should:
+    • Upgrade your LinkML tooling to version >= 1.9.0 (which no longer needs this patch), OR
+    • Migrate to Pydantic models if you're using LinkML's generated classes at runtime.
+  
+    from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+
+../envs/mim/lib/python3.13/site-packages/sssom/util.py:109
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/sssom/util.py:109: Pandas4Warning: The 'mode.copy_on_write' option is deprecated. Copy-on-Write can no longer be disabled (it is always enabled with pandas >= 3.0), and setting the option has no impact. This option will be removed in pandas 4.0.
+    pd.options.mode.copy_on_write = True
+
+tests/test_reviewed_sssom_schema.py: 11 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/sssom/util.py:197: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+    non_double_cols = non_double_cols.infer_objects(copy=False)
+
+tests/test_sssom_grading.py::TestAgreesWithClaw::test_exact_qualities_match
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/test-deps/_pytest/fixtures.py:1392: PytestRemovedIn10Warning: Class-scoped fixtures defined as instance methods are deprecated.
+  Instance attributes set in the 'claw' fixture will NOT be visible to test methods,
+  as each test gets a new instance while the fixture runs only once per class.
+  Use a @classmethod decorator below @pytest.fixture and set attributes on cls instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#class-scoped-fixture-as-instance-method
+    fixturefunc = resolve_fixture_function(fixturedef, request)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3744 passed, 1 skipped, 27 warnings in 374.93s (0:06:14)
+

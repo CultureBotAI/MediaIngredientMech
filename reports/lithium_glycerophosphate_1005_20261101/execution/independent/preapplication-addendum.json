@@ -1,0 +1,138 @@
+{
+  "finished_at": "2026-11-01T11:00:54.614668+00:00",
+  "predecessor": "preapplication-review.json",
+  "predecessor_sha256": "83e7ff9b8d8735768e1a70088c4d7230d65233fbc1f3942cf99a8a782e5368db",
+  "reviewer": "Codex independent agent /root/step4_design_review",
+  "scope": "Independent preapplication addendum after actual-chain and hermetic test findings",
+  "unified_wrapper_sha256": "b70676c62d8d1e60206a76cd93fe5fc758de7e254ca46db512e3c7516fbc037a",
+  "chain_driver_sha256": "ad5cea8d27d789175dcc59d685223360ab5b3adc28cb72c900d155323d982aab",
+  "writer_test_sha256": "db6cbfc05ef3b4cc4ba773e57c959ab6af6e29854ebe74521183ccc6ccd9894c",
+  "writer_sha256": "0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350",
+  "checks": {
+    "step4-independent-unified-wrapper-v1": {
+      "name": "step4-independent-unified-wrapper-v1",
+      "argv": [
+        "python",
+        "-B",
+        "../step4-independent/probe_unified_wrapper.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:58:32.234985+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:58:33.026604+00:00",
+      "exit_code": 1,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-unified-wrapper-v1.log",
+      "log_sha256": "df9122ec25ded68b6aa43610dc5ba2679191d7dbe3471931a0711b1423b6c8d2"
+    },
+    "step4-independent-unified-wrapper-v2": {
+      "name": "step4-independent-unified-wrapper-v2",
+      "argv": [
+        "python",
+        "-B",
+        "../step4-independent/probe_unified_wrapper.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:58:41.508076+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:58:42.882155+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-unified-wrapper-v2.log",
+      "log_sha256": "1e034959c1be68402a8b2ac499efb2d96112ed2c34339cdd2bb7b5eb0919aca6"
+    },
+    "step4-independent-chain-1045-v1": {
+      "name": "step4-independent-chain-1045-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "../step4-native-chain-plan/test_native_chain.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:00:00.291542+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:00:01.650405+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-chain-1045-v1.log",
+      "log_sha256": "25c89d43b88750a77bb4e7c7db650969c289f6a60aca7bdf66f2e9318dd97bb8"
+    },
+    "step4-independent-chain-1045-actual": {
+      "name": "step4-independent-chain-1045-actual",
+      "argv": [
+        "python",
+        "-B",
+        "-c",
+        "import importlib.util,json,pathlib,hashlib; p=pathlib.Path(\"../step4-native-chain-plan/native_chain.py\").resolve(); s=importlib.util.spec_from_file_location(\"review_scope1045\",p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); old={n for n in m.git(\"ls-tree\",\"-r\",\"--name-only\",m.BASE,\"data/ingredients\").decode().splitlines() if n.endswith(\".yaml\")}; actual=m.individual_record_scope(); result={\"driver_sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"base\":m.BASE,\"old_text_population\":len(old),\"actual_native_population\":len(actual),\"legacy_omitted_paths\":sorted(actual-old),\"native_actual_scope\":\"PASS; membership and every non-target owner byte preserved\",\"production_writes\":False}; pathlib.Path(\"../step4-independent/chain-1045-actual.json\").write_text(json.dumps(result,indent=2)+\"\\n\"); print(json.dumps(result,indent=2))"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:00:12.235173+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:00:38.127204+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-chain-1045-actual.log",
+      "log_sha256": "d802944e379cb1f5790c7f40564ea307cd94ab79e6126a37fb3a492113f24179"
+    },
+    "step4-independent-1046-mim-only": {
+      "name": "step4-independent-1046-mim-only",
+      "argv": [
+        "env",
+        "PYTHONPATH=src:.",
+        "python",
+        "-B",
+        "-c",
+        "import importlib.util,pytest; assert importlib.util.find_spec(\"kg_microbe_write\") is None; raise SystemExit(pytest.main([\"tests/test_curate_lithium_glycerophosphate.py\",\"-q\",\"-o\",\"addopts=\",\"-p\",\"no:cacheprovider\"]))"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:00:32.478841+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:00:33.606984+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-1046-mim-only.log",
+      "log_sha256": "51635f970c4f1449ed960f22e3ac14873f6e9185d7a00426785fad6bc035c717"
+    },
+    "step4-independent-1046-native": {
+      "name": "step4-independent-1046-native",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "tests/test_curate_lithium_glycerophosphate.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:00:32.478778+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:00:35.326667+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-1046-native.log",
+      "log_sha256": "3493b7b3a6c7f8fee9777ddc28e1d29cd66abad1b8c2a8eb076ee56cf0c44cf7"
+    }
+  },
+  "unified": "Exact wrapper with actual native functions/checker/stamper/lock/publisher: positive and three drift refusal controls pass; fixture Git identity/CLI transport adapted explicitly. v1 failed from omitted fixture dependency, v2 corrected it. Full production replay remains required.",
+  "findings": [
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1045",
+      "disposition": "Repair independently verified: exact NUL-separated Git paths and os.fsdecode;41 tests pass and actual2955-member native scope passes preserving2954 unrelated owner byte payloads.",
+      "proof": "chain-1045-actual.json"
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1046",
+      "disposition": "Repair independently verified: no-Claw environment asserts module absent then16 pure tests pass/33 native integration skips; native environment49 tests pass; no blanket module skip or fake publisher."
+    }
+  ],
+  "remaining_preapplication_findings": [],
+  "final_head_review_complete": false,
+  "scientific_review": false,
+  "production_mutations": false,
+  "supervisor_binding": null
+}

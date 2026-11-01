@@ -1,4 +1,4 @@
-generation_date: '2026-11-01T09:13:51.841884+00:00'
+generation_date: '2026-11-01T10:52:25.650451+00:00'
 total_count: 2680
 mapped_count: 2610
 unmapped_count: 0
@@ -160968,96 +160968,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: cas:17989-41-2
-  preferred_term: sn-Glycerol 3-phosphate lithium salt
-  ontology_mapping:
-    ontology_id: CHEBI:15978
-    ontology_label: sn-glycerol 3-phosphate
-    ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 17989-41-2 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via PubChem (pubchem-xref)
-      notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 439162'
-  synonyms:
-  - synonym_text: (2R)-2,3-dihydroxypropyl dihydrogen phosphate
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  - synonym_text: sn-glycerol 3-(dihydrogen phosphate)
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:17989-41-2 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:36.188239+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T02:55:04.903302+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
-    changes: molecular_formula=C3H9O6P; smiles=C(C(COP(=O)(O)O)O)O; inchi=InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:18.277238+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:59:59.774477+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:15978 (pubchem-xref)
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.749818+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
-      nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-09-22T20:41:14.285965+00:00'
-    curator: claude
-    action: REJECTED_PARENT_NAME_SYNONYMS
-    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
-      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
-      form and the label index resolved the parent''s name here (#232): ''(2R)-2,3-dihydroxypropyl
-      dihydrogen phosphate''; ''sn-glycerol 3-(dihydrogen phosphate)''. Preserved
-      original text and source metadata. No identity, mapping, role, or remaining-synonym
-      claim was adjudicated.'
-    llm_assisted: true
-  chemical_properties:
-    cas_rn: 17989-41-2
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C3H9O6P
-    smiles: C(C(COP(=O)(O)O)O)O
-    inchi: InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/t3-/m1/s1
-    pubchem_cid: 439162
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: CHEBI:78074
   preferred_term: SnCl2 x 2 H2O
   ontology_mapping:
@@ -222220,3 +222130,138 @@ ingredients:
     data_source: NCI EVS C216679 (CAS); PubChem CID 5970 (structure/properties); https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full;
       https://pubchem.ncbi.nlm.nih.gov/compound/5970
     retrieval_date: '2026-11-01T05:29:21.337754+00:00'
+- identifier: kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt
+  preferred_term: sn-Glycerol 3-phosphate lithium salt
+  ontology_mapping:
+    ontology_id: CHEBI:15978
+    ontology_label: sn-glycerol 3-phosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT. CAS-RN 17989-41-2 present, but no CHEBI entry
+        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+        to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: CHEBI via PubChem (pubchem-xref)
+      notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 439162'
+    - evidence_type: MANUAL_CURATION
+      source: https://www.sigmaaldrich.com/US/en/product/sigma/94124
+      notes: 'Corrects the prior free-acid CAS identity interpretation while retaining
+        its evidence. Approved distinct local lithium-salt identity and broad CHEBI:15978:
+        https://github.com/CultureBotAI/MediaIngredientMech/issues/1005#issuecomment-6556888392.
+        Sigma-Aldrich 94124 names the lithium salt with variable Li content and free-acid
+        CAS/FW: https://www.sigmaaldrich.com/US/en/product/sigma/94124. ChEBI https://www.ebi.ac.uk/chebi/backend/api/public/compound/15978/
+        and PubChem https://pubchem.ncbi.nlm.nih.gov/compound/439162 describe the
+        free acid, not lithium-salt chemistry. Primary captures inspected 2026-11-01:
+        reports/lithium_glycerophosphate_1005_20261101/sources/manifest.json (sha256
+        ca89868b74535eb7d4296fbb3cb14cc6da8cb599dd78ab27ef95baff61f1eb24). The successful
+        Sigma capture is extracted primary-page text; the separate empty HTTP capture
+        timed out. CultureBotHT CSV is an ignored local raw snapshot, not a commit-attested
+        blob. No direct CAS Registry verification, fixed Li stoichiometry or new chemical
+        structure is claimed. Historical CHEBI/KG sources remain provenance, not salt-identity
+        proof. No scientific/release approval; CARBON_SOURCE stays provisional.'
+  synonyms:
+  - synonym_text: (2R)-2,3-dihydroxypropyl dihydrogen phosphate
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  - synonym_text: sn-glycerol 3-(dihydrogen phosphate)
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:17989-41-2 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:36.188239+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T02:55:04.903302+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+    changes: molecular_formula=C3H9O6P; smiles=C(C(COP(=O)(O)O)O)O; inchi=InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:18.277238+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:59:59.774477+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_CHEBI
+    changes: set ontology_mapping parent=CHEBI:15978 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-06-03T02:06:01.749818+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
+      nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''(2R)-2,3-dihydroxypropyl
+      dihydrogen phosphate''; ''sn-glycerol 3-(dihydrogen phosphate)''. Preserved
+      original text and source metadata. No identity, mapping, role, or remaining-synonym
+      claim was adjudicated.'
+    llm_assisted: true
+  - timestamp: '2026-11-01T10:52:03.347780+00:00'
+    curator: Codex
+    action: CORRECTED_LITHIUM_GLYCEROPHOSPHATE_IDENTITY
+    changes: 'Replaced cas:17989-41-2 identity with kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt;
+      retained broad CHEBI:15978 and exact local registry identity. Recorded Sigma
+      94124 procurement metadata without inventing Li stoichiometry. Removed active
+      free-acid chemical_properties, preserved exactly here and in the immutable preimage:
+      {"cas_rn": "17989-41-2", "data_source": "CultureBotHT compounds_to_cas.csv",
+      "inchi": "InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/t3-/m1/s1",
+      "molecular_formula": "C3H9O6P", "pubchem_cid": 439162, "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+      "smiles": "C(C(COP(=O)(O)O)O)O"}. Preserved prior history, rejected parent labels,
+      occurrence counts and provisional role/evidence unchanged. Retired only the
+      published Glycerol 3-phosphate alias and its Rule K allowance; removed the false
+      exact CAS mapping. Approved distinct local lithium-salt identity and broad CHEBI:15978:
+      https://github.com/CultureBotAI/MediaIngredientMech/issues/1005#issuecomment-6556888392.
+      Sigma-Aldrich 94124 names the lithium salt with variable Li content and free-acid
+      CAS/FW: https://www.sigmaaldrich.com/US/en/product/sigma/94124. ChEBI https://www.ebi.ac.uk/chebi/backend/api/public/compound/15978/
+      and PubChem https://pubchem.ncbi.nlm.nih.gov/compound/439162 describe the free
+      acid, not lithium-salt chemistry. Primary captures inspected 2026-11-01: reports/lithium_glycerophosphate_1005_20261101/sources/manifest.json
+      (sha256 ca89868b74535eb7d4296fbb3cb14cc6da8cb599dd78ab27ef95baff61f1eb24). The
+      successful Sigma capture is extracted primary-page text; the separate empty
+      HTTP capture timed out. CultureBotHT CSV is an ignored local raw snapshot, not
+      a commit-attested blob. No direct CAS Registry verification, fixed Li stoichiometry
+      or new chemical structure is claimed. Historical CHEBI/KG sources remain provenance,
+      not salt-identity proof. No scientific/release approval; CARBON_SOURCE stays
+      provisional.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: CARBON_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  supplied_form:
+  - name: sn-Glycerol 3-phosphate lithium salt
+    cas_rn: 17989-41-2
+    form: lithium salt
+    supplier: Sigma-Aldrich
+    catalog_number: '94124'
+    notes: free-acid CAS/FW; Li stoichiometry unstated

@@ -1,0 +1,538 @@
+{
+  "recorded_at": "2026-11-01T11:16:45.282176+00:00",
+  "base": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+  "scope": "Completed precommit validation of the Step 4 correction; final committed-head and integration reviews follow separately.",
+  "full_suite_summary": "3744 passed, 1 skipped, 27 warnings in 374.93s (0:06:14)",
+  "focused_tests_passed": 351,
+  "checks": {
+    "step4-chain-v2-canonical-qc": {
+      "receipt": "logs/step4-chain-v2-canonical-qc.json",
+      "receipt_sha256": "ca59155dc78a3386a03a8e820cdafdc6be85512fc1a6081a9800761fde8c4477",
+      "name": "step4-chain-v2-canonical-qc",
+      "argv": [
+        "just",
+        "qc-sssom"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:01:28.689074+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:01:36.689483+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-canonical-qc.log",
+      "log_sha256": "9d5099bdc133d1f5f4ba5884b8ba485b3e49c6f651c56ef97c0e117cb1671172"
+    },
+    "step4-chain-v2-assemble-review": {
+      "receipt": "logs/step4-chain-v2-assemble-review.json",
+      "receipt_sha256": "4c6bf7a511a4cabe5af52b45b6489c13a5ae0fc2e75f14f4a6d017c5102598e7",
+      "name": "step4-chain-v2-assemble-review",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "reports/sssom_completion_20260921/assemble_review.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:01:36.783211+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:01:43.654000+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-assemble-review.log",
+      "log_sha256": "4cad937fbfdb0a60c2b61f0dd5c365e4e0cf53e9aaebce2e326224dd4f8a2fee"
+    },
+    "step4-chain-v2-reviewed-export": {
+      "receipt": "logs/step4-chain-v2-reviewed-export.json",
+      "receipt_sha256": "2b31eee0358b530d4f0cc2cb62660c44eaeb7fb78050928c4458e88f1f61d959",
+      "name": "step4-chain-v2-reviewed-export",
+      "argv": [
+        "just",
+        "export-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/mim-reviewed-sssom"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:01:43.748638+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:01:53.265455+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-reviewed-export.log",
+      "log_sha256": "90b4d556b586fcd87d6c093badc05eb0b4ba116a4883227befab8db7fcdb4a70"
+    },
+    "step4-chain-v2-reviewed-qc": {
+      "receipt": "logs/step4-chain-v2-reviewed-qc.json",
+      "receipt_sha256": "67479f70c558025ff7852d0264c6f47535a9531600672105a0c946ea15dd2ef2",
+      "name": "step4-chain-v2-reviewed-qc",
+      "argv": [
+        "just",
+        "qc-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/mim-reviewed-sssom"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:01:53.363661+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:06.613623+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-reviewed-qc.log",
+      "log_sha256": "012a2af2516a6089878eb8e6d8a0cc1890ce10897c2a75c34d37635f5e138493"
+    },
+    "step4-chain-v2-full-kgx": {
+      "receipt": "logs/step4-chain-v2-full-kgx.json",
+      "receipt_sha256": "dec83c39a4544eb4126d65fdb3f7f0d8c63e6035df57a97bb46ce614d4f0a086",
+      "name": "step4-chain-v2-full-kgx",
+      "argv": [
+        "just",
+        "export-kgx",
+        "output/mim-kgx-710-full"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:06.709576+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:10.266712+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-full-kgx.log",
+      "log_sha256": "447373e168688cf44f774d762a8117737231ea7933ededcb00f755524cc9684c"
+    },
+    "step4-chain-v2-semantic-build": {
+      "receipt": "logs/step4-chain-v2-semantic-build.json",
+      "receipt_sha256": "6e3cef3d937ab92cdb7d3c193b80bc3cc688172a431eb3d5086bb2e21d4f2b6f",
+      "name": "step4-chain-v2-semantic-build",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "reports/semantic_review_20260921/resolution/build_review.py",
+        "--bundle",
+        "output/mim-kgx-710-full"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:10.365599+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:16.686041+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-semantic-build.log",
+      "log_sha256": "06d2d43809bdc085d1939d12933bef4c28b6242ed636c590b0e3eabc6e6da052"
+    },
+    "step4-chain-v2-semantic-integrity": {
+      "receipt": "logs/step4-chain-v2-semantic-integrity.json",
+      "receipt_sha256": "e95da46c1fca760f24c3c93f9f79bd167165dec612269561d02ade4c624d3d57",
+      "name": "step4-chain-v2-semantic-integrity",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-m",
+        "mediaingredientmech.validation.semantic_release",
+        "--root",
+        ".",
+        "--report",
+        "reports/semantic_review_20260921/resolution/current-review.json"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:16.781259+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:23.066139+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-semantic-integrity.log",
+      "log_sha256": "18b0c8e4d11bcb6d2b54eb80b2d1dfa2d2f98aa8cc8aeae8ea96ad68f3a5a35e"
+    },
+    "step4-chain-v2-supported-export": {
+      "receipt": "logs/step4-chain-v2-supported-export.json",
+      "receipt_sha256": "ccd69d4e168847657913ecbcd83d97ce6fb55028bb8f9bb1e2261e3a342d98d3",
+      "name": "step4-chain-v2-supported-export",
+      "argv": [
+        "just",
+        "export-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/step4-supported-kgx"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:23.160733+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:36.230310+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-supported-export.log",
+      "log_sha256": "1590f85dae78a9aec6d685e3533e2565b1ed126d6d96eba3cdccf0969c17c02f"
+    },
+    "step4-chain-v2-supported-qc": {
+      "receipt": "logs/step4-chain-v2-supported-qc.json",
+      "receipt_sha256": "d4a16e5c549eceb95bfc9d98ff26aba2e39489e8b945309423391ea8a810c47e",
+      "name": "step4-chain-v2-supported-qc",
+      "argv": [
+        "just",
+        "qc-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/step4-supported-kgx"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:36.322138+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:43.116932+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-supported-qc.log",
+      "log_sha256": "d42fb4ed214c9cd23da66397bd2e447dd68022b8dd2f56ec49dc55b8257623ab"
+    },
+    "step4-chain-v2-supported-sssom-schema": {
+      "receipt": "logs/step4-chain-v2-supported-sssom-schema.json",
+      "receipt_sha256": "499f6f76b1246fda0f249a6da0652689f432eab36f3b80013d0c8a730ff2ae23",
+      "name": "step4-chain-v2-supported-sssom-schema",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-c",
+        "from sssom.parsers import parse_sssom_table; from sssom.validators import SchemaValidationType, validate; validate(parse_sssom_table('output/step4-supported-kgx/ingredient_mappings.sssom.tsv'), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat])"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:43.218175+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:44.474321+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-supported-sssom-schema.log",
+      "log_sha256": "7aca48c7551a7baca22526c863e489fc5220de00759bc896d122687c0503dfe9"
+    },
+    "step4-chain-v2-companion-refresh": {
+      "receipt": "logs/step4-chain-v2-companion-refresh.json",
+      "receipt_sha256": "354ad5851f9827f9851bcca39f41e05ee13d923d1e0a4e8d7bb27eac75e06d0e",
+      "name": "step4-chain-v2-companion-refresh",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/refresh_unchanged_cohort.py",
+        "--baseline",
+        "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+        "--prior-review",
+        "reports/ingredient_bundle_20261101_carnitine1004/review.json",
+        "--output",
+        "reports/ingredient_bundle_20261101_lithium1005/review.json",
+        "--receipt",
+        "reports/ingredient_bundle_20261101_lithium1005/dependency-refresh.json",
+        "--prior-copy",
+        "reports/ingredient_bundle_20261101_lithium1005/prior-review.json"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:44.574234+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:02:56.490606+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-companion-refresh.log",
+      "log_sha256": "9943710ca5bdf5be34e22cb11d96bf22a5c2edc3de0141c445a8d5ba4a3668ad"
+    },
+    "step4-chain-v2-companion-export": {
+      "receipt": "logs/step4-chain-v2-companion-export.json",
+      "receipt_sha256": "1a108f66554851825127e88e3eeb186a08404a7dd4e13be8691b4005b4c4c223",
+      "name": "step4-chain-v2-companion-export",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-m",
+        "mediaingredientmech.export.ingredient_bundle",
+        "export",
+        "--review",
+        "reports/ingredient_bundle_20261101_lithium1005/review.json",
+        "--output",
+        "output/step4-ingredient-bundle"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:02:56.772857+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:03:05.653338+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-companion-export.log",
+      "log_sha256": "93401584814fb34492574a13e62c678b273b2d92e0d5efcb18427ca877f16978"
+    },
+    "step4-chain-v2-companion-validate": {
+      "receipt": "logs/step4-chain-v2-companion-validate.json",
+      "receipt_sha256": "a950c0f8702a63ebfec7fe71fc6de238c187af0a0ac7924e9cb9eb1d6a854ae7",
+      "name": "step4-chain-v2-companion-validate",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-m",
+        "mediaingredientmech.export.ingredient_bundle",
+        "validate",
+        "output/step4-ingredient-bundle",
+        "--manifest-sha256",
+        "69ccc316431534f309c3d545282cd365c3f752b28f1a1da9a273900eb2989b3f"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:03:05.804845+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:03:06.089847+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-companion-validate.log",
+      "log_sha256": "745d308897bc8e80abd3004d348d3f08cebb5b805eb5b0df135c80b543efeff1"
+    },
+    "step4-exports-v1-flat-exports": {
+      "receipt": "logs/step4-exports-v1-flat-exports.json",
+      "receipt_sha256": "03f0600bdd6d975cae8d176298b83b83e73f8f05fa8bbf92381f865a764c8496",
+      "name": "step4-exports-v1-flat-exports",
+      "argv": [
+        "just",
+        "export-indexes",
+        "export-lists",
+        "export-browser"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:04:25.179784+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:04:39.765634+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-exports-v1-flat-exports.log",
+      "log_sha256": "b29e422978f6238f0dc65955c26e045c1d66808aba1ffd3b08a554f3a97bcc72"
+    },
+    "step4-exports-v1-visual-metadata": {
+      "receipt": "logs/step4-exports-v1-visual-metadata.json",
+      "receipt_sha256": "66d45d6d281ec5c95d6d701db115c418c7fe93f7b390502c6d326490e8e42c49",
+      "name": "step4-exports-v1-visual-metadata",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/refresh_visualization_metadata.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:04:39.866476+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:04:44.329420+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-exports-v1-visual-metadata.log",
+      "log_sha256": "43b707c879588b6e3de22422f59d81996e6e8fa558d339707a3c1ef579f7cc2c"
+    },
+    "step4-exports-v1-visual-currency": {
+      "receipt": "logs/step4-exports-v1-visual-currency.json",
+      "receipt_sha256": "0197399b7ba0192a8b372ac844d1a3db03256f02e9d7dc9d865db4af00e29e78",
+      "name": "step4-exports-v1-visual-currency",
+      "argv": [
+        "just",
+        "check-visualizations"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:04:44.425123+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:04:48.816083+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-exports-v1-visual-currency.log",
+      "log_sha256": "5e1313f031cca3e2486e6f092e982a34cb6f7055e9cd2fa2946119856d2ff4a8"
+    },
+    "step4-gates-v1-focused-regressions": {
+      "receipt": "logs/step4-gates-v1-focused-regressions.json",
+      "receipt_sha256": "4ffcd4e159b996a95b3b2a44b83bed23881e6a20901a3465108d572e19855f1e",
+      "name": "step4-gates-v1-focused-regressions",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_curate_lithium_glycerophosphate.py",
+        "tests/test_mapping_change_receipt.py",
+        "tests/test_reviewed_sssom.py",
+        "tests/test_semantic_review_builder.py",
+        "tests/test_semantic_mapping_review.py",
+        "tests/test_ingredient_bundle.py",
+        "tests/test_ingredient_bundle_dependency_refresh.py",
+        "tests/test_unified_rejections.py",
+        "tests/test_unified_source_holds.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:06:50.160164+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:07:18.294809+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-focused-regressions.log",
+      "log_sha256": "76d19d6761c6d0a82d2f89dac5e3d22316227892de05156139d229bd8cfbaea3"
+    },
+    "step4-gates-v1-full-qc": {
+      "receipt": "logs/step4-gates-v1-full-qc.json",
+      "receipt_sha256": "d39c53163993653d0512312132df0c370a6bb171d7606baa6dfb87175d43bbdb",
+      "name": "step4-gates-v1-full-qc",
+      "argv": [
+        "just",
+        "qc"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:07:18.392713+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:09:30.891007+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-full-qc.log",
+      "log_sha256": "9304f7eb287d0526721bcfa311bbaccca7fc46c2ec28fbf7aa0eda8bc827e02d"
+    },
+    "step4-gates-v1-curies-and-products": {
+      "receipt": "logs/step4-gates-v1-curies-and-products.json",
+      "receipt_sha256": "2373a4b0ebf1fd2026ca6293cfda1461655de4ffaec7af60b4ecd10fe917fea7",
+      "name": "step4-gates-v1-curies-and-products",
+      "argv": [
+        "just",
+        "curie-validate",
+        "validate-products"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:09:31.040040+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:10:26.673566+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-curies-and-products.log",
+      "log_sha256": "a7736d0d7696832ff5c53917cc7eb9f9fa0817e7a1932483483623b8858918d6"
+    },
+    "step4-gates-v1-unified-gates": {
+      "receipt": "logs/step4-gates-v1-unified-gates.json",
+      "receipt_sha256": "a388040e1c2e6d82aecab0788d2e4bf092812fa2016887da68a488fe2a8088dd",
+      "name": "step4-gates-v1-unified-gates",
+      "argv": [
+        "just",
+        "check-unified-rejections",
+        "check-unified-freshness"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:10:26.771802+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:10:26.993133+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-unified-gates.log",
+      "log_sha256": "1b460ced48db7f99a526afe938bf8a09e84af240ffda8ebb7ff5ecac67f7b10a"
+    },
+    "step4-gates-v1-writer-audit": {
+      "receipt": "logs/step4-gates-v1-writer-audit.json",
+      "receipt_sha256": "9a79b187284635e62ef1afe79301020617320db8350fa0512b218cd0eae9c638",
+      "name": "step4-gates-v1-writer-audit",
+      "argv": [
+        "just",
+        "audit-writers"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:10:27.089956+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:10:27.164784+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-writer-audit.log",
+      "log_sha256": "d31d26ce06162f82bdfcc0da42eeb72a81bd1e14b5afdae25bfeda82098e8552"
+    },
+    "step4-gates-v1-full-suite": {
+      "receipt": "logs/step4-gates-v1-full-suite.json",
+      "receipt_sha256": "7cf6f256946d348272096f35d1a7152e8021376e4e83ed065d5f7a50592a86f5",
+      "name": "step4-gates-v1-full-suite",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T11:10:27.257706+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T11:16:43.339114+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-gates-v1-full-suite.log",
+      "log_sha256": "2b37863ff9369aac544a94327be6f3fa1ae6c799a8246a198ea3ebc49718cbd3"
+    }
+  },
+  "native_state": {
+    "source_log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-application/source-apply.json",
+    "source_sha256": "be85aa8209f6a43cf78c1aeadcab5892e5f5ef16a7fbc464d7cc112a5053227b",
+    "mapping_receipt": "reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json",
+    "mapping_receipt_sha256": "2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd",
+    "canonical_rows_before": 2982,
+    "canonical_rows_after": 2981,
+    "old_receipts_preserved": 17,
+    "mapping_counts": {
+      "SUPPORTED": 1739,
+      "WITHHOLD": 1242
+    },
+    "unrelated_mapping_decisions_preserved": 2979,
+    "target_mapping_holds": 2,
+    "target_role_status": "OPEN",
+    "target_role_payload_unchanged": true,
+    "target_findings_open": 2,
+    "all_other_assertion_decisions_preserved": true,
+    "full_scientific_release": "FAIL",
+    "blocking_findings": 1732,
+    "blocking_assertions": 2335,
+    "semantic_status_counts": {
+      "OPEN": 2335,
+      "APPROVED": 2151
+    },
+    "companion_owners": 20,
+    "companion_claims": 51,
+    "companion_mapping_relocations": 8,
+    "scientific_approval_added": false
+  },
+  "independent_generated_surface_check": {
+    "base": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+    "production_mutations": false,
+    "checks": {
+      "data/curated/mapped_ingredients.yaml": "PASS: target-only record change; metadata date permitted",
+      "data/curated/unmapped_ingredients.yaml": "PASS: target-only record change; metadata date permitted",
+      "docs/data/all_ingredients.json": "PASS: only target identifier changes; other entries exact",
+      "docs/data/mapped_ingredients.json": "PASS: only target identifier changes; other entries exact",
+      "data/curated/all_ingredients_index.json": "PASS: only target identifier changes; other entries exact",
+      "data/curated/mapped_ingredients_index.json": "PASS: only target identifier changes; other entries exact",
+      "docs/data/ingredient_graph.json": "PASS: target identity/chemistry metadata corrected; coordinates and others exact",
+      "docs/data/ingredient_umap.json": "PASS: target identity/chemistry metadata corrected; coordinates and others exact",
+      "docs/data/ingredients.json": "PASS: only target browser metadata and generation timestamp change; rejected aliases absent",
+      "label_index": "PASS: exactly the preferred label resolves to target, under its local identity",
+      ".github/workflows/qc-evidence.yaml": "PASS: protected file bytes unchanged",
+      "scripts/.vendored_canon_ref": "PASS: protected file bytes unchanged"
+    },
+    "unified": {
+      "artifact_sha256": "ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5",
+      "byte_equal_native_candidate_and_base": true,
+      "rows": 4170,
+      "occurrences": 209330,
+      "hash_prefixed_names_preserved": [
+        "#Ar",
+        "#N2",
+        "#N2O",
+        "#argon"
+      ],
+      "bound_input_paths_rechecked": 19432,
+      "provenance_sha256": "894a4bd1ce014e9a78d7abc27d206112c299f971124c5c8a0059c0e84f6973c4",
+      "actual_runtime_claw": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+      "producer_claw": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+      "culturemech": "a74dd489720c9df96cc073ffd11568d407d3c06c"
+    },
+    "verdict": "PASS_ACTUAL_GENERATED_SURFACES_WITHOUT_SCIENTIFIC_APPROVAL"
+  },
+  "current_artifact_sha256": {
+    "mappings/ingredient_mappings.sssom.tsv": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9",
+    "mappings/other_cross_record_baseline.tsv": "8305c7f06d05466de1c49bd76c9ddaba17e53ecbd28a5d9dde1d36e59db0e707",
+    "UNIFIED_INGREDIENT_MAPPING.tsv": "ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5",
+    "UNIFIED_INGREDIENT_MAPPING.provenance.json": "894a4bd1ce014e9a78d7abc27d206112c299f971124c5c8a0059c0e84f6973c4",
+    "scripts/curate_lithium_glycerophosphate.py": "0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350",
+    "tests/test_curate_lithium_glycerophosphate.py": "db6cbfc05ef3b4cc4ba773e57c959ab6af6e29854ebe74521183ccc6ccd9894c"
+  },
+  "limitations": [
+    "Full scientific release retains its native FAIL with 1,732 blocking findings; this structural check grants no scientific approval.",
+    "Product labels retain 101 non-blocking warnings and 5,303 no-adapter skips; not every pair was validated.",
+    "Native actual-KG label checks had no BTO or MICRO transform files.",
+    "Six existing cross-prefix KG node warnings remain for the later #870 step.",
+    "The full suite disables default addopts; no local coverage percentage is claimed.",
+    "MIM-only tests intentionally skip optional Claw integrations; separate native-enabled lithium regressions ran all 49 cases."
+  ],
+  "scientific_approval_added": false,
+  "supervisor_binding": null
+}

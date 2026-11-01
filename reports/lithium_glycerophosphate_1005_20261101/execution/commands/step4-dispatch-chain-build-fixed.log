@@ -1,0 +1,480 @@
+{
+  "name": "step4-chain-v2-canonical-qc",
+  "argv": [
+    "just",
+    "qc-sssom"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:01:28.689074+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:01:36.689483+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-canonical-qc.log",
+  "log_sha256": "9d5099bdc133d1f5f4ba5884b8ba485b3e49c6f651c56ef97c0e117cb1671172"
+}
+uv run --frozen python scripts/validate_sssom_invariants.py
+WARNING: Rule B4 skipped — kg-microbe ontology transforms not found at /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/kg-microbe/data/transformed/ontologies for prefix(es): BTO, CHEBI, ENVO, FOODON, MICRO, UBERON. To enable Rule B4 locally, check out kg-microbe at the sibling path and run its `just transform` recipe. (CI typically lacks these transforms; the validator does not exit-2 on B4 alone in that case.)
+OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L. mappings/needs_curator_review.tsv written with header only.
+
+{
+  "name": "step4-chain-v2-assemble-review",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "reports/sssom_completion_20260921/assemble_review.py"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:01:36.783211+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:01:43.654000+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-assemble-review.log",
+  "log_sha256": "4cad937fbfdb0a60c2b61f0dd5c365e4e0cf53e9aaebce2e326224dd4f8a2fee"
+}
+{
+  "mapping_rows": 2981,
+  "dispositions": {
+    "SUPPORTED": 1739,
+    "WITHHOLD": 1242
+  },
+  "reproduced": false
+}
+
+{
+  "name": "step4-chain-v2-reviewed-export",
+  "argv": [
+    "just",
+    "export-reviewed-sssom",
+    "reports/sssom_completion_20260921/review.json",
+    "output/mim-reviewed-sssom"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:01:43.748638+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:01:53.265455+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-reviewed-export.log",
+  "log_sha256": "90b4d556b586fcd87d6c093badc05eb0b4ba116a4883227befab8db7fcdb4a70"
+}
+uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2"
+{
+  "counts": {
+    "source": 2981,
+    "supported": 1739,
+    "withhold": 1242
+  },
+  "files": {
+    "ingredient_mappings.sssom.tsv": "70b4652469a0793e643717b26ae19f124ff4db25fe1b199bbb592851b53a164d",
+    "mapping-dispositions.tsv": "a8a7aef2039268f5f57a6e2350f6ca037afedabb81a902c0e9fb89e1e8a21f51",
+    "withheld_mappings.sssom.tsv": "b5d0d4dcda9d90bdacbb92c3cc07fa9923c72da6cc9ea83ce84f0e3ea49d65f9"
+  },
+  "mapping_set_ids": {
+    "supported": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/reviewed-supported",
+    "withhold": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/withheld-backlog"
+  },
+  "review_sha256": "e60928fbf3463e0a9e36f73e9588047ff14d85aa6cea8a8c2e73e7316ab607fa",
+  "schema_version": 1,
+  "scope": "MIM-only reviewed SSSOM; no KGX dependency",
+  "semantic_status": "PASS_SUPPORTED_SUBSET",
+  "source_sha256": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9",
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv"
+}
+
+{
+  "name": "step4-chain-v2-reviewed-qc",
+  "argv": [
+    "just",
+    "qc-reviewed-sssom",
+    "reports/sssom_completion_20260921/review.json",
+    "output/mim-reviewed-sssom"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:01:53.363661+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:06.613623+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-reviewed-qc.log",
+  "log_sha256": "012a2af2516a6089878eb8e6d8a0cc1890ce10897c2a75c34d37635f5e138493"
+}
+python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
+{
+  "counts": {
+    "source": 2981,
+    "supported": 1739,
+    "withhold": 1242
+  },
+  "files": {
+    "ingredient_mappings.sssom.tsv": "70b4652469a0793e643717b26ae19f124ff4db25fe1b199bbb592851b53a164d",
+    "mapping-dispositions.tsv": "a8a7aef2039268f5f57a6e2350f6ca037afedabb81a902c0e9fb89e1e8a21f51",
+    "withheld_mappings.sssom.tsv": "b5d0d4dcda9d90bdacbb92c3cc07fa9923c72da6cc9ea83ce84f0e3ea49d65f9"
+  },
+  "mapping_set_ids": {
+    "supported": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/reviewed-supported",
+    "withhold": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/withheld-backlog"
+  },
+  "review_sha256": "e60928fbf3463e0a9e36f73e9588047ff14d85aa6cea8a8c2e73e7316ab607fa",
+  "schema_version": 1,
+  "scope": "MIM-only reviewed SSSOM; no KGX dependency",
+  "semantic_status": "PASS_SUPPORTED_SUBSET",
+  "source_sha256": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9",
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv"
+}
+uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
+Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+No attr for source [1739 instances]
+No attr for validation_method [1739 instances]
+WARNING:sssom.parsers:Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+WARNING:sssom.parsers:No attr for source [1242 instances]
+WARNING:sssom.parsers:No attr for validation_method [1242 instances]
+{
+  "partitions": {
+    "ingredient_mappings.sssom.tsv": {
+      "linkml_rows": 1739,
+      "native_rows": 1739,
+      "raw_rows": 1739,
+      "status": "PASS"
+    },
+    "withheld_mappings.sssom.tsv": {
+      "linkml_rows": 1242,
+      "native_rows": 1242,
+      "raw_rows": 1242,
+      "status": "PASS"
+    }
+  },
+  "scope": "Native SSSOM parsing and LinkML schema; exact row count and mapping identity/label/numeric-confidence multiset, including duplicate multiplicity, preserved. Native sorting and other extension-field normalization are permitted; reviewed exporter independently verifies complete output bytes.",
+  "status": "PASS"
+}
+
+{
+  "name": "step4-chain-v2-full-kgx",
+  "argv": [
+    "just",
+    "export-kgx",
+    "output/mim-kgx-710-full"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:06.709576+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:10.266712+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-full-kgx.log",
+  "log_sha256": "447373e168688cf44f774d762a8117737231ea7933ededcb00f755524cc9684c"
+}
+uv run --frozen python -m mediaingredientmech.export.kgx --output "$1"
+{
+  "nodes": 5759,
+  "edges": 4486,
+  "unique_triples": 4480,
+  "active_ingredients": 2873,
+  "excluded_rejected_records": 82,
+  "sssom_rows": 2981,
+  "nodes_by_kind": {
+    "external_reference": 2859,
+    "ingredient": 2873,
+    "role": 22,
+    "unresolved_component": 5
+  },
+  "edges_by_assertion_type": {
+    "cellular_metabolic_roles": 8,
+    "component": 502,
+    "environment": 13,
+    "mapping": 2981,
+    "nutritional_roles": 721,
+    "physicochemical_roles": 259,
+    "recipe_reference": 2
+  },
+  "edges_by_predicate": {
+    "MIM.vocab:environmental_context": 13,
+    "MIM.vocab:recipe_candidate_unverified": 1,
+    "MIM.vocab:recipe_similar_composition": 1,
+    "biolink:broad_match": 150,
+    "biolink:close_match": 96,
+    "biolink:exact_match": 2735,
+    "biolink:has_chemical_role": 988,
+    "biolink:has_part": 502
+  },
+  "ingredient_review_status": {
+    "not_reviewed": 2873
+  }
+}
+
+{
+  "name": "step4-chain-v2-semantic-build",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "reports/semantic_review_20260921/resolution/build_review.py",
+    "--bundle",
+    "output/mim-kgx-710-full"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:10.365599+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:16.686041+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-semantic-build.log",
+  "log_sha256": "06d2d43809bdc085d1939d12933bef4c28b6242ed636c590b0e3eabc6e6da052"
+}
+{
+  "verdict": "FAIL",
+  "blocking_findings": 1732,
+  "blocking_assertions": 2335,
+  "evidence_gaps": {
+    "ambiguous_identities": 1,
+    "components_requiring_source_verification": 43,
+    "prediction_only_roles": 662,
+    "roles_without_evidence": 11
+  }
+}
+
+{
+  "name": "step4-chain-v2-semantic-integrity",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "mediaingredientmech.validation.semantic_release",
+    "--root",
+    ".",
+    "--report",
+    "reports/semantic_review_20260921/resolution/current-review.json"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:16.781259+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:23.066139+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-semantic-integrity.log",
+  "log_sha256": "18b0c8e4d11bcb6d2b54eb80b2d1dfa2d2f98aa8cc8aeae8ea96ad68f3a5a35e"
+}
+{
+  "integrity": "PASS",
+  "semantic_release": "FAIL",
+  "blocking_findings": 1732,
+  "blocking_assertions": 2335,
+  "evidence_gaps": {
+    "ambiguous_identities": 1,
+    "components_requiring_source_verification": 43,
+    "prediction_only_roles": 662,
+    "roles_without_evidence": 11
+  }
+}
+
+{
+  "name": "step4-chain-v2-supported-export",
+  "argv": [
+    "just",
+    "export-supported-kgx",
+    "reports/semantic_review_20260921/resolution/current-review.json",
+    "output/step4-supported-kgx"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:23.160733+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:36.230310+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-supported-export.log",
+  "log_sha256": "1590f85dae78a9aec6d685e3533e2565b1ed126d6d96eba3cdccf0969c17c02f"
+}
+rg/kg-microbe/",
+    "kgmicrobe.compound": "https://w3id.org/kg-microbe/compound/",
+    "kgmicrobe.ingredient": "https://w3id.org/kg-microbe/ingredient/",
+    "mesh": "http://id.nlm.nih.gov/mesh/",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "orcid": "https://orcid.org/",
+    "registry": "https://w3id.org/kg-microbe/registry/",
+    "semapv": "https://w3id.org/semapv/vocab/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "assertion_dispositions": "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv",
+  "assertion_dispositions_sha256": "3a31c61809d01609b6d8fc6995a7a7629b6c15f69273f8660fb68ad27b8d5294",
+  "counts": {
+    "nodes": 4721,
+    "edges": 2151,
+    "sssom_rows": 1739,
+    "active_ingredient_record_nodes": 2873,
+    "full_nodes": 5759,
+    "full_edges": 4486,
+    "backlog_raw_nodes": 5759,
+    "backlog_unapproved_edges": 2335
+  },
+  "members": {
+    "mim_nodes.tsv": {
+      "sha256": "3ce990645ae8a6f92b9d38b9c77ec4999a4bbddd82aad4ece5838618f940f1cc",
+      "bytes": 575364
+    },
+    "mim_edges.tsv": {
+      "sha256": "0dd006f7a4f003fa3cef494c828586d3ee20aa725f3eb16d32de901515702ab7",
+      "bytes": 2078628
+    }
+  },
+  "sssom": {
+    "path": "ingredient_mappings.sssom.tsv",
+    "mapping_set_id": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/supported",
+    "rows": 1739,
+    "sha256": "491298fc7f6558cf3a4d8e13f0f5811627296f2073aac385673fbea1033c8d70",
+    "bytes": 833156
+  },
+  "backlog": {
+    "path": "unsupported-backlog.json",
+    "sha256": "09080eb242c979d14ddd2886192bf65d2655f52e08586182490a059c03a5ebc4",
+    "bytes": 18809871
+  },
+  "archive_members": [
+    "manifest.json",
+    "mim_nodes.tsv",
+    "mim_edges.tsv"
+  ],
+  "implementation": {
+    "export/supported_kgx.py": "fcdaf68c3338dd37a0c399185a9da83404cedaaea3b4e22e05797e50dca61d38",
+    "validation/semantic_release.py": "0490b67b9304114ad78ef429ff619268207a39665fd296997fd43d4c64febd90"
+  },
+  "limitations": [
+    "PASS certifies only the explicitly approved assertion subset; the full graph retains its separate verdict.",
+    "Ingredient nodes are source-record references with source labels, not approvals of all ingredient annotations or chemical identity.",
+    "All node categories are NamedThing; chemical identity, roles, components, and hierarchy are asserted only by selected approved edges.",
+    "Excluded assertions and all original raw node annotations are retained in the separate hash-bound backlog, outside the graph archive."
+  ]
+}
+
+{
+  "name": "step4-chain-v2-supported-qc",
+  "argv": [
+    "just",
+    "qc-supported-kgx",
+    "reports/semantic_review_20260921/resolution/current-review.json",
+    "output/step4-supported-kgx"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:36.322138+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:43.116932+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-supported-qc.log",
+  "log_sha256": "d42fb4ed214c9cd23da66397bd2e447dd68022b8dd2f56ec49dc55b8257623ab"
+}
+uv run --frozen python -m mediaingredientmech.export.supported_kgx --root . --report "$1" --output "$2" --validate-only
+{
+  "integrity": "PASS",
+  "semantic_release": "PASS",
+  "scope": "reviewed_assertion_subset",
+  "full_release_verdict": "FAIL",
+  "counts": {
+    "nodes": 4721,
+    "edges": 2151,
+    "sssom_rows": 1739,
+    "active_ingredient_record_nodes": 2873,
+    "full_nodes": 5759,
+    "full_edges": 4486,
+    "backlog_raw_nodes": 5759,
+    "backlog_unapproved_edges": 2335
+  },
+  "archive_sha256": "16b4602e8da3b6639c56a1aebf6a9e4f0964b50a731c972e3c21a1642a81ed05"
+}
+
+{
+  "name": "step4-chain-v2-supported-sssom-schema",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-c",
+    "from sssom.parsers import parse_sssom_table; from sssom.validators import SchemaValidationType, validate; validate(parse_sssom_table('output/step4-supported-kgx/ingredient_mappings.sssom.tsv'), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat])"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:43.218175+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:44.474321+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-supported-sssom-schema.log",
+  "log_sha256": "7aca48c7551a7baca22526c863e489fc5220de00759bc896d122687c0503dfe9"
+}
+Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+No attr for source [1739 instances]
+No attr for validation_method [1739 instances]
+
+{
+  "name": "step4-chain-v2-companion-refresh",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "scripts/refresh_unchanged_cohort.py",
+    "--baseline",
+    "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+    "--prior-review",
+    "reports/ingredient_bundle_20261101_carnitine1004/review.json",
+    "--output",
+    "reports/ingredient_bundle_20261101_lithium1005/review.json",
+    "--receipt",
+    "reports/ingredient_bundle_20261101_lithium1005/dependency-refresh.json",
+    "--prior-copy",
+    "reports/ingredient_bundle_20261101_lithium1005/prior-review.json"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:44.574234+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:02:56.490606+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-companion-refresh.log",
+  "log_sha256": "9943710ca5bdf5be34e22cb11d96bf22a5c2edc3de0141c445a8d5ba4a3668ad"
+}
+{"successor": "reports/ingredient_bundle_20261101_lithium1005/review.json", "sha256": "bdf372dd1b045b9eb23b3eea69a4dfe1fe112b84b5ad425abf9a41f950ae36cc", "claim_counts": {"identifier": 18, "mapping": 20, "occurrence": 10, "product": 3}, "owners": 20}
+
+{
+  "name": "step4-chain-v2-companion-export",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "mediaingredientmech.export.ingredient_bundle",
+    "export",
+    "--review",
+    "reports/ingredient_bundle_20261101_lithium1005/review.json",
+    "--output",
+    "output/step4-ingredient-bundle"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:02:56.772857+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:03:05.653338+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-companion-export.log",
+  "log_sha256": "93401584814fb34492574a13e62c678b273b2d92e0d5efcb18427ca877f16978"
+}
+{"identifiers":18,"manifest_sha256":"69ccc316431534f309c3d545282cd365c3f752b28f1a1da9a273900eb2989b3f","mappings":20,"occurrences":10,"products":3}
+
+{
+  "name": "step4-chain-v2-companion-validate",
+  "argv": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "mediaingredientmech.export.ingredient_bundle",
+    "validate",
+    "output/step4-ingredient-bundle",
+    "--manifest-sha256",
+    "69ccc316431534f309c3d545282cd365c3f752b28f1a1da9a273900eb2989b3f"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:03:05.804845+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:03:06.089847+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-v2-companion-validate.log",
+  "log_sha256": "745d308897bc8e80abd3004d348d3f08cebb5b805eb5b0df135c80b543efeff1"
+}
+{"manifest_sha256":"69ccc316431534f309c3d545282cd365c3f752b28f1a1da9a273900eb2989b3f","status":"PASS"}
+

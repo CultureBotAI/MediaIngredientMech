@@ -1,0 +1,14 @@
+{
+  "issue": 1045,
+  "failed_dispatch": {
+    "path": "logs/step4-dispatch-chain-build.json",
+    "sha256": "e65d6b19ee9126c497860fb7fac4d1e05510f4fc8db734d85ab12e56ebcd2526"
+  },
+  "cause": "Git newline-format quoting omitted five existing Unicode owner names from the run-owned guard; false inventory mismatch. No native chain command ran.",
+  "repair": "NUL-delimited exact Git paths, literal actual inventory comparison, real Git regression controls; independent re-review passed.",
+  "successful_rerun": {
+    "path": "logs/step4-dispatch-chain-build-fixed.json",
+    "sha256": "25a8b3f4c1b1e7013d4beb17dfa5c0a73d2a6fbe04f94b9431e59f4103064d0a"
+  },
+  "verified_output": "step4-native-chain-plan/executions/step4-chain-v2-build/verified-output.json"
+}

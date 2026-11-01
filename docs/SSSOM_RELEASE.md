@@ -1,7 +1,7 @@
 # Reviewed MIM SSSOM
 
-The current standalone release has a decision for every one of the 2,982 MIM
-mapping rows: **1,739 supported** and **1,243 withheld**. Use the supported table for
+The current standalone release has a decision for every one of the 2,981 MIM
+mapping rows: **1,739 supported** and **1,242 withheld**. Use the supported table for
 mapping. The withheld table preserves complete source rows for further curation;
 it is not an approved mapping set.
 
@@ -55,6 +55,15 @@ free-carnitine CAS and aliases. The corrected salt mapping remains withheld.
 Retargeting NLDM's component reference changes its owner bytes, so its mapping
 and all 68 component/role approvals also withdraw. Its original validation stamp
 remains historical provenance; it does not approve the changed owner.
+
+The #1005 receipt preserves a distinct local identity for sn-glycerol 3-phosphate
+lithium salt and its broad CHEBI:15978 parent mapping. It removes the free-acid
+CAS exact identity and the generic glycerol-phosphate alias, while preserving
+the original #390 explanation, validation stamps and source tokens. The
+supplier's free-acid CAS remains procurement metadata and a local registry
+display token; it does not establish salt stoichiometry or structure. Both
+surviving mappings stay withheld, and the provisional CARBON_SOURCE claim and
+historical mixed/role findings remain open.
 
 Review is agent-assisted and includes adversarial review; structural validation
 alone is not scientific approval. Source confidence and earlier validation

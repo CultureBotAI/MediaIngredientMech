@@ -1,0 +1,74 @@
+{
+  "issue": 1046,
+  "author_tree_unchanged": true,
+  "source_hashes": {
+    "scripts/curate_lithium_glycerophosphate.py": "0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350",
+    "tests/test_curate_lithium_glycerophosphate.py": "db6cbfc05ef3b4cc4ba773e57c959ab6af6e29854ebe74521183ccc6ccd9894c"
+  },
+  "scope": "MIM-only pure proposal/promotion tests; no native publisher substitute and no production writes",
+  "runs": [
+    {
+      "name": "control",
+      "selection": "pure_",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-test-runtime-1046/controls/control/tests/test_curate_lithium_glycerophosphate.py",
+        "-k",
+        "pure_"
+      ],
+      "exit_code": 0,
+      "writer_sha256": "0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350",
+      "stdout_sha256": "8e4951acb7d67226979c5df4ae807be395a529961746fc8d3b76f1e608cdf09e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "candidate_guard_removed",
+      "selection": "pure_candidate_claim_substitution_refused and source",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-test-runtime-1046/controls/candidate_guard_removed/tests/test_curate_lithium_glycerophosphate.py",
+        "-k",
+        "pure_candidate_claim_substitution_refused and source"
+      ],
+      "exit_code": 1,
+      "writer_sha256": "7cdf23a2ca875458b50f516299c42dc0e783d3d44d1b58ca7fc60b35bef520e2",
+      "stdout_sha256": "65608db8c0cdb630533bae15738ec00dc5601687e7f8a76f66fc7516454a7552",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "comment_preservation_removed",
+      "selection": "pure_promotion_preserves",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-test-runtime-1046/controls/comment_preservation_removed/tests/test_curate_lithium_glycerophosphate.py",
+        "-k",
+        "pure_promotion_preserves"
+      ],
+      "exit_code": 1,
+      "writer_sha256": "1dfe54465b6c2fdc8a5b22a16a9063520011edfe351a5d32a309e195feb9aa2a",
+      "stdout_sha256": "b07341a1f98f320b116512364ea2102162fb48d1f9cae48f3e7b2d66a6aec3ae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Immutable #1005 fixture: exact owner from merged base838d; target SSSOM rows plus one unrelated real control and exact header; Rule K target plus one unrelated control. These tiny tables are test subsets, not full production artifacts. Production hashes are independently pinned by the bounded writer.

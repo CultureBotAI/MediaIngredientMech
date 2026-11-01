@@ -1769,7 +1769,6 @@
 | FOODON:03301484 | Skimmed milk | FOODON:03301484 | FOODON | EXACT_MATCH | 24 |
 | ENVO:00002044 | Sludge | ENVO:00002044 | ENVO | EXACT_MATCH | 18 |
 | cas:29849-82-9 | sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
-| cas:17989-41-2 | sn-Glycerol 3-phosphate lithium salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:78074 | SnCl2 x 2 H2O | CHEBI:78074 | CHEBI | EXACT_MATCH | 7 |
 | cas:4263-52-9 | Sodium 2-bromoethanesulfonate | cas:4263-52-9 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:31824 | Sodium 2-mercaptoethanesulfonate | CHEBI:31824 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2621,6 +2620,7 @@
 | cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 20 |
 | NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 32 |
 | NCIT:C216679 | Carnitine Hydrochloride | NCIT:C216679 | NCIT | EXACT_MATCH | 14 |
+| kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | sn-Glycerol 3-phosphate lithium salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
 
 ## Unmapped Ingredients
 

@@ -1,0 +1,43 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_completed_promotion_requires_its_own_execution_receipt[approval] _____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8403/test_completed_promo...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+corrupt = 'approval'
+
+    @pytest.mark.parametrize("corrupt", ["missing", "approval", "backup", "candidate_hash"])
+    def test_completed_promotion_requires_its_own_execution_receipt(case, corrupt):
+        args = promotion(case)
+        writer.promote(**args, apply=True)
+        if corrupt == "missing":
+            args["log"].unlink()
+        elif corrupt == "backup":
+            p = writer.backups(args["log"])[writer.SSSOM]
+            p.write_bytes(p.read_bytes() + b"\n")
+        elif corrupt == "candidate_hash":
+            args["candidate_sha256"] = "0" * 64
+        else:
+            value = json.loads(args["log"].read_bytes())
+            value["approval"] = "APPROVED"
+            args["log"].write_text(json.dumps(value))
+>       with pytest.raises((ValueError, FileNotFoundError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, FileNotFoundError)
+
+../step4-writer-controls/receipt_check_removed/tests/test_curate_lithium_glycerophosphate.py:275: Failed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step4-writer-controls/receipt_check_removed/tests/test_curate_lithium_glycerophosphate.py::test_completed_promotion_requires_its_own_execution_receipt[approval]
+1 failed, 34 deselected, 13 warnings in 0.60s

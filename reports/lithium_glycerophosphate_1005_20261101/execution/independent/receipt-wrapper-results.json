@@ -1,0 +1,32 @@
+{
+  "wrapper_sha256": "1b907e603d31b3c7f33582ea43ad6ed443b0981a30febe9d5d71f94ce173b4fe",
+  "fixture_only": true,
+  "native_producer_sha256": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e",
+  "source_writer_sha256": "0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350",
+  "cases": {
+    "positive": {
+      "exit_code": 0,
+      "published": true,
+      "published_sha256": "ab560abc29ca95a91d5d0735dd61edbef0a33db5baf9e4dcfb023934a0eab402",
+      "audit_exists": true,
+      "log": "receipt-positive.log"
+    },
+    "audit-collision": {
+      "exit_code": 1,
+      "published": true,
+      "published_sha256": "ab560abc29ca95a91d5d0735dd61edbef0a33db5baf9e4dcfb023934a0eab402",
+      "audit_exists": true,
+      "log": "receipt-audit-collision.log",
+      "finding": "Receipt18 was published before the audit output collision was checked."
+    },
+    "post-promotion-comment-loss": {
+      "exit_code": 0,
+      "published": true,
+      "published_sha256": "406888ee5fe613613f75d443500ee13555c022235c73ab94689c2ff0d5e397b1",
+      "audit_exists": true,
+      "log": "receipt-post-promotion-comment-loss.log",
+      "finding": "Wrapper accepts target comment loss after promotion because it binds only the source receipt."
+    }
+  },
+  "production_mutations": false
+}

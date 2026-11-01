@@ -1,0 +1,41 @@
+MediaIngredientMech PR #1007 is merged (squash 2add44fbfe37544218d2f4daeb322b35debc5dd4, 2026-11-01T03:07Z) and its branch is deleted; #1003, #1006, #1008, #1009 and #1012-#1018 are closed; #1010 (evidence canary) and claw #693 are merged. Start from current main.
+
+The user approved the plan and decisions below. Work strictly in this order. Use a fresh branch from current main in your own isolated worktree for each PR. Never force-push or rewrite the old PR branches. Never edit or check out branches in the shared M5 claw checkout; use an isolated claw copy at current claw main.
+
+1. Redo #914 as a new PR: cherry-pick e9c3ca2, dec5e80, e30b6d0, b173371 and 720e2d2 onto current main. Leave out the merge commit 8dc2f266 and the claw-pin hunks (qc-evidence.yaml, .vendored_canon_ref). Regenerate the exports, indexes, unified snapshot, provenance and current-review.json. Confirm that 0 REJECTED rows have an empty mim_id, 0 kgmicrobe.compound rows carry a CHEBI, and the 9 tombstones have `representative:`. Reference #869, #882, #894 and #808. After it merges, close #914 with a pointer.
+2. #875: make NCIT:C61946 a skos:exactMatch for Na2HPO4·7H2O (§3 step 1), and move the ledger mim_id in the same commit. Add a receipt and rebuild the unified snapshot.
+3. #1004 (approved): DL-carnitine hydrochloride gets identifier NCIT:C216679 as skos:exactMatch (CAS 461-05-2, PubChem CID 5970).
+   - Remove the exactMatch cas:461-06-3 row.
+   - Set cas_rn 461-05-2 and take the chemistry from CID 5970.
+   - Mark 3-hydroxy-4-(trimethylammonio)butanoate as REJECTED_LABEL.
+   - Merge Carnitine_Dl_Hydrochloride into Carnitine_Hydrochloride and keep "Carnitine (Dl) Hydrochloride" as a synonym. The user approved reversing the 2026-07-05 surface-form dedup ruling.
+   - Never ground either record to CHEBI:48601, and stop CAS-xref automation from proposing it.
+   - Drop the DL-carnitine aliases.
+   - The user declined contacting ChEBI.
+4. #1005 (approved): sn-glycerol 3-phosphate lithium salt.
+   - Identifier kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt, with broadMatch CHEBI:15978 and the registry row.
+   - Remove exactMatch cas:17989-41-2.
+   - Set supplied_form: Sigma-Aldrich 94124, cas_rn 17989-41-2, form "lithium salt", note "free-acid CAS/FW; Li stoichiometry unstated".
+   - Clear the backfilled free-acid chemistry but keep its history.
+   - Drop the "Glycerol 3-phosphate" alias.
+5. #669 policy (adopted): "owned-name exclusivity at export". Each published `other` token is KEEP, SUPPRESS, DROP or MERGE.
+   - Implement it in the claw builder's candidate_alts as a claw PR, and add a sidecar mappings/suppressed_aliases.tsv.
+   - Tests: Rule K passes with an empty baseline; each suppressed pair has one sidecar row and unchanged YAML; the owner comes first in label_index; no DROP or REJECTED_LABEL exists without a cited source.
+   - Apply it to the 7 generic/stereo cases → SUPPRESS (also beta-lactose `lactose` EXACT→RELATED).
+   - Apply it to the 8 identity cases:
+     - DROP: both DL-carnitine aliases, the lithium salt, Na2glycerophosphate5h2o.
+     - MERGE only after form review: sodium succinate dibasic, MgCl2/MgCl2·6H2O, (NH4)2Ni(SO4)2/hexahydrate. Where the evidence is inconclusive, SUPPRESS and leave an issue.
+     - SUPPRESS: Vibriostat.
+   - Fix #1019 and #1020.
+   - Apply the policy to the 23 #912 pairs after step 7.
+6. Port #764 as a new PR onto #817's approval model, fold in #766, and rerun the whole review chain. Then apply #901's melezitose monohydrate and sodium perchlorate monohydrate corrections, each with fresh mapping-specific review.
+7. Replace #912 with focused PRs: (a) #753 CAS check digits plus #870 node IDs; (b) #871/#268 hydrate InChI/SMILES plus guard; (c) #751/#313/#235; (d) after #764, the #901 cohort as one receipt batch, excluding Na2hpo4_X_7_H2o, FeCl2·7H2O and 2-keto-D-gluconate. None of them may touch the unified snapshot. Then close #912 with pointers.
+
+For every PR:
+- Reference its issues and record the approved decision on them (no mentions). Add tests.
+- Run `just qc` including qc-sssom, and keep the receipt chain consistent.
+- Get an independent adversarial review of the final head. File its findings as issues, fix the in-scope ones and re-review.
+- Once the checks are green, merge through the merge queue (squash) and delete the branch. This repo does not auto-delete.
+- Merge one PR at a time, and rebase the next one onto the merged main.
+
+Do not touch the Intel Cycle 12 PRs (#999 and later) or #1010. No paid provider credits. Run gh and https git inside this Terminal session. Give a one-line report after each merge and a final summary, then stop.

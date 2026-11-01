@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch": "issue1005-lithium-glycerophosphate-identity",
+  "sequence": 18,
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1005",
+  "scope": "Approved distinct lithium-salt local identity, supplier-only free-acid CAS metadata, withdrawal of backfilled free-acid chemistry and false CAS identity row, and retirement of the generic alias; no scientific approval added.",
+  "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
+  "before_sha256": "d5cd812a8c44c85438d73c68c7a8c3067a505765e4cd54e3a64cef029f2d8ed6",
+  "after_sha256": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9",
+  "before_row_count": 2982,
+  "after_row_count": 2981,
+  "changed_rows": 2,
+  "added_rows": 0,
+  "removed_rows": 1,
+  "touched_subjects": [
+    "MIM:Sn-Glycerol_3-phosphate_Lithium_Salt"
+  ]
+}
+wrote output/step4-receipt-stage/issue1005-lithium-glycerophosphate-identity.json
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/receipt-fixture/make_step4_receipt.py", line 111, in <module>
+    with (RUN / 'step4-application/receipt-publication.json').open('x') as stream:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/receipt-fixture/step4-application/receipt-publication.json'

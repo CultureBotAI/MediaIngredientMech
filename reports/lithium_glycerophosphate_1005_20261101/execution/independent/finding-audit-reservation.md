@@ -1,0 +1,7 @@
+The independent Step 4 adversarial review reproduced a partial-publication defect in the proposed run-owned `make_step4_receipt.py` wrapper for #1005, before its first production receipt publication. This is not a defect asserted against an existing merged mapping receipt.
+
+The wrapper publishes native receipt 18 and only then opens `step4-application/receipt-publication.json` exclusively. If that audit path already exists, the run exits with an error after receipt 18 has entered the chain. The competing audit remains intact, but publication is incomplete.
+
+Evidence: wrapper SHA256 `1b907e603d31b3c7f33582ea43ad6ed443b0981a30febe9d5d71f94ce173b4fe`; independent fixture uses the real guarded source and promotion phases and the complete existing 17-link chain. Positive control passed. The audit-collision control returned exit 1 with receipt 18 already published. Run evidence is under `output/approved-plan-20261101T031134Z/step4-independent/receipt-wrapper-results.json`, `probe_receipt_wrapper.py`, and `receipt-audit-collision.log`; portable copies will accompany the fixing PR.
+
+Severity: low, publication/receipt completeness. Reserve the final receipt and audit together through the native exclusive publisher before either write. Add a regression that an existing audit prevents receipt publication, preserves competing bytes, and leaves the prior chain unchanged. Re-review the repaired wrapper before use. No production receipt was published by this failing fixture.

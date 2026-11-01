@@ -1,0 +1,6 @@
+{"name": "step4-gates-v1-focused-regressions", "argv": ["uv", "run", "--frozen", "python", "-m", "pytest", "-q", "-o", "addopts=", "-p", "no:cacheprovider", "tests/test_curate_lithium_glycerophosphate.py", "tests/test_mapping_change_receipt.py", "tests/test_reviewed_sssom.py", "tests/test_semantic_review_builder.py", "tests/test_semantic_mapping_review.py", "tests/test_ingredient_bundle.py", "tests/test_ingredient_bundle_dependency_refresh.py", "tests/test_unified_rejections.py", "tests/test_unified_source_holds.py"]}
+{"name": "step4-gates-v1-full-qc", "argv": ["just", "qc"]}
+{"name": "step4-gates-v1-curies-and-products", "argv": ["just", "curie-validate", "validate-products"]}
+{"name": "step4-gates-v1-unified-gates", "argv": ["just", "check-unified-rejections", "check-unified-freshness"]}
+{"name": "step4-gates-v1-writer-audit", "argv": ["just", "audit-writers"]}
+{"name": "step4-gates-v1-full-suite", "argv": ["uv", "run", "--frozen", "python", "-m", "pytest", "-q", "-o", "addopts=", "-p", "no:cacheprovider"]}

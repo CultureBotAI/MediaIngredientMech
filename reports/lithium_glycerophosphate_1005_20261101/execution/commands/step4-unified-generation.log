@@ -1,0 +1,66 @@
+============================================================
+BUILDING UNIFIED INGREDIENT MAPPING
+============================================================
+
+Loading MIM ingredient records...
+  2955 MIM records → 7934 name entries, 1782 CHEBI, 2609 ontology IDs
+
+  8733 MIM label-index labels (trusted verdicts outrank recipe term.ids)
+Scanning CultureMech ingredient occurrences...
+  15915 records → 201119 root and 8211 inline-stock occurrences, 4170 unique ingredient names
+
+Resolved: 2839 matched to MIM, 1331 not in MIM
+
+============================================================
+UNIFIED MAPPING COVERAGE REPORT
+============================================================
+Total unique ingredient names:  4170
+Have CHEBI ID:                  2048  (49%)
+  - from CultureMech term.id:   1674
+  - from MIM (fallback):        374
+Have CAS-RN:                    1887  (45%)
+Have KG-Microbe node ID:        1214  (29%)
+Matched to MIM record:          2839  (68%)
+Fully mapped (CHEBI + CAS):     1758  (42%)
+
+Status breakdown:
+  MAPPED                    2629
+  UNMAPPED                  1424
+  TERM_ID_NO_MIM            94
+  CHEBI_NO_MIM              23
+
+
+✅ TSV written to /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-unified-evidence/unified-candidate.tsv  (4170 rows)
+Unified export respects reviewed identity rejections.
+{
+  "timestamp": "2026-11-01T11:06:14.113371+00:00",
+  "operation": "native_unified_zero_change_rebuild_with_guarded_provenance_publication",
+  "before_sha256": "ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5",
+  "after_sha256": "ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5",
+  "canonical_bytes_unchanged": true,
+  "canonical_written": false,
+  "bounded_changed_rows": [],
+  "native_publisher_sha256": "768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee",
+  "provenance_before_sha256": "30449d7221332dd72ce1fcc1d244375bd3ea8f4c6961b7eb7ac6e92b8501c2c6",
+  "provenance_after_sha256": "894a4bd1ce014e9a78d7abc27d206112c299f971124c5c8a0059c0e84f6973c4",
+  "rows": 4170,
+  "occurrences": 209330,
+  "rejected_empty_identity": 0,
+  "local_compound_chebi_leaks": 0,
+  "scientific_approval_added": false,
+  "mim_head": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+  "claw_head": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+  "runtime_claw_head": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+  "culturemech_head": "a74dd489720c9df96cc073ffd11568d407d3c06c",
+  "transaction": {
+    "applied": true,
+    "changed": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/UNIFIED_INGREDIENT_MAPPING.provenance.json"
+    ],
+    "created": [],
+    "unchanged": [],
+    "journal": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-unified-evidence/unified-generation-receipt-journal/write-vyw2n07d.json"
+  },
+  "applied": true,
+  "changed": true
+}

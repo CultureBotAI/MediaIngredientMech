@@ -1,0 +1,87 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_native_commit_boundary_rechecks_scope_and_bound_bytes[destination_owner-sources] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8404/test_native_commit_b...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d37f5c0>
+phase = 'sources', race = 'destination_owner'
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("race", ["destination_owner", "source", "candidate_or_evidence"])
+    def test_native_commit_boundary_rechecks_scope_and_bound_bytes(case, monkeypatch, phase, race):
+        root, evidence, source, before = case
+        args = promotion(case) if phase == "promote" else None
+        original = writer.guarded.reserve_receipt_outputs
+    
+        @contextmanager
+        def changed(*a, **kw):
+            with original(*a, **kw) as handles:
+                if race == "destination_owner":
+                    record = yaml.safe_load(writer.frozen_owner())
+                    record["identifier"] = writer.NEW
+                    path = root / "data/ingredients/mapped/.ignored/nested/Competing.yaml"
+                    path.parent.mkdir(parents=True)
+                    path.write_bytes(writer.render(record))
+                else:
+                    path = root / writer.OWNER if race == "source" else (
+                        args["candidate"] if args else evidence / "chebi-15978-primary.json")
+                    path.write_bytes(path.read_bytes() + b"\n")
+                yield handles
+    
+        monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", changed)
+>       with pytest.raises((ValueError, RuntimeError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, RuntimeError)
+
+../step4-writer-controls/scope_callback_removed/tests/test_curate_lithium_glycerophosphate.py:238: Failed
+_ test_native_commit_boundary_rechecks_scope_and_bound_bytes[destination_owner-promote] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8404/test_native_commit_b...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10af135c0>
+phase = 'promote', race = 'destination_owner'
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    @pytest.mark.parametrize("race", ["destination_owner", "source", "candidate_or_evidence"])
+    def test_native_commit_boundary_rechecks_scope_and_bound_bytes(case, monkeypatch, phase, race):
+        root, evidence, source, before = case
+        args = promotion(case) if phase == "promote" else None
+        original = writer.guarded.reserve_receipt_outputs
+    
+        @contextmanager
+        def changed(*a, **kw):
+            with original(*a, **kw) as handles:
+                if race == "destination_owner":
+                    record = yaml.safe_load(writer.frozen_owner())
+                    record["identifier"] = writer.NEW
+                    path = root / "data/ingredients/mapped/.ignored/nested/Competing.yaml"
+                    path.parent.mkdir(parents=True)
+                    path.write_bytes(writer.render(record))
+                else:
+                    path = root / writer.OWNER if race == "source" else (
+                        args["candidate"] if args else evidence / "chebi-15978-primary.json")
+                    path.write_bytes(path.read_bytes() + b"\n")
+                yield handles
+    
+        monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", changed)
+>       with pytest.raises((ValueError, RuntimeError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (ValueError, RuntimeError)
+
+../step4-writer-controls/scope_callback_removed/tests/test_curate_lithium_glycerophosphate.py:238: Failed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step4-writer-controls/scope_callback_removed/tests/test_curate_lithium_glycerophosphate.py::test_native_commit_boundary_rechecks_scope_and_bound_bytes[destination_owner-sources]
+FAILED ../step4-writer-controls/scope_callback_removed/tests/test_curate_lithium_glycerophosphate.py::test_native_commit_boundary_rechecks_scope_and_bound_bytes[destination_owner-promote]
+2 failed, 33 deselected, 13 warnings in 0.57s

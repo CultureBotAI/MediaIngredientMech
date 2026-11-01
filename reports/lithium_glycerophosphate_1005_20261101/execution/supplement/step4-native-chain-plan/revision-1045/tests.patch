@@ -1,0 +1,89 @@
+diff --git a/output/approved-plan-20261101T031134Z/step4-native-chain-plan/revision-1045/before/test_native_chain.py b/output/approved-plan-20261101T031134Z/step4-native-chain-plan/test_native_chain.py
+index 11c98405..7366e9a3 100644
+--- a/output/approved-plan-20261101T031134Z/step4-native-chain-plan/revision-1045/before/test_native_chain.py
++++ b/output/approved-plan-20261101T031134Z/step4-native-chain-plan/test_native_chain.py
+@@ -3,6 +3,7 @@ import copy
+ import csv
+ import importlib.util
+ import io
++import subprocess
+ from pathlib import Path
+ 
+ import pytest
+@@ -136,3 +137,76 @@ def test_findings_cannot_be_blanket_retired_or_rewritten(fault):
+     if fault == "unrelated": after[-1]["resolution_reason"] = "changed"
+     if fault == "stale_owner": after[1]["current_record_sha256"] = "old-owner"
+     with pytest.raises(ValueError): c.compare_findings(before, after, "new-owner")
++
++
++@pytest.fixture
++def record_git(tmp_path, monkeypatch):
++    """Real Git paths, including Unicode and newline quoting; no source corpus writes."""
++    repo = tmp_path / "repo"
++    repo.mkdir()
++    def git(*args):
++        return subprocess.check_output(["git", *args], cwd=repo)
++    git("init", "-q")
++    git("config", "core.quotePath", "true")
++    git("config", "user.name", "Offline test")
++    git("config", "user.email", "offline-test@example.invalid")
++    owner = "data/ingredients/mapped/target.yaml"
++    paths = {owner, "data/ingredients/mapped/ASCII.yaml", "data/ingredients/mapped/β-Nicotinamide.yaml", "data/ingredients/mapped/Café.yaml", "data/ingredients/mapped/line\nbreak.yaml"}
++    for name in paths:
++        path = repo / name
++        path.parent.mkdir(parents=True, exist_ok=True)
++        path.write_text("identifier: fixture\n")
++    (repo / ".gitignore").write_text("data/ingredients/mapped/ignored/\n")
++    git("add", ".")
++    git("commit", "-qm", "Offline path fixture")
++    monkeypatch.setattr(c, "ROOT", repo)
++    monkeypatch.setattr(c, "BASE", git("rev-parse", "HEAD").decode().strip())
++    monkeypatch.setattr(c, "OWNER", owner)
++    c.base.cache_clear()
++    yield repo, paths, git
++    c.base.cache_clear()
++
++
++def test_real_git_unicode_and_newline_paths_are_exact(record_git):
++    repo, paths, git = record_git
++    legacy = {p for p in git("ls-tree", "-r", "--name-only", c.BASE, "data/ingredients").decode().splitlines() if p.endswith(".yaml")}
++    assert legacy < paths  # Real Git quotes names; this is the original failure mechanism.
++    assert c.individual_record_scope() == paths
++
++
++def test_real_git_only_target_content_change_is_allowed(record_git):
++    repo, paths, _ = record_git
++    (repo / c.OWNER).write_text("identifier: authorized-target-change\n")
++    assert c.individual_record_scope() == paths
++
++
++def test_real_git_ignored_nested_addition_is_refused(record_git):
++    repo, _, git = record_git
++    path = repo / "data/ingredients/mapped/ignored/Ω-new.yaml"
++    path.parent.mkdir()
++    path.write_text("identifier: unexpected\n")
++    assert git("check-ignore", str(path)).strip()
++    with pytest.raises(ValueError, match="membership changed"):
++        c.individual_record_scope()
++
++
++@pytest.mark.parametrize("name", ["ASCII.yaml", "β-Nicotinamide.yaml"])
++def test_real_git_removed_record_is_refused(record_git, name):
++    repo, _, _ = record_git
++    (repo / "data/ingredients/mapped" / name).unlink()
++    with pytest.raises(ValueError, match="membership changed"):
++        c.individual_record_scope()
++
++
++def test_real_git_same_count_rename_is_refused(record_git):
++    repo, _, _ = record_git
++    (repo / "data/ingredients/mapped/Café.yaml").rename(repo / "data/ingredients/mapped/renamed.yaml")
++    with pytest.raises(ValueError, match="membership changed"):
++        c.individual_record_scope()
++
++
++def test_real_git_unrelated_content_change_is_refused(record_git):
++    repo, _, _ = record_git
++    (repo / "data/ingredients/mapped/β-Nicotinamide.yaml").write_text("identifier: unexpected\n")
++    with pytest.raises(ValueError, match="Unrelated individual owner changed"):
++        c.individual_record_scope()

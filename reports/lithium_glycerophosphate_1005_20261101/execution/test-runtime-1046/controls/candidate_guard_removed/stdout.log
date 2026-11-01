@@ -1,0 +1,30 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_pure_candidate_claim_substitution_refused[source-MIM:invented] ______
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8417/test_pure_candidate_...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+field = 'source', value = 'MIM:invented'
+
+    @pytest.mark.parametrize("field,value", [("source", "MIM:invented"), ("validation_method", ""),
+                                            ("other", "Glycerol 3-phosphate"), ("predicate_id", "skos:exactMatch"),
+                                            ("object_id", "cas:17989-41-2"), ("mapping_date", "2025-01-01"),
+                                            ("comment", "unreviewed replacement"), ("object_label", "lithium salt")])
+    def test_pure_candidate_claim_substitution_refused(case, field, value):
+        _, _, _, before = case
+        current = writer.propose_record(before[writer.OWNER], timestamp=STAMP)
+        fields, rows = writer.table(candidate_bytes(before, current))
+        rows[0][field] = value
+>       with pytest.raises(ValueError, match="candidate rows|bounded native row"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_curate_lithium_glycerophosphate.py:159: Failed
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_curate_lithium_glycerophosphate.py::test_pure_candidate_claim_substitution_refused[source-MIM:invented]
+1 failed, 48 deselected, 12 warnings in 0.51s

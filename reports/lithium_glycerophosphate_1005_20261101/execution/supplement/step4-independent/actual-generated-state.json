@@ -1,0 +1,36 @@
+{
+  "base": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+  "production_mutations": false,
+  "checks": {
+    "data/curated/mapped_ingredients.yaml": "PASS: target-only record change; metadata date permitted",
+    "data/curated/unmapped_ingredients.yaml": "PASS: target-only record change; metadata date permitted",
+    "docs/data/all_ingredients.json": "PASS: only target identifier changes; other entries exact",
+    "docs/data/mapped_ingredients.json": "PASS: only target identifier changes; other entries exact",
+    "data/curated/all_ingredients_index.json": "PASS: only target identifier changes; other entries exact",
+    "data/curated/mapped_ingredients_index.json": "PASS: only target identifier changes; other entries exact",
+    "docs/data/ingredient_graph.json": "PASS: target identity/chemistry metadata corrected; coordinates and others exact",
+    "docs/data/ingredient_umap.json": "PASS: target identity/chemistry metadata corrected; coordinates and others exact",
+    "docs/data/ingredients.json": "PASS: only target browser metadata and generation timestamp change; rejected aliases absent",
+    "label_index": "PASS: exactly the preferred label resolves to target, under its local identity",
+    ".github/workflows/qc-evidence.yaml": "PASS: protected file bytes unchanged",
+    "scripts/.vendored_canon_ref": "PASS: protected file bytes unchanged"
+  },
+  "unified": {
+    "artifact_sha256": "ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5",
+    "byte_equal_native_candidate_and_base": true,
+    "rows": 4170,
+    "occurrences": 209330,
+    "hash_prefixed_names_preserved": [
+      "#Ar",
+      "#N2",
+      "#N2O",
+      "#argon"
+    ],
+    "bound_input_paths_rechecked": 19432,
+    "provenance_sha256": "894a4bd1ce014e9a78d7abc27d206112c299f971124c5c8a0059c0e84f6973c4",
+    "actual_runtime_claw": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+    "producer_claw": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+    "culturemech": "a74dd489720c9df96cc073ffd11568d407d3c06c"
+  },
+  "verdict": "PASS_ACTUAL_GENERATED_SURFACES_WITHOUT_SCIENTIFIC_APPROVAL"
+}

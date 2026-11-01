@@ -1,0 +1,36 @@
+{
+  "wrapper_sha256": "b70676c62d8d1e60206a76cd93fe5fc758de7e254ca46db512e3c7516fbc037a",
+  "fixture_only": true,
+  "limited_adaptations": [
+    "RepositorySettings identity is a fixture proxy, not a real Git attestation",
+    "CLI builder dispatch invokes unmodified native builder functions on tiny inputs"
+  ],
+  "cases": {
+    "positive": {
+      "expected_failure": false,
+      "error": null,
+      "canonical_unchanged": true,
+      "provenance_changed": true
+    },
+    "candidate_drift": {
+      "expected_failure": true,
+      "error": "ValueError: A frozen input changed before write",
+      "canonical_unchanged": true,
+      "provenance_changed": false
+    },
+    "new_input_record": {
+      "expected_failure": true,
+      "error": "ValidationFailed: 1 staged change(s) failed validation and nothing was written:\n  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/unified-fixture-v2/step4-mim/UNIFIED_INGREDIENT_MAPPING.provenance.json: input paths or bytes changed before publication",
+      "canonical_unchanged": true,
+      "provenance_changed": false
+    },
+    "culture_input_drift": {
+      "expected_failure": true,
+      "error": "ValueError: A frozen input changed before write",
+      "canonical_unchanged": true,
+      "provenance_changed": false
+    }
+  },
+  "production_mutations": false,
+  "verdict": "PASS_LIMITED_NATIVE_WRAPPER_CONTROLS"
+}

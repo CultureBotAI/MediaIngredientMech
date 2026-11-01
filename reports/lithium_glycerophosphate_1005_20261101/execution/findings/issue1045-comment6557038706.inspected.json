@@ -1,0 +1,11 @@
+{
+  "url": "https://api.github.com/repos/CultureBotAI/MediaIngredientMech/issues/comments/6557038706",
+  "html_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1045#issuecomment-6557038706",
+  "id": 6557038706,
+  "created_at": "2026-11-01T11:00:23Z",
+  "updated_at": "2026-11-01T11:00:23Z",
+  "capture_kind": "Structured fields transcribed from successful read-only gh api tool output in this session; not archived raw HTTP/API response bytes",
+  "recorded_at": "2026-11-01T11:02:52.634044+00:00",
+  "body": "The same Git quoting defect also exists in the run-owned generic merge/cleanup verifier `verify_mim_merge.py`, which is planned for this sequence. This extension is recorded before repair.\n\nA real isolated Git fixture with `\u0391-lipoic_Acid.yaml` demonstrates that `git diff --name-only` returns a quoted/escaped string. Passing that string back as a pathname makes the existing verifier's comparison report no difference even when the reviewed and simulated merged file contents differ. NUL-delimited enumeration preserves the exact path and detects the difference. The source-byte digest loop also skips the quoted string because it is not an existing filesystem path.\n\nThis is a medium-severity verification weakness for changed non-ASCII paths. No historical production merge mismatch is alleged; prior exact-head/integration reviews and closure evidence remain preserved. The fixture proof is `output/approved-plan-20261101T031134Z/step4-independent/{probe_merge_path_quoting.py,merge-path-quoting-proof.json}`.\n\nThe Step 4 closure will use a separately preserved corrected verifier with NUL-delimited Git paths and regression coverage, independently reviewed before any cleanup. This extends #1045's same root cause to the publication/cleanup boundary; it does not authorize deleting any unrelated branch or changing scientific content.\n",
+  "filesystem_capture_attempts": "Both subsequent attempts to save fresh gh API bytes failed with error connecting to api.github.com; the empty .json capture is retained separately as failed."
+}
