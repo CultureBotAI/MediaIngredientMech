@@ -1,0 +1,33 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_native_repair_preserves_cohort_header_other_rows_and_inputs _______
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+
+    def test_native_repair_preserves_cohort_header_other_rows_and_inputs(case):
+        native_available()
+        root, log, before, after, anchors = case
+        result = writer.repair(root, log, apply=True)
+>       assert (root / writer.MEMBERSHIP).read_bytes() == after
+E       AssertionError: assert b'# source=fr...h:100002\t3\n' == b'# source=fr...h:100002\t3\n'
+E         
+E         At index 115 diff: b'k' != b'N'
+E         Use -v to get more diff
+
+tests/test_repair_heptahydrate_membership.py:60: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_repair_preserves_cohort_header_other_rows_and_inputs
+1 failed, 61 deselected, 13 warnings in 0.63s

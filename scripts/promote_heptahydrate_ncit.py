@@ -20,6 +20,7 @@ import os
 import stat
 import sys
 import tempfile
+from collections.abc import Callable
 from pathlib import Path
 
 import yaml
@@ -209,7 +210,8 @@ def recheck_reserved(reservations: dict[Path, tuple[int, int]]) -> None:
 
 
 def publish(root: Path, outputs: dict[Path, bytes], inputs: dict[Path, bytes],
-            log: Path, backups: dict[Path, bytes], result: dict, *, apply: bool) -> dict:
+            log: Path, backups: dict[Path, bytes], result: dict, *, apply: bool,
+            validate_scope: Callable[[], None] | None = None) -> dict:
     """Caller owns the verified repository lock; every output validates first."""
     reservations = {}
 
@@ -218,6 +220,8 @@ def publish(root: Path, outputs: dict[Path, bytes], inputs: dict[Path, bytes],
             raise ValueError("Staged output differs from the bounded proposal")
         recheck(inputs)
         recheck_reserved(reservations)
+        if validate_scope is not None:
+            validate_scope()
 
     transaction = new_transaction(root, validate, log.parent / f"{log.stem}-journal")
     for path, data in outputs.items():
@@ -293,7 +297,8 @@ def apply_sources(root: Path, log: Path, *, apply: bool = False) -> dict:
     backups = {log.with_suffix(".before.yaml"): inputs[root / OWNER],
                log.with_suffix(".before-ledger.tsv"): inputs[root / LEDGER],
                log.with_suffix(".before.sssom.tsv"): inputs[root / SSSOM]}
-    return publish(root, {OWNER: owner, LEDGER: ledger}, inputs, log, backups, result, apply=apply)
+    return publish(root, {OWNER: owner, LEDGER: ledger}, inputs, log, backups, result,
+                   apply=apply, validate_scope=lambda: unique_destination(root))
 
 
 def table(data: bytes) -> tuple[list[str], list[dict]]:
@@ -370,6 +375,7 @@ def promote(root: Path, log: Path, source_log: Path, candidate: Path,
     if digest(proposed) != candidate_sha256:
         raise ValueError("Supplied candidate hash changed")
     after = promoted_sssom(before, proposed, owner)
+    unique_destination(root)
     if canonical == after:
         return {"applied": False, "changed": False, "approval": APPROVAL}
     if canonical != before:
@@ -382,7 +388,8 @@ def promote(root: Path, log: Path, source_log: Path, candidate: Path,
               "sssom_before_sha256": digest(before), "sssom_after_sha256": digest(after),
               "changed_rows": 1, "removed_rows": 1, "preserved_historical_source_tokens": True}
     return publish(root, {SSSOM: after}, inputs, log,
-                   {log.with_suffix(".before.tsv"): before}, result, apply=apply)
+                   {log.with_suffix(".before.tsv"): before}, result, apply=apply,
+                   validate_scope=lambda: unique_destination(root))
 
 
 def main(argv: list[str] | None = None) -> int:

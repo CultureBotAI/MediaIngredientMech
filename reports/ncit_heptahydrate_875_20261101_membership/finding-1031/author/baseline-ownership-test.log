@@ -1,0 +1,25 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_every_published_identifier_is_held_by_active_record ___________
+
+edges = [{'mim_identifier': 'BTO:0004304', 'occurrences': '1', 'recipe_id': 'CultureMech:015524'}, {'mim_identifier': 'BTO:000... 'CultureMech:009469'}, {'mim_identifier': 'CHEBI:113373', 'occurrences': '1', 'recipe_id': 'CultureMech:001414'}, ...]
+records = [{'curation_history': [{'action': 'CREATED_AS_UNMAPPED', 'changes': 'Imported from mim-queue (source_id=mediadive.ingr...e, ...}], 'identifier': 'MICRO:0000543', 'ingredient_type': 'UNDEFINED_MIXTURE', 'mapping_status': 'MAPPED', ...}, ...]
+
+    def test_every_published_identifier_is_held_by_active_record(edges, records):
+        active = {
+            str(record.get("identifier") or "")
+            for record in records
+            if record.get("mapping_status") != "REJECTED"
+        } - {""}
+        absent = sorted({row["mim_identifier"] for row in edges} - active)
+    
+>       assert absent == []
+E       AssertionError: assert ['kgmicrobe.c...hpo4_x_7_h2o'] == []
+E         
+E         Left contains one more item: 'kgmicrobe.compound:na2hpo4_x_7_h2o'
+E         Use -v to get more diff
+
+tests/test_culturemech_membership.py:155: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_culturemech_membership.py::test_every_published_identifier_is_held_by_active_record
+1 failed in 4.76s

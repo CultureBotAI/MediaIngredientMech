@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-11-01T05:29:06.011272+00:00
+Generated: 2026-11-01T06:11:00.461229+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2684,4 +2684,4 @@ Total: 2680 ingredients
 | CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | NARROW_MATCH | 20 |
-| NCIT:C61946 | NCIT:C61946 | Na2HPO4 x 7 H2O | MAPPED | NCIT | EXACT_MATCH | 26 |
+| NCIT:C61946 | NCIT:C61946 | Na2HPO4 x 7 H2O | MAPPED | NCIT | EXACT_MATCH | 32 |

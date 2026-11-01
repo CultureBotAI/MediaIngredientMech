@@ -1,0 +1,175 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_valid_competing_owner_after_reservation_blocks_original_paths[sources] __
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...7\t\tObsolete registry explanation\t\t\nMIM:After\t\tskos:exactMatch\tCHEBI:1\t\t\t\tmust|stay\t2026-08-27\t\t\t\t\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1099c6c40>
+phase = 'sources'
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    def test_valid_competing_owner_after_reservation_blocks_original_paths(case, monkeypatch, phase):
+        """#1033: every publishing path rechecks the exact destination owner."""
+        native = pytest.importorskip("kg_microbe_write")
+        root, source_log, _ = case
+        monkeypatch.setattr(writer, "new_transaction", lambda root, validator, journal: native.ValidatedWriteTransaction(
+            root, validator=validator, journal_dir=journal))
+        if phase == "promote":
+            writer.apply_sources(root, source_log, apply=True)
+            candidate = root / "candidate.tsv"
+            candidate.write_bytes(candidate_for(root))
+            log = source_log.with_name("promotion.json")
+    
+            def apply():
+                return writer.promote(root, log, source_log, candidate, writer.digest(candidate.read_bytes()), apply=True)
+        else:
+            log = source_log
+    
+            def apply():
+                return writer.apply_sources(root, log, apply=True)
+    
+        before = {p: (root / p).read_bytes() for p in (writer.OWNER, writer.LEDGER, writer.SSSOM)}
+        corrected = yaml.safe_load(writer.corrected_record(before[writer.OWNER]))
+        corrected["preferred_term"] = "Competing phosphate heptahydrate owner"
+        validated = writer.render(corrected)
+        competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+        original = writer.reserve_receipt_outputs
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                competitor.parent.mkdir()
+                competitor.write_bytes(validated)
+                yield handles
+    
+        monkeypatch.setattr(writer, "reserve_receipt_outputs", reserve)
+>       with pytest.raises(native.ValidationFailed, match="Destination identity already held"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValidationFailed
+
+tests/test_promote_heptahydrate_ncit.py:348: Failed
+_ test_valid_competing_owner_after_reservation_blocks_original_paths[promote] __
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...7\t\tObsolete registry explanation\t\t\nMIM:After\t\tskos:exactMatch\tCHEBI:1\t\t\t\tmust|stay\t2026-08-27\t\t\t\t\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107701220>
+phase = 'promote'
+
+    @pytest.mark.parametrize("phase", ["sources", "promote"])
+    def test_valid_competing_owner_after_reservation_blocks_original_paths(case, monkeypatch, phase):
+        """#1033: every publishing path rechecks the exact destination owner."""
+        native = pytest.importorskip("kg_microbe_write")
+        root, source_log, _ = case
+        monkeypatch.setattr(writer, "new_transaction", lambda root, validator, journal: native.ValidatedWriteTransaction(
+            root, validator=validator, journal_dir=journal))
+        if phase == "promote":
+            writer.apply_sources(root, source_log, apply=True)
+            candidate = root / "candidate.tsv"
+            candidate.write_bytes(candidate_for(root))
+            log = source_log.with_name("promotion.json")
+    
+            def apply():
+                return writer.promote(root, log, source_log, candidate, writer.digest(candidate.read_bytes()), apply=True)
+        else:
+            log = source_log
+    
+            def apply():
+                return writer.apply_sources(root, log, apply=True)
+    
+        before = {p: (root / p).read_bytes() for p in (writer.OWNER, writer.LEDGER, writer.SSSOM)}
+        corrected = yaml.safe_load(writer.corrected_record(before[writer.OWNER]))
+        corrected["preferred_term"] = "Competing phosphate heptahydrate owner"
+        validated = writer.render(corrected)
+        competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+        original = writer.reserve_receipt_outputs
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                competitor.parent.mkdir()
+                competitor.write_bytes(validated)
+                yield handles
+    
+        monkeypatch.setattr(writer, "reserve_receipt_outputs", reserve)
+>       with pytest.raises(native.ValidationFailed, match="Destination identity already held"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValidationFailed
+
+tests/test_promote_heptahydrate_ncit.py:348: Failed
+_______ test_promotion_refuses_preexisting_valid_competing_owner[False] ________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...7\t\tObsolete registry explanation\t\t\nMIM:After\t\tskos:exactMatch\tCHEBI:1\t\t\t\tmust|stay\t2026-08-27\t\t\t\t\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a3c97f0>
+completed = False
+
+    @pytest.mark.parametrize("completed", [False, True])
+    def test_promotion_refuses_preexisting_valid_competing_owner(case, monkeypatch, completed):
+        """A completed-byte no-op also must not hide a competing active identity."""
+        native = pytest.importorskip("kg_microbe_write")
+        root, source_log, _ = case
+        monkeypatch.setattr(writer, "new_transaction", lambda root, validator, journal: native.ValidatedWriteTransaction(
+            root, validator=validator, journal_dir=journal))
+        writer.apply_sources(root, source_log, apply=True)
+        candidate = root / "candidate.tsv"
+        candidate.write_bytes(candidate_for(root))
+        if completed:
+            writer.promote(root, source_log.with_name("first-promotion.json"), source_log,
+                           candidate, writer.digest(candidate.read_bytes()), apply=True)
+        before = {p: (root / p).read_bytes() for p in (writer.OWNER, writer.LEDGER, writer.SSSOM)}
+        competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+        competitor.parent.mkdir()
+        validated = writer.render(yaml.safe_load(before[writer.OWNER]))
+        competitor.write_bytes(validated)
+        log = source_log.with_name("conflicted-promotion.json")
+>       with pytest.raises(ValueError, match="Destination identity already held"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_promote_heptahydrate_ncit.py:380: Failed
+________ test_promotion_refuses_preexisting_valid_competing_owner[True] ________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...7\t\tObsolete registry explanation\t\t\nMIM:After\t\tskos:exactMatch\tCHEBI:1\t\t\t\tmust|stay\t2026-08-27\t\t\t\t\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109d0d040>
+completed = True
+
+    @pytest.mark.parametrize("completed", [False, True])
+    def test_promotion_refuses_preexisting_valid_competing_owner(case, monkeypatch, completed):
+        """A completed-byte no-op also must not hide a competing active identity."""
+        native = pytest.importorskip("kg_microbe_write")
+        root, source_log, _ = case
+        monkeypatch.setattr(writer, "new_transaction", lambda root, validator, journal: native.ValidatedWriteTransaction(
+            root, validator=validator, journal_dir=journal))
+        writer.apply_sources(root, source_log, apply=True)
+        candidate = root / "candidate.tsv"
+        candidate.write_bytes(candidate_for(root))
+        if completed:
+            writer.promote(root, source_log.with_name("first-promotion.json"), source_log,
+                           candidate, writer.digest(candidate.read_bytes()), apply=True)
+        before = {p: (root / p).read_bytes() for p in (writer.OWNER, writer.LEDGER, writer.SSSOM)}
+        competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+        competitor.parent.mkdir()
+        validated = writer.render(yaml.safe_load(before[writer.OWNER]))
+        competitor.write_bytes(validated)
+        log = source_log.with_name("conflicted-promotion.json")
+>       with pytest.raises(ValueError, match="Destination identity already held"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_promote_heptahydrate_ncit.py:380: Failed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_promote_heptahydrate_ncit.py::test_valid_competing_owner_after_reservation_blocks_original_paths[sources]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_valid_competing_owner_after_reservation_blocks_original_paths[promote]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_promotion_refuses_preexisting_valid_competing_owner[False]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_promotion_refuses_preexisting_valid_competing_owner[True]
+4 failed, 84 deselected, 13 warnings in 0.82s

@@ -1,0 +1,2844 @@
+# Approved Step 2 follow-up: preserved recipe memberships and guarded identity publication
+
+- Review: 20261101T062014Z-approved-step2-membership-followup
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-01T06:17:58Z
+- Finished UTC: 2026-11-01T06:20:14Z
+- Reviewer: Codex independent reviewer /root/step1_independent_review (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+All 36 selected targets have positive evidence-linked assessments. The 32 existing memberships now followNCIT:C61946, effective exports recover 32/32, and all three native publication paths reject the reproduced owner race. Independent probes, actual-state tests, full QC and native receipt/export replay pass. Earlier scientific holds remain unchanged.
+
+## Scope And Provenance
+
+Bounded follow-up to the approved Step 2 identity correction:36 maintained/generated/evidence targets, 438 hashed inputs, complete 202,098-row membership preservation and 13 export deltas. Scientific identities outside the one unchanged heptahydrate are not assessed.
+
+Selection: Explicit #1031 membership omission and #1033 native owner-guard repairs, their consumers/tests, actual execution and retained identity/release boundaries; no sampling.
+Coverage: full; 36 reviewed / 36 in the declared population.
+Source: working_tree at Git base 40b787d37d33d544551389ff019f2d64ad63d7cc.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml | maintained | Na2hpo4_X_7_H2o.yaml |
+| mappings/culturemech_recipe_membership.tsv | mappings/culturemech_recipe_membership.tsv | maintained | culturemech_recipe_membership.tsv |
+| scripts/repair_heptahydrate_membership.py | scripts/repair_heptahydrate_membership.py | maintained | repair_heptahydrate_membership.py |
+| scripts/promote_heptahydrate_ncit.py | scripts/promote_heptahydrate_ncit.py | maintained | promote_heptahydrate_ncit.py |
+| src/mediaingredientmech/utils/culturemech_occurrences.py | src/mediaingredientmech/utils/culturemech_occurrences.py | maintained | culturemech_occurrences.py |
+| tests/test_repair_heptahydrate_membership.py | tests/test_repair_heptahydrate_membership.py | maintained | test_repair_heptahydrate_membership.py |
+| tests/test_promote_heptahydrate_ncit.py | tests/test_promote_heptahydrate_ncit.py | maintained | test_promote_heptahydrate_ncit.py |
+| tests/test_culturemech_membership.py | tests/test_culturemech_membership.py | maintained | test_culturemech_membership.py |
+| tests/test_refresh_occurrence_statistics.py | tests/test_refresh_occurrence_statistics.py | maintained | test_refresh_occurrence_statistics.py |
+| scripts/build_culturemech_membership.py | scripts/build_culturemech_membership.py | maintained | build_culturemech_membership.py |
+| scripts/refresh_occurrence_statistics.py | scripts/refresh_occurrence_statistics.py | maintained | refresh_occurrence_statistics.py |
+| data/curated/ALL_INGREDIENTS.md | data/curated/ALL_INGREDIENTS.md | generated | ALL_INGREDIENTS.md |
+| data/curated/MAPPED_INGREDIENTS.md | data/curated/MAPPED_INGREDIENTS.md | generated | MAPPED_INGREDIENTS.md |
+| data/curated/all_ingredients_index.csv | data/curated/all_ingredients_index.csv | generated | all_ingredients_index.csv |
+| data/curated/all_ingredients_index.json | data/curated/all_ingredients_index.json | generated | all_ingredients_index.json |
+| data/curated/mapped_ingredients_index.csv | data/curated/mapped_ingredients_index.csv | generated | mapped_ingredients_index.csv |
+| data/curated/mapped_ingredients_index.json | data/curated/mapped_ingredients_index.json | generated | mapped_ingredients_index.json |
+| docs/data/all_ingredients.csv | docs/data/all_ingredients.csv | generated | all_ingredients.csv |
+| docs/data/all_ingredients.json | docs/data/all_ingredients.json | generated | all_ingredients.json |
+| docs/data/all_ingredients.md | docs/data/all_ingredients.md | generated | all_ingredients.md |
+| docs/data/ingredients.json | docs/data/ingredients.json | generated | ingredients.json |
+| docs/data/mapped_ingredients.csv | docs/data/mapped_ingredients.csv | generated | mapped_ingredients.csv |
+| docs/data/mapped_ingredients.json | docs/data/mapped_ingredients.json | generated | mapped_ingredients.json |
+| docs/data/mapped_ingredients.md | docs/data/mapped_ingredients.md | generated | mapped_ingredients.md |
+| mappings/ingredient_mappings.sssom.tsv | mappings/ingredient_mappings.sssom.tsv | generated | ingredient_mappings.sssom.tsv |
+| mappings/unified_mapping_rejections.tsv | mappings/unified_mapping_rejections.tsv | generated | unified_mapping_rejections.tsv |
+| UNIFIED_INGREDIENT_MAPPING.tsv | UNIFIED_INGREDIENT_MAPPING.tsv | generated | UNIFIED_INGREDIENT_MAPPING.tsv |
+| reports/sssom_completion_20260921/review.json | reports/sssom_completion_20260921/review.json | generated | review.json |
+| reports/semantic_review_20260921/resolution/current-review.json | reports/semantic_review_20260921/resolution/current-review.json | generated | current-review.json |
+| reports/ingredient_bundle_20261101_ncit875/review.json | reports/ingredient_bundle_20261101_ncit875/review.json | generated | review.json |
+| reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json | reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json | generated | dependency-refresh.json |
+| reports/ncit_heptahydrate_875_20261101_membership/README.md | reports/ncit_heptahydrate_875_20261101_membership/README.md | maintained | README.md |
+| reports/ncit_heptahydrate_875_20261101_membership/inventory.json | reports/ncit_heptahydrate_875_20261101_membership/inventory.json | maintained | inventory.json |
+| reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json | reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json | maintained | portable-sources.json |
+| reports/ncit_heptahydrate_875_20261101_membership/verify.py | reports/ncit_heptahydrate_875_20261101_membership/verify.py | maintained | verify.py |
+| reports/ncit_heptahydrate_875_20261101_membership/application/apply.json | reports/ncit_heptahydrate_875_20261101_membership/application/apply.json | maintained | apply.json |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Complete post-application QC | passed | True | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, mappings/culturemech_recipe_membership.tsv, scripts/repair_heptahydrate_membership.py, scripts/promote_heptahydrate_ncit.py, src/mediaingredientmech/utils/culturemech_occurrences.py, tests/test_repair_heptahydrate_membership.py, tests/test_promote_heptahydrate_ncit.py, tests/test_culturemech_membership.py, tests/test_refresh_occurrence_statistics.py, scripts/build_culturemech_membership.py, scripts/refresh_occurrence_statistics.py, data/curated/ALL_INGREDIENTS.md, data/curated/MAPPED_INGREDIENTS.md, data/curated/all_ingredients_index.csv, data/curated/all_ingredients_index.json, data/curated/mapped_ingredients_index.csv, data/curated/mapped_ingredients_index.json, docs/data/all_ingredients.csv, docs/data/all_ingredients.json, docs/data/all_ingredients.md, docs/data/ingredients.json, docs/data/mapped_ingredients.csv, docs/data/mapped_ingredients.json, docs/data/mapped_ingredients.md, mappings/ingredient_mappings.sssom.tsv, mappings/unified_mapping_rejections.tsv, UNIFIED_INGREDIENT_MAPPING.tsv, reports/sssom_completion_20260921/review.json, reports/semantic_review_20260921/resolution/current-review.json, reports/ingredient_bundle_20261101_ncit875/review.json, reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json, reports/ncit_heptahydrate_875_20261101_membership/README.md, reports/ncit_heptahydrate_875_20261101_membership/inventory.json, reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json, reports/ncit_heptahydrate_875_20261101_membership/verify.py, reports/ncit_heptahydrate_875_20261101_membership/application/apply.json | Full just qc passes at 2026-11-01T06:13:54Z, log SHA 509779056a924761900d9efeeb30d5d203d77cf6c45eca8b3dabb3983571fff4. |
+| Post-application regression suite | passed | True | mappings/culturemech_recipe_membership.tsv, scripts/repair_heptahydrate_membership.py, scripts/promote_heptahydrate_ncit.py, src/mediaingredientmech/utils/culturemech_occurrences.py, tests/test_repair_heptahydrate_membership.py, tests/test_promote_heptahydrate_ncit.py, tests/test_culturemech_membership.py, tests/test_refresh_occurrence_statistics.py | All 220 tests pass, including the actual published membership and owner/consumer invariants. |
+| Reviewed SSSOM receipt replay | passed | True | mappings/ingredient_mappings.sssom.tsv, reports/sssom_completion_20260921/review.json | Native reviewed SSSOM and approval-free receipt chain replay passes. |
+| Reviewed SSSOM export | passed | True | mappings/ingredient_mappings.sssom.tsv | 2986 canonical rows retain 1,740 supported and 1,246 withheld rows; target mapping remains withheld. |
+| Semantic review integrity | passed | True | reports/semantic_review_20260921/resolution/current-review.json | Report integrity passes; full semantic release remains FAIL with 1,733 blocking findings and 2,271 blocking assertions. |
+| Supported KGX export | passed | True | reports/semantic_review_20260921/resolution/current-review.json | Supported KGX export completes while preserving excluded-claim backlog. |
+| Supported KGX validation | passed | True | reports/semantic_review_20260921/resolution/current-review.json | Supported KGX validation passes without changing scientific dispositions. |
+| Companion export | passed | True | reports/ingredient_bundle_20261101_ncit875/review.json, reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json | Explicit selected companion export completes with preserved claims and evidence. |
+| Companion validation | passed | True | reports/ingredient_bundle_20261101_ncit875/review.json | Companion manifest and dependency bindings validate unchanged. |
+| Independent source and native transaction tests | passed | True | scripts/repair_heptahydrate_membership.py, scripts/promote_heptahydrate_ncit.py, src/mediaingredientmech/utils/culturemech_occurrences.py, tests/test_repair_heptahydrate_membership.py, tests/test_promote_heptahydrate_ncit.py | 158 tests pass; three independent real-native post-reservation owner-insertion probes refuse before mutation. Membership normal apply/no-op remains valid. |
+| Independent actual membership gates | passed | True | mappings/culturemech_recipe_membership.tsv, data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, docs/data/ingredients.json | Three actual-state native tests pass after production apply; the formerly failing ownership invariant is now green. |
+| Independent applied-state and product comparison | passed | True | mappings/culturemech_recipe_membership.tsv, data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, docs/data/ingredients.json | Exact application/journal/preimage and 32 selected pairs verified;241 of 256 prior native inputs unchanged, with only 13 expected count products and 2 writer/test files changed. |
+| Independent protected-file and Markdown replay | passed | True | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, mappings/culturemech_recipe_membership.tsv, docs/data/ingredients.json | Independently matched5417 protected files to baseline Git blobs, all 13 export before/after hashes and all four Markdown deltas in the actual durable capture. |
+| Independent portable artifact verification | passed | True | reports/ncit_heptahydrate_875_20261101_membership/inventory.json, reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json, reports/ncit_heptahydrate_875_20261101_membership/verify.py, reports/ncit_heptahydrate_875_20261101_membership/application/apply.json | Executed in the actual capture:163 portable source files and frozen inventory verify; decompressed journal/preimage and reconstructed32-pair output exactly match the applied membership hash. |
+
+## Scientific And Domain Assessments
+
+### Existing recipe memberships follow their current exact owner
+
+identity: supported. Targets: mappings/culturemech_recipe_membership.tsv.
+
+All 32 existing recipe/count pairs move from retired kgmicrobe.compound:na2hpo4_x_7_h2o to NCIT:C61946. Source header, total 202,098 rows and 202,066 unrelated rows are preserved. Every selected count remains 1; no source cohort is rebuilt.
+
+### Native scope validation across all three publication paths
+
+representation: supported. Targets: scripts/repair_heptahydrate_membership.py, scripts/promote_heptahydrate_ncit.py, tests/test_repair_heptahydrate_membership.py, tests/test_promote_heptahydrate_ncit.py.
+
+Membership, original source and original promotion writes all recheck destination uniqueness within native validation. Hash-bound inputs and held receipt/backup identities remain enforced; true repeats are safe, and promotion no-op also checks pre-existing conflicts.
+
+Native-valid ignored/nested competing owners inserted after reservation now cause ValidationFailed before the relevant mutation. Competitors, failed receipts and preimages remain. This guarantee uses the caller lock and native validation boundary; arbitrary later uncooperative writes are outside it.
+
+### Durable finite source-label routing
+
+consistency: supported. Targets: src/mediaingredientmech/utils/culturemech_occurrences.py, scripts/build_culturemech_membership.py, scripts/refresh_occurrence_statistics.py, tests/test_culturemech_membership.py, tests/test_refresh_occurrence_statistics.py.
+
+The preferred heptahydrate label, its dotted spelling and accepted bullet spelling route to NCIT:C61946. Native collection restores the archived 28+4 cohort; generic, sibling-hydrate, buffer and unrelated controls preserve their prior routing.
+
+Middle-dot and long English-name expansion remain outside this frozen32-edge repair. They are neither silently added nor claimed resolved. No blanket old-parent-ID rewrite occurs.
+
+### Current effective counts without historical YAML rewrite
+
+consistency: supported. Targets: data/curated/ALL_INGREDIENTS.md, data/curated/MAPPED_INGREDIENTS.md, data/curated/all_ingredients_index.csv, data/curated/all_ingredients_index.json, data/curated/mapped_ingredients_index.csv, data/curated/mapped_ingredients_index.json, docs/data/all_ingredients.csv, docs/data/all_ingredients.json, docs/data/all_ingredients.md, docs/data/ingredients.json, docs/data/mapped_ingredients.csv, docs/data/mapped_ingredients.json, docs/data/mapped_ingredients.md.
+
+Every changed catalog/index/browser record is the heptahydrate, with effective count 26→32. Nine CSV/JSON artifacts each change one record; browser metadata also refreshes its timestamp. Four Markdown artifacts change only target counts, timestamps where emitted and derived totals by 6. All other export content is equal.
+
+Historical record statistics remain26/26; maintained membership supplies the correct effective 32/32. ALL total 223,056→223,062 and MAPPED total 222,462→222,468 are derived totals, not additional source occurrences.
+
+### Preserved prior exact-form identity correction
+
+scope: supported. Targets: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, mappings/ingredient_mappings.sssom.tsv, mappings/unified_mapping_rejections.tsv, UNIFIED_INGREDIENT_MAPPING.tsv.
+
+Owner YAML, canonical SSSOM, rejection ledger and unified table remain byte-identical to the prior captured Step 2 outputs. This repair adds no alias, structure, role or identity claim. The exact NCIT heptahydrate and rejected anhydrous identity remain as previously recorded.
+
+The earlier native review is immutable historical context. Its earlier final-head PASS was superseded after the newly discovered membership omission. This follow-up positively assesses the corrected membership and amended guarded-writer scope; it does not relabel the original capture revision.
+
+### Unchanged withholding and native release boundaries
+
+scope: supported. Targets: reports/sssom_completion_20260921/review.json, reports/semantic_review_20260921/resolution/current-review.json, reports/ingredient_bundle_20261101_ncit875/review.json, reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json.
+
+All seven native export/validation commands pass with unchanged mapping and companion decisions. Mapping remains WITHHOLD; inherited chemistry and BUFFER claims remain open. Full semantic release remains FAIL with 1,733 findings and 2,271 assertions; integrity success confers no scientific approval.
+
+### Immutable historical evidence and complete bounded application
+
+provenance: supported. Targets: reports/ncit_heptahydrate_875_20261101_membership/README.md, reports/ncit_heptahydrate_875_20261101_membership/inventory.json, reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json, reports/ncit_heptahydrate_875_20261101_membership/verify.py, reports/ncit_heptahydrate_875_20261101_membership/application/apply.json.
+
+The frozen 169-file package preserves original failures, exact source revisions, native race results, actual application receipt and lossless preimages/journal. Portable verification reconstructs the exact applied output; original 185-file execution inventory and original receipts remain unchanged. No prior review pair is edited.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+- retain: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, mappings/culturemech_recipe_membership.tsv. Preserve the exact seven-water identity and its existing32 recipe/count pairs without substituting anhydrous or sibling hydrate identities.
+- defer: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml, reports/semantic_review_20260921/resolution/current-review.json. Unchanged chemical/BUFFER holds and native mapping WITHHOLD remain; this structural follow-up does not grant scientific approval.
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| authority | MAPPING_SEMANTICS.md | supports | One supplied form retains its exact identity; narrow migration does not collapse sibling hydrates or authorize unrelated scientific claims. |
+| profile | docs/record-review-profile.md | supports | Passing structural reviews require positive bounded assessments and do not replace native scientific dispositions. |
+| owner | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml | supports | Current owner remains byte-identical to the prior reviewed exact NCIT heptahydrate record, including historical 26/26 and unresolved chemistry/BUFFER evidence. |
+| membership | mappings/culturemech_recipe_membership.tsv | supports | Inspected the complete 202,098-row maintained membership artifact:32 selected pairs useNCIT:C61946, with 202,066 unrelated rows and source header preserved. |
+| applied | reports/ncit_heptahydrate_875_20261101_membership/application/apply.json | supports | Actual completed one-file native application, exact frozen source hashes and 32 recipe/count pairs; explicit no-scientific-approval statement. |
+| preimage | reports/ncit_heptahydrate_875_20261101_membership/application/apply.before-membership.tsv.gz | supports | Lossless frozen preimage matches the original membership bytes and native journal embedded beforeimage. |
+| journal | reports/ncit_heptahydrate_875_20261101_membership/application/journal.json.gz | supports | Complete native journal records only membership replacement and the exact preimage. |
+| actual | reports/ncit_heptahydrate_875_20261101_membership/independent/applied/verification.json | supports | Independent actual receipt/journal,32 pairs,202066 unrelated rows, all 256 prior native inputs and nine CSV/JSON product comparisons;241 inputs unchanged and 15 expected changes. |
+| actual_tests | reports/ncit_heptahydrate_875_20261101_membership/independent/applied/native-actual-tests.log | supports | Three independent post-application tests pass: every membership has an active owner, effective counts agree, and the exact committed cohort is preserved. |
+| delta | reports/ncit_heptahydrate_875_20261101_membership/application/export-delta.json | supports | Thirteen export deltas and5417 protected tracked files are bound to original hashes. Reviewer independently replayed all protected hashes,13 export pairs and four Markdown deltas. |
+| before1031 | reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/native-membership-owner-test-v2.log | supports | Existing native ownership test fails before repair solely on the retired phosphate-heptahydrate identifier; the earlier failed invocation is retained separately. |
+| before1033 | reports/ncit_heptahydrate_875_20261101_membership/independent/initial/valid-owner-race.json | supports | Native-valid competing owner introduced after receipt reservation caused initial membership writer false success; independently reproduced before fix. |
+| before_sources | reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-sources-valid-owner-race.json | supports | Same cause independently reproduced in original source-phase mutation, before expanding the fix. |
+| before_promote | reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-promote-valid-owner-race.json | supports | Same cause independently reproduced in original canonical promotion with the archived native candidate row. |
+| after_membership | reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/results.json | supports | Final real-native membership success/no-op pass; native-valid new ignored/nested competing owner is refused before membership mutation, preserving receipt/preimage and competitor. |
+| after_sources | reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-sources-valid-owner-race.json | supports | Final native source-phase callback rejects the same competing owner before either coupled owner/ledger write. |
+| after_promote | reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-promote-valid-owner-race.json | supports | Final native promotion callback rejects the same competing owner before canonical SSSOM mutation. |
+| source_tests | reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/focused-tests.log | supports | Independent final combined source suite:158 passed, one then-unapplied production assertion deselected, no skips; production assertion is now separately exercised. |
+| routes | reports/ncit_heptahydrate_875_20261101_membership/independent/initial/routing-delta.json | supports | Source routing changes exactly28 preferred-label and4 dotted-label occurrences in the complete relevant slice; middle-dot/English-name expansion remains explicitly separate. |
+| previous | reviews/structured/20261101T054115Z-approved-step2-ncit-heptahydrate-review/review.yaml | supports | Earlier immutable native review captured an actual working tree on durable 40b787d. Its separate cb9f59a external PASS was superseded after the membership omission; history is preserved. |
+| inventory | reports/ncit_heptahydrate_875_20261101_membership/inventory.json | supports | Frozen 168-file inventory plus the inventory itself makes 169 files; exact copied sources/results and lossless evidence transformations verified. |
+| portable | reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json | supports | Manifest preserves original source hashes, copied paths and lossless gzip transforms;163 portable source files verified by the maintained verifier. |
+| docs | reports/ncit_heptahydrate_875_20261101_membership/README.md | supports | Frozen scope, application, original failures, guard guarantee, exact export changes and remaining scientific boundaries are stated. |
+| full_qc_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-full-qc.json | supports | Full just qc passes at 2026-11-01T06:13:54Z, log SHA 509779056a924761900d9efeeb30d5d203d77cf6c45eca8b3dabb3983571fff4. Inspected actual command, timestamps and exit result. |
+| full_qc_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-full-qc.log.gz | supports | Full just qc passes at 2026-11-01T06:13:54Z, log SHA 509779056a924761900d9efeeb30d5d203d77cf6c45eca8b3dabb3983571fff4. Hash verified against the execution receipt; compression is lossless when present. |
+| focused_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-final-focused-tests.json | supports | All 220 tests pass, including the actual published membership and owner/consumer invariants. Inspected actual command, timestamps and exit result. |
+| focused_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-final-focused-tests.log | supports | All 220 tests pass, including the actual published membership and owner/consumer invariants. Hash verified against the execution receipt; compression is lossless when present. |
+| reviewed_qc_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-qc.json | supports | Native reviewed SSSOM and approval-free receipt chain replay passes. Inspected actual command, timestamps and exit result. |
+| reviewed_qc_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-qc.log | supports | Native reviewed SSSOM and approval-free receipt chain replay passes. Hash verified against the execution receipt; compression is lossless when present. |
+| reviewed_export_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-export.json | supports | 2986 canonical rows retain 1,740 supported and 1,246 withheld rows; target mapping remains withheld. Inspected actual command, timestamps and exit result. |
+| reviewed_export_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-export.log | supports | 2986 canonical rows retain 1,740 supported and 1,246 withheld rows; target mapping remains withheld. Hash verified against the execution receipt; compression is lossless when present. |
+| semantic_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-semantic-integrity.json | supports | Report integrity passes; full semantic release remains FAIL with 1,733 blocking findings and 2,271 blocking assertions. Inspected actual command, timestamps and exit result. |
+| semantic_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-semantic-integrity.log | supports | Report integrity passes; full semantic release remains FAIL with 1,733 blocking findings and 2,271 blocking assertions. Hash verified against the execution receipt; compression is lossless when present. |
+| supported_export_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-export.json | supports | Supported KGX export completes while preserving excluded-claim backlog. Inspected actual command, timestamps and exit result. |
+| supported_export_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-export.log | supports | Supported KGX export completes while preserving excluded-claim backlog. Hash verified against the execution receipt; compression is lossless when present. |
+| supported_qc_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-qc.json | supports | Supported KGX validation passes without changing scientific dispositions. Inspected actual command, timestamps and exit result. |
+| supported_qc_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-qc.log | supports | Supported KGX validation passes without changing scientific dispositions. Hash verified against the execution receipt; compression is lossless when present. |
+| companion_export_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-export.json | supports | Explicit selected companion export completes with preserved claims and evidence. Inspected actual command, timestamps and exit result. |
+| companion_export_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-export.log | supports | Explicit selected companion export completes with preserved claims and evidence. Hash verified against the execution receipt; compression is lossless when present. |
+| companion_qc_receipt | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-qc.json | supports | Companion manifest and dependency bindings validate unchanged. Inspected actual command, timestamps and exit result. |
+| companion_qc_log | reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-qc.log | supports | Companion manifest and dependency bindings validate unchanged. Hash verified against the execution receipt; compression is lossless when present. |
+
+## Limits And Additional Notes
+
+- This is a bounded structural, implementation and provenance review; scientific_review is false. It does not approve the full ingredient corpus or clear native release findings.
+- Full semantic release remains FAIL with 1,733 blocking findings and 2,271 blocking assertions. Exact NCIT mapping remains WITHHOLD; inherited chemistry and BUFFER claims remain open.
+- The frozen32-edge migration does not add the known three middle-dot or 17 long-name occurrences. Source expansion and broad freshness monitoring remain separate; no claim of complete upstream cohort reconciliation is made.
+- Native transaction guards assume the caller repository lock and validate before mutation. Arbitrary later non-cooperating edits are outside the guarantee; native I/O failures may require journal recovery.
+- Root executed full QC and seven native release/companion commands; the reviewer inspected their hash-bound receipts/logs and independently ran 158 source tests, three final-state tests, all three native race probes, actual application/export verification and protected-file/portable replay.
+- The source is the actual detached working tree at durable 40b787d with full index tree 7bfb6ccf0a523f35ff77c95856a87cf56eb1a74a, identical to the frozen feature tree. Final committed-head review and remote CI remain subsequent requirements.
+- #1031 and #1033 were recorded before fixes. Their pre-fix reports are external/portable observations, not prior structured finding objects; no previous_occurrences or fabricated terminal dispositions are created. Their reproduced defects are corrected in the inspected source and applied artifact.
+- The earlier immutable native pair 20261101T054115Z-approved-step2-ncit-heptahydrate-review remains preserved. It captured a working tree at 40b787d; cb9f59a was the later separate exact-head review. This new observation supplies the previously omitted membership coverage and the amended guard review.
+- Native inspection verified all 10,859 indexed paths against the full frozen tree and feature index, all 438 selected input bytes against their staged blobs and feature bytes, and all 169 new portable package files. No source revision was relabeled.
+- Known initial invocation/diagnostic failures and the original race failures are preserved alongside corrected tests. Passing current checks do not erase those historical observations.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261101T062014Z-approved-step2-membership-followup
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: 'Approved Step 2 follow-up: preserved recipe memberships and guarded identity
+  publication'
+started_at: '2026-11-01T06:17:58Z'
+finished_at: '2026-11-01T06:20:14Z'
+reviewer:
+  identity: Codex independent reviewer /root/step1_independent_review
+  kind: agent
+  independence: independent
+  independence_basis: Reviewer authored no production source, tests, data, exports
+    or implementation fixes. Root and a separate author implemented the changes. Reviewer
+    reproduced defects, wrote only external probes and this native review; a separate
+    read-only static reviewer corroborated the final bounded source scope.
+skill: curate-yaml-record (audit-only); native repository follow-up review
+completion: completed
+verdict: pass_with_limitations
+scientific_review: false
+summary: All 36 selected targets have positive evidence-linked assessments. The 32
+  existing memberships now followNCIT:C61946, effective exports recover 32/32, and
+  all three native publication paths reject the reproduced owner race. Independent
+  probes, actual-state tests, full QC and native receipt/export replay pass. Earlier
+  scientific holds remain unchanged.
+source:
+  git_revision: 40b787d37d33d544551389ff019f2d64ad63d7cc
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/SKILL.md
+    sha256: 4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a
+    role: context
+  - path: .claude/skills/curate-yaml-record/references/review-checklist.md
+    sha256: d4df94935abfd922e84c3512e9a9b7735240f8e266d9a3ae23bb4933926b04eb
+    role: context
+  - path: .github/workflows/qc-evidence.yaml
+    sha256: 288ef1795582105763952c4104d1455c1fef273a65528949f1e558d39c7306f3
+    role: context
+  - path: .github/workflows/qc-reviewed-sssom.yaml
+    sha256: 70a6cf78722adb6f29630c8c032403641026b7bb2554578cd91fafdcd0a82321
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+  - path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+    sha256: 0f828858e17f867db967f589a72cdb0e6a8fbc3091aae63a2a4ab730094e7108
+    role: context
+  - path: UNIFIED_INGREDIENT_MAPPING.tsv
+    sha256: 6126d33febe2a577ff60295a36d6e5dd649a39e73c218f4d18468f3813adbce9
+    role: target
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/curated/ALL_INGREDIENTS.md
+    sha256: 325c7fb5d37e9cc1fa3c871c763895c3720cf17ede454fa04b40aa11a9e25db3
+    role: target
+  - path: data/curated/MAPPED_INGREDIENTS.md
+    sha256: f669b7b94c4fe4ae6fc82177ec1e6052c65335521acdaabb28065b1496d7bda2
+    role: target
+  - path: data/curated/all_ingredients_index.csv
+    sha256: 3415c24791dce635de0ddc47ab3e04ab08d874a9916aa4c1f3f7717362bc3292
+    role: target
+  - path: data/curated/all_ingredients_index.json
+    sha256: 88e1bfc3572ed53100b8144c0a7aa2243292c4c91884b4389566dc275831f9fc
+    role: target
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 2bc4b3663ea6beae04693bd517e2901ce69cf912d828599a0b1f7c19d2f8ba77
+    role: context
+  - path: data/curated/mapped_ingredients_index.csv
+    sha256: 3d258feae0d05e69175719bd5e4a505db3253426bba45635cdc80ca56beb20c1
+    role: target
+  - path: data/curated/mapped_ingredients_index.json
+    sha256: 659965010336bcdb8b3da32e4ef867eb4327795879c6479406531d716011b8c7
+    role: target
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 22ececf4e0e7a37ca0636d4635ed5408a6517ba7ef6e7a1daf713f09a7802cd8
+    role: context
+  - path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    sha256: 6e816ef6a1dad8dab9c3ddd711ca84d8a3489bedb175d540ea3cb618c7068873
+    role: target
+  - path: docs/INGREDIENT_BUNDLE.md
+    sha256: 03cbd45a57a57de8acc3cfe01bcdcf50f4b9fdefdc664552bfd679eb8eeb88b9
+    role: context
+  - path: docs/SSSOM_RELEASE.md
+    sha256: 348f1489c606d96df806b0c90582b46ed31756dc69d3da2b3b5d131e734f4e25
+    role: context
+  - path: docs/UNIFIED_MAPPING_REJECTIONS.md
+    sha256: b0989f6b82dd40e6a3593c297935aaf21c8f9fc6591b456e484e38e78d3a3317
+    role: context
+  - path: docs/data/all_ingredients.csv
+    sha256: 9ec2fc9acc0dd86a5d0cf1ed1c8dc57ddaf3fff590aa7d0c85e4e739cb2217bf
+    role: target
+  - path: docs/data/all_ingredients.json
+    sha256: 604b2e87f4e039c8ddfc0d4af925115ff891c6de8d476bef7911d6db126a7e21
+    role: target
+  - path: docs/data/all_ingredients.md
+    sha256: c37c6d6ca754c96aba9462a9f19ca73801482f7e88dcccc020de83a9b3928393
+    role: target
+  - path: docs/data/ingredient_graph.json
+    sha256: 33210b7ee9422ac600fdd75f9e7729cbc959f9319996bfd8af019ffdf2e30769
+    role: context
+  - path: docs/data/ingredient_umap.json
+    sha256: 60e39651d79798fcac92e03f39727e73d2298d9e5204fad3f329da7bc7fbe7b7
+    role: context
+  - path: docs/data/ingredients.json
+    sha256: aad6ee6ad1c78bfcb4ace97322944ce04db748e5a4451e5a1c09fcc2e72bb6fd
+    role: target
+  - path: docs/data/label_index.csv
+    sha256: 97488a74286f196abed443eab72401531b0edbb27b29a3218525dff8299f703f
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: b60c9f26963c1d14ea2a91a441807a6d369305fecd61b91c29da2eb5c81a1f72
+    role: target
+  - path: docs/data/mapped_ingredients.json
+    sha256: dc7b6b2e9c4c16adbcca1e383164d0689e71bd0879eaadd489134aded361e0c1
+    role: target
+  - path: docs/data/mapped_ingredients.md
+    sha256: 2e09e4e059814e526c651a0b10cadba127a4f4ebcbb6f1470b58a35b06e62995
+    role: target
+  - path: docs/data/unmapped_ingredients.md
+    sha256: f81d931b9a8422974e3ac1252c74bcfe5537300606a600b86f14477d8109599e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: justfile
+    sha256: a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a
+    role: context
+  - path: mappings/culturemech_recipe_membership.tsv
+    sha256: 55ce5fabd42eb4cc1df628d4fd6a45b813caccbc7d7773105ece5633dd313897
+    role: target
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67
+    role: target
+  - path: mappings/unified_mapping_rejections.tsv
+    sha256: 717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d
+    role: target
+  - path: reports/ingredient_bundle_20261101_ncit875/README.md
+    sha256: 345fab013b72a195cfefc668137e968863e6c2772bcf287fb0c69d3cd3022c24
+    role: context
+  - path: reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+    sha256: 3e422eeffe4ba4415a46314cd69f086a23d46ce3e164bb06aa1782eeb1c15a09
+    role: target
+  - path: reports/ingredient_bundle_20261101_ncit875/prior-review.json
+    sha256: d391ec9e0dc004494431f76a81c392efef114746e7bf1eca57c7ce4dc7dec14c
+    role: context
+  - path: reports/ingredient_bundle_20261101_ncit875/review.json
+    sha256: 7ea74db32bcc33b464a39101e9d81319729dcc73ffd2eba997fa8c99cfb735f5
+    role: target
+  - path: reports/ncit_heptahydrate_875_20261101/README.md
+    sha256: 1e04dc58c21b76fc7d5fb90c49b7f8f4e8141417f868eb69680e897dd6785e7e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/README.md
+    sha256: 2e5fa5932c20329d5a5f3266f4ce2e8722e85e5510382a4a4556ffaf80f30ac1
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/application/mapping-promotion.json
+    sha256: 6f2688c95739c65106a79c535b7a6513c5ad6d2a6d4a6c0c0251a4d114ac8b41
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/application/receipt-publication.json
+    sha256: 0d3d1f417d2589f401e0d7d366ac755bcaee9d34e0011733359bb7bae9ac86c6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/application/source-apply.before-ledger.tsv
+    sha256: 82d7d79172a5efd966f0a6a97ead4faae186128f6d6fdb327366f041ad06aba4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/application/source-apply.before.yaml
+    sha256: e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/application/source-apply.json
+    sha256: b24dab0665d4e2c6508ea13bbf39dc0ebb85b69241dc856a613000bc37944326
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/artifact-locations.json
+    sha256: 36e291a97b1890ae63309e9b0576610a70efb9fe34246c684dca19d9be660001
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/context.json
+    sha256: 0270b3fbb94b86bce5a63e685991971012f033629e59bac757017621e509f0b2
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/excerpts/before-target.tsv
+    sha256: 0998451597630a5c571051e9bc279416915b2dd04c3c765f6db6c09c2d65f5e0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/excerpts/candidate-target.tsv
+    sha256: f72028c6dff4fd0d58f73eb7b7cc9307927dfc18339bebf17968259ad4b0f3a3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/excerpts/canonical-target.tsv
+    sha256: 67a56d28955151eb632371df98a5868525e2ebbdf885ee8454267e349f92838d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/excerpts/mapping-review-target.json
+    sha256: d4b5b83f132b177a6190de6ed62f4a3dd6e3a052e561f1087ad405eea96d0e96
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/README.md
+    sha256: df3dc80d626cf110088b30ef98c68baeb7fb3933639394a8998307735fe05caf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/canonical-invariants/receipt.json
+    sha256: 103b5048a0c14e9c5727b0be4f6453a0acd8123e195614b1636dcb61361eef97
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/canonical-invariants/rejects.tsv
+    sha256: 9401ca51a25ee4f9a0aadafa73cc8f9266d0ffc60df7f037d1727e482367fc7f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/harnesses/analyze_step2_final.py
+    sha256: 3099c70a843c54a84af5df56ea8557f509fdc7ab8680e3915688479f961cc5b4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/harnesses/guarded_unified_revision.py
+    sha256: 889c609593c98a3ebbd998d0db717e8606f9e9fd394f8c7d18a0557c06f30149
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/applied-verification.json
+    sha256: d815db12ad00056fce3518d762d0d304da65535b5b7ab2ffa8fe638a06133242
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/applied-verification.log
+    sha256: 74c6f61a6b98d0d2a6d5016a290872348b6786504a02aa8f2e82aa812dda1fa4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/evidence-index.json
+    sha256: a9bfa9b60de957e6c28bfd16f00a7f3d2d839b5b29d240e883ab95d8d08450b8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/focused-tests-fixed.log
+    sha256: 257e5b10abe05922a55c7cea19d54fcb2525574b9a4a3c900ceecfcff6b19d14
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/focused-tests.log
+    sha256: 90063dfa901461484dee9ef160d1f921ce0dcaedd610e822e5f6b8b8a806cccd
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/probe_reservation_fixed.py
+    sha256: e7cb7bb9e9d53f7321d1157e95aa353105696a66d6577f44ac1061da71f40579
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/probe_reservation_race.py
+    sha256: 6b3ed3ee1e0083cdf6e8ead0eb8216d912542d4c7242060e525a56131a19261e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/products-verification.json
+    sha256: 7cb98bd00d9c4f27ba88f0a17277244fd052b4cf847a191a16cb189e62f19182
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/products-verification.log
+    sha256: 8bc3779b1a7edd08d6f7aed3ca246dad8712f510e519ca759991d412f5a8e0e4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/reservation-fixed.log
+    sha256: 51605401ac3e7b94fe2c6e1a80c1f4324e0e40889f210425ab1837dceeeccb20
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/reservation-fixed/results.json
+    sha256: 691709b8a12cd004f711318230470f10e6a58b4fecee07494ffe20679a85e7d9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/reservation-race.json
+    sha256: e7d2d840b53eee5dbb3a23cdc372a7ff961a5504020817deccef997a78021085
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/reservation-race.log
+    sha256: e7d2d840b53eee5dbb3a23cdc372a7ff961a5504020817deccef997a78021085
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/review.md
+    sha256: 41f1ccf8d32e3255828c1a5195b66e22ff774bda4160ea64157559cd183173ac
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/verify_applied.py
+    sha256: 2912a0f1444904ebe550077256447a4a327cfe1ad31024f322074f7ba9b0504a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/verify_products.py
+    sha256: 17d474a9625ce12127224dff81fcf9cc95abafbd7cc4d9ea45b716bfb1cf475b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/independent-review/writer-before-reservation-fix.py
+    sha256: a66389a3379a761ee263aceb08222b6508f57cb9b8e69e996e82af732b59bb85
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/initial-artifact-locations.json
+    sha256: 246e3bef34a64c4c701d5e499763df87bd025c1b7931d56162c5ed70602d9873
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-assemble-review.json
+    sha256: c23df9a081230a35e669cbae039a4a12003a64b3348bdba6f1819ccb179f6387
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-assemble-review.log
+    sha256: 623224fefd78d12969ac84056e2194844977c5c701550885daf1b401a62ca382
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-bounded-delta-correct-tsv-reader.json
+    sha256: d9ef1d080bd2553d31ecaabe33ed9853870c2d43960cbb33a3e369c1aaa2fb96
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-bounded-delta-correct-tsv-reader.log
+    sha256: 7f7db8caaab6d9ce14f5c2f96b4e4963c36d67d7e9a7f4409273dfae887b6d4f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-canonical-invariants-actual-kg.json
+    sha256: 1967ed8fae5804e940cf9549fc5b9e757e0b8c43f2ecf245aa45fd0dc73c25f8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-canonical-invariants-actual-kg.log
+    sha256: e359124fa08279491b2032a31f005a93801de8104eb3cb9a81264637c5baa910
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-export.json
+    sha256: ca972edd1d6aec3f0b769202450b83dc3233a49636bfa8c56e4a3ff71a60a527
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-export.log
+    sha256: 3e86f5a9b08481d3e0845ef5787355048f4a1d36a5af9946ec02ffe1b4b605c8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-refresh.json
+    sha256: a6b657db189aaad21d30501e38512be24d74d0694989dad01150c6de73a8d1c2
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-refresh.log
+    sha256: 44150a692785956fdd4b537d4b037590de05f14a3729d97d409f62e9f064a7fa
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-regression-tests.json
+    sha256: a469d1d1d576a80249150d22509250f5b196e25abad0d56dca90ad1c376f184f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-regression-tests.log
+    sha256: 875c3c5c4441fcfe21d55c181f56f4f024493c8d55d5522c93747bb6bea1fbde
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-validate.json
+    sha256: ecfa9021094032cf3aa228402f473143781a036fba398568c9befd7ddca0d785
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-companion-validate.log
+    sha256: ce1e341213b171743cc30ebffe8905ffed4d4d4edbf8ab4d35f184dfdf154d41
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-focused-refresh-tests.json
+    sha256: 4053a03049ba09ac4753c3a106cc2bd33bd383d1018edbf491490365152c8085
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-focused-refresh-tests.log
+    sha256: 1fabedf6dbbdae288b3949354e71e8f3f196da9ff75f3f37788364bfe2d7830a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-full-kgx.json
+    sha256: 5a1a4f9c1376124969e063611222552bdf52f926712e076c03ba78411fc8c345
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-full-kgx.log
+    sha256: 308a823acf7e18474b76c9e547ec336af6c28bb777a47ebe53271bc5f22565ed
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-full-qc-after-exports.json
+    sha256: af40b8b3761d54be0b96a9b7a5bbebb922d6c02d33be72453e81955c2ec9187d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-full-qc-after-exports.log.gz
+    sha256: 774e1bf4fe4bb77aec20802e420c80582f3febf9326d72e790e4134416222c5d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-full-qc.json
+    sha256: d717163764d2e8bcca8e62a342402f44b12930ce7b27e8f94561311c793139f3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-full-qc.log.gz
+    sha256: 58204cb445032954e4bf8cad0046f4c7c864fa78cbd42fd6ef2174bafbd36b8b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-product-labels.json
+    sha256: 919d4bc1db4419cb79518db4e8125efb84286c336f35003708249cdf8ed1b92a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-product-labels.log
+    sha256: 0398a65c658f872dd271612d18e18befa04dfded300d1f85dc313b0d51d6d80f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-receipt-regression-tests-after-generation.json
+    sha256: a7bd727afa4725d6782e83d2428acf87fcd0dec9d224efba03f846e8a639abe6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-receipt-regression-tests-after-generation.log
+    sha256: e3c6db86bd88d95a35de6b4f30e2eff3ee427ab94874b85fc2acf85336ece906
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-receipt-regression-tests.json
+    sha256: 52bb53e0c693e6f11ff846f22f224af4087dbf219d2cad61d219836267d9d467
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-receipt-regression-tests.log
+    sha256: 574c6b0216088d066b31a51a98eeca0e5764d450630b6bbfeaffbf9b3e448fed
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-reconcile-sssom.json
+    sha256: deaa31ad4f271d965f52553faaeb9879c437ec5c5d71aba2d757fdc216934c66
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-reconcile-sssom.log
+    sha256: 8bf18010d973e92de327bf8580964cbe3306206d7191c45a7b1731df9c7d61d7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-refresh-49-tests.json
+    sha256: e607f89ecd56c00212392fd3b064a04a72f5dd91c7a665ca4349d77953f15a66
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-refresh-49-tests.log
+    sha256: a57ec66333404f7a2589d3d9825aff41c600c3c50fae406496fae547a86759d3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-refresh-original-negative.json
+    sha256: 7087ef409aba89da372ed9e9214d3167501f9d67bb9216011e377322395b1ded
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-refresh-original-negative.log
+    sha256: fc8512395b5d98f01b91c766584c20abe42079a0e44311b743f998aba8a5a5ce
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-reviewed-sssom-export.json
+    sha256: b53b47c83408e6b7d36f4eafa32a8bf88ab9cf91de80fb98b8a751609b1b5f5a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-reviewed-sssom-export.log
+    sha256: ea42c3393adad836b0a987a5588f98dc8ffbfb3b34adea118141cbb379e4f621
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-reviewed-sssom-qc.json
+    sha256: 6bd6d71f70d47331914911d12eb46aca6704948eaaf87a5f114d82b170517fe9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-reviewed-sssom-qc.log
+    sha256: af9b5a362fad00b223ca94107d3d90ff26e370d1c36eaa78c42d9b11e70ba186
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-semantic-build.json
+    sha256: 8ef9e5815ff99e8fadfc80994c4f5bd09ffc669ff708d50093e79bf0126392bf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-semantic-build.log
+    sha256: 9ad3af191a6b02eb58ee21ee25ee417d62e4d52653cd5f9dff02d09a20477f19
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-semantic-integrity.json
+    sha256: 25748c1ba5c9c83e11daf7f98af8f421196f40cf352da72f8b0ebee140c00387
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-semantic-integrity.log
+    sha256: b2f1341524d27201138e509b4ca6c7d3c0a14c4874543aa6cabe488eb049ddab
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-sssom-curies-subjects.json
+    sha256: 65a67cfa3a65a7d3e4fdd2e7d8dadf07971b576f34804c1b607ef3db2592e48f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-sssom-curies-subjects.log
+    sha256: 365a95943ad509767c3e60e2d9c9d8f07988ea7fbf85fe49982d6e40aa817f68
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-subject-resolution.json
+    sha256: 2e34327cfa4fc6b521707929a4895850ed663977c66eb892f956905a7445fe25
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-subject-resolution.log
+    sha256: 8fdc3a97e377a127234d02d20f7e456c27ec6444d6effa2ba2a7bcf8874aedef
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-supported-kgx-export.json
+    sha256: 7026887988fb2727ff0a4de5c31406cea9e265e397e4afc83d00e9bb7540af93
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-supported-kgx-export.log
+    sha256: 383a95ae1e74d795bac34d09234a474f8e2856f566fe06cd1d1a94caa1afbbc2
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-supported-kgx-qc.json
+    sha256: df9bca33a2d4b53b949e07c5020301b11717bdbc5cf178b43e206327c8ec3ad6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-supported-kgx-qc.log
+    sha256: 76585cbf11b4249faf99cb3c31583d72dfc51dc094902f6e4f9dd4e2084816b7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-unified-generation.json
+    sha256: cec72cc7e3044ff4c4f9b7fd3f0ab38c6c95c2db7c038ed4b24361a929fee847
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-unified-generation.log
+    sha256: 47b26d8cb8e8b4742f03b2d21db16ff2e68d7de80ce7a7261cda65ec81d8e905
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-unified-stamp.json
+    sha256: 0e53c5228dd2f26b5b46121a53d0c5c08c68c372a74263ff2f50f4d966ea0480
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-unified-stamp.log
+    sha256: d9aa9bda5950b09fc0431413f2032e4138a4bdcf006912a50d3b9487c6f036ff
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-visualization-metadata.json
+    sha256: 959682b8ce312d865698bca28e799739bf072a449876f407c2c0a0214c297912
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-visualization-metadata.log
+    sha256: 43b707c879588b6e3de22422f59d81996e6e8fa558d339707a3c1ef579f7cc2c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-writer-audit.json
+    sha256: 108cc86085d82594891bb43762a2e736bb1d82cfa48f35216a9bdf9acff780c3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/logs/step2-writer-audit.log
+    sha256: 7cc62649a4c51e8faccb5698731bfc39e5b0bfcf6c877486418c041b91742778
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/qc-artifact-locations.json
+    sha256: d850cfbb78184395f5b03c9950e47ee171a37b3eab5e5953406693173d7f0ad6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/unified/diagnostic-incorrect-final-comparison-v1.json
+    sha256: b9f7a39577084ef0356f7689c6a2b08194f1cb3888ce8b5a6ad6dda9e641d289
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/unified/final-comparison-v2.json
+    sha256: 7f7db8caaab6d9ce14f5c2f96b4e4963c36d67d7e9a7f4409273dfae887b6d4f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/unified/unified-generation-receipt.json.gz
+    sha256: ceea2fc32bbfb4a5dafbe66165219015731e98eb8c18551ba38c4558fedb78b9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/final-checks/visualization-delta.json
+    sha256: de40a68a3618a1b499b878cba89c26a99275b247eb15479873ac12ef64bad375
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/comparison-inputs.json
+    sha256: 37f6b3bb4efecb31ef0932ca1d4c81f31b871d0a1f460bd3b244b8abd382236f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/generation-receipt.json
+    sha256: a86995fa1754a56ed86afc1606794915582570c667685435353e3f3fc37e5c97
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/inputs-after.json
+    sha256: c067ca3c4a8e8c5f4dcde5b024fea5501a0d48b591e6e5910851d6a71d054fef
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/inputs-before.json
+    sha256: c067ca3c4a8e8c5f4dcde5b024fea5501a0d48b591e6e5910851d6a71d054fef
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-config.json
+    sha256: af3a2d009ea262ee7ab3e2a34b52b496efdc203dbf839bbd163888e1ecd1722b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-config.yaml
+    sha256: 642b5a240656f7608a1feb9f0e2bde5026bf45ce9357e3556b99b2e7778fab9d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-input-01.json
+    sha256: 5af1c53287825190cd9e83288e3e7986ea2fa8932bb62bd745a6910088ee5496
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-input-02.json
+    sha256: 86c893b193db6f4f0140a364561a41b79cd6fd682dc7717395fe7094ecd13baf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-input-03.json
+    sha256: 8274ff142aa0a59e5904c8545637c73c3442b1f66c438e973de20fc4c61c4f5d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-input-04.json
+    sha256: 988e8f5d852b681deadc95465380afc2fa298639730b5c806ccb48267abda0b1
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/label-report.tsv
+    sha256: 1b8dfc04bcc2e2b0f654c2115bf40d64a3e1fe4830c86afc3bf65a12cc08a691
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/native-invariants/receipt.json
+    sha256: 38c0e579ac4a03923af9ec420a722affb8f075fae1333fa4ff3a41deebc4c671
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/native-invariants/rejects.tsv
+    sha256: 9912547da4ff594c686b21a13cd11d06997878514645162518fa712f99d13cea
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/generation/repository-context.json
+    sha256: 400a5c4891c52a3314b4b8440b66625287886561b340cb3ead43bb47525d89b6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/harnesses/generate_candidate.py
+    sha256: d8e7a2299eb593c9aa1c341bafd6dcd5d2f6a71c6e4aaeff3f3ce325a04981bc
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/harnesses/make_step2_receipt.py
+    sha256: 38caf83833db5ad0181c1e7b73207fc2e820a7c7ba1100b5dc2b405d62e507f4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/harnesses/run.py
+    sha256: 3c652925904f6a195336ef4c3239f4a26dc53b5fd564121d3f529d2bd1f160c7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/harnesses/validate_candidate.py
+    sha256: bbb919eedc990552445af562ab5cb7b0ea06ce95ab18d614cd5cba80e4b6ca5f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/inventory.json
+    sha256: b393caa80bbc698e671d2192f8a4d04995a2a53d66722ce259cc2ac58e2ef64a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-baseline-strict.json
+    sha256: d91905fea331c34b626beeb0ac2615e864ee6db900d96c605f8f6e43650a7534
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-baseline-strict.log
+    sha256: c8113e528f5d73ed3e969e51944d7ed422a8fd10ed6f1903633d698c35485a5e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-baseline-terms.json
+    sha256: 4721d228279cf7f9d6ede0d3d720dceb0a76b88b280d50fdb7bb98bc2e6be55f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-baseline-terms.log
+    sha256: 23acda1c1d3194d12bc947d897d07de83f4a076a9d93c135148885108530e018
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-candidate-curies.json
+    sha256: 893cbfecb82baa9c9c8844a8e3296003d917aa27dd44ac667ebdb26ce8110b27
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-candidate-curies.log
+    sha256: a35610365e5d321a4cb1420b060769332eab86d7e860a6b5ea2e62634db888cb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-candidate-invariants.json
+    sha256: 72774783d688f00884e4740404bcca2fd71a09954d859939d3e549c46f2ba476
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-candidate-invariants.log
+    sha256: b6d42b782f1d58cddedbe2b3ce7456b614a7dc8a13320dacf2f426a9dcfbcc55
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-candidate-labels.json
+    sha256: 3423403d06c3928f6ae17fba127edad21785bbd478fbf57555937ee0b0d57491
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-candidate-labels.log
+    sha256: 32fbd671e667c6a05b080bc4b37ad9b7050461ee0b7aa9d1ea0c3fea3ece4778
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-mapping-promotion.json
+    sha256: e90c5b47b3960eb927dcdd857f60726e81f3a249eb74d403c3d98017c310fcdd
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-mapping-promotion.log
+    sha256: a8793139b4874844e5813e3cb2caaea3a90194add244bb8365d35a66eb47380b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-native-candidate.json
+    sha256: d7c404ae5b1d5389fc2c8572b9618fff7c3a335bb195e6112e6798770314043f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-native-candidate.log
+    sha256: 6f394e5a79ed916840e28d4d9fbf73b117e21ee70b6b01022e3a7b3d32efe0fa
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-native-mapping-receipt.json
+    sha256: 84778c8ac894c0e925a0d3f8983a0fb574620c9f182692a4fa8179f06e8673e3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-native-mapping-receipt.log
+    sha256: 367f2d8454ea8cd1c0b2eacb377a883ec0c39e48b336b70b083943d146f2a6ef
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-promotion-dry-run.json
+    sha256: 5f10f70870da9538df735578bad31e1c27731ac6cb40c9ece54423fa1ff65d3b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-promotion-dry-run.log
+    sha256: d059bac855a52ad5c4e9d643d09e2c06172af095838bcad777bebc422d15a984
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-source-apply.json
+    sha256: 225dc922277caf7f8ce8612baf2e4ef2f79aa8ecba933589bec347689ed6670e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-source-apply.log
+    sha256: 9964eaf0815d3fbf18e43ed8163ebc1170810fb61a48986273543b8bdacad44d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-sync-curated.json
+    sha256: d1e5408602dd7277118b60975158d2b1614ce93954cb065d90c0e43f379c8c3c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-sync-curated.log
+    sha256: a6a4d17209dc246ccc51a5153e7a31a709534dc9f78b949c863455a3493a75ad
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-committed-preapply-red.json
+    sha256: 8002a42b27b3be8f7611dbc148907715aa7526af6223fae0a19e7a15285350d3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-committed-preapply-red.log
+    sha256: 93765aa69cb6548ac775832e8331290b9ac569230602f87ee02a02820b0e2c38
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-config-preflight.json
+    sha256: fe296f99f9cb9ad24f03edaa368f533ec1464d5c6dabb64e341871f8bc0503c9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-config-preflight.log
+    sha256: 8530b860a1a29e581c4807df15a46ddfbbe0a16a8485e6339366c14ca44cb24c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-focused-green.json
+    sha256: b68c1b87ec0a2da92797b009a8cc6818a6942389be1c3817367a60c7097a991a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-focused-green.log
+    sha256: 8870c877b6b2d0fd7a0b9139049846469dd898094c832e71fea0814f360edb0f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-lint-final.json
+    sha256: 6b87b2c7da97eeabb15d7f768df224bacc584a8da15ce4a00449f011b603bdd8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-lint-final.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-mutations.json
+    sha256: ba92fca26016bc7e714bccc3545786c517243ed2857363965c9ba420156e3dd0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-mutations.log
+    sha256: 3663dba44bb71689cb65d3e041fa9e61ed6b341132263f9ee6ae888dd751df23
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-production-dry-run.json
+    sha256: f6efe65f8b0deec534f513144309ebef493e7b7dd5b8fb8da70bb53ff7bd7e10
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/logs/step2-writer-production-dry-run.log
+    sha256: 0a0ca1ef7778474090114ae71a5463f8d385a5be886d1e583908ed13af3e635e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/package_evidence.py
+    sha256: 9d2bf4373edab5dbf6eb1785cf758c659db79962dac7449f1ae65536f390e012
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/preflight/baseline-and-probes.json
+    sha256: 22a3063f555a438d4f1de941cdc79236085894155706babe6427715bfb7f6a18
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/preflight/ncit-C61946-local-readonly.json
+    sha256: 28a261db7c9a8b35ba0e1e6c4c04f7296f302de44a79a75e43bb337cd72c70ef
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/preflight/producer-compatibility-probes.json
+    sha256: eb730e1466f85add7e7830579a9c6c0522246779ca1c634db5d9853e50b7a44e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/README.md
+    sha256: 43304ae55f9c81e5c77abf54cb295cfdd8cda7af6314f6e65c40f93f16128b4e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/artifact-locations.json
+    sha256: 7eb81008a722ead207ab31d84fc87669771f36bf00d54671888f17a7965ba499
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/historical-applied-writer.py
+    sha256: a66389a3379a761ee263aceb08222b6508f57cb9b8e69e996e82af732b59bb85
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/independent-original-probe.py
+    sha256: 6b3ed3ee1e0083cdf6e8ead0eb8216d912542d4c7242060e525a56131a19261e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/independent-original-race.json
+    sha256: e7d2d840b53eee5dbb3a23cdc372a7ff961a5504020817deccef997a78021085
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-green.json
+    sha256: 0df7584f16f80a4f896a2ef4420fc423f3ca34c25efa288f00b2943dc03ebb4a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-green.log
+    sha256: 43cdbd3d447ef68f21548bfabf73a673ffe47700fa856ff839096a2d400e002c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-lint.json
+    sha256: 97d3d72e31119010f467b25a2209fe5fdf29e0fe2ade519ed873b86492126967
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-lint.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-red.json
+    sha256: e8a84743560bc55b996fbdcc5f2773ffbd5e2d70f7679780db06259bb96911bd
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-red.log
+    sha256: 3d499b23414988ede4a5fa0c0e601a93dca610431c8a283623d4c910b07e7f38
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-replay.json
+    sha256: 6138308212616d1f779701419b9b1169a8ba7e3c585a9f3d7ca7805bb5506a58
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/logs/step2-reservation-replay.log
+    sha256: 321c3033d48caca033e8dc02704e10f7bba2ab30de1e0353ca60e7b3a291b060
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/repair-summary.json
+    sha256: b115798a178ba7f0f3a40fdea11199b46b9e4c74c645fd4bbf7de58edb9be3d7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/replay-result.json
+    sha256: 5b85f6ed30b48f76ffa4c38548f497852dba6fd476d0cb6327afb1e48e4ba340
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/reservation-repair/replay_repaired_writer.py
+    sha256: 779602f87de64a174682db2e94cba4cab8e67ef11764425f3f0f882c4f0f7ced
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/snapshot-checks.json
+    sha256: f340a18e31f78e92508a9e29dfa579153f81049891b3c618ed1a9635ea580afb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/verify_inventory.py
+    sha256: 8137139159a0a158657eabe8a8d2c84ec083fea23160f4be410179e056c4d931
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutation-results.json
+    sha256: c1439f18dea9bed26ed1e7b3bbc57140a6ad6dda2bbf0b146b206ceb236a4995
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/allow_inherited_validation_stamp.log
+    sha256: 9742cb8f33ff2271d1e5005bccdb6bf7811f7be720db3c80f5b8b2e79d4db412
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/discard_historical_source_tokens.log
+    sha256: 15a9c09d9f01d48be25ee8d69b7ad67cc87ddd150f5e1013fb18ae7e57e0152a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/discard_previous_history.log
+    sha256: d28af8c7d38856fc16cb96abac6659fa60c6ed680c671409f2a62225c8f5d139
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/ignore_candidate_hash.log
+    sha256: aceefb26bba15cd6b13fe3429db70a680a69b9dd3c2170db561169c04a9f5210
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/ignore_input_race.log
+    sha256: 466f869c031c02bf078d9ed442a5e8cd97cd9770f5eed8689ec7d66dcd23c568
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/omit_ledger_migration.log
+    sha256: c46e45ead354d08cfde65790f23931df278033ab5558bbddb063608a7504b90c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/mutations/positive.log
+    sha256: 0cb0b5615da6633a9ef2268d92555af73f841232945127c140ebc8cccff260e7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/run_mutations.py
+    sha256: 501cc62eb1125951b0d6c7fc930b367c2809333111b00e8e9f0d338903c532b5
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/execution/writer/stable-inputs.json
+    sha256: c56b7f4bbadfed70d07c88fb26a0a9cca6c1ce667602b815dd0344096ead1d58
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946-receipt.json
+    sha256: 9e6c6364182d4450114a8662eecf9a1db38d16a47cdcbbfc3f71cce21bb1bebb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json
+    sha256: a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/README.md
+    sha256: 2c2f763164cc2035e60b64648fb6a86ef60a136af64a3f4be851ec2e077e0dae
+    role: target
+  - path: reports/ncit_heptahydrate_875_20261101_membership/application/apply.before-membership.tsv.gz
+    sha256: a0833c3a21c9364d4874f7b7ba7217afcd4f87c84244e0284e487c97f3cc42e6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+    sha256: 1f227990d5b0ecc22d2064110d45c790d0778c92c692e2c5363e2b086996f54c
+    role: target
+  - path: reports/ncit_heptahydrate_875_20261101_membership/application/export-delta.json
+    sha256: d63bc6bb1a216af81c900847a6ab29ed3a3ba574516ad254e4ad0be9e767066b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/application/journal.json.gz
+    sha256: 6b7f4ed9a13b8c68edbb271d40fbafb3669d4fb56440b80840107a80c3e316cf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/application/preflight.json
+    sha256: 36df23058e572d57c2d244e04d5c713ef908d3c8f3c09eda6904bcc93920e2ed
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/application/verified-application.json
+    sha256: a1942cafe9dc1757a248ccedd0ba831b90232080d4c015fd52eb075dd2102899
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/final-checks.json
+    sha256: b4c02b1a79cef87bb171d2de827a532497628b7ba7dd051bf4761cf23774438d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/preservation-and-effective-counts.json
+    sha256: 328342cd0c1fb43d9ee730581ae5fb501038e952271b8b15502bdf7e1c6da161
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-apply.json
+    sha256: 8256627cd79f02f860eadbd821c22832d13ab0531175eebe9c9bf1bd95e0451d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-apply.log
+    sha256: 9e5cf7f21050a8efc302c13047ba9b05088627e3879d79d6128eb261eb1baeae
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-export.json
+    sha256: 923ff8eb1125bc55b0ac9b5b33531cd19b7cb4065ffd9e2993b053771c5cb418
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-export.log
+    sha256: 3e86f5a9b08481d3e0845ef5787355048f4a1d36a5af9946ec02ffe1b4b605c8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-qc.json
+    sha256: bbb7f36927ec60a136d19035620a0fb40bb2bc2eba474bd40fc5cc7006193aeb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-qc.log
+    sha256: ce1e341213b171743cc30ebffe8905ffed4d4d4edbf8ab4d35f184dfdf154d41
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-config-preflight.json
+    sha256: 4d0530cb02c611276f76fcb2c8245f18fc19e3688f5726f74c4615ad7d2fa226
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-config-preflight.log
+    sha256: 8530b860a1a29e581c4807df15a46ddfbbe0a16a8485e6339366c14ca44cb24c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-existing-regression-before.json
+    sha256: 8c5bbf7997481de07aebc2421a9297e7363e406e67d5449007b97ccaf042769d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-existing-regression-before.log
+    sha256: befcd8dba83d05c46c0d3e39189b283ed7683203907e69aefef01fa6fdfc645d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-final-focused-tests.json
+    sha256: b104cc65d6155890bc23efb6d6495b22290cae62b2e14fc9a0d25bfcb08a9a0c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-final-focused-tests.log
+    sha256: 1b74b9f0883be1ca419e0cdb92630384065005f5dc4e4cfc2cb41cdd32279f06
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-flat-exports.json
+    sha256: 7dd204093000a7efd1b50e6894d7333584aa3520e88f8d1f681a699509c026e4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-flat-exports.log
+    sha256: ad93eb7e1134a12015b9471cdc319242683498b8050568e29925f6496a3c2887
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-full-qc.json
+    sha256: 0a2b2ec2e963de5991700492b6c47ea3aabd67e252cc0553288b213ab0657126
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-full-qc.log.gz
+    sha256: c660bed38f2203c80ba61fda6cde868e370da233cb898d973ca530fb3d314daa
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-export.json
+    sha256: 9aaa56909945fccaabd3ff67eb129a97d70717b8c3bd288e82e69127fbd6772c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-export.log
+    sha256: ea42c3393adad836b0a987a5588f98dc8ffbfb3b34adea118141cbb379e4f621
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-qc.json
+    sha256: 4139ade54d76a08b3a21496a84e62a13a2af9e5fbd821d38249d3024df41fa06
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-qc.log
+    sha256: af9b5a362fad00b223ca94107d3d90ff26e370d1c36eaa78c42d9b11e70ba186
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-semantic-integrity.json
+    sha256: c29b7f85b75df2acb572c167a3098810359263e75b8eeefa6b47f537aef3a373
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-semantic-integrity.log
+    sha256: b2f1341524d27201138e509b4ca6c7d3c0a14c4874543aa6cabe488eb049ddab
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-export.json
+    sha256: cc8aad0a6780b1c8b98528477e3e5c4565b0ba865e09d28775d594524661df38
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-export.log
+    sha256: 383a95ae1e74d795bac34d09234a474f8e2856f566fe06cd1d1a94caa1afbbc2
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-qc.json
+    sha256: 8411a49096b4e216bdfeabcb3a6accbed5f1bd52d880518ae82fd96c0f10be90
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-qc.log
+    sha256: 76585cbf11b4249faf99cb3c31583d72dfc51dc094902f6e4f9dd4e2084816b7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/finding-1031/author/README.md
+    sha256: 14dffd2645e275b40aa224c545cc6a7c1cf93bc78e933f9cb922999ad08093e6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/finding-1031/author/baseline-ownership-test.json
+    sha256: 458c5e0aa45c3ba7427f7d9c39bc2db9c7dd315d34f457d70c5a379768c254ba
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/finding-1031/author/baseline-ownership-test.log
+    sha256: 247ddac6a0d9d37c7cdca955a8ca51c0b44708c8eb6bcd14c4082bd60625c711
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/finding-1031/author/evidence-index.json
+    sha256: 18cba0e528bf00d6022ae10389fa0a945233e74dcfe78a4778bca8a1a6ca8159
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/finding-1031/author/input-cohort.json
+    sha256: da2893f2f1d9e79c36ae95c2ede71f0f3f6742899027f30eda9caa569551a9d6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/finding-1031/author/native-consumer.json
+    sha256: 4ae6fa7bfc4a7bf320f63e736bcea584586626e641198c97f49a369fd59d928a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/README.md
+    sha256: db328401173c06ae13c40d60b4c541dbe514cad9db94eecd1da5d8e631aacd78
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/evidence-index.json
+    sha256: 05aa72d2168746412046441d383214b2fb8a262659fddfebe5ef37832abdf20d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/independent-original/original-promote-valid-owner-race.json
+    sha256: facd9cdd12da056dfdd010cfb1eb58b4112c6ab1453485b438c4a482c59c878b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/independent-original/original-sources-valid-owner-race.json
+    sha256: 58fbb247e1e7430bc35599117f459be1823b587f8df0c13f2538e38cfcf272da
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-dry-run.json
+    sha256: a9a7bb62a33dadb425eab9341f16400c949cab95a4c53ae87278f527d8c19a79
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-dry-run.log
+    sha256: 4b5ae5f3d6c391878b94c374f476beb3b3ee0cf3fd9739ab52627d825c1b41a0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-green.json
+    sha256: d4ae5aae326ed9c109cc8f4f69f850ac00b0b31d7b2d3ffae14ebfea2b708ceb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-green.log
+    sha256: 774f817b60baa3051ad53b6197a5be80c98ffbfab988ec1352e0c2539e65f9b4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-mutation.json
+    sha256: 66cedf66b9d733491e9d54b8fb90614ebd04b4bbd192b41faa80ade50d6a3bbc
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-mutation.log
+    sha256: cf309d7b539c77b18f5d37e6c60a3a78ac0557e2497fa2ea57653ab0b32469a4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-owner-race-red.json
+    sha256: 5ffef82eb7df0e096bae3f345e91a22244eb8d019b6aa31018e3da08cb2e863d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-owner-race-red.log
+    sha256: a51de7cbd2c6ea61f8be59a5fab44f3e23d5feed0928ec74b4398b2057c6cb7f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-ruff.json
+    sha256: b176ad3038c5d2e201c253315b7bd20c1aba51b8c64929dee4f8e296760935c5
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/logs/step2-original-paths-ruff.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/mutation_original_scope.py
+    sha256: 4e7863bdc291dc8071b2fd52e39273762a227789eddeca17290d41351f03832c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/source-snapshot/scripts/promote_heptahydrate_ncit.py
+    sha256: 768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/source-snapshot/scripts/repair_heptahydrate_membership.py
+    sha256: a3a8af0acfd2daa94a5da70270f0fd0923b7be0da644a4878688cac2c4aaad17
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/source-snapshot/src/mediaingredientmech/utils/culturemech_occurrences.py
+    sha256: 8ecd6beb22527e50524319a0321b6bcd35b4f56607ef71eb78d3740f3f90dbdf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/source-snapshot/tests/test_promote_heptahydrate_ncit.py
+    sha256: e8f8c23cd99c5ddb5d85b350d6df06be7bad871531eb4a57d164c344bd34da34
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/source-snapshot/tests/test_repair_heptahydrate_membership.py
+    sha256: 2aa06a3a6fb9105e4a2cdb7d64ecb482adcf7d1ee0b61c5d02bc2de727031774
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/all-writer-guards/stable-source.json
+    sha256: f759040fc804d420ebba743abbd857cb1081211de489211ea1b3bf51d8ff9d90
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/README.md
+    sha256: 9f09f0275f38843ee522b78ac85b70c5f084f32f3f5c06f8cfa928fa662e92d6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/evidence-index.json
+    sha256: 9004b02e786516024dcb631067187682c79101e4155e3743e2c4e3c0e49a4494
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-focused-final.json
+    sha256: 9b40539f8e9019a93e04c44b55ec47715937c4130c61123609534d86c11043e6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-focused-final.log
+    sha256: 1814d2957283836241ae9678b3843374c8cfbbac0b267f2da35e26bf986a1ee0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-focused.json
+    sha256: 2c4d753bf1fa97eac34926b5275256e02c1d02897328508a792552c20c3390bf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-focused.log
+    sha256: 9283be5498646b0199a74d314214547be53354321490db1b8c95edbd728bfd89
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-mutation-membership.json
+    sha256: ca48a5483879d5678c07e541b94a2584594e21e40508cdfccefec41c0e4dbb03
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-mutation-membership.log
+    sha256: fa41e13f6552265fad647c27cf0220d065188453e656a5762d952a17399c8400
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-mutation-reservation.json
+    sha256: 18737081b5cb130f656400856bc6dcdb4a2a19adc045d2f4517c688296971ceb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-mutation-reservation.log
+    sha256: 92bdb50d65d298bf60815847465aa32d7c76d07cf3a652e245805548955e55e3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-mutation-routing.json
+    sha256: e53b9ce20fe70c1466a4f719ec7b7b80f935c312abc84ac3ce6855f08c55b90e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-mutation-routing.log
+    sha256: b86f3edce3c2d3828ea2630961965185720a33b97642270c7b8d09bb6fb0ae6e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-native-dry-run.json
+    sha256: 2909aac4a1d3a663162090bb1e240919356375b5dec688cb65231165093df12d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-native-dry-run.log
+    sha256: 4b5ae5f3d6c391878b94c374f476beb3b3ee0cf3fd9739ab52627d825c1b41a0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-native-producer-regressions.json
+    sha256: 1f69defe4c4e0024642c450749b24831aec8b93fcbc5908d3924bf6f1afee850
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-native-producer-regressions.log
+    sha256: 0d61b3f022906d3afad6874c5075e9c6bf24fcc64f5355164f1b2f29aaf69a9a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-other-occurrence-regressions.json
+    sha256: e3473f34995f0f4e6c46eeacb61c65fbbeb94c81cbf63188fd01a735eee2b5d0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-other-occurrence-regressions.log
+    sha256: 1badeb1728fdb0369b2451704731ae8e023555f595ace7e727e51bd6a4fd820d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-ruff-cached.json
+    sha256: d4a0f21b9c842bf350c224781ed3d60f42de569cedf2359433e191a56473935b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-ruff-cached.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-ruff.json
+    sha256: d4851248ab18d082adb8ddb84b1b16493230bf27b8f0f6a83ae2de352402aa1e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/logs/step2-membership-ruff.log
+    sha256: 010a481b2d2cf7a8c2018e564a4640476a27f98a41598cced26bb1a86d66f8c1
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/mutation-membership-runner.log
+    sha256: fafc0f839ceaba3904b7c618957a24f4858bdd49dc9e7fab528c5aff9073f415
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/mutation-reservation-runner.log
+    sha256: cf2d47978287cdd79dae8d641918c4bbaf53410f4e95f3f7b27e3d143935a133
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/mutation-routing-runner.log
+    sha256: ec58f3a8d5e7ac5cd4e0baa269da8e3802d9b425dbba8b8f0e02a27481ded4db
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/mutation_controls.py
+    sha256: deb5572baea822cb06884953b3c22dae3a9f97fcba7b12c3182f83086cf978a3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/source-snapshot/scripts/promote_heptahydrate_ncit.py
+    sha256: f7cd1b46dc464cc8801a73f6b1cbd251bd5c0c7ffdf7241eff0e9cbee6f1c131
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/source-snapshot/scripts/repair_heptahydrate_membership.py
+    sha256: 85317d72170174119ced30394194e0b1503bee9cc1fac1035147ad8fe2d064a2
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/source-snapshot/src/mediaingredientmech/utils/culturemech_occurrences.py
+    sha256: 8ecd6beb22527e50524319a0321b6bcd35b4f56607ef71eb78d3740f3f90dbdf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/source-snapshot/tests/test_repair_heptahydrate_membership.py
+    sha256: 5fc2361617c1a34ef57c2077d62aeb816df680cd17c4e25d2db1d4872351748f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/initial/stable-source.json
+    sha256: 3a4ec3289dd1083ed13f4f4c0781f3ab151fc45b42031c9a6c1926917c8285fb
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/README.md
+    sha256: 24ae5a0547ee80c79cf5c3b8185a020303d3abd8c67644ae0c58b25e967bf599
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/evidence-index.json
+    sha256: 849f7eb7484970cd271b1d4a219135c2915d899e0b19462e67504304864300ff
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/independent-original/probe_valid_owner.py
+    sha256: 0fd5814a43d725b37b3e4e524bc0a66a7248a797760a9a36c39c64586645f6c9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/independent-original/valid-owner-race.json
+    sha256: 7b352d282987c431557d0de5fae93696a8f720e7e1f9dd23ffbf309e3345645b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-dry-run.json
+    sha256: f61f67b46889ed13dea8835b39cae446cd2b550be0189e4826aea6e011bb04da
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-dry-run.log
+    sha256: 4b5ae5f3d6c391878b94c374f476beb3b3ee0cf3fd9739ab52627d825c1b41a0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-green-final.json
+    sha256: 667272cb349d27e1f2f838f3f0ffdeac8272753b451cd40b68970ce7db268087
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-green-final.log
+    sha256: 1e49a571c415b87c95da72641fdcba5835ef347f09d20d56058e2ddafafe3837
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-green.json
+    sha256: 1dac566871624e4865a7a3b976045635d00cf6069cddbea185bd4e13a563cdc4
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-green.log
+    sha256: 661427c25c7be0364da1b532e08d075bef2cc181a1208eb3a94ea4ff80358ebc
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-mutation-final.json
+    sha256: 4501dcb2fe9aa824c4305095050f27ad1b2c5c3df831b6d0dcf92b1a801dff84
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-mutation-final.log
+    sha256: e6fad710b2a887bffae64e807dc089d74b29a60944cd707f0c27205a0b4d776b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-mutation.json
+    sha256: f0dc70fb801ab3635dc9d8a94e090e270e1ecc1ece5c2b669738bcd05ba82ba8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-mutation.log
+    sha256: 81ea8fa7a005ff768ad744125260a421f553d31fffa979d90898483183d11197
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-ruff.json
+    sha256: 3a4e82ae72e32ac14282997b38f1b8f551a49432b17407a018009fe8e73cc71d
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-1033-ruff.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-owner-race-red.json
+    sha256: b10827f30b46bd1c4253e9587f33635a90d806a3c04f95d9ba4b5d671d4835d8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/logs/step2-membership-owner-race-red.log
+    sha256: 606ec255ea15b3b8ffb595b55798da0d2f75e16d8041d2497f22ac0ee0b9a037
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/mutation_scope.py
+    sha256: 42a9486274cef6314ab53f4809bb6f745481a6bfe5db91e02c0c7b904209ee5f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/source-snapshot/scripts/promote_heptahydrate_ncit.py
+    sha256: 9effce3c9fe3af41ecde16a8e4596e0995d945bfc539eba29562138a7f12c6c7
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/source-snapshot/scripts/repair_heptahydrate_membership.py
+    sha256: a3a8af0acfd2daa94a5da70270f0fd0923b7be0da644a4878688cac2c4aaad17
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/source-snapshot/src/mediaingredientmech/utils/culturemech_occurrences.py
+    sha256: 8ecd6beb22527e50524319a0321b6bcd35b4f56607ef71eb78d3740f3f90dbdf
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/source-snapshot/tests/test_repair_heptahydrate_membership.py
+    sha256: 2aa06a3a6fb9105e4a2cdb7d64ecb482adcf7d1ee0b61c5d02bc2de727031774
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/implementation/membership-guard/stable-source.json
+    sha256: 65a76e3569ab8f4c561ba08b91d0cfa045c3e4be2a7e8906cfe523e00e7309fd
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/applied/native-actual-tests.log
+    sha256: df382729359249b9fed7a27bb11be728cfb979734493df08a5d7fa300d6a51f0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/applied/verification.json
+    sha256: e5bf42db3bd830b0ea2637962919f56fbc1e6b58bca3afd316d81a68e273d80c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/applied/verification.log
+    sha256: 4582177f492a301d60090353d1632469a502cfabe316bf7905de2b8ce658eeb8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/applied/verify.py
+    sha256: e80e53908c81c57ad54f4f4b61a3e149c17043ba8b93eb0725fca95ee385246b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/focused-tests.log
+    sha256: 010c619f6ba986c9dfbd1e3d971d439753bc60a841c17053e1a34d7345945074
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/inventory.json
+    sha256: 78158814bfa98aa74e4a83b27aefefde9673fe95a76b38ed628f0befea7b332b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-promote-valid-owner-race.json
+    sha256: 9199f415dc1a6647546267399bcedcd952bd3323201fb7289d455c0eadf77b05
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-promote-valid-owner-race.log
+    sha256: 9199f415dc1a6647546267399bcedcd952bd3323201fb7289d455c0eadf77b05
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-sources-valid-owner-race.json
+    sha256: 5522c9e1f59d7dd7af215a2c34a1fd71656a63968e257339d64cef0b0a9ffc8f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-sources-valid-owner-race.log
+    sha256: 5522c9e1f59d7dd7af215a2c34a1fd71656a63968e257339d64cef0b0a9ffc8f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/probe_original_promote.py
+    sha256: c3e1f5159ecdbb5006be8a15ae857217180fae095203a1b04174c4742bb53459
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/probe_original_sources.py
+    sha256: de6dc1f0dce06ac74a410b49676be20330e8d86a019c131ed5db8d8727525480
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/reprobe.log
+    sha256: 6d169b2d0e7dbb35d73bf9c1b5da6f6566c285b50d5e72b0f9093077a518ed45
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/reprobe.py
+    sha256: a732e2ad97eb582e25561a56cb1a5c3a2784d6688f1c6c32b0e9c7fdcd337cf6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/results.json
+    sha256: 6d169b2d0e7dbb35d73bf9c1b5da6f6566c285b50d5e72b0f9093077a518ed45
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/review.md
+    sha256: 31d2bddbafe570bac69e5df11da193454a79db0dd95264b44b2f4b74a27b88f8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/browser-correction.json
+    sha256: fc4c956236aed8257993d938d2aa51879ad366f4893813f84e3d627195c2fc36
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/inventory.json
+    sha256: 2618b06a9497390b5886f6f7669e2a87a14d3e01f715cd9e2f0cc0c5f9ed36ce
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/native-membership-owner-test-v2.log
+    sha256: 8f55b90e09d62b8727b8cff27af1ddab37acb6c1f1bdb1c1690bb17e9756bcee
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/native-membership-owner-test.log
+    sha256: 655399b99d8e5163b6faa5cc9e984fb64e36ffbe7d99f959798f338bf4ac928f
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/probe.log
+    sha256: 0c90e668c5177224a08e73ba6db9a37c530b1205335614359fd24676ca038626
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/probe.py
+    sha256: 4350116f8ef577c548cd37c2464f985956957a7e37051b067d35a5aa7953eeb9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/results.json
+    sha256: 59dadf455029a60e8d36948da0036c7fbb2f14b7c3b60c7fd9dc2d6df91ce360
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/review.md
+    sha256: fc80be5bde4da2e6284bfc93cbca49064a372ecfd253efe5cb92880c23432dd6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/focused-tests.log
+    sha256: 0c978049f0f5c2212d01078296054876e9bfa2993eb6407f1fff1c549d8749f9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/inventory-initial.json
+    sha256: 9068e75fa7fe128ae4b9a7752604b2cf206b3281808eadf2ebfc0dcd49c59851
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/probe.log
+    sha256: ca8fa2625bd5c4021060309e16fafb6c0c0f5359b0f7e808086f78884945496c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/probe.py
+    sha256: 1ecc45cd799da8581ac911e95573ecbeed1fb14359570042c2b08f508e90f1f0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/probe_valid_owner.py
+    sha256: 0fd5814a43d725b37b3e4e524bc0a66a7248a797760a9a36c39c64586645f6c9
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/results.json
+    sha256: ca8fa2625bd5c4021060309e16fafb6c0c0f5359b0f7e808086f78884945496c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/review-initial.md
+    sha256: d3bb23699a21467b4b2b605dbcd6494d69238f4d36be6ed1fbdd9edaa912b7b0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/routing-delta.json
+    sha256: 76719e86ffb9ed1bc41b1ac9c5face08837f71f94d534b682e12f2179daf7069
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/scope-comparison.json
+    sha256: 5f53fed13a0ed749070cc542181d85112a7868a5cb77ef69e53658e3e8ce0111
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/source-preservation.json
+    sha256: 3388d7317a715b26588f9ad947274e5b3a09b1fb4bc54f51e4c5c913e471ba77
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/valid-owner-race.json
+    sha256: 7b352d282987c431557d0de5fae93696a8f720e7e1f9dd23ffbf309e3345645b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/valid-owner-race.log
+    sha256: 7b352d282987c431557d0de5fae93696a8f720e7e1f9dd23ffbf309e3345645b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/focused-tests.log
+    sha256: 07588ef0387f40f656bd2799e4375c8ff7e623de064c411c199a807279801ab8
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/inventory-intermediate.json
+    sha256: 9d7016671c7851a5f3bf1315e9e620f00b8e0ba9e41422cf2c778af052fb7bdd
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-promote-valid-owner-race.json
+    sha256: facd9cdd12da056dfdd010cfb1eb58b4112c6ab1453485b438c4a482c59c878b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-promote-valid-owner-race.log
+    sha256: facd9cdd12da056dfdd010cfb1eb58b4112c6ab1453485b438c4a482c59c878b
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-sources-valid-owner-race.json
+    sha256: 58fbb247e1e7430bc35599117f459be1823b587f8df0c13f2538e38cfcf272da
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-sources-valid-owner-race.log
+    sha256: 58fbb247e1e7430bc35599117f459be1823b587f8df0c13f2538e38cfcf272da
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/probe_original_promote.py
+    sha256: 67391f78095ee2f264e25d6e0ebedcb80fadd9a386e3992b889f7cc5e7fdd0a0
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/probe_original_sources.py
+    sha256: 2e7f41dd66831f4d16ba5e582061c0589d7a90db488162d3d095aebe7522fe07
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/reprobe.log
+    sha256: 56e003ac1bc360933a3cdddd5d7babd7c60601a1c2587e40690dd6633442bd1c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/reprobe.py
+    sha256: a732e2ad97eb582e25561a56cb1a5c3a2784d6688f1c6c32b0e9c7fdcd337cf6
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/results.json
+    sha256: 56e003ac1bc360933a3cdddd5d7babd7c60601a1c2587e40690dd6633442bd1c
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/review-intermediate.md
+    sha256: de4227dea27569263b7f2f7d9b908c77ea76488fdfe52cc3943e717061cd2094
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/source-snapshot.json
+    sha256: 4f4aa4892bdaad8a9f0c925ea8ca242013137caf0130f86bd2d14463e52659a3
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+    sha256: 43bc533a6d7ca78005b6d28205e622e410d62b7aa2ec2de00a6716cd75405083
+    role: target
+  - path: reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+    sha256: 86b2b9b87c905282126c8a81f7d13889693d0c125dfcd7f2108bf88566d91d4d
+    role: target
+  - path: reports/ncit_heptahydrate_875_20261101_membership/verify.py
+    sha256: cf3d4a6685fcb4fbbcf3dccc30670fdc0526293d849c111224733fd34c02824e
+    role: target
+  - path: reports/ncit_heptahydrate_875_20261101_unified_review/README.md
+    sha256: 57abb1054808171f58abc06cf1222efbb12c6f69b18fb97956197dc3a328236e
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_unified_review/inventory.json
+    sha256: ba8f1490d1e42a61ff365a894341fdbb70092b00599b2c84b429da7bcbecd91a
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_unified_review/unified-input-verification.json
+    sha256: 505b110e0715dff059020e860c8a8ce5d77cdc38aff2cbe7d70864afcd855530
+    role: context
+  - path: reports/ncit_heptahydrate_875_20261101_unified_review/unified-input-verification.log
+    sha256: 106e57a6afb47d69ee2f69b68490c074c09a2d78675599439520768577eb9f91
+    role: context
+  - path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+    sha256: 1fc422a342632befd63d7632002fb95f4c0ee49a42d0baacdff8dbf2a70daa62
+    role: context
+  - path: reports/semantic_review_20260921/resolution/current-review.json
+    sha256: 2bc6fd01874ae295fd8812ff6249ea96e3163623957d51d622c85a398e69cb4a
+    role: target
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: 39a9d49626034f1bccecb2b2ad20e2f0b5ac70a13719c22a9c62144c2db6259c
+    role: context
+  - path: reports/sssom_completion_20260921/README.md
+    sha256: 49382bd28b7d0869c8d888429547a1486491ea72e50a0281c62f53e8d0a3a02b
+    role: context
+  - path: reports/sssom_completion_20260921/assemble_review.py
+    sha256: 6165143f5058d6e1f0fa51bbf4aaa5265dbdc9b8f510a63ed80579577b8aad88
+    role: context
+  - path: reports/sssom_completion_20260921/mapping-evidence.json
+    sha256: 0e30206fe5a040f46aff6d2ce7002592ec0a05d259d7ea9bc26f922c915e7ca4
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json
+    sha256: 28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8
+    role: context
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: 368aa926912b7ff675849fbe3491230eb9083af473efdca9d10ae4c11f91b5b0
+    role: target
+  - path: reviews/structured/20261101T054115Z-approved-step2-ncit-heptahydrate-review/review.md
+    sha256: 93e8a1023dd617c15cbb40e82471850db5c1f213fe2797ba4ee80aa543e2946d
+    role: context
+  - path: reviews/structured/20261101T054115Z-approved-step2-ncit-heptahydrate-review/review.yaml
+    sha256: 344f36869a8d945bbded36fdfadc8b12fa5069b6c55e9989e7597a9f97b375c4
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/.vendored_canon_ref
+    sha256: ecbdb08d2094917a5ed8147086f46579e976df869eaea3942060c552d2e2015c
+    role: context
+  - path: scripts/browser_export.py
+    sha256: a834b3510161a20c027eb8fcb858d7a35f32caba7bd93d3cd74503a2e12302c2
+    role: context
+  - path: scripts/build_culturemech_membership.py
+    sha256: 07de538679cce3b9e9bba63ef2ab718297ed5807a83b6469e1e7fe31c5ce43ba
+    role: target
+  - path: scripts/check_unified_freshness.py
+    sha256: 95efa627ea1cc0e6ee2d055815f54a9e121971b1ac843d4be3453176f13d2c90
+    role: context
+  - path: scripts/check_unified_rejections.py
+    sha256: 4f7faf1f103f50be1a59e826b0238061d1a9214afcec9d1cf0b029237e71238c
+    role: context
+  - path: scripts/export_lists.py
+    sha256: 24230cbb1e57dcc76f97c7809763e67e60d6f95987371b1450579036ed9c9fcc
+    role: context
+  - path: scripts/generate_index_files.py
+    sha256: ac9095355d22e42902fc413bd19654282d2c39bcd4a7946f57fb75d73641237f
+    role: context
+  - path: scripts/promote_heptahydrate_ncit.py
+    sha256: 768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee
+    role: target
+  - path: scripts/refresh_occurrence_statistics.py
+    sha256: 59702684420a62763b271f44015ccd4c3cba5ac76d9b138873858271924efb3e
+    role: target
+  - path: scripts/repair_heptahydrate_membership.py
+    sha256: a3a8af0acfd2daa94a5da70270f0fd0923b7be0da644a4878688cac2c4aaad17
+    role: target
+  - path: src/mediaingredientmech/curate/apply_receipt.py
+    sha256: 6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f
+    role: context
+  - path: src/mediaingredientmech/curate/curation_event.py
+    sha256: 22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34
+    role: context
+  - path: src/mediaingredientmech/export/reviewed_sssom.py
+    sha256: ab74bae77709ba59623b2aa4612a16b692361c4f46bbb9b5a597f31bd6716ec3
+    role: context
+  - path: src/mediaingredientmech/ingredient_bundle_contract.py
+    sha256: 9285d9d2423d108e0b1e3a960ddcbdd5e9b94eb44e099632042fc7e1e95e51b2
+    role: context
+  - path: src/mediaingredientmech/ingredient_bundle_refresh.py
+    sha256: 58193f16b7231aba75932bf7316c1bf8394709bc7cff96687accb11eb6963946
+    role: context
+  - path: src/mediaingredientmech/review_claims.py
+    sha256: bf214f5791223ed318b017db7206bc4ba8cf48bc9ce30d80fba5728cc5ca62fd
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    sha256: 8ecd6beb22527e50524319a0321b6bcd35b4f56607ef71eb78d3740f3f90dbdf
+    role: target
+  - path: src/mediaingredientmech/validation/write_validated.py
+    sha256: 6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9
+    role: context
+  - path: tests/fixtures/issue875-owner-before.yaml
+    sha256: e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636
+    role: context
+  - path: tests/test_culturemech_membership.py
+    sha256: 64a562a672c511255eb560202b910c3ae623e1ae19aa2333da6bf03c8b78f151
+    role: target
+  - path: tests/test_ingredient_bundle.py
+    sha256: ad3192652ebad0918d52a1eb8d73047bb1e56f8e7eda9ae5fac8391a52a0c852
+    role: context
+  - path: tests/test_ingredient_bundle_dependency_refresh.py
+    sha256: b5ec52682e41861529f99bd414e5b06219ed3024289f3a59e5a2045e0ce64967
+    role: context
+  - path: tests/test_promote_heptahydrate_ncit.py
+    sha256: e8f8c23cd99c5ddb5d85b350d6df06be7bad871531eb4a57d164c344bd34da34
+    role: target
+  - path: tests/test_refresh_occurrence_statistics.py
+    sha256: b685b3ecfe3a252956267599af423e5360d3575b403450b8a50bf24acddde015
+    role: target
+  - path: tests/test_repair_heptahydrate_membership.py
+    sha256: 2aa06a3a6fb9105e4a2cdb7d64ecb482adcf7d1ee0b61c5d02bc2de727031774
+    role: target
+scope:
+  description: Bounded follow-up to the approved Step 2 identity correction:36 maintained/generated/evidence
+    targets, 438 hashed inputs, complete 202,098-row membership preservation and 13
+    export deltas. Scientific identities outside the one unchanged heptahydrate are
+    not assessed.
+  selection: 'Explicit #1031 membership omission and #1033 native owner-guard repairs,
+    their consumers/tests, actual execution and retained identity/release boundaries;
+    no sampling.'
+  coverage: full
+  population_size: 36
+  reviewed_target_ids:
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - mappings/culturemech_recipe_membership.tsv
+  - scripts/repair_heptahydrate_membership.py
+  - scripts/promote_heptahydrate_ncit.py
+  - src/mediaingredientmech/utils/culturemech_occurrences.py
+  - tests/test_repair_heptahydrate_membership.py
+  - tests/test_promote_heptahydrate_ncit.py
+  - tests/test_culturemech_membership.py
+  - tests/test_refresh_occurrence_statistics.py
+  - scripts/build_culturemech_membership.py
+  - scripts/refresh_occurrence_statistics.py
+  - data/curated/ALL_INGREDIENTS.md
+  - data/curated/MAPPED_INGREDIENTS.md
+  - data/curated/all_ingredients_index.csv
+  - data/curated/all_ingredients_index.json
+  - data/curated/mapped_ingredients_index.csv
+  - data/curated/mapped_ingredients_index.json
+  - docs/data/all_ingredients.csv
+  - docs/data/all_ingredients.json
+  - docs/data/all_ingredients.md
+  - docs/data/ingredients.json
+  - docs/data/mapped_ingredients.csv
+  - docs/data/mapped_ingredients.json
+  - docs/data/mapped_ingredients.md
+  - mappings/ingredient_mappings.sssom.tsv
+  - mappings/unified_mapping_rejections.tsv
+  - UNIFIED_INGREDIENT_MAPPING.tsv
+  - reports/sssom_completion_20260921/review.json
+  - reports/semantic_review_20260921/resolution/current-review.json
+  - reports/ingredient_bundle_20261101_ncit875/review.json
+  - reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+  - reports/ncit_heptahydrate_875_20261101_membership/README.md
+  - reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  - reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  - reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  - reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  exclusions:
+  - target: Additional middle-dot and long-name source cohort expansion
+    reason: This repair preserves exactly the existing32 pairs and only current accepted
+      literal source labels; it does not refresh the upstream cohort.
+  - target: Inherited chemistry and BUFFER claims or other ingredients scientific
+      assertions
+    reason: These remain outside the approved bounded identity/membership correction
+      and retain their native holds.
+  - target: Later approved-plan steps and approval-model changes
+    reason: No Step 3–7 implementation or native approval supersession is included.
+targets:
+- target_id: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  label: Na2hpo4_X_7_H2o.yaml
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: mappings/culturemech_recipe_membership.tsv
+  path: mappings/culturemech_recipe_membership.tsv
+  label: culturemech_recipe_membership.tsv
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: scripts/repair_heptahydrate_membership.py
+  path: scripts/repair_heptahydrate_membership.py
+  label: repair_heptahydrate_membership.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: scripts/promote_heptahydrate_ncit.py
+  path: scripts/promote_heptahydrate_ncit.py
+  label: promote_heptahydrate_ncit.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: src/mediaingredientmech/utils/culturemech_occurrences.py
+  path: src/mediaingredientmech/utils/culturemech_occurrences.py
+  label: culturemech_occurrences.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: tests/test_repair_heptahydrate_membership.py
+  path: tests/test_repair_heptahydrate_membership.py
+  label: test_repair_heptahydrate_membership.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: tests/test_promote_heptahydrate_ncit.py
+  path: tests/test_promote_heptahydrate_ncit.py
+  label: test_promote_heptahydrate_ncit.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: tests/test_culturemech_membership.py
+  path: tests/test_culturemech_membership.py
+  label: test_culturemech_membership.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: tests/test_refresh_occurrence_statistics.py
+  path: tests/test_refresh_occurrence_statistics.py
+  label: test_refresh_occurrence_statistics.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: scripts/build_culturemech_membership.py
+  path: scripts/build_culturemech_membership.py
+  label: build_culturemech_membership.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: scripts/refresh_occurrence_statistics.py
+  path: scripts/refresh_occurrence_statistics.py
+  label: refresh_occurrence_statistics.py
+  kind: maintained
+  ownership_note: Repository-maintained source, native producer, or regression gate
+    for the narrowly bounded32-pair membership migration. Ingredient owner is unchanged;
+    no chemistry/role curation.
+- target_id: data/curated/ALL_INGREDIENTS.md
+  path: data/curated/ALL_INGREDIENTS.md
+  label: ALL_INGREDIENTS.md
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: data/curated/MAPPED_INGREDIENTS.md
+  path: data/curated/MAPPED_INGREDIENTS.md
+  label: MAPPED_INGREDIENTS.md
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: data/curated/all_ingredients_index.csv
+  path: data/curated/all_ingredients_index.csv
+  label: all_ingredients_index.csv
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: data/curated/all_ingredients_index.json
+  path: data/curated/all_ingredients_index.json
+  label: all_ingredients_index.json
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: data/curated/mapped_ingredients_index.csv
+  path: data/curated/mapped_ingredients_index.csv
+  label: mapped_ingredients_index.csv
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: data/curated/mapped_ingredients_index.json
+  path: data/curated/mapped_ingredients_index.json
+  label: mapped_ingredients_index.json
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/all_ingredients.csv
+  path: docs/data/all_ingredients.csv
+  label: all_ingredients.csv
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/all_ingredients.json
+  path: docs/data/all_ingredients.json
+  label: all_ingredients.json
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/all_ingredients.md
+  path: docs/data/all_ingredients.md
+  label: all_ingredients.md
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/ingredients.json
+  path: docs/data/ingredients.json
+  label: ingredients.json
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/mapped_ingredients.csv
+  path: docs/data/mapped_ingredients.csv
+  label: mapped_ingredients.csv
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/mapped_ingredients.json
+  path: docs/data/mapped_ingredients.json
+  label: mapped_ingredients.json
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: docs/data/mapped_ingredients.md
+  path: docs/data/mapped_ingredients.md
+  label: mapped_ingredients.md
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: mappings/culturemech_recipe_membership.tsv
+    role: maintained membership source of effective counts
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    role: shared effective occurrence statistics helper
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: unchanged ingredient identity and historical stored statistics
+  ownership_note: Whole-file structural comparison; exactly one target occurrence/count
+    change, plus generated metadata where applicable. Not new scientific curation.
+- target_id: mappings/ingredient_mappings.sssom.tsv
+  path: mappings/ingredient_mappings.sssom.tsv
+  label: ingredient_mappings.sssom.tsv
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: mappings/unified_mapping_rejections.tsv
+  path: mappings/unified_mapping_rejections.tsv
+  label: unified_mapping_rejections.tsv
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: UNIFIED_INGREDIENT_MAPPING.tsv
+  path: UNIFIED_INGREDIENT_MAPPING.tsv
+  label: UNIFIED_INGREDIENT_MAPPING.tsv
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: reports/sssom_completion_20260921/review.json
+  path: reports/sssom_completion_20260921/review.json
+  label: review.json
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: reports/semantic_review_20260921/resolution/current-review.json
+  path: reports/semantic_review_20260921/resolution/current-review.json
+  label: current-review.json
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: reports/ingredient_bundle_20261101_ncit875/review.json
+  path: reports/ingredient_bundle_20261101_ncit875/review.json
+  label: review.json
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+  path: reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+  label: dependency-refresh.json
+  kind: generated
+  ownership_note: Preserved Step 2 identity/approval surface. Byte equality against
+    the prior independently captured input is rechecked; native receipt/export replay
+    is inspected. No new approval is granted.
+- target_id: reports/ncit_heptahydrate_875_20261101_membership/README.md
+  path: reports/ncit_heptahydrate_875_20261101_membership/README.md
+  label: README.md
+  kind: maintained
+  ownership_note: Append-only evidence of the actual bounded repair; receipt and beforeimages
+    record execution, while the maintained writer/utility own behavior. No native
+    scientific approval.
+- target_id: reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  path: reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  label: inventory.json
+  kind: maintained
+  ownership_note: Append-only evidence of the actual bounded repair; receipt and beforeimages
+    record execution, while the maintained writer/utility own behavior. No native
+    scientific approval.
+- target_id: reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  path: reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  label: portable-sources.json
+  kind: maintained
+  ownership_note: Append-only evidence of the actual bounded repair; receipt and beforeimages
+    record execution, while the maintained writer/utility own behavior. No native
+    scientific approval.
+- target_id: reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  path: reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  label: verify.py
+  kind: maintained
+  ownership_note: Append-only evidence of the actual bounded repair; receipt and beforeimages
+    record execution, while the maintained writer/utility own behavior. No native
+    scientific approval.
+- target_id: reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  path: reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  label: apply.json
+  kind: maintained
+  ownership_note: Append-only evidence of the actual bounded repair; receipt and beforeimages
+    record execution, while the maintained writer/utility own behavior. No native
+    scientific approval.
+checks:
+- check_id: full_qc
+  name: Complete post-application QC
+  command: just qc
+  target_ids:
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - mappings/culturemech_recipe_membership.tsv
+  - scripts/repair_heptahydrate_membership.py
+  - scripts/promote_heptahydrate_ncit.py
+  - src/mediaingredientmech/utils/culturemech_occurrences.py
+  - tests/test_repair_heptahydrate_membership.py
+  - tests/test_promote_heptahydrate_ncit.py
+  - tests/test_culturemech_membership.py
+  - tests/test_refresh_occurrence_statistics.py
+  - scripts/build_culturemech_membership.py
+  - scripts/refresh_occurrence_statistics.py
+  - data/curated/ALL_INGREDIENTS.md
+  - data/curated/MAPPED_INGREDIENTS.md
+  - data/curated/all_ingredients_index.csv
+  - data/curated/all_ingredients_index.json
+  - data/curated/mapped_ingredients_index.csv
+  - data/curated/mapped_ingredients_index.json
+  - docs/data/all_ingredients.csv
+  - docs/data/all_ingredients.json
+  - docs/data/all_ingredients.md
+  - docs/data/ingredients.json
+  - docs/data/mapped_ingredients.csv
+  - docs/data/mapped_ingredients.json
+  - docs/data/mapped_ingredients.md
+  - mappings/ingredient_mappings.sssom.tsv
+  - mappings/unified_mapping_rejections.tsv
+  - UNIFIED_INGREDIENT_MAPPING.tsv
+  - reports/sssom_completion_20260921/review.json
+  - reports/semantic_review_20260921/resolution/current-review.json
+  - reports/ingredient_bundle_20261101_ncit875/review.json
+  - reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+  - reports/ncit_heptahydrate_875_20261101_membership/README.md
+  - reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  - reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  - reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  - reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  evidence_ids:
+  - full_qc_receipt
+  - full_qc_log
+  summary: Full just qc passes at 2026-11-01T06:13:54Z, log SHA 509779056a924761900d9efeeb30d5d203d77cf6c45eca8b3dabb3983571fff4.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: focused
+  name: Post-application regression suite
+  command: python -m pytest -q -o addopts= -p no:cacheprovider tests/test_repair_heptahydrate_membership.py
+    tests/test_promote_heptahydrate_ncit.py tests/test_culturemech_membership.py tests/test_refresh_occurrence_statistics.py
+    tests/test_occurrence_stats.py tests/test_source_occurrences.py tests/test_mapping_change_receipt.py
+  target_ids:
+  - mappings/culturemech_recipe_membership.tsv
+  - scripts/repair_heptahydrate_membership.py
+  - scripts/promote_heptahydrate_ncit.py
+  - src/mediaingredientmech/utils/culturemech_occurrences.py
+  - tests/test_repair_heptahydrate_membership.py
+  - tests/test_promote_heptahydrate_ncit.py
+  - tests/test_culturemech_membership.py
+  - tests/test_refresh_occurrence_statistics.py
+  evidence_ids:
+  - focused_receipt
+  - focused_log
+  summary: All 220 tests pass, including the actual published membership and owner/consumer
+    invariants.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: reviewed_qc
+  name: Reviewed SSSOM receipt replay
+  command: just qc-reviewed-sssom reports/sssom_completion_20260921/review.json output/step2-membership-reviewed-sssom
+  target_ids:
+  - mappings/ingredient_mappings.sssom.tsv
+  - reports/sssom_completion_20260921/review.json
+  evidence_ids:
+  - reviewed_qc_receipt
+  - reviewed_qc_log
+  summary: Native reviewed SSSOM and approval-free receipt chain replay passes.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: reviewed_export
+  name: Reviewed SSSOM export
+  command: just export-reviewed-sssom reports/sssom_completion_20260921/review.json
+    output/step2-membership-reviewed-sssom
+  target_ids:
+  - mappings/ingredient_mappings.sssom.tsv
+  evidence_ids:
+  - reviewed_export_receipt
+  - reviewed_export_log
+  summary: 2986 canonical rows retain 1,740 supported and 1,246 withheld rows; target
+    mapping remains withheld.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: semantic
+  name: Semantic review integrity
+  command: python -m mediaingredientmech.validation.semantic_release --root . --report
+    reports/semantic_review_20260921/resolution/current-review.json
+  target_ids:
+  - reports/semantic_review_20260921/resolution/current-review.json
+  evidence_ids:
+  - semantic_receipt
+  - semantic_log
+  summary: Report integrity passes; full semantic release remains FAIL with 1,733
+    blocking findings and 2,271 blocking assertions.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: supported_export
+  name: Supported KGX export
+  command: just export-supported-kgx reports/semantic_review_20260921/resolution/current-review.json
+    output/step2-membership-supported-kgx
+  target_ids:
+  - reports/semantic_review_20260921/resolution/current-review.json
+  evidence_ids:
+  - supported_export_receipt
+  - supported_export_log
+  summary: Supported KGX export completes while preserving excluded-claim backlog.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: supported_qc
+  name: Supported KGX validation
+  command: just qc-supported-kgx reports/semantic_review_20260921/resolution/current-review.json
+    output/step2-membership-supported-kgx
+  target_ids:
+  - reports/semantic_review_20260921/resolution/current-review.json
+  evidence_ids:
+  - supported_qc_receipt
+  - supported_qc_log
+  summary: Supported KGX validation passes without changing scientific dispositions.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: companion_export
+  name: Companion export
+  command: python -m mediaingredientmech.export.ingredient_bundle export --review
+    reports/ingredient_bundle_20261101_ncit875/review.json --output output/step2-membership-ingredient-bundle
+  target_ids:
+  - reports/ingredient_bundle_20261101_ncit875/review.json
+  - reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+  evidence_ids:
+  - companion_export_receipt
+  - companion_export_log
+  summary: Explicit selected companion export completes with preserved claims and
+    evidence.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: companion_qc
+  name: Companion validation
+  command: python -m mediaingredientmech.export.ingredient_bundle validate output/step2-membership-ingredient-bundle
+    --manifest-sha256 ffb67b060ba8c574e0ebe8cfb83fb5d5b2bbd90adb0d5ac13acfc8bbf0a370ae
+  target_ids:
+  - reports/ingredient_bundle_20261101_ncit875/review.json
+  evidence_ids:
+  - companion_qc_receipt
+  - companion_qc_log
+  summary: Companion manifest and dependency bindings validate unchanged.
+  required: true
+  status: passed
+  exit_code: 0
+  scope_note: Root executed the native command in the isolated feature worktree; reviewer
+    inspected its exact log and execution receipt. Current captured inputs equal that
+    frozen feature tree.
+- check_id: source_independent
+  name: Independent source and native transaction tests
+  command: PYTHONPATH=src:../claw-source/src RUN/envs/mim/bin/python -m pytest -q
+    -o addopts= -p no:cacheprovider tests/test_repair_heptahydrate_membership.py -k
+    "not committed_memberships" tests/test_promote_heptahydrate_ncit.py tests/test_semantic_identity_occurrences.py
+  target_ids:
+  - scripts/repair_heptahydrate_membership.py
+  - scripts/promote_heptahydrate_ncit.py
+  - src/mediaingredientmech/utils/culturemech_occurrences.py
+  - tests/test_repair_heptahydrate_membership.py
+  - tests/test_promote_heptahydrate_ncit.py
+  evidence_ids:
+  - source_tests
+  - after_membership
+  - after_sources
+  - after_promote
+  summary: 158 tests pass; three independent real-native post-reservation owner-insertion
+    probes refuse before mutation. Membership normal apply/no-op remains valid.
+  required: true
+  status: passed
+  exit_code: 0
+- check_id: actual_independent
+  name: Independent actual membership gates
+  command: PYTHONPATH=src:../claw-source/src RUN/envs/mim/bin/python -m pytest -q
+    -o addopts= -p no:cacheprovider tests/test_culturemech_membership.py::test_every_published_identifier_is_held_by_active_record
+    tests/test_culturemech_membership.py::test_the_counts_are_reproducible_from_the_edges
+    tests/test_repair_heptahydrate_membership.py::test_committed_memberships_use_current_owner_and_preserve_exact_cohort
+  target_ids:
+  - mappings/culturemech_recipe_membership.tsv
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - docs/data/ingredients.json
+  evidence_ids:
+  - actual_tests
+  - actual
+  summary: Three actual-state native tests pass after production apply; the formerly
+    failing ownership invariant is now green.
+  required: true
+  status: passed
+  exit_code: 0
+- check_id: application_independent
+  name: Independent applied-state and product comparison
+  command: RUN/envs/mim/bin/python RUN/step2-independent/applied-membership-review-20261101T061545Z/verify.py
+  target_ids:
+  - mappings/culturemech_recipe_membership.tsv
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - docs/data/ingredients.json
+  evidence_ids:
+  - actual
+  - applied
+  - journal
+  summary: Exact application/journal/preimage and 32 selected pairs verified;241 of
+    256 prior native inputs unchanged, with only 13 expected count products and 2
+    writer/test files changed.
+  required: true
+  status: passed
+  exit_code: 0
+- check_id: protected_independent
+  name: Independent protected-file and Markdown replay
+  command: python ../step2-independent/native-membership-followup/verify_protected.py
+  target_ids:
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - mappings/culturemech_recipe_membership.tsv
+  - docs/data/ingredients.json
+  evidence_ids:
+  - delta
+  - actual
+  summary: Independently matched5417 protected files to baseline Git blobs, all 13
+    export before/after hashes and all four Markdown deltas in the actual durable
+    capture.
+  required: true
+  status: passed
+  exit_code: 0
+- check_id: portable_independent
+  name: Independent portable artifact verification
+  command: python reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  target_ids:
+  - reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  - reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  - reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  - reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  evidence_ids:
+  - inventory
+  - portable
+  - journal
+  summary: Executed in the actual capture:163 portable source files and frozen inventory
+    verify; decompressed journal/preimage and reconstructed32-pair output exactly
+    match the applied membership hash.
+  required: true
+  status: passed
+  exit_code: 0
+evidence:
+- evidence_id: authority
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: One supplied form retains its exact identity; narrow migration does not
+    collapse sibling hydrates or authorize unrelated scientific claims.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: profile
+  kind: authority
+  reference: docs/record-review-profile.md
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Passing structural reviews require positive bounded assessments and do
+    not replace native scientific dispositions.
+  snapshot_sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+- evidence_id: owner
+  kind: record_content
+  reference: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Current owner remains byte-identical to the prior reviewed exact NCIT heptahydrate
+    record, including historical 26/26 and unresolved chemistry/BUFFER evidence.
+  snapshot_sha256: 6e816ef6a1dad8dab9c3ddd711ca84d8a3489bedb175d540ea3cb618c7068873
+- evidence_id: membership
+  kind: record_content
+  reference: mappings/culturemech_recipe_membership.tsv
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Inspected the complete 202,098-row maintained membership artifact:32 selected
+    pairs useNCIT:C61946, with 202,066 unrelated rows and source header preserved.
+  snapshot_sha256: 55ce5fabd42eb4cc1df628d4fd6a45b813caccbc7d7773105ece5633dd313897
+- evidence_id: applied
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Actual completed one-file native application, exact frozen source hashes
+    and 32 recipe/count pairs; explicit no-scientific-approval statement.
+  snapshot_sha256: 1f227990d5b0ecc22d2064110d45c790d0778c92c692e2c5363e2b086996f54c
+- evidence_id: preimage
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/application/apply.before-membership.tsv.gz
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Lossless frozen preimage matches the original membership bytes and native
+    journal embedded beforeimage.
+  snapshot_sha256: a0833c3a21c9364d4874f7b7ba7217afcd4f87c84244e0284e487c97f3cc42e6
+- evidence_id: journal
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/application/journal.json.gz
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Complete native journal records only membership replacement and the exact
+    preimage.
+  snapshot_sha256: 6b7f4ed9a13b8c68edbb271d40fbafb3669d4fb56440b80840107a80c3e316cf
+- evidence_id: actual
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/applied/verification.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Independent actual receipt/journal,32 pairs,202066 unrelated rows, all
+    256 prior native inputs and nine CSV/JSON product comparisons;241 inputs unchanged
+    and 15 expected changes.
+  snapshot_sha256: e5bf42db3bd830b0ea2637962919f56fbc1e6b58bca3afd316d81a68e273d80c
+- evidence_id: actual_tests
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/applied/native-actual-tests.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: 'Three independent post-application tests pass: every membership has an
+    active owner, effective counts agree, and the exact committed cohort is preserved.'
+  snapshot_sha256: df382729359249b9fed7a27bb11be728cfb979734493df08a5d7fa300d6a51f0
+- evidence_id: delta
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/application/export-delta.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Thirteen export deltas and5417 protected tracked files are bound to original
+    hashes. Reviewer independently replayed all protected hashes,13 export pairs and
+    four Markdown deltas.
+  snapshot_sha256: d63bc6bb1a216af81c900847a6ab29ed3a3ba574516ad254e4ad0be9e767066b
+- evidence_id: before1031
+  kind: prior_review
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/finding-1031/native-membership-owner-test-v2.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Existing native ownership test fails before repair solely on the retired
+    phosphate-heptahydrate identifier; the earlier failed invocation is retained separately.
+  snapshot_sha256: 8f55b90e09d62b8727b8cff27af1ddab37acb6c1f1bdb1c1690bb17e9756bcee
+- evidence_id: before1033
+  kind: prior_review
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/valid-owner-race.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Native-valid competing owner introduced after receipt reservation caused
+    initial membership writer false success; independently reproduced before fix.
+  snapshot_sha256: 7b352d282987c431557d0de5fae93696a8f720e7e1f9dd23ffbf309e3345645b
+- evidence_id: before_sources
+  kind: prior_review
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-sources-valid-owner-race.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Same cause independently reproduced in original source-phase mutation,
+    before expanding the fix.
+  snapshot_sha256: 58fbb247e1e7430bc35599117f459be1823b587f8df0c13f2538e38cfcf272da
+- evidence_id: before_promote
+  kind: prior_review
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/intermediate/original-promote-valid-owner-race.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Same cause independently reproduced in original canonical promotion with
+    the archived native candidate row.
+  snapshot_sha256: facd9cdd12da056dfdd010cfb1eb58b4112c6ab1453485b438c4a482c59c878b
+- evidence_id: after_membership
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/results.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Final real-native membership success/no-op pass; native-valid new ignored/nested
+    competing owner is refused before membership mutation, preserving receipt/preimage
+    and competitor.
+  snapshot_sha256: 6d169b2d0e7dbb35d73bf9c1b5da6f6566c285b50d5e72b0f9093077a518ed45
+- evidence_id: after_sources
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-sources-valid-owner-race.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Final native source-phase callback rejects the same competing owner before
+    either coupled owner/ledger write.
+  snapshot_sha256: 5522c9e1f59d7dd7af215a2c34a1fd71656a63968e257339d64cef0b0a9ffc8f
+- evidence_id: after_promote
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/original-promote-valid-owner-race.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Final native promotion callback rejects the same competing owner before
+    canonical SSSOM mutation.
+  snapshot_sha256: 9199f415dc1a6647546267399bcedcd952bd3323201fb7289d455c0eadf77b05
+- evidence_id: source_tests
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/final-source/focused-tests.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Independent final combined source suite:158 passed, one then-unapplied
+    production assertion deselected, no skips; production assertion is now separately
+    exercised.
+  snapshot_sha256: 010c619f6ba986c9dfbd1e3d971d439753bc60a841c17053e1a34d7345945074
+- evidence_id: routes
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/independent/initial/routing-delta.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Source routing changes exactly28 preferred-label and4 dotted-label occurrences
+    in the complete relevant slice; middle-dot/English-name expansion remains explicitly
+    separate.
+  snapshot_sha256: 76719e86ffb9ed1bc41b1ac9c5face08837f71f94d534b682e12f2179daf7069
+- evidence_id: previous
+  kind: prior_review
+  reference: reviews/structured/20261101T054115Z-approved-step2-ncit-heptahydrate-review/review.yaml
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Earlier immutable native review captured an actual working tree on durable
+    40b787d. Its separate cb9f59a external PASS was superseded after the membership
+    omission; history is preserved.
+  snapshot_sha256: 344f36869a8d945bbded36fdfadc8b12fa5069b6c55e9989e7597a9f97b375c4
+- evidence_id: inventory
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Frozen 168-file inventory plus the inventory itself makes 169 files; exact
+    copied sources/results and lossless evidence transformations verified.
+  snapshot_sha256: 43bc533a6d7ca78005b6d28205e622e410d62b7aa2ec2de00a6716cd75405083
+- evidence_id: portable
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Manifest preserves original source hashes, copied paths and lossless gzip
+    transforms;163 portable source files verified by the maintained verifier.
+  snapshot_sha256: 86b2b9b87c905282126c8a81f7d13889693d0c125dfcd7f2108bf88566d91d4d
+- evidence_id: docs
+  kind: record_content
+  reference: reports/ncit_heptahydrate_875_20261101_membership/README.md
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Frozen scope, application, original failures, guard guarantee, exact export
+    changes and remaining scientific boundaries are stated.
+  snapshot_sha256: 2c2f763164cc2035e60b64648fb6a86ef60a136af64a3f4be851ec2e077e0dae
+- evidence_id: full_qc_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-full-qc.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Full just qc passes at 2026-11-01T06:13:54Z, log SHA 509779056a924761900d9efeeb30d5d203d77cf6c45eca8b3dabb3983571fff4.
+    Inspected actual command, timestamps and exit result.
+  snapshot_sha256: 0a2b2ec2e963de5991700492b6c47ea3aabd67e252cc0553288b213ab0657126
+- evidence_id: full_qc_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-full-qc.log.gz
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Full just qc passes at 2026-11-01T06:13:54Z, log SHA 509779056a924761900d9efeeb30d5d203d77cf6c45eca8b3dabb3983571fff4.
+    Hash verified against the execution receipt; compression is lossless when present.
+  snapshot_sha256: c660bed38f2203c80ba61fda6cde868e370da233cb898d973ca530fb3d314daa
+- evidence_id: focused_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-final-focused-tests.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: All 220 tests pass, including the actual published membership and owner/consumer
+    invariants. Inspected actual command, timestamps and exit result.
+  snapshot_sha256: b104cc65d6155890bc23efb6d6495b22290cae62b2e14fc9a0d25bfcb08a9a0c
+- evidence_id: focused_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-final-focused-tests.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: All 220 tests pass, including the actual published membership and owner/consumer
+    invariants. Hash verified against the execution receipt; compression is lossless
+    when present.
+  snapshot_sha256: 1b74b9f0883be1ca419e0cdb92630384065005f5dc4e4cfc2cb41cdd32279f06
+- evidence_id: reviewed_qc_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-qc.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Native reviewed SSSOM and approval-free receipt chain replay passes. Inspected
+    actual command, timestamps and exit result.
+  snapshot_sha256: 4139ade54d76a08b3a21496a84e62a13a2af9e5fbd821d38249d3024df41fa06
+- evidence_id: reviewed_qc_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-qc.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Native reviewed SSSOM and approval-free receipt chain replay passes. Hash
+    verified against the execution receipt; compression is lossless when present.
+  snapshot_sha256: af9b5a362fad00b223ca94107d3d90ff26e370d1c36eaa78c42d9b11e70ba186
+- evidence_id: reviewed_export_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-export.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: 2986 canonical rows retain 1,740 supported and 1,246 withheld rows; target
+    mapping remains withheld. Inspected actual command, timestamps and exit result.
+  snapshot_sha256: 9aaa56909945fccaabd3ff67eb129a97d70717b8c3bd288e82e69127fbd6772c
+- evidence_id: reviewed_export_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-reviewed-export.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: 2986 canonical rows retain 1,740 supported and 1,246 withheld rows; target
+    mapping remains withheld. Hash verified against the execution receipt; compression
+    is lossless when present.
+  snapshot_sha256: ea42c3393adad836b0a987a5588f98dc8ffbfb3b34adea118141cbb379e4f621
+- evidence_id: semantic_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-semantic-integrity.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Report integrity passes; full semantic release remains FAIL with 1,733
+    blocking findings and 2,271 blocking assertions. Inspected actual command, timestamps
+    and exit result.
+  snapshot_sha256: c29b7f85b75df2acb572c167a3098810359263e75b8eeefa6b47f537aef3a373
+- evidence_id: semantic_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-semantic-integrity.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Report integrity passes; full semantic release remains FAIL with 1,733
+    blocking findings and 2,271 blocking assertions. Hash verified against the execution
+    receipt; compression is lossless when present.
+  snapshot_sha256: b2f1341524d27201138e509b4ca6c7d3c0a14c4874543aa6cabe488eb049ddab
+- evidence_id: supported_export_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-export.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Supported KGX export completes while preserving excluded-claim backlog.
+    Inspected actual command, timestamps and exit result.
+  snapshot_sha256: cc8aad0a6780b1c8b98528477e3e5c4565b0ba865e09d28775d594524661df38
+- evidence_id: supported_export_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-export.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Supported KGX export completes while preserving excluded-claim backlog.
+    Hash verified against the execution receipt; compression is lossless when present.
+  snapshot_sha256: 383a95ae1e74d795bac34d09234a474f8e2856f566fe06cd1d1a94caa1afbbc2
+- evidence_id: supported_qc_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-qc.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Supported KGX validation passes without changing scientific dispositions.
+    Inspected actual command, timestamps and exit result.
+  snapshot_sha256: 8411a49096b4e216bdfeabcb3a6accbed5f1bd52d880518ae82fd96c0f10be90
+- evidence_id: supported_qc_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-supported-qc.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Supported KGX validation passes without changing scientific dispositions.
+    Hash verified against the execution receipt; compression is lossless when present.
+  snapshot_sha256: 76585cbf11b4249faf99cb3c31583d72dfc51dc094902f6e4f9dd4e2084816b7
+- evidence_id: companion_export_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-export.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Explicit selected companion export completes with preserved claims and
+    evidence. Inspected actual command, timestamps and exit result.
+  snapshot_sha256: 923ff8eb1125bc55b0ac9b5b33531cd19b7cb4065ffd9e2993b053771c5cb418
+- evidence_id: companion_export_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-export.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Explicit selected companion export completes with preserved claims and
+    evidence. Hash verified against the execution receipt; compression is lossless
+    when present.
+  snapshot_sha256: 3e86f5a9b08481d3e0845ef5787355048f4a1d36a5af9946ec02ffe1b4b605c8
+- evidence_id: companion_qc_receipt
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-qc.json
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Companion manifest and dependency bindings validate unchanged. Inspected
+    actual command, timestamps and exit result.
+  snapshot_sha256: bbb7f36927ec60a136d19035620a0fb40bb2bc2eba474bd40fc5cc7006193aeb
+- evidence_id: companion_qc_log
+  kind: validation
+  reference: reports/ncit_heptahydrate_875_20261101_membership/checks/step2-membership-companion-qc.log
+  accessed_at: '2026-11-01T06:20:14Z'
+  support: supports
+  summary: Companion manifest and dependency bindings validate unchanged. Hash verified
+    against the execution receipt; compression is lossless when present.
+  snapshot_sha256: ce1e341213b171743cc30ebffe8905ffed4d4d4edbf8ab4d35f184dfdf154d41
+assessments:
+- assessment_id: membership
+  area: identity
+  topic: Existing recipe memberships follow their current exact owner
+  outcome: supported
+  target_ids:
+  - mappings/culturemech_recipe_membership.tsv
+  evidence_ids:
+  - membership
+  - actual
+  - applied
+  - preimage
+  - journal
+  summary: All 32 existing recipe/count pairs move from retired kgmicrobe.compound:na2hpo4_x_7_h2o
+    to NCIT:C61946. Source header, total 202,098 rows and 202,066 unrelated rows are
+    preserved. Every selected count remains 1; no source cohort is rebuilt.
+  metrics:
+  - name: migrated existing memberships
+    value: 32
+    unit: recipe/count pairs
+    definition: Exact frozen pairs whose identity key changes; no added recipes.
+    denominator: 202098
+  - name: unchanged unrelated memberships
+    value: 202066
+    unit: rows
+    definition: All other row payloads remain equal.
+    denominator: 202098
+- assessment_id: writers
+  area: representation
+  topic: Native scope validation across all three publication paths
+  outcome: supported
+  target_ids:
+  - scripts/repair_heptahydrate_membership.py
+  - scripts/promote_heptahydrate_ncit.py
+  - tests/test_repair_heptahydrate_membership.py
+  - tests/test_promote_heptahydrate_ncit.py
+  evidence_ids:
+  - before1033
+  - before_sources
+  - before_promote
+  - after_membership
+  - after_sources
+  - after_promote
+  - source_tests
+  summary: Membership, original source and original promotion writes all recheck destination
+    uniqueness within native validation. Hash-bound inputs and held receipt/backup
+    identities remain enforced; true repeats are safe, and promotion no-op also checks
+    pre-existing conflicts.
+  details: Native-valid ignored/nested competing owners inserted after reservation
+    now cause ValidationFailed before the relevant mutation. Competitors, failed receipts
+    and preimages remain. This guarantee uses the caller lock and native validation
+    boundary; arbitrary later uncooperative writes are outside it.
+- assessment_id: routing
+  area: consistency
+  topic: Durable finite source-label routing
+  outcome: supported
+  target_ids:
+  - src/mediaingredientmech/utils/culturemech_occurrences.py
+  - scripts/build_culturemech_membership.py
+  - scripts/refresh_occurrence_statistics.py
+  - tests/test_culturemech_membership.py
+  - tests/test_refresh_occurrence_statistics.py
+  evidence_ids:
+  - routes
+  - focused_receipt
+  - actual_tests
+  - source_tests
+  summary: The preferred heptahydrate label, its dotted spelling and accepted bullet
+    spelling route to NCIT:C61946. Native collection restores the archived 28+4 cohort;
+    generic, sibling-hydrate, buffer and unrelated controls preserve their prior routing.
+  details: Middle-dot and long English-name expansion remain outside this frozen32-edge
+    repair. They are neither silently added nor claimed resolved. No blanket old-parent-ID
+    rewrite occurs.
+- assessment_id: products
+  area: consistency
+  topic: Current effective counts without historical YAML rewrite
+  outcome: supported
+  target_ids:
+  - data/curated/ALL_INGREDIENTS.md
+  - data/curated/MAPPED_INGREDIENTS.md
+  - data/curated/all_ingredients_index.csv
+  - data/curated/all_ingredients_index.json
+  - data/curated/mapped_ingredients_index.csv
+  - data/curated/mapped_ingredients_index.json
+  - docs/data/all_ingredients.csv
+  - docs/data/all_ingredients.json
+  - docs/data/all_ingredients.md
+  - docs/data/ingredients.json
+  - docs/data/mapped_ingredients.csv
+  - docs/data/mapped_ingredients.json
+  - docs/data/mapped_ingredients.md
+  evidence_ids:
+  - actual
+  - delta
+  - actual_tests
+  - full_qc_receipt
+  summary: Every changed catalog/index/browser record is the heptahydrate, with effective
+    count 26→32. Nine CSV/JSON artifacts each change one record; browser metadata
+    also refreshes its timestamp. Four Markdown artifacts change only target counts,
+    timestamps where emitted and derived totals by 6. All other export content is
+    equal.
+  details: Historical record statistics remain26/26; maintained membership supplies
+    the correct effective 32/32. ALL total 223,056→223,062 and MAPPED total 222,462→222,468
+    are derived totals, not additional source occurrences.
+- assessment_id: identity_retained
+  area: scope
+  topic: Preserved prior exact-form identity correction
+  outcome: supported
+  target_ids:
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - mappings/ingredient_mappings.sssom.tsv
+  - mappings/unified_mapping_rejections.tsv
+  - UNIFIED_INGREDIENT_MAPPING.tsv
+  evidence_ids:
+  - owner
+  - authority
+  - actual
+  - delta
+  - previous
+  summary: Owner YAML, canonical SSSOM, rejection ledger and unified table remain
+    byte-identical to the prior captured Step 2 outputs. This repair adds no alias,
+    structure, role or identity claim. The exact NCIT heptahydrate and rejected anhydrous
+    identity remain as previously recorded.
+  details: The earlier native review is immutable historical context. Its earlier
+    final-head PASS was superseded after the newly discovered membership omission.
+    This follow-up positively assesses the corrected membership and amended guarded-writer
+    scope; it does not relabel the original capture revision.
+- assessment_id: release
+  area: scope
+  topic: Unchanged withholding and native release boundaries
+  outcome: supported
+  target_ids:
+  - reports/sssom_completion_20260921/review.json
+  - reports/semantic_review_20260921/resolution/current-review.json
+  - reports/ingredient_bundle_20261101_ncit875/review.json
+  - reports/ingredient_bundle_20261101_ncit875/dependency-refresh.json
+  evidence_ids:
+  - reviewed_qc_receipt
+  - reviewed_export_receipt
+  - semantic_receipt
+  - supported_export_receipt
+  - supported_qc_receipt
+  - companion_export_receipt
+  - companion_qc_receipt
+  - profile
+  - actual
+  summary: All seven native export/validation commands pass with unchanged mapping
+    and companion decisions. Mapping remains WITHHOLD; inherited chemistry and BUFFER
+    claims remain open. Full semantic release remains FAIL with 1,733 findings and
+    2,271 assertions; integrity success confers no scientific approval.
+- assessment_id: provenance
+  area: provenance
+  topic: Immutable historical evidence and complete bounded application
+  outcome: supported
+  target_ids:
+  - reports/ncit_heptahydrate_875_20261101_membership/README.md
+  - reports/ncit_heptahydrate_875_20261101_membership/inventory.json
+  - reports/ncit_heptahydrate_875_20261101_membership/portable-sources.json
+  - reports/ncit_heptahydrate_875_20261101_membership/verify.py
+  - reports/ncit_heptahydrate_875_20261101_membership/application/apply.json
+  evidence_ids:
+  - docs
+  - inventory
+  - portable
+  - applied
+  - journal
+  - actual
+  - previous
+  summary: The frozen 169-file package preserves original failures, exact source revisions,
+    native race results, actual application receipt and lossless preimages/journal.
+    Portable verification reconstructs the exact applied output; original 185-file
+    execution inventory and original receipts remain unchanged. No prior review pair
+    is edited.
+findings: []
+actions: []
+boundary_decisions:
+- action: retain
+  target_ids:
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - mappings/culturemech_recipe_membership.tsv
+  rationale: Preserve the exact seven-water identity and its existing32 recipe/count
+    pairs without substituting anhydrous or sibling hydrate identities.
+  evidence_ids:
+  - authority
+  - membership
+  - actual
+- action: defer
+  target_ids:
+  - data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+  - reports/semantic_review_20260921/resolution/current-review.json
+  rationale: Unchanged chemical/BUFFER holds and native mapping WITHHOLD remain; this
+    structural follow-up does not grant scientific approval.
+  evidence_ids:
+  - owner
+  - semantic_receipt
+  - profile
+limitations:
+- This is a bounded structural, implementation and provenance review; scientific_review
+  is false. It does not approve the full ingredient corpus or clear native release
+  findings.
+- Full semantic release remains FAIL with 1,733 blocking findings and 2,271 blocking
+  assertions. Exact NCIT mapping remains WITHHOLD; inherited chemistry and BUFFER
+  claims remain open.
+- The frozen32-edge migration does not add the known three middle-dot or 17 long-name
+  occurrences. Source expansion and broad freshness monitoring remain separate; no
+  claim of complete upstream cohort reconciliation is made.
+- Native transaction guards assume the caller repository lock and validate before
+  mutation. Arbitrary later non-cooperating edits are outside the guarantee; native
+  I/O failures may require journal recovery.
+- Root executed full QC and seven native release/companion commands; the reviewer
+  inspected their hash-bound receipts/logs and independently ran 158 source tests,
+  three final-state tests, all three native race probes, actual application/export
+  verification and protected-file/portable replay.
+- The source is the actual detached working tree at durable 40b787d with full index
+  tree 7bfb6ccf0a523f35ff77c95856a87cf56eb1a74a, identical to the frozen feature tree.
+  Final committed-head review and remote CI remain subsequent requirements.
+notes:
+- '#1031 and #1033 were recorded before fixes. Their pre-fix reports are external/portable
+  observations, not prior structured finding objects; no previous_occurrences or fabricated
+  terminal dispositions are created. Their reproduced defects are corrected in the
+  inspected source and applied artifact.'
+- The earlier immutable native pair 20261101T054115Z-approved-step2-ncit-heptahydrate-review
+  remains preserved. It captured a working tree at 40b787d; cb9f59a was the later
+  separate exact-head review. This new observation supplies the previously omitted
+  membership coverage and the amended guard review.
+- Native inspection verified all 10,859 indexed paths against the full frozen tree
+  and feature index, all 438 selected input bytes against their staged blobs and feature
+  bytes, and all 169 new portable package files. No source revision was relabeled.
+- Known initial invocation/diagnostic failures and the original race failures are
+  preserved alongside corrected tests. Passing current checks do not erase those historical
+  observations.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/875
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1031
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1033
+- https://github.com/CultureBotAI/MediaIngredientMech/pull/1030
+tags:
+- approved-plan-step2
+- membership-repair
+- native-write-guard
+- bounded-review
+- no-scientific-approval
+```

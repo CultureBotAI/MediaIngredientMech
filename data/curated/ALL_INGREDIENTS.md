@@ -3,7 +3,7 @@
 **Mapped**: 2611 (88.4%)
 **Unmapped**: 262 (8.9%)
 **Other statuses**: 82 (2.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 223,056
+**Total Occurrences**: 223,062
 
 ---
 
@@ -2621,7 +2621,7 @@
 | CHEBI:39063 | Tricine | CHEBI:39063 | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 20 |
-| NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 26 |
+| NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 32 |
 
 ## Unmapped Ingredients
 

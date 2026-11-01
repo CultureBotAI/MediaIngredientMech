@@ -1,0 +1,1025 @@
+FFFFFFFFFFFFFFFF                                                         [100%]
+=================================== FAILURES ===================================
+_ test_native_reservation_races_preserve_competitors_and_recovery[reserved-False-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d576190>
+suffix = None, symlink = False, timing = 'reserved'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[reserved-False-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b2d10f0>
+suffix = '.before-membership.tsv', symlink = False, timing = 'reserved'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[reserved-True-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d78f2f0>
+suffix = None, symlink = True, timing = 'reserved'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[reserved-True-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d5e2be0>
+suffix = '.before-membership.tsv', symlink = True, timing = 'reserved'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[prepared-False-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d5e2f10>
+suffix = None, symlink = False, timing = 'prepared'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[prepared-False-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d7ef750>
+suffix = '.before-membership.tsv', symlink = False, timing = 'prepared'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[prepared-True-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d7efc50>
+suffix = None, symlink = True, timing = 'prepared'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[prepared-True-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d83dd60>
+suffix = '.before-membership.tsv', symlink = True, timing = 'prepared'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[after_commit-False-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d83e5d0>
+suffix = None, symlink = False, timing = 'after_commit'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[after_commit-False-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d827d90>
+suffix = '.before-membership.tsv', symlink = False, timing = 'after_commit'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[after_commit-True-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d860910>
+suffix = None, symlink = True, timing = 'after_commit'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[after_commit-True-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d8a07a0>
+suffix = '.before-membership.tsv', symlink = True, timing = 'after_commit'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[completion-False-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d7c2090>
+suffix = None, symlink = False, timing = 'completion'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[completion-False-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d7c16d0>
+suffix = '.before-membership.tsv', symlink = False, timing = 'completion'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[completion-True-None] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d4def10>
+suffix = None, symlink = True, timing = 'completion'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+_ test_native_reservation_races_preserve_competitors_and_recovery[completion-True-.before-membership.tsv] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b306af0>
+suffix = '.before-membership.tsv', symlink = True, timing = 'completion'
+
+    @pytest.mark.parametrize("suffix", [None, ".before-membership.tsv"])
+    @pytest.mark.parametrize("symlink", [False, True])
+    @pytest.mark.parametrize("timing", ["reserved", "prepared", "after_commit", "completion"])
+    def test_native_reservation_races_preserve_competitors_and_recovery(case, monkeypatch, suffix, symlink, timing):
+        native = native_available()
+        root, log, before, after, _ = case
+        replaced = log if suffix is None else log.with_suffix(suffix)
+        victim = root / "competitor"
+        victim.write_bytes(b"competitor")
+    
+        def replace():
+            replaced.unlink()
+            if symlink:
+                replaced.symlink_to(victim)
+            else:
+                replaced.write_bytes(b"competitor")
+    
+        original = guarded.reserve_receipt_outputs
+    
+        class Proxy:
+            def __init__(self, handle):
+                self.handle = handle
+    
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+    
+            def write(self, text):
+                result = self.handle.write(text)
+                state = json.loads(text).get("state")
+                if ((timing == "prepared" and state == "prepared")
+                        or (timing == "completion" and state == "complete")):
+                    replace()
+                return result
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                if timing == "reserved":
+                    replace()
+                yield (Proxy(handles[0]), *handles[1:])
+    
+        class Racing(native.ValidatedWriteTransaction):
+            def commit(self, *, apply=False):
+                result = super().commit(apply=apply)
+                if apply and timing == "after_commit":
+                    replace()
+                return result
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        monkeypatch.setattr(guarded, "new_transaction", lambda root, validator, journal: Racing(
+            root, validator=validator, journal_dir=journal))
+>       with pytest.raises(ValueError, match="Reserved evidence output was replaced or removed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_repair_heptahydrate_membership.py:207: Failed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-True-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-True-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-True-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-True-.before-membership.tsv]
+16 failed, 46 deselected, 13 warnings in 0.74s

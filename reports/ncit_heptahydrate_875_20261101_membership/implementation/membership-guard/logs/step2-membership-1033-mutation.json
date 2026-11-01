@@ -1,0 +1,27 @@
+{
+  "name": "step2-membership-1033-mutation",
+  "argv": [
+    "python",
+    "-c",
+    "import sys; sys.path.insert(0, \"../step2-membership-repair/revision-1033\"); import pytest; raise SystemExit(pytest.main(sys.argv[1:]))",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "mutation_scope",
+    "--basetemp",
+    "../step2-membership-repair/revision-1033/mutation-tmp",
+    "tests/test_repair_heptahydrate_membership.py",
+    "-k",
+    "valid_competing_owner_after_reservation"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+  "started_at": "2026-11-01T06:06:06.942743+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T06:06:07.816033+00:00",
+  "exit_code": 1,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-membership-1033-mutation.log",
+  "log_sha256": "81ea8fa7a005ff768ad744125260a421f553d31fffa979d90898483183d11197"
+}

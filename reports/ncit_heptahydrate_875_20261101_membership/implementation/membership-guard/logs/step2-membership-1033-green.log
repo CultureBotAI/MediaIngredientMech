@@ -1,0 +1,77 @@
+...................................F.................................... [ 46%]
+........................................................................ [ 93%]
+..........                                                               [100%]
+=================================== FAILURES ===================================
+______ test_valid_competing_owner_after_reservation_refuses_native_commit ______
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1093f98d0>
+
+    def test_valid_competing_owner_after_reservation_refuses_native_commit(case, monkeypatch):
+        """#1033: uniqueness is a precommit condition, including ignored YAML."""
+        native_available()
+        root, log, before, _, anchors = case
+        record = yaml.safe_load(anchors[guarded.OWNER])
+        record["preferred_term"] = "Competing phosphate heptahydrate owner"
+        validated = guarded.render(record)
+        competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+        original = guarded.reserve_receipt_outputs
+    
+        @contextmanager
+        def reserve(*args, **kwargs):
+            with original(*args, **kwargs) as handles:
+                competitor.parent.mkdir()
+                competitor.write_bytes(validated)
+                yield handles
+    
+        monkeypatch.setattr(guarded, "reserve_receipt_outputs", reserve)
+        with pytest.raises(ValueError, match="Destination identity already held"):
+>           writer.repair(root, log, apply=True)
+
+tests/test_repair_heptahydrate_membership.py:258: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/repair_heptahydrate_membership.py:104: in repair
+    return guarded.publish(
+scripts/promote_heptahydrate_ncit.py:248: in publish
+    applied = transaction.commit(apply=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../claw/src/kg_microbe_write/transaction.py:193: in commit
+    self._validate_all()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ValidatedWriteTransaction(root=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/appr...012579\t1\nkgmicrobe.compound:na2hpo4_x_7_h2o\tCultureMech:014768\t1\nkgmicrobe.compound:z\tCultureMech:100002\t3\n')})
+
+    def _validate_all(self) -> None:
+        if self.validator is None:
+            return
+        failures: list[str] = []
+        for change in self.staged:
+            try:
+                self.validator(change.path, change.new_text)
+            except Exception as exc:
+                failures.append(f"{change.path}: {exc}")
+        if failures:
+>           raise ValidationFailed(
+                f"{len(failures)} staged change(s) failed validation and nothing "
+                f"was written:\n  " + "\n  ".join(failures)
+            )
+E           kg_microbe_write.transaction.ValidationFailed: 1 staged change(s) failed validation and nothing was written:
+E             /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-membership-repair/revision-1033/green-tmp/test_valid_competing_owner_aft0/mappings/culturemech_recipe_membership.tsv: Destination identity already held by /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-membership-repair/revision-1033/green-tmp/test_valid_competing_owner_aft0/data/ingredients/mapped/.ignored-backup/competing.yaml
+
+../claw/src/kg_microbe_write/transaction.py:233: ValidationFailed
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_repair_heptahydrate_membership.py::test_valid_competing_owner_after_reservation_refuses_native_commit
+1 failed, 153 passed, 1 deselected, 13 warnings in 2.25s

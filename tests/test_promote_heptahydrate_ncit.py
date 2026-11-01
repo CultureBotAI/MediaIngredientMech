@@ -309,6 +309,81 @@ def test_native_transaction_integration_when_claw_available(case, monkeypatch):
     assert set(journal["changed"]) == {str(root / writer.OWNER), str(root / writer.LEDGER)}
 
 
+@pytest.mark.parametrize("phase", ["sources", "promote"])
+def test_valid_competing_owner_after_reservation_blocks_original_paths(case, monkeypatch, phase):
+    """#1033: every publishing path rechecks the exact destination owner."""
+    native = pytest.importorskip("kg_microbe_write")
+    root, source_log, _ = case
+    monkeypatch.setattr(writer, "new_transaction", lambda root, validator, journal: native.ValidatedWriteTransaction(
+        root, validator=validator, journal_dir=journal))
+    if phase == "promote":
+        writer.apply_sources(root, source_log, apply=True)
+        candidate = root / "candidate.tsv"
+        candidate.write_bytes(candidate_for(root))
+        log = source_log.with_name("promotion.json")
+
+        def apply():
+            return writer.promote(root, log, source_log, candidate, writer.digest(candidate.read_bytes()), apply=True)
+    else:
+        log = source_log
+
+        def apply():
+            return writer.apply_sources(root, log, apply=True)
+
+    before = {p: (root / p).read_bytes() for p in (writer.OWNER, writer.LEDGER, writer.SSSOM)}
+    corrected = yaml.safe_load(writer.corrected_record(before[writer.OWNER]))
+    corrected["preferred_term"] = "Competing phosphate heptahydrate owner"
+    validated = writer.render(corrected)
+    competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+    original = writer.reserve_receipt_outputs
+
+    @contextmanager
+    def reserve(*args, **kwargs):
+        with original(*args, **kwargs) as handles:
+            competitor.parent.mkdir()
+            competitor.write_bytes(validated)
+            yield handles
+
+    monkeypatch.setattr(writer, "reserve_receipt_outputs", reserve)
+    with pytest.raises(native.ValidationFailed, match="Destination identity already held"):
+        apply()
+    assert competitor.read_bytes() == validated
+    assert {p: (root / p).read_bytes() for p in before} == before
+    receipt = json.loads(log.read_text())
+    assert receipt["state"] == "failed" and receipt["applied"] is not True
+    backups = ({".before.yaml": writer.OWNER, ".before-ledger.tsv": writer.LEDGER,
+                ".before.sssom.tsv": writer.SSSOM} if phase == "sources" else {".before.tsv": writer.SSSOM})
+    for suffix, path in backups.items():
+        assert log.with_suffix(suffix).read_bytes() == before[path]
+    assert not list((log.parent / f"{log.stem}-journal").glob("write-*.json"))
+
+
+@pytest.mark.parametrize("completed", [False, True])
+def test_promotion_refuses_preexisting_valid_competing_owner(case, monkeypatch, completed):
+    """A completed-byte no-op also must not hide a competing active identity."""
+    native = pytest.importorskip("kg_microbe_write")
+    root, source_log, _ = case
+    monkeypatch.setattr(writer, "new_transaction", lambda root, validator, journal: native.ValidatedWriteTransaction(
+        root, validator=validator, journal_dir=journal))
+    writer.apply_sources(root, source_log, apply=True)
+    candidate = root / "candidate.tsv"
+    candidate.write_bytes(candidate_for(root))
+    if completed:
+        writer.promote(root, source_log.with_name("first-promotion.json"), source_log,
+                       candidate, writer.digest(candidate.read_bytes()), apply=True)
+    before = {p: (root / p).read_bytes() for p in (writer.OWNER, writer.LEDGER, writer.SSSOM)}
+    competitor = root / "data/ingredients/mapped/.ignored-backup/competing.yaml"
+    competitor.parent.mkdir()
+    validated = writer.render(yaml.safe_load(before[writer.OWNER]))
+    competitor.write_bytes(validated)
+    log = source_log.with_name("conflicted-promotion.json")
+    with pytest.raises(ValueError, match="Destination identity already held"):
+        writer.promote(root, log, source_log, candidate, writer.digest(candidate.read_bytes()), apply=True)
+    assert competitor.read_bytes() == validated
+    assert {p: (root / p).read_bytes() for p in before} == before
+    assert not log.exists()
+
+
 @pytest.mark.parametrize("phase,suffix", [
     ("sources", None), ("sources", ".before.yaml"),
     ("sources", ".before-ledger.tsv"), ("sources", ".before.sssom.tsv"),
