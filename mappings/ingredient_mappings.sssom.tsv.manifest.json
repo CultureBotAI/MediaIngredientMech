@@ -1,7 +1,7 @@
 {
   "approval": "NONE: bounded source/export correction; native reviews remain authoritative.",
   "artifacts": {
-    "mappings/ingredient_mappings.sssom.tsv": "92faaffd55ba44d94df02e71febd71c4b9b24c30955735512cd332eae464f684",
+    "mappings/ingredient_mappings.sssom.tsv": "55823757c6b15f43de69370da7fe6c4468ff21f14e5f4994cf53115e04ae0d74",
     "mappings/other_cross_record_baseline.tsv": "f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb",
     "mappings/suppressed_aliases.tsv": "3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84"
   },
@@ -1049,7 +1049,7 @@
     "data/ingredients/mapped/(R)-malic_Acid.yaml": "0a7229be6c0bd446df2b2130a644881be47e2a021194b732e1855e5703270f89",
     "data/ingredients/mapped/(S)-azetidine-2-carboxylic_Acid.yaml": "8e26520c847b822c596a5cc3bf6206fac862adf5a1e2b4b2ed3d6d80ebdab792",
     "data/ingredients/mapped/(S)-mandelic_Acid.yaml": "23414e994a265c4df0b025da1907547eebd137cbd4102e0b9e99035ffb2c70af",
-    "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml": "7eece9fb547e213646a2313b9f9bb8f5988f0d13e08d53b2255a33b43f8a659f",
+    "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml": "ab3662e22bd04c2d2a0e04a836d6d09f155b39bc0a00abab6a17d0c68e214c16",
     "data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml": "91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f",
     "data/ingredients/mapped/1-Kestose.yaml": "c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8",
     "data/ingredients/mapped/1-Pentanol.yaml": "d47463e81ebb231c75529caffced6330cdfb1bea8ebc2b517aaaecd12a4e6d19",
@@ -3998,5 +3998,25 @@
     "data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml": "a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d"
   },
   "source_receipt_sha256": "cca5441afce59cc9609bac10df16c938c4c0d3e0cff021b20e7f771e2928e6c1",
-  "sssom_before_sha256": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9"
+  "sssom_before_sha256": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9",
+  "stock_cas_removal_updates": [
+    {
+      "approval": "NONE: bounded source chemistry correction; no mapping, role or release approval.",
+      "baseline_sha256": "f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb",
+      "generation_manifest_sha256": "eb3dc766c7737192288863a773c26e9946064c3d16fb25cfb331f16d17e3f297",
+      "generation_receipt_sha256": "27d4b43212d2fd174730a907eb9c7db954b2f0398f75e73ada74e5402e444f7c",
+      "historical_owner_sha256": "7eece9fb547e213646a2313b9f9bb8f5988f0d13e08d53b2255a33b43f8a659f",
+      "issue": 268,
+      "owner_after_sha256": "ab3662e22bd04c2d2a0e04a836d6d09f155b39bc0a00abab6a17d0c68e214c16",
+      "owner_before_sha256": "6d6db9a0040730973f390da1e492ee4e2afa672adc95e2e526d37f99def9bc5a",
+      "prior_manifest_sha256": "ff6a452f1838293e7b239acdd3358abb3329dbff424f6c082c978de3fadb4222",
+      "scope": "Only the stock's mis-scoped CAS display assertion and explicitly reviewed provenance; fourteen chemistry-only historical owner pins, all other rows, policy decisions, form updates and registry history remain exact. No alias, mapping or role approval. Explicit canonical reset, not native blank emission: commit 14f7ab71204d1307a0ffaccaf3c614eabfd0d990 (#351) changed CHEBI:9532 to the stock registry identity while carrying the old ChEBI synonym stamp. That old-object verdict does not validate this stock. Preserve six unresolved aliases and WITHHOLD; no scientific approval.",
+      "sidecar_sha256": "3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84",
+      "source_receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7b-execution/source-apply.json",
+      "source_receipt_sha256": "985f74ff8f5d6455bcef825c0160b4d0a1e074158883c531ab2b7cd3fa1af682",
+      "source_record": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+      "sssom_after_sha256": "55823757c6b15f43de69370da7fe6c4468ff21f14e5f4994cf53115e04ae0d74",
+      "sssom_before_sha256": "92faaffd55ba44d94df02e71febd71c4b9b24c30955735512cd332eae464f684"
+    }
+  ]
 }
