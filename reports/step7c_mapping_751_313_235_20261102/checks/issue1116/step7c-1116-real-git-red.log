@@ -1,0 +1,47 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_real_git_ignored_diagnostic_is_accepted_without_touching_other_ignored_work _
+
+real_git_handoff = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9570/test_real_git_ignore...ed/fixture-step7c-final-source-and-sssom-review/review.yaml'}, <function real_git_handoff.<locals>.git at 0x10bd558a0>)
+
+    def test_real_git_ignored_diagnostic_is_accepted_without_touching_other_ignored_work(
+        real_git_handoff,
+    ):
+        root, allowed, git = real_git_handoff
+        visible = set(
+            filter(
+                None, git("ls-files", "--others", "--exclude-standard", "-z").decode().split("\0")
+            )
+        )
+        assert visible == allowed - {str(m.DIAGNOSTIC)}
+        assert git("check-ignore", str(m.DIAGNOSTIC)).decode().strip() == str(m.DIAGNOSTIC)
+        before = real_git_snapshot(root, git)
+>       m.checkout_state(root, allowed)
+
+../step7c-final-validation-appendix/test_final_appendix_invocation.py:384: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../step7c-final-validation-appendix/invoke_final_appendix.py:86: in checkout_state
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Only the separately saved native review pair and literal diagnostic may be untracked'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Only the separately saved native review pair and literal diagnostic may be untracked
+
+../step7c-final-validation-appendix/invoke_final_appendix.py:47: ValueError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step7c-final-validation-appendix/test_final_appendix_invocation.py::test_real_git_ignored_diagnostic_is_accepted_without_touching_other_ignored_work
+1 failed, 1 warning in 0.24s

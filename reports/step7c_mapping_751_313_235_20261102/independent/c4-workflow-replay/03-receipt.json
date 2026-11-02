@@ -1,0 +1,13 @@
+{
+  "name": "Validate reviewed selection and preserve the excluded claims",
+  "command": "uv run --frozen python -m mediaingredientmech.export.supported_kgx \\\n  --root . \\\n  --report reports/semantic_review_20260921/resolution/current-review.json \\\n  --output output/mim-kgx-710-supported\nuv run --frozen python -m mediaingredientmech.export.supported_kgx \\\n  --root . \\\n  --report reports/semantic_review_20260921/resolution/current-review.json \\\n  --output output/mim-kgx-710-supported --validate-only\n",
+  "workflow": {
+    "path": ".github/workflows/qc-supported-kgx.yaml",
+    "sha256": "909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b"
+  },
+  "started_at": "2026-11-02T21:53:42.391059+00:00",
+  "finished_at": "2026-11-02T21:54:05.476671+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/03.log",
+  "log_sha256": "6ab7181bbae98f0b114eae7c8804dc0908df6dcd80049e218c3ce80ea08acf43"
+}

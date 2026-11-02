@@ -1,0 +1,67 @@
+from pathlib import Path
+import hashlib,json,subprocess,csv,io,collections,datetime,yaml
+N=Path(__file__).parent;O=N/'overlay';BASE='54eadef802d2ff159bf4ba9bec51492fe3bb99d4';C5='9a8414ad88bbbb01c2a43995e3f0decb2e7f2a7e'
+h=lambda b:hashlib.sha256(b).hexdigest();load=lambda p:json.loads((O/p).read_bytes()); y=lambda b:yaml.load(b,Loader=yaml.CSafeLoader)
+def old(p):return subprocess.check_output(['git','-C',str(O),'show',BASE+':'+p])
+targets=load('../targets.json') if False else json.loads((N/'targets.json').read_bytes())['targets']
+receipt=load('reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json')
+owners={r['source_record']:r for r in receipt['records']};assert set(owners)=={t['path'] for t in targets[:6]}
+aggregate=y((O/'data/curated/mapped_ingredients.yaml').read_bytes())['ingredients'];details=[]
+for t in targets[:6]:
+ p=t['path'];raw=(O/p).read_bytes();rec=y(raw);matches=[r for r in aggregate if r.get('identifier')==rec['identifier'] and r.get('preferred_term')==rec['preferred_term']];assert len(matches)==1,(p,'aggregate cardinality');ar=matches[0];recwithout={k:v for k,v in rec.items() if k!='discussions'};assert recwithout==ar,(p,'aggregate mismatch')
+ proof=owners[p];assert h(raw)==proof['after_yaml_sha256'],(p,'receipt owner endpoint')
+ if t['target_id']=='di-keto':
+  assert subprocess.run(['git','-C',str(O),'cat-file','-e',BASE+':'+p],capture_output=True).returncode!=0
+  assert rec['identifier']=='CHEBI:11449';assert rec['occurrence_statistics']=={'total_occurrences':0,'media_count':0,'source_occurrences':[{'source':'microbedecoder','count':2,'source_columns':'BacDive_Metabolite_production'}]};assert rec['synonyms']==[{'synonym_text':'5-didehydro-D-gluconate','synonym_type':'RAW_TEXT','source':'microbedecoder'}]
+  assert not any(rec.get(k) for k in ['chemical_properties','chemical_roles','nutritional_roles','biological_roles','components','supplied_form'])
+  assert 'explicitly No' in rec['ontology_mapping']['evidence'][0]['notes'];assert 'values are blank' in rec['curation_history'][0]['changes'];assert 'incorrect' in rec['curation_history'][-1]['changes'];assert len(rec['curation_history'])==2
+  changed=['new exact-form owner','negative BacDive evidence correction preserved alongside original historical event']
+ else:
+  pre=y(old(p));assert h(old(p))==proof['before_yaml_sha256'];assert rec['curation_history'][:-1]==pre['curation_history'],p
+  changed=[k for k in sorted(set(rec)|set(pre)) if rec.get(k)!=pre.get(k)]
+  if t['target_id']=='wc-stock':
+   assert set(changed)=={'identifier','ontology_mapping','curation_history'}
+   assert rec['identifier']=='kgmicrobe.ingredient:wc_trace_elements_solution';assert rec['ontology_mapping']['ontology_id']=='MICRO:0000455';assert rec['ontology_mapping']['mapping_quality']=='NARROW_MATCH'
+   assert rec['ontology_mapping']['evidence'][:-1]==pre['ontology_mapping']['evidence']
+  else:
+   assert set(changed)=={'synonyms','curation_history','ontology_mapping'},(p,changed)
+   assert {k:v for k,v in rec['ontology_mapping'].items() if k!='evidence'}=={k:v for k,v in pre['ontology_mapping'].items() if k!='evidence'}
+   assert rec['ontology_mapping']['evidence'][:-1]==pre['ontology_mapping']['evidence']
+   assert rec['ontology_mapping']['evidence'][-1]['evidence_type']=='CURATOR_JUDGMENT'
+   assert len(rec['synonyms'])==len(pre['synonyms'])
+   for a,b in zip(pre['synonyms'],rec['synonyms']):
+    assert {k:v for k,v in a.items() if k!='synonym_type'}=={k:v for k,v in b.items() if k!='synonym_type'},p
+    if a!=b:assert b['synonym_type']=='REJECTED_LABEL'
+  for k in ['occurrence_statistics','chemical_properties','chemical_roles','nutritional_roles','biological_roles','components','supplied_form','ingredient_type']:
+   assert rec.get(k)==pre.get(k),(p,k)
+ details.append({'target_id':t['target_id'],'path':p,'sha256':h(raw),'identifier':rec['identifier'],'preferred_term':rec['preferred_term'],'ontology_mapping':{k:v for k,v in rec['ontology_mapping'].items() if k!='evidence'},'changed_top_fields':changed,'aggregate_equal_excluding_per_record_discussions':True,'occurrence_statistics':rec.get('occurrence_statistics'),'synonyms':rec.get('synonyms'),'history_events':len(rec['curation_history'])})
+def tsv(raw):
+ lines=raw.decode().splitlines(keepends=True);comment=[x for x in lines if x.startswith('#')];table=[x for x in lines if not x.startswith('#')];rows=list(csv.DictReader(table,delimiter='\t'));return comment,table[0],table[1:],rows
+before=old('mappings/ingredient_mappings.sssom.tsv');after=(O/'mappings/ingredient_mappings.sssom.tsv').read_bytes();bc,bh,bl,br=tsv(before);ac,ah,al,ar=tsv(after)
+assert bc==ac and bh==ah;assert len(br)==2983 and len(ar)==2985;assert h(before)==receipt['before_sha256'] and h(after)==receipt['after_sha256'];assert receipt['removed_rows']==0
+changed=[];cells=0
+for i,j in enumerate(receipt['position_map'],1):
+ assert j is not None
+ if bl[i-1]!=al[j-1]:
+  fields=[k for k in br[i-1] if br[i-1][k]!=ar[j-1][k]];cells+=len(fields);changed.append({'before_position':i,'after_position':j,'changed_fields':fields,'before':br[i-1],'after':ar[j-1]})
+added=sorted(set(range(1,len(ar)+1))-set(receipt['position_map']));assert len(changed)==6 and cells==19 and added==[115,2921]
+assert [r['before_position'] for r in changed]==[38,113,114,232,2228,2919]
+new=[{'after_position':j,'row':ar[j-1]} for j in added]
+for item in changed:
+ a=item['before'];b=item['after'];assert set(a['source'].split('|'))<=set(b['source'].split('|'))
+ assert all(x.startswith('MIM:') for x in set(b['source'].split('|'))-set(a['source'].split('|')))
+ assert a['comment']==b['comment']
+ assert b['validation_method']==(a['validation_method'] if (a['subject_id'],a['predicate_id'],a['object_id'])==(b['subject_id'],b['predicate_id'],b['object_id']) else '')
+assert all(not x['row']['validation_method'] for x in new)
+review=load('reports/sssom_completion_20260921/review.json');pre_review=json.loads(old('reports/sssom_completion_20260921/review.json'));assert len(review['decisions'])==len(ar)
+for i,j in enumerate(receipt['position_map'],1):assert review['decisions'][j-1]['disposition']==pre_review['decisions'][i-1]['disposition']
+touched=sorted([x['after_position'] for x in changed]+added);assert touched==[38,113,114,115,233,2229,2920,2921]
+assert all(review['decisions'][j-1]['disposition']=='WITHHOLD' for j in touched)
+comp=load('reports/step7c_mapping_751_313_235_20261102/refresh-v2/companion-review.json');pre_comp=load('reports/step7c_mapping_751_313_235_20261102/refresh-v2/prior-companion-review.json');assert comp['decisions']==pre_comp['decisions'];assert comp['record_inputs']==pre_comp['record_inputs'];assert len(comp['decisions'])==51 and len(comp['record_inputs'])==20
+sem=load('reports/semantic_review_20260921/resolution/current-review.json');assert sem['release_verdict']=='FAIL' and len(sem['blocking_finding_ids'])==1733 and len(sem['blocking_assertion_ids'])==2335
+protected={}
+for p in ['UNIFIED_INGREDIENT_MAPPING.tsv','UNIFIED_INGREDIENT_MAPPING.provenance.json','.github/workflows/qc-evidence.yaml','scripts/.vendored_canon_ref','mappings/culturemech_recipe_membership.tsv','mappings/ingredient_mappings.sssom.tsv.manifest.json','mappings/suppressed_aliases.tsv']:
+ raw=(O/p).read_bytes();assert raw==old(p),p;protected[p]=h(raw)
+changed_owners=subprocess.check_output(['git','-C',str(O),'diff','--cached','--name-only',BASE,'--','data/ingredients'],text=True).splitlines();assert set(changed_owners)==set(owners)
+report={'status':'PASS_BOUNDED_SOURCE_AND_PRODUCT_READBACK_NOT_FINAL_HEAD_APPROVAL','observed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'base':BASE,'checkpoint':C5,'inspection_sha256':h((N/'inspection.json').read_bytes()),'owner_count':len(details),'owners':details,'canonical':{'before_sha256':h(before),'after_sha256':h(after),'before_count':len(br),'after_count':len(ar),'changed_existing':changed,'added':new,'changed_existing_cells':cells,'headers_and_untouched_raw_rows_identical':True,'no_removed_rows':True,'touched_positions':touched,'all_touched_WITHHOLD':True},'mapping_dispositions':dict(collections.Counter(x['disposition'] for x in review['decisions'])),'old_dispositions_preserved':True,'companion':{'decisions':51,'owners':20,'same_decision_payloads_and_owner_hashes':True},'semantic':{'release_verdict':sem['release_verdict'],'blocking_findings':len(sem['blocking_finding_ids']),'blocking_assertions':len(sem['blocking_assertion_ids']),'scope':'unchanged whole-corpus hold; not waived'},'protected_unchanged':protected,'scientific_approval_added':False,'supervisor_binding':None,'limitations':['Complete suite and final head review still pending.','Source/provenance and publication contract audit only; mapping-specific scientific, role and supplied-product approvals are not added.','Historical source writer and initial blank-result event are preserved and explicitly superseded, not retrospectively edited.']}
+(N/'source-and-product-readback.json').write_text(json.dumps(report,indent=2,default=str)+'\n');print(json.dumps({'status':report['status'],'owners':len(details),'canonical':h(after),'rows':[len(br),len(ar)],'changed_cells':cells,'touched_WITHHOLD':touched,'dispositions':report['mapping_dispositions'],'receipt24':h((O/'reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json').read_bytes()),'report_sha256':h((N/'source-and-product-readback.json').read_bytes())},indent=2))

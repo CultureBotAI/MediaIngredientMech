@@ -1,0 +1,60 @@
+identifier: CHEBI:11449
+preferred_term: 2,5-didehydro-D-gluconate
+ontology_mapping:
+  ontology_id: CHEBI:11449
+  ontology_label: 2,5-didehydro-D-gluconate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: microbedecoder original CSV; BacDive; ChEBI
+    notes: 'Exact original 2,5-didehydro-D-gluconate labels occur twice, both in BacDive_Metabolite_production:
+      CSV line 2121 / BacDive 34 and line 8749 / BacDive 58. Each source cell separately
+      contains the mono-keto label. CHEBI:11449 denotes this di-keto anion, distinct
+      from CHEBI:58143. The live BacDive production values are blank: no positive
+      production assertion or chemical role is inferred. Recovered legacy damaged
+      label 5-didehydro-D-gluconate is retained as RAW_TEXT on this source-established
+      identity under the damaged-label exception; it must not resolve to the mono-keto
+      owner. Clarification: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588401935
+      . No CAS, recipe occurrence or inherited mono-keto chemistry is added. Sources:
+      https://www.ebi.ac.uk/chebi/CHEBI:11449 ; https://www.ebi.ac.uk/chebi/CHEBI:58143
+      ; https://bacdive.dsmz.de/strain/34 ; https://bacdive.dsmz.de/strain/58 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+mapping_status: MAPPED
+synonyms:
+- synonym_text: 5-didehydro-D-gluconate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 2
+    source_columns: BacDive_Metabolite_production
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-02T21:05:51.410555+00:00'
+  curator: Codex
+  action: CREATED_FROM_ORIGINAL_SOURCE_LABEL
+  changes: 'Exact original 2,5-didehydro-D-gluconate labels occur twice, both in BacDive_Metabolite_production:
+    CSV line 2121 / BacDive 34 and line 8749 / BacDive 58. Each source cell separately
+    contains the mono-keto label. CHEBI:11449 denotes this di-keto anion, distinct
+    from CHEBI:58143. The live BacDive production values are blank: no positive production
+    assertion or chemical role is inferred. Recovered legacy damaged label 5-didehydro-D-gluconate
+    is retained as RAW_TEXT on this source-established identity under the damaged-label
+    exception; it must not resolve to the mono-keto owner. Clarification: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588401935
+    . No CAS, recipe occurrence or inherited mono-keto chemistry is added. Sources:
+    https://www.ebi.ac.uk/chebi/CHEBI:11449 ; https://www.ebi.ac.uk/chebi/CHEBI:58143
+    ; https://bacdive.dsmz.de/strain/34 ; https://bacdive.dsmz.de/strain/58 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+    Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+    counts are not recipe occurrences or positive experimental outcomes. Preserved
+    superseded source assertions and history. No scientific/release approval is asserted.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

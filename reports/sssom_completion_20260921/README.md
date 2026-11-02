@@ -1,8 +1,10 @@
 # Complete mapping disposition review
 
 Issue [#729](https://github.com/CultureBotAI/MediaIngredientMech/issues/729)
-finalizes the standalone MIM SSSOM. Every source row has an explicit disposition:
-1,739 supported and 1,242 withheld, out of 2,981. Unsupported claims remain in a
+finalizes the standalone MIM SSSOM. Every source row has an explicit disposition.
+Run `just export-reviewed-sssom` and read the generated
+`output/mim-reviewed-sssom/manifest.json` for current counts and source hashes.
+Unsupported claims remain in a
 separate, lossless SSSOM backlog, as requested. Completing disposition coverage
 does not mean every source mapping has been scientifically approved.
 
@@ -41,12 +43,12 @@ does not mean every source mapping has been scientifically approved.
 When #731 finalized this review, compared with the earlier 1,603-row supported
 release, 1,510 approvals remained, 253 rows gained a mapping-specific approval,
 and 93 prior approvals were withheld after stricter scope and alias review. The
-mapping-change receipts since then account for the difference from the totals
-above. The earlier published release remains a historical snapshot; these
+mapping-change receipts since then account for subsequent count changes.
+The earlier published release remains a historical snapshot; these
 decisions supersede it for current SSSOM use.
 
-The complete source SSSOM SHA-256 is
-`38173b2206a3d60615fca7d6d7861e777bd9905c58ec9d0b55d6a89a8c325b1c`.
+The current source SSSOM SHA-256 is recorded in `review.json` and independently
+rechecked by the exporter; the generated manifest carries that same digest.
 The original negative aromatic-compound review (#724/#725) is retained, with a
 separate, exact source-correction resolution. Removing a hold or rehashing its
 old payload cannot release that unsupported claim.
@@ -58,9 +60,10 @@ approval; the remaining corrected rows were already withheld. At that checkpoint
 the historical `DL-carnitine` alias remained withheld without new identity support;
 the later #1004 receipt below removes the salt records' free-substance aliases.
 The proposed melezitose correction was blocked by the existing approval pin
-and restored to its original bytes; its unpublished evidence is retained under
-`reports/sssom_scientific_curation_20261101/audit901/blocked-proposal/` pending
-the native supersession mechanism in PR #764.
+and restored to its original bytes at that checkpoint. Its unpublished evidence
+is retained under `reports/sssom_scientific_curation_20261101/audit901/blocked-proposal/`.
+The native supersession mechanism and later mapping-specific form reviews have
+since shipped; `mapping_review/form_reviews/` binds their actual current claims.
 
 Receipt `issue875-ncit-exact-heptahydrate` changes one mapping to the exact
 NCIT:C61946 heptahydrate identity and removes its obsolete local registry row.

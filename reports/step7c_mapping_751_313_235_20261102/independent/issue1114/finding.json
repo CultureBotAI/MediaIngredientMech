@@ -1,0 +1,28 @@
+{
+  "status": "CONFIRMED_TEST_FIXTURE_POSITION_CONTEXT_DEFECT",
+  "maintained_head": "89f070ef3a5f8ed02c787b4ecea3cef62238ce63",
+  "failure": "Original corrected_hold fixture nexts the frozen historical assertion_id directly in current_assertions; source row insertion changes the position-derived ID.",
+  "owner": "data/ingredients/mapped/Aromatic_Compound.yaml",
+  "owner_sha256": "bbbfcafd33a763fc81b1a1bc425a4e270c791aac6e51d668726798ee16ff47b6",
+  "owner_and_claim_payload_unchanged": true,
+  "old_position": 431,
+  "current_position": 432,
+  "frozen_assertion_id": "MIM.review:e619555259b8de4a7aed8090e7ac32562f3df3a23c34371cd9cf28647f6ef26f",
+  "current_assertion_id": "MIM.review:fda9a9fada5a2080d3a366b9f532eacb6c29d990ef3d87e68a7c0e3ffa5925c0",
+  "same_assertion_sha256": "48222f60d12c7acb38223d3036eb44e7a7c687fb868e7dbe134a77964edb8491",
+  "receipt24_position_transition": {
+    "sequence": 24,
+    "path": "reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json",
+    "sha256": "3d8d3d1189d0393d5ccd23ce3b83a5196e1664f045269254160df33a20e6ea07",
+    "before_position": 431,
+    "after_position": 432
+  },
+  "native_missing_lineage_refusal": "Resolved release hold has no matching current assertion",
+  "native_with_existing_current_lineage": "PASS; returns{}, no approval",
+  "lineage_qualification": "Probe consumes the already-generated current lineage document. Separate independent fresh-history native replay validated full receipt chain; this probe does not replace that validation.",
+  "full_suite_receipt_sha256": "83dde344b664fdc91aca6516dec57cba76e4c3634cdcf0e5f2e6fd4680cc107c",
+  "full_suite_log_sha256": "0daedbfdb4c655a8fb92e6e8b72c652a89faada70483c33db62a189156e57c92",
+  "repair_boundary": "Repair test historical/current context and add position-transition corruption controls through native verified lineage or frozen historical prestate. Preserve authority/source/production guards and all negative assertions.",
+  "scientific_approval_added": false,
+  "supervisor_binding": null
+}

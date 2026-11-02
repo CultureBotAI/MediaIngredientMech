@@ -1,0 +1,43 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1114",
+  "head_before_commit": "89f070ef3a5f8ed02c787b4ecea3cef62238ce63",
+  "changed_file": "tests/test_semantic_hold_resolution.py",
+  "before_sha256": "78d1fe67f79c493fab3e6cc95caf7134d938f4cc054251d44bb71eb91c232f33",
+  "after_sha256": "e54e50db5c54dea90151ad5fd78f55178a735d440f74b3d59ff52e02392101d3",
+  "original_test_function_bodies_unchanged": 13,
+  "added_regressions": {
+    "positive": 1,
+    "negative_parameter_cases": 5
+  },
+  "semantic_mapping_review_module_unchanged": true,
+  "release_holds_unchanged": true,
+  "no_scientific_product_or_runtime_change": true,
+  "implementation": "Cached native build_graph and verified mapping receipt chain; compute hold_lineage, select actual current assertion/edge, keep frozen historical document exact and pass verified lineage to original validators.",
+  "checks": {
+    "name": "step7c-1114-semantic-fixtures-v1",
+    "argv": [
+      "python",
+      "-B",
+      "-m",
+      "pytest",
+      "tests/test_semantic_hold_resolution.py",
+      "tests/test_semantic_mapping_review.py",
+      "--no-cov",
+      "-q"
+    ],
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c",
+    "started_at": "2026-11-02T22:14:20.147825+00:00",
+    "environment_profile": "mim-native-pinned-validator",
+    "finished_at": "2026-11-02T22:14:34.728388+00:00",
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7c-1114-semantic-fixtures-v1.log",
+    "log_sha256": "0a8045bf325e46df7cf01b20b47aafbf9d8d6859479728b9d1c31996d4bd1742"
+  },
+  "result": "48 passed, 0 skipped, 13 warnings",
+  "full_suite_v2_failure_preserved": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7c-full-suite-v2.log",
+    "sha256": "0daedbfdb4c655a8fb92e6e8b72c652a89faada70483c33db62a189156e57c92"
+  },
+  "status": "AWAITING_INDEPENDENT_REVIEW_NO_COMMIT",
+  "git_status": " M tests/test_semantic_hold_resolution.py\n"
+}

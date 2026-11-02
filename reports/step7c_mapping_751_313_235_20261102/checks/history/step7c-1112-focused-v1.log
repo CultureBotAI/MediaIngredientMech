@@ -1,0 +1,76 @@
+....................F.....................                               [100%]
+=================================== FAILURES ===================================
+_______ test_native_assembly_keeps_all_holds_and_exact_negative_evidence _______
+
+native_context = {'chain': {'schema_version': 1, 'receipts': [{'schema_version': 1, 'batch': 'issue312-batch1', 'sequence': 1, 'issue':...e_position': 18, 'sssom_source_sha256': 'aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809', ...}, ...]}
+
+    def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_context):
+        """Compute native output in memory; never overwrite archived/current files."""
+        here = PATH.parent
+        preserved = {path: path.read_bytes() for path in (
+            here / "mapping_review/concern_cohorts.json",
+            here / "mapping_review/issue-intersections.json",
+            here / "review.json",
+            here / "mapping-evidence.json",
+        )}
+        previous = json.loads(preserved[here / "review.json"])
+        previous_evidence = json.loads(preserved[here / "mapping-evidence.json"])
+        result = assembler.assemble()
+        review = json.loads(result["review.json"])
+        evidence = json.loads(result["mapping-evidence.json"])
+        old_decisions = {item["source_position"]: item for item in previous["decisions"]}
+        decisions = {item["source_position"]: item for item in review["decisions"]}
+        changed = set()
+        for stem in STEMS:
+            args = arguments(native_context, stem)
+            position = args["current_position"]
+            changed.add(position)
+            item = evidence["entries"][str(position)]
+            reason, proof = assembler.qualify_source_mapping_concern(**args)
+            assert decisions[position]["disposition"] == item["disposition"] == "WITHHOLD"
+            assert reason in decisions[position]["review_reason"] == item["review_reason"]
+            assert item["basis"]["historical_concern"] == proof
+            old_item = previous_evidence["entries"][str(position)]
+            assert item["basis"].get("negative_reviews") == old_item["basis"].get("negative_reviews")
+            assert item["basis"]["mapping_change"] == BATCH
+            if stem == "Wc_Trace_Elements_Solution":
+                assert "TRACE_ELEMENT" in item["review_reason"]
+                assert "non-exact relation" in item["review_reason"]
+                assert item["basis"]["policy"] == old_item["basis"]["policy"]
+            if stem == "5-dehydro-D-gluconate":
+                assert args["mapping"]["other"] == ""
+                assert item["basis"]["negative_reviews"][0]["reason"] == args["entry"]["reason"]
+        receipt = next(r for r in native_context["chain"]["receipts"] if r["batch"] == BATCH)
+        touched = {c["after_position"] for c in receipt["changes"]}
+        assert len(touched) == 8
+        assert all(decisions[p]["disposition"] == "WITHHOLD" for p in touched)
+        for position, decision in decisions.items():
+            if position not in changed:
+                assert decision == old_decisions[position]
+>               assert evidence["entries"][str(position)] == previous_evidence["entries"][str(position)]
+E               AssertionError: assert {'row_sha256'...ITHHOLD', ...} == {'row_sha256'...ITHHOLD', ...}
+E                 
+E                 Omitting 5 identical items, use -vv to show
+E                 Differing items:
+E                 {'basis': {'baseline_position': 113, 'previous_decision': {'assertion_id': 'MIM.review:59560cf5eda895b86552d1e46b0efd4...24-diamino-67-di-iso-propylpteridine_phosphate.md', 'mapping_change': 'issue751-313-235-stock-and-source-labels', ...}} != {'basis': {'baseline_position': 113, 'previous_decision': {'assertion_id': 'MIM.review:59560cf5eda895b86552d1e46b0efd4...24-diamino-67-di-iso-propylpteridine_phosphate.md', 'mapping_change': 'issue751-313-235-stock-and-source-labels', ...}}
+E                 Use -v to get more diff
+
+tests/test_source_mapping_concern_history.py:169: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  linkml.generators.jsonschemagen:jsonschemagen.py:270 topClass is deprecated - use top_class
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_source_mapping_concern_history.py: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_source_mapping_concern_history.py::test_native_assembly_keeps_all_holds_and_exact_negative_evidence
+1 failed, 41 passed, 13 warnings in 26.98s

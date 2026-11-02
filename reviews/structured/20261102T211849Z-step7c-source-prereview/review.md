@@ -1,0 +1,607 @@
+# Independent Step7c source/provenance pre-review with BacDive icon finding open
+
+- Review: 20261102T211849Z-step7c-source-prereview
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-02T21:14:19Z
+- Finished UTC: 2026-11-02T21:18:49Z
+- Reviewer: Codex /root/step7a_final_adversarial (independent)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Six captured owners and original source implementations were inspected. The permitted identity/count boundaries and guarded source workflow remain bounded, but the new CHEBI11449 owner falsely describes explicit negative BacDive results as blank. The count of two source-field appearances is correct and does not assert positive production. No release, role or whole-record scientific approval is added.
+
+## Scope And Provenance
+
+Source/provenance review of exactly six Step7c owners and their bounded writers, occurrence override, truncation checker and release documentation, observed at execution checkpoint26938f4b before corrective phase1111.
+
+Selection: Five existing owners and one new CHEBI11449 owner selected by approved issues751/313/235; all six captured pre-correction owners are included.
+Coverage: full; 6 reviewed / 6 in the declared population.
+Source: working_tree at Git base 54eadef802d2ff159bf4ba9bec51492fe3bb99d4.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| butanediol | data/ingredients/mapped/14-Butanediol.yaml | maintained | 1,4-Butanediol |
+| phosphate | data/ingredients/mapped/24-diamino-67-di-iso-propylpteridine_phosphate.yaml | maintained | 2,4-diamino-6,7-di-iso-propylpteridine phosphate |
+| mono-keto | data/ingredients/mapped/5-dehydro-D-gluconate.yaml | maintained | 5-dehydro-D-gluconate |
+| phenethylamine | data/ingredients/mapped/Phenethylamine_Hydrochloride.yaml | maintained | 2-phenylethylamine |
+| di-keto | data/ingredients/mapped/25-didehydro-D-gluconate.yaml | maintained | 2,5-didehydro-D-gluconate |
+| wc-stock | data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml | maintained | WC Trace Elements Solution |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent focused source/checker/documentation tests | passed | True | butanediol, phosphate, mono-keto, phenethylamine, di-keto, wc-stock | 100 passed, zero skipped, 13 warnings; original pre-correction bytes. This did not detect or excuse the independent primary-source finding. |
+| Independent original-source count replay | passed | True | di-keto, mono-keto | Di-keto two production-field appearances; mono-keto 11 production plus277 utilization appearances, total288. Both di-keto rows separately contain mono-keto labels; counts are not experimental outcomes. |
+| BacDive primary production table readback | failed | True | di-keto | Both primary pages encode No for CHEBI11449, contradicting the new owner evidence and original writer sentence describing values as blank. |
+| WC primary extract and ontology readback | passed | True | wc-stock | Rehashed primary HTML/OWL and reparsed three captured UTEX tables. WC source-specific identity is distinct from generic MICRO0000455, and no new components or role approval are inferred. |
+
+## Scientific And Domain Assessments
+
+### Aliases and exact owner boundaries
+
+consistency: supported. Targets: butanediol, phosphate, mono-keto, phenethylamine, di-keto.
+
+Fragment/non-name aliases are rejected without changing existing owners: butanediol intact name remains; O129 phosphate identity and counts remain; mono-keto count288 remains; phenethylamine stays free base while only the salt alias is rejected. The recovered damaged di-keto label remains RAW_TEXT under the explicit mapping-semantics carve-out. This is source-contract verification, not fresh mapping approval.
+
+### Local stock and asymmetric generic parent
+
+representation: supported. Targets: wc-stock.
+
+WC stock receives its own local ingredient identity and broad generic MICRO parent mapping. Existing provisional-role hold and source count2 remain; no recipe membership, chemistry or composition is inferred.
+
+### Negative versus absent BacDive outcome
+
+provenance: concern. Targets: di-keto.
+
+Explicit No icons were lost by text-only extraction. The active evidence note and new creation history incorrectly call outcomes blank; preserve executed history while appending a corrective event and correcting active evidence.
+
+## Findings
+
+### bacdive-negative-production-icons: Preserve negative-production icons instead of describing outcomes as blank
+
+minor / open / confirmed; issue key: mim-1111-bacdive-negative-production-icons.
+
+Captured BacDive34 and58 production tables encode CHEBI11449 outcome No in icon alt/title. Original source writer and regression reduce this to blank, and that false statement appears in the new owner active MappingEvidence note and creation history. Exact identity and two source-field appearance count are unaffected; no positive role was inferred.
+
+## Recommended Actions And Acceptance Checks
+
+### correct-negative-evidence
+
+Use a third guarded corrective phase to correct active evidence and append a corrective history event while preserving original executed writer, receipt, source captures and creation history. Add No/Yes/absent-result regressions, then regenerate and re-review final products.
+
+- Both BacDive rows explicitly recorded as negative (No), not blank.
+- Original history and receipts retained; new corrective event records the evidence correction.
+- Counts2 and288 and scientific holds remain unchanged.
+- Independent re-review resolves this exact finding against final corrected source and generated chain.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| independent-diagnostics | reports/step7c_pre_review_20261102/diagnostics.json | supports | Hash-bound original finding, exact published issue body, captured six owners, source-code identities, independent raw-source counts, WC primary readback and 100-test pinned-runtime result. Historical absolute paths identify original evidence; durable bytes are embedded here. |
+| bacdive-34 | reports/step7c_source_labels_313_235_20261102/sources/bacdive-34.html | refutes | Production table CHEBI11449 row explicitly encodes No in icon alt/title, while the neighboring mono-keto row encodes Yes; textual extraction alone omits the outcomes. |
+| bacdive-58 | reports/step7c_source_labels_313_235_20261102/sources/bacdive-58.html | refutes | Production table CHEBI11449 row explicitly encodes No in icon alt/title, while the neighboring mono-keto row encodes Yes; textual extraction alone omits the outcomes. |
+| labels-manifest | reports/step7c_source_labels_313_235_20261102/source-evidence.json | context_only | Pinned primary chemistry, BacDive, original-count and field-preimage evidence for source-label corrections. |
+| wc-manifest | reports/step7c_wc_stock_751_20261102/source-evidence.json | context_only | Pinned owner preimage and UTEX WC/MicrO primary extract; no scientific approval. |
+| source-writer | scripts/curate_step7c_source_labels.py | context_only | Executed original writer contains false blank-production claim and is preserved as historical evidence. |
+
+## Limits And Additional Notes
+
+- This observation records captured pre-correction checkpoint26938f4b, not the current mutable worktree after later repairs.
+- Durable source.git_revision is merged baseline54eadef8 with a truthful working_tree overlay and exact input hashes. The transient execution checkpoint is metadata, not a replay prerequisite.
+- Full just qc, complete test suite, canonical promotion, receipt24 and final-head review are outside this pre-review; focused tests passing does not waive them.
+- No direct CAS Registry lookup or new paid provider research was performed; captured primary sources and explicit identity distinctions were inspected.
+- No scientific, release or provisional-role approval is granted.
+- Supervisor binding remains null; this is a standalone native observation.
+- Issue1111 was filed before the corrective phase; this immutable pre-review preserves its open state even if the live issue or source subsequently changes.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261102T211849Z-step7c-source-prereview
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Independent Step7c source/provenance pre-review with BacDive icon finding open
+started_at: '2026-11-02T21:14:19Z'
+finished_at: '2026-11-02T21:18:49Z'
+reviewer:
+  identity: Codex /root/step7a_final_adversarial
+  kind: agent
+  independence: independent
+  independence_basis: Reviewer authored none of the source writers, tests, source
+    changes or protected assets; reviewed separately captured inputs and ran pinned-runtime
+    tests. Reviewer authors only this observation and its diagnostics.
+skill: map-media-ingredients; review-sssom-output (bounded source preflight, final
+  output review pending)
+completion: completed
+verdict: needs_curation
+native_verdict: One confirmed provenance finding (#1111) is OPEN in this immutable
+  pre-correction observation. Final generated mapping, receipt chain and whole-head
+  review remain pending.
+scientific_review: false
+summary: Six captured owners and original source implementations were inspected. The
+  permitted identity/count boundaries and guarded source workflow remain bounded,
+  but the new CHEBI11449 owner falsely describes explicit negative BacDive results
+  as blank. The count of two source-field appearances is correct and does not assert
+  positive production. No release, role or whole-record scientific approval is added.
+source:
+  git_revision: 54eadef802d2ff159bf4ba9bec51492fe3bb99d4
+  state: working_tree
+  inputs:
+  - path: .claude/skills/map-media-ingredients/SKILL.md
+    sha256: 9431c262e190cd57ce05692487a0bc639859c9e877648d3af7612922221f6a1b
+    role: context
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/14-Butanediol.yaml
+    sha256: 55cd8e1fa92c1ba42584e7ae3b9c04a78b0a8ba137d559c45b303bff2a24015c
+    role: target
+  - path: data/ingredients/mapped/24-diamino-67-di-iso-propylpteridine_phosphate.yaml
+    sha256: ecfd187623a3438ffb323539e3394410101ced1329f470e46ff2a4d5aaa31251
+    role: target
+  - path: data/ingredients/mapped/25-didehydro-D-gluconate.yaml
+    sha256: 68cdb40e226f7d801c9310decf529565cb54f6480160106d6a40d65b4de2ff14
+    role: target
+  - path: data/ingredients/mapped/5-dehydro-D-gluconate.yaml
+    sha256: 54d31d5d3d203accaadfb8ff171bf9f178a0a72210b1dd12f2078fa09acd9bb5
+    role: target
+  - path: data/ingredients/mapped/Phenethylamine_Hydrochloride.yaml
+    sha256: c1c7fe3ea0f2ad27aa9a9ab246e10d2796062c8d829e40212487e0802e48b30b
+    role: target
+  - path: data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml
+    sha256: cc5326c0fa7ef1d0d5245cbd151a8f0c7a8ff6f92a061a3c112a1df415e3e480
+    role: target
+  - path: docs/SSSOM_RELEASE.md
+    sha256: 976b474a5c0d9bd6eba7541964f459eb46fcadc333aaf0140076e135e28605c2
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/sssom_completion_20260921/README.md
+    sha256: a3bbc39d09e8cf237276ffa7d35e54fecf9e63a074b0f8961edc1b24b0d828e8
+    role: context
+  - path: reports/step7c_pre_review_20261102/diagnostics.json
+    sha256: 3a18440fd9dfd75c1220130b08786a8aced9a6a2e9521003a7045989c2d0c0ee
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/preimages/14-Butanediol.yaml
+    sha256: 74b5887ec491eeb6c5f0105dbf97fd961658618af248d954b372ca8e50ad1696
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/preimages/24-diamino-67-di-iso-propylpteridine_phosphate.yaml
+    sha256: b3b4232dc560571960f15affe792bafdd0bca88866f212ade3de5beab8377108
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/preimages/5-dehydro-D-gluconate.yaml
+    sha256: 9ec538f8795095f65129d970c0791ffadb6a4468d93e45e8f72830b3d87301db
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/preimages/Phenethylamine_Hydrochloride.yaml
+    sha256: 1283e083fbb866db9d9202fdb1b08fbbf2de4016993395ca5f18644e5fc0f320
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    sha256: 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/bacdive-34.html
+    sha256: c7b7b18c93de3d1ddf1583f7287237f6bd52653caa44b612305a9e0f5cdec7b8
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/bacdive-58.html
+    sha256: 9cc4808bc1c8fb683b7fba6ce7d9eb181dfd1d5ab5cd6c87fe229929fdc79d20
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/chebi-11449.html
+    sha256: ca791359a83a492098734881a11765076a74adcc168f86646a0d146c13da5024
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/chebi-18397.html
+    sha256: af1e089e5ebdc82c0cd62cac99a5119b0c1e50e51a5e10a729fcdd566ccc8a12
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/chebi-58143.html
+    sha256: 29fb0654903fe5ed65294c0fd25f33aef17c2d22717f6f6b045f57210accd051
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/culturebotht-compound_cas_corrections.tsv
+    sha256: 10147dabecb0da6c50ca35445faafc514719a7cd3e25bf7b7bebe3c4b8685b27
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/culturebotht-compounds_to_cas.csv
+    sha256: 76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/healthcanada-salt.html
+    sha256: 7e7506aa61a6c7d62721b922355eccba2d6aeffe7c3c5e63e19decfaca27c700
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/issue235-decision.md
+    sha256: 58338c8a533c3d23c3c6668d82f6efc94efe0b90993bdc83c71031d2fae136c7
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/issue235-primary-captures.json
+    sha256: 483532a054f6e38c854dbca94d06de8088ae16e646923fc470adeb1fbd868d87
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/issue313-decision.md
+    sha256: 73ccde94384a0f9038c5df96ac58e9dca2caee8624f863d55ead08f18cf535f8
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/issue313-recovered-alias-clarification.md
+    sha256: 71a9015a3d2a547e41605b9d3ff56895ffacc21d6ce45ac57214315106fef3de
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/kgmicrobe-raw-source-extracts.json
+    sha256: 98e0ae228f90f4c7e40fe1cd34ad3ad2f7e55078245bc4f2086b7ffab2476025
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/official-source-captures.json
+    sha256: af3ba5d0068796b76b354f494205baaac29f8da9bb0576f24d21a1d878a19cc6
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/original-zip-source-extracts.json
+    sha256: fd637c401ff79f1a8a048863db4cad63cd8e12d6dfafba5be5349d97c95fbc0e
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/pubchem-1001-properties.json
+    sha256: a4c543863416a3a10cd579e861c88b6ea8fd86d74fb09a17cf2516740bbdd69b
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/pubchem-1001-synonyms.json
+    sha256: d59a25e6bb7daed676a4c37faa4a14d33adcd699d876f8a39eb77df89ffde9f9
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/pubchem-9075-properties.json
+    sha256: f0309c492c58df75573d2ebbadc553bb4fe04732c7d55d9ca6c2fa8697267195
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/pubchem-9075-synonyms.json
+    sha256: 7f8cb6182bef56d2cb4e3b3ad2fac6d2b0cb489661c3b4fa4280936f7e3f317e
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/recomputed-gluconate-counts.json
+    sha256: 6375718886453f4bcd38340778598acb3f90b1dfcbb0dd9c269ffa7e5ab51d65
+    role: context
+  - path: reports/step7c_source_labels_313_235_20261102/sources/source-scan-summary.json
+    sha256: 75ea2714ec485075db4abc2f74347982a8f03e2ce75d6ac36237d7c5fef24e00
+    role: context
+  - path: reports/step7c_wc_stock_751_20261102/Wc_Trace_Elements_Solution.before.yaml
+    sha256: 692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee
+    role: context
+  - path: reports/step7c_wc_stock_751_20261102/primary-evidence.json
+    sha256: 09bf867c22b26062cc892b09e541818a8b9657bf8fdbcd0ce7338405963c95f4
+    role: context
+  - path: reports/step7c_wc_stock_751_20261102/source-evidence.json
+    sha256: 1076868a28ad39636742ad314a7a7782e981151aa98e85bc95bcf91b6a3e9b5a
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/check_truncated_locants.py
+    sha256: be240387698ffbb3bb73b19841e3b87f1dd0324657549a69426e5200a2c59e22
+    role: context
+  - path: scripts/curate_step7c_source_labels.py
+    sha256: 245c02dac2fb1b2101d14eb261ab16a186bf3d2d3980e8f8d56adda178e82e67
+    role: context
+  - path: scripts/curate_wc_stock_751.py
+    sha256: 1b53a214983eee508718387fc1c576b99b7cc37e489e191a20ae574aec4291d4
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/utils/culturemech_occurrences.py
+    sha256: 847fcee4814d9abb1d5f10d236eb23038eb171e275f3745c23d336b2e958a2be
+    role: context
+  - path: tests/test_check_truncated_locants.py
+    sha256: 1bef14786382b7d6de8bbd8993422e23084f4d2df63b7412ab849fb51067d72f
+    role: context
+  - path: tests/test_curate_step7c_source_labels.py
+    sha256: 07dc71958650182138a4847bcad59163f6b426e97e080f2b69c8e47ccefe17e1
+    role: context
+  - path: tests/test_curate_wc_stock_751.py
+    sha256: 81583ff310310332a293545ff6760a2bbc49276f057618eea0f03a256e254aec
+    role: context
+  - path: tests/test_sssom_release_documentation.py
+    sha256: 215f01ae3644f7d9a457cd2b6fe13d63be951ddb3ee899de503a02c7a7666c2c
+    role: context
+scope:
+  description: Source/provenance review of exactly six Step7c owners and their bounded
+    writers, occurrence override, truncation checker and release documentation, observed
+    at execution checkpoint26938f4b before corrective phase1111.
+  selection: Five existing owners and one new CHEBI11449 owner selected by approved
+    issues751/313/235; all six captured pre-correction owners are included.
+  coverage: full
+  population_size: 6
+  reviewed_target_ids:
+  - butanediol
+  - phosphate
+  - mono-keto
+  - phenethylamine
+  - di-keto
+  - wc-stock
+  exclusions:
+  - target: Final SSSOM candidate, canonical promotion, mapping receipt24, downstream
+      semantic/review products and final head
+    reason: Not yet produced or reviewed in this source pre-review; later independent
+      review required.
+  - target: Whole-record biology, provisional roles, supplier/bottle identity, unrelated
+      source ingestion and release approval
+    reason: This provenance/invariant audit does not grant scientific approval or
+      settle unrelated open decisions.
+targets:
+- target_id: butanediol
+  path: data/ingredients/mapped/14-Butanediol.yaml
+  label: 1,4-Butanediol
+  kind: maintained
+  ownership_note: Maintained ingredient owner; bounded source/provenance review, not
+    whole-record approval.
+- target_id: phosphate
+  path: data/ingredients/mapped/24-diamino-67-di-iso-propylpteridine_phosphate.yaml
+  label: 2,4-diamino-6,7-di-iso-propylpteridine phosphate
+  kind: maintained
+  ownership_note: Maintained ingredient owner; bounded source/provenance review, not
+    whole-record approval.
+- target_id: mono-keto
+  path: data/ingredients/mapped/5-dehydro-D-gluconate.yaml
+  label: 5-dehydro-D-gluconate
+  kind: maintained
+  ownership_note: Maintained ingredient owner; bounded source/provenance review, not
+    whole-record approval.
+- target_id: phenethylamine
+  path: data/ingredients/mapped/Phenethylamine_Hydrochloride.yaml
+  label: 2-phenylethylamine
+  kind: maintained
+  ownership_note: Maintained ingredient owner; bounded source/provenance review, not
+    whole-record approval.
+- target_id: di-keto
+  path: data/ingredients/mapped/25-didehydro-D-gluconate.yaml
+  label: 2,5-didehydro-D-gluconate
+  kind: maintained
+  ownership_note: Maintained ingredient owner; bounded source/provenance review, not
+    whole-record approval.
+- target_id: wc-stock
+  path: data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml
+  label: WC Trace Elements Solution
+  kind: maintained
+  ownership_note: Maintained ingredient owner; bounded source/provenance review, not
+    whole-record approval.
+checks:
+- check_id: focused-pinned-tests
+  name: Independent focused source/checker/documentation tests
+  status: passed
+  required: true
+  summary: 100 passed, zero skipped, 13 warnings; original pre-correction bytes. This
+    did not detect or excuse the independent primary-source finding.
+  target_ids:
+  - butanediol
+  - phosphate
+  - mono-keto
+  - phenethylamine
+  - di-keto
+  - wc-stock
+  command: python -B -m pytest -q -o addopts= -p no:cacheprovider --no-cov tests/test_curate_step7c_source_labels.py
+    tests/test_curate_wc_stock_751.py tests/test_check_truncated_locants.py tests/test_sssom_release_documentation.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - independent-diagnostics
+  scope_note: Executed through pinned MIM runtime wrapper; not the final full suite
+    or just qc.
+- check_id: source-counts
+  name: Independent original-source count replay
+  status: passed
+  required: true
+  summary: Di-keto two production-field appearances; mono-keto 11 production plus277
+    utilization appearances, total288. Both di-keto rows separately contain mono-keto
+    labels; counts are not experimental outcomes.
+  target_ids:
+  - di-keto
+  - mono-keto
+  evidence_ids:
+  - independent-diagnostics
+  - labels-manifest
+- check_id: primary-icons
+  name: BacDive primary production table readback
+  status: failed
+  required: true
+  summary: Both primary pages encode No for CHEBI11449, contradicting the new owner
+    evidence and original writer sentence describing values as blank.
+  target_ids:
+  - di-keto
+  evidence_ids:
+  - bacdive-34
+  - bacdive-58
+  - source-writer
+  - independent-diagnostics
+- check_id: wc-primary
+  name: WC primary extract and ontology readback
+  status: passed
+  required: true
+  summary: Rehashed primary HTML/OWL and reparsed three captured UTEX tables. WC source-specific
+    identity is distinct from generic MICRO0000455, and no new components or role
+    approval are inferred.
+  target_ids:
+  - wc-stock
+  evidence_ids:
+  - wc-manifest
+  - independent-diagnostics
+evidence:
+- evidence_id: independent-diagnostics
+  kind: validation
+  reference: reports/step7c_pre_review_20261102/diagnostics.json
+  accessed_at: '2026-11-02T21:18:49Z'
+  support: supports
+  summary: Hash-bound original finding, exact published issue body, captured six owners,
+    source-code identities, independent raw-source counts, WC primary readback and
+    100-test pinned-runtime result. Historical absolute paths identify original evidence;
+    durable bytes are embedded here.
+  snapshot_sha256: 3a18440fd9dfd75c1220130b08786a8aced9a6a2e9521003a7045989c2d0c0ee
+- evidence_id: bacdive-34
+  kind: primary_source
+  reference: reports/step7c_source_labels_313_235_20261102/sources/bacdive-34.html
+  accessed_at: '2026-11-02T21:18:49Z'
+  support: refutes
+  summary: Production table CHEBI11449 row explicitly encodes No in icon alt/title,
+    while the neighboring mono-keto row encodes Yes; textual extraction alone omits
+    the outcomes.
+  snapshot_sha256: c7b7b18c93de3d1ddf1583f7287237f6bd52653caa44b612305a9e0f5cdec7b8
+- evidence_id: bacdive-58
+  kind: primary_source
+  reference: reports/step7c_source_labels_313_235_20261102/sources/bacdive-58.html
+  accessed_at: '2026-11-02T21:18:49Z'
+  support: refutes
+  summary: Production table CHEBI11449 row explicitly encodes No in icon alt/title,
+    while the neighboring mono-keto row encodes Yes; textual extraction alone omits
+    the outcomes.
+  snapshot_sha256: 9cc4808bc1c8fb683b7fba6ce7d9eb181dfd1d5ab5cd6c87fe229929fdc79d20
+- evidence_id: labels-manifest
+  kind: record_content
+  reference: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+  accessed_at: '2026-11-02T21:18:49Z'
+  support: context_only
+  summary: Pinned primary chemistry, BacDive, original-count and field-preimage evidence
+    for source-label corrections.
+  snapshot_sha256: 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0
+- evidence_id: wc-manifest
+  kind: record_content
+  reference: reports/step7c_wc_stock_751_20261102/source-evidence.json
+  accessed_at: '2026-11-02T21:18:49Z'
+  support: context_only
+  summary: Pinned owner preimage and UTEX WC/MicrO primary extract; no scientific
+    approval.
+  snapshot_sha256: 1076868a28ad39636742ad314a7a7782e981151aa98e85bc95bcf91b6a3e9b5a
+- evidence_id: source-writer
+  kind: record_content
+  reference: scripts/curate_step7c_source_labels.py
+  accessed_at: '2026-11-02T21:18:49Z'
+  support: context_only
+  summary: Executed original writer contains false blank-production claim and is preserved
+    as historical evidence.
+  snapshot_sha256: 245c02dac2fb1b2101d14eb261ab16a186bf3d2d3980e8f8d56adda178e82e67
+assessments:
+- assessment_id: bounded-source-labels
+  area: consistency
+  topic: Aliases and exact owner boundaries
+  outcome: supported
+  summary: 'Fragment/non-name aliases are rejected without changing existing owners:
+    butanediol intact name remains; O129 phosphate identity and counts remain; mono-keto
+    count288 remains; phenethylamine stays free base while only the salt alias is
+    rejected. The recovered damaged di-keto label remains RAW_TEXT under the explicit
+    mapping-semantics carve-out. This is source-contract verification, not fresh mapping
+    approval.'
+  target_ids:
+  - butanediol
+  - phosphate
+  - mono-keto
+  - phenethylamine
+  - di-keto
+  evidence_ids:
+  - labels-manifest
+  - independent-diagnostics
+- assessment_id: wc-stock-boundary
+  area: representation
+  topic: Local stock and asymmetric generic parent
+  outcome: supported
+  summary: WC stock receives its own local ingredient identity and broad generic MICRO
+    parent mapping. Existing provisional-role hold and source count2 remain; no recipe
+    membership, chemistry or composition is inferred.
+  target_ids:
+  - wc-stock
+  evidence_ids:
+  - wc-manifest
+  - independent-diagnostics
+- assessment_id: negative-production-provenance
+  area: provenance
+  topic: Negative versus absent BacDive outcome
+  outcome: concern
+  summary: Explicit No icons were lost by text-only extraction. The active evidence
+    note and new creation history incorrectly call outcomes blank; preserve executed
+    history while appending a corrective event and correcting active evidence.
+  target_ids:
+  - di-keto
+  evidence_ids:
+  - bacdive-34
+  - bacdive-58
+  - source-writer
+  - independent-diagnostics
+findings:
+- finding_id: bacdive-negative-production-icons
+  issue_key: mim-1111-bacdive-negative-production-icons
+  category: provenance
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Preserve negative-production icons instead of describing outcomes as blank
+  description: Captured BacDive34 and58 production tables encode CHEBI11449 outcome
+    No in icon alt/title. Original source writer and regression reduce this to blank,
+    and that false statement appears in the new owner active MappingEvidence note
+    and creation history. Exact identity and two source-field appearance count are
+    unaffected; no positive role was inferred.
+  target_ids:
+  - di-keto
+  field_paths:
+  - ontology_mapping.evidence[0].notes
+  - curation_history[0].changes
+  evidence_ids:
+  - bacdive-34
+  - bacdive-58
+  - source-writer
+  - independent-diagnostics
+  rule_id: AGENTS.md source provenance and MAPPING_SEMANTICS.md source-evidence contract
+  native_severity: P3
+  normalization_reason: Confirmed provenance defect without changed identity, occurrence
+    count or positive scientific assertion; must repair before final review.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/25-didehydro-D-gluconate.yaml
+    role: affected maintained owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_step7c_source_labels.py
+    role: historical executed producer
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1111
+actions:
+- action_id: correct-negative-evidence
+  description: Use a third guarded corrective phase to correct active evidence and
+    append a corrective history event while preserving original executed writer, receipt,
+    source captures and creation history. Add No/Yes/absent-result regressions, then
+    regenerate and re-review final products.
+  finding_ids:
+  - bacdive-negative-production-icons
+  target_ids:
+  - di-keto
+  acceptance_checks:
+  - Both BacDive rows explicitly recorded as negative (No), not blank.
+  - Original history and receipts retained; new corrective event records the evidence
+    correction.
+  - Counts2 and288 and scientific holds remain unchanged.
+  - Independent re-review resolves this exact finding against final corrected source
+    and generated chain.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/25-didehydro-D-gluconate.yaml
+    role: affected maintained owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_step7c_source_labels.py
+    role: historical executed producer
+limitations:
+- This observation records captured pre-correction checkpoint26938f4b, not the current
+  mutable worktree after later repairs.
+- Durable source.git_revision is merged baseline54eadef8 with a truthful working_tree
+  overlay and exact input hashes. The transient execution checkpoint is metadata,
+  not a replay prerequisite.
+- Full just qc, complete test suite, canonical promotion, receipt24 and final-head
+  review are outside this pre-review; focused tests passing does not waive them.
+- No direct CAS Registry lookup or new paid provider research was performed; captured
+  primary sources and explicit identity distinctions were inspected.
+- No scientific, release or provisional-role approval is granted.
+notes:
+- Supervisor binding remains null; this is a standalone native observation.
+- Issue1111 was filed before the corrective phase; this immutable pre-review preserves
+  its open state even if the live issue or source subsequently changes.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1111
+tags:
+- step7c
+- pre-review
+- source-provenance
+- independent
+- no-scientific-approval
+```

@@ -19,6 +19,9 @@ locants as its multiplier. `2,3-dimethyl…` is well formed; `3-dimethyl…` can
 exist. Only labels carrying an explicit locant group are checked, so unlocanted
 names like `dimethyl sulfoxide` are correctly ignored.
 
+REJECTED records retain historical labels and are excluded. Every other status
+is checked in both record directories; this diagnostic checks preferred labels.
+
     python scripts/check_truncated_locants.py
     python scripts/check_truncated_locants.py --tsv reports/truncated_locants.tsv
 """
@@ -94,6 +97,8 @@ def main(argv: list[str] | None = None) -> int:
     for status in ("mapped", "unmapped"):
         for path in sorted((INGREDIENTS / status).glob("*.yaml")):
             rec = yaml.safe_load(path.read_text(encoding="utf-8", errors="replace")) or {}
+            if rec.get("mapping_status") == "REJECTED":
+                continue
             om = rec.get("ontology_mapping") or {}
             label = str(rec.get("preferred_term") or path.stem)
             hits = scan_label(label)

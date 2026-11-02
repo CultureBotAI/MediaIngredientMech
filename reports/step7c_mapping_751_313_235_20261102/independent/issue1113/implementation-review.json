@@ -1,0 +1,116 @@
+{
+  "status": "PASS_PREAPPLICATION_REVIEW",
+  "at": "2026-11-02T21:47:10.593394+00:00",
+  "reviewer": "/root/step7a_final_adversarial",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1113",
+  "author_handoff": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-source-fixture-repair/handoff.json",
+    "sha256": "062ea61ced13f3c7195aab9c81a0e9c0c7c031a604fe7c6a572be37619d48e63"
+  },
+  "exact_approved_files": {
+    "tests/conftest.py": {
+      "sha256": "0d8f8f762981114967674c1b665378a2c9c448a6fcb8a2989db32948d6be8a5c",
+      "bytes": 865
+    },
+    "tests/fixtures/step7c_source_anchors_1113/README.md": {
+      "sha256": "d090bba5eca9dbb86cc9ad0c701844f63b349dfbc093e888133a51ff7af2942b",
+      "bytes": 1526
+    },
+    "tests/fixtures/step7c_source_anchors_1113/anchors.json.gz": {
+      "sha256": "79f7dd8f70964428d593de36102c9339fd0b53718aa5066943b532008372a96b",
+      "bytes": 913371
+    },
+    "tests/fixtures/step7c_source_anchors_1113/manifest.json": {
+      "sha256": "44c5ac9d55406b8b45070f705d07f4435617f0bc103c8f07c1cf7302f0976785",
+      "bytes": 1095
+    },
+    "tests/historical_source_anchors.py": {
+      "sha256": "ef3d28760a55a6ab17e78ba78ffce04f02825d8ea54e0bd4422322b510f2f2fd",
+      "bytes": 4885
+    },
+    "tests/test_historical_source_anchors.py": {
+      "sha256": "915d6530d0cf914ecbb7980d56d7323c63ed5f34b4b0915d42e22854b9c3ac65",
+      "bytes": 9106
+    }
+  },
+  "original_inputs_unchanged": {
+    "tests/test_correct_diketo_bacdive_evidence.py": "9ca603ae82b0b65d0be6b3afed009eda043f9bf690394973787123356aad12bc",
+    "tests/test_curate_step7c_source_labels.py": "07dc71958650182138a4847bcad59163f6b426e97e080f2b69c8e47ccefe17e1",
+    "tests/test_curate_wc_stock_751.py": "81583ff310310332a293545ff6760a2bbc49276f057618eea0f03a256e254aec",
+    "tests/conftest.py": "0ef723c609de5ba0e04ea3b161b704d29779921bd85916bcc12b80804d51c570",
+    "scripts/correct_diketo_bacdive_evidence.py": "b77c0307979f2b8225053c3f4257c34808981d94b567a13dc3e1adf0f6b173c3",
+    "scripts/curate_step7c_source_labels.py": "245c02dac2fb1b2101d14eb261ab16a186bf3d2d3980e8f8d56adda178e82e67",
+    "scripts/curate_wc_stock_751.py": "1b53a214983eee508718387fc1c576b99b7cc37e489e191a20ae574aec4291d4",
+    "reports/diketo_bacdive_evidence_1111_20261102/source-evidence.json": "41defe43ca5fc06502964d155ea58376d5420c0ce2cb8ffe660294c18638d892",
+    "reports/step7c_source_labels_313_235_20261102/source-evidence.json": "1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0"
+  },
+  "checks": {
+    "native": "84passed0skipped13warnings",
+    "mim_only": "67passed17existingoptionalnative skips13warnings; actual skip reasons emitted and inspected",
+    "archive_origin": "All six decoded byte sequences independently equal git blobs at durable merged54eadef8. Runtime needs no Git.",
+    "preview_identity": "All701 physical preview Python files match either original W or exact proposed files; proposed runtime wiring/helper/test/archive/manifest hashes match. README is metadata outside runtime preview.",
+    "scope_guards": "Exact2 module paths+original SHA, case-requested only, exact pytest tmp_path, no alias/hardlink, validate all targets before replacements; labels expected-before map receives matching protected anchor bytes only.",
+    "production_assertions_preserved": "Original two modules/writers/manifests remain byte-identical. Negative controls include real writer rejection of post-restoration canonical corruption. Native positive, journal, collision and race assertions execute on the reconstructed historical prestate.",
+    "global_fixture_impact": "Unrelated/same-basename/no-case controls return before fixture lookup. Existing dictionary-cache fixture retained unchanged."
+  },
+  "test_receipts": [
+    {
+      "name": "step7c-independent-1113-native",
+      "argv": [
+        "python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-source-fixture-repair/run_preview.py",
+        "tests/test_historical_source_anchors.py",
+        "tests/test_correct_diketo_bacdive_evidence.py",
+        "tests/test_curate_step7c_source_labels.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--no-cov"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c",
+      "started_at": "2026-11-02T21:46:22.526230+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-02T21:46:26.460769+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7c-independent-1113-native.log",
+      "log_sha256": "0577195e649f226915483dce4aee517ed6e514a849b2f23cf1080900cb31a39a"
+    },
+    {
+      "name": "step7c-independent-1113-mim-only",
+      "argv": [
+        "python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-source-fixture-repair/run_preview.py",
+        "--mim-only",
+        "tests/test_historical_source_anchors.py",
+        "tests/test_correct_diketo_bacdive_evidence.py",
+        "tests/test_curate_step7c_source_labels.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--no-cov",
+        "-rs"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c",
+      "started_at": "2026-11-02T21:46:22.526322+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-02T21:46:24.918458+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7c-independent-1113-mim-only.log",
+      "log_sha256": "0373c22c621a5926449f29fa710eafeddc1f38e64993475b81438e25b97d031f"
+    }
+  ],
+  "findings": [],
+  "scientific_approval_added": false,
+  "supervisor_binding": null,
+  "application_clearance": "The six exact proposed test-harness/fixture files may be applied. No production guard, original source test assertion/skip, source record or publication output change is covered.",
+  "limits": [
+    "The failed C3 full suite is retained as diagnostic evidence; a new complete suite on the fixed head remains required.",
+    "This is faithful historical test setup, not a waiver of a runtime writer error."
+  ]
+}

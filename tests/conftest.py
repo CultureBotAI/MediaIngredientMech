@@ -9,6 +9,7 @@ test's question. Every test gets its own.
 from __future__ import annotations
 
 import pytest
+from tests.historical_source_anchors import restore_requested_case
 
 from mediaingredientmech.validation.kg_microbe_dict import CACHE_DIR_ENV
 
@@ -16,3 +17,9 @@ from mediaingredientmech.validation.kg_microbe_dict import CACHE_DIR_ENV
 @pytest.fixture(autouse=True)
 def _isolated_dictionary_cache(tmp_path_factory, monkeypatch):
     monkeypatch.setenv(CACHE_DIR_ENV, str(tmp_path_factory.mktemp("kgm-cache")))
+
+
+@pytest.fixture(autouse=True)
+def _historical_step7c_source_anchors(request):
+    """Keep the original evidence-bound source tests portable after publication."""
+    restore_requested_case(request)

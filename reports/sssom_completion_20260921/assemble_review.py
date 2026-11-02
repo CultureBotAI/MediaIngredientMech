@@ -33,7 +33,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "55823757c6b15f43de69370da7fe6c4468ff21f14e5f4994cf53115e04ae0d74"
+REVIEWED_SOURCE = "62fd37c2ed8ace9b9295618d44e251d11fc35feb711053b66d322e5a7bce14f1"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 # Admission is explicit; discovering an arbitrary report never grants authority.
@@ -156,6 +156,85 @@ def qualify_node_correction_concern(entry, mapping, owner, owner_hash, chain, ba
         + " The corrected claim remains WITHHOLD pending fresh mapping-specific review. "
         "All unassessed identity, synonym, preparation and role concerns remain review obligations; "
         "this provenance qualification retires no historical finding and adds no scientific approval."
+    )
+    return reason, proof
+
+
+def qualify_source_mapping_concern(entry, mapping, owner, owner_hash, chain, baseline, *, current_position):
+    """Qualify receipt24's superseded concern text without retiring holds (#1112)."""
+    shapes = {
+        "data/ingredients/mapped/14-Butanediol.yaml": "source_synonym_retirement",
+        "data/ingredients/mapped/5-dehydro-D-gluconate.yaml": "source_synonym_retirement",
+        "data/ingredients/mapped/Phenethylamine_Hydrochloride.yaml": "source_synonym_retirement",
+        "data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml": "local_stock_identity",
+    }
+    if owner not in shapes:
+        return entry["reason"], None
+    corrections = [
+        (receipt, path, record)
+        for receipt, path in zip(chain["receipts"], chain["receipt_paths"], strict=True)
+        if receipt["batch"] == "issue751-313-235-stock-and-source-labels"
+        for record in receipt["records"]
+        if record["source_record"] == owner
+        and record.get("shape") == shapes[owner]
+    ]
+    if not corrections or entry.get("source_record_sha256") == owner_hash:
+        return entry["reason"], None
+    position = entry.get("source_position")
+    if (
+        len(corrections) != 1 or entry.get("disposition") != "WITHHOLD"
+        or entry.get("source_record") != owner
+        or entry.get("sssom_source_sha256") != baseline["source_sha256"]
+        or type(position) is not int or not 1 <= position <= len(chain["baseline_rows"])
+        or type(current_position) is not int or not 1 <= current_position <= len(chain["state"])
+        or chain["baseline_rows"][position - 1] != entry.get("mapping")
+        or chain["forward"][position - 1] != current_position
+        or chain["state"][current_position - 1] != mapping
+    ):
+        raise ValueError("Historical source concern does not bind the verified row and owner")
+    supersession = record_supersession(
+        chain, owner=owner, reviewed_sha256=entry.get("source_record_sha256"),
+        current_sha256=owner_hash,
+    )
+    if supersession is None:
+        raise ValueError("Historical source concern has no exact owner-byte supersession")
+    receipt, path, record = corrections[0]
+    expected = {
+        "sequence": receipt["sequence"], "path": path,
+        "sha256": chain["receipt_inputs"][path],
+        "before_sha256": record["before_yaml_sha256"],
+        "after_sha256": record["after_yaml_sha256"],
+    }
+    changes = [
+        change for change in receipt["changes"]
+        if change["kind"] == "changed" and change["after"] == mapping
+        and change["before"]["subject_id"] == entry["mapping"]["subject_id"]
+    ]
+    if (
+        expected not in supersession["receipts"] or record["after_yaml_sha256"] != owner_hash
+        or len(changes) != 1
+    ):
+        raise ValueError("Source correction does not bind the current owner and mapping transition")
+    proof = {
+        "source": "mapping_review/concern_cohorts.json",
+        "baseline_position": position, "current_position": current_position,
+        "historical_row_sha256": row_sha256(entry["mapping"]),
+        "current_row_sha256": row_sha256(mapping), "owner_supersession": supersession,
+        "mapping_correction": dict(
+            expected, batch=receipt["batch"], shape=record["shape"],
+            before_row_sha256=row_sha256(changes[0]["before"]),
+            after_row_sha256=row_sha256(changes[0]["after"]),
+        ),
+        "scope": "Historical qualification only; no finding retired or scientific approval added",
+    }
+    reason = (
+        f"Historical concern recorded before the verified source/mapping correction in receipt {receipt['batch']}. "
+        "The following quotation describes the archived row and owner, not the current corrected payload: "
+        + entry["reason"]
+        + " The corrected claim remains WITHHOLD pending fresh mapping-specific review. "
+        "All remaining or unassessed identity, synonym, preparation, role and component concerns remain "
+        "review obligations; in particular, no provisional role is approved by this correction. "
+        "This provenance qualification retires no historical finding and adds no scientific approval."
     )
     return reason, proof
 
@@ -460,6 +539,11 @@ def assemble():
                 entry, mapping, owner, record_hashes[owner], chain, baseline,
                 current_position=current_position,
             )
+            if historical_concern is None:
+                reason, historical_concern = qualify_source_mapping_concern(
+                    entry, mapping, owner, record_hashes[owner], chain, baseline,
+                    current_position=current_position,
+                )
             if historical_concern is not None:
                 basis["historical_concern"] = historical_concern
             basis["scoped_review"] = {
@@ -576,7 +660,21 @@ def assemble():
             basis["preparation_tokens"] = suspect
         if position in explicit_holds:
             disposition = "WITHHOLD"
-            reason = " ".join(dict.fromkeys(item["reason"] for item in explicit_holds[position]))
+            hold_reasons = []
+            for item in explicit_holds[position]:
+                hold_reason = item["reason"]
+                if (
+                    "mapping_correction" in basis.get("historical_concern", {})
+                    and hold_reason == concerns[position]["reason"]
+                ):
+                    # Retain the exact archived negative entry for follow-up
+                    # comparison; qualify only its repeated display text.
+                    hold_reason, _ = qualify_source_mapping_concern(
+                        concerns[position], mapping, owner, record_hashes[owner], chain, baseline,
+                        current_position=current_position,
+                    )
+                hold_reasons.append(hold_reason)
+            reason = " ".join(dict.fromkeys(hold_reasons))
             basis["negative_reviews"] = explicit_holds[position]
         followup_key = tuple(mapping[field] for field in ("subject_id", "predicate_id", "object_id"))
         if followup_key in followups_by_key:

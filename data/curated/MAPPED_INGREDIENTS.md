@@ -1,6 +1,6 @@
 # Mapped Ingredients Index
-**Total Records**: 2680
-**Mapped**: 2610 (97.4%)
+**Total Records**: 2681
+**Mapped**: 2611 (97.4%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 70 (2.6%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 222,468
@@ -2003,7 +2003,6 @@
 | mesh:C012306 | Vulgamycin | mesh:C012306 | MESH | EXACT_MATCH | 0 |
 | CHEBI:144250 | Vulpinic acid | CHEBI:144250 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:10033 | Warfarin | CHEBI:10033 | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0000455 | WC Trace Elements Solution | MICRO:0000455 | MICRO | LEXICAL_MATCH | 2 |
 | CHEBI:28427 | Wheat Arabinoxylan | CHEBI:28427 | CHEBI | CAS_RN_LOOKUP | 0 |
 | NCIT:C84877 | White wine | NCIT:C84877 | NCIT | EXACT_MATCH | 5 |
 | cas:11138-66-2 | Xanthan from Xanthomonas campestris | mesh:D016959 | MESH | NARROW_MATCH | 0 |
@@ -2621,6 +2620,8 @@
 | NCIT:C216679 | Carnitine Hydrochloride | NCIT:C216679 | NCIT | EXACT_MATCH | 14 |
 | kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | sn-Glycerol 3-phosphate lithium salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
 | cas:480-14-8 | Izalpinin | cas:480-14-8 | CAS | FALLBACK_REGISTRY | 0 |
+| CHEBI:11449 | 2,5-didehydro-D-gluconate | CHEBI:11449 | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:wc_trace_elements_solution | WC Trace Elements Solution | MICRO:0000455 | MICRO | NARROW_MATCH | 2 |
 
 ## Other Statuses
 

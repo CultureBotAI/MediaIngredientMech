@@ -1,0 +1,72 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+____ test_native_dry_run_reserved_source_receipt_and_exact_completed_replay ____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9528/test_native_dry_run_...6m0000gn/T/pytest-of-marcin/pytest-9528/test_native_dry_run_reserved_s0/receipts/fixture-diketo-correction-1111.json'))
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_native_dry_run_reserved_source_receipt_and_exact_completed_replay(case):
+        root, log = case
+        before = (root / writer.OWNER).read_bytes()
+>       assert writer.apply_sources(root, log)["applied"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_correct_diketo_bacdive_evidence.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/correct_diketo_bacdive_evidence.py:313: in apply_sources
+    inputs, result, paths = source_context(root, current)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/correct_diketo_bacdive_evidence.py:260: in source_context
+    require(guarded.digest(data) == expected, "Protected publication anchor changed")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Protected publication anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Protected publication anchor changed
+
+scripts/correct_diketo_bacdive_evidence.py:89: ValueError
+________ test_race_after_receipt_reservation_preserves_competing_owner _________
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9528/test_race_after_rece...6m0000gn/T/pytest-of-marcin/pytest-9528/test_race_after_receipt_reserv0/receipts/fixture-diketo-correction-1111.json'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10af85350>
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_race_after_receipt_reservation_preserves_competing_owner(case, monkeypatch):
+        root, log = case
+        reserve = writer.guarded.reserve_receipt_outputs
+        competing = writer.frozen() + b"# competing owner edit\n"
+    
+        @contextmanager
+        def raced(*args, **kwargs):
+            with reserve(*args, **kwargs) as handles:
+                (root / writer.OWNER).write_bytes(competing)
+                yield handles
+    
+        monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", raced)
+>       with pytest.raises(ValueError, match="frozen input changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'frozen input changed'
+E         Actual message: 'Protected publication anchor changed'
+
+tests/test_correct_diketo_bacdive_evidence.py:202: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_correct_diketo_bacdive_evidence.py::test_native_dry_run_reserved_source_receipt_and_exact_completed_replay
+FAILED tests/test_correct_diketo_bacdive_evidence.py::test_race_after_receipt_reservation_preserves_competing_owner
+2 failed, 13 warnings in 0.48s

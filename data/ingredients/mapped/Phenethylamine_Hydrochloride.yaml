@@ -10,12 +10,29 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361
+    notes: 'CHEBI:18397 / PubChem CID 1001 / CAS 64-04-0 denote free-base C8H11N;
+      Phenethylamine hydrochloride is distinct CID 9075 / CAS 156-28-5 / C8H12ClN.
+      Preserve #234''s free-base identity, Beta-phenylethylamine alias and chemistry;
+      reject only the incompatible salt alias. CultureBotHT''s tracked correction
+      overlay explicitly corrects the original source pair, but does not identify
+      the original supplier or physical bottle. Separate salt-record re-ingestion
+      remains open on #235; no direct CAS Registry check is claimed. Sources: https://www.ebi.ac.uk/chebi/CHEBI:18397
+      ; https://pubchem.ncbi.nlm.nih.gov/compound/1001 ; https://pubchem.ncbi.nlm.nih.gov/compound/9075
+      ; https://webprod.hc-sc.gc.ca/nhpid-bdipsn/ingredReq?id=11491 ; https://github.com/CultureBotAI/CultureBotHT/pull/38
+      . https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
 synonyms:
 - synonym_text: 2-phenylethanamine
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: Phenethylamine Hydrochloride
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: relabelled
 - synonym_text: Beta-phenylethylamine
   synonym_type: RAW_TEXT
@@ -78,6 +95,28 @@ curation_history:
     ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
     under Rule D (#438), independently of mapping quality.
   llm_assisted: false
+- timestamp: '2026-11-02T21:05:51.410555+00:00'
+  curator: Codex
+  action: REJECTED_WRONG_FORM_SYNONYM
+  changes: 'Retyped only ["Phenethylamine Hydrochloride"] as provenance-only REJECTED_LABEL.
+    CHEBI:18397 / PubChem CID 1001 / CAS 64-04-0 denote free-base C8H11N; Phenethylamine
+    hydrochloride is distinct CID 9075 / CAS 156-28-5 / C8H12ClN. Preserve #234''s
+    free-base identity, Beta-phenylethylamine alias and chemistry; reject only the
+    incompatible salt alias. CultureBotHT''s tracked correction overlay explicitly
+    corrects the original source pair, but does not identify the original supplier
+    or physical bottle. Separate salt-record re-ingestion remains open on #235; no
+    direct CAS Registry check is claimed. Sources: https://www.ebi.ac.uk/chebi/CHEBI:18397
+    ; https://pubchem.ncbi.nlm.nih.gov/compound/1001 ; https://pubchem.ncbi.nlm.nih.gov/compound/9075
+    ; https://webprod.hc-sc.gc.ca/nhpid-bdipsn/ingredReq?id=11491 ; https://github.com/CultureBotAI/CultureBotHT/pull/38
+    . https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361.
+    Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+    counts are not recipe occurrences or positive experimental outcomes. Preserved
+    superseded source assertions and history. No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 64-04-0
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,0 +1,149 @@
+diff --git a/tests/test_semantic_hold_resolution.py b/tests/test_semantic_hold_resolution.py
+index 19f46922..cdb6d81a 100644
+--- a/tests/test_semantic_hold_resolution.py
++++ b/tests/test_semantic_hold_resolution.py
+@@ -5,11 +5,14 @@ import csv
+ import hashlib
+ import importlib.util
+ import json
++from functools import cache
+ from pathlib import Path
+ 
+ import pytest
+ import yaml
+ 
++from mediaingredientmech.export.kgx import build_graph
++from mediaingredientmech.validation import mapping_change_receipts as receipts
+ from mediaingredientmech.validation import semantic_release as gate
+ 
+ ROOT = Path(__file__).parents[1]
+@@ -28,9 +31,13 @@ def load_module(name, path):
+ builder = load_module("hold_resolution_builder", BUILDER_PATH)
+ 
+ 
+-@pytest.fixture
+-def corrected_hold():
+-    """Use tracked correction bytes; ignored graph outputs are not test inputs."""
++@cache
++def current_hold_projection():
++    """Recompute the production projection and receipt lineage from tracked inputs.
++
++    Cache the read-only corpus work, then copy mutable test cases below. Neither
++    ignored graph exports nor the report's saved lineage are fixture authority.
++    """
+     document = json.loads((BUILDER_PATH.parent / "release-holds.json").read_text())
+     resolution = next(r for r in document["resolutions"] if r["hold_id"] == HOLD_ID)
+     owner = resolution["owner_record"]
+@@ -42,26 +49,107 @@ def corrected_hold():
+         )
+     hashes = {owner: gate.sha(ROOT / owner)}
+     current = gate.current_assertions({owner: record}, mappings, hashes, gate.sha(source))
+-    identity = next(r for r in current if r["assertion_id"] == resolution["assertion_id"])
+-    claim = mappings[int(identity["source_position"]) - 1]
++    graph, _, _ = build_graph(ROOT)
++    owners = {
++        node["id"]: node["source_record"]
++        for node in graph.nodes.values()
++        if node["node_kind"] == "ingredient"
++    }
++    chain = receipts.verify_mapping_chain(ROOT)
++    lineage = receipts.hold_lineage(
++        chain,
++        current,
++        graph.edges,
++        document["resolutions"],
++        owners=owners,
++        record_hashes=hashes,
++    )
++    return document, resolution, current, graph.edges, owners, hashes, chain, lineage
++
++
++@pytest.fixture
++def corrected_hold():
++    """Keep the frozen hold and use its independently verified current endpoint."""
++    document, resolution, current, edges, owners, hashes, _, lineage = copy.deepcopy(
++        current_hold_projection()
++    )
++    successor = lineage[resolution["assertion_id"]]
++    identity = next(r for r in current if r["assertion_id"] == successor["assertion_id"])
++    edge = next(r for r in edges if r["id"] == successor["edge_id"])
++    claim = json.loads(edge["assertion_json"])
+     decision = dict(
+         identity,
+         resolution_status="OPEN",
+         review_reason="Still needs scoped approval",
+         review_evidence="",
+     )
+-    edge = {k: identity[k] for k in ("source_record", "assertion_type", "source_position")}
+-    edge.update(id=resolution["edge_id"], assertion_json=json.dumps(claim))
+     return {
+         "document": document,
+         "assertions": [decision],
+         "edges": [edge],
+-        "owners": {claim["subject_id"]: owner},
++        "owners": {claim["subject_id"]: owners[claim["subject_id"]]},
+         "record_hashes": hashes,
+         "evidence_path": "release-holds.json",
++        "lineage": lineage,
+     }
+ 
+ 
++def test_unrelated_inserted_row_preserves_frozen_hold_and_current_claim(corrected_hold):
++    original = json.loads((BUILDER_PATH.parent / "release-holds.json").read_text())
++    assert corrected_hold["document"] == original
++    resolution = original["resolutions"][0]
++    lineage = corrected_hold["lineage"][resolution["assertion_id"]]
++    insertion = next(item for item in lineage["receipts"] if item["sequence"] == 24)
++    assert insertion["before_position"] == 431 and insertion["after_position"] == 432
++    assert insertion["path"].endswith("issue751-313-235-stock-and-source-labels.json")
++    identity = corrected_hold["assertions"][0]
++    assert identity["assertion_id"] == lineage["assertion_id"]
++    assert int(identity["source_position"]) == lineage["current_position"]
++    assert identity["assertion_sha256"] == resolution["assertion_sha256"]
++    assert identity["resolution_status"] == "OPEN"
++    assert (
++        corrected_hold["record_hashes"][resolution["owner_record"]]
++        == resolution["owner_record_sha256"]
++    )
++    assert check(corrected_hold) == {}
++
++
++@pytest.mark.parametrize("mutation", ["removed", "payload", "assertion", "edge", "owner"])
++def test_current_endpoint_requires_the_native_inserted_row_proof(mutation):
++    document, resolution, current, edges, owners, hashes, chain, lineage = copy.deepcopy(
++        current_hold_projection()
++    )
++    successor = lineage[resolution["assertion_id"]]
++    if mutation == "removed":
++        insertion = next(
++            item
++            for item in lineage[resolution["assertion_id"]]["receipts"]
++            if item["sequence"] == 24
++        )
++        chain["receipts"][23]["position_map"][insertion["before_position"] - 1] = None
++    elif mutation == "payload":
++        chain["state"][successor["current_position"] - 1]["other"] += "|" + TRAIT
++    elif mutation == "assertion":
++        identity = next(
++            row for row in current if row["assertion_id"] == successor["assertion_id"]
++        )
++        identity["assertion_id"] = resolution["assertion_id"]
++    elif mutation == "edge":
++        edge = next(row for row in edges if row["id"] == successor["edge_id"])
++        edge["id"] = resolution["edge_id"]
++    else:
++        hashes[resolution["owner_record"]] = hashlib.sha256(b"changed owner").hexdigest()
++    with pytest.raises(ValueError, match="removed|differs|changed"):
++        receipts.hold_lineage(
++            chain,
++            current,
++            edges,
++            document["resolutions"],
++            owners=owners,
++            record_hashes=hashes,
++        )
++
++
+ def check(args):
+     return gate.validate_release_holds(**args)
+ 

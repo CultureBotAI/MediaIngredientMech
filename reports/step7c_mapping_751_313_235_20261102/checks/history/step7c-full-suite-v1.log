@@ -1,0 +1,559 @@
+uv run --frozen --extra dev pytest tests/
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/pytest:10: PytestRemovedIn10Warning: pytest.console_main() is deprecated and will be removed in pytest 10.
+It was never intended for programmatic use; use pytest.main() instead.
+See https://docs.pytest.org/en/stable/deprecations.html#console-main
+  sys.exit(console_main())
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c
+configfile: pyproject.toml
+plugins: cov-7.1.0, anyio-4.13.0
+collected 5046 items
+
+tests/test_agents_skills.py ..                                           [  0%]
+tests/test_aggregate_records.py ..................                       [  0%]
+tests/test_apply_claude_suggestions.py ........                          [  0%]
+tests/test_apply_role_research_results.py .....................          [  0%]
+tests/test_apply_role_research_sync.py .....                             [  1%]
+tests/test_audit_duplicate_identifiers.py ...................            [  1%]
+tests/test_audit_kg_microbe_node_ids.py ................                 [  1%]
+tests/test_backfill_surface_forms.py .................                   [  2%]
+tests/test_batch_review_diagnostics.py .....                             [  2%]
+tests/test_browser_accessibility.py ...                                  [  2%]
+tests/test_build_review_round.py .....                                   [  2%]
+tests/test_bump_sssom_header.py ............                             [  2%]
+tests/test_carnitine_merge_dependencies.py ................              [  2%]
+tests/test_carnitine_occurrence_routing.py ............................. [  3%]
+.........                                                                [  3%]
+tests/test_cas_counterion_identity_conflicts.py ...........              [  3%]
+tests/test_cas_rn_pattern.py .....................                       [  4%]
+tests/test_cas_stereochemical_identity_conflicts.py ..................   [  4%]
+tests/test_cas_synonym_currency.py ..........                            [  4%]
+tests/test_causal_graph_schema.py ...................................... [  5%]
+.                                                                        [  5%]
+tests/test_chebi_accession_ceiling.py .............                      [  5%]
+tests/test_chebi_deduplicator.py ..........                              [  6%]
+tests/test_check_chebi_currency.py ....................                  [  6%]
+tests/test_check_curation_targets.py ..............                      [  6%]
+tests/test_check_hydrate_water.py ...............................        [  7%]
+tests/test_check_instruction_refs.py ................                    [  7%]
+tests/test_check_record_filename_case.py .....................           [  8%]
+tests/test_check_truncated_locants.py ...............................    [  8%]
+tests/test_chemical_enrichment_callers.py .............................. [  9%]
+..                                                                       [  9%]
+tests/test_chemical_normalizer.py ..................                     [  9%]
+tests/test_chemical_properties.py ........                               [  9%]
+tests/test_chemical_properties_client.py ....                            [  9%]
+tests/test_chemical_properties_guard.py ................................ [ 10%]
+............................................                             [ 11%]
+tests/test_chemical_properties_ols_only.py ............................. [ 12%]
+...................................                                      [ 12%]
+tests/test_chemical_scope_records.py ..                                  [ 12%]
+tests/test_ci_review_replay_contract.py F..                              [ 12%]
+tests/test_classification_preserves_chemistry_scope.py ....              [ 12%]
+tests/test_compare_with_culturemech.py ........                          [ 13%]
+tests/test_component_partonomy.py .........                              [ 13%]
+tests/test_component_partonomy_migration.py ..                           [ 13%]
+tests/test_correct_diketo_bacdive_evidence.py ....................F..... [ 13%]
+...F                                                                     [ 13%]
+tests/test_correct_hydrate_stock_chemistry_871_268.py .................. [ 14%]
+...................................                                      [ 14%]
+tests/test_correct_izalpinin_cas.py .................................... [ 15%]
+..............................................                           [ 16%]
+tests/test_correct_melezitose_parent.py ................................ [ 17%]
+.................................................................        [ 18%]
+tests/test_correct_sodium_perchlorate_parent.py ........................ [ 18%]
+..........................................                               [ 19%]
+tests/test_cross_reference_culturemech.py .............                  [ 20%]
+tests/test_culturemech_membership.py ........................            [ 20%]
+tests/test_culturemech_residual_triage.py .............................. [ 21%]
+........................................                                 [ 21%]
+tests/test_curate_lithium_glycerophosphate.py .......................... [ 22%]
+.......................                                                  [ 22%]
+tests/test_curate_step7c_source_labels.py ................F.......FF.FFF [ 23%]
+FFF                                                                      [ 23%]
+tests/test_curate_wc_stock_751.py ..................................     [ 24%]
+tests/test_curation_receipt_collisions.py ....                           [ 24%]
+tests/test_curation_timestamp_schema.py ..                               [ 24%]
+tests/test_curation_workflow.py ........................................ [ 25%]
+.                                                                        [ 25%]
+tests/test_curie_normalizer.py ...............s.....                     [ 25%]
+tests/test_deep_research_contract.py ...........                         [ 25%]
+tests/test_deep_research_provider.py .............................       [ 26%]
+tests/test_discussion_preview_links.py .                                 [ 26%]
+tests/test_docs_inventory.py ...                                         [ 26%]
+tests/test_edison_capture_sidecar_provenance.py ......                   [ 26%]
+tests/test_edison_fatal_errors.py .............                          [ 26%]
+tests/test_edison_report_matching.py ..................                  [ 27%]
+tests/test_element_atom_overclaims.py ...........                        [ 27%]
+tests/test_engine_a_obo_safe.py .....                                    [ 27%]
+tests/test_enrich_edison_response_provenance.py ....                     [ 27%]
+tests/test_enum_sync.py ...........                                      [ 27%]
+tests/test_environmental_context.py .................................... [ 28%]
+.............                                                            [ 28%]
+tests/test_evidence_assessment.py ...................................... [ 29%]
+.............                                                            [ 29%]
+tests/test_export_filename_stability.py ...........                      [ 29%]
+tests/test_export_preserves_discussions.py .........                     [ 30%]
+tests/test_export_shared_identifier.py ...                               [ 30%]
+tests/test_fix_lipoic_stereochemistry.py .                               [ 30%]
+tests/test_fix_merge_tombstone_resolution.py ........                    [ 30%]
+tests/test_flat_export_coverage.py ..................................... [ 31%]
+.                                                                        [ 31%]
+tests/test_fleet_paths.py .............................................. [ 32%]
+........................................................................ [ 33%]
+........................................................................ [ 34%]
+........................................................................ [ 36%]
+.......................................                                  [ 37%]
+tests/test_form_mapping_followup.py .................................... [ 37%]
+.................................................                        [ 38%]
+tests/test_hydrate_family_identity.py .................................. [ 39%]
+............                                                             [ 39%]
+tests/test_hydrate_guard.py ............................................ [ 40%]
+..............................                                           [ 41%]
+tests/test_id_label_empty_adapter.py .............                       [ 41%]
+tests/test_id_label_exceptions.py .....                                  [ 41%]
+tests/test_id_label_exceptions_conf.py ...                               [ 41%]
+tests/test_id_label_plausibility.py .................................... [ 42%]
+................                                                         [ 42%]
+tests/test_id_label_unknown_prefix.py ....                               [ 42%]
+tests/test_import_from_culturemech.py ...........                        [ 42%]
+tests/test_index_files_output_dir.py .                                   [ 42%]
+tests/test_ingredient_bundle.py ........................................ [ 43%]
+.......                                                                  [ 43%]
+tests/test_ingredient_bundle_dependency_refresh.py ..................... [ 44%]
+........................................................................ [ 45%]
+...............................................                          [ 46%]
+tests/test_kg_microbe_dict.py .......................                    [ 47%]
+tests/test_kg_microbe_dict_cache.py .................                    [ 47%]
+tests/test_kg_microbe_toggle.py .......                                  [ 47%]
+tests/test_kgx_export.py ..................                              [ 47%]
+tests/test_label_index_precedence.py ...................                 [ 48%]
+tests/test_lipoic_stereochemistry.py ...........                         [ 48%]
+tests/test_malformed_hydrate_identities.py .........................     [ 49%]
+tests/test_mapping_change_receipt.py ................................... [ 49%]
+......                                                                   [ 49%]
+tests/test_mapping_change_receipts.py .................................. [ 50%]
+..........................................                               [ 51%]
+tests/test_mapping_followup.py ................                          [ 51%]
+tests/test_mapping_scope.py ...........................                  [ 52%]
+tests/test_mapping_tsv_line_endings.py .                                 [ 52%]
+tests/test_merge_carnitine_hydrochloride.py ............................ [ 52%]
+............
+
+=================================== FAILURES ===================================
+___________ test_committed_semantic_review_uses_workflow_full_graph ____________
+
+    def test_committed_semantic_review_uses_workflow_full_graph():
+        workflow = ".github/workflows/qc-supported-kgx.yaml"
+        producers = workflow_commands(workflow, "supported-graph", "mediaingredientmech.export.kgx")
+        assert len(producers) == 1
+        producer = producers[0]
+        bundle = producer[producer.index("--output") + 1]
+        consumers = workflow_commands(
+            workflow, "supported-graph", "mediaingredientmech.export.supported_kgx"
+        )
+        assert consumers
+        for command in consumers:
+            report_path = command[command.index("--report") + 1]
+            report = json.loads((ROOT / report_path).read_text())
+>           assert report["bundle"] == bundle, "Committed review binds a graph absent from clean CI"
+E           AssertionError: Committed review binds a graph absent from clean CI
+E           assert 'output/step7c-full' == 'output/mim-kgx-710-full'
+E             
+E             - output/mim-kgx-710-full
+E             + output/step7c-full
+
+tests/test_ci_review_replay_contract.py:42: AssertionError
+____ test_native_dry_run_reserved_source_receipt_and_exact_completed_replay ____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_native_dry_run_...6m0000gn/T/pytest-of-marcin/pytest-9525/test_native_dry_run_reserved_s0/receipts/fixture-diketo-correction-1111.json'))
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_native_dry_run_reserved_source_receipt_and_exact_completed_replay(case):
+        root, log = case
+        before = (root / writer.OWNER).read_bytes()
+>       assert writer.apply_sources(root, log)["applied"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_correct_diketo_bacdive_evidence.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/correct_diketo_bacdive_evidence.py:313: in apply_sources
+    inputs, result, paths = source_context(root, current)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/correct_diketo_bacdive_evidence.py:260: in source_context
+    require(guarded.digest(data) == expected, "Protected publication anchor changed")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Protected publication anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Protected publication anchor changed
+
+scripts/correct_diketo_bacdive_evidence.py:89: ValueError
+________ test_race_after_receipt_reservation_preserves_competing_owner _________
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_race_after_rece...6m0000gn/T/pytest-of-marcin/pytest-9525/test_race_after_receipt_reserv0/receipts/fixture-diketo-correction-1111.json'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11e9d4910>
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_race_after_receipt_reservation_preserves_competing_owner(case, monkeypatch):
+        root, log = case
+        reserve = writer.guarded.reserve_receipt_outputs
+        competing = writer.frozen() + b"# competing owner edit\n"
+    
+        @contextmanager
+        def raced(*args, **kwargs):
+            with reserve(*args, **kwargs) as handles:
+                (root / writer.OWNER).write_bytes(competing)
+                yield handles
+    
+        monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", raced)
+>       with pytest.raises(ValueError, match="frozen input changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'frozen input changed'
+E         Actual message: 'Protected publication anchor changed'
+
+tests/test_correct_diketo_bacdive_evidence.py:202: AssertionError
+___ test_dry_run_then_complete_native_receipt_with_new_owner_and_exact_noop ____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_dry_run_then_co...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_dry_run_then_complete_native_receipt_with_new_owner_and_exact_noop(case):
+        root, _, log, before = case
+>       result = apply(case, enabled=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_curate_step7c_source_labels.py:220: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_curate_step7c_source_labels.py:55: in apply
+    return writer.apply_sources(root, evidence, log, apply=enabled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:417: in apply_sources
+    inputs, result, paths = source_context(root, evidence, outputs, original)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:327: in source_context
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Reviewed source/canonical anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Reviewed source/canonical anchor changed
+
+scripts/curate_step7c_source_labels.py:136: ValueError
+_ test_ignored_nested_duplicate_or_alias_cannot_hide_from_preflight[identity] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_ignored_nested_...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+kind = 'identity'
+
+    @pytest.mark.parametrize("kind", ["identity", "mapping", "symlink"])
+    def test_ignored_nested_duplicate_or_alias_cannot_hide_from_preflight(case, kind):
+        root, _, _, _ = case
+        path = root / "data/ingredients/mapped/.ignored/duplicate.yaml"
+        path.parent.mkdir()
+        if kind == "symlink":
+            path.symlink_to(root / writer.MONOKETO)
+        else:
+            duplicate = {
+                "identifier": writer.NEW_ID if kind == "identity" else "UNMAPPED_9999",
+                "mapping_status": "MAPPED",
+                "preferred_term": "duplicate",
+                "ontology_mapping": {"ontology_id": writer.NEW_ID},
+            }
+            path.write_text(yaml.safe_dump(duplicate))
+>       with pytest.raises(ValueError, match="Destination identity|aliased"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Destination identity|aliased'
+E         Actual message: 'Reviewed source/canonical anchor changed'
+
+tests/test_curate_step7c_source_labels.py:291: AssertionError
+__ test_ignored_nested_duplicate_or_alias_cannot_hide_from_preflight[mapping] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_ignored_nested_...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+kind = 'mapping'
+
+    @pytest.mark.parametrize("kind", ["identity", "mapping", "symlink"])
+    def test_ignored_nested_duplicate_or_alias_cannot_hide_from_preflight(case, kind):
+        root, _, _, _ = case
+        path = root / "data/ingredients/mapped/.ignored/duplicate.yaml"
+        path.parent.mkdir()
+        if kind == "symlink":
+            path.symlink_to(root / writer.MONOKETO)
+        else:
+            duplicate = {
+                "identifier": writer.NEW_ID if kind == "identity" else "UNMAPPED_9999",
+                "mapping_status": "MAPPED",
+                "preferred_term": "duplicate",
+                "ontology_mapping": {"ontology_id": writer.NEW_ID},
+            }
+            path.write_text(yaml.safe_dump(duplicate))
+>       with pytest.raises(ValueError, match="Destination identity|aliased"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Destination identity|aliased'
+E         Actual message: 'Reviewed source/canonical anchor changed'
+
+tests/test_curate_step7c_source_labels.py:291: AssertionError
+____ test_owner_race_after_receipt_reservation_preserves_competing_content _____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_owner_race_afte...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ebceeb0>
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_owner_race_after_receipt_reservation_preserves_competing_content(case, monkeypatch):
+        root, _, _, before = case
+        reserve = writer.guarded.reserve_receipt_outputs
+        competing = before[writer.MONOKETO] + b"# another owner changed this\n"
+    
+        @contextmanager
+        def raced(*args, **kwargs):
+            with reserve(*args, **kwargs) as handles:
+                (root / writer.MONOKETO).write_bytes(competing)
+                yield handles
+    
+        monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", raced)
+>       with pytest.raises(ValueError, match="frozen input changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'frozen input changed'
+E         Actual message: 'Reviewed source/canonical anchor changed'
+
+tests/test_curate_step7c_source_labels.py:309: AssertionError
+_ test_partial_io_failure_preserves_exact_rollback_evidence_and_refuses_partial_replay _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_partial_io_fail...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ea2d400>
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_partial_io_failure_preserves_exact_rollback_evidence_and_refuses_partial_replay(
+        case, monkeypatch
+    ):
+        from kg_microbe_write import transaction
+    
+        root, _, log, before = case
+        replace = transaction._atomic_replace
+    
+        def fail_after_created_record(path, text):
+            if path == root / writer.MONOKETO:
+                raise OSError("injected fourth-output failure")
+            return replace(path, text)
+    
+        monkeypatch.setattr(transaction, "_atomic_replace", fail_after_created_record)
+>       with pytest.raises(Exception, match="write failed after"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'write failed after'
+E         Actual message: 'Reviewed source/canonical anchor changed'
+
+tests/test_curate_step7c_source_labels.py:331: AssertionError
+_ test_completed_noop_requires_full_receipt_preimages_and_creation_journal[new_owner] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_completed_noop_...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+corrupt = 'new_owner'
+
+    @pytest.mark.parametrize("corrupt", ["new_owner", "receipt", "journal", "backup"])
+    @pytest.mark.usefixtures("native_runtime")
+    def test_completed_noop_requires_full_receipt_preimages_and_creation_journal(case, corrupt):
+        root, _, log, _ = case
+>       apply(case)
+
+tests/test_curate_step7c_source_labels.py:357: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_curate_step7c_source_labels.py:55: in apply
+    return writer.apply_sources(root, evidence, log, apply=enabled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:417: in apply_sources
+    inputs, result, paths = source_context(root, evidence, outputs, original)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:327: in source_context
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Reviewed source/canonical anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Reviewed source/canonical anchor changed
+
+scripts/curate_step7c_source_labels.py:136: ValueError
+_ test_completed_noop_requires_full_receipt_preimages_and_creation_journal[receipt] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_completed_noop_...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+corrupt = 'receipt'
+
+    @pytest.mark.parametrize("corrupt", ["new_owner", "receipt", "journal", "backup"])
+    @pytest.mark.usefixtures("native_runtime")
+    def test_completed_noop_requires_full_receipt_preimages_and_creation_journal(case, corrupt):
+        root, _, log, _ = case
+>       apply(case)
+
+tests/test_curate_step7c_source_labels.py:357: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_curate_step7c_source_labels.py:55: in apply
+    return writer.apply_sources(root, evidence, log, apply=enabled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:417: in apply_sources
+    inputs, result, paths = source_context(root, evidence, outputs, original)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:327: in source_context
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Reviewed source/canonical anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Reviewed source/canonical anchor changed
+
+scripts/curate_step7c_source_labels.py:136: ValueError
+_ test_completed_noop_requires_full_receipt_preimages_and_creation_journal[journal] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_completed_noop_...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+corrupt = 'journal'
+
+    @pytest.mark.parametrize("corrupt", ["new_owner", "receipt", "journal", "backup"])
+    @pytest.mark.usefixtures("native_runtime")
+    def test_completed_noop_requires_full_receipt_preimages_and_creation_journal(case, corrupt):
+        root, _, log, _ = case
+>       apply(case)
+
+tests/test_curate_step7c_source_labels.py:357: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_curate_step7c_source_labels.py:55: in apply
+    return writer.apply_sources(root, evidence, log, apply=enabled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:417: in apply_sources
+    inputs, result, paths = source_context(root, evidence, outputs, original)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:327: in source_context
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Reviewed source/canonical anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Reviewed source/canonical anchor changed
+
+scripts/curate_step7c_source_labels.py:136: ValueError
+_ test_completed_noop_requires_full_receipt_preimages_and_creation_journal[backup] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9525/test_completed_noop_...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+corrupt = 'backup'
+
+    @pytest.mark.parametrize("corrupt", ["new_owner", "receipt", "journal", "backup"])
+    @pytest.mark.usefixtures("native_runtime")
+    def test_completed_noop_requires_full_receipt_preimages_and_creation_journal(case, corrupt):
+        root, _, log, _ = case
+>       apply(case)
+
+tests/test_curate_step7c_source_labels.py:357: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_curate_step7c_source_labels.py:55: in apply
+    return writer.apply_sources(root, evidence, log, apply=enabled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:417: in apply_sources
+    inputs, result, paths = source_context(root, evidence, outputs, original)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:327: in source_context
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Reviewed source/canonical anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Reviewed source/canonical anchor changed
+
+scripts/curate_step7c_source_labels.py:136: ValueError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+../envs/mim/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20: DeprecationWarning: The LinkML dataclass extension patch is deprecated and will be removed in a future release.
+  If you're currently using Python < 3.13, where this patch still applies, you should:
+    • Upgrade your LinkML tooling to version >= 1.9.0 (which no longer needs this patch), OR
+    • Migrate to Pydantic models if you're using LinkML's generated classes at runtime.
+  
+    from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+
+../envs/mim/lib/python3.13/site-packages/sssom/util.py:109
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/sssom/util.py:109: Pandas4Warning: The 'mode.copy_on_write' option is deprecated. Copy-on-Write can no longer be disabled (it is always enabled with pandas >= 3.0), and setting the option has no impact. This option will be removed in pandas 4.0.
+    pd.options.mode.copy_on_write = True
+
+tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+  /Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/ast.py:54: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x114957a60>
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+  /Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/ast.py:54: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x114957790>
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+  /Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/ast.py:54: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x114957c40>
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+  /Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/ast.py:54: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12cefb010>
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+  /Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/ast.py:54: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12cef8130>
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+  /Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/ast.py:54: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12cefb880>
+    return compile(source, filename, mode, flags,
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ci_review_replay_contract.py::test_committed_semantic_review_uses_workflow_full_graph
+FAILED tests/test_correct_diketo_bacdive_evidence.py::test_native_dry_run_reserved_source_receipt_and_exact_completed_replay
+FAILED tests/test_correct_diketo_bacdive_evidence.py::test_race_after_receipt_reservation_preserves_competing_owner
+FAILED tests/test_curate_step7c_source_labels.py::test_dry_run_then_complete_native_receipt_with_new_owner_and_exact_noop
+FAILED tests/test_curate_step7c_source_labels.py::test_ignored_nested_duplicate_or_alias_cannot_hide_from_preflight[identity]
+FAILED tests/test_curate_step7c_source_labels.py::test_ignored_nested_duplicate_or_alias_cannot_hide_from_preflight[mapping]
+FAILED tests/test_curate_step7c_source_labels.py::test_owner_race_after_receipt_reservation_preserves_competing_content
+FAILED tests/test_curate_step7c_source_labels.py::test_partial_io_failure_preserves_exact_rollback_evidence_and_refuses_partial_replay
+FAILED tests/test_curate_step7c_source_labels.py::test_completed_noop_requires_full_receipt_preimages_and_creation_journal[new_owner]
+FAILED tests/test_curate_step7c_source_labels.py::test_completed_noop_requires_full_receipt_preimages_and_creation_journal[receipt]
+FAILED tests/test_curate_step7c_source_labels.py::test_completed_noop_requires_full_receipt_preimages_and_creation_journal[journal]
+FAILED tests/test_curate_step7c_source_labels.py::test_completed_noop_requires_full_receipt_preimages_and_creation_journal[backup]
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/test-deps/coverage/collector.py:236: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+===== 12 failed, 2661 passed, 1 skipped, 21 warnings in 584.21s (0:09:44) ======
+error: recipe `test` failed on line 706 with exit code 2

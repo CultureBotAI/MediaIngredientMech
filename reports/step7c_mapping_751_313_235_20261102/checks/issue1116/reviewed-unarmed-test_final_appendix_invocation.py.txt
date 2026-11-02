@@ -1,0 +1,405 @@
+"""Synthetic private fixtures for the unarmed one-use final appendix invocation."""
+
+import importlib.util
+import json
+from pathlib import Path
+
+import pytest
+
+HERE = Path(__file__).resolve().parent
+spec = importlib.util.spec_from_file_location(
+    "final_appendix_invocation", HERE / "invoke_final_appendix.py"
+)
+m = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(m)
+
+
+def put(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = value if isinstance(value, bytes) else (json.dumps(value, indent=2) + "\n").encode()
+    path.write_bytes(data)
+    return data
+
+
+@pytest.fixture
+def case(tmp_path, monkeypatch):
+    base = tmp_path.resolve()
+    root = base / "fixture-repository"
+    evidence = base / "fixture-evidence"
+    evidence.mkdir()
+    old = (m.ROOT / m.PARENT / "README.md").read_bytes()
+    put(root / m.PARENT / "README.md", old)
+    put(root / "data/fixture-source.yaml", b"fixture source\n")
+    protected = evidence / "protected.json"
+    raw = put(
+        protected,
+        {"head": m.HEAD, "files": {"data/fixture-source.yaml": m.sha(b"fixture source\n")}},
+    )
+    monkeypatch.setattr(m, "PROTECTED", protected)
+    monkeypatch.setattr(m, "PROTECTED_SHA256", m.sha(raw))
+    monkeypatch.setattr(m, "HERE", evidence)
+    pair = {}
+    for name in (
+        "reviews/structured/fixture-step7c-final-source-and-sssom-review/review.yaml",
+        "reviews/structured/fixture-step7c-final-source-and-sssom-review/review.md",
+    ):
+        data = put(root / name, b"synthetic test-only native pair placeholder\n")
+        pair[name] = m.sha(data)
+    diagnostic = put(root / m.DIAGNOSTIC, b"synthetic native diagnostic fixture\n")
+    files = []
+    required = {}
+    for name in ("full_suite", "native_review_check"):
+        log = evidence / (name + ".log")
+        log_raw = put(log, b"synthetic test command passed\n")
+        receipt = evidence / (name + ".json")
+        receipt_raw = put(
+            receipt,
+            {
+                "exit_code": 0,
+                "finished_at": "fixture-time",
+                "log": str(log),
+                "log_sha256": m.sha(log_raw),
+            },
+        )
+        for p, raw in [(log, log_raw), (receipt, receipt_raw)]:
+            files.append(
+                {
+                    "source_path": str(p),
+                    "sha256": m.sha(raw),
+                    "bytes": len(raw),
+                    "proposed_relative_path": "checks/fixture/" + p.name,
+                }
+            )
+        required[name] = {
+            "receipt": "checks/fixture/" + receipt.name,
+            "log": "checks/fixture/" + log.name,
+        }
+    inventory = evidence / "inventory.json"
+    raw = put(
+        inventory,
+        {
+            "state": "final_completed_local_validation",
+            "observed_head": m.HEAD,
+            "scientific_approval_added": False,
+            "supervisor_binding": None,
+            "destination_parent": str(m.PARENT),
+            "pending": [{"id": "final_documentation_delta_review"}],
+            "files": files,
+        },
+    )
+    readme = evidence / "README.md"
+    readme_raw = put(
+        readme, b"Synthetic test-only final README; not actual execution evidence.\n"
+    )
+    config = evidence / "config.json"
+    doc = {
+        "head": m.HEAD,
+        "scientific_approval_added": False,
+        "supervisor_binding": None,
+        "documentation_delta_requires_final_head_review": True,
+        "inventory_path": str(inventory),
+        "inventory_sha256": m.sha(raw),
+        "required_command_pairs": required,
+        "native_review_pair": pair,
+        "native_review_diagnostic_sha256": m.sha(diagnostic),
+        "readme_path": str(readme),
+        "readme_sha256": m.sha(readme_raw),
+    }
+    raw = put(config, doc)
+    monkeypatch.setattr(m, "CONFIG", config)
+    monkeypatch.setattr(m, "CONFIG_SHA256", m.sha(raw))
+    # This synthetic fixture has no Git checkout. Git guard behavior is checked
+    # independently below; the final dry run must exercise the actual C5 checkout.
+    monkeypatch.setattr(m, "checkout_state", lambda target, review: None)
+    return root, evidence, doc
+
+
+def refreeze(case, monkeypatch, mutate):
+    _, _, doc = case
+    inventory = json.loads(m.CONFIG.read_bytes())
+    mutate(inventory)
+    raw = put(m.CONFIG, inventory)
+    monkeypatch.setattr(m, "CONFIG_SHA256", m.sha(raw))
+
+
+def assert_unpublished(case):
+    root, evidence, _ = case
+    assert (root / m.PARENT / "README.md").read_bytes() == (
+        m.ROOT / m.PARENT / "README.md"
+    ).read_bytes()
+    assert not (root / m.PARENT / "checks").exists()
+    assert not (root / m.PARENT / "final-validation.json").exists()
+    assert not (evidence / "apply.json").exists()
+
+
+def test_unarmed_invocation_cannot_publish(case, monkeypatch):
+    monkeypatch.setattr(m, "CONFIG_SHA256", None)
+    with pytest.raises(ValueError, match="unarmed"):
+        m.invoke(case[0], case[1] / "apply.json", apply=True)
+    assert_unpublished(case)
+
+
+def test_native_dry_run_validates_the_exact_projection_without_any_writes(case):
+    result = m.invoke(case[0], case[1] / "apply.json")
+    assert result["applied"] is False
+    assert len(result["output_sha256"]) == 6
+    assert result["scientific_approval_added"] is False
+    assert result["documentation_delta_requires_final_head_review"] is True
+    assert_unpublished(case)
+
+
+def test_private_native_apply_preserves_backup_and_completed_journal(case):
+    root, evidence, doc = case
+    result = m.invoke(root, evidence / "apply.json", apply=True)
+    receipt = json.loads((evidence / "apply.json").read_bytes())
+    assert result["applied"] is True and receipt["state"] == "complete"
+    assert (evidence / "apply.README.before.md").read_bytes() == (
+        m.ROOT / m.PARENT / "README.md"
+    ).read_bytes()
+    assert (root / m.PARENT / "README.md").read_bytes() == Path(
+        doc["readme_path"]
+    ).read_bytes()
+    assert (root / m.PARENT / "final-validation.json").read_bytes() == Path(
+        doc["inventory_path"]
+    ).read_bytes()
+    journal = json.loads(Path(receipt["transaction"]["journal"]).read_bytes())
+    assert journal["status"] == "complete"
+    assert len(journal["created"]) == 5
+    assert journal["changed"] == [str(root / m.PARENT / "README.md")]
+
+
+@pytest.mark.parametrize(
+    "what", ["source", "payload", "readme", "review_pair", "diagnostic", "code"]
+)
+def test_frozen_input_drift_is_refused_before_publication(case, monkeypatch, what):
+    root, evidence, doc = case
+    if what == "source":
+        path = root / "data/fixture-source.yaml"
+    elif what == "payload":
+        path = evidence / "full_suite.log"
+    elif what == "readme":
+        path = root / m.PARENT / "README.md"
+    elif what == "review_pair":
+        path = root / next(iter(doc["native_review_pair"]))
+    elif what == "diagnostic":
+        path = root / m.DIAGNOSTIC
+    else:
+        path = evidence / "wrong-code.py"
+        put(path, b"old code\n")
+        monkeypatch.setattr(m, "CODE", {path: m.sha(b"old code\n")})
+    path.write_bytes(path.read_bytes() + b"changed\n")
+    with pytest.raises(ValueError, match="Frozen evidence/code changed"):
+        m.invoke(root, evidence / "apply.json", apply=True)
+    assert not (root / m.PARENT / "checks").exists()
+    assert not (evidence / "apply.json").exists()
+
+
+@pytest.mark.parametrize("change", ["pending", "offscope", "failed", "draft_readme"])
+def test_final_configuration_contract_cannot_claim_incomplete_or_out_of_scope_output(
+    case, monkeypatch, change
+):
+    root, evidence, doc = case
+    inventory = json.loads(Path(doc["inventory_path"]).read_bytes())
+    if change == "pending":
+        inventory["pending"].append({"id": "full_suite_v2"})
+    elif change == "offscope":
+        inventory["files"][0]["proposed_relative_path"] = "../../source.yaml"
+    elif change == "failed":
+        target = evidence / "full_suite.json"
+        receipt = json.loads(target.read_bytes())
+        receipt["exit_code"] = 1
+        raw = put(target, receipt)
+        for item in inventory["files"]:
+            if item["source_path"] == str(target):
+                item.update(sha256=m.sha(raw), bytes=len(raw))
+    else:
+        raw = put(Path(doc["readme_path"]), b"FINAL_CHECKS_AND_REVIEW_TO_INSERT\n")
+        doc["readme_sha256"] = m.sha(raw)
+    raw = put(Path(doc["inventory_path"]), inventory)
+    doc["inventory_sha256"] = m.sha(raw)
+    raw = put(m.CONFIG, doc)
+    monkeypatch.setattr(m, "CONFIG_SHA256", m.sha(raw))
+    with pytest.raises(ValueError, match="pending|relative path|command/log|draft"):
+        m.invoke(root, evidence / "apply.json", apply=True)
+    assert_unpublished(case)
+
+
+@pytest.mark.parametrize("kind", ["existing", "symlink_parent"])
+def test_competing_destinations_are_preserved(case, kind):
+    root, evidence, _ = case
+    target = root / m.PARENT / "checks"
+    if kind == "existing":
+        put(target / "fixture/full_suite.log", b"other session evidence\n")
+    else:
+        foreign = evidence / "foreign"
+        foreign.mkdir()
+        target.symlink_to(foreign, target_is_directory=True)
+    with pytest.raises(ValueError, match="already exists|Aliased"):
+        m.invoke(root, evidence / "apply.json", apply=True)
+    assert not (evidence / "apply.json").exists()
+    if kind == "existing":
+        assert (target / "fixture/full_suite.log").read_bytes() == b"other session evidence\n"
+    else:
+        assert list((evidence / "foreign").iterdir()) == []
+
+
+def test_late_readme_change_reaches_native_recheck_and_is_preserved(case, monkeypatch):
+    root, evidence, _ = case
+    from scripts import step7a_guarded_publication as publication
+
+    native = publication.publish
+    competing = b"concurrent README edit\n"
+
+    def changed(*args, **kwargs):
+        (root / m.PARENT / "README.md").write_bytes(competing)
+        return native(*args, **kwargs)
+
+    monkeypatch.setattr(publication, "publish", changed)
+    with pytest.raises(Exception, match="frozen input changed|Frozen input changed"):
+        m.invoke(root, evidence / "apply.json")
+    assert (root / m.PARENT / "README.md").read_bytes() == competing
+    assert not (root / m.PARENT / "checks").exists()
+
+
+@pytest.mark.parametrize("change", ["head", "tracked", "untracked"])
+def test_checkout_guard_refuses_unreviewed_checkout_changes(tmp_path, monkeypatch, change):
+    def answer(argv, **kwargs):
+        if argv[1:3] == ["rev-parse", "HEAD"]:
+            return ("other" if change == "head" else m.HEAD).encode()
+        if argv[1:3] == ["diff", "--name-only"]:
+            return b"data/owner.yaml" if change == "tracked" else b""
+        return b"other-session-file\0" if change == "untracked" else b""
+
+    monkeypatch.setattr(m.subprocess, "check_output", answer)
+    with pytest.raises(ValueError, match="head changed|preimage changed|native review pair"):
+        m.checkout_state(tmp_path, {})
+
+
+def test_only_the_saved_pair_and_literal_diagnostic_are_allowed_before_publication(
+    case, monkeypatch
+):
+    root, evidence, doc = case
+    seen = []
+
+    def check(target, allowed):
+        assert target == root
+        assert set(allowed) == set(doc["native_review_pair"]) | {
+            "reports/step7c_final_review_20261102/diagnostics.json"
+        }
+        seen.append(True)
+
+    monkeypatch.setattr(m, "checkout_state", check)
+    m.invoke(root, evidence / "apply.json")
+    assert seen
+    assert_unpublished(case)
+
+
+def test_diagnostic_cannot_be_relocated_even_with_identical_bytes(case):
+    root, evidence, _ = case
+    path = root / m.DIAGNOSTIC
+    moved = path.with_name("relocated-diagnostics.json")
+    path.rename(moved)
+    with pytest.raises(FileNotFoundError):
+        m.invoke(root, evidence / "apply.json", apply=True)
+    assert moved.read_bytes() == b"synthetic native diagnostic fixture\n"
+    assert_unpublished(case)
+
+
+def test_diagnostic_cannot_replace_one_of_the_two_review_pair_members(case, monkeypatch):
+    root, evidence, doc = case
+    pair = doc["native_review_pair"]
+    pair.pop(next(iter(pair)))
+    pair[str(m.DIAGNOSTIC)] = doc["native_review_diagnostic_sha256"]
+    raw = put(m.CONFIG, doc)
+    monkeypatch.setattr(m, "CONFIG_SHA256", m.sha(raw))
+    with pytest.raises(ValueError, match="cannot replace"):
+        m.invoke(root, evidence / "apply.json", apply=True)
+    assert_unpublished(case)
+
+
+@pytest.fixture
+def real_git_handoff(tmp_path, monkeypatch):
+    """A real ignored report and visible native pair, without touching W Git."""
+    import subprocess
+
+    root = tmp_path.resolve() / "real-git-fixture"
+    root.mkdir()
+
+    def git(*args):
+        return subprocess.check_output(
+            ["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", *args],
+            cwd=root,
+        )
+
+    git("init", "-q")
+    put(root / ".gitignore", b"/reports/*\n/output/\n")
+    put(root / "README.md", b"synthetic committed baseline\n")
+    git("add", ".gitignore", "README.md")
+    git(
+        "-c",
+        "user.name=Fixture",
+        "-c",
+        "user.email=fixture@example.invalid",
+        "commit",
+        "-qm",
+        "fixture baseline",
+    )
+    monkeypatch.setattr(m, "HEAD", git("rev-parse", "HEAD").decode().strip())
+    pair = {
+        "reviews/structured/fixture-step7c-final-source-and-sssom-review/review.yaml",
+        "reviews/structured/fixture-step7c-final-source-and-sssom-review/review.md",
+    }
+    allowed = pair | {str(m.DIAGNOSTIC)}
+    for name in allowed:
+        put(root / name, b"exact synthetic native handoff\n")
+    put(root / "reports/other-session/evidence.json", b"unrelated ignored evidence\n")
+    put(root / "output/research.json", b"unrelated ignored research\n")
+    return root, allowed, git
+
+
+def real_git_snapshot(root, git):
+    return {
+        "files": {
+            str(path.relative_to(root)): path.read_bytes()
+            for path in root.rglob("*")
+            if path.is_file() and ".git" not in path.relative_to(root).parts
+        },
+        "status": git("status", "--porcelain=v1", "--untracked-files=all"),
+        "index": git("ls-files", "--stage", "-z"),
+    }
+
+
+def test_real_git_ignored_diagnostic_is_accepted_without_touching_other_ignored_work(
+    real_git_handoff,
+):
+    root, allowed, git = real_git_handoff
+    visible = set(
+        filter(
+            None, git("ls-files", "--others", "--exclude-standard", "-z").decode().split("\0")
+        )
+    )
+    assert visible == allowed - {str(m.DIAGNOSTIC)}
+    assert git("check-ignore", str(m.DIAGNOSTIC)).decode().strip() == str(m.DIAGNOSTIC)
+    before = real_git_snapshot(root, git)
+    m.checkout_state(root, allowed)
+    assert real_git_snapshot(root, git) == before
+
+
+@pytest.mark.parametrize(
+    "change", ["extra_visible", "missing_handoff", "tracked_change", "staged_unrelated"]
+)
+def test_real_git_refusals_preserve_visible_and_ignored_work(real_git_handoff, change):
+    root, allowed, git = real_git_handoff
+    if change == "extra_visible":
+        put(root / "other-session.txt", b"unrelated visible work\n")
+    elif change == "missing_handoff":
+        (root / m.DIAGNOSTIC).rename(root / m.DIAGNOSTIC.with_name("elsewhere.json"))
+    elif change == "tracked_change":
+        put(root / "README.md", b"another session's tracked edit\n")
+    else:
+        put(root / "staged-other-session.txt", b"preserve staged work\n")
+        git("add", "staged-other-session.txt")
+    before = real_git_snapshot(root, git)
+    with pytest.raises(ValueError, match="native review pair|handoff|preimage changed"):
+        m.checkout_state(root, allowed)
+    assert real_git_snapshot(root, git) == before

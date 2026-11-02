@@ -1,0 +1,74 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+___ test_dry_run_then_complete_native_receipt_with_new_owner_and_exact_noop ____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9531/test_dry_run_then_co...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_dry_run_then_complete_native_receipt_with_new_owner_and_exact_noop(case):
+        root, _, log, before = case
+>       result = apply(case, enabled=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_curate_step7c_source_labels.py:220: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_curate_step7c_source_labels.py:55: in apply
+    return writer.apply_sources(root, evidence, log, apply=enabled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:417: in apply_sources
+    inputs, result, paths = source_context(root, evidence, outputs, original)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/curate_step7c_source_labels.py:327: in source_context
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Reviewed source/canonical anchor changed'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Reviewed source/canonical anchor changed
+
+scripts/curate_step7c_source_labels.py:136: ValueError
+____ test_owner_race_after_receipt_reservation_preserves_competing_content _____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-9531/test_owner_race_afte...InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2\n  smiles: NCCc1ccccc1\ningredient_type: SINGLE_INGREDIENT\n", ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1073ed350>
+
+    @pytest.mark.usefixtures("native_runtime")
+    def test_owner_race_after_receipt_reservation_preserves_competing_content(case, monkeypatch):
+        root, _, _, before = case
+        reserve = writer.guarded.reserve_receipt_outputs
+        competing = before[writer.MONOKETO] + b"# another owner changed this\n"
+    
+        @contextmanager
+        def raced(*args, **kwargs):
+            with reserve(*args, **kwargs) as handles:
+                (root / writer.MONOKETO).write_bytes(competing)
+                yield handles
+    
+        monkeypatch.setattr(writer.guarded, "reserve_receipt_outputs", raced)
+>       with pytest.raises(ValueError, match="frozen input changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'frozen input changed'
+E         Actual message: 'Reviewed source/canonical anchor changed'
+
+tests/test_curate_step7c_source_labels.py:309: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_curate_step7c_source_labels.py::test_dry_run_then_complete_native_receipt_with_new_owner_and_exact_noop
+FAILED tests/test_curate_step7c_source_labels.py::test_owner_race_after_receipt_reservation_preserves_competing_content
+2 failed, 1 passed, 13 warnings in 0.68s

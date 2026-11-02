@@ -135,6 +135,11 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key(
         "Algal Trace Elements Solution"
     ): "kgmicrobe.ingredient:algal_trace_elements_solution",
+    # #751: only this specific WC stock follows the local mixture identity;
+    # the generic MICRO parent and other trace-element formulations stay distinct.
+    _source_label_key(
+        "WC Trace Elements Solution"
+    ): "kgmicrobe.ingredient:wc_trace_elements_solution",
     _source_label_key(
         "Casamino acids, vitamin assay (BD-Difco)"
     ): "kgmicrobe.ingredient:casamino_acids_vitamin_assay",

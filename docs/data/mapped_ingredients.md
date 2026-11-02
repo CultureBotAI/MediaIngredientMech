@@ -1,7 +1,7 @@
 # Mapped Ingredients
 
-Generated: 2026-11-02T02:23:23.086029+00:00
-Total: 2680 ingredients
+Generated: 2026-11-02T21:26:14.224375+00:00
+Total: 2681 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -2056,7 +2056,6 @@ Total: 2680 ingredients
 | mesh:C012306 | mesh:C012306 | Vulgamycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:144250 | CHEBI:144250 | Vulpinic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:10033 | CHEBI:10033 | Warfarin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0000455 | MICRO:0000455 | WC Trace Elements Solution | MAPPED | MICRO | LEXICAL_MATCH | 2 |
 | CHEBI:28427 | CHEBI:28427 | Wheat Arabinoxylan | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | NCIT:C84877 | NCIT:C84877 | White wine | MAPPED | NCIT | EXACT_MATCH | 5 |
 | cas:11138-66-2 | mesh:D016959 | Xanthan from Xanthomonas campestris | MAPPED | MESH | NARROW_MATCH | 0 |
@@ -2685,3 +2684,5 @@ Total: 2680 ingredients
 | NCIT:C216679 | NCIT:C216679 | Carnitine Hydrochloride | MAPPED | NCIT | EXACT_MATCH | 14 |
 | kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | CHEBI:15978 | sn-Glycerol 3-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:480-14-8 | cas:480-14-8 | Izalpinin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| CHEBI:11449 | CHEBI:11449 | 2,5-didehydro-D-gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:wc_trace_elements_solution | MICRO:0000455 | WC Trace Elements Solution | MAPPED | MICRO | NARROW_MATCH | 2 |

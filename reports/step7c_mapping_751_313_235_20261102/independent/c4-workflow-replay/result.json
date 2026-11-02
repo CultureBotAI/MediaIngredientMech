@@ -1,0 +1,476 @@
+{
+  "status": "PASS",
+  "source_head": "89f070ef3a5f8ed02c787b4ecea3cef62238ce63",
+  "synthetic_head": "40362a57d3806a8dc31c97f3ce167aa2652d0e95",
+  "tree": "db9a2e0b7c8b7cbec375b086cb2002878509a9d6",
+  "durable_base": "54eadef802d2ff159bf4ba9bec51492fe3bb99d4",
+  "base_is_sole_parent": true,
+  "feature_commit_absence_exit_codes": {
+    "26938f4bd9d9ff9adea4e0aa02d5dffbd368c4b7": 128,
+    "de31ae2f73e532e827e7e293230eddf6347b357f": 128,
+    "bb3edec5cb723c866dd588791c9420745a837f8e": 128,
+    "89f070ef3a5f8ed02c787b4ecea3cef62238ce63": 128
+  },
+  "no_alternates": true,
+  "steps": [
+    {
+      "name": "Verify the committed source/promotion evidence packet",
+      "command": "python -B reports/step7c_mapping_751_313_235_20261102/verify_source_promotion_evidence.py --repository \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/squash-fixture\"",
+      "workflow": null,
+      "started_at": "2026-11-02T21:53:38.207598+00:00",
+      "finished_at": "2026-11-02T21:53:38.296356+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/01.log",
+      "log_sha256": "60fe84cf37933d3ee7e6f0f4df2a15d8967ea97a0f7daa8dbd3d94111e0eb637"
+    },
+    {
+      "name": "Rebuild complete source graph",
+      "command": "uv run --frozen python -m mediaingredientmech.export.kgx --output output/mim-kgx-710-full",
+      "workflow": {
+        "path": ".github/workflows/qc-supported-kgx.yaml",
+        "sha256": "909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b"
+      },
+      "started_at": "2026-11-02T21:53:38.298385+00:00",
+      "finished_at": "2026-11-02T21:53:42.390511+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/02.log",
+      "log_sha256": "2ca24f71d210cd40c4a885d6aaab9fec76cf77ff07224bcb526ee772f01bffd2"
+    },
+    {
+      "name": "Validate reviewed selection and preserve the excluded claims",
+      "command": "uv run --frozen python -m mediaingredientmech.export.supported_kgx \\\n  --root . \\\n  --report reports/semantic_review_20260921/resolution/current-review.json \\\n  --output output/mim-kgx-710-supported\nuv run --frozen python -m mediaingredientmech.export.supported_kgx \\\n  --root . \\\n  --report reports/semantic_review_20260921/resolution/current-review.json \\\n  --output output/mim-kgx-710-supported --validate-only\n",
+      "workflow": {
+        "path": ".github/workflows/qc-supported-kgx.yaml",
+        "sha256": "909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b"
+      },
+      "started_at": "2026-11-02T21:53:42.391059+00:00",
+      "finished_at": "2026-11-02T21:54:05.476671+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/03.log",
+      "log_sha256": "6ab7181bbae98f0b114eae7c8804dc0908df6dcd80049e218c3ce80ea08acf43"
+    },
+    {
+      "name": "Validate supported SSSOM",
+      "command": "uv run --frozen python - <<'PY'\nfrom sssom.parsers import parse_sssom_table\nfrom sssom.validators import SchemaValidationType, validate\nvalidate(parse_sssom_table(\"output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv\"),\n         validation_types=[SchemaValidationType.JsonSchema,\n                           SchemaValidationType.PrefixMapCompleteness,\n                           SchemaValidationType.StrictCurieFormat])\nPY\n",
+      "workflow": {
+        "path": ".github/workflows/qc-supported-kgx.yaml",
+        "sha256": "909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b"
+      },
+      "started_at": "2026-11-02T21:54:05.477353+00:00",
+      "finished_at": "2026-11-02T21:54:06.840400+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/04.log",
+      "log_sha256": "9824a2ab06a70a864d4f8ef6595f0ce89088cffae17d854bad1278d9cbe35eca"
+    },
+    {
+      "name": "Reproduce every scientific disposition",
+      "command": "uv run --frozen python reports/sssom_completion_20260921/assemble_review.py --check",
+      "workflow": {
+        "path": ".github/workflows/qc-reviewed-sssom.yaml",
+        "sha256": "91943abf4eb62bb62008e0371e97324db9c357db4766c707bbb605b7d64c2ed5"
+      },
+      "started_at": "2026-11-02T21:54:06.844191+00:00",
+      "finished_at": "2026-11-02T21:54:20.724189+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/05.log",
+      "log_sha256": "e9b7df2c1ba66badd701e9f9828f1b587b348c4e302be7e9b516412795bbcaa1"
+    },
+    {
+      "name": "Export and verify the supported mappings and separate backlog",
+      "command": "uv run --frozen python -m mediaingredientmech.export.reviewed_sssom \\\n  --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom\nuv run --frozen python -m mediaingredientmech.export.reviewed_sssom \\\n  --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom --validate-only\n",
+      "workflow": {
+        "path": ".github/workflows/qc-reviewed-sssom.yaml",
+        "sha256": "91943abf4eb62bb62008e0371e97324db9c357db4766c707bbb605b7d64c2ed5"
+      },
+      "started_at": "2026-11-02T21:54:20.724617+00:00",
+      "finished_at": "2026-11-02T21:54:37.409776+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/06.log",
+      "log_sha256": "3583c4879a4677f37ed0530620147e20e0453da9f4a2b9568b13a4ad5f48e717"
+    },
+    {
+      "name": "Validate both SSSOM tables",
+      "command": "uv run --frozen python scripts/validate_reviewed_sssom_schema.py output/mim-reviewed-sssom",
+      "workflow": {
+        "path": ".github/workflows/qc-reviewed-sssom.yaml",
+        "sha256": "91943abf4eb62bb62008e0371e97324db9c357db4766c707bbb605b7d64c2ed5"
+      },
+      "started_at": "2026-11-02T21:54:37.410180+00:00",
+      "finished_at": "2026-11-02T21:54:39.096755+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/07.log",
+      "log_sha256": "76c2039654122a0af0fab1df6fc956fdf01dc76d5cb9fdfc0ccc57d986c8be29"
+    },
+    {
+      "name": "Export and replay the opt-in scoped ingredient cohort",
+      "command": "uv run --frozen python -m mediaingredientmech.export.ingredient_bundle export \\\n  --review reports/step7c_mapping_751_313_235_20261102/refresh-v2/companion-review.json \\\n  --output output/mim-reviewed-ingredient-bundle\n",
+      "workflow": {
+        "path": ".github/workflows/qc-reviewed-sssom.yaml",
+        "sha256": "91943abf4eb62bb62008e0371e97324db9c357db4766c707bbb605b7d64c2ed5"
+      },
+      "started_at": "2026-11-02T21:54:39.097365+00:00",
+      "finished_at": "2026-11-02T21:54:45.061965+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/08.log",
+      "log_sha256": "a31f84a5e0988cfec4beeedf0ab97ceda2da17ec8bee6e4b649e115c6945b889"
+    }
+  ],
+  "fixture_and_maintained_worktree_unchanged": true,
+  "selected_mapping_decisions": {
+    "38": {
+      "source_position": 38,
+      "row_sha256": "204bb19d91afcb10381128980a7789886cdd9b4ce609b0ec9863d74ce2fd36e5",
+      "owner_record": "data/ingredients/mapped/14-Butanediol.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Historical concern recorded before the verified source/mapping correction in receipt issue751-313-235-stock-and-source-labels. The following quotation describes the archived row and owner, not the current corrected payload: Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: parse fragments Butane-1 and 4-diol still leak into active exact labels. The corrected claim remains WITHHOLD pending fresh mapping-specific review. All remaining or unassessed identity, synonym, preparation, role and component concerns remain review obligations; in particular, no provisional role is approved by this correction. This provenance qualification retires no historical finding and adds no scientific approval.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "38"
+    },
+    "113": {
+      "source_position": 113,
+      "row_sha256": "26d0ce8db52cec7d41c3fe2bbbdd1f45d329c3c0416d76755ac2b1150f58c27a",
+      "owner_record": "data/ingredients/mapped/24-diamino-67-di-iso-propylpteridine_phosphate.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Cross-record baseline is an unresolved review obligation, not proof of false identity. Native related-form aliases and ontology synonyms must be judged in their actual row predicate/object context; no blanket approval.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "113"
+    },
+    "114": {
+      "source_position": 114,
+      "row_sha256": "7974c95991cf3580b0c275ceb8a86da0693b57861404e180e5b8f2af35d6a4b3",
+      "owner_record": "data/ingredients/mapped/24-diamino-67-di-iso-propylpteridine_phosphate.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: notes are stale and ingredient_type/chemistry are missing.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "114"
+    },
+    "115": {
+      "source_position": 115,
+      "row_sha256": "a8cf8c6cd01bd6e796d84b401932f978fa248a182bc6e56ed8c635543ceaeb43",
+      "owner_record": "data/ingredients/mapped/25-didehydro-D-gluconate.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Row added by mapping-change receipt issue751-313-235-stock-and-source-labels (added). It has no prior scientific review; preserve the claim pending a mapping-specific decision.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "115"
+    },
+    "233": {
+      "source_position": 233,
+      "row_sha256": "a6ded4097e121f5f96396d569db48ea53f5bbc0d26b82fe1ccc038b5e59f5132",
+      "owner_record": "data/ingredients/mapped/5-dehydro-D-gluconate.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Historical concern recorded before the verified source/mapping correction in receipt issue751-313-235-stock-and-source-labels. The following quotation describes the archived row and owner, not the current corrected payload: Current other publishes source RAW_TEXT 5-didehydro-D-gluconate as a name of 5-dehydro-D-gluconate. The history asserts a typo without primary source recovery. A didehydro species is chemically distinct (CHEBI:11449 versus CHEBI:58143); recover the comma-containing source before re-grounding, and do not treat the fragment as a verified synonym. The corrected claim remains WITHHOLD pending fresh mapping-specific review. All remaining or unassessed identity, synonym, preparation, role and component concerns remain review obligations; in particular, no provisional role is approved by this correction. This provenance qualification retires no historical finding and adds no scientific approval.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "233"
+    },
+    "2229": {
+      "source_position": 2229,
+      "row_sha256": "e9769672ef8e5cc9cf8c6f7e8bc3f2c98ddc7dc3b995ec28c59bdfa540d2edb6",
+      "owner_record": "data/ingredients/mapped/Phenethylamine_Hydrochloride.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Historical concern recorded before the verified source/mapping correction in receipt issue751-313-235-stock-and-source-labels. The following quotation describes the archived row and owner, not the current corrected payload: Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: final other exports the old hydrochloride label. The corrected claim remains WITHHOLD pending fresh mapping-specific review. All remaining or unassessed identity, synonym, preparation, role and component concerns remain review obligations; in particular, no provisional role is approved by this correction. This provenance qualification retires no historical finding and adds no scientific approval.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "2229"
+    },
+    "2920": {
+      "source_position": 2920,
+      "row_sha256": "53d300db482512e875b91e7317c5ee966e4301a2e56b9993fd404b38c6f287b5",
+      "owner_record": "data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Historical concern recorded before the verified source/mapping correction in receipt issue751-313-235-stock-and-source-labels. The following quotation describes the archived row and owner, not the current corrected payload: Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The named WC formulation is exact-mapped to generic MICRO:0000455, and TRACE_ELEMENT is still a provisional in-session LLM role. The corrected claim remains WITHHOLD pending fresh mapping-specific review. All remaining or unassessed identity, synonym, preparation, role and component concerns remain review obligations; in particular, no provisional role is approved by this correction. This provenance qualification retires no historical finding and adds no scientific approval.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "2920"
+    },
+    "2921": {
+      "source_position": 2921,
+      "row_sha256": "a3eb0ded5787c374d248ce79a2e17fdeb5b6897a683687d3c9378eb4e5aedc4c",
+      "owner_record": "data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "Row added by mapping-change receipt issue751-313-235-stock-and-source-labels (added). It has no prior scientific review; preserve the claim pending a mapping-specific decision.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "2921"
+    }
+  },
+  "mapping_counts": {
+    "SUPPORTED": 1744,
+    "WITHHOLD": 1241
+  },
+  "semantic_release_verdict": "FAIL",
+  "semantic_blocking_findings": 1733,
+  "semantic_blocking_assertions": 2335,
+  "companion_owners": 20,
+  "companion_claims": 51,
+  "outputs": {
+    "output/mim-kgx-710-full/excluded_records.tsv": {
+      "sha256": "e7691ac56629cde6ff060146989220854f3094affaa8565cb2b2ef1a064d8260",
+      "bytes": 406987
+    },
+    "output/mim-kgx-710-full/manifest.json": {
+      "sha256": "bb049f2646428c7c6daca912621041b59e78d313536760ff926b972371a233e3",
+      "bytes": 362909
+    },
+    "output/mim-kgx-710-full/mim-kgx.tar.gz": {
+      "sha256": "f73b9883e36f057be1328d406771f44017326dde39458c2c1f9486ce0152fb34",
+      "bytes": 2235048
+    },
+    "output/mim-kgx-710-full/mim_edges.tsv": {
+      "sha256": "458ba2567f65803a1d923311e34933fb97ada34f26873160c71f4604d061decc",
+      "bytes": 4272093
+    },
+    "output/mim-kgx-710-full/mim_nodes.tsv": {
+      "sha256": "b8e4c62b611141c49d284390bb2334c6fb30973d1e67f41ee20023437286268d",
+      "bytes": 10686312
+    },
+    "output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv": {
+      "sha256": "032a0cb5746d3dd3780de0d28b3649af8b6053a7f02f84721dcacdd84c31827c",
+      "bytes": 835498
+    },
+    "output/mim-kgx-710-supported/manifest.json": {
+      "sha256": "adcd4e50e1d6f6712f69703a7503d46470200869e4cb504e8b32c7ad9d690230",
+      "bytes": 4326
+    },
+    "output/mim-kgx-710-supported/mim-kgx.tar.gz": {
+      "sha256": "d5bfda14e9f70fb58fb49e05a94148a295235744fb450627bf57617214b57614",
+      "bytes": 381875
+    },
+    "output/mim-kgx-710-supported/mim_edges.tsv": {
+      "sha256": "6e31798bf5a6ccee170f7aafcc78e18a3a1a1cb4063417a5480ac9c0598140ff",
+      "bytes": 2082021
+    },
+    "output/mim-kgx-710-supported/mim_nodes.tsv": {
+      "sha256": "039e8653c137f4964474fe5fa1d9afb990b15b98ead0394c621bba2d445232af",
+      "bytes": 576012
+    },
+    "output/mim-kgx-710-supported/unsupported-backlog.json": {
+      "sha256": "6be8e40c871d082272f64cf8d14441788cc3ace99a5b8f3967ddf95bf700aa4e",
+      "bytes": 18869930
+    },
+    "output/mim-reviewed-ingredient-bundle/ingredient_bundle_v1.schema.json": {
+      "sha256": "c0faabc0870bdcb3f03847f5e6597bbe4e245ccc775fc398f536c7c3f0ea4ab2",
+      "bytes": 8617
+    },
+    "output/mim-reviewed-ingredient-bundle/ingredient_identifier_annotations.tsv": {
+      "sha256": "50e4d1f4a6aa6378cb3fe9a0ae6c5664dbba2a157fe0f8368f2e817fb32362be",
+      "bytes": 6780
+    },
+    "output/mim-reviewed-ingredient-bundle/ingredient_mappings.sssom.tsv": {
+      "sha256": "c51ac9274325b7894530b745bec64f2f773904cb9652c8a0da46ef9937d76aa4",
+      "bytes": 19306
+    },
+    "output/mim-reviewed-ingredient-bundle/ingredient_occurrences.json": {
+      "sha256": "c9aaf7c7d58fe1a872ca762b476ac18459c1a06a9642a01bb51431cf1dacbcd2",
+      "bytes": 15641
+    },
+    "output/mim-reviewed-ingredient-bundle/ingredient_products.json": {
+      "sha256": "ebff6bc2ee5d4c5ff0b21031c26e7569903673a1be1d8b0272446cff5486f492",
+      "bytes": 2990
+    },
+    "output/mim-reviewed-ingredient-bundle/ingredient_scope_v1.yaml": {
+      "sha256": "dd2f78e6b6fcbdf8a715bebcec14e0f86c1e431bf28e5b9d7f3524a62e5bce3a",
+      "bytes": 2044
+    },
+    "output/mim-reviewed-ingredient-bundle/manifest.json": {
+      "sha256": "0eca6e3b135fbc7da37378681cb2879eeb6cb634e9dea624b60d3a6ae3d00bcc",
+      "bytes": 9014
+    },
+    "output/mim-reviewed-ingredient-bundle/review.json": {
+      "sha256": "a2983dc82865a6714d22becc2a45b7fae3d56e9291b45743ed46bbe57100ff2a",
+      "bytes": 40763
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/MAPPING_SEMANTICS.md": {
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "bytes": 73206
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Acriflavine.yaml": {
+      "sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "bytes": 3976
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Anabasine_Hydrochloride.yaml": {
+      "sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+      "bytes": 3679
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Bovine_Serum_Albumin.yaml": {
+      "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "bytes": 5129
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Cotarnine_Chloride.yaml": {
+      "sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+      "bytes": 2954
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Locust_Bean_Gum.yaml": {
+      "sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+      "bytes": 3948
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Lysozyme.yaml": {
+      "sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+      "bytes": 3495
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Polymyxin_B.yaml": {
+      "sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "bytes": 3622
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Pretomanid.yaml": {
+      "sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+      "bytes": 3598
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Proteose_Peptone_No_2.yaml": {
+      "sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+      "bytes": 4384
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Rabbit_Serum.yaml": {
+      "sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "bytes": 3782
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Rifamycin.yaml": {
+      "sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "bytes": 3396
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Rifamycin_Sv.yaml": {
+      "sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "bytes": 3747
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Sodium_Adipate.yaml": {
+      "sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+      "bytes": 3598
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Sorbitan_Monooleate.yaml": {
+      "sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+      "bytes": 3676
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Sunflower_Oil.yaml": {
+      "sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+      "bytes": 3104
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Sutezolid.yaml": {
+      "sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+      "bytes": 3568
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Tara_Gum.yaml": {
+      "sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+      "bytes": 3292
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/V-8_Juice.yaml": {
+      "sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+      "bytes": 3503
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Xanthine.yaml": {
+      "sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "bytes": 4942
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/data/ingredients/mapped/Zymosan.yaml": {
+      "sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+      "bytes": 3041
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/mappings/ingredient_mappings.sssom.tsv": {
+      "sha256": "62fd37c2ed8ace9b9295618d44e251d11fc35feb711053b66d322e5a7bce14f1",
+      "bytes": 1657806
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/mappings/ingredient_mappings.sssom.tsv.manifest.json": {
+      "sha256": "1a30715b1e5e5e89bf2063a1e9eecd8c18fea13781ab9dff3214e75a553cca58",
+      "bytes": 418982
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/mappings/other_cross_record_baseline.tsv": {
+      "sha256": "f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb",
+      "bytes": 2255
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/mappings/suppressed_aliases.tsv": {
+      "sha256": "3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84",
+      "bytes": 4686
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/ingredient_bundle_20260924/claims.json": {
+      "sha256": "52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b",
+      "bytes": 79396
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/ingredient_bundle_20260924/review-evidence.json": {
+      "sha256": "34e8e6575bb4e80fd09234661a0c6a8db0c061d449b9529bb9dd74aad4a4e6d1",
+      "bytes": 28822
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/ingredient_bundle_20260924/scope-rulings.json": {
+      "sha256": "3ae5d5a6a5b82ab6890a110c154cf602701282f25ee18f9a1f0f609869106555",
+      "bytes": 5299
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/ingredient_bundle_20261101_owned_names669/metadata-review-authority.json": {
+      "sha256": "43b72aa39326e90bee7f5b2f6f8a94d06357ee8d8050403cc302a6aaceb78847",
+      "bytes": 16707
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/ingredient_bundle_20261101_owned_names669/ownership-inputs.json": {
+      "sha256": "eef0c1f6562ac57207db041f581885d6c6e8bdb06443b2208fdee4259244bd71",
+      "bytes": 526909
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/ingredient_bundle_20261101_owned_names669/review-evidence.json": {
+      "sha256": "17ade75073f296e59e075ba6121f3cdf9a4ecd8937c27ee8590dc377ff5612e0",
+      "bytes": 70545
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping-evidence.json": {
+      "sha256": "d96dd6e1a82fd084ce0bb413db0b931fc4abfd90402989d74bb5fdfbb85ff166",
+      "bytes": 4860930
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": {
+      "sha256": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+      "bytes": 27547
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": {
+      "sha256": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+      "bytes": 6406
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": {
+      "sha256": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+      "bytes": 6029
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": {
+      "sha256": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+      "bytes": 93432
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": {
+      "sha256": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+      "bytes": 14756
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": {
+      "sha256": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9",
+      "bytes": 43869
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/micro-source-review.md": {
+      "sha256": "e2f70e3950362dbb9fee47de191f8db1ca26eff9a3951f1021eed14c8b3fda71",
+      "bytes": 2836
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": {
+      "sha256": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+      "bytes": 1403
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": {
+      "sha256": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+      "bytes": 3584
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/reports/sssom_completion_20260921/review.json": {
+      "sha256": "abff6577d56699e0e99134a71b235945f05ae0847fdb323c17e4bd3e01afd0f7",
+      "bytes": 2667400
+    },
+    "output/mim-reviewed-ingredient-bundle/sources/src/mediaingredientmech/ontology_sources/micro/manifest.json": {
+      "sha256": "9e3ee88942aafbf0687bbbfc08c3e653b0ad0d104e7ea80efd07b1f0a4350feb",
+      "bytes": 2526
+    },
+    "output/mim-reviewed-sssom/ingredient_mappings.sssom.tsv": {
+      "sha256": "d2b4e2abebfeb9dcb867489e1b408c257465e4e869905db5874b24b92a5b932b",
+      "bytes": 835376
+    },
+    "output/mim-reviewed-sssom/manifest.json": {
+      "sha256": "37f7fcd20493f21b66335fd7775e8c983e6d0cdb24769cdd4525c83ea6090f44",
+      "bytes": 993
+    },
+    "output/mim-reviewed-sssom/mapping-dispositions.tsv": {
+      "sha256": "fcc413f84ec7b8d7353723dbe03dd767d0c2b4b1f8204967b31a2449e11cd008",
+      "bytes": 1799223
+    },
+    "output/mim-reviewed-sssom/withheld_mappings.sssom.tsv": {
+      "sha256": "4427f6d95695be596c14e07d8e0e8e36ab43af60330ecd424b7c71c001ac757f",
+      "bytes": 823742
+    }
+  },
+  "scientific_approval_added": false,
+  "supervisor_binding": null,
+  "limitations": [
+    "Not the full local suite or remote CI.",
+    "Packet verifies selected source/promotion evidence only; external generator archive deliberately omitted.",
+    "No production source writer/generator re-execution; downstream mapping/semantic/ingredient native consumer chains replayed.",
+    "Final native review additions after C4 need their own input stability check."
+  ]
+}
