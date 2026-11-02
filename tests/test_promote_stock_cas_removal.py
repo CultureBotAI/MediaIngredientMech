@@ -310,14 +310,51 @@ print(json.dumps({'rows':len(rows),'labels':labels}))
 """
 
 
+def stock_producer_path():
+    """Keep this producer pin separate from historical owned-name fixtures (#1103)."""
+    producer_env = os.environ.get("MIM_STOCK_CAS_PRODUCER_ROOT")
+    if not producer_env:
+        pytest.skip("Explicit MIM_STOCK_CAS_PRODUCER_ROOT required for native integration")
+    producer = Path(producer_env).resolve()
+    revision = mod.native.git(producer, "rev-parse", "HEAD").decode().strip()
+    if revision != mod.PRODUCER:
+        pytest.fail("Stock-CAS producer context does not match its immutable revision")
+    return producer
+
+
+def test_stock_producer_context_does_not_substitute_historical_pin(tmp_path, monkeypatch):
+    historical = tmp_path / "historical-owned-name"
+    stock = tmp_path / "stock-cas"
+    historical.mkdir()
+    stock.mkdir()
+    monkeypatch.setenv("MIM_OWNED_NAME_PRODUCER_ROOT", str(historical))
+    monkeypatch.delenv("MIM_STOCK_CAS_PRODUCER_ROOT", raising=False)
+    calls = []
+
+    def revision(root, *args):
+        calls.append((root, args))
+        assert args == ("rev-parse", "HEAD")
+        return (
+            mod.PRODUCER if root == stock.resolve() else "9bd09b2ba163212a65289b91313f98cb0937476f"
+        ).encode()
+
+    monkeypatch.setattr(mod.native, "git", revision)
+    with pytest.raises(pytest.skip.Exception, match="MIM_STOCK_CAS_PRODUCER_ROOT"):
+        stock_producer_path()
+    assert not calls
+    monkeypatch.setenv("MIM_STOCK_CAS_PRODUCER_ROOT", str(historical))
+    with pytest.raises(pytest.fail.Exception, match="immutable revision"):
+        stock_producer_path()
+    monkeypatch.setenv("MIM_STOCK_CAS_PRODUCER_ROOT", str(stock))
+    assert stock_producer_path() == stock.resolve()
+    assert [root for root, _ in calls] == [historical.resolve(), stock.resolve()]
+
+
 @pytest.fixture
 def native_case(captured, native_runtime, tmp_path, anchors):
-    producer_env = os.environ.get("MIM_OWNED_NAME_PRODUCER_ROOT")
-    if not producer_env:
-        pytest.skip("Explicit merged producer path required for native integration")
+    producer = stock_producer_path()
     root, source_log, proof, promotion_log = captured
     before = anchors
-    producer = Path(producer_env).resolve()
     for args in [
         ("init", "-q"),
         ("add", "."),

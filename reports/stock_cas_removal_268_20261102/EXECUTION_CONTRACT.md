@@ -16,6 +16,14 @@ native mapping-change receipts and review consumers must instead replay from
 committed inputs and the durable main baseline without a feature checkpoint.
 Independent final consumer portability checks remain required.
 
+Native integration tests use two explicit producer contexts: the historical
+`MIM_OWNED_NAME_PRODUCER_ROOT` remains pinned to Claw
+`9bd09b2ba163212a65289b91313f98cb0937476f`, while
+`MIM_STOCK_CAS_PRODUCER_ROOT` identifies the isolated stock-CAS producer at
+`33be66ab1b993e2a47792c13daa3e4f39635f2cb`. The stock fixture refuses the wrong
+revision and never substitutes the historical context (#1103). This does not
+change either production pin or the identities of earlier execution receipts.
+
 At the source-corrected endpoint, the actual unified freshness check reports
 26 changed owners against a limit of 25. The approved plan forbids step 7
 snapshot changes. Snapshot and provenance are preserved; this is an unresolved
