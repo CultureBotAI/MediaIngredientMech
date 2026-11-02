@@ -22574,7 +22574,15 @@
             "path": "reports/melezitose_form_901_20261101/prior-mapping-basis.json",
             "evidence_key": "914"
           },
-          "continuation": []
+          "continuation": [
+            {
+              "sequence": 21,
+              "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+              "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+              "before_position": 914,
+              "after_position": 914
+            }
+          ]
         },
         "resolved_relation_policy": "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
       }
@@ -22641,7 +22649,8 @@
             "reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json": "e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c",
             "reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json": "2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd",
             "reports/sssom_completion_20260921/mapping_changes/issue669-owned-name-policy.json": "0ece81a8c97723fef6aeaff73693fa013aac1589727ed896400198ff8d4b98f7",
-            "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87"
+            "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+            "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd"
           },
           "reason": "Archived scoped approval withdrawn after verified correction; no approval renewed"
         },
@@ -22669,7 +22678,15 @@
             "path": "reports/melezitose_form_901_20261101/prior-mapping-basis.json",
             "evidence_key": "915"
           },
-          "continuation": []
+          "continuation": [
+            {
+              "sequence": 21,
+              "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+              "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+              "before_position": 915,
+              "after_position": 915
+            }
+          ]
         }
       }
     },
@@ -63501,11 +63518,11 @@
       }
     },
     "2583": {
-      "row_sha256": "5ab9176965bbd9a25036df299a43f924a07c4a967ad6517649af8b9d03b0cc67",
+      "row_sha256": "51baf5d397ac027631a579a054ba21b07ae97d65e0f5f66d2861c81dfdb8df46",
       "owner_record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
-      "owner_record_sha256": "1f39286747eb8f3a2ec3da7919f9e6cb197221fcfef46af69a6784afd8f83ccc",
-      "disposition": "WITHHOLD",
-      "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. The report supports the exact hydrate CAS, but the sibling close row attaches that CAS synonym to an anhydrous target. Preserve the pair pending an explicit mapping and alias-scope review.",
+      "owner_record_sha256": "36464b5ebec13eb2d71864e7b6af5d6069e931f1cb1c340ed24b63c81b8a1be4",
+      "disposition": "SUPPORTED",
+      "review_reason": "The actual sodium perchlorate monohydrate row is supported as a form-of skos:broadMatch to CHEBI:132103 sodium perchlorate. Archived PubChem CID516899 has one water component in addition to the sodium/perchlorate structure represented by the water-free ChEBI parent. The parent row has empty other and validation_method cells, resolving the old hydrate-CAS alias leakage and providing an explicit asymmetric relation instead of inherited closeMatch approval. This supports the bounded relation, not global exhaustion of exact ontology alternatives.",
       "basis": {
         "baseline_position": 2623,
         "previous_decision": {
@@ -63520,19 +63537,42 @@
           "review_evidence": ""
         },
         "historical_record_review": "reports/yaml_record_review/Sodium_Perchlorate_Monohydrate.md",
+        "mapping_change": "issue901-sodium-perchlorate-form",
         "scoped_review": {
           "file": "mapping_review/changed-owner-review.json",
           "position": 2623
         },
-        "policy": "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
+        "form_followup": {
+          "file": "reports/sssom_completion_20260921/mapping_review/form_reviews/901-sodium-perchlorate-v1.json",
+          "claim_kind": "form_parent",
+          "row_sha256": "51baf5d397ac027631a579a054ba21b07ae97d65e0f5f66d2861c81dfdb8df46",
+          "native_review": {
+            "path": "reviews/structured/20261101T233454Z-sodium-perchlorate-901-form-mapping/review.yaml",
+            "sha256": "2efbc1f1a35d551724a3e25730e809a09e68d74c8fdbb2e62c0b16f957e889b6",
+            "markdown_sha256": "947956c2a45a48aee7b424f1ba69476e1e94adb7be49afc53eef57bb67880ae8"
+          },
+          "assessment_id": "assessment-sodium-parent",
+          "checkpoint": {
+            "sequence": 21,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+            "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+            "after_sha256": "9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c"
+          },
+          "prior_basis": {
+            "path": "reports/sodium_perchlorate_form_901_20261101/prior-mapping-basis.json",
+            "evidence_key": "2583"
+          },
+          "continuation": []
+        },
+        "resolved_relation_policy": "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
       }
     },
     "2584": {
-      "row_sha256": "0f8f1c5a97527961094a90d567654de633fa46439eb790fbcec036d66c1c5ab9",
+      "row_sha256": "9aff710dedc116f4feabb872e257433818b457fe598c63c5fcb1b19a36ec4887",
       "owner_record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
-      "owner_record_sha256": "1f39286747eb8f3a2ec3da7919f9e6cb197221fcfef46af69a6784afd8f83ccc",
-      "disposition": "WITHHOLD",
-      "review_reason": "The report supports the exact hydrate CAS, but the sibling close row attaches that CAS synonym to an anhydrous target. Preserve the pair pending an explicit mapping and alias-scope review.",
+      "owner_record_sha256": "36464b5ebec13eb2d71864e7b6af5d6069e931f1cb1c340ed24b63c81b8a1be4",
+      "disposition": "SUPPORTED",
+      "review_reason": "The actual exact cas:7791-07-3 row denotes the supplied sodium perchlorate monohydrate. PubChem CID516899 CAS annotations, complete water-containing InChI/formula and CultureBotHT physical row403 agree with the corrected owner. The sole CAS:7791-07-3 display alias denotes that same form. Both historical parent/CAS rows were WITHHOLD: this is a fresh claim assessment, not inherited or withdrawn prior CAS approval, and it does not certify CAS as globally optimal grounding.",
       "basis": {
         "baseline_position": 2624,
         "previous_decision": {
@@ -63547,9 +63587,32 @@
           "review_evidence": ""
         },
         "historical_record_review": "reports/yaml_record_review/Sodium_Perchlorate_Monohydrate.md",
+        "mapping_change": "issue901-sodium-perchlorate-form",
         "scoped_review": {
           "file": "mapping_review/changed-owner-review.json",
           "position": 2624
+        },
+        "form_followup": {
+          "file": "reports/sssom_completion_20260921/mapping_review/form_reviews/901-sodium-perchlorate-v1.json",
+          "claim_kind": "primary_identity",
+          "row_sha256": "9aff710dedc116f4feabb872e257433818b457fe598c63c5fcb1b19a36ec4887",
+          "native_review": {
+            "path": "reviews/structured/20261101T233454Z-sodium-perchlorate-901-form-mapping/review.yaml",
+            "sha256": "2efbc1f1a35d551724a3e25730e809a09e68d74c8fdbb2e62c0b16f957e889b6",
+            "markdown_sha256": "947956c2a45a48aee7b424f1ba69476e1e94adb7be49afc53eef57bb67880ae8"
+          },
+          "assessment_id": "assessment-sodium-cas",
+          "checkpoint": {
+            "sequence": 21,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+            "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+            "after_sha256": "9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c"
+          },
+          "prior_basis": {
+            "path": "reports/sodium_perchlorate_form_901_20261101/prior-mapping-basis.json",
+            "evidence_key": "2584"
+          },
+          "continuation": []
         }
       }
     },
@@ -73001,6 +73064,44 @@
             "path": "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
             "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
             "after_sha256": "51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28"
+          },
+          "prior_basis": null,
+          "continuation": [
+            {
+              "sequence": 21,
+              "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+              "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+              "before_position": 2982,
+              "after_position": 2982
+            }
+          ]
+        }
+      }
+    },
+    "2983": {
+      "row_sha256": "069dfd73500435df66a355306b496ddaf00eb01125e623ccd27b292ed7b8a830",
+      "owner_record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+      "owner_record_sha256": "36464b5ebec13eb2d71864e7b6af5d6069e931f1cb1c340ed24b63c81b8a1be4",
+      "disposition": "SUPPORTED",
+      "review_reason": "The actual new kgmicrobe.compound:sodium_perchlorate_monohydrate exact row is supported as the native B1 namespace handle for this same defined CAS-primary chemical subject. The exact lower-case subject slug, SINGLE_INGREDIENT owner, independently supported monohydrate chemistry and receipt21 addition agree. The sole CAS display alias denotes the same form. This handle is not a competing external primary identity and grants no role approval.",
+      "basis": {
+        "baseline_position": null,
+        "mapping_change": "issue901-sodium-perchlorate-form",
+        "form_followup": {
+          "file": "reports/sssom_completion_20260921/mapping_review/form_reviews/901-sodium-perchlorate-v1.json",
+          "claim_kind": "registry_handle",
+          "row_sha256": "069dfd73500435df66a355306b496ddaf00eb01125e623ccd27b292ed7b8a830",
+          "native_review": {
+            "path": "reviews/structured/20261101T233454Z-sodium-perchlorate-901-form-mapping/review.yaml",
+            "sha256": "2efbc1f1a35d551724a3e25730e809a09e68d74c8fdbb2e62c0b16f957e889b6",
+            "markdown_sha256": "947956c2a45a48aee7b424f1ba69476e1e94adb7be49afc53eef57bb67880ae8"
+          },
+          "assessment_id": "assessment-sodium-b1",
+          "checkpoint": {
+            "sequence": 21,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+            "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+            "after_sha256": "9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c"
           },
           "prior_basis": null,
           "continuation": []

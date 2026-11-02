@@ -1,4 +1,4 @@
-generation_date: '2026-11-01T20:08:55.607248+00:00'
+generation_date: '2026-11-01T23:15:18.484200+00:00'
 total_count: 2680
 mapped_count: 2610
 unmapped_count: 0
@@ -165725,7 +165725,7 @@ ingredients:
     ontology_id: CHEBI:132103
     ontology_label: sodium perchlorate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -165748,6 +165748,20 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#901); PubChem CID 516899; ChEBI:132103
+      notes: 'PubChem CID 516899 records CAS 7791-07-3 and formula ClH2NaO5; its water-containing
+        InChI agrees with this monohydrate. CHEBI:132103 sodium perchlorate has the
+        distinct water-free formula ClO4.Na and CAS 7601-89-0. Current MAPPING_SEMANTICS
+        section 3 and its form-of ruling support the identity-retaining parent broadMatch
+        and native B1 repair authorized by #901 comment 6565222455, not subclass projection
+        or exact parent identity. The bounded searches did not resolve an exact eligible
+        grounding. SNOMED 765356005 remains an unverified label-only lead: primary
+        concept access was blocked and the native source enum lacks SNOMED. This does
+        not establish global absence or disprove an exact term, and grants no registry
+        workaround. Sigma71852 was not inspected because the request timed out. No
+        role or release approval is implied. Archived sources: https://pubchem.ncbi.nlm.nih.gov/compound/516899
+        ; https://www.ebi.ac.uk/chebi/CHEBI:132103 .'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -165811,6 +165825,21 @@ ingredients:
       context to the cellular metabolic role (#710). Retained original computational
       provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
       for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-11-01T23:14:51.062504+00:00'
+    curator: claude
+    action: CORRECTED_HYDRATE_PARENT_PREDICATE
+    changes: 'Corrected CLOSE_MATCH to NARROW_MATCH for the sodium perchlorate parent
+      CHEBI:132103 under the current form-of ruling (#901); the SSSOM predicate is
+      skos:broadMatch with required native B1 handle kgmicrobe.compound:sodium_perchlorate_monohydrate.
+      Retained primary cas:7791-07-3, chemistry, synonyms, counts and ELECTRON_ACCEPTOR
+      role with its existing publication, context and confidence. Historical #342
+      reasoning remains provenance. The unresolved SNOMED exact-term lead is not dismissed;
+      this bounded predicate/handle repair grants no scientific or role approval,
+      and the changed owner withdraws its old role approval.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
   chemical_properties:

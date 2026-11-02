@@ -1,0 +1,869 @@
+# Actual sodium perchlorate monohydrate mapping triplet at receipt21
+
+- Review: 20261101T233454Z-sodium-perchlorate-901-form-mapping
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-01T23:31:53.932194Z
+- Finished UTC: 2026-11-01T23:34:54.849524Z
+- Reviewer: Codex sodium evidence and writer author (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Fresh self-review supports exact monohydrate CAS identity, hydrate-of parent broadMatch and native B1 handle for the actual receipt21 triplet. Both old mappings were WITHHOLD. The changed owner withdrew its old role approval; this review does not renew it. SNOMED exact-term status remains unverified. This isolated candidate has not been installed as release authority.
+
+## Scope And Provenance
+
+Complete actual mapping rows2583/2584/2983, including form, direction, identifier/labels, source provenance, dates, comments, validation stamps and every other token.
+
+Selection: Exactly the three Sodium_Perchlorate_Monohydrate rows at receipt21 endpoint 9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c, bound by full-row digests and distinct subject/predicate/object selectors.
+Coverage: full; 3 reviewed / 3 in the declared population.
+Source: working_tree at Git base 330d9e34c5cf69bb355d4d242977eb1a78dbe374.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| sodium-parent | mappings/ingredient_mappings.sssom.tsv # {"object_id":"CHEBI:132103","predicate_id":"skos:broadMatch","subject_id":"MIM:Sodium_Perchlorate_Monohydrate"} | snapshot_row | Sodium perchlorate monohydrate skos:broadMatch CHEBI:132103 |
+| sodium-cas | mappings/ingredient_mappings.sssom.tsv # {"object_id":"cas:7791-07-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Perchlorate_Monohydrate"} | snapshot_row | Sodium perchlorate monohydrate skos:exactMatch cas:7791-07-3 |
+| sodium-b1 | mappings/ingredient_mappings.sssom.tsv # {"object_id":"kgmicrobe.compound:sodium_perchlorate_monohydrate","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Perchlorate_Monohydrate"} | snapshot_row | Sodium perchlorate monohydrate skos:exactMatch kgmicrobe.compound:sodium_perchlorate_monohydrate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Strict single-owner native validation | passed | True | sodium-parent, sodium-cas, sodium-b1 | One actual corrected file; zero strict ERROR rows. |
+| Native ontology ID/label validation | passed | True | sodium-parent, sodium-cas, sodium-b1 | Actual CHEBI132103 ID/label validates; this gate is not chemical-form identity proof. |
+| Exact native source/target capture | passed | True | sodium-parent, sodium-cas, sodium-b1 | Durable330d working_tree overlay captures46 byte-identical inputs and three complete-row targets. |
+| Actual full rows, chemistry, aggregate and preapproval checks | passed | True | sodium-parent, sodium-cas, sodium-b1 | Native21-link replay, row digests, primary-source formula/InChI/CAS crosschecks, one exact aggregate owner, preapproval holds, preserved melezitose support and two open role/record findings verified. |
+| Actual repaired comparator preapproval archive | passed | True | sodium-parent, sodium-cas, sodium-b1 | Actual20-link prefix and3028 protected paths preserved; three sodium rowsWITHHOLD and roleOPEN. Exact native proof continuations are allowed without widening scientific support. |
+
+## Scientific And Domain Assessments
+
+### form_parent
+
+grounding: supported. Targets: sodium-parent.
+
+The actual sodium perchlorate monohydrate row is supported as a form-of skos:broadMatch to CHEBI:132103 sodium perchlorate. Archived PubChem CID516899 has one water component in addition to the sodium/perchlorate structure represented by the water-free ChEBI parent. The parent row has empty other and validation_method cells, resolving the old hydrate-CAS alias leakage and providing an explicit asymmetric relation instead of inherited closeMatch approval. This supports the bounded relation, not global exhaustion of exact ontology alternatives.
+
+The hydrated owner/PubChem structure is InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1H2/q;+1;/p-1, formula ClH2NaO5. CHEBI:132103 has InChI=1S/ClHO4.Na/c2-1(3,4)5;/h(H,2,3,4,5);/q;+1/p-1, formula ClO4.Na and CAS7601-89-0. These describe matching sodium/perchlorate connectivity with versus without one water, not interchangeable solid-form identity. Current MAPPING_SEMANTICS sections1–3 and the form-of ruling represent the hydrate-to-water-free-parent relation with skos:broadMatch, not exactMatch or subclass_of. YAML NARROW_MATCH is the native grade that emits that direction. Historical #342 close/subsumption reasoning remains provenance; it is not the current relation rationale. SNOMED765356005 remains an unresolved exact-form label lead, so this assessment makes no claim that section3 exact-term precedence was exhausted. The mapping_date is the actual corrected-owner date carried by receipt21. Generated confidence0.9/0.99 is a mapping heuristic, not a calibrated scientific probability. All six source tokens were inspected: MIM evidence and current curator provenance plus kgm:native_ontology:chebi. Five exact CHEBI132103 upstream input rows explain that kgm token; CAS/B1 copy the parent source cell. There is no mediaingredientmech_reviewed manifest token and no upstream reviewed-release endorsement to inherit.
+
+### primary_identity
+
+identity: supported. Targets: sodium-cas.
+
+The actual exact cas:7791-07-3 row denotes the supplied sodium perchlorate monohydrate. PubChem CID516899 CAS annotations, complete water-containing InChI/formula and CultureBotHT physical row403 agree with the corrected owner. The sole CAS:7791-07-3 display alias denotes that same form. Both historical parent/CAS rows were WITHHOLD: this is a fresh claim assessment, not inherited or withdrawn prior CAS approval, and it does not certify CAS as globally optimal grounding.
+
+The supplied-form source row records Sodium perchlorate monohydrate, CAS7791-07-3, Sigma71852 and FW140.46. PubChem CID516899 records molecular weight140.45 and seven CAS annotations for7791-07-3. This is database/raw-source support; no successful supplier-page inspection or direct CAS Registry query is claimed. The separate Sodium_Perchlorate.yaml/CAS7601-89-0 identity is not merged or changed. KEEP: literal CAS:7791-07-3 is a display synonym for the same monohydrate, not an expandable uppercase CURIE. The archived PubChem CAS annotations and CultureBotHT row403 agree, and the CAS checksum is valid. No sibling-form or preparation token is present. The mapping_date is the actual corrected-owner date carried by receipt21. Generated confidence0.9/0.99 is a mapping heuristic, not a calibrated scientific probability. All six source tokens were inspected: MIM evidence and current curator provenance plus kgm:native_ontology:chebi. Five exact CHEBI132103 upstream input rows explain that kgm token; CAS/B1 copy the parent source cell. There is no mediaingredientmech_reviewed manifest token and no upstream reviewed-release endorsement to inherit.
+
+### registry_handle
+
+identity: supported. Targets: sodium-b1.
+
+The actual new kgmicrobe.compound:sodium_perchlorate_monohydrate exact row is supported as the native B1 namespace handle for this same defined CAS-primary chemical subject. The exact lower-case subject slug, SINGLE_INGREDIENT owner, independently supported monohydrate chemistry and receipt21 addition agree. The sole CAS display alias denotes the same form. This handle is not a competing external primary identity and grants no role approval.
+
+The compound namespace reflects one chemically defined ingredient, not a mixture/extract. The actual handle equals kgmicrobe.compound plus the lowercased MIM subject slug, and the canonical endpoint contains one local registry namespace row for this subject. The row is new at2983 in receipt21; it inherits no historical scientific approval. Receipt21 adds this exact complete row at2983 alongside CAS7791-07-3 identity and the parent broadMatch. Section2/RuleB1 requires the subject-owned kgmicrobe.compound handle for this single chemical; it neither replaces the CAS primary nor asserts a separately installed upstream reviewed entity. The mapping_date is the actual corrected-owner date carried by receipt21. Generated confidence0.9/0.99 is a mapping heuristic, not a calibrated scientific probability. All six source tokens were inspected: MIM evidence and current curator provenance plus kgm:native_ontology:chebi. Five exact CHEBI132103 upstream input rows explain that kgm token; CAS/B1 copy the parent source cell. There is no mediaingredientmech_reviewed manifest token and no upstream reviewed-release endorsement to inherit.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-chemistry | reports/sodium_perchlorate_form_901_20261101/sources/pubchem-516899-properties.json; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/516899/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON ; original archived retrieval 2026-11-01T06:30:16.644089+00:00 ; inspected again from exact captured bytes; no new fetch. | supports | CID516899 has ClH2NaO5, mass140.45, and the exact corrected owner water-containing InChI. The hydrate form is chemically distinct from its water-free parent. |
+| ev-cas | reports/sodium_perchlorate_form_901_20261101/sources/pubchem-516899-cas.json; https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/516899/JSON?heading=CAS ; original archived retrieval 2026-11-01T06:30:16.795056+00:00 ; inspected again from exact captured bytes; no new fetch. | supports | PubChem title is Sodium perchlorate monohydrate. CAS annotations1,3,6,9,10,14,15 all give7791-07-3, attributed to AICIS, ChemIDplus, EPA DSSTox, ECHA, FDA GSRS, NZ EPA and US DOE PAC. These are inspected database annotations, not seven separately inspected experiments or direct CAS Registry. |
+| ev-parent | reports/sssom_scientific_curation_20261101/audit669/sources/CHEBI_132103.ols.json; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:132103 ; original archived retrieval 2026-11-01T06:30:17.607146+00:00 ; inspected again from exact captured bytes; no new fetch. | supports | The archived defining ChEBI term is nonobsolete sodium perchlorate, CAS7601-89-0, ClO4.Na and water-free sodium/perchlorate InChI. This supports the selected form parent and its canonical label, not hydrate identity. |
+| ev-catalogue | reports/sodium_perchlorate_form_901_20261101/sources/culturebotht-sodium-row.json | supports | Exact raw CultureBotHT physical line403 identifies the monohydrate with CAS7791-07-3 and Sigma71852. The ignored raw CSV is hash-bound, not attested as committed at its checkout revision; this is supplied-form context, not a supplier-page inspection. |
+| ev-semantics | MAPPING_SEMANTICS.md; Sections1–3; decision procedure; form-of is not subclass_of. | supports | Sections1–3 distinguish exact identity, hydrate form-of broadMatch and B1 namespace handle. Section3 gives exact-form ontology terms precedence; the unresolved SNOMED lead is retained rather than dismissed. |
+| ev-owner | data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml | context_only | Actual corrected owner36464b5e retains CAS/chemistry/empty synonyms/counts/role payload and changes parent grade with one appended mapping evidence/history event. Record status MAPPED is not whole-record scientific approval. |
+| ev-prior | reports/sodium_perchlorate_form_901_20261101/prior-mapping-basis.json | context_only | Prior keys2583/2584 both WITHHOLD: old close-parent relation was not settled, and its other cell attached hydrate CAS to the anhydrous parent. The actual parent broadMatch plus empty other and separately assessed CAS alias address those mapping-only objections; no old CAS approval is claimed. |
+| ev-history | reports/yaml_record_review/Sodium_Perchlorate_Monohydrate.md | context_only | Historical whole-record needs-curation review accepted the old close relation and flagged provisional ELECTRON_ACCEPTOR. Current form semantics supersede the old relation interpretation only; the record/role findings remain open. |
+| ev-receipt | reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json | context_only | Actual approval-free receipt21 binds the corrected owner, retained positions2583/2584 and new B1 position2983, before51b268 and after9a7a5c. Exact replay is structural provenance, not scientific approval. |
+| ev-preapproval | reports/sssom_completion_20260921/mapping-evidence.json | context_only | All three actual sodium rows are WITHHOLD before this self-review. Prior melezitose rows914/915/2982 remain SUPPORTED. No mapping authority is inferred from generation or receipt. |
+| ev-role | reports/semantic_review_20260921/resolution/assertion-dispositions.tsv | context_only | The unchanged ELECTRON_ACCEPTOR assertion now has OPEN disposition under corrected owner36464b5e. Its old owner-bound approval was withdrawn; this mapping-only review does not renew it. |
+| ev-findings | reports/semantic_review_20260921/resolution/finding-dispositions.tsv | context_only | SEM:3ca1788d97d4d07197cf is reopened OPEN after owner supersession; SEM:61d749c5de2f9bbf9c62 remains OPEN. These role/whole-record findings are outside the three mapping targets and are not superseded here. |
+| ev-upstream | reports/sodium_perchlorate_form_901_20261101/upstream-provenance/kg-parent-source.json | context_only | Five exact CHEBI132103 rows from KG gzip59464e08 all carry native_ontology:chebi. The native builder prefixes this token and copies the parent source into CAS/B1 rows. This is mechanical provenance, not independent current hydrate approval or a reviewed manifest claim. |
+| ev-source-ledger | reports/sodium_perchlorate_form_901_20261101/source-evidence.json | context_only | Frozen source packet records exact body hashes, original retrieval times, failed access, scope and issue901 decision. Publication/inspection is not new primary retrieval. |
+| ev-snomed | reports/sodium_perchlorate_form_901_20261101/sources/ols-snomed-765356005.json; https://www.ebi.ac.uk/ols4/api/ontologies/snomed/terms?iri=http%3A%2F%2Fsnomed.info%2Fid%2F765356005 ; original archived retrieval 2026-11-01T06:32:32.782163+00:00 ; inspected again from exact captured bytes; no new fetch. | context_only | OLS mirror provides the sodium perchlorate monohydrate label lead; no inspected primary concept definition or substance relationships establish its exact current scope. |
+| ev-search-name | reports/sodium_perchlorate_form_901_20261101/sources/ols-exact-sodium-perchlorate-monohydrate.json; https://www.ebi.ac.uk/ols4/api/search?q=sodium+perchlorate+monohydrate&amp;exact=true&amp;type=class&amp;rows=100 ; original archived retrieval 2026-11-01T06:30:18.257965+00:00 ; inspected again from exact captured bytes; no new fetch. | context_only | The bounded exact-name query returns the SNOMED765356005 lead with empty description; this is not proof of exact scientific identity or absence. |
+| ev-search-cas | reports/sssom_scientific_curation_20261101/audit901/sources/ols-7791-07-3.json; https://www.ebi.ac.uk/ols4/api/search?q=7791-07-3&amp;exact=true&amp;type=class&amp;rows=100 ; original archived retrieval 2026-11-01T06:30:18.261728+00:00 ; inspected again from exact captured bytes; no new fetch. | context_only | Archived bounded exact CAS query returns no hits. It does not establish global ontology absence and does not disprove the SNOMED lead. |
+| ev-access | reports/sodium_perchlorate_form_901_20261101/sources/primary-access-receipts.json; Original blocked-source receipts retained. | context_only | Official SNOMED concept access returned explicit405 blocks; the bounded separate NLM attempt was forbidden. No actual primary concept payload or current active status was verified. No credentials or bypass were attempted. |
+| ev-enum | src/mediaingredientmech/schema/mediaingredientmech.yaml; OntologySourceEnum | context_only | Current OntologySourceEnum omits SNOMED. This is a native eligibility/support boundary, not scientific disproof of an exact term and not authorization for a registry workaround. |
+| ev-check-strict | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-corrected-strict.log | context_only | Exact native command log; exit0. One actual corrected file; zero strict ERROR rows. |
+| ev-check-terms | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-corrected-terms.log | context_only | Exact native command log; exit0. Actual CHEBI132103 ID/label validates; this gate is not chemical-form identity proof. |
+| ev-check-capture | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-scientific-capture.log | context_only | Exact native command log; exit0. Durable330d working_tree overlay captures46 byte-identical inputs and three complete-row targets. |
+| ev-check-actual-claims | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-scientific-claims.log | context_only | Exact native command log; exit0. Native21-link replay, row digests, primary-source formula/InChI/CAS crosschecks, one exact aggregate owner, preapproval holds, preserved melezitose support and two open role/record findings verified. |
+| ev-preapproval-v2 | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-preapproval-v2/receipt.json | context_only | Actual repaired comparator archive verifies the20-link historical prefix,3028 protected paths, exact sodium WITHHOLD triplet, old melezitose support plus legitimate receipt21 continuation, and role/whole-record OPEN. No scientific approval is conferred. |
+| ev-comparator-independent | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/sodium-continuation-1080-repair/review.json | context_only | Separate reviewer cleared the bounded#1080 comparator repair. This is code/proof review, not independent sodium science approval. |
+
+## Limits And Additional Notes
+
+- This is author self-review, not independent clearance; the author wrote the sodium writer and prepared its evidence.
+- This candidate remains outside W and no FORM is registered. Comparator#1080 repair has separate independent clearance and its actual repaired preapproval archive passed. Independent fresh-science/adversarial clearance of this self-review remains a separate prerequisite before publication/activation.
+- No claim of global exact ontology absence or exhausted section3 step1 is made. SNOMED765356005 remains an unverified exact-form label lead; current schema support is a separate boundary.
+- PubChem annotations are database support, not direct CAS Registry or primary experimental inspections. Sigma71852 access timed out; the raw source row is only hash-bound supplier context.
+- Only mapping claims are supported. Existing role and whole-record findings remain OPEN; the unchanged publication/context is not reapproved or reinterpreted.
+- Source tags, copied parent-source vocabulary, old validation strings and generated confidence are procedural/historical metadata, not new independent endorsement.
+- The complete graph semantic release remains FAIL with1733 blocking findings and2336 blocking assertions at the captured preapproval state, despite integrity PASS. This three-row assessment cannot clear those holds.
+- Source.state working_tree with durable base330d is an actual overlay byte attestation, not a claim the corrected bytes were committed at330d. The native producer separately records real source checkpointb6290f46.
+- No paid research, new provider/network call, status promotion, merge, causal mechanism or broader corpus approval occurs in this review.
+- Native kind=batch accommodates three distinct snapshot-row targets owned by one ingredient. Each actual target has its own supported evidence-linked assessment.
+- Both historical mapping entries were WITHHOLD. Prior parent/CAS objections are addressed through explicit form relation and corrected alias placement, not inherited whole-record approval.
+- The exact native explicit-negative lists are empty at this captured state; that does not erase the separate prior-basis objections or role findings. Parent/CAS prior keys2583/2584 remain bound; new B1 has no prior basis.
+- Parent other is empty. CAS and B1 each have only CAS:7791-07-3. CAS registry comment and historical none&#124;UNKNOWN_TERM&#124;2026-07-07 stamp are retained; parent/B1 stamps are empty.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261101T233454Z-sodium-perchlorate-901-form-mapping
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Actual sodium perchlorate monohydrate mapping triplet at receipt21
+started_at: '2026-11-01T23:31:53.932194Z'
+finished_at: '2026-11-01T23:34:54.849524Z'
+reviewer:
+  identity: Codex sodium evidence and writer author
+  kind: agent
+  model: gpt-6
+  independence: self_review
+  independence_basis: 'This agent prepared the primary-source facts/evidence and authored
+    the sodium guarded writer and regression tests, including the corrected #1079
+    attribution. It did not author the generic FORM consumer. This is a fresh self-review
+    of actual corrected rows, not independent review. Separate independent scientific/adversarial
+    clearance is required before publication/activation.'
+skill: curate-yaml-record (.claude/skills/curate-yaml-record/SKILL.md), mapping-only
+  application to one owner and three exact generated claims
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Three actual mapping claims supported in bounded self-review; global
+  exact-term lead, role and whole-record scope remain unresolved
+scientific_review: true
+summary: Fresh self-review supports exact monohydrate CAS identity, hydrate-of parent
+  broadMatch and native B1 handle for the actual receipt21 triplet. Both old mappings
+  were WITHHOLD. The changed owner withdrew its old role approval; this review does
+  not renew it. SNOMED exact-term status remains unverified. This isolated candidate
+  has not been installed as release authority.
+source:
+  git_revision: 330d9e34c5cf69bb355d4d242977eb1a78dbe374
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/SKILL.md
+    sha256: 4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a
+    role: context
+  - path: .claude/skills/curate-yaml-record/references/review-checklist.md
+    sha256: d4df94935abfd922e84c3512e9a9b7735240f8e266d9a3ae23bb4933926b04eb
+    role: context
+  - path: .gitignore
+    sha256: 14c6eaf962740a06650031c53aa29e2307014d40ca66370bf0999ccd8ef56a0a
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 8166dd2a1b3e7f9787e4901d6d3179d0e3ea4dbbd94e6f66ecb738f942c45dc1
+    role: context
+  - path: data/ingredients/mapped/Sodium_Perchlorate.yaml
+    sha256: 5b8a68b008ebce2e98c040b9dfff7b5b16f2370b320bb77cf0d3db32e680e0e0
+    role: context
+  - path: data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+    sha256: 36464b5ebec13eb2d71864e7b6af5d6069e931f1cb1c340ed24b63c81b8a1be4
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c
+    role: target
+  - path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+    sha256: 7b17c8505cd755d0b0e6ed9c70ac3d33bb5a3d8f65a6dd7ec340b84d39f1a553
+    role: context
+  - path: reports/semantic_review_20260921/resolution/current-review.json
+    sha256: 95c26abb47e53b874c879522a0c5b4f130f33ca2dac8c3d22d6778c3b7c10aca
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: 92a3d86563bd6f97a27f598213b9de41862cee3ff7f17bc79270aaabe80f3b42
+    role: context
+  - path: reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    sha256: 4adcd0c354568bf542cd5807965feddda1cd9c13ad19b4d85076d314893a7c1d
+    role: context
+  - path: reports/semantic_review_20260921/resolution/roles/role-dispositions.tsv
+    sha256: edb21ce57bf0ebb2acd46582fec5be10da86ade5433fb213fe2e454fd3f61206
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/README.md
+    sha256: 675a6d2b760f51e10bd3d0384019b641bd714fcb1ce9d372dd233792cf7f2a1b
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/prior-mapping-basis.json
+    sha256: 51dd1d12d7dc3914d8d718beec2efa83c536fdcba618de30b70a84a727b7ad4f
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/source-evidence.json
+    sha256: e4fdd650cd72d9b9c915c461504aa760a564863d245eb7b365e8e50a25499236
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/culturebotht-sodium-row.json
+    sha256: 7f01bf4b12e550b29c704508779f3a7a0c6225f1b3262abb823722d76c56c755
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/issue901-decision.md
+    sha256: 3ce902bcb430286f949c5459c9131f6abcbf5ab193c73ed81c0cb98cecfc9e88
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/nlm-status-documentation-forbidden.html
+    sha256: ee152dbba6b4af78616cb3da11701eb1183fe652878a10a59f3ba9a2bcc24bf7
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/ols-exact-sodium-perchlorate-monohydrate.json
+    sha256: 53c3c5a353f9180cd2d99fd60b06d8e6e05626f439e45d2b7cba936fbd449b3a
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/ols-snomed-765356005.json
+    sha256: 5e008e6aec5f5908b075a293e808995082e4413f0a2025ac77980ed91c2de82b
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/primary-access-receipts.json
+    sha256: e20758da39d71b645f99bdd74222493af5a3818e6d13b87ef1f1ca4063afdfef
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/pubchem-516899-cas.json
+    sha256: 24b77e40ea88e7eb8e545f027078fafe6fbd58477b04774b6b82ca87c0a739db
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/pubchem-516899-properties.json
+    sha256: 6ddc89f2944a407b1a6949b893574e3c94e62d761adcef59f2b4d783c1bb3293
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/retrieval-receipts.json
+    sha256: e6f85b66e9c1811d3d5535fd1762a7b81fd4852c6a35386df7461afbf6b4ce8f
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/sources/snomed-primary-access-denied.html
+    sha256: 7f4a34dc70bbeeb8fe8f63943d6dd2c0f72954b013e25ec828189088d1593964
+    role: context
+  - path: reports/sodium_perchlorate_form_901_20261101/upstream-provenance/kg-parent-source.json
+    sha256: c84884515cc1e295db921f957b85fda488fda1ae60cc666184524d09c22578b6
+    role: context
+  - path: reports/sssom_completion_20260921/mapping-evidence.json
+    sha256: a79ba2c7f3117d19289a36bf6bb334bda9a0998e997d130cafa5edf1743bd5e5
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json
+    sha256: 0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/adversarial-findings.json
+    sha256: ec28a29c9456f2c6a74e625d8650c059b9648fa4aa1d53b3deb3ef356ec39d62
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/changed-owner-review.json
+    sha256: 2bb8385c855ce100e7547e9792ceb677e2684d97456bbd9234bb73070d864f7c
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/issue-intersections.json
+    sha256: 7f3d9ebcabea3f11d475c839e534f3b69725aedf94d899f50817c7aed354a472
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/synonym-adversarial-findings.json
+    sha256: f6e8dd01762c1586df87c2ae472f7255c81f4c43c08db38676a0d994b5d2b8f7
+    role: context
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: 95248dfc88aa19a0ce12edd8951c73238db4a71ae4ab807ad152609d29dc894b
+    role: context
+  - path: reports/sssom_scientific_curation_20261101/audit669/sources/CHEBI_132103.ols.json
+    sha256: b9c17be4c36719cbf8972e959153772ad12b6efffaba915f6a84d219cf16eb01
+    role: context
+  - path: reports/sssom_scientific_curation_20261101/audit901/sources/ols-7791-07-3.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/yaml_record_review/Sodium_Perchlorate_Monohydrate.md
+    sha256: 66586e3dab6652ece312f678daf39d8a7cbacde67dcffd973c20abbacbf21296
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/export/reviewed_sssom.py
+    sha256: ab74bae77709ba59623b2aa4612a16b692361c4f46bbb9b5a597f31bd6716ec3
+    role: context
+  - path: src/mediaingredientmech/form_mapping_review.py
+    sha256: c83a7c57839528f99bdb5fe376cd4b4bd7c8ba73530fa7e5e441787237178c4a
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Complete actual mapping rows2583/2584/2983, including form, direction,
+    identifier/labels, source provenance, dates, comments, validation stamps and every
+    other token.
+  selection: Exactly the three Sodium_Perchlorate_Monohydrate rows at receipt21 endpoint
+    9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c, bound by full-row
+    digests and distinct subject/predicate/object selectors.
+  coverage: full
+  population_size: 3
+  reviewed_target_ids:
+  - sodium-parent
+  - sodium-cas
+  - sodium-b1
+  exclusions:
+  - target: ELECTRON_ACCEPTOR and SEM:3ca1788d97d4d07197cf / SEM:61d749c5de2f9bbf9c62
+    reason: Role literature was not reassessed. Existing role payload is preserved
+      but approval is withdrawn; role and historical whole-record findings remain
+      OPEN. No supersession or role approval is made.
+  - target: Global exact-form ontology completion and SNOMED765356005 primary verification
+    reason: The label lead remains unresolved behind primary access restrictions;
+      native schema eligibility does not disprove existence. The authorized repair
+      preserves identity and relation without certifying CAS as globally optimal.
+  - target: Sodium_Perchlorate.yaml, melezitose authority, other mappings and full
+      KG release
+    reason: Counterpart is context only. Existing first FORM is immutable, unrelated
+      decisions are not reviewed here, and full semantic release remains FAIL.
+targets:
+- target_id: sodium-parent
+  path: mappings/ingredient_mappings.sssom.tsv
+  kind: snapshot_row
+  selector: '{"object_id":"CHEBI:132103","predicate_id":"skos:broadMatch","subject_id":"MIM:Sodium_Perchlorate_Monohydrate"}'
+  label: Sodium perchlorate monohydrate skos:broadMatch CHEBI:132103
+  semantic_digest:
+    algorithm: mim-sssom-row-sha256-v1
+    sha256: 51baf5d397ac027631a579a054ba21b07ae97d65e0f5f66d2861c81dfdb8df46
+    description: Native reviewed_sssom full-row JSON SHA256 with sorted keys, compact
+      separators, ensure_ascii=False.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+    role: Exact supplied-form source owner
+- target_id: sodium-cas
+  path: mappings/ingredient_mappings.sssom.tsv
+  kind: snapshot_row
+  selector: '{"object_id":"cas:7791-07-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Perchlorate_Monohydrate"}'
+  label: Sodium perchlorate monohydrate skos:exactMatch cas:7791-07-3
+  semantic_digest:
+    algorithm: mim-sssom-row-sha256-v1
+    sha256: 9aff710dedc116f4feabb872e257433818b457fe598c63c5fcb1b19a36ec4887
+    description: Native reviewed_sssom full-row JSON SHA256 with sorted keys, compact
+      separators, ensure_ascii=False.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+    role: Exact supplied-form source owner
+- target_id: sodium-b1
+  path: mappings/ingredient_mappings.sssom.tsv
+  kind: snapshot_row
+  selector: '{"object_id":"kgmicrobe.compound:sodium_perchlorate_monohydrate","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Perchlorate_Monohydrate"}'
+  label: Sodium perchlorate monohydrate skos:exactMatch kgmicrobe.compound:sodium_perchlorate_monohydrate
+  semantic_digest:
+    algorithm: mim-sssom-row-sha256-v1
+    sha256: 069dfd73500435df66a355306b496ddaf00eb01125e623ccd27b292ed7b8a830
+    description: Native reviewed_sssom full-row JSON SHA256 with sorted keys, compact
+      separators, ensure_ascii=False.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+    role: Exact supplied-form source owner
+checks:
+- check_id: strict
+  name: Strict single-owner native validation
+  status: passed
+  required: true
+  summary: One actual corrected file; zero strict ERROR rows.
+  target_ids:
+  - sodium-parent
+  - sodium-cas
+  - sodium-b1
+  command: just validate-strict data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-check-strict
+  scope_note: Actual mapping-only self-review checks; no whole-graph release or independent
+    external approval.
+- check_id: terms
+  name: Native ontology ID/label validation
+  status: passed
+  required: true
+  summary: Actual CHEBI132103 ID/label validates; this gate is not chemical-form identity
+    proof.
+  target_ids:
+  - sodium-parent
+  - sodium-cas
+  - sodium-b1
+  command: just validate-terms data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-check-terms
+  scope_note: Actual mapping-only self-review checks; no whole-graph release or independent
+    external approval.
+- check_id: capture
+  name: Exact native source/target capture
+  status: passed
+  required: true
+  summary: Durable330d working_tree overlay captures46 byte-identical inputs and three
+    complete-row targets.
+  target_ids:
+  - sodium-parent
+  - sodium-cas
+  - sodium-b1
+  command: python -B /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-native-review/prepare_overlay.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-check-capture
+  scope_note: Actual mapping-only self-review checks; no whole-graph release or independent
+    external approval.
+- check_id: actual-claims
+  name: Actual full rows, chemistry, aggregate and preapproval checks
+  status: passed
+  required: true
+  summary: Native21-link replay, row digests, primary-source formula/InChI/CAS crosschecks,
+    one exact aggregate owner, preapproval holds, preserved melezitose support and
+    two open role/record findings verified.
+  target_ids:
+  - sodium-parent
+  - sodium-cas
+  - sodium-b1
+  command: python -B /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-native-review/check_actual_claims.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-check-actual-claims
+  scope_note: Actual mapping-only self-review checks; no whole-graph release or independent
+    external approval.
+- check_id: preapproval-v2
+  name: Actual repaired comparator preapproval archive
+  status: passed
+  required: true
+  summary: Actual20-link prefix and3028 protected paths preserved; three sodium rowsWITHHOLD
+    and roleOPEN. Exact native proof continuations are allowed without widening scientific
+    support.
+  target_ids:
+  - sodium-parent
+  - sodium-cas
+  - sodium-b1
+  command: python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-chain-plan/compare_sodium_chain.py
+    preapproval --source-log /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-execution/source.json
+    --promotion-log /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-execution/promotion.json
+    --output /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-preapproval-v2
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-preapproval-v2
+  - ev-comparator-independent
+  scope_note: Evidence-preservation check only; full semantic release remainsFAIL
+    and independent science clearance remains separate.
+evidence:
+- evidence_id: ev-chemistry
+  kind: database
+  reference: reports/sodium_perchlorate_form_901_20261101/sources/pubchem-516899-properties.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: supports
+  summary: CID516899 has ClH2NaO5, mass140.45, and the exact corrected owner water-containing
+    InChI. The hydrate form is chemically distinct from its water-free parent.
+  snapshot_sha256: 6ddc89f2944a407b1a6949b893574e3c94e62d761adcef59f2b4d783c1bb3293
+  locator: https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/516899/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON
+    ; original archived retrieval 2026-11-01T06:30:16.644089+00:00 ; inspected again
+    from exact captured bytes; no new fetch.
+- evidence_id: ev-cas
+  kind: database
+  reference: reports/sodium_perchlorate_form_901_20261101/sources/pubchem-516899-cas.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: supports
+  summary: PubChem title is Sodium perchlorate monohydrate. CAS annotations1,3,6,9,10,14,15
+    all give7791-07-3, attributed to AICIS, ChemIDplus, EPA DSSTox, ECHA, FDA GSRS,
+    NZ EPA and US DOE PAC. These are inspected database annotations, not seven separately
+    inspected experiments or direct CAS Registry.
+  snapshot_sha256: 24b77e40ea88e7eb8e545f027078fafe6fbd58477b04774b6b82ca87c0a739db
+  locator: https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/516899/JSON?heading=CAS
+    ; original archived retrieval 2026-11-01T06:30:16.795056+00:00 ; inspected again
+    from exact captured bytes; no new fetch.
+- evidence_id: ev-parent
+  kind: database
+  reference: reports/sssom_scientific_curation_20261101/audit669/sources/CHEBI_132103.ols.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: supports
+  summary: The archived defining ChEBI term is nonobsolete sodium perchlorate, CAS7601-89-0,
+    ClO4.Na and water-free sodium/perchlorate InChI. This supports the selected form
+    parent and its canonical label, not hydrate identity.
+  snapshot_sha256: b9c17be4c36719cbf8972e959153772ad12b6efffaba915f6a84d219cf16eb01
+  locator: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:132103
+    ; original archived retrieval 2026-11-01T06:30:17.607146+00:00 ; inspected again
+    from exact captured bytes; no new fetch.
+- evidence_id: ev-catalogue
+  kind: record_content
+  reference: reports/sodium_perchlorate_form_901_20261101/sources/culturebotht-sodium-row.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: supports
+  summary: Exact raw CultureBotHT physical line403 identifies the monohydrate with
+    CAS7791-07-3 and Sigma71852. The ignored raw CSV is hash-bound, not attested as
+    committed at its checkout revision; this is supplied-form context, not a supplier-page
+    inspection.
+  snapshot_sha256: 7f01bf4b12e550b29c704508779f3a7a0c6225f1b3262abb823722d76c56c755
+- evidence_id: ev-semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: supports
+  summary: Sections1–3 distinguish exact identity, hydrate form-of broadMatch and
+    B1 namespace handle. Section3 gives exact-form ontology terms precedence; the
+    unresolved SNOMED lead is retained rather than dismissed.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+  locator: Sections1–3; decision procedure; form-of is not subclass_of.
+- evidence_id: ev-owner
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Actual corrected owner36464b5e retains CAS/chemistry/empty synonyms/counts/role
+    payload and changes parent grade with one appended mapping evidence/history event.
+    Record status MAPPED is not whole-record scientific approval.
+  snapshot_sha256: 36464b5ebec13eb2d71864e7b6af5d6069e931f1cb1c340ed24b63c81b8a1be4
+- evidence_id: ev-prior
+  kind: prior_review
+  reference: reports/sodium_perchlorate_form_901_20261101/prior-mapping-basis.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: 'Prior keys2583/2584 both WITHHOLD: old close-parent relation was not settled,
+    and its other cell attached hydrate CAS to the anhydrous parent. The actual parent
+    broadMatch plus empty other and separately assessed CAS alias address those mapping-only
+    objections; no old CAS approval is claimed.'
+  snapshot_sha256: 51dd1d12d7dc3914d8d718beec2efa83c536fdcba618de30b70a84a727b7ad4f
+- evidence_id: ev-history
+  kind: prior_review
+  reference: reports/yaml_record_review/Sodium_Perchlorate_Monohydrate.md
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Historical whole-record needs-curation review accepted the old close relation
+    and flagged provisional ELECTRON_ACCEPTOR. Current form semantics supersede the
+    old relation interpretation only; the record/role findings remain open.
+  snapshot_sha256: 66586e3dab6652ece312f678daf39d8a7cbacde67dcffd973c20abbacbf21296
+- evidence_id: ev-receipt
+  kind: validation
+  reference: reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Actual approval-free receipt21 binds the corrected owner, retained positions2583/2584
+    and new B1 position2983, before51b268 and after9a7a5c. Exact replay is structural
+    provenance, not scientific approval.
+  snapshot_sha256: 0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd
+- evidence_id: ev-preapproval
+  kind: validation
+  reference: reports/sssom_completion_20260921/mapping-evidence.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: All three actual sodium rows are WITHHOLD before this self-review. Prior
+    melezitose rows914/915/2982 remain SUPPORTED. No mapping authority is inferred
+    from generation or receipt.
+  snapshot_sha256: a79ba2c7f3117d19289a36bf6bb334bda9a0998e997d130cafa5edf1743bd5e5
+- evidence_id: ev-role
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: The unchanged ELECTRON_ACCEPTOR assertion now has OPEN disposition under
+    corrected owner36464b5e. Its old owner-bound approval was withdrawn; this mapping-only
+    review does not renew it.
+  snapshot_sha256: 7b17c8505cd755d0b0e6ed9c70ac3d33bb5a3d8f65a6dd7ec340b84d39f1a553
+- evidence_id: ev-findings
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: SEM:3ca1788d97d4d07197cf is reopened OPEN after owner supersession; SEM:61d749c5de2f9bbf9c62
+    remains OPEN. These role/whole-record findings are outside the three mapping targets
+    and are not superseded here.
+  snapshot_sha256: 92a3d86563bd6f97a27f598213b9de41862cee3ff7f17bc79270aaabe80f3b42
+- evidence_id: ev-upstream
+  kind: record_content
+  reference: reports/sodium_perchlorate_form_901_20261101/upstream-provenance/kg-parent-source.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Five exact CHEBI132103 rows from KG gzip59464e08 all carry native_ontology:chebi.
+    The native builder prefixes this token and copies the parent source into CAS/B1
+    rows. This is mechanical provenance, not independent current hydrate approval
+    or a reviewed manifest claim.
+  snapshot_sha256: c84884515cc1e295db921f957b85fda488fda1ae60cc666184524d09c22578b6
+- evidence_id: ev-source-ledger
+  kind: record_content
+  reference: reports/sodium_perchlorate_form_901_20261101/source-evidence.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Frozen source packet records exact body hashes, original retrieval times,
+    failed access, scope and issue901 decision. Publication/inspection is not new
+    primary retrieval.
+  snapshot_sha256: e4fdd650cd72d9b9c915c461504aa760a564863d245eb7b365e8e50a25499236
+- evidence_id: ev-snomed
+  kind: database
+  reference: reports/sodium_perchlorate_form_901_20261101/sources/ols-snomed-765356005.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: OLS mirror provides the sodium perchlorate monohydrate label lead; no inspected
+    primary concept definition or substance relationships establish its exact current
+    scope.
+  snapshot_sha256: 5e008e6aec5f5908b075a293e808995082e4413f0a2025ac77980ed91c2de82b
+  locator: https://www.ebi.ac.uk/ols4/api/ontologies/snomed/terms?iri=http%3A%2F%2Fsnomed.info%2Fid%2F765356005
+    ; original archived retrieval 2026-11-01T06:32:32.782163+00:00 ; inspected again
+    from exact captured bytes; no new fetch.
+- evidence_id: ev-search-name
+  kind: search
+  reference: reports/sodium_perchlorate_form_901_20261101/sources/ols-exact-sodium-perchlorate-monohydrate.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: The bounded exact-name query returns the SNOMED765356005 lead with empty
+    description; this is not proof of exact scientific identity or absence.
+  snapshot_sha256: 53c3c5a353f9180cd2d99fd60b06d8e6e05626f439e45d2b7cba936fbd449b3a
+  locator: https://www.ebi.ac.uk/ols4/api/search?q=sodium+perchlorate+monohydrate&exact=true&type=class&rows=100
+    ; original archived retrieval 2026-11-01T06:30:18.257965+00:00 ; inspected again
+    from exact captured bytes; no new fetch.
+  search_scope: Archived OLS exact-name query; one lead, not exhaustive ontology coverage.
+- evidence_id: ev-search-cas
+  kind: search
+  reference: reports/sssom_scientific_curation_20261101/audit901/sources/ols-7791-07-3.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Archived bounded exact CAS query returns no hits. It does not establish
+    global ontology absence and does not disprove the SNOMED lead.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  locator: https://www.ebi.ac.uk/ols4/api/search?q=7791-07-3&exact=true&type=class&rows=100
+    ; original archived retrieval 2026-11-01T06:30:18.261728+00:00 ; inspected again
+    from exact captured bytes; no new fetch.
+  search_scope: Exact CAS7791-07-3 OLS class query with rows100; only this bounded
+    query.
+- evidence_id: ev-access
+  kind: search
+  reference: reports/sodium_perchlorate_form_901_20261101/sources/primary-access-receipts.json
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Official SNOMED concept access returned explicit405 blocks; the bounded
+    separate NLM attempt was forbidden. No actual primary concept payload or current
+    active status was verified. No credentials or bypass were attempted.
+  snapshot_sha256: e20758da39d71b645f99bdd74222493af5a3818e6d13b87ef1f1ca4063afdfef
+  locator: Original blocked-source receipts retained.
+  search_scope: Only the named official concept routes and one independent NLM availability
+    attempt; stopped at access boundaries.
+- evidence_id: ev-enum
+  kind: authority
+  reference: src/mediaingredientmech/schema/mediaingredientmech.yaml
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Current OntologySourceEnum omits SNOMED. This is a native eligibility/support
+    boundary, not scientific disproof of an exact term and not authorization for a
+    registry workaround.
+  snapshot_sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+  locator: OntologySourceEnum
+- evidence_id: ev-check-strict
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-corrected-strict.log
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Exact native command log; exit0. One actual corrected file; zero strict
+    ERROR rows.
+  snapshot_sha256: 8ee5a01baffae6ac77faf0671946f70f28ed76ba96b88bdf8f5a7375c638bc23
+- evidence_id: ev-check-terms
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-corrected-terms.log
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Exact native command log; exit0. Actual CHEBI132103 ID/label validates;
+    this gate is not chemical-form identity proof.
+  snapshot_sha256: 23acda1c1d3194d12bc947d897d07de83f4a076a9d93c135148885108530e018
+- evidence_id: ev-check-capture
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-scientific-capture.log
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Exact native command log; exit0. Durable330d working_tree overlay captures46
+    byte-identical inputs and three complete-row targets.
+  snapshot_sha256: 112b8a8d2aadcb0dfccdb865d5070a9c7b16bcc460db74b5c80dbb7aad9b09e8
+- evidence_id: ev-check-actual-claims
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/sodium-scientific-claims.log
+  accessed_at: '2026-11-01T23:34:16.675298Z'
+  support: context_only
+  summary: Exact native command log; exit0. Native21-link replay, row digests, primary-source
+    formula/InChI/CAS crosschecks, one exact aggregate owner, preapproval holds, preserved
+    melezitose support and two open role/record findings verified.
+  snapshot_sha256: 44c2492d266a5e55de91ad445a01dc6683dadec105b94f5154ea3f9416bc04f1
+- evidence_id: ev-preapproval-v2
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-sodium-preapproval-v2/receipt.json
+  accessed_at: '2026-11-01T23:34:54.849524Z'
+  support: context_only
+  summary: Actual repaired comparator archive verifies the20-link historical prefix,3028
+    protected paths, exact sodium WITHHOLD triplet, old melezitose support plus legitimate
+    receipt21 continuation, and role/whole-record OPEN. No scientific approval is
+    conferred.
+  snapshot_sha256: 622263141b826e9d003f5041ebb31e05d9e8e1c86f21b2e84ebfbecee1d6944f
+- evidence_id: ev-comparator-independent
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-independent/sodium-continuation-1080-repair/review.json
+  accessed_at: '2026-11-01T23:34:54.849524Z'
+  support: context_only
+  summary: Separate reviewer cleared the bounded#1080 comparator repair. This is code/proof
+    review, not independent sodium science approval.
+  snapshot_sha256: e555b12e8ecc494c0559a537ec2f223c5647b12e7edee9831da1bc28e889c47a
+assessments:
+- assessment_id: assessment-sodium-parent
+  area: grounding
+  topic: form_parent
+  outcome: supported
+  summary: The actual sodium perchlorate monohydrate row is supported as a form-of
+    skos:broadMatch to CHEBI:132103 sodium perchlorate. Archived PubChem CID516899
+    has one water component in addition to the sodium/perchlorate structure represented
+    by the water-free ChEBI parent. The parent row has empty other and validation_method
+    cells, resolving the old hydrate-CAS alias leakage and providing an explicit asymmetric
+    relation instead of inherited closeMatch approval. This supports the bounded relation,
+    not global exhaustion of exact ontology alternatives.
+  target_ids:
+  - sodium-parent
+  evidence_ids:
+  - ev-chemistry
+  - ev-parent
+  - ev-semantics
+  - ev-owner
+  - ev-prior
+  - ev-history
+  - ev-receipt
+  - ev-snomed
+  - ev-search-name
+  - ev-search-cas
+  - ev-access
+  - ev-enum
+  - ev-upstream
+  details: 'The hydrated owner/PubChem structure is InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1H2/q;+1;/p-1,
+    formula ClH2NaO5. CHEBI:132103 has InChI=1S/ClHO4.Na/c2-1(3,4)5;/h(H,2,3,4,5);/q;+1/p-1,
+    formula ClO4.Na and CAS7601-89-0. These describe matching sodium/perchlorate connectivity
+    with versus without one water, not interchangeable solid-form identity. Current
+    MAPPING_SEMANTICS sections1–3 and the form-of ruling represent the hydrate-to-water-free-parent
+    relation with skos:broadMatch, not exactMatch or subclass_of. YAML NARROW_MATCH
+    is the native grade that emits that direction. Historical #342 close/subsumption
+    reasoning remains provenance; it is not the current relation rationale. SNOMED765356005
+    remains an unresolved exact-form label lead, so this assessment makes no claim
+    that section3 exact-term precedence was exhausted. The mapping_date is the actual
+    corrected-owner date carried by receipt21. Generated confidence0.9/0.99 is a mapping
+    heuristic, not a calibrated scientific probability. All six source tokens were
+    inspected: MIM evidence and current curator provenance plus kgm:native_ontology:chebi.
+    Five exact CHEBI132103 upstream input rows explain that kgm token; CAS/B1 copy
+    the parent source cell. There is no mediaingredientmech_reviewed manifest token
+    and no upstream reviewed-release endorsement to inherit.'
+- assessment_id: assessment-sodium-cas
+  area: identity
+  topic: primary_identity
+  outcome: supported
+  summary: 'The actual exact cas:7791-07-3 row denotes the supplied sodium perchlorate
+    monohydrate. PubChem CID516899 CAS annotations, complete water-containing InChI/formula
+    and CultureBotHT physical row403 agree with the corrected owner. The sole CAS:7791-07-3
+    display alias denotes that same form. Both historical parent/CAS rows were WITHHOLD:
+    this is a fresh claim assessment, not inherited or withdrawn prior CAS approval,
+    and it does not certify CAS as globally optimal grounding.'
+  target_ids:
+  - sodium-cas
+  evidence_ids:
+  - ev-cas
+  - ev-chemistry
+  - ev-catalogue
+  - ev-owner
+  - ev-prior
+  - ev-receipt
+  - ev-semantics
+  - ev-upstream
+  details: 'The supplied-form source row records Sodium perchlorate monohydrate, CAS7791-07-3,
+    Sigma71852 and FW140.46. PubChem CID516899 records molecular weight140.45 and
+    seven CAS annotations for7791-07-3. This is database/raw-source support; no successful
+    supplier-page inspection or direct CAS Registry query is claimed. The separate
+    Sodium_Perchlorate.yaml/CAS7601-89-0 identity is not merged or changed. KEEP:
+    literal CAS:7791-07-3 is a display synonym for the same monohydrate, not an expandable
+    uppercase CURIE. The archived PubChem CAS annotations and CultureBotHT row403
+    agree, and the CAS checksum is valid. No sibling-form or preparation token is
+    present. The mapping_date is the actual corrected-owner date carried by receipt21.
+    Generated confidence0.9/0.99 is a mapping heuristic, not a calibrated scientific
+    probability. All six source tokens were inspected: MIM evidence and current curator
+    provenance plus kgm:native_ontology:chebi. Five exact CHEBI132103 upstream input
+    rows explain that kgm token; CAS/B1 copy the parent source cell. There is no mediaingredientmech_reviewed
+    manifest token and no upstream reviewed-release endorsement to inherit.'
+- assessment_id: assessment-sodium-b1
+  area: identity
+  topic: registry_handle
+  outcome: supported
+  summary: The actual new kgmicrobe.compound:sodium_perchlorate_monohydrate exact
+    row is supported as the native B1 namespace handle for this same defined CAS-primary
+    chemical subject. The exact lower-case subject slug, SINGLE_INGREDIENT owner,
+    independently supported monohydrate chemistry and receipt21 addition agree. The
+    sole CAS display alias denotes the same form. This handle is not a competing external
+    primary identity and grants no role approval.
+  target_ids:
+  - sodium-b1
+  evidence_ids:
+  - ev-chemistry
+  - ev-cas
+  - ev-semantics
+  - ev-owner
+  - ev-receipt
+  - ev-upstream
+  details: 'The compound namespace reflects one chemically defined ingredient, not
+    a mixture/extract. The actual handle equals kgmicrobe.compound plus the lowercased
+    MIM subject slug, and the canonical endpoint contains one local registry namespace
+    row for this subject. The row is new at2983 in receipt21; it inherits no historical
+    scientific approval. Receipt21 adds this exact complete row at2983 alongside CAS7791-07-3
+    identity and the parent broadMatch. Section2/RuleB1 requires the subject-owned
+    kgmicrobe.compound handle for this single chemical; it neither replaces the CAS
+    primary nor asserts a separately installed upstream reviewed entity. The mapping_date
+    is the actual corrected-owner date carried by receipt21. Generated confidence0.9/0.99
+    is a mapping heuristic, not a calibrated scientific probability. All six source
+    tokens were inspected: MIM evidence and current curator provenance plus kgm:native_ontology:chebi.
+    Five exact CHEBI132103 upstream input rows explain that kgm token; CAS/B1 copy
+    the parent source cell. There is no mediaingredientmech_reviewed manifest token
+    and no upstream reviewed-release endorsement to inherit.'
+findings: []
+actions: []
+limitations:
+- This is author self-review, not independent clearance; the author wrote the sodium
+  writer and prepared its evidence.
+- This candidate remains outside W and no FORM is registered. Comparator#1080 repair
+  has separate independent clearance and its actual repaired preapproval archive passed.
+  Independent fresh-science/adversarial clearance of this self-review remains a separate
+  prerequisite before publication/activation.
+- No claim of global exact ontology absence or exhausted section3 step1 is made. SNOMED765356005
+  remains an unverified exact-form label lead; current schema support is a separate
+  boundary.
+- PubChem annotations are database support, not direct CAS Registry or primary experimental
+  inspections. Sigma71852 access timed out; the raw source row is only hash-bound
+  supplier context.
+- Only mapping claims are supported. Existing role and whole-record findings remain
+  OPEN; the unchanged publication/context is not reapproved or reinterpreted.
+- Source tags, copied parent-source vocabulary, old validation strings and generated
+  confidence are procedural/historical metadata, not new independent endorsement.
+- The complete graph semantic release remains FAIL with1733 blocking findings and2336
+  blocking assertions at the captured preapproval state, despite integrity PASS. This
+  three-row assessment cannot clear those holds.
+- Source.state working_tree with durable base330d is an actual overlay byte attestation,
+  not a claim the corrected bytes were committed at330d. The native producer separately
+  records real source checkpointb6290f46.
+- No paid research, new provider/network call, status promotion, merge, causal mechanism
+  or broader corpus approval occurs in this review.
+notes:
+- Native kind=batch accommodates three distinct snapshot-row targets owned by one
+  ingredient. Each actual target has its own supported evidence-linked assessment.
+- Both historical mapping entries were WITHHOLD. Prior parent/CAS objections are addressed
+  through explicit form relation and corrected alias placement, not inherited whole-record
+  approval.
+- The exact native explicit-negative lists are empty at this captured state; that
+  does not erase the separate prior-basis objections or role findings. Parent/CAS
+  prior keys2583/2584 remain bound; new B1 has no prior basis.
+- Parent other is empty. CAS and B1 each have only CAS:7791-07-3. CAS registry comment
+  and historical none|UNKNOWN_TERM|2026-07-07 stamp are retained; parent/B1 stamps
+  are empty.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/901
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1079
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1080
+tags:
+- mapping-only
+- hydrate-form
+- sodium-perchlorate
+- receipt21
+- self-review
+```
