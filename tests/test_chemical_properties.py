@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from unittest.mock import MagicMock, Mock, patch
+from unittest.mock import Mock, patch
 
 import pytest
 
@@ -81,9 +81,7 @@ def test_get_properties_from_pubchem(mock_get, client):
     # Second call: PubChem CID search
     pubchem_cid_response = Mock()
     pubchem_cid_response.status_code = 200
-    pubchem_cid_response.json.return_value = {
-        "IdentifierList": {"CID": [962]}
-    }
+    pubchem_cid_response.json.return_value = {"IdentifierList": {"CID": [962]}}
 
     # Third call: PubChem properties
     pubchem_props_response = Mock()
@@ -149,13 +147,17 @@ def test_pubchem_not_found(mock_get, client):
     assert result.data_source == "ChEBI"
 
 
-def test_cache_hit_avoids_api_call():
+def test_cache_hit_avoids_api_call(tmp_path, monkeypatch):
     """Verify that caching works and avoids API calls."""
+    monkeypatch.setattr(
+        "mediaingredientmech.utils.chemical_properties_client.CACHE_DIR", tmp_path / "cache"
+    )
     # Create client with caching enabled
     client = ChemicalPropertiesClient(cache_enabled=True)
 
     # Mock properties
     from datetime import timezone
+
     mock_props = ChemicalProperties(
         molecular_formula="H2O",
         smiles="O",

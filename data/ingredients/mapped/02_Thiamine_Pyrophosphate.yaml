@@ -110,14 +110,27 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
-chemical_properties:
-  cas_rn: 154-87-0
-  data_source: NCI CACTUS Chemical Identifier Resolver
-  retrieval_date: '2026-04-05T21:52:09.127416+00:00'
-  molecular_formula: C12H19N4O7P2S
-  inchi: InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)/p+1
-  smiles: Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1
-ingredient_type: SINGLE_INGREDIENT
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.
+    Set fields: {"ingredient_type": "STOCK_SOLUTION"}. Existing stock identity decision
+    plus direct primary chloride CAS evidence: this is inherited/lookup solute chemistry,
+    not whole-stock properties. Do not invent solute salt, solvent, percentage basis,
+    components or role approval. Six existing pure-solute aliases remain a separately
+    documented unresolved concern unless explicitly added to reviewed scope. Original
+    chemical_properties={"cas_rn": "154-87-0", "data_source": "NCI CACTUS Chemical
+    Identifier Resolver", "inchi": "InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)/p+1",
+    "molecular_formula": "C12H19N4O7P2S", "retrieval_date": "2026-04-05T21:52:09.127416+00:00",
+    "smiles": "Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1"}. Preserved identifier,
+    ontology mapping and grade, roles, synonyms, counts, status and original history.
+    No mapping, role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml; before_sha256=6d6db9a0040730973f390da1e492ee4e2afa672adc95e2e526d37f99def9bc5a.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: STOCK_SOLUTION
 nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0

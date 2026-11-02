@@ -82,13 +82,31 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+    {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+    exactly match the parent ontology. Thermo official specification205010050, primary/thermo-isocitrate.pdf
+    No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+    repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+    removal concerns unqualified whole-record fields, not a claim the supplier is
+    wrong. Original chemical_properties={"cas_rn": "1637-73-6", "data_source": "CultureBotHT
+    compounds_to_cas.csv", "inchi": "InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;;;/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13);;;/q;3*+1/p-3",
+    "molecular_formula": "C6H5O7.3Na", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+    "smiles": "O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[Na+]"}. Preserved
+    identifier, ontology mapping and grade, roles, synonyms, counts, status and original
+    history. No mapping, role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml; before_sha256=16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 1637-73-6
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C6H5O7.3Na
-  inchi: InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;;;/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13);;;/q;3*+1/p-3
-  smiles: O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

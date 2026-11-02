@@ -256,14 +256,35 @@ curation_history:
     monohydrogen phosphate dihydrat (from chebi_synonym_review / #878).'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: none. Set
+    fields: {"chemical_properties.data_source": "ChEBI:91258 via EBI OLS v4 (archived
+    exact dihydrate term)", "chemical_properties.inchi": "InChI=1S/2Na.H3O4P.2H2O/c;;1-5(2,3)4;;/h;;(H3,1,2,3,4);2*1H2/q2*+1;;;/p-2",
+    "chemical_properties.retrieval_date": "2026-11-01T06:26:52.088681+00:00", "chemical_properties.smiles":
+    "O.O.O=P([O-])([O-])O.[Na+].[Na+]"}. Primary exact dihydrate ontology annotations
+    supply both two-water structures. Preserve existing CAS and formula; evidence
+    capture independently lists them. No mapping/role approval. Retrieval timestamp
+    is original archive access, not new fetch or application time. Original chemical_properties={"cas_rn":
+    "10028-24-7", "data_source": "OAK/CHEBI xref", "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+    "molecular_formula": "2H2O.HO4P.2Na", "retrieval_date": "2026-04-19T07:35:12.781730+00:00",
+    "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"}. Preserved identifier, ontology mapping
+    and grade, roles, synonyms, counts, status and original history. No mapping, role
+    or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Na2hpo4_X_2_H2o.yaml; before_sha256=42ecfeaef3b974803cd0b00916493a2741b78f6cfb3f663c3fea1f10742aabe6.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 kg_microbe_node_id: CHEBI:91258
 chemical_properties:
   cas_rn: 10028-24-7
-  data_source: OAK/CHEBI xref
-  retrieval_date: '2026-04-19T07:35:12.781730+00:00'
+  data_source: ChEBI:91258 via EBI OLS v4 (archived exact dihydrate term)
+  retrieval_date: '2026-11-01T06:26:52.088681+00:00'
   molecular_formula: 2H2O.HO4P.2Na
-  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-  smiles: O=P([O-])([O-])O.[Na+].[Na+]
+  inchi: InChI=1S/2Na.H3O4P.2H2O/c;;1-5(2,3)4;;/h;;(H3,1,2,3,4);2*1H2/q2*+1;;;/p-2
+  smiles: O.O.O=P([O-])([O-])O.[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: BUFFER

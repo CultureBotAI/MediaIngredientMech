@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
+import math
+import re
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -16,7 +19,6 @@ logger = logging.getLogger(__name__)
 
 # Cache directory for chemical properties
 CACHE_DIR = Path.home() / ".cache" / "mediaingredientmech" / "chemical_properties"
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 # API endpoints
 CHEBI_OLS_API = "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms"
@@ -56,6 +58,71 @@ class ChemicalProperties:
         return result
 
 
+@dataclass(frozen=True)
+class OlsChemicalProperties:
+    """An exact OLS retrieval and immutable schema-safe property snapshot.
+
+    This establishes source consistency, not the identity of an ingredient.
+    Record-aware callers must still compare the declared substance and form.
+    ``to_dict`` returns a new block; legacy mutable/cache properties are never
+    embedded in this envelope.
+    """
+
+    ontology_id: str
+    returned_ontology_id: str
+    label: str
+    synonyms: tuple[str, ...]
+    source_url: str
+    retrieved_at: str
+    response_sha256: str
+    property_values: tuple[tuple[str, str | float], ...]
+
+    def to_dict(self) -> dict[str, str | float]:
+        """Return a fresh properties block without adding envelope-only slots."""
+        return dict(self.property_values)
+
+
+def _unique_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    """Reject duplicate JSON keys instead of silently replacing source evidence."""
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("Duplicate OLS JSON key")
+        result[key] = value
+    return result
+
+
+def _ols_annotation_value(annotation: dict, *keys: str, numeric: bool = False):
+    """Read one agreed value across current/legacy keys; never choose the first.
+
+    Recognized keys, when present, must contain nonempty lists. Text values
+    may differ only in surrounding whitespace; masses must be finite positive
+    numbers. Repeated identical values are allowed, conflicting values refuse.
+    """
+    values: set[str | float] = set()
+    for key in keys:
+        if key not in annotation:
+            continue
+        raw_values = annotation[key]
+        if not isinstance(raw_values, list) or not raw_values:
+            raise ValueError("Malformed OLS annotation")
+        for value in raw_values:
+            if numeric:
+                if isinstance(value, bool) or not isinstance(value, (str, int, float)):
+                    raise ValueError("Malformed OLS mass")
+                parsed = float(value)
+                if not math.isfinite(parsed) or parsed <= 0:
+                    raise ValueError("Invalid OLS mass")
+                values.add(parsed)
+            else:
+                if not isinstance(value, str) or not value.strip():
+                    raise ValueError("Malformed OLS text annotation")
+                values.add(value.strip())
+    if len(values) > 1:
+        raise ValueError("Conflicting OLS annotation values")
+    return next(iter(values)) if values else None
+
+
 class ChemicalPropertiesClient:
     """Retrieve chemical properties from ChEBI and PubChem APIs."""
 
@@ -66,6 +133,86 @@ class ChemicalPropertiesClient:
             cache_enabled: Whether to use file-based caching.
         """
         self.cache_enabled = cache_enabled
+
+    def get_ols_properties(self, ontology_id: str) -> OlsChemicalProperties | None:
+        """Retrieve one exact defining ChEBI term, without cache or PubChem.
+
+        The body hashed is the same byte stream parsed. Missing/conflicting
+        term identity, obsolete/imported terms, malformed recognized annotation
+        fields and ambiguous values refuse. This does not infer ingredient or
+        hydrate identity; callers must apply record/form consistency guards.
+        Transport/HTTP errors propagate as ``requests.RequestException`` so
+        record-aware callers can distinguish provider failures from refusals.
+        """
+        if not isinstance(ontology_id, str) or not re.fullmatch(r"CHEBI:[1-9][0-9]*", ontology_id):
+            return None
+        iri = f"http://purl.obolibrary.org/obo/CHEBI_{ontology_id.split(':')[1]}"
+        url = f"{CHEBI_OLS_API}/{quote(quote(iri, safe=''), safe='')}"
+        try:
+            self._rate_limit()
+            response = requests.get(url, timeout=10, allow_redirects=False)
+            response.raise_for_status()
+            if response.status_code != 200:
+                return None
+            raw = response.content
+            if not isinstance(raw, bytes):
+                return None
+            data = json.loads(raw, object_pairs_hook=_unique_json_object)
+            if not isinstance(data, dict):
+                return None
+            if (
+                data.get("obo_id") != ontology_id
+                or data.get("iri") != iri
+                or data.get("ontology_name") != "chebi"
+                or data.get("is_defining_ontology") is not True
+                or data.get("is_obsolete") is not False
+                or data.get("ontology_prefix", "CHEBI") != "CHEBI"
+                or data.get("short_form", ontology_id.replace(":", "_"))
+                != ontology_id.replace(":", "_")
+                or data.get("term_replaced_by") is not None
+            ):
+                return None
+            label = data.get("label")
+            annotation = data.get("annotation")
+            synonyms = data.get("synonyms", [])
+            if not isinstance(label, str) or not label.strip() or not isinstance(annotation, dict):
+                return None
+            if not isinstance(synonyms, list) or any(
+                not isinstance(value, str) or not value.strip() for value in synonyms
+            ):
+                return None
+            if "id" in annotation and _ols_annotation_value(annotation, "id") != ontology_id:
+                return None
+            formula = _ols_annotation_value(
+                annotation, "generalized_empirical_formula", "formula", "has_molecular_formula"
+            )
+            smiles = _ols_annotation_value(annotation, "smiles_string", "smiles", "SMILES")
+            inchi = _ols_annotation_value(annotation, "inchi_string", "inchi", "InChI")
+            mass = _ols_annotation_value(annotation, "mass", numeric=True)
+            if not any(value is not None for value in (formula, smiles, inchi, mass)):
+                return None
+            retrieved_at = datetime.now(timezone.utc).isoformat()
+            properties = ChemicalProperties(
+                molecular_formula=formula,
+                smiles=smiles,
+                inchi=inchi,
+                molecular_weight=mass,
+                data_source=f"ChEBI {ontology_id}; {url}",
+                retrieval_date=retrieved_at,
+            )
+            return OlsChemicalProperties(
+                ontology_id=ontology_id,
+                returned_ontology_id=data["obo_id"],
+                label=label.strip(),
+                synonyms=tuple(dict.fromkeys(value.strip() for value in synonyms)),
+                source_url=url,
+                retrieved_at=retrieved_at,
+                response_sha256=hashlib.sha256(raw).hexdigest(),
+                property_values=tuple(properties.to_dict().items()),
+            )
+        except (ValueError, TypeError, OverflowError) as exc:
+            logger.warning("Strict OLS properties refused for %s: %s", ontology_id, exc)
+            return None
 
     def get_properties(
         self,
@@ -317,6 +464,7 @@ class ChemicalPropertiesClient:
         """Save properties to cache."""
         cache_path = self._get_cache_path(ontology_id)
         try:
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
             with open(cache_path, "w") as f:
                 json.dump(props.to_dict(), f, indent=2)
         except OSError as e:

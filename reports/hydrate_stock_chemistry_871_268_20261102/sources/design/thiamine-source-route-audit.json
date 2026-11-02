@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-11-02T04:12:04.698250+00:00",
+  "command": [
+    "rg",
+    "--no-ignore",
+    "--hidden",
+    "--line-number",
+    "--fixed-strings",
+    "-e",
+    "154-87-0",
+    "-e",
+    "0.2% Thiamine",
+    "-e",
+    "0_2_thiamine_pyrophosphate",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/reports/yaml_record_review/02_Thiamine_Pyrophosphate.md",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/mappings/culturemech_recipe_membership.tsv",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/mappings/record_research_validation.tsv"
+  ],
+  "exit_code": 0,
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+      "sha256": "6d6db9a0040730973f390da1e492ee4e2afa672adc95e2e526d37f99def9bc5a",
+      "bytes": 6168
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+      "sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad",
+      "bytes": 10471
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/reports/yaml_record_review/02_Thiamine_Pyrophosphate.md",
+      "sha256": "8fcd68e8822c922beecc2ae4814c512659b6db519e8216d64783a048258aeaf4",
+      "bytes": 7299
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/mappings/culturemech_recipe_membership.tsv",
+      "sha256": "777effdf97560aae1f266eb47770b3144947f5ad4f764a6dfe12845b8455ff75",
+      "bytes": 6756977
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7a/mappings/record_research_validation.tsv",
+      "sha256": "7e1b339c20eb07c163d4bacf36fe4f45b6e2132b83359932683ad6dddf467799",
+      "bytes": 372393
+    }
+  ],
+  "ignored_and_hidden_included": true,
+  "coverage": "Exact current owner and pure sibling, the linked historical record review, current recipe membership and research-validation source references. Not an exhaustive search of every historical report/archive or upstream CultureMech recipe.",
+  "facts": [
+    "CAS import is recorded as NCI CACTUS name lookup on the concentration-qualified stock label.",
+    "The maintained #288/#320 ruling independently distinguishes this stock from CHEBI:9532 and identifies CAS154-87-0 as the chloride.",
+    "The current membership identifies CultureMech:007897 with one occurrence; the membership table contains no formulation-specific CAS evidence.",
+    "Cayman20254 full PDF identifies CAS154-87-0 with the pure chloride solid; preparing an aqueous solution is a separate operation.",
+    "The historical review explicitly flags the CAS/property block as pure-compound scope. Historical stale-node criticism is already resolved by Step7a and is not repeated as current."
+  ],
+  "conclusion": "Remove mis-scoped whole-stock CAS and other pure-compound properties, preserve original lookup/history in preimages and a new event. No independent stock-specific CAS assertion was found in these inspected references; no global absence claim is made.",
+  "not_established": [
+    "actual stock supplier",
+    "solvent",
+    "percentage basis",
+    "specific solute salt used",
+    "component amounts",
+    "scientific approval of the stock or its role"
+  ],
+  "recommended_sssom": "Remove CAS:154-87-0 from row9 other using native generation and guarded bounded synchronization; retain WITHHOLD and do not transfer this CAS to an invented component."
+}

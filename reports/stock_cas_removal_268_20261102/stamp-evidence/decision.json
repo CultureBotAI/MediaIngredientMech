@@ -1,0 +1,119 @@
+{
+  "status": "DECISION_RECOMMEND_EXPLICIT_SINGLE_ROW_STAMP_CLEAR",
+  "at": "2026-11-02T05:35:19.155989+00:00",
+  "reviewer": "/root/step7a_final_adversarial",
+  "subject": "MIM:02_Thiamine_Pyrophosphate",
+  "canonical_position": 9,
+  "current_validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07",
+  "native_observed_behavior": {
+    "producer_commit": "33be66ab1b993e2a47792c13daa3e4f39635f2cb",
+    "builder_sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc",
+    "probe_sha256": "e9e48f6ac9d5712cf24cb37f97ee0c9fe2ed7ff3600ea996bf648e04533eb9a5",
+    "probe_scope": "In-memory source proposal with synthetic2030 timestamp; not an actual generated artifact or approval.",
+    "same_triple_replay": [
+      "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07",
+      "replayed"
+    ],
+    "historical_old_object_to_new_stock_policy": [
+      null,
+      "absent"
+    ],
+    "native_probe_changed_fields": [
+      "mapping_date",
+      "other",
+      "source"
+    ],
+    "native_produced_blank": false
+  },
+  "historical_fact": {
+    "identity_change_commit": "14f7ab71204d1307a0ffaccaf3c614eabfd0d990",
+    "old_object": "CHEBI:9532",
+    "new_object": "kgmicrobe.ingredient:0_2_thiamine_pyrophosphate",
+    "prior_stamp_date": "2026-07-07",
+    "recorded_stock_identity_date": "2026-08-13T00:00:00+00:00",
+    "stale_stamp_survived_object_change_in_actual_git_history": true,
+    "historical_rows_sha256": "c2ebfa5a8f74c2065ca5bb550c6f77da97a08a911adc6e4cc484946322046cc1",
+    "identity_history_sha256": "3f8fe217199dedebff7cdc1eaf7e0b8497c9e5acdac7aa3fd0f1346f23356899"
+  },
+  "basis": [
+    {
+      "source": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "sections": [
+        "0: method evidence must agree with current target; concentration-qualified preparations are not regraded pure compounds",
+        "3: one record per distinct substance; identity/form scope must remain specific"
+      ],
+      "interpretation": "The authoritative identity rules and existing reviewed stock ruling distinguish this preparation from CHEBI:9532. MAPPING_SEMANTICS does not directly specify a stamp-erasure algorithm; the recommendation follows the recorded stamp/object semantics and historical evidence."
+    },
+    {
+      "source": "Claw scripts/build_mim_ingredient_sssom.py",
+      "lines": [
+        374,
+        376,
+        457,
+        491,
+        508,
+        1471,
+        1495
+      ],
+      "interpretation": "Stamps are object-level verdicts, stored on emitted rows and replayed without revalidation. Exact-key replay preserves existing metadata. Historical object changes are not carried by the current pure replay policy."
+    },
+    {
+      "source": ".claude/skills/review-sssom-output/SKILL.md",
+      "sha256": "2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5",
+      "lines": [
+        125,
+        128
+      ],
+      "interpretation": "validation_method holds the final validation stamp; historical provenance belongs in source/evidence, not an active misleading verdict."
+    }
+  ],
+  "options": [
+    {
+      "option": "Retain the stamp as historical and explain its provenance elsewhere",
+      "advantages": [
+        "Preserves the current native replay result literally."
+      ],
+      "limitations": [
+        "The active validation_method still claims a ChEBI object/synonym verdict on a stock registry object, despite direct evidence it predates the re-grounding.",
+        "The six retained aliases are unresolved, so this column must not be read as their current stock-scope validation."
+      ],
+      "recommended": false
+    },
+    {
+      "option": "Explicitly clear only row9 validation_method in the bounded canonical projection",
+      "advantages": [
+        "Removes a demonstrably stale old-object verdict without inventing a replacement validation method.",
+        "Preserves original stamp, object, timing and row in durable preimage/history/receipt evidence."
+      ],
+      "limitations": [
+        "This is an explicit MIM canonical curation override; the raw native candidate continues to contain the replayed nonblank stamp.",
+        "Requires issue268 decision/provenance recording and a narrow regression/receipt assertion before promotion."
+      ],
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "validation_method_after": "",
+    "scope": "Only row9; preserve subject/predicate/object, confidence/justification, the six unresolved aliases and WITHHOLD disposition. CAS removal and actual generated source/date synchronization are separate already-scoped deltas.",
+    "required_evidence": [
+      "Preserve exact original row/stamp and historical re-grounding proof.",
+      "Record the reason as stale July ChEBI stamp carried across August stock identity change; not newly failed science or a new approval.",
+      "Test that the native candidate retains the known prior stamp and the explicit projection clears only this row.",
+      "Inspect actual native generation before deriving mapping_date/source/header changes; never publish the synthetic2030 probe date.",
+      "Keep all other validation stamps unchanged and do not use a global no-preserve-validation switch."
+    ],
+    "six_aliases": "Retained unchanged as documented unresolved source state; this decision neither validates nor newly rejects them.",
+    "mapping_disposition_after": "WITHHOLD"
+  },
+  "current_scoped_inputs_unchanged": {
+    "canonical_sha256": "92faaffd55ba44d94df02e71febd71c4b9b24c30955735512cd332eae464f684",
+    "base": "b162cb9c567db34296125230b997f5459f44d185"
+  },
+  "scientific_approval_added": false,
+  "supervisor_binding": null,
+  "limitations": [
+    "No canonical edits, source edits, GitHub mutations, provider calls or fresh scientific research.",
+    "This is a bounded metadata/provenance policy recommendation; not review of the promoter implementation or final candidate."
+  ]
+}

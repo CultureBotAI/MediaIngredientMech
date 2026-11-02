@@ -75,11 +75,31 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+    {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+    exactly match the parent ontology. Sigma C6143 official PDF extraction, primary/web-primary-1.txt
+    No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+    repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+    removal concerns unqualified whole-record fields, not a claim the supplier is
+    wrong. C6143 names a hydrate but gives an anhydrous-looking formula without specifying
+    water stoichiometry; that ambiguity remains explicit. Original chemical_properties={"cas_rn":
+    "56-95-1", "data_source": "CultureBotHT compounds_to_cas.csv", "inchi": "InChI=1S/C22H30Cl2N10.2C2H4O2/c23-15-5-9-17(10-6-15)31-21(27)33-19(25)29-13-3-1-2-4-14-30-20(26)34-22(28)32-18-11-7-16(24)8-12-18;2*1-2(3)4/h5-12H,1-4,13-14H2,(H5,25,27,29,31,33)(H5,26,28,30,32,34);2*1H3,(H,3,4)",
+    "molecular_formula": "C22H30Cl2N10.2C2H4O2", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+    "smiles": "CC(=O)O.CC(=O)O.N=C(NCCCCCCNC(=N)NC(=N)Nc1ccc(Cl)cc1)NC(=N)Nc1ccc(Cl)cc1"}.
+    Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+    and original history. No mapping, role or release approval. Exact preimage and
+    evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml; before_sha256=3c7a19294fe9b1e9f5197639a7d9f00e3a10ddd755fe5e3be95a52c8bcc42304.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 56-95-1
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C22H30Cl2N10.2C2H4O2
-  inchi: InChI=1S/C22H30Cl2N10.2C2H4O2/c23-15-5-9-17(10-6-15)31-21(27)33-19(25)29-13-3-1-2-4-14-30-20(26)34-22(28)32-18-11-7-16(24)8-12-18;2*1-2(3)4/h5-12H,1-4,13-14H2,(H5,25,27,29,31,33)(H5,26,28,30,32,34);2*1H3,(H,3,4)
-  smiles: CC(=O)O.CC(=O)O.N=C(NCCCCCCNC(=N)NC(=N)Nc1ccc(Cl)cc1)NC(=N)Nc1ccc(Cl)cc1
 ingredient_type: SINGLE_INGREDIENT

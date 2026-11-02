@@ -19,6 +19,11 @@ from typing import Any
 
 import requests
 
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.curation.chemical_properties_guard import (
+    chemistry_preflight,
+    prepare_chemical_properties,
+)
 from mediaingredientmech.utils.ontology_client import OntologyClient
 from mediaingredientmech.validation.kg_microbe_dict import KgMicrobeDict
 
@@ -395,16 +400,30 @@ class IngredientReviewer:
 
         # Filter by correction types if specified
         if correction_types:
-            safe_suggestions = [s for s in safe_suggestions if s.action in correction_types]
+            # The documented public name differs from the suggestion action (#1097).
+            selected = {
+                "enrich_properties" if name == "chemical_properties" else name
+                for name in correction_types
+            }
+            safe_suggestions = [s for s in safe_suggestions if s.action in selected]
 
         # Apply suggestions
         for suggestion in safe_suggestions:
             if suggestion.action == "enrich_properties":
-                ontology_id = corrected.get("ontology_mapping", {}).get("ontology_id")
-                if ontology_id and ontology_id.startswith("CHEBI:"):
-                    props = self.enrich_from_ols(ontology_id)
-                    if props:
-                        corrected["chemical_properties"] = props
+                # Suggestions are diagnostics, not authority: recheck current scope
+                # and existing chemistry at the actual application boundary.
+                proposal, explanation = prepare_chemical_properties(corrected)
+                if proposal:
+                    corrected["chemical_properties"] = proposal
+                    # auto_correct returns a shallow copy; history must not alias
+                    # the caller's original list when recording this new addition.
+                    corrected["curation_history"] = list(corrected.get("curation_history") or [])
+                    record_curation_event(
+                        corrected,
+                        curator="IngredientReviewer.auto_correct",
+                        action="AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                        changes=explanation,
+                    )
 
             elif suggestion.action == "add_synonym":
                 if "synonyms" not in corrected:
@@ -446,8 +465,9 @@ class IngredientReviewer:
 
         Example:
             props = reviewer.enrich_from_ols("CHEBI:26710")
-            if props:
-                ingredient['chemical_properties'] = props
+            # Raw retrieval is for inspection only. For record writes use
+            # auto_correct(ingredient, correction_types=["chemical_properties"]),
+            # which rechecks declared scope, form and existing chemistry.
         """
         if not ontology_id or not ontology_id.startswith("CHEBI:"):
             return None
@@ -758,7 +778,7 @@ class IngredientReviewer:
 
         # P3.1: Missing chemical properties
         if ontology_id and ontology_id.startswith("CHEBI:"):
-            chem_props = ingredient_record.get("chemical_properties", {})
+            chem_props = ingredient_record.get("chemical_properties") or {}
             missing_props = []
 
             if not chem_props.get("smiles"):
@@ -785,9 +805,15 @@ class IngredientReviewer:
                         field_path="chemical_properties",
                         current_value=chem_props,
                         suggested_value="<fetch from OLS>",
-                        auto_correctable=True,
+                        auto_correctable=not chem_props
+                        and chemistry_preflight(ingredient_record) is None,
                         confidence=1.0,
-                        rationale="Enrich from EBI OLS API",
+                        rationale=(
+                            "EXISTING_CHEMISTRY"
+                            if chem_props
+                            else chemistry_preflight(ingredient_record)
+                            or "Eligible empty block; exact OLS source/form evidence still required at apply time"
+                        ),
                     )
                 )
 

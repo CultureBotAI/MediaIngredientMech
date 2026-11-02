@@ -1,5 +1,6 @@
 """#875 couples exact-form identity, rejection scope and auditable mapping changes."""
 
+import copy
 import csv
 import importlib.util
 import io
@@ -487,15 +488,92 @@ def test_reserved_evidence_replacement_refuses_with_native_transaction(
                 assert journal["previous"][str(root / path)].encode() == data
 
 
-def test_issue875_committed_surfaces_use_exact_ncit_identity():
-    """Becomes green only after root applies, synchronizes and regenerates."""
+def assert_issue875_record_contract(record):
+    """Preserve #875's exact receipt-bound history while allowing later curation."""
+    before_bytes = (ROOT / "tests/fixtures/issue875-owner-before.yaml").read_bytes()
+    assert writer.digest(before_bytes) == writer.OWNER_BEFORE
+    before = yaml.safe_load(before_bytes)
+    history = record["curation_history"]
+    event_index = len(before["curation_history"])
+    assert len(history) > event_index, "Missing original #875 event"
+    expected_bytes = writer.corrected_record(
+        before_bytes, timestamp=history[event_index]["timestamp"]
+    )
+    receipt = json.loads((ROOT / (
+        "reports/ncit_heptahydrate_875_20261101/"
+        "execution/application/source-apply.json"
+    )).read_bytes())
+    [owner] = [r for r in receipt["records"] if r["source_record"] == str(writer.OWNER)]
+    # The immutable receipt also pins the original event timestamp; do not merely
+    # accept whichever timestamp a future live record supplies.
+    assert writer.digest(expected_bytes) == owner["after_yaml_sha256"]
+    expected = yaml.safe_load(expected_bytes)
+    assert history[:event_index + 1] == expected["curation_history"]
+    for key in ("identifier", "preferred_term", "mapping_status", "physicochemical_roles"):
+        assert record[key] == expected[key], key
+    for key, value in writer.NEW_MAPPING.items():
+        assert record["ontology_mapping"][key] == value, key
+    evidence = expected["ontology_mapping"]["evidence"]
+    assert record["ontology_mapping"]["evidence"][:len(evidence)] == evidence
+    for key in ("cas_rn", "molecular_formula"):
+        assert record["chemical_properties"][key] == expected["chemical_properties"][key], key
+
+
+def test_issue875_contract_allows_later_history_and_separately_reviewed_chemistry():
+    record = yaml.safe_load((ROOT / writer.OWNER).read_bytes())
+    later = copy.deepcopy(record)
+    # Fixture-only retirement demonstrates scope, not scientific approval of a
+    # later correction. Exact #871/#268 chemistry has its own fifteen-owner tests.
+    later["chemical_properties"].pop("inchi", None)
+    later["chemical_properties"].pop("smiles", None)
+    later["curation_history"].append({
+        "timestamp": "2030-01-02T00:00:00+00:00", "curator": "test fixture",
+        "action": "LATER_CHEMISTRY_REVIEW", "changes": "Fixture-only structure retirement",
+        "previous_status": "MAPPED", "new_status": "MAPPED", "llm_assisted": False,
+    })
+    assert_issue875_record_contract(later)
+
+
+@pytest.mark.parametrize("change", [
+    "old_history", "deleted_history", "deleted_event", "event", "event_timestamp",
+    "identity", "grounding", "mapping_grade", "mapping_evidence", "roles", "cas", "formula",
+])
+def test_issue875_contract_rejects_lost_or_changed_enduring_invariants(change):
     record = yaml.safe_load((ROOT / writer.OWNER).read_bytes())
     before = yaml.safe_load((ROOT / "tests/fixtures/issue875-owner-before.yaml").read_bytes())
-    assert record["identifier"] == record["ontology_mapping"]["ontology_id"] == writer.NEW
-    assert record["ontology_mapping"]["mapping_quality"] == "EXACT_MATCH"
-    assert record["curation_history"][:-1] == before["curation_history"]
-    assert record["chemical_properties"] == before["chemical_properties"]
-    assert record["physicochemical_roles"] == before["physicochemical_roles"]
+    event_index = len(before["curation_history"])
+    if change == "old_history":
+        record["curation_history"][0]["changes"] = "Altered earlier history"
+    elif change == "deleted_history":
+        del record["curation_history"][0]
+    elif change == "deleted_event":
+        del record["curation_history"][event_index]
+    elif change == "event":
+        record["curation_history"][event_index]["changes"] = "Altered #875 event"
+    elif change == "event_timestamp":
+        record["curation_history"][event_index]["timestamp"] = "2030-01-01T00:00:00+00:00"
+    elif change == "identity":
+        record["identifier"] = writer.OLD
+    elif change == "grounding":
+        record["ontology_mapping"]["ontology_id"] = writer.PARENT
+    elif change == "mapping_grade":
+        record["ontology_mapping"]["mapping_quality"] = "CLOSE_MATCH"
+    elif change == "mapping_evidence":
+        record["ontology_mapping"]["evidence"].pop(0)
+    elif change == "roles":
+        record["physicochemical_roles"] = []
+    elif change == "cas":
+        record["chemical_properties"]["cas_rn"] = "7558-79-4"
+    else:
+        record["chemical_properties"]["molecular_formula"] = "Na2HPO4"
+    with pytest.raises(AssertionError):
+        assert_issue875_record_contract(record)
+
+
+def test_issue875_committed_surfaces_use_exact_ncit_identity():
+    """Check enduring #875 invariants, not its superseded immediate postimage (#1107)."""
+    record = yaml.safe_load((ROOT / writer.OWNER).read_bytes())
+    assert_issue875_record_contract(record)
     ledger = list(csv.DictReader((ROOT / writer.LEDGER).open(), delimiter="\t"))
     held = [r for r in ledger if r["ingredient_name"] == writer.NAME]
     assert len(held) == 1 and held[0]["mim_id"] == writer.NEW and held[0]["rejected_id"] == writer.PARENT
