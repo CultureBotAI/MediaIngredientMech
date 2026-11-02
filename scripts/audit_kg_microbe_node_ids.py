@@ -1,4 +1,4 @@
-"""Gate stale same-prefix kg_microbe_node_id values (#554).
+"""Gate stale same-prefix and specifically reviewed kg_microbe_node_id values.
 
 `identifier` is the record's semantic identity. `kg_microbe_node_id` is a
 compatibility copy consumed by downstream graph exports. When a same-prefix
@@ -7,8 +7,10 @@ files keep pointing at the old term even though the curated record has moved.
 
 Cross-prefix differences are possible and need human review: those values may be
 intentional local anchors for an external ontology identity. This checker writes
-every mismatch to reports/kg_microbe_node_id_mismatches.tsv, but `--check` only
-fails on same-prefix mismatches that are always stale drift.
+every mismatch to reports/kg_microbe_node_id_mismatches.tsv. `--check` fails on
+same-prefix mismatches and the five stale pairs reviewed in #870. Other
+cross-prefix mismatches remain report-only; unequal prefixes alone do not prove
+an identity error. This source gate does not repair the frozen unified snapshot.
 """
 
 from __future__ import annotations
@@ -41,6 +43,18 @@ FIELDS = [
 ]
 
 PREFIX_RE = re.compile(r"^([A-Za-z][A-Za-z0-9.]*):")
+
+# Five reviewed pairs cover six owners, including two rejected tombstones.
+# Decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/870#issuecomment-6566860803
+REVIEWED_STALE_PAIRS = frozenset(
+    {
+        ("FOODON:03315719", "CHEBI:78020"),
+        ("FOODON:03420180", "CHEBI:3448"),
+        ("kgmicrobe.ingredient:0_2_thiamine_pyrophosphate", "CHEBI:9532"),
+        ("kgmicrobe.ingredient:fish-sperm_dna", "CHEBI:16991"),
+        ("FOODON:03315720", "CHEBI:8150"),
+    }
+)
 
 
 class DataProblem(Exception):
@@ -141,7 +155,7 @@ def main() -> int:
     ap.add_argument(
         "--check",
         action="store_true",
-        help="exit 2 when a same-prefix kg_microbe_node_id disagrees with identifier",
+        help="exit 2 on same-prefix mismatches or the specifically reviewed stale pairs",
     )
     args = ap.parse_args()
 
@@ -155,18 +169,27 @@ def main() -> int:
 
     same_prefix = [row for row in rows if row["mismatch_type"] == "same_prefix"]
     cross_prefix = [row for row in rows if row["mismatch_type"] == "cross_prefix"]
+    reviewed_stale = [
+        row
+        for row in cross_prefix
+        if (row["identifier"], row["kg_microbe_node_id"]) in REVIEWED_STALE_PAIRS
+    ]
     print(f"{len(rows)} kg_microbe_node_id mismatch(es)")
     print(f"  {len(same_prefix)} same-prefix mismatch(es)")
     print(f"  {len(cross_prefix)} cross-prefix mismatch(es)")
-    for row in same_prefix:
+    print(f"  {len(reviewed_stale)} reviewed stale cross-prefix mismatch(es) (#870)")
+    for row in same_prefix + reviewed_stale:
         print(
             "  "
             f"{row['collection']}\t{row['preferred_term']}\t"
             f"{row['kg_microbe_node_id']} -> {row['identifier']}"
         )
 
-    if args.check and same_prefix:
-        print(f"ERROR: {len(same_prefix)} same-prefix kg_microbe_node_id mismatch(es)")
+    if args.check and (same_prefix or reviewed_stale):
+        print(
+            f"ERROR: {len(same_prefix)} same-prefix and {len(reviewed_stale)} reviewed stale "
+            "kg_microbe_node_id mismatch(es)"
+        )
         return 2
     return 0
 

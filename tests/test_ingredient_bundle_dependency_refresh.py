@@ -1164,3 +1164,777 @@ def test_cli_explicit_projection_requires_manifest_transition(
         assert "Form projection requested without a changed policy manifest" in completed.stderr
         assert all(not (tmp_path / name).exists() for name in outputs)
     assert all((tmp_path / name).read_bytes() == data for name, data in current.items())
+
+
+def registry_owner_documents():
+    """Real frozen preimages; no optional LinkML runtime or live corpus dependency."""
+    import ast
+
+    from mediaingredientmech import registry_correction_refresh as registry
+
+    constants = {
+        item.targets[0].id: ast.literal_eval(item.value)
+        for item in ast.parse((ROOT / "scripts/correct_izalpinin_cas.py").read_text()).body
+        if isinstance(item, ast.Assign)
+        and isinstance(item.targets[0], ast.Name)
+        and item.targets[0].id in {"VERIFICATION", "CHANGE", "EVIDENCE_SOURCE"}
+    }
+    packets = {name: read_json((ROOT / name).read_bytes()) for name in registry.PACKETS}
+    node_packet = packets[registry.NODE_PACKET]
+    old = {
+        name: (ROOT / item["preimage"]).read_bytes() for name, item in node_packet["owners"].items()
+    }
+    old[registry.CAS_OWNER] = (
+        ROOT / "reports/izalpinin_registry_753_20261101/preimages/Izalpinin.yaml"
+    ).read_bytes()
+    stamp = "2026-11-02T02:00:00+00:00"
+    new = {}
+    for name, raw in old.items():
+        data = yaml.safe_load(raw)
+        if name == registry.CAS_OWNER:
+            action, curator, changes = "CORRECTED_EXISTING_CAS_VALUE", "claude", constants["CHANGE"]
+            data["identifier"] = data["ontology_mapping"]["ontology_id"] = "cas:480-14-8"
+            data["ontology_mapping"]["evidence"].append(
+                dict(
+                    evidence_type="DATABASE_MATCH",
+                    source=constants["EVIDENCE_SOURCE"],
+                    notes=constants["VERIFICATION"],
+                )
+            )
+            data["chemical_properties"].update(
+                cas_rn="480-14-8", data_source=constants["EVIDENCE_SOURCE"], retrieval_date=stamp
+            )
+        else:
+            action, curator = "REMOVED_STALE_KG_MICROBE_NODE_ID", "Codex"
+            node, identity = data.pop("kg_microbe_node_id"), data["identifier"]
+            changes = (
+                f"Removed stale kg_microbe_node_id {node} after the recorded "
+                f"identity correction to {identity} (#870). Preserved primary "
+                "identity, ontology mapping, chemistry, synonyms, roles, counts, status "
+                "and existing tombstone metadata. Source-only correction: the fixed "
+                "unified snapshot still contains the documented 21 stale cells in 15 "
+                "rows; #870 remains open. No mapping, role or release approval. "
+                f"Decision: {node_packet['decision_url']}; evidence: {registry.NODE_PACKET} "
+                f"sha256={registry.PACKETS[registry.NODE_PACKET]}."
+            )
+        data["curation_history"].append(
+            dict(
+                timestamp=stamp,
+                curator=curator,
+                action=action,
+                changes=changes,
+                previous_status=data["mapping_status"],
+                new_status=data["mapping_status"],
+                llm_assisted=True,
+                llm_model="gpt-6",
+            )
+        )
+        new[name] = yaml.safe_dump(data, sort_keys=False, allow_unicode=True).encode()
+    return old, new, packets
+
+
+@pytest.fixture
+def registry_correction(cohort, tmp_path):
+    """Complete native history, old FORM history, exact seven source preimages."""
+    from mediaingredientmech import registry_correction_refresh as registry
+    from mediaingredientmech.curie import mim_curie_for_stem
+    from mediaingredientmech.validation import mapping_change_receipts as chain
+
+    prior, before, _, contracts = deepcopy(cohort)
+    before.pop(EXTRA_OWNER)
+    prior["inputs"].pop(EXTRA_OWNER)
+    old_owners, new_owners, packets = registry_owner_documents()
+    metadata, fields, rows = _base_table(before[SOURCE])
+    rows[-1] = read_json(
+        (
+            ROOT / "reports/izalpinin_registry_753_20261101/preimages/mapping-before.json"
+        ).read_bytes()
+    )["row"]
+    positions = {len(rows): registry.CAS_OWNER}
+    # Four active node owners produce five rows, including the thiamine registry sibling.
+    for name in list(registry.NODE_OWNERS)[:4]:
+        data = yaml.safe_load(old_owners[name])
+        row = dict.fromkeys(fields, "")
+        row.update(
+            subject_id=mim_curie_for_stem(Path(name).stem),
+            subject_label=data["preferred_term"],
+            object_id=data["identifier"],
+            object_label=data["preferred_term"],
+            predicate_id="skos:exactMatch",
+            mapping_date="2026-05-02",
+            object_source="fixture",
+        )
+        rows.append(row)
+        positions[len(rows)] = name
+        if "02_Thiamine" in name:
+            rows.append(dict(row, object_id="CHEBI:9532", predicate_id="skos:broadMatch"))
+            positions[len(rows)] = name
+    latest = max(r["mapping_date"] for r in rows)
+    metadata.update(mapping_date=latest, mapping_set_version=latest)
+    before[SOURCE] = table_bytes(metadata, fields, rows)
+    base = read_json(before[prior["base_review"]])
+    evidence = read_json(before[EVIDENCE])
+    base["decisions"] = base["decisions"][:-1]
+    base["record_inputs"].pop(EXTRA_OWNER)
+    evidence["entries"].pop("unselected-fixture")
+    for position, owner in positions.items():
+        key = "registry-fixture-" + str(position)
+        decision = dict(
+            source_position=position,
+            owner_record=owner,
+            row_sha256=content_sha256(refresh.canonical_json(rows[position - 1])),
+            disposition="WITHHOLD",
+            review_reason="Fixture retains scientific hold",
+            review_evidence=EVIDENCE,
+            evidence_key=key,
+        )
+        base["decisions"].append(decision)
+        proof = {
+            k: v
+            for k, v in decision.items()
+            if k not in {"source_position", "review_evidence", "evidence_key"}
+        }
+        proof["owner_record_sha256"] = content_sha256(old_owners[owner])
+        evidence["entries"][key] = proof
+        base["record_inputs"][owner] = content_sha256(old_owners[owner])
+    before[EVIDENCE] = refresh.encode(evidence)
+    base["inputs"][EVIDENCE] = content_sha256(before[EVIDENCE])
+    base["source_sha256"] = content_sha256(before[SOURCE])
+    before[prior["base_review"]] = refresh.encode(base)
+    for name in (SOURCE, EVIDENCE):
+        prior["inputs"][name] = content_sha256(before[name])
+    prior["base_review_sha256"] = content_sha256(before[prior["base_review"]])
+    for name in (refresh.POLICY_SIDECAR, refresh.POLICY_BASELINE):
+        before[name] = b"fixture policy\n"
+        prior["inputs"][name] = content_sha256(before[name])
+    manifest = dict(
+        schema_version=1,
+        policy_version="owned-name-policy-v1",
+        approval="NONE: fixture",
+        scope="Synthetic history, not approval",
+        decisions=[],
+        policy_evidence=[],
+        producer_revision="a" * 40,
+        generation_manifest_sha256="a" * 64,
+        generation_receipt_sha256="b" * 64,
+        source_receipt_sha256="c" * 64,
+        sssom_before_sha256="d" * 64,
+        baseline_before_sha256="e" * 64,
+        source_owner_sha256={p: content_sha256(raw) for p, raw in old_owners.items()},
+        artifacts={
+            p: content_sha256(before[p])
+            for p in (SOURCE, refresh.POLICY_SIDECAR, refresh.POLICY_BASELINE)
+        },
+        form_projection_updates=[
+            {"history": "First immutable FORM update"},
+            {"history": "Second immutable FORM update"},
+        ],
+    )
+    before[refresh.POLICY_MANIFEST] = refresh.encode(manifest)
+    prior["inputs"][refresh.POLICY_MANIFEST] = content_sha256(before[refresh.POLICY_MANIFEST])
+    current = dict(before)
+    new_rows = deepcopy(rows)
+    cas_position = next(p for p, n in positions.items() if n == registry.CAS_OWNER)
+    new_rows[cas_position - 1].update(
+        object_id="cas:480-14-8",
+        other="CAS:480-14-8",
+        mapping_date="2026-11-02",
+        source="MIM:CultureBotHT|MIM:" + registry.CAS_SOURCE + "|MIM:curator=claude",
+        validation_method="",
+    )
+    metadata.update(mapping_date="2026-11-02", mapping_set_version="2026-11-02")
+    current[SOURCE] = table_bytes(metadata, fields, new_rows)
+    new_base, new_evidence = deepcopy(base), deepcopy(evidence)
+    for decision in new_base["decisions"]:
+        owner = decision["owner_record"]
+        if owner not in old_owners:
+            continue
+        decision["row_sha256"] = content_sha256(
+            refresh.canonical_json(new_rows[decision["source_position"] - 1])
+        )
+        item = new_evidence["entries"][decision["evidence_key"]]
+        item.update(
+            row_sha256=decision["row_sha256"], owner_record_sha256=content_sha256(new_owners[owner])
+        )
+        new_base["record_inputs"][owner] = content_sha256(new_owners[owner])
+    current[EVIDENCE] = refresh.encode(new_evidence)
+    new_base["inputs"][EVIDENCE] = content_sha256(current[EVIDENCE])
+    new_base["source_sha256"] = content_sha256(current[SOURCE])
+    current[prior["base_review"]] = refresh.encode(new_base)
+    update = dict(
+        issue=753,
+        scope="Bounded CAS correction and six source pointer removals",
+        approval="NONE: retain WITHHOLD",
+        prior_manifest_sha256=content_sha256(before[refresh.POLICY_MANIFEST]),
+        source_record=registry.CAS_OWNER,
+        owner_before_sha256=content_sha256(old_owners[registry.CAS_OWNER]),
+        owner_after_sha256=content_sha256(new_owners[registry.CAS_OWNER]),
+        source_receipt="/captured/source.json",
+        source_receipt_sha256="1" * 64,
+        generation_manifest_sha256="2" * 64,
+        generation_receipt_sha256="3" * 64,
+        sssom_before_sha256=content_sha256(before[SOURCE]),
+        sssom_after_sha256=content_sha256(current[SOURCE]),
+        sidecar_sha256=content_sha256(before[refresh.POLICY_SIDECAR]),
+        baseline_sha256=content_sha256(before[refresh.POLICY_BASELINE]),
+    )
+    new_manifest = deepcopy(manifest)
+    new_manifest["registry_correction_updates"] = [update]
+    new_manifest["artifacts"][SOURCE] = content_sha256(current[SOURCE])
+    new_manifest["source_owner_sha256"][registry.CAS_OWNER] = content_sha256(
+        new_owners[registry.CAS_OWNER]
+    )
+    current[refresh.POLICY_MANIFEST] = refresh.encode(new_manifest)
+
+    def write(name, raw):
+        path = tmp_path / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(raw)
+
+    for name, raw in (before | contracts | old_owners).items():
+        write(name, raw)
+    write("history/prior.json", refresh.encode(prior))
+    for name in registry.VERIFIERS + registry.FORM_REVIEWS:
+        write(name, (ROOT / name).read_bytes())
+    for name, packet in packets.items():
+        write(name, (ROOT / name).read_bytes())
+        for path in packet["files"]:
+            write(path, (ROOT / path).read_bytes())
+    # A metadata-only historical receipt proves that a self-consistent rewrite
+    # of the prefix must still be rejected against the durable Git baseline.
+    prehistory_sha = content_sha256(before[SOURCE] + b"# historical metadata\n")
+    write(
+        chain.BASELINE,
+        refresh.encode(dict(schema_version=1, source_sha256=prehistory_sha, rows=rows)),
+    )
+    for name in (chain.TRAIT_REFRESH, chain.PARENT_REFRESH):
+        write(
+            name,
+            refresh.encode(
+                dict(
+                    schema_version=1,
+                    before_sha256=prehistory_sha,
+                    after_sha256=prehistory_sha,
+                    row_count=len(rows),
+                    changed_rows=0,
+                    changes=[],
+                )
+            ),
+        )
+    prefix = dict(
+        schema_version=1,
+        sequence=1,
+        batch="historical-prefix",
+        approval="NONE: fixture",
+        issue="fixture",
+        before_sha256=prehistory_sha,
+        after_sha256=content_sha256(before[SOURCE]),
+        before_row_count=len(rows),
+        after_row_count=len(rows),
+        changed_rows=0,
+        added_rows=0,
+        removed_rows=0,
+        position_map=list(range(1, len(rows) + 1)),
+        touched_subjects=[],
+        changes=[],
+        records=[],
+    )
+    write(chain.RECEIPTS_DIR + "/prefix.json", refresh.encode(prefix))
+    subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
+    subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(tmp_path),
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-qm",
+            "Durable prefix",
+        ],
+        check=True,
+    )
+    baseline = (
+        subprocess.check_output(["git", "-C", str(tmp_path), "rev-parse", "HEAD"]).decode().strip()
+    )
+    for name, raw in (current | new_owners).items():
+        write(name, raw)
+    receipt_path = chain.RECEIPTS_DIR + "/registry-fixture.json"
+    receipt = dict(
+        prefix,
+        sequence=2,
+        batch="registry-correction",
+        issue="https://github.com/CultureBotAI/MediaIngredientMech/issues/753",
+        before_sha256=content_sha256(before[SOURCE]),
+        after_sha256=content_sha256(current[SOURCE]),
+        changed_rows=1,
+        touched_subjects=["MIM:Izalpinin"],
+        changes=[
+            dict(
+                kind="changed",
+                before_position=cas_position,
+                after_position=cas_position,
+                before=rows[cas_position - 1],
+                after=new_rows[cas_position - 1],
+            )
+        ],
+        records=[
+            dict(
+                source_record=name,
+                before_yaml_sha256=content_sha256(old_owners[name]),
+                after_yaml_sha256=content_sha256(new_owners[name]),
+                shape=(
+                    "registry_value_correction"
+                    if name == registry.CAS_OWNER
+                    else "stale_node_pointer_removal"
+                ),
+            )
+            for name in old_owners
+        ],
+    )
+    write(receipt_path, refresh.encode(receipt))
+    context = refresh.RegistryCorrectionContext(
+        tmp_path, baseline, content_sha256(current[refresh.POLICY_MANIFEST])
+    )
+    chain.verify_mapping_chain(tmp_path)
+    load_review(tmp_path, Path(prior["base_review"]))
+    return prior, before, current, contracts, context, receipt_path
+
+
+def verify_registry(fixture, context=None):
+    prior, before, current, contracts, expected, _ = fixture
+    return refresh.verify_unchanged_cohort(
+        prior,
+        before,
+        current,
+        contracts,
+        contracts,
+        registry_correction=expected if context is None else context,
+    )
+
+
+def registry_argv(fixture):
+    return form_argv(fixture, pin=False) + [
+        "--registry-correction-manifest-sha256",
+        fixture[4].manifest_sha256,
+    ]
+
+
+def test_registry_native_suffix_preserves_all_companion_science(registry_correction):
+    from mediaingredientmech import registry_correction_refresh as registry
+
+    prior, before, current, _, context, _ = registry_correction
+    successor, audit = verify_registry(registry_correction)
+    assert successor["decisions"] == prior["decisions"]
+    assert successor["record_inputs"] == prior["record_inputs"]
+    assert successor["claims_sha256"] == prior["claims_sha256"]
+    assert audit["scientific_approval_added"] is False
+    assert "form_projection" not in audit
+    assert len(prior["record_inputs"]) == 20
+    assert sum(d["disposition"] == "SUPPORTED" for d in prior["decisions"]) == 50
+    assert sum(d["disposition"] == "WITHHOLD" for d in prior["decisions"]) == 1
+    proof = audit["registry_correction"]
+    assert proof["registry_transition"]["historical_receipt_count"] == 1
+    assert proof["registry_transition"]["current_receipt_count"] == 2
+    assert len(proof["registry_transition"]["owners"]) == 7
+    assert len(audit["selected_mapping_evidence_unchanged"]) == 20
+    assert audit["claim_counts"] == {
+        "mapping": 20,
+        "identifier": 18,
+        "product": 3,
+        "occurrence": 10,
+    }
+    assert "not replayed" in proof["attribution_contract"]
+    old, new = [read_json(v[refresh.POLICY_MANIFEST]) for v in (before, current)]
+    assert old["form_projection_updates"] == new["form_projection_updates"]
+    assert all(
+        old["source_owner_sha256"][p]
+        == new["source_owner_sha256"][p]
+        != content_sha256((context.root / p).read_bytes())
+        for p in registry.NODE_OWNERS
+    )
+    reviewed_products(successor, current)
+    refresh.main(registry_argv(registry_correction))
+    published = read_json((context.root / "history/audit.json").read_bytes())
+    assert published["registry_correction"] == proof
+
+
+@pytest.mark.parametrize("failure", ["no-context", "missing-pin", "stale-pin", "both", "unchanged"])
+def test_registry_requires_one_explicit_changed_manifest_pin(registry_correction, failure):
+    prior, before, current, contracts, context, _ = registry_correction
+    kwargs = {"registry_correction": context}
+    if failure == "no-context":
+        kwargs = {}
+    elif failure in {"missing-pin", "stale-pin"}:
+        kwargs["registry_correction"] = refresh.RegistryCorrectionContext(
+            context.root, context.baseline, "" if failure == "missing-pin" else "a" * 64
+        )
+    elif failure == "both":
+        kwargs["form_projection"] = refresh.FormProjectionContext(
+            context.root, context.baseline, context.manifest_sha256
+        )
+    else:
+        current = before
+    with pytest.raises(ValueError):
+        refresh.verify_unchanged_cohort(prior, before, current, contracts, contracts, **kwargs)
+
+
+def repin_registry(fixture, document):
+    current, context = fixture[2], fixture[4]
+    current[refresh.POLICY_MANIFEST] = refresh.encode(document)
+    (context.root / refresh.POLICY_MANIFEST).write_bytes(current[refresh.POLICY_MANIFEST])
+    return refresh.RegistryCorrectionContext(
+        context.root, context.baseline, content_sha256(current[refresh.POLICY_MANIFEST])
+    )
+
+
+@pytest.mark.parametrize(
+    "failure",
+    [
+        "extra-owner",
+        "missing-owner",
+        "wrong-shape",
+        "node-identity",
+        "node-chemistry",
+        "node-status",
+        "node-history",
+        "node-duplicate-key",
+        "cas-note",
+        "cas-chemistry",
+        "cas-label",
+        "form-history",
+        "extra-manifest-field",
+        "all-current-policy-owners",
+        "form-document",
+        "prefix-bytes",
+        "prefix-removal",
+        "ignored-nested-receipt",
+        "source-packet",
+        "aliased-owner",
+    ],
+)
+def test_registry_rejects_coordinated_out_of_scope_changes(registry_correction, failure):
+    from mediaingredientmech import registry_correction_refresh as registry
+    from mediaingredientmech.validation import mapping_change_receipts as chain
+
+    _, _, current, _, context, receipt_path = registry_correction
+    root = context.root
+    receipt = read_json((root / receipt_path).read_bytes())
+    manifest = read_json(current[refresh.POLICY_MANIFEST])
+    update = manifest["registry_correction_updates"][-1]
+    if failure == "extra-owner":
+        receipt["records"].append(dict(receipt["records"][0], source_record=EXTRA_OWNER))
+    elif failure == "missing-owner":
+        receipt["records"].pop(0)
+    elif failure == "wrong-shape":
+        receipt["records"][0]["shape"] = "hydrate_parent_predicate"
+    elif failure.startswith("node-") or failure.startswith("cas-"):
+        owner = (
+            next(iter(registry.NODE_OWNERS)) if failure.startswith("node-") else registry.CAS_OWNER
+        )
+        data = yaml.safe_load((root / owner).read_bytes())
+        if failure.endswith("identity"):
+            data["identifier"] = "CHEBI:15377"
+        elif failure.endswith("chemistry"):
+            data.setdefault("chemical_properties", {})["molecular_formula"] = "H2O"
+        elif failure.endswith("status"):
+            data["mapping_status"] = "REJECTED"
+        elif failure.endswith("history"):
+            data["curation_history"][0]["changes"] = "Rewritten history"
+        elif failure.endswith("note"):
+            data["ontology_mapping"]["evidence"][-1]["notes"] = "CAS approved as final identity"
+        elif failure != "node-duplicate-key":
+            data["preferred_term"] = "Different material"
+        raw = yaml.safe_dump(data, sort_keys=False).encode()
+        if failure == "node-duplicate-key":
+            raw += yaml.safe_dump({"identifier": data["identifier"]}).encode()
+        (root / owner).write_bytes(raw)
+        next(r for r in receipt["records"] if r["source_record"] == owner)["after_yaml_sha256"] = (
+            content_sha256(raw)
+        )
+        if owner == registry.CAS_OWNER:
+            update["owner_after_sha256"] = manifest["source_owner_sha256"][owner] = content_sha256(
+                raw
+            )
+    elif failure == "form-history":
+        manifest["form_projection_updates"][0]["history"] = "Rewritten history"
+    elif failure == "extra-manifest-field":
+        update["review_waiver"] = True
+    elif failure == "all-current-policy-owners":
+        manifest["source_owner_sha256"].update(
+            {p: content_sha256((root / p).read_bytes()) for p in registry.NODE_OWNERS}
+        )
+    elif failure == "form-document":
+        path = root / registry.FORM_REVIEWS[0]
+        path.write_bytes(path.read_bytes() + b"\n")
+    elif failure == "prefix-bytes":
+        path = root / chain.RECEIPTS_DIR / "prefix.json"
+        data = read_json(path.read_bytes())
+        data["batch"] = "Coherent replay with rewritten attribution"
+        path.write_bytes(refresh.encode(data))
+    elif failure == "prefix-removal":
+        (root / chain.RECEIPTS_DIR / "prefix.json").unlink()
+        receipt["sequence"] = 1
+        for name in chain.HISTORICAL_CONTEXT:
+            data = read_json((root / name).read_bytes())
+            for key in ("source_sha256", "before_sha256", "after_sha256"):
+                if key in data:
+                    data[key] = receipt["before_sha256"]
+            (root / name).write_bytes(refresh.encode(data))
+    elif failure == "ignored-nested-receipt":
+        (root / ".gitignore").write_text("hidden/\n")
+        path = root / chain.RECEIPTS_DIR / "hidden/extra.json"
+        path.parent.mkdir()
+        path.write_bytes(refresh.encode(receipt))
+    elif failure == "source-packet":
+        path = root / registry.CAS_PACKET
+        path.write_bytes(path.read_bytes() + b"\n")
+    else:
+        path = root / next(iter(registry.NODE_OWNERS))
+        real = path.with_suffix(".real")
+        path.rename(real)
+        path.symlink_to(real.name)
+    (root / receipt_path).write_bytes(refresh.encode(receipt))
+    context = repin_registry(registry_correction, manifest)
+    with pytest.raises(ValueError):
+        verify_registry(registry_correction, context)
+
+
+@pytest.mark.parametrize(
+    "field",
+    ["predicate_id", "object_label", "mapping_justification", "confidence", "comment", "source"],
+)
+def test_registry_row_allowlist_cannot_be_bypassed_by_repinned_receipt(registry_correction, field):
+    _, _, current, _, context, receipt_path = registry_correction
+    root = context.root
+    receipt = read_json((root / receipt_path).read_bytes())
+    metadata, fields, rows = _base_table(current[SOURCE])
+    change = receipt["changes"][0]
+    rows[change["after_position"] - 1][field] = "0.8" if field == "confidence" else "Out of scope"
+    change["after"] = rows[change["after_position"] - 1]
+    current[SOURCE] = table_bytes(metadata, fields, rows)
+    (root / SOURCE).write_bytes(current[SOURCE])
+    receipt["after_sha256"] = content_sha256(current[SOURCE])
+    (root / receipt_path).write_bytes(refresh.encode(receipt))
+    manifest = read_json(current[refresh.POLICY_MANIFEST])
+    manifest["artifacts"][SOURCE] = manifest["registry_correction_updates"][-1][
+        "sssom_after_sha256"
+    ] = receipt["after_sha256"]
+    with pytest.raises(ValueError, match="allowlist"):
+        verify_registry(registry_correction, repin_registry(registry_correction, manifest))
+
+
+@pytest.mark.parametrize(
+    "drift", ["sixth-owner", "prefix", "new-receipt", "dependency", "form", "same-byte-alias"]
+)
+def test_registry_publication_rechecks_all_proof_inputs(registry_correction, monkeypatch, drift):
+    from mediaingredientmech import registry_correction_refresh as registry
+    from mediaingredientmech.validation import mapping_change_receipts as chain
+
+    root = registry_correction[4].root
+    real = refresh.publish_new_files
+
+    def publish(outputs, check):
+        def changed():
+            path = root / list(registry.NODE_OWNERS)[-1]
+            if drift == "prefix":
+                path = root / chain.RECEIPTS_DIR / "prefix.json"
+            elif drift == "new-receipt":
+                path = root / chain.RECEIPTS_DIR / "late.json"
+            elif drift == "dependency":
+                path = root / registry.VERIFIERS[-1]
+            elif drift == "form":
+                path = root / registry.FORM_REVIEWS[-1]
+            if drift == "same-byte-alias":
+                target = path.with_suffix(".real")
+                path.rename(target)
+                path.symlink_to(target.name)
+            else:
+                path.write_bytes((path.read_bytes() if path.exists() else b"") + b"\n")
+            check()
+
+        return real(outputs, changed)
+
+    monkeypatch.setattr(refresh, "publish_new_files", publish)
+    with pytest.raises(ValueError):
+        refresh.main(registry_argv(registry_correction))
+    assert not any(
+        (root / "history" / n).exists() for n in ("successor.json", "audit.json", "copy.json")
+    )
+
+
+@pytest.mark.parametrize(
+    "failure",
+    ["raw-row", "raw-header", "permutation", "extra-change", "cas-alias", "cas-stamp", "cas-date"],
+)
+def test_registry_native_chain_cannot_hide_extra_row_changes(registry_correction, failure):
+    from mediaingredientmech.validation import mapping_change_receipts as chain
+
+    _, _, current, _, context, receipt_path = registry_correction
+    root = context.root
+    receipt = read_json((root / receipt_path).read_bytes())
+    metadata, fields, rows = _base_table(current[SOURCE])
+    if failure == "raw-header":
+        current[SOURCE] = current[SOURCE].replace(b"# license:", b"# license: ", 1)
+    elif failure == "raw-row":
+        lines = current[SOURCE].splitlines(keepends=True)
+        position = next(i for i, line in enumerate(lines) if not line.startswith(b"#")) + 1
+        token, rest = lines[position].split(b"\t", 1)
+        lines[position] = b'"' + token + b'"\t' + rest
+        current[SOURCE] = b"".join(lines)
+    else:
+        if failure == "permutation":
+            rows[0], rows[1] = rows[1], rows[0]
+            receipt["position_map"][:2] = [2, 1]
+        elif failure == "extra-change":
+            original = deepcopy(rows[0])
+            rows[0]["comment"] += "Unapproved additional change"
+            receipt["changes"].append(
+                dict(
+                    kind="changed",
+                    before_position=1,
+                    after_position=1,
+                    before=original,
+                    after=rows[0],
+                )
+            )
+            receipt["changed_rows"] += 1
+            receipt["touched_subjects"].append(rows[0]["subject_id"])
+        else:
+            row = rows[receipt["changes"][0]["after_position"] - 1]
+            key, value = {
+                "cas-alias": ("other", "CAS:480-14-8|Unreviewed alias"),
+                "cas-stamp": ("validation_method", "none|UNKNOWN_TERM|2026-07-07"),
+                "cas-date": ("mapping_date", "2026-11-03"),
+            }[failure]
+            row[key] = value
+            receipt["changes"][0]["after"] = row
+        current[SOURCE] = table_bytes(metadata, fields, rows)
+    (root / SOURCE).write_bytes(current[SOURCE])
+    receipt["after_sha256"] = content_sha256(current[SOURCE])
+    (root / receipt_path).write_bytes(refresh.encode(receipt))
+    # It is internally valid replay; the new bounded proof supplies the missing gate.
+    chain.verify_mapping_chain(root)
+    manifest = read_json(current[refresh.POLICY_MANIFEST])
+    manifest["artifacts"][SOURCE] = manifest["registry_correction_updates"][-1][
+        "sssom_after_sha256"
+    ] = receipt["after_sha256"]
+    with pytest.raises(ValueError, match="canonical .* bytes|position map|allowlist"):
+        verify_registry(registry_correction, repin_registry(registry_correction, manifest))
+
+
+def test_registry_cannot_renew_affected_mapping_approval(registry_correction):
+    from mediaingredientmech import registry_correction_refresh as registry
+
+    prior, _, current, _, _, _ = registry_correction
+    base = read_json(current[prior["base_review"]])
+    decision = next(d for d in base["decisions"] if d["owner_record"] in registry.NODE_OWNERS)
+    decision["disposition"] = "SUPPORTED"
+    current[prior["base_review"]] = refresh.encode(base)
+    with pytest.raises(ValueError, match="retain all affected mapping holds"):
+        verify_registry(registry_correction)
+
+
+def test_registry_output_collision_preserves_source(registry_correction):
+    from mediaingredientmech import registry_correction_refresh as registry
+
+    root = registry_correction[4].root
+    before = (root / registry.CAS_OWNER).read_bytes()
+    argv = registry_argv(registry_correction)
+    argv[argv.index("--output") + 1] = registry.CAS_OWNER
+    with pytest.raises((ValueError, FileExistsError)):
+        refresh.main(argv)
+    assert (root / registry.CAS_OWNER).read_bytes() == before
+
+
+def test_registry_replaced_output_reservation_is_not_overwritten(registry_correction, monkeypatch):
+    root = registry_correction[4].root
+    real = refresh.publish_new_files
+    victim = root / "history/successor.json"
+
+    def publish(outputs, check):
+        def changed():
+            check()
+            victim.unlink()
+            victim.write_bytes(b"Competing output")
+
+        return real(outputs, changed)
+
+    monkeypatch.setattr(refresh, "publish_new_files", publish)
+    with pytest.raises(ValueError, match="Output reservation changed"):
+        refresh.main(registry_argv(registry_correction))
+    assert victim.read_bytes() == b"Competing output"
+    assert not (root / "history/audit.json").exists()
+    assert not (root / "history/copy.json").exists()
+
+
+def test_registry_root_alias_refused(registry_correction):
+    context = registry_correction[4]
+    alias = context.root / "root-alias"
+    alias.symlink_to(context.root, target_is_directory=True)
+    with pytest.raises(ValueError, match="aliased context"):
+        verify_registry(
+            registry_correction,
+            refresh.RegistryCorrectionContext(alias, context.baseline, context.manifest_sha256),
+        )
+
+
+@pytest.mark.parametrize("consumer", ["direct", "cli"])
+@pytest.mark.parametrize("input_kind", ["historical-receipt", "historical-context"])
+def test_registry_replay_bytes_cannot_be_rebound_after_restore(
+    registry_correction, monkeypatch, consumer, input_kind
+):
+    """#1088: real native replay sees changed bytes, then the durable bytes return."""
+    from mediaingredientmech.validation import mapping_change_receipts as chain
+
+    root = registry_correction[4].root
+    name = (
+        chain.RECEIPTS_DIR + "/prefix.json"
+        if input_kind == "historical-receipt"
+        else chain.BASELINE
+    )
+    path = root / name
+    original = path.read_bytes()
+    document = read_json(original)
+    document["batch" if input_kind == "historical-receipt" else "scope"] = (
+        "Different attribution observed during real native replay"
+    )
+    changed = refresh.encode(document)
+    real_replay = chain.verify_mapping_chain
+    observations = []
+
+    def replay_then_restore(actual_root):
+        assert actual_root == root
+        path.write_bytes(changed)
+        try:
+            proof = real_replay(actual_root)
+        finally:
+            path.write_bytes(original)
+        # Return the real proof untouched; this is a file race, not a fake proof.
+        observations.append(proof["input_hashes"][name])
+        return proof
+
+    reservations = []
+    real_publish = refresh.publish_new_files
+
+    def observed_publish(outputs, check):
+        reservations.append(True)
+        return real_publish(outputs, check)
+
+    monkeypatch.setattr(chain, "verify_mapping_chain", replay_then_restore)
+    monkeypatch.setattr(refresh, "publish_new_files", observed_publish)
+    with pytest.raises(ValueError, match="conflicting proof input hash"):
+        if consumer == "direct":
+            verify_registry(registry_correction)
+        else:
+            refresh.main(registry_argv(registry_correction))
+    assert observations == [content_sha256(changed)]
+    assert observations[0] != content_sha256(original)
+    assert path.read_bytes() == original
+    assert reservations == []
+    assert not any(
+        (root / "history" / name).exists() for name in ("successor.json", "audit.json", "copy.json")
+    )

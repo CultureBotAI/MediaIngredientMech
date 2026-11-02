@@ -49,6 +49,15 @@ class FormProjectionContext:
     manifest_sha256: str
 
 
+@dataclass(frozen=True)
+class RegistryCorrectionContext:
+    """Pinned context for the bounded #753/#870 successor; never an approval."""
+
+    root: Path
+    baseline: str
+    manifest_sha256: str
+
+
 def _form_require(condition, message):
     if not condition:
         raise ValueError("Form projection: " + message)
@@ -62,11 +71,12 @@ def _form_sha(value):
 def _form_member(root, name):
     path = safe_member(root, name)
     _form_require(not any(p.is_symlink() for p in (path, *path.parents)), "aliased proof input")
+    _form_require(path.is_file(), "proof input is not a regular file")
     return path
 
 
-def verify_form_projection(prior, before, current, context):
-    """Verify one typed, caller-pinned form update outside the selected cohort.
+def _verify_policy_projection(prior, before, current, context, *, registry=False):
+    """Verify one typed, caller-pinned update outside the selected cohort.
 
     Generation/source-receipt attribution is pinned, not independently replayed.
     Canonical and owner transitions are independently replayed from native receipts.
@@ -75,7 +85,10 @@ def verify_form_projection(prior, before, current, context):
     from mediaingredientmech.curie import mim_curie_for_stem
     from mediaingredientmech.validation.mapping_change_receipts import verify_mapping_chain
 
-    _form_require(isinstance(context, FormProjectionContext), "explicit context and pin required")
+    expected_context = RegistryCorrectionContext if registry else FormProjectionContext
+    _form_require(isinstance(context, expected_context), "explicit context and pin required")
+    if registry:
+        _form_require(context.root.absolute() == context.root.resolve(), "aliased context root")
     root = context.root.resolve()
     _form_require(re.fullmatch(r"[0-9a-f]{40}", context.baseline), "durable commit required")
     _form_require(
@@ -101,7 +114,8 @@ def verify_form_projection(prior, before, current, context):
     for doc in (old, new):
         _form_require(
             isinstance(doc, dict)
-            and set(doc) in (required, required | {"form_projection_updates"}),
+            and required <= set(doc)
+            and set(doc) <= required | {"form_projection_updates", "registry_correction_updates"},
             "unknown manifest shape",
         )
         _form_require(
@@ -111,7 +125,13 @@ def verify_form_projection(prior, before, current, context):
             "unknown policy/schema",
         )
     _form_require(all(old[k] == new[k] for k in fixed), "immutable policy/attribution changed")
-    prefix, updates = old.get("form_projection_updates", []), new.get("form_projection_updates")
+    update_key = "registry_correction_updates" if registry else "form_projection_updates"
+    other_key = "form_projection_updates" if registry else "registry_correction_updates"
+    _form_require(
+        (other_key in old) == (other_key in new) and old.get(other_key) == new.get(other_key),
+        "other typed update history changed",
+    )
+    prefix, updates = old.get(update_key, []), new.get(update_key)
     _form_require(
         isinstance(prefix, list)
         and isinstance(updates, list)
@@ -235,14 +255,22 @@ def verify_form_projection(prior, before, current, context):
         "native receipt endpoints/issue differ",
     )
     records = receipt["records"]
-    _form_require(
-        len(records) == 1
-        and records[0]["source_record"] == owner
-        and records[0]["before_yaml_sha256"] == update["owner_before_sha256"]
-        and records[0]["after_yaml_sha256"] == update["owner_after_sha256"]
-        and records[0]["shape"] == "hydrate_parent_predicate",
-        "native owner transition differs",
-    )
+    registry_proof = None
+    if registry:
+        from mediaingredientmech.registry_correction_refresh import verify_registry_transition
+
+        registry_proof = verify_registry_transition(
+            prior, before, current, context, update, proof, historical, _form_member
+        )
+    else:
+        _form_require(
+            len(records) == 1
+            and records[0]["source_record"] == owner
+            and records[0]["before_yaml_sha256"] == update["owner_before_sha256"]
+            and records[0]["after_yaml_sha256"] == update["owner_after_sha256"]
+            and records[0]["shape"] == "hydrate_parent_predicate",
+            "native owner transition differs",
+        )
     subject = mim_curie_for_stem(Path(owner).stem)
     _form_require(
         receipt["touched_subjects"] == [subject]
@@ -255,15 +283,27 @@ def verify_form_projection(prior, before, current, context):
         "unaccounted native subject change",
     )
     inputs = dict(proof["input_hashes"])
-    inputs[owner] = content_sha256(current_owner)
-    for path in artifacts | {POLICY_MANIFEST}:
-        inputs[path] = content_sha256(current[path])
+
+    def bind_inputs(values):
+        # A later capture must attest the bytes actually used by native replay.
+        # Restoring historical bytes after replay cannot replace that proof.
+        for name, expected in values.items():
+            _form_require(
+                name not in inputs or inputs[name] == expected,
+                "conflicting proof input hash: " + name,
+            )
+            inputs[name] = expected
+
+    if registry_proof is not None:
+        bind_inputs(registry_proof["input_sha256"])
+    bind_inputs({owner: content_sha256(current_owner)})
+    bind_inputs({path: content_sha256(current[path]) for path in artifacts | {POLICY_MANIFEST}})
     for path in (
         "src/mediaingredientmech/ingredient_bundle_refresh.py",
         "src/mediaingredientmech/validation/mapping_change_receipts.py",
     ):
-        inputs[path] = content_sha256(_form_member(root, path).read_bytes())
-    return {
+        bind_inputs({path: content_sha256(_form_member(root, path).read_bytes())})
+    result = {
         "manifest_before_sha256": content_sha256(before[POLICY_MANIFEST]),
         "caller_pinned_manifest_sha256": context.manifest_sha256,
         "attribution_contract": "Exact caller-pinned attribution; generation/source receipts are not replayed here.",
@@ -277,6 +317,19 @@ def verify_form_projection(prior, before, current, context):
         "input_sha256": inputs,
         "scientific_approval_added": False,
     }
+    if registry_proof is not None:
+        result["registry_transition"] = registry_proof
+    return result
+
+
+def verify_form_projection(prior, before, current, context):
+    """Retain the existing one-owner, typed form projection contract."""
+    return _verify_policy_projection(prior, before, current, context)
+
+
+def verify_registry_correction(prior, before, current, context):
+    """Verify the distinct bounded CAS/node-cleanup successor contract."""
+    return _verify_policy_projection(prior, before, current, context, registry=True)
 
 
 def source_names(review):
@@ -293,9 +346,18 @@ def encode(value):
 
 
 def verify_unchanged_cohort(
-    prior, before, current, old_contracts, new_contracts, *, form_projection=None
+    prior,
+    before,
+    current,
+    old_contracts,
+    new_contracts,
+    *,
+    form_projection=None,
+    registry_correction=None,
 ):
     """Return a dependency-only successor and complete selected-claim evidence."""
+    if form_projection is not None and registry_correction is not None:
+        raise ValueError("Form projection and registry correction contexts are mutually exclusive")
     if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
         raise ValueError("Packaged schema/profile contract changed")
     if set(before) != source_names(prior) or set(current) != set(before):
@@ -330,6 +392,11 @@ def verify_unchanged_cohort(
         raise ValueError("Form projection requested without a changed policy manifest")
     if POLICY_MANIFEST in changed and form_projection is not None:
         projection = verify_form_projection(prior, before, current, form_projection)
+        allowed.add(POLICY_MANIFEST)
+    if registry_correction is not None and POLICY_MANIFEST not in changed:
+        raise ValueError("Registry correction requested without a changed policy manifest")
+    if POLICY_MANIFEST in changed and registry_correction is not None:
+        projection = verify_registry_correction(prior, before, current, registry_correction)
         allowed.add(POLICY_MANIFEST)
     if changed - allowed:
         raise ValueError(
@@ -445,7 +512,8 @@ def verify_unchanged_cohort(
         "native_historical_and_successor_payload_replay": "PASS; all claim payloads equal; only validated header dates differ",
     }
     if projection is not None:
-        audit["form_projection"] = projection
+        key = "registry_correction" if registry_correction is not None else "form_projection"
+        audit[key] = projection
     return successor, audit
 
 
@@ -513,11 +581,18 @@ def main(argv=None):
     parser.add_argument(
         "--prior-copy", type=Path, required=True, help="New exact prior-review copy path"
     )
-    parser.add_argument(
+    projection_options = parser.add_mutually_exclusive_group()
+    projection_options.add_argument(
         "--form-projection-manifest-sha256",
         help="Explicit reviewed successor manifest pin; native owner/receipt checks still apply",
     )
+    projection_options.add_argument(
+        "--registry-correction-manifest-sha256",
+        help="Explicit #753/#870 registry successor pin; preserves all companion science",
+    )
     args = parser.parse_args(argv)
+    if args.registry_correction_manifest_sha256 is not None:
+        _form_require(args.root.absolute() == args.root.resolve(), "aliased context root")
     root = args.root.resolve()
     destinations = [root / args.output, root / args.receipt, root / args.prior_copy]
     validate_destinations(destinations)
@@ -553,8 +628,19 @@ def main(argv=None):
         if args.form_projection_manifest_sha256 is not None
         else None
     )
+    registry_correction = (
+        RegistryCorrectionContext(root, baseline, args.registry_correction_manifest_sha256)
+        if args.registry_correction_manifest_sha256 is not None
+        else None
+    )
     successor, audit = verify_unchanged_cohort(
-        prior, before, current, old_contracts, new_contracts, form_projection=form_projection
+        prior,
+        before,
+        current,
+        old_contracts,
+        new_contracts,
+        form_projection=form_projection,
+        registry_correction=registry_correction,
     )
     new_bytes = encode(successor)
     audit.update(
@@ -575,8 +661,9 @@ def main(argv=None):
     snapshots = {root / p: content_sha256(b) for p, b in (current | new_contracts).items()}
     snapshots[root / prior_path] = content_sha256(old_bytes)
     snapshots.update(loaded["input_snapshot"])
-    if "form_projection" in audit:
-        for path, expected in audit["form_projection"]["input_sha256"].items():
+    proof_key = "registry_correction" if registry_correction is not None else "form_projection"
+    if proof_key in audit:
+        for path, expected in audit[proof_key]["input_sha256"].items():
             member = _form_member(root, path)
             if member in snapshots and snapshots[member] != expected:
                 raise ValueError("Projection proof conflicts with captured input: " + path)
@@ -586,13 +673,18 @@ def main(argv=None):
         raise ValueError("Output collides with a source input")
 
     def verify_snapshot():
-        if "form_projection" in audit:
+        if proof_key in audit:
             from mediaingredientmech.validation.mapping_change_receipts import receipt_paths
 
-            if receipt_paths(root) != audit["form_projection"]["receipt_paths"]:
+            if receipt_paths(root) != audit[proof_key]["receipt_paths"]:
                 raise ValueError("Projection receipt inventory changed during verification")
-            for name in audit["form_projection"]["input_sha256"]:
+            for name in audit[proof_key]["input_sha256"]:
                 _form_member(root, name)
+            if proof_key == "registry_correction":
+                from mediaingredientmech.registry_correction_refresh import receipt_inventory
+
+                if receipt_inventory(root) != set(audit[proof_key]["receipt_paths"]):
+                    raise ValueError("Registry receipt inventory changed during verification")
         for path, expected in snapshots.items():
             if content_sha256(path.read_bytes()) != expected:
                 raise ValueError("Input changed during verification: " + str(path))

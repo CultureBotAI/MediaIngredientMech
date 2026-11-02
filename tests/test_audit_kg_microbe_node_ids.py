@@ -151,3 +151,46 @@ def test_missing_or_corrupt_collection_exits_2_not_traceback(repo):
     (repo / "data" / "curated" / "mapped_ingredients.yaml").write_text("{[not yaml")
     out = run(repo, "--check")
     assert out.returncode == 2 and "Traceback" not in out.stderr
+
+
+@pytest.mark.parametrize(
+    "identifier,node,term,status",
+    [
+        ("FOODON:03315719", "CHEBI:78020", "Casamino acids", "MAPPED"),
+        ("FOODON:03420180", "CHEBI:3448", "Casein", "MAPPED"),
+        (
+            "kgmicrobe.ingredient:0_2_thiamine_pyrophosphate",
+            "CHEBI:9532",
+            "0.2% Thiamine pyrophosphate",
+            "MAPPED",
+        ),
+        ("kgmicrobe.ingredient:fish-sperm_dna", "CHEBI:16991", "Fish-Sperm DNA", "MAPPED"),
+        ("FOODON:03315720", "CHEBI:8150", "Bacto Soytone", "REJECTED"),
+        (
+            "kgmicrobe.ingredient:fish-sperm_dna",
+            "CHEBI:16991",
+            "Deoxyribonucleic acid from herring sperm",
+            "REJECTED",
+        ),
+    ],
+)
+def test_reviewed_stale_pair_fails_even_across_prefixes(tmp_path, identifier, node, term, status):
+    root = build(tmp_path, [rec(identifier, term, node, status)])
+    result = run(root, "--check")
+    assert result.returncode == 2
+    assert "1 reviewed stale cross-prefix" in result.stdout
+    assert report_rows(root)[0]["mismatch_type"] == "cross_prefix"
+
+
+def test_reviewed_node_removal_passes_without_changing_identity(tmp_path):
+    root = build(tmp_path, [rec("FOODON:03315719", "Casamino acids")])
+    assert run(root, "--check").returncode == 0
+    assert report_rows(root) == []
+
+
+def test_stale_term_is_not_globally_forbidden_for_another_identity(tmp_path):
+    root = build(tmp_path, [rec("kgmicrobe.compound:synthetic", "Synthetic", "CHEBI:78020")])
+    result = run(root, "--check")
+    assert result.returncode == 0
+    assert "0 reviewed stale cross-prefix" in result.stdout
+    assert len(report_rows(root)) == 1
