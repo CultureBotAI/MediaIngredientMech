@@ -38,6 +38,7 @@ DATE_FIELDS = {"mapping_date", "mapping_set_version"}
 POLICY_MANIFEST = "mappings/ingredient_mappings.sssom.tsv.manifest.json"
 POLICY_SIDECAR = "mappings/suppressed_aliases.tsv"
 POLICY_BASELINE = "mappings/other_cross_record_baseline.tsv"
+_CODE = Path(__file__).read_bytes()
 
 
 @dataclass(frozen=True)
@@ -52,6 +53,15 @@ class FormProjectionContext:
 @dataclass(frozen=True)
 class RegistryCorrectionContext:
     """Pinned context for the bounded #753/#870 successor; never an approval."""
+
+    root: Path
+    baseline: str
+    manifest_sha256: str
+
+
+@dataclass(frozen=True)
+class StockCasRemovalContext:
+    """Pinned #268/#871 stock-CAS successor context; no scientific approval."""
 
     root: Path
     baseline: str
@@ -75,7 +85,7 @@ def _form_member(root, name):
     return path
 
 
-def _verify_policy_projection(prior, before, current, context, *, registry=False):
+def _verify_policy_projection(prior, before, current, context, *, registry=False, stock=False):
     """Verify one typed, caller-pinned update outside the selected cohort.
 
     Generation/source-receipt attribution is pinned, not independently replayed.
@@ -85,11 +95,22 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
     from mediaingredientmech.curie import mim_curie_for_stem
     from mediaingredientmech.validation.mapping_change_receipts import verify_mapping_chain
 
-    expected_context = RegistryCorrectionContext if registry else FormProjectionContext
+    _form_require(not (registry and stock), "typed contexts are mutually exclusive")
+    expected_context = (
+        StockCasRemovalContext
+        if stock
+        else RegistryCorrectionContext if registry else FormProjectionContext
+    )
     _form_require(isinstance(context, expected_context), "explicit context and pin required")
-    if registry:
+    if registry or stock:
         _form_require(context.root.absolute() == context.root.resolve(), "aliased context root")
     root = context.root.resolve()
+    if stock:
+        _form_require(
+            _form_member(root, "src/mediaingredientmech/ingredient_bundle_refresh.py").read_bytes()
+            == _CODE,
+            "loaded stock companion verifier differs",
+        )
     _form_require(re.fullmatch(r"[0-9a-f]{40}", context.baseline), "durable commit required")
     _form_require(
         content_sha256(current[POLICY_MANIFEST]) == _form_sha(context.manifest_sha256),
@@ -115,7 +136,13 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
         _form_require(
             isinstance(doc, dict)
             and required <= set(doc)
-            and set(doc) <= required | {"form_projection_updates", "registry_correction_updates"},
+            and set(doc)
+            <= required
+            | {
+                "form_projection_updates",
+                "registry_correction_updates",
+                "stock_cas_removal_updates",
+            },
             "unknown manifest shape",
         )
         _form_require(
@@ -125,12 +152,21 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
             "unknown policy/schema",
         )
     _form_require(all(old[k] == new[k] for k in fixed), "immutable policy/attribution changed")
-    update_key = "registry_correction_updates" if registry else "form_projection_updates"
-    other_key = "form_projection_updates" if registry else "registry_correction_updates"
-    _form_require(
-        (other_key in old) == (other_key in new) and old.get(other_key) == new.get(other_key),
-        "other typed update history changed",
+    update_key = (
+        "stock_cas_removal_updates"
+        if stock
+        else "registry_correction_updates" if registry else "form_projection_updates"
     )
+    histories = {
+        "form_projection_updates",
+        "registry_correction_updates",
+        "stock_cas_removal_updates",
+    }
+    for other_key in histories - {update_key}:
+        _form_require(
+            (other_key in old) == (other_key in new) and old.get(other_key) == new.get(other_key),
+            "other typed update history changed",
+        )
     prefix, updates = old.get(update_key, []), new.get(update_key)
     _form_require(
         isinstance(prefix, list)
@@ -157,6 +193,8 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
         "sidecar_sha256",
         "baseline_sha256",
     }
+    if stock:
+        fields.add("historical_owner_sha256")
     _form_require(isinstance(update, dict) and set(update) == fields, "unknown update shape")
     for name, value in update.items():
         if name.endswith("_sha256"):
@@ -235,7 +273,8 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
         for digest in values.values():
             _form_sha(digest)
     expected_owners = dict(old_owners)
-    _form_require(expected_owners[owner] == update["owner_before_sha256"], "old owner map differs")
+    historical_owner = update["historical_owner_sha256"] if stock else update["owner_before_sha256"]
+    _form_require(expected_owners[owner] == historical_owner, "old owner map differs")
     expected_owners[owner] = update["owner_after_sha256"]
     _form_require(expected_owners == new_owners, "unaccounted owner change")
     proof = verify_mapping_chain(root)
@@ -256,7 +295,13 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
     )
     records = receipt["records"]
     registry_proof = None
-    if registry:
+    if stock:
+        from mediaingredientmech.stock_cas_removal_refresh import verify_stock_transition
+
+        registry_proof = verify_stock_transition(
+            prior, before, current, context, update, proof, historical, _form_member
+        )
+    elif registry:
         from mediaingredientmech.registry_correction_refresh import verify_registry_transition
 
         registry_proof = verify_registry_transition(
@@ -318,7 +363,7 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
         "scientific_approval_added": False,
     }
     if registry_proof is not None:
-        result["registry_transition"] = registry_proof
+        result["stock_cas_transition" if stock else "registry_transition"] = registry_proof
     return result
 
 
@@ -330,6 +375,11 @@ def verify_form_projection(prior, before, current, context):
 def verify_registry_correction(prior, before, current, context):
     """Verify the distinct bounded CAS/node-cleanup successor contract."""
     return _verify_policy_projection(prior, before, current, context, registry=True)
+
+
+def verify_stock_cas_removal(prior, before, current, context):
+    """Verify the separately scoped stock-CAS removal and fifteen-owner cleanup."""
+    return _verify_policy_projection(prior, before, current, context, stock=True)
 
 
 def source_names(review):
@@ -354,10 +404,11 @@ def verify_unchanged_cohort(
     *,
     form_projection=None,
     registry_correction=None,
+    stock_cas_removal=None,
 ):
     """Return a dependency-only successor and complete selected-claim evidence."""
-    if form_projection is not None and registry_correction is not None:
-        raise ValueError("Form projection and registry correction contexts are mutually exclusive")
+    if sum(x is not None for x in (form_projection, registry_correction, stock_cas_removal)) > 1:
+        raise ValueError("Typed projection contexts are mutually exclusive")
     if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
         raise ValueError("Packaged schema/profile contract changed")
     if set(before) != source_names(prior) or set(current) != set(before):
@@ -397,6 +448,11 @@ def verify_unchanged_cohort(
         raise ValueError("Registry correction requested without a changed policy manifest")
     if POLICY_MANIFEST in changed and registry_correction is not None:
         projection = verify_registry_correction(prior, before, current, registry_correction)
+        allowed.add(POLICY_MANIFEST)
+    if stock_cas_removal is not None and POLICY_MANIFEST not in changed:
+        raise ValueError("Stock CAS removal requested without a changed policy manifest")
+    if POLICY_MANIFEST in changed and stock_cas_removal is not None:
+        projection = verify_stock_cas_removal(prior, before, current, stock_cas_removal)
         allowed.add(POLICY_MANIFEST)
     if changed - allowed:
         raise ValueError(
@@ -512,7 +568,11 @@ def verify_unchanged_cohort(
         "native_historical_and_successor_payload_replay": "PASS; all claim payloads equal; only validated header dates differ",
     }
     if projection is not None:
-        key = "registry_correction" if registry_correction is not None else "form_projection"
+        key = (
+            "stock_cas_removal"
+            if stock_cas_removal is not None
+            else "registry_correction" if registry_correction is not None else "form_projection"
+        )
         audit[key] = projection
     return successor, audit
 
@@ -524,43 +584,76 @@ def validate_destinations(paths):
 
 
 def publish_new_files(outputs, verify_snapshot):
-    """Retain exclusive handles and refuse replaced output reservations."""
+    """Retain parent/leaf handles and refuse replaced publication destinations."""
     validate_destinations([p for p, _ in outputs])
     with ExitStack() as stack:
-        reserved: list[tuple[Path, BinaryIO, tuple[int, int]]] = []
+        parents: dict[Path, tuple[int, tuple[int, int]]] = {}
+        reserved: list[tuple[Path, BinaryIO, tuple[int, int], int]] = []
 
-        def still_owned(path, identity):
+        def still_owned(path, identity, parent_fd):
             try:
-                actual = path.lstat()
+                actual = os.stat(path.name, dir_fd=parent_fd, follow_symlinks=False)
             except FileNotFoundError:
                 return False
             return (actual.st_dev, actual.st_ino) == identity
 
+        def verify_parents():
+            for parent, (_, identity) in parents.items():
+                if parent.absolute() != parent.resolve():
+                    raise ValueError("Output parent became aliased: " + str(parent))
+                try:
+                    actual = parent.lstat()
+                except FileNotFoundError as error:
+                    raise ValueError("Output parent disappeared: " + str(parent)) from error
+                if (actual.st_dev, actual.st_ino) != identity:
+                    raise ValueError("Output parent changed: " + str(parent))
+
         def verify_reservations():
-            for path, _, identity in reserved:
-                if not still_owned(path, identity):
+            verify_parents()
+            for path, _, identity, parent_fd in reserved:
+                if not still_owned(path, identity, parent_fd):
                     raise ValueError("Output reservation changed: " + str(path))
 
         try:
             for path, _ in outputs:
-                handle = stack.enter_context(path.open("xb"))
+                parent = path.parent
+                if parent not in parents:
+                    if parent.absolute() != parent.resolve():
+                        raise ValueError("Output parent is aliased: " + str(parent))
+                    intended = parent.lstat()
+                    intended_identity = (intended.st_dev, intended.st_ino)
+                    parent_fd = os.open(parent, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+                    stack.callback(os.close, parent_fd)
+                    status = os.fstat(parent_fd)
+                    if (status.st_dev, status.st_ino) != intended_identity:
+                        raise ValueError("Output parent changed during acquisition: " + str(parent))
+                    parents[parent] = (parent_fd, intended_identity)
+                parent_fd, _ = parents[parent]
+                verify_parents()
+                fd = os.open(
+                    path.name,
+                    os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW,
+                    0o666,
+                    dir_fd=parent_fd,
+                )
+                handle = stack.enter_context(os.fdopen(fd, "wb"))
                 status = os.fstat(handle.fileno())
-                reserved.append((path, handle, (status.st_dev, status.st_ino)))
+                reserved.append((path, handle, (status.st_dev, status.st_ino), parent_fd))
             verify_snapshot()
             verify_reservations()
-            for (_, handle, _), (_, content) in zip(reserved, outputs, strict=True):
+            for (_, output_handle, _, _), (_, content) in zip(reserved, outputs, strict=True):
                 # Never reopen a pathname after reservation: even a concurrent
                 # replacement cannot redirect this write to another inode.
                 verify_reservations()
-                handle.write(content)
-                handle.flush()
+                output_handle.write(content)
+                output_handle.flush()
             verify_reservations()
         except BaseException:
-            # Keep handles open until cleanup finishes, so their inode identities
-            # cannot be recycled. Preserve another writer's replacement paths.
-            for path, _, identity in reserved:
-                if still_owned(path, identity):
-                    path.unlink()
+            # Cleanup uses the original directory even when its pathname changed.
+            # Preserve another writer's replacement entry in either directory.
+            for path, _, identity, parent_fd in reserved:
+                if still_owned(path, identity, parent_fd):
+                    os.unlink(path.name, dir_fd=parent_fd)
             raise
 
 
@@ -590,8 +683,15 @@ def main(argv=None):
         "--registry-correction-manifest-sha256",
         help="Explicit #753/#870 registry successor pin; preserves all companion science",
     )
+    projection_options.add_argument(
+        "--stock-cas-removal-manifest-sha256",
+        help="Explicit #268/#871 stock-CAS successor pin; preserves all companion science",
+    )
     args = parser.parse_args(argv)
-    if args.registry_correction_manifest_sha256 is not None:
+    if (
+        args.registry_correction_manifest_sha256 is not None
+        or args.stock_cas_removal_manifest_sha256 is not None
+    ):
         _form_require(args.root.absolute() == args.root.resolve(), "aliased context root")
     root = args.root.resolve()
     destinations = [root / args.output, root / args.receipt, root / args.prior_copy]
@@ -633,6 +733,11 @@ def main(argv=None):
         if args.registry_correction_manifest_sha256 is not None
         else None
     )
+    stock_cas_removal = (
+        StockCasRemovalContext(root, baseline, args.stock_cas_removal_manifest_sha256)
+        if args.stock_cas_removal_manifest_sha256 is not None
+        else None
+    )
     successor, audit = verify_unchanged_cohort(
         prior,
         before,
@@ -641,6 +746,7 @@ def main(argv=None):
         new_contracts,
         form_projection=form_projection,
         registry_correction=registry_correction,
+        stock_cas_removal=stock_cas_removal,
     )
     new_bytes = encode(successor)
     audit.update(
@@ -661,7 +767,11 @@ def main(argv=None):
     snapshots = {root / p: content_sha256(b) for p, b in (current | new_contracts).items()}
     snapshots[root / prior_path] = content_sha256(old_bytes)
     snapshots.update(loaded["input_snapshot"])
-    proof_key = "registry_correction" if registry_correction is not None else "form_projection"
+    proof_key = (
+        "stock_cas_removal"
+        if stock_cas_removal is not None
+        else "registry_correction" if registry_correction is not None else "form_projection"
+    )
     if proof_key in audit:
         for path, expected in audit[proof_key]["input_sha256"].items():
             member = _form_member(root, path)
@@ -680,7 +790,7 @@ def main(argv=None):
                 raise ValueError("Projection receipt inventory changed during verification")
             for name in audit[proof_key]["input_sha256"]:
                 _form_member(root, name)
-            if proof_key == "registry_correction":
+            if proof_key in {"registry_correction", "stock_cas_removal"}:
                 from mediaingredientmech.registry_correction_refresh import receipt_inventory
 
                 if receipt_inventory(root) != set(audit[proof_key]["receipt_paths"]):

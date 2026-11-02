@@ -125,11 +125,29 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles. Set fields: {}. Record states a fixed hydrate while
+    exact archived parent ontology supplies the current water-free structures. Remove
+    the incompatible inherited structures rather than calculate or guess replacements.
+    No exact form ID selection, invented water-containing SMILES, or verification
+    of every retained field. Existing form/identity questions remain held. Original
+    chemical_properties={"cas_rn": "10031-43-3", "data_source": "CultureBotHT/compounds_to_cas.csv",
+    "inchi": "InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1", "molecular_formula": "Cu.2NO3.3H2O",
+    "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles": "O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]"}.
+    Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+    and original history. No mapping, role or release approval. Exact preimage and
+    evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Cu_No32_X_3_H2o.yaml; before_sha256=cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 10031-43-3
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Cu.2NO3.3H2O
-  inchi: InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1
-  smiles: O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
 ingredient_type: SINGLE_INGREDIENT

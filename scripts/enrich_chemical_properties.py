@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Batch enrichment of chemical properties for CHEBI-mapped ingredients.
+"""Fill mechanically eligible empty chemistry blocks from exact ChEBI OLS terms.
 
-Loads ingredient records from YAML, filters for CHEBI mappings without existing
-chemical_properties, fetches formula/SMILES/InChI from ChEBI OLS and PubChem APIs,
-and updates the records with chemical properties.
+Existing chemistry, mapping grades, ingredient types and identities are preserved.
+No automatic cache/PubChem fallback or partial-block gap filling is permitted.
 """
 
 from __future__ import annotations
@@ -14,80 +13,39 @@ from pathlib import Path
 import click
 import yaml
 from rich.console import Console
-from rich.progress import Progress
-from rich.table import Table
 
-# Add src to path so we can import the package
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
-from mediaingredientmech.utils.chemical_properties_client import (
-    ChemicalPropertiesClient,
+from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curation.chemical_properties_guard import (  # noqa: E402
+    chemistry_preflight,
+    prepare_chemical_properties,
 )
-from mediaingredientmech.utils.yaml_handler import save_yaml
-from mediaingredientmech.validation.write_validated import ValidationFailedError
+from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.validation.write_validated import ValidationFailedError  # noqa: E402
 
 console = Console()
 
-# Mapping grades that assert the term denotes *this* substance, so its chemistry
-# is this record's chemistry. Everything else (NARROW/CLOSE/BROAD) points at a
-# related but different compound.
-IDENTITY_GRADES = {"EXACT_MATCH", "SYNONYM_MATCH"}
-
 
 def load_ingredients(yaml_path: Path) -> dict:
-    """Load ingredients from YAML file."""
-    with open(yaml_path) as f:
-        return yaml.safe_load(f)
+    """Load the collection without discarding its metadata."""
+    with open(yaml_path) as stream:
+        return yaml.safe_load(stream)
 
 
-def filter_chebi_without_properties(data: dict) -> list[dict]:
-    """Filter for CHEBI-mapped ingredients without chemical_properties.
+def filter_chebi_without_properties(data: dict | list) -> list[dict]:
+    """Pure scope filter; grades do not grant or prohibit eligibility.
 
-    Args:
-        data: Loaded YAML data (IngredientCollection or list).
-
-    Returns:
-        List of ingredient records that need enrichment.
+    All nonempty blocks, including CAS-only or provenance-only blocks, require
+    explicit curation rather than adding fields under their existing provenance.
     """
-    # Handle both IngredientCollection (with 'ingredients' key) and raw list
-    if isinstance(data, dict) and "ingredients" in data:
-        records = data["ingredients"]
-    elif isinstance(data, list):
-        records = data
-    else:
-        records = []
-
-    candidates = []
-    for record in records:
-        # Target records still missing a molecular_formula — including those that
-        # already carry a partial chemical_properties block (e.g. a cas_rn but no
-        # formula). The apply step MERGES (fills gaps), so existing fields are kept.
-        if (record.get("chemical_properties") or {}).get("molecular_formula"):
-            continue
-
-        # Check if mapped to CHEBI
-        ontology_mapping = record.get("ontology_mapping")
-        if not ontology_mapping:
-            continue
-
-        if ontology_mapping.get("ontology_source") != "CHEBI":
-            continue
-
-        # Only enrich from a term that IS this substance. A narrow/close/broad
-        # match points at a *different* compound — the anhydrous parent of a
-        # hydrate, the free acid of a salt, the family of a component — so
-        # copying its formula in describes the parent and not the record.
-        # That is #326, where five records had already acquired their parent's
-        # formula this way; without this guard a full run would manufacture 29
-        # more (`CrKSO42 x 12 H2O` from anhydrous CHEBI:53471, `NaH2PO4•H2O`
-        # from `sodium dihydrogenphosphate`, `MES buffer` from `MES`, …).
-        if ontology_mapping.get("mapping_quality") not in IDENTITY_GRADES:
-            continue
-
-        candidates.append(record)
-
-    return candidates
+    records = data.get("ingredients", []) if isinstance(data, dict) else data
+    return [
+        record
+        for record in records
+        if record.get("chemical_properties") in (None, {}) and chemistry_preflight(record) is None
+    ]
 
 
 @click.command()
@@ -97,189 +55,49 @@ def filter_chebi_without_properties(data: dict) -> list[dict]:
     "input_path",
     type=click.Path(exists=True, path_type=Path),
     default=Path("data/curated/mapped_ingredients.yaml"),
-    help="Input YAML file with ingredient records",
 )
-@click.option(
-    "--output",
-    "-o",
-    "output_path",
-    type=click.Path(path_type=Path),
-    default=None,
-    help="Output YAML file (defaults to overwrite input)",
-)
-@click.option(
-    "--dry-run",
-    is_flag=True,
-    help="Show what would be enriched without making changes",
-)
-@click.option(
-    "--limit",
-    type=int,
-    default=None,
-    help="Limit number of ingredients to process (for testing)",
-)
-def main(
-    input_path: Path,
-    output_path: Optional[Path],
-    dry_run: bool,
-    limit: Optional[int],
-):
-    """Enrich CHEBI-mapped ingredients with chemical properties."""
-    console.print(f"\n[bold]Chemical Properties Enrichment[/bold]")
-    console.print(f"Input: {input_path}")
-
-    # Load data
+@click.option("--output", "-o", "output_path", type=click.Path(path_type=Path), default=None)
+@click.option("--dry-run", is_flag=True, help="Inspect the same guarded proposals without writing")
+@click.option("--limit", type=int, default=None)
+def main(input_path: Path, output_path: Path | None, dry_run: bool, limit: int | None):
+    """Propose exact OLS chemistry only for explicitly eligible empty blocks."""
     data = load_ingredients(input_path)
-
-    # Filter candidates
-    candidates = filter_chebi_without_properties(data)
-
-    if not candidates:
-        console.print("\n[yellow]No CHEBI ingredients need enrichment.[/yellow]")
-        return
-
-    console.print(f"\nFound {len(candidates)} CHEBI-mapped ingredients without properties")
-
-    # Apply limit if specified
-    if limit:
-        candidates = candidates[:limit]
-        console.print(f"Limited to first {limit} ingredients")
-
-    if dry_run:
-        console.print("\n[bold yellow]DRY RUN - No changes will be saved[/bold yellow]")
-
-        # Show preview table
-        table = Table(title="Ingredients to Enrich")
-        table.add_column("Identifier", style="cyan")
-        table.add_column("Preferred Term", style="green")
-        table.add_column("CHEBI ID", style="yellow")
-
-        for record in candidates[:10]:  # Show first 10
-            ontology_mapping = record.get("ontology_mapping", {})
-            table.add_row(
-                (record.get("identifier") or record.get("ontology_id", "N/A")),
-                record.get("preferred_term", "N/A"),
-                ontology_mapping.get("ontology_id", "N/A"),
+    records = filter_chebi_without_properties(data)
+    if limit is not None:
+        records = records[:limit]
+    enriched = skipped = failed = 0
+    for record in records:
+        proposal, explanation = prepare_chemical_properties(record)
+        if proposal:
+            enriched += 1
+            console.print(
+                f"{'Would enrich' if dry_run else 'Enriched'} {record.get('preferred_term')}: {explanation}"
             )
-
-        console.print(table)
-
-        if len(candidates) > 10:
-            console.print(f"\n... and {len(candidates) - 10} more")
-
-        return
-
-    # Initialize client
-    client = ChemicalPropertiesClient(cache_enabled=True)
-
-    # Process with progress bar
-    enriched_count = 0
-    failed_count = 0
-    skipped_count = 0
-
-    results = []
-
-    with Progress() as progress:
-        task = progress.add_task(
-            "[cyan]Enriching chemical properties...",
-            total=len(candidates),
-        )
-
-        for record in candidates:
-            ontology_mapping = record.get("ontology_mapping", {})
-            ontology_id = ontology_mapping.get("ontology_id")
-            label = ontology_mapping.get("ontology_label", "")
-            source = ontology_mapping.get("ontology_source")
-
-            if not ontology_id or source != "CHEBI":
-                skipped_count += 1
-                progress.update(task, advance=1)
-                continue
-
-            # Get properties
-            props = client.get_properties(ontology_id, label, source)
-
-            # MERGE into any existing chemical_properties: fill gaps only, so a
-            # record's existing cas_rn / data_source is never clobbered when we
-            # add the freshly-fetched molecular_formula / SMILES / InChI / mass.
-            # `enriched` counts only records that GAINED a field (props can come
-            # back with only fields the record already has — that is a no-op, not
-            # an enrichment, so it must not inflate the count).
-            added = []
-            if props:
-                existing = record.get("chemical_properties") or {}
-                for key, value in props.to_dict().items():
-                    if value and not existing.get(key):
-                        existing[key] = value
-                        added.append(key)
-                record["chemical_properties"] = existing
-            if added:
-                enriched_count += 1
-                results.append(
-                    {
-                        "id": ontology_id,
-                        "term": label,
-                        "formula": props.molecular_formula or "N/A",
-                        "smiles": props.smiles or "N/A",
-                        "source": props.data_source or "N/A",
-                    }
+            if not dry_run:
+                record["chemical_properties"] = proposal
+                record_curation_event(
+                    record,
+                    curator="enrich_chemical_properties.py",
+                    action="AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                    changes=explanation,
                 )
-            else:
-                failed_count += 1
-                results.append(
-                    {
-                        "id": ontology_id,
-                        "term": label,
-                        "formula": "FAILED",
-                        "smiles": "FAILED",
-                        "source": "N/A",
-                    }
-                )
-
-            progress.update(task, advance=1)
-
-    # Show results table
-    console.print("\n[bold]Enrichment Results[/bold]")
-
-    table = Table(title=f"Processed {len(candidates)} ingredients")
-    table.add_column("CHEBI ID", style="cyan")
-    table.add_column("Term", style="green")
-    table.add_column("Formula", style="yellow")
-    table.add_column("SMILES", style="blue", overflow="fold")
-    table.add_column("Source", style="magenta")
-
-    for result in results[:20]:  # Show first 20
-        table.add_row(
-            result["id"],
-            result["term"][:40],  # Truncate long names
-            result["formula"],
-            result["smiles"][:50] if result["smiles"] != "N/A" else "N/A",
-            result["source"],
-        )
-
-    console.print(table)
-
-    if len(results) > 20:
-        console.print(f"\n... and {len(results) - 20} more")
-
-    # Summary
-    console.print("\n[bold]Summary[/bold]")
-    console.print(f"  Enriched: [green]{enriched_count}[/green]")
-    console.print(f"  Failed: [red]{failed_count}[/red]")
-    console.print(f"  Skipped: [yellow]{skipped_count}[/yellow]")
-
-    if enriched_count > 0:
-        # Save output
-        output_path = output_path or input_path
+        elif explanation == "PROVIDER_FAILURE":
+            failed += 1
+            console.print(f"Provider failure: {record.get('preferred_term')}")
+        else:
+            skipped += 1
+            console.print(f"Skipped {record.get('preferred_term')}: {explanation}")
+    console.print(f"Enriched: {enriched}; Skipped: {skipped}; Failed: {failed}")
+    if enriched and not dry_run:
         try:
-            save_yaml(data, output_path, validate=True, target_class="IngredientCollection")
+            save_yaml(
+                data, output_path or input_path, validate=True, target_class="IngredientCollection"
+            )
         except ValidationFailedError as exc:
-            console.print("\n[red]validation failed: refusing to write[/red]")
             print(exc.summary(), file=sys.stderr)
             raise
-        console.print(f"\n[bold green]Saved to {output_path}[/bold green]")
-    else:
-        console.print("\n[yellow]No enrichment performed - nothing to save[/yellow]")
+    if failed:
+        raise click.ClickException(f"{failed} chemical property provider failures")
 
 
 if __name__ == "__main__":

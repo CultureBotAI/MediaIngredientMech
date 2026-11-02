@@ -1,4 +1,4 @@
-generation_date: '2026-11-02T02:11:32.467725+00:00'
+generation_date: '2026-11-02T05:35:21.993135+00:00'
 total_count: 2680
 mapped_count: 2610
 unmapped_count: 0
@@ -23228,14 +23228,27 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
-  chemical_properties:
-    cas_rn: 154-87-0
-    data_source: NCI CACTUS Chemical Identifier Resolver
-    retrieval_date: '2026-04-05T21:52:09.127416+00:00'
-    molecular_formula: C12H19N4O7P2S
-    inchi: InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)/p+1
-    smiles: Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1
-  ingredient_type: SINGLE_INGREDIENT
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.
+      Set fields: {"ingredient_type": "STOCK_SOLUTION"}. Existing stock identity decision
+      plus direct primary chloride CAS evidence: this is inherited/lookup solute chemistry,
+      not whole-stock properties. Do not invent solute salt, solvent, percentage basis,
+      components or role approval. Six existing pure-solute aliases remain a separately
+      documented unresolved concern unless explicitly added to reviewed scope. Original
+      chemical_properties={"cas_rn": "154-87-0", "data_source": "NCI CACTUS Chemical
+      Identifier Resolver", "inchi": "InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)/p+1",
+      "molecular_formula": "C12H19N4O7P2S", "retrieval_date": "2026-04-05T21:52:09.127416+00:00",
+      "smiles": "Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1"}. Preserved identifier,
+      ontology mapping and grade, roles, synonyms, counts, status and original history.
+      No mapping, role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml; before_sha256=6d6db9a0040730973f390da1e492ee4e2afa672adc95e2e526d37f99def9bc5a.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  ingredient_type: STOCK_SOLUTION
   nutritional_roles:
   - role: VITAMIN_SOURCE
     confidence: 1.0
@@ -44099,13 +44112,33 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+      {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+      exactly match the parent ontology. Sigma B1375 official full page, primary/web-primary-3.txt
+      No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+      repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+      removal concerns unqualified whole-record fields, not a claim the supplier is
+      wrong. Original chemical_properties={"cas_rn": "52746-49-3", "data_source":
+      "CultureBotHT compounds_to_cas.csv", "inchi": "InChI=1S/C24H16N2O6S2.2Na/c27-33(28,29)17-5-1-15(2-6-17)19-11-13-25-23-21(19)9-10-22-20(12-14-26-24(22)23)16-3-7-18(8-4-16)34(30,31)32;;/h1-14H,(H,27,28,29)(H,30,31,32);;/q;2*+1/p-2",
+      "molecular_formula": "C24H14N2O6S2.2Na", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+      "smiles": "O=S(=O)([O-])c1ccc(-c2ccnc3c2ccc2c(-c4ccc(S(=O)(=O)[O-])cc4)ccnc23)cc1.[Na+].[Na+]"}.
+      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+      and original history. No mapping, role or release approval. Exact preimage and
+      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml;
+      before_sha256=57db0603b08831afc41783ad23a4ed10773be4e25cd895f84d4e8f96219d8110.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 52746-49-3
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C24H14N2O6S2.2Na
-    inchi: InChI=1S/C24H16N2O6S2.2Na/c27-33(28,29)17-5-1-15(2-6-17)19-11-13-25-23-21(19)9-10-22-20(12-14-26-24(22)23)16-3-7-18(8-4-16)34(30,31)32;;/h1-14H,(H,27,28,29)(H,30,31,32);;/q;2*+1/p-2
-    smiles: O=S(=O)([O-])c1ccc(-c2ccnc3c2ccc2c(-c4ccc(S(=O)(=O)[O-])cc4)ccnc23)cc1.[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: CHELATOR
@@ -54160,12 +54193,28 @@ ingredients:
       text and source metadata. No identity, mapping, role, or remaining-synonym claim
       was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "PubChem (via CHEBI:35458)", "inchi": "InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3",
+      "molecular_formula": "CeCl3.7H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+      "smiles": "[Cl][Ce]([Cl])[Cl]"}. Preserved identifier, ontology mapping and
+      grade, roles, synonyms, counts, status and original history. No mapping, role
+      or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cecl3_X_7_H2o.yaml; before_sha256=333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    data_source: PubChem (via CHEBI:35458)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: CeCl3.7H2O
-    inchi: InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3
-    smiles: '[Cl][Ce]([Cl])[Cl]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -54795,13 +54844,32 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+      {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+      exactly match the parent ontology. Sigma C8145 official full page, primary/web-primary-3.txt
+      No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+      repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+      removal concerns unqualified whole-record fields, not a claim the supplier is
+      wrong. Original chemical_properties={"cas_rn": "52152-93-9", "data_source":
+      "CultureBotHT compounds_to_cas.csv", "inchi": "InChI=1S/C22H20N4O8S2.Na/c23-18(27)13-6-8-25(9-7-13)10-14-11-35-21-15(20(29)26(21)16(14)22(30)31)24-19(28)17(36(32,33)34)12-4-2-1-3-5-12;/h1-9,15,17,21H,10-11H2,(H4-,23,24,27,28,30,31,32,33,34);/q;+1/p-1/t15-,17-,21-;/m1./s1",
+      "molecular_formula": "C22H19N4O8S2.Na", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+      "smiles": "[H][C@]12SCC(C[n+]3ccc(C(N)=O)cc3)=C(C(=O)[O-])N1C(=O)[C@H]2NC(=O)[C@@H](c1ccccc1)S(=O)(=O)[O-].[Na+]"}.
+      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+      and original history. No mapping, role or release approval. Exact preimage and
+      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml; before_sha256=248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 52152-93-9
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C22H19N4O8S2.Na
-    inchi: InChI=1S/C22H20N4O8S2.Na/c23-18(27)13-6-8-25(9-7-13)10-14-11-35-21-15(20(29)26(21)16(14)22(30)31)24-19(28)17(36(32,33)34)12-4-2-1-3-5-12;/h1-9,15,17,21H,10-11H2,(H4-,23,24,27,28,30,31,32,33,34);/q;+1/p-1/t15-,17-,21-;/m1./s1
-    smiles: '[H][C@]12SCC(C[n+]3ccc(C(N)=O)cc3)=C(C(=O)[O-])N1C(=O)[C@H]2NC(=O)[C@@H](c1ccccc1)S(=O)(=O)[O-].[Na+]'
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: SELECTIVE_AGENT
@@ -57118,13 +57186,33 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+      {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+      exactly match the parent ontology. Sigma C6143 official PDF extraction, primary/web-primary-1.txt
+      No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+      repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+      removal concerns unqualified whole-record fields, not a claim the supplier is
+      wrong. C6143 names a hydrate but gives an anhydrous-looking formula without
+      specifying water stoichiometry; that ambiguity remains explicit. Original chemical_properties={"cas_rn":
+      "56-95-1", "data_source": "CultureBotHT compounds_to_cas.csv", "inchi": "InChI=1S/C22H30Cl2N10.2C2H4O2/c23-15-5-9-17(10-6-15)31-21(27)33-19(25)29-13-3-1-2-4-14-30-20(26)34-22(28)32-18-11-7-16(24)8-12-18;2*1-2(3)4/h5-12H,1-4,13-14H2,(H5,25,27,29,31,33)(H5,26,28,30,32,34);2*1H3,(H,3,4)",
+      "molecular_formula": "C22H30Cl2N10.2C2H4O2", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+      "smiles": "CC(=O)O.CC(=O)O.N=C(NCCCCCCNC(=N)NC(=N)Nc1ccc(Cl)cc1)NC(=N)Nc1ccc(Cl)cc1"}.
+      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+      and original history. No mapping, role or release approval. Exact preimage and
+      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml; before_sha256=3c7a19294fe9b1e9f5197639a7d9f00e3a10ddd755fe5e3be95a52c8bcc42304.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 56-95-1
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C22H30Cl2N10.2C2H4O2
-    inchi: InChI=1S/C22H30Cl2N10.2C2H4O2/c23-15-5-9-17(10-6-15)31-21(27)33-19(25)29-13-3-1-2-4-14-30-20(26)34-22(28)32-18-11-7-16(24)8-12-18;2*1-2(3)4/h5-12H,1-4,13-14H2,(H5,25,27,29,31,33)(H5,26,28,30,32,34);2*1H3,(H,3,4)
-    smiles: CC(=O)O.CC(=O)O.N=C(NCCCCCCNC(=N)NC(=N)Nc1ccc(Cl)cc1)NC(=N)Nc1ccc(Cl)cc1
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:16112
   preferred_term: Chlorogenic acid
@@ -60211,12 +60299,28 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "PubChem (via CHEBI:35696)", "inchi": "InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2", "molecular_formula":
+      "2Cl.Co.2H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles":
+      "[Cl-].[Cl-].[Co+2]"}. Preserved identifier, ontology mapping and grade, roles,
+      synonyms, counts, status and original history. No mapping, role or release approval.
+      Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cocl2_X_2_H2o.yaml; before_sha256=f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    data_source: PubChem (via CHEBI:35696)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co.2H2O
-    inchi: InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2
-    smiles: '[Cl-].[Cl-].[Co+2]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -60420,12 +60524,28 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "PubChem (via CHEBI:35696)", "inchi": "InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2", "molecular_formula":
+      "2Cl.Co.4H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles":
+      "[Cl-].[Cl-].[Co+2]"}. Preserved identifier, ontology mapping and grade, roles,
+      synonyms, counts, status and original history. No mapping, role or release approval.
+      Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cocl2_X_4_H2o.yaml; before_sha256=92a6b9e4922482d2c56ee1bdb2e4134f2b5e71fdaad8f7f8a383944317b8f578.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    data_source: PubChem (via CHEBI:35696)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co.4H2O
-    inchi: InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2
-    smiles: '[Cl-].[Cl-].[Co+2]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -62847,13 +62967,31 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles. Set fields: {}. Record states a fixed hydrate while
+      exact archived parent ontology supplies the current water-free structures. Remove
+      the incompatible inherited structures rather than calculate or guess replacements.
+      No exact form ID selection, invented water-containing SMILES, or verification
+      of every retained field. Existing form/identity questions remain held. Original
+      chemical_properties={"cas_rn": "10031-43-3", "data_source": "CultureBotHT/compounds_to_cas.csv",
+      "inchi": "InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1", "molecular_formula": "Cu.2NO3.3H2O",
+      "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles": "O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]"}.
+      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+      and original history. No mapping, role or release approval. Exact preimage and
+      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cu_No32_X_3_H2o.yaml; before_sha256=cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 10031-43-3
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cu.2NO3.3H2O
-    inchi: InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1
-    smiles: O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53472
   preferred_term: CuCl
@@ -70733,13 +70871,32 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+      {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+      exactly match the parent ontology. Thermo official specification205010050, primary/thermo-isocitrate.pdf
+      No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+      repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+      removal concerns unqualified whole-record fields, not a claim the supplier is
+      wrong. Original chemical_properties={"cas_rn": "1637-73-6", "data_source": "CultureBotHT
+      compounds_to_cas.csv", "inchi": "InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;;;/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13);;;/q;3*+1/p-3",
+      "molecular_formula": "C6H5O7.3Na", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+      "smiles": "O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[Na+]"}. Preserved
+      identifier, ontology mapping and grade, roles, synonyms, counts, status and
+      original history. No mapping, role or release approval. Exact preimage and evidence:
+      reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json; owner=data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml;
+      before_sha256=16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 1637-73-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C6H5O7.3Na
-    inchi: InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;;;/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13);;;/q;3*+1/p-3
-    smiles: O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -74497,17 +74654,31 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.
+      Set fields: {}. Stock owner currently carries water-free phosphate InChI and
+      anhydrous mass141.958. Neither denotes the full concentration-qualified stock.
+      Do not replace with pure heptahydrate structures or a made-up solution molecular
+      weight; formulation details remain unresolved. Original chemical_properties={"data_source":
+      "ChEBI+PubChem", "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+      "molecular_weight": 141.958, "retrieval_date": "2026-05-23T08:30:57.822010+00:00"}.
+      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+      and original history. No mapping, role or release approval. Exact preimage and
+      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml;
+      before_sha256=cf67a250e7d90ccd5c5dfb55ffe9a68202b25348e2f4851f16a5531cfec84e6f.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   ingredient_type: STOCK_SOLUTION
   notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825
     exact mapping. Disodium phosphate heptahydrate (0.02 M stock) is a stock solution
     ingredient; retain a kgmicrobe.ingredient identity and use CHEBI:34683 as a broader
     disodium hydrogenphosphate solute parent.'
   kg_microbe_node_id: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29
-  chemical_properties:
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    molecular_weight: 141.958
-    data_source: ChEBI+PubChem
-    retrieval_date: '2026-05-23T08:30:57.822010+00:00'
 - identifier: CHEBI:15377
   preferred_term: Distilled water
   ontology_mapping:
@@ -99918,12 +100089,28 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "PubChem (via CHEBI:131527)", "inchi": "InChI=1S/2K.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+      "molecular_formula": "HO4P.2K.3H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+      "smiles": "O=P([O-])([O-])O.[K+].[K+]"}. Preserved identifier, ontology mapping
+      and grade, roles, synonyms, counts, status and original history. No mapping,
+      role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/K2hpo4_X_3_H2o.yaml; before_sha256=39d5ebde90e841ad8e1b764deacd7174308b08e48eaab9f8d83f1e3c3417c881.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    data_source: PubChem (via CHEBI:131527)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: HO4P.2K.3H2O
-    inchi: InChI=1S/2K.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[K+].[K+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -131451,14 +131638,35 @@ ingredients:
       monohydrogen phosphate dihydrat (from chebi_synonym_review / #878).'
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: none.
+      Set fields: {"chemical_properties.data_source": "ChEBI:91258 via EBI OLS v4
+      (archived exact dihydrate term)", "chemical_properties.inchi": "InChI=1S/2Na.H3O4P.2H2O/c;;1-5(2,3)4;;/h;;(H3,1,2,3,4);2*1H2/q2*+1;;;/p-2",
+      "chemical_properties.retrieval_date": "2026-11-01T06:26:52.088681+00:00", "chemical_properties.smiles":
+      "O.O.O=P([O-])([O-])O.[Na+].[Na+]"}. Primary exact dihydrate ontology annotations
+      supply both two-water structures. Preserve existing CAS and formula; evidence
+      capture independently lists them. No mapping/role approval. Retrieval timestamp
+      is original archive access, not new fetch or application time. Original chemical_properties={"cas_rn":
+      "10028-24-7", "data_source": "OAK/CHEBI xref", "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+      "molecular_formula": "2H2O.HO4P.2Na", "retrieval_date": "2026-04-19T07:35:12.781730+00:00",
+      "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"}. Preserved identifier, ontology mapping
+      and grade, roles, synonyms, counts, status and original history. No mapping,
+      role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Na2hpo4_X_2_H2o.yaml; before_sha256=42ecfeaef3b974803cd0b00916493a2741b78f6cfb3f663c3fea1f10742aabe6.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   kg_microbe_node_id: CHEBI:91258
   chemical_properties:
     cas_rn: 10028-24-7
-    data_source: OAK/CHEBI xref
-    retrieval_date: '2026-04-19T07:35:12.781730+00:00'
+    data_source: ChEBI:91258 via EBI OLS v4 (archived exact dihydrate term)
+    retrieval_date: '2026-11-01T06:26:52.088681+00:00'
     molecular_formula: 2H2O.HO4P.2Na
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
+    inchi: InChI=1S/2Na.H3O4P.2H2O/c;;1-5(2,3)4;;/h;;(H3,1,2,3,4);2*1H2/q2*+1;;;/p-2
+    smiles: O.O.O=P([O-])([O-])O.[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -137509,12 +137717,28 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "OAK/CHEBI xref", "inchi": "InChI=1S/Na.H3O4P/c;1-5(2,3)4/h;(H3,1,2,3,4)/q+1;/p-1",
+      "molecular_formula": "H2O4P.Na.2H2O", "retrieval_date": "2026-04-19T07:35:12.781730+00:00",
+      "smiles": "O=P([O-])(O)O.[Na+]"}. Preserved identifier, ontology mapping and
+      grade, roles, synonyms, counts, status and original history. No mapping, role
+      or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Nah2po4_X_2_H2o.yaml; before_sha256=353097162f9d8a6d6781fe95c017fb5214a29261eed2a419d976a68865eace00.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    data_source: OAK/CHEBI xref
-    retrieval_date: '2026-04-19T07:35:12.781730+00:00'
     molecular_formula: H2O4P.Na.2H2O
-    inchi: InChI=1S/Na.H3O4P/c;1-5(2,3)4/h;(H3,1,2,3,4)/q+1;/p-1
-    smiles: O=P([O-])(O)O.[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -142004,12 +142228,28 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "CultureBotHT/compounds_to_cas.csv", "inchi": "InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2",
+      "molecular_formula": "Cl2Ni.2H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+      "smiles": "[Cl][Ni][Cl]"}. Preserved identifier, ontology mapping and grade,
+      roles, synonyms, counts, status and original history. No mapping, role or release
+      approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Nicl2_X_2_H2o.yaml; before_sha256=63b0fccca5b4c6331435b5ca6f1c6b30710447cb8a4118b97cec1cc2f2e1b85a.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Ni.2H2O
-    inchi: InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2
-    smiles: '[Cl][Ni][Cl]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -222030,13 +222270,38 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: none.
+      Set fields: {"chemical_properties.data_source": "PubChem CID6096963 (CAS7782-85-6,
+      UNII70WT22SF4B and heptahydrate formula cross-checked with NCIT:C61946)", "chemical_properties.inchi":
+      "InChI=1S/2Na.H3O4P.7H2O/c;;1-5(2,3)4;;;;;;;/h;;(H3,1,2,3,4);7*1H2/q2*+1;;;;;;;;/p-2",
+      "chemical_properties.retrieval_date": "2026-11-02T04:07:45.088215+00:00", "chemical_properties.smiles":
+      "O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]"}. Exact current NCIT identity/CAS/formula
+      agree with primary PubChem CAS-name result, same-CID synonyms, UNII and seven
+      explicit waters. Keep NCIT primary, CAS and existing formula. PubChem structures
+      describe the database form, not an experimental crystal geometry. Preserve BUFFER
+      and mapping holds; do not claim a new identity/role review. No new pubchem_cid
+      field is necessary. Original chemical_properties={"cas_rn": "7782-85-6", "data_source":
+      "CultureBotHT/compounds_to_cas.csv", "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+      "molecular_formula": "HO4P.2Na.7H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+      "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"}. Preserved identifier, ontology mapping
+      and grade, roles, synonyms, counts, status and original history. No mapping,
+      role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml; before_sha256=6e816ef6a1dad8dab9c3ddd711ca84d8a3489bedb175d540ea3cb618c7068873.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 7782-85-6
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+    data_source: PubChem CID6096963 (CAS7782-85-6, UNII70WT22SF4B and heptahydrate
+      formula cross-checked with NCIT:C61946)
+    retrieval_date: '2026-11-02T04:07:45.088215+00:00'
     molecular_formula: HO4P.2Na.7H2O
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
+    inchi: InChI=1S/2Na.H3O4P.7H2O/c;;1-5(2,3)4;;;;;;;/h;;(H3,1,2,3,4);7*1H2/q2*+1;;;;;;;;/p-2
+    smiles: O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER

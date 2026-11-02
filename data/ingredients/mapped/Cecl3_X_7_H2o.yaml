@@ -139,12 +139,28 @@ curation_history:
     ''cerium(III) chloride''; ''trichloridocerium''. Preserved original text and source
     metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+    Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+    supplies the current water-free structures. Remove the incompatible inherited
+    structures rather than calculate or guess replacements. No exact form ID selection,
+    invented water-containing SMILES, or verification of every retained field. Existing
+    form/identity questions remain held. Original chemical_properties={"data_source":
+    "PubChem (via CHEBI:35458)", "inchi": "InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3", "molecular_formula":
+    "CeCl3.7H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles":
+    "[Cl][Ce]([Cl])[Cl]"}. Preserved identifier, ontology mapping and grade, roles,
+    synonyms, counts, status and original history. No mapping, role or release approval.
+    Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Cecl3_X_7_H2o.yaml; before_sha256=333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
-  data_source: PubChem (via CHEBI:35458)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: CeCl3.7H2O
-  inchi: InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3
-  smiles: '[Cl][Ce]([Cl])[Cl]'
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: TRACE_ELEMENT

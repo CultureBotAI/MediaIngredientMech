@@ -1,0 +1,278 @@
+identifier: CHEBI:91258
+preferred_term: Na2HPO4 x 2 H2O
+ontology_mapping:
+  ontology_id: CHEBI:91258
+  ontology_label: disodium hydrogenphosphate dihydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is a
+      hydrate of CHEBI:91258, not an exact match to it] Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: Promoted off the anhydrous term CHEBI:34683, which was absorbing five distinct
+      Na2HPO4 hydrates, to the specific term CHEBI:91258 ('disodium hydrogenphosphate
+      dihydrate') — MAPPING_SEMANTICS §3 step 1. cas_rn '7558-79-4' -> '10028-24-7',
+      taken from ChEBI's own xref on the specific term; the previous value was shared
+      across the family and did not denote this hydrate (#334).
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:91258 -> kgmicrobe.compound:na2hpo4_x_2_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:91258 ('disodium
+      hydrogenphosphate dihydrate') and was sharing that term's identifier — the identity
+      collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'HO4P.2Na' -> '2H2O.HO4P.2Na'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because adopted verbatim from the mapped term
+      CHEBI:91258 ('disodium hydrogenphosphate dihydrate'), which is the specific
+      hydrate and already carries the water.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:91258 (''disodium hydrogenphosphate dihydrate'') — a subsumption
+      ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+      under the anhydrous compound, which is not an ancestor even transitively. A
+      hydrate is a distinct substance containing the anhydrous form, not a specialization
+      of it. closeMatch claims similarity without subsumption. The ontology_id and
+      the record''s own identifier are unchanged.'
+synonyms:
+- synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Na2HPO4 . 12H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4 x 12 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4 x 2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2HPO4 x 3 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4 x 6 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4 x 7 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4 x H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4 x2 H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2HPO4.12H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4.7H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4·12H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Na2HPO4·2H2O
+  synonym_type: HYDRATE_FORM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Buffer; Properties: Inorganic compound, Simple component, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Simple component, Inorganic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: sodium hydrogen phosphate--water (1/2)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: sodium monohydrogen phosphate dihydrat
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 304
+  media_count: 304
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:52.650821+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7558-79-4 from PubChem API (ontology label) via name preprocessing
+    (Na2HPO4·2H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7782-85-6 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: Na2HPO4 . 12H2O, Na2HPO4
+    x 12 H2O, Na2HPO4 x 2H2O, Na2HPO4 x 3 H2O, Na2HPO4 x 6 H2O, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: Na2HPO4 . 12H2O, Na2HPO4
+    x 12 H2O, Na2HPO4 x 2 H2O, Na2HPO4 x 2H2O, Na2HPO4 x 3 H2O, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:35:12.782058+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Na2hpo42h2o.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:35:12.781730+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (7558-79-4|7782-85-6) resolved via
+    OAK canonical xref: 7558-79-4 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.168490+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.233784+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=HO4P.2Na; inchi=InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2;
+    smiles=O=P([O-])([O-])O.[Na+].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.972570+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112152+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.806328+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2HPO4 x 2 H2O'' -> ''disodium hydrogenphosphate'':
+    synced to canonical CHEBI label (preferred_term ''Na2HPO4 x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_hydrate_collapse
+  action: PROMOTED_TO_SPECIFIC_HYDRATE
+  changes: identifier/ontology_id CHEBI:34683 -> CHEBI:91258 'disodium hydrogenphosphate
+    dihydrate'; mapping_quality -> EXACT_MATCH; cas_rn '7558-79-4' -> '10028-24-7'
+    (#321/#334).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:91258 -> kgmicrobe.compound:na2hpo4_x_2_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'HO4P.2Na' -> '2H2O.HO4P.2Na' (#321); adopted verbatim
+    from the mapped term CHEBI:91258 ('disodium hydrogenphosphate dihydrate'), which
+    is the specific hydrate and already carries the water.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519464+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 55/231 -> 304/304 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-29T03:56:37.918934+00:00'
+  curator: hydrate_duplicate_merges
+  action: CORRECTED
+  changes: 'identifier kgmicrobe.compound:na2hpo4_x_2_h2o -> CHEBI:91258; mapping_quality
+    CLOSE_MATCH -> EXACT_MATCH. The record was already grounded to CHEBI:91258 (disodium
+    hydrogenphosphate dihydrate) -- it IS that substance, so a registry mint and a
+    close match both understated it. Every one of the 54 registry-identified records
+    is graded non-exact, so the two move together: an exact grounding takes the ontology
+    id, as MgSO4 x 7 H2O does (#334).'
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:34683 -> CHEBI:91258 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6 H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''Na2HPO4 . 12H2O'', ''Na2HPO4 x 12
+    H2O'', ''Na2HPO4 x 7 H2O'', ''Na2HPO4 x H2O'', ''Na2HPO4.12H2O'', ''Na2HPO4.7H2O'',
+    ''Na2HPO4·12H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: ADDED_SYNONYMS
+  changes: 'Added dihydrate synonyms: sodium hydrogen phosphate--water (1/2), sodium
+    monohydrogen phosphate dihydrat (from chebi_synonym_review / #878).'
+  new_status: MAPPED
+  llm_assisted: true
+kg_microbe_node_id: CHEBI:91258
+chemical_properties:
+  cas_rn: 10028-24-7
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:35:12.781730+00:00'
+  molecular_formula: 2H2O.HO4P.2Na
+  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
+  smiles: O=P([O-])([O-])O.[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (231 occurrences as 'Buffer')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Buffer; Properties: Inorganic compound, Defined component, Simple
+      component'
+    curator_note: Widespread use in media formulations (231 occurrences). High confidence
+      based on 'Defined component' property.

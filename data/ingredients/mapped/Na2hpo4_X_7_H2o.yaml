@@ -227,13 +227,38 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: none. Set
+    fields: {"chemical_properties.data_source": "PubChem CID6096963 (CAS7782-85-6,
+    UNII70WT22SF4B and heptahydrate formula cross-checked with NCIT:C61946)", "chemical_properties.inchi":
+    "InChI=1S/2Na.H3O4P.7H2O/c;;1-5(2,3)4;;;;;;;/h;;(H3,1,2,3,4);7*1H2/q2*+1;;;;;;;;/p-2",
+    "chemical_properties.retrieval_date": "2026-11-02T04:07:45.088215+00:00", "chemical_properties.smiles":
+    "O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]"}. Exact current NCIT identity/CAS/formula
+    agree with primary PubChem CAS-name result, same-CID synonyms, UNII and seven
+    explicit waters. Keep NCIT primary, CAS and existing formula. PubChem structures
+    describe the database form, not an experimental crystal geometry. Preserve BUFFER
+    and mapping holds; do not claim a new identity/role review. No new pubchem_cid
+    field is necessary. Original chemical_properties={"cas_rn": "7782-85-6", "data_source":
+    "CultureBotHT/compounds_to_cas.csv", "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+    "molecular_formula": "HO4P.2Na.7H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+    "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"}. Preserved identifier, ontology mapping
+    and grade, roles, synonyms, counts, status and original history. No mapping, role
+    or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml; before_sha256=6e816ef6a1dad8dab9c3ddd711ca84d8a3489bedb175d540ea3cb618c7068873.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7782-85-6
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  data_source: PubChem CID6096963 (CAS7782-85-6, UNII70WT22SF4B and heptahydrate formula
+    cross-checked with NCIT:C61946)
+  retrieval_date: '2026-11-02T04:07:45.088215+00:00'
   molecular_formula: HO4P.2Na.7H2O
-  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-  smiles: O=P([O-])([O-])O.[Na+].[Na+]
+  inchi: InChI=1S/2Na.H3O4P.7H2O/c;;1-5(2,3)4;;;;;;;/h;;(H3,1,2,3,4);7*1H2/q2*+1;;;;;;;;/p-2
+  smiles: O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: BUFFER

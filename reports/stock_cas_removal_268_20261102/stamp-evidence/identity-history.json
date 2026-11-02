@@ -1,0 +1,40 @@
+{
+  "base": "b162cb9c567db34296125230b997f5459f44d185",
+  "owner": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+  "owner_sha256": "6d6db9a0040730973f390da1e492ee4e2afa672adc95e2e526d37f99def9bc5a",
+  "identifier": "kgmicrobe.ingredient:0_2_thiamine_pyrophosphate",
+  "ontology_mapping": {
+    "ontology_id": "kgmicrobe.ingredient:0_2_thiamine_pyrophosphate",
+    "ontology_label": "0.2% Thiamine pyrophosphate",
+    "ontology_source": "kgmicrobe.ingredient",
+    "mapping_quality": "FALLBACK_REGISTRY",
+    "evidence": [
+      {
+        "evidence_type": "DATABASE_MATCH",
+        "source": "CultureMech",
+        "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+      },
+      {
+        "evidence_type": "DATABASE_MATCH",
+        "source": "MIM curation (#288/#320)",
+        "notes": "identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate. This record is a 0.2% stock SOLUTION, not the pure compound, and it was holding CHEBI:9532 ('thiamine(1+) diphosphate') \u2014 the term the pure-compound record needs. #288 established that stock solutions take a kgmicrobe.ingredient: identifier with FALLBACK_REGISTRY; this applies that rule and frees the ChEBI term. Its recorded CAS 154-87-0 is the chloride's, so that field was never evidence for the ChEBI term either."
+      }
+    ]
+  },
+  "stock_identity_event": {
+    "timestamp": "2026-08-13T00:00:00+00:00",
+    "curator": "reground_edta_thiamine",
+    "action": "MINTED_REGISTRY_FOR_STOCK_SOLUTION",
+    "changes": "identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate (#288/#320); a 0.2% stock solution is not the pure compound.",
+    "llm_assisted": false
+  },
+  "current_mapping_decision": {
+    "source_position": 9,
+    "row_sha256": "3f43a4ae2917708c459b116cdf4a7bbf6eb9ce789eed32925c7066b3418e83de",
+    "owner_record": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+    "disposition": "WITHHOLD",
+    "review_reason": "Historical concern recorded before the source-only node-pointer correction in receipt issue753-870-registry-and-node-corrections. The quoted concern describes the archived owner, not a claim that every defect remains present: Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: pure-compound synonyms, chemistry, ingredient_type, and kg_microbe_node_id remain stale. The corrected claim remains WITHHOLD pending fresh mapping-specific review. All unassessed identity, synonym, preparation and role concerns remain review obligations; this provenance qualification retires no historical finding and adds no scientific approval.",
+    "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+    "evidence_key": "9"
+  }
+}

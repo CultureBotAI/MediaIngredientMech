@@ -23,9 +23,8 @@ from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn, TimeRemain
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event
-from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.curation.chemical_properties_guard import prepare_chemical_properties
 from mediaingredientmech.utils.yaml_handler import save_yaml
-from mediaingredientmech.validation.ingredient_reviewer import IngredientReviewer
 from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
@@ -116,9 +115,6 @@ def main():
 
     args = parser.parse_args()
 
-    # Initialize
-    reviewer = IngredientReviewer()
-
     # Load full collection (with metadata) and operate on its ingredients
     # list in place so saves preserve generation_date / total_count / etc.
     console.print("[cyan]Loading CHEBI-mapped ingredients...[/cyan]")
@@ -168,15 +164,9 @@ def main():
             ontology_id = ingredient.get("ontology_mapping", {}).get("ontology_id")
             preferred_term = ingredient.get("preferred_term", "unknown")
 
-            # Skip if already has chemical properties
-            if ingredient.get("chemical_properties") and not args.dry_run:
-                skipped_count += 1
-                progress.update(task, advance=1)
-                continue
-
             # Try to enrich from OLS
             try:
-                properties = reviewer.enrich_from_ols(ontology_id)
+                properties, explanation = prepare_chemical_properties(ingredient)
 
                 if properties:
                     if not args.dry_run:
@@ -187,10 +177,7 @@ def main():
                             ingredient,
                             curator="enrich_from_ols.py",
                             action="AUTO_BACKFILL_CHEBI_CHEMISTRY",
-                            changes=(
-                                "Enriched chemical_properties from EBI OLS v4: "
-                                + ", ".join(sorted(properties.keys()))
-                            ),
+                            changes=explanation,
                         )
 
                         enriched_count += 1
@@ -209,22 +196,28 @@ def main():
                         enriched_count += 1
 
                 else:
-                    # No properties available
-                    skipped_count += 1
-                    failures.append({
-                        "ontology_id": ontology_id,
-                        "preferred_term": preferred_term,
-                        "reason": "No chemical properties available in OLS",
-                    })
+                    if explanation == "PROVIDER_FAILURE":
+                        failed_count += 1
+                    else:
+                        skipped_count += 1
+                    failures.append(
+                        {
+                            "ontology_id": ontology_id,
+                            "preferred_term": preferred_term,
+                            "reason": explanation,
+                        }
+                    )
 
             except Exception as e:
                 # Enrichment failed
                 failed_count += 1
-                failures.append({
-                    "ontology_id": ontology_id,
-                    "preferred_term": preferred_term,
-                    "error": str(e),
-                })
+                failures.append(
+                    {
+                        "ontology_id": ontology_id,
+                        "preferred_term": preferred_term,
+                        "error": str(e),
+                    }
+                )
 
             # Rate limiting
             time.sleep(args.delay)
@@ -240,17 +233,19 @@ def main():
         CHECKPOINT_FILE.unlink()
 
     # Save failures
-    if failures:
+    if failures and not args.dry_run:
         save_failures(failures)
 
     # Summary
-    console.print(f"\n[bold]Enrichment Summary:[/bold]")
+    console.print("\n[bold]Enrichment Summary:[/bold]")
     console.print(f"  Total processed: {len(chebi_ingredients)}")
-    console.print(f"  [green]Enriched: {enriched_count} ({enriched_count / max(len(chebi_ingredients), 1) * 100:.1f}%)[/green]")
+    console.print(
+        f"  [green]Enriched: {enriched_count} ({enriched_count / max(len(chebi_ingredients), 1) * 100:.1f}%)[/green]"
+    )
     console.print(f"  [yellow]Skipped: {skipped_count}[/yellow]")
     console.print(f"  [red]Failed: {failed_count}[/red]")
 
-    if failures:
+    if failures and not args.dry_run:
         console.print(f"\n[yellow]Failed ingredients saved to: {FAILURES_FILE}[/yellow]")
 
     if args.dry_run:

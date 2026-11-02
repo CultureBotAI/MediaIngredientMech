@@ -303,62 +303,22 @@ class IngredientCurator:
         record: dict[str, Any],
         client: Any | None = None,
     ) -> dict[str, Any]:
-        """Enrich a record with chemical properties from ChEBI/PubChem.
+        """Fill only an eligible empty chemistry block from exact OLS evidence.
 
-        Args:
-            record: The ingredient record to enrich.
-            client: Optional ChemicalPropertiesClient instance (created if None).
-
-        Returns:
-            The updated record (modified in place).
+        Refusals leave the record, its history and the curator dirty flag alone.
+        This consistency check does not approve or re-grade the mapping.
         """
-        # Check if already enriched
-        if record.get("chemical_properties"):
-            logger.debug("Record already has chemical_properties, skipping enrichment")
-            return record
-
-        # Check if mapped to CHEBI
-        ontology_mapping = record.get("ontology_mapping")
-        if not ontology_mapping:
-            logger.debug("Record has no ontology_mapping, skipping enrichment")
-            return record
-
-        ontology_source = ontology_mapping.get("ontology_source")
-        if ontology_source != "CHEBI":
-            logger.debug("Record is not mapped to CHEBI (%s), skipping enrichment", ontology_source)
-            return record
-
-        # Import here to avoid circular dependency
-        from mediaingredientmech.utils.chemical_properties_client import (
-            ChemicalPropertiesClient,
+        from mediaingredientmech.curation.chemical_properties_guard import (
+            prepare_chemical_properties,
         )
 
-        # Create client if not provided
-        if client is None:
-            client = ChemicalPropertiesClient(cache_enabled=True)
-
-        # Get properties
-        ontology_id = ontology_mapping.get("ontology_id")
-        label = ontology_mapping.get("ontology_label", "")
-        props = client.get_properties(ontology_id, label, ontology_source)
-
-        if props:
-            # Add to record
-            record["chemical_properties"] = props.to_dict()
-
-            # Log curation event
-            self._add_event(
-                record,
-                action="ANNOTATED",
-                changes=f"Added chemical properties from {props.data_source}",
-                notes=f"Formula: {props.molecular_formula or 'N/A'}, SMILES: {props.smiles or 'N/A'}",
-            )
-
+        proposal, explanation = prepare_chemical_properties(record, client)
+        if proposal:
+            record["chemical_properties"] = proposal
+            self._add_event(record, action="ANNOTATED", changes=explanation)
             self._dirty = True
-            logger.info("Enriched %s with chemical properties", ontology_id)
         else:
-            logger.debug("No chemical properties found for %s", ontology_id)
-
+            logger.debug("Chemical enrichment refused: %s", explanation)
         return record
 
     def change_status(

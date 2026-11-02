@@ -1,0 +1,91 @@
+commit 14f7ab71204d1307a0ffaccaf3c614eabfd0d990
+Author:     marcin p. joachimiak <4625870+realmarcin@users.noreply.github.com>
+AuthorDate: Thu Aug 13 12:25:35 2026 -0700
+Commit:     GitHub <noreply@github.com>
+CommitDate: Thu Aug 13 12:25:35 2026 -0700
+
+    Reground EDTA and Thiamine pyrophosphate off over-specific terms (#319/#320) (#351)
+    
+    * Reground EDTA and Thiamine pyrophosphate off over-specific terms (#319/#320)
+    
+    Both were mapped to terms whose ChEBI definition asserts a property the record's
+    label never does. Definitions read from the live EBI OLS4 API, since #319 records
+    that the local build lacks them for some of these terms.
+    
+    **EDTA** (446 occurrences) sat on CHEBI:64755 'EDTA(2-)', defined as "a
+    tetracarboxylic acid anion formed by deprotonation of TWO of the four carboxy
+    groups". That is specific, not the "at least one" wording that makes #319's five
+    hold-outs deliberately agnostic — so under this issue's own rule it descends.
+    
+    The free-acid term CHEBI:4735 was held by 'EDTA (acid form)', a record with ZERO
+    occurrences that already carried "EDTA" as a synonym. It is absorbed; EDTA takes
+    the term with SYNONYM_MATCH. The corpus keeps separate Na2-EDTA records for the
+    salt, so plain "EDTA" denoting the free acid matches how the family is modelled.
+    
+    **Thiamine pyrophosphate** (17 occurrences) sat on CHEBI:18290, "an organic
+    CHLORIDE SALT of thiamine(1+) diphosphate" — a counterion the label never
+    mentions. CHEBI:9532 is the compound itself; pyrophosphate and diphosphate are
+    the same moiety under two naming conventions, hence SYNONYM_MATCH. The existing
+    SSSOM row had already flagged this as "SYMMETRIC: charge/protonation/ester
+    variant".
+    
+    CHEBI:9532 was held by '0.2% Thiamine pyrophosphate' — a stock SOLUTION, not the
+    compound. #288 established that stock solutions take a kgmicrobe.ingredient:
+    identifier with FALLBACK_REGISTRY; applying that rule frees the term. Its CAS
+    154-87-0 is the chloride's, so that field was never evidence for the ChEBI term
+    either.
+    
+    Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+    
+    * Fix ontology_source enum and refresh the stale flat exports (#319/#320)
+    
+    Two CI failures on the previous commit, both mine.
+    
+    **validate-strict, 2 enum_mismatch rows.** I set the stock solution's
+    `ontology_source` to `kgm:ingredient`, conflating two different things:
+    `kgm:ingredient` is the SSSOM `object_source` COLUMN value, while the record
+    field takes the CURIE prefix. #288's own records use `kgmicrobe.ingredient`, and
+    that is what the schema enum permits. Corrected to match.
+    
+    **qc, docs/data stale.** The committed flat exports did not match what their
+    producer generates. I had run the export recipes with output redirected to
+    /dev/null, so I could not have seen a failure — and did not check the working
+    tree for a diff afterwards. Regenerated; verified idempotent across two runs.
+    
+    `just validate-strict` now runs clean (0 ERROR rows). It was not in the local
+    gate list I had been using, which is why both of these reached CI: I had been
+    running the scripts CI invokes directly but not the `just` recipes it also runs.
+    
+    Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+    
+    * Refresh docs/data/ingredients.json timestamp
+    
+    The payload is unchanged; only the embedded `generated` stamp moves. The
+    freshness check normalises that stamp away, so this is a no-op for CI and is
+    committed only to leave the working tree clean.
+    
+    Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+    
+    * Track the thiamine record under the casing the exporter writes (#320)
+    
+    The qc job failed on Linux while every local check passed, and the cause is the
+    case-insensitive filesystem this repo has hit before.
+    
+    Git tracked `data/ingredients/mapped/Thiamine_Pyrophosphate.yaml` (capital P).
+    After the CHEBI:9532 regrounding the exporter writes `Thiamine_pyrophosphate.yaml`
+    (lowercase p). macOS folds the two together, so `git status` reported no change
+    and every local tool saw ONE file.
+    
+    On Linux, git checks out the capital-P file and the exporter then creates the
+    lowercase-p one, so `browser_export.py` reads 2842 records where docs/data
+    carries 2841 — and the freshness check correctly called ingredients.json stale.
+    The artifact was never wrong; the tracked filename was.
+    
+    Renamed via an intermediate path, since `git mv` cannot swap case directly on a
+    case-insensitive volume.
+    
+    Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+    
+    ---------
+    
+    Co-authored-by: Claude Opus 5 <noreply@anthropic.com>
