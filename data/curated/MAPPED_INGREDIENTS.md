@@ -1814,7 +1814,7 @@
 | CHEBI:81860 | Sodium oleate | CHEBI:81860 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:234557 | Sodium palmitate | CHEBI:234557 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:132103 | Sodium perchlorate | CHEBI:132103 | CHEBI | EXACT_MATCH | 4 |
-| cas:7791-07-3 | Sodium perchlorate monohydrate | CHEBI:132103 | CHEBI | CLOSE_MATCH | 1 |
+| cas:7791-07-3 | Sodium perchlorate monohydrate | CHEBI:132103 | CHEBI | NARROW_MATCH | 1 |
 | CHEBI:75226 | Sodium periodate | CHEBI:75226 | CHEBI | EXACT_MATCH | 0 |
 | cas:7775-27-1 | Sodium Persulfate | mesh:C024625 | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_phosphate_buffer | Sodium phosphate buffer | NCIT:C29321 | NCIT | CLOSE_MATCH | 55 |

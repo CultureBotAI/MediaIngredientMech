@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-11-01T20:21:01.870035+00:00
+Generated: 2026-11-01T23:29:50.359304+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1861,7 +1861,7 @@ Total: 2680 ingredients
 | CHEBI:81860 | CHEBI:81860 | Sodium oleate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:234557 | CHEBI:234557 | Sodium palmitate | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:132103 | CHEBI:132103 | Sodium perchlorate | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| cas:7791-07-3 | CHEBI:132103 | Sodium perchlorate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 1 |
+| cas:7791-07-3 | CHEBI:132103 | Sodium perchlorate monohydrate | MAPPED | CHEBI | NARROW_MATCH | 1 |
 | CHEBI:75226 | CHEBI:75226 | Sodium periodate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:7775-27-1 | mesh:C024625 | Sodium Persulfate | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_phosphate_buffer | NCIT:C29321 | Sodium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 55 |
