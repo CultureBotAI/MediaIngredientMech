@@ -68,6 +68,32 @@ class TestRuleG:
         """Rule F owns the empty-date defect; G must not double-report it."""
         assert list(mod.evaluate_rule_g(self.HEADER, [_row(mapping_date="")])) == []
 
+    @pytest.mark.parametrize("quote", ["'", '"', ""])
+    @pytest.mark.parametrize("row_date, rejects", [
+        ("2026-09-06", 0), ("2026-09-05", 2), ("2026-09-07", 2),
+    ])
+    def test_iso_date_scalar_quote_styles_keep_date_comparison(self, quote, row_date, rejects):
+        header = [f"# {field}: {quote}2026-09-06{quote}" for field in (
+            "mapping_set_version", "mapping_date",
+        )]
+        assert len(list(mod.evaluate_rule_g(header, [_row(mapping_date=row_date)]))) == rejects
+
+    def test_native_yaml_dumped_header_is_accepted(self):
+        import yaml
+
+        header = ["# " + line for line in yaml.safe_dump({
+            "mapping_set_version": "2026-09-06", "mapping_date": "2026-09-06",
+        }).splitlines()]
+        assert any("'2026-09-06'" in line for line in header)
+        assert list(mod.evaluate_rule_g(header, [_row()])) == []
+
+    @pytest.mark.parametrize("value", [
+        "'2026-09-06\"", "\"2026-09-06'", "'2026-09-06", "2026-09-06'",
+    ])
+    def test_unbalanced_quotes_do_not_hide_an_invalid_header_scalar(self, value):
+        header = [f"# {field}: {value}" for field in ("mapping_set_version", "mapping_date")]
+        assert len(list(mod.evaluate_rule_g(header, [_row()]))) == 2
+
 
 class TestRuleH:
     """One published label belongs to one record (#504)."""

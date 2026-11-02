@@ -1,0 +1,11 @@
+# Six stale KG-Microbe node fields (#870)
+
+This packet binds the six owner preimages at merged base `61ff4ed4789e61ef64f6f75a792adf3b934e7c82`, original primary ChEBI/OLS captures, their original retrieval metadata, and the [scoped decision](https://github.com/CultureBotAI/MediaIngredientMech/issues/870#issuecomment-6566860803). No capture is represented as newly fetched; the preserved CHEBI:3448 request returned 404. Owner histories establish the earlier identity corrections, and the selected primary responses identify the stale parent/wrong-species/obsolete targets.
+
+The writer removes only `kg_microbe_node_id` and appends one truthful curation event. It preserves identifiers, mappings, aliases, chemistry, counts, roles, status and present or absent tombstone representative fields. All six proposals pass native closed-schema validation before any source write. Native publication reserves the receipt and all six backups, rechecks every ingredient path/input and protected anchor, and retains failed receipts/journals for recovery. This receipt grants no scientific approval.
+
+The canonical mapping, its manifest and alias sidecars, unified TSV/provenance and rejection ledger are protected anchors. The fixed unified snapshot still contains 21 affected cells in 15 rows; #870 remains open. Existing mapping and role holds are preserved by the later approval-free receipt/review chain. No CAS change is authorized by this packet: Izalpinin evidence and its LIPIDMAPS source-support boundary are separate.
+
+The existing audit rejects same-prefix mismatches and the five specifically reviewed stale identity/node pairs covering these six owners. Other cross-prefix differences remain report-only because the schema permits the identifier scheme actually used by the KG node; no legitimate exception was invented.
+
+Use `python scripts/remove_stale_kg_microbe_nodes.py --root PATH --log RESOLVED_ABSOLUTE_PATH` for a dry run; add `--apply` only after independent review. The CLI verifies the configured repository and takes the native MIM lock. Direct Python callers must hold the same lock. `source_receipt(root, log)` verifies the exact completed source batch and returns stable per-owner records for the native approval-free mapping receipt chain. Actual source application, full QC and final independent head review are separate from this evidence packet.

@@ -4,14 +4,14 @@ This opt-in export carries a reviewed scoped cohort, registry claims and source
 occurrences together. It does not replace the complete legacy SSSOM release or
 promote its withheld rows. The initial cohort contains the 20 reviewed
 KG-Microbe cases under issues #769 and #770. The current immutable review
-successor is [the #901 sodium perchlorate dependency refresh](../reports/ingredient_bundle_20261101_sodium_perchlorate901/README.md).
+successor is [the #753/#870 dependency refresh](../reports/ingredient_bundle_20261102_registry753_nodes870_reviewed/README.md).
 It updates global mapping-review, evidence, canonical and manifest dependencies
 after a separately reviewed correction outside this cohort. The existing claim
 decisions, owner bytes, owned-name policy and all earlier reviews remain preserved.
 
 ```bash
 python -m mediaingredientmech.export.ingredient_bundle export \
-  --review reports/ingredient_bundle_20261101_sodium_perchlorate901/review.json \
+  --review reports/ingredient_bundle_20261102_registry753_nodes870_reviewed/review.json \
   --output output/ingredient-bundle-v1
 python -m mediaingredientmech.export.ingredient_bundle validate \
   output/ingredient-bundle-v1 --manifest-sha256 <exported-manifest-sha256>
@@ -23,6 +23,12 @@ for concurrent source changes, and publishes by renaming the staged directory.
 Identical input bytes and exporter code produce identical output bytes. A release
 consumer must obtain the manifest digest from its reviewed activation policy;
 hashes inside a downloaded manifest are integrity checks, not independent trust.
+
+Each emitted SSSOM set derives `mapping_date` and `mapping_set_version` from
+its own newest dated row, independently of excluded canonical rows. Empty or
+wholly dateless sets omit both optional fields; missing row dates remain subject
+to Rule F. Nonblank dates must be valid ASCII ISO calendar dates. This metadata
+rule changes neither the row payloads nor their scientific approvals (#1090).
 
 ## Files and capabilities
 
@@ -123,7 +129,7 @@ The output parent directories must already exist.
 ```bash
 PYTHONPATH=src python scripts/refresh_unchanged_cohort.py \
   --baseline <commit-containing-prior-inputs> \
-  --prior-review reports/ingredient_bundle_20261101_sodium_perchlorate901/review.json \
+  --prior-review reports/ingredient_bundle_20261102_registry753_nodes870_reviewed/review.json \
   --output output/next-companion-review.json \
   --receipt output/next-companion-dependency-refresh.json \
   --prior-copy output/prior-companion-review.json

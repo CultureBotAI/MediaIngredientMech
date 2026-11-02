@@ -23,6 +23,7 @@ from .mapping_scope import (
     write_profile_table,
 )
 from .review_claims import validate_review_decision
+from .sssom_metadata import subset_date_metadata
 
 BUNDLE_VERSION = 1
 CAPABILITIES = frozenset(
@@ -584,6 +585,7 @@ def reviewed_products(review: dict, sources: dict[str, bytes]) -> tuple[dict[str
             ):
                 raise ValueError("Supported occurrence refers to a withheld product")
     mappings.sort(key=lambda r: (r["subject_id"], r["predicate_id"], r["object_id"]))
+    metadata = subset_date_metadata(metadata, mappings)
     products.sort(key=lambda r: r["product_id"])
     occurrences.sort(key=lambda r: r["occurrence_id"])
     artifacts = {

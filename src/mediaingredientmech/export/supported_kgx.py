@@ -20,6 +20,7 @@ from pathlib import Path
 import yaml
 
 from mediaingredientmech.export.kgx import EDGE_COLUMNS, NODE_COLUMNS
+from mediaingredientmech.sssom_metadata import subset_date_metadata
 from mediaingredientmech.validation.semantic_release import local, require, rows, sha
 from mediaingredientmech.validation.semantic_release import validate as validate_full_review
 
@@ -158,6 +159,7 @@ def _supported_sssom(root, selected):
         key=lambda edge: int(edge["source_position"]),
     )
     mapping_rows = [json.loads(edge["assertion_json"]) for edge in mapping_edges]
+    metadata = subset_date_metadata(metadata, mapping_rows)
     columns = list(
         csv.DictReader(
             (line for line in lines if not line.startswith("#")), delimiter="\t"
@@ -250,6 +252,7 @@ def _expected(root: Path, report_path: Path) -> tuple[dict, dict[str, bytes]]:
         "archive_members": ["manifest.json", "mim_nodes.tsv", "mim_edges.tsv"],
         "implementation": {
             "export/supported_kgx.py": sha(Path(__file__)),
+            "sssom_metadata.py": sha(Path(__file__).parents[1] / "sssom_metadata.py"),
             "validation/semantic_release.py": sha(
                 Path(__file__).parents[1] / "validation/semantic_release.py"
             ),
