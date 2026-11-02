@@ -1,0 +1,87 @@
+{
+  "scope": "Native evaluate_rule_b4 with explicit read-only existing kg-microbe transformed ontology path; does not change the standard QC invocation or claim missing prefixes were checked.",
+  "inputs": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c/scripts/validate_sssom_invariants.py": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303",
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/chebi_nodes.tsv": "02024ca0a29cafaac16b43a06a786edd0368a8a646b75ab1002b6239c1219f60",
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/envo_nodes.tsv": "8eb6bf7473bee2bfd87c0c781be35564b1bdebac29f05f631841ce561b5d1806",
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/foodon_nodes.tsv": "5e423c14f9d263aac38ba33699363a968d35496e11483a720ef22c9b12dd4c56",
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/pato_nodes.tsv": "b93976396e3077b6f37171a8ed1583dd5c3231cf81a2ca31ae1659aee7f5dc18",
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/uberon_nodes.tsv": "320908b15386832a32ac8016c33358ab2f5cc37756af515c3da45a17a2c6dd14",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c/mappings/ingredient_mappings.sssom.tsv": "62fd37c2ed8ace9b9295618d44e251d11fc35feb711053b66d322e5a7bce14f1",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c/output/step7c-native-candidate-v2/candidate.sssom.tsv": "d22fd06103396fe550ef5e55fd17e02d6b50d1b117578d33e626a25756c9442d"
+  },
+  "available_prefixes": {
+    "BTO": false,
+    "CHEBI": true,
+    "ENVO": true,
+    "FOODON": true,
+    "MICRO": false,
+    "PATO": true,
+    "UBERON": true
+  },
+  "results": {
+    "canonical": {
+      "rows": 2985,
+      "rejects": [],
+      "coverage": {
+        "checked": 2052,
+        "out_of_scope_prefix": 859,
+        "missing_transform": 74,
+        "term_absent": 0,
+        "empty_label_and_synonyms": 0
+      },
+      "new_identity_subjects": [
+        {
+          "subject": "MIM:25-didehydro-D-gluconate",
+          "object": "CHEBI:11449",
+          "label": "2,5-didehydro-D-gluconate",
+          "coverage": "checked"
+        },
+        {
+          "subject": "MIM:Wc_Trace_Elements_Solution",
+          "object": "MICRO:0000455",
+          "label": "trace elements solution",
+          "coverage": "missing_transform"
+        },
+        {
+          "subject": "MIM:Wc_Trace_Elements_Solution",
+          "object": "kgmicrobe.ingredient:wc_trace_elements_solution",
+          "label": "WC Trace Elements Solution",
+          "coverage": "out_of_scope_prefix"
+        }
+      ]
+    },
+    "candidate": {
+      "rows": 2978,
+      "rejects": [],
+      "coverage": {
+        "checked": 2052,
+        "out_of_scope_prefix": 852,
+        "missing_transform": 74,
+        "term_absent": 0,
+        "empty_label_and_synonyms": 0
+      },
+      "new_identity_subjects": [
+        {
+          "subject": "MIM:25-didehydro-D-gluconate",
+          "object": "CHEBI:11449",
+          "label": "2,5-didehydro-D-gluconate",
+          "coverage": "checked"
+        },
+        {
+          "subject": "MIM:Wc_Trace_Elements_Solution",
+          "object": "MICRO:0000455",
+          "label": "trace elements solution",
+          "coverage": "missing_transform"
+        },
+        {
+          "subject": "MIM:Wc_Trace_Elements_Solution",
+          "object": "kgmicrobe.ingredient:wc_trace_elements_solution",
+          "label": "WC Trace Elements Solution",
+          "coverage": "out_of_scope_prefix"
+        }
+      ]
+    }
+  },
+  "input_bytes_unchanged": true
+}

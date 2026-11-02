@@ -1,0 +1,42 @@
+{
+  "status": "PASS_UNARMED_C5_SCAFFOLD_DELTA_NOT_PUBLICATION_CLEARANCE",
+  "at": "2026-11-02T22:20:41.177679+00:00",
+  "head": "9a8414ad88bbbb01c2a43995e3f0decb2e7f2a7e",
+  "invocation_sha256": "47d83b5dd19ed0d0bbe9a35ca03153cdd536dac6462f01048c598898df0b9644",
+  "protected_input_sha256": "8c7583c8ad7419043451bcd11e6de0a1abf4d56952a03793c50a7132619b4308",
+  "protected_inputs": 25,
+  "delta": "Only HEAD, protected inventory filename/hash and C4\u2192C5 error labels change. Previously independently reviewed logic/native helper and exact3 native artifact contract unchanged.",
+  "protected_science_evidence_24_unchanged": true,
+  "new_protected_test_sha256": "532e1588a33b33c0670d37a3333c320ceea6022cd55800bec702b7b76d798ad2",
+  "tests": "22 author private fixtures passed; new test file AST identical to earlier independently-run22-test version, with comment-only C4\u2192C5 edit. No redundant rerun needed for this binding-only delta.",
+  "draft_inventory": {
+    "sha256": "f13975aa578b2ad3dc1402187943eafc5683f61bb42f39a6a0e7f581eaa63f63",
+    "files": 94,
+    "bytes": 601369,
+    "all_payload_hashes_and_sizes_verified": true,
+    "active_v3_log_absent": true,
+    "failed_v2_complete_receipt_log_and_qualification_present": true
+  },
+  "C5_QC": {
+    "name": "step7c-qc-final-c5",
+    "argv": [
+      "just",
+      "qc"
+    ],
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c",
+    "started_at": "2026-11-02T22:16:45.060232+00:00",
+    "environment_profile": "mim-native-pinned-validator",
+    "finished_at": "2026-11-02T22:18:56.995104+00:00",
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7c-qc-final-c5.log",
+    "log_sha256": "ef0886c4eb900d2e2d5f32a6601af80ae2d6b3ab0dd49cf7a35bd97d4f968ed0"
+  },
+  "findings": [],
+  "final_freeze_notes": [
+    "Draft exclusion wording still says active full-suite-v2; final inventory should explicitly identify v2 as completed failed and v3 as the final complete run when available. No active-log snapshot was selected, so no false pass is observed.",
+    "Actual completedv3/nativepair/check, final configuration/inventory/README review, compiled exact invocation and actual dry/private probe remain required.",
+    "EarlierC4 receipts retain their actual heads; observedC5 does not retroactively relabel them."
+  ],
+  "scientific_approval_added": false,
+  "supervisor_binding": null
+}

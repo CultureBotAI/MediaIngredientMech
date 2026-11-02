@@ -1,0 +1,13 @@
+{
+  "name": "Validate supported SSSOM",
+  "command": "uv run --frozen python - <<'PY'\nfrom sssom.parsers import parse_sssom_table\nfrom sssom.validators import SchemaValidationType, validate\nvalidate(parse_sssom_table(\"output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv\"),\n         validation_types=[SchemaValidationType.JsonSchema,\n                           SchemaValidationType.PrefixMapCompleteness,\n                           SchemaValidationType.StrictCurieFormat])\nPY\n",
+  "workflow": {
+    "path": ".github/workflows/qc-supported-kgx.yaml",
+    "sha256": "909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b"
+  },
+  "started_at": "2026-11-02T21:54:05.477353+00:00",
+  "finished_at": "2026-11-02T21:54:06.840400+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/04.log",
+  "log_sha256": "9824a2ab06a70a864d4f8ef6595f0ce89088cffae17d854bad1278d9cbe35eca"
+}

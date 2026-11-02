@@ -1,0 +1,32 @@
+{
+  "time": "2026-11-02T21:42:45.391164+00:00",
+  "reason": "Confirmed historical-fixture and CI path failures; interrupt failed run before bounded repairs and a fresh complete suite. Preserve full output and failure trace.",
+  "processes": [
+    [
+      78347,
+      92477,
+      "python3 run_step7c_mim.py step7c step7c-full-suite-v1 -- just test"
+    ],
+    [
+      78349,
+      78347,
+      "just test"
+    ],
+    [
+      78376,
+      78349,
+      "uv run --frozen --extra dev pytest tests/"
+    ],
+    [
+      78385,
+      78376,
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/pytest tests/"
+    ]
+  ],
+  "signal": "SIGINT",
+  "target": [
+    78385,
+    78376,
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/pytest tests/"
+  ]
+}

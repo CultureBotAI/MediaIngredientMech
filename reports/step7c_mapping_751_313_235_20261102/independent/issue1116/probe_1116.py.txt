@@ -1,0 +1,78 @@
+"""Independent read-only live check and owned real-Git inventory controls."""
+from pathlib import Path
+import hashlib
+import importlib.util
+import json
+import subprocess
+
+D = Path(__file__).resolve().parent
+R = D.parents[1]
+E = R / "step7c-final-validation-appendix"
+W = R / "step7c"
+spec = importlib.util.spec_from_file_location("appendix_1116_probe", E / "invoke_final_appendix.py")
+m = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(m)
+sha = lambda b: hashlib.sha256(b).hexdigest()
+assert sha((E / "invoke_final_appendix.py").read_bytes()) == "2a6473444661428155e3985323e51fc041c8f31f165daa3bbce2962dfc2ecf2f"
+h = json.loads((R / "step7c-independent/native-final-c5/handoff.json").read_text())
+allowed = set(h["publication_files"])
+
+
+def git(root, *args):
+    return subprocess.check_output(["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", *args], cwd=root)
+
+
+def snapshot(root):
+    return {
+        "head": git(root, "rev-parse", "HEAD").decode().strip(),
+        "status": git(root, "status", "--porcelain=v1", "--untracked-files=all").decode(),
+        "index": sha(git(root, "ls-files", "--stage", "-z")),
+        "outputs": {p: sha((root / p).read_bytes()) for p in allowed if (root / p).is_file()},
+    }
+
+
+before = snapshot(W)
+m.checkout_state(W, allowed)
+assert snapshot(W) == before
+results = {"actual_C5_readonly": "PASS"}
+F = D / "1116-extra-real-git"
+F.mkdir(exist_ok=False)
+git(F, "init", "-q")
+(F / ".gitignore").write_text("/reports/*\n/reviews/*\n")
+(F / "README.md").write_text("owned independent fixture\n")
+git(F, "add", ".gitignore", "README.md")
+git(F, "-c", "user.name=Independent Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-qm", "baseline")
+m.HEAD = git(F, "rev-parse", "HEAD").decode().strip()
+for p in allowed:
+    f = F / p
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_bytes(b"exact fixture placeholder\n")
+b = snapshot(F)
+m.checkout_state(F, allowed)
+assert snapshot(F) == b
+results["all_three_handoff_paths_ignored"] = "PASS"
+# Missing ignored evidence cannot disappear behind --exclude-standard.
+di = F / m.DIAGNOSTIC
+raw = di.read_bytes()
+di.unlink()
+try:
+    m.checkout_state(F, allowed)
+except ValueError:
+    results["missing_ignored_diagnostic_refused"] = "PASS"
+else:
+    raise AssertionError("Missing ignored diagnostic accepted")
+di.write_bytes(raw)
+git(F, "add", "-f", *sorted(allowed))
+try:
+    m.checkout_state(F, allowed)
+except ValueError:
+    results["staged_handoff_paths_refused"] = "PASS"
+else:
+    raise AssertionError("Staged handoff accepted")
+assert snapshot(W) == before
+out = {"status": "PASS", "controls": results, "actual_before_after": before,
+       "helper_sha256": sha((E / "invoke_final_appendix.py").read_bytes()),
+       "probe_sha256": sha(Path(__file__).read_bytes()), "scientific_approval_added": False,
+       "supervisor_binding": None, "scope": "Inventory-only; no actual appendix invocation or W writes."}
+(D / "1116-independent-controls.json").write_text(json.dumps(out, indent=2) + "\n")
+print(json.dumps(out, indent=2))

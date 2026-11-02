@@ -1,0 +1,13 @@
+{
+  "name": "Export and verify the supported mappings and separate backlog",
+  "command": "uv run --frozen python -m mediaingredientmech.export.reviewed_sssom \\\n  --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom\nuv run --frozen python -m mediaingredientmech.export.reviewed_sssom \\\n  --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom --validate-only\n",
+  "workflow": {
+    "path": ".github/workflows/qc-reviewed-sssom.yaml",
+    "sha256": "91943abf4eb62bb62008e0371e97324db9c357db4766c707bbb605b7d64c2ed5"
+  },
+  "started_at": "2026-11-02T21:54:20.724617+00:00",
+  "finished_at": "2026-11-02T21:54:37.409776+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-independent/c4-portability/06.log",
+  "log_sha256": "3583c4879a4677f37ed0530620147e20e0453da9f4a2b9568b13a4ad5f48e717"
+}

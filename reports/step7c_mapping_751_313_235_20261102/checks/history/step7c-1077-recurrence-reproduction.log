@@ -1,0 +1,37 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_committed_semantic_review_uses_workflow_full_graph ____________
+
+    def test_committed_semantic_review_uses_workflow_full_graph():
+        workflow = ".github/workflows/qc-supported-kgx.yaml"
+        producers = workflow_commands(workflow, "supported-graph", "mediaingredientmech.export.kgx")
+        assert len(producers) == 1
+        producer = producers[0]
+        bundle = producer[producer.index("--output") + 1]
+        consumers = workflow_commands(
+            workflow, "supported-graph", "mediaingredientmech.export.supported_kgx"
+        )
+        assert consumers
+        for command in consumers:
+            report_path = command[command.index("--report") + 1]
+            report = json.loads((ROOT / report_path).read_text())
+>           assert report["bundle"] == bundle, "Committed review binds a graph absent from clean CI"
+E           AssertionError: Committed review binds a graph absent from clean CI
+E           assert 'output/step7c-full' == 'output/mim-kgx-710-full'
+E             
+E             - output/mim-kgx-710-full
+E             + output/step7c-full
+
+tests/test_ci_review_replay_contract.py:42: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ci_review_replay_contract.py::test_committed_semantic_review_uses_workflow_full_graph
+1 failed, 1 warning in 0.07s

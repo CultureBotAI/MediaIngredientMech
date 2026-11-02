@@ -1,0 +1,308 @@
+"""One-use final Step7c appendix call; stays outside the maintained repository.
+
+Unarmed until the coordinator freezes completed evidence and its exact config
+hash. Uses the unchanged native transaction and repository lock. It does not
+publish the separately saved native review pair or assert final-head approval.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import stat
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+RUN = HERE.parent
+ROOT = RUN / "step7c"
+PARENT = Path("reports/step7c_mapping_751_313_235_20261102")
+DIAGNOSTIC = Path("reports/step7c_final_review_20261102/diagnostics.json")
+HEAD = "9a8414ad88bbbb01c2a43995e3f0decb2e7f2a7e"
+CONFIG = HERE / "publication-freeze.json"
+CONFIG_SHA256 = None  # Deliberately unarmed; final files and review are still pending.
+PROTECTED = HERE / "protected-c5-inputs.json"
+PROTECTED_SHA256 = "8c7583c8ad7419043451bcd11e6de0a1abf4d56952a03793c50a7132619b4308"
+README_BEFORE = "69539b03da200c15c6ed9a8f3b633340ee9bbb8eb80e85e1c551513726864589"
+CODE = {
+    ROOT
+    / "scripts/step7a_guarded_publication.py": "0d1dd4171adff570864f4945dc35eb1ae740cb7dee8d64e8eddd66913705a936",
+    ROOT
+    / "scripts/promote_heptahydrate_ncit.py": "768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee",
+    RUN
+    / "claw/src/kg_microbe_write/transaction.py": "aa5b5bd082b14ae094f6decd5dbe3d75343a7436dc95d6b1fcbfb65c56e6f17e",
+    RUN
+    / "claw/plugins/lock_manager.py": "e36effe07ea8f925c61f31044b178c6b639027ff6060ee2f91d6d26612b85b93",
+    RUN
+    / "claw/plugins/repository_settings.py": "87d099f1787c5c79f2b16f088acf926cce39cec2a939d84df829f338472a4081",
+}
+_CODE = Path(__file__).read_bytes()
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def read(path):
+    require(path.is_absolute() and path == path.resolve(), "Aliased input or destination")
+    info = path.lstat()
+    require(stat.S_ISREG(info.st_mode) and info.st_nlink == 1, "Nonregular or linked input")
+    return path.read_bytes()
+
+
+def relative(name):
+    path = Path(name)
+    require(
+        not path.is_absolute() and path.parts and ".." not in path.parts and str(path) == name,
+        "Unsafe relative path",
+    )
+    return path
+
+
+def checkout_state(root, review_pair):
+    def git(*args):
+        return subprocess.check_output(["git", *args], cwd=root).decode().strip()
+
+    require(git("rev-parse", "HEAD") == HEAD, "Reviewed C5 head changed")
+    require(not git("diff", "--name-only", "HEAD", "--"), "Tracked C5 preimage changed")
+    untracked = set(
+        filter(
+            None,
+            subprocess.check_output(
+                ["git", "ls-files", "--others", "--exclude-standard", "-z"], cwd=root
+            )
+            .decode()
+            .split("\0"),
+        )
+    )
+    require(
+        untracked <= set(review_pair),
+        "Only the separately saved native review pair and literal diagnostic may be untracked",
+    )
+    # The diagnostic is intentionally ignored by /reports/*. Check only the
+    # exact already hash-bound handoff paths without applying ignore rules;
+    # unrelated ignored research/output remains outside this inventory.
+    exact_untracked = set()
+    if review_pair:
+        exact_untracked = set(
+            filter(
+                None,
+                subprocess.check_output(
+                    [
+                        "git",
+                        "--literal-pathspecs",
+                        "ls-files",
+                        "--others",
+                        "-z",
+                        "--",
+                        *sorted(review_pair),
+                    ],
+                    cwd=root,
+                )
+                .decode()
+                .split("\0"),
+            )
+        )
+    require(
+        exact_untracked == set(review_pair), "Exact native handoff untracked inventory differs"
+    )
+
+
+def invoke(root, log, *, apply=False):
+    require(
+        CONFIG_SHA256 is not None,
+        "Final appendix is unarmed: completed evidence and final freeze are pending",
+    )
+    require(root.is_absolute() and root == root.resolve(), "Aliased publication root")
+    require(
+        log.is_absolute() and log.parent == HERE and not os.path.lexists(log),
+        "Use a fresh owned external receipt",
+    )
+    inputs = {}
+
+    def bind(path, expected):
+        data = read(path)
+        require(sha(data) == expected, "Frozen evidence/code changed: " + str(path))
+        inputs[path] = data
+        return data
+
+    config = json.loads(bind(CONFIG, CONFIG_SHA256))
+    protected = json.loads(bind(PROTECTED, PROTECTED_SHA256))
+    require(
+        protected["head"] == HEAD and config["head"] == HEAD, "Wrong publication checkpoint"
+    )
+    require(
+        config["scientific_approval_added"] is False
+        and config["supervisor_binding"] is None
+        and config["documentation_delta_requires_final_head_review"] is True,
+        "Invalid authority or final-review qualification",
+    )
+    for path, digest in CODE.items():
+        bind(path, digest)
+    invocation_path = Path(__file__).absolute()
+    require(read(invocation_path) == _CODE, "Loaded invocation changed")
+    inputs[invocation_path] = _CODE
+    for name, digest in protected["files"].items():
+        bind(root / relative(name), digest)
+    inventory_path = Path(config["inventory_path"])
+    inventory_raw = bind(inventory_path, config["inventory_sha256"])
+    inventory = json.loads(inventory_raw)
+    require(
+        inventory["state"] == "final_completed_local_validation"
+        and inventory["observed_head"] == HEAD
+        and inventory["scientific_approval_added"] is False
+        and inventory["supervisor_binding"] is None,
+        "Inventory is not frozen completed local validation",
+    )
+    require(
+        all(
+            item["id"] in {"remote_closure", "final_documentation_delta_review"}
+            for item in inventory.get("pending", [])
+        ),
+        "Required local evidence is still pending",
+    )
+    require(inventory["destination_parent"] == str(PARENT), "Wrong appendix destination")
+    outputs = {}
+    by_name = {}
+    for item in inventory["files"]:
+        name = relative(item["proposed_relative_path"])
+        require(
+            len(name.parts) >= 2 and name.parts[0] in {"checks", "independent"},
+            "Out-of-scope appendix output",
+        )
+        require(
+            name not in outputs and str(name) not in by_name, "Duplicate appendix destination"
+        )
+        data = bind(Path(item["source_path"]), item["sha256"])
+        require(len(data) == item["bytes"], "Frozen evidence size changed")
+        outputs[PARENT / name] = data
+        by_name[str(name)] = (item, data)
+    # Actual completed receipt/log pairs are required. A running log or a status
+    # summary cannot stand in for either the final suite or the native pair check.
+    require(
+        set(config["required_command_pairs"]) == {"full_suite", "native_review_check"},
+        "Missing completed local command requirements",
+    )
+    for pair in config["required_command_pairs"].values():
+        receipt_item, receipt_raw = by_name[pair["receipt"]]
+        log_item, log_raw = by_name[pair["log"]]
+        receipt = json.loads(receipt_raw)
+        require(
+            receipt["exit_code"] == 0
+            and receipt.get("finished_at")
+            and receipt["log"] == log_item["source_path"]
+            and receipt["log_sha256"] == sha(log_raw),
+            "Incomplete or failed command/log binding",
+        )
+    pair = config["native_review_pair"]
+    require(len(pair) == 2, "Exactly the separately saved native review pair is required")
+    for name, digest in pair.items():
+        bind(root / relative(name), digest)
+    require(
+        str(DIAGNOSTIC) not in pair, "Diagnostic cannot replace a native review pair member"
+    )
+    bind(root / DIAGNOSTIC, config["native_review_diagnostic_sha256"])
+    native_handoff = set(pair) | {str(DIAGNOSTIC)}
+    readme = root / PARENT / "README.md"
+    previous = bind(readme, README_BEFORE)
+    readme_after = bind(Path(config["readme_path"]), config["readme_sha256"])
+    require(
+        readme_after != previous and b"FINAL_CHECKS_AND_REVIEW_TO_INSERT" not in readme_after,
+        "README is unchanged or still a draft",
+    )
+    outputs[PARENT / "README.md"] = readme_after
+    outputs[PARENT / "final-validation.json"] = inventory_raw
+    new_outputs = set(outputs) - {PARENT / "README.md"}
+
+    def scope():
+        require(
+            (root / PARENT).is_dir() and root / PARENT == (root / PARENT).resolve(),
+            "Existing report parent changed",
+        )
+        require(
+            all(root / p == (root / p).resolve() for p in outputs), "Aliased output ancestor"
+        )
+        require(
+            all(not os.path.lexists(root / p) for p in new_outputs),
+            "New appendix destination already exists; preserve it",
+        )
+        require(
+            all(read(path) == data for path, data in inputs.items()), "Frozen input changed"
+        )
+        checkout_state(root, native_handoff)
+
+    scope()
+    sys.path.insert(0, str(ROOT))
+    from kg_microbe_write import transaction
+
+    from scripts import step7a_guarded_publication as publication
+
+    require(
+        Path(transaction.__file__).resolve() in inputs,
+        "Loaded native transaction is not the pinned implementation",
+    )
+    require(
+        publication._CODE == inputs[Path(publication.__file__)], "Loaded native helper differs"
+    )
+    result = {
+        "kind": "step7c_final_validation_appendix_publication",
+        "stage": "completed_local_validation_before_final_documentation_delta_review",
+        "scientific_approval_added": False,
+        "supervisor_binding": None,
+        "head": HEAD,
+        "inventory_sha256": sha(inventory_raw),
+        "documentation_delta_requires_final_head_review": True,
+        "input_sha256": {str(p): sha(b) for p, b in inputs.items()},
+        "output_sha256": {str(p): sha(b) for p, b in outputs.items()},
+    }
+    backup = log.with_name(log.stem + ".README.before.md")
+    answer = publication.publish(
+        root,
+        outputs,
+        inputs,
+        log,
+        {backup: previous},
+        result,
+        apply=apply,
+        validate_scope=scope,
+    )
+    if apply:
+        require(
+            all(read(root / p) == data for p, data in outputs.items()),
+            "Published regular output readback differs; retain recovery evidence",
+        )
+        require(
+            all(read(path) == data for path, data in inputs.items() if path != readme),
+            "Publication input changed during application; retain recovery evidence",
+        )
+    return answer
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--log", type=Path, required=True)
+    parser.add_argument("--apply", action="store_true")
+    args = parser.parse_args()
+    sys.path.insert(0, str(ROOT))
+    from plugins.lock_manager import LockManager
+    from plugins.repository_settings import RepositorySettings
+
+    for cls in (LockManager, RepositorySettings):
+        path = Path(sys.modules[cls.__module__].__file__).resolve()
+        require(
+            path in CODE and sha(read(path)) == CODE[path], "Loaded lock/settings code differs"
+        )
+    target = RepositorySettings.from_environment().get_target("mediaingredientmech")
+    require(target.path.resolve() == ROOT, "Configured MIM root differs")
+    target.open()
+    with LockManager().lock("mediaingredientmech", "Step7c final validation appendix only"):
+        result = invoke(ROOT, args.log.absolute(), apply=args.apply)
+    print(json.dumps({k: v for k, v in result.items() if k != "input_sha256"}, indent=2))

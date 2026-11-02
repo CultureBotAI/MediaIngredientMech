@@ -1,0 +1,74 @@
+from pathlib import Path
+import importlib.util
+import json
+import os
+import pytest
+
+A = Path(__file__).resolve().parents[2] / 'step7c-final-validation-appendix'
+spec = importlib.util.spec_from_file_location('provided_appendix_tests', A / 'test_final_appendix_invocation.py')
+provided = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(provided)
+m = provided.m
+case = provided.case
+
+
+@pytest.mark.parametrize('kind', ['hardlink_input', 'symlink_input', 'wrong_log_binding', 'duplicate_destination'])
+def test_additional_prepublication_fail_closed(case, monkeypatch, kind):
+    root, evidence, config = case
+    path = evidence / 'full_suite.log'
+    if kind == 'hardlink_input':
+        os.link(path, evidence / 'second-name')
+    elif kind == 'symlink_input':
+        foreign = evidence / 'log-real'
+        path.rename(foreign)
+        path.symlink_to(foreign)
+    else:
+        inventory_path = Path(config['inventory_path'])
+        inventory = json.loads(inventory_path.read_bytes())
+        if kind == 'duplicate_destination':
+            inventory['files'].append(dict(inventory['files'][0]))
+        else:
+            receipt = evidence / 'full_suite.json'
+            doc = json.loads(receipt.read_bytes())
+            doc['log'] = str(evidence / 'different.log')
+            raw = provided.put(receipt, doc)
+            for item in inventory['files']:
+                if item['source_path'] == str(receipt):
+                    item['sha256'], item['bytes'] = m.sha(raw), len(raw)
+        raw = provided.put(inventory_path, inventory)
+        config['inventory_sha256'] = m.sha(raw)
+        raw = provided.put(m.CONFIG, config)
+        monkeypatch.setattr(m, 'CONFIG_SHA256', m.sha(raw))
+    with pytest.raises(ValueError, match='linked input|Aliased|command/log|Duplicate'):
+        m.invoke(root, evidence / 'apply.json', apply=True)
+    provided.assert_unpublished(case)
+
+
+@pytest.mark.parametrize('kind', ['output_hardlink', 'output_alias', 'late_input_drift'])
+def test_postpublication_regular_leaf_and_input_readback(case, monkeypatch, kind):
+    root, evidence, config = case
+    from scripts import step7a_guarded_publication as publication
+    native = publication.publish
+    def raced(*args, **kwargs):
+        answer = native(*args, **kwargs)
+        if kind == 'late_input_drift':
+            p = evidence / 'full_suite.log'
+            p.write_bytes(p.read_bytes() + b'changed after native publication\n')
+        else:
+            p = root / m.PARENT / 'final-validation.json'
+            if kind == 'output_hardlink':
+                os.link(p, evidence / 'output-second-name')
+            else:
+                foreign = evidence / 'output-real'
+                p.rename(foreign)
+                p.symlink_to(foreign)
+        return answer
+    monkeypatch.setattr(publication, 'publish', raced)
+    with pytest.raises(ValueError, match='linked input|Aliased|input changed'):
+        m.invoke(root, evidence / 'apply.json', apply=True)
+    assert (evidence / 'apply.json').is_file()
+    assert (evidence / 'apply.README.before.md').is_file()
+    # The native transaction completed before the injected race. Its immutable
+    # completion is not a claim that the invocation's later readback succeeded.
+    receipt = json.loads((evidence / 'apply.json').read_bytes())
+    assert receipt['state'] == 'complete'

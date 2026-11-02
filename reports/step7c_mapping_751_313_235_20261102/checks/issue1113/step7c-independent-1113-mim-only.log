@@ -1,0 +1,25 @@
+.........................................sssss....s................sssss [ 85%]
+......ssssss                                                             [100%]
+=============================== warnings summary ===============================
+../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_correct_diketo_bacdive_evidence.py:137: Native Claw transaction integration is optional
+SKIPPED [4] tests/test_correct_diketo_bacdive_evidence.py:153: Native Claw transaction integration is optional
+SKIPPED [1] tests/test_correct_diketo_bacdive_evidence.py:189: Native Claw transaction integration is optional
+SKIPPED [1] tests/test_curate_step7c_source_labels.py:217: Native Claw transaction integration is optional
+SKIPPED [4] tests/test_curate_step7c_source_labels.py:239: Native Claw transaction integration is optional
+SKIPPED [1] tests/test_curate_step7c_source_labels.py:296: Native Claw transaction integration is optional
+SKIPPED [1] tests/test_curate_step7c_source_labels.py:316: Native Claw transaction integration is optional
+SKIPPED [4] tests/test_curate_step7c_source_labels.py:353: Native Claw transaction integration is optional
+67 passed, 17 skipped, 13 warnings in 1.97s

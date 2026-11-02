@@ -1,0 +1,5 @@
+The existing regression caught this same execution-path defect locally in the Step 7c proposal before PR publication. At ordinary checkpoint `bb3edec5cb723c866dd588791c9420745a837f8e`, the generated semantic report binds `output/step7c-full`, while the unchanged supported-graph workflow produces `output/mim-kgx-710-full`.
+
+Confirmed with `tests/test_ci_review_replay_contract.py::test_committed_semantic_review_uses_workflow_full_graph`: 1 failed, retained log SHA256 `a09cc7401b54eab74917986d56979efcfb870f71f1eae7e7568200bc6a03d966`. This is a recurrence in newly generated proposal evidence, not a failure of the previously merged repair or its regression.
+
+Before fixing, record the same approved remedy: run the native graph producer at the workflow-declared path, rebuild the semantic review with that exact bundle, prove graph bytes and scientific decisions are unchanged, refresh dependent evidence, and rerun the regression, full suite and independent review. No workflow, source record, canonical SSSOM, unified snapshot, pin or approval change is needed. This existing issue tracks the defect; the earlier closed resolution remains historical.

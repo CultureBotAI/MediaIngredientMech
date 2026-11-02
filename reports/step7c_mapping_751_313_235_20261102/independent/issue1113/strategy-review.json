@@ -1,0 +1,51 @@
+{
+  "status": "STRATEGY_ACCEPTABLE_IMPLEMENTATION_PENDING",
+  "at": "2026-11-02T21:39:40.128783+00:00",
+  "reviewer": "/root/step7a_final_adversarial",
+  "supervisor_binding": null,
+  "scientific_approval_added": false,
+  "observed_sources": [
+    {
+      "path": "tests/test_curate_step7c_source_labels.py",
+      "sha256": "07dc71958650182138a4847bcad59163f6b426e97e080f2b69c8e47ccefe17e1"
+    },
+    {
+      "path": "tests/test_correct_diketo_bacdive_evidence.py",
+      "sha256": "9ca603ae82b0b65d0be6b3afed009eda043f9bf690394973787123356aad12bc"
+    },
+    {
+      "path": "tests/test_curate_wc_stock_751.py",
+      "sha256": "81583ff310310332a293545ff6760a2bbc49276f057618eea0f03a256e254aec"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "0ef723c609de5ba0e04ea3b161b704d29779921bd85916bcc12b80804d51c570"
+    },
+    {
+      "path": "reports/diketo_bacdive_evidence_1111_20261102/source-evidence.json",
+      "sha256": "41defe43ca5fc06502964d155ea58376d5420c0ce2cb8ffe660294c18638d892"
+    }
+  ],
+  "facts": [
+    "Both affected case fixtures use root=tmp_path.resolve and copy the current canonical file despite the historical writer anchor55823757.",
+    "Labels case additionally returns a before dictionary consumed by unchanged-state assertions.",
+    "WC fixture already obtains its historical protected anchor bytes from durable merged base with digest verification.",
+    "The original labels test is hash-bound by the actual1111 source evidence manifest and must remain immutable."
+  ],
+  "accepted_scope": [
+    "New test-only autouse setup scoped to exactly the two resolved test module paths and only tests requesting their case fixture.",
+    "Hash-verified frozen baseline54 canonical bytes installed only under the actual pytest tmp_path, before test bodies execute.",
+    "Corresponding labels before expectation updated to the same historical fixture bytes; original assertion logic remains unchanged."
+  ],
+  "required_controls": [
+    "No unrelated module/case fixture is requested or changed.",
+    "Wrong fixture bytes/hash, non-temporary root and aliases refused.",
+    "No production constant, writer check, test assertion, skip or immutable original testfile changed.",
+    "Real writer still rejects deliberate anchor corruption after setup; native positive/race assertions genuinely execute.",
+    "Durable fixture origin/hash recorded; no transient branch Git object dependency."
+  ],
+  "limits": [
+    "No implementation has yet been reviewed or cleared for W application.",
+    "A failed historical test prestate is distinct from an actual production writer failure; production failures must not be hidden by this setup."
+  ]
+}
