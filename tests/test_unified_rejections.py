@@ -125,21 +125,60 @@ def test_issue_894_hydrate_and_tombstone_identities():
         assert row["chebi_id"] == "CHEBI:91248"
 
 
+def mim_merge_target(data: dict) -> str:
+    """Mirror claw#711 for the maintained source-corpus regression gate."""
+    merge_actions = {"MERGED_INTO", "MERGED_INTO_EXISTING", "MERGED"}
+    representative = (data.get("representative") or "").strip()
+    if representative:
+        return representative
+    for event in reversed(data.get("curation_history") or []):
+        if event.get("action") in merge_actions:
+            return (data.get("identifier") or "").strip()
+        if event.get("new_status") == "REJECTED":
+            # Match the bounded native resolver contract in claw#711.
+            if (
+                event.get("action") == "REMOVED_STALE_KG_MICROBE_NODE_ID"
+                and event.get("previous_status") == "REJECTED"
+            ):
+                continue
+            return ""
+    return ""
+
+
+@pytest.mark.parametrize("event, expected", [
+    ({"action": "REMOVED_STALE_KG_MICROBE_NODE_ID", "previous_status": "REJECTED"}, "CHEBI:1"),
+    ({"action": "UNKNOWN_MAINTENANCE", "previous_status": "REJECTED"}, ""),
+    ({"action": "REJECTED", "previous_status": "REJECTED"}, ""),
+    ({"action": "REMOVED_STALE_KG_MICROBE_NODE_ID"}, ""),
+    ({"action": "REMOVED_STALE_KG_MICROBE_NODE_ID", "previous_status": "MAPPED"}, ""),
+])
+def test_issue_882_maintenance_exception_retains_other_rejection_barriers(event, expected):
+    data = {
+        "identifier": "CHEBI:1",
+        "curation_history": [
+            {"action": "MERGED_INTO", "new_status": "REJECTED"},
+            event | {"new_status": "REJECTED"},
+        ],
+    }
+    assert mim_merge_target(data) == expected
+
+
+def test_issue_882_maintenance_does_not_invent_merge_evidence_or_erase_prior_rejection():
+    maintenance = {
+        "action": "REMOVED_STALE_KG_MICROBE_NODE_ID",
+        "previous_status": "REJECTED", "new_status": "REJECTED",
+    }
+    for earlier in ([], [
+        {"action": "MERGED_INTO", "new_status": "REJECTED"},
+        {"action": "REJECTED", "new_status": "REJECTED"},
+    ]):
+        assert mim_merge_target({"identifier": "CHEBI:1", "curation_history": [*earlier, maintenance]}) == ""
+
+
 def test_issue_882_merge_tombstones_and_unified_identities():
     import yaml
 
     merge_actions = {"MERGED_INTO", "MERGED_INTO_EXISTING", "MERGED"}
-
-    def mim_merge_target(data: dict) -> str:
-        representative = (data.get("representative") or "").strip()
-        if representative:
-            return representative
-        for event in reversed(data.get("curation_history") or []):
-            if event.get("action") in merge_actions:
-                return (data.get("identifier") or "").strip()
-            if event.get("new_status") == "REJECTED":
-                return ""
-        return ""
 
     root = Path(__file__).parents[1]
     live_ids: set[str] = set()

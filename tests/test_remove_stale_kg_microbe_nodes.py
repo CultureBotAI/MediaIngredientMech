@@ -5,6 +5,7 @@ import importlib.util
 import json
 import os
 import shutil
+import subprocess
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -20,6 +21,25 @@ SPEC.loader.exec_module(mod)
 STAMP = "2030-01-02T00:00:00+00:00"
 
 
+def frozen_anchors():
+    """Reconstruct the source operation's exact anchors, not later promoted products."""
+    anchors = {}
+    for path in mod.ANCHORS:
+        raw = subprocess.check_output(
+            ["git", "cat-file", "blob", f"{mod.META['base_revision']}:{path}"], cwd=ROOT
+        )
+        assert (
+            mod.guarded.digest(raw) == mod.META["protected_anchors"][str(path)]
+        ), f"Frozen anchor digest mismatch: {path}"
+        anchors[path] = raw
+    return anchors
+
+
+@pytest.fixture(scope="session")
+def anchors():
+    return frozen_anchors()
+
+
 @pytest.fixture
 def native_runtime():
     """Only actual publication/recovery cases need the optional Claw package (#1085)."""
@@ -32,11 +52,11 @@ def before():
 
 
 @pytest.fixture
-def case(tmp_path, before):
+def case(tmp_path, before, anchors):
     root = tmp_path.resolve() / "mim"
     root.mkdir()
     shutil.copytree(ROOT / mod.REPORT, root / mod.REPORT)
-    originals = before | {p: (ROOT / p).read_bytes() for p in mod.ANCHORS}
+    originals = before | anchors
     for p, data in originals.items():
         (root / p).parent.mkdir(parents=True, exist_ok=True)
         (root / p).write_bytes(data)
@@ -48,6 +68,37 @@ def case(tmp_path, before):
 def assert_owners_unchanged(case):
     root, _, originals = case
     assert all((root / p).read_bytes() == originals[p] for p in mod.OWNERS)
+
+
+def test_anchor_fixture_does_not_read_live_promoted_products(monkeypatch):
+    read_bytes = Path.read_bytes
+
+    def refuse_live_anchor(path):
+        if path in {ROOT / p for p in mod.ANCHORS}:
+            raise AssertionError("Fixture attempted to read a mutable live anchor")
+        return read_bytes(path)
+
+    monkeypatch.setattr(Path, "read_bytes", refuse_live_anchor)
+    snapshot = frozen_anchors()
+    assert set(snapshot) == set(mod.ANCHORS)
+    assert all(
+        mod.guarded.digest(raw) == mod.META["protected_anchors"][str(path)]
+        for path, raw in snapshot.items()
+    )
+
+
+def test_anchor_fixture_rejects_corrupt_historical_git_blob(monkeypatch):
+    check_output = subprocess.check_output
+
+    def corrupt_blob(command, **kwargs):
+        raw = check_output(command, **kwargs)
+        if command[-1].endswith(":mappings/ingredient_mappings.sssom.tsv"):
+            return raw + b"\n"
+        return raw
+
+    monkeypatch.setattr(subprocess, "check_output", corrupt_blob)
+    with pytest.raises(AssertionError, match="Frozen anchor digest mismatch"):
+        frozen_anchors()
 
 
 def test_exact_six_proposals_preserve_all_other_fields_and_history(before):

@@ -854,7 +854,13 @@ def evaluate_rule_g(
         for field in ("mapping_set_version", "mapping_date"):
             marker = f"# {field}:"
             if line.startswith(marker):
-                declared[field] = line[len(marker):].strip().strip('"')
+                value = line[len(marker):].strip()
+                # Native YAML serialization quotes ISO date strings with single
+                # quotes. Accept either matched quote style without treating
+                # malformed/unbalanced scalar delimiters as a valid date (#1091).
+                if len(value) >= 2 and value[0] in "\"'" and value[-1] == value[0]:
+                    value = value[1:-1]
+                declared[field] = value
     for field, value in sorted(declared.items()):
         if value != newest:
             yield (

@@ -532,27 +532,32 @@
         "subject_id": "MIM:Izalpinin",
         "subject_label": "Izalpinin",
         "predicate_id": "skos:exactMatch",
-        "object_id": "cas:480-14-4",
+        "object_id": "cas:480-14-8",
         "object_label": "Izalpinin",
         "object_source": "registry:cas",
         "mapping_justification": "semapv:ManualMappingCuration",
-        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
-        "mapping_date": "2026-05-02",
+        "source": "MIM:CultureBotHT|MIM:PubChem CID 5318691; MedChemExpress Izalpinin; MIM correction #753|MIM:curator=claude",
+        "mapping_date": "2026-11-02",
         "confidence": "0.9",
         "comment": "",
-        "other": "CAS:480-14-4",
-        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+        "other": "CAS:480-14-8",
+        "validation_method": ""
       },
-      "row_sha256": "68111d965a4bc786721a87326332582a93b767e91e1d9d22104e1986b693266a",
+      "row_sha256": "abf29161a7281d34e9f3b629479efc3c71f056b4c153787c2e2181c41e1e2ae3",
       "owner_record": "data/ingredients/mapped/Izalpinin.yaml",
-      "owner_record_sha256": "279a4bc187f755b580b834a85b7d6641b1b9836b08c8f007af405218acad1f7b",
+      "owner_record_sha256": "1dcf4018c8766b85ba19fb10ff3cb7b4f0cb1138de3a8ad8f65e9c28f5ad49ef",
       "disposition": "WITHHOLD",
-      "reason": "WITHHOLD invalid CAS identifier cas:480-14-4: weighted digit sum 58 gives check digit 8, not 4 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
-      "identity_review": "WITHHOLD invalid CAS identifier cas:480-14-4: weighted digit sum 58 gives check digit 8, not 4 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
-      "token_reviews": {},
+      "reason": "WITHHOLD the corrected Izalpinin mapping. Partial registry-value repair only (#753): PubChem CID 5318691 and the captured MedChemExpress source corroborate existing Izalpinin CAS 480-14-8. The exact LIPIDMAPS:LMPK12111656 identity is known but unsupported by the native mapping contract; final primary-identifier and source policy remain OPEN. This does not establish global ontology absence or approve a final CAS fallback. Existing historical reviews are preserved; receipt 22 records the bounded correction and grants no mapping, role, whole-record or release approval.",
+      "identity_review": "Partial registry-value repair only (#753): PubChem CID 5318691 and the captured MedChemExpress source corroborate existing Izalpinin CAS 480-14-8. The exact LIPIDMAPS:LMPK12111656 identity is known but unsupported by the native mapping contract; final primary-identifier and source policy remain OPEN. This does not establish global ontology absence or approve a final CAS fallback.",
+      "token_reviews": {
+        "CAS:480-14-8": "Source-backed corrected registry token only; full mapping remains WITHHOLD."
+      },
       "resolved_negative_reviews": [],
       "evidence_inputs": {
-        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb"
+        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb",
+        "reports/izalpinin_registry_753_20261101/history/kgmicrobe-followup-before-step7a.json": "81008148978de3afc54f5a95eb0d32210d2e669e69bd0acbbc108c9309eed78b",
+        "reports/izalpinin_registry_753_20261101/source-evidence.json": "407a0dba0d455af7f01c98b9151c5f8f13527c494f160157c15eb3af032ea758",
+        "reports/sssom_completion_20260921/mapping_changes/issue753-870-registry-and-node-corrections.json": "8139abdd7e82930b8a4fdee5872d049072e997f033860e81cc0bab02b320eb37"
       }
     },
     {

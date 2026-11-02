@@ -72,6 +72,7 @@ VERIFIERS = tuple(
         "mapping_scope.py",
         "review_claims.py",
         "synonym_policy.py",
+        "sssom_metadata.py",
     )
 )
 

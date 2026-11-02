@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-11-01T23:29:50.361711+00:00
+Generated: 2026-11-02T02:23:23.088741+00:00
 Total: 2955 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1185,7 +1185,6 @@ Total: 2955 ingredients
 | CHEBI:28484 | CHEBI:28484 | Isovaleric acid | MAPPED | CHEBI | EXACT_MATCH | 118 |
 | CHEBI:193161 | CHEBI:193161 | Isovanillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30838 | CHEBI:30838 | Itaconic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:480-14-4 | cas:480-14-4 | Izalpinin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:18292 | CHEBI:18292 | Jasmonic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15794 | CHEBI:15794 | Juglone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32029 | CHEBI:32029 | K-acetate | MAPPED | CHEBI | EXACT_MATCH | 18 |
@@ -2685,6 +2684,7 @@ Total: 2955 ingredients
 | NCIT:C216679 | NCIT:C216679 | Carnitine (Dl) Hydrochloride | REJECTED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C216679 | NCIT:C216679 | Carnitine Hydrochloride | MAPPED | NCIT | EXACT_MATCH | 14 |
 | kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | CHEBI:15978 | sn-Glycerol 3-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:480-14-8 | cas:480-14-8 | Izalpinin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

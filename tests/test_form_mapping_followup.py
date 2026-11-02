@@ -836,6 +836,7 @@ def assembled(form, monkeypatch, *, declared=True, negative=False):
     for path in (
         "MAPPING_SEMANTICS.md",
         "src/mediaingredientmech/export/reviewed_sssom.py",
+        "src/mediaingredientmech/sssom_metadata.py",
         "src/mediaingredientmech/review_claims.py",
         "src/mediaingredientmech/synonym_policy.py",
         "src/mediaingredientmech/record_refresh.py",

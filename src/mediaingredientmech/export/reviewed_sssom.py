@@ -23,6 +23,7 @@ import yaml
 
 from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.review_claims import validate_review_decision
+from mediaingredientmech.sssom_metadata import subset_date_metadata
 from mediaingredientmech.synonym_policy import is_resolving_synonym_text
 
 PRODUCTS = (
@@ -294,7 +295,7 @@ def _products(loaded: dict) -> tuple[dict[str, bytes], dict]:
             for row, decision in zip(rows, decisions, strict=True)
             if decision["disposition"] == disposition
         ]
-        metadata = dict(loaded["metadata"])
+        metadata = subset_date_metadata(loaded["metadata"], selected)
         metadata["mapping_set_id"] = str(metadata["mapping_set_id"]).rstrip("/") + "/" + suffix
         metadata["mapping_set_description"] = (
             "Evidence-reviewed supported subset of MediaIngredientMech mappings."

@@ -1,0 +1,1258 @@
+{
+  "schema_version": 1,
+  "scope": "Mapping-only re-review of the 17 kg-microbe fallback blockers (#752), three invalid CAS assertions (#753), and three exact MICRO identity restorations using pinned KGX source (#759). No role approval. Four chemical scope decisions (five records), with Sorbitan local identity only and external molecular grounding held.",
+  "decisions": [
+    {
+      "mapping": {
+        "subject_id": "MIM:Abyssomicin_D",
+        "subject_label": "Abyssomicin D",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C512805",
+        "object_label": "abyssomicin D",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS search|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "5634093d7c8dfa33b4b60f360ab319082960a2e061b7ea9c40f3ced33442a6cf",
+      "owner_record": "data/ingredients/mapped/Abyssomicin_D.yaml",
+      "owner_record_sha256": "a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Abyssomicin_D.md": "31278da0748b5a4af05bd86e8a8678a54aa180947c56b032ea882ba26ca3eb38",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Alanosine",
+        "subject_label": "alanosine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:221124",
+        "object_label": "L-alanosine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:alanosine|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "[(2S)-2-amino-2-carboxyethyl]-hydroxyimino-oxidoazanium",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "3df0c1867093fbfb8ac427385c8cd1e20dcd43000c7b2e66a70ba68b3bc16a5f",
+      "owner_record": "data/ingredients/mapped/Alanosine.yaml",
+      "owner_record_sha256": "6012bd15b0d4d8d3daa3d86728fb318494735b5c49f4c1efb28e1a7bc9927378",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived source review explicitly establishes the L-alanosine structure and its sole remaining exact IUPAC synonym; this approval is for that defined MIM record. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived source review explicitly establishes the L-alanosine structure and its sole remaining exact IUPAC synonym; this approval is for that defined MIM record.",
+      "token_reviews": {
+        "[(2S)-2-amino-2-carboxyethyl]-hydroxyimino-oxidoazanium": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Alanosine.md": "d6e5ca9382cb7d1e70fb55b1e266811a9c41265f55e47be8d5cd45975a23dbe6",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Angustmycin",
+        "subject_label": "Angustmycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:8612",
+        "object_label": "psicofuranin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kgmicrobe.compound:angustmycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=user_approved_curator_synonym]|kgm:metatraits_special_chemicals|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Psicofuranine",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "e7aaa856c1ae738835d158e22fc5b104fd9664c9210a6fb0dc2a1bcafff8a371",
+      "owner_record": "data/ingredients/mapped/Angustmycin.yaml",
+      "owner_record_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+      "disposition": "WITHHOLD",
+      "reason": "The produces phrase has already been rejected. The remaining bare Angustmycin label does not distinguish angustmycin A (decoyinine) from C (psicofuranin); the authorizing A=C note is false (#741). Keep WITHHOLD pending a source-specific identity decision.",
+      "identity_review": "CHEBI:8612 represents psicofuranin / angustmycin C. CHEBI:191094 is decoyinine / angustmycin A. These have different formulas.",
+      "token_reviews": {
+        "Psicofuranine": "Unresolved token; complete payload remains withheld."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Angustmycin.md": "94642167d8c67c560e576dee8df3250ade64531f22318c0c9767bdc7ac91b701",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Beta-Lipomycin",
+        "subject_label": "beta-Lipomycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C000601869",
+        "object_label": "beta-lipomycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:MESH via OLS search (resolve_unmapped)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Beta Lipomycin",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "b4d52c2c3dd9f165f4abd8daf84a8712c7e69202318af4b2a9a6f214bfb34621",
+      "owner_record": "data/ingredients/mapped/Beta-Lipomycin.yaml",
+      "owner_record_sha256": "a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "Beta Lipomycin": "The archived Identity section explicitly documents Beta Lipomycin as the case/spacing variant from the duplicate placeholder of beta-lipomycin. Reviewed this single token individually; it changes neither the beta designation nor chemical scope."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Beta-Lipomycin.md": "c5df0507bb9d878241c7e12790ce57930cbbe72cc234c46e357f3e9eaada292b",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Butyricin_7423",
+        "subject_label": "Butyricin 7423",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C010427",
+        "object_label": "butyricin 7423",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS search|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-01",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "b9d1d1cee9910ddd3e04035d40f2b6cd5f2309bdf4223d1a7ee6c8c88c01d2db",
+      "owner_record": "data/ingredients/mapped/Butyricin_7423.yaml",
+      "owner_record_sha256": "c8e2e72f3c440270df94faaa39536ee59990df442a154fec09c9b92cbbc9128b",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Butyricin_7423.md": "de28d59078aced934748b4c2e71846d1301e0be1f0e73327ab229ba31ada0047",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Etamycin",
+        "subject_label": "Etamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C004910",
+        "object_label": "etamycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS search|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Viridogrisein",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "50529a2c3b085e4f808ac3e9e87c89baf975ab59e81ad52234d36f7433b2c3d1",
+      "owner_record": "data/ingredients/mapped/Etamycin.yaml",
+      "owner_record_sha256": "84d07722cb91d161afb8211b2a1cf76bfec8eaa9182b01d12c9e5f85648d8933",
+      "disposition": "WITHHOLD",
+      "reason": "The Etamycin identity resolves to mesh:C004910, but its sole exported alias Viridogrisein has only a related-synonym MeSH assertion in the inspected evidence. No independent same-structure comparison resolves the prior exact-alias objection. Keep WITHHOLD; provisional role evidence is a separate concern.",
+      "identity_review": "MeSH labels etamycin and hasRelatedSynonym viridogrisein. Related synonym scope alone does not prove the full exact-synonym payload.",
+      "token_reviews": {
+        "Viridogrisein": "Unresolved token; complete payload remains withheld."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Etamycin.md": "7490ca330b2038b44260df8605c934005e4ad4a97a39cc3c3610a9027812df79",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Ferroverdin",
+        "subject_label": "ferroverdin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:219729",
+        "object_label": "Ferroverdin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:ferroverdin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "(4-ethenylphenyl) 4-hydroxy-3-nitrosobenzoate;iron(2+)",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "9ac7dbbc68ea070f0214188984382f9b0762372a7bf43f364b05200b089429bf",
+      "owner_record": "data/ingredients/mapped/Ferroverdin.yaml",
+      "owner_record_sha256": "864fc36c80ef2968a4c72b26701156e69b979a949716105c34b7b6031a7e2b9a",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "(4-ethenylphenyl) 4-hydroxy-3-nitrosobenzoate;iron(2+)": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Ferroverdin.md": "e8740bcad92f433cb5aa31ed4c1a511dc2720bddcef85aba9843ed9ae13c398c",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Hydrogen_gas",
+        "subject_label": "Hydrogen gas",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:18276",
+        "object_label": "dihydrogen",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:manual curation|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:manual_annotation[SUPPLEMENT]|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=issue_213_grounding]|kgm:metatraits_special_chemicals|kgm:primary_mappings[kegg_compound]|kgm:primary_mappings[madin_etal_manual]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "H2|Hydrogen|Hydrogen (gas)|E 949|E-949|E949|H(2)|H2_CO2|H2_methanol|molecular hydrogen|Diydrogen",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "a46690c5a1bab25c1e0e1d3fbdf3daae7171082db7d69a3c108a486703a9a448",
+      "owner_record": "data/ingredients/mapped/Hydrogen_gas.yaml",
+      "owner_record_sha256": "16228278ff97e5b39800c957294c01e7cd5a2e2fafdb733189b2b4123504c88f",
+      "disposition": "WITHHOLD",
+      "reason": "The exact dihydrogen identity is supported independently, but the complete row still exports H2_CO2 and H2_methanol mixture aliases and Diydrogen typo provenance. The removed aerobic-catabolization phrase is no longer a current defect. WITHHOLD the complete payload pending token curation; role evidence is outside this decision.",
+      "identity_review": "The source has H2 structure and CHEBI:18276, but its two mixture labels are not names of the pure substance.",
+      "token_reviews": {
+        "H2": "Unresolved token; complete payload remains withheld.",
+        "Hydrogen": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity.",
+        "Hydrogen (gas)": "Unresolved token; complete payload remains withheld.",
+        "E 949": "Unresolved token; complete payload remains withheld.",
+        "E-949": "Unresolved token; complete payload remains withheld.",
+        "E949": "Unresolved token; complete payload remains withheld.",
+        "H(2)": "Unresolved token; complete payload remains withheld.",
+        "H2_CO2": "Unresolved token; complete payload remains withheld.",
+        "H2_methanol": "Unresolved token; complete payload remains withheld.",
+        "molecular hydrogen": "Unresolved token; complete payload remains withheld.",
+        "Diydrogen": "Unresolved token; complete payload remains withheld."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Hydrogen_gas.md": "ce9304c4044d24950ad00340ccafc069299a156d155e3bb8ceef5e1976e2a1b1",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Kijanimicin",
+        "subject_label": "kijanimicin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:220048",
+        "object_label": "Kijanimicin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:kijanimicin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "methyl N-[(2R,3R,4S,6R)-6-[[(1S,3R,6S,7E,9S,11E,13S,16S,17S,18S,20S,21R,22S,23E)-17-[(2R,4R,5S,6S)-4-[(2S,6S)-4-[(2S,4S,5R,6S)-4,5-dihydroxy-6-methyloxan-2-yl]oxy-5-[(2R,4R,5R,6S)-4-hydroxy-5-methoxy-6-methyloxan-2-yl]oxy-6-methyloxan-2-yl]oxy-5-hydroxy-6-methyloxan-2-yl]oxy-23-hydroxy-4-(hydroxymethyl)-3,8,12,18,20,22-hexamethyl-25,27-dioxo-26-oxapentacyclo[22.2.1.01,6.013,22.016,21]heptacosa-4,7,11,14,23-pentaen-9-yl]oxy]-2,4-dimethyl-4-nitrooxan-3-yl]carbamate",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "781a242913901c19f569fea35bb103d52cd9e06e0990eccb7a65b0fbe97e8c24",
+      "owner_record": "data/ingredients/mapped/Kijanimicin.yaml",
+      "owner_record_sha256": "9ea82812bb3f0165e7cf8f74c66d00c9bbe3b4bb2756a617e8156da7e59edae1",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "methyl N-[(2R,3R,4S,6R)-6-[[(1S,3R,6S,7E,9S,11E,13S,16S,17S,18S,20S,21R,22S,23E)-17-[(2R,4R,5S,6S)-4-[(2S,6S)-4-[(2S,4S,5R,6S)-4,5-dihydroxy-6-methyloxan-2-yl]oxy-5-[(2R,4R,5R,6S)-4-hydroxy-5-methoxy-6-methyloxan-2-yl]oxy-6-methyloxan-2-yl]oxy-5-hydroxy-6-methyloxan-2-yl]oxy-23-hydroxy-4-(hydroxymethyl)-3,8,12,18,20,22-hexamethyl-25,27-dioxo-26-oxapentacyclo[22.2.1.01,6.013,22.016,21]heptacosa-4,7,11,14,23-pentaen-9-yl]oxy]-2,4-dimethyl-4-nitrooxan-3-yl]carbamate": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Kijanimicin.md": "ad7ac24da8610131b8900749e82cc556fdd37cf8181c9a3667d5b29463fdfc8a",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Miharamycin_A",
+        "subject_label": "miharamycin A",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:216282",
+        "object_label": "Miharamycin A",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:miharamycin_a|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "2-[(3S,3aS,4R,5R,7R,7aR)-7-(2-aminopurin-9-yl)-3,3a,4-trihydroxy-2,3,4,5,7,7a-hexahydrouro[2,3-c]pyran-5-yl]-2-[[2-amino-5-[carbamimidoyl(hydroxy)amino]pentanoyl]amino]acetic acid",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "7241b02b9cbb788653411097d99ad28e359ff2c1809612e25384caf47ea48fa7",
+      "owner_record": "data/ingredients/mapped/Miharamycin_A.yaml",
+      "owner_record_sha256": "7982e8f6beb03ee7d3a69759cf0da5efadbae7e1910447084a3fe538ff66b0e7",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "2-[(3S,3aS,4R,5R,7R,7aR)-7-(2-aminopurin-9-yl)-3,3a,4-trihydroxy-2,3,4,5,7,7a-hexahydrouro[2,3-c]pyran-5-yl]-2-[[2-amino-5-[carbamimidoyl(hydroxy)amino]pentanoyl]amino]acetic acid": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Miharamycin_A.md": "61e5ab217b7bf24782e8e532ce9c911db6d41e5f4d66c8b16835053137e3ebf6",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Monazomycin",
+        "subject_label": "monazomycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:201539",
+        "object_label": "Monazomycin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:monazomycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "dfd31f0031fb603457e46ef2973ec0caf6e5d4837003b3e7ed01313ccc88add1",
+      "owner_record": "data/ingredients/mapped/Monazomycin.yaml",
+      "owner_record_sha256": "e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Monazomycin.md": "14ac35c2226060b8ebad931c8b4c12915f8c9a50017706eacc302d6dc24e2516",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Nocamycin",
+        "subject_label": "nocamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:219652",
+        "object_label": "Nocamycin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:nocamycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "methyl 2-[3-[(3E,5E)-7-(2,4-dioxopyrrolidin-3-ylidene)-7-hydroxy-4-methylhepta-3,5-dien-2-yl]-1,4-dimethyl-6-oxospiro[2,9-dioxabicyclo[3.3.1]nonane-8,3'-oxirane]-2'-yl]propanoate",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "3da91aaa5dacc594c6f7652b5318b4280657652b0162374f0f565a4a3d715725",
+      "owner_record": "data/ingredients/mapped/Nocamycin.yaml",
+      "owner_record_sha256": "f6d628b833ff4c17019869eec96bc7d6e287d53bbe3a8754916a68ca37d04077",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "methyl 2-[3-[(3E,5E)-7-(2,4-dioxopyrrolidin-3-ylidene)-7-hydroxy-4-methylhepta-3,5-dien-2-yl]-1,4-dimethyl-6-oxospiro[2,9-dioxabicyclo[3.3.1]nonane-8,3'-oxirane]-2'-yl]propanoate": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Nocamycin.md": "dfdb72c1225b1afd4066888716796f07a91ac1bc527e0089e209211145942672",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Pluramycin_A",
+        "subject_label": "Pluramycin A",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "mesh:C003169",
+        "object_label": "pluramycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS (label-exact)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "row_sha256": "e754f4761cadcbbc2912489e70ed728f4881a8c13c496cb7347184e7a7aca3d6",
+      "owner_record": "data/ingredients/mapped/Pluramycin_A.yaml",
+      "owner_record_sha256": "032b55fd9f1dbabfcc795f04f6426413ea0f23718f269b736e8888e260507317",
+      "disposition": "WITHHOLD",
+      "reason": "Keep WITHHOLD on the mesh:C003169 parent relation: current MeSH labels pluramycin, and the specific A-compound relation/scope needs evidence. The separate exact registry identity is already supported.",
+      "identity_review": "Preserve kgmicrobe.compound:pluramycin_a without upgrading its MeSH family anchor to chemical identity.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Pluramycin_A.md": "8bb5b34e84ee8bc6054c9ae852f5667221f198fea26c23f005991dc9a4dbaaad",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Racemomycin_E",
+        "subject_label": "Racemomycin E",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "mesh:C019594",
+        "object_label": "racemomycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS (label-exact)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "row_sha256": "e90b9bd535cf1b516749dd1adb1d23bd148771a70b7eae80434d4867056397b0",
+      "owner_record": "data/ingredients/mapped/Racemomycin_E.yaml",
+      "owner_record_sha256": "da451fa75decffab222bf5609caa734bb00c5b345e999c2c086e4ed33269a592",
+      "disposition": "WITHHOLD",
+      "reason": "Keep WITHHOLD on the mesh:C019594 parent relation: current MeSH labels racemomycin, and the specific E-compound relation/scope needs evidence. The separate exact registry identity is already supported.",
+      "identity_review": "Preserve kgmicrobe.compound:racemomycin_e without upgrading its MeSH family anchor to chemical identity.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Racemomycin_E.md": "7b89a8f701b0c00c61e6d45e6085a3c335dddef15a34bbd5dc8738749ab2e534",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rhodomycin_A",
+        "subject_label": "Rhodomycin A",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "mesh:C004977",
+        "object_label": "rhodomycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS (label-exact)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "row_sha256": "7fbe614f0515434d04f7b56eed79dfc28717792d3a82cf9daf7daad0d0e47cca",
+      "owner_record": "data/ingredients/mapped/Rhodomycin_A.yaml",
+      "owner_record_sha256": "0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80",
+      "disposition": "WITHHOLD",
+      "reason": "Keep WITHHOLD on the mesh:C004977 parent relation: the current MeSH record is rhodomycin, and the specific A-compound relation/scope has not been independently established. The separate exact registry identity is already supported.",
+      "identity_review": "A family/parent association is not exact identity. KGM can preserve kgmicrobe.compound:rhodomycin_a using the independently published exact registry row.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Rhodomycin_A.md": "d43438506272f4d0cd7d3fadfca51808f96fa20729648f1dbb3b29ff0690eb26",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rubradirin",
+        "subject_label": "rubradirin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:223718",
+        "object_label": "Rubradirin B",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:rubradirin|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "[(10E,12S,13S,14R,16S)-7,14-dihydroxy-6,10,12,16-tetramethyl-2,9,15,21-tetraoxo-20-oxa-18-azatetracyclo[14.3.1.14,19.03,8]henicosa-1(19),3,5,7,10-pentaen-13-yl] 3-hydroxy-6-[(4-hydroxy-7-methoxy-2-oxochromen-3-yl)carbamoyl]pyridine-2-carboxylate",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "3ae670058aefdf10ec85cae6705cfbd6bfc20d3bffddbddd9b16a07363a42ded",
+      "owner_record": "data/ingredients/mapped/Rubradirin.yaml",
+      "owner_record_sha256": "81bc7193787d64f9fef6561aed7423e02dfba2e86849cd3517977ee9eaf750ee",
+      "disposition": "WITHHOLD",
+      "reason": "The process phrase has already been removed. The remaining exact assertion maps generic rubradirin to Rubradirin B (CHEBI:223718); no source-scoped evidence establishes that specificity. Keep WITHHOLD pending identity resolution.",
+      "identity_review": "The selected ChEBI record is specifically Rubradirin B. The bare trait/ingredient name does not establish that congener.",
+      "token_reviews": {
+        "[(10E,12S,13S,14R,16S)-7,14-dihydroxy-6,10,12,16-tetramethyl-2,9,15,21-tetraoxo-20-oxa-18-azatetracyclo[14.3.1.14,19.03,8]henicosa-1(19),3,5,7,10-pentaen-13-yl] 3-hydroxy-6-[(4-hydroxy-7-methoxy-2-oxochromen-3-yl)carbamoyl]pyridine-2-carboxylate": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Rubradirin.md": "82691aa32a11ecc8df18811afe9275f15a1d62e908c53721d5c28153a0dc23fe",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Stallimycin",
+        "subject_label": "Stallimycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:41958",
+        "object_label": "DISTAMYCIN A",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:stallimycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=user_approved_curator_synonym]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "e780ed47cc82d31ab839fb8d1c461f42279e1fea69b7580e478047f35e8e5348",
+      "owner_record": "data/ingredients/mapped/Stallimycin.yaml",
+      "owner_record_sha256": "ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived PubChem CID 3115 comparison supplies same-formula/structure support for Stallimycin = distamycin A; this decision does not rely on ChEBI hydrochloride-related synonyms. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived PubChem CID 3115 comparison supplies same-formula/structure support for Stallimycin = distamycin A; this decision does not rely on ChEBI hydrochloride-related synonyms.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Stallimycin.md": "3059d925b51fd8b5004e3bf63e125bd97ff9c6224854de3846cfed3ef19f11dc",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Izalpinin",
+        "subject_label": "Izalpinin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:480-14-4",
+        "object_label": "Izalpinin",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:480-14-4",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "68111d965a4bc786721a87326332582a93b767e91e1d9d22104e1986b693266a",
+      "owner_record": "data/ingredients/mapped/Izalpinin.yaml",
+      "owner_record_sha256": "279a4bc187f755b580b834a85b7d6641b1b9836b08c8f007af405218acad1f7b",
+      "disposition": "WITHHOLD",
+      "reason": "WITHHOLD invalid CAS identifier cas:480-14-4: weighted digit sum 58 gives check digit 8, not 4 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "identity_review": "WITHHOLD invalid CAS identifier cas:480-14-4: weighted digit sum 58 gives check digit 8, not 4 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "token_reviews": {},
+      "resolved_negative_reviews": [],
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb"
+      }
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Methyl-2-Hydroxy-Phenylproprionate",
+        "subject_label": "Methyl-2-Hydroxy-Phenylproprionate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:89471-28-0",
+        "object_label": "Methyl-2-Hydroxy-Phenylproprionate",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:89471-28-0",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "adaec6e82a811adadea48de586ff48227a0a76a6039ff2f178a5f73dd2b3b14a",
+      "owner_record": "data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml",
+      "owner_record_sha256": "1b76547623a77d4ad8f527403ce65c3b8bb4cab61910baa6b1ed292dab97a5c7",
+      "disposition": "WITHHOLD",
+      "reason": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "identity_review": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "token_reviews": {},
+      "resolved_negative_reviews": [],
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb"
+      }
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Proteose_Peptone_No_2",
+        "subject_label": "Proteose peptone no. 2",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "MICRO:0002393",
+        "object_label": "Proteose Peptone No. 2",
+        "object_source": "obo:micro.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:KG-Microbe MICRO KGX|MIM:curator=restore_micro_source_identities",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Exact source-reviewed MICRO identity (#759); original IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393. Supersedes the local identity and parent-only mapping from #137.",
+        "other": "Proteose peptone No 2 (DIFCO 0121-01-3)",
+        "validation_method": "manual:restore_micro_source_identities|KGX_SOURCE|2026-09-23"
+      },
+      "row_sha256": "f4f45471a35e6a147f0195f013d67b0bfa08215032cc824c3efd06dc117602e3",
+      "owner_record": "data/ingredients/mapped/Proteose_Peptone_No_2.yaml",
+      "owner_record_sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+      "disposition": "SUPPORTED",
+      "reason": "Approve the complete corrected exact mapping from the pinned MICRO source (#759). The MIM preferred name denotes the exact named MICRO material 'Proteose Peptone No. 2'. Both archived node snapshots verify the exact source label, while the current KGX records its parent and the archived full nodes preserve its original MicrO.owl IRI. The legacy IRI explains the earlier canonical-IRI refusal and does not require a local substitute. This approves the named material identity, not a lot-specific composition or provisional role. No verified CAS is present for this record.",
+      "identity_review": "The MIM preferred name denotes the exact named MICRO material 'Proteose Peptone No. 2'. Both archived node snapshots verify the exact source label, while the current KGX records its parent and the archived full nodes preserve its original MicrO.owl IRI. The legacy IRI explains the earlier canonical-IRI refusal and does not require a local substitute. This approves the named material identity, not a lot-specific composition or provisional role. No verified CAS is present for this record.",
+      "token_reviews": {
+        "Proteose peptone No 2 (DIFCO 0121-01-3)": "Verified verbatim in the original DSMZ medium 403 PDF, page 1, Solution A, inspected 2026-09-23; the current MediaDive rendition attaches the same catalog qualifier to Proteose peptone no. 2. See micro-source-review.md. This source-specific CATALOG_VARIANT names the No. 2 material, not generic proteose peptone or a CAS registry number."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/micro-source-review.md": "e2f70e3950362dbb9fee47de191f8db1ca26eff9a3951f1021eed14c8b3fda71",
+        "src/mediaingredientmech/ontology_sources/micro/legacy_nodes.tsv": "8253245c7c618e624d763fed397afe4c21a75a043b0140e94207989176796716",
+        "src/mediaingredientmech/ontology_sources/micro/manifest.json": "9e3ee88942aafbf0687bbbfc08c3e653b0ad0d104e7ea80efd07b1f0a4350feb",
+        "src/mediaingredientmech/ontology_sources/micro/micro_edges.tsv": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
+        "src/mediaingredientmech/ontology_sources/micro/micro_nodes.tsv": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rabbit_Serum",
+        "subject_label": "Rabbit serum",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "MICRO:0002392",
+        "object_label": "rabbit serum",
+        "object_source": "obo:micro.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:KG-Microbe MICRO KGX|MIM:curator=restore_micro_source_identities",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Exact source-reviewed MICRO identity (#759); original IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392. Supersedes the local identity and parent-only mapping from #137.",
+        "other": "",
+        "validation_method": "manual:restore_micro_source_identities|KGX_SOURCE|2026-09-23"
+      },
+      "row_sha256": "7d2c474d29e11010a352ba6a0eceb27f0bb96aa7ffd6acedd0c6e77f1f807e9a",
+      "owner_record": "data/ingredients/mapped/Rabbit_Serum.yaml",
+      "owner_record_sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "disposition": "SUPPORTED",
+      "reason": "Approve the complete corrected exact mapping from the pinned MICRO source (#759). The MIM preferred name denotes the exact named MICRO material 'rabbit serum'. Both archived node snapshots verify the exact source label, while the current KGX records its parent and the archived full nodes preserve its original MicrO.owl IRI. The legacy IRI explains the earlier canonical-IRI refusal and does not require a local substitute. This approves the named material identity, not a lot-specific composition or provisional role. No verified CAS is present for this record.",
+      "identity_review": "The MIM preferred name denotes the exact named MICRO material 'rabbit serum'. Both archived node snapshots verify the exact source label, while the current KGX records its parent and the archived full nodes preserve its original MicrO.owl IRI. The legacy IRI explains the earlier canonical-IRI refusal and does not require a local substitute. This approves the named material identity, not a lot-specific composition or provisional role. No verified CAS is present for this record.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/micro-source-review.md": "e2f70e3950362dbb9fee47de191f8db1ca26eff9a3951f1021eed14c8b3fda71",
+        "src/mediaingredientmech/ontology_sources/micro/legacy_nodes.tsv": "8253245c7c618e624d763fed397afe4c21a75a043b0140e94207989176796716",
+        "src/mediaingredientmech/ontology_sources/micro/manifest.json": "9e3ee88942aafbf0687bbbfc08c3e653b0ad0d104e7ea80efd07b1f0a4350feb",
+        "src/mediaingredientmech/ontology_sources/micro/micro_edges.tsv": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
+        "src/mediaingredientmech/ontology_sources/micro/micro_nodes.tsv": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:V-8_Juice",
+        "subject_label": "V-8 Juice",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "MICRO:0002250",
+        "object_label": "V-8 juice",
+        "object_source": "obo:micro.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:KG-Microbe MICRO KGX|MIM:curator=restore_micro_source_identities",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Exact source-reviewed MICRO identity (#759); original IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002250. Supersedes the local identity and parent-only mapping from #137.",
+        "other": "",
+        "validation_method": "manual:restore_micro_source_identities|KGX_SOURCE|2026-09-23"
+      },
+      "row_sha256": "d4747631a039cd5bc8ad669cf305e22da330db673db1faad93a93726ac878c7c",
+      "owner_record": "data/ingredients/mapped/V-8_Juice.yaml",
+      "owner_record_sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+      "disposition": "SUPPORTED",
+      "reason": "Approve the complete corrected exact mapping from the pinned MICRO source (#759). The MIM preferred name denotes the exact named MICRO material 'V-8 juice'. Both archived node snapshots verify the exact source label, while the current KGX records its parent and the archived full nodes preserve its original MicrO.owl IRI. The legacy IRI explains the earlier canonical-IRI refusal and does not require a local substitute. This approves the named material identity, not a lot-specific composition or provisional role. No verified CAS is present for this record.",
+      "identity_review": "The MIM preferred name denotes the exact named MICRO material 'V-8 juice'. Both archived node snapshots verify the exact source label, while the current KGX records its parent and the archived full nodes preserve its original MicrO.owl IRI. The legacy IRI explains the earlier canonical-IRI refusal and does not require a local substitute. This approves the named material identity, not a lot-specific composition or provisional role. No verified CAS is present for this record.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/micro-source-review.md": "e2f70e3950362dbb9fee47de191f8db1ca26eff9a3951f1021eed14c8b3fda71",
+        "src/mediaingredientmech/ontology_sources/micro/legacy_nodes.tsv": "8253245c7c618e624d763fed397afe4c21a75a043b0140e94207989176796716",
+        "src/mediaingredientmech/ontology_sources/micro/manifest.json": "9e3ee88942aafbf0687bbbfc08c3e653b0ad0d104e7ea80efd07b1f0a4350feb",
+        "src/mediaingredientmech/ontology_sources/micro/micro_edges.tsv": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
+        "src/mediaingredientmech/ontology_sources/micro/micro_nodes.tsv": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Polymyxin_B",
+        "subject_label": "Polymyxin B",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C61894",
+        "object_label": "Polymyxin B",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#213)|MIM:curator=curator_ruling_2026_08_07|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+        "other": "CAS:1404-26-8",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "99a594a30eeb353d288681a429205dc88b0cd6db4a9fc8a4c6a36486cd564ded",
+      "owner_record": "data/ingredients/mapped/Polymyxin_B.yaml",
+      "owner_record_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "disposition": "SUPPORTED",
+      "reason": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+      "identity_review": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+      "token_reviews": {
+        "CAS:1404-26-8": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rifamycin",
+        "subject_label": "Rifamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:26580",
+        "object_label": "rifamycins",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "f0f4f6ef74a10427e2c3aa8ed12e2d2b37f4c08d5e0236e9010631731a6803c0",
+      "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+      "owner_record_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "disposition": "SUPPORTED",
+      "reason": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+      "identity_review": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rifamycin_Sv",
+        "subject_label": "Rifamycin Sv",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:29673",
+        "object_label": "rifamycin SV",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=classify_ingredient_type|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+        "other": "CAS:6998-60-3",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "2373a1e70ea6b23da46484475985a6e34f05c835442865a626b148ca13352864",
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "owner_record_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "disposition": "SUPPORTED",
+      "reason": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+      "identity_review": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+      "token_reviews": {
+        "CAS:6998-60-3": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Sorbitan_Monooleate",
+        "subject_label": "Sorbitan Monooleate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:sorbitan_monooleate",
+        "object_label": "Sorbitan Monooleate",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "19f6ebd3a00a42ad9684fc8f6aac4ad44f3af0bf9067f392186a0b942648c2da",
+      "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+      "owner_record_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+      "disposition": "SUPPORTED",
+      "reason": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+      "identity_review": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Xanthine",
+        "subject_label": "Xanthine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17712",
+        "object_label": "9H-xanthine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.8",
+        "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+        "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "disposition": "SUPPORTED",
+      "reason": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "identity_review": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "token_reviews": {
+        "2,6-dihydroxypurine": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "2,6-dioxo-1,2,3,6-tetrahydropurine": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "3,9-dihydro-1H-purine-2,6-dione": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "9H-purine-2,6-(1H,3H)-dione": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "Xan": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "purine-2(3H),6(1H)-dione": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "CAS:69-89-6": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Acriflavine",
+        "subject_label": "Acriflavine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C76253",
+        "object_label": "Acriflavine",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "79162237803c060bed2535f2afb845775597c79d923e3040d2397027cfcb67db",
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_record_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+      "identity_review": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Anabasine_Hydrochloride",
+        "subject_label": "Anabasine Hydrochloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C216370",
+        "object_label": "Anabasine Hydrochloride",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "33ecd760bfd7e0952d35fad804390ff98513b16d5497876f5acf587f2a5dd9b1",
+      "owner_record": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+      "owner_record_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+      "identity_review": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Bovine_Serum_Albumin",
+        "subject_label": "bovine serum albumin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C85253",
+        "object_label": "Bovine Serum Albumin",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=refresh_occurrence_statistics|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "d5d310b48803d4fa1ddf1d9b29becb3bcf769ab8dff1fdea05a42a942ab0889f",
+      "owner_record": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "owner_record_sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+      "identity_review": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Cotarnine_Chloride",
+        "subject_label": "Cotarnine Chloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C79997",
+        "object_label": "Cotarnine Chloride",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "07333ab4153f8a540d88a7ce67a71f799037ba0a2688d2ca6b956181f7a2105c",
+      "owner_record": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+      "owner_record_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+      "identity_review": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Locust_Bean_Gum",
+        "subject_label": "Locust bean gum",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "FOODON:03413132",
+        "object_label": "locust bean gum",
+        "object_source": "obo:foodon.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=mediaingredientmech-agentic-curation|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "b98191e745af25090c346c3ee4eb7f08aca0222406e6166b3e89cd5e81bb040c",
+      "owner_record": "data/ingredients/mapped/Locust_Bean_Gum.yaml",
+      "owner_record_sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+      "identity_review": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Lysozyme",
+        "subject_label": "Lysozyme",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:lysozyme",
+        "object_label": "Lysozyme",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "da3383e885ccf6c6c41775d26eba72fc1b097bdb58b834139fe0545654cd3eab",
+      "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+      "owner_record_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+      "identity_review": "Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Pretomanid",
+        "subject_label": "Pretomanid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C166606",
+        "object_label": "Pretomanid",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "1fe47fa04f1a45b87d96fd000a04d1e213a02167067c9e4f0d6a060ac9db21ee",
+      "owner_record": "data/ingredients/mapped/Pretomanid.yaml",
+      "owner_record_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+      "identity_review": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Sodium_Adipate",
+        "subject_label": "Sodium adipate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "FOODON:03413240",
+        "object_label": "sodium adipate",
+        "object_source": "obo:foodon.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "87e1ea12aa071968da020076f364be1734ef4d96f5ff7ee0cdf742173bcd3bfb",
+      "owner_record": "data/ingredients/mapped/Sodium_Adipate.yaml",
+      "owner_record_sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+      "identity_review": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Sunflower_Oil",
+        "subject_label": "Sunflower oil",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C1241",
+        "object_label": "Sunflower Oil",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "b2269f9a5b6c48152da7b8f0ad5bef77fe898bae24dd382decd50253887f4225",
+      "owner_record": "data/ingredients/mapped/Sunflower_Oil.yaml",
+      "owner_record_sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+      "identity_review": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Sutezolid",
+        "subject_label": "Sutezolid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C152482",
+        "object_label": "Sutezolid",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "c4389cd7a9af68352845e69b62be1de91ad5918620fc5f2000a38c69c45a5e14",
+      "owner_record": "data/ingredients/mapped/Sutezolid.yaml",
+      "owner_record_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+      "identity_review": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Tara_Gum",
+        "subject_label": "Tara gum",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "FOODON:03413299",
+        "object_label": "tara gum",
+        "object_source": "obo:foodon.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "4ef06b44a0de682f956dfbf651800abb64e0e916a9292a6c269201ffdaca9b1a",
+      "owner_record": "data/ingredients/mapped/Tara_Gum.yaml",
+      "owner_record_sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+      "identity_review": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Zymosan",
+        "subject_label": "Zymosan",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C183132",
+        "object_label": "Zymosan",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "628e09bc9534024f2c27018cbfc72142d3fa67fcdfb4c506a493a334e082efab",
+      "owner_record": "data/ingredients/mapped/Zymosan.yaml",
+      "owner_record_sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+      "disposition": "SUPPORTED",
+      "reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+      "identity_review": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
+        "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    }
+  ]
+}

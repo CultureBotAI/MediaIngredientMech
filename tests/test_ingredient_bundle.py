@@ -23,7 +23,7 @@ from mediaingredientmech.ingredient_bundle_contract import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = Path("reports/ingredient_bundle_20261101_sodium_perchlorate901/review.json")
+REVIEW = Path("reports/ingredient_bundle_20261102_registry753_nodes870_reviewed/review.json")
 
 
 @pytest.fixture(scope="module")

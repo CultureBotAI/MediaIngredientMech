@@ -33,7 +33,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "9a7a5cecf28c8b498116a42ce00869e915e7b564793f0fb6c1885a252721c16c"
+REVIEWED_SOURCE = "92faaffd55ba44d94df02e71febd71c4b9b24c30955735512cd332eae464f684"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 # Admission is explicit; discovering an arbitrary report never grants authority.
@@ -92,6 +92,72 @@ def withdraw_stale_cohort(entry, mapping, owner, owner_hash, chain, baseline, *,
         "receipt_inputs": chain["receipt_inputs"],
         "reason": "Archived scoped approval withdrawn after verified correction; no approval renewed",
     }
+
+
+def qualify_node_correction_concern(entry, mapping, owner, owner_hash, chain, baseline, *, current_position):
+    """Qualify an archived concern after a proved node-pointer correction (#902).
+
+    This is provenance, not reconciliation of the concern's scientific claims.
+    The typed source-only correction narrows this change to the reviewed node
+    cleanup; other historical concerns keep their existing interpretation.
+    """
+    if "kg_microbe_node_id" not in entry["reason"]:
+        return entry["reason"], None
+    corrections = []
+    for receipt, path in zip(chain["receipts"], chain["receipt_paths"], strict=True):
+        for record in receipt["records"]:
+            if record["source_record"] == owner and record.get("shape") == "stale_node_pointer_removal":
+                corrections.append((receipt, path, record))
+    if not corrections or entry.get("source_record_sha256") == owner_hash:
+        return entry["reason"], None
+    position = entry.get("source_position")
+    if (
+        entry.get("disposition") != "WITHHOLD"
+        or entry.get("source_record") != owner
+        or entry.get("sssom_source_sha256") != baseline["source_sha256"]
+        or type(position) is not int or not 1 <= position <= len(chain["baseline_rows"])
+        or type(current_position) is not int or not 1 <= current_position <= len(chain["state"])
+        or chain["baseline_rows"][position - 1] != entry.get("mapping")
+        or chain["forward"][position - 1] != current_position
+        or chain["state"][current_position - 1] != mapping
+    ):
+        raise ValueError("Historical concern does not bind the verified row and owner")
+    supersession = record_supersession(
+        chain, owner=owner, reviewed_sha256=entry.get("source_record_sha256"),
+        current_sha256=owner_hash,
+    )
+    if supersession is None:
+        raise ValueError("Historical concern has no exact owner-byte supersession")
+    correction_refs = []
+    for receipt, path, record in corrections:
+        expected = {
+            "sequence": receipt["sequence"], "path": path,
+            "sha256": chain["receipt_inputs"][path],
+            "before_sha256": record["before_yaml_sha256"],
+            "after_sha256": record["after_yaml_sha256"],
+        }
+        if expected not in supersession["receipts"]:
+            raise ValueError("Node correction does not bind the concern's owner transition")
+        correction_refs.append(dict(expected, batch=receipt["batch"]))
+    proof = {
+        "source": "mapping_review/concern_cohorts.json",
+        "baseline_position": position, "current_position": current_position,
+        "historical_row_sha256": row_sha256(entry["mapping"]),
+        "current_row_sha256": row_sha256(mapping),
+        "owner_supersession": supersession,
+        "node_corrections": correction_refs,
+        "scope": "Historical qualification only; no finding retired or scientific approval added",
+    }
+    batches = ", ".join(item["batch"] for item in correction_refs)
+    reason = (
+        f"Historical concern recorded before the source-only node-pointer correction in receipt {batches}. "
+        "The quoted concern describes the archived owner, not a claim that every defect remains present: "
+        + entry["reason"]
+        + " The corrected claim remains WITHHOLD pending fresh mapping-specific review. "
+        "All unassessed identity, synonym, preparation and role concerns remain review obligations; "
+        "this provenance qualification retires no historical finding and adds no scientific approval."
+    )
+    return reason, proof
 
 
 def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=()):
@@ -389,7 +455,13 @@ def assemble():
             reason = "The synonym rejection corrects a token that is not a name of this substance, but does not itself approve the record's remaining identity and aliases. Preserve this changed row pending a complete mapping-specific decision."
         if position in concerns:
             entry = concerns[position]
-            disposition, reason = "WITHHOLD", entry["reason"]
+            disposition = "WITHHOLD"
+            reason, historical_concern = qualify_node_correction_concern(
+                entry, mapping, owner, record_hashes[owner], chain, baseline,
+                current_position=current_position,
+            )
+            if historical_concern is not None:
+                basis["historical_concern"] = historical_concern
             basis["scoped_review"] = {
                 "file": "mapping_review/concern_cohorts.json",
                 "position": position,
@@ -575,6 +647,7 @@ def assemble():
     for p in (
         ROOT / "MAPPING_SEMANTICS.md",
         ROOT / "src/mediaingredientmech/export/reviewed_sssom.py",
+        ROOT / "src/mediaingredientmech/sssom_metadata.py",
         ROOT / "src/mediaingredientmech/review_claims.py",
         ROOT / "src/mediaingredientmech/synonym_policy.py",
         ROOT / "src/mediaingredientmech/record_refresh.py",

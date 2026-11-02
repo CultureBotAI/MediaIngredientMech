@@ -79,6 +79,9 @@ def export_bundle(root: Path, review_path: Path, output: Path) -> dict:
             "validator_sha256": content_sha256(
                 Path(__file__).parents[1].joinpath("ingredient_bundle_contract.py").read_bytes()
             ),
+            "sssom_metadata_sha256": content_sha256(
+                Path(__file__).parents[1].joinpath("sssom_metadata.py").read_bytes()
+            ),
         },
         "members": {
             name: {"sha256": content_sha256(value), "bytes": len(value)}

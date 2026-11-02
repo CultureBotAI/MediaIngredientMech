@@ -266,6 +266,7 @@ def mapping_fixture(tmp_path, monkeypatch, proposal, evidence):
     put(tmp_path, "reports/semantic_review_20260921/records.tsv", f"source_record\treview_report\n{owner}\tprior-review.md\n".encode())
     put(tmp_path, "prior-review.md", evidence["historical_report"]["text"].encode())
     for name in ("MAPPING_SEMANTICS.md", "src/mediaingredientmech/export/reviewed_sssom.py",
+                 "src/mediaingredientmech/sssom_metadata.py",
                  "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
                  "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
                  "src/mediaingredientmech/form_mapping_review.py",

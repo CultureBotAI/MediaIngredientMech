@@ -1162,7 +1162,6 @@
 | CHEBI:28484 | Isovaleric acid | CHEBI:28484 | CHEBI | EXACT_MATCH | 118 |
 | CHEBI:193161 | Isovanillin | CHEBI:193161 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30838 | Itaconic Acid | CHEBI:30838 | CHEBI | EXACT_MATCH | 0 |
-| cas:480-14-4 | Izalpinin | cas:480-14-4 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:18292 | Jasmonic acid | CHEBI:18292 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15794 | Juglone | CHEBI:15794 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32029 | K-acetate | CHEBI:32029 | CHEBI | EXACT_MATCH | 18 |
@@ -2621,6 +2620,7 @@
 | NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 32 |
 | NCIT:C216679 | Carnitine Hydrochloride | NCIT:C216679 | NCIT | EXACT_MATCH | 14 |
 | kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | sn-Glycerol 3-phosphate lithium salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
+| cas:480-14-8 | Izalpinin | cas:480-14-8 | CAS | FALLBACK_REGISTRY | 0 |
 
 ## Other Statuses
 

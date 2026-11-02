@@ -284,6 +284,7 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
     for path in (
         "prior-review.md", "MAPPING_SEMANTICS.md",
         "src/mediaingredientmech/export/reviewed_sssom.py",
+        "src/mediaingredientmech/sssom_metadata.py",
         "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
         "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
         "src/mediaingredientmech/validation/mapping_change_receipts.py",
