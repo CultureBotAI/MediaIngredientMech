@@ -2,13 +2,13 @@ identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
 preferred_term: 2,4-diamino-6,7-di-iso-propylpteridine phosphate
 synonyms:
 - synonym_text: 7-di-iso-propylpteridine Phosphate)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: microbedecoder
 - synonym_text: 0129 (2
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: comma-split fragment (#308/#313)
 - synonym_text: 4-Diamino-6
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: comma-split fragment (#308/#313)
 mapping_status: MAPPED
 occurrence_statistics:
@@ -57,6 +57,24 @@ curation_history:
     records. Merged rather than grounded separately: neither fragment names a compound.
     Both kept as RAW_TEXT synonyms, matching how the third fragment was already held.'
   llm_assisted: false
+- timestamp: '2026-11-02T21:05:51.410555+00:00'
+  curator: Codex
+  action: REJECTED_SOURCE_LABEL_FRAGMENTS
+  changes: 'Retyped only ["7-di-iso-propylpteridine Phosphate)", "0129 (2", "4-Diamino-6"]
+    as provenance-only REJECTED_LABEL. Both original CSV inputs contain the intact
+    0129 (2,4-Diamino-6,7-di-iso-propylpteridine phosphate) label (example line 31,
+    BacDive 2); the three comma-split fragments are non-names. Preserve the local
+    phosphate identity, parent CHEBI:73908 and 1212 source occurrences (742 resistance
+    plus 470 sensitivity), without conflating the salt with the free base. Source:
+    https://bacdive.dsmz.de/strain/2 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+    Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+    counts are not recipe occurrences or positive experimental outcomes. Preserved
+    superseded source assertions and history. No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:7_di_iso_propylpteridine_phosphate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -72,3 +90,15 @@ ontology_mapping:
       registry identifier plus narrowMatch to the parent rather than asserting the
       salt IS the free base. The Vibriostat and Vibriostatic Agent O/129 residual
       labels are the free base and were mapped to CHEBI:73908 separately (#213).'
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718
+    notes: 'Both original CSV inputs contain the intact 0129 (2,4-Diamino-6,7-di-iso-propylpteridine
+      phosphate) label (example line 31, BacDive 2); the three comma-split fragments
+      are non-names. Preserve the local phosphate identity, parent CHEBI:73908 and
+      1212 source occurrences (742 resistance plus 470 sensitivity), without conflating
+      the salt with the free base. Source: https://bacdive.dsmz.de/strain/2 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'

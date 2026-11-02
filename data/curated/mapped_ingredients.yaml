@@ -1,6 +1,6 @@
-generation_date: '2026-11-02T05:35:21.993135+00:00'
-total_count: 2680
-mapped_count: 2610
+generation_date: '2026-11-02T21:07:53.922902+00:00'
+total_count: 2681
+mapped_count: 2611
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -17667,13 +17667,13 @@ ingredients:
   preferred_term: 2,4-diamino-6,7-di-iso-propylpteridine phosphate
   synonyms:
   - synonym_text: 7-di-iso-propylpteridine Phosphate)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: microbedecoder
   - synonym_text: 0129 (2
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: comma-split fragment (#308/#313)
   - synonym_text: 4-Diamino-6
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: comma-split fragment (#308/#313)
   mapping_status: MAPPED
   occurrence_statistics:
@@ -17723,6 +17723,25 @@ ingredients:
       names a compound. Both kept as RAW_TEXT synonyms, matching how the third fragment
       was already held.'
     llm_assisted: false
+  - timestamp: '2026-11-02T21:05:51.410555+00:00'
+    curator: Codex
+    action: REJECTED_SOURCE_LABEL_FRAGMENTS
+    changes: 'Retyped only ["7-di-iso-propylpteridine Phosphate)", "0129 (2", "4-Diamino-6"]
+      as provenance-only REJECTED_LABEL. Both original CSV inputs contain the intact
+      0129 (2,4-Diamino-6,7-di-iso-propylpteridine phosphate) label (example line
+      31, BacDive 2); the three comma-split fragments are non-names. Preserve the
+      local phosphate identity, parent CHEBI:73908 and 1212 source occurrences (742
+      resistance plus 470 sensitivity), without conflating the salt with the free
+      base. Source: https://bacdive.dsmz.de/strain/2 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:7_di_iso_propylpteridine_phosphate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -17738,6 +17757,18 @@ ingredients:
         registry identifier plus narrowMatch to the parent rather than asserting the
         salt IS the free base. The Vibriostat and Vibriostatic Agent O/129 residual
         labels are the free base and were mapped to CHEBI:73908 separately (#213).'
+    - evidence_type: CURATOR_JUDGMENT
+      source: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718
+      notes: 'Both original CSV inputs contain the intact 0129 (2,4-Diamino-6,7-di-iso-propylpteridine
+        phosphate) label (example line 31, BacDive 2); the three comma-split fragments
+        are non-names. Preserve the local phosphate identity, parent CHEBI:73908 and
+        1212 source occurrences (742 resistance plus 470 sensitivity), without conflating
+        the salt with the free base. Source: https://bacdive.dsmz.de/strain/2 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+        Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+        (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0).
+        Source-field counts are not recipe occurrences or positive experimental outcomes.
+        Preserved superseded source assertions and history. No scientific/release
+        approval is asserted.'
 - identifier: kgmicrobe.compound:maltose_hydrate
   preferred_term: Maltose Hydrate
   synonyms:
@@ -24446,15 +24477,27 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718
+      notes: 'Original MicrobeDecoder CSV line 18953, BacDive 134317, utilization
+        field gives the intact butane-1,4-diol label; Butane-1 and 4-diol are comma-split
+        fragments, not names of a substance. Preserve the full Butane-1,4-diol alias,
+        identity, chemistry and counts. Source: https://bacdive.dsmz.de/strain/134317
+        . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+        Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+        (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0).
+        Source-field counts are not recipe occurrences or positive experimental outcomes.
+        Preserved superseded source assertions and history. No scientific/release
+        approval is asserted.'
   synonyms:
   - synonym_text: Butane-1,4-diol
     synonym_type: RAW_TEXT
     source: MERGED_FROM_CHEBI:41189 (#308/#370)
   - synonym_text: Butane-1
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM_CHEBI:41189 (#308/#370)
   - synonym_text: 4-diol
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM_CHEBI:41189 (#308/#370)
   mapping_status: MAPPED
   occurrence_statistics:
@@ -24516,6 +24559,23 @@ ingredients:
       provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains
       skos:exactMatch under Rule D (#438), independently of mapping quality.
     llm_assisted: false
+  - timestamp: '2026-11-02T21:05:51.410555+00:00'
+    curator: Codex
+    action: REJECTED_SOURCE_LABEL_FRAGMENTS
+    changes: 'Retyped only ["Butane-1", "4-diol"] as provenance-only REJECTED_LABEL.
+      Original MicrobeDecoder CSV line 18953, BacDive 134317, utilization field gives
+      the intact butane-1,4-diol label; Butane-1 and 4-diol are comma-split fragments,
+      not names of a substance. Preserve the full Butane-1,4-diol alias, identity,
+      chemistry and counts. Source: https://bacdive.dsmz.de/strain/134317 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 110-63-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -149062,12 +149122,29 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361
+      notes: 'CHEBI:18397 / PubChem CID 1001 / CAS 64-04-0 denote free-base C8H11N;
+        Phenethylamine hydrochloride is distinct CID 9075 / CAS 156-28-5 / C8H12ClN.
+        Preserve #234''s free-base identity, Beta-phenylethylamine alias and chemistry;
+        reject only the incompatible salt alias. CultureBotHT''s tracked correction
+        overlay explicitly corrects the original source pair, but does not identify
+        the original supplier or physical bottle. Separate salt-record re-ingestion
+        remains open on #235; no direct CAS Registry check is claimed. Sources: https://www.ebi.ac.uk/chebi/CHEBI:18397
+        ; https://pubchem.ncbi.nlm.nih.gov/compound/1001 ; https://pubchem.ncbi.nlm.nih.gov/compound/9075
+        ; https://webprod.hc-sc.gc.ca/nhpid-bdipsn/ingredReq?id=11491 ; https://github.com/CultureBotAI/CultureBotHT/pull/38
+        . https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361.
+        Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+        (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0).
+        Source-field counts are not recipe occurrences or positive experimental outcomes.
+        Preserved superseded source assertions and history. No scientific/release
+        approval is asserted.'
   synonyms:
   - synonym_text: 2-phenylethanamine
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: Phenethylamine Hydrochloride
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: relabelled
   - synonym_text: Beta-phenylethylamine
     synonym_type: RAW_TEXT
@@ -149131,6 +149208,29 @@ ingredients:
       ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
       under Rule D (#438), independently of mapping quality.
     llm_assisted: false
+  - timestamp: '2026-11-02T21:05:51.410555+00:00'
+    curator: Codex
+    action: REJECTED_WRONG_FORM_SYNONYM
+    changes: 'Retyped only ["Phenethylamine Hydrochloride"] as provenance-only REJECTED_LABEL.
+      CHEBI:18397 / PubChem CID 1001 / CAS 64-04-0 denote free-base C8H11N; Phenethylamine
+      hydrochloride is distinct CID 9075 / CAS 156-28-5 / C8H12ClN. Preserve #234''s
+      free-base identity, Beta-phenylethylamine alias and chemistry; reject only the
+      incompatible salt alias. CultureBotHT''s tracked correction overlay explicitly
+      corrects the original source pair, but does not identify the original supplier
+      or physical bottle. Separate salt-record re-ingestion remains open on #235;
+      no direct CAS Registry check is claimed. Sources: https://www.ebi.ac.uk/chebi/CHEBI:18397
+      ; https://pubchem.ncbi.nlm.nih.gov/compound/1001 ; https://pubchem.ncbi.nlm.nih.gov/compound/9075
+      ; https://webprod.hc-sc.gc.ca/nhpid-bdipsn/ingredReq?id=11491 ; https://github.com/CultureBotAI/CultureBotHT/pull/38
+      . https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 64-04-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -183145,62 +183245,6 @@ ingredients:
     retrieval_date: '2026-04-29T06:04:17.380972+00:00'
     molecular_formula: C19H16O4
   ingredient_type: SINGLE_INGREDIENT
-- identifier: MICRO:0000455
-  preferred_term: WC Trace Elements Solution
-  synonyms:
-  - synonym_text: WC Trace Elements Solution
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:18:21.999971+00:00'
-    curator: resolve_unmapped_v2
-    action: AUTO_UPGRADE_TO_MICRO
-    changes: primary UNMAPPED_0066 → MICRO:0000455 (strategy=stem-match)
-    llm_assisted: false
-  - timestamp: '2026-06-09T04:56:30.248308+00:00'
-    curator: claude_in_session_curation
-    action: ANNOTATED
-    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
-      nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
-      (#323)
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 8'
-  ontology_mapping:
-    ontology_id: MICRO:0000455
-    ontology_label: trace elements solution
-    ontology_source: MICRO
-    mapping_quality: LEXICAL_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0066; matched via 'WC Trace Elements Solution';
-        stem-substring
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.6
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Assigned by in-session Claude reasoning (no external API)
-      curator_note: Provisional in-session LLM role assignment; review recommended.
-  ingredient_type: STOCK_SOLUTION
 - identifier: CHEBI:28427
   preferred_term: Wheat Arabinoxylan
   ontology_mapping:
@@ -188386,9 +188430,23 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:5_dehydro_d_gluconate; '
+    - evidence_type: CURATOR_JUDGMENT
+      source: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718
+      notes: 'CHEBI:58143 is mono-keto 5-dehydro-D-gluconate, C6H9O7; CHEBI:11449
+        is distinct di-keto 2,5-didehydro-D-gluconate, C6H7O7. The inherited 5-didehydro-D-gluconate
+        fragment is not a typo for this mono-keto identity. Original CSVs independently
+        support mono-keto count 288 (11 production plus 277 utilization); do not subtract
+        the two distinct di-keto entries. Sources: https://www.ebi.ac.uk/chebi/CHEBI:58143
+        ; https://www.ebi.ac.uk/chebi/CHEBI:11449 ; https://bacdive.dsmz.de/strain/34
+        ; https://bacdive.dsmz.de/strain/58 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+        Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+        (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0).
+        Source-field counts are not recipe occurrences or positive experimental outcomes.
+        Preserved superseded source assertions and history. No scientific/release
+        approval is asserted.'
   synonyms:
   - synonym_text: 5-didehydro-D-gluconate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
@@ -188437,6 +188495,26 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-11-02T21:05:51.410555+00:00'
+    curator: Codex
+    action: REJECTED_SOURCE_LABEL_FRAGMENTS
+    changes: 'Retyped only ["5-didehydro-D-gluconate"] as provenance-only REJECTED_LABEL.
+      CHEBI:58143 is mono-keto 5-dehydro-D-gluconate, C6H9O7; CHEBI:11449 is distinct
+      di-keto 2,5-didehydro-D-gluconate, C6H7O7. The inherited 5-didehydro-D-gluconate
+      fragment is not a typo for this mono-keto identity. Original CSVs independently
+      support mono-keto count 288 (11 production plus 277 utilization); do not subtract
+      the two distinct di-keto entries. Sources: https://www.ebi.ac.uk/chebi/CHEBI:58143
+      ; https://www.ebi.ac.uk/chebi/CHEBI:11449 ; https://bacdive.dsmz.de/strain/34
+      ; https://bacdive.dsmz.de/strain/58 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C6H9O7
@@ -222765,3 +222843,159 @@ ingredients:
     data_source: 'PubChem CID 5318691; MedChemExpress Izalpinin; MIM correction #753'
     retrieval_date: '2026-11-02T02:10:58.160946+00:00'
   ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:11449
+  preferred_term: 2,5-didehydro-D-gluconate
+  ontology_mapping:
+    ontology_id: CHEBI:11449
+    ontology_label: 2,5-didehydro-D-gluconate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder original CSV; BacDive; ChEBI
+      notes: 'Exact original 2,5-didehydro-D-gluconate labels occur twice, both in
+        BacDive_Metabolite_production: CSV line 2121 / BacDive 34 and line 8749 /
+        BacDive 58. Each source cell separately contains the mono-keto label. CHEBI:11449
+        denotes this di-keto anion, distinct from CHEBI:58143. The live BacDive production
+        values are blank: no positive production assertion or chemical role is inferred.
+        Recovered legacy damaged label 5-didehydro-D-gluconate is retained as RAW_TEXT
+        on this source-established identity under the damaged-label exception; it
+        must not resolve to the mono-keto owner. Clarification: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588401935
+        . No CAS, recipe occurrence or inherited mono-keto chemistry is added. Sources:
+        https://www.ebi.ac.uk/chebi/CHEBI:11449 ; https://www.ebi.ac.uk/chebi/CHEBI:58143
+        ; https://bacdive.dsmz.de/strain/34 ; https://bacdive.dsmz.de/strain/58 .
+        https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+        Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+        (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0).
+        Source-field counts are not recipe occurrences or positive experimental outcomes.
+        Preserved superseded source assertions and history. No scientific/release
+        approval is asserted.'
+  mapping_status: MAPPED
+  synonyms:
+  - synonym_text: 5-didehydro-D-gluconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_production
+  ingredient_type: SINGLE_INGREDIENT
+  curation_history:
+  - timestamp: '2026-11-02T21:05:51.410555+00:00'
+    curator: Codex
+    action: CREATED_FROM_ORIGINAL_SOURCE_LABEL
+    changes: 'Exact original 2,5-didehydro-D-gluconate labels occur twice, both in
+      BacDive_Metabolite_production: CSV line 2121 / BacDive 34 and line 8749 / BacDive
+      58. Each source cell separately contains the mono-keto label. CHEBI:11449 denotes
+      this di-keto anion, distinct from CHEBI:58143. The live BacDive production values
+      are blank: no positive production assertion or chemical role is inferred. Recovered
+      legacy damaged label 5-didehydro-D-gluconate is retained as RAW_TEXT on this
+      source-established identity under the damaged-label exception; it must not resolve
+      to the mono-keto owner. Clarification: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588401935
+      . No CAS, recipe occurrence or inherited mono-keto chemistry is added. Sources:
+      https://www.ebi.ac.uk/chebi/CHEBI:11449 ; https://www.ebi.ac.uk/chebi/CHEBI:58143
+      ; https://bacdive.dsmz.de/strain/34 ; https://bacdive.dsmz.de/strain/58 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+- identifier: kgmicrobe.ingredient:wc_trace_elements_solution
+  preferred_term: WC Trace Elements Solution
+  synonyms:
+  - synonym_text: WC Trace Elements Solution
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:18:21.999971+00:00'
+    curator: resolve_unmapped_v2
+    action: AUTO_UPGRADE_TO_MICRO
+    changes: primary UNMAPPED_0066 → MICRO:0000455 (strategy=stem-match)
+    llm_assisted: false
+  - timestamp: '2026-06-09T04:56:30.248308+00:00'
+    curator: claude_in_session_curation
+    action: ANNOTATED
+    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
+      nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
+      (#323)
+    llm_assisted: false
+  - timestamp: '2026-11-02T21:07:06.593281+00:00'
+    curator: Codex
+    action: REKEYED_WC_STOCK_IDENTITY
+    changes: '#751: identifier MICRO:0000455 -> kgmicrobe.ingredient:wc_trace_elements_solution;
+      mapping_quality LEXICAL_MATCH -> NARROW_MATCH to the unchanged MICRO:0000455
+      parent. Preserve the source label, prior mapping evidence and history, stored
+      occurrences, stock type and provisional nutritional role. No component, chemistry,
+      membership or role enrichment. Reviewed owner sha256=692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee.
+      UTEX https://utex.org/products/wc-trace-elements-solution defines an eight-component
+      WC stock used by WC and WC+; MicrO https://raw.githubusercontent.com/carrineblank/MicrO/73963269d9a681157d710f272f8e65e4f7e8897e/MicrOandImportModules/MicrO.owl
+      defines MICRO:0000455 as the generic trace elements solution class. A complete
+      label/synonym scan of that immutable ontology found no WC-specific class. Primary
+      capture hashes, exact class/table extracts and the reviewed owner preimage are
+      bound by reports/step7c_wc_stock_751_20261102/source-evidence.json sha256=1076868a28ad39636742ad314a7a7782e981151aa98e85bc95bcf91b6a3e9b5a.
+      Under MAPPING_SEMANTICS section 3 step 3 this specific mixture has a local ingredient
+      identity and NARROW_MATCH grounding, exported as skos:broadMatch to the generic
+      class. The earlier stem-match evidence is retained as history; it does not establish
+      the generic class as this stock''s identity. NONE: identity correction only;
+      changed/new mappings remain withheld pending native mapping-specific review;
+      provisional roles retain their hold.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: 'CultureMech placeholder_id: 8'
+  ontology_mapping:
+    ontology_id: MICRO:0000455
+    ontology_label: trace elements solution
+    ontology_source: MICRO
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+      notes: Auto-upgraded from UNMAPPED_0066; matched via 'WC Trace Elements Solution';
+        stem-substring
+    - evidence_type: MANUAL_CURATION
+      source: https://utex.org/products/wc-trace-elements-solution
+      notes: UTEX https://utex.org/products/wc-trace-elements-solution defines an
+        eight-component WC stock used by WC and WC+; MicrO https://raw.githubusercontent.com/carrineblank/MicrO/73963269d9a681157d710f272f8e65e4f7e8897e/MicrOandImportModules/MicrO.owl
+        defines MICRO:0000455 as the generic trace elements solution class. A complete
+        label/synonym scan of that immutable ontology found no WC-specific class.
+        Primary capture hashes, exact class/table extracts and the reviewed owner
+        preimage are bound by reports/step7c_wc_stock_751_20261102/source-evidence.json
+        sha256=1076868a28ad39636742ad314a7a7782e981151aa98e85bc95bcf91b6a3e9b5a. Under
+        MAPPING_SEMANTICS section 3 step 3 this specific mixture has a local ingredient
+        identity and NARROW_MATCH grounding, exported as skos:broadMatch to the generic
+        class. The earlier stem-match evidence is retained as history; it does not
+        establish the generic class as this stock's identity.
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.6
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Assigned by in-session Claude reasoning (no external API)
+      curator_note: Provisional in-session LLM role assignment; review recommended.
+  ingredient_type: STOCK_SOLUTION

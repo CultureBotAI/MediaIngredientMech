@@ -10,15 +10,27 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718
+    notes: 'Original MicrobeDecoder CSV line 18953, BacDive 134317, utilization field
+      gives the intact butane-1,4-diol label; Butane-1 and 4-diol are comma-split
+      fragments, not names of a substance. Preserve the full Butane-1,4-diol alias,
+      identity, chemistry and counts. Source: https://bacdive.dsmz.de/strain/134317
+      . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
 synonyms:
 - synonym_text: Butane-1,4-diol
   synonym_type: RAW_TEXT
   source: MERGED_FROM_CHEBI:41189 (#308/#370)
 - synonym_text: Butane-1
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM_CHEBI:41189 (#308/#370)
 - synonym_text: 4-diol
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM_CHEBI:41189 (#308/#370)
 mapping_status: MAPPED
 occurrence_statistics:
@@ -80,6 +92,22 @@ curation_history:
     ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
     under Rule D (#438), independently of mapping quality.
   llm_assisted: false
+- timestamp: '2026-11-02T21:05:51.410555+00:00'
+  curator: Codex
+  action: REJECTED_SOURCE_LABEL_FRAGMENTS
+  changes: 'Retyped only ["Butane-1", "4-diol"] as provenance-only REJECTED_LABEL.
+    Original MicrobeDecoder CSV line 18953, BacDive 134317, utilization field gives
+    the intact butane-1,4-diol label; Butane-1 and 4-diol are comma-split fragments,
+    not names of a substance. Preserve the full Butane-1,4-diol alias, identity, chemistry
+    and counts. Source: https://bacdive.dsmz.de/strain/134317 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+    Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+    counts are not recipe occurrences or positive experimental outcomes. Preserved
+    superseded source assertions and history. No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 110-63-4
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,13 +1,14 @@
 # Reviewed MIM SSSOM
 
-The current standalone release has a decision for every one of the 2,981 MIM
-mapping rows: **1,739 supported** and **1,242 withheld**. Use the supported table for
-mapping. The withheld table preserves complete source rows for further curation;
-it is not an approved mapping set.
+The standalone release assigns every current MIM mapping row a supported or
+withheld disposition. Use the supported table for mapping. The withheld table
+preserves complete source rows for further curation; it is not an approved
+mapping set. Counts and source hashes change with reviewed curation batches.
 
 ```bash
 just export-reviewed-sssom
 just qc-reviewed-sssom
+python -c 'import json; from pathlib import Path; m = json.loads(Path("output/mim-reviewed-sssom/manifest.json").read_text()); print(json.dumps({"source_sha256": m["source_sha256"], "counts": m["counts"]}, indent=2))'
 ```
 
 The default output is `output/mim-reviewed-sssom/`:
@@ -30,12 +31,16 @@ does not assign scientific approval to new or changed records. The exporter
 checks all evidence hashes and independently reproduces both partitions. CI
 also runs SSSOM JSON Schema, prefix-map and CURIE validation.
 
-These are the current content-bound counts, not the historical September
-release counts. The scoped #669/#1003 correction receipt preserves all rows
+The generated manifest reports content-bound counts for this checkout; a
+published September release remains a separate historical snapshot. The scoped
+#669/#1003 correction receipt preserves all rows
 and withdraws the carnitine registry row's prior approval after its owner
 changes. The corrected aliases remain withheld pending complete mapping review.
-The melezitose proposal is excluded until the approval supersession mechanism
-in PR #764 is available; its old approval is not transferred to changed bytes.
+The approval supersession mechanism and subsequent melezitose and sodium
+perchlorate form reviews are now part of the native review chain. Their current
+dispositions are determined by the exact row and owner evidence in
+`reports/sssom_completion_20260921/mapping_review/form_reviews/`, not by an older
+approval transferred to changed bytes.
 
 The review corrects 46 activity phrases that had been published as ingredient
 synonyms, retaining them as rejected provenance. It separates mapping evidence
