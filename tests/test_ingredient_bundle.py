@@ -1,10 +1,12 @@
 """Exercise real reviewed cases and adversarial owner/payload/transport changes."""
 
 import copy
+import shlex
 import shutil
 from pathlib import Path
 
 import pytest
+import yaml
 
 from mediaingredientmech.export.ingredient_bundle import export_bundle
 from mediaingredientmech.ingredient_bundle_contract import (
@@ -23,7 +25,20 @@ from mediaingredientmech.ingredient_bundle_contract import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = Path("reports/ingredient_bundle_20261102_registry753_nodes870_reviewed/review.json")
+REVIEW = Path("reports/hydrate_stock_chemistry_871_268_20261102/companion-review.json")
+
+
+def test_current_corpus_companion_matches_release_workflow():
+    workflow = yaml.safe_load((ROOT / ".github/workflows/qc-reviewed-sssom.yaml").read_text())
+    exports = [
+        step["run"]
+        for step in workflow["jobs"]["reviewed-sssom"]["steps"]
+        if "-m mediaingredientmech.export.ingredient_bundle export" in step.get("run", "")
+    ]
+    assert len(exports) == 1
+    command = shlex.split(exports[0].replace("\\\n", " "))
+    assert command.count("--review") == 1
+    assert command[command.index("--review") + 1] == REVIEW.as_posix()
 
 
 @pytest.fixture(scope="module")
