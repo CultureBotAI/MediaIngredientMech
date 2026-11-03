@@ -1,0 +1,11 @@
+--- refresh_post1122_v3.py
++++ refresh_post1122_v4.py
+@@ -93,7 +93,7 @@
+  frozen={};expected={}
+  source_roots=('data/ingredients','data/curated','src','scripts','tests','.github/workflows')
+  require(not git('diff','--name-only',BASE,'--',*source_roots),'unexpected source/code/test/workflow drift from durable baseline')
+- baseline_paths=set(git('ls-tree','-r','--name-only',BASE,'--',*source_roots).decode().splitlines())
++ baseline_paths={n for n in git('ls-tree','-r','--name-only','-z',BASE,'--',*source_roots).decode().split('\0')if n}
+  current_paths={n for n in tracked()if n.startswith(tuple(x+'/'for x in source_roots))}
+  require(current_paths==baseline_paths,'source/code/test/workflow tracked membership changed')
+  for name in tracked():

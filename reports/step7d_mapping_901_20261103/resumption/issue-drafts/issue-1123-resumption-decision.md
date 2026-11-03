@@ -1,0 +1,3 @@
+The user explicitly authorized fixing this test defect without weakening it. Compose receipt-24 positions through every later verified position_map; preserve all eight-row, payload, negative-evidence and no-approval assertions. Add insertion/removal-shift coverage and negative cases proving wrong lineage and an actually SUPPORTED touched row still fail. The test-change commit will name #1123 and independent review will audit the change.
+
+Continuation from local head 7d35035f under the replacement Step 7d test rule. No assertions, thresholds, budgets, owner-selection rules, other workflows, qc-evidence or pins may be weakened or changed. Final QC, full suite, CI and independent review remain required before the approved squash merge queue.

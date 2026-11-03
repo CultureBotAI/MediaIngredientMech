@@ -1,0 +1,16 @@
+{
+  "name": "step7d-derived-supported-schema-v1",
+  "argv": [
+    "python",
+    "-B",
+    "-c",
+    "from sssom.parsers import parse_sssom_table; from sssom.validators import SchemaValidationType, validate; validate(parse_sssom_table(\"output/step7d-supported-v1/ingredient_mappings.sssom.tsv\"), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat])"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T06:44:23.047747+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T06:44:24.446584+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-derived-supported-schema-v1.log",
+  "log_sha256": "7aca48c7551a7baca22526c863e489fc5220de00759bc896d122687c0503dfe9"
+}

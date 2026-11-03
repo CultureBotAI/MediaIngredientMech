@@ -1,0 +1,188 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+        "sha256": "91a6a79b3b6163f2d5fb100f7571946c5ba1fc9abfa865fbde935c6077c292b6",
+        "role": "target"
+      },
+      {
+        "path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+        "sha256": "dc24f839479e79e3e34a984266aae2fb480f5e6136896f3ffbb4d8bfb0a0dab3",
+        "role": "target"
+      },
+      {
+        "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+        "sha256": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc",
+        "role": "target"
+      },
+      {
+        "path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+        "sha256": "b610eb816827776dbca74ea2ac5d04b9a20300c3a8e0dcb280e74df72f2f079f",
+        "role": "target"
+      },
+      {
+        "path": "mappings/ingredient_mappings.sssom.tsv",
+        "sha256": "cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4",
+        "role": "target"
+      },
+      {
+        "path": "reports/step7d_mapping_901_20261103/execution/owner-plan.json",
+        "sha256": "a82bc6d32e750f16fc7ecfa4c0a5e172a5930c849d7dc3ec5a6ca106ed60fca4",
+        "role": "context"
+      },
+      {
+        "path": "reports/step7d_mapping_901_20261103/native-candidate-v1/candidate.sssom.tsv",
+        "sha256": "2a2197e907150b679d804deaad6e92dc3955846118499245cae53c9716da14da",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate",
+      "path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+      "label": "Beta-Glycerophosphate disodium salt hydrate",
+      "kind": "maintained",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+          "role": "maintained owner"
+        }
+      ]
+    },
+    {
+      "target_id": "MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate",
+      "path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "label": "D-Glucuronic acid sodium salt monohydrate",
+      "kind": "maintained",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+          "role": "maintained owner"
+        }
+      ]
+    },
+    {
+      "target_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+      "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+      "label": "EDTA tetrasodium tetrahydrate salt",
+      "kind": "maintained",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+          "role": "maintained owner"
+        }
+      ]
+    },
+    {
+      "target_id": "MIM:Maltotriose_Hydrate",
+      "path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+      "label": "Maltotriose hydrate",
+      "kind": "maintained",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+          "role": "maintained owner"
+        }
+      ]
+    },
+    {
+      "target_id": "sssom-step7d-014",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "selector": "subject_id=MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate; object_id=cas:154804-51-0; predicate_id=skos:exactMatch",
+      "label": "Beta-Glycerophosphate disodium salt hydrate \u2192 cas:154804-51-0 (skos:exactMatch)",
+      "kind": "snapshot_row",
+      "record_class": "SSSOMMapping",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+          "role": "maintained ingredient owner"
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "native SSSOM producer; exact producer module path verified in generation manifest"
+        }
+      ]
+    },
+    {
+      "target_id": "sssom-step7d-038",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "selector": "subject_id=MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate; object_id=cas:207300-70-7; predicate_id=skos:exactMatch",
+      "label": "D-Glucuronic acid sodium salt monohydrate \u2192 cas:207300-70-7 (skos:exactMatch)",
+      "kind": "snapshot_row",
+      "record_class": "SSSOMMapping",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+          "role": "maintained ingredient owner"
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "native SSSOM producer; exact producer module path verified in generation manifest"
+        }
+      ]
+    },
+    {
+      "target_id": "sssom-step7d-048",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "selector": "subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt; object_id=cas:13235-36-4; predicate_id=skos:exactMatch",
+      "label": "EDTA tetrasodium tetrahydrate salt \u2192 cas:13235-36-4 (skos:exactMatch)",
+      "kind": "snapshot_row",
+      "record_class": "SSSOMMapping",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+          "role": "maintained ingredient owner"
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "native SSSOM producer; exact producer module path verified in generation manifest"
+        }
+      ]
+    },
+    {
+      "target_id": "sssom-step7d-077",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "selector": "subject_id=MIM:Maltotriose_Hydrate; object_id=cas:312693-63-3; predicate_id=skos:exactMatch",
+      "label": "Maltotriose hydrate \u2192 cas:312693-63-3 (skos:exactMatch)",
+      "kind": "snapshot_row",
+      "record_class": "SSSOMMapping",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+          "role": "maintained ingredient owner"
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "native SSSOM producer; exact producer module path verified in generation manifest"
+        }
+      ]
+    }
+  ]
+}

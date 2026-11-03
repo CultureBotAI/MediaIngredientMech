@@ -1,0 +1,18 @@
+{
+  "name": "step7d-post1122-13-supported-schema-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "-c",
+    "from pathlib import Path\nfrom sssom.parsers import parse_sssom_table\nfrom sssom.validators import SchemaValidationType, validate\np=Path(\"output/step7d-post1122-supported-v1/ingredient_mappings.sssom.tsv\")\nvalidate(parse_sssom_table(p), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat])\nprint(\"PASS supported SSSOM native JSON Schema, prefix-map completeness and strict CURIE format\")\n"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:21:35.923221+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:21:37.199601+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-13-supported-schema-v1.log",
+  "log_sha256": "43cd82127a1ca3cc73aa87db9969046563cfde9e1e10ca800b6efe26b49459fe"
+}

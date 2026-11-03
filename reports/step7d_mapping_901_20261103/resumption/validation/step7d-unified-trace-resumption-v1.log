@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-claw/../step7d-execution-20261103/trace_unified_snapshot.py", line 485, in <module>
+    main()
+    ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-claw/../step7d-execution-20261103/trace_unified_snapshot.py", line 481, in main
+    raise SystemExit(run(args))
+                     ~~~^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-claw/../step7d-execution-20261103/trace_unified_snapshot.py", line 288, in run
+    require(out == out.resolve() and out.is_relative_to(D) and out != D and not os.path.lexists(out)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and out.parent.is_dir(), "new resolved external output directory required")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c-claw/../step7d-execution-20261103/trace_unified_snapshot.py", line 51, in require
+    raise ValueError("Step7d unified trace: " + reason)
+ValueError: Step7d unified trace: new resolved external output directory required

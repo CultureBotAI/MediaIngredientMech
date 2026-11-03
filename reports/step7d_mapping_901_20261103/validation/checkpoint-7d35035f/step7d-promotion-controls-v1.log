@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/../step7d-execution-20261103/promotion_external_controls.py", line 27, in <module>
+    assert m.projection(raw(old),raw(candidate),config,plan,deferred)==raw(expected)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/promote_step7d_mapping.py", line 233, in projection
+    require(digest(result) == config["canonical_after_sha256"], "reviewed projection output hash differs")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/promote_step7d_mapping.py", line 68, in require
+    raise ValueError("Step7d promotion: " + message)
+ValueError: Step7d promotion: reviewed projection output hash differs

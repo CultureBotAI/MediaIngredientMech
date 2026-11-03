@@ -1,0 +1,512 @@
+{
+  "name": "step7d-post1122-01-assemble-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "reports/sssom_completion_20260921/assemble_review.py"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:19:16.293599+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:19:30.148352+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-01-assemble-v1.log",
+  "log_sha256": "7ab14ee051d0e94db1783c405f393165b142608602fc887858d0594b216812cf"
+}
+topClass is deprecated - use top_class
+{
+  "mapping_rows": 3014,
+  "dispositions": {
+    "SUPPORTED": 1739,
+    "WITHHOLD": 1275
+  },
+  "reproduced": false
+}
+
+{
+  "name": "step7d-post1122-02-assemble-check-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "reports/sssom_completion_20260921/assemble_review.py",
+    "--check"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:19:30.996183+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:19:44.916373+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-02-assemble-check-v1.log",
+  "log_sha256": "8821c35138e5fc4386cdb230731a5bd8831c3395ea4d7901aa1165bba2b37c0d"
+}
+topClass is deprecated - use top_class
+{
+  "mapping_rows": 3014,
+  "dispositions": {
+    "SUPPORTED": 1739,
+    "WITHHOLD": 1275
+  },
+  "reproduced": true
+}
+
+{
+  "name": "step7d-post1122-03-export-full-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "just",
+    "export-kgx",
+    "output/mim-kgx-710-full"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:19:45.789624+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:19:49.793593+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-03-export-full-v1.log",
+  "log_sha256": "d7a7d0f74e66755b8d942b19ded2833b69778ca7971017edeef37feb4256c2af"
+}
+uv run --frozen python -m mediaingredientmech.export.kgx --output "$1"
+{
+  "nodes": 5798,
+  "edges": 4519,
+  "unique_triples": 4513,
+  "active_ingredients": 2874,
+  "excluded_rejected_records": 82,
+  "sssom_rows": 3014,
+  "nodes_by_kind": {
+    "external_reference": 2897,
+    "ingredient": 2874,
+    "role": 22,
+    "unresolved_component": 5
+  },
+  "edges_by_assertion_type": {
+    "cellular_metabolic_roles": 8,
+    "component": 502,
+    "environment": 13,
+    "mapping": 3014,
+    "nutritional_roles": 721,
+    "physicochemical_roles": 259,
+    "recipe_reference": 2
+  },
+  "edges_by_predicate": {
+    "MIM.vocab:environmental_context": 13,
+    "MIM.vocab:recipe_candidate_unverified": 1,
+    "MIM.vocab:recipe_similar_composition": 1,
+    "biolink:broad_match": 189,
+    "biolink:close_match": 56,
+    "biolink:exact_match": 2769,
+    "biolink:has_chemical_role": 988,
+    "biolink:has_part": 502
+  },
+  "ingredient_review_status": {
+    "not_reviewed": 2874
+  }
+}
+
+{
+  "name": "step7d-post1122-04-semantic-build-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "reports/semantic_review_20260921/resolution/build_review.py",
+    "--bundle",
+    "output/mim-kgx-710-full"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:19:50.631090+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:19:57.893011+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-04-semantic-build-v1.log",
+  "log_sha256": "c8604f96dfaf7a053178eacaef1d282664cc7e22f1ff906a597b039a0114b853"
+}
+{
+  "verdict": "FAIL",
+  "blocking_findings": 1733,
+  "blocking_assertions": 2369,
+  "evidence_gaps": {
+    "ambiguous_identities": 1,
+    "components_requiring_source_verification": 43,
+    "prediction_only_roles": 662,
+    "roles_without_evidence": 11
+  }
+}
+
+{
+  "name": "step7d-post1122-05-semantic-integrity-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "-m",
+    "mediaingredientmech.validation.semantic_release",
+    "--root",
+    ".",
+    "--report",
+    "reports/semantic_review_20260921/resolution/current-review.json"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:19:58.731266+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:20:06.329025+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-05-semantic-integrity-v1.log",
+  "log_sha256": "5d48b028d7eac339dcedfea97bdb074da696db36ba51ea67cc3877045433266f"
+}
+{
+  "integrity": "PASS",
+  "semantic_release": "FAIL",
+  "blocking_findings": 1733,
+  "blocking_assertions": 2369,
+  "evidence_gaps": {
+    "ambiguous_identities": 1,
+    "components_requiring_source_verification": 43,
+    "prediction_only_roles": 662,
+    "roles_without_evidence": 11
+  }
+}
+
+{
+  "name": "step7d-post1122-06-assemble-after-semantic-check-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "reports/sssom_completion_20260921/assemble_review.py",
+    "--check"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:20:07.184261+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:20:21.171231+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-06-assemble-after-semantic-check-v1.log",
+  "log_sha256": "8821c35138e5fc4386cdb230731a5bd8831c3395ea4d7901aa1165bba2b37c0d"
+}
+topClass is deprecated - use top_class
+{
+  "mapping_rows": 3014,
+  "dispositions": {
+    "SUPPORTED": 1739,
+    "WITHHOLD": 1275
+  },
+  "reproduced": true
+}
+
+{
+  "name": "step7d-post1122-07-companion-refresh-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "scripts/refresh_unchanged_cohort.py",
+    "--root",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+    "--baseline",
+    "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+    "--prior-review",
+    "reports/step7d_mapping_901_20261103/companion-review.json",
+    "--output",
+    "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json",
+    "--receipt",
+    "reports/step7d_mapping_901_20261103/refresh-v2/companion-refresh-receipt.json",
+    "--prior-copy",
+    "reports/step7d_mapping_901_20261103/refresh-v2/prior-companion-review.json"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:20:22.029772+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:20:29.143126+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-07-companion-refresh-v1.log",
+  "log_sha256": "f9cc340761b7370130f513ecb52847c2c215dceddbc01c14a6e9a0c5cbec1bc4"
+}
+{"successor": "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json", "sha256": "06468912894ccdd49b86385b4e0c2e4529377c5f148101a49ba25ca5094e8971", "claim_counts": {"identifier": 18, "mapping": 20, "occurrence": 10, "product": 3}, "owners": 20}
+
+{
+  "name": "step7d-post1122-08-companion-export-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "-m",
+    "mediaingredientmech.export.ingredient_bundle",
+    "export",
+    "--review",
+    "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json",
+    "--output",
+    "output/step7d-post1122-companion-v1"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:20:32.936143+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:20:38.499833+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-08-companion-export-v1.log",
+  "log_sha256": "14499da1f1cf5abd4a396ab16fd528e2f322ac00a1e41fc2a2902cbf289e38ff"
+}
+{"identifiers":18,"manifest_sha256":"bca849d964eb37856c40e455e4b06d0af271c0f1a84f50b146053f7880cd1e45","mappings":20,"occurrences":10,"products":3}
+
+{
+  "name": "step7d-post1122-09-reviewed-export-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "just",
+    "export-reviewed-sssom",
+    "reports/sssom_completion_20260921/review.json",
+    "output/step7d-post1122-reviewed-v1"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:20:39.303647+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:20:49.910399+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-09-reviewed-export-v1.log",
+  "log_sha256": "4d865045b4a8d91e2920090928fdc1e22298144cef4bbbe34feef7b6af6de279"
+}
+uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2"
+{
+  "counts": {
+    "source": 3014,
+    "supported": 1739,
+    "withhold": 1275
+  },
+  "files": {
+    "ingredient_mappings.sssom.tsv": "7e68fea7fd788928f29c7671156198af101baaa3b3051f19bab78a5479d2a940",
+    "mapping-dispositions.tsv": "594140158921779a872cca53aa0cd3c9fe51da85ae791bffd0e6adf127f5ad4d",
+    "withheld_mappings.sssom.tsv": "d7cd8551dc9c9426baae44b5516c6ab05b7765da8a4aa536e9a0ecc2f2244521"
+  },
+  "mapping_set_ids": {
+    "supported": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/reviewed-supported",
+    "withhold": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/withheld-backlog"
+  },
+  "review_sha256": "5e6d49e58e3a9320d26a640da54d50ee2f0695415397e376f6f5b6d0eedd1c10",
+  "schema_version": 1,
+  "scope": "MIM-only reviewed SSSOM; no KGX dependency",
+  "semantic_status": "PASS_SUPPORTED_SUBSET",
+  "source_sha256": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv"
+}
+
+{
+  "name": "step7d-post1122-10-reviewed-qc-schema-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "just",
+    "qc-reviewed-sssom",
+    "reports/sssom_completion_20260921/review.json",
+    "output/step7d-post1122-reviewed-v1"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:20:50.723884+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:21:11.371738+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-10-reviewed-qc-schema-v1.log",
+  "log_sha256": "5b50a2aa26a090893c8135d60cd80d81351b2f029df17672b481398c8c9cd1c2"
+}
+python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
+{
+  "counts": {
+    "source": 3014,
+    "supported": 1739,
+    "withhold": 1275
+  },
+  "files": {
+    "ingredient_mappings.sssom.tsv": "7e68fea7fd788928f29c7671156198af101baaa3b3051f19bab78a5479d2a940",
+    "mapping-dispositions.tsv": "594140158921779a872cca53aa0cd3c9fe51da85ae791bffd0e6adf127f5ad4d",
+    "withheld_mappings.sssom.tsv": "d7cd8551dc9c9426baae44b5516c6ab05b7765da8a4aa536e9a0ecc2f2244521"
+  },
+  "mapping_set_ids": {
+    "supported": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/reviewed-supported",
+    "withhold": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/withheld-backlog"
+  },
+  "review_sha256": "5e6d49e58e3a9320d26a640da54d50ee2f0695415397e376f6f5b6d0eedd1c10",
+  "schema_version": 1,
+  "scope": "MIM-only reviewed SSSOM; no KGX dependency",
+  "semantic_status": "PASS_SUPPORTED_SUBSET",
+  "source_sha256": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv"
+}
+uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
+Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+No attr for source [1739 instances]
+No attr for validation_method [1739 instances]
+WARNING:sssom.parsers:Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+WARNING:sssom.parsers:No attr for source [1275 instances]
+WARNING:sssom.parsers:No attr for validation_method [1275 instances]
+{
+  "partitions": {
+    "ingredient_mappings.sssom.tsv": {
+      "linkml_rows": 1739,
+      "native_rows": 1739,
+      "raw_rows": 1739,
+      "status": "PASS"
+    },
+    "withheld_mappings.sssom.tsv": {
+      "linkml_rows": 1275,
+      "native_rows": 1275,
+      "raw_rows": 1275,
+      "status": "PASS"
+    }
+  },
+  "scope": "Native SSSOM parsing and LinkML schema; exact row count and mapping identity/label/numeric-confidence multiset, including duplicate multiplicity, preserved. Native sorting and other extension-field normalization are permitted; reviewed exporter independently verifies complete output bytes.",
+  "status": "PASS"
+}
+
+{
+  "name": "step7d-post1122-11-supported-export-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "just",
+    "export-supported-kgx",
+    "reports/semantic_review_20260921/resolution/current-review.json",
+    "output/step7d-post1122-supported-v1"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:21:12.175593+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:21:26.715720+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-11-supported-export-v1.log",
+  "log_sha256": "830683634133cc580a4892663d53f8012ed5d712d2a31c06481491e604fba2f2"
+}
+crobe.ingredient": "https://w3id.org/kg-microbe/ingredient/",
+    "mesh": "http://id.nlm.nih.gov/mesh/",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "orcid": "https://orcid.org/",
+    "registry": "https://w3id.org/kg-microbe/registry/",
+    "semapv": "https://w3id.org/semapv/vocab/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "assertion_dispositions": "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv",
+  "assertion_dispositions_sha256": "525a0d8f12e11feb36a53c034c1e32e7b79e1ecbb258cac0c651fda17be70ffb",
+  "counts": {
+    "nodes": 4721,
+    "edges": 2150,
+    "sssom_rows": 1739,
+    "active_ingredient_record_nodes": 2874,
+    "full_nodes": 5798,
+    "full_edges": 4519,
+    "backlog_raw_nodes": 5798,
+    "backlog_unapproved_edges": 2369
+  },
+  "members": {
+    "mim_nodes.tsv": {
+      "sha256": "aad96bf5b24a47f58e88a4e96d953104915f020f96d9f5aa469f7b48dd15e3cd",
+      "bytes": 575438
+    },
+    "mim_edges.tsv": {
+      "sha256": "7b5ad5f90f129dffd78b0f8b01635d1f56a8d9fc9d7e12e5f8e715bcae30af03",
+      "bytes": 2075667
+    }
+  },
+  "sssom": {
+    "path": "ingredient_mappings.sssom.tsv",
+    "mapping_set_id": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/supported",
+    "rows": 1739,
+    "sha256": "d74ad7decf40e28d2c28e04fb9f846cd4bbe4e7a99ffd5380e58794f86423add",
+    "bytes": 831815
+  },
+  "backlog": {
+    "path": "unsupported-backlog.json",
+    "sha256": "2891f45752132a9977ae213a531af7be1e32f6a9d36d574f08278e0ee60102a9",
+    "bytes": 19074407
+  },
+  "archive_members": [
+    "manifest.json",
+    "mim_nodes.tsv",
+    "mim_edges.tsv"
+  ],
+  "implementation": {
+    "export/supported_kgx.py": "c63ed9a9a6f1f4c0af70afd877737484c48f7ee281a17613ef84e2c1f6eab851",
+    "sssom_metadata.py": "0c5e08a55ff6845959ec84b1f530f9891e361f1a1b16b9f81b42beafb8a20d66",
+    "validation/semantic_release.py": "a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867"
+  },
+  "limitations": [
+    "PASS certifies only the explicitly approved assertion subset; the full graph retains its separate verdict.",
+    "Ingredient nodes are source-record references with source labels, not approvals of all ingredient annotations or chemical identity.",
+    "All node categories are NamedThing; chemical identity, roles, components, and hierarchy are asserted only by selected approved edges.",
+    "Excluded assertions and all original raw node annotations are retained in the separate hash-bound backlog, outside the graph archive."
+  ]
+}
+
+{
+  "name": "step7d-post1122-12-supported-qc-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "just",
+    "qc-supported-kgx",
+    "reports/semantic_review_20260921/resolution/current-review.json",
+    "output/step7d-post1122-supported-v1"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:21:27.544367+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:21:35.118875+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-12-supported-qc-v1.log",
+  "log_sha256": "66db226bcbe3e8a19cf06a9ccbf6a80f7469ff51c250bf27c2db344eab2912e5"
+}
+uv run --frozen python -m mediaingredientmech.export.supported_kgx --root . --report "$1" --output "$2" --validate-only
+{
+  "integrity": "PASS",
+  "semantic_release": "PASS",
+  "scope": "reviewed_assertion_subset",
+  "full_release_verdict": "FAIL",
+  "counts": {
+    "nodes": 4721,
+    "edges": 2150,
+    "sssom_rows": 1739,
+    "active_ingredient_record_nodes": 2874,
+    "full_nodes": 5798,
+    "full_edges": 4519,
+    "backlog_raw_nodes": 5798,
+    "backlog_unapproved_edges": 2369
+  },
+  "archive_sha256": "de14f92c019108a92e5d34fbbeae3d98adec7d284d47cb94b8caa31615e2f160"
+}
+
+{
+  "name": "step7d-post1122-13-supported-schema-v1",
+  "argv": [
+    "env",
+    "UV_OFFLINE=1",
+    "python",
+    "-B",
+    "-c",
+    "from pathlib import Path\nfrom sssom.parsers import parse_sssom_table\nfrom sssom.validators import SchemaValidationType, validate\np=Path(\"output/step7d-post1122-supported-v1/ingredient_mappings.sssom.tsv\")\nvalidate(parse_sssom_table(p), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat])\nprint(\"PASS supported SSSOM native JSON Schema, prefix-map completeness and strict CURIE format\")\n"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T07:21:35.923221+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T07:21:37.199601+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-post1122-13-supported-schema-v1.log",
+  "log_sha256": "43cd82127a1ca3cc73aa87db9969046563cfde9e1e10ca800b6efe26b49459fe"
+}
+Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+No attr for source [1739 instances]
+No attr for validation_method [1739 instances]
+PASS supported SSSOM native JSON Schema, prefix-map completeness and strict CURIE format
+
+{
+  "state": "complete",
+  "summary": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/step7d-post1122-orchestration-v1.json",
+  "summary_sha256": "084de31eb3ffa3d2e470aef94c9552075de0eb36825cc71bc15d4ca783194cfe"
+}
