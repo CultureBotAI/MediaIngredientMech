@@ -1,0 +1,443 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "e6156a57ba5dda74a14de7987d8f83c1c7713c1c",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".claude/skills/review-sssom-output/SKILL.md",
+        "sha256": "2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5",
+        "role": "context"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+        "role": "context"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805",
+        "role": "context"
+      },
+      {
+        "path": "UNIFIED_INGREDIENT_MAPPING.tsv",
+        "sha256": "a9bfb265b6a92e495c241d57fb637096ec6af398af7e87ea026574444672cc40",
+        "role": "context"
+      },
+      {
+        "path": "conf/id_label_targets.yaml",
+        "sha256": "3931943e0f0d4fe9477b946df84aa39348ebaba302c2eeac46becfdea29ff817",
+        "role": "context"
+      },
+      {
+        "path": "conf/record_review.yaml",
+        "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e",
+        "role": "context"
+      },
+      {
+        "path": "data/curated/mapped_ingredients.yaml",
+        "sha256": "4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b",
+        "role": "context"
+      },
+      {
+        "path": "data/curated/unmapped_ingredients.yaml",
+        "sha256": "8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2",
+        "role": "context"
+      },
+      {
+        "path": "docs/SSSOM_RELEASE.md",
+        "sha256": "dd726c781166ad45735b65f98ffeee5852e19d99ccfac9b9d53932d48947079e",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-review-profile.md",
+        "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-reviews.md",
+        "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+        "role": "context"
+      },
+      {
+        "path": "mappings/ingredient_mappings.sssom.tsv",
+        "sha256": "89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9",
+        "role": "target"
+      },
+      {
+        "path": "mappings/other_cross_record_baseline.tsv",
+        "sha256": "b717cfa99d0ad0e386fe2dc9d8c93b6b0d902fbfdbd3358f5a149697ee71e41b",
+        "role": "context"
+      },
+      {
+        "path": "output/sssom-repair/final-code-replay.sssom.tsv",
+        "sha256": "04159ba36b221d1c8ebf6e281972c846a333cf4fe5e868b06bb5326f2b02e3a7",
+        "role": "target"
+      },
+      {
+        "path": "output/sssom-repair/ingredient_mappings.sssom.tsv",
+        "sha256": "04159ba36b221d1c8ebf6e281972c846a333cf4fe5e868b06bb5326f2b02e3a7",
+        "role": "context"
+      },
+      {
+        "path": "output/sssom-repair/rejected-rows-current.tsv",
+        "sha256": "e638bc52978e8503320e3386814dcdb5bc6b1c1c72e96487ba327ea58701f127",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_completion_20260921/review.json",
+        "sha256": "6c74c7cc3eb8075ec18e20ab594a9b5eae9910b08b98c9d0746b3374af6c7ac6",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/baseline-b4-actual.json",
+        "sha256": "069e9680a63af1b26c97cf905ad26300e1d5b80f6fe6ff2841a4681dab9dff5e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/candidate-b4-actual.json",
+        "sha256": "3ffb788739125200983ae47963f0a7ccbb27d188103ed526f61a7a704a86bf31",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/candidate-comparison.json",
+        "sha256": "81b343763b935350f12c356330e4ff1e9b3542d0e04520312c952d87123dca71",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/candidate-id-label-config.json",
+        "sha256": "1fa9c2494e9b5c5966d14b030030f88dddea0c9c7f4a2228ba5f528a23a601a7",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/candidate-id-label-config.yaml",
+        "sha256": "3ad00967d0db507225965a27641093a743d264d84d0395fb23e26e903c50ca98",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/candidate-native-drift.json",
+        "sha256": "2429604ab6b30758b72696906bcc2a341cacb8d1a01a9047409cb360a82fd4d1",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/final-code-replay.json",
+        "sha256": "4a7e0f07358175f1bc50ed55db98a255fc17063a4b9f956edfe7faafbc741946",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/generator-revisions.json",
+        "sha256": "04293c14ed9b202fbc59b5f58023eb83007fce179d614ba72d1b0d6c037f6111",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/historical-rule-k-holds.json",
+        "sha256": "a3ab2487192691c441a53cd6a33ba48bb3272dbec67fe8819ef5b15a8e575334",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_b4_actual.json",
+        "sha256": "bc64e836a4e28dd39bddbc19d4770b9e91de75ad20e61b8f97660edbdd4181f3",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_b4_actual.log",
+        "sha256": "181adf3eb5d1c4d4fcf30ddd35ce808edb8ec7a0278ea341916f22c51dd07360",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_curie.json",
+        "sha256": "a08b222a812e34315d67d163d844aeb3fb9756d95c431854abd4656637c2181f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_curie.log",
+        "sha256": "e9845a5693dde19e1fb1bf6da791d6ad6c620ce1458815fb998dc62a3c4e511b",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_products.json",
+        "sha256": "27ead6974b697d1d8e233c6184c0941ebd9b6b9837866bffaa3aa23ebc6bb1a3",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_products.log",
+        "sha256": "1fa143fbbbdb204cfca441d722014ca3b2ab5eda915eb2f6de1b7dc997e1d335",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_reconcile.json",
+        "sha256": "5d67e617c9abf74a740d88b787f238cebb956c047f5e58950c77fd3ee1ca6c5f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_reconcile.log",
+        "sha256": "8bf18010d973e92de327bf8580964cbe3306206d7191c45a7b1731df9c7d61d7",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_subjects.json",
+        "sha256": "1694f4e8397b402dc7e443c453a27ae931b89b12c7a5a3ee512a9ea6ab999a3e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/baseline_subjects.log",
+        "sha256": "a16772841d62c8f1f9be43c85a24d0e9c1e687b6ec493652fd2c5be113da7762",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_b4_actual.json",
+        "sha256": "3cedb7f86323b0ed2e07e6eca848578ffadf72671eecc427da8ae6a873324e31",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_b4_actual.log",
+        "sha256": "8e1e50ddfdeaef5dc6fafeb76974f6a559db5141bf846b6f6d0d9dbc3ba0739e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_curie.json",
+        "sha256": "fd028ea8f544843af0d64b74fbde7f39d4705bb45afac0e0dd266ef2a45815dd",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_curie.log",
+        "sha256": "31ca9b6d8a11e0181035e649476ee2a2c01b4b1cc04d7df1c6f0ebb182fab99e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants.json",
+        "sha256": "e3218cd2472bc2b397f1e420e19f65414f486e1f900a3855adc4dcda1d5a0b5b",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants.log",
+        "sha256": "789bc919eadbf502f0b64b73779eecdb3d853a1482c03c7b6d5ff9960a5cc5f6",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants_retry.json",
+        "sha256": "3f01370fa4ba53b86750972f80bcb47968da384ee9c976791353b9cad2fc38f2",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants_retry.log",
+        "sha256": "bfd845c17cfe56ef91d33d46a3374aff05b0705d8e0445d5e4a8161244ac44ce",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_products.json",
+        "sha256": "6279e68140a305fad76b2d0ceb081eabfa0de90c450e8f6dd446cd8bf8237607",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_products.log",
+        "sha256": "b0695b05145765cb47f8ce259be004e003f012c9fdc69ecc502c598d22a8f38d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_schema.json",
+        "sha256": "8d5e72ef41194a99553d1d18f5539c30df78e7a686bd0b95202331f0968e4824",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/candidate_schema.log",
+        "sha256": "6bb3a5fb4906f5382c09aa0eb0a8e6dbe45d2fe31c6dd726e030e30461fa4c2c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates.json",
+        "sha256": "1bbfb718b68ea69619aaed1862f8afdca42f6c6635a45b9549547b8a788bf729",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates.log",
+        "sha256": "c7914e3306b18554122d905ccd99f9ff84685d56f0fb538412bb779d9c5955d1",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates_retry.json",
+        "sha256": "30a8f0ed13af4d5f05dc272dbaa638f42c2ac8379e4c783f2d670b6b11d7e044",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates_retry.log",
+        "sha256": "81b343763b935350f12c356330e4ff1e9b3542d0e04520312c952d87123dca71",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay.json",
+        "sha256": "c7d5d9dbb4438a7f20a99261f9e8fe75265dccca5c48cbe381a13283f9411ec2",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay.log",
+        "sha256": "c22a8e76515603ae72ece1f0870c5ec3c3371a043e8ed19d0504d49be05a55a8",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay_retry.json",
+        "sha256": "8bb8e2f38f1af6cd76ab1b5cb9cff09ce9830ed50df73ef22d739890fa698114",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay_retry.log",
+        "sha256": "7d18299bf2def43986d31329e236bc089d7b54f794f25da034a2aba4f5ad0935",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/focused_final.json",
+        "sha256": "5b9d178826b61af16c226c87c38d80b72ffc2bc79d407292f9dc81d8be75e310",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/focused_final.log",
+        "sha256": "8a0f611592f19c13c80f67616b2006a8c83056d068810e1fb48bdac8a86eecc3",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/full_qc.json",
+        "sha256": "6a5f4fa828a777ec6d9d24aacb3e04d9a37ae61c575b8edf000a5d3238944f1d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/full_qc.log",
+        "sha256": "cb2e3db3661f7131926f0ddb0ff0bcb4c6bad81dcb5b874473c67bab4077e39d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/mutation_b5.json",
+        "sha256": "acdb30c446027adc2800562b926d334de30e4bf34b5e9e8cb796e5b557ea106f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/mutation_b5.log",
+        "sha256": "2639b613a9ff20b2cb3dd54f0c710aeb53632786135c27c875a35af953185d31",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/mutation_g.json",
+        "sha256": "6fc3cc414ee9d5f4bbadb4fb083ba6cfed224377553dd407c139d86cf346774b",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/mutation_g.log",
+        "sha256": "1f0b7371bc695742c5394e164d1f2382abca453e73744e4859c0616dcd0db1c2",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/mutation_k.json",
+        "sha256": "0556eb6f71f58c3dd3376f49617d5537691af5191bd390831a2c73ce4a962397",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/mutation_k.log",
+        "sha256": "93a31111ffd4bd06cd4bbc4bcc9bb08439e6def1f53e739b8acf44388ff9aca1",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/regenerated_candidate.json",
+        "sha256": "907f5254364ce2106dc81a8b5bec20ca78b6f77c501c5b99a4209241d9de405e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/logs/regenerated_candidate.log",
+        "sha256": "fa037fc3b55744ed0d582f375bccbe20aef5d66ccdf04fe2ec3215875b56c3d2",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/mutation-results.json",
+        "sha256": "0b617d1cae50ec5e1e3c07424bd145ece522d11997e46fd402f630f26c02c9ed",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/original-41-remediation.json",
+        "sha256": "15646d0468a3bb985eb0f4510968c338f1fc764a3dcc75719e84289267df83bf",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/other-field-changes.json",
+        "sha256": "ef4eb44db9a5f9f4f311633250044a0f0a8704a77de4c5d544a5269c1e27db68",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/validation-inputs.json",
+        "sha256": "0068f36c4912e33249978cbdcd4817474e649fcf171c63801ce9a56953a4bc72",
+        "role": "context"
+      },
+      {
+        "path": "reviews/structured/20261031T214143Z-sssom-current-inputs-mechanical/review.md",
+        "sha256": "538a74e95b579f239f3bcb07575ac64aff449ac90006bbefaaba522538312955",
+        "role": "context"
+      },
+      {
+        "path": "reviews/structured/20261031T214143Z-sssom-current-inputs-mechanical/review.yaml",
+        "sha256": "56a5186a8db1280d39a0e4c021bd79de77d2dd0116c026e3e754a128c30e594e",
+        "role": "context"
+      },
+      {
+        "path": "schema/record_review.yaml",
+        "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+        "role": "context"
+      },
+      {
+        "path": "scripts/reconcile_sssom.py",
+        "sha256": "7a0d1b248a1ae1777a827bde4e795474531db565c17b35beaab66fb2631daba7",
+        "role": "context"
+      },
+      {
+        "path": "scripts/validate_id_label_correspondence.py",
+        "sha256": "b5ff41bb52d24f5d7819fb12769e216440f75ec3fb3df3e3cb2c5082fffb40e0",
+        "role": "context"
+      },
+      {
+        "path": "scripts/validate_sssom_invariants.py",
+        "sha256": "89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "canonical",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "label": "Unchanged maintained canonical mapping: 2,987 rows",
+      "kind": "generated",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "Maintained identity/mapping/synonym owner; no curation change in this run."
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "External SSSOM generator repaired under issues 679, 680 and 681."
+        }
+      ]
+    },
+    {
+      "target_id": "candidate",
+      "path": "output/sssom-repair/final-code-replay.sssom.tsv",
+      "label": "Final-code diagnostic candidate: 2,980 rows; not promoted",
+      "kind": "generated",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "Maintained identity/mapping/synonym owner; no curation change in this run."
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "External SSSOM generator repaired under issues 679, 680 and 681."
+        }
+      ]
+    }
+  ]
+}

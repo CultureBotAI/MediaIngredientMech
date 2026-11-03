@@ -1,0 +1,8 @@
+{
+  "body": "Found in an independent adversarial review of #683 (head `8f837d505b948a25965b0b2a001a4c7691c840fc`). Latent: no uppercase `kgmicrobe.*` objects exist in the current canonical TSV.\n\n**Where:** `scripts/build_mim_ingredient_sssom.py`, B1 skip check (around L919\u2013927 at the PR head).\n\n**What happens:** membership against `registry_ids` is compared exactly, while Rule B5 casefolds the slug. Probe at the PR head: identifier `kgmicrobe.ingredient:MES_Buffer` with a CHEBI parent emits `kgmicrobe.ingredient:MES_Buffer` plus `kgmicrobe.compound:mes_buffer`, which fails B5.\n\n**Suggested fix:** compare the object's local part casefolded (consistent with B5), or take the namespace from any curated `kgmicrobe.*` identifier; add a regression test with a mixed-case identifier.\n",
+  "comments": [],
+  "number": 685,
+  "state": "OPEN",
+  "title": "MIM SSSOM B1 skip check is case-sensitive while Rule B5 casefolds slugs",
+  "url": "https://github.com/CultureBotAI/culturebotai-claw/issues/685"
+}

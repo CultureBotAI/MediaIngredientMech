@@ -1,0 +1,282 @@
+.................FFFFFF.........................                         [100%]
+=================================== FAILURES ===================================
+_ test_b1_preserves_curated_namespace_when_parent_prefix_differs[MES_Buffer-kgmicrobe.ingredient:mes_buffer-CHEBI:39010-STOCK_SOLUTION] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7896/test_b1_preserves_curated_name0')
+stem = 'MES_Buffer', identifier = 'kgmicrobe.ingredient:mes_buffer'
+ontology_id = 'CHEBI:39010', ingredient_type = 'STOCK_SOLUTION'
+
+    @pytest.mark.parametrize(
+        ("stem", "identifier", "ontology_id", "ingredient_type"),
+        [
+            ("MES_Buffer", "kgmicrobe.ingredient:mes_buffer", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+            ("Amylopectin_From_Maize", "kgmicrobe.ingredient:amylopectin_from_maize",
+             "CHEBI:28057", "SINGLE_INGREDIENT"),
+            ("Casamino_Acids_Vitamin_Assay",
+             "kgmicrobe.ingredient:casamino_acids_vitamin_assay", "mesh:C017721",
+             "UNDEFINED_MIXTURE"),
+            ("PBS", "kgmicrobe.ingredient:pbs", "NCIT:C178908", "STOCK_SOLUTION"),
+            # Synthetic reverse-direction control: either explicit local identity
+            # satisfies B1, regardless of the namespace inferred from the parent.
+            ("Thing", "kgmicrobe.compound:thing", "FOODON:00001234",
+             "SINGLE_INGREDIENT"),
+            ("Buffer_(pH7)", "kgmicrobe.ingredient:buffer_~28ph7~29", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+        ],
+    )
+    def test_b1_preserves_curated_namespace_when_parent_prefix_differs(
+        tmp_path, stem, identifier, ontology_id, ingredient_type,
+    ):
+        """#679: backfill must not invent a second namespace for an existing ID.
+    
+        The real source-qualified amylopectin record deliberately keeps its local
+        ingredient identity despite SINGLE_INGREDIENT classification. Neither that
+        coarse type nor the ontology parent's prefix may replace curated identity.
+        """
+        rows = rows_for(tmp_path, stem=stem, identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH",
+                        ingredient_type=ingredient_type)
+    
+>       assert len(rows) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len([{'subject_id': 'MIM:MES_Buffer', 'subject_label': 'Thing', 'predicate_id': 'skos:broadMatch', 'object_id': 'CHEBI:390...ffer', 'subject_label': 'Thing', 'predicate_id': 'skos:exactMatch', 'object_id': 'kgmicrobe.compound:mes_buffer', ...}])
+
+tests/test_sssom_identity_row.py:257: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in MES_Buffer.yaml; emitting an empty mapping_date (#542)
+_ test_b1_preserves_curated_namespace_when_parent_prefix_differs[Amylopectin_From_Maize-kgmicrobe.ingredient:amylopectin_from_maize-CHEBI:28057-SINGLE_INGREDIENT] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7896/test_b1_preserves_curated_name1')
+stem = 'Amylopectin_From_Maize'
+identifier = 'kgmicrobe.ingredient:amylopectin_from_maize'
+ontology_id = 'CHEBI:28057', ingredient_type = 'SINGLE_INGREDIENT'
+
+    @pytest.mark.parametrize(
+        ("stem", "identifier", "ontology_id", "ingredient_type"),
+        [
+            ("MES_Buffer", "kgmicrobe.ingredient:mes_buffer", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+            ("Amylopectin_From_Maize", "kgmicrobe.ingredient:amylopectin_from_maize",
+             "CHEBI:28057", "SINGLE_INGREDIENT"),
+            ("Casamino_Acids_Vitamin_Assay",
+             "kgmicrobe.ingredient:casamino_acids_vitamin_assay", "mesh:C017721",
+             "UNDEFINED_MIXTURE"),
+            ("PBS", "kgmicrobe.ingredient:pbs", "NCIT:C178908", "STOCK_SOLUTION"),
+            # Synthetic reverse-direction control: either explicit local identity
+            # satisfies B1, regardless of the namespace inferred from the parent.
+            ("Thing", "kgmicrobe.compound:thing", "FOODON:00001234",
+             "SINGLE_INGREDIENT"),
+            ("Buffer_(pH7)", "kgmicrobe.ingredient:buffer_~28ph7~29", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+        ],
+    )
+    def test_b1_preserves_curated_namespace_when_parent_prefix_differs(
+        tmp_path, stem, identifier, ontology_id, ingredient_type,
+    ):
+        """#679: backfill must not invent a second namespace for an existing ID.
+    
+        The real source-qualified amylopectin record deliberately keeps its local
+        ingredient identity despite SINGLE_INGREDIENT classification. Neither that
+        coarse type nor the ontology parent's prefix may replace curated identity.
+        """
+        rows = rows_for(tmp_path, stem=stem, identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH",
+                        ingredient_type=ingredient_type)
+    
+>       assert len(rows) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len([{'subject_id': 'MIM:Amylopectin_From_Maize', 'subject_label': 'Thing', 'predicate_id': 'skos:broadMatch', 'object_id'...ect_label': 'Thing', 'predicate_id': 'skos:exactMatch', 'object_id': 'kgmicrobe.compound:amylopectin_from_maize', ...}])
+
+tests/test_sssom_identity_row.py:257: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Amylopectin_From_Maize.yaml; emitting an empty mapping_date (#542)
+_ test_b1_preserves_curated_namespace_when_parent_prefix_differs[Casamino_Acids_Vitamin_Assay-kgmicrobe.ingredient:casamino_acids_vitamin_assay-mesh:C017721-UNDEFINED_MIXTURE] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7896/test_b1_preserves_curated_name2')
+stem = 'Casamino_Acids_Vitamin_Assay'
+identifier = 'kgmicrobe.ingredient:casamino_acids_vitamin_assay'
+ontology_id = 'mesh:C017721', ingredient_type = 'UNDEFINED_MIXTURE'
+
+    @pytest.mark.parametrize(
+        ("stem", "identifier", "ontology_id", "ingredient_type"),
+        [
+            ("MES_Buffer", "kgmicrobe.ingredient:mes_buffer", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+            ("Amylopectin_From_Maize", "kgmicrobe.ingredient:amylopectin_from_maize",
+             "CHEBI:28057", "SINGLE_INGREDIENT"),
+            ("Casamino_Acids_Vitamin_Assay",
+             "kgmicrobe.ingredient:casamino_acids_vitamin_assay", "mesh:C017721",
+             "UNDEFINED_MIXTURE"),
+            ("PBS", "kgmicrobe.ingredient:pbs", "NCIT:C178908", "STOCK_SOLUTION"),
+            # Synthetic reverse-direction control: either explicit local identity
+            # satisfies B1, regardless of the namespace inferred from the parent.
+            ("Thing", "kgmicrobe.compound:thing", "FOODON:00001234",
+             "SINGLE_INGREDIENT"),
+            ("Buffer_(pH7)", "kgmicrobe.ingredient:buffer_~28ph7~29", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+        ],
+    )
+    def test_b1_preserves_curated_namespace_when_parent_prefix_differs(
+        tmp_path, stem, identifier, ontology_id, ingredient_type,
+    ):
+        """#679: backfill must not invent a second namespace for an existing ID.
+    
+        The real source-qualified amylopectin record deliberately keeps its local
+        ingredient identity despite SINGLE_INGREDIENT classification. Neither that
+        coarse type nor the ontology parent's prefix may replace curated identity.
+        """
+        rows = rows_for(tmp_path, stem=stem, identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH",
+                        ingredient_type=ingredient_type)
+    
+>       assert len(rows) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len([{'subject_id': 'MIM:Casamino_Acids_Vitamin_Assay', 'subject_label': 'Thing', 'predicate_id': 'skos:broadMatch', 'obje...bel': 'Thing', 'predicate_id': 'skos:exactMatch', 'object_id': 'kgmicrobe.compound:casamino_acids_vitamin_assay', ...}])
+
+tests/test_sssom_identity_row.py:257: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Casamino_Acids_Vitamin_Assay.yaml; emitting an empty mapping_date (#542)
+_ test_b1_preserves_curated_namespace_when_parent_prefix_differs[PBS-kgmicrobe.ingredient:pbs-NCIT:C178908-STOCK_SOLUTION] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7896/test_b1_preserves_curated_name3')
+stem = 'PBS', identifier = 'kgmicrobe.ingredient:pbs'
+ontology_id = 'NCIT:C178908', ingredient_type = 'STOCK_SOLUTION'
+
+    @pytest.mark.parametrize(
+        ("stem", "identifier", "ontology_id", "ingredient_type"),
+        [
+            ("MES_Buffer", "kgmicrobe.ingredient:mes_buffer", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+            ("Amylopectin_From_Maize", "kgmicrobe.ingredient:amylopectin_from_maize",
+             "CHEBI:28057", "SINGLE_INGREDIENT"),
+            ("Casamino_Acids_Vitamin_Assay",
+             "kgmicrobe.ingredient:casamino_acids_vitamin_assay", "mesh:C017721",
+             "UNDEFINED_MIXTURE"),
+            ("PBS", "kgmicrobe.ingredient:pbs", "NCIT:C178908", "STOCK_SOLUTION"),
+            # Synthetic reverse-direction control: either explicit local identity
+            # satisfies B1, regardless of the namespace inferred from the parent.
+            ("Thing", "kgmicrobe.compound:thing", "FOODON:00001234",
+             "SINGLE_INGREDIENT"),
+            ("Buffer_(pH7)", "kgmicrobe.ingredient:buffer_~28ph7~29", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+        ],
+    )
+    def test_b1_preserves_curated_namespace_when_parent_prefix_differs(
+        tmp_path, stem, identifier, ontology_id, ingredient_type,
+    ):
+        """#679: backfill must not invent a second namespace for an existing ID.
+    
+        The real source-qualified amylopectin record deliberately keeps its local
+        ingredient identity despite SINGLE_INGREDIENT classification. Neither that
+        coarse type nor the ontology parent's prefix may replace curated identity.
+        """
+        rows = rows_for(tmp_path, stem=stem, identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH",
+                        ingredient_type=ingredient_type)
+    
+>       assert len(rows) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len([{'subject_id': 'MIM:PBS', 'subject_label': 'Thing', 'predicate_id': 'skos:broadMatch', 'object_id': 'NCIT:C178908', ....': 'MIM:PBS', 'subject_label': 'Thing', 'predicate_id': 'skos:exactMatch', 'object_id': 'kgmicrobe.compound:pbs', ...}])
+
+tests/test_sssom_identity_row.py:257: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in PBS.yaml; emitting an empty mapping_date (#542)
+_ test_b1_preserves_curated_namespace_when_parent_prefix_differs[Thing-kgmicrobe.compound:thing-FOODON:00001234-SINGLE_INGREDIENT] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7896/test_b1_preserves_curated_name4')
+stem = 'Thing', identifier = 'kgmicrobe.compound:thing'
+ontology_id = 'FOODON:00001234', ingredient_type = 'SINGLE_INGREDIENT'
+
+    @pytest.mark.parametrize(
+        ("stem", "identifier", "ontology_id", "ingredient_type"),
+        [
+            ("MES_Buffer", "kgmicrobe.ingredient:mes_buffer", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+            ("Amylopectin_From_Maize", "kgmicrobe.ingredient:amylopectin_from_maize",
+             "CHEBI:28057", "SINGLE_INGREDIENT"),
+            ("Casamino_Acids_Vitamin_Assay",
+             "kgmicrobe.ingredient:casamino_acids_vitamin_assay", "mesh:C017721",
+             "UNDEFINED_MIXTURE"),
+            ("PBS", "kgmicrobe.ingredient:pbs", "NCIT:C178908", "STOCK_SOLUTION"),
+            # Synthetic reverse-direction control: either explicit local identity
+            # satisfies B1, regardless of the namespace inferred from the parent.
+            ("Thing", "kgmicrobe.compound:thing", "FOODON:00001234",
+             "SINGLE_INGREDIENT"),
+            ("Buffer_(pH7)", "kgmicrobe.ingredient:buffer_~28ph7~29", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+        ],
+    )
+    def test_b1_preserves_curated_namespace_when_parent_prefix_differs(
+        tmp_path, stem, identifier, ontology_id, ingredient_type,
+    ):
+        """#679: backfill must not invent a second namespace for an existing ID.
+    
+        The real source-qualified amylopectin record deliberately keeps its local
+        ingredient identity despite SINGLE_INGREDIENT classification. Neither that
+        coarse type nor the ontology parent's prefix may replace curated identity.
+        """
+        rows = rows_for(tmp_path, stem=stem, identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH",
+                        ingredient_type=ingredient_type)
+    
+>       assert len(rows) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len([{'subject_id': 'MIM:Thing', 'subject_label': 'Thing', 'predicate_id': 'skos:broadMatch', 'object_id': 'FOODON:0000123...M:Thing', 'subject_label': 'Thing', 'predicate_id': 'skos:exactMatch', 'object_id': 'kgmicrobe.ingredient:thing', ...}])
+
+tests/test_sssom_identity_row.py:257: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Thing.yaml; emitting an empty mapping_date (#542)
+_ test_b1_preserves_curated_namespace_when_parent_prefix_differs[Buffer_(pH7)-kgmicrobe.ingredient:buffer_~28ph7~29-CHEBI:39010-STOCK_SOLUTION] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7896/test_b1_preserves_curated_name5')
+stem = 'Buffer_(pH7)', identifier = 'kgmicrobe.ingredient:buffer_~28ph7~29'
+ontology_id = 'CHEBI:39010', ingredient_type = 'STOCK_SOLUTION'
+
+    @pytest.mark.parametrize(
+        ("stem", "identifier", "ontology_id", "ingredient_type"),
+        [
+            ("MES_Buffer", "kgmicrobe.ingredient:mes_buffer", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+            ("Amylopectin_From_Maize", "kgmicrobe.ingredient:amylopectin_from_maize",
+             "CHEBI:28057", "SINGLE_INGREDIENT"),
+            ("Casamino_Acids_Vitamin_Assay",
+             "kgmicrobe.ingredient:casamino_acids_vitamin_assay", "mesh:C017721",
+             "UNDEFINED_MIXTURE"),
+            ("PBS", "kgmicrobe.ingredient:pbs", "NCIT:C178908", "STOCK_SOLUTION"),
+            # Synthetic reverse-direction control: either explicit local identity
+            # satisfies B1, regardless of the namespace inferred from the parent.
+            ("Thing", "kgmicrobe.compound:thing", "FOODON:00001234",
+             "SINGLE_INGREDIENT"),
+            ("Buffer_(pH7)", "kgmicrobe.ingredient:buffer_~28ph7~29", "CHEBI:39010",
+             "STOCK_SOLUTION"),
+        ],
+    )
+    def test_b1_preserves_curated_namespace_when_parent_prefix_differs(
+        tmp_path, stem, identifier, ontology_id, ingredient_type,
+    ):
+        """#679: backfill must not invent a second namespace for an existing ID.
+    
+        The real source-qualified amylopectin record deliberately keeps its local
+        ingredient identity despite SINGLE_INGREDIENT classification. Neither that
+        coarse type nor the ontology parent's prefix may replace curated identity.
+        """
+        rows = rows_for(tmp_path, stem=stem, identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH",
+                        ingredient_type=ingredient_type)
+    
+>       assert len(rows) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len([{'subject_id': 'MIM:Buffer_~28pH7~29', 'subject_label': 'Thing', 'predicate_id': 'skos:broadMatch', 'object_id': 'CHE... 'subject_label': 'Thing', 'predicate_id': 'skos:exactMatch', 'object_id': 'kgmicrobe.compound:buffer_~28ph7~29', ...}])
+
+tests/test_sssom_identity_row.py:257: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Buffer_(pH7).yaml; emitting an empty mapping_date (#542)
+=========================== short test summary info ============================
+FAILED tests/test_sssom_identity_row.py::test_b1_preserves_curated_namespace_when_parent_prefix_differs[MES_Buffer-kgmicrobe.ingredient:mes_buffer-CHEBI:39010-STOCK_SOLUTION]
+FAILED tests/test_sssom_identity_row.py::test_b1_preserves_curated_namespace_when_parent_prefix_differs[Amylopectin_From_Maize-kgmicrobe.ingredient:amylopectin_from_maize-CHEBI:28057-SINGLE_INGREDIENT]
+FAILED tests/test_sssom_identity_row.py::test_b1_preserves_curated_namespace_when_parent_prefix_differs[Casamino_Acids_Vitamin_Assay-kgmicrobe.ingredient:casamino_acids_vitamin_assay-mesh:C017721-UNDEFINED_MIXTURE]
+FAILED tests/test_sssom_identity_row.py::test_b1_preserves_curated_namespace_when_parent_prefix_differs[PBS-kgmicrobe.ingredient:pbs-NCIT:C178908-STOCK_SOLUTION]
+FAILED tests/test_sssom_identity_row.py::test_b1_preserves_curated_namespace_when_parent_prefix_differs[Thing-kgmicrobe.compound:thing-FOODON:00001234-SINGLE_INGREDIENT]
+FAILED tests/test_sssom_identity_row.py::test_b1_preserves_curated_namespace_when_parent_prefix_differs[Buffer_(pH7)-kgmicrobe.ingredient:buffer_~28ph7~29-CHEBI:39010-STOCK_SOLUTION]
+6 failed, 42 passed in 0.08s
