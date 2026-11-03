@@ -1,0 +1,34 @@
+The user chooses option (a) for Step 7d. The 7d PR may rebuild the unified snapshot, under the same review as the #1106 exception. The prohibition "None of them may touch the unified snapshot" still applies to every other step and PR.
+
+What the exception allows, in the 7d PR only:
+- Rebuild UNIFIED_INGREDIENT_MAPPING.tsv and its native provenance sidecar with the repo's own generator. Do it as a separate ordinary commit after the owner edits, with a message that names this user exception.
+- Every changed snapshot cell must trace to an owner change in this PR or to a record change already merged on main (the 21-file baseline drift). Any cell that traces to neither is a stop.
+- Change no threshold, budget, owner-selection rule or test. Do not touch qc-evidence.yaml or the vendored pin.
+
+Order:
+1. Resolve #1117 and #1118 first. Record a sourced conclusion on each issue. Make any record edits they need as their own commits in the 7d PR, covered by the same rebuild and review. Use a separate PR only if it passes freshness without touching the snapshot.
+2. Give all 67 selected owners a full per-owner scientific review against their current bytes, including the 6 already assessed. Check the primary source and supplied form, and whether the change approved for #901 is supported for that owner. Changed owner bytes withdraw inherited support, as your preflight says.
+3. The batch includes only owners whose review supports the change.
+   - Record each dropped owner and its reason on #901, and file a deduplicated issue where work remains.
+   - Owners whose identity needs a decision drop out and stay on their issues: ceftazidime hydrate and terpin hydrate unless resolved, and G6501 if #1118 is not settled.
+   - Keep the three plan exclusions out.
+   - No guessed hydration, no role approvals, no owner merges.
+   - If no owner survives, do not open a 7d PR; report.
+4. Apply one receipt batch for the supported owners, then the rebuild commit. Push without force.
+5. Run just qc, including qc-sssom, and the full suite. CI must be fully green, including qc-unified-freshness and pytest.
+6. Get an independent adversarial review of the final head that covers two things:
+   - the science for each included owner;
+   - the snapshot: a cell-level diff with every changed cell traced.
+   File its findings as issues, fix the in-scope ones and re-review.
+7. In the PR description, with no @-mentions, give the exception, the per-owner include/drop table, the cell-diff summary, and the snapshot and provenance sha256.
+8. Merge only as the approved plan allows: green checks, then the merge queue with squash.
+   - Verify that the squash commit carries the reviewed snapshot hashes and equals the PR's diff.
+   - Delete the branch the same ordinary way as before. Leave #1109 open and do not use its helper.
+
+Stop and report if any of these happens:
+- an untraced snapshot cell;
+- freshness still fails after the rebuild;
+- a fix needs a threshold, test or pin change;
+- a check fails that you cannot fix within the PR.
+
+Then continue the approved plan: apply the #669 policy to the 23 deferred pairs, then close #912 with pointers. Every other plan rule is unchanged. Give a one-line report after each merge and a final summary.

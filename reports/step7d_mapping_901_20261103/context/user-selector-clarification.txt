@@ -1,0 +1,15 @@
+Continue Step 7d under option (a). This stop came from XMechBay's over-broad wording, not from a real conflict.
+
+XMechBay checked on GitHub: each of the last 10 plan-step PRs repointed the companion-review selector to its own new review. That includes #1030, #1042, #1048, #1062, #1068, #1076, #1083, #1094, #1106 and #1115. The selector is the REVIEW constant in tests/test_ingredient_bundle.py, together with the `--review` argument in .github/workflows/qc-reviewed-sssom.yaml. Repointing it is the ordinary per-step pattern, not a test weakening.
+
+Clarified rule for the 7d PR:
+- Allowed: repoint REVIEW and the workflow's `--review` to the new immutable Step 7d companion review. Change both together and in the same way, as #1115 did.
+- Not allowed:
+  - any other edit to that test, or any other test;
+  - removing, skipping or loosening any assertion;
+  - any threshold, budget, owner-selection rule, qc-evidence.yaml or pin change.
+- The independent review must confirm that the selector repoint is the only test or workflow change, and that every assertion is unchanged and passes against the new review.
+
+#1117 and #1118 are only partly resolved. That is fine: per the instruction, owners whose identity still needs a decision drop out of the batch and stay on their issues. Record which owners that affects on #901.
+
+Everything else in the Step 7d instruction is unchanged: the full 67-owner review, one receipt batch, the traced snapshot rebuild commit, QC and green CI, independent review, issues, then a merge only as the plan allows, followed by verification and branch deletion. After that come the 23 alias pairs and #912. Stop on the same conditions as before.

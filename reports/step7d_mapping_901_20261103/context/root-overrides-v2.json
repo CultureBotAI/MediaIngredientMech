@@ -1,0 +1,101 @@
+{
+  "created_at": "2026-11-03T06:08:16.064079+00:00",
+  "author": "Codex root integration review",
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "overrides": [
+    {
+      "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+      "decision": "DROP",
+      "reason": "The proposed exact CAS16788-57-1 is already owned by Potassium_Phosphate_Dibasic_Trihydrate.yaml with its own source context and three current recipe memberships. Promoting K2hpo4_X_3_H2o would create a duplicate live primary identity. User forbids owner merges and requires identity-decision owners to drop; preserve both owners and all memberships unchanged pending source/form/ownership review. This overrides the frozen science-b INCLUDE recommendation without rewriting that assessment.",
+      "conflicting_owner_path": "data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+      "conflicting_owner_sha256": "c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14",
+      "evidence": "Ignored-inclusive rg search over all per-record files and parsed current membership TSV; matching primary CAS and three membership edges verified.",
+      "scientific_approval_added": false
+    }
+  ],
+  "auxiliary_actions": [
+    {
+      "owner_path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+      "old_identifier": "cas:6363-53-7",
+      "new_identifier": "NCIT:C80300",
+      "membership_rows": 20,
+      "rejection_ledger_rows": 1
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+      "old_identifier": "kgmicrobe.compound:cecl3_x_7_h2o",
+      "new_identifier": "cas:18618-55-8",
+      "membership_rows": 4,
+      "rejection_ledger_rows": 1
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "old_identifier": "kgmicrobe.compound:cu_no32_x_3_h2o",
+      "new_identifier": "cas:10031-43-3",
+      "membership_rows": 2,
+      "rejection_ledger_rows": 1
+    }
+  ],
+  "additional_operations": [
+    {
+      "owner_path": "data/ingredients/mapped/4-Hydroxymandelic_Acid_Monohydrate.yaml",
+      "owner_sha256": "0654ea9993b21a11beb4bbf8585d5cd60a2e44f86e7490a750857127a3ea81fb",
+      "field": "synonyms[0].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL",
+      "token": "hydroxy(4-hydroxyphenyl)acetic acid",
+      "source_to_preserve": "chebi_synonym_review",
+      "reason": "Source explicitly identifies hydrate; the exact systematic alias identifies its dry parent. Keep as provenance-only rejected label, then native generator must exclude it from other. This is not ownership suppression and it is not one of the 23 deferred pairs.",
+      "finding_reference": "output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/finding-001-parent-aliases.json",
+      "finding_sha256": "d71535f7e440919ed23c5d7440052fb0a36abbdafd41c8343be25fb70d3d5111"
+    },
+    {
+      "owner_path": "data/ingredients/mapped/5-Fluoroorotic_Acid_Hydrate.yaml",
+      "owner_sha256": "6abd2c9c99b2b69e621f8d9af7086abcd6dfa3290ac06b2e42a018528f8fe848",
+      "field": "synonyms[0].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL",
+      "token": "5-fluoro-2,6-dioxo-1,2,3,6-tetrahydropyrimidine-4-carboxylic acid",
+      "source_to_preserve": "chebi_synonym_review",
+      "reason": "Source explicitly identifies hydrate; the exact systematic alias identifies its dry parent. Keep as provenance-only rejected label, then native generator must exclude it from other. This is not ownership suppression and it is not one of the 23 deferred pairs.",
+      "finding_reference": "output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/finding-001-parent-aliases.json",
+      "finding_sha256": "d71535f7e440919ed23c5d7440052fb0a36abbdafd41c8343be25fb70d3d5111"
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Cadmium_Acetate_Dihydrate.yaml",
+      "owner_sha256": "07cadbd336cef9129741a691cbee09dc6fe0d368df15aab884935a4ec19aefb5",
+      "field": "synonyms[0].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL",
+      "token": "cadmium(2+);diacetate",
+      "source_to_preserve": "chebi_synonym_review",
+      "reason": "Source explicitly identifies hydrate; the exact systematic alias identifies its dry parent. Keep as provenance-only rejected label, then native generator must exclude it from other. This is not ownership suppression and it is not one of the 23 deferred pairs.",
+      "finding_reference": "output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/finding-001-parent-aliases.json",
+      "finding_sha256": "d71535f7e440919ed23c5d7440052fb0a36abbdafd41c8343be25fb70d3d5111"
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml",
+      "owner_sha256": "cc8479957cb0c6090af467207f2e8daef94fa83a437d39993970604b3efcfbde",
+      "field": "synonyms[0].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL",
+      "token": "N,N''''-hexane-1,6-diylbis[N'-(4-chlorophenyl)triimidodicarbonic diamide] acetate (1:2)",
+      "source_to_preserve": "chebi_synonym_review",
+      "reason": "Source explicitly identifies hydrate; the exact systematic alias identifies its dry parent. Keep as provenance-only rejected label, then native generator must exclude it from other. This is not ownership suppression and it is not one of the 23 deferred pairs.",
+      "finding_reference": "output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/finding-001-parent-aliases.json",
+      "finding_sha256": "d71535f7e440919ed23c5d7440052fb0a36abbdafd41c8343be25fb70d3d5111"
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "owner_sha256": "50c5e0a150ebd1215f290173f525ca73a7799b73ae889e357b2609022974283c",
+      "field": "synonyms[1].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL",
+      "token": "copper(2+) dinitrate",
+      "source_to_preserve": "chebi_synonym_review",
+      "reason": "Source explicitly identifies hydrate; the exact systematic alias identifies its dry parent. Keep as provenance-only rejected label, then native generator must exclude it from other. This is not ownership suppression and it is not one of the 23 deferred pairs.",
+      "finding_reference": "output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/finding-001-parent-aliases.json",
+      "finding_sha256": "d71535f7e440919ed23c5d7440052fb0a36abbdafd41c8343be25fb70d3d5111"
+    }
+  ]
+}

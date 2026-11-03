@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-11-03T06:02:58.234604+00:00",
+  "author": "Codex root integration review",
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "overrides": [
+    {
+      "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+      "decision": "DROP",
+      "reason": "The proposed exact CAS16788-57-1 is already owned by Potassium_Phosphate_Dibasic_Trihydrate.yaml with its own source context and three current recipe memberships. Promoting K2hpo4_X_3_H2o would create a duplicate live primary identity. User forbids owner merges and requires identity-decision owners to drop; preserve both owners and all memberships unchanged pending source/form/ownership review. This overrides the frozen science-b INCLUDE recommendation without rewriting that assessment.",
+      "conflicting_owner_path": "data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+      "conflicting_owner_sha256": "c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14",
+      "evidence": "Ignored-inclusive rg search over all per-record files and parsed current membership TSV; matching primary CAS and three membership edges verified.",
+      "scientific_approval_added": false
+    }
+  ],
+  "auxiliary_actions": [
+    {
+      "owner_path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+      "old_identifier": "cas:6363-53-7",
+      "new_identifier": "NCIT:C80300",
+      "membership_rows": 20,
+      "rejection_ledger_rows": 1
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+      "old_identifier": "kgmicrobe.compound:cecl3_x_7_h2o",
+      "new_identifier": "cas:18618-55-8",
+      "membership_rows": 4,
+      "rejection_ledger_rows": 1
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "old_identifier": "kgmicrobe.compound:cu_no32_x_3_h2o",
+      "new_identifier": "cas:10031-43-3",
+      "membership_rows": 2,
+      "rejection_ledger_rows": 1
+    }
+  ]
+}

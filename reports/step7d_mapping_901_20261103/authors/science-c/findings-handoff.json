@@ -1,0 +1,396 @@
+[
+  {
+    "key": "carbonate-1117",
+    "action": "Update existing issue before the dedicated record commit",
+    "issues": [
+      1117
+    ],
+    "owners": [
+      "Sodium_Carbonate_Monohydrate"
+    ],
+    "decision": "Include. NCIT:C80911 is active, locally resolvable and explicitly represents CAS 5968-11-6 sodium carbonate monohydrate. Promote the primary identifier and exact target, using CAS_RN_LOOKUP because the unique CAS lookup establishes the mapping. Preserve supplied chemistry and counts. Reject only the non-identity process token (adjust if required). Leave the pending Sodium carbonate solution pair for the later #669 step.",
+    "needs_human_identity_decision": false,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Sodium_Carbonate_Monohydrate--chebi-parent",
+          "Sodium_Carbonate_Monohydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Sodium_Carbonate_Monohydrate--pubchem-cas",
+          "ncit-carbonate-monohydrate",
+          "supplier-carbonate",
+          "source-culturebotht-Sodium_Carbonate_Monohydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "maltotriose-open-chain-parent",
+    "action": "File a deduplicated finding issue before changing this owner",
+    "issues_checked": [
+      239,
+      901
+    ],
+    "owners": [
+      "Maltotriose_Hydrate"
+    ],
+    "decision": "Include with parent correction to CHEBI:140999 and NARROW_MATCH. CHEBI:61993 denotes an aldehydo/open-chain form; the source CAS and PubChem structure support the cyclic reducing-end-unspecified form. #239 is a closed missing-CHEBI audit, not this parent-scope correction. Do not infer an alpha reducing end or add a new formula.",
+    "needs_human_identity_decision": false,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Maltotriose_Hydrate--chebi-parent",
+          "Maltotriose_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Maltotriose_Hydrate--pubchem-cas",
+          "chebi-140999",
+          "source-culturebotht-Maltotriose_Hydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "hydrate-chemistry-withdrawal",
+    "action": "Update #268 and #901 with the exact six-owner withdrawal scope before edits; file separately only if maintainers require a distinct instance issue",
+    "issues": [
+      268,
+      901
+    ],
+    "owners": [
+      "Palatinose_Hydrate",
+      "Potassium_Citramalate_Monohydrate",
+      "Potassium_Tellurate_Hydrate",
+      "Sodium_Cholate_Hydrate",
+      "Sodium_Thiophosphate_Tribasic_Hydrate",
+      "Stachyose_Hydrate"
+    ],
+    "decision": "Include only with removal of current molecular_formula, smiles, inchi and pubchem_cid assertions that describe a dry parent or an unjustified fixed hydrate. Retain CAS, provenance, imported mass metadata and history. Do not replace with guessed water counts or CIDs. Sodium cholate also rejects its exact dry-parent synonym, which is not one of the deferred #669 pairs.",
+    "needs_human_identity_decision": false,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Palatinose_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Palatinose_Hydrate--chebi-parent",
+          "Palatinose_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Palatinose_Hydrate--pubchem-cas",
+          "supplier-palatinose",
+          "source-culturebotht-Palatinose_Hydrate"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Potassium_Citramalate_Monohydrate--chebi-parent",
+          "Potassium_Citramalate_Monohydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Potassium_Citramalate_Monohydrate--pubchem-cas",
+          "supplier-citramalate",
+          "source-culturebotht-Potassium_Citramalate_Monohydrate"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Potassium_Tellurate_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Potassium_Tellurate_Hydrate--chebi-parent",
+          "Potassium_Tellurate_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Potassium_Tellurate_Hydrate--pubchem-cas",
+          "supplier-tellurate",
+          "source-culturebotht-Potassium_Tellurate_Hydrate"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Sodium_Cholate_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Sodium_Cholate_Hydrate--chebi-parent",
+          "Sodium_Cholate_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Sodium_Cholate_Hydrate--pubchem-cas",
+          "supplier-cholate",
+          "source-culturebotht-Sodium_Cholate_Hydrate"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Sodium_Thiophosphate_Tribasic_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Sodium_Thiophosphate_Tribasic_Hydrate--chebi-parent",
+          "Sodium_Thiophosphate_Tribasic_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Sodium_Thiophosphate_Tribasic_Hydrate--pubchem-cas",
+          "supplier-thiophosphate",
+          "source-culturebotht-Sodium_Thiophosphate_Tribasic_Hydrate"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Stachyose_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Stachyose_Hydrate--chebi-parent",
+          "Stachyose_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Stachyose_Hydrate--pubchem-cas",
+          "wako-stachyose",
+          "chebi-183019",
+          "source-culturebotht-Stachyose_Hydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "unresolved-unusual-source-hydrates",
+    "action": "Record drops on #901; deduplicate open scientific follow-up against #459 and file one focused follow-up if #459 does not own these specific decisions",
+    "issues_checked": [
+      344,
+      459,
+      901
+    ],
+    "owners": [
+      "Mgcl2_X_7_H2o",
+      "Na2hpo4_X_3_H2o",
+      "Na2hpo4_X_6_H2o",
+      "Nicl2_X_5_H2o"
+    ],
+    "decision": "Drop. Current literal MediaDive labels persist, but automated parent-CAS metadata does not establish their unusual water counts. #344 already closed the unsafe chemistry cleanup; it did not validate these source forms. Keep localized identity and existing holds until source/recipe evidence settles whether each label is real or erroneous.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Mgcl2_X_7_H2o.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Mgcl2_X_7_H2o--chebi-parent",
+          "Mgcl2_X_7_H2o--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "mediadive-mgcl2-7"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Na2hpo4_X_3_H2o--chebi-parent",
+          "Na2hpo4_X_3_H2o--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "mediadive-na2hpo4-3"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Na2hpo4_X_6_H2o--chebi-parent",
+          "Na2hpo4_X_6_H2o--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "mediadive-na2hpo4-6"
+        ]
+      },
+      {
+        "owner_path": "data/ingredients/mapped/Nicl2_X_5_H2o.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Nicl2_X_5_H2o--chebi-parent",
+          "Nicl2_X_5_H2o--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "mediadive-nicl2-5"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sodium-phosphate-dihydrate-coupled-records",
+    "action": "Update existing #758 and #901; do not duplicate",
+    "issues": [
+      758,
+      740,
+      901
+    ],
+    "owners": [
+      "Nah2po4_X_2_H2o"
+    ],
+    "decision": "Drop from this receipt. Exact dihydrate candidate NCIT:C66551 is resolved, but #758 couples three false monohydrate aliases to memberships/counts across three owners, historically blocked by #740. Resolve that coupled curation rather than approving the current mixed owner or silently completing deferred alias work.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Nah2po4_X_2_H2o--chebi-parent",
+          "Nah2po4_X_2_H2o--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "ncit-C66551",
+          "pubchem-phosphate-dihydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "neomycin-n1142-supplied-solution",
+    "action": "File a deduplicated scientific decision issue; record drop on #901",
+    "issues_checked": [
+      208,
+      213,
+      901
+    ],
+    "owners": [
+      "Neomycin_Trisulfate_Salt_Hydrate"
+    ],
+    "decision": "Drop. The archived source identifies Sigma N1142, while the current manufacturer identifies N1142 as neomycin 10 mg/mL in 0.9% NaCl. Decide whether the source owner denotes active substance or the supplied formulation and obtain historical SKU evidence. Do not equate the solution, a hydrate, and CHEBI:31635 sulfate mixture.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Neomycin_Trisulfate_Salt_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Neomycin_Trisulfate_Salt_Hydrate--chebi-parent",
+          "Neomycin_Trisulfate_Salt_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Neomycin_Trisulfate_Salt_Hydrate--pubchem-cas",
+          "supplier-neomycin",
+          "source-culturebotht-Neomycin_Trisulfate_Salt_Hydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "tellurite-p0677-source-form",
+    "action": "File a deduplicated scientific decision issue; record drop on #901",
+    "issues_checked": [
+      455,
+      901
+    ],
+    "owners": [
+      "Potassium_Tellurite_Hydrate"
+    ],
+    "decision": "Drop. Archive says P0677 hydrate CAS 123333-66-4; a current manufacturer P0677 certificate gives CAS 7790-58-1, K2O3Te and 253.79 g/mol. Establish historical product/source identity before changing mapping or adopting a dry CAS. Closed #455 addressed a different tellurate/tellurite owner confusion.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Potassium_Tellurite_Hydrate--chebi-parent",
+          "Potassium_Tellurite_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Potassium_Tellurite_Hydrate--pubchem-cas",
+          "supplier-tellurite-coa",
+          "source-culturebotht-Potassium_Tellurite_Hydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "hypophosphite-parent-hydrogen-loss",
+    "action": "File a deduplicated scientific/ontology decision issue; record drop on #901",
+    "issues_checked": [
+      319,
+      321,
+      326,
+      268,
+      901
+    ],
+    "owners": [
+      "Sodium_Hypophosphite_Monohydrate"
+    ],
+    "decision": "Drop. Primary S5012 certificate supports NaH2PO2.H2O and 105.99 g/mol. Current CHEBI:234148 and MIM/PubChem structure assertions lose the two phosphorus-bound hydrogens. A parent must be selected from verified chemistry rather than matching a familiar label. Do not approve current parent or import the erroneous PubChem hydrate formula.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Sodium_Hypophosphite_Monohydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Sodium_Hypophosphite_Monohydrate--chebi-parent",
+          "Sodium_Hypophosphite_Monohydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Sodium_Hypophosphite_Monohydrate--pubchem-cas",
+          "sigma-hypophosphite-coa",
+          "chebi-24759",
+          "source-culturebotht-Sodium_Hypophosphite_Monohydrate"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "terpin-cis-concept-scope",
+    "action": "Record drop and remaining decision on #901; link or file a focused issue only if no existing dedicated decision covers it",
+    "issues": [
+      901
+    ],
+    "owners": [
+      "Terpene_Hydrate"
+    ],
+    "decision": "Drop. Source CAS 2451-01-6 and candidate CHEBI:751529/NCIT:C219387 require an explicit cis/stereo concept-scope resolution against GSRS S3V868548T. Current candidate names and non-stereochemical structures do not settle whether the owner is the exact cis concept. No identity or preferred-term change is authorized by this review.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Terpene_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Terpene_Hydrate--chebi-parent",
+          "Terpene_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Terpene_Hydrate--pubchem-cas",
+          "source-culturebotht-Terpene_Hydrate",
+          "prior-primary-chebi-751529-terpin-hydrate",
+          "prior-primary-ols-chebi-terpin-hydrate",
+          "prior-primary-ncit-C219387-terpin-hydrate",
+          "prior-primary-gsrs-terpin-hydrate-full"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "vancomycin-sku-hydrate-scope",
+    "action": "File a deduplicated scientific decision issue; record drop on #901",
+    "issues_checked": [
+      321,
+      326,
+      901
+    ],
+    "owners": [
+      "Vancomycin_Hydrochloride_Hydrate"
+    ],
+    "decision": "Drop. The archive lists Sigma with catalog MP:195545-250MG, whereas the inspected MP certificate is product 195540, lot S4331, water 1.3%. That is corroborating commercial material evidence, not proof of the archived SKU or hydration scope. Resolve source identity; reject the implausible CAS-resolved PubChem structure as evidence.",
+    "needs_human_identity_decision": true,
+    "evidence_refs": [
+      {
+        "owner_path": "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+        "assessment": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/science-c/assessments-v2.json",
+        "source_ids": [
+          "Vancomycin_Hydrochloride_Hydrate--chebi-parent",
+          "Vancomycin_Hydrochloride_Hydrate--ols-exact-form",
+          "local-ontology-search",
+          "local-chebi-cas-corrected",
+          "Vancomycin_Hydrochloride_Hydrate--pubchem-cas",
+          "supplier-vancomycin",
+          "source-culturebotht-Vancomycin_Hydrochloride_Hydrate"
+        ]
+      }
+    ]
+  }
+]
