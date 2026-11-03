@@ -1,0 +1,808 @@
+# Independent Step 7d stop review: receipt24 test coordinates
+
+- Review: 20261103T065928Z-step7d-independent-test-coordinate-blocker
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-03T06:56:21.354251Z
+- Finished UTC: 2026-11-03T06:59:28.455654Z
+- Reviewer: /root/step7d_independent_review (independent)
+- Completion: completed
+- Verdict: blocked
+- Scientific review: false
+
+## Summary
+
+One confirmed test-coordinate defect is filed as issue1123. The current production mapping holds are intact, but the required suite cannot pass under the current no-other-test-change restriction. No final Step7d head approval is granted; four-comment issue1122 remains prepared and unapplied.
+
+## Scope And Provenance
+
+The failing historical-lineage test, exact receipt24/25, current mapping review and all eight current canonical endpoint rows used by the failed assertion.
+
+Selection: Exact eight receipt24 changes in issue751-313-235-stock-and-source-labels, traced through every later native receipt to head 7d35035f6c521c69fad94f73381c6a6eb7251fff.
+Coverage: full; 12 reviewed / 12 in the declared population.
+Source: git_commit at Git base 7d35035f6c521c69fad94f73381c6a6eb7251fff.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| test-coordinate-contract | tests/test_source_mapping_concern_history.py | maintained | Receipt24 lineage regression test |
+| receipt24 | reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json | source | Historical source-correction receipt24 |
+| receipt25 | reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json | source | Current selected-owner mapping receipt25 |
+| current-review | reports/sssom_completion_20260921/review.json | generated | Current mapping review dispositions |
+| historical-row-1 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:14-Butanediol; object_id=CHEBI:41189; predicate_id=skos:exactMatch; source_position=38 | snapshot_row | MIM:14-Butanediol → CHEBI:41189 |
+| historical-row-2 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:24-diamino-67-di-iso-propylpteridine_phosphate; object_id=CHEBI:73908; predicate_id=skos:broadMatch; source_position=115 | snapshot_row | MIM:24-diamino-67-di-iso-propylpteridine_phosphate → CHEBI:73908 |
+| historical-row-3 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:24-diamino-67-di-iso-propylpteridine_phosphate; object_id=kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate; predicate_id=skos:exactMatch; source_position=116 | snapshot_row | MIM:24-diamino-67-di-iso-propylpteridine_phosphate → kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |
+| historical-row-4 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:25-didehydro-D-gluconate; object_id=CHEBI:11449; predicate_id=skos:exactMatch; source_position=117 | snapshot_row | MIM:25-didehydro-D-gluconate → CHEBI:11449 |
+| historical-row-5 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:5-dehydro-D-gluconate; object_id=CHEBI:58143; predicate_id=skos:exactMatch; source_position=237 | snapshot_row | MIM:5-dehydro-D-gluconate → CHEBI:58143 |
+| historical-row-6 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:Phenethylamine_Hydrochloride; object_id=CHEBI:18397; predicate_id=skos:exactMatch; source_position=2252 | snapshot_row | MIM:Phenethylamine_Hydrochloride → CHEBI:18397 |
+| historical-row-7 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:Wc_Trace_Elements_Solution; object_id=MICRO:0000455; predicate_id=skos:broadMatch; source_position=2949 | snapshot_row | MIM:Wc_Trace_Elements_Solution → MICRO:0000455 |
+| historical-row-8 | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:Wc_Trace_Elements_Solution; object_id=kgmicrobe.ingredient:wc_trace_elements_solution; predicate_id=skos:exactMatch; source_position=2950 | snapshot_row | MIM:Wc_Trace_Elements_Solution → kgmicrobe.ingredient:wc_trace_elements_solution |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native exact target/input capture | passed | True | test-coordinate-contract, receipt24, receipt25, current-review, historical-row-1, historical-row-2, historical-row-3, historical-row-4, historical-row-5, historical-row-6, historical-row-7, historical-row-8 | Twelve targets and all25 receipt inputs captured; every hash verified against the exact committed head. |
+| Required native historical-concern assertion | failed | True | test-coordinate-contract, receipt24, receipt25, current-review, historical-row-1, historical-row-2, historical-row-3, historical-row-4, historical-row-5, historical-row-6, historical-row-7, historical-row-8 | Actual pytest reproduction fails at tests/test_source_mapping_concern_history.py:170; the assertion indexes unrelated current rows using old coordinates. |
+| Independent current row/hold composition audit | passed | True | test-coordinate-contract, receipt24, receipt25, current-review, historical-row-1, historical-row-2, historical-row-3, historical-row-4, historical-row-5, historical-row-6, historical-row-7, historical-row-8 | All eight exact receipt24 endpoint rows remain WITHHOLD after composition through receipt25. Four wrong stale slots explain the test failure. |
+
+## Scientific And Domain Assessments
+
+### Historical versus current row coordinates
+
+consistency: concern. Targets: test-coordinate-contract.
+
+The test uses receipt24 coordinates as though they were coordinates of the final receipt25 table. The focused native assertion fails because four stale slots now belong to unrelated supported rows. This does not indicate that the original eight held rows became supported.
+
+### Production composition and preserved historical holds
+
+provenance: supported. Targets: receipt24, receipt25, current-review.
+
+Native full-chain validation succeeds. The eight receipt24 after rows map through receipt25.position_map to current exact rows, and the current review retains WITHHOLD for each. Neither receipt nor current production row must be changed to accommodate the test defect.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-1.
+
+MIM:14-Butanediol / CHEBI:41189: historical receipt24 position 38 composes to current position 38. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-2.
+
+MIM:24-diamino-67-di-iso-propylpteridine_phosphate / CHEBI:73908: historical receipt24 position 113 composes to current position 115. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-3.
+
+MIM:24-diamino-67-di-iso-propylpteridine_phosphate / kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate: historical receipt24 position 114 composes to current position 116. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-4.
+
+MIM:25-didehydro-D-gluconate / CHEBI:11449: historical receipt24 position 115 composes to current position 117. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-5.
+
+MIM:5-dehydro-D-gluconate / CHEBI:58143: historical receipt24 position 233 composes to current position 237. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-6.
+
+MIM:Phenethylamine_Hydrochloride / CHEBI:18397: historical receipt24 position 2229 composes to current position 2252. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-7.
+
+MIM:Wc_Trace_Elements_Solution / MICRO:0000455: historical receipt24 position 2920 composes to current position 2949. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+### Exact historical row retained with hold
+
+provenance: supported. Targets: historical-row-8.
+
+MIM:Wc_Trace_Elements_Solution / kgmicrobe.ingredient:wc_trace_elements_solution: historical receipt24 position 2921 composes to current position 2950. Complete after row equality is verified and the current disposition is WITHHOLD.
+
+## Findings
+
+### historical-receipt-test-coordinates: Receipt24 regression test treats historical after_position as current after receipt25
+
+minor / open / confirmed; issue key: mim-receipt24-test-current-coordinates-1123.
+
+Test indexes final decisions directly by receipt24.after_position, omitting composition through subsequent position_map. Native chain composes positions correctly, and all eight actual receipt24 endpoint rows still exist unchanged and WITHHOLD. Incorrect supported-row lookups occur at old positions114,2229,2920,2921; correct held endpoints are116,2252,2949,2950. The remaining four endpoints are also exact and held.
+
+## Recommended Actions And Acceptance Checks
+
+### await-authorized-test-coordinate-fix
+
+Stop Step7d publication and merge work under the user stop condition. If separately authorized, make the test compose receipt24 after_position through later position maps or use exact proven row lineage; retain all assertions and all eight held-row checks. Do not alter production row order, approvals or historical receipts to satisfy stale positions.
+
+- Explicit user permission covers this test edit beyond the paired selector exception.
+- Focused regression verifies all eight actual current held rows after at least one later insertion/removal receipt and preserves negative assertions.
+- Required full suite and QC pass at the final head; independent re-review then covers final applied science, snapshot and projection.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| test | tests/test_source_mapping_concern_history.py | supports | Lines168-170 form touched directly from historical receipt24 after_position and use it to index final current decisions, without applying later receipt maps. |
+| receipt24 | reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json | supports | Eight exact after rows and historical after_position coordinates. |
+| receipt25 | reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json | supports | Native position_map moves those eight rows as inserted selected-owner registry rows shift following rows. |
+| review | reports/sssom_completion_20260921/review.json | supports | Current dispositions retain WITHHOLD at all eight correctly composed current positions. |
+| canonical | mappings/ingredient_mappings.sssom.tsv | supports | All eight historical endpoint rows survive byte-identically at their correctly composed current positions. |
+| chain | src/mediaingredientmech/validation/mapping_change_receipts.py | supports | Native _replay composes forward positions through every receipt; production row lineage is correct. |
+| focused-failure | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-source-history-failure-repro-v1.log | supports | Actual focused pytest reproduction fails at test line170, exit1; not a hypothetical or inferred suite result. |
+| independent-lineage-proof | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/historical-position-test-defect.json | supports | Independent native verify_mapping_chain and explicit later-position-map composition verifies all eight after-row identities and WITHHOLD holds. Four stale coordinates point at unrelated supported rows. |
+
+## Limits And Additional Notes
+
+- This is a completed diagnosis with BLOCKED workflow verdict, not a completed final-head approval or an authority to waive the failing check.
+- Full-suite totals are not asserted here; the actual focused failure is complete and hash-bound.
+- No chemistry or primary-source scientific claim is reassessed in this provenance-only report.
+- Issue1122 correction and its refresh remain external proposals; no maintained correction, push, PR or merge is authorized by this report.
+- No supervisor receipt binding was supplied or invented.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261103T065928Z-step7d-independent-test-coordinate-blocker
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Independent Step 7d stop review: receipt24 test coordinates'
+started_at: '2026-11-03T06:56:21.354251Z'
+finished_at: '2026-11-03T06:59:28.455654Z'
+reviewer:
+  identity: /root/step7d_independent_review
+  kind: agent
+  model: gpt-6
+  independence: independent
+  independence_basis: Reviewer did not author the selected owner changes, mapping
+    projection, receipt25, historical test or remediation. Independently reproduced
+    the production row lineage after the root reported the failing suite assertion.
+skill: review-sssom-output
+completion: completed
+verdict: blocked
+native_verdict: 'STOP: confirmed failing required test; proper test-coordinate fix
+  exceeds the user-authorized selector-only edits'
+scientific_review: false
+summary: One confirmed test-coordinate defect is filed as issue1123. The current production
+  mapping holds are intact, but the required suite cannot pass under the current no-other-test-change
+  restriction. No final Step7d head approval is granted; four-comment issue1122 remains
+  prepared and unapplied.
+source:
+  git_revision: 7d35035f6c521c69fad94f73381c6a6eb7251fff
+  state: git_commit
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4
+    role: target
+  - path: reports/sssom_completion_20260921/assemble_review.py
+    sha256: b8a9c101a8d6000c4cf945225f4ad87a0e4c8bb34d5230132d7674ff424defa5
+    role: context
+  - path: reports/sssom_completion_20260921/baseline-mapping-review.json
+    sha256: eab809b5c7afab824d766f2becccce87ea2ea6f6b46519fd42ac21300ddddc10
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/chemical-scopes-20260923.json
+    sha256: a31d5bae53211a7cdc008008b4eb8dd49d9e2ec3a62773c912dbdab8d0d0b7ae
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/claw571-hydrate-parent-identities.json
+    sha256: 2eeb7e2b9da164403cc715e6cc1b3a8c36f6f35d173bc1d740f8b90f7ce3d762
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/data-license-20261001.json
+    sha256: 6d89e96b3560bb2b237fc9a358b1ef68986f1361dc536a4e5872661aaf459403
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/ingredient-identities-20260924.json
+    sha256: 1cf4c94c4ff4704c642297aafbc48d05b1978fcd67cbe88ff076e4def9c4be5b
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json
+    sha256: e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json
+    sha256: 2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json
+    sha256: fbeec3fbfee71be85541353683df135f96dc1d0021c6bfb3877bcc5eca8813d0
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue232-wrong-form-names.json
+    sha256: a94aab0d6d9e5cbf6fec1c6d3829981630bd2c40434b868a8d20526f4a7db985
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch1.json
+    sha256: 0554d4d32924eec4c9909d3c0ff36c8dd9d44ce426011ba42f0122d9172a41a0
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch2.json
+    sha256: c10ef0d7f577190f0d97a95c0482011d6abfaaf03fba2c509f98eec66694c373
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch3.json
+    sha256: aff24cdc08d1cb979795ffad227c03e9622733438ec7f94c5669ea05da6bfe88
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch4.json
+    sha256: 2779f46e8ff8a2d0429fa382ce67dec6f7b2b43b02be3c316c5a7bdcf2138409
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json
+    sha256: 00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue669-704-rulings.json
+    sha256: 0870e436e4f03a1ef2377a957fedab70b42d201b6f9b8935478c40ac647c90d8
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue669-owned-name-policy.json
+    sha256: 0ece81a8c97723fef6aeaff73693fa013aac1589727ed896400198ff8d4b98f7
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json
+    sha256: 3d8d3d1189d0393d5ccd23ce3b83a5196e1664f045269254160df33a20e6ea07
+    role: target
+  - path: reports/sssom_completion_20260921/mapping_changes/issue753-870-registry-and-node-corrections.json
+    sha256: 8139abdd7e82930b8a4fdee5872d049072e997f033860e81cc0bab02b320eb37
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue759-micro-source.json
+    sha256: 75008d33a173155a6bdccafb64bbee96b0a457f9da5b761bd7ee2aa9b74100aa
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue871-268-hydrate-stock-chemistry.json
+    sha256: f12080ebd7c63ea223ec8f7a2ab874078fc506c8f0d3df053bc4ab616bac6a2c
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json
+    sha256: 28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue878-hydrate-contradictions.json
+    sha256: cdd362a5f2d34ebf6676a098869995ce41a8059285cbffc2f92bbc3e49c86ec3
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json
+    sha256: 019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json
+    sha256: 0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json
+    sha256: 00165a2a85fc948237bd2502abb6e24f2fc7d3bd22eb426ae6ffd70fb786e0f1
+    role: target
+  - path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    sha256: 9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226
+    role: context
+  - path: reports/sssom_completion_20260921/parent-name-refresh.json
+    sha256: 5b7325076e2c44b55bd35a02224b49c64297f85a5607542d932d1d533860837c
+    role: context
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: 4bf7b2425323a0b064ca16d73a2094fded43403bdb03d932469454273b267c78
+    role: target
+  - path: reports/sssom_completion_20260921/trait-synonym-refresh.json
+    sha256: 00eb08f04e988859ff76605bf4567114f106f73f314fbd36f66261662c45433c
+    role: context
+  - path: src/mediaingredientmech/validation/mapping_change_receipts.py
+    sha256: f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d
+    role: context
+  - path: tests/test_source_mapping_concern_history.py
+    sha256: d5477373374b5aa0b9652310a25f8d4925b61035f304af38f64f63c0882345df
+    role: target
+scope:
+  description: The failing historical-lineage test, exact receipt24/25, current mapping
+    review and all eight current canonical endpoint rows used by the failed assertion.
+  selection: Exact eight receipt24 changes in issue751-313-235-stock-and-source-labels,
+    traced through every later native receipt to head 7d35035f6c521c69fad94f73381c6a6eb7251fff.
+  coverage: full
+  population_size: 12
+  reviewed_target_ids:
+  - test-coordinate-contract
+  - receipt24
+  - receipt25
+  - current-review
+  - historical-row-1
+  - historical-row-2
+  - historical-row-3
+  - historical-row-4
+  - historical-row-5
+  - historical-row-6
+  - historical-row-7
+  - historical-row-8
+  exclusions:
+  - target: Independent final scientific approval of all38 Step7d owners and150 planned
+      final-review targets
+    reason: Not granted because the required suite has a confirmed failure; this scoped
+      blocked review only diagnoses row coordinates and preserves the stop.
+targets:
+- target_id: test-coordinate-contract
+  path: tests/test_source_mapping_concern_history.py
+  label: Receipt24 lineage regression test
+  kind: maintained
+  ownership_note: Only the test is a proposed fix owner. Receipt and current-review
+    inputs are exact diagnostic evidence and must remain unchanged for this focused
+    review.
+- target_id: receipt24
+  path: reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json
+  label: Historical source-correction receipt24
+  kind: source
+  ownership_note: Only the test is a proposed fix owner. Receipt and current-review
+    inputs are exact diagnostic evidence and must remain unchanged for this focused
+    review.
+- target_id: receipt25
+  path: reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json
+  label: Current selected-owner mapping receipt25
+  kind: source
+  ownership_note: Only the test is a proposed fix owner. Receipt and current-review
+    inputs are exact diagnostic evidence and must remain unchanged for this focused
+    review.
+- target_id: current-review
+  path: reports/sssom_completion_20260921/review.json
+  label: Current mapping review dispositions
+  kind: generated
+  ownership_note: Only the test is a proposed fix owner. Receipt and current-review
+    inputs are exact diagnostic evidence and must remain unchanged for this focused
+    review.
+- target_id: historical-row-1
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:14-Butanediol; object_id=CHEBI:41189; predicate_id=skos:exactMatch;
+    source_position=38
+  label: MIM:14-Butanediol → CHEBI:41189
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-2
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:24-diamino-67-di-iso-propylpteridine_phosphate; object_id=CHEBI:73908;
+    predicate_id=skos:broadMatch; source_position=115
+  label: MIM:24-diamino-67-di-iso-propylpteridine_phosphate → CHEBI:73908
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-3
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:24-diamino-67-di-iso-propylpteridine_phosphate; object_id=kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate;
+    predicate_id=skos:exactMatch; source_position=116
+  label: MIM:24-diamino-67-di-iso-propylpteridine_phosphate → kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-4
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:25-didehydro-D-gluconate; object_id=CHEBI:11449; predicate_id=skos:exactMatch;
+    source_position=117
+  label: MIM:25-didehydro-D-gluconate → CHEBI:11449
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-5
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:5-dehydro-D-gluconate; object_id=CHEBI:58143; predicate_id=skos:exactMatch;
+    source_position=237
+  label: MIM:5-dehydro-D-gluconate → CHEBI:58143
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-6
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:Phenethylamine_Hydrochloride; object_id=CHEBI:18397; predicate_id=skos:exactMatch;
+    source_position=2252
+  label: MIM:Phenethylamine_Hydrochloride → CHEBI:18397
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-7
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:Wc_Trace_Elements_Solution; object_id=MICRO:0000455; predicate_id=skos:broadMatch;
+    source_position=2949
+  label: MIM:Wc_Trace_Elements_Solution → MICRO:0000455
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+- target_id: historical-row-8
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:Wc_Trace_Elements_Solution; object_id=kgmicrobe.ingredient:wc_trace_elements_solution;
+    predicate_id=skos:exactMatch; source_position=2950
+  label: MIM:Wc_Trace_Elements_Solution → kgmicrobe.ingredient:wc_trace_elements_solution
+  kind: snapshot_row
+  ownership_note: Generated current canonical row. The bounded defect belongs to the
+    test coordinate conversion, not to the row or its owner.
+checks:
+- check_id: native-inspection
+  name: Native exact target/input capture
+  status: passed
+  required: true
+  summary: Twelve targets and all25 receipt inputs captured; every hash verified against
+    the exact committed head.
+  target_ids:
+  - test-coordinate-contract
+  - receipt24
+  - receipt25
+  - current-review
+  - historical-row-1
+  - historical-row-2
+  - historical-row-3
+  - historical-row-4
+  - historical-row-5
+  - historical-row-6
+  - historical-row-7
+  - historical-row-8
+  command: python scripts/record_review.py inspect --targets /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/test-coordinate-blocker-targets.json
+    with explicit mapping-chain/context inputs
+  exit_code: 0
+  evidence_ids:
+  - test
+  - receipt24
+  - receipt25
+  - canonical
+- check_id: focused-pytest
+  name: Required native historical-concern assertion
+  status: failed
+  required: true
+  summary: Actual pytest reproduction fails at tests/test_source_mapping_concern_history.py:170;
+    the assertion indexes unrelated current rows using old coordinates.
+  target_ids:
+  - test-coordinate-contract
+  - receipt24
+  - receipt25
+  - current-review
+  - historical-row-1
+  - historical-row-2
+  - historical-row-3
+  - historical-row-4
+  - historical-row-5
+  - historical-row-6
+  - historical-row-7
+  - historical-row-8
+  command: env UV_OFFLINE=1 uv run pytest tests/test_source_mapping_concern_history.py::test_native_assembly_keeps_all_holds_and_exact_negative_evidence
+    -q --tb=long
+  exit_code: 1
+  expected_exit_code: 0
+  evidence_ids:
+  - focused-failure
+- check_id: independent-native-chain-audit
+  name: Independent current row/hold composition audit
+  status: passed
+  required: true
+  summary: All eight exact receipt24 endpoint rows remain WITHHOLD after composition
+    through receipt25. Four wrong stale slots explain the test failure.
+  target_ids:
+  - test-coordinate-contract
+  - receipt24
+  - receipt25
+  - current-review
+  - historical-row-1
+  - historical-row-2
+  - historical-row-3
+  - historical-row-4
+  - historical-row-5
+  - historical-row-6
+  - historical-row-7
+  - historical-row-8
+  command: uv run python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/audit_historical_positions.py
+  exit_code: 0
+  evidence_ids:
+  - independent-lineage-proof
+  - chain
+  - review
+evidence:
+- evidence_id: test
+  kind: record_content
+  reference: tests/test_source_mapping_concern_history.py
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Lines168-170 form touched directly from historical receipt24 after_position
+    and use it to index final current decisions, without applying later receipt maps.
+  snapshot_sha256: d5477373374b5aa0b9652310a25f8d4925b61035f304af38f64f63c0882345df
+- evidence_id: receipt24
+  kind: record_content
+  reference: reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Eight exact after rows and historical after_position coordinates.
+  snapshot_sha256: 3d8d3d1189d0393d5ccd23ce3b83a5196e1664f045269254160df33a20e6ea07
+- evidence_id: receipt25
+  kind: record_content
+  reference: reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Native position_map moves those eight rows as inserted selected-owner registry
+    rows shift following rows.
+  snapshot_sha256: 00165a2a85fc948237bd2502abb6e24f2fc7d3bd22eb426ae6ffd70fb786e0f1
+- evidence_id: review
+  kind: record_content
+  reference: reports/sssom_completion_20260921/review.json
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Current dispositions retain WITHHOLD at all eight correctly composed current
+    positions.
+  snapshot_sha256: 4bf7b2425323a0b064ca16d73a2094fded43403bdb03d932469454273b267c78
+- evidence_id: canonical
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: All eight historical endpoint rows survive byte-identically at their correctly
+    composed current positions.
+  snapshot_sha256: cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4
+- evidence_id: chain
+  kind: record_content
+  reference: src/mediaingredientmech/validation/mapping_change_receipts.py
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Native _replay composes forward positions through every receipt; production
+    row lineage is correct.
+  snapshot_sha256: f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d
+- evidence_id: focused-failure
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-source-history-failure-repro-v1.log
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Actual focused pytest reproduction fails at test line170, exit1; not a
+    hypothetical or inferred suite result.
+  snapshot_sha256: 4515b10ff62aec79323e661c48a6b2abca7ca56e4ae568ef47ab50243ed249ff
+- evidence_id: independent-lineage-proof
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/historical-position-test-defect.json
+  accessed_at: '2026-11-03T06:59:28.455654Z'
+  support: supports
+  summary: Independent native verify_mapping_chain and explicit later-position-map
+    composition verifies all eight after-row identities and WITHHOLD holds. Four stale
+    coordinates point at unrelated supported rows.
+  snapshot_sha256: cbed816ebeafdf3c9390cbb148ef346f727a21a953d8990df9ebd42342343593
+assessments:
+- assessment_id: test-coordinate-mismatch
+  area: consistency
+  topic: Historical versus current row coordinates
+  outcome: concern
+  summary: The test uses receipt24 coordinates as though they were coordinates of
+    the final receipt25 table. The focused native assertion fails because four stale
+    slots now belong to unrelated supported rows. This does not indicate that the
+    original eight held rows became supported.
+  target_ids:
+  - test-coordinate-contract
+  evidence_ids:
+  - test
+  - receipt24
+  - receipt25
+  - focused-failure
+  - independent-lineage-proof
+- assessment_id: native-receipt-and-review-integrity
+  area: provenance
+  topic: Production composition and preserved historical holds
+  outcome: supported
+  summary: Native full-chain validation succeeds. The eight receipt24 after rows map
+    through receipt25.position_map to current exact rows, and the current review retains
+    WITHHOLD for each. Neither receipt nor current production row must be changed
+    to accommodate the test defect.
+  target_ids:
+  - receipt24
+  - receipt25
+  - current-review
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - chain
+  - independent-lineage-proof
+- assessment_id: row-lineage-1
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:14-Butanediol / CHEBI:41189: historical receipt24 position 38 composes
+    to current position 38. Complete after row equality is verified and the current
+    disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-1
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-2
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:24-diamino-67-di-iso-propylpteridine_phosphate / CHEBI:73908: historical
+    receipt24 position 113 composes to current position 115. Complete after row equality
+    is verified and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-2
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-3
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:24-diamino-67-di-iso-propylpteridine_phosphate / kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate:
+    historical receipt24 position 114 composes to current position 116. Complete after
+    row equality is verified and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-3
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-4
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:25-didehydro-D-gluconate / CHEBI:11449: historical receipt24 position
+    115 composes to current position 117. Complete after row equality is verified
+    and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-4
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-5
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:5-dehydro-D-gluconate / CHEBI:58143: historical receipt24 position
+    233 composes to current position 237. Complete after row equality is verified
+    and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-5
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-6
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:Phenethylamine_Hydrochloride / CHEBI:18397: historical receipt24 position
+    2229 composes to current position 2252. Complete after row equality is verified
+    and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-6
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-7
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:Wc_Trace_Elements_Solution / MICRO:0000455: historical receipt24 position
+    2920 composes to current position 2949. Complete after row equality is verified
+    and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-7
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+- assessment_id: row-lineage-8
+  area: provenance
+  topic: Exact historical row retained with hold
+  outcome: supported
+  summary: 'MIM:Wc_Trace_Elements_Solution / kgmicrobe.ingredient:wc_trace_elements_solution:
+    historical receipt24 position 2921 composes to current position 2950. Complete
+    after row equality is verified and the current disposition is WITHHOLD.'
+  target_ids:
+  - historical-row-8
+  evidence_ids:
+  - receipt24
+  - receipt25
+  - review
+  - canonical
+  - independent-lineage-proof
+findings:
+- finding_id: historical-receipt-test-coordinates
+  issue_key: mim-receipt24-test-current-coordinates-1123
+  category: consistency
+  severity: minor
+  native_severity: test regression blocker
+  normalization_reason: The data and production lineage are correct; this bounded
+    test-coordinate defect nevertheless blocks the required suite and cannot be fixed
+    within the current permission.
+  status: open
+  certainty: confirmed
+  title: Receipt24 regression test treats historical after_position as current after
+    receipt25
+  description: Test indexes final decisions directly by receipt24.after_position,
+    omitting composition through subsequent position_map. Native chain composes positions
+    correctly, and all eight actual receipt24 endpoint rows still exist unchanged
+    and WITHHOLD. Incorrect supported-row lookups occur at old positions114,2229,2920,2921;
+    correct held endpoints are116,2252,2949,2950. The remaining four endpoints are
+    also exact and held.
+  target_ids:
+  - test-coordinate-contract
+  - receipt24
+  - receipt25
+  - current-review
+  - historical-row-1
+  - historical-row-2
+  - historical-row-3
+  - historical-row-4
+  - historical-row-5
+  - historical-row-6
+  - historical-row-7
+  - historical-row-8
+  field_paths:
+  - tests/test_source_mapping_concern_history.py:168-170
+  - receipt24.changes[].after_position
+  - receipt25.position_map
+  - review.decisions[].source_position
+  evidence_ids:
+  - test
+  - receipt24
+  - receipt25
+  - focused-failure
+  - independent-lineage-proof
+  rule_id: Compose historical row coordinates through every later native receipt before
+    consulting current decisions
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: tests/test_source_mapping_concern_history.py
+    role: Only proposed maintained fix owner; correction requires additional user
+      authorization
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1123
+actions:
+- action_id: await-authorized-test-coordinate-fix
+  description: Stop Step7d publication and merge work under the user stop condition.
+    If separately authorized, make the test compose receipt24 after_position through
+    later position maps or use exact proven row lineage; retain all assertions and
+    all eight held-row checks. Do not alter production row order, approvals or historical
+    receipts to satisfy stale positions.
+  finding_ids:
+  - historical-receipt-test-coordinates
+  target_ids:
+  - test-coordinate-contract
+  - receipt24
+  - receipt25
+  - current-review
+  - historical-row-1
+  - historical-row-2
+  - historical-row-3
+  - historical-row-4
+  - historical-row-5
+  - historical-row-6
+  - historical-row-7
+  - historical-row-8
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: tests/test_source_mapping_concern_history.py
+    role: Only proposed maintained fix owner; correction requires additional user
+      authorization
+  acceptance_checks:
+  - Explicit user permission covers this test edit beyond the paired selector exception.
+  - Focused regression verifies all eight actual current held rows after at least
+    one later insertion/removal receipt and preserves negative assertions.
+  - Required full suite and QC pass at the final head; independent re-review then
+    covers final applied science, snapshot and projection.
+limitations:
+- This is a completed diagnosis with BLOCKED workflow verdict, not a completed final-head
+  approval or an authority to waive the failing check.
+- Full-suite totals are not asserted here; the actual focused failure is complete
+  and hash-bound.
+- No chemistry or primary-source scientific claim is reassessed in this provenance-only
+  report.
+- Issue1122 correction and its refresh remain external proposals; no maintained correction,
+  push, PR or merge is authorized by this report.
+- No supervisor receipt binding was supplied or invented.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1123
+tags:
+- step7d
+- independent-review
+- blocked
+- test-coordinate-defect
+- not-release-approval
+```
