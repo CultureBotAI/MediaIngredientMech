@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:6731
   ontology_label: melezitose
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -26,6 +26,21 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Catalogue line1359 names generic D-(+)-melezitose hydrate CAS207511-10-2
+      with dry-basis504.44. SupplierM5375 independently states xH2O under that CAS.
+      This is not the fixed monohydrate owner already curated under CAS10030-67-8.
+      Retain its own CAS and generic-hydrate preferred label and use broadMatch to
+      melezitoseCHEBI6731. See the complete identity, mapping, chemistry and synonym
+      assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/D-_-melezitose_Hydrate.yaml. Primary
+      source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/6731/;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/207511-10-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.sigmaaldrich.com/US/en/product/sigma/m5375. Captures, exact input
+      hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms:
 - synonym_text: D-melezitose (melezitose)
   synonym_type: RAW_TEXT
@@ -88,14 +103,25 @@ curation_history:
     (melezitose)''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C18H34O17","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":16217716,"after":null}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 207511-10-2
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C18H34O17
-  smiles: C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O
-  inchi: InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1
-  pubchem_cid: 16217716
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

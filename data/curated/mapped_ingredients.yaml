@@ -1,4 +1,4 @@
-generation_date: '2026-11-03T06:16:50.559746+00:00'
+generation_date: '2026-11-03T06:18:42.852366+00:00'
 total_count: 2681
 mapped_count: 2611
 unmapped_count: 0
@@ -17805,13 +17805,28 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:17306
     ontology_label: maltose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#213)
@@ -17828,6 +17843,19 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'The source table explicitly names maltose hydrate and8BacDive-metabolite-utilization
+        observations. Preserve its distinct local identity without assigning the separate
+        D-maltose-monohydrate CAS or an anomer. See the complete identity, mapping,
+        chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Maltose_Hydrate.yaml. Primary source
+        references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/17306/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Maltose%20Hydrate&ontology=chebi,ncit&rows=100;
+        https://github.com/CultureBotAI/MediaIngredientMech/blob/467aa319a06ef992035f509f66fe251082b44ae1/data/custom/microbedecoder/unmapped_labels.tsv.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
 - identifier: kgmicrobe.compound:potassium_2-ketogluconate
   preferred_term: Potassium 2-ketogluconate
   synonyms:
@@ -22164,12 +22192,27 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   ingredient_type: SINGLE_INGREDIENT
   ontology_mapping:
     ontology_id: CHEBI:64736
     ontology_label: magnesium nitrate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MediaDive ingredient 1763 (CAS 13446-18-9)
@@ -22191,6 +22234,21 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'MediaDiveingredient1763 explicitly names Mg(NO3)2 x6H2O and CAS13446-18-9;
+        freshPubChemCAS resolvesCID202877 with magnesium dinitrate hexahydrate/H12MgN2O12.
+        ParentCHEBI64736 is magnesium nitrate withoutwaters. No exacteligiblehydrate
+        candidatefound. RetainformCAS and broadMatch toparent with B1registry; no
+        inventedchemicalprops. See the complete identity, mapping, chemistry and synonym
+        assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://mediadive.dsmz.de/rest/ingredients;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13446-18-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/64736/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
 - identifier: CHEBI:229630
   preferred_term: NH42CO3
   synonyms:
@@ -25383,7 +25441,7 @@ ingredients:
     ontology_id: CHEBI:17256
     ontology_label: 2'-deoxyadenosine
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -25405,6 +25463,22 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'The historical D7400 monohydrate and fresh supplier deposit/PubChem
+        CAS16373-93-6 agree. Keep this own CAS distinct from the separate CHEBI17256
+        parent owner. No form-specific CHEBI/NCIT candidate was established by the
+        recorded bounded queries. Retain CHEBI17256 as hydrate-of parent; NARROW_MATCH
+        exports skos:broadMatch, not identity or subclass_of. Formula C10H15N5O4 and
+        water-containing InChI/CID9549172 agree with the monohydrate. SMILES lacks
+        stereo annotation but does not assert the opposite stereoisomer; the InChI
+        retains stereo. Do not replace or extend chemistry in this batch. Primary
+        source references: https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/D7400_SIGMA/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16373-93-6/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/17256/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -25448,6 +25522,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 16373-93-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -25905,7 +25994,7 @@ ingredients:
     ontology_id: CHEBI:27469
     ontology_label: 2-dehydro-D-gluconic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -25928,6 +26017,22 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'CAS1040352-40-6 and K6250 source name agree on hemicalcium salt hydrate
+        with unspecified xH2O. Keep distinct from the separately curated monohydrate/MPBio
+        owner. Keep CHEBI27469 acid as the verified available parent for salt/hydrate
+        grounding; do not select CHEBI3309 calcium gluconate, which lacks the keto
+        group. Own CAS remains exact; B1 local identity is generated separately. Only
+        CAS and source provenance are active. PubChem''s fixed-water representation
+        is not enough to backfill a stoichiometric formula/structure against supplier
+        xH2O. Primary source references: https://www.sigmaaldrich.com/US/en/product/sigma/k6250;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/K6250_SIGMA/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1040352-40-6/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/27469/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -25978,6 +26083,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 1040352-40-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -30370,7 +30490,7 @@ ingredients:
     ontology_id: CHEBI:16388
     ontology_label: 4-hydroxymandelic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -30391,9 +30511,23 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Historical168327 and current supplier/PubChem agree on CAS184901-84-6
+        monohydrate, not the water-free parent. Keep CHEBI16388 as closest verified
+        parent, change quality to NARROW_MATCH and export broadMatch with separate
+        identities. Current formula C8H10O5, water-containing SMILES/InChI and CID12677290
+        match monohydrate. No replacement proposed. Primary source references: https://www.sigmaaldrich.com/US/en/product/aldrich/168327;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sid/24850239/JSON; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/184901-84-6/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/16388/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        Independent review identifies the existing exact synonym ''hydroxy(4-hydroxyphenyl)acetic
+        acid'' as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: hydroxy(4-hydroxyphenyl)acetic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -30433,6 +30567,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 184901-84-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -32179,7 +32328,7 @@ ingredients:
     ontology_id: CHEBI:74498
     ontology_label: 5-fluoroorotic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -32200,9 +32349,26 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Historical/current F5013 support a distinct hydrate CAS207291-81-4;
+        water count is unspecified. Preserve own CAS, do not rename it monohydrate.
+        Keep CHEBI74498 free acid as parent and NARROW_MATCH/broadMatch; no exact
+        monohydrate promotion. Current formula/SMILES/InChI/CID16212749 encode exactly
+        one water, while source F5013 explicitly gives xH2O. Withdraw these four unqualified
+        fields; do not replace them with zero-water or guessed hydrate values. Primary
+        source references: https://www.sigmaaldrich.com/US/en/product/sigma/f5013;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/F5013_SIGMA/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/207291-81-4/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/74498/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        Independent review identifies the existing exact synonym ''5-fluoro-2,6-dioxo-1,2,3,6-tetrahydropyrimidine-4-carboxylic
+        acid'' as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: 5-fluoro-2,6-dioxo-1,2,3,6-tetrahydropyrimidine-4-carboxylic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -32242,14 +32408,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C5H5FN2O5","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C1(=C(NC(=O)NC1=O)C(=O)O)F.O","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C5H3FN2O4.H2O/c6-1-2(4(10)11)7-5(12)8-3(1)9;/h(H,10,11)(H2,7,8,9,12);1H2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":16212749,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 207291-81-4
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C5H5FN2O5
-    smiles: C1(=C(NC(=O)NC1=O)C(=O)O)F.O
-    inchi: InChI=1S/C5H3FN2O4.H2O/c6-1-2(4(10)11)7-5(12)8-3(1)9;/h(H,10,11)(H2,7,8,9,12);1H2
-    pubchem_cid: 16212749
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:195418
   preferred_term: 5-Hydroxydodecanoate
@@ -45244,10 +45421,10 @@ ingredients:
 - identifier: cas:154804-51-0
   preferred_term: Beta-Glycerophosphate disodium salt hydrate
   ontology_mapping:
-    ontology_id: CHEBI:17270
-    ontology_label: glycerol 2-phosphate
+    ontology_id: CHEBI:132089
+    ontology_label: sodium glycerol 2-phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -45270,6 +45447,26 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'CAS154804-51-0 denotes beta/2-glycerophosphate disodium hydrate in the
+        inspected supplier comparator and historical source label. Preserve this hydrate
+        owner separately from CHEBI132089 sodium beta-glycerophosphate and the distinct
+        fixed-water sibling. CHEBI132089 sodium glycerol2-phosphate is a closer verified
+        parent than free-acid CHEBI17270: its definition is the disodium salt. Use
+        NARROW_MATCH/broadMatch to132089, not exact identity and not tetrahydrate132092.
+        Current CID44828775/SMILES/InChI place negative charge on terminal alcohols
+        while leaving phosphate OH, and all current structure/formula fields impose
+        one water. Supplier comparator instead gives phosphate disodium salt xH2O.
+        Withdraw formula, SMILES, InChI and CID without guessing a replacement. Primary
+        source references: https://www.sigmaaldrich.com/US/en/product/sigma/g9422;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/G9422_SIGMA/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/154804-51-0/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/17270/; https://www.ebi.ac.uk/chebi/backend/api/public/compound/132089/;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/132092/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: Na2-ß-glycerophosphate
     synonym_type: RAW_TEXT
@@ -45324,14 +45521,26 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:17270","after":"CHEBI:132089"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"glycerol
+      2-phosphate","after":"sodium glycerol 2-phosphate"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C3H9Na2O7P","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C(C[O-])OP(=O)(O)O)[O-].O.[Na+].[Na+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C3H7O6P.2Na.H2O/c4-1-3(2-5)9-10(6,7)8;;;/h3H,1-2H2,(H2,6,7,8);;;1H2/q-2;2*+1;","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":44828775,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 154804-51-0
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C3H9Na2O7P
-    smiles: C(C(C[O-])OP(=O)(O)O)[O-].O.[Na+].[Na+]
-    inchi: InChI=1S/C3H7O6P.2Na.H2O/c4-1-3(2-5)9-10(6,7)8;;;/h3H,1-2H2,(H2,6,7,8);;;1H2/q-2;2*+1;
-    pubchem_cid: 44828775
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:10429
   preferred_term: Beta-Lapachone
@@ -50170,7 +50379,7 @@ ingredients:
     ontology_id: CHEBI:232796
     ontology_label: cadmium acetate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -50200,9 +50409,23 @@ ingredients:
         ChEBI formula ('2C2H3O2.Cd') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Source CAS5743-04-4 plus supplier/PubChem confirms cadmium acetate dihydrate;
+        keep own CAS distinct from CHEBI232796 dry parent. Change quality to NARROW_MATCH/broadMatch
+        to232796; no exact dry-parent identity. Retain C4H6CdO4.2H2O and CAS. Withdraw
+        dry SMILES, dry InChI and CID10986; fresh dihydrate CID6537495 demonstrates
+        the mismatch but is not automatically imported as replacement. Primary source
+        references: https://www.sigmaaldrich.com/US/en/product/mm/102003; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/5743-04-4/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/232796/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        Independent review identifies the existing exact synonym ''cadmium(2+);diacetate''
+        as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: cadmium(2+);diacetate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -50251,14 +50474,26 @@ ingredients:
       value inherited from the parent rather than measured for this record. Water
       appended in ChEBI's own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","smiles"],"before":"CC(=O)[O-].CC(=O)[O-].[Cd+2]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/2C2H4O2.Cd/c2*1-2(3)4;/h2*1H3,(H,3,4);/q;;+2/p-2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":10986,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 5743-04-4
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
     molecular_formula: C4H6CdO4.2H2O
-    smiles: CC(=O)[O-].CC(=O)[O-].[Cd+2]
-    inchi: InChI=1S/2C2H4O2.Cd/c2*1-2(3)4;/h2*1H3,(H,3,4);/q;;+2/p-2
-    pubchem_cid: 10986
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:63938
   preferred_term: Cadmium chloride hemipentahydrate
@@ -54109,180 +54344,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
-- identifier: kgmicrobe.compound:cecl3_x_7_h2o
-  preferred_term: CeCl3 x 7 H2O
-  ontology_mapping:
-    ontology_id: CHEBI:35458
-    ontology_label: cerium trichloride
-    ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is
-        a hydrate of CHEBI:35458, not an exact match to it] Imported from CultureMech
-        pipeline, quality=DIRECT_MATCH'
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321/#334)
-      notes: identifier CHEBI:35458 -> kgmicrobe.compound:cecl3_x_7_h2o; mapping_quality
-        EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:35458 ('cerium
-        trichloride') and was sharing that term's identifier — the identity collapse
-        MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
-        from its anhydrous parent downstream. ChEBI has no term for this hydrate and
-        the record carries no verified CAS, so steps 1 and 2 are unavailable and step
-        3 applies.
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321)
-      notes: molecular_formula 'CeCl3' -> 'CeCl3.7H2O'. The recorded value described
-        the anhydrous salt while the label names a hydrate, understating the mass
-        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
-        and the recorded formula was byte-identical to the anhydrous parent CHEBI:35458's
-        ChEBI formula ('CeCl3') — the mark of a value inherited from the parent rather
-        than measured for this record. Water appended in ChEBI's own dot-separated
-        notation.
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#342)
-      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
-        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
-        than CHEBI:35458 (''cerium trichloride'') — a subsumption ChEBI itself denies:
-        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
-        compound, which is not an ancestor even transitively. A hydrate is a distinct
-        substance containing the anhydrous form, not a specialization of it. closeMatch
-        claims similarity without subsumption. The ontology_id and the record''s own
-        identifier are unchanged.'
-  synonyms:
-  - synonym_text: cerium(3+) chloride
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  - synonym_text: cerium(III) chloride
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  - synonym_text: trichloridocerium
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 4
-    media_count: 4
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-09T00:32:50.689620+00:00'
-    curator: enrich_mim_cas_rn_batch
-    action: CAS_RN_ADDED
-    changes: Added CAS-RN 7790-86-5 from PubChem (via CHEBI:35458)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.670269+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.491723+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=CeCl3; inchi=InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3; smiles=[Cl][Ce]([Cl])[Cl]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.189956+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-09T04:56:30.247812+00:00'
-    curator: claude_in_session_curation
-    action: ANNOTATED
-    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
-  - timestamp: '2026-06-09T05:23:46.736943+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''CeCl3 x 7 H2O'' -> ''cerium trichloride'': synced to
-      canonical CHEBI label (preferred_term ''CeCl3 x 7 H2O'' unchanged).'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
-      nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: mint_hydrate_registry_terms
-    action: MINTED_REGISTRY_FOR_HYDRATE
-    changes: identifier CHEBI:35458 -> kgmicrobe.compound:cecl3_x_7_h2o; mapping_quality
-      EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: add_water_of_hydration
-    action: ADDED_WATER_OF_HYDRATION
-    changes: molecular_formula 'CeCl3' -> 'CeCl3.7H2O' (#321); the label states 7
-      water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
-      parent CHEBI:35458's ChEBI formula ('CeCl3') — the mark of a value inherited
-      from the parent rather than measured for this record. Water appended in ChEBI's
-      own dot-separated notation.
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: regrade_hydrate_to_close_match
-    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
-    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
-      subsumed by its anhydrous form, and ChEBI does not model it as such.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518539+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-08-29T04:18:06.717442+00:00'
-    curator: hydrate_family_cas
-    action: CORRECTED
-    changes: 'cas_rn 7790-86-5 REMOVED, not replaced: it is the anhydrous CeCl3 CAS,
-      and this record names a hydrate -- a different substance with a different formula
-      weight. ChEBI has no term for this hydration state, so no authoritative value
-      can be substituted. The grounding is separately wrong (#321); this corrects
-      only the CAS (#334).'
-  - timestamp: '2026-09-22T20:41:14.285965+00:00'
-    curator: claude
-    action: REJECTED_PARENT_NAME_SYNONYMS
-    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
-      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
-      form and the label index resolved the parent''s name here (#232): ''cerium(3+)
-      chloride''; ''cerium(III) chloride''; ''trichloridocerium''. Preserved original
-      text and source metadata. No identity, mapping, role, or remaining-synonym claim
-      was adjudicated.'
-    llm_assisted: true
-  - timestamp: '2026-11-02T05:34:27.474256+00:00'
-    curator: Codex
-    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
-    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
-      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
-      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
-      supplies the current water-free structures. Remove the incompatible inherited
-      structures rather than calculate or guess replacements. No exact form ID selection,
-      invented water-containing SMILES, or verification of every retained field. Existing
-      form/identity questions remain held. Original chemical_properties={"data_source":
-      "PubChem (via CHEBI:35458)", "inchi": "InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3",
-      "molecular_formula": "CeCl3.7H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
-      "smiles": "[Cl][Ce]([Cl])[Cl]"}. Preserved identifier, ontology mapping and
-      grade, roles, synonyms, counts, status and original history. No mapping, role
-      or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
-      owner=data/ingredients/mapped/Cecl3_X_7_H2o.yaml; before_sha256=333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-    llm_model: gpt-6
-  chemical_properties:
-    molecular_formula: CeCl3.7H2O
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.6
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Assigned by in-session Claude reasoning (no external API)
-      curator_note: Provisional in-session LLM role assignment; review recommended.
 - identifier: CHEBI:201428
   preferred_term: Cecropin A
   ontology_mapping:
@@ -54828,7 +54889,7 @@ ingredients:
     ontology_id: CHEBI:31380
     ontology_label: Cefsulodin sodium
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54853,6 +54914,23 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Historical C8145 and current supplier describe the same source-defined
+        cefsulodin sodium salt hydrate xH2O. Retain local hydrate identity; CAS52152-93-9
+        resolves to the water-free salt and is not selected as exact hydrate primary.
+        CHEBI31380 is the verified water-free sodium salt and the closest inspected
+        parent. NARROW_MATCH exports broadMatch; do not select NCITC98228 as exact
+        hydrate because it describes the same water-free salt. Dry structures were
+        already removed in7b. Move the remaining procurement CAS out of unqualified
+        chemical_properties.cas_rn into supplied_form; preserve source/retrieval metadata
+        and full old history. Primary source references: https://www.sigmaaldrich.com/US/en/product/sigma/c8145;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C8145_SIGMA/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/52152-93-9/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/31380/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -54926,8 +55004,27 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","cas_rn"],"before":"52152-93-9","after":null},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"Cefsulodin
+      sodium salt hydrate","cas_rn":"52152-93-9","form":"sodium salt hydrate (xH2O;
+      unspecified water stoichiometry)","supplier":"Sigma-Aldrich","catalog_number":"C8145","notes":"CultureBotHT
+      historical compounds_to_cas.csv source catalogue C8145; current supplier page
+      confirms xH2O and procurement CAS52152-93-9. This CAS also identifies the water-free
+      sodium salt and is not the exact identifier of this local hydrate owner. Catalogue
+      association is not a purchased-lot claim."}]}]. Original values are preserved
+      here and in the immutable source preimages. Appended scoped mapping evidence.
+      NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific
+      NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status
+      and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/;
+      primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    cas_rn: 52152-93-9
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
   ingredient_type: SINGLE_INGREDIENT
@@ -54938,6 +55035,16 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  supplied_form:
+  - name: Cefsulodin sodium salt hydrate
+    cas_rn: 52152-93-9
+    form: sodium salt hydrate (xH2O; unspecified water stoichiometry)
+    supplier: Sigma-Aldrich
+    catalog_number: C8145
+    notes: CultureBotHT historical compounds_to_cas.csv source catalogue C8145; current
+      supplier page confirms xH2O and procurement CAS52152-93-9. This CAS also identifies
+      the water-free sodium salt and is not the exact identifier of this local hydrate
+      owner. Catalogue association is not a purchased-lot claim.
 - identifier: cas:120618-65-7
   preferred_term: Ceftazidime hydrate
   ontology_mapping:
@@ -57175,7 +57282,7 @@ ingredients:
     ontology_id: CHEBI:81711
     ontology_label: chlorhexidine acetate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -57200,10 +57307,30 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Historical C6143 and current supplier explicitly identify chlorhexidine
+        diacetate salt hydrate, current formula xH2O. This settles the source-defined
+        variable hydrate, not a fixed monohydrate. Retain its local identity distinct
+        from water-free CHEBI81711. Use NARROW_MATCH/broadMatch to the diacetate parent.
+        Current supplier CAS206986-79-0 yields mixed PubChem forms and does not justify
+        any exact CAS or ontology primary promotion. 7b removed dry structures. Historical
+        chemical CAS56-95-1 is the water-free parent CAS; move procurement context
+        to supplied_form with explicit historical/current disagreement, preserving
+        both observations without exact-identity assertion. Primary source references:
+        https://www.sigmaaldrich.com/US/en/product/sigma/c6143; https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C6143_SIGMA/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/56-95-1/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/206986-79-0/property/Title,MolecularFormula,InChI,InChIKey/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/81711/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        Independent review identifies the existing exact synonym ''N,N''''''''-hexane-1,6-diylbis[N''-(4-chlorophenyl)triimidodicarbonic
+        diamide] acetate (1:2)'' as the water-free parent, not this hydrate; preserve
+        it as REJECTED_LABEL. This curation adds no scientific, mapping-release or
+        role approval; changed owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: N,N''''-hexane-1,6-diylbis[N'-(4-chlorophenyl)triimidodicarbonic
       diamide] acetate (1:2)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -57269,11 +57396,43 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","cas_rn"],"before":"56-95-1","after":null},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"Chlorhexidine
+      diacetate salt hydrate","cas_rn":"206986-79-0","form":"diacetate salt hydrate
+      (xH2O; unspecified water stoichiometry)","supplier":"Sigma-Aldrich","catalog_number":"C6143","notes":"CultureBotHT
+      historical compounds_to_cas.csv associated C6143 with CAS56-95-1; the inspected
+      current C6143 supplier page instead lists CAS206986-79-0 and xH2O. Preserve
+      this source-history disagreement. These are procurement cross-references, not
+      an exact CAS identity or fixed-hydration decision for the local hydrate owner;
+      no purchased lot is asserted."}]},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
-    cas_rn: 56-95-1
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
   ingredient_type: SINGLE_INGREDIENT
+  supplied_form:
+  - name: Chlorhexidine diacetate salt hydrate
+    cas_rn: 206986-79-0
+    form: diacetate salt hydrate (xH2O; unspecified water stoichiometry)
+    supplier: Sigma-Aldrich
+    catalog_number: C6143
+    notes: CultureBotHT historical compounds_to_cas.csv associated C6143 with CAS56-95-1;
+      the inspected current C6143 supplier page instead lists CAS206986-79-0 and xH2O.
+      Preserve this source-history disagreement. These are procurement cross-references,
+      not an exact CAS identity or fixed-hydration decision for the local hydrate
+      owner; no purchased lot is asserted.
 - identifier: CHEBI:16112
   preferred_term: Chlorogenic acid
   ontology_mapping:
@@ -60170,7 +60329,7 @@ ingredients:
     ontology_id: CHEBI:35696
     ontology_label: cobalt dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -60205,6 +60364,21 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'MediaDive578 and five current source recipes name CoCl2·2H2O; publisher-deposited
+        primary abstract reports single-crystal CoCl2·2H2O. Retain the local two-water
+        identity, without selecting an unverified CAS lead. No exact eligible term
+        was established by bounded queries. CHEBI35696 is the closest verified water-free
+        parent; use NARROW_MATCH/broadMatch and retain exact local identity. Current2Cl.Co.2H2O
+        matches the source-defined stoichiometry. Dry structure fields were removed
+        in7b and remain absent. Computed PubChem is corroboration, not the sole experimental
+        proof. Primary source references: https://api.crossref.org/works/10.1063/1.1726454;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/129656378/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/35696/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: CoCl2 . 6H2O
     synonym_type: REJECTED_LABEL
@@ -60375,6 +60549,21 @@ ingredients:
       synonyms, counts, status and original history. No mapping, role or release approval.
       Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
       owner=data/ingredients/mapped/Cocl2_X_2_H2o.yaml; before_sha256=f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
@@ -62898,161 +63087,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
-- identifier: kgmicrobe.compound:cu_no32_x_3_h2o
-  preferred_term: Cu(NO3)2 x 3 H2O
-  ontology_mapping:
-    ontology_id: CHEBI:78036
-    ontology_label: copper(II) nitrate
-    ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is
-        a hydrate of CHEBI:78036, not an exact match to it] Imported from CultureMech
-        pipeline, quality=DIRECT_MATCH'
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321/#334)
-      notes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
-        EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:78036 ('copper(II)
-        nitrate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS
-        §3 forbids, which made a distinct substance indistinguishable from its anhydrous
-        parent downstream. ChEBI has no term for this hydrate and the record carries
-        no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321)
-      notes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O'. The recorded value described
-        the anhydrous salt while the label names a hydrate, understating the mass
-        by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration,
-        and the recorded formula was byte-identical to the anhydrous parent CHEBI:78036's
-        ChEBI formula ('Cu.2NO3') — the mark of a value inherited from the parent
-        rather than measured for this record. Water appended in ChEBI's own dot-separated
-        notation.
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#342)
-      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
-        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
-        than CHEBI:78036 (''copper(II) nitrate'') — a subsumption ChEBI itself denies:
-        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
-        compound, which is not an ancestor even transitively. A hydrate is a distinct
-        substance containing the anhydrous form, not a specialization of it. closeMatch
-        claims similarity without subsumption. The ontology_id and the record''s own
-        identifier are unchanged.'
-  synonyms:
-  - synonym_text: copper(II) nitrate (anhydrous)
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: copper(2+) dinitrate
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-09T00:32:50.689620+00:00'
-    curator: enrich_mim_cas_rn_batch
-    action: CAS_RN_ADDED
-    changes: Added CAS-RN 10031-43-3 from CultureBotHT/compounds_to_cas.csv
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: copper(II) nitrate
-      (anhydrous)'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:32.937262+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.831051+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=Cu.2NO3; inchi=InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1;
-      smiles=O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.577264+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-09T05:23:46.746528+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''Cu(NO3)2 x 3 H2O'' -> ''copper(II) nitrate'': synced
-      to canonical CHEBI label (preferred_term ''Cu(NO3)2 x 3 H2O'' unchanged).'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: mint_hydrate_registry_terms
-    action: MINTED_REGISTRY_FOR_HYDRATE
-    changes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
-      EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: add_water_of_hydration
-    action: ADDED_WATER_OF_HYDRATION
-    changes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O' (#321); the label states
-      3 water(s) of hydration, and the recorded formula was byte-identical to the
-      anhydrous parent CHEBI:78036's ChEBI formula ('Cu.2NO3') — the mark of a value
-      inherited from the parent rather than measured for this record. Water appended
-      in ChEBI's own dot-separated notation.
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: regrade_hydrate_to_close_match
-    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
-    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
-      subsumed by its anhydrous form, and ChEBI does not model it as such.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518635+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: claude
-    action: REJECTED_WRONG_FORM_SYNONYMS
-    changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
-      (anhydrous) (#878).'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-11-02T05:34:27.474256+00:00'
-    curator: Codex
-    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
-    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
-      chemical_properties.smiles. Set fields: {}. Record states a fixed hydrate while
-      exact archived parent ontology supplies the current water-free structures. Remove
-      the incompatible inherited structures rather than calculate or guess replacements.
-      No exact form ID selection, invented water-containing SMILES, or verification
-      of every retained field. Existing form/identity questions remain held. Original
-      chemical_properties={"cas_rn": "10031-43-3", "data_source": "CultureBotHT/compounds_to_cas.csv",
-      "inchi": "InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1", "molecular_formula": "Cu.2NO3.3H2O",
-      "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles": "O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]"}.
-      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
-      and original history. No mapping, role or release approval. Exact preimage and
-      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
-      owner=data/ingredients/mapped/Cu_No32_X_3_H2o.yaml; before_sha256=cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-    llm_model: gpt-6
-  chemical_properties:
-    cas_rn: 10031-43-3
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cu.2NO3.3H2O
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53472
   preferred_term: CuCl
   ontology_mapping:
@@ -65821,7 +65855,7 @@ ingredients:
     ontology_id: CHEBI:6731
     ontology_label: melezitose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -65843,6 +65877,21 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogue line1359 names generic D-(+)-melezitose hydrate CAS207511-10-2
+        with dry-basis504.44. SupplierM5375 independently states xH2O under that CAS.
+        This is not the fixed monohydrate owner already curated under CAS10030-67-8.
+        Retain its own CAS and generic-hydrate preferred label and use broadMatch
+        to melezitoseCHEBI6731. See the complete identity, mapping, chemistry and
+        synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/D-_-melezitose_Hydrate.yaml. Primary
+        source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/6731/;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/207511-10-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.sigmaaldrich.com/US/en/product/sigma/m5375. Captures, exact input
+        hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: D-melezitose (melezitose)
     synonym_type: RAW_TEXT
@@ -65906,14 +65955,25 @@ ingredients:
       (melezitose)''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C18H34O17","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":16217716,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 207511-10-2
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C18H34O17
-    smiles: C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O
-    inchi: InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1
-    pubchem_cid: 16217716
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -66673,7 +66733,7 @@ ingredients:
     ontology_id: CHEBI:190546
     ontology_label: D-Fructose 6-Phosphate-Disodium Salt
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -66693,9 +66753,24 @@ ingredients:
         A hydrate is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogue line1360 names the disodium D-fructose6-phosphate hydrate
+        and CAS26177-86-6. Inspected supplier F3627 independently uses that CAS and
+        C6H11Na2O9P·xH2O. No fixed water count is justified. The ChEBI parent is the
+        two-sodium water-free moiety; retain the CAS identity and use a form-of broadMatch,
+        never an exact hydrate-to-parent assertion. See the complete identity, mapping,
+        chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/190546/;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/26177-86-6/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.sigmaaldrich.com/US/en/product/sigma/f3627. Captures, exact input
+        hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -66745,14 +66820,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C6H11Na2O9P","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C6H13O9P.2Na/c7-1-3(8)5(10)6(11)4(9)2-15-16(12,13)14;;/h4-7,9-11H,1-2H2,(H2,12,13,14);;/q;2*+1/p-2/t4-,5-,6-;;/m1../s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C(C(C(C(=O)CO)O)O)O)OP(=O)([O-])[O-].[Na+].[Na+]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":22812950,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 26177-86-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C6H11Na2O9P
-    smiles: C(C(C(C(C(=O)CO)O)O)O)OP(=O)([O-])[O-].[Na+].[Na+]
-    inchi: InChI=1S/C6H13O9P.2Na/c7-1-3(8)5(10)6(11)4(9)2-15-16(12,13)14;;/h4-7,9-11H,1-2H2,(H2,12,13,14);;/q;2*+1/p-2/t4-,5-,6-;;/m1../s1
-    pubchem_cid: 22812950
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -66767,7 +66853,7 @@ ingredients:
     ontology_id: CHEBI:18024
     ontology_label: D-galacturonic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -66798,6 +66884,20 @@ ingredients:
         ChEBI formula ('C6H10O7') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogue line142 identifies Sigma48280 D-galacturonic acid monohydrate,
+        CAS91510-62-2,212.15. The inspected Wako primary product independently gives
+        that CAS and one-water formula. ParentCHEBI18024 explicitly denotes D-galacturonic
+        acid. Bounded ontology discovery found no exact eligible hydrate term; retain
+        own CAS and make the parent relation broadMatch. See the complete identity,
+        mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/D-Galacturonic_Acid_Monohydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://labchem-wako.fujifilm.com/us/product/detail/W01W0232-5034.html;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/18024/; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/91510-62-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: D-galacturonate
     synonym_type: REJECTED_LABEL
@@ -66858,6 +66958,21 @@ ingredients:
       Preserved original text and source metadata. No identity, mapping, role, or
       remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 91510-62-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -67194,10 +67309,10 @@ ingredients:
 - identifier: cas:207300-70-7
   preferred_term: D-Glucuronic acid sodium salt monohydrate
   ontology_mapping:
-    ontology_id: CHEBI:4178
-    ontology_label: D-glucuronic acid
+    ontology_id: CHEBI:32144
+    ontology_label: Sodium glucuronate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -67218,6 +67333,21 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogue line1164 names D-glucuronic acid sodium salt monohydrate CAS207300-70-7;
+        CID24892836 independently has the sodium/D-stereo/one-water composition. Exact
+        hydrate candidate not found in bounded CHEBI/NCIT search. CHEBI32144 Sodium
+        glucuronate is the closer salt parent than current acidCHEBI4178; its explicit
+        D stereochemical InChI is the current InChI without water and its CAS14984-34-0
+        is distinct. See the complete identity, mapping, chemistry and synonym assessment
+        in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/207300-70-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/4178/; https://www.ebi.ac.uk/chebi/backend/api/public/compound/32144/.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: (sodium salt)
     synonym_type: RAW_TEXT
@@ -67269,6 +67399,21 @@ ingredients:
       salt)''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:4178","after":"CHEBI:32144"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"D-glucuronic
+      acid","after":"Sodium glucuronate"}]. Original values are preserved here and
+      in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH
+      serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity
+      serializes skos:exactMatch. Preserved prior history, roles, status and occurrence
+      counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/;
+      primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 207300-70-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -70545,7 +70690,7 @@ ingredients:
     ontology_id: CHEBI:14336
     ontology_label: glycerol 1-phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -70566,12 +70711,29 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogue line1378 names DL-glycerol1-phosphate sodium salt hydrate
+        CAS17603-42-8. Inspected supplier61668 independently names the same racemic1-phosphate
+        hydrate and CAS, but explicitly gives xNa+/yH2O. The phosphate position/racemic
+        scope are supported; sodium and water stoichiometry must remain unspecified.
+        The broader rac-glycerol1-phosphate parentCHEBI14336 is consistent. Retain
+        CAS identity, use broadMatch, and do not equate with G6501 positional-isomer
+        mixture. See the complete identity, mapping, chemistry and synonym assessment
+        in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/14336/;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17603-42-8/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.sigmaaldrich.com/US/en/product/sigma/61668. Captures, exact input
+        hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: 2,3-dihydroxypropyl dihydrogen phosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: glycerol 1-(dihydrogen phosphate)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -70620,14 +70782,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C3H8NaO6P","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C3H9O6P.Na/c4-1-3(5)2-9-10(6,7)8;/h3-5H,1-2H2,(H2,6,7,8);/q;+1/p-1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C(COP(=O)(O)[O-])O)O.[Na+]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":23672316,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"},{"op":"set","path":["synonyms",1,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 17603-42-8
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C3H8NaO6P
-    smiles: C(C(COP(=O)(O)[O-])O)O.[Na+]
-    inchi: InChI=1S/C3H9O6P.Na/c4-1-3(5)2-9-10(6,7)8;/h3-5H,1-2H2,(H2,6,7,8);/q;+1/p-1
-    pubchem_cid: 23672316
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -77576,10 +77749,10 @@ ingredients:
 - identifier: cas:13235-36-4
   preferred_term: EDTA tetrasodium tetrahydrate salt
   ontology_mapping:
-    ontology_id: CHEBI:4735
-    ontology_label: ethylenediaminetetraacetic acid
+    ontology_id: CHEBI:750784
+    ontology_label: edetate sodium
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -77603,6 +77776,22 @@ ingredients:
         is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogue line1092/CAS13235-36-4/FW452.23 and PubChemCID23287279 consistently
+        specify EDTA tetrasodium tetrahydrate. No exact hydrate term found in the
+        bounded searches. CHEBI750784 edetate sodium is a closer parent than EDTA
+        freeacidCHEBI4735: it explicitly has four sodium ions and no water, with matching
+        organic skeleton. NCItC76598 independently describes that water-free tetrasodium
+        parent/CAS64-02-8. Retain hydrate CAS and broadMatch to CHEBI750784. See the
+        complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13235-36-4/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/750784/; https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C76598?include=full;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/4735/. Captures, exact
+        input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: Ethylenediamintetraacetic acid (EDTA)
     synonym_type: RAW_TEXT
@@ -77673,6 +77862,21 @@ ingredients:
       acid (EDTA)''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:4735","after":"CHEBI:750784"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"ethylenediaminetetraacetic
+      acid","after":"edetate sodium"}]. Original values are preserved here and in
+      the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH
+      serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity
+      serializes skos:exactMatch. Preserved prior history, roles, status and occurrence
+      counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/;
+      primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 13235-36-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -87211,7 +87415,7 @@ ingredients:
     ontology_id: CHEBI:17973
     ontology_label: alpha-D-galactose 1-phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -87234,6 +87438,21 @@ ingredients:
         is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline1214 CAS19046-60-7/FW426.39 says pentahydrate. Inspected
+        primaryCalbiochem345646 explicitly names alpha-D-galactose1-phosphate dipotassium
+        pentahydrate with C6H11K2O9P·5H2O/426.39; this supports the stereochemical
+        source and broader alpha-D parentCHEBI17973. No exact hydrate/salt term found
+        in bounded discovery. Retain CAS and broadMatch to the closest found parent.
+        See the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/17973/;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/19046-60-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.sigmaaldrich.com/US/en/product/mm/345646. Captures, exact input
+        hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -87286,14 +87505,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C6H11K2O9P","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C1C(C(C(C(O1)OP(=O)([O-])[O-])O)O)O)O.[K+].[K+]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":87916,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 19046-60-7
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C6H11K2O9P
-    smiles: C(C1C(C(C(C(O1)OP(=O)([O-])[O-])O)O)O)O.[K+].[K+]
-    inchi: InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1
-    pubchem_cid: 87916
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -89891,7 +90121,7 @@ ingredients:
     ontology_id: CHEBI:73898
     ontology_label: Gly-Gln
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -89911,9 +90141,23 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline1336/CAS172669-64-6/FW221.21 identifies Gly-Gln monohydrate.
+        PubChemCAS gives the L-glutamine dipeptide with one water and CHEBI73898 is
+        the corresponding water-free glycyl-L-glutamine parent. Retain hydrate CAS
+        and broadMatch; do not collapse into the parent. See the complete identity,
+        mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/Gly-Gln_Monohydrate.yaml. Primary source
+        references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/73898/;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/172669-64-6/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://github.com/CultureBotAI/MediaIngredientMech/issues/326. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: glycyl-L-glutamine
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -89964,13 +90208,26 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C7H13N3O4/c8-3-6(12)10-4(7(13)14)1-2-5(9)11/h4H,1-3,8H2,(H2,9,11)(H,10,12)(H,13,14)/t4-/m0/s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"NCC(=O)N[C@@H](CCC(N)=O)C(=O)O","after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 172669-64-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
     molecular_formula: C7H15N3O5
-    inchi: InChI=1S/C7H13N3O4/c8-3-6(12)10-4(7(13)14)1-2-5(9)11/h4H,1-3,8H2,(H2,9,11)(H,10,12)(H,13,14)/t4-/m0/s1
-    smiles: NCC(=O)N[C@@H](CCC(N)=O)C(=O)O
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:73801
   preferred_term: Gly-Glu
@@ -103087,7 +103344,7 @@ ingredients:
     ontology_id: CHEBI:17053
     ontology_label: L-aspartic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -103108,6 +103365,20 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline1340 CAS323194-76-9/FW173.1 names sodium L-aspartate monohydrate;
+        PubChemCID23679051 gives one sodium, one water and Lconfiguration. No exacthydrate
+        or nearer sodium-aspartate term found in bounded CHEBI/NCIT label/synonym/CAS
+        searches. Retain CAS and broadMatch to L-asparticacidCHEBI17053 with separate
+        B1 registry. See the complete identity, mapping, chemistry and synonym assessment
+        in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/323194-76-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/17053/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: (2S)-2-aminobutanedioic acid
     synonym_type: REJECTED_LABEL
@@ -103179,6 +103450,21 @@ ingredients:
       acid''; ''ASPARTIC ACID''. Preserved original text and source metadata. No identity,
       mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 323194-76-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -103360,7 +103646,7 @@ ingredients:
     ontology_id: CHEBI:17285
     ontology_label: L-cysteic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -103381,6 +103667,19 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline1338 CAS23537-25-9/FW187.17 and PubChemCID12308854 establish
+        L-cysteic acid monohydrate, including the L-specific stereochemical InChI.
+        CHEBI17285 is L-cysteicacid without water. No exacthydrate candidate found;
+        retainCAS and broadMatch plus separate B1registry. See the complete identity,
+        mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/L-Cysteic_Acid_Monohydrate.yaml. Primary
+        source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/23537-25-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/17285/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -103420,6 +103719,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 23537-25-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -103603,7 +103917,7 @@ ingredients:
     ontology_id: CHEBI:16015
     ontology_label: L-glutamic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -103626,6 +103940,21 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline247 expressly selects Fluka49601 L-glutamicacid monopotassium
+        monohydrate/CAS6382-01-0/FW203.24. PubChemCID23695977 has oneK, one water
+        and Lconfiguration; two majorCAS-returned structures share its stereo/InChI
+        while another differs in proton count, so do not select a newCID from the
+        list. Bounded CHEBI/NCIT search found no closer potassiumsalt/form term. RetainCAS
+        and broadMatch to L-glutamicacidCHEBI16015. See the complete identity, mapping,
+        chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml.
+        Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/6382-01-0/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/16015/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium
       salt
@@ -103701,6 +104030,21 @@ ingredients:
       acid''; ''GLUTAMIC ACID''. Preserved original text and source metadata. No identity,
       mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 6382-01-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -104331,7 +104675,7 @@ ingredients:
     ontology_id: CHEBI:62345
     ontology_label: L-rhamnose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -104354,6 +104698,20 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline258 selects Acros174081000 L-rhamnosemonohydrate/CAS10030-85-0/FW182.17.
+        PubChemCID20849066 preserves Lstereo with one water. ChEBI62345 defines any
+        L-configuration rhamnose, so it is a defensible readable broaderparent; do
+        not force an aldehydo exactidentity from open-chain structure. No exacthydrate
+        candidate found in boundedeligibleontologies. See the complete identity, mapping,
+        chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml. Primary
+        source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10030-85-0/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/62345/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -104405,6 +104763,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 10030-85-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -112084,7 +112457,7 @@ ingredients:
     ontology_id: CHEBI:48607
     ontology_label: lithium chloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -112105,6 +112478,22 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Catalogueline483 names lithiumchloridehydrate/CAS85144-11-2 without
+        a fixedwatercount. Inspected SigmaCoA298328 explicitly gives LiCl·xH2O and
+        drybasis42.39 for thatCAS. PubChem maps it to a mono-waterrepresentation,
+        which does not establish fixedhydration of the namedgenericmaterial. Retain
+        sourceCAS and genericpreferredterm, broadMatch to lithiumchlorideCHEBI48607;
+        do not rename tomonohydrate. See the complete identity, mapping, chemistry
+        and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml. Primary
+        source references: https://github.com/CultureBotAI/CultureBotHT; https://www.sigmaaldrich.cn/certificates/sapfs/PROD/sap/certificate_pdfs/COFA/Q14/298328-BULK0000494843.pdf;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/85144-11-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/48607/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -112144,14 +112533,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"ClH2LiO","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/ClH.Li.H2O/h1H;;1H2/q;+1;/p-1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"[Li+].O.[Cl-]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":23681138,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 85144-11-2
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: ClH2LiO
-    smiles: '[Li+].O.[Cl-]'
-    inchi: InChI=1S/ClH.Li.H2O/h1H;;1H2/q;+1;/p-1
-    pubchem_cid: 23681138
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:16325
   preferred_term: Lithocholic acid
@@ -115178,10 +115578,10 @@ ingredients:
 - identifier: cas:312693-63-3
   preferred_term: Maltotriose hydrate
   ontology_mapping:
-    ontology_id: CHEBI:61993
-    ontology_label: maltotriose
+    ontology_id: CHEBI:140999
+    ontology_label: alpha-D-Glcp-(1->4)-alpha-D-Glcp-(1->4)-D-Glcp
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -115203,6 +115603,20 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Keep CAS312693-63-3. Original source names maltotriose hydrate with
+        mass522.5; current CAS-resolved PubChem16218586 gives one-water cyclic reducing-end-unspecified
+        maltotriose. This does not justify an alpha-only reducing end. See the complete
+        identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Maltotriose_Hydrate.yaml. Primary source
+        references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/61993/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Maltotriose%20hydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/312693-63-3/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/140999/; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -115249,6 +115663,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:61993","after":"CHEBI:140999"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"maltotriose","after":"alpha-D-Glcp-(1->4)-alpha-D-Glcp-(1->4)-D-Glcp"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 312693-63-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -141928,7 +142357,7 @@ ingredients:
     ontology_id: CHEBI:34887
     ontology_label: nickel dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -141963,6 +142392,20 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Preserve the local dihydrate identity. MediaDive981 explicitly names
+        NiCl2 x2H2O; primary experimental literature establishes nickel chloride dihydrate.
+        Its automatic CAS7718-54-9 belongs to the water-free parent and is not adopted.
+        See the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Nicl2_X_2_H2o.yaml. Primary source
+        references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/34887/;
+        https://www.ebi.ac.uk/ols4/api/search?q=NiCl2%20x%202%20H2O&ontology=chebi,ncit&rows=100;
+        https://bacmedia.dsmz.de/ingredients/981; https://ojs.uel.br/revistas/uel/index.php/semexatas/article/download/2681/2331/8885;
+        https://journals.iucr.org/q/issues/1967/10/00/. Captures, exact input hashes
+        and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: NiCl2 . 6H2O
     synonym_type: REJECTED_LABEL
@@ -142169,6 +142612,21 @@ ingredients:
       roles, synonyms, counts, status and original history. No mapping, role or release
       approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
       owner=data/ingredients/mapped/Nicl2_X_2_H2o.yaml; before_sha256=63b0fccca5b4c6331435b5ca6f1c6b30710447cb8a4118b97cec1cc2f2e1b85a.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
@@ -146905,7 +147363,7 @@ ingredients:
     ontology_id: CHEBI:18394
     ontology_label: 6-O-alpha-D-glucopyranosyl-D-fructofuranose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -146928,6 +147386,20 @@ ingredients:
         A hydrate is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'CAS343336-76-5/sourceP2007 denotes variable-hydration palatinose. Preserve
+        its separateCASidentity. Supplier and CHEBI:18394 agree the glucopyranosyl-fructofuranose
+        core without forcing the reducing-end anomer. See the complete identity, mapping,
+        chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Palatinose_Hydrate.yaml. Primary source
+        references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/18394/;
+        https://www.ebi.ac.uk/ols4/api/search?q=palatinose%20hydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/343336-76-5/JSON;
+        https://www.sigmaaldrich.com/US/en/product/sigma/p2007; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -146980,14 +147452,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C12H24O12","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C1C(C(C(C(O1)OCC2C(C(C(O2)(CO)O)O)O)O)O)O)O.O","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C12H22O11.H2O/c13-1-4-6(15)8(17)9(18)11(22-4)21-2-5-7(16)10(19)12(20,3-14)23-5;/h4-11,13-20H,1-3H2;1H2/t4-,5-,6-,7-,8+,9-,10+,11+,12?;/m1./s1","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":52994241,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 343336-76-5
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C12H24O12
-    smiles: C(C1C(C(C(C(O1)OCC2C(C(C(O2)(CO)O)O)O)O)O)O)O.O
-    inchi: InChI=1S/C12H22O11.H2O/c13-1-4-6(15)8(17)9(18)11(22-4)21-2-5-7(16)10(19)12(20,3-14)23-5;/h4-11,13-20H,1-3H2;1H2/t4-,5-,6-,7-,8+,9-,10+,11+,12?;/m1./s1
-    pubchem_cid: 52994241
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -152339,7 +152822,7 @@ ingredients:
     ontology_id: CHEBI:15584
     ontology_label: citramalic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -152362,6 +152845,20 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceCAS1030365-02-6/name/mass242.31 are independently corroborated
+        by primarySigma27455monohydrate. PreserveCAS and unspecific preferred label;
+        do not assert a single enantiomer. See the complete identity, mapping, chemistry
+        and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml.
+        Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/15584/;
+        https://www.ebi.ac.uk/ols4/api/search?q=potassium%20citramalate%20monohydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1030365-02-6/JSON;
+        https://www.sigmaaldrich.com/US/en/product/aldrich/27455; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -152405,14 +152902,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C5H6K2O5","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H2,1H3,(H,6,7)(H,8,9);;/q;2*+1/p-2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":16211775,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 1030365-02-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C5H6K2O5
-    smiles: CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+]
-    inchi: InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H2,1H3,(H,6,7)(H,8,9);;/q;2*+1/p-2
-    pubchem_cid: 16211775
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53444
   preferred_term: Potassium dichromate
@@ -152914,7 +153422,7 @@ ingredients:
     ontology_id: CHEBI:30463
     ontology_label: telluric acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -152938,6 +153446,19 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceCAS314041-10-6 names potassiumtelluratehydrate. Primarysupplier
+        confirmsK2TeO4·xH2O; distinctCAS preserves this nominalvariablehydrate. See
+        the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Potassium_Tellurate_Hydrate.yaml. Primary
+        source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/30463/;
+        https://www.ebi.ac.uk/ols4/api/search?q=potassium%20tellurate%20hydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/314041-10-6/JSON;
+        https://www.sigmaaldrich.com/US/en/product/aldrich/400580; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -152982,14 +153503,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"H2K2O5Te","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"O.[O-][Te](=O)(=O)[O-].[K+].[K+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/2K.H2O4Te.H2O/c;;1-5(2,3)4;/h;;(H2,1,2,3,4);1H2/q2*+1;;/p-2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":17749147,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 314041-10-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: H2K2O5Te
-    smiles: O.[O-][Te](=O)(=O)[O-].[K+].[K+]
-    inchi: InChI=1S/2K.H2O4Te.H2O/c;;1-5(2,3)4;/h;;(H2,1,2,3,4);1H2/q2*+1;;/p-2
-    pubchem_cid: 17749147
   ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:123333-66-4
   preferred_term: Potassium tellurite hydrate
@@ -162522,7 +163054,7 @@ ingredients:
     ontology_id: CHEBI:26711
     ontology_label: sodium cholate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -162544,9 +163076,22 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceC9282/CAS206986-87-0andprimarysupplieridentifyvariable-hydration
+        sodiumcholate. The primary stereochemicalInChIcorematchesCHEBI:26711. See
+        the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Sodium_Cholate_Hydrate.yaml. Primary
+        source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/26711/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Sodium%20cholate%20hydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/206986-87-0/JSON;
+        https://www.sigmaaldrich.com/US/en/product/sigma/c9282; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: sodium 3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-oate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -162587,14 +163132,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C24H41NaO6","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"CC(CCC(=O)[O-])C1CCC2C1(C(CC3C2C(CC4C3(CCC(C4)O)C)O)O)C.O.[Na+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C24H40O5.Na.H2O/c1-13(4-7-21(28)29)16-5-6-17-22-18(12-20(27)24(16,17)3)23(2)9-8-15(25)10-14(23)11-19(22)26;;/h13-20,22,25-27H,4-12H2,1-3H3,(H,28,29);;1H2/q;+1;/p-1/t13-,14+,15-,16-,17+,18+,19-,20+,22+,23+,24-;;/m1../s1","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":23679061,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 206986-87-0
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C24H41NaO6
-    smiles: CC(CCC(=O)[O-])C1CCC2C1(C(CC3C2C(CC4C3(CCC(C4)O)C)O)O)C.O.[Na+]
-    inchi: InChI=1S/C24H40O5.Na.H2O/c1-13(4-7-21(28)29)16-5-6-17-22-18(12-20(27)24(16,17)3)23(2)9-8-15(25)10-14(23)11-19(22)26;;/h13-20,22,25-27H,4-12H2,1-3H3,(H,28,29);;1H2/q;+1;/p-1/t13-,14+,15-,16-,17+,18+,19-,20+,22+,23+,24-;;/m1../s1
-    pubchem_cid: 23679061
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:78671
   preferred_term: Sodium Chromate
@@ -163043,7 +163599,7 @@ ingredients:
     ontology_id: CHEBI:9177
     ontology_label: sodium deoxycholate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -163065,6 +163621,19 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceD5670/CAS145224-92-6/mass432.57, primarysupplierandPubChem23679071agree
+        ononewater sodiumdeoxycholate. See the complete identity, mapping, chemistry
+        and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml.
+        Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/9177/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Sodium%20deoxycholate%20monohydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/145224-92-6/JSON;
+        https://www.sigmaaldrich.com/US/en/product/sigma/d5670; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms:
   - synonym_text: Sodim deoxycholate monohydrate
     synonym_type: EXACT_SYNONYM
@@ -163120,6 +163689,21 @@ ingredients:
       Preserved original text and source metadata. No identity, mapping, role, or
       remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 145224-92-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -166312,7 +166896,7 @@ ingredients:
     ontology_id: CHEBI:36361
     ontology_label: phosphorous acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -166336,6 +166920,19 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceCAS13517-23-2/name/mass216.04arecorroborated byprimarySigma04283Na2HPO3·5H2O.
+        Preserve distinctCAS; no importedstructure. See the complete identity, mapping,
+        chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml.
+        Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/36361/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Sodium%20phosphite%20dibasic%20pentahydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13517-23-2/JSON; https://www.sigmaaldrich.com/KR/en/product/sial/04283;
+        https://github.com/CultureBotAI/CultureBotHT. Captures, exact input hashes
+        and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -166373,6 +166970,21 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 13517-23-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -167038,7 +167650,7 @@ ingredients:
     ontology_id: CHEBI:46612
     ontology_label: phosphorothioic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -167064,6 +167676,18 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceS0764/CAS10489-48-2andprimarysupplier identifyNa3PO3S·xH2O; retaindistinctCASwithoutfixedwatercount.
+        See the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Sodium_Thiophosphate_Tribasic_Hydrate.yaml.
+        Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/46612/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Sodium%20thiophosphate%20tribasic%20hydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10489-48-2/JSON; https://www.sigmaaldrich.com/DJ/en/product/aldrich/s0764;
+        https://github.com/CultureBotAI/CultureBotHT. Captures, exact input hashes
+        and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -167109,14 +167733,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"H2Na3O4PS","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"O.[O-]P(=S)([O-])[O-].[Na+].[Na+].[Na+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/3Na.H3O3PS.H2O/c;;;1-4(2,3)5;/h;;;(H3,1,2,3,5);1H2/q3*+1;;/p-3","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":53442939,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 10489-48-2
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: H2Na3O4PS
-    smiles: O.[O-]P(=S)([O-])[O-].[Na+].[Na+].[Na+]
-    inchi: InChI=1S/3Na.H3O3PS.H2O/c;;;1-4(2,3)5;/h;;;(H3,1,2,3,5);1H2/q3*+1;;/p-3
-    pubchem_cid: 53442939
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:32150
   preferred_term: Sodium Thiosulfate Pentahydrate
@@ -168862,7 +169497,7 @@ ingredients:
     ontology_id: CHEBI:17164
     ontology_label: stachyose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -168884,6 +169519,20 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'SourceCAS54261-98-2namesstachyosehydrate; primaryWako describesn-hydrate.
+        Preserve the generic hydratedidentity. SourceFW738.6suggestsfourwaterbutcannotbyitselfestablisha
+        fixedtetrahydrate. See the complete identity, mapping, chemistry and synonym
+        assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+        owner selector data/ingredients/mapped/Stachyose_Hydrate.yaml. Primary source
+        references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/17164/;
+        https://www.ebi.ac.uk/ols4/api/search?q=Stachyose%20hydrate&ontology=chebi,ncit&rows=100;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/54261-98-2/JSON; https://labchem-wako.fujifilm.com/europe/product/detail/W01W0119-1276.html;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/183019/; https://github.com/CultureBotAI/CultureBotHT.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -168935,14 +169584,25 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C24H42O21","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C1C(C(C(C(O1)OCC2C(C(C(C(O2)OCC3C(C(C(C(O3)OC4(C(C(C(O4)CO)O)O)CO)O)O)O)O)O)O)O)O)O)O","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C24H42O21/c25-1-6-10(28)14(32)17(35)21(41-6)39-3-8-11(29)15(33)18(36)22(42-8)40-4-9-12(30)16(34)19(37)23(43-9)45-24(5-27)20(38)13(31)7(2-26)44-24/h6-23,25-38H,1-5H2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":4287569,"after":null}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 54261-98-2
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C24H42O21
-    smiles: C(C1C(C(C(C(O1)OCC2C(C(C(C(O2)OCC3C(C(C(C(O3)OC4(C(C(C(O4)CO)O)O)CO)O)O)O)O)O)O)O)O)O)O
-    inchi: InChI=1S/C24H42O21/c25-1-6-10(28)14(32)17(35)21(41-6)39-3-8-11(29)15(33)18(36)22(42-8)40-4-9-12(30)16(34)19(37)23(43-9)45-24(5-27)20(38)13(31)7(2-26)44-24/h6-23,25-38H,1-5H2
-    pubchem_cid: 4287569
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -223113,3 +223773,394 @@ ingredients:
       FW360.31. Official M5885 specification independently confirms the one-water
       formula. This preserves source procurement context; no generic Maltose_Hydrate
       owner is merged.
+- identifier: cas:18618-55-8
+  preferred_term: CeCl3 x 7 H2O
+  ontology_mapping:
+    ontology_id: CHEBI:35458
+    ontology_label: cerium trichloride
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is
+        a hydrate of CHEBI:35458, not an exact match to it] Imported from CultureMech
+        pipeline, quality=DIRECT_MATCH'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321/#334)
+      notes: identifier CHEBI:35458 -> kgmicrobe.compound:cecl3_x_7_h2o; mapping_quality
+        EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:35458 ('cerium
+        trichloride') and was sharing that term's identifier — the identity collapse
+        MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+        from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+        the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+        3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'CeCl3' -> 'CeCl3.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:35458's
+        ChEBI formula ('CeCl3') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:35458 (''cerium trichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Four current source recipes and MediaDive1444 name CeCl3·7H2O. Independent
+        supplier/PubChem agree on specific CAS18618-55-8 and formula. The complete
+        ignored-inclusive neighbor scan found no other current owner of this CAS.
+        No eligible exact CHEBI/NCIT term was established by the bounded current CAS/name
+        queries. Promote local primary to cas:18618-55-8, preserve the old local registry
+        identity, and broadMatch CHEBI35458. Existing CeCl3.7H2O matches. Add evidenced
+        CAS only; do not automatically copy a PubChem structure/CID. Primary source
+        references: https://www.sigmaaldrich.com/US/en/product/aldrich/228931; https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/228931_ALDRICH/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/18618-55-8/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/35458/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
+  synonyms:
+  - synonym_text: cerium(3+) chloride
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  - synonym_text: cerium(III) chloride
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  - synonym_text: trichloridocerium
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 4
+    media_count: 4
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-09T00:32:50.689620+00:00'
+    curator: enrich_mim_cas_rn_batch
+    action: CAS_RN_ADDED
+    changes: Added CAS-RN 7790-86-5 from PubChem (via CHEBI:35458)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.670269+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.491723+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=CeCl3; inchi=InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3; smiles=[Cl][Ce]([Cl])[Cl]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.189956+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-09T04:56:30.247812+00:00'
+    curator: claude_in_session_curation
+    action: ANNOTATED
+    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+  - timestamp: '2026-06-09T05:23:46.736943+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''CeCl3 x 7 H2O'' -> ''cerium trichloride'': synced to
+      canonical CHEBI label (preferred_term ''CeCl3 x 7 H2O'' unchanged).'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
+      nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_hydrate_registry_terms
+    action: MINTED_REGISTRY_FOR_HYDRATE
+    changes: identifier CHEBI:35458 -> kgmicrobe.compound:cecl3_x_7_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'CeCl3' -> 'CeCl3.7H2O' (#321); the label states 7
+      water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+      parent CHEBI:35458's ChEBI formula ('CeCl3') — the mark of a value inherited
+      from the parent rather than measured for this record. Water appended in ChEBI's
+      own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518539+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717442+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7790-86-5 REMOVED, not replaced: it is the anhydrous CeCl3 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''cerium(3+)
+      chloride''; ''cerium(III) chloride''; ''trichloridocerium''. Preserved original
+      text and source metadata. No identity, mapping, role, or remaining-synonym claim
+      was adjudicated.'
+    llm_assisted: true
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles, chemical_properties.data_source, chemical_properties.retrieval_date.
+      Set fields: {}. Record states a fixed hydrate while exact archived parent ontology
+      supplies the current water-free structures. Remove the incompatible inherited
+      structures rather than calculate or guess replacements. No exact form ID selection,
+      invented water-containing SMILES, or verification of every retained field. Existing
+      form/identity questions remain held. Original chemical_properties={"data_source":
+      "PubChem (via CHEBI:35458)", "inchi": "InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3",
+      "molecular_formula": "CeCl3.7H2O", "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+      "smiles": "[Cl][Ce]([Cl])[Cl]"}. Preserved identifier, ontology mapping and
+      grade, roles, synonyms, counts, status and original history. No mapping, role
+      or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cecl3_X_7_H2o.yaml; before_sha256=333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["identifier"],"before":"kgmicrobe.compound:cecl3_x_7_h2o","after":"cas:18618-55-8"},{"op":"set","path":["chemical_properties","cas_rn"],"before":null,"after":"18618-55-8"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  chemical_properties:
+    molecular_formula: CeCl3.7H2O
+    cas_rn: 18618-55-8
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.6
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Assigned by in-session Claude reasoning (no external API)
+      curator_note: Provisional in-session LLM role assignment; review recommended.
+- identifier: cas:10031-43-3
+  preferred_term: Cu(NO3)2 x 3 H2O
+  ontology_mapping:
+    ontology_id: CHEBI:78036
+    ontology_label: copper(II) nitrate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is
+        a hydrate of CHEBI:78036, not an exact match to it] Imported from CultureMech
+        pipeline, quality=DIRECT_MATCH'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321/#334)
+      notes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
+        EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:78036 ('copper(II)
+        nitrate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS
+        §3 forbids, which made a distinct substance indistinguishable from its anhydrous
+        parent downstream. ChEBI has no term for this hydrate and the record carries
+        no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:78036's
+        ChEBI formula ('Cu.2NO3') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:78036 (''copper(II) nitrate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Historical source, current formula and independent GSRS/PubChem agree
+        on copper(II) nitrate trihydrate CAS10031-43-3. The ignored-inclusive owner
+        scan found no other current owner of this CAS. Promote local primary to cas:10031-43-3,
+        retain existing local registry identity, and NARROW_MATCH/broadMatch CHEBI78036.
+        No exact eligible CHEBI/NCIT trihydrate term was established by the bounded
+        queries. Keep CAS and Cu.2NO3.3H2O. Do not automatically add CID/SMILES/InChI
+        from the reviewed comparator. Primary source references: https://gsrs.ncats.nih.gov/api/v1/substances/066PG1506T?view=full;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10031-43-3/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/78036/. Captures,
+        exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        Independent review identifies the existing exact synonym ''copper(2+) dinitrate''
+        as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
+  synonyms:
+  - synonym_text: copper(II) nitrate (anhydrous)
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: copper(2+) dinitrate
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-09T00:32:50.689620+00:00'
+    curator: enrich_mim_cas_rn_batch
+    action: CAS_RN_ADDED
+    changes: Added CAS-RN 10031-43-3 from CultureBotHT/compounds_to_cas.csv
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: copper(II) nitrate
+      (anhydrous)'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:32.937262+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.831051+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=Cu.2NO3; inchi=InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1;
+      smiles=O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.577264+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-09T05:23:46.746528+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''Cu(NO3)2 x 3 H2O'' -> ''copper(II) nitrate'': synced
+      to canonical CHEBI label (preferred_term ''Cu(NO3)2 x 3 H2O'' unchanged).'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_hydrate_registry_terms
+    action: MINTED_REGISTRY_FOR_HYDRATE
+    changes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O' (#321); the label states
+      3 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:78036's ChEBI formula ('Cu.2NO3') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518635+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-13T11:00:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
+      (anhydrous) (#878).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-11-02T05:34:27.474256+00:00'
+    curator: Codex
+    action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+    changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+      chemical_properties.smiles. Set fields: {}. Record states a fixed hydrate while
+      exact archived parent ontology supplies the current water-free structures. Remove
+      the incompatible inherited structures rather than calculate or guess replacements.
+      No exact form ID selection, invented water-containing SMILES, or verification
+      of every retained field. Existing form/identity questions remain held. Original
+      chemical_properties={"cas_rn": "10031-43-3", "data_source": "CultureBotHT/compounds_to_cas.csv",
+      "inchi": "InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1", "molecular_formula": "Cu.2NO3.3H2O",
+      "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles": "O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]"}.
+      Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+      and original history. No mapping, role or release approval. Exact preimage and
+      evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+      owner=data/ingredients/mapped/Cu_No32_X_3_H2o.yaml; before_sha256=cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["identifier"],"before":"kgmicrobe.compound:cu_no32_x_3_h2o","after":"cas:10031-43-3"},{"op":"set","path":["synonyms",1,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  chemical_properties:
+    cas_rn: 10031-43-3
+    data_source: CultureBotHT/compounds_to_cas.csv
+    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+    molecular_formula: Cu.2NO3.3H2O
+  ingredient_type: SINGLE_INGREDIENT

@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:31380
   ontology_label: Cefsulodin sodium
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -29,6 +29,23 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Historical C8145 and current supplier describe the same source-defined
+      cefsulodin sodium salt hydrate xH2O. Retain local hydrate identity; CAS52152-93-9
+      resolves to the water-free salt and is not selected as exact hydrate primary.
+      CHEBI31380 is the verified water-free sodium salt and the closest inspected
+      parent. NARROW_MATCH exports broadMatch; do not select NCITC98228 as exact hydrate
+      because it describes the same water-free salt. Dry structures were already removed
+      in7b. Move the remaining procurement CAS out of unqualified chemical_properties.cas_rn
+      into supplied_form; preserve source/retrieval metadata and full old history.
+      Primary source references: https://www.sigmaaldrich.com/US/en/product/sigma/c8145;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C8145_SIGMA/JSON;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/52152-93-9/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/31380/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -102,8 +119,27 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","cas_rn"],"before":"52152-93-9","after":null},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"Cefsulodin
+    sodium salt hydrate","cas_rn":"52152-93-9","form":"sodium salt hydrate (xH2O;
+    unspecified water stoichiometry)","supplier":"Sigma-Aldrich","catalog_number":"C8145","notes":"CultureBotHT
+    historical compounds_to_cas.csv source catalogue C8145; current supplier page
+    confirms xH2O and procurement CAS52152-93-9. This CAS also identifies the water-free
+    sodium salt and is not the exact identifier of this local hydrate owner. Catalogue
+    association is not a purchased-lot claim."}]}]. Original values are preserved
+    here and in the immutable source preimages. Appended scoped mapping evidence.
+    NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt
+    identity serializes skos:exactMatch. Preserved prior history, roles, status and
+    occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/;
+    primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
-  cas_rn: 52152-93-9
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
 ingredient_type: SINGLE_INGREDIENT
@@ -114,3 +150,13 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+supplied_form:
+- name: Cefsulodin sodium salt hydrate
+  cas_rn: 52152-93-9
+  form: sodium salt hydrate (xH2O; unspecified water stoichiometry)
+  supplier: Sigma-Aldrich
+  catalog_number: C8145
+  notes: CultureBotHT historical compounds_to_cas.csv source catalogue C8145; current
+    supplier page confirms xH2O and procurement CAS52152-93-9. This CAS also identifies
+    the water-free sodium salt and is not the exact identifier of this local hydrate
+    owner. Catalogue association is not a purchased-lot claim.

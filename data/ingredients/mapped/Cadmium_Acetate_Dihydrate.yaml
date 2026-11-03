@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:232796
   ontology_label: cadmium acetate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -34,9 +34,23 @@ ontology_mapping:
       ChEBI formula ('2C2H3O2.Cd') — the mark of a value inherited from the parent
       rather than measured for this record. Water appended in ChEBI's own dot-separated
       notation.
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Source CAS5743-04-4 plus supplier/PubChem confirms cadmium acetate dihydrate;
+      keep own CAS distinct from CHEBI232796 dry parent. Change quality to NARROW_MATCH/broadMatch
+      to232796; no exact dry-parent identity. Retain C4H6CdO4.2H2O and CAS. Withdraw
+      dry SMILES, dry InChI and CID10986; fresh dihydrate CID6537495 demonstrates
+      the mismatch but is not automatically imported as replacement. Primary source
+      references: https://www.sigmaaldrich.com/US/en/product/mm/102003; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/5743-04-4/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/232796/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      Independent review identifies the existing exact synonym ''cadmium(2+);diacetate''
+      as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
 synonyms:
 - synonym_text: cadmium(2+);diacetate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -85,12 +99,24 @@ curation_history:
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
   llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","smiles"],"before":"CC(=O)[O-].CC(=O)[O-].[Cd+2]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/2C2H4O2.Cd/c2*1-2(3)4;/h2*1H3,(H,3,4);/q;;+2/p-2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":10986,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 5743-04-4
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
   molecular_formula: C4H6CdO4.2H2O
-  smiles: CC(=O)[O-].CC(=O)[O-].[Cd+2]
-  inchi: InChI=1S/2C2H4O2.Cd/c2*1-2(3)4;/h2*1H3,(H,3,4);/q;;+2/p-2
-  pubchem_cid: 10986
 ingredient_type: SINGLE_INGREDIENT

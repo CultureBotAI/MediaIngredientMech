@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:cu_no32_x_3_h2o
+identifier: cas:10031-43-3
 preferred_term: Cu(NO3)2 x 3 H2O
 ontology_mapping:
   ontology_id: CHEBI:78036
   ontology_label: copper(II) nitrate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -37,12 +37,28 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Historical source, current formula and independent GSRS/PubChem agree
+      on copper(II) nitrate trihydrate CAS10031-43-3. The ignored-inclusive owner
+      scan found no other current owner of this CAS. Promote local primary to cas:10031-43-3,
+      retain existing local registry identity, and NARROW_MATCH/broadMatch CHEBI78036.
+      No exact eligible CHEBI/NCIT trihydrate term was established by the bounded
+      queries. Keep CAS and Cu.2NO3.3H2O. Do not automatically add CID/SMILES/InChI
+      from the reviewed comparator. Primary source references: https://gsrs.ncats.nih.gov/api/v1/substances/066PG1506T?view=full;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10031-43-3/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/78036/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      Independent review identifies the existing exact synonym ''copper(2+) dinitrate''
+      as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
 synonyms:
 - synonym_text: copper(II) nitrate (anhydrous)
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: copper(2+) dinitrate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -141,6 +157,21 @@ curation_history:
     and original history. No mapping, role or release approval. Exact preimage and
     evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
     owner=data/ingredients/mapped/Cu_No32_X_3_H2o.yaml; before_sha256=cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["identifier"],"before":"kgmicrobe.compound:cu_no32_x_3_h2o","after":"cas:10031-43-3"},{"op":"set","path":["synonyms",1,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true

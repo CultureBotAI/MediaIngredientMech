@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:15584
   ontology_label: citramalic acid
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -27,6 +27,20 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'SourceCAS1030365-02-6/name/mass242.31 are independently corroborated by
+      primarySigma27455monohydrate. PreserveCAS and unspecific preferred label; do
+      not assert a single enantiomer. See the complete identity, mapping, chemistry
+      and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+      owner selector data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml.
+      Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/15584/;
+      https://www.ebi.ac.uk/ols4/api/search?q=potassium%20citramalate%20monohydrate&ontology=chebi,ncit&rows=100;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1030365-02-6/JSON; https://www.sigmaaldrich.com/US/en/product/aldrich/27455;
+      https://github.com/CultureBotAI/CultureBotHT. Captures, exact input hashes and
+      scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -70,12 +84,23 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C5H6K2O5","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H2,1H3,(H,6,7)(H,8,9);;/q;2*+1/p-2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":16211775,"after":null}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 1030365-02-6
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C5H6K2O5
-  smiles: CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+]
-  inchi: InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H2,1H3,(H,6,7)(H,8,9);;/q;2*+1/p-2
-  pubchem_cid: 16211775
 ingredient_type: SINGLE_INGREDIENT

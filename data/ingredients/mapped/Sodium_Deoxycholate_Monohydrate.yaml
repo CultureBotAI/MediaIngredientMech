@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:9177
   ontology_label: sodium deoxycholate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -26,6 +26,19 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'SourceD5670/CAS145224-92-6/mass432.57, primarysupplierandPubChem23679071agree
+      ononewater sodiumdeoxycholate. See the complete identity, mapping, chemistry
+      and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+      owner selector data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml.
+      Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/9177/;
+      https://www.ebi.ac.uk/ols4/api/search?q=Sodium%20deoxycholate%20monohydrate&ontology=chebi,ncit&rows=100;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/145224-92-6/JSON; https://www.sigmaaldrich.com/US/en/product/sigma/d5670;
+      https://github.com/CultureBotAI/CultureBotHT. Captures, exact input hashes and
+      scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
 synonyms:
 - synonym_text: Sodim deoxycholate monohydrate
   synonym_type: EXACT_SYNONYM
@@ -81,6 +94,21 @@ curation_history:
     Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
     claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 145224-92-6
   data_source: CultureBotHT compounds_to_cas.csv
