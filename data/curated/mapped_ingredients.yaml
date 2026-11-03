@@ -1,4 +1,4 @@
-generation_date: '2026-11-03T06:15:13.905377+00:00'
+generation_date: '2026-11-03T06:16:50.559746+00:00'
 total_count: 2681
 mapped_count: 2611
 unmapped_count: 0
@@ -67548,141 +67548,6 @@ ingredients:
       reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709
         (amino acid)'
       curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
-        recommended.
-- identifier: cas:6363-53-7
-  preferred_term: D-Maltose monohydrate
-  ontology_mapping:
-    ontology_id: CHEBI:17306
-    ontology_label: maltose
-    ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN 6363-53-7 present, but no CHEBI entry
-        exists for the monohydrate specifically (checked OAK CHEBI sqlite + PubChem
-        CID synonyms). FEBA/Hans80 panels: FEBA_carbon. Used in 9 CultureBot media;
-        samples: Mega, ZMB Gut, SGW Northen Exometabolite mix 5x…. Curator can promote
-        to a CHEBI primary if/when CHEBI adds D-maltose monohydrate.'
-    - evidence_type: MANUAL_REVIEW
-      source: family_mismatch_fix
-      notes: 'fix(family-mismatch): was CHEBI:233428 (5-(N-ethyl-N-isopropyl) amiloride)
-        from a stale pubchem-xref hit on PubChem CID 23615261; the bogus CHEBI was
-        removed from the published SSSOM in PR #2 / commit 887ee9f and the ontology_mapping
-        is now retargeted at CHEBI:17306 (maltose) as the correct narrowMatch parent.
-        D-Maltose monohydrate is a hydrate of D-maltose, which has no separate CHEBI;
-        maltose (CHEBI:17306) is the closest available parent.'
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#342)
-      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
-        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
-        than CHEBI:17306 (''maltose'') — a subsumption ChEBI itself denies: it files
-        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
-        which is not an ancestor even transitively. A hydrate is a distinct substance
-        containing the anhydrous form, not a specialization of it. closeMatch claims
-        similarity without subsumption. The ontology_id and the record''s own identifier
-        are unchanged.'
-  synonyms:
-  - synonym_text: Maltose monohydrate
-    synonym_type: EXACT_SYNONYM
-    source: culturebotht
-  - synonym_text: alpha-D-glucopyranosyl-(1->4)-D-glucopyranose
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  - synonym_text: alpha-D-glucopyranosyl-(1->4)-D-glucose
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 20
-    media_count: 20
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:6363-53-7 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:33.092139+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T02:52:36.774724+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
-    changes: molecular_formula=C12H24O12; smiles=C(C1C(C(C(C(O1)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.O;
-      inchi=InChI=1S/C12H22O11.H2O/c13-1-4(16)7(18)11(5(17)2-1
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.781876+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:45:13.113507+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:233428 (pubchem-xref)
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.738635+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
-  - timestamp: '2026-06-04T05:38:59.200618+00:00'
-    curator: infer_energy_source
-    action: ANNOTATED
-    changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
-      nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: regrade_hydrate_to_close_match
-    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
-    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
-      subsumed by its anhydrous form, and ChEBI does not model it as such.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518685+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 9/9 -> 20/20 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-22T20:41:14.285965+00:00'
-    curator: claude
-    action: REJECTED_PARENT_NAME_SYNONYMS
-    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
-      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
-      form and the label index resolved the parent''s name here (#232): ''alpha-D-glucopyranosyl-(1->4)-D-glucopyranose'';
-      ''alpha-D-glucopyranosyl-(1->4)-D-glucose''. Preserved original text and source
-      metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
-    llm_assisted: true
-  chemical_properties:
-    cas_rn: 6363-53-7
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C12H24O12
-    smiles: C(C1C(C(C(C(O1)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.O
-    inchi: InChI=1S/C12H22O11.H2O/c13-1-4(16)7(18)11(5(17)2-14)23-12-10(21)9(20)8(19)6(3-15)22-12;/h1,4-12,14-21H,2-3H2;1H2/t4-,5+,6+,7+,8+,9-,10+,11+,12+;/m0./s1
-    pubchem_cid: 23615261
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
-  - role: ENERGY_SOURCE
-    confidence: 0.7
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Canonical energy substrate (catabolised for energy)
-      curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
 - identifier: cas:70442-25-0
   preferred_term: D-Mannose 6-phosphate sodium salt
@@ -223063,3 +222928,188 @@ ingredients:
     inchi: InChI=1S/CH2O3.2Na.H2O/c2-1(3)4;;;/h(H2,2,3,4);;;1H2/q;2*+1;/p-2
     pubchem_cid: 2735133
   ingredient_type: SINGLE_INGREDIENT
+- identifier: NCIT:C80300
+  preferred_term: D-Maltose monohydrate
+  ontology_mapping:
+    ontology_id: NCIT:C80300
+    ontology_label: Maltose Monohydrate
+    ontology_source: NCIT
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: 'Imported from CultureBotHT. CAS-RN 6363-53-7 present, but no CHEBI entry
+        exists for the monohydrate specifically (checked OAK CHEBI sqlite + PubChem
+        CID synonyms). FEBA/Hans80 panels: FEBA_carbon. Used in 9 CultureBot media;
+        samples: Mega, ZMB Gut, SGW Northen Exometabolite mix 5x…. Curator can promote
+        to a CHEBI primary if/when CHEBI adds D-maltose monohydrate.'
+    - evidence_type: MANUAL_REVIEW
+      source: family_mismatch_fix
+      notes: 'fix(family-mismatch): was CHEBI:233428 (5-(N-ethyl-N-isopropyl) amiloride)
+        from a stale pubchem-xref hit on PubChem CID 23615261; the bogus CHEBI was
+        removed from the published SSSOM in PR #2 / commit 887ee9f and the ontology_mapping
+        is now retargeted at CHEBI:17306 (maltose) as the correct narrowMatch parent.
+        D-Maltose monohydrate is a hydrate of D-maltose, which has no separate CHEBI;
+        maltose (CHEBI:17306) is the closest available parent.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17306 (''maltose'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM Step7d scientific review (#901)
+      notes: 'Resolve #1117 for this owner to NCIT:C80300, Maltose Monohydrate, using
+        CAS_RN_LOOKUP as method provenance. The archived catalogue explicitly selects
+        SigmaM5885/CAS6363-53-7/360.31; the inspected official M5885 specification
+        confirms CAS and C12H22O11·H2O. NCIt links this CAS to UNIIDM477EE40D; the
+        GSRS PRIMARY record explicitly cross-links C80300, CAS6363-53-7, D-(+)-MALTOSE
+        MONOHYDRATE and beta naming, and PubChem23615261. The open-chain representation
+        and beta synonym occur in that same registry identity; §3 readability/orderability
+        supports the readable monohydrate node, without choosing a different anomer
+        from lexical resemblance. Keep generic Maltose_Hydrate separate. See the complete
+        identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+        owner selector data/ingredients/mapped/D-Maltose_Monohydrate.yaml. Primary
+        source references: https://github.com/CultureBotAI/CultureBotHT; https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C80300?include=full;
+        https://gsrs.ncats.nih.gov/api/v1/substances/DM477EE40D?view=full; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23615261/property/MolecularFormula,InChI,InChIKey/JSON;
+        https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/6363-53-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+        https://www.sigmaaldrich.com/specification-sheets/677/787/M5885-BULK________SIAL_____.pdf.
+        Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+        This curation adds no scientific, mapping-release or role approval; changed
+        owner bytes withdraw inherited support.'
+  synonyms:
+  - synonym_text: Maltose monohydrate
+    synonym_type: EXACT_SYNONYM
+    source: culturebotht
+  - synonym_text: alpha-D-glucopyranosyl-(1->4)-D-glucopyranose
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  - synonym_text: alpha-D-glucopyranosyl-(1->4)-D-glucose
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 20
+    media_count: 20
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:6363-53-7 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:33.092139+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T02:52:36.774724+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+    changes: molecular_formula=C12H24O12; smiles=C(C1C(C(C(C(O1)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.O;
+      inchi=InChI=1S/C12H22O11.H2O/c13-1-4(16)7(18)11(5(17)2-1
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.781876+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:45:13.113507+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_CHEBI
+    changes: set ontology_mapping parent=CHEBI:233428 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-06-03T02:06:01.738635+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+  - timestamp: '2026-06-04T05:38:59.200618+00:00'
+    curator: infer_energy_source
+    action: ANNOTATED
+    changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
+      nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518685+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 9/9 -> 20/20 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''alpha-D-glucopyranosyl-(1->4)-D-glucopyranose'';
+      ''alpha-D-glucopyranosyl-(1->4)-D-glucose''. Preserved original text and source
+      metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
+  - timestamp: '2026-11-03T06:07:03.766598+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+      changes [{"op":"set","path":["identifier"],"before":"cas:6363-53-7","after":"NCIT:C80300"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:17306","after":"NCIT:C80300"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"maltose","after":"Maltose
+      Monohydrate"},{"op":"set","path":["ontology_mapping","ontology_source"],"before":"CHEBI","after":"NCIT"},{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"CAS_RN_LOOKUP"},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"D-Maltose
+      monohydrate","cas_rn":"6363-53-7","form":"monohydrate","supplier":"Sigma-Aldrich","catalog_number":"M5885","notes":"Original
+      CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7, FW360.31.
+      Official M5885 specification independently confirms the one-water formula. This
+      preserves source procurement context; no generic Maltose_Hydrate owner is merged."}]}].
+      Original values are preserved here and in the immutable source preimages. Appended
+      scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+      on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+      history, roles, status and occurrence counts; no owner merge or new scientific
+      approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+      captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  chemical_properties:
+    cas_rn: 6363-53-7
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    molecular_formula: C12H24O12
+    smiles: C(C1C(C(C(C(O1)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.O
+    inchi: InChI=1S/C12H22O11.H2O/c13-1-4(16)7(18)11(5(17)2-14)23-12-10(21)9(20)8(19)6(3-15)22-12;/h1,4-12,14-21H,2-3H2;1H2/t4-,5+,6+,7+,8+,9-,10+,11+,12+;/m0./s1
+    pubchem_cid: 23615261
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: CARBON_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  - role: ENERGY_SOURCE
+    confidence: 0.7
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Canonical energy substrate (catabolised for energy)
+      curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+        recommended.
+  supplied_form:
+  - name: D-Maltose monohydrate
+    cas_rn: 6363-53-7
+    form: monohydrate
+    supplier: Sigma-Aldrich
+    catalog_number: M5885
+    notes: Original CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7,
+      FW360.31. Official M5885 specification independently confirms the one-water
+      formula. This preserves source procurement context; no generic Maltose_Hydrate
+      owner is merged.
