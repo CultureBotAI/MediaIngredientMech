@@ -5,7 +5,7 @@
   <div class="evidence-head">
     <span class="badge">{{ ev.evidence_type or '' }}</span>
     {% if ev.supports %}<span class="badge">{{ ev.supports }}</span>{% endif %}
-    {% if ev.source %}<span class="muted small">via {{ ev.source }}</span>{% endif %}
+    {% if ev.source %}<span class="muted small">via {{ ev.source|linked_text }}</span>{% endif %}
     {% if ev.pmid %}
       <a href="https://pubmed.ncbi.nlm.nih.gov/{{ ev.pmid }}/" rel="nofollow noreferrer">
         PMID:{{ ev.pmid }}</a>
@@ -15,13 +15,13 @@
     {% endif %}
   </div>
   {% if ev.snippet %}
-    <blockquote class="snippet">{{ ev.snippet }}</blockquote>
+    <blockquote class="snippet">{{ ev.snippet|linked_text }}</blockquote>
   {% endif %}
   {% if ev.explanation %}
-    <p class="explanation small">{{ ev.explanation }}</p>
+    <p class="explanation small">{{ ev.explanation|linked_text }}</p>
   {% endif %}
   {% if ev.notes %}
-    <p class="muted small prewrap">{{ ev.notes }}</p>
+    <p class="muted small prewrap">{{ ev.notes|linked_text }}</p>
   {% endif %}
 </div>
 {% endfor %}

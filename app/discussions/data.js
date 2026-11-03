@@ -19,7 +19,7 @@ window.searchData = [
    "PMID:40284226"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/1-Kestose.html#discussions"
+  "page_url": "../../records/ingredient/mapped/1-Kestose.html#discussions"
  },
  {
   "discussion_id": "kgscan-fedfdc7a75ff",
@@ -41,7 +41,7 @@ window.searchData = [
    "PMID:40946651"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/1-Pentanol.html#discussions"
+  "page_url": "../../records/ingredient/mapped/1-Pentanol.html#discussions"
  },
  {
   "discussion_id": "kgscan-afcc7416ff5f",
@@ -63,7 +63,7 @@ window.searchData = [
    "PMID:42197634"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/1-aminocyclopropane-1-carboxylate.html#discussions"
+  "page_url": "../../records/ingredient/mapped/1-aminocyclopropane-1-carboxylate.html#discussions"
  },
  {
   "discussion_id": "kgscan-7872af433046",
@@ -85,7 +85,7 @@ window.searchData = [
    "PMID:40649189"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/1-ethyl-3-methylimidazolium_Acetate.html#discussions"
+  "page_url": "../../records/ingredient/mapped/1-ethyl-3-methylimidazolium_Acetate.html#discussions"
  },
  {
   "discussion_id": "kgscan-546f113a807c",
@@ -107,7 +107,7 @@ window.searchData = [
    "PMID:40110012"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/1-naphtylacetic_Acid.html#discussions"
+  "page_url": "../../records/ingredient/mapped/1-naphtylacetic_Acid.html#discussions"
  },
  {
   "discussion_id": "kgscan-ca9d598a165f",
@@ -129,7 +129,7 @@ window.searchData = [
    "PMID:41815431"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/1-octen-3-ol.html#discussions"
+  "page_url": "../../records/ingredient/mapped/1-octen-3-ol.html#discussions"
  },
  {
   "discussion_id": "kgscan-47348d9115e1",
@@ -151,7 +151,7 @@ window.searchData = [
    "PMID:41454413"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/112-trichloroethane.html#discussions"
+  "page_url": "../../records/ingredient/mapped/112-trichloroethane.html#discussions"
  },
  {
   "discussion_id": "kgscan-2db2ffbbe7ca",
@@ -173,7 +173,7 @@ window.searchData = [
    "PMID:42149637"
   ],
   "posed_by": "kg-microbe-kgscan",
-  "page_url": "../../pages/ingredient/mapped/12-Propanediol.html#discussions"
+  "page_url": "../../records/ingredient/mapped/12-Propanediol.html#discussions"
  }
 ];
 window.searchMetrics = {

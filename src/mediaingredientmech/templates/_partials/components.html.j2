@@ -33,11 +33,11 @@
     <div class="evidence-head">
       <span class="badge">{{ item.evidence_type }}</span>
       <code>{{ item.source|linked_text }}</code>
-      {% if item.source_record %}<span class="muted">— {{ item.source_record }}</span>{% endif %}
+      {% if item.source_record %}<span class="muted">— {{ item.source_record|linked_text }}</span>{% endif %}
     </div>
     {% if item.notes %}<p class="explanation">{{ item.notes|linked_text }}</p>{% endif %}
   </div>
 {% endfor %}
 {% endif %}
-{% if assertion.notes %}<p class="muted small">{{ assertion.notes }}</p>{% endif %}
+{% if assertion.notes %}<p class="muted small">{{ assertion.notes|linked_text }}</p>{% endif %}
 </section>

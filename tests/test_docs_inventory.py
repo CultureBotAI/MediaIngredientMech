@@ -19,9 +19,12 @@ def test_landing_statistics_link_to_matching_browser_views() -> None:
     browser = (ROOT / "docs" / "browser.html").read_text(encoding="utf-8")
 
     assert '<a class="stat" href="browser.html">' in landing
-    assert landing.count('<a class="stat" href="browser.html#status=MAPPED">') == 2
+    # The query string carries Browse state; a #status= link would outlive the
+    # reader's next filter choice (tests/test_unified_site_features.py).
+    assert landing.count('<a class="stat" href="browser.html?status=MAPPED">') == 2
     assert '<div class="stat">' not in landing
-    assert "new URLSearchParams(window.location.hash.replace(/^#/, ''))" in browser
+    # Older #status= bookmarks are still read once.
+    assert "new URLSearchParams(String(window.location.hash || '').replace(/^#/, ''))" in browser
     assert "statusControl.value = supported ? status : '';" in browser
 
 

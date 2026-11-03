@@ -1,4 +1,4 @@
-"""Discussion previews use the maintained local ingredient renderer layout."""
+"""Discussion previews link the record pages the Pages build publishes."""
 
 import json
 import re
@@ -18,7 +18,8 @@ def test_every_discussion_preview_link_matches_a_rendered_record_section(tmp_pat
         ).group(1)
     )
     assert records
-    output = tmp_path / "pages/ingredient"
+    # scripts/build_pages_site.py renders records/ingredient/ beside app/discussions/.
+    output = tmp_path / "records/ingredient"
     env = render.make_env()
     for record in records:
         sources = [
