@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/independent-review/probe_postpublication_inventory_v2.py", line 20, in <module>
+    prepared = op.prepare(W, W / "output/next23-native-candidate-v1", RUN / "step7c-claw", "112e2303176db3530f88469f220367f14041d7ae9a84d879efe8623255e6fa34")
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/promote_deferred_aliases_v2.py", line 559, in prepare
+    loaded_code(root, tree, inputs, context, native, publication)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/promote_deferred_aliases_v2.py", line 482, in loaded_code
+    require(regular(root / name) == data, "executed native verifier changed: " + name)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/promote_deferred_aliases_v2.py", line 59, in require
+    raise ValueError("Deferred owned-name publication: " + message)
+ValueError: Deferred owned-name publication: executed native verifier changed: src/mediaingredientmech/owned_name_suppression_refresh.py

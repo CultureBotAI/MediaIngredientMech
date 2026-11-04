@@ -1,0 +1,56 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "0ee56c11a2894ed50a476b331d56297be0a3ee12",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "mappings/ingredient_mappings.sssom.tsv.manifest.json",
+        "sha256": "6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778",
+        "role": "context"
+      },
+      {
+        "path": "reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/archive.json",
+        "sha256": "953367e5be13939a681d59e3eda15c10b607205a8d6a722ae4513a4ce7769647",
+        "role": "context"
+      },
+      {
+        "path": "reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/run.json",
+        "sha256": "e53f6a4a22200cb1d2d0bbe3871c63fe808f1ec321c94e256cb2cc1fda1fad8c",
+        "role": "context"
+      },
+      {
+        "path": "reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/run.log",
+        "sha256": "8301d7b856ecdf14b2a90664a427be2a0537748743830f1b6b70dc8f81b93739",
+        "role": "target"
+      },
+      {
+        "path": "reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/test-before.py",
+        "sha256": "e2eecaff8336bef67c8ffea4c4172c5685af19ecb4cda424e79287ec9ea701c2",
+        "role": "target"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "next23-prefix-fixture-before",
+      "path": "reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/test-before.py",
+      "label": "Original fixture discarding existing update prefix",
+      "kind": "source",
+      "ownership_note": "Immutable original test/failure evidence; repair only the current test fixture to retain history, leaving production prefix validation and historical evidence unchanged."
+    },
+    {
+      "target_id": "next23-prefix-fixture-failure",
+      "path": "reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/run.log",
+      "label": "Actual unchanged positive-test failure after receipt26",
+      "kind": "source",
+      "ownership_note": "Immutable original test/failure evidence; repair only the current test fixture to retain history, leaving production prefix validation and historical evidence unchanged."
+    }
+  ]
+}

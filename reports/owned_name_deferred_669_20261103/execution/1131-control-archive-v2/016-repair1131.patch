@@ -1,0 +1,44 @@
+--- promote_deferred_aliases_v1.py
++++ promote_deferred_aliases_v2.py
+@@ -569,10 +569,31 @@
+     return {log.with_name(log.stem + ".before-" + Path(name).name): data for name, data in before.items()}
+ 
+ 
++
++def recheck_completion_inputs(prepared):
++    """#1131: freshly enumerate captured inputs at the immediate completion boundary."""
++    root, bundle, producer = (checked(prepared[key]) for key in ("root", "bundle", "producer"))
++    native, publication, context, chain = prepared["modules"]
++    generation = prepared["generation"]
++    require(context.source_inventory(root) == prepared["source_paths"], "completed source membership changed")
++    require(native.producer_paths(producer) == generation["producer_files"], "completed producer membership changed")
++    require(files(bundle) == generation["original_files"]
++            and files(generation["archive"]) == generation["archive_files"], "completed generation membership changed")
++    require(set(bundle.glob("label-input-*.json")) == generation["label_paths"], "completed label membership changed")
++    for path in generation["absent"]:
++        checked(path)
++        require(not os.path.lexists(path), "completed absent generation input appeared")
++    require(git(producer, "rev-parse", "HEAD").decode().strip() == PRODUCER
++            and not git(producer, "status", "--porcelain", "--untracked-files=all"), "completed producer revision/context changed")
++    require(context.receipt_inventory(root) == set(prepared["prefix"]["receipt_paths"]) | {RECEIPT},
++            "completed receipt inventory changed")
++    require(all(regular(path) == raw for path, raw in prepared["inputs"].items()), "completed captured input changed")
++
+ def verify_completed(prepared, log):
+     """Verify all five outputs and the exact native four-change/one-create journal."""
+     root, before, outputs, inputs = (prepared[k] for k in ("root", "before", "outputs", "inputs"))
+     native, publication, context, chain = prepared["modules"]
++    recheck_completion_inputs(prepared)
+     log = checked(log)
+     require(log == root / LOG, "completion log path differs")
+     saved = read_json(regular(log))
+@@ -602,6 +623,9 @@
+     require(context.receipt_inventory(root) == set(prepared["prefix"]["receipt_paths"]) | {RECEIPT}
+             and full["receipt_paths"] == prepared["prefix"]["receipt_paths"] + [RECEIPT]
+             and full["reviewed_sha256"] == digest(outputs[Path(SSSOM)]), "completed native chain differs")
++    # Recheck after byte/journal/chain reads too; do not certify a stale enumeration.
++    recheck_completion_inputs(prepared)
++    require(all(regular(root / name) == data for name, data in outputs.items()), "completed output changed during verification")
+     return {"applied": False, "changed": False, "state": "verified-complete", "receipt_count": len(full["receipt_paths"]),
+             "journal_sha256": digest(raw), "canonical_sha256": full["reviewed_sha256"]}
+ 

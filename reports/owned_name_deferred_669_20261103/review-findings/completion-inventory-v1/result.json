@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-04T04:49:34.850687+00:00",
+  "reviewer": "/root/step7d_independent_review",
+  "operator_sha256": "4c31a61fabda38cbb848bc636d9e42349283f2302ca2694419b546c707ef1a3e",
+  "fault": "One ignored/hidden YAML owner appears after the native publication returns and before the operator's immediate verify_completed call.",
+  "private_fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/independent-review/postpublication-inventory-probe-v1/private-fixture",
+  "late_owner": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/independent-review/postpublication-inventory-probe-v1/private-fixture/data/ingredients/mapped/.late-independent-owner.yaml",
+  "captured_ingredient_count": 2956,
+  "actual_ingredient_count": 2957,
+  "source_inventory_changed": true,
+  "immediate_completion_result": {
+    "applied": false,
+    "changed": false,
+    "state": "verified-complete",
+    "receipt_count": 26,
+    "journal_sha256": "5f193280d1ddc50a3ec900e12f0f43698fbcb2ee25885725111c92fd991b3e69",
+    "canonical_sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6"
+  },
+  "real_maintained_outputs_and_source_inventory_unchanged": true,
+  "finding": "The immediate completion verifier returns verified-complete without checking the source path inventory after publication. Existing captured files and the receipt chain remain valid, so those checks do not detect the newly added owner.",
+  "scope": "Private reproduction of a completion-verification omission. The standalone CLI re-runs prepare and would catch later drift; that does not establish the immediate post-publication claim."
+}

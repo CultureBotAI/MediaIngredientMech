@@ -1,0 +1,1173 @@
+{
+  "schema_version": 1,
+  "operation": "owned-name-suppression-plan-v1",
+  "issue": 669,
+  "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669",
+  "scope": "Export-only suppression of the 23 reviewed owned-name alias pairs; no scientific approval",
+  "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
+  "baseline": "0ee56c11a2894ed50a476b331d56297be0a3ee12",
+  "policy_evidence": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6622570751",
+  "artifacts_before": {
+    "mappings/ingredient_mappings.sssom.tsv": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+    "mappings/suppressed_aliases.tsv": "3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84",
+    "mappings/other_cross_record_baseline.tsv": "f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb"
+  },
+  "artifacts_after": {
+    "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+    "mappings/suppressed_aliases.tsv": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b",
+    "mappings/other_cross_record_baseline.tsv": "1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f"
+  },
+  "unchanged_inventory": {
+    "path": "reports/owned_name_deferred_669_20261103/unchanged-inventory.json",
+    "sha256": "ddd13e43795457e5968927ac57324d42ade64ca4807d18b607115ee3353e70bf"
+  },
+  "generation": {
+    "producer_revision": "3022b8738dcc9e01c7464a8d5c95aa9be2eef141",
+    "candidate": {
+      "path": "reports/owned_name_deferred_669_20261103/generation/candidate.sssom.tsv",
+      "sha256": "2a2197e907150b679d804deaad6e92dc3955846118499245cae53c9716da14da"
+    },
+    "sidecar": {
+      "path": "reports/owned_name_deferred_669_20261103/generation/suppressed_aliases.tsv",
+      "sha256": "b8792629d75ae1a54fe8d84b8cb3186ccfce6184a12df032e4124158230cb525"
+    },
+    "manifest": {
+      "path": "reports/owned_name_deferred_669_20261103/generation/candidate.sssom.tsv.manifest.json",
+      "sha256": "e5a6e1c08f56d9fc6ef7cfcc36e48bb80016975bc6691fb7bdabf56fc795378c"
+    },
+    "receipt": {
+      "path": "reports/owned_name_deferred_669_20261103/generation/generation-receipt.json",
+      "sha256": "cf5d13a4a7af7e0a4eebf3cfdf0e9b6a00b92cdf1da9fc2994dc9ad4c5ec1c5d"
+    }
+  },
+  "receipt_sequence": 26,
+  "pairs": [
+    {
+      "baseline_row": {
+        "subject_id": "MIM:2-Deoxyadenosine_Monohydrate",
+        "token": "2-deoxyadenosine",
+        "owned_by": "MIM:2-deoxyadenosine",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "2-deoxyadenosine",
+      "source_position": 54,
+      "selector": {
+        "subject_id": "MIM:2-Deoxyadenosine_Monohydrate",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:17256",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:2-Deoxyadenosine_Monohydrate",
+        "subject_label": "2-Deoxyadenosine monohydrate",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:17256",
+        "object_label": "2'-deoxyadenosine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:primary_mappings[kegg_compound]|MIM:MIM Step7d scientific review (#901)|MIM:curator=claude",
+        "mapping_date": "2026-11-03",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "2-deoxyadenosine",
+        "validation_method": ""
+      },
+      "after_other": "",
+      "source_owner": {
+        "path": "data/ingredients/mapped/2-Deoxyadenosine_Monohydrate.yaml",
+        "sha256": "57b6a40c3ea029e2ef30b54ce1dc8a3eb8a9902f4e00b6c60ef728ae582c44a0"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:2-deoxyadenosine",
+          "path": "data/ingredients/mapped/2-deoxyadenosine.yaml",
+          "sha256": "992a02df42d22c2b42dd432e809d6dcefd0816d270733a044dd0838e77bda930"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=54&subject_id=MIM:2-Deoxyadenosine_Monohydrate&predicate_id=skos:broadMatch&object_id=CHEBI:17256&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate",
+        "token": "2-Keto-D-gluconic acid hemicalcium salt monohydrate",
+        "owned_by": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "2-keto-d-gluconic acid hemicalcium salt monohydrate",
+      "source_position": 66,
+      "selector": {
+        "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:27469",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate",
+        "subject_label": "2-Keto-D-gluconic acid hemicalcium salt hydrate",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:27469",
+        "object_label": "2-dehydro-D-gluconic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[kegg_compound]|MIM:MIM Step7d scientific review (#901)|MIM:curator=claude",
+        "mapping_date": "2026-11-03",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "2-Keto-D-gluconic acid hemicalcium salt monohydrate",
+        "validation_method": ""
+      },
+      "after_other": "",
+      "source_owner": {
+        "path": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml",
+        "sha256": "ef8370ab5880873b2cd9fcf7bcb6b477a92d73981909cc8113f13431b3957808"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate",
+          "path": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml",
+          "sha256": "35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=66&subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate&predicate_id=skos:broadMatch&object_id=CHEBI:27469&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate",
+        "token": "alpha-ketoglutaric acid",
+        "owned_by": "MIM:Alpha-ketoglutaric_Acid",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "alpha-ketoglutaric acid",
+      "source_position": 266,
+      "selector": {
+        "subject_id": "MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:30915",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate",
+        "subject_label": "a-Ketoglutaric acid disodium salt hydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:30915",
+        "object_label": "2-oxoglutaric acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.9",
+        "comment": "[other: dropped ['a-Ketoglutaric acid']: REJECTED_LABEL, a different form's name (#232)]",
+        "other": "alpha-ketoglutaric acid|CAS:305-72-6",
+        "validation_method": "manual:retire_wrong_form_names|OTHER|2026-09-23"
+      },
+      "after_other": "CAS:305-72-6",
+      "source_owner": {
+        "path": "data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml",
+        "sha256": "bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Alpha-ketoglutaric_Acid",
+          "path": "data/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml",
+          "sha256": "cc852c586e35a3ffa025ce9446da05dc235a6df8a7c0e7c2fa4c4d6ee18d371d"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=266&subject_id=MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate&predicate_id=skos:closeMatch&object_id=CHEBI:30915&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Adenine",
+        "token": "Adenine hydrochloride hydrate",
+        "owned_by": "MIM:Adenine_Hydrochloride_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "adenine hydrochloride hydrate",
+      "source_position": 307,
+      "selector": {
+        "subject_id": "MIM:Adenine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:16708",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Adenine",
+        "subject_label": "Adenine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:16708",
+        "object_label": "adenine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Adenine hydrochloride hydrate|9H-purin-6-amine|CAS:73-24-5",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "after_other": "9H-purin-6-amine|CAS:73-24-5",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Adenine.yaml",
+        "sha256": "136c82936b276ccb821eda3f31ddde7a1187e2a69fc14a9c4d2ab55821e24f05"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Adenine_Hydrochloride_Hydrate",
+          "path": "data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml",
+          "sha256": "2467c25545c1818d60b1822acbcc64ab0b25aef09f99722f2fb140d5296722e1"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=307&subject_id=MIM:Adenine&predicate_id=skos:exactMatch&object_id=CHEBI:16708&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Cecl3",
+        "token": "CeCl3 x 7 H2O",
+        "owned_by": "MIM:Cecl3_X_7_H2o",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "cecl3 x 7 h2o",
+      "source_position": 673,
+      "selector": {
+        "subject_id": "MIM:Cecl3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:35458",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Cecl3",
+        "subject_label": "CeCl3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:35458",
+        "object_label": "cerium trichloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=enrich_mim_cas_rn_batch]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "CeCl3 x 7 H2O|[CeCl3]|cerium chloride|cerium(3+) chloride|cerium(III) chloride|cerous chloride|cerous(III) chloride|trichloridocerium|CAS:7790-86-5",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "after_other": "[CeCl3]|cerium chloride|cerium(3+) chloride|cerium(III) chloride|cerous chloride|cerous(III) chloride|trichloridocerium|CAS:7790-86-5",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Cecl3.yaml",
+        "sha256": "22476283b23378e01e0c388acd5d0ee23721928bc71b122765370b8fb914e1f4"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Cecl3_X_7_H2o",
+          "path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+          "sha256": "7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=673&subject_id=MIM:Cecl3&predicate_id=skos:exactMatch&object_id=CHEBI:35458&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Ceftazidime",
+        "token": "Ceftazidime hydrate",
+        "owned_by": "MIM:Ceftazidime_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "ceftazidime hydrate",
+      "source_position": 702,
+      "selector": {
+        "subject_id": "MIM:Ceftazidime",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:3508",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Ceftazidime",
+        "subject_label": "Ceftazidime",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:3508",
+        "object_label": "ceftazidime",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:microbedecoder|MIM:curator=classify_ingredient_type|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Ceftazidime hydrate",
+        "validation_method": "manual:review-ingredients|APPROVED|2026-08-04"
+      },
+      "after_other": "",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Ceftazidime.yaml",
+        "sha256": "02faf5d72f507c1493164eb009fe7b94923238704651f271cbcd64f96822b4a9"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Ceftazidime_Hydrate",
+          "path": "data/ingredients/mapped/Ceftazidime_Hydrate.yaml",
+          "sha256": "405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=702&subject_id=MIM:Ceftazidime&predicate_id=skos:exactMatch&object_id=CHEBI:3508&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Cocl2",
+        "token": "CoCl2 x 4 H2O",
+        "owned_by": "MIM:Cocl2_X_4_H2o",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "cocl2 x 4 h2o",
+      "source_position": 800,
+      "selector": {
+        "subject_id": "MIM:Cocl2",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:35696",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Cocl2",
+        "subject_label": "CoCl2",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:35696",
+        "object_label": "cobalt dichloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "CoCl2 x 4 H2O|CoCl .6H O|CoCl 2|Cobalt chloride|Kobalt chlorid|Kobalt(II)-chlorid|Kobaltdichlorid|cobalt(2+) chloride|cobalt(II) chloride|CAS:7646-79-9",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "CoCl .6H O|CoCl 2|Cobalt chloride|Kobalt chlorid|Kobalt(II)-chlorid|Kobaltdichlorid|cobalt(2+) chloride|cobalt(II) chloride|CAS:7646-79-9",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Cocl2.yaml",
+        "sha256": "f77aab99efc51c1fd9a73bb2caec66ec36c4172ae1935a8a4515f84548c42414"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Cocl2_X_4_H2o",
+          "path": "data/ingredients/mapped/Cocl2_X_4_H2o.yaml",
+          "sha256": "51f325d79b0ce211d955a7748e06744d17f355be35ae03e138b5b8fcc08dcbac"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=800&subject_id=MIM:Cocl2&predicate_id=skos:exactMatch&object_id=CHEBI:35696&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:D-Maltose_Monohydrate",
+        "token": "Maltose Hydrate",
+        "owned_by": "MIM:Maltose_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "maltose hydrate",
+      "source_position": 907,
+      "selector": {
+        "subject_id": "MIM:D-Maltose_Monohydrate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C80300",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:D-Maltose_Monohydrate",
+        "subject_label": "D-Maltose monohydrate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C80300",
+        "object_label": "Maltose Monohydrate",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:family_mismatch_fix|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_energy_source]|kgm:mediaingredientmech_reviewed[curator=merge_cas_conflict_duplicates]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]|MIM:MIM Step7d scientific review (#901)|MIM:curator=claude",
+        "mapping_date": "2026-11-03",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:6363-53-7|Maltose Hydrate",
+        "validation_method": ""
+      },
+      "after_other": "CAS:6363-53-7",
+      "source_owner": {
+        "path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+        "sha256": "b188ec71ed2df3319a96143eff91ee7589587aa655b6c77490db9a6df4f3b9c3"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Maltose_Hydrate",
+          "path": "data/ingredients/mapped/Maltose_Hydrate.yaml",
+          "sha256": "10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=907&subject_id=MIM:D-Maltose_Monohydrate&predicate_id=skos:exactMatch&object_id=NCIT:C80300&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock",
+        "token": "Na2HPO4 x 7 H2O",
+        "owned_by": "MIM:Na2hpo4_X_7_H2o",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "na2hpo4 x 7 h2o",
+      "source_position": 1076,
+      "selector": {
+        "subject_id": "MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:34683",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock",
+        "subject_label": "Disodium phosphate heptahydrate (0.02 M stock)",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:34683",
+        "object_label": "disodium hydrogenphosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:culturemech-pending|MIM:sssom_synonym_enrich_review_2026_05_10|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Na2HPO4 x 7 H2O|disodium hydrogen phosphate heptahydrate",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "disodium hydrogen phosphate heptahydrate",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml",
+        "sha256": "ac55971dfe0e0ffb9fad095e8664da822bf733cb78e20330a5f0e74d8647711f"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Na2hpo4_X_7_H2o",
+          "path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+          "sha256": "b5cb081a8b432e2c952f2d67235ed03b166c8fbdcda7caf1c1b70c849121b5d5"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=1076&subject_id=MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock&predicate_id=skos:closeMatch&object_id=CHEBI:34683&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+        "token": "EDTA",
+        "owned_by": "MIM:Edta",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "edta",
+      "source_position": 1115,
+      "selector": {
+        "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:750784",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+        "subject_label": "EDTA tetrasodium tetrahydrate salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:750784",
+        "object_label": "edetate sodium",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:primary_mappings[kegg_compound]|MIM:MIM Step7d scientific review (#901)|MIM:curator=claude",
+        "mapping_date": "2026-11-03",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Ethylenediamintetraacetic acid (EDTA)|EDTA",
+        "validation_method": ""
+      },
+      "after_other": "Ethylenediamintetraacetic acid (EDTA)",
+      "source_owner": {
+        "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+        "sha256": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Edta",
+          "path": "data/ingredients/mapped/Edta.yaml",
+          "sha256": "d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=1115&subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt&predicate_id=skos:broadMatch&object_id=CHEBI:750784&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:K2hpo4",
+        "token": "K2HPO4 x 3 H2O",
+        "owned_by": "MIM:K2hpo4_X_3_H2o",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "k2hpo4 x 3 h2o",
+      "source_position": 1537,
+      "selector": {
+        "subject_id": "MIM:K2hpo4",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:131527",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:K2hpo4",
+        "subject_label": "K2HPO4",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:131527",
+        "object_label": "dipotassium hydrogen phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:PubMed search ('K2HPO4')|MIM:curator=claude_culturemech_alias_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]",
+        "mapping_date": "2026-08-30",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "K2HPO4 x 3 H2O|Potassium dibasic phosphate|Dipotassium phosphate|Dibasic potassium phosphate|Dipotassium hydrogenorthophosphate|Dipotassium monohydrogen phosphate|Dipotassium monophosphate|Dipotassium orthophosphate|Hydrogen dipotassium phosphate|K 2HPO4|KH2HPO4|Phosphoric acid, dipotassium salt|Potassium monohydrogen phosphate|Potassium monophosphate|Potassium phosphate (dibasic)|Potassium phosphate dibasic|K2HPO|K2HPO4(Sigma P 3786)|CAS:7758-11-4",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "Potassium dibasic phosphate|Dipotassium phosphate|Dibasic potassium phosphate|Dipotassium hydrogenorthophosphate|Dipotassium monohydrogen phosphate|Dipotassium monophosphate|Dipotassium orthophosphate|Hydrogen dipotassium phosphate|K 2HPO4|KH2HPO4|Phosphoric acid, dipotassium salt|Potassium monohydrogen phosphate|Potassium monophosphate|Potassium phosphate (dibasic)|Potassium phosphate dibasic|K2HPO|K2HPO4(Sigma P 3786)|CAS:7758-11-4",
+      "source_owner": {
+        "path": "data/ingredients/mapped/K2hpo4.yaml",
+        "sha256": "7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:K2hpo4_X_3_H2o",
+          "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+          "sha256": "fb412a63050b2d599ee3cfab9fcafcaf141b3ac4c8a1febe6a57709831bc90d6"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=1537&subject_id=MIM:K2hpo4&predicate_id=skos:exactMatch&object_id=CHEBI:131527&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Licl",
+        "token": "Lithium chloride hydrate",
+        "owned_by": "MIM:Lithium_Chloride_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "lithium chloride hydrate",
+      "source_position": 1708,
+      "selector": {
+        "subject_id": "MIM:Licl",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:48607",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Licl",
+        "subject_label": "LiCl",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:48607",
+        "object_label": "lithium chloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:primary_mappings[bacdive_metabolite]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Lithium chloride hydrate|Lithiumchlorid|chlorure de lithium|cloruro de litio|lithii chloridum|LiCl.H O|CAS:7447-41-8",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "after_other": "Lithiumchlorid|chlorure de lithium|cloruro de litio|lithii chloridum|LiCl.H O|CAS:7447-41-8",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Licl.yaml",
+        "sha256": "870a3eff455850b77496a3495d81683a1fd5a8b3e65eb2b5571023a047f0a1f3"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Lithium_Chloride_Hydrate",
+          "path": "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml",
+          "sha256": "cd0d270b65a5c65e6d4b195d7f716fe888015e27b512dd11f465d79a7e5f731d"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=1708&subject_id=MIM:Licl&predicate_id=skos:exactMatch&object_id=CHEBI:48607&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Maltose",
+        "token": "Maltose Hydrate",
+        "owned_by": "MIM:Maltose_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "maltose hydrate",
+      "source_position": 1786,
+      "selector": {
+        "subject_id": "MIM:Maltose",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17306",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Maltose",
+        "subject_label": "Maltose",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17306",
+        "object_label": "maltose",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_energy_source]|kgm:mediaingredientmech_reviewed[curator=merge_cas_conflict_duplicates]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Maltose Hydrate|1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose|4-(alpha-D-glucosido)-D-glucose|4-O-alpha-D-glucopyranosyl-D-glucopyranose|4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose|Cextromaltose|D-(+)-maltose|D-maltose (maltose)|Glca1-4Glca|Glcalpha1-4Glca|Glcalpha1-4Glcalpha|Malt sugar|Malzzucker|alpha-D-Glcp-(1->4)-D-Glcp|alpha-D-Glcp-(1->4)-alpha-D-Glcp|alpha-D-Glucopyranosyl-(1->4)-D-glucopyranose|alpha-D-glucopyranosyl-(1->4)-D-glucose|D-Maltose|Alpha-maltose|alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose|CAS:69-79-4",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose|4-(alpha-D-glucosido)-D-glucose|4-O-alpha-D-glucopyranosyl-D-glucopyranose|4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose|Cextromaltose|D-(+)-maltose|D-maltose (maltose)|Glca1-4Glca|Glcalpha1-4Glca|Glcalpha1-4Glcalpha|Malt sugar|Malzzucker|alpha-D-Glcp-(1->4)-D-Glcp|alpha-D-Glcp-(1->4)-alpha-D-Glcp|alpha-D-Glucopyranosyl-(1->4)-D-glucopyranose|alpha-D-glucopyranosyl-(1->4)-D-glucose|D-Maltose|Alpha-maltose|alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose|CAS:69-79-4",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Maltose.yaml",
+        "sha256": "d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Maltose_Hydrate",
+          "path": "data/ingredients/mapped/Maltose_Hydrate.yaml",
+          "sha256": "10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=1786&subject_id=MIM:Maltose&predicate_id=skos:exactMatch&object_id=CHEBI:17306&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Maltotriose",
+        "token": "Maltotriose hydrate",
+        "owned_by": "MIM:Maltotriose_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "maltotriose hydrate",
+      "source_position": 1790,
+      "selector": {
+        "subject_id": "MIM:Maltotriose",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:61993",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Maltotriose",
+        "subject_label": "Maltotriose",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:61993",
+        "object_label": "maltotriose",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:microbedecoder|MIM:curator=classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Maltotriose hydrate",
+        "validation_method": "manual:review-ingredients|APPROVED|2026-08-04"
+      },
+      "after_other": "",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Maltotriose.yaml",
+        "sha256": "cfb03cea28df42ee44d4116d04a5aeb7d50f06b8b4d02f434a8ac0aeda833671"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Maltotriose_Hydrate",
+          "path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+          "sha256": "b610eb816827776dbca74ea2ac5d04b9a20300c3a8e0dcb280e74df72f2f079f"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=1790&subject_id=MIM:Maltotriose&predicate_id=skos:exactMatch&object_id=CHEBI:61993&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Na2co3",
+        "token": "Sodium carbonate solution",
+        "owned_by": "MIM:Sodium_Carbonate_Solution",
+        "disposition": "UNREVIEWED"
+      },
+      "token_key": "sodium carbonate solution",
+      "source_position": 2011,
+      "selector": {
+        "subject_id": "MIM:Na2co3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:29377",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Na2co3",
+        "subject_label": "Na2CO3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:29377",
+        "object_label": "sodium carbonate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped_v2]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Sodium carbonate solution|Na CO|Na2CO3-CO2 buffer|NaCO3|Natriumkarbonat|disodium carbonate|disodium trioxidocarbonate|Na2CO3 anhydrous|Na2CO|Na2CO3(Baker 3604)|CAS:497-19-8",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "Na CO|Na2CO3-CO2 buffer|NaCO3|Natriumkarbonat|disodium carbonate|disodium trioxidocarbonate|Na2CO3 anhydrous|Na2CO|Na2CO3(Baker 3604)|CAS:497-19-8",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Na2co3.yaml",
+        "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Sodium_Carbonate_Solution",
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2011&subject_id=MIM:Na2co3&predicate_id=skos:exactMatch&object_id=CHEBI:29377&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Na2so3",
+        "token": "Na2SO3 x 5 H2O",
+        "owned_by": "MIM:Na2so3_X_5_H2o",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "na2so3 x 5 h2o",
+      "source_position": 2037,
+      "selector": {
+        "subject_id": "MIM:Na2so3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86477",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Na2so3",
+        "subject_label": "Na2SO3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86477",
+        "object_label": "sodium sulfite",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Na2SO3 x 5 H2O|Dried sodium sulfite|Natrium sulfurosum|Sodium sulphite|Sulfurous acid, disodium salt|disodium sulfite|Anhydrous sodium sulfite|Sodium sulfite anhydrous|CAS:7757-83-7",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "after_other": "Dried sodium sulfite|Natrium sulfurosum|Sodium sulphite|Sulfurous acid, disodium salt|disodium sulfite|Anhydrous sodium sulfite|Sodium sulfite anhydrous|CAS:7757-83-7",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Na2so3.yaml",
+        "sha256": "840729f87247e887f68d659f5830bbc4fe695dd907ea07fa7ace0e52dbca5a9a"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Na2so3_X_5_H2o",
+          "path": "data/ingredients/mapped/Na2so3_X_5_H2o.yaml",
+          "sha256": "ac0d2946bafe59cc61795937c3d9077020a99ff978e6eb49538dd7b91a6d0940"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2037&subject_id=MIM:Na2so3&predicate_id=skos:exactMatch&object_id=CHEBI:86477&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Palatinose",
+        "token": "palatinose hydrate",
+        "owned_by": "MIM:Palatinose_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "palatinose hydrate",
+      "source_position": 2208,
+      "selector": {
+        "subject_id": "MIM:Palatinose",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:18394",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Palatinose",
+        "subject_label": "Palatinose",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:18394",
+        "object_label": "6-O-alpha-D-glucopyranosyl-D-fructofuranose",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#213)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "palatinose hydrate|Palatinose (6-O-alpha-D-glucopyranosyl-D-fruc",
+        "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+      },
+      "after_other": "Palatinose (6-O-alpha-D-glucopyranosyl-D-fruc",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Palatinose.yaml",
+        "sha256": "e5011f3858a1b333eb0ed0943e023c8e9b278f7f5abf5cfa0b2015bda7e06816"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Palatinose_Hydrate",
+          "path": "data/ingredients/mapped/Palatinose_Hydrate.yaml",
+          "sha256": "ac18571f8ed5e72bc9681a1a326674254adf6d32aca7374fded31bd69aac3886"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2208&subject_id=MIM:Palatinose&predicate_id=skos:exactMatch&object_id=CHEBI:18394&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Phosphorous_Acid",
+        "token": "Sodium phosphite dibasic pentahydrate",
+        "owned_by": "MIM:Sodium_Phosphite_Dibasic_Pentahydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "sodium phosphite dibasic pentahydrate",
+      "source_position": 2272,
+      "selector": {
+        "subject_id": "MIM:Phosphorous_Acid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:36361",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Phosphorous_Acid",
+        "subject_label": "phosphorous acid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:36361",
+        "object_label": "phosphorous acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Sodium phosphite dibasic pentahydrate|trihydrogen trioxophosphate(3-)|trihydroxidophosphorus|trioxophosphoric(3-) acid|CAS:13598-36-2",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "after_other": "trihydrogen trioxophosphate(3-)|trihydroxidophosphorus|trioxophosphoric(3-) acid|CAS:13598-36-2",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Phosphorous_Acid.yaml",
+        "sha256": "70778911888e967afa6b97025a00657e323a19f6726a60834ff4b63bf10c497b"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Sodium_Phosphite_Dibasic_Pentahydrate",
+          "path": "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml",
+          "sha256": "02f24e2580dfad82c4cf391fdd345d0e8fc60922ab8899da18704581fc86497e"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2272&subject_id=MIM:Phosphorous_Acid&predicate_id=skos:exactMatch&object_id=CHEBI:36361&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+        "token": "Sodium carbonate solution",
+        "owned_by": "MIM:Sodium_Carbonate_Solution",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "sodium carbonate solution",
+      "source_position": 2565,
+      "selector": {
+        "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C80911",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+        "subject_label": "sodium carbonate monohydrate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C80911",
+        "object_label": "Sodium Carbonate Monohydrate",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped_v2]|MIM:MIM Step7d scientific review (#901)|MIM:curator=claude",
+        "mapping_date": "2026-11-03",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:5968-11-6|Sodium carbonate solution",
+        "validation_method": ""
+      },
+      "after_other": "CAS:5968-11-6",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+        "sha256": "a12cfc43edb55da16e7113d32795148bd04eec8d6936fdab1452c8430f7ae2ba"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Sodium_Carbonate_Solution",
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2565&subject_id=MIM:Sodium_Carbonate_Monohydrate&predicate_id=skos:exactMatch&object_id=NCIT:C80911&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Sodium_Deoxycholate",
+        "token": "Sodium deoxycholate monohydrate",
+        "owned_by": "MIM:Sodium_Deoxycholate_Monohydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "sodium deoxycholate monohydrate",
+      "source_position": 2574,
+      "selector": {
+        "subject_id": "MIM:Sodium_Deoxycholate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9177",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Sodium_Deoxycholate",
+        "subject_label": "sodium Deoxycholate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9177",
+        "object_label": "sodium deoxycholate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Sodium deoxycholate monohydrate|100|sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate|CAS:302-95-4",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "100|sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate|CAS:302-95-4",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Sodium_Deoxycholate.yaml",
+        "sha256": "a00fd9952b85d8509a44839a0b064224a679237774648486835eb705b066737c"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Sodium_Deoxycholate_Monohydrate",
+          "path": "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml",
+          "sha256": "2dd29456294e03ebdf5cb95b439fddd81ea3729ba2f63adbbadb93e8ecffdd2b"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2574&subject_id=MIM:Sodium_Deoxycholate&predicate_id=skos:exactMatch&object_id=CHEBI:9177&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Sodium_Nitrate_070_M_Stock",
+        "token": "NaNO3",
+        "owned_by": "MIM:Nano3",
+        "disposition": "UNREVIEWED"
+      },
+      "token_key": "nano3",
+      "source_position": 2602,
+      "selector": {
+        "subject_id": "MIM:Sodium_Nitrate_070_M_Stock",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:63005",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Sodium_Nitrate_070_M_Stock",
+        "subject_label": "Sodium nitrate (0.70 M stock)",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:63005",
+        "object_label": "sodium nitrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:culturemech-pending|MIM:sssom_synonym_enrich_review_2026_05_10|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "NaNO3|sodium trioxidonitrate(1-)",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after_other": "sodium trioxidonitrate(1-)",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+        "sha256": "eca7428c811737e50f6146e617e8e6530a96c07d8be51069abf11aaf31aae98c"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Nano3",
+          "path": "data/ingredients/mapped/Nano3.yaml",
+          "sha256": "6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2602&subject_id=MIM:Sodium_Nitrate_070_M_Stock&predicate_id=skos:broadMatch&object_id=CHEBI:63005&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Stachyose_-_70",
+        "token": "Stachyose hydrate",
+        "owned_by": "MIM:Stachyose_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "stachyose hydrate",
+      "source_position": 2665,
+      "selector": {
+        "subject_id": "MIM:Stachyose_-_70",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17164",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Stachyose_-_70",
+        "subject_label": "Stachyose - 70%",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17164",
+        "object_label": "stachyose",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_chebi_ancestry]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Stachyose hydrate|beta-D-fructofuranosyl alpha-D-galactopyranosyl-(1->6)-alpha-D-galactopyranosyl-(1->6)-alpha-D-glucopyranoside|CAS:470-55-3",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "beta-D-fructofuranosyl alpha-D-galactopyranosyl-(1->6)-alpha-D-galactopyranosyl-(1->6)-alpha-D-glucopyranoside|CAS:470-55-3",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Stachyose_-_70.yaml",
+        "sha256": "1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Stachyose_Hydrate",
+          "path": "data/ingredients/mapped/Stachyose_Hydrate.yaml",
+          "sha256": "d4d154ba7f27848fcf0b6caf40c3638efa15cfca537f332dcaebcc53a749285c"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2665&subject_id=MIM:Stachyose_-_70&predicate_id=skos:exactMatch&object_id=CHEBI:17164&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    },
+    {
+      "baseline_row": {
+        "subject_id": "MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis",
+        "token": "Vancomycin Hydrochloride Hydrate",
+        "owned_by": "MIM:Vancomycin_Hydrochloride_Hydrate",
+        "disposition": "HYDRATE_FAMILY_UNREVIEWED"
+      },
+      "token_key": "vancomycin hydrochloride hydrate",
+      "source_position": 2911,
+      "selector": {
+        "subject_id": "MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9932",
+        "field": "other"
+      },
+      "before_row": {
+        "subject_id": "MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis",
+        "subject_label": "Vancomycin Hydrochloride from Streptomyces orientalis",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9932",
+        "object_label": "Vancomycin hydrochloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Vancomycin Hydrochloride Hydrate|Vancomycin x HCl|CAS:1404-93-9",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after_other": "Vancomycin x HCl|CAS:1404-93-9",
+      "source_owner": {
+        "path": "data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml",
+        "sha256": "1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b"
+      },
+      "credited_owners": [
+        {
+          "subject_id": "MIM:Vancomycin_Hydrochloride_Hydrate",
+          "path": "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+          "sha256": "7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5"
+        }
+      ],
+      "source_ref": "mappings/ingredient_mappings.sssom.tsv#source_position=2911&subject_id=MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis&predicate_id=skos:exactMatch&object_id=CHEBI:9932&field=other@sha256=d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+      "input_surfaces": [
+        "prior_sssom"
+      ],
+      "disposition": "SUPPRESS",
+      "review_disposition": "WITHHOLD"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/scripts/refresh_unchanged_cohort.py", line 6, in <module>
+    main()
+    ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/src/mediaingredientmech/ingredient_bundle_refresh.py", line 783, in main
+    successor, audit = verify_unchanged_cohort(
+                       ~~~~~~~~~~~~~~~~~~~~~~~^
+        prior,
+        ^^^^^^
+    ...<7 lines>...
+        owned_name_suppression=owned_name_suppression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/src/mediaingredientmech/ingredient_bundle_refresh.py", line 483, in verify_unchanged_cohort
+    projection = verify_owned_name_suppression(prior, before, current, owned_name_suppression)
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/src/mediaingredientmech/owned_name_suppression_refresh.py", line 727, in verify_owned_name_suppression
+    require(
+    ~~~~~~~^
+        evidence_documents["before"][a["review_evidence"]]["entries"][a["evidence_key"]]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        == evidence_documents["current"][b["review_evidence"]]["entries"][b["evidence_key"]],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "unrelated base evidence changed",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/src/mediaingredientmech/owned_name_suppression_refresh.py", line 98, in require
+    raise ValueError("Owned-name suppression: " + message)
+ValueError: Owned-name suppression: unrelated base evidence changed

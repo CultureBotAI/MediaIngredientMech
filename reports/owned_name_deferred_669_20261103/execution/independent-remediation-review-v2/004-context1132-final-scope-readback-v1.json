@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-04T05:01:13.157181+00:00",
+  "baseline": "71f64ab30731d025302395c41d8f18a938b3499b",
+  "reviewer": "/root/step7d_independent_review",
+  "definition_readback": {
+    "src/mediaingredientmech/owned_name_suppression_refresh.py": {
+      "sha256": "4e53124d693aed1091a1e35392cf1b867718194396aedd3d6c921d6fcc5d06aa",
+      "changed": [
+        "recheck_inventory",
+        "verify_owned_name_suppression"
+      ],
+      "added": [
+        "_publication_log_path"
+      ],
+      "removed": [],
+      "unchanged_count": 11
+    },
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": {
+      "sha256": "cd85ce90c88bb69b05d618492af6bdc7d27adfa12ca1a5c753bb223207ff4f32",
+      "changed": [
+        "main"
+      ],
+      "added": [],
+      "removed": [],
+      "unchanged_count": 16
+    },
+    "tests/test_owned_name_suppression_refresh.py": {
+      "sha256": "e2eecaff8336bef67c8ffea4c4172c5685af19ecb4cda424e79287ec9ea701c2",
+      "changed": [],
+      "added": [
+        "issue1132_cli_argv",
+        "issue1132_cli_setup",
+        "test_issue1132_cli_publishes_with_distinct_log_and_real_native_proof",
+        "test_issue1132_cli_rechecks_prior_companion_alias_after_reservation",
+        "test_issue1132_cli_rejects_caller_only_proof_role_reuse",
+        "test_issue1132_cli_rejects_publication_log_as_output",
+        "test_issue1132_distinct_log_binds_actual_bytes_without_claiming_transition_proof",
+        "test_issue1132_post_reservation_recheck_rejects_same_byte_hard_link",
+        "test_issue1132_publication_log_cannot_hard_link_another_proof_role",
+        "test_issue1132_publication_log_cannot_reuse_another_proof_role"
+      ],
+      "removed": [],
+      "unchanged_count": 27
+    }
+  }
+}

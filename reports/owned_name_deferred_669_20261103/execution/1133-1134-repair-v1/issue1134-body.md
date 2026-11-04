@@ -1,0 +1,7 @@
+The new deferred-alias tests' `build_case` copies the live policy manifest, but replaces its `owned_name_suppression_updates` with a singleton fixture update. After actual receipt 26 is published, the copied manifest already contains a suppression-history prefix. The fixture drops that prefix and the unchanged production guard correctly rejects the manufactured transition.
+
+Reproduced with the unchanged original `test_real_native_bridge_and_exact_export_only_transition`: one failed test with `expected one manifest history append`. The existing helper and test ASTs still equal commit `9b6bac39`; source test SHA256 `e2eecaff8336bef67c8ffea4c4172c5685af19ecb4cda424e79287ec9ea701c2`. Failed log SHA256 `8301d7b856ecdf14b2a90664a427be2a0537748743830f1b6b70dc8f81b93739`.
+
+Fix the fixture to preserve its complete existing prefix and append exactly one synthetic update. Add explicit empty and populated-prefix regression cases and retain all production history checks and existing test assertions, including refusal of deleted or altered prefix entries. Do not change production validation to accommodate the broken fixture.
+
+Evidence: `reports/owned_name_deferred_669_20261103/review-findings/fixture-history-prefix-v1/{test-before.py,run.json,run.log,archive.json}`. This is separate from #1133's native evidence-continuation compatibility fix. Current issue inventory was checked; #1012 documents a similar historical live-fixture assumption in different tests, not this newly introduced helper.

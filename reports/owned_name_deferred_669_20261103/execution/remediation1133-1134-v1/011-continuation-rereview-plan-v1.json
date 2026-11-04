@@ -1,0 +1,41 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "prepared_at": "2026-11-04T05:14:42.651520+00:00",
+  "state": "prepared; no execution until explicit author freeze",
+  "baseline": "0ee56c11a2894ed50a476b331d56297be0a3ee12",
+  "actual_positions": [
+    926,
+    927,
+    2610,
+    2611,
+    3013,
+    3014
+  ],
+  "entry927_extra": "Exact new receipt26 path/hash appended to the existing superseded_scoped_review.receipt_inputs map",
+  "pinned_stable_inputs": {
+    "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+    "mappings/ingredient_mappings.sssom.tsv.manifest.json": "6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778",
+    "reports/sssom_completion_20260921/mapping-evidence.json": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+    "reports/sssom_completion_20260921/review.json": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+    "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+  },
+  "positive_controls": [
+    "Each of all six actual full evidence entries reproduces the baseline plus exact native chain-derived continuation.",
+    "Public owned-name context accepts the actual baseline/current source snapshots with real native receipt chain, before any companion publication.",
+    "All earlier history, owner bytes, decision payload, source row hash and scientific reasoning remain identical."
+  ],
+  "negative_controls": [
+    "Mutated existing authority file/checkpoint/native-review binding or previous continuation prefix.",
+    "Forged suffix sequence, receipt path/hash, before/after position.",
+    "Missing continuation link or duplicate/extra suffix.",
+    "Changed source row or touched-row history, altered owner hash, disposition, review reason or evidence content.",
+    "Row927 receipt-input map missing new link, forged new hash, changed earlier hash, unexpected extra key.",
+    "An entry without an existing form authority does not gain a new extension or provenance field."
+  ],
+  "scope_limits": [
+    "Use real immutable baseline/current evidence and full validated native chain for helper-level differential probes; no maintained file edits.",
+    "Full public context positive case is complementary to helper-level negative probes, not a substitute for complete native CLI refresh/full suite.",
+    "No mutable module import or execution before author freeze; preserve any failed development attempt.",
+    "Native form validator, assembler logic, source records, unified pair, thresholds and pins must remain unchanged."
+  ]
+}
