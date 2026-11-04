@@ -1,0 +1,21 @@
+OK: 3014 rows, 6028 CURIEs in ingredient_mappings.sssom.tsv match _CURIE_RE and use a known prefix.
+SSSOM currency vs curated mapped records:
+  GAP    (mapped record, no SSSOM row):   0
+  ORPHAN (SSSOM row, no/REJECTED record): 0
+  STALE  (row lacks current ontology_id): 0
+  PREDICATE (current ontology row, wrong predicate): 0
+  GRADE (right predicate, stale grade metadata):     0
+
+OK: SSSOM is in sync with the curated data.
+uv run --frozen python scripts/check_unified_rejections.py
+Unified export respects reviewed identity rejections.
+mediaingredientmech: 3344 evidence items; 31 quote-validated; 0 input errors
+  Outside declared selectors (unmeasured): 1196
+  OK: 31
+  NO_QUOTE: 3313
+  MISSING_REFERENCE: 0
+  MISSING_CACHE: 0
+  UNSUPPORTED_REFERENCE: 0
+  INVALID_EVIDENCE: 0
+  INVALID_CACHE: 0
+  SNIPPET_NOT_IN_SOURCE: 0

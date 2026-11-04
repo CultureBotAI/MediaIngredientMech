@@ -1,0 +1,1 @@
+This successor corrects only the diagnostic summary key: credited owner sets were derived independently through the native API, not parsed from the descriptive baseline owned_by field. The prior run and all its evidence remain unchanged. Rerun all scope checks against current bytes before publication.

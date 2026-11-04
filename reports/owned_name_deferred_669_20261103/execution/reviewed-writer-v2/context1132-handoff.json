@@ -1,0 +1,204 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1132",
+  "created_at": "2026-11-04T05:00:31.334068+00:00",
+  "baseline_head": "71f64ab30731d025302395c41d8f18a938b3499b",
+  "scope": "Only verifier, owned-context CLI integration and dedicated tests; no data publication, commits or GitHub mutations by this author.",
+  "files_sha256": {
+    "src/mediaingredientmech/owned_name_suppression_refresh.py": "4e53124d693aed1091a1e35392cf1b867718194396aedd3d6c921d6fcc5d06aa",
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": "cd85ce90c88bb69b05d618492af6bdc7d27adfa12ca1a5c753bb223207ff4f32",
+    "tests/test_owned_name_suppression_refresh.py": "e2eecaff8336bef67c8ffea4c4172c5685af19ecb4cda424e79287ec9ea701c2"
+  },
+  "patch_sha256": "0f083a2ba46950b47e5f646aebbbd53ebe9db5d3ddd044d861bfd4103a56647b",
+  "definition_preservation": {
+    "src/mediaingredientmech/owned_name_suppression_refresh.py": {
+      "changed_existing": [
+        "recheck_inventory",
+        "verify_owned_name_suppression"
+      ],
+      "added": [
+        "_publication_log_path"
+      ],
+      "removed": []
+    },
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": {
+      "changed_existing": [
+        "main"
+      ],
+      "added": [],
+      "removed": []
+    },
+    "tests/test_owned_name_suppression_refresh.py": {
+      "changed_existing": [],
+      "added": [
+        "test_issue1132_publication_log_cannot_reuse_another_proof_role",
+        "test_issue1132_publication_log_cannot_hard_link_another_proof_role",
+        "test_issue1132_distinct_log_binds_actual_bytes_without_claiming_transition_proof",
+        "test_issue1132_post_reservation_recheck_rejects_same_byte_hard_link",
+        "issue1132_cli_setup",
+        "issue1132_cli_argv",
+        "test_issue1132_cli_rejects_caller_only_proof_role_reuse",
+        "test_issue1132_cli_rejects_publication_log_as_output",
+        "test_issue1132_cli_publishes_with_distinct_log_and_real_native_proof",
+        "test_issue1132_cli_rechecks_prior_companion_alias_after_reservation"
+      ],
+      "removed": []
+    }
+  },
+  "change": "Publication log cannot reuse any captured role or same-file alias; caller-only prior companion and loaded input roles are checked in the owned-context CLI branch before publication and after output reservation. Existing output collision guard remains exact. Log bytes remain captured and scientific/native payload/approval assertions remain intact.",
+  "interface": "recheck_inventory(root, proof, additional_roles=()) remains backward compatible for existing callers; optional roles add caller-known file paths only.",
+  "tests": {
+    "passed": 87,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "new_cases": 37,
+    "prior_test_definitions_unchanged": true,
+    "cli_test_boundary": "Only unrelated outer no-claims companion loaders are stubbed; CLI/Git history/native context/receipt replay/guarded publication all run. Final project full suite and complete real companion rebuild remain root-owned."
+  },
+  "checks": {
+    "next23-context-1132-focused-v2": {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-focused-v2.json",
+      "receipt_sha256": "022ad0708326c1efcb2fb67625f682487fb21a7dd125cc0ab2531df177aa8ee2",
+      "name": "next23-context-1132-focused-v2",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "--extra",
+        "dev",
+        "pytest",
+        "tests/test_owned_name_suppression_refresh.py",
+        "-q"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T04:59:50.010097+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T05:00:11.981302+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-focused-v2.log",
+      "log_sha256": "6afde479d1efc5426948fc6f779b0244fec7587117547e59d78a5f27ed157369"
+    },
+    "next23-context-1132-lint-v1": {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-lint-v1.json",
+      "receipt_sha256": "d2b56b9fa3dde38c1791ecea32586a08c3fdf867b337a2fb3044fc39d929a593",
+      "name": "next23-context-1132-lint-v1",
+      "argv": [
+        "just",
+        "lint"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T04:59:50.010343+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T04:59:50.046889+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-lint-v1.log",
+      "log_sha256": "68189bc72f1256b6d150e9611efb07e441134841642e4ce34736d06e836883fb"
+    },
+    "next23-context-1132-format-check-v1": {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-format-check-v1.json",
+      "receipt_sha256": "f98a6dced870797f2168abdee7c7d0cdb6f8659c85f24e0dc783e38f8913b2c0",
+      "name": "next23-context-1132-format-check-v1",
+      "argv": [
+        "just",
+        "format-check"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T05:00:04.398784+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T05:00:04.506490+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-format-check-v1.log",
+      "log_sha256": "bd07a28bae7b64724b4b01bb210579656bca69d6166cc233c774535213865bbb"
+    },
+    "next23-context-1132-typecheck-v2": {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-typecheck-v2.json",
+      "receipt_sha256": "169c27b6a48a656ad2d98ca76601be4a661254a6cb1e6f58b5faaffa23832d97",
+      "name": "next23-context-1132-typecheck-v2",
+      "argv": [
+        "just",
+        "typecheck"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T04:59:50.010322+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T04:59:52.799214+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-typecheck-v2.log",
+      "log_sha256": "e1fcacae0f12817f07e886d1752aedabddb6adac2f608bf951241c87b5c27cd7"
+    },
+    "next23-context-1132-format-v3": {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-format-v3.json",
+      "receipt_sha256": "0dc08862d98e7fbe38dc9d0ec833e681b42b5e5c48e9080174339da16e4a1e05",
+      "name": "next23-context-1132-format-v3",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "--extra",
+        "dev",
+        "black",
+        "src/mediaingredientmech/owned_name_suppression_refresh.py",
+        "src/mediaingredientmech/ingredient_bundle_refresh.py",
+        "tests/test_owned_name_suppression_refresh.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T04:59:39.832927+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T04:59:40.054110+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-format-v3.log",
+      "log_sha256": "eb509511f07d955385d4faa9c86dcc3bc364bd0e324d4a23de291c25f28e544d"
+    },
+    "next23-context-1132-ruff-v2": {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-ruff-v2.json",
+      "receipt_sha256": "f61ef43159eafc2c9d2253caedc5c2ac69d9d39aa7b46f1690b483242183d233",
+      "name": "next23-context-1132-ruff-v2",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "--extra",
+        "dev",
+        "ruff",
+        "check",
+        "src/mediaingredientmech/owned_name_suppression_refresh.py",
+        "src/mediaingredientmech/ingredient_bundle_refresh.py",
+        "tests/test_owned_name_suppression_refresh.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T04:59:11.837754+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T04:59:11.857148+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-ruff-v2.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    }
+  },
+  "preserved_failed_run": {
+    "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-cli-v1.json",
+    "details": {
+      "name": "next23-context-1132-cli-v1",
+      "argv": [
+        "uv",
+        "run",
+        "--frozen",
+        "--extra",
+        "dev",
+        "pytest",
+        "tests/test_owned_name_suppression_refresh.py",
+        "-q",
+        "-k",
+        "issue1132_cli"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "started_at": "2026-11-04T04:59:11.837708+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-04T04:59:17.837718+00:00",
+      "exit_code": 1,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-context-1132-cli-v1.log",
+      "log_sha256": "642a0c0ec2e90e68f7bb493c23bea1fdd9f35c50602e339565c6485f3621dd2d"
+    },
+    "reason": "CLI synthetic success fixture omitted claim_counts/record_inputs consumed only by main summary after successful guarded publication. Added truthful empty no-claims fields; production checks unchanged."
+  },
+  "review_required": "Independent original counterexamples and role/hard-link controls plus actual publication review; author does not claim independent approval."
+}

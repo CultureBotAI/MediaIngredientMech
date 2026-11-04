@@ -1,0 +1,160 @@
+[
+  {
+    "tag": "next23-postpublication-00-assembler-endpoint-v1",
+    "argv": [
+      "python",
+      "-B",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/sync_review_metadata_v1.py",
+      "assembler",
+      "--apply"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-01-assemble-v1",
+    "argv": [
+      "python",
+      "-B",
+      "reports/sssom_completion_20260921/assemble_review.py"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-02-assemble-check-v1",
+    "argv": [
+      "python",
+      "-B",
+      "reports/sssom_completion_20260921/assemble_review.py",
+      "--check"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-03-export-full-v1",
+    "argv": [
+      "just",
+      "export-kgx",
+      "output/mim-kgx-710-full"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-04-semantic-build-v1",
+    "argv": [
+      "python",
+      "-B",
+      "reports/semantic_review_20260921/resolution/build_review.py",
+      "--bundle",
+      "output/mim-kgx-710-full"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-05-semantic-integrity-v1",
+    "argv": [
+      "python",
+      "-B",
+      "-m",
+      "mediaingredientmech.validation.semantic_release",
+      "--root",
+      ".",
+      "--report",
+      "reports/semantic_review_20260921/resolution/current-review.json"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-06-assemble-after-semantic-check-v1",
+    "argv": [
+      "python",
+      "-B",
+      "reports/sssom_completion_20260921/assemble_review.py",
+      "--check"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-07-companion-refresh-v1",
+    "argv": [
+      "python",
+      "-B",
+      "scripts/refresh_unchanged_cohort.py",
+      "--root",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+      "--baseline",
+      "0ee56c11a2894ed50a476b331d56297be0a3ee12",
+      "--prior-review",
+      "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json",
+      "--output",
+      "reports/owned_name_deferred_669_20261103/companion-review.json",
+      "--receipt",
+      "reports/owned_name_deferred_669_20261103/companion-refresh-receipt.json",
+      "--prior-copy",
+      "reports/owned_name_deferred_669_20261103/prior-companion-review.json",
+      "--owned-name-suppression-manifest-sha256",
+      "6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-07b-paired-selectors-v1",
+    "argv": [
+      "python",
+      "-B",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/sync_review_metadata_v1.py",
+      "selectors",
+      "--apply"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-08-companion-export-v1",
+    "argv": [
+      "python",
+      "-B",
+      "-m",
+      "mediaingredientmech.export.ingredient_bundle",
+      "export",
+      "--review",
+      "reports/owned_name_deferred_669_20261103/companion-review.json",
+      "--output",
+      "output/mim-reviewed-ingredient-bundle"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-09-reviewed-export-v1",
+    "argv": [
+      "just",
+      "export-reviewed-sssom",
+      "reports/sssom_completion_20260921/review.json",
+      "output/mim-reviewed-sssom"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-10-reviewed-qc-schema-v1",
+    "argv": [
+      "just",
+      "qc-reviewed-sssom",
+      "reports/sssom_completion_20260921/review.json",
+      "output/mim-reviewed-sssom"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-11-supported-export-v1",
+    "argv": [
+      "just",
+      "export-supported-kgx",
+      "reports/semantic_review_20260921/resolution/current-review.json",
+      "output/mim-kgx-710-supported"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-12-supported-qc-v1",
+    "argv": [
+      "just",
+      "qc-supported-kgx",
+      "reports/semantic_review_20260921/resolution/current-review.json",
+      "output/mim-kgx-710-supported"
+    ]
+  },
+  {
+    "tag": "next23-postpublication-13-supported-schema-v1",
+    "argv": [
+      "python",
+      "-B",
+      "-c",
+      "from sssom.parsers import parse_sssom_table; from sssom.validators import SchemaValidationType, validate; validate(parse_sssom_table(\"output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv\"), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat]); print(\"PASS supported SSSOM schema/prefix/CURIE validation\")"
+    ]
+  }
+]

@@ -1,0 +1,779 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "at": "2026-11-04T05:22:00.068925+00:00",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1133",
+  "code_sha256": {
+    "src/mediaingredientmech/owned_name_suppression_refresh.py": "7c8f24773c62eaaf3647b1d3c849bacc267f703d1ca3dadd6a1b4939faa13fa6",
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": "cd85ce90c88bb69b05d618492af6bdc7d27adfa12ca1a5c753bb223207ff4f32",
+    "tests/test_owned_name_suppression_refresh.py": "dcd100dbf2cb3437ff3c5daaddc9e29ac178f8240dafddfc26e7fd6c2e9c3d3f"
+  },
+  "pinned_stable_inputs": {
+    "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+    "mappings/ingredient_mappings.sssom.tsv.manifest.json": "6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778",
+    "reports/sssom_completion_20260921/mapping-evidence.json": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+    "reports/sssom_completion_20260921/review.json": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+    "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+  },
+  "results": [
+    {
+      "case": "public-context-real-baseline-and-current",
+      "outcome": "passed",
+      "input_count": 3092
+    },
+    {
+      "position": 926,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 926,
+      "case": "forged-suffix-sequence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "forged-suffix-path",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "forged-suffix-sha256",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "forged-suffix-before_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "forged-suffix-after_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "missing-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "extra-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "changed-earlier-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "changed-historical-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: historical form continuation or authority differs"
+    },
+    {
+      "position": 926,
+      "case": "changed-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "changed-native-authority-binding",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "changed-row-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "changed-owner-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 926,
+      "case": "changed-disposition",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "changed-review-reason",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "extra-basis-evidence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 926,
+      "case": "native-row-touched-after-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form row changed after checkpoint"
+    },
+    {
+      "position": 926,
+      "case": "native-current-row-changed",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 926,
+      "case": "changed-earlier-authority-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form checkpoint differs from native replay"
+    },
+    {
+      "position": 927,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 927,
+      "case": "forged-suffix-sequence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "forged-suffix-path",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "forged-suffix-sha256",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "forged-suffix-before_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "forged-suffix-after_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "missing-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "extra-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-earlier-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-historical-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: historical form continuation or authority differs"
+    },
+    {
+      "position": 927,
+      "case": "changed-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-native-authority-binding",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-row-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-owner-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 927,
+      "case": "changed-disposition",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-review-reason",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "extra-basis-evidence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "native-row-touched-after-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form row changed after checkpoint"
+    },
+    {
+      "position": 927,
+      "case": "native-current-row-changed",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 927,
+      "case": "changed-earlier-authority-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form checkpoint differs from native replay"
+    },
+    {
+      "position": 2610,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 2610,
+      "case": "forged-suffix-sequence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "forged-suffix-path",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "forged-suffix-sha256",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "forged-suffix-before_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "forged-suffix-after_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "missing-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "extra-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "changed-earlier-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "changed-historical-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: historical form continuation or authority differs"
+    },
+    {
+      "position": 2610,
+      "case": "changed-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "changed-native-authority-binding",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "changed-row-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "changed-owner-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 2610,
+      "case": "changed-disposition",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "changed-review-reason",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "extra-basis-evidence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2610,
+      "case": "native-row-touched-after-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form row changed after checkpoint"
+    },
+    {
+      "position": 2610,
+      "case": "native-current-row-changed",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 2610,
+      "case": "changed-earlier-authority-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form checkpoint differs from native replay"
+    },
+    {
+      "position": 2611,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 2611,
+      "case": "forged-suffix-sequence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "forged-suffix-path",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "forged-suffix-sha256",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "forged-suffix-before_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "forged-suffix-after_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "missing-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "extra-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "changed-earlier-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "changed-historical-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: historical form continuation or authority differs"
+    },
+    {
+      "position": 2611,
+      "case": "changed-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "changed-native-authority-binding",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "changed-row-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "changed-owner-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 2611,
+      "case": "changed-disposition",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "changed-review-reason",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "extra-basis-evidence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 2611,
+      "case": "native-row-touched-after-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form row changed after checkpoint"
+    },
+    {
+      "position": 2611,
+      "case": "native-current-row-changed",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 2611,
+      "case": "changed-earlier-authority-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form checkpoint differs from native replay"
+    },
+    {
+      "position": 3013,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 3013,
+      "case": "forged-suffix-sequence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "forged-suffix-path",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "forged-suffix-sha256",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "forged-suffix-before_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "forged-suffix-after_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "missing-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "extra-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "changed-earlier-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "changed-historical-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: historical form continuation or authority differs"
+    },
+    {
+      "position": 3013,
+      "case": "changed-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "changed-native-authority-binding",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "changed-row-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "changed-owner-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 3013,
+      "case": "changed-disposition",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "changed-review-reason",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "extra-basis-evidence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3013,
+      "case": "native-row-touched-after-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form row changed after checkpoint"
+    },
+    {
+      "position": 3013,
+      "case": "native-current-row-changed",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 3013,
+      "case": "changed-earlier-authority-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form checkpoint differs from native replay"
+    },
+    {
+      "position": 3014,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 3014,
+      "case": "forged-suffix-sequence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "forged-suffix-path",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "forged-suffix-sha256",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "forged-suffix-before_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "forged-suffix-after_position",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "missing-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "extra-suffix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "changed-earlier-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "changed-historical-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: historical form continuation or authority differs"
+    },
+    {
+      "position": 3014,
+      "case": "changed-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "changed-native-authority-binding",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "changed-row-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "changed-owner-hash",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 3014,
+      "case": "changed-disposition",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "changed-review-reason",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "extra-basis-evidence",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 3014,
+      "case": "native-row-touched-after-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form row changed after checkpoint"
+    },
+    {
+      "position": 3014,
+      "case": "native-current-row-changed",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: existing form claim, owner or decision differs"
+    },
+    {
+      "position": 3014,
+      "case": "changed-earlier-authority-checkpoint",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: form checkpoint differs from native replay"
+    },
+    {
+      "position": 927,
+      "case": "missing-receipt-input-extension",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "forged-receipt-input-extension",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "changed-earlier-receipt-input",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 927,
+      "case": "extra-receipt-input",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence exceeds native provenance continuation"
+    },
+    {
+      "position": 1,
+      "case": "valid-native-continuation",
+      "outcome": "passed"
+    },
+    {
+      "position": 1,
+      "case": "new-authority-on-unrelated-entry",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: unrelated base evidence changed"
+    }
+  ],
+  "passed": 8,
+  "expected_rejections": 119,
+  "limitations": [
+    "Positive public context uses actual baseline/current snapshots and full native replay. Negative differential probes call the bounded helper with copies of real entries/proof; they are not full CLI tests.",
+    "No maintained file was modified. Complete native CLI refresh and final head checks remain separately required."
+  ]
+}

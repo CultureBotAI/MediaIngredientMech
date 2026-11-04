@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "operator_sha256": "e2494b967f377ed1ce9053e0260a3e04a2aa0d374111b96e992bd92a332ae921",
+  "control_source_sha256": "cb5d1856cae81d810e7517a37d722ca6137ce41b7ee627ff9c93950fd5cea880",
+  "plan_sha256": "112e2303176db3530f88469f220367f14041d7ae9a84d879efe8623255e6fa34",
+  "real_maintained_outputs_unchanged": true,
+  "controls": [
+    {
+      "name": "valid-three-artifact-projection",
+      "outcome": "passed",
+      "detail": {
+        "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+        "mappings/suppressed_aliases.tsv": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b",
+        "mappings/other_cross_record_baseline.tsv": "1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f"
+      }
+    },
+    {
+      "name": "wrong-plan-pin",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: caller plan hash differs"
+    },
+    {
+      "name": "wrong-token",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: pairs differ from the complete baseline in order or payload"
+    },
+    {
+      "name": "wrong-position",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: stale subject/token/row payload"
+    },
+    {
+      "name": "boolean-position",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: invalid source position"
+    },
+    {
+      "name": "extra-other-edit",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: projection changes another raw token"
+    },
+    {
+      "name": "extra-origin",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: extra origin, disposition or approval"
+    },
+    {
+      "name": "wrong-preferred-owner",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Owned-name suppression: native credited owner set differs"
+    },
+    {
+      "name": "complete-multi-owner-credit-fixture",
+      "outcome": "passed",
+      "detail": 23
+    },
+    {
+      "name": "incomplete-multi-owner-credit",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Owned-name suppression: native credited owner set differs"
+    },
+    {
+      "name": "new-yaml-origin",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Owned-name suppression: fresh YAML origin requires new scope"
+    },
+    {
+      "name": "producer-source-drift-at-same-head",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: native sidecar renderer differs from pinned source"
+    },
+    {
+      "name": "wrong-producer-head",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: wrong producer revision"
+    },
+    {
+      "name": "private-dry-run",
+      "outcome": "passed",
+      "detail": {
+        "output_sha256": {
+          "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+          "mappings/suppressed_aliases.tsv": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b",
+          "mappings/other_cross_record_baseline.tsv": "1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f",
+          "mappings/ingredient_mappings.sssom.tsv.manifest.json": "6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778",
+          "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+        },
+        "applied": false,
+        "changed": true
+      }
+    },
+    {
+      "name": "occupied-publication-log",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: publication output already occupied: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/original23-final/publication-fixture/reports/owned_name_deferred_669_20261103/application/publication.json"
+    },
+    {
+      "name": "occupied-new-receipt",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: publication output already occupied: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/original23-final/publication-fixture/reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json"
+    },
+    {
+      "name": "canonical-symlink-alias",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: aliased path: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/original23-final/publication-fixture/mappings/ingredient_mappings.sssom.tsv"
+    },
+    {
+      "name": "canonical-hardlink-alias",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: not a single regular file: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/original23-final/publication-fixture/mappings/ingredient_mappings.sssom.tsv"
+    },
+    {
+      "name": "backup-reservation-race-before-first-write",
+      "outcome": "rejected",
+      "exception": "FileExistsError",
+      "message": "[Errno 17] File exists: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/original23-final/publication-fixture/reports/owned_name_deferred_669_20261103/application/publication.before-ingredient_mappings.sssom.tsv'"
+    },
+    {
+      "name": "private-apply",
+      "outcome": "passed",
+      "detail": {
+        "output_sha256": {
+          "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+          "mappings/suppressed_aliases.tsv": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b",
+          "mappings/other_cross_record_baseline.tsv": "1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f",
+          "mappings/ingredient_mappings.sssom.tsv.manifest.json": "6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778",
+          "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+        },
+        "applied": true,
+        "changed": true,
+        "completed_verification": {
+          "applied": false,
+          "changed": false,
+          "state": "verified-complete",
+          "receipt_count": 26,
+          "journal_sha256": "420985a4a2fb4e9d8cb64156a37ffda216ce10d0f1d1de7a0dd891201758f0c9",
+          "canonical_sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6"
+        }
+      }
+    },
+    {
+      "name": "private-completed-verification",
+      "outcome": "passed",
+      "detail": {
+        "applied": false,
+        "changed": false,
+        "state": "verified-complete",
+        "receipt_count": 26,
+        "journal_sha256": "420985a4a2fb4e9d8cb64156a37ffda216ce10d0f1d1de7a0dd891201758f0c9",
+        "canonical_sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6"
+      }
+    },
+    {
+      "name": "forged-empty-created-journal",
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "Deferred owned-name publication: native completed journal differs"
+    },
+    {
+      "name": "completed-restored-exact-journal",
+      "outcome": "passed",
+      "detail": {
+        "applied": false,
+        "changed": false,
+        "state": "verified-complete",
+        "receipt_count": 26,
+        "journal_sha256": "420985a4a2fb4e9d8cb64156a37ffda216ce10d0f1d1de7a0dd891201758f0c9",
+        "canonical_sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6"
+      }
+    }
+  ],
+  "passed_controls": 23,
+  "private_fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/original23-final/publication-fixture",
+  "private_completed_log_sha256": "79ccf6e2a836a98d4b5953d576ba9405c430cae84d7231ac0929a911280c8a1a",
+  "private_completed_journal_sha256": "420985a4a2fb4e9d8cb64156a37ffda216ce10d0f1d1de7a0dd891201758f0c9"
+}

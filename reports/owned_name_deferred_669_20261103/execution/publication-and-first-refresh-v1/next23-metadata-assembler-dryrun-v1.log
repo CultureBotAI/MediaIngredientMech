@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/../next23-execution-20261103/sync_review_metadata_v1.py", line 136, in <module>
+    main()
+    ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/../next23-execution-20261103/sync_review_metadata_v1.py", line 113, in main
+    recheck()
+    ~~~~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/../next23-execution-20261103/sync_review_metadata_v1.py", line 111, in recheck
+    require(regular(path) == raw, "captured input changed: " + str(path))
+            ~~~~~~~^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/../next23-execution-20261103/sync_review_metadata_v1.py", line 39, in regular
+    require(path == path.resolve(), "aliased input: " + str(path))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/../next23-execution-20261103/sync_review_metadata_v1.py", line 34, in require
+    raise ValueError(message)
+ValueError: aliased input: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases/../next23-execution-20261103/sync_review_metadata_v1.py

@@ -1,9 +1,9 @@
 {
   "approval": "NONE: bounded source/export correction; native reviews remain authoritative.",
   "artifacts": {
-    "mappings/ingredient_mappings.sssom.tsv": "55823757c6b15f43de69370da7fe6c4468ff21f14e5f4994cf53115e04ae0d74",
-    "mappings/other_cross_record_baseline.tsv": "f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb",
-    "mappings/suppressed_aliases.tsv": "3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84"
+    "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+    "mappings/other_cross_record_baseline.tsv": "1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f",
+    "mappings/suppressed_aliases.tsv": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b"
   },
   "baseline_before_sha256": "8305c7f06d05466de1c49bd76c9ddaba17e53ecbd28a5d9dde1d36e59db0e707",
   "decisions": [
@@ -1016,6 +1016,68 @@
   ],
   "generation_manifest_sha256": "de143586182002219292e57702e0ae984cf48977c266f2604ad31004edbf5d30",
   "generation_receipt_sha256": "b0eeaccfeb1c3c0261d851da2b6daa92ccd46a33dfb01d7a583c40059b9d90f4",
+  "owned_name_suppression_updates": [
+    {
+      "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
+      "artifacts_after": {
+        "mappings/ingredient_mappings.sssom.tsv": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+        "mappings/other_cross_record_baseline.tsv": "1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f",
+        "mappings/suppressed_aliases.tsv": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b"
+      },
+      "artifacts_before": {
+        "mappings/ingredient_mappings.sssom.tsv": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+        "mappings/other_cross_record_baseline.tsv": "f52921f8cf4aaf16f070b9b33bb8809e0a7ee809f7a66805bdf7bd01c9610bcb",
+        "mappings/suppressed_aliases.tsv": "3d1e6c1f6393aaf05b8f7235c5393372206ea0f73db0699ddbdca14053bf8f84"
+      },
+      "baseline": "0ee56c11a2894ed50a476b331d56297be0a3ee12",
+      "generation": {
+        "candidate": {
+          "path": "reports/owned_name_deferred_669_20261103/generation/candidate.sssom.tsv",
+          "sha256": "2a2197e907150b679d804deaad6e92dc3955846118499245cae53c9716da14da"
+        },
+        "manifest": {
+          "path": "reports/owned_name_deferred_669_20261103/generation/candidate.sssom.tsv.manifest.json",
+          "sha256": "e5a6e1c08f56d9fc6ef7cfcc36e48bb80016975bc6691fb7bdabf56fc795378c"
+        },
+        "producer_revision": "3022b8738dcc9e01c7464a8d5c95aa9be2eef141",
+        "receipt": {
+          "path": "reports/owned_name_deferred_669_20261103/generation/generation-receipt.json",
+          "sha256": "cf5d13a4a7af7e0a4eebf3cfdf0e9b6a00b92cdf1da9fc2994dc9ad4c5ec1c5d"
+        },
+        "sidecar": {
+          "path": "reports/owned_name_deferred_669_20261103/generation/suppressed_aliases.tsv",
+          "sha256": "b8792629d75ae1a54fe8d84b8cb3186ccfce6184a12df032e4124158230cb525"
+        }
+      },
+      "historical_checkpoint": {
+        "bridge_sequences": [
+          24,
+          25
+        ],
+        "sequence": 23,
+        "sssom_sha256": "55823757c6b15f43de69370da7fe6c4468ff21f14e5f4994cf53115e04ae0d74"
+      },
+      "issue": 669,
+      "mapping_receipt": {
+        "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+        "sequence": 26,
+        "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+      },
+      "operation": "owned-name-suppression-update-v1",
+      "plan": {
+        "path": "reports/owned_name_deferred_669_20261103/publication-plan.json",
+        "sha256": "112e2303176db3530f88469f220367f14041d7ae9a84d879efe8623255e6fa34"
+      },
+      "prior_manifest_sha256": "1a30715b1e5e5e89bf2063a1e9eecd8c18fea13781ab9dff3214e75a553cca58",
+      "publication_log": "reports/owned_name_deferred_669_20261103/application/publication.json",
+      "schema_version": 1,
+      "scope": "Export-only suppression of the 23 reviewed owned-name alias pairs; no scientific approval",
+      "unchanged_inventory": {
+        "path": "reports/owned_name_deferred_669_20261103/unchanged-inventory.json",
+        "sha256": "ddd13e43795457e5968927ac57324d42ade64ca4807d18b607115ee3353e70bf"
+      }
+    }
+  ],
   "policy_evidence": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6559004728",
   "policy_version": "owned-name-policy-v1",
   "producer_revision": "9bd09b2ba163212a65289b91313f98cb0937476f",

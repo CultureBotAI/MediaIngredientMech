@@ -1,0 +1,16 @@
+{
+  "name": "next23-postpublication-13-supported-schema-v1",
+  "argv": [
+    "python",
+    "-B",
+    "-c",
+    "from sssom.parsers import parse_sssom_table; from sssom.validators import SchemaValidationType, validate; validate(parse_sssom_table(\"output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv\"), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat]); print(\"PASS supported SSSOM schema/prefix/CURIE validation\")"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+  "started_at": "2026-11-04T05:25:45.590503+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-04T05:25:46.895039+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-postpublication-13-supported-schema-v1.log",
+  "log_sha256": "7dcb13fcad9c251dd7e356122c5d82fcc97c5aeabefa1ba0a29438e88ecc4ea4"
+}

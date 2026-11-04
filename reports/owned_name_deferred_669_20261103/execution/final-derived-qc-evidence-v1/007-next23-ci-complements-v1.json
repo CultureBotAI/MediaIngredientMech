@@ -1,0 +1,16 @@
+{
+  "name": "next23-ci-complements-v1",
+  "argv": [
+    "python",
+    "-B",
+    "-c",
+    "import subprocess; commands=[[\"python\",\"-B\",\"scripts/validate_published_curies.py\"],[\"python\",\"-B\",\"scripts/reconcile_sssom.py\"],[\"just\",\"check-unified-rejections\"],[\"python\",\"-I\",\"scripts/run_shared_evidence_validator.py\",\"--strict\"]]; [subprocess.run(command,check=True) for command in commands]"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step8-aliases",
+  "started_at": "2026-11-04T05:29:00.966668+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-04T05:29:12.866493+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/next23-ci-complements-v1.log",
+  "log_sha256": "ae56f2272bb1278160c936a43bb50f7be1f799399158b02c8a5481f6a60f473c"
+}

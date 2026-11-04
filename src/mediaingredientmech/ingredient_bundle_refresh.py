@@ -68,6 +68,15 @@ class StockCasRemovalContext:
     manifest_sha256: str
 
 
+@dataclass(frozen=True)
+class OwnedNameSuppressionContext:
+    """Pinned #669 export-only suffix; preserves source and companion science."""
+
+    root: Path
+    baseline: str
+    manifest_sha256: str
+
+
 def _form_require(condition, message):
     if not condition:
         raise ValueError("Form projection: " + message)
@@ -405,9 +414,21 @@ def verify_unchanged_cohort(
     form_projection=None,
     registry_correction=None,
     stock_cas_removal=None,
+    owned_name_suppression=None,
 ):
     """Return a dependency-only successor and complete selected-claim evidence."""
-    if sum(x is not None for x in (form_projection, registry_correction, stock_cas_removal)) > 1:
+    if (
+        sum(
+            x is not None
+            for x in (
+                form_projection,
+                registry_correction,
+                stock_cas_removal,
+                owned_name_suppression,
+            )
+        )
+        > 1
+    ):
         raise ValueError("Typed projection contexts are mutually exclusive")
     if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
         raise ValueError("Packaged schema/profile contract changed")
@@ -454,6 +475,13 @@ def verify_unchanged_cohort(
     if POLICY_MANIFEST in changed and stock_cas_removal is not None:
         projection = verify_stock_cas_removal(prior, before, current, stock_cas_removal)
         allowed.add(POLICY_MANIFEST)
+    if owned_name_suppression is not None:
+        if POLICY_MANIFEST not in changed:
+            raise ValueError("Owned-name suppression requested without a changed policy manifest")
+        from mediaingredientmech.owned_name_suppression_refresh import verify_owned_name_suppression
+
+        projection = verify_owned_name_suppression(prior, before, current, owned_name_suppression)
+        allowed.update((POLICY_MANIFEST, POLICY_SIDECAR, POLICY_BASELINE))
     if changed - allowed:
         raise ValueError(
             "Non-global input or owner changed: " + ", ".join(sorted(changed - allowed))
@@ -569,9 +597,13 @@ def verify_unchanged_cohort(
     }
     if projection is not None:
         key = (
-            "stock_cas_removal"
-            if stock_cas_removal is not None
-            else "registry_correction" if registry_correction is not None else "form_projection"
+            "owned_name_suppression"
+            if owned_name_suppression is not None
+            else (
+                "stock_cas_removal"
+                if stock_cas_removal is not None
+                else "registry_correction" if registry_correction is not None else "form_projection"
+            )
         )
         audit[key] = projection
     return successor, audit
@@ -687,10 +719,15 @@ def main(argv=None):
         "--stock-cas-removal-manifest-sha256",
         help="Explicit #268/#871 stock-CAS successor pin; preserves all companion science",
     )
+    projection_options.add_argument(
+        "--owned-name-suppression-manifest-sha256",
+        help="Explicit #669 export-only successor pin; sources and companion science stay exact",
+    )
     args = parser.parse_args(argv)
     if (
         args.registry_correction_manifest_sha256 is not None
         or args.stock_cas_removal_manifest_sha256 is not None
+        or args.owned_name_suppression_manifest_sha256 is not None
     ):
         _form_require(args.root.absolute() == args.root.resolve(), "aliased context root")
     root = args.root.resolve()
@@ -738,6 +775,11 @@ def main(argv=None):
         if args.stock_cas_removal_manifest_sha256 is not None
         else None
     )
+    owned_name_suppression = (
+        OwnedNameSuppressionContext(root, baseline, args.owned_name_suppression_manifest_sha256)
+        if args.owned_name_suppression_manifest_sha256 is not None
+        else None
+    )
     successor, audit = verify_unchanged_cohort(
         prior,
         before,
@@ -747,6 +789,7 @@ def main(argv=None):
         form_projection=form_projection,
         registry_correction=registry_correction,
         stock_cas_removal=stock_cas_removal,
+        owned_name_suppression=owned_name_suppression,
     )
     new_bytes = encode(successor)
     audit.update(
@@ -768,10 +811,21 @@ def main(argv=None):
     snapshots[root / prior_path] = content_sha256(old_bytes)
     snapshots.update(loaded["input_snapshot"])
     proof_key = (
-        "stock_cas_removal"
-        if stock_cas_removal is not None
-        else "registry_correction" if registry_correction is not None else "form_projection"
+        "owned_name_suppression"
+        if owned_name_suppression is not None
+        else (
+            "stock_cas_removal"
+            if stock_cas_removal is not None
+            else "registry_correction" if registry_correction is not None else "form_projection"
+        )
     )
+    owned_name_source_roles: set[str] = set()
+    if proof_key == "owned_name_suppression" and proof_key in audit:
+        from mediaingredientmech.owned_name_suppression_refresh import recheck_inventory
+
+        # #1132: the CLI also knows the prior companion and loaded review inputs.
+        owned_name_source_roles = {p.relative_to(root).as_posix() for p in snapshots}
+        recheck_inventory(root, audit[proof_key], owned_name_source_roles)
     if proof_key in audit:
         for path, expected in audit[proof_key]["input_sha256"].items():
             member = _form_member(root, path)
@@ -790,11 +844,15 @@ def main(argv=None):
                 raise ValueError("Projection receipt inventory changed during verification")
             for name in audit[proof_key]["input_sha256"]:
                 _form_member(root, name)
-            if proof_key in {"registry_correction", "stock_cas_removal"}:
+            if proof_key in {"registry_correction", "stock_cas_removal", "owned_name_suppression"}:
                 from mediaingredientmech.registry_correction_refresh import receipt_inventory
 
                 if receipt_inventory(root) != set(audit[proof_key]["receipt_paths"]):
                     raise ValueError("Registry receipt inventory changed during verification")
+        if proof_key == "owned_name_suppression" and proof_key in audit:
+            from mediaingredientmech.owned_name_suppression_refresh import recheck_inventory
+
+            recheck_inventory(root, audit[proof_key], owned_name_source_roles)
         for path, expected in snapshots.items():
             if content_sha256(path.read_bytes()) != expected:
                 raise ValueError("Input changed during verification: " + str(path))

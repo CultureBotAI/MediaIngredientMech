@@ -84,14 +84,109 @@ def test_the_baseline_does_not_excuse_a_different_subject(monkeypatch):
     assert list(val.evaluate_rule_k(_rows(subject_id="MIM:Fructose", other="Vibriostat")))
 
 
-def test_the_baseline_file_is_well_formed():
-    path = _REPO / "mappings" / "other_cross_record_baseline.tsv"
+def _assert_baseline_well_formed(path):
     with path.open(encoding="utf-8", newline="") as handle:
-        rows = list(csv.DictReader(handle, delimiter="\t"))
-    assert rows, "baseline must not be empty while violations are known"
-    assert {"subject_id", "token", "owned_by", "disposition"} <= set(rows[0])
+        reader = csv.DictReader(handle, delimiter="\t")
+        assert {"subject_id", "token", "owned_by", "disposition"} <= set(
+            reader.fieldnames or []
+        ), "baseline header must include every required column"
+        rows = list(reader)
     assert all(r["subject_id"].startswith("MIM:") for r in rows)
     assert all(r["disposition"] for r in rows), "every entry needs a disposition"
+
+
+def test_the_baseline_file_is_well_formed():
+    """#1130: the header remains required when no baseline obligations remain."""
+    _assert_baseline_well_formed(_REPO / "mappings" / "other_cross_record_baseline.tsv")
+
+
+@pytest.fixture
+def baseline_entry():
+    return {
+        "subject_id": "MIM:Glucose",
+        "token": "Vibriostat",
+        "owned_by": "MIM:Vibriostat",
+        "disposition": "UNREVIEWED",
+    }
+
+
+@pytest.fixture
+def baseline_file(tmp_path):
+    def write(rows=(), fieldnames=("subject_id", "token", "owned_by", "disposition")):
+        path = tmp_path / "other_cross_record_baseline.tsv"
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fieldnames, delimiter="\t")
+            writer.writeheader()
+            writer.writerows({key: row[key] for key in fieldnames} for row in rows)
+        return path
+
+    return write
+
+
+@pytest.mark.parametrize("populated", [False, True], ids=["empty", "populated"])
+def test_baseline_format_accepts_empty_or_populated_files(baseline_file, baseline_entry, populated):
+    """#1130: a complete header is valid with zero or more baseline entries."""
+    path = baseline_file([baseline_entry] if populated else [])
+    _assert_baseline_well_formed(path)
+
+
+@pytest.mark.parametrize("populated", [False, True], ids=["empty", "populated"])
+@pytest.mark.parametrize("missing", ["subject_id", "token", "owned_by", "disposition"])
+def test_baseline_format_rejects_missing_columns(
+    baseline_file, baseline_entry, populated, missing
+):
+    """#1130: every required header column is checked at either row count."""
+    path = baseline_file(
+        [baseline_entry] if populated else [],
+        fieldnames=[key for key in baseline_entry if key != missing],
+    )
+    with pytest.raises(AssertionError, match="baseline header"):
+        _assert_baseline_well_formed(path)
+
+
+@pytest.mark.parametrize("subject", ["", "Glucose", "CHEBI:17234"])
+def test_baseline_format_rejects_invalid_subjects(baseline_file, baseline_entry, subject):
+    """#1130: allowing an empty baseline does not weaken per-row subject checks."""
+    path = baseline_file([{**baseline_entry, "subject_id": subject}])
+    with pytest.raises(AssertionError):
+        _assert_baseline_well_formed(path)
+
+
+def test_baseline_format_rejects_empty_disposition(baseline_file, baseline_entry):
+    """#1130: every populated entry still needs its disposition."""
+    path = baseline_file([{**baseline_entry, "disposition": ""}])
+    with pytest.raises(AssertionError, match="every entry needs a disposition"):
+        _assert_baseline_well_formed(path)
+
+
+@pytest.mark.parametrize("contents", ["", "MIM:Glucose\tVibriostat\tMIM:Vibriostat\tUNREVIEWED\n"])
+def test_baseline_format_rejects_missing_header(tmp_path, contents):
+    """#1130: neither an empty file nor a headerless data row is a valid baseline."""
+    path = tmp_path / "other_cross_record_baseline.tsv"
+    path.write_text(contents, encoding="utf-8")
+    with pytest.raises(AssertionError, match="baseline header"):
+        _assert_baseline_well_formed(path)
+
+
+def test_native_empty_baseline_still_rejects_owned_name_collision(
+    baseline_file, tmp_path, monkeypatch
+):
+    """#1130: the native empty-baseline loader still leaves Rule K fully enforced."""
+    path = baseline_file()
+    owner = tmp_path / "Vibriostat.yaml"
+    owner.write_text("preferred_term: Vibriostat\nmapping_status: MAPPED\n", encoding="utf-8")
+    monkeypatch.setattr(val, "OTHER_BASELINE", path)
+    monkeypatch.setattr(val, "_subject_to_path", lambda: {"MIM:Vibriostat": owner})
+    try:
+        val._other_baseline.cache_clear()
+        val._preferred_term_owners.cache_clear()
+        assert val._other_baseline() == frozenset()
+        findings = list(val.evaluate_rule_k(_rows(other="Vibriostat")))
+        assert len(findings) == 1
+        assert "MIM:Vibriostat" in findings[0][2]
+    finally:
+        val._other_baseline.cache_clear()
+        val._preferred_term_owners.cache_clear()
 
 
 def test_the_published_set_passes_rule_k():

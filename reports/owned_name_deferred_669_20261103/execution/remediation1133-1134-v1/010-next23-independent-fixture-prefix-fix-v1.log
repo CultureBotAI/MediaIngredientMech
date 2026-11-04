@@ -1,0 +1,33 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "at": "2026-11-04T05:22:55.385191+00:00",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1134",
+  "test_sha256": "dcd100dbf2cb3437ff3c5daaddc9e29ac178f8240dafddfc26e7fd6c2e9c3d3f",
+  "results": [
+    {
+      "case": "empty-prefix",
+      "outcome": "passed",
+      "historical_entries": 0
+    },
+    {
+      "case": "populated-prefix",
+      "outcome": "passed",
+      "historical_entries": 1
+    },
+    {
+      "case": "delete-existing-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: expected one manifest history append"
+    },
+    {
+      "case": "alter-existing-prefix",
+      "outcome": "rejected",
+      "error": "Owned-name suppression: expected one manifest history append"
+    }
+  ],
+  "maintained_manifest_unchanged": true,
+  "limitations": [
+    "Private fixture construction uses a temporary read override only for the source manifest; native verifier and private receipt chain are real."
+  ]
+}
+d322da11259126c1980385c31a05928b23e132f9f8a2ed0cf77ca7a824d836da

@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/late-inventory/run_controls.py", line 45, in reject
+    try:call()
+        ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/late-inventory/run_controls.py", line 111, in <lambda>
+    reject('late-producer-source-removal',lambda:op.recheck_completion_inputs(private),'completed producer membership changed')
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/promote_deferred_aliases_v2.py", line 586, in recheck_completion_inputs
+    require(git(producer, "rev-parse", "HEAD").decode().strip() == PRODUCER
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and not git(producer, "status", "--porcelain", "--untracked-files=all"), "completed producer revision/context changed")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/promote_deferred_aliases_v2.py", line 59, in require
+    raise ValueError("Deferred owned-name publication: " + message)
+ValueError: Deferred owned-name publication: completed producer revision/context changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/late-inventory/run_controls.py", line 141, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/late-inventory/run_controls.py", line 111, in main
+    reject('late-producer-source-removal',lambda:op.recheck_completion_inputs(private),'completed producer membership changed')
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/next23-execution-20261103/operator-controls-v2/late-inventory/run_controls.py", line 47, in reject
+    assert substring in str(error),(name,substring,repr(error))
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('late-producer-source-removal', 'completed producer membership changed', "ValueError('Deferred owned-name publication: completed producer revision/context changed')")

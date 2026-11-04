@@ -1,0 +1,139 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "at": "2026-11-04T05:09:40.601853+00:00",
+  "observed_head": "9b6bac39e958ae6489b82a235cbdb5c17d2b101e",
+  "finding_id": "deferred23-native-evidence-continuation-refusal",
+  "issue_key": "mim-deferred23-native-evidence-continuation-refusal",
+  "severity": "minor",
+  "status": "confirmed",
+  "failure": "New owned-name context rejects expected deterministic continuation evidence for untouched rows after receipt26.",
+  "unselected_positions": [
+    926,
+    927,
+    2610,
+    2611,
+    3013,
+    3014
+  ],
+  "all_unselected_decisions_exactly_unchanged": true,
+  "allowed_native_changes_observed": [
+    {
+      "position": "926",
+      "diff": [
+        {
+          "path": "/basis/form_followup/continuation",
+          "kind": "append-one",
+          "entry": {
+            "sequence": 26,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+            "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "before_position": 926,
+            "after_position": 926
+          }
+        }
+      ]
+    },
+    {
+      "position": "927",
+      "diff": [
+        {
+          "path": "/basis/superseded_scoped_review/receipt_inputs/reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+          "kind": "other",
+          "before": null,
+          "after": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+        },
+        {
+          "path": "/basis/form_followup/continuation",
+          "kind": "append-one",
+          "entry": {
+            "sequence": 26,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+            "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "before_position": 927,
+            "after_position": 927
+          }
+        }
+      ]
+    },
+    {
+      "position": "2610",
+      "diff": [
+        {
+          "path": "/basis/form_followup/continuation",
+          "kind": "append-one",
+          "entry": {
+            "sequence": 26,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+            "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "before_position": 2610,
+            "after_position": 2610
+          }
+        }
+      ]
+    },
+    {
+      "position": "2611",
+      "diff": [
+        {
+          "path": "/basis/form_followup/continuation",
+          "kind": "append-one",
+          "entry": {
+            "sequence": 26,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+            "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "before_position": 2611,
+            "after_position": 2611
+          }
+        }
+      ]
+    },
+    {
+      "position": "3013",
+      "diff": [
+        {
+          "path": "/basis/form_followup/continuation",
+          "kind": "append-one",
+          "entry": {
+            "sequence": 26,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+            "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "before_position": 3013,
+            "after_position": 3013
+          }
+        }
+      ]
+    },
+    {
+      "position": "3014",
+      "diff": [
+        {
+          "path": "/basis/form_followup/continuation",
+          "kind": "append-one",
+          "entry": {
+            "sequence": 26,
+            "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+            "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "before_position": 3014,
+            "after_position": 3014
+          }
+        }
+      ]
+    }
+  ],
+  "basis": "FormFollowups.continue_row appends every verified later receipt after rejecting changed/removed rows. withdraw_stale_cohort returns the full validated receipt_inputs map. Raw unrelated-entry equality therefore rejects expected native provenance expansion.",
+  "proposed_scope": "Reconstruct exactly the new receipt26 continuation and receipt-input extension from verified proof; preserve every earlier value and all row/owner/decision/approval conditions. No generic stripping, arbitrary dictionary deletion, form validator change or scientific reapproval.",
+  "source_sha256": {
+    "src/mediaingredientmech/owned_name_suppression_refresh.py": "4e53124d693aed1091a1e35392cf1b867718194396aedd3d6c921d6fcc5d06aa",
+    "src/mediaingredientmech/form_mapping_review.py": "c83a7c57839528f99bdb5fe376cd4b4bd7c8ba73530fa7e5e441787237178c4a",
+    "reports/sssom_completion_20260921/assemble_review.py": "4c79d2572e12b9d0ed57953ffa5a1e323ccda127e3cc879747ae11edca75fb63",
+    "reports/sssom_completion_20260921/mapping-evidence.json": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+    "reports/sssom_completion_20260921/review.json": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+    "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6"
+  },
+  "failed_refresh_log_sha256": "878d6ad6590d954fa35a2123ef8d34f4a1c1373a48aaa07022dedb245b12514c",
+  "limitations": [
+    "No implementation changes made by reviewer.",
+    "Regeneration remains paused; final review and validation incomplete.",
+    "This observation is a native-provenance compatibility defect, not a wrong mapping or renewed scientific decision."
+  ]
+}
