@@ -375,7 +375,7 @@ def build_case(root, *, multiple_credits=False):
     }
     manifest = deepcopy(old_manifest)
     manifest["artifacts"] = artifact_hashes(current)
-    manifest[policy.UPDATE] = [update]
+    manifest[policy.UPDATE] = [*old_manifest.get(policy.UPDATE, []), update]  # #1134
     current[policy.MANIFEST] = encoded(manifest)
     write(root, PUBLOG, b'{"synthetic_test_attribution":true}\n')
     for name, raw in current.items():
@@ -1002,3 +1002,332 @@ def test_verifier_imports_from_installed_package_layout(tmp_path):
         text=True,
     )
     assert result.returncode == 0, result.stderr
+
+
+def issue1133_form_case(case):
+    """Add one historical fixture authority; real Git/native replay still governs the suffix."""
+    root = case["root"]
+    owner = "data/ingredients/mapped/Unselected.yaml"
+    owner_hash = content_sha256((root / owner).read_bytes())
+    prefix = RECEIPTS_DIR + "/prefix-1.json"
+    first = read_json((root / prefix).read_bytes())
+    first["records"] = [
+        {
+            "source_record": owner,
+            "before_yaml_sha256": owner_hash,
+            "after_yaml_sha256": owner_hash,
+            "shape": "synthetic_historical_form",
+        }
+    ]
+    write(root, prefix, encoded(first))
+    native_paths = [
+        "reports/form-fixture/review.yaml",
+        "reports/form-fixture/review.md",
+        "reports/form-fixture/evidence.json",
+    ]
+    for name in native_paths:
+        write(root, name, b"Synthetic immutable fixture; no real scientific approval.\n")
+    proof = policy.verify_mapping_chain(root)
+    row = proof["state"][23]
+    checkpoint = {
+        "sequence": 1,
+        "path": prefix,
+        "sha256": content_sha256(encoded(first)),
+        "after_sha256": first["after_sha256"],
+    }
+    claim = {
+        "claim_kind": "primary_identity",
+        "source_position": 24,
+        "mapping": row,
+        "row_sha256": content_sha256(refresh.canonical_json(row)),
+        "disposition": "SUPPORTED",
+        "reason": "Preserve the historical synthetic fixture decision.",
+        "assessment_id": "synthetic-assessment",
+        "prior_basis": None,
+    }
+    authority_path = "reports/form-fixture/authority.json"
+    authority = {
+        "schema_version": 1,
+        "owner_record": owner,
+        "owner_record_sha256": owner_hash,
+        "checkpoint": checkpoint,
+        "decisions": [claim],
+        "evidence_inputs": {native_paths[2]: content_sha256((root / native_paths[2]).read_bytes())},
+        "native_review": {
+            "path": native_paths[0],
+            "sha256": content_sha256((root / native_paths[0]).read_bytes()),
+            "markdown_sha256": content_sha256((root / native_paths[1]).read_bytes()),
+        },
+    }
+    write(root, authority_path, encoded(authority))
+
+    def continuation(chain):
+        return [
+            {
+                "sequence": r["sequence"],
+                "path": path,
+                "sha256": chain["receipt_inputs"][path],
+                "before_position": 24,
+                "after_position": 24,
+            }
+            for r, path in zip(chain["receipts"][1:], chain["receipt_paths"][1:], strict=True)
+        ]
+
+    form = {
+        "file": authority_path,
+        "claim_kind": claim["claim_kind"],
+        "row_sha256": claim["row_sha256"],
+        "native_review": authority["native_review"],
+        "assessment_id": claim["assessment_id"],
+        "checkpoint": checkpoint,
+        "prior_basis": None,
+        "continuation": continuation(proof)[:-1],
+    }
+    old = {
+        "row_sha256": claim["row_sha256"],
+        "owner_record": owner,
+        "owner_record_sha256": owner_hash,
+        "disposition": claim["disposition"],
+        "review_reason": claim["reason"],
+        "basis": {
+            "form_followup": form,
+            "superseded_scoped_review": {
+                "reason": "Historical fixture concern stays unchanged.",
+                "receipt_inputs": {
+                    p: proof["receipt_inputs"][p] for p in proof["receipt_paths"][:-1]
+                },
+            },
+        },
+    }
+    evidence = read_json(case["before"][EVIDENCE])
+    evidence["entries"]["24"] = old
+    review = read_json(case["before"][BASE_REVIEW])
+    review["decisions"][-1].update(
+        disposition=claim["disposition"],
+        row_sha256=claim["row_sha256"],
+        review_reason=claim["reason"],
+    )
+    for name, doc in [(EVIDENCE, evidence), (BASE_REVIEW, review)]:
+        case["before"][name] = case["current"][name] = encoded(doc)
+        write(root, name, encoded(doc))
+    subprocess.run(
+        ["git", "add", prefix, authority_path, *native_paths, EVIDENCE, BASE_REVIEW],
+        cwd=root,
+        check=True,
+    )
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-qm",
+            "#1133 historical form fixture",
+        ],
+        cwd=root,
+        check=True,
+        capture_output=True,
+    )
+    baseline = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    case["baseline"] = case["plan"]["baseline"] = baseline
+    inventory = read_json((root / INVENTORY).read_bytes())
+    inventory["baseline"] = baseline
+    write(root, INVENTORY, encoded(inventory))
+    case["plan"]["unchanged_inventory"]["sha256"] = content_sha256(encoded(inventory))
+    case["manifest"][policy.UPDATE][-1]["baseline"] = baseline
+    repin(case, plan=True)
+    proof = policy.verify_mapping_chain(root)
+    new = deepcopy(old)
+    new["basis"]["form_followup"]["continuation"] = continuation(proof)
+    new["basis"]["superseded_scoped_review"]["receipt_inputs"] = dict(proof["receipt_inputs"])
+    evidence["entries"]["24"] = new
+    case["current"][EVIDENCE] = encoded(evidence)
+    write(root, EVIDENCE, encoded(evidence))
+    return old, new, proof, owner_hash
+
+
+def test_issue1133_native_context_continues_existing_form_without_new_approval(case):
+    old, new, proof, _ = issue1133_form_case(case)
+    result = verify(case)
+    assert result["scientific_approval_added"] is False
+    assert old["disposition"] == new["disposition"] == "SUPPORTED"
+    assert (
+        new["basis"]["form_followup"]["continuation"][:-1]
+        == old["basis"]["form_followup"]["continuation"]
+    )
+    assert new["basis"]["superseded_scoped_review"]["receipt_inputs"] == proof["receipt_inputs"]
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        "reason",
+        "owner",
+        "row",
+        "approval",
+        "native_authority",
+        "extra_field",
+        "old_reason",
+        "old_continuation",
+        "old_receipt_inputs",
+        "old_checkpoint",
+        "authority_claim",
+        "authority_hash",
+        "suffix_sequence",
+        "suffix_path",
+        "suffix_hash",
+        "suffix_before",
+        "suffix_after",
+        "missing_suffix",
+        "extra_suffix",
+        "missing_receipt_input",
+        "wrong_receipt_input",
+        "extra_receipt_input",
+        "new_supersession",
+        "new_authority",
+        "touched_row",
+        "removed_row",
+        "owner_chain_changed",
+    ],
+)
+def test_issue1133_provenance_permission_preserves_every_other_boundary(case, mutation):
+    old, new, proof, owner_hash = issue1133_form_case(case)
+    suffix = new["basis"]["form_followup"]["continuation"][-1]
+    if mutation in {"reason", "owner", "row", "approval"}:
+        key = {
+            "reason": "review_reason",
+            "owner": "owner_record",
+            "row": "row_sha256",
+            "approval": "disposition",
+        }[mutation]
+        new[key] = "fabricated"
+    elif mutation == "native_authority":
+        new["basis"]["form_followup"]["assessment_id"] = "new authority"
+    elif mutation == "extra_field":
+        new["basis"]["fabricated"] = True
+    elif mutation == "old_reason":
+        old["review_reason"] = new["review_reason"] = "altered historical reason"
+    elif mutation == "old_continuation":
+        old["basis"]["form_followup"]["continuation"][0]["after_position"] = 1
+        new["basis"]["form_followup"]["continuation"][0]["after_position"] = 1
+    elif mutation == "old_receipt_inputs":
+        key = proof["receipt_paths"][0]
+        old["basis"]["superseded_scoped_review"]["receipt_inputs"][key] = "0" * 64
+    elif mutation == "old_checkpoint":
+        old["basis"]["form_followup"]["checkpoint"] = {"sequence": 0}
+    elif mutation.startswith("authority_"):
+        name = old["basis"]["form_followup"]["file"]
+        doc = read_json((case["root"] / name).read_bytes())
+        if mutation == "authority_claim":
+            doc["decisions"][0]["disposition"] = "WITHHOLD"
+        else:
+            doc["evidence_inputs"][next(iter(doc["evidence_inputs"]))] = "0" * 64
+        write(case["root"], name, encoded(doc))
+    elif mutation.startswith("suffix_"):
+        key = {
+            "sequence": "sequence",
+            "path": "path",
+            "hash": "sha256",
+            "before": "before_position",
+            "after": "after_position",
+        }[mutation.removeprefix("suffix_")]
+        suffix[key] = "forged" if key in {"path", "sha256"} else 999
+    elif mutation == "missing_suffix":
+        new["basis"]["form_followup"]["continuation"].pop()
+    elif mutation == "extra_suffix":
+        new["basis"]["form_followup"]["continuation"].append(deepcopy(suffix))
+    elif mutation == "missing_receipt_input":
+        new["basis"]["superseded_scoped_review"]["receipt_inputs"].pop(NEW_RECEIPT)
+    elif mutation == "wrong_receipt_input":
+        new["basis"]["superseded_scoped_review"]["receipt_inputs"][NEW_RECEIPT] = "0" * 64
+    elif mutation == "extra_receipt_input":
+        new["basis"]["superseded_scoped_review"]["receipt_inputs"]["unknown.json"] = "0" * 64
+    elif mutation == "new_supersession":
+        old["basis"].pop("superseded_scoped_review")
+    elif mutation == "new_authority":
+        old["basis"].pop("form_followup")
+    elif mutation == "touched_row":
+        proof["receipts"][-1]["changes"].append({"before_position": 24})
+    elif mutation == "removed_row":
+        proof["receipts"][-1]["position_map"][23] = None
+    else:
+        proof["owner_chains"][old["owner_record"]].append(
+            {"sequence": 4, "before_sha256": owner_hash, "after_sha256": "0" * 64}
+        )
+    with pytest.raises(ValueError):
+        policy._continued_form_evidence(
+            old, new, 24, owner_hash, proof, lambda p: (case["root"] / p).read_bytes()
+        )
+
+
+def test_issue1133_real_six_rows_replay_immutable_prefix_without_feature_history(tmp_path):
+    directory = ROOT / "reports/owned_name_deferred_669_20261103"
+    raw = (
+        directory / "review-findings/native-continuation-refusal-v1/evidence-diffs.json"
+    ).read_bytes()
+    assert content_sha256(raw) == "98226f65e92df0ba75e6f9bf5ba169bde096856fc1ed7b297dcd9e71142b174b"
+    examples = [item for item in read_json(raw) if not item["selected"]]
+    assert [item["position"] for item in examples] == [926, 927, 2610, 2611, 3013, 3014]
+    root = tmp_path / "native-replay"
+    for name in HISTORICAL_CONTEXT:
+        write(root, name, (ROOT / name).read_bytes())
+    final = read_json((ROOT / RECEIPTS_DIR / "issue669-deferred-owned-aliases.json").read_bytes())
+    for path in (ROOT / RECEIPTS_DIR).glob("*.json"):
+        if read_json(path.read_bytes())["sequence"] <= final["sequence"]:
+            write(root, path.relative_to(ROOT).as_posix(), path.read_bytes())
+    write(
+        root,
+        policy.SSSOM_SOURCE,
+        (directory / "proposed/ingredient_mappings.sssom.tsv").read_bytes(),
+    )
+    proof = policy.verify_mapping_chain(root)
+    for item in examples:
+        policy._continued_form_evidence(
+            item["before"],
+            item["after"],
+            item["position"],
+            item["before"]["owner_record_sha256"],
+            proof,
+            lambda p: (ROOT / p).read_bytes(),
+        )
+        assert item["before"]["disposition"] == item["after"]["disposition"] == "SUPPORTED"
+
+
+def issue1134_prefix_case(tmp_path, monkeypatch, populated):
+    original = Path.read_bytes
+    source = ROOT / policy.MANIFEST
+    manifest = read_json(original(source))
+    history = deepcopy(manifest[policy.UPDATE]) if populated else []
+    if populated:
+        assert history  # The published deferred-alias update is immutable history.
+    manifest[policy.UPDATE] = history
+    raw = encoded(manifest)
+    monkeypatch.setattr(Path, "read_bytes", lambda path: raw if path == source else original(path))
+    case = build_case(tmp_path / "prefix-case")
+    return case, history
+
+
+@pytest.mark.parametrize("populated", [False, True])
+def test_issue1134_fixture_appends_to_empty_or_complete_existing_prefix(
+    tmp_path, monkeypatch, populated
+):
+    case, history = issue1134_prefix_case(tmp_path, monkeypatch, populated)
+    assert read_json(case["before"][policy.MANIFEST])[policy.UPDATE] == history
+    assert case["manifest"][policy.UPDATE][:-1] == history
+    assert len(case["manifest"][policy.UPDATE]) == len(history) + 1
+    assert verify(case)["scientific_approval_added"] is False
+
+
+@pytest.mark.parametrize("mutation", ["delete", "alter"])
+def test_issue1134_deleted_or_altered_prefix_still_rejects(tmp_path, monkeypatch, mutation):
+    case, history = issue1134_prefix_case(tmp_path, monkeypatch, True)
+    if mutation == "delete":
+        del case["manifest"][policy.UPDATE][0]
+    else:
+        case["manifest"][policy.UPDATE][0]["scope"] = "altered historical scope"
+    repin(case)
+    assert read_json(case["before"][policy.MANIFEST])[policy.UPDATE] == history
+    with pytest.raises(ValueError, match="expected one manifest history append"):
+        verify(case)

@@ -22,6 +22,7 @@ from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.ingredient_bundle_contract import (
     Draft202012Validator,
     _base_table,
+    canonical_json,
     content_sha256,
     read_json,
     safe_member,
@@ -418,6 +419,117 @@ def _sidecar(plan, old, new):
     require(all(new_raw.count(line) == 1 for line in old_raw), "historical raw sidecar row changed")
 
 
+def _continued_form_evidence(old, new, position, owner_hash, proof, historical_read):
+    """#1133: derive provenance for an existing authority, never extend its science."""
+    form = old.get("basis", {}).get("form_followup")
+    if form is None:
+        require(old == new, "unrelated base evidence changed")
+        return
+    authority = read_json(historical_read(form["file"]))
+    checkpoint = authority["checkpoint"]
+    sequence = checkpoint["sequence"]
+    require(
+        type(sequence) is int and 1 <= sequence < len(proof["receipts"]),
+        "form checkpoint must precede the new receipt",
+    )
+    link = proof["receipts"][sequence - 1]
+    path = proof["receipt_paths"][sequence - 1]
+    require(
+        checkpoint
+        == {
+            "sequence": sequence,
+            "path": path,
+            "sha256": proof["receipt_inputs"][path],
+            "after_sha256": link["after_sha256"],
+        },
+        "form checkpoint differs from native replay",
+    )
+    claims = [c for c in authority["decisions"] if c["claim_kind"] == form["claim_kind"]]
+    require(len(claims) == 1, "form authority claim is ambiguous")
+    claim = claims[0]
+    row = proof["state"][position - 1]
+    require(
+        claim["mapping"] == row
+        and claim["row_sha256"] == old["row_sha256"] == content_sha256(canonical_json(row))
+        and authority["owner_record"] == old["owner_record"]
+        and authority["owner_record_sha256"] == old["owner_record_sha256"] == owner_hash
+        and claim["disposition"] == old["disposition"]
+        and claim["reason"] == old["review_reason"],
+        "existing form claim, owner or decision differs",
+    )
+    for name, expected in authority["evidence_inputs"].items():
+        require(content_sha256(historical_read(name)) == expected, "form evidence hash differs")
+    native = authority["native_review"]
+    for name, expected in (
+        (native["path"], native["sha256"]),
+        (str(Path(native["path"]).with_name("review.md")), native["markdown_sha256"]),
+    ):
+        require(content_sha256(historical_read(name)) == expected, "native form review differs")
+    owner_links = proof["owner_chains"].get(old["owner_record"], [])
+    earlier = [item for item in owner_links if item["sequence"] <= sequence]
+    require(
+        earlier
+        and earlier[-1]["after_sha256"] == owner_hash
+        and not any(
+            item["sequence"] > sequence and item["before_sha256"] != item["after_sha256"]
+            for item in owner_links
+        ),
+        "form owner changed after checkpoint",
+    )
+    target = claim["source_position"]
+    state = proof["states_after_sequence"][sequence]
+    require(
+        type(target) is int and 1 <= target <= len(state) and state[target - 1] == row,
+        "form checkpoint row differs",
+    )
+    continuation = []
+    for index in range(sequence, len(proof["receipts"])):
+        receipt = proof["receipts"][index]
+        require(
+            not any(change.get("before_position") == target for change in receipt["changes"]),
+            "form row changed after checkpoint",
+        )
+        destination = receipt["position_map"][target - 1]
+        require(destination is not None, "form row removed after checkpoint")
+        path = proof["receipt_paths"][index]
+        continuation.append(
+            {
+                "sequence": receipt["sequence"],
+                "path": path,
+                "sha256": proof["receipt_inputs"][path],
+                "before_position": target,
+                "after_position": destination,
+            }
+        )
+        target = destination
+    require(
+        target == position and continuation[-1]["before_position"] == position,
+        "new form continuation is not position-preserving",
+    )
+    expected_form = {
+        "file": form["file"],
+        "claim_kind": claim["claim_kind"],
+        "row_sha256": claim["row_sha256"],
+        "native_review": native,
+        "assessment_id": claim["assessment_id"],
+        "checkpoint": checkpoint,
+        "prior_basis": claim["prior_basis"],
+        "continuation": continuation[:-1],
+    }
+    require(form == expected_form, "historical form continuation or authority differs")
+    expected = deepcopy(old)
+    expected["basis"]["form_followup"]["continuation"] = continuation
+    superseded = expected["basis"].get("superseded_scoped_review")
+    if superseded is not None:
+        require(
+            superseded["receipt_inputs"]
+            == {p: proof["receipt_inputs"][p] for p in proof["receipt_paths"][:-1]},
+            "historical supersession receipt inputs differ",
+        )
+        superseded["receipt_inputs"] = dict(proof["receipt_inputs"])
+    require(new == expected, "unrelated base evidence exceeds native provenance continuation")
+
+
 def verify_owned_name_suppression(prior, before, current, context):
     """Return a captured transition proof; no caller-supplied replay is accepted."""
     from mediaingredientmech.ingredient_bundle_refresh import OwnedNameSuppressionContext
@@ -440,6 +552,11 @@ def verify_owned_name_suppression(prior, before, current, context):
 
     def read(name):
         return bind(name, member(root, name).read_bytes())
+
+    def historical_read(name):
+        raw = read(name)
+        _historical_equal(tree, name, raw)
+        return raw
 
     def ref(value):
         raw = read(value["path"])
@@ -724,10 +841,16 @@ def verify_owned_name_suppression(prior, before, current, context):
     for p in old_decisions.keys() - selected.keys():
         require(old_decisions[p] == new_decisions[p], "unrelated base decision changed")
         a, b = old_decisions[p], new_decisions[p]
-        require(
-            evidence_documents["before"][a["review_evidence"]]["entries"][a["evidence_key"]]
-            == evidence_documents["current"][b["review_evidence"]]["entries"][b["evidence_key"]],
-            "unrelated base evidence changed",
+        old_evidence = evidence_documents["before"][a["review_evidence"]]["entries"][
+            a["evidence_key"]
+        ]
+        _continued_form_evidence(
+            old_evidence,
+            evidence_documents["current"][b["review_evidence"]]["entries"][b["evidence_key"]],
+            p,
+            content_sha256(source_bytes[a["owner_record"]]),
+            proof,
+            historical_read,
         )
     # The completed external log is attribution, not a result to trust for transition proof.
     log = update["publication_log"]
