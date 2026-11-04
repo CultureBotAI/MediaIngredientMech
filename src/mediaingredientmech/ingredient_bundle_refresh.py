@@ -819,6 +819,13 @@ def main(argv=None):
             else "registry_correction" if registry_correction is not None else "form_projection"
         )
     )
+    owned_name_source_roles: set[str] = set()
+    if proof_key == "owned_name_suppression" and proof_key in audit:
+        from mediaingredientmech.owned_name_suppression_refresh import recheck_inventory
+
+        # #1132: the CLI also knows the prior companion and loaded review inputs.
+        owned_name_source_roles = {p.relative_to(root).as_posix() for p in snapshots}
+        recheck_inventory(root, audit[proof_key], owned_name_source_roles)
     if proof_key in audit:
         for path, expected in audit[proof_key]["input_sha256"].items():
             member = _form_member(root, path)
@@ -845,7 +852,7 @@ def main(argv=None):
         if proof_key == "owned_name_suppression" and proof_key in audit:
             from mediaingredientmech.owned_name_suppression_refresh import recheck_inventory
 
-            recheck_inventory(root, audit[proof_key])
+            recheck_inventory(root, audit[proof_key], owned_name_source_roles)
         for path, expected in snapshots.items():
             if content_sha256(path.read_bytes()) != expected:
                 raise ValueError("Input changed during verification: " + str(path))

@@ -170,7 +170,7 @@ def source_inventory(root):
     return result
 
 
-def recheck_inventory(root, proof):
+def recheck_inventory(root, proof, additional_roles=()):
     """Repeat both exhaustive memberships after publication has reserved outputs."""
     require(
         source_inventory(root) == proof["source_paths"],
@@ -180,6 +180,20 @@ def recheck_inventory(root, proof):
         receipt_inventory(root) == set(proof["receipt_paths"]),
         "receipt inventory changed during verification",
     )
+    log = proof["appended_update"]["publication_log"]
+    _publication_log_path(root, log, (proof["input_sha256"].keys() - {log}) | set(additional_roles))
+
+
+def _publication_log_path(root, name, other_roles):
+    """#1132: a completed log cannot reuse another proof role or its inode."""
+    require(name not in other_roles, "publication log reuses another proof role: " + name)
+    path = member(root, name)
+    for other in other_roles:
+        require(
+            not path.samefile(member(root, other)),
+            "publication log aliases another proof role: " + other,
+        )
+    return path
 
 
 def _table(raw):
@@ -716,7 +730,9 @@ def verify_owned_name_suppression(prior, before, current, context):
             "unrelated base evidence changed",
         )
     # The completed external log is attribution, not a result to trust for transition proof.
-    read(update["publication_log"])
+    log = update["publication_log"]
+    _publication_log_path(root, log, inputs.keys() | before.keys() | current.keys())
+    read(log)
     require(source_inventory(root) == actual_inventory, "source inventory changed during proof")
     return {
         "baseline": context.baseline,

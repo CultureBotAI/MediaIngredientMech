@@ -442,6 +442,214 @@ def test_real_native_bridge_and_exact_export_only_transition(case):
     )
 
 
+@pytest.mark.parametrize(
+    "role",
+    [
+        PLAN,
+        INVENTORY,
+        *policy.ARTIFACTS,
+        policy.MANIFEST,
+        "data/ingredients/mapped/Subject_0.yaml",
+        "data/ingredients/mapped/Credit_0.yaml",
+        "data/curated/mapped_ingredients.yaml",
+        "UNIFIED_INGREDIENT_MAPPING.tsv",
+        "docs/data/label_index.csv",
+        *(
+            "reports/suppression/generation/" + name
+            for name in ("candidate", "sidecar", "manifest", "receipt")
+        ),
+        NEW_RECEIPT,
+        RECEIPTS_DIR + "/prefix-1.json",
+        *HISTORICAL_CONTEXT,
+        BASE_REVIEW,
+        EVIDENCE,
+        policy.VERIFIERS[0],
+        policy.SCHEMA,
+    ],
+)
+def test_issue1132_publication_log_cannot_reuse_another_proof_role(case, role):
+    case["manifest"][policy.UPDATE][-1]["publication_log"] = role
+    repin(case)
+    with pytest.raises(ValueError, match="publication log reuses another proof role"):
+        verify(case)
+
+
+@pytest.mark.parametrize("role", [PLAN, policy.SSSOM_SOURCE, BASE_REVIEW, policy.VERIFIERS[0]])
+def test_issue1132_publication_log_cannot_hard_link_another_proof_role(case, role):
+    log = case["root"] / PUBLOG
+    log.unlink()
+    log.hardlink_to(case["root"] / role)
+    with pytest.raises(ValueError, match="publication log aliases another proof role"):
+        verify(case)
+
+
+def test_issue1132_distinct_log_binds_actual_bytes_without_claiming_transition_proof(case):
+    # Equal bytes are allowed; a separate inode and role are required.
+    raw = (case["root"] / PLAN).read_bytes()
+    write(case["root"], PUBLOG, raw)
+    proof = verify(case)
+    assert proof["input_sha256"][PUBLOG] == content_sha256(raw)
+    assert proof["scientific_approval_added"] is False
+    assert not (case["root"] / PUBLOG).samefile(case["root"] / PLAN)
+    policy.recheck_inventory(case["root"], proof)
+
+
+def test_issue1132_post_reservation_recheck_rejects_same_byte_hard_link(case):
+    raw = (case["root"] / PLAN).read_bytes()
+    write(case["root"], PUBLOG, raw)
+    proof = verify(case)
+    log = case["root"] / PUBLOG
+    log.unlink()
+    log.hardlink_to(case["root"] / PLAN)
+    assert content_sha256(log.read_bytes()) == proof["input_sha256"][PUBLOG]
+    with pytest.raises(ValueError, match="publication log aliases another proof role"):
+        policy.recheck_inventory(case["root"], proof)
+
+
+def issue1132_cli_setup(case, monkeypatch):
+    """Isolate CLI role plumbing while retaining real native context replay and publication."""
+    root = case["root"]
+    prior_path, loaded_path = "reports/prior-companion.json", "reports/loaded-review-input.json"
+    case["prior"]["record_inputs"] = {}
+    write(root, prior_path, encoded(case["prior"]))
+    write(root, loaded_path, b'{"synthetic_loaded_input":true}\n')
+    subprocess.run(["git", "add", prior_path, loaded_path], cwd=root, check=True)
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-qm",
+            "#1132 CLI fixture inputs",
+        ],
+        cwd=root,
+        check=True,
+        capture_output=True,
+    )
+    baseline = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    case["baseline"] = case["plan"]["baseline"] = baseline
+    inventory = read_json((root / INVENTORY).read_bytes())
+    inventory["baseline"] = baseline
+    write(root, INVENTORY, encoded(inventory))
+    case["plan"]["unchanged_inventory"]["sha256"] = content_sha256(encoded(inventory))
+    case["manifest"][policy.UPDATE][-1]["baseline"] = baseline
+    repin(case, plan=True)
+
+    # The synthetic fixture has no companion claims. Only those unrelated outer
+    # loaders are stubbed; the new context, Git history, receipts and writer run.
+    monkeypatch.setattr(refresh, "source_names", lambda prior: set(case["before"]))
+    monkeypatch.setattr(
+        refresh,
+        "load_review",
+        lambda root, path: {
+            "input_snapshot": {
+                root / loaded_path: content_sha256((root / loaded_path).read_bytes())
+            }
+        },
+    )
+
+    def real_context(prior, before, current, old_contracts, new_contracts, **contexts):
+        assert old_contracts == new_contracts
+        assert all(
+            value is None for key, value in contexts.items() if key != "owned_name_suppression"
+        )
+        proof = policy.verify_owned_name_suppression(
+            prior, before, current, contexts["owned_name_suppression"]
+        )
+        return deepcopy(prior), {"owned_name_suppression": proof, "claim_counts": {}}
+
+    monkeypatch.setattr(refresh, "verify_unchanged_cohort", real_context)
+    return prior_path, loaded_path
+
+
+def issue1132_cli_argv(case):
+    return [
+        "--root",
+        str(case["root"]),
+        "--baseline",
+        case["baseline"],
+        "--prior-review",
+        "reports/prior-companion.json",
+        "--output",
+        "reports/successor.json",
+        "--receipt",
+        "reports/refresh.json",
+        "--prior-copy",
+        "reports/prior-copy.json",
+        "--owned-name-suppression-manifest-sha256",
+        content_sha256(case["current"][policy.MANIFEST]),
+    ]
+
+
+@pytest.mark.parametrize("target", ["prior", "loaded"])
+def test_issue1132_cli_rejects_caller_only_proof_role_reuse(case, monkeypatch, target):
+    prior_path, loaded_path = issue1132_cli_setup(case, monkeypatch)
+    case["manifest"][policy.UPDATE][-1]["publication_log"] = (
+        prior_path if target == "prior" else loaded_path
+    )
+    repin(case)
+    with pytest.raises(ValueError, match="publication log reuses another proof role"):
+        refresh.main(issue1132_cli_argv(case))
+    assert all(
+        not (case["root"] / ("reports/" + name)).exists()
+        for name in ("successor.json", "refresh.json", "prior-copy.json")
+    )
+
+
+@pytest.mark.parametrize("option", ["--output", "--receipt", "--prior-copy"])
+def test_issue1132_cli_rejects_publication_log_as_output(case, monkeypatch, option):
+    issue1132_cli_setup(case, monkeypatch)
+    argv = issue1132_cli_argv(case)
+    argv[argv.index(option) + 1] = PUBLOG
+    old_log = (case["root"] / PUBLOG).read_bytes()
+    with pytest.raises(ValueError, match="Output collides with a source input"):
+        refresh.main(argv)
+    assert (case["root"] / PUBLOG).read_bytes() == old_log
+    assert all(
+        not (case["root"] / ("reports/" + name)).exists()
+        for name in ("successor.json", "refresh.json", "prior-copy.json")
+    )
+
+
+def test_issue1132_cli_publishes_with_distinct_log_and_real_native_proof(case, monkeypatch):
+    prior_path, _ = issue1132_cli_setup(case, monkeypatch)
+    refresh.main(issue1132_cli_argv(case))
+    audit = read_json((case["root"] / "reports/refresh.json").read_bytes())
+    proof = audit["owned_name_suppression"]
+    assert proof["scientific_approval_added"] is False
+    assert proof["input_sha256"][PUBLOG] == content_sha256((case["root"] / PUBLOG).read_bytes())
+    assert (case["root"] / "reports/prior-copy.json").read_bytes() == (
+        case["root"] / prior_path
+    ).read_bytes()
+    assert read_json((case["root"] / "reports/successor.json").read_bytes()) == case["prior"]
+
+
+def test_issue1132_cli_rechecks_prior_companion_alias_after_reservation(case, monkeypatch):
+    prior_path, _ = issue1132_cli_setup(case, monkeypatch)
+    write(case["root"], PUBLOG, (case["root"] / prior_path).read_bytes())
+    real_publish = refresh.publish_new_files
+
+    def publish(outputs, verify_snapshot):
+        def alias_then_verify():
+            log = case["root"] / PUBLOG
+            log.unlink()
+            log.hardlink_to(case["root"] / prior_path)
+            verify_snapshot()
+
+        real_publish(outputs, alias_then_verify)
+
+    monkeypatch.setattr(refresh, "publish_new_files", publish)
+    with pytest.raises(ValueError, match="publication log aliases another proof role"):
+        refresh.main(issue1132_cli_argv(case))
+    assert all(
+        not (case["root"] / ("reports/" + name)).exists()
+        for name in ("successor.json", "refresh.json", "prior-copy.json")
+    )
+
+
 def test_complete_native_credits_need_not_be_a_singleton(tmp_path):
     case = build_case(tmp_path / "multiple", multiple_credits=True)
     assert len(case["plan"]["pairs"][0]["credited_owners"]) == 2
