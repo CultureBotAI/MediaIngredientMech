@@ -17,7 +17,7 @@
 | Artifact | Path | SHA-256 | Status |
 |---|---|---|---|
 | Frozen intake snapshot (`infra_snapshot`) | `reviews/workflow/mech-goal-sequence-20261019/cycle-000014/stage-06/revision-0001/infra_snapshot.md` | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` | Matches supervisor `infra_scope.sha256` |
-| Implementation plan (`implementation_plan`) | `reviews/workflow/mech-goal-sequence-20261019/cycle-000014/stage-06/revision-0001/implementation_plan.md` | `8eca92aa70005f61469015da9a357d2d8a70f9690035fdcf6b212d21dc3a1cf8` | Validated |
+| Implementation plan (`implementation_plan`) | `reviews/workflow/mech-goal-sequence-20261019/cycle-000014/stage-06/revision-0001/implementation_plan.md` | `e8139e0fff5d10a9a64a821c74975981b9d4620e8a786d33af9cb8d351737c4c` | Validated |
 | Tracked `INFRA_TASKS.md` (`infra_tasks`) | `INFRA_TASKS.md` | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` | Unchanged (`tasks: []`) |
 | Verified evidence index (`latest.yaml`) | `reviews/workflow/latest.yaml` | `37b2246ddff9019e9134427bcba1603f83c60e47bf4d4dbc932b1c058bbb3f53` | Synchronized through Cycle 14 Stage 5 (PR #1142, 41 entries) |
 
