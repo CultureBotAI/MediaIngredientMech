@@ -1,0 +1,67 @@
+schema_version: 1.0.0
+repository_key: mediaingredientmech
+github_repository: CultureBotAI/MediaIngredientMech
+run_id: mech-goal-sequence-20261019
+cycle: 13
+stage: 4
+revision: 1
+outcome: completed
+summary: "Reviewed all 2,955 individual IngredientRecord YAML files and 7 collection YAML documents at 99fe4b44d78126d78041a69eeb366c52bedf0caa across all 986 structured review bundles in reviews/structured/; 1,995 records passed with 0 active findings (including Ca_No32_X_4_H2o.yaml resolved under mim-c01-s04-f002 / #922 in Cycle 1 Stage 5 and newly added 4_X_Trace_Metal_Solution.yaml / Ammonium_Bicarbonate.yaml in PR #1025) and 960 records retain 970 active findings across the 6 carried-forward root-cause cohorts (mim-c01-s04-f001 and mim-c01-s04-f003 .. mim-c01-s04-f007)."
+source_revision: 99fe4b44d78126d78041a69eeb366c52bedf0caa
+scope_frozen_at: '2026-11-01T08:42:03Z'
+previous_evidence:
+  path: reviews/workflow/mech-goal-sequence-20261019/cycle-000012/stage-05/revision-0001/evidence.yaml
+  sha256: 4d57ba1b28f9628b2037d98fea9a10e9c55413243c8bc15141c4b09b2b2fe05e
+artifacts:
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000013/stage-04/revision-0001/review_report.md
+  sha256: b91741d8870c7e673e119832ad169467254b5bdd459df1d927ae5796fef0e478
+  kind: review_report
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000013/stage-04/revision-0001/review_findings.md
+  sha256: 200ebdf0de0695726b79153b75f2acd4bc07217e509b4f5fb2dfc48b949e9a61
+  kind: review_findings
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000013/stage-04/revision-0001/coverage_report.md
+  sha256: 50e0759474a7626a228c51533d747c71bd4ecc33f5121a115d637d64f8531c44
+  kind: supporting
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000013/stage-04/revision-0001/validation.md
+  sha256: dc02a31c8f4a819f04fb9c6ee71bba18cb454c7b668d5b6cbc62151e4843d760
+  kind: validation
+findings:
+- finding_id: mim-c01-s04-f001
+  carried_from: mim-c01-s04-f001
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/921
+  summary: "Reconcile missing direct MicrobeDecoder occurrence on data/ingredients/mapped/(2)-D-lyxose.yaml (CHEBI:62318; native finding rec-f-444b73747dddc915)"
+- finding_id: mim-c01-s04-f003
+  carried_from: mim-c01-s04-f003
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/923
+  summary: "Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records"
+- finding_id: mim-c01-s04-f004
+  carried_from: mim-c01-s04-f004
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Adjudicate prediction-only or empty primary nutritional/cellular role assertions lacking literature citations across 624 mapped records (595 single-role + 29 multi-role; issue #718)"
+- finding_id: mim-c01-s04-f005
+  carried_from: mim-c01-s04-f005
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across 29 mapped records (17 single-role + 12 multi-role; issue #718)"
+- finding_id: mim-c01-s04-f006
+  carried_from: mim-c01-s04-f006
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings across 261 unmapped identity + 4 complex parent scope + 1 ambiguous PYGS; issue #718)"
+- finding_id: mim-c01-s04-f007
+  carried_from: mim-c01-s04-f007
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records (17 nomenclature token scope + 13 component source scope + 1 Furaltadone CAS alias; issues #718, #861)"
+groups: []
+carry_forward_ids:
+- mim-c01-s04-f001
+- mim-c01-s04-f003
+- mim-c01-s04-f004
+- mim-c01-s04-f005
+- mim-c01-s04-f006
+- mim-c01-s04-f007
+infra_tasks: []
