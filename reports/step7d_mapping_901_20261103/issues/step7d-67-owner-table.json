@@ -1,0 +1,1561 @@
+{
+  "generated_at": "2026-11-03T06:14:52.736886+00:00",
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "counts": {
+    "reviewed": 67,
+    "include": 38,
+    "drop": 29,
+    "plan_excluded": 3
+  },
+  "meaning": "Reviewed current owner preimage hashes, not claimed applied result hashes; proposed result hashes are explicitly separate. No scientific or role approval.",
+  "source_hashes": {
+    "normalized-decisions-v2.json": "5db3f2182fa650e36d4ea9506e21da16cf4f67855aeb39d8219b308501ddc797",
+    "owner-plan.json": "a82bc6d32e750f16fc7ecfa4c0a5e172a5930c849d7dc3ec5a6ca106ed60fca4",
+    "issue-drafts/publication-receipts.json": "5f632744db95d42455a2d454ebd0366027d5e25e772f91cdc0ad01c051e1a4dd"
+  },
+  "rows": [
+    {
+      "position": 1,
+      "owner_path": "data/ingredients/mapped/2-Deoxyadenosine_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "234edb342d3ca2141a1d979722b23e9f4541903cd40df75d1871a864cb515edb",
+      "reason": "D7400 and CAS evidence support the monohydrate; retain its distinct CAS and parent relation.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "sigma-deposit-D7400",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/D7400_SIGMA/JSON",
+          "capture_sha256": "ad23ed3ab115c0ec3217a1efb9b9efbce6e974cd0a35d3bc2fb3d3b0b0c5f2e9"
+        },
+        {
+          "id": "pubchem-cas-16373-93-6",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16373-93-6/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "1b8219c86ddc9776b5919362ceac51fec4091c3d2d024a18efcfcdd8a52cf158"
+        }
+      ],
+      "proposed_owner_sha256": "57b6a40c3ea029e2ef30b54ce1dc8a3eb8a9902f4e00b6c60ef728ae582c44a0"
+    },
+    {
+      "position": 2,
+      "owner_path": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1",
+      "reason": "K6250 supports a variable-water hemicalcium salt; retain distinct CAS and keep the excluded monohydrate owner separate.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-K6250",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/k6250",
+          "capture_sha256": "2506564ff567ec930aba102afed52ca7f4549b94543d41d76c59737030baf8bd"
+        },
+        {
+          "id": "sigma-deposit-K6250",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/K6250_SIGMA/JSON",
+          "capture_sha256": "b47e6010f85142b3538ecdcfa1023f3a5e78ba35306effd5e0add96a936f574c"
+        }
+      ],
+      "proposed_owner_sha256": "ef8370ab5880873b2cd9fcf7bcb6b477a92d73981909cc8113f13431b3957808"
+    },
+    {
+      "position": 3,
+      "owner_path": "data/ingredients/mapped/4-Hydroxymandelic_Acid_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "0654ea9993b21a11beb4bbf8585d5cd60a2e44f86e7490a750857127a3ea81fb",
+      "reason": "Catalogue 168327 and CAS evidence support the monohydrate; reject its dry-parent alias.",
+      "issue_numbers": [
+        1119
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-168327",
+          "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/168327",
+          "capture_sha256": "fb80e634c1f7947d4d0545523414cfd1b359123d3dfa7eb14f64b56f864011e3"
+        },
+        {
+          "id": "sigma-sid-168327",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sid/24850239/JSON",
+          "capture_sha256": "b88f18b70f9492d3f25f8c0f9e92e7291c642c837b40b936de886e1bc60c07e2"
+        }
+      ],
+      "proposed_owner_sha256": "cd146080e4568090fbc5a55439a0caf840a0f50ef09a8c81a852b9da2d349255"
+    },
+    {
+      "position": 4,
+      "owner_path": "data/ingredients/mapped/5-Fluoroorotic_Acid_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "6abd2c9c99b2b69e621f8d9af7086abcd6dfa3290ac06b2e42a018528f8fe848",
+      "reason": "F5013 supports an unspecified hydrate; withdraw unsupported one-water chemistry and reject the dry-parent alias.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-F5013",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/f5013",
+          "capture_sha256": "8550229c77ec65a15045a8f37a5817d1f299c26a1914e945103b0b8d920930d0"
+        },
+        {
+          "id": "sigma-deposit-F5013",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/F5013_SIGMA/JSON",
+          "capture_sha256": "346c303e17143c8986c60aa45d061568a0f97c613189aa8a2820fdc849e64690"
+        }
+      ],
+      "proposed_owner_sha256": "7caa1e38e7ec3991439a11c2a1aec35c1879f93347a47ae4045d21f96a185b56"
+    },
+    {
+      "position": 5,
+      "owner_path": "data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c",
+      "reason": "K3752 uses hydrate wording and a dry-compound CAS; the complete supplied-material identity needs a decision.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-K3752",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sial/k3752",
+          "capture_sha256": "2c3e01ff3aba9a5ed11822568eaf412e893dc15d11404cd27302e72a3686166d"
+        },
+        {
+          "id": "sigma-sid-K3752",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sid/329817140/JSON",
+          "capture_sha256": "206799f2db0925468bb463c13aa9badebfc91aad87042bd5c01a5282948d82d4"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "owner_path": "data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "2467c25545c1818d60b1822acbcc64ab0b25aef09f99722f2fb140d5296722e1",
+      "reason": "A8751 uses variable-water hydrochloride wording, but its CAS resolves to dry hydrochloride; owner boundary remains unresolved.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-A8751",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/a8751",
+          "capture_sha256": "fb80e634c1f7947d4d0545523414cfd1b359123d3dfa7eb14f64b56f864011e3"
+        },
+        {
+          "id": "sigma-deposit-A8751",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/A8751_SIGMA/JSON",
+          "capture_sha256": "5aeb5db6d13885c3d8bb8e4dd7cbf9b514244a821901fb5ff9a69c73f5b8666a"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "owner_path": "data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "8ca6a26d6e87813b3e940441374a5266f60d8fc881492ccd6baf2b4afd183b35",
+      "reason": "Catalogue 146617 is a trihydrate; candidate ontology structures disagree on sulfonate positions. Resolve the positional isomer.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-146617",
+          "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/146617",
+          "capture_sha256": "fb80e634c1f7947d4d0545523414cfd1b359123d3dfa7eb14f64b56f864011e3"
+        },
+        {
+          "id": "chebi-78157",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/78157/",
+          "capture_sha256": "e95a34792cdf5e8d6624c29cd7715ba88e12b4c207eacd401ef2b75cf230038d"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "owner_path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "fbb892517930279f1591f8b80a802b18ab7f3ad9ab2979a258b8956803ee9e3d",
+      "reason": "Variable-water disodium 2-glycerophosphate is supported; use nearer disodium parent CHEBI:132089 and withdraw fixed-water chemistry.",
+      "issue_numbers": [
+        1120,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "chebi-132089",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/132089/",
+          "capture_sha256": "edd0ef2e17f62ac9df6f38a7148b024749d19ef595e141e5ed6b0b65fab73c23"
+        },
+        {
+          "id": "supplier-G9422",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/g9422",
+          "capture_sha256": "fb80e634c1f7947d4d0545523414cfd1b359123d3dfa7eb14f64b56f864011e3"
+        }
+      ],
+      "proposed_owner_sha256": "91a6a79b3b6163f2d5fb100f7571946c5ba1fc9abfa865fbde935c6077c292b6"
+    },
+    {
+      "position": 9,
+      "owner_path": "data/ingredients/mapped/Cacl2_X_7_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "e52628c1c1ebc62037537e9de3136970898fe69ed07573a55c2d8ca7361c9071",
+      "reason": "MediaDive 479 names seven waters but supplies dry-parent metadata; obtain the original preparation before changing identity.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "chebi-3312",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/3312/",
+          "capture_sha256": "a9c1c9f880e83b33d40955eabd6386315af4b00a640fd75ebf5bbc39216cc024"
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "owner_path": "data/ingredients/mapped/Cadmium_Acetate_Dihydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "07cadbd336cef9129741a691cbee09dc6fe0d368df15aab884935a4ec19aefb5",
+      "reason": "The dihydrate is supported; withdraw dry-salt structures/CID and reject the dry-parent alias while retaining the formula.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-102003",
+          "url": "https://www.sigmaaldrich.com/US/en/product/mm/102003",
+          "capture_sha256": "8550229c77ec65a15045a8f37a5817d1f299c26a1914e945103b0b8d920930d0"
+        },
+        {
+          "id": "pubchem-cas-5743-04-4",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/5743-04-4/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "97d3bc99111bcef7bee6575b9a35e9660ef9667e6b3a5ef42faa23f1f673c3ab"
+        }
+      ],
+      "proposed_owner_sha256": "1769c867fc43e18416a493889e69d0b6537ab07509bf0e81cfb5cb87bc587310"
+    },
+    {
+      "position": 11,
+      "owner_path": "data/ingredients/mapped/Caso4_X_7_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "8c80ab54d38ffa3310ad783d85692f36e21b92167d539c179fb3ddede83adbe5",
+      "reason": "MediaDive 2000 names seven waters; computed composition and dry-parent metadata do not establish the intended material.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "pubchem-cid-140700884",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/140700884/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "421adb01e1ce4e0fc040df7893c3f0292bde3357e22498b840a48f439eedf01f"
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "owner_path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "5db979c08356e7ad8f03aeff24e9e163bb8117a73b95fb4147c7b1fc929f8e3d",
+      "reason": "CeCl3·7H2O is supported; promote to its unique CAS 18618-55-8 and preserve the existing local registry identity.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-228931",
+          "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/228931",
+          "capture_sha256": "8550229c77ec65a15045a8f37a5817d1f299c26a1914e945103b0b8d920930d0"
+        },
+        {
+          "id": "sigma-deposit-228931-aldrich",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/228931_ALDRICH/JSON",
+          "capture_sha256": "b6ba59959555ecea9f6b2f4b2d2242a41fef654670aed2eb49fa078d02734851"
+        }
+      ],
+      "proposed_owner_sha256": "7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b"
+    },
+    {
+      "position": 13,
+      "owner_path": "data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "eab12c4241299f15a70d3090d77037d0300b23d18974b9ccfe665c64dbe4982f",
+      "reason": "C8145 supports a variable hydrate; retain local identity and move the procurement CAS out of active whole-material chemistry.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-C8145",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/c8145",
+          "capture_sha256": "2506564ff567ec930aba102afed52ca7f4549b94543d41d76c59737030baf8bd"
+        },
+        {
+          "id": "sigma-deposit-C8145",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C8145_SIGMA/JSON",
+          "capture_sha256": "b1f6ec0474d30afdd6576d6a54d7b4b5e30ba8f17b3728dc5944edb4fa6e02ed"
+        }
+      ],
+      "proposed_owner_sha256": "8f4e50c36046d11a7949685b8a26705437d0bd8d7f35441671a6169d9ab50c8f"
+    },
+    {
+      "position": 14,
+      "owner_path": "data/ingredients/mapped/Ceftazidime_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb",
+      "reason": "C3809 includes sodium carbonate stabilization; decide active hydrate versus whole preparation before any edit.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "sigma-deposit-C3809",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C3809_SIGMA/JSON",
+          "capture_sha256": "a47cbf9a4a80692c69d6d5ca72d49281e5eb38b1cd93c2d72577891ce370c71b"
+        },
+        {
+          "id": "pubchem-cas-120618-65-7",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/120618-65-7/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "df091a5b9589f6629f138be32b21a08577b50614e1f7dfe8d4cb604d518d2a91"
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "owner_path": "data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "cc8479957cb0c6090af467207f2e8daef94fa83a437d39993970604b3efcfbde",
+      "reason": "C6143 supports a variable hydrate; retain local identity, document old/current procurement CAS, and reject the dry-parent alias.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-C6143",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/c6143",
+          "capture_sha256": "2506564ff567ec930aba102afed52ca7f4549b94543d41d76c59737030baf8bd"
+        },
+        {
+          "id": "sigma-deposit-C6143",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C6143_SIGMA/JSON",
+          "capture_sha256": "9d794551a9d2e6e64070695c9db11a3e0bf09522f521509e9561884871b1a787"
+        }
+      ],
+      "proposed_owner_sha256": "a439a3394c28fc8b8d7d93897de2c010cd3ffb2e5a0c67838c7f497fcf0bb413"
+    },
+    {
+      "position": 16,
+      "owner_path": "data/ingredients/mapped/Cocl2_X_2_H2o.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "edd5aa6dc006976a0e5d8acfdc23187c96845c52b154cc6d8aa730e6225073a8",
+      "reason": "Source recipes and primary crystallographic evidence support the dihydrate; retain local identity without adopting an unverified CAS.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "cobalt-di-paper",
+          "url": "https://api.crossref.org/works/10.1063/1.1726454",
+          "capture_sha256": "34209436cac734dd6f2a030acbcc31d272a6d733580a0dd5921c92562943a8a6"
+        },
+        {
+          "id": "pubchem-cid-129656378",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/129656378/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "4c4156164418b9fe1fb4f3b6017696bddb14a0d3376905636ac24f9efe3a7fe2"
+        }
+      ],
+      "proposed_owner_sha256": "24b8ad861360abceeeb29015a4c827efad6f304d987860139d6ce2450068fb24"
+    },
+    {
+      "position": 17,
+      "owner_path": "data/ingredients/mapped/Cocl2_X_4_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "51f325d79b0ce211d955a7748e06744d17f355be35ae03e138b5b8fcc08dcbac",
+      "reason": "Tetrahydrate source wording remains unresolved; the primary-paper access limitation prevents complete source/form verification.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "pubchem-cid-129660594",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/129660594/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "45f5e75005dbd84bd1bd118713c169c9d0843d6af917eca74c6b86babb1baad9"
+        }
+      ]
+    },
+    {
+      "position": 18,
+      "owner_path": "data/ingredients/mapped/CrKSO42_X_12_H2O.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "30f47d1b0872dfef9a3ff8561ba2231853cc3cc2e464c66a78659ac5050748a3",
+      "reason": "Potassium chromium sulfate dodecahydrate is a double salt; chromium sulfate alone has different potassium/sulfate scope.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "pubchem-cas-7788-99-0",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/7788-99-0/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "8e96c2eca1e382fd52e7cd58a5b4b4a3c1fb6f7443056bedb5856dc927d045d1"
+        },
+        {
+          "id": "chebi-53471",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/53471/",
+          "capture_sha256": "b6631e97bffd541cf6d2d7f3246f030636911ee5bf3e684a121bed30159df069"
+        }
+      ]
+    },
+    {
+      "position": 19,
+      "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "50c5e0a150ebd1215f290173f525ca73a7799b73ae889e357b2609022974283c",
+      "reason": "GSRS, source and CAS evidence support copper nitrate trihydrate CAS 10031-43-3; preserve local registry identity and reject dry alias.",
+      "issue_numbers": [
+        1119
+      ],
+      "primary_evidence": [
+        {
+          "id": "cu-gsrs-current",
+          "url": "https://gsrs.ncats.nih.gov/api/v1/substances/066PG1506T?view=full",
+          "capture_sha256": "a2b317c0de8b6f8f2e48b8865b42f8623855ae0dc60786edb35a2041a60cbee3"
+        },
+        {
+          "id": "pubchem-cas-10031-43-3",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10031-43-3/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON",
+          "capture_sha256": "aefd5fc81e9da5b440078ce202e3c4f24730f49a5aa4333b2a48c21b3cca8050"
+        }
+      ],
+      "proposed_owner_sha256": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa"
+    },
+    {
+      "position": 20,
+      "owner_path": "data/ingredients/mapped/Cucl2_X_6_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "617a79e853967c008d7dc62783d291b4189d2d9b5955d9f71b59d6230621b15c",
+      "reason": "MediaDive 1056 names six waters but supplies dry CuCl2 metadata; obtain source-specific material evidence.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "chebi-49553",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/49553/",
+          "capture_sha256": "b79999b5e09f6285defcd6cb63fdf1ab32c14185c3f291d1e31ca4ec4df00241"
+        }
+      ]
+    },
+    {
+      "position": 21,
+      "owner_path": "data/ingredients/mapped/Cuso4_X_2_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002",
+      "reason": "Source recipes name copper sulfate dihydrate, but dry-parent metadata do not settle that supplied form.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "chebi-23414",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/23414/",
+          "capture_sha256": "26282f0556d0c5beea810ea2220a27ba476b1a88a7e5c372ca3b44c3d85f3178"
+        }
+      ]
+    },
+    {
+      "position": 22,
+      "owner_path": "data/ingredients/mapped/Cuso4_X_4_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "0f6074f4283f77e4f4766b53973aefa46c247551d4b6f27252471892bd953d7a",
+      "reason": "Source recipes name copper sulfate tetrahydrate, but dry-parent metadata do not settle that supplied form.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "chebi-23414",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/23414/",
+          "capture_sha256": "26282f0556d0c5beea810ea2220a27ba476b1a88a7e5c372ca3b44c3d85f3178"
+        }
+      ]
+    },
+    {
+      "position": 23,
+      "owner_path": "data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565",
+      "reason": "F3627 supports variable-water disodium fructose phosphate; withdraw dry chemistry and reject the dry-parent alias.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:F3627",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/f3627",
+          "capture_sha256": "d143c684d9a30302978c7ab14c5e1ca4f940d099c870a702799120e965b4252d"
+        },
+        {
+          "id": "v1:23-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/26177-86-6/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "5ecc85da49ea76932cac26e4413199b35fd1448add31ea19e4599d1c5ca831a7"
+        }
+      ],
+      "proposed_owner_sha256": "5ec2b75e2542ea2f85ee85b923ac2b98d928733f8706179b33d5acefb73dc12a"
+    },
+    {
+      "position": 24,
+      "owner_path": "data/ingredients/mapped/D-Galacturonic_Acid_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "f6ec943a6dd111bae602dc7f62b3e37b503f0980aba016e9cb9971d079c5d8f9",
+      "reason": "Source/CAS evidence supports D-galacturonic acid monohydrate; retain CAS and the D-specific broader parent.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:24-wako-galacturonic",
+          "url": "https://labchem-wako.fujifilm.com/us/product/detail/W01W0232-5034.html",
+          "capture_sha256": "c1f0d162b0dfa2b97320658939e01ef98bbdccc10cbd7b361d07255d8026b4c2"
+        },
+        {
+          "id": "v1:24-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/91510-62-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "adf680dcbf6dc70eb7341d9298d6c1066c51ded93d589145cfb4b8cea9702e1e"
+        }
+      ],
+      "proposed_owner_sha256": "e90c177647bb81e496800dc1ab5b67c52d5ad623060acd933aabbde8a15ca38e"
+    },
+    {
+      "position": 25,
+      "owner_path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "e77bcd2a4a944106d4e17fde216fd20169d0074f660d088aeeb68c8426d78d3d",
+      "reason": "D-sodium glucuronate monohydrate is supported; use nearer salt parent CHEBI:32144 instead of free acid.",
+      "issue_numbers": [
+        1120
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:25-chebi-sodium-glucuronate",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/32144/",
+          "capture_sha256": "a249cf8f8ea8e477794f4f64140e637ed647d8609353f38c7a31fda1815dd054"
+        },
+        {
+          "id": "v1:25-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/207300-70-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "de681072921bccfe2877e1fd9c4d463246f4e63e774c7253e8330ec309337b2a"
+        }
+      ],
+      "proposed_owner_sha256": "dc24f839479e79e3e34a984266aae2fb480f5e6136896f3ffbb4d8bfb0a0dab3"
+    },
+    {
+      "position": 26,
+      "owner_path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5",
+      "reason": "M5885, NCIt and GSRS support exact NCIT:C80300; use CAS_RN_LOOKUP and synchronize the same owner’s identifier references.",
+      "issue_numbers": [
+        1117
+      ],
+      "primary_evidence": [
+        {
+          "id": "prior:ncit-C80300-maltose-monohydrate",
+          "url": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C80300?include=full",
+          "capture_sha256": "6f182d2fbb8d52919aecda4a81703d11b04aab9acfa0a3205b1556d0541c85b0"
+        },
+        {
+          "id": "prior:ncit-C80300-maltose-monohydrate",
+          "url": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C80300?include=full",
+          "capture_sha256": "6f182d2fbb8d52919aecda4a81703d11b04aab9acfa0a3205b1556d0541c85b0"
+        }
+      ],
+      "proposed_owner_sha256": "b188ec71ed2df3319a96143eff91ee7589587aa655b6c77490db9a6df4f3b9c3"
+    },
+    {
+      "position": 27,
+      "owner_path": "data/ingredients/mapped/D-_-melezitose_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "e1b61c883ad813d73b3b508054774699b577fbaa90c8dd6fd4748abfa20bcc59",
+      "reason": "M5375 supports variable-water melezitose; retain its CAS separately from fixed monohydrate and withdraw one-water chemistry.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:M5375",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/m5375",
+          "capture_sha256": "d143c684d9a30302978c7ab14c5e1ca4f940d099c870a702799120e965b4252d"
+        },
+        {
+          "id": "v1:27-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/207511-10-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "7e7644411dba589d62f9f91fd76073e61dd0cac3282f8544a311761073aba52f"
+        }
+      ],
+      "proposed_owner_sha256": "b70f6ec2c8ce91a3ec1186fbe9a08b8e54195ca7607590ffef3092c5e3bd9e09"
+    },
+    {
+      "position": 28,
+      "owner_path": "data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f",
+      "reason": "Source supports racemic 1-phosphate with variable sodium/water; withdraw fixed-form chemistry and reject two free-acid aliases.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:glycerol61668",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/61668",
+          "capture_sha256": "3db69f53633d4ce484736394ad2f8751830fe0016b35ba29cd57e4e1a8b01e3b"
+        },
+        {
+          "id": "v1:28-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17603-42-8/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "f9119fb7b6ae4d193a6e0f6669bc1b3591734428d5905199854670b6cd7ccd83"
+        }
+      ],
+      "proposed_owner_sha256": "3beed1b7708342d30772eba148ddf870639e4bb7e9b21ea269f0d56a427e78ab"
+    },
+    {
+      "position": 29,
+      "owner_path": "data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "f87bf4f7abb694e50061183b62dd8f9a85e5cea1e9aaddc1568693c635c45be5",
+      "reason": "I1252 hydrate and the water-free ontology/CAS representation need an explicit registry-versus-supplied-form ruling.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:I1252",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/i1252",
+          "capture_sha256": "07e95554fa4df47ee5e15989a932e91151bf145af5c933ea881119a19fdb0682"
+        },
+        {
+          "id": "v1:29-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1637-73-6/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "16d67ad8911eaff3808eb47521ac1c7af9223119254cbd014e6e1950d0b48c6a"
+        }
+      ]
+    },
+    {
+      "position": 30,
+      "owner_path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d",
+      "reason": "Tetrasodium tetrahydrate is supported; use nearer water-free tetrasodium parent CHEBI:750784 instead of EDTA free acid.",
+      "issue_numbers": [
+        1120
+      ],
+      "primary_evidence": [
+        {
+          "id": "v7:30-chebi-edetate-sodium",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/750784/",
+          "capture_sha256": "3b4233900d34a82bd14e4482aad09eecc89e280cb071610ffd7b7905b04cc6e6"
+        },
+        {
+          "id": "v1:30-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13235-36-4/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "9f72ee3d7b27864a8a44d6f3f7ceb69aa35108e89d83fa17ebead152d44b5c36"
+        }
+      ],
+      "proposed_owner_sha256": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc"
+    },
+    {
+      "position": 31,
+      "owner_path": "data/ingredients/mapped/Fecl2_X_6_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10",
+      "reason": "MediaDive 555 repeats six-water FeCl2 with dry-parent metadata; source hydration is unverified.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "v1:31-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/30812/",
+          "capture_sha256": "4b741da996df8b16983743b6648891228b8cb330f76170481f7b5940a8017182"
+        }
+      ]
+    },
+    {
+      "position": 32,
+      "owner_path": "data/ingredients/mapped/Fecl3_X_4_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7",
+      "reason": "MediaDive 922 repeats four-water FeCl3 with dry-parent metadata; source hydration is unverified.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "v1:32-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/30808/",
+          "capture_sha256": "d5c46c6f848a19ceed11370b2cab033024fdc3d2f5337cb54f414463ae81c3b2"
+        }
+      ]
+    },
+    {
+      "position": 33,
+      "owner_path": "data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab",
+      "reason": "Catalogue CAS/mass conflict with fixed sodium NCIt and variable sodium/water supplier scope; recover the actual material.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:F8682",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/f8682",
+          "capture_sha256": "d143c684d9a30302978c7ab14c5e1ca4f940d099c870a702799120e965b4252d"
+        },
+        {
+          "id": "v1:33-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/66508-37-0/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "ccd3d9d0f9ed9a0c79ccfe249d20862ced9588f8ba00cf813163d5a42aab77f6"
+        }
+      ]
+    },
+    {
+      "position": 34,
+      "owner_path": "data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "f5e8481e5f4588940e88d389061bdfee2e23838b653928c4bf3f18ca36c26e53",
+      "reason": "Primary source supports alpha-D galactose phosphate dipotassium pentahydrate; withdraw dry-salt chemistry.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:galactose345646",
+          "url": "https://www.sigmaaldrich.com/US/en/product/mm/345646",
+          "capture_sha256": "3db69f53633d4ce484736394ad2f8751830fe0016b35ba29cd57e4e1a8b01e3b"
+        },
+        {
+          "id": "v1:34-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/19046-60-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "c807a3b0414b83627c004b6ab2bb15f785d7fedafb507c2c46e6b1dca60a4e2a"
+        }
+      ],
+      "proposed_owner_sha256": "a18258f8f2563ff4297179b3ba77fab1a804eb04a1900376629aab4db137dae2"
+    },
+    {
+      "position": 35,
+      "owner_path": "data/ingredients/mapped/Gly-Gln_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "96cc72b44792c1cf088d54e37e12da512b40f2ab82291068362a91c4e1572c37",
+      "reason": "Source/CAS supports glycyl-L-glutamine monohydrate; withdraw dry structures and reject the dry dipeptide alias.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "v1:35-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/172669-64-6/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "daf62569a884b4abb13ac533ac68f040d861e9c7035b75df5e8d7402b8863e97"
+        },
+        {
+          "id": "v1:35-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/73898/",
+          "capture_sha256": "d8d1f9eb1bbb3fa0bc5aa1e62336942afd78688d0a602cddd2b050dbec271091"
+        }
+      ],
+      "proposed_owner_sha256": "d5b74cb58174ded1547ae1ede5e5141afb761249501def738b1a1597412707f4"
+    },
+    {
+      "position": 36,
+      "owner_path": "data/ingredients/mapped/Glycerol_Phosphate_Disodium_Salt_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "34a148f0b60690558fc0aa0970a93b619fd340e057a3e07e490000b94d3859bc",
+      "reason": "G6501 is an isomeric mixture and a separate owner already holds the NCIt concept; no merge or partial cleanup.",
+      "issue_numbers": [
+        1118
+      ],
+      "primary_evidence": [
+        {
+          "id": "priority:pubchem-sigma-G6501",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sid/24895257/JSON",
+          "capture_sha256": "229b66301e98e2ea1a4b8fc032121244c80376c398a9d31e45759c0be917937a"
+        },
+        {
+          "id": "priority:gsrs-g6501-mixture",
+          "url": "https://gsrs.ncats.nih.gov/api/v1/substances/RCS9EQ01V4?view=full",
+          "capture_sha256": "930bfa931206f64225a94fa9aaeee12240f217f918b3f59551fb5dc531b2ff33"
+        }
+      ]
+    },
+    {
+      "position": 37,
+      "owner_path": "data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "3893e76f092f6bd8b3a3db6de905846b23369c6944729b5ba8508ddcd9adfacd",
+      "reason": "CAS/supplier describes HAuCl4 hydrate, whereas the parent is AuCl3; resolve the complete acid/salt identity and parent.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:gold254169",
+          "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/254169",
+          "capture_sha256": "d143c684d9a30302978c7ab14c5e1ca4f940d099c870a702799120e965b4252d"
+        },
+        {
+          "id": "v1:37-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/30076/",
+          "capture_sha256": "82737133b818dec29f888e991e07f9bb71289a2a2c5a3846f69a3cda9e1fab0f"
+        }
+      ]
+    },
+    {
+      "position": 38,
+      "owner_path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "fb412a63050b2d599ee3cfab9fcafcaf141b3ac4c8a1febe6a57709831bc90d6",
+      "reason": "CAS 16788-57-1 already belongs to another owner with three recipes; drop the whole proposal and preserve both owners.",
+      "issue_numbers": [
+        656
+      ],
+      "primary_evidence": [
+        {
+          "id": "web:K2HPO4-105099",
+          "url": "https://www.sigmaaldrich.com/US/en/product/mm/105099",
+          "capture_sha256": "3db69f53633d4ce484736394ad2f8751830fe0016b35ba29cd57e4e1a8b01e3b"
+        },
+        {
+          "id": "v2:38-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/16788-57-1/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "bbe62a4af7ab6681ce034034fea4a9ce0f6957a41b00ff3bb0e8ed3fe18ef9b0"
+        }
+      ]
+    },
+    {
+      "position": 39,
+      "owner_path": "data/ingredients/mapped/K2so4_X_7_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "06849d90807f1547a48c88de5dc022b466ae9b506efd08fb6929b1b6192b3412",
+      "reason": "MediaDive 1920 names a heptahydrate with dry-parent metadata; do not substitute anhydrous potassium sulfate.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "v1:39-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/32036/",
+          "capture_sha256": "4e6e135cf0efed16c03849b1fe7f1a78ca934012229d5bd6058a1e771c82942a"
+        }
+      ]
+    },
+    {
+      "position": 40,
+      "owner_path": "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa",
+      "reason": "Source/CAS supports sodium L-aspartate monohydrate; retain distinct CAS and the verified L parent.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "v1:40-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/323194-76-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "178a3018864de41ca4a42f1bdd06da113192a2336fe82105fe61a506a328e693"
+        },
+        {
+          "id": "v1:40-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17053/",
+          "capture_sha256": "b340fc3ac9c333a6ac81d7bba07bd15969eacd85b84c6e626fd289d221db567e"
+        }
+      ],
+      "proposed_owner_sha256": "32d45cfa5c74e9e4724f0b1a17ed30f58d01edb3ce58ea25332b12eb5815bb7e"
+    },
+    {
+      "position": 41,
+      "owner_path": "data/ingredients/mapped/L-Cysteic_Acid_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "21740d17230c11b46d09af7ae1570b8af173dfd789e232d5a304d3a0b39c4dda",
+      "reason": "Source/CAS supports L-cysteic acid monohydrate with L stereochemistry; retain CAS and broader parent.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "v1:41-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/23537-25-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "8adf921be8dc5a11dc1ad7e7b1ab8420c2b404550c89ae40f7723118142090bf"
+        },
+        {
+          "id": "v1:41-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17285/",
+          "capture_sha256": "e2afa42d9f0424632f515f184170f2ada8f66f4d894ca3721240df3fb62c8493"
+        }
+      ],
+      "proposed_owner_sha256": "b32a27ee8953ad229beb47775436a4077dd46552c394f270ee6db8d76e26536e"
+    },
+    {
+      "position": 42,
+      "owner_path": "data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e",
+      "reason": "Fluka 49601 and CAS evidence support monopotassium L-glutamate monohydrate; retain the exact salt/hydrate identity.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "v1:42-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/6382-01-0/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "4ef229003439a9b046228be581ccf35120c6ac4ae8d4586fba398c87e5cf72a7"
+        },
+        {
+          "id": "v1:42-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/16015/",
+          "capture_sha256": "6fd8d2cb47a07d1d6aea8c41232c5ee2dd8ec288c492b4cb2c62a3451fe32245"
+        }
+      ],
+      "proposed_owner_sha256": "cb23adfab5e3b84265222f3c4462e3e82675f706339cac2dda7b516c8a7db5bd"
+    },
+    {
+      "position": 43,
+      "owner_path": "data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f",
+      "reason": "Acros source and CAS evidence support L-rhamnose monohydrate; use the broader L parent without choosing an anomer.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "v1:43-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10030-85-0/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "e8a9bc3d53309bbdb73f8573e034120f539245548e047bb0f8d5670f7e9b0aff"
+        },
+        {
+          "id": "v1:43-chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/62345/",
+          "capture_sha256": "96803a25ecdbf8051b58ececb8ab5f953ac4902852f7557419e2d7a297a6a6ac"
+        }
+      ],
+      "proposed_owner_sha256": "5e5ac426585289ae4a0cb83595b2f62edf3fbbec0066ad9b19822bea98f0a038"
+    },
+    {
+      "position": 44,
+      "owner_path": "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "a1d6287d6dd0de9ac92aba2af65b60d3e72f139ef46becb2ef06c6a28d2147b9",
+      "reason": "Primary certificate specifies LiCl·xH2O; retain CAS and withdraw an unsupported monohydrate representation.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:44-sigma-coa",
+          "url": "https://www.sigmaaldrich.cn/certificates/sapfs/PROD/sap/certificate_pdfs/COFA/Q14/298328-BULK0000494843.pdf",
+          "capture_sha256": "b532626767cd9505994612b0f1eeb61a8c019804a75d5a1157f28ec96d0d5875"
+        },
+        {
+          "id": "v1:44-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/85144-11-2/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "b6e239001d328bad8e4fb1f27c649b8201b965917d69597c60bcceb70152a0f7"
+        }
+      ],
+      "proposed_owner_sha256": "cd0d270b65a5c65e6d4b195d7f716fe888015e27b512dd11f465d79a7e5f731d"
+    },
+    {
+      "position": 45,
+      "owner_path": "data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "4bec1ab2fccddb7e5e14ba1308b4310cb0ed1e542e5e173b6849eecf04d318ea",
+      "reason": "MediaDive/CAS supports magnesium nitrate hexahydrate; retain the distinct CAS and water-free nitrate parent.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "v2:mediadive-ingredients",
+          "url": "https://mediadive.dsmz.de/rest/ingredients",
+          "capture_sha256": "2ca4c18937c5b9fc51d0a1651ed85ed75337a4776147e2e8f5f33d85893b3cbb"
+        },
+        {
+          "id": "v2:45-pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13446-18-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON",
+          "capture_sha256": "1132a2b2b2320466c1c1df300c50bb3906bd6fe461f7adaf151684c42720ebbc"
+        }
+      ],
+      "proposed_owner_sha256": "3507d07671a015f79ee0553840b8e277dccca3dfee85e7504b9ec0c335568791"
+    },
+    {
+      "position": 46,
+      "owner_path": "data/ingredients/mapped/Maltose_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "84c99c2429dea060e731ef5f5bbbf066574a4025f832ff97f006599b6a152cbc",
+      "reason": "The imported phenotype source names generic maltose hydrate; retain local identity without assigning water count or anomer.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "microbedecoder-source",
+          "url": "https://github.com/CultureBotAI/MediaIngredientMech/blob/467aa319a06ef992035f509f66fe251082b44ae1/data/custom/microbedecoder/unmapped_labels.tsv",
+          "capture_sha256": "96975af522c3e55d5bc6f542637e071a30d1191c34a8555eb81f540cb7bfe569"
+        },
+        {
+          "id": "Maltose_Hydrate--chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17306/",
+          "capture_sha256": "88ac41abdfe50aada457b9918f1f53c67a9fd78b3c1957c4642742f9b1da513b"
+        }
+      ],
+      "proposed_owner_sha256": "10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040"
+    },
+    {
+      "position": 47,
+      "owner_path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2",
+      "reason": "CAS structure supports cyclic reducing-end-unspecified maltotriose; replace open-chain parent with CHEBI:140999.",
+      "issue_numbers": [
+        1120
+      ],
+      "primary_evidence": [
+        {
+          "id": "chebi-140999",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/140999/",
+          "capture_sha256": "478deb27ee7106fa15150b1abe7007a9212d3e228e940a2fa9a4fa03c0b0e6ed"
+        },
+        {
+          "id": "Maltotriose_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/312693-63-3/JSON",
+          "capture_sha256": "0c5b289548ee64152beeec40f3be5ae91b0090d2a977b2b83aae0bc63ed59b71"
+        }
+      ],
+      "proposed_owner_sha256": "b610eb816827776dbca74ea2ac5d04b9a20300c3a8e0dcb280e74df72f2f079f"
+    },
+    {
+      "position": 48,
+      "owner_path": "data/ingredients/mapped/Mgcl2_X_7_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf",
+      "reason": "MediaDive 632 preserves seven-water wording but does not verify the supplied hydrate; retain local identity and hold.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "mediadive-mgcl2-7",
+          "url": "https://bacmedia.dsmz.de/ingredients/632",
+          "capture_sha256": "bdcf790ea902720437fbd2a3b230f7aa2ddc53dfa6eeef455b259a27381220d2"
+        },
+        {
+          "id": "Mgcl2_X_7_H2o--chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/6636/",
+          "capture_sha256": "aaf89b804a1855f3603783ea702740a37228b311ccd3ec095643b76f6fe902f9"
+        }
+      ]
+    },
+    {
+      "position": 49,
+      "owner_path": "data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "0f9abe1c97efaf92bf135a76edd1a3e4811ecd63369b13f11d869754894c1f1d",
+      "reason": "MediaDive 525 preserves three-water wording but does not verify the supplied hydrate; retain local identity and hold.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "mediadive-na2hpo4-3",
+          "url": "https://bacmedia.dsmz.de/ingredients/525",
+          "capture_sha256": "24843186910c2a0cad4e9531556918ff9b45cefc116aeec312bfcb74bfb89ff4"
+        },
+        {
+          "id": "Na2hpo4_X_3_H2o--chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/34683/",
+          "capture_sha256": "a6714f1020f587eff8a2152ff43ba19c0919ad541b08b5463f008a9e321d6fdc"
+        }
+      ]
+    },
+    {
+      "position": 50,
+      "owner_path": "data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "e4a2756db9e7876f8766f868af533266acc86bd21db5c1d79559048c717acebf",
+      "reason": "MediaDive 1580 preserves six-water wording but does not verify the supplied hydrate; retain local identity and hold.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "mediadive-na2hpo4-6",
+          "url": "https://bacmedia.dsmz.de/ingredients/1580",
+          "capture_sha256": "e7a9896a26f3ec811347fe24ad1edfbddcc2250e467eb640c7d11d9bb25aa90c"
+        },
+        {
+          "id": "Na2hpo4_X_6_H2o--chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/34683/",
+          "capture_sha256": "a6714f1020f587eff8a2152ff43ba19c0919ad541b08b5463f008a9e321d6fdc"
+        }
+      ]
+    },
+    {
+      "position": 51,
+      "owner_path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d",
+      "reason": "NCIT:C66551 is a dihydrate candidate, but the three-owner alias/membership/count correction must remain coupled.",
+      "issue_numbers": [
+        758,
+        740
+      ],
+      "primary_evidence": [
+        {
+          "id": "ncit-C66551",
+          "url": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C66551?include=full",
+          "capture_sha256": "a652ac14caf5a7f247a963e4417dcabf7c83f8be9a74eac937040d22b15bffdc"
+        },
+        {
+          "id": "pubchem-phosphate-dihydrate",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13472-35-0/JSON",
+          "capture_sha256": "a3c19f420f44bb9728dd66f934ed23238bba4e46ce5ac5edb28636734398c8a1"
+        }
+      ]
+    },
+    {
+      "position": 52,
+      "owner_path": "data/ingredients/mapped/Neomycin_Trisulfate_Salt_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "876380652f045ae42f54946f4e769cbeed9e65f065eab12acd77de386ebe00cf",
+      "reason": "N1142 is currently a saline neomycin solution; resolve historical SKU and active substance versus complete preparation.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-neomycin",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/n1142",
+          "capture_sha256": "527c1ab9790a5ef27d9dd72324485c1206af17a896f211de612ee6c2c931f253"
+        },
+        {
+          "id": "Neomycin_Trisulfate_Salt_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1405-10-3/JSON",
+          "capture_sha256": "176b4ebcc1a88400c4cb648be87a05d5f90d02f1d98fabf26edee9ec34c1144a"
+        }
+      ]
+    },
+    {
+      "position": 53,
+      "owner_path": "data/ingredients/mapped/Nicl2_X_2_H2o.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "4c5060f142630ac1cd112d3577898730e5f5c96e0404e1739c9ec618e80b3f53",
+      "reason": "Literal dihydrate source and experimental literature agree; retain local identity and reject automated dry-parent CAS as evidence.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "uel-nickel-dihydrate",
+          "url": "https://ojs.uel.br/revistas/uel/index.php/semexatas/article/download/2681/2331/8885",
+          "capture_sha256": "2f4433bfaaa29a0704a4d9443dd34835e26c02d29fadbb33a4aa2dccbfd8aa54"
+        },
+        {
+          "id": "mediadive-nicl2-2",
+          "url": "https://bacmedia.dsmz.de/ingredients/981",
+          "capture_sha256": "4d4d73f4d7e9c9dcd429f08aaefbb3896dc7969e6944f228b4da98c7e5db056f"
+        }
+      ],
+      "proposed_owner_sha256": "8c9d776dbb5998599503c6e645a4ad328cf19d1b1562784aba19906907934d25"
+    },
+    {
+      "position": 54,
+      "owner_path": "data/ingredients/mapped/Nicl2_X_5_H2o.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c",
+      "reason": "MediaDive 2037 preserves five-water wording but does not verify the supplied hydrate; retain local identity and hold.",
+      "issue_numbers": [
+        459
+      ],
+      "primary_evidence": [
+        {
+          "id": "mediadive-nicl2-5",
+          "url": "https://bacmedia.dsmz.de/ingredients/2037",
+          "capture_sha256": "9977bf9e40809c3b2a8976473f96ddd3bf1ce4ae53e7f24da283429eb118ef7e"
+        },
+        {
+          "id": "Nicl2_X_5_H2o--chebi-parent",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/34887/",
+          "capture_sha256": "7218fbeb3ae19188a090c7a61df3cd419288dc5e78eca0bd2f1b502bd25cf123"
+        }
+      ]
+    },
+    {
+      "position": 55,
+      "owner_path": "data/ingredients/mapped/Palatinose_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "7d473a85cf46e31086d1cc784bff87a46f063740da598f5463454a6d70cce651",
+      "reason": "P2007 supports variable-water palatinose; retain its CAS and withdraw the over-specific one-water structure.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-palatinose",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/p2007",
+          "capture_sha256": "7368fa37836ca3546925c4643de7a48d4a9a16ff105ce8136e5dfc30661e61f1"
+        },
+        {
+          "id": "Palatinose_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/343336-76-5/JSON",
+          "capture_sha256": "dcacca19940b7d6b809c8eb71dbfd64116033d82079b741b61b4e7799daecd79"
+        }
+      ],
+      "proposed_owner_sha256": "ac18571f8ed5e72bc9681a1a326674254adf6d32aca7374fded31bd69aac3886"
+    },
+    {
+      "position": 56,
+      "owner_path": "data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "db4dffe725341b25204763b9ad2ae253a125e6e9356bb6a4c55a81f7fd9510a2",
+      "reason": "Primary source supports citramalate monohydrate; retain CAS, withdraw dry-salt chemistry and do not select an enantiomer.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-citramalate",
+          "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/27455",
+          "capture_sha256": "4fe36ab7a9d1c275021fdefac577c9307c7a9dda5f2116b1b5269eb4be9f3ed1"
+        },
+        {
+          "id": "Potassium_Citramalate_Monohydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1030365-02-6/JSON",
+          "capture_sha256": "4899c83e63abd8bde7b9f12679d221a6c87eb36f50734ba2d9fb3b76f8320320"
+        }
+      ],
+      "proposed_owner_sha256": "6f645ef481452ef5bb9923dd7ce6cbe272b009e496d4b52fd3134b446b4ece04"
+    },
+    {
+      "position": 57,
+      "owner_path": "data/ingredients/mapped/Potassium_Tellurate_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "b062db7d0316253fd233b8abeaf80d033662a9c589388afd7cb3a9b8aeb36ddf",
+      "reason": "Primary source supports K2TeO4·xH2O; retain CAS and withdraw unsupported one-water chemistry.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-tellurate",
+          "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/400580",
+          "capture_sha256": "49ef571833b2c98a171105b20391885926163a72ba3ecd05156e374b8dd2a573"
+        },
+        {
+          "id": "Potassium_Tellurate_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/314041-10-6/JSON",
+          "capture_sha256": "66c0aef34a0ca7f307830d79aaf1eba0e8deda8cb78406626a0b6f52ed83aefd"
+        }
+      ],
+      "proposed_owner_sha256": "c3743d213dc174c59b3c4b199b1f94ba5a65d07fad50b3177a01c1060a703f5f"
+    },
+    {
+      "position": 58,
+      "owner_path": "data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "735b11f99cfecd6bf56b7dabc1808035f4aaaeaa5372b036df8f6fc874285a58",
+      "reason": "Archived P0677 hydrate/CAS conflicts with the current dry-salt certificate; recover the historical material identity.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "Potassium_Tellurite_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/123333-66-4/JSON",
+          "capture_sha256": "fbfc1748cfbb386bfb21964a4b487153d17c908ce3bd58db1ff68f55de4dd691"
+        },
+        {
+          "id": "supplier-tellurite-coa",
+          "url": "https://cloud-qa.sial.com/certificates/COFA/P0/P0677/P0677-BULK________MKCQ8564__.pdf",
+          "capture_sha256": "7fc7b6bafda83d3158df05316d02fdcb0978d2491be2e35e65f72a1e92e121cd"
+        }
+      ]
+    },
+    {
+      "position": 59,
+      "owner_path": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "6884d4a46259d1e6276a9a83c09079678f0da84c7e468181266115788d316d20",
+      "reason": "S4132/CAS and NCIt agree on monohydrate; promote to NCIT:C80911 using CAS_RN_LOOKUP and reject the instruction token.",
+      "issue_numbers": [
+        1119,
+        1117
+      ],
+      "primary_evidence": [
+        {
+          "id": "ncit-carbonate-monohydrate",
+          "url": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C80911?include=full",
+          "capture_sha256": "ebcebf0116318aad98e1eb4b0cbb5e5a68f9ffa66eb565d958636f64e82aceac"
+        },
+        {
+          "id": "supplier-carbonate",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigald/230952",
+          "capture_sha256": "9202477ec1eff3c2ce0550e8b73514ae82c99457e3194060b2617a98a3523b4b"
+        }
+      ],
+      "proposed_owner_sha256": "a12cfc43edb55da16e7113d32795148bd04eec8d6936fdab1452c8430f7ae2ba"
+    },
+    {
+      "position": 60,
+      "owner_path": "data/ingredients/mapped/Sodium_Cholate_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "b18b1353f94d1b1374fc1f8d1356a408e6b86e931d5930bc4ce6a1f5a5431fc5",
+      "reason": "C9282 supports variable-water sodium cholate; withdraw fixed one-water chemistry and reject the dry-parent alias.",
+      "issue_numbers": [
+        1119,
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-cholate",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/c9282",
+          "capture_sha256": "dd82815200c9dedb9ef42e7ebfcd061a3ca57424a29fa72256627df43e5fd02d"
+        },
+        {
+          "id": "Sodium_Cholate_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/206986-87-0/JSON",
+          "capture_sha256": "c410c4305e3ccb60a2108b017b87afde1725d94cbc903c4e319613980dcaa63a"
+        }
+      ],
+      "proposed_owner_sha256": "afc546f90d03a6e4054195b6c6a9df3e36ac8090636c9951c7a8c8dca47da6a6"
+    },
+    {
+      "position": 61,
+      "owner_path": "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "221d045730234ed597aa3a75ad8880a0ffd43aefd881832b29b33108172abd99",
+      "reason": "D5670/CAS and PubChem support sodium deoxycholate monohydrate; retain its verified whole-form chemistry.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-deoxycholate",
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/d5670",
+          "capture_sha256": "2bc2167e3612be38ab98a9a2091452b7d29b7a3695c86916bde2b599bf23e64f"
+        },
+        {
+          "id": "Sodium_Deoxycholate_Monohydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/145224-92-6/JSON",
+          "capture_sha256": "1186a41011c1e0d42181810a3f273a96b3411badaa3992aa959d5a67620ec520"
+        }
+      ],
+      "proposed_owner_sha256": "2dd29456294e03ebdf5cb95b439fddd81ea3729ba2f63adbbadb93e8ecffdd2b"
+    },
+    {
+      "position": 62,
+      "owner_path": "data/ingredients/mapped/Sodium_Hypophosphite_Monohydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "298de05121678186ee793f313ae1c88a3f2a235972f0e2eb3f64ce6ce3d22784",
+      "reason": "Current parent and derived chemistry omit two phosphorus-bound hydrogens; resolve the ontology/chemistry before regrading.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "sigma-hypophosphite-coa",
+          "url": "https://www.sigmaaldrich.cn/certificates/Graphics/COfAInfo/fluka/pdf/PDF690391.pdf",
+          "capture_sha256": "f04ab3f5ea2bb0a9c638007fc21e9ad0f15fcdc22cf295e7f241963e93bb8051"
+        },
+        {
+          "id": "Sodium_Hypophosphite_Monohydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10039-56-2/JSON",
+          "capture_sha256": "7b2b596483bfd30d2071af6ab6a855b7a92b0e0203e9d33dfd39ff8eac02e86e"
+        }
+      ]
+    },
+    {
+      "position": 63,
+      "owner_path": "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "1605e85f71607a3b6e6f36d67c62c47b2c19cb7f425207bc19970ec1b4f06ffa",
+      "reason": "Primary source supports Na2HPO3·5H2O; retain CAS and parent convention without importing erroneous PubChem properties.",
+      "issue_numbers": [
+        901
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-phosphite",
+          "url": "https://www.sigmaaldrich.com/KR/en/product/sial/04283",
+          "capture_sha256": "a0bc648656249a20203113fbdff7ef26db53ccebe730043b319379b440cc3ca4"
+        },
+        {
+          "id": "Sodium_Phosphite_Dibasic_Pentahydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13517-23-2/JSON",
+          "capture_sha256": "4edf8d62b2974f3ae103fcabbc4671de603010268f58b31c6d9b7582174ecaeb"
+        }
+      ],
+      "proposed_owner_sha256": "02f24e2580dfad82c4cf391fdd345d0e8fc60922ab8899da18704581fc86497e"
+    },
+    {
+      "position": 64,
+      "owner_path": "data/ingredients/mapped/Sodium_Thiophosphate_Tribasic_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "bc89ba3f7c2a53ccf57d102b3ae39ae36782a788e82fbdc22bfa9b32a1333173",
+      "reason": "S0764 specifies Na3PO3S·xH2O; retain CAS and withdraw unsupported one-water chemistry.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "supplier-thiophosphate",
+          "url": "https://www.sigmaaldrich.com/DJ/en/product/aldrich/s0764",
+          "capture_sha256": "9285a4067836f4129c5a91df52bc97e6fbf8a772b6e6206b4a84ea08e0e41299"
+        },
+        {
+          "id": "Sodium_Thiophosphate_Tribasic_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10489-48-2/JSON",
+          "capture_sha256": "19473126227f2299dba04137da638cfc1af939594fdbf8e8f7c6c8b44cfdf496"
+        }
+      ],
+      "proposed_owner_sha256": "3bc25859b01adb269b9a549cc6f3901d15afff915de4db965226c11eaf724cc8"
+    },
+    {
+      "position": 65,
+      "owner_path": "data/ingredients/mapped/Stachyose_Hydrate.yaml",
+      "decision": "INCLUDE",
+      "reviewed_owner_sha256": "c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682",
+      "reason": "Primary source supports stachyose n-hydrate; withdraw dry chemistry and do not promote to a fixed tetrahydrate from mass alone.",
+      "issue_numbers": [
+        268
+      ],
+      "primary_evidence": [
+        {
+          "id": "wako-stachyose",
+          "url": "https://labchem-wako.fujifilm.com/europe/product/detail/W01W0119-1276.html",
+          "capture_sha256": "7815cc695eba90e06bc05a2a96f40340c2ea95f0ed5d9e179b18d1ee756b516b"
+        },
+        {
+          "id": "Stachyose_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/54261-98-2/JSON",
+          "capture_sha256": "9a28d8f9f9c028093305d376f0c267019a6c55b9c375aa53cc8eb1b00174c89a"
+        }
+      ],
+      "proposed_owner_sha256": "d4d154ba7f27848fcf0b6caf40c3638efa15cfca537f332dcaebcc53a749285c"
+    },
+    {
+      "position": 66,
+      "owner_path": "data/ingredients/mapped/Terpene_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "15408cc661f79f033b1db1df4a943e1a3607b8a17225c9fad63a8fba62a45c0e",
+      "reason": "CAS, cis-relative GSRS scope and ontology names/structures need an explicit stereochemical concept decision.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "prior-primary-gsrs-terpin-hydrate-full",
+          "url": "https://gsrs.ncats.nih.gov/api/v1/substances/S3V868548T?view=full",
+          "capture_sha256": "30056375854437946f759c1e7f3e2510e0f8ec3bd852473b76c2d55d62f3da70"
+        },
+        {
+          "id": "prior-primary-chebi-751529-terpin-hydrate",
+          "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/751529/",
+          "capture_sha256": "9d90f25ed95a4cb2750a2ddb673fc0ca8b094b56f06891a76210837718c6ad03"
+        }
+      ]
+    },
+    {
+      "position": 67,
+      "owner_path": "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+      "decision": "DROP",
+      "reviewed_owner_sha256": "7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5",
+      "reason": "The archived SKU differs from the inspected MP certificate; resolve product/hydrate scope before any identity or chemistry edit.",
+      "issue_numbers": [
+        1121
+      ],
+      "primary_evidence": [
+        {
+          "id": "Vancomycin_Hydrochloride_Hydrate--pubchem-cas",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/123409-00-7/JSON",
+          "capture_sha256": "5efdae11bc1a50ce6e941f2c7285e1d3cfa985590fecd3bdc7e896612479fc68"
+        },
+        {
+          "id": "supplier-vancomycin",
+          "url": "https://www.mpbio.com/media/document/infor/S/4/3/3/1/S4331.pdf",
+          "capture_sha256": "b289b32ef09b6eba162dcf06f3e00f8acdd59608098f783e1e7c432a0f133d37"
+        }
+      ]
+    }
+  ],
+  "plan_exclusions": [
+    {
+      "owner_path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "reviewed_owner_sha256": "b5cb081a8b432e2c952f2d67235ed03b166c8fbdcda7caf1c1b70c849121b5d5",
+      "decision": "PLAN_EXCLUDED",
+      "reason": "Explicit approved-plan exclusion; not part of the 67-owner batch and no edit is proposed."
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Fecl2_X_7_H2o.yaml",
+      "reviewed_owner_sha256": "83d19345b09f00f439ed3d36898c5ada8cf208514a7f9110fafc8e7fa086e491",
+      "decision": "PLAN_EXCLUDED",
+      "reason": "Explicit approved-plan exclusion; not part of the 67-owner batch and no edit is proposed."
+    },
+    {
+      "owner_path": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml",
+      "reviewed_owner_sha256": "35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048",
+      "decision": "PLAN_EXCLUDED",
+      "reason": "Explicit approved-plan exclusion; not part of the 67-owner batch and no edit is proposed."
+    }
+  ],
+  "github_mutations": false
+}

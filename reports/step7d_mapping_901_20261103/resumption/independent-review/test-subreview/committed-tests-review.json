@@ -1,0 +1,37 @@
+{
+  "reviewer": "/root/step7d_independent_review/projection_adversarial",
+  "observed_at": "2026-11-03T07:27:00.334954+00:00",
+  "verdict": "pass_with_limitations",
+  "scope": "Committed #1123/#1124 test corrections and current paired selector diff; test-specific subreview, not final release approval.",
+  "scientific_review": false,
+  "commits": [
+    {
+      "commit": "62b30cf943c5e244770f6c22d8eb58ea66ee2af5",
+      "parent": "fdaa4c67653c9ceeb457628bb64f560be0d27bcf",
+      "issue": "1124",
+      "subject": "test: align maltose monohydrate with reviewed NCIt identity (#1124)",
+      "only_changed_path": "tests/test_unified_rejections.py",
+      "committed_file_sha256": "edd6ef9766fc423e73c7aed6587d0a0f2bb873fcf19df428f30e0c8a406bc7e1",
+      "equals_reviewed_working_file": true
+    },
+    {
+      "commit": "c6ca5b1e35b5334741190856b485a034d3d99bec",
+      "parent": "62b30cf943c5e244770f6c22d8eb58ea66ee2af5",
+      "issue": "1123",
+      "subject": "test: compose source-history receipt positions (#1123)",
+      "only_changed_path": "tests/test_source_mapping_concern_history.py",
+      "committed_file_sha256": "61f7edb6ad1dc069b7a45a8c908f15a80f8073a4a41b40ddb22a8aa55d830097",
+      "equals_reviewed_working_file": true
+    }
+  ],
+  "applied_audit": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/test-subreview/applied-tests-review.json",
+    "sha256": "a77ac5049abedf9c9e16526d3beafcd68ed906874c8c6c43ef438dc3cff9453a"
+  },
+  "findings": [],
+  "summary": "All 32 original source-history assertion ASTs are retained, with 45 total statements and 14 added regression cases. #1124 changes exactly one expected identifier literal; all assertions unchanged. Only the REVIEW selector and corresponding workflow --review value differ in companion files. Focused applied source-history run passed36; unified-rejection/CI replay run passed28; external proposal also passed36. Required full QC/suite and final-head review remain separate.",
+  "limitations": [
+    "Companion selector and dependent review refresh remained uncommitted at the observed c6ca5b1e checkpoint; root will commit them and final reviewer must verify the resulting head.",
+    "Focused test commands and readback hashes are recorded in applied audit; this reviewer did not independently rerun the expensive full suite."
+  ]
+}

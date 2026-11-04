@@ -1,0 +1,41 @@
+.....................F..............                                     [100%]
+=================================== FAILURES ===================================
+_______ test_native_assembly_keeps_all_holds_and_exact_negative_evidence _______
+
+native_context = {'chain': {'schema_version': 1, 'receipts': [{'schema_version': 1, 'batch': 'issue312-batch1', 'sequence': 1, 'issue':...e_position': 18, 'sssom_source_sha256': 'aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809', ...}, ...]}
+
+    def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_context):
+        """Compute native output in memory; never overwrite archived/current files."""
+        here = PATH.parent
+        preserved = {path: path.read_bytes() for path in (
+            here / "mapping_review/concern_cohorts.json",
+            here / "mapping_review/issue-intersections.json",
+            here / "review.json",
+            here / "mapping-evidence.json",
+        )}
+        previous = json.loads(preserved[here / "review.json"])
+        previous_evidence = json.loads(preserved[here / "mapping-evidence.json"])
+>       result = assembler.assemble()
+                 ^^^^^^^^^^^^^^^^^^^^
+
+../step7d-execution-20261103/resumption1123-validation/test_source_mapping_concern_history.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def assemble():
+        if digest(ROOT / SOURCE) != REVIEWED_SOURCE:
+>           raise ValueError("SSSOM differs from this completed scientific review; review it again")
+E           ValueError: SSSOM differs from this completed scientific review; review it again
+
+reports/sssom_completion_20260921/assemble_review.py:291: ValueError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step7d-execution-20261103/resumption1123-validation/test_source_mapping_concern_history.py::test_native_assembly_keeps_all_holds_and_exact_negative_evidence
+1 failed, 35 passed, 1 warning in 2.17s

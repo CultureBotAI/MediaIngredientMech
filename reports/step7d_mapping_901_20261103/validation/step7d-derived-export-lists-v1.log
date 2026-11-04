@@ -1,0 +1,45 @@
+uv run python scripts/export_lists.py
+
+Ingredient List Exporter
+
+Loading mapped ingredients from data/curated/mapped_ingredients.yaml...
+  Found 2681 mapped ingredients
+
+Loading unmapped ingredients from data/curated/unmapped_ingredients.yaml...
+  Found 275 unmapped ingredients
+
+Total: 2956 ingredients
+
+Exporting JSON files...
+  ✓ docs/data/mapped_ingredients.json (2681 records)
+  ✓ docs/data/unmapped_ingredients.json (275 records)
+  ✓ docs/data/all_ingredients.json (2956 records)
+
+Exporting CSV files...
+  ✓ docs/data/mapped_ingredients.csv (2681 records)
+  ✓ docs/data/unmapped_ingredients.csv (275 records)
+  ✓ docs/data/all_ingredients.csv (2956 records)
+  ✓ docs/data/label_index.csv (9034 labels)
+
+Exporting MARKDOWN files...
+  ✓ docs/data/mapped_ingredients.md (2681 records)
+  ✓ docs/data/unmapped_ingredients.md (275 records)
+  ✓ docs/data/all_ingredients.md (2956 records)
+
+✅ Export complete!
+
+Files saved to: docs/data
+
+Sample Records:
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Identifier           ┃ Ontology ID           ┃ Preferred Term       ┃ Status ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ kgmicrobe.compound:… │ CHEBI:15978           │ Na2 beta-glycerol    │ MAPPED │
+│                      │                       │ PO4 x 5 H2O          │        │
+│ MICRO:0000610        │ MICRO:0000610         │ Ox-bile              │ MAPPED │
+│ MICRO:0001348        │ MICRO:0001348         │ BG-11 Medium         │ MAPPED │
+│ kgmicrobe.ingredien… │ kgmicrobe.ingredient… │ Marine broth 2216    │ MAPPED │
+│ kgmicrobe.ingredien… │ kgmicrobe.ingredient… │ Marine agar 2216     │ MAPPED │
+└──────────────────────┴───────────────────────┴──────────────────────┴────────┘
+
+... and 2951 more

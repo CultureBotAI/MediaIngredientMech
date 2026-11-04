@@ -1,0 +1,3 @@
+The user explicitly authorized changing only the maltose monohydrate literal expectation to NCIT:C80300 per the reviewed #1117 decision. Preserve stale-CHEBI, mapping-status and all other cases, verify both maltose snapshot rows trace to the same current owner, and disclose cas:6363-53-7 → NCIT:C80300 in the PR description. The test-change commit will name #1124 and independent review will audit the change.
+
+Continuation from local head 7d35035f under the replacement Step 7d test rule. No assertions, thresholds, budgets, owner-selection rules, other workflows, qc-evidence or pins may be weakened or changed. Final QC, full suite, CI and independent review remain required before the approved squash merge queue.

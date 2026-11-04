@@ -1,0 +1,3 @@
+The complete `just test` run finished: **5,069 passed, 3 failed, 1 skipped, 33 warnings**, exit 1, 1,441.54 seconds. The other failures are tracked as #1124 (the maltose regression still expects its superseded CAS primary) and #1125 (generated semantic-review graph path does not match clean CI). All three were independently confirmed. No test was changed and no further correction, push, PR or merge was performed after the stop condition.
+
+Full-suite receipt: `output/approved-plan-20261101T031134Z/logs/step7d-derived-full-suite-v1.json`; full log SHA-256 `ff86736a2115bd2f8fb2031f1ee6e1b99955454a26357df396429a5f5e07df9f`. The focused #1123 reproduction also exits 1. All eight correctly composed receipt-24 endpoint rows remain byte-identical and WITHHOLD.

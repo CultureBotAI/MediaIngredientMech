@@ -1,0 +1,17 @@
+{
+  "name": "step7d-previews-strict-v1",
+  "argv": [
+    "uv",
+    "run",
+    "python",
+    "-c",
+    "import json,subprocess; from pathlib import Path; d=Path(\"../step7d-execution-20261103\"); plan=json.loads((d/\"owner-plan.json\").read_text()); args=[\"just\",\"validate-strict\"]+[str((d/\"owner-previews\"/Path(p).name).resolve()) for p in plan[\"owners\"]]+[\"--out\",str((d/\"preview-strict-findings.tsv\").resolve()),\"--workers\",\"2\"]; raise SystemExit(subprocess.call(args))"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T06:07:47.287634+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T06:07:48.370703+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-previews-strict-v1.log",
+  "log_sha256": "0fcfc9d4d630350fb5bb421b8d597673cd65cd1b48025a0fe17bcf0c352ca3fd"
+}

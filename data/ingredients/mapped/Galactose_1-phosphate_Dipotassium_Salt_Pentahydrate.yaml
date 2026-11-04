@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:17973
   ontology_label: alpha-D-galactose 1-phosphate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -27,6 +27,21 @@ ontology_mapping:
       substance containing the anhydrous form, not a specialization of it. closeMatch
       claims similarity without subsumption. The ontology_id and the record''s own
       identifier are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Catalogueline1214 CAS19046-60-7/FW426.39 says pentahydrate. Inspected
+      primaryCalbiochem345646 explicitly names alpha-D-galactose1-phosphate dipotassium
+      pentahydrate with C6H11K2O9P·5H2O/426.39; this supports the stereochemical source
+      and broader alpha-D parentCHEBI17973. No exact hydrate/salt term found in bounded
+      discovery. Retain CAS and broadMatch to the closest found parent. See the complete
+      identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml.
+      Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/17973/;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/19046-60-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.sigmaaldrich.com/US/en/product/mm/345646. Captures, exact input
+      hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -78,14 +93,25 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C6H11K2O9P","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C1C(C(C(C(O1)OP(=O)([O-])[O-])O)O)O)O.[K+].[K+]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":87916,"after":null}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 19046-60-7
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C6H11K2O9P
-  smiles: C(C1C(C(C(C(O1)OP(=O)([O-])[O-])O)O)O)O.[K+].[K+]
-  inchi: InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1
-  pubchem_cid: 87916
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

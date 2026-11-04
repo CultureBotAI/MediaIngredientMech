@@ -1,0 +1,116 @@
+identifier: cas:13235-36-4
+preferred_term: EDTA tetrasodium tetrahydrate salt
+ontology_mapping:
+  ontology_id: CHEBI:4735
+  ontology_label: ethylenediaminetetraacetic acid
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 13235-36-4 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 4 CultureBot
+      media; samples: MME noCarbon, MTM noNitrogen noCarbon, MME noNitrogen noCarbon….
+      Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: EDTA tetrasodium tetrahydrate salt is a hydrate/salt with its own CAS and
+      no exact ChEBI term; anchored to the parent CHEBI:4735 'ethylenediaminetetraacetic
+      acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. tetrasodium
+      tetrahydrate salt of EDTA
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:4735 (''ethylenediaminetetraacetic acid'') — a subsumption ChEBI
+      itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never under
+      the anhydrous compound, which is not an ancestor even transitively. A hydrate
+      is a distinct substance containing the anhydrous form, not a specialization
+      of it. closeMatch claims similarity without subsumption. The ontology_id and
+      the record''s own identifier are unchanged.'
+synonyms:
+- synonym_text: Ethylenediamintetraacetic acid (EDTA)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:13235-36-4 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.405364+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:52:58.563603+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C10H20N2Na4O12; smiles=C(CN(CC(=O)[O-])CC(=O)[O-])N(CC(=O)[O-])CC(=O)[O-];
+    inchi=InChI=1S/C10H16N2O8.4Na.4H2O/c13-7(14)3-11(4-8(15)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.202410+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.388818+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:4735 ''ethylenediaminetetraacetic
+    acid'' and registry kgmicrobe.compound:edta_tetrasodium_tetrahydrate_salt. identifier
+    cas:13235-36-4 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. tetrasodium
+    tetrahydrate salt of EDTA'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518785+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Ethylenediamintetraacetic
+    acid (EDTA)''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 13235-36-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C10H20N2Na4O12
+  smiles: C(CN(CC(=O)[O-])CC(=O)[O-])N(CC(=O)[O-])CC(=O)[O-].O.O.O.O.[Na+].[Na+].[Na+].[Na+]
+  inchi: InChI=1S/C10H16N2O8.4Na.4H2O/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;;;;;;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;;;;4*1H2/q;4*+1;;;;/p-4
+  pubchem_cid: 23287279
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: CHELATOR
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

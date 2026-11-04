@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:14336
   ontology_label: glycerol 1-phosphate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -25,12 +25,28 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Catalogue line1378 names DL-glycerol1-phosphate sodium salt hydrate CAS17603-42-8.
+      Inspected supplier61668 independently names the same racemic1-phosphate hydrate
+      and CAS, but explicitly gives xNa+/yH2O. The phosphate position/racemic scope
+      are supported; sodium and water stoichiometry must remain unspecified. The broader
+      rac-glycerol1-phosphate parentCHEBI14336 is consistent. Retain CAS identity,
+      use broadMatch, and do not equate with G6501 positional-isomer mixture. See
+      the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml.
+      Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/14336/;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/17603-42-8/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.sigmaaldrich.com/US/en/product/sigma/61668. Captures, exact input
+      hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms:
 - synonym_text: 2,3-dihydroxypropyl dihydrogen phosphate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: glycerol 1-(dihydrogen phosphate)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -78,14 +94,25 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C3H8NaO6P","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C3H9O6P.Na/c4-1-3(5)2-9-10(6,7)8;/h3-5H,1-2H2,(H2,6,7,8);/q;+1/p-1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C(COP(=O)(O)[O-])O)O.[Na+]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":23672316,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"},{"op":"set","path":["synonyms",1,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 17603-42-8
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C3H8NaO6P
-  smiles: C(C(COP(=O)(O)[O-])O)O.[Na+]
-  inchi: InChI=1S/C3H9O6P.Na/c4-1-3(5)2-9-10(6,7)8;/h3-5H,1-2H2,(H2,6,7,8);/q;+1/p-1
-  pubchem_cid: 23672316
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

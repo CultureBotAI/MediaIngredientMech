@@ -1,10 +1,10 @@
-identifier: cas:6363-53-7
+identifier: NCIT:C80300
 preferred_term: D-Maltose monohydrate
 ontology_mapping:
-  ontology_id: CHEBI:17306
-  ontology_label: maltose
-  ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  ontology_id: NCIT:C80300
+  ontology_label: Maltose Monohydrate
+  ontology_source: NCIT
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -31,6 +31,26 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Resolve #1117 for this owner to NCIT:C80300, Maltose Monohydrate, using
+      CAS_RN_LOOKUP as method provenance. The archived catalogue explicitly selects
+      SigmaM5885/CAS6363-53-7/360.31; the inspected official M5885 specification confirms
+      CAS and C12H22O11·H2O. NCIt links this CAS to UNIIDM477EE40D; the GSRS PRIMARY
+      record explicitly cross-links C80300, CAS6363-53-7, D-(+)-MALTOSE MONOHYDRATE
+      and beta naming, and PubChem23615261. The open-chain representation and beta
+      synonym occur in that same registry identity; §3 readability/orderability supports
+      the readable monohydrate node, without choosing a different anomer from lexical
+      resemblance. Keep generic Maltose_Hydrate separate. See the complete identity,
+      mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/D-Maltose_Monohydrate.yaml. Primary source
+      references: https://github.com/CultureBotAI/CultureBotHT; https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C80300?include=full;
+      https://gsrs.ncats.nih.gov/api/v1/substances/DM477EE40D?view=full; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23615261/property/MolecularFormula,InChI,InChIKey/JSON;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/6363-53-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.sigmaaldrich.com/specification-sheets/677/787/M5885-BULK________SIAL_____.pdf.
+      Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms:
 - synonym_text: Maltose monohydrate
   synonym_type: EXACT_SYNONYM
@@ -110,6 +130,26 @@ curation_history:
     ''alpha-D-glucopyranosyl-(1->4)-D-glucose''. Preserved original text and source
     metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["identifier"],"before":"cas:6363-53-7","after":"NCIT:C80300"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:17306","after":"NCIT:C80300"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"maltose","after":"Maltose
+    Monohydrate"},{"op":"set","path":["ontology_mapping","ontology_source"],"before":"CHEBI","after":"NCIT"},{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"CAS_RN_LOOKUP"},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"D-Maltose
+    monohydrate","cas_rn":"6363-53-7","form":"monohydrate","supplier":"Sigma-Aldrich","catalog_number":"M5885","notes":"Original
+    CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7, FW360.31.
+    Official M5885 specification independently confirms the one-water formula. This
+    preserves source procurement context; no generic Maltose_Hydrate owner is merged."}]}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 6363-53-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -133,3 +173,13 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+supplied_form:
+- name: D-Maltose monohydrate
+  cas_rn: 6363-53-7
+  form: monohydrate
+  supplier: Sigma-Aldrich
+  catalog_number: M5885
+  notes: Original CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7,
+    FW360.31. Official M5885 specification independently confirms the one-water formula.
+    This preserves source procurement context; no generic Maltose_Hydrate owner is
+    merged.

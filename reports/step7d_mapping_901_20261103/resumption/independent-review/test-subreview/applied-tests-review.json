@@ -1,0 +1,132 @@
+{
+  "reviewer": "/root/step7d_independent_review/projection_adversarial",
+  "observed_at": "2026-11-03T07:26:28.007848+00:00",
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "reviewed_head": "c6ca5b1e35b5334741190856b485a034d3d99bec",
+  "working_tree_status": [
+    " M .github/workflows/qc-reviewed-sssom.yaml",
+    " M mappings/needs_curator_review.tsv",
+    " M reports/semantic_review_20260921/resolution/assertion-dispositions.tsv",
+    " M reports/semantic_review_20260921/resolution/current-review.json",
+    " M reports/sssom_completion_20260921/assemble_review.py",
+    " M reports/sssom_completion_20260921/mapping-evidence.json",
+    " M reports/sssom_completion_20260921/review.json",
+    " M tests/test_ingredient_bundle.py",
+    "?? reviews/structured/20261103T064120Z-step7d-independent-stale-parent-comments/",
+    "?? reviews/structured/20261103T065928Z-step7d-independent-test-coordinate-blocker/",
+    "?? reviews/structured/20261103T070134Z-step7d-independent-full-suite-blockers/"
+  ],
+  "scope": "Applied #1123 test-only lineage correction, #1124 exact expected-identity literal, matched companion selectors, complete tracked test/workflow diff and focused execution evidence. No full-suite or CI claim.",
+  "verdict": "pass_with_limitations",
+  "scientific_review": false,
+  "checks": {
+    "only_four_permitted_test_workflow_files_changed": true,
+    "source_test_exact_reviewed_proposal": true,
+    "all_32_original_assertions_retained": true,
+    "source_test_assertions_after": 45,
+    "new_regression_cases": 14,
+    "unified_literal_only": true,
+    "unified_assertions_unchanged": true,
+    "companion_selectors_only_and_matched": true,
+    "companion_test_assertions_unchanged": true,
+    "qc_evidence_unchanged": true,
+    "new_companion_current_input_hashes_valid": true
+  },
+  "hashes": {
+    ".github/workflows/qc-reviewed-sssom.yaml": "2fb47d85704f7d961dfc144b77585d3f84c2d8e38ec256c5444a62fa5290cd72",
+    "tests/test_ingredient_bundle.py": "7f94fd28366b5c9a49bf92b56ca3a8cfbd5a388c235882e41f8125501b7ee052",
+    "tests/test_source_mapping_concern_history.py": "61f7edb6ad1dc069b7a45a8c908f15a80f8073a4a41b40ddb22a8aa55d830097",
+    "tests/test_unified_rejections.py": "edd6ef9766fc423e73c7aed6587d0a0f2bb873fcf19df428f30e0c8a406bc7e1"
+  },
+  "source_test_proposal_sha256": "61f7edb6ad1dc069b7a45a8c908f15a80f8073a4a41b40ddb22a8aa55d830097",
+  "companion_sha256": "06468912894ccdd49b86385b4e0c2e4529377c5f148101a49ba25ca5094e8971",
+  "focused_receipts": [
+    {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-resumption1123-external-proposal-v2.json",
+      "receipt_sha256": "64a9304d1c938df78f19e7da094236339dc187ec53e16509c220ac43aa3fcb6b",
+      "test_count": 36,
+      "name": "step7d-resumption1123-external-proposal-v2",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "../step7d-execution-20261103/resumption1123-validation-v2/test_source_mapping_concern_history.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "../step7d-execution-20261103/resumption1123-validation-v2/tmp"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+      "started_at": "2026-11-03T07:22:13.112210+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-03T07:22:28.823433+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-resumption1123-external-proposal-v2.log",
+      "log_sha256": "01414313790069e21f008a045338acccfbc1f35ffb8fa2ba2b61043d2f78d23f"
+    },
+    {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-resumption1123-maintained-focused-v1.json",
+      "receipt_sha256": "672084d39fea7dc1acfce63aaf1c640714c769cb336101691e56af2e9ea9df4c",
+      "test_count": 36,
+      "name": "step7d-resumption1123-maintained-focused-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "tests/test_source_mapping_concern_history.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "../step7d-execution-20261103/resumption1123-maintained-tmp"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+      "started_at": "2026-11-03T07:22:58.090037+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-03T07:23:13.716871+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-resumption1123-maintained-focused-v1.log",
+      "log_sha256": "531e5bdbf80f86c79890a6fdd3ba193af4ca694ecd989e1b371248d362d56023"
+    },
+    {
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-resumption1124-1125-focused-v1.json",
+      "receipt_sha256": "c980fa8556a85e798a82d472ecd1a78029ac27135c792450a7544e28a477efcc",
+      "test_count": 28,
+      "name": "step7d-resumption1124-1125-focused-v1",
+      "argv": [
+        "env",
+        "UV_OFFLINE=1",
+        "uv",
+        "run",
+        "pytest",
+        "tests/test_unified_rejections.py",
+        "tests/test_ci_review_replay_contract.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+      "started_at": "2026-11-03T07:22:31.523858+00:00",
+      "environment_profile": "mim-native-pinned-validator",
+      "finished_at": "2026-11-03T07:22:37.349968+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-resumption1124-1125-focused-v1.log",
+      "log_sha256": "c4e98580c381462bab7ada3459381dfde4a66c6f50a9bea5b5a3b1b8e97a312c"
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "Current working-tree and commit state captured above; final head, required full QC/full suite and CI remain the parent reviewer scope.",
+    "No missing-file absence claim beyond git-tracked test/workflow diff and Git-visible untracked test/workflow inventory; ignored generated caches are not claimed absent.",
+    "An explicit user-authorized expected-identity update remains an exact assertion, not a broader or optional acceptance."
+  ]
+}

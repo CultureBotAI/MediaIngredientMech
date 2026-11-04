@@ -1,0 +1,19 @@
+--- refresh_post1122_v2.py
++++ refresh_post1122_v3.py
+@@ -25,7 +25,7 @@
+ SEMANTIC='reports/semantic_review_20260921/resolution/current-review.json'
+ MAPPING_RECEIPT='reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json'
+ SELECTORS=('tests/test_ingredient_bundle.py','.github/workflows/qc-reviewed-sssom.yaml')
+-FULL='output/step7d-post1122-full-v1'
++FULL='output/mim-kgx-710-full'
+ COMPANION='output/step7d-post1122-companion-v1'
+ REVIEWED='output/step7d-post1122-reviewed-v1'
+ SUPPORTED='output/step7d-post1122-supported-v1'
+@@ -178,6 +178,7 @@
+   # Assert final files are precisely baseline selectors with one path replacement.
+   for name in SELECTORS:require(regular(W/name)==git('show',BASE+':'+name).replace(PRIOR.encode(),SUCCESSOR.encode()),'selector contains another change')
+   semantic=json.loads(regular(W/SEMANTIC))
++  require(semantic['bundle']==FULL and semantic['inputs'].get(FULL+'/manifest.json')==sha(regular(W/FULL/'manifest.json')),'semantic review does not bind the exact CI-produced full graph (#1125)')
+   self.state.update(state='complete',selected_rows=105,selected_dispositions={'WITHHOLD':105},companion_owners=20,
+    companion_claims=companion['claim_counts'],old_step7d_report_bytes_unchanged=True,paired_selector_only=True,
+    native_receipts=25,semantic_release_verdict=semantic['release_verdict'],full_qc_suite_and_final_independent_review='pending root runs',

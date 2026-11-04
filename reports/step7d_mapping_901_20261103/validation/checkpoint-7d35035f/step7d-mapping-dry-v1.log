@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "batch": "issue901-step7d-reviewed-owner-forms",
+  "sequence": 25,
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/901",
+  "scope": "Step7d supported owner subset: exact form identity, closest-parent broadMatch and evidenced chemistry/alias corrections; deferred23 alias obligations and native holds retained.",
+  "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
+  "before_sha256": "62fd37c2ed8ace9b9295618d44e251d11fc35feb711053b66d322e5a7bce14f1",
+  "after_sha256": "cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4",
+  "before_row_count": 2985,
+  "after_row_count": 3014,
+  "changed_rows": 74,
+  "added_rows": 31,
+  "removed_rows": 2,
+  "touched_subjects": [
+    "MIM:2-Deoxyadenosine_Monohydrate",
+    "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate",
+    "MIM:4-Hydroxymandelic_Acid_Monohydrate",
+    "MIM:5-Fluoroorotic_Acid_Hydrate",
+    "MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate",
+    "MIM:Cadmium_Acetate_Dihydrate",
+    "MIM:Cecl3_X_7_H2o",
+    "MIM:Cefsulodin_Sodium_Salt_Hydrate",
+    "MIM:Chlorhexidine_Diacetate_Salt_Hydrate",
+    "MIM:Cocl2_X_2_H2o",
+    "MIM:Cu_No32_X_3_H2o",
+    "MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate",
+    "MIM:D-Galacturonic_Acid_Monohydrate",
+    "MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate",
+    "MIM:D-Maltose_Monohydrate",
+    "MIM:D-_-melezitose_Hydrate",
+    "MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate",
+    "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+    "MIM:Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate",
+    "MIM:Gly-Gln_Monohydrate",
+    "MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate",
+    "MIM:L-Cysteic_Acid_Monohydrate",
+    "MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate",
+    "MIM:L-Rhamnose_Monohydrate",
+    "MIM:Lithium_Chloride_Hydrate",
+    "MIM:Magnesium_Nitrate_Hexahydrate",
+    "MIM:Maltose_Hydrate",
+    "MIM:Maltotriose_Hydrate",
+    "MIM:Nicl2_X_2_H2o",
+    "MIM:Palatinose_Hydrate",
+    "MIM:Potassium_Citramalate_Monohydrate",
+    "MIM:Potassium_Tellurate_Hydrate",
+    "MIM:Sodium_Carbonate_Monohydrate",
+    "MIM:Sodium_Cholate_Hydrate",
+    "MIM:Sodium_Deoxycholate_Monohydrate",
+    "MIM:Sodium_Phosphite_Dibasic_Pentahydrate",
+    "MIM:Sodium_Thiophosphate_Tribasic_Hydrate",
+    "MIM:Stachyose_Hydrate"
+  ]
+}
+wrote reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json
+{
+  "schema_version": 1,
+  "phase": "canonical-and-receipt25",
+  "approval": "NONE: source and mapping changes only; receipt25 withdraws prior approval from touched rows.",
+  "scientific_approval_added": false,
+  "supervisor_binding": null,
+  "source_logs": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/carbonate-apply-v1.json",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/maltose-apply-v1.json",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/cohort-apply-v1.json"
+  ],
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "6884d4a46259d1e6276a9a83c09079678f0da84c7e468181266115788d316d20",
+      "after_yaml_sha256": "a12cfc43edb55da16e7113d32795148bd04eec8d6936fdab1452c8430f7ae2ba",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"CAS_RN_LOOKUP\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:29377\",\"after\":\"NCIT:C80911\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"sodium carbonate\",\"after\":\"Sodium Carbonate Monohydrate\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_source\"],\"before\":\"CHEBI\",\"after\":\"NCIT\"},{\"op\":\"set\",\"path\":[\"identifier\"],\"before\":\"cas:5968-11-6\",\"after\":\"NCIT:C80911\"},{\"op\":\"set\",\"path\":[\"synonyms\",1,\"synonym_type\"],\"before\":\"RAW_TEXT\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "OriginalCultureBotHT S4132/CAS5968-11-6/mass124, primaryNCIT:C80911andPubChem2735133agree on sodiumcarbonate monohydrate. No stereochemicalorform ambiguity remains. Noothercurrentowner claimsC80911. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5",
+      "after_yaml_sha256": "b188ec71ed2df3319a96143eff91ee7589587aa655b6c77490db9a6df4f3b9c3",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"identifier\"],\"before\":\"cas:6363-53-7\",\"after\":\"NCIT:C80300\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:17306\",\"after\":\"NCIT:C80300\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"maltose\",\"after\":\"Maltose Monohydrate\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_source\"],\"before\":\"CHEBI\",\"after\":\"NCIT\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"CAS_RN_LOOKUP\"},{\"op\":\"set\",\"path\":[\"supplied_form\"],\"before\":null,\"after\":[{\"name\":\"D-Maltose monohydrate\",\"cas_rn\":\"6363-53-7\",\"form\":\"monohydrate\",\"supplier\":\"Sigma-Aldrich\",\"catalog_number\":\"M5885\",\"notes\":\"Original CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7, FW360.31. Official M5885 specification independently confirms the one-water formula. This preserves source procurement context; no generic Maltose_Hydrate owner is merged.\"}]}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Resolve #1117 for this owner to NCIT:C80300, Maltose Monohydrate, using CAS_RN_LOOKUP as method provenance. The archived catalogue explicitly selects SigmaM5885/CAS6363-53-7/360.31; the inspected official M5885 specification confirms CAS and C12H22O11\u00b7H2O. NCIt links this CAS to UNIIDM477EE40D; the GSRS PRIMARY record explicitly cross-links C80300, CAS6363-53-7, D-(+)-MALTOSE MONOHYDRATE and beta naming, and PubChem23615261. The open-chain representation and beta synonym occur in that same registry identity; \u00a73 readability/orderability supports the readable monohydrate node, without choosing a different anomer from lexical resemblance. Keep generic Maltose_Hydrate separate. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/2-Deoxyadenosine_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "234edb342d3ca2141a1d979722b23e9f4541903cd40df75d1871a864cb515edb",
+      "after_yaml_sha256": "57b6a40c3ea029e2ef30b54ce1dc8a3eb8a9902f4e00b6c60ef728ae582c44a0",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "The historical D7400 monohydrate and fresh supplier deposit/PubChem CAS16373-93-6 agree. Keep this own CAS distinct from the separate CHEBI17256 parent owner. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1",
+      "after_yaml_sha256": "ef8370ab5880873b2cd9fcf7bcb6b477a92d73981909cc8113f13431b3957808",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "CAS1040352-40-6 and K6250 source name agree on hemicalcium salt hydrate with unspecified xH2O. Keep distinct from the separately curated monohydrate/MPBio owner. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/4-Hydroxymandelic_Acid_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "0654ea9993b21a11beb4bbf8585d5cd60a2e44f86e7490a750857127a3ea81fb",
+      "after_yaml_sha256": "cd146080e4568090fbc5a55439a0caf840a0f50ef09a8c81a852b9da2d349255",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Historical168327 and current supplier/PubChem agree on CAS184901-84-6 monohydrate, not the water-free parent. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/5-Fluoroorotic_Acid_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "6abd2c9c99b2b69e621f8d9af7086abcd6dfa3290ac06b2e42a018528f8fe848",
+      "after_yaml_sha256": "7caa1e38e7ec3991439a11c2a1aec35c1879f93347a47ae4045d21f96a185b56",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C5H5FN2O5\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C1(=C(NC(=O)NC1=O)C(=O)O)F.O\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C5H3FN2O4.H2O/c6-1-2(4(10)11)7-5(12)8-3(1)9;/h(H,10,11)(H2,7,8,9,12);1H2\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":16212749,\"after\":null},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Historical/current F5013 support a distinct hydrate CAS207291-81-4; water count is unspecified. Preserve own CAS, do not rename it monohydrate. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "fbb892517930279f1591f8b80a802b18ab7f3ad9ab2979a258b8956803ee9e3d",
+      "after_yaml_sha256": "91a6a79b3b6163f2d5fb100f7571946c5ba1fc9abfa865fbde935c6077c292b6",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:17270\",\"after\":\"CHEBI:132089\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"glycerol 2-phosphate\",\"after\":\"sodium glycerol 2-phosphate\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C3H9Na2O7P\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C(C[O-])OP(=O)(O)O)[O-].O.[Na+].[Na+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C3H7O6P.2Na.H2O/c4-1-3(2-5)9-10(6,7)8;;;/h3H,1-2H2,(H2,6,7,8);;;1H2/q-2;2*+1;\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":44828775,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "CAS154804-51-0 denotes beta/2-glycerophosphate disodium hydrate in the inspected supplier comparator and historical source label. Preserve this hydrate owner separately from CHEBI132089 sodium beta-glycerophosphate and the distinct fixed-water sibling. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cadmium_Acetate_Dihydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "07cadbd336cef9129741a691cbee09dc6fe0d368df15aab884935a4ec19aefb5",
+      "after_yaml_sha256": "1769c867fc43e18416a493889e69d0b6537ab07509bf0e81cfb5cb87bc587310",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"CC(=O)[O-].CC(=O)[O-].[Cd+2]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/2C2H4O2.Cd/c2*1-2(3)4;/h2*1H3,(H,3,4);/q;;+2/p-2\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":10986,\"after\":null},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Source CAS5743-04-4 plus supplier/PubChem confirms cadmium acetate dihydrate; keep own CAS distinct from CHEBI232796 dry parent. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "5db979c08356e7ad8f03aeff24e9e163bb8117a73b95fb4147c7b1fc929f8e3d",
+      "after_yaml_sha256": "7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"identifier\"],\"before\":\"kgmicrobe.compound:cecl3_x_7_h2o\",\"after\":\"cas:18618-55-8\"},{\"op\":\"set\",\"path\":[\"chemical_properties\",\"cas_rn\"],\"before\":null,\"after\":\"18618-55-8\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Four current source recipes and MediaDive1444 name CeCl3\u00b77H2O. Independent supplier/PubChem agree on specific CAS18618-55-8 and formula. The complete ignored-inclusive neighbor scan found no other current owner of this CAS. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "eab12c4241299f15a70d3090d77037d0300b23d18974b9ccfe665c64dbe4982f",
+      "after_yaml_sha256": "8f4e50c36046d11a7949685b8a26705437d0bd8d7f35441671a6169d9ab50c8f",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"cas_rn\"],\"before\":\"52152-93-9\",\"after\":null},{\"op\":\"set\",\"path\":[\"supplied_form\"],\"before\":null,\"after\":[{\"name\":\"Cefsulodin sodium salt hydrate\",\"cas_rn\":\"52152-93-9\",\"form\":\"sodium salt hydrate (xH2O; unspecified water stoichiometry)\",\"supplier\":\"Sigma-Aldrich\",\"catalog_number\":\"C8145\",\"notes\":\"CultureBotHT historical compounds_to_cas.csv source catalogue C8145; current supplier page confirms xH2O and procurement CAS52152-93-9. This CAS also identifies the water-free sodium salt and is not the exact identifier of this local hydrate owner. Catalogue association is not a purchased-lot claim.\"}]}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Historical C8145 and current supplier describe the same source-defined cefsulodin sodium salt hydrate xH2O. Retain local hydrate identity; CAS52152-93-9 resolves to the water-free salt and is not selected as exact hydrate primary. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "cc8479957cb0c6090af467207f2e8daef94fa83a437d39993970604b3efcfbde",
+      "after_yaml_sha256": "a439a3394c28fc8b8d7d93897de2c010cd3ffb2e5a0c67838c7f497fcf0bb413",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"cas_rn\"],\"before\":\"56-95-1\",\"after\":null},{\"op\":\"set\",\"path\":[\"supplied_form\"],\"before\":null,\"after\":[{\"name\":\"Chlorhexidine diacetate salt hydrate\",\"cas_rn\":\"206986-79-0\",\"form\":\"diacetate salt hydrate (xH2O; unspecified water stoichiometry)\",\"supplier\":\"Sigma-Aldrich\",\"catalog_number\":\"C6143\",\"notes\":\"CultureBotHT historical compounds_to_cas.csv associated C6143 with CAS56-95-1; the inspected current C6143 supplier page instead lists CAS206986-79-0 and xH2O. Preserve this source-history disagreement. These are procurement cross-references, not an exact CAS identity or fixed-hydration decision for the local hydrate owner; no purchased lot is asserted.\"}]},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Historical C6143 and current supplier explicitly identify chlorhexidine diacetate salt hydrate, current formula xH2O. This settles the source-defined variable hydrate, not a fixed monohydrate. Retain its local identity distinct from water-free CHEBI81711. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cocl2_X_2_H2o.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "edd5aa6dc006976a0e5d8acfdc23187c96845c52b154cc6d8aa730e6225073a8",
+      "after_yaml_sha256": "24b8ad861360abceeeb29015a4c827efad6f304d987860139d6ce2450068fb24",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "MediaDive578 and five current source recipes name CoCl2\u00b72H2O; publisher-deposited primary abstract reports single-crystal CoCl2\u00b72H2O. Retain the local two-water identity, without selecting an unverified CAS lead. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "50c5e0a150ebd1215f290173f525ca73a7799b73ae889e357b2609022974283c",
+      "after_yaml_sha256": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"identifier\"],\"before\":\"kgmicrobe.compound:cu_no32_x_3_h2o\",\"after\":\"cas:10031-43-3\"},{\"op\":\"set\",\"path\":[\"synonyms\",1,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Historical source, current formula and independent GSRS/PubChem agree on copper(II) nitrate trihydrate CAS10031-43-3. The ignored-inclusive owner scan found no other current owner of this CAS. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-a/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565",
+      "after_yaml_sha256": "5ec2b75e2542ea2f85ee85b923ac2b98d928733f8706179b33d5acefb73dc12a",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C6H11Na2O9P\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C6H13O9P.2Na/c7-1-3(8)5(10)6(11)4(9)2-15-16(12,13)14;;/h4-7,9-11H,1-2H2,(H2,12,13,14);;/q;2*+1/p-2/t4-,5-,6-;;/m1../s1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C(C(C(C(=O)CO)O)O)O)OP(=O)([O-])[O-].[Na+].[Na+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":22812950,\"after\":null},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogue line1360 names the disodium D-fructose6-phosphate hydrate and CAS26177-86-6. Inspected supplier F3627 independently uses that CAS and C6H11Na2O9P\u00b7xH2O. No fixed water count is justified. The ChEBI parent is the two-sodium water-free moiety; retain the CAS identity and use a form-of broadMatch, never an exact hydrate-to-parent assertion. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Galacturonic_Acid_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "f6ec943a6dd111bae602dc7f62b3e37b503f0980aba016e9cb9971d079c5d8f9",
+      "after_yaml_sha256": "e90c177647bb81e496800dc1ab5b67c52d5ad623060acd933aabbde8a15ca38e",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogue line142 identifies Sigma48280 D-galacturonic acid monohydrate, CAS91510-62-2,212.15. The inspected Wako primary product independently gives that CAS and one-water formula. ParentCHEBI18024 explicitly denotes D-galacturonic acid. Bounded ontology discovery found no exact eligible hydrate term; retain own CAS and make the parent relation broadMatch. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "e77bcd2a4a944106d4e17fde216fd20169d0074f660d088aeeb68c8426d78d3d",
+      "after_yaml_sha256": "dc24f839479e79e3e34a984266aae2fb480f5e6136896f3ffbb4d8bfb0a0dab3",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:4178\",\"after\":\"CHEBI:32144\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"D-glucuronic acid\",\"after\":\"Sodium glucuronate\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogue line1164 names D-glucuronic acid sodium salt monohydrate CAS207300-70-7; CID24892836 independently has the sodium/D-stereo/one-water composition. Exact hydrate candidate not found in bounded CHEBI/NCIT search. CHEBI32144 Sodium glucuronate is the closer salt parent than current acidCHEBI4178; its explicit D stereochemical InChI is the current InChI without water and its CAS14984-34-0 is distinct. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-_-melezitose_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "e1b61c883ad813d73b3b508054774699b577fbaa90c8dd6fd4748abfa20bcc59",
+      "after_yaml_sha256": "b70f6ec2c8ce91a3ec1186fbe9a08b8e54195ca7607590ffef3092c5e3bd9e09",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C18H34O17\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":16217716,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogue line1359 names generic D-(+)-melezitose hydrate CAS207511-10-2 with dry-basis504.44. SupplierM5375 independently states xH2O under that CAS. This is not the fixed monohydrate owner already curated under CAS10030-67-8. Retain its own CAS and generic-hydrate preferred label and use broadMatch to melezitoseCHEBI6731. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f",
+      "after_yaml_sha256": "3beed1b7708342d30772eba148ddf870639e4bb7e9b21ea269f0d56a427e78ab",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C3H8NaO6P\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C3H9O6P.Na/c4-1-3(5)2-9-10(6,7)8;/h3-5H,1-2H2,(H2,6,7,8);/q;+1/p-1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C(COP(=O)(O)[O-])O)O.[Na+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":23672316,\"after\":null},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"},{\"op\":\"set\",\"path\":[\"synonyms\",1,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogue line1378 names DL-glycerol1-phosphate sodium salt hydrate CAS17603-42-8. Inspected supplier61668 independently names the same racemic1-phosphate hydrate and CAS, but explicitly gives xNa+/yH2O. The phosphate position/racemic scope are supported; sodium and water stoichiometry must remain unspecified. The broader rac-glycerol1-phosphate parentCHEBI14336 is consistent. Retain CAS identity, use broadMatch, and do not equate with G6501 positional-isomer mixture. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d",
+      "after_yaml_sha256": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:4735\",\"after\":\"CHEBI:750784\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"ethylenediaminetetraacetic acid\",\"after\":\"edetate sodium\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogue line1092/CAS13235-36-4/FW452.23 and PubChemCID23287279 consistently specify EDTA tetrasodium tetrahydrate. No exact hydrate term found in the bounded searches. CHEBI750784 edetate sodium is a closer parent than EDTA freeacidCHEBI4735: it explicitly has four sodium ions and no water, with matching organic skeleton. NCItC76598 independently describes that water-free tetrasodium parent/CAS64-02-8. Retain hydrate CAS and broadMatch to CHEBI750784. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "f5e8481e5f4588940e88d389061bdfee2e23838b653928c4bf3f18ca36c26e53",
+      "after_yaml_sha256": "a18258f8f2563ff4297179b3ba77fab1a804eb04a1900376629aab4db137dae2",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C6H11K2O9P\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C1C(C(C(C(O1)OP(=O)([O-])[O-])O)O)O)O.[K+].[K+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":87916,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline1214 CAS19046-60-7/FW426.39 says pentahydrate. Inspected primaryCalbiochem345646 explicitly names alpha-D-galactose1-phosphate dipotassium pentahydrate with C6H11K2O9P\u00b75H2O/426.39; this supports the stereochemical source and broader alpha-D parentCHEBI17973. No exact hydrate/salt term found in bounded discovery. Retain CAS and broadMatch to the closest found parent. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Gly-Gln_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "96cc72b44792c1cf088d54e37e12da512b40f2ab82291068362a91c4e1572c37",
+      "after_yaml_sha256": "d5b74cb58174ded1547ae1ede5e5141afb761249501def738b1a1597412707f4",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C7H13N3O4/c8-3-6(12)10-4(7(13)14)1-2-5(9)11/h4H,1-3,8H2,(H2,9,11)(H,10,12)(H,13,14)/t4-/m0/s1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"NCC(=O)N[C@@H](CCC(N)=O)C(=O)O\",\"after\":null},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline1336/CAS172669-64-6/FW221.21 identifies Gly-Gln monohydrate. PubChemCAS gives the L-glutamine dipeptide with one water and CHEBI73898 is the corresponding water-free glycyl-L-glutamine parent. Retain hydrate CAS and broadMatch; do not collapse into the parent. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa",
+      "after_yaml_sha256": "32d45cfa5c74e9e4724f0b1a17ed30f58d01edb3ce58ea25332b12eb5815bb7e",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline1340 CAS323194-76-9/FW173.1 names sodium L-aspartate monohydrate; PubChemCID23679051 gives one sodium, one water and Lconfiguration. No exacthydrate or nearer sodium-aspartate term found in bounded CHEBI/NCIT label/synonym/CAS searches. Retain CAS and broadMatch to L-asparticacidCHEBI17053 with separate B1 registry. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Cysteic_Acid_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "21740d17230c11b46d09af7ae1570b8af173dfd789e232d5a304d3a0b39c4dda",
+      "after_yaml_sha256": "b32a27ee8953ad229beb47775436a4077dd46552c394f270ee6db8d76e26536e",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline1338 CAS23537-25-9/FW187.17 and PubChemCID12308854 establish L-cysteic acid monohydrate, including the L-specific stereochemical InChI. CHEBI17285 is L-cysteicacid without water. No exacthydrate candidate found; retainCAS and broadMatch plus separate B1registry. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e",
+      "after_yaml_sha256": "cb23adfab5e3b84265222f3c4462e3e82675f706339cac2dda7b516c8a7db5bd",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline247 expressly selects Fluka49601 L-glutamicacid monopotassium monohydrate/CAS6382-01-0/FW203.24. PubChemCID23695977 has oneK, one water and Lconfiguration; two majorCAS-returned structures share its stereo/InChI while another differs in proton count, so do not select a newCID from the list. Bounded CHEBI/NCIT search found no closer potassiumsalt/form term. RetainCAS and broadMatch to L-glutamicacidCHEBI16015. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f",
+      "after_yaml_sha256": "5e5ac426585289ae4a0cb83595b2f62edf3fbbec0066ad9b19822bea98f0a038",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline258 selects Acros174081000 L-rhamnosemonohydrate/CAS10030-85-0/FW182.17. PubChemCID20849066 preserves Lstereo with one water. ChEBI62345 defines any L-configuration rhamnose, so it is a defensible readable broaderparent; do not force an aldehydo exactidentity from open-chain structure. No exacthydrate candidate found in boundedeligibleontologies. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "a1d6287d6dd0de9ac92aba2af65b60d3e72f139ef46becb2ef06c6a28d2147b9",
+      "after_yaml_sha256": "cd0d270b65a5c65e6d4b195d7f716fe888015e27b512dd11f465d79a7e5f731d",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"ClH2LiO\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/ClH.Li.H2O/h1H;;1H2/q;+1;/p-1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"[Li+].O.[Cl-]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":23681138,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Catalogueline483 names lithiumchloridehydrate/CAS85144-11-2 without a fixedwatercount. Inspected SigmaCoA298328 explicitly gives LiCl\u00b7xH2O and drybasis42.39 for thatCAS. PubChem maps it to a mono-waterrepresentation, which does not establish fixedhydration of the namedgenericmaterial. Retain sourceCAS and genericpreferredterm, broadMatch to lithiumchlorideCHEBI48607; do not rename tomonohydrate. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "4bec1ab2fccddb7e5e14ba1308b4310cb0ed1e542e5e173b6849eecf04d318ea",
+      "after_yaml_sha256": "3507d07671a015f79ee0553840b8e277dccca3dfee85e7504b9ec0c335568791",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "MediaDiveingredient1763 explicitly names Mg(NO3)2 x6H2O and CAS13446-18-9; freshPubChemCAS resolvesCID202877 with magnesium dinitrate hexahydrate/H12MgN2O12. ParentCHEBI64736 is magnesium nitrate withoutwaters. No exacteligiblehydrate candidatefound. RetainformCAS and broadMatch toparent with B1registry; no inventedchemicalprops. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-b/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Maltose_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "84c99c2429dea060e731ef5f5bbbf066574a4025f832ff97f006599b6a152cbc",
+      "after_yaml_sha256": "10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "The source table explicitly names maltose hydrate and8BacDive-metabolite-utilization observations. Preserve its distinct local identity without assigning the separate D-maltose-monohydrate CAS or an anomer. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2",
+      "after_yaml_sha256": "b610eb816827776dbca74ea2ac5d04b9a20300c3a8e0dcb280e74df72f2f079f",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:61993\",\"after\":\"CHEBI:140999\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"maltotriose\",\"after\":\"alpha-D-Glcp-(1->4)-alpha-D-Glcp-(1->4)-D-Glcp\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Keep CAS312693-63-3. Original source names maltotriose hydrate with mass522.5; current CAS-resolved PubChem16218586 gives one-water cyclic reducing-end-unspecified maltotriose. This does not justify an alpha-only reducing end. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Nicl2_X_2_H2o.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "4c5060f142630ac1cd112d3577898730e5f5c96e0404e1739c9ec618e80b3f53",
+      "after_yaml_sha256": "8c9d776dbb5998599503c6e645a4ad328cf19d1b1562784aba19906907934d25",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "Preserve the local dihydrate identity. MediaDive981 explicitly names NiCl2 x2H2O; primary experimental literature establishes nickel chloride dihydrate. Its automatic CAS7718-54-9 belongs to the water-free parent and is not adopted. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Palatinose_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "7d473a85cf46e31086d1cc784bff87a46f063740da598f5463454a6d70cce651",
+      "after_yaml_sha256": "ac18571f8ed5e72bc9681a1a326674254adf6d32aca7374fded31bd69aac3886",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C12H24O12\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C1C(C(C(C(O1)OCC2C(C(C(O2)(CO)O)O)O)O)O)O)O.O\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C12H22O11.H2O/c13-1-4-6(15)8(17)9(18)11(22-4)21-2-5-7(16)10(19)12(20,3-14)23-5;/h4-11,13-20H,1-3H2;1H2/t4-,5-,6-,7-,8+,9-,10+,11+,12?;/m1./s1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":52994241,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "CAS343336-76-5/sourceP2007 denotes variable-hydration palatinose. Preserve its separateCASidentity. Supplier and CHEBI:18394 agree the glucopyranosyl-fructofuranose core without forcing the reducing-end anomer. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "db4dffe725341b25204763b9ad2ae253a125e6e9356bb6a4c55a81f7fd9510a2",
+      "after_yaml_sha256": "6f645ef481452ef5bb9923dd7ce6cbe272b009e496d4b52fd3134b446b4ece04",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C5H6K2O5\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H2,1H3,(H,6,7)(H,8,9);;/q;2*+1/p-2\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":16211775,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceCAS1030365-02-6/name/mass242.31 are independently corroborated by primarySigma27455monohydrate. PreserveCAS and unspecific preferred label; do not assert a single enantiomer. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Potassium_Tellurate_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "b062db7d0316253fd233b8abeaf80d033662a9c589388afd7cb3a9b8aeb36ddf",
+      "after_yaml_sha256": "c3743d213dc174c59b3c4b199b1f94ba5a65d07fad50b3177a01c1060a703f5f",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"H2K2O5Te\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"O.[O-][Te](=O)(=O)[O-].[K+].[K+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/2K.H2O4Te.H2O/c;;1-5(2,3)4;/h;;(H2,1,2,3,4);1H2/q2*+1;;/p-2\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":17749147,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceCAS314041-10-6 names potassiumtelluratehydrate. Primarysupplier confirmsK2TeO4\u00b7xH2O; distinctCAS preserves this nominalvariablehydrate. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Cholate_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "b18b1353f94d1b1374fc1f8d1356a408e6b86e931d5930bc4ce6a1f5a5431fc5",
+      "after_yaml_sha256": "afc546f90d03a6e4054195b6c6a9df3e36ac8090636c9951c7a8c8dca47da6a6",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C24H41NaO6\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"CC(CCC(=O)[O-])C1CCC2C1(C(CC3C2C(CC4C3(CCC(C4)O)C)O)O)C.O.[Na+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C24H40O5.Na.H2O/c1-13(4-7-21(28)29)16-5-6-17-22-18(12-20(27)24(16,17)3)23(2)9-8-15(25)10-14(23)11-19(22)26;;/h13-20,22,25-27H,4-12H2,1-3H3,(H,28,29);;1H2/q;+1;/p-1/t13-,14+,15-,16-,17+,18+,19-,20+,22+,23+,24-;;/m1../s1\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":23679061,\"after\":null},{\"op\":\"set\",\"path\":[\"synonyms\",0,\"synonym_type\"],\"before\":\"EXACT_SYNONYM\",\"after\":\"REJECTED_LABEL\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceC9282/CAS206986-87-0andprimarysupplieridentifyvariable-hydration sodiumcholate. The primary stereochemicalInChIcorematchesCHEBI:26711. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "221d045730234ed597aa3a75ad8880a0ffd43aefd881832b29b33108172abd99",
+      "after_yaml_sha256": "2dd29456294e03ebdf5cb95b439fddd81ea3729ba2f63adbbadb93e8ecffdd2b",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceD5670/CAS145224-92-6/mass432.57, primarysupplierandPubChem23679071agree ononewater sodiumdeoxycholate. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "1605e85f71607a3b6e6f36d67c62c47b2c19cb7f425207bc19970ec1b4f06ffa",
+      "after_yaml_sha256": "02f24e2580dfad82c4cf391fdd345d0e8fc60922ab8899da18704581fc86497e",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceCAS13517-23-2/name/mass216.04arecorroborated byprimarySigma04283Na2HPO3\u00b75H2O. Preserve distinctCAS; no importedstructure. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Thiophosphate_Tribasic_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "bc89ba3f7c2a53ccf57d102b3ae39ae36782a788e82fbdc22bfa9b32a1333173",
+      "after_yaml_sha256": "3bc25859b01adb269b9a549cc6f3901d15afff915de4db965226c11eaf724cc8",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"H2Na3O4PS\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"O.[O-]P(=S)([O-])[O-].[Na+].[Na+].[Na+]\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/3Na.H3O3PS.H2O/c;;;1-4(2,3)5;/h;;;(H3,1,2,3,5);1H2/q3*+1;;/p-3\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":53442939,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceS0764/CAS10489-48-2andprimarysupplier identifyNa3PO3S\u00b7xH2O; retaindistinctCASwithoutfixedwatercount. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Stachyose_Hydrate.yaml",
+      "shape": "source-form and nearest-parent correction; no scientific approval",
+      "before_yaml_sha256": "c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682",
+      "after_yaml_sha256": "d4d154ba7f27848fcf0b6caf40c3638efa15cfca537f332dcaebcc53a749285c",
+      "change": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"molecular_formula\"],\"before\":\"C24H42O21\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"smiles\"],\"before\":\"C(C1C(C(C(C(O1)OCC2C(C(C(C(O2)OCC3C(C(C(C(O3)OC4(C(C(C(O4)CO)O)O)CO)O)O)O)O)O)O)O)O)O)O\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"inchi\"],\"before\":\"InChI=1S/C24H42O21/c25-1-6-10(28)14(32)17(35)21(41-6)39-3-8-11(29)15(33)18(36)22(42-8)40-4-9-12(30)16(34)19(37)23(43-9)45-24(5-27)20(38)13(31)7(2-26)44-24/h6-23,25-38H,1-5H2\",\"after\":null},{\"op\":\"remove\",\"path\":[\"chemical_properties\",\"pubchem_cid\"],\"before\":4287569,\"after\":null}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+      "verification": "SourceCAS54261-98-2namesstachyosehydrate; primaryWako describesn-hydrate. Preserve the generic hydratedidentity. SourceFW738.6suggestsfourwaterbutcannotbyitselfestablisha fixedtetrahydrate. Exact evidence and full rubric: reports/step7d_mapping_901_20261103/authors/science-c/. Current before/after owner hashes and full field changes are bound in the source receipt."
+    }
+  ],
+  "auxiliary_reference_migrations": {
+    "mappings/culturemech_recipe_membership.tsv": [
+      {
+        "group": "1117-maltose",
+        "before_sha256": "777effdf97560aae1f266eb47770b3144947f5ad4f764a6dfe12845b8455ff75",
+        "migrations": [
+          {
+            "owner_path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+            "before_identifier": "cas:6363-53-7",
+            "after_identifier": "NCIT:C80300",
+            "memberships": [
+              {
+                "recipe_id": "CultureMech:000655",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:002221",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:002656",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:002658",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:003952",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:007620",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:007621",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:009323",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:009476",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:009484",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:011782",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:013063",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:013064",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:014007",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:015582",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:015740",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:015741",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:015742",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:015749",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:015828",
+                "occurrences": 1
+              }
+            ]
+          }
+        ],
+        "after_sha256": "f67cb6f59b6d1a1183bac0a573c9b519551cd0b227117f1508a30f77f4cb5e9d"
+      },
+      {
+        "group": "901",
+        "before_sha256": "f67cb6f59b6d1a1183bac0a573c9b519551cd0b227117f1508a30f77f4cb5e9d",
+        "migrations": [
+          {
+            "owner_path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+            "before_identifier": "kgmicrobe.compound:cecl3_x_7_h2o",
+            "after_identifier": "cas:18618-55-8",
+            "memberships": [
+              {
+                "recipe_id": "CultureMech:001078",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:001092",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:014593",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:014611",
+                "occurrences": 1
+              }
+            ]
+          },
+          {
+            "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+            "before_identifier": "kgmicrobe.compound:cu_no32_x_3_h2o",
+            "after_identifier": "cas:10031-43-3",
+            "memberships": [
+              {
+                "recipe_id": "CultureMech:001141",
+                "occurrences": 1
+              },
+              {
+                "recipe_id": "CultureMech:012571",
+                "occurrences": 1
+              }
+            ]
+          }
+        ],
+        "after_sha256": "8838d60903553f2b8dc2dba33d83f9f1c65f333f68f037130d80abf592db15b8"
+      }
+    ],
+    "mappings/unified_mapping_rejections.tsv": [
+      {
+        "group": "1117-maltose",
+        "before_sha256": "110a0a71c9126348cdb2ed49a210ecf37be46b6492c56329d78ae76bbb5c19e9",
+        "migrations": [
+          {
+            "owner_path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+            "before_identifier": "cas:6363-53-7",
+            "after_identifier": "NCIT:C80300",
+            "before_row": {
+              "ingredient_name": "Maltose monohydrate",
+              "rejected_id": "CHEBI:17306",
+              "mim_id": "cas:6363-53-7",
+              "reason": "D-maltose monohydrate (cas:6363-53-7) is distinct from anhydrous maltose (CHEBI:17306); ChEBI has no term for maltose monohydrate, so the record uses its CAS identity with maltose (CHEBI:17306) as NARROW_MATCH (#808). Reject the stale anhydrous recipe term.id in unified identity columns. See data/ingredients/mapped/D-Maltose_Monohydrate.yaml."
+            },
+            "after_reason": "Step 7d preserves rejection of the source's broader parent CHEBI:17306 in exact unified identity columns. Current owner data/ingredients/mapped/D-Maltose_Monohydrate.yaml uses NCIT:C80300 as the exact form-specific NCIt identity under MAPPING_SEMANTICS section 3 step 1 (#1117). This supersedes the earlier local/CAS fallback and CLOSE_MATCH rationale; no rejected identity is re-approved. Evidence and preimages: reports/step7d_mapping_901_20261103. No owner merge or scientific approval."
+          }
+        ],
+        "after_sha256": "7f05c1e565fab5ed5f3b5ca6ead68a6cac7cd269a04e2172166f883efa44a7b0"
+      },
+      {
+        "group": "901",
+        "before_sha256": "7f05c1e565fab5ed5f3b5ca6ead68a6cac7cd269a04e2172166f883efa44a7b0",
+        "migrations": [
+          {
+            "owner_path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+            "before_identifier": "kgmicrobe.compound:cecl3_x_7_h2o",
+            "after_identifier": "cas:18618-55-8",
+            "before_row": {
+              "ingredient_name": "CeCl3 x 7 H2O",
+              "rejected_id": "CHEBI:35458",
+              "mim_id": "kgmicrobe.compound:cecl3_x_7_h2o",
+              "reason": "The stated heptahydrate is distinct from anhydrous cerium trichloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Cecl3_X_7_H2o.yaml."
+            },
+            "after_reason": "Step 7d preserves rejection of the source's broader parent CHEBI:35458 in exact unified identity columns. Current owner data/ingredients/mapped/Cecl3_X_7_H2o.yaml uses cas:18618-55-8 as its verified form-specific CAS identity, with a distinct local registry and broadMatch parent under MAPPING_SEMANTICS section 3 step 2 (#901). This supersedes the earlier local/CAS fallback and CLOSE_MATCH rationale; no rejected identity is re-approved. Evidence and preimages: reports/step7d_mapping_901_20261103. No owner merge or scientific approval."
+          },
+          {
+            "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+            "before_identifier": "kgmicrobe.compound:cu_no32_x_3_h2o",
+            "after_identifier": "cas:10031-43-3",
+            "before_row": {
+              "ingredient_name": "Cu(NO3)2 x 3 H2O",
+              "rejected_id": "CHEBI:78036",
+              "mim_id": "kgmicrobe.compound:cu_no32_x_3_h2o",
+              "reason": "The stated trihydrate is distinct from anhydrous copper(II) nitrate; ChEBI has no term for this hydration state, and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). The record carries its own trihydrate CAS 10031-43-3, so promotion to cas:10031-43-3 under MAPPING_SEMANTICS \u00a73 step 2 is still open (#875); that change must update this row's mim_id in the same commit. See data/ingredients/mapped/Cu_No32_X_3_H2o.yaml."
+            },
+            "after_reason": "Step 7d preserves rejection of the source's broader parent CHEBI:78036 in exact unified identity columns. Current owner data/ingredients/mapped/Cu_No32_X_3_H2o.yaml uses cas:10031-43-3 as its verified form-specific CAS identity, with a distinct local registry and broadMatch parent under MAPPING_SEMANTICS section 3 step 2 (#901). This supersedes the earlier local/CAS fallback and CLOSE_MATCH rationale; no rejected identity is re-approved. Evidence and preimages: reports/step7d_mapping_901_20261103. No owner merge or scientific approval."
+          }
+        ],
+        "after_sha256": "99ede603cc21505e39d521604e9d411b0287b5cc1d58965b44cc84cba95fec7b"
+      }
+    ]
+  },
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "producer_revision": "3022b8738dcc9e01c7464a8d5c95aa9be2eef141",
+  "projection_config": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/projection-v1/projection-config.json",
+  "projection_config_sha256": "30e7ecd98d42046057b93c8086e1e5d09c1aa9cd60d12059379248407855a537",
+  "generation_manifest_sha256": "a6c93829c98b213df790dff5c4dcb25d11c7752aed0e27d2748b1cf59ab03bbf",
+  "sssom_before_sha256": "62fd37c2ed8ace9b9295618d44e251d11fc35feb711053b66d322e5a7bce14f1",
+  "sssom_after_sha256": "cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4",
+  "receipt_path": "reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json",
+  "receipt_sha256": "00165a2a85fc948237bd2502abb6e24f2fc7d3bd22eb426ae6ffd70fb786e0f1",
+  "native_replay": {
+    "kg_sources_by_target": {
+      "CHEBI:15978": "native_ontology:chebi",
+      "CHEBI:36218": "native_ontology:chebi",
+      "CHEBI:17270": "native_ontology:chebi"
+    },
+    "rows": 3007,
+    "events": 25
+  },
+  "historical_policy": "unchanged through receipt24; receipt25 binds this batch; deferred23 preserved",
+  "applied": false,
+  "changed": true
+}

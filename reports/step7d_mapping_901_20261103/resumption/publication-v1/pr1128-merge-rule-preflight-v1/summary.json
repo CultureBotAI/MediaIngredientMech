@@ -1,0 +1,321 @@
+{
+  "captured_at": "2026-11-04T01:51:42.063591+00:00",
+  "ruleset_id": 22994916,
+  "ruleset_name": "CLAW merge queue",
+  "effective_for_branch": "main",
+  "required_checks_count": 13,
+  "required_checks": [
+    {
+      "context": "check",
+      "integration_id": 15368
+    },
+    {
+      "context": "history",
+      "integration_id": 15368
+    },
+    {
+      "context": "id-label-gate / label-correspondence",
+      "integration_id": 15368
+    },
+    {
+      "context": "instruction-refs",
+      "integration_id": 15368
+    },
+    {
+      "context": "pytest",
+      "integration_id": 15368
+    },
+    {
+      "context": "qc-component-partonomy",
+      "integration_id": 15368
+    },
+    {
+      "context": "qc-duplicate-ids",
+      "integration_id": 15368
+    },
+    {
+      "context": "qc-evidence",
+      "integration_id": 15368
+    },
+    {
+      "context": "qc-flat-coverage",
+      "integration_id": 15368
+    },
+    {
+      "context": "qc-sssom",
+      "integration_id": 15368
+    },
+    {
+      "context": "roundtrip",
+      "integration_id": 15368
+    },
+    {
+      "context": "validate-strict",
+      "integration_id": 15368
+    },
+    {
+      "context": "vendored-sync",
+      "integration_id": 15368
+    }
+  ],
+  "required_approving_review_count": 0,
+  "pull_request_rule_parameters": {
+    "required_approving_review_count": 0,
+    "dismiss_stale_reviews_on_push": false,
+    "required_reviewers": [],
+    "require_code_owner_review": false,
+    "dismissal_restriction": {
+      "enabled": false,
+      "allowed_actors": []
+    },
+    "require_last_push_approval": false,
+    "required_review_thread_resolution": false,
+    "require_extra_approval_for_unattributed_changes": true,
+    "allowed_merge_methods": [
+      "merge",
+      "squash",
+      "rebase"
+    ]
+  },
+  "merge_queue": {
+    "merge_method": "SQUASH",
+    "max_entries_to_build": 3,
+    "min_entries_to_merge": 1,
+    "max_entries_to_merge": 1,
+    "min_entries_to_merge_wait_minutes": 5,
+    "grouping_strategy": "ALLGREEN",
+    "check_response_timeout_minutes": 120
+  },
+  "classic_branch_protection": {
+    "status": 404,
+    "message": "Branch not protected",
+    "qualification": "No classic branch-protection object; active ruleset still enforces the branch."
+  },
+  "pr": {
+    "number": 1128,
+    "head": "8417aaf3a057d855ae5d0b78a587ef1cb57bf28f",
+    "base": "467aa319a06ef992035f509f66fe251082b44ae1",
+    "base_branch": "main",
+    "state": "OPEN",
+    "mergeable": "MERGEABLE",
+    "merge_state": "BLOCKED",
+    "review_decision": "",
+    "auto_merge_request": null,
+    "merge_queue_entry": null
+  },
+  "user_required_gate": {
+    "all_checks": 16,
+    "check_names": [
+      "check",
+      "history",
+      "id-label-gate / label-correspondence",
+      "instruction-refs",
+      "pytest",
+      "qc-component-partonomy",
+      "qc-duplicate-ids",
+      "qc-evidence",
+      "qc-flat-coverage",
+      "qc-sssom",
+      "qc-unified-freshness",
+      "reviewed-sssom",
+      "roundtrip",
+      "supported-graph",
+      "validate-strict",
+      "vendored-sync"
+    ],
+    "extra_checks_beyond_ruleset": [
+      "qc-unified-freshness",
+      "reviewed-sssom",
+      "supported-graph"
+    ],
+    "require_independent_final_review": true,
+    "require_squash_queue": true,
+    "gate_met_by_this_observation": false
+  },
+  "current_ci": {
+    "success": 15,
+    "pending_or_non_success": [
+      {
+        "name": "pytest",
+        "status": "IN_PROGRESS",
+        "conclusion": ""
+      }
+    ],
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120716/job/126332521053",
+        "name": "pytest",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Tests (pytest)"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:35Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120961/job/126332522195",
+        "name": "history",
+        "startedAt": "2026-11-04T01:45:02Z",
+        "status": "COMPLETED",
+        "workflowName": "Curation history"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:38Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756121433/job/126332526805",
+        "name": "check",
+        "startedAt": "2026-11-04T01:45:13Z",
+        "status": "COMPLETED",
+        "workflowName": "Python quality gate"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:37Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120683/job/126332521000",
+        "name": "qc-sssom",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 SSSOM invariant validation"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:01Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120769/job/126332521096",
+        "name": "instruction-refs",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 agent-instruction references"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:46:47Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120623/job/126332521047",
+        "name": "roundtrip",
+        "startedAt": "2026-11-04T01:44:39Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 collection/per-record round-trip"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:11Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120703/job/126332521023",
+        "name": "qc-component-partonomy",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 component partonomy"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:09Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120659/job/126332521111",
+        "name": "qc-duplicate-ids",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 duplicate mapped identifiers"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:13Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120856/job/126332521157",
+        "name": "qc-evidence",
+        "startedAt": "2026-11-04T01:44:39Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 evidence reference validation"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:46:30Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120661/job/126332520767",
+        "name": "qc-flat-coverage",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 flat export coverage"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:58Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120799/job/126332520904",
+        "name": "reviewed-sssom",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 reviewed MIM SSSOM"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:37Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120638/job/126332520808",
+        "name": "supported-graph",
+        "startedAt": "2026-11-04T01:44:39Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 supported MIM graph"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:14Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120886/job/126332521881",
+        "name": "qc-unified-freshness",
+        "startedAt": "2026-11-04T01:44:53Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 unified snapshot freshness"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:49:22Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756121255/job/126332522768",
+        "name": "id-label-gate / label-correspondence",
+        "startedAt": "2026-11-04T01:45:11Z",
+        "status": "COMPLETED",
+        "workflowName": "label-correspondence"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:36Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120770/job/126332520804",
+        "name": "validate-strict",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "validate-strict"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T01:45:00Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/41756120704/job/126332521362",
+        "name": "vendored-sync",
+        "startedAt": "2026-11-04T01:44:40Z",
+        "status": "COMPLETED",
+        "workflowName": "vendored-sync"
+      }
+    ]
+  },
+  "queue_query_qualification": "GET graphql returned schema introspection, retained as queue-entry.json and not used as queue-state evidence. Read-only GraphQL query over POST returned actual mergeQueueEntry=null in queue-entry-query.json.",
+  "actions": {
+    "enqueued": false,
+    "merged": false,
+    "review_requested": false,
+    "messages_sent": false,
+    "git_mutations": false,
+    "github_mutations": false
+  },
+  "limitations": [
+    "Point-in-time read only; recheck head/base, all16 checks, current rules and final independent review immediately before enqueue.",
+    "Ruleset approval count0 does not waive the user-required independent adversarial review.",
+    "min_entries_to_merge_wait_minutes=5 is a configured grouping parameter, not an assertion that every single-entry queue attempt waits5minutes."
+  ]
+}

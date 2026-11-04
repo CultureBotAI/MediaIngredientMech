@@ -1,0 +1,84 @@
+[
+  {
+    "name": "main-effective-rules",
+    "argv": [
+      "gh",
+      "api",
+      "--method",
+      "GET",
+      "repos/CultureBotAI/MediaIngredientMech/rules/branches/main"
+    ],
+    "started_at": "2026-11-04T01:50:28.662756+00:00",
+    "finished_at": "2026-11-04T01:50:28.975337+00:00",
+    "exit_code": 0,
+    "sha256": "a9df7a9aa7c56da4b3968f26a1be8e63d842143474c189b4c6d8503b7c8ffc8c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "rulesets",
+    "argv": [
+      "gh",
+      "api",
+      "--method",
+      "GET",
+      "repos/CultureBotAI/MediaIngredientMech/rulesets?includes_parents=true",
+      "--paginate",
+      "--slurp"
+    ],
+    "started_at": "2026-11-04T01:50:28.975707+00:00",
+    "finished_at": "2026-11-04T01:50:29.301821+00:00",
+    "exit_code": 0,
+    "sha256": "24de53ba66b1940241a16e47b7b495ef260b36ab8264c64bbb80681c9e515055",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "main-classic-protection",
+    "argv": [
+      "gh",
+      "api",
+      "--method",
+      "GET",
+      "repos/CultureBotAI/MediaIngredientMech/branches/main/protection"
+    ],
+    "started_at": "2026-11-04T01:50:29.302125+00:00",
+    "finished_at": "2026-11-04T01:50:29.609722+00:00",
+    "exit_code": 1,
+    "sha256": "d6020ee3b0852c3deb66c66d159cc80caabeaa66ee301778307a2a18d486450d",
+    "stderr_sha256": "256bf323d488b96ed59be6a50a192e2badd6b722792fcc4b8856f97aa3a3d23a"
+  },
+  {
+    "name": "pr1128",
+    "argv": [
+      "gh",
+      "pr",
+      "view",
+      "1128",
+      "--repo",
+      "CultureBotAI/MediaIngredientMech",
+      "--json",
+      "number,url,state,headRefOid,headRefName,baseRefOid,baseRefName,mergeStateStatus,mergeable,reviewDecision,autoMergeRequest,statusCheckRollup"
+    ],
+    "started_at": "2026-11-04T01:50:29.609955+00:00",
+    "finished_at": "2026-11-04T01:50:30.525824+00:00",
+    "exit_code": 0,
+    "sha256": "74062de1910954a36bd4fbdc4110db0232deeca911ec15555d5ab8d165b5a4b1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "queue-entry",
+    "argv": [
+      "gh",
+      "api",
+      "--method",
+      "GET",
+      "graphql",
+      "-f",
+      "query=query { repository(owner: \"CultureBotAI\", name: \"MediaIngredientMech\") { pullRequest(number: 1128) { number headRefOid baseRefOid mergeQueueEntry { id position enqueuedAt } } } }"
+    ],
+    "started_at": "2026-11-04T01:50:30.526493+00:00",
+    "finished_at": "2026-11-04T01:50:34.041042+00:00",
+    "exit_code": 0,
+    "sha256": "fa88dbe871811b4997c8202862e458b5c81b89e4ec31d061a0e216fe85879006",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

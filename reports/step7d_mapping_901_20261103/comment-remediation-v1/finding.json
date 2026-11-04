@@ -1,0 +1,57 @@
+{
+  "id": "projection-stale-parent-comments",
+  "issue_key": "step7d-stale-parent-registry-comments",
+  "severity": "minor",
+  "native_severity": "low",
+  "status": "open",
+  "certainty": "confirmed",
+  "title": "Four projected registry comments present superseded ontology parents as current",
+  "observed_head": "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+  "observed_at": "2026-11-03T06:40:21.165491+00:00",
+  "description": "The projection joins prior and regenerated comment sentences without marking the prior sentence historical. For four retargeted owners, the exact CAS row therefore states it is alongside both the old parent and the new parent, while the current ontology row maps only to the new parent. SSSOM identity/predicate fields are correct; this is a bounded current-row explanation defect.",
+  "root_cause": "D/promote_step7d_mapping.py:output_from_candidate unconditional comment concatenation; projection config freezes the conflicting comments.",
+  "targets": [
+    {
+      "subject_id": "MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate",
+      "object_id": "cas:154804-51-0",
+      "output_position": 532,
+      "comment": "Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:17270. Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:132089.",
+      "native_current_comment": "Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:132089.",
+      "owner_path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml"
+    },
+    {
+      "subject_id": "MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate",
+      "object_id": "cas:207300-70-7",
+      "output_position": 901,
+      "comment": "Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:4178. Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:32144.",
+      "native_current_comment": "Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:32144.",
+      "owner_path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml"
+    },
+    {
+      "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+      "object_id": "cas:13235-36-4",
+      "output_position": 1116,
+      "comment": "Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:4735. Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:750784.",
+      "native_current_comment": "Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:750784.",
+      "owner_path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml"
+    },
+    {
+      "subject_id": "MIM:Maltotriose_Hydrate",
+      "object_id": "cas:312693-63-3",
+      "output_position": 1792,
+      "comment": "Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:61993. Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:140999.",
+      "native_current_comment": "Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:140999.",
+      "owner_path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml"
+    }
+  ],
+  "evidence": {
+    "projection_config_sha256": "30e7ecd98d42046057b93c8086e1e5d09c1aa9cd60d12059379248407855a537",
+    "canonical_sha256": "cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4"
+  },
+  "suggested_fix": "Through the native guarded workflow, distinguish the former parent from the current parent while preserving the exact previous text in provenance. Preserve the user-required single unpublished batch25: do not infer authorization to append a second mapping batch. Retain the reviewed pre-fix batch25 artifact as evidence. Do not alter scientific fields, owner records, snapshot, threshold, assertions, or approvals.",
+  "acceptance": [
+    "All four current comments distinguish former parent from current parent; original provenance remains recoverable.",
+    "Only the four comment cells change in the canonical remediation delta; the final single batch25 chain replays, its 24 historical predecessors remain immutable, and all 105 selected rows remain WITHHOLD.",
+    "Strict qc-sssom and required QC/tests pass; independent re-review of actual final head."
+  ]
+}

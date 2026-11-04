@@ -1,0 +1,93 @@
+identifier: cas:10030-85-0
+preferred_term: L-Rhamnose monohydrate
+ontology_mapping:
+  ontology_id: CHEBI:62345
+  ontology_label: L-rhamnose
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 10030-85-0 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
+      FEBA_carbon. Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: L-Rhamnose monohydrate is a hydrate/salt with its own CAS and no exact
+      ChEBI term; anchored to the parent CHEBI:62345 'L-rhamnose' by narrowMatch per
+      MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of L-rhamnose
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:62345 (''L-rhamnose'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:10030-85-0 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.277330+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:53:47.000549+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C6H14O6; smiles=CC(C(C(C(C=O)O)O)O)O.O; inchi=InChI=1S/C6H12O5.H2O/c1-3(8)5(10)6(11)4(9)2-7;/h2-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.418725+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.743343+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:62345 ''L-rhamnose'' and
+    registry kgmicrobe.compound:l-rhamnose_monohydrate. identifier cas:10030-85-0
+    unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of L-rhamnose'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 10030-85-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C6H14O6
+  smiles: CC(C(C(C(C=O)O)O)O)O.O
+  inchi: InChI=1S/C6H12O5.H2O/c1-3(8)5(10)6(11)4(9)2-7;/h2-6,8-11H,1H3;1H2/t3-,4-,5-,6-;/m0./s1
+  pubchem_cid: 20849066
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

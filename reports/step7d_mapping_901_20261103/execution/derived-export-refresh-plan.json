@@ -1,0 +1,310 @@
+{
+  "prepared_at": "2026-11-03T06:20:24.909584+00:00",
+  "status": "read_only_preparation_no_producers_run",
+  "worktree": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "owner_plan_sha256": "a82bc6d32e750f16fc7ecfa4c0a5e172a5930c849d7dc3ec5a6ca106ed60fca4",
+  "owner_count": 38,
+  "companion_owner_count": 20,
+  "owner_companion_intersection": [],
+  "runtime": {
+    "python": "3.13.2",
+    "venv": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim",
+    "runner": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/run_step7d_mim.py",
+    "pytest": "9.0.2",
+    "pytest_cov": "7.1.0 from existing runner test-deps",
+    "coverage": "7.17.0 from existing runner test-deps",
+    "sfdp": "/opt/homebrew/bin/sfdp",
+    "uv_offline": true
+  },
+  "embedding": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MicroGrowLink/data/kgm_and_embeddings_paired/DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v3_2026-06-26_12_55_27.tsv.gz",
+    "sha256": "b178b977ccfe00192e7a18fc1708dae19fbbd62e4efecb3539570c6f7a553457",
+    "bytes": 5849378172,
+    "mtime_ns": 1782526201871927233,
+    "sha_recomputed_this_preparation": true
+  },
+  "native_cache": {
+    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7c/.umap_cache/ingredient_embeddings__CHEBI_ENVO_FOODON_MESH_NCIT_UBERON_kgmicrobe.compound_mediadive.ingredient_mediadive.solution__0757f043ac68.pkl",
+    "destination": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/.umap_cache/ingredient_embeddings__CHEBI_ENVO_FOODON_MESH_NCIT_UBERON_kgmicrobe.compound_mediadive.ingredient_mediadive.solution__0757f043ac68.pkl",
+    "sha256": "b6864e9f03cad721ed241b3e580477dac499692c578144196ea38278221c9b15",
+    "bytes": 975767219,
+    "sha_recomputed_this_preparation": true,
+    "destination_dir_absent_when_checked": true
+  },
+  "commands": [
+    {
+      "tag": "step7d-derived-sync-owner-surfaces-v1",
+      "argv": [
+        "just",
+        "sync-curated"
+      ],
+      "condition": "After all guarded individual-record writes; inspect any serialization-only changes before native receipt hashes are finalized."
+    },
+    {
+      "tag": "step7d-derived-assemble-review-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/sssom_completion_20260921/assemble_review.py"
+      ],
+      "condition": "Only after the new native mapping receipt closes the source/SSSOM chain and REVIEWED_SOURCE is explicitly advanced to its verified endpoint."
+    },
+    {
+      "tag": "step7d-derived-assemble-review-check-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/sssom_completion_20260921/assemble_review.py",
+        "--check"
+      ],
+      "condition": "No unchanged approval may carry across changed owner bytes."
+    },
+    {
+      "tag": "step7d-derived-export-full-v1",
+      "argv": [
+        "just",
+        "export-kgx",
+        "output/step7d-full-v1"
+      ],
+      "condition": "New destination; complete explicit source graph for semantic evidence."
+    },
+    {
+      "tag": "step7d-derived-semantic-review-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/semantic_review_20260921/resolution/build_review.py",
+        "--bundle",
+        "output/step7d-full-v1"
+      ],
+      "condition": "Native builder; preserves unresolved findings and withdraws changed-owner inherited support."
+    },
+    {
+      "tag": "step7d-derived-semantic-integrity-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "mediaingredientmech.validation.semantic_release",
+        "--root",
+        ".",
+        "--report",
+        "reports/semantic_review_20260921/resolution/current-review.json"
+      ],
+      "condition": "Require integrity PASS; report full-release FAIL honestly if open findings remain. Do not claim all assertions approved."
+    },
+    {
+      "tag": "step7d-derived-companion-refresh-v1",
+      "argv": [
+        "python",
+        "-B",
+        "scripts/refresh_unchanged_cohort.py",
+        "--root",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+        "--baseline",
+        "467aa319a06ef992035f509f66fe251082b44ae1",
+        "--prior-review",
+        "reports/step7c_mapping_751_313_235_20261102/refresh-v2/companion-review.json",
+        "--output",
+        "reports/step7d_mapping_901_20261103/companion-review.json",
+        "--receipt",
+        "reports/step7d_mapping_901_20261103/companion-refresh-receipt.json",
+        "--prior-copy",
+        "reports/step7d_mapping_901_20261103/prior-companion-review.json"
+      ],
+      "condition": "Three paths must be absent; immutable successor. No projection override is needed unless a separately verified typed manifest changed; do not invent one."
+    },
+    {
+      "tag": "step7d-derived-companion-export-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "mediaingredientmech.export.ingredient_bundle",
+        "export",
+        "--review",
+        "reports/step7d_mapping_901_20261103/companion-review.json",
+        "--output",
+        "output/step7d-companion-v1"
+      ],
+      "condition": "After paired selector repoint only; export independently replays selected cohort."
+    },
+    {
+      "tag": "step7d-derived-reviewed-sssom-export-v1",
+      "argv": [
+        "just",
+        "export-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/step7d-reviewed-v1"
+      ],
+      "condition": "New destination."
+    },
+    {
+      "tag": "step7d-derived-reviewed-sssom-qc-v1",
+      "argv": [
+        "just",
+        "qc-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/step7d-reviewed-v1"
+      ],
+      "condition": "Assembler reproducibility, both partitions, SSSOM schema/prefix/CURIE checks."
+    },
+    {
+      "tag": "step7d-derived-supported-kgx-export-v1",
+      "argv": [
+        "just",
+        "export-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/step7d-supported-v1"
+      ],
+      "condition": "New destination."
+    },
+    {
+      "tag": "step7d-derived-supported-kgx-qc-v1",
+      "argv": [
+        "just",
+        "qc-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/step7d-supported-v1"
+      ],
+      "condition": "Exact supported selection and complete excluded backlog."
+    },
+    {
+      "tag": "step7d-derived-export-indexes-v1",
+      "argv": [
+        "just",
+        "export-indexes"
+      ],
+      "condition": "Native nine data/curated index outputs."
+    },
+    {
+      "tag": "step7d-derived-export-lists-v1",
+      "argv": [
+        "just",
+        "export-lists"
+      ],
+      "condition": "Native JSON/CSV/Markdown lists and label_index; Markdown timestamps are expected native output."
+    },
+    {
+      "tag": "step7d-derived-export-browser-v1",
+      "argv": [
+        "just",
+        "export-browser"
+      ],
+      "condition": "Native docs/data/ingredients.json."
+    },
+    {
+      "tag": "step7d-derived-visualizations-v1",
+      "argv": [
+        "env",
+        "KG_MICROBE_EMBEDDINGS=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MicroGrowLink/data/kgm_and_embeddings_paired/DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v3_2026-06-26_12_55_27.tsv.gz",
+        "NUMBA_CACHE_DIR=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/visualization-environment/numba-cache",
+        "UV_OFFLINE=1",
+        "just",
+        "generate-visualizations"
+      ],
+      "condition": "Root may copy the verified existing native cache into W/.umap_cache first. Keep default reducers/coverage/prefixes/seed; no embed or embed-map."
+    },
+    {
+      "tag": "step7d-derived-qc-v1",
+      "argv": [
+        "env",
+        "UV_OFFLINE=1",
+        "just",
+        "qc"
+      ],
+      "condition": "Includes qc-sssom, strict, evidence, roundtrip/index/visualization and flat coverage; also writes native diagnostic reports."
+    },
+    {
+      "tag": "step7d-derived-unified-freshness-v1",
+      "argv": [
+        "just",
+        "check-unified-freshness"
+      ],
+      "condition": "After root-owned Step7d exception rebuild and native sidecar, separate ordinary commit."
+    },
+    {
+      "tag": "step7d-derived-unified-rejections-v1",
+      "argv": [
+        "just",
+        "check-unified-rejections"
+      ],
+      "condition": "Do not alter thresholds, rejection policy or owner selection."
+    },
+    {
+      "tag": "step7d-derived-record-review-tests-v1",
+      "argv": [
+        "env",
+        "UV_OFFLINE=1",
+        "just",
+        "test-record-reviews"
+      ],
+      "condition": "Dedicated immutable structured-review contract tier, as CI."
+    },
+    {
+      "tag": "step7d-derived-full-suite-v1",
+      "argv": [
+        "env",
+        "UV_OFFLINE=1",
+        "just",
+        "test"
+      ],
+      "condition": "Full tests plus maintained-package 35% coverage floor and script coverage report; no test weakening."
+    },
+    {
+      "tag": "step7d-derived-static-quality-v1",
+      "argv": [
+        "env",
+        "UV_OFFLINE=1",
+        "just",
+        "lint",
+        "format-check",
+        "typecheck"
+      ],
+      "condition": "Matches quality workflow; checks only, no formatter writes."
+    },
+    {
+      "tag": "step7d-derived-product-labels-v1",
+      "argv": [
+        "env",
+        "UV_OFFLINE=1",
+        "just",
+        "validate-products"
+      ],
+      "condition": "Dedicated blocking CI gate not included in just qc; uses existing pinned local ontology cache."
+    }
+  ],
+  "inspected_inputs": {
+    "justfile": "a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a",
+    ".github/workflows/tests.yaml": "3970d6ce1552239627688b94aee272258c3b729f4a96813c6bae3f022bdab84c",
+    ".github/workflows/qc-reviewed-sssom.yaml": "91943abf4eb62bb62008e0371e97324db9c357db4766c707bbb605b7d64c2ed5",
+    ".github/workflows/qc-supported-kgx.yaml": "909fbf298069f724a08ea84ddde0af60aa1679159d1fda2b8ab6f923e7999c4b",
+    ".github/workflows/qc-unified-freshness.yaml": "ac6bc08b68d65eb7525323f411f6e57651685824edac28f5c12c744808b0cfcb",
+    ".github/workflows/quality.yaml": "b06374f7b3af0fb513748d7d8db0791d4c00319c57cfc32cded2ba551e3323c7",
+    "pyproject.toml": "6f9eebf51774adb8c9ab742f832518ba1682fc43704ad994f73b25829645fef6",
+    "scripts/generate_ingredient_umap.py": "fb54091eb24b7f5f700486b79d1ed6075e5cfdb13c26032511f7814faae09c72",
+    "scripts/sfdp_layout.py": "6fbe015ff32c1bb2f71e272e2ffc8ff4086778ac0a3841f3b74b4c5eb71462be",
+    "scripts/check_visualization_currency.py": "0c5bb4bac8042965281624c7412135519b4a84d66eefbc50431ccf40f46d63fb",
+    "scripts/export_lists.py": "24230cbb1e57dcc76f97c7809763e67e60d6f95987371b1450579036ed9c9fcc",
+    "scripts/browser_export.py": "a834b3510161a20c027eb8fcb858d7a35f32caba7bd93d3cd74503a2e12302c2",
+    "scripts/generate_index_files.py": "ac9095355d22e42902fc413bd19654282d2c39bcd4a7946f57fb75d73641237f",
+    "scripts/check_flat_export_coverage.py": "6bde697356e31bfed1c98716aaebb3dda74a0c200cc06f4ead611c252dd215df",
+    "scripts/refresh_unchanged_cohort.py": "40d29bc094aa20fd8d1c4501a30bf5f754e4bc23247762df53ada5541068ecdf",
+    "src/mediaingredientmech/ingredient_bundle_refresh.py": "85ba9be43dfa46db9ff77bce6258a91398c161b091159ded7d02453df2eaa72c",
+    "reports/sssom_completion_20260921/assemble_review.py": "33980e6990f0b2668f6fa251966f395cefda61bb8cf5aed99d77777b0c0b7fb2",
+    "reports/semantic_review_20260921/resolution/build_review.py": "53e9ebc1fa521839839cef23e2a738bfc89cfcae5c90534c77727a825e788d97",
+    "src/mediaingredientmech/validation/semantic_release.py": "a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867",
+    "docs/SSSOM_RELEASE.md": "976b474a5c0d9bd6eba7541964f459eb46fcadc333aaf0140076e135e28605c2"
+  },
+  "historical_success_receipts": [
+    "logs/step7c-visualizations-native-existing-embeddings-v2.json",
+    "logs/step7c-full-suite-v3.json"
+  ],
+  "notes": [
+    "All command tags and new output paths must remain unused; increment suffix after a failed run and preserve the failure.",
+    "Independent final-head review and CI are separate root obligations; this preparation claims no validation pass for Step7d.",
+    "The source and existing cache were only read; no imports of producer modules or output-producing commands were run.",
+    "An initial host python3 hashlib.file_digest probe failed because that interpreter is older; repeated with the maintained Python 3.13.2 to compute the successful source digest."
+  ]
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/preflight_orchestration_v3.py", line 4, in <module>
+    frozen,old_reports,before,replacements=m.preflight();assert len(replacements)==3
+                                           ~~~~~~~~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/refresh_post1122_v3.py", line 98, in preflight
+    require(current_paths==baseline_paths,'source/code/test/workflow tracked membership changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/refresh_post1122_v3.py", line 62, in require
+    if not ok:raise ValueError('post1122 orchestration: '+msg)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: post1122 orchestration: source/code/test/workflow tracked membership changed

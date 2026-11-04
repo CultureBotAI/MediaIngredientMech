@@ -1,10 +1,10 @@
 identifier: cas:13235-36-4
 preferred_term: EDTA tetrasodium tetrahydrate salt
 ontology_mapping:
-  ontology_id: CHEBI:4735
-  ontology_label: ethylenediaminetetraacetic acid
+  ontology_id: CHEBI:750784
+  ontology_label: edetate sodium
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -28,6 +28,22 @@ ontology_mapping:
       is a distinct substance containing the anhydrous form, not a specialization
       of it. closeMatch claims similarity without subsumption. The ontology_id and
       the record''s own identifier are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Catalogue line1092/CAS13235-36-4/FW452.23 and PubChemCID23287279 consistently
+      specify EDTA tetrasodium tetrahydrate. No exact hydrate term found in the bounded
+      searches. CHEBI750784 edetate sodium is a closer parent than EDTA freeacidCHEBI4735:
+      it explicitly has four sodium ions and no water, with matching organic skeleton.
+      NCItC76598 independently describes that water-free tetrasodium parent/CAS64-02-8.
+      Retain hydrate CAS and broadMatch to CHEBI750784. See the complete identity,
+      mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml.
+      Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13235-36-4/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/750784/; https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C76598?include=full;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/4735/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms:
 - synonym_text: Ethylenediamintetraacetic acid (EDTA)
   synonym_type: RAW_TEXT
@@ -98,6 +114,21 @@ curation_history:
     acid (EDTA)''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["ontology_mapping","ontology_id"],"before":"CHEBI:4735","after":"CHEBI:750784"},{"op":"set","path":["ontology_mapping","ontology_label"],"before":"ethylenediaminetetraacetic
+    acid","after":"edetate sodium"}]. Original values are preserved here and in the
+    immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes
+    skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch.
+    Preserved prior history, roles, status and occurrence counts; no owner merge or
+    new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/;
+    primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 13235-36-4
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,0 +1,29 @@
+usage: promote_step7d_mapping.py [-h] [--root ROOT] --bundle BUNDLE
+                                 --producer PRODUCER --plan PLAN
+                                 --issue1117-log ISSUE1117_LOG
+                                 --issue901-log ISSUE901_LOG --config CONFIG
+                                 --log LOG --config-sha256 CONFIG_SHA256
+                                 --plan-sha256 PLAN_SHA256 [--apply |
+                                 --dry-run]
+
+Bounded Step7d projection + native receipt25; dry-run unless --apply. An
+externally reviewed, hash-pinned config freezes the actual native candidate
+and complete output rows. This operator grants no mapping/release approval.
+Canonical and receipt are one native guarded transaction. Policy artifacts
+stay historical through receipt24. CLI owns the native lock; callers must do
+likewise.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT
+  --bundle BUNDLE
+  --producer PRODUCER
+  --plan PLAN
+  --issue1117-log ISSUE1117_LOG
+  --issue901-log ISSUE901_LOG
+  --config CONFIG
+  --log LOG
+  --config-sha256 CONFIG_SHA256
+  --plan-sha256 PLAN_SHA256
+  --apply
+  --dry-run

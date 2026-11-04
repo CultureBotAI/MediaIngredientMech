@@ -1,0 +1,422 @@
+schema_version: 1.0.0
+review_id: 20261103T064120Z-step7d-independent-stale-parent-comments
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Independent Step 7d provenance review: stale parent comments'
+started_at: '2026-11-03T06:40:37.103615Z'
+finished_at: '2026-11-03T06:41:20.066949Z'
+reviewer:
+  identity: /root/step7d_independent_review; discovery independently supplied by /root/step7d_independent_review/projection_adversarial
+  kind: agent
+  model: gpt-6
+  independence: independent
+  independence_basis: Neither reviewer authored the owner operations, native generator,
+    projection, receipt or publication; the lead reviewer independently reproduced
+    all four contradictory comment cells at the committed head.
+skill: review-sssom-output
+completion: completed
+verdict: needs_curation
+scientific_review: false
+summary: One minor confirmed explanation/provenance defect affects four CAS registry
+  rows. Current identity and predicate fields are not disputed. This focused review
+  does not approve the whole Step 7d head.
+source:
+  git_revision: 7d35035f6c521c69fad94f73381c6a6eb7251fff
+  state: git_commit
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml
+    sha256: 91a6a79b3b6163f2d5fb100f7571946c5ba1fc9abfa865fbde935c6077c292b6
+    role: target
+  - path: data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml
+    sha256: dc24f839479e79e3e34a984266aae2fb480f5e6136896f3ffbb4d8bfb0a0dab3
+    role: target
+  - path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    sha256: 4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc
+    role: target
+  - path: data/ingredients/mapped/Maltotriose_Hydrate.yaml
+    sha256: b610eb816827776dbca74ea2ac5d04b9a20300c3a8e0dcb280e74df72f2f079f
+    role: target
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4
+    role: target
+  - path: reports/step7d_mapping_901_20261103/execution/owner-plan.json
+    sha256: a82bc6d32e750f16fc7ecfa4c0a5e172a5930c849d7dc3ec5a6ca106ed60fca4
+    role: context
+  - path: reports/step7d_mapping_901_20261103/native-candidate-v1/candidate.sssom.tsv
+    sha256: 2a2197e907150b679d804deaad6e92dc3955846118499245cae53c9716da14da
+    role: context
+scope:
+  description: All four registry rows with duplicate old/current parent explanation
+    sentences, and their four current source owners.
+  selection: Independent full selected-row projection audit identified these four;
+    exact subject/object/predicate selectors and owner paths follow.
+  coverage: full
+  population_size: 8
+  reviewed_target_ids:
+  - MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  - MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  - MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  - MIM:Maltotriose_Hydrate
+  - sssom-step7d-014
+  - sssom-step7d-038
+  - sssom-step7d-048
+  - sssom-step7d-077
+targets:
+- target_id: MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  path: data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml
+  label: Beta-Glycerophosphate disodium salt hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained owner
+- target_id: MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  path: data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml
+  label: D-Glucuronic acid sodium salt monohydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml
+    role: maintained owner
+- target_id: MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+  label: EDTA tetrasodium tetrahydrate salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained owner
+- target_id: MIM:Maltotriose_Hydrate
+  path: data/ingredients/mapped/Maltotriose_Hydrate.yaml
+  label: Maltotriose hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Maltotriose_Hydrate.yaml
+    role: maintained owner
+- target_id: sssom-step7d-014
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate; object_id=cas:154804-51-0;
+    predicate_id=skos:exactMatch
+  label: Beta-Glycerophosphate disodium salt hydrate → cas:154804-51-0 (skos:exactMatch)
+  kind: snapshot_row
+  record_class: SSSOMMapping
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient owner
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: native SSSOM producer; exact producer module path verified in generation
+      manifest
+- target_id: sssom-step7d-038
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate; object_id=cas:207300-70-7;
+    predicate_id=skos:exactMatch
+  label: D-Glucuronic acid sodium salt monohydrate → cas:207300-70-7 (skos:exactMatch)
+  kind: snapshot_row
+  record_class: SSSOMMapping
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml
+    role: maintained ingredient owner
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: native SSSOM producer; exact producer module path verified in generation
+      manifest
+- target_id: sssom-step7d-048
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt; object_id=cas:13235-36-4;
+    predicate_id=skos:exactMatch
+  label: EDTA tetrasodium tetrahydrate salt → cas:13235-36-4 (skos:exactMatch)
+  kind: snapshot_row
+  record_class: SSSOMMapping
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained ingredient owner
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: native SSSOM producer; exact producer module path verified in generation
+      manifest
+- target_id: sssom-step7d-077
+  path: mappings/ingredient_mappings.sssom.tsv
+  selector: subject_id=MIM:Maltotriose_Hydrate; object_id=cas:312693-63-3; predicate_id=skos:exactMatch
+  label: Maltotriose hydrate → cas:312693-63-3 (skos:exactMatch)
+  kind: snapshot_row
+  record_class: SSSOMMapping
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Maltotriose_Hydrate.yaml
+    role: maintained ingredient owner
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: native SSSOM producer; exact producer module path verified in generation
+      manifest
+checks:
+- check_id: native-inspect
+  name: Native target and input inspection
+  status: passed
+  required: true
+  summary: Eight exact targets and context inputs captured; all hashes independently
+    rechecked against the stated committed head.
+  target_ids:
+  - MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  - MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  - MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  - MIM:Maltotriose_Hydrate
+  - sssom-step7d-014
+  - sssom-step7d-038
+  - sssom-step7d-048
+  - sssom-step7d-077
+  command: python scripts/record_review.py inspect --targets ../step7d-execution-20261103/independent-review/stale-comment-targets.json
+    --input MAPPING_SEMANTICS.md --input reports/step7d_mapping_901_20261103/native-candidate-v1/candidate.sssom.tsv
+    --input reports/step7d_mapping_901_20261103/execution/owner-plan.json
+  exit_code: 0
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+  - owner-plan
+- check_id: comment-reproduction
+  name: Direct current-row and native candidate comparison
+  status: passed
+  required: true
+  summary: Lead independently read all four committed canonical row triplets and confirmed
+    that each old-parent sentence is unqualified beside the new one.
+  target_ids:
+  - MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  - MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  - MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  - MIM:Maltotriose_Hydrate
+  - sssom-step7d-014
+  - sssom-step7d-038
+  - sssom-step7d-048
+  - sssom-step7d-077
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+evidence:
+- evidence_id: current-sssom
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject/object rows enumerated in assessments and finding
+  accessed_at: '2026-11-03T06:41:20.066949Z'
+  support: supports
+  summary: Four current CAS-row comments assert both the previous and current parent
+    as current; predicate/object identity cells remain correct.
+  snapshot_sha256: cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4
+- evidence_id: native-candidate
+  kind: record_content
+  reference: reports/step7d_mapping_901_20261103/native-candidate-v1/candidate.sssom.tsv
+  locator: subject/object rows enumerated in assessments and finding
+  accessed_at: '2026-11-03T06:41:20.066949Z'
+  support: supports
+  summary: The native candidate contains only the current parent statement for each
+    of the four CAS registry rows.
+  snapshot_sha256: 2a2197e907150b679d804deaad6e92dc3955846118499245cae53c9716da14da
+- evidence_id: owner-plan
+  kind: record_content
+  reference: reports/step7d_mapping_901_20261103/execution/owner-plan.json
+  locator: Exact bound bytes at 7d35035f6c521c69fad94f73381c6a6eb7251fff
+  accessed_at: '2026-11-03T06:41:20.066949Z'
+  support: supports
+  summary: The exact selected owner operations retarget the four ontology parents.
+  snapshot_sha256: a82bc6d32e750f16fc7ecfa4c0a5e172a5930c849d7dc3ec5a6ca106ed60fca4
+- evidence_id: semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  locator: Exact bound bytes at 7d35035f6c521c69fad94f73381c6a6eb7251fff
+  accessed_at: '2026-11-03T06:41:20.066949Z'
+  support: supports
+  summary: Row comment is explanatory provenance, separate from source tokens and
+    identity synonyms.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+assessments:
+- assessment_id: stale-parent-1
+  area: provenance
+  topic: Current versus historical registry explanation
+  outcome: concern
+  summary: 'Current comment: Registry/identity row preserving cas:154804-51-0 alongside
+    parent CHEBI:17270. Registry/identity row preserving cas:154804-51-0 alongside
+    parent CHEBI:132089. Native current explanation: Registry/identity row preserving
+    cas:154804-51-0 alongside parent CHEBI:132089. The owner and ontology row now
+    identify only the latter parent.'
+  target_ids:
+  - MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  - sssom-step7d-014
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+  - owner-plan
+  details: This is a read-only provenance review; no new chemical identity judgment
+    or release approval.
+- assessment_id: stale-parent-2
+  area: provenance
+  topic: Current versus historical registry explanation
+  outcome: concern
+  summary: 'Current comment: Registry/identity row preserving cas:207300-70-7 alongside
+    parent CHEBI:4178. Registry/identity row preserving cas:207300-70-7 alongside
+    parent CHEBI:32144. Native current explanation: Registry/identity row preserving
+    cas:207300-70-7 alongside parent CHEBI:32144. The owner and ontology row now identify
+    only the latter parent.'
+  target_ids:
+  - MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  - sssom-step7d-038
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+  - owner-plan
+  details: This is a read-only provenance review; no new chemical identity judgment
+    or release approval.
+- assessment_id: stale-parent-3
+  area: provenance
+  topic: Current versus historical registry explanation
+  outcome: concern
+  summary: 'Current comment: Registry/identity row preserving cas:13235-36-4 alongside
+    parent CHEBI:4735. Registry/identity row preserving cas:13235-36-4 alongside parent
+    CHEBI:750784. Native current explanation: Registry/identity row preserving cas:13235-36-4
+    alongside parent CHEBI:750784. The owner and ontology row now identify only the
+    latter parent.'
+  target_ids:
+  - MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  - sssom-step7d-048
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+  - owner-plan
+  details: This is a read-only provenance review; no new chemical identity judgment
+    or release approval.
+- assessment_id: stale-parent-4
+  area: provenance
+  topic: Current versus historical registry explanation
+  outcome: concern
+  summary: 'Current comment: Registry/identity row preserving cas:312693-63-3 alongside
+    parent CHEBI:61993. Registry/identity row preserving cas:312693-63-3 alongside
+    parent CHEBI:140999. Native current explanation: Registry/identity row preserving
+    cas:312693-63-3 alongside parent CHEBI:140999. The owner and ontology row now
+    identify only the latter parent.'
+  target_ids:
+  - MIM:Maltotriose_Hydrate
+  - sssom-step7d-077
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+  - owner-plan
+  details: This is a read-only provenance review; no new chemical identity judgment
+    or release approval.
+findings:
+- finding_id: stale-parent-registry-comments
+  issue_key: step7d-stale-parent-registry-comments
+  category: provenance
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Four projected registry comments present superseded ontology parents as current
+  description: The projection joins prior and regenerated comment sentences without
+    marking the prior sentence historical. For four retargeted owners, the exact CAS
+    row therefore states it is alongside both the old parent and the new parent, while
+    the current ontology row maps only to the new parent. SSSOM identity/predicate
+    fields are correct; this is a bounded current-row explanation defect.
+  target_ids:
+  - MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  - MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  - MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  - MIM:Maltotriose_Hydrate
+  - sssom-step7d-014
+  - sssom-step7d-038
+  - sssom-step7d-048
+  - sssom-step7d-077
+  field_paths:
+  - comment
+  evidence_ids:
+  - current-sssom
+  - native-candidate
+  - owner-plan
+  - semantics
+  rule_id: SSSOM comment current explanation and historical provenance separation
+  native_severity: low
+  normalization_reason: Bounded explanatory prose defect; identities, predicates and
+    release holds are correct.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Maltotriose_Hydrate.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/step7d_mapping_901_20261103/execution/promote_step7d_mapping.py
+    role: archived projection operator whose output_from_candidate joins current and
+      previous comments
+actions:
+- action_id: qualify-superseded-comments
+  description: Correct only the four projected comment cells through the guarded native
+    mapping workflow. Make the former parent explicitly historical/superseded, retaining
+    the current native parent statement and all historical evidence. Preserve the
+    user-required single unpublished receipt batch; retain previous batch evidence
+    rather than append an unauthorized second batch.
+  finding_ids:
+  - stale-parent-registry-comments
+  target_ids:
+  - MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate
+  - MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate
+  - MIM:EDTA_Tetrasodium_Tetrahydrate_Salt
+  - MIM:Maltotriose_Hydrate
+  - sssom-step7d-014
+  - sssom-step7d-038
+  - sssom-step7d-048
+  - sssom-step7d-077
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Maltotriose_Hydrate.yaml
+    role: maintained owner; owner content is correct for this finding
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/step7d_mapping_901_20261103/execution/promote_step7d_mapping.py
+    role: archived projection operator whose output_from_candidate joins current and
+      previous comments
+  acceptance_checks:
+  - All four current comments clearly distinguish previous and current parent.
+  - Previous prose remains preserved verbatim in immutable evidence or explicitly
+    historical text.
+  - No scientific row cells, owner bytes, snapshot cells, thresholds, tests or release
+    decisions change.
+  - Native receipt chain and required checks pass; independently re-review actual
+    final head.
+limitations:
+- Focused provenance-only assessment at exact historical commit 7d35035f6c521c69fad94f73381c6a6eb7251fff;
+  primary scientific claims are outside this finding review.
+- Full Step 7d approval, completed full-suite evidence and green CI are not claimed
+  here.
+- The separate final scientific review will retain existing role, dropped-owner and
+  deferred alias holds.
+notes:
+- No supervisor receipt binding was supplied to this reviewer and none is invented.
+- This review does not edit maintained data or GitHub. Root owns issue filing and
+  guarded remediation.
+tags:
+- step7d
+- independent-review
+- provenance
+- not-release-approval

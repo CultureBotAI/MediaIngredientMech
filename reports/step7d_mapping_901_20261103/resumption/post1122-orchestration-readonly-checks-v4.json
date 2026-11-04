@@ -1,0 +1,45 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1126",
+  "operator_sha256": "76bb1e6a9dd8828a45c3033cfaa8c60651bf3a943c62998597e0562e898e98c7",
+  "predecessor_sha256": "dd0b1d212d52c6020b6e6d8f17cf2b29f042cbdb43e76efbe5631b4fa2756ecd",
+  "controls_sha256": "5fb7d8705dfb374b70eba1a742c3d252114449e89a4ec9b0082e56f0d18b550d",
+  "checks": [
+    "v4 bytes differ from v3 only in baseline inventory parser; exact membership guard retained",
+    "all other code, preflight gates, protected-input checks, mutations and native commands AST-identical",
+    "positive fixture reproduces v3 false failure on quoted non-ASCII and newline names",
+    "v4 accepts identical seven-file Git membership including five Unicode names and newline/space name",
+    "v4 rejects genuinely missing Unicode member through unchanged exact-set guard",
+    "v4 rejects genuinely added tracked member through unchanged exact-set guard",
+    "v4 exact membership also passes with core.quotePath=false",
+    "read-only actual protected inventories match exactly: 3582 baseline and current tracked paths",
+    "original failed v3 native preflight receipt and log preserved"
+  ],
+  "checks_passed": 9,
+  "actual_inventory_counts": [
+    3582,
+    3582
+  ],
+  "fixture": {
+    "baseline_commit": "ad72dcb0a01ce9dcfeeeee6617dad124660c4667",
+    "paths": [
+      "data/ingredients/mapped/L-α-phosphatidylinositol_From_Glycine_Max_Soybean.yaml",
+      "data/ingredients/mapped/Α-lipoic_Acid.yaml",
+      "data/ingredients/mapped/Α1-Acid_Glycoprotein_From_Bovine_Plasma.yaml",
+      "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml",
+      "tests/filename with spaces and\nnewline.py",
+      ".github/workflows/plain.yaml"
+    ],
+    "v3_false_rejection": "source/code/test/workflow tracked membership changed",
+    "missing_rejection": "source/code/test/workflow tracked membership changed",
+    "extra_rejection": "source/code/test/workflow tracked membership changed"
+  },
+  "preserved_v3_failure": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-independent-post1122-v3-preflight.json": "3249397371112d15cd7f3f875f6f212866f871b5538e756ef6a49a68c4625f7c",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-independent-post1122-v3-preflight.log": "9a9c5b560795a462a878aa4877b3fca43eb7a16d1441e9349accdfe2010cd1ef"
+  },
+  "maintained_refresh_executed": false,
+  "full_native_preflight_executed": false,
+  "maintained_writes": false,
+  "required_order": "Root executes v4 native refresh before separately authorized #1123/#1124 test edits."
+}

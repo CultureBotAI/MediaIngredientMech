@@ -1,0 +1,25 @@
+{
+  "operator_sha256": "f7691a867bcc32753bee2c533989a3c53ea7297510e3a9f0c8fce25b5a8da5dc",
+  "controls_sha256": "b4757b2f272524ba60e8b67acc659624ae789e8003180456c03d3e82c53b48e7",
+  "checks_passed": 15,
+  "checks": [
+    "new evidence created exclusively with exact readback",
+    "existing identical evidence retained without rewriting inode",
+    "differing target rejected without overwrite",
+    "symlink target rejected",
+    "symlink parent rejected",
+    "hardlinked file rejected",
+    "path traversal rejected",
+    "absolute target rejected",
+    "noncanonical relative target rejected",
+    "complete positive manifest validates without creating archive",
+    "wrong reviewed manifest hash rejected",
+    "source drift rejected before archive write",
+    "old report drift rejected before archive write",
+    "protected maintained endpoint drift rejected",
+    "duplicate target rejected"
+  ],
+  "fixture": "Disposable external temporary directory only",
+  "maintained_writes": false,
+  "git_mutations": false
+}

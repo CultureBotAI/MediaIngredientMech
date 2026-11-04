@@ -1,0 +1,839 @@
+[
+  {
+    "owner": "data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml",
+    "current_sha256": "2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565",
+    "title": "Residual whole-hydrate chemistry and exact parent synonym",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogue line1360 names the disodium D-fructose6-phosphate hydrate and CAS26177-86-6. Inspected supplier F3627 independently uses that CAS and C6H11Na2O9P·xH2O. No fixed water count is justified. The ChEBI parent is the two-sodium water-free moiety; retain the CAS identity and use a form-of broadMatch, never an exact hydrate-to-parent assertion.",
+    "chemistry": "Current C6H11Na2O9P/InChI/SMILES and CID22812950 describe zero water. CAS lookup returns several distinct representations, including mono-water candidates; do not select the first CID or turn x into1. Withdraw the four active whole-material descriptors, retain original CAS/import evidence/history.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.molecular_formula",
+        "old": "C6H11Na2O9P",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.inchi",
+        "old": "InChI=1S/C6H13O9P.2Na/c7-1-3(8)5(10)6(11)4(9)2-15-16(12,13)14;;/h4-7,9-11H,1-2H2,(H2,12,13,14);;/q;2*+1/p-2/t4-,5-,6-;;/m1../s1",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.smiles",
+        "old": "C(C(C(C(C(=O)CO)O)O)O)OP(=O)([O-])[O-].[Na+].[Na+]",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.pubchem_cid",
+        "old": 22812950,
+        "new": null
+      },
+      {
+        "operation": "set",
+        "field": "synonyms[0].synonym_type",
+        "old": "EXACT_SYNONYM",
+        "new": "REJECTED_LABEL",
+        "exact_synonym_text": "disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate",
+        "preserve_source": "chebi_synonym_review"
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogue line1360 names the disodium D-fructose6-phosphate hydrate and CAS26177-86-6. Inspected supplier F3627 independently uses that CAS and C6H11Na2O9P·xH2O. No fixed water count is justified. The ChEBI parent is the two-sodium water-free moiety; retain the CAS identity and use a form-of broadMatch, never an exact hydrate-to-parent assertion.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "web:v3",
+          "v1:23-chebi-parent",
+          "v1:23-pubchem-cas"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v3",
+      "v1:23-chebi-parent",
+      "v1:23-pubchem-cas",
+      "web:F3627"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+    "current_sha256": "e77bcd2a4a944106d4e17fde216fd20169d0074f660d088aeeb68c8426d78d3d",
+    "title": "Nearest-parent correction: sodium glucuronate rather than free glucuronic acid",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogue line1164 names D-glucuronic acid sodium salt monohydrate CAS207300-70-7; CID24892836 independently has the sodium/D-stereo/one-water composition. Exact hydrate candidate not found in bounded CHEBI/NCIT search. CHEBI32144 Sodium glucuronate is the closer salt parent than current acidCHEBI4178; its explicit D stereochemical InChI is the current InChI without water and its CAS14984-34-0 is distinct.",
+    "chemistry": "Current one-water formula and stereospecific InChI match PubChemCID24892836. SMILES encodes connectivity and water but is not the independent proof of D configuration; the supplied CAS/InChI is the stereo support. Retain existing chemistry without claiming fresh experimental characterization.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "set",
+        "field": "ontology_mapping.ontology_id",
+        "old": "CHEBI:4178",
+        "new": "CHEBI:32144"
+      },
+      {
+        "operation": "set",
+        "field": "ontology_mapping.ontology_label",
+        "old": "D-glucuronic acid",
+        "new": "Sodium glucuronate"
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogue line1164 names D-glucuronic acid sodium salt monohydrate CAS207300-70-7; CID24892836 independently has the sodium/D-stereo/one-water composition. Exact hydrate candidate not found in bounded CHEBI/NCIT search. CHEBI32144 Sodium glucuronate is the closer salt parent than current acidCHEBI4178; its explicit D stereochemical InChI is the current InChI without water and its CAS14984-34-0 is distinct.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "v1:25-pubchem-cas",
+          "v1:25-chebi-parent",
+          "v2:25-chebi-sodium-glucuronate"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v1:25-pubchem-cas",
+      "v1:25-chebi-parent",
+      "v2:25-chebi-sodium-glucuronate"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/D-_-melezitose_Hydrate.yaml",
+    "current_sha256": "e1b61c883ad813d73b3b508054774699b577fbaa90c8dd6fd4748abfa20bcc59",
+    "title": "Unspecified hydrate encoded as fixed monohydrate",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogue line1359 names generic D-(+)-melezitose hydrate CAS207511-10-2 with dry-basis504.44. SupplierM5375 independently states xH2O under that CAS. This is not the fixed monohydrate owner already curated under CAS10030-67-8. Retain its own CAS and generic-hydrate preferred label and use broadMatch to melezitoseCHEBI6731.",
+    "chemistry": "Current C18H34O17/InChI/SMILES/CID16217716 encode exactly one water, whereas the named source only establishes xH2O. Supplier itself displays a mono-water structure beside variable formula; that representation is not a quantitative hydration determination. Remove those four whole-material descriptors without calculating replacements.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.molecular_formula",
+        "old": "C18H34O17",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.inchi",
+        "old": "InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.smiles",
+        "old": "C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.pubchem_cid",
+        "old": 16217716,
+        "new": null
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogue line1359 names generic D-(+)-melezitose hydrate CAS207511-10-2 with dry-basis504.44. SupplierM5375 independently states xH2O under that CAS. This is not the fixed monohydrate owner already curated under CAS10030-67-8. Retain its own CAS and generic-hydrate preferred label and use broadMatch to melezitoseCHEBI6731.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "web:v3",
+          "v1:27-chebi-parent",
+          "v1:27-pubchem-cas"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v3",
+      "v1:27-chebi-parent",
+      "v1:27-pubchem-cas",
+      "web:M5375"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml",
+    "current_sha256": "fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f",
+    "title": "Variable sodium/hydrate material encoded as fixed monosodium anhydrate",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogue line1378 names DL-glycerol1-phosphate sodium salt hydrate CAS17603-42-8. Inspected supplier61668 independently names the same racemic1-phosphate hydrate and CAS, but explicitly gives xNa+/yH2O. The phosphate position/racemic scope are supported; sodium and water stoichiometry must remain unspecified. The broader rac-glycerol1-phosphate parentCHEBI14336 is consistent. Retain CAS identity, use broadMatch, and do not equate with G6501 positional-isomer mixture.",
+    "chemistry": "Current mono-sodium, zero-water formula/InChI/SMILES/CID23672316 over-specify the supplied material. PubChem CAS lookup returns multiple sodium/structural representations. Remove the four exact whole-material descriptors; do not choose another CID or compute Na/water stoichiometry.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.molecular_formula",
+        "old": "C3H8NaO6P",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.inchi",
+        "old": "InChI=1S/C3H9O6P.Na/c4-1-3(5)2-9-10(6,7)8;/h3-5H,1-2H2,(H2,6,7,8);/q;+1/p-1",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.smiles",
+        "old": "C(C(COP(=O)(O)[O-])O)O.[Na+]",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.pubchem_cid",
+        "old": 23672316,
+        "new": null
+      },
+      {
+        "operation": "set",
+        "field": "synonyms[0].synonym_type",
+        "old": "EXACT_SYNONYM",
+        "new": "REJECTED_LABEL",
+        "exact_synonym_text": "2,3-dihydroxypropyl dihydrogen phosphate",
+        "preserve_source": "chebi_synonym_review"
+      },
+      {
+        "operation": "set",
+        "field": "synonyms[1].synonym_type",
+        "old": "EXACT_SYNONYM",
+        "new": "REJECTED_LABEL",
+        "exact_synonym_text": "glycerol 1-(dihydrogen phosphate)",
+        "preserve_source": "chebi_synonym_review"
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogue line1378 names DL-glycerol1-phosphate sodium salt hydrate CAS17603-42-8. Inspected supplier61668 independently names the same racemic1-phosphate hydrate and CAS, but explicitly gives xNa+/yH2O. The phosphate position/racemic scope are supported; sodium and water stoichiometry must remain unspecified. The broader rac-glycerol1-phosphate parentCHEBI14336 is consistent. Retain CAS identity, use broadMatch, and do not equate with G6501 positional-isomer mixture.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "web:v6",
+          "v1:28-chebi-parent",
+          "v1:28-pubchem-cas"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v6",
+      "v1:28-chebi-parent",
+      "v1:28-pubchem-cas",
+      "web:glycerol61668"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml",
+    "current_sha256": "f87bf4f7abb694e50061183b62dd8f9a85e5cea1e9aaddc1568693c635c45be5",
+    "title": "Resolve variable-hydrate scope of CAS1637-73-6 versus CHEBI172950 before identity migration",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "SigmaI1252 source is a DL-isocitrate trisodium hydrate with variable water. Current local identifier preserves that source form; CHEBI172950 despite its acid-like label structurally denotes trisodium isocitrate and carries the same CAS1637-73-6 as the supplier, while its formula/PubChemCAS result are water-free. The exact-term-versus-CAS route therefore needs an explicit registry/supplied-form ruling beyond using the repeated CAS. Do not force a new identity or claim that the ChEBI term exactly denotes the hydrate. Keep this owner unchanged outside the batch.",
+    "chemistry": "Step7b correctly removed parent formula/InChI/SMILES. Current chemistry retains only CAS/import provenance; this narrower review does not undo that cleanup or certify retained CAS as form-specific. No further edit while identity route is unresolved.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v4",
+      "v1:29-chebi-parent",
+      "v1:29-pubchem-cas",
+      "issue:871",
+      "issue:268",
+      "web:I1252"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+    "current_sha256": "ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d",
+    "title": "Nearest-parent correction: tetrasodium edetate rather than EDTA free acid",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogue line1092/CAS13235-36-4/FW452.23 and PubChemCID23287279 consistently specify EDTA tetrasodium tetrahydrate. No exact hydrate term found in the bounded searches. CHEBI750784 edetate sodium is a closer parent than EDTA freeacidCHEBI4735: it explicitly has four sodium ions and no water, with matching organic skeleton. NCItC76598 independently describes that water-free tetrasodium parent/CAS64-02-8. Retain hydrate CAS and broadMatch to CHEBI750784.",
+    "chemistry": "C10H20N2Na4O12 and current InChI/SMILES encode four sodium and four water molecules, matching the source formula weight/PubChem record. No chemistry edits.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "set",
+        "field": "ontology_mapping.ontology_id",
+        "old": "CHEBI:4735",
+        "new": "CHEBI:750784"
+      },
+      {
+        "operation": "set",
+        "field": "ontology_mapping.ontology_label",
+        "old": "ethylenediaminetetraacetic acid",
+        "new": "edetate sodium"
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogue line1092/CAS13235-36-4/FW452.23 and PubChemCID23287279 consistently specify EDTA tetrasodium tetrahydrate. No exact hydrate term found in the bounded searches. CHEBI750784 edetate sodium is a closer parent than EDTA freeacidCHEBI4735: it explicitly has four sodium ions and no water, with matching organic skeleton. NCItC76598 independently describes that water-free tetrasodium parent/CAS64-02-8. Retain hydrate CAS and broadMatch to CHEBI750784.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "v1:30-pubchem-cas",
+          "v7:30-chebi-edetate-sodium",
+          "v7:30-ncit-edetate-sodium",
+          "v1:30-chebi-parent"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v1:30-pubchem-cas",
+      "v7:30-chebi-edetate-sodium",
+      "v7:30-ncit-edetate-sodium",
+      "v1:30-chebi-parent"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Fecl2_X_6_H2o.yaml",
+    "current_sha256": "c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10",
+    "title": "Unresolved sourceform for FeCl2 x 6 H2O",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      344,
+      901,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Current primary MediaDiveingredient555 repeats FeCl2 x6H2O but gives anhydrousCl2Fe/CAS7758-94-3/mass126.75. #344 already records this exact conflict and refutes the prior sulfate-to-chloride guess. No inspected primary preparation or product resolves the actual six-water substance. Keep localidentity and hold unchanged; do not promote/broadMatch based only on literal hydration label.",
+    "chemistry": "chemical_properties is empty after prior uncertainty cleanup. Neither anhydrous formula nor invented six-water formula is justified.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v2:mediadive-ingredients",
+      "v1:31-chebi-parent",
+      "issue:344"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Fecl3_X_4_H2o.yaml",
+    "current_sha256": "35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7",
+    "title": "Unresolved sourceform for FeCl3 x 4 H2O",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      344,
+      901,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "MediaDiveingredient922 repeats FeCl3 x4H2O while giving water-freeCl3Fe/CAS7705-08-0/mass162.203. #344 leaves the original source/form unresolved. No form-specific product or recipe evidence inspected settles tetrahydrate identity. Keep the local record unchanged and do not infer a six-water replacement or stronger relation.",
+    "chemistry": "chemical_properties is empty; keep that uncertainty rather than reintroduce either inherited parent structures or label-calculated water.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v2:mediadive-ingredients",
+      "v1:32-chebi-parent",
+      "issue:344"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml",
+    "current_sha256": "2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab",
+    "title": "Fosmidomycin salt-hydrate CAS and sodium stoichiometry conflict",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "New source conflict: catalogueline944 says sodium salt hydrate CAS66508-37-0 but FW183.1. CurrentNCItC223823 and PubChemCAS66508-37-0 describe defined sodium fosmidomycin, whose water-free mass is205.08. Inspected supplierF8682 describes the hydrate as C4H10NO5P·xNa+·yH2O, free-acid-basis183.10 and CAS66508-53-0. The catalogue has no supplier field, so it cannot be silently assigned F8682 or a fixed monosodium species. Drop pending source-specific salt/CAS decision; do not promote to NCIt merely by CAS overlap.",
+    "chemistry": "Current C4H9NNaO5P/CID5141362/InChI/SMILES encode fixed monosodium anhydrate. This is a real whole-material scope finding, but owner stays wholly unchanged while identity is unresolved.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v3",
+      "v1:33-chebi-parent",
+      "v1:33-pubchem-cas",
+      "prior:ncit-C223823-fosmidomycin-sodium",
+      "web:F8682"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml",
+    "current_sha256": "f5e8481e5f4588940e88d389061bdfee2e23838b653928c4bf3f18ca36c26e53",
+    "title": "Pentahydrate published with water-free compound descriptors",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogueline1214 CAS19046-60-7/FW426.39 says pentahydrate. Inspected primaryCalbiochem345646 explicitly names alpha-D-galactose1-phosphate dipotassium pentahydrate with C6H11K2O9P·5H2O/426.39; this supports the stereochemical source and broader alpha-D parentCHEBI17973. No exact hydrate/salt term found in bounded discovery. Retain CAS and broadMatch to the closest found parent.",
+    "chemistry": "Current formulaC6H11K2O9P/InChI/SMILES/CID87916 lack all five waters. PubChem CAS search returns anhydrate, dihydrate, pentahydrate and other forms, and supplier page itself displays water-free structure beside its five-water formula. Remove four exact whole-material descriptors; no CID selection or constructed replacement.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.molecular_formula",
+        "old": "C6H11K2O9P",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.inchi",
+        "old": "InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.smiles",
+        "old": "C(C1C(C(C(C(O1)OP(=O)([O-])[O-])O)O)O)O.[K+].[K+]",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.pubchem_cid",
+        "old": 87916,
+        "new": null
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogueline1214 CAS19046-60-7/FW426.39 says pentahydrate. Inspected primaryCalbiochem345646 explicitly names alpha-D-galactose1-phosphate dipotassium pentahydrate with C6H11K2O9P·5H2O/426.39; this supports the stereochemical source and broader alpha-D parentCHEBI17973. No exact hydrate/salt term found in bounded discovery. Retain CAS and broadMatch to the closest found parent.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "web:v6",
+          "v1:34-chebi-parent",
+          "v1:34-pubchem-cas"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v6",
+      "v1:34-chebi-parent",
+      "v1:34-pubchem-cas",
+      "web:galactose345646"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Gly-Gln_Monohydrate.yaml",
+    "current_sha256": "96cc72b44792c1cf088d54e37e12da512b40f2ab82291068362a91c4e1572c37",
+    "title": "Residual parent structures after Gly-Gln monohydrate formula correction",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogueline1336/CAS172669-64-6/FW221.21 identifies Gly-Gln monohydrate. PubChemCAS gives the L-glutamine dipeptide with one water and CHEBI73898 is the corresponding water-free glycyl-L-glutamine parent. Retain hydrate CAS and broadMatch; do not collapse into the parent.",
+    "chemistry": "FormulaC7H15N3O5 was corrected and is consistent. InChI/SMILES still encode C7H13N3O4 without water. Remove those two inherited parent structures, retain verified formula/CAS; #326 was closed for its narrower formula correction and should not be misreported as unfixed wholesale.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.inchi",
+        "old": "InChI=1S/C7H13N3O4/c8-3-6(12)10-4(7(13)14)1-2-5(9)11/h4H,1-3,8H2,(H2,9,11)(H,10,12)(H,13,14)/t4-/m0/s1",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.smiles",
+        "old": "NCC(=O)N[C@@H](CCC(N)=O)C(=O)O",
+        "new": null
+      },
+      {
+        "operation": "set",
+        "field": "synonyms[0].synonym_type",
+        "old": "EXACT_SYNONYM",
+        "new": "REJECTED_LABEL",
+        "exact_synonym_text": "glycyl-L-glutamine",
+        "preserve_source": "chebi_synonym_review"
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogueline1336/CAS172669-64-6/FW221.21 identifies Gly-Gln monohydrate. PubChemCAS gives the L-glutamine dipeptide with one water and CHEBI73898 is the corresponding water-free glycyl-L-glutamine parent. Retain hydrate CAS and broadMatch; do not collapse into the parent.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "v1:35-chebi-parent",
+          "v1:35-pubchem-cas",
+          "issue:326"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v1:35-chebi-parent",
+      "v1:35-pubchem-cas",
+      "issue:326"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Glycerol_Phosphate_Disodium_Salt_Hydrate.yaml",
+    "current_sha256": "34a148f0b60690558fc0aa0970a93b619fd340e057a3e07e490000b94d3859bc",
+    "title": "Unresolved sourceform for Glycerol phosphate disodium salt hydrate",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      1118,
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogueline207 explicitly selects SigmaG6501/CAS55073-41-1. Re-read supplier-deposited SID24895257 labels it an isomeric mixture; GSRSRCS9EQ01V4 is a mixture and NCItC120561 links its CAS/UNII. The adjacent Sodium_glycerophosphate owner already owns that NCItidentity with different CultureMech occurrence context. Shared registry metadata cannot decide ownership or justify merging/transferring those occurrences. Drop whole owner under #1118, including any partial chemistry cleanup.",
+    "chemistry": "Single positional, zero-water C3H7Na2O6P/InChI/SMILES/CID14754 and SINGLE_INGREDIENT do not describe the whole supplied isomeric hydrate mixture. This confirmed finding remains on #1118; no averaged formula, component proportions or identity reassignment is proposed.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "priority:pubchem-sigma-G6501",
+      "priority:gsrs-g6501-mixture",
+      "priority:ncit-sodium-glycerophosphate",
+      "v1:36-chebi-parent",
+      "v1:36-pubchem-cas",
+      "issue:1118"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml",
+    "current_sha256": "3893e76f092f6bd8b3a3db6de905846b23369c6944729b5ba8508ddcd9adfacd",
+    "title": "Gold chloride hydrate is chloroauric acid hydrate, not hydrated AuCl3 parent",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogueline492 names gold(III)chloride hydrate/CAS27988-77-8. Inspected supplier254169 associates that CAS with HAuCl4·aq, chloroauric acid/tetrachloroaurate hydrate, with degreeofhydration about3; current CHEBI30076 describes AuCl3. This is a substantive wrong-parent boundary, not just missing water. Bounded discovery found no exact eligible term or directly verified neutral acid parent to substitute. Drop and retain explicit issue for form/parent resolution; do not choose tetrachloroaurate anion as exact identity.",
+    "chemistry": "Current one-water AuCl4H3O/InChI/SMILES is a displayed supplier representation, not proof of a fixed one-water material. The CAS lookup404 is preserved, not evidence thatCASdoesnotexist. Do not edit the dropped owner. Existing SUPPORTED CAS row1357 is historical and not renewed; wrong parent/formula does not by itself falsify supplierCAS identity.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v3",
+      "v1:37-chebi-parent",
+      "web:gold254169"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+    "current_sha256": "fb412a63050b2d599ee3cfab9fcafcaf141b3ac4c8a1febe6a57709831bc90d6",
+    "title": "Verify and use form-specific K2HPO4 trihydrateCAS instead of local fallback",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "MediaDive244 explicitly names K2HPO4 x3H2O but wrongly accompanies it with water-freeCAS7758-11-4/mass174.176. Inspected officialSupelco105099 product independently establishes the same named trihydrate as CAS16788-57-1/K2HPO4·3H2O/228.22, corroborated by PubChemCID16217523. Bounded hydrate-name and newCAS searches found no exactCHEBI/NCIt term. §3step2 therefore supports replacing the local primary with cas:16788-57-1 and keeping CHEBI131527 as broad parent; do not assign the actual historical source toSupelco.",
+    "chemistry": "Retained formulaHO4P.2K.3H2O is supported by independent primary trihydrate evidence. PriorStep7b removed wrong dry structures. Add only verifiedcas_rn, preserveformula and do not automatically fill structures.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "set",
+        "field": "identifier",
+        "old": "kgmicrobe.compound:k2hpo4_x_3_h2o",
+        "new": "cas:16788-57-1"
+      },
+      {
+        "operation": "set",
+        "field": "chemical_properties.cas_rn",
+        "old": null,
+        "new": "16788-57-1"
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "MediaDive244 explicitly names K2HPO4 x3H2O but wrongly accompanies it with water-freeCAS7758-11-4/mass174.176. Inspected officialSupelco105099 product independently establishes the same named trihydrate as CAS16788-57-1/K2HPO4·3H2O/228.22, corroborated by PubChemCID16217523. Bounded hydrate-name and newCAS searches found no exactCHEBI/NCIt term. §3step2 therefore supports replacing the local primary with cas:16788-57-1 and keeping CHEBI131527 as broad parent; do not assign the actual historical source toSupelco.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "web:v6",
+          "v2:38-pubchem-cas",
+          "v2:mediadive-ingredients",
+          "v1:38-chebi-parent",
+          "issue:871"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "web:v6",
+      "v2:38-pubchem-cas",
+      "v2:mediadive-ingredients",
+      "v1:38-chebi-parent",
+      "issue:871",
+      "web:K2HPO4-105099"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/K2so4_X_7_H2o.yaml",
+    "current_sha256": "06849d90807f1547a48c88de5dc022b466ae9b506efd08fb6929b1b6192b3412",
+    "title": "Unresolved sourceform for K2SO4 x 7 H2O",
+    "decision": "drop",
+    "existing_issue_numbers": [
+      344,
+      901,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "MediaDive1920 names K2SO4 x7H2O but has K2O4S/CAS7778-80-5/mass174.26. #344 explicitly includes this unresolved label; a transcription hypothesis remains a hypothesis. No inspected primary source establishes an orderable heptahydrate or the intended recipe correction. Keep local record and both source aliases unchanged; no anhydrate substitution or inferred seven-water chemistry.",
+    "chemistry": "Empty chemical_properties is the correct expression of current unresolved form. Do not restore parentCAS or construct formula.",
+    "recommended_action": [],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v2:mediadive-ingredients",
+      "v1:39-chebi-parent",
+      "issue:344"
+    ]
+  },
+  {
+    "owner": "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml",
+    "current_sha256": "a1d6287d6dd0de9ac92aba2af65b60d3e72f139ef46becb2ef06c6a28d2147b9",
+    "title": "Variable lithiumchloridehydrate encoded as fixedmonohydrate",
+    "decision": "include",
+    "existing_issue_numbers": [
+      901,
+      268,
+      718
+    ],
+    "deduplication": "Root must inspect the fresh all-state issue inventory before creating a new issue; prefer updating explicit existing owner/mechanism issue. This author made no GitHub writes.",
+    "reason": "Catalogueline483 names lithiumchloridehydrate/CAS85144-11-2 without a fixedwatercount. Inspected SigmaCoA298328 explicitly gives LiCl·xH2O and drybasis42.39 for thatCAS. PubChem maps it to a mono-waterrepresentation, which does not establish fixedhydration of the namedgenericmaterial. Retain sourceCAS and genericpreferredterm, broadMatch to lithiumchlorideCHEBI48607; do not rename tomonohydrate.",
+    "chemistry": "Current ClH2LiO/InChI/SMILES/CID23681138 encode exactlyonewater. Withdraw four whole-materialdescriptors because primaryproductspec is variablehydrate. No guessedwatercount or calculatedformula.",
+    "recommended_action": [
+      {
+        "operation": "set",
+        "field": "ontology_mapping.mapping_quality",
+        "old": "CLOSE_MATCH",
+        "new": "NARROW_MATCH"
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.molecular_formula",
+        "old": "ClH2LiO",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.inchi",
+        "old": "InChI=1S/ClH.Li.H2O/h1H;;1H2/q;+1;/p-1",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.smiles",
+        "old": "[Li+].O.[Cl-]",
+        "new": null
+      },
+      {
+        "operation": "remove",
+        "field": "chemical_properties.pubchem_cid",
+        "old": 23681138,
+        "new": null
+      },
+      {
+        "operation": "append",
+        "field": "ontology_mapping.evidence",
+        "required_content": "Catalogueline483 names lithiumchloridehydrate/CAS85144-11-2 without a fixedwatercount. Inspected SigmaCoA298328 explicitly gives LiCl·xH2O and drybasis42.39 for thatCAS. PubChem maps it to a mono-waterrepresentation, which does not establish fixedhydration of the namedgenericmaterial. Retain sourceCAS and genericpreferredterm, broadMatch to lithiumchlorideCHEBI48607; do not rename tomonohydrate.",
+        "evidence_refs": [
+          "current-inputs",
+          "catalogue",
+          "local-candidates",
+          "inherited-holds",
+          "v2:44-sigma-coa",
+          "v1:44-pubchem-cas",
+          "v1:44-chebi-parent"
+        ]
+      },
+      {
+        "operation": "append",
+        "field": "curation_history",
+        "required_content": "Actual-time, exact-diff event through guarded writer with LLM assistance; do not overwrite historical narrative, carry review holds, or claim scientific/release approval."
+      }
+    ],
+    "evidence_refs": [
+      "current-inputs",
+      "catalogue",
+      "local-candidates",
+      "inherited-holds",
+      "v2:44-sigma-coa",
+      "v1:44-pubchem-cas",
+      "v1:44-chebi-parent",
+      "web:lithium-coa"
+    ]
+  }
+]

@@ -1,11 +1,14 @@
 """Receipt24 qualifies superseded concern text without renewing approval (#1112)."""
 
 import copy
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
 
 import pytest
+
+from mediaingredientmech.validation.mapping_change_receipts import walk_mapping_changes
 
 ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / "reports/sssom_completion_20260921/assemble_review.py"
@@ -128,6 +131,38 @@ def test_unverified_owner_or_row_transition_is_rejected(native_context, mutation
         assembler.qualify_source_mapping_concern(**args)
 
 
+def receipt_current_rows(chain):
+    """Follow receipt24 row identities through the complete verified suffix."""
+    matches = [(i, r) for i, r in enumerate(chain["receipts"]) if r["batch"] == BATCH]
+    assert len(matches) == 1, "Expected one source-correction receipt"
+    index, receipt = matches[0]
+    touched = {}
+    for change in receipt["changes"]:
+        position, payload = change["after_position"], change["after"]
+        assert position is not None and payload is not None, "Corrected endpoint was removed"
+        assert chain["states_after_sequence"][receipt["sequence"]][position - 1] == payload
+        for following in chain["receipts"][index + 1:]:
+            assert not any(c.get("before_position") == position for c in following["changes"]), (
+                "Later receipt changed or removed a source-correction endpoint"
+            )
+            position = following["position_map"][position - 1]
+            assert position is not None, "Later receipt removed a source-correction endpoint"
+            assert chain["states_after_sequence"][following["sequence"]][position - 1] == payload, (
+                "Later receipt position does not retain the corrected row payload"
+            )
+        assert chain["state"][position - 1] == payload, "Current corrected row payload differs"
+        assert position not in touched, "Corrected row lineages collided"
+        touched[position] = payload
+    return touched
+
+
+def assert_receipt_rows_withheld(chain, decisions):
+    touched = receipt_current_rows(chain)
+    assert len(touched) == 8
+    assert all(decisions[p]["disposition"] == "WITHHOLD" for p in touched)
+    return touched
+
+
 def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_context):
     """Compute native output in memory; never overwrite archived/current files."""
     here = PATH.parent
@@ -164,13 +199,107 @@ def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_cont
         if stem == "5-dehydro-D-gluconate":
             assert args["mapping"]["other"] == ""
             assert item["basis"]["negative_reviews"][0]["reason"] == args["entry"]["reason"]
-    receipt = next(r for r in native_context["chain"]["receipts"] if r["batch"] == BATCH)
-    touched = {c["after_position"] for c in receipt["changes"]}
-    assert len(touched) == 8
-    assert all(decisions[p]["disposition"] == "WITHHOLD" for p in touched)
+    assert_receipt_rows_withheld(native_context["chain"], decisions)
     for position, decision in decisions.items():
         if position not in changed:
             assert decision == old_decisions[position]
             assert evidence["entries"][str(position)] == previous_evidence["entries"][str(position)]
     assert all(path.read_bytes() == raw for path, raw in preserved.items())
 
+
+
+def append_verified_suffix(chain, operations):
+    """Build native-validated in-memory insert/remove receipts, without file writes."""
+    result = copy.deepcopy(chain)
+    for offset, operation in enumerate(operations, 1):
+        before = result["state"]
+        after = copy.deepcopy(before)
+        sequence = result["receipts"][-1]["sequence"] + 1
+        if operation == "insert":
+            added = dict(before[0], subject_id=f"MIM:Later_receipt_insert_{offset}")
+            after.insert(0, added)
+            positions = list(range(2, len(before) + 2))
+            changes = [{"kind": "added", "before_position": None, "after_position": 1,
+                        "before": None, "after": added}]
+        elif operation == "remove":
+            assert 1 not in receipt_current_rows(result), "Fixture must remove an unrelated row"
+            removed = after.pop(0)
+            positions = [None, *range(1, len(before))]
+            changes = [{"kind": "removed", "before_position": 1, "after_position": None,
+                        "before": removed, "after": None}]
+        elif operation == "remove-and-readd-held":
+            position = min(receipt_current_rows(result))
+            removed = after.pop(position - 1)
+            after.append(removed)
+            positions = [p if p < position else p - 1 if p > position else None
+                         for p in range(1, len(before) + 1)]
+            changes = [
+                {"kind": "removed", "before_position": position, "after_position": None,
+                 "before": removed, "after": None},
+                {"kind": "added", "before_position": None, "after_position": len(after),
+                 "before": None, "after": removed},
+            ]
+        else:
+            raise AssertionError("Unknown fixture operation")
+        endpoint = hashlib.sha256(json.dumps(after, sort_keys=True).encode()).hexdigest()
+        receipt = {
+            "schema_version": 1, "batch": f"later-position-fixture-{sequence}",
+            "sequence": sequence, "issue": "fixture", "scope": "Position-lineage regression",
+            "approval": "NONE: synthetic test receipt adds no approval",
+            "before_sha256": result["reviewed_sha256"], "after_sha256": endpoint,
+            "before_row_count": len(before), "after_row_count": len(after),
+            "records": [], "changes": changes, "position_map": positions,
+            "changed_rows": 0, "added_rows": sum(c["kind"] == "added" for c in changes),
+            "removed_rows": sum(c["kind"] == "removed" for c in changes),
+        }
+        result["receipts"].append(receipt)
+        forward, last, state = walk_mapping_changes(
+            result["receipts"], start_sha256=result["start_sha256"],
+            reviewed_sha256=endpoint, baseline_rows=result["baseline_rows"],
+            refreshed_rows=result["refreshed_rows"],
+        )
+        assert state == after
+        result.update(forward=forward, last=last, state=state, reviewed_sha256=endpoint)
+        result["states_after_sequence"][sequence] = copy.deepcopy(state)
+    return result
+
+
+@pytest.mark.parametrize(
+    "operations,shift", [(("insert",), 1), (("remove",), -1),
+                         (("insert", "remove", "insert"), 1)],
+)
+def test_receipt24_positions_follow_every_verified_insertion_and_removal(native_context, operations, shift):
+    original = native_context["chain"]
+    preserved = copy.deepcopy(original)
+    before = receipt_current_rows(original)
+    shifted = append_verified_suffix(original, operations)
+    after = receipt_current_rows(shifted)
+    assert after == {position + shift: payload for position, payload in before.items()}
+    assert len(after) == 8
+    assert original == preserved
+
+
+@pytest.mark.parametrize("mutation", ["wrong-map", "wrong-current-payload", "remove-and-readd-held"])
+def test_wrong_receipt24_row_lineage_fails(native_context, mutation):
+    chain = append_verified_suffix(native_context["chain"], ("insert",))
+    if mutation == "remove-and-readd-held":
+        chain = append_verified_suffix(chain, ("remove-and-readd-held",))
+    elif mutation == "wrong-map":
+        current = min(receipt_current_rows(chain))
+        chain["receipts"][-1]["position_map"][current - 2] = 1
+    else:
+        current = min(receipt_current_rows(chain))
+        chain["state"][current - 1] = dict(chain["state"][0])
+    with pytest.raises(AssertionError):
+        receipt_current_rows(chain)
+
+
+@pytest.mark.parametrize("touched_index", range(8))
+def test_actually_supported_corrected_row_still_fails(native_context, touched_index):
+    decisions = {item["source_position"]: item for item in
+                 json.loads((PATH.parent / "review.json").read_bytes())["decisions"]}
+    touched = assert_receipt_rows_withheld(native_context["chain"], decisions)
+    position = sorted(touched)[touched_index]
+    decisions[position]["disposition"] = "SUPPORTED"
+    with pytest.raises(AssertionError):
+        assert_receipt_rows_withheld(native_context["chain"], decisions)

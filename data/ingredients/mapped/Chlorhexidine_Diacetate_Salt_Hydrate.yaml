@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:81711
   ontology_label: chlorhexidine acetate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -29,10 +29,30 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Historical C6143 and current supplier explicitly identify chlorhexidine
+      diacetate salt hydrate, current formula xH2O. This settles the source-defined
+      variable hydrate, not a fixed monohydrate. Retain its local identity distinct
+      from water-free CHEBI81711. Use NARROW_MATCH/broadMatch to the diacetate parent.
+      Current supplier CAS206986-79-0 yields mixed PubChem forms and does not justify
+      any exact CAS or ontology primary promotion. 7b removed dry structures. Historical
+      chemical CAS56-95-1 is the water-free parent CAS; move procurement context to
+      supplied_form with explicit historical/current disagreement, preserving both
+      observations without exact-identity assertion. Primary source references: https://www.sigmaaldrich.com/US/en/product/sigma/c6143;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C6143_SIGMA/JSON;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/56-95-1/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/206986-79-0/property/Title,MolecularFormula,InChI,InChIKey/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/81711/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      Independent review identifies the existing exact synonym ''N,N''''''''-hexane-1,6-diylbis[N''-(4-chlorophenyl)triimidodicarbonic
+      diamide] acetate (1:2)'' as the water-free parent, not this hydrate; preserve
+      it as REJECTED_LABEL. This curation adds no scientific, mapping-release or role
+      approval; changed owner bytes withdraw inherited support.'
 synonyms:
 - synonym_text: N,N''''-hexane-1,6-diylbis[N'-(4-chlorophenyl)triimidodicarbonic diamide]
     acetate (1:2)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -98,8 +118,40 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","cas_rn"],"before":"56-95-1","after":null},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"Chlorhexidine
+    diacetate salt hydrate","cas_rn":"206986-79-0","form":"diacetate salt hydrate
+    (xH2O; unspecified water stoichiometry)","supplier":"Sigma-Aldrich","catalog_number":"C6143","notes":"CultureBotHT
+    historical compounds_to_cas.csv associated C6143 with CAS56-95-1; the inspected
+    current C6143 supplier page instead lists CAS206986-79-0 and xH2O. Preserve this
+    source-history disagreement. These are procurement cross-references, not an exact
+    CAS identity or fixed-hydration decision for the local hydrate owner; no purchased
+    lot is asserted."}]},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
-  cas_rn: 56-95-1
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
 ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Chlorhexidine diacetate salt hydrate
+  cas_rn: 206986-79-0
+  form: diacetate salt hydrate (xH2O; unspecified water stoichiometry)
+  supplier: Sigma-Aldrich
+  catalog_number: C6143
+  notes: CultureBotHT historical compounds_to_cas.csv associated C6143 with CAS56-95-1;
+    the inspected current C6143 supplier page instead lists CAS206986-79-0 and xH2O.
+    Preserve this source-history disagreement. These are procurement cross-references,
+    not an exact CAS identity or fixed-hydration decision for the local hydrate owner;
+    no purchased lot is asserted.

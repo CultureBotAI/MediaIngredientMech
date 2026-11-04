@@ -278,7 +278,7 @@ def test_issue_869_and_808_no_stale_chebi_on_local_or_hydrate_records(export):
     rows_by_name = {r["ingredient_name"]: r for r in all_rows}
     for label, exp_mim in (
         ("Adenine hydrochloride hydrate", "cas:2922-28-3"),
-        ("Maltose monohydrate", "cas:6363-53-7"),
+        ("Maltose monohydrate", "NCIT:C80300"),
         ("a-Ketoglutaric acid disodium salt hydrate", "cas:305-72-6"),
         ("Trisodium citrate x H2O", "mesh:C514290"),
     ):

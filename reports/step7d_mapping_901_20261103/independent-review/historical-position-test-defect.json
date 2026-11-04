@@ -1,0 +1,173 @@
+{
+  "at": "2026-11-03T06:56:21.500836+00:00",
+  "reviewer": "/root/step7d_independent_review",
+  "head": "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+  "result": "CONFIRMED_TEST_COORDINATE_DEFECT",
+  "test": "tests/test_source_mapping_concern_history.py::test_native_assembly_keeps_all_holds_and_exact_negative_evidence",
+  "root_cause": "Test indexes final decisions directly by receipt24.after_position, omitting composition through subsequent position_map. Native chain composes positions correctly, and all eight actual receipt24 endpoint rows still exist unchanged and WITHHOLD.",
+  "rows": [
+    {
+      "receipt24_position": 38,
+      "original_subject": "MIM:14-Butanediol",
+      "original_object": "CHEBI:41189",
+      "current_decision_at_stale_position": {
+        "disposition": "WITHHOLD",
+        "subject_id": "MIM:14-Butanediol",
+        "object_id": "CHEBI:41189"
+      },
+      "composed_current_position": 38,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 113,
+      "original_subject": "MIM:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "original_object": "CHEBI:73908",
+      "current_decision_at_stale_position": {
+        "disposition": "WITHHOLD",
+        "subject_id": "MIM:24-Dihydroxybenzoic_acid",
+        "object_id": "CHEBI:42094"
+      },
+      "composed_current_position": 115,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 114,
+      "original_subject": "MIM:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "original_object": "kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:24-Dinitrophenol",
+        "object_id": "CHEBI:42017"
+      },
+      "composed_current_position": 116,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 115,
+      "original_subject": "MIM:25-didehydro-D-gluconate",
+      "original_object": "CHEBI:11449",
+      "current_decision_at_stale_position": {
+        "disposition": "WITHHOLD",
+        "subject_id": "MIM:24-diamino-67-di-iso-propylpteridine_phosphate",
+        "object_id": "CHEBI:73908"
+      },
+      "composed_current_position": 117,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 233,
+      "original_subject": "MIM:5-dehydro-D-gluconate",
+      "original_object": "CHEBI:58143",
+      "current_decision_at_stale_position": {
+        "disposition": "WITHHOLD",
+        "subject_id": "MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt",
+        "object_id": "cas:91446-96-7"
+      },
+      "composed_current_position": 237,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 2229,
+      "original_subject": "MIM:Phenethylamine_Hydrochloride",
+      "original_object": "CHEBI:18397",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:Pasteurized_Seawater",
+        "object_id": "kgmicrobe.ingredient:pasteurized_seawater"
+      },
+      "composed_current_position": 2252,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 2920,
+      "original_subject": "MIM:Wc_Trace_Elements_Solution",
+      "original_object": "MICRO:0000455",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:Verapamil_Hydrochloride",
+        "object_id": "CHEBI:53188"
+      },
+      "composed_current_position": 2949,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 2921,
+      "original_subject": "MIM:Wc_Trace_Elements_Solution",
+      "original_object": "kgmicrobe.ingredient:wc_trace_elements_solution",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:Veratric_Acid",
+        "object_id": "CHEBI:296881"
+      },
+      "composed_current_position": 2950,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    }
+  ],
+  "failing_stale_positions": [
+    {
+      "receipt24_position": 114,
+      "original_subject": "MIM:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "original_object": "kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:24-Dinitrophenol",
+        "object_id": "CHEBI:42017"
+      },
+      "composed_current_position": 116,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 2229,
+      "original_subject": "MIM:Phenethylamine_Hydrochloride",
+      "original_object": "CHEBI:18397",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:Pasteurized_Seawater",
+        "object_id": "kgmicrobe.ingredient:pasteurized_seawater"
+      },
+      "composed_current_position": 2252,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 2920,
+      "original_subject": "MIM:Wc_Trace_Elements_Solution",
+      "original_object": "MICRO:0000455",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:Verapamil_Hydrochloride",
+        "object_id": "CHEBI:53188"
+      },
+      "composed_current_position": 2949,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    },
+    {
+      "receipt24_position": 2921,
+      "original_subject": "MIM:Wc_Trace_Elements_Solution",
+      "original_object": "kgmicrobe.ingredient:wc_trace_elements_solution",
+      "current_decision_at_stale_position": {
+        "disposition": "SUPPORTED",
+        "subject_id": "MIM:Veratric_Acid",
+        "object_id": "CHEBI:296881"
+      },
+      "composed_current_position": 2950,
+      "composed_current_disposition": "WITHHOLD",
+      "same_after_row_verified": true
+    }
+  ],
+  "production_row_lineage_validated": true,
+  "production_holds_preserved": true,
+  "test_mutations": false,
+  "scientific_approval_added": false,
+  "limitation": "Does not waive the failing test or authorize a test change. Current user rule permits only the paired companion selector edit; fixing this test is outside that permission. Preserve the actual focused/full-suite failure receipt before final report."
+}

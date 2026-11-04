@@ -1,0 +1,169 @@
+{
+  "mode": "plan_only_no_writes",
+  "operator_sha256": "76bb1e6a9dd8828a45c3033cfaa8c60651bf3a943c62998597e0562e898e98c7",
+  "required_canonical": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+  "required_receipt25": "45af9515590918e3420327668d4b89f564457cf97eea9404a34c4da7d17f0e4b",
+  "guarded_edits": [
+    {
+      "phase": "before01",
+      "file": "reports/sssom_completion_20260921/assemble_review.py",
+      "only": "REVIEWED_SOURCE cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4 -> d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef"
+    },
+    {
+      "phase": "after07-before08",
+      "files": [
+        "tests/test_ingredient_bundle.py",
+        ".github/workflows/qc-reviewed-sssom.yaml"
+      ],
+      "only": "reports/step7d_mapping_901_20261103/companion-review.json -> reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json"
+    }
+  ],
+  "commands": [
+    {
+      "tag": "step7d-post1122-01-assemble-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/sssom_completion_20260921/assemble_review.py"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-02-assemble-check-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/sssom_completion_20260921/assemble_review.py",
+        "--check"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-03-export-full-v1",
+      "argv": [
+        "just",
+        "export-kgx",
+        "output/mim-kgx-710-full"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-04-semantic-build-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/semantic_review_20260921/resolution/build_review.py",
+        "--bundle",
+        "output/mim-kgx-710-full"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-05-semantic-integrity-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "mediaingredientmech.validation.semantic_release",
+        "--root",
+        ".",
+        "--report",
+        "reports/semantic_review_20260921/resolution/current-review.json"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-06-assemble-after-semantic-check-v1",
+      "argv": [
+        "python",
+        "-B",
+        "reports/sssom_completion_20260921/assemble_review.py",
+        "--check"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-07-companion-refresh-v1",
+      "argv": [
+        "python",
+        "-B",
+        "scripts/refresh_unchanged_cohort.py",
+        "--root",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+        "--baseline",
+        "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+        "--prior-review",
+        "reports/step7d_mapping_901_20261103/companion-review.json",
+        "--output",
+        "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json",
+        "--receipt",
+        "reports/step7d_mapping_901_20261103/refresh-v2/companion-refresh-receipt.json",
+        "--prior-copy",
+        "reports/step7d_mapping_901_20261103/refresh-v2/prior-companion-review.json"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-08-companion-export-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "mediaingredientmech.export.ingredient_bundle",
+        "export",
+        "--review",
+        "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json",
+        "--output",
+        "output/step7d-post1122-companion-v1"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-09-reviewed-export-v1",
+      "argv": [
+        "just",
+        "export-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/step7d-post1122-reviewed-v1"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-10-reviewed-qc-schema-v1",
+      "argv": [
+        "just",
+        "qc-reviewed-sssom",
+        "reports/sssom_completion_20260921/review.json",
+        "output/step7d-post1122-reviewed-v1"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-11-supported-export-v1",
+      "argv": [
+        "just",
+        "export-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/step7d-post1122-supported-v1"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-12-supported-qc-v1",
+      "argv": [
+        "just",
+        "qc-supported-kgx",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "output/step7d-post1122-supported-v1"
+      ]
+    },
+    {
+      "tag": "step7d-post1122-13-supported-schema-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-c",
+        "from pathlib import Path\nfrom sssom.parsers import parse_sssom_table\nfrom sssom.validators import SchemaValidationType, validate\np=Path(\"output/step7d-post1122-supported-v1/ingredient_mappings.sssom.tsv\")\nvalidate(parse_sssom_table(p), validation_types=[SchemaValidationType.JsonSchema, SchemaValidationType.PrefixMapCompleteness, SchemaValidationType.StrictCurieFormat])\nprint(\"PASS supported SSSOM native JSON Schema, prefix-map completeness and strict CURIE format\")\n"
+      ]
+    }
+  ],
+  "outputs": {
+    "full": "output/mim-kgx-710-full",
+    "companion": "output/step7d-post1122-companion-v1",
+    "reviewed": "output/step7d-post1122-reviewed-v1",
+    "supported": "output/step7d-post1122-supported-v1",
+    "successor_review": "reports/step7d_mapping_901_20261103/refresh-v2/companion-review.json"
+  },
+  "summary": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/step7d-post1122-orchestration-v1.json",
+  "command_trace": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/step7d-post1122-command-trace-v1.jsonl",
+  "no_full_qc_suite": true
+}

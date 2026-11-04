@@ -1,0 +1,17 @@
+{
+  "name": "step7d-previews-changed-terms-v1",
+  "argv": [
+    "uv",
+    "run",
+    "python",
+    "-c",
+    "import json,subprocess; from pathlib import Path; d=Path(\"../step7d-execution-20261103\"); p=json.loads((d/\"owner-plan.json\").read_text()); names=[n for n,i in p[\"owners\"].items() if any(o[\"path\"]==[\"ontology_mapping\",\"ontology_id\"] for o in i[\"operations\"])]; results=[{\"owner\":n,\"exit_code\":subprocess.call([\"just\",\"validate-terms\",str((d/\"owner-previews\"/Path(n).name).resolve())])} for n in names]; (d/\"preview-terms-results.json\").write_text(json.dumps(results,indent=2)+\"\\n\"); print(json.dumps(results)); raise SystemExit(any(r[\"exit_code\"] for r in results))"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+  "started_at": "2026-11-03T06:07:56.035764+00:00",
+  "environment_profile": "mim-native-pinned-validator",
+  "finished_at": "2026-11-03T06:08:08.913502+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-previews-changed-terms-v1.log",
+  "log_sha256": "bd468822470d7fb7335f101d52507e0096c5a4ddbea7b98a1de2fadf051a402a"
+}

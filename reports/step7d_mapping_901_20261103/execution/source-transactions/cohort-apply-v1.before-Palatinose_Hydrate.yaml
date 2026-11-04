@@ -1,0 +1,96 @@
+identifier: cas:343336-76-5
+preferred_term: palatinose hydrate
+ontology_mapping:
+  ontology_id: CHEBI:18394
+  ontology_label: 6-O-alpha-D-glucopyranosyl-D-fructofuranose
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 343336-76-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: palatinose hydrate is a hydrate/salt with its own CAS and no exact ChEBI
+      term; anchored to the parent CHEBI:18394 '6-O-alpha-D-glucopyranosyl-D-fructofuranose'
+      by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrate of palatinose
+      (isomaltulose)
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:18394 (''6-O-alpha-D-glucopyranosyl-D-fructofuranose'') — a subsumption
+      ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+      under the anhydrous compound, which is not an ancestor even transitively. A
+      hydrate is a distinct substance containing the anhydrous form, not a specialization
+      of it. closeMatch claims similarity without subsumption. The ontology_id and
+      the record''s own identifier are unchanged.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:343336-76-5 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.682509+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:54:20.743493+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C12H24O12; smiles=C(C1C(C(C(C(O1)OCC2C(C(C(O2)(CO)O)O)O)O)O)O)O.O;
+    inchi=InChI=1S/C12H22O11.H2O/c13-1-4-6(15)8(17)9(18)11(2
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.610062+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.746892+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:18394 ''6-O-alpha-D-glucopyranosyl-D-fructofuranose''
+    and registry kgmicrobe.compound:palatinose_hydrate. identifier cas:343336-76-5
+    unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrate of palatinose
+    (isomaltulose)'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 343336-76-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C12H24O12
+  smiles: C(C1C(C(C(C(O1)OCC2C(C(C(O2)(CO)O)O)O)O)O)O)O.O
+  inchi: InChI=1S/C12H22O11.H2O/c13-1-4-6(15)8(17)9(18)11(22-4)21-2-5-7(16)10(19)12(20,3-14)23-5;/h4-11,13-20H,1-3H2;1H2/t4-,5-,6-,7-,8+,9-,10+,11+,12?;/m1./s1
+  pubchem_cid: 52994241
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

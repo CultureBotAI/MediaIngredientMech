@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/../step7d-execution-20261103/owner_operator_external_controls.py", line 205, in <module>
+    main()
+    ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/../step7d-execution-20261103/owner_operator_external_controls.py", line 96, in main
+    reject("native writer rejects unknown schema field", lambda: m.render(broken))
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/../step7d-execution-20261103/owner_operator_external_controls.py", line 29, in reject
+    operation()
+    ~~~~~~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/../step7d-execution-20261103/owner_operator_external_controls.py", line 96, in <lambda>
+    reject("native writer rejects unknown schema field", lambda: m.render(broken))
+                                                                 ~~~~~~~~^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/apply_reviewed_owners.py", line 72, in render
+    write_validated_ingredient(record, path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/src/mediaingredientmech/validation/write_validated.py", line 127, in write_validated_ingredient
+    raise ValidationFailedError(path, errors)
+mediaingredientmech.validation.write_validated.ValidationFailedError: validation failed: 1 error(s) for /var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/mim-step7d-owner-render-_s_963_y/record.yaml
+  - Additional properties are not allowed ('unreviewed_unknown_schema_field' was unexpected) in /

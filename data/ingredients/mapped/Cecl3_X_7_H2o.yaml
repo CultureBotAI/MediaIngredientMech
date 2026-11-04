@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:cecl3_x_7_h2o
+identifier: cas:18618-55-8
 preferred_term: CeCl3 x 7 H2O
 ontology_mapping:
   ontology_id: CHEBI:35458
   ontology_label: cerium trichloride
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -38,6 +38,21 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Four current source recipes and MediaDive1444 name CeCl3·7H2O. Independent
+      supplier/PubChem agree on specific CAS18618-55-8 and formula. The complete ignored-inclusive
+      neighbor scan found no other current owner of this CAS. No eligible exact CHEBI/NCIT
+      term was established by the bounded current CAS/name queries. Promote local
+      primary to cas:18618-55-8, preserve the old local registry identity, and broadMatch
+      CHEBI35458. Existing CeCl3.7H2O matches. Add evidenced CAS only; do not automatically
+      copy a PubChem structure/CID. Primary source references: https://www.sigmaaldrich.com/US/en/product/aldrich/228931;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/228931_ALDRICH/JSON;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/18618-55-8/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/35458/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
 synonyms:
 - synonym_text: cerium(3+) chloride
   synonym_type: REJECTED_LABEL
@@ -159,8 +174,24 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["identifier"],"before":"kgmicrobe.compound:cecl3_x_7_h2o","after":"cas:18618-55-8"},{"op":"set","path":["chemical_properties","cas_rn"],"before":null,"after":"18618-55-8"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   molecular_formula: CeCl3.7H2O
+  cas_rn: 18618-55-8
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: TRACE_ELEMENT

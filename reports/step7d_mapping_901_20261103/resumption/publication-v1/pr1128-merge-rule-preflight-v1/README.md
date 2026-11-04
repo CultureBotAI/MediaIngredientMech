@@ -1,0 +1,7 @@
+Active main ruleset22994916 (CLAW merge queue) requires13 status contexts and0 approving GitHub reviews. It separately has require_extra_approval_for_unattributed_changes=true; all raw pull-request rule parameters are retained. The user still requires an independent final adversarial review and ALL16 checks green, including reviewed-sssom, supported-graph and qc-unified-freshness beyond the13 ruleset contexts. No rule or user requirement is waived.
+
+Queue parameters: SQUASH; ALLGREEN; max_entries_to_build3; min_entries_to_merge1; max_entries_to_merge1; min_entries_to_merge_wait_minutes5; check_response_timeout_minutes120. These are configuration values, not a claim of a required five-minute wait for every singleton entry.
+
+PR1128 is OPEN at head8417aaf3a057d855ae5d0b78a587ef1cb57bf28f against main467aa319a06ef992035f509f66fe251082b44ae1. It is MERGEABLE but merge-state BLOCKED; reviewDecision is empty, autoMergeRequest is null, and actual mergeQueueEntry is null. Captured checks:15SUCCESS and pytest IN_PROGRESS. No enqueue, merge, review request, comment/message, Git mutation or GitHub mutation was performed.
+
+Classic branch protection returns404 Branch not protected; the active ruleset remains effective. The first GET GraphQL request returned schema introspection and is preserved without being misrepresented as queue evidence. The subsequent GraphQL query used POST only as its read transport and returned the actual null queue entry. Raw responses and exact commands/times are saved. This audit does not replace final pre-enqueue checks.

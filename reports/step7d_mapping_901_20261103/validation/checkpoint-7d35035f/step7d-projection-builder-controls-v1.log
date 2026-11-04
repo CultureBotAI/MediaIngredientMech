@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/../step7d-execution-20261103/projection_builder_external_controls.py", line 36, in <module>
+    config, result = b.construct(before, render(fixtures), plan, shapes, "0" * 64)
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/prepare_projection_config.py", line 144, in construct
+    require(m.projection(before, candidate, config, plan, deferred) == after, "frozen projection replay differs")
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/promote_step7d_mapping.py", line 232, in projection
+    require(before_occurrences == after_occurrences, "deferred23 baseline occurrences changed")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/promote_step7d_mapping.py", line 68, in require
+    raise ValueError("Step7d promotion: " + message)
+ValueError: Step7d promotion: deferred23 baseline occurrences changed

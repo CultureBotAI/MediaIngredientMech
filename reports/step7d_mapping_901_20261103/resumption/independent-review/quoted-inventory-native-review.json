@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0.0",
+  "review_id": "20261103T072411Z-step7d-independent-quoted-inventory-finding",
+  "kind": "batch",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "title": "Independent Step 7d observation of failed v3 Unicode inventory preflight",
+  "started_at": "2026-11-03T07:16:51.105845Z",
+  "finished_at": "2026-11-03T07:24:11.198929Z",
+  "reviewer": {
+    "identity": "/root/step7d_independent_review",
+    "kind": "agent",
+    "model": "gpt-6",
+    "independence": "independent",
+    "independence_basis": "Reviewer did not author the orchestration operator; independently executed its actual preflight before maintained refresh and compared literal NUL-delimited Git inventories after the false rejection."
+  },
+  "skill": "review-sssom-output",
+  "completion": "completed",
+  "verdict": "needs_curation",
+  "native_verdict": "Historical v3 operator blocked before mutation; preserve finding for explicit successor reconciliation",
+  "scientific_review": false,
+  "summary": "The archived v3 orchestration falsely rejects an unchanged protected source inventory: line-delimited ls-tree C-quotes five Greek/\u00df filenames, while ls-files -z returns literal paths. Both NUL-delimited sets have 3582 identical members. This focused observation preserves the real #1126 finding against immutable v3 evidence; it does not claim v4 remains defective or grant final-head approval.",
+  "source": {
+    "git_revision": "fdaa4c67653c9ceeb457628bb64f560be0d27bcf",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "reports/step7d_mapping_901_20261103/resumption/independent-review/finding-post1122-quoted-path-inventory.json",
+        "sha256": "7e12cc330341828c86008bc225ecf159cdf17e91447deb305300a3e57ea40e41",
+        "role": "target"
+      },
+      {
+        "path": "reports/step7d_mapping_901_20261103/resumption/refresh_post1122_v3.py",
+        "sha256": "dd0b1d212d52c6020b6e6d8f17cf2b29f042cbdb43e76efbe5631b4fa2756ecd",
+        "role": "target"
+      },
+      {
+        "path": "reports/step7d_mapping_901_20261103/resumption/validation/step7d-independent-post1122-v3-preflight.json",
+        "sha256": "3249397371112d15cd7f3f875f6f212866f871b5538e756ef6a49a68c4625f7c",
+        "role": "context"
+      },
+      {
+        "path": "reports/step7d_mapping_901_20261103/resumption/validation/step7d-independent-post1122-v3-preflight.log",
+        "sha256": "9a9c5b560795a462a878aa4877b3fca43eb7a16d1441e9349accdfe2010cd1ef",
+        "role": "target"
+      }
+    ]
+  },
+  "scope": {
+    "description": "Exact archived v3 operator, actual independent failed preflight log and independent inventory proof.",
+    "selection": "All three evidence artifacts for the observed Unicode inventory failure.",
+    "coverage": "full",
+    "population_size": 3,
+    "reviewed_target_ids": [
+      "post1122-v3-operator",
+      "post1122-v3-failure",
+      "post1122-v3-finding"
+    ],
+    "exclusions": [
+      {
+        "target": "Successor v4 final-head approval",
+        "reason": "Separate current final-head review will assess and reconcile the preserved finding after all required checks."
+      },
+      {
+        "target": "Ingredient chemistry and mapping support",
+        "reason": "No scientific content is reassessed by this provenance-only observation."
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "post1122-v3-operator",
+      "path": "reports/step7d_mapping_901_20261103/resumption/refresh_post1122_v3.py",
+      "label": "Failed preflight operator v3",
+      "kind": "source",
+      "ownership_note": "Immutable execution evidence from the external Step 7d orchestration; fix belongs to a new version of the external operator, never to these preserved artifacts or curated scientific data."
+    },
+    {
+      "target_id": "post1122-v3-failure",
+      "path": "reports/step7d_mapping_901_20261103/resumption/validation/step7d-independent-post1122-v3-preflight.log",
+      "label": "Actual independent v3 preflight failure",
+      "kind": "source",
+      "ownership_note": "Immutable execution evidence from the external Step 7d orchestration; fix belongs to a new version of the external operator, never to these preserved artifacts or curated scientific data."
+    },
+    {
+      "target_id": "post1122-v3-finding",
+      "path": "reports/step7d_mapping_901_20261103/resumption/independent-review/finding-post1122-quoted-path-inventory.json",
+      "label": "Independent Git inventory comparison",
+      "kind": "source",
+      "ownership_note": "Immutable execution evidence from the external Step 7d orchestration; fix belongs to a new version of the external operator, never to these preserved artifacts or curated scientific data."
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "actual-v3-preflight",
+      "name": "Actual unchanged-source v3 preflight",
+      "status": "failed",
+      "required": true,
+      "summary": "Preflight failed before any maintained refresh because line-delimited and NUL-delimited Git inventories represent five non-ASCII filenames differently.",
+      "target_ids": [
+        "post1122-v3-operator",
+        "post1122-v3-failure",
+        "post1122-v3-finding"
+      ],
+      "command": "uv run python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/preflight_orchestration_v3.py",
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "evidence_ids": [
+        "v3-failure",
+        "inventory-proof",
+        "v3-operator"
+      ]
+    },
+    {
+      "check_id": "native-input-capture",
+      "name": "Native inspect of immutable archived failure artifacts",
+      "status": "passed",
+      "required": true,
+      "summary": "Native helper captured exact current archived bytes, matching the originally reviewed operator and failed preflight log.",
+      "target_ids": [
+        "post1122-v3-operator",
+        "post1122-v3-failure",
+        "post1122-v3-finding"
+      ],
+      "command": "uv run python scripts/record_review.py inspect --targets /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/quoted-inventory-native-targets.json",
+      "exit_code": 0,
+      "evidence_ids": [
+        "v3-operator",
+        "v3-failure",
+        "inventory-proof"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "v3-operator",
+      "kind": "record_content",
+      "reference": "reports/step7d_mapping_901_20261103/resumption/refresh_post1122_v3.py",
+      "accessed_at": "2026-11-03T07:24:11.198929Z",
+      "support": "supports",
+      "summary": "Exact frozen operator uses line-delimited baseline Git inventory and literal current inventory.",
+      "snapshot_sha256": "dd0b1d212d52c6020b6e6d8f17cf2b29f042cbdb43e76efbe5631b4fa2756ecd"
+    },
+    {
+      "evidence_id": "v3-failure",
+      "kind": "validation",
+      "reference": "reports/step7d_mapping_901_20261103/resumption/validation/step7d-independent-post1122-v3-preflight.log",
+      "accessed_at": "2026-11-03T07:24:11.198929Z",
+      "support": "supports",
+      "summary": "Actual independently executed preflight exits 1 before maintained refresh, reporting protected source membership changed.",
+      "snapshot_sha256": "9a9c5b560795a462a878aa4877b3fca43eb7a16d1441e9349accdfe2010cd1ef"
+    },
+    {
+      "evidence_id": "inventory-proof",
+      "kind": "validation",
+      "reference": "reports/step7d_mapping_901_20261103/resumption/independent-review/finding-post1122-quoted-path-inventory.json",
+      "accessed_at": "2026-11-03T07:24:11.198929Z",
+      "support": "supports",
+      "summary": "Independent comparison identifies five quote-only differences and verifies both NUL-delimited inventories equal with 3582 entries.",
+      "snapshot_sha256": "7e12cc330341828c86008bc225ecf159cdf17e91447deb305300a3e57ea40e41"
+    }
+  ],
+  "assessments": [
+    {
+      "assessment_id": "v3-inventory-representation-defect",
+      "area": "consistency",
+      "topic": "Git path serialization in exact membership guard",
+      "outcome": "concern",
+      "summary": "The exact membership guard itself is appropriate. Its baseline side uses line-delimited Git output that C-quotes non-ASCII filenames; the current side uses literal NUL-delimited output. Five names differ only in representation. Independent NUL comparison proves both protected sets have the same 3582 members.",
+      "target_ids": [
+        "post1122-v3-operator",
+        "post1122-v3-failure",
+        "post1122-v3-finding"
+      ],
+      "evidence_ids": [
+        "v3-operator",
+        "v3-failure",
+        "inventory-proof"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "external-orchestrator-quoted-path-inventory",
+      "issue_key": "mim-post1122-orchestrator-nul-path-inventory",
+      "category": "consistency",
+      "severity": "minor",
+      "native_severity": "External preflight blocker",
+      "normalization_reason": "The defect stops a bounded external orchestration before mutation; it does not alter scientific records or permit unguarded writes.",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Post1122 preflight compares quoted Git paths with literal Unicode paths",
+      "description": "The v3 baseline ls-tree --name-only output is line-delimited and C-quotes five non-ASCII filenames. Current ls-files -z output is literal. Exact set equality falsely fails although independent ls-tree -z and ls-files -z inventories both contain the same 3582 protected source paths. A versioned NUL-parser correction can preserve the exact membership guard.",
+      "target_ids": [
+        "post1122-v3-operator",
+        "post1122-v3-failure",
+        "post1122-v3-finding"
+      ],
+      "field_paths": [
+        "refresh_post1122_v3.py:baseline_paths",
+        "refresh_post1122_v3.py:current_paths"
+      ],
+      "evidence_ids": [
+        "v3-operator",
+        "v3-failure",
+        "inventory-proof"
+      ],
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "reports/step7d_mapping_901_20261103/resumption/refresh_post1122_v3.py",
+          "role": "Immutable external execution archive; implement a versioned successor rather than edit this historical artifact"
+        }
+      ],
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1126"
+      ]
+    }
+  ],
+  "actions": [],
+  "limitations": [
+    "This observation intentionally records the actual v3 defect and failure without retrospectively replacing its bytes with v4. A successor review must preserve these three target identities when resolving the finding.",
+    "The subsequently executed v4 correction and final test/CI results are outside this historical observation; no claim is made that the corrected current operator still fails.",
+    "No scientific support, release status or supervisor binding is inferred. Reviewer performed no maintained edits or GitHub writes."
+  ]
+}

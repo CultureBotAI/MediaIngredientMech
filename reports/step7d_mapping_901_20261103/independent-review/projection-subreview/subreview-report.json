@@ -1,0 +1,166 @@
+{
+  "schema": "independent-subreview-v1",
+  "reviewer": "/root/step7d_independent_review/projection_adversarial",
+  "independence": "Independent child of adversarial reviewer; did not author science, source edits, projection, receipt, or maintained implementation. No maintained writes or GitHub mutations.",
+  "reviewed_head": "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+  "base_revision": "467aa319a06ef992035f509f66fe251082b44ae1",
+  "completion": "complete_for_declared_scope",
+  "verdict": "needs_curation",
+  "native_severity": "one low finding",
+  "scientific_review": false,
+  "scope": "Complete 38-owner canonical projection, 105 selected rows, all canonical rows and native receipt prefix. Per-owner primary scientific assessment and final CI approval remain with parent reviewer.",
+  "completed_at": "2026-11-03T06:40:58.259618+00:00",
+  "assessments": [
+    {
+      "topic": "Native scientific cells and scoped projection",
+      "outcome": "supported",
+      "summary": "Every selected native candidate row appears exactly once; identity, predicate, labels, confidence, date and mapping justification equal native generation. Projection differences are limited to 74 source fields, 5 deferred other fields and 7 comment fields. Four comment fields have the finding below."
+    },
+    {
+      "topic": "Untouched canonical rows and historic receipts",
+      "outcome": "supported",
+      "summary": "Independent full-file reconstruction equals canonical; 2,909 unrelated rows retain exact bytes and order. All 24 prior receipts are unchanged, exactly one sequence25 receipt was added, and native complete chain replay equals all 3,014 rows."
+    },
+    {
+      "topic": "Native generation provenance",
+      "outcome": "supported",
+      "summary": "All 2,698 declared source input pins verified, using the exact baseline canonical preimage for historical stamp input. Native offline candidate and suppression sidecar replay matched all 3,007 rows and 25 suppression events."
+    },
+    {
+      "topic": "Review holds and staged aliases",
+      "outcome": "supported",
+      "summary": "All 105 selected current rows are WITHHOLD with current owner hashes. Five restored token occurrences belong to the exact 23 deferred baseline pairs, with all baseline occurrences preserved by original row slot. No scientific or release approval was added."
+    },
+    {
+      "topic": "Native invariant validation",
+      "outcome": "supported",
+      "summary": "Strict Rules A,B1,B2,B3,B5,C,D,E,F,G,H,I,J,K,L passed with zero rejects. B4 skipped absent ontology transforms under documented native behavior."
+    },
+    {
+      "topic": "Current comment provenance",
+      "outcome": "concern",
+      "summary": "The projection joins prior and regenerated comment sentences without marking the prior sentence historical. For four retargeted owners, the exact CAS row therefore states it is alongside both the old parent and the new parent, while the current ontology row maps only to the new parent. SSSOM identity/predicate fields are correct; this is a bounded current-row explanation defect.",
+      "finding": "step7d-stale-parent-registry-comments"
+    }
+  ],
+  "counts": {
+    "before_rows": 2985,
+    "after_rows": 3014,
+    "selected_owners": 38,
+    "selected_before_rows": 76,
+    "selected_after_rows": 105,
+    "unchanged_unrelated_rows": 2909,
+    "changed_rows": 74,
+    "added_rows": 31,
+    "removed_rows": 2,
+    "byte_unchanged_prior_receipts": 24,
+    "current_receipts": 25,
+    "selected_withheld": 105,
+    "deferred_pairs": 23,
+    "restored_native_suppression_occurrences": 5
+  },
+  "findings": [
+    {
+      "id": "projection-stale-parent-comments",
+      "issue_key": "step7d-stale-parent-registry-comments",
+      "severity": "minor",
+      "native_severity": "low",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Four projected registry comments present superseded ontology parents as current",
+      "observed_head": "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+      "observed_at": "2026-11-03T06:40:21.165491+00:00",
+      "description": "The projection joins prior and regenerated comment sentences without marking the prior sentence historical. For four retargeted owners, the exact CAS row therefore states it is alongside both the old parent and the new parent, while the current ontology row maps only to the new parent. SSSOM identity/predicate fields are correct; this is a bounded current-row explanation defect.",
+      "root_cause": "D/promote_step7d_mapping.py:output_from_candidate unconditional comment concatenation; projection config freezes the conflicting comments.",
+      "targets": [
+        {
+          "subject_id": "MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate",
+          "object_id": "cas:154804-51-0",
+          "output_position": 532,
+          "comment": "Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:17270. Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:132089.",
+          "native_current_comment": "Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:132089.",
+          "owner_path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml"
+        },
+        {
+          "subject_id": "MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate",
+          "object_id": "cas:207300-70-7",
+          "output_position": 901,
+          "comment": "Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:4178. Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:32144.",
+          "native_current_comment": "Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:32144.",
+          "owner_path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml"
+        },
+        {
+          "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+          "object_id": "cas:13235-36-4",
+          "output_position": 1116,
+          "comment": "Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:4735. Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:750784.",
+          "native_current_comment": "Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:750784.",
+          "owner_path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml"
+        },
+        {
+          "subject_id": "MIM:Maltotriose_Hydrate",
+          "object_id": "cas:312693-63-3",
+          "output_position": 1792,
+          "comment": "Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:61993. Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:140999.",
+          "native_current_comment": "Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:140999.",
+          "owner_path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml"
+        }
+      ],
+      "evidence": {
+        "projection_config_sha256": "30e7ecd98d42046057b93c8086e1e5d09c1aa9cd60d12059379248407855a537",
+        "canonical_sha256": "cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4"
+      },
+      "suggested_fix": "Through the native guarded workflow, distinguish the former parent from the current parent while preserving the exact previous text in provenance. Preserve the user-required single unpublished batch25: do not infer authorization to append a second mapping batch. Retain the reviewed pre-fix batch25 artifact as evidence. Do not alter scientific fields, owner records, snapshot, threshold, assertions, or approvals.",
+      "acceptance": [
+        "All four current comments distinguish former parent from current parent; original provenance remains recoverable.",
+        "Only the four comment cells change in the canonical remediation delta; the final single batch25 chain replays, its 24 historical predecessors remain immutable, and all 105 selected rows remain WITHHOLD.",
+        "Strict qc-sssom and required QC/tests pass; independent re-review of actual final head."
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": "output/approved-plan-20261101T031134Z/envs/mim/bin/python -B output/approved-plan-20261101T031134Z/step7d-execution-20261103/independent-review/projection-subreview/audit_projection.py",
+      "exit_code": 0,
+      "output": "audit-result.json",
+      "script_sha256": "d7a14f08728ef4fd97632fc64f0aca0faa18d37c41dedf9e5bcf012b6c5cc5e4"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "scripts/validate_sssom_invariants.py",
+        "mappings/ingredient_mappings.sssom.tsv",
+        "--reject-tsv",
+        "../step7d-execution-20261103/independent-review/projection-subreview/native-rejects.tsv"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d",
+      "started_at": "2026-11-03T06:38:51.516827+00:00",
+      "finished_at": "2026-11-03T06:38:59.610210+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step7d-independent-projection-native-invariants-v1.log",
+      "log_sha256": "f4b6fd89cb4d5079c524b3023b8df78375cfc77d03b0ced0fd40aec806a269af"
+    },
+    {
+      "command": "python3 output/approved-plan-20261101T031134Z/run_step7d_mim.py step7d step7d-independent-projection-native-replay-v2 -- python -B ../step7d-execution-20261103/independent-review/projection-subreview/replay_native.py",
+      "exit_code": 0,
+      "output": "native-offline-replay-v2.json",
+      "script_sha256": "ba5f24cd8592bc9e6c418f11c25e52d1a61d905d85f8bb35a39a038dfb1a9ea1"
+    }
+  ],
+  "artifacts": {
+    "audit-result.json": "c83d138757ebd66ab0868ddefe6e1787240de59148027958eb68895d84b2a2cb",
+    "finding-001-stale-parent-comments.json": "a5c281b0651f4aa439ec3eb5a9a8e87f88e37a219d88d62297fa8e04f00a2dd6",
+    "native-offline-replay-v2.json": "389e78fb807e128402223d90ae6030877ca4864146a494f8e5837206ba03ad8e",
+    "native-rejects.tsv": "bd2029da95174d7370dc75454fb0646cc2d7be32af0b346ed5ab4036dfc3dfcc",
+    "canonical-preimage.tsv": "62fd37c2ed8ace9b9295618d44e251d11fc35feb711053b66d322e5a7bce14f1"
+  },
+  "limitations": [
+    "No fresh full-suite or CI result is asserted here.",
+    "Native Rule B4 may be unavailable locally; primary scientific label review is separate.",
+    "Twenty-three deferred alias pairs intentionally remain under MAPPING_SEMANTICS staged rollout; this is not global alias clearance.",
+    "Initial reviewer offline replay from the original repository context matched candidate rows but not suppression provenance; rerunning with the required native environment and isolated worktree context passed. The original failure receipt is retained as native-offline-replay.json.",
+    "Initial independent reconstruction keyed deferred obligations by target ID and stopped on three intended parent retargets; corrected reviewer comparison uses the same existing ontology-row slot, preserving exact subject/token occurrences. No implementation was changed.",
+    "This subreview is not final-head approval; QC/full suite, final native review persistence and CI remain outside its scope."
+  ]
+}

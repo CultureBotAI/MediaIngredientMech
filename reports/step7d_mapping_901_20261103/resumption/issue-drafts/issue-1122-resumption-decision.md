@@ -1,0 +1,3 @@
+The user explicitly authorized applying the reviewed four comment cells exactly as prepared, by native reconstruction of the same unpublished batch 25. Receipts 1–24 stay byte-identical. The frozen proposal and independent review are unchanged; source identities, snapshot pair and approvals remain unchanged.
+
+Continuation from local head 7d35035f under the replacement Step 7d test rule. No assertions, thresholds, budgets, owner-selection rules, other workflows, qc-evidence or pins may be weakened or changed. Final QC, full suite, CI and independent review remain required before the approved squash merge queue.

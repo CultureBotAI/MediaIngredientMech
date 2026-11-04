@@ -1,0 +1,57 @@
+uv run python scripts/generate_ingredient_umap.py
+
+🔬 MediaIngredientMech UMAP Visualization Generator
+
+Step 1: Loading embeddings...
+Loading cached embeddings from 
+.umap_cache/ingredient_embeddings__CHEBI_ENVO_FOODON_MESH_NCIT_UBERON_kgmicrobe.
+compound_mediadive.ingredient_mediadive.solution__0757f043ac68.pkl
+
+Step 2: Generating PACMAP projection...
+Found embeddings for 2204 ingredients
+Adding 133 unmapped ingredients with synthetic embeddings
+Running PaCMAP (PCA-init, random_state=42)...
+Warning: random state is set to 42.
+PACMAP completed: 2337 ingredients projected to 2D
+
+Step 3: Building visualization data...
+Generated data for 2337 ingredients
+Saved JSON data to docs/data/ingredient_umap.json
+
+Next: Create HTML template at docs/ingredient_umap.html
+JSON data ready at docs/data/ingredient_umap.json
+
+✅ UMAP generation complete!
+
+uv run python scripts/generate_ingredient_umap.py --method sfdp --output docs/data/ingredient_graph.json
+
+🔬 MediaIngredientMech UMAP Visualization Generator
+
+Step 1: Loading embeddings...
+Loading cached embeddings from 
+.umap_cache/ingredient_embeddings__CHEBI_ENVO_FOODON_MESH_NCIT_UBERON_kgmicrobe.
+compound_mediadive.ingredient_mediadive.solution__0757f043ac68.pkl
+
+Step 2: Generating SFDP projection...
+Found embeddings for 2204 ingredients
+Adding 133 unmapped ingredients with synthetic embeddings
+Running sfdp graph layout (k=15, seed=42)...
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/joblib/externals/loky/backend/context.py:131: UserWarning: Could not find the number of physical cores for the following reason:
+invalid literal for int() with base 10: ''
+Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+  warnings.warn(
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/joblib/externals/loky/backend/context.py", line 249, in _count_physical_cores
+    cpu_count_physical = _count_physical_cores_darwin()
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/joblib/externals/loky/backend/context.py", line 318, in _count_physical_cores_darwin
+    return int(cpu_info)
+SFDP completed: 2337 ingredients projected to 2D
+
+Step 3: Building visualization data...
+Generated data for 2337 ingredients
+Saved JSON data to docs/data/ingredient_graph.json
+
+Next: Create HTML template at docs/data/ingredient_graph.json
+JSON data ready at docs/data/ingredient_graph.json
+
+✅ UMAP generation complete!
+

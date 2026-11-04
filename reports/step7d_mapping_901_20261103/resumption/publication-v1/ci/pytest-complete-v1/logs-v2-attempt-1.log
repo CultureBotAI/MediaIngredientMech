@@ -1,0 +1,1483 @@
+﻿2026-11-04T01:44:41.4381472Z Current runner version: '2.338.2'
+2026-11-04T01:44:41.4407606Z ##[group]Runner Image Provisioner
+2026-11-04T01:44:41.4408491Z Hosted Compute Agent
+2026-11-04T01:44:41.4409228Z Version: 20261021.618
+2026-11-04T01:44:41.4409923Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-04T01:44:41.4410698Z Build Date: 2026-10-21T00:45:21Z
+2026-11-04T01:44:41.4411413Z Worker ID: {5f39fb37-0806-429a-abd2-80a368f5ac0f}
+2026-11-04T01:44:41.4412136Z Region: westus2
+2026-11-04T01:44:41.4413211Z Cloud: Azure
+2026-11-04T01:44:41.4413913Z ##[endgroup]
+2026-11-04T01:44:41.4415440Z ##[group]Operating System
+2026-11-04T01:44:41.4416264Z Ubuntu
+2026-11-04T01:44:41.4416811Z 24.04.5
+2026-11-04T01:44:41.4417414Z LTS
+2026-11-04T01:44:41.4418048Z ##[endgroup]
+2026-11-04T01:44:41.4418620Z ##[group]Runner Image
+2026-11-04T01:44:41.4419313Z Image: ubuntu-24.04
+2026-11-04T01:44:41.4419904Z Version: 20261025.353.1
+2026-11-04T01:44:41.4421270Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-04T01:44:41.4423212Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-04T01:44:41.4424349Z ##[endgroup]
+2026-11-04T01:44:41.4425462Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T01:44:41.4427519Z Contents: read
+2026-11-04T01:44:41.4428154Z Metadata: read
+2026-11-04T01:44:41.4428791Z ##[endgroup]
+2026-11-04T01:44:41.4430900Z Secret source: Actions
+2026-11-04T01:44:41.4431999Z Cache mode: write
+2026-11-04T01:44:41.4433263Z Prepare workflow directory
+2026-11-04T01:44:41.5014189Z Prepare all required actions
+2026-11-04T01:44:41.5065144Z Getting action download info
+2026-11-04T01:44:41.8596103Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-04T01:44:41.9794922Z Download action repository 'extractions/setup-just@v3' (SHA:f8a3cce218d9f83db3a2ecd90e41ac3de6cdfd9b)
+2026-11-04T01:44:42.1483982Z Download action repository 'astral-sh/setup-uv@v3' (SHA:caf0cab7a618c569241d31dcd442f54681755d39)
+2026-11-04T01:44:42.4692101Z Getting action download info
+2026-11-04T01:44:42.6245575Z Download action repository 'extractions/setup-crate@4993624604c307fbca528d28a3c8b60fa5ecc859' (SHA:4993624604c307fbca528d28a3c8b60fa5ecc859)
+2026-11-04T01:44:42.8574561Z Complete job name: pytest
+2026-11-04T01:44:42.9625164Z ##[group]Run actions/checkout@v4
+2026-11-04T01:44:42.9626661Z with:
+2026-11-04T01:44:42.9627528Z   fetch-depth: 0
+2026-11-04T01:44:42.9628601Z   repository: CultureBotAI/MediaIngredientMech
+2026-11-04T01:44:42.9638976Z   token: ***
+2026-11-04T01:44:42.9639907Z   ssh-strict: true
+2026-11-04T01:44:42.9640824Z   ssh-user: git
+2026-11-04T01:44:42.9641776Z   persist-credentials: true
+2026-11-04T01:44:42.9642955Z   clean: true
+2026-11-04T01:44:42.9643917Z   sparse-checkout-cone-mode: true
+2026-11-04T01:44:42.9645043Z   fetch-tags: false
+2026-11-04T01:44:42.9645995Z   show-progress: true
+2026-11-04T01:44:42.9646958Z   lfs: false
+2026-11-04T01:44:42.9647849Z   submodules: false
+2026-11-04T01:44:42.9648850Z   set-safe-directory: true
+2026-11-04T01:44:42.9649963Z   allow-unsafe-pr-checkout: false
+2026-11-04T01:44:42.9651373Z env:
+2026-11-04T01:44:42.9652259Z   UV_PYTHON: 3.13
+2026-11-04T01:44:42.9653600Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:44:42.9655080Z ##[endgroup]
+2026-11-04T01:44:43.2361804Z Syncing repository: CultureBotAI/MediaIngredientMech
+2026-11-04T01:44:43.2365293Z ##[group]Getting Git version info
+2026-11-04T01:44:43.2367278Z Working directory is '/home/runner/work/MediaIngredientMech/MediaIngredientMech'
+2026-11-04T01:44:43.2370007Z [command]/usr/bin/git version
+2026-11-04T01:44:43.2436875Z git version 2.56.0
+2026-11-04T01:44:43.2464038Z ##[endgroup]
+2026-11-04T01:44:43.2480007Z Temporarily overriding HOME='/home/runner/work/_temp/b9fb2dcb-00c2-4a64-a0d6-e06aa9f5026b' before making global git config changes
+2026-11-04T01:44:43.2485961Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T01:44:43.2490891Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MediaIngredientMech/MediaIngredientMech
+2026-11-04T01:44:43.2542206Z Deleting the contents of '/home/runner/work/MediaIngredientMech/MediaIngredientMech'
+2026-11-04T01:44:43.2547334Z ##[group]Initializing the repository
+2026-11-04T01:44:43.2569548Z [command]/usr/bin/git init /home/runner/work/MediaIngredientMech/MediaIngredientMech
+2026-11-04T01:44:43.2691697Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-04T01:44:43.2695720Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-04T01:44:43.2699097Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-04T01:44:43.2701773Z hint: call:
+2026-11-04T01:44:43.2703339Z hint:
+2026-11-04T01:44:43.2705127Z hint: 	git config --global init.defaultBranch <name>
+2026-11-04T01:44:43.2707603Z hint:
+2026-11-04T01:44:43.2709686Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-04T01:44:43.2713314Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-04T01:44:43.2715982Z hint:
+2026-11-04T01:44:43.2717440Z hint: 	git branch -m <name>
+2026-11-04T01:44:43.2719156Z hint:
+2026-11-04T01:44:43.2721390Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-04T01:44:43.2726081Z Initialized empty Git repository in /home/runner/work/MediaIngredientMech/MediaIngredientMech/.git/
+2026-11-04T01:44:43.2732549Z [command]/usr/bin/git remote add origin https://github.com/CultureBotAI/MediaIngredientMech
+2026-11-04T01:44:43.2883725Z ##[endgroup]
+2026-11-04T01:44:43.2887134Z ##[group]Disabling automatic garbage collection
+2026-11-04T01:44:43.2889475Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-04T01:44:43.2894730Z ##[endgroup]
+2026-11-04T01:44:43.2897093Z ##[group]Setting up auth
+2026-11-04T01:44:43.2899529Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T01:44:43.2907636Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T01:44:43.3299807Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T01:44:43.3347413Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T01:44:43.3595192Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T01:44:43.3643234Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T01:44:43.3895494Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-04T01:44:43.3948294Z ##[endgroup]
+2026-11-04T01:44:43.3950348Z ##[group]Fetching the repository
+2026-11-04T01:44:43.3973064Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +252a44386bc4af023bc743f4f44bad147a48bc24:refs/remotes/pull/1128/merge
+2026-11-04T01:44:58.5379433Z From https://github.com/CultureBotAI/MediaIngredientMech
+2026-11-04T01:44:58.5380509Z  * [new branch]        chore/agent-infra-unify  -> origin/chore/agent-infra-unify
+2026-11-04T01:44:58.5381768Z  * [new branch]        chore/cycle-13-stage-04-record-reviews -> origin/chore/cycle-13-stage-04-record-reviews
+2026-11-04T01:44:58.5383476Z  * [new branch]        codex/governed-final-59aead-kk28cgvr -> origin/codex/governed-final-59aead-kk28cgvr
+2026-11-04T01:44:58.5384676Z  * [new branch]        codex/governed-prereq-7c516-976ydp8l -> origin/codex/governed-prereq-7c516-976ydp8l
+2026-11-04T01:44:58.5385419Z  * [new branch]        cross-corpus-link-adoption -> origin/cross-corpus-link-adoption
+2026-11-04T01:44:58.5386454Z  * [new branch]        expose-agents-skills     -> origin/expose-agents-skills
+2026-11-04T01:44:58.5387279Z  * [new branch]        feat/evidence-assessment -> origin/feat/evidence-assessment
+2026-11-04T01:44:58.5388045Z  * [new branch]        feat/unify-site-features-20261025 -> origin/feat/unify-site-features-20261025
+2026-11-04T01:44:58.5389109Z  * [new branch]        fix-hydrate-identities-and-synonyms-896-900-905 -> origin/fix-hydrate-identities-and-synonyms-896-900-905
+2026-11-04T01:44:58.5390066Z  * [new branch]        fix-label-index-and-identities-808-811-868 -> origin/fix-label-index-and-identities-808-811-868
+2026-11-04T01:44:58.5390906Z  * [new branch]        fix-mapping-quality-enum-884-696 -> origin/fix-mapping-quality-enum-884-696
+2026-11-04T01:44:58.5391597Z  * [new branch]        fix-merge-tombstones-882 -> origin/fix-merge-tombstones-882
+2026-11-04T01:44:58.5392579Z  * [new branch]        fix-node-ids-hydrate-chemistry-cas-870-871-268-753-751-313-235-901 -> origin/fix-node-ids-hydrate-chemistry-cas-870-871-268-753-751-313-235-901
+2026-11-04T01:44:58.5394015Z  * [new branch]        fix-receipt-reasons-and-tag-902-903 -> origin/fix-receipt-reasons-and-tag-902-903
+2026-11-04T01:44:58.5394974Z  * [new branch]        fix-tooling-and-guardrails-885-886-300-267-702-814 -> origin/fix-tooling-and-guardrails-885-886-300-267-702-814
+2026-11-04T01:44:58.5396259Z  * [new branch]        fix-unblocked-312-and-758-748-741 -> origin/fix-unblocked-312-and-758-748-741
+2026-11-04T01:44:58.5396995Z  * [new branch]        fix-unified-chebi-rejections-869 -> origin/fix-unified-chebi-rejections-869
+2026-11-04T01:44:58.5397708Z  * [new branch]        fix-visualization-currency-904 -> origin/fix-visualization-currency-904
+2026-11-04T01:44:58.5398338Z  * [new branch]        fix/236-subject-is-stem  -> origin/fix/236-subject-is-stem
+2026-11-04T01:44:58.5398969Z  * [new branch]        fix/745-740-748-supersedable-pins -> origin/fix/745-740-748-supersedable-pins
+2026-11-04T01:44:58.5399599Z  * [new branch]        fix/embedding-graph-678  -> origin/fix/embedding-graph-678
+2026-11-04T01:44:58.5400322Z  * [new branch]        fix/sssom-regeneration-evidence-20261031 -> origin/fix/sssom-regeneration-evidence-20261031
+2026-11-04T01:44:58.5401349Z  * [new branch]        fix/sssom-step7d-901-1117-1118-20261103 -> origin/fix/sssom-step7d-901-1117-1118-20261103
+2026-11-04T01:44:58.5402004Z  * [new branch]        main                     -> origin/main
+2026-11-04T01:44:58.5402636Z  * [new branch]        rebuild-culturemech-membership-877 -> origin/rebuild-culturemech-membership-877
+2026-11-04T01:44:58.5403770Z  * [new branch]        rebuild-unified-mapping-894 -> origin/rebuild-unified-mapping-894
+2026-11-04T01:44:58.5404481Z  * [new branch]        recut-embedding-graph-683 -> origin/recut-embedding-graph-683
+2026-11-04T01:44:58.5405096Z  * [new branch]        recut-subject-is-stem-688 -> origin/recut-subject-is-stem-688
+2026-11-04T01:44:58.5405970Z  * [new branch]        recut-supersedable-pins-764 -> origin/recut-supersedable-pins-764
+2026-11-04T01:44:58.5406711Z  * [new tag]           archive/pr-852-source-docs-20261008 -> archive/pr-852-source-docs-20261008
+2026-11-04T01:44:58.5407438Z  * [new tag]           archive/pr-852-source-schema-20261008 -> archive/pr-852-source-schema-20261008
+2026-11-04T01:44:58.5408199Z  * [new tag]           mim-sssom-2026-09-21     -> mim-sssom-2026-09-21
+2026-11-04T01:44:58.5408728Z  * [new tag]           mim-supported-2026-09-21 -> mim-supported-2026-09-21
+2026-11-04T01:44:58.5409283Z  * [new tag]           review-source/20260924-ea697252 -> review-source/20260924-ea697252
+2026-11-04T01:44:58.5409867Z  * [new tag]           review-source/20261011-0cc2b4e3 -> review-source/20261011-0cc2b4e3
+2026-11-04T01:44:58.5410448Z  * [new tag]           review-source/20261101-612860e4 -> review-source/20261101-612860e4
+2026-11-04T01:44:58.5411013Z  * [new ref]           252a44386bc4af023bc743f4f44bad147a48bc24 -> pull/1128/merge
+2026-11-04T01:44:58.5412424Z ##[endgroup]
+2026-11-04T01:44:58.5413528Z ##[group]Determining the checkout info
+2026-11-04T01:44:58.5414042Z ##[endgroup]
+2026-11-04T01:44:58.5414352Z [command]/usr/bin/git sparse-checkout disable
+2026-11-04T01:44:58.5458573Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-04T01:44:58.5497212Z ##[group]Checking out the ref
+2026-11-04T01:44:58.5501262Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1128/merge
+2026-11-04T01:44:59.5792341Z Updating files:  43% (5883/13534)
+2026-11-04T01:44:59.6113782Z Updating files:  44% (5955/13534)
+2026-11-04T01:44:59.6437334Z Updating files:  45% (6091/13534)
+2026-11-04T01:44:59.6572267Z Updating files:  46% (6226/13534)
+2026-11-04T01:44:59.6861409Z Updating files:  47% (6361/13534)
+2026-11-04T01:44:59.7870332Z Updating files:  48% (6497/13534)
+2026-11-04T01:44:59.8121988Z Updating files:  49% (6632/13534)
+2026-11-04T01:44:59.8513351Z Updating files:  50% (6767/13534)
+2026-11-04T01:44:59.8604745Z Updating files:  51% (6903/13534)
+2026-11-04T01:44:59.8652246Z Updating files:  52% (7038/13534)
+2026-11-04T01:44:59.8699856Z Updating files:  53% (7174/13534)
+2026-11-04T01:44:59.9073648Z Updating files:  54% (7309/13534)
+2026-11-04T01:44:59.9381087Z Updating files:  55% (7444/13534)
+2026-11-04T01:44:59.9448711Z Updating files:  56% (7580/13534)
+2026-11-04T01:44:59.9506909Z Updating files:  57% (7715/13534)
+2026-11-04T01:44:59.9573437Z Updating files:  58% (7850/13534)
+2026-11-04T01:44:59.9634845Z Updating files:  59% (7986/13534)
+2026-11-04T01:44:59.9703545Z Updating files:  60% (8121/13534)
+2026-11-04T01:44:59.9779024Z Updating files:  61% (8256/13534)
+2026-11-04T01:44:59.9885017Z Updating files:  62% (8392/13534)
+2026-11-04T01:44:59.9961256Z Updating files:  63% (8527/13534)
+2026-11-04T01:45:00.0035584Z Updating files:  64% (8662/13534)
+2026-11-04T01:45:00.0111442Z Updating files:  65% (8798/13534)
+2026-11-04T01:45:00.0208842Z Updating files:  66% (8933/13534)
+2026-11-04T01:45:00.0288222Z Updating files:  67% (9068/13534)
+2026-11-04T01:45:00.0400026Z Updating files:  68% (9204/13534)
+2026-11-04T01:45:00.0486576Z Updating files:  69% (9339/13534)
+2026-11-04T01:45:00.0552732Z Updating files:  70% (9474/13534)
+2026-11-04T01:45:00.0616559Z Updating files:  71% (9610/13534)
+2026-11-04T01:45:00.0683790Z Updating files:  72% (9745/13534)
+2026-11-04T01:45:00.0746975Z Updating files:  73% (9880/13534)
+2026-11-04T01:45:00.0808157Z Updating files:  74% (10016/13534)
+2026-11-04T01:45:00.0868948Z Updating files:  75% (10151/13534)
+2026-11-04T01:45:00.0932810Z Updating files:  76% (10286/13534)
+2026-11-04T01:45:00.0998830Z Updating files:  77% (10422/13534)
+2026-11-04T01:45:00.1465630Z Updating files:  78% (10557/13534)
+2026-11-04T01:45:00.2423635Z Updating files:  79% (10692/13534)
+2026-11-04T01:45:00.2562397Z Updating files:  80% (10828/13534)
+2026-11-04T01:45:00.2696836Z Updating files:  81% (10963/13534)
+2026-11-04T01:45:00.2822603Z Updating files:  82% (11098/13534)
+2026-11-04T01:45:00.2938757Z Updating files:  83% (11234/13534)
+2026-11-04T01:45:00.3060370Z Updating files:  84% (11369/13534)
+2026-11-04T01:45:00.3177210Z Updating files:  85% (11504/13534)
+2026-11-04T01:45:00.3287601Z Updating files:  86% (11640/13534)
+2026-11-04T01:45:00.3396813Z Updating files:  87% (11775/13534)
+2026-11-04T01:45:00.3512902Z Updating files:  88% (11910/13534)
+2026-11-04T01:45:00.3622204Z Updating files:  89% (12046/13534)
+2026-11-04T01:45:00.3740995Z Updating files:  90% (12181/13534)
+2026-11-04T01:45:00.3852169Z Updating files:  91% (12316/13534)
+2026-11-04T01:45:00.3959944Z Updating files:  92% (12452/13534)
+2026-11-04T01:45:00.4529016Z Updating files:  93% (12587/13534)
+2026-11-04T01:45:00.4624366Z Updating files:  94% (12722/13534)
+2026-11-04T01:45:00.4728767Z Updating files:  95% (12858/13534)
+2026-11-04T01:45:00.4848642Z Updating files:  96% (12993/13534)
+2026-11-04T01:45:00.4960168Z Updating files:  97% (13128/13534)
+2026-11-04T01:45:00.5115622Z Updating files:  98% (13264/13534)
+2026-11-04T01:45:00.5254956Z Updating files:  99% (13399/13534)
+2026-11-04T01:45:00.5255527Z Updating files: 100% (13534/13534)
+2026-11-04T01:45:00.5256448Z Updating files: 100% (13534/13534), done.
+2026-11-04T01:45:00.5402476Z Note: switching to 'refs/remotes/pull/1128/merge'.
+2026-11-04T01:45:00.5403133Z 
+2026-11-04T01:45:00.5403497Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-04T01:45:00.5404110Z changes and commit them, and you can discard any commits you make in this
+2026-11-04T01:45:00.5404753Z state without impacting any branches by switching back to a branch.
+2026-11-04T01:45:00.5405060Z 
+2026-11-04T01:45:00.5405256Z If you want to create a new branch to retain commits you create, you may
+2026-11-04T01:45:00.5405729Z do so (now or later) by using -c with the switch command. Example:
+2026-11-04T01:45:00.5406002Z 
+2026-11-04T01:45:00.5406109Z   git switch -c <new-branch-name>
+2026-11-04T01:45:00.5406291Z 
+2026-11-04T01:45:00.5406397Z Or undo this operation with:
+2026-11-04T01:45:00.5406561Z 
+2026-11-04T01:45:00.5406655Z   git switch -
+2026-11-04T01:45:00.5406777Z 
+2026-11-04T01:45:00.5407013Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-04T01:45:00.5407341Z 
+2026-11-04T01:45:00.5407720Z HEAD is now at 252a4438 Merge 8417aaf3a057d855ae5d0b78a587ef1cb57bf28f into 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:00.5541335Z ##[endgroup]
+2026-11-04T01:45:00.5596965Z [command]/usr/bin/git log -1 --format=%H
+2026-11-04T01:45:00.5631863Z 252a44386bc4af023bc743f4f44bad147a48bc24
+2026-11-04T01:45:00.5888238Z ##[group]Run extractions/setup-just@v3
+2026-11-04T01:45:00.5888541Z with:
+2026-11-04T01:45:00.5891254Z   github-token: ***
+2026-11-04T01:45:00.5891480Z env:
+2026-11-04T01:45:00.5891674Z   UV_PYTHON: 3.13
+2026-11-04T01:45:00.5891955Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:00.5892287Z ##[endgroup]
+2026-11-04T01:45:00.5948585Z ##[start-action display=Run extractions/setup-crate@4993624604c307fbca528d28a3c8b60fa5ecc859;id=__extractions_setup-just.__extractions_setup-crate]
+2026-11-04T01:45:00.6003898Z ##[group]Run extractions/setup-crate@4993624604c307fbca528d28a3c8b60fa5ecc859
+2026-11-04T01:45:00.6004306Z with:
+2026-11-04T01:45:00.6004501Z   repo: casey/just
+2026-11-04T01:45:00.6007285Z   github-token: ***
+2026-11-04T01:45:00.6007505Z env:
+2026-11-04T01:45:00.6007689Z   UV_PYTHON: 3.13
+2026-11-04T01:45:00.6007965Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:00.6008289Z ##[endgroup]
+2026-11-04T01:45:01.5554650Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/b07ac42c-5919-4529-b738-46eb44a7b1e1 -f /home/runner/work/_temp/06798b04-3b5f-4901-887b-dc33804f41e1
+2026-11-04T01:45:01.6218280Z Successfully setup just v1.59.0
+2026-11-04T01:45:01.6339038Z ##[end-action id=__extractions_setup-just.__extractions_setup-crate;outcome=success;conclusion=success;duration_ms=1038]
+2026-11-04T01:45:01.6409024Z ##[group]Run astral-sh/setup-uv@v3
+2026-11-04T01:45:01.6409316Z with:
+2026-11-04T01:45:01.6409512Z   enable-cache: true
+2026-11-04T01:45:01.6409733Z   version: latest
+2026-11-04T01:45:01.6412427Z   github-token: ***
+2026-11-04T01:45:01.6412933Z   cache-dependency-glob: **/uv.lock
+2026-11-04T01:45:01.6413256Z   prune-cache: true
+2026-11-04T01:45:01.6413471Z env:
+2026-11-04T01:45:01.6413664Z   UV_PYTHON: 3.13
+2026-11-04T01:45:01.6413947Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:01.6414284Z ##[endgroup]
+2026-11-04T01:45:01.7822126Z Downloading uv from "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-11-04T01:45:01.7833865Z (node:2573) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T01:45:01.7834770Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T01:45:02.2679071Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/90ff1a29-ce6f-4107-bad0-89c27dd86249 -f /home/runner/work/_temp/eaced3ff-906f-43b4-a740-f252ff045f9e
+2026-11-04T01:45:02.5774403Z Added /opt/hostedtoolcache/uv/0.13.7/x86_64 to the path
+2026-11-04T01:45:02.5775739Z Added /home/runner/.local/bin to the path
+2026-11-04T01:45:02.5780526Z Successfully installed uv version 0.13.7
+2026-11-04T01:45:02.5800693Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-11-04T01:45:02.5801218Z Searching files using cache dependency glob: **/uv.lock
+2026-11-04T01:45:03.6432282Z /home/runner/work/MediaIngredientMech/MediaIngredientMech/uv.lock
+2026-11-04T01:45:03.6484124Z Found 1 files to hash.
+2026-11-04T01:45:03.6485744Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-0.13.7-a2751f9fb30bd4a2a3c9523bf706fc68f486d6f1caf3d2e6c0490be45ba3e7d1
+2026-11-04T01:45:03.7320141Z ##[warning]Failed to restore: Cache service responded with 400
+2026-11-04T01:45:03.7332085Z No GitHub Actions cache found for key: setup-uv-1-x86_64-unknown-linux-gnu-0.13.7-a2751f9fb30bd4a2a3c9523bf706fc68f486d6f1caf3d2e6c0490be45ba3e7d1
+2026-11-04T01:45:03.7514648Z ##[group]Run uv python install 3.13
+2026-11-04T01:45:03.7515007Z [36;1muv python install 3.13[0m
+2026-11-04T01:45:03.7540348Z shell: /usr/bin/bash -e {0}
+2026-11-04T01:45:03.7540808Z env:
+2026-11-04T01:45:03.7541058Z   UV_PYTHON: 3.13
+2026-11-04T01:45:03.7541346Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:03.7541737Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T01:45:03.7542039Z ##[endgroup]
+2026-11-04T01:45:04.1998641Z Downloading cpython-3.13.18-linux-x86_64-gnu (download) (33.8MiB)
+2026-11-04T01:45:04.7367798Z  Downloaded cpython-3.13.18-linux-x86_64-gnu (download)
+2026-11-04T01:45:04.7389478Z Installed Python 3.13.18 in 970ms
+2026-11-04T01:45:04.7390043Z  + cpython-3.13.18-linux-x86_64-gnu (python3.13)
+2026-11-04T01:45:04.7467829Z ##[group]Run uv sync --frozen
+2026-11-04T01:45:04.7468158Z [36;1muv sync --frozen[0m
+2026-11-04T01:45:04.7491782Z shell: /usr/bin/bash -e {0}
+2026-11-04T01:45:04.7492049Z env:
+2026-11-04T01:45:04.7492253Z   UV_PYTHON: 3.13
+2026-11-04T01:45:04.7492542Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:04.7493320Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T01:45:04.7493634Z ##[endgroup]
+2026-11-04T01:45:04.9094734Z Using CPython 3.13.18
+2026-11-04T01:45:04.9095074Z Creating virtual environment at: .venv
+2026-11-04T01:45:04.9480627Z    Building mediaingredientmech @ file:///home/runner/work/MediaIngredientMech/MediaIngredientMech
+2026-11-04T01:45:05.0196332Z Downloading pygments (1.2MiB)
+2026-11-04T01:45:05.0389551Z Downloading kiwisolver (1.4MiB)
+2026-11-04T01:45:05.0391626Z Downloading fonttools (4.7MiB)
+2026-11-04T01:45:05.0396985Z Downloading pip (1.7MiB)
+2026-11-04T01:45:05.0398160Z Downloading scipy (33.6MiB)
+2026-11-04T01:45:05.0400026Z Downloading sphinx (3.7MiB)
+2026-11-04T01:45:05.0401268Z Downloading babel (9.7MiB)
+2026-11-04T01:45:05.0403093Z Downloading setuptools (1.0MiB)
+2026-11-04T01:45:05.0404940Z Downloading networkx (2.0MiB)
+2026-11-04T01:45:05.0409543Z Downloading matplotlib (9.6MiB)
+2026-11-04T01:45:05.0411168Z Downloading llvmlite (53.7MiB)
+2026-11-04T01:45:05.0414086Z Downloading sqlalchemy (3.1MiB)
+2026-11-04T01:45:05.0417141Z Downloading pydantic-core (2.0MiB)
+2026-11-04T01:45:05.0418674Z Downloading pillow (6.6MiB)
+2026-11-04T01:45:05.0421590Z Downloading scikit-learn (8.5MiB)
+2026-11-04T01:45:05.0423585Z Downloading py-horned-owl (2.2MiB)
+2026-11-04T01:45:05.0425218Z Downloading lxml (5.0MiB)
+2026-11-04T01:45:05.0426989Z Downloading numba (3.6MiB)
+2026-11-04T01:45:05.0432943Z Downloading fastobo (2.2MiB)
+2026-11-04T01:45:05.0451092Z Downloading numpy (15.8MiB)
+2026-11-04T01:45:05.0455273Z Downloading openai (1.6MiB)
+2026-11-04T01:45:05.0527387Z Downloading faiss-cpu (17.6MiB)
+2026-11-04T01:45:05.0529652Z Downloading pandas (10.4MiB)
+2026-11-04T01:45:05.3155238Z    Building antlr4-python3-runtime==4.9.3
+2026-11-04T01:45:05.3889818Z    Building cfgraph==0.2.1
+2026-11-04T01:45:05.4285854Z    Building pytest-logging==2015.11.4
+2026-11-04T01:45:05.4320722Z    Building ratelimit==2.2.1
+2026-11-04T01:45:05.5144566Z  Downloaded setuptools
+2026-11-04T01:45:05.5493827Z  Downloaded pygments
+2026-11-04T01:45:05.6029778Z  Downloaded kiwisolver
+2026-11-04T01:45:05.6175561Z  Downloaded openai
+2026-11-04T01:45:05.6368584Z  Downloaded pip
+2026-11-04T01:45:05.6414660Z  Downloaded networkx
+2026-11-04T01:45:05.6415335Z  Downloaded pydantic-core
+2026-11-04T01:45:05.6418904Z    Building pysolr==3.11.0
+2026-11-04T01:45:05.6894071Z  Downloaded fastobo
+2026-11-04T01:45:05.7433629Z  Downloaded sqlalchemy
+2026-11-04T01:45:05.7864897Z  Downloaded numba
+2026-11-04T01:45:05.7911236Z  Downloaded sphinx
+2026-11-04T01:45:05.8404199Z  Downloaded fonttools
+2026-11-04T01:45:05.8422627Z  Downloaded py-horned-owl
+2026-11-04T01:45:05.8630557Z  Downloaded lxml
+2026-11-04T01:45:05.9455180Z  Downloaded pillow
+2026-11-04T01:45:06.0425224Z  Downloaded scikit-learn
+2026-11-04T01:45:06.0960409Z  Downloaded matplotlib
+2026-11-04T01:45:06.1010732Z  Downloaded babel
+2026-11-04T01:45:06.2413726Z  Downloaded pandas
+2026-11-04T01:45:06.3658798Z  Downloaded numpy
+2026-11-04T01:45:06.4833946Z  Downloaded faiss-cpu
+2026-11-04T01:45:06.7542469Z  Downloaded scipy
+2026-11-04T01:45:06.9451782Z  Downloaded llvmlite
+2026-11-04T01:45:07.6478441Z       Built cfgraph==0.2.1
+2026-11-04T01:45:07.7104052Z       Built pytest-logging==2015.11.4
+2026-11-04T01:45:08.0286043Z       Built antlr4-python3-runtime==4.9.3
+2026-11-04T01:45:08.1274384Z       Built ratelimit==2.2.1
+2026-11-04T01:45:08.2692256Z       Built mediaingredientmech @ file:///home/runner/work/MediaIngredientMech/MediaIngredientMech
+2026-11-04T01:45:08.3332129Z       Built pysolr==3.11.0
+2026-11-04T01:45:08.3347725Z Prepared 166 packages in 3.42s
+2026-11-04T01:45:08.4993774Z Installed 166 packages in 164ms
+2026-11-04T01:45:08.4995553Z  + airium==0.2.7
+2026-11-04T01:45:08.4995814Z  + alabaster==1.0.0
+2026-11-04T01:45:08.4996201Z  + annotated-doc==0.0.4
+2026-11-04T01:45:08.4996676Z  + annotated-types==0.7.0
+2026-11-04T01:45:08.4997254Z  + antlr4-python3-runtime==4.9.3
+2026-11-04T01:45:08.4997732Z  + anyio==4.13.0
+2026-11-04T01:45:08.4998115Z  + appdirs==1.4.4
+2026-11-04T01:45:08.4998487Z  + arrow==1.4.0
+2026-11-04T01:45:08.4998837Z  + attrs==25.4.0
+2026-11-04T01:45:08.4999187Z  + babel==2.18.0
+2026-11-04T01:45:08.4999536Z  + cattrs==26.1.0
+2026-11-04T01:45:08.4999925Z  + certifi==2026.2.25
+2026-11-04T01:45:08.5000351Z  + cfgraph==0.2.1
+2026-11-04T01:45:08.5000723Z  + chardet==5.2.0
+2026-11-04T01:45:08.5001127Z  + charset-normalizer==3.4.5
+2026-11-04T01:45:08.5001610Z  + class-resolver==0.7.1
+2026-11-04T01:45:08.5002048Z  + click==8.3.1
+2026-11-04T01:45:08.5002431Z  + click-default-group==1.2.4
+2026-11-04T01:45:08.5003118Z  + condense-json==1.1
+2026-11-04T01:45:08.5003596Z  + contourpy==1.3.3
+2026-11-04T01:45:08.5004019Z  + curies==0.12.9
+2026-11-04T01:45:08.5004405Z  + cycler==0.12.1
+2026-11-04T01:45:08.5004788Z  + defusedxml==0.7.1
+2026-11-04T01:45:08.5005239Z  + deprecated==1.3.1
+2026-11-04T01:45:08.5005633Z  + deprecation==2.1.0
+2026-11-04T01:45:08.5006090Z  + docutils==0.22.4
+2026-11-04T01:45:08.5006539Z  + et-xmlfile==2.0.0
+2026-11-04T01:45:08.5006951Z  + eutils==0.6.1
+2026-11-04T01:45:08.5007345Z  + faiss-cpu==1.14.3
+2026-11-04T01:45:08.5007710Z  + fastobo==0.14.1
+2026-11-04T01:45:08.5008132Z  + fonttools==4.63.0
+2026-11-04T01:45:08.5008514Z  + fqdn==1.5.1
+2026-11-04T01:45:08.5008863Z  + graphviz==0.21
+2026-11-04T01:45:08.5009243Z  + greenlet==3.3.2
+2026-11-04T01:45:08.5009583Z  + h11==0.16.0
+2026-11-04T01:45:08.5009962Z  + hbreader==0.9.1
+2026-11-04T01:45:08.5010368Z  + httpcore2==2.12.0
+2026-11-04T01:45:08.5010770Z  + httpx2==2.12.0
+2026-11-04T01:45:08.5011132Z  + idna==3.19
+2026-11-04T01:45:08.5011484Z  + ijson==3.5.0
+2026-11-04T01:45:08.5011858Z  + imagesize==2.0.0
+2026-11-04T01:45:08.5012280Z  + iniconfig==2.3.0
+2026-11-04T01:45:08.5012860Z  + isodate==0.7.2
+2026-11-04T01:45:08.5013231Z  + isoduration==20.11.0
+2026-11-04T01:45:08.5013687Z  + jinja2==3.1.6
+2026-11-04T01:45:08.5014062Z  + jiter==0.16.0
+2026-11-04T01:45:08.5014809Z  + joblib==1.5.3
+2026-11-04T01:45:08.5015197Z  + json-flattener==0.1.9
+2026-11-04T01:45:08.5015678Z  + jsonasobj==1.3.1
+2026-11-04T01:45:08.5015943Z  + jsonasobj2==1.0.4
+2026-11-04T01:45:08.5019317Z  + jsonlines==4.0.0
+2026-11-04T01:45:08.5019757Z  + jsonpointer==3.0.0
+2026-11-04T01:45:08.5020170Z  + jsonschema==4.26.0
+2026-11-04T01:45:08.5020652Z  + jsonschema-specifications==2025.9.1
+2026-11-04T01:45:08.5021213Z  + kgcl-rdflib==0.5.0
+2026-11-04T01:45:08.5021636Z  + kgcl-schema==0.6.9
+2026-11-04T01:45:08.5022055Z  + kiwisolver==1.5.0
+2026-11-04T01:45:08.5022472Z  + lark==1.3.1
+2026-11-04T01:45:08.5023254Z  + linkml==1.9.3
+2026-11-04T01:45:08.5023686Z  + linkml-renderer==0.3.1
+2026-11-04T01:45:08.5024161Z  + linkml-runtime==1.9.5
+2026-11-04T01:45:08.5024625Z  + linkml-term-validator==0.3.0
+2026-11-04T01:45:08.5025169Z  + llm==0.33
+2026-11-04T01:45:08.5025530Z  + llvmlite==0.47.0
+2026-11-04T01:45:08.5026064Z  + lxml==6.0.2
+2026-11-04T01:45:08.5026501Z  + markdown-it-py==4.0.0
+2026-11-04T01:45:08.5026821Z  + markupsafe==3.0.3
+2026-11-04T01:45:08.5027057Z  + matplotlib==3.11.1
+2026-11-04T01:45:08.5027271Z  + mdurl==0.1.2
+2026-11-04T01:45:08.5028427Z  + mediaingredientmech==0.1.0 (from file:///home/runner/work/MediaIngredientMech/MediaIngredientMech)
+2026-11-04T01:45:08.5029454Z  + more-click==0.1.3
+2026-11-04T01:45:08.5029842Z  + ndex2==3.11.0
+2026-11-04T01:45:08.5030188Z  + networkx==3.6.1
+2026-11-04T01:45:08.5030536Z  + numba==0.65.1
+2026-11-04T01:45:08.5030917Z  + numpy==2.4.3
+2026-11-04T01:45:08.5031312Z  + oaklib==0.7.4
+2026-11-04T01:45:08.5031686Z  + ols-client==0.2.1
+2026-11-04T01:45:08.5032121Z  + ontoportal-client==0.0.8
+2026-11-04T01:45:08.5032581Z  + openai==3.5.0
+2026-11-04T01:45:08.5033289Z  + openpyxl==3.1.5
+2026-11-04T01:45:08.5033681Z  + packaging==25.0
+2026-11-04T01:45:08.5034295Z  + pacmap==0.9.1
+2026-11-04T01:45:08.5034720Z  + pandas==3.0.1
+2026-11-04T01:45:08.5035125Z  + parse==1.21.1
+2026-11-04T01:45:08.5035523Z  + pillow==12.3.0
+2026-11-04T01:45:08.5035934Z  + pip==26.2.1
+2026-11-04T01:45:08.5036362Z  + platformdirs==4.9.4
+2026-11-04T01:45:08.5036775Z  + pluggy==1.6.0
+2026-11-04T01:45:08.5037205Z  + prefixcommons==0.1.12
+2026-11-04T01:45:08.5037686Z  + prefixmaps==0.2.6
+2026-11-04T01:45:08.5038118Z  + pronto==2.7.3
+2026-11-04T01:45:08.5038492Z  + puremagic==2.2.0
+2026-11-04T01:45:08.5038898Z  + py-horned-owl==1.4.1
+2026-11-04T01:45:08.5039306Z  + pydantic==2.12.5
+2026-11-04T01:45:08.5039696Z  + pydantic-core==2.41.5
+2026-11-04T01:45:08.5040141Z  + pygments==2.19.2
+2026-11-04T01:45:08.5040540Z  + pyjsg==0.12.3
+2026-11-04T01:45:08.5040940Z  + pynndescent==0.6.0
+2026-11-04T01:45:08.5041373Z  + pyparsing==3.3.2
+2026-11-04T01:45:08.5041781Z  + pyshex==0.8.1
+2026-11-04T01:45:08.5042184Z  + pyshexc==0.9.1
+2026-11-04T01:45:08.5042557Z  + pysolr==3.11.0
+2026-11-04T01:45:08.5043123Z  + pystow==0.7.28
+2026-11-04T01:45:08.5043545Z  + pytest==9.0.2
+2026-11-04T01:45:08.5043939Z  + pytest-logging==2015.11.4
+2026-11-04T01:45:08.5044453Z  + python-dateutil==2.9.0.post0
+2026-11-04T01:45:08.5044901Z  + python-dotenv==1.2.2
+2026-11-04T01:45:08.5045329Z  + python-ulid==4.0.1
+2026-11-04T01:45:08.5045693Z  + pyyaml==6.0.3
+2026-11-04T01:45:08.5046078Z  + ratelimit==2.2.1
+2026-11-04T01:45:08.5046476Z  + rdflib==7.6.0
+2026-11-04T01:45:08.5046883Z  + rdflib-jsonld==0.6.1
+2026-11-04T01:45:08.5047300Z  + rdflib-shim==1.0.3
+2026-11-04T01:45:08.5047723Z  + referencing==0.37.0
+2026-11-04T01:45:08.5048099Z  + regex==2026.4.4
+2026-11-04T01:45:08.5048502Z  + requests==2.32.5
+2026-11-04T01:45:08.5048898Z  + requests-cache==1.3.1
+2026-11-04T01:45:08.5049353Z  + requests-toolbelt==1.0.0
+2026-11-04T01:45:08.5049820Z  + rfc3339-validator==0.1.4
+2026-11-04T01:45:08.5050280Z  + rfc3987==1.3.8
+2026-11-04T01:45:08.5050692Z  + rich==14.3.3
+2026-11-04T01:45:08.5051045Z  + roman-numerals==4.1.0
+2026-11-04T01:45:08.5051469Z  + rpds-py==0.30.0
+2026-11-04T01:45:08.5051848Z  + ruamel-yaml==0.19.1
+2026-11-04T01:45:08.5052275Z  + scikit-learn==1.8.0
+2026-11-04T01:45:08.5052849Z  + scipy==1.17.1
+2026-11-04T01:45:08.5053253Z  + semsql==0.4.0
+2026-11-04T01:45:08.5053877Z  + setuptools==81.0.0
+2026-11-04T01:45:08.5054317Z  + shellingham==1.5.4
+2026-11-04T01:45:08.5054741Z  + shexjsg==0.8.2
+2026-11-04T01:45:08.5055151Z  + six==1.17.0
+2026-11-04T01:45:08.5055542Z  + sniffio==1.3.1
+2026-11-04T01:45:08.5055956Z  + snowballstemmer==3.0.1
+2026-11-04T01:45:08.5056419Z  + sparqlslurper==0.5.1
+2026-11-04T01:45:08.5056866Z  + sparqlwrapper==2.0.0
+2026-11-04T01:45:08.5057256Z  + sphinx==9.1.0
+2026-11-04T01:45:08.5057680Z  + sphinx-click==6.2.0
+2026-11-04T01:45:08.5058154Z  + sphinxcontrib-applehelp==2.0.0
+2026-11-04T01:45:08.5058730Z  + sphinxcontrib-devhelp==2.0.0
+2026-11-04T01:45:08.5059247Z  + sphinxcontrib-htmlhelp==2.1.0
+2026-11-04T01:45:08.5059779Z  + sphinxcontrib-jsmath==1.0.1
+2026-11-04T01:45:08.5060293Z  + sphinxcontrib-qthelp==2.0.0
+2026-11-04T01:45:08.5060818Z  + sphinxcontrib-serializinghtml==2.0.0
+2026-11-04T01:45:08.5061383Z  + sqlalchemy==2.0.48
+2026-11-04T01:45:08.5061841Z  + sqlalchemy-utils==0.38.3
+2026-11-04T01:45:08.5062333Z  + sqlite-fts4==1.0.3
+2026-11-04T01:45:08.5062951Z  + sqlite-utils==4.2.1
+2026-11-04T01:45:08.5063322Z  + sssom==0.4.17
+2026-11-04T01:45:08.5063709Z  + sssom-schema==1.0.0
+2026-11-04T01:45:08.5064111Z  + tabulate==0.10.0
+2026-11-04T01:45:08.5064467Z  + tenacity==9.1.4
+2026-11-04T01:45:08.5064846Z  + threadpoolctl==3.6.0
+2026-11-04T01:45:08.5065227Z  + tqdm==4.67.3
+2026-11-04T01:45:08.5065616Z  + truststore==0.10.4
+2026-11-04T01:45:08.5066022Z  + typer==0.25.1
+2026-11-04T01:45:08.5066431Z  + typing-extensions==4.15.0
+2026-11-04T01:45:08.5066914Z  + typing-inspection==0.4.2
+2026-11-04T01:45:08.5067398Z  + tzdata==2025.3
+2026-11-04T01:45:08.5067821Z  + umap-learn==0.5.12
+2026-11-04T01:45:08.5068233Z  + uri-template==1.3.0
+2026-11-04T01:45:08.5068471Z  + url-normalize==2.2.1
+2026-11-04T01:45:08.5068682Z  + urllib3==2.6.3
+2026-11-04T01:45:08.5069038Z  + validators==0.35.0
+2026-11-04T01:45:08.5069250Z  + watchdog==6.0.0
+2026-11-04T01:45:08.5069462Z  + webcolors==25.10.0
+2026-11-04T01:45:08.5069670Z  + wrapt==2.1.2
+2026-11-04T01:45:08.5674012Z ##[group]Run just test-record-reviews
+2026-11-04T01:45:08.5674373Z [36;1mjust test-record-reviews[0m
+2026-11-04T01:45:08.5695064Z shell: /usr/bin/bash -e {0}
+2026-11-04T01:45:08.5695314Z env:
+2026-11-04T01:45:08.5695503Z   UV_PYTHON: 3.13
+2026-11-04T01:45:08.5695789Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:45:08.5696179Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T01:45:08.5696492Z ##[endgroup]
+2026-11-04T01:45:08.5791576Z uv run --with pytest --with pytest-cov python -m pytest tests/test_record_review_contract.py --no-cov -q
+2026-11-04T01:45:08.8772144Z Installed 7 packages in 8ms
+2026-11-04T01:47:21.3825580Z ....                                                                     [100%]
+2026-11-04T01:47:21.3826139Z =============================== warnings summary ===============================
+2026-11-04T01:47:21.3826639Z tests/test_record_review_contract.py: 12 warnings
+2026-11-04T01:47:21.3831236Z   /home/runner/work/MediaIngredientMech/MediaIngredientMech/.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+2026-11-04T01:47:21.3834965Z     imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+2026-11-04T01:47:21.3835728Z 
+2026-11-04T01:47:21.3836176Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-04T01:47:21.3836982Z 4 passed, 12 warnings in 131.43s (0:02:11)
+2026-11-04T01:47:21.5821985Z ##[group]Run uv run --with pytest --with pytest-cov pytest
+2026-11-04T01:47:21.5822485Z [36;1muv run --with pytest --with pytest-cov pytest[0m
+2026-11-04T01:47:21.5843742Z shell: /usr/bin/bash -e {0}
+2026-11-04T01:47:21.5844007Z env:
+2026-11-04T01:47:21.5844197Z   UV_PYTHON: 3.13
+2026-11-04T01:47:21.5844489Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T01:47:21.5845074Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T01:47:21.5845385Z ##[endgroup]
+2026-11-04T01:47:34.9596510Z ============================= test session starts ==============================
+2026-11-04T01:47:34.9597172Z platform linux -- Python 3.13.18, pytest-9.0.2, pluggy-1.6.0
+2026-11-04T01:47:34.9597794Z rootdir: /home/runner/work/MediaIngredientMech/MediaIngredientMech
+2026-11-04T01:47:34.9598321Z configfile: pyproject.toml
+2026-11-04T01:47:34.9598660Z testpaths: tests
+2026-11-04T01:47:34.9598961Z plugins: cov-7.0.0, anyio-4.13.0
+2026-11-04T01:47:34.9599385Z collected 5087 items
+2026-11-04T01:47:34.9599567Z 
+2026-11-04T01:47:34.9675365Z tests/test_agents_skills.py ..                                           [  0%]
+2026-11-04T01:47:35.7985735Z tests/test_aggregate_records.py ..................                       [  0%]
+2026-11-04T01:47:35.8741348Z tests/test_apply_claude_suggestions.py ........                          [  0%]
+2026-11-04T01:47:35.9354266Z tests/test_apply_role_research_results.py .....................          [  0%]
+2026-11-04T01:47:35.9596638Z tests/test_apply_role_research_sync.py .....                             [  1%]
+2026-11-04T01:47:37.3319346Z tests/test_audit_duplicate_identifiers.py ...................            [  1%]
+2026-11-04T01:47:53.0898174Z tests/test_audit_kg_microbe_node_ids.py ................                 [  1%]
+2026-11-04T01:47:53.1739255Z tests/test_backfill_surface_forms.py .................                   [  2%]
+2026-11-04T01:47:53.2032978Z tests/test_batch_review_diagnostics.py .....                             [  2%]
+2026-11-04T01:47:53.5026260Z tests/test_browser_accessibility.py ...                                  [  2%]
+2026-11-04T01:47:53.5348543Z tests/test_build_review_round.py .....                                   [  2%]
+2026-11-04T01:47:53.5636063Z tests/test_bump_sssom_header.py ............                             [  2%]
+2026-11-04T01:48:05.4093847Z tests/test_carnitine_merge_dependencies.py ................              [  2%]
+2026-11-04T01:48:05.4748488Z tests/test_carnitine_occurrence_routing.py ............................. [  3%]
+2026-11-04T01:48:05.5185010Z .........                                                                [  3%]
+2026-11-04T01:48:41.1999614Z tests/test_cas_counterion_identity_conflicts.py ...........              [  3%]
+2026-11-04T01:49:25.1993888Z tests/test_cas_rn_pattern.py .....................                       [  4%]
+2026-11-04T01:50:01.2955844Z tests/test_cas_stereochemical_identity_conflicts.py ..................   [  4%]
+2026-11-04T01:50:36.8387374Z tests/test_cas_synonym_currency.py ..........                            [  4%]
+2026-11-04T01:50:37.9014183Z tests/test_causal_graph_schema.py ...................................... [  5%]
+2026-11-04T01:50:37.9458959Z .                                                                        [  5%]
+2026-11-04T01:50:38.2559872Z tests/test_chebi_accession_ceiling.py .............                      [  5%]
+2026-11-04T01:50:38.5321965Z tests/test_chebi_deduplicator.py ..........                              [  6%]
+2026-11-04T01:50:38.6618781Z tests/test_check_chebi_currency.py ....................                  [  6%]
+2026-11-04T01:50:38.8185675Z tests/test_check_curation_targets.py ..............                      [  6%]
+2026-11-04T01:50:38.8991181Z tests/test_check_hydrate_water.py ...............................        [  7%]
+2026-11-04T01:50:40.7190586Z tests/test_check_instruction_refs.py ................                    [  7%]
+2026-11-04T01:50:40.7966976Z tests/test_check_record_filename_case.py .....................           [  8%]
+2026-11-04T01:50:40.9297926Z tests/test_check_truncated_locants.py ...............................    [  8%]
+2026-11-04T01:50:41.1546586Z tests/test_chemical_enrichment_callers.py .............................. [  9%]
+2026-11-04T01:50:41.1805973Z ..                                                                       [  9%]
+2026-11-04T01:50:41.2315081Z tests/test_chemical_normalizer.py ..................                     [  9%]
+2026-11-04T01:50:42.6593338Z tests/test_chemical_properties.py ........                               [  9%]
+2026-11-04T01:50:43.6572212Z tests/test_chemical_properties_client.py ....                            [  9%]
+2026-11-04T01:50:43.7530716Z tests/test_chemical_properties_guard.py ................................ [ 10%]
+2026-11-04T01:50:44.2801646Z ............................................                             [ 11%]
+2026-11-04T01:50:44.3719547Z tests/test_chemical_properties_ols_only.py ............................. [ 11%]
+2026-11-04T01:50:44.6047191Z ...................................                                      [ 12%]
+2026-11-04T01:50:45.2202460Z tests/test_chemical_scope_records.py ..                                  [ 12%]
+2026-11-04T01:50:45.8631790Z tests/test_ci_review_replay_contract.py ...                              [ 12%]
+2026-11-04T01:50:45.8942300Z tests/test_classification_preserves_chemistry_scope.py ....              [ 12%]
+2026-11-04T01:50:45.9217913Z tests/test_compare_with_culturemech.py ........                          [ 12%]
+2026-11-04T01:51:23.8745629Z tests/test_component_partonomy.py .........                              [ 13%]
+2026-11-04T01:52:40.4821414Z tests/test_component_partonomy_migration.py ..                           [ 13%]
+2026-11-04T01:52:41.2612303Z tests/test_correct_diketo_bacdive_evidence.py ....................sssss. [ 13%]
+2026-11-04T01:52:41.5930850Z ...s                                                                     [ 13%]
+2026-11-04T01:52:52.5373510Z tests/test_correct_hydrate_stock_chemistry_871_268.py .................. [ 14%]
+2026-11-04T01:53:08.8195763Z .s.......ssssssssssssssssssssss...s                                      [ 14%]
+2026-11-04T01:53:10.1781108Z tests/test_correct_izalpinin_cas.py ........................ssssssssssss [ 15%]
+2026-11-04T01:53:10.5581894Z ssssssssssssssssssssss....ssssssssssssssssssss                           [ 16%]
+2026-11-04T01:53:11.7461962Z tests/test_correct_melezitose_parent.py ..........ssssssssssssssss...... [ 17%]
+2026-11-04T01:53:12.7566994Z ..ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...        [ 18%]
+2026-11-04T01:53:14.0077333Z tests/test_correct_sodium_perchlorate_parent.py ...ssssssssssssssss..... [ 18%]
+2026-11-04T01:53:15.7469420Z ...ssssssssssssssssss.............s.......                               [ 19%]
+2026-11-04T01:53:51.2220497Z tests/test_cross_reference_culturemech.py .............                  [ 19%]
+2026-11-04T01:54:28.3029664Z tests/test_culturemech_membership.py ........................            [ 20%]
+2026-11-04T01:54:28.4157886Z tests/test_culturemech_residual_triage.py .............................. [ 20%]
+2026-11-04T01:55:41.2211712Z ........................................                                 [ 21%]
+2026-11-04T01:55:43.4092013Z tests/test_curate_lithium_glycerophosphate.py ................ssssssssss [ 22%]
+2026-11-04T01:55:43.5742290Z sssssssssssssssssssssss                                                  [ 22%]
+2026-11-04T01:55:46.3183310Z tests/test_curate_step7c_source_labels.py ................sssss......sss [ 23%]
+2026-11-04T01:55:46.4516065Z sss                                                                      [ 23%]
+2026-11-04T01:55:47.5896071Z tests/test_curate_wc_stock_751.py ...................s.........sssss     [ 24%]
+2026-11-04T01:55:47.6383482Z tests/test_curation_receipt_collisions.py ....                           [ 24%]
+2026-11-04T01:55:48.5149761Z tests/test_curation_timestamp_schema.py ..                               [ 24%]
+2026-11-04T01:55:51.8501649Z tests/test_curation_workflow.py ........................................ [ 24%]
+2026-11-04T01:55:51.9235386Z .                                                                        [ 24%]
+2026-11-04T01:55:52.0899195Z tests/test_curie_normalizer.py ...............s.....                     [ 25%]
+2026-11-04T01:55:52.1453154Z tests/test_deep_research_contract.py ...........                         [ 25%]
+2026-11-04T01:55:52.4860804Z tests/test_deep_research_provider.py .............................       [ 26%]
+2026-11-04T01:55:52.7449180Z tests/test_discussion_preview_links.py .                                 [ 26%]
+2026-11-04T01:55:52.7582502Z tests/test_docs_inventory.py ...                                         [ 26%]
+2026-11-04T01:55:52.7985352Z tests/test_edison_capture_sidecar_provenance.py ......                   [ 26%]
+2026-11-04T01:55:52.8598138Z tests/test_edison_fatal_errors.py .............                          [ 26%]
+2026-11-04T01:55:52.9500469Z tests/test_edison_report_matching.py ..................                  [ 26%]
+2026-11-04T01:56:28.9826038Z tests/test_element_atom_overclaims.py ...........                        [ 27%]
+2026-11-04T01:56:29.0541338Z tests/test_engine_a_obo_safe.py .....                                    [ 27%]
+2026-11-04T01:56:29.0963201Z tests/test_enrich_edison_response_provenance.py ....                     [ 27%]
+2026-11-04T01:57:41.9355893Z tests/test_enum_sync.py ...........                                      [ 27%]
+2026-11-04T01:57:42.7066046Z tests/test_environmental_context.py .................................... [ 28%]
+2026-11-04T01:57:44.3437956Z .............                                                            [ 28%]
+2026-11-04T01:57:45.3347121Z tests/test_evidence_assessment.py ...................................... [ 29%]
+2026-11-04T01:57:45.5666793Z .............                                                            [ 29%]
+2026-11-04T01:57:45.6678678Z tests/test_export_filename_stability.py ...........                      [ 29%]
+2026-11-04T01:57:45.7944221Z tests/test_export_preserves_discussions.py .........                     [ 29%]
+2026-11-04T01:57:45.8331758Z tests/test_export_shared_identifier.py ...                               [ 29%]
+2026-11-04T01:57:45.8422797Z tests/test_fix_lipoic_stereochemistry.py .                               [ 29%]
+2026-11-04T01:57:46.4628410Z tests/test_fix_merge_tombstone_resolution.py ........                    [ 30%]
+2026-11-04T01:57:47.3246739Z tests/test_flat_export_coverage.py ..................................... [ 30%]
+2026-11-04T01:57:47.3321746Z .                                                                        [ 30%]
+2026-11-04T01:57:47.5533192Z tests/test_fleet_paths.py .............................................. [ 31%]
+2026-11-04T01:57:47.9031741Z ........................................................................ [ 33%]
+2026-11-04T01:57:48.2668372Z ........................................................................ [ 34%]
+2026-11-04T01:57:48.6344140Z ........................................................................ [ 36%]
+2026-11-04T01:57:48.8375260Z .......................................                                  [ 36%]
+2026-11-04T01:58:19.1920815Z tests/test_form_mapping_followup.py .................................... [ 37%]
+2026-11-04T01:59:02.2581579Z .................................................                        [ 38%]
+2026-11-04T01:59:03.4300233Z tests/test_historical_source_anchors.py .....................            [ 38%]
+2026-11-04T01:59:40.3413146Z tests/test_hydrate_family_identity.py .................................. [ 39%]
+2026-11-04T01:59:40.5510675Z ............                                                             [ 39%]
+2026-11-04T01:59:40.8165049Z tests/test_hydrate_guard.py ............................................ [ 40%]
+2026-11-04T01:59:40.9849735Z ..............................                                           [ 41%]
+2026-11-04T01:59:41.0815900Z tests/test_id_label_empty_adapter.py .............                       [ 41%]
+2026-11-04T01:59:41.1311946Z tests/test_id_label_exceptions.py .....                                  [ 41%]
+2026-11-04T01:59:41.2178725Z tests/test_id_label_exceptions_conf.py ...                               [ 41%]
+2026-11-04T01:59:41.4290555Z tests/test_id_label_plausibility.py .................................... [ 42%]
+2026-11-04T01:59:41.5217940Z ................                                                         [ 42%]
+2026-11-04T01:59:41.5589482Z tests/test_id_label_unknown_prefix.py ....                               [ 42%]
+2026-11-04T01:59:41.7487358Z tests/test_import_from_culturemech.py ...........                        [ 42%]
+2026-11-04T01:59:41.7627297Z tests/test_index_files_output_dir.py .                                   [ 42%]
+2026-11-04T02:01:11.9033667Z tests/test_ingredient_bundle.py ........................................ [ 43%]
+2026-11-04T02:01:17.3707246Z .......                                                                  [ 43%]
+2026-11-04T02:01:43.0834025Z tests/test_ingredient_bundle_dependency_refresh.py ..................... [ 44%]
+2026-11-04T02:02:46.2835908Z ........................................................................ [ 45%]
+2026-11-04T02:04:16.3128262Z ...............................................                          [ 46%]
+2026-11-04T02:04:16.5923644Z tests/test_kg_microbe_dict.py .......................                    [ 47%]
+2026-11-04T02:04:16.8188453Z tests/test_kg_microbe_dict_cache.py .................                    [ 47%]
+2026-11-04T02:04:16.8822998Z tests/test_kg_microbe_toggle.py .......                                  [ 47%]
+2026-11-04T02:04:18.1735132Z tests/test_kgx_export.py ..................                              [ 47%]
+2026-11-04T02:04:18.3651354Z tests/test_label_index_precedence.py ...................                 [ 48%]
+2026-11-04T02:04:54.3966321Z tests/test_lipoic_stereochemistry.py ...........                         [ 48%]
+2026-11-04T02:05:30.5915183Z tests/test_malformed_hydrate_identities.py .........................     [ 49%]
+2026-11-04T02:05:31.0401227Z tests/test_mapping_change_receipt.py ................................... [ 49%]
+2026-11-04T02:05:31.1576541Z ......                                                                   [ 49%]
+2026-11-04T02:05:31.4421428Z tests/test_mapping_change_receipts.py .................................. [ 50%]
+2026-11-04T02:05:32.1678259Z ..........................................                               [ 51%]
+2026-11-04T02:05:32.3254252Z tests/test_mapping_followup.py ................                          [ 51%]
+2026-11-04T02:05:32.6341627Z tests/test_mapping_scope.py ...........................                  [ 52%]
+2026-11-04T02:05:32.6549649Z tests/test_mapping_tsv_line_endings.py .                                 [ 52%]
+2026-11-04T02:05:36.6946128Z tests/test_merge_carnitine_hydrochloride.py .................sssssssssss [ 52%]
+2026-11-04T02:05:38.9580575Z ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.sssss [ 54%]
+2026-11-04T02:05:39.3946147Z ssssssssssssssssssssssssssssssss                                         [ 54%]
+2026-11-04T02:05:39.4935140Z tests/test_merge_mapped_records.py ......                                [ 54%]
+2026-11-04T02:05:40.2436748Z tests/test_merge_queue_workflows.py ...............................      [ 55%]
+2026-11-04T02:06:20.3491273Z tests/test_merge_tombstone_targets.py .........                          [ 55%]
+2026-11-04T02:06:21.1803765Z tests/test_micro_source.py ......                                        [ 55%]
+2026-11-04T02:06:21.2280594Z tests/test_microbedecoder_subject_stem.py .....                          [ 55%]
+2026-11-04T02:07:50.5842600Z tests/test_node_concern_history.py .....................                 [ 56%]
+2026-11-04T02:07:50.8113332Z tests/test_oaklib_cache.py ...........                                   [ 56%]
+2026-11-04T02:07:50.8519251Z tests/test_oaklib_semsql_pin.py ...                                      [ 56%]
+2026-11-04T02:07:51.0534573Z tests/test_object_source_table.py .....................                  [ 57%]
+2026-11-04T02:08:26.3703984Z tests/test_occurrence_stats.py ..                                        [ 57%]
+2026-11-04T02:08:26.4207060Z tests/test_ontology_label_correction.py .......                          [ 57%]
+2026-11-04T02:08:28.8221047Z tests/test_ontology_lookup.py ............................               [ 57%]
+2026-11-04T02:08:35.2895549Z tests/test_owned_name_policy.py ..............sssssssssssss..            [ 58%]
+2026-11-04T02:08:36.1225643Z tests/test_owned_name_policy_promotion.py .sssssssssssssssssss           [ 58%]
+2026-11-04T02:08:39.9773116Z tests/test_promote_heptahydrate_ncit.py ................................ [ 59%]
+2026-11-04T02:08:43.9306260Z ..sssssssssssssssssssssssssssssssssssssssssssssssssssss..............    [ 60%]
+2026-11-04T02:08:43.9999777Z tests/test_promote_ontology_prefixes.py .........                        [ 60%]
+2026-11-04T02:09:03.6803604Z tests/test_promote_stock_cas_removal.py ................ssssssssssssss.s [ 61%]
+2026-11-04T02:09:05.0073204Z ssssssssssssssssss.                                                      [ 61%]
+2026-11-04T02:09:05.1016865Z tests/test_promotion_specificity_gate.py ............                    [ 62%]
+2026-11-04T02:10:15.6414246Z tests/test_promotion_subject_matches_filename.py ........                [ 62%]
+2026-11-04T02:10:15.7568047Z tests/test_provider_triage_contract.py .....                             [ 62%]
+2026-11-04T02:10:21.7539322Z tests/test_public_ingredient_site.py ............                        [ 62%]
+2026-11-04T02:10:21.7788518Z tests/test_publish_cas_as_synonym.py ...                                 [ 62%]
+2026-11-04T02:10:22.0724130Z tests/test_published_mim_subject_case.py ............................... [ 63%]
+2026-11-04T02:10:22.3649357Z ....................................                                     [ 63%]
+2026-11-04T02:10:22.3812366Z tests/test_quality_gate.py ..                                            [ 64%]
+2026-11-04T02:10:22.4636419Z tests/test_reconcile_sssom.py ........                                   [ 64%]
+2026-11-04T02:10:29.0686275Z tests/test_reconciliation_indexes.py ...                                 [ 64%]
+2026-11-04T02:11:39.3338558Z tests/test_record_enumeration_ignores_backups.py .......                 [ 64%]
+2026-11-04T02:11:41.9289251Z tests/test_record_refresh.py .................................           [ 65%]
+2026-11-04T02:16:30.7244137Z tests/test_record_review_contract.py ....                                [ 65%]
+2026-11-04T02:16:30.7556120Z tests/test_record_review_routes.py ...                                   [ 65%]
+2026-11-04T02:17:07.4291189Z tests/test_refresh_occurrence_statistics.py ................             [ 65%]
+2026-11-04T02:17:07.7210783Z tests/test_regrade_synonym_matches.py .................................. [ 66%]
+2026-11-04T02:17:07.7391495Z ..                                                                       [ 66%]
+2026-11-04T02:17:08.3836761Z tests/test_reground_registry_mint.py ......................              [ 66%]
+2026-11-04T02:17:08.4864425Z tests/test_reject_carnitinamide_synonym.py ...........                   [ 66%]
+2026-11-04T02:17:43.1185511Z tests/test_reject_hidden_hydrate_synonym_collapses.py ............       [ 67%]
+2026-11-04T02:18:15.2323110Z tests/test_rejected_label_publication.py .......................         [ 67%]
+2026-11-04T02:18:21.9374692Z tests/test_remove_stale_kg_microbe_nodes.py .................s.......sss [ 68%]
+2026-11-04T02:18:22.1723941Z sssssssssssssssssss                                                      [ 68%]
+2026-11-04T02:18:22.3014928Z tests/test_render_ingredient_pages.py ...                                [ 68%]
+2026-11-04T02:18:22.7206251Z tests/test_repair_heptahydrate_membership.py ss............sssssssssssss [ 69%]
+2026-11-04T02:18:24.4180165Z sssssssss..............................                                  [ 69%]
+2026-11-04T02:18:24.5309634Z tests/test_report_generator.py ..........                                [ 69%]
+2026-11-04T02:18:24.7820716Z tests/test_report_hydrate_grounding.py ..........................        [ 70%]
+2026-11-04T02:18:42.4959608Z tests/test_research_ingredient.py ...............                        [ 70%]
+2026-11-04T02:18:45.6762020Z tests/test_research_ingredient_roles.py ...................              [ 71%]
+2026-11-04T02:18:45.9926932Z tests/test_residual_near_matches.py .................................... [ 71%]
+2026-11-04T02:18:46.0304943Z ....                                                                     [ 71%]
+2026-11-04T02:18:46.0713266Z tests/test_restore_carnitine_mapping_provenance.py ....                  [ 72%]
+2026-11-04T02:18:46.3540842Z tests/test_retire_reviewed_generated_aliases.py ........................ [ 72%]
+2026-11-04T02:18:46.7026928Z .....................                                                    [ 72%]
+2026-11-04T02:18:46.8229729Z tests/test_retired_component_writers.py ......                           [ 73%]
+2026-11-04T02:18:46.9203695Z tests/test_retired_id_contract.py ........                               [ 73%]
+2026-11-04T02:19:24.8220711Z tests/test_retired_ingredient_hierarchy.py .......                       [ 73%]
+2026-11-04T02:19:25.7410120Z tests/test_reviewed_ingredient_identities.py ......                      [ 73%]
+2026-11-04T02:19:26.6714740Z tests/test_reviewed_sssom.py ........................................... [ 74%]
+2026-11-04T02:19:27.3165093Z ............................                                             [ 74%]
+2026-11-04T02:19:28.5267939Z tests/test_reviewed_sssom_schema.py .........                            [ 75%]
+2026-11-04T02:19:28.9200348Z tests/test_role_inference.py ........................................... [ 75%]
+2026-11-04T02:19:29.1939814Z ..............................                                           [ 76%]
+2026-11-04T02:19:29.2570503Z tests/test_role_iteration.py .......                                     [ 76%]
+2026-11-04T02:19:29.3577371Z tests/test_role_methods.py ...........                                   [ 76%]
+2026-11-04T02:20:04.7500606Z tests/test_role_plausibility.py .                                        [ 76%]
+2026-11-04T02:20:40.2736490Z tests/test_salt_ion_identity_repairs.py ......                           [ 76%]
+2026-11-04T02:20:52.3971694Z tests/test_schema_validation.py ........................................ [ 77%]
+2026-11-04T02:21:07.1798173Z ...............................................                          [ 78%]
+2026-11-04T02:21:07.4962848Z tests/test_score_causal_graph_readiness.py ...........................   [ 79%]
+2026-11-04T02:21:07.8310588Z tests/test_scripts_are_machine_independent.py .......................... [ 79%]
+2026-11-04T02:21:08.5203880Z ........................................................................ [ 81%]
+2026-11-04T02:21:09.2195550Z ........................................................................ [ 82%]
+2026-11-04T02:21:09.9258523Z ........................................................................ [ 83%]
+2026-11-04T02:21:10.4418388Z ....................................................                     [ 84%]
+2026-11-04T02:21:42.1441702Z tests/test_semantic_hold_resolution.py ................................. [ 85%]
+2026-11-04T02:21:42.8763463Z ..                                                                       [ 85%]
+2026-11-04T02:21:42.9578328Z tests/test_semantic_identity_occurrences.py ........                     [ 85%]
+2026-11-04T02:22:04.9313147Z tests/test_semantic_mapping_review.py .............                      [ 86%]
+2026-11-04T02:22:10.8689314Z tests/test_semantic_release.py ...................................       [ 86%]
+2026-11-04T02:22:20.5661752Z tests/test_semantic_release_adversarial.py ............................. [ 87%]
+2026-11-04T02:22:21.3708921Z ...                                                                      [ 87%]
+2026-11-04T02:22:21.7465265Z tests/test_semantic_review_builder.py .................................. [ 88%]
+2026-11-04T02:22:23.7396391Z ..................................................                       [ 89%]
+2026-11-04T02:22:25.9026948Z tests/test_sequential_form_mapping_followups.py .                        [ 89%]
+2026-11-04T02:22:26.4956663Z tests/test_site_audit_fixes.py .......                                   [ 89%]
+2026-11-04T02:22:26.9598411Z tests/test_skill_frontmatter.py ........................................ [ 89%]
+2026-11-04T02:22:27.7855182Z .....................................................................    [ 91%]
+2026-11-04T02:22:28.0527528Z tests/test_solution_matcher.py .........................                 [ 91%]
+2026-11-04T02:24:04.4639020Z tests/test_source_mapping_concern_history.py ........................... [ 92%]
+2026-11-04T02:24:06.2939988Z .........                                                                [ 92%]
+2026-11-04T02:24:06.3673534Z tests/test_source_occurrences.py .......                                 [ 92%]
+2026-11-04T02:24:42.0843957Z tests/test_sssom_currency.py .                                           [ 92%]
+2026-11-04T02:25:18.1655370Z tests/test_sssom_grade_drift.py ........                                 [ 92%]
+2026-11-04T02:26:28.0085178Z tests/test_sssom_grading.py ...........sss............ss                 [ 93%]
+2026-11-04T02:26:28.2321293Z tests/test_sssom_identity_row_predicate.py .....                         [ 93%]
+2026-11-04T02:26:28.2846619Z tests/test_sssom_mapping_date_gate.py .....                              [ 93%]
+2026-11-04T02:27:34.3080289Z tests/test_sssom_other_cross_record.py ..................                [ 93%]
+2026-11-04T02:27:34.6701441Z tests/test_sssom_pinned_invariants.py .................................. [ 94%]
+2026-11-04T02:27:34.7976299Z .......                                                                  [ 94%]
+2026-11-04T02:27:34.9557790Z tests/test_sssom_predicate_direction.py ......                           [ 94%]
+2026-11-04T02:27:35.0403380Z tests/test_sssom_release_documentation.py ..                             [ 94%]
+2026-11-04T02:27:47.7494459Z tests/test_sssom_subset_dates.py ..............                          [ 95%]
+2026-11-04T02:28:22.3656321Z tests/test_stereodescriptor_curation.py ...                              [ 95%]
+2026-11-04T02:29:00.5797879Z tests/test_stock_cas_removal_refresh.py ................................ [ 95%]
+2026-11-04T02:30:22.3618509Z ..............................                                           [ 96%]
+2026-11-04T02:30:22.4884910Z tests/test_stock_components.py ..........                                [ 96%]
+2026-11-04T02:31:34.3806621Z tests/test_strict_approval_chain.py ..                                   [ 96%]
+2026-11-04T02:31:34.9423525Z tests/test_strict_receipt_execution_comparison.py ..................     [ 97%]
+2026-11-04T02:32:11.1237405Z tests/test_sulfur_family_consolidation.py ........                       [ 97%]
+2026-11-04T02:32:19.4561595Z tests/test_supported_kgx.py .........                                    [ 97%]
+2026-11-04T02:32:27.4021004Z tests/test_supported_kgx_adversarial.py ........                         [ 97%]
+2026-11-04T02:32:28.1181364Z tests/test_unified_freshness.py ..................                       [ 97%]
+2026-11-04T02:33:04.1121422Z tests/test_unified_rejections.py .........................               [ 98%]
+2026-11-04T02:33:04.6974678Z tests/test_unified_source_holds.py ..................................    [ 99%]
+2026-11-04T02:33:04.8947513Z tests/test_validate_published_curies.py .......                          [ 99%]
+2026-11-04T02:33:05.0790421Z tests/test_vendored_sync_workflow.py .......                             [ 99%]
+2026-11-04T02:33:05.4905248Z tests/test_verify_roundtrip.py ...........                               [ 99%]
+2026-11-04T02:33:05.6273787Z tests/test_visualization_point_rendering.py ............                 [ 99%]
+2026-11-04T02:33:05.7071679Z tests/test_visualization_record_keys.py .....                            [ 99%]
+2026-11-04T02:33:19.4357646Z tests/test_worktree_qc.py ......                                         [100%]
+2026-11-04T02:33:19.4358853Z 
+2026-11-04T02:33:19.4359193Z =============================== warnings summary ===============================
+2026-11-04T02:33:19.4360359Z .venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+2026-11-04T02:33:19.4363633Z   /home/runner/work/MediaIngredientMech/MediaIngredientMech/.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+2026-11-04T02:33:19.4365511Z     imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+2026-11-04T02:33:19.4365868Z 
+2026-11-04T02:33:19.4366101Z .venv/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20
+2026-11-04T02:33:19.4367289Z   /home/runner/work/MediaIngredientMech/MediaIngredientMech/.venv/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20: DeprecationWarning: The LinkML dataclass extension patch is deprecated and will be removed in a future release.
+2026-11-04T02:33:19.4368475Z   If you're currently using Python < 3.13, where this patch still applies, you should:
+2026-11-04T02:33:19.4369359Z     • Upgrade your LinkML tooling to version >= 1.9.0 (which no longer needs this patch), OR
+2026-11-04T02:33:19.4372361Z     • Migrate to Pydantic models if you're using LinkML's generated classes at runtime.
+2026-11-04T02:33:19.4373315Z   
+2026-11-04T02:33:19.4373916Z     from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+2026-11-04T02:33:19.4374534Z 
+2026-11-04T02:33:19.4374767Z .venv/lib/python3.13/site-packages/sssom/util.py:109
+2026-11-04T02:33:19.4377072Z   /home/runner/work/MediaIngredientMech/MediaIngredientMech/.venv/lib/python3.13/site-packages/sssom/util.py:109: Pandas4Warning: The 'mode.copy_on_write' option is deprecated. Copy-on-Write can no longer be disabled (it is always enabled with pandas >= 3.0), and setting the option has no impact. This option will be removed in pandas 4.0.
+2026-11-04T02:33:19.4378464Z     pd.options.mode.copy_on_write = True
+2026-11-04T02:33:19.4378687Z 
+2026-11-04T02:33:19.4379346Z tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+2026-11-04T02:33:19.4381007Z   /home/runner/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f71f6335300>
+2026-11-04T02:33:19.4382444Z     return compile(source, filename, mode, flags,
+2026-11-04T02:33:19.4383451Z   Enable tracemalloc to get traceback where the object was allocated.
+2026-11-04T02:33:19.4384527Z   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+2026-11-04T02:33:19.4385304Z 
+2026-11-04T02:33:19.4385781Z tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+2026-11-04T02:33:19.4387463Z   /home/runner/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f71f6337010>
+2026-11-04T02:33:19.4388958Z     return compile(source, filename, mode, flags,
+2026-11-04T02:33:19.4389686Z   Enable tracemalloc to get traceback where the object was allocated.
+2026-11-04T02:33:19.4390751Z   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+2026-11-04T02:33:19.4391499Z 
+2026-11-04T02:33:19.4391973Z tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+2026-11-04T02:33:19.4393944Z   /home/runner/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f71f6335f30>
+2026-11-04T02:33:19.4395414Z     return compile(source, filename, mode, flags,
+2026-11-04T02:33:19.4396373Z   Enable tracemalloc to get traceback where the object was allocated.
+2026-11-04T02:33:19.4397466Z   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+2026-11-04T02:33:19.4398204Z 
+2026-11-04T02:33:19.4398705Z tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+2026-11-04T02:33:19.4400531Z   /home/runner/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f71f63347c0>
+2026-11-04T02:33:19.4402192Z     return compile(source, filename, mode, flags,
+2026-11-04T02:33:19.4403179Z   Enable tracemalloc to get traceback where the object was allocated.
+2026-11-04T02:33:19.4404254Z   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+2026-11-04T02:33:19.4405035Z 
+2026-11-04T02:33:19.4405374Z tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+2026-11-04T02:33:19.4406313Z   /home/runner/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f71f6334400>
+2026-11-04T02:33:19.4407079Z     return compile(source, filename, mode, flags,
+2026-11-04T02:33:19.4407476Z   Enable tracemalloc to get traceback where the object was allocated.
+2026-11-04T02:33:19.4408063Z   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+2026-11-04T02:33:19.4408470Z 
+2026-11-04T02:33:19.4408730Z tests/test_kg_microbe_toggle.py::test_both_review_clis_expose_the_flag[review_ingredient.py]
+2026-11-04T02:33:19.4409642Z   /home/runner/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f71f63375b0>
+2026-11-04T02:33:19.4410418Z     return compile(source, filename, mode, flags,
+2026-11-04T02:33:19.4410810Z   Enable tracemalloc to get traceback where the object was allocated.
+2026-11-04T02:33:19.4411374Z   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+2026-11-04T02:33:19.4411764Z 
+2026-11-04T02:33:19.4411892Z tests/test_reviewed_sssom_schema.py: 11 warnings
+2026-11-04T02:33:19.4413793Z   /home/runner/work/MediaIngredientMech/MediaIngredientMech/.venv/lib/python3.13/site-packages/sssom/util.py:197: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+2026-11-04T02:33:19.4415297Z     non_double_cols = non_double_cols.infer_objects(copy=False)
+2026-11-04T02:33:19.4415561Z 
+2026-11-04T02:33:19.4415773Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-04T02:33:19.4416233Z ================================ tests coverage ================================
+2026-11-04T02:33:19.4416673Z _______________ coverage: platform linux, python 3.13.18-final-0 _______________
+2026-11-04T02:33:19.4416962Z 
+2026-11-04T02:33:19.4417121Z Name                                                            Stmts   Miss  Cover   Missing
+2026-11-04T02:33:19.4417572Z ---------------------------------------------------------------------------------------------
+2026-11-04T02:33:19.4418363Z scripts/_edison_capture.py                                        244     98    60%   76, 92, 96, 99, 102, 105, 112-117, 128-129, 137, 139, 141, 144, 165-171, 181-182, 200-201, 210-211, 225-227, 238-274, 301, 307, 311, 316-347, 544
+2026-11-04T02:33:19.4419184Z scripts/add_culturemech_gap_labels.py                             139    139     0%   91-450
+2026-11-04T02:33:19.4419700Z scripts/add_match_level.py                                         92     92     0%   9-221
+2026-11-04T02:33:19.4420195Z scripts/add_water_of_hydration.py                                 104    104     0%   38-218
+2026-11-04T02:33:19.4420973Z scripts/aggregate_records.py                                      147     63    57%   34, 85-88, 145-146, 161-162, 174-179, 200, 270-364, 368
+2026-11-04T02:33:19.4421562Z scripts/analyze_batch1.py                                          62     62     0%   4-133
+2026-11-04T02:33:19.4422066Z scripts/analyze_culturemech_roles.py                              137    137     0%   15-413
+2026-11-04T02:33:19.4422572Z scripts/analyze_unmapped.py                                       163    163     0%   12-360
+2026-11-04T02:33:19.4423569Z scripts/anchor_cas_hydrate_records.py                             120     95    21%   50-58, 62-66, 70-188, 192
+2026-11-04T02:33:19.4424138Z scripts/apply_312_batch1.py                                       248    248     0%   30-513
+2026-11-04T02:33:19.4424628Z scripts/apply_312_batch2.py                                       366    366     0%   47-714
+2026-11-04T02:33:19.4425103Z scripts/apply_312_batch3.py                                       349    349     0%   36-571
+2026-11-04T02:33:19.4425576Z scripts/apply_312_batch4.py                                       198    198     0%   46-336
+2026-11-04T02:33:19.4426057Z scripts/apply_669_704_rulings.py                                  316    316     0%   39-509
+2026-11-04T02:33:19.4426964Z scripts/apply_claude_suggestions.py                               239     54    77%   71, 75-76, 80-81, 85, 92, 99-105, 113, 145, 148, 153, 166-176, 186-187, 190-191, 216, 240-241, 254, 264, 268-283, 322, 324, 328, 345-347, 404, 416-418, 462-463, 467, 469, 500
+2026-11-04T02:33:19.4427931Z scripts/apply_culturemech_aliases.py                              167    137    18%   61, 66-81, 105-115, 119-128, 132-297, 301
+2026-11-04T02:33:19.4428565Z scripts/apply_curated_decompositions.py                            50     21    58%   99, 103, 112-134, 257
+2026-11-04T02:33:19.4429135Z scripts/apply_edison_cas_enrichment.py                             49     49     0%   25-180
+2026-11-04T02:33:19.4429677Z scripts/apply_edison_contextual_parents.py                         53     53     0%   33-183
+2026-11-04T02:33:19.4430253Z scripts/apply_edison_identity_findings.py                          78     38    51%   122-134, 138-196, 200
+2026-11-04T02:33:19.4430826Z scripts/apply_insession_role_curation.py                           42     42     0%   19-117
+2026-11-04T02:33:19.4431380Z scripts/apply_kgmicrobe_identity_reviews.py                       118    118     0%   8-336
+2026-11-04T02:33:19.4431951Z scripts/apply_kgmicrobe_scope_decisions.py                        111    111     0%   8-238
+2026-11-04T02:33:19.4432489Z scripts/apply_locant_corrections.py                               127    127     0%   30-336
+2026-11-04T02:33:19.4433166Z scripts/apply_microbedecoder_residual_merges.py                   109    109     0%   23-240
+2026-11-04T02:33:19.4433717Z scripts/apply_ncit_grounding_ruling.py                             63     63     0%   50-192
+2026-11-04T02:33:19.4434756Z scripts/apply_owned_name_policy.py                                414    144    65%   41, 53, 99, 106, 110, 113, 127, 130, 135, 141, 151, 160, 187-188, 190, 200, 223, 228, 236, 257, 289, 295, 300, 315, 318, 330, 339, 356-390, 394-397, 403, 408-409, 416, 428, 431, 436-437, 441, 445-455, 459-475, 479-491, 495-516, 522-542, 546
+2026-11-04T02:33:19.4435984Z scripts/apply_role_research_results.py                            199     32    84%   117, 123, 132-137, 272-276, 278-280, 367-368, 372, 386-390, 395-397, 399-401, 409, 411-413, 442
+2026-11-04T02:33:19.4436698Z scripts/apply_synonym_review.py                                    65     65     0%   17-100
+2026-11-04T02:33:19.4437319Z scripts/audit_duplicate_identifiers.py                            165    140    15%   117, 122, 130-138, 142-171, 175-218, 222-226, 230-331, 335
+2026-11-04T02:33:19.4437946Z scripts/audit_kg_microbe_node_ids.py                               89     89     0%   16-198
+2026-11-04T02:33:19.4438506Z scripts/audit_occurrence_stats.py                                  66     27    59%   54-55, 57, 59, 61, 71, 94-117, 121
+2026-11-04T02:33:19.4439210Z scripts/audit_role_plausibility.py                                 29     10    66%   84-90, 95-102, 106
+2026-11-04T02:33:19.4439738Z scripts/audit_writers.py                                           85     85     0%   33-236
+2026-11-04T02:33:19.4440201Z scripts/auto_correct.py                                            76     76     0%   12-177
+2026-11-04T02:33:19.4440676Z scripts/auto_merge_ready_prs.py                                   505    505     0%   14-667
+2026-11-04T02:33:19.4441291Z scripts/backfill_ontology_labels.py                               109    109     0%   18-197
+2026-11-04T02:33:19.4441819Z scripts/backfill_source_occurrences.py                             70     70     0%   20-119
+2026-11-04T02:33:19.4442423Z scripts/backfill_sssom_surface_forms.py                           175    133    24%   103-108, 113-135, 139, 172-179, 183-319, 323
+2026-11-04T02:33:19.4443233Z scripts/batch_curate.py                                           146    146     0%   12-345
+2026-11-04T02:33:19.4443995Z scripts/batch_curate_unmapped.py                                  237    190    20%   63-76, 80-84, 88-95, 99-122, 133-153, 165-245, 249-265, 269-277, 290-296, 305-324, 335-387, 397-423, 436-448, 505-595, 599
+2026-11-04T02:33:19.4444934Z scripts/batch_review.py                                           144     60    58%   37-40, 66-70, 79-86, 95-104, 110-114, 120-122, 126-130, 256, 354-361, 365-366, 371, 407-424, 433
+2026-11-04T02:33:19.4445663Z scripts/browser_export.py                                         126     34    73%   23, 172-173, 190-191, 194-199, 239-278, 282
+2026-11-04T02:33:19.4446256Z scripts/build_culturemech_membership.py                            82      5    94%   76-78, 162, 171
+2026-11-04T02:33:19.4446799Z scripts/build_curie_alias_map.py                                   94     94     0%   44-195
+2026-11-04T02:33:19.4447413Z scripts/build_pages_site.py                                       126     27    79%   76, 85, 97, 103, 117, 128, 134, 136, 145, 148, 158, 171, 213-227, 231
+2026-11-04T02:33:19.4448028Z scripts/build_research_worklist.py                                 68     68     0%   23-130
+2026-11-04T02:33:19.4448736Z scripts/build_review_round.py                                     354     50    86%   237, 258, 308-309, 327, 359, 364-382, 399-401, 409, 440, 536, 603-613, 720-747, 751-769, 773
+2026-11-04T02:33:19.4449440Z scripts/bump_sssom_header.py                                       58      5    91%   41, 44, 92-93, 106
+2026-11-04T02:33:19.4449969Z scripts/categorize_unmapped.py                                    152    152     0%   4-268
+2026-11-04T02:33:19.4450546Z scripts/check_chebi_currency.py                                   106     25    76%   105-106, 128-129, 131, 168-179, 219-233, 237
+2026-11-04T02:33:19.4451138Z scripts/check_curation_targets.py                                  64      4    94%   57, 68, 91, 154
+2026-11-04T02:33:19.4451810Z scripts/check_flat_export_coverage.py                             130    102    22%   66-67, 73-74, 78-112, 118-139, 143-157, 169-188, 192-217, 221-232, 236
+2026-11-04T02:33:19.4452480Z scripts/check_hydrate_water.py                                    109     46    58%   81, 120, 124-178, 182
+2026-11-04T02:33:19.4453397Z scripts/check_instruction_refs.py                                 225     41    82%   84-90, 104, 126, 166, 188, 195-196, 210, 285, 289, 310, 313-314, 342, 354, 366-393, 397
+2026-11-04T02:33:19.4454123Z scripts/check_record_filename_case.py                              96     11    89%   164-167, 177-181, 194-195, 199
+2026-11-04T02:33:19.4454696Z scripts/check_sssom_subject_files.py                               25     25     0%   31-65
+2026-11-04T02:33:19.4455240Z scripts/check_truncated_locants.py                                 62      3    95%   106, 126, 141
+2026-11-04T02:33:19.4455846Z scripts/check_unified_freshness.py                                115     34    70%   113-114, 119, 162, 173-174, 179, 261-295, 299
+2026-11-04T02:33:19.4456596Z scripts/check_unified_rejections.py                                68     14    79%   54, 60, 63, 80-89, 93
+2026-11-04T02:33:19.4457145Z scripts/check_vendored_sync.py                                    402    402     0%   10-668
+2026-11-04T02:33:19.4457721Z scripts/check_visualization_currency.py                           107     54    50%   87, 117-118, 123, 134, 173-246, 250
+2026-11-04T02:33:19.4458399Z scripts/chem_formula.py                                           149     25    83%   84, 89, 91, 103, 125-128, 143, 173, 178, 198-213, 227-228, 278, 299, 310
+2026-11-04T02:33:19.4459259Z scripts/classify_ingredient_type.py                                89     28    69%   106-114, 124, 128, 132, 134-136, 148, 159-166, 173, 177, 180, 182-184, 189
+2026-11-04T02:33:19.4459925Z scripts/classify_solution_types.py                                 79     79     0%   8-194
+2026-11-04T02:33:19.4460793Z scripts/compare_with_culturemech.py                               294     71    76%   41-49, 58-66, 106, 121, 151, 161-163, 256, 357-359, 392, 404, 422, 443-451, 455-463, 477, 483-489, 499, 503-507, 511, 538, 542, 544, 549, 572-579, 586-607, 611
+2026-11-04T02:33:19.4461764Z scripts/correct_diketo_bacdive_evidence.py                        197     38    81%   38, 236-237, 246, 262-286, 293-303, 311, 314, 327-344, 348
+2026-11-04T02:33:19.4462544Z scripts/correct_hydrate_stock_chemistry_871_268.py                173     40    77%   38, 61, 195-196, 207, 212-219, 241-268, 275-286, 294, 297, 310-329, 333
+2026-11-04T02:33:19.4463572Z scripts/correct_izalpinin_cas.py                                  359    201    44%   175-176, 181-211, 222-239, 243-247, 254, 258-290, 294-307, 314-331, 394-568, 627-696, 709-725, 729-774, 778
+2026-11-04T02:33:19.4464563Z scripts/correct_melezitose_parent.py                              358    200    44%   139, 201-202, 207-230, 238-254, 258-262, 269, 273-305, 309-319, 325-343, 427-601, 658-724, 737-753, 757-802, 806
+2026-11-04T02:33:19.4465584Z scripts/correct_sodium_perchlorate_parent.py                      368    200    46%   152, 215-216, 221-246, 254-270, 274-278, 285, 289-321, 325-335, 342-359, 445-619, 685-751, 764-780, 784-829, 833
+2026-11-04T02:33:19.4466394Z scripts/correct_stale_ontology_labels.py                           84     55    35%   64-89, 116-160, 164
+2026-11-04T02:33:19.4467014Z scripts/create_records_from_groundings.py                         145    126    13%   50-57, 61-66, 82-125, 129-273, 277
+2026-11-04T02:33:19.4467796Z scripts/cross_reference_culturemech.py                            199    117    41%   53-63, 91-92, 94, 135, 154-155, 158-163, 178-186, 204-221, 238-278, 288-304, 358, 380-476, 480
+2026-11-04T02:33:19.4468916Z scripts/curate_lithium_glycerophosphate.py                        285    120    58%   71, 78, 91, 94, 97, 122-123, 125, 132, 136, 140, 151, 156-161, 165-175, 179, 183, 189-191, 200-209, 213-224, 234, 242, 248, 287, 290, 297, 299, 317-332, 339-367, 373-401, 405
+2026-11-04T02:33:19.4469898Z scripts/curate_step7c_source_labels.py                            169     42    75%   318, 360, 365-404, 411-412, 418, 431-449, 453
+2026-11-04T02:33:19.4470522Z scripts/curate_unmapped.py                                        218    218     0%   9-390
+2026-11-04T02:33:19.4471283Z scripts/curate_wc_stock_751.py                                    165     44    73%   42, 150-151, 164, 173, 177-179, 199-212, 216-228, 235-236, 239, 246-263, 267
+2026-11-04T02:33:19.4471969Z scripts/decompose_py_media_and_ground_categories.py                31      2    94%   133, 258
+2026-11-04T02:33:19.4472595Z scripts/decompose_substrate_combinations.py                        40     10    75%   72, 76, 80-84, 88-92, 201
+2026-11-04T02:33:19.4473418Z scripts/deduplicate_ingredients.py                                153     94    39%   52-104, 111-147, 152-191, 206-215, 278-287, 293-306, 337-339, 345
+2026-11-04T02:33:19.4474318Z scripts/deep_research_contract.py                                 167     50    70%   59, 74, 146, 148, 160, 164, 168, 170, 172, 205, 230-231, 233-234, 236, 239-240, 253, 266-283, 296-297, 307-308, 311, 322-335, 339
+2026-11-04T02:33:19.4475347Z scripts/deep_research_provider.py                                 209     48    77%   321-322, 351, 354, 360, 363, 366, 515-536, 540-567, 599-602, 635, 640
+2026-11-04T02:33:19.4476012Z scripts/demote_alphabet_letter_mapping.py                          70     70     0%   52-163
+2026-11-04T02:33:19.4476553Z scripts/download_ontologies.py                                    127    127     0%   13-254
+2026-11-04T02:33:19.4477172Z scripts/drop_implausible_roles.py                                  41     41     0%   14-92
+2026-11-04T02:33:19.4477650Z scripts/embed_map.py                                               56     56     0%   4-125
+2026-11-04T02:33:19.4478110Z scripts/embed_records.py                                          142    142     0%   10-256
+2026-11-04T02:33:19.4478646Z scripts/enrich_chemical_properties.py                              54      7    87%   85-86, 96-98, 100, 104
+2026-11-04T02:33:19.4479404Z scripts/enrich_edison_response.py                                 169     64    62%   65-67, 75-76, 82-85, 112, 117, 124, 129, 150-152, 156, 223-226, 235, 239, 262, 274, 277, 286-345, 349
+2026-11-04T02:33:19.4480178Z scripts/enrich_existing_roles.py                                  114     93    18%   45, 47, 62-70, 92-129, 147-208, 213-291, 295
+2026-11-04T02:33:19.4480849Z scripts/enrich_from_ols.py                                        112     26    77%   41-43, 58-61, 66-69, 74-76, 138, 142, 187-190, 200, 211-214, 233, 258
+2026-11-04T02:33:19.4481509Z scripts/enrich_with_concentration_notes.py                         15      7    53%   26-34, 39-41, 45
+2026-11-04T02:33:19.4482059Z scripts/example_role_queries.py                                   123    123     0%   8-210
+2026-11-04T02:33:19.4482936Z scripts/export_individual_records.py                              256     80    69%   30, 122-123, 125, 195-196, 198, 307, 346-348, 352-353, 422-423, 446, 476-602, 606
+2026-11-04T02:33:19.4483640Z scripts/export_lists.py                                           239     68    72%   27, 40-48, 522-621, 625
+2026-11-04T02:33:19.4484163Z scripts/export_reviewed_sssom.py                                    3      3     0%   3-6
+2026-11-04T02:33:19.4484668Z scripts/extract_all_roles.py                                      123    123     0%   16-343
+2026-11-04T02:33:19.4485217Z scripts/extract_roles_from_synonyms.py                             81     39    52%   105, 121, 135, 165-219, 223
+2026-11-04T02:33:19.4485936Z scripts/extract_top100_roles.py                                   132     66    50%   51, 54-62, 74-75, 89-90, 119, 160, 165-166, 175-176, 180-181, 192-195, 208, 231-301, 305
+2026-11-04T02:33:19.4486635Z scripts/fix_cas_counterion_identity_conflicts.py                  246    246     0%   22-734
+2026-11-04T02:33:19.4487229Z scripts/fix_cas_stereochemical_identity_conflicts.py              278    278     0%   25-955
+2026-11-04T02:33:19.4487767Z scripts/fix_cow_manure_records.py                                  88     88     0%   52-213
+2026-11-04T02:33:19.4488265Z scripts/fix_dead_chebi_ids.py                                      70     70     0%   26-142
+2026-11-04T02:33:19.4488794Z scripts/fix_dihydroxyflavone_wrong_compound.py                     71     71     0%   41-167
+2026-11-04T02:33:19.4489343Z scripts/fix_element_atom_overclaims.py                            290    290     0%   4-674
+2026-11-04T02:33:19.4489854Z scripts/fix_hydrate_collapse.py                                   101    101     0%   39-203
+2026-11-04T02:33:19.4490375Z scripts/fix_hydrate_local_identities.py                           465    465     0%   17-949
+2026-11-04T02:33:19.4490910Z scripts/fix_hydrate_terms_and_twins.py                             98     98     0%   39-207
+2026-11-04T02:33:19.4491428Z scripts/fix_kg_microbe_node_id_drift.py                            62     62     0%   3-102
+2026-11-04T02:33:19.4492221Z scripts/fix_lipoic_stereochemistry.py                             267    197    26%   97, 101-113, 117-139, 157, 166-193, 197-217, 221-230, 234-257, 261-294, 298-301, 305-322, 326-366, 370-410, 414-499, 503
+2026-11-04T02:33:19.4493370Z scripts/fix_malformed_hydrate_identities.py                       339    339     0%   22-729
+2026-11-04T02:33:19.4494043Z scripts/fix_merge_tombstone_resolution.py                          97     14    86%   261, 263, 268, 270, 274, 288-289, 291, 299-306, 308, 336-337, 377
+2026-11-04T02:33:19.4494701Z scripts/fix_parent_inherited_formulas.py                           44     44     0%   41-122
+2026-11-04T02:33:19.4495354Z scripts/fix_registry_row_predicates.py                             58     58     0%   34-120
+2026-11-04T02:33:19.4495902Z scripts/fix_remaining_hydrate_regroundings.py                     291    291     0%   28-585
+2026-11-04T02:33:19.4496454Z scripts/fix_salt_ion_identity_overclaims.py                       332    332     0%   20-765
+2026-11-04T02:33:19.4496986Z scripts/fix_scrambled_hydrate_cas.py                               61     61     0%   41-165
+2026-11-04T02:33:19.4497500Z scripts/fix_stereoisomer_remaps.py                                 44     44     0%   21-105
+2026-11-04T02:33:19.4498000Z scripts/fix_sulfur_family.py                                      241    241     0%   4-469
+2026-11-04T02:33:19.4498656Z scripts/fix_tombstone_pointers.py                                 118     51    57%   88-89, 102, 108-114, 127-152, 164-183, 194-209, 212-213, 219, 222, 224, 226, 231
+2026-11-04T02:33:19.4499377Z scripts/fix_variable_sulfate_hydrates.py                          193    193     0%   23-380
+2026-11-04T02:33:19.4499904Z scripts/fix_wrong_compound_cas.py                                  58     58     0%   37-148
+2026-11-04T02:33:19.4500429Z scripts/generate_complex_media_report.py                          140    140     0%   14-302
+2026-11-04T02:33:19.4500980Z scripts/generate_index_files.py                                   132     13    90%   20, 133, 183-201, 269
+2026-11-04T02:33:19.4501721Z scripts/generate_ingredient_umap.py                               270    171    37%   22, 28, 61, 64, 75-77, 84-93, 101-156, 163, 190-348, 379-380, 385, 392, 403, 448-449, 459, 537-581, 585
+2026-11-04T02:33:19.4502429Z scripts/generate_report.py                                         88     88     0%   4-153
+2026-11-04T02:33:19.4503182Z scripts/generate_role_statistics.py                               112     69    38%   55, 59, 65, 101, 103, 106-109, 113-115, 135-192, 201-242, 249-278, 282
+2026-11-04T02:33:19.4503946Z scripts/identify_complex_media.py                                  97     70    28%   91, 95, 100, 104-109, 124-161, 166-194, 199-230, 235-267, 271
+2026-11-04T02:33:19.4504594Z scripts/import_from_culturemech.py                                 17      8    53%   27-40, 45-47, 51
+2026-11-04T02:33:19.4505130Z scripts/import_pfas_roles.py                                       90     90     0%   14-180
+2026-11-04T02:33:19.4505650Z scripts/infer_energy_source.py                                     35     21    40%   58-95, 99
+2026-11-04T02:33:19.4506182Z scripts/infer_roles_from_chebi.py                                  68     43    37%   114-188, 192
+2026-11-04T02:33:19.4506751Z scripts/infer_roles_from_name_lists.py                             63     24    62%   191-230, 234
+2026-11-04T02:33:19.4507301Z scripts/llm_curate_unmapped.py                                    210    210     0%   11-558
+2026-11-04T02:33:19.4507852Z scripts/make_record_refresh_receipt.py                             70     45    36%   38, 63-97, 118-134, 138
+2026-11-04T02:33:19.4508397Z scripts/map_batch_priority.py                                      77     77     0%   4-172
+2026-11-04T02:33:19.4508887Z scripts/map_final_two.py                                           89     89     0%   4-180
+2026-11-04T02:33:19.4509396Z scripts/map_incomplete_formulas.py                                104    104     0%   8-332
+2026-11-04T02:33:19.4509903Z scripts/map_other_category.py                                      81     81     0%   4-194
+2026-11-04T02:33:19.4510415Z scripts/merge_aldehydo_duplicates.py                               74     74     0%   47-191
+2026-11-04T02:33:19.4511392Z scripts/merge_carnitine_hydrochloride.py                          350    191    45%   113, 147, 160, 166, 195, 202, 247-248, 250, 255, 260-269, 273-299, 303, 309-338, 342-367, 376-383, 387-432, 437-454, 459-502, 508-536, 540
+2026-11-04T02:33:19.4512240Z scripts/merge_cas_conflict_duplicates.py                           80     80     0%   46-191
+2026-11-04T02:33:19.4512924Z scripts/merge_culturemech_updates.py                               16      8    50%   26-40, 45-47, 51
+2026-11-04T02:33:19.4513727Z scripts/merge_mapped_records.py                                   161     12    93%   99, 117, 137, 148-149, 164, 166, 171, 191, 273-274, 283
+2026-11-04T02:33:19.4514346Z scripts/merge_minted_hydrate_duplicates.py                         77     77     0%   37-175
+2026-11-04T02:33:19.4514895Z scripts/merge_salt_label_duplicates.py                             95     95     0%   33-197
+2026-11-04T02:33:19.4515431Z scripts/merge_unmapped_into_mapped.py                             112    112     0%   30-194
+2026-11-04T02:33:19.4516021Z scripts/migrate_component_partonomy.py                            158     24    85%   150, 239, 344, 369, 378-400, 404
+2026-11-04T02:33:19.4516605Z scripts/migrate_drop_legacy_ontology_id.py                         61     61     0%   27-127
+2026-11-04T02:33:19.4517146Z scripts/migrate_media_roles_to_facets.py                          165    165     0%   34-387
+2026-11-04T02:33:19.4517699Z scripts/move_mapped_out_of_unmapped_collection.py                  90     90     0%   34-184
+2026-11-04T02:33:19.4518251Z scripts/move_nah2po4_hydrate_labels.py                            150    150     0%   28-228
+2026-11-04T02:33:19.4518784Z scripts/partition_class_term_cohort.py                             68     68     0%   41-161
+2026-11-04T02:33:19.4519324Z scripts/prepare_for_claude_curation.py                             59     59     0%   8-200
+2026-11-04T02:33:19.4519892Z scripts/prepare_unmapped_for_curation.py                           13      5    62%   26, 33-35, 39
+2026-11-04T02:33:19.4520659Z scripts/promote_heptahydrate_ncit.py                              283     45    84%   116, 132, 138, 152, 195-197, 205-206, 209, 220, 252, 271-272, 309, 315, 323, 327, 355, 382, 396-423, 427
+2026-11-04T02:33:19.4521455Z scripts/promote_microbedecoder_residual.py                        107     84    21%   91-99, 103-109, 113-211, 215
+2026-11-04T02:33:19.4522109Z scripts/promote_microbedecoder_reviewed.py                        155    115    26%   107, 119-146, 180-187, 191-343, 347
+2026-11-04T02:33:19.4523055Z scripts/promote_owned_name_policy.py                              187    158    16%   57, 70-78, 82-90, 94, 99-196, 200, 204-267, 273-280, 284-303, 307
+2026-11-04T02:33:19.4523789Z scripts/promote_resolved_unmapped.py                              173    136    21%   106-150, 162-178, 204-212, 216-406, 410
+2026-11-04T02:33:19.4524580Z scripts/promote_stock_cas_removal.py                              344    251    27%   71-77, 81-82, 88-137, 141-146, 150-185, 190-300, 363-539, 593, 608-687, 701-710, 723-772, 776
+2026-11-04T02:33:19.4525504Z scripts/propose_residual_groundings.py                            262    171    35%   74-80, 85-92, 104-126, 146, 197-204, 231, 248, 258-259, 294-320, 323, 328, 339-379, 383-509, 513
+2026-11-04T02:33:19.4526259Z scripts/publish_cas_as_synonym.py                                  73     21    71%   75-76, 103-105, 126-150, 154
+2026-11-04T02:33:19.4526861Z scripts/reconcile_sssom.py                                        215     57    73%   122, 128, 174-184, 260-261, 327, 342-396, 400
+2026-11-04T02:33:19.4528543Z scripts/record_review.py                                          606    166    73%   66, 74, 85-92, 118-119, 121, 124-125, 135, 143, 146-147, 154, 167, 174, 182, 190, 204-205, 208, 214, 216, 225, 227, 232, 234, 236, 238, 240, 242, 256, 258, 266, 268, 270, 272, 278, 281, 284, 292, 294, 297, 305, 307, 310, 314, 321, 333, 340-342, 344, 346, 353, 355, 361, 368, 372, 380, 388, 417-418, 427, 454, 457, 462, 466, 476, 488, 492, 497-505, 591, 596, 609, 611, 632-636, 639, 650, 654, 682, 685, 696-697, 701, 705, 722, 725, 729-730, 732, 736-802, 806
+2026-11-04T02:33:19.4530112Z scripts/refresh_occurrence_statistics.py                          120     55    54%   73-82, 109, 187-192, 197-210, 215-256, 260
+2026-11-04T02:33:19.4530721Z scripts/refresh_unchanged_cohort.py                                 3      3     0%   3-6
+2026-11-04T02:33:19.4531269Z scripts/refresh_visualization_metadata.py                          52     52     0%   10-84
+2026-11-04T02:33:19.4531945Z scripts/regrade_hydrate_to_close_match.py                          63     63     0%   38-142
+2026-11-04T02:33:19.4532499Z scripts/regrade_identical_formula_parents.py                       65     65     0%   36-170
+2026-11-04T02:33:19.4533268Z scripts/regrade_sssom_columns.py                                   60     60     0%   24-103
+2026-11-04T02:33:19.4533875Z scripts/regrade_synonym_matches.py                                217     34    84%   258, 361-362, 403-404, 408-409, 411-412, 509-547, 551
+2026-11-04T02:33:19.4534507Z scripts/reground_aromatic_hydrocarbon.py                           67     67     0%   58-174
+2026-11-04T02:33:19.4535034Z scripts/reground_aspartate.py                                      58     58     0%   37-131
+2026-11-04T02:33:19.4535566Z scripts/reground_compositional_classes.py                          66     66     0%   30-157
+2026-11-04T02:33:19.4536213Z scripts/reground_mapped_record.py                                 202     77    62%   135, 160, 167-178, 182, 221, 255, 261, 278, 288, 293-400, 404
+2026-11-04T02:33:19.4536875Z scripts/reject_carnitinamide_synonym.py                            68      4    94%   100-101, 103, 121
+2026-11-04T02:33:19.4537539Z scripts/reject_hidden_hydrate_synonym_collapses.py                146     25    83%   120, 171, 214, 221, 232-233, 273, 278-302, 306
+2026-11-04T02:33:19.4538160Z scripts/relabel_mapped_record.py                                   77     77     0%   21-136
+2026-11-04T02:33:19.4538679Z scripts/remap_peptones_to_micro.py                                 47     47     0%   22-121
+2026-11-04T02:33:19.4539217Z scripts/remove_duplicate_unmapped.py                               54     54     0%   4-87
+2026-11-04T02:33:19.4539869Z scripts/remove_stale_kg_microbe_nodes.py                          151     37    75%   37, 51, 169-170, 181, 200-226, 233-244, 252, 255, 268-285, 289
+2026-11-04T02:33:19.4540516Z scripts/render_claude_research_prompt.py                           58     58     0%   19-118
+2026-11-04T02:33:19.4541051Z scripts/repair_comma_split_labels.py                               66     66     0%   52-189
+2026-11-04T02:33:19.4541632Z scripts/repair_heptahydrate_membership.py                          82     24    71%   54, 61, 89-104, 112-129, 133
+2026-11-04T02:33:19.4542214Z scripts/repair_incomplete_formulas.py                             175    175     0%   11-425
+2026-11-04T02:33:19.4542962Z scripts/report_hydrate_grounding.py                               206     82    60%   141, 145, 202, 208, 223, 225, 251-261, 291, 313, 319-465, 469
+2026-11-04T02:33:19.4543643Z scripts/report_residual_near_matches.py                           164     91    45%   105, 156, 174-179, 183-303, 307
+2026-11-04T02:33:19.4556393Z scripts/research_ingredient.py                                    286     86    70%   31, 45, 48, 52, 60, 68-69, 72, 83, 103-105, 107, 114, 122, 138, 164-165, 167, 174, 188-189, 265, 274, 279, 282-283, 288, 318, 459-486, 490-548, 552
+2026-11-04T02:33:19.4558447Z scripts/research_ingredient_edison.py                             229    183    20%   82-89, 105-115, 125-140, 153-158, 165, 170, 175, 225-236, 241-244, 262-325, 335-347, 351-480, 484
+2026-11-04T02:33:19.4559929Z scripts/research_ingredient_roles_edison.py                        23      8    65%   53-57, 63-66
+2026-11-04T02:33:19.4561163Z scripts/restore_carnitine_mapping_provenance.py                    85     35    59%   43, 57, 61, 69, 75, 80-121, 125
+2026-11-04T02:33:19.4562365Z scripts/restore_culturemech_grounding_evidence.py                  61     61     0%   23-134
+2026-11-04T02:33:19.4563985Z scripts/restore_micro_source_identities.py                        107    107     0%   9-151
+2026-11-04T02:33:19.4564790Z scripts/retire_assay_labels.py                                     78     78     0%   50-220
+2026-11-04T02:33:19.4565326Z scripts/retire_parent_names_on_forms.py                            40     40     0%   29-90
+2026-11-04T02:33:19.4565933Z scripts/retire_reviewed_generated_aliases.py                      117      8    93%   125, 128, 131, 141, 170, 184, 236, 250
+2026-11-04T02:33:19.4566697Z scripts/retire_wrong_compound_synonyms.py                          65     65     0%   46-186
+2026-11-04T02:33:19.4567229Z scripts/retire_wrong_form_names.py                                127    127     0%   34-237
+2026-11-04T02:33:19.4567723Z scripts/review_ingredient.py                                      121    121     0%   11-251
+2026-11-04T02:33:19.4568239Z scripts/run_shared_evidence_validator.py                          185    185     0%   10-262
+2026-11-04T02:33:19.4568982Z scripts/score_causal_graph_readiness.py                           260     28    89%   31, 161-162, 168-169, 225, 229, 233, 249, 251, 288, 294, 321-330, 374, 393, 435, 515-517, 526, 533
+2026-11-04T02:33:19.4569669Z scripts/sfdp_layout.py                                             24     24     0%   7-37
+2026-11-04T02:33:19.4570327Z scripts/step7a_guarded_publication.py                             178    156    12%   25-26, 30-32, 36, 40-41, 45, 51-92, 97-116, 120-127, 131-169, 174-214, 219-308
+2026-11-04T02:33:19.4571007Z scripts/strip_cas_leading_zeros.py                                 94     94     0%   45-176
+2026-11-04T02:33:19.4571516Z scripts/test_llm_curator.py                                        85     85     0%   4-189
+2026-11-04T02:33:19.4572025Z scripts/test_synonym_preservation.py                               65     65     0%   4-153
+2026-11-04T02:33:19.4572650Z scripts/triage_culturemech_residual.py                            135     72    47%   121, 127, 132, 138-148, 153-177, 184, 187, 202-257, 261
+2026-11-04T02:33:19.4573610Z scripts/update_water_quality.py                                    55     55     0%   4-98
+2026-11-04T02:33:19.4574109Z scripts/validate_all.py                                           126    126     0%   12-216
+2026-11-04T02:33:19.4574616Z scripts/validate_component_partonomy.py                            25     25     0%   4-47
+2026-11-04T02:33:19.4575548Z scripts/validate_id_label_correspondence.py                       360     47    87%   117-118, 353-354, 363-364, 427, 460, 472, 539, 542, 544, 572, 575, 615-621, 635, 676, 687-688, 799-804, 814, 818, 821, 897-908, 919, 937, 940, 949, 1047, 1054, 1061-1069, 1073
+2026-11-04T02:33:19.4576464Z scripts/validate_merge_integrity.py                                51     51     0%   4-88
+2026-11-04T02:33:19.4577000Z scripts/validate_published_curies.py                               59     18    69%   116-139, 143
+2026-11-04T02:33:19.4577565Z scripts/validate_records_against_research.py                      295    295     0%   34-720
+2026-11-04T02:33:19.4578172Z scripts/validate_reviewed_sssom_schema.py                          62     12    81%   31, 34-35, 37, 48, 64, 90, 99-102, 106
+2026-11-04T02:33:19.4578732Z scripts/validate_roles.py                                         160    160     0%   8-299
+2026-11-04T02:33:19.4579731Z scripts/validate_sssom_invariants.py                              503    263    48%   132, 180, 235-237, 246-261, 281, 296-308, 320-326, 330-336, 342-367, 375-377, 385-396, 407-419, 434-463, 476-497, 511-536, 552, 591-609, 628-661, 685-688, 715-716, 782, 988-989, 1095, 1123-1124, 1128, 1164-1361, 1365
+2026-11-04T02:33:19.4580723Z scripts/validate_strict.py                                        123    123     0%   28-277
+2026-11-04T02:33:19.4581209Z scripts/validate_synonyms.py                                      129    129     0%   12-285
+2026-11-04T02:33:19.4581704Z scripts/verify_merge_integrity.py                                 218    218     0%   16-326
+2026-11-04T02:33:19.4583273Z scripts/verify_micro_ids.py                                        71     71     0%   9-95
+2026-11-04T02:33:19.4584224Z scripts/verify_roundtrip.py                                       126     43    66%   35, 76, 83, 94, 135-136, 139-140, 214, 254-300, 304
+2026-11-04T02:33:19.4585083Z src/mediaingredientmech/__init__.py                                 0      0   100%
+2026-11-04T02:33:19.4585607Z src/mediaingredientmech/curate/__init__.py                          0      0   100%
+2026-11-04T02:33:19.4586894Z src/mediaingredientmech/curate/apply_receipt.py                    38      0   100%
+2026-11-04T02:33:19.4587768Z src/mediaingredientmech/curate/curation_event.py                   27      4    85%   94, 97-103
+2026-11-04T02:33:19.4588362Z src/mediaingredientmech/curation/__init__.py                       11      7    36%   20-28
+2026-11-04T02:33:19.4589063Z src/mediaingredientmech/curation/chebi_deduplicator.py            129     26    80%   54, 59, 63, 88, 91, 154, 161, 168, 195, 202-205, 212-221, 320-334
+2026-11-04T02:33:19.4589967Z src/mediaingredientmech/curation/chemical_properties_guard.py     247     19    92%   82, 114, 118, 121, 124-126, 130, 148, 178, 189, 221, 338, 350, 352, 389, 421-423
+2026-11-04T02:33:19.4590738Z src/mediaingredientmech/curation/hydrate_guard.py                  53      1    98%   175
+2026-11-04T02:33:19.4591814Z src/mediaingredientmech/curation/ingredient_curator.py            344     75    78%   37, 45-46, 57, 186-193, 199, 235, 238, 296, 341-358, 362-375, 412-420, 468, 473, 475, 477, 490, 498, 500, 504, 506, 566, 568, 570, 587, 593, 595, 657, 674, 676, 680, 682, 684, 747, 749, 751, 770, 772, 776, 778, 812, 833-852, 879
+2026-11-04T02:33:19.4593124Z src/mediaingredientmech/curation/solution_matcher.py               99      0   100%
+2026-11-04T02:33:19.4593790Z src/mediaingredientmech/curation/synonym_manager.py               125     54    57%   53-54, 64-89, 97-120, 136, 144, 148, 182, 202-208
+2026-11-04T02:33:19.4594489Z src/mediaingredientmech/curie.py                                  129     29    78%   296, 299, 333, 336, 339-340, 354-383, 387
+2026-11-04T02:33:19.4595078Z src/mediaingredientmech/export/__init__.py                          0      0   100%
+2026-11-04T02:33:19.4595684Z src/mediaingredientmech/export/ingredient_bundle.py                65     20    69%   44, 108, 110, 121, 126-141, 145
+2026-11-04T02:33:19.4596570Z src/mediaingredientmech/export/kgx.py                             310     34    89%   123, 133, 135, 165, 187, 209, 224, 240, 255, 259, 299, 306, 309, 314, 319, 326, 334, 341, 357, 383, 390, 495, 510, 513, 630, 633, 640-650, 654
+2026-11-04T02:33:19.4597381Z src/mediaingredientmech/export/report_generator.py                134      0   100%
+2026-11-04T02:33:19.4598037Z src/mediaingredientmech/export/reviewed_sssom.py                  253     13    95%   72, 78, 89, 104, 109, 112, 190, 199, 206, 361, 363, 365, 400
+2026-11-04T02:33:19.4598769Z src/mediaingredientmech/export/supported_kgx.py                   168     20    88%   63-64, 69, 75, 123-130, 338-349, 353
+2026-11-04T02:33:19.4599467Z src/mediaingredientmech/form_mapping_review.py                    239      3    99%   118, 141, 156
+2026-11-04T02:33:19.4600033Z src/mediaingredientmech/import_quality.py                          11      0   100%
+2026-11-04T02:33:19.4601237Z src/mediaingredientmech/ingredient_bundle_contract.py             385     64    83%   116, 145, 152, 162, 165, 172, 176, 178, 193, 196, 198, 201, 204, 209, 213, 240, 244, 272, 287, 289, 294, 298, 301, 308, 324, 338, 348, 351, 363, 367, 370, 378, 381, 384, 390, 393, 399, 403, 409, 427, 434, 439, 444, 466, 471, 479, 481, 489, 493, 510, 512, 518, 525, 529, 537, 539, 542, 551, 553, 568, 581, 621, 649, 661
+2026-11-04T02:33:19.4602840Z src/mediaingredientmech/ingredient_bundle_refresh.py              392     20    95%   415, 421, 431, 443, 453, 467, 483, 486, 491, 546, 596-597, 606-607, 716, 725, 779, 790, 797, 816
+2026-11-04T02:33:19.4604020Z src/mediaingredientmech/mapping_scope.py                          224     30    87%   26, 45, 51, 66, 71, 78, 83, 88, 108, 120, 128, 133, 137, 148, 194-199, 212, 223, 226, 228, 234, 238, 243, 245, 251, 266
+2026-11-04T02:33:19.4604797Z src/mediaingredientmech/micro_source.py                            50      2    96%   43, 70
+2026-11-04T02:33:19.4605411Z src/mediaingredientmech/record_refresh.py                         114      8    93%   91, 93, 107, 109, 142, 147, 151, 165
+2026-11-04T02:33:19.4606020Z src/mediaingredientmech/registry_correction_refresh.py            127      0   100%
+2026-11-04T02:33:19.4606759Z src/mediaingredientmech/render_ingredient_pages.py                147     46    69%   83, 164-165, 167, 172-173, 257-308, 312
+2026-11-04T02:33:19.4607430Z src/mediaingredientmech/review_claims.py                           36      2    94%   22, 30
+2026-11-04T02:33:19.4607986Z src/mediaingredientmech/schema/__init__.py                          0      0   100%
+2026-11-04T02:33:19.4608510Z src/mediaingredientmech/schema_site.py                             22      0   100%
+2026-11-04T02:33:19.4609025Z src/mediaingredientmech/sssom_grading.py                           32      0   100%
+2026-11-04T02:33:19.4609553Z src/mediaingredientmech/sssom_metadata.py                          27      1    96%   26
+2026-11-04T02:33:19.4610090Z src/mediaingredientmech/stock_cas_removal_refresh.py              133      0   100%
+2026-11-04T02:33:19.4610647Z src/mediaingredientmech/synonym_policy.py                          42      5    88%   40-42, 48, 80
+2026-11-04T02:33:19.4611207Z src/mediaingredientmech/utils/__init__.py                           2      0   100%
+2026-11-04T02:33:19.4611814Z src/mediaingredientmech/utils/chemical_normalizer.py              112     37    67%   201, 252, 262, 267-271, 296-377
+2026-11-04T02:33:19.4612618Z src/mediaingredientmech/utils/chemical_properties_client.py       251     24    90%   159, 260, 267, 321-322, 340-342, 392, 408-425, 446, 459-461, 470-471
+2026-11-04T02:33:19.4613605Z src/mediaingredientmech/utils/culturemech_occurrences.py           67      1    99%   183
+2026-11-04T02:33:19.4614200Z src/mediaingredientmech/utils/doi_resolver.py                     163    163     0%   11-370
+2026-11-04T02:33:19.4614758Z src/mediaingredientmech/utils/fleet_paths.py                       19      0   100%
+2026-11-04T02:33:19.4615448Z src/mediaingredientmech/utils/kg_microbe_searcher.py               97     80    18%   17-20, 36-40, 44-55, 59-81, 96-100, 114-137, 145-155, 168-184, 192-199
+2026-11-04T02:33:19.4616157Z src/mediaingredientmech/utils/llm_curator.py                       82     82     0%   8-296
+2026-11-04T02:33:19.4616706Z src/mediaingredientmech/utils/oaklib_cache.py                      21      0   100%
+2026-11-04T02:33:19.4617237Z src/mediaingredientmech/utils/object_source.py                     13      0   100%
+2026-11-04T02:33:19.4617832Z src/mediaingredientmech/utils/ontology_client.py                   84     63    25%   41-53, 71-108, 129-143, 148-162
+2026-11-04T02:33:19.4618465Z src/mediaingredientmech/utils/purity_detector.py                   98     98     0%   12-341
+2026-11-04T02:33:19.4619064Z src/mediaingredientmech/utils/role_facets.py                       31      4    87%   51, 56-57, 111
+2026-11-04T02:33:19.4619636Z src/mediaingredientmech/utils/role_iteration.py                    11      0   100%
+2026-11-04T02:33:19.4620215Z src/mediaingredientmech/utils/yaml_handler.py                      41      5    88%   33, 39, 88-92, 99
+2026-11-04T02:33:19.4620786Z src/mediaingredientmech/validation/__init__.py                      3      0   100%
+2026-11-04T02:33:19.4621453Z src/mediaingredientmech/validation/component_partonomy.py         131     18    86%   113, 131, 138, 154, 163-169, 214-223, 238, 240
+2026-11-04T02:33:19.4622542Z src/mediaingredientmech/validation/ingredient_reviewer.py         392    245    38%   160-175, 197-261, 301-352, 428-441, 472-515, 528, 541, 573, 585, 604-681, 694, 701-768, 823-833, 847, 866-897, 910, 916-972, 982-983, 998-1046, 1050-1051, 1059-1080
+2026-11-04T02:33:19.4623905Z src/mediaingredientmech/validation/kg_microbe_dict.py             264     14    95%   235, 292, 294-299, 313, 316, 331, 333, 421-423, 434, 564-565
+2026-11-04T02:33:19.4624597Z src/mediaingredientmech/validation/mapping_change_receipts.py     340      0   100%
+2026-11-04T02:33:19.4625269Z src/mediaingredientmech/validation/ontology_validator.py          116     87    25%   53, 57, 62-81, 90-98, 103-109, 114-139, 154-218
+2026-11-04T02:33:19.4626230Z src/mediaingredientmech/validation/schema_validator.py            183    121    34%   56, 60, 64, 91, 95-96, 105-108, 118-120, 137-139, 149-165, 171-193, 197-202, 206-212, 216-233, 237-273, 289-328, 333-347
+2026-11-04T02:33:19.4627248Z src/mediaingredientmech/validation/semantic_release.py            400     13    97%   624, 711, 774, 957-965, 969
+2026-11-04T02:33:19.4627938Z src/mediaingredientmech/validation/write_validated.py              48     12    75%   52-54, 57-65, 92, 94, 127
+2026-11-04T02:33:19.4628517Z ---------------------------------------------------------------------------------------------
+2026-11-04T02:33:19.4628969Z TOTAL                                                           38688  23036    40%
+2026-11-04T02:33:19.4629310Z Coverage HTML written to dir htmlcov
+2026-11-04T02:33:23.0424666Z ========= 4557 passed, 530 skipped, 31 warnings in 2757.13s (0:45:57) ==========
+2026-11-04T02:33:27.7237566Z ##[group]Run uv run --with coverage coverage report --include='src/mediaingredientmech/*' --fail-under=35
+2026-11-04T02:33:27.7238353Z [36;1muv run --with coverage coverage report --include='src/mediaingredientmech/*' --fail-under=35[0m
+2026-11-04T02:33:27.7258559Z shell: /usr/bin/bash -e {0}
+2026-11-04T02:33:27.7258810Z env:
+2026-11-04T02:33:27.7259009Z   UV_PYTHON: 3.13
+2026-11-04T02:33:27.7259296Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T02:33:27.7259684Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T02:33:27.7259983Z ##[endgroup]
+2026-11-04T02:33:27.8187648Z Installed 1 package in 2ms
+2026-11-04T02:33:28.4867177Z Name                                                            Stmts   Miss  Cover
+2026-11-04T02:33:28.4868149Z -----------------------------------------------------------------------------------
+2026-11-04T02:33:28.4869229Z src/mediaingredientmech/__init__.py                                 0      0   100%
+2026-11-04T02:33:28.4870487Z src/mediaingredientmech/curate/__init__.py                          0      0   100%
+2026-11-04T02:33:28.4871662Z src/mediaingredientmech/curate/apply_receipt.py                    38      0   100%
+2026-11-04T02:33:28.4872406Z src/mediaingredientmech/curate/curation_event.py                   27      4    85%
+2026-11-04T02:33:28.4873349Z src/mediaingredientmech/curation/__init__.py                       11      7    36%
+2026-11-04T02:33:28.4873901Z src/mediaingredientmech/curation/chebi_deduplicator.py            129     26    80%
+2026-11-04T02:33:28.4874457Z src/mediaingredientmech/curation/chemical_properties_guard.py     247     19    92%
+2026-11-04T02:33:28.4875010Z src/mediaingredientmech/curation/hydrate_guard.py                  53      1    98%
+2026-11-04T02:33:28.4875549Z src/mediaingredientmech/curation/ingredient_curator.py            344     75    78%
+2026-11-04T02:33:28.4876092Z src/mediaingredientmech/curation/solution_matcher.py               99      0   100%
+2026-11-04T02:33:28.4876656Z src/mediaingredientmech/curation/synonym_manager.py               125     54    57%
+2026-11-04T02:33:28.4877175Z src/mediaingredientmech/curie.py                                  129     29    78%
+2026-11-04T02:33:28.4877691Z src/mediaingredientmech/export/__init__.py                          0      0   100%
+2026-11-04T02:33:28.4878218Z src/mediaingredientmech/export/ingredient_bundle.py                65     20    69%
+2026-11-04T02:33:28.4878745Z src/mediaingredientmech/export/kgx.py                             310     34    89%
+2026-11-04T02:33:28.4879297Z src/mediaingredientmech/export/report_generator.py                134      0   100%
+2026-11-04T02:33:28.4879839Z src/mediaingredientmech/export/reviewed_sssom.py                  253     13    95%
+2026-11-04T02:33:28.4880376Z src/mediaingredientmech/export/supported_kgx.py                   168     20    88%
+2026-11-04T02:33:28.4880910Z src/mediaingredientmech/form_mapping_review.py                    239      3    99%
+2026-11-04T02:33:28.4881439Z src/mediaingredientmech/import_quality.py                          11      0   100%
+2026-11-04T02:33:28.4881971Z src/mediaingredientmech/ingredient_bundle_contract.py             385     64    83%
+2026-11-04T02:33:28.4882916Z src/mediaingredientmech/ingredient_bundle_refresh.py              392     20    95%
+2026-11-04T02:33:28.4883452Z src/mediaingredientmech/mapping_scope.py                          224     30    87%
+2026-11-04T02:33:28.4883967Z src/mediaingredientmech/micro_source.py                            50      2    96%
+2026-11-04T02:33:28.4884486Z src/mediaingredientmech/record_refresh.py                         114      8    93%
+2026-11-04T02:33:28.4885015Z src/mediaingredientmech/registry_correction_refresh.py            127      0   100%
+2026-11-04T02:33:28.4885547Z src/mediaingredientmech/render_ingredient_pages.py                147     46    69%
+2026-11-04T02:33:28.4886065Z src/mediaingredientmech/review_claims.py                           36      2    94%
+2026-11-04T02:33:28.4886803Z src/mediaingredientmech/schema/__init__.py                          0      0   100%
+2026-11-04T02:33:28.4887320Z src/mediaingredientmech/schema_site.py                             22      0   100%
+2026-11-04T02:33:28.4887827Z src/mediaingredientmech/sssom_grading.py                           32      0   100%
+2026-11-04T02:33:28.4888337Z src/mediaingredientmech/sssom_metadata.py                          27      1    96%
+2026-11-04T02:33:28.4888854Z src/mediaingredientmech/stock_cas_removal_refresh.py              133      0   100%
+2026-11-04T02:33:28.4889375Z src/mediaingredientmech/synonym_policy.py                          42      5    88%
+2026-11-04T02:33:28.4889882Z src/mediaingredientmech/utils/__init__.py                           2      0   100%
+2026-11-04T02:33:28.4890406Z src/mediaingredientmech/utils/chemical_normalizer.py              112     37    67%
+2026-11-04T02:33:28.4891006Z src/mediaingredientmech/utils/chemical_properties_client.py       251     24    90%
+2026-11-04T02:33:28.4892009Z src/mediaingredientmech/utils/culturemech_occurrences.py           67      1    99%
+2026-11-04T02:33:28.4892561Z src/mediaingredientmech/utils/doi_resolver.py                     163    163     0%
+2026-11-04T02:33:28.4893339Z src/mediaingredientmech/utils/fleet_paths.py                       19      0   100%
+2026-11-04T02:33:28.4893891Z src/mediaingredientmech/utils/kg_microbe_searcher.py               97     80    18%
+2026-11-04T02:33:28.4894417Z src/mediaingredientmech/utils/llm_curator.py                       82     82     0%
+2026-11-04T02:33:28.4894937Z src/mediaingredientmech/utils/oaklib_cache.py                      21      0   100%
+2026-11-04T02:33:28.4895469Z src/mediaingredientmech/utils/object_source.py                     13      0   100%
+2026-11-04T02:33:28.4895998Z src/mediaingredientmech/utils/ontology_client.py                   84     63    25%
+2026-11-04T02:33:28.4896525Z src/mediaingredientmech/utils/purity_detector.py                   98     98     0%
+2026-11-04T02:33:28.4897064Z src/mediaingredientmech/utils/role_facets.py                       31      4    87%
+2026-11-04T02:33:28.4897588Z src/mediaingredientmech/utils/role_iteration.py                    11      0   100%
+2026-11-04T02:33:28.4898117Z src/mediaingredientmech/utils/yaml_handler.py                      41      5    88%
+2026-11-04T02:33:28.4898641Z src/mediaingredientmech/validation/__init__.py                      3      0   100%
+2026-11-04T02:33:28.4899177Z src/mediaingredientmech/validation/component_partonomy.py         131     18    86%
+2026-11-04T02:33:28.4899714Z src/mediaingredientmech/validation/ingredient_reviewer.py         392    245    38%
+2026-11-04T02:33:28.4900250Z src/mediaingredientmech/validation/kg_microbe_dict.py             264     14    95%
+2026-11-04T02:33:28.4900795Z src/mediaingredientmech/validation/mapping_change_receipts.py     340      0   100%
+2026-11-04T02:33:28.4901337Z src/mediaingredientmech/validation/ontology_validator.py          116     87    25%
+2026-11-04T02:33:28.4901873Z src/mediaingredientmech/validation/schema_validator.py            183    121    34%
+2026-11-04T02:33:28.4902411Z src/mediaingredientmech/validation/semantic_release.py            400     13    97%
+2026-11-04T02:33:28.4903271Z src/mediaingredientmech/validation/write_validated.py              48     12    75%
+2026-11-04T02:33:28.4903746Z -----------------------------------------------------------------------------------
+2026-11-04T02:33:28.4904185Z TOTAL                                                            7082   1550    78%
+2026-11-04T02:33:28.5144060Z ##[group]Run uv run --with coverage coverage report --include='scripts/*'
+2026-11-04T02:33:28.5144606Z [36;1muv run --with coverage coverage report --include='scripts/*'[0m
+2026-11-04T02:33:28.5165216Z shell: /usr/bin/bash -e {0}
+2026-11-04T02:33:28.5165472Z env:
+2026-11-04T02:33:28.5165664Z   UV_PYTHON: 3.13
+2026-11-04T02:33:28.5165949Z   RECORD_REVIEW_BASE: 467aa319a06ef992035f509f66fe251082b44ae1
+2026-11-04T02:33:28.5166356Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T02:33:28.5166665Z ##[endgroup]
+2026-11-04T02:33:30.5045793Z Name                                                   Stmts   Miss  Cover
+2026-11-04T02:33:30.5046811Z --------------------------------------------------------------------------
+2026-11-04T02:33:30.5047841Z scripts/_edison_capture.py                               244     98    60%
+2026-11-04T02:33:30.5048972Z scripts/add_culturemech_gap_labels.py                    139    139     0%
+2026-11-04T02:33:30.5050140Z scripts/add_match_level.py                                92     92     0%
+2026-11-04T02:33:30.5050904Z scripts/add_water_of_hydration.py                        104    104     0%
+2026-11-04T02:33:30.5051375Z scripts/aggregate_records.py                             147     63    57%
+2026-11-04T02:33:30.5051822Z scripts/analyze_batch1.py                                 62     62     0%
+2026-11-04T02:33:30.5052266Z scripts/analyze_culturemech_roles.py                     137    137     0%
+2026-11-04T02:33:30.5053055Z scripts/analyze_unmapped.py                              163    163     0%
+2026-11-04T02:33:30.5053550Z scripts/anchor_cas_hydrate_records.py                    120     95    21%
+2026-11-04T02:33:30.5054005Z scripts/apply_312_batch1.py                              248    248     0%
+2026-11-04T02:33:30.5054423Z scripts/apply_312_batch2.py                              366    366     0%
+2026-11-04T02:33:30.5054878Z scripts/apply_312_batch3.py                              349    349     0%
+2026-11-04T02:33:30.5055303Z scripts/apply_312_batch4.py                              198    198     0%
+2026-11-04T02:33:30.5055729Z scripts/apply_669_704_rulings.py                         316    316     0%
+2026-11-04T02:33:30.5056381Z scripts/apply_claude_suggestions.py                      239     54    77%
+2026-11-04T02:33:30.5057207Z scripts/apply_culturemech_aliases.py                     167    137    18%
+2026-11-04T02:33:30.5057714Z scripts/apply_curated_decompositions.py                   50     21    58%
+2026-11-04T02:33:30.5058211Z scripts/apply_edison_cas_enrichment.py                    49     49     0%
+2026-11-04T02:33:30.5058677Z scripts/apply_edison_contextual_parents.py                53     53     0%
+2026-11-04T02:33:30.5059145Z scripts/apply_edison_identity_findings.py                 78     38    51%
+2026-11-04T02:33:30.5059619Z scripts/apply_insession_role_curation.py                  42     42     0%
+2026-11-04T02:33:30.5060086Z scripts/apply_kgmicrobe_identity_reviews.py              118    118     0%
+2026-11-04T02:33:30.5060558Z scripts/apply_kgmicrobe_scope_decisions.py               111    111     0%
+2026-11-04T02:33:30.5061019Z scripts/apply_locant_corrections.py                      127    127     0%
+2026-11-04T02:33:30.5061490Z scripts/apply_microbedecoder_residual_merges.py          109    109     0%
+2026-11-04T02:33:30.5061959Z scripts/apply_ncit_grounding_ruling.py                    63     63     0%
+2026-11-04T02:33:30.5062414Z scripts/apply_owned_name_policy.py                       414    144    65%
+2026-11-04T02:33:30.5063151Z scripts/apply_role_research_results.py                   199     32    84%
+2026-11-04T02:33:30.5063626Z scripts/apply_synonym_review.py                           65     65     0%
+2026-11-04T02:33:30.5064377Z scripts/audit_duplicate_identifiers.py                   165    140    15%
+2026-11-04T02:33:30.5064840Z scripts/audit_kg_microbe_node_ids.py                      89     89     0%
+2026-11-04T02:33:30.5065285Z scripts/audit_occurrence_stats.py                         66     27    59%
+2026-11-04T02:33:30.5065941Z scripts/audit_role_plausibility.py                        29     10    66%
+2026-11-04T02:33:30.5066382Z scripts/audit_writers.py                                  85     85     0%
+2026-11-04T02:33:30.5066796Z scripts/auto_correct.py                                   76     76     0%
+2026-11-04T02:33:30.5067220Z scripts/auto_merge_ready_prs.py                          505    505     0%
+2026-11-04T02:33:30.5067670Z scripts/backfill_ontology_labels.py                      109    109     0%
+2026-11-04T02:33:30.5068129Z scripts/backfill_source_occurrences.py                    70     70     0%
+2026-11-04T02:33:30.5068579Z scripts/backfill_sssom_surface_forms.py                  175    133    24%
+2026-11-04T02:33:30.5069018Z scripts/batch_curate.py                                  146    146     0%
+2026-11-04T02:33:30.5069446Z scripts/batch_curate_unmapped.py                         237    190    20%
+2026-11-04T02:33:30.5069878Z scripts/batch_review.py                                  144     60    58%
+2026-11-04T02:33:30.5070293Z scripts/browser_export.py                                126     34    73%
+2026-11-04T02:33:30.5070737Z scripts/build_culturemech_membership.py                   82      5    94%
+2026-11-04T02:33:30.5071191Z scripts/build_curie_alias_map.py                          94     94     0%
+2026-11-04T02:33:30.5071620Z scripts/build_pages_site.py                              126     27    79%
+2026-11-04T02:33:30.5072055Z scripts/build_research_worklist.py                        68     68     0%
+2026-11-04T02:33:30.5072492Z scripts/build_review_round.py                            354     50    86%
+2026-11-04T02:33:30.5073067Z scripts/bump_sssom_header.py                              58      5    91%
+2026-11-04T02:33:30.5073504Z scripts/categorize_unmapped.py                           152    152     0%
+2026-11-04T02:33:30.5073947Z scripts/check_chebi_currency.py                          106     25    76%
+2026-11-04T02:33:30.5074398Z scripts/check_curation_targets.py                         64      4    94%
+2026-11-04T02:33:30.5074847Z scripts/check_flat_export_coverage.py                    130    102    22%
+2026-11-04T02:33:30.5075288Z scripts/check_hydrate_water.py                           109     46    58%
+2026-11-04T02:33:30.5075725Z scripts/check_instruction_refs.py                        225     41    82%
+2026-11-04T02:33:30.5076177Z scripts/check_record_filename_case.py                     96     11    89%
+2026-11-04T02:33:30.5076627Z scripts/check_sssom_subject_files.py                      25     25     0%
+2026-11-04T02:33:30.5077075Z scripts/check_truncated_locants.py                        62      3    95%
+2026-11-04T02:33:30.5077524Z scripts/check_unified_freshness.py                       115     34    70%
+2026-11-04T02:33:30.5077976Z scripts/check_unified_rejections.py                       68     14    79%
+2026-11-04T02:33:30.5078422Z scripts/check_vendored_sync.py                           402    402     0%
+2026-11-04T02:33:30.5078875Z scripts/check_visualization_currency.py                  107     54    50%
+2026-11-04T02:33:30.5079311Z scripts/chem_formula.py                                  149     25    83%
+2026-11-04T02:33:30.5079741Z scripts/classify_ingredient_type.py                       89     28    69%
+2026-11-04T02:33:30.5080190Z scripts/classify_solution_types.py                        79     79     0%
+2026-11-04T02:33:30.5080653Z scripts/compare_with_culturemech.py                      294     71    76%
+2026-11-04T02:33:30.5081102Z scripts/correct_diketo_bacdive_evidence.py               197     38    81%
+2026-11-04T02:33:30.5081564Z scripts/correct_hydrate_stock_chemistry_871_268.py       173     40    77%
+2026-11-04T02:33:30.5082158Z scripts/correct_izalpinin_cas.py                         359    201    44%
+2026-11-04T02:33:30.5082608Z scripts/correct_melezitose_parent.py                     358    200    44%
+2026-11-04T02:33:30.5083193Z scripts/correct_sodium_perchlorate_parent.py             368    200    46%
+2026-11-04T02:33:30.5083787Z scripts/correct_stale_ontology_labels.py                  84     55    35%
+2026-11-04T02:33:30.5084250Z scripts/create_records_from_groundings.py                145    126    13%
+2026-11-04T02:33:30.5084706Z scripts/cross_reference_culturemech.py                   199    117    41%
+2026-11-04T02:33:30.5085169Z scripts/curate_lithium_glycerophosphate.py               285    120    58%
+2026-11-04T02:33:30.5085629Z scripts/curate_step7c_source_labels.py                   169     42    75%
+2026-11-04T02:33:30.5086068Z scripts/curate_unmapped.py                               218    218     0%
+2026-11-04T02:33:30.5086494Z scripts/curate_wc_stock_751.py                           165     44    73%
+2026-11-04T02:33:30.5086941Z scripts/decompose_py_media_and_ground_categories.py       31      2    94%
+2026-11-04T02:33:30.5087404Z scripts/decompose_substrate_combinations.py               40     10    75%
+2026-11-04T02:33:30.5087863Z scripts/deduplicate_ingredients.py                       153     94    39%
+2026-11-04T02:33:30.5088318Z scripts/deep_research_contract.py                        167     50    70%
+2026-11-04T02:33:30.5088758Z scripts/deep_research_provider.py                        209     48    77%
+2026-11-04T02:33:30.5089221Z scripts/demote_alphabet_letter_mapping.py                 70     70     0%
+2026-11-04T02:33:30.5089693Z scripts/download_ontologies.py                           127    127     0%
+2026-11-04T02:33:30.5090155Z scripts/drop_implausible_roles.py                         41     41     0%
+2026-11-04T02:33:30.5090589Z scripts/embed_map.py                                      56     56     0%
+2026-11-04T02:33:30.5091014Z scripts/embed_records.py                                 142    142     0%
+2026-11-04T02:33:30.5091464Z scripts/enrich_chemical_properties.py                     54      7    87%
+2026-11-04T02:33:30.5091921Z scripts/enrich_edison_response.py                        169     64    62%
+2026-11-04T02:33:30.5092367Z scripts/enrich_existing_roles.py                         114     93    18%
+2026-11-04T02:33:30.5093093Z scripts/enrich_from_ols.py                               112     26    77%
+2026-11-04T02:33:30.5093543Z scripts/enrich_with_concentration_notes.py                15      7    53%
+2026-11-04T02:33:30.5093992Z scripts/example_role_queries.py                          123    123     0%
+2026-11-04T02:33:30.5094442Z scripts/export_individual_records.py                     256     80    69%
+2026-11-04T02:33:30.5094878Z scripts/export_lists.py                                  239     68    72%
+2026-11-04T02:33:30.5095311Z scripts/export_reviewed_sssom.py                           3      3     0%
+2026-11-04T02:33:30.5095754Z scripts/extract_all_roles.py                             123    123     0%
+2026-11-04T02:33:30.5096208Z scripts/extract_roles_from_synonyms.py                    81     39    52%
+2026-11-04T02:33:30.5096654Z scripts/extract_top100_roles.py                          132     66    50%
+2026-11-04T02:33:30.5097112Z scripts/fix_cas_counterion_identity_conflicts.py         246    246     0%
+2026-11-04T02:33:30.5097574Z scripts/fix_cas_stereochemical_identity_conflicts.py     278    278     0%
+2026-11-04T02:33:30.5098025Z scripts/fix_cow_manure_records.py                         88     88     0%
+2026-11-04T02:33:30.5098453Z scripts/fix_dead_chebi_ids.py                             70     70     0%
+2026-11-04T02:33:30.5098896Z scripts/fix_dihydroxyflavone_wrong_compound.py            71     71     0%
+2026-11-04T02:33:30.5099355Z scripts/fix_element_atom_overclaims.py                   290    290     0%
+2026-11-04T02:33:30.5099805Z scripts/fix_hydrate_collapse.py                          101    101     0%
+2026-11-04T02:33:30.5100282Z scripts/fix_hydrate_local_identities.py                  465    465     0%
+2026-11-04T02:33:30.5100873Z scripts/fix_hydrate_terms_and_twins.py                    98     98     0%
+2026-11-04T02:33:30.5101324Z scripts/fix_kg_microbe_node_id_drift.py                   62     62     0%
+2026-11-04T02:33:30.5101881Z scripts/fix_lipoic_stereochemistry.py                    267    197    26%
+2026-11-04T02:33:30.5102345Z scripts/fix_malformed_hydrate_identities.py              339    339     0%
+2026-11-04T02:33:30.5102938Z scripts/fix_merge_tombstone_resolution.py                 97     14    86%
+2026-11-04T02:33:30.5103396Z scripts/fix_parent_inherited_formulas.py                  44     44     0%
+2026-11-04T02:33:30.5103853Z scripts/fix_registry_row_predicates.py                    58     58     0%
+2026-11-04T02:33:30.5104309Z scripts/fix_remaining_hydrate_regroundings.py            291    291     0%
+2026-11-04T02:33:30.5104763Z scripts/fix_salt_ion_identity_overclaims.py              332    332     0%
+2026-11-04T02:33:30.5105216Z scripts/fix_scrambled_hydrate_cas.py                      61     61     0%
+2026-11-04T02:33:30.5105666Z scripts/fix_stereoisomer_remaps.py                        44     44     0%
+2026-11-04T02:33:30.5106107Z scripts/fix_sulfur_family.py                             241    241     0%
+2026-11-04T02:33:30.5106577Z scripts/fix_tombstone_pointers.py                        118     51    57%
+2026-11-04T02:33:30.5107032Z scripts/fix_variable_sulfate_hydrates.py                 193    193     0%
+2026-11-04T02:33:30.5107483Z scripts/fix_wrong_compound_cas.py                         58     58     0%
+2026-11-04T02:33:30.5107937Z scripts/generate_complex_media_report.py                 140    140     0%
+2026-11-04T02:33:30.5108387Z scripts/generate_index_files.py                          132     13    90%
+2026-11-04T02:33:30.5108831Z scripts/generate_ingredient_umap.py                      270    171    37%
+2026-11-04T02:33:30.5109273Z scripts/generate_report.py                                88     88     0%
+2026-11-04T02:33:30.5109730Z scripts/generate_role_statistics.py                      112     69    38%
+2026-11-04T02:33:30.5110180Z scripts/identify_complex_media.py                         97     70    28%
+2026-11-04T02:33:30.5110637Z scripts/import_from_culturemech.py                        17      8    53%
+2026-11-04T02:33:30.5111082Z scripts/import_pfas_roles.py                              90     90     0%
+2026-11-04T02:33:30.5111523Z scripts/infer_energy_source.py                            35     21    40%
+2026-11-04T02:33:30.5111962Z scripts/infer_roles_from_chebi.py                         68     43    37%
+2026-11-04T02:33:30.5112402Z scripts/infer_roles_from_name_lists.py                    63     24    62%
+2026-11-04T02:33:30.5112965Z scripts/llm_curate_unmapped.py                           210    210     0%
+2026-11-04T02:33:30.5113425Z scripts/make_record_refresh_receipt.py                    70     45    36%
+2026-11-04T02:33:30.5113872Z scripts/map_batch_priority.py                             77     77     0%
+2026-11-04T02:33:30.5114302Z scripts/map_final_two.py                                  89     89     0%
+2026-11-04T02:33:30.5114732Z scripts/map_incomplete_formulas.py                       104    104     0%
+2026-11-04T02:33:30.5115177Z scripts/map_other_category.py                             81     81     0%
+2026-11-04T02:33:30.5115627Z scripts/merge_aldehydo_duplicates.py                      74     74     0%
+2026-11-04T02:33:30.5116088Z scripts/merge_carnitine_hydrochloride.py                 350    191    45%
+2026-11-04T02:33:30.5116550Z scripts/merge_cas_conflict_duplicates.py                  80     80     0%
+2026-11-04T02:33:30.5117020Z scripts/merge_culturemech_updates.py                      16      8    50%
+2026-11-04T02:33:30.5117469Z scripts/merge_mapped_records.py                          161     12    93%
+2026-11-04T02:33:30.5117917Z scripts/merge_minted_hydrate_duplicates.py                77     77     0%
+2026-11-04T02:33:30.5118371Z scripts/merge_salt_label_duplicates.py                    95     95     0%
+2026-11-04T02:33:30.5118955Z scripts/merge_unmapped_into_mapped.py                    112    112     0%
+2026-11-04T02:33:30.5119416Z scripts/migrate_component_partonomy.py                   158     24    85%
+2026-11-04T02:33:30.5119880Z scripts/migrate_drop_legacy_ontology_id.py                61     61     0%
+2026-11-04T02:33:30.5120444Z scripts/migrate_media_roles_to_facets.py                 165    165     0%
+2026-11-04T02:33:30.5120925Z scripts/move_mapped_out_of_unmapped_collection.py         90     90     0%
+2026-11-04T02:33:30.5121388Z scripts/move_nah2po4_hydrate_labels.py                   150    150     0%
+2026-11-04T02:33:30.5121846Z scripts/partition_class_term_cohort.py                    68     68     0%
+2026-11-04T02:33:30.5122305Z scripts/prepare_for_claude_curation.py                    59     59     0%
+2026-11-04T02:33:30.5122888Z scripts/prepare_unmapped_for_curation.py                  13      5    62%
+2026-11-04T02:33:30.5123354Z scripts/promote_heptahydrate_ncit.py                     283     45    84%
+2026-11-04T02:33:30.5123822Z scripts/promote_microbedecoder_residual.py               107     84    21%
+2026-11-04T02:33:30.5124285Z scripts/promote_microbedecoder_reviewed.py               155    115    26%
+2026-11-04T02:33:30.5124755Z scripts/promote_owned_name_policy.py                     187    158    16%
+2026-11-04T02:33:30.5125215Z scripts/promote_resolved_unmapped.py                     173    136    21%
+2026-11-04T02:33:30.5125673Z scripts/promote_stock_cas_removal.py                     344    251    27%
+2026-11-04T02:33:30.5126127Z scripts/propose_residual_groundings.py                   262    171    35%
+2026-11-04T02:33:30.5126581Z scripts/publish_cas_as_synonym.py                         73     21    71%
+2026-11-04T02:33:30.5127018Z scripts/reconcile_sssom.py                               215     57    73%
+2026-11-04T02:33:30.5127447Z scripts/record_review.py                                 606    166    73%
+2026-11-04T02:33:30.5127890Z scripts/refresh_occurrence_statistics.py                 120     55    54%
+2026-11-04T02:33:30.5128355Z scripts/refresh_unchanged_cohort.py                        3      3     0%
+2026-11-04T02:33:30.5128813Z scripts/refresh_visualization_metadata.py                 52     52     0%
+2026-11-04T02:33:30.5129272Z scripts/regrade_hydrate_to_close_match.py                 63     63     0%
+2026-11-04T02:33:30.5129731Z scripts/regrade_identical_formula_parents.py              65     65     0%
+2026-11-04T02:33:30.5130295Z scripts/regrade_sssom_columns.py                          60     60     0%
+2026-11-04T02:33:30.5130757Z scripts/regrade_synonym_matches.py                       217     34    84%
+2026-11-04T02:33:30.5131211Z scripts/reground_aromatic_hydrocarbon.py                  67     67     0%
+2026-11-04T02:33:30.5131670Z scripts/reground_aspartate.py                             58     58     0%
+2026-11-04T02:33:30.5132122Z scripts/reground_compositional_classes.py                 66     66     0%
+2026-11-04T02:33:30.5132579Z scripts/reground_mapped_record.py                        202     77    62%
+2026-11-04T02:33:30.5133306Z scripts/reject_carnitinamide_synonym.py                   68      4    94%
+2026-11-04T02:33:30.5133775Z scripts/reject_hidden_hydrate_synonym_collapses.py       146     25    83%
+2026-11-04T02:33:30.5134236Z scripts/relabel_mapped_record.py                          77     77     0%
+2026-11-04T02:33:30.5134684Z scripts/remap_peptones_to_micro.py                        47     47     0%
+2026-11-04T02:33:30.5135140Z scripts/remove_duplicate_unmapped.py                      54     54     0%
+2026-11-04T02:33:30.5135601Z scripts/remove_stale_kg_microbe_nodes.py                 151     37    75%
+2026-11-04T02:33:30.5136056Z scripts/render_claude_research_prompt.py                  58     58     0%
+2026-11-04T02:33:30.5136506Z scripts/repair_comma_split_labels.py                      66     66     0%
+2026-11-04T02:33:30.5136968Z scripts/repair_heptahydrate_membership.py                 82     24    71%
+2026-11-04T02:33:30.5137578Z scripts/repair_incomplete_formulas.py                    175    175     0%
+2026-11-04T02:33:30.5138034Z scripts/report_hydrate_grounding.py                      206     82    60%
+2026-11-04T02:33:30.5138499Z scripts/report_residual_near_matches.py                  164     91    45%
+2026-11-04T02:33:30.5139054Z scripts/research_ingredient.py                           286     86    70%
+2026-11-04T02:33:30.5139523Z scripts/research_ingredient_edison.py                    229    183    20%
+2026-11-04T02:33:30.5139989Z scripts/research_ingredient_roles_edison.py               23      8    65%
+2026-11-04T02:33:30.5140458Z scripts/restore_carnitine_mapping_provenance.py           85     35    59%
+2026-11-04T02:33:30.5140930Z scripts/restore_culturemech_grounding_evidence.py         61     61     0%
+2026-11-04T02:33:30.5141400Z scripts/restore_micro_source_identities.py               107    107     0%
+2026-11-04T02:33:30.5141854Z scripts/retire_assay_labels.py                            78     78     0%
+2026-11-04T02:33:30.5142311Z scripts/retire_parent_names_on_forms.py                   40     40     0%
+2026-11-04T02:33:30.5142908Z scripts/retire_reviewed_generated_aliases.py             117      8    93%
+2026-11-04T02:33:30.5143405Z scripts/retire_wrong_compound_synonyms.py                 65     65     0%
+2026-11-04T02:33:30.5143870Z scripts/retire_wrong_form_names.py                       127    127     0%
+2026-11-04T02:33:30.5144320Z scripts/review_ingredient.py                             121    121     0%
+2026-11-04T02:33:30.5144774Z scripts/run_shared_evidence_validator.py                 185    185     0%
+2026-11-04T02:33:30.5145232Z scripts/score_causal_graph_readiness.py                  260     28    89%
+2026-11-04T02:33:30.5145861Z scripts/sfdp_layout.py                                    24     24     0%
+2026-11-04T02:33:30.5146570Z scripts/step7a_guarded_publication.py                    178    156    12%
+2026-11-04T02:33:30.5147132Z scripts/strip_cas_leading_zeros.py                        94     94     0%
+2026-11-04T02:33:30.5147722Z scripts/test_llm_curator.py                               85     85     0%
+2026-11-04T02:33:30.5160580Z scripts/test_synonym_preservation.py                      65     65     0%
+2026-11-04T02:33:30.5161296Z scripts/triage_culturemech_residual.py                   135     72    47%
+2026-11-04T02:33:30.5162136Z scripts/update_water_quality.py                           55     55     0%
+2026-11-04T02:33:30.5163283Z scripts/validate_all.py                                  126    126     0%
+2026-11-04T02:33:30.5164121Z scripts/validate_component_partonomy.py                   25     25     0%
+2026-11-04T02:33:30.5164995Z scripts/validate_id_label_correspondence.py              360     47    87%
+2026-11-04T02:33:30.5165877Z scripts/validate_merge_integrity.py                       51     51     0%
+2026-11-04T02:33:30.5166755Z scripts/validate_published_curies.py                      59     18    69%
+2026-11-04T02:33:30.5167641Z scripts/validate_records_against_research.py             295    295     0%
+2026-11-04T02:33:30.5168578Z scripts/validate_reviewed_sssom_schema.py                 62     12    81%
+2026-11-04T02:33:30.5169466Z scripts/validate_roles.py                                160    160     0%
+2026-11-04T02:33:30.5170339Z scripts/validate_sssom_invariants.py                     503    263    48%
+2026-11-04T02:33:30.5171240Z scripts/validate_strict.py                               123    123     0%
+2026-11-04T02:33:30.5172120Z scripts/validate_synonyms.py                             129    129     0%
+2026-11-04T02:33:30.5173074Z scripts/verify_merge_integrity.py                        218    218     0%
+2026-11-04T02:33:30.5173563Z scripts/verify_micro_ids.py                               71     71     0%
+2026-11-04T02:33:30.5174011Z scripts/verify_roundtrip.py                              126     43    66%
+2026-11-04T02:33:30.5174433Z --------------------------------------------------------------------------
+2026-11-04T02:33:30.5174805Z TOTAL                                                  31606  21486    32%
+2026-11-04T02:33:30.5418373Z Post job cleanup.
+2026-11-04T02:33:30.6611743Z Pruning cache...
+2026-11-04T02:33:30.6625367Z (node:18914) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T02:33:30.6626083Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T02:33:31.1186213Z Saving cache path: /home/runner/work/_temp/setup-uv-cache
+2026-11-04T02:33:31.1342266Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/MediaIngredientMech/MediaIngredientMech --files-from manifest.txt --use-compress-program zstdmt
+2026-11-04T02:33:31.2409801Z ##[warning]Failed to save: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0e5nqagAAAADSpwLGs6cwRY0iXCJrJiXCU1RCRURHRTA0MjEARWRnZQ==
+2026-11-04T02:33:31.2413598Z cache saved with the key: setup-uv-1-x86_64-unknown-linux-gnu-0.13.7-a2751f9fb30bd4a2a3c9523bf706fc68f486d6f1caf3d2e6c0490be45ba3e7d1
+2026-11-04T02:33:31.2566848Z Post job cleanup.
+2026-11-04T02:33:31.3459609Z [command]/usr/bin/git version
+2026-11-04T02:33:31.3516012Z git version 2.56.0
+2026-11-04T02:33:31.3561650Z Temporarily overriding HOME='/home/runner/work/_temp/b5a77a4f-d294-4fb9-b6ad-6984b835d485' before making global git config changes
+2026-11-04T02:33:31.3563353Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T02:33:31.3568474Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MediaIngredientMech/MediaIngredientMech
+2026-11-04T02:33:31.3611167Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T02:33:31.3652399Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T02:33:31.3938331Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T02:33:31.3963729Z http.https://github.com/.extraheader
+2026-11-04T02:33:31.3977900Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-04T02:33:31.4025520Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T02:33:31.4327974Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T02:33:31.4377698Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T02:33:31.4839116Z Cleaning up orphan processes
+2026-11-04T02:33:31.5302384Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, astral-sh/setup-uv@v3, extractions/setup-crate@4993624604c307fbca528d28a3c8b60fa5ecc859. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

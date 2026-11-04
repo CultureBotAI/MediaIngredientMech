@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-03T07:13:49.739826+00:00",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1125",
+  "operator_sha256": "dd0b1d212d52c6020b6e6d8f17cf2b29f042cbdb43e76efbe5631b4fa2756ecd",
+  "predecessor_sha256": "f8e2895462d99ef9d786e99e0a96c3d5b2bdc54686fc75faedb5d0fb0cf4ee86",
+  "plan_sha256": "225a6aaf39a5e0fb5e83acb6152d287e2ad1ca06aa03a81e888092955f23a9f4",
+  "checks": [
+    "v2 preflight identical AST: refresh before authorized later test edits",
+    "selector/constant replacement function identical AST",
+    "only Orchestrator.finish adds exact native workflow bundle/hash postcondition",
+    "13 unique native commands",
+    "full producer and semantic builder share output/mim-kgx-710-full",
+    "exact constant and paired selector replacements retained",
+    "reject unexpected bytes: reports/sssom_completion_20260921/assemble_review.py",
+    "reject unexpected bytes: tests/test_ingredient_bundle.py",
+    "reject unexpected bytes: .github/workflows/qc-reviewed-sssom.yaml",
+    "native supported workflow and CI replay regression unchanged from baseline",
+    "native workflow publishes exact required full path"
+  ],
+  "checks_passed": 11,
+  "syntax": "AST parsed",
+  "plan_only_invocation": "PASS",
+  "maintained_refresh_executed": false,
+  "maintained_writes": false,
+  "required_order": "Root applies frozen #1122, then runs v3 native refresh, then separate #1123/#1124 test edits; no test whitelist/relaxation in orchestrator."
+}

@@ -1,0 +1,3 @@
+The user explicitly authorized exporting the full graph at the unchanged workflow path output/mim-kgx-710-full and rebuilding the semantic review natively. The workflow and this test remain unchanged; no JSON hand-patching. The old diagnostic outputs and stopped-run evidence remain preserved.
+
+Continuation from local head 7d35035f under the replacement Step 7d test rule. No assertions, thresholds, budgets, owner-selection rules, other workflows, qc-evidence or pins may be weakened or changed. Final QC, full suite, CI and independent review remain required before the approved squash merge queue.

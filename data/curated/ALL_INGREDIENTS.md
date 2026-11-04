@@ -205,7 +205,7 @@
 | CHEBI:75273 | Niaproof | CHEBI:75273 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:37671 | 3-beta-D-glucan | CHEBI:37671 | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | CHEBI:73908 | CHEBI | NARROW_MATCH | 0 |
-| kgmicrobe.compound:maltose_hydrate | Maltose Hydrate | CHEBI:17306 | CHEBI | CLOSE_MATCH | 0 |
+| kgmicrobe.compound:maltose_hydrate | Maltose Hydrate | CHEBI:17306 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-ketogluconate | Potassium 2-ketogluconate | CHEBI:16808 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-dehydro-d-gluconate | Potassium 2-dehydro-D-gluconate | CHEBI:16808 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_5-dehydro-d-gluconate | Potassium 5-dehydro-D-gluconate | CHEBI:58143 | CHEBI | NARROW_MATCH | 0 |
@@ -277,7 +277,7 @@
 | CHEBI:29034 | Ferric Iron | CHEBI:29034 | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:16583 | Diacetyl | CHEBI:16583 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:149425 | NH4MgPO | CHEBI:149425 | CHEBI | SYNONYM_MATCH | 5 |
-| cas:13446-18-9 | magnesium nitrate hexahydrate | CHEBI:64736 | CHEBI | CLOSE_MATCH | 2 |
+| cas:13446-18-9 | magnesium nitrate hexahydrate | CHEBI:64736 | CHEBI | NARROW_MATCH | 2 |
 | CHEBI:229630 | NH42CO3 | CHEBI:229630 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:45165 | Pyromelitic acid | CHEBI:45165 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:30065 | Thioglycollic acid | CHEBI:30065 | CHEBI | EXACT_MATCH | 3 |
@@ -321,7 +321,7 @@
 | CHEBI:15866 | 2-Deoxy-D-glucose | CHEBI:15866 | CHEBI | EXACT_MATCH | 0 |
 | cas:7284-15-3 | 2-Deoxy-D-ribonic acid lithium salt | CHEBI:86350 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:17713 | 2-Deoxyadenosine 5-monophosphate | CHEBI:17713 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:16373-93-6 | 2-Deoxyadenosine monohydrate | CHEBI:17256 | CHEBI | CLOSE_MATCH | 0 |
+| cas:16373-93-6 | 2-Deoxyadenosine monohydrate | CHEBI:17256 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15698 | 2'-Deoxycytidine | CHEBI:15698 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15918 | 2-Deoxycytidine 5-monophosphate | CHEBI:15918 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16011 | 2-Ethylhexanol | CHEBI:16011 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -329,7 +329,7 @@
 | CHEBI:184501 | 2-Hydroxy-3,4-Dimethoxybenzoic Acid | CHEBI:184501 | CHEBI | EXACT_MATCH | 0 |
 | cas:5094-24-6 | 2-Hydroxybutyric acid sodium salt | CHEBI:1148 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16540 | 2-Hydroxypyridine | CHEBI:16540 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:1040352-40-6 | 2-Keto-D-gluconic acid hemicalcium salt hydrate | CHEBI:27469 | CHEBI | CLOSE_MATCH | 0 |
+| cas:1040352-40-6 | 2-Keto-D-gluconic acid hemicalcium salt hydrate | CHEBI:27469 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:201738 | 2-Mercaptopyridine N-oxide sodium salt | CHEBI:201738 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:77761 | 2-Piperidinone | CHEBI:77761 | CHEBI | CAS_RN_LOOKUP | 0 |
 | mesh:C028805 | 2-Sulfobenzoic acid | mesh:C028805 | MESH | EXACT_MATCH | 2 |
@@ -390,7 +390,7 @@
 | CHEBI:65083 | 4-Deoxypyridoxine | CHEBI:65083 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28032 | 4-Hydroxyacetophenone | CHEBI:28032 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:17597 | 4-Hydroxybenzaldehyde | CHEBI:17597 | CHEBI | EXACT_MATCH | 2 |
-| cas:184901-84-6 | 4-Hydroxymandelic acid monohydrate | CHEBI:16388 | CHEBI | CLOSE_MATCH | 0 |
+| cas:184901-84-6 | 4-Hydroxymandelic acid monohydrate | CHEBI:16388 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:165411 | 4-Hydroxynonanoic acid | CHEBI:165411 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:32980 | 4-Hydroxyphenylpropionic acid | CHEBI:32980 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:4143-74-2 | 4'-Methoxyflavone | CHEBI:114194 | CHEBI | SYNONYM_MATCH | 0 |
@@ -415,7 +415,7 @@
 | CHEBI:17509 | 5'-Deoxy-5'-(methylthio)adenosine | CHEBI:17509 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:80627 | 5'-Deoxy-5-fluorocytidine | CHEBI:80627 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:80624 | 5-Fluorodihydropyrimidine-2,4-dione | CHEBI:80624 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:207291-81-4 | 5-Fluoroorotic acid hydrate | CHEBI:74498 | CHEBI | CLOSE_MATCH | 0 |
+| cas:207291-81-4 | 5-Fluoroorotic acid hydrate | CHEBI:74498 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:195418 | 5-Hydroxydodecanoate | CHEBI:195418 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:412516 | 5-Hydroxymethylfurfural | CHEBI:412516 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:180039 | 5-Hydroxyoctanoate | CHEBI:180039 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -578,7 +578,7 @@
 | CHEBI:18293 | Bergapten | CHEBI:18293 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53502 | beryllium sulfate tetrahydrate | CHEBI:53502 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:10352 | Beta-Amyrin | CHEBI:10352 | CHEBI | EXACT_MATCH | 0 |
-| cas:154804-51-0 | Beta-Glycerophosphate disodium salt hydrate | CHEBI:17270 | CHEBI | CLOSE_MATCH | 0 |
+| cas:154804-51-0 | Beta-Glycerophosphate disodium salt hydrate | CHEBI:132089 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:10429 | Beta-Lapachone | CHEBI:10429 | CHEBI | EXACT_MATCH | 0 |
 | mesh:C000601869 | beta-Lipomycin | mesh:C000601869 | MESH | EXACT_MATCH | 0 |
 | CHEBI:16958 | Beta-alanine | CHEBI:16958 | CHEBI | EXACT_MATCH | 0 |
@@ -626,7 +626,7 @@
 | kgmicrobe.compound:cacl2_x_7_h2o | CaCl2 x 7 H2O | CHEBI:3312 | CHEBI | CLOSE_MATCH | 12 |
 | CHEBI:3311 | CaCO3 | CHEBI:3311 | CHEBI | EXACT_MATCH | 330 |
 | CHEBI:18127 | Cadaverine | CHEBI:18127 | CHEBI | EXACT_MATCH | 0 |
-| cas:5743-04-4 | Cadmium acetate dihydrate | CHEBI:232796 | CHEBI | CLOSE_MATCH | 1 |
+| cas:5743-04-4 | Cadmium acetate dihydrate | CHEBI:232796 | CHEBI | NARROW_MATCH | 1 |
 | CHEBI:63938 | Cadmium chloride hemipentahydrate | CHEBI:63938 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:77732 | cadmium nitrate | CHEBI:77732 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:36281 | caffeic acid | CHEBI:36281 | CHEBI | EXACT_MATCH | 0 |
@@ -666,7 +666,6 @@
 | kgmicrobe.compound:caso4_x_7_h2o | CaSO4 x 7 H2O | CHEBI:31346 | CHEBI | CLOSE_MATCH | 5 |
 | CHEBI:86156 | Cd(NO3)2 x 4 H2O | CHEBI:86156 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:35458 | CeCl3 | CHEBI:35458 | CHEBI | EXACT_MATCH | 5 |
-| kgmicrobe.compound:cecl3_x_7_h2o | CeCl3 x 7 H2O | CHEBI:35458 | CHEBI | CLOSE_MATCH | 4 |
 | CHEBI:201428 | Cecropin A | CHEBI:201428 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:201469 | Cecropin B | CHEBI:201469 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:197237 | Cedrelone | CHEBI:197237 | CHEBI | EXACT_MATCH | 0 |
@@ -675,7 +674,7 @@
 | CHEBI:3489 | Cefmetazole | CHEBI:3489 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3498 | Cefotaxime sodium salt | CHEBI:3498 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:3501 | Cefoxitin sodium salt | CHEBI:3501 | CHEBI | CAS_RN_LOOKUP | 0 |
-| kgmicrobe.compound:cefsulodin_sodium_salt_hydrate | Cefsulodin sodium salt hydrate | CHEBI:31380 | CHEBI | CLOSE_MATCH | 0 |
+| kgmicrobe.compound:cefsulodin_sodium_salt_hydrate | Cefsulodin sodium salt hydrate | CHEBI:31380 | CHEBI | NARROW_MATCH | 0 |
 | cas:120618-65-7 | Ceftazidime hydrate | CHEBI:3508 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:3514 | Ceftriaxone disodium salt hemi(heptahydrate) | CHEBI:3514 | CHEBI | CAS_RN_LOOKUP | 0 |
 | BTO:0004304 | Cell lysate | BTO:0004304 | BTO | EXACT_MATCH | 2 |
@@ -704,7 +703,7 @@
 | CHEBI:17029 | Chitin | CHEBI:17029 | CHEBI | EXACT_MATCH | 13 |
 | CHEBI:16261 | Chitosan | CHEBI:16261 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:17698 | Chloramphenicol | CHEBI:17698 | CHEBI | EXACT_MATCH | 12 |
-| kgmicrobe.compound:chlorhexidine_diacetate_salt_hydrate | Chlorhexidine diacetate salt hydrate | CHEBI:81711 | CHEBI | CLOSE_MATCH | 0 |
+| kgmicrobe.compound:chlorhexidine_diacetate_salt_hydrate | Chlorhexidine diacetate salt hydrate | CHEBI:81711 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16112 | Chlorogenic acid | CHEBI:16112 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:chlororaphin | Chlororaphin | kgmicrobe.compound:chlororaphin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:3649 | Chlorpromazine hydrochloride | CHEBI:3649 | CHEBI | EXACT_MATCH | 0 |
@@ -738,7 +737,7 @@
 | CHEBI:30411 | Cobalamine | CHEBI:30411 | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:53503 | Cobalt chloride hexahydrate | CHEBI:53503 | CHEBI | CAS_RN_LOOKUP | 3236 |
 | CHEBI:35696 | CoCl2 | CHEBI:35696 | CHEBI | EXACT_MATCH | 177 |
-| kgmicrobe.compound:cocl2_x_2_h2o | CoCl2 x 2 H2O | CHEBI:35696 | CHEBI | CLOSE_MATCH | 5 |
+| kgmicrobe.compound:cocl2_x_2_h2o | CoCl2 x 2 H2O | CHEBI:35696 | CHEBI | NARROW_MATCH | 5 |
 | kgmicrobe.compound:cocl2_x_4_h2o | CoCl2 x 4 H2O | CHEBI:35696 | CHEBI | CLOSE_MATCH | 9 |
 | CHEBI:15346 | Coenzyme A | CHEBI:15346 | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:183909 | Colchiceine | CHEBI:183909 | CHEBI | EXACT_MATCH | 0 |
@@ -764,7 +763,6 @@
 | CHEBI:41131 | Crotonic acid | CHEBI:41131 | CHEBI | EXACT_MATCH | 43 |
 | CHEBI:149838 | Cryptotanshinone | CHEBI:149838 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41688 | Crystal Violet | CHEBI:41688 | CHEBI | EXACT_MATCH | 3 |
-| kgmicrobe.compound:cu_no32_x_3_h2o | Cu(NO3)2 x 3 H2O | CHEBI:78036 | CHEBI | CLOSE_MATCH | 2 |
 | CHEBI:53472 | CuCl | CHEBI:53472 | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:49553 | CuCl2 | CHEBI:49553 | CHEBI | EXACT_MATCH | 163 |
 | CHEBI:86318 | CuCl2 x 2 H2O | CHEBI:86318 | CHEBI | EXACT_MATCH | 2625 |
@@ -790,7 +788,7 @@
 | CHEBI:15399 | D(+)-Carvone | CHEBI:15399 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:181432 | D-(+)-Galactosamine hydrochloride | CHEBI:181432 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16217 | D-(+)-Gluconic acid gamma-lactone | CHEBI:16217 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:207511-10-2 | D-(+)-Melezitose hydrate | CHEBI:6731 | CHEBI | CLOSE_MATCH | 0 |
+| cas:207511-10-2 | D-(+)-Melezitose hydrate | CHEBI:6731 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32528 | D-(+)-Turanose | CHEBI:32528 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:10030-67-8 | D-(+)-melezitose monohydrate | CHEBI:6731 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16719 | D-(-)-Pantolactone | CHEBI:16719 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -799,19 +797,18 @@
 | CHEBI:15570 | D-Alanine | CHEBI:15570 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:17364 | D-Aspartic Acid | CHEBI:17364 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40009 | D-Cycloserine | CHEBI:40009 | CHEBI | EXACT_MATCH | 1 |
-| cas:26177-86-6 | D-Fructose 6-phosphate disodium salt hydrate | CHEBI:190546 | CHEBI | CLOSE_MATCH | 0 |
-| cas:91510-62-2 | D-Galacturonic Acid monohydrate | CHEBI:18024 | CHEBI | CLOSE_MATCH | 0 |
+| cas:26177-86-6 | D-Fructose 6-phosphate disodium salt hydrate | CHEBI:190546 | CHEBI | NARROW_MATCH | 0 |
+| cas:91510-62-2 | D-Galacturonic Acid monohydrate | CHEBI:18024 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16002 | D-Glucaric acid | CHEBI:16002 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:12962 | D-Glucosamine 6-phosphate | CHEBI:12962 | CHEBI | EXACT_MATCH | 0 |
 | cas:66-84-2 | D-Glucosamine Hydrochloride | NCIT:C83732 | NCIT | NARROW_MATCH | 0 |
 | cas:54010-71-8 | D-Glucose-6-Phosphate sodium salt | CHEBI:14314 | CHEBI | NARROW_MATCH | 1 |
 | CHEBI:18268 | D-Glucuronic acid gamma lactone | CHEBI:18268 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:207300-70-7 | D-Glucuronic acid sodium salt monohydrate | CHEBI:4178 | CHEBI | CLOSE_MATCH | 0 |
+| cas:207300-70-7 | D-Glucuronic acid sodium salt monohydrate | CHEBI:32144 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15966 | D-Glutamic Acid | CHEBI:15966 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28225 | D-Leucine | CHEBI:28225 | CHEBI | EXACT_MATCH | 0 |
 | cas:7158-70-5 | D-Leucrose | cas:7158-70-5 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16855 | D-Lysine | CHEBI:16855 | CHEBI | EXACT_MATCH | 0 |
-| cas:6363-53-7 | D-Maltose monohydrate | CHEBI:17306 | CHEBI | CLOSE_MATCH | 20 |
 | cas:70442-25-0 | D-Mannose 6-phosphate sodium salt | CHEBI:17369 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16867 | D-Methionine | CHEBI:16867 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:16313 | D-Proline | CHEBI:16313 | CHEBI | EXACT_MATCH | 0 |
@@ -843,7 +840,7 @@
 | cas:144-90-1 | DL-3-Aminoisobutyric acid | CHEBI:27389 | CHEBI | NARROW_MATCH | 0 |
 | cas:1219589-99-7 | DL-3-Hydroxyisobutyric acid sodium salt | CHEBI:18064 | CHEBI | NARROW_MATCH | 0 |
 | cas:591-59-3 | DL-Glyceraldehyde 3-phosphate | CHEBI:17138 | CHEBI | NARROW_MATCH | 0 |
-| cas:17603-42-8 | DL-Glycerol 1-phosphate sodium salt hydrate | CHEBI:14336 | CHEBI | CLOSE_MATCH | 0 |
+| cas:17603-42-8 | DL-Glycerol 1-phosphate sodium salt hydrate | CHEBI:14336 | CHEBI | NARROW_MATCH | 0 |
 | cas:123333-71-1 | DL-Histidine monohydrochloride monohydrate | NCIT:C87334 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate | DL-Isocitric acid trisodium salt hydrate | CHEBI:172950 | CHEBI | CLOSE_MATCH | 0 |
 | cas:56-82-6 | DL-glyceraldehyde | CHEBI:5445 | CHEBI | NARROW_MATCH | 0 |
@@ -919,7 +916,7 @@
 | kgmicrobe.compound:durhamycin | Durhamycin | kgmicrobe.compound:durhamycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | NCIT:C1928 | Dynemicin | NCIT:C1928 | NCIT | EXACT_MATCH | 0 |
 | CHEBI:16586 | e-Amino-N-Caproic Acid | CHEBI:16586 | CHEBI | EXACT_MATCH | 0 |
-| cas:13235-36-4 | EDTA tetrasodium tetrahydrate salt | CHEBI:4735 | CHEBI | CLOSE_MATCH | 3 |
+| cas:13235-36-4 | EDTA tetrasodium tetrahydrate salt | CHEBI:750784 | CHEBI | NARROW_MATCH | 3 |
 | kgmicrobe.compound:e_4_aminostyryl_acetate | E 4 Aminostyryl Acetate | kgmicrobe.compound:e_4_aminostyryl_acetate | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:77543 | Ebselen | CHEBI:77543 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4755 | Econazole nitrate salt | CHEBI:4755 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1020,7 +1017,7 @@
 | cas:108321-42-2 | G418 disulfate salt solution | cas:108321-42-2 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:11078-30-1 | Galactomannan from guar | CHEBI:27680 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28260 | Galactose | CHEBI:28260 | CHEBI | EXACT_MATCH | 15 |
-| cas:19046-60-7 | Galactose 1-phosphate dipotassium salt pentahydrate | CHEBI:17973 | CHEBI | CLOSE_MATCH | 0 |
+| cas:19046-60-7 | Galactose 1-phosphate dipotassium salt pentahydrate | CHEBI:17973 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:30778 | Gallic Acid | CHEBI:30778 | CHEBI | EXACT_MATCH | 0 |
 | cas:13450-90-3 | Gallium(III)chloride | cas:13450-90-3 | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:67521 | Gambogic Acid | CHEBI:67521 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1050,7 +1047,7 @@
 | CHEBI:16856 | Glutathione | CHEBI:16856 | CHEBI | EXACT_MATCH | 34 |
 | CHEBI:17858 | Glutathione oxidized | CHEBI:17858 | CHEBI | EXACT_MATCH | 0 |
 | cas:79731-35-4 | Gly-DL-Asp | CHEBI:193741 | CHEBI | SYNONYM_MATCH | 0 |
-| cas:172669-64-6 | Gly-Gln monohydrate | CHEBI:73898 | CHEBI | CLOSE_MATCH | 0 |
+| cas:172669-64-6 | Gly-Gln monohydrate | CHEBI:73898 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:73801 | Gly-Glu | CHEBI:73801 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17754 | Glycerol | CHEBI:17754 | CHEBI | EXACT_MATCH | 303 |
 | CHEBI:75937 | Glycerol mono-oleate | CHEBI:75937 | CHEBI | EXACT_MATCH | 3 |
@@ -1195,13 +1192,13 @@
 | CHEBI:30849 | L-Arabinose | CHEBI:30849 | CHEBI | EXACT_MATCH | 4 |
 | cas:5794-13-8 | L-Asparagine monohydrate | NCIT:C87433 | NCIT | NARROW_MATCH | 0 |
 | cas:1115-63-5 | L-Aspartic acid potassium salt | CHEBI:17053 | CHEBI | NARROW_MATCH | 1 |
-| cas:323194-76-9 | L-Aspartic acid sodium salt monohydrate | CHEBI:17053 | CHEBI | CLOSE_MATCH | 2 |
+| cas:323194-76-9 | L-Aspartic acid sodium salt monohydrate | CHEBI:17053 | CHEBI | NARROW_MATCH | 2 |
 | CHEBI:16347 | L-Carnitine | CHEBI:16347 | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:233463 | L-Carnitine hydrochloride | CHEBI:233463 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:23537-25-9 | L-Cysteic acid monohydrate | CHEBI:17285 | CHEBI | CLOSE_MATCH | 0 |
+| cas:23537-25-9 | L-Cysteic acid monohydrate | CHEBI:17285 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:74077 | L-Deoxyalliin | CHEBI:74077 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:37618 | L-Galactose | CHEBI:37618 | CHEBI | EXACT_MATCH | 0 |
-| cas:6382-01-0 | L-Glutamic acid monopotassium salt monohydrate | CHEBI:16015 | CHEBI | CLOSE_MATCH | 15 |
+| cas:6382-01-0 | L-Glutamic acid monopotassium salt monohydrate | CHEBI:16015 | CHEBI | NARROW_MATCH | 15 |
 | cas:5934-29-2 | L-Histidine monohydrochloride monohydrate | NCIT:C87334 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:15699 | L-Homoserine | CHEBI:15699 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30797 | L-Malic acid | CHEBI:30797 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1209,7 +1206,7 @@
 | cas:587-33-7 | L-Meta-tyrosine | CHEBI:44303 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:30913 | L-Pipecolic Acid | CHEBI:30913 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:18183 | L-Pyroglutamic acid | CHEBI:18183 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:10030-85-0 | L-Rhamnose monohydrate | CHEBI:62345 | CHEBI | CLOSE_MATCH | 0 |
+| cas:10030-85-0 | L-Rhamnose monohydrate | CHEBI:62345 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:65328 | L-Xylose | CHEBI:65328 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16977 | L-Alanine | CHEBI:16977 | CHEBI | EXACT_MATCH | 110 |
 | CHEBI:2596 | L-alliin | CHEBI:2596 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1285,7 +1282,7 @@
 | CHEBI:182465 | Lincomycin hydrochloride | CHEBI:182465 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63607 | Linezolid | CHEBI:63607 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16412 | Lipopolysaccharide | CHEBI:16412 | CHEBI | EXACT_MATCH | 3 |
-| cas:85144-11-2 | Lithium chloride hydrate | CHEBI:48607 | CHEBI | CLOSE_MATCH | 0 |
+| cas:85144-11-2 | Lithium chloride hydrate | CHEBI:48607 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16325 | Lithocholic acid | CHEBI:16325 | CHEBI | EXACT_MATCH | 0 |
 | MICRO:0001668 | Liver digest | MICRO:0001668 | MICRO | EXACT_MATCH | 7 |
 | MICRO:0001363 | Liver extract | MICRO:0001363 | MICRO | EXACT_MATCH | 11 |
@@ -1319,7 +1316,7 @@
 | CHEBI:27445 | Maltohexaose | CHEBI:27445 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17306 | Maltose | CHEBI:17306 | CHEBI | EXACT_MATCH | 193 |
 | CHEBI:28460 | Maltotetraose | CHEBI:28460 | CHEBI | EXACT_MATCH | 0 |
-| cas:312693-63-3 | Maltotriose hydrate | CHEBI:61993 | CHEBI | CLOSE_MATCH | 0 |
+| cas:312693-63-3 | Maltotriose hydrate | CHEBI:140999 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:35825 | Mandelic acid | CHEBI:35825 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6682 | Mangiferin | CHEBI:6682 | CHEBI | EXACT_MATCH | 0 |
 | cas:9036-88-8 | Mannan from Saccharomyces cerevisiae | NCIT:C14271 | NCIT | NARROW_MATCH | 0 |
@@ -1520,7 +1517,7 @@
 | CHEBI:53542 | Nickel (II) chloride hexahydrate | CHEBI:53542 | CHEBI | CAS_RN_LOOKUP | 3456 |
 | CHEBI:53437 | Nickel (II) sulfate hexahydrate | CHEBI:53437 | CHEBI | CAS_RN_LOOKUP | 74 |
 | CHEBI:34887 | NiCl2 | CHEBI:34887 | CHEBI | EXACT_MATCH | 105 |
-| kgmicrobe.compound:nicl2_x_2_h2o | NiCl2 x 2 H2O | CHEBI:34887 | CHEBI | CLOSE_MATCH | 24 |
+| kgmicrobe.compound:nicl2_x_2_h2o | NiCl2 x 2 H2O | CHEBI:34887 | CHEBI | NARROW_MATCH | 24 |
 | kgmicrobe.compound:nicl2_x_5_h2o | NiCl2 x 5 H2O | CHEBI:34887 | CHEBI | CLOSE_MATCH | 3 |
 | CHEBI:17154 | Nicotinamide | CHEBI:17154 | CHEBI | EXACT_MATCH | 267 |
 | CHEBI:89640 | Nicotinamide N-oxide | CHEBI:89640 | CHEBI | EXACT_MATCH | 0 |
@@ -1570,7 +1567,7 @@
 | CHEBI:45863 | Paclitaxel | CHEBI:45863 | CHEBI | EXACT_MATCH | 0 |
 | mesh:D010142 | Pactamycin | mesh:D010142 | MESH | EXACT_MATCH | 0 |
 | CHEBI:69581 | Paeonol | CHEBI:69581 | CHEBI | EXACT_MATCH | 0 |
-| cas:343336-76-5 | palatinose hydrate | CHEBI:18394 | CHEBI | CLOSE_MATCH | 0 |
+| cas:343336-76-5 | palatinose hydrate | CHEBI:18394 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:53434 | Palladium(II) chloride | CHEBI:53434 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16096 | Palmatine | CHEBI:16096 | CHEBI | EXACT_MATCH | 0 |
 | cas:10605-02-4 | Palmatine chloride | cas:10605-02-4 | CAS | FALLBACK_REGISTRY | 0 |
@@ -1649,7 +1646,7 @@
 | cas:37199-66-9 | potassium (poly)sulfide | cas:37199-66-9 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:138-84-1 | Potassium 4-aminobenzoate | cas:138-84-1 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:74978-20-4 | Potassium aluminum chloride | NCIT:C83530 | NCIT | NARROW_MATCH | 1 |
-| cas:1030365-02-6 | potassium citramalate monohydrate | CHEBI:15584 | CHEBI | CLOSE_MATCH | 0 |
+| cas:1030365-02-6 | potassium citramalate monohydrate | CHEBI:15584 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:53444 | Potassium dichromate | CHEBI:53444 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:66872 | potassium fluoride | CHEBI:66872 | CHEBI | EXACT_MATCH | 6 |
 | cas:12208-13-8 | potassium hexahydroxoantimonate | cas:12208-13-8 | CAS | FALLBACK_REGISTRY | 0 |
@@ -1657,7 +1654,7 @@
 | kgmicrobe.ingredient:potassium_phosphate_buffer | Potassium phosphate buffer | NCIT:C29321 | NCIT | CLOSE_MATCH | 50 |
 | cas:16788-57-1 | Potassium phosphate dibasic trihydrate | mesh:C013216 | MESH | NARROW_MATCH | 3 |
 | CHEBI:75248 | potassium tellurite | CHEBI:75248 | CHEBI | EXACT_MATCH | 0 |
-| cas:314041-10-6 | potassium tellurate hydrate | CHEBI:30463 | CHEBI | CLOSE_MATCH | 0 |
+| cas:314041-10-6 | potassium tellurate hydrate | CHEBI:30463 | CHEBI | NARROW_MATCH | 0 |
 | cas:123333-66-4 | Potassium tellurite hydrate | CHEBI:75248 | CHEBI | CLOSE_MATCH | 0 |
 | FOODON:03302378 | Potato flour | FOODON:03302378 | FOODON | EXACT_MATCH | 7 |
 | CHEBI:145933 | Pravastatin lactone | CHEBI:145933 | CHEBI | EXACT_MATCH | 0 |
@@ -1778,15 +1775,14 @@
 | CHEBI:278547 | Sodium azide | CHEBI:278547 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:132089 | Sodium beta-glycerophosphate | CHEBI:132089 | CHEBI | EXACT_MATCH | 26 |
 | CHEBI:75229 | Sodium bromate | CHEBI:75229 | CHEBI | EXACT_MATCH | 0 |
-| cas:5968-11-6 | sodium carbonate monohydrate | CHEBI:29377 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:29377 | Sodium carbonate solution | CHEBI:29377 | CHEBI | LEXICAL_MATCH | 1779 |
 | CHEBI:78667 | Sodium Chlorite | CHEBI:78667 | CHEBI | EXACT_MATCH | 0 |
-| cas:206986-87-0 | Sodium cholate hydrate | CHEBI:26711 | CHEBI | CLOSE_MATCH | 0 |
+| cas:206986-87-0 | Sodium cholate hydrate | CHEBI:26711 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:78671 | Sodium Chromate | CHEBI:78671 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33192 | Sodium cyanide | CHEBI:33192 | CHEBI | EXACT_MATCH | 0 |
 | cas:920-49-0 | Sodium D-Lactate | cas:920-49-0 | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:9177 | sodium Deoxycholate | CHEBI:9177 | CHEBI | EXACT_MATCH | 0 |
-| cas:145224-92-6 | Sodium deoxycholate monohydrate | CHEBI:9177 | CHEBI | CLOSE_MATCH | 0 |
+| cas:145224-92-6 | Sodium deoxycholate monohydrate | CHEBI:9177 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:66870 | Sodium dithionite | CHEBI:66870 | CHEBI | EXACT_MATCH | 53 |
 | CHEBI:8984 | Sodium Dodecyl Sulfate | CHEBI:8984 | CHEBI | EXACT_MATCH | 0 |
 | cas:546-74-7 | Sodium ethyl sulfate | cas:546-74-7 | CAS | FALLBACK_REGISTRY | 0 |
@@ -1817,14 +1813,14 @@
 | CHEBI:75226 | Sodium periodate | CHEBI:75226 | CHEBI | EXACT_MATCH | 0 |
 | cas:7775-27-1 | Sodium Persulfate | mesh:C024625 | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_phosphate_buffer | Sodium phosphate buffer | NCIT:C29321 | NCIT | CLOSE_MATCH | 55 |
-| cas:13517-23-2 | Sodium phosphite dibasic pentahydrate | CHEBI:36361 | CHEBI | CLOSE_MATCH | 0 |
+| cas:13517-23-2 | Sodium phosphite dibasic pentahydrate | CHEBI:36361 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_potassium_phosphate_buffer | Sodium Potassium phosphate buffer | NCIT:C29321 | NCIT | CLOSE_MATCH | 6 |
 | CHEBI:71240 | Sodium pyrophosphate | CHEBI:71240 | CHEBI | EXACT_MATCH | 3 |
 | cas:7758-16-9 | Sodium pyrophosphate dibasic | NCIT:C77500 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:9180 | Sodium salicylate | CHEBI:9180 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63675 | Sodium succinate | CHEBI:63675 | CHEBI | SYNONYM_MATCH | 201 |
 | CHEBI:63017 | Sodium tartrate | CHEBI:63017 | CHEBI | EXACT_MATCH | 28 |
-| cas:10489-48-2 | Sodium thiophosphate tribasic hydrate | CHEBI:46612 | CHEBI | CLOSE_MATCH | 0 |
+| cas:10489-48-2 | Sodium thiophosphate tribasic hydrate | CHEBI:46612 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | CHEBI:114249 | CHEBI | CAS_RN_LOOKUP | 106 |
 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | CHEBI:63686 | CHEBI | CAS_RN_LOOKUP | 20 |
 | ENVO:00001998 | Soil | ENVO:00001998 | ENVO | EXACT_MATCH | 66 |
@@ -1845,7 +1841,7 @@
 | CHEBI:36383 | SrCl2 | CHEBI:36383 | CHEBI | EXACT_MATCH | 251 |
 | CHEBI:36385 | SrCl2 x 6 H2O | CHEBI:36385 | CHEBI | EXACT_MATCH | 240 |
 | CHEBI:17164 | Stachyose - 70% | CHEBI:17164 | CHEBI | EXACT_MATCH | 0 |
-| cas:54261-98-2 | Stachyose hydrate | CHEBI:17164 | CHEBI | CLOSE_MATCH | 0 |
+| cas:54261-98-2 | Stachyose hydrate | CHEBI:17164 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:41958 | Stallimycin | CHEBI:41958 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C1295 | Staphylomycin M1 | NCIT:C1295 | NCIT | EXACT_MATCH | 0 |
 | CHEBI:28017 | Starch | CHEBI:28017 | CHEBI | EXACT_MATCH | 767 |
@@ -2622,6 +2618,10 @@
 | cas:480-14-8 | Izalpinin | cas:480-14-8 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:11449 | 2,5-didehydro-D-gluconate | CHEBI:11449 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:wc_trace_elements_solution | WC Trace Elements Solution | MICRO:0000455 | MICRO | NARROW_MATCH | 2 |
+| NCIT:C80911 | sodium carbonate monohydrate | NCIT:C80911 | NCIT | CAS_RN_LOOKUP | 0 |
+| NCIT:C80300 | D-Maltose monohydrate | NCIT:C80300 | NCIT | CAS_RN_LOOKUP | 20 |
+| cas:18618-55-8 | CeCl3 x 7 H2O | CHEBI:35458 | CHEBI | NARROW_MATCH | 4 |
+| cas:10031-43-3 | Cu(NO3)2 x 3 H2O | CHEBI:78036 | CHEBI | NARROW_MATCH | 2 |
 
 ## Unmapped Ingredients
 
