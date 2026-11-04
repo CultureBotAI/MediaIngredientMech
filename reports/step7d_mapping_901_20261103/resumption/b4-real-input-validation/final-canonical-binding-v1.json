@@ -1,0 +1,277 @@
+{
+  "schema": "mim-native-b4-canonical-equivalence-binding/v1",
+  "result": "PASS_WITH_PRIOR_SKIPS_PRESERVED",
+  "started_at": "2026-11-03T07:36:01.068562+00:00",
+  "finished_at": "2026-11-03T07:36:01.406297+00:00",
+  "method": "Dependency-equivalence proof; no new B4 evaluation and no waiver. Native evaluator/loader read and imported unchanged; every consumed ordered value and exact transform dependency is identical to rerun-v2.",
+  "mim_context_before": {
+    "revision": "fcf4ba5f19ad46126727097b6f5768219fc7832f",
+    "status_porcelain_v1": ""
+  },
+  "mim_context_after": {
+    "revision": "fcf4ba5f19ad46126727097b6f5768219fc7832f",
+    "status_porcelain_v1": ""
+  },
+  "prior_native_run": {
+    "summary_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/b4-real-input-validation/rerun-v2/summary.json",
+    "summary_sha256": "0385b9db9cac381169eeb776dec584d8104dec9583b82aa03ff3ef51428d192a",
+    "canonical_sha256": "cd7775a22114ea2d5dd324a532e4cc0d1f335504cd3cfe8c4efe93961cc148e4",
+    "rejects": 0
+  },
+  "current_canonical": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/mappings/ingredient_mappings.sssom.tsv",
+    "sha256": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+    "rows": 3014
+  },
+  "native_validator": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d/scripts/validate_sssom_invariants.py",
+    "sha256": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303",
+    "evaluator": "evaluate_rule_b4",
+    "evaluator_lines": [
+      612,
+      661
+    ],
+    "row_columns": [
+      "object_id",
+      "object_label"
+    ],
+    "transform_loader": "_load_ontology_labels",
+    "transform_columns": [
+      "id",
+      "name",
+      "synonym"
+    ],
+    "prefixes": [
+      "BTO",
+      "CHEBI",
+      "ENVO",
+      "FOODON",
+      "MICRO",
+      "PATO",
+      "UBERON"
+    ]
+  },
+  "consumed_values": {
+    "every_ordered_row_equal": true,
+    "before_sha256": "311a324081c804dd30cbae3aba533fa7df2cdb5e0f03873ebcd237ab96070258",
+    "after_sha256": "311a324081c804dd30cbae3aba533fa7df2cdb5e0f03873ebcd237ab96070258",
+    "rows": 3014
+  },
+  "canonical_diff": {
+    "columns_and_header_identical": true,
+    "exact_raw_bytes_except_reviewed_comment_cells": true,
+    "cell_count": 4,
+    "corrections_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/comment-remediation-v2/comment-corrections.json",
+    "corrections_sha256": "f4070c03e2053aafe6610d1dfda4c61ca34b746bbd722fe8ad6b0313419f505a",
+    "cells": [
+      {
+        "subject_id": "MIM:Beta-Glycerophosphate_Disodium_Salt_Hydrate",
+        "object_id": "cas:154804-51-0",
+        "output_position": 532,
+        "column": "comment",
+        "before": "Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:17270. Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:132089.",
+        "after": "Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:132089. Historical/superseded parent context: Registry/identity row preserving cas:154804-51-0 alongside parent CHEBI:17270."
+      },
+      {
+        "subject_id": "MIM:D-Glucuronic_Acid_Sodium_Salt_Monohydrate",
+        "object_id": "cas:207300-70-7",
+        "output_position": 901,
+        "column": "comment",
+        "before": "Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:4178. Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:32144.",
+        "after": "Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:32144. Historical/superseded parent context: Registry/identity row preserving cas:207300-70-7 alongside parent CHEBI:4178."
+      },
+      {
+        "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+        "object_id": "cas:13235-36-4",
+        "output_position": 1116,
+        "column": "comment",
+        "before": "Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:4735. Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:750784.",
+        "after": "Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:750784. Historical/superseded parent context: Registry/identity row preserving cas:13235-36-4 alongside parent CHEBI:4735."
+      },
+      {
+        "subject_id": "MIM:Maltotriose_Hydrate",
+        "object_id": "cas:312693-63-3",
+        "output_position": 1792,
+        "column": "comment",
+        "before": "Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:61993. Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:140999.",
+        "after": "Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:140999. Historical/superseded parent context: Registry/identity row preserving cas:312693-63-3 alongside parent CHEBI:61993."
+      }
+    ]
+  },
+  "transforms": {
+    "before": {
+      "BTO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/bto_nodes.tsv",
+        "present": false
+      },
+      "CHEBI": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/chebi_nodes.tsv",
+        "present": true,
+        "sha256": "02024ca0a29cafaac16b43a06a786edd0368a8a646b75ab1002b6239c1219f60",
+        "bytes": 66294335,
+        "mtime_ns": 1792310180004366435
+      },
+      "ENVO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/envo_nodes.tsv",
+        "present": true,
+        "sha256": "8eb6bf7473bee2bfd87c0c781be35564b1bdebac29f05f631841ce561b5d1806",
+        "bytes": 1292669,
+        "mtime_ns": 1792310175368860955
+      },
+      "FOODON": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/foodon_nodes.tsv",
+        "present": true,
+        "sha256": "5e423c14f9d263aac38ba33699363a968d35496e11483a720ef22c9b12dd4c56",
+        "bytes": 7066495,
+        "mtime_ns": 1792310175509822303
+      },
+      "MICRO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/micro_nodes.tsv",
+        "present": false
+      },
+      "PATO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/pato_nodes.tsv",
+        "present": true,
+        "sha256": "b93976396e3077b6f37171a8ed1583dd5c3231cf81a2ca31ae1659aee7f5dc18",
+        "bytes": 2341438,
+        "mtime_ns": 1792310179718984746
+      },
+      "UBERON": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/uberon_nodes.tsv",
+        "present": true,
+        "sha256": "320908b15386832a32ac8016c33358ab2f5cc37756af515c3da45a17a2c6dd14",
+        "bytes": 8122513,
+        "mtime_ns": 1792310179984287731
+      }
+    },
+    "after": {
+      "BTO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/bto_nodes.tsv",
+        "present": false
+      },
+      "CHEBI": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/chebi_nodes.tsv",
+        "present": true,
+        "sha256": "02024ca0a29cafaac16b43a06a786edd0368a8a646b75ab1002b6239c1219f60",
+        "bytes": 66294335,
+        "mtime_ns": 1792310180004366435
+      },
+      "ENVO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/envo_nodes.tsv",
+        "present": true,
+        "sha256": "8eb6bf7473bee2bfd87c0c781be35564b1bdebac29f05f631841ce561b5d1806",
+        "bytes": 1292669,
+        "mtime_ns": 1792310175368860955
+      },
+      "FOODON": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/foodon_nodes.tsv",
+        "present": true,
+        "sha256": "5e423c14f9d263aac38ba33699363a968d35496e11483a720ef22c9b12dd4c56",
+        "bytes": 7066495,
+        "mtime_ns": 1792310175509822303
+      },
+      "MICRO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/micro_nodes.tsv",
+        "present": false
+      },
+      "PATO": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/pato_nodes.tsv",
+        "present": true,
+        "sha256": "b93976396e3077b6f37171a8ed1583dd5c3231cf81a2ca31ae1659aee7f5dc18",
+        "bytes": 2341438,
+        "mtime_ns": 1792310179718984746
+      },
+      "UBERON": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/transformed/ontologies/uberon_nodes.tsv",
+        "present": true,
+        "sha256": "320908b15386832a32ac8016c33358ab2f5cc37756af515c3da45a17a2c6dd14",
+        "bytes": 8122513,
+        "mtime_ns": 1792310179984287731
+      }
+    },
+    "equal_to_prior_run": true,
+    "absent_exact_native_paths_checked_ignores_do_not_apply": true
+  },
+  "kg_context": {
+    "before": {
+      "revision": "d6baf5b90003a2032747559d94c00f86a7a4c615",
+      "branch": "",
+      "status_porcelain_v1": "?? .claude/settings.json\n?? .claude/skills/kg-model-review/reviews/20260908_180131_merged.md\n?? .claude/skills/kg-model-review/reviews/20260908_180404_merged.md\n?? .claude/skills/kg-model-review/reviews/20260909_163015_gold.txt\n?? .claude/skills/kg-model-review/reviews/20260909_163242_gold.txt\n?? .claude/skills/kg-model-review/reviews/20260909_163422_gold.txt\n?? .claude/skills/kg-model-review/reviews/20260909_163427_madin_etal.txt\n?? .claude/skills/kg-model-review/reviews/20260909_170657_merged.md\n?? .claude/skills/kg-model-review/reviews/20261018_051848_merged.txt\n?? .claude/skills/kg-model-review/reviews/20261018_052551_all-transforms_mappings.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051932_archetype-recipe-vs-raw_mediadive.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051943_archetype-self-loops_all.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051947_archetype-false-majority_metatraits.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051959_archetype-family-mismatch_all.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051959_archetype-subclass-cycles_ontologies.txt\n?? .claude/skills/kg-path-review/reviews/20261018_052012_archetype-orphan-edges_all.txt\n?? data/batch1-2-20261017/worktree/\n?? data/handover-20261014.md\n?? docs/REVIEW_FOLLOWUP_20260914.md\n?? merged_graph_stats_no_prego.yaml\n"
+    },
+    "after": {
+      "revision": "d6baf5b90003a2032747559d94c00f86a7a4c615",
+      "branch": "",
+      "status_porcelain_v1": "?? .claude/settings.json\n?? .claude/skills/kg-model-review/reviews/20260908_180131_merged.md\n?? .claude/skills/kg-model-review/reviews/20260908_180404_merged.md\n?? .claude/skills/kg-model-review/reviews/20260909_163015_gold.txt\n?? .claude/skills/kg-model-review/reviews/20260909_163242_gold.txt\n?? .claude/skills/kg-model-review/reviews/20260909_163422_gold.txt\n?? .claude/skills/kg-model-review/reviews/20260909_163427_madin_etal.txt\n?? .claude/skills/kg-model-review/reviews/20260909_170657_merged.md\n?? .claude/skills/kg-model-review/reviews/20261018_051848_merged.txt\n?? .claude/skills/kg-model-review/reviews/20261018_052551_all-transforms_mappings.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051932_archetype-recipe-vs-raw_mediadive.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051943_archetype-self-loops_all.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051947_archetype-false-majority_metatraits.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051959_archetype-family-mismatch_all.txt\n?? .claude/skills/kg-path-review/reviews/20261018_051959_archetype-subclass-cycles_ontologies.txt\n?? .claude/skills/kg-path-review/reviews/20261018_052012_archetype-orphan-edges_all.txt\n?? data/batch1-2-20261017/worktree/\n?? data/handover-20261014.md\n?? docs/REVIEW_FOLLOWUP_20260914.md\n?? merged_graph_stats_no_prego.yaml\n"
+    },
+    "equal_to_prior_run": true
+  },
+  "selected_owners": {
+    "count": 38,
+    "all_equal_to_prior_run": true,
+    "coverage_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step7d-execution-20261103/b4-real-input-validation/rerun-v2/selected-38-owner-coverage.json",
+    "coverage_sha256": "ff16808966414464581e430c5f93f3ec8ce048469e9768660494267b7b3dc8d2",
+    "owner_sha256": {
+      "data/ingredients/mapped/2-Deoxyadenosine_Monohydrate.yaml": "57b6a40c3ea029e2ef30b54ce1dc8a3eb8a9902f4e00b6c60ef728ae582c44a0",
+      "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml": "ef8370ab5880873b2cd9fcf7bcb6b477a92d73981909cc8113f13431b3957808",
+      "data/ingredients/mapped/4-Hydroxymandelic_Acid_Monohydrate.yaml": "cd146080e4568090fbc5a55439a0caf840a0f50ef09a8c81a852b9da2d349255",
+      "data/ingredients/mapped/5-Fluoroorotic_Acid_Hydrate.yaml": "7caa1e38e7ec3991439a11c2a1aec35c1879f93347a47ae4045d21f96a185b56",
+      "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml": "91a6a79b3b6163f2d5fb100f7571946c5ba1fc9abfa865fbde935c6077c292b6",
+      "data/ingredients/mapped/Cadmium_Acetate_Dihydrate.yaml": "1769c867fc43e18416a493889e69d0b6537ab07509bf0e81cfb5cb87bc587310",
+      "data/ingredients/mapped/Cecl3_X_7_H2o.yaml": "7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b",
+      "data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml": "8f4e50c36046d11a7949685b8a26705437d0bd8d7f35441671a6169d9ab50c8f",
+      "data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml": "a439a3394c28fc8b8d7d93897de2c010cd3ffb2e5a0c67838c7f497fcf0bb413",
+      "data/ingredients/mapped/Cocl2_X_2_H2o.yaml": "24b8ad861360abceeeb29015a4c827efad6f304d987860139d6ce2450068fb24",
+      "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa",
+      "data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml": "5ec2b75e2542ea2f85ee85b923ac2b98d928733f8706179b33d5acefb73dc12a",
+      "data/ingredients/mapped/D-Galacturonic_Acid_Monohydrate.yaml": "e90c177647bb81e496800dc1ab5b67c52d5ad623060acd933aabbde8a15ca38e",
+      "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml": "dc24f839479e79e3e34a984266aae2fb480f5e6136896f3ffbb4d8bfb0a0dab3",
+      "data/ingredients/mapped/D-Maltose_Monohydrate.yaml": "b188ec71ed2df3319a96143eff91ee7589587aa655b6c77490db9a6df4f3b9c3",
+      "data/ingredients/mapped/D-_-melezitose_Hydrate.yaml": "b70f6ec2c8ce91a3ec1186fbe9a08b8e54195ca7607590ffef3092c5e3bd9e09",
+      "data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml": "3beed1b7708342d30772eba148ddf870639e4bb7e9b21ea269f0d56a427e78ab",
+      "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc",
+      "data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml": "a18258f8f2563ff4297179b3ba77fab1a804eb04a1900376629aab4db137dae2",
+      "data/ingredients/mapped/Gly-Gln_Monohydrate.yaml": "d5b74cb58174ded1547ae1ede5e5141afb761249501def738b1a1597412707f4",
+      "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml": "32d45cfa5c74e9e4724f0b1a17ed30f58d01edb3ce58ea25332b12eb5815bb7e",
+      "data/ingredients/mapped/L-Cysteic_Acid_Monohydrate.yaml": "b32a27ee8953ad229beb47775436a4077dd46552c394f270ee6db8d76e26536e",
+      "data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml": "cb23adfab5e3b84265222f3c4462e3e82675f706339cac2dda7b516c8a7db5bd",
+      "data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml": "5e5ac426585289ae4a0cb83595b2f62edf3fbbec0066ad9b19822bea98f0a038",
+      "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml": "cd0d270b65a5c65e6d4b195d7f716fe888015e27b512dd11f465d79a7e5f731d",
+      "data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml": "3507d07671a015f79ee0553840b8e277dccca3dfee85e7504b9ec0c335568791",
+      "data/ingredients/mapped/Maltose_Hydrate.yaml": "10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040",
+      "data/ingredients/mapped/Maltotriose_Hydrate.yaml": "b610eb816827776dbca74ea2ac5d04b9a20300c3a8e0dcb280e74df72f2f079f",
+      "data/ingredients/mapped/Nicl2_X_2_H2o.yaml": "8c9d776dbb5998599503c6e645a4ad328cf19d1b1562784aba19906907934d25",
+      "data/ingredients/mapped/Palatinose_Hydrate.yaml": "ac18571f8ed5e72bc9681a1a326674254adf6d32aca7374fded31bd69aac3886",
+      "data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml": "6f645ef481452ef5bb9923dd7ce6cbe272b009e496d4b52fd3134b446b4ece04",
+      "data/ingredients/mapped/Potassium_Tellurate_Hydrate.yaml": "c3743d213dc174c59b3c4b199b1f94ba5a65d07fad50b3177a01c1060a703f5f",
+      "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml": "a12cfc43edb55da16e7113d32795148bd04eec8d6936fdab1452c8430f7ae2ba",
+      "data/ingredients/mapped/Sodium_Cholate_Hydrate.yaml": "afc546f90d03a6e4054195b6c6a9df3e36ac8090636c9951c7a8c8dca47da6a6",
+      "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml": "2dd29456294e03ebdf5cb95b439fddd81ea3729ba2f63adbbadb93e8ecffdd2b",
+      "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml": "02f24e2580dfad82c4cf391fdd345d0e8fc60922ab8899da18704581fc86497e",
+      "data/ingredients/mapped/Sodium_Thiophosphate_Tribasic_Hydrate.yaml": "3bc25859b01adb269b9a549cc6f3901d15afff915de4db965226c11eaf724cc8",
+      "data/ingredients/mapped/Stachyose_Hydrate.yaml": "d4d154ba7f27848fcf0b6caf40c3638efa15cfca537f332dcaebcc53a749285c"
+    },
+    "vector_sha256": "14df24a05d588f6346ad9d296ab051096fd3083558493d83d0d40690d7931c47"
+  },
+  "preserved_coverage": {
+    "current": {
+      "PASS_CANONICAL": 2050,
+      "OUT_OF_B4_PREFIX_SCOPE": 890,
+      "SKIPPED_TRANSFORM_ABSENT": 74
+    },
+    "selected": {
+      "PASS_CANONICAL": 36,
+      "OUT_OF_B4_PREFIX_SCOPE": 69
+    },
+    "missing_transform_prefixes": [
+      "BTO",
+      "MICRO"
+    ],
+    "new_or_existing_rejects": 0
+  },
+  "limitations": "Native B4 excludes NCIT, CAS and local registry prefixes; missing transform/term/labels remain native skips. No waiver or scientific approval inferred. Full current/baseline snapshots retained; concurrent comment-only changes require rebinding canonical hash before final-head claim. This proof binds the new canonical hash through exact dependency equality; it does not extend B4 to its excluded prefixes or missing transforms.",
+  "maintained_writes": false,
+  "kg_writes": false,
+  "downloads": false,
+  "paid_provider_calls": false,
+  "binder_sha256": "5bd4fd7175b43145f16f3596c13870f33493637b03c66032ba0eb95caae72abc"
+}
