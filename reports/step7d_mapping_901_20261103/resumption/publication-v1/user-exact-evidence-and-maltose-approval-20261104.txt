@@ -1,0 +1,15 @@
+Source: the current user instruction in this thread, transcribed by the assistant. No external supervisor binding is supplied.
+
+The user has now explicitly approved two things:
+(1) The exact 13-file Step 7d validation-evidence commit you prepared, force-add included, with the drafted message. Force-adding per-step evidence under reports/ matches the repo's existing practice.
+(2) Maltose monohydrate's unified mim_id change from cas:6363-53-7 to NCIT:C80300, per #1117.
+
+Retry that commit once. Give the approval request a short, accurate justification: the user explicitly approved this exact commit of Step 7d validation evidence. If the approval review times out again, do not retry. Stop and report.
+
+If the commit succeeds, continue as already instructed:
+- push without force;
+- open the PR with the v4 body, noting the user's maltose approval, with no @-mentions;
+- wait for green CI;
+- run the final independent review of the final head, file its findings and fix the in-scope ones;
+- merge only as the approved plan allows, verify the squash and delete the branch;
+- then do the 23 alias pairs and #912.

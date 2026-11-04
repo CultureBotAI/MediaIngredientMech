@@ -1,0 +1,102 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "independent": true,
+  "checked_at": "2026-11-03T08:02:19.065618+00:00",
+  "status": "LOCAL_VALIDATION_COMPLETE_REMOTE_CI_AND_FINAL_REVIEW_PENDING",
+  "head": "fcf4ba5f19ad46126727097b6f5768219fc7832f",
+  "tested_implementation_checkpoint": "32f4957db4b1cda638e94d533b4463f5b26680c7",
+  "worktree_status": "",
+  "subsequent_committed_changes": {
+    "additions_only": 502,
+    "all_under": "reports/step7d_mapping_901_20261103/"
+  },
+  "prior_native_review_targets_unchanged": 174,
+  "prior_native_review_inputs_exact_committed_bytes": 201,
+  "checks": [
+    {
+      "name": "step7d-resumption-qc-v1",
+      "receipt_sha256": "7c89a39f16a6904e0817d48395e9ec88b933ad7839b24171cd82207976247a6f",
+      "log_sha256": "730681ddd22c57f6b0c35a69d98354f538274099255baa78cfdfb8feadec5155",
+      "exit_code": 0
+    },
+    {
+      "name": "step7d-resumption-full-suite-v1",
+      "receipt_sha256": "9821bcf4ac2f630b89bf1cf59a87ab653d6fb7ccece347a9ed36d86b7659c8f4",
+      "log_sha256": "6de57f86ed74737589f106eb925de770f6cafc5261b1387855fa4010bcb986e0",
+      "exit_code": 0
+    },
+    {
+      "name": "step7d-resumption-unified-freshness-v1",
+      "receipt_sha256": "c574f4bf598c4c5c96c14588759658ad5474cd053bf49698cc57920ea396f6e8",
+      "log_sha256": "b61e646b80ed10217a167d34206fe9f319063f7be1dbadc63682d24a68521972",
+      "exit_code": 0
+    },
+    {
+      "name": "step7d-resumption-unified-rejections-v1",
+      "receipt_sha256": "f02c353c7e689947669e479f40251bd5f6e55bf0ea9c036bb379d1dbd7afa3b6",
+      "log_sha256": "ab7ecda561ef95916163eac8377b59b3e6667acdf4ef643f2eb2c90fe379bcc5",
+      "exit_code": 0
+    },
+    {
+      "name": "step7d-b4-final-canonical-binding-v1",
+      "receipt_sha256": "1ca10b6b28fb74fca4987b5e7a9200cb82326ddde4e185874edc14eacfaee16e",
+      "log_sha256": "312cb7f46c0b86749d970cd003115f23586c770799fc45c77116b697234fc1ca",
+      "exit_code": 0
+    }
+  ],
+  "full_suite": {
+    "passed": 5086,
+    "failed": 0,
+    "skipped": 1,
+    "warnings": 33,
+    "seconds": 1486.08,
+    "existing_skip_file": "tests/test_curie_normalizer.py",
+    "existing_skip_function": "test_narrow_match_is_not_offered_as_equivalent",
+    "skip_unchanged_from_main_base": true,
+    "all_current_subjects_have_exactMatch": true
+  },
+  "sssom": {
+    "rows": 3014,
+    "sha256": "d3030e6385a2659a0dbd2c64ad5581568eecd9c10023f4a58de667e8050f20ef",
+    "native_invariant_rejects": 0
+  },
+  "b4": {
+    "method": "Independent input equality check against preserved native run; no fresh evaluation or coverage expansion",
+    "binding_sha256": "4c090ebe6e2f3189dbfc25a88e4739693a0e6eed737cb664d4dc884408375fc1",
+    "all3014object_id_object_label_pairs_unchanged": true,
+    "live_transform_hashes_unchanged": 5,
+    "coverage": {
+      "current": {
+        "PASS_CANONICAL": 2050,
+        "OUT_OF_B4_PREFIX_SCOPE": 890,
+        "SKIPPED_TRANSFORM_ABSENT": 74
+      },
+      "selected": {
+        "PASS_CANONICAL": 36,
+        "OUT_OF_B4_PREFIX_SCOPE": 69
+      },
+      "missing_transform_prefixes": [
+        "BTO",
+        "MICRO"
+      ],
+      "new_or_existing_rejects": 0
+    }
+  },
+  "snapshot": {
+    "tsv_sha256": "f6a8eb844e578d79da9538abf99c244fc25b2c928c50c64c0477b1218092a0f1",
+    "provenance_sha256": "075fcc6ef6eca25c1e63d65889df37d4893be2b1b9d3630df90704012dc2c831",
+    "rows": 4170,
+    "changed_cells": 6,
+    "untraced_cells": 0,
+    "all_current_native_input_hashes_verified": 18882
+  },
+  "native_refresh_commands_verified": 13,
+  "final_local_validation_summary_sha256": "a97d1e4959222a99c993e4dae330a032e821eb345e4dba1cdafc76012fe9bf14",
+  "findings": [],
+  "limitations": [
+    "Remote CI is not verified by this local attestation.",
+    "No final common scientific PASS or merge approval is granted; final committed head plus CI must still be independently checked.",
+    "Native B4 default sibling-path skip is supplemented by preserved real-input evaluation with identical consumed fields and transform dependencies;74 missing-prefix skips and890 out-of-scope rows are not waived.",
+    "No maintained files or GitHub objects were changed by this reviewer."
+  ]
+}

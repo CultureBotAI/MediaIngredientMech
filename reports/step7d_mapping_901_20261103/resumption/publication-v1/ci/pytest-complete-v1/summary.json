@@ -1,0 +1,185 @@
+{
+  "captured_at": "2026-11-04T02:35:38.469363+00:00",
+  "head": "8417aaf3a057d855ae5d0b78a587ef1cb57bf28f",
+  "job": 126332521053,
+  "run": 41756120716,
+  "status": "completed",
+  "conclusion": "success",
+  "started_at": "2026-11-04T01:44:40Z",
+  "completed_at": "2026-11-04T02:33:34Z",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-11-04T01:44:41Z",
+      "completed_at": "2026-11-04T01:44:42Z"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-11-04T01:44:42Z",
+      "completed_at": "2026-11-04T01:45:00Z"
+    },
+    {
+      "name": "Run extractions/setup-just@v3",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-11-04T01:45:00Z",
+      "completed_at": "2026-11-04T01:45:01Z"
+    },
+    {
+      "name": "Run astral-sh/setup-uv@v3",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-11-04T01:45:01Z",
+      "completed_at": "2026-11-04T01:45:03Z"
+    },
+    {
+      "name": "Set up Python",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-11-04T01:45:03Z",
+      "completed_at": "2026-11-04T01:45:04Z"
+    },
+    {
+      "name": "Install runtime dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-11-04T01:45:04Z",
+      "completed_at": "2026-11-04T01:45:08Z"
+    },
+    {
+      "name": "Validate structured record reviews",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-11-04T01:45:08Z",
+      "completed_at": "2026-11-04T01:47:21Z"
+    },
+    {
+      "name": "Run pytest",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-11-04T01:47:21Z",
+      "completed_at": "2026-11-04T02:33:27Z"
+    },
+    {
+      "name": "Enforce maintained-package coverage",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9,
+      "started_at": "2026-11-04T02:33:27Z",
+      "completed_at": "2026-11-04T02:33:28Z"
+    },
+    {
+      "name": "Report legacy-script coverage",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10,
+      "started_at": "2026-11-04T02:33:28Z",
+      "completed_at": "2026-11-04T02:33:30Z"
+    },
+    {
+      "name": "Post Run astral-sh/setup-uv@v3",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 19,
+      "started_at": "2026-11-04T02:33:30Z",
+      "completed_at": "2026-11-04T02:33:31Z"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 20,
+      "started_at": "2026-11-04T02:33:31Z",
+      "completed_at": "2026-11-04T02:33:31Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 21,
+      "started_at": "2026-11-04T02:33:31Z",
+      "completed_at": "2026-11-04T02:33:31Z"
+    }
+  ],
+  "raw_job": "job-attempt-1.json",
+  "raw_job_sha256": "5a5b73036d5c881f1359e1d8e6b727d233c6eeb3e05304a423a74ea5911acce4",
+  "raw_log": "logs-v2-attempt-1.log",
+  "raw_log_sha256": "8efc239c0fa899c3c88ee301e63c4b49eb5a719ab517647ad73fab4eac5fc2ef",
+  "raw_log_bytes": 150779,
+  "raw_log_lines": 1483,
+  "excerpts": [
+    {
+      "line": 528,
+      "text": "2026-11-04T01:47:21.3826639Z tests/test_record_review_contract.py: 12 warnings"
+    },
+    {
+      "line": 533,
+      "text": "2026-11-04T01:47:21.3836982Z 4 passed, 12 warnings in 131.43s (0:02:11)"
+    },
+    {
+      "line": 638,
+      "text": "2026-11-04T01:57:47.3246739Z tests/test_flat_export_coverage.py ..................................... [ 30%]"
+    },
+    {
+      "line": 805,
+      "text": "2026-11-04T02:33:19.4360359Z .venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings"
+    },
+    {
+      "line": 857,
+      "text": "2026-11-04T02:33:19.4411892Z tests/test_reviewed_sssom_schema.py: 11 warnings"
+    },
+    {
+      "line": 919,
+      "text": "2026-11-04T02:33:19.4451810Z scripts/check_flat_export_coverage.py                             130    102    22%   66-67, 73-74, 78-112, 118-139, 143-157, 169-188, 192-217, 221-232, 236"
+    },
+    {
+      "line": 1150,
+      "text": "2026-11-04T02:33:19.4628969Z TOTAL                                                           38688  23036    40%"
+    },
+    {
+      "line": 1152,
+      "text": "2026-11-04T02:33:23.0424666Z ========= 4557 passed, 530 skipped, 31 warnings in 2757.13s (0:45:57) =========="
+    },
+    {
+      "line": 1153,
+      "text": "2026-11-04T02:33:27.7237566Z ##[group]Run uv run --with coverage coverage report --include='src/mediaingredientmech/*' --fail-under=35"
+    },
+    {
+      "line": 1154,
+      "text": "2026-11-04T02:33:27.7238353Z uv run --with coverage coverage report --include='src/mediaingredientmech/*' --fail-under=35"
+    },
+    {
+      "line": 1223,
+      "text": "2026-11-04T02:33:28.4904185Z TOTAL                                                            7082   1550    78%"
+    },
+    {
+      "line": 1224,
+      "text": "2026-11-04T02:33:28.5144060Z ##[group]Run uv run --with coverage coverage report --include='scripts/*'"
+    },
+    {
+      "line": 1225,
+      "text": "2026-11-04T02:33:28.5144606Z uv run --with coverage coverage report --include='scripts/*'"
+    },
+    {
+      "line": 1286,
+      "text": "2026-11-04T02:33:30.5074847Z scripts/check_flat_export_coverage.py                    130    102    22%"
+    },
+    {
+      "line": 1459,
+      "text": "2026-11-04T02:33:30.5174805Z TOTAL                                                  31606  21486    32%"
+    }
+  ],
+  "mutations": false
+}

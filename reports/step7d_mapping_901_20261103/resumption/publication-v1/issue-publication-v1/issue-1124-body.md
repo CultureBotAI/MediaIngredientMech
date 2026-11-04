@@ -1,0 +1,9 @@
+Updated exactly the `Maltose monohydrate` expected identifier in [62b30cf9](https://github.com/CultureBotAI/MediaIngredientMech/commit/62b30cf943c5e244770f6c22d8eb58ea66ee2af5): `cas:6363-53-7` → `NCIT:C80300`, following the sourced #1117 decision. All other test bytes, assertions and cases remain unchanged, including stale-CHEBI rejection and mapped status.
+
+[Both-row owner proof](https://github.com/CultureBotAI/MediaIngredientMech/blob/8417aaf3a057d855ae5d0b78a587ef1cb57bf28f/reports/step7d_mapping_901_20261103/resumption/resumption1124-proposal-and-owner-proof.json) shows `Maltose monohydrate` and `D-Maltose monohydrate` resolve to the same `D-Maltose_Monohydrate.yaml` owner. Both snapshot `mim_id` cells use `NCIT:C80300`; their `cas_rn` remains `6363-53-7`. This test correction did not rebuild the snapshot.
+
+The shared maltose/CI-path focused run passes **28/28 cases**; [application evidence](https://github.com/CultureBotAI/MediaIngredientMech/blob/8417aaf3a057d855ae5d0b78a587ef1cb57bf28f/reports/step7d_mapping_901_20261103/resumption/resumption1124-application-v1.json) binds the exact one-literal diff, commit and receipt.
+
+PR: [#1128](https://github.com/CultureBotAI/MediaIngredientMech/pull/1128), publication head `8417aaf3a057d855ae5d0b78a587ef1cb57bf28f`. [Completed local validation](https://github.com/CultureBotAI/MediaIngredientMech/blob/8417aaf3a057d855ae5d0b78a587ef1cb57bf28f/reports/step7d_mapping_901_20261103/resumption/final-local-validation-v1.json) records **5,086 passed, zero failed, one pre-existing skip, 33 warnings**, with `just qc`, unified freshness and unified rejection checks passing. The later 515 changed paths are evidence-only; implementation and scientific inputs retain the tested checkpoint's bytes. **CI completion and final independent review are PENDING in this implementation update.** No merge or issue closure is claimed.
+
+<!-- step7d-1128-implementation-update-issue-1124-v1 -->

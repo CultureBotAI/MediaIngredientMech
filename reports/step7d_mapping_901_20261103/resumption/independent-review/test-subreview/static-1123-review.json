@@ -1,0 +1,46 @@
+{
+  "reviewer": "/root/step7d_independent_review/projection_adversarial",
+  "observed_at": "2026-11-03T07:20:33.606905+00:00",
+  "baseline": "7d35035f6c521c69fad94f73381c6a6eb7251fff",
+  "current_head": "fdaa4c67653c9ceeb457628bb64f560be0d27bcf",
+  "scope": "Static/AST review of exact external v2 #1123 proposal; no test execution while dependent assembly refresh is pending.",
+  "status": "PASS_STATIC",
+  "hashes": {
+    "baseline": "d5477373374b5aa0b9652310a25f8d4925b61035f304af38f64f63c0882345df",
+    "proposal": "61f7edb6ad1dc069b7a45a8c908f15a80f8073a4a41b40ddb22a8aa55d830097",
+    "patch": "521b3ff79c524bb8999d13df97df2508daef3b7bf6b2e0c2d8efdb0112f3c39b",
+    "executed_external_fixture": "33d1fa91b85fdad76c17c160dce6ba4034a0ed677989931d3d85343a440db73a"
+  },
+  "assertions": {
+    "original": 32,
+    "proposal": 45,
+    "all_original_ASTs_retained": true,
+    "two_moved_assertions": true,
+    "original_assembly_other_ASTs_unchanged": true
+  },
+  "old_functions": 8,
+  "unchanged_old_functions": 7,
+  "new_functions": [
+    "append_verified_suffix",
+    "assert_receipt_rows_withheld",
+    "receipt_current_rows",
+    "test_actually_supported_corrected_row_still_fails",
+    "test_receipt24_positions_follow_every_verified_insertion_and_removal",
+    "test_wrong_receipt24_row_lineage_fails"
+  ],
+  "new_regression_cases": {
+    "verified_insert": 1,
+    "verified_remove": 1,
+    "three_link_composition": 1,
+    "wrong_map": 1,
+    "wrong_payload": 1,
+    "removed_and_readded_lineage": 1,
+    "SUPPORTED_current_endpoint": 8
+  },
+  "forbidden_skip_xfail_removed_assertion_or_loosened_assertion": false,
+  "findings": [],
+  "limitations": [
+    "Exact test execution and final maintained diff remain required after native assembly refresh.",
+    "Helper assumes the native_context verify_mapping_chain proof; synthetic suffixes are validated through public walk_mapping_changes before mutation controls."
+  ]
+}
