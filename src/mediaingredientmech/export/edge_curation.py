@@ -11,11 +11,10 @@ from __future__ import annotations
 import csv
 import hashlib
 import io
-import json
-from pathlib import Path, PurePosixPath
 import re
 import tarfile
 import tempfile
+from pathlib import Path, PurePosixPath
 
 from mediaingredientmech.export import reviewed_sssom as reviewed
 
