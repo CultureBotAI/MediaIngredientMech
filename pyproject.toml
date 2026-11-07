@@ -83,6 +83,13 @@ dev = [
 Homepage = "https://github.com/CultureBotAI/MediaIngredientMech"
 Repository = "https://github.com/CultureBotAI/MediaIngredientMech"
 
+[tool.mediaingredientmech.edge-curation]
+# Load only the shared contract source from this verified checkout. Installing
+# the full orchestration distribution conflicts with MIM's LinkML minor pin.
+repository = "CultureBotAI/culturebotai-claw"
+commit = "1b5391d083ba85ac94e5279c3cba25ac4fde243c"
+contract = "kg-microbe-native-assertion/v1"
+
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
