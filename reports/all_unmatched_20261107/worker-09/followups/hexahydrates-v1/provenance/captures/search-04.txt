@@ -1,0 +1,7 @@
+451:def _native_payloads(catalogue, latest):
+452:    """Build native values in catalogue order with unchanged production first-wins extraction."""
+453:    from kg_microbe.utils.mediadive_bulk_download import extract_compounds_from_media, extract_solutions_from_media
+457:    for key in ids:
+462:                    details[key] = result["data"]
+469:        "compounds.json": extract_compounds_from_media(details),
+502:                outcomes.require(False, f"Protected native seed differs from replay: {name}")

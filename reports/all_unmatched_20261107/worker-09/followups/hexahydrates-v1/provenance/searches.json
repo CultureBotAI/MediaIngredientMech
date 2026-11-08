@@ -1,0 +1,112 @@
+{
+  "executed_at": "2026-11-08T05:45:54.302943+00:00",
+  "searches": [
+    {
+      "argv": [
+        "rg",
+        "--files",
+        "--hidden",
+        "--no-ignore",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/kg-source-audit/snapshots/data/raw/mediadive",
+        "-g",
+        "*.json"
+      ],
+      "returncode": 0,
+      "stdout_and_stderr_capture": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/provenance/captures/search-01.txt",
+      "sha256": "6e6e64da89d23cbc3801cd536fe7c6ac26a3cc87e62b5adedc078d0c14db1b48",
+      "ignored_files_included": true,
+      "symlink_directories_followed": false
+    },
+    {
+      "argv": [
+        "rg",
+        "--files",
+        "--hidden",
+        "--no-ignore",
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2",
+        "-g",
+        "compounds.json",
+        "-g",
+        "media_detailed.json",
+        "-g",
+        "solutions.json",
+        "-g",
+        "manifest.json",
+        "-g",
+        "catalogue.json",
+        "-g",
+        "endpoint-outcomes.json",
+        "-g",
+        "plan.json",
+        "-g",
+        "observations.jsonl"
+      ],
+      "returncode": 0,
+      "stdout_and_stderr_capture": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/provenance/captures/search-02.txt",
+      "sha256": "4d86139e758492bfcdede18a8102a7e19e01fe16bbefb4510dd201573571e34d",
+      "ignored_files_included": true,
+      "symlink_directories_followed": false
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "--hidden",
+        "--no-ignore",
+        "def extract_compounds_from_media|def extract_solutions_from_media|comp_id not in compounds_data|compounds_data\\[comp_id\\] = ingredient",
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/kg_microbe/utils/mediadive_bulk_download.py"
+      ],
+      "returncode": 0,
+      "stdout_and_stderr_capture": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/provenance/captures/search-03.txt",
+      "sha256": "1063c5847c56e1773e8f6acaa070a27c5890351ff179dc3ad328c81ebfe1b2ad",
+      "ignored_files_included": true,
+      "symlink_directories_followed": false
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "--hidden",
+        "--no-ignore",
+        "def _native_payloads|catalogue order|for key in ids|details\\[key\\]|extract_compounds_from_media|Protected native seed",
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/kg_microbe/transform_utils/mediadive/acquisition.py"
+      ],
+      "returncode": 0,
+      "stdout_and_stderr_capture": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/provenance/captures/search-04.txt",
+      "sha256": "8d6cfbe9bbbbdffd7a95b95e1822056927279313a7f7c45c3deb7406161e634f",
+      "ignored_files_included": true,
+      "symlink_directories_followed": false
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "--hidden",
+        "--no-ignore",
+        "def catalogue_scope|for item in catalogue|ids.append|def validate_native|Native output differs",
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/kg_microbe/transform_utils/mediadive/endpoint_outcomes.py"
+      ],
+      "returncode": 0,
+      "stdout_and_stderr_capture": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/provenance/captures/search-05.txt",
+      "sha256": "8ee4274450e6dbd9cba192d024c89f4ea6818cdf4efb19b9d810f2d05bf33dcf",
+      "ignored_files_included": true,
+      "symlink_directories_followed": false
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "--hidden",
+        "--no-ignore",
+        "writer.writerow|def iter_unmapped_rows|node_id.startswith",
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/scripts/dump_unmapped_mediadive_ingredients.py"
+      ],
+      "returncode": 0,
+      "stdout_and_stderr_capture": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/provenance/captures/search-06.txt",
+      "sha256": "f1d130587bd270ae55ebf0e51f68be346d6216c36a198c8f57ff2775b0d10693",
+      "ignored_files_included": true,
+      "symlink_directories_followed": false
+    }
+  ],
+  "scope_note": "Searches are bounded to the frozen source audit and admitted KG producer/input paths. No repository-wide absence claim is made."
+}

@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "evidence_id": "hx-frozen-cases",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/cases.json",
+        "sha256": "371920f6f3f78000a608a3616ce6852d17ee861e57e1bc2e6adc4238b6d4159d"
+      },
+      "kind": "source_snapshot",
+      "url": null,
+      "locator": "cases[0:2]; not an occurrence census",
+      "supports_or_contradicts": "Exact unchanged two source-case objects, including raw labels, all owner candidates, consumed-name hits and inherited holds.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-lineage",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/provenance/source-associations.json",
+        "sha256": "da0c01093db818d70556a66ee9b561e8bc6bd70ee39d1cb62d618177a840909a"
+      },
+      "kind": "source_snapshot",
+      "url": null,
+      "locator": "associations; exact JSON pointers and original observed_at; all owner hashes",
+      "supports_or_contradicts": "The frozen source-record values select medium14/solution20 by verified first-wins producer order. Equal-row matching alone is nonunique.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-lineage-validation",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/provenance/replay-validation.json",
+        "sha256": "542cacc921b9e80e01d891700ce5eda89ea774fe24cead60ef6974cea5a19858"
+      },
+      "kind": "local_validation",
+      "url": null,
+      "locator": "status PASS; script and input hashes",
+      "supports_or_contradicts": "All3344 retained medium response bodies checked against admitted manifest and ordered medium values;1214 compounds and5442 solutions replayed in exact insertion order using frozen producer functions. Pure extraction check, no cache or downstream rebuild.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-original-body",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/provenance/captures/original-medium-14.body",
+        "sha256": "eae2b02dd9bf80cafe07a5758681fb72ec3a4590de7d25a620c071802fc23144"
+      },
+      "kind": "primary_source",
+      "url": "https://mediadive.dsmz.de/rest/medium/14",
+      "accessed_at": "2026-11-05T06:23:28.282363+00:00",
+      "locator": "/data/solutions/1/recipe/5 and /7; /data/medium/link",
+      "supports_or_contradicts": "Original retained 2026-11-05 response explicitly names both six-water reagents and links DSMZ_Medium14.pdf. Original timestamp and response bytes preserved.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-dsmz-recipe",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/original-dsmz-medium-14.capture",
+        "sha256": "ecdd0f0b59ea333c5201108a97ca1627dc3b213a59692a5d5ea4c2dc30562e76"
+      },
+      "kind": "primary_source",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium14.pdf",
+      "accessed_at": "2026-11-08T05:45:09.133046+00:00",
+      "locator": "Page1, Trace element solution SL-4 table; Co and Ni rows. Amounts locate context, not independent identity proof.",
+      "supports_or_contradicts": "Original DSMZ recipe specifies CoCl2 x6H2O0.20g and NiCl2 x6H2O0.02g in SL-4. This supplies the reagent-form witness missing from the earlier review.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-current-rest",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/rest-medium-14.capture",
+        "sha256": "eae2b02dd9bf80cafe07a5758681fb72ec3a4590de7d25a620c071802fc23144"
+      },
+      "kind": "primary_source",
+      "url": "https://mediadive.dsmz.de/rest/medium/14",
+      "accessed_at": "2026-11-08T05:43:19.360413+00:00",
+      "locator": "/data/medium/link and /data/solutions/1/recipe",
+      "supports_or_contradicts": "Current REST medium14 bytes equal the retained original response. Confirms current recipe lineage; not independent evidence from its source PDF.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-current-solution",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/download-solution-20.capture",
+        "sha256": "696e08ea214dc7daf01118d232a00b5e858a788f0da342042882b30c8d88c530"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/download/solution/20/json",
+      "accessed_at": "2026-11-08T05:45:08.754415+00:00",
+      "locator": "recipe entries with compound_id38 and40",
+      "supports_or_contradicts": "Current official SL-4 download explicitly associates ingredient38/40 with recipe rows6/8 and six-water names. Same provider lineage as the original recipe.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-ingredient-38",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/ingredient-38-download.capture",
+        "sha256": "74c3c71776c1b235e9ca3b448da168e721fc2cd77d97e1bde1d5aba710e8f2cd"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/download/ingredient/38/json",
+      "accessed_at": "2026-11-08T05:41:45.810367+00:00",
+      "locator": "JSON name, group, cas_rn, chebi, formula, mass",
+      "supports_or_contradicts": "Ingredient38 retains explicit hexahydrate name but parent CAS7646-79-9, CHEBI35696, formula Cl2Co, mass129.839. Secondary annotation conflict remains captured; these fields do not override the traced original recipe.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-page-38",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/ingredient-38.capture",
+        "sha256": "83c5d07845a889345057ca91d1e34f8b9b24c06a707736b32254d3a860cf842d"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/ingredients/38",
+      "accessed_at": "2026-11-08T05:41:45.987539+00:00",
+      "locator": "Disclaimer beneath identifiers and chemical parameters",
+      "supports_or_contradicts": "Provider disclaimer says most identifiers and chemical parameters are automatically matched, not manually curated. This does not expose the provenance of each individual field.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-group-Co",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/group-CoCl2.capture",
+        "sha256": "49a7806ef8fc4eba032c523eca50e32a378551a92555970edec3cbaf42714b24"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/ingredient-groups/CoCl2",
+      "accessed_at": "2026-11-08T05:41:46.501579+00:00",
+      "locator": "Group distribution and ingredient table",
+      "supports_or_contradicts": "CoCl2 group shares parent CAS/formula/ChEBI/mass across4 forms. Consistent with broad/group-level automatic annotation; inheritance mechanism is inference, not proven backend lineage.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-ingredient-40",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/ingredient-40-download.capture",
+        "sha256": "503a68157f243504505bb86095ba79dad823cde76baf1e192c97f7cbd1e0599c"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/download/ingredient/40/json",
+      "accessed_at": "2026-11-08T05:41:45.828477+00:00",
+      "locator": "JSON name, group, cas_rn, chebi, formula, mass",
+      "supports_or_contradicts": "Ingredient40 retains explicit hexahydrate name but parent CAS7718-54-9, CHEBI34887, formula Cl2Ni, mass129.599. Secondary annotation conflict remains captured; these fields do not override the traced original recipe.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-page-40",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/ingredient-40.capture",
+        "sha256": "5339196adf46b507c2cd20cf8e48a1f418829f5bdfb943380e16ecbec72782cf"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/ingredients/40",
+      "accessed_at": "2026-11-08T05:41:45.995759+00:00",
+      "locator": "Disclaimer beneath identifiers and chemical parameters",
+      "supports_or_contradicts": "Provider disclaimer says most identifiers and chemical parameters are automatically matched, not manually curated. This does not expose the provenance of each individual field.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-group-Ni",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/captures/group-NiCl2.capture",
+        "sha256": "fc64f359ddc67a75df64a1591ddce6132e0470e1fd624af3f7dcdc06608ab6ab"
+      },
+      "kind": "primary_source",
+      "url": "https://bacmedia.dsmz.de/ingredient-groups/NiCl2",
+      "accessed_at": "2026-11-08T05:41:46.676253+00:00",
+      "locator": "Group distribution and ingredient table",
+      "supports_or_contradicts": "NiCl2 group shares parent CAS/formula/ChEBI across5 forms; masses129.599 at80% and129.6 at20% are rounded parent-scale values, not hydration-specific. Consistent with broad/group-level automatic annotation; inheritance mechanism is inference, not proven backend lineage.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-issue344",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/common/issue-344.json",
+        "sha256": "9d10496445074b794506ffcfd354efaa30f288ba39c7e6e7b084bd6ff7ff361d"
+      },
+      "kind": "native_record_review",
+      "url": null,
+      "locator": "body; comments[0] and[1]; no issue reopening or blanket resolution",
+      "supports_or_contradicts": "Entire current CLOSED issue and both comments read. First comment explicitly notes genuine NiCl2 hexahydrate and Na2HPO4 dodecahydrate can carry parent mass. Atypical labels remain separate unresolved source investigations.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-current-owners",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/common/current-owner-hashes.json",
+        "sha256": "f864d16f496146ba4be23ed70d5b671a1d0a6506ee1a0c850e8ed1dff2ac7cbb"
+      },
+      "kind": "source_snapshot",
+      "url": null,
+      "locator": "9 hashes and preserved owner copies",
+      "supports_or_contradicts": "Actual9 candidate owner files remain byte-identical to frozen baseline. Active hexahydrate owners and rejected tombstones were distinguished; owner match was not used as source-form evidence.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-remote-owners",
+      "capture": {
+        "root": "artifact",
+        "path": "followups/hexahydrates-v1/common/remote-main-owners.json",
+        "sha256": "51c465906b902700adb2ea31acbb224effceec3a33867f9a8f096e008537df62"
+      },
+      "kind": "source_snapshot",
+      "url": null,
+      "locator": "pinned current remote revision and two owner hashes",
+      "supports_or_contradicts": "Both active owners at captured remote main revision match assigned baseline bytes. No adoption of concurrent proposed payloads.",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    },
+    {
+      "evidence_id": "hx-sa-chebi-53503",
+      "capture": {
+        "root": "artifact",
+        "path": "salts/captures/chebi-53503-primary.json",
+        "sha256": "67b873d29ddef7c0cb09e1d1764bb1a12c69aaabcb563e9a7e02c12f0ea223e6"
+      },
+      "kind": "ontology",
+      "locator": "Identity, formula, CAS and/or exact recipe component in captured response.",
+      "supports_or_contradicts": "Reused unchanged primary ChEBI capture with original timestamp. Exact six-water chloride term and CAS support the ontology target after the source form is independently established by its original recipe; no source applicability inferred from an available owner.",
+      "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/53503/",
+      "accessed_at": "2026-11-08T05:07:05.393579+00:00",
+      "case_ids": [
+        "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465"
+      ]
+    },
+    {
+      "evidence_id": "hx-sa-chebi-53542",
+      "capture": {
+        "root": "artifact",
+        "path": "salts/captures/chebi-53542-primary.json",
+        "sha256": "31c0111f476a98b69e7bed39839e5b5319bb94b2278137a85d84459c60b751ff"
+      },
+      "kind": "ontology",
+      "locator": "Identity, formula, CAS and/or exact recipe component in captured response.",
+      "supports_or_contradicts": "Reused unchanged primary ChEBI capture with original timestamp. Exact six-water chloride term and CAS support the ontology target after the source form is independently established by its original recipe; no source applicability inferred from an available owner.",
+      "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/53542/",
+      "accessed_at": "2026-11-08T05:07:04.873444+00:00",
+      "case_ids": [
+        "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63"
+      ]
+    }
+  ]
+}

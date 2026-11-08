@@ -1,0 +1,190 @@
+identifier: CHEBI:53503
+preferred_term: CoCl2 x 6 H2O
+ontology_mapping:
+  ontology_id: CHEBI:53503
+  ontology_label: cobalt chloride hexahydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: CoCl2 . 6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CoCl2 x 2 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: CoCl2 x 4 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: CoCl2 x 6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CoCl2 · 6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CoCl2·6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CoCl2⋅6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CoCl2・6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CoCl2 × 6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe_via_hydration_routing
+- synonym_text: CoCl2 ∙ 6 H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe_via_hydration_routing
+- synonym_text: CoCl2∙6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe_via_hydration_routing
+- synonym_text: cobalt(2+) chloride
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+- synonym_text: cobalt(II) chloride
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+- synonym_text: CoCl2.6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7646-79-9 from PubChem (via CHEBI:35696)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: CoCl2 . 6H2O, CoCl2
+    x 2 H2O, CoCl2 x 4 H2O, CoCl2 x 6H2O, CoCl2 · 6H2O, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T06:30:07.230267+00:00'
+  curator: audit_p44_hydration_routing
+  action: ADDED_SYNONYMS_VIA_HYDRATION_ROUTING
+  changes: 'Added 3 synonyms re-routed from anhydrous/hydrate sibling records (Cocl2.yaml,
+    Cocl2_X_2_H2o.yaml, Cocl2_X_4_H2o.yaml): CoCl2 × 6H2O, CoCl2 ∙ 6 H2O, CoCl2∙6H2O'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.862266+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.735467+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2Cl.Co; inchi=InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2; smiles=[Cl-].[Cl-].[Co+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.474399+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110536+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.744312+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CoCl2 x 6 H2O'' -> ''cobalt dichloride'': synced to canonical
+    CHEBI label (preferred_term ''CoCl2 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_hydrate_collapse
+  action: MERGED_INTO
+  changes: Merged into CHEBI:53503 'Cobalt chloride hexahydrate'; occurrences transferred.
+    Tombstoned REJECTED, SSSOM rows dropped (#321/#334).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:35696 -> CHEBI:53503 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Cobalt chloride hexahydrate''. Provenance
+    is unaffected: what the record used to assert is in this history.'
+  llm_assisted: false
+- timestamp: '2026-08-29T03:56:37.918511+00:00'
+  curator: hydrate_duplicate_merges
+  action: CORRECTED
+  changes: cas_rn 7646-79-9 -> 7791-13-1. 7646-79-9 is the ANHYDROUS parent's CAS;
+    7791-13-1 is the dbxref on CHEBI:53503 cobalt chloride hexahydrate, which this
+    record is grounded to. A hydrate and its anhydrous parent are different substances
+    with different formula weights (#334).
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:35696 -> CHEBI:53503 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-09-23T06:21:57.549000+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''cobalt(2+) chloride'' (EXACT_SYNONYM), ''cobalt(II)
+    chloride'' (EXACT_SYNONYM): ChEBI names of the anhydrous CHEBI:35696 on the hexahydrate
+    CHEBI:53503 tombstone (#232). The token is kept as provenance only; it must not
+    resolve, be exported, or enter the SSSOM other column.'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:47:05.320044+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:53503 (Cobalt_chloride_hexahydrate) so
+    the post-merge REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks
+    _mim_merge_target, retype dihydrate/tetrahydrate HYDRATE_FORM tokens to REJECTED_LABEL
+    (already held on live Cocl2_X_2_H2o and Cocl2_X_4_H2o), and add CoCl2.6H2O as
+    HYDRATE_FORM so recipes labeled CoCl2.6H2O with stale anhydrous term.id CHEBI:35696
+    resolve through label_index.csv to hexahydrate CHEBI:53503 (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+kg_microbe_node_id: CHEBI:53503
+chemical_properties:
+  cas_rn: 7791-13-1
+  data_source: PubChem (via CHEBI:35696)
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: 2Cl.Co
+  inchi: InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2
+  smiles: '[Cl-].[Cl-].[Co+2]'
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (2265 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+      Simple component'
+    curator_note: Widespread use in media formulations (2265 occurrences). High confidence
+      based on 'Defined component' property.
+representative: CHEBI:53503

@@ -1,0 +1,56 @@
+{
+  "reviewed_at": "2026-11-08T05:45:45.731635+00:00",
+  "reviewer": "/root/materials",
+  "method": "Separate reviewer implementation iterates catalogue order, then embedded solution order, then recipe order and stores each first compound/solution without executing author extraction code; compares complete1214compound and5442solution canonical payloads and insertion order. Separately read and reran author manifest/body/ledger validation read-only.",
+  "status": "PASS",
+  "input_sha256": {
+    "catalogue.json": "454a3d3b5061bd2347f9520dafe2746a50e830611cb8753eb7e8ea4f9bde12f0",
+    "media_detailed.json": "82a7d02a5a85378d6acaa535c5d4e07a2fe3ede5c5cb743bee0892eed738bb81",
+    "compounds.json": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+    "solutions.json": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63"
+  },
+  "source_associations_sha256": "da0c01093db818d70556a66ee9b561e8bc6bd70ee39d1cb62d618177a840909a",
+  "recipe_body_date_not_retrieved_at": "Original observed_at is preserved; current reviewer read time is reviewed_at.",
+  "checks": [
+    {
+      "case_id": "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+      "source_id": "mediadive.ingredient:38",
+      "selected": {
+        "medium_id": 14,
+        "catalogue_index": 16,
+        "solution_id": 20,
+        "solution_index": 1,
+        "recipe_index": 5,
+        "recipe_order": 6
+      },
+      "source_row_sha256": "ee7d6d9ca63a6a459049da503b502abaa965635a8fa62d424a874b7583dff14a",
+      "repeated_value_matches": 84,
+      "all_embedded_occurrences": 1063,
+      "same_row_value_is_nonunique": true,
+      "admitted_original_body_sha256": "eae2b02dd9bf80cafe07a5758681fb72ec3a4590de7d25a620c071802fc23144",
+      "original_observed_at": "2026-11-05T06:23:28.282363+00:00",
+      "verified_against_primary_association": true
+    },
+    {
+      "case_id": "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63",
+      "source_id": "mediadive.ingredient:40",
+      "selected": {
+        "medium_id": 14,
+        "catalogue_index": 16,
+        "solution_id": 20,
+        "solution_index": 1,
+        "recipe_index": 7,
+        "recipe_order": 8
+      },
+      "source_row_sha256": "8f767c3c2f8d89e3c367dad6b665dcb04625aa1519d37c9985136d1f1d237cf5",
+      "repeated_value_matches": 45,
+      "all_embedded_occurrences": 1196,
+      "same_row_value_is_nonunique": true,
+      "admitted_original_body_sha256": "eae2b02dd9bf80cafe07a5758681fb72ec3a4590de7d25a620c071802fc23144",
+      "original_observed_at": "2026-11-05T06:23:28.282363+00:00",
+      "verified_against_primary_association": true
+    }
+  ],
+  "scope": "Exact two selected frozen rows; matching other occurrences are counted only to expose nonuniqueness, not scientifically reviewed or cleared.",
+  "primary_replay_rerun_sha256": "f18caea1da6553e564c5361fd9deafe941404eb9ab4b6f1127c6380019fd59fb"
+}
