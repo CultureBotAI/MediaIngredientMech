@@ -1,0 +1,105 @@
+identifier: CHEBI:131525
+preferred_term: Poly[(R)-3-hydroxybutyrate]
+ontology_mapping:
+  ontology_id: CHEBI:131525
+  ontology_label: poly[(R)-3-hydroxybutyrate]
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:131525
+    notes: R-specific polymer; Sigma363502 names poly[(R)-3-hydroxybutyric acid], CAS29435-48-1. Do not
+      use monomer CHEBI20067 or finite PubChem trimer.
+synonyms:
+- synonym_text: 3-hydroxybutanoic acid
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+- synonym_text: Poly[R-3-hydroxybutyric acid]
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef;
+    source=mediadive; source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
+- synonym_text: Poly[(R)-3-hydroxybutyric acid]
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef;
+    source=mediadive; source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
+- synonym_text: Poly(3-hydroxybutyric acid)
+  synonym_type: REJECTED_LABEL
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef;
+    source=mediadive; source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:29435-48-1 as primary identifier; no CHEBI entry exists for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.837724+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:54:33.600913+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C12H20O6; smiles=CC(CC=O)OC(=O)CC(C)OC(=O)CC(C)O; inchi=InChI=1S/C12H20O6/c1-8(14)6-11(15)18-10(3)7-12(16)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.814098+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:56:10.989868+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:20067 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.593670+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only REJECTED_LABEL,
+    because this record is a distinct salt, hydrate or tombstone form and the label index resolved the
+    parent''s name here (#232): ''3-hydroxybutanoic acid''. Preserved original text and source metadata.
+    No identity, mapping, role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Atomically promote cas:29435-48-1 R-specific polymer to CHEBI:131525 and merge UNMAPPED_0494;
+    replace monomer grounding and finite-trimer chemistry with repeating polymer representation. Preserve
+    provisional roles without release approval. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef; source=mediadive;
+    source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 29435-48-1
+  molecular_formula: (C4H6O2)n
+  smiles: '*O[C@H](C)CC(*)=O'
+  data_source: ChEBI:131525 repeat-unit structure; Sigma363502 CAS
+  retrieval_date: '2026-11-08T05:29:01.443067+00:00'
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+merged:
+- UNMAPPED_0494
+notes: R-specific PHB polymer. The former unqualified preferred label remains provenance only to avoid
+  collapsing unspecified stereochemistry. Former monomer-parent and finite-trimer chemistry are superseded
+  by this event.

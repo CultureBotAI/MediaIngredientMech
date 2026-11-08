@@ -1,0 +1,3600 @@
+{
+  "schema_version": 1,
+  "worker_slot": 3,
+  "shard_sha256": "90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:053d9db831df41c7936ae34acf3a915cfdf097612bab87e50cb19ac7ed8e9a19",
+      "case_input_sha256": "2a2b8eb98b0616b8bd1424a662dcbdbe3a6c432f642de750984652713dcf26a6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na VO",
+        "source_label": "Na VO",
+        "raw_source_label": "Na VO"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2b5d2ea33a525e6747774ec8a2094620d6f9ac3ca3ef1f332512a99512b0066f"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "CCAP FDMed p1 identifies Na3VO4 0.018 g in the trace-element stock. The stripped Na VO is recoverable only from this original recipe, and CHEBI:35607 denotes trisodium vanadate.",
+      "applicability": "The single fdmed occurrence points to the same CCAP PDF. Stock preparation amounts must not be treated as final-medium concentrations.",
+      "evidence_ids": [
+        "c-frozen-2",
+        "c-recipe-2-0",
+        "c-fetch-0",
+        "c-fetch-46",
+        "c-web-0"
+      ],
+      "proposal_ids": [
+        "c-vanadate-alias"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na3vo4.yaml",
+          "sha256": "414bd8739268155f11bcba2cd9f19df9e4e3600634190a93fd701d311f3b3350"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:0cfacee74dd7a7cfb91d23ebf9f180404be16eb577fa84af5005dd7392d931df",
+      "case_input_sha256": "b70063b30163cc811fbc2ffb5db3b2b74889c4104d0852d8e92f3ced2933655c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1M NaOH",
+        "source_label": "1M NaOH",
+        "raw_source_label": "1M NaOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:06bcd7b8ddf3a1aa3326fd7e44c178ede346f4591c0e8c819ef94ed5c01f9a14"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2241 identifies sodium hydroxide solution; source strength 1M defines a stock distinct from solid NaOH.",
+      "applicability": "M2241 components[1].items[10] has no quantitative addition. Do not invent a dose or solvent; the partial component assertion records only 1 M solute.",
+      "evidence_ids": [
+        "c-frozen-7",
+        "c-recipe-7-0",
+        "c-fetch-1",
+        "c-fetch-50"
+      ],
+      "proposal_ids": [
+        "c-naoh-1m-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Naoh.yaml",
+          "sha256": "b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:0f01261dc40b3afb1a90250b7cec4fa1345556df461a93318ba3371b9ffed350",
+      "case_input_sha256": "57f1bc80dcf1b4df029423f2791067b995b8f15c5456d2500ec6a3d281b69d8f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2--Methylbutyric acid",
+        "source_label": "2--Methylbutyric acid",
+        "raw_source_label": "2--Methylbutyric acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:87501ea4144f90e2a3188adfb858942529f15de4ac8413e77150e2d2aeaf97d8"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M694 identifies 2-methylbutanoic acid without optical specification. CHEBI:37070 is stereochemically unspecified, whereas the current owner preferred name explicitly says DL. That difference cannot be erased by punctuation normalization.",
+      "applicability": "The 10 ml VFA-stock input in components[3].items[3] supports constitutional identity but neither racemic nor single-enantiomer supplied form.",
+      "evidence_ids": [
+        "c-frozen-9",
+        "c-recipe-9-0",
+        "c-fetch-2",
+        "c-fetch-73",
+        "c-web-8"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Establish supplied racemate versus unspecified stereochemistry from JCM675 reagent specification, or repair the current DL owner identity/grounding before resolving this unspecified source to it.",
+      "missing_requirement": "Establish supplied racemate versus unspecified stereochemistry from JCM675 reagent specification, or repair the current DL owner identity/grounding before resolving this unspecified source to it.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Dl-2-methylbutyric_Acid.yaml",
+          "sha256": "86d91038be691420f3748192b215a9f6f5fc92cfad5b729bddab9dd4dd5c18ce"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:13ab279707b97daf2383076a1eebab4366cbbd8e77d32193999d6667cf3570e4",
+      "case_input_sha256": "861936229dc7f4aaea53018cc6591a3f693663a2ae6f9d841b6473f85ac9a5ed",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Copper(II) Nitrate Trihydrate",
+        "source_label": "Copper(II) Nitrate Trihydrate",
+        "raw_source_label": "Copper(II) Nitrate Trihydrate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f092f375e07c3a35a7ff8b14c21d9129ef2d20ecc9b778c6bc3c3182989838ae"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The recipe supplies CAS10031-43-3 and MW241.6016, agreeing with official GSRS copper(II) nitrate trihydrate. Existing CAS owner retains the specific hydrate; its broader copper nitrate mapping remains asymmetric.",
+      "applicability": "SMN rich CultureBotHT-origin ingredient15 explicitly says trihydrate. Add that exact source name without collapsing to CHEBI:78036 anhydrous/parent copper nitrate.",
+      "evidence_ids": [
+        "c-frozen-13",
+        "c-recipe-13-0",
+        "c-fetch-53",
+        "c-fetch-91",
+        "c-attempt-93"
+      ],
+      "proposal_ids": [
+        "c-copper-trihydrate-alias"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+          "sha256": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/901"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:16268b1fbc156bd19abbec0685da8e7bd6f9543b6e23aa08b651dfb916051766",
+      "case_input_sha256": "08692d99d5ed65057cf37a18c5f4a8c2683b71e636cf9e40c1b5727189247532",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.5% Dithiothreitol (DTT)",
+        "source_label": "0.5% Dithiothreitol (DTT)",
+        "raw_source_label": "0.5% Dithiothreitol (DTT)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:02c8befc0c401cd703cdb8e056538a6e43b226d6a491557b6819a57293524506"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Original ATCC1257 and TOGO M2568 agree on a freshly prepared 0.5% DTT solution added at10ml. Neither states w/v, w/w, solvent, or an exact DTT stereochemical grade.",
+      "applicability": "Frozen ETSA root ingredient incorrectly stores10 G_PER_L; original ATCC p1line15 is10ml stock input. A source concentration conversion is not justified by percent alone.",
+      "evidence_ids": [
+        "c-frozen-16",
+        "c-recipe-16-0",
+        "c-fetch-3",
+        "c-attempt-105",
+        "c-attempt-121",
+        "c-attempt-124",
+        "c-web-17"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Source-specific DTT percent basis (w/v or w/w), solvent and stereochemical grade; ATCC1257 confirms only0.5% and10ml, so these facts cannot be recovered from the primary recipe.",
+      "missing_requirement": "Source-specific DTT percent basis (w/v or w/w), solvent and stereochemical grade; ATCC1257 confirms only0.5% and10ml, so these facts cannot be recovered from the primary recipe.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:16a5d90659a7c027c850dc459bdb69ba1029b3eeb461a7202cf8c93a71182b9c",
+      "case_input_sha256": "08680f71058ffd808e0ecd235e9a8204ef12a5595a2f5e43669292218a4afb6e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sinigrin",
+        "source_label": "Sinigrin",
+        "raw_source_label": "Sinigrin"
+      },
+      "occurrence_ids": [
+        "CM_OCC:181319747adceb2949e34e43292ef67f0dc8d3e119e44cb8c5bc547feb61ca7c"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The source manuscript provenance expressly calls the reagent sinigrin hydrate without hydration number. Cayman primary insert demonstrates that marketed sinigrin hydrate can be potassium salt·xH2O. Bare sinigrin does not identify counterion or water stoichiometry.",
+      "applicability": "M9-SNG source solution contains10g/L reagent stock. Preserve that mass concentration and manuscript qualification; no conversion to free sinigrin molecular identity or molarity.",
+      "evidence_ids": [
+        "c-frozen-17",
+        "c-recipe-17-0",
+        "c-fetch-39",
+        "c-fetch-59",
+        "c-fetch-106"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. The manuscript reagent supplier/catalog identifying counterion and hydrate stoichiometry (or explicit variable hydrate); retain10g/L mass-stock basis until verified.",
+      "missing_requirement": "The manuscript reagent supplier/catalog identifying counterion and hydrate stoichiometry (or explicit variable hydrate); retain10g/L mass-stock basis until verified.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:17b3ba649696608dd7507f0833344f58699c908b9b6b084a13d94d5f1bb4fcfe",
+      "case_input_sha256": "81ae9c984da73385bd8444363386c212fb47e32880c8d5bf6bae128606caf089",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2SiO3·9H2O (4.64 g/L)",
+        "source_label": "Na2SiO3·9H2O (4.64 g/L)",
+        "raw_source_label": "Na2SiO3·9H2O (4.64 g/L)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c0d90b9dc9f6d95636774abe8e0f6b9a094a0f37b3a6ed05f74b73e5428c07a6"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2231 defines sodium silicate nonahydrate4.64g plus deionized-water input1L as a separate stock. ChEBI:132108 identifies the solute nonahydrate.",
+      "applicability": "components[0].items[8] adds10ml; components[6] defines the stock. Frozen10 G_PER_L is an addition-unit error, not stock strength.",
+      "evidence_ids": [
+        "c-frozen-18",
+        "c-recipe-18-0",
+        "c-fetch-4",
+        "c-fetch-80",
+        "c-fetch-102"
+      ],
+      "proposal_ids": [
+        "c-silicate-nonahydrate-464gl-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2sio3_X_9_H2o.yaml",
+          "sha256": "f4d860dd443582074583a911491db43130dd92efe57488228012c85da842798b"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:18e51c990d219350b38ee3d6bb6658167caa3e874c5c149957cda0e6ea9b4ff1",
+      "case_input_sha256": "50db26538b7bf4bbd43358bcd3b814e0db2907df996e5942013a198f14c30092",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M NaOH",
+        "source_label": "1 M NaOH",
+        "raw_source_label": "1 M NaOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0bb38820ec2b6f33c549d0324984ab49551bd9aaf7268a0f3d2466bd3d979844"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M3265 calls this sodium hydroxide solution. Spacing does not distinguish this explicit1M stock from case7 or73.",
+      "applicability": "components[0].items[8] has no dose; retain concentration1M and unspecified solvent without a pure-NaOH identity mapping.",
+      "evidence_ids": [
+        "c-frozen-20",
+        "c-recipe-20-0",
+        "c-fetch-5",
+        "c-fetch-50"
+      ],
+      "proposal_ids": [
+        "c-naoh-1m-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:1993b45691a9f82b985ea194f256c98b873dffd2d4b36228f42ea0f685e0d732",
+      "case_input_sha256": "80afa3615574437d5e7dac86061854e073430794310a5d9786ae6baf79fe3138",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na HPO .12H O",
+        "source_label": "Na HPO .12H O",
+        "raw_source_label": "Na HPO .12H O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a70999323aadb04c51f2fb110153e73ff3dc2cfe960f8abfa403f471f0e6b3fe"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "CCAP HSM p1 restores Na2HPO4·12H2O. Exact hydrate CHEBI:91259 exists; current owner has hydrate formula but anhydrous structure fields, corrected from the exact primary term.",
+      "applicability": "HSM source saline stock lists2.65g of dodecahydrate. Raw text lost subscripts; neither monosodium phosphate nor anhydrous disodium phosphate is acceptable.",
+      "evidence_ids": [
+        "c-frozen-21",
+        "c-recipe-21-0",
+        "c-fetch-6",
+        "c-fetch-68",
+        "c-web-1"
+      ],
+      "proposal_ids": [
+        "c-phosphate-dodecahydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml",
+          "sha256": "cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/901"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:23a657b35e3667931a84c9f08129bad5c4efb8bd542a8a90e959b891fdc5606e",
+      "case_input_sha256": "e790ccaadb0c01017a30e796d13b4dfedb7a64eee267675fe7fec2e5476116f8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1N HCl",
+        "source_label": "0.1N HCl",
+        "raw_source_label": "0.1N HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e41a220f4ae7058e06063f4cc53b0e6858668571fa493d0079fde5832e42f22d",
+        "CM_OCC:37a297a1e36bc177581d75d2a7312170b0473f5e08adfff5de6d6b8b051bb0f2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both TOGO sources explicitly identify0.1N hydrochloric-acid solution, a concentration-qualified stock. Normality is preserved as N without assuming another chemical identity.",
+      "applicability": "M2262 components[7].items[0] uses40ml; M3213 components[1].items[0] uses1L. Frozen40 and1 G_PER_L are source-unit errors.",
+      "evidence_ids": [
+        "c-frozen-23",
+        "c-recipe-23-0",
+        "c-recipe-23-1",
+        "c-fetch-7",
+        "c-fetch-8",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "proposal_ids": [
+        "c-hcl-01n-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hcl.yaml",
+          "sha256": "396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:2ba4ee4f9b9fb2ae61c1ab7a92ca2dd5d192bba6059a49377ce28bb636a5e289",
+      "case_input_sha256": "45194cb590dba37aaaccfb67d418068bc19b3c1218dbd644cb000454dd64e9b1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NH VO",
+        "source_label": "NH VO",
+        "raw_source_label": "NH VO"
+      },
+      "occurrence_ids": [
+        "CM_OCC:348dfae15095b368044b92b00d0bedeef742d64eaf5f381d17434e7e7266b296"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "CCAP UCM restores NH4VO3. Supplier primary sheet establishes ammonium metavanadate CAS7803-55-6, distinct from sodium vanadates. Bounded exact name/CAS searches found no exact CHEBI/NCIT candidate.",
+      "applicability": "UCM trace solution row specifies0.023g ammonium salt. Propose CAS identity with broad ammonium-salt class CHEBI:47704, not metavanadate anion as whole-salt identity.",
+      "evidence_ids": [
+        "c-frozen-28",
+        "c-recipe-28-0",
+        "c-fetch-9",
+        "c-fetch-38",
+        "c-fetch-81",
+        "c-fetch-83",
+        "c-attempt-98",
+        "c-fetch-99",
+        "c-fetch-112",
+        "c-web-2",
+        "c-web-12"
+      ],
+      "proposal_ids": [
+        "c-ammonium-metavanadate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:2c217c36bf80b6dd437869bd28fd77efe1f3e40c539ea3e9926f93bd7c326709",
+      "case_input_sha256": "f139dc80b9167ed5a905b3724bf6b376aa53e6b86b176d8cffe138512ec2140f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "CoSO .7H2O",
+        "source_label": "CoSO .7H2O",
+        "raw_source_label": "CoSO .7H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:64bd4e8623019f92b6dfd1f3f343b8e779d10186a8ccd2e48f249156152fee0c",
+        "CM_OCC:be913ea5f11b3b0f30f1c2b7676db54fee996cc424849e9f934f0f4a0d168e1d"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "CCAP Waris-H and CCAP Modified Provasoli mirrored by DSMZ both list CoSO4·7H2O. CHEBI:91244 matches heptahydrate; existing anhydrous structure fields are replaced with exact hydrate data.",
+      "applicability": "Both frozen algae occurrences are covered: Waris-H originalPDF and MP PII trace row via CCAP C56. The latter has strain-specific final-use modifications, which are not imported.",
+      "evidence_ids": [
+        "c-frozen-30",
+        "c-recipe-30-0",
+        "c-recipe-30-1",
+        "c-attempt-10",
+        "c-fetch-11",
+        "c-fetch-69",
+        "c-attempt-97",
+        "c-fetch-108",
+        "c-web-3",
+        "c-web-13"
+      ],
+      "proposal_ids": [
+        "c-cobalt-heptahydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Coso4_X_7_H2o.yaml",
+          "sha256": "3e14e4d57dab11eb3974f45db2894b12bd71aa7a761d823ae8ce401300ceba8d"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/901"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:2d9a485db4f05986a11be7f9f9e3a39ab1deeca6508f8cc0a66481ec9a96bbf4",
+      "case_input_sha256": "de6ee0f1d83ae7d491938306d9922b0c7a846518bc20402f5f635477193eb12b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "CaCl・2H2O",
+        "source_label": "CaCl・2H2O",
+        "raw_source_label": "CaCl・2H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9d9b2322d0d2ea997e4ad428914fe0c615f62f02a3ee4f299444c50319f1d2b5"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "TOGO M520 components[2].items[2] explicitly identifies calcium chloride dihydrate. CHEBI:86158 matches this form; the damaged formula is not calcium monochloride.",
+      "applicability": "The source1g is a stock input. Existing Cacl2_X_2_H2o owner is candidate; duplicate CHEBI:86158 Cacl22h2o owner remains a coordinator review obligation.",
+      "evidence_ids": [
+        "c-frozen-32",
+        "c-recipe-32-0",
+        "c-fetch-12",
+        "c-attempt-77",
+        "c-fetch-100"
+      ],
+      "proposal_ids": [
+        "c-calcium-dihydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cacl22h2o.yaml",
+          "sha256": "5f0a5e80a9a0bee1ccdd09234041c29a1c10fb55e52c534da6f87c0c1db6e0ed"
+        },
+        {
+          "path": "data/ingredients/mapped/Cacl2_X_2_H2o.yaml",
+          "sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/901"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:2e7c6115c4ca5f3fd063003cc951f94ee409fd7df1390ddc0230df64be2a6703",
+      "case_input_sha256": "94994e8c3b150e4a2f89da064ea4a8de1dcbb1cf0f639e80365507d7ff71b53e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "6N HCl",
+        "source_label": "6N HCl",
+        "raw_source_label": "6N HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8b9f3e2b75afc9b5e02322bceef4a2a8b8bd1fd2a019e44a26264cc06020333a"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2560 explicitly specifies6N HCl. This is the same concentration-defined stock family as case119, not pure hydrogen chloride.",
+      "applicability": "components[3].items[0] has no amount; do not invent dose, density or receiving-medium concentration.",
+      "evidence_ids": [
+        "c-frozen-33",
+        "c-recipe-33-0",
+        "c-fetch-13",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "proposal_ids": [
+        "c-hcl-6n-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hcl.yaml",
+          "sha256": "396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:4f98d9bb98d2d1b4b259c595ed4a209fc0de207301fc421d5ed0361bf660be82",
+      "case_input_sha256": "9c7361d3a1d3308df976ad8c5655901e75ba2dd64815dd94803ea8321b85aad2",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "iso--Butyric acid",
+        "source_label": "iso--Butyric acid",
+        "raw_source_label": "iso--Butyric acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ad02258eb44cdc8cea76cc1371fbea3eeb109e65908f37bf1a03541988dcd472",
+        "CM_OCC:a3d68cbea0c3e67a31743d2dee386285e21640425599b70c7b1eca142a2d9956",
+        "CM_OCC:fa8ffa6f57d4f492bd5662c741d9812f8403300524394f1dfff0c51e9ce7bb65",
+        "CM_OCC:6a3934927f3f2b2a0ac69a3965aaa007bebb469af550f1b5925e65ff20075aa2"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M1093 linked VFA sourceM124, M1210, M124 and M3033 identify isobutyric acid (2-methylpropanoic acid), CHEBI:16135. Doubled hyphen is typography.",
+      "applicability": "All four occurrences preserve the isobutyric constitutional isomer and individual stock contexts; no inference from n-butyric acid.",
+      "evidence_ids": [
+        "c-frozen-44",
+        "c-recipe-44-0",
+        "c-recipe-44-1",
+        "c-recipe-44-2",
+        "c-recipe-44-3",
+        "c-fetch-14",
+        "c-fetch-15",
+        "c-fetch-16",
+        "c-fetch-17",
+        "c-fetch-71"
+      ],
+      "proposal_ids": [
+        "c-isobutyrate-alias"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Isobutyric_Acid.yaml",
+          "sha256": "de152124fd72af219fcdfe1bb6dce1e3254666174b8112b4d452063fa3844f31"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:584bd7436389f092715019959743bc12d63245d64d4e5caaee04c2f52203f4e9",
+      "case_input_sha256": "02907dfe09697991d449b38ecbcd8c1bbf660ca7584183c212d07e04e02bd322",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "EDDHA",
+        "source_label": "EDDHA",
+        "raw_source_label": "EDDHA"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4d85805a5c745c2874ada8f9b916d553fc1bbdc0d2069c1a9e9cc0df50f4406b",
+        "CM_OCC:c772865627bce97906653cada82700c4a6e6d6f51c44505dc1503d5364805eec"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Echenique1992 original abstract and Tomaras2003 original Methods explicitly expand EDDHA as ethylenediamine-di(o-hydroxyphenyl)acetic acid. HiMedia RM3650 primary SDS identifies this free acid as CAS1170-02-1; no metal chelate or counterion is included.",
+      "applicability": "Both MediaDB M9 recipes are tied to those original papers, so the common abbreviation is source-resolved. Propose the free acid without stereoisomer or product-purity assumptions, with broader dicarboxylic-acid CHEBI:35692 only; HiMedia is identity corroboration, not asserted historical supplier.",
+      "evidence_ids": [
+        "c-frozen-50",
+        "c-recipe-50-0",
+        "c-recipe-50-1",
+        "c-fetch-37",
+        "c-fetch-56",
+        "c-fetch-64",
+        "c-fetch-82",
+        "c-attempt-114",
+        "c-fetch-128",
+        "c-fetch-129",
+        "c-attempt-130",
+        "c-web-21",
+        "c-web-22"
+      ],
+      "proposal_ids": [
+        "c-eddha-free-acid"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:59476b1238415a5aba57d7419fa95f98bdd5c8ea2f47755702d6c1106229710b",
+      "case_input_sha256": "52400cc081ad1be0636480fa9eb47451da48ef735164f7833aaa824f7fd43d93",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "y-aminobutyric acid",
+        "source_label": "y-aminobutyric acid",
+        "raw_source_label": "y-aminobutyric acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:bfc0840224455e7030557fdcf97890c3daaffd1c73924f5095ea9573bd069822"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The primary MediaDive P5 contributor page repeats y-aminobutyric acid in the NNM stock. The letter y plausibly represents gamma, but no identifier, positional spelling, structure or supplier confirms that interpretation.",
+      "applicability": "Single NNM-carried stock has1.55g/50ml (31g/L). ChEBI:16865 gamma-aminobutyric acid is a comparator, not an accepted exact mapping from the malformed letter.",
+      "evidence_ids": [
+        "c-frozen-51",
+        "c-recipe-51-0",
+        "c-fetch-54",
+        "c-fetch-74"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Contributor correction or original reagent identifier establishing that literal y means gamma/4-aminobutyric acid; preserve NNM-carried stock context.",
+      "missing_requirement": "Contributor correction or original reagent identifier establishing that literal y means gamma/4-aminobutyric acid; preserve NNM-carried stock context.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:5bff15b29f6a7a79fbd845595d38c6bdf7126425a3560e12fe46db4a054296c5",
+      "case_input_sha256": "785973721f4107948f2a0c3c7f50ed733655dd565e07a33416ca35b16c300082",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Histidine HCl",
+        "source_label": "Histidine HCl",
+        "raw_source_label": "Histidine HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1a82cce0fea4c64663b21160d44b638e375d41aeefec9a891519131bc6c38908"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "Original Merlen1999 CDM/LP Table1 explicitly specifies L-Histidine·HCl·H2O; bare Histidine HCl in MediaDB lost both L and monohydrate qualifiers.",
+      "applicability": "The exact CDM/LP recipe and0.13mM histidine row identify the source-specific form. Correct the source occurrence to the existing L-specific CAS5934-29-2 owner; do not publish underqualified Histidine HCl as a global alias.",
+      "evidence_ids": [
+        "c-frozen-54",
+        "c-recipe-54-0",
+        "c-attempt-94",
+        "c-attempt-96",
+        "c-web-11",
+        "c-web-14"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Source occurrence needs its supplied-form label corrected; adding the underqualified label globally would create an unsafe identity alias.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml",
+          "sha256": "891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:637edac40fcbf588526a8d556a971228a71b80b2ac02426e79115e09b388d883",
+      "case_input_sha256": "b1e0a21deaa5bca3ce6623eb3fce83aebf24b4afa25a1726385acd5978a5742c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "HEPES (free acid)",
+        "source_label": "HEPES (free acid)",
+        "raw_source_label": "HEPES (free acid)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fa97aef26b95de3147b4d36cc0365d3d9328b4d79eea97dc6e1490d82e9c2a5b"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M1060 labels HEPES free acid within a stock also containing sodium hydroxide. CHEBI:42334 represents HEPES free acid, not its sodium salt.",
+      "applicability": "components[4].items[1] is119.2g solute in a separately defined preparation; the named ingredient is free acid before dissolution. No new HEPES sodium identity is inferred from stock pH adjustment.",
+      "evidence_ids": [
+        "c-frozen-59",
+        "c-recipe-59-0",
+        "c-fetch-18",
+        "c-fetch-52"
+      ],
+      "proposal_ids": [
+        "c-hepes-freeacid"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hepes.yaml",
+          "sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:812926707601b18cb0f6a9eaaac1d8895d8d1d8fc3795df9305b1719d7cd0622",
+      "case_input_sha256": "76be6593a49bbc8f12e3ee784ac42510a75da99ee5a2f63af32ba4e8abbc7651",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "FeCl .6H 0",
+        "source_label": "FeCl .6H 0",
+        "raw_source_label": "FeCl .6H 0"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9c6f5250497a03670b2674df5b7c73a76da6721fa566c539893457b7396615ec"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "CCAP Walnes p1 identifies FeCl3·6H2O1.3g in nutrient solution. Exact CHEBI:86254 is iron(III) chloride hexahydrate.",
+      "applicability": "The source typo FeCl .6H 0 lost digits and confused O/0; source row resolves them. Retain nutrient-stock denominator, not final seawater amount.",
+      "evidence_ids": [
+        "c-frozen-66",
+        "c-recipe-66-0",
+        "c-fetch-19",
+        "c-fetch-70"
+      ],
+      "proposal_ids": [
+        "c-iron-hexahydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Fecl3_X_6_H2o.yaml",
+          "sha256": "a77cd844d1d5ec5f1deb35d0ca1eff1ee5b73b17cd140be3524fc057f0f30979"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/901"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:8781390a5a8ac08dd4020d4b266ed311a408a84bdbdc4bb630e3919e538bfff6",
+      "case_input_sha256": "3d2a3625e17d93ad60565bc65c416bcb959c1af74d24765d14c449bc612d3888",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NH4VO3",
+        "source_label": "NH4VO3",
+        "raw_source_label": "NH4VO3"
+      },
+      "occurrence_ids": [
+        "CM_OCC:23451706f49358506456e05087c20be966477aaf40126794bfeb1d9c73917b60",
+        "CM_OCC:5ecfd2ef83106a6bae25cb486fa100d1310ed244f19178ad1d1c7d20d8fa61dd"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "TOGO M2790 and M2846 name ammonium metavanadate GMO002055, matching NH4VO3 and primary supplier CAS7803-55-6.",
+      "applicability": "Both source occurrences share the same neutral ammonium salt. They join the CCAP UCM correction under one proposed CAS owner, with broad ammonium-salt class only.",
+      "evidence_ids": [
+        "c-frozen-69",
+        "c-recipe-69-0",
+        "c-recipe-69-1",
+        "c-fetch-20",
+        "c-fetch-21",
+        "c-fetch-38",
+        "c-fetch-81",
+        "c-fetch-83",
+        "c-attempt-98",
+        "c-fetch-99",
+        "c-fetch-112",
+        "c-web-12"
+      ],
+      "proposal_ids": [
+        "c-ammonium-metavanadate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82",
+      "case_input_sha256": "6b17d45fa84b9b0dd50c9d1efb5947a35c146a72ef43b8f8600d2c7ca957a8aa",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Charcoal activated",
+        "source_label": "Charcoal activated",
+        "raw_source_label": "Charcoal activated"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ac8d7e002297635304cece93d0d30f86246ed4d493226fe5296eb942fe569d1e",
+        "CM_OCC:e02bf809f29427bc19a4530ae8dd57bc628d9ade4031a4048c11ac79ca66d351"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M2133 and M2063 label activated carbon; official NCIT activated-charcoal term is appropriate for this activated material.",
+      "applicability": "Both recipes explicitly contain activated carbon (1.5g and2g inputs). Word-order reversal is safe; generic charcoal and unactivated carbon are not merged.",
+      "evidence_ids": [
+        "c-frozen-70",
+        "c-recipe-70-0",
+        "c-recipe-70-1",
+        "c-fetch-22",
+        "c-fetch-23",
+        "c-fetch-109"
+      ],
+      "proposal_ids": [
+        "c-activated-charcoal"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Activated_Charcoal.yaml",
+          "sha256": "ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:8fe511e08a2c6b069194f03325bb221aec48b9384739b61d09dee9e219f381e0",
+      "case_input_sha256": "4f503bc7d538dbe2d3dcbd58dd6bfda51a3cd504a6d596ac1a066f46aadd596c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "resorcinol",
+        "source_label": "resorcinol",
+        "raw_source_label": "resorcinol"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ef79c8398f1a0a801d19d52727a73958f96ad0560392cf250977b3324a5f8c90"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "ChEBI:27810 identifies resorcinol as benzene-1,3-diol, matching the explicit KOMODO source name. The archived2017 BacDive reproduction of DSMZ195 explicitly prescribes1mMresorcinol for DSM4661, and current DSMZ383 strain-specific PDF independently names resorcinol. No current active resorcinol owner was found in an ignored-inclusive full record scan.",
+      "applicability": "The exact KOMODO195.1 endpoint returned403 for HTTPS and HTTP; current DSMZ195 base uses acetate. Historical1mM and current DSMZ3830.11g corroborate identity but do not validate frozen2.50g/L. Preserve that exact occurrence and flag its unverified dose/version; no strain growth, dose correction or substrate-role claim is added to the ingredient proposal.",
+      "evidence_ids": [
+        "c-frozen-72",
+        "c-recipe-72-0",
+        "c-fetch-35",
+        "c-fetch-47",
+        "c-attempt-153",
+        "c-fetch-154",
+        "c-fetch-155",
+        "c-fetch-166",
+        "c-fetch-167",
+        "c-attempt-168"
+      ],
+      "proposal_ids": [
+        "c-resorcinol"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:907bb2fe736ba37d3a5087e8fbe3a8be2b99fb4150cfc042fb9cc8942bf4d3f8",
+      "case_input_sha256": "6fb94112872d60e5b0c52049e21b13ff883e17d6da86647de339902d6f5c8b20",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1.0 M NaOH",
+        "source_label": "1.0 M NaOH",
+        "raw_source_label": "1.0 M NaOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:40e3e30d196e8561888b31d31f92e79d30b8a9196333b6b57d8d6a35825143e2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2927 explicitly distinguishes1.0M sodium hydroxide from its separate0.1M stock;1.0M is numerically the same strength as1M.",
+      "applicability": "components[1].items[8] has no dose. Share only the1M stock identity with cases7/20; case92 remains distinct.",
+      "evidence_ids": [
+        "c-frozen-73",
+        "c-recipe-73-0",
+        "c-fetch-24",
+        "c-fetch-50"
+      ],
+      "proposal_ids": [
+        "c-naoh-1m-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:96498a82cd6229d9a2e17e3b012f985bb719729491803128794ff89135811dd2",
+      "case_input_sha256": "d40d057bcb0120d743ee8cdcef11ac617200befe8a1157079bfb691671654940",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Citric acid·H2O (4.8 g/L)",
+        "source_label": "Citric acid·H2O (4.8 g/L)",
+        "raw_source_label": "Citric acid·H2O (4.8 g/L)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:61b2ade4cfd6b6ee77e45adb8e4cebbe550a148f7de21110a9a0c3124cfcb569"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2231 defines citric acid monohydrate4.8g plus deionized water input1L as a stock, solute CHEBI:31404.",
+      "applicability": "components[0].items[9] adds1ml and components[7] defines stock. Frozen1 G_PER_L is the addition flattened to a mass concentration. Stock is distinct from free solute.",
+      "evidence_ids": [
+        "c-frozen-77",
+        "c-recipe-77-0",
+        "c-fetch-4",
+        "c-fetch-49"
+      ],
+      "proposal_ids": [
+        "c-citric-monohydrate-48gl-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+          "sha256": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:9afe0c8e863f4b300533068d901ca5f4ae343be302bbe439ac508def08873d1a",
+      "case_input_sha256": "5b4d058105b3fa0a0d4bcd0ef6f65b36060a68fbfbd9784073d84c3d7954583e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "5-Hydroxyectoine",
+        "source_label": "5-Hydroxyectoine",
+        "raw_source_label": "5-Hydroxyectoine"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d75ec8da1c9188d43627097a0e3bfa62a026f26e4524a187b4f60cb0b3442052",
+        "CM_OCC:655f31d8ec8363be2d149a5d445828dd8ccf14f5be5a7fd2144da56423822c21",
+        "CM_OCC:bc669e9d41f90c469fc50a6f3f60935f316d74ee59603e29e669f04b5a729909",
+        "CM_OCC:bf7c863c5fa8a6fc28fcea4816bb3d3e3d6f5992ff92e56e9cbed9871e72279e"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Primary2010 hydroxyectoine experiment and source compound label identify5-hydroxyectoine, distinct from ectoine. ChEBI:49432 supplies the corresponding5-hydroxyectoine identity.",
+      "applicability": "Four MediaDB modifiedM63 recipes differ in NaCl concentrations0.6/0.75/1.5/2.5M; the primary experiment uses20mM hydroxyectoine. The salt variation does not create different hydroxyectoine substances.",
+      "evidence_ids": [
+        "c-frozen-78",
+        "c-recipe-78-0",
+        "c-recipe-78-1",
+        "c-recipe-78-2",
+        "c-recipe-78-3",
+        "c-fetch-36",
+        "c-fetch-48",
+        "c-fetch-55",
+        "c-attempt-95"
+      ],
+      "proposal_ids": [
+        "c-5-hydroxyectoine"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:9e01e104b2466ebf1384fa319d57b756336a17b72949a706790fce05b416e6f4",
+      "case_input_sha256": "0dd2f5041688891966499b2a81618acc73cd062754ed84e6650f6a816b309a92",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 N HCl",
+        "source_label": "1 N HCl",
+        "raw_source_label": "1 N HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b8f64620d859760d7eee0ca40869fb1d3a48a9ca6e66e966e33eea60460d06f3",
+        "CM_OCC:fbd59e942ac292d49b11aaed4727710e02c5d23931b56c9d24a47c43c13e0c59",
+        "CM_OCC:a3f272dc52a94c945637787e5cf4c35d873bb80cbf4b7d685d7f974d237e4797",
+        "CM_OCC:42de058552c1f1ffd8ed3a0aab4e233963638a7391e58532e8792c79185dbbf5",
+        "CM_OCC:e45b7a0c687474bf7e203acca0fddf47aa89f42b07692e0058920e296fd623c9",
+        "CM_OCC:d48e2092a07cdac251eeeb103f9c8092ea50f37d9650ad58556fdfe081296fb9"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Six TOGO source occurrences explicitly name1N HCl. The normality-qualified solution has its own registry identity and HCl component edge.",
+      "applicability": "M2600,M2654,M2680,M2670,M1353 andM3213 were all read. M1353 components[2].items[0] is0.06ml, not0.06g/L; unquantified other doses stay unquantified.",
+      "evidence_ids": [
+        "c-frozen-79",
+        "c-recipe-79-0",
+        "c-recipe-79-1",
+        "c-recipe-79-2",
+        "c-recipe-79-3",
+        "c-recipe-79-4",
+        "c-recipe-79-5",
+        "c-fetch-8",
+        "c-fetch-25",
+        "c-fetch-26",
+        "c-fetch-27",
+        "c-fetch-28",
+        "c-fetch-29",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "proposal_ids": [
+        "c-hcl-1n-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hcl.yaml",
+          "sha256": "396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:b39790f7066493e3d1377fb754b214cb4e9713522f01df6a1aaf7fbc127e3daa",
+      "case_input_sha256": "76a5f259925d903ec1b67779fbd29246410a6e366bc49bf8a904b34799da7cf5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M NaOH",
+        "source_label": "0.1 M NaOH",
+        "raw_source_label": "0.1 M NaOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9716e2407f49dbf61ffa10d14b2f6fbed591a382667a6edf537a4d45ee667076"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2927 defines0.1M NaOH independently of the1M stock in the same medium.",
+      "applicability": "components[4].items[0] adds10ml; frozen10G_PER_L is incorrect. Preserve0.1M strength and do not merge with1M or10M.",
+      "evidence_ids": [
+        "c-frozen-92",
+        "c-recipe-92-0",
+        "c-fetch-24",
+        "c-fetch-50"
+      ],
+      "proposal_ids": [
+        "c-naoh-01m-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Naoh.yaml",
+          "sha256": "b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:b4be1043a7a5204f7e606ab1094a6ffab8b3369b20dc1de44f67e28ee22acc7c",
+      "case_input_sha256": "a856da11b511038db87c53cd213c1593036aaa8f508abb09268f2e1eff046e8a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Adenosine sulfate",
+        "source_label": "Adenosine sulfate",
+        "raw_source_label": "Adenosine sulfate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4abeb9e7ff9ed26e6fd2436f01c996c371eb9e87b0dc0783d1c7a11c1dfcfa9e"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Original Merlen1999 Table1 really says Adenosine sulfate; it is not safely normalized to adenine sulfate or free adenosine. OLS results for adenylyl sulfate are covalent nucleotide sulfates, not proof of this supplied salt.",
+      "applicability": "CDM/LP row is the sole occurrence. Text extraction can corrupt micro/milli unit symbols, so identity review does not recalculate the amount; require original supplier/catalog and sulfate stoichiometry.",
+      "evidence_ids": [
+        "c-frozen-93",
+        "c-recipe-93-0",
+        "c-attempt-94",
+        "c-attempt-96",
+        "c-fetch-104",
+        "c-web-11",
+        "c-web-14"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Original reagent supplier/catalog or chemical specification establishing adenosine sulfate stoichiometry and structure, or author correction of the table; do not substitute adenine or adenylyl sulfate.",
+      "missing_requirement": "Original reagent supplier/catalog or chemical specification establishing adenosine sulfate stoichiometry and structure, or author correction of the table; do not substitute adenine or adenylyl sulfate.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:b8338c4b155a2bff20a41a8210ba5004bc7967def36e6cf4496015fe648b75da",
+      "case_input_sha256": "e3255d7890e2f22318fe0850223829d5aa325b4b4b56c8a116f29a08fcc7f8e1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "n--Butyric acid",
+        "source_label": "n--Butyric acid",
+        "raw_source_label": "n--Butyric acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5a6ea760c376c5f496161b54a891dafacdbcd1492f5e07bb73e3674ec50cb82b",
+        "CM_OCC:a6c7aef3bd6d5263bf0df9de173ea81cedf1db25b54a4fbcd8bcfd4a59edec30"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M124 and its M1093 cross-reference identify straight-chain butyric acid, CHEBI:30772. Doubled hyphens in n-- are typographic.",
+      "applicability": "Both VFA contexts retain n-butyric rather than isobutyric acid; M1093 already represents4ml source input. No density or final-medium concentration is inferred.",
+      "evidence_ids": [
+        "c-frozen-95",
+        "c-recipe-95-0",
+        "c-recipe-95-1",
+        "c-fetch-14",
+        "c-fetch-16",
+        "c-fetch-72"
+      ],
+      "proposal_ids": [
+        "c-butyric-acid"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Butyric_Acid.yaml",
+          "sha256": "421a741e65598a494cbb8c693e06befa025c59bd49fecc32a0d37869192c7c86"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:bb2f95e190ff084cf09d7fdbdbe322a68fc0768001da33db37c0b38cb6e6900c",
+      "case_input_sha256": "6de5c09ad818f4c07aa33513a64130a14905b3786ee761be3f4d43684618a125",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 mM Na2SeO4",
+        "source_label": "1 mM Na2SeO4",
+        "raw_source_label": "1 mM Na2SeO4"
+      },
+      "occurrence_ids": [
+        "CM_OCC:80dc7357b622dcc1c4c5fdf08ee088a22dee6f067c118614960928f37870fb58"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M683 calls for1mM sodium selenate solution; exact solute CHEBI:77775 differs from selenite.",
+      "applicability": "components[1].items[0] is1ml stock input, not1g/L. Distinct stock record retains1MM solute and unspecified solvent without mapping stock identity to selenate.",
+      "evidence_ids": [
+        "c-frozen-96",
+        "c-recipe-96-0",
+        "c-fetch-30",
+        "c-attempt-78",
+        "c-fetch-79",
+        "c-fetch-101"
+      ],
+      "proposal_ids": [
+        "c-selenate-1mm-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2seo4.yaml",
+          "sha256": "5a4c0a17fa416848cd312592d9560417db3b1f54b858254b2e3a9cc28a1c24e0"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:c5a361c0ca2066fec6275de9709cf1e6b0334ab2b04a840a26c038c8546d6d6a",
+      "case_input_sha256": "cccd2e552064120673cc7477587852d29a85e4cad48d3cd3e951fcc64cd66b10",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "10-M NaOH",
+        "source_label": "10-M NaOH",
+        "raw_source_label": "10-M NaOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2e6d0008ee72c26488aa084ad160195031e21773f376069e1ef4ec71e34e1960"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M3181 specifies10-M NaOH; the hyphen is typographic but the ten-molar strength is material.",
+      "applicability": "components[0].items[9] is1.12ml. Frozen1.12G_PER_L is erroneous. Do not collapse to1M or0.1M stocks.",
+      "evidence_ids": [
+        "c-frozen-100",
+        "c-recipe-100-0",
+        "c-fetch-31",
+        "c-fetch-50"
+      ],
+      "proposal_ids": [
+        "c-naoh-10m-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Naoh.yaml",
+          "sha256": "b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:d9efff2555033aab5f7a242c01e29d250203409c1ffe5a9a60fef3b6cd19dd54",
+      "case_input_sha256": "b50be6527159a22da95ce693bb9f38f417d51973671337b8f5446b7df95630b3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Coenzyme M (2-mercaptoethanesulfonic acid)",
+        "source_label": "Coenzyme M (2-mercaptoethanesulfonic acid)",
+        "raw_source_label": "Coenzyme M (2-mercaptoethanesulfonic acid)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:265857c34a4d9db61a33e13c67442ae28fb64de1f508e1fd77cf4bb0501f3a4d"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M2660 explicitly expands Coenzyme M as2-mercaptoethanesulfonic acid. ChEBI:17905 has neutral acid formula/structure despite the current MIM preferred label ending sulfonate.",
+      "applicability": "components[3].items[0] is0.5g coenzymeM free acid input. The sodium salt is a separate identity and is not proposed here.",
+      "evidence_ids": [
+        "c-frozen-109",
+        "c-recipe-109-0",
+        "c-fetch-32",
+        "c-fetch-75",
+        "c-web-7"
+      ],
+      "proposal_ids": [
+        "c-coenzyme-m"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/2-mercaptoethanesulfonate.yaml",
+          "sha256": "e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:df45fafbf7a4e8f10a144321b964f1872687a0d4fdc05582d7199aa403af21e0",
+      "case_input_sha256": "b011f841b067337383d36194f3abddcd83a51d61f9edfbda16967dd543ca9677",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "DL--α--Methyl butyric acid",
+        "source_label": "DL--α--Methyl butyric acid",
+        "raw_source_label": "DL--α--Methyl butyric acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4739a65b375d46eb2eb4b50986a027b080ad870b1c832ef26b9b28f1fc2e3e30",
+        "CM_OCC:2395a53e440259cd2e8ce7c73dd39a875899bc77cc0ef3f875de08e9195f9e11"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "M124 and linked M1093 explicitly name DL-alpha-methylbutyric acid; alpha-methylbutyric and2-methylbutyric are the same constitutional designation. The source expressly preserves racemate.",
+      "applicability": "This differs from case9, which lacks DL. Alias attaches to the existing DL owner only; its generic CHEBI:37070 exact-grounding specificity remains a full-payload review obligation, not resolved by alias support.",
+      "evidence_ids": [
+        "c-frozen-113",
+        "c-recipe-113-0",
+        "c-recipe-113-1",
+        "c-fetch-14",
+        "c-fetch-16",
+        "c-fetch-73",
+        "c-web-8"
+      ],
+      "proposal_ids": [
+        "c-dl-methylbutyric"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Dl-2-methylbutyric_Acid.yaml",
+          "sha256": "86d91038be691420f3748192b215a9f6f5fc92cfad5b729bddab9dd4dd5c18ce"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:e3ed9f4c8837b1e374439e034ab7f30f3774d9b46f1536afad0b071ebd7e8c3b",
+      "case_input_sha256": "612474b7b513ed17d4e52b3cb8f1a94eefa121a4aaf7633d3ec3439403038a7f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "CaCl 2H O",
+        "source_label": "CaCl 2H O",
+        "raw_source_label": "CaCl 2H O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:bf88f6d49fe3904f963a97326cd1a64166ff194609cb16ce2c93418548ab4393"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "CCAP TAP salt solution p1 gives CaCl2·2H2O1g. The source image resolves missing subscripts in CaCl 2H O.",
+      "applicability": "This calcium-dihydrate input is in the TAP salt stock. Shared owner proposal includes the exact hydrate and preserves the independently noted duplicate-owner obligation.",
+      "evidence_ids": [
+        "c-frozen-116",
+        "c-recipe-116-0",
+        "c-fetch-33",
+        "c-attempt-77",
+        "c-fetch-100"
+      ],
+      "proposal_ids": [
+        "c-calcium-dihydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cacl22h2o.yaml",
+          "sha256": "5f0a5e80a9a0bee1ccdd09234041c29a1c10fb55e52c534da6f87c0c1db6e0ed"
+        },
+        {
+          "path": "data/ingredients/mapped/Cacl2_X_2_H2o.yaml",
+          "sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/901"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:e6492d46250dd1b2dd55942803568f25fa93fc984007baa7b90191e86326addc",
+      "case_input_sha256": "0d2e15bb60649ab86af7c213de5e3d2f3a5c39ff3ef588b9df37e4165d153f80",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "6 N HCl",
+        "source_label": "6 N HCl",
+        "raw_source_label": "6 N HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2dd66b17e60a1ac166e6d0b07393f227b190d3ec133db75344bbd2c88839244d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M609 explicitly names6N HCl, matching case33 concentration but not unqualified pureHCl.",
+      "applicability": "components[2].items[0] is10ml. Preserve this addition and stock identity separately; frozen10G_PER_L is a source-transform error.",
+      "evidence_ids": [
+        "c-frozen-119",
+        "c-recipe-119-0",
+        "c-fetch-34",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "proposal_ids": [
+        "c-hcl-6n-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "CM_NAME:f6b9a042c7e910c065bf1b4b1e2c934975efb42208caf4f0bfa1a966bb4f7be8",
+      "case_input_sha256": "ff40f5a58440f47a62d7108eb02ac66d391e28d26f1cc2f686301478576a6599",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "iso -Butyric acid",
+        "source_label": "iso -Butyric acid",
+        "raw_source_label": "iso -Butyric acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:08ea4e243cdb6fd7968178d29eae5f930f026d315aed07583df8a93e4d4eb458"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM1385 links its fatty-acid mixture to JCM1130, which spells isobutyric acid. The space before hyphen does not alter constitutional identity.",
+      "applicability": "Only the referenced VFA subsection is applicable; neither all JCM1130 medium composition nor the n-butyric isomer transfers.",
+      "evidence_ids": [
+        "c-frozen-122",
+        "c-recipe-122-0",
+        "c-fetch-57",
+        "c-fetch-58",
+        "c-fetch-71"
+      ],
+      "proposal_ids": [
+        "c-isobutyrate-alias"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Isobutyric_Acid.yaml",
+          "sha256": "de152124fd72af219fcdfe1bb6dce1e3254666174b8112b4d452063fa3844f31"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:2fb5c39272234dd2d46ffdae55b90f7e3f569aa6b44ab5d5220d299674d401bc",
+      "case_input_sha256": "7e7c9c96a30d6b7bb8690071dc37c98145700fa82a2fd223fb4c04fef86d3093",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:actinohivin",
+        "source_label": "actinohivin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original actinohivin publication characterizes the named114-residue anti-HIV protein. The existing kgmicrobe.compound:actinohivin registry identifies the same named molecule without importing a guessed protein accession.",
+      "applicability": "This gtdb-metatraits node has only name/id/xref, no recipe or sequence. Registry preservation adds no production, growth, protein-example or chemical-structure assertion.",
+      "evidence_ids": [
+        "c-frozen-130",
+        "c-fetch-44",
+        "c-attempt-60",
+        "c-attempt-118",
+        "c-web-9"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Existing source registry/context is retained; no external identity promotion or hold removal is asserted.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Actinohivin.yaml",
+          "sha256": "9cd36e65b83068f30d45022f98ad14f1b261ff1b7ea576f354953107b7f77b3d"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Actinohivin.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "SUPPORTED",
+                  "evidence_key": "299",
+                  "owner_record": "data/ingredients/mapped/Actinohivin.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "72c992f00e42fdba11e2997be59630bf288fb3fd3cda3bbdfd57c7562e709d86",
+                  "source_position": 299
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-05-09",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:actinohivin",
+                  "object_label": "Actinohivin",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+                  "subject_id": "MIM:Actinohivin",
+                  "subject_label": "Actinohivin",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "SUPPORTED",
+            "matched_field": "subject_label",
+            "matched_label": "Actinohivin",
+            "review_dispositions": [
+              {
+                "disposition": "SUPPORTED",
+                "evidence_key": "299",
+                "object_id": "kgmicrobe.compound:actinohivin",
+                "owner_record": "data/ingredients/mapped/Actinohivin.yaml",
+                "owner_record_sha256": "9cd36e65b83068f30d45022f98ad14f1b261ff1b7ea576f354953107b7f77b3d",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "72c992f00e42fdba11e2997be59630bf288fb3fd3cda3bbdfd57c7562e709d86",
+                "source_position": "299",
+                "subject_id": "MIM:Actinohivin"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-05-09",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:actinohivin",
+              "object_label": "Actinohivin",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+              "subject_id": "MIM:Actinohivin",
+              "subject_label": "Actinohivin",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "72c992f00e42fdba11e2997be59630bf288fb3fd3cda3bbdfd57c7562e709d86"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:3f818e36a8ba5a1e0e15da3ac90ebbe54008a59dff5363df7d7ee38240cf3bd8",
+      "case_input_sha256": "cb9f2f0d5b079fbf5927144b2c30ef5e686b8c3eebf5d0c92a91c02b346aeb6d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:786",
+        "source_label": "Citric acid x H2O",
+        "raw_source_label": "Citric acid x H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "MediaDive786 links DSMZ848 RAE medium; its original PDF p1 row4 explicitly lists citric acid xH2O1.50g, matching the frozen source. Exact ChEBI:31404 matches monohydrate; citrate(1-) aliases in the owner denote a different charge state.",
+      "applicability": "Retype three anion aliases as provenance-only. The source ingredient is neutral monohydrate, not the4.8g/L stock proposed for case77; medium pH does not change the supplied-form name into an anion synonym.",
+      "evidence_ids": [
+        "c-frozen-133",
+        "c-fetch-49",
+        "c-attempt-87",
+        "c-fetch-151",
+        "c-fetch-156",
+        "c-fetch-157",
+        "c-fetch-160",
+        "c-fetch-161",
+        "c-fetch-164"
+      ],
+      "proposal_ids": [
+        "c-citric-monohydrate-boundary"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+          "sha256": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "784",
+                  "owner_record": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: active monoanion synonyms and unsupported nutritional roles remain.",
+                  "row_sha256": "4b8cba4335d4d9155691e74e229387c2e5ccd122fd25537dcba9caeb38f5b6f5",
+                  "source_position": 784
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-12",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:31404",
+                  "object_label": "Citric acid monohydrate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "Citric acid . H2O|Citric acid·H2O|H2cit|citrate(1-)|dihydrogen citrate|Citric Acid•H2O(Fisher A 104)|CAS:5949-29-1",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]|MIM:MIM curation (#652)",
+                  "subject_id": "MIM:Citric_Acid_X_H2o",
+                  "subject_label": "Citric acid x H2O",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Citric acid x H2O",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "784",
+                "object_id": "CHEBI:31404",
+                "owner_record": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+                "owner_record_sha256": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: active monoanion synonyms and unsupported nutritional roles remain.",
+                "row_sha256": "4b8cba4335d4d9155691e74e229387c2e5ccd122fd25537dcba9caeb38f5b6f5",
+                "source_position": "784",
+                "subject_id": "MIM:Citric_Acid_X_H2o"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-12",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:31404",
+              "object_label": "Citric acid monohydrate",
+              "object_source": "obo:chebi.owl",
+              "other": "Citric acid . H2O|Citric acid·H2O|H2cit|citrate(1-)|dihydrogen citrate|Citric Acid•H2O(Fisher A 104)|CAS:5949-29-1",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]|MIM:MIM curation (#652)",
+              "subject_id": "MIM:Citric_Acid_X_H2o",
+              "subject_label": "Citric acid x H2O",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "4b8cba4335d4d9155691e74e229387c2e5ccd122fd25537dcba9caeb38f5b6f5"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Citric acid x H2O",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "784",
+                "object_id": "CHEBI:31404",
+                "owner_record": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+                "owner_record_sha256": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: active monoanion synonyms and unsupported nutritional roles remain.",
+                "row_sha256": "4b8cba4335d4d9155691e74e229387c2e5ccd122fd25537dcba9caeb38f5b6f5",
+                "source_position": "784",
+                "subject_id": "MIM:Citric_Acid_X_H2o"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-12",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:31404",
+              "object_label": "Citric acid monohydrate",
+              "object_source": "obo:chebi.owl",
+              "other": "Citric acid . H2O|Citric acid·H2O|H2cit|citrate(1-)|dihydrogen citrate|Citric Acid•H2O(Fisher A 104)|CAS:5949-29-1",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]|MIM:MIM curation (#652)",
+              "subject_id": "MIM:Citric_Acid_X_H2o",
+              "subject_label": "Citric acid x H2O",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "4b8cba4335d4d9155691e74e229387c2e5ccd122fd25537dcba9caeb38f5b6f5"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:548c45d4bf6549cfe0b6680108dce0b86165b1be3482597bf540592ca4f8bbd8",
+      "case_input_sha256": "ba8a212a69a5b86dbeac3e946e7bd2ba7d6880ef2e8dbb933f9c93c6004fa61d",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:sarcidin",
+        "source_label": "sarcidin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The1953 primary bibliographic record confirms a historical antibiotic named sarcidin from S.achromogenes, but provides no abstract or structure. No exact chemical registry promotion was verified.",
+      "applicability": "gtdb-metatraits node only names sarcidin and its existing registry owner. Keep that source identifier; do not equate all metabolites of the organism or substitute streptozotocin.",
+      "evidence_ids": [
+        "c-frozen-139",
+        "c-fetch-42",
+        "c-attempt-61",
+        "c-attempt-119",
+        "c-web-10",
+        "c-web-18"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Full1953 isolation/characterization or later primary chemical registry evidence explicitly identifying sarcidin structure and any synonym equivalence.",
+      "missing_requirement": "Full1953 isolation/characterization or later primary chemical registry evidence explicitly identifying sarcidin structure and any synonym equivalence.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sarcidin.yaml",
+          "sha256": "22a6deeb979004b617f6bf021beca83a754b435ca10813140b47bc2181c3bfef"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Sarcidin.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "SUPPORTED",
+                  "evidence_key": "2503",
+                  "owner_record": "data/ingredients/mapped/Sarcidin.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "1130710af38d7ee5fbc44634401c46ec996f265dfd115278e913442960f0d5ff",
+                  "source_position": 2503
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-05-10",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:sarcidin",
+                  "object_label": "Sarcidin",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+                  "subject_id": "MIM:Sarcidin",
+                  "subject_label": "Sarcidin",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "SUPPORTED",
+            "matched_field": "subject_label",
+            "matched_label": "Sarcidin",
+            "review_dispositions": [
+              {
+                "disposition": "SUPPORTED",
+                "evidence_key": "2503",
+                "object_id": "kgmicrobe.compound:sarcidin",
+                "owner_record": "data/ingredients/mapped/Sarcidin.yaml",
+                "owner_record_sha256": "22a6deeb979004b617f6bf021beca83a754b435ca10813140b47bc2181c3bfef",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "1130710af38d7ee5fbc44634401c46ec996f265dfd115278e913442960f0d5ff",
+                "source_position": "2503",
+                "subject_id": "MIM:Sarcidin"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-05-10",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:sarcidin",
+              "object_label": "Sarcidin",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+              "subject_id": "MIM:Sarcidin",
+              "subject_label": "Sarcidin",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "1130710af38d7ee5fbc44634401c46ec996f265dfd115278e913442960f0d5ff"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:5fba3a87640ce16f49febf724e688faec3affd5375eba57654a41e45513d22cf",
+      "case_input_sha256": "cb8bce7b6329758eddfad7875b2322ac58b22b0e5a7b6301716f5ada9cc235c5",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:azacolutin",
+        "source_label": "azacolutin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original patentUS3017327 describes azacolutin as isolated antibioticC from the named Streptomyces fermentation. That supports retaining its named registry identity, not replacing it with duramycin or another coproduct.",
+      "applicability": "metatraits node provides the bare antibiotic name. No exact external chemical structure or synonym promotion is justified by shared producing organism.",
+      "evidence_ids": [
+        "c-frozen-145",
+        "c-fetch-43",
+        "c-fetch-62"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Existing source registry/context is retained; no external identity promotion or hold removal is asserted.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Azacolutin.yaml",
+          "sha256": "25a1701923e1712d51f148a1d02a7ed4ba2662a4793546e645b26b2b864fc4ce"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Azacolutin.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "SUPPORTED",
+                  "evidence_key": "463",
+                  "owner_record": "data/ingredients/mapped/Azacolutin.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "d33aa9b08f0d29715e27c47f1f34854057d07483e1bef7be50090112f4057d36",
+                  "source_position": 463
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-05-09",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:azacolutin",
+                  "object_label": "Azacolutin",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+                  "subject_id": "MIM:Azacolutin",
+                  "subject_label": "Azacolutin",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "SUPPORTED",
+            "matched_field": "subject_label",
+            "matched_label": "Azacolutin",
+            "review_dispositions": [
+              {
+                "disposition": "SUPPORTED",
+                "evidence_key": "463",
+                "object_id": "kgmicrobe.compound:azacolutin",
+                "owner_record": "data/ingredients/mapped/Azacolutin.yaml",
+                "owner_record_sha256": "25a1701923e1712d51f148a1d02a7ed4ba2662a4793546e645b26b2b864fc4ce",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "d33aa9b08f0d29715e27c47f1f34854057d07483e1bef7be50090112f4057d36",
+                "source_position": "463",
+                "subject_id": "MIM:Azacolutin"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-05-09",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:azacolutin",
+              "object_label": "Azacolutin",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+              "subject_id": "MIM:Azacolutin",
+              "subject_label": "Azacolutin",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "d33aa9b08f0d29715e27c47f1f34854057d07483e1bef7be50090112f4057d36"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:89980152b8347a5160e5f245b49f91cc84d69057521557e3a2170a71b59dab10",
+      "case_input_sha256": "b7f348234f4bd1a445088ef927ec4f4db8095f7da75293f1d688a4e48c0eb276",
+      "source": {
+        "source": "microbedecoder",
+        "source_case_id": "kgmicrobe.compound:cyclopentanol_co2",
+        "source_label": "cyclopentanol+CO2",
+        "raw_source_label": "cyclopentanol+CO2"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The original2001 PMID11594593 abstract supports cyclopentanol/CO2 as a joint substrate condition for Methanoculleus chikugoensis MG62T only, the first frozen strain observation. It does not define one compound, a complete medium, or standalone cyclopentanol growth.",
+      "applicability": "All three frozen microbedecoder observations and embedded strain-specific holds are retained; the other two observations are not independently corroborated by PMID11594593. A separate PMID search returned an unrelated Sinorhizobium erratum and is explicitly unsuitable evidence. Existing NAMED_MEDIUM typing is not recertified; schema lacks a demonstrated growth-condition record type and no material recipe is invented.",
+      "evidence_ids": [
+        "c-frozen-149",
+        "c-attempt-116",
+        "c-attempt-117",
+        "c-web-16"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Existing source registry/context is retained; no external identity promotion or hold removal is asserted.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/CyclopentanolCO2.yaml",
+          "sha256": "7124309eeffdd8fe6e1aea37843fb554ffe353068888e502d4ca850e54ed5ce8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [
+          {
+            "row": {
+              "agent_type": "manual_agent",
+              "curation_rationale": "Records 10693/10702/10726 describe combined alcohol/CO2 context; constituent mentions are not standalone growth assertions or a complete medium. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion. Strain-matched primary growth evidence corroborates the joint condition.",
+              "disposition": "reported_joint_substrate_condition",
+              "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00505.pub2|https://doi.org/10.1099/00207713-51-5-1663|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/mapped/CyclopentanolCO2.yaml",
+              "identity_approved": "false",
+              "identity_status": "unresolved",
+              "knowledge_level": "knowledge_assertion",
+              "object_curie": "kgmicrobe.compound:cyclopentanol_co2",
+              "predicate": "biolink:consumes",
+              "primary_knowledge_source": "infores:bergey-manual",
+              "raw_record_sha256": "194369e8dd99c10f23712b3371e311f7f1e75ee354165cf2c3f248ee277c1e55",
+              "relation": "RO:0002438",
+              "source_citation": "https://doi.org/10.1002/9781118960608.gbm00505.pub2",
+              "source_column": "Bergey_Substrates_for_end_products",
+              "source_literal": "cyclopentanol+CO2",
+              "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=10693",
+              "subject": "lpsn:777867",
+              "value_encoding": "backslash"
+            },
+            "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+          },
+          {
+            "row": {
+              "agent_type": "manual_agent",
+              "curation_rationale": "Records 10693/10702/10726 describe combined alcohol/CO2 context; constituent mentions are not standalone growth assertions or a complete medium. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion. Strain-matched primary growth evidence corroborates the joint condition.",
+              "disposition": "reported_joint_substrate_condition",
+              "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00505.pub2|https://doi.org/10.1099/00207713-48-4-1281|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/mapped/CyclopentanolCO2.yaml",
+              "identity_approved": "false",
+              "identity_status": "unresolved",
+              "knowledge_level": "knowledge_assertion",
+              "object_curie": "kgmicrobe.compound:cyclopentanol_co2",
+              "predicate": "biolink:consumes",
+              "primary_knowledge_source": "infores:bergey-manual",
+              "raw_record_sha256": "1209ab79a35cf36fd64dead699ffb4017d9bcc9b6467043d9ebc56fd579e3ed8",
+              "relation": "RO:0002438",
+              "source_citation": "https://doi.org/10.1002/9781118960608.gbm00505.pub2",
+              "source_column": "Bergey_Substrates_for_end_products",
+              "source_literal": "cyclopentanol+CO2",
+              "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=10702",
+              "subject": "lpsn:777872",
+              "value_encoding": "backslash"
+            },
+            "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+          },
+          {
+            "row": {
+              "agent_type": "manual_agent",
+              "curation_rationale": "Records 10693/10702/10726 describe combined alcohol/CO2 context; constituent mentions are not standalone growth assertions or a complete medium. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion. The 1989 abstract includes the older taxon name in enzyme assays; do not infer strain-specific growth without the full result table.",
+              "disposition": "reported_joint_substrate_condition",
+              "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00508.pub2|https://doi.org/10.1111/j.1574-6968.1989.tb03130.x|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/mapped/CyclopentanolCO2.yaml",
+              "identity_approved": "false",
+              "identity_status": "unresolved",
+              "knowledge_level": "knowledge_assertion",
+              "object_curie": "kgmicrobe.compound:cyclopentanol_co2",
+              "predicate": "biolink:consumes",
+              "primary_knowledge_source": "infores:bergey-manual",
+              "raw_record_sha256": "56f1c4ed8f7660bf553131b96177a4f67acbda5702df9b81d30db9f1d7995ac3",
+              "relation": "RO:0002438",
+              "source_citation": "https://doi.org/10.1002/9781118960608.gbm00508.pub2",
+              "source_column": "Bergey_Substrates_for_end_products",
+              "source_literal": "cyclopentanol+CO2",
+              "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=10726",
+              "subject": "lpsn:777902",
+              "value_encoding": "backslash"
+            },
+            "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+          }
+        ],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/CyclopentanolCO2.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "868",
+                  "owner_record": "data/ingredients/mapped/CyclopentanolCO2.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: stale notes still describe the older unresolved label-split state.",
+                  "row_sha256": "41066a5a5ccfd48d523ab6290f4bd57c7370bf545586f5d5cbdf9b9cd208dd5d",
+                  "source_position": 868
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-08-24",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.ingredient:cyclopentanol_co2",
+                  "object_label": "Cyclopentanol+CO2",
+                  "object_source": "kgm:ingredient",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+                  "subject_id": "MIM:CyclopentanolCO2",
+                  "subject_label": "Cyclopentanol+CO2",
+                  "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Cyclopentanol+CO2",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "868",
+                "object_id": "kgmicrobe.ingredient:cyclopentanol_co2",
+                "owner_record": "data/ingredients/mapped/CyclopentanolCO2.yaml",
+                "owner_record_sha256": "7124309eeffdd8fe6e1aea37843fb554ffe353068888e502d4ca850e54ed5ce8",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: stale notes still describe the older unresolved label-split state.",
+                "row_sha256": "41066a5a5ccfd48d523ab6290f4bd57c7370bf545586f5d5cbdf9b9cd208dd5d",
+                "source_position": "868",
+                "subject_id": "MIM:CyclopentanolCO2"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-08-24",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.ingredient:cyclopentanol_co2",
+              "object_label": "Cyclopentanol+CO2",
+              "object_source": "kgm:ingredient",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+              "subject_id": "MIM:CyclopentanolCO2",
+              "subject_label": "Cyclopentanol+CO2",
+              "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+            },
+            "row_sha256": "41066a5a5ccfd48d523ab6290f4bd57c7370bf545586f5d5cbdf9b9cd208dd5d"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Cyclopentanol+CO2",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "868",
+                "object_id": "kgmicrobe.ingredient:cyclopentanol_co2",
+                "owner_record": "data/ingredients/mapped/CyclopentanolCO2.yaml",
+                "owner_record_sha256": "7124309eeffdd8fe6e1aea37843fb554ffe353068888e502d4ca850e54ed5ce8",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: stale notes still describe the older unresolved label-split state.",
+                "row_sha256": "41066a5a5ccfd48d523ab6290f4bd57c7370bf545586f5d5cbdf9b9cd208dd5d",
+                "source_position": "868",
+                "subject_id": "MIM:CyclopentanolCO2"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-08-24",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.ingredient:cyclopentanol_co2",
+              "object_label": "Cyclopentanol+CO2",
+              "object_source": "kgm:ingredient",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+              "subject_id": "MIM:CyclopentanolCO2",
+              "subject_label": "Cyclopentanol+CO2",
+              "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+            },
+            "row_sha256": "41066a5a5ccfd48d523ab6290f4bd57c7370bf545586f5d5cbdf9b9cd208dd5d"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:9383a8f4873ad942f38bf5b894fc1a770f1bcc5596590ee5421e1592e3452095",
+      "case_input_sha256": "b633c731e449c3915c3a9dfb7a4bea71f8c1973c4184af5afa9cb18016622e42",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:504",
+        "source_label": "Glycerol mono-oleate",
+        "raw_source_label": "Glycerol mono-oleate"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "MediaDive504 links DSMZ472 Pityrosporum medium; original DSMZ472 PDF explicitly gives glycerol mono-oleate (techn.)2.5g. ChEBI:75937 is monooleoylglycerol without positional specification, but does not establish the composition of the technical product.",
+      "applicability": "Original DSMZ472 confirms the2.5g technical-material input and supplies no manufacturer, catalog, purity or positional-isomer composition. Supplier/catalog or mono/di/tri-glyceride specification is required before equating the entire product with the molecular ontology term.",
+      "evidence_ids": [
+        "c-frozen-154",
+        "c-fetch-76",
+        "c-attempt-86",
+        "c-attempt-132",
+        "c-fetch-135",
+        "c-fetch-139",
+        "c-fetch-140",
+        "c-fetch-145",
+        "c-fetch-146",
+        "c-web-6"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. MediaDive504 original supplier/catalog and technical product composition/purity; determine whether identity is molecular monooleoylglycerol or a glyceride mixture.",
+      "missing_requirement": "MediaDive504 original supplier/catalog and technical product composition/purity; determine whether identity is molecular monooleoylglycerol or a glyceride mixture.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Glycerol_Mono-oleate.yaml",
+          "sha256": "5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Glycerol_Mono-oleate.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "1348",
+                  "owner_record": "data/ingredients/mapped/Glycerol_Mono-oleate.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "The report describes a generic monooleoylglycerol target and multiple CAS-resolved PubChem CIDs, without establishing identical positional/isomer scope for every exported token and CAS.",
+                  "row_sha256": "ceaad9288455a38d97583b897fd48871f3a47245a94f1c8646a0cb20f82192c0",
+                  "source_position": 1348
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-08-27",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:75937",
+                  "object_label": "monooleoylglycerol",
+                  "object_source": "obo:chebi.owl",
+                  "other": "(9Z-octadecenoyl)-glycerol|MG[18:1(omega-9)]|mono-(9Z)-octadecenoylglycerol|oleoylglycerol|CAS:129784-87-8",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+                  "subject_id": "MIM:Glycerol_Mono-oleate",
+                  "subject_label": "Glycerol mono-oleate",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Glycerol mono-oleate",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "1348",
+                "object_id": "CHEBI:75937",
+                "owner_record": "data/ingredients/mapped/Glycerol_Mono-oleate.yaml",
+                "owner_record_sha256": "5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "The report describes a generic monooleoylglycerol target and multiple CAS-resolved PubChem CIDs, without establishing identical positional/isomer scope for every exported token and CAS.",
+                "row_sha256": "ceaad9288455a38d97583b897fd48871f3a47245a94f1c8646a0cb20f82192c0",
+                "source_position": "1348",
+                "subject_id": "MIM:Glycerol_Mono-oleate"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:75937",
+              "object_label": "monooleoylglycerol",
+              "object_source": "obo:chebi.owl",
+              "other": "(9Z-octadecenoyl)-glycerol|MG[18:1(omega-9)]|mono-(9Z)-octadecenoylglycerol|oleoylglycerol|CAS:129784-87-8",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:Glycerol_Mono-oleate",
+              "subject_label": "Glycerol mono-oleate",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "ceaad9288455a38d97583b897fd48871f3a47245a94f1c8646a0cb20f82192c0"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Glycerol mono-oleate",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "1348",
+                "object_id": "CHEBI:75937",
+                "owner_record": "data/ingredients/mapped/Glycerol_Mono-oleate.yaml",
+                "owner_record_sha256": "5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "The report describes a generic monooleoylglycerol target and multiple CAS-resolved PubChem CIDs, without establishing identical positional/isomer scope for every exported token and CAS.",
+                "row_sha256": "ceaad9288455a38d97583b897fd48871f3a47245a94f1c8646a0cb20f82192c0",
+                "source_position": "1348",
+                "subject_id": "MIM:Glycerol_Mono-oleate"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:75937",
+              "object_label": "monooleoylglycerol",
+              "object_source": "obo:chebi.owl",
+              "other": "(9Z-octadecenoyl)-glycerol|MG[18:1(omega-9)]|mono-(9Z)-octadecenoylglycerol|oleoylglycerol|CAS:129784-87-8",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:Glycerol_Mono-oleate",
+              "subject_label": "Glycerol mono-oleate",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "ceaad9288455a38d97583b897fd48871f3a47245a94f1c8646a0cb20f82192c0"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:93dd93be38a47dd2c0fb2bca1c58940f3fd791491e16a468a8cc3e19bf4e038a",
+      "case_input_sha256": "ae84f7a778faa9a5141f1bc8d522a7085f104992b1d4d409ef52b11e8d6be4a0",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:actinohivin",
+        "source_label": "actinohivin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The original actinohivin protein characterization applies to this same named registry, independently of its occurrence in a second source stream.",
+      "applicability": "metatraits record, distinct from case130 gtdb-metatraits, contains no supplied sequence/form. Preserve source id and existing registry without inferred protein examples or roles.",
+      "evidence_ids": [
+        "c-frozen-155",
+        "c-fetch-44",
+        "c-attempt-60",
+        "c-attempt-118",
+        "c-web-9"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Existing source registry/context is retained; no external identity promotion or hold removal is asserted.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Actinohivin.yaml",
+          "sha256": "9cd36e65b83068f30d45022f98ad14f1b261ff1b7ea576f354953107b7f77b3d"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Actinohivin.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "SUPPORTED",
+                  "evidence_key": "299",
+                  "owner_record": "data/ingredients/mapped/Actinohivin.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "72c992f00e42fdba11e2997be59630bf288fb3fd3cda3bbdfd57c7562e709d86",
+                  "source_position": 299
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-05-09",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:actinohivin",
+                  "object_label": "Actinohivin",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+                  "subject_id": "MIM:Actinohivin",
+                  "subject_label": "Actinohivin",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "SUPPORTED",
+            "matched_field": "subject_label",
+            "matched_label": "Actinohivin",
+            "review_dispositions": [
+              {
+                "disposition": "SUPPORTED",
+                "evidence_key": "299",
+                "object_id": "kgmicrobe.compound:actinohivin",
+                "owner_record": "data/ingredients/mapped/Actinohivin.yaml",
+                "owner_record_sha256": "9cd36e65b83068f30d45022f98ad14f1b261ff1b7ea576f354953107b7f77b3d",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "72c992f00e42fdba11e2997be59630bf288fb3fd3cda3bbdfd57c7562e709d86",
+                "source_position": "299",
+                "subject_id": "MIM:Actinohivin"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-05-09",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:actinohivin",
+              "object_label": "Actinohivin",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+              "subject_id": "MIM:Actinohivin",
+              "subject_label": "Actinohivin",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "72c992f00e42fdba11e2997be59630bf288fb3fd3cda3bbdfd57c7562e709d86"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef",
+      "case_input_sha256": "74c1f4b6828f9a5bb64089e9477f555a5c0dfab176430ad5da3e609ef0334b81",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:300",
+        "source_label": "Poly[R-3-hydroxybutyric acid]",
+        "raw_source_label": "Poly[(R)-3-hydroxybutyric acid]"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "MediaDive300 explicitly gives Poly[(R)-3-hydroxybutyric acid] and SIGMA. Primary Sigma363502 and exact ChEBI:131525 support R-specific PHB. Current CAS29435-48-1 owner erroneously maps to monomer and carries finite-trimer chemistry.",
+      "applicability": "Propose atomic canonical-owner correction plus UNMAPPED_0494 duplicate retirement. Preserve polymer repeat-unit structure and reject the former unqualified name as a resolving alias to prevent stereochemical collapse.",
+      "evidence_ids": [
+        "c-frozen-172",
+        "c-attempt-40",
+        "c-fetch-66",
+        "c-attempt-88",
+        "c-attempt-92",
+        "c-web-4"
+      ],
+      "proposal_ids": [
+        "c-r-polymer-identity",
+        "c-r-polymer-tombstone"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml",
+          "sha256": "9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848"
+        },
+        {
+          "path": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+          "sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/268"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+            "rows": []
+          }
+        ],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba",
+      "case_input_sha256": "60659735ca2949f27515013453c384c018c2092af97d3ed2f60193bf67366d4d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2121",
+        "source_label": "poly-ß-hydroxybutyric acid",
+        "raw_source_label": "poly-ß-hydroxybutyric acid"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "MediaDive2121 links stock5634 and DSMZ474. Original DSMZ474 PDF explicitly prepares3g poly-ß-hydroxybutyric acid in100mlwater, then adds6.6mlsuspension per100mlsecond-layer agar. It gives no R/S specification; ChEBI:53389 represents the unspecified polymer.",
+      "applicability": "MediaDive2121 raw ß is retained as source typography. Its automatic CAS29435-48-1 enrichment does not establish R stereochemistry against the source recipe. Merge only generic UNMAPPED_0493 into generic polymer; the3g source component is distinct from both suspension and final agar concentration.",
+      "evidence_ids": [
+        "c-frozen-173",
+        "c-fetch-41",
+        "c-fetch-67",
+        "c-attempt-89",
+        "c-fetch-152",
+        "c-fetch-158",
+        "c-fetch-159",
+        "c-fetch-162",
+        "c-fetch-163",
+        "c-fetch-165",
+        "c-web-5"
+      ],
+      "proposal_ids": [
+        "c-generic-polymer-alias",
+        "c-generic-polymer-tombstone"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Poly_3-hydroxybutyrate.yaml",
+          "sha256": "756a84a31ed953b782a4ddc31b346401ddceb3d12260d39d32e9fabb8c88310d"
+        },
+        {
+          "path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+          "sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+            "rows": []
+          }
+        ],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:c37f4832a54734ac2d32eef0abccfea08815b072cf677b1ab9ab3bbe608a850f",
+      "case_input_sha256": "a72abd967a55c99df7b3ff33add84c528ef00688a97d37954811fa2a24b79b68",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:sarcidin",
+        "source_label": "sarcidin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Sarcidin retains the historical named-antibiotic evidence but no verified exact structure or registry equivalence.",
+      "applicability": "This metatraits node is separately accounted from gtdb-metatraits case139. Same name is insufficient to invent CAS, CHEBI term, supplied purity or downstream role.",
+      "evidence_ids": [
+        "c-frozen-174",
+        "c-fetch-42",
+        "c-attempt-61",
+        "c-attempt-119",
+        "c-web-10",
+        "c-web-18"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained owner edit is justified beyond the source-scoped disposition. Full1953 isolation/characterization or later primary registry evidence tying this metatraits sarcidin label to an exact substance identity.",
+      "missing_requirement": "Full1953 isolation/characterization or later primary registry evidence tying this metatraits sarcidin label to an exact substance identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sarcidin.yaml",
+          "sha256": "22a6deeb979004b617f6bf021beca83a754b435ca10813140b47bc2181c3bfef"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Sarcidin.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "SUPPORTED",
+                  "evidence_key": "2503",
+                  "owner_record": "data/ingredients/mapped/Sarcidin.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "1130710af38d7ee5fbc44634401c46ec996f265dfd115278e913442960f0d5ff",
+                  "source_position": 2503
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-05-10",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:sarcidin",
+                  "object_label": "Sarcidin",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+                  "subject_id": "MIM:Sarcidin",
+                  "subject_label": "Sarcidin",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "SUPPORTED",
+            "matched_field": "subject_label",
+            "matched_label": "Sarcidin",
+            "review_dispositions": [
+              {
+                "disposition": "SUPPORTED",
+                "evidence_key": "2503",
+                "object_id": "kgmicrobe.compound:sarcidin",
+                "owner_record": "data/ingredients/mapped/Sarcidin.yaml",
+                "owner_record_sha256": "22a6deeb979004b617f6bf021beca83a754b435ca10813140b47bc2181c3bfef",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "1130710af38d7ee5fbc44634401c46ec996f265dfd115278e913442960f0d5ff",
+                "source_position": "2503",
+                "subject_id": "MIM:Sarcidin"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-05-10",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:sarcidin",
+              "object_label": "Sarcidin",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation",
+              "subject_id": "MIM:Sarcidin",
+              "subject_label": "Sarcidin",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "1130710af38d7ee5fbc44634401c46ec996f265dfd115278e913442960f0d5ff"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:c856991d15fde0c056753101242e0681c00b899cb6a7a9bc51bc9a01674a45ca",
+      "case_input_sha256": "198061cdc6f9aa9eaca111f56e42f5e32d7478e625d0338b982b1909e0723d47",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1902",
+        "source_label": "NH42S4",
+        "raw_source_label": "(NH4)2S4"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The admitted MediaDive1902 raw record literally says(NH4)2S4, not(NH4)2SO4. ChEBI:62946 ammonium sulfate requires four oxygens; restoring oxygen would change chemistry and is not justified by the near name.",
+      "applicability": "MediaDive1902 links J826; original JCM826 first ingredient also reads(NH4)2S4 at1.3g. Thus the original sheet does not resolve the formula. Current sulfate owner has this as an active EXACT_SYNONYM; the isolated proposal quarantines it as REJECTED_LABEL while retaining its raw provenance and all holds.",
+      "evidence_ids": [
+        "c-frozen-175",
+        "c-attempt-84",
+        "c-fetch-113",
+        "c-attempt-131",
+        "c-fetch-134",
+        "c-fetch-137",
+        "c-fetch-138",
+        "c-fetch-143",
+        "c-fetch-144"
+      ],
+      "proposal_ids": [
+        "c-sulfate-malformed-alias"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Provider correction or reagent specification for JCM826 first ingredient: the original JCM826 sheet itself repeats(NH4)2S4 at1.3g. Neither source lists an identifier, so restoring oxygen to infer sulfate remains unsupported.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nh42so4.yaml",
+          "sha256": "1806053b7d0adc25bd2d1a84f0aeae92185a69f84d2db46abe816c75c21db48d"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Nh42so4.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2089",
+                  "owner_record": "data/ingredients/mapped/Nh42so4.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: final other has a malformed formula and a Fisher catalog label.",
+                  "row_sha256": "839a86d2d26273c5c23812f479ba3587ba5c9bef49422d8323f37415fb780529",
+                  "source_position": 2089
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-10",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:62946",
+                  "object_label": "ammonium sulfate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "(NH4)2 SO4|(NH4)2S4|ammonium sulfate (2:1)|ammonium sulphate|diammonium sulfate|diazanium sulfate|mascagnite|sulfuric acid ammonium salt (1:2)|sulfuric acid, diammonium salt|sulphate of ammonia|(NH4)2SO4(Fisher A 702)|CAS:7783-20-2",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:PubMed search ('(NH4)2SO4')|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+                  "subject_id": "MIM:Nh42so4",
+                  "subject_label": "(NH4)2SO4",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "other",
+            "matched_label": "(NH4)2S4",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "2089",
+                "object_id": "CHEBI:62946",
+                "owner_record": "data/ingredients/mapped/Nh42so4.yaml",
+                "owner_record_sha256": "1806053b7d0adc25bd2d1a84f0aeae92185a69f84d2db46abe816c75c21db48d",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: final other has a malformed formula and a Fisher catalog label.",
+                "row_sha256": "839a86d2d26273c5c23812f479ba3587ba5c9bef49422d8323f37415fb780529",
+                "source_position": "2089",
+                "subject_id": "MIM:Nh42so4"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-10",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:62946",
+              "object_label": "ammonium sulfate",
+              "object_source": "obo:chebi.owl",
+              "other": "(NH4)2 SO4|(NH4)2S4|ammonium sulfate (2:1)|ammonium sulphate|diammonium sulfate|diazanium sulfate|mascagnite|sulfuric acid ammonium salt (1:2)|sulfuric acid, diammonium salt|sulphate of ammonia|(NH4)2SO4(Fisher A 702)|CAS:7783-20-2",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:PubMed search ('(NH4)2SO4')|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:Nh42so4",
+              "subject_label": "(NH4)2SO4",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "839a86d2d26273c5c23812f479ba3587ba5c9bef49422d8323f37415fb780529"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:e7b098420353431e3ddf43c82bd76e81c9c4813e6ff8e6ccdd07b2e578e3f602",
+      "case_input_sha256": "50173687647b4e91c67090553e3c5887afb7c63fec7e54a963fd81daa38ce5bb",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:cephamycin_a",
+        "source_label": "cephamycin A",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "Primary1972 isolation paper distinguishes cephamycinA, B andC. ChEBI:55429 is the broader cephamycin class; its R-group structure does not describe the individual factorA.",
+      "applicability": "metatraits node only says cephamycinA. Remove copied class chemistry in proposed owner, retain registry and asymmetric broad relationship; no exact mapping to cephamycinC or other lexical hit.",
+      "evidence_ids": [
+        "c-frozen-181",
+        "c-attempt-63",
+        "c-fetch-107",
+        "c-fetch-110",
+        "c-fetch-111",
+        "c-attempt-115",
+        "c-web-15"
+      ],
+      "proposal_ids": [
+        "c-cephamycin-parent-chemistry"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cephamycin_A.yaml",
+          "sha256": "bede58a6e1b02beb09c9536b7db3bc48b75c0167ec89a240faafcccbf94a51f3"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/268"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Cephamycin_A.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "723",
+                  "owner_record": "data/ingredients/mapped/Cephamycin_A.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: parent class chemistry, an exported produces source statement, and a provisional SELECTIVE_AGENT role need curation.",
+                  "row_sha256": "8ed36ce826d29cd5565378f40ba7165b70985c787445ca15c6ba20845b2a0ae3",
+                  "source_position": 723
+                },
+                "row": {
+                  "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-09-20",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "CHEBI:55429",
+                  "object_label": "cephamycin",
+                  "object_source": "obo:chebi.owl",
+                  "other": "",
+                  "predicate_id": "skos:broadMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:CHEBI via OLS (label-exact)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]",
+                  "subject_id": "MIM:Cephamycin_A",
+                  "subject_label": "Cephamycin A",
+                  "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+                }
+              },
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "724",
+                  "owner_record": "data/ingredients/mapped/Cephamycin_A.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: parent class chemistry, an exported produces source statement, and a provisional SELECTIVE_AGENT role need curation.",
+                  "row_sha256": "04de3458800a10c76e0c8a8ccc81f701857439ae8276f8fa3ddf8474230f3da0",
+                  "source_position": 724
+                },
+                "row": {
+                  "comment": "Registry/identity row preserving kgmicrobe.compound:cephamycin_a alongside parent CHEBI:55429.",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-02",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:cephamycin_a",
+                  "object_label": "Cephamycin A",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:CHEBI via OLS (label-exact)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]",
+                  "subject_id": "MIM:Cephamycin_A",
+                  "subject_label": "Cephamycin A",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Cephamycin A",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "723",
+                "object_id": "CHEBI:55429",
+                "owner_record": "data/ingredients/mapped/Cephamycin_A.yaml",
+                "owner_record_sha256": "bede58a6e1b02beb09c9536b7db3bc48b75c0167ec89a240faafcccbf94a51f3",
+                "predicate_id": "skos:broadMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: parent class chemistry, an exported produces source statement, and a provisional SELECTIVE_AGENT role need curation.",
+                "row_sha256": "8ed36ce826d29cd5565378f40ba7165b70985c787445ca15c6ba20845b2a0ae3",
+                "source_position": "723",
+                "subject_id": "MIM:Cephamycin_A"
+              }
+            ],
+            "row": {
+              "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+              "confidence": "0.9",
+              "mapping_date": "2026-09-20",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:55429",
+              "object_label": "cephamycin",
+              "object_source": "obo:chebi.owl",
+              "other": "",
+              "predicate_id": "skos:broadMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:CHEBI via OLS (label-exact)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]",
+              "subject_id": "MIM:Cephamycin_A",
+              "subject_label": "Cephamycin A",
+              "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+            },
+            "row_sha256": "8ed36ce826d29cd5565378f40ba7165b70985c787445ca15c6ba20845b2a0ae3"
+          },
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Cephamycin A",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "724",
+                "object_id": "kgmicrobe.compound:cephamycin_a",
+                "owner_record": "data/ingredients/mapped/Cephamycin_A.yaml",
+                "owner_record_sha256": "bede58a6e1b02beb09c9536b7db3bc48b75c0167ec89a240faafcccbf94a51f3",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: parent class chemistry, an exported produces source statement, and a provisional SELECTIVE_AGENT role need curation.",
+                "row_sha256": "04de3458800a10c76e0c8a8ccc81f701857439ae8276f8fa3ddf8474230f3da0",
+                "source_position": "724",
+                "subject_id": "MIM:Cephamycin_A"
+              }
+            ],
+            "row": {
+              "comment": "Registry/identity row preserving kgmicrobe.compound:cephamycin_a alongside parent CHEBI:55429.",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-02",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:cephamycin_a",
+              "object_label": "Cephamycin A",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:CHEBI via OLS (label-exact)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]",
+              "subject_id": "MIM:Cephamycin_A",
+              "subject_label": "Cephamycin A",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "04de3458800a10c76e0c8a8ccc81f701857439ae8276f8fa3ddf8474230f3da0"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:ee007a0d70e088ab96b3b7099f19b465d879bce4c31d7fec54afb5417d6f02fd",
+      "case_input_sha256": "34688a97eec33184bd18454b974b1968deb4960ca9eea8ddf472e05beb8f3f53",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2160",
+        "source_label": "Na2SiO3 x 5 H2O",
+        "raw_source_label": "Na2SiO3 x 5 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive2160 links DSMZ1828 and CCAPC59. Original DSMZ1828 PDF p1 specifies21.2g/L pentahydrate stock1ml; C59 explicitly specifies2.12g/100ml stock1ml, the same strength. Solute formula specifies pentahydrate, distinct from nonahydrate or generic sodium silicate.",
+      "applicability": "Propose source-qualified registry stock with named unresolved pentahydrate component and21.2G_PER_L. No active barehydrate synonym on stock, no pure-solute identity collapse, no invented solvent.",
+      "evidence_ids": [
+        "c-frozen-184",
+        "c-attempt-85",
+        "c-fetch-103",
+        "c-attempt-120",
+        "c-attempt-133",
+        "c-fetch-136",
+        "c-fetch-141",
+        "c-fetch-142",
+        "c-fetch-147",
+        "c-fetch-148",
+        "c-fetch-149",
+        "c-fetch-150"
+      ],
+      "proposal_ids": [
+        "c-silicate-pentahydrate-212gl-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-silicate.yaml",
+          "sha256": "5655d72545f3b5e0d55759fcada4bf9e516fa3a66287590f4f6fc2cc1e91c2e2"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Na-silicate.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "1998",
+                  "owner_record": "data/ingredients/mapped/Na-silicate.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: final SSSOM publishes a numbered source artifact.",
+                  "row_sha256": "fa6996e0cbebba70b39f5e6175b48e33e7fffdff8c8a9c61832918ffa984333b",
+                  "source_position": 1998
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-02",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:60720",
+                  "object_label": "sodium silicate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "(5)  Sodium metasilicate|Na silicate|Sodium polysilicate|Sodium sesquisilicate|Sodium silicate glass|Sodium siliconate|disodium oxosilanediolate|CAS:1344-09-8",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+                  "subject_id": "MIM:Na-silicate",
+                  "subject_label": "Na-silicate",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    },
+    {
+      "case_id": "KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c",
+      "case_input_sha256": "5059550cd0e838a5474319599692bd95168be806729fc1a2121a988aa4d68082",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:ardacin_a",
+        "source_label": "ardacin A",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "Official GSRS572P13F83X explicitly names ArdacinA/AridicinA and supplies primary CAS95935-21-0. Original papers distinguish A/B/C and document renaming. Exact-name/CAS searches did not verify a specific CHEBI/NCIT term.",
+      "applicability": "metatraits A-specific source supports a concrete CAS promotion proposal. Replace generic NCITArdacin complex target with broad molecular class CHEBI:24396 glycopeptide; existing supported export evidence cannot be inherited after owner bytes/identifier change.",
+      "evidence_ids": [
+        "c-frozen-185",
+        "c-fetch-45",
+        "c-fetch-90",
+        "c-fetch-122",
+        "c-attempt-123",
+        "c-fetch-125",
+        "c-fetch-126",
+        "c-fetch-127",
+        "c-web-19",
+        "c-web-20"
+      ],
+      "proposal_ids": [
+        "c-ardacin-a-cas"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ardacin_A.yaml",
+          "sha256": "617a2ddb12f0712cea0d92f46f8b3c784a9181c1a9d74dd98320672dcbf6986e"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "inherited_context": {
+        "downstream_holds": [],
+        "owner_native_review_rows": [
+          {
+            "path": "data/ingredients/mapped/Ardacin_A.yaml",
+            "rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "426",
+                  "owner_record": "data/ingredients/mapped/Ardacin_A.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "db781b7495a197849b0e451d86ab8101a24180a7f733e7f73da4f0eff7ef14f8",
+                  "source_position": 426
+                },
+                "row": {
+                  "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-09-20",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "NCIT:C169786",
+                  "object_label": "Ardacin",
+                  "object_source": "obo:ncit.owl",
+                  "other": "",
+                  "predicate_id": "skos:broadMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms",
+                  "subject_id": "MIM:Ardacin_A",
+                  "subject_label": "Ardacin A",
+                  "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+                }
+              },
+              {
+                "decision": {
+                  "disposition": "SUPPORTED",
+                  "evidence_key": "427",
+                  "owner_record": "data/ingredients/mapped/Ardacin_A.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                  "row_sha256": "db44565527a4b67e962b2617c3bafdb7a58fc52266b951fc8ab5d179a7b01898",
+                  "source_position": 427
+                },
+                "row": {
+                  "comment": "Registry/identity row preserving kgmicrobe.compound:ardacin_a alongside parent NCIT:C169786.",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-05-02",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:ardacin_a",
+                  "object_label": "Ardacin A",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms",
+                  "subject_id": "MIM:Ardacin_A",
+                  "subject_label": "Ardacin A",
+                  "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+                }
+              }
+            ]
+          }
+        ],
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "SUPPORTED",
+            "matched_field": "subject_label",
+            "matched_label": "Ardacin A",
+            "review_dispositions": [
+              {
+                "disposition": "SUPPORTED",
+                "evidence_key": "427",
+                "object_id": "kgmicrobe.compound:ardacin_a",
+                "owner_record": "data/ingredients/mapped/Ardacin_A.yaml",
+                "owner_record_sha256": "617a2ddb12f0712cea0d92f46f8b3c784a9181c1a9d74dd98320672dcbf6986e",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "db44565527a4b67e962b2617c3bafdb7a58fc52266b951fc8ab5d179a7b01898",
+                "source_position": "427",
+                "subject_id": "MIM:Ardacin_A"
+              }
+            ],
+            "row": {
+              "comment": "Registry/identity row preserving kgmicrobe.compound:ardacin_a alongside parent NCIT:C169786.",
+              "confidence": "0.99",
+              "mapping_date": "2026-05-02",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:ardacin_a",
+              "object_label": "Ardacin A",
+              "object_source": "kgm:compound",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms",
+              "subject_id": "MIM:Ardacin_A",
+              "subject_label": "Ardacin A",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            },
+            "row_sha256": "db44565527a4b67e962b2617c3bafdb7a58fc52266b951fc8ab5d179a7b01898"
+          },
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "Ardacin A",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "426",
+                "object_id": "NCIT:C169786",
+                "owner_record": "data/ingredients/mapped/Ardacin_A.yaml",
+                "owner_record_sha256": "617a2ddb12f0712cea0d92f46f8b3c784a9181c1a9d74dd98320672dcbf6986e",
+                "predicate_id": "skos:broadMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "db781b7495a197849b0e451d86ab8101a24180a7f733e7f73da4f0eff7ef14f8",
+                "source_position": "426",
+                "subject_id": "MIM:Ardacin_A"
+              }
+            ],
+            "row": {
+              "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+              "confidence": "0.9",
+              "mapping_date": "2026-09-20",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "NCIT:C169786",
+              "object_label": "Ardacin",
+              "object_source": "obo:ncit.owl",
+              "other": "",
+              "predicate_id": "skos:broadMatch",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms",
+              "subject_id": "MIM:Ardacin_A",
+              "subject_label": "Ardacin A",
+              "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+            },
+            "row_sha256": "db781b7495a197849b0e451d86ab8101a24180a7f733e7f73da4f0eff7ef14f8"
+          }
+        ],
+        "review_dispositions": []
+      },
+      "publication_admission": "WITHHELD for every changed/new proposed owner until exact after-byte native review and independent review, source-aware shared-owner reconciliation, guarded integration and release gate; unchanged owner dispositions do not remove inherited holds."
+    }
+  ]
+}

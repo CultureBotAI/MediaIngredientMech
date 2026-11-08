@@ -1,0 +1,9 @@
+`data/ingredients/mapped/Citric_Acid_X_H2o.yaml` correctly identifies neutral citric acid monohydrate as `CHEBI:31404`, but its resolving RAW_TEXT synonyms include `H2cit`, `citrate(1-)` and `dihydrogen citrate`. Those tokens came from `sssom_other_backfill` and denote the singly charged citrate anion, not the neutral supplied monohydrate.
+
+The frozen campaign file and live `main` file retrieved on 2026-11-08 have the same SHA256, `75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963`. [MediaDive ingredient 786](https://mediadive.dsmz.de/ingredients/786) names citric acid x H2O; its mass/mmol values are consistent with monohydrate. [ChEBI:31404](https://www.ebi.ac.uk/chebi/CHEBI:31404) supplies the exact neutral hydrate identity. The retained primary ChEBI API capture SHA256 is `b9ce27ea0ff8795c3b9d0c31f06e8863c48044907e12e551d2a1c80f61c69af2`.
+
+Worker03 proposal `c-citric-monohydrate-boundary` retypes these three incompatible aliases as REJECTED_LABEL while retaining their provenance. Keep the genuine hydrate spellings and the existing monohydrate identity. Rejecting a mismatched source label does not assert that the culture contains no citrate anions after dissolution; it preserves the distinction between supplied substance and solution species.
+
+This is an isolated proposal, not an applied curation change. Coordinator integration must synchronize SSSOM and re-review the changed owner under the current native holds before publishing it. The exact candidate payload and independent review are under `reports/all_unmatched_20261107/worker-03/chemicals/`.
+
+Deduplication: all-state searches and the relevant bodies/comments for #699, #704, #757, #345, #353 and the hydrate work #652/#321 were inspected. They cover other wrong-form labels, sodium citrate or hydrate identity; none records removal of these three aliases from this neutral monohydrate owner. #669/#232 remain the broader label-ownership context.

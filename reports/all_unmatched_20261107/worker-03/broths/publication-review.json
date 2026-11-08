@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/broths",
+  "author": "/root",
+  "reviewed_at": "2026-11-08T05:37:02.564135+00:00",
+  "status": "complete",
+  "review_scope": "Independent read-only review of the exact two publication bodies against all three independent scientific review reports, actual core and proposal payload hashes, JCM431 correction/primary/peer captures, archived prior bytes, indexed issue search and live referenced issue metadata. This is publication accuracy review, not native data or release approval.",
+  "bodies": [
+    {
+      "path": "context/issue-review-corrections-draft.md",
+      "sha256": "bb8bf0c6932f473e4c83ebabcd7fb2b0d1512850e0ecb4fdf0165c261163f59b",
+      "verdict": "ready_for_publication",
+      "reason": "Five finding IDs accurately summarize their resolved bounded proposal/review corrections. All three report hashes,188case total and74proposal total match actual report/core/payload bytes; the sixth JCM431 finding is explicitly separate. Deduplication wording now names the two finding IDs actually queried. Resorcinol dose/version is not called a confirmed defect."
+    },
+    {
+      "path": "context/comment-jcm431-rereview-draft.md",
+      "sha256": "9b61c3e4e21d36a477862ab345152fe1f0482bb15ea0dc77844e1756d5ebd1db",
+      "verdict": "ready_for_publication",
+      "reason": "Exact three worker03 case IDs, shared before-owner hash, corrected after hash, prior/amended independent review hashes and peer payload/head agree with retained artifacts. JCM1081 explicit hyperlink, JCM431 four-component subsection and MediaDive ingredient1921 context support occurrence routing, not a global bare numbered alias. Prior review/payload archives remain intact; amended review admits and supersedes the miss. No cross-shard winner or release approval is claimed."
+    }
+  ],
+  "review_report_sha256": {
+    "materials/independent-review-of-broths.json": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8",
+    "broths/independent-review-of-chemicals.json": "27b2531af69f9db9d2301d6183ed5ad0669e1229b0c279814e1d37de9d6e9605",
+    "chemicals/independent-review-of-materials.json": "538eaf7b66609279db6e4d6544b53d4a87a3aa469fab256bfa81dc1fcbde70af"
+  },
+  "checks": {
+    "all_three_review_core_hashes_match": true,
+    "all_74_final_proposal_payload_hashes_match": true,
+    "reported_case_counts_match": [
+      86,
+      51,
+      51
+    ],
+    "reported_proposal_counts_match": [
+      20,
+      34,
+      20
+    ],
+    "jcm431_case_ids_exact": true,
+    "jcm431_before_owner_sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549",
+    "jcm431_after_payload_sha256": "83ffd40a40010e3b5c997565750e523539ebe3bfc9bc5332d42f2f7aef16db1f",
+    "jcm431_old_review_sha256": "2625ce3c28ccf98b774e18ab27298e2902e9ea7d4c56bbb7b2bf2379c658ac99",
+    "jcm431_amended_review_sha256": "538eaf7b66609279db6e4d6544b53d4a87a3aa469fab256bfa81dc1fcbde70af",
+    "all_archived_prior_file_hashes_match": true,
+    "peer_payload_hash_matches": true,
+    "maintained_surface_diff_against_assigned_base_empty": true,
+    "live_reference_issue_numbers_and_titles_verified": [
+      1182,
+      1183,
+      1184,
+      1185,
+      1186,
+      676
+    ]
+  },
+  "findings": [
+    {
+      "finding_id": "PUB-W03-1",
+      "status": "resolved",
+      "initial_body_sha256": "9a5d679fdd48c617fce1c2dc14cddbe5887888f733dbbec3b85d389ded03559b",
+      "finding": "The phrase these finding IDs implied all five IDs had been searched, but the retained exact query used only C-B2 and B-M1 alongside worker03 spellings.",
+      "correction": "Final wording explicitly identifies representative finding IDs C-B2 and B-M1; final body reread and hash verified."
+    }
+  ],
+  "open_findings": [],
+  "supporting_artifact_sha256": {
+    "materials/post-review-adjudication.json": "be53eab8d126508d2f4493ab6e823a64e4163afb1e990c5a107cbf17fd41e388",
+    "materials/jcm431-pointer-correction.json": "a0bcee3028f1518010d72e72bf9f88c39e51d8236488e5ae07cc7032a07a2b22",
+    "materials/superseded/jcm431-pointer-v1/archive.json": "10faa49da4014de502e319de6054a8209b89955ed6ea30afff410c97770d74a5",
+    "chemicals/independent-review-of-materials-before-cross-shard.json": "2625ce3c28ccf98b774e18ab27298e2902e9ea7d4c56bbb7b2bf2379c658ac99",
+    "context/cross-shard-w01/observation.json": "9d6f6ebc048b8f666cd8a6b14872ed1c2a585ec442e46ab4ea0f35e2db106ebd",
+    "context/cross-shard-w01/Selenite_tungstate_Solution_See_Medium_No_431.yaml": "5e6c9e17dba64208e589d3f872006080c2ac5b00aef2307c2c966a34f5069731",
+    "materials/jcm-1081.txt": "c3bc594a30e3bd7aabf7ef4a8203c3ae802a4f3d1c2748d00bf666b0dd39e51f",
+    "materials/jcm-431.txt": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+    "materials/mediadive-solution-4878.txt": "8346020690cd9709c7f8a959e5d8f35b4f75d4f982fb0b247fcc9556d74acd2c",
+    "context/issue-1173.json": "2241adfb464efb62bf1039b8f45d4a3d0160f73c01b8f7885f8945c0c7a0137e",
+    "context/issue-1173-comments.json": "03feeb51838e7814e7ac63418ca7919d689dfb026d97a36592135917e2c80b70",
+    "context/worker03-tracker-search-scope.json": "6c7d8343de7ec1dbcfa3662c22e82304b75fd8a9af92836fb4db0ef0894d6049",
+    "context/search-worker03-review-tracker.json": "b3f967f44651f04e66e8ff7a0137d9d6b800f2392723953923b1d08e20706d75",
+    "context/pr1158-final.json": "75321f9d7f264dd70d909ee5378e350c727bead6ef30b1659983595c6e25d209",
+    "validation/maintained-surface-final.json": "e259a2aaba236d132c1d512d0324ab0e7d352a817807d42c49209f1aa55b8442",
+    "broths/publication-issue-reference-checks.json": "4cdfd57acc7268012a1722240d6b62d56c96800a37dfaf9b72d03665169963c0"
+  },
+  "publication_scope_limit": "No message posted by this reviewer. Exact publication bodies may be filed by the authorized coordinator. Changes after these hashes require a new body check. Maintained-record integration, full inherited payload review, native holds and new-owner admission remain separate."
+}

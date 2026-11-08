@@ -1,0 +1,48 @@
+identifier: kgmicrobe.ingredient:jcm1404_cellobiose_solution_10pct
+preferred_term: JCM1404 10% cellobiose solution
+synonyms:
+- synonym_text: 10% Cellobiose solution*
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:0d736c762ccd8b6f8a4e6af5c567d5dff1fd93e77e456ec459e44065f52629ba;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1404_cellobiose_solution_10pct
+  ontology_label: JCM1404 10% cellobiose solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404
+    notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+      Percent basis and solvent are unspecified. Retain the literal percentage in this note;
+      do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
+notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+  Percent basis and solvent are unspecified. Retain the literal percentage in this note; do
+  not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+    Percent basis and solvent are unspecified. Retain the literal percentage in this note;
+    do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
+  llm_assisted: true
+  new_status: MAPPED
+components:
+- component_name: Cellobiose
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404
+    source_record: JCM1404 10% cellobiose solution
+    notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+      Percent basis and solvent are unspecified. Retain the literal percentage in this note;
+      do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+    units are transcribed without lexical identity promotion.

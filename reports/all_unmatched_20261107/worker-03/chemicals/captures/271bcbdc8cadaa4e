@@ -1,0 +1,1275 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="description" content="DSMZ cultivation media database">
+    <meta name="author" content="Julia Koblitz">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://mediadive.dsmz.de" />
+    <meta property="og:type" content="database" />
+    <meta property="og:title" content="P8: M9-SNG medium | Media | MediaDive" />
+    <meta property="og:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains." />
+    <meta property="og:image" content="/img/mediadive_logo.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mediadive.dsmz.de">
+    <meta property="twitter:title" content="MediaDive — the cultivation media database">
+    <meta property="twitter:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains.">
+    <meta property="twitter:image" content="/img/mediadive_avatar.png">
+
+    <link rel="icon" href="/img/favicon_256x256.png">
+    <title>P8: M9-SNG medium | Media | MediaDive</title>
+
+    <!-- Phosphoricons and individual D3 icons -->
+    <link href="/css/phosphoricons/regular/style.css?v=2" rel="stylesheet" />
+    <link href="/css/phosphoricons/fill/style.css?v=2" rel="stylesheet" />
+    <link href="/css/d3icons/style.css?v=3" rel="stylesheet" />
+
+    <link href="/css/digidive.css?v=4" rel="stylesheet" />
+    <link href="/css/shepherd.css" rel="stylesheet" />
+    <link href="/css/animate.min.css" rel="stylesheet" />
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/style.css?1758698096" rel="stylesheet">
+
+    <script>
+        // define global constants
+        const ROOTPATH = "";
+    </script>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Requires digidive.js for the dropdowns -->
+    <!-- <script src="/js/digidive.js"></script> -->
+    <script src="/js/digidive.js?v=4"></script>
+    <script src="/js/script.js?1722402400"></script>
+
+
+            <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "https://piwik.dsmz.de/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', '15']);
+                var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                g.async = true;
+                g.src = u + 'matomo.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript>
+            <p><img src="https://piwik.dsmz.de/matomo.php?idsite=15&amp;rec=1" style="border:0;" alt="" /></p>
+        </noscript>
+        <!-- End Matomo Code -->
+    </head>
+
+<body style="position: relative">
+    <!-- Modals go here -->
+    <!-- <div class="modal modal-lg" id="settings" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content w-400 mw-full">
+            <a href="#" class="btn float-right" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title"><i class="ph ph-gear text-primary"></i> Settings</h5>
+
+            <form action="#" method="get">
+                
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select name="language" id="language" class="form-control">
+                        <option value="en" selected>English</option>
+                        <option value="de" >Deutsch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="transitions" name="transitions" value="true" >
+                        <label for="transitions">Motion-sickness mode</label><br>
+                        <small class="text-muted">This mode reduces motion and animations on the page.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="dyslexia" name="dyslexia" value="true" >
+                        <label for="dyslexia">Dyslexia mode</label><br>
+                        <small class="text-muted">
+                            The web page uses a special font to increase readibility for user with dyslexia.                        </small>
+                    </div>
+                </div>
+                <p>
+                    We use browser cookies to save your preferences.                </p>
+                <button class="btn primary">Apply</button>
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<div class="modal modal-lg" id="ingredient-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('ingredient-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Ingredient name</h5>
+            <div id="ingredient-content"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-lg" id="universal-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('universal-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <div id="universal-content" class="content"></div>
+        </div>
+    </div>
+</div>    <div class="loader">
+        <span></span>
+    </div>
+    <div class="popup-bg" onclick="hidePopups();"></div>
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper 
+            ">
+        <!-- data-sidebar-hidden to hide sidebar on start -->
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts">
+                    </div>
+
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="digidive.toggleSidebar()"></div>
+
+        <!-- Navbar start -->
+        <div class="navbar navbar-top">
+            <div class="container">
+                <!-- here goes your database logo -->
+
+                <a href="/" class="navbar-brand position-relative">
+                                            <img class="" src="/img/mediadive_logo.svg?v=2" alt="MediaDive" style="width: 30rem;">
+                                        
+                </a>
+
+                <a href="//hub.dsmz.de/" class="navbar-brand ml-auto d-none d-sm-block">
+                    <!-- DSMZ Logo is mandatory -->
+                    <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity">
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-bottom">
+            <!-- Button to toggle sidebar -->
+            <div class="container">
+                <button class="btn btn-action active" type="button" onclick="digidive.toggleSidebar(this);"></button>
+
+                <ul class="navbar-nav">
+                    
+                        <nav aria-label="MediaDive breadcrumbs">
+                            <ul class="breadcrumb m-0">
+                                <li><a href="/">Home</a></li><li><a href="/media">Media</a></li><li class="active" aria-current="page"><a href="javascript:void(0)">P8: M9-SNG medium</a></li>                            </ul>
+                        </nav>
+                                    </ul>
+
+                <div class="dropdown">
+                    <button class="btn primary circle square mr-10" data-toggle="dropdown" type="button" id="accessibility-menu" aria-haspopup="true" aria-expanded="false">
+                        <i class="ph ph-person-simple"></i>
+                        <span class="sr-only">Accessibility Options</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-center w-300" aria-labelledby="accessibility-menu">
+                        <h6 class="header text-primary">Accessibility</h6>
+                        <form action="#" method="get" class="content">
+                            <input type="hidden" name="accessibility[check]">
+
+                            <input type="hidden" name="redirect" value="/medium/P8">
+
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select name="accessibility[language]" id="language" class="form-control">
+                                    <option value="en" selected>English</option>
+                                    <option value="de" >Deutsch</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-contrast" name="accessibility[contrast]" value="high-contrast" >
+                                    <label for="set-contrast">High contrast</label><br>
+                                    <small class="text-muted">
+                                        Enhance the contrast of the web page for better readability.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-transitions" name="accessibility[transitions]" value="without-transitions" >
+                                    <label for="set-transitions">Reduce motion</label><br>
+                                    <small class="text-muted">
+                                        Reduce motion and animations on the page.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-dyslexia" name="accessibility[dyslexia]" value="dyslexia" >
+                                    <label for="set-dyslexia">Dyslexia mode</label><br>
+                                    <small class="text-muted">
+                                        Use a special font to increase readability for users with dyslexia.                                    </small>
+                                </div>
+                            </div>
+                            <button class="btn primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <form id="medium-search" action="/media" method="get" class="nav-search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" autocomplete="off" placeholder="Search medium">
+                        <div class="input-group-append">
+                            <button class="btn primary"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="suggestions"></div>
+                </form>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+
+            <nav class="sidebar-topnav">
+                <ul>
+                    <li><a href="/docs"><i class="ph ph-book"></i>Manual</a></li>
+                    <li><a href="/contact" title="Support"><i class="ph ph-headset"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-menu">
+
+                
+                <!-- Sidebar links (with icons) and titles -->
+                <h5 class="title">Content</h5>
+
+                <a href="/media" class="with-icon primary active">
+                    <i class="ph ph-flask" aria-hidden="true"></i>
+
+                    Media                </a>
+                <a href="/solutions" class="with-icon secondary ">
+                    <i class="ph ph-test-tube" aria-hidden="true"></i>
+
+                    Solutions                </a>
+                <a href="/ingredients" class="with-icon success ">
+                    <i class="ph ph-mortar-pestle" aria-hidden="true"></i>
+
+                    Ingredients                </a>
+
+                <a href="/strains" class="with-icon signal ">
+                    <!-- text-white bg-dark text-dark-dm bg-light-dm -->
+                    <i class="ph ph-microbes" aria-hidden="true"></i>
+
+                    Strains                </a>
+
+                <a href="/steps" class="with-icon ">
+                    <i class="ph ph-list-checks" aria-hidden="true"></i>
+
+                    Steps                </a>
+                <a href="/gas" class="with-icon ">
+                    <i class="ph ph-gas" aria-hidden="true"></i>
+                    Gas
+                </a>
+
+
+                <h5 class="title">Search</h5>
+
+                <a href="/finder" class="with-icon ">
+                    <i class="ph ph-target" aria-hidden="true"></i>
+                    Medium finder
+                </a>
+                <a href="/solution-finder" class="with-icon ">
+                    <i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i>
+                    Solution finder
+                </a>
+                <a href="/taxonomy" class="with-icon ">
+                    <i class="ph ph-taxonomy" aria-hidden="true"></i>
+                    Taxonomy search                </a>
+                <a href="/isolation-sources" class="with-icon ">
+                    <i class="ph ph-map-pin-line" aria-hidden="true"></i>
+                    Isolation sources                </a>
+
+
+                <h5 class="title">Tools</h5>
+                                    <a href="/medium-builder" class="with-icon ">
+                        <i class="ph ph-flask-pen" aria-hidden="true"></i>
+                        Medium builder
+                    </a>
+                                <!-- sparql -->
+                <a href="https://sparql.dsmz.de/mediadive" class="with-icon">
+                    <i class="ph ph-rdf" aria-hidden="true"></i>
+                    SPARQL endpoint
+                </a>
+                <a href="/unit-converter" class="with-icon ">
+                    <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+
+                    Unit converter                </a>
+                <a href="/compare-media" class="with-icon ">
+                    <i class="ph ph-flask-vial" aria-hidden="true"></i>
+
+                    Compare media                </a>
+                <a href="/compare-solutions" class="with-icon ">
+                    <i class="ph ph-vials" aria-hidden="true"></i>
+
+                    Compare solutions                </a>
+                
+
+
+                <a href="/prediction" class="with-icon ">
+                    <i class="ph ph-chip-ai" aria-hidden="true"></i>
+
+                    Prediction <span class="badge badge-primary ml-5">SOON</span>
+                </a>
+
+
+                
+                <div class="sidebar-content text-muted d-block d-sm-none">
+                    <!-- brought to you by -->
+                    <a href="//www.dsmz.de/" class="navbar-brand ml-auto pb-10">
+
+                        <!-- DSMZ Logo is mandatory -->
+                        <img src="/img/dsmz_full.svg" alt="DSMZ">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <!-- <div class="modal" id="comment-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#/" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Leave a comment</h5>
+
+            <form id="add-comment" class="d-block" onsubmit="return addComment(event, this)">
+                <input type="hidden" name="medium_id" value="P8">
+                <div class="form-group mb-10">
+                    <label for="comment-name">Your name (optional)</label>
+                    <input type="text" name="name" id="comment-name" class="form-control" placeholder="Anonymous">
+                </div>
+                <div class="form-group mb-10">
+                    <label for="comment-mail">Your mail address (optional)</label>
+                    <input type="mail" name="mail" id="comment-mail" class="form-control" placeholder="anonymous@example.com">
+                    <small class="text-muted">
+                        Your mail address will not be made public, but allows out team to contact you regarding your comment.                    </small>
+                </div>
+                <div class="form-group mb-10">
+                    <textarea name="comment" id="new-comment" class="form-control" placeholder="Write a comment!" rows="2" required></textarea>
+                </div>
+                <button class="btn"><i class="ph ph-paper-plane-tilt"></i> Publish comment</button>
+            </form>
+            <br>
+
+            <div class="title">Comments for this medium</div>
+
+
+            <div id="comment-list">
+                                        <div class="content">
+                            <p class="text-muted">No comments for this medium.</p>
+                        </div>
+                                </div>
+
+            <div class="text-right mt-20">
+                <a href="#/" class="btn mr-5" role="button">Close</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="title-bar viewer" role="toolbar" aria-label="Medium toolbar" id="medium-toolbar">
+    <div class="h-spacer ml-5"></div>
+   
+
+    <!-- DOWNLOAD -->
+    <div class="dropdown with-arrow">
+        <button class="btn mx-5 toolbar-btn" data-toggle="dropdown" type="button" id="download-btn" aria-haspopup="true" aria-expanded="false">
+            <!-- <span class="tooltip">Download </span> -->
+            <i class="ph ph-download ph-lg"></i> <span class="toolbar-label">Download <i class="ph ph-caret-down"></i></span>
+        </button>
+        <div class="dropdown-menu w-200 w-sm-250 w-md-300" aria-labelledby="download-btn">
+
+            <div class="content">
+                <form action="/pdf/P8" method="get" target="_blank">
+                    <b>Adjust volume (optional)</b>
+                    <div class="form-row row-eq-spacing-sm mb-0">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="volume">Multiply </label>
+                                <div class="input-group d-flex">
+                                    <input class="form-control" type="number" name="volume" value="1" autocomplete="off" step="0.01">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">&times;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="main-volume">Main sol. </label>
+                                <div class="input-group d-flex">
+                                    <input class="form-control" type="number" name="main-volume" autocomplete="off" step="1" placeholder="1000">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">ml</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <button class="btn primary block" type="submit">
+                        <i class="ph ph-lg mr-5 ph-file-pdf"></i>
+                        Create PDF</button>
+                </form>
+            </div>
+            <div class="divider"></div>
+            <a class="item" href="javascript:void(0)" onclick="$(this).next().toggle()">
+                Other formats <i class="ph ph-caret-down"></i>
+            </a>
+            <div class="content mt-0" style="display: none;">
+                <a class="btn block mb-5 download-link" href="/text/P8" target="_blank"><i class="ph ph-lg mr-5 ph-file-text"></i> Text</a>
+                <a class="btn block download-link" href="/download/medium/P8/json" target="_blank"><i class="ph ph-lg mr-5 ph-file-code"></i> JSON</a>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- <a class="btn mx-5  toolbar-btn" href="#comment-modal">
+            <i class="ph ph-lg mr-5 ph-chat-dots"></i> <span class="toolbar-label">Comments</span>
+            (count($comments))
+        </a> -->
+        <a href="/contact?medium=P8" class="btn toolbar-btn">
+        <i class="ph ph-lg mr-5 ph-paper-plane-tilt"></i>
+        Feedback
+    </a>
+        <div class="d-none d-sm-block">
+            <button class="btn mx-5  toolbar-btn" onclick="mediumTour()">
+                <!-- <span class="tooltip">Guided tour</span> -->
+                <i class="ph ph-lg mr-5 ph-signpost"></i> <span class="toolbar-label">Guided tour</span>
+            </button>
+        </div>
+    </div>            <div class="content-container">
+
+                <a id="top"></a>
+                <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Dataset",
+        "@type": "CreativeWork"
+    },
+    "identifier": {
+        "@type": "PropertyValue",
+        "name": "public Medium Number",
+        "value": "P8"
+    },
+    "name": "M9-SNG medium",
+    "url": "https://mediadive.dsmz.de/medium/P8",
+    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "MediaDive"
+    },
+    "description": "Myrosinase producing bacteria and fungi  enrichment isolation method using selective media with glucosinolate as the sole source of carbon.",
+    "keywords": [
+        "Culture medium"
+    ],
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://mediadive.dsmz.de/download/composition/P8/csv",
+            "fileFormat": "CSV"
+        },
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://mediadive.dsmz.de/download/composition/P8/json",
+            "fileFormat": "JSON"
+        }
+    ],
+    "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "MediaDive",
+        "description": "The Cultivation Media Database ",
+        "url": "https://mediadive.dsmz.de/",
+        "provider": {
+            "@type": "Organization",
+            "name": "Leibniz-Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH",
+            "telephone": "+49 (0) 531-2616-0",
+            "faxNumber": "+49 (0) 531-2616-418",
+            "url": "https://dsmz.de/",
+            "vatID": "DE 114815269",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Inhoffenstra\u00dfe 7 B",
+                "postalCode": "38124",
+                "addressLocality": "Braunschweig, Germany"
+            }
+        }
+    }
+}</script><style>
+    .list {
+        counter-reset: list-counter calc(var(--start) - 1);
+    }
+</style>
+
+    <div id="to-mobile">
+        <a href="?mobile=1" class="btn primary filled">
+            <i class="ph ph-cooking-pot"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+<div class="content mx-0 mx-md-5">
+
+            <a href="javascript:void(0)" onclick="favMedium(this, 'P8')" class="btn large square float-right favourite text-signal" title="Add to favourites">
+                            <i class="ph ph-star animate__animated"></i>
+                    </a>
+        <h1 class="medium-name mt-0">
+            <span id="medium-title">
+                <span class="badge text-muted" style="font-size: 0.8em;">PUBLIC</span>                <div id="medium-id" class="hidden">P8</div>
+                <span>
+                    P8                </span>.
+                <span>M9-SNG medium</span>
+            </span>
+        </h1>
+    
+    <p class="text-muted">
+        <i class="ph ph-lg ph-seal-warning text-danger mr-10"></i><b>User-provided medium</b>: This medium was provided by one of our users. Please be aware that we do not curate or test the media that are composed by our users. Be cautious when trying this medium, and check the following reference carefully:                     DOI: <a id="reference" href="//dx.doi.org/10.1007/s11104-022-05822-6" target="_blank">10.1007/s11104-022-05822-6</a>
+                    </p>
+
+    
+</div>
+
+<div class="row w-full" id="medium">
+    <div class="col-lg-7 col-12">
+
+        <div id="validation" class="alert" style="display: none;">
+            <div id="validation-running">
+                <h5 class="title">Validation is running ...</h5>
+                <div class="text-center">
+                    <i class="ph ph-3x ph-circle-notch ph-spin text-primary"></i>
+                </div>
+            </div>
+            <div id="validation-complete" style="display: none;">
+                <h5 class="title">Validation is complete.</h5>
+                <ul class="fa-ul">
+
+                </ul>
+                You may need to <a href='/medium-editor/P8'>refresh the page</a> or go to the <a href='/medium/P8'>viewing page</a> to see the results.            </div>
+        </div>
+
+        <div id="content" class="mw-full "><style>
+    a.link:not(.btn).text-danger::after {
+        color: var(--danger-color);
+    }
+</style>
+
+<h3 class="mt-md-0" id="title-recipe">Culture medium recipe</h3>
+<div class="d-flex justify-content-between">
+    <form action="" method="get" class="mw-full w-350">
+            </form>
+    <div>
+        <div id="volume-adjustment" class="input-group mw-full w-150">
+            <div class="input-group-prepend">
+                <span class="input-group-text text-decoration-none" data-toggle="tooltip" data-title="Adjust final volume on this page by factor." data-placement="bottom">
+                    Vol.
+                </span>
+            </div>
+            <input class="form-control" type="number" name="volume" value="1" onchange="adjustVolume(this)" autocomplete="off">
+            <div class="input-group-append">
+                <span class="input-group-text">&times;</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="solution-container" id="recipe-container">
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Main solution",
+    "url": "https://mediadive.dsmz.de/solutions/0",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Main solution for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": []
+}</script>
+        <div class="box solution solution-0 solution-main" id="sol-0">
+            <a id="solution-0" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                                                    <span data-toggle="tooltip" data-title="Main solution for this medium">
+                                <i class="ph ph-flask mr-10"></i>
+                            </span>
+                        
+                        <a href="/solutions/0" class="hyperlink colorless">
+                            Main solution                        </a>
+                                                                        <a href="#solution-0" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <div class="input-group input-group-sm" style="max-width: 10rem;">
+                                    <input data-volume='6.1' class="form-control" step="1" type="number" id="main-sol-vol" value="6.1" onchange="adjustVolumeAbsolute(this)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">ml</span>
+                                    </div>
+                                </div>
+
+                                                    
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-4" class="recipe-row-5">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/325" class="hyperlink colorless">
+                            MgSO<sub>4</sub>                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(2 mL)</small>                            </td>
+            <td class=" text-right" >
+
+                24.65            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                24.65            </td>
+            <td class="text-right">
+                204.785            </td>
+        </tr>
+
+            <tr id="recipe-5" class="recipe-row-6">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/81" class="hyperlink colorless">
+                            CaCl<sub>2</sub>                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(10 μL)</small>                            </td>
+            <td class=" text-right" >
+
+                14.70            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                14.7            </td>
+            <td class="text-right">
+                132.456            </td>
+        </tr>
+
+            <tr id="recipe-6" class="recipe-row-7">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    Sinigrin                                 
+                
+                                <br><small class='text-muted'>(2 mL filtrated at 0.22 μm in sterile water (pH7.2))</small>                            </td>
+            <td class=" text-right" >
+
+                10.00            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                10            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-7" class="recipe-row-8">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-NaN'><span class='solutionRef'>M9</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='2'>
+
+                2.00            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "M9",
+    "url": "https://mediadive.dsmz.de/solutions/NaN",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution M9 for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": []
+}</script>
+        <div class="box solution solution-0" id="sol-NaN">
+            <a id="solution-NaN" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/NaN" class="hyperlink colorless">
+                            M9                        </a>
+                                                                        <a href="#solution-NaN" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='2' title="Final volume of this solution">2</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(NaN)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-0" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/233" class="hyperlink colorless">
+                            Na<sub>2</sub>HPO<sub>4</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class=" text-right" >
+
+                64.0            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                64            </td>
+            <td class="text-right">
+                450.834            </td>
+        </tr>
+
+            <tr id="recipe-1" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/11" class="hyperlink colorless">
+                            KH<sub>2</sub>PO<sub>4</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class=" text-right" >
+
+                51.0            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                51            </td>
+            <td class="text-right">
+                374.766            </td>
+        </tr>
+
+            <tr id="recipe-2" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/43" class="hyperlink colorless">
+                            NaCl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class=" text-right" >
+
+                2.5            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                2.5            </td>
+            <td class="text-right">
+                42.779            </td>
+        </tr>
+
+            <tr id="recipe-3" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/42" class="hyperlink colorless">
+                            NH<sub>4</sub>Cl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class=" text-right" >
+
+                5.0            </td>
+            <td>
+                <span class="badge unit-g_l">g/l</span>
+            </td>
+            <td class="text-right">
+                5            </td>
+            <td class="text-right">
+                93.475            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</div>
+<div class="col-lg-5">
+
+    <div class="content mt-0">
+        
+        <h3 id="title-metadata" class="mt-md-0">
+            Metadata        </h3>
+
+        <table class="table small" id="metadata-box">
+            
+                            <tr>
+                    <td>Creator:</td>
+                    <td>
+                        CHOUKRI Ahmed                                                    (Nantes university)
+                        
+                    </td>
+                </tr>
+                                    <tr>
+                        <td>Author(s):</td>
+
+                        <td>
+                                                            <a href="https://orcid.org/0000-0002-2830-9830" target="_blank" rel="noopener noreferrer"><i class="ph ph-orcid"></i></a>
+                            
+                            Lisa Martinez, Jean-Bernard Pouvreau, Grégory Montiel, Christophe Jestin, Philippe Delavault, Simier Philippe, Lucie Poulin                        </td>
+                    </tr>
+
+                                <tr>
+                    <td>Published:</td>
+                    <td>
+                                                    09.01.24                                            </td>
+                </tr>
+            
+            <tr>
+                <td>Last modified:</td>
+                <td>
+                    09.01.24                </td>
+            </tr>
+            <tr>
+                <td>Source:</td>
+                <td>
+                                            <span>Media<em>Dive</em>: public</span>
+                                    </td>
+            </tr>
+            
+            
+            <tr>
+                <td>Medium type:</td>
+                <td>
+                    Complex medium                </td>
+            </tr>
+            <tr>
+                <td>Final pH:</td>
+                <td>
+                    <span id="pH-value">7.2</span>
+                </td>
+            </tr>
+                                        <tr>
+                    <td>
+                        Reference:
+                    </td>
+                    <td>
+                                                    DOI: <a id="reference" href="//dx.doi.org/10.1007/s11104-022-05822-6" target="_blank">10.1007/s11104-022-05822-6</a>
+                                            </td>
+                </tr>
+                                        <tr>
+                    <td colspan="2">
+                        Description:
+                        <br>
+                        <p id="description">Myrosinase producing bacteria and fungi  enrichment isolation method using selective media with glucosinolate as the sole source of carbon.</p>
+                    </td>
+                </tr>
+                                        <tr class="d-none d-sm-table-row">
+                    <td colspan="2">
+                                                <button class="btn" onclick="showQR('https%3A%2F%2Fmediadive.dsmz.de%2Fmedium%2FP8')" id="qrcode">
+                            <i class="ph ph-qr-code ph-lg mr-10 ph-fw"></i>
+                            Show QR code for mobile                        </button>
+                    </td>
+                </tr>
+                <tr class="d-none d-sm-table-row">
+                    <td colspan="2">
+                        <a href="/medium-builder?medium=P8" class="btn" id="medium-builder">
+                            <!-- <i class="ph ph-note-pencil ph-lg mr-10"></i> -->
+                            <i class="ph ph-flask-pen ph-lg mr-5 ph-fw" aria-hidden="true"></i>
+                            Edit in Medium builder                        </a>
+                    </td>
+                </tr>
+                    </table>
+
+        
+
+                <div class="box" id="strain-box">
+            <h4 id="title-strains" class="header justify-content-between">
+                <span>Associated strains</span>
+                <a class="" href="/docs/website#strains"><i class="ph ph-book" aria-hidden="true"></i></a>
+            </h4>
+
+            <table class="table simple">
+                                                            <tr>
+                            <td>Arthrobacter sp. DSM 917</td>
+                        </tr>
+                                            <tr>
+                            <td>Actinobacteria sp. DSM 105903</td>
+                        </tr>
+                                            <tr>
+                            <td>Ralstonia pickettii DSM 6297</td>
+                        </tr>
+                                            <tr>
+                            <td>Gammaproteobacterium  DSM 19523</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 917</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 3681</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 4639</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 4640</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 4983</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 6386</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 6686</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 6687</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 6723</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 7325</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 9507</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 9754</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 12418</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 12519</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 16024</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 17946</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 18537</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 20122</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 20125</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 20153</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 20161</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 112999</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 112319</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 112320</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 103156</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 102157</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 102157</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 24942</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 30640</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 26978</td>
+                        </tr>
+                                            <tr>
+                            <td>Arthrobacter sp. DSM 102340</td>
+                        </tr>
+                                            <tr>
+                            <td>Chryseobacterium sp. DSM 2810</td>
+                        </tr>
+                                            <tr>
+                            <td>Chryseobacterium sp. DSM 2811</td>
+                        </tr>
+                                            <tr>
+                            <td>Chryseobacterium sp. DSM 5567</td>
+                        </tr>
+                                            <tr>
+                            <td>Penicillium JCM 23216</td>
+                        </tr>
+                                            <tr>
+                            <td>Penicillium echinulatum JCM 22836</td>
+                        </tr>
+                                            <tr>
+                            <td>Penicillium echinulatum JCM 22837</td>
+                        </tr>
+                    
+                
+            </table>
+
+
+            
+
+        </div>
+
+
+        
+                
+
+        
+
+        
+
+        <!--  -->
+
+
+
+
+    </div>
+</div>
+</div>  <div class="position-absolute top-0 right-0 z-30" id="cookieWarning">
+    <div class="alert primary filled-dm w-300 w-sm-500 w-md-600" role="alert">
+      <div class="row align-items-center">
+        <div class="col-sm-2">
+          <div class="w-100 h-100 d-flex align-items-center rounded-circle bg-white mx-auto">
+            <div class="m-auto">
+              <i class="ph ph-cookie ph-4x" aria-hidden="true" style="color: #6F4E37;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 offset-sm-1 py-10">
+          <h4 class="title">Have some cookies!</h4>
+          We are using cookies to improve the user experience. We save the following information: user preferences for language, accessibility, help features and medium favourites. Unfortunately, you cannot use this site if you don't agree.
+          <div class="mb-10 text-right">
+            <button class="btn alt-dm" onclick="acceptCookies();">
+              I agree
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<footer class="page-footer">
+
+  <div class="footer text-center">
+
+    <div class="w-500 mw-full mx-auto my-20">
+      <h3 class="mt-0">
+        Not found what you were looking for?      </h3>
+
+      <p>
+        Search within all databases of the
+        <a href="https://hub.dsmz.de/" target="_blank" class="link">
+          DSMZ Digital Diversity
+        </a>
+      </p>
+
+      <form id="d3search" onsubmit="d3searchFunction()">
+        <div class="input-group">
+          <input type="search" name="search" id="hub-search" class="form-control" placeholder="Search across all DSMZ Digital Diversity databases">
+          <div class="input-group-append">
+            <button class="btn"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        function d3searchFunction() {
+          event.preventDefault();
+          var val = $('#hub-search').val();
+          // url encode the search term
+          var search = encodeURIComponent(val);
+          var action_src = "https://hub.dsmz.de/#/search/" + search;
+          window.open(action_src, '_blank');
+
+        }
+      </script>
+
+      <div class="">
+        <p class="font-size-12">provided to you by</p>
+        <a href="https://hub.dsmz.de/" target="_blank" title="DSMZ Digital Diversity">
+          <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity" height="70">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="link-parade">
+    <div class="row">
+      <div class="col-md">
+        <h3>Media<em>Dive</em></h3>
+        <a href="/about">About</a>
+        <a href="/news">News</a>
+        <a href="http://dx.doi.org/10.1093/nar/gkac803" target="_blank">Cite</a>
+        <a href="/stats">Statistics</a>
+
+        <!-- <a href="/registry">MediaRegistry</a> -->
+
+      </div>
+      <div class="col-md">
+        <h3>Help</h3>
+        <a href="/docs/website">Website</a>
+        <a href="/docs/medium-builder">Medium builder</a>
+        <a href="/doc/index.html">API reference</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="col-md">
+        <h3>Social Media</h3>
+        <a href="https://www.linkedin.com/company/dsmzd3" target="_blank">
+          <span class="icon"><i class="ph ph-linkedin-logo"></i></span>
+          Linkedin
+        </a>
+        <a href="https://www.youtube.com/channel/UCZxfaPawuEmsNNInlIf1Pbw" target="_blank">
+          <span class="icon"><i class="ph ph-youtube-logo"></i></span>
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="logo-parade d-flex align-items-center">
+    <a href="https://www.denbi.de/" target="_blank" data-v-f5dfcaf0=""><img src="/img/logos/denbi.svg" alt="de.NBI" data-v-f5dfcaf0=""></a>
+    <div>
+      <small>
+        If Media<em>Dive</em> was useful to you,<br> please participate in this 2-minute survey:      </small><br>
+      <a href="https://de.surveymonkey.com/r/denbi-service?sc=db-node&tool=mediadive" target="_blank">
+        Survey      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="footer">
+    <span>
+      &copy; DSMZ 2026    </span>
+    <a href="/imprint">Imprint</a>
+    <a href="/imprint#privacy">Privacy Statement</a>
+    <a href="/imprint#license">
+      <img src="/img/cc.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      <img src="/img/by.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      License    </a>
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+</footer>
+
+
+</div>
+
+</div>
+<!-- <div class="swipe-area"></div> -->
+
+<script>
+  function acceptCookies() {
+    digidive.createCookie("bacmedia-cookie-seen", true)
+    $("#cookieWarning").hide()
+  }
+</script>
+
+
+
+<script src="/js/tour/popper.min.js"></script><script src="/js/tour/shepherd.min.js"></script><script src="/js/tour/tour.js?1722402400"></script><script src="/js/tour/tour_medium.js?1722402400"></script></body>

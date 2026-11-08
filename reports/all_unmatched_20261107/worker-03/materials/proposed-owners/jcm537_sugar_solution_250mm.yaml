@@ -1,0 +1,60 @@
+identifier: kgmicrobe.ingredient:jcm537_sugar_solution_250mm
+preferred_term: JCM537 xylose maltose cellobiose stock (250 mM each)
+synonyms:
+- synonym_text: Sugar
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case KG_CASE:abc1616e7755bfd211934d5dd7d9116e1e50981eb3c4fe8f6cd481a6c5ecedec;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm537_sugar_solution_250mm
+  ontology_label: JCM537 xylose maltose cellobiose stock (250 mM each)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=537
+    notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+      specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose
+      per5ml medium separately. Do not route generic Sugar globally, and retain its material
+      quarantine.
+notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+  specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose per5ml
+  medium separately. Do not route generic Sugar globally, and retain its material quarantine.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+    specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose per5ml
+    medium separately. Do not route generic Sugar globally, and retain its material quarantine.
+  llm_assisted: true
+  new_status: MAPPED
+components:
+- component_name: Xylose
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: MM
+- component_name: Maltose
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: MM
+- component_name: Cellobiose
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: MM
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=537
+    source_record: JCM537 xylose maltose cellobiose stock (250 mM each)
+    notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+      specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose
+      per5ml medium separately. Do not route generic Sugar globally, and retain its material
+      quarantine.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+    units are transcribed without lexical identity promotion.

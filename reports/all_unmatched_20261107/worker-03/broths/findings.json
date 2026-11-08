@@ -1,0 +1,377 @@
+{
+  "author": "codex-worker03-broths",
+  "findings": [
+    {
+      "finding_id": "b-finding-bd211065",
+      "severity": "P1",
+      "title": "Wrong catalog identity on current heart-only agar owner",
+      "detail": "BD211065 is BBLBrainHeartInfusionAgar. Current Heart_Infusion_Agar_BD_211065 targets heart-onlyMICRO0000567 and has realDifco/Eikenheart-onlyaliases. Newcatalogcandidate is concrete, but coordinator must reconcile competingownership without wipinghistoricalevidence.",
+      "case_indices": [
+        76
+      ],
+      "case_ids": [
+        "CM_NAME:95f9422185431596c32f30629437bf1d87aca516ae0579cb9645a6e9990b232d"
+      ],
+      "evidence_ids": [
+        "b-case-076",
+        "b-recipe-076-00",
+        "b-attempt-b44b5921b3",
+        "b-attempt-64f16b7f8e",
+        "b-primary-5d95551806",
+        "b-primary-9754daf045",
+        "b-primary-a379cc7b6d",
+        "b-bd-211065",
+        "b-owner-d7087ebb9588",
+        "b-owner-search"
+      ],
+      "proposal_ids": [
+        "b-proposal-bd211065"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1165"
+      ]
+    },
+    {
+      "finding_id": "b-finding-atcc1016-unit",
+      "severity": "P1",
+      "title": "Frozen chopped-meat broth amount has wrong physical unit",
+      "detail": "ATCC1016 adds850mLfilteredstock. FrozenCultureMech850G_PER_L is not faithful. Starting500gbeef and optionalmeatparticles are not850gofbroth. Correctupstreamoccurrence after source-boundreview.",
+      "case_indices": [
+        1
+      ],
+      "case_ids": [
+        "CM_NAME:03b675ceae9077b66cb6c6351cc231cafd55bb722146608a132a064ff176b89f"
+      ],
+      "evidence_ids": [
+        "b-case-001",
+        "b-recipe-001-00",
+        "b-attempt-4133d52220",
+        "b-primary-59f8051613",
+        "b-primary-422da52aba",
+        "b-owner-search"
+      ],
+      "proposal_ids": [
+        "b-proposal-chopped-filtrate"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/748",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1165"
+      ]
+    },
+    {
+      "finding_id": "b-finding-jcm1476-drift",
+      "severity": "P2",
+      "title": "Current JCM1476 differs from frozen recipe",
+      "detail": "CurrentJCM1476 names255420 but serumtype, stockdetails andscale differ fromfrozenrecipe. Keepbothversions; determinecurationrevision beforecontext-widealiases orquantitativerepair.",
+      "case_indices": [
+        46
+      ],
+      "case_ids": [
+        "CM_NAME:5152eefd4c4b39c8bdc9b023cfe378949536d51057e2e6c23bfd0d5756b3076e"
+      ],
+      "evidence_ids": [
+        "b-case-046",
+        "b-recipe-046-00",
+        "b-primary-5e8424964d",
+        "b-attempt-ec7d49a8ec",
+        "b-owner-a46244c663aa",
+        "b-owner-e71603bc1594"
+      ],
+      "proposal_ids": [],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-togo-bhi-qualifier",
+      "severity": "P1",
+      "title": "BHI prose conflicts with without-dextrose annotation",
+      "detail": "M2976/M2974rawlabels aregenericDifcoBHI butGMOannotations specifywithoutdextrose. M2976alsohas1Lprimary versus1g/Lfrozenamount. Resolveoriginalpublication/catalog rather thanchoosinga convenientannotation.",
+      "case_indices": [
+        49,
+        75
+      ],
+      "case_ids": [
+        "CM_NAME:580a99200f333e292323af8bab1a54bf210bcf84eae7b3edb1ea5e8d0c245fea",
+        "CM_NAME:935a6a7cf3f0c60b942dd282b0dcd51de571a38741df87229c1d823c047d7eee"
+      ],
+      "evidence_ids": [
+        "b-case-049",
+        "b-recipe-049-00",
+        "b-primary-1dc931acb3",
+        "b-primary-699a359ab9",
+        "b-owner-6cc4e3d057ba",
+        "b-owner-39f0c6d5b942",
+        "b-case-075",
+        "b-recipe-075-00",
+        "b-primary-9b73dfb07d"
+      ],
+      "proposal_ids": [],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/478"
+      ]
+    },
+    {
+      "finding_id": "b-finding-halfmarine",
+      "severity": "P1",
+      "title": "Half-strength marine recipe has duplicated flattened formula",
+      "detail": "DSMZ514a specifies18.7g/Lproduct. Frozenfullrecipe alsoincludesfull-strengthcomponentrows andmg-to-gartifacts. TheexistingMarineownercomponentassertion isnotvalidated bythosecorruptedrows.",
+      "case_indices": [
+        62
+      ],
+      "case_ids": [
+        "CM_NAME:72d64f7dd0660a0a455b73d2894ce4406d2312603df80a9069db2b2a35261162"
+      ],
+      "evidence_ids": [
+        "b-case-062",
+        "b-recipe-062-00",
+        "b-primary-d83a3b0218",
+        "b-primary-edb754e2bf",
+        "b-primary-93bbadf7f8",
+        "b-primary-e14886a2e4",
+        "b-primary-93eb62ac9b",
+        "b-primary-5879f6e0dd",
+        "b-primary-d56eed7ab8",
+        "b-primary-09dee74068",
+        "b-primary-9f0f8c5104",
+        "b-primary-f843cc2325",
+        "b-primary-7b22c063a5",
+        "b-primary-636784203d",
+        "b-primary-ea8cb32bda",
+        "b-primary-8dbcf0f44e",
+        "b-owner-7df4af4ea4b2"
+      ],
+      "proposal_ids": [
+        "b-proposal-marine-aliases"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-bhi-components",
+      "severity": "P1",
+      "title": "Oxoid BHI source mixed with Difco component expansion",
+      "detail": "TOGOM2211 provides12.5gbrainsolids and5gbeefheartsolids. Frozenrecipe duplicatesseparateDifcoformulacomponents. Extractsolids arenotwholebrain/heart tissue.",
+      "case_indices": [
+        81,
+        103
+      ],
+      "case_ids": [
+        "CM_NAME:a0b68d4e9c321c264594aaae721656429e1f80651607ee2d9c65119f35fa5ab7",
+        "CM_NAME:ca4042cc5dd2c6c27002ad21e12c7e12d703896b8be7c1c01bd453b0d67660ca"
+      ],
+      "evidence_ids": [
+        "b-case-081",
+        "b-recipe-081-00",
+        "b-primary-c02c29e721",
+        "b-case-103",
+        "b-recipe-103-00"
+      ],
+      "proposal_ids": [],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-tsb-dextrose",
+      "severity": "P1",
+      "title": "Source synonyms conflate standard and dextrose-free TSB",
+      "detail": "NBRC1035 explicitlyexcludesdextrose. MediaDive99 synonymtable includesbothTSB andwithoutDextroseforms. Do notglobal-resolvethesynonymlist assubstanceidentity.",
+      "case_indices": [
+        15,
+        129
+      ],
+      "case_ids": [
+        "CM_NAME:15c765496710afd30b080970b3351aa9d7496b06cc9f4a05962e56aa5039df81",
+        "KG_CASE:2e94cba8e21c154b17a82567c23e7d352e89a3f826d8f11e1d15266b1d8bf4fb"
+      ],
+      "evidence_ids": [
+        "b-case-015",
+        "b-recipe-015-00",
+        "b-primary-f5d164decf",
+        "b-owner-7f87c98058e0",
+        "b-case-129",
+        "b-primary-d31778a6f8"
+      ],
+      "proposal_ids": [],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-complexflag",
+      "severity": "P2",
+      "title": "Source complex_compound flags contradict mixture identity",
+      "detail": "MediaDive1923 P0440 iscomplexMEMalpha powder;2163is tryptosephosphatebroth. Bothfrozenflags0cannot justify single-chemicalclassification. P0440explicitlyexcludessodiumbicarbonate;percentbasis for2163remainsunknown.",
+      "case_indices": [
+        128,
+        164
+      ],
+      "case_ids": [
+        "KG_CASE:26c6907beea5e48ccf9ae1064cee49172456cb4a5852e2625374d3d3a67e1c62",
+        "KG_CASE:a833db16c482f7d03d2545a4e5fe8667e82d36755699533ff68e2c8dec38875a"
+      ],
+      "evidence_ids": [
+        "b-case-128",
+        "b-primary-c5ab410faa",
+        "b-primary-9935ebc560",
+        "b-primary-0ace8e29b4",
+        "b-primary-54aa03cc97",
+        "b-owner-d7ba06f5bdc2",
+        "b-case-164",
+        "b-primary-f7e3eb17f9",
+        "b-owner-db9a2e4b65c5"
+      ],
+      "proposal_ids": [
+        "b-proposal-mem-p0440"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-nutrient-no2",
+      "severity": "P1",
+      "title": "Oxoid Nutrient BrothNo2 cannot exact-map to Difco nutrient broth",
+      "detail": "OfficialCM0067formula10gmeatextract+10gpeptone+5gNaCl differsfromATCC3/Difco3gbeefextract+5gpeptone andMICRO0000082. CurrentNo2exactrow/mixedaliasesstayheld; coordinateownerpartitionwithDifcoproposal.",
+      "case_indices": [
+        31,
+        180
+      ],
+      "case_ids": [
+        "CM_NAME:2c8b3abaf7a513b61b1d528f40c98d823a8bba43cb1e2d5d5446da3d9978ab5a",
+        "KG_CASE:df59175fbe2f11ee36e78332a59547ad19b2c36d28416dbb87c703b7950995ec"
+      ],
+      "evidence_ids": [
+        "b-case-031",
+        "b-recipe-031-00",
+        "b-primary-eb54843d3e",
+        "b-primary-628bb01683",
+        "b-owner-458c89206b9d",
+        "b-targeted-4363a2722faa",
+        "b-targeted-web-31",
+        "b-case-180",
+        "b-primary-43e2d04635",
+        "b-primary-e886e96860"
+      ],
+      "proposal_ids": [
+        "b-proposal-difco-nutrient"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1165"
+      ]
+    },
+    {
+      "finding_id": "b-finding-r2a-ontology",
+      "severity": "P2",
+      "title": "R2A ontology definition and quoted recipe disagree on agar",
+      "detail": "MICRO0000541 liquiddefinition citesagar-bearingWikipediaformula. DAIGObrothidentifiedbyJCM839/NBRC1455catalog395-01681isagar-free, withagaroptionalaseparateaddition. Proposedregistrydoesnotexact-maptointernallyinconsistentterm.",
+      "case_indices": [
+        86,
+        87
+      ],
+      "case_ids": [
+        "CM_NAME:a3e7d9526bde2d749400a66aec74cb5a13f6df165903bcdb40ea5976f738d3a1",
+        "CM_NAME:a41b91de88fc5cb3802feb87ae64d2176f47d0453595c9605a1c43ba0840494f"
+      ],
+      "evidence_ids": [
+        "b-case-086",
+        "b-recipe-086-00",
+        "b-recipe-086-01",
+        "b-primary-6a2793e0be",
+        "b-primary-3a4e42c821",
+        "b-primary-bb33a25307",
+        "b-primary-fccd04379c",
+        "b-primary-3988924f4f",
+        "b-owner-search",
+        "b-case-087",
+        "b-recipe-087-00"
+      ],
+      "proposal_ids": [
+        "b-proposal-daigo-r2a"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1165"
+      ]
+    },
+    {
+      "finding_id": "b-finding-cm0149-revision",
+      "severity": "P2",
+      "title": "CM0149 formulation scope needs revision distinction",
+      "detail": "CurrentofficialIFU0539gives13gyeastextract;olderofficialspecificationsearchdescribes3gyeast+10gLabLemco. Currentformannotationissemi-solid;donotretroactivelyassertuniformcompositionorcross-vendoridentity.",
+      "case_indices": [
+        29
+      ],
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "evidence_ids": [
+        "b-case-029",
+        "b-recipe-029-00",
+        "b-primary-b80f9ee369",
+        "b-attempt-c569af5bb2",
+        "b-owner-a8d0e9cbeed2",
+        "b-targeted-d5c1626805eb",
+        "b-targeted-151c34f3bf1a",
+        "b-targeted-b087f0859f30"
+      ],
+      "proposal_ids": [
+        "b-proposal-cm0149-form"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-cm0643-owners",
+      "severity": "P2",
+      "title": "Two current owners carry the same OxoidCM0643 product family",
+      "detail": "Source2093ownerhasCM0643alias;source2140explicitCM643withmisspelledChalgrene. Officialnine-componentformula supportsconcretecorrect-ownerpromotion; separateownerhistorymustbereconciled beforeapplication.",
+      "case_indices": [
+        161,
+        179
+      ],
+      "case_ids": [
+        "KG_CASE:a2074d7903a380725c9c46ef830c1815846ef9b9a98876179c1d6aeea718c61a",
+        "KG_CASE:dd045ae013815309d3a00a71375b712d0d40db7094073a8e940a1569fe488358"
+      ],
+      "evidence_ids": [
+        "b-case-161",
+        "b-primary-6c6118c8d5",
+        "b-owner-5fc2da890594",
+        "b-owner-c15eb6b5d119",
+        "b-targeted-092d0e2abd71",
+        "b-targeted-b897a833d2ce",
+        "b-case-179",
+        "b-primary-c400138c48"
+      ],
+      "proposal_ids": [
+        "b-proposal-cm0643"
+      ],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    },
+    {
+      "finding_id": "b-finding-infusion-fraction",
+      "severity": "P2",
+      "title": "InfusionBroth remains unidentified within BBL210920",
+      "detail": "FullDSMZ1029andAPIretrieved;25gInfusionBrothisaninternalfractionoftheBBLActinomycesproduct, notthewhole210920powder. Tissueandinternalformula areabsent, so productcatalogcannotbeassignedtothissubingredient.",
+      "case_indices": [
+        187
+      ],
+      "case_ids": [
+        "KG_CASE:f93df2fe1ec08aaab7b2941e6d1684aaa8430b1abd5b6b85664fc33327ac9a64"
+      ],
+      "evidence_ids": [
+        "b-case-187",
+        "b-primary-c1a6631504",
+        "b-owner-533f82b8a8b9",
+        "b-targeted-bdcd5540d6bb",
+        "b-targeted-c136139f3aea"
+      ],
+      "proposal_ids": [],
+      "status": "coordinator follow-up; no maintained change applied",
+      "issue_refs": []
+    }
+  ]
+}

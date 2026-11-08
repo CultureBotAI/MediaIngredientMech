@@ -1,0 +1,54 @@
+identifier: kgmicrobe.ingredient:jcm133_salt_solution_i
+preferred_term: JCM133 Salt solution No.1
+synonyms:
+- synonym_text: Salt Solution I
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:633c7fc241861e69fcbda5b7af25616475ee0db2400677c1d9e1048c3ee7be11;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm133_salt_solution_i
+  ontology_label: JCM133 Salt solution No.1
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=133
+    notes: Source-specific JCM133 salt solution No.1. Components are source batch additions,
+      not inferred final-volume concentrations. Raw generic Salt Solution I is provenance-only
+      to avoid unrelated-numbered-stock collisions.
+notes: Source-specific JCM133 salt solution No.1. Components are source batch additions, not
+  inferred final-volume concentrations. Raw generic Salt Solution I is provenance-only to
+  avoid unrelated-numbered-stock collisions.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Source-specific JCM133 salt solution No.1. Components are source batch additions,
+    not inferred final-volume concentrations. Raw generic Salt Solution I is provenance-only
+    to avoid unrelated-numbered-stock collisions.
+  llm_assisted: true
+  new_status: MAPPED
+components:
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.78'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=133
+    source_record: JCM133 Salt solution No.1
+    notes: Source-specific JCM133 salt solution No.1. Components are source batch additions,
+      not inferred final-volume concentrations. Raw generic Salt Solution I is provenance-only
+      to avoid unrelated-numbered-stock collisions.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+    units are transcribed without lexical identity promotion.

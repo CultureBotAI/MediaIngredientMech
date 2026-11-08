@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:dsmz1245_sugar_stock_s5688
+preferred_term: DSMZ1245 Sugar Stock Solution (MediaDive S5688)
+synonyms:
+- synonym_text: Sugar Stock Solution
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:09425422bf6f2b0272f897b60becd790003ebf354d175363effbe78ad3c5c152;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz1245_sugar_stock_s5688
+  ontology_label: DSMZ1245 Sugar Stock Solution (MediaDive S5688)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/rest/solution/5688
+    notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list
+      is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is
+      asserted, and supplier clarification remains required for complete quantitative composition.'
+notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is
+  PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted,
+  and supplier clarification remains required for complete quantitative composition.'
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list
+    is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted,
+    and supplier clarification remains required for complete quantitative composition.'
+  llm_assisted: true
+  new_status: MAPPED
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+- component_name: Fructose
+  reference_scope: UNMAPPED
+- component_name: Sucrose
+  reference_scope: UNMAPPED
+- component_name: Maltose
+  reference_scope: UNMAPPED
+- component_name: Ribose
+  reference_scope: UNMAPPED
+- component_name: Xylose
+  reference_scope: UNMAPPED
+- component_name: Pectin
+  reference_scope: UNMAPPED
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+- component_name: Sodium pyruvate
+  reference_scope: UNMAPPED
+- component_name: Thiamine pyrophosphate
+  reference_scope: UNMAPPED
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/5688
+    source_record: DSMZ1245 Sugar Stock Solution (MediaDive S5688)
+    notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list
+      is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is
+      asserted, and supplier clarification remains required for complete quantitative composition.'
+  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+    units are transcribed without lexical identity promotion.

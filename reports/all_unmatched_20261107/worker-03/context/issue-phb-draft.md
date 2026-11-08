@@ -1,0 +1,11 @@
+`data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml` has registry identity `cas:29435-48-1` but maps to `CHEBI:20067`, the monomer 3-hydroxybutyric acid. Its retained chemistry also needs correction: the source describes a polymer, not a finite oligomer. The frozen campaign owner and live `main` file retrieved on 2026-11-08 have the same SHA256, `9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848`.
+
+[MediaDive ingredient 300](https://mediadive.dsmz.de/ingredients/300) explicitly specifies poly[(R)-3-hydroxybutyric acid] and Sigma. The [Sigma 363502 product](https://www.sigmaaldrich.com/US/en/product/aldrich/363502) and [ChEBI:131525](https://www.ebi.ac.uk/chebi/CHEBI:131525) support the R-specific polymer. The captured ChEBI API response SHA256 is `d14732205bcbeaf072922beb962f53c3ebe76689c383075f5bb19de2c14dbc96`.
+
+The generic beta-polyhydroxybutyric-acid source label is a separate granularity: [ChEBI:53389](https://www.ebi.ac.uk/chebi/CHEBI:53389) represents the polymer without the R/S specification. Do not collapse that generic owner into the R-specific owner. The monomer must also remain separate from both polymers.
+
+Worker03 has isolated proposals `c-r-polymer-identity` and `c-r-polymer-tombstone` for the R-specific pair, and `c-generic-polymer-alias` and `c-generic-polymer-tombstone` for the generic pair. These are coordinated proposals, not four independently applicable changes: verify both before hashes in each pair, retain source provenance, correct the molecular representation, and retire only the corresponding duplicate. The generic record's `Role:Carbon source` token is an annotation, not a resolving substance synonym.
+
+No maintained records were changed. Complete changed-owner review, existing native holds, guarded integration and synchronized exports remain required. Evidence and exact payloads are retained under `reports/all_unmatched_20261107/worker-03/chemicals/`.
+
+Deduplication: all-state indexed searches for hydroxybutyric, hydroxybutyrate and PHB were inspected. #208/#274 concern monomer synonym duplicates; they do not resolve these polymer identities. #268 records the general wrong-grounding/chemistry propagation problem. This issue records the source-backed polymer instances.

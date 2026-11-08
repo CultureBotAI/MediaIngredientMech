@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "b-proposal-chopped-filtrate",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:03b675ceae9077b66cb6c6351cc231cafd55bb722146608a132a064ff176b89f"
+      ],
+      "description": "Create a source-defined filtered broth identity and retain the frozen850g/L versus primary850mL discrepancy.",
+      "evidence_ids": [
+        "b-case-001",
+        "b-recipe-001-00",
+        "b-attempt-4133d52220",
+        "b-primary-59f8051613",
+        "b-primary-422da52aba",
+        "b-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml",
+        "sha256": "41f5bf2e29eaececff62057ebe80b66dc91ecd69ac9dd712313893f5ae441fe3"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "No final chemical composition is asserted: beef andNaOH are extraction inputs. Broad source wording retained as REJECTED_LABEL must remain nonresolving; no whole cooked-meat owner merge."
+    },
+    {
+      "proposal_id": "b-proposal-gam_broth_mod_powder",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:0f98ac8ee0be9236ffe828de0033a6575596bfd51508040cf68eada29599f72c",
+        "KG_CASE:6dd452fb96e1daeadcea71f69836929e216ee930de8fbca6f974a2b1133a7e99"
+      ],
+      "description": "DSMZ1715 and MediaDive1564 identify modified HyServe GAM at41.7g/L. Standard59g/L GAM is a different product. Product composition is not inferred from whole recipient medium.",
+      "evidence_ids": [
+        "b-case-010",
+        "b-recipe-010-00",
+        "b-primary-adef656188",
+        "b-primary-9a8556e34b",
+        "b-primary-7838e87259",
+        "b-primary-e38e219bd2",
+        "b-owner-1ef3b024692b",
+        "b-owner-search",
+        "b-case-147"
+      ],
+      "owner_path": "data/ingredients/unmapped/GAM_Broth_Mod_Powder.yaml",
+      "before_sha256": "f5a5ac22fdcdb9431b535af9c8094422d795304389e40207c7a92c9509885100",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/GAM_Broth_Mod_Powder.yaml",
+        "sha256": "2af067ddf141a5cab8c44ba826e2717f4e10a6aade820f22c2730af0588e8d17"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Promotion preserves the existing stem and complete historical payload. Before integration verify the entire owner against native rules; no standard/modified or cross-supplier GAM merger, generic extract equality, new components, or roles are asserted.",
+      "intended_destination": "data/ingredients/mapped/GAM_Broth_Mod_Powder.yaml"
+    },
+    {
+      "proposal_id": "b-proposal-veal_infusion_broth",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:11b418f26a4c90acf659eede5516c7959d9450e6430fbe215a2332f577681ad3",
+        "KG_CASE:4b6258ce9bd4afc08fc7c057e2526b3980840958f0c4b92d90363356ab8993e4"
+      ],
+      "description": "DSMZ577 and MediaDive579 identify Difco0344 veal infusion broth25g/L; separate yeast extract5g/L belongs to VY medium, not this product.",
+      "evidence_ids": [
+        "b-case-012",
+        "b-recipe-012-00",
+        "b-primary-e272c77ddb",
+        "b-primary-32e08fa264",
+        "b-primary-ed74c6f621",
+        "b-owner-d696765732ca",
+        "b-owner-search",
+        "b-case-137"
+      ],
+      "owner_path": "data/ingredients/unmapped/Veal_Infusion_Broth.yaml",
+      "before_sha256": "bffea3c81ac3205bae12a13f73650ba13b531fdb1b5449185ab7b239e8e98980",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Veal_Infusion_Broth.yaml",
+        "sha256": "dc59338e1250853b7a84204ee7aa54d4a4146dc2642f1436432097d979aaeb69"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Promotion preserves the existing stem and complete historical payload. Before integration verify the entire owner against native rules; no standard/modified or cross-supplier GAM merger, generic extract equality, new components, or roles are asserted.",
+      "intended_destination": "data/ingredients/mapped/Veal_Infusion_Broth.yaml"
+    },
+    {
+      "proposal_id": "b-proposal-gam_broth_powder",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:cf539bfd33030279a2fb12a232d2b83ec9e6069812a44ab50465c4738baf4afe",
+        "KG_CASE:d537c4dc4d79c2a90fcd6c4f674012c8320d5768ebc8a84144d3fe4b934f6716"
+      ],
+      "description": "DSMZ1713 and MediaDive1563 identify standard HyServe GAM59g/L. Modified41.7g/L GAM remains a distinct owner.",
+      "evidence_ids": [
+        "b-case-105",
+        "b-recipe-105-00",
+        "b-primary-0e4d996895",
+        "b-primary-e436f28ec0",
+        "b-primary-e3720103c0",
+        "b-primary-5c1bd07c71",
+        "b-owner-770946c3aa6c",
+        "b-owner-search",
+        "b-case-178"
+      ],
+      "owner_path": "data/ingredients/unmapped/GAM_Broth_Powder.yaml",
+      "before_sha256": "d9eeda5b7a94703f7558850a36191cb8300ada8f0303eff2228595e1b202a4e4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/GAM_Broth_Powder.yaml",
+        "sha256": "8083c8ecea986a1603d468b3450e625c7b360f89aa86c4bbfbfa3640d7149cec"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Promotion preserves the existing stem and complete historical payload. Before integration verify the entire owner against native rules; no standard/modified or cross-supplier GAM merger, generic extract equality, new components, or roles are asserted.",
+      "intended_destination": "data/ingredients/mapped/GAM_Broth_Powder.yaml"
+    },
+    {
+      "proposal_id": "b-proposal-marine-aliases",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:72d64f7dd0660a0a455b73d2894ce4406d2312603df80a9069db2b2a35261162",
+        "CM_NAME:d9085dff2d131a78163c05f749137a635269ff7c6020a86da15d4f6294de2116",
+        "KG_CASE:178d52ff74234c25075500cc4f8c37d1bfc44a33ceb8586b9596dac16564bda3"
+      ],
+      "description": "Add two source-qualified Difco Marine2216 aliases; keep existing native hold and component-review obligations.",
+      "evidence_ids": [
+        "b-case-062",
+        "b-recipe-062-00",
+        "b-primary-d83a3b0218",
+        "b-primary-edb754e2bf",
+        "b-primary-93bbadf7f8",
+        "b-primary-e14886a2e4",
+        "b-primary-93eb62ac9b",
+        "b-primary-5879f6e0dd",
+        "b-primary-d56eed7ab8",
+        "b-primary-09dee74068",
+        "b-primary-9f0f8c5104",
+        "b-primary-f843cc2325",
+        "b-primary-7b22c063a5",
+        "b-primary-636784203d",
+        "b-primary-ea8cb32bda",
+        "b-primary-8dbcf0f44e",
+        "b-owner-7df4af4ea4b2",
+        "b-case-108",
+        "b-recipe-108-00",
+        "b-recipe-108-01",
+        "b-recipe-108-02",
+        "b-recipe-108-03",
+        "b-recipe-108-04",
+        "b-recipe-108-05",
+        "b-recipe-108-06",
+        "b-recipe-108-07",
+        "b-recipe-108-08",
+        "b-recipe-108-09",
+        "b-recipe-108-10",
+        "b-recipe-108-11",
+        "b-recipe-108-12",
+        "b-recipe-108-13",
+        "b-case-124"
+      ],
+      "owner_path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+      "before_sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Marine_Broth_2216.yaml",
+        "sha256": "bd529989e05657d43ff31d900f884346604655d0436c84d851eeee0474187933"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Separate Difco_Marine_Broth and Marine_Broth owners are not merged. Inherited component IDs and complete assertion are preserved without scientific approval; the duplicated frozen514a decomposition must not justify them."
+    },
+    {
+      "proposal_id": "b-proposal-bd211065",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:95f9422185431596c32f30629437bf1d87aca516ae0579cb9645a6e9990b232d"
+      ],
+      "description": "Concrete BD211065 BBL BHI agar candidate; incompatible current heart-only owner must be reconciled before application.",
+      "evidence_ids": [
+        "b-case-076",
+        "b-recipe-076-00",
+        "b-attempt-b44b5921b3",
+        "b-attempt-64f16b7f8e",
+        "b-primary-5d95551806",
+        "b-primary-9754daf045",
+        "b-primary-a379cc7b6d",
+        "b-bd-211065",
+        "b-owner-d7087ebb9588",
+        "b-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/BBL_Brain_Heart_Infusion_Agar_BD_211065.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/BBL_Brain_Heart_Infusion_Agar_BD_211065.yaml",
+        "sha256": "641863eec7ae6766a4e7cc51baeda4c2e910637e017b26b0fd526241bb1006d9"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Blocking competing-owner reconciliation: Heart_Infusion_Agar_BD_211065.yaml falsely carries211065 but real heart-only Difco/Eiken aliases. Catalog identity is established; no full component formula or generic BHI/heart-agar alias scope is approved."
+    },
+    {
+      "proposal_id": "b-proposal-daigo-r2a",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:a3e7d9526bde2d749400a66aec74cb5a13f6df165903bcdb40ea5976f738d3a1",
+        "CM_NAME:a41b91de88fc5cb3802feb87ae64d2176f47d0453595c9605a1c43ba0840494f"
+      ],
+      "description": "Create DAIGO R2A broth candidate with full JCM839 formula, separately from R2Aagar.",
+      "evidence_ids": [
+        "b-case-086",
+        "b-recipe-086-00",
+        "b-recipe-086-01",
+        "b-primary-6a2793e0be",
+        "b-primary-3a4e42c821",
+        "b-primary-bb33a25307",
+        "b-primary-fccd04379c",
+        "b-primary-3988924f4f",
+        "b-owner-search",
+        "b-case-087",
+        "b-recipe-087-00"
+      ],
+      "owner_path": "data/ingredients/mapped/R2A_Broth_DAIGO.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/R2A_Broth_DAIGO.yaml",
+        "sha256": "5603b8878ca3460906dcc26b33c29db602661773eb3a598ad293ae7cd525b22f"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Component list is literal source transcription, with component identities unresolved. No roles or organism-specific capabilities asserted. Manufacturer-name history does not authorize new vendor aliases beyond cited exact product sources."
+    },
+    {
+      "proposal_id": "b-proposal-mem-p0440",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:26c6907beea5e48ccf9ae1064cee49172456cb4a5852e2625374d3d3a67e1c62"
+      ],
+      "description": "Annotate the exact P0440 powder/exclusion scope while retaining the generic owner UNMAPPED.",
+      "evidence_ids": [
+        "b-case-128",
+        "b-primary-c5ab410faa",
+        "b-primary-9935ebc560",
+        "b-primary-0ace8e29b4",
+        "b-primary-54aa03cc97",
+        "b-owner-d7ba06f5bdc2"
+      ],
+      "owner_path": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+      "before_sha256": "53bef2ebf4a08858099277f59554eb8d7563fc00ccc4415399f2b68294ed5008",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/MEM_Alpha_Modification.yaml",
+        "sha256": "cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "This is bounded ingredient identity/form evidence, not a complete scientific review of inherited roles, component identifiers, synonyms, or whole published record payload."
+    },
+    {
+      "proposal_id": "b-proposal-pplo-255420",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:2f7aca975038ba6cb3dddc22acf13a74fe119ff1e74a987ddf6d91a22a888495",
+        "CM_NAME:3ecee0af186aebeeace31722f00694b3229ffe6b276e6ceb8c2947262c6bfe5f",
+        "CM_NAME:bf1329ba7b8fe301d91ed5e53e7591ead38f3ffea10be09b635be2d1def61694"
+      ],
+      "description": "Separate catalog-specific255420 basal broth identity; no generic PPLO alias merge.",
+      "evidence_ids": [
+        "b-case-034",
+        "b-recipe-034-00",
+        "b-attempt-74f8795e5f",
+        "b-attempt-ec7d49a8ec",
+        "b-primary-fd81c1e8f3",
+        "b-primary-e85b425df2",
+        "b-primary-2f1381032d",
+        "b-bd-255420",
+        "b-primary-e9b458b61d",
+        "b-primary-7142688cdb",
+        "b-owner-a46244c663aa",
+        "b-owner-e71603bc1594",
+        "b-owner-search",
+        "b-case-038",
+        "b-recipe-038-00",
+        "b-case-099",
+        "b-recipe-099-00",
+        "b-attempt-22e24da80d"
+      ],
+      "owner_path": "data/ingredients/mapped/Difco_PPLO_Broth_BD_255420.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Difco_PPLO_Broth_BD_255420.yaml",
+        "sha256": "6222acaf8b54e9f517186f831bf9a4873dd2ead84a8f86d4cb71b055060ea208"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Competing generic PPLO_Broth/PPLO_medium ownership requires reconciliation; no maintained aliases are removed here. Formula revision/lot is not documented; only source/catalog product identity is proposed. Native new-owner admission remains blocked by1165 until coordinator integration prerequisites land."
+    },
+    {
+      "proposal_id": "b-proposal-pplo-211458",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:113cd45f4ab9c9013f63232dbaecb0b1669baa8cc3a2e9b0557aadaec9ce263f"
+      ],
+      "description": "Separate catalog-specific211458 basal broth identity; no generic PPLO alias merge.",
+      "evidence_ids": [
+        "b-case-011",
+        "b-recipe-011-00",
+        "b-attempt-83015025d7",
+        "b-attempt-1454663ee6",
+        "b-primary-5f33fdf488",
+        "b-primary-98cf5ce6c6",
+        "b-primary-2f1381032d",
+        "b-bd-211458",
+        "b-owner-a46244c663aa",
+        "b-owner-e71603bc1594",
+        "b-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/BBL_Mycoplasma_Broth_Base_BD_211458.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/BBL_Mycoplasma_Broth_Base_BD_211458.yaml",
+        "sha256": "9ad32780d2c40fe98a8268a49354b4cd26b1cedaa34b5e20a281684f912a3ba7"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Competing generic PPLO_Broth/PPLO_medium ownership requires reconciliation; no maintained aliases are removed here. Formula revision/lot is not documented; only source/catalog product identity is proposed. Native new-owner admission remains blocked by1165 until coordinator integration prerequisites land."
+    },
+    {
+      "proposal_id": "b-proposal-kyokuto-551024807",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:06f4c57e4787f45cd6ed6d346d398abb419407583bd0996b69e6b448c8eed3f7"
+      ],
+      "description": "NBRC1296 explicitly identifies Kyokuto551-02480-7 nutrient broth powder at6g, with pyruvate and optional agar separate. This catalog-bound preparation does not inherit Difco or Oxoid nutrient-broth equivalence. The vendor formulation is not disclosed; no components are invented.",
+      "evidence_ids": [
+        "b-case-003",
+        "b-recipe-003-00",
+        "b-primary-073839eb28",
+        "b-targeted-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/Kyokuto_Nutrient_Broth_Powder_551_02480_7.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Kyokuto_Nutrient_Broth_Powder_551_02480_7.yaml",
+        "sha256": "edaf5ead93823acd2f5e2351ab570362a803d71542072b2a3c57e3734bcbc99f"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Catalog source identity supported by NBRC1296. Historical product formulation is undisclosed; no formula or equivalence to another vendor is approved."
+    },
+    {
+      "proposal_id": "b-proposal-bd211443",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:6f9d6fd16c8bfeaaf6f90a71eb17eac764279eef96a193beeb972ada13595c99"
+      ],
+      "description": "TOGO M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum separately. Manufacturer-submitted GUDID identifies211443 as BBL MuellerHintonBroth500g, commercially discontinued in the UnitedStates in2022. This historical catalog remains a stable source identity; it is not cation-adjusted MuellerHintonII nor the serum-supplemented final medium.",
+      "evidence_ids": [
+        "b-case-060",
+        "b-recipe-060-00",
+        "b-primary-5b1cdb35fc",
+        "b-targeted-627e3868239f",
+        "b-targeted-d5be897e3535",
+        "b-targeted-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/BBL_Mueller_Hinton_Broth_BD_211443.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/BBL_Mueller_Hinton_Broth_BD_211443.yaml",
+        "sha256": "9d9c7ad59e41dcc7569700eb3dfcdded3be8e6bfcde0e672c782212d26ab0f2a"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "No full composition transcribed because retrieved product record is identity/label evidence. Historical distribution status does not invalidate recipe identity. No new organism or susceptibility claims."
+    },
+    {
+      "proposal_id": "b-proposal-liver-filtrate",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:92444879ebc0639bb25a86bef3d2e3e10f5d8a80d2224a4fedd1671fd821ad69"
+      ],
+      "description": "Preparation-defined liquid liver filtrate in NBRC201/202:25g sliced liver,150mLwater, gentle boiling30minutes, cloth filtration to remove solids. The species and recovered volume are not specified. Starting liver mass is not final extract concentration, and no dried-extract equivalence is claimed.",
+      "evidence_ids": [
+        "b-case-074",
+        "b-recipe-074-00",
+        "b-recipe-074-01",
+        "b-primary-97d7aa21af",
+        "b-primary-7f6380f245",
+        "b-targeted-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/Liver_Infusion_Filtrate_NBRC201_202.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Liver_Infusion_Filtrate_NBRC201_202.yaml",
+        "sha256": "9da60ab80d1d410688654bf8c6dd896941af82a76c4a5e0ee07956671b7599cf"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Specific preparation scope only. Tissue species and final filtrate yield remain unspecified; no formula, dry weight or global LiverInfusion resolving alias is asserted."
+    },
+    {
+      "proposal_id": "b-proposal-oxoid-cm0077",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:e0ca2cc61a12c519fef7e005971945a435683d434835f03d7a0b393289fb754e"
+      ],
+      "description": "DSMZ77 names OxoidCM77 LiverBroth. Official CM0077 specification identifies the product and four-part typical formula, including30g/L extracted liver tissue in addition to23g/L infusion. This particulate broth is not the filtered NBRC liver infusion.",
+      "evidence_ids": [
+        "b-case-114",
+        "b-recipe-114-00",
+        "b-primary-95a3b55f7a",
+        "b-targeted-28f8dc70ebee",
+        "b-targeted-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/Oxoid_Liver_Broth_CM0077.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Oxoid_Liver_Broth_CM0077.yaml",
+        "sha256": "c7b73a83900f548df318e3b0ef823c0936fbf185de22a1188c538f1c4a9cf6ce"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Typical formula from current supplier specification, adjusted as required for performance. Source does not identify animal species or potassium-phosphate protonation; components remain literal and unmapped."
+    },
+    {
+      "proposal_id": "b-proposal-columbia-m2256",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:e175abbfd940158b681b2230fa79cf66f46cfc66b96356d7dc2feb75f7aa5a03"
+      ],
+      "description": "TOGO M2256 explicitly names BBL Columbia broth and provides its12-component basal subformula. NAD0.01% andCaCl225mM are parent supplements and excluded here. This record denotes the source-defined basal formulation, not every product named Columbia broth.",
+      "evidence_ids": [
+        "b-case-115",
+        "b-recipe-115-00",
+        "b-primary-9279ade8e1",
+        "b-targeted-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/Columbia_Broth_BBL_TOGO_M2256.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Columbia_Broth_BBL_TOGO_M2256.yaml",
+        "sha256": "f551687928299285e6a8b448e36e09aa10b1c607918a04b2d542f192fa6ddbab"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Complete source-defined basal formula, with literal component references. Generic ColumbiaBroth alias remains nonresolving. No catalog/version equivalence beyond TOGOM2256 is asserted."
+    },
+    {
+      "proposal_id": "b-proposal-standard-i",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:4503f76ee4092e816c3f4ede149525c3dc9252aed6d263141800c2a789b70d9e"
+      ],
+      "description": "Original source630 is Merck StandardI broth in DSMZ637. Official Merck12thEdition manual identifies1.07882 StandardI nutrientbroth and its15/3/6/1g/L formula,25g/L preparation. Malt extract,CaCO3 andagar inDSMZ637 are separate supplements.",
+      "evidence_ids": [
+        "b-case-134",
+        "b-primary-0bbacc2686",
+        "b-owner-08e1f1af3574",
+        "b-targeted-5152a71c8ee6",
+        "b-targeted-f94f0cbbe13e",
+        "b-targeted-2477f35d954e",
+        "b-targeted-web-134",
+        "b-targeted-owner-search"
+      ],
+      "owner_path": "data/ingredients/unmapped/Standard_I_Broth.yaml",
+      "before_sha256": "8a7bcc3877867d52bee41ea2f5bf731f52df07229706cd9fd0295e3ae8b190e9",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Standard_I_Broth.yaml",
+        "sha256": "780bf90a4dd27b742b5df94ce2fe2f9324fdedfb1817f20bbb2e4b5e03f2c664"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Full inherited owner still requires native review; no cross-vendorStandardI alias or finalDSMZ637 identity is asserted.",
+      "intended_destination": "data/ingredients/mapped/Standard_I_Broth.yaml"
+    },
+    {
+      "proposal_id": "b-proposal-bd238400",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:675ced62305720f2502c2b6c35b4c90ddee2a995ef2908e763bb1c373f56a4de"
+      ],
+      "description": "Original MediaDive1460 explicitly identifiesBD238400; BD catalog confirmsDifco HeartInfusionBroth. ATCC254 gives25g/L and10g beef-heart infusion solids from500g tissue,10g tryptose,5gNaCl, with agar omitted for broth. This is distinct from BHI and heartinfusionagar.",
+      "evidence_ids": [
+        "b-case-146",
+        "b-primary-3a63c570bf",
+        "b-owner-e3f63141d666",
+        "b-targeted-784a6dfd368f",
+        "b-targeted-627e3868239f",
+        "b-targeted-web-146"
+      ],
+      "owner_path": "data/ingredients/unmapped/Bacto_Heart_Infusion_Broth.yaml",
+      "before_sha256": "4889d8a364518c3129c985d62d5e2af079aad76f5c5a09270bfd053a6885b72d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Bacto_Heart_Infusion_Broth.yaml",
+        "sha256": "ff61325e7bbc9be95c9e653d0bd62d97c60c2bb124d2fb39bd25515e545813bd"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Separate generic Heart_Infusion_Broth owner is not automatically merged; source1104 cases must be individually reconciled. Tissue500g is starting material, not final component concentration.",
+      "intended_destination": "data/ingredients/mapped/Bacto_Heart_Infusion_Broth.yaml"
+    },
+    {
+      "proposal_id": "b-proposal-difco-nutrient",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:2c8b3abaf7a513b61b1d528f40c98d823a8bba43cb1e2d5d5446da3d9978ab5a"
+      ],
+      "description": "NBRC885 names Difco BactoNutrientBroth8g/L; ATCC3 identifies correspondingDifcoBD2340008g/L and3g beefextract+5gpeptone. Sodiumcarbonate inNBRC885 andagar inATCC3 are excluded. Current Nutrient_Broth_No_2 incorrectly combines the distinctOxoidCM0067 product withDifco aliases and must be reconciled before applying this powder-product proposal.",
+      "evidence_ids": [
+        "b-case-031",
+        "b-recipe-031-00",
+        "b-primary-eb54843d3e",
+        "b-primary-628bb01683",
+        "b-owner-458c89206b9d",
+        "b-targeted-4363a2722faa",
+        "b-targeted-web-31"
+      ],
+      "owner_path": "data/ingredients/mapped/Difco_Nutrient_Broth_NBRC885.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Difco_Nutrient_Broth_NBRC885.yaml",
+        "sha256": "9335446e1fce516a2a6632597ac45a3799fb49ed555acd1004d245e11a713941"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Catalog234000 is primary comparator, not silently added toNBRC885. Integration must resolve competing Nutrient_Broth_No_2 aliases and decide exact/broad ontology relation for the supplier powder before release; registry candidate is source-specific, not a new generic nutrientbroth concept."
+    },
+    {
+      "proposal_id": "b-proposal-cm0149-form",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "description": "NBRC902 identifiesOxoidCM0149. Current supplierIFU0539 explicitly callsCM0149 semi-solid, with0.5g/Lagar and13g/Lyeast extract; it distinguishesCM0151agar. Historical supplier specification search describes3gyeast+10gLabLemco instead, so formulation revision cannot be silently erased.",
+      "evidence_ids": [
+        "b-case-029",
+        "b-recipe-029-00",
+        "b-primary-b80f9ee369",
+        "b-attempt-c569af5bb2",
+        "b-owner-a8d0e9cbeed2",
+        "b-targeted-d5c1626805eb",
+        "b-targeted-151c34f3bf1a",
+        "b-targeted-b087f0859f30"
+      ],
+      "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+      "before_sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "The existing owner also carriesBD-Difco and historicalOxoid aliases. The captured currentIFU formula must not be retroactively applied to unknown recipe revisions. Registry promotion requires an explicit scope partition; this form annotation is safe and concrete without it."
+    },
+    {
+      "proposal_id": "b-proposal-cm0643",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:a2074d7903a380725c9c46ef830c1815846ef9b9a98876179c1d6aeea718c61a",
+        "KG_CASE:dd045ae013815309d3a00a71375b712d0d40db7094073a8e940a1569fe488358"
+      ],
+      "description": "Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias and source2140 explicitCM643 identify the same catalog family. OfficialCM0643 specification supplies nine constituents. Themisspelled separateownerWilkins_Chalgrene_Anaerobe_Broth retains independent source2140provenance and must be reconciled before integration.",
+      "evidence_ids": [
+        "b-case-161",
+        "b-primary-6c6118c8d5",
+        "b-owner-5fc2da890594",
+        "b-owner-c15eb6b5d119",
+        "b-targeted-092d0e2abd71",
+        "b-targeted-b897a833d2ce",
+        "b-case-179",
+        "b-primary-c400138c48"
+      ],
+      "owner_path": "data/ingredients/unmapped/Wilkins-Chalgren-Anaerobe-Broth.yaml",
+      "before_sha256": "22d4e4be05de3a308f5aacebd8e6fb4b871577ae7612de08cd3a44f46f6cf0dd",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Wilkins-Chalgren-Anaerobe-Broth.yaml",
+        "sha256": "1646156e0153d035e585214dd25eaa6275a423bc41920aa34cc68a02992aa4e6"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Apply only after provenance-preserving reconciliation withWilkins_Chalgrene_Anaerobe_Broth.yaml; this payload neither deletes that record nor silently copies its aliases/history. The source1000mLpreparedbroth remains an occurrence amount, not33g inferred productdose.",
+      "intended_destination": "data/ingredients/mapped/Wilkins-Chalgren-Anaerobe-Broth.yaml"
+    }
+  ]
+}

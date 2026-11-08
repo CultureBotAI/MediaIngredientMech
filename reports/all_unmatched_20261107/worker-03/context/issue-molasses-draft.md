@@ -1,0 +1,9 @@
+`data/ingredients/mapped/Sugar_Beet_Molasses.yaml` assigns sugar beet molasses to `FOODON:00003412` (sugar beet). The frozen campaign owner and the live `main` file retrieved on 2026-11-08 have the same SHA256, `64a35d50a0df41bf8097f57af5a581c730d26e2895e82396df10d7aadf817ca5`.
+
+[MediaDive ingredient 346](https://mediadive.dsmz.de/ingredients/346) names **Sugar beet molasses**. The [current FOODON term 00003412](https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?iri=http://purl.obolibrary.org/obo/FOODON_00003412) denotes the root material; the [nonobsolete FOODON term 03543005](https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?iri=http://purl.obolibrary.org/obo/FOODON_03543005) explicitly includes molasses obtained from sugar beet. Processing a root into sugar-refining syrup changes the supplied material identity.
+
+Worker03 has an isolated exact proposal, `m-sugar_beet_molasses_identity`, for this owner with the specific molasses identity and canonical ontology label. The proposal preserves the original history and the current WITHHOLD obligation. No maintained record has been changed. Coordinator integration must verify the before hash, synchronize the maintained surfaces, withdraw inherited support for changed bytes, and obtain full native owner/payload review before publication.
+
+Evidence is retained under `reports/all_unmatched_20261107/worker-03/materials/`: `ontology-foodon-03543005.txt` SHA256 `bd410a4a0852d8f9ebe1ae6ef9cc64bc9271c58165c785574021b49ec2c28d21`, `ontology-foodon-00003412.txt` SHA256 `e0dc0fedae8feda65fa354fa1367c5a7cbeae2642b95b927c7f556adeabb4c36`, plus the primary MediaDive capture and independent per-case review.
+
+Deduplication: live all-state issue/PR searches for molasses, the exact owner stem and `03543005` returned zero indexed matches. The sugar-beet issues #312/#739 concern arabinan and do not address this molasses identity.

@@ -1,0 +1,3 @@
+Worker03 completed the assigned 188-case frozen source-review shard. Start with [HANDOFF.md](HANDOFF.md) for counts, actual review scopes, validation, findings and coordinator integration limits. Exact machine-readable state and hashes are in [HANDOFF.json](HANDOFF.json).
+
+The final root decisions/evidence/proposals are authoritative for this worker handoff. Per-agent author cores intentionally retain their pre-assembly review metadata; their separate hash-bound skeptical reviews are attached in the root artifacts. Superseded drafts and unsuccessful captures are retained as provenance, not active proposals or scientific support. The manifest excludes only itself to avoid self-reference.

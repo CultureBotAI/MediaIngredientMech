@@ -1,0 +1,126 @@
+identifier: CHEBI:35607
+preferred_term: Na3VO4
+ontology_mapping:
+  ontology_id: CHEBI:35607
+  ontology_label: trisodium vanadate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: sodium o-vanadate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium orthovanadate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium pervanadate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium tetraoxidovanadate(V)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium vanadate (ortho)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trisodium orthovanadate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trisodium tetraoxovanadate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trisodium trioxido(oxo)vanadium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trisodium vanadate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: vanadate (VO4(3-)), trisodium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: vanadic acid (H3VO4), sodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: vanadic acid, trisodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium tetraoxidovanadate(3-)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: Na VO
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[2] case_id=CM_NAME:053d9db831df41c7936ae34acf3a915cfdf097612bab87e50cb19ac7ed8e9a19;
+    source=culturemech; source_case_id=Na VO; CultureMech:000072 ingredients/5 (inputs/culturemech/data/normalized_yaml/algae/fdmed.yaml);
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_FDMed.pdf'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:24.978763+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:13721-39-6 from PubChem API via name lookup (Na3VO4)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: sodium o-vanadate, sodium orthovanadate,
+    sodium pervanadate, sodium tetraoxidovanadate(V), sodium vanadate (ortho), ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:35.332269+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.408696+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=3Na.O4V; inchi=InChI=1S/3Na.4O.V/q3*+1;;3*-1;; smiles=[Na+].[Na+].[Na+].[O]=[V]([O-])([O-])[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.161986+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.808876+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na3VO4'' -> ''trisodium vanadate'': synced to canonical CHEBI label (preferred_term
+    ''Na3VO4'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.519523+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived from distinct CultureMech
+    recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453,
+    whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity and inherited full-payload
+    review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json cases[2] case_id=CM_NAME:053d9db831df41c7936ae34acf3a915cfdf097612bab87e50cb19ac7ed8e9a19;
+    source=culturemech; source_case_id=Na VO; CultureMech:000072 ingredients/5 (inputs/culturemech/data/normalized_yaml/algae/fdmed.yaml);
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_FDMed.pdf'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 13721-39-6
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:53:24.978734+00:00'
+  molecular_formula: 3Na.O4V
+  inchi: InChI=1S/3Na.4O.V/q3*+1;;3*-1;
+  smiles: '[Na+].[Na+].[Na+].[O]=[V]([O-])([O-])[O-]'
+kg_microbe_node_id: CHEBI:35607
+ingredient_type: SINGLE_INGREDIENT

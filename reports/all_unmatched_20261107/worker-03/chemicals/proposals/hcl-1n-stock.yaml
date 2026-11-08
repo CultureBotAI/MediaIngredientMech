@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:hcl_1n_stock
+preferred_term: 1 N HCl stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hcl_1n_stock
+  ontology_label: 1 N HCl stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: Source-bound worker03 review
+    notes: Distinct concentration-qualified stock; component identity is not whole-stock grounding.
+components:
+- component_name: HCl
+  component_id: CHEBI:17883
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: N
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: culturemech
+    source_record: 1 N HCl
+    notes: Primary source stock identity and strength. Solvent not inferred.
+notes: Source-qualified stock proposal. The source input dose belongs to its recipe occurrence, not to
+  stock composition. Solvent omitted because not specified; component completeness is PARTIAL.
+synonyms:
+- synonym_text: 1 N HCl
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[79] case_id=CM_NAME:9e01e104b2466ebf1384fa319d57b756336a17b72949a706790fce05b416e6f4;
+    source=culturemech; source_case_id=1 N HCl; CultureMech:009169 ingredients/18 (inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2600_Pyrobaculum_Medium.yaml);
+    CultureMech:009209 ingredients/4 (inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2654_Methanoregula_Peat_Medium.yaml);
+    CultureMech:009235 ingredients/20 (inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2680_Caldisphaera_Medium.yaml);
+    CultureMech:009226 ingredients/18 (inputs/culturemech/data/normalized_yaml/archaea/sulfolobus_medium_anaerobic_for_dsm_2162.yaml);
+    CultureMech:007890 ingredients/11 (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1353_Desulfobacterium_Catecholicum_Medium.yaml);
+    CultureMech:009654 ingredients/6 (inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1353; Primary evidence:
+    https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2600; Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2654;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2670; Primary evidence:
+    https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2680; Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3213'
+curation_history:
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: CREATED_SOURCE_STOCK_PROPOSAL
+  changes: 'Propose distinct stock with explicit source concentration and typed has-part; no exact or
+    broad mapping to solute. Source binding: frozen preliminary-v5/shards/shard-03.json cases[79] case_id=CM_NAME:9e01e104b2466ebf1384fa319d57b756336a17b72949a706790fce05b416e6f4;
+    source=culturemech; source_case_id=1 N HCl; CultureMech:009169 ingredients/18 (inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2600_Pyrobaculum_Medium.yaml);
+    CultureMech:009209 ingredients/4 (inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2654_Methanoregula_Peat_Medium.yaml);
+    CultureMech:009235 ingredients/20 (inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2680_Caldisphaera_Medium.yaml);
+    CultureMech:009226 ingredients/18 (inputs/culturemech/data/normalized_yaml/archaea/sulfolobus_medium_anaerobic_for_dsm_2162.yaml);
+    CultureMech:007890 ingredients/11 (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1353_Desulfobacterium_Catecholicum_Medium.yaml);
+    CultureMech:009654 ingredients/6 (inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1353; Primary evidence:
+    https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2600; Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2654;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2670; Primary evidence:
+    https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2680; Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3213'
+  new_status: MAPPED
+  llm_assisted: true

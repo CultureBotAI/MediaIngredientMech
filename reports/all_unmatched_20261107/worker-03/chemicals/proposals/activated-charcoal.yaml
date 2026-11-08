@@ -1,0 +1,60 @@
+identifier: NCIT:C77524
+preferred_term: Activated charcoal
+ontology_mapping:
+  ontology_id: NCIT:C77524
+  ontology_label: Activated Charcoal
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: mim-queue
+    notes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:582; '
+synonyms:
+- synonym_text: Charcoal activated
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[70] case_id=CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82;
+    source=culturemech; source_case_id=Charcoal activated; CultureMech:008727 ingredients/2 (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml);
+    CultureMech:008654 ingredients/2 (inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2063; Primary evidence:
+    https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2133'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 13
+  media_count: 13
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:582; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.053587+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.303062+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518301+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 13/13 (media_count/total_occurrences), derived from distinct
+    CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired
+    in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity and inherited full-payload
+    review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json cases[70] case_id=CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82;
+    source=culturemech; source_case_id=Charcoal activated; CultureMech:008727 ingredients/2 (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml);
+    CultureMech:008654 ingredients/2 (inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2063; Primary evidence:
+    https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2133'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
