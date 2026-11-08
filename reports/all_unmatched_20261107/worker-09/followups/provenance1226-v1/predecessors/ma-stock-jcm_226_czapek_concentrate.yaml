@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:jcm_226_czapek_concentrate
+preferred_term: JCM 226 Czapek concentrate
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_226_czapek_concentrate
+  ontology_label: JCM 226 Czapek concentrate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226
+    notes: Source-specific multicomponent stock; registry identity does not assert
+      interchangeability with other recipes bearing this generic label.
+synonyms: []
+components:
+- component_name: NaNO3
+  component_id: CHEBI:63005
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NaNO3'
+- component_name: KCl
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: KCl'
+- component_name: MgSO4 x 7 H2O
+  component_id: CHEBI:31795
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: MgSO4·7H2O'
+- component_name: FeSO4 x 7 H2O
+  component_id: CHEBI:75836
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: FeSO4·7H2O'
+- component_name: ZnSO4 x 7 H2O
+  component_id: CHEBI:32312
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: ZnSO4·7H2O'
+- component_name: CuSO4 x 5 H2O
+  component_id: CHEBI:31440
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: CuSO4·5H2O'
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: Distilled water'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226
+    source_record: jcm226
+    notes: JCM226 stock batch lists NaNO3 30g, KCl5g, MgSO4·7H2O5g, FeSO4·7H2O0.1g,
+      ZnSO4·7H2O0.1g, CuSO4·5H2O0.05g and distilled water100mL. These are batch ingredients,
+      not asserted concentrations per100mL finalsolution. Mainmedium addition is10mL;
+      frozen10G_PER_L is a separate unit defect.
+notes: JCM226 stock batch lists NaNO3 30g, KCl5g, MgSO4·7H2O5g, FeSO4·7H2O0.1g, ZnSO4·7H2O0.1g,
+  CuSO4·5H2O0.05g and distilled water100mL. These are batch ingredients, not asserted
+  concentrations per100mL finalsolution. Mainmedium addition is10mL; frozen10G_PER_L
+  is a separate unit defect. Raw source label 'Czapek concentrate (see below)' is
+  recorded in this evidence rather than as a global resolving alias because the label
+  is recipe-scoped. No EXACT_FORMULATION link to the whole medium is asserted.
+curation_history:
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose source-specific JCM 226 Czapek concentrate stock with complete
+    constituent list, original batch quantities in evidence and no guessed final-volume
+    concentrations.
+  llm_assisted: true
+  new_status: MAPPED

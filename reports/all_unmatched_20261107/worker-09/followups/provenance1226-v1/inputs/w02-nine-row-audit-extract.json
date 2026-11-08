@@ -1,0 +1,2072 @@
+{
+  "source_files": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/campaign-evidence-provenance-audit-v1/provenance/entry-provenance-ledger-v1.json",
+      "sha256": "98bfa525356aa223a08fcd2be11d9dc7476231aa6cd9efa4db1f85b2e66109e2",
+      "selected_rows": 9
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/campaign-evidence-provenance-audit-v1/provenance/native-type-suggestions-v1.json",
+      "sha256": "9ca6b04f03fdaabd65dacd90a160cf9f51dc549e607b5f5634616469532f1b33",
+      "selected_rows": 9
+    }
+  ],
+  "extracted_complete_rows": {
+    "entry-provenance-ledger-v1.json": [
+      {
+        "audit_row_id": "provenance-flag-566",
+        "flag_index": 566,
+        "entry_id": "w09::sa-proposal-iron-ii-chloride-dihydrate",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "sa-proposal-iron-ii-chloride-dihydrate",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/Iron_II_Chloride_Dihydrate.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "1701bbe148e2f59036fc5c81631fed497d0ed4f676f963a06da83b76de3f9592",
+        "proposal_entry_sha256": "2fb0a80a3d16ca74279817bd8d9960e929fcd7f3778da3ff32aea743f908a4f0",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://hpvchemicals.oecd.org/ui/handler.axd?id=677e770c-e12b-4e7d-ad59-341c8ed74fb2",
+          "notes": "Distinct iron dichloride dihydrate, CAS16399-77-2; source NBRC1326 explicitly requests FeCl2·2H2O. No exact ChEBI term returned by captured bounded name/CAS searches. MAPPING_SEMANTICS section3 step2: preserve CAS identity and publish asymmetric broadMatch to the anhydrous parent with mandatory registry row; never exact-match the hydrate to CHEBI:30812."
+        },
+        "full_value_sha256": "f1544adb415e64467abdacf42f40a4e64cfb98374c363e769c582e55a1764041",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/salts/after/Iron_II_Chloride_Dihydrate.yaml",
+        "payload_sha256": "c6f8dbcac52988231e388cf866d4c5ea612e7abaa5364b35f450277db74048f7",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for Iron_II_Chloride_Dihydrate is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name codex_worker09_source_review, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Create distinct CAS16399-77-2 iron(II) chloride dihydrate with asymmetric parent mapping; keep its source dose repair separate.",
+          "complete_claim_notes": "Distinct iron dichloride dihydrate, CAS16399-77-2; source NBRC1326 explicitly requests FeCl2·2H2O. No exact ChEBI term returned by captured bounded name/CAS searches. MAPPING_SEMANTICS section3 step2: preserve CAS identity and publish asymmetric broadMatch to the anhydrous parent with mandatory registry row; never exact-match the hydrate to CHEBI:30812.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:18:40.490477+00:00",
+              "curator": "codex_worker09_source_review",
+              "action": "CREATED",
+              "changes": "Proposed distinct FeCl2 dihydrate from NBRC1326 and primary registry/form evidence. Exact frozen source occurrence and captured responses are in worker09 salts decisions/evidence. No inherited review approval; native review, registry rows and coordinator integration required.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:81014f441fc6c9f61a5fc3f1af6aa9bbf513f24ce47f0bd641d9183e0b6f106d",
+              "primary_attribution": {},
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-salts"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "sa-proposal-iron-ii-chloride-dihydrate"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-salts",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/review-of-salts/review-final.json",
+              "sha256": "834ece02e50e27acdf878f503a7080e996c3cbd2850e043c2e01a5138059a046",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/materials",
+                "independent_of_primary_author": true,
+                "scope": "All69 assigned salts source cases and all15 exact owner proposals",
+                "limitations": [
+                  "Review completion validates source-bound decisions, including justified unresolved cases; it does not declare every source chemical identity resolved.",
+                  "No maintained owner, SSSOM row, hold ledger or downstream consumer was changed or released. Complete inherited owner payload concerns remain for coordinator native review.",
+                  "Source recoveries are scoped to exact captured versions; related import ancestry is not independent confirmation. Failed requests and bounded ontology searches are not evidence of nonexistence.",
+                  "New Allen stock carrier grade remains explicit UNMAPPED Deionizedwater; no invented distilledwater mapping or solvent fraction.",
+                  "No paid research, external session, merge or downstream rebuild was performed."
+                ],
+                "author_activity": "Reviewed primary captured sources, all frozen occurrences/full recipes,41 baseline owners, whole after payloads, independent OAK definitions and bounded exact-term query; made fresh unsuccessful JCM665 retrievals. All primary author edits were requested through findings and independently rechecked.",
+                "native_review_and_release_authorized": false
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "sa-frozen-shard",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "source",
+              "path": "shards/shard-09.json",
+              "sha256": "cb12696153cb5d9aa50db98542df76757d024d85b5ad73944893e4a0ee3555c0"
+            },
+            "url": null,
+            "locator": "Complete original case objects, occurrence records, KG source records, owners, withheld rows and downstream holds."
+          },
+          {
+            "evidence_id": "sa-recipe-04a18945016c",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/recipe-04a18945016c-recipe.capture",
+              "sha256": "ecbbe1549837efa23cbeffcd2689b9056484b7f1e7e8c09abed47b1a3d3e0527"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1326",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-oecd-iron",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/oecd-iron-supplement.capture",
+              "sha256": "c7bc338f3f1ed0fdd7ceff4276109029cd747d53e4b9255f1375b33bd9997eea"
+            },
+            "url": "https://hpvchemicals.oecd.org/ui/handler.axd?id=677e770c-e12b-4e7d-ad59-341c8ed74fb2",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-pubchem-fe-dihydrate",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/pubchem-fe-dihydrate-supplement.capture",
+              "sha256": "dcd6dae57c0bfde4b5532ed469cdef980d36ec81d04769cb7513331fd1e3c731"
+            },
+            "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/168436557/property/Title,MolecularFormula,IUPACName,InChI,InChIKey/JSON",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-ols-fe-dihydrate",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/ols-fe-dihydrate-supplement.capture",
+              "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=20&q=iron%20dichloride%20dihydrate",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-ols-fe-dihydrate-cas",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/ols-fe-dihydrate-cas-supplement.capture",
+              "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=20&q=16399-77-2",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-chebi-30812",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/chebi-30812-recipe.capture",
+              "sha256": "4b741da996df8b16983743b6648891228b8cb330f76170481f7b5940a8017182"
+            },
+            "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/30812/",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-supplier-fe-page",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/supplier-fe-page-final-metadata.json",
+              "sha256": "218e0748775e42a172b4bb994a9f3b7b9486006588d571abc7c4ab1d99595a9b"
+            },
+            "url": "https://www.americanelements.com/iron-ii-chloride-dihydrate-16399-77-2",
+            "locator": "HTTP status and curl diagnostics; missing/empty recipe is not affirmative evidence."
+          },
+          {
+            "evidence_id": "sa-recipe-78a26182e1b5b2",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "source",
+              "path": "inputs/culturemech/data/normalized_yaml/bacterial/sulfer_free_mineral_medium_sfmm.yaml",
+              "sha256": "8b509bbc79b7713ae38d258e2c18b74f56e9db7ed413e6a47edf8241e535cf4f"
+            },
+            "url": null,
+            "locator": "CultureMech:008622 complete recipe; exact component at ingredients/8"
+          },
+          {
+            "evidence_id": "sa-togo-M2033",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/togo-M2033-recipe-metadata.json",
+              "sha256": "531fcb805a2065ad562b5d29aeef32fb4bf920e17dacfaa776ee08063633f233"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2033",
+            "locator": "HTTP status and curl diagnostics; missing/empty recipe is not affirmative evidence."
+          }
+        ],
+        "inspected_source_captures": [],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-567",
+        "flag_index": 567,
+        "entry_id": "w09::sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/togo_m2231_calcium_chloride_dihydrate_stock.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "7d1b5d15e055898bbf2c6e7999c329b1d21d4f30e22519393d1391305dc30442",
+        "proposal_entry_sha256": "b0880d2361ef1968d98eda815eb3eccd13a338e93197575cb0fd94e2d269b85c",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231",
+          "notes": "Source-specific aqueous stock identity under MAPPING_SEMANTICS; the exact CHEBI86158 solute is a component, not an exact target for the whole preparation. Bounded name search found no exact stock ontology term; repeat native term and owner checks at integration."
+        },
+        "full_value_sha256": "47549ed7b413fa3f8af3ba4e1ed882413940033e57df1d0c41d46f3916bbbea4",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/salts/after/togo_m2231_calcium_chloride_dihydrate_stock.yaml",
+        "payload_sha256": "08e6b0d95fe901c148090b81c7fbaa2259154df5ffe2fdbb277fa4706c49ad8c",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for togo_m2231_calcium_chloride_dihydrate_stock is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/salts, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Create source-specific TOGO M2231 calcium chloride dihydrate stock with declared2.5g/L strength, exact hydrate component and explicitly preserved deionizedwater carrier.",
+          "complete_claim_notes": "Source-specific aqueous stock identity under MAPPING_SEMANTICS; the exact CHEBI86158 solute is a component, not an exact target for the whole preparation. Bounded name search found no exact stock ontology term; repeat native term and owner checks at integration.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:27:33.843965+00:00",
+              "curator": "all-unmatched-worker-09/salts",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Proposed distinct TOGO M2231 calcium chloride dihydrate stock using explicit two-component recipe and source-declared2.5g/L strength; retain10mL addition and source-unit defect separately.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:c67ff1de8ad274e2e689f9373b5c9baedd4bc5c3b66b05e461be5d8d678a9ed9",
+              "primary_attribution": {},
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-salts"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-salts",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/review-of-salts/review-final.json",
+              "sha256": "834ece02e50e27acdf878f503a7080e996c3cbd2850e043c2e01a5138059a046",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/materials",
+                "independent_of_primary_author": true,
+                "scope": "All69 assigned salts source cases and all15 exact owner proposals",
+                "limitations": [
+                  "Review completion validates source-bound decisions, including justified unresolved cases; it does not declare every source chemical identity resolved.",
+                  "No maintained owner, SSSOM row, hold ledger or downstream consumer was changed or released. Complete inherited owner payload concerns remain for coordinator native review.",
+                  "Source recoveries are scoped to exact captured versions; related import ancestry is not independent confirmation. Failed requests and bounded ontology searches are not evidence of nonexistence.",
+                  "New Allen stock carrier grade remains explicit UNMAPPED Deionizedwater; no invented distilledwater mapping or solvent fraction.",
+                  "No paid research, external session, merge or downstream rebuild was performed."
+                ],
+                "author_activity": "Reviewed primary captured sources, all frozen occurrences/full recipes,41 baseline owners, whole after payloads, independent OAK definitions and bounded exact-term query; made fresh unsuccessful JCM665 retrievals. All primary author edits were requested through findings and independently rechecked.",
+                "native_review_and_release_authorized": false
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "sa-frozen-shard",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "source",
+              "path": "shards/shard-09.json",
+              "sha256": "cb12696153cb5d9aa50db98542df76757d024d85b5ad73944893e4a0ee3555c0"
+            },
+            "url": null,
+            "locator": "Complete original case objects, occurrence records, KG source records, owners, withheld rows and downstream holds."
+          },
+          {
+            "evidence_id": "sa-chebi-86158",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/chebi-86158-primary.json",
+              "sha256": "0ad08517a4777d63d707c4c2b91ea403509e1683d450120afca726d421a4ccbd"
+            },
+            "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/86158/",
+            "locator": "Identity, formula, CAS and/or exact recipe component in captured response."
+          },
+          {
+            "evidence_id": "sa-recipe-f465bb9cce36cc",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "source",
+              "path": "inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml",
+              "sha256": "af65045e3fe660fcac57961abcc27a379f88bd45be403f60084a6b7eb4c3c138"
+            },
+            "url": null,
+            "locator": "CultureMech:008820 complete recipe; exact component at ingredients/6"
+          },
+          {
+            "evidence_id": "sa-togo-M2231",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/togo-M2231-recipe.capture",
+              "sha256": "2327091527bfed277c4a2538ae739de9467901f20ec6f3197bd2c040e760fd5f"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231",
+            "locator": "components paragraph_index15: exact CaCl2·2H2O (2.5g/L) stock components; paragraph_index3 matching10ml addition."
+          },
+          {
+            "evidence_id": "sa-owner-cacl2_x_2_h2o",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/owners/Cacl2_X_2_H2o.yaml",
+              "sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7"
+            },
+            "url": null,
+            "locator": "Entire maintained YAML owner at frozen worker baseline, including all rejected labels and history."
+          },
+          {
+            "evidence_id": "sa-allen-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/allen-owner-search.json",
+              "sha256": "dbdab1d6022a4e53461366c522a6f85a6b6e1fc346438e1d81d767de8a6d1f78"
+            },
+            "url": null,
+            "locator": "Gitignore-independent maintained owner/label-index search and full parsed-catalog identifier scan."
+          },
+          {
+            "evidence_id": "sa-allen-bounded-ontology-search",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "salts/captures/allen-stock-bounded-search.json",
+              "sha256": "92d5c0fe709a31151a261daeb709f21d77f8be495d86cc75863899e3ae8d9aaa"
+            },
+            "url": null,
+            "locator": "Web search tool queries recorded verbatim with timestamp; returned source URLs are in the raw capture. No direct ChEBI endpoint retrieval is claimed for this bounded search."
+          }
+        ],
+        "inspected_source_captures": [],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-568",
+        "flag_index": 568,
+        "entry_id": "w09::ma-new-rr_butane_2_3_diol",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-new-rr_butane_2_3_diol",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/rr_butane_2_3_diol.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "8b190638620bac3031080237c47fbe8a1f618331ec6060698ac6dd4f135242cc",
+        "proposal_entry_sha256": "ee58fd8b6ec288c5ad1d104a851e8fd85f20b34e847414e534f523fe483d0eb4",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://www.ebi.ac.uk/chebi/CHEBI:16982",
+          "notes": "Primary ChEBI definition verified against exact frozen source identity; no unsupported supplied grade, dose or molecular property imported."
+        },
+        "full_value_sha256": "d32bf3b7085cf55d142a64677cda3c1d328a7bd8560f52f0f49f0f8d3112c790",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/rr_butane_2_3_diol.yaml",
+        "payload_sha256": "44837ab91cdb6c1f969e053ccaa1bd9647214e541f817e8807ae02d1f8ed88f8",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES",
+          "P09-CONDITIONAL-NARROWING"
+        ],
+        "rationale": "The exact new evidence object for rr_butane_2_3_diol is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis. The frozen recipe explicitly contains the R,R label, but its bibliography also records an unresolved D-2,3-butanediol versus R,R equivalence. The current entry says verified against exact frozen source identity; retain that provenance boundary rather than implying the original study was scientifically reverified.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Propose distinct exact CHEBI:16982 identity for (R,R)-Butane-2,3-diol; preserve explicit stereochemistry/polymer/sodium form.",
+          "complete_claim_notes": "Primary ChEBI definition verified against exact frozen source identity; no unsupported supplied grade, dose or molecular property imported.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [
+          {
+            "native_type": "DATABASE_MATCH",
+            "status": "conditional_not_selected",
+            "condition": "Could be selected for the exact direct source-name/ontology match if the coordinator explicitly preserves the limited frozen-label/solute scope and does not treat the note as original-source or full supplied-form verification. A separate direct-term fact entry could use this type after a reviewed successor.",
+            "basis": "The frozen recipe explicitly contains the R,R label, but its bibliography also records an unresolved D-2,3-butanediol versus R,R equivalence. The current entry says verified against exact frozen source identity; retain that provenance boundary rather than implying the original study was scientifically reverified."
+          }
+        ],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose distinct exact CHEBI:16982 identity for (R,R)-Butane-2,3-diol; preserve explicit stereochemistry/polymer/sodium form.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:4e10166ca878420d25daabb8d11b70b49d24a28d7af9ac6f335f9dec82d71db3",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-new-rr_butane_2_3_diol"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-chemicals",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/ontology-01.json",
+              "sha256": "48903076cecc09a619abf9f296af4a2a3c62e8e92873b5f3fbf01e834b835392"
+            },
+            "url": "https://www.ebi.ac.uk/chebi/CHEBI:16982",
+            "locator": "CHEBI16982,53448,39060,61995,9932 pages individually captured"
+          },
+          {
+            "evidence_id": "ma-local-ontology",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/local-ontology-verification.json",
+              "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+            },
+            "url": null,
+            "locator": "Full subject statements from readonly OAK caches"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/ontology-01.json",
+            "sha256": "48903076cecc09a619abf9f296af4a2a3c62e8e92873b5f3fbf01e834b835392",
+            "inspection_scope": "Actual successful term response inspected; failed 132110 subresponse in ontology-01 is not support"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/liquid_ma_minimal_media_d_2_3_butanediol.yaml",
+            "sha256": "fdfbb3ff4bf249d6efc5e76c8cc4f2de0d7ea7b25c131e1bee66bc75150875e0",
+            "inspection_scope": "568: complete frozen recipe including reference limitations; 569/570: exact nested ingredient/stock objects for attribution scope, not full scientific recipe review"
+          }
+        ],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-569",
+        "flag_index": 569,
+        "entry_id": "w09::ma-new-methyl_cellulose",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-new-methyl_cellulose",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/methyl_cellulose.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "9a5dce07e5214aa9e938c53d82f842a9bd94011f6915c8d86e8916b6fe2ac67f",
+        "proposal_entry_sha256": "ff6a62e9ad9364afe7ade252a1edba4c8fe98923c68240e80d49c70509757dbe",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://www.ebi.ac.uk/chebi/CHEBI:53448",
+          "notes": "Primary ChEBI definition verified against exact frozen source identity; no unsupported supplied grade, dose or molecular property imported."
+        },
+        "full_value_sha256": "b651fc4f4ff48577359da2fda6f5b33180a4b3fb6771e8bb60ecf9f942fa11fc",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/methyl_cellulose.yaml",
+        "payload_sha256": "16a7c5d44940f513c16ea94a851111eea6341f910c583f6229f4843791f164c0",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES",
+          "P09-CONDITIONAL-NARROWING"
+        ],
+        "rationale": "The exact new evidence object for methyl_cellulose is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis. The frozen P5 object is a methyl-cellulose solute inside a single stock, with separate water and receiving-stock context. The ontology establishes methyl cellulose; the current assertion also records the author's decision to preserve solute rather than stock identity and not infer grade.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Propose distinct exact CHEBI:53448 identity for Methyl-cellulose; preserve explicit stereochemistry/polymer/sodium form.",
+          "complete_claim_notes": "Primary ChEBI definition verified against exact frozen source identity; no unsupported supplied grade, dose or molecular property imported.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [
+          {
+            "native_type": "DATABASE_MATCH",
+            "status": "conditional_not_selected",
+            "condition": "Could be selected for the exact direct source-name/ontology match if the coordinator explicitly preserves the limited frozen-label/solute scope and does not treat the note as original-source or full supplied-form verification. A separate direct-term fact entry could use this type after a reviewed successor.",
+            "basis": "The frozen P5 object is a methyl-cellulose solute inside a single stock, with separate water and receiving-stock context. The ontology establishes methyl cellulose; the current assertion also records the author's decision to preserve solute rather than stock identity and not infer grade."
+          }
+        ],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose distinct exact CHEBI:53448 identity for Methyl-cellulose; preserve explicit stereochemistry/polymer/sodium form.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:4f2f27588c75935a327a8ac16544fd9c4bd45958488e6d1697120d12fba25a11",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-new-methyl_cellulose"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-chemicals",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/ontology-01.json",
+              "sha256": "48903076cecc09a619abf9f296af4a2a3c62e8e92873b5f3fbf01e834b835392"
+            },
+            "url": "https://www.ebi.ac.uk/chebi/CHEBI:16982",
+            "locator": "CHEBI16982,53448,39060,61995,9932 pages individually captured"
+          },
+          {
+            "evidence_id": "ma-local-ontology",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/local-ontology-verification.json",
+              "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+            },
+            "url": null,
+            "locator": "Full subject statements from readonly OAK caches"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/ontology-01.json",
+            "sha256": "48903076cecc09a619abf9f296af4a2a3c62e8e92873b5f3fbf01e834b835392",
+            "inspection_scope": "Actual successful term response inspected; failed 132110 subresponse in ontology-01 is not support"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/rs_medium_nutrient_medium_nm_component.yaml",
+            "sha256": "cb5a972f2d1da8e1c0f822b4f7a1f5a90e5b8062ef67b8413ef97e8a9f9b6cba",
+            "inspection_scope": "568: complete frozen recipe including reference limitations; 569/570: exact nested ingredient/stock objects for attribution scope, not full scientific recipe review"
+          }
+        ],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-570",
+        "flag_index": 570,
+        "entry_id": "w09::ma-new-sodium_syringate",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-new-sodium_syringate",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/sodium_syringate.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "68b581c2e0e1f0c0cde6fdc228d7149c17c76201a072d001be17c8b624a975aa",
+        "proposal_entry_sha256": "f02835ba197c4256e761ff818fb79fd82a424cbdcb22a4ec2f87e4d9583cc41d",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://www.ebi.ac.uk/chebi/CHEBI:132110",
+          "notes": "Primary ChEBI definition verified against exact frozen source identity; no unsupported supplied grade, dose or molecular property imported."
+        },
+        "full_value_sha256": "098cdf51edec218feeadcf031842ffc60bb807ad89666e4dab3d0ed14e66638d",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/sodium_syringate.yaml",
+        "payload_sha256": "d769944b33e90747c307bf6acc60a816c66be4a05dbadc070b3c73a75ca65c42",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES",
+          "P09-CONDITIONAL-NARROWING"
+        ],
+        "rationale": "The exact new evidence object for sodium_syringate is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis. The frozen Na-syringate object reports an archived 6% stock and derived receiving-medium concentration. The actual successful CHEBI132110 OLS capture establishes sodium syringate; the entry also records the author's source-solute boundary. The earlier ontology-01 HTML subrequest for132110 failed and is not evidence.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Propose distinct exact CHEBI:132110 identity for Na-syringate; preserve explicit stereochemistry/polymer/sodium form.",
+          "complete_claim_notes": "Primary ChEBI definition verified against exact frozen source identity; no unsupported supplied grade, dose or molecular property imported.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [
+          {
+            "native_type": "DATABASE_MATCH",
+            "status": "conditional_not_selected",
+            "condition": "Could be selected for the exact direct source-name/ontology match if the coordinator explicitly preserves the limited frozen-label/solute scope and does not treat the note as original-source or full supplied-form verification. A separate direct-term fact entry could use this type after a reviewed successor.",
+            "basis": "The frozen Na-syringate object reports an archived 6% stock and derived receiving-medium concentration. The actual successful CHEBI132110 OLS capture establishes sodium syringate; the entry also records the author's source-solute boundary. The earlier ontology-01 HTML subrequest for132110 failed and is not evidence."
+          }
+        ],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose distinct exact CHEBI:132110 identity for Na-syringate; preserve explicit stereochemistry/polymer/sodium form.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:eb8b81737632b88e37f65acbbbd7811c8371af73ff212d409dc37fc75fbb68de",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-new-sodium_syringate"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-syringate",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/captures/chebi-132110.json",
+              "sha256": "656bb8412252580f02d3c545e2f4cec1750601befebc5ae959f962339bc7ed03"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A132110",
+            "locator": "OLS4 term CHEBI132110 label, definition, nonobsolete status"
+          },
+          {
+            "evidence_id": "ma-local-ontology",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/local-ontology-verification.json",
+              "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+            },
+            "url": null,
+            "locator": "Full subject statements from readonly OAK caches"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/captures/chebi-132110.json",
+            "sha256": "656bb8412252580f02d3c545e2f4cec1750601befebc5ae959f962339bc7ed03",
+            "inspection_scope": "Actual successful term response inspected; failed 132110 subresponse in ontology-01 is not support"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_787_ACETOBACTERIUM_DEHALOGENANS_medium.yaml",
+            "sha256": "d837f3985581422cc6017173dbd31923658469dc4afe4105501435a0e3ce1ff2",
+            "inspection_scope": "568: complete frozen recipe including reference limitations; 569/570: exact nested ingredient/stock objects for attribution scope, not full scientific recipe review"
+          }
+        ],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-571",
+        "flag_index": 571,
+        "entry_id": "w09::ma-casamino-distinct",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-casamino-distinct",
+        "proposal_kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+        "field": "ontology_mapping.evidence[1]",
+        "entry_sha256": "b905a4d5660c8c57fac8b859abe75bcda4ef7d70a7c1873e7e05c8b367d25386",
+        "proposal_entry_sha256": "8ee0954517882aaf314f3153bd4947b2c7c4e19c9dbc9572c856aaba2b80266e",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "MIM curation (#263)",
+          "notes": "HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+        },
+        "full_value_sha256": "172fc3c050e5737dfc774001fa18e3263d7c33242119f5a00aec64fc2fd915c9",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml",
+        "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+        "baseline_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/baseline/data/ingredients/mapped/Casamino_Acids.yaml",
+        "baseline_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+        "baseline_full_value_match_indices": [],
+        "classification": "ambiguous_needs_review",
+        "suggested_native_type": null,
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P06-HISTORICAL-AMBIGUITY",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The full flagged object is new because worker09 added a historical-status prefix, but every remaining note byte is the old #263 claim. The baseline reground_263 event and its llm_assisted marker do not identify an actual human reviewer or prove there was none. The live captured #263 body discusses the chemical error but has no author/reviewer attribution and no comments. Therefore this is neither exact inherited_unchanged nor proven wholly new agent evidence: keep historical provenance ambiguous and make no forced native-type replacement. The new prefix is agent-authored; the underlying human/process review lineage remains unresolved.",
+        "claim_specific_type_basis": {
+          "method": "mixed_new_wrapper_inherited_assertion",
+          "complete_claim_notes": "HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained.",
+          "added_prefix": "HISTORICAL; superseded by exact MeSH identity below. ",
+          "inherited_baseline_value": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#263)",
+            "notes": "Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+          },
+          "inherited_baseline_value_sha256": "19e341467060034854d059f0a768d16bc588948d4c31d36c416c9ad16feb583c",
+          "baseline_locator": "ontology_mapping.evidence[1]",
+          "issue_locator": "live-all-issues-v1.json issue number263 body/comments; no author field"
+        },
+        "conditional_native_type_alternatives": [],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": null,
+          "basis": "Historical underlying assertion not attributable from inspected before/after history and issue263; do not erase possible human review based on llm_assisted."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose exact ordinary acid-casein digest identity mesh:C017721 verified in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject inherited carbocerate/metadata/grade-fragment aliases; preserve the historical concentration-fragment RAW_TEXT label under#213 pending claim-specific source review and add ordinary supplier spellings. Coordinator must reconcile identifier references and shared-parent closure; no merge or hold release.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:01f4ba7f41067e00d166f17c6a759fc9afc22b1e13872397f7219c1e742e34cf",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:0e2f27b0689d68b7a76ca1e17800a644acd456a9a64216d1d85bd44ceef4677d",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:0ff6d1eb7745a1250948f6020672cfec737a9eabcbc67d90417296d1ed73a5bc",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:30d0e9a44a4bf06ddf351d2e4c0a2395d6469119838987c2f506ffa0aecac776",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:3601b087a9e4bce8da9d8296488253b0c5cdcbcd798047cd693f108722cb0f44",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:38a7ddb8ef476638740adc13bc7a8652efea3138809d5e9c445e8dfbc670cc95",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:6b5d5dc18d6c9299be575c473148ee4032924b43c37cf612082787e7f5aaafaa",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:7f1cbb5bc76797a73ecd40fd59390fcaa30589c1cef8fbcccc94008833be08a9",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-casamino-distinct"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-casein",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-recipe-05.json",
+              "sha256": "046d3687e558e5da577751750d7ee4750844cfe0d2b24baceb9411f726e0781c"
+            },
+            "url": "https://documents.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+            "locator": "PDF page 55, Bacto Casamino Acids and Vitamin Assay; source page32-35 soy comparison"
+          },
+          {
+            "evidence_id": "ma-bacto",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-supplier-03.json",
+              "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+            },
+            "url": "https://www.thermofisher.com/order/catalog/product/223050",
+            "locator": "Bacto Casamino Acids product description"
+          },
+          {
+            "evidence_id": "ma-jcm1445",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-supplier-03.json",
+              "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1445",
+            "locator": "JCM1445 rows Casamino/Tryptone (BD-Difico)"
+          },
+          {
+            "evidence_id": "ma-direct-mesh-C017721",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/captures/mesh-C017721.json",
+              "sha256": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff"
+            },
+            "url": "https://id.nlm.nih.gov/mesh/C017721.json",
+            "locator": "Complete official response; status 200"
+          },
+          {
+            "evidence_id": "ma-local-ontology",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/local-ontology-verification.json",
+              "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+            },
+            "url": null,
+            "locator": "Full subject statements from readonly OAK caches"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Preserve unresolved historical provenance; no automatic rewrite."
+      },
+      {
+        "audit_row_id": "provenance-flag-572",
+        "flag_index": 572,
+        "entry_id": "w09::ma-casamino-distinct",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-casamino-distinct",
+        "proposal_kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+        "field": "ontology_mapping.evidence[2]",
+        "entry_sha256": "3a58ce970e50bc947225a830ffec7e48c04e7bbb6bc4791acf7c389528b45667",
+        "proposal_entry_sha256": "8ee0954517882aaf314f3153bd4947b2c7c4e19c9dbc9572c856aaba2b80266e",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://id.nlm.nih.gov/mesh/C017721.json",
+          "notes": "Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein whose nitrogen is converted to amino acids or other compounds of relative chemical simplicity. This exact material term is more specific than FOODON03315719 and avoids unnecessary registry fallback. Ordinary acid hydrolysate remains distinct from enzymatic casein peptone and vitamin-assay grade. Historical source statistics are preserved, not recomputed or merged."
+        },
+        "full_value_sha256": "51770068b6471bacd7b371954c225258f20205dc6b022ed56fbae455c7ecb815",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml",
+        "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+        "baseline_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/baseline/data/ingredients/mapped/Casamino_Acids.yaml",
+        "baseline_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for Casamino_Acids is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Propose exact ordinary acid-casein digest identity mesh:C017721 verified in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject inherited carbocerate/metadata/grade-fragment aliases; preserve the historical concentration-fragment RAW_TEXT label under#213 pending claim-specific source review and add ordinary supplier spellings. Coordinator must reconcile identifier references and shared-parent closure; no merge or hold release.",
+          "complete_claim_notes": "Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein whose nitrogen is converted to amino acids or other compounds of relative chemical simplicity. This exact material term is more specific than FOODON03315719 and avoids unnecessary registry fallback. Ordinary acid hydrolysate remains distinct from enzymatic casein peptone and vitamin-assay grade. Historical source statistics are preserved, not recomputed or merged.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose exact ordinary acid-casein digest identity mesh:C017721 verified in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject inherited carbocerate/metadata/grade-fragment aliases; preserve the historical concentration-fragment RAW_TEXT label under#213 pending claim-specific source review and add ordinary supplier spellings. Coordinator must reconcile identifier references and shared-parent closure; no merge or hold release.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:01f4ba7f41067e00d166f17c6a759fc9afc22b1e13872397f7219c1e742e34cf",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:0e2f27b0689d68b7a76ca1e17800a644acd456a9a64216d1d85bd44ceef4677d",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:0ff6d1eb7745a1250948f6020672cfec737a9eabcbc67d90417296d1ed73a5bc",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:30d0e9a44a4bf06ddf351d2e4c0a2395d6469119838987c2f506ffa0aecac776",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:3601b087a9e4bce8da9d8296488253b0c5cdcbcd798047cd693f108722cb0f44",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:38a7ddb8ef476638740adc13bc7a8652efea3138809d5e9c445e8dfbc670cc95",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:6b5d5dc18d6c9299be575c473148ee4032924b43c37cf612082787e7f5aaafaa",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            },
+            {
+              "case_id": "CM_NAME:7f1cbb5bc76797a73ecd40fd59390fcaa30589c1cef8fbcccc94008833be08a9",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-casamino-distinct"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-casein",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-recipe-05.json",
+              "sha256": "046d3687e558e5da577751750d7ee4750844cfe0d2b24baceb9411f726e0781c"
+            },
+            "url": "https://documents.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+            "locator": "PDF page 55, Bacto Casamino Acids and Vitamin Assay; source page32-35 soy comparison"
+          },
+          {
+            "evidence_id": "ma-bacto",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-supplier-03.json",
+              "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+            },
+            "url": "https://www.thermofisher.com/order/catalog/product/223050",
+            "locator": "Bacto Casamino Acids product description"
+          },
+          {
+            "evidence_id": "ma-jcm1445",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-supplier-03.json",
+              "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1445",
+            "locator": "JCM1445 rows Casamino/Tryptone (BD-Difico)"
+          },
+          {
+            "evidence_id": "ma-direct-mesh-C017721",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/captures/mesh-C017721.json",
+              "sha256": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff"
+            },
+            "url": "https://id.nlm.nih.gov/mesh/C017721.json",
+            "locator": "Complete official response; status 200"
+          },
+          {
+            "evidence_id": "ma-local-ontology",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/local-ontology-verification.json",
+              "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+            },
+            "url": null,
+            "locator": "Full subject statements from readonly OAK caches"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-573",
+        "flag_index": 573,
+        "entry_id": "w09::ma-stock-jcm_226_czapek_concentrate",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-stock-jcm_226_czapek_concentrate",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/jcm_226_czapek_concentrate.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "c7dd5e1627607fcef0e4321101a7be381106720ecf550c932e4ac43bd4b4856e",
+        "proposal_entry_sha256": "4afee5a77bd2ea9f0fb338a2c3018c0a5824a84345e811918eb3ca47f7a7d3af",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226",
+          "notes": "Source-specific multicomponent stock; registry identity does not assert interchangeability with other recipes bearing this generic label."
+        },
+        "full_value_sha256": "4c142303c221bec2edaf4a8f96bae2883db899e2bae4c12379a3497335d6de15",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/jcm_226_czapek_concentrate.yaml",
+        "payload_sha256": "dc2d4e4b4fac9a26717d6464220152a3f9094b54586b2a101fb4f74c67874272",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for jcm_226_czapek_concentrate is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Propose source-specific JCM 226 Czapek concentrate stock with complete constituent list, original batch quantities in evidence and no guessed final-volume concentrations.",
+          "complete_claim_notes": "Source-specific multicomponent stock; registry identity does not assert interchangeability with other recipes bearing this generic label.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose source-specific JCM 226 Czapek concentrate stock with complete constituent list, original batch quantities in evidence and no guessed final-volume concentrations.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:6ec378b0143c943654248611b3ea8ec5aa9a52d9c096ff6a17411b28b1d1acf3",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-stock-jcm_226_czapek_concentrate"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-direct-jcm226",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/captures/jcm226.html",
+              "sha256": "66cef8f82b7a8782856c91b4e124507cbd3872f2bcb85ba90df77372d827ffee"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226",
+            "locator": "Complete official response; status 200"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      },
+      {
+        "audit_row_id": "provenance-flag-574",
+        "flag_index": 574,
+        "entry_id": "w09::ma-stock-jcm_629_artificial_saltwater",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-stock-jcm_629_artificial_saltwater",
+        "proposal_kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/jcm_629_artificial_saltwater.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "a91071597d4a61bff4084706f5dd660d2a31aeefdc8077533dc7f09faef6f3e2",
+        "proposal_entry_sha256": "f9d55d378370960637196819bc001ba46d831c434280d2a6650cb203a7c537f0",
+        "full_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629",
+          "notes": "Source-specific multicomponent stock; registry identity does not assert interchangeability with other recipes bearing this generic label."
+        },
+        "full_value_sha256": "a5f9cf4025b1e612796351077cc5a64acdb371385b976e8f265a0e8a9018eac2",
+        "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/jcm_629_artificial_saltwater.yaml",
+        "payload_sha256": "2e646a2e10ac8a5c0ce1519f30dea010fc1b8a9234a68abd6fbcf6458fdf3e46",
+        "baseline_path": null,
+        "baseline_sha256": null,
+        "baseline_full_value_match_indices": [],
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for jcm_629_artificial_saltwater is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "claim_specific_type_basis": {
+          "method": "documented_agent_judgment",
+          "claim_specific_proposal_description": "Propose source-specific JCM 629 artificial saltwater stock with complete constituent list, original batch quantities in evidence and no guessed final-volume concentrations.",
+          "complete_claim_notes": "Source-specific multicomponent stock; registry identity does not assert interchangeability with other recipes bearing this generic label.",
+          "actual_primary_capture_scope": "Source/report metadata and full claim text inspected for provenance; primary scientific truth not independently renewed. Only specifically listed inspected_source_captures were reopened for narrow typing."
+        },
+        "conditional_native_type_alternatives": [],
+        "human_review_provenance": {
+          "current_entry_human_reviewer_supported": false,
+          "basis": "New campaign agent event plus case/proposal/reviewer attribution, not inference from the llm_assisted flag. No claim about all historical corpus curators."
+        },
+        "author_evidence": {
+          "added_curation_history": [
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose source-specific JCM 629 artificial saltwater stock with complete constituent list, original batch quantities in evidence and no guessed final-volume concentrations.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "case_author_and_review_metadata": [
+            {
+              "case_id": "CM_NAME:41725f5363a7c116a0261078053efa86283390b807412e81c7d21d8e71cfa8b9",
+              "primary_attribution": {
+                "primary_reviewer": "/root/materials"
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "w09-independent-materials"
+                ]
+              }
+            }
+          ],
+          "authorship_exclusions": [
+            "w09"
+          ],
+          "proposal_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+            "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+            "proposal_id": "ma-stock-jcm_629_artificial_saltwater"
+          },
+          "decision_ledger": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+          },
+          "linked_review_reports": [
+            {
+              "id": "w09-independent-materials",
+              "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+              "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+              "kind": "independent_review",
+              "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+              "authorship_scope_metadata": {
+                "reviewer": "/root/antibiotics",
+                "primary_author": "/root/materials",
+                "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+                "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+                "reviewer_artifacts": {
+                  "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                  "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                  "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                  "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                  "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                  "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                  "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                  "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                  "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                  "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+                }
+              }
+            }
+          ]
+        },
+        "linked_source_report_metadata": [
+          {
+            "evidence_id": "ma-direct-jcm629",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/captures/jcm629.html",
+              "sha256": "716c24f1e18d14b2fdaef91969b9364b88f20c99a3284f663e0beef0b8f10a84"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629",
+            "locator": "Complete official response; status 200"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "inspected_source_captures": [],
+        "scientific_review": false,
+        "scientific_mapping_approval": false,
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "requested_action": "Type-only suggestion for a separately reviewed successor; no payload mutation authorized by this ledger."
+      }
+    ],
+    "native-type-suggestions-v1.json": [
+      {
+        "audit_row_id": "provenance-flag-566",
+        "flag_index": 566,
+        "entry_id": "w09::sa-proposal-iron-ii-chloride-dihydrate",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "sa-proposal-iron-ii-chloride-dihydrate",
+        "owner_path": "data/ingredients/mapped/Iron_II_Chloride_Dihydrate.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "1701bbe148e2f59036fc5c81631fed497d0ed4f676f963a06da83b76de3f9592",
+        "proposal_entry_sha256": "2fb0a80a3d16ca74279817bd8d9960e929fcd7f3778da3ff32aea743f908a4f0",
+        "full_value_sha256": "f1544adb415e64467abdacf42f40a4e64cfb98374c363e769c582e55a1764041",
+        "payload_sha256": "c6f8dbcac52988231e388cf866d4c5ea612e7abaa5364b35f450277db74048f7",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for Iron_II_Chloride_Dihydrate is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name codex_worker09_source_review, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "conditional_native_type_alternatives": [],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-567",
+        "flag_index": 567,
+        "entry_id": "w09::sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock",
+        "owner_path": "data/ingredients/mapped/togo_m2231_calcium_chloride_dihydrate_stock.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "7d1b5d15e055898bbf2c6e7999c329b1d21d4f30e22519393d1391305dc30442",
+        "proposal_entry_sha256": "b0880d2361ef1968d98eda815eb3eccd13a338e93197575cb0fd94e2d269b85c",
+        "full_value_sha256": "47549ed7b413fa3f8af3ba4e1ed882413940033e57df1d0c41d46f3916bbbea4",
+        "payload_sha256": "08e6b0d95fe901c148090b81c7fbaa2259154df5ffe2fdbb277fa4706c49ad8c",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for togo_m2231_calcium_chloride_dihydrate_stock is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/salts, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "conditional_native_type_alternatives": [],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-568",
+        "flag_index": 568,
+        "entry_id": "w09::ma-new-rr_butane_2_3_diol",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-new-rr_butane_2_3_diol",
+        "owner_path": "data/ingredients/mapped/rr_butane_2_3_diol.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "8b190638620bac3031080237c47fbe8a1f618331ec6060698ac6dd4f135242cc",
+        "proposal_entry_sha256": "ee58fd8b6ec288c5ad1d104a851e8fd85f20b34e847414e534f523fe483d0eb4",
+        "full_value_sha256": "d32bf3b7085cf55d142a64677cda3c1d328a7bd8560f52f0f49f0f8d3112c790",
+        "payload_sha256": "44837ab91cdb6c1f969e053ccaa1bd9647214e541f817e8807ae02d1f8ed88f8",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES",
+          "P09-CONDITIONAL-NARROWING"
+        ],
+        "rationale": "The exact new evidence object for rr_butane_2_3_diol is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis. The frozen recipe explicitly contains the R,R label, but its bibliography also records an unresolved D-2,3-butanediol versus R,R equivalence. The current entry says verified against exact frozen source identity; retain that provenance boundary rather than implying the original study was scientifically reverified.",
+        "conditional_native_type_alternatives": [
+          {
+            "native_type": "DATABASE_MATCH",
+            "status": "conditional_not_selected",
+            "condition": "Could be selected for the exact direct source-name/ontology match if the coordinator explicitly preserves the limited frozen-label/solute scope and does not treat the note as original-source or full supplied-form verification. A separate direct-term fact entry could use this type after a reviewed successor.",
+            "basis": "The frozen recipe explicitly contains the R,R label, but its bibliography also records an unresolved D-2,3-butanediol versus R,R equivalence. The current entry says verified against exact frozen source identity; retain that provenance boundary rather than implying the original study was scientifically reverified."
+          }
+        ],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-569",
+        "flag_index": 569,
+        "entry_id": "w09::ma-new-methyl_cellulose",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-new-methyl_cellulose",
+        "owner_path": "data/ingredients/mapped/methyl_cellulose.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "9a5dce07e5214aa9e938c53d82f842a9bd94011f6915c8d86e8916b6fe2ac67f",
+        "proposal_entry_sha256": "ff6a62e9ad9364afe7ade252a1edba4c8fe98923c68240e80d49c70509757dbe",
+        "full_value_sha256": "b651fc4f4ff48577359da2fda6f5b33180a4b3fb6771e8bb60ecf9f942fa11fc",
+        "payload_sha256": "16a7c5d44940f513c16ea94a851111eea6341f910c583f6229f4843791f164c0",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES",
+          "P09-CONDITIONAL-NARROWING"
+        ],
+        "rationale": "The exact new evidence object for methyl_cellulose is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis. The frozen P5 object is a methyl-cellulose solute inside a single stock, with separate water and receiving-stock context. The ontology establishes methyl cellulose; the current assertion also records the author's decision to preserve solute rather than stock identity and not infer grade.",
+        "conditional_native_type_alternatives": [
+          {
+            "native_type": "DATABASE_MATCH",
+            "status": "conditional_not_selected",
+            "condition": "Could be selected for the exact direct source-name/ontology match if the coordinator explicitly preserves the limited frozen-label/solute scope and does not treat the note as original-source or full supplied-form verification. A separate direct-term fact entry could use this type after a reviewed successor.",
+            "basis": "The frozen P5 object is a methyl-cellulose solute inside a single stock, with separate water and receiving-stock context. The ontology establishes methyl cellulose; the current assertion also records the author's decision to preserve solute rather than stock identity and not infer grade."
+          }
+        ],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-570",
+        "flag_index": 570,
+        "entry_id": "w09::ma-new-sodium_syringate",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-new-sodium_syringate",
+        "owner_path": "data/ingredients/mapped/sodium_syringate.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "68b581c2e0e1f0c0cde6fdc228d7149c17c76201a072d001be17c8b624a975aa",
+        "proposal_entry_sha256": "f02835ba197c4256e761ff818fb79fd82a424cbdcb22a4ec2f87e4d9583cc41d",
+        "full_value_sha256": "098cdf51edec218feeadcf031842ffc60bb807ad89666e4dab3d0ed14e66638d",
+        "payload_sha256": "d769944b33e90747c307bf6acc60a816c66be4a05dbadc070b3c73a75ca65c42",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES",
+          "P09-CONDITIONAL-NARROWING"
+        ],
+        "rationale": "The exact new evidence object for sodium_syringate is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis. The frozen Na-syringate object reports an archived 6% stock and derived receiving-medium concentration. The actual successful CHEBI132110 OLS capture establishes sodium syringate; the entry also records the author's source-solute boundary. The earlier ontology-01 HTML subrequest for132110 failed and is not evidence.",
+        "conditional_native_type_alternatives": [
+          {
+            "native_type": "DATABASE_MATCH",
+            "status": "conditional_not_selected",
+            "condition": "Could be selected for the exact direct source-name/ontology match if the coordinator explicitly preserves the limited frozen-label/solute scope and does not treat the note as original-source or full supplied-form verification. A separate direct-term fact entry could use this type after a reviewed successor.",
+            "basis": "The frozen Na-syringate object reports an archived 6% stock and derived receiving-medium concentration. The actual successful CHEBI132110 OLS capture establishes sodium syringate; the entry also records the author's source-solute boundary. The earlier ontology-01 HTML subrequest for132110 failed and is not evidence."
+          }
+        ],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-571",
+        "flag_index": 571,
+        "entry_id": "w09::ma-casamino-distinct",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-casamino-distinct",
+        "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+        "field": "ontology_mapping.evidence[1]",
+        "entry_sha256": "b905a4d5660c8c57fac8b859abe75bcda4ef7d70a7c1873e7e05c8b367d25386",
+        "proposal_entry_sha256": "8ee0954517882aaf314f3153bd4947b2c7c4e19c9dbc9572c856aaba2b80266e",
+        "full_value_sha256": "172fc3c050e5737dfc774001fa18e3263d7c33242119f5a00aec64fc2fd915c9",
+        "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+        "baseline_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+        "classification": "ambiguous_needs_review",
+        "suggested_native_type": null,
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P06-HISTORICAL-AMBIGUITY",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The full flagged object is new because worker09 added a historical-status prefix, but every remaining note byte is the old #263 claim. The baseline reground_263 event and its llm_assisted marker do not identify an actual human reviewer or prove there was none. The live captured #263 body discusses the chemical error but has no author/reviewer attribution and no comments. Therefore this is neither exact inherited_unchanged nor proven wholly new agent evidence: keep historical provenance ambiguous and make no forced native-type replacement. The new prefix is agent-authored; the underlying human/process review lineage remains unresolved.",
+        "conditional_native_type_alternatives": [],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-572",
+        "flag_index": 572,
+        "entry_id": "w09::ma-casamino-distinct",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-casamino-distinct",
+        "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+        "field": "ontology_mapping.evidence[2]",
+        "entry_sha256": "3a58ce970e50bc947225a830ffec7e48c04e7bbb6bc4791acf7c389528b45667",
+        "proposal_entry_sha256": "8ee0954517882aaf314f3153bd4947b2c7c4e19c9dbc9572c856aaba2b80266e",
+        "full_value_sha256": "51770068b6471bacd7b371954c225258f20205dc6b022ed56fbae455c7ecb815",
+        "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+        "baseline_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for Casamino_Acids is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "conditional_native_type_alternatives": [],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-573",
+        "flag_index": 573,
+        "entry_id": "w09::ma-stock-jcm_226_czapek_concentrate",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-stock-jcm_226_czapek_concentrate",
+        "owner_path": "data/ingredients/mapped/jcm_226_czapek_concentrate.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "c7dd5e1627607fcef0e4321101a7be381106720ecf550c932e4ac43bd4b4856e",
+        "proposal_entry_sha256": "4afee5a77bd2ea9f0fb338a2c3018c0a5824a84345e811918eb3ca47f7a7d3af",
+        "full_value_sha256": "4c142303c221bec2edaf4a8f96bae2883db899e2bae4c12379a3497335d6de15",
+        "payload_sha256": "dc2d4e4b4fac9a26717d6464220152a3f9094b54586b2a101fb4f74c67874272",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for jcm_226_czapek_concentrate is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "conditional_native_type_alternatives": [],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      },
+      {
+        "audit_row_id": "provenance-flag-574",
+        "flag_index": 574,
+        "entry_id": "w09::ma-stock-jcm_629_artificial_saltwater",
+        "worker": 9,
+        "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "proposal_id": "ma-stock-jcm_629_artificial_saltwater",
+        "owner_path": "data/ingredients/mapped/jcm_629_artificial_saltwater.yaml",
+        "field": "ontology_mapping.evidence[0]",
+        "entry_sha256": "a91071597d4a61bff4084706f5dd660d2a31aeefdc8077533dc7f09faef6f3e2",
+        "proposal_entry_sha256": "f9d55d378370960637196819bc001ba46d831c434280d2a6650cb203a7c537f0",
+        "full_value_sha256": "a5f9cf4025b1e612796351077cc5a64acdb371385b976e8f265a0e8a9018eac2",
+        "payload_sha256": "2e646a2e10ac8a5c0ce1519f30dea010fc1b8a9234a68abd6fbcf6458fdf3e46",
+        "baseline_sha256": null,
+        "classification": "new_agent_record",
+        "suggested_native_type": "LLM_SUGGESTION",
+        "rule_ids": [
+          "P01-ENUM-SCOPE",
+          "P02-EXACT-BASELINE",
+          "P03-AUTHOR-CHAIN",
+          "P04-MIXED-JUDGMENT",
+          "P07-NO-SCIENTIFIC-RENEWAL",
+          "P08-SEPARATE-AXES"
+        ],
+        "rationale": "The exact new evidence object for jcm_629_artificial_saltwater is absent from the maintained baseline (or belongs to a new owner). Its campaign curation event(s) name all-unmatched-worker-09/materials, and the linked case/proposal and separately attributed reviewer scope identify agent work. The complete notes and proposal-specific claim quoted below record the author's source/identity/formulation or alias judgment. LLM_SUGGESTION describes that documented author method without declaring the cited facts false. No actual human reviewer supplying this new MIM entry is documented in the inspected chain; source authorship or llm_assisted alone is not the basis.",
+        "conditional_native_type_alternatives": [],
+        "independence_scope": "independent_authorship_provenance_audit_only",
+        "scientific_mapping_approval": false
+      }
+    ]
+  },
+  "scientific_review": false
+}

@@ -1,0 +1,264 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/sa-proposal-iron-ii-chloride-dihydrate.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/sa-proposal-iron-ii-chloride-dihydrate.yaml
+@@ -12,7 +12,7 @@
+   ontology_source: CHEBI
+   mapping_quality: NARROW_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://hpvchemicals.oecd.org/ui/handler.axd?id=677e770c-e12b-4e7d-ad59-341c8ed74fb2
+     notes: 'Distinct iron dichloride dihydrate, CAS16399-77-2; source NBRC1326 explicitly requests FeCl2·2H2O.
+       No exact ChEBI term returned by captured bounded name/CAS searches. MAPPING_SEMANTICS section3 step2:
+@@ -32,3 +32,18 @@
+     approval; native review, registry rows and coordinator integration required.
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for sa-proposal-iron-ii-chloride-dihydrate, audit flag
++    566: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION to LLM_SUGGESTION. The
++    complete assertion was newly supplied by the worker09 agent, not a MIM human reviewer; the cited source
++    author is distinct from the author of this curation judgment. Preserved the complete source, notes
++    and claim content, all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity, source applicability,
++    outcome, role, coalescence or export approval change. Audit: https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 f1544adb415e64467abdacf42f40a4e64cfb98374c363e769c582e55a1764041.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock.yaml
+@@ -9,7 +9,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+     notes: Source-specific aqueous stock identity under MAPPING_SEMANTICS; the exact
+       CHEBI86158 solute is a component, not an exact target for the whole preparation.
+@@ -64,3 +64,20 @@
+     source-unit defect separately.
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock,
++    audit flag 567: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 47549ed7b413fa3f8af3ba4e1ed882413940033e57df1d0c41d46f3916bbbea4.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/ma-new-rr_butane_2_3_diol.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-new-rr_butane_2_3_diol.yaml
+@@ -6,7 +6,7 @@
+   ontology_source: CHEBI
+   mapping_quality: EXACT_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.ebi.ac.uk/chebi/CHEBI:16982
+     notes: Primary ChEBI definition verified against exact frozen source identity;
+       no unsupported supplied grade, dose or molecular property imported.
+@@ -26,3 +26,20 @@
+     preserve explicit stereochemistry/polymer/sodium form.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-new-rr_butane_2_3_diol,
++    audit flag 568: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 d32bf3b7085cf55d142a64677cda3c1d328a7bd8560f52f0f49f0f8d3112c790.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/ma-new-methyl_cellulose.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-new-methyl_cellulose.yaml
+@@ -6,7 +6,7 @@
+   ontology_source: CHEBI
+   mapping_quality: EXACT_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.ebi.ac.uk/chebi/CHEBI:53448
+     notes: Primary ChEBI definition verified against exact frozen source identity;
+       no unsupported supplied grade, dose or molecular property imported.
+@@ -26,3 +26,20 @@
+     explicit stereochemistry/polymer/sodium form.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-new-methyl_cellulose, audit
++    flag 569: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 b651fc4f4ff48577359da2fda6f5b33180a4b3fb6771e8bb60ecf9f942fa11fc.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/ma-new-sodium_syringate.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-new-sodium_syringate.yaml
+@@ -6,7 +6,7 @@
+   ontology_source: CHEBI
+   mapping_quality: EXACT_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.ebi.ac.uk/chebi/CHEBI:132110
+     notes: Primary ChEBI definition verified against exact frozen source identity;
+       no unsupported supplied grade, dose or molecular property imported.
+@@ -26,3 +26,20 @@
+     explicit stereochemistry/polymer/sodium form.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-new-sodium_syringate, audit
++    flag 570: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 098cdf51edec218feeadcf031842ffc60bb807ad89666e4dab3d0ed14e66638d.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/ma-casamino-distinct.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-casamino-distinct.yaml
+@@ -17,7 +17,7 @@
+       an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the
+       same FOODON term as the sibling Casein_Peptone record, which is the same class
+       of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained.
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://id.nlm.nih.gov/mesh/C017721.json
+     notes: Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein
+       whose nitrogen is converted to amino acids or other compounds of relative chemical
+@@ -215,6 +215,23 @@
+     references and shared-parent closure; no merge or hold release.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-casamino-distinct, audit
++    flag 572: changed ontology_mapping.evidence[2].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 51770068b6471bacd7b371954c225258f20205dc6b022ed56fbae455c7ecb815.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ chemical_properties:
+   cas_rn: 65072-00-6
+   data_source: CultureBotHT compounds_to_cas.csv
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/ma-stock-jcm_226_czapek_concentrate.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-stock-jcm_226_czapek_concentrate.yaml
+@@ -9,7 +9,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226
+     notes: Source-specific multicomponent stock; registry identity does not assert
+       interchangeability with other recipes bearing this generic label.
+@@ -69,3 +69,20 @@
+     concentrations.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-stock-jcm_226_czapek_concentrate,
++    audit flag 573: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 4c142303c221bec2edaf4a8f96bae2883db899e2bae4c12379a3497335d6de15.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/predecessors/ma-stock-jcm_629_artificial_saltwater.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-stock-jcm_629_artificial_saltwater.yaml
+@@ -9,7 +9,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629
+     notes: Source-specific multicomponent stock; registry identity does not assert
+       interchangeability with other recipes bearing this generic label.
+@@ -76,3 +76,20 @@
+     concentrations.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-stock-jcm_629_artificial_saltwater,
++    audit flag 574: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 a5f9cf4025b1e612796351077cc5a64acdb371385b976e8f265a0e8a9018eac2.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6

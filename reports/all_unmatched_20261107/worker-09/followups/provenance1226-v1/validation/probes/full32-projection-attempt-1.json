@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-08T07:57:05.389234+00:00",
+  "argv": [
+    ".temp/all-unmatched-worker-09/venv/bin/python",
+    "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/tools/validate_successor.py"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/tools/validate_successor.py\", line 22, in <module>\n    a=m.projection(before);b=m.projection(after);m.require(a==b,'native row/synonym projection drift')\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/tools/correct_provenance.py\", line 132, in projection\n    m=record['ontology_mapping'];q=m['mapping_quality'];own=record['identifier'];target=m['ontology_id']\n      ~~~~~~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'ontology_mapping'\n",
+  "cause": "Private validator assumed every unchanged selected record has ontology_mapping; unresolved owner legitimately lacks it. Not a candidate/data defect. No source or scientific change."
+}

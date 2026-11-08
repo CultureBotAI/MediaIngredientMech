@@ -1,0 +1,212 @@
+"""Eight exact #1226 proposal corrections; never touches maintained owners."""
+import sys
+sys.dont_write_bytecode=True
+from pathlib import Path
+import copy, datetime, hashlib, io, json, os, re, stat, subprocess
+
+R=Path(__file__).resolve().parents[1]
+ROOT=R.parents[4]
+sys.path.insert(0,str(ROOT/'src'))
+import yaml
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+from mediaingredientmech.sssom_grading import predicate_for,confidence_for,justification_for
+
+HEAD='77d6beaea5793a0a763957b99e8141ff12b216d2'
+ALLOW_SHA='9f45e32a9095890d1de46a8aa60bd5e24e279aa940a73223649aa17afb13f40e'
+EXCEPTION_SHA='172fc3c050e5737dfc774001fa18e3263d7c33242119f5a00aec64fc2fd915c9'
+FLAGS={566,567,568,569,570,572,573,574}
+sha=lambda b:hashlib.sha256(b).hexdigest()
+canon=lambda x:sha(json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode())
+read=lambda p:json.loads(p.read_text())
+
+def require(condition,message):
+    if not condition:raise ValueError(message)
+
+def approved_rows(rows=None):
+    raw=(R/'inputs/w09-eight-entry-allowlist.json').read_bytes()
+    require(sha(raw)==ALLOW_SHA,'allowlist bytes changed')
+    approved=json.loads(raw)['rows']
+    rows=approved if rows is None else rows
+    require(len(rows)==8 and {r['flag_index'] for r in rows}==FLAGS,'wrong/duplicate field selection')
+    require(len({r['proposal_id'] for r in rows})==8,'duplicate proposal selection')
+    by={r['flag_index']:r for r in approved}
+    for row in rows:require(row==by[row['flag_index']],'complete allowlist object changed')
+    return rows
+
+def index(row):
+    m=re.fullmatch(r'ontology_mapping\.evidence\[(\d+)\]',row['field'])
+    require(m is not None,'not a MappingEvidence field')
+    return int(m.group(1))
+
+def bind(raw,row):
+    approved=next(r for r in approved_rows() if r['flag_index']==row['flag_index'])
+    require(row==approved,'changed complete allowlist row')
+    require(sha(raw)==row['payload_sha256'],'stale payload bytes')
+    record=yaml.safe_load(raw)
+    require(record['identifier']==row['origin']['identifier'],'identity context drift')
+    require(record['preferred_term']==row['origin']['preferred_term'],'label context drift')
+    obj=record['ontology_mapping']['evidence'][index(row)]
+    require(obj==row['full_value'] and canon(obj)==row['full_value_sha256'],'stale complete evidence object')
+    require(obj['evidence_type']=='MANUAL_CURATION','unexpected before type')
+    if row['proposal_id']=='ma-casamino-distinct':
+        require(canon(record['ontology_mapping']['evidence'][1])==EXCEPTION_SHA,'historical exception changed')
+    return record
+
+def history_event(record,row,timestamp):
+    return record_curation_event(record,curator='Codex worker09',action='CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION',
+        changes=f"Issue #1226 provenance-only correction for {row['proposal_id']}, audit flag {row['flag_index']}: changed {row['field']}.evidence_type from MANUAL_CURATION to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent, not a MIM human reviewer; the cited source author is distinct from the author of this curation judgment. Preserved the complete source, notes and claim content, all other mapping evidence (including the ambiguous historical Casamino wrapper where present), component evidence, scientific fields and prior history. No identity, source applicability, outcome, role, coalescence or export approval change. Audit: https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543; complete original evidence-object SHA256 {row['full_value_sha256']}.",
+        previous_status=record['mapping_status'],new_status=record['mapping_status'],llm_assisted=True,llm_model='gpt-6',timestamp=timestamp)
+
+def corrected(raw,row,timestamp):
+    record=copy.deepcopy(bind(raw,row))
+    record['ontology_mapping']['evidence'][index(row)]['evidence_type']='LLM_SUGGESTION'
+    history_event(record,row,timestamp)
+    assert_allowed(raw,record,row,timestamp)
+    return record
+
+def assert_allowed(raw,after,row,timestamp):
+    before=bind(raw,row);i=index(row)
+    require(after['ontology_mapping']['evidence'][i]['evidence_type']=='LLM_SUGGESTION','wrong corrected type')
+    old_history=before.get('curation_history',[])
+    require(after.get('curation_history',[])[:-1]==old_history and len(after['curation_history'])==len(old_history)+1,'history prefix loss or extra events')
+    expected=copy.deepcopy(before);event=history_event(expected,row,timestamp)
+    require(after['curation_history'][-1]==event,'event does not describe exact authorized change')
+    restored=copy.deepcopy(after)
+    restored['ontology_mapping']['evidence'][i]['evidence_type']='MANUAL_CURATION'
+    restored['curation_history'].pop()
+    require(restored==before,'non-allowlisted scientific/source/alias/role/component/history change')
+    if row['proposal_id']=='ma-casamino-distinct':require(canon(after['ontology_mapping']['evidence'][1])==EXCEPTION_SHA,'historical Casamino retyping')
+    return {'proposal_id':row['proposal_id'],'flag_index':row['flag_index'],'field':row['field']+'.evidence_type',
+        'before_payload_sha256':sha(raw),'before_full_evidence_sha256':canon(before['ontology_mapping']['evidence'][i]),
+        'after_full_evidence_sha256':canon(after['ontology_mapping']['evidence'][i]),
+        'before_parent_mapping_sha256':canon(before['ontology_mapping']),'after_parent_mapping_sha256':canon(after['ontology_mapping']),
+        'history_prefix_sha256':canon(old_history),'appended_event':event,
+        'allowed_changed_paths':[row['field']+'.evidence_type',f'curation_history[{len(old_history)}]'],
+        'full_object_reconstruction_equal':True,'component_fields_equal':before.get('components')==after.get('components') and before.get('component_assertion')==after.get('component_assertion'),
+        'all_top_level_field_proofs':{k:{'before':canon(v),'after':canon(after[k]),'equal':v==after[k]} for k,v in before.items()}}
+
+def check_destination(path,boundary):
+    path=Path(path);boundary=Path(boundary)
+    require(path.is_absolute() and '..' not in path.parts,'noncanonical output path')
+    require(path.is_relative_to(boundary) and path!=boundary,'output outside reserved boundary')
+    require(boundary.resolve()==boundary,'aliased boundary')
+    for parent in [path.parent,*path.parent.parents]:
+        if parent.exists() or parent.is_symlink():
+            require(not parent.is_symlink(),'aliased output parent')
+            require(parent.is_dir(),'non-directory output parent')
+    require(not path.exists() and not path.is_symlink(),'pre-existing or aliased output')
+    return path
+
+class ReservedOutput:
+    """Native writer receives a reserved fd, never a path it can follow on reopen.
+
+    This wrapper is fail-closed for existing/aliased paths. It is not a hostile
+    concurrent-filesystem transaction or an atomic eight-file transaction.
+    """
+    def __init__(self,path,boundary):
+        self.path=check_destination(path,boundary)
+        self.path.parent.mkdir(parents=True,exist_ok=True)
+        check_destination(path,boundary)
+        self.parent=self.path.parent
+        self.fd=os.open(self.path,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+        self.identity=os.fstat(self.fd)
+        self.check()
+    def check(self):
+        current=self.path.lstat();held=os.fstat(self.fd)
+        require(stat.S_ISREG(current.st_mode) and current.st_nlink==1,'aliased reserved output')
+        require((current.st_dev,current.st_ino)==(held.st_dev,held.st_ino)==(self.identity.st_dev,self.identity.st_ino),'reservation replaced')
+        require(self.parent.resolve()==self.parent,'reserved parent aliased')
+    def open(self,mode,encoding=None):
+        require(mode=='w','unexpected native writer mode');self.check();os.lseek(self.fd,0,os.SEEK_SET)
+        return os.fdopen(os.dup(self.fd),'w',encoding=encoding or 'utf-8')
+    def close(self):self.check();os.fsync(self.fd);os.close(self.fd)
+    def __str__(self):return str(self.path)
+
+def save(path,obj):
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with path.open('x') as f:json.dump(obj,f,indent=2,ensure_ascii=False);f.write('\n')
+
+def projection(record):
+    m=record['ontology_mapping'];q=m['mapping_quality'];own=record['identifier'];target=m['ontology_id']
+    return {'identifier':own,'subject_label':record['preferred_term'],'mapping_status':record['mapping_status'],
+        'own_identity_predicate':'skos:exactMatch','ontology_id':target,'ontology_label':m['ontology_label'],
+        'ontology_predicate':'skos:exactMatch' if own==target else predicate_for(q),
+        'mapping_quality':q,'confidence':confidence_for(q),'mapping_justification':justification_for(q),
+        'synonyms':[{'complete_row':s,'native_resolving':is_resolving_synonym(s)} for s in record.get('synonyms',[])]}
+
+def original_width(raw):
+    before=yaml.safe_load(raw)
+    for width in (80,100):
+        rendered=yaml.safe_dump(before,default_flow_style=False,sort_keys=False,allow_unicode=True,width=width).encode()
+        if rendered==raw:return width
+    raise ValueError('No exact native formatting roundtrip; refuse presentation churn')
+
+def validate_accounting(decisions,proposals):
+    old=read(R/'effective-decisions.json')['decisions']
+    require(len(decisions)==187 and len({r['case_id'] for r in decisions})==187,'omitted or duplicated case')
+    require({r['case_id']:r for r in decisions}=={r['case_id']:r for r in old},'effective outcomes changed')
+    originals=read(R/'predecessor-cores/proposals.json')['proposals']
+    require(len(proposals)==32 and len({p['proposal_id'] for p in proposals})==32,'omitted or duplicated proposal')
+    require({p['proposal_id'] for p in proposals}=={p['proposal_id'] for p in originals},'proposal population changed')
+
+def build():
+    require(subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()==HEAD,'unexpected current head')
+    require(not subprocess.check_output(['git','diff','--name-only',HEAD],cwd=ROOT,text=True).strip(),'unexpected tracked changes')
+    rows=approved_rows();by={r['proposal_id']:r for r in rows}
+    timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    jobs=[]
+    for row in rows:
+        raw=(R/'predecessors'/(row['proposal_id']+'.yaml')).read_bytes()
+        record=corrected(raw,row,timestamp)
+        require(not validate_ingredient(record),'candidate schema validation failed')
+        destination=R/'candidates'/(row['proposal_id']+'.yaml')
+        check_destination(destination,R/'candidates')
+        jobs.append((row,raw,record,destination))
+    require(len({p for _,_,_,p in jobs})==8,'duplicate candidate destination')
+    # All content and destinations are checked before the first candidate write.
+    proofs=[]
+    for row,raw,record,destination in jobs:
+        reserved=ReservedOutput(destination,R/'candidates')
+        try:write_validated_ingredient(record,reserved,yaml_kwargs={'width':original_width(raw)})
+        finally:reserved.close()
+        after=yaml.safe_load(destination.read_bytes());proof=assert_allowed(raw,after,row,timestamp)
+        require(not validate_ingredient(after),'serialized candidate schema failed')
+        require(projection(yaml.safe_load(raw))==projection(after),'native identity/synonym projection changed')
+        proof.update({'after_payload_sha256':sha(destination.read_bytes()),'after_path':str(destination.relative_to(ROOT)),
+            'native_projection_before':projection(yaml.safe_load(raw)),'native_projection_after':projection(after),
+            'writer':'native write_validated_ingredient through exclusive fd reservation; no maintained owner path',
+            'history_event_native_helper':True,'schema_errors':[]})
+        proof['original_native_roundtrip_width']=original_width(raw)
+        proofs.append(proof)
+    originals=read(R/'predecessor-cores/proposals.json')['proposals'];selected=[];newproposals=[]
+    W=read(R/'preflight.json')['w09_binding'];old_by={r['entry_id'].split('::',1)[1]:r for r in W['all_selected_payloads']}
+    for proposal in originals:
+        pid=proposal['proposal_id'];prev=old_by[pid];changed=pid in by
+        f=(R/'candidates'/(pid+'.yaml')) if changed else Path(prev['path'])
+        new=copy.deepcopy(proposal)
+        if changed:new['after_capture']={'root':'artifact','path':str(f.relative_to(R.parents[1])),'sha256':sha(f.read_bytes())}
+        newproposals.append(new)
+        selected.append({'proposal_id':pid,'changed':changed,'owner_path':proposal['owner_path'],
+            'source_head':HEAD,'before_path':str(Path(prev['path']).relative_to(ROOT)),'before_sha256':prev['sha256'],
+            'selected_path':str(f.relative_to(ROOT)),'selected_sha256':sha(f.read_bytes()),
+            'original_proposal_sha256':canon(proposal),'selected_proposal_sha256':canon(new),
+            'scientific_claims_unchanged':True,'release_approval':False})
+    decisions=read(R/'effective-decisions.json')['decisions'];validate_accounting(decisions,newproposals)
+    require(sum(r['changed'] for r in selected)==8 and sum(not r['changed'] for r in selected)==24,'selection split wrong')
+    save(R/'selection.json',{'source_head':HEAD,'population':32,'changed_payloads':8,'byte_identical_retained_payloads':24,'selected':selected,'scientific_review':False,'whole_owner_release_approval':False})
+    save(R/'proposals.json',{'schema_version':1,'proposals':newproposals})
+    save(R/'allowlist-proof.json',{'status':'PASS','timestamp':timestamp,'source_head':HEAD,'entries':proofs,'changed_entries':8,'changed_payloads':8,'component_enum_changes':0,'scientific_field_changes':0,'historical_exception_sha256':EXCEPTION_SHA,'historical_exception_unchanged':True,'scientific_review':False})
+    frozen=read(R/'inputs/frozen-shard-09.json');frozen_by={c['case_id']:c for c in frozen['cases']}
+    caseproof=[]
+    for d in decisions:
+        case=frozen_by[d['case_id']];require(canon(case)==d['case_input_sha256'],'case input hash drift')
+        caseproof.append({'case_id':d['case_id'],'case_input_sha256':d['case_input_sha256'],'effective_decision_sha256':canon(d),'source':d['source'],'occurrence_ids':d['occurrence_ids'],'disposition':d['disposition'],'proposal_ids':d['proposal_ids'],'exact_effective_object_retained':True})
+    base={d['case_id']:d for d in read(R/'predecessor-cores/decisions.json')['decisions']}
+    superseded=[d['case_id'] for d in decisions if d!=base[d['case_id']]]
+    require(len(superseded)==2,'unexpected original/effective case delta')
+    save(R/'outcome-retention.json',{'status':'PASS','source_head':HEAD,'effective_ledger_sha256':sha((R/'effective-decisions.json').read_bytes()),'effective_ledger_byte_identical':True,'cases':caseproof,'case_count':187,'proposal_count':32,'retained_superseded_original_cases':superseded,'source_association_and_all_holds_preserved':True,'scientific_review':False})
+    print(json.dumps({'status':'PASS','candidates':8,'retained':24,'cases':187,'timestamp':timestamp}))
+
+if __name__=='__main__':build()

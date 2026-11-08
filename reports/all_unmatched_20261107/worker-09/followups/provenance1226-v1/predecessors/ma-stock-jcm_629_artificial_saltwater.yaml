@@ -1,0 +1,78 @@
+identifier: kgmicrobe.ingredient:jcm_629_artificial_saltwater
+preferred_term: JCM 629 artificial saltwater
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_629_artificial_saltwater
+  ontology_label: JCM 629 artificial saltwater
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629
+    notes: Source-specific multicomponent stock; registry identity does not assert
+      interchangeability with other recipes bearing this generic label.
+synonyms: []
+components:
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NaCl'
+- component_name: MgCl2·6H2O
+  reference_scope: UNMAPPED
+- component_name: MgSO4 x 7 H2O
+  component_id: CHEBI:31795
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: MgSO4·7H2O'
+- component_name: KCl
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: KCl'
+- component_name: NaHCO3
+  component_id: CHEBI:32139
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NaHCO3'
+- component_name: CaCl2 x 2 H2O
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: CaCl2·2H2O'
+- component_name: NH4Cl
+  component_id: CHEBI:31206
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NH4Cl'
+- component_name: KH2PO4
+  component_id: CHEBI:63036
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: KH2PO4'
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: Distilled water'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629
+    source_record: jcm629
+    notes: JCM629 stock batch lists NaCl27.5g, MgCl2·6H2O5.38g, MgSO4·7H2O6.78g, KCl0.72g,
+      NaHCO3 0.2g, CaCl2·2H2O1.4g, NH4Cl1g, KH2PO4 0.05g, distilled water1L. It replaces
+      ModifiedWolfe mineral solution inJCM628. Water amount is retained without assuming
+      exact finalvolume; frozen150G_PER_L is not this composition.
+notes: JCM629 stock batch lists NaCl27.5g, MgCl2·6H2O5.38g, MgSO4·7H2O6.78g, KCl0.72g,
+  NaHCO3 0.2g, CaCl2·2H2O1.4g, NH4Cl1g, KH2PO4 0.05g, distilled water1L. It replaces
+  ModifiedWolfe mineral solution inJCM628. Water amount is retained without assuming
+  exact finalvolume; frozen150G_PER_L is not this composition. Raw source label 'Artificial
+  saltwater (see below)' is recorded in this evidence rather than as a global resolving
+  alias because the label is recipe-scoped. No EXACT_FORMULATION link to the whole
+  medium is asserted.
+curation_history:
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose source-specific JCM 629 artificial saltwater stock with complete
+    constituent list, original batch quantities in evidence and no guessed final-volume
+    concentrations.
+  llm_assisted: true
+  new_status: MAPPED

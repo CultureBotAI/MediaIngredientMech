@@ -1,0 +1,35 @@
+--- reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml
++++ reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/candidates/ma-casamino-distinct.yaml
+@@ -17,7 +17,7 @@
+       an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the
+       same FOODON term as the sibling Casein_Peptone record, which is the same class
+       of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained.
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://id.nlm.nih.gov/mesh/C017721.json
+     notes: Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein
+       whose nitrogen is converted to amino acids or other compounds of relative chemical
+@@ -215,6 +215,23 @@
+     references and shared-parent closure; no merge or hold release.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:55:57.876916+00:00'
++  curator: Codex worker09
++  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
++  changes: 'Issue #1226 provenance-only correction for ma-casamino-distinct, audit
++    flag 572: changed ontology_mapping.evidence[2].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
++    not a MIM human reviewer; the cited source author is distinct from the author
++    of this curation judgment. Preserved the complete source, notes and claim content,
++    all other mapping evidence (including the ambiguous historical Casamino wrapper
++    where present), component evidence, scientific fields and prior history. No identity,
++    source applicability, outcome, role, coalescence or export approval change. Audit:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
++    complete original evidence-object SHA256 51770068b6471bacd7b371954c225258f20205dc6b022ed56fbae455c7ecb815.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ chemical_properties:
+   cas_rn: 65072-00-6
+   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,0 +1,59 @@
+{
+  "reviewer": "Codex /root/provenance1226_reviewer",
+  "checked_at": "2026-11-08T07:55:25.964878+00:00",
+  "source_captures": [
+    {
+      "path": ".temp/w09-provenance1226-successor-v1/probes/audit-comment-live.json",
+      "sha256": "82087b5681d1c4f66f04933d6ca6fd61c1f5ae8c41fa84588608b4d5d8a17cc4",
+      "source_read_at": "2026-11-08T07:52:13.262261+00:00",
+      "command": [
+        "gh",
+        "api",
+        "repos/CultureBotAI/MediaIngredientMech/issues/comments/6718717543"
+      ],
+      "exit_code": 0
+    },
+    {
+      "path": ".temp/w09-provenance1226-successor-v1/probes/issue1226-live.json",
+      "sha256": "adcb46bd643ab11b45faf3a0b776b91ecc5fdccf99440c4be4518b3ad64c6467",
+      "source_read_at": "2026-11-08T07:52:12.551636+00:00",
+      "command": [
+        "gh",
+        "api",
+        "repos/CultureBotAI/MediaIngredientMech/issues/1226"
+      ],
+      "exit_code": 0
+    },
+    {
+      "path": ".temp/w09-provenance1226-successor-v1/probes/issue1226-comments-live.json",
+      "sha256": "e779da7196717b689fe176e6ba5361a4865b7fd0856a54f588c5029b65fd6a69",
+      "source_read_at": "2026-11-08T07:52:12.879815+00:00",
+      "command": [
+        "gh",
+        "api",
+        "--paginate",
+        "repos/CultureBotAI/MediaIngredientMech/issues/1226/comments"
+      ],
+      "exit_code": 0
+    },
+    {
+      "path": ".temp/w09-provenance1226-successor-v1/probes/remote-head-live.json",
+      "sha256": "caa646e9dcd416c2a82bb6e219a512cde449a018fba85392362d7523ae8ac76e",
+      "source_read_at": "2026-11-08T07:52:12.231269+00:00",
+      "command": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "review/all-unmatched-w09-source-review-20261107"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "exact_comment_id": 6718717543,
+  "comment_body_sha256": "67a2ffbd092363e99328e75d095bbc10594799234d4f386f03f094e13f88035e",
+  "assessment": "The issue final audit distinguishes697 newly authored agent entries from one historical Casamino wrapper, excludes component-enum additions and historical contributions, and requires exact final-owner/full-object rebinding. W09 dispatched scope narrows this to eight specific entries plus one preserved exception. No scientific mapping approval is asserted.",
+  "scientific_review": false,
+  "direct_retrieval_by_this_reviewer": false,
+  "limit": "Parent retrieved official GitHub API bytes in this same active authorized task; I independently inspected their exact contents and hashes. The publication authorization comes from the latest user, not from the historic draft or issue alone."
+}

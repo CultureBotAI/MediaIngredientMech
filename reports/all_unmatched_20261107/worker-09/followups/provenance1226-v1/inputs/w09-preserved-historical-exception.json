@@ -1,0 +1,907 @@
+{
+  "rows": [
+    {
+      "audit_row_id": "provenance-flag-571",
+      "flag_index": 571,
+      "entry_id": "w09::ma-casamino-distinct",
+      "worker": 9,
+      "source_head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+      "proposal_id": "ma-casamino-distinct",
+      "proposal_kind": "edit_existing_owner",
+      "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+      "field": "ontology_mapping.evidence[1]",
+      "entry_sha256": "b905a4d5660c8c57fac8b859abe75bcda4ef7d70a7c1873e7e05c8b367d25386",
+      "proposal_entry_sha256": "8ee0954517882aaf314f3153bd4947b2c7c4e19c9dbc9572c856aaba2b80266e",
+      "full_value": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "MIM curation (#263)",
+        "notes": "HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+      },
+      "full_value_sha256": "172fc3c050e5737dfc774001fa18e3263d7c33242119f5a00aec64fc2fd915c9",
+      "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml",
+      "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+      "baseline_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/baseline/data/ingredients/mapped/Casamino_Acids.yaml",
+      "baseline_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+      "baseline_full_value_match_indices": [],
+      "classification": "ambiguous_needs_review",
+      "suggested_native_type": null,
+      "rule_ids": [
+        "P01-ENUM-SCOPE",
+        "P02-EXACT-BASELINE",
+        "P06-HISTORICAL-AMBIGUITY",
+        "P07-NO-SCIENTIFIC-RENEWAL",
+        "P08-SEPARATE-AXES"
+      ],
+      "rationale": "The full flagged object is new because worker09 added a historical-status prefix, but every remaining note byte is the old #263 claim. The baseline reground_263 event and its llm_assisted marker do not identify an actual human reviewer or prove there was none. The live captured #263 body discusses the chemical error but has no author/reviewer attribution and no comments. Therefore this is neither exact inherited_unchanged nor proven wholly new agent evidence: keep historical provenance ambiguous and make no forced native-type replacement. The new prefix is agent-authored; the underlying human/process review lineage remains unresolved.",
+      "claim_specific_type_basis": {
+        "method": "mixed_new_wrapper_inherited_assertion",
+        "complete_claim_notes": "HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained.",
+        "added_prefix": "HISTORICAL; superseded by exact MeSH identity below. ",
+        "inherited_baseline_value": {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "MIM curation (#263)",
+          "notes": "Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+        },
+        "inherited_baseline_value_sha256": "19e341467060034854d059f0a768d16bc588948d4c31d36c416c9ad16feb583c",
+        "baseline_locator": "ontology_mapping.evidence[1]",
+        "issue_locator": "live-all-issues-v1.json issue number263 body/comments; no author field"
+      },
+      "conditional_native_type_alternatives": [],
+      "human_review_provenance": {
+        "current_entry_human_reviewer_supported": null,
+        "basis": "Historical underlying assertion not attributable from inspected before/after history and issue263; do not erase possible human review based on llm_assisted."
+      },
+      "author_evidence": {
+        "added_curation_history": [
+          {
+            "timestamp": "2026-11-08T05:24:00.742408+00:00",
+            "curator": "all-unmatched-worker-09/materials",
+            "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+            "changes": "Propose exact ordinary acid-casein digest identity mesh:C017721 verified in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject inherited carbocerate/metadata/grade-fragment aliases; preserve the historical concentration-fragment RAW_TEXT label under#213 pending claim-specific source review and add ordinary supplier spellings. Coordinator must reconcile identifier references and shared-parent closure; no merge or hold release.",
+            "llm_assisted": true,
+            "new_status": "MAPPED"
+          }
+        ],
+        "case_author_and_review_metadata": [
+          {
+            "case_id": "CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:01f4ba7f41067e00d166f17c6a759fc9afc22b1e13872397f7219c1e742e34cf",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:0e2f27b0689d68b7a76ca1e17800a644acd456a9a64216d1d85bd44ceef4677d",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:0ff6d1eb7745a1250948f6020672cfec737a9eabcbc67d90417296d1ed73a5bc",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:30d0e9a44a4bf06ddf351d2e4c0a2395d6469119838987c2f506ffa0aecac776",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:3601b087a9e4bce8da9d8296488253b0c5cdcbcd798047cd693f108722cb0f44",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:38a7ddb8ef476638740adc13bc7a8652efea3138809d5e9c445e8dfbc670cc95",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:6b5d5dc18d6c9299be575c473148ee4032924b43c37cf612082787e7f5aaafaa",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          },
+          {
+            "case_id": "CM_NAME:7f1cbb5bc76797a73ecd40fd59390fcaa30589c1cef8fbcccc94008833be08a9",
+            "primary_attribution": {
+              "primary_reviewer": "/root/materials"
+            },
+            "independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "w09-independent-materials"
+              ]
+            }
+          }
+        ],
+        "authorship_exclusions": [
+          "w09"
+        ],
+        "proposal_ledger": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/proposals.json",
+          "sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+          "proposal_id": "ma-casamino-distinct"
+        },
+        "decision_ledger": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-decisions.json",
+          "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e"
+        },
+        "linked_review_reports": [
+          {
+            "id": "w09-independent-materials",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/review-of-materials/review-final.json",
+            "sha256": "17583be58963178ee26ac9982ef92bd10b45f00896c581d535c571eeb479f2b3",
+            "kind": "independent_review",
+            "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+            "authorship_scope_metadata": {
+              "reviewer": "/root/antibiotics",
+              "primary_author": "/root/materials",
+              "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+              "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+              "reviewer_artifacts": {
+                "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+                "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+                "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+                "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+                "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+                "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+                "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+                "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+                "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+                "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+              }
+            }
+          }
+        ]
+      },
+      "linked_source_report_metadata": [
+        {
+          "evidence_id": "ma-casein",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/primary-recipe-05.json",
+            "sha256": "046d3687e558e5da577751750d7ee4750844cfe0d2b24baceb9411f726e0781c"
+          },
+          "url": "https://documents.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "locator": "PDF page 55, Bacto Casamino Acids and Vitamin Assay; source page32-35 soy comparison"
+        },
+        {
+          "evidence_id": "ma-bacto",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/primary-supplier-03.json",
+            "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/223050",
+          "locator": "Bacto Casamino Acids product description"
+        },
+        {
+          "evidence_id": "ma-jcm1445",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/primary-supplier-03.json",
+            "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1445",
+          "locator": "JCM1445 rows Casamino/Tryptone (BD-Difico)"
+        },
+        {
+          "evidence_id": "ma-direct-mesh-C017721",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/mesh-C017721.json",
+            "sha256": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff"
+          },
+          "url": "https://id.nlm.nih.gov/mesh/C017721.json",
+          "locator": "Complete official response; status 200"
+        },
+        {
+          "evidence_id": "ma-local-ontology",
+          "kind": "local_validation",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/local-ontology-verification.json",
+            "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+          },
+          "url": null,
+          "locator": "Full subject statements from readonly OAK caches"
+        },
+        {
+          "evidence_id": "ma-owner-search",
+          "kind": "local_validation",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/owner-search.json",
+            "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+          },
+          "url": null,
+          "locator": "All data/ingredients YAML including ignored paths"
+        }
+      ],
+      "inspected_source_captures": [],
+      "scientific_review": false,
+      "scientific_mapping_approval": false,
+      "independence_scope": "independent_authorship_provenance_audit_only",
+      "requested_action": "Preserve unresolved historical provenance; no automatic rewrite.",
+      "current_payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml",
+      "current_field_rebound_exactly": true,
+      "origin": {
+        "index": 850,
+        "entry_id": "w09::ma-casamino-distinct",
+        "worker": 9,
+        "head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+        "provisional": false,
+        "proposal_id": "ma-casamino-distinct",
+        "kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+        "destination_path_as_declared": "data/ingredients/mapped/Casamino_Acids.yaml",
+        "before_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+        "payload_path": "snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml",
+        "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+        "proposal_ledger_sha256": "ebd5c81f285ed6f41e76974012143990b33528a2beb4f9930f52b56d6469ab8e",
+        "identifier": "mesh:C017721",
+        "preferred_term": "Casamino acids",
+        "case_ids": [
+          "CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d",
+          "CM_NAME:01f4ba7f41067e00d166f17c6a759fc9afc22b1e13872397f7219c1e742e34cf",
+          "CM_NAME:0e2f27b0689d68b7a76ca1e17800a644acd456a9a64216d1d85bd44ceef4677d",
+          "CM_NAME:0ff6d1eb7745a1250948f6020672cfec737a9eabcbc67d90417296d1ed73a5bc",
+          "CM_NAME:30d0e9a44a4bf06ddf351d2e4c0a2395d6469119838987c2f506ffa0aecac776",
+          "CM_NAME:3601b087a9e4bce8da9d8296488253b0c5cdcbcd798047cd693f108722cb0f44",
+          "CM_NAME:38a7ddb8ef476638740adc13bc7a8652efea3138809d5e9c445e8dfbc670cc95",
+          "CM_NAME:6b5d5dc18d6c9299be575c473148ee4032924b43c37cf612082787e7f5aaafaa",
+          "CM_NAME:7f1cbb5bc76797a73ecd40fd59390fcaa30589c1cef8fbcccc94008833be08a9"
+        ],
+        "case_bindings": [
+          {
+            "case_id": "CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d",
+            "input_sha256": "f41e473a657389ec5ff9ba6a8a337d25a788f928a8e8691d02bea11ae66ee127",
+            "occurrence_ids": [
+              "CM_OCC:e2af8507d06227fc1e8dd776dc3bad0567748ae3a02dd88b1b6c02929f3da918"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:01f4ba7f41067e00d166f17c6a759fc9afc22b1e13872397f7219c1e742e34cf",
+            "input_sha256": "52bd3a757915c257d2ec511758a429a659d91c93dc9333d4dff40a6aba5b98b5",
+            "occurrence_ids": [
+              "CM_OCC:834d4bb458b0692e7676bed0102860debd60467c1940c197b1e27d3930de3c91",
+              "CM_OCC:854a7e478909d5cecc951ad5b85c4bf01b78f2e37690f668f10d13c34ee45e78",
+              "CM_OCC:a7c2dc3a2f7b16561dc64584747dd2e117b291b24772e0da5525b40e82b89be2"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:0e2f27b0689d68b7a76ca1e17800a644acd456a9a64216d1d85bd44ceef4677d",
+            "input_sha256": "fe587c827fba54006b46074ddc76dcacea3938ea77a73bdf6a0b00915d2ecb3c",
+            "occurrence_ids": [
+              "CM_OCC:c4664196e8137704813f52469718f1d021d5d771fe370b93ec8988013dbc04e5"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:0ff6d1eb7745a1250948f6020672cfec737a9eabcbc67d90417296d1ed73a5bc",
+            "input_sha256": "26566a52922a3a00bbf318d1480dab063ebb633e6fb63bf2f27dec6868b13764",
+            "occurrence_ids": [
+              "CM_OCC:9a03c26026c3bc1ca3d131ec710ecb51a779b9615931816792c923b464867bc4"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:30d0e9a44a4bf06ddf351d2e4c0a2395d6469119838987c2f506ffa0aecac776",
+            "input_sha256": "629176cfffe5edee363307774820300efbe763d384b5446c4a4f9846bfb51540",
+            "occurrence_ids": [
+              "CM_OCC:ac8272787e1c9ab5aefed092cb214b53797771cd2c2bf6c3e615a356f35e672d",
+              "CM_OCC:951cd64d3b3fcd27d74e71e73d8c47fe9e49c07d4fa03f8ab23b02e0451bf9d9",
+              "CM_OCC:dab25d42ba757e6f57fa90cd53a7cd9282b782202cb30e8209a67f1f67c6bef9"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:3601b087a9e4bce8da9d8296488253b0c5cdcbcd798047cd693f108722cb0f44",
+            "input_sha256": "0de41215abf3d7038c90734a8942b6ce35a88cf518e3b25bb2c718f764e331e2",
+            "occurrence_ids": [
+              "CM_OCC:6032aab51c234a86f9aedfc86cd7b773d20f1b615dca12214c3e49f7ac1a47f6",
+              "CM_OCC:33a6050a5e5abaa20f629a45148b9bd71cbe7dd2ed21aae786041c0cc6f83da3"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:38a7ddb8ef476638740adc13bc7a8652efea3138809d5e9c445e8dfbc670cc95",
+            "input_sha256": "f424528e9ad220d207eaa167e3702e415d1dffa8479cad18c9158fc8a912fe04",
+            "occurrence_ids": [
+              "CM_OCC:15f873bfc726ee3b10ab53f2c5ef88271a2134b92bd506d842a73159631b615c"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:6b5d5dc18d6c9299be575c473148ee4032924b43c37cf612082787e7f5aaafaa",
+            "input_sha256": "70e63dfa44a4216e2dde3f73a5ff88d517a9cd18e6b099da944aa862b2625349",
+            "occurrence_ids": [
+              "CM_OCC:df093e320ea92df629bf70f0b8c416a469b62c087432702fe7fec51a202ea216",
+              "CM_OCC:26df4c268e940e9a1bea1d89c5b788b3e025f1c8d8115fcb1695326b2b3c75ea",
+              "CM_OCC:541041284bbc6c42d87eda572ae315be6a6e0ca072030e646ed539427d66885d"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          },
+          {
+            "case_id": "CM_NAME:7f1cbb5bc76797a73ecd40fd59390fcaa30589c1cef8fbcccc94008833be08a9",
+            "input_sha256": "dd52006a65d39eebc256aafc73e246680d96d7b479d99f886cac36613163b5df",
+            "occurrence_ids": [
+              "CM_OCC:86c6a594b8d9c853b207168547341ead005faac27967f014e8b32e599b454ca1",
+              "CM_OCC:a3fd8c3ab9c42d70f32bfb4ff2507c8f478c02af6aac8bb995dc2e7d50ea76ef"
+            ],
+            "missing_requirement": null,
+            "issue_refs": [
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/1108",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+              "https://github.com/CultureBotAI/MediaIngredientMech/issues/887"
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ma-casein",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-recipe-05.json",
+              "sha256": "046d3687e558e5da577751750d7ee4750844cfe0d2b24baceb9411f726e0781c"
+            },
+            "url": "https://documents.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+            "locator": "PDF page 55, Bacto Casamino Acids and Vitamin Assay; source page32-35 soy comparison"
+          },
+          {
+            "evidence_id": "ma-bacto",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-supplier-03.json",
+              "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+            },
+            "url": "https://www.thermofisher.com/order/catalog/product/223050",
+            "locator": "Bacto Casamino Acids product description"
+          },
+          {
+            "evidence_id": "ma-jcm1445",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/primary-supplier-03.json",
+              "sha256": "4c8ba26db2cd5976f0fa0f85ad8ce5b1722149775d124ec1e3ab37c98dc02aa7"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1445",
+            "locator": "JCM1445 rows Casamino/Tryptone (BD-Difico)"
+          },
+          {
+            "evidence_id": "ma-direct-mesh-C017721",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/captures/mesh-C017721.json",
+              "sha256": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff"
+            },
+            "url": "https://id.nlm.nih.gov/mesh/C017721.json",
+            "locator": "Complete official response; status 200"
+          },
+          {
+            "evidence_id": "ma-local-ontology",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/local-ontology-verification.json",
+              "sha256": "8ed709c5a70eaf2547e5c3214a6bd105a4657b256559222c315c3592d58ef8c2"
+            },
+            "url": null,
+            "locator": "Full subject statements from readonly OAK caches"
+          },
+          {
+            "evidence_id": "ma-owner-search",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/owner-search.json",
+              "sha256": "623b398e8debf1678cdb9db6e97a596da7e2d7c4257dc97b574f9f26dd2da5c6"
+            },
+            "url": null,
+            "locator": "All data/ingredients YAML including ignored paths"
+          }
+        ],
+        "record": {
+          "identifier": "mesh:C017721",
+          "preferred_term": "Casamino acids",
+          "ontology_mapping": {
+            "ontology_id": "mesh:C017721",
+            "ontology_label": "casamino acids",
+            "ontology_source": "MESH",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "HISTORICAL; superseded by exact MeSH identity below. Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "MIM curation (#263)",
+                "notes": "HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+              },
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "https://id.nlm.nih.gov/mesh/C017721.json",
+                "notes": "Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein whose nitrogen is converted to amino acids or other compounds of relative chemical simplicity. This exact material term is more specific than FOODON03315719 and avoids unnecessary registry fallback. Ordinary acid hydrolysate remains distinct from enzymatic casein peptone and vitamin-assay grade. Historical source statistics are preserved, not recomputed or merged."
+              }
+            ]
+          },
+          "synonyms": [
+            {
+              "synonym_text": "( vitamin assay)",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Properties: Undefined component",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Casamino Acid",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Casaminoacids",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Casmino Acid",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Casmino acids",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "carbocerate",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Casamino Acids (0.01 %",
+              "synonym_type": "RAW_TEXT",
+              "source": "microbedecoder"
+            },
+            {
+              "synonym_text": "Casamino acids (BD--Difco)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Casamino acids (BD--Difco)"
+            },
+            {
+              "synonym_text": "Casamino acids (Difco)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Casamino acids (Difco)"
+            },
+            {
+              "synonym_text": "casamino acid (BD Difco)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:casamino acid (BD Difco)"
+            },
+            {
+              "synonym_text": "Casamino acids (BD Bacto)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Casamino acids (BD Bacto)"
+            },
+            {
+              "synonym_text": "Bacto Casamino acids (Difco)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Bacto Casamino acids (Difco)"
+            },
+            {
+              "synonym_text": "Casamino acids (BD BBL)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Casamino acids (BD BBL)"
+            },
+            {
+              "synonym_text": "Casamino acids (BD-Difico)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Casamino acids (BD-Difico)"
+            },
+            {
+              "synonym_text": "Casamino Acids (Difco)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Casamino Acids (Difco)"
+            },
+            {
+              "synonym_text": "Bacto Casamino Acid (Difco)",
+              "synonym_type": "CATALOG_VARIANT",
+              "source": "culturemech:Bacto Casamino Acid (Difco)"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 1313,
+            "media_count": 1247
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-03-09T06:54:18.022301+00:00",
+              "curator": "import_from_culturemech",
+              "action": "IMPORTED",
+              "changes": "Initial import from CultureMech pipeline",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:44.825815+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched: Casamino acids)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:44.827802+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched: Casamino Acids)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T21:48:44.829735+00:00",
+              "curator": "fetch_cas_rn_from_culturebot_csv",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched: casamino acids)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-18T00:00:00+00:00",
+              "curator": "cbclaw_kg_microbe_sweep",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 5 synonyms from kg-microbe P4.4 enrichment: Casamino Acid, Casaminoacids, Casmino Acid, Casmino acids, carbocerate",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-04-18T00:00:00+00:00",
+              "curator": "cbclaw_kg_microbe_sweep",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 5 synonyms from kg-microbe P4.4 enrichment: CASamino acids, Casaminoacids, Casmino Acid, Casmino acids, carbocerate",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-04-19T07:39:23.955331+00:00",
+              "curator": "audit_mim_merge",
+              "action": "MERGED_FROM_DUPLICATES",
+              "changes": "Absorbed 4 duplicate MIM record(s) into this one: Casamino_Acid.yaml, Casamino_Acids_2.yaml, Casamino_Acids_3.yaml, Casamino_Acid_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:32.632459+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T08:08:28.456070+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+              "changes": "molecular_formula=C27H53O2; inchi=InChI=1S/C27H54O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-1; smiles=CCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)[O-]",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:13.136156+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-06-03T02:06:01.736872+00:00",
+              "curator": "infer_roles_from_name_lists",
+              "action": "ANNOTATED",
+              "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)"
+            },
+            {
+              "timestamp": "2026-07-20T00:00:00+00:00",
+              "curator": "migrate_media_roles_to_facets",
+              "action": "ANNOTATED",
+              "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+            },
+            {
+              "timestamp": "2026-08-06T00:00:00+00:00",
+              "curator": "reground_263",
+              "action": "CORRECTED",
+              "changes": "identifier CHEBI:78020 -> FOODON:03315719; ontology term CHEBI:78020 -> FOODON:03315719 (mammalian milk protein (hydrolyzed)). Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained. Dropped molecular_formula, inchi, smiles backfilled from the wrong term.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-06T00:00:00+00:00",
+              "curator": "reground_263",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT only because heptacosanoate's structure had been backfilled onto the record (#263)",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-06T05:30:11.378447+00:00",
+              "curator": "issue_213_grounding",
+              "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+              "changes": "Absorbed UNMAPPED_0708 'Casamino Acids (0.01 %' as a RAW_TEXT synonym -- Parse artifact: a truncated concentration annotation '(0.01 %' left on the label. Same ingredient as the Casamino acids record (#213). No new SSSOM row; FOODON:03315719 is already mapped. Source: kgmicrobe.trait:casamino_acids_0_01.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-27T03:16:39.520272+00:00",
+              "curator": "refresh_occurrence_statistics",
+              "action": "CORRECTED",
+              "changes": "occurrence_statistics 57/395 -> 1247/1313 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+            },
+            {
+              "timestamp": "2026-11-02T02:06:17.932149+00:00",
+              "curator": "Codex",
+              "action": "REMOVED_STALE_KG_MICROBE_NODE_ID",
+              "changes": "Removed stale kg_microbe_node_id CHEBI:78020 after the recorded identity correction to FOODON:03315719 (#870). Preserved primary identity, ontology mapping, chemistry, synonyms, roles, counts, status and existing tombstone metadata. Source-only correction: the fixed unified snapshot still contains the documented 21 stale cells in 15 rows; #870 remains open. No mapping, role or release approval. Decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/870#issuecomment-6566860803; evidence: reports/step7a_source_753_870_20261101/source-evidence.json sha256=9d9dc2192eaef73d23ce686f10161468ca1055d781a27fbc197957d4e2917fb3.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "gpt-6"
+            },
+            {
+              "timestamp": "2026-11-08T05:24:00.742408+00:00",
+              "curator": "all-unmatched-worker-09/materials",
+              "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+              "changes": "Propose exact ordinary acid-casein digest identity mesh:C017721 verified in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject inherited carbocerate/metadata/grade-fragment aliases; preserve the historical concentration-fragment RAW_TEXT label under#213 pending claim-specific source review and add ordinary supplier spellings. Coordinator must reconcile identifier references and shared-parent closure; no merge or hold release.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "65072-00-6",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-05T21:48:44.825809+00:00"
+          },
+          "ingredient_type": "UNDEFINED_MIXTURE",
+          "nutritional_roles": [
+            {
+              "role": "PROTEIN_SOURCE",
+              "confidence": 0.8,
+              "evidence": [
+                {
+                  "reference_type": "COMPUTATIONAL_PREDICTION",
+                  "reference_text": "Inferred from curated media-role name pattern",
+                  "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+                }
+              ]
+            }
+          ]
+        },
+        "changed_fields": [
+          "curation_history",
+          "identifier",
+          "ontology_mapping",
+          "synonyms"
+        ],
+        "names": [
+          {
+            "text": "Casamino acids",
+            "type": "PREFERRED",
+            "role": "preferred"
+          },
+          {
+            "text": "( vitamin assay)",
+            "type": "REJECTED_LABEL",
+            "role": "synonym"
+          },
+          {
+            "text": "Properties: Undefined component",
+            "type": "REJECTED_LABEL",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino Acid",
+            "type": "EXACT_SYNONYM",
+            "role": "synonym"
+          },
+          {
+            "text": "Casaminoacids",
+            "type": "EXACT_SYNONYM",
+            "role": "synonym"
+          },
+          {
+            "text": "Casmino Acid",
+            "type": "EXACT_SYNONYM",
+            "role": "synonym"
+          },
+          {
+            "text": "Casmino acids",
+            "type": "EXACT_SYNONYM",
+            "role": "synonym"
+          },
+          {
+            "text": "carbocerate",
+            "type": "REJECTED_LABEL",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino Acids (0.01 %",
+            "type": "RAW_TEXT",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino acids (BD--Difco)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino acids (Difco)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "casamino acid (BD Difco)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino acids (BD Bacto)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Bacto Casamino acids (Difco)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino acids (BD BBL)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino acids (BD-Difico)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Casamino Acids (Difco)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          },
+          {
+            "text": "Bacto Casamino Acid (Difco)",
+            "type": "CATALOG_VARIANT",
+            "role": "synonym"
+          }
+        ],
+        "source_recipe_leads": [
+          "JCM:1445"
+        ],
+        "url_leads": [
+          "https://documents.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "https://id.nlm.nih.gov/mesh/C017721.json",
+          "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1445",
+          "https://www.thermofisher.com/order/catalog/product/223050"
+        ],
+        "prior_inventory_status": "new_since_previous_newowner_inventory",
+        "prior_inventory_payload_sha256": null,
+        "known_family_recommendations": [],
+        "authorship_exclusions": [
+          "w09"
+        ],
+        "scientific_equivalence": null
+      },
+      "proposed_typing_only": false,
+      "scientific_approval": false
+    }
+  ],
+  "required": "Preserve the complete ambiguous Casamino evidence[1] object. No forced type or guessed human/agent origin. The separate new evidence[2] is in the eight-entry allowlist."
+}
