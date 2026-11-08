@@ -245,10 +245,79 @@ def subject(path: str) -> str:
 
 
 def slot(row: dict) -> tuple[str, str]:
-    prefix = row["object_id"].split(":", 1)[0]
-    return row["subject_id"], (
-        prefix if prefix in {"cas", "kgmicrobe.ingredient", "kgmicrobe.compound"} else "ontology"
+    """Preserve distinct local primaries and B1 handles (#1257; Claw #683).
+
+    A curated local primary can differ from the mandatory subject-slug handle,
+    including only by case. Both are native rows in the same namespace. A local
+    target change therefore removes its old slot and adds its new slot; it is
+    never an implicit pairing that transfers another identity's provenance.
+    """
+    object_id = row["object_id"]
+    prefix = object_id.split(":", 1)[0]
+    key = (
+        object_id
+        if prefix in {"kgmicrobe.ingredient", "kgmicrobe.compound"}
+        else "cas" if prefix == "cas" else "ontology"
     )
+    return row["subject_id"], key
+
+
+def _align_rows(before: list[dict], after: list[dict]) -> tuple[list[dict], list[int | None]]:
+    """Use native deterministic alignment with explicit local objects (#1257).
+
+    The historical maker remains immutable. Stable local IDs and ordinary
+    ontology/CAS slots retain its algorithm; replacing a local object removes
+    its old position and adds its successor without transferring identity.
+    """
+    before_by = {}
+    for i, row in enumerate(before, 1):
+        key = slot(row)
+        require(key not in before_by, f"Two pre-batch rows share a slot: {key}")
+        before_by[key] = (i, row)
+    after_by = {}
+    for j, row in enumerate(after, 1):
+        key = slot(row)
+        require(key not in after_by, f"Two post-batch rows share a slot: {key}")
+        after_by[key] = (j, row)
+    changes = []
+    position_map: list[int | None] = [None] * len(before)
+    for key, (i, old) in before_by.items():
+        if key in after_by:
+            j, new = after_by[key]
+            position_map[i - 1] = j
+            if old != new:
+                changes.append(
+                    {
+                        "kind": "changed",
+                        "before_position": i,
+                        "after_position": j,
+                        "before": old,
+                        "after": new,
+                    }
+                )
+        else:
+            changes.append(
+                {
+                    "kind": "removed",
+                    "before_position": i,
+                    "after_position": None,
+                    "before": old,
+                    "after": None,
+                }
+            )
+    for key, (j, new) in after_by.items():
+        if key not in before_by:
+            changes.append(
+                {
+                    "kind": "added",
+                    "before_position": None,
+                    "after_position": j,
+                    "before": None,
+                    "after": new,
+                }
+            )
+    changes.sort(key=lambda change: (change["after_position"] or 0, change["before_position"] or 0))
+    return changes, position_map
 
 
 def row_projection(
@@ -503,7 +572,7 @@ def _receipt(
     proof: dict, maker: Any, plan: dict, owners: list[dict], before: bytes, after: bytes
 ) -> dict:
     old, new = maker.rows_of(before), maker.rows_of(after)
-    changes, positions = maker.align(old, new)
+    changes, positions = _align_rows(old, new)
     records = []
     for owner in owners:
         record = {

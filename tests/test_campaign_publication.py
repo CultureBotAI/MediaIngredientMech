@@ -1620,3 +1620,340 @@ def test_1256_live_preparation_closes_head_after_all_checks(case, monkeypatch, b
     assert injected == [boundary]
     assert not list(case["out"].iterdir())
     assert (root / c.SOURCE).read_bytes() == case["before"]
+
+
+# #1257: exact registry pairs from the independently captured full native
+# candidate. They are curated primaries plus B1 handles, not duplicate pairs.
+LOCAL_PRIMARY_HANDLES_1257 = [
+    (
+        "Desicatted_Ox-bile",
+        "kgmicrobe.ingredient:desiccated_ox_bile",
+        "kgmicrobe.ingredient:desicatted_ox-bile",
+    ),
+    (
+        "Na2so3_X_5_H2o",
+        "kgmicrobe.compound:sodium_sulfite_pentahydrate",
+        "kgmicrobe.compound:na2so3_x_5_h2o",
+    ),
+    (
+        "Sodium_Nitrate_070_M_Stock",
+        "kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29",
+        "kgmicrobe.ingredient:sodium_nitrate_070_m_stock",
+    ),
+    (
+        "Trisodium_Citrate_X_3_H2o",
+        "kgmicrobe.compound:trisodium_citrate_trihydrate",
+        "kgmicrobe.compound:trisodium_citrate_x_3_h2o",
+    ),
+    ("MES_Buffer", "kgmicrobe.ingredient:MES_Buffer", "kgmicrobe.ingredient:mes_buffer"),
+    ("Poly-~DF", "kgmicrobe.compound:poly_ß", "kgmicrobe.compound:poly-~df"),
+]
+
+
+def local_primary_handle_case_1257(name, primary, handle):
+    parent = row(name, "CHEBI:1", predicate_id="skos:broadMatch")
+    unrelated = row("Unrelated", "CHEBI:9", comment='retained "quoted" cell')
+    before = sssom([parent, unrelated])
+    generated = sssom(
+        [
+            {**parent, "source": "native source"},
+            row(name, primary, comment="Curated primary"),
+            row(name, handle, comment="Required B1 subject handle"),
+            {**unrelated, "source": "unselected native drift"},
+        ]
+    )
+    filename = "Poly-ß" if name == "Poly-~DF" else name
+    owner_path = "data/ingredients/mapped/" + filename + ".yaml"
+    record = {"source_record": owner_path, "shape": "campaign_owner_edit"}
+    plan = [
+        {
+            "owner": owner_path,
+            "before_position": 1 if position == 1 else None,
+            "native_position": position,
+            "preserve_fields": [],
+        }
+        for position in (1, 2, 3)
+    ]
+    return before, generated, record, plan
+
+
+@pytest.mark.parametrize("name,primary,handle", LOCAL_PRIMARY_HANDLES_1257)
+def test_1257_preserves_distinct_native_primary_and_handle(name, primary, handle):
+    before, generated, record, plan = local_primary_handle_case_1257(name, primary, handle)
+    projected, trace = c.row_projection(before, generated, [record], plan)
+    rows = c.table(projected)[2]
+    assert [r["object_id"] for r in rows] == ["CHEBI:1", "CHEBI:9", primary, handle]
+    assert [r["comment"] for r in rows[2:]] == ["Curated primary", "Required B1 subject handle"]
+    assert c.table(projected)[3][1] == c.table(before)[3][1]
+    assert len(trace) == 3
+    assert {t["native_position"] for t in trace} == {1, 2, 3}
+    assert all(t["preserve_fields"] == [] for t in trace)
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "omit-primary",
+        "omit-handle",
+        "repeat-primary",
+        "wrong-owner",
+        "out-of-scope-row",
+        "repeat-before-position",
+        "bool-position",
+        "retain-provenance-on-new-handle",
+    ],
+)
+def test_1257_multiple_local_rows_keep_exact_coverage_and_ownership_guards(fault):
+    before, generated, record, plan = local_primary_handle_case_1257(*LOCAL_PRIMARY_HANDLES_1257[0])
+    if fault == "omit-primary":
+        plan.pop(1)
+    elif fault == "omit-handle":
+        plan.pop(2)
+    elif fault == "repeat-primary":
+        plan.append(copy.deepcopy(plan[1]))
+    elif fault == "wrong-owner":
+        plan[1]["owner"] = "data/ingredients/mapped/Unrelated.yaml"
+    elif fault == "out-of-scope-row":
+        plan[1]["native_position"] = 4
+    elif fault == "repeat-before-position":
+        plan[1]["before_position"] = 1
+    elif fault == "bool-position":
+        plan[1]["native_position"] = True
+    else:
+        plan[2]["preserve_fields"] = ["comment"]
+    with pytest.raises(ValueError):
+        c.row_projection(before, generated, [record], plan)
+
+
+@pytest.mark.parametrize("side", ["before", "native"])
+@pytest.mark.parametrize("different_predicate", [False, True])
+def test_1257_actual_duplicate_local_object_remains_ambiguous(side, different_predicate):
+    before, generated, record, plan = local_primary_handle_case_1257(*LOCAL_PRIMARY_HANDLES_1257[0])
+    values = c.table(before if side == "before" else generated)[2]
+    repeated = row("Desicatted_Ox-bile", LOCAL_PRIMARY_HANDLES_1257[0][1])
+    if side == "before":
+        values.append(repeated)
+    else:
+        repeated = dict(values[1])
+    if different_predicate:
+        repeated = {**repeated, "predicate_id": "skos:closeMatch"}
+    values.append(repeated)
+    if side == "before":
+        before = sssom(values)
+    else:
+        generated = sssom(values)
+    with pytest.raises(ValueError, match="ambiguous native row slot"):
+        c.row_projection(before, generated, [record], plan)
+
+
+def test_1257_unselected_sodium_stock_native_handles_do_not_expand_publication():
+    name, primary, handle = LOCAL_PRIMARY_HANDLES_1257[2]
+    old_stock = row(name, primary, comment='old "historical" stock provenance')
+    before = sssom([row("A"), old_stock])
+    native = sssom(
+        [
+            row("A", other="selected alias"),
+            row(name, "CHEBI:63005", predicate_id="skos:broadMatch"),
+            row(name, primary),
+            row(name, handle),
+        ]
+    )
+    owner_path = "data/ingredients/mapped/A.yaml"
+    plan = [
+        {"owner": owner_path, "before_position": 1, "native_position": 1, "preserve_fields": []}
+    ]
+    projected, trace = c.row_projection(
+        before, native, [{"source_record": owner_path, "shape": "campaign_owner_edit"}], plan
+    )
+    assert len(c.table(projected)[2]) == 2
+    assert c.table(projected)[3][1] == c.table(before)[3][1]
+    assert c.table(projected)[2][1] == old_stock
+    assert len(trace) == 1 and trace[0]["owner"] == owner_path
+
+
+@pytest.mark.parametrize("namespace", ["kgmicrobe.ingredient", "kgmicrobe.compound"])
+def test_1257_local_retarget_is_explicit_removal_addition_without_provenance_transfer(namespace):
+    before = sssom([row("A", namespace + ":old", comment="Old identity explanation")])
+    generated = sssom([row("A", namespace + ":new", comment="Native new identity explanation")])
+    owner_path = "data/ingredients/mapped/A.yaml"
+    records = [{"source_record": owner_path, "shape": "campaign_owner_edit"}]
+    paired = {
+        "owner": owner_path,
+        "before_position": 1,
+        "native_position": 1,
+        "preserve_fields": [],
+    }
+    with pytest.raises(ValueError, match="missing/extra/misowned"):
+        c.row_projection(before, generated, records, [paired])
+    plan = [
+        {**paired, "native_position": None},
+        {**paired, "before_position": None},
+    ]
+    projected, trace = c.row_projection(before, generated, records, plan)
+    assert c.table(projected)[2] == c.table(generated)[2]
+    assert [t["after"] is None for t in trace] == [True, False]
+    assert trace[1]["after"]["comment"] == "Native new identity explanation"
+    plan[1]["preserve_fields"] = ["comment"]
+    with pytest.raises(ValueError, match="provenance has no historical row"):
+        c.row_projection(before, generated, records, plan)
+
+
+def test_1257_unchanged_local_object_still_allows_explicit_historical_provenance():
+    before = sssom([row("A", "kgmicrobe.ingredient:primary", comment="Applicable history")])
+    native = sssom([row("A", "kgmicrobe.ingredient:primary", source="new", comment="native")])
+    owner_path = "data/ingredients/mapped/A.yaml"
+    plan = [
+        {
+            "owner": owner_path,
+            "before_position": 1,
+            "native_position": 1,
+            "preserve_fields": ["comment"],
+        }
+    ]
+    projected, trace = c.row_projection(
+        before, native, [{"source_record": owner_path, "shape": "campaign_owner_edit"}], plan
+    )
+    assert c.table(projected)[2][0]["comment"] == "Applicable history"
+    assert c.table(projected)[2][0]["source"] == "new"
+    assert trace[0]["preserve_fields"] == ["comment"]
+
+
+def test_1257_multiple_local_rows_publish_and_replay_with_native_receipt(case):
+    root, plan = case["root"], case["plan"]
+    candidate_ref = plan["generation"]["candidate"]
+    rows = c.table((root / candidate_ref["path"]).read_bytes())[2]
+    rows.extend(
+        [
+            row("A", "kgmicrobe.ingredient:curated_primary", comment="Primary"),
+            row("A", "kgmicrobe.ingredient:a", comment="Subject handle"),
+        ]
+    )
+    raw = sssom(rows)
+    put(root, candidate_ref["path"], raw)
+    candidate_ref["sha256"] = c.sha(raw)
+    plan["rows"].extend(
+        {
+            "owner": "data/ingredients/mapped/A.yaml",
+            "before_position": None,
+            "native_position": position,
+            "preserve_fields": [],
+        }
+        for position in (5, 6)
+    )
+    put(root, case["path"].relative_to(root).as_posix(), plan)
+    assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
+    assert c.validate(root, case["path"])["status"] == "verified"
+    final = c.table((root / c.SOURCE).read_bytes())
+    assert final[3][1] == c.table(case["before"])[3][1]
+    assert [r["object_id"] for r in final[2][-2:]] == [
+        "kgmicrobe.ingredient:curated_primary",
+        "kgmicrobe.ingredient:a",
+    ]
+    chain = native.verify_mapping_chain(root)
+    assert chain["state"] == final[2]
+    assert chain["receipts"][-1]["position_map"] == [1, 2]
+    assert chain["receipts"][-1]["added_rows"] == 4
+
+
+def test_1257_demotion_removes_both_local_ids_and_parent_explicitly():
+    name, primary, handle = LOCAL_PRIMARY_HANDLES_1257[0]
+    before = sssom(
+        [
+            row(name, "CHEBI:1", predicate_id="skos:broadMatch"),
+            row(name, primary),
+            row(name, handle),
+            row("Unrelated", "CHEBI:9"),
+        ]
+    )
+    generated = sssom([row("Unrelated", "CHEBI:9")])
+    path = "data/ingredients/unmapped/" + name + ".yaml"
+    record = {
+        "source_record": path,
+        "before_source_record": "data/ingredients/mapped/" + name + ".yaml",
+        "before_yaml_sha256": "a" * 64,
+        "kind": "demote",
+        "shape": "demotion",
+    }
+    plan = [
+        {"owner": path, "before_position": position, "native_position": None, "preserve_fields": []}
+        for position in (1, 2, 3)
+    ]
+    with pytest.raises(ValueError, match="cover every selected"):
+        c.row_projection(before, generated, [record], plan[:-1])
+    after, trace = c.row_projection(before, generated, [record], plan)
+    assert c.table(after)[3] == [c.table(before)[3][3]]
+    assert len(trace) == 3 and all(t["after"] is None for t in trace)
+
+
+@pytest.mark.parametrize("namespace", ["kgmicrobe.ingredient", "kgmicrobe.compound"])
+def test_1257_alignment_local_retarget_retires_old_position(namespace):
+    before = [row("A", namespace + ":old", comment="Old identity"), row("Unrelated")]
+    after = [row("Unrelated"), row("A", namespace + ":new", comment="New identity")]
+    changes, positions = c._align_rows(before, after)
+    assert positions == [None, 1]
+    assert changes == [
+        {
+            "kind": "removed",
+            "before_position": 1,
+            "after_position": None,
+            "before": before[0],
+            "after": None,
+        },
+        {
+            "kind": "added",
+            "before_position": None,
+            "after_position": 2,
+            "before": None,
+            "after": after[1],
+        },
+    ]
+
+
+@pytest.mark.parametrize("side", ["before", "after"])
+@pytest.mark.parametrize("different_predicate", [False, True])
+def test_1257_alignment_refuses_real_duplicate_object_before_overwrite(side, different_predicate):
+    original = row("A", "kgmicrobe.compound:primary")
+    repeated = (
+        {**original, "predicate_id": "skos:closeMatch"} if different_predicate else dict(original)
+    )
+    before, after = [original], [original]
+    if side == "before":
+        before.append(repeated)
+    else:
+        after.append(repeated)
+    with pytest.raises(ValueError, match="Two .*batch rows share a slot"):
+        c._align_rows(before, after)
+
+
+def test_1257_alignment_keeps_ontology_cas_and_stable_local_matching():
+    before = [row("A", "CHEBI:1"), row("A", "cas:1-1-1"), row("A", "kgmicrobe.compound:a")]
+    after = [
+        row("A", "cas:2-2-2"),
+        row("A", "kgmicrobe.compound:a", comment="updated"),
+        row("A", "CHEBI:2"),
+    ]
+    maker = c._maker(c.Capture(ROOT))
+    original_slot = maker.slot
+    assert c._align_rows(before, after) == maker.align(before, after)
+    assert c._align_rows(before, after)[1] == [3, 1, 2]
+    assert maker.slot is original_slot
+
+
+def test_1257_alignment_preserves_all_27_historical_receipts_exactly():
+    history_root = Path(os.environ.get("CAMPAIGN_HISTORY_ROOT", str(ROOT)))
+    proof = native.verify_mapping_chain(history_root)
+    assert len(proof["receipts"]) >= 27
+    prefix = {p: (history_root / p).read_bytes() for p in proof["receipt_paths"][:27]}
+    maker = c._maker(c.Capture(ROOT))
+    original_slot = maker.slot
+    for sequence in range(1, 28):
+        before = proof["states_after_sequence"][sequence - 1]
+        after = proof["states_after_sequence"][sequence]
+        expected = maker.align(before, after)
+        assert c._align_rows(before, after) == expected
+        assert expected == (
+            proof["receipts"][sequence - 1]["changes"],
+            proof["receipts"][sequence - 1]["position_map"],
+        )
+    assert maker.slot is original_slot
+    assert all((history_root / p).read_bytes() == raw for p, raw in prefix.items())
