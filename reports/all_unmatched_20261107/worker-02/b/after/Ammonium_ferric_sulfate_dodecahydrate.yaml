@@ -1,0 +1,45 @@
+identifier: mesh:M0141705
+preferred_term: Ammonium ferric sulfate dodecahydrate
+ontology_mapping:
+  ontology_id: mesh:M0141705
+  ontology_label: ammonium ferric sulfate dodecahydrate
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://id.nlm.nih.gov/mesh/M0141705.json
+    notes: NBRC223 explicitly supplies Fe2(SO4)3·(NH4)2SO4·24H2O. Reducing the entire
+      double formula by two gives NH4Fe(SO4)2·12H2O. Sigma F3629 confirms ferric ammonium
+      sulfate dodecahydrate/CAS7783-83-7. NLM MeSH M0141705 specifically denotes ammonium
+      ferric sulfate dodecahydrate, distinct from descriptor C049467 and its anhydrous
+      preferred concept. Select the exact M concept. TOGO M1451 incorrectly labels
+      the raw ferric formula iron(II), which must not override source/supplier stoichiometry.
+  - evidence_type: MANUAL_CURATION
+    source: reports/all_unmatched_20261107/worker-02/b/evidence.json
+    notes: 'Create distinct Ammonium ferric sulfate dodecahydrate owner from exact
+      ontology and source ingredient evidence. No stock, salt or hydrate variant is
+      inferred. Sources: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=223;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1451; https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/109/534/f3629pis.pdf?srsltid=AfmBOorIogDHlWNpcEKs8wnZp2Amzi_GdkllxrMNy0-bzhUB09kKkPlE;
+      https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=12&q=ferric%20ammonium%20sulfate%20dodecahydrate;
+      https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=20&q=7783-83-7; https://meshb.nlm.nih.gov/record/ui?ui=C049467;
+      https://id.nlm.nih.gov/mesh/C049467.json; https://id.nlm.nih.gov/mesh/M0141705.json'
+synonyms:
+- synonym_text: Fe2(SO4)3·(NH4)2SO4·24H2O
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source case CM_NAME:7bbfacc81a4d60a0c640854af197e38ff80f45df70b8c492392089fce1c59c2c
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7783-83-7
+  molecular_formula: NH4Fe(SO4)2.12H2O
+  data_source: Primary supplier specification and official NLM MeSH captures in reports/all_unmatched_20261107/worker-02/b
+curation_history:
+- timestamp: '2026-11-08T05:23:20.450045+00:00'
+  curator: codex_worker02_source_review
+  action: CREATED
+  changes: Create distinct Ammonium ferric sulfate dodecahydrate owner from exact
+    ontology and source ingredient evidence. No stock, salt or hydrate variant is
+    inferred. Isolated proposal only; coordinator must re-review changed owner and
+    synchronize native outputs before application.
+  new_status: MAPPED
+  llm_assisted: true

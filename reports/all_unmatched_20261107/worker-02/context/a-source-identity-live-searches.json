@@ -1,0 +1,168 @@
+[
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"KAl(SO4)2\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:06.012279+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Ca(NO3)2.5H2O\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:06.012492+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Cd(NO3)\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:06.012591+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Mg(NO3)\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:06.012636+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Arginine HCl\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:07.827605+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"ATP\" \"CDM\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:07.827790+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"TOGO_M1882\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:07.829225+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"pcr_s11\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:35:07.836144+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": [
+      {
+        "body": "Found while verifying the source spelling for #406 — the raw TOGO capture is\ntracked, so the import can be compared against it directly.\n\n## The substitution\n\n`data/raw/togo/togo_media.json` records each component's own unit. Comparing\n2,900 matched TOGO media, component by component:\n\n```\ncomparable rows                                32,841\nsource unit is a VOLUME (ml, ml/l, L, ul)       3,808\n  -> recorded as G_PER_L                        3,803\n  -> recorded as ML_PER_L or L                      2\n```\n\nThe unit is not converted, it is **replaced**. `CultureMech:008849`\n(`TOGO:M2262`, PCR-S11 medium) side by side with its source:\n\n| ingredient | TOGO says | record says |\n|---|---|---|\n| Seawater (autoclaved) | 1000 **ml** | 1000 **G_PER_L** |\n| Trace metals 'Gaffron+Se' | 0.5 **ml/l** | 0.5 **G_PER_L** |\n| 50mM NaH2PO4 | 100 **ml** | 100 **G_PER_L** |\n| 0.1N HCl | 40 **ml** | 40 **G_PER_L** |\n| (NH4)2SO4 | 400 uM | 400 MICROMOLAR ✅ |\n| Vitamin B12 | 10 ug/L | 10 MICROG_PER_L ✅ |\n| Hepes | 119.15 g | 119.15 G_PER_L ✅ |\n\nMolar and mass units convert correctly. Only volumes are mislabelled, and the\nschema already has `ML_PER_L` and `L` for them.\n\n## Where it is and is not defensible\n\n**Water — 2,579 rows.** Water's density is 1, so `1000 ml -> 1000 g/L` is\nnumerically near-exact. Ugly, and it is what feeds `WATER_AS_VOLUME` in\n`audit-concentration-plausibility`, but not a wrong quantity.\n\n**Everything else — 1,224 rows across 751 records.** The density is not 1, so\nthe number itself is wrong:\n\n| ingredient | rows | density | error |\n|---|--:|--:|---|\n| `HCl (25%; 7.7 M)` | 72 | ~1.12 | 12% low |\n| `Methanol` | 26 | 0.792 | 26% high |\n| `Glycerol` | 21 | 1.26 | 21% low |\n| `Tween 80` | 20 | 1.06 | |\n| `Ethanol` | 14 | 0.789 | 27% high |\n| `Sol. 1`, `Artificial seawater`, `Seawater`, `NaOH 1 N`, ... | | | |\n\n`0.5 ml/l` of a trace-metal stock recorded as `0.5 g/L` is not a rounding\ndifference — it is a different physical quantity, and nothing downstream can\ntell.\n\n## No gate sees the non-water half\n\n`audit-concentration-plausibility` has `WATER_AS_VOLUME` (water >= 1000 G_PER_L),\nwhich is why the water rows are already inside #150's backlog. Methanol at\n`792 G_PER_L`, glycerol at `50 G_PER_L` and HCl at `40 G_PER_L` match no\ndetector — not a trace salt, not an indicator, not water.\n\n## Suggested\n\n1. Map source volume units onto `ML_PER_L` / `L` at import rather than\n   defaulting to `G_PER_L`. The enum values exist.\n2. Repair the 1,224 non-water rows from the tracked raw capture, which holds\n   the original unit — so this is a relabelling, not a re-derivation, and needs\n   no source lookup.\n3. Decide the water case deliberately: `2,579` rows are numerically fine and\n   semantically wrong, and they currently inflate `WATER_AS_VOLUME`.\n4. Check whether the same substitution exists in the other volume-bearing\n   importers (MediaDive, KOMODO, JCM) — this was found by comparing against a\n   tracked raw capture, which not every source has.\n\nRelated: #150 (the plausibility backlog the water half sits in), #381 (absolute\namounts with no representable unit), #394 (a different import-time arithmetic\ndefect), #406 (the record this was found from).",
+        "number": 408,
+        "state": "open",
+        "title": "TOGO import substitutes G_PER_L for volume units: 3,803 rows, of which 1,224 are non-water and numerically wrong",
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/408"
+      },
+      {
+        "body": "Found while triaging the ingredient labels MIM cannot resolve\n(MediaIngredientMech `scripts/triage_culturemech_residual.py`). 24 distinct\n`preferred_term` values covering **618 recipe mentions** are not ingredient names at all.\nThe damage is in `data/normalized_yaml/` itself, not introduced by the occurrence\nexporter, so it dates from recipe ingestion.\n\nTwo distinct defects.\n\n## 1. Field swap: the quantity is in `preferred_term`, the name is in `notes` (497 mentions)\n\n```\nCultureMech:000001  preferred_term: \"1\"  notes: \"Original amount: DYIII Medium\"\nCultureMech:000001  preferred_term: \"2\"  notes: \"Original amount: Pea\"\nCultureMech:000002  preferred_term: \"1\"  notes: \"Original amount: CR1 Soil\"\nCultureMech:000002  preferred_term: \"2\"  notes: \"Original amount: MgCO3(MCIB CB486)\"\n```\n\n`preferred_term` holds the ingredient's list index while the actual name sits in `notes`.\n**All 497 of these carry an `Original amount:` note, so the name is recoverable for 100% of\nthem** -- this is a remapping, not a re-scrape. Affected values are the bare numbers 1-13.\n\n## 2. A Python list repr split on commas (121 mentions)\n\n| mentions | preferred_term |\n|---:|---|\n| 75 | `'Iron(III` |\n| 13 | `'Fe(III` |\n| 8 | `'Chromium(III` |\n| 6 | `'(S` |\n| 2 | `'Manganese(IV` |\n| 2 | `'(9Z` |\n| 1 | `'Nickel(II` |\n| 1 | `'Cyanocob(III` |\n\nNote the leading apostrophe on each. From `data/normalized_yaml/`, verbatim:\n\n    - preferred_term: '''Iron(III'\n      concentration:\n        value: '0.04994'\n\nThat apostrophe is a Python string quote, and every value truncates at the first comma\ninside a chemical name -- `Iron(III), citrate` and `(9Z,12Z)-octadecadienoate` split at\ntheir internal comma. A `str()` of a list was written where the list elements were meant,\nthen re-split on `\", \"`. The oxidation-state Roman numerals and stereodescriptors are\nexactly the names that contain commas, which is why they are the ones that broke.\n\nUnlike defect 1 these are lossy -- the tail of each name became a separate fragment or was\ndropped -- so they need re-derivation from the source recipe rather than a field move.\n\n## Why it matters\n\nThese 618 mentions are permanently unresolvable against MIM: no ontology will ever contain\na term called `1` or `'Iron(III`, so they sit in MIM's residual forever and inflate the\napparent size of the ingredient-grounding backlog. MIM's triage now classifies them as\n`NOISE` and routes them out of the grounding work, but the fix belongs here.\n\nEvidence table: MIM `reports/culturemech_residual_triage.tsv`, rows whose `bucket` starts\nwith `NOISE`.\n",
+        "number": 387,
+        "state": "closed",
+        "title": "618 ingredient mentions carry parse damage as their preferred_term; all 497 numeric ones are recoverable",
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/387"
+      },
+      {
+        "body": "The residual of #387, now that both of its populations are repaired. **One row,\ncorpus-wide.**\n\n```\nCultureMech:008849   data/normalized_yaml/bacterial/pcr_s11_medium.yaml\n  ingredients[4].preferred_term = \"Trace metals 'Gaffron\\xad+Se'\"\n                                                        ^^^^^^ U+00AD SOFT HYPHEN\n  concentration: 0.5 G_PER_L\n  media_term: TOGO:M2262 — \"PCR-S11 medium\"\n```\n\n## Why it is not the same defect as the rest of #387\n\n#387's two populations were parser damage — a field swap (497 numeric\n`preferred_term`s, fixed in #378) and truncation at a parenthesis (111 names,\nfixed in #391). Both destroyed information.\n\nThis one loses nothing. `Trace metals 'Gaffron+Se'` is a real name with a\n**discretionary hyphen** inside it: U+00AD renders as nothing unless a line\nbreaks there, so the string looks correct in every editor and report while\nbeing a different string to every matcher. It is almost certainly a\nsoft-wrap artifact from the source page carried through the import verbatim.\n\nMeasured across the whole corpus, this is the only ingredient name containing\nany invisible character — soft hyphen, ZWSP, ZWNJ, ZWJ, NBSP, BOM, word joiner\nor line/paragraph separator. So it is a single record, not a class.\n\n## Consequence\n\nThe name cannot ground: no matcher normalises U+00AD, so it fails MIM's label\nindex and every exact-match path. It is one of the 3,217 unresolvable names that\n`just audit-ungrounded-ingredients` reports.\n\n## Suggested\n\nDelete the soft hyphen. That is not a curation decision — U+00AD carries no\nsemantic content in a chemical name and its removal cannot change what the name\ndenotes.\n\nWorth checking the source (`TOGO:M2262`) first to confirm the intended spelling,\nand worth deciding whether a normalisation step should strip zero-width and\ndiscretionary characters at import so the next one does not need an issue.\n\n\"Gaffron\" here is the trace-element solution of Gaffron; `+Se` marks the\nselenium-supplemented variant.",
+        "number": 406,
+        "state": "closed",
+        "title": "The last #387 parse-damaged ingredient name: a soft hyphen inside Trace metals 'Gaffron+Se'",
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/406"
+      }
+    ]
+  }
+]

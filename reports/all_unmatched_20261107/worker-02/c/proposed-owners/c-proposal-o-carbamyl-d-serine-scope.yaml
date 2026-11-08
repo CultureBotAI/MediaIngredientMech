@@ -1,0 +1,89 @@
+identifier: mesh:M0040464
+preferred_term: O-carbamyl-D-serine
+ontology_mapping:
+  ontology_id: mesh:M0040464
+  ontology_label: O-carbamyl-D-serine
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://id.nlm.nih.gov/mesh/M0040464.json
+    notes: MeSH C000366 preferred concept explicitly has narrower D(M0040464) and L(M0307419)
+      concepts. Existing exact synonym-based descriptor mapping collapsed their scope. Use the
+      exact D concept as primary identifier; independent PubChem122679 and supplier20324 confirm
+      CAS3819-76-9 and D/(2R) structure. Production local adapter resolves M0040464 canonical
+      label; no descriptor-level D-only identity is asserted.
+synonyms:
+- synonym_text: O-carbamyl-D-serine
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:o_carbamyl_d_serine;
+    OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as
+    kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.622934+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.530639+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:o_carbamyl_d_serine → mesh:C000366 after EBI OLS exact
+    synonym match to "O Carbamyl D Serine".
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record O-carbamyl-D-serine.yaml (UNMAPPED_0594); MESH
+    target mesh:C000366 resolves in EBI OLS and the source label is an exact variant of the
+    mapped record.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T05:21:11.143703+00:00'
+  curator: all_unmatched_20261107_worker02_research_c
+  action: CORRECTED
+  changes: 'Retain the explicitly D-specific O-carbamyl-D-serine identity as exact mesh:M0040464
+    rather than broader descriptor mesh:C000366 O-carbamylserine. NLM descriptor concepts explicitly
+    distinguish D and L, whereas the prior OLS synonym-based descriptor promotion erased that
+    distinction. Preserve CAS3819-76-9 and D/(2R) chemical properties as independent supporting
+    evidence. Proposal only; reviewed evidence in reports/all_unmatched_20261107/worker-02/c/.
+    Inherited publication support is withdrawn for changed bytes; coordinator must re-review
+    the complete payload. Retired obsolete mapping evidence from active grounding; retained
+    verbatim as historical provenance: [{"evidence_type": "DATABASE_MATCH", "notes": "Imported
+    from kg-microbe''s unmapped placeholder namespace. Ingested into MIM''s pipeline; confidence=LOW;
+    rationale=5 candidates; top OLS candidates: CHEBI:192410(Carbamyl chloride), CHEBI:229987(O-Benzyl-D-serine),
+    CHEBI:37713(O-phospho-D-serine). Pending curator promotion to a CHEBI/NCIT primary identifier.",
+    "source": "kg-microbe metatraits unmapped_compounds.tsv"}, {"evidence_type": "DATABASE_MATCH",
+    "notes": "Promoted from kgmicrobe.compound:o_carbamyl_d_serine after OLS returned mesh:C000366
+    with exact synonym \"O Carbamyl D Serine\".", "source": "MESH via EBI OLS exact synonym
+    search"}].'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 3819-76-9
+  molecular_formula: C4H8N2O4
+  molecular_weight: 148.12
+  inchi: InChI=1S/C4H8N2O4/c5-2(3(7)8)1-10-4(6)9/h2H,1,5H2,(H2,6,9)(H,7,8)/t2-/m1/s1
+  pubchem_cid: 122679
+  data_source: PubChem122679 D/(2R) compound; independent Funakoshi20324 exact-name/CAS confirmation
+  retrieval_date: '2026-11-08T05:16:56.266877+00:00'

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_b",
+  "reviewed_at": "2026-11-08T05:40:57.805381+00:00",
+  "status": "needs_revision",
+  "scope": "Bounded source quantity and provenance wording in proposed existing-issue408 comment; no new primary fetch and no posting action.",
+  "inputs": [
+    {
+      "path": "context/issue-comment-408.md",
+      "sha256": "b1924e8924e996a8fe8a67bf7ad164ff6973eb869660974d3db9af815016b07d"
+    },
+    {
+      "path": "b/source-defect-inventory.json",
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "c/independent-review-b-source-defects.json",
+      "sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4"
+    },
+    {
+      "path": "a/review-revisions/source-unit-findings.json",
+      "sha256": "0b0541439c95c6c8e4171b8dce07ddfd9c9e03e7ea5694dfd9ba7bcd2c9ce1bb"
+    },
+    {
+      "path": "b/review-a/review.json",
+      "sha256": "af8ebb941d2d3d15575549a21d430d6f5dc66bdb63c012a9e975935277a8f05e"
+    }
+  ],
+  "scientific_table_assessment": "All ten table rows preserve the reviewed source quantities and stock/version distinctions. No final dose conversion is proposed. The opening correctly limits assertions to frozen campaign occurrences and does not claim current-main persistence. The M2649/DSMZ503 difference is retained as a real version difference. M3155 describes invalid cross-stage summation without endorsing0.85g/L.",
+  "findings": [
+    {
+      "finding_id": "b-quantity-comment-provenance-location",
+      "severity": "minor",
+      "status": "needs_revision",
+      "finding": "The final provenance paragraph says complete occurrence IDs, exact file/field selectors, recipe hashes and primary capture hashes are retained in b/source-defect-inventory.json and a/review-revisions/source-unit-findings.json. The A source-unit-findings file contains case IDs and findings only, not those occurrence selectors or capture hashes.",
+      "required_edit": "Also name the associated a/decisions.json, a/evidence.json and their linked frozen case/recipe captures as the locations carrying A occurrence selectors and hashes, or explicitly limit the complete-inventory statement to B."
+    }
+  ],
+  "nonblocking_precision_note": "M2790 source quantity is within the original per-100-mL preparation; C records that basis explicitly. The comment does not misstate a per-litre dose, and its final instruction to reconstruct the original recipe basis avoids conversion approval. Adding the100-mL basis would improve implementation clarity.",
+  "publication_limits": "Approval after the small provenance correction covers the exact comment only, not current-main defects, recipe correction, native owner release or ingredient quantities beyond the listed frozen source contexts."
+}

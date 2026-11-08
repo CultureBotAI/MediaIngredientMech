@@ -1,0 +1,165 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-FR" lang="fr-FR">
+
+<head>			
+	<title>	Site en maintenance - Institut de recherche pour le développement (IRD)  </title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-language" content="fr-FR" />
+	<meta name="author" content="IRD" />
+	<meta name="copyright" content="IRD />
+	<meta name="description" content="IRD : L’Institut de recherche pour le développement (IRD) est un organisme français de recherche, original et unique dans le paysage européen de la recherche pour le développement.&amp;nbsp;Privilégiant l’in..." />
+	<meta name="keywords" content="irdl’institut, recherche, développement, organisme, français, original, unique, paysage, européen, �privilégiant, l’interdisciplinarité, l’ird, centre, recherches, depuis, relations, entre, l’homme, environnement, afrique, méditerranée, amérique, latine, l’outre, tropical, activités, formation, d’innovation, objectif, contribuer, social, économique, culturel" />
+	<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+	
+	<style>
+		body{
+			margin: 0;
+			background: #ededed;
+			text-align: left;
+			font: 100% Arial, Geneva, Helvetica,  sans-serif;
+		}
+		body *{
+			margin: 0;
+			padding:0;
+			border:none;
+			word-wrap:break-word;
+		}
+
+		body h1
+		{
+			margin-left:-5000px;
+			position:absolute;
+		}
+		#super_container{
+			width: 974px;
+			margin: 0 auto;
+			padding: 0 6px;
+			background: url(/img/bg_supercontainer.gif) repeat-y top left;
+			font-size:0.75em;
+		}
+		a{
+			color:#E20613;
+			font-weight:bold;
+			text-decoration: none;
+		}
+		a:hover, a:focus, a:active{
+			text-decoration: underline;
+		}
+		h1.page_title{
+			position: absolute;
+			left: -5000px;
+		}
+		#header{
+			position:relative;
+			z-index:50;
+			background:#EDEDED;
+		}
+		#header .logo{
+			clear: both;
+			height:151px;
+			margin-top:-5px;
+
+			position:relative;
+			padding-top:7px;
+			background: #FFF url(/img/bg_header.gif) no-repeat top;
+		}
+		#header .logo a{
+			display:block;
+			margin-top: 25px;
+			margin-left: 15px;
+			background: #FFF url(/img/bg_banniere.png) no-repeat right top;
+			
+		}
+		#central{
+			clear:both;
+			overflow:hidden;
+		}
+		#content{
+			float: left;
+			display: inline;
+			width:100%;
+			margin: 10px 10px 20px 12px;
+			color: #000;
+		}
+		#ctn_titrecontent{
+			color:#3b2201;
+			position:relative;
+			margin-bottom:20px;
+		}
+		#ctn_titrecontent #titraille{
+			overflow:hidden;
+		}
+		#ctn_titrecontent h2{
+			padding: 0 76px 2px 17px;
+			background: url(/img/titre_default_court.png) no-repeat 0px 5px;
+			font-size: 180%;
+			font-weight: normal;
+		}
+		.right_none #ctn_titrecontent h2{
+			background: url(/img/titre_default_long.png) no-repeat 0px 5px;
+		}
+		#ctn_titrecontent h2 span{
+			margin: 0 0 0 0;
+			padding:0 20px 0 10px;
+			background: #fff;
+			display:table-cell;
+			line-height: 106%;
+		}
+		.editorial{
+			margin-bottom:20px;
+			clear:left;
+			padding:20px 20px 20px 20px;
+			text-align: center;
+			color:
+		}
+	</style>
+	
+</head>
+
+<body>
+	<!-- ### TITRE DE LA PAGE -->
+		    <h1><span>Site en maintenance - Institut de recherche pour le développement (IRD)</span></h1>
+	
+	<!-- ### DEB : SUPER_CONTAINER -->
+	<div id="super_container">
+		<!-- ### DEB : HEADER -->
+		<div id="header">
+		<!-- _________________________________ TITRE ET LOGO -->
+		<div class="logo">
+			<a href="/" >
+				<img src="/img/logo_ird.png" alt="IRD, Institut de Recherche pour le D&eacute;veloppement : maintenance"/>
+			</a>
+		</div>
+	</div>				<!-- ### FIN : HEADER -->
+
+	<!-- ### DEB : CENTRAL -->
+	<div id="central" >
+		<!-- ### DEB : CONTENT -->
+		<div id="content">
+			<div id="ctn_titrecontent">
+				<div id="titraille">
+					<h2><span>Site en maintenance</span></h2>
+				</div>
+			</div>
+			<div class="editorial">
+				Le site IRD que vous demandez est actuellement en maintenance. <br>Veuillez nous excuser pour la g&ecirc;ne occasionn&eacute;e.<br><br>Nous vous invitons à revenir sur ce site ult&eacute;rieurement.
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		if (location.hostname != "maintenance.ird.fr") {
+			location.href = "https://maintenance.ird.fr/?redirect="+encodeURIComponent(location.href)
+		}
+		
+		
+		// Rechargement auto
+		setTimeout(function(){
+			const urlParams = new URLSearchParams(location.search);
+			if (urlParams.get('redirect') != null){
+				location.href = urlParams.get('redirect')
+			}
+		},5000);
+	</script>
+</body>

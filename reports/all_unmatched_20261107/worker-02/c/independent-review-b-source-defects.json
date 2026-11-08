@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_c",
+  "reviewed_at": "2026-11-08T05:33:27.989374+00:00",
+  "independence": "C did not author this B source-defect inventory. Reviewer independently compared frozen row objects, original source captures, recipe grouping and source-specific formula/quantity meaning.",
+  "input_capture": {
+    "root": "artifact",
+    "path": "b/source-defect-inventory.json",
+    "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+  },
+  "finding_reviews": [
+    {
+      "finding_id": "b-source-defect-63",
+      "case_id": "CM_NAME:677eea89e6c05433665f6d3a63b923d0e2559ef3b4ea1cd117690d70a2db6639",
+      "scope_index": 63,
+      "status": "approve",
+      "reasoning": "Both frozen rows encode 2.5 G_PER_L, while JCM1023/363 and TOGO1084/357 give 2.5 mL of 8% w/v carbonate stock. This is a liquid-quantity/stage defect, not an instruction to calculate a replacement final dose.",
+      "occurrence_ids": [
+        "CM_OCC:5466186ebb341438bf1ba0e2ca0cbdda045212de7c59fef5a57a32493fdc0109",
+        "CM_OCC:341482ebbaaab8db2e0a10967b333a9c80201cc1736a62be06cfb69b6fb7d546"
+      ],
+      "evidence_ids_checked": [
+        "b-source-d98555f5a92588b7",
+        "b-source-0f367e017df38199",
+        "b-togo-77801bc613f96d20",
+        "b-togo-707e11dffd31fe45"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-64",
+      "case_id": "CM_NAME:6bbaec38cb2ee0c52194327b4584765d793a7b9da67c54e6715aecc4c57623f4",
+      "scope_index": 64,
+      "status": "approve",
+      "reasoning": "The frozen 190 G_PER_L conflicts with the captured M2277 190 mg row in Solution2 SL12. Its raw CoCI formula also conflicts with the explicit cobalt dichloride hexahydrate label. The case-specific spelling repair and stock hierarchy restoration are correctly separated.",
+      "occurrence_ids": [
+        "CM_OCC:7bb32bde12a10bcce030282456b74f8b980ae79e8cfa1f5d8346d8858174c2c6"
+      ],
+      "evidence_ids_checked": [
+        "b-togo-9ec16ea3e8f88288"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-66",
+      "case_id": "CM_NAME:6f29a0416dad4b5abe39633c347267176782130cb98b269871909d3e1c4a24ee",
+      "scope_index": 66,
+      "status": "approve",
+      "reasoning": "NBRC1126 directly specifies KAl(SO4)2.12H2O in its trace recipe, whereas the frozen and derived TOGO token has two waters. The original supports twelve waters for this occurrence only; retain the erroneous literal as non-resolving provenance.",
+      "occurrence_ids": [
+        "CM_OCC:e6640f4c8df8d9a97bc891e9413c47a2d362ccf69ec85a90f108b11f9ee6737d"
+      ],
+      "evidence_ids_checked": [
+        "b-source-760da802b292f0cf",
+        "b-togo-2f27f98fcc5afb90"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-70",
+      "case_id": "CM_NAME:7a330523dd1cc8c7c0c5deee2e2a424ecefd3f2c969ec57245c8f46c733f2284",
+      "scope_index": 70,
+      "status": "approve",
+      "reasoning": "M2649 explicitly measures 10 mL/L of 0.2% w/v ferrous sulfate heptahydrate stock, conflicting with frozen 10 G_PER_L. Current DSMZ503 has a different 0.1% stock specification, so the inventory correctly keeps both the transcription defect and source-version distinction.",
+      "occurrence_ids": [
+        "CM_OCC:a16974d824ef8a056b111b4b0b4a4e5eea7c3b3630667131d4089fe0631cb03b"
+      ],
+      "evidence_ids_checked": [
+        "b-source-b86ee1b419507c87",
+        "b-togo-5f0dc5f3ba082f2c"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-74",
+      "case_id": "CM_NAME:8039182ccb56665e768289fb1a2063527f85a0e26a2984ea03323179ecb84441",
+      "scope_index": 74,
+      "status": "approve",
+      "reasoning": "The rendered Merlen1999 Table1 visibly reads ATP (Na2) 0.36 micromolar; extraction text misreads the micro symbol. Frozen 0.00036 mM is quantitatively equivalent, so the concrete defect is missing disodium form for CultureMech007240. It does not prove the supplied form of the other25 ATP occurrences or any hydration.",
+      "occurrence_ids": [
+        "CM_OCC:fdffaad87b725dedd6eb08e7e52d3f375b86991dafdaff0d047cefd347e2a1fd"
+      ],
+      "evidence_ids_checked": [
+        "b-merlen1999-table1"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-76",
+      "case_id": "CM_NAME:849cf52732c076356294f5f6158cab770bc61a61f46f4c0fe3f60f2d68c7c165",
+      "scope_index": 76,
+      "status": "approve",
+      "reasoning": "M2262 preserves Cd(NO3).4H2O and separately identifies cadmium nitrate tetrahydrate GMO002395 at 3 micromolar. The extra nitrate is supported by the named source identity, not by changing the raw literal into an exact global synonym. This is a provider raw-label/type conflict.",
+      "occurrence_ids": [
+        "CM_OCC:1599db70fd05b6d4e592334c3f2735faa12b50230c8810a7d08c76f6277bfe81"
+      ],
+      "evidence_ids_checked": [
+        "b-reused-689514d53e5e1369",
+        "b-togo-a5447f8f1279d666"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-86",
+      "case_id": "CM_NAME:9b83239a183cd5bdb20173204afaac7510ddac5d267a462fbc118e46da0df159",
+      "scope_index": 86,
+      "status": "approve",
+      "reasoning": "M2231 supplies 5 mL of an explicitly defined 6 g/L magnesium sulfate heptahydrate stock. Frozen 5 G_PER_L is not its source quantity. The proposed follow-up correctly retains strength and liquid addition as separate fields.",
+      "occurrence_ids": [
+        "CM_OCC:e9c9d8e00a2d78070e4c469e60a0333c7d509a09e977784dd7784410b5c85a80"
+      ],
+      "evidence_ids_checked": [
+        "b-togo-20cef4bdcea912e7"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-87",
+      "case_id": "CM_NAME:9df2e5383945c29981721560d28379995b38003d759f55082d8ffead8447fdea",
+      "scope_index": 87,
+      "status": "approve",
+      "reasoning": "M3155 paragraphs2/3 distinguish 0.05 g/L medium FeSO4.7H2O from a 0.8 g/L trace-stock ingredient, and dose that stock at 10 mL/L. Frozen 0.8500000000000001 reflects invalid direct summation across stages. Identity alias approval does not validate the flattened quantity.",
+      "occurrence_ids": [
+        "CM_OCC:2804e07f495199d6aad49107b3d8701bcf79c8eef1f82e9c89fb250734b47e8d"
+      ],
+      "evidence_ids_checked": [
+        "b-togo-b6ef67bbd758b133"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-91",
+      "case_id": "CM_NAME:a6e96e8274e90caec9533eec13e45fb8cf4a38a137877e5292b4af7ea9b21b2d",
+      "scope_index": 91,
+      "status": "approve",
+      "reasoning": "The original DSMZ1250 formula has calcium nitrate tetrahydrate at 0.02 g; frozen TOGO2531 says pentahydrate. The exact source supports the occurrence-specific four-water correction, not generic five-to-four normalization.",
+      "occurrence_ids": [
+        "CM_OCC:5339e9aa028fc894a251ea64c6d24430b7f95f713f97ebfcd9b8f3bb2bb06a47"
+      ],
+      "evidence_ids_checked": [
+        "b-source-c7c5bd7a6a5433b2",
+        "b-togo-1404f19a544bac56"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-96",
+      "case_id": "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+      "scope_index": 96,
+      "status": "approve",
+      "reasoning": "Both JCM950/966 original tables and TOGO997/1016 give 2.0 mg of the balanced six-water Mohr salt. The two frozen 2 G_PER_L values omit the milligram unit. The inventory preserves original recipe volume instead of inventing a final concentration.",
+      "occurrence_ids": [
+        "CM_OCC:22d979c16ae385ca67c9aaa4ed9464be60b73cfbd394ac56c64bccbae06914e8",
+        "CM_OCC:d5112b0badcb05aab5be1e48e1ced8ba62e7acdc8efaf5a9118a5f47a6a3b232"
+      ],
+      "evidence_ids_checked": [
+        "b-source-51b504f992baa9fd",
+        "b-source-21fcdd4ef87d360a",
+        "b-togo-2d0ed411fea8dc70",
+        "b-togo-6d50028ab51b523d"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-98",
+      "case_id": "CM_NAME:b2842dee958925abda8f2e56af9eb9a5fd009b8306848c04ae6782597864506c",
+      "scope_index": 98,
+      "status": "approve",
+      "reasoning": "The NIES SOT PDF footnote explicitly replaces 250 mg heptahydrate with 217 mg pentahydrate; M2509 gives the A5stock at 100 mL and a separate 0.1 mL addition. Frozen 217 G_PER_L plus the embedded footnote marker loses both units and hierarchy. The proposed action preserves the source footnote.",
+      "occurrence_ids": [
+        "CM_OCC:eaaf0a6844aaf8749a8d742b8758d8d02f9513a7e14ac6369665ac2caf4b4bcc"
+      ],
+      "evidence_ids_checked": [
+        "b-togo-229f91b4f93c8927",
+        "b-reference-34442c33cf8fafdf"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-101",
+      "case_id": "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b",
+      "scope_index": 101,
+      "status": "approve",
+      "reasoning": "M2790 specifies 200 microlitres of 1 M MgSO4 in the M9 preparation; the original comment states this within its per-100-mL recipe. Frozen 200 G_PER_L is a unit/stage error. Preserve the 1 M stock and original recipe-volume basis when implementing.",
+      "occurrence_ids": [
+        "CM_OCC:0dc9dc7db5cba718eb8a8f0e63be3cefdd54b3eb1d1b6be9693513a74932ddb3"
+      ],
+      "evidence_ids_checked": [
+        "b-togo-ffe943eb560f848d"
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-129",
+      "case_id": "CM_NAME:fe96db05f76e36ddfdb75c3d798b85585c055eba76a65cb961b96506d5b314d7",
+      "scope_index": 129,
+      "status": "approve",
+      "reasoning": "Original JCM448 explicitly gives Mg(NO3)2.6H2O at 2.54 g, while frozen/TOGO449 lacks the second nitrate. The source-scoped coefficient correction is supported; the malformed literal remains provenance.",
+      "occurrence_ids": [
+        "CM_OCC:679296725a3a5c52f0a6b6911eb80e514c9df8dd0e0e6cf11e6bc91509974f13"
+      ],
+      "evidence_ids_checked": [
+        "b-source-efc59482d5f1002a",
+        "b-togo-2498864c8dd920d3"
+      ]
+    }
+  ],
+  "summary": {
+    "findings_approved": 13,
+    "occurrences_checked": 15,
+    "all_frozen_occurrence_fields_match": true,
+    "all_evidence_hashes_match": true
+  },
+  "limits": [
+    "This is a bounded inventory of 13 concrete findings, not a claim of exhaustive source defects across all B cases.",
+    "No maintained source correction, numeric final-dose conversion, global malformed-label alias or supplied-form assumption is applied by this review.",
+    "Other unresolved source identity conflicts remain in the complete decision ledger; proposals and downstream holds are reviewed separately."
+  ]
+}

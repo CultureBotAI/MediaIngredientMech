@@ -1,0 +1,532 @@
+{
+  "0": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "TOGO M1344 and JCM1250 name ferric sulfate with an unspecified hydration number. The typed source GMO_001304 agrees with iron(III) sulfate n-hydrate. The source does not choose a fixed hydrate. CHEBI:131387 was explicitly rejected as an exact candidate: its definition and formula specify the monohydrate despite its generic-looking label. Retain the variable-hydrate owner and any asymmetric parent relation; do not equate it to the anhydrous substance.",
+    "missing_requirement": "A supplier or source statement fixing n is required for a fixed-hydrate identity; complete owner payload review is still required for release.",
+    "candidate_owner": "mapped/Fe2_So43_X_N_H2o.yaml",
+    "ontology_evidence": [
+      "131387"
+    ]
+  },
+  "1": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The five occurrences consistently specify Ce(NO3)3 with six waters, including MediaDive compound1587 in solutions5819 and5825 and DSMZ media1738,1739,1741. This is cerium(III) nitrate hexahydrate, not anhydrous cerium nitrate. The source-specific raw formula is an unambiguous spelling of the same material as candidate owner CeNO33_X_6_H2O. Subset C owns the coordinated CAS-grounded promotion proposal; this assessment adds no competing owner bytes.",
+    "missing_requirement": null,
+    "candidate_owner": "unmapped/CeNO33_X_6_H2O.yaml",
+    "ontology_evidence": []
+  },
+  "2": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The four JCM media1030-1033 and MediaDive solution5083 explicitly supply CrK(SO4)2·12H2O. The formula is the potassium/chromium(III) double sulfate dodecahydrate, corroborated by the supplier chrome-alum record CAS7788-99-0. Existing CrKSO42_X_12_H2O has that CAS identity. Add the correctly parenthesized source spelling without collapsing the double salt into chromium(III) sulfate.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/CrKSO42_X_12_H2O.yaml",
+    "ontology_evidence": [
+      "53471"
+    ]
+  },
+  "3": {
+    "disposition": "unresolved",
+    "reasoning": "The original Rogosa1969 scan, p757 upper right, actually prints VSO4·7H2O, with NH4VO3 as an alternative. The frozen VR salts B ingredient therefore preserves a real source claim, not merely a parser artifact. The alternate reagent does not identify the sulfate as vanadyl sulfate, and no oxygen before sulfate may be invented. Neither the oxidation-state-specific identity nor a stable exact hydrate identifier was settled by the original formula alone.",
+    "missing_requirement": "Obtain an original reagent identification, erratum, or independently supported V(II) sulfate heptahydrate identity/CAS; do not substitute VOSO4 or NH4VO3.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "4": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M2235 places the ingredient in Solution D as a 1 ml addition of a 2% w/v ferrous-sulfate-heptahydrate preparation in N HCl, and types it as a solution. This denotes an acidified stock containing the hydrate-derived solute and hydrochloric acid. It is not a same-substance synonym of solid CHEBI:75836.",
+    "missing_requirement": "Retain 2% w/v and the source N HCl wording in a source-specific stock formulation; establish the omitted HCl normality before a complete recipe proposal.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "5": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "TOGO M2716 trace-elements table explicitly types Fe(SO4)2(NH4)2·6H2O as ammonium iron(II) sulfate hexahydrate. Rearranging the two ammonium and two sulfate groups changes no stoichiometry; six waters remain explicit. CHEBI:76181 confirms this hydrate, and the existing Mohr-salt hexahydrate owner is the appropriate identity.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "76181"
+    ]
+  },
+  "6": {
+    "disposition": "supplied_form_correction",
+    "reasoning": "TOGO M2825 preserves NH4CI in the basal-medium prose but its same component is explicitly labeled Ammonium chloride (GMO_001008). This supports a source-level I/l transcription correction to NH4Cl, corroborated by CHEBI:31206. The literal malformed formula must remain non-resolving provenance; a corpus-wide NH4CI alias is not proposed.",
+    "missing_requirement": "Correct the source occurrence with the provider label as evidence and preserve NH4CI as historical raw text, rather than add a resolving malformed-formula synonym.",
+    "candidate_owner": "mapped/Nh4cl.yaml",
+    "ontology_evidence": [
+      "31206"
+    ]
+  },
+  "7": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "All eight occurrences are recipe-local references named Sol.2. Direct source tables show materially different contents: M526 is water/chalcopyrite; M377 is acidified ferrous sulfate; M412 contains calcium, magnesium and trace metals; M539 contains bicarbonate/DTT/sugars/vitamins/cofactors; M577 and M728 contain distinct carbonate/magnesium/sulfide additions; M683 contains calcium/acetate/ferrous chloride; M903 contains carbonate/pyruvate/sulfide/dithionite/vitamins. The shared token cannot denote one ingredient.",
+    "missing_requirement": "Represent each recipe-qualified solution reference separately, preserving its component table and preparation; do not mint a global Sol.2 identity.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "8": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "Both source recipes (TOGO M1628/NBRC830 and M3002/JCM1327) explicitly name ferric sulfate n-hydrate and the typed component is GMO_001304. Their differing amounts do not choose a hydration number. This is the same variable-hydrate scope as the existing owner, not the specifically monohydrated CHEBI:131387.",
+    "missing_requirement": "A source-specific hydration assay or supplier specification would be needed to replace n with a number; otherwise retain variable-hydrate scope.",
+    "candidate_owner": "mapped/Fe2_So43_X_N_H2o.yaml",
+    "ontology_evidence": [
+      "131387"
+    ]
+  },
+  "9": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M3249 explicitly distinguishes ultrapure water as GMO_001892 and uses it as solvent. The adjective records a purity/preparation material scope. CHEBI:15377 establishes the water molecule but does not specify ultrapure quality or a water-production process. Do not add Ultrapure water as an exact synonym of the existing Distilled water owner.",
+    "missing_requirement": "For an ultrapure-water owner, document the source purity standard or manufacturing specification; do not infer distillation.",
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "15377"
+    ]
+  },
+  "10": {
+    "disposition": "unresolved",
+    "reasoning": "Four MediaDB-derived occurrences use (S)-Malate with BiGG-style mal-L references. OLS CHEBI:15589 explicitly lists (S)-malate and L-malate for the dianion. However, the read-only MediaDB raw compound row145 gives CHEBI:30797 and C4H6O5, the neutral acid. This is a charge/protonation conflict within the source. A synonym-only edit on L-malate would conceal it.",
+    "missing_requirement": "Determine whether MediaDB compound145 intends neutral (S)-malic acid or the dianion, using the original medium reagents or a source correction; retain the acid-versus-anion discrepancy.",
+    "candidate_owner": "mapped/L-malate.yaml",
+    "ontology_evidence": [
+      "15589"
+    ]
+  },
+  "11": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M1267/JCM1182 uses one liter of 0.01 M sulfuric acid as the trace-element solution solvent. Its explicit molarity and solution type define a dilute preparation. The stock must retain concentration and component scope instead of becoming an alias of H2SO4.",
+    "missing_requirement": "A future stock owner must retain 0.01 M concentration and recipe provenance; no pure-acid identity link is justified.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "12": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "DSMZ110a defines meat filtrate using 500 g fat-free ground beef, 25 ml 1 N NaOH and distilled water, followed by the specified extraction/filtration procedure. TOGO M2717 links Meat filtrate to this recipe. The product is a process-defined biological mixture, not generic meat extract or a single chemical.",
+    "missing_requirement": "Curate the complete DSMZ110a meat-filtrate recipe and preparation as a distinct formulation before proposing an exact MIM owner.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "13": {
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "TOGO M2760 explicitly names and types magnesium sulfate dihydrate (GMO_002282). Supplier Parchem identifies CAS17830-05-6 and H4MgO6S; the PubChem structure has two waters. The bounded OLS search returned no exact dihydrate term, while CHEBI:32599 is the anhydrous parent. Propose a distinct CAS identity with NARROW_MATCH grounding to the parent; the monohydrate and heptahydrate owners are not equivalent. Primary NLM D008278 concept review additionally found generic sulfate and heptahydrate only, without a dihydrate concept in that record. This bounded search does not assert absence from all ontologies.",
+    "missing_requirement": null,
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "32599"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'MgSO4 . 2H2O'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed."
+  },
+  "14": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "TOGO M2952 identifies (NH2)2CO as Urea (GMO_001133). CHEBI:16199 confirms the carbonyl diamide molecular identity. Parentheses simply group the two amino groups; there is no salt, hydrate, concentration or stereochemical qualifier. Add this formula as a source-backed alias of the Urea owner.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Urea.yaml",
+    "ontology_evidence": [
+      "16199"
+    ]
+  },
+  "15": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "Original ATCC medium2883 explicitly lists Methanol (filter sterilized), 3ml, added aseptically after autoclaving and cooling for both broth and agar; no methanol dilution, concentration or assay is stated. The recipe separately specifies vitaminB12 as0.1mg/ml, so that stated vitamin stock concentration must not be transferred to methanol. TOGO M2444/M2445 retain the3ml addition and classify it as Methanol solution GMO_001508. The original confirms ingredient name and handling, while the contradictory/general solution typing leaves the supplied liquid concentration unestablished; CHEBI17790 identifies methanol as chemical component, not a fully characterized stock. Retain source-bound preparation scope without inventing a diluted or neat percentage.",
+    "missing_requirement": "Resolve the TOGO solution classification against an original reagent specification or source clarification to establish whether the3ml addition is neat or diluted methanol; retain the verified filter-sterilization/post-autoclave handling. The original ATCC recipe has now been inspected and itself supplies no dilution or assay.",
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "17790"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 2 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Methanol(filter sterilized)'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed."
+  },
+  "16": {
+    "disposition": "unresolved",
+    "reasoning": "MediaDB compound35 identifies its GDP database entity as CHEBI17552/KEGGC00035, but that normalized biochemical identity does not establish the ingredient actually supplied in MediaDB85 PJC with glucose. The frozen full-recipe reference already flags the glucose-title/GDP-component contradiction. Original Sanchez1989 PMID2647149 abstract confirms publication identity but contains no complete PJC formulation; current publisher article/PDF requests returned403, and bounded exact-title/DOI searches did not retrieve original formulation bytes. GDP versus glucose therefore remains unresolved, and even a confirmed GDP component would require supplied counterion/hydrate information before an exact reagent mapping. The earlier neutral-GDP draft is withdrawn and preserved in the review archive; raw GDP, original occurrence and all holds remain unchanged.",
+    "missing_requirement": "Obtain the original Sanchez1989 PJC preparation/reagent list or an owning-source correction that resolves glucose-title versus GDP-component identity; if GDP is confirmed, establish supplied counterion/hydration or explicitly retain only a biochemical-concept assertion.",
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "17552"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "withdrawn_draft_record": "a/review-revisions/withdrawn/withdrawal-record.json"
+  },
+  "17": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The five TOGO recipes all specify 2 M H2SO4 and type it as sulfuric-acid solution. Four place it within neutralized sulfide stock preparation; M3252 gives the same molarity in its main recipe. These are acid-solution inputs, not aliases of either anhydrous sulfuric acid or the completed sulfide stock.",
+    "missing_requirement": "Preserve 2 M stock concentration and occurrence-specific neutralization/preparation context; no whole-stock/component identity merge.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "18": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "TOGO M1094/JCM1030 explicitly states chromium potassium double sulfate with twelve waters. The dot variant retains the same Cr:K:sulfate:water 1:1:2:12 ratio as the supplier chrome-alum CAS7788-99-0 and existing owner. It can share the alias proposal with the spaced MediaDive spelling.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/CrKSO42_X_12_H2O.yaml",
+    "ontology_evidence": [
+      "53471"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'CrK(SO4)2·12H2O'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed. Source-unit discrepancy: TOGO M1094 trace solution gives CrK(SO4)2·12H2O as0.5mg, while the frozen flattened occurrence records0.5G_PER_L. This identity/alias proposal approves neither that normalization nor any receiving-medium concentration."
+  },
+  "19": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M3246 explicitly labels a 0.1 M sulfuric-acid solution. This is ten times the molarity of case11 and is not interchangeable with it or with the pure acid. The absence of a liquid amount in the source row does not remove the specified concentration.",
+    "missing_requirement": "Retain an explicitly 0.1 M stock identity and the source occurrence; determine preparation/amount only if a complete stock recipe is curated.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "20": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "Both TOGO M1094/JCM1030 and M940/JCM899 identify (NH4)2Fe(SO4)2·6H2O as ammonium iron(II) sulfate hexahydrate. OLS CHEBI:76181 verifies that exact six-water double salt. The group-order variant adds no chloride or other component and is a safe alias for the existing hydrate owner.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "76181"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 2 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label '(NH4)2Fe(SO4)2·6H2O'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed. Source-unit discrepancies: TOGO M1094 trace solution gives Mohr salt78.4mg and M940 gives784mg, while frozen flattened occurrences retain those numeric values asG_PER_L. This identity/alias proposal approves neither unit normalization nor receiving-medium concentration."
+  },
+  "21": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M1445/NBRC213 explicitly uses 1 ml of 0.01 M manganese sulfate solution, typed GMO_001342. The molarity describes a stock. The raw formula does not specify the solid used to prepare it and cannot choose manganese sulfate monohydrate, another hydrate, or the anhydrous reagent.",
+    "missing_requirement": "A future stock proposal needs its solution preparation and must retain 0.01 M; source solid hydration cannot be inferred from stock molarity.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "22": {
+    "disposition": "supplied_form_correction",
+    "reasoning": "TOGO M2262 raw KAI(SO4)2.12H2O is explicitly typed Aluminum potassium sulfate dodecahydrate GMO_001051. CHEBI:86465 confirms KAl(SO4)2·12H2O. The uppercase-I character is a source transcription problem, not an alternative element symbol. Preserve it as non-resolving provenance; the corrected occurrence can point to the dodecahydrate.",
+    "missing_requirement": "Apply a source-scoped I/l correction with the typed provider label retained; do not make KAI an unrestricted resolving formula synonym.",
+    "candidate_owner": "mapped/Alk_So42_X_12_H2o.yaml",
+    "ontology_evidence": [
+      "86465"
+    ]
+  },
+  "23": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC1132 identifies Ebios tablets, manufactured by Asahi and distributed by Tanabe, as a 1 g ingredient. The current Asahi product page confirms a dried-brewer-yeast tablet product. Existing EBIOS history mentions EBIOS P2G and explicitly retains an unresolved commercial preparation; historical tablet versus P2G formulation identity is not established by the shared brand. Do not equate tablets to generic yeast extract or automatically merge the product scopes.",
+    "missing_requirement": "Document the historical NBRC tablet formulation and distinguish it from the existing P2G-associated owner before any exact product alias or component proposal.",
+    "candidate_owner": "unmapped/EBIOS.yaml",
+    "ontology_evidence": []
+  },
+  "24": {
+    "disposition": "unresolved",
+    "reasoning": "TOGO M2682 retains Ni(NH4)2(SO4) within a LiCl/tungstate/selenium/nickel stock and types it as ammonium nickel sulfate. Literal charge/stoichiometry is inconsistent with ordinary nickel(II) diammonium disulfate; it omits a second sulfate and has no hydration qualifier. The typed generic name does not authorize selecting the hexahydrate or identifying the whole multi-component stock as this salt. Coordinator follow-up attempted the original Elkins2008 supplement via the LBNL/eScholarship repository, EuropePMC and NCBI, but no usable full supplement bytes were retrieved; indexed source text is a lead only and is not treated as an inspected paper.",
+    "missing_requirement": "Obtain the original nickel reagent supplier/CAS or author corrigendum fixing sulfate stoichiometry and hydration; a repeated malformed formula in a supplement would not itself settle identity. Full original supplement retrieval attempts remain documented as unsuccessful.",
+    "candidate_owner": null,
+    "ontology_evidence": [],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Ni(NH4)2(SO4)'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed."
+  },
+  "25": {
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "TOGO M2262 Gaffron+Se trace-metal table explicitly specifies Cr(NO3)3.9H2O; Sigma supplier evidence independently associates that nine-water substance with CAS7789-02-8. Primary NLM C041167 lists narrower concept M0321544 chromium nitrate nonahydrate with the exact registry number7789-02-8, and the active concept plus production local canonical-label check resolve the exact target. Use mesh:M0321544 as primary identity and exact ontology mapping. The earlier OLS descriptor-only search did not establish concept absence and is superseded by this primary concept evidence. Existing CHEBI86206 owner is the seven-water substance and remains distinct; no hydrate collapse or concentration correction is authorized.",
+    "missing_requirement": null,
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "86204"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Cr(NO3)3.9H2O'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed."
+  },
+  "26": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM54 and55 explicitly require peeled/cut carrot, boiling with potato, cheesecloth filtration, and volume adjustment. TOGO M46/M47 correspond to these prepared plant-material inputs. The starting carrot tissue and the final potato/carrot extract are different material scopes; neither is a single pure chemical. Retain the preparation and recipe context rather than publish the full phrase as an unrestricted synonym of generic Carrot.",
+    "missing_requirement": "A formulation proposal must distinguish the peeled/cut input tissue from the boiled filtered extract and retain the 54 versus55 scale.",
+    "candidate_owner": "mapped/Carrot.yaml",
+    "ontology_evidence": []
+  },
+  "27": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M1135/JCM1066 and M631/JCM621 specify an acidified 0.2% ferrous-ammonium-sulfate preparation in 0.037% HCl. The raw solute formula also lacks a sulfate subscript. Regardless of that typographic defect, the named object is an HCl-containing stock, not the pure Mohr-salt hexahydrate.",
+    "missing_requirement": "Resolve the formula defect and percent bases against the original recipe while preserving both 0.2% stock and 0.037% HCl; no pure-hydrate synonym.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "28": {
+    "disposition": "unresolved",
+    "reasoning": "TOGO M3211 types its raw Ni2SO4·6H2O as nickel(II) sulfate hexahydrate. This makes a transcription error plausible, but the literal formula has two nickel atoms and the source gives no independent supplier ID. It cannot be silently rewritten and made an exact synonym of NiSO4·6H2O.",
+    "missing_requirement": "Obtain the original recipe/reagent identifier confirming NiSO4 rather than Ni2SO4; retain raw text as non-resolving provenance on correction.",
+    "candidate_owner": "mapped/Niso4_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "53437"
+    ]
+  },
+  "29": {
+    "disposition": "unresolved",
+    "reasoning": "DSMZ375 really prints Cystein-HCl x2H2O, while DSMZ1107 prints that text for a 5% w/v stock. MediaDive solution715 also preserves the two-water spelling. The source-only aggregate therefore spans both solid-label and stock context. Neither the usual L-cysteine hydrochloride monohydrate nor free cysteine is established as this entire source case.",
+    "missing_requirement": "Verify the claimed dihydrate and stereochemistry with a supplier/CAS or provider correction, and split source stock versus solid occurrences before identity mapping.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "30": {
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "JCM1030-1033 and MediaDive solution5083 explicitly list SrSO4 in the trace-element recipe, with Togo GMO002069 naming strontium sulfate. Live OLS CHEBI:747199 is nonobsolete and has formula Sr.O4S, CAS7759-02-6 and the corresponding strontium(2+) sulfate structure. This supports a new distinct strontium sulfate ingredient; none of the strontium chloride owners is equivalent.",
+    "missing_requirement": null,
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "747199"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 6 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'SrSO4'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed. Source-unit discrepancy: TOGO M1094 trace solution gives SrSO4 as0.92mg, while its frozen flattened occurrence records0.92G_PER_L. Independent MediaDive5083 explicitly records0.00092g/L within the trace solution. This identity proposal approves no receiving-medium concentration and does not erase the conflicting source occurrence."
+  },
+  "31": {
+    "disposition": "supplied_form_correction",
+    "reasoning": "JCM741 itself prints CoSO4·7H2 without the terminal oxygen; TOGO M766 types that row as cobalt(II) sulfate heptahydrate. OLS CHEBI:91244 confirms the seven-water compound. This is a well-supported source text defect, but the malformed formula remains non-resolving provenance rather than a new public synonym.",
+    "missing_requirement": "Correct the JCM/TOGO occurrence to CoSO4·7H2O with the source-type evidence and preserve the original text.",
+    "candidate_owner": "mapped/Coso4_X_7_H2o.yaml",
+    "ontology_evidence": [
+      "91244"
+    ]
+  },
+  "32": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "TOGO M2567/M2780/M3121 all type raw AIK(SO4)2 as aluminium potassium sulfate. The I/l typography can be interpreted from that source type, but no hydration specification is supplied. This supports the double-sulfate family, not the dodecahydrate. The explicit anhydrous case39 has stronger form evidence and must remain separately assessed.",
+    "missing_requirement": "A source statement establishing anhydrous or a named hydrate is needed before exact physical-form assignment; preserve AIK as non-resolving source spelling.",
+    "candidate_owner": "mapped/Alk_So42.yaml",
+    "ontology_evidence": [
+      "86463"
+    ]
+  },
+  "33": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The frozen CDM/LP recipe explicitly cites Merlen et al.1999 (PMID9988320, DOI10.4269/ajtmh.1999.60.41) as the MediaDB33 source. Its original Table1, printed page42, visually states L-Arginine·HCl1.90mM, matching this occurrence’s1.9mM and resolving the L stereochemistry omitted by the normalized label. The table distinguishes water-bearing histidine/cystine elsewhere but specifies no hydrate for arginine. Actual owner L-arginine_X_Hcl.yaml uses CHEBI31235, CAS1119-34-2 and the stereospecific L-arginine/HCl formula and InChI; fresh official ChEBI corroborates these fields and L-hydrochloride synonyms. Resolve this exact source occurrence to the existing L-hydrochloride identity. Preserve raw Arginine HCl as source context; do not add an unqualified global alias that would assign other stereochemically unspecified cases. Existing owner HCI typo alias and provisional role evidence remain full-record review obligations, with no release of inherited holds.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/L-arginine_X_Hcl.yaml",
+    "ontology_evidence": [
+      "31235"
+    ],
+    "final_decision_path": "a/decisions.json"
+  },
+  "34": {
+    "disposition": "unresolved",
+    "reasoning": "TOGO M3163 types the raw Fe(SO4)2(NH4Cl)2·6H2O as ammonium iron(II) sulfate hexahydrate. The literal raw text additionally contains chloride, which is absent from Mohr salt. Source semantic annotation and formula therefore conflict; deleting Cl would change substance identity rather than merely normalize punctuation.",
+    "missing_requirement": "Obtain original recipe or supplier confirmation resolving the extra chloride. Until then retain the formula as non-resolving source text and do not alias to Mohr salt.",
+    "candidate_owner": "mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "76181"
+    ]
+  },
+  "35": {
+    "disposition": "unresolved",
+    "reasoning": "The frozen CultureMech record explicitly says KOMODO2075 Se-acid was normalized to Selenic acid. The primary DSMZ1003 trace-mineral table also says only Se-acid (10 mg/L), with no formula or selenium oxidation state. CHEBI:18170 confirms what selenic acid means but cannot establish that the source chose H2SeO4 rather than H2SeO3. The present normalization overstates source specificity.",
+    "missing_requirement": "Obtain original chemical formula/CAS/reagent label or provider correction resolving Se(VI) selenic versus Se(IV) selenous acid; withdraw unsupported exact interpretation in the source workflow.",
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "18170"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Selenic acid'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed."
+  },
+  "36": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "These four occurrences inherit MnSO4.xH2O through JCM recipes and their mineral-stock references. The frozen contexts preserve x rather than a number; source stock expansion does not turn x into monohydrate. Manganese sulfate is the supported parent family, while the six-, five-, four-, two-, and one-water terms remain distinct.",
+    "missing_requirement": "Retain variable hydration or obtain a source-specific supplier/assay choosing x; no fixed-hydrate exact alias.",
+    "candidate_owner": "mapped/Mnso4.yaml",
+    "ontology_evidence": []
+  },
+  "37": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The SAG19 Z-medium primary PDF explicitly gives NiSO4(NH4)2SO4·6H2O in its trace-element stock. This is one nickel, two ammonium ions, two sulfates and six waters, matching CHEBI:86149. It is a component of the stock, not the identity of the entire trace-element solution.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Nh42ni_So42_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "86149"
+    ]
+  },
+  "38": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "All four labels contain x xH2O, a duplicated multiplication/variable marker preserved in JCM-linked stock expansions. Their source contexts are Wolfe/mineral solutions and do not supply a numerical hydration state. The supported claim is manganese sulfate of unspecified hydration; lexical cleanup does not license a monohydrate assignment.",
+    "missing_requirement": "Obtain the referenced mineral-stock reagent hydration or retain a variable-hydrate scope; distinguish formatting correction from chemical identity.",
+    "candidate_owner": "mapped/Mnso4.yaml",
+    "ontology_evidence": []
+  },
+  "39": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The four TOGO source tables explicitly qualify AlK(SO4)2 as anhydrous, including ATCC1191 mineral elixir and ATCC trace-mineral supplement contexts. OLS CHEBI:86463 has Al.K.2O4S with no waters and is the existing owner identity. This supports an anhydrous alias, while the twelve-water record remains separate.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Alk_So42.yaml",
+    "ontology_evidence": [
+      "86463"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 4 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'AlK(SO4)2 (anhydrous)'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed. Source-unit discrepancy: TOGO M3174 Wolfe mineral elixir gives anhydrous alum10mg, while its frozen flattened occurrence records10G_PER_L; the other ATCC-trace-supplement occurrences preserve0.01g. This alias/owner proposal makes no unit conversion or receiving-medium concentration approval."
+  },
+  "40": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "JCM1353 mineral solution B explicitly gives Ni(NH4)2(SO4)2·6H2O. The formula and hydration agree exactly with OLS CHEBI:86149 and the existing ammonium nickel sulfate hexahydrate owner. The proposed alias preserves that single salt component, not solution B.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Nh42ni_So42_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "86149"
+    ]
+  },
+  "41": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "The seventeen occurrences span NBRC and JCM trace/mineral preparations, and all retain variable x hydration in MnSO4·xH2O. Togo typed records identify manganese sulfate n-hydrate. Their different concentrations and preparations do not resolve the hydration number. Fixed-hydrate records cannot be substituted for this source aggregate.",
+    "missing_requirement": "Preserve variable-hydrate scope; a fixed hydrate requires occurrence-specific supplier/assay evidence rather than frequency or assumed standard practice.",
+    "candidate_owner": "mapped/Mnso4.yaml",
+    "ontology_evidence": []
+  },
+  "42": {
+    "disposition": "unresolved",
+    "reasoning": "MediaDB compound38 explicitly represents Zinc as BiGGzn2, CHEBI29105, Zn2+/Zn(II), and the two complete TAP recipes are expressed as ionic nutrient components. This establishes the source database nutrient concept, not a physically supplied isolated zinc ion, metallic zinc, zinc salt or chelate. Original Boyle/Morgan2009 culture methods state TAP for heterotrophic/mixotrophic growth and similar medium without acetic acid for autotrophy, citing Harris1989; the article section does not specify the zinc reagent. The prior Zn2+ owner draft did preserve this conceptual distinction, but it is withdrawn from actionable ingredient proposals because the historical supplied-form bridge remains unestablished. Retain all existing ionic source identifiers and both occurrences; do not reconstruct a salt from the nutrient count or generic TAP conventions.",
+    "missing_requirement": "For an exact supplied-ingredient resolution, verify the original cited Harris1989 TAP/trace-element preparation used by Boyle2009 and its zinc salt/chelate or reagent identity. A separate explicit representation policy may retain the ion-level nutrient concept without claiming source-supplied reagent equivalence.",
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "29105"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "withdrawn_draft_record": "a/review-revisions/withdrawn/withdrawal-record.json"
+  },
+  "43": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M2746 and M2305 specify 10 ml of 25% hydrochloric acid in trace-element solutions and type the input as a solution. The phrase denotes a concentration-qualified preparation, not gaseous hydrogen chloride or a salt. The source does not state whether the 25% basis is mass or volume.",
+    "missing_requirement": "Preserve 25% and the missing percent basis; obtain a supplier or recipe concentration basis before a precise stock-formulation proposal.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "44": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M373/JCM378 defines Sol.1 as the alkaliphilic crotonate medium base, a fourteen-component recipe preceding separate crotonate, cysteine and sulfide additions. Sol.1 is a local section reference, not a substance name and not the same object as every Sol.1 in other recipes.",
+    "missing_requirement": "Represent the M373/JCM378 base as a recipe-qualified formulation with its own components and preparation.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "45": {
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "TOGO M2826 explicitly types FeSO4·4H2O as iron(II) sulfate tetrahydrate. Supplier BORTECH gives the same formula and CAS20908-72-9. The bounded OLS hydrate search did not verify an exact tetrahydrate term; CHEBI:75832 is the anhydrous parent. Propose a separate CAS-identified tetrahydrate with an asymmetric parent mapping, never a heptahydrate alias. Primary NLM C020748 concept review additionally found generic ferrous sulfate, heptahydrate and pharmaceutical products, without a tetrahydrate concept in that record. This bounded search does not assert absence from all ontologies.",
+    "missing_requirement": null,
+    "candidate_owner": null,
+    "ontology_evidence": [
+      "75832"
+    ],
+    "final_decision_path": "a/decisions.json",
+    "post_review_applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'FeSO4·4H2O'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed."
+  },
+  "46": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1483 uses concentrated H2SO4 inside Solution C preparation. The concentration qualifier describes an acid stock but gives no numerical assay or density. It does not establish neat 100% sulfuric acid or a particular molarity.",
+    "missing_requirement": "Retain the concentrated-acid source wording; obtain the concentration/assay only if a reproducible stock recipe is proposed.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "47": {
+    "disposition": "unresolved",
+    "reasoning": "JCM360 itself prints Fe(SO4)3·xH2O, while TOGO M354 types the row as iron(III) sulfate n-hydrate. The missing Fe subscript makes the literal formula inconsistent with Fe(III) trisulfate stoichiometry. Correcting to Fe2(SO4)3 is plausible but requires an explicit source correction; variable hydration remains unresolved either way.",
+    "missing_requirement": "Verify/correct the Fe coefficient from an original reagent identifier or source erratum, retaining the malformed text non-resolving and x unspecified.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "48": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M650/JCM636 defines Solution C as a 3.5 ml addition of 50% methanol. The percent basis is not stated in this source token, so it cannot automatically be equated with separately specified 50% v/v methanol cases. It is a prepared solution, not pure methanol.",
+    "missing_requirement": "Resolve the percentage basis and solvent from the original preparation before matching another methanol stock.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "49": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M2670 and DSMZ88a specify 1 N H2SO4 for acidification. Normality is retained as source preparation information; the stock is not a pure sulfuric-acid identity. A conversion to molarity would require the reaction-equivalent convention and is unnecessary for this source review.",
+    "missing_requirement": "Preserve the 1 N stock and its pH-adjustment context; no identity merge with 1 M or pure H2SO4.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "50": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The two TOGO/ATCC sources name Whatman grade1 filter paper as a mass input, not merely equipment. Cytiva identifies grade1 among its cellulose filter papers. The physical manufactured paper product is not chemically identical to an arbitrary cellulose polymer record; paper grade/material scope must remain explicit.",
+    "missing_requirement": "If adding an owner, retain manufacturer, grade1 and supplied paper form, and use component/material relations to cellulose rather than whole-product exact identity.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "51": {
+    "disposition": "supplied_form_correction",
+    "reasoning": "NBRC406,832,833 all print CoSO4·7H20 with digit0; TOGO assigns cobalt(II) sulfate heptahydrate and OLS CHEBI:91244 confirms seven waters. This supports an occurrence-scoped typography correction. The original malformed token remains provenance and is not a new resolving synonym.",
+    "missing_requirement": "Correct the digit0/O typography in each source occurrence while retaining raw text; no owner identity change.",
+    "candidate_owner": "mapped/Coso4_X_7_H2o.yaml",
+    "ontology_evidence": [
+      "91244"
+    ]
+  },
+  "52": {
+    "disposition": "unresolved",
+    "reasoning": "TOGO M2759 raw AlK(SO4) is typed as aluminium potassium sulfate in a100x mineral solution. The missing sulfate coefficient makes the literal formula incompatible with Al3+/K+ charge balance, and hydration is not stated. The annotation establishes a family candidate, not a complete exact supplied form.",
+    "missing_requirement": "Verify sulfate stoichiometry and hydration from the original reagent/source; preserve malformed raw formula as non-resolving provenance.",
+    "candidate_owner": "mapped/Alk_So42.yaml",
+    "ontology_evidence": [
+      "86463"
+    ]
+  },
+  "53": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M2625/DSMZ718 states 0.1% w/v Fe(NH4)2(SO4)2 x7H2O with a 2 ml dose, explicitly a heptahydrate-derived solution. It differs from solid heptahydrate and from the common Mohr hexahydrate. The seven-water qualifier cannot be silently changed because six is more familiar.",
+    "missing_requirement": "Retain 0.1% w/v stock, source heptahydrate wording and dose; any hydration correction requires independent reagent evidence.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "54": {
+    "disposition": "supplied_form_correction",
+    "reasoning": "NBRC1647 prints Ager (if needed)15g in a solid-medium context; TOGO M3286 assigns GMO_001007 Agar. OLS CHEBI:2509 defines the algal polysaccharide mixture. This is a strongly supported source spelling correction, but the misspelling is kept as non-resolving provenance instead of widening a public alias list.",
+    "missing_requirement": "Correct the source occurrence to Agar, retaining its optionality and raw Ager spelling.",
+    "candidate_owner": "mapped/Agar.yaml",
+    "ontology_evidence": [
+      "2509"
+    ]
+  },
+  "55": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The seven frozen occurrences explicitly specify clarified rumen fluid, with DSMZ322/213/275 and archived derivative media preserving preparation context. This distinguishes clarified fluid from unprocessed rumen content or fermented rumen extract. The word order matches the existing Clarified_rumen_fluid owner; add the source alias without approving a universal composition or making different batch preparations equivalent.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Clarified_rumen_fluid.yaml",
+    "ontology_evidence": []
+  },
+  "56": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM149 and TOGO M140 define Standard mineral base as1M phosphate buffer plus Hutner vitamin-free mineral base, ammonium sulfate and water. This is an explicit nested formulation; the parenthetical see-below is a recipe pointer. It must not resolve as a single mineral ingredient or as all mineral bases.",
+    "missing_requirement": "Represent the JCM149-qualified nested formulation, including Hutner subrecipe, rather than globally alias the generic label.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "57": {
+    "disposition": "broad_parent_relation_only",
+    "reasoning": "TOGO M283/JCM289 types AKI(SO4)2 as aluminium potassium sulfate, showing a transposition/I-l source spelling defect. The source does not specify hydrate count. Only the double-sulfate family is supported; an exact dodecahydrate claim would add information.",
+    "missing_requirement": "Verify original reagent form before exact hydration assignment and keep AKI as non-resolving historical text.",
+    "candidate_owner": "mapped/Alk_So42.yaml",
+    "ontology_evidence": [
+      "86463"
+    ]
+  },
+  "58": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The24 occurrences named Sol.1 refer to different source sections. Direct TOGO tables include basal salt solutions (M377,M412,M899), full organic/salt bases (M438,M539,M577,M728,M903), supplement mixtures (M522,M550,M551,M553,M569), yeast/acetate addition (M702), FeCl2/toluene addition (M772), MRSsi base (M2491), and carbonate-medium base (M158). Each original occurrence and complete source table is retained. No global identity exists for this overloaded section label.",
+    "missing_requirement": "Mint or link only recipe-qualified solution objects after reviewing each corresponding component/preparation table; never collapse the24 references into one identity.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "59": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "DSMZ161 explicitly lists a2ml input of0.1% w/v FeSO4·7H2O in0.1N H2SO4. The frozen record already documents this as a liquid input and warns against flattened duplicate concentrations. This is a two-solute acidified stock and cannot be a same-substance alias of solid iron(II) sulfate heptahydrate.",
+    "missing_requirement": "Any proposal must preserve both stock concentrations and the original2ml dose; no additional pure-hydrate alias.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "60": {
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "TOGO M3059/NBRC1627 specifies4.98% FeSO4, typed as iron(II) sulfate solution. The unusual concentration is source data, not a reason to round it or infer a hydrate from a familiar preparation. Percent basis and supplied solid form are not stated.",
+    "missing_requirement": "Retain4.98% and obtain percentage basis, solvent and preparation reagent before a fully specified stock owner.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "61": {
+    "disposition": "unresolved",
+    "reasoning": "NBRC1620 really prints CuSO4·7H2O, while TOGO M3057 assigns copper(II) sulfate pentahydrate GMO_001054. These fields disagree in water count. The known pentahydrate does not override the primary source by familiarity; the seven-water raw claim also lacks an independently verified reagent identity.",
+    "missing_requirement": "Obtain a provider erratum or reagent/CAS evidence deciding seven versus five waters; keep the contradictory fields and do not publish an exact pentahydrate alias.",
+    "candidate_owner": null,
+    "ontology_evidence": []
+  },
+  "62": {
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The frozen TOGO M3164 ingredient explicitly gives Fe(SO4)2(NH4)2·6H2O. Its group order is algebraically identical to Fe(NH4)2(SO4)2·6H2O, corroborated by CHEBI:76181 and the primary TOGO M2716 equivalent written with a spaced dot. It contains no extra chloride and preserves six waters; add it to the existing Mohr-salt hydrate owner.",
+    "missing_requirement": null,
+    "candidate_owner": "mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+    "ontology_evidence": [
+      "76181"
+    ]
+  }
+}

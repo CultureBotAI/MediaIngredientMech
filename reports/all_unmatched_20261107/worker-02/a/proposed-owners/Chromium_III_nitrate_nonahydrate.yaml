@@ -1,0 +1,65 @@
+identifier: mesh:M0321544
+preferred_term: Chromium(III) nitrate nonahydrate
+ingredient_type: SINGLE_INGREDIENT
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: mesh:M0321544
+  ontology_label: chromium nitrate nonahydrate
+  ontology_source: MESH
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://meshb.nlm.nih.gov/record/ui?ui=C041167
+    notes: Primary NLM narrower-concept table explicitly assigns registry7789-02-8 to M0321544
+      chromium nitrate nonahydrate. Active exact concept preserves nine waters; CAS_RN_LOOKUP
+      records the identification route, yielding exactMatch rather than a broader-parent grounding.
+  - evidence_type: DATABASE_MATCH
+    source: https://www.sigmaaldrich.com/US/en/substance/chromiumiiinitratenonahydrate400157789028
+    notes: Independent supplier names chromium(III) nitrate nonahydrate and gives CAS7789-02-8
+      and Cr(NO3)3·9H2O, matching the original TOGO recipe formula. No original source supplier
+      procurement is inferred.
+chemical_properties:
+  cas_rn: 7789-02-8
+  molecular_formula: Cr(NO3)3.9H2O
+  data_source: https://www.sigmaaldrich.com/US/en/substance/chromiumiiinitratenonahydrate400157789028
+synonyms:
+- synonym_text: Cr(NO3)3.9H2O
+  synonym_type: HYDRATE_FORM
+  source: source_review_worker02:CM_NAME:26a5031d76aecbaaa2738a05d88f2fd4ab55bfc84625c3c72ef4ed58b92dcb3a
+notes: TOGO M2262 Gaffron+Se trace-metal table explicitly specifies Cr(NO3)3.9H2O; Sigma supplier
+  evidence independently associates that nine-water substance with CAS7789-02-8. Primary NLM
+  C041167 lists narrower concept M0321544 chromium nitrate nonahydrate with the exact registry
+  number7789-02-8, and the active concept plus production local canonical-label check resolve
+  the exact target. Use mesh:M0321544 as primary identity and exact ontology mapping. The earlier
+  OLS descriptor-only search did not establish concept absence and is superseded by this primary
+  concept evidence. Existing CHEBI86206 owner is the seven-water substance and remains distinct;
+  no hydrate collapse or concentration correction is authorized.
+curation_history:
+- timestamp: '2026-11-08T05:18:37.555660+00:00'
+  curator: codex_worker02_research_a
+  action: PROPOSED_NEW_INGREDIENT
+  changes: Exact source hydrate is corroborated by supplier https://www.sigmaaldrich.com/US/en/substance/chromiumiiinitratenonahydrate400157789028;
+    own CAS 7789-02-8 preserves its distinct supplied-form identity. Bounded OLS searches did
+    not establish an exact eligible hydrate term. CHEBI:86204 is an asymmetric broader form
+    anchor only, not identity; integration requires own CAS exact row plus broadMatch and registry
+    row under MAPPING_SEMANTICS Section3. Source raw label 'Cr(NO3)3.9H2O' is preserved.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Source-review proposal only; no maintained record or downstream data changed; coordinator
+    integration and independent review required.
+- timestamp: '2026-11-08T05:27:21.122615+00:00'
+  curator: codex_worker02_research_a_skeptical_revision
+  action: CORRECTED
+  changes: Independent reviewer identified exact narrower NLM concept omitted by descriptor-only
+    OLS results. Replace proposed primary cas:7789-02-8 plus NARROW_MATCH CHEBI:86204 with exact
+    mesh:M0321544 via CAS_RN_LOOKUP; preserve CAS and nine-water identity. Earlier proposal
+    event is historical and superseded; no maintained record has been applied.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: chromium(III) nitrate nonahydrate
+  cas_rn: 7789-02-8
+  form: nonahydrate
+  notes: The source explicitly specifies nine waters. Independent supplier comparison establishes
+    chemical form without asserting original procurement.

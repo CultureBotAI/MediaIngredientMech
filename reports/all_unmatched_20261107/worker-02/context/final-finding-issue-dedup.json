@@ -1,0 +1,154 @@
+[
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Alk_So42\"",
+      "--repo",
+      "CultureBotAI/MediaIngredientMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:24:53.273968+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": [
+      {
+        "body": "Found reviewing #661.\n\n`sssom_grading.CONFIDENCE` emits only two values \u2014 `0.99` for `EXACT_MATCH`/`SYNONYM_MATCH`, `0.9` for every other quality. The published set carries four:\n\n```\n0.99: 2068    0.9: 858    0.8: 50    0.95: 45\n```\n\nThe 95 off-table rows are uniform: all `skos:exactMatch`, all to CHEBI, all `semapv:LexicalMatching`.\n\n```\nMIM:2-mercaptoethanesulfonate -> CHEBI:17905  conf=0.95\nMIM:Acetate                   -> CHEBI:30089  conf=0.95\nMIM:Alcl3                     -> CHEBI:30114  conf=0.8\nMIM:Alk_So42                  -> CHEBI:86463  conf=0.8\n```\n\nThey look like a graded lexical-matching pass that predates the current table \u2014 a per-row score rather than a per-quality constant.\n\n**Why it is worth recording:** no code path produces these values and none validates them. They are identity rows, so #661's new GRADE check deliberately skips them (MAPPING_SEMANTICS \u00a7Rule D: an own-identifier row must be `skos:exactMatch` regardless of `mapping_quality`), and `_sync_quality_columns` would overwrite them with `0.99` the moment anything did touch them. So the corpus holds 95 rows of unreachable state that would silently change meaning on the next reconcile that happened to include them.\n\nNot a defect in #661 and not a blocker \u2014 the rows are internally consistent and Rule D is satisfied. The question is whether the values are deliberate provenance worth preserving (in which case `_sync_quality_columns` would erase them) or residue worth normalising.\n\n**Suggested disposition:** decide one way or the other, then either document the per-row confidence as intentional or normalise the 95 rows to the table and let the grading code own the column.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01BP6MDZgidgzS79c75Ykhac",
+        "number": 662,
+        "state": "open",
+        "title": "95 published rows carry confidence values the grading table cannot produce",
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/662"
+      },
+      {
+        "body": "Found in adversarial review of #528 (pre-existing; that PR neither caused nor worsened it).\n\n17 records carry the same synonym text twice, compared casefolded:\n\n```\nDistilled_Water.yaml            'sterile dh2o'\nAlk_So42.yaml                   'aluminum potassium sulfate'\nNa2glycerophosphate5h2o.yaml    'na2glycerophosphate\u20225h2o(cas: 13408-09-8)'\nCasein_Peptone.yaml             'casein hydrolysate', 'casein enzymic hydrolysate'\n```\n\nCount is identical on `origin/main`, so this predates the surface-form work. The\nbackfill's own duplicate check kept it from growing.\n\nLow severity, but not nothing:\n\n* `export_lists.py` emits one `label_index.csv` row per synonym, so a duplicate\n  synonym produces two identical index rows for the same record. The lookup still\n  resolves, but the index is larger than the corpus it describes and row counts stop\n  being a usable measure of coverage \u2014 which is the number this work has been tracking\n  throughout.\n* The builder pipes synonyms into SSSOM `other`, where `_pipe` caps at\n  `MAX_OTHER_ENTRIES = 50`. On a crowded row a duplicate consumes a slot that a distinct\n  surface form would otherwise get, and the cap is documented as biting hardest on the\n  hydrate families.\n\nThe fix is a de-duplicating pass over `synonyms`, casefolded, keeping the first\noccurrence and preferring the more specific `synonym_type` when the duplicates disagree\n(e.g. a `RAW_TEXT` and an `EXACT_SYNONYM` of the same string). Worth pairing with a guard\nso it cannot recur, since several writers append synonyms and only some check first.\n",
+        "number": 529,
+        "state": "closed",
+        "title": "17 records carry the same synonym twice, inflating the label index and the other cap",
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/529"
+      }
+    ]
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"O-carbamyl\"",
+      "--repo",
+      "CultureBotAI/MediaIngredientMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:24:54.189433+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Niso4\"",
+      "--repo",
+      "CultureBotAI/MediaIngredientMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:24:55.125302+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": [
+      {
+        "body": "Review finding on #732.\n\n#732 retires 57 parent/sibling names from the salt, hydrate and tombstone records that wrongly carried them. For 46 of them the name still resolves \u2014 to the record that actually owns it. **11 now resolve to nothing:**\n\n| surface form | was resolving to |\n|---|---|\n| `ferrous sulfate (anhydrous)` | was on `Feso4_X_7h2o` |\n| `ferrous sulfate anhydrous` | was on `Feso4_X_7h2o` |\n| `Manganese sulfate anhydrous` | was on `Mnso4_X_1_H2o` |\n| `EDTA disodium (anhydrous)` | was on `Na2-edta_X_2_H2o` |\n| `Edetate disodium anhydrous` | was on `Na2-edta_X_2_H2o` |\n| `nickel(2+) sulfate` | was on `Niso4_X_6_H2o` |\n| `nickel(2+) sulfate` | was on `Niso4_X_7_H2o` |\n| `(2R)-2,3-dihydroxypropyl dihydrogen phosphate` | was on `Sn-Glycerol_3-phosphate_Lithium_Salt` |\n| `sn-glycerol 3-(dihydrogen phosphate)` | was on `Sn-Glycerol_3-phosphate_Lithium_Salt` |\n| `(2R)-2,3-dihydroxypropyl dihydrogen phosphate` | was on `Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt` |\n| `sn-glycerol 3-(dihydrogen phosphate)` | was on `Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt` |\n\nEach is a hydrate (or anhydrous) form that has **no record of its own**; its only home was a different hydrate's record, i.e. a wrong answer. Under Section 3 an unresolvable name is the correct state for a substance MIM does not hold \u2014 a recipe naming `FeSO4 x 5 H2O` should not silently become the heptahydrate \u2014 but it is still a gap, and the same shape as #656.\n\nThey belong to #459's hydrate cohort. Disposition per form: mint the hydrate (`cas:` or `kgmicrobe.compound:` + `broadMatch` to the anhydrous parent, Rule B1 registry row) if any recipe actually names it, or accept the gap if none does. I did not check occurrence counts here.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01ShSvr6po5J8sd7Ai4bRW9y",
+        "number": 733,
+        "state": "closed",
+        "title": "11 names retired by #732 now resolve nowhere; most belong on an existing parent record",
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/733"
+      },
+      {
+        "body": "## The check\n\nFor every record carrying both a `cas_rn` and a CHEBI `ontology_id`, ask which\nCHEBI term ChEBI itself registers that CAS against:\n\n```\nCAS -> CHEBI index from chebi.db (oio:hasDbXref, 29,736 CAS numbers)\n\nrecords with CAS + CHEBI id        1370\n  CAS registered on THIS term      1074\n  CAS not in ChEBI at all           206\n  CAS registered on a DIFFERENT term  90   <- defect candidates\n```\n\n**This class is invisible to InChIKey comparison**, which is why it survived the\nCAS-vs-structure checking done so far: the mis-mapped term is usually a\nparent/grouping class with no structure at all, so there is no key to compare.\nThe failure mode is a name lookup landing on a parent while the CAS points at\nthe specific child.\n\n## Cross-validation\n\nThe check independently rediscovers four defects found separately, one at a time,\nby the research lane \u2014 before this query existed:\n\n| record | CURIE | CAS points to |\n|---|---|---|\n| `Ca-pantothenate` | CHEBI:29032 `(R)-pantothenate` | **CHEBI:31345 Calcium pantothenate** (the #315 merge) |\n| `02_Thiamine_Pyrophosphate` | CHEBI:9532 | CHEBI:18290 `\u2026diphosphate chloride` |\n| `Bicine` | CHEBI:39065 (structureless class) | CHEBI:40957 `N,N-bis(2-hydroxyethyl)glycine` |\n| `Aluminium sulfate` | CHEBI:74772 (class) | CHEBI:74768 `aluminium sulfate (anhydrous)` |\n| `Bisabolene` | CHEBI:49235 (family class) | CHEBI:49240 `alpha-bisabolene` |\n\nFour separate agents reaching five of these independently, and a mechanical query\nreproducing all of them, is good evidence the remaining 85 are real.\n\n## Two sub-classes, different remedies \u2014 do not mass-apply\n\n**(a) CURIE is a parent; the label names the specific child.** Fix the CURIE.\n`Bicine` (a structureless grouping class with a disjunctive definition),\n`Bisabolene` (family over 16 terms \u2014 note `C15H24` is shared by all of them, so\na formula check passes on the wrong term), `Ca-pantothenate`, `Aluminium sulfate`,\n`alpha-Lactose` \u2192 `Alpha-lactose monohydrate`, `Carboxymethyl cellulose` \u2192\n`carboxymethylcellulose sodium`.\n\n**(b) CURIE is correctly generic for a generic label; the *CAS* is over-specific.**\nFix or drop the CAS, not the mapping. `Arginine` (CHEBI:29016, stereo-agnostic \u2014\ncorrect for a bare label) whose CAS 74-79-3 is L-arginine's; `Ascorbic acid`\n(CHEBI:22652) with L-ascorbic acid's CAS; `D-Ribose` with D-ribofuranose's.\n\nSub-class (b) is the same shape as the bare-anion convention in #319: a\ndeliberately generic term is right for a generic label, and it is the\n*over-specific companion field* that is wrong. Getting this backwards would\nbreak correct records.\n\n## Suggested action\n\nTriage the 90 into (a) and (b); the discriminator is whether the record's own\nlabel is generic or specific. Then add the query as a standing check \u2014 it is\ncheap, needs only `chebi.db`, and catches a class nothing else does.\n\nAlso worth noting the 206 \"CAS not in ChEBI at all\": not a defect by itself, but\nit is the population where a wrong CAS can hide indefinitely, since neither this\ncheck nor an InChIKey comparison can adjudicate it.\n\n## Provenance\n\nProposed by the Claude research lane after it hit the same shape three times\n(`Bicine`, `Bisabolene`, `02_Thiamine_Pyrophosphate`) and observed that InChIKey\ncomparison structurally cannot catch it. Verified repo-wide against chebi.db.\nRelated: #315, #316, #317, #319.",
+        "number": 320,
+        "state": "closed",
+        "title": "90 records whose CAS-RN is registered in ChEBI against a different term than their CURIE",
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/320"
+      },
+      {
+        "body": "Found by cross-checking MIM against **CultureBotAI/CultureMech#272**, which independently regrounds the same labels \u2014 and is right where MIM is wrong.\n\nThis is the identity half of #321, still open for these seven. Each names a hydrate, sits on an anhydrous or generic ChEBI term, and ChEBI **has** the specific hydrate term, so `MAPPING_SEMANTICS` \u00a73 **step 1** applies and nothing needs minting:\n\n| record | currently on | should be |\n|---|---|---|\n| `Chromium(III) Chloride Hexahydrate` | `CHEBI:53351` chromium(3+) trichloride | `CHEBI:53442` \u2026hexahydrate |\n| `CoSO4 x 7 H2O` | `CHEBI:53470` cobalt(2+) sulfate | `CHEBI:91244` \u2026heptahydrate |\n| `FeSO4 x 7H2O` | `CHEBI:75832` iron(2+) sulfate **(anhydrous)** | `CHEBI:75836` \u2026heptahydrate |\n| `MgSO4\u00b77H2O` | `CHEBI:32599` magnesium sulfate | `CHEBI:31795` \u2026heptahydrate |\n| `MnSO4 x 1 H2O` | `CHEBI:86360` manganese(II) sulfate | `CHEBI:86364` \u2026monohydrate |\n| `Na2SeO3\u00b75H2O` | `CHEBI:48843` disodium selenite | `CHEBI:131361` \u2026pentahydrate |\n| `NiSO4 x 7 H2O` | `CHEBI:53001` nickel sulfate | `CHEBI:53504` \u2026heptahydrate |\n\n`FeSO4 x 7H2O` is the sharpest: its term is explicitly labelled **\"(anhydrous)\"** while the record's own label says 7 H2O.\n\n## Two complications, both worth settling in the same pass\n\n**1. Some targets are already held.** `CHEBI:75836` is held by `FeSO4 x 7 H2O` (note the space \u2014 a near-duplicate of `FeSO4 x 7H2O`, and one of the ten pairs recorded on #334). So this is a promotion for some and a **merge** for others; `fix_hydrate_collapse.py` already handles both shapes and distinguishes them by whether the target identifier is taken.\n\n**2. #342 decided hydrate\u2192anhydrous is `closeMatch`.** That decision was about records whose hydrate has *no* ChEBI term. These seven do have one, so they move to `EXACT_MATCH` on the specific term and leave the closeMatch question behind entirely \u2014 worth stating explicitly so the two decisions are not read as conflicting.\n\n## Provenance\n\nSurfaced by diffing CultureMech#272's chosen `term.id` against MIM's answer for every name it changes: 27 changed, 11 agree with MIM, **16 disagree**. On the hydrate subset the disagreement is MIM's fault, and these 7 are it. (The remaining disagreements are covered by CultureBotAI/CultureMech#260 and by one genuine defect in #272 flagged there.)",
+        "number": 374,
+        "state": "closed",
+        "title": "7 hydrate records sit on the anhydrous term while ChEBI has the specific hydrate",
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/374"
+      },
+      {
+        "body": "## The check\n\nFlag any record whose `preferred_term` names a hydrate (`x n H2O`, `\u00b7nH2O`,\n`hydrate`) while its recorded formula/SMILES/InChI contain **no water\ncomponent**. Purely mechanical.\n\n**Result: 26 records.**\n\n## Why the existing CAS-vs-structure check cannot see this\n\nBoth compared fields are populated from the same ChEBI term by\n`AUTO_BACKFILL_CHEBI_CHEMISTRY`, so they agree **by construction**. The check\ncompares the record against itself; the *label* is the only field carrying the\ncontradicting information, and nothing was comparing against it.\n\n## The sharper pattern: one term absorbing many distinct hydrates\n\n**10 ontology terms carry 26 distinct hydrate labels between them:**\n\n| term | absorbs |\n|---|---|\n| CHEBI:34683 | `Na2HPO4 x 2/3/6/7/12 H2O` \u2014 **five** different hydrates |\n| CHEBI:35696 | `CoCl2 x 2/4/6 H2O` |\n| CHEBI:34887 | `NiCl2 x 2/5/6 H2O` |\n| CHEBI:75832 | `FeSO4 x 5/6/7 H2O` |\n| CHEBI:23414 | `CuSO4 x 2/4 H2O` |\n| CHEBI:30812 | `FeCl2 x 6/7 H2O` |\n| CHEBI:86360 | `MnSO4 x 1/7 H2O` |\n| CHEBI:53001 | `NiSO4 x 6/7 H2O` |\n\nDifferent hydrates are different substances with different formula weights and\ndifferent CAS numbers. Collapsed onto one term they are indistinguishable\ndownstream \u2014 a recipe calling for the heptahydrate and one calling for the\ndihydrate become the same node.\n\n**The assignment is demonstrably arbitrary.** Magnesium sulfate splits across two\nterms *by notation rather than by chemistry*:\n\n```\nCHEBI:32599  <- \"MgSO4 x 6 H2O\",  \"MgSO4\u00b77H2O\"\nCHEBI:31795  <- \"MgSO4 x 7 H2O\",  \"MgSO4\u00b7H2O\"\n```\n\nThe **same** hydration number (7) lands on two different terms depending on\nwhether the label was written `x 7 H2O` or `\u00b77H2O`. That is lexical matching\nwith no chemistry behind it.\n\nOne record states the contradiction outright: `Na2-EDTA x 2 H2O` carries\n`ontology_label: EDTA disodium salt (anhydrous)`.\n\n## Triage forks three ways \u2014 do not mass-apply\n\nEstablished from three worked cases:\n\n1. **The label is wrong.** `CaSO4 x 7 H2O` \u2014 no calcium sulfate heptahydrate\n   exists (ChEBI has anhydrous/hemi/dihydrate only). Probably a `2`\u2192`7` slip,\n   but confirming needs the source recipes read. MediaDive maps\n   `CaSO4 x 2 H2O` correctly, so it does distinguish these when they are real.\n2. **The label is right and the ontology is deficient.** `CeCl3 x 7 H2O` is the\n   standard commercial form; ChEBI has **no** cerium chloride hydrate at all.\n   Ignoring the waters here is a **51% formula-weight error** (246 \u2192 373).\n   Candidate for a registry term.\n3. **Neither side is definite.** `Cefsulodin sodium salt hydrate` \u2014 no hydrate\n   term in any ontology *and* the label states no hydration number. Nothing to\n   encode; the fix is dropping `EXACT_MATCH` and recording why.\n\nSo a lexical `x n H2O` sweep would fix (1) and corrupt (2).\n\n## Suggested action\n\nAdd the detector as a standing check, then triage the 26 by the fork above.\nThe `Na2HPO4` five-way and `CoCl2`/`NiCl2` three-way collapses are the highest\nvalue \u2014 they are the cases where distinct media ingredients have become\nindistinguishable.\n\n## Provenance\n\nDetector proposed by the Claude research lane after the CAS-vs-structure check\npassed on three defective records in one batch, with the correct diagnosis of\nwhy it structurally could not catch them. Verified repo-wide.\nRelated: #315, #317, #320.",
+        "number": 321,
+        "state": "closed",
+        "title": "26 hydrate-named records map to anhydrous terms; 10 terms absorb multiple distinct hydrates",
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/321"
+      }
+    ]
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"M2790\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:24:56.084823+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"MgSO4\" \"200\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:24:56.959617+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  },
+  {
+    "command": [
+      "gh",
+      "search",
+      "issues",
+      "\"Se-acid\"",
+      "--repo",
+      "CultureBotAI/CultureMech",
+      "--limit",
+      "100",
+      "--json",
+      "number,title,url,state,body"
+    ],
+    "accessed_at": "2026-11-08T05:24:57.748916+00:00",
+    "exit_code": 0,
+    "stderr": "",
+    "results": []
+  }
+]

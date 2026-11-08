@@ -1,0 +1,71 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "387",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,body,state,url,createdAt,closedAt,comments"
+  ],
+  "accessed_at": "2026-11-08T05:35:29.543048+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "result": {
+    "body": "Found while triaging the ingredient labels MIM cannot resolve\n(MediaIngredientMech `scripts/triage_culturemech_residual.py`). 24 distinct\n`preferred_term` values covering **618 recipe mentions** are not ingredient names at all.\nThe damage is in `data/normalized_yaml/` itself, not introduced by the occurrence\nexporter, so it dates from recipe ingestion.\n\nTwo distinct defects.\n\n## 1. Field swap: the quantity is in `preferred_term`, the name is in `notes` (497 mentions)\n\n```\nCultureMech:000001  preferred_term: \"1\"  notes: \"Original amount: DYIII Medium\"\nCultureMech:000001  preferred_term: \"2\"  notes: \"Original amount: Pea\"\nCultureMech:000002  preferred_term: \"1\"  notes: \"Original amount: CR1 Soil\"\nCultureMech:000002  preferred_term: \"2\"  notes: \"Original amount: MgCO3(MCIB CB486)\"\n```\n\n`preferred_term` holds the ingredient's list index while the actual name sits in `notes`.\n**All 497 of these carry an `Original amount:` note, so the name is recoverable for 100% of\nthem** -- this is a remapping, not a re-scrape. Affected values are the bare numbers 1-13.\n\n## 2. A Python list repr split on commas (121 mentions)\n\n| mentions | preferred_term |\n|---:|---|\n| 75 | `'Iron(III` |\n| 13 | `'Fe(III` |\n| 8 | `'Chromium(III` |\n| 6 | `'(S` |\n| 2 | `'Manganese(IV` |\n| 2 | `'(9Z` |\n| 1 | `'Nickel(II` |\n| 1 | `'Cyanocob(III` |\n\nNote the leading apostrophe on each. From `data/normalized_yaml/`, verbatim:\n\n    - preferred_term: '''Iron(III'\n      concentration:\n        value: '0.04994'\n\nThat apostrophe is a Python string quote, and every value truncates at the first comma\ninside a chemical name -- `Iron(III), citrate` and `(9Z,12Z)-octadecadienoate` split at\ntheir internal comma. A `str()` of a list was written where the list elements were meant,\nthen re-split on `\", \"`. The oxidation-state Roman numerals and stereodescriptors are\nexactly the names that contain commas, which is why they are the ones that broke.\n\nUnlike defect 1 these are lossy -- the tail of each name became a separate fragment or was\ndropped -- so they need re-derivation from the source recipe rather than a field move.\n\n## Why it matters\n\nThese 618 mentions are permanently unresolvable against MIM: no ontology will ever contain\na term called `1` or `'Iron(III`, so they sit in MIM's residual forever and inflate the\napparent size of the ingredient-grounding backlog. MIM's triage now classifies them as\n`NOISE` and routes them out of the grounding work, but the fix belongs here.\n\nEvidence table: MIM `reports/culturemech_residual_triage.tsv`, rows whose `bucket` starts\nwith `NOISE`.\n",
+    "closedAt": "2026-10-15T04:31:47Z",
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABRdwGgQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "**Part 1 is fixed on main.** #378 merged as `12f9cdee05`. Re-measured against\nmerged main just now:\n\n```\nnumeric preferred_term mentions:   0   (was 497)\n\"Original amount:\" notes remaining: 0\n```\n\nWe converged on the same defect from opposite ends — you from MIM's residual\ntriage, me from the four \"anonymous\" ingredients on the 000001 page. Your read\nof it was right in every particular, including that all 497 were recoverable\nwithout a re-scrape.\n\nOne correction to the diagnosis, from the root cause: the name in `notes` was\nnot the only thing lost. UTEX tables are\n`# | Component | Amount | Stock Solution Concentration | Final Concentration`\nand the fetcher read `cols[0]`/`cols[1]`, so it never read the Amount column at\nall — the concentrations were absent, not misplaced, and `G_PER_L` was later\nfabricated to fill the hole. So a remapping alone would have restored the names\nonto invented concentrations. The re-fetch also recovered 419 stock/final\nconcentrations that had never been captured.\n\nResult: 497/497 names restored, grounding 0% -> 84%, and 377 real quantified\nconcentrations replacing 497 fabricated `G_PER_L`.\n\n**Part 2 is untouched and still present.** Current count on main, by\n`preferred_term` starting or ending with an apostrophe:\n\n| mentions | preferred_term |\n|---:|---|\n| 75 | `'Iron(III` |\n| 13 | `'Fe(III` |\n| 8 | `'Chromium(III` |\n| 6 | `'(S` |\n| 2 | `'Manganese(IV` |\n| 2 | `'(9Z` |\n| 2 | `'(R` |\n| 1 | `'Cyanocob(III` |\n| 1 | `'(R,R` |\n| 1 | `'Nickel(II` |\n| 1 | `Trace metals 'Gaffron\\xad+Se'` |\n\n**112 mentions, 11 distinct values, across 102 records** — slightly more than\nthe 121/24 in the issue because that figure covered both defects together, and\nthis scan is part 2 only. The last row is a different shape from the rest: a\nplausible name carrying a soft hyphen (`\\xad`), not a split repr.\n\nUnlike part 1, this one is **not** recoverable from the records: `'Iron(III`\nwas `'Iron(III) citrate'` or similar before a `str(list)` was split on `,`, and\nthe tail is gone. It needs the upstream source, so it wants a different fix\nfrom the UTEX repair — the source of these should be identified first\n(they are not UTEX; the 99 UTEX records are now clean).\n\nSuggest keeping this issue open for part 2 and treating part 1 as closed by\n#378.",
+        "createdAt": "2026-08-30T05:52:57Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/387#issuecomment-5467014785",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDORCzsts8AAAABRlSfHQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "**Part 2 is fixed on main.** #391 merged as `e75a797bbf`. Re-measured against\nmerged main:\n\n```\ningredient names damaged:  1   (was 112)\nmedium labels damaged:     0   (was 182)\noriginal_names damaged:    0   (was 182)\ncolliding medium labels:   0   (was 4, covering 68 media)\n```\n\nBoth parts of this issue are now closed by #378 and #391.\n\n## The part that was not in the original report\n\nChasing the same bug through `_parse_media_insert` found damage to the media's\n**own names**, which is worse than the ingredient damage. The parser cut at the\nfirst parenthesis, which for these media removes exactly what distinguishes\nthem:\n\n```\n'Defined freshwater medium (CoSO4        <- 29 DISTINCT media, one string\n  MEDIADB:416 = ... (CoSO4) + 100 mM Fe2O3 + 113.2 mM Acetate\n  MEDIADB:418 = ... (CoSO4) + 20 mM Iron citrate + 113.2 mM Acetate\n  MEDIADB:419 = ... (CoSO4) + 5 mM nitrate + 113.2 mM Acetate\n```\n\nFour such collisions covered 68 media. All distinct now.\n\nI also had to correct my own earlier reply here: I said part 2 was \"not\nrecoverable from the records\". It was — `data/raw/mediadb/media_database.07Oct2015.sql`\nis the authoritative dump and holds every name. 111 of 111 ingredient names\nresolved with zero ambiguity, cross-checked against MediaDB's `chebi_ids`\ncolumn (which the resolution does not use), including the two most easily\nswapped: `(R)-Lactate` -> CHEBI:42111 *(R)-lactic acid*, `(S)-Lactate` ->\nCHEBI:422 *(S)-lactic acid*.\n\n## The one remaining\n\n`Trace metals 'Gaffron\\xad+Se'` in `pcr_s11_medium.yaml`. Not truncation — a\nreal name carrying a soft hyphen (U+00AD) and an embedded quote, in a record\nwith no MediaDB medium id. Different defect; worth keeping this issue open for\nit, or closing and filing it fresh.\n\n## Follow-ups filed\n\n- **#390** — `mediadb_importer.py` hardcodes four compounds as \"corrupted\". They\n  were not corrupt upstream; that was the column-mapping bug. The patch covered\n  4 of 14,797 compounds; the other 14,793 were shifted too.\n- **#392** — `name`, the record slug, still encodes the truncated medium name\n  for those 182 records. Left alone because the slug is used for matching and\n  deduplication.",
+        "createdAt": "2026-08-31T07:03:44Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/387#issuecomment-5474918173",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDORCzsts8AAAABcJ9fnA",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Closing: both defects are fixed, and so is the survivor named in the last comment. Re-checked on `main` at `41d4d39` by walking every entry in `data/normalized_yaml`, nested ones included.\n\n- **Part 1, the field swap.** 0 numeric `preferred_term` mentions (was 497) and 0 `Original amount:` notes. Fixed by #378 (`12f9cdee05`).\n- **Part 2, the split list repr.** 0 truncated fragments. Fixed by #391 (`e75a797bbf`). Only two `preferred_term` values still start or end with an apostrophe, and both are complete names with embedded quotes, not truncations:\n  - `Trace metals 'Gaffron+Se'`, an ingredient of `pcr_s11_medium.yaml`;\n  - `Metals ''44''`, the name of the solution record `mediadive_3800_Metals_44.yaml`.\n- **The survivor.** The U+00AD soft hyphen in `Trace metals 'Gaffron+Se'` was #406. #409 (`2e4566eaad`) fixed it, and `pcr_s11_medium.yaml` now has 0 U+00AD characters.\n\n**Outside this issue's scope.** Six MediaDive solution records still carry U+00AD in their own names, in both `preferred_term` and `term.label`. They are MediaDive solutions 6188, 6197, 6207, 6209, 6210 and 6224, for example `3N­BBM+V` in `mediadive_6188_…`. Another 57 occurrences sit in preparation text, in `description` and `preparation_notes`. #409 cleaned only TOGO component names.",
+        "createdAt": "2026-10-15T04:31:46Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/387#issuecomment-6184460188",
+        "viewerDidAuthor": true
+      }
+    ],
+    "createdAt": "2026-08-30T05:37:17Z",
+    "number": 387,
+    "state": "CLOSED",
+    "title": "618 ingredient mentions carry parse damage as their preferred_term; all 497 numeric ones are recoverable",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/387"
+  }
+}

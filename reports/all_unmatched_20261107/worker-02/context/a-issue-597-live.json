@@ -1,0 +1,41 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "597",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,body,state,url,createdAt,closedAt,comments"
+  ],
+  "accessed_at": "2026-11-08T05:38:18.786913+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "result": {
+    "body": "Review finding on #591. With #591's parser, 25 MAPPED rows have a label hydrate count that differs from the row's preferred term. One is a parser false positive, so 24 are genuine. Examples:\n- `magnesium sulfate anhydrous` \u2192 CHEBI:31795 (heptahydrate)\n- `Anhydrous sodium sulfite` \u2192 Na2SO3 x 5 H2O\n- `sodium sulfate, anhydrous` \u2192 Na2SO4 x 10 H2O\n- `NaH2PO4\u00b7H2O` \u2192 nah2po4_x_2_h2o\n\nThe guard also never reaches tombstones behind a MAPPED row in the same group. Example: `Cystein-HCl x 2 H2O (5% (w/v))` resolves via MAPPED to monohydrate CHEBI:91248.\n\nMAPPED rows are MIM's curated answers, and the resolver contract is to honour them, so #591 deliberately leaves them alone. These are MIM data defects and belong with MediaIngredientMech#811. Overriding MAPPED answers in CultureMech would be a contract change, which needs a separate decision.",
+    "closedAt": null,
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABbci3IA",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Filed upstream as CultureBotAI/MediaIngredientMech#878, with the 25 rows split into:\n- 12 wrong identities: the label's hydrate contradicts the identity's count\n- 12 synonyms that are correct heptahydrate identities but sit under a MIM record named `MgSO4\u00b7H2O` on CHEBI:31795\n- 1 CultureMech parser false positive: `hemi(heptahydrate)`, read as heptahydrate\n\nRecipe impact today: 38 rows. Of these, 36 are NaH2PO4 monohydrate spellings (MIM#758) and 2 are `MgSO4\u00b7H2O`. CultureMech still honours MAPPED answers.",
+        "createdAt": "2026-10-13T02:24:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/597#issuecomment-6136837920",
+        "viewerDidAuthor": true
+      }
+    ],
+    "createdAt": "2026-10-13T00:54:48Z",
+    "number": 597,
+    "state": "OPEN",
+    "title": "MIM MAPPED rows whose label hydrate contradicts the identity (out of #579 scope)",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/597"
+  }
+}

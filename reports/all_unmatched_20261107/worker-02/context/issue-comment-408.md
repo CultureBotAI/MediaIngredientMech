@@ -1,0 +1,20 @@
+Worker 02 of the authorized all-unmatched source review adds source-bound observations to this existing unit/preparation backlog and #150. These observations concern the frozen campaign recipes; they are not a claim that every listed quantity remains unchanged on current main, and they approve no automatic dose conversion.
+
+| Frozen source context | Primary-source observation | Required follow-up |
+| --- | --- | --- |
+| TOGO M1084 / M357, 8% w/v Na2CO3 | JCM 1023 / 363 specify a 2.5 mL addition, while both frozen occurrences store 2.5 G_PER_L. | Preserve solution strength and liquid addition separately. |
+| TOGO M2277, cobalt chloride hexahydrate | The named source component is 190 mg in Solution 2 / SL12; frozen value is 190 G_PER_L. | Retain the stock preparation and resolve the I/l spelling from the named component. |
+| TOGO M2649, FeSO4·7H2O solution | Pinned TOGO gives 10 mL/L of 0.2% w/v stock; frozen value is 10 G_PER_L. Current DSMZ 503 instead describes 0.1% stock. | Preserve source version and liquid dose; do not silently overwrite the older strength. |
+| TOGO M2231, MgSO4·7H2O (6 g/L) | Source gives 5 mL of the stock; frozen value is 5 G_PER_L. | Separate stock strength from dose. |
+| TOGO M3155, FeSO4·7H2O | Source has 0.05 g/L direct plus 10 mL/L of a trace stock containing 0.8 g/L; frozen value sums 0.05 + 0.8 as 0.85 G_PER_L. | Restore preparation levels; stock composition must not be summed directly into final medium. |
+| TOGO M997 / M1016, Mohr salt | JCM 950 / 966 specify 2.0 mg; both frozen occurrences store 2 G_PER_L. | Restore the source mass and recipe basis. Identity alias support does not approve the frozen quantity. |
+| TOGO M2509 / NIES SOT, MnSO4·5H2O | Original footnote substitutes 217 mg pentahydrate for 250 mg heptahydrate. TOGO places 217 mg in a 100 mL A5 stock, with a 0.1 mL dose; frozen value is 217 G_PER_L. | Preserve the footnote and stock hierarchy; do not interpret the stock mass as final g/L. |
+| TOGO M2790, 1 M MgSO4 | Source gives 200 µL of 1 M stock in its 100 mL recipe basis; frozen value is 200 G_PER_L. | Represent liquid addition separately; no solid hydrate can be inferred. |
+| TOGO M1094 trace solution | Chrome alum 0.5 mg, Mohr salt 78.4 mg and SrSO4 0.92 mg appear with the same numeric values as G_PER_L in frozen flattened occurrences. | Restore each mass and preparation level. MediaDive solution 5083 independently gives SrSO4 0.00092 g/L within the trace solution. |
+| TOGO M940 and M3174 | Mohr salt 784 mg in M940 and anhydrous alum 10 mg in M3174 appear as 784 and 10 G_PER_L in frozen occurrences. | Retain acidic-stock preparation / Wolfe mineral elixir context and original units. |
+
+Primary evidence includes [JCM 950](https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=950), [JCM 966](https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=966), [NIES SOT](https://mcc.nbrp.jp/medium/ja/sot.pdf), [DSMZ 503](https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium503.pdf), and the corresponding TOGO API captures. Complete occurrence IDs, exact file/field selectors, original recipe hashes, primary capture hashes and per-case reasoning are retained in `reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json` and in `a/decisions.json`, `a/evidence.json` and their linked frozen case/recipe captures. The concise A quantity inventory is `a/review-revisions/source-unit-findings.json`. These artifacts are on the assigned `review/all-unmatched-w02-source-review-20261107` branch. B's inventory received separate skeptical review in `c/independent-review-b-source-defects.json`; A's quantities were challenged and confirmed by B in `b/review-a/`.
+
+The worker prepared isolated MIM proposals only. No maintained CultureMech or MIM source, concentration, mapping export, or publication selector was changed. Source-form and source-version holds remain. Before applying a correction, compare the exact current recipe to the frozen selector and reconstruct the complete source preparation hierarchy.
+
+<!-- all-unmatched-20261107-worker02-source-quantity-followup -->

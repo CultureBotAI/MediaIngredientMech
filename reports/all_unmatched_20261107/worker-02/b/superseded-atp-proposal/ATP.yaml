@@ -1,0 +1,37 @@
+identifier: CHEBI:15422
+preferred_term: ATP
+ontology_mapping:
+  ontology_id: CHEBI:15422
+  ontology_label: ATP
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:15422
+    notes: Exact substance verified from official ChEBI record and frozen source contexts
+      in reports/all_unmatched_20261107/worker-02/b; no salt, hydrate or stock specificity
+      inferred.
+  - evidence_type: MANUAL_CURATION
+    source: reports/all_unmatched_20261107/worker-02/b/evidence.json
+    notes: 'Create distinct ATP owner from exact ontology and source ingredient evidence.
+      No stock, salt or hydrate variant is inferred. Sources: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_15422;
+      https://rest.kegg.jp/get/cpd:C00002'
+synonyms:
+- synonym_text: ATP
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source case CM_NAME:8039182ccb56665e768289fb1a2063527f85a0e26a2984ea03323179ecb84441
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 56-65-5
+  molecular_formula: C10H16N5O13P3
+  data_source: ChEBI official OLS capture; source-bound worker02 review
+curation_history:
+- timestamp: '2026-11-08T05:23:20.450045+00:00'
+  curator: codex_worker02_source_review
+  action: CREATED
+  changes: Create distinct ATP owner from exact ontology and source ingredient evidence.
+    No stock, salt or hydrate variant is inferred. Isolated proposal only; coordinator
+    must re-review changed owner and synchronize native outputs before application.
+  new_status: MAPPED
+  llm_assisted: true

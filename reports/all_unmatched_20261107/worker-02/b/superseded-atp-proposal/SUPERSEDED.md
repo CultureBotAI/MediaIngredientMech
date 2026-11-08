@@ -1,0 +1,1 @@
+These preliminary primary decisions and ATP owner are superseded. Independent original Merlen1999 Table1 retrieval revealed disodium ATP in CultureMech:007240. The generic ATP owner was not approved for all26 supplied-reagent occurrences and is withdrawn from active proposals. No maintained owner was created. See current b/decisions.json case74.

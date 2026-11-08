@@ -1,0 +1,67 @@
+identifier: MICRO:0000520
+preferred_term: Clarified rumen fluid
+ontology_mapping:
+  ontology_id: MICRO:0000520
+  ontology_label: clarified rumen fluid
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  match_level: EXACT
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech:output/ingredient_occurrences.tsv
+    notes: Surface form appears in CultureMech's occurrence table and was grounded to MICRO:0000520 on
+      an exact match against the ontology label. Restored from the record's own creation history (#541);
+      the residual importer wrote this provenance only into the published SSSOM.
+  - evidence_type: CURATOR_JUDGMENT
+    source: worker02 source review
+    notes: Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json
+      and captured primary/ontology evidence. Existing stock, form and evidence-quality concerns remain
+      held.
+  - evidence_type: MANUAL_CURATION
+    source: reports/all_unmatched_20261107/worker-02/b/evidence.json
+    notes: 'Add source-bound exact alias(es) ''Rumen fluid, clarified (see below)''. Sources: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1201;
+      https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1330; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=355;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M349; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1287'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 6
+  media_count: 6
+curation_history:
+- timestamp: '2026-08-30T10:35:03.361102+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: CREATED_FROM_CULTUREMECH_RESIDUAL
+  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (6 mentions across 6 recipes).
+    Grounded to MICRO:0000520 (''clarified rumen fluid'') on an exact match of the canonical label to
+    the query ''Clarified rumen fluid''. Source: culturemech:output/ingredient_occurrences.tsv.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-06T07:34:56.956907+00:00'
+  curator: claude_restore_culturemech_evidence
+  action: CORRECTED
+  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table as the source of
+    this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL history
+    entry but absent from the structured field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
+    from the published row (#541).
+  llm_assisted: false
+- timestamp: '2026-11-08T05:18:37.555660+00:00'
+  curator: codex_worker02_research_a
+  action: PROPOSED_SOURCE_ALIAS
+  changes: 'Add source-backed same-substance aliases: [''Rumen fluid, clarified''].'
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Source-review proposal only; no maintained record or downstream data changed; coordinator integration
+    and independent review required.
+- timestamp: '2026-11-08T05:21:07.836003+00:00'
+  curator: codex_worker02_source_review
+  action: ADDED_SYNONYMS
+  changes: Add source-bound exact alias(es) 'Rumen fluid, clarified (see below)'. Isolated proposal only;
+    coordinator must re-review changed owner and synchronize native outputs before application.
+  new_status: MAPPED
+  llm_assisted: true
+synonyms:
+- synonym_text: Rumen fluid, clarified
+  synonym_type: EXACT_SYNONYM
+  source: source_review_worker02:CM_NAME:5b9a01c18f694309117620b29aee602b98ff2996301cb28f5c61fdbb347389c2
+- synonym_text: Rumen fluid, clarified (see below)
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source case CM_NAME:d08c9e0edf98199867289615e953de26f3665566101d8d43ca0d93da6e07aedc

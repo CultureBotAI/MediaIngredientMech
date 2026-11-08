@@ -1,0 +1,2142 @@
+<!doctype html><html lang="en"><head>
+
+<title>MeSH Browser</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+
+<link rel="stylesheet" href="/public/css/font-awesome.css">
+<link rel="stylesheet" href="/public/css/bootstrap.css">
+<link rel="stylesheet" href="/public/css/mongoMesh.css">
+<link rel="icon" type="image/jpeg" href="/public/img/meshLogo.jpg">
+
+<base href="/">
+<script src="https://www.nlm.nih.gov/coop_all_uswds.js?v=1794115691935"></script>
+
+<script>
+
+    if (document.domain != "localhost")
+        document.domain = "nlm.nih.gov";
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        function checkBanner(msg, id) {
+
+            if (!msg) return;
+            id = `${id}-banner`;
+
+            if ((new RegExp(`(^|; *)${id}=`)).test(document.cookie))
+                return;
+
+            document.querySelector(`#${id} > p`)
+                    .insertAdjacentHTML("afterbegin", msg);
+            document.getElementById(id).style.display = "table-row";
+
+        }
+
+        try { checkBanner(coopmsg, "coop"); } catch (error) {
+            // The "coopmsg" variable may be undefined.
+            if (!(error instanceof ReferenceError))
+                throw error;
+        }
+
+        try { checkBanner(noncoopMessageALL, "noncoop"); }
+        catch (error) {
+            // The "noncoopMessageALL" variable may be undefined.
+            if (!(error instanceof ReferenceError))
+                throw error;
+        }
+
+    });
+
+    var dcmsLinks = false,
+        dcmsParam = dcmsLinks
+                    ? function (sep) { return sep + "dcmsLinks=true"; }
+                    : function (   ) { return ""                    ; };
+
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){
+        var _fullPath = window.location.href;
+        var urlParams = _fullPath.slice(_fullPath.indexOf('?') + 1).split('&');
+        var IsOpen = "false";
+        if (urlParams != undefined && urlParams != null && urlParams != "") {
+            IsOpen = urlParams[0].split("=")[1];
+        }
+
+        if (IsOpen == "false" || IsOpen == undefined || IsOpen != "true") {
+            w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        }
+    })(window,document,'script','dataLayer','GTM-5QZ7KJZ');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe sandbox src="https://www.googletagmanager.com/ns.html?id=GTM-5QZ7KJZ"
+                  height="0" width="0" style="display:none;visibility:hidden" title="googletagmanager"></iframe></noscript> 
+<!-- End Google Tag Manager (noscript) -->
+
+<script src="/public/js/elemUtil.js"></script>
+
+<script src="/public/js/record.js"  ></script>
+<script src="/public/js/treeDom.js" ></script>
+</head><body>
+
+<div>
+
+  <div id="coop-banner" style="display: none">
+    <p></p>
+    <button type="button" role="button" aria-label="Close" onclick=
+      "document.getElementById('coop-banner').style.display = 'none'; document.cookie = 'coop-banner=hidden; path=/';"
+    >Close</button>
+  </div>
+
+    <header class="NLMheader">
+        <a href="https://www.nlm.nih.gov/">
+          <img height="80" alt="NLM Logo"
+               src="https://www.nlm.nih.gov/images/NLM_White.png">
+        </a>
+        <!--<img class="starLogo"src="/public/img/NLM_Star.png" alt="NLM Star">-->
+    </header>
+<nav class="navbar navbar-default">
+
+  <div class="container-fluid">
+
+        <div class="navbar-header">
+
+          <button class="navbar-toggle collapsed" type="button"
+                  aria-expanded="false"
+                  onclick="toggleCollapse('bs-example-navbar-collapse-1')">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.nlm.nih.gov/mesh/">
+                <img id="meshNavbarLogo" src="/public/img/meshLogo.jpg" alt="MeSH Logo">
+            </a>
+        </div>
+
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"
+             aria-expanded="false">
+            <ul class="nav navbar-nav">
+                
+                <li><a href="/" id="mainSearchButton">Search</a></li>
+                <li><a href="/treeView">Tree View</a></li>
+                <li><a href="/MeSHonDemand">MeSH on Demand</a> </li> <!--Delete the Span Tags after  a few months, once MeSH on Demand is no longer new-->
+                <li><a href="https://meshb-prev.nlm.nih.gov/" target="_blank">MeSH 2027</a></li>
+                <li><a href="https://www.nlm.nih.gov/mesh/mbinfo.html" target="_blank">About</a></li>
+                <li><a href="https://www.nlm.nih.gov/mesh/meshsugg.html" target="_blank">Suggestions</a> </li>
+                <li><a href="https://support.nlm.nih.gov/support/create-case/" target="_blank">Contact Us</a></li>
+            </ul>
+
+        </div>
+
+  </div>
+
+  <div id="noncoop-banner" style="display: none">
+    <p></p>
+    <button type="button" role="button" aria-label="Close" onclick=
+      "document.getElementById('noncoop-banner').style.display = 'none'; document.cookie = 'noncoop-banner=hidden; path=/';"
+    >Close</button>
+  </div>
+
+</nav>
+
+</div>
+
+<div class="container">
+
+
+
+
+<h1>ferrous sulfate <small>MeSH Supplementary Concept Data 2026</small></h1>
+
+<ul class="nav nav-tabs">
+    <li id="details" class="active"
+        onclick="switchTab([ 'details', 'detailsTabContent' ])">
+        <a class="fakeLink">Details</a></li>
+    
+    <li id="concepts" onclick="switchTab([ 'concepts', 'conceptsTabContent' ])">
+        <a class="fakeLink">Concepts</a></li>
+</ul>
+
+
+
+<div class="tab-content"><br>
+<div id="detailsTabContent" class="tab-pane active">
+
+    <dl id="descriptorDetails_ferroussulfate"
+        class="dl-horizontal">
+
+        <dt>MeSH Supplementary</dt>
+
+        <dd>ferrous sulfate</dd>
+
+        
+
+        <dt>Unique ID</dt><dd>C020748</dd>
+
+        <dt>RDF Unique Identifier</dt>
+        <dd><a href="https://id.nlm.nih.gov/mesh/C020748.html">
+            http://id.nlm.nih.gov/mesh/C020748
+        </a></dd>
+
+        
+                <dt>Entry Term(s)</dt>
+                <dd>
+                    Aktiferrin
+                    
+                </dd><dd>
+                    Apo-Ferrous Sulfate
+                    
+                </dd><dd>
+                    Ceferro
+                    
+                </dd><dd>
+                    Conferon
+                    
+                </dd><dd>
+                    Eisendragees-ratiopharm
+                    
+                </dd><dd>
+                    Eisensulfat Stada
+                    
+                </dd><dd>
+                    FERROinfant
+                    
+                </dd><dd>
+                    Feospan
+                    
+                </dd><dd>
+                    Fer-Gen-Sol
+                    
+                </dd><dd>
+                    Fer-in-Sol
+                    
+                </dd><dd>
+                    Feratab
+                    
+                </dd><dd>
+                    Fero-Gradumet
+                    
+                </dd><dd>
+                    Ferodan
+                    
+                </dd><dd>
+                    Ferogradumet
+                    
+                </dd><dd>
+                    Ferro-Gradumet
+                    
+                </dd><dd>
+                    Ferrogamma
+                    
+                </dd><dd>
+                    Ferrograd
+                    
+                </dd><dd>
+                    Haemoprotect
+                    
+                </dd><dd>
+                    Hemobion
+                    
+                </dd><dd>
+                    Hemofer
+                    
+                </dd><dd>
+                    Hämatopan
+                    
+                </dd><dd>
+                    Kendural
+                    
+                </dd><dd>
+                    Mol-Iron
+                    
+                </dd><dd>
+                    Plastufer
+                    
+                </dd><dd>
+                    Slow-Fe
+                    
+                </dd><dd>
+                    Vitaferro Kapseln
+                    
+                </dd><dd>
+                    biofer
+                    
+                </dd><dd>
+                    ferrous sulfate, heptahydrate
+                    
+                </dd><dd>
+                    ferrous sulphate
+                    
+                </dd><dd>
+                    iron(II) sulfate heptahydrate
+                    
+                </dd>
+            <dt>Registry Numbers</dt>
+            
+                    <dd>39R4TAN1VT</dd>
+                    
+                    <dd>0</dd>
+                    
+                    <dd>7782-63-0</dd>
+                    
+            <dt>Related Numbers</dt>
+            
+                <dd>7720-78-7</dd>
+            
+                <dd>7782-63-0</dd>
+            
+                <dd>8060-18-2</dd>
+            
+            <dt>CAS Type 1 Name</dt><dd>sulfuric acid, iron(2+) salt (1:1)</dd>
+        
+                <dt>Previous Indexing</dt>
+                
+                    <dd>*IRON (77-81)</dd>
+                
+                    <dd>SULFATES (79-80)</dd>
+                
+        
+
+
+        
+                <span class="headingMappedToList"><dt>Heading Mapped to</dt>
+                
+                    <dd>
+                    <a href="/record/ui?ui=D005296">
+                        *Ferrous Compounds</a>
+                    
+                    </dd>
+                
+                </span>
+            
+            <dt>Frequency</dt><dd>2128</dd>
+        
+            <dt>Note</dt><dd>Ferro-Gradumet is ferrous sulfate in controlled release form; RN given refers to Fe(+2)[1:1] salt</dd>
+        
+                <dt>Source</dt>
+                
+                    <dd>Acta Paediatr Scand 1979;68(5):705</dd>
+                
+                    <dd>Arch Environ Health 1979;34(6):424</dd>
+                
+                    <dd>Chem Biol Interact 26(2):121;1979</dd>
+                
+                    <dd>Ginekol Pol 46(5):573;1975</dd>
+                
+                    <dd>Pol Tyg Lek 32(26):1017;1977</dd>
+                
+                    <dd>Ther Hung 1979;27(4):169</dd>
+                
+                    <dd>Ther Hung 24(1):33;1976</dd>
+                
+                <span id="indexingInformation"><dt>Indexing Information</dt>
+                
+                    <dd class="ii">
+                    <a href="/record/ui?ui=D003692">
+                    Delayed-Action Preparations</a></dd>
+                
+                    <dd class="ii">
+                    <a href="/record/ui?ui=D006397">
+                    Hematinics</a></dd>
+                
+                    <dd class="ii">
+                    <a href="/record/ui?ui=D017382">
+                    Reactive Oxygen Species</a></dd>
+                
+                    <dd class="ii">
+                    <a href="/record/ui?ui=D018798">
+                    Anemia, Iron-Deficiency</a></dd>
+                
+                </span>
+            
+                <dt>Date Introduced</dt>
+                <dd>1975/01/01</dd>
+            
+                <dt>Last Updated</dt>
+                <dd>2016/10/06</dd>
+            
+
+    </dl>
+
+</div>
+
+
+
+<div id="conceptsTabContent" class="tab-pane">
+
+    <button id="ExpandAll" class="btn btn-default btn-sm pull-right"
+            onclick="toggleConcepts()">
+        <span id="expandConcepts"                        >  Expand All</span>
+        <span id="collapseConcepts" style="display: none">Collapse All</span>
+    </button>
+
+    
+
+        <div>
+        <span id="Nightwatch_cp_0_0"
+              onclick="toggleCollapse('cp_0_0', 'Nightwatch_cp_0_0')">
+        <a class="fakeLink"><b>
+            ferrous sulfate
+            <i>Preferred</i>
+        </b></a></span>
+
+        <div id="cp_0_0" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0074816</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>39R4TAN1VT</dd>
+            
+                <dt>Related Numbers</dt>
+                
+                    <dd>7720-78-7</dd>
+                
+                    <dd>7782-63-0</dd>
+                
+                    <dd>8060-18-2</dd>
+                
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_0_0"
+                      onclick="toggleCollapse('termName_0_0',
+                                              'Nightwatch_termName_0_0')">
+                    <a class="fakeLink"><b>ferrous sulfate</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_0_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104819<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    NON<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        <br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+                <dd>
+                <span id="Nightwatch_termName_0_1"
+                      onclick="toggleCollapse('termName_0_1',
+                                              'Nightwatch_termName_0_1')">
+                    <a class="fakeLink"><b>ferrous sulphate</b></a></span>
+
+                
+
+                <div id="termName_0_1" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104817<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    NON<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (1975)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_1_1"
+              onclick="toggleCollapse('cp_1_1', 'Nightwatch_cp_1_1')">
+        <a class="fakeLink"><b>
+            Conferon
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_1_1" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0074812</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>0</dd>
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_1_0"
+                      onclick="toggleCollapse('termName_1_0',
+                                              'Nightwatch_termName_1_0')">
+                    <a class="fakeLink"><b>Conferon</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_1_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104815<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (1975)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_2_2"
+              onclick="toggleCollapse('cp_2_2', 'Nightwatch_cp_2_2')">
+        <a class="fakeLink"><b>
+            Feospan
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_2_2" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0074813</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>0</dd>
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_2_0"
+                      onclick="toggleCollapse('termName_2_0',
+                                              'Nightwatch_termName_2_0')">
+                    <a class="fakeLink"><b>Feospan</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_2_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104816<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        <br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_3_3"
+              onclick="toggleCollapse('cp_3_3', 'Nightwatch_cp_3_3')">
+        <a class="fakeLink"><b>
+            Hemofer
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_3_3" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0074815</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>0</dd>
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_3_0"
+                      onclick="toggleCollapse('termName_3_0',
+                                              'Nightwatch_termName_3_0')">
+                    <a class="fakeLink"><b>Hemofer</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_3_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104818<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (1975)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_4_4"
+              onclick="toggleCollapse('cp_4_4', 'Nightwatch_cp_4_4')">
+        <a class="fakeLink"><b>
+            biofer
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_4_4" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0119226</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>0</dd>
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_4_0"
+                      onclick="toggleCollapse('termName_4_0',
+                                              'Nightwatch_termName_4_0')">
+                    <a class="fakeLink"><b>biofer</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_4_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T149230<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (1984)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_5_5"
+              onclick="toggleCollapse('cp_5_5', 'Nightwatch_cp_5_5')">
+        <a class="fakeLink"><b>
+            ferrous sulfate, heptahydrate
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_5_5" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0314291</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>7782-63-0</dd>
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_5_0"
+                      onclick="toggleCollapse('termName_5_0',
+                                              'Nightwatch_termName_5_0')">
+                    <a class="fakeLink"><b>ferrous sulfate, heptahydrate</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_5_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T344291<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>08/18/1999<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    NON<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (1975)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+                <dd>
+                <span id="Nightwatch_termName_5_1"
+                      onclick="toggleCollapse('termName_5_1',
+                                              'Nightwatch_termName_5_1')">
+                    <a class="fakeLink"><b>iron(II) sulfate heptahydrate</b></a></span>
+
+                
+
+                <div id="termName_5_1" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T848167<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>08/20/2013<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    NON<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (2014)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_6_6"
+              onclick="toggleCollapse('cp_6_6', 'Nightwatch_cp_6_6')">
+        <a class="fakeLink"><b>
+            Aktiferrin
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_6_6" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478213</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_6_0"
+                      onclick="toggleCollapse('termName_6_0',
+                                              'Nightwatch_termName_6_0')">
+                    <a class="fakeLink"><b>Aktiferrin</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_6_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625241<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_7_7"
+              onclick="toggleCollapse('cp_7_7', 'Nightwatch_cp_7_7')">
+        <a class="fakeLink"><b>
+            Apo-Ferrous Sulfate
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_7_7" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478214</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_7_0"
+                      onclick="toggleCollapse('termName_7_0',
+                                              'Nightwatch_termName_7_0')">
+                    <a class="fakeLink"><b>Apo-Ferrous Sulfate</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_7_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625243<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        CA<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_8_8"
+              onclick="toggleCollapse('cp_8_8', 'Nightwatch_cp_8_8')">
+        <a class="fakeLink"><b>
+            Ceferro
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_8_8" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478215</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_8_0"
+                      onclick="toggleCollapse('termName_8_0',
+                                              'Nightwatch_termName_8_0')">
+                    <a class="fakeLink"><b>Ceferro</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_8_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625245<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_9_9"
+              onclick="toggleCollapse('cp_9_9', 'Nightwatch_cp_9_9')">
+        <a class="fakeLink"><b>
+            Eisendragees-ratiopharm
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_9_9" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478216</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_9_0"
+                      onclick="toggleCollapse('termName_9_0',
+                                              'Nightwatch_termName_9_0')">
+                    <a class="fakeLink"><b>Eisendragees-ratiopharm</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_9_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625247<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_10_10"
+              onclick="toggleCollapse('cp_10_10', 'Nightwatch_cp_10_10')">
+        <a class="fakeLink"><b>
+            Eisensulfat Stada
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_10_10" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478217</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_10_0"
+                      onclick="toggleCollapse('termName_10_0',
+                                              'Nightwatch_termName_10_0')">
+                    <a class="fakeLink"><b>Eisensulfat Stada</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_10_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625249<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_11_11"
+              onclick="toggleCollapse('cp_11_11', 'Nightwatch_cp_11_11')">
+        <a class="fakeLink"><b>
+            Fer-Gen-Sol
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_11_11" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478219</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_11_0"
+                      onclick="toggleCollapse('termName_11_0',
+                                              'Nightwatch_termName_11_0')">
+                    <a class="fakeLink"><b>Fer-Gen-Sol</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_11_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625253<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        US<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_12_12"
+              onclick="toggleCollapse('cp_12_12', 'Nightwatch_cp_12_12')">
+        <a class="fakeLink"><b>
+            Fer-in-Sol
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_12_12" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478220</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_12_0"
+                      onclick="toggleCollapse('termName_12_0',
+                                              'Nightwatch_termName_12_0')">
+                    <a class="fakeLink"><b>Fer-in-Sol</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_12_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625255<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        <br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_13_13"
+              onclick="toggleCollapse('cp_13_13', 'Nightwatch_cp_13_13')">
+        <a class="fakeLink"><b>
+            Feratab
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_13_13" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478228</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_13_0"
+                      onclick="toggleCollapse('termName_13_0',
+                                              'Nightwatch_termName_13_0')">
+                    <a class="fakeLink"><b>Feratab</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_13_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625275<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        US<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_14_14"
+              onclick="toggleCollapse('cp_14_14', 'Nightwatch_cp_14_14')">
+        <a class="fakeLink"><b>
+            Ferodan
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_14_14" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478229</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_14_0"
+                      onclick="toggleCollapse('termName_14_0',
+                                              'Nightwatch_termName_14_0')">
+                    <a class="fakeLink"><b>Ferodan</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_14_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625277<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        CA<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_15_15"
+              onclick="toggleCollapse('cp_15_15', 'Nightwatch_cp_15_15')">
+        <a class="fakeLink"><b>
+            Ferrogamma
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_15_15" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478230</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_15_0"
+                      onclick="toggleCollapse('termName_15_0',
+                                              'Nightwatch_termName_15_0')">
+                    <a class="fakeLink"><b>Ferrogamma</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_15_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625279<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_16_16"
+              onclick="toggleCollapse('cp_16_16', 'Nightwatch_cp_16_16')">
+        <a class="fakeLink"><b>
+            FERROinfant
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_16_16" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478231</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_16_0"
+                      onclick="toggleCollapse('termName_16_0',
+                                              'Nightwatch_termName_16_0')">
+                    <a class="fakeLink"><b>FERROinfant</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_16_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625281<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_17_17"
+              onclick="toggleCollapse('cp_17_17', 'Nightwatch_cp_17_17')">
+        <a class="fakeLink"><b>
+            Haemoprotect
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_17_17" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478233</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_17_0"
+                      onclick="toggleCollapse('termName_17_0',
+                                              'Nightwatch_termName_17_0')">
+                    <a class="fakeLink"><b>Haemoprotect</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_17_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625285<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_18_18"
+              onclick="toggleCollapse('cp_18_18', 'Nightwatch_cp_18_18')">
+        <a class="fakeLink"><b>
+            Hemobion
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_18_18" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478234</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_18_0"
+                      onclick="toggleCollapse('termName_18_0',
+                                              'Nightwatch_termName_18_0')">
+                    <a class="fakeLink"><b>Hemobion</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_18_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625287<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        MX<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_19_19"
+              onclick="toggleCollapse('cp_19_19', 'Nightwatch_cp_19_19')">
+        <a class="fakeLink"><b>
+            Hämatopan
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_19_19" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478235</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_19_0"
+                      onclick="toggleCollapse('termName_19_0',
+                                              'Nightwatch_termName_19_0')">
+                    <a class="fakeLink"><b>Hämatopan</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_19_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625289<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_20_20"
+              onclick="toggleCollapse('cp_20_20', 'Nightwatch_cp_20_20')">
+        <a class="fakeLink"><b>
+            Mol-Iron
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_20_20" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478236</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_20_0"
+                      onclick="toggleCollapse('termName_20_0',
+                                              'Nightwatch_termName_20_0')">
+                    <a class="fakeLink"><b>Mol-Iron</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_20_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625291<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        US<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_21_21"
+              onclick="toggleCollapse('cp_21_21', 'Nightwatch_cp_21_21')">
+        <a class="fakeLink"><b>
+            Plastufer
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_21_21" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478237</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_21_0"
+                      onclick="toggleCollapse('termName_21_0',
+                                              'Nightwatch_termName_21_0')">
+                    <a class="fakeLink"><b>Plastufer</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_21_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625293<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_22_22"
+              onclick="toggleCollapse('cp_22_22', 'Nightwatch_cp_22_22')">
+        <a class="fakeLink"><b>
+            Slow-Fe
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_22_22" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478238</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_22_0"
+                      onclick="toggleCollapse('termName_22_0',
+                                              'Nightwatch_termName_22_0')">
+                    <a class="fakeLink"><b>Slow-Fe</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_22_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625295<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        <br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_23_23"
+              onclick="toggleCollapse('cp_23_23', 'Nightwatch_cp_23_23')">
+        <a class="fakeLink"><b>
+            Ferro-Gradumet
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_23_23" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0074810</dd>
+
+            
+                <dt>Registry Numbers</dt>
+                <dd>0</dd>
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_23_0"
+                      onclick="toggleCollapse('termName_23_0',
+                                              'Nightwatch_termName_23_0')">
+                    <a class="fakeLink"><b>Ferro-Gradumet</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_23_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104814<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        AU<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+                <dd>
+                <span id="Nightwatch_termName_23_1"
+                      onclick="toggleCollapse('termName_23_1',
+                                              'Nightwatch_termName_23_1')">
+                    <a class="fakeLink"><b>Ferogradumet</b></a></span>
+
+                
+
+                <div id="termName_23_1" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T104813<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>01/01/1955<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        NLM (1975)<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+                <dd>
+                <span id="Nightwatch_termName_23_2"
+                      onclick="toggleCollapse('termName_23_2',
+                                              'Nightwatch_termName_23_2')">
+                    <a class="fakeLink"><b>Fero-Gradumet</b></a></span>
+
+                
+
+                <div id="termName_23_2" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625237<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        <br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+                <dd>
+                <span id="Nightwatch_termName_23_3"
+                      onclick="toggleCollapse('termName_23_3',
+                                              'Nightwatch_termName_23_3')">
+                    <a class="fakeLink"><b>Ferrograd</b></a></span>
+
+                
+
+                <div id="termName_23_3" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625238<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        <br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+                <dd>
+                <span id="Nightwatch_termName_23_4"
+                      onclick="toggleCollapse('termName_23_4',
+                                              'Nightwatch_termName_23_4')">
+                    <a class="fakeLink"><b>Kendural</b></a></span>
+
+                
+
+                <div id="termName_23_4" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625239<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+        <div>
+        <span id="Nightwatch_cp_24_24"
+              onclick="toggleCollapse('cp_24_24', 'Nightwatch_cp_24_24')">
+        <a class="fakeLink"><b>
+            Vitaferro Kapseln
+            <i>Narrower</i>
+        </b></a></span>
+
+        <div id="cp_24_24" class="collapse" style="display: none"
+             aria-expanded="false">
+        <dl class="dl-horizontal">
+
+            <dt>Concept UI</dt><dd>M0478239</dd>
+
+            
+
+            <dt>Terms</dt>
+
+            
+
+                <dd>
+                <span id="Nightwatch_termName_24_0"
+                      onclick="toggleCollapse('termName_24_0',
+                                              'Nightwatch_termName_24_0')">
+                    <a class="fakeLink"><b>Vitaferro Kapseln</b></a></span>
+
+                
+                    <i>Preferred Term</i>
+                
+
+                <div id="termName_24_0" class="collapse"
+                     style="display: none" aria-expanded="false">
+
+                    <b class="conceptsTabTermHeading">Term UI</b>
+                    T625297<br>
+
+                    
+                        <b class="conceptsTabTermHeading">Date</b>12/21/2004<br>
+                    
+
+                    <b class="conceptsTabTermHeading">LexicalTag</b>
+                    TRD<br>
+
+                    
+                        <b class="conceptsTabTermHeading">ThesaurusID</b>
+                        DE<br>
+                    
+
+                    <br>
+
+                </div>
+
+            </dd>
+
+        </dl></div>
+
+    </div>
+
+</div></div>
+
+<small class="pull-right">
+    page delivered in 0.012s
+</small>
+
+</div>
+
+<footer class="footer">
+    <div class="container-fluid"><div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <p><a href="https://www.nlm.nih.gov/socialmedia/index.html">
+                    Connect with NLM
+                </a></p>
+                <ul class="list-inline">
+                    <li>
+                    <a title="External link: please review our privacy policy."
+                       href="https://twitter.com/NLM_NIH">
+                        <img src="https://www.nlm.nih.gov/images/Twitter_W.svg"
+                             alt="Twitter">
+                    </a></li>
+                    <li>
+                    <a title="External link: please review our privacy policy."
+                       href="https://www.facebook.com/nationallibraryofmedicine"
+                    ><img src="https://www.nlm.nih.gov/images/Facebook_W.svg"
+                          alt="Facebook">
+                    </a></li>
+                    <li>
+                    <a title="External link: please review our privacy policy."
+                       href="https://www.youtube.com/user/NLMNIH">
+                        <img src="https://www.nlm.nih.gov/images/YouTube_W.svg"
+                             alt="You Tube">
+                    </a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <p>National Library of Medicine<br>
+                    <a href="https://www.google.com/maps/place/8600+Rockville+Pike,+Bethesda,+MD+20894/@38.9959508,-77.101021,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7c95e25765ddb:0x19156f88b27635b8!8m2!3d38.9959508!4d-77.0988323">
+                        8600 Rockville Pike<br>
+                        Bethesda, MD 20894
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <p><a href="https://www.nlm.nih.gov/web_policies.html">
+                    Web Policies
+                </a><br>
+                <a href="https://www.nih.gov/institutes-nih/nih-office-director/office-communications-public-liaison/freedom-information-act-office">
+                    FOIA
+                </a><br>
+                <a href="https://www.hhs.gov/vulnerability-disclosure-policy/index.html">
+                    HHS Vulnerability Disclosure
+                </a></p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <p><a href=
+                      "https://support.nlm.nih.gov?from=https://www.nlm.nih.gov/">
+                    NLM Support Center
+                </a><br>
+                <a href="https://www.nlm.nih.gov/accessibility.html">
+                    Accessibility
+                </a><br>
+                <a href="https://www.nlm.nih.gov/careers/careers.html">
+                    Careers
+                </a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <p class="text-center"> <a href="https://www.nlm.nih.gov/">NLM</a> | <a href="https://www.nih.gov/">NIH</a> | <a href="https://www.hhs.gov/">HHS</a> | <a href="https://www.usa.gov/">USA.gov</a></p>
+            </div>
+        </div>
+    </div></div>
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_cwOHfLkxRr4n4W2","https://zncwohflkxrr4n4w2-nlmenterprise.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_cwOHfLkxRr4n4W2")).start()}catch(i){}})();
+</script><div id='ZN_cwOHfLkxRr4n4W2'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+</footer>
+
+</body></html>
+

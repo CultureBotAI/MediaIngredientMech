@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-08T05:28:21.941306+00:00",
+  "command": [
+    ".temp/all-unmatched-worker-02/venv/bin/python",
+    "-B",
+    "scripts/validate_strict.py",
+    "reports/all_unmatched_20261107/worker-02/c/proposed-owners",
+    "--out",
+    "reports/all_unmatched_20261107/worker-02/c/strict-final.tsv"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "Validating 6 files with 17 workers; schema=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\n=== validate-strict summary ===\n  files scanned:      6\n  files with ERROR:   0\n  total ERROR rows:   0\n  TSV:                reports/all_unmatched_20261107/worker-02/c/strict-final.tsv\n",
+  "payloads": [
+    {
+      "root": "artifact",
+      "path": "c/proposed-owners/c-proposal-cerium-nitrate-hexahydrate.yaml",
+      "sha256": "9d866fd31aacee61796c647228dfc42817335b193ba5dad8c6eed05469c379e2"
+    },
+    {
+      "root": "artifact",
+      "path": "c/proposed-owners/c-proposal-lanthanum-nitrate-hexahydrate.yaml",
+      "sha256": "9cb5b03b12dac60f07141e7722a88f3b211459e9dd88318bf9c606385f2c1a38"
+    },
+    {
+      "root": "artifact",
+      "path": "c/proposed-owners/c-proposal-reject-dl-aliases-on-l-malate.yaml",
+      "sha256": "e92c173f52dfffdac529265905957bf9f331ff010f4f6daedd1bd9d4e8ca087a"
+    },
+    {
+      "root": "artifact",
+      "path": "c/proposed-owners/c-proposal-nickel-sulfate-6-water-properties.yaml",
+      "sha256": "5af4d77e4240a5e452ee0760075144d64be40829ec25caf785e5a38ca9772371"
+    },
+    {
+      "root": "artifact",
+      "path": "c/proposed-owners/c-proposal-nickel-sulfate-7-water-properties.yaml",
+      "sha256": "2a2df4ff5776b64af861c6d49d13fb7f122c5457371f2854b14ab84b6bb37b08"
+    },
+    {
+      "root": "artifact",
+      "path": "c/proposed-owners/c-proposal-o-carbamyl-d-serine-scope.yaml",
+      "sha256": "14f263cd3c67a3f2327408414d1f411a66f2ba005525223b4a25106e0ca81592"
+    }
+  ],
+  "prior_default_path_side_effect": "An immediately preceding validate_strict.py run without --out passed 6 files/0 errors but wrote reports/instance_validation_failures.tsv. Root was informed; child did not remove or alter that default file afterward. Controlled rerun above records the intended output under c/."
+}

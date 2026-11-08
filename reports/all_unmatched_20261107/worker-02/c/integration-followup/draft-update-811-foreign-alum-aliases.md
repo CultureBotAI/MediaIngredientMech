@@ -1,0 +1,9 @@
+Proposed bounded update to [#811](https://github.com/CultureBotAI/MediaIngredientMech/issues/811); this issue already explicitly lists both labels below, so no new issue is needed.
+
+`data/ingredients/mapped/Alk_So42.yaml` still carries `Na SiO .9H O` and `ZnSO .7H O` as resolving `EXACT_SYNONYM` values on CHEBI:86463 potassium aluminium sulfate. Their sodium/silicon and zinc formula fragments do not denote that aluminium/potassium sulfate identity. The defect does not require guessing a complete intended hydrate formula for either malformed string.
+
+The independently reviewed isolated `a-proposal-anhydrous-alum` retypes both values to `REJECTED_LABEL`, preserving exact source text and provenance, while adding a separately source-supported explicitly anhydrous alias. Baseline SHA256: `eb7149b3301b2f405c59d0463b04bf6db774703bb3e914d125ffe9086ac717ed`; proposed SHA256: `8b74660fe96d2e9cc2eaeb36ad1e995a6d86f548f817041541959f754f2c60ce`. C166 and the exact proposal bytes were independently reviewed by B in `b/review-a/additional-review-c166.json`.
+
+Preserve `SEM:15761b556078b9a904a8` and `reports/yaml_record_review/Alk_So42.md`. That historical finding also covers CultureMech metadata strings, so rejection of the two foreign fragments does not close the whole finding or approve the entire owner. The older #529 duplicate-synonym issue and #662 confidence-table issue concern different defects and are not substitutes for this existing #811 entry.
+
+Follow-up: guarded integration, withdrawal of inherited support for changed bytes, final full-owner review, and coordinator-controlled synchronization so these values remain provenance-only and do not resolve or enter published `other`. No source ingredient is reassigned to a guessed sodium silicate or zinc sulfate hydrate, no occurrence count is changed, and no downstream rebuild has run in this source-review campaign.

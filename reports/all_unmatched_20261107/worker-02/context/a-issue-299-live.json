@@ -1,0 +1,41 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "299",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,body,state,url,createdAt,closedAt,comments"
+  ],
+  "accessed_at": "2026-11-08T05:35:29.207131+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "result": {
+    "body": "Found while sizing #273 against the now-runnable KGX export (#294). This is a\n**different and more severe defect** than #273, which is why it is filed\nseparately: #273 is prose leaking into a name field; this is a whole composition\ntable that was never parsed, with the chemical name landing in the *concentration*.\n\n## The signature\n\n`data/normalized_yaml/bacterial/NBRC_1003.yaml`:\n\n```yaml\ningredients:\n- preferred_term: ''                    # <- name is empty\n  concentration:\n    value: MgSO4·7H2O                   # <- the name is HERE\n    unit: G_PER_L\nsolutions:\n- preferred_term: MgSO4·7H2O0.5g(NH4)2SO40.4gK2HPO40.2gKCl0.1gDistilled water1LAdjust\n    pH to 2.0 with H2SO4.Heterotrophic growth on yeast extract:Add 10 mg/l of FeSO4·7H2O\n    to the medium. After autoclaving, add yeast extract from sterile stock solution\n    to final concentration of 0.25 g/l. ...\n  composition: []                       # <- the actual composition is empty\n  name: Unknown solution\n```\n\nThe source table `MgSO4·7H2O 0.5g / (NH4)2SO4 0.4g / ...` was concatenated into\none string and dropped into `solutions[].preferred_term`, `composition` was left\nempty, and a single ingredient row was emitted whose name/value are swapped. The\nrecord's composition is unrecoverable from the normalized layer.\n\n## Scale, measured over all 15,877 records\n\n| signature | rows | records |\n|---|---:|---:|\n| `ingredients[].preferred_term` is empty | 94 | 94 |\n| `ingredients[].concentration.value` is non-numeric | 1,616 | 593 |\n| both — the name landed **in** the concentration | 59 | 59 |\n| `solutions[]` with `composition: []` and a concatenated-table name | 37 | 37 |\n\n169,512 ingredient rows scanned. The 1,616 non-numeric concentrations are the\nwidest band and likely mix several causes; the 59 name-into-concentration swaps\nare unambiguous.\n\nConcentrated in NBRC imports (`NBRC_1003`, `1021`, `1038`, `1051`, `1063`, …),\nwhich points at one importer rather than scattered curation error.\n\n## It does reach the KGX export\n\nUnlike #273's ungrounded ingredient rows — which produce **0 nodes and 0 edges**,\nbecause `medium_to_ingredient_edge` returns `None` without a `term.id` — solution\nids are minted from `preferred_term` and need no grounding. Measured on the full\nexport:\n\n```\nunparsed-composition solution nodes in culturemech_nodes.tsv : 54\nedges touching them                                          : 86\n```\n\nSo these are real garbage nodes in the graph, e.g.\n\n```\nculturemech:solution_MgSO4·7H2O0.5gNH42SO40.4gK2HPO40.2gKCl0.1gDistilled_water1L\nAdjust_pH_to_2.0_with_H2SO4.Heterotrophic_growth_on_yeast_extract_Add_10_mg_l_of...\n```\n\n(That count uses a `>70 chars + letter-digit` heuristic and slightly over-captures\n— a few are legitimate cross-references like\n`solution_Modified_Brock's_salt_base_solution_see_Medium_[M156]`. The tighter\n`composition: []` + blob test gives 37.)\n\n## Proposed scope\n\n1. **Detect and gate** — an audit that reports the four signatures above and\n   fails when counts rise, so no new import reintroduces them.\n2. **Recover, do not re-parse from the corrupted string.** The concatenated blob\n   has lost the delimiters (`MgSO4·7H2O0.5g` — no separator between name and\n   amount), so splitting it is guesswork on hydrate dots and multi-digit numbers.\n   Check `data/raw/` and `data/import_tracking/` for the pre-normalization NBRC\n   payload; if the table survives there, this is a re-import, not a re-parse.\n3. **Fix the importer** so the failure cannot recur, and record which importer.\n4. Until recovered, consider whether a record whose composition is empty and\n   whose only solution is an unparsed blob should be exported at all — a medium\n   node asserting `has_part` to a garbage solution is worse than a medium node\n   with no composition edges.\n\n## Acceptance criteria\n\n- No `ingredients[]` row has an empty `preferred_term`.\n- No `concentration.value` holds a chemical name.\n- No `solutions[]` entry has `composition: []` alongside a concatenated-table name.\n- The KGX export contains no solution node whose id is an unparsed composition.\n- An audit gates all of the above.\n\nRelated: #273 (prose in name fields — same family, different mechanism),\n#294/#295 (the export that made these visible).\n",
+    "closedAt": "2026-09-02T04:56:33Z",
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABSBlqKg",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Fixed. Verified on `main` at `e75a797bbf` today:\n\n```\n$ just audit-unparsed-composition\nFindings: 0 across 0 records\n  NAME_IN_CONCENTRATION    0\n  EMPTY_INGREDIENT_NAME    0\n  UNPARSED_SOLUTION_TABLE  0\n  PROSE_AS_INGREDIENT      0\nexit: 0\n```\n\nAll four detectors are at zero, and the recipe exits 0 (checked unpiped, not\nthrough `tail`).\n\nClosed by two commits:\n\n- **`1d619fa9cb`** (#300) — added the detectors and the gate for exactly this\n  signature: a chemical name sitting in `concentration.value` with an empty\n  `preferred_term`.\n- **`1d3110093d`** (#306) — recovered 62 NBRC composition tables from the\n  preserved source HTML, which is the repair this issue asked for.\n\nThe ratchet has since been tightened from `--max-allowed 169 --max-exported 31`\nto `--max-allowed 0 --max-exported 0` (`project.justfile:435`), so any\nrecurrence fails rather than fitting under a budget.\n\nOne note carried forward rather than lost here: **#302** observes that this\naudit gates on a *total* across four detectors, which would let them trade\nagainst each other. At a baseline of 0 that trade is impossible, so the concern\nis dormant for this audit specifically — it remains live for\n`audit-concentration-plausibility` (9,688) and `check-chebi-grounding` (101),\nand #302 owns it.",
+        "createdAt": "2026-09-02T04:56:32Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/299#issuecomment-5504592426",
+        "viewerDidAuthor": true
+      }
+    ],
+    "createdAt": "2026-08-19T05:30:49Z",
+    "number": 299,
+    "state": "CLOSED",
+    "title": "NBRC composition tables were never parsed: chemical names sitting in concentration.value, whole recipes in solution names",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/299"
+  }
+}

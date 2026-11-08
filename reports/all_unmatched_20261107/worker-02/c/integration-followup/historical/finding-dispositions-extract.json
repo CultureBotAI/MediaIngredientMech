@@ -1,0 +1,71 @@
+{
+  "source_path": "reports/semantic_review_20260921/resolution/finding-dispositions.tsv",
+  "source_sha256": "c56c4d4d7332181e239798804ba80a6f49cfc7ed81d835c29312f25a963b64cf",
+  "rows": [
+    {
+      "finding_id": "SEM:15761b556078b9a904a8",
+      "source_record": "data/ingredients/mapped/Alk_So42.yaml",
+      "record_scope": "active",
+      "kind": "existing_record_review",
+      "severity": "major",
+      "affected_unit": "data/ingredients/mapped/Alk_So42.yaml",
+      "disposition": "open",
+      "reason": "The exact anhydrous potassium aluminium sulfate identity, CAS, chemistry, occurrence count, SSSOM row, and aggregate pass, but unrelated sodium silicate and zinc sulfate fragments plus CultureMech metadata remain in synonyms.",
+      "evidence": "reports/yaml_record_review/Alk_So42.md",
+      "current_record": "data/ingredients/mapped/Alk_So42.yaml",
+      "current_record_sha256": "eb7149b3301b2f405c59d0463b04bf6db774703bb3e914d125ffe9086ac717ed",
+      "resolution_status": "OPEN",
+      "resolution_reason": "Historical finding remains unresolved; no blanket approval.",
+      "resolution_evidence": ""
+    },
+    {
+      "finding_id": "SEM:40c78da59752cd7b40cd",
+      "source_record": "data/ingredients/mapped/Niso4_X_6_H2o.yaml",
+      "record_scope": "excluded_rejected",
+      "kind": "existing_record_review",
+      "severity": "minor",
+      "affected_unit": "data/ingredients/mapped/Niso4_X_6_H2o.yaml",
+      "disposition": "open",
+      "reason": "The rejected duplicate no longer publishes final rows, but stale tombstone fields remain.",
+      "evidence": "reports/yaml_record_review/Niso4_X_6_H2o.md",
+      "current_record": "data/ingredients/mapped/Niso4_X_6_H2o.yaml",
+      "current_record_sha256": "98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289",
+      "resolution_status": "EXCLUDED_REJECTED",
+      "resolution_reason": "Source record is explicitly rejected and absent from active graph.",
+      "resolution_evidence": ""
+    },
+    {
+      "finding_id": "SEM:1971ff4d47b066a4339f",
+      "source_record": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "record_scope": "active",
+      "kind": "existing_record_review",
+      "severity": "major",
+      "affected_unit": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "disposition": "open",
+      "reason": "The exact CHEBI:53504 heptahydrate identity passes, but stale anhydrous structure, parent synonyms, and a provisional TRACE_ELEMENT role remain.",
+      "evidence": "reports/yaml_record_review/Niso4_X_7_H2o.md",
+      "current_record": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "current_record_sha256": "18aac3d02606aacb2241a62f07e243436a4aa616685b826333d87f04caee75ff",
+      "resolution_status": "OPEN",
+      "resolution_reason": "Historical finding remains unresolved; no blanket approval.",
+      "resolution_evidence": ""
+    },
+    {
+      "finding_id": "SEM:db276e2e3eae5d2442dc",
+      "source_record": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "record_scope": "active",
+      "kind": "role_evidence",
+      "severity": "major",
+      "affected_unit": "MIM.assertion:3fb455eb30d6052a06a4fabe7d8cb9d9903609ff93852d9647bb2667c38bed8b",
+      "disposition": "open",
+      "reason": "Only explicitly provisional computational evidence is supplied; not an independently supported role claim.",
+      "evidence": "reports/yaml_record_review/Niso4_X_7_H2o.md | DECISIONS.md#roles",
+      "current_record": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "current_record_sha256": "18aac3d02606aacb2241a62f07e243436a4aa616685b826333d87f04caee75ff",
+      "resolution_status": "OPEN",
+      "resolution_reason": "Historical finding remains unresolved; no blanket approval.",
+      "resolution_evidence": ""
+    }
+  ],
+  "scope": "Exact rows for existing findings; historical statuses preserved, not modified by proposals."
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "author": "/root/research_c",
+  "at": "2026-11-08T05:40:36.963665+00:00",
+  "scope": "Concrete issue triage/drafts only; no external issue mutation, no new maintained changes and no update of stable primary/review artifacts.",
+  "input_manifest": [
+    {
+      "root": "artifact",
+      "path": "context/issue-811.json",
+      "sha256": "e62a6648488474f84c8ae5c53aa8fbd3757ea30b4d96d458703284199a862f2e"
+    },
+    {
+      "root": "artifact",
+      "path": "context/issue-868.json",
+      "sha256": "893c806f9d0e5edcd2b97f2cabf08b07f75a59ad6af87e4c91602df6d6b50916"
+    },
+    {
+      "root": "artifact",
+      "path": "context/issue-321.json",
+      "sha256": "d7aec13d043f8422bb8c1b288ad94b30c403365340bfab0dc7f72c71d61408ef"
+    },
+    {
+      "root": "artifact",
+      "path": "context/issue-1050.json",
+      "sha256": "c955447ff7ab8d4e6cfd38aec47cf43331fa4d6c6bd088875d160ff2407b3731"
+    },
+    {
+      "root": "artifact",
+      "path": "context/final-finding-issue-dedup.json",
+      "sha256": "67751bcaa020b32bda1f1f8b5ff4cb4a42b162e4c1204c18c133fe7f05d3febd"
+    },
+    {
+      "root": "artifact",
+      "path": "c/integration-followup/additional-issue-dedup.json",
+      "sha256": "7a70926865e5f87227206697e8da116f0bac72e4e731983c6d8a8008ed95875e"
+    },
+    {
+      "root": "artifact",
+      "path": "c/integration-followup/historical/finding-dispositions-extract.json",
+      "sha256": "bab7a907cc07d59faa3edd43f41acd789cc8c7b8695cda6d4e662861373bf7bf"
+    },
+    {
+      "root": "artifact",
+      "path": "validation/proposed-identity-collisions-final.json",
+      "sha256": "59087a02f5fe3f1810682480230d4fdda35e6bb23c0ac8319ad6919646c7a862"
+    }
+  ],
+  "findings": [
+    {
+      "finding_key": "worker02-o-carbamyl-d-serine-specific-concept",
+      "recommended_tracking": "new_issue_draft",
+      "draft": "c/integration-followup/draft-new-o-carbamyl-d-serine.md",
+      "reason": "Existing descriptor exact-synonym approval misses the NLM separate D concept; recorded exact-name, spelling, descriptor and concept queries found no matching issue.",
+      "proposal_ids": [
+        "c-proposal-o-carbamyl-d-serine-scope"
+      ],
+      "historical_finding_ids": [],
+      "preserve_review": "reports/yaml_record_review/O_Carbamyl_D_Serine.md",
+      "status": "draft_only_not_filed",
+      "draft_capture": {
+        "root": "artifact",
+        "path": "c/integration-followup/draft-new-o-carbamyl-d-serine.md",
+        "sha256": "b01ffbeb27d9e725f987c9b5fb1e4ea4bcfc4a6229ad9146e9fb455398a9d54a"
+      },
+      "proposal_bindings": [
+        {
+          "proposal_id": "c-proposal-o-carbamyl-d-serine-scope",
+          "owner_path": "data/ingredients/mapped/O_Carbamyl_D_Serine.yaml",
+          "before_sha256": "c2e412c5d2bfa83323f0d6dd9e0e10b9ee574bb8204c994a34485f3c18d6cccb",
+          "after_capture": {
+            "root": "artifact",
+            "path": "c/proposed-owners/c-proposal-o-carbamyl-d-serine-scope.yaml",
+            "sha256": "14f263cd3c67a3f2327408414d1f411a66f2ba005525223b4a25106e0ca81592"
+          }
+        }
+      ]
+    },
+    {
+      "finding_key": "worker02-nickel-sulfate-stale-hydrate-properties",
+      "recommended_tracking": "existing_issue_321_update_and_closure_reassessment",
+      "draft": "c/integration-followup/draft-update-321-nickel-properties.md",
+      "reason": "Known #321 hydrate-chemistry class and existing semantic findings; #320/#374 identity fixes remain valid. No duplicate generic hydrate issue.",
+      "proposal_ids": [
+        "c-proposal-nickel-sulfate-6-water-properties",
+        "c-proposal-nickel-sulfate-7-water-properties"
+      ],
+      "historical_finding_ids": [
+        "SEM:40c78da59752cd7b40cd",
+        "SEM:1971ff4d47b066a4339f",
+        "SEM:db276e2e3eae5d2442dc"
+      ],
+      "existing_issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/321",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/320",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/374"
+      ],
+      "status": "draft_only_not_posted",
+      "draft_capture": {
+        "root": "artifact",
+        "path": "c/integration-followup/draft-update-321-nickel-properties.md",
+        "sha256": "39581e1f5e7ab4d83a8fb804307e8d72f0e92d7ff5b76a7c72b05aded18b9f93"
+      },
+      "proposal_bindings": [
+        {
+          "proposal_id": "c-proposal-nickel-sulfate-6-water-properties",
+          "owner_path": "data/ingredients/mapped/Niso4_X_6_H2o.yaml",
+          "before_sha256": "98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289",
+          "after_capture": {
+            "root": "artifact",
+            "path": "c/proposed-owners/c-proposal-nickel-sulfate-6-water-properties.yaml",
+            "sha256": "5af4d77e4240a5e452ee0760075144d64be40829ec25caf785e5a38ca9772371"
+          }
+        },
+        {
+          "proposal_id": "c-proposal-nickel-sulfate-7-water-properties",
+          "owner_path": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+          "before_sha256": "18aac3d02606aacb2241a62f07e243436a4aa616685b826333d87f04caee75ff",
+          "after_capture": {
+            "root": "artifact",
+            "path": "c/proposed-owners/c-proposal-nickel-sulfate-7-water-properties.yaml",
+            "sha256": "2a2df4ff5776b64af861c6d49d13fb7f122c5457371f2854b14ab84b6bb37b08"
+          }
+        }
+      ]
+    },
+    {
+      "finding_key": "worker02-alum-foreign-formula-aliases",
+      "recommended_tracking": "existing_issue_811_update",
+      "draft": "c/integration-followup/draft-update-811-foreign-alum-aliases.md",
+      "reason": "Live captured #811 body already explicitly lists BOTH foreign labels; filename-only searches missed that dedup match. #529 and #662 concern unrelated duplicate/confidence questions.",
+      "proposal_ids": [
+        "a-proposal-anhydrous-alum"
+      ],
+      "historical_finding_ids": [
+        "SEM:15761b556078b9a904a8"
+      ],
+      "existing_issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811"
+      ],
+      "status": "draft_only_not_posted",
+      "draft_capture": {
+        "root": "artifact",
+        "path": "c/integration-followup/draft-update-811-foreign-alum-aliases.md",
+        "sha256": "ec3e8d2dced76d7094f32a20306c47db7a4e8b44b1efe7ce74254524f2595e26"
+      },
+      "proposal_bindings": [
+        {
+          "proposal_id": "a-proposal-anhydrous-alum",
+          "owner_path": "data/ingredients/mapped/Alk_So42.yaml",
+          "before_sha256": "eb7149b3301b2f405c59d0463b04bf6db774703bb3e914d125ffe9086ac717ed",
+          "after_capture": {
+            "root": "artifact",
+            "path": "a/proposed-owners/Alk_So42.yaml",
+            "sha256": "8b74660fe96d2e9cc2eaeb36ad1e995a6d86f548f817041541959f754f2c60ce"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No matching search result is bounded to recorded GitHub queries, not an assertion that no differently worded issue exists.",
+    "Historical finding dispositions remain unchanged; each proposed field/alias fix resolves only the documented portion after future guarded integration.",
+    "Rejected nickel six-water cleanup is nonpublishing archival hygiene; the active seven-water structure defect has different integration priority."
+  ]
+}

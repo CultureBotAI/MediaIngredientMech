@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_b",
+  "reviewed_at": "2026-11-08T05:46:58.014166+00:00",
+  "status": "approve_final_metadata_delta",
+  "scope": "Targeted exact index delta from b/review-final-staged.json; no repeated scientific review and no altered scientific/core/native inputs.",
+  "prior_staged_review": {
+    "path": "b/review-final-staged.json",
+    "sha256": "18df2820eb59ad8445d15942c65779590c539d14f6df150757d50226e8bd848e"
+  },
+  "staged_file_count": 1504,
+  "unchanged_prior_blobs": 1495,
+  "added_count": 6,
+  "changed_count": 3,
+  "removed_count": 0,
+  "content_bound_delta": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/reproducibility/review_native_staged.py",
+      "git_blob": "5450eea746522c04da323639501ef3bc8b8e40a8",
+      "mode": "100644",
+      "sha256": "7463099763454548857a6cc33205efee16403fa35b3ed3e8d448b6989d4fb9ff",
+      "bytes": 13475
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/review-final-staged.json",
+      "git_blob": "ac01eae549027dbce2e9b056e46d4480d457a2c9",
+      "mode": "100644",
+      "sha256": "18df2820eb59ad8445d15942c65779590c539d14f6df150757d50226e8bd848e",
+      "bytes": 493992
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/review-native-bundle.json",
+      "git_blob": "36fee1783188e63dffe2efb59204715ad7686133",
+      "mode": "100644",
+      "sha256": "a9c77dd756367bb65ddbf412c87509201b0192cc69db305b5cbded90ab5056d1",
+      "bytes": 3120
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/posted-comment-408.json",
+      "git_blob": "817d1e66960bf5ea69510691d13d57a3340ccf12",
+      "mode": "100644",
+      "sha256": "394297248fba47fb2c729525f722043a506749de706287ecab3f1e910294d5c8",
+      "bytes": 472
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/issue-handoff.json",
+      "git_blob": "b49167b33deafabf2a524800754206abb404557d",
+      "mode": "100644",
+      "sha256": "07d36593378105696f2aff80cfd281d06020328fd32497d1ccfd4d5c48d5d04b",
+      "bytes": 3371
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/subagent-scopes-final.json",
+      "git_blob": "33b394e776b6f1d8aed5e9df139d3d557e86bd53",
+      "mode": "100644",
+      "sha256": "62f7b9044635fc8ad0a1ddd35da46624718f99a6aa280d31275ecfe7d73720b2",
+      "bytes": 33050
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/HANDOFF.md",
+      "git_blob": "5e9439f81c4b616d3744b58fc14e8568cf14d9aa",
+      "mode": "100644",
+      "sha256": "d95e2b29505f35f7f6a826e6b0a585cfd7b7ab585c20b4ae3ff5151f98dcb4c8",
+      "bytes": 11996
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/SHA256SUMS",
+      "git_blob": "6a8df05d21cd922ff0015234695d7c19f8cb9295",
+      "mode": "100644",
+      "sha256": "e737d713c2152c8d9b4446e8397e205f2d750c992ae50f060daefd914896c560",
+      "bytes": 214413
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/progress.json",
+      "git_blob": "4054f945ef70c27169c22b64d7c9c8febe9ed6e4",
+      "mode": "100644",
+      "sha256": "4cd4a9821349e139cba74aae5d611b67ca2a4c411a79b030dfbf47a4de8a8544",
+      "bytes": 31399
+    }
+  ],
+  "checks": {
+    "declared_delta_matches_actual_index": true,
+    "only_six_declared_added_artifacts_and_three_metadata_changes": true,
+    "all_delta_index_blobs_equal_working_bytes": true,
+    "all1503_manifest_entries_validate_and_cover_exact_staged_set_except_manifest": true,
+    "handoff_equals_previously_reviewed_corrected_bytes": true,
+    "actual_final_scopes_match_all188_coverage_records": true,
+    "reviewer_identity_equivalence": {
+      "/root/research_a": "codex_worker02_research_a",
+      "/root/research_b": "/root/research_b",
+      "/root/research_c": "/root/research_c"
+    },
+    "progress_changed_keys": [
+      "current_task",
+      "primary_scope_status",
+      "structural_checks",
+      "updated_at"
+    ],
+    "posted_408_receipt_matches_independently_approved_body": true,
+    "all188_final_decision_canonical_hashes_unchanged": true,
+    "all_scientific_native_inputs_unchanged": true
+  },
+  "findings": [],
+  "final_append_exception": "Root may append only this receipt and regenerate/stage SHA256SUMS to include it, then independently verify the complete index and manifest before commit/push. This excludes recursive inclusion of SHA256SUMS itself; it does not authorize any other content change.",
+  "limits": "This approves delivery of reviewed proposals and evidence, not maintained owner integration, quantity conversion, publication release, or a claim that commit/push already occurred. Prior independence limits and unavailable MICRO adapter remain."
+}

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "406",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,body,state,url,createdAt,closedAt,comments"
+  ],
+  "accessed_at": "2026-11-08T05:35:29.210153+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "result": {
+    "body": "The residual of #387, now that both of its populations are repaired. **One row,\ncorpus-wide.**\n\n```\nCultureMech:008849   data/normalized_yaml/bacterial/pcr_s11_medium.yaml\n  ingredients[4].preferred_term = \"Trace metals 'Gaffron\\xad+Se'\"\n                                                        ^^^^^^ U+00AD SOFT HYPHEN\n  concentration: 0.5 G_PER_L\n  media_term: TOGO:M2262 — \"PCR-S11 medium\"\n```\n\n## Why it is not the same defect as the rest of #387\n\n#387's two populations were parser damage — a field swap (497 numeric\n`preferred_term`s, fixed in #378) and truncation at a parenthesis (111 names,\nfixed in #391). Both destroyed information.\n\nThis one loses nothing. `Trace metals 'Gaffron+Se'` is a real name with a\n**discretionary hyphen** inside it: U+00AD renders as nothing unless a line\nbreaks there, so the string looks correct in every editor and report while\nbeing a different string to every matcher. It is almost certainly a\nsoft-wrap artifact from the source page carried through the import verbatim.\n\nMeasured across the whole corpus, this is the only ingredient name containing\nany invisible character — soft hyphen, ZWSP, ZWNJ, ZWJ, NBSP, BOM, word joiner\nor line/paragraph separator. So it is a single record, not a class.\n\n## Consequence\n\nThe name cannot ground: no matcher normalises U+00AD, so it fails MIM's label\nindex and every exact-match path. It is one of the 3,217 unresolvable names that\n`just audit-ungrounded-ingredients` reports.\n\n## Suggested\n\nDelete the soft hyphen. That is not a curation decision — U+00AD carries no\nsemantic content in a chemical name and its removal cannot change what the name\ndenotes.\n\nWorth checking the source (`TOGO:M2262`) first to confirm the intended spelling,\nand worth deciding whether a normalisation step should strip zero-width and\ndiscretionary characters at import so the next one does not need an issue.\n\n\"Gaffron\" here is the trace-element solution of Gaffron; `+Se` marks the\nselenium-supplemented variant.",
+    "closedAt": "2026-09-03T07:54:46Z",
+    "comments": [],
+    "createdAt": "2026-09-03T07:00:09Z",
+    "number": 406,
+    "state": "CLOSED",
+    "title": "The last #387 parse-damaged ingredient name: a soft hyphen inside Trace metals 'Gaffron+Se'",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/406"
+  }
+}

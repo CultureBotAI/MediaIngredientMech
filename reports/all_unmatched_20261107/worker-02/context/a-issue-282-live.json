@@ -1,0 +1,41 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "282",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,body,state,url,createdAt,closedAt,comments"
+  ],
+  "accessed_at": "2026-11-08T05:35:29.207005+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "result": {
+    "body": "Closes the remaining two items of #276. (Item 1, the wrong compound, was fixed in #280.)\n\n## Item 2 — a racemate is not its L-enantiomer\n\n| ingredient | was | is now | rows |\n|---|---|---|---:|\n| `DL-Tyrosine` | CHEBI:17895 **L-tyrosine** | CHEBI:18186 tyrosine | 36 |\n| `DL-threonine` | CHEBI:16857 **L-threonine** | CHEBI:26986 threonine | 2 |\n\nSmaller than the issue implied, and worth saying why rather than quietly doing less: **most\n`DL-` names in the corpus are already correct.** `DL-methionine`→*methionine*,\n`DL-Malic acid`→*malic acid*, `DL-Calcium pantothenate`→*Calcium pantothenate* are all\nstereo-**unspecified** terms and fine as they stand. Only two named a single enantiomer.\n\n## Item 3 — digits restored, 51 names across both corpora\n\n| corrupted | repaired | | corrupted | repaired |\n|---|---|---|---|---|\n| `H BO` | `H3BO3` | | `As O` | `As2O3` |\n| `Co(NO ) .6H O` | `Co(NO3)2.6H2O` | | `K SO` | `K2SO4` |\n| `Na WO .2H O` | `Na2WO4.2H2O` | | `K CO` | `K2CO3` |\n| `MnSO .H O` | `MnSO4.H2O` | | `LiCl.H O` | `LiCl.H2O` |\n| `Ca(NO ) .4H O` | `Ca(NO3)2.4H2O` | | `Na SO .10H O` | `Na2SO4.10H2O` |\n| `Fe(NH ) (SO ) .6H O` | `Fe(NH4)2(SO4)2.6H2O` | | | |\n\nEach is listed **explicitly, not inferred by rule**, and corroborated by its grounded term\nwhere it has one — `As O` sits on *diarsenic trioxide*, which is As₂O₃.\n\n**`Na VO` is deliberately not repaired.** Na₃VO₄ (ortho) and NaVO₃ (meta) are both\nplausible and the corpus cannot disambiguate. Guessing there would be the same class of\nerror this repair exists to undo. A test asserts it stays out.\n\nThe corrupted original is preserved in each ingredient's `notes` — the source string is\notherwise unrecoverable, and a reader should see that the name was repaired rather than\ntranscribed.\n\n## The baselines go UP, and that's the finding\n\nImplausible rows **9,750 → 9,757**, cocktails **185 → 186**. The gate says in terms *\"Do\nNOT raise the baseline to make this pass\"* — so I checked before touching it.\n\n**The corruption was hiding rows from the detectors.** `H BO` matches no trace-element\npattern and was flagged **0 times** on main; `H3BO3` matches and is flagged. Those\nconcentrations were always wrong — the broken name made them invisible. Verified by\ncounting both spellings on either side of the change rather than assuming.\n\nSo repairing names surfaced 7 pre-existing implausible rows and 1 pre-existing flattened\ncocktail. Both baselines carry that explanation inline so the next reader doesn't\nmistake it for a cover-up.\n\n## Note on the encoding bug itself\n\n`MgSO .7H2O` keeps the `2` in `H2O` but loses the `4` — ASCII digits survived while\nsubscript characters (₂₃₄) did not. That points at an encoding step upstream, not a parser,\nand **it is still unfixed**; this only repairs the damage it left. Worth chasing separately.\n\n## Verification\n\n- `validate-strict`: 0 ERROR rows over 15,877 files\n- `pytest`: 1,207 passed, 5 new\n- both corpora, so the #266 derived-corpus check stays green\n- canary first, before fan-out\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+    "closedAt": "2026-08-17T20:14:25Z",
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABPQz9WQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "## Review pass (adversarial, read-only)\n\n**1. Did renaming collide with an existing row?** The sharp risk: renaming `As O` →\n`As2O3` inside a record that already holds `As2O3` recreates the duplicate class #263 just\nremoved. Checked corpus-wide — 4 collisions, all in `ucm.yaml`.\n\n**They are not caused by this PR.** `ucm.yaml` carries *two* `As O` rows and two\n`Na WO .2H O` rows on main already; the repair renamed both consistently. Verified against\n`origin/main` rather than assumed. Filed as #283, because the pair differs by exactly\n**1000×** (0.000093 vs 0.093 g/L) — the flattened-cocktail signature from #150, with stock\nstrength and final concentration sitting side by side.\n\n**2. Do the standing gates still hold?** `test_corpus_grounding_agreement` and\n`test_grounding_hydration_agreement` both pass — renaming keys the cross-corpus check, so\nrunning both corpora mattered.\n\n**3. Were the baselines raised honestly?** This is the part that deserves scrutiny, since\nthe gate says in terms *\"Do NOT raise the baseline to make this pass\"*. `H BO` was flagged\n**0 times** on main and `H3BO3` is flagged — counted on both sides of the change, not\ninferred. The corruption was hiding rows from the detector; the concentrations were always\nwrong. Both baselines carry that reasoning inline.\n\n**4. Was anything lost?** The corrupted original is preserved in each ingredient's `notes`,\nand existing notes are appended to rather than replaced — a test covers that.\n\n## Filed\n\n- #283 — `ucm.yaml`'s 1000×-apart duplicate rows, and the observation that\n  `audit_concentration_plausibility` checks absolute magnitude but never the *ratio between\n  sibling rows*, so this shape has no detector at all.\n\n## Worth stating\n\n`Na VO` is deliberately unrepaired (Na₃VO₄ vs NaVO₃ — the corpus cannot say which), and the\nupstream encoding bug that strips subscripts is **still unfixed**; this only repairs its\noutput. It will keep producing these.",
+        "createdAt": "2026-08-17T19:24:54Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/pull/282#issuecomment-5319228761",
+        "viewerDidAuthor": true
+      }
+    ],
+    "createdAt": "2026-08-17T18:50:07Z",
+    "number": 282,
+    "state": "MERGED",
+    "title": "Fix dropped stereochemistry and restore subscript-stripped names (#276)",
+    "url": "https://github.com/CultureBotAI/CultureMech/pull/282"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "c-proposal-cerium-nitrate-hexahydrate",
+      "case_ids": [
+        "KG_CASE:3ffcb1ce611b7560f681900db0124810c1b8886bcfc48e1bdbd565132840b8e1"
+      ],
+      "description": "Resolve mediadive.ingredient:1587 Ce(NO3)3 x 6 H2O as cerium(III) nitrate hexahydrate, primary cas:10294-41-4, with skos:broadMatch to mesh:M0319657 cerium nitrate (Ce(+3)); preserve source spellings and all previous history.",
+      "evidence_ids": [
+        "c-mediadive-1587",
+        "c-sigma-cerium",
+        "c-pubchem-10294-41-4",
+        "c-mesh-M0319657",
+        "c-ols-all-cerium-nitrate",
+        "c-ols-all-10294-41-4",
+        "c-mesh-browser-prev-concepts",
+        "c-local-native-mesh-cerium-parent"
+      ],
+      "owner_path": "data/ingredients/unmapped/CeNO33_X_6_H2O.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "b6909792f69eb1098e590d07c5949dc92a2ec24c8342d66b80fb386c7460705d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-cerium-nitrate-hexahydrate.yaml",
+        "sha256": "9d866fd31aacee61796c647228dfc42817335b193ba5dad8c6eed05469c379e2"
+      },
+      "publication_obligations": "No hold is removed. Any owner mutation invalidates inherited positive approval; coordinator must perform guarded integration, exact alias/identity review, native full-payload review, synchronized regeneration and checks.",
+      "cross_shard_conflict": "No cross-shard embedded owner conflict recorded for this owner in the coordinator index; any additional discovered owner conflict requires reconciliation.",
+      "intended_mapped_owner_path": "data/ingredients/mapped/CeNO33_X_6_H2O.yaml",
+      "identity_predicate": "skos:exactMatch to cas:10294-41-4",
+      "ontology_predicate": "skos:broadMatch",
+      "within_shard_shared_owner_dependency": "Coordinate with CultureMech source cases authored by research_a/research_b; retain the original baseline before hash.",
+      "integration_prerequisite": "MeSH target is directly verified active in primary NLM; production local adapter/canonical-label validation is independently captured by root (#207). Coordinator native integration, consumer/publication validation and complete changed-owner review remain required. No downstream build was performed."
+    },
+    {
+      "proposal_id": "c-proposal-lanthanum-nitrate-hexahydrate",
+      "case_ids": [
+        "KG_CASE:8c5376c18918112c3915f5d0b4a5b9704eba443c1e0684ac9a61dae8bc47b49e"
+      ],
+      "description": "Resolve mediadive.ingredient:1586 La(NO3)3 x 6 H2O as lanthanum(III) nitrate hexahydrate using exact mesh:M0313204, CAS_RN_LOOKUP via the NLM narrower-concept registry number10277-43-7. Preserve original source spellings, CAS and history.",
+      "evidence_ids": [
+        "c-mediadive-1586",
+        "c-sigma-lanthanum",
+        "c-pubchem-10277-43-7",
+        "c-mesh-M0313204",
+        "c-ols-all-lanthanum-nitrate",
+        "c-ols-all-10277-43-7",
+        "c-mesh-browser-C016534",
+        "c-local-native-mesh-id-labels"
+      ],
+      "owner_path": "data/ingredients/unmapped/LaNO33_X_6_H2O.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "5dc6349dec7b21113a7e08b4692c802cf1d0f79e3baa3f93559d8519a022f012",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-lanthanum-nitrate-hexahydrate.yaml",
+        "sha256": "9cb5b03b12dac60f07141e7722a88f3b211459e9dd88318bf9c606385f2c1a38"
+      },
+      "publication_obligations": "No hold is removed. Any owner mutation invalidates inherited positive approval; coordinator must perform guarded integration, exact alias/identity review, native full-payload review, synchronized regeneration and checks.",
+      "cross_shard_conflict": "No cross-shard embedded owner conflict recorded for this owner in the coordinator index; any additional discovered owner conflict requires reconciliation.",
+      "intended_mapped_owner_path": "data/ingredients/mapped/LaNO33_X_6_H2O.yaml",
+      "identity_predicate": "skos:exactMatch to mesh:M0313204",
+      "ontology_predicate": "skos:exactMatch",
+      "within_shard_shared_owner_dependency": "Coordinate with CultureMech source cases authored by research_a/research_b; retain the original baseline before hash.",
+      "integration_prerequisite": "MeSH target is directly verified active in primary NLM; production local adapter/canonical-label validation is independently captured by root (#207). Coordinator native integration, consumer/publication validation and complete changed-owner review remain required. No downstream build was performed."
+    },
+    {
+      "proposal_id": "c-proposal-reject-dl-aliases-on-l-malate",
+      "case_ids": [
+        "KG_CASE:28d34a9d572cf32653def828502c4ebca5538b6ea4d26dada8a0e8380eb8b000",
+        "KG_CASE:355c966549bfd528a2db00d73e618efa3f291ca3d1d0b34851800a4f43d9aa91",
+        "KG_CASE:6ff96a432d284768932c069b30ef2d0262cf5218e424f9783655dd94f9ec6a6d",
+        "KG_CASE:79232876ee0bf1e72b13d7468a47b59d8e0260447848d9b7a13d448f002c70e6",
+        "KG_CASE:91fbd30ef38331c306f684d5bc27b3b8da74ab0f203c2dd1839859d33421388c",
+        "KG_CASE:c8c5f6d20657c12e8c7fa05a03c476097421221ae1970a15da8f48464dfd99c4"
+      ],
+      "description": "Retain five explicitly DL/racemic malate labels and their original sources as REJECTED_LABEL on the CHEBI91261 disodium(S)-malate owner. Preserve all other fields and history. This bounded correction does not resolve generic Na-malate scope, role findings or historical SEM:6f60d965a284fea0b873.",
+      "evidence_ids": [
+        "c-chebi-91261",
+        "c-mediadive-695",
+        "c-mediadive-204",
+        "c-mediadive-495"
+      ],
+      "owner_path": "data/ingredients/mapped/Sodium_Malate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-reject-dl-aliases-on-l-malate.yaml",
+        "sha256": "e92c173f52dfffdac529265905957bf9f331ff010f4f6daedd1bd9d4e8ca087a"
+      },
+      "publication_obligations": "No hold is removed. Any owner mutation invalidates inherited positive approval; coordinator must perform guarded integration, exact alias/identity review, native full-payload review, synchronized regeneration and checks.",
+      "cross_shard_conflict": "No cross-shard embedded owner conflict recorded for this owner in the coordinator index; any additional discovered owner conflict requires reconciliation.",
+      "rejected_labels": [
+        "DL-Na-malate",
+        "Na-DL-malate",
+        "Na2-DL-malate",
+        "Sodium DL-malate",
+        "DL-Sodium malate"
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+      ],
+      "historical_finding_remains_open": "SEM:6f60d965a284fea0b873",
+      "identity_predicate": "Existing owner CHEBI91261 identity unchanged; five rejected tokens cease resolving or exporting as exact synonyms."
+    },
+    {
+      "proposal_id": "c-proposal-nickel-sulfate-6-water-properties",
+      "case_ids": [
+        "KG_CASE:12dc307a5d0964bc97f7a67ebfd448cf3f1608c060aeb1c2d3e9fbda3a617c8c"
+      ],
+      "description": "Replace inherited anhydrous molecular structure with the 6-water formula/InChI/SMILES and exact CAS from CHEBI:53437. Identity and aliases remain unchanged. Prior chemical_properties: {\"cas_rn\": \"10101-97-0\", \"data_source\": \"CultureBotHT/compounds_to_cas.csv\", \"inchi\": \"InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2\", \"molecular_formula\": \"Ni.O4S\", \"retrieval_date\": \"2026-04-09T00:32:50.689620+00:00\", \"smiles\": \"O=S(=O)([O-])[O-].[Ni+2]\"}.",
+      "evidence_ids": [
+        "c-chebi-53437"
+      ],
+      "owner_path": "data/ingredients/mapped/Niso4_X_6_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-nickel-sulfate-6-water-properties.yaml",
+        "sha256": "5af4d77e4240a5e452ee0760075144d64be40829ec25caf785e5a38ca9772371"
+      },
+      "publication_obligations": "No hold is removed. Any owner mutation invalidates inherited positive approval; coordinator must perform guarded integration, exact alias/identity review, native full-payload review, synchronized regeneration and checks.",
+      "cross_shard_conflict": "No cross-shard embedded owner conflict recorded for this owner in the coordinator index; any additional discovered owner conflict requires reconciliation.",
+      "identity_predicate": "Existing exact hydrate identifier unchanged; no source metadata override or duplicate merge.",
+      "remaining_source_conflict": "MediaDive labels state the hydrate but attach anhydrous identifiers; this proposal repairs MIM properties only."
+    },
+    {
+      "proposal_id": "c-proposal-nickel-sulfate-7-water-properties",
+      "case_ids": [
+        "KG_CASE:41c16262c44bcd5844262e5c7ee9ecb28dd0ff436ffc0ac3d1621a0278dae119"
+      ],
+      "description": "Replace inherited anhydrous molecular structure with the 7-water formula/InChI/SMILES and exact CAS from CHEBI:53504. Identity and aliases remain unchanged. Prior chemical_properties: {\"data_source\": \"CultureBotHT/compounds_to_cas.csv\", \"inchi\": \"InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2\", \"molecular_formula\": \"Ni.O4S.7H2O\", \"retrieval_date\": \"2026-04-09T00:32:50.689620+00:00\", \"smiles\": \"O=S(=O)([O-])[O-].[Ni+2]\"}.",
+      "evidence_ids": [
+        "c-chebi-53504"
+      ],
+      "owner_path": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "18aac3d02606aacb2241a62f07e243436a4aa616685b826333d87f04caee75ff",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-nickel-sulfate-7-water-properties.yaml",
+        "sha256": "2a2df4ff5776b64af861c6d49d13fb7f122c5457371f2854b14ab84b6bb37b08"
+      },
+      "publication_obligations": "No hold is removed. Any owner mutation invalidates inherited positive approval; coordinator must perform guarded integration, exact alias/identity review, native full-payload review, synchronized regeneration and checks.",
+      "cross_shard_conflict": "No cross-shard embedded owner conflict recorded for this owner in the coordinator index; any additional discovered owner conflict requires reconciliation.",
+      "identity_predicate": "Existing exact hydrate identifier unchanged; no source metadata override or duplicate merge.",
+      "remaining_source_conflict": "MediaDive labels state the hydrate but attach anhydrous identifiers; this proposal repairs MIM properties only."
+    },
+    {
+      "proposal_id": "c-proposal-o-carbamyl-d-serine-scope",
+      "case_ids": [
+        "KG_CASE:e4c29602025f8838c699c48836a45f5567ad8994a4ec756fed88da2647542689"
+      ],
+      "description": "Retain the explicitly D-specific O-carbamyl-D-serine identity as exact mesh:M0040464 rather than broader descriptor mesh:C000366 O-carbamylserine. NLM descriptor concepts explicitly distinguish D and L, whereas the prior OLS synonym-based descriptor promotion erased that distinction. Preserve CAS3819-76-9 and D/(2R) chemical properties as independent supporting evidence.",
+      "evidence_ids": [
+        "c-mesh-C000366",
+        "c-mesh-M0040465",
+        "c-mesh-M0040464",
+        "c-mesh-M0307419",
+        "c-pubchem-3819-76-9",
+        "c-funakoshi-ocarbamyl",
+        "c-root-ocarbamyl-d-serine",
+        "c-ols-all-O-carbamyl-D-serine",
+        "c-ols-all-3819-76-9",
+        "c-local-native-mesh-id-labels"
+      ],
+      "owner_path": "data/ingredients/mapped/O_Carbamyl_D_Serine.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "c2e412c5d2bfa83323f0d6dd9e0e10b9ee574bb8204c994a34485f3c18d6cccb",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-o-carbamyl-d-serine-scope.yaml",
+        "sha256": "14f263cd3c67a3f2327408414d1f411a66f2ba005525223b4a25106e0ca81592"
+      },
+      "publication_obligations": "No hold is removed. Any owner mutation invalidates inherited positive approval; coordinator must perform guarded integration, exact alias/identity review, native full-payload review, synchronized regeneration and checks.",
+      "cross_shard_conflict": "No cross-shard embedded owner conflict recorded for this owner in the coordinator index; any additional discovered owner conflict requires reconciliation.",
+      "identity_predicate": "skos:exactMatch to mesh:M0040464",
+      "ontology_predicate": "skos:exactMatch",
+      "integration_prerequisite": "Coordinator native integration, consumer/publication validation and complete changed-owner review remain required; no downstream build was performed."
+    }
+  ]
+}

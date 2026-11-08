@@ -1,0 +1,45 @@
+identifier: mesh:M0085998
+preferred_term: N-(hydroxyethyl)ethylenediaminetriacetic acid
+ontology_mapping:
+  ontology_id: mesh:M0085998
+  ontology_label: N-(hydroxyethyl)ethylenediaminetriacetic acid
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://id.nlm.nih.gov/mesh/M0085998.json
+    notes: UTEX modified P-IV/DAS context identifies Sigma H7154. The manufacturer
+      explicitly identifies HEEDTA/HEDTA free acid, CAS150-39-0, C10H18N2O7. NLM MeSH
+      M0085998 specifically denotes N-(hydroxyethyl)ethylenediaminetriacetic acid.
+      Use that exact free-acid concept, not umbrella C026060 whose separate narrower
+      concepts represent sodium/calcium/potassium salts and metal chelates. No salt
+      labels are imported as synonyms; this is neither EDTA nor trisodium HEDTA.
+  - evidence_type: MANUAL_CURATION
+    source: reports/all_unmatched_20261107/worker-02/b/evidence.json
+    notes: 'Create distinct N-(hydroxyethyl)ethylenediaminetriacetic acid owner from
+      exact ontology and source ingredient evidence. No stock, salt or hydrate variant
+      is inferred. Sources: https://www.sigmaaldrich.com/US/en/product/sigma/h7154;
+      https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=12&q=HEEDTA; https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=20&q=150-39-0;
+      https://www.ebi.ac.uk/ols4/api/search?ontology=chebi&rows=20&q=hydroxyethylethylenediaminetriacetic;
+      https://meshb.nlm.nih.gov/record/ui?ui=C026060; https://id.nlm.nih.gov/mesh/C026060.json;
+      https://id.nlm.nih.gov/mesh/M0085998.json'
+synonyms:
+- synonym_text: HEEDTA
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source case CM_NAME:870ab8f30340aec78dd02358022aa015c1a143bffa84a7c6b21f5dfe78ef17ad
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 150-39-0
+  molecular_formula: C10H18N2O7
+  data_source: Primary supplier specification and official NLM MeSH captures in reports/all_unmatched_20261107/worker-02/b
+curation_history:
+- timestamp: '2026-11-08T05:23:20.450045+00:00'
+  curator: codex_worker02_source_review
+  action: CREATED
+  changes: Create distinct N-(hydroxyethyl)ethylenediaminetriacetic acid owner from
+    exact ontology and source ingredient evidence. No stock, salt or hydrate variant
+    is inferred. Isolated proposal only; coordinator must re-review changed owner
+    and synchronize native outputs before application.
+  new_status: MAPPED
+  llm_assisted: true
