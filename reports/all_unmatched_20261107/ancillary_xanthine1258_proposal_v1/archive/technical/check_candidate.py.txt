@@ -1,0 +1,92 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,copy,sys,importlib.util,subprocess,difflib,csv
+import yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';CLAW=C.parents[1]/'.temp/kgm-unmapped-20261107/claw';BASE=R/'.temp/ancillary-xanthine1258-proposal-v1';O=BASE/'technical';S=O/'scratch';S.mkdir();start=datetime.now(timezone.utc).isoformat();inputs={};checks=[];controls=[]
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def raw(p):
+ p=Path(p);b=p.read_bytes();inputs[str(p)]={'path':str(p),'sha256':sha(b),'size':len(b)};return b
+
+def ck(n,v):
+ checks.append({'check':n,'passed':bool(v)})
+ assert v,n
+
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False,default=str);f.write('\n')
+
+def git(p,*args):return subprocess.check_output(['git','-C',str(p),*args]).decode().strip()
+B=K/'data/ingredients/mapped/Xanthine.yaml';P=BASE/'candidate/Xanthine.yaml';old=yaml.safe_load(raw(B));new=yaml.safe_load(raw(P));ck('exactauthorcandidate',sha(P.read_bytes())=='747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546');ck('exactbefore',sha(B.read_bytes())=='c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22');author=json.loads(raw(BASE/'author-receipt.json'))
+sys.path[:0]=[str(K/'src'),str(CLAW/'src'),str(CLAW/'scripts')]
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient,ValidationFailedError
+from mediaingredientmech.curate.curation_event import record_curation_event
+schema=K/'src/mediaingredientmech/schema/mediaingredientmech.yaml';raw(schema);raw(K/'src/mediaingredientmech/schema/mech_shared.yaml')
+producer=CLAW/'scripts/build_mim_ingredient_sssom.py';pb=raw(producer);spec=importlib.util.spec_from_file_location('xanthine_independent_producer',producer);mod=importlib.util.module_from_spec(spec);sys.modules[spec.name]=mod;exec(compile(pb,str(producer),'exec',dont_inherit=True),mod.__dict__)
+records={p:yaml.load(p.read_bytes(),Loader=yaml.CSafeLoader) for p in sorted((K/'data/ingredients/mapped').glob('*.yaml'))};owners=mod.build_owner_index({mod._mim_curie(p.name):r for p,r in records.items()});before_rows=mod._row_from_yaml(B,{},{},{},{},record=old,owners=owners,suppressions=[]);after_rows=mod._row_from_yaml(B,{},{},{},{},record=new,owners=owners,suppressions=[])
+pre=json.loads(raw(O/'preflight.json'));canonical=pre['current_canonical_rows'][0]
+save('native-row-comparison.json',{'at':datetime.now(timezone.utc).isoformat(),'reviewer':'worker10:/root/bio_research','producer':inputs[str(producer)],'Claw_head':git(CLAW,'rev-parse','HEAD'),'owner_context_count':len(records),'context':'Actual native _row_from_yaml with complete mapped preferred-owner index and empty residual/kgm/canonical-label ancillary maps; no builder main or publication invocation.','unchanged_current_canonical_row':canonical,'native_baseline_rows':before_rows,'native_candidate_rows':after_rows,'before_after_native_diffs':{k:{'before':before_rows[0][k],'after':after_rows[0][k]} for k in before_rows[0] if before_rows[0][k]!=after_rows[0][k]},'candidate_sha256':sha(P.read_bytes()),'no_final_canonical_position_or_publication':True})
+print('NATIVE_ROWS_READY',O/'native-row-comparison.json',flush=True)
+# Review-specific checks preserve complete objects rather than spot-checking names.
+def bounded_contract(x):
+ if x['ontology_mapping']['mapping_quality']!='MANUAL_CURATION':raise ValueError('reviewed method grade')
+ if set(x)!=set(old):raise ValueError('top-level scope')
+ om=copy.deepcopy(x['ontology_mapping']);before_om=copy.deepcopy(old['ontology_mapping']);om.pop('mapping_quality');before_om.pop('mapping_quality');ev=om.pop('evidence');oev=before_om.pop('evidence')
+ if om!=before_om:raise ValueError('ontology identity/label/source')
+ if len(ev)!=len(oev)+1 or ev[:-1]!=oev:raise ValueError('complete old evidence preservation')
+ if ev[-1]['evidence_type']!='LLM_SUGGESTION' or ev[-1]['source']!='https://github.com/CultureBotAI/MediaIngredientMech/issues/1258':raise ValueError('new claim attribution')
+ if len(x['curation_history'])!=len(old['curation_history'])+1 or x['curation_history'][:-1]!=old['curation_history']:raise ValueError('complete history prefix')
+ e=x['curation_history'][-1]
+ if e.get('llm_assisted') is not True or e['curator']!='codex_worker10_xanthine1258' or e['previous_status']!='MAPPED' or e['new_status']!='MAPPED':raise ValueError('truthful actual author/status')
+ for k in old:
+  if k not in ['ontology_mapping','curation_history'] and x[k]!=old[k]:raise ValueError('unchanged field '+k)
+ return True
+ck('full bounded change contract',bounded_contract(new))
+# Reconstruct only the new event through actual history API, independently checking author output.
+hist=copy.deepcopy(old);e=new['curation_history'][-1];record_curation_event(hist,**e);ck('historynativeexact',hist['curation_history']==new['curation_history'])
+ck('candidateclosedSchema',not validate_ingredient(new,schema_path=schema));out=S/'native-rendered-Xanthine.yaml';write_validated_ingredient(copy.deepcopy(new),out,schema_path=schema);ck('exactnativewriterbytes',out.read_bytes()==P.read_bytes());out2=S/'idempotent-Xanthine.yaml';write_validated_ingredient(yaml.safe_load(out.read_bytes()),out2,schema_path=schema);ck('exactwriteridempotence',out2.read_bytes()==out.read_bytes())
+ck('nativeidentitypredicateunchanged',len(after_rows)==len(before_rows)==1 and all(r['predicate_id']=='skos:exactMatch' and r['object_id']=='CHEBI:17712' for r in after_rows+before_rows));ck('nativemanualjustificationunchanged',before_rows[0]['mapping_justification']==after_rows[0]['mapping_justification']=='semapv:ManualMappingCuration');ck('nativealiasesunchanged',after_rows[0]['other']==before_rows[0]['other']);ck('nativeonlysourceanddatechanges',set(k for k in before_rows[0] if before_rows[0][k]!=after_rows[0][k])=={'source','mapping_date'})
+mutations={
+ 'wrong_identifier':lambda x:x.update(identifier='CHEBI:15318'),
+ 'wrong_ontology_target':lambda x:x['ontology_mapping'].update(ontology_id='CHEBI:48517'),
+ 'revert_nonunique_CAS_grade':lambda x:x['ontology_mapping'].update(mapping_quality='CAS_RN_LOOKUP'),
+ 'invent_lexical_method':lambda x:x['ontology_mapping'].update(mapping_quality='SYNONYM_MATCH'),
+ 'discard_old_CAS_evidence':lambda x:x['ontology_mapping']['evidence'].pop(0),
+ 'rewrite_old_scope_evidence':lambda x:x['ontology_mapping']['evidence'][1].update(notes='Global xanthine identity'),
+ 'invent_human_evidence':lambda x:x['ontology_mapping']['evidence'][-1].update(evidence_type='MANUAL_CURATION'),
+ 'drop_old_history':lambda x:x['curation_history'].pop(0),
+ 'rewrite_old_history':lambda x:x['curation_history'][0].update(curator='current reviewer'),
+ 'false_nonLLM_history':lambda x:x['curation_history'][-1].update(llm_assisted=False),
+ 'change_occurrence_scope':lambda x:x['occurrence_statistics'].update(total_occurrences=22),
+ 'add_global_alias':lambda x:x['synonyms'].append({'synonym_text':'7H-xanthine','synonym_type':'EXACT_SYNONYM'}),
+ 'change_chemistry':lambda x:x['chemical_properties'].update(cas_rn='wrong'),
+ 'erase_scope_notes':lambda x:x.update(notes=''),
+}
+for name,change in mutations.items():
+ m=copy.deepcopy(new);change(m)
+ try:bounded_contract(m)
+ except ValueError as ex:controls.append({'name':name,'validator':'independent review-specific preservation/method boundary','result':'refused','reason':str(ex)})
+ else:raise AssertionError('Control accepted '+name)
+for name,change in {'unknownfield':lambda x:x.update(invented_field=True),'invalidmethodenum':lambda x:x['ontology_mapping'].update(mapping_quality='AI_HUMAN_APPROVED'),'invalidhistoryaction':lambda x:x['curation_history'][-1].update(action='invalid action')}.items():
+ m=copy.deepcopy(new);change(m);dest=S/(name+'.yaml')
+ try:write_validated_ingredient(m,dest,schema_path=schema)
+ except ValidationFailedError as ex:ck('nativeinvalidnowrite '+name,not dest.exists());controls.append({'name':name,'validator':'actual native closed-schema guarded writer','result':'refused before write','error_count':len(ex.errors)})
+ else:raise AssertionError('Native control accepted '+name)
+# Literal captured primary provenance supports only shared-CAS/name method premise.
+W=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2';catalog=json.loads(raw(W/'science/chemistry/evidence-catalog.json'));primary=[]
+for eid in ['chem-chebi17712','chem-chebi7hxanthine']:
+ ent=next(x for x in catalog['evidence'] if x['evidence_id']==eid);b=raw(W/ent['path']);ck('primaryexact '+eid,sha(b)==ent['sha256']);raw(W/ent['original_capture_metadata_path']);o=json.loads(b);text=json.dumps(o,ensure_ascii=False);ck('primarysharedCAS '+eid,'69-89-6' in text);ck('primarysharedname '+eid,'Xanthine' in text or 'xanthine' in text);ck('candidatecapturetime '+eid,ent['original_retrieved_at'] in new['ontology_mapping']['evidence'][-1]['notes']);ck('candidatecaptureURL '+eid,ent['source_url'] in new['ontology_mapping']['evidence'][-1]['notes']);primary.append({'original_evidence':ent,'complete_capture_keys':list(o),'capture_metadata':json.loads((W/ent['original_capture_metadata_path']).read_text())})
+# Explicit enum distinctions: technical metadata cannot invent human verification.
+sch=yaml.safe_load(schema.read_text());quality=sch['enums']['MappingQualityEnum']['permissible_values'];evtypes=sch['enums']['MappingEvidenceTypeEnum']['permissible_values'] if 'MappingEvidenceTypeEnum' in sch['enums'] else None
+newclaim=new['ontology_mapping']['evidence'][-1];ck('nohumancertificationclaim','does not assert human verification' in newclaim['notes'] and 'no human verification' in e['changes']);ck('existingrulingcitation','issues/760' in newclaim['notes']);ck('nativegradeindependentofhumanEvidence',newclaim['evidence_type']=='LLM_SUGGESTION' and e['llm_assisted'] is True)
+modules=[]
+for n,m in list(sys.modules.items()):
+ p=getattr(m,'__file__',None)
+ if p and any(s in p for s in ['/mediaingredientmech/','/kg_microbe_','/build_mim_ingredient_sssom.py','/kgm_unified_mappings.py','/claw/plugins/']):
+  p=Path(p).resolve();b=raw(p);ck('executedsourceorigin '+n,p.is_relative_to(K) or p.is_relative_to(CLAW));entry={'module':n,'path':str(p),'sha256':sha(b)}
+  if p.is_relative_to(K):ck('K5288actualmoduleequal '+n,subprocess.check_output(['git','-C',str(K),'show','5288c882def177b1b9a5eee2975f039db780ac4e:'+str(p.relative_to(K))])==b)
+  modules.append(entry)
+ck('newpublicationcodenotexecuted','mediaingredientmech.campaign_publication' not in sys.modules)
+# Existing parent context inputs and root-authored candidate stay unchanged.
+for p,i in inputs.items():ck('finalbinding '+p,sha(Path(p).read_bytes())==i['sha256'])
+(O/'candidate-native-diff.patch').write_text(''.join(difflib.unified_diff(B.read_text().splitlines(True),P.read_text().splitlines(True),fromfile=str(B),tofile=str(P))))
+save('candidate-checks.json',{'reviewer':'worker10:/root/bio_research','candidate_author':'worker10:/root','scientific_review':False,'audit_execution_started_at':start,'audit_execution_finished_at':datetime.now(timezone.utc).isoformat(),'candidate_sha256':sha(P.read_bytes()),'requested_K_context':'5288c882def177b1b9a5eee2975f039db780ac4e','actual_K_head_observed':git(K,'rev-parse','HEAD'),'executed_K_modules_equal_requested_commit':True,'new_publication_module_executed':False,'Claw_head':git(CLAW,'rev-parse','HEAD'),'checks':checks,'negative_controls':controls,'new_evidence_provenance':primary,'mapping_quality_definitions':quality,'mapping_evidence_definitions':evtypes,'complete_old_history_count':len(old['curation_history']),'complete_new_history_count':len(new['curation_history']),'old_evidence_count':len(old['ontology_mapping']['evidence']),'new_evidence_count':len(new['ontology_mapping']['evidence']),'executed_modules':modules,'input_bindings':list(inputs.values()),'limits':['Technical schema/predicate/method-attribution review only; separate scientist and skeptic assess appropriateness of deliberate manual scoped review.','MANUAL_CURATION quality is an expert-reviewed grounding-method category; new evidence is explicitly LLM_SUGGESTION and history llm_assisted. No human verification is claimed or fabricated.','No canonical SSSOM generation, source plan, application receipt, sync, finalposition or release. Actual diagnostic row and maintained priorrow are separately bound.','Current21/21 counters are preserved dated metadata, not recounted source memberships.','No lock manager was invoked by per-owner row API or writer. All rendered outputs are private technical scratch; no global/shared lock paths used.']})
+print(json.dumps({'checks':len(checks),'negative_controls':len(controls),'input_bindings':len(inputs),'candidate_sha256':sha(P.read_bytes()),'finished':datetime.now(timezone.utc).isoformat()}))

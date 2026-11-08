@@ -1,0 +1,96 @@
+from pathlib import Path
+import json, hashlib, stat, ast, re, subprocess, datetime, collections
+R=Path.cwd(); O=R/'.temp/xanthine1258-proposal-publication-v1'; OUT=O/'review'; S=R/'.temp/ancillary-xanthine1258-proposal-v1'; D=R/'reports/all_unmatched_20261107/ancillary_xanthine1258_proposal_v1'; K=R.parents[2]/'integration/release-worktree'
+start=datetime.datetime.now(datetime.timezone.utc).isoformat(); checks=[]; inputs={}
+def h(b):return hashlib.sha256(b).hexdigest()
+def raw(p):
+ p=Path(p); b=p.read_bytes(); inputs[str(p)]={'path':str(p),'sha256':h(b),'bytes':len(b)}; return b
+def j(p): return json.loads(raw(p))
+def ck(name,value,detail=None):checks.append({'check':name,'passed':bool(value),'detail':detail})
+def git(*args):
+ p=subprocess.run(['git','-C',str(R),*args],capture_output=True);ck('git command success '+str(args),p.returncode==0,p.stderr.decode());return p.stdout.decode()
+core=j(O/'package-core-v1.json'); man=j(S/'MANIFEST.json'); tm=j(D/'transport-map.json')
+ck('original manifest exact',h(raw(S/'MANIFEST.json'))=='d19aae2889fbd957eebb8f7d917d15b8cb4c61e29c85bed909031976e75fbfd1')
+expected={x['path']:x['sha256'] for x in man['files']}
+ck('original manifest unique 155 members',len(expected)==len(man['files'])==155)
+for p,digest in expected.items():ck('original member '+p,h(raw(S/p))==digest)
+expected.update({n:h(raw(S/n)) for n in ['MANIFEST.json','SHA256SUMS']})
+actual_source={str(p.relative_to(S)) for p in S.rglob('*') if p.is_file()};ck('original packet exact file set',actual_source==set(expected))
+checksum={line[66:]:line[:64] for line in raw(S/'SHA256SUMS').decode().splitlines() if line}
+ck('original checksum exact 156 entries',checksum=={k:v for k,v in expected.items() if k!='SHA256SUMS'})
+ck('transport total unique original/destination',len(tm['files'])==len({x['original_relative_path'] for x in tm['files']})==len({x['archive_path'] for x in tm['files']})==157)
+ck('transport covers exact original packet',set(expected)=={x['original_relative_path'] for x in tm['files']})
+py=0
+for row in tm['files']:
+ p=row['original_relative_path']; dest=R/row['archive_path']; origin=S/p
+ should=D/'archive'/(p+'.txt' if p.endswith('.py') else p)
+ ck('transport path '+p,dest==should and row['original_absolute_path']==str(origin))
+ ck('transport bytes '+p,raw(origin)==raw(dest) and h(raw(dest))==row['sha256']==expected[p] and len(raw(dest))==row['bytes'])
+ ck('transport regular inert '+p,not dest.is_symlink() and stat.S_ISREG(dest.stat().st_mode) and not(dest.stat().st_mode & 0o111) and row['executable'] is False)
+ py+=int(p.endswith('.py'))
+ck('30 inert Python transports',py==30)
+cp={x['path']:x for x in core['regular_files']};ck('core exact 171 unique',len(cp)==len(core['regular_files'])==171)
+actual={str(p.relative_to(R)) for p in D.rglob('*') if p.is_file()};ck('core filesystem exact at check',actual==set(cp),{'extra':sorted(actual-set(cp)),'missing':sorted(set(cp)-actual)})
+for p,x in cp.items():
+ f=R/p;b=raw(f);ck('core bytes '+p,h(b)==x['sha256'] and len(b)==x['bytes']);ck('core regular no executable '+p,not f.is_symlink() and not(f.stat().st_mode&0o111))
+ck('no symlinks or executable Python package files',not any(p.is_symlink() or (p.is_file() and p.suffix=='.py') for p in D.rglob('*')))
+forbidden={'.git','.venv','venv','__pycache__','.aws','.ssh','.codex','node_modules'}
+ck('no runtime/account trees among all hidden-aware paths',not any(set(p.relative_to(D).parts)&forbidden for p in D.rglob('*')))
+# Bounded high-specificity accidental secret scan; examples/words alone are not credentials.
+patterns={'private_key':rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----','aws_access_key':rb'\bAKIA[0-9A-Z]{16}\b','github_token':rb'\b(?:ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{70,})\b'}
+secret_hits=[]
+for p in cp:
+ b=raw(R/p)
+ for k,pattern in patterns.items():
+  if re.search(pattern,b):secret_hits.append({'path':p,'pattern':k})
+ck('bounded concrete credential scan',not secret_hits,secret_hits)
+prop=j(D/'proposals.json'); case=j(D/'case-ledger.json'); dec=j(D/'decisions.json'); rec=j(D/'reconciliation.json'); shard=j(D/'shard.json'); inv=j(D/'artifact-role-inventory.json'); contract=j(D/'native-contract.json')
+ck('single proposal and ancillary case',len(prop['proposals'])==len(case)==len(dec['decisions'])==1)
+p=prop['proposals'][0]; c=case[0]; cd=h(json.dumps(c,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode())
+ck('canonical full case hash',cd=='878a45dc8a71fa7ebd209e95857dfc54a934d35677f9e6fb795684c333df81b6')
+ck('case hash graph',p['case_hashes']=={c['case_id']:cd} and p['case_ids']==[c['case_id']] and dec['decisions'][0]['case_sha256']==rec['case_sha256']==cd and core['case_hash']==cd)
+ck('kind source accounting',c['kind']=='review_finding' and all(c[k] is False for k in ['cm_kg_source_case','frozen_campaign_member','source_observation','new_chemical_input']) and c['source_case_ids']==c['source_occurrence_ids']==[])
+ck('distinct stable case ID',c['case_id']=='ANCILLARY_REVIEW_FINDING:MIM-1258-XANTHINE-METHOD-001')
+ck('authentic edit envelope',p['kind']=='edit_existing_owner' and p['owner_path']=='data/ingredients/mapped/Xanthine.yaml' and p['before_sha256']=='c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22')
+ck('candidate exact archived reference',p['after_capture']=={'root':'artifact','path':str((D/'archive/candidate/Xanthine.yaml').relative_to(R)),'sha256':'747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546'})
+ck('genuine current owner preimage remains',h(raw(K/p['owner_path']))==p['before_sha256'])
+ck('all shard nonmembership counts',shard['ancillary_population']==1 and shard['ancillary_case_ids']==[c['case_id']] and all(shard[k]==0 for k in ['new_cm_kg_source_cases','new_source_observations','new_occurrences']) and all(shard[k] is False for k in ['frozen_queue_modified','original_worker_source_accounting_modified','original_campaign_owner_plan_modified']))
+ck('no application or selection vote',dec['decisions'][0]['accepted_for_application'] is False and dec['decisions'][0]['source_role_export_approval'] is False and all(rec[k] is False for k in ['new_owner','owner_merge','applied','root_selection_vote','future_head_claim']))
+ck('truthful author and real worker',c['candidate_author']==c['publication_wrapper_author']=='worker10:/root' and c['worker_slot']==p['worker_slot']==shard['worker_slot']=='worker-10')
+# Check every concrete local path/hash object in new metadata recursively.
+def refs(obj,loc):
+ if isinstance(obj,dict):
+  if isinstance(obj.get('path'),str) and isinstance(obj.get('sha256'),str):
+   target=Path(obj['path']);target=target if target.is_absolute() else (K/target if obj.get('role')=='producer' else R/target)
+   ck('reference '+loc,h(raw(target))==obj['sha256'],str(target))
+  for k,v in obj.items():refs(v,loc+'/'+k)
+ elif isinstance(obj,list):
+  for i,v in enumerate(obj):refs(v,loc+f'/{i}')
+for f in ['proposals.json','case-ledger.json','decisions.json','reconciliation.json','artifact-role-inventory.json','native-contract.json','issue1258-current/receipt.json']:refs(j(D/f),f)
+source=raw(K/'src/mediaingredientmech/curate/campaign_owner_apply.py').decode();tree=ast.parse(source);constants={}
+for node in tree.body:
+ if isinstance(node,ast.Assign):
+  for target in node.targets:
+   if isinstance(target,ast.Name) and target.id in ['ROLES','PRODUCERS','BINDING_KEYS']:
+    constants[target.id]=ast.literal_eval(node.value)
+bindings=inv['bindings']; roles=collections.Counter(x['role'] for x in bindings); ids=[x['binding_id'] for x in bindings]
+ck('native exact constant role set',set(inv['required_roles'])==constants['ROLES'])
+ck('native exact binding shape',all(set(x)==constants['BINDING_KEYS'] for x in bindings))
+ck('24 distinct actual roles and cardinality',len(bindings)==len(set(ids))==24 and roles==inv['expected_role_counts'] and set(ids)==set(inv['expected_binding_ids']))
+ck('13 package 11 external sets',len(inv['package_binding_ids'])==13 and len(inv['external_native_producer_binding_ids'])==11 and set(inv['package_binding_ids']).isdisjoint(inv['external_native_producer_binding_ids']) and set(ids)==set(inv['package_binding_ids'])|set(inv['external_native_producer_binding_ids']))
+ck('exact native producer set',set(x['path'] for x in bindings if x['role']=='producer')==set(constants['PRODUCERS']))
+ck('all publication fields null before publication',all(x['published_head'] is None and x['published_path'] is None for x in bindings) and shard['published_head'] is None)
+# Read original review metadata rather than reassess science.
+import yaml
+native=yaml.safe_load(raw(D/'archive/native/review.yaml')); scopes=j(D/'archive/reviewer-scopes.json'); oldscience=j(D/'archive/science/science.json'); oldhand=j(D/'archive/HANDOFF.json'); finding=j(D/'archive/finding-lineage.json')
+ck('scientific reviewer actual prior authorship disclosed',scopes['science']['identity']=='worker10:/root/preparation_skeptic' and scopes['candidate_author']['independence']=='self_review' and scopes['human_verification_claimed'] is False)
+ck('maintained finding still open',finding['maintained_finding_status']==dec['decisions'][0]['maintained_finding_status']=='open')
+ck('old limitations and no application byte retained',raw(D/'archive/HANDOFF.json')==raw(S/'HANDOFF.json') and oldhand['source_role_export_approval'] is False and oldhand['whole_campaign_acceptance'] is False)
+issue=j(D/'issue1258-current/issue.json'); comments=j(D/'issue1258-current/comments.json'); receipt=j(D/'issue1258-current/receipt.json')
+ck('issue capture current successful open',issue['number']==1258 and issue['state']=='open' and comments==[] and all(x['exit_code']==0 for x in receipt['captures']))
+remote=j(O/'initial-remote-readback.json');ck('successful remote readback explicit',remote['exit_code']==0 and remote['remote_head']=='2c16c0e0f6b1e733493cb5a4a77ee5807ebac732')
+head=git('rev-parse','HEAD').strip(); status=git('status','--short','--untracked-files=no')
+ck('own head and tracked tree retained',head=='2c16c0e0f6b1e733493cb5a4a77ee5807ebac732' and not status.strip())
+result={'started_at':start,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'worker10:/root/preparation_skeptic','scope':'publication core transport/wrapper/lineage/accounting; no new scientific vote','checks':checks,'checks_total':len(checks),'failed':[x for x in checks if not x['passed']],'input_hashes':list(inputs.values()),'counts':{'original_members':155,'original_transports':157,'inert_python_transports':py,'core_files':len(cp),'ancillary_cases':1,'proposals':1,'new_cm_kg_source_cases':0,'package_roles':13,'external_native_producers':11},'actual_head':head,'native_source_read_not_executed':str(K/'src/mediaingredientmech/curate/campaign_owner_apply.py')}
+(OUT/'core-checks-v1.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({'checks':len(checks),'failed':result['failed'],'counts':result['counts']},indent=2))

@@ -1,0 +1,81 @@
+{
+  "reviewer": "/root/companion_chemistry",
+  "separate_from_companion_counts": true,
+  "holds": [
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.molecular_formula",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.smiles",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.inchi",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "owner_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "field": "chemical_properties.smiles",
+      "disposition": "WITHHOLD",
+      "reason": "The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches.",
+      "evidence_ids": [
+        "chem-microbedecoder-rifamycin-sv",
+        "chem-chebi-29673-retry",
+        "chem-chebi-26580-retry",
+        "chem-archived-chemical-scope-ontology-evidence"
+      ],
+      "new_finding": false
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "field": "ontology_mapping.mapping_quality",
+      "disposition": "WITHHOLD",
+      "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+      "evidence_ids": [
+        "chem-chebi17712",
+        "chem-chebi7hxanthine"
+      ],
+      "new_finding": true,
+      "finding_id": "FC2-XANTHINE-METHOD-001"
+    }
+  ]
+}

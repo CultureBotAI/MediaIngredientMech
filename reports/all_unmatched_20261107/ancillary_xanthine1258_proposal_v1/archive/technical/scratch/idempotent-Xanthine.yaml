@@ -1,0 +1,146 @@
+identifier: CHEBI:17712
+preferred_term: Xanthine
+ontology_mapping:
+  ontology_id: CHEBI:17712
+  ontology_label: 9H-xanthine
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 69-89-6
+    notes: ChEBI ID CHEBI:17712 found via PubChem CAS-RN cross-reference
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+    notes: Retain the existing CAS-grounded ingredient representation CHEBI:17712
+      and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318.
+      Preserve the native child-to-parent relation, not global exact equivalence.
+      Standard InChI agreement does not establish a tautomer-pure reagent. Existing
+      recipe references are retained; unqualified source observations do not acquire
+      9H specificity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1258
+    notes: Private method correction proposed by worker10 /root (Codex), with LLM
+      assistance, following direct source and contract assessment for issue 1258.
+      MANUAL_CURATION records the deliberate, nonlexical review of the existing scoped
+      ingredient representation retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760;
+      it does not assert human verification. Primary ChEBI captures https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/
+      (retrieved 2026-11-08T06:11:12.472556+00:00) and https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/
+      (retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the
+      name Xanthine. Neither the shared CAS nor the shared name uniquely selects CHEBI:17712.
+      The original PubChem CAS_RN_CROSS_REFERENCE and prior curation evidence/history
+      are preserved as historical provenance, not current proof of a unique CAS-to-target
+      resolution. Retain CHEBI:17712 / CAS 69-89-6 as the accepted ingredient representation;
+      generic xanthine trait observations retain CHEBI:15318 and the native child-to-parent
+      relation. Standard InChI agreement, retained structures and unqualified recipe
+      names do not establish a tautomer-pure reagent or confer 9H specificity on source
+      occurrences. No identifier, chemistry, alias, occurrence, role or export approval
+      changes are proposed.
+synonyms:
+- synonym_text: 2,6-dihydroxypurine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2,6-dioxo-1,2,3,6-tetrahydropurine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3,9-dihydro-1H-purine-2,6-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9H-purine-2,6-(1H,3H)-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9H-xanthine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Xan
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: purine-2(3H),6(1H)-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 21
+  media_count: 21
+curation_history:
+- timestamp: '2026-04-07T10:20:20.193637+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:17712
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: 2,6-dihydroxypurine,
+    2,6-dioxo-1,2,3,6-tetrahydropurine, 3,9-dihydro-1H-purine-2,6-dione, 9H-purine-2,6-(1H,3H)-dione,
+    9H-xanthine, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.905609+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.993208+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H4N4O2; inchi=InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H;
+    smiles=O=c1nc(=O)c2ncnc2n1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.260955+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.520156+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 16/16 -> 21/21 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-23T19:20:33.158882+00:00'
+  curator: kgmicrobe_scope_review
+  action: CORRECTED
+  changes: Retain the existing CAS-grounded ingredient representation CHEBI:17712
+    and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve
+    the native child-to-parent relation, not global exact equivalence. Standard InChI
+    agreement does not establish a tautomer-pure reagent. Existing recipe references
+    are retained; unqualified source observations do not acquire 9H specificity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T12:58:09.578563+00:00'
+  curator: codex_worker10_xanthine1258
+  action: PROPOSED_MAPPING_METHOD_CORRECTION
+  changes: 'Private ancillary proposal for issue 1258: change ontology_mapping.mapping_quality
+    from CAS_RN_LOOKUP to MANUAL_CURATION after deliberate source and scope review;
+    append LLM_SUGGESTION evidence explaining the shared CAS/name and the retained
+    issue 760 ingredient representation. Both CHEBI:17712 and CHEBI:48517 carry CAS
+    69-89-6, so CAS lookup does not uniquely select the target. Preserve all original
+    evidence and seven history events, CHEBI:17712 identity, chemistry, aliases, occurrences
+    and generic-trait CHEBI:15318 scope. This is agent-authored with LLM assistance;
+    no human verification, tautomer-purity claim, maintained application or role/export
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
+
+  Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6.
+  Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent
+  relation, not global exact equivalence. Standard InChI agreement does not establish
+  a tautomer-pure reagent. Existing recipe references are retained; unqualified source
+  observations do not acquire 9H specificity.'
+chemical_properties:
+  cas_rn: 69-89-6
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:20:20.193647+00:00'
+  molecular_formula: C5H4N4O2
+  inchi: InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)
+  smiles: O=c1nc(=O)c2ncnc2n1
+ingredient_type: SINGLE_INGREDIENT

@@ -1,0 +1,1066 @@
+{
+  "reviewer": "/root/companion_chemistry",
+  "reviewed_at": "2026-11-08T12:42:05.754286+00:00",
+  "rows": [
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_record_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "mapping_claim_id": "MIM.mapping:67d86560b6c2693ad8a6a07746933ab9163b72595ffbb480a5ac78be6d649bfe",
+      "row": {
+        "subject_id": "MIM:Acriflavine",
+        "subject_label": "Acriflavine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C76253",
+        "object_label": "Acriflavine",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "79162237803c060bed2535f2afb845775597c79d923e3040d2397027cfcb67db",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "FDA GSRS 1T3A50395T version19 is a mixture with two MUST_BE_PRESENT components, proflavine and methylacridinium chloride; it declares CAS65589-70-0 PRIMARY and CAS8048-52-0 SUPERSEDED. NCI C76253 describes the same mixture and cross-references that UNII. The literal CultureBotHT row separately reports8048-52-0 without registry-currentness evidence. Thus the generic mixture mapping and all three qualified registry/source annotations are supported; neither historical8048 claim is an active identity/xref.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Acriflavine",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Acriflavine",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "NCIT:C76253",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "Acriflavine",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:ncit.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [],
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "limitations": [
+        "No global withdrawal of CAS8048-52-0 is asserted. FDA status is record/version-specific.",
+        "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+        "SINGLE_INGREDIENT is a repository type, not a scientific single_component assertion; the companion explicitly retains mixture composition."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+      "owner_record_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+      "mapping_claim_id": "MIM.mapping:ab2f653d103b7bff39712f040d55bbc3225c5114ba1e15594887d4441fa2a5db",
+      "row": {
+        "subject_id": "MIM:Anabasine_Hydrochloride",
+        "subject_label": "Anabasine Hydrochloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C216370",
+        "object_label": "Anabasine Hydrochloride",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "33ecd760bfd7e0952d35fad804390ff98513b16d5497876f5acf587f2a5dd9b1",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "CultureBotHT literally pairs Anabasine Hydrochloride with CAS53912-89-3. FDA W4917XZ12G version7 links that CAS to NCIT C216370 and a one-to-one hydrochloride with one absolute stereocenter; NCI provides the exact label and UNII/CAS. PubChem3041330 matches the complete stored formula, stereospecific SMILES and InChI, and GSRS matches the InChI. This supports the explicit monohydrochloride rather than the free base, different salt or racemate.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Anabasine_Hydrochloride",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Anabasine Hydrochloride",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "NCIT:C216370",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "Anabasine Hydrochloride",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:ncit.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [],
+      "evidence_ids": [
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-archived-fda-gsrs",
+        "chem-gsrs-W4917XZ12G-retry",
+        "chem-ncit-C216370-retry",
+        "chem-pubchem-3041330-retry"
+      ],
+      "limitations": [
+        "No hydration, supplier, concentration, product lot or use role is inferred. Optical-activity wording is not used to erase the explicitly absolute structural stereochemistry."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+      "owner_record_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+      "mapping_claim_id": "MIM.mapping:08395a2e9933795a4818ee86a5d3f0a1df04898b2735417227b02193b6b95414",
+      "row": {
+        "subject_id": "MIM:Cotarnine_Chloride",
+        "subject_label": "Cotarnine Chloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C79997",
+        "object_label": "Cotarnine Chloride",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "07333ab4153f8a540d88a7ce67a71f799037ba0a2688d2ca6b956181f7a2105c",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "The original CultureBotHT name/CAS10018-19-6 agrees with GSRS03F6B8N3QN version10 and NCI C79997. GSRS whole structure is cotarninium plus chloride; both moiety counts are1 and the name specifies chloride(1:1). NCI supplies C12H14NO3.Cl and a separate free-base association to Cotarnine. The existing owner makes only this salt identity/CAS claim and does not invent molecular fields.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Cotarnine_Chloride",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Cotarnine Chloride",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "NCIT:C79997",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "Cotarnine Chloride",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:ncit.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [],
+      "evidence_ids": [
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-archived-fda-gsrs",
+        "chem-gsrs-03F6B8N3QN-retry",
+        "chem-ncit-C79997-retry"
+      ],
+      "limitations": [
+        "The isolated cotarninium cation and free cotarnine are not exact substitutes. Missing product/form fields stay missing; no salt hydration or lot is inferred."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Polymyxin_B.yaml",
+      "owner_record_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "mapping_claim_id": "MIM.mapping:140d8feba143f3547f15c0868871194dd06c5b67b9dd8fc938ff402a0771ceb1",
+      "row": {
+        "subject_id": "MIM:Polymyxin_B",
+        "subject_label": "Polymyxin B",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C61894",
+        "object_label": "Polymyxin B",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#213)|MIM:curator=curator_ruling_2026_08_07|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+        "other": "CAS:1404-26-8",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "99a594a30eeb353d288681a429205dc88b0cd6db4a9fc8a4c6a36486cd564ded",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "NCI C61894 defines polymyxin B as the B1/B2 polypeptide mixture and asserts CAS1404-26-8, while its C61895 association is the sulfate. Primary ChEBI8309 separately defines polymyxin B1 with CAS4135-11-9. All272 exact imported source cells say polymyxin b, without selecting B1 or sulfate. The scoped mixture owner and its source-qualified material CAS annotation agree with those facts.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Polymyxin_B",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Polymyxin B",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "NCIT:C61894",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "Polymyxin B",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:ncit.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:MIM curation (#213)|MIM:curator=curator_ruling_2026_08_07|MIM:curator=kgmicrobe_scope_review",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "CAS:1404-26-8",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [
+        {
+          "token": "CAS:1404-26-8",
+          "disposition": "SUPPORTED",
+          "reason": "Registry display token independently present on the matching primary ontology material/substance; not an equivalence claim.",
+          "evidence_ids": [
+            "chem-ncit-C61894-retry",
+            "chem-chebi-8309-retry",
+            "chem-archived-chemical-scope-ontology-evidence",
+            "chem-microbedecoder-polymyxin-b"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "chem-ncit-C61894-retry",
+        "chem-chebi-8309-retry",
+        "chem-archived-chemical-scope-ontology-evidence",
+        "chem-microbedecoder-polymyxin-b"
+      ],
+      "limitations": [
+        "272 counts source cells, not experiments or medium occurrences. Resistance/sensitivity annotations do not establish role or each constituent response.",
+        "No B1:B2 ratio, sulfate form, formulation concentration or provider product is supplied."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Pretomanid.yaml",
+      "owner_record_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+      "mapping_claim_id": "MIM.mapping:c01bdd38c44ff3e24bedb71d836e5d7c36ab6d552b3ba84a581329cf8f073145",
+      "row": {
+        "subject_id": "MIM:Pretomanid",
+        "subject_label": "Pretomanid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C166606",
+        "object_label": "Pretomanid",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "1fe47fa04f1a45b87d96fd000a04d1e213a02167067c9e4f0d6a060ac9db21ee",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "Original CultureBotHT pairs Pretomanid with CAS187235-37-6. FDA2XOI31YC4N version42 links that CAS to NCI C166606 and a defined absolute S structure. NCI confirms the exact label/CAS/UNII; PubChem456199 exactly matches the owner formula, stereospecific SMILES and InChI, with the same GSRS InChI. The record therefore denotes this defined substance without upgrading its old lab-use note to an approved role.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Pretomanid",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Pretomanid",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "NCIT:C166606",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "Pretomanid",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:ncit.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [],
+      "evidence_ids": [
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-archived-fda-gsrs",
+        "chem-gsrs-2XOI31YC4N-retry",
+        "chem-ncit-C166606-retry",
+        "chem-pubchem-456199-retry"
+      ],
+      "limitations": [
+        "No manufactured formulation, solvate, product specification or biological role is inferred from the drug name or old source note."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+      "owner_record_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "mapping_claim_id": "MIM.mapping:3d56d21ab9db42d5efc89da61008d6da7310b39cbffc940349b50a25e5708274",
+      "row": {
+        "subject_id": "MIM:Rifamycin",
+        "subject_label": "Rifamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:26580",
+        "object_label": "rifamycins",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "f0f4f6ef74a10427e2c3aa8ed12e2d2b37f4c08d5e0236e9010631731a6803c0",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "The exact three unqualified MicrobeDecoder cells were freshly reproduced from the original zip: two production cells and one resistance cell. Official BacDive pages preserve those generic rifamycin entries; separate rows may report SV or O. ChEBI26580 is the rifamycins family, with rifamycin synonym and distinct child29673 SV. Matching the generic source concept to this family preserves information without choosing a particular member or any one CAS.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Rifamycin",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Rifamycin",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "CHEBI:26580",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "rifamycins",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:chebi.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [],
+      "evidence_ids": [
+        "chem-microbedecoder-rifamycin",
+        "chem-bacdive-16969",
+        "chem-bacdive-13220",
+        "chem-bacdive-166282",
+        "chem-chebi-26580-retry",
+        "chem-chebi-29673-retry"
+      ],
+      "limitations": [
+        "The mapping comment that none specifies SV or a CAS is restricted to the exact three generic imported observations. BacDive13220 also has independent SV rows, and16969 has O; their existence does not rewrite the generic cells.",
+        "Unknown family composition remains unknown; source phenotype is not every-member activity. No formula, single CAS, supplied product or role is inferred."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "owner_record_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "mapping_claim_id": "MIM.mapping:3b0100b1c0e9bdf080b05bc69237ad26ec71aa7057066382bd25d2901a533a86",
+      "row": {
+        "subject_id": "MIM:Rifamycin_Sv",
+        "subject_label": "Rifamycin Sv",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:29673",
+        "object_label": "rifamycin SV",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=classify_ingredient_type|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+        "other": "CAS:6998-60-3",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "2373a1e70ea6b23da46484475985a6e34f05c835442865a626b148ca13352864",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "All28 exact imported MicrobeDecoder cells explicitly say rifamycin sv. ChEBI29673 independently supplies the SV definition, CAS6998-60-3, formulaC37H47NO12, mass697.778 and the same full stereochemical InChI as the owner. It is a child of rifamycins, not the generic family itself. This supports the scoped SV identity and registry annotation while keeping the stored incomplete SMILES outside fresh field support.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Rifamycin_Sv",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Rifamycin Sv",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "CHEBI:29673",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "rifamycin SV",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:chebi.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:microbedecoder|MIM:curator=classify_ingredient_type|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "CAS:6998-60-3",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [
+        {
+          "token": "CAS:6998-60-3",
+          "disposition": "SUPPORTED",
+          "reason": "Registry display token independently present on the matching primary ontology material/substance; not an equivalence claim.",
+          "evidence_ids": [
+            "chem-microbedecoder-rifamycin-sv",
+            "chem-chebi-29673-retry",
+            "chem-chebi-26580-retry",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "chem-microbedecoder-rifamycin-sv",
+        "chem-chebi-29673-retry",
+        "chem-chebi-26580-retry",
+        "chem-archived-chemical-scope-ontology-evidence"
+      ],
+      "limitations": [
+        "The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches.",
+        "28 counts source cells, not every possible experiment or a material product. Do not propagate SV CAS or individual susceptibility to the generic family."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Sutezolid.yaml",
+      "owner_record_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+      "mapping_claim_id": "MIM.mapping:8c8976968dfa91c0f1efc38c261d7cc4591a37a04b7bafc0835dbdfea3b46734",
+      "row": {
+        "subject_id": "MIM:Sutezolid",
+        "subject_label": "Sutezolid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C152482",
+        "object_label": "Sutezolid",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      },
+      "row_sha256": "c4389cd7a9af68352845e69b62be1de91ad5918620fc5f2000a38c69c45a5e14",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "Original CultureBotHT pairs Sutezolid with CAS168828-58-8. GSRS3A71182L8P version32 links that primary CAS to NCI C152482 and the S structure; NCI confirms the exact label and UNII. PubChem465951 matches the complete stored formula, stereospecific SMILES and InChI; the InChI also equals GSRS. No broader unspecified oxazolidinone or a stereoisomer is substituted.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Sutezolid",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Sutezolid",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "NCIT:C152482",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "Sutezolid",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:ncit.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.99",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [],
+      "evidence_ids": [
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-archived-fda-gsrs",
+        "chem-gsrs-3A71182L8P-retry",
+        "chem-ncit-C152482-retry",
+        "chem-pubchem-465951-retry"
+      ],
+      "limitations": [
+        "No supplier/formulation/lot or antitubercular-role approval follows from ontology identity."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "mapping_claim_id": "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7",
+      "row": {
+        "subject_id": "MIM:Xanthine",
+        "subject_label": "Xanthine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17712",
+        "object_label": "9H-xanthine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.8",
+        "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+        "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+      "disposition": "SUPPORTED",
+      "reviewer": "/root/companion_chemistry",
+      "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion.",
+      "field_assessments": [
+        {
+          "field": "subject_id",
+          "value": "MIM:Xanthine",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "subject_label",
+          "value": "Xanthine",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "predicate_id",
+          "value": "skos:exactMatch",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_id",
+          "value": "CHEBI:17712",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_label",
+          "value": "9H-xanthine",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "object_source",
+          "value": "obo:chebi.owl",
+          "reason": "Primary matching identity/label/scope assessed above."
+        },
+        {
+          "field": "mapping_justification",
+          "value": "semapv:ManualMappingCuration",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "source",
+          "value": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "mapping_date",
+          "value": "2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "confidence",
+          "value": "0.8",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        },
+        {
+          "field": "comment",
+          "value": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+          "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+        },
+        {
+          "field": "other",
+          "value": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+          "reason": "Each token assessed individually; no extra aliases inferred."
+        },
+        {
+          "field": "validation_method",
+          "value": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+          "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+        }
+      ],
+      "other_tokens": [
+        {
+          "token": "2,6-dihydroxypurine",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        },
+        {
+          "token": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        },
+        {
+          "token": "3,9-dihydro-1H-purine-2,6-dione",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        },
+        {
+          "token": "9H-purine-2,6-(1H,3H)-dione",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        },
+        {
+          "token": "Xan",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        },
+        {
+          "token": "purine-2(3H),6(1H)-dione",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        },
+        {
+          "token": "CAS:69-89-6",
+          "disposition": "SUPPORTED",
+          "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "chem-chebi17712",
+        "chem-chebi15318",
+        "chem-chebi7hxanthine",
+        "chem-pubchemxanthine",
+        "chem-archived-chemical-scope-ontology-evidence"
+      ],
+      "limitations": [
+        "All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318.",
+        "No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role.",
+        "The retained CAS_RN_LOOKUP grade is not freshly certified as a unique-target lookup: primary7H/9H terms share this CAS. Current mapping row is explicitly ManualMappingCuration and scoped representation; separate skeptical adjudication of the method-field limitation requested."
+      ],
+      "final_canonical_position": null,
+      "actual_final_canonical_sha256": null,
+      "projection_only": true
+    }
+  ]
+}

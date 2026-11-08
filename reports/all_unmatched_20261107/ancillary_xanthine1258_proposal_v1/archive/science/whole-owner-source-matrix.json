@@ -1,0 +1,1926 @@
+{
+  "before": {
+    "identifier": "CHEBI:17712",
+    "preferred_term": "Xanthine",
+    "ontology_mapping": {
+      "ontology_id": "CHEBI:17712",
+      "ontology_label": "9H-xanthine",
+      "ontology_source": "CHEBI",
+      "mapping_quality": "CAS_RN_LOOKUP",
+      "evidence": [
+        {
+          "evidence_type": "CAS_RN_CROSS_REFERENCE",
+          "source": "PubChem",
+          "cas_rn": "69-89-6",
+          "notes": "ChEBI ID CHEBI:17712 found via PubChem CAS-RN cross-reference"
+        },
+        {
+          "evidence_type": "CURATOR_JUDGMENT",
+          "source": "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md",
+          "notes": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity."
+        }
+      ]
+    },
+    "synonyms": [
+      {
+        "synonym_text": "2,6-dihydroxypurine",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "3,9-dihydro-1H-purine-2,6-dione",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "9H-purine-2,6-(1H,3H)-dione",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "9H-xanthine",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "Xan",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "purine-2(3H),6(1H)-dione",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      }
+    ],
+    "mapping_status": "MAPPED",
+    "occurrence_statistics": {
+      "total_occurrences": 21,
+      "media_count": 21
+    },
+    "curation_history": [
+      {
+        "timestamp": "2026-04-07T10:20:20.193637+00:00",
+        "curator": "feba_ontology_enrichment_batch",
+        "action": "CREATED",
+        "changes": "Created ingredient file from FEBA ontology enrichment batch with ChEBI ID CHEBI:17712",
+        "new_status": "MAPPED",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-04-18T00:00:00+00:00",
+        "curator": "cbclaw_kg_microbe_sweep",
+        "action": "ADDED_SYNONYMS",
+        "changes": "Added 7 synonyms from kg-microbe P4.4 enrichment: 2,6-dihydroxypurine, 2,6-dioxo-1,2,3,6-tetrahydropurine, 3,9-dihydro-1H-purine-2,6-dione, 9H-purine-2,6-(1H,3H)-dione, 9H-xanthine, ... (2 more)",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      {
+        "timestamp": "2026-05-01T07:35:36.905609+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+        "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-01T08:08:32.993208+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+        "changes": "molecular_formula=C5H4N4O2; inchi=InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H; smiles=O=c1nc(=O)c2ncnc2n1",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-02T03:12:19.260955+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+        "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-08-27T03:16:39.520156+00:00",
+        "curator": "refresh_occurrence_statistics",
+        "action": "CORRECTED",
+        "changes": "occurrence_statistics 16/16 -> 21/21 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+      },
+      {
+        "timestamp": "2026-09-23T19:20:33.158882+00:00",
+        "curator": "kgmicrobe_scope_review",
+        "action": "CORRECTED",
+        "changes": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "llm_model": "gpt-6"
+      }
+    ],
+    "notes": "Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.\nRetain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+    "chemical_properties": {
+      "cas_rn": "69-89-6",
+      "data_source": "FEBA ontology enrichment (via PubChem)",
+      "retrieval_date": "2026-04-07T10:20:20.193647+00:00",
+      "molecular_formula": "C5H4N4O2",
+      "inchi": "InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",
+      "smiles": "O=c1nc(=O)c2ncnc2n1"
+    },
+    "ingredient_type": "SINGLE_INGREDIENT"
+  },
+  "candidate": {
+    "identifier": "CHEBI:17712",
+    "preferred_term": "Xanthine",
+    "ontology_mapping": {
+      "ontology_id": "CHEBI:17712",
+      "ontology_label": "9H-xanthine",
+      "ontology_source": "CHEBI",
+      "mapping_quality": "MANUAL_CURATION",
+      "evidence": [
+        {
+          "evidence_type": "CAS_RN_CROSS_REFERENCE",
+          "source": "PubChem",
+          "cas_rn": "69-89-6",
+          "notes": "ChEBI ID CHEBI:17712 found via PubChem CAS-RN cross-reference"
+        },
+        {
+          "evidence_type": "CURATOR_JUDGMENT",
+          "source": "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md",
+          "notes": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity."
+        },
+        {
+          "evidence_type": "LLM_SUGGESTION",
+          "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1258",
+          "notes": "Private method correction proposed by worker10 /root (Codex), with LLM assistance, following direct source and contract assessment for issue 1258. MANUAL_CURATION records the deliberate, nonlexical review of the existing scoped ingredient representation retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760; it does not assert human verification. Primary ChEBI captures https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/ (retrieved 2026-11-08T06:11:12.472556+00:00) and https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/ (retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the name Xanthine. Neither the shared CAS nor the shared name uniquely selects CHEBI:17712. The original PubChem CAS_RN_CROSS_REFERENCE and prior curation evidence/history are preserved as historical provenance, not current proof of a unique CAS-to-target resolution. Retain CHEBI:17712 / CAS 69-89-6 as the accepted ingredient representation; generic xanthine trait observations retain CHEBI:15318 and the native child-to-parent relation. Standard InChI agreement, retained structures and unqualified recipe names do not establish a tautomer-pure reagent or confer 9H specificity on source occurrences. No identifier, chemistry, alias, occurrence, role or export approval changes are proposed."
+        }
+      ]
+    },
+    "synonyms": [
+      {
+        "synonym_text": "2,6-dihydroxypurine",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "3,9-dihydro-1H-purine-2,6-dione",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "9H-purine-2,6-(1H,3H)-dione",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "9H-xanthine",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "Xan",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "purine-2(3H),6(1H)-dione",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      }
+    ],
+    "mapping_status": "MAPPED",
+    "occurrence_statistics": {
+      "total_occurrences": 21,
+      "media_count": 21
+    },
+    "curation_history": [
+      {
+        "timestamp": "2026-04-07T10:20:20.193637+00:00",
+        "curator": "feba_ontology_enrichment_batch",
+        "action": "CREATED",
+        "changes": "Created ingredient file from FEBA ontology enrichment batch with ChEBI ID CHEBI:17712",
+        "new_status": "MAPPED",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-04-18T00:00:00+00:00",
+        "curator": "cbclaw_kg_microbe_sweep",
+        "action": "ADDED_SYNONYMS",
+        "changes": "Added 7 synonyms from kg-microbe P4.4 enrichment: 2,6-dihydroxypurine, 2,6-dioxo-1,2,3,6-tetrahydropurine, 3,9-dihydro-1H-purine-2,6-dione, 9H-purine-2,6-(1H,3H)-dione, 9H-xanthine, ... (2 more)",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      {
+        "timestamp": "2026-05-01T07:35:36.905609+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+        "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-01T08:08:32.993208+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+        "changes": "molecular_formula=C5H4N4O2; inchi=InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H; smiles=O=c1nc(=O)c2ncnc2n1",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-02T03:12:19.260955+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+        "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-08-27T03:16:39.520156+00:00",
+        "curator": "refresh_occurrence_statistics",
+        "action": "CORRECTED",
+        "changes": "occurrence_statistics 16/16 -> 21/21 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+      },
+      {
+        "timestamp": "2026-09-23T19:20:33.158882+00:00",
+        "curator": "kgmicrobe_scope_review",
+        "action": "CORRECTED",
+        "changes": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "llm_model": "gpt-6"
+      },
+      {
+        "timestamp": "2026-11-08T12:58:09.578563+00:00",
+        "curator": "codex_worker10_xanthine1258",
+        "action": "PROPOSED_MAPPING_METHOD_CORRECTION",
+        "changes": "Private ancillary proposal for issue 1258: change ontology_mapping.mapping_quality from CAS_RN_LOOKUP to MANUAL_CURATION after deliberate source and scope review; append LLM_SUGGESTION evidence explaining the shared CAS/name and the retained issue 760 ingredient representation. Both CHEBI:17712 and CHEBI:48517 carry CAS 69-89-6, so CAS lookup does not uniquely select the target. Preserve all original evidence and seven history events, CHEBI:17712 identity, chemistry, aliases, occurrences and generic-trait CHEBI:15318 scope. This is agent-authored with LLM assistance; no human verification, tautomer-purity claim, maintained application or role/export approval.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    ],
+    "notes": "Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.\nRetain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+    "chemical_properties": {
+      "cas_rn": "69-89-6",
+      "data_source": "FEBA ontology enrichment (via PubChem)",
+      "retrieval_date": "2026-04-07T10:20:20.193647+00:00",
+      "molecular_formula": "C5H4N4O2",
+      "inchi": "InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",
+      "smiles": "O=c1nc(=O)c2ncnc2n1"
+    },
+    "ingredient_type": "SINGLE_INGREDIENT"
+  },
+  "current_actual_full_mapping_row": {
+    "subject_id": "MIM:Xanthine",
+    "subject_label": "Xanthine",
+    "predicate_id": "skos:exactMatch",
+    "object_id": "CHEBI:17712",
+    "object_label": "9H-xanthine",
+    "object_source": "obo:chebi.owl",
+    "mapping_justification": "semapv:ManualMappingCuration",
+    "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+    "mapping_date": "2026-09-23",
+    "confidence": "0.8",
+    "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+    "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+  },
+  "current_row_object_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+  "current_aggregate_selector_exact": true,
+  "source_capture_objects": [
+    {
+      "source_id": "chebi17712",
+      "capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi17712.capture",
+      "sha256": "2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60",
+      "original_acquisition": {
+        "key": "chebi17712",
+        "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/",
+        "request_started_at": "2026-11-08T06:11:11.462933+00:00",
+        "accessed_at": "2026-11-08T06:11:12.472556+00:00",
+        "status": 200,
+        "final_url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/",
+        "path": ".temp/fresh-campaign-companion-review-v1/authors/salts/captures/chebi17712.capture",
+        "sha256": "2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60",
+        "bytes": 6022
+      },
+      "actual_body": {
+        "id": 17712,
+        "chebi_accession": "CHEBI:17712",
+        "name": "9<em>H</em>-xanthine",
+        "stars": 3,
+        "definition": "An oxopurine in which the purine ring is substituted by oxo groups at positions 2 and 6 and N-9 is protonated.",
+        "ascii_name": "9H-xanthine",
+        "names": {
+          "SYNONYM": [
+            {
+              "name": "2,6-dihydroxypurine",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "NIST Chemistry WebBook",
+              "ascii_name": "2,6-dihydroxypurine",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChemIDplus",
+              "ascii_name": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "9<em>H</em>-purine-2,6-(1<em>H</em>,3<em>H</em>)-dione",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChemIDplus",
+              "ascii_name": "9H-purine-2,6-(1H,3H)-dione",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "purine-2(3<em>H</em>),6(1<em>H</em>)-dione",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChemIDplus",
+              "ascii_name": "purine-2(3H),6(1H)-dione",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "Xan",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "IUBMB",
+              "ascii_name": "Xan",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "Xanthine",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "KEGG COMPOUND",
+              "ascii_name": "Xanthine",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "XANTHINE",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "PDBeChem",
+              "ascii_name": "XANTHINE",
+              "adapted": false,
+              "language_code": "en"
+            }
+          ],
+          "IUPAC NAME": [
+            {
+              "name": "3,9-dihydro-1<em>H</em>-purine-2,6-dione",
+              "status": "C",
+              "type": "IUPAC NAME",
+              "source": "IUPAC",
+              "ascii_name": "3,9-dihydro-1H-purine-2,6-dione",
+              "adapted": false,
+              "language_code": "en"
+            }
+          ],
+          "UNIPROT NAME": [
+            {
+              "name": "xanthine",
+              "status": "C",
+              "type": "UNIPROT NAME",
+              "source": "UniProt",
+              "ascii_name": "xanthine",
+              "adapted": false,
+              "language_code": "en"
+            }
+          ]
+        },
+        "chemical_data": {
+          "formula": "C5H4N4O2",
+          "charge": 0,
+          "mass": "152.113",
+          "monoisotopic_mass": "152.03343"
+        },
+        "modified_on": "2018-09-19T08:54:15Z",
+        "secondary_ids": [
+          "CHEBI:10059",
+          "CHEBI:27317",
+          "CHEBI:46377"
+        ],
+        "default_structure": {
+          "id": 3001,
+          "smiles": "O=c1nc(=O)c2ncnc2n1",
+          "standard_inchi": "InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",
+          "standard_inchi_key": "LRFVTYWOQMYALW-UHFFFAOYSA-N",
+          "wurcs": null,
+          "is_r_group": false
+        },
+        "compound_origins": [
+          {
+            "species_text": "Homo sapiens",
+            "species_accession": "9606",
+            "component_text": null,
+            "component_accession": null,
+            "strain_text": null,
+            "strain_accession": null,
+            "source": "DOI",
+            "source_accession": "10.1038/nbt.2488",
+            "comments": null,
+            "species_accession_url": "https://bioregistry.io/ncbitaxon:9606",
+            "source_accession_url": "https://bioregistry.io/doi:10.1038/nbt.2488",
+            "species_accession_prefix": "ncbitaxon"
+          },
+          {
+            "species_text": "Saccharomyces cerevisiae",
+            "species_accession": "4932",
+            "component_text": null,
+            "component_accession": null,
+            "strain_text": null,
+            "strain_accession": null,
+            "source": "PubMed",
+            "source_accession": "24678285",
+            "comments": "Source: yeast.sf.net",
+            "species_accession_url": "https://bioregistry.io/ncbitaxon:4932",
+            "source_accession_url": "http://europepmc.org/abstract/MED/24678285",
+            "species_accession_prefix": "ncbitaxon"
+          }
+        ],
+        "created_by": [],
+        "ontology_relations": {
+          "incoming_relations": [
+            {
+              "init_id": 43253,
+              "init_name": "3-isobutyl-1-methyl-9<em>H</em>-xanthine",
+              "relation_type": "has functional parent",
+              "final_id": 17712,
+              "final_name": "9<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 48517,
+              "init_name": "7<em>H</em>-xanthine",
+              "relation_type": "is tautomer of",
+              "final_id": 17712,
+              "final_name": "9<em>H</em>-xanthine"
+            }
+          ],
+          "outgoing_relations": [
+            {
+              "init_id": 17712,
+              "init_name": "9<em>H</em>-xanthine",
+              "relation_type": "has role",
+              "final_id": 75772,
+              "final_name": "<em>Saccharomyces cerevisiae </em> metabolite"
+            },
+            {
+              "init_id": 17712,
+              "init_name": "9<em>H</em>-xanthine",
+              "relation_type": "is a",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 17712,
+              "init_name": "9<em>H</em>-xanthine",
+              "relation_type": "is tautomer of",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            }
+          ]
+        },
+        "database_accessions": {
+          "MANUAL_X_REF": [
+            {
+              "id": 1004200,
+              "accession_number": "2153",
+              "type": "MANUAL_X_REF",
+              "source_name": "BPDB",
+              "url": "https://bioregistry.io/bpdb:2153",
+              "prefix": "bpdb"
+            },
+            {
+              "id": 31905,
+              "accession_number": "C00385",
+              "type": "MANUAL_X_REF",
+              "source_name": "KEGG COMPOUND",
+              "url": "https://bioregistry.io/kegg.compound:C00385",
+              "prefix": "kegg.compound"
+            },
+            {
+              "id": 81472,
+              "accession_number": "C00385",
+              "type": "MANUAL_X_REF",
+              "source_name": "KEGG COMPOUND",
+              "url": "https://bioregistry.io/kegg.compound:C00385",
+              "prefix": "kegg.compound"
+            },
+            {
+              "id": 823371,
+              "accession_number": "HMDB0000292",
+              "type": "MANUAL_X_REF",
+              "source_name": "HMDB",
+              "url": "https://bioregistry.io/hmdb:HMDB0000292",
+              "prefix": "hmdb"
+            },
+            {
+              "id": 92132,
+              "accession_number": "XAN",
+              "type": "MANUAL_X_REF",
+              "source_name": "PDBeChem",
+              "url": "https://bioregistry.io/pdb-ccd:XAN",
+              "prefix": "pdb-ccd"
+            }
+          ],
+          "CITATION": [
+            {
+              "id": 823362,
+              "accession_number": "22770225",
+              "type": "CITATION",
+              "source_name": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/22770225",
+              "prefix": "pubmed"
+            }
+          ],
+          "REGISTRY_NUMBER": [
+            {
+              "id": 823382,
+              "accession_number": "609330",
+              "type": "REGISTRY_NUMBER",
+              "source_name": "Reaxys",
+              "url": null,
+              "prefix": "reaxys"
+            },
+            {
+              "id": 92133,
+              "accession_number": "913730",
+              "type": "REGISTRY_NUMBER",
+              "source_name": "Gmelin",
+              "url": null,
+              "prefix": "gmelin"
+            }
+          ],
+          "CAS": [
+            {
+              "id": 31913,
+              "accession_number": "69-89-6",
+              "type": "CAS",
+              "source_name": "KEGG COMPOUND",
+              "url": null,
+              "prefix": "kegg.compound"
+            },
+            {
+              "id": 92130,
+              "accession_number": "69-89-6",
+              "type": "CAS",
+              "source_name": "ChemIDplus",
+              "url": "https://bioregistry.io/chemidplus:69-89-6",
+              "prefix": "chemidplus"
+            },
+            {
+              "id": 92131,
+              "accession_number": "69-89-6",
+              "type": "CAS",
+              "source_name": "NIST Chemistry WebBook",
+              "url": "http://webbook.nist.gov/cgi/cbook.cgi?ID=69-89-6",
+              "prefix": "nist"
+            }
+          ]
+        },
+        "roles_classification": [
+          {
+            "application": false,
+            "chemical_role": false,
+            "chebi_accession": "CHEBI:75772",
+            "name": "Saccharomyces cerevisiae metabolite",
+            "definition": "Any  fungal metabolite produced during a metabolic reaction in Baker's yeast (<em>Saccharomyces cerevisiae </em>).",
+            "id": 75772,
+            "biological_role": true
+          },
+          {
+            "application": false,
+            "chemical_role": false,
+            "chebi_accession": "CHEBI:78675",
+            "name": "fundamental metabolite",
+            "definition": "Any metabolite produced by all living cells.",
+            "id": 78675,
+            "biological_role": true
+          }
+        ],
+        "is_released": true
+      }
+    },
+    {
+      "source_id": "chebi7hxanthine",
+      "capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi7hxanthine.capture",
+      "sha256": "b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5",
+      "original_acquisition": {
+        "key": "chebi7hxanthine",
+        "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/",
+        "request_started_at": "2026-11-08T06:15:51.228764+00:00",
+        "accessed_at": "2026-11-08T06:15:51.983698+00:00",
+        "status": 200,
+        "final_url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/",
+        "path": ".temp/fresh-campaign-companion-review-v1/authors/salts/captures/chebi7hxanthine.capture",
+        "sha256": "b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5",
+        "bytes": 4650
+      },
+      "actual_body": {
+        "id": 48517,
+        "chebi_accession": "CHEBI:48517",
+        "name": "7<em>H</em>-xanthine",
+        "stars": 3,
+        "definition": "An oxopurine in which the purine ring is substituted by oxo groups at positions 2 and 6 and N-7 is protonated.",
+        "ascii_name": "7H-xanthine",
+        "names": {
+          "IUPAC NAME": [
+            {
+              "name": "3,7-dihydro-1<em>H</em>-purine-2,6-dione",
+              "status": "C",
+              "type": "IUPAC NAME",
+              "source": "IUPAC",
+              "ascii_name": "3,7-dihydro-1H-purine-2,6-dione",
+              "adapted": false,
+              "language_code": "en"
+            }
+          ],
+          "SYNONYM": [
+            {
+              "name": "Xanthine",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "KEGG COMPOUND",
+              "ascii_name": "Xanthine",
+              "adapted": false,
+              "language_code": "en"
+            }
+          ]
+        },
+        "chemical_data": {
+          "formula": "C5H4N4O2",
+          "charge": 0,
+          "mass": "152.113",
+          "monoisotopic_mass": "152.03343"
+        },
+        "modified_on": "2018-09-19T08:54:30Z",
+        "secondary_ids": [],
+        "default_structure": {
+          "id": 52002,
+          "smiles": "O=c1nc(=O)c2ncnc2n1",
+          "standard_inchi": "InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",
+          "standard_inchi_key": "LRFVTYWOQMYALW-UHFFFAOYSA-N",
+          "wurcs": null,
+          "is_r_group": false
+        },
+        "compound_origins": [],
+        "created_by": [
+          "Kirill Degtyarenko"
+        ],
+        "ontology_relations": {
+          "incoming_relations": [
+            {
+              "init_id": 68444,
+              "init_name": "1-methyl-7<em>H</em>-xanthine",
+              "relation_type": "has functional parent",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 34795,
+              "init_name": "3-isobutyl-1-methyl-7<em>H</em>-xanthine",
+              "relation_type": "has functional parent",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 48991,
+              "init_name": "7-methylxanthine",
+              "relation_type": "has functional parent",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 73282,
+              "init_name": "DPCPX",
+              "relation_type": "has functional parent",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 68610,
+              "init_name": "linagliptin",
+              "relation_type": "has functional parent",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 94714,
+              "init_name": "doxofylline",
+              "relation_type": "has functional parent",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            },
+            {
+              "init_id": 17712,
+              "init_name": "9<em>H</em>-xanthine",
+              "relation_type": "is tautomer of",
+              "final_id": 48517,
+              "final_name": "7<em>H</em>-xanthine"
+            }
+          ],
+          "outgoing_relations": [
+            {
+              "init_id": 48517,
+              "init_name": "7<em>H</em>-xanthine",
+              "relation_type": "is a",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 48517,
+              "init_name": "7<em>H</em>-xanthine",
+              "relation_type": "is tautomer of",
+              "final_id": 17712,
+              "final_name": "9<em>H</em>-xanthine"
+            }
+          ]
+        },
+        "database_accessions": {
+          "REGISTRY_NUMBER": [
+            {
+              "id": 113422,
+              "accession_number": "142613",
+              "type": "REGISTRY_NUMBER",
+              "source_name": "Gmelin",
+              "url": null,
+              "prefix": "gmelin"
+            },
+            {
+              "id": 823381,
+              "accession_number": "8733",
+              "type": "REGISTRY_NUMBER",
+              "source_name": "Reaxys",
+              "url": null,
+              "prefix": "reaxys"
+            }
+          ],
+          "MANUAL_X_REF": [
+            {
+              "id": 1004201,
+              "accession_number": "2153",
+              "type": "MANUAL_X_REF",
+              "source_name": "BPDB",
+              "url": "https://bioregistry.io/bpdb:2153",
+              "prefix": "bpdb"
+            },
+            {
+              "id": 865118,
+              "accession_number": "C00019660",
+              "type": "MANUAL_X_REF",
+              "source_name": "KNApSAcK",
+              "url": "https://bioregistry.io/knapsack:C00019660",
+              "prefix": "knapsack"
+            },
+            {
+              "id": 823374,
+              "accession_number": "C00385",
+              "type": "MANUAL_X_REF",
+              "source_name": "KEGG COMPOUND",
+              "url": "https://bioregistry.io/kegg.compound:C00385",
+              "prefix": "kegg.compound"
+            },
+            {
+              "id": 823378,
+              "accession_number": "DB02134",
+              "type": "MANUAL_X_REF",
+              "source_name": "DrugBank",
+              "url": "https://bioregistry.io/drugbank:DB02134",
+              "prefix": "drugbank"
+            },
+            {
+              "id": 823375,
+              "accession_number": "HMDB0000292",
+              "type": "MANUAL_X_REF",
+              "source_name": "HMDB",
+              "url": "https://bioregistry.io/hmdb:HMDB0000292",
+              "prefix": "hmdb"
+            },
+            {
+              "id": 865117,
+              "accession_number": "XAN",
+              "type": "MANUAL_X_REF",
+              "source_name": "PDBeChem",
+              "url": "https://bioregistry.io/pdb-ccd:XAN",
+              "prefix": "pdb-ccd"
+            },
+            {
+              "id": 823379,
+              "accession_number": "Xanthine",
+              "type": "MANUAL_X_REF",
+              "source_name": "Wikipedia",
+              "url": "https://bioregistry.io/wikipedia.en:Xanthine",
+              "prefix": "wikipedia.en"
+            },
+            {
+              "id": 823377,
+              "accession_number": "XANTHINE",
+              "type": "MANUAL_X_REF",
+              "source_name": "MetaCyc",
+              "url": "https://bioregistry.io/metacyc.compound:XANTHINE",
+              "prefix": "metacyc.compound"
+            }
+          ],
+          "CITATION": [
+            {
+              "id": 823373,
+              "accession_number": "22770225",
+              "type": "CITATION",
+              "source_name": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/22770225",
+              "prefix": "pubmed"
+            }
+          ],
+          "CAS": [
+            {
+              "id": 865116,
+              "accession_number": "69-89-6",
+              "type": "CAS",
+              "source_name": "KEGG COMPOUND",
+              "url": null,
+              "prefix": "kegg.compound"
+            },
+            {
+              "id": 823380,
+              "accession_number": "69-89-6",
+              "type": "CAS",
+              "source_name": "ChemIDplus",
+              "url": "https://bioregistry.io/chemidplus:69-89-6",
+              "prefix": "chemidplus"
+            }
+          ]
+        },
+        "roles_classification": [
+          {
+            "application": false,
+            "chemical_role": false,
+            "chebi_accession": "CHEBI:78675",
+            "name": "fundamental metabolite",
+            "definition": "Any metabolite produced by all living cells.",
+            "id": 78675,
+            "biological_role": true
+          }
+        ],
+        "is_released": true
+      }
+    },
+    {
+      "source_id": "chebi15318",
+      "capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi15318.capture",
+      "sha256": "ebfd4d3083325632f86320f5e553629153c6a7214211f036981e897ebf6ec537",
+      "original_acquisition": {
+        "key": "chebi15318",
+        "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/15318/",
+        "request_started_at": "2026-11-08T06:11:11.463257+00:00",
+        "accessed_at": "2026-11-08T06:11:12.595147+00:00",
+        "status": 200,
+        "final_url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/15318/",
+        "path": ".temp/fresh-campaign-companion-review-v1/authors/salts/captures/chebi15318.capture",
+        "sha256": "ebfd4d3083325632f86320f5e553629153c6a7214211f036981e897ebf6ec537",
+        "bytes": 3876
+      },
+      "actual_body": {
+        "id": 15318,
+        "chebi_accession": "CHEBI:15318",
+        "name": "xanthine",
+        "stars": 3,
+        "definition": "A purine nucleobase found in humans and other organisms.",
+        "ascii_name": "xanthine",
+        "names": {
+          "SYNONYM": [
+            {
+              "name": "2,6-dioxopurine",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChEBI",
+              "ascii_name": "2,6-dioxopurine",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "2,6-dioxopurines",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChEBI",
+              "ascii_name": "2,6-dioxopurines",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "xanthine",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChEBI",
+              "ascii_name": "xanthine",
+              "adapted": false,
+              "language_code": "en"
+            },
+            {
+              "name": "xanthines",
+              "status": "C",
+              "type": "SYNONYM",
+              "source": "ChEBI",
+              "ascii_name": "xanthines",
+              "adapted": false,
+              "language_code": "en"
+            }
+          ]
+        },
+        "chemical_data": {
+          "formula": "C5H4N4O2",
+          "charge": 0,
+          "mass": "152.111",
+          "monoisotopic_mass": "152.03343"
+        },
+        "modified_on": "2019-06-24T09:16:32Z",
+        "secondary_ids": [],
+        "default_structure": null,
+        "compound_origins": [
+          {
+            "species_text": "Homo sapiens",
+            "species_accession": "9606",
+            "component_text": null,
+            "component_accession": null,
+            "strain_text": null,
+            "strain_accession": null,
+            "source": "PubMed",
+            "source_accession": "24629268",
+            "comments": null,
+            "species_accession_url": "https://bioregistry.io/ncbitaxon:9606",
+            "source_accession_url": "http://europepmc.org/abstract/MED/24629268",
+            "species_accession_prefix": "ncbitaxon"
+          }
+        ],
+        "created_by": [],
+        "ontology_relations": {
+          "incoming_relations": [
+            {
+              "init_id": 25348,
+              "init_name": "methylxanthine",
+              "relation_type": "has functional parent",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 30881,
+              "init_name": "xanthine-8-carboxylic acid",
+              "relation_type": "has functional parent",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 16806,
+              "init_name": "xanthine-8-carboxylate",
+              "relation_type": "has functional parent",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 48518,
+              "init_name": "3-isobutyl-1-methylxanthine",
+              "relation_type": "has functional parent",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 17712,
+              "init_name": "9<em>H</em>-xanthine",
+              "relation_type": "is a",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            },
+            {
+              "init_id": 48517,
+              "init_name": "7<em>H</em>-xanthine",
+              "relation_type": "is a",
+              "final_id": 15318,
+              "final_name": "xanthine"
+            }
+          ],
+          "outgoing_relations": [
+            {
+              "init_id": 15318,
+              "init_name": "xanthine",
+              "relation_type": "has functional parent",
+              "final_id": 16235,
+              "final_name": "guanine"
+            },
+            {
+              "init_id": 15318,
+              "init_name": "xanthine",
+              "relation_type": "has role",
+              "final_id": 78675,
+              "final_name": "fundamental metabolite"
+            },
+            {
+              "init_id": 15318,
+              "init_name": "xanthine",
+              "relation_type": "is a",
+              "final_id": 26386,
+              "final_name": "purine nucleobase"
+            },
+            {
+              "init_id": 15318,
+              "init_name": "xanthine",
+              "relation_type": "is a",
+              "final_id": 25810,
+              "final_name": "oxopurine"
+            }
+          ]
+        },
+        "database_accessions": {
+          "CITATION": [
+            {
+              "id": 1008474,
+              "accession_number": "1557408",
+              "type": "CITATION",
+              "source_name": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/1557408",
+              "prefix": "pubmed"
+            },
+            {
+              "id": 880743,
+              "accession_number": "24629268",
+              "type": "CITATION",
+              "source_name": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/24629268",
+              "prefix": "pubmed"
+            },
+            {
+              "id": 1008475,
+              "accession_number": "9007687",
+              "type": "CITATION",
+              "source_name": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/9007687",
+              "prefix": "pubmed"
+            }
+          ],
+          "MANUAL_X_REF": [
+            {
+              "id": 880744,
+              "accession_number": "C00019660",
+              "type": "MANUAL_X_REF",
+              "source_name": "KNApSAcK",
+              "url": "https://bioregistry.io/knapsack:C00019660",
+              "prefix": "knapsack"
+            },
+            {
+              "id": 880746,
+              "accession_number": "ECMDB00292",
+              "type": "MANUAL_X_REF",
+              "source_name": "ECMDB",
+              "url": "https://bioregistry.io/ecmdb:ECMDB00292",
+              "prefix": "ecmdb"
+            },
+            {
+              "id": 880745,
+              "accession_number": "YMDB00263",
+              "type": "MANUAL_X_REF",
+              "source_name": "YMDB",
+              "url": "https://bioregistry.io/ymdb:YMDB00263",
+              "prefix": "ymdb"
+            }
+          ]
+        },
+        "roles_classification": [
+          {
+            "application": false,
+            "chemical_role": false,
+            "chebi_accession": "CHEBI:78675",
+            "name": "fundamental metabolite",
+            "definition": "Any metabolite produced by all living cells.",
+            "id": 78675,
+            "biological_role": true
+          }
+        ],
+        "is_released": true
+      }
+    },
+    {
+      "source_id": "pubchemxanthine",
+      "capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/pubchemxanthine.capture",
+      "sha256": "b500f7d8e35b73585c5d5a352edb7dc0940540f663c479b84bc304597ff7ee66",
+      "original_acquisition": {
+        "key": "pubchemxanthine",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/1188/property/MolecularFormula,InChI,CanonicalSMILES/JSON",
+        "request_started_at": "2026-11-08T06:11:13.204656+00:00",
+        "accessed_at": "2026-11-08T06:11:13.838853+00:00",
+        "status": 200,
+        "final_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/1188/property/MolecularFormula,InChI,CanonicalSMILES/JSON",
+        "path": ".temp/fresh-campaign-companion-review-v1/authors/salts/captures/pubchemxanthine.capture",
+        "sha256": "b500f7d8e35b73585c5d5a352edb7dc0940540f663c479b84bc304597ff7ee66",
+        "bytes": 280
+      },
+      "actual_body": {
+        "PropertyTable": {
+          "Properties": [
+            {
+              "CID": 1188,
+              "MolecularFormula": "C5H4N4O2",
+              "ConnectivitySMILES": "C1=NC2=C(N1)C(=O)NC(=O)N2",
+              "InChI": "InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "prior_review_context_projections": {
+    "HANDOFF.json": {
+      "schema_version": 1,
+      "status": "SEALED_CONDITIONAL_SCIENTIFIC_REVIEW_COMPLETE_NEEDS_CURATION",
+      "created_at": "2026-11-08T12:51:00.837547+00:00",
+      "packet_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2",
+      "findings_route": "Root deduplicates/files before any accountable author correction; no repair performed",
+      "separate_source_hold": "W05TOGOM194/BSK/CM00852950gunknownfinalvolume remains separate fromJCM220",
+      "new_owner_method_hold": "Xanthine ontology_mapping.mapping_quality CAS_RN_LOOKUP lacks uniqueCAS support; bounded ManualMappingCuration row/qualifiedCAS annotation still scientifically supported",
+      "native_boundary": "FCV2-BSA-ROW-JOIN-001: preserved fullmappingclaim differsfrom proposedBSArow in5fields; exact nativecomplete-rowjoin refuses. No claim/owner dropped or edited. Five BSAclaims additionally require unchangedoriginal43ceownerbeforeimage as separate evidence.",
+      "failed_attempts": "Preserved under validation/, history/pre-author-readback-v1/, and author/skeptical probe receipts; preliminary authorfullfiles notseparatelyretained, complete old assessment narratives/proofcatalog beforeimages retained. No failed/preliminary state promoted tofinal.",
+      "scientific_support_is_conditional": true,
+      "owner_role_export_application_release_approval": false,
+      "export_bundle_invoked": false,
+      "Git_GitHub_source_maintained_writes": false,
+      "paid_providers_or_new_external_sessions": false,
+      "next": "Await coordinator collection. Return actualappliedowner/fullcanonical/fullreview bytes for distinct final equivalence/readback and nativepublication. No further taskwork afterseal."
+    },
+    "machine-findings.json": {
+      "new_scientific_findings": [
+        {
+          "finding_id": "FC2-XANTHINE-METHOD-001",
+          "proposed_issue_key": "MediaIngredientMech:Xanthine:nonunique-CAS-method",
+          "category": "mapping_method_provenance",
+          "severity": "major",
+          "native_priority": "P2",
+          "status": "open",
+          "certainty": "confirmed",
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "field_path": "/ontology_mapping/mapping_quality",
+          "observed_value": "CAS_RN_LOOKUP",
+          "description": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+          "reproduction": [
+            "Read exact owner mapping_quality=CAS_RN_LOOKUP and its PubChem CAS_RN_CROSS_REFERENCE evidence.",
+            "Read primary ChEBI17712 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus, NIST).",
+            "Read primary ChEBI48517 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus).",
+            "Read MAPPING_SEMANTICS section0: current CAS must agree uniquely with current target for this method grade.",
+            "Compare retained13field row: mapping_justification=semapv:ManualMappingCuration, explicit no-tautomer-purity source comment."
+          ],
+          "primary_captures": [
+            {
+              "path": "science/chemistry/captures/chebi17712.capture",
+              "sha256": "2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60",
+              "original_retrieved_at": "2026-11-08T06:11:12.472556+00:00"
+            },
+            {
+              "path": "science/chemistry/captures/chebi7hxanthine.capture",
+              "sha256": "b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5",
+              "original_retrieved_at": "2026-11-08T06:15:51.983698+00:00"
+            }
+          ],
+          "contract": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/MAPPING_SEMANTICS.md",
+            "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+            "locator": "section0, CAS_RN_LOOKUP uniqueness requirement"
+          },
+          "scoped_mapping_profile": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/docs/INGREDIENT_SCOPE_PROFILE.md",
+            "sha256": "82729da420d79ceb2a1313580089866a6ed6ff06dd70f317ac61fce17433c642",
+            "locator": "Source context examples: MIM:Xanthine; no physical tautomer purity"
+          },
+          "mapping_row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+          "mapping_claim_disposition": "SUPPORTED",
+          "identifier_claim_disposition": "SUPPORTED",
+          "scientific_scope_change": false,
+          "proposed_bounded_followup": "Root deduplicates/files before any author correction. Accountable curator reconciles current owner method provenance with the actually performed nonunique-CAS manual scope assessment under native supported methods; preserve exact identity, source facts, raw aliases, all original history and tautomer/occurrence limitations. Do not manufacture a unique lexical or CAS resolution.",
+          "acceptance_conditions": [
+            "A fresh performed-method record explains how current target was selected despite the sharedCAS; any changed grade is justified by an actually performed method.",
+            "Independent review of whole owner and full row confirms no identity, scope, source occurrence, role or export-approval expansion.",
+            "All existing history and both ChEBI terms remain preserved as evidence; no arbitrary change to EXACT_MATCH/SYNONYM_MATCH or tautomer owner is presumed."
+          ],
+          "independent_reviews": {
+            "scientific_author": "/root/companion_chemistry",
+            "skeptical_reviewer": "/root/companion_skeptic",
+            "skeptical_result": "Agrees method field needs curation; scoped manual mapping/registry assertions remain supportable."
+          },
+          "dedup_status": "Root issue/history dedup pending; reviewer made no GitHub mutation",
+          "repair_performed": false
+        }
+      ],
+      "root_filing_before_any_correction_required": true,
+      "new_finding_repair_performed": false,
+      "existing_owner_field_holds": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "field": "ontology_mapping.mapping_quality",
+          "disposition": "WITHHOLD",
+          "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi7hxanthine"
+          ],
+          "new_finding": true,
+          "finding_id": "FC2-XANTHINE-METHOD-001",
+          "value": "CAS_RN_LOOKUP",
+          "value_sha256": "286bf2213363b9e259638469dc9f9b380750536e29cefa8996807eb45721a93b",
+          "reviewer": "/root/companion_skeptic"
+        }
+      ],
+      "release_approval": false
+    },
+    "science/chemistry/findings.json": {
+      "reviewer": "/root/companion_chemistry",
+      "new_findings": [
+        {
+          "finding_id": "FC2-XANTHINE-METHOD-001",
+          "proposed_issue_key": "MediaIngredientMech:Xanthine:nonunique-CAS-method",
+          "category": "mapping_method_provenance",
+          "severity": "major",
+          "native_priority": "P2",
+          "status": "open",
+          "certainty": "confirmed",
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "field_path": "/ontology_mapping/mapping_quality",
+          "observed_value": "CAS_RN_LOOKUP",
+          "description": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+          "reproduction": [
+            "Read exact owner mapping_quality=CAS_RN_LOOKUP and its PubChem CAS_RN_CROSS_REFERENCE evidence.",
+            "Read primary ChEBI17712 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus, NIST).",
+            "Read primary ChEBI48517 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus).",
+            "Read MAPPING_SEMANTICS section0: current CAS must agree uniquely with current target for this method grade.",
+            "Compare retained13field row: mapping_justification=semapv:ManualMappingCuration, explicit no-tautomer-purity source comment."
+          ],
+          "primary_captures": [
+            {
+              "path": "science/chemistry/captures/chebi17712.capture",
+              "sha256": "2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60",
+              "original_retrieved_at": "2026-11-08T06:11:12.472556+00:00"
+            },
+            {
+              "path": "science/chemistry/captures/chebi7hxanthine.capture",
+              "sha256": "b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5",
+              "original_retrieved_at": "2026-11-08T06:15:51.983698+00:00"
+            }
+          ],
+          "contract": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/MAPPING_SEMANTICS.md",
+            "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+            "locator": "section0, CAS_RN_LOOKUP uniqueness requirement"
+          },
+          "scoped_mapping_profile": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/docs/INGREDIENT_SCOPE_PROFILE.md",
+            "sha256": "82729da420d79ceb2a1313580089866a6ed6ff06dd70f317ac61fce17433c642",
+            "locator": "Source context examples: MIM:Xanthine; no physical tautomer purity"
+          },
+          "mapping_row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+          "mapping_claim_disposition": "SUPPORTED",
+          "identifier_claim_disposition": "SUPPORTED",
+          "scientific_scope_change": false,
+          "proposed_bounded_followup": "Root deduplicates/files before any author correction. Accountable curator reconciles current owner method provenance with the actually performed nonunique-CAS manual scope assessment under native supported methods; preserve exact identity, source facts, raw aliases, all original history and tautomer/occurrence limitations. Do not manufacture a unique lexical or CAS resolution.",
+          "acceptance_conditions": [
+            "A fresh performed-method record explains how current target was selected despite the sharedCAS; any changed grade is justified by an actually performed method.",
+            "Independent review of whole owner and full row confirms no identity, scope, source occurrence, role or export-approval expansion.",
+            "All existing history and both ChEBI terms remain preserved as evidence; no arbitrary change to EXACT_MATCH/SYNONYM_MATCH or tautomer owner is presumed."
+          ],
+          "independent_reviews": {
+            "scientific_author": "/root/companion_chemistry",
+            "skeptical_reviewer": "/root/companion_skeptic",
+            "skeptical_result": "Agrees method field needs curation; scoped manual mapping/registry assertions remain supportable."
+          },
+          "dedup_status": "Root issue/history dedup pending; reviewer made no GitHub mutation",
+          "repair_performed": false
+        }
+      ],
+      "existing_field_holds_preserved": 4
+    },
+    "science/chemistry/owner-assessments.json": {
+      "reviewer": "/root/companion_chemistry",
+      "reviewed_at": "2026-11-08T12:42:05.754286+00:00",
+      "owners": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "owner_payload_sha256": "3113b922fa8267efe3e2ee7525d533b9d7dff2be60102ae08e45bbffa83e8d5a",
+          "reviewer": "/root/companion_chemistry",
+          "full_owner_read": true,
+          "context": "CURRENT_K_OWNER",
+          "verdict": "needs_curation",
+          "mapping_disposition": "SUPPORTED",
+          "claim_ids": [
+            "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+            "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7"
+          ],
+          "scope": "defined_substance",
+          "composition": "single_component",
+          "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion.",
+          "limitations": [
+            "All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318.",
+            "No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role.",
+            "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation. Retain the scoped mapping; no replacement lexical grade has been performed or approved."
+          ],
+          "field_assessments": [
+            {
+              "field_path": "/identifier",
+              "field_payload_sha256": "0b3e0503412c892d8254319ad4cfa9070f9893457b67e9a25ce65fc1c5bd7751",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/preferred_term",
+              "field_payload_sha256": "07990422e6cff12c5c115ded8017ae5cc41dbaec4d7dc13f51beb523f38dad11",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/ontology_mapping",
+              "field_payload_sha256": "004ecfecf579ab29daba0051bcf7b39208eb4963e9d2774f56279c41a6fad070",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/synonyms",
+              "field_payload_sha256": "d9336bde09d7eb47fb860e2b67fa726f73142325cff58b46275bce6a77ab0fef",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "Every one of the seven stored aliases occurs under current primary ChEBI17712 names. Their meaning stays scoped to this ingredient representation; no generic-trait or physical-tautomer specificity follows.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/mapping_status",
+              "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+              "assessment": "CONTEXT_ONLY",
+              "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/occurrence_statistics",
+              "field_payload_sha256": "31c2f0409f74c20bd23b97ccde83b78b542b2805b9c3e53292737746dd060772",
+              "assessment": "CONTEXT_ONLY",
+              "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/curation_history",
+              "field_payload_sha256": "449ea715dada050eded1f481c65837a585091a86fd310914b13470c4251852d0",
+              "assessment": "CONTEXT_ONLY",
+              "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/notes",
+              "field_payload_sha256": "b8e1b8d3a0c1a61d810afa318d1c54267d49e7f5079f7c7233d944269eb2acd4",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion. All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318. No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role. The retained CAS_RN_LOOKUP grade is not freshly certified as a unique-target lookup: primary7H/9H terms share this CAS. Current mapping row is explicitly ManualMappingCuration and scoped representation; separate skeptical adjudication of the method-field limitation requested.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/chemical_properties",
+              "field_payload_sha256": "791455a2350964a1fd779a4011b9d2d94c377bfb0f8f05e5e7e92b71f02a4c1a",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/ingredient_type",
+              "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+              "assessment": "SUPPORTED_WITH_LIMITATIONS",
+              "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "field_path": "/ontology_mapping/mapping_quality",
+              "field_payload_sha256": "286bf2213363b9e259638469dc9f9b380750536e29cefa8996807eb45721a93b",
+              "assessment": "WITHHOLD",
+              "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi7hxanthine"
+              ],
+              "independent_skeptical_reviewer": "/root/companion_skeptic"
+            }
+          ],
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ],
+          "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+          "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+          "separate_field_holds": [
+            "ontology_mapping.mapping_quality"
+          ],
+          "no_owner_or_export_approval": true
+        }
+      ]
+    },
+    "science/chemistry/row-assessments.json": {
+      "reviewer": "/root/companion_chemistry",
+      "reviewed_at": "2026-11-08T12:42:05.754286+00:00",
+      "rows": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "mapping_claim_id": "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7",
+          "row": {
+            "subject_id": "MIM:Xanthine",
+            "subject_label": "Xanthine",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:17712",
+            "object_label": "9H-xanthine",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+            "mapping_date": "2026-09-23",
+            "confidence": "0.8",
+            "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+            "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+            "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+          },
+          "row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+          "disposition": "SUPPORTED",
+          "reviewer": "/root/companion_chemistry",
+          "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion.",
+          "field_assessments": [
+            {
+              "field": "subject_id",
+              "value": "MIM:Xanthine",
+              "reason": "Primary matching identity/label/scope assessed above."
+            },
+            {
+              "field": "subject_label",
+              "value": "Xanthine",
+              "reason": "Primary matching identity/label/scope assessed above."
+            },
+            {
+              "field": "predicate_id",
+              "value": "skos:exactMatch",
+              "reason": "Primary matching identity/label/scope assessed above."
+            },
+            {
+              "field": "object_id",
+              "value": "CHEBI:17712",
+              "reason": "Primary matching identity/label/scope assessed above."
+            },
+            {
+              "field": "object_label",
+              "value": "9H-xanthine",
+              "reason": "Primary matching identity/label/scope assessed above."
+            },
+            {
+              "field": "object_source",
+              "value": "obo:chebi.owl",
+              "reason": "Primary matching identity/label/scope assessed above."
+            },
+            {
+              "field": "mapping_justification",
+              "value": "semapv:ManualMappingCuration",
+              "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+            },
+            {
+              "field": "source",
+              "value": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+              "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+            },
+            {
+              "field": "mapping_date",
+              "value": "2026-09-23",
+              "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+            },
+            {
+              "field": "confidence",
+              "value": "0.8",
+              "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+            },
+            {
+              "field": "comment",
+              "value": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+              "reason": "Every boundary assertion read against literal source and primary chemical facts, with the explicit limitations below."
+            },
+            {
+              "field": "other",
+              "value": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+              "reason": "Each token assessed individually; no extra aliases inferred."
+            },
+            {
+              "field": "validation_method",
+              "value": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+              "reason": "Exact original procedural provenance read against full owner history; retained as historical row metadata, not inherited approval."
+            }
+          ],
+          "other_tokens": [
+            {
+              "token": "2,6-dihydroxypurine",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "token": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "token": "3,9-dihydro-1H-purine-2,6-dione",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "token": "9H-purine-2,6-(1H,3H)-dione",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "token": "Xan",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "token": "purine-2(3H),6(1H)-dione",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            },
+            {
+              "token": "CAS:69-89-6",
+              "disposition": "SUPPORTED",
+              "reason": "ChEBI17712 exact name/xref assertion for the bounded representation, not tautomer/trait-wide equivalence.",
+              "evidence_ids": [
+                "chem-chebi17712",
+                "chem-chebi15318",
+                "chem-chebi7hxanthine",
+                "chem-pubchemxanthine",
+                "chem-archived-chemical-scope-ontology-evidence"
+              ]
+            }
+          ],
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ],
+          "limitations": [
+            "All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318.",
+            "No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role.",
+            "The retained CAS_RN_LOOKUP grade is not freshly certified as a unique-target lookup: primary7H/9H terms share this CAS. Current mapping row is explicitly ManualMappingCuration and scoped representation; separate skeptical adjudication of the method-field limitation requested."
+          ],
+          "final_canonical_position": null,
+          "actual_final_canonical_sha256": null,
+          "projection_only": true
+        }
+      ]
+    },
+    "science/chemistry/claim-assessments.json": {
+      "reviewer": "/root/companion_chemistry",
+      "reviewed_at": "2026-11-08T12:42:05.754286+00:00",
+      "claims": [
+        {
+          "claim_id": "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+          "kind": "identifier",
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "claim_sha256": "7b769d36062e474fec5e8a29f6d72ada0bcf6b2914ecc485b1292e5b1b5419d7",
+          "payload_sha256": "cee499d1713a405f5aa5b8ba5ac700887d6ca59c342f2d2dbcf0adb1645f9157",
+          "disposition": "SUPPORTED",
+          "reviewer": "/root/companion_chemistry",
+          "reason": "The complete source-qualified tuple CHEBI:17712 version archived-review-2026-09-24 reports 69-89-6 as ASSERTED; its exact archived evidence locator and checksum were independently verified. Scope=defined_substance, currentness=CURRENT, xref_eligible=True remain literal qualifiers, not equivalence or global registry authority. The annotation supports that ChEBI asserts this CAS; shared7H/9H CAS prevents a unique tautomer inference. ",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ],
+          "limitations": [
+            "All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318.",
+            "No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role.",
+            "The retained CAS_RN_LOOKUP grade is not freshly certified as a unique-target lookup: primary7H/9H terms share this CAS. Current mapping row is explicitly ManualMappingCuration and scoped representation; separate skeptical adjudication of the method-field limitation requested."
+          ],
+          "claim": {
+            "claim_id": "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+            "kind": "identifier",
+            "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+            "payload": {
+              "annotation_id": "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+              "evidence": [
+                {
+                  "document_id": "urn:sha256:4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+                  "locator": "/chebi.db/terms/CHEBI:17712"
+                }
+              ],
+              "identifier": "cas:69-89-6",
+              "identifier_scope": "defined_substance",
+              "identifier_validity": "VALID",
+              "owner_id": "MIM:Xanthine",
+              "raw_identifier": "69-89-6",
+              "retrieved_at": "2026-09-24",
+              "review_status": "SUPPORTED",
+              "source_currentness": "CURRENT",
+              "source_id": "CHEBI:17712",
+              "source_status": "ASSERTED",
+              "source_version": "archived-review-2026-09-24",
+              "xref_eligible": true
+            }
+          },
+          "conditional_candidate_context_only": true,
+          "release_approval": false
+        },
+        {
+          "claim_id": "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7",
+          "kind": "mapping",
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "claim_sha256": "376257a8a54b3357533f86ef5cfa766a4cba314b8ea887c504c8e207b3be264b",
+          "payload_sha256": "b571863ac504d9b68e351efad6e28103c98f24dcfc43d3a6dcffec16cc11535b",
+          "disposition": "SUPPORTED",
+          "reviewer": "/root/companion_chemistry",
+          "reason": "Complete mapping payload and all eight scope fields assessed against whole owner and primary evidence. Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion. Historical source/method/date/confidence describe this retained row; confidence is not fresh scientific proof. ",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi15318",
+            "chem-chebi7hxanthine",
+            "chem-pubchemxanthine",
+            "chem-archived-chemical-scope-ontology-evidence"
+          ],
+          "limitations": [
+            "All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318.",
+            "No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role.",
+            "The retained CAS_RN_LOOKUP grade is not freshly certified as a unique-target lookup: primary7H/9H terms share this CAS. Current mapping row is explicitly ManualMappingCuration and scoped representation; separate skeptical adjudication of the method-field limitation requested."
+          ],
+          "claim": {
+            "claim_id": "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7",
+            "kind": "mapping",
+            "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+            "payload": {
+              "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+              "confidence": "0.8",
+              "ext_identity_authorized": "true",
+              "ext_object_composition": "mimscope:single_component",
+              "ext_object_scope": "mimscope:defined_substance",
+              "ext_scope_evidence": "sha256:3ae5d5a6a5b82ab6890a110c154cf602701282f25ee18f9a1f0f609869106555",
+              "ext_scope_profile": "mimprofile:ingredient-scope/v1",
+              "ext_scope_review_status": "SUPPORTED",
+              "ext_subject_composition": "mimscope:single_component",
+              "ext_subject_scope": "mimscope:defined_substance",
+              "mapping_date": "2026-09-23",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:17712",
+              "object_label": "9H-xanthine",
+              "object_source": "obo:chebi.owl",
+              "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+              "subject_id": "MIM:Xanthine",
+              "subject_label": "Xanthine",
+              "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+            }
+          },
+          "conditional_candidate_context_only": true,
+          "release_approval": false
+        }
+      ]
+    },
+    "science/chemistry/field-holds.json": {
+      "reviewer": "/root/companion_chemistry",
+      "separate_from_companion_counts": true,
+      "holds": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "field": "ontology_mapping.mapping_quality",
+          "disposition": "WITHHOLD",
+          "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+          "evidence_ids": [
+            "chem-chebi17712",
+            "chem-chebi7hxanthine"
+          ],
+          "new_finding": true,
+          "finding_id": "FC2-XANTHINE-METHOD-001"
+        }
+      ]
+    },
+    "skeptical/owner-assessments.json": {
+      "owners": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "context": "CURRENT_K_OWNER",
+          "reviewer": "/root/companion_skeptic",
+          "complete_owner_read": true,
+          "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+          "reason": "Current ChEBI distinguishes17712 N9-protonated representation,48517 N7 tautomer and15318 broader xanthine. Both specific terms share69-89-6 and normalized mobile-H InChI/SMILES. Scoped manual representation and source-qualified xref remain supportable; no pure reagent, unique-CAS selection, generic trait specialization or equivalence of the classes is proven. Existing CAS_RN_LOOKUP method needs separate root triage under current §0.",
+          "evidence_ids": [
+            "sa-chebi17712",
+            "sa-chebi15318",
+            "sa-chebi7hxanthine",
+            "sa-pubchemxanthine",
+            "ab-archive-scope-ontology"
+          ],
+          "preserved_field_withholds": [],
+          "whole_owner_roles_exports_approved": false,
+          "whole_owner_verdict": "needs_curation",
+          "additional_method_field_withhold": "ontology_mapping.mapping_quality",
+          "method_finding": "FC2-XANTHINE-METHOD-001 (same concern as skeptical FCV2-XANTHINE-METHOD-TRIAGE)",
+          "method_reason": "Both primary CHEBI17712 and48517 assert CAS69-89-6, so current CAS_RN_LOOKUP field does not meet uniquely resolved target contract. The actual complete diagnostic row says ManualMappingCuration and remains scoped scientific support; owner method correction requires truthful performed-method evidence and root triage."
+        }
+      ]
+    },
+    "skeptical/claim-assessments.json": {
+      "claims": [
+        {
+          "claim_id": "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+          "kind": "identifier",
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "claim_sha256": "7b769d36062e474fec5e8a29f6d72ada0bcf6b2914ecc485b1292e5b1b5419d7",
+          "payload_sha256": "cee499d1713a405f5aa5b8ba5ac700887d6ca59c342f2d2dbcf0adb1645f9157",
+          "disposition": "SUPPORTED",
+          "reviewer": "/root/companion_skeptic",
+          "reason": "Inspect exact registry/source assertion: 69-89-6 from CHEBI:17712 version archived-review-2026-09-24, status ASSERTED, currentness CURRENT, xref_eligible=True. These qualifiers are retained, not promoted to unrestricted chemical equivalence. Current ChEBI distinguishes17712 N9-protonated representation,48517 N7 tautomer and15318 broader xanthine. Both specific terms share69-89-6 and normalized mobile-H InChI/SMILES. Scoped manual representation and source-qualified xref remain supportable; no pure reagent, unique-CAS selection, generic trait specialization or equivalence of the classes is proven. Existing CAS_RN_LOOKUP method needs separate root triage under current §0.",
+          "evidence_ids": [
+            "sa-chebi17712",
+            "sa-chebi15318",
+            "sa-chebi7hxanthine",
+            "sa-pubchemxanthine",
+            "ab-archive-scope-ontology"
+          ],
+          "embedded_source_qualifiers_read": true,
+          "scope": "CONDITIONAL SCIENTIFIC CANDIDATE ASSESSMENT; not native publication or whole-owner release"
+        },
+        {
+          "claim_id": "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7",
+          "kind": "mapping",
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "claim_sha256": "376257a8a54b3357533f86ef5cfa766a4cba314b8ea887c504c8e207b3be264b",
+          "payload_sha256": "b571863ac504d9b68e351efad6e28103c98f24dcfc43d3a6dcffec16cc11535b",
+          "disposition": "SUPPORTED",
+          "reviewer": "/root/companion_skeptic",
+          "reason": "The entire original scoped mapping payload is scientifically supportable under its bounded scope. Its historical method/date/source and confidence are provenance, not fresh evidence or empirical certainty. Current ChEBI distinguishes17712 N9-protonated representation,48517 N7 tautomer and15318 broader xanthine. Both specific terms share69-89-6 and normalized mobile-H InChI/SMILES. Scoped manual representation and source-qualified xref remain supportable; no pure reagent, unique-CAS selection, generic trait specialization or equivalence of the classes is proven. Existing CAS_RN_LOOKUP method needs separate root triage under current §0.",
+          "evidence_ids": [
+            "sa-chebi17712",
+            "sa-chebi15318",
+            "sa-chebi7hxanthine",
+            "sa-pubchemxanthine",
+            "ab-archive-scope-ontology"
+          ],
+          "embedded_source_qualifiers_read": true,
+          "scope": "CONDITIONAL SCIENTIFIC CANDIDATE ASSESSMENT; not native publication or whole-owner release"
+        }
+      ]
+    },
+    "skeptical/peer-chemistry.json": {
+      "reviewer": "/root/companion_skeptic",
+      "author": "/root/companion_chemistry",
+      "at": "2026-11-08T12:44:53.307618+00:00",
+      "independence": "Distinct in-process scientific skeptic; no candidate ownership; fresh primary/scientific evaluation in skeptical assessments precedes author cross-check; no previous votes inherited.",
+      "owner_count": 9,
+      "claim_count": 19,
+      "mapping_rows": 9,
+      "source_captures_rehashed": 33,
+      "owner_checks": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+          "author_verdict": "needs_curation",
+          "full_payload_and_author_scientific_reasons_read": true,
+          "skeptical_result": "AGREE_WITH_RECORDED_SCOPE_AND_HOLDS"
+        }
+      ],
+      "row_checks": [
+        {
+          "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+          "row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+          "all_13_fields_read": true,
+          "skeptical_result": "CONDITIONAL_SCIENTIFIC_SUPPORT_ONLY",
+          "final_canonical_binding": false
+        }
+      ],
+      "scope": "Author-scope peer scientific review only; conditional science, not native complete-canonical/application/role/export approval.",
+      "overall_result": "AGREE_WITH_SCOPED_SCIENCE_AND_ALL_HOLDS",
+      "separate_open_method_finding": "FC2-XANTHINE-METHOD-001; Xanthine owner needs_curation, while its actual ManualMappingCuration 13-field row and qualified registry claim remain conditionally supported.",
+      "final_root_assembly": "PENDING"
+    }
+  },
+  "fresh_scope": "Xanthine only; whole peer files byte-bound but other-owner judgments are not renewed."
+}

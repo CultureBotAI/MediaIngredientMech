@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import copy,csv,datetime,hashlib,importlib.util,json,subprocess
+import yaml
+O=Path(__file__).resolve().parent;R=O.parents[2];C=R.parents[2];P=O.parent
+K=C/'integration/release-worktree';W=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2'
+BASE='5288c882def177b1b9a5eee2975f039db780ac4e'
+inputs={};checks=[];commands=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def canon(x):return sha(json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode())
+def pin(p,expected=None,scope='review input'):
+ p=Path(p);b=p.read_bytes();h=sha(b);inputs[str(p)]={'path':str(p),'sha256':h,'bytes':len(b),'scope':scope}
+ if expected:check('hash '+str(p),h==expected)
+ return b
+def check(n,v,detail=None):
+ checks.append({'check':n,'pass':bool(v),'detail':detail})
+ if not v:raise AssertionError(n)
+def j(p,*args):return json.loads(pin(p,*args))
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+def git(*args):
+ command=['git','-C',str(K),*args];s=datetime.datetime.now(datetime.timezone.utc).isoformat();p=subprocess.run(command,capture_output=True)
+ commands.append({'command':command,'started_at':s,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exit_code':p.returncode,'stdout_sha256':sha(p.stdout),'stderr':p.stderr.decode()});check('git '+str(args),p.returncode==0);return p.stdout
+started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+before_path=K/'data/ingredients/mapped/Xanthine.yaml';before=yaml.safe_load(pin(before_path,'c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22'))
+candidate_path=P/'candidate/Xanthine.yaml';after=yaml.safe_load(pin(candidate_path,'747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546'))
+check('actual before equals original5288 Git blob',git('show',BASE+':data/ingredients/mapped/Xanthine.yaml')==before_path.read_bytes())
+check('actual before equals task copy',pin(P/'inputs/07-Xanthine.yaml')==before_path.read_bytes())
+head=git('rev-parse','HEAD').decode().strip()
+check('complete original seven events preserved',len(before['curation_history'])==7 and after['curation_history'][:7]==before['curation_history'])
+check('one truthful new event',len(after['curation_history'])==8 and after['curation_history'][-1]['llm_assisted'] is True and after['curation_history'][-1]['curator']=='codex_worker10_xanthine1258')
+check('two complete prior evidence preserved',len(before['ontology_mapping']['evidence'])==2 and after['ontology_mapping']['evidence'][:2]==before['ontology_mapping']['evidence'])
+check('one AI-specific new evidence',len(after['ontology_mapping']['evidence'])==3 and after['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION')
+check('grade corrected nonlexically',before['ontology_mapping']['mapping_quality']=='CAS_RN_LOOKUP' and after['ontology_mapping']['mapping_quality']=='MANUAL_CURATION')
+rollback=copy.deepcopy(after);rollback['ontology_mapping']['mapping_quality']='CAS_RN_LOOKUP';rollback['ontology_mapping']['evidence'].pop();rollback['curation_history'].pop()
+check('only exact three permitted semantic changes',rollback==before)
+for k in before:
+ if k not in ['ontology_mapping','curation_history']:check('unchanged entire '+k,after[k]==before[k])
+check('same ten top-level fields',set(before)==set(after) and len(after)==10)
+check('no role facets or invented supplied form',not any(k in after for k in ['physicochemical_roles','biological_roles','community_roles','supplied_form','components','component_assertion','causal_graphs']))
+schema_path=K/'src/mediaingredientmech/schema/mediaingredientmech.yaml';schema=yaml.safe_load(pin(schema_path))
+quality=schema['enums']['MappingQualityEnum']['permissible_values'];evidence=schema['enums']['EvidenceTypeEnum']['permissible_values']
+check('mapping manual contract distinct from human evidence contract',quality['MANUAL_CURATION']['description']=='Manually curated by expert' and 'human reviewer' in evidence['MANUAL_CURATION']['description'])
+check('LLM_ASSISTED would imply unverified human step','human-verified' in quality['LLM_ASSISTED']['description'])
+check('new evidence discloses no human assertion','does not assert human verification' in after['ontology_mapping']['evidence'][-1]['notes'])
+check('historical CAS qualification explicit','historical provenance, not current proof of a unique CAS-to-target' in after['ontology_mapping']['evidence'][-1]['notes'])
+sources=[];terms={}
+for key in ['chebi17712','chebi7hxanthine','chebi15318','pubchemxanthine']:
+ meta=j(W/f'science/chemistry/captures/{key}-metadata.json');body=j(W/f'science/chemistry/captures/{key}.capture',meta['sha256']);terms[key]=body
+ check('primary acquisition successful '+key,meta['status']==200)
+ sources.append({'source_id':key,'capture_path':str(W/f'science/chemistry/captures/{key}.capture'),'sha256':meta['sha256'],'original_acquisition':meta,'actual_body':body})
+t9=terms['chebi17712'];t7=terms['chebi7hxanthine'];tg=terms['chebi15318']
+for key,t in [('9H',t9),('7H',t7)]:
+ check('sameCAS explicitly on '+key,'69-89-6' in [x['accession_number'] for x in t['database_accessions']['CAS']])
+ check('same bare name on '+key,'Xanthine' in [x['ascii_name'] for x in t['names']['SYNONYM']])
+check('distinct explicit proton locations','N-9' in t9['definition'] and 'N-7' in t7['definition'])
+check('equal normalized InChI cannot discriminate',t9['default_structure']['standard_inchi']==t7['default_structure']['standard_inchi'])
+check('both distinct children of generic15318',all(any(r['relation_type']=='is a' and r['final_id']==15318 for r in t['ontology_relations']['outgoing_relations']) for t in [t9,t7]))
+names={t9['ascii_name']}|{x['ascii_name'] for group in t9['names'].values() for x in group}
+for x in after['synonyms']:check('source supports retained scoped synonym '+x['synonym_text'],x['synonym_text'] in names)
+for field,sourcevalue in [('molecular_formula',t9['chemical_data']['formula']),('inchi',t9['default_structure']['standard_inchi']),('smiles',t9['default_structure']['smiles'])]:check('unchanged representative chemistry '+field,after['chemical_properties'][field]==sourcevalue)
+table=K/'mappings/ingredient_mappings.sssom.tsv';rows=[r for r in csv.DictReader([s for s in pin(table).decode().splitlines() if not s.startswith('#')],delimiter='\t') if r['subject_id']=='MIM:Xanthine']
+check('one actual complete13field maintained row',len(rows)==1 and len(rows[0])==13)
+row=rows[0];check('scoped exact representative row',row['object_id']=='CHEBI:17712' and row['predicate_id']=='skos:exactMatch' and row['mapping_justification']=='semapv:ManualMappingCuration')
+check('generic trait and no purity limits in actual row','CHEBI:15318' in row['comment'] and 'does not establish a tautomer-pure reagent' in row['comment'])
+for token in row['other'].split('|'):check('row token scoped source support '+token,token in names or token=='CAS:69-89-6')
+aggp=K/'data/curated/mapped_ingredients.yaml';agg=yaml.safe_load(pin(aggp,scope='Only Xanthine aggregate selector checked; no whole-corpus science'))
+ar=[x for x in agg['ingredients'] if x.get('preferred_term')=='Xanthine'];check('authentic aggregate and individual equal',ar==[before])
+contracts=['AGENTS.md','MAPPING_SEMANTICS.md','docs/INGREDIENT_SCOPE_PROFILE.md','docs/record-reviews.md','docs/record-review-profile.md','.claude/skills/curate-yaml-record/SKILL.md','.claude/skills/curate-yaml-record/references/review-checklist.md','reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md','scripts/validate_strict.py']
+for rel in contracts+['src/mediaingredientmech/schema/mediaingredientmech.yaml']:
+ p=K/rel;check('current scientific/native input exact5288 '+rel,pin(p)==git('show',BASE+':'+rel))
+for p in sorted((K/'src/mediaingredientmech/schema').rglob('*.yaml')):check('schema import exact5288 '+str(p.relative_to(K)),pin(p)==git('show',BASE+':'+str(p.relative_to(K))))
+spec=importlib.util.spec_from_file_location('xanthine_strict',K/'scripts/validate_strict.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);strict=module.validate_one(candidate_path);check('native full closed schema',strict==[],strict)
+seal=j(W/'MANIFEST.json','003ddab328359fbaeff063749e0d1ddce4ffe55ba58733894e55b0572f6ac204')
+membermap={x['path']:x for x in seal['files']}
+context=['HANDOFF.json','machine-findings.json','science/chemistry/findings.json','science/chemistry/owner-assessments.json','science/chemistry/row-assessments.json','science/chemistry/claim-assessments.json','science/chemistry/field-holds.json','skeptical/owner-assessments.json','skeptical/claim-assessments.json','skeptical/peer-chemistry.json']
+projections={}
+def pick(v):
+ if isinstance(v,list):return [x for x in v if 'Xanthine' in json.dumps(x)]
+ if isinstance(v,dict):return {k:pick(x) if isinstance(x,(dict,list)) else x for k,x in v.items() if not isinstance(x,(dict,list)) or 'Xanthine' in json.dumps(x)}
+ return v
+for rel in context:
+ x=j(W/rel,membermap[rel]['sha256']);projections[rel]=pick(x)
+for s in sources:
+ p=Path(s['capture_path']);check('primary body sealed '+p.name,sha(p.read_bytes())==membermap[str(p.relative_to(W))]['sha256'])
+for p in [P/'inputs/user-task.txt',P/'author-receipt.json',P/'field-differences.json',P/'START.json',C/'preflight/xanthine-method-finding-publication-v1/readback-00.json',C/'preflight/xanthine-method-finding-publication-v1/publication-00.json',C/'preflight/xanthine-method-finding-publication-v1/issue.md',C/'preflight/xanthine-method-issue-audit-v1/760.json',C/'preflight/xanthine-method-issue-audit-v1/receipt.json']:pin(p)
+check('actual issue760 scope preserved','CHEBI:17712' in j(C/'preflight/xanthine-method-issue-audit-v1/760.json')['body'])
+check('source unchanged after review',sha(before_path.read_bytes())=='c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22')
+save('candidate-verification.json',{'started_at':started,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS','check_count':len(checks),'checks':checks,'commands':commands,'baseline_head':BASE,'observed_current_K_head':head,'current_K_code_change_reviewed':False,'native_strict_results':strict,'write_boundary':str(O)})
+save('whole-owner-source-matrix.json',{'before':before,'candidate':after,'current_actual_full_mapping_row':row,'current_row_object_sha256':canon(row),'current_aggregate_selector_exact':True,'source_capture_objects':sources,'prior_review_context_projections':projections,'fresh_scope':'Xanthine only; whole peer files byte-bound but other-owner judgments are not renewed.'})
+save('input-hashes-v1.json',list(inputs.values()))
+print(json.dumps({'status':'PASS','checks':len(checks),'inputs':len(inputs),'owner_fields':len(after),'old_history':len(before['curation_history']),'new_history':len(after['curation_history']),'row_object_sha256':canon(row)}))

@@ -1,0 +1,47 @@
+from pathlib import Path
+import json,hashlib,subprocess,csv,sys,importlib.util
+from datetime import datetime,timezone
+import yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';CLAW=C.parents[1]/'.temp/kgm-unmapped-20261107/claw';O=R/'.temp/ancillary-xanthine1258-proposal-v1/technical';start=datetime.now(timezone.utc).isoformat();bind=[];checks=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def read(p):
+ b=Path(p).read_bytes();bind.append({'path':str(p),'sha256':sha(b),'size':len(b)});return b
+
+def ck(n,v):
+ checks.append({'name':n,'passed':bool(v)})
+ assert v,n
+
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False,default=str);f.write('\n')
+def git(p,*args):return subprocess.check_output(['git','-C',str(p),*args]).decode().strip()
+H=git(K,'rev-parse','HEAD');ck('observedKcodeonlysuccessor',H=='e0a75a0c48ba539426b1f70623ea376c7b379ecf');CH=git(CLAW,'rev-parse','HEAD');P=K/'data/ingredients/mapped/Xanthine.yaml';b=read(P);ck('authenticbefore',sha(b)=='c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22');ck('KGitbeforeequal',subprocess.check_output(['git','-C',str(K),'show',H+':'+str(P.relative_to(K))])==b);record=yaml.safe_load(b)
+aggp=K/'data/curated/mapped_ingredients.yaml';agg=yaml.load(read(aggp),Loader=yaml.CSafeLoader);matches=[x for x in agg['ingredients'] if x['preferred_term']=='Xanthine'];ck('oneaggregateentry',len(matches)==1);ck('completeaggregateequal',matches[0]==record)
+rows=list(csv.DictReader((l for l in read(K/'mappings/ingredient_mappings.sssom.tsv').decode().splitlines() if not l.startswith('#')),delimiter='\t'));current=[{'position':i,'row':r} for i,r in enumerate(rows,1) if r['subject_id']=='MIM:Xanthine'];ck('onecurrentrow',len(current)==1)
+records={};refs=[]
+for p in sorted((K/'data/ingredients').rglob('*.yaml')):
+ o=yaml.load(p.read_bytes(),Loader=yaml.CSafeLoader);records[str(p.relative_to(K))]=o
+ for i,c in enumerate(o.get('components') or []):
+  if c.get('component_id')=='CHEBI:17712':refs.append({'owner_path':str(p.relative_to(K)),'owner_sha256':sha(read(p)),'locator':f'components/{i}','complete_component':c})
+ids=[{'path':p,'label':o['preferred_term']} for p,o in records.items() if o['identifier']=='CHEBI:17712'];ck('uniqueprimaryactiveowner',len(ids)==1)
+for p in [K/'AGENTS.md',K/'MAPPING_SEMANTICS.md',K/'docs/record-reviews.md',K/'docs/record-review-profile.md',K/'.claude/skills/curate-yaml-record/SKILL.md',K/'src/mediaingredientmech/schema/mediaingredientmech.yaml',K/'src/mediaingredientmech/schema/mech_shared.yaml',K/'src/mediaingredientmech/curate/curation_event.py',K/'src/mediaingredientmech/validation/write_validated.py',K/'src/mediaingredientmech/curate/publication_guard.py']:read(p)
+W=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2';prior={}
+for rel,key in [('science/chemistry/owner-assessments.json','owners'),('science/chemistry/row-assessments.json','rows')]:
+ o=json.loads(read(W/rel));prior[rel]=next(x for x in o[key] if x['owner_record']==str(P.relative_to(K)))
+priorrow=prior['science/chemistry/row-assessments.json']['row'];ck('fullcurrentrowmatchesW09review',current[0]['row']==priorrow)
+for rel in ['HANDOFF.json','MANIFEST.json','skeptical/peer-chemistry.json','science/chemistry/findings.json']:read(W/rel)
+sys.path[:0]=[str(K/'src'),str(CLAW/'src'),str(CLAW/'scripts')]
+from mediaingredientmech.validation.write_validated import validate_ingredient
+from mediaingredientmech.curate.curation_event import record_curation_event
+ck('exactKvalidator',Path(sys.modules[validate_ingredient.__module__].__file__).resolve()==K/'src/mediaingredientmech/validation/write_validated.py');errors=validate_ingredient(record,schema_path=K/'src/mediaingredientmech/schema/mediaingredientmech.yaml');ck('baselineclosedschema',not errors)
+producer=CLAW/'scripts/build_mim_ingredient_sssom.py';pb=read(producer);spec=importlib.util.spec_from_file_location('xanthine_technical_producer',producer);mod=importlib.util.module_from_spec(spec);sys.modules[spec.name]=mod;exec(compile(pb,str(producer),'exec',dont_inherit=True),mod.__dict__)
+mapped={p:r for p,r in records.items() if Path(p).parent.name=='mapped'};owners=mod.build_owner_index({mod._mim_curie(Path(p).name):r for p,r in mapped.items()});native=mod._row_from_yaml(P,{},{},{},{},record=record,owners=owners,suppressions=[]);ck('nativeexactownpredicate',len(native)==1 and native[0]['predicate_id']=='skos:exactMatch' and native[0]['object_id']=='CHEBI:17712');ck('nativeactualmanualmethod',native[0]['mapping_justification']=='semapv:ManualMappingCuration')
+modules=[]
+for n,m in list(sys.modules.items()):
+ p=getattr(m,'__file__',None)
+ if p and any(s in p for s in ['/mediaingredientmech/','/kg_microbe_','/build_mim_ingredient_sssom.py','/kgm_unified_mappings.py','/claw/plugins/']):
+  pp=Path(p).resolve();ck('executedsourceKClaw '+n,pp.is_relative_to(K) or pp.is_relative_to(CLAW));modules.append({'module':n,'path':str(pp),'sha256':sha(read(pp))})
+delta=git(K,'diff','--name-only','5288c882def177b1b9a5eee2975f039db780ac4e',H).splitlines();ck('boundedKdelta',set(delta)=={'src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py'});
+for m in modules:
+ if Path(m['path']).is_relative_to(K):ck('executedKmoduleunchangedfrom5288 '+m['module'],sha(subprocess.check_output(['git','-C',str(K),'show','5288c882def177b1b9a5eee2975f039db780ac4e:'+str(Path(m['path']).relative_to(K))]))==m['sha256'])
+pre={'requested_K_head':'5288c882def177b1b9a5eee2975f039db780ac4e','actual_K_code_delta':delta,'at':datetime.now(timezone.utc).isoformat(),'execution_started':start,'reviewer':'worker10:/root/bio_research','candidate_author':'worker10:/root','scientific_review':False,'K_head':H,'CLAW_head':CH,'owner_path':str(P),'before_sha256':sha(b),'complete_owner':record,'aggregate_equal':True,'owner_inventory_count':len(records),'primary_identifier_owners':ids,'component_references':refs,'occurrence_scope':{'stored':record['occurrence_statistics'],'interpretation':'Dated retained metadata; not a fresh21recipe census. No source case membership introduced.','ingredient_occurrences_tsv_search':'rg --files --hidden --no-ignore over K found no live ingredient_occurrences.tsv; archived/test fixtures are not substituted.'},'current_canonical_rows':current,'native_before_rows':native,'native_vs_canonical_differences':{k:{'canonical':current[0]['row'].get(k),'native_api_empty_ancillary_context':native[0].get(k)} for k in native[0] if current[0]['row'].get(k)!=native[0].get(k)},'native_scope':'Actual per-owner row API, full mapped owner-name index and empty optional ancillary maps. Not fullcanonical generation or accepted mapping evidence.','prior_full_owner_and_row_reviews':prior,'modules':modules,'checks':checks,'input_bindings':list({x['path']:x for x in bind}.values()),'candidate_checked':False,'pending':'Await exact root-authored candidate for isolated writer/history/schema/semantic retention and meaningful negative controls.','no_mutation':'No maintained/source/Git/GitHub/output producer application; only technical private reports.'}
+save('preflight.json',pre);print(json.dumps({'checks':len(checks),'inputs':len(pre['input_bindings']),'modules':len(modules),'active_owners':len(records),'component_refs':len(refs),'K':H,'CLAW':CH,'current_row_position':current[0]['position'],'native_changes':pre['native_vs_canonical_differences']}))

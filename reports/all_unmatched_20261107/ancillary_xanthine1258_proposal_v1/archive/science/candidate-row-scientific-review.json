@@ -1,0 +1,159 @@
+{
+  "technical_execution": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/ancillary-xanthine1258-proposal-v1/technical/native-row-comparison.json",
+    "sha256": "3cd38cc4ed6dff30fee04fa386468db935132421547a3ca23c25d026046e114d"
+  },
+  "scientist_executed_producer": false,
+  "complete_canonical_row": {
+    "subject_id": "MIM:Xanthine",
+    "subject_label": "Xanthine",
+    "predicate_id": "skos:exactMatch",
+    "object_id": "CHEBI:17712",
+    "object_label": "9H-xanthine",
+    "object_source": "obo:chebi.owl",
+    "mapping_justification": "semapv:ManualMappingCuration",
+    "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+    "mapping_date": "2026-09-23",
+    "confidence": "0.8",
+    "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+    "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+  },
+  "complete_native_baseline_row": {
+    "subject_id": "MIM:Xanthine",
+    "subject_label": "Xanthine",
+    "predicate_id": "skos:exactMatch",
+    "object_id": "CHEBI:17712",
+    "object_label": "9H-xanthine",
+    "object_source": "obo:chebi.owl",
+    "mapping_justification": "semapv:ManualMappingCuration",
+    "source": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=kgmicrobe_scope_review",
+    "mapping_date": "2026-09-23",
+    "confidence": "0.9",
+    "comment": "",
+    "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "validation_method": ""
+  },
+  "complete_native_candidate_row": {
+    "subject_id": "MIM:Xanthine",
+    "subject_label": "Xanthine",
+    "predicate_id": "skos:exactMatch",
+    "object_id": "CHEBI:17712",
+    "object_label": "9H-xanthine",
+    "object_source": "obo:chebi.owl",
+    "mapping_justification": "semapv:ManualMappingCuration",
+    "source": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258",
+    "mapping_date": "2026-11-08",
+    "confidence": "0.9",
+    "comment": "",
+    "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "validation_method": ""
+  },
+  "before_after_diagnostic_changed_fields": [
+    "source",
+    "mapping_date"
+  ],
+  "canonical_vs_candidate_diagnostic_changed_fields": [
+    "source",
+    "mapping_date",
+    "confidence",
+    "comment",
+    "validation_method"
+  ],
+  "field_assessments": [
+    {
+      "field": "subject_id",
+      "canonical": "MIM:Xanthine",
+      "before_diagnostic": "MIM:Xanthine",
+      "candidate_diagnostic": "MIM:Xanthine",
+      "assessment": "Same MIM:Xanthine subject; not a new source case or owner."
+    },
+    {
+      "field": "subject_label",
+      "canonical": "Xanthine",
+      "before_diagnostic": "Xanthine",
+      "candidate_diagnostic": "Xanthine",
+      "assessment": "Same scoped Xanthine name; generic trait meaning remains separate."
+    },
+    {
+      "field": "predicate_id",
+      "canonical": "skos:exactMatch",
+      "before_diagnostic": "skos:exactMatch",
+      "candidate_diagnostic": "skos:exactMatch",
+      "assessment": "Own-identifier skos:exactMatch retained under §0/RuleD. Quality correction alone does not choose a different predicate or assert physical purity."
+    },
+    {
+      "field": "object_id",
+      "canonical": "CHEBI:17712",
+      "before_diagnostic": "CHEBI:17712",
+      "candidate_diagnostic": "CHEBI:17712",
+      "assessment": "Same CHEBI:17712 reviewed representation."
+    },
+    {
+      "field": "object_label",
+      "canonical": "9H-xanthine",
+      "before_diagnostic": "9H-xanthine",
+      "candidate_diagnostic": "9H-xanthine",
+      "assessment": "Same primary label9H-xanthine; no implied new tautomer-pure source."
+    },
+    {
+      "field": "object_source",
+      "canonical": "obo:chebi.owl",
+      "before_diagnostic": "obo:chebi.owl",
+      "candidate_diagnostic": "obo:chebi.owl",
+      "assessment": "Same ChEBI attribution."
+    },
+    {
+      "field": "mapping_justification",
+      "canonical": "semapv:ManualMappingCuration",
+      "before_diagnostic": "semapv:ManualMappingCuration",
+      "candidate_diagnostic": "semapv:ManualMappingCuration",
+      "assessment": "ManualMappingCuration remains the actual diagnostic justification before and after; it is consistent with deliberate scope review and is not a fresh human-verification assertion."
+    },
+    {
+      "field": "source",
+      "canonical": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+      "before_diagnostic": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=kgmicrobe_scope_review",
+      "candidate_diagnostic": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258",
+      "assessment": "New diagnostic source provenance records issue1258 and the actual agent curator; existing source evidence retained. This diagnostic source differs from the enriched maintained row and is not its final replacement."
+    },
+    {
+      "field": "mapping_date",
+      "canonical": "2026-09-23",
+      "before_diagnostic": "2026-09-23",
+      "candidate_diagnostic": "2026-11-08",
+      "assessment": "New diagnostic date matches the proposed history date. It is not a final publication date, receipt or position."
+    },
+    {
+      "field": "confidence",
+      "canonical": "0.8",
+      "before_diagnostic": "0.9",
+      "candidate_diagnostic": "0.9",
+      "assessment": "0.9 is an unchanged diagnostic producer default; maintained reviewed row carries0.8. No new empirical confidence or certainty is approved."
+    },
+    {
+      "field": "comment",
+      "canonical": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "before_diagnostic": "",
+      "candidate_diagnostic": "",
+      "assessment": "The API diagnostic leaves this blank before and after. The maintained row has material #760 scope limitations; future full publication must retain them with complete owner/row evidence. Blank diagnostic output is not acceptance of erasing those limits."
+    },
+    {
+      "field": "other",
+      "canonical": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+      "before_diagnostic": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+      "candidate_diagnostic": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+      "assessment": "All six noncanonical name tokens plusCAS unchanged and verified against17712 names/xrefs. No new aliases or global tautomer/generic equivalence."
+    },
+    {
+      "field": "validation_method",
+      "canonical": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+      "before_diagnostic": "",
+      "candidate_diagnostic": "",
+      "assessment": "API diagnostic is blank before and after; maintained row retains manual scope-review provenance. Final canonical binding remains required, not inferred from this API call."
+    }
+  ],
+  "verdict": "pass_with_limitations_for_diagnostic_method_and_identity_behavior",
+  "final_canonical_approval": false,
+  "requirements": "Future generated full row must retain #760 scope evidence, truthful provenance and all independent owner/claim bindings. No final position, maintained change or application receipt is fabricated."
+}

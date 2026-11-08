@@ -1,0 +1,2773 @@
+{
+  "owners": [
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "current_K_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "original_review_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Acriflavine.yaml",
+      "selected_owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "snapshot": "snapshot/owners/Acriflavine.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:0d56aed5f7c740dc2b65251124d2a1a34077f929cfab86141cb819e33856097d",
+        "MIM.annotation:8d709e550efa24c364cba1cb4d58e9810a48a4a360c97d4d71f2f8bd39763a23",
+        "MIM.annotation:bc90e88ad5302b1af9a78a8626da353a9fd4f38d2d7d7454d260aeb3d1ac2318",
+        "MIM.mapping:67d86560b6c2693ad8a6a07746933ab9163b72595ffbb480a5ac78be6d649bfe"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+        "owner_record_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+        "owner_payload_sha256": "1428d97719b4a3cf43ff2a02bb9bda4454a271c4539e73b65c51ea9bd8c7dda2",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "needs_curation",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:0d56aed5f7c740dc2b65251124d2a1a34077f929cfab86141cb819e33856097d",
+          "MIM.annotation:8d709e550efa24c364cba1cb4d58e9810a48a4a360c97d4d71f2f8bd39763a23",
+          "MIM.annotation:bc90e88ad5302b1af9a78a8626da353a9fd4f38d2d7d7454d260aeb3d1ac2318",
+          "MIM.mapping:67d86560b6c2693ad8a6a07746933ab9163b72595ffbb480a5ac78be6d649bfe"
+        ],
+        "scope": "material",
+        "composition": "mixture",
+        "reason": "FDA GSRS 1T3A50395T version19 is a mixture with two MUST_BE_PRESENT components, proflavine and methylacridinium chloride; it declares CAS65589-70-0 PRIMARY and CAS8048-52-0 SUPERSEDED. NCI C76253 describes the same mixture and cross-references that UNII. The literal CultureBotHT row separately reports8048-52-0 without registry-currentness evidence. Thus the generic mixture mapping and all three qualified registry/source annotations are supported; neither historical8048 claim is an active identity/xref.",
+        "limitations": [
+          "No global withdrawal of CAS8048-52-0 is asserted. FDA status is record/version-specific.",
+          "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+          "SINGLE_INGREDIENT is a repository type, not a scientific single_component assertion; the companion explicitly retains mixture composition."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "8823e4e39563b26be418b0861030709b14f4111875750c5f8adbd7725a73d06e",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "FDA GSRS 1T3A50395T version19 is a mixture with two MUST_BE_PRESENT components, proflavine and methylacridinium chloride; it declares CAS65589-70-0 PRIMARY and CAS8048-52-0 SUPERSEDED. NCI C76253 describes the same mixture and cross-references that UNII. The literal CultureBotHT row separately reports8048-52-0 without registry-currentness evidence. Thus the generic mixture mapping and all three qualified registry/source annotations are supported; neither historical8048 claim is an active identity/xref.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "84d043c590c00a64e3b2f41bc39c23fbbb92f080b44ea228c83564408537326e",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit material scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "d5e7adc0c71b25d9454aa37ff8bcd33ecc0a28daa9c20643e2c43b62952763f2",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "89df90a9c2aae9d3dae363cd822d51ba5ca9c77bc8c4755cb6f5bef8cc2675f3",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "7cd5231dfff710b0834f1ef14c8d50e0374311ebbc55f81e631b92bc1aedc24b",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "fae04f11bdb9b6815ca54c7c4004abbf55b72890d3ac0dfd5ea077839133fc0a",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The three stored structure fields exactly reproduce PubChem443101 but cannot establish fixed mixture ratio; they remain WITHHOLD. FDA-specific primary CAS65589-70-0 is separately supported.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "611be954d54f8b02041a1287ff0ee2b5d8dcf28e242ef6a6c3f3451294867ee1",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "FDA GSRS 1T3A50395T version19 is a mixture with two MUST_BE_PRESENT components, proflavine and methylacridinium chloride; it declares CAS65589-70-0 PRIMARY and CAS8048-52-0 SUPERSEDED. NCI C76253 describes the same mixture and cross-references that UNII. The literal CultureBotHT row separately reports8048-52-0 without registry-currentness evidence. Thus the generic mixture mapping and all three qualified registry/source annotations are supported; neither historical8048 claim is an active identity/xref. No global withdrawal of CAS8048-52-0 is asserted. FDA status is record/version-specific. PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry. SINGLE_INGREDIENT is a repository type, not a scientific single_component assertion; the companion explicitly retains mixture composition.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties/molecular_formula",
+            "field_payload_sha256": "ce67e5784f96b4cb87991a05a3260945482e2f2361c946f1473ff04fbbc9e536",
+            "assessment": "WITHHOLD",
+            "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties/smiles",
+            "field_payload_sha256": "ddf79e8b587914e5846e429736f4f408ffd64de2c91513e09e3025917450b4ca",
+            "assessment": "WITHHOLD",
+            "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties/inchi",
+            "field_payload_sha256": "3a9463f603c50149b474ab5a69631e7fe861b9dca60b47e11b5bbf4b045f1f34",
+            "assessment": "WITHHOLD",
+            "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+            "evidence_ids": [
+              "chem-gsrs-1T3A50395T-retry",
+              "chem-ncit-C76253-retry",
+              "chem-archived-fda-gsrs",
+              "chem-archived-source-records",
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-pubchem-443101-retry"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-gsrs-1T3A50395T-retry",
+          "chem-ncit-C76253-retry",
+          "chem-archived-fda-gsrs",
+          "chem-archived-source-records",
+          "chem-original-culturebotht-compounds-to-cas",
+          "chem-pubchem-443101-retry"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [
+          "chemical_properties.molecular_formula",
+          "chemical_properties.smiles",
+          "chemical_properties.inchi"
+        ],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+        "owner_record_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "FDA1T3A50395T explicitly records a mixture with acriflavinium chloride and proflavine required, CAS65589-70-0 PRIMARY and8048-52-0 SUPERSEDED. Original CSV545 reports the old RN without supplier. NCITC76253 matches the mixture. This supports source-qualified annotations and material mapping, not an invariant 1:1 bulk composition. PubChem443101 disconnected structure does not establish bulk stoichiometry.",
+        "evidence_ids": [
+          "ab-archive-gsrs",
+          "ab-gsrs-1T3A50395T-retry",
+          "ab-ncit-C76253-retry",
+          "ab-pubchem-443101-retry",
+          "ab-original-culturebotht"
+        ],
+        "preserved_field_withholds": [
+          "chemical_properties.molecular_formula",
+          "chemical_properties.smiles",
+          "chemical_properties.inchi"
+        ],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "needs_curation"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+      "current_K_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+      "original_review_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+      "selected_owner_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+      "snapshot": "snapshot/owners/Anabasine_Hydrochloride.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:cc25ce885ea5f3472041d8e55f1731b343172f6b4f1e55e6c0ffd670a4ec2cd3",
+        "MIM.mapping:ab2f653d103b7bff39712f040d55bbc3225c5114ba1e15594887d4441fa2a5db"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+        "owner_record_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+        "owner_payload_sha256": "56b6be2cfbb32a5503923de6247b8d55e2ec21829a17e10af434b752bc8ed86e",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "pass_with_limitations",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:cc25ce885ea5f3472041d8e55f1731b343172f6b4f1e55e6c0ffd670a4ec2cd3",
+          "MIM.mapping:ab2f653d103b7bff39712f040d55bbc3225c5114ba1e15594887d4441fa2a5db"
+        ],
+        "scope": "defined_substance",
+        "composition": "single_component",
+        "reason": "CultureBotHT literally pairs Anabasine Hydrochloride with CAS53912-89-3. FDA W4917XZ12G version7 links that CAS to NCIT C216370 and a one-to-one hydrochloride with one absolute stereocenter; NCI provides the exact label and UNII/CAS. PubChem3041330 matches the complete stored formula, stereospecific SMILES and InChI, and GSRS matches the InChI. This supports the explicit monohydrochloride rather than the free base, different salt or racemate.",
+        "limitations": [
+          "No hydration, supplier, concentration, product lot or use role is inferred. Optical-activity wording is not used to erase the explicitly absolute structural stereochemistry."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "4ee743492b1c4883a043f44633a8e78bdb70479fef72f0a15ec946f7dee9de84",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CultureBotHT literally pairs Anabasine Hydrochloride with CAS53912-89-3. FDA W4917XZ12G version7 links that CAS to NCIT C216370 and a one-to-one hydrochloride with one absolute stereocenter; NCI provides the exact label and UNII/CAS. PubChem3041330 matches the complete stored formula, stereospecific SMILES and InChI, and GSRS matches the InChI. This supports the explicit monohydrochloride rather than the free base, different salt or racemate.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "95f1e4a648c87b44f29211d37edaf9f6084a58a94ef17aaffc3867115b29c454",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "fe7c5116cd009ce699c6641657e42fc8f4049a2ffb007a423dfe95c4223ab387",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "89df90a9c2aae9d3dae363cd822d51ba5ca9c77bc8c4755cb6f5bef8cc2675f3",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "c0dc087e8b046f6ce826655e255a686173b08e347c7e050a3f58daf3ec31a3be",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "c580feede6e2fe6ac2e6388d8f0ef66b9b96335bd7cd81b5f997306304ed6c07",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "fc4cf8edaba1fbc3ff0d1b4a9a3e2d40a40ee27ddea07f96404be87fb7afbea1",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CultureBotHT literally pairs Anabasine Hydrochloride with CAS53912-89-3. FDA W4917XZ12G version7 links that CAS to NCIT C216370 and a one-to-one hydrochloride with one absolute stereocenter; NCI provides the exact label and UNII/CAS. PubChem3041330 matches the complete stored formula, stereospecific SMILES and InChI, and GSRS matches the InChI. This supports the explicit monohydrochloride rather than the free base, different salt or racemate. No hydration, supplier, concentration, product lot or use role is inferred. Optical-activity wording is not used to erase the explicitly absolute structural stereochemistry.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-W4917XZ12G-retry",
+              "chem-ncit-C216370-retry",
+              "chem-pubchem-3041330-retry"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-original-culturebotht-compounds-to-cas",
+          "chem-archived-fda-gsrs",
+          "chem-gsrs-W4917XZ12G-retry",
+          "chem-ncit-C216370-retry",
+          "chem-pubchem-3041330-retry"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+        "owner_record_sha256": "c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Original CAS53912-89-3, FDAW4917XZ12G, NCITC216370 and PubChem3041330 agree on the stereospecific monohydrochloride. The whole owner formula, one chloride and InChI/SMILES agree. This is not anabasine free base, a racemate or another salt.",
+        "evidence_ids": [
+          "ab-archive-gsrs",
+          "ab-gsrs-W4917XZ12G-retry",
+          "ab-ncit-C216370-retry",
+          "ab-pubchem-3041330-retry",
+          "ab-original-culturebotht"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "current_K_sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "original_review_sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-four-mapping-review-requests-v1/requests/bsa/candidate.yaml",
+      "selected_owner_sha256": "8aa29bf6e0029daa2626e118d7b6a432c6b94eb3563869ae302d87c13f1c50c2",
+      "snapshot": "snapshot/owners/Bovine_Serum_Albumin.yaml",
+      "context": "PROPOSED_CAMPAIGN_BSA",
+      "claim_ids": [
+        "MIM.annotation:6213fab08a0155ce16611e9cf97acd01d510a3d1189cb471a6a45126f904f2aa",
+        "MIM.annotation:af1a5a7509503ca56c4e379fe4fdc3bb715a2e068f3893d2ed7e7d288602f6d1",
+        "MIM.mapping:3e31f9ef127f6562283644b6b4e558b04f6ad4acc67b73d931ce7b07057a2b21",
+        "MIM.occurrence:02fe305535235bf77ba1461297d83f5acaf00388cb9fe93106653e595d716e3a",
+        "MIM.occurrence:117aea4f6b5d47e247c9213957b356536a83ae5761e250088ddcb4916d12ea2a",
+        "MIM.occurrence:8394cb0213b04201a22d6b2746b5e1ee8b694bc8231e1e326ae38bb7ea710679",
+        "MIM.occurrence:8ef56b6e356d256d79632b07d5dd457b18c7d9c99c5d75a540e11c9b34cfc67f",
+        "MIM.occurrence:a0b7862d03825d9ce0af65aec44c436fd349e7a6fbb6f532ba97e7f11697db2e",
+        "MIM.occurrence:ba034fc68fa011fde2c9a71c833483843b112a2f4f15ac7874c99bc059e9f817",
+        "MIM.occurrence:f87a0fa202bcc85d1bb0cccea21530926b48a5d6aedf2974e4cb03ff437bff80",
+        "MIM.occurrence:fd1bb6bc9d252283274b8f99eac1c1bb753f556f375e5f370a26676cd935eef2",
+        "MIM.product:236d010a5b948a41cf779a0482db32881dd38580bb6a51c6b6a475ff271adf09",
+        "MIM.product:3ffa6bb1ca12588aef200ff75b8c1c482c6d86021649280a1d697fc6f25e2552",
+        "MIM.product:d9d00b34670dd47b4bb7a5b2713fda5960cecf991bb5ab2ad045c13f83bb3c73"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+        "owner_record_sha256": "8aa29bf6e0029daa2626e118d7b6a432c6b94eb3563869ae302d87c13f1c50c2",
+        "context": "PROPOSED_CAMPAIGN_BSA",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "The proposed complete owner retains generic bovine serum albumin at NCIT:C85253, with FDA CAS 9048-46-8 explicitly GENERIC (FAMILY). Ten supplied-form entries preserve named products, source stocks and distinct recipe contexts rather than making them interchangeable aliases. The SINGLE_INGREDIENT tag names a material; no single molecular formula, monodisperse species or universal grade is established. New source histories are truthful proposal history, not evidence of application.",
+        "evidence_ids": [
+          "ma-ncit-C85253",
+          "ma-fda-BSA",
+          "ma-source-csv",
+          "ma-archived-source",
+          "ma-sigma-A7030",
+          "ma-sigma-A7409",
+          "ma-sigma-A9647",
+          "ma-jcm-220",
+          "ma-dsmz-403",
+          "ma-jcm201-negative"
+        ],
+        "limitations": [
+          "JCM220/CM012955 unsupported normalized 9.652509652509652 PERCENT_V_V stays WITHHOLD.",
+          "TOGO M194/BSK CM008529 50 g Fraction V has unknown final volume; no 50 g/L inference and no merger with JCM220.",
+          "20% basis and carrier for JCM220 stock remain unspecified. ADC/OADC naming conflicts, historical Miles 81-003 version, unnumbered M2400/M2401 fraction and alternative A9647/A7409 selection remain source qualified.",
+          "NCIT/CAS generic mapping proves no product, lot, quantity or role.",
+          "Unchanged historical BSA mapping envelope differs from proposed diagnostic row in five fields; full native exact-row binding is pending.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "supplied_form",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:6213fab08a0155ce16611e9cf97acd01d510a3d1189cb471a6a45126f904f2aa",
+          "MIM.annotation:af1a5a7509503ca56c4e379fe4fdc3bb715a2e068f3893d2ed7e7d288602f6d1",
+          "MIM.mapping:3e31f9ef127f6562283644b6b4e558b04f6ad4acc67b73d931ce7b07057a2b21",
+          "MIM.occurrence:02fe305535235bf77ba1461297d83f5acaf00388cb9fe93106653e595d716e3a",
+          "MIM.occurrence:117aea4f6b5d47e247c9213957b356536a83ae5761e250088ddcb4916d12ea2a",
+          "MIM.occurrence:8394cb0213b04201a22d6b2746b5e1ee8b694bc8231e1e326ae38bb7ea710679",
+          "MIM.occurrence:8ef56b6e356d256d79632b07d5dd457b18c7d9c99c5d75a540e11c9b34cfc67f",
+          "MIM.occurrence:a0b7862d03825d9ce0af65aec44c436fd349e7a6fbb6f532ba97e7f11697db2e",
+          "MIM.occurrence:ba034fc68fa011fde2c9a71c833483843b112a2f4f15ac7874c99bc059e9f817",
+          "MIM.occurrence:f87a0fa202bcc85d1bb0cccea21530926b48a5d6aedf2974e4cb03ff437bff80",
+          "MIM.occurrence:fd1bb6bc9d252283274b8f99eac1c1bb753f556f375e5f370a26676cd935eef2",
+          "MIM.product:236d010a5b948a41cf779a0482db32881dd38580bb6a51c6b6a475ff271adf09",
+          "MIM.product:3ffa6bb1ca12588aef200ff75b8c1c482c6d86021649280a1d697fc6f25e2552",
+          "MIM.product:d9d00b34670dd47b4bb7a5b2713fda5960cecf991bb5ab2ad045c13f83bb3c73"
+        ],
+        "history_count": 11,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false,
+        "supplied_form_assessments": [
+          {
+            "index": 0,
+            "reason": "CultureBotHT A7030 product retained with manufacturer qualifiers; not shared identity definition.",
+            "evidence_ids": [
+              "ma-source-csv",
+              "ma-sigma-A7030"
+            ]
+          },
+          {
+            "index": 1,
+            "reason": "The complete entry is Sigma A9647 Bovine serum albumin fraction V, explicitly sourced to CM015191/DSMZ403. Preserve this product as one unselected alternative, not a restriction on all seven source recipes or a guarantee of Cohn ethanol preparation.",
+            "evidence_ids": [
+              "ma-dsmz-403",
+              "ma-sigma-A9647",
+              "ma-recipe-015191",
+              "ma-archived-occurrences"
+            ]
+          },
+          {
+            "index": 2,
+            "reason": "The complete entry is Sigma A7409 BSA solution, the other CM015191/DSMZ403 alternative. It remains unselected; no historical concentration, independent product CAS or carrier is inferred from current product specifications.",
+            "evidence_ids": [
+              "ma-dsmz-403",
+              "ma-sigma-A7409",
+              "ma-recipe-015191",
+              "ma-archived-occurrences"
+            ]
+          },
+          {
+            "index": 3,
+            "reason": "M2879/M2880 literal2.5g fractionV and50mLwater stock input; preserve ADC/OADC naming conflict and no exact final-volume or component-role inference.",
+            "evidence_ids": [
+              "w04-MATERIALS-CAP-a08fb341926e1d0a",
+              "w04-MATERIALS-CAP-ee722a18f3e26939"
+            ]
+          },
+          {
+            "index": 4,
+            "reason": "M1946 OADC50g fractionV with1Lwater stock input; original provider main water895mL remains distinct from NBRC900mL, and final volume is not invented.",
+            "evidence_ids": [
+              "w04-MATERIALS-CAP-b5dd8b92f4e4ea2c"
+            ]
+          },
+          {
+            "index": 5,
+            "reason": "M194/BSK50g fractionV exact literal retained. Direct JCM201 endpoint returned Nothing found. Neither the metadata provenance nor50g proves final volume; do not relabel50g/L.",
+            "evidence_ids": [
+              "w04-MATERIALS-CAP-776733f8ca9ff0a9",
+              "ma-jcm201-negative"
+            ]
+          },
+          {
+            "index": 6,
+            "reason": "M2407 OADC50g fractionV and1Lwater are stock inputs; filter instructions preserved without exact final-volume inference.",
+            "evidence_ids": [
+              "w04-MATERIALS-CAP-4b8a987a15a1852d"
+            ]
+          },
+          {
+            "index": 7,
+            "reason": "Archived M2400/M2401 ADC2.5g in50mLwater says an unnumbered fraction. No fractionV, stock final volume or current provider-version claim inferred. Original batch timestamp Jan24 retained; individual acquisition times unknown.",
+            "evidence_ids": [
+              "w04-MATERIALS-ARCHIVE-M2400",
+              "w04-MATERIALS-ARCHIVE-M2401"
+            ]
+          },
+          {
+            "index": 8,
+            "reason": "M2410 literally records Miles Laboratories Elkhart Indiana81-003 fractionV50g. Historical product is preserved without identifying a modern replacement or assuming lot/form details.",
+            "evidence_ids": [
+              "w04-bio-primary-c0b20edbf3ff8192"
+            ]
+          },
+          {
+            "index": 9,
+            "reason": "JCM220/M21320% fractionV stock remains basis/carrier-unspecified;5g fractionV ADC plus100mLDIwater in M2366/ATCC1395/M2403/M2397 is a separate nominal preparation, not a universal grade or exact final-volume assertion.",
+            "evidence_ids": [
+              "ma-jcm-220",
+              "w04-bio-primary-d46811b4531cb18d",
+              "w04-bio-primary-0601c054fc0b3983",
+              "w04-bio-primary-0c209ac75046ea77",
+              "w04-bio-primary-3fc897e98af6db04",
+              "w04-bio-primary-8ff3ea22f082fab0"
+            ]
+          }
+        ]
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+        "owner_record_sha256": "8aa29bf6e0029daa2626e118d7b6a432c6b94eb3563869ae302d87c13f1c50c2",
+        "context": "PROPOSED_CAMPAIGN_BSA",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "NCITC85253 and FDA27432CM55Q define generic bovine albumin material and CAS9048-46-8 GENERIC(FAMILY). Proposed whole owner preserves first3 source-specific products and all histories while adding literal BSA constituent/grade contexts. A7030 is not assigned to all recipes; A9647/A7409 remain unselected alternatives. FractionV does not uniquely select a fractionation process. JCM22010mL20% stock has no stated percentage basis and is distinct from M194 BSK50g with unknown final volume. New source descriptors do not settle either receiving-medium hold.",
+        "evidence_ids": [
+          "ma-ncit-C85253",
+          "ma-fda-BSA",
+          "ma-source-csv",
+          "ma-7h9-primary",
+          "ma-archived-occurrences",
+          "ma-archived-source",
+          "ma-sigma-A7030",
+          "ma-sigma-A7409",
+          "ma-sigma-A9647",
+          "ma-jcm-220",
+          "ma-jcm-252",
+          "ma-dsmz-403",
+          "ma-dsmz-751",
+          "ma-dsmz-1829",
+          "ma-solution-6374",
+          "ma-solution-821",
+          "ma-solution-3888",
+          "ma-solution-3938",
+          "ma-solution-1537",
+          "ma-solution-3830",
+          "bsa-source:MATERIALS-CAP-a08fb341926e1d0a",
+          "bsa-source:MATERIALS-CAP-ee722a18f3e26939",
+          "bsa-source:MATERIALS-CAP-b5dd8b92f4e4ea2c",
+          "bsa-source:MATERIALS-CAP-776733f8ca9ff0a9",
+          "bsa-source:MATERIALS-CAP-4b8a987a15a1852d",
+          "bsa-source:MATERIALS-ARCHIVE-M2400",
+          "bsa-source:MATERIALS-ARCHIVE-M2401",
+          "bsa-source:POSTSEAL-MATERIALS-BSK-PRIMARY",
+          "bsa-source:POSTSEAL-MATERIALS-BSK-FILED-FINDING",
+          "bsa-source:bio-primary-0601c054fc0b3983",
+          "bsa-source:bio-primary-0c209ac75046ea77",
+          "bsa-source:bio-primary-3fc897e98af6db04",
+          "bsa-source:bio-primary-8ff3ea22f082fab0",
+          "bsa-source:bio-primary-b7d9d34bf3d8036e",
+          "bsa-source:bio-primary-b89995ee1227b0ea",
+          "bsa-source:bio-primary-c0b20edbf3ff8192",
+          "bsa-source:bio-primary-d46811b4531cb18d",
+          "bsa-source:sv1-bio-supplier-a9647"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "needs_curation_in_scoped_claim_context"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+      "current_K_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+      "original_review_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Cotarnine_Chloride.yaml",
+      "selected_owner_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+      "snapshot": "snapshot/owners/Cotarnine_Chloride.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:dcf4a028ff7970060be1af35e1c0286d2c4df678fc48f281d7ead05600e7583e",
+        "MIM.mapping:08395a2e9933795a4818ee86a5d3f0a1df04898b2735417227b02193b6b95414"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+        "owner_record_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+        "owner_payload_sha256": "b7c4d6ab6115f1987cf58105b86a484d4850d8dbb11d649a7f89b4904afcb2de",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "pass_with_limitations",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:dcf4a028ff7970060be1af35e1c0286d2c4df678fc48f281d7ead05600e7583e",
+          "MIM.mapping:08395a2e9933795a4818ee86a5d3f0a1df04898b2735417227b02193b6b95414"
+        ],
+        "scope": "defined_substance",
+        "composition": "single_component",
+        "reason": "The original CultureBotHT name/CAS10018-19-6 agrees with GSRS03F6B8N3QN version10 and NCI C79997. GSRS whole structure is cotarninium plus chloride; both moiety counts are1 and the name specifies chloride(1:1). NCI supplies C12H14NO3.Cl and a separate free-base association to Cotarnine. The existing owner makes only this salt identity/CAS claim and does not invent molecular fields.",
+        "limitations": [
+          "The isolated cotarninium cation and free cotarnine are not exact substitutes. Missing product/form fields stay missing; no salt hydration or lot is inferred."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "4bf9e86c067468b27a2ab79a6e433219b9dd473823852369e00e213cb41610c1",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The original CultureBotHT name/CAS10018-19-6 agrees with GSRS03F6B8N3QN version10 and NCI C79997. GSRS whole structure is cotarninium plus chloride; both moiety counts are1 and the name specifies chloride(1:1). NCI supplies C12H14NO3.Cl and a separate free-base association to Cotarnine. The existing owner makes only this salt identity/CAS claim and does not invent molecular fields.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "cb2ad793dfe03eb03963cf5a147758c22092dd0427c50a6c659101165410963a",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "762bca185ed1c75cd7a077555988770fe53f6e49ecfa0d7eace7d5ea5b4af99f",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "89df90a9c2aae9d3dae363cd822d51ba5ca9c77bc8c4755cb6f5bef8cc2675f3",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "1b951aac4ad1966d7bb930a950d7a010af2b949d531ed1c288a5f853c703d506",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "8ff3bca6c1d4a779f623793aab5945185dd130b23c8e1aa507c3b35913ef4aba",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "b64d78cbf341da63f75c112c55dc607f3da82c2c5c606823f5c6ee03987ba8ab",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The original CultureBotHT name/CAS10018-19-6 agrees with GSRS03F6B8N3QN version10 and NCI C79997. GSRS whole structure is cotarninium plus chloride; both moiety counts are1 and the name specifies chloride(1:1). NCI supplies C12H14NO3.Cl and a separate free-base association to Cotarnine. The existing owner makes only this salt identity/CAS claim and does not invent molecular fields. The isolated cotarninium cation and free cotarnine are not exact substitutes. Missing product/form fields stay missing; no salt hydration or lot is inferred.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-03F6B8N3QN-retry",
+              "chem-ncit-C79997-retry"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-original-culturebotht-compounds-to-cas",
+          "chem-archived-fda-gsrs",
+          "chem-gsrs-03F6B8N3QN-retry",
+          "chem-ncit-C79997-retry"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+        "owner_record_sha256": "821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "FDA03F6B8N3QN structure and NCITC79997 distinguish cotarninium chloride1:1 salt from free cotarnine and cation alone. Source10018-19-6 matches. No hydrate or molecular detail absent from this owner is inferred.",
+        "evidence_ids": [
+          "ab-archive-gsrs",
+          "ab-gsrs-03F6B8N3QN-retry",
+          "ab-ncit-C79997-retry",
+          "ab-original-culturebotht"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Locust_Bean_Gum.yaml",
+      "current_K_sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+      "original_review_sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Locust_Bean_Gum.yaml",
+      "selected_owner_sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+      "snapshot": "snapshot/owners/Locust_Bean_Gum.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:c65a89e41ee4ef607e7430191563346e121493edf46bbea39539618db70916b6",
+        "MIM.mapping:1ac327215fa2bc0d4584ac14e728bf43b92e18866a811008cb0f1e86b111fa24"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Locust_Bean_Gum.yaml",
+        "owner_record_sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "FOODON:03413132, WHO/JECFA INS410, source Sigma G0753 and its actual seed-powder specification support generic Ceratonia siliqua locust/carob gum material. The complete owner retains autoclaved as a supplied-form qualifier, not a global exact synonym. Neither clarified grade nor fixed molecular composition is established.",
+        "evidence_ids": [
+          "sa-foodonlocust",
+          "sa-jecfalocust",
+          "sa-web-primary-supplier",
+          "sa-archive-source-records"
+        ],
+        "limitations": [
+          "No clarified grade, viscosity, supplier lot, or arbitrary treatment equivalence.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "supplied_form",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:c65a89e41ee4ef607e7430191563346e121493edf46bbea39539618db70916b6",
+          "MIM.mapping:1ac327215fa2bc0d4584ac14e728bf43b92e18866a811008cb0f1e86b111fa24"
+        ],
+        "history_count": 6,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Locust_Bean_Gum.yaml",
+        "owner_record_sha256": "973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "SourceSigmaG0753/CAS9000-40-2, Sigma specification Ceratonia siliqua seed powder, FoodOn03413132 and JECFA410 support locust/carob gum. Autoclaved is preparation provenance, not name; source does not specify clarified grade. No fixed molecular formula or role transferred.",
+        "evidence_ids": [
+          "sa-foodonlocust",
+          "sa-jecfalocust",
+          "sa-web-primary-supplier",
+          "sa-archive-source-records"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+      "current_K_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+      "original_review_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Lysozyme.yaml",
+      "selected_owner_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+      "snapshot": "snapshot/owners/Lysozyme.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:78c235a18311ff2ab4d17d683bbc0f963bc8fc98eb50f24ce3c00a7391bd77c6",
+        "MIM.mapping:b3c3632a92cd49b604e00bdcef324c621f5fa5d53b5173c67926783cf14fd34e"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+        "owner_record_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "The source names Lysozyme with blank supplier/catalog fields and invalid raw CAS 2650-88-3. Local kgmicrobe.ingredient:lysozyme preserves unresolved material identity; exact FOODON food-additive scope, enzyme isoform/species and any repaired CAS are not established. The CAS checksum computes 6, not supplied 3.",
+        "evidence_ids": [
+          "ma-source-csv",
+          "ma-archived-source",
+          "ma-foodon-lysozyme"
+        ],
+        "limitations": [
+          "Invalid raw 2650-88-3 remains WITHHOLD and xref-ineligible. Do not guess 12650-88-3 or any corrected CAS; supplied material remains unknown.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:78c235a18311ff2ab4d17d683bbc0f963bc8fc98eb50f24ce3c00a7391bd77c6",
+          "MIM.mapping:b3c3632a92cd49b604e00bdcef324c621f5fa5d53b5173c67926783cf14fd34e"
+        ],
+        "history_count": 5,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+        "owner_record_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "CSV986 supplies only name plus invalid2650-88-3 and no product/species evidence. Weighted checksum yields6, not3. Local unresolved material identity preserves the name while invalid identifier claim remainsWITHHOLD; no guessed12650-88-3, exactFoodOn sense, enzyme isoform or purification inferred.",
+        "evidence_ids": [
+          "ma-source-csv",
+          "ma-archived-source",
+          "ma-foodon-lysozyme"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "needs_curation"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Polymyxin_B.yaml",
+      "current_K_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "original_review_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Polymyxin_B.yaml",
+      "selected_owner_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "snapshot": "snapshot/owners/Polymyxin_B.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:3cfa4618af715b2d27ffd3e620ce1461e1879d016ed8c8b7d9d94f2ea41e7298",
+        "MIM.mapping:140d8feba143f3547f15c0868871194dd06c5b67b9dd8fc938ff402a0771ceb1"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Polymyxin_B.yaml",
+        "owner_record_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+        "owner_payload_sha256": "23e40a428bc1d38666af569b360e5770213c41c824e6e7ffe6f9a2a1bddf6714",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "pass_with_limitations",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:3cfa4618af715b2d27ffd3e620ce1461e1879d016ed8c8b7d9d94f2ea41e7298",
+          "MIM.mapping:140d8feba143f3547f15c0868871194dd06c5b67b9dd8fc938ff402a0771ceb1"
+        ],
+        "scope": "material",
+        "composition": "mixture",
+        "reason": "NCI C61894 defines polymyxin B as the B1/B2 polypeptide mixture and asserts CAS1404-26-8, while its C61895 association is the sulfate. Primary ChEBI8309 separately defines polymyxin B1 with CAS4135-11-9. All272 exact imported source cells say polymyxin b, without selecting B1 or sulfate. The scoped mixture owner and its source-qualified material CAS annotation agree with those facts.",
+        "limitations": [
+          "272 counts source cells, not experiments or medium occurrences. Resistance/sensitivity annotations do not establish role or each constituent response.",
+          "No B1:B2 ratio, sulfate form, formulation concentration or provider product is supplied."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "4fac4124492a8192d5149bb77de936b37a7a4be72e208ebc2bc9261835f79d60",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "NCI C61894 defines polymyxin B as the B1/B2 polypeptide mixture and asserts CAS1404-26-8, while its C61895 association is the sulfate. Primary ChEBI8309 separately defines polymyxin B1 with CAS4135-11-9. All272 exact imported source cells say polymyxin b, without selecting B1 or sulfate. The scoped mixture owner and its source-qualified material CAS annotation agree with those facts.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "3a6707fead86d61e212f6c91e9b65d627847c1a4b86a95fa28ecd6b9217a8789",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit material scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "459d41055c52bc7aecdfbe2dd64a3698a3e30929a1e7d82c809d7b968752a4a2",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Exact source_cells were reproduced from the complete original MicrobeDecoder archive, including label and source column. Zero media/total counters are retained metadata, not certified exhaustive non-use.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "ce0140a2f078ce5d4b2a1acadf1cf577f91e933be9a0ecfa21bc9a3d01e089b4",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "76895ed783002225cd11df7c95b3ed0d62d3c3fd6d048ad94037fac7ca870000",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "0a0fc65e84c460a026e99dd643b5e4f3a1793dcf0ebed2cf40f2f032c3aa6ae3",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "NCI C61894 defines polymyxin B as the B1/B2 polypeptide mixture and asserts CAS1404-26-8, while its C61895 association is the sulfate. Primary ChEBI8309 separately defines polymyxin B1 with CAS4135-11-9. All272 exact imported source cells say polymyxin b, without selecting B1 or sulfate. The scoped mixture owner and its source-qualified material CAS annotation agree with those facts. 272 counts source cells, not experiments or medium occurrences. Resistance/sensitivity annotations do not establish role or each constituent response. No B1:B2 ratio, sulfate form, formulation concentration or provider product is supplied.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "0b7ba0ab517945686fce8c0694ef4eac925ba9ec1f05cd957fcf72f701b93d7a",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+            "evidence_ids": [
+              "chem-ncit-C61894-retry",
+              "chem-chebi-8309-retry",
+              "chem-archived-chemical-scope-ontology-evidence",
+              "chem-microbedecoder-polymyxin-b"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-ncit-C61894-retry",
+          "chem-chebi-8309-retry",
+          "chem-archived-chemical-scope-ontology-evidence",
+          "chem-microbedecoder-polymyxin-b"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Polymyxin_B.yaml",
+        "owner_record_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "NCI C61894 explicitly describes B1/B2 mixture with CAS1404-26-8. CHEBI8309 is B1 with4135-11-9. The generic source token does not independently specify sulfate. Material/mixture row and annotation supported without composition ratio, sulfate, dose or resistance phenotype approval.",
+        "evidence_ids": [
+          "ab-archive-scope-ontology",
+          "ab-ncit-C61894-retry",
+          "ab-chebi-8309-retry",
+          "ab-md-polymyxin-b"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Pretomanid.yaml",
+      "current_K_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+      "original_review_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Pretomanid.yaml",
+      "selected_owner_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+      "snapshot": "snapshot/owners/Pretomanid.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:2f5ca1c2afa2c75d50ac2628db43d3d156c4cd41addfc6fcf36e18c16d725840",
+        "MIM.mapping:c01bdd38c44ff3e24bedb71d836e5d7c36ab6d552b3ba84a581329cf8f073145"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Pretomanid.yaml",
+        "owner_record_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+        "owner_payload_sha256": "8be25ba8345bb912a7f5301c063ae12a23b6504528aafab34fad1a7b684cb8a4",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "pass_with_limitations",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:2f5ca1c2afa2c75d50ac2628db43d3d156c4cd41addfc6fcf36e18c16d725840",
+          "MIM.mapping:c01bdd38c44ff3e24bedb71d836e5d7c36ab6d552b3ba84a581329cf8f073145"
+        ],
+        "scope": "defined_substance",
+        "composition": "single_component",
+        "reason": "Original CultureBotHT pairs Pretomanid with CAS187235-37-6. FDA2XOI31YC4N version42 links that CAS to NCI C166606 and a defined absolute S structure. NCI confirms the exact label/CAS/UNII; PubChem456199 exactly matches the owner formula, stereospecific SMILES and InChI, with the same GSRS InChI. The record therefore denotes this defined substance without upgrading its old lab-use note to an approved role.",
+        "limitations": [
+          "No manufactured formulation, solvate, product specification or biological role is inferred from the drug name or old source note."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "f4e4c68df9c0aea3e6a9c194ba5d1d050ae52f46ac0b0a05650b5fdb06375a50",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Original CultureBotHT pairs Pretomanid with CAS187235-37-6. FDA2XOI31YC4N version42 links that CAS to NCI C166606 and a defined absolute S structure. NCI confirms the exact label/CAS/UNII; PubChem456199 exactly matches the owner formula, stereospecific SMILES and InChI, with the same GSRS InChI. The record therefore denotes this defined substance without upgrading its old lab-use note to an approved role.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "4813cd1b821a0e0bb4f494755b2599ed1d8271506a75c51820ac3f2d6b1efdf4",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "4a839c79f4ea838437cec858fb7e4dbb521bafe2002535b7f526e1bbc0395211",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "89df90a9c2aae9d3dae363cd822d51ba5ca9c77bc8c4755cb6f5bef8cc2675f3",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "00704262ce1bda501dfa646238366c1ffc4035c9e847ddc0ffa1da09229965ed",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "631414c893dd401bacef8be6a9e770be37e0bda02e0255b0ca41156a7dcd4811",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "5c4493a7d34b5abca7b3944b147c98cf3e8bbf41179ba632a7d51436979f4fd1",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Original CultureBotHT pairs Pretomanid with CAS187235-37-6. FDA2XOI31YC4N version42 links that CAS to NCI C166606 and a defined absolute S structure. NCI confirms the exact label/CAS/UNII; PubChem456199 exactly matches the owner formula, stereospecific SMILES and InChI, with the same GSRS InChI. The record therefore denotes this defined substance without upgrading its old lab-use note to an approved role. No manufactured formulation, solvate, product specification or biological role is inferred from the drug name or old source note.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-2XOI31YC4N-retry",
+              "chem-ncit-C166606-retry",
+              "chem-pubchem-456199-retry"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-original-culturebotht-compounds-to-cas",
+          "chem-archived-fda-gsrs",
+          "chem-gsrs-2XOI31YC4N-retry",
+          "chem-ncit-C166606-retry",
+          "chem-pubchem-456199-retry"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Pretomanid.yaml",
+        "owner_record_sha256": "7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Source187235-37-6, FDA2XOI31YC4N, NCITC166606 and PubChem456199 agree on the neutral S substance; whole owner formula and stereochemical InChI/SMILES agree. No racemate/salt or therapeutic-role transfer.",
+        "evidence_ids": [
+          "ab-archive-gsrs",
+          "ab-gsrs-2XOI31YC4N-retry",
+          "ab-ncit-C166606-retry",
+          "ab-pubchem-456199-retry",
+          "ab-original-culturebotht"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Proteose_Peptone_No_2.yaml",
+      "current_K_sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+      "original_review_sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Proteose_Peptone_No_2.yaml",
+      "selected_owner_sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+      "snapshot": "snapshot/owners/Proteose_Peptone_No_2.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.mapping:e05b5bfee9eb2b3b089dbbb0ff952193ccb1a5d28dc2032aa1ae9b119cf12976"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Proteose_Peptone_No_2.yaml",
+        "owner_record_sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "Exact MICRO:0002393 label and proteose-peptone parent occur in pinned KGX plus legacy node source with original MicrO.owl IRI. DSMZ403 explicitly names Proteose peptone No 2 (DIFCO 0121-01-3); manufacturer No.2 is an enzymatic animal-protein digest. This supports the named preparation, not generic proteose peptone or No.3/No.4. The old catalog token is literal source support, not a modern catalog substitution.",
+        "evidence_ids": [
+          "sa-micro-micro_nodes.tsv",
+          "sa-micro-micro_edges.tsv",
+          "sa-micro-legacy_nodes.tsv",
+          "sa-contract-manifest",
+          "sa-dsmz403",
+          "sa-proteosesupplier"
+        ],
+        "limitations": [
+          "Existing computational protein_source nutritional role stays provisional and receives no new role approval. No inference that modern 212120 equals the historical catalog/lot.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "synonyms",
+          "ontology_mapping",
+          "mapping_status",
+          "curation_history",
+          "ingredient_type",
+          "occurrence_statistics",
+          "nutritional_roles"
+        ],
+        "claim_ids": [
+          "MIM.mapping:e05b5bfee9eb2b3b089dbbb0ff952193ccb1a5d28dc2032aa1ae9b119cf12976"
+        ],
+        "history_count": 8,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Proteose_Peptone_No_2.yaml",
+        "owner_record_sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Pinned native MICRO0002393 names Proteose Peptone No.2. DSMZ403 explicitly names DIFCO0121-01-3; manufacturer differentiates No.2 from other enzymatic digests. Full row historical catalog token supported at named preparation scope, not currentpackaging equivalence or fixed peptide composition. Existing computational PROTEIN_SOURCE remains provisional and unapproved.",
+        "evidence_ids": [
+          "sa-micro-micro_nodes.tsv",
+          "sa-micro-legacy_nodes.tsv",
+          "sa-micro-micro_edges.tsv",
+          "sa-proteosesupplier",
+          "sa-dsmz403-extracted",
+          "sa-dsmz403"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rabbit_Serum.yaml",
+      "current_K_sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "original_review_sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Rabbit_Serum.yaml",
+      "selected_owner_sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "snapshot": "snapshot/owners/Rabbit_Serum.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.mapping:c95c876acb5ca640d6fd2f8a30a14162fb9de185055e04a3e550cebad6623154"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Rabbit_Serum.yaml",
+        "owner_record_sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "Pinned MICRO:0002392 and its serum-medium-ingredient parent identify generic rabbit serum. MediaDive464 source contexts and DSMZ403 support the named biological material; heat inactivation and historical GIBCO 037-06120 M are recipe-specific qualifiers. The owner does not globalize those preparations.",
+        "evidence_ids": [
+          "sa-micro-micro_nodes.tsv",
+          "sa-micro-micro_edges.tsv",
+          "sa-micro-legacy_nodes.tsv",
+          "sa-contract-manifest",
+          "sa-mediadiverabbit",
+          "sa-dsmz403"
+        ],
+        "limitations": [
+          "No universal heat treatment, sterility, hemolysis state, supplier or lot.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "notes",
+          "ontology_mapping",
+          "ingredient_type"
+        ],
+        "claim_ids": [
+          "MIM.mapping:c95c876acb5ca640d6fd2f8a30a14162fb9de185055e04a3e550cebad6623154"
+        ],
+        "history_count": 6,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Rabbit_Serum.yaml",
+        "owner_record_sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "MICRO0002392/serum parent and MediaDive464 identify rabbit serum material. Multiple source heat-treatment descriptions coexist; DSMZ403 gives one inactivated catalog. Generic material mapping does not assign universal heat schedule, serum lot or product.",
+        "evidence_ids": [
+          "sa-micro-micro_nodes.tsv",
+          "sa-micro-legacy_nodes.tsv",
+          "sa-micro-micro_edges.tsv",
+          "sa-mediadiverabbit",
+          "sa-dsmz403",
+          "sa-dsmz403-extracted"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+      "current_K_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "original_review_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Rifamycin.yaml",
+      "selected_owner_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "snapshot": "snapshot/owners/Rifamycin.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.mapping:3d56d21ab9db42d5efc89da61008d6da7310b39cbffc940349b50a25e5708274"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+        "owner_record_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+        "owner_payload_sha256": "9de078a9369a55fa561903b2c166c91a42268aeed6d40f3a7500e384d832c280",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "pass_with_limitations",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.mapping:3d56d21ab9db42d5efc89da61008d6da7310b39cbffc940349b50a25e5708274"
+        ],
+        "scope": "chemical_family",
+        "composition": "unknown",
+        "reason": "The exact three unqualified MicrobeDecoder cells were freshly reproduced from the original zip: two production cells and one resistance cell. Official BacDive pages preserve those generic rifamycin entries; separate rows may report SV or O. ChEBI26580 is the rifamycins family, with rifamycin synonym and distinct child29673 SV. Matching the generic source concept to this family preserves information without choosing a particular member or any one CAS.",
+        "limitations": [
+          "The mapping comment that none specifies SV or a CAS is restricted to the exact three generic imported observations. BacDive13220 also has independent SV rows, and16969 has O; their existence does not rewrite the generic cells.",
+          "Unknown family composition remains unknown; source phenotype is not every-member activity. No formula, single CAS, supplied product or role is inferred."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "384b5182d640a9cf509e5e5a6733648c25d60ae414c3012b5a5e2202d2a37cd3",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The exact three unqualified MicrobeDecoder cells were freshly reproduced from the original zip: two production cells and one resistance cell. Official BacDive pages preserve those generic rifamycin entries; separate rows may report SV or O. ChEBI26580 is the rifamycins family, with rifamycin synonym and distinct child29673 SV. Matching the generic source concept to this family preserves information without choosing a particular member or any one CAS.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "c7c20ce455c92c4b0015e384a7e1b0159c8c14ffbc239f82c8cf922e6e9db8dc",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit chemical_family scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "d6f9f3da21943e3e385cde94f7259251e7103589829d6c03990dace8e9a0da0b",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "34667985fe6fef32222110a6762656988e6ffadd095c1242b2261ce4418ebf02",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Exact source_cells were reproduced from the complete original MicrobeDecoder archive, including label and source column. Zero media/total counters are retained metadata, not certified exhaustive non-use.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "2d85144a24bdc91cb01fbef6214660ba598c30a2f1807f89613b64dddc3d286f",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "49a0ffacbe706aa52ee1d4ec9d23889497ecb03f5fe9506b3679b636267764f7",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The exact three unqualified MicrobeDecoder cells were freshly reproduced from the original zip: two production cells and one resistance cell. Official BacDive pages preserve those generic rifamycin entries; separate rows may report SV or O. ChEBI26580 is the rifamycins family, with rifamycin synonym and distinct child29673 SV. Matching the generic source concept to this family preserves information without choosing a particular member or any one CAS. The mapping comment that none specifies SV or a CAS is restricted to the exact three generic imported observations. BacDive13220 also has independent SV rows, and16969 has O; their existence does not rewrite the generic cells. Unknown family composition remains unknown; source phenotype is not every-member activity. No formula, single CAS, supplied product or role is inferred.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin",
+              "chem-bacdive-16969",
+              "chem-bacdive-13220",
+              "chem-bacdive-166282",
+              "chem-chebi-26580-retry",
+              "chem-chebi-29673-retry"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-microbedecoder-rifamycin",
+          "chem-bacdive-16969",
+          "chem-bacdive-13220",
+          "chem-bacdive-166282",
+          "chem-chebi-26580-retry",
+          "chem-chebi-29673-retry"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+        "owner_record_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "CHEBI26580 is the family; exact archived imported generic rifamycin cells do not specify SV or a CAS. BacDive13220 also has distinct SV data; nearby SV records do not replace the exact generic imported cell. The row is supported as family indexing only, not every-member activity or absence of SV anywhere on an entire strain page.",
+        "evidence_ids": [
+          "ab-archive-scope-ontology",
+          "ab-chebi-26580-retry",
+          "ab-archive-rifamycin",
+          "ab-md-rifamycin",
+          "ab-bacdive-16969",
+          "ab-bacdive-13220",
+          "ab-bacdive-166282"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "current_K_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "original_review_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "selected_owner_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "snapshot": "snapshot/owners/Rifamycin_Sv.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:6b69f34aac7ab9fdecdbedd092b84e42b0c5118cfb1f948bb883e0b04146ef61",
+        "MIM.mapping:3b0100b1c0e9bdf080b05bc69237ad26ec71aa7057066382bd25d2901a533a86"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+        "owner_record_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+        "owner_payload_sha256": "dc86c44b207d09bd9253fd9d5872824954a1058abd9232a8655fb28b09ab4fb6",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "needs_curation",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:6b69f34aac7ab9fdecdbedd092b84e42b0c5118cfb1f948bb883e0b04146ef61",
+          "MIM.mapping:3b0100b1c0e9bdf080b05bc69237ad26ec71aa7057066382bd25d2901a533a86"
+        ],
+        "scope": "defined_substance",
+        "composition": "single_component",
+        "reason": "All28 exact imported MicrobeDecoder cells explicitly say rifamycin sv. ChEBI29673 independently supplies the SV definition, CAS6998-60-3, formulaC37H47NO12, mass697.778 and the same full stereochemical InChI as the owner. It is a child of rifamycins, not the generic family itself. This supports the scoped SV identity and registry annotation while keeping the stored incomplete SMILES outside fresh field support.",
+        "limitations": [
+          "The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches.",
+          "28 counts source cells, not every possible experiment or a material product. Do not propagate SV CAS or individual susceptibility to the generic family."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "8f265a2019c3d6f990508ac7c00c598e19a4aa9d03891c5ef7f97e57bc7432fb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "All28 exact imported MicrobeDecoder cells explicitly say rifamycin sv. ChEBI29673 independently supplies the SV definition, CAS6998-60-3, formulaC37H47NO12, mass697.778 and the same full stereochemical InChI as the owner. It is a child of rifamycins, not the generic family itself. This supports the scoped SV identity and registry annotation while keeping the stored incomplete SMILES outside fresh field support.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "1b3167228d6614dfc32710cf3ff0e34474140195de6902f5538fd7855831ebc4",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "62e4eedb1ac3e3a018d261aa5805cf70df80b3785f930c222da8c17adf0fce65",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "d7ea51550bec1da6424d09276960d30de8a7f55054ccc3d8f417f8d7dc9d7f5c",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Exact source_cells were reproduced from the complete original MicrobeDecoder archive, including label and source column. Zero media/total counters are retained metadata, not certified exhaustive non-use.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "46b7bdcb96726563764dbb18bfb9d44f13df22c73bbfb216f3a026a146c794f2",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "14a9283412d58ab012994d04d72667feb275afc12ac14567beb7ce1410a7b9f2",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Formula, mass and stereochemical InChI match primary ChEBI29673; stored SMILES lacks alkene stereochemistry and remains WITHHOLD.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "704dea49898ac902f66c2fcd3f204b46f26fbf3ab6b5e87dc79d04d67131ac76",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "All28 exact imported MicrobeDecoder cells explicitly say rifamycin sv. ChEBI29673 independently supplies the SV definition, CAS6998-60-3, formulaC37H47NO12, mass697.778 and the same full stereochemical InChI as the owner. It is a child of rifamycins, not the generic family itself. This supports the scoped SV identity and registry annotation while keeping the stored incomplete SMILES outside fresh field support. The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches. 28 counts source cells, not every possible experiment or a material product. Do not propagate SV CAS or individual susceptibility to the generic family.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties/smiles",
+            "field_payload_sha256": "00ec00f5e7026c8d659be1ca91080cfc29a64160ff2cba3289ee2105201942e4",
+            "assessment": "WITHHOLD",
+            "reason": "The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches.",
+            "evidence_ids": [
+              "chem-microbedecoder-rifamycin-sv",
+              "chem-chebi-29673-retry",
+              "chem-chebi-26580-retry",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-microbedecoder-rifamycin-sv",
+          "chem-chebi-29673-retry",
+          "chem-chebi-26580-retry",
+          "chem-archived-chemical-scope-ontology-evidence"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [
+          "chemical_properties.smiles"
+        ],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+        "owner_record_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Explicit SV source token and CHEBI29673 support neutral SV and6998-60-3. Whole owner formula/InChI agree with ChEBI. Owner SMILES lacks two directional specifications present in ChEBI; retain that separate field hold rather than treating CAS identity as structural serialization approval. Archived28 exact-token contexts do not establish new phenotype evidence.",
+        "evidence_ids": [
+          "ab-archive-scope-ontology",
+          "ab-chebi-29673-retry",
+          "ab-md-rifamycin-sv"
+        ],
+        "preserved_field_withholds": [
+          "chemical_properties.smiles"
+        ],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "needs_curation"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Sodium_Adipate.yaml",
+      "current_K_sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+      "original_review_sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Sodium_Adipate.yaml",
+      "selected_owner_sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+      "snapshot": "snapshot/owners/Sodium_Adipate.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:7bdd460eaf3b7e3c5ecd9cf84a4635b7bd10e983083753ee4a20d8ea4923d705",
+        "MIM.mapping:e3102d872351bc5951e965ab4fe84e34269bfae03f66cfdfce9f2a67cca5702b"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Sodium_Adipate.yaml",
+        "owner_record_sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "FOODON:03413240/INS356 and WHO/JECFA CAS7486-38-6 agree with original source formula weight 190.1 and PubChem24073 disodium C6H8Na2O4, two Na ions, InChI and SMILES. Full owner properties identify the disodium form, not monosodium adipate or a hydrate.",
+        "evidence_ids": [
+          "sa-foodonsodiumadipate",
+          "sa-jecfasodium",
+          "sa-pubchemadipate",
+          "sa-archive-source-records"
+        ],
+        "limitations": [
+          "No monosodium/hydrate inference. Historical withdrawal of food-use provisions is not registry invalidation or an identity claim.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:7bdd460eaf3b7e3c5ecd9cf84a4635b7bd10e983083753ee4a20d8ea4923d705",
+          "MIM.mapping:e3102d872351bc5951e965ab4fe84e34269bfae03f66cfdfce9f2a67cca5702b"
+        ],
+        "history_count": 6,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Sodium_Adipate.yaml",
+        "owner_record_sha256": "0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Original7486-38-6, JECFA356 and FoodOn sodiumadipate concord; PubChem24073 and full owner formula/SMILES/InChI show two sodium ions. Defined disodium salt supported; plural ontology synonym cannot infer monosodium, hydrate or food-use authorization.",
+        "evidence_ids": [
+          "sa-foodonsodiumadipate",
+          "sa-jecfasodium",
+          "sa-pubchemadipate",
+          "sa-archive-source-records"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+      "current_K_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+      "original_review_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+      "selected_owner_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+      "snapshot": "snapshot/owners/Sorbitan_Monooleate.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.mapping:f052a173fb42da0f6d37d038b042864d1038556c1dba79cd2b90d5f4f7e271cb",
+        "MIM.occurrence:5efa069dca12afe1261dfe8be3ead6cd40482a4dcdc0af1bbf04dda3afab33dc",
+        "MIM.occurrence:8442ea147ea6d96095872b82b6663ea6294bd9fe385bf09d5e63820d96579d93"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+        "owner_record_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "The complete local owner preserves unresolved generic sorbitan monooleate material for two ATCC416-derived recipes. Actual ATCC scratch formula says 1 g sorbitan monooleate with 1000 mL water. JECFA describes commercial partial-ester mixtures; CHEBI:183688 fixed molecule and ethoxylated Tween80/CHEBI:53426 are not interchangeable. The local self-row is supported without active CAS or external molecular exact mapping.",
+        "evidence_ids": [
+          "sa-atcc416",
+          "sa-atcc416-extracted",
+          "sa-jecfasorbitan",
+          "sa-jecfapolysorbate",
+          "sa-chebisorbitan",
+          "sa-chebitween80",
+          "sa-archive-sorbitan-recipe-occurrences",
+          "ma-sorbitan-recipe-008837",
+          "ma-sorbitan-recipe-008839"
+        ],
+        "limitations": [
+          "No supplied-product/lot, pure stereochemical molecule, Tween80, CAS1338-43-8 or CAS9005-65-6 assignment. Nominal recipe denominator is not a measured final-volume claim. Historical NCIT and carbon-role diagnostics stay inactive source payload.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.mapping:f052a173fb42da0f6d37d038b042864d1038556c1dba79cd2b90d5f4f7e271cb",
+          "MIM.occurrence:5efa069dca12afe1261dfe8be3ead6cd40482a4dcdc0af1bbf04dda3afab33dc",
+          "MIM.occurrence:8442ea147ea6d96095872b82b6663ea6294bd9fe385bf09d5e63820d96579d93"
+        ],
+        "history_count": 3,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+        "owner_record_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "ATCC416 scratch recipe literally names Sorbitan Monooleate1g with1000mL water; no product/CAS. JECFA commercial material is mixture; ChEBI183688 fixed molecule and53426 ethoxylatedpolysorbate are not licensed equivalents. Local self-identity and source-reported quantities retained with final-volume limitation. Historical component indices7/8 and NCIT/role diagnostics are not active current assertions; bound current recipes locate the ingredient at index4.",
+        "evidence_ids": [
+          "sa-atcc416",
+          "sa-atcc416-extracted",
+          "sa-jecfasorbitan",
+          "sa-chebisorbitan",
+          "sa-chebitween80",
+          "sa-archive-sorbitan-recipe-occurrences",
+          "peer-salts-159",
+          "peer-salts-160"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Sunflower_Oil.yaml",
+      "current_K_sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+      "original_review_sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Sunflower_Oil.yaml",
+      "selected_owner_sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+      "snapshot": "snapshot/owners/Sunflower_Oil.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:e628622f219a76f626c245ecd7bdab7d32e39b4a29046c340e409a758753eff0",
+        "MIM.mapping:449dd58db5f626dc9ec9cc3d60006c6fe69162a5fc08f6f3f9400a172bdd1093"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Sunflower_Oil.yaml",
+        "owner_record_sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "Generic seed oil identity is supported by original source CAS8001-21-6, NCIT:C1241 and FDA3W1JG795YI version16 structurally-diverse seed/oil record with PRIMARY CAS. The complete owner does not infer a refined, hydrogenated, high-oleic product or fixed triglyceride composition.",
+        "evidence_ids": [
+          "sa-ncitsunflower",
+          "sa-fdagssunflower",
+          "sa-archive-fda-gsrs",
+          "sa-archive-source-records"
+        ],
+        "limitations": [
+          "No processing, purity, fatty-acid ratio or supplier grade inferred.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:e628622f219a76f626c245ecd7bdab7d32e39b4a29046c340e409a758753eff0",
+          "MIM.mapping:449dd58db5f626dc9ec9cc3d60006c6fe69162a5fc08f6f3f9400a172bdd1093"
+        ],
+        "history_count": 5,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Sunflower_Oil.yaml",
+        "owner_record_sha256": "b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "NCITC1241/FDA3W1JG795YI and source8001-21-6 support generic Helianthus annuus seed oil, a mixture. No fixed fatty-acid ratio, hydrogenation, refined/high-oleic grade or suppliedproduct inferred.",
+        "evidence_ids": [
+          "sa-ncitsunflower",
+          "sa-fdagssunflower",
+          "sa-archive-source-records"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Sutezolid.yaml",
+      "current_K_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+      "original_review_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Sutezolid.yaml",
+      "selected_owner_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+      "snapshot": "snapshot/owners/Sutezolid.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:fbb5b5bf7ee3688bd60667c4acf9ea44376272294ecc5e14a0d3c9e75963129f",
+        "MIM.mapping:8c8976968dfa91c0f1efc38c261d7cc4591a37a04b7bafc0835dbdfea3b46734"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Sutezolid.yaml",
+        "owner_record_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+        "owner_payload_sha256": "8873f0101287374e1f15ea308440a1b1675bf53fac7b5ffb99d35f5780302e37",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "pass_with_limitations",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:fbb5b5bf7ee3688bd60667c4acf9ea44376272294ecc5e14a0d3c9e75963129f",
+          "MIM.mapping:8c8976968dfa91c0f1efc38c261d7cc4591a37a04b7bafc0835dbdfea3b46734"
+        ],
+        "scope": "defined_substance",
+        "composition": "single_component",
+        "reason": "Original CultureBotHT pairs Sutezolid with CAS168828-58-8. GSRS3A71182L8P version32 links that primary CAS to NCI C152482 and the S structure; NCI confirms the exact label and UNII. PubChem465951 matches the complete stored formula, stereospecific SMILES and InChI; the InChI also equals GSRS. No broader unspecified oxazolidinone or a stereoisomer is substituted.",
+        "limitations": [
+          "No supplier/formulation/lot or antitubercular-role approval follows from ontology identity."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "39cec62d06ef61b61156db83c594908c56841ed0bf3613dfde14497fce866f43",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Original CultureBotHT pairs Sutezolid with CAS168828-58-8. GSRS3A71182L8P version32 links that primary CAS to NCI C152482 and the S structure; NCI confirms the exact label and UNII. PubChem465951 matches the complete stored formula, stereospecific SMILES and InChI; the InChI also equals GSRS. No broader unspecified oxazolidinone or a stereoisomer is substituted.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "5e77280ab088074dcf1cb8ac76b4d4b89daae6dbefdc19b8bbf1aa4d3f10f930",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "09b8aedf7ace1e665a5379ef93554c21ebf8045ccb7d7d1edb6512971af63026",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The actual synonym array is empty; no absent alias or product synonym is approved.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "89df90a9c2aae9d3dae363cd822d51ba5ca9c77bc8c4755cb6f5bef8cc2675f3",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "fb6bdc588b85b8cb6d210b06ef838a355943b9dac214b20fe5dec6a0fc86935e",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "39c40aa9a04946d489342fd30d924ec5240d447fbb8f85d932f0ff695bb557bf",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "71a68fb77435f365b109b6ab89ef940e2d8d07ee83e0ad16045fbf5f20cf8647",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Original CultureBotHT pairs Sutezolid with CAS168828-58-8. GSRS3A71182L8P version32 links that primary CAS to NCI C152482 and the S structure; NCI confirms the exact label and UNII. PubChem465951 matches the complete stored formula, stereospecific SMILES and InChI; the InChI also equals GSRS. No broader unspecified oxazolidinone or a stereoisomer is substituted. No supplier/formulation/lot or antitubercular-role approval follows from ontology identity.",
+            "evidence_ids": [
+              "chem-original-culturebotht-compounds-to-cas",
+              "chem-archived-fda-gsrs",
+              "chem-gsrs-3A71182L8P-retry",
+              "chem-ncit-C152482-retry",
+              "chem-pubchem-465951-retry"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "chem-original-culturebotht-compounds-to-cas",
+          "chem-archived-fda-gsrs",
+          "chem-gsrs-3A71182L8P-retry",
+          "chem-ncit-C152482-retry",
+          "chem-pubchem-465951-retry"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Sutezolid.yaml",
+        "owner_record_sha256": "61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Original168828-58-8, FDA3A71182L8P, NCITC152482 and PubChem465951 agree with S stereochemistry and whole owner formula/InChI/SMILES. No other salt, racemate or activity claim follows.",
+        "evidence_ids": [
+          "ab-archive-gsrs",
+          "ab-gsrs-3A71182L8P-retry",
+          "ab-ncit-C152482-retry",
+          "ab-pubchem-465951-retry",
+          "ab-original-culturebotht"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Tara_Gum.yaml",
+      "current_K_sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+      "original_review_sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Tara_Gum.yaml",
+      "selected_owner_sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+      "snapshot": "snapshot/owners/Tara_Gum.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:f5e10f085b783ee33ea30ae9f3bbe2f5fa80dd854e3b313742c330d1c01451b0",
+        "MIM.mapping:46fc098ca1effc835b451e352a5c83b089b0c890a70016519cd882430307a9ba"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Tara_Gum.yaml",
+        "owner_record_sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "FOODON:03413299/INS417, WHO/JECFA tara gum, actual Biosynth YT58656 SDS/product and original source CAS39300-88-4 support seed-endosperm galactomannan material. Full owner retains supplier provenance without extending it to viscosity or molecular-chain identity.",
+        "evidence_ids": [
+          "sa-foodontara",
+          "sa-jecfataracurrent",
+          "sa-web-primary-supplier",
+          "sa-web-primary-form",
+          "sa-archive-source-records"
+        ],
+        "limitations": [
+          "No viscosity grade, chain length, unreported processing or lot.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "supplied_form",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:f5e10f085b783ee33ea30ae9f3bbe2f5fa80dd854e3b313742c330d1c01451b0",
+          "MIM.mapping:46fc098ca1effc835b451e352a5c83b089b0c890a70016519cd882430307a9ba"
+        ],
+        "history_count": 5,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Tara_Gum.yaml",
+        "owner_record_sha256": "d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Original BiosynthYT58656/39300-88-4, captured manufacturer SDS, JECFA417 and FoodOn03413299 support tara seed gum. Blocked supplierHTML is not evidence; inspected SDS is. No viscosity grade or exact polysaccharide stoichiometry inferred.",
+        "evidence_ids": [
+          "sa-foodontara",
+          "sa-jecfataracurrent",
+          "sa-web-primary-supplier",
+          "sa-archive-source-records"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/V-8_Juice.yaml",
+      "current_K_sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+      "original_review_sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/V-8_Juice.yaml",
+      "selected_owner_sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+      "snapshot": "snapshot/owners/V-8_Juice.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.mapping:947787265938b5f85bdf11bea1732a393961115f67c6942f76f6641a176f0e1a"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/V-8_Juice.yaml",
+        "owner_record_sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "Pinned MICRO:0002250 and undefined-organic-mixture parent, original MicrO.owl IRI, MediaDive363 and manufacturer eight-vegetable juice description support the named preparation. The complete owner is not a single substance or a specific SKU/version. Low-sodium variant potassium chloride and other variant-specific ingredients are not transferred.",
+        "evidence_ids": [
+          "sa-micro-micro_nodes.tsv",
+          "sa-micro-micro_edges.tsv",
+          "sa-micro-legacy_nodes.tsv",
+          "sa-contract-manifest",
+          "sa-mediadivev8",
+          "sa-web-primary-supplier"
+        ],
+        "limitations": [
+          "No SKU, manufacturer version, ratios, low-sodium formula or processed V8-source routing inference.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "notes",
+          "ontology_mapping"
+        ],
+        "claim_ids": [
+          "MIM.mapping:947787265938b5f85bdf11bea1732a393961115f67c6942f76f6641a176f0e1a"
+        ],
+        "history_count": 5,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/V-8_Juice.yaml",
+        "owner_record_sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Native MICRO0002250 named V-8 juice and MediaDive363 complex ingredient support the named preparation scope. Generic V-8 mapping does not choose currentSKU, historicalbrandversion, exactvegetable ratios or equivalence among varieties.",
+        "evidence_ids": [
+          "sa-micro-micro_nodes.tsv",
+          "sa-micro-legacy_nodes.tsv",
+          "sa-micro-micro_edges.tsv",
+          "sa-mediadivev8",
+          "sa-web-primary-supplier"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "current_K_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "original_review_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Xanthine.yaml",
+      "selected_owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "snapshot": "snapshot/owners/Xanthine.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+        "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7"
+      ],
+      "author": "/root/companion_chemistry",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/chemistry/owner-assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+        "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+        "owner_payload_sha256": "3113b922fa8267efe3e2ee7525d533b9d7dff2be60102ae08e45bbffa83e8d5a",
+        "reviewer": "/root/companion_chemistry",
+        "full_owner_read": true,
+        "context": "CURRENT_K_OWNER",
+        "verdict": "needs_curation",
+        "mapping_disposition": "SUPPORTED",
+        "claim_ids": [
+          "MIM.annotation:ed8d427aff9195a932efd2b491551ee10249d5355488c7a1a88f32fd2e428e26",
+          "MIM.mapping:ffa5798706daf9b52edf9a8f41f8b3c9a74d78502eb8ab3e2ae2cff2701ac9a7"
+        ],
+        "scope": "defined_substance",
+        "composition": "single_component",
+        "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion.",
+        "limitations": [
+          "All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318.",
+          "No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role.",
+          "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation. Retain the scoped mapping; no replacement lexical grade has been performed or approved."
+        ],
+        "field_assessments": [
+          {
+            "field_path": "/identifier",
+            "field_payload_sha256": "0b3e0503412c892d8254319ad4cfa9070f9893457b67e9a25ce65fc1c5bd7751",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/preferred_term",
+            "field_payload_sha256": "07990422e6cff12c5c115ded8017ae5cc41dbaec4d7dc13f51beb523f38dad11",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "The name is assessed within the explicit defined_substance scope; no supplied qualifier is silently dropped.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping",
+            "field_payload_sha256": "004ecfecf579ab29daba0051bcf7b39208eb4963e9d2774f56279c41a6fad070",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Target/label and evidence were read in full. Primary identity support is assessed freshly above. Historical import and correction statements remain provenance, not approval votes; no current uniqueness inference is made solely from a registry xref.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/synonyms",
+            "field_payload_sha256": "d9336bde09d7eb47fb860e2b67fa726f73142325cff58b46275bce6a77ab0fef",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Every one of the seven stored aliases occurs under current primary ChEBI17712 names. Their meaning stays scoped to this ingredient representation; no generic-trait or physical-tautomer specificity follows.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/mapping_status",
+            "field_payload_sha256": "8e0a245c629e1aeff4dd6f85825d70a09aa64040100ddc56ce83643a5bd0b099",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "MAPPED is the actual present record state, not automatic application/export authorization.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/occurrence_statistics",
+            "field_payload_sha256": "31c2f0409f74c20bd23b97ccde83b78b542b2805b9c3e53292737746dd060772",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Historical media/occurrence counters were read and retained as dated repository metadata. No current whole-corpus census or new occurrence count approval is claimed.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/curation_history",
+            "field_payload_sha256": "449ea715dada050eded1f481c65837a585091a86fd310914b13470c4251852d0",
+            "assessment": "CONTEXT_ONLY",
+            "reason": "Every original event was read. Historical absence claims, automatic properties, failed old mappings and approvals are retained as history and confer no fresh scientific authority.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/notes",
+            "field_payload_sha256": "b8e1b8d3a0c1a61d810afa318d1c54267d49e7f5079f7c7233d944269eb2acd4",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Primary ChEBI17712 defines the N9-protonated xanthine representation and supplies all seven owner aliases, formula and normalized structure; it asserts CAS69-89-6. ChEBI15318 is the generic xanthine parent, and48517 is the separate7H child. Both tautomer entries share CAS and mobile-H normalized InChI/SMILES, so these cannot select a pure physical tautomer. The native ingredient-scope contract explicitly distinguishes this already bounded17712 ingredient representation from generic trait15318. The scoped mapping and qualified CAS annotation can be retained on that basis, not on a new unique-CAS or pure-reagent assertion. All six nonlabel name tokens plusCAS in the complete row occur in primary17712 names/xrefs; they do not assert global exact equivalence with the7H term or generic15318. No FEBA or other unqualified occurrence gains physical9H specificity, purity, grade or role. The retained CAS_RN_LOOKUP grade is not freshly certified as a unique-target lookup: primary7H/9H terms share this CAS. Current mapping row is explicitly ManualMappingCuration and scoped representation; separate skeptical adjudication of the method-field limitation requested.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/chemical_properties",
+            "field_payload_sha256": "791455a2350964a1fd779a4011b9d2d94c377bfb0f8f05e5e7e92b71f02a4c1a",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "CAS/formula/structure claims are checked against the source fields recorded in the identity assessment, only where the owner actually has them. No absent molecular values are imputed.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/ingredient_type",
+            "field_payload_sha256": "d180a4f5d42b86f9f1a584d2688ee4ff269992dcac83cd3690ab03db614900eb",
+            "assessment": "SUPPORTED_WITH_LIMITATIONS",
+            "reason": "Repository ingredient_type is retained as its own classification axis; it does not override separately reviewed mixture/single_component profile scope.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi15318",
+              "chem-chebi7hxanthine",
+              "chem-pubchemxanthine",
+              "chem-archived-chemical-scope-ontology-evidence"
+            ]
+          },
+          {
+            "field_path": "/ontology_mapping/mapping_quality",
+            "field_payload_sha256": "286bf2213363b9e259638469dc9f9b380750536e29cefa8996807eb45721a93b",
+            "assessment": "WITHHOLD",
+            "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+            "evidence_ids": [
+              "chem-chebi17712",
+              "chem-chebi7hxanthine"
+            ],
+            "independent_skeptical_reviewer": "/root/companion_skeptic"
+          }
+        ],
+        "evidence_ids": [
+          "chem-chebi17712",
+          "chem-chebi15318",
+          "chem-chebi7hxanthine",
+          "chem-pubchemxanthine",
+          "chem-archived-chemical-scope-ontology-evidence"
+        ],
+        "roles_assessment": "No current role facets are present in these selected owners. Ontology functional roles, historical application prose and source phenotype columns were read as context only and are not transferred.",
+        "absent_fields_assessment": "No supplied stock, hydration, grade, procurement/lot, product, constituent amounts, preparation or molecular field is invented from absence.",
+        "separate_field_holds": [
+          "ontology_mapping.mapping_quality"
+        ],
+        "no_owner_or_export_approval": true
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+        "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "Current ChEBI distinguishes17712 N9-protonated representation,48517 N7 tautomer and15318 broader xanthine. Both specific terms share69-89-6 and normalized mobile-H InChI/SMILES. Scoped manual representation and source-qualified xref remain supportable; no pure reagent, unique-CAS selection, generic trait specialization or equivalence of the classes is proven. Existing CAS_RN_LOOKUP method needs separate root triage under current §0.",
+        "evidence_ids": [
+          "sa-chebi17712",
+          "sa-chebi15318",
+          "sa-chebi7hxanthine",
+          "sa-pubchemxanthine",
+          "ab-archive-scope-ontology"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "needs_curation",
+        "additional_method_field_withhold": "ontology_mapping.mapping_quality",
+        "method_finding": "FC2-XANTHINE-METHOD-001 (same concern as skeptical FCV2-XANTHINE-METHOD-TRIAGE)",
+        "method_reason": "Both primary CHEBI17712 and48517 assert CAS69-89-6, so current CAS_RN_LOOKUP field does not meet uniquely resolved target contract. The actual complete diagnostic row says ManualMappingCuration and remains scoped scientific support; owner method correction requires truthful performed-method evidence and root triage."
+      }
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Zymosan.yaml",
+      "current_K_sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+      "original_review_sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+      "selected_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Zymosan.yaml",
+      "selected_owner_sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+      "snapshot": "snapshot/owners/Zymosan.yaml",
+      "context": "CURRENT_K_OWNER",
+      "claim_ids": [
+        "MIM.annotation:904ff5d3615c49aae54b9305dd0ff8f62996d72ac102b7509cd2dfff2f251ad6",
+        "MIM.mapping:34c5f5a492c014a72e1b911c7cd43e0db534e088a4812ea3c39432f0dc2835f3"
+      ],
+      "author": "/root/companion_materials",
+      "reviewer": "/root/companion_skeptic",
+      "author_file": "science/materials/assessments.json",
+      "author_assessment": {
+        "owner_record": "data/ingredients/mapped/Zymosan.yaml",
+        "owner_record_sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+        "context": "CURRENT_K_OWNER",
+        "author": "/root/companion_materials",
+        "disposition": "SUPPORTED_WITH_PRECISE_LIMITS",
+        "review_reason": "Original source CAS9010-72-4, actual NCIT:C183132 and NLM MeSH D015054 identify named yeast-wall zymosan material. It is not arbitrary purified beta-glucan or one pure molecule. Sigma Z4250/Zymosan A is a material-complex corroborator with different CAS58856-93-2; it is not assigned to the source.",
+        "evidence_ids": [
+          "sa-ncitzymosan",
+          "sa-zymosanmesh",
+          "sa-meshzymosanconcept",
+          "sa-archive-native-authorities",
+          "sa-archive-source-records",
+          "sa-web-zymosan-manufacturer"
+        ],
+        "limitations": [
+          "Do not substitute Zymosan A CAS58856-93-2 or infer an exact product, pure glucan formula or immunological role approval.",
+          "Scientific support is confined to this exact owner/claim or diagnostic row. No role, final canonical export, application, product interchangeability, release or supervisor approval follows."
+        ],
+        "complete_top_level_fields_read": [
+          "identifier",
+          "preferred_term",
+          "ontology_mapping",
+          "synonyms",
+          "mapping_status",
+          "occurrence_statistics",
+          "curation_history",
+          "chemical_properties",
+          "ingredient_type",
+          "notes"
+        ],
+        "claim_ids": [
+          "MIM.annotation:904ff5d3615c49aae54b9305dd0ff8f62996d72ac102b7509cd2dfff2f251ad6",
+          "MIM.mapping:34c5f5a492c014a72e1b911c7cd43e0db534e088a4812ea3c39432f0dc2835f3"
+        ],
+        "history_count": 5,
+        "whole_owner_read": true,
+        "whole_owner_role_export_approval": false
+      },
+      "skeptical_assessment": {
+        "owner_record": "data/ingredients/mapped/Zymosan.yaml",
+        "owner_record_sha256": "a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662",
+        "context": "CURRENT_K_OWNER",
+        "reviewer": "/root/companion_skeptic",
+        "complete_owner_read": true,
+        "scientific_disposition": "SCOPED_COMPANION_SUPPORT_ONLY",
+        "reason": "NCITC183132 and NLM identify zymosan yeast-wall material with9010-72-4. Manufacturer shows protein/carbohydrate material and separately labeled ZymosanA58856-93-2; it is boundary evidence, not selectedsourceproduct. Neither arbitrary purebeta-glucan nor fixed molecular stoichiometry is asserted.",
+        "evidence_ids": [
+          "sa-ncitzymosan",
+          "sa-zymosanmesh",
+          "sa-meshzymosanconcept",
+          "sa-web-zymosan-manufacturer",
+          "sa-archive-source-records"
+        ],
+        "preserved_field_withholds": [],
+        "whole_owner_roles_exports_approved": false,
+        "whole_owner_verdict": "pass_with_limitations"
+      }
+    }
+  ]
+}

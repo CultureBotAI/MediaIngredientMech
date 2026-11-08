@@ -1,0 +1,25 @@
+from pathlib import Path
+import hashlib,json,datetime,importlib.util,sys,os
+R=Path.cwd(); C=R.parents[2]; O=R/'.temp/ancillary-xanthine1258-proposal-v1'; K=C/'integration/release-worktree'; W=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def save(p,d):
+    with p.open('x') as f:json.dump(d,f,indent=2);f.write('\n')
+files=[K/x for x in ['docs/INGREDIENT_SCOPE_PROFILE.md','conf/record_review.yaml','scripts/record_review.py','schema/record_review.yaml','src/mediaingredientmech/curate/curation_event.py','src/mediaingredientmech/validation/write_validated.py','mappings/ingredient_mappings.sssom.tsv','data/curated/mapped_ingredients.yaml']]
+files += [W/x for x in ['science/chemistry/captures/chebi17712.capture','science/chemistry/captures/chebi7hxanthine.capture','science/chemistry/captures/chebi17712-metadata.json','science/chemistry/captures/chebi7hxanthine-metadata.json','science/chemistry/findings.json','science/chemistry/REPORT.md','science/chemistry/owner-assessments.json','science/chemistry/row-assessments.json','science/chemistry/claim-assessments.json','science/chemistry/research-receipt.json','proposed/owner-assessments.json','proposed/row-assessments.json','proposed/field-holds.json','proposed/review-receipts.json','proposed/evidence-catalog.json','native/review.yaml','native/review.md','assignments/scopes.json','inputs/skeptical-evidence-pins.json','inputs/runtime-pins.json']]
+files += [C/x for x in ['preflight/xanthine-method-finding-publication-v1/preparation.json','preflight/xanthine-method-finding-publication-v1/publication-00.json','preflight/xanthine-method-finding-publication-v1/finding.json','preflight/xanthine-method-issue-audit-v1/receipt.json','integration/final-native-intake-v2/owner-plan.conditional.json']]
+rows=[]
+for i,p in enumerate(files):
+    q=O/'inputs'/f'additional-{i:02d}-{p.name}';q.write_bytes(p.read_bytes());rows.append({'original':str(p),'copy':str(q.relative_to(R)),'sha256':sha(p)})
+save(O/'input-bindings-additional.json',rows)
+wm=json.loads((W/'MANIFEST.json').read_text())
+for b in wm['files']:assert sha(W/b['path'])==b['sha256'],b
+A=R/'.temp/angust-exact-relocation-independent-v1';am=json.loads((A/'MANIFEST.json').read_text())
+for b in am['regular_files']:assert sha(A/b['path'])==b['sha256'],b
+for b in am['literal_control_symlinks']:assert os.readlink(A/b['path'])==b['target']
+save(O/'preservation-initial.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'W09_manifest_sha256':sha(W/'MANIFEST.json'),'W09_regular_members_checked':len(wm['files']),'Angust_manifest_sha256':sha(A/'MANIFEST.json'),'Angust_regular_members_checked':len(am['regular_files']),'Angust_literal_control_links':len(am['literal_control_symlinks']),'all_unchanged':True,'owner_plan_sha256':sha(C/'integration/final-native-intake-v2/owner-plan.conditional.json'),'no_source_case_or_plan_membership_added':True})
+targets=[{'target_id':'ANCILLARY-XANTHINE-1258','path':str((O/'inputs/07-Xanthine.yaml').relative_to(R)),'label':'Xanthine existing owner: ancillary method correction','kind':'record','owner_paths':[{'repository':'CultureBotAI/MediaIngredientMech','path':'data/ingredients/mapped/Xanthine.yaml','role':'maintained ingredient owner; read-only K5288c882'}],'ownership_note':'Ancillary proposal, not a frozen source-case or 934-owner-plan entry. Candidate bytes will be separately bound.'}]
+save(O/'targets.json',{'targets':targets})
+spec=importlib.util.spec_from_file_location('xanthine_native_review',K/'scripts/record_review.py');n=importlib.util.module_from_spec(spec);sys.modules[spec.name]=n;spec.loader.exec_module(n)
+context=[str(p.relative_to(R)) for p in (O/'inputs').iterdir() if p.is_file()]+[str((O/'START.json').relative_to(R)),str((O/'preservation-initial.json').relative_to(R))]
+inspection=n.inspect_source(R,targets,context);save(O/'native/inspection-initial.json',inspection)
+print(json.dumps({'input_copies':len(context),'W09_members':len(wm['files']),'Angust_members':len(am['regular_files']),'native_inputs':len(inspection['source']['inputs'])}))

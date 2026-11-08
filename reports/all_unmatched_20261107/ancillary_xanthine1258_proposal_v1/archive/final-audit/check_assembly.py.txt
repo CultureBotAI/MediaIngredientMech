@@ -1,0 +1,93 @@
+"""Distinct final metadata audit; no candidate/source/control rerun."""
+from pathlib import Path
+from datetime import datetime,timezone
+import copy,hashlib,importlib.util,json,subprocess,sys,time,traceback,yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';O=R/'.temp/ancillary-xanthine1258-proposal-v1';F=Path(__file__).resolve().parent
+started=datetime.now(timezone.utc).isoformat();tick=time.monotonic();checks=[];bindings={};counts={};commands=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def ck(n,v):
+ checks.append({'check':n,'passed':bool(v)})
+ if not v:raise AssertionError(n)
+def bind(p,h=None):
+ p=Path(p);a=sha(p.read_bytes());bindings[str(p)]=a
+ if h:ck('exact bytes '+str(p),a==h)
+ return a
+def read(p):bind(p);return json.loads(p.read_bytes())
+def resolve(s):return Path(s) if Path(s).is_absolute() else R/s
+def when(t):return datetime.fromisoformat(t.replace('Z','+00:00'))
+def refs(x):
+ if isinstance(x,dict):
+  if isinstance(x.get('path'),str) and isinstance(x.get('sha256'),str):yield x
+  for v in x.values():yield from refs(v)
+ elif isinstance(x,list):
+  for v in x:yield from refs(v)
+def typed(a,b):
+ if type(a) is not type(b):return False
+ if isinstance(a,dict):return list(a)==list(b) and all(typed(a[k],b[k]) for k in a)
+ if isinstance(a,list):return len(a)==len(b) and all(typed(x,y) for x,y in zip(a,b))
+ return a==b
+def main():
+ bind(O/'native/review.yaml','4fd12995211a00ef44027ab8c62770326f1f4b4c50fc0b8ebc703d98ee5eeb16');bind(O/'native/review.md','3a4f192ebce25de634f85188dc6ec4be8edcdd8ed68baaec477433c11c3f6353')
+ bind(O/'HANDOFF-draft.json','5be042eb9e170c6c19995b09a4b4fb6702fc5be1c3498ce1da4dd7603fff6e7f')
+ helper=K/'scripts/record_review.py';bind(helper,'95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d');bind(K/'schema/record_review.yaml','229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb')
+ spec=importlib.util.spec_from_file_location('xanthine_final_native',helper);native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;exec(compile(helper.read_bytes(),str(helper),'exec',dont_inherit=True),native.__dict__)
+ r=native.load_document((O/'native/review.yaml').read_bytes());native.validate_review(r);ck('unmodified native document validation',True);native.assert_current_source(R,r);ck('unmodified native currentness validation',True)
+ ck('native Markdown render byte exact',native.render_markdown(r).encode()==(O/'native/review.md').read_bytes());ck('native dump/load roundtrip',typed(native.load_document(native._dump_document(r).encode()),r))
+ inspection=read(O/'native/inspection-final.json');initial=read(O/'native/inspection-initial.json');h=read(O/'HANDOFF-draft.json');p=read(O/'proposal.json');v=read(O/'native/validation.json');fl=read(O/'finding-lineage.json');scopes=read(O/'reviewer-scopes.json')
+ ck('exact inspectedsource and target',r['source']==inspection['source'] and r['targets']==inspection['targets'])
+ inputs={x['path']:x['sha256'] for x in r['source']['inputs']};ck('unique3102 inputs',len(inputs)==len(r['source']['inputs'])==3102)
+ for path,s in inputs.items():bind(R/path,s)
+ ck('all original inspection inputs retained',all(inputs.get(x['path'])==x['sha256'] for x in initial['source']['inputs']))
+ tid='ANCILLARY-XANTHINE-1258';ck('one target11assessments27evidence',len(r['targets'])==1 and len(r['assessments'])==11 and len(r['evidence'])==27)
+ ck('complete onecandidate coverage',r['targets'][0]['target_id']==tid and r['scope']['reviewed_target_ids']==[tid] and r['scope']['population_size']==1 and r['scope']['coverage']=='full' and all(x['target_ids']==[tid] for x in r['assessments']))
+ for obj in [h,p,v]:
+  for ref in refs(obj):bind(resolve(ref['path']),ref['sha256'])
+ ck('truthful root self-review with independent peers',r['reviewer']['independence']==scopes['candidate_author']['independence']=='self_review' and scopes['candidate_author']['identity']==p['author']=='worker10:/root' and all(scopes[k]['independent_of_candidate_author'] for k in ['science','skeptical','technical']) and not scopes['human_verification_claimed'])
+ ck('proposal has no fake source origin accounting',p['source_case_ids']==p['source_occurrence_ids_added']==[] and p['frozen_source_case_additions']==p['owner_plan_operations_added']==0 and not p['applied'] and not p['evidence_and_method_human_verification'])
+ a=yaml.safe_load(Path(p['candidate']['path']).read_bytes());b=yaml.safe_load(Path(p['before']['path']).read_bytes());bind(Path(p['candidate']['path']),'747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546');bind(Path(p['before']['path']),'c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22')
+ dif=read(O/'field-differences.json');expected=copy.deepcopy(b);expected['ontology_mapping']['mapping_quality']='MANUAL_CURATION';expected['ontology_mapping']['evidence'].append(dif[1]['value']);expected['curation_history'].append(dif[2]['value'])
+ ck('complete exact candidate only authorized changes',typed(expected,a) and p['history_event']==a['curation_history'][-1] and len(b['curation_history'])==7 and len(a['curation_history'])==8 and len(a['ontology_mapping']['evidence'])==3)
+ ck('exact retained source owner',bind(K/p['maintained_destination'])==p['before']['sha256'])
+ ck('new claims truthfully agent not human',a['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION' and a['curation_history'][-1]['llm_assisted'] is True and 'does not assert human verification' in a['ontology_mapping']['evidence'][-1]['notes'])
+ sci=read(O/'science/science.json');skeptic=read(O/'skeptic/candidate-review.json');method=read(O/'skeptic/method-assessment-v1.json');tech=read(O/'technical/technical.json');tc=read(O/'technical/candidate-checks.json');pre=read(O/'technical/preflight.json')
+ ck('actual peer science vs method technical scopes',sci['scientific_review'] and skeptic['scientific_review'] and not method['scientific_review'] and not tech['scientific_review'] and r['scientific_review'])
+ ck('same qualified verdicts',all(x['verdict']=='pass_with_limitations' for x in [r,sci,skeptic,tech]) and h['candidate_verdict']==p['candidate_verdict']=='pass_with_limitations')
+ ck('counted checks exact actual reports',h['counts']['scientist_checks']==sci['verification']['independent_checks']==110 and h['counts']['skeptic_own_checks']==len(skeptic['checks'])==100 and h['counts']['technical_candidate_checks']==len(tc['checks'])==82 and h['counts']['meaningful_negative_controls']==len(tc['negative_controls'])==17)
+ ck('methodfinding retained open no closure or approval',fl['maintained_finding_status']=='open' and fl['finding_id']=='FC2-XANTHINE-METHOD-001' and fl['new_findings']==r['findings']==[] and not fl['GitHub_mutation'] and not fl['role_export_application_approval'])
+ ck('no wholeplan/application/roles approval',not h['source_role_export_approval'] and not h['whole_campaign_acceptance'] and not h['Git_GitHub_mutation'] and not p['source_role_export_approval'] and p['root_application_receipt_review_required'])
+ ck('native private API limits and timing',not v['canonical_save_invoked'] and v['author_self_review_disclosed'] and v['inputs']==3102 and v['assessments']==11 and v['evidence']==27 and when(r['started_at'])<=when(r['finished_at'])<=when(v['at']))
+ ev={x['evidence_id']:x for x in r['evidence']}
+ for e in r['evidence']:
+  if e['reference'].startswith('https://'):
+   ck('external primary body bound by native actual capture hash',e['snapshot_sha256'] in inputs.values())
+  else:bind(R/e['reference'],e['snapshot_sha256']);ck('all local evidence actual native inputs',inputs.get(e['reference'])==e['snapshot_sha256'])
+ for eid,meta in [('PRIMARY17712','inputs/additional-10-chebi17712-metadata.json'),('PRIMARY48517','inputs/additional-11-chebi7hxanthine-metadata.json')]:
+  m=read(O/meta);e=ev[eid];ck('original exact database acquisition URL/time/body '+eid,e['reference']==m['url']==m['final_url'] and e['snapshot_sha256']==m['sha256'] and when(e['accessed_at'])==when(m['accessed_at']) and e['kind']=='database')
+ closure=read(O/'input-closure.json');ck('3061 original/local closure bindings',closure['binding_count']==len(closure['bindings'])==3061)
+ for x in closure['bindings']:
+  bind(x['original_path'],x['sha256']);bind(R/x['local_path'],x['sha256']);ck('every closure capture in native inputs',inputs.get(x['local_path'])==x['sha256'])
+ inv=read(O/'technical/native-owner-index-inventory.json');supp=read(O/'technical/inventory-binding-supplement.json');ck('actual2956 owner inventory and2681mapped2678index',len(inv['records'])==inv['all_active_records']==2956 and inv['mapped_index_records']==2681 and len(inv['full_native_owner_index'])==inv['index_keys']==2678)
+ closurebyoriginal={x['original_path']:x for x in closure['bindings']}
+ for x in inv['records']:ck('full inventory source input closure '+x['relative_path'],closurebyoriginal[x['path']]['sha256']==x['sha256'])
+ ck('fresh supplemental replay distinguished from initial capture',supp['same_exact_before_and_after_rows_as_original_receipt'] and supp['all2956_final_reread_hashes_equal'] and not supp['scientific_review'] and not supp['source_or_candidate_changes'] and when(inv['captured_at'])<=when(inv['final_reread_at'])<=when(supp['at']) and when(supp['at'])>when(tc['audit_execution_finished_at']))
+ for path,s in supp['preserves'].items():bind(O/'technical'/path,s)
+ for name in ['method-assessment-v1-manifest.json','candidate-review-manifest.json']:
+  manifest=read(O/'skeptic'/name)
+  for x in manifest['files']:bind(O/'skeptic'/x['path'],x['sha256'])
+ tm=read(O/'technical/MANIFEST-v2.json')
+ for x in tm['files']:bind(O/'technical'/x['path'],x['sha256'])
+ rows=read(O/'technical/native-row-comparison.json');br=rows['native_baseline_rows'][0];ar=rows['native_candidate_rows'][0];cr=rows['unchanged_current_canonical_row']['row']
+ ck('full13field row claims exact and scoped',len(ar)==13 and set(k for k in ar if ar[k]!=br[k])=={'source','mapping_date'} and set(k for k in ar if ar[k]!=cr[k])=={'source','mapping_date','confidence','comment','validation_method'} and ar['predicate_id']=='skos:exactMatch' and ar['object_id']=='CHEBI:17712' and ar['mapping_justification']=='semapv:ManualMappingCuration')
+ assessment=next(x for x in r['assessments'] if x['assessment_id']=='ROW-BOUNDARY');ck('canonical release limits explicit',assessment['outcome']=='unknown' and 'not new scientific support' in assessment['summary'] and rows['no_final_canonical_position_or_publication'])
+ ck('initial technical pin failure preserved optional',any(x['check_id']=='EARLY-PIN' and x['status']=='failed' and not x['required'] for x in r['checks']))
+ for name in ['technical/preflight.py','technical/preflight.stderr','technical/preflight.stdout']:bind(O/name);ck('first failed attempt native binding retained',str((O/name).relative_to(R)) in inputs)
+ pgit=subprocess.run(['git','status','--porcelain','--untracked-files=no'],capture_output=True);commands.append({'argv':['git','status','--porcelain','--untracked-files=no'],'exit_code':pgit.returncode,'stdout':pgit.stdout.decode(),'stderr':pgit.stderr.decode()});ck('own tracked worktree unchanged',pgit.returncode==0 and pgit.stdout==b'')
+ head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();ck('own2c16 source head unchanged',head==r['source']['git_revision']=='2c16c0e0f6b1e733493cb5a4a77ee5807ebac732')
+ for path,s in list(bindings.items()):ck('all read inputs still exact',sha(Path(path).read_bytes())==s)
+ counts.update({'native_inputs':3102,'targets':1,'assessments':11,'evidence':27,'original_local_bindings':3061,'mechanical_owner_records':2956,'mapped_index_records':2681,'index_keys':2678,'whole_candidate_fields_bound':10,'row_fields_bound':13,'source_cases_added':0,'owner_plan_operations_added':0,'findings':0})
+status='PASS_EXACT_NATIVE_ASSEMBLY_METADATA';error=None
+try:main()
+except Exception:status='FAIL_REQUIRES_REVIEW';error=traceback.format_exc()
+result={'status':status,'scientific_review':False,'started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),'runtime_seconds':time.monotonic()-tick,'counts':counts,'checks':checks,'input_hashes':bindings,'read_only_commands':commands,'error':error,'script_sha256':sha(Path(__file__).read_bytes()),'scope':'Distinct final native wrapper/handoff/proposal metadata and hash closure only; existing scientific and technical reports attributed, not rerun.'}
+with (F/'checks.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'status':status,'checks':len(checks),'counts':counts,'error':error}));raise SystemExit(bool(error))

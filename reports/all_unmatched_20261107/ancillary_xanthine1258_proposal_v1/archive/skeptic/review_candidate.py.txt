@@ -1,0 +1,87 @@
+"""Exact full-candidate and row skeptical readback; no native producer execution."""
+from pathlib import Path
+from datetime import datetime,timezone
+import copy,hashlib,json,subprocess,yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';O=R/'.temp/ancillary-xanthine1258-proposal-v1';F=Path(__file__).resolve().parent
+start=datetime.now(timezone.utc).isoformat();bindings=[];checks=[];commands=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def canon(x):return sha(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())
+def ck(n,v):
+ checks.append({'check':n,'passed':bool(v)})
+ if not v:raise AssertionError(n)
+def bind(p,h=None):
+ p=Path(p);a=sha(p.read_bytes());bindings.append({'path':str(p),'sha256':a})
+ if h:ck('exact '+str(p),a==h)
+ return a
+def read(p):bind(p);return json.loads(p.read_bytes())
+def typed(a,b):
+ if type(a) is not type(b):return False
+ if isinstance(a,dict):return list(a)==list(b) and all(typed(a[k],b[k]) for k in a)
+ if isinstance(a,list):return len(a)==len(b) and all(typed(x,y) for x,y in zip(a,b))
+ return a==b
+def save(p,x):
+ with p.open('x') as f:json.dump(x,f,indent=2);f.write('\n')
+beforepath=O/'inputs/07-Xanthine.yaml';afterpath=O/'candidate/Xanthine.yaml'
+bind(beforepath,'c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22');bind(afterpath,'747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546')
+b=yaml.safe_load(beforepath.read_bytes());a=yaml.safe_load(afterpath.read_bytes());author=read(O/'author-receipt.json');changes=read(O/'field-differences.json');m=read(F/'method-assessment-v1.json');oldscope=read(F/'prior-xanthine-scope.json')
+bind(O/'AUTHOR-RATIONALE.md');bind(O/'scripts/render_candidate.py');bind(O/'K-currentness-supplement.json');bind(O/'technical/check_candidate.py')
+ck('exact three bounded changes in author ledger',changes==author['changes'] and [x['path'] for x in changes]==['/ontology_mapping/mapping_quality','/ontology_mapping/evidence/2','/curation_history/7'])
+expected=copy.deepcopy(b);expected['ontology_mapping']['mapping_quality']='MANUAL_CURATION';expected['ontology_mapping']['evidence'].append(changes[1]['value']);expected['curation_history'].append(changes[2]['value'])
+ck('entire candidate all types order and values match exact bounded diff',typed(expected,a))
+ck('author truthful proposal event and new evidence',a['curation_history'][-1]['llm_assisted'] is True and a['curation_history'][-1]['curator']=='codex_worker10_xanthine1258' and a['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION')
+for x in author['executed_modules']:
+ p=Path(x['path']);bind(p,x['sha256']);rel=str(p.relative_to(K));cmd=['git','show','5288c882def177b1b9a5eee2975f039db780ac4e:'+rel];z=subprocess.run(cmd,cwd=K,capture_output=True);commands.append({'argv':cmd,'cwd':str(K),'exit_code':z.returncode,'stdout_sha256':sha(z.stdout),'stderr':z.stderr.decode()});ck('actual executed module equals5288 '+x['module'],z.returncode==0 and z.stdout==p.read_bytes())
+ck('no operator application or newsource accounting',not author['maintained_application'] and author['new_source_cases']==0 and author['owner_plan_changes']==0 and not author['human_verification_claimed'])
+primary=oldscope['primary'];term9=read(Path(primary[0]['path']));term7=read(Path(primary[1]['path']))
+names={term9['ascii_name']}|{x['ascii_name'] for group in term9['names'].values() for x in group}
+for x in a['synonyms']:ck('complete retained alias present in exact17712 primary '+x['synonym_text'],x['synonym_text'] in names)
+ck('retained chemistry values match qualified17712 record',a['chemical_properties']['molecular_formula']==term9['chemical_data']['formula'] and a['chemical_properties']['inchi']==term9['default_structure']['standard_inchi'] and a['chemical_properties']['smiles']==term9['default_structure']['smiles'])
+ck('qualifiedCAS present in both source records',all(a['chemical_properties']['cas_rn'] in {x['accession_number'] for x in t['database_accessions']['CAS']} for t in [term9,term7]))
+ck('native parent relation preserved source fact',any(x['relation_type']=='is a' and x['final_id']==15318 for x in term9['ontology_relations']['outgoing_relations']))
+newnotes=a['ontology_mapping']['evidence'][-1]['notes']
+for x in primary:
+ receipt=x['original_request_metadata'];ck('new evidence literal original acquisition URL/time retained',receipt['url'] in newnotes and receipt['accessed_at'] in newnotes)
+ck('new rationale explicitly rejects false selectors and human/purity claims',all(s in newnotes for s in ['Neither the shared CAS nor the shared name uniquely selects','does not assert human verification','not current proof of a unique CAS-to-target','do not establish a tautomer-pure reagent','generic xanthine trait observations retain CHEBI:15318']))
+rows=read(O/'technical/native-row-comparison.json');technical=read(O/'technical/candidate-checks.json');base=rows['native_baseline_rows'][0];row=rows['native_candidate_rows'][0];canonical=rows['unchanged_current_canonical_row']['row']
+ck('one actual13field candidate row exact identity and method',len(rows['native_candidate_rows'])==1 and len(row)==13 and row['object_id']==a['identifier']==a['ontology_mapping']['ontology_id']=='CHEBI:17712' and row['predicate_id']=='skos:exactMatch' and row['mapping_justification']=='semapv:ManualMappingCuration')
+ck('diagnostic before after source/date only',set(k for k in base if base[k]!=row[k])=={'source','mapping_date'} and rows['candidate_sha256']==bind(afterpath))
+ck('full historical canonical row exact prior companion row',canonical==oldscope['whole_row'][0]['row'] and canon(canonical)=='2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c')
+ck('all source tokens actual candidate evidence and curator',row['source']=='MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258')
+ck('diagnostic current date comes from actual event',row['mapping_date']==a['curation_history'][-1]['timestamp'][:10])
+ck('aliases unchanged and no7H alias manufactured',row['other']==base['other']==canonical['other'] and '7H-xanthine' not in row['other'])
+ck('no fake canonical equivalence or finalposition',rows['no_final_canonical_position_or_publication'] and row['confidence']==base['confidence']=='0.9' and canonical['confidence']=='0.8' and row['comment']==row['validation_method']=='' and canonical['comment']!='')
+ck('technical controls properly attributed and all passed',len(technical['checks'])==82 and all(x['passed'] for x in technical['checks']) and len(technical['negative_controls'])==17 and not technical['scientific_review'] and technical['candidate_author']=='worker10:/root' and not technical['new_publication_module_executed'])
+for x in technical['executed_modules']:bind(x['path'],x['sha256'])
+descriptions={
+'identifier':('supported_with_limits','UnchangedCHEBI17712 is the already accepted #760 ingredient representation. Source17712 defines N9-protonated xanthine; this is not an inference of physical tautomer purity from CAS, shared names or mobile-H structure.'),
+'preferred_term':('supported_with_limits','UnchangedXanthine is present as a source synonym in both tautomer entries; it is retained within the accepted owner scope and not treated as a unique lexical selector.'),
+'ontology_mapping':('supported_with_limits','Unchanged target/canonical label/source; MANUAL_CURATION expresses the performed nonlexical scope judgment. Two original evidence objects remain exact and explicitly historical. New LLM_SUGGESTION carries actual source URLs/times and agent attribution, without human evidence or verification.'),
+'synonyms':('supported_with_limits','All seven complete alias objects remain exact and all names occur in the17712 primary body. No7H synonym or broader/generic-trait reidentification is introduced; no fresh global resolver/export approval is granted.'),
+'mapping_status':('retained_context','MAPPED remains exact. It describes the maintained representation, not a fresh human REVIEWED state or application approval.'),
+'occurrence_statistics':('retained_context','21/21 remain exact dated repository metadata. The historical16-FEBA note and21 counters are not a fresh census; no source recipe is added, dropped or assigned tautomer specificity.'),
+'curation_history':('supported_provenance','All seven original events preserve complete typed values/order. The eighth native-generated event records the actual private method proposal and llm_assisted=true under the actual agent process; no oldhuman claim or timestamp is rewritten.'),
+'notes':('supported_with_limits','Complete old narrative retained. CAS-grounded describes historical provenance in the context of new explicit nonuniqueCAS explanation; generic traits remain15318, native relation preserved, no physical tautomer-purity inference.'),
+'chemical_properties':('supported_with_limits','Complete CAS, formula, InChI, SMILES and provenance remain exact. Literal values agree with17712; shared48517 values are not evidence of unique selection or pure9H material. Original FEBA/PubChem provenance and retrieval date remain historical.'),
+'ingredient_type':('supported_with_limits','SINGLE_INGREDIENT is the unchanged representation category. It does not establish pure tautomer, grade, lot, experimental role or new preparation.')}
+fields=[{'field':'/'+k,'before_typed_preserved':typed(b[k],a[k]),'before_value_sha256':canon(b[k]),'candidate_value_sha256':canon(a[k]),'assessment':descriptions[k][0],'reason':descriptions[k][1]} for k in a]
+ck('every full top-level field assessed',len(fields)==len(a)==10 and set(a)==set(descriptions))
+row_reasons={'subject_id':'Same stable MIM:Xanthine subject; no new owner or sourcecase.','subject_label':'RetainedXanthine label under bounded ingredient representation.','predicate_id':'Own primary identifier exactMatch follows RuleD independently of method. Not parent equivalence or empirical purity.','object_id':'RetainedCHEBI17712 accepted representation; no switch to48517 or15318.','object_label':'Canonical9H-xanthine label matches literal source17712.','object_source':'obo:chebi.owl identifies the ontology family; no new release retrieval/version claim.','mapping_justification':'ManualMappingCuration records deliberate judgment; not human certification.','source':'Exact actual retained provenance plus new issue1258 and actual agent curator. No fakehuman source.','mapping_date':'Derived from actual new proposal event, not a publication/application date.','confidence':'Native0.9 diagnostic grade, not empirical certainty. Historical canonical0.8 remains separate.','comment':'Empty diagnostic producer field; historical #760scope comment is not overwritten. Future publication must retain source-scope obligations through its native path.','other':'All historical six nonlabel names plusCAS display token retained. No new7H/broader/globalalias or registry-equivalence approval.','validation_method':'Empty diagnostic field, not a renewed canonical SCOPE_REVIEW or release certificate.'}
+rowfields=[{'field':k,'value':v,'assessment':'supported_conditional_diagnostic_scope','reason':row_reasons[k]} for k,v in row.items()]
+for x in bindings:ck('all read bindings preserved',sha(Path(x['path']).read_bytes())==x['sha256'])
+report={'verdict':'pass_with_limitations','completion':'completed','scientific_review':True,'scientific_scope':'Independent skeptical source/method assessment of this exact full10-field owner and conditional13-field diagnostic row. This is a broader stage than the preliminary enum-only method receipt; no physical-tautomer determination, fresh21-recipe census, biological-role evidence, fullcanonical release or application vote.','candidate_author':'Codex worker10 /root','reviewer':{'identity':'Codex worker10 /root/buffers_research','independent_of_candidate_author':True,'prior_participation':'Authored preliminary method recommendation, not candidate. Prior W10 buffer/HCl/serum source authorship and technical/metadata reviews; not an author of W09 Xanthine source/companion assessment or the root candidate. Not blinded; no claimed human credentials.'},'candidate':{'path':str(afterpath),'sha256':bind(afterpath)},'before':{'path':str(beforepath),'sha256':bind(beforepath)},'actual_changes':changes,'whole_field_assessments':fields,'whole_row_assessments':rowfields,'native_rows':rows,'technical_execution_attribution':{'reviewer':'worker10:/root/bio_research','checks':82,'negative_controls':17,'receipt_sha256':bind(O/'technical/candidate-checks.json'),'not_reexecuted_by_this_skeptic':True,'controls_are_not_scientific_proof':True},'method_recommendation':{'grade':'MANUAL_CURATION','source_receipt':str(F/'method-assessment-v1.json'),'sha256':bind(F/'method-assessment-v1.json'),'basis':'Source/contract examination and accepted scope judgment, not uniqueCAS/name or invented human verification.'},'finding_disposition':{'existing_finding':'FC2-XANTHINE-METHOD-001','issue':1258,'status':'open_in_original_and_GitHub','candidate_only_assessment':'Exact747d candidate addresses the current method-field defect with truthful attribution; no terminal issue/finding closure or maintained application is performed.'},'findings':[],'limits':['Exact identity/scope remains the #760convention; source forms and physical tautomer purity remain unproved, not inferred.','No sourcecase accounting or934-ownerplan mutation, no newcanonicalposition or finalhead.','The historical canonical13field row is separate from the generated diagnostic row; future lawful integration must preserve the complete scope evidence/holds and obtain content-bound acceptance.','Changing Kpublication code is outside scope and was not executed; all seven author modules were independently verified equal to5288 Git blobs despite observed e0a75head.','No source, maintained, Git/GitHub, external paid/session or schema/gate mutation.','Native pair and final assembly review are subsequent separate outputs, not preapproved.'],'currentness':{'declared_base':'5288c882def177b1b9a5eee2975f039db780ac4e','observed_concurrent_head':'e0a75a0c48ba539426b1f70623ea376c7b379ecf','author_receipt_rewritten':False,'actual_author_modules_match_declared_base':True},'checks':checks,'commands':commands,'input_bindings':bindings,'execution_started_at':start,'execution_finished_at':datetime.now(timezone.utc).isoformat(),'timing_note':'Full source and candidate reading preceded this mechanical binding pass; exact reading start not separately instrumented.','read_attempts':[{'command':'sed -n 1,230p .../technical/check-candidate.py','exit_code':1,'reason':'Reviewer filename typo: file uses underscore check_candidate.py, already shown by ignored-inclusive inventory. Correct file was then fully read. No artifact/source modification; not a candidate finding.'}]}
+save(F/'candidate-review.json',report)
+with (F/'candidate-review.md').open('x') as f:f.write('''# Xanthine exact candidate skeptical review
+
+**Pass with limitations; no new findings.** I independently read the complete candidate, both ChEBI primary captures, accepted #760 scope, prior Xanthine review, all13 diagnostic row fields and native technical evidence.
+
+Candidate747d1a4f changes only the method grade and appends one LLM_SUGGESTION and one truthful agent history event. All10 top-level fields are assessed in the structured report. The performed nonlexical scope judgment supports MANUAL_CURATION; no uniqueCAS/name resolution, human verification or physical tautomer purity is asserted. Seven aliases, chemistry,21/21 dated counts and all seven original history events remain exact.
+
+The native candidate row retains CHEBI:17712, exactMatch, ManualMappingCuration and all alias/CAS tokens. Only source and date differ from the native before-row. This diagnostic row is not the historical canonical row: its0.9confidence, empty comment and empty validation stamp are producer output, not fresh empirical certainty or permission to discard #760scope obligations. The old canonical0.8 row and full scope comment remain unchanged.
+
+The separate technical reviewer executed82 checks and17 controls; I read their scripts/receipts and did not rerun them. All seven author-imported MIM modules were independently compared to5288 Git blobs; the observed e0a75publication-code advance is disclosed and not executed. The original author receipt remains unchanged.
+
+This is an exact candidate/source-method skeptical assessment, broader than the frozen preliminary enum-only recommendation. It neither recounts21recipes nor approves role/export/application. Existing issue1258 remains open. Root authored the candidate; I authored no candidate bytes. The detailed report preserves actual prior participation, source hashes, field/row assessments and a corrected read-command filename typo.
+''')
+members=['review_candidate.py','candidate-review.json','candidate-review.md']
+save(F/'candidate-review-manifest.json',{'path_root':str(F),'files':[{'path':p,'sha256':sha((F/p).read_bytes())} for p in members],'sealed_subset_only':True,'future_final_assembly_audit_separate':True})
+print(json.dumps({'report_sha256':sha((F/'candidate-review.json').read_bytes()),'manifest_sha256':sha((F/'candidate-review-manifest.json').read_bytes()),'checks':len(checks),'fields':len(fields),'row_fields':len(rowfields),'findings':report['findings']}))
