@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/materials_research",
+  "status": "findings_open",
+  "phase": "assembler preflight; final canonical outputs and staged diff not yet available",
+  "reviewed_at": "2026-11-08T05:26:01.244414+00:00",
+  "reviewed_files": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/processing/assemble_outcomes.py",
+      "sha256": "a2d248b1ed6d7a33fa50cf5261c5e09db8c63b34580ac4dcb939f9afc80c6738"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/README.md",
+      "sha256": "18d6f8c760ac0bcc5271ffc4b4c8cdf2ec4d702a6a0682617ec7a52a8968e736"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/processing/prepare_native_review.py",
+      "sha256": "1381e747a5188b3fd9cc266fb730c0c5c9f8e08124688e1bd16666cb9329f741"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/processing/author_native_review.py",
+      "sha256": "ff8c04e01c6630a8810ac3ee79233eba88d38fce3eef308f3734ad6eaef3229b"
+    }
+  ],
+  "findings": [
+    {
+      "id": "FINAL-ARTIFACT-01",
+      "severity": "P2",
+      "status": "open",
+      "finding": "Preserved native review rows read from the wrong frozen-case level. There are33 owner-nested rows and0 top-level KG rows.",
+      "location": "assemble_outcomes.py preserved_source_holds.native_review_rows",
+      "requested": "Preserve owner path/hash with each original_kg_entry.owners[].native_review_rows record; original case digest must remain unchanged."
+    },
+    {
+      "id": "FINAL-ARTIFACT-02",
+      "severity": "P2",
+      "status": "open",
+      "finding": "Independent completion is copied from curator bindings without direct comparison to actual reviewer manifest inputs/status/per-case outcomes. Duplicate review entries are not rejected.",
+      "location": "assemble_outcomes.py review binding assertions",
+      "requested": "Compare normalized hashes to actual reviewer manifest fields, verify actual complete status and acceptable per-case review outcomes, reject duplicate case reviews before marking canonical decisions complete."
+    }
+  ],
+  "limitations": [
+    "No canonical decision/evidence/proposal set, HANDOFF or staged diff has been reviewed yet.",
+    "No source decisions or proposals edited by this reviewer."
+  ]
+}

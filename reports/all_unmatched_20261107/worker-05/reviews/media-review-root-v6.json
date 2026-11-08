@@ -1,0 +1,1163 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/media_research",
+  "independent_from": "/root",
+  "reviewed_at": "2026-11-08T05:23:52.671079+00:00",
+  "supersedes_scientific_verdict_of": {
+    "path": "reviews/media-review-root.json",
+    "sha256": "8d9fcf24a0c2979cbb50c6291edf99257f6b585395edf24e1f4ff114e3b535b0",
+    "preserved": true
+  },
+  "reviewed_inputs": {
+    "decisions.json": "66bff34900ceff425ba063cd6ebd7755daa7918da70c87204374a7ce7039a5bc",
+    "evidence.json": "9fbadd4c853124f732399a1686b43300f0ccbd116f9578f00400174d71e7f07f",
+    "proposals.json": "71c8640c0e35beb764390207d405b0f62a318c13b07d54c74af0e19af8e9197d"
+  },
+  "reviewed_proposals": [
+    {
+      "proposal_id": "ROOT-P-thiamine-stock",
+      "owner_path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+      "before_sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0",
+      "after_capture": {
+        "root": "artifact",
+        "path": "root/proposed/Thiamine_Solution_See_Medium_No_403.yaml",
+        "sha256": "55139d9ab4949b718ef63960b3a6a8c3f8c2e95e1f4ea6d42683271d8167b3c2"
+      },
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "ingredient_type",
+        "notes",
+        "synonyms"
+      ],
+      "verdict": "supported_with_limits"
+    },
+    {
+      "proposal_id": "ROOT-P-fatty-stock",
+      "owner_path": "data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+      "before_sha256": "00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "root/proposed/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+        "sha256": "471a552bc97debca1689e0a8ad3e2303a2651ccf502789ed6bfb9ba86f0890a4"
+      },
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "notes",
+        "ontology_mapping",
+        "synonyms"
+      ],
+      "verdict": "supported_with_limits"
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+      "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53",
+      "reviewed_decision_sha256": "6cce9d60cfd7ea563004bd5843fe4fd30fcca45a710f849a716df16a2f87d7c1",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM628 and629 explicitly have different bottom-layer salt preparations; two source recipes cannot acquire one universal FeS owner. Frozen100G/L is a parser artifact and was not accepted as chemistry.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-628",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-628.body",
+          "sha256": "9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f"
+        },
+        {
+          "evidence_id": "ROOT-jcm-629",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-629.body",
+          "sha256": "716c24f1e18d14b2fdaef91969b9364b88f20c99a3284f663e0beef0b8f10a84"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-5b1f0284b8e9f7a4",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M641_Freshwater_Iron-Oxidizing_Bacteria_Medium.yaml",
+          "sha256": "5b1f0284b8e9f7a44d7e22538a7092a3aa7b7d978cdb370c2d36e36bace60a40"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-a2d32d72985e7804",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M642_Saltwater_Iron-Oxidizing_Bacteria_Medium.yaml",
+          "sha256": "a2d32d72985e7804531e9c7fb2aecd8201c024ab430d769db2fee0fb7f38b548"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:2b63628e7e1902e7cdd721bb2aa23012d4dbf4c0e3e51d942c736017c060f901",
+      "case_input_sha256": "05ae7767d8da7beb31b351bfa279a5f028a84ca432e117a6ec6d985b9f410805",
+      "reviewed_decision_sha256": "5c40094178790fa84387d00fde33f7627671ace1f96c187fc5c236f955ef6fff",
+      "verdict": "supported_with_limits",
+      "assessment": "DSMZ40 states addition of1%NaCl to29, whose six solutions and sulfide feed are a whole prepared medium. Keeping the29 base separate from40 is supported.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-40",
+          "root": "artifact",
+          "path": "root/captures/dsmz-40.body",
+          "sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-29",
+          "root": "artifact",
+          "path": "root/captures/dsmz-29.body",
+          "sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-0d8c7ed3bc4764a1",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2258_Pfennig_s_Medium_II_With_Salt.yaml",
+          "sha256": "0d8c7ed3bc4764a132d1dfbdccc58c20b8a3b7a1d066d82ce925812bd9e2e101"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+      "case_input_sha256": "a8e35ff3593e9f4209bdb837b76e599c4c89c63f5c29f96cf60463ceb5e4e4ca",
+      "reviewed_decision_sha256": "13a5569d5e27f36509092277737447b8d11ebf77c7380923b3fd91924cdb82ae",
+      "verdict": "supported_with_limits",
+      "assessment": "MediaDive1895 solutions6635 and6636 distinguish MKP from serum/albumin supplementation; MKP includes CMRL plus nutrients and buffer. A CMRL synonym would erase the mixture.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-md-1895",
+          "root": "artifact",
+          "path": "root/captures/md-1895.body",
+          "sha256": "2051630656c07a8309ab51a655b09bdd8c13f565dca8199a545ce9a619860390"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-feec59febb90e554",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/hs_rfb_borrelia_miyamotoi_medium.yaml",
+          "sha256": "feec59febb90e554e75d16a1825febcf83b225772ce485a5585bc2466d74f06f"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29",
+      "case_input_sha256": "f312b91619d46505d0752e006ac145bb43a8ed8033463ffa9043d63f23c8345a",
+      "reviewed_decision_sha256": "b6cff8bf3e84ee76436eb17ab038386ac63ba70eb20d3f30a28f3724ca615e65",
+      "verdict": "supported_with_limits",
+      "assessment": "DSMZ87a adds vitaminCA to87 and CA contains hydrated thiamine HCl; no single vitamin identifies the basal87. The decision retains this boundary.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-87a",
+          "root": "artifact",
+          "path": "root/captures/dsmz-87a.body",
+          "sha256": "4ff9b711ae36b935f2f3cb31997aeacf3c70ff154b550a0c1ea52ba6dcde091d"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-87",
+          "root": "artifact",
+          "path": "root/captures/dsmz-87.body",
+          "sha256": "99d5799eb50563779fcb3f6b3345b4c329cf32d3ba7d9e736be5e7fc5bf4cffc"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-a30553925144b36e",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2173_Chloroflexus_Aggregans_Medium.yaml",
+          "sha256": "a30553925144b36ec037d2c31b9d9637209bec837f99a59b3078b02b31129109"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+      "case_input_sha256": "5f604ab3349ba85cb25c8cfccfd9e39a12f3570918f82900bc1810d891048c94",
+      "reviewed_decision_sha256": "8ccc63768851c1442e7d1b791067410940a7c02e0a07e0db4b3f86e0da4035fa",
+      "verdict": "supported_with_limits",
+      "assessment": "All11 raw occurrences point to compound1856 and403; JCM403 explicitly gives10mg thiamineHCl with100ml25mMpH3.4phosphate buffer. Proposed two named source inputs and unmapped status are supported; source-dose percentages remain unvalidated. The revised payload also omits VITAMIN_MIX, avoiding any new functional subtype claim.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-403",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-403.body",
+          "sha256": "b28331b54771accff48da1b68077398dd7450ee8746eaf1aec1b4ef7a055bd61"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1125",
+          "root": "artifact",
+          "path": "root/captures-v4/jcm-1125.body",
+          "sha256": "2dafb864c024358197533e1cb4b6480a6a8fc336d48703afac83b6bac7c9c9dd"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-96fa3eb39dd68dcb",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4576_Main_sol_J679.yaml",
+          "sha256": "96fa3eb39dd68dcb3c5db3801bf7f2371b3eab98d5bf1a24de801103f399ec3b"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-6f4beae86bf3a539",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4695_Main_sol_J756.yaml",
+          "sha256": "6f4beae86bf3a5392a447473e955227878de068854f2afcf9dec77e390709bfd"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-09db49e3426ee86e",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4705_Main_sol_J765.yaml",
+          "sha256": "09db49e3426ee86e52f77fc3b5bd3477a61fc26e95aa8b2b61f253e6fa193dcf"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-deb5e286597c977d",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4719_Main_sol_J772.yaml",
+          "sha256": "deb5e286597c977df665a85643cd39665daf16c09f783345d9cfaa618ce8fa06"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-6c0dd3b483b8a343",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4794_Main_sol_J831.yaml",
+          "sha256": "6c0dd3b483b8a3436fd6add7dc5447aa21767776181fe26f1f8e86fed7426ae7"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-f88f640b60a754fa",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4796_Main_sol_J833.yaml",
+          "sha256": "f88f640b60a754fabe87e7bfce09a3311c311a4b9ef241482fc78730eb076adc"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-f78455a90bd92b21",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4854_Main_sol_J868.yaml",
+          "sha256": "f78455a90bd92b21dd17a8d80f845cb76076862fff9488de01bb0fdf9c6bdad7"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-4db25e9356055811",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5216_Main_sol_J1122.yaml",
+          "sha256": "4db25e9356055811872dd49c615f0cd5f211ff99e54301fd4823825e293bf021"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-a69ca664d34dedaa",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5217_Main_sol_J1123.yaml",
+          "sha256": "a69ca664d34dedaacbd95bf4282e1fb7395afd34096725f0822140e3b3bb5dcf"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-b9e10bc3a43368cc",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5218_Main_sol_J1124.yaml",
+          "sha256": "b9e10bc3a43368cce9ff850d61e94770fa397e119b09c7f95d688765d3545372"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-2f22b0166b214e7e",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5219_Main_sol_J1125.yaml",
+          "sha256": "2f22b0166b214e7ecabce9cf33451e88b2778e28d64f07611756abd86c1f4bec"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403",
+          "root": "artifact",
+          "path": "root/owners-before/Thiamine_Solution_See_Medium_No_403.yaml",
+          "sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:5d265df4517518ebb8d12aa059a984c29e9df3348b794d6b1023eaa8b0f4ef5f",
+      "case_input_sha256": "cdbc07027e95aa58e643a9af930ce0e0a175a3595fcfece226cf78e83f48520a",
+      "reviewed_decision_sha256": "c5a1d4a7e976bd6045b2eac5c8951a5fe752cd0dddb2973b2fedbe3c3d3898bb",
+      "verdict": "supported_with_limits",
+      "assessment": "ATCC1942 names1L1256 then adds NaCl/peptone/sulfur/reductant. The1256acidicbase is not the finished1942neutral recipe; exact recipe reference is supported.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-atcc-old-2668",
+          "root": "artifact",
+          "path": "root/captures/atcc-old-2668.body",
+          "sha256": "8133c5c98a40386e8cb9735ed53e75cf80ecf3c8154b2fe7c0bff75fc39ed680"
+        },
+        {
+          "evidence_id": "ROOT-atcc-1256",
+          "root": "artifact",
+          "path": "root/captures/atcc-1256.body",
+          "sha256": "66e48a29f919f4bc089fe4e0e972515348cfc0a3e3513c46e4e7eb8e36ecc9e3"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-ef15a907dac3595f",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/jcm_medium_161.yaml",
+          "sha256": "ef15a907dac3595fdd70ec300d3b2f2322408bc81e4da9b40411aa7fbddc579d"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:5e992751cd5fb71cd23d43340581fb8ddd38fdf96fddffce2002a4ef1dedbc44",
+      "case_input_sha256": "bd6e069783f0b880e8766f1b9a0a530cb4b14d195eb2b5014704550137903116",
+      "reviewed_decision_sha256": "465fca4e154f9c29ed8cff681ff046279b6fa78230b9ea0e94550f9350e6a1d0",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM1130 VFA has five acids and26ml10NNaOH;1385 inherits1130withmannitol. It is materially distinct from266fouracidwaterstock. The decision does not conflate these.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1130",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-1130.body",
+          "sha256": "dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1385",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-1385.body",
+          "sha256": "b0b238e9fdf963fc8dd663943487462d20b71337017da1c84b45b9caeed20ab1"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-9fca5916d287189a",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml",
+          "sha256": "9fca5916d287189a52e56553cb910baeaeb35d701cffd17c24852093593477ab"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-8779c940ec074455",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1210_YCFA_Medium.yaml",
+          "sha256": "8779c940ec074455b32942db2f9ab0606c2ea022776b1708710dd4b84092c1d5"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429",
+      "case_input_sha256": "18969243a13c9c9442b5a1a883753215b5c5c74db42391daa7030c9aac396f24",
+      "reviewed_decision_sha256": "33d07a97da2a79735eec4642a06b5e1f956da48294cf22414e34d04e4012cf0f",
+      "verdict": "supported_with_limits",
+      "assessment": "DSMZ119 processes anaerobic digester sludge with yeast and centrifugation; the frozen KOMODO164 substitution is source-specific. Bound Sludge_fluid has no component/preparation definition, so that existing owner cannot establish equivalence. Owner provenance finding resolved by actual baseline snapshot; assignment withheld.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-OWNER-PROVENANCE",
+          "severity": "provenance",
+          "status": "resolved",
+          "request": "Add real paths/hashes and inspected bytes for existing candidate owners named in the comparison, or remove the unsupported owner comparison; this does not authorize those owners.",
+          "resolution": "Actual comparison owner baseline snapshot and exact hash now bound; no assignment or owner approval."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-119",
+          "root": "artifact",
+          "path": "root/captures/dsmz-119.body",
+          "sha256": "65295918764de4ed5b73ce773ab4057a7183ecf8bfd7fff0d02393d901b41a2a"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-c568333eb369649d",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/methanosarcina_thermophilic_medium_replace_rumen_fluid_clarified_with_sludge_fluid_medium_119.yaml",
+          "sha256": "c568333eb369649d7073b346c87c19e25d44d254977c22bf1ccfe5a8e5cfc31e"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Sludge_fluid",
+          "root": "artifact",
+          "path": "root/owners-before/Sludge_fluid.yaml",
+          "sha256": "45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+      "case_input_sha256": "6fce5ea80fb1c0b56428491de76b1cfcd6f62e839a6b49c52e13a383498a9540",
+      "reviewed_decision_sha256": "9a53926a40a2be659c3739c65cf1ecafb53cfc0c4b6a0b2658f4ab522feb4886",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM1468 has the starred403thiamine reference and JCM403 defines the same buffered stock; retaining the exact starred raw label is supported, without equating stock to thiaminepyrophosphate.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1468",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-1468.body",
+          "sha256": "ee9887987a6103031c35e812c4d0df4e8f0dd8d03c5dfa6adf3fc246f2091c76"
+        },
+        {
+          "evidence_id": "ROOT-jcm-403",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-403.body",
+          "sha256": "b28331b54771accff48da1b68077398dd7450ee8746eaf1aec1b4ef7a055bd61"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-62912ce6d778f9b3",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1468_FRESHWATER_R2A_MEDIUM.yaml",
+          "sha256": "62912ce6d778f9b3db2f24a819961766a4b9cf3f2ede715c9a5aab14a09a06b9"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403",
+          "root": "artifact",
+          "path": "root/owners-before/Thiamine_Solution_See_Medium_No_403.yaml",
+          "sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:9d2b626c17882f81ff3e211f6d1dce3c6d192d2d6f3d69f2f5bc0120421390d6",
+      "case_input_sha256": "7baae04e8c225ee92abee86628d09723dfadfbe515ba7db9df73b1f205495985",
+      "reviewed_decision_sha256": "b42aea45e8e9ba11eb63fbdb3b0f0051c015349a0a8b3af9b088929144bd88d4",
+      "verdict": "supported_with_limits",
+      "assessment": "DSMZ535broth+agar and535aaddedblood are explicitly separate finished recipes; an agar or blood identity would be a part-to-whole error.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-535a",
+          "root": "artifact",
+          "path": "root/captures/dsmz-535a.body",
+          "sha256": "53d0312f58368ec74feaba92e2082978fd75816fbef056b8964c90fe6a136285"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-535",
+          "root": "artifact",
+          "path": "root/captures/dsmz-535.body",
+          "sha256": "f89afbf91e4a1d704bcbe0efe6d6cd94ad6a97ceb96956add90f195403ccbb81"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-2ae1b7e844ab2fb8",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2581_Trypticase_Soy_Broth_Agar_blood.yaml",
+          "sha256": "2ae1b7e844ab2fb84d3a6381baa94e2c61645486533a701c6002f07e2abeb938"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+      "case_input_sha256": "14af63c57936316be767d3d1362db66ffaf9601b6f2b7298b44fc0b2018b6417",
+      "reviewed_decision_sha256": "f45bec137b21c3b95b4b0c866f6d33c6ea786607b1bc71f2b2804c47b6dfaa40",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM1367 references470, whose14-salt acidified stock has unspecified manganese hydration. Bound Wolfe and ATCCWolfe candidates instead contain EDTA with different concentrations; ModifiedWolfe uses NTA and distinct input forms. No cross-source exact synonym is justified. Comparison snapshots resolve provenance finding.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-OWNER-PROVENANCE",
+          "severity": "provenance",
+          "status": "resolved",
+          "request": "Add real paths/hashes and inspected bytes for existing candidate owners named in the comparison, or remove the unsupported owner comparison; this does not authorize those owners.",
+          "resolution": "Actual comparison owner baseline snapshot and exact hash now bound; no assignment or owner approval."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1367",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-1367.body",
+          "sha256": "e153a0ee728727d4f1a849833ca7c3690f571b4eb4107b94128a3978bff3baf2"
+        },
+        {
+          "evidence_id": "ROOT-jcm-470",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-470.body",
+          "sha256": "bd3611695a7b0effe68bdc8e18f8b66cd13ab5e4417691593a67a33432ffa73d"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-48b7264cf0d94985",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1367_MARINE_DESULFOVIBRIO_COMPLEX_MEDIUM.yaml",
+          "sha256": "48b7264cf0d94985e3e9334334ddbc206ad8964c8ca5efc3af9815424c02957c"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Wolfes_Mineral_Mix",
+          "root": "artifact",
+          "path": "root/owners-before/Wolfes_Mineral_Mix.yaml",
+          "sha256": "8c3a73cfa1887197e1e795b7dc99195b2072f4688ac4404f0db83b00e3e95a89"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+          "root": "artifact",
+          "path": "root/owners-before/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Modified_Wolfes_Minerals",
+          "root": "artifact",
+          "path": "root/owners-before/Modified_Wolfes_Minerals.yaml",
+          "sha256": "9512ca1f07fc2ac7e0e23caef92bdf5d1933e5e25d3040b25b43a8e31f49b392"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:b2206bd404d0663bb8b53a5bbeadca3912777e5eaac7fac5735853cf075a5bd8",
+      "case_input_sha256": "dadbda87dece51af2ac44a8db9d746cee009a04c750ec24b841dc15d2773bfbf",
+      "reviewed_decision_sha256": "f6e74a7df96a6905440bf500b6577d55e3449a3dbaca5b1e44c3da9c6e12381e",
+      "verdict": "supported_with_limits",
+      "assessment": "ATCC1190/1191 modified elixir specifies cobalt nitrate and anhydrous calcium chloride; bound Modified_Wolfes_Minerals instead has cobalt chloride hexahydrate and calcium chloride dihydrate. The exact source stock remains distinct. Baseline owner snapshot resolves provenance finding.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-OWNER-PROVENANCE",
+          "severity": "provenance",
+          "status": "resolved",
+          "request": "Add real paths/hashes and inspected bytes for existing candidate owners named in the comparison, or remove the unsupported owner comparison; this does not authorize those owners.",
+          "resolution": "Actual comparison owner baseline snapshot and exact hash now bound; no assignment or owner approval."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-atcc-1190",
+          "root": "artifact",
+          "path": "root/captures/atcc-1190.body",
+          "sha256": "f790ccf2a5d52dc24a85813e31176f70e50a9cdd6225cd4fc05b327476a4f854"
+        },
+        {
+          "evidence_id": "ROOT-atcc-1191",
+          "root": "artifact",
+          "path": "root/captures/atcc-1191.body",
+          "sha256": "3226509b558f3fa90e1466ed5a9be5d0fc05db2156dcdec37301890246ef00f3"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-693548ba2284b840",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3174_Clostridium_thermocellum_medium.yaml",
+          "sha256": "693548ba2284b84076bf31ee2410a08af8932b95492e572302dc13403a67adca"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-7dc863ff5b8ac1b9",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/clostridium_thermocellum_medium_atcc_medium_1190_with_18_75_g_filter_paper_substituted_for_the_glucose.yaml",
+          "sha256": "7dc863ff5b8ac1b99b9b049c7aa4daecf37dfb6bbbf7ee8dca0be37d1d9f6ac8"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Modified_Wolfes_Minerals",
+          "root": "artifact",
+          "path": "root/owners-before/Modified_Wolfes_Minerals.yaml",
+          "sha256": "9512ca1f07fc2ac7e0e23caef92bdf5d1933e5e25d3040b25b43a8e31f49b392"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81",
+      "case_input_sha256": "aa6562fbcca9be70d95869c2e921548908e4710dbbe5671a9ef218685c0ba6ab",
+      "reviewed_decision_sha256": "1de4fd13a382f12ea1049f33f073d869d1cdd34adfa6d24f98d4d9b76a4b6fec",
+      "verdict": "supported_with_limits",
+      "assessment": "ATCC1490 contains processedmeat,filtrate,nutrients,hemin/vitaminK1; bothTOGOreferences keep base distinct from addedcarbohydrates orformate/fumarate. Optionalagar is retained; nofoodidentity is admitted.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-atcc-1490",
+          "root": "artifact",
+          "path": "root/captures/atcc-1490.body",
+          "sha256": "eaec5c405391eff6be228decaca7dad94e8b674970076b456bffe30c46cb4ca7"
+        },
+        {
+          "evidence_id": "ROOT-togo-api-M2574",
+          "root": "artifact",
+          "path": "root/captures-v3/togo-api-M2574.body",
+          "sha256": "f341bb1940309c9d1323c9c1a35c2462716e25a4d3a9b85ec5859cfaf83838c1"
+        },
+        {
+          "evidence_id": "ROOT-togo-api-M2618",
+          "root": "artifact",
+          "path": "root/captures-v3/togo-api-M2618.body",
+          "sha256": "dbb8429eafc379297ac61f78547faee37fcd179c24fa11f90a52934c8c0776cf"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-fd1be3c67130bb75",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_carbohydrates_with_rumen_fluid.yaml",
+          "sha256": "fd1be3c67130bb75470278fb252b9120ea4ffec8b7d57d512244014da26ad1d3"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-17b9f16c92a9a907",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_medium_atcc_1490_with_formate_and_fumarate_atcc_9733.yaml",
+          "sha256": "17b9f16c92a9a90737db8271f81e9c25bbb77d01cdcd1e13c1cacd33865980cd"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+      "case_input_sha256": "f991232b0ee5b3c4ca51922d5738cdcda1baded0e6470444d5c137171e796850",
+      "reviewed_decision_sha256": "92bff1918fa0c9b77d9aec44c517438d6d8212377fe825b914b795597c10d99f",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM470 defines the recipe-local see-below elixir. Bound Wolfe and ATCCWolfe candidates have different composition, including EDTA and concentrations. The source namespace must remain explicit; added owner snapshots resolve provenance finding without assignment.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-OWNER-PROVENANCE",
+          "severity": "provenance",
+          "status": "resolved",
+          "request": "Add real paths/hashes and inspected bytes for existing candidate owners named in the comparison, or remove the unsupported owner comparison; this does not authorize those owners.",
+          "resolution": "Actual comparison owner baseline snapshot and exact hash now bound; no assignment or owner approval."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-470",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-470.body",
+          "sha256": "bd3611695a7b0effe68bdc8e18f8b66cd13ab5e4417691593a67a33432ffa73d"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-616f29cc6173669c",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M471_Vulcanibacillus_Medium.yaml",
+          "sha256": "616f29cc6173669c868886dd5ac32328f8155213bdc76822b0642c6605034862"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Wolfes_Mineral_Mix",
+          "root": "artifact",
+          "path": "root/owners-before/Wolfes_Mineral_Mix.yaml",
+          "sha256": "8c3a73cfa1887197e1e795b7dc99195b2072f4688ac4404f0db83b00e3e95a89"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+          "root": "artifact",
+          "path": "root/owners-before/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541",
+      "reviewed_decision_sha256": "69ed9d284d44d3178f9e901edc0ab5aba5cd2d9c6cf22941965fad42f2508dc0",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM1423and1424 refer to266clarifiedrumen preparation with50vs20mldoses. JCM266 specifies heating and centrifugation, so wholeunprocessedrumen and arbitraryfiltrate remain unproved.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1423",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-1423.body",
+          "sha256": "38133f5e00c1dc09defb426353dbd42df838b6a562cb981752509115523f5bfb"
+        },
+        {
+          "evidence_id": "ROOT-jcm-1424",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-1424.body",
+          "sha256": "5c17f97a893350995abd02726e7c17a770d8a9da2b2dd9219e16690836f92648"
+        },
+        {
+          "evidence_id": "ROOT-jcm-266",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-266.body",
+          "sha256": "0054a5cdd60634511ec40a28bc6743000104c8152118dfc019e987afb8886321"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-47166c7750acf289",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1423_METHANOBREVIBACTER_CURVATUS_MEDIUM.yaml",
+          "sha256": "47166c7750acf289043ebfe15208f99456a790b686bd65701926642ac3d794ab"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-9969248462e7fa50",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1424_METHANOBREVIBACTER_CUTICULARIS_MEDIUM.yaml",
+          "sha256": "9969248462e7fa508100726adb089f3a95ccf241a9891bc31340c543dd435613"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80",
+      "case_input_sha256": "a1ac44708aa43463c67fa51b22fc804a7ea38d83bc36dbd26d66e0c6d72a872f",
+      "reviewed_decision_sha256": "ee271a3c1e76cbf9fdf5a603a206ed4cae696a7c87f1ffead2c1fe8548268be8",
+      "verdict": "supported_with_limits",
+      "assessment": "TOGO2643 separatesHSbase from125mMmethanol/40mMacetate and citesAEM1993. It establishes source context, with paper-level universalidentity still explicitly unresolved.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-togo-api-M2643",
+          "root": "artifact",
+          "path": "root/captures-v3/togo-api-M2643.body",
+          "sha256": "77549514a9605812be290a2a106635c2ec2271bd1d36db7950fe66dc998fede1"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-c17da30347a05c71",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/hs_medium_methanol_acetate_medium_125_and_40_mm_respectively.yaml",
+          "sha256": "c17da30347a05c71ae1d5a2c3ecbfa1f14f320323d59fe917d6692d6e731e513"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:d0bb0479aee40433f476c3a75acf0b96288d9f508b1a05a614be6b3dee1fe57f",
+      "case_input_sha256": "f3ab6d9ae717b59e486571bd15513c8d96dedc8a1bb6585c300b2814554b1071",
+      "reviewed_decision_sha256": "72c5dbbf78b6bc89ca98182ee914b356885420927770ce92119885163c2c644c",
+      "verdict": "supported_with_limits",
+      "assessment": "TOGO2789 separatesM2SGC100ml fromantibiotic/gasconditions; comments specify30%rumen and absentlactate. M2GSCspelling discrepancy and frozen100G/L remain appropriately unpromoted.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-togo-api-M2789",
+          "root": "artifact",
+          "path": "root/captures-v3/togo-api-M2789.body",
+          "sha256": "c76709ce5beb7a179248ea8b2ea8f303f857de529620161ec57f4b5e1f35b8d8"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-69d8a1298722f69e",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/m2sgc_broth_containing_tetracycline_10_g_ml_or_rifampin_100_g_ml.yaml",
+          "sha256": "69d8a1298722f69e84a3e2eeaaf80ce5e7aae488a9026fcccbdc5b827d0da1eb"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc",
+      "case_input_sha256": "c741bf41cf6cac1e7fc4091bc7ab48c13fb181048ad67b084842300baa06b2e8",
+      "reviewed_decision_sha256": "e85b96b35d2bfc4f406b54cf6d443fa9da2fb063c6fab43ea4ca701bf959f96b",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM521 distinguishes900mlmineralbase from subsequentper9mlstockadditions. It supports recipe-localmediumscope rather than genericmineralchemicalidentity.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-521",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-521.body",
+          "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-6fb922185bab8624",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M522_Modified_Desulfoglaeba_Alkanexedens_Medium.yaml",
+          "sha256": "6fb922185bab862476edfca054346121838bdcd2a822cf57cdfcad9b0ba731a1"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:d87b22b5a7c87bc715c392270bfc7b8393245d1c922bbacd7829f0cc126adef1",
+      "case_input_sha256": "5fdf4afbd1b1789e0e24195dca35071e76fb079702432307f3110e0ee24064cc",
+      "reviewed_decision_sha256": "dbc70380d49ef58c09254e5e10aac94bedeb7d589305703dc173e425f61dcace",
+      "verdict": "supported_with_limits",
+      "assessment": "P4definesNNMsalts;P5explicitlyusesNNMversuswater forindividualstocks and fill-to-volume steps. All21frozencarrieroccurrencesretainCultureMech010434 and unspecifiedvolumes, matching the source limitation.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-md-P4",
+          "root": "artifact",
+          "path": "root/captures/md-P4.body",
+          "sha256": "c1b66217611ac37036f1550d0c3ade9bb6b4a9ef733f0547494547e574668a4b"
+        },
+        {
+          "evidence_id": "ROOT-md-P5",
+          "root": "artifact",
+          "path": "root/captures/md-P5.body",
+          "sha256": "fe4448ec7332d8e7ec8313b49ffa8e03b0c26ca54522d83fa802a19bbb25f5c7"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-cb5a972f2d1da8e1",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/rs_medium_nutrient_medium_nm_component.yaml",
+          "sha256": "cb5a972f2d1da8e1c0f822b4f7a1f5a90e5b8062ef67b8413ef97e8a9f9b6cba"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:d91cb09543c05accf6eb00e342661258e11988eb84982fa71feba38d2307559b",
+      "case_input_sha256": "698f621d7877e874d973a4d5d48d84e01eecc8aa72accb140b8d10b525c0fc71",
+      "reviewed_decision_sha256": "5c59ab5f89ef88aa6c9760eb6c8fae7335c90ce70a2398aad9907e783f43df0c",
+      "verdict": "supported_with_limits",
+      "assessment": "ATCC2811 explicitlyprints elixier but omitsstockformula. Holding unresolved with the exactmissingATCCdefinition is justified; similaritytoDSMZ1083is insufficient.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-atcc-old-2472",
+          "root": "artifact",
+          "path": "root/captures/atcc-old-2472.body",
+          "sha256": "2cdec5c90cec6a6cb351c1a07765a77e25ba1ab0a3ae14bb6c1fc0f2ba728ca7"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-cb74c7b9d6f36b40",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2472_Aciduliprofundum_Medium.yaml",
+          "sha256": "cb74c7b9d6f36b403184aeb57b75d6bebe3ead754bc55b0354c1d7f78c09ec89"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:dcab813086c94d8ff8307cecf995687500ab798e21fdd3568aaf6fa1e352b959",
+      "case_input_sha256": "aeb01141d881ef8e7ba03a781a679f0fcd5791b2d472e58c79054349fe7056f9",
+      "reviewed_decision_sha256": "4f56697dfa9fa24843850079f21cbf387cf0596233edda1761439bed1c930414",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM221 uses MnSO4 xH2O whereas ATCC1190 prints monohydrate; its nitrate/alum formulation remains source-specific. Bound ModifiedWolfe has cobalt chloride and different calcium form. Snapshot resolves provenance finding; no stock equivalence approved.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-OWNER-PROVENANCE",
+          "severity": "provenance",
+          "status": "resolved",
+          "request": "Add real paths/hashes and inspected bytes for existing candidate owners named in the comparison, or remove the unsupported owner comparison; this does not authorize those owners.",
+          "resolution": "Actual comparison owner baseline snapshot and exact hash now bound; no assignment or owner approval."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-221",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-221.body",
+          "sha256": "5533579f04ee4d1616f32bea3ef298699cacb59cc60f388bd472036e29d3580a"
+        },
+        {
+          "evidence_id": "ROOT-atcc-1190",
+          "root": "artifact",
+          "path": "root/captures/atcc-1190.body",
+          "sha256": "f790ccf2a5d52dc24a85813e31176f70e50a9cdd6225cd4fc05b327476a4f854"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-fcdc19bccf3c23c0",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M214_Thermoanaerobacter_Ethanolicus_Medium.yaml",
+          "sha256": "fcdc19bccf3c23c0939e9784dfa5e40dd37240c593a5988e2fe5e9846e892080"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Modified_Wolfes_Minerals",
+          "root": "artifact",
+          "path": "root/owners-before/Modified_Wolfes_Minerals.yaml",
+          "sha256": "9512ca1f07fc2ac7e0e23caef92bdf5d1933e5e25d3040b25b43a8e31f49b392"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+      "case_input_sha256": "fb68ed72ddf203869194e70fedec0c60e7e593b27a29a766662dc30969316175",
+      "reviewed_decision_sha256": "28dea03b5797b1f1d286c368ad488025ee85ffa09fcb2e961e92d8ee5457f8dc",
+      "verdict": "supported_with_limits",
+      "assessment": "Four DSMZ occurrences use792 monohydrate stock; JCM837 references470 xhydrate. Bound Wolfe/ATCCWolfe candidate recipes differ in inputs/concentrations and do not establish exact cross-source identity. Snapshot resolves provenance finding; holds retained.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-OWNER-PROVENANCE",
+          "severity": "provenance",
+          "status": "resolved",
+          "request": "Add real paths/hashes and inspected bytes for existing candidate owners named in the comparison, or remove the unsupported owner comparison; this does not authorize those owners.",
+          "resolution": "Actual comparison owner baseline snapshot and exact hash now bound; no assignment or owner approval."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-1083",
+          "root": "artifact",
+          "path": "root/captures/dsmz-1083.body",
+          "sha256": "fa5336b261aa3e5c990086ce968935690d08355f14067f71ac93e6522c2c47ba"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-792",
+          "root": "artifact",
+          "path": "root/captures/dsmz-792.body",
+          "sha256": "6b25068d137a63b0ebffca3daa9d617e636a3c947dd17a4719a937dcf7333327"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-792b",
+          "root": "artifact",
+          "path": "root/captures/dsmz-792b.body",
+          "sha256": "872911b48dbe9595b26f9fd8ba5a85e6d09d47395cea5a6a9c1748b4eeabc83d"
+        },
+        {
+          "evidence_id": "ROOT-dsmz-1092",
+          "root": "artifact",
+          "path": "root/captures/dsmz-1092.body",
+          "sha256": "8b4c6b813b38b7d11e631a1fddde2001a24b44b00e30b2a3821be48b8d3dfbc0"
+        },
+        {
+          "evidence_id": "ROOT-jcm-837",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-837.body",
+          "sha256": "a868c8e3697944dbff566b8290d67d3466c3f8cf049eb062bc7ebdc61352957c"
+        },
+        {
+          "evidence_id": "ROOT-jcm-470",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-470.body",
+          "sha256": "bd3611695a7b0effe68bdc8e18f8b66cd13ab5e4417691593a67a33432ffa73d"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-50a1697df32fe2ac",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2669_Aciduliprofundum_Medium.yaml",
+          "sha256": "50a1697df32fe2ac62f5fe6c96b5c55e823453c25616e60bc671c13eb307cfa2"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-62792a39759d8222",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2683_Pyrolobus_Fumarii_Medium.yaml",
+          "sha256": "62792a39759d8222ac2287b2408562caa4b44b56d94ae23fdbf94f21662622c4"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-10b5e06aa5069f2f",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3122_Caminibacter_Mediatlanticus_Medium.yaml",
+          "sha256": "10b5e06aa5069f2fdde9f6d64d182aae17b5dfa48ec2ce57456033eba85ebde5"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-a43ae2b1769bc54f",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3128_Thermosulfidibacter_Medium.yaml",
+          "sha256": "a43ae2b1769bc54f3f9885e6af1b39ad94fbdd304698ac7ab655799f63fd0afa"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-a4747e18766bd439",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml",
+          "sha256": "a4747e18766bd4398093a06febbc823292937a23aaf74aea4820a754bb51b81a"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Wolfes_Mineral_Mix",
+          "root": "artifact",
+          "path": "root/owners-before/Wolfes_Mineral_Mix.yaml",
+          "sha256": "8c3a73cfa1887197e1e795b7dc99195b2072f4688ac4404f0db83b00e3e95a89"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+          "root": "artifact",
+          "path": "root/owners-before/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4",
+      "case_input_sha256": "17e2ef4216b5013a7ec6009fdb33dc691f3d12798d3322a2c517587b2ee72ecb",
+      "reviewed_decision_sha256": "9e43122097d714a06d0e944797eca549e1f3213075a3a1c962f84aceac96d87f",
+      "verdict": "supported_with_limits",
+      "assessment": "TOGO2241separatesMediumDfromDH+HEPESand10foldstock/dilution. Frozen1000G/Lisnotaccepted; paper-confirmedconcentration remains a requirement.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-togo-api-M2241",
+          "root": "artifact",
+          "path": "root/captures-v3/togo-api-M2241.body",
+          "sha256": "06e8dd87e070918eaedaeabe5fece8f24d122027da77337afbd47697da0b8867"
+        },
+        {
+          "evidence_id": "ROOT-RECIPE-d255047e787828af",
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/medium_dh.yaml",
+          "sha256": "d255047e787828afded9611242510829cdd3ae49a6373dc8b800767264daebf8"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a",
+      "case_input_sha256": "2142d359d885bc5897b10c7d4c037558d61823015b1a5338d3ce7f97c724a8be",
+      "reviewed_decision_sha256": "741294ec9c6de05637023e39f935f5cb66a83f5cc422c8c4e6b12bf4f8096c48",
+      "verdict": "supported_with_limits",
+      "assessment": "JCM266 establishes four acids at0.5g each,20ml water and concentrated NaOH to pH7.5. CHEBI35366 denotes the molecular class, so a source-specific local mixture identity and removal of inherited molecular structure/class aliases are supported. Six named inputs preserve unspecified stereochemistry, alkali quantity and final volume. Revised payload removes the unsupported CARBON_SOURCE_MIX role; generic inherited mixture RAW_TEXT labels remain unapproved.",
+      "findings": [
+        {
+          "finding_id": "MEDIA-ROOT-CARBON-SOURCE",
+          "severity": "scientific",
+          "status": "resolved",
+          "request": "Remove new CARBON_SOURCE_MIX or replace OTHER; source266 supports mixture ingredients but does not establish this stock role. Keep inherited generic RAW_TEXT aliases explicitly withheld.",
+          "resolution": "Unsupported solution_type omitted from exact after bytes; no new role claim remains."
+        }
+      ],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-266",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-266.body",
+          "sha256": "0054a5cdd60634511ec40a28bc6743000104c8152118dfc019e987afb8886321"
+        },
+        {
+          "evidence_id": "ROOT-chebi-35366",
+          "root": "artifact",
+          "path": "root/captures-v4/chebi-35366.body",
+          "sha256": "06bbcd8896531211e4ad4d1d346ad220092bf1ea7c21f1444951a58a4d0381ec"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Fatty_Acid_Mixture_See_Medium_No_266",
+          "root": "artifact",
+          "path": "root/owners-before/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+          "sha256": "00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    },
+    {
+      "case_id": "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59",
+      "case_input_sha256": "82f44ce7541bb60558fe2bc59891a6b783c975b9e05bffd4bb2a280106202813",
+      "reviewed_decision_sha256": "4671c4d62dfc385b92f732f31d3649e3839f2a01a6e3f5f63bd8bf743ada4655",
+      "verdict": "supported_with_limits",
+      "assessment": "Ingredient1856explicitlynames403;10mlisreceivingdoseandnotneatchemicalidentity. Proposedstockclassificationandtwo sourceinputsarevalidatthenamed-inputlevel; completechemicalgroundingisnotclaimed.",
+      "findings": [],
+      "reviewed_evidence_captures": [
+        {
+          "evidence_id": "ROOT-SHARD",
+          "root": "source",
+          "path": "shards/shard-05.json",
+          "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+        },
+        {
+          "evidence_id": "ROOT-jcm-403",
+          "root": "artifact",
+          "path": "root/captures-v2/jcm-403.body",
+          "sha256": "b28331b54771accff48da1b68077398dd7450ee8746eaf1aec1b4ef7a055bd61"
+        },
+        {
+          "evidence_id": "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403",
+          "root": "artifact",
+          "path": "root/owners-before/Thiamine_Solution_See_Medium_No_403.yaml",
+          "sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+        }
+      ],
+      "limitations": "Source/formulation disposition and exact proposed delta only; no inherited hold removal, complete-owner publication approval or organism-growth inference."
+    }
+  ],
+  "scientific_review_count": 25,
+  "open_findings": 0,
+  "summary": "All25 cases independently reviewed. Original functional-subtype and owner-provenance findings resolved against exact revised bytes. Existing holds remain; native integrated owner review and admission remain separate."
+}

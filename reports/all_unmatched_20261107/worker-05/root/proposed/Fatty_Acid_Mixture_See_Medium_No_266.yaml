@@ -1,0 +1,160 @@
+identifier: kgmicrobe.ingredient:fatty_acid_mixture_see_medium_no_266
+preferred_term: Fatty acid mixture (see Medium No. 266)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:fatty_acid_mixture_see_medium_no_266
+  ontology_label: Fatty acid mixture (see Medium No. 266)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266
+    notes: JCM266 defines a neutralized multicomponent fatty-acid stock. CHEBI35366
+      is not its whole identity; registry identity preserves this recipe-specific
+      preparation without a part-to-whole parent mapping.
+synonyms:
+- synonym_text: Fatty acid
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: Fettsaeure
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: Fettsaeuren
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: acide gras
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: acides gras
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: acido graso
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: acidos grasos
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: fatty acids
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
+- synonym_text: Fatty acid mixture
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Fatty acid mixture (see below)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: Fatty acid, Fettsaeure,
+    Fettsaeuren, acide gras, acides gras, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:33.505726+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
+    No')
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.482671+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=CHO2R; smiles=*C(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:08.951391+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.341135+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.762837+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Fatty acid mixture (see Medium No. 266)'' -> ''fatty
+    acid'': synced to canonical CHEBI label (preferred_term ''Fatty acid mixture (see
+    Medium No. 266)'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.518810+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Fatty acid mixture'' (x3 CultureMech mentions); ''Fatty acid
+    mixture (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:18:45.992728+00:00'
+  curator: worker05/source-review-proposal (Codex)
+  action: CORRECTED
+  changes: Replace erroneous CHEBI fatty-acid class identity with source-defined mixture
+    registry identity; remove inherited single-molecule structure, retain incompatible
+    molecular-class labels as REJECTED_LABEL; preserve existing mixture RAW_TEXT labels
+    without approving them, transcribe source inputs without final-volume inference.
+    Existing WITHHOLD remains.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: STOCK_SOLUTION
+components:
+- component_name: Valeric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g
+- component_name: Isovaleric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g
+- component_name: α-Methylbutyric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g; stereochemistry unspecified
+- component_name: Isobutyric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: JCM266 input20ml, not asserted final volume
+- component_name: Concentrated NaOH solution
+  reference_scope: UNMAPPED
+  source: JCM266 pH-adjustment input, amount unspecified
+notes: ' JCM266 defines this stock from four acids(0.5g each),20ml water and NaOH
+  to pH7.5. Batch inputs do not establish a final-volume denominator. Preserve the
+  inherited mapping WITHHOLD and independently review all source occurrences before
+  publication; the two generic historical mixture RAW_TEXT aliases are preserved but
+  unassessed and must not receive publication support from this scoped proposal. No
+  roles or whole-record approval are implied.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266
+    source_record: JCM266 Fatty acid mixture
+    notes: Complete named preparation inputs at one level only; UNMAPPED component
+      references do not claim chemical identity. Numerical batch inputs remain in
+      source notes rather than unsupported normalized concentrations.

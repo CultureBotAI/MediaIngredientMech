@@ -1,0 +1,162 @@
+id: CultureMech:006962
+name: yps_medium
+original_name: YPS medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 6.8
+media_term:
+  preferred_term: KOMODO Medium 990
+  term:
+    id: komodo.medium:990
+    label: YPS medium
+notes: 'Source: KOMODO ModelSEED | ID: 990 | DSMZ Medium: 990 (mediadive.medium:990)
+  | Aerobic: Yes'
+ingredients:
+- preferred_term: Sea Salt
+  concentration:
+    value: '35'
+    unit: G_PER_L
+- preferred_term: PIPES
+  term:
+    id: CHEBI:39033
+    label: PIPES
+  concentration:
+    value: '3.46'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:39033
+    label: PIPES
+- preferred_term: Yeast extract
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: Peptone
+  concentration:
+    value: '4'
+    unit: G_PER_L
+- preferred_term: Elemental sulphur
+  term:
+    id: CHEBI:33403
+    label: elemental sulfur
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33403
+    label: elemental sulfur
+- preferred_term: NH4Cl
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: KH2PO4
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+  concentration:
+    value: '0.35'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: CaCl2
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: FeCl3
+  term:
+    id: CHEBI:30808
+    label: iron trichloride
+  concentration:
+    value: '0.0067'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:30808
+    label: iron trichloride
+- preferred_term: Na2WO4
+  term:
+    id: CHEBI:63940
+    label: sodium tungstate
+  concentration:
+    value: '0.0029'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63940
+    label: sodium tungstate
+- preferred_term: Resazurin
+  term:
+    id: CHEBI:8806
+    label: Resazurin
+  concentration:
+    value: '0.0001'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:8806
+    label: Resazurin
+- preferred_term: Na2S x 9 H2O
+  term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:03.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 990'
+- timestamp: '2026-02-03T11:19:07.958924'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 990
+- timestamp: '2026-03-13T06:19:45.288972Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:006962'
+- timestamp: '2026-03-17T06:30:20.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:03.331837+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "YPS medium" to "yps_medium" for consistent matching
+- timestamp: '2026-06-05T07:40:28.413354+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 9 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:46:46.605954+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 3 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+parent_media:
+  path: data/normalized_yaml/bacterial/DSMZ_990_YPS_MEDIUM.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:002172
+  name: yps_medium
+  notes: KOMODO record states DSMZ Medium 990 provenance and exactly matches the single
+    same-category DSMZ parent signature.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same ingredient and concentration signature; KOMODO record copied from the matching
+  DSMZ medium source.

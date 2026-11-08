@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-08T04:23:18.253758+00:00",
+  "scope": "Coordinator shared-owner context only; no case disposition, edit or release approval",
+  "owner": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+  "owner_sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad",
+  "assigned_worker_slots": [
+    5,
+    9
+  ],
+  "primary_pages_observed": [
+    "https://www.ebi.ac.uk/chebi/CHEBI:9532",
+    "https://www.ebi.ac.uk/chebi/CHEBI:18290"
+  ],
+  "primary_observation": "Current owner formula, SMILES and InChI include chloride and correspond to18290; its curated identity and mapping are9532. The official9532 page has no chloride and the18290 page identifies the chloride salt and has-part relation.",
+  "existing_decisions": {
+    "319": "Pure-compound owner deliberately regrounded to9532 from chloride term; separate stock owner freed the term.",
+    "320": "Resolution explicitly treats CAS136-09-4 relationship as a conjugate-base issue under319; do not conflate it with chloride CAS154-87-0.",
+    "268": "Merged chemistry cleanup concerned the DIFFERENT 0.2%stock owner; broader issue remains open."
+  },
+  "rows": [
+    {
+      "file": "mappings/ingredient_mappings.sssom.tsv",
+      "file_sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+      "position": 2792,
+      "row": {
+        "subject_id": "MIM:Thiamine_pyrophosphate",
+        "subject_label": "Thiamine pyrophosphate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9532",
+        "object_label": "thiamine(1+) diphosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#319/#320)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-diphosphoethyl)-4-methyl-1,3-thiazolium chloride|3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-4-methyl-1,3-thiazol-3-ium chloride|3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-[2-(diphosphooxy)ethyl]-4-methyl-1,3-thiazol-3-ium chloride|Coenzymate|Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide|cocarboxilasa|cocarboxylase|cocarboxylase chloride|cocarboxylasum|thiamine diphosphate chloride|thiamine diphosphoric acid ester chloride|thiamine(1+) diphosphate chloride|thiaminium diphosphoric acid ester chloride|thiaminium pyrophosphate chloride|thiaminium pyrophosphoric acid ester chloride|vitamin B1 pyrophosphate chloride|Co Carboxylase|thiamine pyrophosphate chloride|TPP|Co-carboxylase|CAS:136-09-4",
+        "validation_method": "OLS:chebi|SYNONYM_ENRICH|2026-09-02"
+      }
+    },
+    {
+      "file": "reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/mapping-dispositions.tsv",
+      "file_sha256": "b04cf2ad39e5f3574fcc01de87e9a789c6ecd8e9dc088327cb63368ea0b5efb2",
+      "position": 2792,
+      "row": {
+        "source_position": "2792",
+        "row_sha256": "8e119b6968d03dd53fe33808c035436f11626ed1ae618d7bde9ed7b9276ff775",
+        "subject_id": "MIM:Thiamine_pyrophosphate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9532",
+        "owner_record": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+        "owner_record_sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad",
+        "disposition": "WITHHOLD",
+        "review_reason": "Current other still carries chloride-specific names and CAS inherited from the earlier salt grounding, despite the chloride-free target; the original report explicitly flags this mismatch.",
+        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+        "evidence_key": "2792"
+      }
+    }
+  ],
+  "required_followup": "Workers05/09 must review their exact source cases and supplied forms. Keep existing WITHHOLD; flag active chloride-specific aliases/chemistry using fresh primary evidence and content-bound owner review. Do not infer source identity or replace/remove CAS merely from the historical review_reason."
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "author": "/root/materials_research",
+  "findings": [
+    {
+      "key": "distinct_peptone_products",
+      "cases": [69, 132, 184, 186],
+      "owners": ["data/ingredients/mapped/Bacto_Peptone.yaml", "data/ingredients/mapped/Proteose_Peptone.yaml"],
+      "finding": "Bacto Peptone currently resolves three Neopeptone and two Universal peptone labels; unnumbered Proteose Peptone resolves eight No.3 labels. Manufacturer product definitions distinguish these products.",
+      "primary_urls": ["https://www.thermofisher.com/order/catalog/product/211677", "https://www.thermofisher.com/order/catalog/product/211681", "https://www.thermofisher.com/order/catalog/product/211693", "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/135/735/107043en-ms.pdf"],
+      "bounded_action": "Apply only the exact alias-rejection proposals after native owner review; preserve raw labels and do not redirect source assertions yet. The Merck M66 comparison does not establish the historical source catalog. Do not reject every generic Peptone mixture or Oxoid peptone label from analogy.",
+      "issue_dedup": "Parent captured live peptone searches; recommend one bounded product-boundary issue if no existing issue covers these exact owner aliases."
+    },
+    {
+      "key": "sea_salts_primary_identity",
+      "cases": [187],
+      "owners": ["data/ingredients/mapped/Sea_Salts.yaml"],
+      "finding": "The supplier-scoped preparation has NCIT:C75874 primary identity despite an existing CLOSE_MATCH grade and recorded WITHHOLD. Available evidence does not substantiate exact or close ontology equivalence.",
+      "primary_urls": ["https://mediadive.dsmz.de/rest/ingredient/2367", "https://www.sigmaaldrich.com/US/en/product/sigma/s9883"],
+      "bounded_action": "Use the revised registry-only proposal; preserve NCIT candidate only in historical provenance. No S9883 catalog assignment, formula inference or merge with Artificial_Sea_Salt. Preserve all release holds.",
+      "issue_dedup": "Parent captured live Sea_Salts search; existing issue811 concerns source indexing and may not cover this owner-identity error."
+    },
+    {
+      "key": "sucrose_salicin_alias",
+      "cases": [172],
+      "owners": ["data/ingredients/mapped/Sucrose.yaml"],
+      "finding": "d-salicin is an exact Sucrose synonym, but official ChEBI identifies it as a salicyl-alcohol glucoside distinct from sucrose.",
+      "primary_urls": ["https://www.ebi.ac.uk/chebi/CHEBI:17814", "https://www.ebi.ac.uk/chebi/CHEBI:17992"],
+      "bounded_action": "Reject only that alias. Preserve D-Sucrose tombstone, active sucrose identity and unresolved role/release obligations.",
+      "issue_dedup": "Already explicit in frozen owner WITHHOLD; link to existing scientific concern rather than duplicate blindly."
+    },
+    {
+      "key": "culturemech_source_units",
+      "cases": [39, 46, 66],
+      "finding": "Source 10ml whole-fat milk or 10ml of20%w/v sucrose stock was represented as10G_PER_L. No density or final-volume conversion is supported.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408",
+      "bounded_action": "Restore the exact liquid dose and retain material/stock qualifiers; leave downstream rebuild to the coordinator."
+    },
+    {
+      "key": "culturemech_preparation_scope",
+      "cases": [5, 72, 89, 108],
+      "finding": "Leafy soil is an input to soil extract; Scharlau proteose-peptone, Oxoid Special peptone and BD Todd-Hewitt Peptonen are formula details nested within commercial preparations. Frozen root flattening loses those boundaries.",
+      "existing_issues": ["https://github.com/CultureBotAI/CultureMech/issues/150", "https://github.com/CultureBotAI/CultureMech/issues/214"],
+      "bounded_action": "Retain exact raw labels and restore recipe hierarchy upstream; do not turn these complete compound labels into unsupported generic product aliases."
+    }
+  ]
+}

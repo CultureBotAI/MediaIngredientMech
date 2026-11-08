@@ -1,0 +1,186 @@
+identifier: MICRO:0000178
+preferred_term: Bacto peptone
+ontology_mapping:
+  ontology_id: MICRO:0000178
+  ontology_label: peptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_foodon_promotion
+    notes: Commercial food mixture - FOODON is correct parent ontology. Bacto Peptone
+      (BD/Difco) is an enzymatic digest of animal protein (per Difco manual, primarily
+      meat tissue); mapped to FOODON parent 'animal protein (hydrolyzed)'. No exact
+      FOODON term for bacto peptone. CLOSE_MATCH.
+  - evidence_type: CURATOR_JUDGMENT
+    source: manual review of MICRO ontology coverage
+    notes: Bacto Peptone is the brand name for generic peptone. MICRO:0000178 is the
+      precise term; FOODON:03315718 was a less-specific parent.
+synonyms:
+- synonym_text: Bacto peptone
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Bacto peptone (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Bacto Peptone (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Bacto Peptone
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Bacto-Peptone (BD)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone, Bacto (BD 211677)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone (BD Bacto)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone (BD BACTO)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone (BBL 11910)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Oxoid peptone
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Bacto peptone (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Peptone from meat
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Peptone (meat)
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Peptone from meat (pepsin-digested)
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Meat peptone
+  synonym_type: REJECTED_LABEL
+  source: manual
+- synonym_text: Bacteriological peptone
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Neopeptone
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
+- synonym_text: Neopeptone (BD-Difco)
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
+- synonym_text: Neopeptone (Difco Laboratories, Detroit, Ml)
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
+- synonym_text: Gelatin peptone
+  synonym_type: RELATED_SYNONYM
+  source: manual
+- synonym_text: Universal peptone
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
+- synonym_text: Universal peptone (Merck)
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
+- synonym_text: Peptone mixture
+  synonym_type: RELATED_SYNONYM
+  source: manual
+- synonym_text: Fish peptone
+  synonym_type: REJECTED_LABEL
+  source: manual
+- synonym_text: Fish peptone (Fluka)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: peptone
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Peptone
+  synonym_type: EXACT_SYNONYM
+  source: manual
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2255
+  media_count: 2251
+curation_history:
+- timestamp: '2026-04-18T04:19:36+00:00'
+  curator: foodon_promotion_cbclaw
+  action: CREATED
+  changes: Created new mapped entry for bacto peptone / generic peptone / meat peptone
+    family with FOODON:03315718 (animal protein, hydrolyzed). Covers Bacto, Neopeptone,
+    Oxoid Peptone, meat peptones, fish peptone, and bare 'peptone' variants.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.333463+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+  llm_assisted: false
+- timestamp: '2026-05-02T01:19:04.369178+00:00'
+  curator: manual_micro_specificity_pass
+  action: UPGRADE_FOODON_PARENT_TO_MICRO_SPECIFIC
+  changes: FOODON:03315718 → MICRO:0000178 (more specific MICRO term)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.694884+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.735397+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518393+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2251/2255 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-24T07:48:22.445824+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''Meat peptone'' (EXACT_SYNONYM), ''Fish peptone''
+    (RELATED_SYNONYM): names of other peptone products, each with its own record (Fish_peptone,
+    Meat_peptone) (#669). Kept as provenance only; it must not resolve, be exported,
+    or enter the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:17:20.168806+00:00'
+  curator: worker05/materials_research (Codex proposal)
+  action: CORRECTED
+  changes: Reject the three Neopeptone and two Universal peptone aliases as identities
+    of Bacto Peptone; retain labels and sources as provenance. Isolated proposal only.
+    Changed bytes withdraw inherited support; no role, whole-owner or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: UNDEFINED_MIXTURE
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

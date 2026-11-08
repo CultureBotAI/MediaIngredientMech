@@ -1,0 +1,283 @@
+id: CultureMech:011135
+preferred_term: Main sol. 829
+term:
+  id: mediadive.solution:1679
+  label: Main sol. 829
+composition:
+- preferred_term: Sea Salt
+  concentration:
+    value: '29.8507'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:423
+    label: Sea Salt
+- preferred_term: NH4Cl
+  concentration:
+    value: '0.995025'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:42
+    label: NH4Cl
+  chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1679
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 2,
+                      "compound": "NH4Cl",
+                      "compound_id": 42,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 1,
+                      "unit": "g",
+                      "g_l": 0.995025,
+                      "mmol_l": 18.6021,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[1].concentration (NH4Cl)
+      in MediaDive solution 1679; locator=$.data.recipe[1] (compound_id=42). Provider
+      explicitly reports g_l=0.995025. Arithmetic check: 1 g * 1 g/g / (1005 ml /
+      1000 ml per L) = 0.9950248756218905472636815920 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1005. Retrieved 2026-10-07T08:55:25.683882+00:00;
+      response SHA256=3b37bf92b3c8cfe78bfd3630bb6943a2a99dc091fb9a0685d99f003c1897a566.'
+- preferred_term: KH2PO4
+  concentration:
+    value: '0.348259'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:11
+    label: KH2PO4
+  chebi_term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1679
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 3,
+                      "compound": "KH2PO4",
+                      "compound_id": 11,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.35,
+                      "unit": "g",
+                      "g_l": 0.348259,
+                      "mmol_l": 2.55913,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[2].concentration (KH2PO4)
+      in MediaDive solution 1679; locator=$.data.recipe[2] (compound_id=11). Provider
+      explicitly reports g_l=0.348259. Arithmetic check: 0.35 g * 1 g/g / (1005 ml
+      / 1000 ml per L) = 0.3482587064676616915422885572 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1005. Retrieved 2026-10-07T08:55:25.683882+00:00;
+      response SHA256=3b37bf92b3c8cfe78bfd3630bb6943a2a99dc091fb9a0685d99f003c1897a566.'
+- preferred_term: MES [2-(N-morpholino) ethane sulfonic acid]
+  concentration:
+    value: '1.9403'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:766
+    label: MES [2-(N-morpholino) ethane sulfonic acid]
+  chebi_term:
+    id: CHEBI:39005
+    label: 2-(N-morpholino)ethanesulfonic acid
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1679
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 4,
+                      "compound": "MES [2-(N-morpholino) ethane sulfonic acid]",
+                      "compound_id": 766,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 1.95,
+                      "unit": "g",
+                      "g_l": 1.9403,
+                      "mmol_l": 9.93802,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[3].concentration (MES [2-(N-morpholino)
+      ethane sulfonic acid]) in MediaDive solution 1679; locator=$.data.recipe[3]
+      (compound_id=766). Provider explicitly reports g_l=1.9403. Arithmetic check:
+      1.95 g * 1 g/g / (1005 ml / 1000 ml per L) = 1.940298507462686567164179104 g/L,
+      consistent with the reported value at its precision. Evidence supports the provider-declared
+      concentration within this solution, not a concentration in a receiving medium
+      or an independently measured final volume. Water addition alone is not used
+      to infer a final volume. Additional exact excerpt at $.data.volume: "volume":
+      1005. Retrieved 2026-10-07T08:55:25.683882+00:00; response SHA256=3b37bf92b3c8cfe78bfd3630bb6943a2a99dc091fb9a0685d99f003c1897a566.'
+- preferred_term: Sodium resazurin
+  concentration:
+    value: '0.000497512'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:1852
+    label: Sodium resazurin
+  chebi_term:
+    id: CHEBI:8806
+    label: Resazurin
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Sulfur
+  concentration:
+    value: '9.95025'
+    unit: G_PER_L
+  notes: powdered
+  term:
+    id: mediadive.compound:80
+    label: Sulfur
+  chebi_term:
+    id: CHEBI:26833
+    label: sulfur atom
+    confidence: 0.9
+    match_type: corpus_consensus
+- preferred_term: Na2CO3
+  concentration:
+    value: '0.497512'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:32
+    label: Na2CO3
+  chebi_term:
+    id: CHEBI:29377
+    label: sodium carbonate
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1679
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 9,
+                      "compound": "Na2CO3",
+                      "compound_id": 32,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.5,
+                      "unit": "g",
+                      "g_l": 0.497512,
+                      "mmol_l": 4.69405,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[6].concentration (Na2CO3)
+      in MediaDive solution 1679; locator=$.data.recipe[8] (compound_id=32). Provider
+      explicitly reports g_l=0.497512. Arithmetic check: 0.5 g * 1 g/g / (1005 ml
+      / 1000 ml per L) = 0.4975124378109452736318407960 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1005. Retrieved 2026-10-07T08:55:25.683882+00:00;
+      response SHA256=3b37bf92b3c8cfe78bfd3630bb6943a2a99dc091fb9a0685d99f003c1897a566.'
+- preferred_term: Distilled water
+  concentration:
+    value: '995.0248756218906'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: 'Dissolve ingredients (except sulfur, carbonate, vitamins, growth-stimulating
+  factors and Na-dithionite), boil medium for 1 min, then cool to room temperature
+  under 80% H2 and 20% CO2 gas atmosphere. Adjust pH to 6.0 and dispense under 80%
+  H2 and 20% CO2 gas atmosphere into anoxic Hungate-type tubes or serum vials which
+  contain already the appropriate amount of sulfur, only to 30% of their volume to
+  allow for a large head space. Autoclave at a temperature of <b>110°C</b> for 20
+  min! Add vitamins and growth-stimulating factors from sterile anoxic stock solutions
+  prepared under 100% N2 gas and carbonate and Na-dithionite from sterile anoxic stock
+  solution prepared under 80% N2 and 20% CO2 gas atmosphere. Vitamins and Na-dithionite
+  are sterilized by filtration. Adjust pH of the complete medium to 6.0, if necessary.
+
+  After inoculation use 1 bar overpressure of sterile 80% H2 and 20% CO2 gas mixture.
+
+
+  Original volume: 1005 mL'
+curation_history:
+- timestamp: '2026-03-13T06:20:17.766042Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:011135'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:20.570599'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:05.935771'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:44.423805+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:17.551085+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 5 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:45:49.269799+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-10-07T09:01:17.963098+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/1679
+  changes: 'composition[1].concentration: {"unit": "G_PER_L", "value": "0.995025"}
+    -> {"unit": "G_PER_L", "value": "0.995025"} (evidence_only); composition[2].concentration:
+    {"unit": "G_PER_L", "value": "0.348259"} -> {"unit": "G_PER_L", "value": "0.348259"}
+    (evidence_only); composition[3].concentration: {"unit": "G_PER_L", "value": "1.9403"}
+    -> {"unit": "G_PER_L", "value": "1.9403"} (evidence_only); composition[6].concentration:
+    {"unit": "G_PER_L", "value": "0.497512"} -> {"unit": "G_PER_L", "value": "0.497512"}
+    (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/1679
+  title: 'MediaDive solution 1679: Main sol. 829'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=3b37bf92b3c8cfe78bfd3630bb6943a2a99dc091fb9a0685d99f003c1897a566;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

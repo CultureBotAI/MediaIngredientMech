@@ -1,0 +1,1395 @@
+[
+  {
+    "case_id": "CM_NAME:07a946444896ae1f80219e0daa9df0e2bfc1809923488caefa418472ca60c489",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/api_50_chb_e_medium.yaml",
+    "sha256": "fbace69d9355589c06c767e45a2332775df7b69c5b4c5831da1c2e6dc6608ff1",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "1000"
+      },
+      "notes": "TOGO M2832 lists one liter of API 50 CHB/E Medium.",
+      "preferred_term": "API 50 CHB/E Medium",
+      "source": "TOGO M2832"
+    },
+    "recipe_notes": "TOGO M2832 records one liter of API 50 CHB/E Medium incubated at 28 C for 24-48 h; the source does not disclose the product's internal formulation.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3185_Main_sol_1537.yaml",
+    "sha256": "17155aa9f3847780aaeac788d864aa38be1987599895f927bac43a16f169a9fb",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "3"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for composition[0].concentration (R2A Broth) in MediaDive solution 3185; locator=$.data.recipe[0] (compound_id=1402). Provider explicitly reports g_l=3. Arithmetic check: 3 g * 1 g/g / (1000 ml / 1000 ml per L) = 3 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:19:14.462014+00:00; response SHA256=29002fea4c5a23672f4cc82d914c65341fd0861bbfa3251183638ee81842251b.",
+          "reference": "https://mediadive.dsmz.de/rest/solution/3185",
+          "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"R2A Broth\",\n                \"compound_id\": 1402,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3,\n                \"unit\": \"g\",\n                \"g_l\": 3,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "R2A Broth",
+      "term": {
+        "id": "mediadive.compound:1402",
+        "label": "R2A Broth"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4754_Main_sol_J805.yaml",
+    "sha256": "683388ceb96249761c3a916880b0808ef2087db68d2356497ddd188f814ff2af",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "0.32"
+      },
+      "preferred_term": "R2A Broth",
+      "term": {
+        "id": "mediadive.compound:1402",
+        "label": "R2A Broth"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+    "recipe": "inputs/culturemech/data/normalized_yaml/specialized/spiribacter_medium_830_12_marine_salts.yaml",
+    "sha256": "8718081db409568dac826f34d92fb95d8ea18b32aed051efa89e0f29b7715b8f",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "3"
+      },
+      "preferred_term": "R2A Broth"
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1537.pdf",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "pH 7.0-7.2"
+      },
+      {
+        "step_number": 2,
+        "action": "MIX",
+        "description": "Prepare the medium. Sterilize by autoclaving. Before inoculation add from sterile stock solutions:"
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:0921ca35dec155c1df5fa66a58af7c3d895dd7b55e3c553997113800ccb0727d",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/ureaplasma_medium_special_modified_formulation.yaml",
+    "sha256": "2321073cd406795dbabcc4d8e3a907ca78e5c12fe5d593bca18d687c7f3b6323",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "50.0"
+      },
+      "notes": "TOGO M2179 / ATCC Medium 2616 lists 50 ml/L 10X CMRL 1066 Medium from ATCC 20-2207; this 10x tissue-culture supplement is retained as an opaque complex component.",
+      "preferred_term": "10X CMRL 1066 Medium (ATCC 20-2207)",
+      "source": "TOGO M2179 / ATCC Medium 2616"
+    },
+    "recipe_notes": "TOGO M2179 cites ATCC Medium 2616 Ureaplasma Medium - Special Modified Formulation. ATCC Medium 2616 lists a 500 ml basal recipe with PPLO Broth w/o Crystal Violet, pancreatic digests of casein and gelatin, optional agar, and DI Water, adjusts the basal pH to 7.4 +/- 0.2, and autoclaves it at 121 C. The source then prepares a 500 ml additive solution from CMRL 1066, Yeast Extract Solution, 10% TC Yeastolate, heat-inactivated fetal bovine serum, 0.1% Phenol Red Solution, urea, and DI Water; filter-sterilizes the additive; combines it with the basal medium; and records a final pH of 6.0 +/- 0.2.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Mix PPLO Broth w/o Crystal Violet, pancreatic digests of casein and gelatin, optional agar, and DI Water as the basal medium."
+      },
+      {
+        "step_number": 2,
+        "action": "ADJUST_PH",
+        "description": "Adjust the basal medium to pH 7.4 +/- 0.2."
+      },
+      {
+        "step_number": 3,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave the basal medium at 121 C and, if agar is used, cool it to 50-55 C in a water bath."
+      },
+      {
+        "step_number": 4,
+        "action": "FILTER_STERILIZE",
+        "description": "Combine the additive solution and filter-sterilize it through a 0.22 micrometer filter."
+      },
+      {
+        "step_number": 5,
+        "action": "MIX",
+        "description": "Aseptically add the filter-sterilized additive solution to the basal medium."
+      },
+      {
+        "step_number": 6,
+        "action": "ADJUST_PH",
+        "description": "Confirm a final complete-medium pH of 6.0 +/- 0.2 at 25 C."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_1635_Main_sol_804.yaml",
+    "sha256": "cd0cfbccadb716153de688800cd3dcd06c15e03e38c2d00ab7843f0fdc687b2e",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "21"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for composition[0].concentration (Mueller-Hinton broth) in MediaDive solution 1635; locator=$.data.recipe[0] (compound_id=748). Provider explicitly reports g_l=21. Arithmetic check: 21 g * 1 g/g / (1000 ml / 1000 ml per L) = 21 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T08:54:53.995594+00:00; response SHA256=c683a5d0099723e8ffa83bbe5d14ff0382d2e63faf8398ab59522a790c7d967d.",
+          "reference": "https://mediadive.dsmz.de/rest/solution/1635",
+          "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Mueller-Hinton broth\",\n                \"compound_id\": 748,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 21,\n                \"unit\": \"g\",\n                \"g_l\": 21,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "Mueller-Hinton broth",
+      "term": {
+        "id": "mediadive.compound:748",
+        "label": "Mueller-Hinton broth"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mueller_hinton_mh_broth.yaml",
+    "sha256": "2c47255e967f4e51635731fcc9716a668ca037840b07d59a056efcf74acea78f",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "1000"
+      },
+      "notes": "TOGO M2937 lists 1 L of Mueller-Hinton broth.",
+      "preferred_term": "Mueller-Hinton broth",
+      "source": "TOGO M2937"
+    },
+    "recipe_notes": "TOGO M2937 records Mueller-Hinton broth at 42 C, optionally supplemented with ciprofloxacin at 4 ug/ml.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:2d8790f8bd59809ee9d56f7f337b57e644ac6ea1dad9daad69c26cdfee56bb7e",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/l_15b_tick_cell_medium.yaml",
+    "sha256": "cbd3cc3aa4bf000fdcef6e7841a24d91c799a4396ffd8e1c60bf72503a4b9c71",
+    "target": {
+      "concentration": {
+        "unit": "VARIABLE",
+        "value": "1 package"
+      },
+      "notes": "One package of GIBCO Leibovitz L-15 powder, Cat. No. 41300039. No defensible identity object is present in the reviewed MIM SSSOM.",
+      "preferred_term": "Leibovitz's L-15 medium powder"
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1591.pdf\nDSMZ Medium 1591 delegation verified against https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1591.pdf on 2026-08-25 (SHA-256 b4957b2953812ba39cb48d28097fe979b097355a3cc664c47462aac73902cf75); basal L-15B composition verified against https://www.dsmz.de/fileadmin/Bereiche/Microbiology/Dateien/Kultivierungshinweise/TickCellCultureMethods-4.pdf (SHA-256 be6881f2290a4d364b6de79d1aaa9f88378ca82e54394b055d0ea5b1e5df477a). Recipe encodes undiluted basal L-15B. L-15B300 dilution and optional FBS, TPB, lipoprotein, HEPES, and NaHCO3 supplements remain documented source variants, not base ingredients.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "HEAT",
+        "description": "Use a volumetric flask dry-heat treated at 180 C or above for at least 2 hours to remove endotoxins."
+      },
+      {
+        "step_number": 2,
+        "action": "MIX",
+        "description": "Preload 500-700 ml sterile cell-culture-grade water, add components in the printed order, and bring the final volume to 1 litre."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Stir slowly for 1.5 hours, no longer, while protecting the medium from light."
+      },
+      {
+        "step_number": 4,
+        "action": "FILTER_STERILIZE",
+        "description": "Filter through a 0.22 micrometre filter into storage bottles."
+      },
+      {
+        "step_number": 5,
+        "action": "STORE",
+        "description": "Check a 4-5 ml aliquot from each bottle for sterility at 37 C. Confirm pH 5.5-6.5 and, if possible, 415 +/- 10 mOsm/L. Store protected from light at 4 C; the source states it keeps for months."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:2dae691480aba0b75571c2a68ac870dbfba28475d4913cafe5ca11a968e37c70",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/m1d_medium.yaml",
+    "sha256": "6b0a69b8bcff7f68386bb3d35aa1458de0177fb36facf7071ad65ecb2694343e",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "160"
+      },
+      "preferred_term": "Schneider's Drosophila medium (Invitorogen, Gibco)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M1591\nOriginal source: NBRC - NBRC_M400\nOriginal URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=400",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2266_Marine_Agar_Broth_2216.yaml",
+    "sha256": "5f74e5947d9ca31a31573c7f61ad3528d8aec1b4ffd8abe0faa76d50be4e0811",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "37.4"
+      },
+      "preferred_term": "Difco Marine Broth 2216"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2266\nOriginal URL: https://www.atcc.org/~/media/B5025AB990724A91B4491C391E054448.ashx",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3119_Main_sol_1510.yaml",
+    "sha256": "29cf5a04d03a22564305b4db4543394556304330a8ce36fc379fcdf9bd8b9f7a",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "37.4"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for composition[0].concentration (Difco Marine Broth 2216) in MediaDive solution 3119; locator=$.data.recipe[0] (compound_id=1379). Provider explicitly reports g_l=37.4. Arithmetic check: 37.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 37.4 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:41.645093+00:00; response SHA256=45eef4259c17543cd1d9fb0215662d73589b5d61a0933a22b771dd3e541d91a6.",
+          "reference": "https://mediadive.dsmz.de/rest/solution/3119",
+          "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Difco Marine Broth 2216\",\n                \"compound_id\": 1379,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 37.4,\n                \"unit\": \"g\",\n                \"g_l\": 37.4,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "Difco Marine Broth 2216",
+      "term": {
+        "id": "mediadive.compound:1379",
+        "label": "Difco Marine Broth 2216"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/modified_medium_514_for_halomonas_sp.yaml",
+    "sha256": "0492ff4f37cb81b9c5c8a0fe6c27ddfb4c768a8fa0622a75f8f9d5a32a981396",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "37.4"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for ingredients[0].concentration (Difco Marine Broth 2216) in MediaDive medium 1510; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=37.4; check: 37.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 37.4 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:42:51.340937+00:00; response SHA256=1351d6c4edd9e01317cff31b81870ea781647f04cc80775134438f1c8c9a35ea.",
+          "reference": "https://mediadive.dsmz.de/rest/medium/1510",
+          "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"Difco Marine Broth 2216\",\n                        \"compound_id\": 1379,\n                        \"amount\": 37.4,\n                        \"unit\": \"g\",\n                        \"g_l\": 37.4,\n                        \"optional\": 0\n                    }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "Difco Marine Broth 2216"
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1510.pdf",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.5"
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:3a71f979a20ccc7a9e900d1b92ba2dbeefc6b76bf95c72aa79079be2cdf048d5",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/isp_7_medium.yaml",
+    "sha256": "0baff82eba6ee2c9318db2a4104840352d13e490992ca3f8da1507c09a303672",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "23.74"
+      },
+      "notes": "DSMZ Medium 1619 lists 23.74 g ISP 7 Medium (Himedia).",
+      "preferred_term": "ISP 7 Medium (Himedia)",
+      "source": "DSMZ Medium 1619"
+    },
+    "recipe_notes": "DSMZ Medium 1619 contains 23.74 g ISP 7 Medium (Himedia), 15.00 ml glycerol, and 1000.00 ml distilled water.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Dissolve 23.74 g ISP 7 Medium (Himedia) and 15.00 ml glycerol in 1000.00 ml distilled water."
+      },
+      {
+        "step_number": 2,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 C for 15 min unless otherwise stated."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/bme_ctvm2_cell_line_medium_occidentia_massiliensis.yaml",
+    "sha256": "d06a1999c8260b4b6e8a609e094e51554c04a0752b9c67674ee8d7264b578fd0",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "693.069307"
+      },
+      "notes": "DSMZ Medium 1670 lists 70 ml L-15 (Leibovitz) medium in a 101 ml BME/CTVM2 cell-culture medium batch.",
+      "preferred_term": "L-15 (Leibovitz) medium",
+      "source": "DSMZ Medium 1670",
+      "term": {
+        "id": "mediadive.compound:1504",
+        "label": "L-15 medium"
+      }
+    },
+    "recipe_notes": "DSMZ Medium 1670 prepares a 101 ml BME/CTVM2 tick-cell medium for Occidentia massiliensis cultivation from 70 ml L-15 (Leibovitz) medium, 10 ml tryptose phosphate broth, 20 ml foetal calf serum, and 1 ml 200 mM L-glutamine stock.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Prepare the BME/CTVM2 cell-culture medium from 70 ml L-15 (Leibovitz) medium, 10 ml tryptose phosphate broth, 20 ml foetal calf serum, and 1 ml 200 mM L-glutamine."
+      },
+      {
+        "step_number": 2,
+        "action": "MIX",
+        "description": "Use the medium for BME/CTVM2 cells incubated in ordinary air in sealed flasks or flat-sided tubes in dry incubators."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "For Occidentia massiliensis infection, add 3 ml fresh medium and 1 ml thawed Occidentia strain to a 25 cm2 flask with 5 ml residual medium, then incubate at 28 C with the lid closed and without CO2."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3465_Main_sol_1670.yaml",
+    "sha256": "07e8012a527e2db8490eb8b1de649ef79020a7b595e8f1a3518d487f3a671e66",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "693.069307"
+      },
+      "notes": "DSMZ Medium 1670 lists 70 ml L-15 (Leibovitz) medium in a 101 ml BME/CTVM2 cell-culture medium batch.",
+      "preferred_term": "L-15 (Leibovitz) medium",
+      "source": "DSMZ Medium 1670",
+      "term": {
+        "id": "mediadive.compound:1504",
+        "label": "L-15 medium"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:4aa52119d16f365b413c75a67cf738a4848e12bcfa41b6023f69dd0bcb2b5a16",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/rpmi_medium_supplemented_with_2_fetal_bovine_serum.yaml",
+    "sha256": "2ee040ed9c0d4e48a26befe48fe73ff69387a1c022e795ea114358d2682374dd",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "1000"
+      },
+      "notes": "TOGO M2958 lists 1 L RPMI medium from Invitrogen, Carlsbad, CA.",
+      "preferred_term": "RPMI medium (Invitrogen, Carlsbad, CA)",
+      "source": "TOGO M2958"
+    },
+    "recipe_notes": "TOGO M2958 records RPMI medium from Invitrogen supplemented with 2% fetal bovine serum.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2586_Wilkins-Chalgren_Anaerobe_Broth.yaml",
+    "sha256": "932f810f4a05c43e146ed403687799711fcc919d85d56bb96f24afd088a1bd8f",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "33"
+      },
+      "preferred_term": "Wilkins-Chalgren medium (Oxoid CM0643)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2586\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium339.pdf",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:5d3a0f79fece199bbf454762f8f3d61c3d6e9c7de76fe20c94c7fa6db5e70412",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/chocolate_agar_polyvitex_pvx.yaml",
+    "sha256": "7dbfc19afe586fee6d73ec3c36a44d89e9e5e8e11a93c375947a4270edc704d6",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "10"
+      },
+      "notes": "Role: Growth factor",
+      "preferred_term": "PolyViteX"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2149\nOriginal source: NBRC - NBRC_M1503\nOriginal URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1503",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:5f576daa278a36df31294364486120ee9d6ccdd45558e12937daa9412a635562",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2450_SP4-Z_Medium.yaml",
+    "sha256": "e066c99495a7fdf3e67d18f0ace001c31437ef348eca60c22e7f8346d211309d",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "50.0"
+      },
+      "notes": "DSMZ Medium 1076b lists 10 ml 10x CMRL-1066 per 200 ml; normalized to 50.0 ml/L and retained without an ontology grounding as an opaque commercial basal medium.",
+      "preferred_term": "CMRL-1066 medium (10x concentrated; GIBCO)",
+      "source": "TOGO M2450 / DSMZ Medium 1076b"
+    },
+    "recipe_notes": "TOGO M2450 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using glucose as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This liquid branch uses 130 ml distilled water per 200 ml.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.4."
+      },
+      {
+        "step_number": 2,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 degrees C for 15 minutes."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Add CMRL-1066 medium, autoclaved Yeastolate, heat-inactivated fetal bovine serum, heat-inactivated swine serum, and the glucose energy source aseptically."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:5f576daa278a36df31294364486120ee9d6ccdd45558e12937daa9412a635562",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2451_SP4-Z_Medium.yaml",
+    "sha256": "7b5b9592ae2da3b252280b8cc7615fc4482ce73fc71a0165645e43da3a5368c2",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "50.0"
+      },
+      "notes": "DSMZ Medium 1076b lists 10 ml 10x CMRL-1066 per 200 ml; normalized to 50.0 ml/L and retained without an ontology grounding as an opaque commercial basal medium.",
+      "preferred_term": "CMRL-1066 medium (10x concentrated; GIBCO)",
+      "source": "TOGO M2451 / DSMZ Medium 1076b"
+    },
+    "recipe_notes": "TOGO M2451 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using arginine as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This liquid branch uses 130 ml distilled water per 200 ml.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.4."
+      },
+      {
+        "step_number": 2,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 degrees C for 15 minutes."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Add CMRL-1066 medium, autoclaved Yeastolate, heat-inactivated fetal bovine serum, heat-inactivated swine serum, and the arginine energy source aseptically."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:5f576daa278a36df31294364486120ee9d6ccdd45558e12937daa9412a635562",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2452_SP4-Z_Medium.yaml",
+    "sha256": "3b671fe502b8b8749b7825f42de479fd0a05e5e75acb018e733f091f8f8d19e2",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "50.0"
+      },
+      "notes": "DSMZ Medium 1076b lists 10 ml 10x CMRL-1066 per 200 ml; normalized to 50.0 ml/L and retained without an ontology grounding as an opaque commercial basal medium.",
+      "preferred_term": "CMRL-1066 medium (10x concentrated; GIBCO)",
+      "source": "TOGO M2452 / DSMZ Medium 1076b"
+    },
+    "recipe_notes": "TOGO M2452 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using glucose as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This agar-plate branch uses 126 ml distilled water per 200 ml, adds 2 g agar, and is held at 55 degrees C before supplements are added.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.4."
+      },
+      {
+        "step_number": 2,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 degrees C for 15 minutes."
+      },
+      {
+        "step_number": 3,
+        "action": "HEAT",
+        "description": "Hold agar medium at 55 degrees C before adding supplements."
+      },
+      {
+        "step_number": 4,
+        "action": "MIX",
+        "description": "Add CMRL-1066 medium, autoclaved Yeastolate, heat-inactivated fetal bovine serum, heat-inactivated swine serum, and the glucose energy source aseptically."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:5f576daa278a36df31294364486120ee9d6ccdd45558e12937daa9412a635562",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2453_SP4-Z_Medium.yaml",
+    "sha256": "f5d36baa49716a57e5f77499cf1cfeed001a4f5f116985ee8d4e04b2e487fbe2",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "50.0"
+      },
+      "notes": "DSMZ Medium 1076b lists 10 ml 10x CMRL-1066 per 200 ml; normalized to 50.0 ml/L and retained without an ontology grounding as an opaque commercial basal medium.",
+      "preferred_term": "CMRL-1066 medium (10x concentrated; GIBCO)",
+      "source": "TOGO M2453 / DSMZ Medium 1076b"
+    },
+    "recipe_notes": "TOGO M2453 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using arginine as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This agar-plate branch uses 126 ml distilled water per 200 ml, adds 2 g agar, and is held at 55 degrees C before supplements are added.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.4."
+      },
+      {
+        "step_number": 2,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 degrees C for 15 minutes."
+      },
+      {
+        "step_number": 3,
+        "action": "HEAT",
+        "description": "Hold agar medium at 55 degrees C before adding supplements."
+      },
+      {
+        "step_number": 4,
+        "action": "MIX",
+        "description": "Add CMRL-1066 medium, autoclaved Yeastolate, heat-inactivated fetal bovine serum, heat-inactivated swine serum, and the arginine energy source aseptically."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5200_Main_sol_J1111.yaml",
+    "sha256": "04dc4760fe3ad621c84fb7bb99675b8966d83aae7fc57f2fcc333f966617d1a0",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "24.8016"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for composition[0].concentration (LB broth powder) in MediaDive solution 5200; locator=$.data.recipe[0] (compound_id=1999). Provider explicitly reports g_l=24.8016. Arithmetic check: 25 g * 1 g/g / (1008 ml / 1000 ml per L) = 24.80158730158730158730158730 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1008. Retrieved 2026-10-07T09:52:07.211809+00:00; response SHA256=e01146fe7b9f40b2f3908f70905d4e1642ec1f1765c97a773954064e6722d0e0.",
+          "reference": "https://mediadive.dsmz.de/rest/solution/5200",
+          "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"LB broth powder\",\n                \"compound_id\": 1999,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 25,\n                \"unit\": \"g\",\n                \"g_l\": 24.8016,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "LB broth powder",
+      "term": {
+        "id": "mediadive.compound:1999",
+        "label": "LB broth powder"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+    "recipe": "inputs/culturemech/data/normalized_yaml/specialized/anaerobic_alkaline_lb_medium.yaml",
+    "sha256": "3a72f9e08a705f32a49ab66a1206fc956c3b2cc1a998edf8940c76dd0e1da09c",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "24.8016"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for ingredients[0].concentration (LB broth powder) in MediaDive medium J1111; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=24.8016; check: 25 g * 1 g/g / (1008 ml / 1000 ml per L) = 24.80158730158730158730158730 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1008. Retrieved 2026-10-07T15:19:28.607214+00:00; response SHA256=16958c453d8d34c69c8bbc8d1a60eb01bb561260bae0d97bb68dc1a11f0b2482.",
+          "reference": "https://mediadive.dsmz.de/rest/medium/J1111",
+          "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"LB broth powder\",\n                        \"compound_id\": 1999,\n                        \"amount\": 25,\n                        \"unit\": \"g\",\n                        \"g_l\": 24.8016,\n                        \"optional\": 0\n                    }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "LB broth powder"
+    },
+    "recipe_notes": "Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1111",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "AUTOCLAVE",
+        "description": "Mix components thoroughly, adjust pH to 9.5 with NaOH and autoclave under a N2-CO2 (4:1, v/v) gas mixture. After cooling, add aseptically and anaerobically the following solutions (autoclaved and stored under N2):"
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:69df45f83b459d7df632fee127865a3305597514761f60dce50b042e0d48b539",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/imk_asw.yaml",
+    "sha256": "ecb02e48b5a77a033565dd852782d74ef6b5efe24f2591a23fe0147067971246",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "0.253"
+      },
+      "notes": "NBRC lists 0.253 g Daigo's IMK Medium from Wako Pure Chemical Industries, Ltd., Product Code 398-01333.",
+      "preferred_term": "Daigo's IMK Medium",
+      "source": "NBRC IMK medium"
+    },
+    "recipe_notes": "TOGO M1986 cites NBRC Medium 1272; NBRC Medium 1272 lists Daigo's IMK Medium, optional agar, and artificial seawater.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Dissolve 0.253 g Daigo's IMK Medium and 12 g agar, if needed, in 1 L Artificial Seawater."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:69df45f83b459d7df632fee127865a3305597514761f60dce50b042e0d48b539",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/imk_sw.yaml",
+    "sha256": "0e6b0d30fcb3311ac06d7e73ae36e60935723d1504a10f0d23263824ced988f2",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "0.253"
+      },
+      "notes": "NBRC lists 0.253 g Daigo's IMK Medium from Wako Pure Chemical Industries, Ltd., Product Code 398-01333.",
+      "preferred_term": "Daigo's IMK Medium",
+      "source": "NBRC IMK medium"
+    },
+    "recipe_notes": "TOGO M1752 cites NBRC Medium 963; NBRC Medium 963 lists Daigo's IMK Medium, optional agar, and seawater.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Dissolve 0.253 g Daigo's IMK Medium and 12 g agar, if needed, in 1 L Seawater."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:6cdd9bfd51f6c25795c83efb97e132430559c262ccf8d78e0307ea1cd2ed36c2",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/minimum_essential_medium_mem.yaml",
+    "sha256": "71a8efd4cefb0a8ba73956136de3e523624fe5c0944e07033df0ebd5123b3233",
+    "target": {
+      "concentration": {
+        "unit": "VARIABLE",
+        "value": "variable"
+      },
+      "notes": "DSMZ Medium 1638 lists MEM (1x), Gibco 31095-029, without stating an amount.",
+      "preferred_term": "MEM (1x) Gibco 31095-029",
+      "source": "DSMZ Medium 1638"
+    },
+    "recipe_notes": "DSMZ Medium 1638 lists MEM (1x), Gibco 31095-029, without a disclosed amount or internal formulation.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:6fcf8a3f731c8a825cf5ec4f4bd543b8c48c826a5e178e868a0f840fd23a6195",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/robertson_cooked_meat_medium.yaml",
+    "sha256": "1c2679bea5dcd9f6ef22adf9aed822ba8b1a656d886cb858007436844ccfe516",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "1000"
+      },
+      "notes": "TOGO M2793 lists one liter of Robertson cooked meat medium.",
+      "preferred_term": "Robertson cooked meat medium",
+      "source": "TOGO M2793"
+    },
+    "recipe_notes": "TOGO M2793 records one liter of Robertson cooked meat medium; the source does not disclose the product's internal formulation.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:772c8c4abcd646c80ad4a40a33b20ce2ccd68620316c04c6553bba5bf3bc9f8c",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/tryptone_yeast_extract_broth_isp_medium_no_1.yaml",
+    "sha256": "6affce167744ccdffcdd4d332ec62fc678a2e6e81073bfb4ce4e633867681718",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "8"
+      },
+      "notes": "TOGO M1896 / NBRC Medium 1153 lists 8 g/L ISP Medium 1 (Difco); this commercial powder is retained as a source-disclosed complex component.",
+      "preferred_term": "ISP Medium 1 (Difco)",
+      "source": "TOGO M1896 / NBRC Medium 1153"
+    },
+    "recipe_notes": "TOGO M1896 imports NBRC Medium 1153 as Tryptone Yeast Extract Broth (ISP Medium No.1). NBRC 1153 lists 8 g ISP Medium 1 (Difco), 20 g Agar if needed, and 1 L Distilled water.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/wilkins_chalgren_anaerobe_broth_n2_co2_for_dsm_15567.yaml",
+    "sha256": "1b48d77db267ddb488d2a397a2ac941ab29d61a80a83b78686fcf158bb74ce17",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "33"
+      },
+      "preferred_term": "Dehydrated Wilkins-Chalgren medium (Oxoid CM0643)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2735\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium339a.pdf",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:7f14997cfc5c6be59435b0df3fa162587aaea54f17fcad540bf3ed1be6729ef9",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/potato_solid_medium.yaml",
+    "sha256": "e0492cd00cc9d2bacdb41bbc500eddc3ba766b5f962c36ce75a1b8e0323875a0",
+    "target": {
+      "concentration": {
+        "unit": "PERCENT_W_V",
+        "value": "1"
+      },
+      "notes": "Properties: Undefined component",
+      "preferred_term": "thioglycolate medium (Wako)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2843",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:83d692331f82bf58a86e422a797f1ef1eeb9dcc785c1daed3547c09f0b39a4ae",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/m17_medium_supplemented_with_20_g_l_of_lactose.yaml",
+    "sha256": "6fcedef2289b2781370347f2fa9b99c60dad38149a20a282e43c74754731a56f",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "1000"
+      },
+      "notes": "TOGO M2230 lists one liter of M17 medium (Scharlau) without disclosing the internal formulation.",
+      "preferred_term": "M17 medium (Scharlau)",
+      "source": "TOGO M2230"
+    },
+    "recipe_notes": "TOGO M2230 lists M17 medium from Scharlau supplemented with 20 g/L lactose and cultivated anaerobically at 42 C.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Supplement one liter of M17 medium (Scharlau) with 20 g/L lactose."
+      },
+      {
+        "step_number": 2,
+        "action": "MIX",
+        "description": "Cultivate anaerobically at 42 C."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/eagles_minimum_essential_medium_mem_containing_antibiotics_and_fetal_bovine_serum.yaml",
+    "sha256": "4be8965c8e38452bb88c559428a31c1dabb943ba60daf205a3d4fd69fabb2185",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "1"
+      },
+      "preferred_term": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2847",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:a4e6b5a23378dfc3ecdd1409ddcfbc0426bc9e0affe497bcafa02aa2288c8966",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M676_Pelagicoccus_Agar.yaml",
+    "sha256": "31cedf677fbff408e826fff9477832a2deda76b31375cf7c82f5897b55a2fd25",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "1.6"
+      },
+      "notes": "TOGO M676 / JCM Medium 659 liquid form lists 1.6 g/L R2A broth (Daigo); this commercial medium product is retained as an opaque complex component.",
+      "preferred_term": "R2A broth (Daigo)",
+      "source": "TOGO M676 / JCM Medium 659 liquid form"
+    },
+    "recipe_notes": "JCM Medium 659 directs the liquid medium to dissolve 37.4 g/L Marine Broth 2216 (BD-Difco) and 1.6 g/L R2A broth (Daigo) in the artificial sea water; TOGO M676 imports that liquid form with 750.0 ml/L Artificial seawater and 250.0 ml/L Distilled water.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Combine the listed commercial medium components with 750.0 ml Artificial seawater and 250.0 ml distilled water."
+      },
+      {
+        "step_number": 2,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.5."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_542_PENNASSAY_G-THY_medium.yaml",
+    "sha256": "0f2470bcb755ce5260526b643f9b716a21a624764191b5f04e07fc22a670dc91",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "17.5"
+      },
+      "preferred_term": "Pennassay Broth"
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 542 | DSMZ Medium: 542 (mediadive.medium:542) | Aerobic: No",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_1201_Main_sol_542.yaml",
+    "sha256": "eb1fe2c48d46645788cab302e870fa423760cd5dd8482d09a900dbd15702bb99",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "17.5"
+      },
+      "evidence": [
+        {
+          "explanation": "Concentration evidence for composition[0].concentration (Pennassay Broth) in MediaDive solution 1201; locator=$.data.recipe[0] (compound_id=559). Provider explicitly reports g_l=17.5. Arithmetic check: 17.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 17.5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T08:50:05.215154+00:00; response SHA256=d0dfab37e007bbf0832aa54b563609dcd2b309796bfdacd5c89f8224038f2486.",
+          "reference": "https://mediadive.dsmz.de/rest/solution/1201",
+          "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Pennassay Broth\",\n                \"compound_id\": 559,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 17.5,\n                \"unit\": \"g\",\n                \"g_l\": 17.5,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+          "supports": "SUPPORT"
+        }
+      ],
+      "preferred_term": "Pennassay Broth",
+      "term": {
+        "id": "mediadive.compound:559",
+        "label": "Pennassay Broth"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/pennassay_g_thy_medium.yaml",
+    "sha256": "491d921c3391797685f41f2f0cdb75de0fc7d9428f6919dac2ab359d4f812029",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "17.5"
+      },
+      "preferred_term": "Pennassay Broth"
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium542.pdf",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:c5d29eb0468e51c071cbac79e63b973e6734c35c32046ff334322288fa29bad2",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1444.yaml",
+    "sha256": "23341d9c479f9f16fa375ae11453d638cf939573e04e7e8362079b49543ddd26",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "notes": "NBRC Medium 209 lists 50 g/L SI Medium Dehydrated from Nippon Jozo Kyokai, Tokyo; this dehydrated commercial medium is retained as an opaque complex component.",
+      "preferred_term": "SI Medium Dehydrated",
+      "source": "NBRC Medium 209"
+    },
+    "recipe_notes": "TOGO M1444 imports NBRC Medium 209: SI Medium Dehydrated from Nippon Jozo Kyokai, ethyl alcohol, and 900 ml distilled water. NBRC footnotes the ethanol addition: sterilize it by filtration and add it to autoclaved SI medium.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave 50 g/L SI Medium Dehydrated in 900 ml/L distilled water."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER_STERILIZE",
+        "description": "Sterilize 100 ml/L ethyl alcohol by filtration."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Add the filter-sterilized ethyl alcohol to the autoclaved SI medium."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:cd6df60b79398f6d62ae1c03f96b421bb43960b268cc7ab94676cbd7d7b631c9",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M530_Thioglycollate_Medium.yaml",
+    "sha256": "9653c8d1392493feda57544ff27bdc1788b6d66fd82e27341e9c815778819a70",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "29.8"
+      },
+      "notes": "TOGO M530 lists 29.8 g/L Thioglycollate medium from Sigma.",
+      "preferred_term": "Thioglycollate medium (Sigma)",
+      "source": "TOGO M530"
+    },
+    "recipe_notes": "TOGO M530 records 29.8 g/L Thioglycollate medium from Sigma in distilled water and describes the medium as semisolid.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:cd6df60b79398f6d62ae1c03f96b421bb43960b268cc7ab94676cbd7d7b631c9",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M531_Thioglycollate_Medium.yaml",
+    "sha256": "793c51047348b341b01072a628f497ef3a46c8008832b0edfa3158de88879bd2",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "29.8"
+      },
+      "notes": "Properties: Undefined component",
+      "preferred_term": "Thioglycollate medium (Sigma)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M531\nOriginal source: JCM - JCM_M529-2\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=529",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:cd6df60b79398f6d62ae1c03f96b421bb43960b268cc7ab94676cbd7d7b631c9",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/thioglycollate_medium.yaml",
+    "sha256": "fbb9db0d2556cfb0ef63ac7c645778253889b3516ef9f3f1a90390b4e24ab997",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "29.8"
+      },
+      "notes": "TOGO M530 snapshots JCM_M529 and lists 29.8 g/L Thioglycollate medium from Sigma.",
+      "preferred_term": "Thioglycollate medium (Sigma)",
+      "source": "TOGO M530/JCM Medium 529 snapshot"
+    },
+    "recipe_notes": "TOGO M530 is a snapshot of JCM_M529 and records 29.8 g/L Thioglycollate medium from Sigma in distilled water; the TOGO snapshot describes the medium as semisolid.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1593_CYC_Agar.yaml",
+    "sha256": "910841e72207b5326593bd680ba9842c330ef36a2a16eaa34a48710f16cdebc7",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "33.4"
+      },
+      "notes": "NBRC Medium 402 lists 33.4 g/L Czapek-Dox Liquid Medium, Modified from OXOID; this dehydrated commercial mixture is retained as an opaque complex component.",
+      "preferred_term": "Czapek-Dox Liquid Medium, Modified (OXOID)",
+      "source": "TOGO M1593 / NBRC Medium 402"
+    },
+    "recipe_notes": "TOGO M1593 imports NBRC Medium 402 as CYC Agar. NBRC 402 lists 33.4 g Czapek-Dox Liquid Medium, Modified from OXOID, 2 g Bacto Yeast Extract from Difco, 6 g Bacto Vitamin Assay Casamino Acids from Difco, 16 g agar, and 1 L distilled water, and states to adjust pH to 7.2.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.2."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:d1d5f23edf57a7d0b7f89e593f4aeece562e1b088ae6e2bc8ee8e94a64b76fa7",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/pplo_pleuropneumonia_like_organism_medium.yaml",
+    "sha256": "53059695a36d35c8231fbbd8acb037ffbf6dc584ffa152c758c7c87e6da2baa7",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "1000"
+      },
+      "notes": "TOGO M2996 lists 1.0 L PPLO medium from Difco.",
+      "preferred_term": "PPLO (pleuropneumonia-like organism) medium",
+      "source": "TOGO M2996"
+    },
+    "recipe_notes": "TOGO M2996 records one liter of PPLO medium with 10 mg/L NAD and growth at 37 C in a 5% CO2 atmosphere.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/10_marine_r2a_medium.yaml",
+    "sha256": "0bc3fc638c9a74a7beefdea77059df6e437ada1155293048cb489def7acbb441",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "0.32"
+      },
+      "culturemech_term": {
+        "id": "CultureMech:003183",
+        "label": "R2A Broth"
+      },
+      "notes": "NBRC Medium 1347 lists 0.32 g R2A Broth (DAIGO).",
+      "preferred_term": "R2A Broth (DAIGO)",
+      "source": "NBRC Medium 1347"
+    },
+    "recipe_notes": "NBRC Medium 1347 lists 0.32 g R2A Broth (DAIGO), optional 15 g agar, and 1 L aged seawater for 10% marine R2A medium.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Dissolve 0.32 g R2A Broth (DAIGO), and 15 g agar if needed, in 1 L aged seawater."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/1_2_r2a_75_asw.yaml",
+    "sha256": "f6a9129d6d08961a11e9ed433c1e1cfc4862266015869c927ffc014dbfd65a13",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "1.6"
+      },
+      "notes": "Properties: Undefined component",
+      "preferred_term": "R2A Broth (DAIGO)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M1775\nOriginal source: NBRC - NBRC_M991\nOriginal URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=991",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:dd0ef6524313e4b5c6944eacd676b8d53c94d020497f23a4428c324fa02ca6a2",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+    "sha256": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "20"
+      },
+      "preferred_term": "x5 M9 salt (Sigma)"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2790",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1441.yaml",
+    "sha256": "8cb28c03f83d888de3184025d9440e42805834f034e60f5e784a34e80f8f432f",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "10"
+      },
+      "notes": "NBRC Medium 201 lists 10 g/L Thioglycolate Medium Dehydrated from Wako Pure Chemical Industries.",
+      "preferred_term": "Thioglycolate Medium Dehydrated",
+      "source": "NBRC Medium 201"
+    },
+    "recipe_notes": "TOGO M1441 imports NBRC Medium 201: 200 g/L potato, 30 g/L press yeast, liver infusion from 25 g/L liver, 5 g/L meat extract, 10 g/L Thioglycolate Medium Dehydrated from Wako Pure Chemical Industries, 5 g/L glucose, 15 g/L glycerol, distilled water to 1 L, and 15 g/L agar if needed. Adjust pH to 7.0.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "FILTER",
+        "description": "Gently boil sliced potatoes in 500 ml water for 30 min, then remove solids by filtration through cloth."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER",
+        "description": "Gently boil sliced liver in 150 ml water for 30 min, then remove solids by filtration through cloth."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Mix the potato filtrate, liver infusion, remaining components, and distilled water."
+      },
+      {
+        "step_number": 4,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.0."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1442.yaml",
+    "sha256": "942c9a1ebc9a926304560b9d4740c0a5f165607498e29a1d7bc01b40a0e8f076",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "10"
+      },
+      "notes": "NBRC Medium 202 lists 10 g/L Thioglycolate Medium Dehydrated from Wako Pure Chemical Industries.",
+      "preferred_term": "Thioglycolate Medium Dehydrated",
+      "source": "NBRC Medium 202"
+    },
+    "recipe_notes": "TOGO M1442 imports NBRC Medium 202: NBRC Medium 201 supplemented with 15 g/L CaCO3. The formula lists 200 g/L potato, 30 g/L press yeast, liver infusion from 25 g/L liver, 5 g/L meat extract, 10 g/L Thioglycolate Medium Dehydrated from Wako Pure Chemical Industries, 5 g/L glucose, 15 g/L glycerol, distilled water to 1 L, 15 g/L agar if needed, and pH 7.0.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "FILTER",
+        "description": "Gently boil sliced potatoes in 500 ml water for 30 min, then remove solids by filtration through cloth."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER",
+        "description": "Gently boil sliced liver in 150 ml water for 30 min, then remove solids by filtration through cloth."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Mix the potato filtrate, liver infusion, remaining components, and distilled water."
+      },
+      {
+        "step_number": 4,
+        "action": "ADJUST_PH",
+        "description": "Adjust pH to 7.0."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M976_Leibovitz_s_L-15_Medium_With_10_FBS_And_1.5_NaCl.yaml",
+    "sha256": "f43a6561fea1553559a2e5d5fd0768e41dccbffbb64fbc46b612ff6c6f15902d",
+    "target": {
+      "concentration": {
+        "unit": "L",
+        "value": "1.0"
+      },
+      "notes": "TOGO M976 / JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium.",
+      "preferred_term": "Leibovitz's L-15 medium",
+      "source": "TOGO M976 / JCM Medium 930",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": "JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium, 100.0 ml Fetal bovine serum, and 15.0 g NaCl; filter-sterilize with a 0.22 um PES filter.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Combine the JCM Medium 930 Leibovitz L-15, fetal bovine serum, and NaCl components."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER_STERILIZE",
+        "description": "Filter-sterilize with a 0.22 um PES filter."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/leibovitzs_l_15_medium_with_10_fbs_and_1_5_nacl.yaml",
+    "sha256": "60d212c13858445c4b511ce5f1beeeff7370d89282c5c29ceed4f681acdcd015",
+    "target": {
+      "concentration": {
+        "unit": "L",
+        "value": "1.0"
+      },
+      "notes": "MediaDive J930 / JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium.",
+      "preferred_term": "Leibovitz's L-15 medium",
+      "source": "MediaDive J930 / JCM Medium 930",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": "JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium, 100.0 ml Fetal bovine serum, and 15.0 g NaCl; filter-sterilize with a 0.22 um PES filter.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Combine the JCM Medium 930 Leibovitz L-15, fetal bovine serum, and NaCl components."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER_STERILIZE",
+        "description": "Filter-sterilize with a 0.22 um PES filter."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_2620_Cultivation_of_Diplorickettsia_massiliensis.yaml",
+    "sha256": "42407dcf72849a594ee3a5afe6ccacf1bcb8741c9f88113e86fe04784699fa1f",
+    "target": {
+      "concentration": {
+        "unit": "PERCENT_V_V",
+        "value": "930.0"
+      },
+      "preferred_term": "Leibovitz's L-15 medium",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4941_Main_sol_J930.yaml",
+    "sha256": "9ed5513013c701e6405c9b78d2902e9f04a9c11b2366e8c2e72b3b952da2e8c5",
+    "target": {
+      "concentration": {
+        "unit": "L",
+        "value": "1.0"
+      },
+      "notes": "MediaDive J930 / JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium.",
+      "preferred_term": "Leibovitz's L-15 medium",
+      "source": "MediaDive J930 / JCM Medium 930",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": "MediaDive solution 4941 is the JCM Medium 930 main-solution import for Leibovitz's L-15 Medium With 10% FBS And 1.5% NaCl.",
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5834_Infection_medium.yaml",
+    "sha256": "3d90c29f5bfc1d72351a170d27deef6f68a2c0535f7250538144afee261903ee",
+    "target": {
+      "concentration": {
+        "unit": "PERCENT_V_V",
+        "value": "960.0"
+      },
+      "preferred_term": "Leibovitz's L-15 medium",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/xtc_2_medium.yaml",
+    "sha256": "3b99351e32996a4d0ed90bbd7d899db54b3a585e149352ac44b5a1820ea68658",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "930.0"
+      },
+      "notes": "DSMZ Medium 1311 lists 93 ml Leibovitz 15-Medium.",
+      "preferred_term": "Leibovitz's L-15 medium",
+      "source": "DSMZ Medium 1311",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": "DSMZ Medium 1311 defines separate 100 ml XTC-2 culture and Diplorickettsia infection media; both use Leibovitz 15 medium, fetal bovine serum, tryptose-phosphate, and 2 mM final glutamine, with lower serum and higher Leibovitz 15 in the infection medium.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Prepare the XTC-2 cell culture medium with 93.0 ml Leibovitz 15-Medium, 5.0 ml fetal bovine serum, 2.0 ml tryptose-phosphate, and 2.0 mM glutamine."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER_STERILIZE",
+        "description": "Filter sterilize through a 0.2 um membrane."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Exchange to the XTC-2 infection medium made with 96.0 ml Leibovitz 15-Medium, 2.0 ml fetal bovine serum, 2.0 ml tryptose-phosphate, and 2.0 mM glutamine for Diplorickettsia cultivation."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/xtc_2_medium.yaml",
+    "sha256": "3b99351e32996a4d0ed90bbd7d899db54b3a585e149352ac44b5a1820ea68658",
+    "target": {
+      "concentration": {
+        "unit": "ML_PER_L",
+        "value": "960.0"
+      },
+      "notes": "DSMZ Medium 1311 lists 96 ml Leibovitz 15-Medium.",
+      "preferred_term": "Leibovitz's L-15 medium",
+      "source": "DSMZ Medium 1311",
+      "term": {
+        "id": "mediadive.compound:1941",
+        "label": "Leibovitz's L-15 medium"
+      }
+    },
+    "recipe_notes": "DSMZ Medium 1311 defines separate 100 ml XTC-2 culture and Diplorickettsia infection media; both use Leibovitz 15 medium, fetal bovine serum, tryptose-phosphate, and 2 mM final glutamine, with lower serum and higher Leibovitz 15 in the infection medium.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "MIX",
+        "description": "Prepare the XTC-2 cell culture medium with 93.0 ml Leibovitz 15-Medium, 5.0 ml fetal bovine serum, 2.0 ml tryptose-phosphate, and 2.0 mM glutamine."
+      },
+      {
+        "step_number": 2,
+        "action": "FILTER_STERILIZE",
+        "description": "Filter sterilize through a 0.2 um membrane."
+      },
+      {
+        "step_number": 3,
+        "action": "MIX",
+        "description": "Exchange to the XTC-2 infection medium made with 96.0 ml Leibovitz 15-Medium, 2.0 ml fetal bovine serum, 2.0 ml tryptose-phosphate, and 2.0 mM glutamine for Diplorickettsia cultivation."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:ebe02b6bca1b79fa51843f6218b6341edda2ecf7b3872c7ac555cdfa9da721a1",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5415_Main_sol_J1273.yaml",
+    "sha256": "2111686f8fe9cce671e791307d5d04b315bcef738e51bed55e8a01d18d714a65",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "0.1"
+      },
+      "notes": " Lennox",
+      "preferred_term": "LB Broth",
+      "term": {
+        "id": "mediadive.compound:2052",
+        "label": "LB Broth"
+      }
+    },
+    "recipe_notes": null,
+    "steps": null
+  },
+  {
+    "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M212_CYC_Agar_pH_8.0.yaml",
+    "sha256": "d04e316cfc357e5f6e9764bc4e73eb0ac900068d8b3b895bf996dc00fa3f1336",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "33.4"
+      },
+      "notes": "TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and JCM Medium 219 use the same formulation adjusted to pH 8.0.",
+      "preferred_term": "Czapek-Dox liquid medium, modified (Oxoid)"
+    },
+    "recipe_notes": "TOGO M212/JCM Medium 219 prepares CYC Agar from TOGO M41/JCM Medium 49 and adjusts the complete medium to pH 8.0.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "DISSOLVE",
+        "description": "Dissolve the CYC Agar components in distilled water and bring the final volume to 1 L."
+      },
+      {
+        "step_number": 2,
+        "action": "ADJUST_PH",
+        "description": "Adjust the complete medium to pH 8.0."
+      },
+      {
+        "step_number": 3,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 C for 15 min."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M41_CYC_Agar.yaml",
+    "sha256": "b6ae2f7c869c72d9b6624829f57d1c0ee28e15b55e61582e40407abc7f7fcafb",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "33.4"
+      },
+      "notes": "TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and JCM Medium 219 use the same formulation adjusted to pH 8.0.",
+      "preferred_term": "Czapek-Dox liquid medium, modified (Oxoid)"
+    },
+    "recipe_notes": "TOGO M41 mirrors JCM Medium 49: modified Czapek-Dox liquid medium, yeast extract, casamino acids, and agar are brought to 1 L with distilled water, adjusted to pH 7.2, and autoclaved.",
+    "steps": [
+      {
+        "step_number": 1,
+        "action": "DISSOLVE",
+        "description": "Dissolve the CYC Agar components in distilled water and bring the final volume to 1 L."
+      },
+      {
+        "step_number": 2,
+        "action": "ADJUST_PH",
+        "description": "Adjust the complete medium to pH 7.2."
+      },
+      {
+        "step_number": 3,
+        "action": "AUTOCLAVE",
+        "description": "Autoclave at 121 C for 15 min."
+      }
+    ]
+  },
+  {
+    "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+    "recipe": "inputs/culturemech/data/normalized_yaml/bacterial/cyc_medium.yaml",
+    "sha256": "d50f870e34e9cc4d5a3d34386e116b8f104d017111c67e869ac8cb869849b181",
+    "target": {
+      "concentration": {
+        "unit": "G_PER_L",
+        "value": "33.4"
+      },
+      "notes": "NBRC Medium 1238 lists 33.4 g/L Czapek-Dox liquid medium, modified from Oxoid; this dehydrated commercial mixture is retained as an opaque complex component.",
+      "preferred_term": "Czapek-Dox liquid medium, modified (Oxoid)",
+      "source": "TOGO M1961 / NBRC Medium 1238"
+    },
+    "recipe_notes": "TOGO M1961 imports NBRC Medium 1238 as CYC Medium. NBRC 1238 lists 33.4 g Czapek-Dox liquid medium, modified from Oxoid, 2 g yeast extract, 6 g Casamino acids, vitamin assay from Difco, 1 L distilled water, optional 15 g agar, and pH 8.0.",
+    "steps": null
+  }
+]

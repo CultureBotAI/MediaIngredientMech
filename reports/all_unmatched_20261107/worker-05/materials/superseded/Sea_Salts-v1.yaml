@@ -1,0 +1,92 @@
+identifier: kgmicrobe.ingredient:sea_salts
+preferred_term: Sea salts
+synonyms:
+- synonym_text: sea salts (Sigma)
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: Sea salts (Sigma-Aldrich)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 40
+  media_count: 40
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in
+    22 CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
+    DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
+    curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T07:06:02.289319+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C75874 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-05-11T08:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_COMMERCIAL_MIXTURE
+  changes: Kept unmapped with contextual NCIT:C75874 Sea Salt parent because the source
+    synonym is supplier-formulated sea salts (Sigma), not a verified exact ontology
+    identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0148 -> NCIT:C75874 "Sea Salt" (CLOSE_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-27T03:16:39.518168+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 22/22 -> 40/40 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Sea salts (Sigma-Aldrich)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:17:20.168806+00:00'
+  curator: worker05/materials_research (Codex proposal)
+  action: CORRECTED
+  changes: Preserve the supplier-scoped sea-salts preparation with a local primary
+    identifier; retain NCIT Sea Salt only as the existing close contextual relation,
+    not an exact identity. Isolated proposal only. Changed bytes withdraw inherited
+    support; no role, whole-owner or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22
+  CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
+  DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
+  reviewed on 2026-05-11 as a commercial sea-salts mixture, retaining NCIT:C75874
+  only as contextual parent evidence. Source-bound correction: this supplier-qualified
+  preparation has its own local identity. The existing NCIT:C75874 CLOSE_MATCH is
+  contextual only; no exact equivalence, Sigma S9883 catalog assignment, formulation
+  or merge with Artificial_Sea_Salt is asserted. Preserve all existing publication
+  holds pending complete owner review.'
+ontology_mapping:
+  ontology_id: NCIT:C75874
+  ontology_label: Sea Salt
+  ontology_source: NCIT
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: '''Sea salts'' is the commercial sea-salt preparation; NCIT:C75874 ''Sea
+      Salt'' is the closest term. CLOSE_MATCH because the label is plural and the
+      record is a defined product rather than the generic substance (#114).'
+ingredient_type: UNDEFINED_MIXTURE

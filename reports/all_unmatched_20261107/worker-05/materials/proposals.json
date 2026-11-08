@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "MATERIALS-P-bacto-aliases",
+      "case_ids": [
+        "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+        "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d"
+      ],
+      "description": "Reject the three Neopeptone and two Universal peptone aliases as identities of Bacto Peptone; retain labels and sources as provenance.",
+      "evidence_ids": [
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-e55374c088422d1f",
+        "MATERIALS-MERCK-UNIVERSAL",
+        "MATERIALS-OLS-NEOPEPTONE-TERM",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "owner_path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed/Bacto_Peptone.yaml",
+        "sha256": "e0648998cb0686c507540c7d1e436d93af72cc4318edbc546ea1765788a3cd65"
+      },
+      "changed_labels": [
+        "Neopeptone",
+        "Neopeptone (BD-Difco)",
+        "Neopeptone (Difco Laboratories, Detroit, Ml)",
+        "Universal peptone",
+        "Universal peptone (Merck)"
+      ],
+      "identity_consequence": "Primary identity unchanged. Only specified incorrect resolving labels become REJECTED_LABEL.",
+      "predicate_consequence": "Coordinator must regenerate aliases/export rows; rejected labels must no longer resolve. Mapping identity/predicate unchanged.",
+      "publication_obligations": "Keep all WITHHOLD/REJECTED/source-material holds. Native guarded write, full changed-owner claim review, synchronized surfaces and canonical SSSOM validation required at coordinator integration. No complete-owner or roles approval.",
+      "cross_shard_conflict": "Compare every campaign proposal touching data/ingredients/mapped/Bacto_Peptone.yaml against this unchanged before hash; reconcile whole owner before any integration."
+    },
+    {
+      "proposal_id": "MATERIALS-P-proteose-numbered",
+      "case_ids": [
+        "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+        "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b"
+      ],
+      "description": "Reject numbered Proteose Peptone No.3 aliases on the unnumbered generic Proteose owner; preserve exact raw labels and provenance.",
+      "evidence_ids": [
+        "MATERIALS-CAP-36ff1efb646dbe4f",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-OWNER-Proteose_Peptone"
+      ],
+      "owner_path": "data/ingredients/mapped/Proteose_Peptone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed/Proteose_Peptone.yaml",
+        "sha256": "42cba74a4bde864a4deeaa166c9d19d72d4b916d65909bee360a292b2e4b3306"
+      },
+      "changed_labels": [
+        "Proteose peptone no. 3",
+        "Proteose peptone No. 3 (BD-Difco)",
+        "Bacto Proteose Peptone No. 3 (Difco)",
+        "Proteose Peptone (Difco no. 3)",
+        "Proteose Peptone No. 3",
+        "Bacto Proteose Peptone No.3 (Difco)",
+        "Proteose peptone no.3 (Difco)",
+        "Proteose peptone No. 3 (BD--Difco)"
+      ],
+      "identity_consequence": "Primary identity unchanged. Only specified incorrect resolving labels become REJECTED_LABEL.",
+      "predicate_consequence": "Coordinator must regenerate aliases/export rows; rejected labels must no longer resolve. Mapping identity/predicate unchanged.",
+      "publication_obligations": "Keep all WITHHOLD/REJECTED/source-material holds. Native guarded write, full changed-owner claim review, synchronized surfaces and canonical SSSOM validation required at coordinator integration. No complete-owner or roles approval.",
+      "cross_shard_conflict": "Compare every campaign proposal touching data/ingredients/mapped/Proteose_Peptone.yaml against this unchanged before hash; reconcile whole owner before any integration."
+    },
+    {
+      "proposal_id": "MATERIALS-P-sucrose-salicin",
+      "case_ids": [
+        "KG_CASE:b8166e7eb0adf0ea5d2b1f6d955b897274855bffa29afac369ba71c767ae402e"
+      ],
+      "description": "Reject the structurally distinct d-salicin exact synonym on Sucrose, retaining the D-Sucrose tombstone and all unresolved role obligations.",
+      "evidence_ids": [
+        "MATERIALS-CAP-dbb86d8272ad67d6",
+        "MATERIALS-SALICIN",
+        "MATERIALS-OWNER-Sucrose"
+      ],
+      "owner_path": "data/ingredients/mapped/Sucrose.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "36d3205ecc78e87cb9e258f55e7e85c7a6e0daab32ae7a916c674acc327189e1",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed/Sucrose.yaml",
+        "sha256": "90d255cebc818220c9e8a94e28a64bb20e114aa30b8f16818951014c83c9fe10"
+      },
+      "changed_labels": [
+        "d-salicin"
+      ],
+      "identity_consequence": "Primary identity unchanged. Only specified incorrect resolving labels become REJECTED_LABEL.",
+      "predicate_consequence": "Coordinator must regenerate aliases/export rows; rejected labels must no longer resolve. Mapping identity/predicate unchanged.",
+      "publication_obligations": "Keep all WITHHOLD/REJECTED/source-material holds. Native guarded write, full changed-owner claim review, synchronized surfaces and canonical SSSOM validation required at coordinator integration. No complete-owner or roles approval.",
+      "cross_shard_conflict": "Compare every campaign proposal touching data/ingredients/mapped/Sucrose.yaml against this unchanged before hash; reconcile whole owner before any integration."
+    },
+    {
+      "proposal_id": "MATERIALS-P-sea-salts-identity",
+      "case_ids": [
+        "KG_CASE:f804dc528f900fb04f9b7cfc94f8efc08380b7a476728e855224bf91c05178db"
+      ],
+      "description": "Preserve supplier-scoped sea-salts preparation with local primary and FALLBACK_REGISTRY mapping; withdraw unsupported exact/close NCIT relationship and retain its history.",
+      "evidence_ids": [
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-SIGMA-S9883",
+        "MATERIALS-OWNER-Sea_Salts"
+      ],
+      "owner_path": "data/ingredients/mapped/Sea_Salts.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "7d10257ca3847166f949d8e179aa068c6ebef128f932769b29ca064b76595c39",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed/Sea_Salts.yaml",
+        "sha256": "82672f556794cf3cd1a78e74f5f5bb71038e6665e42278d55739a7c5a68484b0"
+      },
+      "changed_labels": [],
+      "identity_consequence": "Own registry identity for the existing supplier preparation; no new catalog/formula claim.",
+      "predicate_consequence": "Remove incorrect exact NCIT row and do not generate closeMatch row; native builder may emit own registry identity row only, under retained publication hold.",
+      "publication_obligations": "Keep all WITHHOLD/REJECTED/source-material holds. Native guarded write, full changed-owner claim review, synchronized surfaces and canonical SSSOM validation required at coordinator integration. No complete-owner or roles approval.",
+      "cross_shard_conflict": "Compare every campaign proposal touching data/ingredients/mapped/Sea_Salts.yaml against this unchanged before hash; reconcile whole owner before any integration."
+    }
+  ]
+}

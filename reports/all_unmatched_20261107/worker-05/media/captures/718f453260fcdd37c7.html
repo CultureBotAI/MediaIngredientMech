@@ -1,0 +1,608 @@
+<script type="application/ld+json">{
+    "@type": "MolecularEntity",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+    "name": "Cooked meat medium",
+    "url": "https://mediadive.dsmz.de/ingredients/1824",
+    "identifier": []
+}</script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="description" content="DSMZ cultivation media database">
+    <meta name="author" content="Julia Koblitz">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://mediadive.dsmz.de" />
+    <meta property="og:type" content="database" />
+    <meta property="og:title" content="Cooked meat medium | Ingredients | MediaDive" />
+    <meta property="og:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains." />
+    <meta property="og:image" content="/img/mediadive_logo.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mediadive.dsmz.de">
+    <meta property="twitter:title" content="MediaDive — the cultivation media database">
+    <meta property="twitter:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains.">
+    <meta property="twitter:image" content="/img/mediadive_avatar.png">
+
+    <link rel="icon" href="/img/favicon_256x256.png">
+    <title>Cooked meat medium | Ingredients | MediaDive</title>
+
+    <!-- Phosphoricons and individual D3 icons -->
+    <link href="/css/phosphoricons/regular/style.css?v=2" rel="stylesheet" />
+    <link href="/css/phosphoricons/fill/style.css?v=2" rel="stylesheet" />
+    <link href="/css/d3icons/style.css?v=3" rel="stylesheet" />
+
+    <link href="/css/digidive.css?v=4" rel="stylesheet" />
+    <link href="/css/shepherd.css" rel="stylesheet" />
+    <link href="/css/animate.min.css" rel="stylesheet" />
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/style.css?1758698096" rel="stylesheet">
+
+    <script>
+        // define global constants
+        const ROOTPATH = "";
+    </script>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Requires digidive.js for the dropdowns -->
+    <!-- <script src="/js/digidive.js"></script> -->
+    <script src="/js/digidive.js?v=4"></script>
+    <script src="/js/script.js?1722402400"></script>
+
+
+            <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "https://piwik.dsmz.de/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', '15']);
+                var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                g.async = true;
+                g.src = u + 'matomo.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript>
+            <p><img src="https://piwik.dsmz.de/matomo.php?idsite=15&amp;rec=1" style="border:0;" alt="" /></p>
+        </noscript>
+        <!-- End Matomo Code -->
+    </head>
+
+<body style="position: relative">
+    <!-- Modals go here -->
+    <!-- <div class="modal modal-lg" id="settings" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content w-400 mw-full">
+            <a href="#" class="btn float-right" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title"><i class="ph ph-gear text-primary"></i> Settings</h5>
+
+            <form action="#" method="get">
+                
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select name="language" id="language" class="form-control">
+                        <option value="en" selected>English</option>
+                        <option value="de" >Deutsch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="transitions" name="transitions" value="true" >
+                        <label for="transitions">Motion-sickness mode</label><br>
+                        <small class="text-muted">This mode reduces motion and animations on the page.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="dyslexia" name="dyslexia" value="true" >
+                        <label for="dyslexia">Dyslexia mode</label><br>
+                        <small class="text-muted">
+                            The web page uses a special font to increase readibility for user with dyslexia.                        </small>
+                    </div>
+                </div>
+                <p>
+                    We use browser cookies to save your preferences.                </p>
+                <button class="btn primary">Apply</button>
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<div class="modal modal-lg" id="ingredient-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('ingredient-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Ingredient name</h5>
+            <div id="ingredient-content"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-lg" id="universal-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('universal-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <div id="universal-content" class="content"></div>
+        </div>
+    </div>
+</div>    <div class="loader">
+        <span></span>
+    </div>
+    <div class="popup-bg" onclick="hidePopups();"></div>
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper 
+            ">
+        <!-- data-sidebar-hidden to hide sidebar on start -->
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts">
+                    </div>
+
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="digidive.toggleSidebar()"></div>
+
+        <!-- Navbar start -->
+        <div class="navbar navbar-top">
+            <div class="container">
+                <!-- here goes your database logo -->
+
+                <a href="/" class="navbar-brand position-relative">
+                                            <img class="" src="/img/mediadive_logo.svg?v=2" alt="MediaDive" style="width: 30rem;">
+                                        
+                </a>
+
+                <a href="//hub.dsmz.de/" class="navbar-brand ml-auto d-none d-sm-block">
+                    <!-- DSMZ Logo is mandatory -->
+                    <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity">
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-bottom">
+            <!-- Button to toggle sidebar -->
+            <div class="container">
+                <button class="btn btn-action active" type="button" onclick="digidive.toggleSidebar(this);"></button>
+
+                <ul class="navbar-nav">
+                    
+                        <nav aria-label="MediaDive breadcrumbs">
+                            <ul class="breadcrumb m-0">
+                                <li><a href="/">Home</a></li><li><a href="/ingredients">Ingredients</a></li><li class="active" aria-current="page"><a href="javascript:void(0)">Cooked meat medium</a></li>                            </ul>
+                        </nav>
+                                    </ul>
+
+                <div class="dropdown">
+                    <button class="btn primary circle square mr-10" data-toggle="dropdown" type="button" id="accessibility-menu" aria-haspopup="true" aria-expanded="false">
+                        <i class="ph ph-person-simple"></i>
+                        <span class="sr-only">Accessibility Options</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-center w-300" aria-labelledby="accessibility-menu">
+                        <h6 class="header text-primary">Accessibility</h6>
+                        <form action="#" method="get" class="content">
+                            <input type="hidden" name="accessibility[check]">
+
+                            <input type="hidden" name="redirect" value="/ingredients/1824">
+
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select name="accessibility[language]" id="language" class="form-control">
+                                    <option value="en" selected>English</option>
+                                    <option value="de" >Deutsch</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-contrast" name="accessibility[contrast]" value="high-contrast" >
+                                    <label for="set-contrast">High contrast</label><br>
+                                    <small class="text-muted">
+                                        Enhance the contrast of the web page for better readability.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-transitions" name="accessibility[transitions]" value="without-transitions" >
+                                    <label for="set-transitions">Reduce motion</label><br>
+                                    <small class="text-muted">
+                                        Reduce motion and animations on the page.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-dyslexia" name="accessibility[dyslexia]" value="dyslexia" >
+                                    <label for="set-dyslexia">Dyslexia mode</label><br>
+                                    <small class="text-muted">
+                                        Use a special font to increase readability for users with dyslexia.                                    </small>
+                                </div>
+                            </div>
+                            <button class="btn primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <form id="medium-search" action="/media" method="get" class="nav-search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" autocomplete="off" placeholder="Search medium">
+                        <div class="input-group-append">
+                            <button class="btn primary"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="suggestions"></div>
+                </form>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+
+            <nav class="sidebar-topnav">
+                <ul>
+                    <li><a href="/docs"><i class="ph ph-book"></i>Manual</a></li>
+                    <li><a href="/contact" title="Support"><i class="ph ph-headset"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-menu">
+
+                
+                <!-- Sidebar links (with icons) and titles -->
+                <h5 class="title">Content</h5>
+
+                <a href="/media" class="with-icon primary ">
+                    <i class="ph ph-flask" aria-hidden="true"></i>
+
+                    Media                </a>
+                <a href="/solutions" class="with-icon secondary ">
+                    <i class="ph ph-test-tube" aria-hidden="true"></i>
+
+                    Solutions                </a>
+                <a href="/ingredients" class="with-icon success active">
+                    <i class="ph ph-mortar-pestle" aria-hidden="true"></i>
+
+                    Ingredients                </a>
+
+                <a href="/strains" class="with-icon signal ">
+                    <!-- text-white bg-dark text-dark-dm bg-light-dm -->
+                    <i class="ph ph-microbes" aria-hidden="true"></i>
+
+                    Strains                </a>
+
+                <a href="/steps" class="with-icon ">
+                    <i class="ph ph-list-checks" aria-hidden="true"></i>
+
+                    Steps                </a>
+                <a href="/gas" class="with-icon ">
+                    <i class="ph ph-gas" aria-hidden="true"></i>
+                    Gas
+                </a>
+
+
+                <h5 class="title">Search</h5>
+
+                <a href="/finder" class="with-icon ">
+                    <i class="ph ph-target" aria-hidden="true"></i>
+                    Medium finder
+                </a>
+                <a href="/solution-finder" class="with-icon ">
+                    <i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i>
+                    Solution finder
+                </a>
+                <a href="/taxonomy" class="with-icon ">
+                    <i class="ph ph-taxonomy" aria-hidden="true"></i>
+                    Taxonomy search                </a>
+                <a href="/isolation-sources" class="with-icon ">
+                    <i class="ph ph-map-pin-line" aria-hidden="true"></i>
+                    Isolation sources                </a>
+
+
+                <h5 class="title">Tools</h5>
+                                    <a href="/medium-builder" class="with-icon ">
+                        <i class="ph ph-flask-pen" aria-hidden="true"></i>
+                        Medium builder
+                    </a>
+                                <!-- sparql -->
+                <a href="https://sparql.dsmz.de/mediadive" class="with-icon">
+                    <i class="ph ph-rdf" aria-hidden="true"></i>
+                    SPARQL endpoint
+                </a>
+                <a href="/unit-converter" class="with-icon ">
+                    <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+
+                    Unit converter                </a>
+                <a href="/compare-media" class="with-icon ">
+                    <i class="ph ph-flask-vial" aria-hidden="true"></i>
+
+                    Compare media                </a>
+                <a href="/compare-solutions" class="with-icon ">
+                    <i class="ph ph-vials" aria-hidden="true"></i>
+
+                    Compare solutions                </a>
+                
+
+
+                <a href="/prediction" class="with-icon ">
+                    <i class="ph ph-chip-ai" aria-hidden="true"></i>
+
+                    Prediction <span class="badge badge-primary ml-5">SOON</span>
+                </a>
+
+
+                
+                <div class="sidebar-content text-muted d-block d-sm-none">
+                    <!-- brought to you by -->
+                    <a href="//www.dsmz.de/" class="navbar-brand ml-auto pb-10">
+
+                        <!-- DSMZ Logo is mandatory -->
+                        <img src="/img/dsmz_full.svg" alt="DSMZ">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+                        <div class="content-container">
+
+                <a id="top"></a>
+                
+
+<div class="row row-eq-spacing">
+    <div class="col-lg-6">
+
+        <a href="/ingredients?" class="btn">
+            <i class="ph ph-caret-left"></i> Back to all ingredients</a>
+
+        <h1>Cooked meat medium</h1>
+        <p class="text-muted"><b>Ingredient ID</b>: 1824</p>
+        <div id='image' class="box">
+            <div class="content">
+                <h5 class="title font-size-16">Structure:</h5>
+                Not available            </div>
+        </div>
+
+                            <div id='attributes' class="box">
+                <div class="content">
+                    <h5 class="title font-size-16">Used attributes:</h5>
+                                            <span class='badge'>Oxoid (1&times;)</span>
+                                    </div>
+            </div>
+        
+        <div id="finders" class="box">
+            <div class="content">
+                <h5 class="title font-size-16">Found in: </h5>
+                <a href="/solution-finder/Cooked+meat+medium///?mainsol=1&optional=1" class="btn primary"><i class="ph ph-test-tube"></i> 1 solutions</a>
+                <a href="/finder/Cooked+meat+medium///" class="btn danger"><i class="ph ph-flask"></i> 1 media</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+
+                <!-- // EDITOR MODE OFF -->
+
+        <div class="dropdown with-arrow">
+            <button class="btn primary" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false" title="Download">
+                <i class="ph ph-download"></i> Download
+            </button>
+            <div class="dropdown-menu">
+                <p>
+                    Download information on this ingredient as                </p>
+                <a href="/download/ingredient/1824/csv" class="btn primary m-5">CSV</a>
+                <a href="/download/ingredient/1824/json" class="btn primary m-5">JSON</a>
+            </div>
+        </div>
+        <p>
+            <b class="text-danger"><i class="ph ph-warning"></i> Disclaimer:</b>
+            Most of the identifiers and chemical parameters on this page were matched automatically and were <b>not</b> manually curated. This overview is for your own convenience and we do not guarantee that the data shown on this page is correct.        </p>
+                            <div id="chemical-data" class="box">
+                <div class="content">
+                    <h5 class="title font-size-16">Chemical data:</h5>
+
+                                                                                                        <p>Complex substance                            <span data-toggle="tooltip" data-title="This ingredient consists of many different compounds that are hard to define.">
+                                <i class="ph ph-question"></i>
+                            </span>
+                        </p>
+                                    </div>
+            </div>
+        
+        
+                    <div id='groups' class='box'>
+                <div class="content">
+                    <h5 class="title font-size-16">Other ingredients from the group <a href="/ingredient-groups/Meat extract" class="link">Meat extract</a></h5>
+                    <ul class="list">
+                                                    <li><a href='/ingredients/2' class='hyperlink'>Meat extract</a></li>
+                                                    <li><a href='/ingredients/85' class='hyperlink'>Beef extract</a></li>
+                                                    <li><a href='/ingredients/128' class='hyperlink'>Ground beef</a></li>
+                                                    <li><a href='/ingredients/186' class='hyperlink'>Brain heart infusion</a></li>
+                                                    <li><a href='/ingredients/491' class='hyperlink'>Meat infusion</a></li>
+                                                    <li><a href='/ingredients/599' class='hyperlink'>Lab-Lemco beef extract</a></li>
+                                                    <li><a href='/ingredients/662' class='hyperlink'>Tryptic Digest of beef heart</a></li>
+                                                    <li><a href='/ingredients/670' class='hyperlink'>Bacto beef extract</a></li>
+                                                    <li><a href='/ingredients/1672' class='hyperlink'>Fish meat extract</a></li>
+                                                    <li><a href='/ingredients/1660' class='hyperlink'>Beef brain powder</a></li>
+                                                    <li><a href='/ingredients/965' class='hyperlink'>Bacto brain heart infusion</a></li>
+                                                    <li><a href='/ingredients/1460' class='hyperlink'>Bacto Heart Infusion Broth</a></li>
+                                                    <li><a href='/ingredients/1554' class='hyperlink'>Beef</a></li>
+                                                    <li><a href='/ingredients/1986' class='hyperlink'>Small dried sardine</a></li>
+                                            </ul>
+                </div>
+            </div>
+        
+
+
+    </div>
+</div>
+  <div class="position-absolute top-0 right-0 z-30" id="cookieWarning">
+    <div class="alert primary filled-dm w-300 w-sm-500 w-md-600" role="alert">
+      <div class="row align-items-center">
+        <div class="col-sm-2">
+          <div class="w-100 h-100 d-flex align-items-center rounded-circle bg-white mx-auto">
+            <div class="m-auto">
+              <i class="ph ph-cookie ph-4x" aria-hidden="true" style="color: #6F4E37;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 offset-sm-1 py-10">
+          <h4 class="title">Have some cookies!</h4>
+          We are using cookies to improve the user experience. We save the following information: user preferences for language, accessibility, help features and medium favourites. Unfortunately, you cannot use this site if you don't agree.
+          <div class="mb-10 text-right">
+            <button class="btn alt-dm" onclick="acceptCookies();">
+              I agree
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<footer class="page-footer">
+
+  <div class="footer text-center">
+
+    <div class="w-500 mw-full mx-auto my-20">
+      <h3 class="mt-0">
+        Not found what you were looking for?      </h3>
+
+      <p>
+        Search within all databases of the
+        <a href="https://hub.dsmz.de/" target="_blank" class="link">
+          DSMZ Digital Diversity
+        </a>
+      </p>
+
+      <form id="d3search" onsubmit="d3searchFunction()">
+        <div class="input-group">
+          <input type="search" name="search" id="hub-search" class="form-control" placeholder="Search across all DSMZ Digital Diversity databases">
+          <div class="input-group-append">
+            <button class="btn"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        function d3searchFunction() {
+          event.preventDefault();
+          var val = $('#hub-search').val();
+          // url encode the search term
+          var search = encodeURIComponent(val);
+          var action_src = "https://hub.dsmz.de/#/search/" + search;
+          window.open(action_src, '_blank');
+
+        }
+      </script>
+
+      <div class="">
+        <p class="font-size-12">provided to you by</p>
+        <a href="https://hub.dsmz.de/" target="_blank" title="DSMZ Digital Diversity">
+          <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity" height="70">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="link-parade">
+    <div class="row">
+      <div class="col-md">
+        <h3>Media<em>Dive</em></h3>
+        <a href="/about">About</a>
+        <a href="/news">News</a>
+        <a href="http://dx.doi.org/10.1093/nar/gkac803" target="_blank">Cite</a>
+        <a href="/stats">Statistics</a>
+
+        <!-- <a href="/registry">MediaRegistry</a> -->
+
+      </div>
+      <div class="col-md">
+        <h3>Help</h3>
+        <a href="/docs/website">Website</a>
+        <a href="/docs/medium-builder">Medium builder</a>
+        <a href="/doc/index.html">API reference</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="col-md">
+        <h3>Social Media</h3>
+        <a href="https://www.linkedin.com/company/dsmzd3" target="_blank">
+          <span class="icon"><i class="ph ph-linkedin-logo"></i></span>
+          Linkedin
+        </a>
+        <a href="https://www.youtube.com/channel/UCZxfaPawuEmsNNInlIf1Pbw" target="_blank">
+          <span class="icon"><i class="ph ph-youtube-logo"></i></span>
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="logo-parade d-flex align-items-center">
+    <a href="https://www.denbi.de/" target="_blank" data-v-f5dfcaf0=""><img src="/img/logos/denbi.svg" alt="de.NBI" data-v-f5dfcaf0=""></a>
+    <div>
+      <small>
+        If Media<em>Dive</em> was useful to you,<br> please participate in this 2-minute survey:      </small><br>
+      <a href="https://de.surveymonkey.com/r/denbi-service?sc=db-node&tool=mediadive" target="_blank">
+        Survey      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="footer">
+    <span>
+      &copy; DSMZ 2026    </span>
+    <a href="/imprint">Imprint</a>
+    <a href="/imprint#privacy">Privacy Statement</a>
+    <a href="/imprint#license">
+      <img src="/img/cc.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      <img src="/img/by.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      License    </a>
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+</footer>
+
+
+</div>
+
+</div>
+<!-- <div class="swipe-area"></div> -->
+
+<script>
+  function acceptCookies() {
+    digidive.createCookie("bacmedia-cookie-seen", true)
+    $("#cookieWarning").hide()
+  }
+</script>
+
+
+
+<script src="/js/tour/popper.min.js"></script><script src="/js/tour/shepherd.min.js"></script><script src="/js/tour/tour.js?1722402400"></script><script src="/js/tour/tour_ingredients.js?1722402400"></script></body>

@@ -1,0 +1,1377 @@
+{
+  "schema_version": 1,
+  "review_id": "CHEM-INDEPENDENT-MATERIALS-20261108",
+  "recorded_at": "2026-11-08T05:22:13.348161+00:00",
+  "reviewer": "/root/chemicals_research",
+  "independence_basis": "Separate agent from /root/materials_research; authored chemicalsubset,not these61materials cases. Examined frozen rawcases,complete recipebytes,sourcecapturedtexts,ontology/suppliercomparators,currentowners andexactproposedpayloads. Raised and re-reviewed concretecounterexamples.",
+  "review_status": "complete",
+  "verdict": "pass_with_limitations",
+  "scope": {
+    "case_count": 61,
+    "occurrence_count": 191,
+    "proposal_count": 4,
+    "coverage": "allassignedmaterials cases,not a sample"
+  },
+  "reviewed_inputs": [
+    {
+      "path": "materials/decisions.json",
+      "sha256": "fa342e3f8bb8e7643aff9b38f53aaa7878d925eb975c67f356f6b3517cfb8ae2"
+    },
+    {
+      "path": "materials/evidence.json",
+      "sha256": "9cd43d347b57b38fdc12d9e860b542475e2e807bc80ba5cb77c088bcf4d1d560"
+    },
+    {
+      "path": "materials/proposals.json",
+      "sha256": "c9f5f471c3b25e4c7026ca76e163eceac75212a4f2352425632d8c6b781d4a20"
+    }
+  ],
+  "checks": [
+    "61exactcase digests andall191occurrenceIDs",
+    "allfrozenrecipe bytes/hash/shape inspected",
+    "all360evidence capture hashes checked",
+    "allactualowner preimages checked",
+    "all4proposal pre/posthashes and semanticdeltas checked",
+    "allpriorhistory/status/counts retained",
+    "case-scope source and product boundaries independently challenged",
+    "maintainedingredient registrycollision search includedignoredfiles; noexistingsea_salts primaryID found"
+  ],
+  "findings": [
+    {
+      "finding_id": "CHEM-MAT-F1",
+      "severity": "major",
+      "status": "resolved_in_proposal",
+      "case_indices": [
+        187
+      ],
+      "original_proposal_sha256": "5142aff37db49d2c8d7f8ed8c3f7768ffd6efcbd08aa915ead2fb342eb648a18",
+      "problem": "The firstSeaSalts proposal kept NCIT:C75874 CLOSE_MATCH while calling it contextual-only. Capturedterm lacks a definingrecipe/composition; plural/product/closest-term rationale is not semanticidentity support. My initial informal description ofNCIT asnatural was too strong and was corrected after inspecting theundefinedterm.",
+      "remediation": "Afterpayload82672f556794cf3cd1a78e74f5f5bb71038e6665e42278d55739a7c5a68484b0 uses localFALLBACK_REGISTRY and removes theunsupportedcurrentNCIT relation; history/notes retain it only asformer candidate.",
+      "superseded_proposal_capture": {
+        "root": "artifact",
+        "path": "materials/superseded/Sea_Salts-v1.yaml",
+        "sha256": "5142aff37db49d2c8d7f8ed8c3f7768ffd6efcbd08aa915ead2fb342eb648a18"
+      }
+    },
+    {
+      "finding_id": "CHEM-MAT-F2",
+      "severity": "minor",
+      "status": "resolved_in_evidence",
+      "case_indices": [
+        101
+      ],
+      "problem": "MATERIALS-DIFCO-SKIM initially pointed to a searchresponse asprimarysupplier support.",
+      "remediation": "Direct BD232100 page opened,captured materials/skim-milk-primary.json at2026-11-08T05:19:29Z; locator identifies spray-drieddescription. Evidence entrynow binds that capture,withoutassigningcatalogtohistoricalsource."
+    },
+    {
+      "finding_id": "CHEM-MAT-F3",
+      "severity": "minor",
+      "status": "resolved_in_reasoning",
+      "case_indices": [
+        4,
+        22
+      ],
+      "problem": "Initial narrativeblurred rawPeptone(Difco)/Meatpeptone(BDBacto) strings with enrichedGMO BactoPeptone labels.",
+      "remediation": "Revisedreasoning distinguishes sourceliteral andtargetenrichment,and keeps exactBacto identityas a candidate."
+    }
+  ],
+  "case_assessments": [
+    {
+      "case_id": "CM_NAME:0e8c9455572e2da156423575e89d82fb066abfcaa9e8bd28ec30d8ff86718ae2",
+      "case_index": 4,
+      "raw_source_label": "Peptone(Difco)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Raw Difco label does not itself prove the enriched Bacto product identity. The revised decision keeps Bacto as a candidate and makes no alias change; this source-provenance limit is necessary.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-5c65b07e0918c657",
+        "MATERIALS-CAP-839bf0557c4ab931",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:0fe52708062ae5b7deb6d1b1fbf3b9389f2425e3d2c3ab023455ee22cd6a7ee0",
+      "case_index": 5,
+      "raw_source_label": "leafy soil",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Primary source nests leafy soil inside a separately boiled/clarified extract. Retaining input material versus finished stock is supported; no soil-class identity or mass concentration is inferred.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-44366be12d557e75",
+        "MATERIALS-ATTEMPT-f66b70c087389dcb",
+        "MATERIALS-CAP-fdee808656b5b136"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:1b16e5ae999e6118bb1c96008e3b5f00670eea865b598e7795dac97e20af78c5",
+      "case_index": 8,
+      "raw_source_label": "Liver extract (see below)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "JCM1474 explicitly gives the liver-powder/water extraction method and150ml dose. Fresh extract and dry concentrate are distinct supplied contexts.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-f375adb1eb1cf096",
+        "MATERIALS-CAP-ed99592f8f0d0d59",
+        "MATERIALS-OWNER-Liver_Extract"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:22af65783de61746783556d239d97436d8d51f1f11dd117880152915e51e0f39",
+      "case_index": 9,
+      "raw_source_label": "meat extract (Wako Pure Chemical Industries, Osaka, Japan)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "The Wako literal conflicts with the enriched MPBiomedicals label. The decision appropriately preserves the contradiction and does not infer bovine source or percentage basis.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-e0492cd00cc9d2ba",
+        "MATERIALS-CAP-2f159c6cd7c6e36c"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:2701602263ac243d10081e0843627a646720bf7455077968f495cb41466d217a",
+      "case_index": 11,
+      "raw_source_label": "Bovine albumin fraction V",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Both ADC contexts name fractionV but no catalog/finalvolume. The albumin reagent is not the ADC mixture; existing BSA scope holds remain.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-f652afaefc556ba2",
+        "MATERIALS-RECIPE-61fc35e783749a3f",
+        "MATERIALS-CAP-a08fb341926e1d0a",
+        "MATERIALS-CAP-ee722a18f3e26939",
+        "MATERIALS-OWNER-Bovine_Serum_Albumin",
+        "MATERIALS-OWNER-Bovine_Albumin"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:30d34c021d1f4fa8a93bf0858408499f9169b9d0d86936243ff6df038503e6a3",
+      "case_index": 16,
+      "raw_source_label": "Sterile human urine",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Pooled sterile urine is a variable biological material. A molecular or fixedsynthetic-medium replacement would overstate identity.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-b80613fbdf2b6dbf",
+        "MATERIALS-CAP-111142b9178c5d94"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:335a87f048ecd16a7457dc0f6e336bb859ba0f1492549b5b2b32cb175c050990",
+      "case_index": 18,
+      "raw_source_label": "Peptonized Milk (Oxoid)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Primary Oxoid LP0032 product evidence establishes peptonized skim-milk digest. Wholemilk,skimmedmilk andcasein are not whole-product equivalents.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-fccc512fbedd1ee3",
+        "MATERIALS-CAP-ad966dfbecc9bd77",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-4d7e2a0d4b04b74e"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:3922dd30207b7e9f6eae52095a5eef697923a50484871e8f52aaa5f0722685e5",
+      "case_index": 20,
+      "raw_source_label": "Bovine albumin (Fraction V)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "The50g fractionV material is inside OADC preparation. Grade and stock boundary are retained without inventing a denominator.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-70bd0aa275b70f18",
+        "MATERIALS-CAP-b5dd8b92f4e4ea2c",
+        "MATERIALS-OWNER-Bovine_Serum_Albumin"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:3b9d4adc161114f04e0a67038e19bee6895dcd2ad1a4ba1853c30be222480f16",
+      "case_index": 22,
+      "raw_source_label": "Meat peptone (BD Bacto)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Raw Meatpeptone(BDBacto) gives brand/substrate context; the enriched exact Bacto label remains a candidate. No cross-owner merger is approved.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-252eee07ad2ef338",
+        "MATERIALS-ATTEMPT-656fe458c0b0a030",
+        "MATERIALS-CAP-d443798c810a6ca4",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-OWNER-Bacto_Peptone",
+        "MATERIALS-OWNER-Meat_peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:510bfadf6f7d1273b1f196f10c6d3b9b02b1f8afcc0bc806f276186c4cfa08c7",
+      "case_index": 31,
+      "raw_source_label": "Soybean protein isolate (SPI) or Skim milk",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "The source explicitly permits soyprotein isolate ORskim milk. The alternative cannot become a synonym of either selected material.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-b3c408a0eaefcb71",
+        "MATERIALS-CAP-6d2202ae86ddea32"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:515bef06cadb512bd069ba86c5bcb5d3db474cd7b9a1efcdf63fe2aa635d9ec1",
+      "case_index": 32,
+      "raw_source_label": "Chrysalis extract",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Chrysalis extract remains an insect-derived source material without species/process specification; chitin orprotein mapping would be unsupported.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-141bdb22c368a97f",
+        "MATERIALS-CAP-6aba9afd57f88408"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:51b5ea9f7429c70a079d79a469b0a323180d8b37fbedfecbc950e0043f0f3b6f",
+      "case_index": 33,
+      "raw_source_label": "Trypticase Peptone (BBL) or Hipolypepton",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Trypticase andHipolypepton are recipe alternatives. Substitutability in one recipe does not establish product identity.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-b2bc5502f74c9024",
+        "MATERIALS-CAP-20b8a06bf0d02d5e",
+        "MATERIALS-CAP-a1d17581eca50e64"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:52cf111610399ecffd11f3855338720016f099712bcb4ae483174d0bec0b0e55",
+      "case_index": 34,
+      "raw_source_label": "Sea salt",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Five KOMODO829-derived source contexts give dosages,not mixture composition or commoncatalog. Classifying as mixedsalts without target transfer is appropriate.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-797198373780239e",
+        "MATERIALS-RECIPE-7abce11156c62d55",
+        "MATERIALS-RECIPE-fc14bd7b44d17ce2",
+        "MATERIALS-RECIPE-8c63e73ab3c35103",
+        "MATERIALS-RECIPE-dd78c0ce1ac87749",
+        "MATERIALS-CAP-26aed7de31d17f0f",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-SIGMA-S9883",
+        "MATERIALS-OWNER-Sea_Salts",
+        "MATERIALS-OWNER-Artificial_Sea_Salt"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:53b8941a0bf23ff8f030b7e59dfe94479a1855d13805f0ad5cfb7eb6c7d0febc",
+      "case_index": 35,
+      "raw_source_label": "Peptone from gelatine",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "The source separately lists gelatin,meat andcasein peptones. Gelatin substrate is meaningful and must not be collapsed into an undifferentiated exactpeptone.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-777154fefde5988f",
+        "MATERIALS-CAP-9d7f8ec7e879a39c",
+        "MATERIALS-CAP-a1d17581eca50e64"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:5554b29c567716f89fab0e8ff8950a9dd414c642d77619d3e56c60f2dcf1a02b",
+      "case_index": 37,
+      "raw_source_label": "Peptone (BBL)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "BBL literal plus Trypticase enrichment leaves catalog identity unresolved. The specified nextstep to recover the historical products is narrower than an arbitrary generic hold.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-20c8771d056f588f",
+        "MATERIALS-RECIPE-83dc63f6e1c134fc",
+        "MATERIALS-CAP-514a198f4e1b20e0",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:56ef77be2591186857f4a92ab254f6b17b61fd68f51aab076ddb272d85541414",
+      "case_index": 39,
+      "raw_source_label": "Whole-fat cow's milk",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Primary10ml whole-fatmilk conflicts with frozen10g/L. The decision preserves wholefat/liquid scope and flags sourceunit error without density conversion.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-fb9c378fc256a3e6",
+        "MATERIALS-CAP-049bbd3f8c3bed70",
+        "MATERIALS-OWNER-Cows_Milk",
+        "MATERIALS-OWNER-Milk"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:595d2c9054961a4c3ea21a8eb1bffa3a73c87ebc5fad14bad3efcc21741d91de",
+      "case_index": 40,
+      "raw_source_label": "Sea Salt",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "All129 frozen occurrence IDs and heterogeneous recipe/stock contexts remain represented. Supplier-specific evidence does not license all genericSeaSalt rows;3000g/L outliers stay separate source-amount findings.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-3df32ebf545a28d9",
+        "MATERIALS-RECIPE-2aae7adb6f1b7cd9",
+        "MATERIALS-RECIPE-96d980a932460171",
+        "MATERIALS-RECIPE-dd9e097cec6fa49a",
+        "MATERIALS-RECIPE-166cb3b3d24efbb2",
+        "MATERIALS-RECIPE-866d72e523a3b548",
+        "MATERIALS-RECIPE-76fad0b74ffba1a9",
+        "MATERIALS-RECIPE-083135c47f9443bb",
+        "MATERIALS-RECIPE-a0e53bb290fc9116",
+        "MATERIALS-RECIPE-9ff687be269408a6",
+        "MATERIALS-RECIPE-3bde5e87b3a35c67",
+        "MATERIALS-RECIPE-3b05dff4e0bcb0ba",
+        "MATERIALS-RECIPE-24eb4d5d67b3a881",
+        "MATERIALS-RECIPE-af7bc0bb8d7303b0",
+        "MATERIALS-RECIPE-480d970a3baa5f5b",
+        "MATERIALS-RECIPE-58819d5cdf1681d8",
+        "MATERIALS-RECIPE-fc5a775ce289aa11",
+        "MATERIALS-RECIPE-b8e76762d321abfa",
+        "MATERIALS-RECIPE-06f76072b528636e",
+        "MATERIALS-RECIPE-5efa7de5f129cfdd",
+        "MATERIALS-RECIPE-05c84c6d0e6b374b",
+        "MATERIALS-RECIPE-5f5ceff5de39cd5e",
+        "MATERIALS-RECIPE-8ab530739a83d063",
+        "MATERIALS-RECIPE-d8491331585739eb",
+        "MATERIALS-RECIPE-38183fb6190cef3e",
+        "MATERIALS-RECIPE-4283d16fc274c35d",
+        "MATERIALS-RECIPE-b40244720bf402f7",
+        "MATERIALS-RECIPE-e4e65eb9e477b852",
+        "MATERIALS-RECIPE-e33ffd02f46c26a7",
+        "MATERIALS-RECIPE-50d8a74edb6704a5",
+        "MATERIALS-RECIPE-b4e7e20894774691",
+        "MATERIALS-RECIPE-f99ab18fd40d7b74",
+        "MATERIALS-RECIPE-51bac1f50ee144a2",
+        "MATERIALS-RECIPE-850682c5254cc68f",
+        "MATERIALS-RECIPE-d419a0b3d106219a",
+        "MATERIALS-RECIPE-12af12c008eb9b89",
+        "MATERIALS-RECIPE-26de6404b905acca",
+        "MATERIALS-RECIPE-881ac2d9737dfa84",
+        "MATERIALS-RECIPE-cc17918c7aee47f1",
+        "MATERIALS-RECIPE-b0ec53e91a8f414f",
+        "MATERIALS-RECIPE-f991104e0fe7e23f",
+        "MATERIALS-RECIPE-5bfae8e755abb0c6",
+        "MATERIALS-RECIPE-033bf92a2d1b319b",
+        "MATERIALS-RECIPE-05d543dd32d8ff18",
+        "MATERIALS-RECIPE-81815fecc051393f",
+        "MATERIALS-RECIPE-cf05d072d0eb1035",
+        "MATERIALS-RECIPE-6d18a51b331a49fd",
+        "MATERIALS-RECIPE-cac3d1b89f5de542",
+        "MATERIALS-RECIPE-5f3d44af24e34ab6",
+        "MATERIALS-RECIPE-1528f23c5a23230e",
+        "MATERIALS-RECIPE-95e9f20c8cddf3f1",
+        "MATERIALS-RECIPE-6307c3c974ebbcb6",
+        "MATERIALS-RECIPE-fb4bf36417747e79",
+        "MATERIALS-RECIPE-5f065e84ba52fd60",
+        "MATERIALS-RECIPE-563029630d969e49",
+        "MATERIALS-RECIPE-688f662cdb1186f9",
+        "MATERIALS-RECIPE-dd4a0e1359ad2923",
+        "MATERIALS-RECIPE-f592b2702eb36aae",
+        "MATERIALS-RECIPE-96e4db847655f223",
+        "MATERIALS-RECIPE-509bb561c24d4ad6",
+        "MATERIALS-RECIPE-3a65d41e47e8855c",
+        "MATERIALS-RECIPE-97155955f061e8d9",
+        "MATERIALS-RECIPE-3050b0a9b5a387ff",
+        "MATERIALS-RECIPE-8a3f338e406b7054",
+        "MATERIALS-RECIPE-4e8e7b8e07b7b001",
+        "MATERIALS-RECIPE-131e2cadf554c7e0",
+        "MATERIALS-RECIPE-5cc43dd4c092e8c8",
+        "MATERIALS-RECIPE-44d51b775f821c3b",
+        "MATERIALS-RECIPE-7f79c06047724236",
+        "MATERIALS-RECIPE-6e208a3d34e86d85",
+        "MATERIALS-RECIPE-afe4f3d47cd85f58",
+        "MATERIALS-RECIPE-a10bdd031e8ed622",
+        "MATERIALS-RECIPE-741b1b49270c2f01",
+        "MATERIALS-RECIPE-acbbf75639b176aa",
+        "MATERIALS-RECIPE-a89af489cb79ea93",
+        "MATERIALS-RECIPE-2c78649fd85868e6",
+        "MATERIALS-RECIPE-cc65d228badd382f",
+        "MATERIALS-RECIPE-29723976edb5fc9a",
+        "MATERIALS-RECIPE-66992f592227e9cc",
+        "MATERIALS-RECIPE-1860bb923f729c6d",
+        "MATERIALS-RECIPE-326b9fe96821f3dd",
+        "MATERIALS-RECIPE-752190b77cd52f9e",
+        "MATERIALS-RECIPE-2af4f1e79697fc7e",
+        "MATERIALS-RECIPE-972f8ea579d5df09",
+        "MATERIALS-RECIPE-8484762c3baec9b5",
+        "MATERIALS-RECIPE-2c1f9a18bcf95e15",
+        "MATERIALS-RECIPE-fd8c189cce485c6e",
+        "MATERIALS-RECIPE-6a747043acecb5a5",
+        "MATERIALS-RECIPE-2e13c08cb2ed6df1",
+        "MATERIALS-RECIPE-97c9155a81788018",
+        "MATERIALS-RECIPE-04b6a1ecce9b77f4",
+        "MATERIALS-RECIPE-0b1014be360543f6",
+        "MATERIALS-RECIPE-dde7034a65dd3005",
+        "MATERIALS-RECIPE-c0d1b8f6d07e75ff",
+        "MATERIALS-RECIPE-583fdb887279088e",
+        "MATERIALS-RECIPE-ee98f408f0028f5b",
+        "MATERIALS-RECIPE-0f16126df7631c4f",
+        "MATERIALS-RECIPE-5bb9b675cb4cff49",
+        "MATERIALS-RECIPE-b4337ce9e3073ff4",
+        "MATERIALS-RECIPE-e6055240cc67e43a",
+        "MATERIALS-RECIPE-34d7d7f9fb891454",
+        "MATERIALS-RECIPE-d1d265365e1fc753",
+        "MATERIALS-RECIPE-6548c6d6dc8e22cb",
+        "MATERIALS-RECIPE-7f0edf93fd229490",
+        "MATERIALS-RECIPE-a7a034cf274b9a9d",
+        "MATERIALS-RECIPE-05c9be803da0b326",
+        "MATERIALS-RECIPE-a44093e92e3d96f2",
+        "MATERIALS-RECIPE-068ceeaa5d09a19f",
+        "MATERIALS-RECIPE-7e56f6767ef1fe77",
+        "MATERIALS-RECIPE-0ba5678c352c2bd8",
+        "MATERIALS-RECIPE-206475a1c92e3bd5",
+        "MATERIALS-RECIPE-571b33c012143197",
+        "MATERIALS-RECIPE-50c9c051ffa0ffc7",
+        "MATERIALS-RECIPE-364773f4907eff47",
+        "MATERIALS-RECIPE-c67d0b6e08af1189",
+        "MATERIALS-RECIPE-28cdd6b5951c0f85",
+        "MATERIALS-RECIPE-8a5624ff251c4237",
+        "MATERIALS-RECIPE-1680898ba942cc2d",
+        "MATERIALS-RECIPE-fa8ebf9edfaef4f4",
+        "MATERIALS-RECIPE-f58bc38bed17199f",
+        "MATERIALS-RECIPE-fc9d722c61aa34eb",
+        "MATERIALS-RECIPE-076418b7e80d40ee",
+        "MATERIALS-RECIPE-32d2e6ffc45d1d7e",
+        "MATERIALS-RECIPE-3adfd76ee4f6a799",
+        "MATERIALS-RECIPE-4e91839032fa4168",
+        "MATERIALS-RECIPE-270ee352eb6bb797",
+        "MATERIALS-RECIPE-bfbc27e679aec714",
+        "MATERIALS-RECIPE-471d083d48ed0cf0",
+        "MATERIALS-RECIPE-f17ba30785e96f7d",
+        "MATERIALS-CAP-fb884ed7d7cbc63b",
+        "MATERIALS-CAP-8c2242a56a04c84f",
+        "MATERIALS-CAP-e80d64074ae1edb5",
+        "MATERIALS-ATTEMPT-23819594dc22eacf",
+        "MATERIALS-CAP-6f9804c78b6d950f",
+        "MATERIALS-CAP-1918e90455b9aa11",
+        "MATERIALS-CAP-5994c762cae0d08f",
+        "MATERIALS-CAP-be592e35d43f096d",
+        "MATERIALS-CAP-3039299b570a2862",
+        "MATERIALS-CAP-dd42e44be7a3e3d3",
+        "MATERIALS-CAP-e226ddc2dffc641c",
+        "MATERIALS-CAP-6040103197f9c143",
+        "MATERIALS-CAP-f29ebc6bc0ff6c05",
+        "MATERIALS-CAP-2efdd5f45b8c8271",
+        "MATERIALS-CAP-9c11df34838d4f2b",
+        "MATERIALS-CAP-58dc20d4a9cc72d2",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-SIGMA-S9883",
+        "MATERIALS-OWNER-Sea_Salts",
+        "MATERIALS-OWNER-Artificial_Sea_Salt"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:5eb72ef93fbc049ada54a5c189b8954ac6dfb31689df054f7c154201f5003bd8",
+      "case_index": 46,
+      "raw_source_label": "Cow's milk (whole fat)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "JCM153/TOGO144 liquid10ml does not justify10g/L. Whole-fat material identity remains independent from a numerical correction.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-404714c03acbe2ce",
+        "MATERIALS-CAP-fe0b420bc77ecff9",
+        "MATERIALS-CAP-0b30a6aa476a9562",
+        "MATERIALS-OWNER-Cows_Milk",
+        "MATERIALS-OWNER-Milk"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:61bf9d1487f362a7d4680e729a189bc1e7d6285f5d549df92875d0fec8e714f9",
+      "case_index": 50,
+      "raw_source_label": "CrystalSea Marine Mix (Marine Enterprises International, Inc.)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "CrystalSea names a manufacturer-specificmix. A Sigma product comparison supports only materialclass,not equivalence across brands.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-efc69ec64a534584",
+        "MATERIALS-CAP-f1a5d8ddc70f4629",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-SIGMA-S9883"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:65ba1fc20606be8ad43f872285efdae017de70014520c2ec7bdd073315cb412c",
+      "case_index": 51,
+      "raw_source_label": "Bacto Panton (Peptone)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "DSMZ687 independently lists BactoPanton andBitone. Retaining the source names separately avoids an unsupported historical-catalog expansion.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-1bd1d60e982c9a02",
+        "MATERIALS-CAP-96425d85290b1d9c",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-OWNER-Bacto_Panton"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:6dbce0565dfec19c64478681adfc0eed9b7d5397e8382e522437614b1b25993c",
+      "case_index": 55,
+      "raw_source_label": "Bacto Bitone (Peptone)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Separate10g Panton/Bitone source lines refute conflation based on peptone class. The unmappedhandle is preserved without inventing composition.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-1bd1d60e982c9a02",
+        "MATERIALS-CAP-96425d85290b1d9c",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-OWNER-Bacto_Bitone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:71bcdce17ef8482f9e70b5dea80f2fc94d75fd0011f5ce15675ba7a2b3917e09",
+      "case_index": 57,
+      "raw_source_label": "Peat soil",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Peatsoil is a starting material for extraction. Vesselgeometry and subsequentextract use do not define a mass concentration or finished-stock identity.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-72e2fa041d837df8",
+        "MATERIALS-RECIPE-9b17451d41caa0a3",
+        "MATERIALS-CAP-59710b62a48c8808",
+        "MATERIALS-ATTEMPT-3556b09352ef09d4",
+        "MATERIALS-CAP-66d3ec90b403520f"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:7a2f80fe519b283e444d0f8f264cda4df2c3917e0640f7fe00253036d9c2a79c",
+      "case_index": 62,
+      "raw_source_label": "DNA (fish sperm; SERVA)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Fish-sperm SERVADNA is a source-qualified polymer preparation. CHEBI16991 can provide broadclass context; length,counterion,species andcatalog remain unspecified.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-e066c99495a7fdf3",
+        "MATERIALS-RECIPE-7b5b9592ae2da3b2",
+        "MATERIALS-RECIPE-3b671fe502b8b874",
+        "MATERIALS-RECIPE-f5d36baa49716a57",
+        "MATERIALS-CAP-d9c01418954b4216",
+        "MATERIALS-CAP-91700f0a7505294f",
+        "MATERIALS-CAP-d999432c76b4de79",
+        "MATERIALS-CAP-4556b713745fd143",
+        "MATERIALS-CAP-bf7d3eb9e6d26ecc"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:80b54b0ff5bd090c464e9e458d5ad32a60b5f4c3dd3f2d17415f7cea4724ef55",
+      "case_index": 66,
+      "raw_source_label": "Sucrose (20%, w/v)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "The20%w/v label is an explicitstock; primary10ml addition remains volume. Whole-stock exactmapping to sucrose would be wrong.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-897ab577fc30bd62",
+        "MATERIALS-CAP-9615db8acd821f29",
+        "MATERIALS-CAP-ff1de1eba8a0c6f3"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:8220bc6b7991e718e70046d1ee0677100ee4e0cac9df4958486094d884400f4d",
+      "case_index": 67,
+      "raw_source_label": "Fish meat extract",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Fishmeat extract appears in equivalentsource representations but its extraction identity is not a fishpeptone or isolatedmolecule.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-2bc4bd7b5e678453",
+        "MATERIALS-RECIPE-8ded2e8685e1a9fd",
+        "MATERIALS-RECIPE-3ba3c64379e385bb",
+        "MATERIALS-CAP-1698a2f97779437c",
+        "MATERIALS-CAP-f273828c9b88f508"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+      "case_index": 69,
+      "raw_source_label": "Proteose-Peptone No.3 (Difco)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Manufacturer211693 andtechnicalguide distinguish ProteoseNo3 from211684 unnumberedproduct. Rejecting No3 aliases on the genericowner is supported.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-b152f9d2d851623a",
+        "MATERIALS-CAP-58def0137c2816b8",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-36ff1efb646dbe4f",
+        "MATERIALS-CAP-5f835024e55d4d23",
+        "MATERIALS-OLS-PROTEOSE-SEARCH",
+        "MATERIALS-OWNER-Proteose_Peptone"
+      ],
+      "proposal_ids": [
+        "MATERIALS-P-proteose-numbered"
+      ],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:8ba1df295abb60b7fb8cd7e12f80b861e3d2e7634dd64e3bfb7e88df0db0fd08",
+      "case_index": 70,
+      "raw_source_label": "Bovine albumin, Fraction V",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "FractionV50g in JCM201 precedes furtherpreparation. The decision neither maps thewholemedium toalbumin nor assumes finalvolume.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-7c69961a498dfc2c",
+        "MATERIALS-ATTEMPT-d63e2a0487c298bb",
+        "MATERIALS-CAP-776733f8ca9ff0a9",
+        "MATERIALS-OWNER-Bovine_Serum_Albumin"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:8d411c29b3c72239de67c4f6968dabedb48e94d0e9c7ff45af014bdeb4650acd",
+      "case_index": 71,
+      "raw_source_label": "Soytone Peptone (Difco)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Soytone/Phytone productline differences are preserved. A hydrolyzedvegetableprotein parent does not establish exactequivalence of commercialdigests.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-f3d26e0b616f43a7",
+        "MATERIALS-CAP-ec3dfde38340adfa",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-fd95ea8d26cdd5fc",
+        "MATERIALS-OWNER-Soy_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:8f995fe50bd37139925c5662e685400b59890f21de564f5116f6620a427694fd",
+      "case_index": 72,
+      "raw_source_label": "Peptone proteose",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "ScharlauMRS nested proteosepeptone is a formulationcomponent. Wordorder compatibility alone cannot select a BDproduct orNo3.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-3392d267f02907ba",
+        "MATERIALS-CAP-3da2d411f716f547",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-5f835024e55d4d23",
+        "MATERIALS-OWNER-Proteose_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:a3427dc662d5bd409c30365c1a38dea6f558aca970d0c9f9a64f411e4545853f",
+      "case_index": 81,
+      "raw_source_label": "Small dried sardine",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Whole dried sardine is boiled withmaize,thenfiltered. The inputmaterial differs from the resultingmixedextract and fromfishpeptone.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-d6c5fa21a8b3e8d7",
+        "MATERIALS-RECIPE-5cd83d251f986fb9",
+        "MATERIALS-RECIPE-4a8499d54406fdd2",
+        "MATERIALS-CAP-f3771867f17c081f",
+        "MATERIALS-CAP-9af38226b7ddb07f"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:c63f61e75943ad641b1cf3e533812c4eaca371524e6b1bd9ee244a7b8671df55",
+      "case_index": 89,
+      "raw_source_label": "Special peptone",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Oxoid Columbia contains a23g Specialpeptone component. Manufacturer is given bywholeproductcontext but no standalonecatalog is inferred.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-2db87e5a52686a35",
+        "MATERIALS-CAP-f8cc21dad00e767c",
+        "MATERIALS-CAP-a1d17581eca50e64"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:c93fb27cf3615367f9b75ccd2c0930fad5b5824e374a3b64b189d470140f79f3",
+      "case_index": 90,
+      "raw_source_label": "Rice Extract",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "The variable riceextract preparation is neither wholegrain norisolatedstarch. Missing processing information limits furthergrounding.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-539c5994fd3030bc",
+        "MATERIALS-CAP-21e00696994620b2"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:d45a33c5923ad1f08755b5637c6c47ee6c329b0b4a2892c859a4027e54126a15",
+      "case_index": 100,
+      "raw_source_label": "Sigma Sea salts",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Sigma designation identifies suppliercontext only. NoautomaticS9883 catalog or natural-salt equivalence is claimed.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-d7d399d1fad5ea78",
+        "MATERIALS-RECIPE-2406217449c5db5c",
+        "MATERIALS-RECIPE-d5e69ca4c74d7aad",
+        "MATERIALS-CAP-eb0056012fd31847",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-SIGMA-S9883",
+        "MATERIALS-OWNER-Sea_Salts"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:d47ee889d9bce5dc52efde7e5cf98dabd62f28e0c64e867f3d5ea9371b4999e2",
+      "case_index": 101,
+      "raw_source_label": "Skim milk (Difco)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Directly openedBD232100 now supports spray-driedsupply. The source does not identify thatcatalog; dryvspreparedmilk boundary and ownerreconciliation remain.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-cd9f6888e03e1e97",
+        "MATERIALS-RECIPE-7a5d99f4446e6824",
+        "MATERIALS-CAP-eda01afe67137cd2",
+        "MATERIALS-ATTEMPT-6354e3c8877de59d",
+        "MATERIALS-DIFCO-SKIM",
+        "MATERIALS-OWNER-Skimmed_Milk",
+        "MATERIALS-OWNER-Skim_milk_powder"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:dda66fbda6b0618adc53c55de8b33c4c5a2ef4a73ca34571102517a36a8c391e",
+      "case_index": 108,
+      "raw_source_label": "Peptonen",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Todd-Hewitt Peptonen is a BDformulationcomponent; spelling andbrothbrand do not prove standaloneBactoPeptone.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-2943f016791abf5a",
+        "MATERIALS-CAP-5914e47ee02b6b03",
+        "MATERIALS-CAP-a1d17581eca50e64"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c",
+      "case_index": 116,
+      "raw_source_label": "Catalase (Sigma C-10)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "TheC-10 source is a catalog-qualified enzyme preparation. Deferring catalogreconciliation and remainingowner claims avoids genericcatalytic-role identity.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-d7fe49dff71a9848",
+        "MATERIALS-RECIPE-9f18cbc9e52453ec",
+        "MATERIALS-CAP-5c0a089f5206be3d",
+        "MATERIALS-OWNER-Catalase"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:f163ec7f355f01963af1b99f566d50cb82749e167f8cce8916145945ad4a2084",
+      "case_index": 118,
+      "raw_source_label": "Bovine Albumin (Fraction V)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "FractionV inOADC is retained as preparationgrade; exactgenericalias orOADCidentity is not granted.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-a8afb9b86d5823ea",
+        "MATERIALS-CAP-4b8a987a15a1852d",
+        "MATERIALS-OWNER-Bovine_Serum_Albumin"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:f3f0ab76469c51fbe1f3a0f09801b2de12818bab1506ab7a3eb731a2d919d1b6",
+      "case_index": 119,
+      "raw_source_label": "Liver extract concentrate (NBCo)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "NBCoconcentrate andfreshJCM1474extract differ in preparation. Sharedgenericliver-extract grounding remains a documentedownerboundary problem.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-5a33563eb3eb5508",
+        "MATERIALS-RECIPE-676f3dbc4287fec6",
+        "MATERIALS-CAP-95e8f7820e7b75b2",
+        "MATERIALS-ATTEMPT-e426777bb167ee9f",
+        "MATERIALS-ATTEMPT-0776ad7b8660acdb",
+        "MATERIALS-ATTEMPT-bbdfe7583003adeb",
+        "MATERIALS-CAP-9fce434011163526",
+        "MATERIALS-OWNER-Liver_Extract_Concentrate",
+        "MATERIALS-OWNER-Liver_Extract",
+        "MATERIALS-ARCHIVE-M13",
+        "MATERIALS-ARCHIVE-M4"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:f50ba478dda27e9481509c871585ed5a3aaeec815eaf4c521d1a58e791e928e1",
+      "case_index": 120,
+      "raw_source_label": "Bovine albumin fraction",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Unnumbered bovinealbuminfraction does not establish fractionV even in similarADC recipes. The missingfraction specification is a valid targetedrequirement.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-86b87da851ae2f2c",
+        "MATERIALS-RECIPE-7a0b697cb0ae77aa",
+        "MATERIALS-ATTEMPT-4da87bc2e454980d",
+        "MATERIALS-ATTEMPT-a38e812ed295a9e4",
+        "MATERIALS-ATTEMPT-2ba80b138dadac43",
+        "MATERIALS-ATTEMPT-cc7202c56a191c31",
+        "MATERIALS-OWNER-Bovine_Serum_Albumin",
+        "MATERIALS-ARCHIVE-M2400",
+        "MATERIALS-ARCHIVE-M2401"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:f7bd19bc3733271343171717656ebe0c87f7449fcd8593cb43d2f95f5c03c7ba",
+      "case_index": 122,
+      "raw_source_label": "Maize extract",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Maizeextract is listedseparately fromstarch. Neither starchnorcornsteepliquor is an exactreplacement without sourceprocess evidence.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-33d9a4299bcc2d2e",
+        "MATERIALS-RECIPE-9b5eb877ee56f7a8",
+        "MATERIALS-RECIPE-f439ff15cafa2561",
+        "MATERIALS-CAP-6a40a0c5bfb8d5d6"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "CM_NAME:fe4e28b8925680d489da8b18fc4ec7aefb6155e75c979b735f1db54e45636bb5",
+      "case_index": 125,
+      "raw_source_label": "Sea Salt (SIGMA)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "SigmaSeaSalt name supports a mixedsaltinput,not allsea-salt formulations or a particularcatalog. Noontologyequivalence is asserted.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-RECIPE-a43ae2b1769bc54f",
+        "MATERIALS-ATTEMPT-380c28c470359d89",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-CAP-5356ac3c879b6918",
+        "MATERIALS-SIGMA-S9883",
+        "MATERIALS-OWNER-Sea_Salts",
+        "MATERIALS-ARCHIVE-M3128"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+      "case_index": 127,
+      "raw_source_label": "Hipolypepton",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "WakoHipolypepton andBBLTrypticase appear as alternatives. Similarblend language does not justify an exactalias onPolypeptone.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-a428690331584c4c",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-c5957d4fba094bcc",
+        "MATERIALS-CAP-65ca8b7cbd9df933",
+        "MATERIALS-OWNER-Polypeptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b",
+      "case_index": 132,
+      "raw_source_label": "Proteose peptone no. 3",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "FrozenBDDifcoNo3 qualifier andsupplier evidence support retiringgenericProteoseNo3 aliases while deferring targetcreation.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-d8886eff00392271",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-36ff1efb646dbe4f",
+        "MATERIALS-CAP-5f835024e55d4d23",
+        "MATERIALS-CAP-04d16b9e8eb6b55c",
+        "MATERIALS-OLS-PROTEOSE-SEARCH",
+        "MATERIALS-OWNER-Proteose_Peptone"
+      ],
+      "proposal_ids": [
+        "MATERIALS-P-proteose-numbered"
+      ],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:211f0381e01e0a7256eee4cfd4ebcdec047b28ce19a6ae0a38a5efb6efdb0f1a",
+      "case_index": 133,
+      "raw_source_label": "Liver extract concentrate",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "NBCo concentration qualifier is preserved forKGsource; freshstock andgenericextract remain distinct despitelexicaloverlap.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-2a4e4326479ae202",
+        "MATERIALS-CAP-3ffbaf6f34e2efd5",
+        "MATERIALS-OWNER-Liver_Extract_Concentrate"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:2239b4ba3999c57a54135eb83ba6a39c206ce4bcd28c98c14034cc84ace39a49",
+      "case_index": 134,
+      "raw_source_label": "Maize extract",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Maizeextract5g remains a complexextract. The source andDSMZ570 comparator do not justify cornsteepliquor orstarch identity.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-a90ae62b5d9a90f6",
+        "MATERIALS-CAP-c592179bd774fb10"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:3afa861ef7ff42874af3fd1e7f918863a09111adde1a93ff6bc9ee75f883a276",
+      "case_index": 139,
+      "raw_source_label": "Phytone peptone",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Phytone is soy-derived digest but manufacturerproduct scope exceeds a generichydrolyzedvegetableprotein category. Existingholds are preserved.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-958fda298fb86384",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-fd95ea8d26cdd5fc",
+        "MATERIALS-CAP-b9b130ee3238188c",
+        "MATERIALS-OWNER-Soy_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:40f83209f10d453b4f37fb93855bf6dd3e6f13c2ba0ec5027e5f86cdf8af854c",
+      "case_index": 140,
+      "raw_source_label": "Sigma Sea salts",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Sigma30g source product is not preciselyspecified bycatalog/composition. Sourcecontext is preserved without a natural-salt exactclaim.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-312a8795b38768fa",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-CAP-27c9674e28f5b989",
+        "MATERIALS-SIGMA-S9883"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:4cd5132ddea24c4b38893c2047c843d471720cb46570184ea5d51c412b7229bb",
+      "case_index": 143,
+      "raw_source_label": "air-dried garden soil",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Existing local air-driedgarden-soil identity preservesdrying andbroadENVO relation. The casejudgment does not grant wholeownerapproval orerasevariablematerial scope.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-63a61455267d7035",
+        "MATERIALS-CAP-be00213789352e31",
+        "MATERIALS-OWNER-Air-dried_Garden_Soil"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:5dffd624918c11eb7fad87ab791b5b157b4d0a2d7c81bf82fded69bc633e5212",
+      "case_index": 147,
+      "raw_source_label": "Peptone mixture",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "DSMZ715 explicitly23g specialpeptone mixture. SimilarOxoid dose alone cannotestablish identicalproduct; candidateowner remains unresolved.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-37c7ff69ee75595b",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-CAP-bf81f194577f5025",
+        "MATERIALS-DSMZ715",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:73abd3afeae5cc63a2dd900b434faac00c912604cc82da9029031338cb6770c4",
+      "case_index": 155,
+      "raw_source_label": "Malt extract agar",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Oxoid maltextractagar is a formulation distinct frommaltextract. Registrycontext is retained pendingproductformula/catalognarrowing.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-cf00fb8fdbf708cc",
+        "MATERIALS-CAP-21d8df51eeefc9d1",
+        "MATERIALS-OWNER-Malt_Extract_Agar"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:73aefef0444a89ff8f4d690eeca7ebc9bd2903071f4f6a3b04120090371ce1c8",
+      "case_index": 156,
+      "raw_source_label": "Small dried sardine",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "KGsmall dried sardine remains wholebiologicalinput inboiledmaize preparation. No species,hydrolysate orisolatednutrient inference is made.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-de686525630db607",
+        "MATERIALS-CAP-a0f6059382918a93"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c",
+      "case_index": 160,
+      "raw_source_label": "Polypeptone",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "GenericPolypeptone source lacks supplier. Existing cross-brandaliases require digestion/productcomparison rather than immediate merge.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-401fa4db6cf27222",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-c5957d4fba094bcc",
+        "MATERIALS-CAP-667bc103a3bacdb2",
+        "MATERIALS-OWNER-Polypeptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6",
+      "case_index": 163,
+      "raw_source_label": "Peptone (Oxoid)",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Raw Oxoidpeptone cannot be identified withBD product from normalizedstring. HistoricalOxoid catalog/digest is a precise missingrequirement.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-44917674df89c384",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-CAP-956ee8047a762899",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:b8166e7eb0adf0ea5d2b1f6d955b897274855bffa29afac369ba71c767ae402e",
+      "case_index": 172,
+      "raw_source_label": "D-Sucrose",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "ChEBI17992 sucrose and17814salicin are structurallydistinct. Retiringd-salicin is justified while preserving D-Sucrosetombstone and allunresolvedroles.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-e689a1c4e1316c48",
+        "MATERIALS-CAP-dbb86d8272ad67d6",
+        "MATERIALS-CAP-589e28d25e4f138e",
+        "MATERIALS-CAP-8a704bd734bb4195",
+        "MATERIALS-SALICIN",
+        "MATERIALS-OWNER-D-Sucrose",
+        "MATERIALS-OWNER-Sucrose"
+      ],
+      "proposal_ids": [
+        "MATERIALS-P-sucrose-salicin"
+      ],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+      "case_index": 173,
+      "raw_source_label": "peptones",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Twopeptones observations do not assert mammalianorigin. Broadmaterial scope and unchangedconsumption/hold assertions are retained.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-OWNER-Peptone",
+        "MATERIALS-BERGEY-gbm00716",
+        "MATERIALS-BERGEY-gbm01250"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:bf12c276a4114613ceac1a21fce5c8644d2458a194dc5c61117cbf58f270d0fe",
+      "case_index": 175,
+      "raw_source_label": "Cow's milk",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Wholefat attribute andliquid dose are preserved onCowmilk. No skim/whole/processedproduct collapse is introduced.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-1f016a1958f66d14",
+        "MATERIALS-CAP-853f01c1a7ceb7f0",
+        "MATERIALS-OWNER-Cows_Milk"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "case_index": 176,
+      "raw_source_label": "Soy peptone",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Twohundred downstreamholds remain exactly embeddedin thecase digest. Soydigest classification supports broadparent only,not sourceproduct substitution.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-0787250d0c92c239",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-fd95ea8d26cdd5fc",
+        "MATERIALS-CAP-4425f492734e8c24",
+        "MATERIALS-OWNER-Soy_Peptone"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:d6ec49fe7ccdff5833a76643b6b50db8b3a88e37568e9f413bdc80d05ff50532",
+      "case_index": 180,
+      "raw_source_label": "Tomato extract",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Tomatoextract200ml indicates material/preparation,not a specificmolecule orfixedjuice strength. PriorLLMresearch is explicitly historical,not freshproof.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-6c88d45e2f557a0c",
+        "MATERIALS-CAP-fafaa6ff5ff52392",
+        "MATERIALS-OWNER-Tomato_Extract"
+      ],
+      "proposal_ids": [],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+      "case_index": 184,
+      "raw_source_label": "Universal peptone",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "PrimaryMerckM66 combinescasein,meat andsoy andis distinct fromBactoanimal digest. Retiring Universalaliases avoids falseproductidentity withoutassigninghistoricalcatalog107043.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-d8bce642fd34c895",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-CAP-eef57c1f7758d62c",
+        "MATERIALS-ATTEMPT-d03ae2adc1955d22",
+        "MATERIALS-MERCK-UNIVERSAL",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "proposal_ids": [
+        "MATERIALS-P-bacto-aliases"
+      ],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d",
+      "case_index": 186,
+      "raw_source_label": "Neopeptone",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Neopeptone is separatelymarketed andMICRO0000177 exists. Rejecting Bactoowner aliases is supported; the distinctterm remains a candidate,not automaticpromotion.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-c2ffb96b56d10125",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-f1265bc5398a7f56",
+        "MATERIALS-CAP-e55374c088422d1f",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-CAP-84f7477a9175ebf3",
+        "MATERIALS-OLS-NEOPEPTONE-TERM",
+        "MATERIALS-OLS-NEOPEPTONE-SEARCH",
+        "MATERIALS-OWNER-Bacto_Peptone"
+      ],
+      "proposal_ids": [
+        "MATERIALS-P-bacto-aliases"
+      ],
+      "source_holds": "preserved; no releaseapproval"
+    },
+    {
+      "case_id": "KG_CASE:f804dc528f900fb04f9b7cfc94f8efc08380b7a476728e855224bf91c05178db",
+      "case_index": 187,
+      "raw_source_label": "Sea salts",
+      "status": "complete",
+      "outcome": "source_disposition_supported_with_stated_limits",
+      "assessment": "Correctedproposal now useslocalregistry mapping andremoves unsupported NCITcloseMatch. No definition,productcatalog orformula is inferred from the NCITlabel orSigmaexample.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-cc20e1b36b3c7f82",
+        "MATERIALS-ATTEMPT-b6ac372ab259a322",
+        "MATERIALS-CAP-b9779937739a1a31",
+        "MATERIALS-CAP-311a325bbd171a7c",
+        "MATERIALS-SIGMA-S9883",
+        "MATERIALS-OWNER-Sea_Salts"
+      ],
+      "proposal_ids": [
+        "MATERIALS-P-sea-salts-identity"
+      ],
+      "source_holds": "preserved; no releaseapproval"
+    }
+  ],
+  "proposal_assessments": [
+    {
+      "proposal_id": "MATERIALS-P-bacto-aliases",
+      "after_sha256": "e0648998cb0686c507540c7d1e436d93af72cc4318edbc546ea1765788a3cd65",
+      "outcome": "supported_as_bounded_proposal",
+      "limitations": "Requires nativeintegration gates,sharedowner reconciliation andsupportwithdrawal. No wholeowner,role,sourceassertion orreleaseapproval."
+    },
+    {
+      "proposal_id": "MATERIALS-P-proteose-numbered",
+      "after_sha256": "42cba74a4bde864a4deeaa166c9d19d72d4b916d65909bee360a292b2e4b3306",
+      "outcome": "supported_as_bounded_proposal",
+      "limitations": "Requires nativeintegration gates,sharedowner reconciliation andsupportwithdrawal. No wholeowner,role,sourceassertion orreleaseapproval."
+    },
+    {
+      "proposal_id": "MATERIALS-P-sucrose-salicin",
+      "after_sha256": "90d255cebc818220c9e8a94e28a64bb20e114aa30b8f16818951014c83c9fe10",
+      "outcome": "supported_as_bounded_proposal",
+      "limitations": "Requires nativeintegration gates,sharedowner reconciliation andsupportwithdrawal. No wholeowner,role,sourceassertion orreleaseapproval."
+    },
+    {
+      "proposal_id": "MATERIALS-P-sea-salts-identity",
+      "after_sha256": "82672f556794cf3cd1a78e74f5f5bb71038e6665e42278d55739a7c5a68484b0",
+      "outcome": "supported_as_bounded_proposal",
+      "limitations": "Requires nativeintegration gates,sharedowner reconciliation andsupportwithdrawal. No wholeowner,role,sourceassertion orreleaseapproval."
+    }
+  ],
+  "issue_draft_assessments": [
+    {
+      "path": "issues/new-peptone-body.md",
+      "sha256": "92208cb7525b289f25aca8681d8c4576497c54e7bd2f5591d00b79e3255d84bd",
+      "scientific_review": "supported",
+      "scope": "Bounded baseline product/identity findings and proposedremediation are supported. Issue status/history/deduplication claims rely on coordinator live receipts and are not independently re-audited here."
+    },
+    {
+      "path": "issues/new-sea-salts-body.md",
+      "sha256": "8dc94a3fd41731346da2577a0bd002cd808f1335e9bc880f33a90df041d147f5",
+      "scientific_review": "supported",
+      "scope": "Bounded baseline product/identity findings and proposedremediation are supported. Issue status/history/deduplication claims rely on coordinator live receipts and are not independently re-audited here."
+    }
+  ],
+  "limitations": [
+    "The exactnamedsource product catalog/formulation remains unresolved wherever thedecision saysso.",
+    "Allinherited downstreamholds remaineffective; reviewercompletion is not identity/releaseapproval.",
+    "Thefull188casecontract audit and79owner nativeformalreview belongtocoordinator.",
+    "Noallontologyabsence claim is certified; boundednegativequeries are only searchresults.",
+    "Frozen source numeric defects do not assert currentCultureMechmain state."
+  ]
+}

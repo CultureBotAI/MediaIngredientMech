@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/chemicals_research",
+  "recorded_at": "2026-11-08T05:23:17.391636+00:00",
+  "scope": "Read-only review of four validation/native-review compilation scripts; code recommendations sent to coordinator, no edits made.",
+  "files": [
+    {
+      "path": "processing/validate_proposals.py",
+      "sha256_at_recording": "36e40532c3fa5942ca4d79c1f776ff56079dd900cac53430e194ff2cbdc1a9e0"
+    },
+    {
+      "path": "processing/owner_dependencies.py",
+      "sha256_at_recording": "e0e34ddf46aa8ba576d332160697b6ff10987454463aefe348cf06fbece9229d"
+    },
+    {
+      "path": "processing/prepare_native_review.py",
+      "sha256_at_recording": "1381e747a5188b3fd9cc266fb730c0c5c9f8e08124688e1bd16666cb9329f741"
+    },
+    {
+      "path": "processing/author_native_review.py",
+      "sha256_at_recording": "ff8c04e01c6630a8810ac3ee79233eba88d38fce3eef308f3734ad6eaef3229b"
+    }
+  ],
+  "findings": [
+    {
+      "id": "CHEM-PROC-F1",
+      "priority": "P2",
+      "status": "open_at_observation",
+      "script": "prepare_native_review.py",
+      "finding": "Native inspect inputs must bind the assembled decisions/evidence/proposals actually read by author_native_review, not only their fragments. Add assembled artifacts and relevant independent-review inputs."
+    },
+    {
+      "id": "CHEM-PROC-F2",
+      "priority": "P2",
+      "status": "open_at_observation",
+      "script": "author_native_review.py",
+      "finding": "Hardcoded PASS/zero-partonomy/complete-independent-review claims need assertions against the current successful validation receipt, exact proposal hashes, and all188 current independent review statuses before rendering."
+    },
+    {
+      "id": "CHEM-PROC-F3",
+      "priority": "P2",
+      "status": "open_at_observation",
+      "script": "author_native_review.py",
+      "finding": "Description-keyword severity inference misses SeaSalts incorrect primary identity and unsupportedrelation correction. Use explicit scientific-impact severity assignments, preserving nativeP2 for semanticidentity defects."
+    },
+    {
+      "id": "CHEM-PROC-F4",
+      "priority": "P3",
+      "status": "open_at_observation",
+      "script": "prepare_native_review.py",
+      "finding": "started_at is set after subprocess completion; capture start before the call or label recorded time accurately."
+    },
+    {
+      "id": "CHEM-PROC-F5",
+      "priority": "P3",
+      "status": "open_at_observation",
+      "script": "owner_dependencies.py",
+      "finding": "Known frozen owner hints also occur in owners[].path,name_hits[].owner,resolving_owner_paths; include these explicit shapes. Assert repeated owner paths have identical before hashes instead of silently overwriting."
+    }
+  ],
+  "positive_assessments": [
+    "validate_proposals binds actualbefore/afterSHA values and runs native schema+component validators without maintained writes.",
+    "Native verdictneeds_curation and explicitsource-boundselectors avoid wholeowner andreleaseapproval.",
+    "Source-only cases receive no inventedowner targets.",
+    "Cross-shard explicitTPP dependency preserves9532WITHHOLD andCAS136-09-4."
+  ],
+  "limitations": [
+    "This snapshot records initial findings; coordinator remediation and final assembled/native/diff review are separate observations.",
+    "Current actualvalidationreceipt did contain successfulschema andzero baseline/proposedpartonomy violations; the finding concerns compiler trust/binding,not an observed falselypassing currentvalidator."
+  ]
+}

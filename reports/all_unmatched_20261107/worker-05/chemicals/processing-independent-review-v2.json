@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/chemicals_research",
+  "recorded_at": "2026-11-08T05:23:47.409343+00:00",
+  "previous_review": "chemicals/processing-independent-review-v1.json",
+  "scope": "Static re-review of same four helper scripts after coordinator remediation. No script executed andno maintainedinput changed by this reviewer.",
+  "status": "complete",
+  "verdict": "pass_with_limitations",
+  "files": [
+    {
+      "path": "processing/validate_proposals.py",
+      "sha256": "36e40532c3fa5942ca4d79c1f776ff56079dd900cac53430e194ff2cbdc1a9e0"
+    },
+    {
+      "path": "processing/owner_dependencies.py",
+      "sha256": "e8b80d8a60d47727563021c35a7d6086beea0e42e488a68d72aa06191e41dc95"
+    },
+    {
+      "path": "processing/prepare_native_review.py",
+      "sha256": "1381e747a5188b3fd9cc266fb730c0c5c9f8e08124688e1bd16666cb9329f741"
+    },
+    {
+      "path": "processing/author_native_review.py",
+      "sha256": "ff8c04e01c6630a8810ac3ee79233eba88d38fce3eef308f3734ad6eaef3229b"
+    }
+  ],
+  "findings": [
+    {
+      "id": "CHEM-PROC-F1",
+      "priority": "P2",
+      "status": "resolved_by_code_review",
+      "script": "prepare_native_review.py",
+      "finding": "Native inspect inputs must bind the assembled decisions/evidence/proposals actually read by author_native_review, not only their fragments. Add assembled artifacts and relevant independent-review inputs.",
+      "resolution": "prepare inputs now include canonical assembled decisions/evidence/proposals,subagent scopes,structural audit and every artifact independent-review capture."
+    },
+    {
+      "id": "CHEM-PROC-F2",
+      "priority": "P2",
+      "status": "resolved_by_code_review",
+      "script": "author_native_review.py",
+      "finding": "Hardcoded PASS/zero-partonomy/complete-independent-review claims need assertions against the current successful validation receipt, exact proposal hashes, and all188 current independent review statuses before rendering.",
+      "resolution": "author asserts188 unique cases,complete independent review with evidence IDs,schema PASS andzero baseline/proposedpartonomy,exact proposal receipt hash agreement,all nativeinspectedinputSHA values andcurrentcandidate bytes."
+    },
+    {
+      "id": "CHEM-PROC-F3",
+      "priority": "P2",
+      "status": "resolved_by_code_review",
+      "script": "author_native_review.py",
+      "finding": "Description-keyword severity inference misses SeaSalts incorrect primary identity and unsupportedrelation correction. Use explicit scientific-impact severity assignments, preserving nativeP2 for semanticidentity defects.",
+      "resolution": "Explicit MAJOR proposal set includes SeaSalts primaryidentity correction andthe othersemanticidentity/alias defects;nativeP2 andnormalizedmajor assigned consistently."
+    },
+    {
+      "id": "CHEM-PROC-F4",
+      "priority": "P3",
+      "status": "resolved_by_code_review",
+      "script": "prepare_native_review.py",
+      "finding": "started_at is set after subprocess completion; capture start before the call or label recorded time accurately.",
+      "resolution": "prepare records started before subprocess andcompleted afterward."
+    },
+    {
+      "id": "CHEM-PROC-F5",
+      "priority": "P3",
+      "status": "resolved_by_code_review",
+      "script": "owner_dependencies.py",
+      "finding": "Known frozen owner hints also occur in owners[].path,name_hits[].owner,resolving_owner_paths; include these explicit shapes. Assert repeated owner paths have identical before hashes instead of silently overwriting.",
+      "resolution": "ownerhintwalker now accepts exactnormalizeddirectingredient paths inanyscalar/list shape; repeatedownerhashes must agree."
+    }
+  ],
+  "limitations": [
+    "Runtime nativeinspect/validate/save/check receipts andfinal188structural audit must still be checked against exact finalassembled artifacts.",
+    "Compiler assertion ofreviewstatus cannot authenticate reviewerindependence orscientificadequacy; actualseparate reviews remain mandatory.",
+    "Cross-shardhint search is deliberately not acomplete campaignproposal inventory.",
+    "No wholeowner orreleaseapproval arises from thesehelpers."
+  ]
+}

@@ -1,0 +1,107 @@
+id: CultureMech:006921
+name: caminicella_medium
+original_name: CAMINICELLA medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 7.5
+media_term:
+  preferred_term: KOMODO Medium 964
+  term:
+    id: komodo.medium:964
+    label: CAMINICELLA medium
+notes: 'Source: KOMODO ModelSEED | ID: 964 | DSMZ Medium: 964 (mediadive.medium:964)
+  | Aerobic: Yes'
+ingredients:
+- preferred_term: Sea Salt
+  concentration:
+    value: '30'
+    unit: G_PER_L
+- preferred_term: PIPES buffer
+  concentration:
+    value: '6.05'
+    unit: G_PER_L
+- preferred_term: D-Glucose
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17634
+    label: D-glucose
+- preferred_term: Sodium resazurin
+  concentration:
+    value: '0.0005'
+    unit: G_PER_L
+  term:
+    id: CHEBI:8806
+    label: Resazurin
+- preferred_term: Sulfur
+  term:
+    id: CHEBI:26833
+    label: sulfur atom
+  concentration:
+    value: '12'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26833
+    label: sulfur atom
+- preferred_term: Peptone
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: Yeast extract
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+- preferred_term: Na2S x 9 H2O
+  term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:03.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 964'
+- timestamp: '2026-02-03T11:18:54.761480'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 964
+- timestamp: '2026-03-13T06:19:44.998227Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:006921'
+- timestamp: '2026-03-17T06:29:40.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:03.005400+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CAMINICELLA medium" to "caminicella_medium" for consistent
+    matching
+- timestamp: '2026-06-05T07:40:28.259183+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+parent_media:
+  path: data/normalized_yaml/bacterial/caminicella_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:002145
+  name: caminicella_medium
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same source medium number and matching ingredient/concentration signature.

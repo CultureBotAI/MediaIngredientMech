@@ -1,0 +1,424 @@
+{
+  "findings": [
+    {
+      "finding_id": "MEDIA-F01",
+      "case_ids": [
+        "CM_NAME:2dae691480aba0b75571c2a68ac870dbfba28475d4913cafe5ca11a968e37c70"
+      ],
+      "title": "Schneider liquid quantity converted to mass",
+      "detail": "NBRC400 explicitly adds160ml Schneider Drosophila medium after making basalM1D; frozen ingredient uses160G_PER_L. Correct supplied-medium volume and retain the separate M1D and serum layers.",
+      "evidence_ids": [
+        "MEDIA-P011"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/m1d_medium.yaml",
+          "component_path": "ingredients/11",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "160"
+            },
+            "preferred_term": "Schneider's Drosophila medium (Invitorogen, Gibco)"
+          },
+          "sha256": "6b0a69b8bcff7f68386bb3d35aa1458de0177fb36facf7071ad65ecb2694343e"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F02",
+      "case_ids": [
+        "CM_NAME:5d3a0f79fece199bbf454762f8f3d61c3d6e9c7de76fe20c94c7fa6db5e70412"
+      ],
+      "title": "PolyViteX enrichment volume converted to mass",
+      "detail": "NBRC1503 lists PolyViteX10ml, not10g, in chocolate agar made up to1L. Prepared bioMerieux43101 refers to whole medium, not an identifier of PolyViteX alone.",
+      "evidence_ids": [
+        "MEDIA-P024"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/chocolate_agar_polyvitex_pvx.yaml",
+          "component_path": "ingredients/6",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "10"
+            },
+            "notes": "Role: Growth factor",
+            "preferred_term": "PolyViteX"
+          },
+          "sha256": "7dbfc19afe586fee6d73ec3c36a44d89e9e5e8e11a93c375947a4270edc704d6"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F03",
+      "case_ids": [
+        "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d"
+      ],
+      "title": "Nissui MEM liter quantity converted to mass",
+      "detail": "ArchivedTOGO M2847 specifies1L Nissui MEM; frozen ingredient is1G_PER_L. Keep antibiotics/serum additions separate.",
+      "evidence_ids": [
+        "MEDIA-ARCHIVE-M2847"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/eagles_minimum_essential_medium_mem_containing_antibiotics_and_fetal_bovine_serum.yaml",
+          "component_path": "ingredients/3",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)"
+          },
+          "sha256": "4be8965c8e38452bb88c559428a31c1dabb943ba60daf205a3d4fd69fabb2185"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F04",
+      "case_ids": [
+        "CM_NAME:dd0ef6524313e4b5c6944eacd676b8d53c94d020497f23a4428c324fa02ca6a2"
+      ],
+      "title": "M9 stock amount and hierarchy lost",
+      "detail": "ArchivedTOGO M2790 specifies20ml x5M9 stock and separate paragraph5 stock recipe; frozen parent has20G_PER_L and stock salts flattened into main ingredients. Catalog and phosphate hydration remain unproved.",
+      "evidence_ids": [
+        "MEDIA-ARCHIVE-M2790"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+          "component_path": "ingredients/5",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "20"
+            },
+            "preferred_term": "x5 M9 salt (Sigma)"
+          },
+          "sha256": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408",
+        "https://github.com/CultureBotAI/CultureMech/issues/150",
+        "https://github.com/CultureBotAI/CultureMech/issues/214"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F05",
+      "case_ids": [
+        "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251"
+      ],
+      "title": "L15 volume normalized as percent with factor-ten error",
+      "detail": "DSMZ1311 growth medium is93ml L15 in100ml and infection medium96ml in100ml. Frozen mediadive_2620 composition0 is930PERCENT_V_V and mediadive_5834 composition0 is960PERCENT_V_V; neither is a physical percentage. Primary source also gives final2mM glutamine, while frozen solution fields warrant separate scale audit.",
+      "evidence_ids": [
+        "MEDIA-P072"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M976_Leibovitz_s_L-15_Medium_With_10_FBS_And_1.5_NaCl.yaml",
+          "component_path": "ingredients/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "1.0"
+            },
+            "notes": "TOGO M976 / JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium.",
+            "preferred_term": "Leibovitz's L-15 medium",
+            "source": "TOGO M976 / JCM Medium 930",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "f43a6561fea1553559a2e5d5fd0768e41dccbffbb64fbc46b612ff6c6f15902d"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/leibovitzs_l_15_medium_with_10_fbs_and_1_5_nacl.yaml",
+          "component_path": "ingredients/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "1.0"
+            },
+            "notes": "MediaDive J930 / JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium.",
+            "preferred_term": "Leibovitz's L-15 medium",
+            "source": "MediaDive J930 / JCM Medium 930",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "60d212c13858445c4b511ce5f1beeeff7370d89282c5c29ceed4f681acdcd015"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/mediadive_2620_Cultivation_of_Diplorickettsia_massiliensis.yaml",
+          "component_path": "composition/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "PERCENT_V_V",
+              "value": "930.0"
+            },
+            "preferred_term": "Leibovitz's L-15 medium",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "42407dcf72849a594ee3a5afe6ccacf1bcb8741c9f88113e86fe04784699fa1f"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/mediadive_4941_Main_sol_J930.yaml",
+          "component_path": "composition/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "1.0"
+            },
+            "notes": "MediaDive J930 / JCM Medium 930 lists 1.0 L Leibovitz's L-15 medium.",
+            "preferred_term": "Leibovitz's L-15 medium",
+            "source": "MediaDive J930 / JCM Medium 930",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "9ed5513013c701e6405c9b78d2902e9f04a9c11b2366e8c2e72b3b952da2e8c5"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/mediadive_5834_Infection_medium.yaml",
+          "component_path": "composition/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "PERCENT_V_V",
+              "value": "960.0"
+            },
+            "preferred_term": "Leibovitz's L-15 medium",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "3d90c29f5bfc1d72351a170d27deef6f68a2c0535f7250538144afee261903ee"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/xtc_2_medium.yaml",
+          "component_path": "solutions/0/composition/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "930.0"
+            },
+            "notes": "DSMZ Medium 1311 lists 93 ml Leibovitz 15-Medium.",
+            "preferred_term": "Leibovitz's L-15 medium",
+            "source": "DSMZ Medium 1311",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "3b99351e32996a4d0ed90bbd7d899db54b3a585e149352ac44b5a1820ea68658"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/xtc_2_medium.yaml",
+          "component_path": "solutions/1/composition/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "960.0"
+            },
+            "notes": "DSMZ Medium 1311 lists 96 ml Leibovitz 15-Medium.",
+            "preferred_term": "Leibovitz's L-15 medium",
+            "source": "DSMZ Medium 1311",
+            "term": {
+              "id": "mediadive.compound:1941",
+              "label": "Leibovitz's L-15 medium"
+            }
+          },
+          "sha256": "3b99351e32996a4d0ed90bbd7d899db54b3a585e149352ac44b5a1820ea68658"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F06",
+      "case_ids": [
+        "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636"
+      ],
+      "title": "Alternative commercial powder and scratch recipe combined",
+      "detail": "ATCCMedium2 says commercial37.4g MarineBroth2216 OR scratch ingredients. Frozen TOGO_M2266 lists powder and internal constituents together. DSMZ1510 independently adds extra digests and agar and must not be repaired by deleting its intentional additions.",
+      "evidence_ids": [
+        "MEDIA-P013",
+        "MEDIA-P015"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M2266_Marine_Agar_Broth_2216.yaml",
+          "component_path": "ingredients/1",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "37.4"
+            },
+            "preferred_term": "Difco Marine Broth 2216"
+          },
+          "sha256": "5f74e5947d9ca31a31573c7f61ad3528d8aec1b4ffd8abe0faa76d50be4e0811"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/mediadive_3119_Main_sol_1510.yaml",
+          "component_path": "composition/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "37.4"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[0].concentration (Difco Marine Broth 2216) in MediaDive solution 3119; locator=$.data.recipe[0] (compound_id=1379). Provider explicitly reports g_l=37.4. Arithmetic check: 37.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 37.4 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:41.645093+00:00; response SHA256=45eef4259c17543cd1d9fb0215662d73589b5d61a0933a22b771dd3e541d91a6.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/3119",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Difco Marine Broth 2216\",\n                \"compound_id\": 1379,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 37.4,\n                \"unit\": \"g\",\n                \"g_l\": 37.4,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Difco Marine Broth 2216",
+            "term": {
+              "id": "mediadive.compound:1379",
+              "label": "Difco Marine Broth 2216"
+            }
+          },
+          "sha256": "29cf5a04d03a22564305b4db4543394556304330a8ce36fc379fcdf9bd8b9f7a"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/modified_medium_514_for_halomonas_sp.yaml",
+          "component_path": "ingredients/0",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "37.4"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for ingredients[0].concentration (Difco Marine Broth 2216) in MediaDive medium 1510; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=37.4; check: 37.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 37.4 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:42:51.340937+00:00; response SHA256=1351d6c4edd9e01317cff31b81870ea781647f04cc80775134438f1c8c9a35ea.",
+                "reference": "https://mediadive.dsmz.de/rest/medium/1510",
+                "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"Difco Marine Broth 2216\",\n                        \"compound_id\": 1379,\n                        \"amount\": 37.4,\n                        \"unit\": \"g\",\n                        \"g_l\": 37.4,\n                        \"optional\": 0\n                    }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Difco Marine Broth 2216"
+          },
+          "sha256": "0492ff4f37cb81b9c5c8a0fe6c27ddfb4c768a8fa0622a75f8f9d5a32a981396"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/150",
+        "https://github.com/CultureBotAI/CultureMech/issues/214"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F07",
+      "case_ids": [
+        "CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+        "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b"
+      ],
+      "title": "Wilkins-Chalgren powder recipe flattened",
+      "detail": "DSMZ339/339a use33g OxoidCM0643 and separately specify supplements; frozen TOGO recipes also flatten commercial medium constituents into the same layer. DSMZ339a DSM15567 omits added glucose.",
+      "evidence_ids": [
+        "MEDIA-P022",
+        "MEDIA-P042"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M2586_Wilkins-Chalgren_Anaerobe_Broth.yaml",
+          "component_path": "ingredients/1",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "33"
+            },
+            "preferred_term": "Wilkins-Chalgren medium (Oxoid CM0643)"
+          },
+          "sha256": "932f810f4a05c43e146ed403687799711fcc919d85d56bb96f24afd088a1bd8f"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/wilkins_chalgren_anaerobe_broth_n2_co2_for_dsm_15567.yaml",
+          "component_path": "ingredients/1",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "33"
+            },
+            "preferred_term": "Dehydrated Wilkins-Chalgren medium (Oxoid CM0643)"
+          },
+          "sha256": "1b48d77db267ddb488d2a397a2ac941ab29d61a80a83b78686fcf158bb74ce17"
+        }
+      ],
+      "existing_issue_candidates": [
+        "https://github.com/CultureBotAI/CultureMech/issues/150",
+        "https://github.com/CultureBotAI/CultureMech/issues/214"
+      ],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    },
+    {
+      "finding_id": "MEDIA-F08",
+      "case_ids": [
+        "CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+        "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b",
+        "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79"
+      ],
+      "title": "Competing Wilkins-Chalgren owner scopes",
+      "detail": "Dehydrated_Wilkins-Chalgren_Medium, Wilkins-Chalgren-Anaerobe-Broth and Wilkins_Chalgrene_Anaerobe_Broth represent overlapping source labels; the first two carry OxoidCM0643 links. Full owner adjudication is necessary before adding another resolving alias. Existing provider match is not a full-owner merge proof.",
+      "evidence_ids": [
+        "MEDIA-P022",
+        "MEDIA-P042",
+        "MEDIA-P093"
+      ],
+      "frozen_occurrences": [
+        {
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M2586_Wilkins-Chalgren_Anaerobe_Broth.yaml",
+          "component_path": "ingredients/1",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "33"
+            },
+            "preferred_term": "Wilkins-Chalgren medium (Oxoid CM0643)"
+          },
+          "sha256": "932f810f4a05c43e146ed403687799711fcc919d85d56bb96f24afd088a1bd8f"
+        },
+        {
+          "source_file": "data/normalized_yaml/bacterial/wilkins_chalgren_anaerobe_broth_n2_co2_for_dsm_15567.yaml",
+          "component_path": "ingredients/1",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "33"
+            },
+            "preferred_term": "Dehydrated Wilkins-Chalgren medium (Oxoid CM0643)"
+          },
+          "sha256": "1b48d77db267ddb488d2a397a2ac941ab29d61a80a83b78686fcf158bb74ce17"
+        }
+      ],
+      "existing_issue_candidates": [],
+      "issue_dedup_status": "Parent has live issue captures; these are candidate association links, not a claim all details are already covered. No issue filed by this agent."
+    }
+  ]
+}

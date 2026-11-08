@@ -1,0 +1,48 @@
+{
+  "reviewer": "/root/media_research",
+  "recorded_at": "2026-11-08T05:25:21.600935+00:00",
+  "status": "historical findings preserved after author correction",
+  "original_draft_hashes": null,
+  "provenance_limit": "Initial findings were delivered to the author during review before this ledger was persisted; original draft JSON bytes were not separately retained by this reviewer. Final review below binds the exact corrected input hashes, and captured primary evidence is unchanged.",
+  "findings": [
+    {
+      "finding_id": "MEDIA-CHEM-TEO-TARGET",
+      "case_ids": [
+        "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416"
+      ],
+      "initial_finding": "Draft called CHEBI30477 tellurium dioxide, but its captured primary ontology term is tellurite,O3Te dianion.",
+      "evidence_ids": [
+        "CHEM-CAP-ea5b78eecca53ac5",
+        "CHEM-CAP-2256f29f0929d107"
+      ],
+      "resolution": "Current decision explicitly rejects30477, retains primaryTeO2 source restoration and leaves exact dioxide ontology target unverified.",
+      "status": "resolved"
+    },
+    {
+      "finding_id": "MEDIA-CHEM-TARTRATE-PROVENANCE",
+      "case_ids": [
+        "KG_CASE:42f5997700d5a29cc0632e08c3f1e2a319372c1e82ae1896db58f8b046b395f6"
+      ],
+      "initial_finding": "KG tartrate explanation referred to DSMZ1565 without a linked primary capture for that case.",
+      "evidence_ids": [
+        "CHEM-TARTRATE-KG-PRIMARY"
+      ],
+      "resolution": "Current case now links the original DSMZ1565 primary PDF via CHEM-TARTRATE-KG-PRIMARY.",
+      "status": "resolved"
+    },
+    {
+      "finding_id": "MEDIA-CHEM-SUSPENSION-VOLUME",
+      "case_ids": [
+        "CM_NAME:7800a5bc348d4b7fe25893bb56d1ca4c16dd7ec4cc75e099175122bb4ee84c30",
+        "CM_NAME:f6924fb99b3405f434e4017340607246890f7dbf1213a9fd6e697362ccc6d8de"
+      ],
+      "initial_finding": "Draft JCM1030 wording treated addition of200ml water as final suspension volume. Same inference risk was checked for JCM411.",
+      "evidence_ids": [
+        "CHEM-CAP-209b330041a2793e",
+        "CHEM-CAP-325bb28919ae30b6"
+      ],
+      "resolution": "Current decisions explicitly state resuspension with200mlwater and in1Lwater, neither a measured final-volume denominator.",
+      "status": "resolved"
+    }
+  ]
+}

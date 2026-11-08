@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "ROOT-P-thiamine-stock",
+      "case_ids": [
+        "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+        "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+        "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59"
+      ],
+      "description": "Classify JCM403 preparation as STOCK_SOLUTION; preserve exact source-qualified labels and transcribe two named inputs with unmapped component scope. Identity/status remain UNMAPPED; no role or export approval.",
+      "evidence_ids": [
+        "ROOT-jcm-403",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403"
+      ],
+      "owner_path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0",
+      "after_capture": {
+        "root": "artifact",
+        "path": "root/proposed/Thiamine_Solution_See_Medium_No_403.yaml",
+        "sha256": "55139d9ab4949b718ef63960b3a6a8c3f8c2e95e1f4ea6d42683271d8167b3c2"
+      },
+      "identity_consequence": "Unchanged UNMAPPED0538 identity",
+      "predicate_consequence": "No SSSOM row or promotion proposed.",
+      "publication_obligations": "Changed owner bytes invalidate inherited support. Coordinator must use native guarded writer, review complete integrated claims, synchronize and validate. Keep all source-specific holds; no whole-record/role approval.",
+      "cross_shard_conflict": "Check all campaign proposals before applying; original frozen before hash must match. thiamine stock differs from shared Thiamine_pyrophosphate owner in workers05/09."
+    },
+    {
+      "proposal_id": "ROOT-P-fatty-stock",
+      "case_ids": [
+        "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a"
+      ],
+      "description": "Replace erroneous CHEBI fatty-acid class identity with source-defined mixture registry identity; remove inherited single-molecule structure, retain incompatible molecular-class labels as REJECTED_LABEL; preserve existing mixture RAW_TEXT labels without approving them, transcribe source inputs without final-volume inference. Existing WITHHOLD remains.",
+      "evidence_ids": [
+        "ROOT-jcm-266",
+        "ROOT-OWNER-Fatty_Acid_Mixture_See_Medium_No_266",
+        "ROOT-chebi-35366"
+      ],
+      "owner_path": "data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "root/proposed/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+        "sha256": "471a552bc97debca1689e0a8ad3e2303a2651ccf502789ed6bfb9ba86f0890a4"
+      },
+      "identity_consequence": "Local recipe-specific mixture identity",
+      "predicate_consequence": "Remove wrong CHEBI35366 exact row; native builder would emit own local registry exact row, held pending independent integrated review.",
+      "publication_obligations": "Changed owner bytes invalidate inherited support. Coordinator must use native guarded writer, review complete integrated claims, synchronize and validate. Keep all source-specific holds; no whole-record/role approval.",
+      "cross_shard_conflict": "Check all campaign proposals before applying; original frozen before hash must match. thiamine stock differs from shared Thiamine_pyrophosphate owner in workers05/09."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "control": "real reviewed complete fragments accepted",
+      "expected_acceptance": true,
+      "exit_code": 0,
+      "stdout": "188 974 21\n",
+      "stderr": ""
+    },
+    {
+      "control": "all frozen nested owner holds preserved byte-equivalent as JSON values",
+      "result": "PASS"
+    },
+    {
+      "control": "open actual reviewer manifest rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/processing/assemble_outcomes.py\", line 19, in <module>\n    else:assert review.get('review_status',review.get('status'))=='complete', (group,'actual reviewer has open findings')\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('materials', 'actual reviewer has open findings')\n"
+    },
+    {
+      "control": "duplicate review case rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/processing/assemble_outcomes.py\", line 20, in <module>\n    case_reviews=review[rb['case_list_key']];reviewids={r['case_id'] for r in case_reviews};assert len(reviewids)==len(case_reviews)\n                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "control": "stale reviewed fragment rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/processing/assemble_outcomes.py\", line 16, in <module>\n    for filename,h in actual_inputs.items():assert sha(O/group/filename)==h,(group,filename,'stale independent review')\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('media', 'decisions.json', 'stale independent review')\n"
+    },
+    {
+      "control": "pending individual case rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/processing/assemble_outcomes.py\", line 24, in <module>\n    assert cr.get('status')=='complete' or cr.get('verdict')=='supported_with_limits', (group,cr['case_id'],'case not reviewed')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('media', 'CM_NAME:07a946444896ae1f80219e0daa9df0e2bfc1809923488caefa418472ca60c489', 'case not reviewed')\n"
+    },
+    {
+      "control": "restored exact reviewed inputs accepted",
+      "expected_acceptance": true,
+      "exit_code": 0,
+      "stdout": "188 974 21\n",
+      "stderr": ""
+    }
+  ],
+  "assembler_sha256": "d91d09c76024099d321dbd1847140ddfedda40ac6dc86cebe603890281f34b35",
+  "fixture_path": ".temp/all-unmatched-worker-05/assembly-controls/252ae8d9-b874-4760-a488-d4b777dee524"
+}

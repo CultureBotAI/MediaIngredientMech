@@ -1,0 +1,1027 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+      "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bottom layer",
+        "source_label": "Bottom layer",
+        "raw_source_label": "Bottom layer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+        "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source is a preparation-layer label, not a chemical. JCM628 bottom layer combines FeS preparation, modified Wolfe mineral solution and agarose; JCM629 substitutes artificial saltwater. Thus the two occurrences are different formulations despite one string. Frozen 100 G_PER_L is not evidence of 100 g of a substance.",
+      "applicability": "Case3: Retain two recipe-local layer identities. Repair CultureMech hierarchy before proposing any common owner; never alias Bottom layer to iron or FeS. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-628",
+        "ROOT-jcm-629",
+        "ROOT-RECIPE-5b1f0284b8e9f7a4",
+        "ROOT-RECIPE-a2d32d72985e7804"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain two recipe-local layer identities. Repair CultureMech hierarchy before proposing any common owner; never alias Bottom layer to iron or FeS.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:2b63628e7e1902e7cdd721bb2aa23012d4dbf4c0e3e51d942c736017c060f901",
+      "case_input_sha256": "05ae7767d8da7beb31b351bfa279a5f028a84ca432e117a6ec6d985b9f410805",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium 29",
+        "source_label": "Medium 29",
+        "raw_source_label": "Medium 29"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ae896ffa5e45dae2a988c513fc5fe516df08139eed80523aa4a745d3907a8031"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ40 explicitly directs adding 1% NaCl to medium29. The assigned Medium29 input is the complete DSMZ29 base formulation, not sodium chloride or one of its ingredients. The flattened source preserves an anomalous mass unit for a medium reference.",
+      "applicability": "Case13: Represent the DSMZ29 recipe reference and DSMZ40 salt variant in CultureMech; a molecular mapping cannot resolve this named base medium. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-40",
+        "ROOT-dsmz-29",
+        "ROOT-RECIPE-0d8c7ed3bc4764a1"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Represent the DSMZ29 recipe reference and DSMZ40 salt variant in CultureMech; a molecular mapping cannot resolve this named base medium.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+      "case_input_sha256": "a8e35ff3593e9f4209bdb837b76e599c4c89c63f5c29f96cf60463ceb5e4e4ca",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MKP medium",
+        "source_label": "MKP medium",
+        "raw_source_label": "MKP medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:61e4ba696ad5b790b82da57aab32682afcc95f60d319304d8671f957eee5e83f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Official MediaDive1895 identifies MKP as solution6635: CMRL1066, Neopeptone, HEPES, citrate, glucose, pyruvate, N-acetylglucosamine and bicarbonate with pH adjustment. HS-RFB separately adds human serum and albumin. MKP is neither HS-RFB nor CMRL alone.",
+      "applicability": "Case19: Keep the solution6635 preparation boundary and exact component source. No existing MIM owner is established for this complete MKP recipe; its representation belongs to a separately checked named-mixture integration. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-md-1895",
+        "ROOT-RECIPE-feec59febb90e554"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep the solution6635 preparation boundary and exact component source. No existing MIM owner is established for this complete MKP recipe; its representation belongs to a separately checked named-mixture integration.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29",
+      "case_input_sha256": "f312b91619d46505d0752e006ac145bb43a8ed8033463ffa9043d63f23c8345a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium 87",
+        "source_label": "Medium 87",
+        "raw_source_label": "Medium 87"
+      },
+      "occurrence_ids": [
+        "CM_OCC:207077211d3ca6dd81cd4ef19b833c74f4b474025e4059e650e29d259d687cd5"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ87a modifies medium87 by adding vitamin solution CA. Medium87 is the basal whole recipe, while the vitamin solution and its hydrated thiamine ingredient are separate preparations.",
+      "applicability": "Case25: Preserve DSMZ87 versus87a formulation references; do not alias the whole medium to an individual vitamin or generic chemical. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-87a",
+        "ROOT-dsmz-87",
+        "ROOT-RECIPE-a30553925144b36e"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve DSMZ87 versus87a formulation references; do not alias the whole medium to an individual vitamin or generic chemical.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+      "case_input_sha256": "5f604ab3349ba85cb25c8cfccfd9e39a12f3570918f82900bc1810d891048c94",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine solution (see Medium No. 403)",
+        "source_label": "Thiamine solution (see Medium No. 403)",
+        "raw_source_label": "Thiamine solution (see Medium No. 403)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b464254d63e0dc7aa5a26c28a5100c9802b79e54826848cfbdaee142eeae0717",
+        "CM_OCC:e16fb08cbc4bd6fcc76bb8bd5930a800b4c1da2e85ab3c1f7ab259dac15831b4",
+        "CM_OCC:262a3d42cc11806d95c5dbac9672d2d1f8a9a1225a6c3e204cab23493e1a95f2",
+        "CM_OCC:4a358907b41f27d7f9a4a4e16503803cab82117ff022a8b1d5308235c11e98ca",
+        "CM_OCC:c9b990f4064b55517bff6ec1ecc64a9d5ba799fc7b9b952836641e9ddf87531f",
+        "CM_OCC:ab88fa0d02e343a789b204484e80d26066c12d845f0d9628258a1c283132d72a",
+        "CM_OCC:65e619dd6f5619cc890c3f0aecdb4408437346acc4c94b1ef55dd4de298d9126",
+        "CM_OCC:71c5ad7b434ee2d2f0153930f3ee4ee13ebc75253219295bb7dc111b66c436aa",
+        "CM_OCC:0deef79b549cd6a61a9e61ee8bdd5ecbe7661fdeca917258d84a0451809d3b6f",
+        "CM_OCC:7ad04c4d61f55e77e5c6130c0b97cc60ab9433c1f23090d3d390065a0cfa7249",
+        "CM_OCC:c696c9e5ea9b30c50a16cfefcfa4653898c9ad3709d252850cdcb1eb0a6e58c4"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "All eleven frozen SolutionRecipe occurrences explicitly reference JCM403 thiamine solution via mediadive.compound1856. JCM403 defines 10mg Thiamine HCl in100ml sodium phosphate buffer25mM pH3.4. Receiving-medium dose differs among occurrences and does not change the stock identity.",
+      "applicability": "Case41: Enrich the existing unmapped source-defined stock owner without promoting it to free thiamine or thiamine pyrophosphate. Receiving-medium percentages need separate CultureMech quantity review. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-403",
+        "ROOT-jcm-1125",
+        "ROOT-RECIPE-96fa3eb39dd68dcb",
+        "ROOT-RECIPE-6f4beae86bf3a539",
+        "ROOT-RECIPE-09db49e3426ee86e",
+        "ROOT-RECIPE-deb5e286597c977d",
+        "ROOT-RECIPE-6c0dd3b483b8a343",
+        "ROOT-RECIPE-f88f640b60a754fa",
+        "ROOT-RECIPE-f78455a90bd92b21",
+        "ROOT-RECIPE-4db25e9356055811",
+        "ROOT-RECIPE-a69ca664d34dedaa",
+        "ROOT-RECIPE-b9e10bc3a43368cc",
+        "ROOT-RECIPE-2f22b0166b214e7e",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403"
+      ],
+      "proposal_ids": [
+        "ROOT-P-thiamine-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+          "sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:5d265df4517518ebb8d12aa059a984c29e9df3348b794d6b1023eaa8b0f4ef5f",
+      "case_input_sha256": "cdbc07027e95aa58e643a9af930ce0e0a175a3595fcfece226cf78e83f48520a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "ATCC Medium 1256",
+        "source_label": "ATCC Medium 1256",
+        "raw_source_label": "ATCC Medium 1256"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a376d5e93f4bd5f888869db883874aff6484e7a9dfc93f9756d2c5e84f029cf7"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "ATCC1942/JCM161 explicitly uses one litre ATCC1256, then NaCl, Bacto peptone, sulfur, resazurin and sulfide. ATCC1256 is a complete Sulfolobus formulation; final1942 is a modified recipe with a different pH.",
+      "applicability": "Case43: Keep the1256 base-medium reference separate from1942 and its salts; no single chemical or generic peptone synonym is appropriate. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-old-2668",
+        "ROOT-atcc-1256",
+        "ROOT-RECIPE-ef15a907dac3595f"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep the1256 base-medium reference separate from1942 and its salts; no single chemical or generic peptone synonym is appropriate.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:5e992751cd5fb71cd23d43340581fb8ddd38fdf96fddffce2002a4ef1dedbc44",
+      "case_input_sha256": "bd6e069783f0b880e8766f1b9a0a530cb4b14d195eb2b5014704550137903116",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "VFA mix (see below)",
+        "source_label": "VFA mix (see below)",
+        "raw_source_label": "VFA mix (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:01a6c45ab3fcd26ee5429e441275f7b848ac565438c21f8251f4b4d3817e7706",
+        "CM_OCC:f6f16d7a4a8689ceef0e314f040b15760528f01ec84663f62fb4a9e3a5438259"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1130 VFA mix contains acetic17ml, propionic6ml, valeric/isovaleric/isobutyric1ml each and10N NaOH26ml. JCM1385 explicitly inherits1130 with mannitol. This alkaline multicomponent preparation differs from JCM266 fatty-acid mixture (four acids and water with pH adjustment).",
+      "applicability": "Case45: Both assigned occurrences retain the1130 VFA recipe scope. Do not merge with the JCM266 fatty-acid owner merely because both contain volatile acids. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1130",
+        "ROOT-jcm-1385",
+        "ROOT-RECIPE-9fca5916d287189a",
+        "ROOT-RECIPE-8779c940ec074455"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Both assigned occurrences retain the1130 VFA recipe scope. Do not merge with the JCM266 fatty-acid owner merely because both contain volatile acids.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429",
+      "case_input_sha256": "18969243a13c9c9442b5a1a883753215b5c5c74db42391daa7030c9aac396f24",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sludge fluid (medium 119)",
+        "source_label": "Sludge fluid (medium 119)",
+        "raw_source_label": "Sludge fluid (medium 119)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:223a8fd8d928c8e286d4746f7869f14ebb86354315f2ce692f905cd08c90f92e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The KOMODO variant explicitly replaces clarified rumen fluid with sludge fluid from medium119. DSMZ119 prepares anaerobic-digester sludge with yeast extract, incubates, centrifuges and retains the clear supernatant. This is a prepared biological mixture, not raw sludge or rumen fluid.",
+      "applicability": "Case65: The existing Sludge_fluid owner is only a lexical lead (MICRO0000521), without enough preparation scope to approve this specific variant. Preserve source119 preparation and the KOMODO substitution rather than add a universal alias. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-119",
+        "ROOT-RECIPE-c568333eb369649d",
+        "ROOT-OWNER-Sludge_fluid"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The existing Sludge_fluid owner is only a lexical lead (MICRO0000521), without enough preparation scope to approve this specific variant. Preserve source119 preparation and the KOMODO substitution rather than add a universal alias.",
+      "missing_requirement": "The existing Sludge_fluid owner is only a lexical lead (MICRO0000521), without enough preparation scope to approve this specific variant. Preserve source119 preparation and the KOMODO substitution rather than add a universal alias.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sludge_fluid.yaml",
+          "sha256": "45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+      "case_input_sha256": "6fce5ea80fb1c0b56428491de76b1cfcd6f62e839a6b49c52e13a383498a9540",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine solution* (see Medium No. 403 )",
+        "source_label": "Thiamine solution* (see Medium No. 403 )",
+        "raw_source_label": "Thiamine solution* (see Medium No. 403 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6bf77b6cee8bcf26e8f03c90c80758c24045f18fe81e12c0edc13ad270bfc645"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1468 explicitly cross-references Thiamine solution403; the asterisk is a recipe qualifier, not a different molecular identity. JCM403 supplies the buffered stock composition.",
+      "applicability": "Case75: Retain the exact raw starred label as stock provenance on the403 owner; no alias to the pure thiamine or pyrophosphate owners. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1468",
+        "ROOT-jcm-403",
+        "ROOT-RECIPE-62912ce6d778f9b3",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403"
+      ],
+      "proposal_ids": [
+        "ROOT-P-thiamine-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+          "sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:9d2b626c17882f81ff3e211f6d1dce3c6d192d2d6f3d69f2f5bc0120421390d6",
+      "case_input_sha256": "7baae04e8c225ee92abee86628d09723dfadfbe515ba7db9df73b1f205495985",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium 535",
+        "source_label": "Medium 535",
+        "raw_source_label": "Medium 535"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7e6dda745493c68bb1efad67373f08de719d70e8a93f8ffe6f6dcd9e9c201dee"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ535a adds5% blood to medium535 after cooling. The assigned Medium535 input is a whole trypticase-soy-broth-plus-agar formulation, distinct from its isolated agar or added blood.",
+      "applicability": "Case79: Keep base535 and blood-supplemented535a distinct; no formula-level identity claim follows from this recipe reference. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-535a",
+        "ROOT-dsmz-535",
+        "ROOT-RECIPE-2ae1b7e844ab2fb8"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep base535 and blood-supplemented535a distinct; no formula-level identity claim follows from this recipe reference.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+      "case_input_sha256": "14af63c57936316be767d3d1362db66ffaf9601b6f2b7298b44fc0b2018b6417",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixir (see Medium No. 470 )",
+        "source_label": "Wolfe's mineral elixir (see Medium No. 470 )",
+        "raw_source_label": "Wolfe's mineral elixir (see Medium No. 470 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1367 expressly points to JCM470 Wolfe mineral elixir. That preparation contains fourteen salts in acidified water, including cobalt chloride and nickel ammonium sulfate. It differs from MIM Wolfe mineral mix/ATCC mix (EDTA and lower salt quantities) and Modified Wolfe Minerals (different salts/list).",
+      "applicability": "Case80: Keep source-qualified JCM470 mineral-stock context; no alias onto incompatible existing Wolfe recipes. A future new stock must preserve unspecified manganese hydration and acidification. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1367",
+        "ROOT-jcm-470",
+        "ROOT-RECIPE-48b7264cf0d94985",
+        "ROOT-OWNER-Wolfes_Mineral_Mix",
+        "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+        "ROOT-OWNER-Modified_Wolfes_Minerals"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep source-qualified JCM470 mineral-stock context; no alias onto incompatible existing Wolfe recipes. A future new stock must preserve unspecified manganese hydration and acidification.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Wolfes_Mineral_Mix.yaml",
+          "sha256": "8c3a73cfa1887197e1e795b7dc99195b2072f4688ac4404f0db83b00e3e95a89",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/mapped/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/mapped/Modified_Wolfes_Minerals.yaml",
+          "sha256": "9512ca1f07fc2ac7e0e23caef92bdf5d1933e5e25d3040b25b43a8e31f49b392",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:b2206bd404d0663bb8b53a5bbeadca3912777e5eaac7fac5735853cf075a5bd8",
+      "case_input_sha256": "dadbda87dece51af2ac44a8db9d746cee009a04c750ec24b841dc15d2773bfbf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's Modified Mineral Elixir",
+        "source_label": "Wolfe's Modified Mineral Elixir",
+        "raw_source_label": "Wolfe's Modified Mineral Elixir"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1d27e8cd82ccaba8431dce35c2e5fdba9956aa6cc7a9d0267b0d6155cefe3257",
+        "CM_OCC:6cc20456395f0d87374e5a6169dcc633950fe9e2d23814e31cc2fe27ce6d1f44"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both ATCC1190-derived occurrences use the specified modified mineral elixir: NTA, cobalt nitrate hexahydrate, anhydrous calcium chloride and potassium alum, selenite and other salts. Existing Modified_Wolfes_Minerals instead lists cobalt chloride, calcium chloride dihydrate and a different ten-component recipe.",
+      "applicability": "Case84: Do not merge source ATCC1190 modified elixir with the existing CultureBotHT stock. Preserve these complete source formulations for a separate named-stock proposal rather than change another recipe owner. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-1190",
+        "ROOT-atcc-1191",
+        "ROOT-RECIPE-693548ba2284b840",
+        "ROOT-RECIPE-7dc863ff5b8ac1b9",
+        "ROOT-OWNER-Modified_Wolfes_Minerals"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Do not merge source ATCC1190 modified elixir with the existing CultureBotHT stock. Preserve these complete source formulations for a separate named-stock proposal rather than change another recipe owner.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Modified_Wolfes_Minerals.yaml",
+          "sha256": "9512ca1f07fc2ac7e0e23caef92bdf5d1933e5e25d3040b25b43a8e31f49b392",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81",
+      "case_input_sha256": "aa6562fbcca9be70d95869c2e921548908e4710dbbe5671a9ef218685c0ba6ab",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "ATCC Medium 1490",
+        "source_label": "ATCC Medium 1490",
+        "raw_source_label": "ATCC Medium 1490"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fbcadf4595a2a9f59680c766f1a06190f59bdc1305d7fbb93b37f38409c62019",
+        "CM_OCC:4186d9b8947318773ec7b2288cdbbfe95b54b7f7ee6ad57b7807fef26f4bd961"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both source records reference ATCC1490 modified chopped meat base; M2574 adds carbohydrates/rumen fluid and M2618 adds formate/fumarate. Base1490 includes processed meat and filtrate, peptone, yeast extract, salts, hemin and vitaminK1 preparations. It is not food meat or Robertson medium.",
+      "applicability": "Case85: Retain whole-base/variant distinctions and optional agar from the original source. Do not apply Cooked_Meat_Medium food grounding or conflate the two modified complete media. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-1490",
+        "ROOT-togo-api-M2574",
+        "ROOT-togo-api-M2618",
+        "ROOT-RECIPE-fd1be3c67130bb75",
+        "ROOT-RECIPE-17b9f16c92a9a907"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain whole-base/variant distinctions and optional agar from the original source. Do not apply Cooked_Meat_Medium food grounding or conflate the two modified complete media.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+      "case_input_sha256": "f991232b0ee5b3c4ca51922d5738cdcda1baded0e6470444d5c137171e796850",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixir (see below)",
+        "source_label": "Wolfe's mineral elixir (see below)",
+        "raw_source_label": "Wolfe's mineral elixir (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen TOGO471 source points to JCM470 and the below section defines Wolfe mineral elixir. Its high-salt acidified14-salt preparation is specific and distinct from the maintained lower-concentration Wolfe mixes.",
+      "applicability": "Case86: Keep as JCM470 preparation context. Generic see-below wording is not a globally safe resolving synonym without its occurrence namespace. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-470",
+        "ROOT-RECIPE-616f29cc6173669c",
+        "ROOT-OWNER-Wolfes_Mineral_Mix",
+        "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep as JCM470 preparation context. Generic see-below wording is not a globally safe resolving synonym without its occurrence namespace.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Wolfes_Mineral_Mix.yaml",
+          "sha256": "8c3a73cfa1887197e1e795b7dc99195b2072f4688ac4404f0db83b00e3e95a89",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/mapped/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Rumen fluid, clarified (see Medium No. 266)",
+        "source_label": "Rumen fluid, clarified (see Medium No. 266)",
+        "raw_source_label": "Rumen fluid, clarified (see Medium No. 266)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5935adfdab3abba3ad49de3bf66b06bd6ab425af20ea315a7c169ae4ec4a36b8",
+        "CM_OCC:39c25bd01d2ee83bcda7de5b99ec410dab0b50232ce71a257cb1ad3d4adbd3ac"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both JCM1423 and1424 reference clarified rumen fluid266. JCM266 describes preheated rumen contents followed by centrifugation and supernatant collection. Different receiving doses (50 versus20ml) do not equate this product to whole rumen or an arbitrary filtered fluid.",
+      "applicability": "Case91: Preserve source-defined clarified biological material. Ingredient-specific owner review (including prior issue204) is required before attaching an unqualified product alias. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1423",
+        "ROOT-jcm-1424",
+        "ROOT-jcm-266",
+        "ROOT-RECIPE-47166c7750acf289",
+        "ROOT-RECIPE-9969248462e7fa50"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve source-defined clarified biological material. Ingredient-specific owner review (including prior issue204) is required before attaching an unqualified product alias.",
+      "missing_requirement": "Preserve source-defined clarified biological material. Ingredient-specific owner review (including prior issue204) is required before attaching an unqualified product alias.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80",
+      "case_input_sha256": "a1ac44708aa43463c67fa51b22fc804a7ea38d83bc36dbd26d66e0c6d72a872f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "HS medium",
+        "source_label": "HS medium",
+        "raw_source_label": "HS medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2fb7994b676cdf765cfcdd745573a6bda1daa06dd56274091e18e8ab16661cf0"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2643 gives a separate HS medium block (high-salt base with salts, cysteineHCl and resazurin), then125mM methanol and40mM acetate additions. The source supplies a1993 AEM reference. The abbreviation denotes this recipe context; it is not a universal chemical identifier.",
+      "applicability": "Case95: Keep HS basal formulation distinct from methanol-acetate supplemented medium. The TOGO record has no src_url; paper-linked confirmation and scoped recipe identity are required for any new universal resolving alias. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-togo-api-M2643",
+        "ROOT-RECIPE-c17da30347a05c71"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep HS basal formulation distinct from methanol-acetate supplemented medium. The TOGO record has no src_url; paper-linked confirmation and scoped recipe identity are required for any new universal resolving alias.",
+      "missing_requirement": "Keep HS basal formulation distinct from methanol-acetate supplemented medium. The TOGO record has no src_url; paper-linked confirmation and scoped recipe identity are required for any new universal resolving alias.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:d0bb0479aee40433f476c3a75acf0b96288d9f508b1a05a614be6b3dee1fe57f",
+      "case_input_sha256": "f3ab6d9ae717b59e486571bd15513c8d96dedc8a1bb6585c300b2814554b1071",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "M2SGC medium",
+        "source_label": "M2SGC medium",
+        "raw_source_label": "M2SGC medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6b7165c4209e96c0bf6a0fc67e696dccbc5d72db78c17a6bd4679b7aaaecc621"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2789 explicitly defines M2SGC as a modified Med2 broth with casitone, yeast extract, sugars, salts and30% clarified rumen fluid, without sodium lactate. It cites PMID16887612 and separately lists antibiotic/gas conditions. The source body also uses M2GSC spelling.",
+      "applicability": "Case96: Preserve the specific modified formulation and source spelling discrepancy; antibiotics and gas atmosphere are not components of a universal M2SGC identity. Correct the frozen100 G_PER_L medium reference from source100ml before integration. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-togo-api-M2789",
+        "ROOT-RECIPE-69d8a1298722f69e"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve the specific modified formulation and source spelling discrepancy; antibiotics and gas atmosphere are not components of a universal M2SGC identity. Correct the frozen100 G_PER_L medium reference from source100ml before integration.",
+      "missing_requirement": "Preserve the specific modified formulation and source spelling discrepancy; antibiotics and gas atmosphere are not components of a universal M2SGC identity. Correct the frozen100 G_PER_L medium reference from source100ml before integration.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc",
+      "case_input_sha256": "c741bf41cf6cac1e7fc4091bc7ab48c13fb181048ad67b084842300baa06b2e8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Mineral medium",
+        "source_label": "Mineral medium",
+        "raw_source_label": "Mineral medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d6a674e9ad3227a85fdbc303b8410762cef74067b022ec2be5c0113ee761cd51"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM521 Mineral medium is a five-input basal preparation (sea salts, NH4Cl, sodium sulfate, resazurin, water). Subsequent stock additions include vitamins, pyruvate, bicarbonate, decane and reducing solution. Flattening these would erase which preparation the input denotes.",
+      "applicability": "Case99: Keep Mineral medium recipe-local to JCM521 and preserve subsequent additions. A generic mineral-medium label cannot resolve to one chemical or all mineral-media recipes. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-521",
+        "ROOT-RECIPE-6fb922185bab8624"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep Mineral medium recipe-local to JCM521 and preserve subsequent additions. A generic mineral-medium label cannot resolve to one chemical or all mineral-media recipes.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:d87b22b5a7c87bc715c392270bfc7b8393245d1c922bbacd7829f0cc126adef1",
+      "case_input_sha256": "5fdf4afbd1b1789e0e24195dca35071e76fb079702432307f3110e0ee24064cc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "RS Medium - Non-Nutrient Medium (NNM) Component",
+        "source_label": "RS Medium - Non-Nutrient Medium (NNM) Component",
+        "raw_source_label": "RS Medium - Non-Nutrient Medium (NNM) Component"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e58110bc9182c533152ff919ac2110c34b56c41b88e85335b0f4103421735cff",
+        "CM_OCC:55c40221634b054c53e25c5ef6edf5425ecb859687bfc4fc6a3ca3c2a67a4622",
+        "CM_OCC:7a1c8d66b1f6c411c3f60b6acdb2d886c6cba48461ea2d01ac2ed16929f752ca",
+        "CM_OCC:f214da93f7d742328c2e1397340e61de8dc2ae4c5ceea89673dd3bc48bed039e",
+        "CM_OCC:cd78a01cdff5574b2f51a53af25618d30993cf533e23d43c5e539d916efc18ac",
+        "CM_OCC:ba42927df674ad8839b5910944caea3e8bdcb88622c100cc0e7688dd6c5ec3df",
+        "CM_OCC:666ee6dee4e4fae6c289bbdccbc04a5134a5090f64fd99b2a610c37fdf6fe9f1",
+        "CM_OCC:3b1b7ff8eef8e17c380f1f2e122e88d492282a3fa8ec0b12cb6697cd68452231",
+        "CM_OCC:3370c79f00d19064ba7c7b8716cb2a2aadb12aabf9d1cc1cd9cb6217130eced1",
+        "CM_OCC:e7e816d36038ba74945a43d44d2c2af45bcf7cbb605555ab87a83849e82c81b2",
+        "CM_OCC:4ac6082e5d5aca2619a5863b37dc47f8e2f4c4dece0c01999628e26c45ef0feb",
+        "CM_OCC:4c9101706c6bfcdd6b06fe03b1704ddf324983574fbd1c83ebdf210cd9151b71",
+        "CM_OCC:d88b72407ef9ed490e375cf4f06cbe13106d70c346d263f98c81499d7bb4d1b8",
+        "CM_OCC:baf644176135de0e9a4914e27367ee7793c0b0cb3d94e37752760a56d80312fa",
+        "CM_OCC:17ade2a6a84ce852d90c0ef518acef44ce815b6d4de29ba39fe7a0f4c2a91730",
+        "CM_OCC:d5d7a73d01ac9a9d2ea1ef048bd20c35b4a6c1ba3bcc62d3806b4f94de04c8a9",
+        "CM_OCC:d4a9ed88b844c92ddc954fbb32ecbdff1a67d71b8565b39ed2d38be4f92835d7",
+        "CM_OCC:68796a6d056977963f82ab0696f61a3f01a93a46d25240e1cc6a4048aeb63eb1",
+        "CM_OCC:f27df4f080c833468dcd1a314f00b4b4ab056b2d7bdfa320d0f975cc388682cd",
+        "CM_OCC:4cc0bfabf395feeb1387ec6c3a911fbe95e41d6c79feb0c33ff708a6e3ca9c7f",
+        "CM_OCC:eff46648a3cb69bef008877b1e72603358dd307ae65e06020442b455150e8108"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The21 occurrences in the frozen P5 record are the P4 Non-Nutrient Medium carrier in separately prepared stocks and stock mixtures. Live P4 defines a mineral/salt carrier; P5 explicitly distinguishes stocks in NNM from stocks in purified water. The saved CultureMech link already targets010434.",
+      "applicability": "Case102: Retain the existing CultureMech reference without inventing an MIM owner or a pure-water identity. Unspecified carrier volumes cannot be recovered by subtracting solute mass; user-contributed source supports only its stated preparation. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-md-P4",
+        "ROOT-md-P5",
+        "ROOT-RECIPE-cb5a972f2d1da8e1"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the existing CultureMech reference without inventing an MIM owner or a pure-water identity. Unspecified carrier volumes cannot be recovered by subtracting solute mass; user-contributed source supports only its stated preparation.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:d91cb09543c05accf6eb00e342661258e11988eb84982fa71feba38d2307559b",
+      "case_input_sha256": "698f621d7877e874d973a4d5d48d84e01eecc8aa72accb140b8d10b525c0fc71",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixier",
+        "source_label": "Wolfe's mineral elixier",
+        "raw_source_label": "Wolfe's mineral elixier"
+      },
+      "occurrence_ids": [
+        "CM_OCC:22456661f40002d321baa620d26291b9646e582f2531b9f060b9b1c577937acb"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "ATCC2811 prints Wolfe mineral elixier1ml. This authentic typo is identity-bearing only within that medium source. Unlike DSMZ1083, the ATCC sheet does not give its component recipe. Similar Aciduliprofundum names do not prove interchangeable mineral elixirs.",
+      "applicability": "Case103: Need ATCC2811 recipe definition or authoritative cross-reference to select a specific Wolfe formulation; preserve the printed typo and do not assume DSMZ792 or ATCC standard stock. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-old-2472",
+        "ROOT-RECIPE-cb74c7b9d6f36b40"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Need ATCC2811 recipe definition or authoritative cross-reference to select a specific Wolfe formulation; preserve the printed typo and do not assume DSMZ792 or ATCC standard stock.",
+      "missing_requirement": "Need ATCC2811 recipe definition or authoritative cross-reference to select a specific Wolfe formulation; preserve the printed typo and do not assume DSMZ792 or ATCC standard stock.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:dcab813086c94d8ff8307cecf995687500ab798e21fdd3568aaf6fa1e352b959",
+      "case_input_sha256": "aeb01141d881ef8e7ba03a781a679f0fcd5791b2d472e58c79054349fe7056f9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's modified mineral elixir (see below)",
+        "source_label": "Wolfe's modified mineral elixir (see below)",
+        "raw_source_label": "Wolfe's modified mineral elixir (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c85332953b4845e14a6186ad8facee76793872b599224ab47c028205432951cb"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM221 lists NTA1.5g, magnesium sulfate heptahydrate3g, cobalt nitrate hexahydrate, calcium chloride, alum, selenite and other salts. Its MnSO4 xH2O hydration is unspecified while ATCC1190 specifies monohydrate. Existing Modified_Wolfes_Minerals uses a materially different composition.",
+      "applicability": "Case105: Keep JCM221 modified elixir separate from CultureBotHT stock and do not infer the x-hydrate from ATCC. Component form confirmation is required before a cross-source exact formula link. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-221",
+        "ROOT-atcc-1190",
+        "ROOT-RECIPE-fcdc19bccf3c23c0",
+        "ROOT-OWNER-Modified_Wolfes_Minerals"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep JCM221 modified elixir separate from CultureBotHT stock and do not infer the x-hydrate from ATCC. Component form confirmation is required before a cross-source exact formula link.",
+      "missing_requirement": "Keep JCM221 modified elixir separate from CultureBotHT stock and do not infer the x-hydrate from ATCC. Component form confirmation is required before a cross-source exact formula link.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Modified_Wolfes_Minerals.yaml",
+          "sha256": "9512ca1f07fc2ac7e0e23caef92bdf5d1933e5e25d3040b25b43a8e31f49b392",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+      "case_input_sha256": "fb68ed72ddf203869194e70fedec0c60e7e593b27a29a766662dc30969316175",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixir",
+        "source_label": "Wolfe's mineral elixir",
+        "raw_source_label": "Wolfe's mineral elixir"
+      },
+      "occurrence_ids": [
+        "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+        "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+        "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+        "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465",
+        "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Four DSMZ occurrences inherit the792 mineral-elixir formula with MnSO4 monohydrate, while JCM837 explicitly refers to JCM470 with MnSO4 xH2O. All are high-concentration acidified mineral stocks. This contrasts with maintained Wolfe mixes and preserves the hydration difference between source formulations.",
+      "applicability": "Case112: Keep one source case with occurrence-specific formulation subgroups; no single new alias or exact cross-source merge is warranted until manganese supplied form is reconciled. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-1083",
+        "ROOT-dsmz-792",
+        "ROOT-dsmz-792b",
+        "ROOT-dsmz-1092",
+        "ROOT-jcm-837",
+        "ROOT-jcm-470",
+        "ROOT-RECIPE-50a1697df32fe2ac",
+        "ROOT-RECIPE-62792a39759d8222",
+        "ROOT-RECIPE-10b5e06aa5069f2f",
+        "ROOT-RECIPE-a43ae2b1769bc54f",
+        "ROOT-RECIPE-a4747e18766bd439",
+        "ROOT-OWNER-Wolfes_Mineral_Mix",
+        "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Keep one source case with occurrence-specific formulation subgroups; no single new alias or exact cross-source merge is warranted until manganese supplied form is reconciled.",
+      "missing_requirement": "Keep one source case with occurrence-specific formulation subgroups; no single new alias or exact cross-source merge is warranted until manganese supplied form is reconciled.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Wolfes_Mineral_Mix.yaml",
+          "sha256": "8c3a73cfa1887197e1e795b7dc99195b2072f4688ac4404f0db83b00e3e95a89",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/mapped/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4",
+      "case_input_sha256": "17e2ef4216b5013a7ec6009fdb33dc691f3d12798d3322a2c517587b2ee72ecb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium D",
+        "source_label": "Medium D",
+        "raw_source_label": "Medium D"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4db1beae6d1a89f1f470594fe110233ea64b8543d0128988a18ffed441ee347f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2241 identifies MediumDH as MediumD plus HEPES. Its MediumD block and stock notes cite Castenholz/Sheridan; preparation involves10-fold stock and dilution. The frozen flattened MediumD1000 G_PER_L is a recipe reference, not1000g of a chemical.",
+      "applicability": "Case114: Retain MediumD versus bufferedDH and stock/dilution stages. Original publication and exact concentration interpretation remain required before universal identity or component amounts are promoted. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-togo-api-M2241",
+        "ROOT-RECIPE-d255047e787828af"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain MediumD versus bufferedDH and stock/dilution stages. Original publication and exact concentration interpretation remain required before universal identity or component amounts are promoted.",
+      "missing_requirement": "Retain MediumD versus bufferedDH and stock/dilution stages. Original publication and exact concentration interpretation remain required before universal identity or component amounts are promoted.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a",
+      "case_input_sha256": "2142d359d885bc5897b10c7d4c037558d61823015b1a5338d3ce7f97c724a8be",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1846",
+        "source_label": "Fatty acid mixture see Medium No. 266",
+        "raw_source_label": "Fatty acid mixture (see Medium No. 266)"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "MediaDive1846 raw record is the fatty-acid mixture explicitly referencing medium266. JCM266 specifies four named acids, water and NaOH pH adjustment. CHEBI35366 defines the fatty-acid molecular class, not this formulated mixture, so the existing exact owner identity and generic fatty-acid synonyms are unsupported.",
+      "applicability": "Case154: Propose a local mixture identity and source-backed partonomy, preserve source1846 and all prior WITHHOLD. This does not identify a generic VFA mix, individual fatty acid, or other source fatty-acid mixtures. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-266",
+        "ROOT-chebi-35366",
+        "ROOT-OWNER-Fatty_Acid_Mixture_See_Medium_No_266"
+      ],
+      "proposal_ids": [
+        "ROOT-P-fatty-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+          "sha256": "00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    },
+    {
+      "case_id": "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59",
+      "case_input_sha256": "82f44ce7541bb60558fe2bc59891a6b783c975b9e05bffd4bb2a280106202813",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1856",
+        "source_label": "Thiamine solution see Medium No. 403",
+        "raw_source_label": "Thiamine solution (see Medium No. 403)"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1856 source label identifies JCM403 thiamine solution. The explicit stock consists of thiamineHCl plus25mM pH3.4 sodium phosphate buffer. Its10ml source dose does not make it neat thiamine or thiamine pyrophosphate.",
+      "applicability": "Case178: Enrich the existing UNMAPPED0538 stock record with exact raw aliases and composition, retaining UNMAPPED until its own mapped identity is curated; no transfer from pure-compound evidence. Exact frozen occurrence paths and source IDs remain bound by ROOT-SHARD; sharing a name with another case does not merge their identities.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-403",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403"
+      ],
+      "proposal_ids": [
+        "ROOT-P-thiamine-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+          "sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies."
+    }
+  ]
+}

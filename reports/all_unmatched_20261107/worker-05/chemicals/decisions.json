@@ -1,0 +1,1754 @@
+{
+  "schema_version": 1,
+  "worker_slot": 5,
+  "shard_sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727",
+      "case_input_sha256": "365e3137bc335425a4cd247457ce3aab842560e5545ab35cfab93f9af35875ab",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Dextrose (BD 215530)",
+        "source_label": "Dextrose (BD 215530)",
+        "raw_source_label": "Dextrose (BD 215530)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:070ac64dc4408b63304d8b691b9a82b306e31689f3914eea627a6f1e99bf98ec",
+        "CM_OCC:8e3c9de816dad4419727bfa56e313a163df798333fb3f28be6db58c925e16249",
+        "CM_OCC:2cb2156d7a8739ad61b1f5b70ace92f8b6af50c110033889694494f79d560c1f"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "BD product 215530 identifies D(+)-glucose anhydrous. The source reagent therefore belongs to active D-glucose CHEBI:17634; the rejected Dextrose record is a historical tombstone. No glucose monohydrate or specific ring anomer is inferred.",
+      "applicability": "All three TOGO M2399/M2402/M2404 occurrences are 2 g reagent inside OADC composition. Add the complete supplier label as a catalog variant; retain stock nesting and mass-only notes. This does not map OADC to glucose.",
+      "evidence_ids": [
+        "CHEM-SRC-006",
+        "CHEM-RECIPE-006-01",
+        "CHEM-RECIPE-006-02",
+        "CHEM-RECIPE-006-03",
+        "CHEM-CAP-54ec413d4dba0fba",
+        "CHEM-CAP-2e36b7f2d05209a0",
+        "CHEM-CAP-d1ffb78c451bbabf",
+        "CHEM-CAP-c119b9ae9342e2b9",
+        "CHEM-FAIL-f64b77c8c71e",
+        "CHEM-WEB-6",
+        "CHEM-OWNER-9642ca4960ad"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-dextrose"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/D-glucose.yaml",
+          "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075",
+      "case_input_sha256": "0d33316ccc177c2a0ba582f1d8b742b109d88012afe797a99efb30433d520bfa",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Iron (powder, 20 - 60 mesh, Nacalai)",
+        "source_label": "Iron (powder, 20 - 60 mesh, Nacalai)",
+        "raw_source_label": "Iron (powder, 20 - 60 mesh, Nacalai)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:06c36e49f693a6a15d24df9aa6161fef97afed71c707b6a133885f01b89d3b8b"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Nacalai 19418-25 identifies CAS7439-89-6 iron powder,20–60 mesh. JCM673 supplies the same powder as a weighable ingredient. CHEBI:82664 iron(0) is the active bulk-metal owner; CHEBI:18248 iron atom is not the supplied substance.",
+      "applicability": "The sole JCM673/TOGO692 occurrence names supplier and mesh. A catalog alias preserves the supplied morphology without making a new chemical identity or changing historical powder-to-metal consolidation.",
+      "evidence_ids": [
+        "CHEM-SRC-007",
+        "CHEM-RECIPE-007-01",
+        "CHEM-CAP-11d151cb0257d194",
+        "CHEM-CAP-610933dda9a38c76",
+        "CHEM-CAP-a4d58bf3f3b268b6",
+        "CHEM-CAP-725a931dca3bf2f5",
+        "CHEM-CAP-0d24fad2c28ce16b",
+        "CHEM-OWNER-e1938013c4b8"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-iron"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Iron.yaml",
+          "sha256": "791d68106d2f4fd7c5c6e9c4f1814be0df3ed8fb167a3c51591fb76a9024a4ce"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:23daec5a08dc35f1e39edc61f4b96e8852e0363d2f8a4eafb6fbe52731201d44",
+      "case_input_sha256": "abf87da86ceaa94a6d6a22afc8ba00e51a5f3dce392bbb56d04b15bab048934e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2-tartrate x 2 H2O",
+        "source_label": "Na2-tartrate x 2 H2O",
+        "raw_source_label": "Na2-tartrate x 2 H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0bc4efe1e567fbc85ddd07d2a4f2a814d75e5668d4bc57de8d00d69398e242ac",
+        "CM_OCC:78328118c86b96efef5b66f30a035903c525d7366ca16af7f7e9b6204a3d6a28"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "DSMZ1565 explicitly supplies disodium tartrate dihydrate. CHEBI:63017 is sodium L-tartrate without the two waters and with specified stereochemistry. The source does not identify L,D,racemic or meso material. A general sodium-tartrate string cannot establish an exact L-dihydrate identity.",
+      "applicability": "Both CultureMech occurrences belong to DSMZ1565 or its solution import. Preserve two waters and source compound1423; do not resolve to the current anhydrous L-tartrate owner.",
+      "evidence_ids": [
+        "CHEM-SRC-010",
+        "CHEM-RECIPE-010-01",
+        "CHEM-RECIPE-010-02",
+        "CHEM-CAP-fc7901de9c8e8069",
+        "CHEM-CAP-b74c726dd80743b4"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Obtain the DSMZ1565 tartrate supplier/catalog or stereochemical specification, then verify a form-specific ontology/CAS identity; absent that, use a source-qualified dihydrate registry identity with a defensible asymmetric parent relation.",
+      "missing_requirement": "Obtain the DSMZ1565 tartrate supplier/catalog or stereochemical specification, then verify a form-specific ontology/CAS identity; absent that, use a source-qualified dihydrate registry identity with a defensible asymmetric parent relation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e",
+      "case_input_sha256": "d5cf82c75511e922ee323d10e74610f97b4ef6f20bc0c134abf29b465a6af508",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NaCOOH",
+        "source_label": "NaCOOH",
+        "raw_source_label": "NaCOOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3b98273e3b589c7040f112fb9abafadb2a835985e2533e65688eaed5bbfd8e20"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M3211 explicitly associates NaCOOH with its sodium-formate component. OLS CHEBI:62965 defines sodium formate; the raw condensed notation supplies neither a hydrate nor a stock qualifier.",
+      "applicability": "This applies only to the sodium-formate row in Methanosarcina siciliae marine medium. Preserve raw NaCOOH as a source alias; do not transfer unrelated GMO labels from adjacent rows.",
+      "evidence_ids": [
+        "CHEM-SRC-024",
+        "CHEM-RECIPE-024-01",
+        "CHEM-CAP-baa7ab015ab6d5a5",
+        "CHEM-CAP-8ec5c3387a865d32",
+        "CHEM-OWNER-0efc6c2a4840"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-formate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-formate.yaml",
+          "sha256": "1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+      "case_input_sha256": "c8713fc32c15adeb807b3172166e06ee395d78e6bb89ef4d63081cb4a9e1be09",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MgSO .7H 0",
+        "source_label": "MgSO .7H 0",
+        "raw_source_label": "MgSO .7H 0"
+      },
+      "occurrence_ids": [
+        "CM_OCC:092a718a269808868b2e33c81ebf7e4a6b543c5f7aac8ae0c6d116627e1e7451",
+        "CM_OCC:c38410b4fe4fa10bbc419bc5b1c7b6a94075e1cc93a378ebe2c7e55658ff7787",
+        "CM_OCC:5569dd9d8368bc0b808d7afa321689c6ee8a14870144b396852f16a463cb9100"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The CCAP E27,E31 and E31_ANT primary PDFs print magnesium sulfate heptahydrate, with subscripts lost in the flattened raw label. CHEBI:31795 is the heptahydrate and is distinct from MgSO4 anhydrous or monohydrate.",
+      "applicability": "All three frozen CCAP occurrences use MgSO .7H 0; the intact primary formula fixes the typography. The source-scoped alias does not validate every imported concentration or merge E31_ANT with its constituent stocks.",
+      "evidence_ids": [
+        "CHEM-SRC-026",
+        "CHEM-RECIPE-026-01",
+        "CHEM-RECIPE-026-02",
+        "CHEM-RECIPE-026-03",
+        "CHEM-CAP-18d4f57118f39820",
+        "CHEM-CAP-f74b6f207f2c363e",
+        "CHEM-CAP-2dd30154d45162d8",
+        "CHEM-CAP-9c1a97a1e021ef5b",
+        "CHEM-OWNER-93db3b16772e"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-magnesium-heptahydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+          "sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+      "case_input_sha256": "823221f252c56090797ca01985678dd28f034507e1aaa1b3541477a029b2ed63",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "So(Sulfur Powder)",
+        "source_label": "So(Sulfur Powder)",
+        "raw_source_label": "So(Sulfur Powder)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b1f0b93d1421356fa381204546322c37c4f3676aa53128dfd3fc4a1a28c9333b"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M2553 calls the reagent sulfur powder. The So token is source typography for elemental sulfur, not sulfur monoxide or a sulfate. Active Sulfur is CHEBI:33403 elemental sulfur.",
+      "applicability": "The single source powder occurrence supports preserving the complete raw label as an alias of the bulk elemental-sulfur owner. Particle form does not assert a particular allotrope.",
+      "evidence_ids": [
+        "CHEM-SRC-027",
+        "CHEM-RECIPE-027-01",
+        "CHEM-CAP-c7ce4af92ddac4f6",
+        "CHEM-CAP-a8df01c7239a8122",
+        "CHEM-CAP-c108c1a21b52d95b",
+        "CHEM-OWNER-959cec825f77"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-sulfur"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sulfur.yaml",
+          "sha256": "d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "case_input_sha256": "3609bf355091abb3388887deed3fbae6391a329338e77d05a32dddfbdcaf8526",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine-HCl·H2O (Vitamin B1)",
+        "source_label": "Thiamine-HCl·H2O (Vitamin B1)",
+        "raw_source_label": "Thiamine-HCl·H2O (Vitamin B1)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:750ca6e602619153bc2d9d97925f9cfe29b1faab5283067e75d49f8b0770fb51",
+        "CM_OCC:3b8df504b3fea449da7cb5de638db5e6102c008a346ea7c8babe1b53cc9514cb",
+        "CM_OCC:e88296a7c96873bbbdbd2ee0b767815c0d4345c674957212c3bd225be8e22010",
+        "CM_OCC:7d7cda807fa9cb5685230b5b1e1f1ed0e6340636a9a4fdbd0d843d094093c90a",
+        "CM_OCC:4b6fa456271f78e5b2f2f23b280d935b58cc57a0249fcb0cac625c0328ba25ef"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1550,1443,1444,1445 and1447 explicitly name Thiamine-HCl·H2O in their vitamin preparations. The named monohydrate must not become CHEBI:49105 thiamine hydrochloride or CHEBI:132751 dihydrate as an exact identity. The exact OLS monohydrate query returned zero results, which is bounded search evidence only.",
+      "applicability": "All five frozen occurrences retain the single water and source vitamin-stock context. The generic GMO thiamine assignment is insufficient to erase the salt/hydrate qualifier.",
+      "evidence_ids": [
+        "CHEM-SRC-028",
+        "CHEM-RECIPE-028-01",
+        "CHEM-RECIPE-028-02",
+        "CHEM-RECIPE-028-03",
+        "CHEM-RECIPE-028-04",
+        "CHEM-RECIPE-028-05",
+        "CHEM-CAP-704b31668b441561",
+        "CHEM-CAP-f0c1b4928af89872",
+        "CHEM-CAP-a99de49c99e519a4",
+        "CHEM-CAP-1fc151e426d45042",
+        "CHEM-CAP-6b44ed77cac99113",
+        "CHEM-CAP-aa10057ea2c6f012",
+        "CHEM-CAP-7376810b484a47e8",
+        "CHEM-CAP-f55e3a4d1efb7d51",
+        "CHEM-CAP-f28524e690e051c1",
+        "CHEM-CAP-77de000b5fa8d1a6",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-12d6346a73c5dd24"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Establish a primary supplier/CAS or structure for the NBRC monohydrate, including chloride stoichiometry, and test a form-specific term or registry identity; do not silently correct H2O to2H2O.",
+      "missing_requirement": "Establish a primary supplier/CAS or structure for the NBRC monohydrate, including chloride stoichiometry, and test a form-specific term or registry identity; do not silently correct H2O to2H2O.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+      "case_input_sha256": "3bcbf1602bf5552f0a0850853c8c4f607442ed88d28623ff4e0ca4265fb81ddb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "RibofIavin",
+        "source_label": "RibofIavin",
+        "raw_source_label": "RibofIavin"
+      },
+      "occurrence_ids": [
+        "CM_OCC:beade6c2e6d5a1f82e93d8c2152e9a94b20912c89267ff0ddfdf711072b4feac"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M3161 explicitly labels the component riboflavin while preserving the source typo RibofIavin. CHEBI:17015 is riboflavin.",
+      "applicability": "The sole Modified P7 occurrence is in a vitamin preparation: source5mg in1L stock, with10ml stock added. Frozen5g/L is a separate source-concentration defect. The proposal adds only the source spelling alias.",
+      "evidence_ids": [
+        "CHEM-SRC-030",
+        "CHEM-RECIPE-030-01",
+        "CHEM-CAP-f93edce2e35b29b6",
+        "CHEM-CAP-3f87f8dfda3887b7",
+        "CHEM-OWNER-59776f859c41"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-riboflavin"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Riboflavin.yaml",
+          "sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa",
+      "case_input_sha256": "7f49a3c1ce107cc13e437a0fa9d009725c7baa0d84e76b526e860a73be73e299",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MnCI2.4H2O",
+        "source_label": "MnCI2.4H2O",
+        "raw_source_label": "MnCI2.4H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f77ae0a944f8bfeadd01225b17e83fedd00a431643e7f24c3b4811193f91103a",
+        "CM_OCC:403a5bb98e98e915e6470ed0af4e0598d0d1a3664d67ff4fee3cbde64770dcca",
+        "CM_OCC:ce923aa01bda5e49687245b6ec97bfe223182422dc8e5100704ad3c6b9fc9084"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M3120,M2367 andM2277 identify manganese chloride tetrahydrate in the rows whose string reads MnCI2.4H2O. CHEBI:86368 preserves MnCl2·4H2O. Uppercase I is a transcription error for lowercase l in Cl.",
+      "applicability": "All three occurrences have the same tetrahydrate supplied form, including BG11 trace-stock and Pfennig contexts. A spelling alias does not approve their flattened gram-per-liter values.",
+      "evidence_ids": [
+        "CHEM-SRC-038",
+        "CHEM-RECIPE-038-01",
+        "CHEM-RECIPE-038-02",
+        "CHEM-RECIPE-038-03",
+        "CHEM-CAP-178c00787726f6db",
+        "CHEM-CAP-90c71e16ed3e36ea",
+        "CHEM-CAP-b5d7e0a2820706b4",
+        "CHEM-CAP-bfb113a11d7f7c01",
+        "CHEM-OWNER-f57a467dbfb7"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-manganese-tetrahydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Mncl2_X_4_H2o.yaml",
+          "sha256": "ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b",
+      "case_input_sha256": "7f4657aefcd8d3c7a07b5f659cef8ef439c2b584a2862e012b4569fb582c4246",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ground sulfur powder",
+        "source_label": "Ground sulfur powder",
+        "raw_source_label": "Ground sulfur powder"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6b10d65b905447f370a91feadd7830f825bde92b44d809a2a391650b238d7d71"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M3129 supplies ground sulfur powder as the bulk elemental reagent; CHEBI:33403 supports elemental sulfur without asserting an atom or a specific ring allotrope.",
+      "applicability": "The sole20g powder row supports a raw source alias on the already consolidated Sulfur owner. Grind size is unspecified.",
+      "evidence_ids": [
+        "CHEM-SRC-042",
+        "CHEM-RECIPE-042-01",
+        "CHEM-CAP-2219370bc9ce67b6",
+        "CHEM-CAP-a8df01c7239a8122",
+        "CHEM-CAP-c108c1a21b52d95b",
+        "CHEM-OWNER-959cec825f77"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-sulfur"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sulfur.yaml",
+          "sha256": "d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+      "case_input_sha256": "7519989a8a8bb86cc6afb896262359d75a124e640789802b188c61362a3cf410",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Niacin (B3)",
+        "source_label": "Niacin (B3)",
+        "raw_source_label": "Niacin (B3)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c3a689b2fbe025306a8211e4564bc25444c277fa940510161d1b9a5745f0c26d"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Niacin here is the named nicotinic-acid vitamin solute, consistent with CHEBI:15940. The frozen P5 source already separates the single stock from its solute.",
+      "applicability": "The one nested composition node in RS nutrient-medium vitamin solution is1g/L niacin solute. Add Niacin(B3) wording only to nicotinic acid; neither the single stock nor the vitamin mixture becomes that molecule. The P5 page is user contributed and its concentration evidence is not a role approval.",
+      "evidence_ids": [
+        "CHEM-SRC-049",
+        "CHEM-RECIPE-049-01",
+        "CHEM-CAP-86994abdcb080eaa",
+        "CHEM-CAP-c1a2f9ecce7dc984",
+        "CHEM-OWNER-2acc28cf8842"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-niacin"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+          "sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+      "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1M HEPES-KOH",
+        "source_label": "1M HEPES-KOH",
+        "raw_source_label": "1M HEPES-KOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+        "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1221 and1474 specify20ml of1M HEPES-KOH. This is a neutralized prepared buffer stock, distinct from HEPES free acid CHEBI:42334. Both concentration and counterion preparation matter.",
+      "applicability": "The two flattened ingredient rows currently say20g/L. Primary source volume is20ml, and stock pH/composition cannot be reconstructed by treating the number as mass. Preserve the stock label and prepare a source formulation record only after composition/pH confirmation.",
+      "evidence_ids": [
+        "CHEM-SRC-053",
+        "CHEM-RECIPE-053-01",
+        "CHEM-RECIPE-053-02",
+        "CHEM-CAP-8d12f0bd070c4ccb",
+        "CHEM-CAP-b4a1db85c19c42e5",
+        "CHEM-CAP-75a5cab55ae32443",
+        "CHEM-CAP-c801a5637573d5ae",
+        "CHEM-CAP-ed175c6ef98639a6"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Retrieve a preparation specification for the1M HEPES-KOH stock, including KOH adjustment/pH and final volume, before minting or exact-matching a stock owner.",
+      "missing_requirement": "Retrieve a preparation specification for the1M HEPES-KOH stock, including KOH adjustment/pH and final volume, before minting or exact-matching a stock owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:7800a5bc348d4b7fe25893bb56d1ca4c16dd7ec4cc75e099175122bb4ee84c30",
+      "case_input_sha256": "3868ce650aa43b6e90338a2817bf440ec18945387b7b53430e1b711fd26d6e75",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ferrihydrite suspension (see below)",
+        "source_label": "Ferrihydrite suspension (see below)",
+        "raw_source_label": "Ferrihydrite suspension (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6ea7bfd9b2540ac734e1defecb3e62a6bae393b3ccc06c370cd8bb7a135abffb"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1030 defines a ferrihydrite suspension by precipitating FeCl3·6H2O with NaOH atpH7–7.5, washing and resuspending the precipitate. It is neither the FeCl3 precursor nor pure crystalline Fe2O3.",
+      "applicability": "The frozen200g/L row corresponds to200ml suspension in the source. The source gives320ml of60g/L FeCl3·6H2O precursor, wash steps and resuspension with200ml distilled water (not an established final-volume denominator); retain this material preparation and do not assign a pure-molecule exact target.",
+      "evidence_ids": [
+        "CHEM-SRC-059",
+        "CHEM-RECIPE-059-01",
+        "CHEM-CAP-d5b6fd87eabcfeb3",
+        "CHEM-CAP-209b330041a2793e"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: A suspension record needs the retained preparation and an explicit final solids/Fe concentration if quantitative composition is asserted.",
+      "missing_requirement": "A suspension record needs the retained preparation and an explicit final solids/Fe concentration if quantitative composition is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51",
+      "case_input_sha256": "75ce5084d7c9f906ce39e3d9a323f3fcd74f9d74c71526db799a2fd4e45cf3ae",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine solution*****",
+        "source_label": "Thiamine solution*****",
+        "raw_source_label": "Thiamine solution*****"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ca5bddea834b7ee8511c4197814303a03b19cd1638127b389079b909a5fff6e7"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1321 footnote***** defines10mg thiamine-HCl in100ml25mM sodium-phosphate buffer,pH3.4,filter sterilized. This is a buffered stock with a chemically distinct solute; generic thiamine and other named thiamine stocks are not exact whole-stock identities.",
+      "applicability": "The frozen filename NBRC_1323.yaml actually identifies NBRC1321 StrainPf12B. Its1ml addition refers to the footnote stock. Preserve that provenance discrepancy and footnote identity rather than silently choosing medium1323.",
+      "evidence_ids": [
+        "CHEM-SRC-060",
+        "CHEM-RECIPE-060-01",
+        "CHEM-CAP-2caf4cd3f91d0ec5"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: If a stock owner is introduced, bind it to NBRC1321 footnote***** and retain phosphate-buffer components,pH3.4 and10mg/100ml basis; the exact thiamine-HCl supplied hydration remains unspecified.",
+      "missing_requirement": "If a stock owner is introduced, bind it to NBRC1321 footnote***** and retain phosphate-buffer components,pH3.4 and10mg/100ml basis; the exact thiamine-HCl supplied hydration remains unspecified.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:79509089b17b506a45a709c251375d9aba76e83947e0c7d34b85381f5bd54f93",
+      "case_input_sha256": "a6c1d00ef16cb81cfbaaeb39db414369600e2804bc7d478b7ce6347189f3ee65",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na-meta silicate",
+        "source_label": "Na-meta silicate",
+        "raw_source_label": "Na-meta silicate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5a066ae61fc49bfed7ad814b928035b624856f2e6caa91cf63b829188b1b9bd8",
+        "CM_OCC:6e4a31669775e001b84fee7f5003e15a000fb51e517f47498816089192c01896",
+        "CM_OCC:6e1f1be628e31bd7897d03385f665c60adeeb807335e177ec8b115735d2fd821",
+        "CM_OCC:2823f99ee15f20e356f58c527ff2e837579a809b56762294b629b7f663455ce7",
+        "CM_OCC:89b99a45faef14792121781199db4d975de3e566f609d896f645542c62d263c8",
+        "CM_OCC:4ccd9c47cd7c6038007740559a8f010f53207834c4f5fcb623b84c60dd9babca"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "DSMZ524 and623 print Na-meta silicate without a hydration qualifier. The name supports sodium metasilicate, but not exact nonahydrate CHEBI:132108 or an assumed anhydrous product. Current sodium-metasilicate/sodium-silicate owners differ in specificity.",
+      "applicability": "Six occurrences are duplicated recipe/solution representations of the same two media:12mg in524 and4mg in623. Their complete source context does not identify supplier,hydrate or CAS.",
+      "evidence_ids": [
+        "CHEM-SRC-061",
+        "CHEM-RECIPE-061-01",
+        "CHEM-RECIPE-061-02",
+        "CHEM-RECIPE-061-03",
+        "CHEM-RECIPE-061-04",
+        "CHEM-RECIPE-061-05",
+        "CHEM-RECIPE-061-06",
+        "CHEM-CAP-cdb07af2d1443706",
+        "CHEM-CAP-c24e6de63aab96bf",
+        "CHEM-CAP-2243db4bba8330fa",
+        "CHEM-CAP-ceb79c1f5748c259",
+        "CHEM-OWNER-7ae736d6a61e"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Obtain a DSMZ supplier/catalog or hydrated-form specification for ingredient537 and review the generic versus metasilicate owner boundary before adding an exact synonym.",
+      "missing_requirement": "Obtain a DSMZ supplier/catalog or hydrated-form specification for ingredient537 and review the generic versus metasilicate owner boundary before adding an exact synonym.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Metasilicate.yaml",
+          "sha256": "4cbb641901db44535dbe3be87fe27f4ac7d3b3b9ee420bc8dfc96b725822dbca"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1",
+      "case_input_sha256": "51c508b3197a76257dc6bae4099996f97db05d46f511a3c4a1b6552ac38e04c3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MgSO 7H O",
+        "source_label": "MgSO 7H O",
+        "raw_source_label": "MgSO 7H O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4f80e86736277c4b4e46ea7721b8cf336736f7db1df5827f64983d76ad12c782"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "CCAP TAP primary stock solution1 prints MgSO4·7H2O. The raw MgSO 7H O has lost subscripts; CHEBI:31795 is the correct supplied heptahydrate.",
+      "applicability": "The one TAP occurrence is2g/L within stock1, of which50ml enters a liter of medium; its flattened2g/L main-medium value is not validated. Add only the source OCR alias to the heptahydrate owner.",
+      "evidence_ids": [
+        "CHEM-SRC-073",
+        "CHEM-RECIPE-073-01",
+        "CHEM-CAP-2462f1349d33dc6f",
+        "CHEM-CAP-9c1a97a1e021ef5b",
+        "CHEM-OWNER-93db3b16772e"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-magnesium-heptahydrate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+          "sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:913f1d246e38506d99dccac4dd555f837f6ad4587101f5e4f927273aa347818c",
+      "case_input_sha256": "8db73785174781ca025eb7d0e25fb14b35a1da267c8bc5baeb94936d3a472884",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine pyrophosphate (0.2% w/v in water)",
+        "source_label": "Thiamine pyrophosphate (0.2% w/v in water)",
+        "raw_source_label": "Thiamine pyrophosphate (0.2% w/v in water)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:33bb811186f389c24e1cb62667b18c3d91703bda14cf54780a6adf1e086108a8"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2577 explicitly names0.2%w/v thiamine pyrophosphate in water and adds1.5ml within the TPP/VFA solution. The existing0.2% owner is a stock registry identity. Its six resolving pure-solute aliases are wrong whole-stock identities and should become nonresolving REJECTED_LABEL entries.",
+      "applicability": "The sole source occurrence supports the complete qualified stock alias and retirement of the six solute aliases. It does not establish whether the dissolved solute was chloride, a particular protonation state, or a hydrate; preserve prior#268/#871 chemistry removal and do not reconstruct components from the name.",
+      "evidence_ids": [
+        "CHEM-SRC-074",
+        "CHEM-RECIPE-074-01",
+        "CHEM-CAP-082d61a7481e4dee",
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15",
+        "CHEM-OWNER-ee90f6fa3c70"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-tpp-stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+          "sha256": "ab3662e22bd04c2d2a0e04a836d6d09f155b39bc0a00abab6a17d0c68e214c16"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/268",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/871"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+      "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Tris-HCl",
+        "source_label": "Tris-HCl",
+        "raw_source_label": "Tris-HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+        "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+        "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+        "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+        "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+        "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+        "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+        "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+        "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+        "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+        "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+        "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+        "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+        "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+        "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8",
+        "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The16 Tris-HCl occurrences mix reagent-mass rows with explicitly pH-defined and volumetric buffer preparations. CHEBI:9754 is tris free base, not a universal exact target for either the hydrochloride salt or a prepared buffer.",
+      "applicability": "Read all16 frozen rows: DSMZ927/802 mass rows; DSMZ394/1137 andJCM1061 volumetric contexts; TOGO2313 explicitly50mM,pH7.8. Mediadive solution5126 carries an impossible990.099%v/v and several others import free-base exact grounding. Split by occurrence scope before any resolver alias.",
+      "evidence_ids": [
+        "CHEM-SRC-076",
+        "CHEM-RECIPE-076-01",
+        "CHEM-RECIPE-076-02",
+        "CHEM-RECIPE-076-03",
+        "CHEM-RECIPE-076-04",
+        "CHEM-RECIPE-076-05",
+        "CHEM-RECIPE-076-06",
+        "CHEM-RECIPE-076-07",
+        "CHEM-RECIPE-076-08",
+        "CHEM-RECIPE-076-09",
+        "CHEM-RECIPE-076-10",
+        "CHEM-RECIPE-076-11",
+        "CHEM-RECIPE-076-12",
+        "CHEM-RECIPE-076-13",
+        "CHEM-RECIPE-076-14",
+        "CHEM-RECIPE-076-15",
+        "CHEM-RECIPE-076-16",
+        "CHEM-CAP-1da688425060d238",
+        "CHEM-CAP-ca0c0dd760014335",
+        "CHEM-CAP-d38c10241cb6daa0",
+        "CHEM-CAP-b5fc743d359ea6a4",
+        "CHEM-CAP-45911559f6556094",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-d8ba59dcb901ea12",
+        "CHEM-CAP-e5cca8a3bc6f121e"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Resolve the actual Tris salt versus pH-specific mixture in each source recipe, preserving counterion and preparation volumes; then create separate salt/stock proposals rather than one global Tris-HCl alias.",
+      "missing_requirement": "Resolve the actual Tris salt versus pH-specific mixture in each source recipe, preserving counterion and preparation volumes; then create separate salt/stock proposals rather than one global Tris-HCl alias.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a",
+      "case_input_sha256": "5bd866b795e5b5fea413c04fc011948a764ac987ab6dc53eef45e19df0287d89",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)",
+        "source_label": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)",
+        "raw_source_label": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f450f83beae9120cb98c3f97cea7213aaa251b8747e4fe38a15c6ac2d39b479f"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The long N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid name denotes HEPES, CHEBI:42334. TOGO M2410 adds it as a weighed reagent before laterpH adjustment; it does not name the1M HEPES-KOH stock.",
+      "applicability": "The single BSKII recipe has6g of the Sigma-labeled solute. Preserve the whole source supplier label on Hepes; the NaOH adjustment and other media constituents remain outside molecular identity.",
+      "evidence_ids": [
+        "CHEM-SRC-077",
+        "CHEM-RECIPE-077-01",
+        "CHEM-CAP-c0b20edbf3ff8192",
+        "CHEM-CAP-ed175c6ef98639a6",
+        "CHEM-OWNER-6c405ebbdd8b"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-hepes"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hepes.yaml",
+          "sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+      "case_input_sha256": "b93139f280c37bdcff6916a76fbb9b45be30cf3e63e463a9d7e6c151310ffe5d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "95% Ethanol",
+        "source_label": "95% Ethanol",
+        "raw_source_label": "95% Ethanol"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+        "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+        "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+        "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+        "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "95% ethanol is a concentration-qualified solvent preparation. CHEBI:16236 is pure ethanol and cannot represent the complete95% material exactly. TOGO2576 shows this solvent inside a vitaminK1 solution.",
+      "applicability": "Five frozen occurrences belong to vitamin/additive preparations. Primary2576 specifies30ml solvent; several other endpoint requests timed out and their frozen complete recipes remain the reviewed evidence. Do not turn flattened g/L into validated solvent mass or assume a percent basis.",
+      "evidence_ids": [
+        "CHEM-SRC-083",
+        "CHEM-RECIPE-083-01",
+        "CHEM-RECIPE-083-02",
+        "CHEM-RECIPE-083-03",
+        "CHEM-RECIPE-083-04",
+        "CHEM-RECIPE-083-05",
+        "CHEM-CAP-e10390f56f5dbfeb",
+        "CHEM-FAIL-e087cfab9d8f",
+        "CHEM-FAIL-db8eea0ef9c7",
+        "CHEM-FAIL-e11ef8a68e31",
+        "CHEM-FAIL-d051891eb9f3",
+        "CHEM-CAP-713173ae3904548b"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: For a shared stock owner establish percent basis,denaturants and intended source product; otherwise retain source-qualified95%solvent contexts separately.",
+      "missing_requirement": "For a shared stock owner establish percent basis,denaturants and intended source product; otherwise retain source-qualified95%solvent contexts separately.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca",
+      "case_input_sha256": "4efedcf158dea39a55fce3f42cbb6c6482580261b7f23e960b5a9655404e8411",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine HCl (B1)",
+        "source_label": "Thiamine HCl (B1)",
+        "raw_source_label": "Thiamine HCl (B1)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:27b9483c3b79e8b2d2a004b07fd9b4ac650b7e9b248ce0b067a256a86b49d22e"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The source names thiamine hydrochloride, consistent with CHEBI:49105; no monohydrate/dihydrate is explicitly named here. The B1 parenthesis is a vitamin name qualifier, not a salt change.",
+      "applicability": "The single P5 nested composition node contains50g/L solute within its own single stock. A source alias applies to the solute only and does not collapse that stock or its carrier into the molecule.",
+      "evidence_ids": [
+        "CHEM-SRC-092",
+        "CHEM-RECIPE-092-01",
+        "CHEM-CAP-86994abdcb080eaa",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-OWNER-c375e99738c7"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-thiamine-hcl"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Thiamine_Hcl.yaml",
+          "sha256": "8e7d3802dc19872e85d753b6c7a0e1fb34c552311e69c450e697d9f1e55b2732"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416",
+      "case_input_sha256": "51c56d3afdafb18de7e9633a7b0b497f482502fd95e61e8e8b4f646d368b5d9c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "TeO",
+        "source_label": "TeO",
+        "raw_source_label": "TeO"
+      },
+      "occurrence_ids": [
+        "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+        "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "The CCAP UCM primary PDF prints TeO2 in both the trace formulation and its diluted contribution. The frozen TeO labels and CHEBI:30452 tellurium-atom annotations therefore lose the oxide stoichiometry. The inspected CHEBI:30477 candidate is tellurite (O3Te dianion),not TeO2,and is rejected. A correct dioxide-specific target remains to be verified.",
+      "applicability": "Both assigned occurrences are in the same UCM recipe and duplicate different trace-stock levels. Correct the upstream formula/compound and stock nesting first; do not register globally ambiguous TeO as an exact synonym of TeO2. CultureMech#276 is closed and #283 remains open for UCM context; this is a frozen-source recurrence and does not assert the current CultureMech main still contains it.",
+      "evidence_ids": [
+        "CHEM-SRC-098",
+        "CHEM-RECIPE-098-01",
+        "CHEM-RECIPE-098-02",
+        "CHEM-CAP-2256f29f0929d107",
+        "CHEM-CAP-ea5b78eecca53ac5"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Upstream UCM correction must restore TeO2 at the correct stock levels and remove atom grounding; then reassess a distinct TeO2 ingredient owner.",
+      "missing_requirement": "Upstream UCM correction must restore TeO2 at the correct stock levels and remove atom grounding; then reassess a distinct TeO2 ingredient owner.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/CultureMech/issues/276",
+        "https://github.com/CultureBotAI/CultureMech/issues/283"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:dcaebb575fdae4723ccb30779f3d58420ccb21cffe38a0d0ab7386e2b5bbbfaa",
+      "case_input_sha256": "2da46096ef9f6f8341b62fb4f734670bf78065afade5a43c0b308a0046563228",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Guanine HCl",
+        "source_label": "Guanine HCl",
+        "raw_source_label": "Guanine HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1db127c1fa4cd04b983b0136eecc195c824f1618cf924a9bd8c1179117ad83f9"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Sigma51030 directly documents guanine hydrochloride CAS635-39-2,C5H5N5O·HCl. This demonstrates the salt is distinct from guanine free base. The CDM_LP source does not name that supplier or specify hydration; an exact OLS query found no guanine-hydrochloride term.",
+      "applicability": "The sole frozen CDM_LP row says Guanine HCl at0.00032mM. The supplier page is candidate identity evidence, not proof that the source used that particular product or anhydrous form.",
+      "evidence_ids": [
+        "CHEM-SRC-106",
+        "CHEM-RECIPE-106-01",
+        "CHEM-CAP-6c18a010f003efde",
+        "CHEM-FAIL-782fe35967b1",
+        "CHEM-FAIL-ba2b718b3e87",
+        "CHEM-WEB-106"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Recover the original CDM_LP methods/reagent supplier or an unambiguous salt specification; then establish a salt-specific CAS/registry owner and an asymmetric parent mapping without mapping to Guanine exact.",
+      "missing_requirement": "Recover the original CDM_LP methods/reagent supplier or an unambiguous salt specification; then establish a salt-specific CAS/registry owner and an asymmetric parent mapping without mapping to Guanine exact.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+      "case_input_sha256": "59becf6c2d9ffd925ad28c8515705125e5986e629fd9ab182e0c15a14f92d82b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "95% ethanol",
+        "source_label": "95% ethanol",
+        "raw_source_label": "95% ethanol"
+      },
+      "occurrence_ids": [
+        "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+        "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+        "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+        "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+        "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+        "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+        "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+        "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+        "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+        "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+        "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The95%qualifier makes these solvent preparations distinct from pure ethanol. Primary DSMZ78,104 and110 show ethanol in defined additive/solvent contexts rather than identifying every95%material with CHEBI:16236.",
+      "applicability": "All11 frozen occurrences were retained, including main/stock duplicates. Some TOGO live endpoints timed out; the successful DSMZ texts and complete frozen contexts establish solvent scope but not universal%basis,denaturants or identical composition.",
+      "evidence_ids": [
+        "CHEM-SRC-111",
+        "CHEM-RECIPE-111-01",
+        "CHEM-RECIPE-111-02",
+        "CHEM-RECIPE-111-03",
+        "CHEM-RECIPE-111-04",
+        "CHEM-RECIPE-111-05",
+        "CHEM-RECIPE-111-06",
+        "CHEM-RECIPE-111-07",
+        "CHEM-RECIPE-111-08",
+        "CHEM-RECIPE-111-09",
+        "CHEM-RECIPE-111-10",
+        "CHEM-RECIPE-111-11",
+        "CHEM-FAIL-82a765ac4575",
+        "CHEM-CAP-e0c65da722d0c440",
+        "CHEM-FAIL-726c647c6df3",
+        "CHEM-FAIL-ee59039ab231",
+        "CHEM-FAIL-1b08ca19d49a",
+        "CHEM-FAIL-ba6e72f40fcb",
+        "CHEM-CAP-9b35c1d4f58911cf",
+        "CHEM-FAIL-13a27ae6e9f2",
+        "CHEM-FAIL-f38c1f1168b0",
+        "CHEM-FAIL-c3ba69d0e771",
+        "CHEM-CAP-5299c9a510c6ec5b",
+        "CHEM-FAIL-64f727257453",
+        "CHEM-FAIL-03748f8ae4f1",
+        "CHEM-FAIL-dd16f71bb244",
+        "CHEM-CAP-713173ae3904548b"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Resolve per-source preparation basis and volume, then determine whether a single95%ethanol stock record is justified; no exact pure-ethanol alias.",
+      "missing_requirement": "Resolve per-source preparation basis and volume, then determine whether a single95%ethanol stock record is justified; no exact pure-ethanol alias.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:e90a13baa92e9b7a72cdfa611fbaec5f457cd61a12e649cccbe256914aa8cc28",
+      "case_input_sha256": "6944dca858c50dbc1586aee141db6460b2c15515b92985761f67930675693d1a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Oxoid Lab-Lemco Powder",
+        "source_label": "Oxoid Lab-Lemco Powder",
+        "raw_source_label": "Oxoid Lab-Lemco Powder"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b705141f74474c9668c71a9cb5254471683ade16a8f204a899a14eebe89de67f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Thermo/Oxoid LP0029B certificate names LAB-LEMCO POWDER(BEEF EXTRACT) and reports variable nitrogen,ash andNaCl specifications. This is a commercial biological extract, not a single chemical or an arbitrary generic meat-extract synonym.",
+      "applicability": "The sole EnrichedAnaerobe source says Oxoid Lab-Lemco Powder20g. Existing unmapped Lab_Lemco_Powder owner is the product-family candidate. The2022lot certificate supports product type, not exact historical lot composition.",
+      "evidence_ids": [
+        "CHEM-SRC-113",
+        "CHEM-RECIPE-113-01",
+        "CHEM-FAIL-cc76f863354d",
+        "CHEM-CAP-f21eb5a7e9960955",
+        "CHEM-OWNER-41851cf2bb37"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: A future product registry proposal should bind Lab-Lemco/Oxoid provenance, retain compositional variability, and compare the existing unmapped owner before promotion.",
+      "missing_requirement": "A future product registry proposal should bind Lab-Lemco/Oxoid provenance, retain compositional variability, and compare the existing unmapped owner before promotion.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+          "sha256": "60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "case_input_sha256": "ff67d450affc1426840c96f3a73b32777864fd9ebb2c6386b63678d2630306fb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine-HCl⋅H2O (Vitamin B1)",
+        "source_label": "Thiamine-HCl⋅H2O (Vitamin B1)",
+        "raw_source_label": "Thiamine-HCl⋅H2O (Vitamin B1)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b5ef25941cd0463e766a67f3b3c1bb336460bc9a91b8978a7a87c74e022ad650"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1507 independently confirms Thiamine-HCl⋅H2O in its vitamin solution. The one-water literal is not equivalent to the existing two-water thiamine-hydrochloride owner.",
+      "applicability": "This case has a different dot character and source recipe from case28, but shares the explicit monohydrate boundary. Primary NBRC text,not string similarity,justifies retaining that distinction.",
+      "evidence_ids": [
+        "CHEM-SRC-117",
+        "CHEM-RECIPE-117-01",
+        "CHEM-FAIL-642928fbf158",
+        "CHEM-CAP-74b89743eed1808f",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-12d6346a73c5dd24"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Identify the actual NBRC1507 salt hydrate with primary supplier/CAS support before selecting a mono-specific term or registry record; do not reuse dihydrate132751.",
+      "missing_requirement": "Identify the actual NBRC1507 salt hydrate with primary supplier/CAS support before selecting a mono-specific term or registry record; do not reuse dihydrate132751.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:f6924fb99b3405f434e4017340607246890f7dbf1213a9fd6e697362ccc6d8de",
+      "case_input_sha256": "13b282617355eeab118b52dd735a89e29c033d7a62a1b59ca20862c5324553ca",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Poorly crystalline iron(III) oxide (see below)",
+        "source_label": "Poorly crystalline iron(III) oxide (see below)",
+        "raw_source_label": "Poorly crystalline iron(III) oxide (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fc00fa67458fcb7b2e26669a46b25edd43ed901b4379805b3b6e86988f962e3b"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM411 defines poorly crystalline iron(III)oxide by dissolving108gFeCl3,precipitating atpH7,centrifuging,washing at least5times and resuspending in1L distilled water; this wording does not establish a measured final suspension volume. The source checks chloride<1mM and Fe(III) concentration; this preparation is not exact crystalline hematite or FeCl3.",
+      "applicability": "The100mM source addition denotes Fe(III) from a prepared suspension,whose working stock is approximately0.67M pending assay. No exact mineral phase,hydration or pure-molecule formula is established by poorly crystalline.",
+      "evidence_ids": [
+        "CHEM-SRC-121",
+        "CHEM-RECIPE-121-01",
+        "CHEM-FAIL-4f749238dc5c",
+        "CHEM-CAP-325bb28919ae30b6"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: A source-bound suspension/material record should retain preparation,Fe-basis concentration and assay instruction; mineral-phase identification would be needed for a specific ferrihydrite/oxide ontology exact mapping.",
+      "missing_requirement": "A source-bound suspension/material record should retain preparation,Fe-basis concentration and assay instruction; mineral-phase identification would be needed for a specific ferrihydrite/oxide ontology exact mapping.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:f83e2c9a1035fb2cb44369ae7e7f25f020932cebac6f1fb9ce5c1fcb9f4809d4",
+      "case_input_sha256": "8c8901d11f39d1c383269d1f0e4e80e10417de6e4a89e41c719a22a7f88ec72b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "chitin (shrimp shells)",
+        "source_label": "chitin (shrimp shells)",
+        "raw_source_label": "chitin (shrimp shells)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c6f24e1535b152c8149a068ac81b91909233753dda3d92bd8b1d3588fb1b7fcf"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO2313 specifies chitin from shrimp shells as an alternative carbon substrate. CHEBI:17029 is chitin polymer; the source-qualified material does not itself identify extraction,protein/mineral removal or purity.",
+      "applicability": "The one minimal-media occurrence is0.2%w/v alternative source. The existing source-specific Chitin_From_Shrimp_Shells record must be reviewed separately from generic chitin; no conversion of the entire raw material into a pure polymer is approved.",
+      "evidence_ids": [
+        "CHEM-SRC-123",
+        "CHEM-RECIPE-123-01",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-39aa3b4fe5e386a5",
+        "CHEM-OWNER-caf7cad18009"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Confirm supplier/catalog and extraction/purity specification for the shrimp-shell material before choosing exact polymer versus source-material registry identity.",
+      "missing_requirement": "Confirm supplier/catalog and extraction/purity specification for the shrimp-shell material before choosing exact polymer versus source-material registry identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Chitin_From_Shrimp_Shells.yaml",
+          "sha256": "06104c43c1f5d9f74b2bc6bceca4158cd6916316a2736044795c9b71eb4fdb83"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+      "case_input_sha256": "651d454a4e1fc51478afb0dcc97c7851022db21c2b168a6cc514f2566413ff34",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ethanol (95 %)",
+        "source_label": "Ethanol (95 %)",
+        "raw_source_label": "Ethanol (95 %)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ212a defines ethanol95% as a solvent in the vitaminK1 preparation,distinct from pure ethanolCHEBI16236. The frozen source annotation to pure ethanol does not represent the complete solvent preparation.",
+      "applicability": "The sole Ethanol(95%) row corresponds to20ml solvent in the vitaminK1 stock. Preserve that stock scope and volume; the95%basis and denaturants are not stated.",
+      "evidence_ids": [
+        "CHEM-SRC-124",
+        "CHEM-RECIPE-124-01",
+        "CHEM-CAP-e050890a98d1c10c",
+        "CHEM-CAP-713173ae3904548b"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Resolve percentage basis and product composition before creating a shared95%ethanol owner; remove exact pure-ethanol grounding from the whole preparation first.",
+      "missing_requirement": "Resolve percentage basis and product composition before creating a shared95%ethanol owner; remove exact pure-ethanol grounding from the whole preparation first.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:03ab2d92d43227aeb1d5875af5e77aaa1accc7ccddcf2ef921b7d1fe72afdbd1",
+      "case_input_sha256": "4bf682c4992f1e01e34caedfe82ae8d58edc23fc5d7c784452aa3e8fdb976094",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:89",
+        "source_label": "Ethanol absolute",
+        "raw_source_label": "Ethanol absolute"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Absolute ethanol is an established supplied-grade alias already retained on the Ethanol owner. Live MediaDive89 nevertheless assigns incompatible oligosaccharide ontology/synonyms and an inconsistentCAS, demonstrating that its automated identifier block cannot independently prove identity.",
+      "applicability": "The frozen source row is a named ethanol reagent; OLS16236 supports the ethanol substance. No new alias is needed. Preserve the existing WITHHOLD until the complete ethanol payload and inherited produces-text concern are reconciled; this decision is not a release approval.",
+      "evidence_ids": [
+        "CHEM-SRC-128",
+        "CHEM-FAIL-6c7d07e923c0",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-CAP-1307e4da2336c70b",
+        "CHEM-OWNER-9551295e7ea1"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: The existing supplied-form candidate is already represented; source/published-payload holds remain independently effective.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ethanol.yaml",
+          "sha256": "b2248e2a2d289dae7234dc882ba5b4106147b669c0850c1e83f58fb21c957bfd"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:30cf3ecee696eec40ba4399812fa530ca996fa2fd61dd00ca9bf0bdc53b3da73",
+      "case_input_sha256": "454de2f0dfbce6f9f2da9abdc998de7f6877bc29dd5dff6358d9e815e7a8f138",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2363",
+        "source_label": "Complan",
+        "raw_source_label": "Complan"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen Complan row specifies a HeinzUB48AL product. Official current ComplanOriginal information describes a multinutrient food powder, corroborating product-mixture scope but not the historical Heinz formulation or lot.",
+      "applicability": "The source remains a product-context case with existing UNMAPPED_0363 owner. Current brand marketing cannot supply an exact chemical identity,ontology-equivalent composition or retroactive ingredient amounts.",
+      "evidence_ids": [
+        "CHEM-SRC-137",
+        "CHEM-FAIL-90b838169498",
+        "CHEM-CAP-00ba36ab7a1d895f",
+        "CHEM-OWNER-991ec7740785"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Obtain the historical HeinzComplan product/label formulation used by the source medium,then retain a source-qualified product registry identity and justified broad food parent.",
+      "missing_requirement": "Obtain the historical HeinzComplan product/label formulation used by the source medium,then retain a source-qualified product registry identity and justified broad food parent.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Complan.yaml",
+          "sha256": "4c42c23942d3a06a6d9560c1150bed3a521f5c59be0b4782b3259e6a1bb00023"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:39adf1df71cd577ceca03305c9da33b8fa04798d4a996fb204f8bc9acac57a5a",
+      "case_input_sha256": "4564e471824e2da44461e52dc519222375a4e4ea57d8e3f53796ad67ca3fe216",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:bacteriocin_isk_1",
+        "source_label": "bacteriocin ISK-1",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Primary Sashihara2000 PMID11193411 and the2001 JGAM reidentification paper establish that the formerly reported Pediococcus sp.ISK-1 was reidentified as Staphylococcus warneri ISK-1. Thus producer-name conflict is not a valid reason by itself to separate the named bacteriocins. However live CHEBI:204272 labels Nukacin ISK-1 while giving a1178.444Da short-peptide structure,which does not establish the reported mature27-residue lantibiotic.",
+      "applicability": "The metatraits node has a source label and inherited MIM synonyms but no sequence,original citation or assay product. Correct the obsolete owner caution note with primary evidence; keep registry identity and withhold exact ontology promotion pending source/structure resolution.",
+      "evidence_ids": [
+        "CHEM-SRC-138",
+        "CHEM-CAP-5a950c17f8940801",
+        "CHEM-CAP-c1084ee5b4d5a1d7",
+        "CHEM-CAP-1cb0e6bf2d205d3f",
+        "CHEM-OWNER-03db4ef1acb9"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-bacteriocin-context"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Trace this metatraits observation to the original ISK-1 peptide/assay provenance and resolve the CHEBI204272 structure-versus-mature-peptide discrepancy before asserting exact identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Bacteriocin_Isk_1.yaml",
+          "sha256": "9b467bb6e713f55299a71657001e1f79844a1900339f56c2a4e95d5273dacabc"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:42f5997700d5a29cc0632e08c3f1e2a319372c1e82ae1896db58f8b046b395f6",
+      "case_input_sha256": "488f8b1d76f415c689127be5998739344721da5d949d22594f2b98c788cc09ff",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1423",
+        "source_label": "Na2-tartrate x 2 H2O",
+        "raw_source_label": "Na2-tartrate x 2 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "MediaDive1423 explicitly says Na2-tartrate x2H2O. The corresponding DSMZ1565 primary recipe confirms the dihydrate but not stereochemistry. Anhydrous sodium L-tartrate63017 is not an exact target for the supplied form.",
+      "applicability": "This KG row has no existing owner; its helper occurrence count is not recipe frequency. The source amount1g supports a reagent entry,not an L-stereochemistry assertion.",
+      "evidence_ids": [
+        "CHEM-SRC-141",
+        "CHEM-FAIL-00ae0387add0",
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-TARTRATE-KG-PRIMARY"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Obtain supplier/catalog or stereochemical specification for1423,and verify a dihydrate-specific ontology/CAS or source-qualified registry identity before mapping.",
+      "missing_requirement": "Obtain supplier/catalog or stereochemical specification for1423,and verify a dihydrate-specific ontology/CAS or source-qualified registry identity before mapping.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+      "case_input_sha256": "c1054b225585042df2ac9414e633aed9deb76574cd6afcef53db957567c0926c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1042",
+        "source_label": "KJ",
+        "raw_source_label": "KJ"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen KJ row has50µl and attribute1mg/ml,so its supplied context is a stock addition. KJ may be historical potassium-iodide notation,but live MediaDive1042 assigns phencyclidine CAS77-10-1/formulaC17H25N,an explicit automated-identifier conflict.",
+      "applicability": "Existing Ki CHEBI:8346 is a candidate solute owner only. The source stock cannot be equated to pure KI or phencyclidine from these identifiers. Preserve exact volume/strength,with no counterion or solvent invention.",
+      "evidence_ids": [
+        "CHEM-SRC-150",
+        "CHEM-FAIL-1f5e9f890ab3",
+        "CHEM-CAP-2be47c9bf376a98c",
+        "CHEM-CAP-a2b1fc00a6ad6e6c",
+        "CHEM-OWNER-57b162c1eb30"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Recover the original recipe defining the1mg/ml KJ preparation and confirm iodide identity and solvent; then separate stock from solute and correct the provider identifier contamination.",
+      "missing_requirement": "Recover the original recipe defining the1mg/ml KJ preparation and confirm iodide identity and solvent; then separate stock from solute and correct the provider identifier contamination.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ki.yaml",
+          "sha256": "46d38e549c32f9dcc80d19580c3aced0c41307894af886cffe1f0f85103b459a"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:6c0774cbb93fb412e2cb8a6745916b2ffc6351cd6d14c355c12ade2f598cac10",
+      "case_input_sha256": "b8ffa6bb93e8817024d4fb83487545153c6ba5770b2a2ce6e577d33588ca0279",
+      "source": {
+        "source": "microbedecoder",
+        "source_case_id": "kgmicrobe.compound:pyg",
+        "source_label": "PYG",
+        "raw_source_label": "PYG"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "All114 frozen downstream rows already record source-scoped PYG as reported_culture_medium with identity_approved=false. PYG is a named-medium context; acronym matching does not prove MICRO:0001573 or a pure consumed molecule.",
+      "applicability": "Inspected every held row: each retains Bergey_Substrates_for_end_products,its distinct source_record/subject/citation and original consumes assertion. The DSMZ104 PYG recipe is only a concrete comparator,not evidence that all114 observations used it. Primary Bergey access was attempted and unavailable; no individual culture condition or consumption claim is promoted.",
+      "evidence_ids": [
+        "CHEM-SRC-152",
+        "CHEM-CAP-ee2ec78d487d3a9f",
+        "CHEM-WEB-152",
+        "CHEM-PYG-COMPARATOR",
+        "CHEM-OWNER-edbb2f79997b"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Retrieve the cited Bergey chapter/recipe for each relevant observation before redirecting a PYG medium identity; current source material dispositions remain unchanged.",
+      "missing_requirement": "Retrieve the cited Bergey chapter/recipe for each relevant observation before redirecting a PYG medium identity; current source material dispositions remain unchanged.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/PYG.yaml",
+          "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:6e7c8a8c1d6e21e0a3afee848263f27202ece4e07c21ec38c752087cbdd89cdd",
+      "case_input_sha256": "50dd5e0b5aaf367a6ee20f18e886b478d970ec55ed3c7d55c2139b2d3dd2cc99",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:778",
+        "source_label": "Thiamine pyrophosphate",
+        "raw_source_label": "Thiamine pyrophosphate"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Live ChEBI9532 is chloride-free thiamine(1+)diphosphate and18290 is the chloride salt. The current9532 owner retains chloride formula,InChI,SMILES and chloride aliases from the earlier18290 mapping. Its CAS136-09-4 is not chlorideCAS154-87-0 and must not be removed on the stale combined rationale.",
+      "applicability": "The specific MediaDive778 raw row has no chloride qualifier; its derived mM uses460.768Da and the live page names chlorideCAS/18290,which are automated metadata rather than independent reagent provenance. Propose only repair of owner chemistry/aliases consistent with prior#319/#320; retain9532 mapping,CAS and exact-target WITHHOLD. This owner is shared with worker09 and requires coordinator reconciliation.",
+      "evidence_ids": [
+        "CHEM-SRC-153",
+        "CHEM-FAIL-4c7da0c4e60e",
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15",
+        "CHEM-CAP-2c3af0a5e6fa857b",
+        "CHEM-OWNER-92372a0a8f9f"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-tpp-chloride-carryover"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Recover the778 supplier/formulation specification to determine actual counterion/protonation; independently reconcile the complete9532 published payload and worker09 findings before any hold release.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+          "sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/319",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/320",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:8fddccd7e32c351a0fa76c05180120b817299029e956a686081cce5e8c3748dc",
+      "case_input_sha256": "d1db9aface07214c50d0e926dec8cc165cf4fdfde79996561ffd15f0d6f4ee40",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:ethylenediamine_n_n_prime_disuccinic_acid",
+        "source_label": "Ethylenediamine-N,N'-disuccinic acid",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The manufacturer petition explicitly identifiesCAS20846-91-7 as[S,S]-EDDS free acid; PubChem497266 has the same stereospecific structure. The metatraits literal Ethylenediamine-N,N'-disuccinic acid lacks stereochemistry,CAS and supplier provenance.",
+      "applicability": "The current CAS owner is an S,S candidate rather than a guaranteed identity for the generic source node. Existing source approval of identical owner bytes does not establish this metatraits observation's stereochemistry. Preserve all distinct EDDS owners pending source trace. The existing Ethylenediamine_N_N_Prime_Disuccinic_Acid owner already retains the exact source kgmicrobe.compound identifier as a placeholder; this is a source handle, not proof of molecular stereochemistry. The separate EDDS comma-repair owner belongs to MicrobeDecoder provenance and is an adjacent boundary candidate, not an automatic merge target.",
+      "evidence_ids": [
+        "CHEM-SRC-161",
+        "CHEM-CAP-5676c81b1b63d438",
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-5d69893c41896605",
+        "CHEM-CAP-aef06fc1d41bc4c5",
+        "CHEM-OWNER-35b36faf7438",
+        "CHEM-OWNER-d2876bb90669",
+        "CHEM-OWNER-b3e569d827bf"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Recover the source assay reagent/CAS or structure,including S,S versus R,R/meso/racemate and acid versus salt,before resolving this metatraits node tocas:20846-91-7.",
+      "missing_requirement": "Recover the source assay reagent/CAS or structure,including S,S versus R,R/meso/racemate and acid versus salt,before resolving this metatraits node tocas:20846-91-7.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ethylenediamine-NN-disuccinic_Acid.yaml",
+          "sha256": "b52c49d23cfb3337c7556bc89e3066aced0b80852147da62b324d81450495123"
+        },
+        {
+          "path": "data/ingredients/mapped/Ethylenediamine_N_N_Prime_Disuccinic_Acid.yaml",
+          "sha256": "77298eb4b9c2ea4aa3b45bdc9755090db6aebef504b5d5944ed755e91e315660"
+        },
+        {
+          "path": "data/ingredients/mapped/Ethylenediamine-NN-disuccinic_acid_EDDS.yaml",
+          "sha256": "525c28cec84b146e6fa4e8a7145e3f4f993ffc64943c9d2f173308fdd1f0e247"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb",
+      "case_input_sha256": "5607783459949650b00f73c85878ff9dc0086eaf8a214c84c37399caa24ea5a3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:77",
+        "source_label": "Thiamine-HCl x 2 H2O",
+        "raw_source_label": "Thiamine-HCl x 2 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The MediaDive77 source explicitly names thiamine hydrochloride dihydrate; OLSCHEBI:132751 independently preserves that exact two-water form. This is distinct from monohydrate cases28/117 and from unhydrated49105.",
+      "applicability": "The frozen5mg row with0.005g/L belongs to the dihydrate supplied form already owned by Thiamine-hcl_X_2_H2o. No new alias is required; inherited row/payload holds remain until their separate concerns are resolved.",
+      "evidence_ids": [
+        "CHEM-SRC-162",
+        "CHEM-FAIL-d767e51f9c09",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-8302d660a59e8a0f",
+        "CHEM-OWNER-50d3d5c3c8b8"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: The existing supplied-form candidate is already represented; source/published-payload holds remain independently effective.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Thiamine-hcl_X_2_H2o.yaml",
+          "sha256": "482d71b94bd51f56bf1cb9ec5ced824709d7f99e0e849749b124b366864574b3"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:9fae354066718d7267ba86497352f9703e0d882643a772b6f90ac16c3b22d17c",
+      "case_input_sha256": "70421b4cc1e9adcd501d6186a8ad7cb2f2daf95aad6e564d0fe7d011e64dd62a",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside",
+        "source_label": "3-O-methyl alpha-D-glucopyranoside",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The source name asserts3-O-methyl andalpha-D-glucopyranoside but provides no aglycon,structure,CAS or supplier. The registry owner retains the label; a bounded exact OLS query returns no entry. PubChemCID96241/CAS3370-81-8 is3-O-methyl-D-glucopyranose with explicitly unspecified anomeric stereocenter in itsInChI(t7?); that does not establish the exact alpha/source substance. Direct supplier access failed.",
+      "applicability": "This GTDB-metatraits node is kept distinct from the metatraits case despite its same string. No exact mapping to methyl-alpha-D-glucoside,3-O-methyl-D-glucose or an anomer-unspecified catalog chemical is justified by lexical similarity.",
+      "evidence_ids": [
+        "CHEM-SRC-164",
+        "CHEM-CAP-51df236a2b550440",
+        "CHEM-FAIL-1cef9c1c8827",
+        "CHEM-FAIL-971ce1b9404c",
+        "CHEM-CAP-d80b6753ed36306d",
+        "CHEM-CAP-9a6a183355dccf3a",
+        "CHEM-OWNER-aeaa244c9b34"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Recover the original assay product/structure with3-O substitution,anomer and glycoside aglycon,then establish CAS/ontology correspondence; retain the current registry and WITHHOLD meanwhile.",
+      "missing_requirement": "Recover the original assay product/structure with3-O substitution,anomer and glycoside aglycon,then establish CAS/ontology correspondence; retain the current registry and WITHHOLD meanwhile.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/3-O-methyl_Alpha-D-glucopyranoside.yaml",
+          "sha256": "d8df40a7ddf2e476db6f93014fb5f6a896487ff4b39e649a25d8070cc6d572ad"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c",
+      "case_input_sha256": "3112c4cbfac9121633d5779a3c5886cbbab2b5fc0c6f877c0cb0c1b1353db809",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1401",
+        "source_label": "Eisencitrat",
+        "raw_source_label": "Eisencitrat"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The source Eisencitrat appears in Chelated iron solution3183 with citric acid. Live MediaDive1401 wrongly attaches deoxyguanosine-phosphate synonyms,CAS and CHEBI:55553 while reportingC6H8FeO7. OLS144421 is iron(III)citrate with different explicit stoichiometry. Neither the German generic name nor calculatedmM proves exact144421.",
+      "applicability": "The frozen1g,10g/L row belongs to a100ml chelated-iron preparation. Existing Fe_Iii_Citrate alias is a candidate,with inherited concentration-specific synonym holds. Do not turn the whole preparation or contaminated provider metadata into an exact ingredient mapping.",
+      "evidence_ids": [
+        "CHEM-SRC-169",
+        "CHEM-FAIL-c0d64e577aaa",
+        "CHEM-CAP-eafc32f5af450587",
+        "CHEM-CAP-44fd6e04e0c45f90",
+        "CHEM-CAP-b2c90681f754ef21",
+        "CHEM-OWNER-56c34b44b9a3"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Obtain iron oxidation state,stoichiometry,hydration and supplier/CAS for the Eisencitrat reagent used in3183; independently resolve existing Fe(III)citrate alias/payload holds.",
+      "missing_requirement": "Obtain iron oxidation state,stoichiometry,hydration and supplier/CAS for the Eisencitrat reagent used in3183; independently resolve existing Fe(III)citrate alias/payload holds.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Fe_Iii_Citrate.yaml",
+          "sha256": "2f58140051cb1a48a0b822407b98a6c8ae5688e35243209fcef177fd8c49259b"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:b1d73a6c6976e7905cd359d5180c5c7309b083045e06f5ec274866c20954ef9f",
+      "case_input_sha256": "b31000c9a1ddcc270faabc884c2694a653bef0963359420f23032cb14ee2324d",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:ethylenediamine_n_n_prime_disuccinic_acid",
+        "source_label": "Ethylenediamine-N,N'-disuccinic acid",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Primary manufacturer CAS20846-91-7 is[S,S]-EDDS free acid. The GTDB-metatraits source supplies only a generic EDDS label and no stereochemical provenance; a matching existing owner string is insufficient to transfer S,S identity.",
+      "applicability": "Review this separate source node independently of case161: the frozen record has empty synonym,xref andsame_as. The same source-specific stereochemistry gap remains even though the CAS owner itself has a recorded supported row. The existing Ethylenediamine_N_N_Prime_Disuccinic_Acid owner already retains the exact source kgmicrobe.compound identifier as a placeholder; this is a source handle, not proof of molecular stereochemistry. The separate EDDS comma-repair owner belongs to MicrobeDecoder provenance and is an adjacent boundary candidate, not an automatic merge target.",
+      "evidence_ids": [
+        "CHEM-SRC-170",
+        "CHEM-CAP-5676c81b1b63d438",
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-5d69893c41896605",
+        "CHEM-CAP-aef06fc1d41bc4c5",
+        "CHEM-OWNER-35b36faf7438",
+        "CHEM-OWNER-d2876bb90669",
+        "CHEM-OWNER-b3e569d827bf"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Recover the GTDB-metatraits underlying reagent/CAS or structure,including stereochemistry and salt state,before mapping this observation to the S,S CAS owner.",
+      "missing_requirement": "Recover the GTDB-metatraits underlying reagent/CAS or structure,including stereochemistry and salt state,before mapping this observation to the S,S CAS owner.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ethylenediamine-NN-disuccinic_Acid.yaml",
+          "sha256": "b52c49d23cfb3337c7556bc89e3066aced0b80852147da62b324d81450495123"
+        },
+        {
+          "path": "data/ingredients/mapped/Ethylenediamine_N_N_Prime_Disuccinic_Acid.yaml",
+          "sha256": "77298eb4b9c2ea4aa3b45bdc9755090db6aebef504b5d5944ed755e91e315660"
+        },
+        {
+          "path": "data/ingredients/mapped/Ethylenediamine-NN-disuccinic_acid_EDDS.yaml",
+          "sha256": "525c28cec84b146e6fa4e8a7145e3f4f993ffc64943c9d2f173308fdd1f0e247"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    },
+    {
+      "case_id": "KG_CASE:e677b0709edcd66b4bf0e683b40ffe54d9799827ccbc954fa0c154ce9cf407f5",
+      "case_input_sha256": "141042cb76ee0decc53b63bf16b3c911aa154cae51ad946dde3f67af3b26ef7f",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside",
+        "source_label": "3-O-methyl alpha-D-glucopyranoside",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "This metatraits source gives only3-O-methyl alpha-D-glucopyranoside. Registry retention records the name without establishing a molecular structure. Exact OLS search and attempted supplier access do not resolve the alpha/glycoside distinction. PubChemCID96241/CAS3370-81-8 is a useful comparator with unspecified anomeric stereochemistry,not an exact alpha assignment.",
+      "applicability": "The separate metatraits node has noCAS,structure ororiginalcitation. Preserve its source identity and currentWITHHOLD; do not merge merely because the GTDB-metatraits node has the same name.",
+      "evidence_ids": [
+        "CHEM-SRC-183",
+        "CHEM-CAP-51df236a2b550440",
+        "CHEM-FAIL-1cef9c1c8827",
+        "CHEM-FAIL-971ce1b9404c",
+        "CHEM-CAP-d80b6753ed36306d",
+        "CHEM-CAP-9a6a183355dccf3a",
+        "CHEM-OWNER-aeaa244c9b34"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained-data change proposed: Recover the metatraits assay product/structure and source citation,including aglycon,anomer and3-O-methyl substitution,before selecting a molecular target.",
+      "missing_requirement": "Recover the metatraits assay product/structure and source citation,including aglycon,anomer and3-O-methyl substitution,before selecting a molecular target.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/3-O-methyl_Alpha-D-glucopyranoside.yaml",
+          "sha256": "d8df40a7ddf2e476db6f93014fb5f6a896487ff4b39e649a25d8070cc6d572ad"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+      "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission."
+    }
+  ]
+}
