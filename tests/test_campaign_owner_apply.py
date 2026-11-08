@@ -2593,3 +2593,253 @@ def test_1256_staged_owner_mode_must_match_installed_file(tmp_path):
         owner.apply(ready, tmp_path / "receipt", enabled=True)
     assert not (tmp_path / "receipt").exists()
     assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+
+
+def profile_index_coherence_1256(root, *, mode, target, final_only):
+    """Schedule actual Git writes after actual reads, without replacing native code."""
+    events = []
+    staged = False
+
+    def profile(frame, event, result):
+        nonlocal staged
+        if final_only and frame.f_code is owner.finish_receipt.__code__ and event == "call":
+            if not staged:
+                run_git(root, "add", "-A", "--", "data/ingredients")
+                staged = True
+        if events or frame.f_code is not owner.git.__code__ or event != "return":
+            return
+        if frame.f_back.f_code is not owner._check_mutation_git_state.__code__:
+            return
+        if final_only:
+            receipt = root / "receipt/application.json"
+            if not receipt.exists() or not receipt.read_bytes():
+                return
+            if json.loads(receipt.read_bytes()).get("state") != "complete":
+                return
+        args = frame.f_locals["args"]
+        trigger = ("cat-file", "blob") if mode == "owner_blob" else ("diff", "--cached")
+        if args[:2] != trigger:
+            return
+        if mode == "stat_refresh":
+            logical_before = owner.git(root, "ls-files", "--stage", "-z")
+            index = root / ".git/index"
+            raw_before = index.read_bytes()
+            contract = root / "MAPPING_SEMANTICS.md"
+            info = contract.stat()
+            os.utime(contract, ns=(info.st_atime_ns, info.st_mtime_ns + 2_000_000_000))
+            run_git(root, "update-index", "--refresh")
+            events.append(
+                {
+                    "mode": mode,
+                    "raw_index_changed": raw_before != index.read_bytes(),
+                    "logical_index_unchanged": logical_before
+                    == owner.git(root, "ls-files", "--stage", "-z"),
+                }
+            )
+            return
+        path = target if mode == "owner_blob" else "MAPPING_SEMANTICS.md"
+        if mode == "delete":
+            run_git(root, "update-index", "--force-remove", "--", path)
+        elif mode == "mode":
+            run_git(root, "update-index", "--chmod=+x", "--", path)
+        elif mode == "stage":
+            blob = run_git(root, "rev-parse", ":" + path)
+            raw = f"100644 {blob} 2\t{path}\0".encode()
+            subprocess.run(
+                ["git", "-C", str(root), "update-index", "-z", "--index-info"],
+                input=raw,
+                check=True,
+                capture_output=True,
+            )
+        else:
+            raw = b"unapproved concurrent index-only bytes\n"
+            blob = (
+                subprocess.run(
+                    ["git", "-C", str(root), "hash-object", "-w", "--stdin"],
+                    input=raw,
+                    check=True,
+                    capture_output=True,
+                )
+                .stdout.decode()
+                .strip()
+            )
+            run_git(root, "update-index", "--add", "--cacheinfo", "100644", blob, path)
+        events.append({"mode": mode, "actual_git_result": result})
+
+    return profile, events
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("mode", ["contract_blob", "owner_blob"])
+def test_1256_coherent_index_rejects_actual_final_read_races(tmp_path, kind, mode):
+    """W08-7D4DB26-SRC-001: cached-list and owner-read results cannot outlive index drift."""
+    import sys
+
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    entry = plan["records"][0]
+    contract = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+    profile, events = profile_index_coherence_1256(
+        tmp_path, mode=mode, target=entry["source_record"], final_only=True
+    )
+    previous = sys.getprofile()
+    sys.setprofile(profile)
+    try:
+        with pytest.raises(ValueError, match="Git index changed during live source check"):
+            owner.apply(ready, tmp_path / "receipt", enabled=True)
+    finally:
+        sys.setprofile(previous)
+    assert len(events) == 1
+    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+    assert receipt["state"] == "failed" and receipt["recovery_required"]
+    assert owner.hashes(owner.inventory(tmp_path)) == ready.after_inventory
+    assert (tmp_path / "MAPPING_SEMANTICS.md").read_bytes() == contract
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+    assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
+    with pytest.raises(ValueError):
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )
+
+
+@pytest.mark.parametrize("boundary", ["prepare", "before_apply"])
+@pytest.mark.parametrize("mode", ["contract_blob", "delete", "mode", "stage"])
+def test_1256_coherent_full_index_refuses_before_any_write(tmp_path, boundary, mode):
+    """Full logical state includes paths, blob IDs, modes and conflict stages."""
+    import sys
+
+    plan = head_lifecycle_case(tmp_path, "edit")
+    ready = prepare(tmp_path) if boundary == "before_apply" else None
+    before = owner.hashes(owner.inventory(tmp_path))
+    contract = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+    profile, events = profile_index_coherence_1256(
+        tmp_path, mode=mode, target=plan["records"][0]["source_record"], final_only=False
+    )
+    previous = sys.getprofile()
+    sys.setprofile(profile)
+    try:
+        with pytest.raises(ValueError, match="Git index changed during live source check"):
+            if boundary == "prepare":
+                prepare(tmp_path)
+            else:
+                owner.apply(ready, tmp_path / "receipt", enabled=True)
+    finally:
+        sys.setprofile(previous)
+    assert len(events) == 1
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert (tmp_path / "MAPPING_SEMANTICS.md").read_bytes() == contract
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+    assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+def test_1256_coherent_index_allows_stat_refresh_and_historical_commit(tmp_path, kind):
+    """Index stat-cache refresh is not a path/mode/stage/blob change or new authority."""
+    import sys
+
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    profile, events = profile_index_coherence_1256(
+        tmp_path, mode="stat_refresh", target=plan["records"][0]["source_record"], final_only=True
+    )
+    previous = sys.getprofile()
+    sys.setprofile(profile)
+    try:
+        result = owner.apply(ready, tmp_path / "receipt", enabled=True)
+    finally:
+        sys.setprofile(previous)
+    assert result["state"] == "complete"
+    assert events == [
+        {"mode": "stat_refresh", "raw_index_changed": True, "logical_index_unchanged": True}
+    ]
+    assert owner.hashes(owner.inventory(tmp_path)) == ready.after_inventory
+    late_git_commit(tmp_path, unrelated=True)
+    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert proof["state"] == "complete" and proof["after_inventory"] == ready.after_inventory
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("target_kind", ["contract", "owner"])
+def test_1256_captured_invalid_index_is_not_hidden_between_equal_snapshots(
+    tmp_path, kind, target_kind
+):
+    """IR-INDEX-COHERENCE-001: the actual observed entries must be validated."""
+    import sys
+
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    target = (
+        plan["records"][0]["source_record"] if target_kind == "owner" else "MAPPING_SEMANTICS.md"
+    )
+    state = {"staged": False, "started": False, "snapshots": 0}
+    observed = []
+    good_blob = bad_blob = None
+
+    def complete():
+        p = tmp_path / "receipt/application.json"
+        return (
+            p.exists()
+            and bool(p.read_bytes())
+            and json.loads(p.read_bytes()).get("state") == "complete"
+        )
+
+    def set_blob(blob):
+        run_git(tmp_path, "update-index", "--add", "--cacheinfo", "100644", blob, target)
+
+    def profile(frame, event, result):
+        nonlocal good_blob, bad_blob
+        if (
+            frame.f_code is owner.finish_receipt.__code__
+            and event == "call"
+            and not state["staged"]
+        ):
+            run_git(tmp_path, "add", "-A", "--", "data/ingredients")
+            state["staged"] = True
+        if (
+            frame.f_code is owner._check_mutation_git_state.__code__
+            and event == "call"
+            and complete()
+            and not state["started"]
+        ):
+            state["started"] = True
+            good_blob = run_git(tmp_path, "rev-parse", ":" + target)
+            stage_index_only_1256(tmp_path, target, b"invalid captured authority\n")
+            bad_blob = run_git(tmp_path, "rev-parse", ":" + target)
+        if not state["started"] or frame.f_code is not owner.git.__code__:
+            return
+        if frame.f_back.f_code is not owner._check_mutation_git_state.__code__:
+            return
+        if frame.f_locals["args"] != ("ls-files", "--stage", "-z"):
+            return
+        if event == "call":
+            state["snapshots"] += 1
+            if state["snapshots"] == 2:
+                set_blob(bad_blob)
+        elif event == "return":
+            observed.append(result)
+            if state["snapshots"] == 1:
+                assert os.fsencode(bad_blob) in result
+                set_blob(good_blob)
+
+    previous = sys.getprofile()
+    sys.setprofile(profile)
+    try:
+        with pytest.raises(ValueError, match="view differs from captured Git index"):
+            owner.apply(ready, tmp_path / "receipt", enabled=True)
+    finally:
+        sys.setprofile(previous)
+    assert state["started"] and state["snapshots"] == 1
+    assert len(observed) == 1 and os.fsencode(bad_blob) in observed[0]
+    assert run_git(tmp_path, "rev-parse", ":" + target) == good_blob
+    saved = json.loads((tmp_path / "receipt/application.json").read_bytes())
+    assert saved["state"] == "failed" and saved["recovery_required"]
+    assert owner.hashes(owner.inventory(tmp_path)) == ready.after_inventory
+    assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
+    with pytest.raises(ValueError):
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )

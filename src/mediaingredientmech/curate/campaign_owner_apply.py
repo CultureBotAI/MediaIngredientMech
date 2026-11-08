@@ -953,9 +953,63 @@ def prepare(root: Path, plan_path: Path, acceptance_path: Path) -> Prepared:
     return result
 
 
+def _index_entries(raw: bytes) -> dict[str, bytes]:
+    """Keep each literal path's complete mode/object/stage records (#1256)."""
+    parts = raw.split(b"\0")
+    require(parts[-1] == b"" and all(parts[:-1]), "Malformed logical Git index")
+    entries: dict[str, bytes] = {}
+    for item in parts[:-1]:
+        metadata, separator, path = item.partition(b"\t")
+        fields = metadata.split(b" ")
+        require(
+            separator == b"\t"
+            and bool(path)
+            and len(fields) == 3
+            and re.fullmatch(b"[0-7]{6}", fields[0]) is not None
+            and re.fullmatch(b"[0-9a-f]{40}(?:[0-9a-f]{24})?", fields[1]) is not None
+            and fields[2] in {b"0", b"1", b"2", b"3"},
+            "Malformed logical Git index entry",
+        )
+        name = os.fsdecode(path)
+        entries[name] = entries.get(name, b"") + item + b"\0"
+    return entries
+
+
+def _baseline_index_entries(root: Path, baseline: str) -> dict[str, bytes]:
+    """Derive immutable stage-zero entries from the accepted commit tree."""
+    parts = git(root, "ls-tree", "-r", "-z", "--full-tree", baseline).split(b"\0")
+    require(parts[-1] == b"" and all(parts[:-1]), "Malformed baseline Git tree")
+    entries = []
+    for item in parts[:-1]:
+        metadata, separator, path = item.partition(b"\t")
+        fields = metadata.split(b" ")
+        require(
+            separator == b"\t" and len(fields) == 3 and fields[1] in {b"blob", b"commit"},
+            "Malformed baseline Git tree entry",
+        )
+        entries.append(fields[0] + b" " + fields[2] + b" 0\t" + path + b"\0")
+    return _index_entries(b"".join(entries))
+
+
 def _check_mutation_git_state(prepared: Prepared):
-    """#1256: pin live transaction HEAD and scope, not later historical replay."""
+    """#1256: pin live transaction HEAD and scope, not later historical replay.
+
+    Bracket the complete check with Git's logical stage/path/mode/blob listing.
+    Validate that captured state against the immutable accepted tree, and bind
+    every cached/path/blob view to it. Endpoint equality alone is insufficient.
+    Stat-cache-only refreshes are excluded. Each check accepts legitimate staging
+    between boundaries afresh; no historical replay constraint or index lock is
+    imposed. This is a bounded read observation, not an atomic OS transaction.
+    """
     root, baseline = prepared.root, prepared.plan["baseline_commit"]
+    index_before = git(root, "ls-files", "--stage", "-z")
+    captured_entries = _index_entries(index_before)
+    baseline_entries = _baseline_index_entries(root, baseline)
+    captured_changes = {
+        path
+        for path in captured_entries.keys() | baseline_entries.keys()
+        if captured_entries.get(path) != baseline_entries.get(path)
+    }
     require(
         git(root, "rev-parse", "HEAD").decode().strip() == baseline,
         "Integration HEAD changed during source application",
@@ -986,8 +1040,16 @@ def _check_mutation_git_state(prepared: Prepared):
     require(cached[-1] == b"" and all(cached[:-1]), "Malformed cached Git path listing")
     cached_paths = {os.fsdecode(path) for path in cached[:-1]}
     require(cached_paths <= allowed, "Unrelated staged file changed")
+    require(
+        cached_paths == captured_changes,
+        "Cached path view differs from captured Git index",
+    )
     for path in sorted(cached_paths):
         entries = git(root, "--literal-pathspecs", "ls-files", "--stage", "-z", "--", path)
+        require(
+            entries == captured_entries.get(path, b""),
+            "Staged owner view differs from captured Git index",
+        )
         if not entries:
             require(
                 path not in prepared.after_inventory and not os.path.lexists(root / path),
@@ -1025,6 +1087,10 @@ def _check_mutation_git_state(prepared: Prepared):
     require(
         git(root, "rev-parse", "HEAD").decode().strip() == baseline,
         "Integration HEAD changed during source application",
+    )
+    require(
+        git(root, "ls-files", "--stage", "-z") == index_before,
+        "Git index changed during live source check",
     )
 
 
