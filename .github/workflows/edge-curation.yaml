@@ -1,0 +1,39 @@
+name: Edge curation native adapter
+
+on:
+  pull_request:
+  merge_group:
+    types: [checks_requested]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  UV_PYTHON: "3.13"
+
+jobs:
+  native-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: 1b5391d083ba85ac94e5279c3cba25ac4fde243c
+          path: claw-contract
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v3
+      - name: Install native runtime
+        run: uv sync --frozen
+      - name: Verify shared contract pin and import origin
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src:${{ github.workspace }}/claw-contract/src
+        run: uv run --frozen python scripts/adhoc/check_edge_contract_pin_20261107.py --claw-root claw-contract
+      - name: Require native adapter integration tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src:${{ github.workspace }}/claw-contract/src
+          MIM_REQUIRE_EDGE_CONTRACT: "1"
+        run: uv run --frozen --with pytest --with pytest-cov python -m pytest tests/test_edge_curation.py tests/test_edge_publication.py tests/test_reviewed_sssom.py --no-cov -q
