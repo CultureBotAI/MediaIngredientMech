@@ -1,0 +1,428 @@
+{
+  "case_id": "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+  "source_frozen_case": {
+    "baseline_outcome": "native_no_mim_match",
+    "campaign_requirement": "complete_source_bound_review",
+    "case_id": "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+    "native_match_result": {
+      "effective_term_id": "",
+      "matched": false,
+      "resolved_record": null
+    },
+    "native_occurrence_count": 1,
+    "occurrences": [
+      {
+        "component_path": "ingredients/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml",
+        "native_name": "CM0149 Broth (OXOID)",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:ffcf2b54ee7027b6166807e15a6a72a9bae955a7c8c4576805c5bb8e99196307",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "38.0"
+          },
+          "notes": "NBRC Medium 902 lists 38 g/L CM0149 Broth from OXOID; this dehydrated commercial mixture is retained as an opaque complex component.",
+          "preferred_term": "CM0149 Broth (OXOID)",
+          "source": "TOGO M1696 / NBRC Medium 902"
+        },
+        "raw_preferred_term": "CM0149 Broth (OXOID)",
+        "recipe_id": "CultureMech:008256",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:008256"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "TOGO:M1696"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml",
+        "source_file_sha256": "4236ba69748422125d554dfe93badeefab69d81855cff49c318c58f83f483e69",
+        "source_identifiers": []
+      }
+    ],
+    "original_unified_position": 2906,
+    "original_unified_row": {
+      "cas_rn": "",
+      "chebi_id": "",
+      "culturemech_term_id": "",
+      "example_media": "CultureMech:008256",
+      "ingredient_name": "CM0149 Broth (OXOID)",
+      "kg_microbe_node_id": "",
+      "mapping_status": "UNMAPPED",
+      "mim_id": "",
+      "occurrence_count": "1",
+      "synonyms": ""
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "CM0149 Broth (OXOID)",
+    "source": "culturemech",
+    "source_case_id": "CM0149 Broth (OXOID)",
+    "source_identity_claimed": false,
+    "source_label": "CM0149 Broth (OXOID)"
+  },
+  "original_complete_decision_object": {
+    "case_id": "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+    "case_input_sha256": "e3f10cfcaad5a4e177fb3280f96703d1d136385d3ca39cb74fe9198d1a90918d",
+    "source": {
+      "source": "culturemech",
+      "source_case_id": "CM0149 Broth (OXOID)",
+      "source_label": "CM0149 Broth (OXOID)",
+      "raw_source_label": "CM0149 Broth (OXOID)"
+    },
+    "occurrence_ids": [
+      "CM_OCC:ffcf2b54ee7027b6166807e15a6a72a9bae955a7c8c4576805c5bb8e99196307"
+    ],
+    "disposition": "supplied_form_correction",
+    "reasoning": "NBRC902 explicitly names Oxoid CM0149, and the manufacturer identifies CM0149 as Reinforced Clostridial Medium, a semisolid dehydrated preparation. The source also permits additional agar. Treating CM0149 as a chemical or inferring brain-heart broth from a generic broth label would be wrong. The officialCM0149 IFU was retrieved, confirming semi-solid state and current13gyeast formulation. Historical manufacturer search shows a different3gyeast/10gLabLemco formulation; a supplied-form annotation is proposed while revision and mixed-owner partition remain unresolved.",
+    "applicability": "Exact frozen culturemech case 'CM0149 Broth (OXOID)'; raw label preserved as 'CM0149 Broth (OXOID)'. All 1 complete frozen recipe occurrences and their primary-source contexts are included individually; numerical discrepancies stay source-bound. NBRC902 explicitly names Oxoid CM0149, and the manufacturer identifies CM0149 as Reinforced Clostridial Medium, a semisolid dehydrated preparation. The source also permits additional agar. Treating CM0149 as a chemical or inferring brain-heart broth from a generic broth label would be wrong. The officialCM0149 IFU was retrieved, confirming semi-solid state and current13gyeast formulation. Historical manufacturer search shows a different3gyeast/10gLabLemco formulation; a supplied-form annotation is proposed while revision and mixed-owner partition remain unresolved.",
+    "evidence_ids": [
+      "b-case-029",
+      "b-recipe-029-00",
+      "b-primary-b80f9ee369",
+      "b-attempt-c569af5bb2",
+      "b-owner-a8d0e9cbeed2",
+      "b-targeted-d5c1626805eb",
+      "b-targeted-151c34f3bf1a",
+      "b-targeted-b087f0859f30"
+    ],
+    "proposal_ids": [
+      "b-proposal-cm0149-form"
+    ],
+    "no_change_reason": null,
+    "missing_requirement": "The existing owner also carriesBD-Difco and historicalOxoid aliases. The captured currentIFU formula must not be retroactively applied to unknown recipe revisions. Registry promotion requires an explicit scope partition; this form annotation is safe and concrete without it.",
+    "owner_records": [
+      {
+        "path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e"
+      }
+    ],
+    "issue_refs": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1196"
+    ],
+    "independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "root-independent-broths"
+      ],
+      "reviewer": "/root/materials",
+      "primary_author": "/root/broths",
+      "capture_sha256": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8"
+    },
+    "frozen_index": 29,
+    "review_scope": "source-bound identity/form/formulation applicability; no native full-record scientific release",
+    "preserved_original_kg_entry_downstream_holds": [],
+    "native_owner_review_rows": [],
+    "hold_scope_note": "The original downstream_holds array alone is not a native export verdict; complete owner native_review_rows and consumed_name_hits remain bound by original case digest. Empty arrays never clear a hold."
+  },
+  "original_complete_proposal_object": {
+    "proposal_id": "b-proposal-cm0149-form",
+    "kind": "edit_existing_owner",
+    "case_ids": [
+      "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+    ],
+    "description": "NBRC902 identifiesOxoidCM0149. Current supplierIFU0539 explicitly callsCM0149 semi-solid, with0.5g/Lagar and13g/Lyeast extract; it distinguishesCM0151agar. Historical supplier specification search describes3gyeast+10gLabLemco instead, so formulation revision cannot be silently erased.",
+    "evidence_ids": [
+      "b-case-029",
+      "b-recipe-029-00",
+      "b-primary-b80f9ee369",
+      "b-attempt-c569af5bb2",
+      "b-owner-a8d0e9cbeed2",
+      "b-targeted-d5c1626805eb",
+      "b-targeted-151c34f3bf1a",
+      "b-targeted-b087f0859f30"
+    ],
+    "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+    "before_sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+    "after_capture": {
+      "root": "artifact",
+      "path": "broths/proposed/Reinforced_Clostridial_Medium.yaml",
+      "sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328"
+    },
+    "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+    "limitations": "The existing owner also carriesBD-Difco and historicalOxoid aliases. The captured currentIFU formula must not be retroactively applied to unknown recipe revisions. Registry promotion requires an explicit scope partition; this form annotation is safe and concrete without it.",
+    "independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "root-independent-broths"
+      ],
+      "reviewer": "/root/materials",
+      "reviewed_after_sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328"
+    }
+  },
+  "original_relevant_evidence_objects": [
+    {
+      "evidence_id": "b-case-029",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-03.json",
+        "sha256": "90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228"
+      },
+      "kind": "source_snapshot",
+      "locator": "cases[29], all fields; original_kg_entry including raw source record, occurrence definition, owner claims and every downstream_holds entry where present",
+      "supports_or_contradicts": "NBRC902 explicitly names Oxoid CM0149, and the manufacturer identifies CM0149 as Reinforced Clostridial Medium, a semisolid dehydrated preparation. The source also permits additional agar. Treating CM0149 as a chemical or inferring brain-heart broth from a generic broth label would be wrong. The officialCM0149 IFU was retrieved, confirming semi-solid state and current13gyeast formulation. Historical manufacturer search shows a different3gyeast/10gLabLemco formulation; a supplied-form annotation is proposed while revision and mixed-owner partition remain unresolved.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ]
+    },
+    {
+      "evidence_id": "b-recipe-029-00",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml",
+        "sha256": "4236ba69748422125d554dfe93badeefab69d81855cff49c318c58f83f483e69"
+      },
+      "kind": "source_snapshot",
+      "locator": "Complete recipe CultureMech:008256; source component ingredients/0; includes all ingredient tables, notes, nested stocks, source identifiers and history",
+      "supports_or_contradicts": "Binds the complete frozen occurrence context; comparison to the captured primary source is described in this exact case assessment.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ]
+    },
+    {
+      "evidence_id": "b-primary-b80f9ee369",
+      "capture": {
+        "root": "artifact",
+        "path": "broths/captures/bbd7246c15ffb57a.html",
+        "sha256": "2bbab551cfeceff1fcfabc0d8698ba91d0df4bf56fe43286bd75cd8c07b35a57"
+      },
+      "kind": "primary_source",
+      "locator": "Complete primary recipe or product record; ingredient table, formulation/product designation, supplier/catalog fields and preparation notes",
+      "supports_or_contradicts": "Case 29: NBRC902 explicitly names Oxoid CM0149, and the manufacturer identifies CM0149 as Reinforced Clostridial Medium, a semisolid dehydrated preparation. The source also permits additional agar. Treating CM0149 as a chemical or inferring brain-heart broth from a generic broth label would be wrong.",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "accessed_at": "2026-11-08T05:06:34.010308+00:00"
+    },
+    {
+      "evidence_id": "b-attempt-c569af5bb2",
+      "capture": {
+        "root": "artifact",
+        "path": "broths/additional-acquisition.json",
+        "sha256": "c0c88417a60749ae869e004d3b3a21f7ead4d01007a028d03f2f1b322417aa27"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "entry 5: https://www.thermofisher.com/order/catalog/product/CM0149B",
+      "supports_or_contradicts": "Acquisition failed with HTTP Error 403: Forbidden; not identity evidence. Successful retries, when available, are separate captures.",
+      "url": "https://www.thermofisher.com/order/catalog/product/CM0149B",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "accessed_at": "2026-11-08T05:08:03.380183+00:00"
+    },
+    {
+      "evidence_id": "b-owner-a8d0e9cbeed2",
+      "capture": {
+        "root": "artifact",
+        "path": "broths/owners/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e"
+      },
+      "kind": "source_snapshot",
+      "locator": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml; complete current baseline owner bytes, including all historical provenance, synonyms, type and ontology/component payload",
+      "supports_or_contradicts": "Documents the current candidate owner; this is not independent proof of source-product equality. Full-payload publication remains outside this bounded mapping proposal.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ]
+    },
+    {
+      "evidence_id": "b-targeted-d5c1626805eb",
+      "capture": {
+        "root": "artifact",
+        "path": "broths/targeted-acquisition.json",
+        "sha256": "f4a0e2f627d2b07726674c4d143e01f3ef63687a26f37b699ebeb4cca0f0cee8"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "entry3",
+      "supports_or_contradicts": "HTTP Error 403: Forbidden; no identity assertion follows from this failure.",
+      "url": "https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0149-V3.pdf",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "accessed_at": "2026-11-08T05:18:03.327578+00:00"
+    },
+    {
+      "evidence_id": "b-targeted-151c34f3bf1a",
+      "capture": {
+        "root": "artifact",
+        "path": "broths/targeted2-acquisition.json",
+        "sha256": "e5612a27f11b33a4b5a011b370f39c4ea80dbf7f542c1b163d84b88a98c362c8"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "entry1",
+      "supports_or_contradicts": "HTTP Error 403: Forbidden; no identity assertion follows from this failure.",
+      "url": "https://tools.thermofisher.com/content/sfs/brochures/BT-SPEC-0099.pdf",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "accessed_at": "2026-11-08T05:18:51.136301+00:00"
+    },
+    {
+      "evidence_id": "b-targeted-b087f0859f30",
+      "capture": {
+        "root": "artifact",
+        "path": "broths/captures/e931e6ce922a0ffc-targeted.pdf",
+        "sha256": "e25480c6921f8d14a79fa95f07c1b7b656bdb2a5d8983eea7b81397c128722df"
+      },
+      "kind": "primary_source",
+      "locator": "Complete official source record; supplier specification typical-formula table or source-medium ingredient hierarchy",
+      "supports_or_contradicts": "Primary follow-up resolves the specified product or demonstrates the exact remaining source ambiguity; see amended case reasoning.",
+      "url": "https://assets.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "accessed_at": "2026-11-08T05:18:51.136377+00:00"
+    },
+    {
+      "evidence_id": "root-independent-broths",
+      "kind": "independent_review",
+      "url": null,
+      "accessed_at": "2026-11-08T05:23:11.072912+00:00",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/independent-review-of-broths.json",
+        "sha256": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8"
+      },
+      "locator": "input_hashes; case_reviews (all assigned IDs); proposal_reviews (all exact payloads); retained initial findings, corrections and limitations",
+      "supports_or_contradicts": "/root/materials separately assessed every broths case and proposal against the cited primary and frozen source evidence. Final outcome and any resolved findings are explicit per case; no native publication or inherited-hold approval is inferred.",
+      "case_ids": [
+        "CM_NAME:0280a41f51fe827178cc1c2d71e96fbed42ef58e9ba5585fb2dade0c740f0100",
+        "CM_NAME:03b675ceae9077b66cb6c6351cc231cafd55bb722146608a132a064ff176b89f",
+        "CM_NAME:06f4c57e4787f45cd6ed6d346d398abb419407583bd0996b69e6b448c8eed3f7",
+        "CM_NAME:08a9dd2f18f7ac763b8f1703b85ff78a7cf5e7f8d2f90eec7490b08b2c9d96e4",
+        "CM_NAME:0f98ac8ee0be9236ffe828de0033a6575596bfd51508040cf68eada29599f72c",
+        "CM_NAME:113cd45f4ab9c9013f63232dbaecb0b1669baa8cc3a2e9b0557aadaec9ce263f",
+        "CM_NAME:11b418f26a4c90acf659eede5516c7959d9450e6430fbe215a2332f577681ad3",
+        "CM_NAME:15745028b6cb6039c39cfbada9bfcdeb33de74f3845eee4c5a51fa181feb25fd",
+        "CM_NAME:15c765496710afd30b080970b3351aa9d7496b06cc9f4a05962e56aa5039df81",
+        "CM_NAME:245452304d77587b022bd2eabe76ba70ce52a05ae37a78fa9550a6be745bd8f8",
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+        "CM_NAME:2c8b3abaf7a513b61b1d528f40c98d823a8bba43cb1e2d5d5446da3d9978ab5a",
+        "CM_NAME:2f7aca975038ba6cb3dddc22acf13a74fe119ff1e74a987ddf6d91a22a888495",
+        "CM_NAME:3abcff5b435d7670d26da093095d31aaeb8f9428bd914e531feb32659104a031",
+        "CM_NAME:3cc8708ed0f1a12f71fda2cd91b77cf194de1c6e6c388f47260b751169a5aa42",
+        "CM_NAME:3ecee0af186aebeeace31722f00694b3229ffe6b276e6ceb8c2947262c6bfe5f",
+        "CM_NAME:3f2c2b4c855b25f83749b04949f229c674ddeee7978d6ffcf931faeb0512b09c",
+        "CM_NAME:459c2c4b184732f89b9b977e1768fb3267c329a31adc98d7173f7eced9c8b8c8",
+        "CM_NAME:50a15a5cedf1f9624745e4c915f96d77e9782eb5c19bbef53699a5620c8902ed",
+        "CM_NAME:5152eefd4c4b39c8bdc9b023cfe378949536d51057e2e6c23bfd0d5756b3076e",
+        "CM_NAME:56e96c216ce74a4ca0811f95b7e2f6a991525fac92f9eda42ca9188ac9655aec",
+        "CM_NAME:580a99200f333e292323af8bab1a54bf210bcf84eae7b3edb1ea5e8d0c245fea",
+        "CM_NAME:5fb1f211741dddd2a7086f7a9e8d6941ff530fe2246b78ed93343b84eb4f4967",
+        "CM_NAME:6f9d6fd16c8bfeaaf6f90a71eb17eac764279eef96a193beeb972ada13595c99",
+        "CM_NAME:709703cbd229894d27cd4c49d52f0ec3ae0b8abad537a26df2357ef5d081f6bc",
+        "CM_NAME:72d64f7dd0660a0a455b73d2894ce4406d2312603df80a9069db2b2a35261162",
+        "CM_NAME:7bd2cf553e3dc48bcead53889266fec94e7ea34ff53b0b51c825fb5d0ea44747",
+        "CM_NAME:84510eac81ee0a1a4d473e3f9a80a69789421c4018cad600a912a2290b71a298",
+        "CM_NAME:8548bb9f1faa1eb138e2e29450aee5d076cc5dc8096df0906abfd48d803491ab",
+        "CM_NAME:92444879ebc0639bb25a86bef3d2e3e10f5d8a80d2224a4fedd1671fd821ad69",
+        "CM_NAME:935a6a7cf3f0c60b942dd282b0dcd51de571a38741df87229c1d823c047d7eee",
+        "CM_NAME:95f9422185431596c32f30629437bf1d87aca516ae0579cb9645a6e9990b232d",
+        "CM_NAME:9ece9fb5726e8e4368fea316c7a71d3af84cf2b68a0591f9f7554b411eb6cdb5",
+        "CM_NAME:a0b68d4e9c321c264594aaae721656429e1f80651607ee2d9c65119f35fa5ab7",
+        "CM_NAME:a193bf1a55c57d016db86762e6032681e611249aabafc299e54dff8276999c6d",
+        "CM_NAME:a2b264091a7965489332d35edbca37690b7c6f10ea503f2e6d5a6a92e30db28a",
+        "CM_NAME:a3087243c4252678045e1f531b91e27f901f56a4112af9a2e848eb8536216d14",
+        "CM_NAME:a3e7d9526bde2d749400a66aec74cb5a13f6df165903bcdb40ea5976f738d3a1",
+        "CM_NAME:a41b91de88fc5cb3802feb87ae64d2176f47d0453595c9605a1c43ba0840494f",
+        "CM_NAME:ac6eaae7b7dc7eb23dcfeed9f75cd7362afbf5f987198402b83c0f0297bb0eac",
+        "CM_NAME:b174c0a4fa0433d28bab18b54a766fbe80d1622f46a4e0e63c46f5ef72a66e54",
+        "CM_NAME:bf0644477475e1320dd36b7476c6baebabfb72558f906e0d6d2108eda8b5ccd6",
+        "CM_NAME:bf1329ba7b8fe301d91ed5e53e7591ead38f3ffea10be09b635be2d1def61694",
+        "CM_NAME:c802f978b1be2ee2416ae33d2c600e7f22882fa6f67c7ffa53d6b3ec49b4e8fd",
+        "CM_NAME:ca4042cc5dd2c6c27002ad21e12c7e12d703896b8be7c1c01bd453b0d67660ca",
+        "CM_NAME:ceac57c4bedb0194865e31e891e78c34524d67ac19bf5d63417a2dd1a6b91666",
+        "CM_NAME:cf539bfd33030279a2fb12a232d2b83ec9e6069812a44ab50465c4738baf4afe",
+        "CM_NAME:d10c5e1e1697cdad42e3b3e0d66a2366bab1394f1f641c6996ecb461f98bc85a",
+        "CM_NAME:d89c25a70bdc4b33157bbfb0b9b14b44a1cfaf79cf6457324949b0d23ea73928",
+        "CM_NAME:d9085dff2d131a78163c05f749137a635269ff7c6020a86da15d4f6294de2116",
+        "CM_NAME:dc9e51c382a2005364b74007d0cdfbc575ec2c6511c1c367867cf4fdf5a6f796",
+        "CM_NAME:e0ca2cc61a12c519fef7e005971945a435683d434835f03d7a0b393289fb754e",
+        "CM_NAME:e175abbfd940158b681b2230fa79cf66f46cfc66b96356d7dc2feb75f7aa5a03",
+        "CM_NAME:e4506ab9254d71b5eaca330932b58962d5760898def874bc6ce9c6fa6bbe6834",
+        "CM_NAME:e6253c4745b595171de870c721b28de5077664dcc2afe33d0049b4b62739fa17",
+        "CM_NAME:e8fae9bc6514bfc5ef8c56444794263f1a5d94a6bda7a46383beb2dbdc81bc6e",
+        "CM_NAME:f3cfa8e384103d745c49b228af27e9709a70f29a014257259f911ac136303d49",
+        "KG_CASE:178d52ff74234c25075500cc4f8c37d1bfc44a33ceb8586b9596dac16564bda3",
+        "KG_CASE:1f32c922f9ebf341ba7f361a31b7bb6909d52966f110e6b6699920a44a51b218",
+        "KG_CASE:217248ed1f9c9671d91a1dd51533399185f0981f545f7d1d325159cf70db290e",
+        "KG_CASE:26c6907beea5e48ccf9ae1064cee49172456cb4a5852e2625374d3d3a67e1c62",
+        "KG_CASE:2e94cba8e21c154b17a82567c23e7d352e89a3f826d8f11e1d15266b1d8bf4fb",
+        "KG_CASE:4503f76ee4092e816c3f4ede149525c3dc9252aed6d263141800c2a789b70d9e",
+        "KG_CASE:492d5855321143bc6fa0dde6b4637b4e033b9bc97270bee910224f65fae4e668",
+        "KG_CASE:4b6258ce9bd4afc08fc7c057e2526b3980840958f0c4b92d90363356ab8993e4",
+        "KG_CASE:5b68eedf82c5697883e212f4efc840c274ac58c683d86f6afad8039ed47aff10",
+        "KG_CASE:5c826b5013b9365801fbeb574d6331098089a419c347cbbbc996fdd1edd71ea7",
+        "KG_CASE:675ced62305720f2502c2b6c35b4c90ddee2a995ef2908e763bb1c373f56a4de",
+        "KG_CASE:6dd452fb96e1daeadcea71f69836929e216ee930de8fbca6f974a2b1133a7e99",
+        "KG_CASE:7d3477a0c162e09ad4c084f6000d9eb598a9b8013c16a44eeda13559f4d28eff",
+        "KG_CASE:8e6bf4055278856258222d283cc79dd859d88708a4ae05fcd68b7690ac329e0d",
+        "KG_CASE:90a503611b532e8010ecaf560791dbc5e9aed664bde86b7c17841ae8bd71fb7b",
+        "KG_CASE:94c76bf8e4a576194544954a2727b8dfba42ed0fb19f588324b696894153aa4c",
+        "KG_CASE:9df3830bf5167e8b1448cf39086b0dccd0f3744698cb33b65672cfa1dae153c8",
+        "KG_CASE:a0918bb85d943c32bd0c272a90824344941138619bd8e2883f6da3dca20d7daf",
+        "KG_CASE:a2074d7903a380725c9c46ef830c1815846ef9b9a98876179c1d6aeea718c61a",
+        "KG_CASE:a833db16c482f7d03d2545a4e5fe8667e82d36755699533ff68e2c8dec38875a",
+        "KG_CASE:ab833d8ca72f1d2ad22d3a317772c990c4df799d0fbaecbc9686e36bc53e026b",
+        "KG_CASE:b40b4b8a9bb37d822da46ddf265e324660d7263417f39389a5f97e98afcd9a04",
+        "KG_CASE:d316b04c6dec733326d9ffda4baa9a3ef9f0500b0ae2b33f08f2db7a5c6937cf",
+        "KG_CASE:d537c4dc4d79c2a90fcd6c4f674012c8320d5768ebc8a84144d3fe4b934f6716",
+        "KG_CASE:dd045ae013815309d3a00a71375b712d0d40db7094073a8e940a1569fe488358",
+        "KG_CASE:df59175fbe2f11ee36e78332a59547ad19b2c36d28416dbb87c703b7950995ec",
+        "KG_CASE:ea32c8d347562eec74f1bed8975e118c40bd372bf140dbf6689b8074730ef8e4",
+        "KG_CASE:ebe7314feecc0f4616f04d4dc25cfb10346c127ad2ee77f7c11fb024b1194102",
+        "KG_CASE:f93df2fe1ec08aaab7b2941e6d1684aaa8430b1abd5b6b85664fc33327ac9a64"
+      ]
+    }
+  ],
+  "original_review_capture": {
+    "root": "artifact",
+    "path": "materials/independent-review-of-broths.json",
+    "sha256": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8"
+  },
+  "original_review_case_row": [
+    {
+      "case_id": "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+      "case_input_sha256": "e3f10cfcaad5a4e177fb3280f96703d1d136385d3ca39cb74fe9198d1a90918d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "CM0149 Broth (OXOID)",
+        "source_label": "CM0149 Broth (OXOID)",
+        "raw_source_label": "CM0149 Broth (OXOID)"
+      },
+      "verdict": "supported_as_bounded_proposal",
+      "reason": "CM0149 semisolid state is documented; differing current and historical compositions justify form annotation with revision unresolved.",
+      "evidence_ids": [
+        "b-case-029",
+        "b-recipe-029-00",
+        "b-primary-b80f9ee369",
+        "b-attempt-c569af5bb2",
+        "b-owner-a8d0e9cbeed2",
+        "b-targeted-d5c1626805eb",
+        "b-targeted-151c34f3bf1a",
+        "b-targeted-b087f0859f30"
+      ],
+      "proposal_ids": [
+        "b-proposal-cm0149-form"
+      ],
+      "reviewer": "/root/materials",
+      "hold_effect": "None: no native WITHHOLD, REJECTED_LABEL, source-material quarantine or complete published-payload obligation is cleared."
+    }
+  ],
+  "original_review_proposal_row": [
+    {
+      "proposal_id": "b-proposal-cm0149-form",
+      "after_sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328",
+      "path": "broths/proposed/Reinforced_Clostridial_Medium.yaml",
+      "before_sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+      "verdict": "supported_for_coordinator_integration_review",
+      "reason": "Identity/form and source-bound alias/component scope checked against cited primary preparation or supplier evidence. Component references do not invent exact chemical identities. Existing history and explicit competing-owner/version/release obligations remain; this is not native release approval."
+    }
+  ]
+}

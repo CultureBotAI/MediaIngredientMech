@@ -1,0 +1,223 @@
+{
+  "at": "2026-11-08T07:23:43.124104Z",
+  "verdict": "NATIVE_GUARD_CHECKS_PASS_RETAINED_WORKER_PROVENANCE_DEFECT_HELD",
+  "scientific_approval": false,
+  "new_findings": [
+    {
+      "finding_id": "W01-NINE-TECH-001",
+      "issue_key": "MIM-1226-soy-source75-worker-evidence",
+      "category": "provenance",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Retained W05 source75 mapping evidence is labeled human-supplied",
+      "description": "TARGET-024 ontology_mapping.evidence[0] is MANUAL_CURATION for the MediaDive ingredient75 interpretation. That exact object is absent from the authentic beforeimage and first appears in the W05 isolated proposal whose actual event identifies worker05/materials_research, llm_assisted=true and gpt-6. The final coordinator candidate retains it unchanged. The current MappingEvidence enum defines MANUAL_CURATION as human-supplied evidence; this exact source lineage does not support that attribution. This is a concrete inherited-worker counterexample under existing1226, separate from the13new coordinator entries already corrected. No global reclassification or new affected-count claim follows.",
+      "target_ids": [
+        "TARGET-024"
+      ],
+      "field_paths": [
+        "ontology_mapping.evidence[0]"
+      ],
+      "evidence_ids": [
+        "retained-worker-provenance",
+        "lineage",
+        "metadata"
+      ],
+      "rule_id": "EvidenceTypeEnum.MANUAL_CURATION",
+      "native_severity": "P2 retained evidence provenance",
+      "normalization_reason": "Material provenance misattribution in a retained current claim; schema-valid and scientifically unassessed. Prevents unqualified whole-candidate acceptance but does not invalidate the correctly bounded13-entry coordinator correction.",
+      "ownership_note": "W05 original source proposal and coordinator TARGET-024 successor; coordinator/W02 inherited-evidence audit owns any future guarded correction. No record changed by this reviewer.",
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226"
+      ]
+    }
+  ],
+  "assignment": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/assignments/w01-nine-scope-candidates-independent-v1.json",
+    "sha256": "dbde61cc31a77eb32c1ee7dcc344ed885c462ac99f5cbb233b54f69c3735d033"
+  },
+  "active_summary": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidate-summary-v4.json",
+    "sha256": "05414067195a94abb078152ba6be1dc515734124fcfe1296350102558acf2aa6"
+  },
+  "author_seal": {
+    "handoff": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/HANDOFF.json",
+      "sha256": "fb4cb8972c815667e925b056cdb7797d1635b291a9fb3ba936061bdcfa3dac96"
+    },
+    "manifest": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/MANIFEST.json",
+      "sha256": "6c89863e292bf1b4333be602bf4a355c0219766456d16e1f574bb5412d956df9"
+    },
+    "active_summary": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidate-summary-v4.json",
+      "sha256": "05414067195a94abb078152ba6be1dc515734124fcfe1296350102558acf2aa6"
+    },
+    "ignored_inclusive_method": "os.walk entire author packet, followlinks=False; every regular-file byte hashed, every symlink recorded. No gitignore filters.",
+    "manifest_members": 393,
+    "all_regular_files": 398,
+    "exact_manifest_matches": true,
+    "symlinks": [],
+    "excluded_runtime_cache_files": [
+      "private-black-cache/26.3.1/Grammar3.13.2.final.0.pickle",
+      "private-black-cache/26.3.1/PatternGrammar3.13.2.final.0.pickle",
+      "private-black-cache/26.3.1/cache.10,11,12.100.1.0.0.0.1.0.0.c3641f8544d7c02f3580b07c0f9887f0.pickle"
+    ],
+    "excluded_caches_not_review_evidence": true,
+    "interrupted_publication_regular_files": 0,
+    "retained_failures": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v2-interruption-v1.json",
+        "sha256": "6844e3e22b926e0a45cec45cab7733e0a52a24e765af1000122a13e030b9a9d7"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/build-v2.stderr",
+        "sha256": "300d31f62a725839dbe1286d6c44e1dcdf5ab97a7c0aabbdbd8c474783c24249"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/pytest-v1.log",
+        "sha256": "6cdb3161b399d76ed2aa1a538e694c172fbd2b0855ff8a4fe407f2953ce74487"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/test_successor_contract_attempt1.py",
+        "sha256": "3a0e0c1b884d1c59b3dd348644f1cb01e16378af4f80258a2227e414f0c3e36a"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/format-metadata-v1.log",
+        "sha256": "b51fba8fc74f9b458a4bbbbe3846cf46757c3ef1baeb95a7d7d0e90fbc09253e"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/ruff-packet-final-v1.log",
+        "sha256": "3f9a2b965cf4cd15e4ae85d20c666b1310dbfcaa246d84816215bf137c72fee4"
+      }
+    ],
+    "failure_limits": "SIGINT and KeyboardInterrupt are in retained bytes. Numeric exit130 was parent-reported; no literal numeric exit-status receipt was located in the sealed packet. Initial test failure concerned superseded versus supersedes wording; original test/source/log retained. UV cache permission failure is not hidden."
+  },
+  "counts": {
+    "candidate_rows": 9,
+    "distinct_origin_entry_ids": 13,
+    "distinct_source_case_ids": 14,
+    "distinct_CM_occurrence_ids": 22,
+    "origin_case_reference_rows": 18
+  },
+  "full_projection": {
+    "candidate_rows": 37,
+    "baseline_owners": 2956,
+    "projected_owners": 2957,
+    "baseline_errors": 0,
+    "projected_errors": 0
+  },
+  "evidence_correction": {
+    "candidates": 4,
+    "entries": 13,
+    "other_byte_exact_files": 33
+  },
+  "assessments": {
+    "TARGET-005": "Authentic Catalase beforeimage and both worker histories are retained. Current notes and supplied-form provenance correct the direct-JCM117 attribution while the old event remains explicitly historical. Distinct C9322 and C-10 forms are not collapsed. Native property-note aliases do not resolve; the inherited catalog alias is unchanged. This technical result does not independently approve enzyme biology or inherited mapping evidence.",
+    "TARGET-006": "Authentic owner history is a complete prefix and both origin histories are retained. The live local-registry mapping is separated from archived MICRO0000520 objects. Exactly the two recipe-pointer labels are nonresolving; the generic clarified-fluid counterpart remains resolving. Four newly authored mapping-evidence entries are truthfully LLM_SUGGESTION after the bounded correction. Source protocols and source-case provenance remain separate.",
+    "TARGET-017": "Both source-author events and original owner history remain intact. The live MICRO0001795 mapping and three explicitly resolving Phytone names match the declared successor scope; archived fallback/generic claims are identified as history. Four new coordinator evidence entries have honest LLM provenance. No count recomputation, ownership merge, SKU inference or source-membership transfer was performed.",
+    "TARGET-024": "Exactly three specified Phytone-bearing tokens retain their original text/source and are REJECTED_LABEL. Actual native resolver, producer and supported-export gate reject those tokens; a Soybean peptone positive control passes. Existing inherited Soytone/Bacto/peptic-soy names and manual evidence are unchanged and remain separately held. The technical pass is not generic-product equivalence approval. Exact source75 MANUAL_CURATION retained from the LLM-authored W05 proposal is a confirmed provenance defect under1226; unqualified whole-candidate acceptance is withheld.",
+    "TARGET-032": "This is a promotion on the authentic UNMAPPED_0507 / MediaDive1769 owner, not a fabricated new Difco record. Exact old histories include W03 historical Oxoid work, while the current supplied form and resolving alias are Difco-scoped. Original generic and Oxoid tokens retain their text/source as rejected claims on this owner. Nine source-bound components and their assertion remain unchanged by the evidence-only correction; three mapping-evidence entries are corrected.",
+    "DEP-R1193-DEP-rumen-pyglucose": "The exact existing parent remains its owner. One rumen part loses the unsupported clarification label and component ID and becomes literal rumen fluid with UNMAPPED scope. Other components, quantities, source values, mapping, roles and assertion completeness remain inherited. Original source-trigger case is repeated provenance, not a new observation or parent-identity approval.",
+    "DEP-R1193-DEP-rumen-casitone": "The existing parent history and source label remain. Only the rumen component claim is changed to a literal ungrounded part, with explicit evidence/notes and append-only author history. Other parts and COMPLETE label-enumeration scope are unchanged. No component redirects to clarified-fluid or guessed generic anatomical identity occur.",
+    "DEP-R1193-DEP-rumen-pyg": "Existing parent continuity and all history are preserved. The specific clarified-fluid link is removed from the literal rumen part, not retargeted. Every other component and quantity is retained. The shared triggering CM case contributes no additional distinct source-case count.",
+    "NEW-OXOID-CM0149": "The candidate has no authentic beforeimage and begins with an actual coordinator CREATED event, then the evidence-provenance correction. W03 prior owner history is preserved in the source trace and existing RCM lineage, not impersonated as pre-existing history of this new owner. Only the catalog-qualified alias resolves; no components or source-occurrence counts are invented. Two mapping-evidence entries are corrected."
+  },
+  "receipts": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/native-full-projection-v1.json",
+      "sha256": "57414540187a2a3fbce473ddf08d6f8f4c6b7dff109e57eba704cfa9e2ac891e"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/nine-candidate-lineage-schema-alias-v1.json",
+      "sha256": "c65e0dbb0341cb666e3bb6638f8e71efe6a842e36325c656b3352b20d719a147"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/raw-source-case-occurrence-bindings-v1.json",
+      "sha256": "2ae7395e0c59570876ccce9491b511fb272e4b33a9fa5b728017cb13e1b88f59"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/mapping-evidence-and-reuse-v1.json",
+      "sha256": "950b311e7a765146dc051f2c8dea9249b2deff8cdb4a49b15a1670e1f674d2b9"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/independent-author-seal-v1.json",
+      "sha256": "1e6d3bd4c584a7f2fb785fadc067d6a133436da4d58e7bf8cb6c2b06bf6b84ca"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/soy-native-alias-probe-v1.json",
+      "sha256": "3543be768b28441e1bbfd66c162ea423f1ce7a91d28f408d2d2df9205a7ccf23"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/final-maintained-boundary-v1.json",
+      "sha256": "935b08fcb83af3729a00671f5f870883eac75a6b8dcf21d025e72ffd11196218"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/pinned-input-hash-check-v1.json",
+      "sha256": "69c688d9b0b6635ab7b5bf8a29d0cd7838fc40f503c7e2e83b7368a651ce521d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/whole-candidate-dossiers-v1.json",
+      "sha256": "a77dff896f8b5bc41f081d611938eb3cf6ad2b889b7c3056f38b1c4a6a66036e"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/before-origin-unique-values-v1.json",
+      "sha256": "feddf65934e96040985b98ab41720ac7ec017914a2203cf4b8883ee63d6de868"
+    }
+  ],
+  "programs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/run_native_provenance_v1.py",
+      "sha256": "2ff68a316cd06fa724373ead6bcce34e9ff2897955e6d0046f613938fce4aa32"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/verify_seal_case_scope_v1.py",
+      "sha256": "448543476b168b151d8864d8b36e369b3b2dc6e03cdee812e82b7d67dee3a2a9"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/probe_soy_aliases_v1.py",
+      "sha256": "6d369f7849c14a385a2022522a4bc3a19a524e5e51ac2f4972fdffe4a9cb0093"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/build_review_v1.py",
+      "sha256": "74d8cf6ba1cfbc39596227afe781a34459cd8c0193152bcd8a1c91b1cff467e3"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/finalize_review_v2.py",
+      "sha256": "18db6c937ad1bd58d6e36c86b3cc2fe3b520fd4a61700650b98a19c716be320d"
+    }
+  ],
+  "limits": [
+    "This is independent technical/native/guard/provenance review, scientific_review=false. Separate whole-candidate scientific review remains mandatory; no maintained application, corpus acceptance, owner merge, source membership transfer or release approval is granted.",
+    "Exactly nine whole candidates were manually and structurally reviewed. All37 author rows were included in the full projected partonomy check, and all33 unchanged files were byte-compared. These checks do not create a new scientific review of the other28 candidates.",
+    "No global reclassification of inherited worker MappingEvidence was performed. The13 new coordinator entries across4candidates are the only #1226 metadata changes. ComponentEvidenceType MANUAL_CURATION has a different schema definition and was not conflated with human-supplied MappingEvidence.",
+    "Source-case coverage is14distinct cases and22distinct CM occurrence IDs across13distinct worker origins, with18repeated origin-case references. The3dependency candidates share an existing trigger case; they do not add3observations. KG helper counts are not recipe frequency.",
+    "Later W06/W07 successor intake, current remote/head acceptance, full source-owner admission, inherited product/alias/role/evidence holds and complete campaign export gates remain coordinator work. This review does not silently accept later bundles.",
+    "Native alias controls establish the three specified rejections, not scientific approval of the unchanged other Soy names or a conflict-free complete release.",
+    "The interrupted original attempt retains SIGINT and KeyboardInterrupt with zero publication-v2 regular files. Numeric exit130 is parent-reported, not independently evidenced by a literal exit-code receipt in the sealed packet.",
+    "All writes were under the assigned private technical directory. Native inspect/validate/render are used; the shared saver is deliberately not invoked because its fixed reviews/structured output would violate the explicit private-only task scope. No Git init/add/commit/push or fixture Git tree was used.",
+    "The full2956-maintained-owner byte inventory matched the authentic baseline before and after probes. Both worker and integration tracked status stayed clean. This is a bounded observed no-change proof, not a claim to police unrelated concurrent activity after completion.",
+    "The source75 retained W05 counterexample is confirmed, not merely a generic future-audit lead. It is not counted among the13new coordinator entries. All broader inherited evidence remains outside this narrow disposition and no blanket rewrite is authorized."
+  ],
+  "review_yaml": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/review-v4.yaml",
+    "sha256": "d6f268cc769c48295a178f34639945f62e3c00751f3fe877a3b2a2c904101ba6"
+  },
+  "prior_unsealed_draft": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/REVIEW-v1.json",
+    "sha256": "4d96874d21a3d03b59720d22d13fd523b84b59bda82034dfb6d6be579f7dce68"
+  },
+  "retained_worker_finding": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/finding-retained-worker-evidence-1226-v1.json",
+    "sha256": "45528707aa7f405759b30c24230a148528f9320ba149166b0083e32c92d5ef0b"
+  },
+  "prior_unsealed_v2": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/REVIEW-v2.json",
+    "sha256": "cd455d8b68120264645b2d50b2d226faf19667950681266225ab06d3d3d67fc3"
+  },
+  "metadata_correction": "Explicit complete-record selectors added; native in-process validate_review passes. No conclusion or scope change.",
+  "prior_unsealed_v3": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/nine-scope-candidates-independent-v1/technical/REVIEW-v3.json",
+    "sha256": "2059063acaa79ffc0620276e46aa59997dadd793278fb4fed944deda86ba2266"
+  }
+}

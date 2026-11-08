@@ -1,0 +1,10 @@
+The nine bounded scientific corrections are supported at the specified source scopes. Full candidate, owner and release acceptance remains withheld. The exact inherited W05 evidence-provenance defect in TARGET-024 remains open under #1226; no repair was made.
+
+Reviewed 9 candidates, 8 authentic beforeimages, 13 unique original worker proposals, 14 unique source cases and 22 CM occurrences. Dependency backlinks are not new MicrobeDecoder cases, and coverage is not positive mapping.
+
+- Catalase: verified C9322 remains separate from historical C-10. TOGO M109 supports the latter spelling and filtration; the direct JCM117 retrieval failed. Historical C-10 species and C100 equivalence remain unverified.
+- Rumen: the generic processed-fluid owner cannot carry cow-only or DSMZ1310 exact identity. JCM and DSMZ preparations remain distinct. Three plain-rumen component assertions correctly remove clarification and identifiers.
+- Phytone/Soy: MICRO1795 supports the named Phytone product without adopting the erroneous barley annotation. Three Phytone-bearing Soy aliases correctly become nonresolving. MICRO181 specifies enzymatic soy digest; the generic source does not establish that process. This independently assessed distinction supports the candidate's stated generic partial scope, without forced exact mapping. Retained Soytone/peptic aliases, role evidence and family merging remain held.
+- RCM: original MediaDive1769 continuity supports the Difco-qualified owner and its cited approximate nine-part formula. NBRC902 supports a distinct new Oxoid CM0149 product. Current and historical formula revisions are not backdated or conflated; receiving additives remain separate.
+
+`science-review-v1.json` supplies the exact nine-row matrix, full input hashes, prior attribution and limits. `coverage-v1.json` binds every case/occurrence and original recipe. `source-ledger-v1.json` retains source URLs, original capture timestamps and hashes; `primary-scientific-assessments-v1.json` gives evidence locators and interpretations. No human approval is claimed.

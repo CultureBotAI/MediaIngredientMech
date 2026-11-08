@@ -1,0 +1,84 @@
+{
+  "candidate": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/TARGET-024/Soy_Peptone.yaml",
+    "sha256": "9f444c580447589c8080e60f6b76e94aca5115ff9772d1fbe809984a3c7247cd"
+  },
+  "native_producer": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "native_policy": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/synonym_policy.py",
+    "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+  },
+  "native_supported_export_gate": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/export/reviewed_sssom.py",
+    "sha256": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2"
+  },
+  "checks": [
+    {
+      "synonym": {
+        "synonym_text": "Soybean peptone",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "manual"
+      },
+      "native_resolves": true,
+      "native_producer_publishable": true,
+      "supported_export_gate_error": null,
+      "control": "known exact positive synonym"
+    },
+    {
+      "synonym": {
+        "synonym_text": "Phytone peptone",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "manual"
+      },
+      "native_resolves": false,
+      "native_producer_publishable": false,
+      "supported_export_gate_error": "Non-resolving/rejected synonym in supported row: MIM:Soy_Peptone",
+      "control": "specified rejected product claim"
+    },
+    {
+      "synonym": {
+        "synonym_text": "Phytone peptone (BD-BBL)",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "manual"
+      },
+      "native_resolves": false,
+      "native_producer_publishable": false,
+      "supported_export_gate_error": "Non-resolving/rejected synonym in supported row: MIM:Soy_Peptone",
+      "control": "specified rejected product claim"
+    },
+    {
+      "synonym": {
+        "synonym_text": "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "manual"
+      },
+      "native_resolves": false,
+      "native_producer_publishable": false,
+      "supported_export_gate_error": "Non-resolving/rejected synonym in supported row: MIM:Soy_Peptone",
+      "control": "specified rejected product claim"
+    }
+  ],
+  "actual_in_memory_rows": [
+    {
+      "subject_id": "MIM:Soy_Peptone",
+      "subject_label": "Soy peptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.ingredient:soy_peptone",
+      "object_label": "Soy peptone",
+      "object_source": "kgm:ingredient",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:curator=all-unmatched coordinator /root/next23_context",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "Soybean peptone|Peptone from soymeal|Soytone|Bacto Soytone|Peptic digest of soybean meal",
+      "validation_method": ""
+    }
+  ],
+  "rejected_tokens_absent": true,
+  "method": "Import actual pinned native functions; call with complete exact candidate in memory and empty ancillary maps. No producer main, canonical output or file mutation.",
+  "limitations": "Other inherited Soytone/Bacto/peptic-soy resolving tokens are unchanged and remain subject to their separate source holds; this technical check gives them no scientific approval. No complete campaign alias or release admission is established."
+}

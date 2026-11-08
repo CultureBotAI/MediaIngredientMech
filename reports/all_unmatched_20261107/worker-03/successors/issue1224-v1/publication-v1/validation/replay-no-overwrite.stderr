@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/w03-oxoid-successor-publication-v1/build_publication.py", line 17, in <module>
+    assert sha(W/rel)==entry['sha256'];capture(W/rel,F/'context/w01-review'/rel)
+                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/w03-oxoid-successor-publication-v1/build_publication.py", line 11, in capture
+    with dest.open('xb') as f:f.write(src.read_bytes())
+         ~~~~~~~~~^^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/reports/all_unmatched_20261107/worker-03/successors/issue1224-v1/publication-v1/context/w01-review/HANDOFF.json'

@@ -1,0 +1,15 @@
+"""Read-only native schema/partonomy and bounded identity/synonym probes."""
+from pathlib import Path
+import sys,json,hashlib
+R=Path.cwd();sys.path.insert(0,str(R/'src'));import yaml
+from mediaingredientmech.validation.write_validated import validate_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+P=R/'reports/all_unmatched_20261107/worker-03/successors/issue1224-v1/candidate/reinforced_clostridial_medium_oxoid_cm0149.yaml';d=yaml.safe_load(P.read_text());ident='kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149';target=R/'data/ingredients/mapped/reinforced_clostridial_medium_oxoid_cm0149.yaml'
+files=sorted((R/'data/ingredients/mapped').glob('*.yaml'))+sorted((R/'data/ingredients/unmapped').glob('*.yaml'));records=[yaml.safe_load(p.read_text()) for p in files]
+prior=[str(x) for x in validate_component_partonomy(records)];after=[str(x) for x in validate_component_partonomy(records+[d])]
+result={'payload_path':str(P.relative_to(R)),'payload_sha256':hashlib.sha256(P.read_bytes()).hexdigest(),'schema_errors':[str(x) for x in validate_ingredient(d)],'baseline_owner_count':len(records),'baseline_partonomy_violations':prior,'private_overlay_partonomy_violations':after,'introduced_partonomy_violations':sorted(set(after)-set(prior)),'active_identifier_duplicates':[str(p.relative_to(R)) for p,x in zip(files,records) if x.get('mapping_status')!='REJECTED' and x.get('identifier')==ident],'prospective_path_exists':target.exists(),'identity_and_registry_mapping_agree':d['identifier']==d['ontology_mapping']['ontology_id']==ident,'formula_revision_unspecified':not d.get('components') and not d.get('component_assertion'),'catalog_number':d['supplied_form'][0]['catalog_number'],'resolving_synonyms':[x['synonym_text'] for x in d.get('synonyms',[]) if is_resolving_synonym(x)],'raw_source_label_is_not_global_alias':not any(x['synonym_text']=='CM0149 Broth (OXOID)' and is_resolving_synonym(x) for x in d.get('synonyms',[])),'checks_limitation':'Partonomy is vacuous for this deliberately opaque new product; no component/formulation science approval. The CM149 alias requires primary source adjudication separately. No ontology network, exports, role checks or full-corpus QC run. No maintained writes.','checks_used':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [R/'src/mediaingredientmech/validation/write_validated.py',R/'src/mediaingredientmech/validation/component_partonomy.py',R/'src/mediaingredientmech/synonym_policy.py',R/'src/mediaingredientmech/schema/mediaingredientmech.yaml']}}
+assert not result['schema_errors'] and not result['introduced_partonomy_violations'] and not result['active_identifier_duplicates'] and not result['prospective_path_exists']
+assert result['identity_and_registry_mapping_agree'] and result['formula_revision_unspecified'] and result['catalog_number']=='CM0149' and result['raw_source_label_is_not_global_alias']
+result['structural_status']='PASS';result['scientific_approval']=False
+print(json.dumps(result,indent=2))

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "worker_slot": 3,
+  "phase": "shard",
+  "complete_selection": {
+    "decisions.json": {
+      "root": "artifact",
+      "path": "successors/issue1224-v1/publication-v1/decisions.json",
+      "sha256": "a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220"
+    },
+    "proposals.json": {
+      "root": "artifact",
+      "path": "successors/issue1224-v1/publication-v1/proposals.json",
+      "sha256": "b1a1c40750c9836923a16fb1befebb7212a205eeaed63e35e684b55090bb0f9e"
+    },
+    "evidence.json": {
+      "root": "artifact",
+      "path": "successors/issue1224-v1/publication-v1/evidence.json",
+      "sha256": "a4110d6835bf8457c9b5453c9028cefcbc02ff476b8e02f2ba22a6c97e3da645"
+    }
+  },
+  "counts": {
+    "cases": 188,
+    "proposals": 74,
+    "evidence": 863,
+    "new_owner": 40,
+    "edit_existing_owner": 34
+  },
+  "dispositions": {
+    "unresolved": 71,
+    "new_distinct_ingredient_proposal": 41,
+    "supplied_form_correction": 12,
+    "stock_product_mixture_context": 26,
+    "existing_identity_or_alias": 32,
+    "broad_parent_relation_only": 2,
+    "malformed_or_nonchemical_token": 4
+  },
+  "review_metadata_statuses": {
+    "complete": 188
+  },
+  "preservation": {
+    "other_case_objects_unchanged": 187,
+    "other_proposal_objects_unchanged": 73,
+    "original_evidence_objects_unchanged": 852,
+    "proof": {
+      "root": "artifact",
+      "path": "successors/issue1224-v1/publication-v1/validation/successor-preservation.json",
+      "sha256": "5402457d260b233f5bce76bc530f8a3e603bc17a60a782777affe883546b039c"
+    },
+    "complete_independent_object_hashes": {
+      "root": "artifact",
+      "path": "successors/issue1224-v1/publication-v1/reviews/final/independent-accounting.json",
+      "sha256": "11f8ed38f477c1fca1afae48c62f35daed5efc017c7e51fb1a9e4946c780558e"
+    }
+  },
+  "new_proposal": {
+    "proposal_id": "w03-oxoid-cm0149-product-1224-v1",
+    "kind": "new_owner",
+    "case_ids": [
+      "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+    ],
+    "description": "Genuine source-qualified Oxoid CM0149 product for the exact NBRC902 case; byte-exact coordinator v4 payload. This is a new product origin, not a rewritten mixed-owner edit.",
+    "evidence_ids": [
+      "b-case-029",
+      "b-recipe-029-00",
+      "b-primary-b80f9ee369",
+      "b-attempt-c569af5bb2",
+      "b-owner-a8d0e9cbeed2",
+      "b-targeted-d5c1626805eb",
+      "b-targeted-151c34f3bf1a",
+      "b-targeted-b087f0859f30",
+      "w03-oxoid-v4-trace",
+      "w03-oxoid-scope-decision",
+      "w03-oxoid-origin-issue",
+      "w03-oxoid-provenance-issue",
+      "w03-oxoid-retirement",
+      "w03-oxoid-cm149-alias-primary",
+      "w03-oxoid-w01-final-review",
+      "w03-oxoid-w01-final-skeptic",
+      "w03-oxoid-w03-preflight-skeptic",
+      "w03-oxoid-w03-preflight-native",
+      "w03-oxoid-w01-prerequisite-comment"
+    ],
+    "owner_path": "data/ingredients/mapped/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+    "before_sha256": null,
+    "after_capture": {
+      "root": "artifact",
+      "path": "successors/issue1224-v1/candidate/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+      "sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae"
+    },
+    "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+    "limitations": "Historical Oxoid CM0149 formula revision and purchased package/lot remain unknown. Do not infer B/T, unconditional modern components, or generic/mixed-supplier membership. Coordinator source partition/admission, retained native/source/role/export holds and guarded maintained integration remain required. Catalog identity does not require inventing these missing facts. No W05 Difco, whole-owner or supported-export approval follows.",
+    "independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "w03-oxoid-w01-final-review",
+        "w03-oxoid-w01-final-skeptic",
+        "w03-oxoid-w03-preflight-skeptic",
+        "w03-oxoid-w03-preflight-native"
+      ],
+      "reviewer": "OpenAI Codex worker01 independent review team and /root/oxoid_successor_review",
+      "reviewed_after_sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae",
+      "scope_note": "Exact full product payload and bounded source conclusion reviewed; additional final complete-core review is detached in final HANDOFF. No whole-owner/role/export approval."
+    },
+    "authorship": {
+      "candidate_payload_author": "/root/next23_context",
+      "candidate_payload_sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae",
+      "worker03_contribution": "source-case origin binding, retirement and complete successor accounting only; no new payload history event or reassigned scientific authorship"
+    },
+    "retired_predecessor_proposal_id": "b-proposal-cm0149-form"
+  },
+  "retirement": {
+    "root": "artifact",
+    "path": "successors/issue1224-v1/retirement.json",
+    "sha256": "fb982c0578b724e98d0c739b0627f3c19014c792a05c3315252ce9f2fa5c5d6e"
+  },
+  "new_owner_preimage": null,
+  "old_original_owner_preimage_sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+  "old_proposal_payload_sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328",
+  "old_origin_active": false,
+  "old_origin_to_be_consumed_by_source_operator": false,
+  "scientific_review_scope": "Exactly the changed Oxoid case and whole new product; other187case/73proposal objects checked for preservation, not newly scientifically approved.",
+  "independent_final_review": {
+    "root": "artifact",
+    "path": "successors/issue1224-v1/publication-v1/reviews/final/HANDOFF.json",
+    "sha256": "738a5376ab0d5ce75942c6c004ddcc659e2635f6c8c0b64e8c0dcf87d28d22e9"
+  },
+  "technical_review": {
+    "root": "artifact",
+    "path": "successors/issue1224-v1/publication-v1/reviews/technical/HANDOFF.json",
+    "sha256": "3c8726c1a84cd48e6df54c546a284e402db802cb02db4d3b52075d7d215b34bf"
+  },
+  "w01_review": {
+    "root": "artifact",
+    "path": "successors/issue1224-v1/publication-v1/context/w01-review/HANDOFF.json",
+    "sha256": "1c320b85dc7ff0f35e5015968e9f290179bc4226b349225ea3b4b4c6f82e6c49"
+  },
+  "publication_prerequisite_communication": {
+    "root": "artifact",
+    "path": "successors/issue1224-v1/publication-v1/context/issue1224-comment-6718812904.json",
+    "sha256": "5072e48227a1328d6c49a4c89030475fe3495222220a5c64fdf9cc24aa2844be"
+  },
+  "authorship": {
+    "candidate_payload": "/root/next23_context",
+    "source_binding_and_report": "/root (existing worker03 session)",
+    "final_scientific_reviewer": "/root/oxoid_successor_review",
+    "technical_reviewer": "/root/oxoid_contract",
+    "extra_precommit_assembly": "/root/oxoid_publication_assembly; separate private receipt bound in publication delivery"
+  },
+  "roles_supported_export_whole_owner_approval": false,
+  "maintained_application": false
+}

@@ -1,0 +1,140 @@
+{
+  "reviewer": "/root/oxoid_primary",
+  "scope": "source preflight only",
+  "candidate_sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae",
+  "trace_sha256": "1fa8fe5b790d9392df78b8abcc63c0bffad3e7e770c1ebb3572e2288492db627",
+  "case_id": "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+  "case_input_sha256": "e3f10cfcaad5a4e177fb3280f96703d1d136385d3ca39cb74fe9198d1a90918d",
+  "assessments": [
+    {
+      "assessment_id": "identity",
+      "area": "identity",
+      "topic": "named product identity",
+      "outcome": "supported",
+      "summary": "Supplier-qualified CM0149 product identity is concretely named by NBRC902 and manufacturer IFU; no single compound/CAS/salt/stereo identity is fabricated. FALLBACK_REGISTRY records the whole named product. This is a source-specific scientific preflight, not final admission.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "nbrc902",
+        "ifu0539",
+        "candidate",
+        "semantics",
+        "ontology-search"
+      ]
+    },
+    {
+      "assessment_id": "version",
+      "area": "scope",
+      "topic": "historical product formula remains unknown",
+      "outcome": "supported",
+      "summary": "Candidate correctly omits components/component_assertion and explicitly declines to backdate IFU2023 formula onto revision-unspecified NBRC902. Missing historical lot/version is precise uncertainty; it does not prevent proposing the named catalog product.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "nbrc902",
+        "ifu0539",
+        "candidate"
+      ]
+    },
+    {
+      "assessment_id": "parts",
+      "area": "quantity",
+      "topic": "receiving recipe versus purchased powder",
+      "outcome": "supported",
+      "summary": "NBRC38gCM0149,water1L,optionalagar15g remain in exact frozen recipe; water/additionalagar are not asserted as dry-product parts. IFU components are source-versioned notes only. No component IDs, hydrate/salt/stereo or peptone specificity is silently invented.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "nbrc902",
+        "ifu0539",
+        "frozen",
+        "candidate"
+      ]
+    },
+    {
+      "assessment_id": "alias",
+      "area": "nomenclature",
+      "topic": "qualified CM149 alias",
+      "outcome": "supported",
+      "summary": "ATCC1252 independently prints the inherited OxoidCM149 qualified base name. Interpreting CM149 as the leading-zero catalog spelling CM0149 is an explicit cross-source inference from the same supplier/base-name/catalogdigits, not a source-local numbered-medium pointer. It does not support genericRCM or uncataloguedOxoid aliases, nor approve the ATCC occurrence as W03-owned. The raw unmatched label remains frozen case evidence.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "atcc1252",
+        "alias-context",
+        "nbrc902",
+        "ifu0539",
+        "candidate",
+        "semantics"
+      ]
+    },
+    {
+      "assessment_id": "evidence-typing",
+      "area": "evidence",
+      "topic": "agent interpretation attribution",
+      "outcome": "supported",
+      "summary": "Both mapping evidence entries use LLM_SUGGESTION and identify agent interpretation; source URLs retained. Prior coordinator history prefix preserved; #1226correction does not relabel component enums or past human evidence.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "candidate",
+        "history",
+        "schema"
+      ]
+    },
+    {
+      "assessment_id": "history-authorship",
+      "area": "provenance",
+      "topic": "genuine new owner lineage",
+      "outcome": "supported",
+      "summary": "Two v4 events belong to coordinator/root/next23_context. New owner has null preimage in trace; old W03 mixed-owner event remains original historical proposal rather than fictional pre-existing history of new record. Retirement and full187/73proof must be verified in future complete successor.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "candidate",
+        "history",
+        "scope"
+      ]
+    },
+    {
+      "assessment_id": "holds",
+      "area": "scope",
+      "topic": "excluded decisions",
+      "outcome": "supported",
+      "summary": "No W05 Difco acceptance, generalRCM routing, source-membership transfer, countfabrication, componentgrounding, role/mechanism approval, supportedexport or whole-owner admission follows from this preflight.",
+      "target_ids": [
+        "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149"
+      ],
+      "evidence_ids": [
+        "candidate",
+        "scope",
+        "frozen"
+      ]
+    }
+  ],
+  "new_confirmed_findings": [],
+  "publication_condition": "await coordinator communication of actual W01 final exactv4review; then complete separate successor independent review",
+  "native_private_review": {
+    "yaml": "review.yaml",
+    "markdown": "review.md",
+    "completion": "partial",
+    "verdict": "not_assessed",
+    "reason": "Preflightonly; final successor technical/fullcase review outside this agent scope"
+  },
+  "source_limitations": [
+    "This is a preliminary source-claim assessment of one exact coordinator-authored candidate, not final candidate/source-case acceptance.",
+    "The user-required W01 exact v4 final review and findings/disposition communicated by coordinator remain a publication condition; this preflight does not satisfy it.",
+    "Final complete188-case successor, changedcase/retirement/backlink and73unchangedproposal proof, native schema/partonomy and structural audits belong to separate final review after root authors them.",
+    "No W03 original proposal is independently approved here; original W03 artifacts are provenance only. No W05case/productmerge, role, membership, owneradmission or export approval.",
+    "Historical NBRC902 formula revision and package/lot remain unknown. Exact current IFU table is not installed as unconditional components.",
+    "ATCC1252 is supplementalalias evidence only. TOGOM2613 directfetch returned a JavaScript shell; its live recipe was not inspected. Earlier webopen toolfailed and sandboxDNSfailed; subsequentfree officialATCCfetch succeeded.",
+    "EnglishIFU pages1\u20134 assessed; translatedpages5\u201364 not separately inspected. No unread referencedpapers were represented as inspected.",
+    "Canonical native saver would write outside user-authorized science directory; private pair is rendered/shapevalidated via unchanged native helper, not registered in maintainedreviewselectors."
+  ]
+}

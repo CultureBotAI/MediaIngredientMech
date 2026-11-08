@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-08T07:23:08.450844+00:00",
+  "reviewer": "/root/skeptical_review",
+  "scope": "Reviewer-local inspection attempts only; no failed attempt mutated source/candidate/maintained inputs.",
+  "attempts": [
+    {
+      "program": "verify_inputs_v1.py",
+      "exit_code": 1,
+      "failure": "FileNotFoundError: campaign root calculation used W.parents[3] and resolved .temp/assignments instead of campaign/assignments; no result receipt written.",
+      "successor": "verify_inputs_v2.py"
+    },
+    {
+      "program": "verify_inputs_v2.py",
+      "exit_code": 1,
+      "failure": "KeyError term: reviewer guessed wrong synonym key before inspecting actual YAML field; no result receipt written.",
+      "successor": "verify_inputs_v3.py"
+    },
+    {
+      "program": "verify_inputs_v3.py",
+      "exit_code": 1,
+      "failure": "KeyError value: reviewer second wrong synonym key; no result receipt written.",
+      "successor": "verify_inputs_v4.py"
+    },
+    {
+      "program": "verify_inputs_v4.py",
+      "exit_code": 0,
+      "result": "493 actual checks PASS; correct key synonym_text read from candidate YAML; this is the final input check."
+    },
+    {
+      "command": "python3 inline primary-source HTML extraction using lxml",
+      "exit_code": 1,
+      "failure": "ModuleNotFoundError lxml in system python; repeated successfully using pinned shard-venv python with PYTHONDONTWRITEBYTECODE=1."
+    },
+    {
+      "program": "extract_sources_v1.py",
+      "exit_code": 0,
+      "warnings": "pdftotext printed form/font warnings; text derivatives preserved with source/derivative SHA. Combined stdout was truncated; named substantive sections were reread in bounded followups. No missing text treated as negative scientific evidence."
+    },
+    {
+      "command": "Initial optional origin evidence listing",
+      "exit_code": 1,
+      "failure": "Dependency origin lacks evidence key; later verified with origin.get(evidence,[]) and preserved trace. Not interpreted as missing source provenance."
+    }
+  ],
+  "retained_programs": [
+    {
+      "path": ".temp/nine-scope-candidates-independent-v1/skeptical/verify_inputs_v1.py",
+      "sha256": "dc39c49bdc1702e8bb50a938c2998dfe470e3ac34968490e376367da310297d1"
+    },
+    {
+      "path": ".temp/nine-scope-candidates-independent-v1/skeptical/verify_inputs_v2.py",
+      "sha256": "4ba70ae225157e9f125caef437d473a5f5b4cdad7f8bf4eac6adc7d72f9ae2fd"
+    },
+    {
+      "path": ".temp/nine-scope-candidates-independent-v1/skeptical/verify_inputs_v3.py",
+      "sha256": "34e244b17ebbc0a5d142b62fc577c6e4111fb6299bdfee36d418576f929e606c"
+    },
+    {
+      "path": ".temp/nine-scope-candidates-independent-v1/skeptical/verify_inputs_v4.py",
+      "sha256": "e45ad239e9769e01d9444291c73005f79a46a23eafa66368446a3d22d6a9eb1e"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "finding_id": "W01-NINE-PROVENANCE-001",
+  "status": "open",
+  "severity": "major",
+  "native_priority": "P2",
+  "at": "2026-11-08T07:22:36.951129+00:00",
+  "reviewer": "OpenAI Codex /root/skeptical_review",
+  "author_of_candidate": "/root/next23_context",
+  "candidate_id": "TARGET-024",
+  "candidate": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/TARGET-024/Soy_Peptone.yaml",
+    "sha256": "9f444c580447589c8080e60f6b76e94aca5115ff9772d1fbe809984a3c7247cd"
+  },
+  "original_worker_proposal": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w05/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+    "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+  },
+  "authentic_before": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/TARGET-024/authentic-before.yaml",
+    "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c"
+  },
+  "schema": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+  },
+  "existing_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+  "issue_capture": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/root-integration-findings-v1/issue1226-readback-v1.json",
+    "sha256": "cc552aabe882df1b67679a9d2e27951f26656d1d679b3a4e4afe25199a1aff63"
+  },
+  "field": "ontology_mapping.evidence[0].evidence_type",
+  "actual_entry": {
+    "evidence_type": "MANUAL_CURATION",
+    "source": "https://mediadive.dsmz.de/rest/ingredient/75",
+    "notes": "Soy-derived complex digest material; FOODON03315720 includes other vegetable hydrolysates and is not its identity."
+  },
+  "actual_origin_event": {
+    "timestamp": "2026-11-08T05:47:55.843673+00:00",
+    "curator": "worker05/materials_research correction1193 (isolated proposal)",
+    "action": "CORRECTED",
+    "changes": "Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein identifier to a local material identity. Preserve source75 unspecified soy digest and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone or Phytone formula to it. Existing branded alias claims require separate complete-owner reconciliation before export. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+    "previous_status": "MAPPED",
+    "new_status": "MAPPED",
+    "llm_assisted": true,
+    "llm_model": "gpt-6"
+  },
+  "schema_definition": "Manually curated evidence supplied by a human reviewer (distinct from CURATOR_JUDGMENT, which records the decision rather than the source of evidence).",
+  "counterexample": {
+    "entry_absent_from_authentic_before": true,
+    "entry_exactly_retained_from_worker05": true,
+    "new_coordinator_metadata_fix_did_not_touch_this_candidate": {
+      "complete_first_publication_history_prefix_preserved": true,
+      "delta_from_first_publication": {},
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+      "status": "BYTE_EXACT_FIRST_PUBLICATION_REUSE"
+    }
+  },
+  "reason": "This new W05 mapping-interpretation object chooses a local material identity and excludes a broader FoodOn identity. Its exact author event names the worker05 materials agent, GPT-6 and LLM assistance; it is not a historical human-supplied review object. The source75 database response supplies ingredient names/CAS, not a human review of this local-identifier decision. Its MANUAL_CURATION type therefore asserts the wrong source provenance. Final whole-candidate review must retain this open #1226 defect even though the 13 newly authored coordinator MappingEvidence entries have been corrected.",
+  "bounded_followup": "Coordinator should reconcile the exact W05 entry under existing #1226 with an honestly typed immutable successor (e.g. LLM_SUGGESTION for this agent interpretation), preserving its source URL, notes, scientific scope, raw labels, prior history and both original proposal/candidate hashes. Do not globally replace historical human evidence or ComponentEvidenceType fields. Then rerun strict schema and exact full-candidate independent review.",
+  "not_claimed": [
+    "Not a wrong scientific identity finding.",
+    "Not evidence that all old MANUAL_CURATION entries are false.",
+    "Not repaired, closed, or a new GitHub mutation.",
+    "No blanket owner or release approval."
+  ]
+}

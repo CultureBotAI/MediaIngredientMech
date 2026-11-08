@@ -1,0 +1,519 @@
+# Oxoid CM0149 source-claim preflight only
+
+- Review: 20261108T073839Z-oxoid-primary-preflight
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T07:38:38Z
+- Finished UTC: 2026-11-08T07:38:39Z
+- Reviewer: /root/oxoid_primary (independent)
+- Completion: partial
+- Verdict: not_assessed
+- Scientific review: true
+
+## Summary
+
+Source-specific OxoidCM0149 product boundary and withheld historicalformula are supported in inspected exactsources. No new confirmed scientificfinding in this preflight. Finalcase/retirement/accounting/nativechecks and requiredW01review remain pending.
+
+## Scope And Provenance
+
+Entire exact v4Oxoidpayload plus its one frozenNBRC902 case context and supplier/catalogalias evidence; no otherowneracceptance.
+
+Selection: Explicit bounded task NEW-OXOID-CM0149 hash1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 1196d5bc3aaba7563b829d5cbe7e54722fccc35d.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149 | .temp/w03-oxoid-successor-v1/science/inputs/candidate.yaml | source | Reinforced clostridial medium (Oxoid CM0149) |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Exact target and predecessor readback | passed | True | kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149 | Candidatehash1ec7554d and trace1fa8fe5b match task; parsed v4 previoushistoryprefix exact; changedtopfields onlyontology_mapping/curation_history. |
+| Primary source inspection | passed | True | kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149 | Read exact NBRCHTML and direct PDFtext Englishpages1–4; fetched/read officialonepageATCC1252 for inheritedalias. |
+| Complete successor/native checks and final independent review | skipped | True | kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149 | Separate parent/final-review scopes; final wholecase/retirement/188accounting successor not supplied to this preflight. W01 final review coordinator communication pending at this preflight. No final scientific acceptance. |
+
+## Scientific And Domain Assessments
+
+### named product identity
+
+identity: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+Supplier-qualified CM0149 product identity is concretely named by NBRC902 and manufacturer IFU; no single compound/CAS/salt/stereo identity is fabricated. FALLBACK_REGISTRY records the whole named product. This is a source-specific scientific preflight, not final admission.
+
+### historical product formula remains unknown
+
+scope: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+Candidate correctly omits components/component_assertion and explicitly declines to backdate IFU2023 formula onto revision-unspecified NBRC902. Missing historical lot/version is precise uncertainty; it does not prevent proposing the named catalog product.
+
+### receiving recipe versus purchased powder
+
+quantity: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+NBRC38gCM0149,water1L,optionalagar15g remain in exact frozen recipe; water/additionalagar are not asserted as dry-product parts. IFU components are source-versioned notes only. No component IDs, hydrate/salt/stereo or peptone specificity is silently invented.
+
+### qualified CM149 alias
+
+nomenclature: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+ATCC1252 independently prints the inherited OxoidCM149 qualified base name. Interpreting CM149 as the leading-zero catalog spelling CM0149 is an explicit cross-source inference from the same supplier/base-name/catalogdigits, not a source-local numbered-medium pointer. It does not support genericRCM or uncataloguedOxoid aliases, nor approve the ATCC occurrence as W03-owned. The raw unmatched label remains frozen case evidence.
+
+### agent interpretation attribution
+
+evidence: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+Both mapping evidence entries use LLM_SUGGESTION and identify agent interpretation; source URLs retained. Prior coordinator history prefix preserved; #1226correction does not relabel component enums or past human evidence.
+
+### genuine new owner lineage
+
+provenance: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+Two v4 events belong to coordinator/root/next23_context. New owner has null preimage in trace; old W03 mixed-owner event remains original historical proposal rather than fictional pre-existing history of new record. Retirement and full187/73proof must be verified in future complete successor.
+
+### excluded decisions
+
+scope: supported. Targets: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149.
+
+No W05 Difco acceptance, generalRCM routing, source-membership transfer, countfabrication, componentgrounding, role/mechanism approval, supportedexport or whole-owner admission follows from this preflight.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| candidate | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/NEW-OXOID-CM0149/reinforced_clostridial_medium_oxoid_cm0149.yaml; entire YAML | context_only | Exact v4 coordinator-authored candidate; two history events; no components, role fields, counts or CultureMech membership assertion. |
+| nbrc902 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902; Complete archived HTML; medium902 composition row | supports | Names CM0149 Broth (OXOID)38g, distilled water1L and agar if needed15g; supplies no formula revision or package. |
+| ifu0539 | https://assets.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf; Archived PDF English pages1–4; table on page1, procedure page2, revision page4 | supports | IFU0539 version2.0 2023-12-15 names CM0149B/T semi-solid; yeast13g/L, peptone10, starch1, glucose5, cysteineHCl0.5, sodiumchloride5, sodiumacetate3, agar0.5. Separately names CM0151B agar with distinct table. B and T are500g/5kg pack forms. This does not identify the historical NBRC lot. |
+| frozen | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml; entire frozen recipe plus shard03 cases[29] | supports | CultureMech008256/TOGO M1696 occurrence CM_OCC:ffcf2b54ee7027b6166807e15a6a72a9bae955a7c8c4576805c5bb8e99196307 at ingredients/0; raw label CM0149 Broth (OXOID),38.0G_PER_L; water1L and optionalagar15G_PER_L separate. |
+| atcc1252 | https://www.atcc.org/~/media/CCB197296D624B1DA0BBFA3C2EB8632B.ashx; Entire one-page official PDF | supports | Explicit supplier/catalog-qualified base name Reinforced Clostridial medium (Oxoid CM149), with separately added sodium lactate60% solution1.5% and finalpH7.0. Supports inherited catalog alias without transferring its separate case or adding lactate to dry-product parts. |
+| alias-context | /Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/reinforced_clostridial_medium_oxoid_cm149_with_sodium_lactate_60_solution_at_a_concentration_of_1_5.yaml; entire current extra CultureMech009180 recipe | context_only | Extra source context points to TOGO M2613 and ATCC1252. It is outside frozen W03 assigned source case and does not confer source-case ownership. |
+| scope | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/existing-owner-scope-decisions-v1/decisions.json; TARGET-032; reviewer root/step7d_science_c, author_of_candidate_payloads=false | context_only | Existing scope assessment recommends separate Oxoid product and authentic Difco original owner continuity, preserving generic/mixed supplier holds. |
+| history | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/candidates/NEW-OXOID-CM0149/reinforced_clostridial_medium_oxoid_cm0149.yaml; entire pre1226 candidate compared to v4 | supports | v4 retains complete first coordinator CREATED event and changes only ontology mapping evidence classification/notes plus appended CORRECTED_EVIDENCE_PROVENANCE event. |
+| semantics | MAPPING_SEMANTICS.md; sections3 and6 | supports | Different purchased products remain distinct; raw provenance and alias scopes preserved; component relations do not identify the whole or establish recipe version. |
+| schema | src/mediaingredientmech/schema/mediaingredientmech.yaml; EvidenceTypeEnum and ComponentEvidenceTypeEnum | supports | Mapping MANUAL_CURATION means human-supplied evidence; LLM_SUGGESTION applies to agent-authored interpretation. Component MANUAL_CURATION has a different definition; candidate contains no components. |
+| ontology-search | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/existing-owner-scope-decisions-v1/primary-texts/w05-M1193-OLS-33.txt; complete saved OLS responses | context_only | Saved MICRO exactphrase search has0results; broad reinforced search2irrelevant cellwall/exteriorwallresults. Supports no product-specific ontology identified in this bounded search, not universal ontology absence. |
+
+## Limits And Additional Notes
+
+- This is a preliminary source-claim assessment of one exact coordinator-authored candidate, not final candidate/source-case acceptance.
+- The user-required W01 exact v4 final review and findings/disposition communicated by coordinator remain a publication condition; this preflight does not satisfy it.
+- Final complete188-case successor, changedcase/retirement/backlink and73unchangedproposal proof, native schema/partonomy and structural audits belong to separate final review after root authors them.
+- No W03 original proposal is independently approved here; original W03 artifacts are provenance only. No W05case/productmerge, role, membership, owneradmission or export approval.
+- Historical NBRC902 formula revision and package/lot remain unknown. Exact current IFU table is not installed as unconditional components.
+- ATCC1252 is supplementalalias evidence only. TOGOM2613 directfetch returned a JavaScript shell; its live recipe was not inspected. Earlier webopen toolfailed and sandboxDNSfailed; subsequentfree officialATCCfetch succeeded.
+- EnglishIFU pages1–4 assessed; translatedpages5–64 not separately inspected. No unread referencedpapers were represented as inspected.
+- Canonical native saver would write outside user-authorized science directory; private pair is rendered/shapevalidated via unchanged native helper, not registered in maintainedreviewselectors.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T073839Z-oxoid-primary-preflight
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Oxoid CM0149 source-claim preflight only
+started_at: '2026-11-08T07:38:38Z'
+finished_at: '2026-11-08T07:38:39Z'
+reviewer:
+  identity: /root/oxoid_primary
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process agent; did not author v4 coordinatorcandidate,
+    predecessor W03proposal or parent successor. Preliminary sourceevidence only;
+    new supplementalcapture requires finalreview.
+skill: review-yaml-record
+completion: partial
+verdict: not_assessed
+native_verdict: SOURCE_PREFLIGHT_ONLY_NO_FINAL_ACCEPTANCE
+scientific_review: true
+summary: Source-specific OxoidCM0149 product boundary and withheld historicalformula
+  are supported in inspected exactsources. No new confirmed scientificfinding in this
+  preflight. Finalcase/retirement/accounting/nativechecks and requiredW01review remain
+  pending.
+source:
+  git_revision: 1196d5bc3aaba7563b829d5cbe7e54722fccc35d
+  state: working_tree
+  inputs:
+  - path: .temp/w03-oxoid-successor-v1/science/atcc1252.body
+    sha256: 8b7889903d7fec84cf0b4c4d62b4d05a153ed786a4c49c7d52b4503a073edccd
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/atcc1252.txt
+    sha256: 96d851d4d1ef404a239ce376eb3a6355ec5787c224518a280497eb74fd4c559d
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/IFU0539.pdf
+    sha256: e25480c6921f8d14a79fa95f07c1b7b656bdb2a5d8983eea7b81397c128722df
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/NBRC902.html
+    sha256: 2bbab551cfeceff1fcfabc0d8698ba91d0df4bf56fe43286bd75cd8c07b35a57
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/candidate-trace.json
+    sha256: 1fa8fe5b790d9392df78b8abcc63c0bffad3e7e770c1ebb3572e2288492db627
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/candidate.yaml
+    sha256: 1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae
+    role: target
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/current-alias-recipe.yaml
+    sha256: adbe997308f5ff3912accbca833fb204566ddd41d85157d2b8d0c3d8246dc6f2
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/frozen-recipe.yaml
+    sha256: 4236ba69748422125d554dfe93badeefab69d81855cff49c318c58f83f483e69
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/frozen-shard.json
+    sha256: 90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/ontology-rcm-search.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/ontology-reinforced-search.json
+    sha256: e3383a1c106320b818fb2631886e37a6745bd42e2d6b1926830d2888223cb592
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/prior-coordinator-candidate.yaml
+    sha256: 9fee156b1913d62de00a497099be7f09510ad2e14e9eb307a96e6bc41f2c938b
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/scope-decisions.json
+    sha256: 150af7315aa6688d4bc9adb3e2a27d0a0835ec8f8ac33d65b8951712b0382d81
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/scope-difco-manual-text.txt
+    sha256: 885547895def18a9269826117f4492f462559e0fe20f7686ed43a7e89dfef219
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/scope-dsmz634-text.txt
+    sha256: 15312e6d4c6734d14108a3b40e690268fa04ae269b1b8dc4432387818c8b0a48
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/scope-mediadive1769-text.txt
+    sha256: b418c37291d20153e37f5c72a5b020a38fe206cbf5fd9e6369e618c931b708d6
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/scope-primary-source-index.json
+    sha256: 75af7a660234c5fd66bbdaa56800728de31a43c0637164765ce1dbf199d6776b
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/inputs/task.md
+    sha256: 5e0af7a504626555854de62ea9a249c6c87795587c0a7e12cf25fc983e17d9c5
+    role: context
+  - path: .temp/w03-oxoid-successor-v1/science/primary-fetch-public-metadata.json
+    sha256: 8d450d88eb5cbb07371534d223fd04534335d1f6b39db2cdaf4788047491ec6d
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/broths/owners/Reinforced_Clostridial_Medium.yaml
+    sha256: 7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/broths/proposed/Reinforced_Clostridial_Medium.yaml
+    sha256: 137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/decisions.json
+    sha256: 39c30f45356d32ac2af1246f6bcb3d5b1883811422b25d475054c7d693865ffa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/evidence.json
+    sha256: 20ef1388a0d9ea2c6c57c2c227f0ab16599085d58e85c1a26cf5fe7710e36ce1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/independent-review-of-broths.json
+    sha256: 3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Entire exact v4Oxoidpayload plus its one frozenNBRC902 case context
+    and supplier/catalogalias evidence; no otherowneracceptance.
+  selection: Explicit bounded task NEW-OXOID-CM0149 hash1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+targets:
+- target_id: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  path: .temp/w03-oxoid-successor-v1/science/inputs/candidate.yaml
+  label: Reinforced clostridial medium (Oxoid CM0149)
+  record_class: IngredientRecord
+  kind: source
+  ownership_note: Private coordinator-authored source proposal only; prospective maintained
+    owner data/ingredients/mapped/reinforced_clostridial_medium_oxoid_cm0149.yaml.
+    No maintained owner exists at this path in this baseline.
+checks:
+- check_id: exactbytes
+  name: Exact target and predecessor readback
+  status: passed
+  required: true
+  summary: Candidatehash1ec7554d and trace1fa8fe5b match task; parsed v4 previoushistoryprefix
+    exact; changedtopfields onlyontology_mapping/curation_history.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  command: Python hashlib and PyYAML comparison of exact v4 and pre1226 candidate
+    paths
+  exit_code: 0
+- check_id: primary
+  name: Primary source inspection
+  status: passed
+  required: true
+  summary: Read exact NBRCHTML and direct PDFtext Englishpages1–4; fetched/read officialonepageATCC1252
+    for inheritedalias.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - nbrc902
+  - ifu0539
+  - atcc1252
+- check_id: final-successor
+  name: Complete successor/native checks and final independent review
+  status: skipped
+  required: true
+  summary: Separate parent/final-review scopes; final wholecase/retirement/188accounting
+    successor not supplied to this preflight. W01 final review coordinator communication
+    pending at this preflight. No final scientific acceptance.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+evidence:
+- evidence_id: candidate
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/NEW-OXOID-CM0149/reinforced_clostridial_medium_oxoid_cm0149.yaml
+  locator: entire YAML
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: context_only
+  summary: Exact v4 coordinator-authored candidate; two history events; no components,
+    role fields, counts or CultureMech membership assertion.
+  snapshot_sha256: 1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae
+- evidence_id: nbrc902
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902
+  locator: Complete archived HTML; medium902 composition row
+  accessed_at: '2026-11-08T05:06:34.010308Z'
+  support: supports
+  summary: Names CM0149 Broth (OXOID)38g, distilled water1L and agar if needed15g;
+    supplies no formula revision or package.
+  snapshot_sha256: 2bbab551cfeceff1fcfabc0d8698ba91d0df4bf56fe43286bd75cd8c07b35a57
+- evidence_id: ifu0539
+  kind: primary_source
+  reference: https://assets.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf
+  locator: Archived PDF English pages1–4; table on page1, procedure page2, revision
+    page4
+  accessed_at: '2026-11-08T05:18:51.136377Z'
+  support: supports
+  summary: IFU0539 version2.0 2023-12-15 names CM0149B/T semi-solid; yeast13g/L, peptone10,
+    starch1, glucose5, cysteineHCl0.5, sodiumchloride5, sodiumacetate3, agar0.5. Separately
+    names CM0151B agar with distinct table. B and T are500g/5kg pack forms. This does
+    not identify the historical NBRC lot.
+  snapshot_sha256: e25480c6921f8d14a79fa95f07c1b7b656bdb2a5d8983eea7b81397c128722df
+- evidence_id: frozen
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml
+  locator: entire frozen recipe plus shard03 cases[29]
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: supports
+  summary: CultureMech008256/TOGO M1696 occurrence CM_OCC:ffcf2b54ee7027b6166807e15a6a72a9bae955a7c8c4576805c5bb8e99196307
+    at ingredients/0; raw label CM0149 Broth (OXOID),38.0G_PER_L; water1L and optionalagar15G_PER_L
+    separate.
+  snapshot_sha256: 4236ba69748422125d554dfe93badeefab69d81855cff49c318c58f83f483e69
+- evidence_id: atcc1252
+  kind: primary_source
+  reference: https://www.atcc.org/~/media/CCB197296D624B1DA0BBFA3C2EB8632B.ashx
+  locator: Entire one-page official PDF
+  accessed_at: '2026-11-08T07:36:30.553602Z'
+  support: supports
+  summary: Explicit supplier/catalog-qualified base name Reinforced Clostridial medium
+    (Oxoid CM149), with separately added sodium lactate60% solution1.5% and finalpH7.0.
+    Supports inherited catalog alias without transferring its separate case or adding
+    lactate to dry-product parts.
+  snapshot_sha256: 8b7889903d7fec84cf0b4c4d62b4d05a153ed786a4c49c7d52b4503a073edccd
+- evidence_id: alias-context
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/reinforced_clostridial_medium_oxoid_cm149_with_sodium_lactate_60_solution_at_a_concentration_of_1_5.yaml
+  locator: entire current extra CultureMech009180 recipe
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: context_only
+  summary: Extra source context points to TOGO M2613 and ATCC1252. It is outside frozen
+    W03 assigned source case and does not confer source-case ownership.
+  snapshot_sha256: adbe997308f5ff3912accbca833fb204566ddd41d85157d2b8d0c3d8246dc6f2
+- evidence_id: scope
+  kind: prior_review
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/existing-owner-scope-decisions-v1/decisions.json
+  locator: TARGET-032; reviewer root/step7d_science_c, author_of_candidate_payloads=false
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: context_only
+  summary: Existing scope assessment recommends separate Oxoid product and authentic
+    Difco original owner continuity, preserving generic/mixed supplier holds.
+  snapshot_sha256: 150af7315aa6688d4bc9adb3e2a27d0a0835ec8f8ac33d65b8951712b0382d81
+- evidence_id: history
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/candidates/NEW-OXOID-CM0149/reinforced_clostridial_medium_oxoid_cm0149.yaml
+  locator: entire pre1226 candidate compared to v4
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: supports
+  summary: v4 retains complete first coordinator CREATED event and changes only ontology
+    mapping evidence classification/notes plus appended CORRECTED_EVIDENCE_PROVENANCE
+    event.
+  snapshot_sha256: 9fee156b1913d62de00a497099be7f09510ad2e14e9eb307a96e6bc41f2c938b
+- evidence_id: semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  locator: sections3 and6
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: supports
+  summary: Different purchased products remain distinct; raw provenance and alias
+    scopes preserved; component relations do not identify the whole or establish recipe
+    version.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+- evidence_id: schema
+  kind: authority
+  reference: src/mediaingredientmech/schema/mediaingredientmech.yaml
+  locator: EvidenceTypeEnum and ComponentEvidenceTypeEnum
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: supports
+  summary: Mapping MANUAL_CURATION means human-supplied evidence; LLM_SUGGESTION applies
+    to agent-authored interpretation. Component MANUAL_CURATION has a different definition;
+    candidate contains no components.
+  snapshot_sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+- evidence_id: ontology-search
+  kind: search
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/existing-owner-scope-decisions-v1/primary-texts/w05-M1193-OLS-33.txt
+  locator: complete saved OLS responses
+  accessed_at: '2026-11-08T07:38:39Z'
+  support: context_only
+  summary: Saved MICRO exactphrase search has0results; broad reinforced search2irrelevant
+    cellwall/exteriorwallresults. Supports no product-specific ontology identified
+    in this bounded search, not universal ontology absence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: Archived OLS MICRO query Reinforced clostridial medium rows50, Reinforced
+    rows100; no live ontology refresh.
+assessments:
+- assessment_id: identity
+  area: identity
+  topic: named product identity
+  outcome: supported
+  summary: Supplier-qualified CM0149 product identity is concretely named by NBRC902
+    and manufacturer IFU; no single compound/CAS/salt/stereo identity is fabricated.
+    FALLBACK_REGISTRY records the whole named product. This is a source-specific scientific
+    preflight, not final admission.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - nbrc902
+  - ifu0539
+  - candidate
+  - semantics
+  - ontology-search
+- assessment_id: version
+  area: scope
+  topic: historical product formula remains unknown
+  outcome: supported
+  summary: Candidate correctly omits components/component_assertion and explicitly
+    declines to backdate IFU2023 formula onto revision-unspecified NBRC902. Missing
+    historical lot/version is precise uncertainty; it does not prevent proposing the
+    named catalog product.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - nbrc902
+  - ifu0539
+  - candidate
+- assessment_id: parts
+  area: quantity
+  topic: receiving recipe versus purchased powder
+  outcome: supported
+  summary: NBRC38gCM0149,water1L,optionalagar15g remain in exact frozen recipe; water/additionalagar
+    are not asserted as dry-product parts. IFU components are source-versioned notes
+    only. No component IDs, hydrate/salt/stereo or peptone specificity is silently
+    invented.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - nbrc902
+  - ifu0539
+  - frozen
+  - candidate
+- assessment_id: alias
+  area: nomenclature
+  topic: qualified CM149 alias
+  outcome: supported
+  summary: ATCC1252 independently prints the inherited OxoidCM149 qualified base name.
+    Interpreting CM149 as the leading-zero catalog spelling CM0149 is an explicit
+    cross-source inference from the same supplier/base-name/catalogdigits, not a source-local
+    numbered-medium pointer. It does not support genericRCM or uncataloguedOxoid aliases,
+    nor approve the ATCC occurrence as W03-owned. The raw unmatched label remains
+    frozen case evidence.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - atcc1252
+  - alias-context
+  - nbrc902
+  - ifu0539
+  - candidate
+  - semantics
+- assessment_id: evidence-typing
+  area: evidence
+  topic: agent interpretation attribution
+  outcome: supported
+  summary: 'Both mapping evidence entries use LLM_SUGGESTION and identify agent interpretation;
+    source URLs retained. Prior coordinator history prefix preserved; #1226correction
+    does not relabel component enums or past human evidence.'
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - candidate
+  - history
+  - schema
+- assessment_id: history-authorship
+  area: provenance
+  topic: genuine new owner lineage
+  outcome: supported
+  summary: Two v4 events belong to coordinator/root/next23_context. New owner has
+    null preimage in trace; old W03 mixed-owner event remains original historical
+    proposal rather than fictional pre-existing history of new record. Retirement
+    and full187/73proof must be verified in future complete successor.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - candidate
+  - history
+  - scope
+- assessment_id: holds
+  area: scope
+  topic: excluded decisions
+  outcome: supported
+  summary: No W05 Difco acceptance, generalRCM routing, source-membership transfer,
+    countfabrication, componentgrounding, role/mechanism approval, supportedexport
+    or whole-owner admission follows from this preflight.
+  target_ids:
+  - kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  evidence_ids:
+  - candidate
+  - scope
+  - frozen
+findings: []
+actions: []
+limitations:
+- This is a preliminary source-claim assessment of one exact coordinator-authored
+  candidate, not final candidate/source-case acceptance.
+- The user-required W01 exact v4 final review and findings/disposition communicated
+  by coordinator remain a publication condition; this preflight does not satisfy it.
+- Final complete188-case successor, changedcase/retirement/backlink and73unchangedproposal
+  proof, native schema/partonomy and structural audits belong to separate final review
+  after root authors them.
+- No W03 original proposal is independently approved here; original W03 artifacts
+  are provenance only. No W05case/productmerge, role, membership, owneradmission or
+  export approval.
+- Historical NBRC902 formula revision and package/lot remain unknown. Exact current
+  IFU table is not installed as unconditional components.
+- ATCC1252 is supplementalalias evidence only. TOGOM2613 directfetch returned a JavaScript
+  shell; its live recipe was not inspected. Earlier webopen toolfailed and sandboxDNSfailed;
+  subsequentfree officialATCCfetch succeeded.
+- EnglishIFU pages1–4 assessed; translatedpages5–64 not separately inspected. No unread
+  referencedpapers were represented as inspected.
+- Canonical native saver would write outside user-authorized science directory; private
+  pair is rendered/shapevalidated via unchanged native helper, not registered in maintainedreviewselectors.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1224
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1226
+```

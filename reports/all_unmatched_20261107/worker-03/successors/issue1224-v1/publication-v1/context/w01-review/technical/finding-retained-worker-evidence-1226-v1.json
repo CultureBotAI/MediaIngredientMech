@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-08T07:23:13.374914Z",
+  "reviewer": "OpenAI Codex /root/issue_context independent technical reviewer",
+  "discovery_attribution": "Skeptical reviewer isolated the exact counterexample; technical reviewer independently compared complete authentic before, W05 origin and final objects and the actual author event.",
+  "finding": {
+    "finding_id": "W01-NINE-TECH-001",
+    "issue_key": "CultureBotAI/MediaIngredientMech/1226/soy-source75-worker-evidence",
+    "category": "provenance",
+    "severity": "major",
+    "status": "open",
+    "certainty": "confirmed",
+    "title": "Retained W05 source75 mapping evidence is labeled human-supplied",
+    "description": "TARGET-024 ontology_mapping.evidence[0] is MANUAL_CURATION for the MediaDive ingredient75 interpretation. That exact object is absent from the authentic beforeimage and first appears in the W05 isolated proposal whose actual event identifies worker05/materials_research, llm_assisted=true and gpt-6. The final coordinator candidate retains it unchanged. The current MappingEvidence enum defines MANUAL_CURATION as human-supplied evidence; this exact source lineage does not support that attribution. This is a concrete inherited-worker counterexample under existing1226, separate from the13new coordinator entries already corrected. No global reclassification or new affected-count claim follows.",
+    "target_ids": [
+      "TARGET-024"
+    ],
+    "field_paths": [
+      "ontology_mapping.evidence[0]"
+    ],
+    "evidence_ids": [
+      "retained-worker-provenance",
+      "lineage",
+      "metadata"
+    ],
+    "rule_id": "EvidenceTypeEnum.MANUAL_CURATION",
+    "native_severity": "P2 retained evidence provenance",
+    "normalization_reason": "Material provenance misattribution in a retained current claim; schema-valid and scientifically unassessed. Prevents unqualified whole-candidate acceptance but does not invalidate the correctly bounded13-entry coordinator correction.",
+    "ownership_note": "W05 original source proposal and coordinator TARGET-024 successor; coordinator/W02 inherited-evidence audit owns any future guarded correction. No record changed by this reviewer.",
+    "external_issues": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226"
+    ]
+  },
+  "authentic_before": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/TARGET-024/authentic-before.yaml",
+    "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c"
+  },
+  "authentic_before_mapping_evidence": [
+    {
+      "evidence_type": "CURATOR_JUDGMENT",
+      "source": "cbclaw_foodon_promotion",
+      "notes": "Commercial food mixture - FOODON is correct parent ontology. Soy peptone is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH."
+    },
+    {
+      "evidence_type": "MANUAL_CURATION",
+      "source": "MIM curation (#260)",
+      "notes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone — the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+    }
+  ],
+  "origin_payload": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w05/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+    "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+  },
+  "origin_entry_id": "w05::MATERIALS-C1193-soy-peptone-boundary",
+  "actual_W05_event": {
+    "timestamp": "2026-11-08T05:47:55.843673+00:00",
+    "curator": "worker05/materials_research correction1193 (isolated proposal)",
+    "action": "CORRECTED",
+    "changes": "Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein identifier to a local material identity. Preserve source75 unspecified soy digest and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone or Phytone formula to it. Existing branded alias claims require separate complete-owner reconciliation before export. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+    "previous_status": "MAPPED",
+    "new_status": "MAPPED",
+    "llm_assisted": true,
+    "llm_model": "gpt-6"
+  },
+  "final_candidate": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/TARGET-024/Soy_Peptone.yaml",
+    "sha256": "9f444c580447589c8080e60f6b76e94aca5115ff9772d1fbe809984a3c7247cd"
+  },
+  "retained_exact_evidence_object": {
+    "evidence_type": "MANUAL_CURATION",
+    "source": "https://mediadive.dsmz.de/rest/ingredient/75",
+    "notes": "Soy-derived complex digest material; FOODON03315720 includes other vegetable hydrolysates and is not its identity."
+  },
+  "three_way_object_comparison": {
+    "absent_from_authentic_before": true,
+    "introduced_in_W05": true,
+    "identical_in_final_candidate": true
+  },
+  "schema": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+  },
+  "preservation": "No candidate or source mutation. Older MIM#260 manual evidence is a different entry; ComponentEvidenceType is a separate enum. Only this exact retained worker object is dispositioned here."
+}

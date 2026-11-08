@@ -1,0 +1,84 @@
+identifier: UNMAPPED_0507
+preferred_term: Reinforced clostridial medium
+synonyms:
+- synonym_text: Reinforced clostridial medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Reinforced clostridial medium (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Reinforced Clostridial medium (Oxoid CM149)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Reinforced clostridial medium (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a reinforced clostridial medium preparation and left unmapped pending product-
+    or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth
+    formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Reinforced_Clostridial_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: **Recommended interpretation:** *Reinforced Clostridial Medium* (RCM) is a named, complete
+    microbiological culture-medium formulation supplied as a multicomponent dehydrated product. It is
+    not a single chemical, salt/hydrate, buffer, extract, or taxonomic entity. Peer-reviewed studies explicitly
+    use the expansion “reinforced clostridial medium (RCM)” and describe commercial products from Lab
+    M and No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible identifier promoted
+    by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is
+    a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s published label
+    but were absent from MIM''s label index, so CultureMech could not resolve them: ''Reinforced clostridial
+    medium (BD-Difco)'' (x3 CultureMech mentions); ''Reinforced Clostridial medium (Oxoid CM149)'' (x1
+    CultureMech mentions); ''Reinforced clostridial medium (Oxoid)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed specificOxoidCM0149 supplied-form correction; retainUNMAPPED and mixed-owner split
+    obligation. NBRC902 identifiesOxoidCM0149. Current supplierIFU0539 explicitly callsCM0149 semi-solid,
+    with0.5g/Lagar and13g/Lyeast extract; it distinguishesCM0151agar. Historical supplier specification
+    search describes3gyeast+10gLabLemco instead, so formulation revision cannot be silently erased.
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Reviewed
+  on 2026-05-11 as a medium preparation pending product- or recipe-level curation.
+ingredient_type: NAMED_MEDIUM
+supplied_form:
+- name: Reinforced Clostridial Medium
+  supplier: Oxoid
+  catalog_number: CM0149
+  form: dehydrated powder reconstituted as semi-solid medium
+  notes: NBRC902 identifiesOxoidCM0149. Current supplierIFU0539 explicitly callsCM0149 semi-solid, with0.5g/Lagar
+    and13g/Lyeast extract; it distinguishesCM0151agar. Historical supplier specification search describes3gyeast+10gLabLemco
+    instead, so formulation revision cannot be silently erased. This annotation is scoped to theOxoid
+    source; it does not assert equality to inherited BD-Difcoaliases.
