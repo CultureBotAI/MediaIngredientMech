@@ -1,0 +1,73 @@
+"""Read-only full private package transport/privacy/metadata check; outputs here only."""
+from pathlib import Path
+import collections, datetime as dt, hashlib, json, os, re, stat, subprocess, sys, time
+F=Path(__file__).resolve().parent; O=F.parent; R=O.parents[1]
+name=sys.argv[1] if len(sys.argv)>1 else 'package-core-v1.json'; tag=name.replace('package-core-','').replace('.json','')+'-attempt2'
+os.environ['GIT_OPTIONAL_LOCKS']='0'; start=dt.datetime.now(dt.timezone.utc); timer=time.monotonic()
+checks=[];inventory=[];privacy=[]
+def j(p):return json.loads(Path(p).read_text())
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ck(n,a,e=True):
+ ok=type(a) is type(e) and a==e;checks.append({'check':n,'passed':ok,'actual':a,'expected':e})
+ if not ok:raise AssertionError(n)
+def h(p,e):ck('hash '+str(p),sha(p),e)
+def git(*a):return subprocess.check_output(['git',*a],cwd=R,text=True).strip()
+try:
+ core=j(O/name);P=Path(core['package_root']);A=Path(core['prepared_artifact_root']);prefix=Path(core['prospective_prefix']);S=R/'.temp/rifamycin1263-method-proposal-v1'
+ ck('Prepared root inside private output',A.is_relative_to(O));ck('Prospective real repository path remains absent including ignored',(R/prefix).exists(),False)
+ files=sorted(p for p in P.rglob('*') if p.is_file());ck('Core denominator',len(files),core['count'])
+ ck('Core exact file membership',sorted(str(p.relative_to(A)) for p in files),sorted(x['path'] for x in core['regular_files']))
+ patterns={'private_key':rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----','github_token':rb'\b(?:gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{30,})\b','aws_access_key':rb'\b(?:AKIA|ASIA)[0-9A-Z]{16}\b','openai_key':rb'\bsk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{30,}\b','literal_authorization':rb'(?i)["\x27]?authorization["\x27]?\s*:\s*["\x27](?:bearer|basic)\s+[A-Za-z0-9+/=._-]{16,}'}
+ forbidden={'.git','.aws','.ssh','.codex','.venv','venv','__pycache__','.pytest_cache','node_modules','.cache','tui','sessions','credentials'}
+ for x in core['regular_files']:
+  p=A/x['path'];ck('Prepared path matches '+x['path'],R/x['prepared_path'],p);ck('No symlink '+x['path'],p.is_symlink(),False);h(p,x['sha256']);ck('bytes '+x['path'],p.stat().st_size,x['bytes']);ck('mode0644 '+x['path'],stat.S_IMODE(p.stat().st_mode),0o644)
+  rel=p.relative_to(P);ck('No prohibited directory tree '+str(rel),bool(set(rel.parts[:-1])&forbidden),False);ck('No active Python suffix '+str(rel),p.suffix=='.py',False)
+  raw=p.read_bytes();text=raw.decode('utf-8');inventory.append({'path':str(rel),'sha256':sha(p),'bytes':len(raw),'mode':oct(stat.S_IMODE(p.stat().st_mode)),'utf8':True})
+  for kind,pat in patterns.items():
+   for match in re.finditer(pat,raw):privacy.append({'path':str(rel),'kind':kind,'offset':match.start(),'value_not_printed':True})
+ ck('No high-specificity credential patterns in complete bytes',len(privacy),0)
+ trans=j(P/'transport-map.json');ck('Original transport count',len(trans['files']),142);ck('Original manifest denominator',trans['original_regular_manifest_members'],140)
+ old=j(S/'MANIFEST.json');ck('Original sealed denominator',len(old['files']),140)
+ originals={x['path']:x['sha256'] for x in old['files']};originals.update({'MANIFEST.json':sha(S/'MANIFEST.json'),'SHA256SUMS':sha(S/'SHA256SUMS')})
+ ck('Exact original142 membership',sorted(x['original_relative_path'] for x in trans['files']),sorted(originals))
+ for x in trans['files']:
+  rel=x['original_relative_path'];src=S/rel;dst=A/x['archive_path'];ck('Original absolute reference '+rel,str(src),x['original_absolute_path']);h(src,originals[rel]);h(dst,originals[rel]);ck('Transport digest '+rel,x['sha256'],originals[rel]);ck('Transport prepared location '+rel,R/x['prepared_path'],dst)
+  expected=prefix/'archive'/(rel+'.txt' if rel.endswith('.py') else rel);ck('Exact inert path translation '+rel,Path(x['archive_path']),expected);ck('Transport nonexecutability declaration '+rel,x['executable'],False)
+ for seal,key in [('MANIFEST.json','original_manifest_sha256'),('HANDOFF.json','original_handoff_sha256'),('SHA256SUMS','original_checksums_sha256')]:h(S/seal,trans[key])
+ ck('Original source entire regular membership unchanged',sorted(str(p.relative_to(S)) for p in S.rglob('*') if p.is_file()),sorted(originals))
+ ck('Ignored-inclusive original standalone proposal absent',[str(p.relative_to(S)) for p in S.rglob('*') if p.is_file() and p.name.lower() in {'proposal.json','proposals.json'}],[])
+ case=j(P/'case-ledger.json');props=j(P/'proposals.json')['proposals'];decs=j(P/'decisions.json')['decisions'];rec=j(P/'reconciliation.json');shard=j(P/'shard.json');roles=j(P/'artifact-role-inventory.json');native=j(P/'native-contract.json')
+ ck('One case',len(case),1);ck('One proposal',len(props),1);ck('One decision',len(decs),1)
+ case=case[0];prop=props[0];dec=decs[0];ch=hashlib.sha256(json.dumps(case,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()).hexdigest()
+ ck('Canonical case hash exact core',ch,core['case_hash']);ck('Proposal case hash',prop['case_hashes'],{case['case_id']:ch});ck('Decision case hash',dec['case_sha256'],ch);ck('Reconciliation case hash',rec['case_sha256'],ch)
+ for k in ['cm_kg_source_case','frozen_campaign_member','source_observation','new_chemical_input']:ck('Ancillary case flag '+k,case[k],False)
+ for k in ['source_case_ids','source_occurrence_ids']:ck('Ancillary case list '+k,case[k],[])
+ ck('Finding1263',case['source_issue_url'],'https://github.com/CultureBotAI/MediaIngredientMech/issues/1263');ck('Finding key',case['finding_id'],'F51-CHEM-001');ck('Worker10',case['worker_slot'],'worker-10')
+ ck('No newly accepted decision',dec['accepted_for_application'],False);ck('No new scientific role approval',dec['source_role_export_approval'],False);ck('No observed publication',dec['publication_observed'],False)
+ ck('Existing owner',prop['kind'],'edit_existing_owner');ck('Owner path',prop['owner_path'],'data/ingredients/mapped/Rifamycin.yaml');ck('Before exact',prop['before_sha256'],'0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e');ck('After exact',prop['after_capture']['sha256'],'40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575')
+ ck('Original proposal reference joined',case['original_private_proposal'],j(P/'original-proposal-reference.json'));ck('Reconciliation original reference joined',rec['original_proposal_unchanged'],j(P/'original-proposal-reference.json'))
+ for k in ['published_head','published_path']:ck('Shard unpublished '+k,shard[k],None);ck('Reconciliation unpublished '+k,rec[k],None)
+ def refs(obj):
+  if isinstance(obj,dict):
+   if isinstance(obj.get('path'),str) and isinstance(obj.get('sha256'),str) and obj['path'].startswith(str(prefix)+'/'):h(A/obj['path'],obj['sha256'])
+   for v in obj.values():refs(v)
+  elif isinstance(obj,list):
+   for v in obj:refs(v)
+ for fn in ['case-ledger.json','proposals.json','decisions.json','reconciliation.json','original-proposal-reference.json','artifact-role-inventory.json']:refs(j(P/fn))
+ ck('All8 native role categories',sorted(set(x['role'] for x in roles['bindings'])),sorted(native['native_constant_sets']['ROLES']))
+ ck('All11 external producers',sum(x['role']=='producer' for x in roles['bindings']),11)
+ ck('Role counts',dict(collections.Counter(x['role'] for x in roles['bindings'])),roles['expected_role_counts'])
+ for x in roles['bindings']:
+  ck('Closed native binding keys '+x['binding_id'],sorted(x),sorted(native['native_constant_sets']['BINDING_KEYS']))
+  ck('Null publicationhead '+x['binding_id'],x['published_head'],None);ck('Null publicationpath '+x['binding_id'],x['published_path'],None)
+  if x['role']=='producer':h(Path(roles['native_producer_root_observed'])/x['path'],x['sha256']);ck('External producer not in private artifact root '+x['path'],(A/x['path']).exists(),False)
+ ck('Exact external canonical producerpaths',sorted(x['path'] for x in roles['bindings'] if x['role']=='producer'),sorted(native['native_producer_paths']))
+ startpin=j(O/'START.json');ck('HEAD preserved',git('rev-parse','HEAD'),startpin['own_head']);ck('Tracked tree clean',git('status','--porcelain'),'');ck('Staged diff remains empty',git('diff','--cached','--name-only'),'');h(startpin['index_path'],startpin['index_sha256'])
+ X=R/'reports/all_unmatched_20261107/ancillary_xanthine1258_proposal_v1';xf=sorted(p for p in X.rglob('*') if p.is_file());ck('All205 published Xanthinefiles',len(xf),205)
+ for p in xf:ck('Exact published Gitblob '+str(p.relative_to(R)),hashlib.sha256(subprocess.check_output(['git','show',startpin['own_head']+':'+str(p.relative_to(R))],cwd=R)).hexdigest(),sha(p))
+ result='PASS'
+except Exception as exc:result='FAIL';error={'type':type(exc).__name__,'message':str(exc)}
+finally:
+ out={'result':result,'started_at':start.isoformat(),'finished_at':dt.datetime.now(dt.timezone.utc).isoformat(),'runtime_seconds':time.monotonic()-timer,'core':{'path':str(O/name),'sha256':sha(O/name)},'script':{'path':str(Path(__file__).resolve()),'sha256':sha(__file__)},'checks':checks,'check_count':len(checks),'failed_checks':[c for c in checks if not c['passed']],'error':locals().get('error'),'fullfile_inventory':inventory,'privacy_pattern_matches':privacy,'privacy_scope':'All regular-file bytes decoded and scanned; exact full membership/mode/transport checked including ignored files. Bounded credential patterns are not a universal secret detector. Public GitHub JSON identities and original absolute evidence paths are permitted provenance. No scientific/API/operator rerun.'}
+ p=F/('checks-'+tag+'.json');assert not p.exists();p.write_text(json.dumps(out,indent=2,default=str)+'\n');print(json.dumps({'result':result,'checks':len(checks),'error':out['error'],'runtime_seconds':out['runtime_seconds']},indent=2))
+ if result!='PASS':sys.exit(1)

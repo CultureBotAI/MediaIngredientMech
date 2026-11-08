@@ -1,0 +1,7 @@
+# User-authorized scope recorded by the worker
+
+Prepare a new private bounded ancillary proposal for MIM issue1263. Read the root publication receipt, current Rifamycin owner0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e, full #760 decision, and W04 finding F51-CHEM-001/d848af501e5bd6d862dfeb68793e8d11ad54bfd31c0121ed8f6da2356bab1afc without editing W04's report. Change only EXACT_MATCH to MANUAL_CURATION plus honest agent evidence and append-only native history, preserving CHEBI:26580 family identity and every old claim/history/occurrence. No human-verification claim or erasure of lexical-import history.
+
+Use guarded private validation, meaningful exact-delta controls and separate scientific/skeptical subagents. Preserve failed diagnostics. New findings go to the coordinator before fixes. Output only `.temp/rifamycin1263-method-proposal-v1`; zero new CM/KG cases; separate from the934-operation draft and Xanthine. No application helper, acceptance template, branch, PR, package publication, maintained/export changes, Git/GitHub mutations, new external session, paid provider or approval. Preserve own01c173bd head and all sealed Xanthine evidence. Seal native review YAML/derived Markdown, exact manifest and handoff; stop.
+
+This file is a faithful scope summary written by the worker, not a quoted user-message capture or independent authorization artifact. Exact user instructions remain in the conversation.

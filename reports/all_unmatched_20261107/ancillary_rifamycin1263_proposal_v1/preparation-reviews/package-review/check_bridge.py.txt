@@ -1,0 +1,45 @@
+from pathlib import Path
+import datetime as dt,email.utils,hashlib,json,time
+F=Path(__file__).resolve().parent;O=F.parent;start=dt.datetime.now(dt.timezone.utc);timer=time.monotonic()
+j=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();checks=[]
+def ck(n,a,e=True):
+ ok=type(a) is type(e) and a==e;checks.append({'check':n,'passed':ok,'actual':a,'expected':e});assert ok,n
+a=j(O/'package-core-v1.json');b=j(O/'package-core-v2.json');P=Path(a['package_root']);Q=Path(b['package_root']);A=Path(a['prepared_artifact_root']);B=Path(b['prepared_artifact_root'])
+for x in a['regular_files']:ck('Old core immutable '+x['path'],sha(A/x['path']),x['sha256'])
+am={x['path']:x for x in a['regular_files']};bm={x['path']:x for x in b['regular_files']}
+changed=[str(Path(k).relative_to(a['prospective_prefix'])) for k in am if am[k]['sha256']!=bm[k]['sha256']]
+expected=['README.md','artifact-role-inventory.json','case-ledger.json','decisions.json','proposals.json','reconciliation.json','transport-map.json'];ck('Exactly seven changed wrappers',sorted(changed),sorted(expected));ck('Eleven additive history files',len(set(bm)-set(am)),11)
+for n in changed:ck('Retained exact predecessor '+n,sha(Q/'preparation-history/core-v1-metadata'/n),sha(P/n))
+ck('Original complete core manifest retained',sha(Q/'preparation-history/core-v1.json'),sha(O/'package-core-v1.json'))
+ck('Original open observation retained',sha(Q/'preparation-history/META-001.json'),sha(F/'findings/META-001.json'))
+correction=j(Q/'metadata-correction-v2.json');ck('Observation bridge hash',correction['finding_reported_before_fix']['finding_sha256'],sha(F/'findings/META-001.json'))
+ck('Coordinator before-fix report exact',j(Q/'preparation-history/coordinator-finding-report.json'),correction['finding_reported_before_fix'])
+ck('Before fix report earlier than correction',dt.datetime.fromisoformat(correction['finding_reported_before_fix']['at'])<dt.datetime.fromisoformat(correction['created_at']))
+ck('No approval claimed by reporting',correction['finding_reported_before_fix']['approval_claim'],False)
+for x in correction['changed_original_metadata_files']:ck('Changed-before '+x['path'],sha(P/x['path']),x['before_sha256']);ck('Changed-after '+x['path'],sha(Q/x['path']),x['after_sha256'])
+ca=j(P/'case-ledger.json');cb=j(Q/'case-ledger.json');fixed=cb[0]['issue_capture_scope'];cb[0]['issue_capture_scope']=ca[0]['issue_capture_scope'];ck('Case only scope-text delta',cb,ca)
+readback=j(Q/'archive/inputs/08-readback-00.json');receipt=j(Q/'archive/inputs/07-publication-00.json')
+ck('Corrected creation timestamp literal present',readback['created_at'] in fixed);ck('Corrected publication-receipt timestamp literal present',receipt['at'] in fixed);ck('Readback acquisition explicitly unknown','precise readback acquisition time was not separately retained' in fixed)
+for name in ['proposals.json','decisions.json','reconciliation.json']:
+ old=j(P/name);new=j(Q/name)
+ if name=='proposals.json':new['proposals'][0]['case_hashes']=old['proposals'][0]['case_hashes']
+ elif name=='decisions.json':new['decisions'][0]['case_sha256']=old['decisions'][0]['case_sha256']
+ else:new['case_sha256']=old['case_sha256']
+ ck('Only case hash join changed '+name,new,old)
+old=j(P/'transport-map.json');new=j(Q/'transport-map.json');new['prepared_artifact_root']=old['prepared_artifact_root']
+for x,y in zip(old['files'],new['files']):y['prepared_path']=x['prepared_path']
+ck('Transport only private-root/prepared-location delta',new,old)
+old=j(P/'artifact-role-inventory.json');new=j(Q/'artifact-role-inventory.json');new['prepared_artifact_root']=old['prepared_artifact_root']
+for x,y in zip(old['bindings'],new['bindings']):y['sha256']=x['sha256']
+ck('Role inventory only preparedroot and refreshed digestjoins',new,old)
+old=(P/'README.md').read_text();new=(Q/'README.md').read_text();ck('README old content retained with physicalroot substitution',new.startswith(old.replace(str(A),str(B))))
+privacy=[]
+for p in sorted((Q/'archive/science/inputs').glob('*metadata.json')):
+ d=j(p);h=next((v for k,v in d.get('response_headers',{}).items() if k.lower()=='set-cookie'),None)
+ if not h:continue
+ first,*attrs=h.split(';');name=first.split('=',1)[0];expires=next(v.split('=',1)[1] for v in attrs if v.strip().lower().startswith('expires='))
+ ck('Response cookie already expired '+p.name,email.utils.parsedate_to_datetime(expires)<start)
+ privacy.append({'path':str(p),'file_sha256':sha(p),'header':'Set-Cookie','cookie_name':name,'expires':expires,'source_url':d['url'],'original_retrieved_at':d['retrieved_at'],'classification':'Preserved HTTP response-session token explicitly expired before this private preparation review. No cookie value repeated here; no assertion of authenticated account origin or permission for later publication.'})
+ck('Three preserved expired response cookies',len(privacy),3)
+out={'result':'PASS','started_at':start.isoformat(),'finished_at':dt.datetime.now(dt.timezone.utc).isoformat(),'runtime_seconds':time.monotonic()-timer,'checks':checks,'check_count':len(checks),'core_v1_sha256':sha(O/'package-core-v1.json'),'core_v2_sha256':sha(O/'package-core-v2.json'),'observation_sha256':sha(F/'findings/META-001.json'),'finding_disposition':'META-001 corrected only in exact private core-v2; initial open finding and initial core preserved. No public issue disposition.','privacy_observations':privacy,'privacy_limits':'No universal no-token claim. Public GitHub account fields and original absolute evidence paths are intentionally retained. Later publication remains unauthorised by this review.'}
+p=F/'metadata-bridge-and-privacy.json';assert not p.exists();p.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({'result':'PASS','checks':len(checks),'sha256':sha(p)}))

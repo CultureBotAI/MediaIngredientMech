@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-publication-preparation-v1/package-review/check_package.py", line 72, in <module>
+    p=F/('checks-'+tag+'.json');assert not p.exists();p.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({'result':result,'checks':len(checks),'error':out['error'],'runtime_seconds':out['runtime_seconds']},indent=2))
+                                                                   ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type PosixPath is not JSON serializable

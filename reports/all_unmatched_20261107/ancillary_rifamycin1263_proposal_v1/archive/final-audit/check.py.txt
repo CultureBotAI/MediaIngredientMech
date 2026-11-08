@@ -1,0 +1,114 @@
+"""Independent bounded final metadata audit; never writes outside this directory."""
+from pathlib import Path
+import datetime as dt, hashlib, importlib.util, json, os, subprocess, sys, time
+import yaml
+
+F=Path(__file__).resolve().parent; O=F.parent; R=O.parents[1]; K=R.parents[2]/'integration/release-worktree'
+os.environ['GIT_OPTIONAL_LOCKS']='0'
+start=dt.datetime.now(dt.timezone.utc); monotonic=time.monotonic(); checks=[]; bindings=[]
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def read(p): return json.loads(Path(p).read_text())
+def check(name, actual, expected=True):
+    ok=type(actual) is type(expected) and actual==expected
+    checks.append({'check':name,'passed':ok,'actual':actual,'expected':expected})
+    if not ok: raise AssertionError(name)
+def bind(p,expected=None):
+    p=Path(p); h=sha(p); bindings.append({'path':str(p),'sha256':h,'bytes':p.stat().st_size})
+    if expected is not None: check('SHA256 '+str(p),h,expected)
+    return h
+def git(*args,cwd=R): return subprocess.check_output(['git',*args],cwd=cwd,text=True).strip()
+def typed(x):
+    if isinstance(x,dict):return ('dict',tuple((typed(k),typed(v)) for k,v in x.items()))
+    if isinstance(x,list):return ('list',tuple(typed(v) for v in x))
+    return (type(x).__name__,x)
+
+try:
+    pins={'native/review.yaml':'ba4e66d80dbd120c3961c9d5e9d91df9c3be5a382e7e92b0791780164f9aeb9d',
+          'native/review.md':'b2f5b7f78fa3a6877f32fa5e452b37ef577319a7905c76f0f9be0cb42c8b33ea',
+          'HANDOFF-draft.json':'fd0f88aa907353543a1de8a638904f082892c42cd8497655cc155d38960cb434',
+          'preservation-final.json':'34bf7ee4330feadd518554824f7d96a4c5f99d8c5e2b4e8b1aa986a50c3cbc59',
+          'candidate/Rifamycin.yaml':'40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575',
+          'inputs/06-Rifamycin.yaml':'0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e'}
+    for p,h in pins.items():bind(O/p,h)
+    nv=read(O/'native/validation.json'); helper=Path(nv['helper_path']); schema=Path(nv['schema_path'])
+    bind(helper,nv['helper_sha256']);bind(schema,nv['schema_sha256'])
+    check('Native helper exact pinned Git blob',hashlib.sha256(subprocess.check_output(['git','show','7d6d44ea132e04709f81ebd9e1577643745110ad:scripts/record_review.py'],cwd=K)).hexdigest(),nv['helper_sha256'])
+    check('Native review schema exact pinned Git blob',hashlib.sha256(subprocess.check_output(['git','show','7d6d44ea132e04709f81ebd9e1577643745110ad:schema/record_review.yaml'],cwd=K)).hexdigest(),nv['schema_sha256'])
+    spec=importlib.util.spec_from_file_location('rifamycin_independent_final_native',helper)
+    native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native
+    spec.loader.exec_module(native)
+    doc=native.load_document((O/'native/review.yaml').read_bytes())
+    native.validate_review(doc);check('Unmodified native validate_review completed',True)
+    native.assert_current_source(R,doc);check('Unmodified native assert_current_source completed',True)
+    check('Native render exact complete Markdown',native.render_markdown(doc).encode()==(O/'native/review.md').read_bytes())
+    check('Native dump/load type-aware ordered equality',typed(native.load_document(native._dump_document(doc)))==typed(doc))
+    for i in doc['source']['inputs']:bind(R/i['path'],i['sha256'])
+    check('122 native inputs',len(doc['source']['inputs']),122)
+    check('Unique native input paths',len({i['path'] for i in doc['source']['inputs']}),122)
+    for key,n in [('targets',1),('assessments',9),('evidence',21)]:check(key+' count',len(doc[key]),n)
+    check('Native author self_review',doc['reviewer']['independence'],'self_review')
+    check('Native scoped verdict',doc['verdict'],'pass_with_limitations')
+    check('Native findings empty',doc['findings'],[]);check('Native actions empty',doc['actions'],[])
+    check('Single ancillary population',doc['scope']['population_size'],1)
+    check('Reviewed target exact',doc['scope']['reviewed_target_ids'],['ANCILLARY-RIFAMYCIN-1263'])
+    for a in doc['assessments']:check('Assessment target '+a['assessment_id'],a['target_ids'],['ANCILLARY-RIFAMYCIN-1263'])
+    check('Canonical row limitation is unknown',next(a for a in doc['assessments'] if a['assessment_id']=='ROW-LIMIT')['outcome'],'unknown')
+    evidence={e['evidence_id']:e for e in doc['evidence']}
+    for e in doc['evidence']:
+        if not e['reference'].startswith('https:'):bind(R/e['reference'],e['snapshot_sha256'])
+    for term,num in [('26580','13'),('29673','15')]:
+        m=read(next((O/'inputs').glob(num+'-*metadata.json')));e=evidence['PRIMARY'+term]
+        check('Original primary URL '+term,e['reference'],m['url'])
+        check('Original primary timestamp '+term,dt.datetime.fromisoformat(e['accessed_at']).isoformat(),dt.datetime.fromisoformat(m['retrieved_at']).isoformat())
+        check('Original primary body digest '+term,e['snapshot_sha256'],m['sha256'])
+        bind(R/e['locator'].split(';')[0],m['sha256'])
+    for row in read(O/'input-map.json'):
+        bind(row['original_path'],row['sha256']);bind(R/row['local_path'],row['sha256'])
+    h=read(O/'HANDOFF-draft.json');scopes=read(O/'reviewer-scopes.json')
+    check('Handoff exact reviewer scopes',h['reviewers'],scopes)
+    check('No human verification claimed',scopes['human_verification'],False)
+    check('No external sessions claimed',scopes['external_sessions_created'],0)
+    check('Candidate author explicit',h['candidate_author'],'worker10:/root')
+    check('Root self_review explicit',h['root_native_review_independence'],'self_review')
+    check('Zero new population memberships',h['population'],{'complete_private_candidates':1,'new_original_cm_kg_cases':0,'new_source_observations':0,'new_campaign934_operations':0,'new_frozen1879_members':0})
+    check('No canonical registration',h['native_context']['canonical_saver_registration'],False)
+    check('No canonical publication',h['native_context']['canonical_publication'],False)
+    for p,row in h['artifacts'].items():bind(O/p,row['sha256']);check('Handoff byte length '+p,(O/p).stat().st_size,row['bytes'])
+    for subtree in ['science','skeptic','technical']:
+        m=read(O/subtree/'MANIFEST.json');bind(O/subtree/'MANIFEST.json')
+        for row in m['files']:bind(O/subtree/row['path'],row['sha256'])
+        check('Peer manifest exact membership '+subtree, sorted(str(p.relative_to(O/subtree)) for p in (O/subtree).rglob('*') if p.is_file() and p.name!='MANIFEST.json'),sorted(x['path'] for x in m['files']))
+    before=yaml.safe_load((O/'inputs/06-Rifamycin.yaml').read_text());after=yaml.safe_load((O/'candidate/Rifamycin.yaml').read_text())
+    check('Complete owner has eight fields',len(after),8)
+    check('Exactly one evidence appended',len(after['ontology_mapping']['evidence']),len(before['ontology_mapping']['evidence'])+1)
+    check('Exactly one history appended',len(after['curation_history']),len(before['curation_history'])+1)
+    check('New evidence truthful LLM type',after['ontology_mapping']['evidence'][-1]['evidence_type'],'LLM_SUGGESTION')
+    check('New history agent flag',after['curation_history'][-1]['llm_assisted'],True)
+    restored=json.loads(json.dumps(after));restored['ontology_mapping']['mapping_quality']=before['ontology_mapping']['mapping_quality'];restored['ontology_mapping']['evidence'].pop();restored['curation_history'].pop()
+    check('All other owner fields typed exact',typed(restored)==typed(before))
+    bind(K/'data/ingredients/mapped/Rifamycin.yaml',pins['inputs/06-Rifamycin.yaml']);bind(R/'data/ingredients/mapped/Rifamycin.yaml',pins['inputs/06-Rifamycin.yaml'])
+    check('Own HEAD unchanged',git('rev-parse','HEAD'),'01c173bd914e7b18a04cf70a8e34688f7c1a083a');check('Tracked tree clean',git('status','--short'),'')
+    check('Observed K HEAD',git('rev-parse','HEAD',cwd=K),'7d6d44ea132e04709f81ebd9e1577643745110ad')
+    old=read(O/'preservation-final.json');old_count=0
+    for pack in old['prior_packets']:
+        p=Path(pack['root']);bind(p/'MANIFEST.json',pack['manifest_sha256']);bind(p/'HANDOFF.json',pack['handoff_sha256']);bind(p/'SHA256SUMS',pack['checksum_file_sha256'])
+        members=read(p/'MANIFEST.json')['files'];check('Prior member denominator '+str(p),len(members),pack['checked_members'])
+        for x in members:bind(p/x['path'],x['sha256']);old_count+=1
+    check('433 prior sealed member bindings',old_count,433)
+    published=R/'reports/all_unmatched_20261107/ancillary_xanthine1258_proposal_v1';files=sorted(p for p in published.rglob('*') if p.is_file())
+    check('Published Xanthine files',len(files),205)
+    for p in files:check('Committed Xanthine blob '+str(p.relative_to(R)),hashlib.sha256(subprocess.check_output(['git','show','01c173bd914e7b18a04cf70a8e34688f7c1a083a:'+str(p.relative_to(R))],cwd=R)).hexdigest(),sha(p))
+    # Preserved attempts and later explanatory metadata; no historical rewriting.
+    for p in ['failed-attempts/initial-read-diagnostics.json','failed-attempts/read-probe-note.json','failed-attempts/schema-read-clarification.json','science/failed-reading-attempt.json','technical/preflight.stderr','technical/preflight-v2.py','root-command-receipts.json','seal_packet.py']:
+        bind(O/p)
+    correction=read(O/'failed-attempts/schema-read-clarification.json')
+    check('Original failed explanation retained',correction['original_diagnostic_and_original_explanation_preserved'],True)
+    check('Clarification no candidate change',correction['candidate_or_corpus_change'],False)
+    result='PASS'
+except Exception as exc:
+    result='FAIL';error={'type':type(exc).__name__,'message':str(exc)}
+finally:
+    out={'result':result,'started_at':start.isoformat(),'finished_at':dt.datetime.now(dt.timezone.utc).isoformat(),'runtime_seconds':time.monotonic()-monotonic,'script':{'path':str(Path(__file__).resolve()),'sha256':sha(__file__)},'checks':checks,'check_count':len(checks),'failed_checks':[c for c in checks if not c['passed']],'bindings':bindings,'error':locals().get('error'),'scope':'Fresh native review validation/currentness/render and bounded metadata/preservation checks only; no source science or writer/negative controls rerun.'}
+    target=F/'checks.json';assert not target.exists();target.write_text(json.dumps(out,indent=2)+'\n')
+    print(json.dumps({k:out[k] for k in ['result','check_count','runtime_seconds','error']},indent=2))
+    if result!='PASS':sys.exit(1)

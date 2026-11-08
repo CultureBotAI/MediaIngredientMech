@@ -1,0 +1,94 @@
+from pathlib import Path
+import json,hashlib,datetime,copy,sys,csv,io,zipfile,subprocess
+from html.parser import HTMLParser
+import yaml
+R=Path.cwd();O=R/'.temp/rifamycin1263-method-proposal-v1';V=O/'science';C=R.parents[2];K=C/'integration/release-worktree';W=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2';P=W/'science/chemistry/captures';now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat();started=now();inputs={};checks=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def read(p):
+ p=Path(p);b=p.read_bytes();inputs[str(p)]={'path':str(p),'sha256':sha(b),'bytes':len(b)};return b
+def j(p):return json.loads(read(p))
+def ck(n,v,d=None):checks.append({'check':n,'pass':bool(v),'detail':d})
+def save(n,o):
+ with (V/n).open('x') as f:json.dump(o,f,indent=2,ensure_ascii=False);f.write('\n')
+mp=j(O/'input-map.json')
+for x in mp:ck('input exact captured/original '+x['local_path'],sha(read(R/x['local_path']))==sha(read(x['original_path']))==x['sha256'])
+bb=read(O/'inputs/06-Rifamycin.yaml');ab=read(O/'candidate/Rifamycin.yaml');before=yaml.safe_load(bb);after=yaml.safe_load(ab)
+ck('before exact0319',sha(bb)=='0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e')
+ck('after exact40fd',sha(ab)=='40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575')
+ck('full same8 topfields',set(before)==set(after) and len(after)==8)
+rollback=copy.deepcopy(after);rollback['ontology_mapping']['mapping_quality']='EXACT_MATCH';rollback['ontology_mapping']['evidence'].pop();rollback['curation_history'].pop()
+ck('exact full parsedrollback',rollback==before)
+ck('four histories exact prefix',len(before['curation_history'])==4 and len(after['curation_history'])==5 and after['curation_history'][:-1]==before['curation_history'])
+ck('two evidence exact prefix',len(before['ontology_mapping']['evidence'])==2 and len(after['ontology_mapping']['evidence'])==3 and after['ontology_mapping']['evidence'][:-1]==before['ontology_mapping']['evidence'])
+# Exact byte rollback excludes only the explicit appended blocks and method line.
+text=ab.decode();e=text.index('  - evidence_type: LLM_SUGGESTION\n');eend=text.index('synonyms: []\n',e);text=text[:e]+text[eend:];a=text.index("- timestamp: '2026-11-08T14:29:15.939539+00:00'");aend=text.index('\nnotes:',a);text=text[:a]+text[aend+1:];text=text.replace('  mapping_quality: MANUAL_CURATION\n','  mapping_quality: EXACT_MATCH\n',1)
+ck('exact full byte rollback',text.encode()==bb)
+for k in before:
+ if k not in ['ontology_mapping','curation_history']:ck('unchanged fullfield '+k,before[k]==after[k])
+om=after['ontology_mapping'];new=om['evidence'][-1];ev=after['curation_history'][-1]
+ck('family key unchanged',after['identifier']==om['ontology_id']=='CHEBI:26580' and om['ontology_label']=='rifamycins' and after['preferred_term']=='Rifamycin')
+ck('manualquality withAI only claim',om['mapping_quality']=='MANUAL_CURATION' and new['evidence_type']=='LLM_SUGGESTION' and ev['llm_assisted'] is True and 'without human verification' in new['notes'])
+ck('native event honest author/status',ev['curator']=='worker10:/root Codex ancillary-rifamycin1263' and ev['previous_status']==ev['new_status']=='MAPPED' and ev['action']=='CORRECTED_MAPPING_METHOD')
+ck('no new form chemistry role or synonyms',not(set(after)&{'chemical_properties','supplied_form','roles','components'}) and after['synonyms']==[])
+family=j(O/'inputs/12-chebi-26580-retry.body');sv=j(O/'inputs/14-chebi-29673-retry.body');fm=j(O/'inputs/13-chebi-26580-retry.metadata.json');sm=j(O/'inputs/15-chebi-29673-retry.metadata.json')
+for data,meta,num in [(family,fm,26580),(sv,sm,29673)]:
+ p=O/'inputs'/('12-chebi-26580-retry.body' if num==26580 else '14-chebi-29673-retry.body')
+ ck('authentic successful term capture '+str(num),meta['http_status']==200 and meta['error'] is None and meta['sha256']==sha(read(p)) and meta['bytes']==len(read(p)) and data['id']==num and data['chebi_accession']==f'CHEBI:{num}')
+ ck('term actual sourceURL andtime '+str(num),meta['url']==meta['final_url']==f'https://www.ebi.ac.uk/chebi/backend/api/public/compound/{num}/' and meta['retrieved_at'] in new['notes'] and meta['sha256'] in new['notes'])
+ck('family primarylabel notsingular',family['name']=='rifamycins' and family['name'].lower()!=after['preferred_term'].lower())
+ck('shared singular synonym',any(x['name'].lower()=='rifamycin' for x in family['names']['SYNONYM']) and any(x['name'].lower()=='rifamycin' for x in sv['names']['SYNONYM']))
+ck('SV is distinct child',sv['name']=='rifamycin SV' and any(x['relation_type']=='is a' and x['final_id']==26580 for x in sv['ontology_relations']['outgoing_relations']))
+ck('family no molecular structure orformula claim',family['chemical_data'] is None and family['default_structure'] is None)
+ck('SV-specific CASnotfamily',all(x['accession_number']=='6998-60-3' for x in sv['database_accessions']['CAS']) and 'CAS' not in family['database_accessions'] and 'chemical_properties' not in after)
+contracts=read(O/'inputs/01-MAPPING_SEMANTICS.md').decode();schema=yaml.safe_load(read(O/'inputs/05-mediaingredientmech.yaml'));scope=read(K/'docs/INGREDIENT_SCOPE_PROFILE.md').decode()
+q=schema['enums']['MappingQualityEnum']['permissible_values'];et=schema['enums']['EvidenceTypeEnum']['permissible_values']
+ck('contract methodnotpredicate', 'a primary-label resolution is `EXACT_MATCH`' in contracts and 'unique ontology synonym' in contracts and 'a row whose object is the record' in contracts)
+ck('manualquality separatehuman evidence definition',q['MANUAL_CURATION']['description']=='Manually curated by expert' and 'human reviewer' in et['MANUAL_CURATION']['description'] and 'human-verified' in q['LLM_ASSISTED']['description'])
+ck('explicit native familyscope exception', '| MIM:Rifamycin | CHEBI:26580 | chemical_family | No single CAS; no all-members activity inference. |' in scope)
+issue=j(O/'inputs/08-readback-00.json');oldissue=j(O/'inputs/10-760.json');finding=j(O/'inputs/11-findings.json');ck('filed issue1263open',issue['number']==1263 and issue['state']=='open' and issue['comments']==0 and issue['html_url']==new['source'])
+ck('760explicit family retain',oldissue['number']==760 and 'Re-ground bare Rifamycin at CHEBI:26580' in oldissue['body'] and 'Preserve Rifamycin_Sv at CHEBI:29673' in oldissue['body'])
+ck('original stablefinding0319 method',finding['new_findings'][0]['finding_id']=='F51-CHEM-001' and finding['new_findings'][0]['owner_sha256']==sha(bb) and finding['new_findings'][0]['actual']=='EXACT_MATCH')
+# Reproduce all exact generic source cells from the actual local upstream zip.
+zpath=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/raw/microbedecoder_database.zip');zraw=read(zpath)
+with zipfile.ZipFile(io.BytesIO(zraw)) as z:csvraw=z.read('database.csv')
+rows=list(csv.DictReader(io.StringIO(csvraw.decode('latin-1'))));columns=['BacDive_Antibiotic_resistance','BacDive_Antibiotic_sensitivity','BacDive_Metabolite_production'];found=[]
+for lineno,row in enumerate(rows,2):
+ for col in columns:
+  for token in row[col].split(';'):
+   if token.strip().lower()=='rifamycin':found.append({'source_line':lineno,'source_column':col,'raw_token':token,'row':row})
+old=j(P/'microbedecoder-rifamycin.json');ck('exact3 complete upstreamrows reproduce',found==old and len(found)==3)
+ck('two production one resistance',sorted((x['row']['BacDive_ID'],x['source_column']) for x in found)==[('13220','BacDive_Metabolite_production'),('166282','BacDive_Antibiotic_resistance'),('16969','BacDive_Metabolite_production')])
+ck('0media and3source schema semantics','NON-media source' in schema['classes']['OccurrenceStats']['attributes']['source_occurrences']['description'] and after['occurrence_statistics']=={'total_occurrences':0,'media_count':0,'source_occurrences':[{'source':'microbedecoder','count':3,'source_columns':'BacDive_Antibiotic_resistance|BacDive_Metabolite_production'}]})
+source_repro={'at':now(),'zip':inputs[str(zpath)],'member':'database.csv','member_sha256':sha(csvraw),'encoding':'latin-1','source_rows_scanned':len(rows),'columns':columns,'token_rule':'exact stripped case-insensitive semicolon-delimited rifamycin; no SV/O or other members','source_cells':found,'no_new_source_cases':True,'retrieval_time':'Local source bytes; original HTTP acquisition time not asserted.'};save('source-reproduction.json',source_repro)
+class TableParser(HTMLParser):
+ def __init__(self):super().__init__();self.buf=[];self.rows=[];self.active=False
+ def handle_starttag(self,t,a):
+  if t=='tr':self.active=True;self.buf=[]
+  if self.active and t in ['td','th']:self.buf.append('|')
+ def handle_endtag(self,t):
+  if t=='tr' and self.active:self.rows.append(' '.join(' '.join(self.buf).split()));self.active=False
+ def handle_data(self,d):
+  if self.active:self.buf.append(d)
+bac=[]
+for num in [16969,13220,166282]:
+ body=read(P/f'bacdive-{num}.body');meta=j(P/f'bacdive-{num}.metadata.json');parser=TableParser();parser.feed(body.decode());matches=[]
+ for i,row in enumerate(parser.rows):
+  if 'rifamycin' in row.lower() and len(row)<200:matches.append({'table_row_index':i,'row':row,'previous_row':parser.rows[i-1] if i else None,'next_row':parser.rows[i+1] if i+1<len(parser.rows) else None})
+ ck('BacDive authenticcapture '+str(num),meta['http_status']==200 and meta['error'] is None and meta['sha256']==sha(body) and meta['url']==f'https://bacdive.dsmz.de/strain/{num}')
+ ck('BacDive generic26580 row '+str(num),any('26580' in x['row'] and '| rifamycin |' in x['row'] for x in matches))
+ bac.append({'body':inputs[str(P/f'bacdive-{num}.body')],'metadata':inputs[str(P/f'bacdive-{num}.metadata.json')],'url':meta['url'],'retrieved_at':meta['retrieved_at'],'table_rows':matches,'scope':'Primary database table context, not an original experimental paper or universal family activity.'})
+ck('namedmembers coexist notgenericoverride',any('Rifamycin O' in x['row'] for x in bac[0]['table_rows']) and any('rifamycin sv' in x['row'].lower() for x in bac[1]['table_rows']))
+save('bacdive-contexts.json',bac)
+# Full inherited provenance/source review is a source of context, not borrowed approval.
+for p in [K/'reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md',W/'inputs/original-native-sources/reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json',W/'science/chemistry/owner-assessments.json',W/'science/chemistry/evidence-catalog.json',O/'inputs/03-record-reviews.md',O/'inputs/04-record-review-profile.md',R/'.claude/skills/review-yaml-record/SKILL.md',O/'author-receipt.json',O/'field-differences.json',O/'candidate.diff']:read(p)
+# Native narrow closed-schema validation only; no writer or state mutation.
+sys.path.insert(0,str(K/'src'));from mediaingredientmech.validation.write_validated import validate_ingredient
+errors=validate_ingredient(after);ck('actual native closed schema',not errors,[str(x) for x in errors])
+for name,module in list(sys.modules.items()):
+ if name.startswith('mediaingredientmech') and getattr(module,'__file__',None):read(Path(module.__file__))
+for p in [K/'src/mediaingredientmech/schema/mediaingredientmech.yaml',K/'src/mediaingredientmech/schema/mech_shared.yaml']:read(p)
+ck('actualK owner remains exactbefore',read(K/'data/ingredients/mapped/Rifamycin.yaml')==bb)
+ck('originalprimary and candidate afterread preservation',sha(read(O/'candidate/Rifamycin.yaml'))=='40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575')
+for p,x in list(inputs.items()):ck('input unchanged '+p,sha(Path(p).read_bytes())==x['sha256'])
+res={'started_at':started,'finished_at':now(),'reviewer':'worker10:/root/preparation_skeptic','checks':checks,'counts':{'checks':len(checks),'failed':sum(not x['pass'] for x in checks),'owner_top_fields':len(after),'original_evidence':2,'new_evidence':1,'original_history':4,'new_history':1,'source_cells':3,'primary_term_captures':2,'BacDive_context_captures':3},'input_hashes':list(inputs.values()),'findings':[],'failed_checks':[x for x in checks if not x['pass']],'no_mutation':True}
+save('checks.json',res);print(json.dumps({'counts':res['counts'],'failed_checks':res['failed_checks']},indent=2))

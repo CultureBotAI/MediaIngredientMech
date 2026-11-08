@@ -1,0 +1,91 @@
+{
+  "reviewer": "worker10:/root/bio_research",
+  "at": "2026-11-08T14:31:15.799793+00:00",
+  "candidate_sha256": "40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575",
+  "before_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+  "producer": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc",
+    "bytes": 73598
+  },
+  "K_head": "7d6d44ea132e04709f81ebd9e1577643745110ad",
+  "Claw_head": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+  "mechanical_index": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-method-proposal-v1/technical/owner-index-inventory.json",
+    "sha256": "9aef8bcdeaffa1b908f2d474dbb9c95760b2bf66e37031e500989cce44fe2ec2",
+    "bytes": 1619340
+  },
+  "native_call": "_row_from_yaml(maintained_owner_path,{}, {}, {}, {}, record=before_or_candidate,owners=complete_preferred_owner_index,suppressions=[])",
+  "current_maintained_canonical_row": {
+    "data_row_1based": 2459,
+    "row": {
+      "subject_id": "MIM:Rifamycin",
+      "subject_label": "Rifamycin",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:26580",
+      "object_label": "rifamycins",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+      "mapping_date": "2026-09-23",
+      "confidence": "0.99",
+      "comment": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+      "other": "",
+      "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+    }
+  },
+  "diagnostic_before_rows": [
+    {
+      "subject_id": "MIM:Rifamycin",
+      "subject_label": "Rifamycin",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:26580",
+      "object_label": "rifamycins",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:LexicalMatching",
+      "source": "MIM:microbedecoder|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=kgmicrobe_scope_review",
+      "mapping_date": "2026-09-23",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "",
+      "validation_method": ""
+    }
+  ],
+  "diagnostic_candidate_rows": [
+    {
+      "subject_id": "MIM:Rifamycin",
+      "subject_label": "Rifamycin",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:26580",
+      "object_label": "rifamycins",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:microbedecoder|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1263|MIM:curator=worker10:/root Codex ancillary-rifamycin1263",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "",
+      "validation_method": ""
+    }
+  ],
+  "diagnostic_changes": {
+    "mapping_justification": {
+      "before": "semapv:LexicalMatching",
+      "after": "semapv:ManualMappingCuration"
+    },
+    "source": {
+      "before": "MIM:microbedecoder|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=kgmicrobe_scope_review",
+      "after": "MIM:microbedecoder|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1263|MIM:curator=worker10:/root Codex ancillary-rifamycin1263"
+    },
+    "mapping_date": {
+      "before": "2026-09-23",
+      "after": "2026-11-08"
+    },
+    "confidence": {
+      "before": "0.99",
+      "after": "0.9"
+    }
+  },
+  "all13_fields_compared": true,
+  "limitation": "Per-owner actual producer API with empty residual/kgm/canonical-label maps. No full builder/main, source application, canonical replacement, final row position or receipt. Current canonical scope comment/stamp remain separate and must not be lost by treating this diagnostic as a publication payload."
+}

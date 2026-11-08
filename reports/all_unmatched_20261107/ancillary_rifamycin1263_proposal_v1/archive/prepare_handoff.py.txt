@@ -1,0 +1,46 @@
+"""Private handoff and preservation capture; never applies or publishes a record."""
+from pathlib import Path
+import datetime, hashlib, json, os, subprocess
+O=Path(__file__).resolve().parent;R=O.parents[1];K=R.parents[2]/'integration/release-worktree'
+os.environ['GIT_OPTIONAL_LOCKS']='0'
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(name,value):
+ p=O/name;assert not p.exists();p.write_text(json.dumps(value,indent=2)+'\n')
+def git(*args):return subprocess.check_output(['git',*args],cwd=R,text=True).strip()
+head=git('rev-parse','HEAD');assert head=='01c173bd914e7b18a04cf70a8e34688f7c1a083a'
+assert git('status','--short')==''
+prior=json.loads((O/'preservation-initial.json').read_text())
+preserved=[]
+for row in prior['packets']:
+ base=Path(row['root']);assert sha(base/'MANIFEST.json')==row['manifest_sha256'];assert sha(base/'HANDOFF.json')==row['handoff_sha256']
+ m=json.loads((base/'MANIFEST.json').read_text())
+ for f in m['files']:assert sha(base/f['path'])==f['sha256'],f
+ preserved.append({**row,'checksum_file_sha256':sha(base/'SHA256SUMS')})
+package='reports/all_unmatched_20261107/ancillary_xanthine1258_proposal_v1'
+paths=git('ls-tree','-r','--name-only',head,'--',package).splitlines()
+assert len(paths)==205
+for path in paths:
+ blob=subprocess.check_output(['git','cat-file','blob',f'{head}:{path}'],cwd=R)
+ assert hashlib.sha256(blob).hexdigest()==sha(R/path),path
+owner=K/'data/ingredients/mapped/Rifamycin.yaml';assert sha(owner)=='0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e'
+preservation={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'own_head':head,'tracked_tree_clean':True,'prior_packets':preserved,'published_xanthine_files_vs_committed_blobs':len(paths),'all_exact':True,'current_rifamycin_owner_sha256':sha(owner),'current_K_head':subprocess.check_output(['git','-C',str(K),'rev-parse','HEAD'],text=True).strip(),'no_remote_or_Git_mutation':'Read-only local object/status checks; no fetch, commit, push or ref update.'}
+write('preservation-final.json',preservation)
+refs={}
+for rel in ['candidate/Rifamycin.yaml','inputs/06-Rifamycin.yaml','science/science.json','skeptic/candidate-review.json','technical/REPORT.json','technical/native-row-comparison.json','native/review.yaml','native/review.md','native/validation.json','reviewer-scopes.json','preservation-final.json','field-differences.json']:
+ refs[rel]={'sha256':sha(O/rel),'bytes':(O/rel).stat().st_size}
+handoff={'packet':'worker10 ancillary Rifamycin1263 private method proposal','created_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'verdict':'SUPPORTED_EXACT_PRIVATE_CANDIDATE_WITH_LIMITATIONS','new_findings':[],
+ 'issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1263','original_finding':'F51-CHEM-001','candidate_author':'worker10:/root','root_native_review_independence':'self_review','own_published_head_unchanged':head,
+ 'owner_path':'data/ingredients/mapped/Rifamycin.yaml','before_sha256':sha(O/'inputs/06-Rifamycin.yaml'),'candidate_sha256':sha(O/'candidate/Rifamycin.yaml'),
+ 'exact_delta':['ontology_mapping.mapping_quality EXACT_MATCH -> MANUAL_CURATION','Append one LLM_SUGGESTION mapping evidence item with truthful agent provenance and original primary retrieval timestamps/hashes.','Append one actual native llm_assisted history event; all old2 evidence and4 history remain exact.'],
+ 'preserved':'Complete CHEBI:26580 family identity/label/status/source scope, empty aliases, occurrences and all remaining fields; no CAS, molecular structure, roles, supplied form, supplier or member-specific inference.',
+ 'population':{'complete_private_candidates':1,'new_original_cm_kg_cases':0,'new_source_observations':0,'new_campaign934_operations':0,'new_frozen1879_members':0},
+ 'native_context':{'K_declared_executed_head':'7d6d44ea132e04709f81ebd9e1577643745110ad','Claw_declared_executed_head':'76c1ebeea3fc7f80bf1abe044688f298f390cfac','canonical_saver_registration':False,'guarded_private_candidate':True,'canonical_publication':False},
+ 'reviewers':json.loads((O/'reviewer-scopes.json').read_text()),'artifacts':refs,
+ 'checks':{'native_closed_schema':True,'guarded_idempotent_replay':True,'native_event_reconstruction':True,'negative_controls_refused':23,'negative_controls_native_schema':3,'negative_controls_explicit_reviewer_boundaries':20,'full_owner_top_level_fields':8,'full_row_fields':13,'technical_inventory_is_mechanical_not_scientific':True},
+ 'diagnostic_row_limits':'Before/candidate same-context producer changes justification, source, date and default confidence0.99→0.9. Current canonical row already has manual justification,0.99,scope comment and historical stamp. Diagnostic blank comment/stamp and default confidence are not a final replacement or new approval. No future row position is assigned.',
+ 'remaining_application_obligations':['Coordinator decides whether and how to integrate this ancillary proposal separately; no acceptance template/helper was created.','Recheck actual then-current owner preimage and independently review any intervening changes before a separately authorized guarded application.','Use real native source/synchronization/generator context and review complete resulting canonical row, preserving #760 source scope and all inherited holds.','No source, biological role, export or campaign acceptance follows from this packet. The maintained method defect and issue1263 remain for the coordinator; no closure or application occurred.'],
+ 'failed_diagnostics':'Original read-probe notes/clarification, science reading-probe receipt and technical wrong-subject-prefix attempt are retained; no candidate/source defect resulted.',
+ 'prohibitions_observed':['No maintained/export/shared-source edits','No application/acceptance/helper/template','No Git/index/ref/commit/push/GitHub mutation','No new external session or paid provider','No source-case accounting or Xanthine-packet change'],
+ 'status':'Draft handoff for separate final metadata review; candidate/science/native content is already exact and frozen.'}
+write('HANDOFF-draft.json',handoff)
+print(json.dumps({'draft_sha256':sha(O/'HANDOFF-draft.json'),'preservation_sha256':sha(O/'preservation-final.json')}))

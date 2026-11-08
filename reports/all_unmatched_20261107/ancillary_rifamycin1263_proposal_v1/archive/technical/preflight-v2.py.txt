@@ -1,0 +1,67 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import csv,hashlib,importlib.util,json,subprocess,sys,yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';CLAW=C.parents[1]/'.temp/kgm-unmapped-20261107/claw';O=Path(__file__).resolve().parent;B=O.parent
+HEAD='7d6d44ea132e04709f81ebd9e1577643745110ad';BEFORE='0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e';OWNER='data/ingredients/mapped/Rifamycin.yaml';sha=lambda b:hashlib.sha256(b).hexdigest();start=datetime.now(timezone.utc).isoformat();inputs={};checks=[]
+def raw(p):
+ p=Path(p);b=p.read_bytes();inputs[str(p)]={'path':str(p),'sha256':sha(b),'bytes':len(b)};return b
+def ck(n,v):
+ checks.append({'check':n,'pass':bool(v)});assert v,n
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False,default=str);f.write('\n')
+def git(root,*args):return subprocess.check_output(['git','-C',str(root),*args])
+ck('native context exact head',git(K,'rev-parse','HEAD').decode().strip()==HEAD)
+worker_head=git(R,'rev-parse','HEAD').decode().strip();ck('worker tracked state clean',git(R,'status','--porcelain','--untracked-files=no')==b'')
+mapping=json.loads(raw(B/'input-map.json'))
+for entry in mapping:
+ ck('exact source capture '+entry['local_path'],raw(R/entry['local_path'])==raw(entry['original_path']) and sha((R/entry['local_path']).read_bytes())==entry['sha256'])
+ck('exact maintained preimage',sha(raw(K/OWNER))==BEFORE and raw(K/OWNER)==raw(B/'inputs/06-Rifamycin.yaml')==git(K,'show',HEAD+':'+OWNER))
+old=yaml.safe_load((K/OWNER).read_bytes())
+schema=yaml.safe_load(raw(K/'src/mediaingredientmech/schema/mediaingredientmech.yaml'));raw(K/'src/mediaingredientmech/schema/mech_shared.yaml')
+sys.path[:0]=[str(K/'src'),str(CLAW/'src'),str(CLAW/'scripts')]
+from mediaingredientmech.validation.write_validated import validate_ingredient
+from mediaingredientmech.curate.curation_event import record_curation_event
+ck('native baseline closed-schema valid',validate_ingredient(old)==[])
+producer=CLAW/'scripts/build_mim_ingredient_sssom.py';pb=raw(producer);spec=importlib.util.spec_from_file_location('rifamycin_preflight_row_producer',producer);m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;exec(compile(pb,str(producer),'exec',dont_inherit=True),m.__dict__)
+# Complete active direct-child owner inventory, including ignored entries. Only
+# preferred index and explicit references are assessed, not corpus science.
+files=[];mapped={};refs=[]
+for cat in ['mapped','unmapped']:
+ for p in sorted((K/'data/ingredients'/cat).glob('*.yaml')):
+  b=p.read_bytes();d=yaml.load(b,Loader=yaml.CSafeLoader)
+  entry={'path':str(p),'relative_path':p.relative_to(K).as_posix(),'sha256':sha(b),'bytes':len(b),'identifier':d.get('identifier'),'preferred_term':d.get('preferred_term'),'mapping_status':d.get('mapping_status')};files.append(entry)
+  if cat=='mapped':mapped[p]=d
+  for i,component in enumerate(d.get('components') or []):
+   if component.get('component_id')=='CHEBI:26580' or (component.get('preferred_term') or '').casefold()=='rifamycin':refs.append({'owner':entry,'index':i,'component':component})
+owners=m.build_owner_index({m._mim_curie(p.name):d for p,d in mapped.items()})
+inventory_obj={'at':datetime.now(timezone.utc).isoformat(),'scope':'All native direct children including ignored records; byte hashes plus extracted preferred-owner index, not whole-corpus science.','K_head':HEAD,'records':files,'mapped_count':len(mapped),'record_count':len(files),'native_index':{k:sorted(v) for k,v in sorted(owners.items())},'explicit_rifamycin_component_references':refs}
+previous_inventory=json.loads(raw(O/'owner-index-inventory.json'))
+ck('preserved first-attempt index exactly matches reread',all(previous_inventory[k]==inventory_obj[k] for k in inventory_obj if k!='at'))
+raw(O/'owner-index-inventory.json')
+baseline=m._row_from_yaml(K/OWNER,{},{},{},{},record=old,owners=owners,suppressions=[])
+canonical_bytes=raw(K/'mappings/ingredient_mappings.sssom.tsv');canonical=[]
+reader=csv.DictReader([line for line in canonical_bytes.decode().splitlines() if not line.startswith('#')],delimiter='\t')
+for pos,row in enumerate(reader,1):
+ if row.get('subject_id')==m._mim_curie(Path(OWNER).name):canonical.append({'data_row_1based':pos,'row':row})
+ck('one current native Rifamycin row',len(canonical)==1)
+aggregate=yaml.load(raw(K/'data/curated/mapped_ingredients.yaml'),Loader=yaml.CSafeLoader)
+matches=[r for r in aggregate['ingredients'] if r.get('preferred_term')=='Rifamycin']
+ck('aggregate exact whole record',matches==[old])
+primary=[]
+for id,body,metadata in [(26580,'12-chebi-26580-retry.body','13-chebi-26580-retry.metadata.json'),(29673,'14-chebi-29673-retry.body','15-chebi-29673-retry.metadata.json')]:
+ b=raw(B/'inputs'/body);meta=json.loads(raw(B/'inputs'/metadata));obj=json.loads(b)
+ ck('actual source hash/time '+str(id),sha(b)==meta['sha256'] and meta['http_status']==200 and obj['id']==id)
+ ck('actual shared singular synonym '+str(id),any(x.get('name','').casefold()=='rifamycin' for x in obj['names']['SYNONYM']))
+ primary.append({'accession':obj['chebi_accession'],'label':obj['name'],'capture':inputs[str(B/'inputs'/body)],'capture_metadata':meta})
+modules=[]
+for name,mod in list(sys.modules.items()):
+ p=getattr(mod,'__file__',None)
+ if p and any(s in p for s in ['/mediaingredientmech/','/kg_microbe_','/build_mim_ingredient_sssom.py','/kgm_unified_mappings.py','/claw/plugins/']):
+  p=Path(p).resolve();b=raw(p);ck('executed module origin '+name,p.is_relative_to(K) or p.is_relative_to(CLAW))
+  if p.is_relative_to(K):ck('actual K module exact declared commit '+name,git(K,'show',HEAD+':'+p.relative_to(K).as_posix())==b)
+  modules.append({'module':name,'path':str(p),'sha256':sha(b)})
+ck('no application or publication module execution',not any('campaign_owner_apply' in n or 'campaign_publication' in n for n in sys.modules))
+for e in files:ck('inventory final reread '+e['relative_path'],sha(Path(e['path']).read_bytes())==e['sha256'])
+for p,e in inputs.items():ck('input unchanged '+p,sha(Path(p).read_bytes())==e['sha256'])
+save('preflight.json',{'reviewer':'worker10:/root/bio_research','scientific_review':False,'audit_execution_started_at':start,'audit_execution_finished_at':datetime.now(timezone.utc).isoformat(),'K_head':HEAD,'worker_head':worker_head,'Claw_head':git(CLAW,'rev-parse','HEAD').decode().strip(),'before_sha256':BEFORE,'full_before':old,'current_canonical_rows':canonical,'diagnostic_baseline_rows':baseline,'row_diagnostic_scope':'Actual per-owner _row_from_yaml with complete native mapped preferred-owner index and empty residual/kgm/canonical-label maps. No main, canonical rebuild, publication, application or lock manager.','owner_inventory':inputs[str(O/'owner-index-inventory.json')],'record_count':len(files),'mapped_count':len(mapped),'native_index_key_count':len(owners),'explicit_rifamycin_component_references':refs,'aggregate_exact':True,'primary_method_premise':primary,'mapping_quality_values':schema['enums']['MappingQualityEnum']['permissible_values'],'evidence_type_values':schema['enums']['EvidenceTypeEnum']['permissible_values'],'checks':checks,'executed_modules':modules,'input_bindings':list(inputs.values()),'limitations':['No fresh source-case membership or three-observation census; counters and scope preserved as dated original metadata.','Captured ChEBI bodies are read for literal method distinction; full scientific scope is separately reviewed.','No runtime files copied and no source records/aggregate/SSSOM/application changed.']})
+print(json.dumps({'preflight_checks':len(checks),'failed':0,'records':len(files),'mapped':len(mapped),'index_keys':len(owners),'reference_count':len(refs),'canonical_row':canonical,'diagnostic_before':baseline,'preflight_sha256':sha((O/'preflight.json').read_bytes())}))

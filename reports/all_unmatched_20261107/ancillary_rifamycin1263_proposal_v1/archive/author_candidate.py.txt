@@ -1,0 +1,93 @@
+"""Private #1263 candidate authoring only; no application or publication path."""
+from pathlib import Path
+import copy, datetime, difflib, hashlib, json, shutil, subprocess, sys
+import yaml
+
+R = Path(__file__).resolve().parents[2]
+C = R.parents[2]
+K = C / 'integration/release-worktree'
+O = Path(__file__).resolve().parent
+sys.path.insert(0, str(K / 'src'))
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.validation.write_validated import write_validated_ingredient, validate_ingredient
+
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(name, obj):
+    p = O/name
+    assert not p.exists(), p
+    p.write_text(json.dumps(obj, indent=2)+'\n')
+
+before = O/'inputs/06-Rifamycin.yaml'
+live = K/'data/ingredients/mapped/Rifamycin.yaml'
+assert sha(before) == sha(live) == '0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e'
+b = yaml.safe_load(before.read_text())
+assert b['identifier'] == b['ontology_mapping']['ontology_id'] == 'CHEBI:26580'
+assert b['ontology_mapping']['mapping_quality'] == 'EXACT_MATCH'
+assert b['ontology_mapping']['ontology_label'] == 'rifamycins'
+assert len(b['curation_history']) == 4 and len(b['ontology_mapping']['evidence']) == 2
+a = copy.deepcopy(b)
+a['ontology_mapping']['mapping_quality'] = 'MANUAL_CURATION'
+a['ontology_mapping']['evidence'].append({
+    'evidence_type': 'LLM_SUGGESTION',
+    'source': 'https://github.com/CultureBotAI/MediaIngredientMech/issues/1263',
+    'notes': (
+        'Worker10 Codex agent method review: MANUAL_CURATION records the deliberate '
+        'contextual family-scope judgment retained from issue #760, reassessed here '
+        'against the complete owner and primary ChEBI captures. CHEBI:26580 has '
+        'primary label rifamycins and synonym rifamycin; CHEBI:29673 also carries '
+        'rifamycin, so neither primary-label EXACT_MATCH nor unique SYNONYM_MATCH '
+        'describes this grounding. Sources: https://www.ebi.ac.uk/chebi/backend/api/public/compound/26580/ '
+        '(captured 2026-11-08T06:11:12.405578+00:00, SHA256 '
+        '7deff2d6075d5344c25df1cca36166ecf161bff7a4ccb564df9bb54c41444529) and '
+        'https://www.ebi.ac.uk/chebi/backend/api/public/compound/29673/ '
+        '(captured 2026-11-08T06:11:12.711699+00:00, SHA256 '
+        '36bc675b19e32e24ea1d5fda368458471925ece8b74208ae232c7879ae6ff6fa). '
+        'The original lexical-import evidence/history remains historical and is '
+        'not renewed as method support. Preserve the three unqualified MicrobeDecoder '
+        'observations at CHEBI:26580 family scope, separate from Rifamycin_Sv; '
+        'no member-specific production/resistance, family CAS or molecular structure '
+        'is inferred. This is an agent-assisted private proposal, without human '
+        'verification, source application, role or export approval.'
+    )
+})
+event = record_curation_event(a, curator='worker10:/root Codex ancillary-rifamycin1263',
+    action='CORRECTED_MAPPING_METHOD',
+    changes='Private issue #1263 proposal: change ontology_mapping.mapping_quality '
+    'EXACT_MATCH to MANUAL_CURATION after contextual family-scope review of #760, '
+    'the complete owner and primary ChEBI:26580/29673 captures. Append one '
+    'LLM_SUGGESTION evidence item; preserve the original two evidence items and four '
+    'history events, including the historical lexical import. Identity CHEBI:26580, '
+    'ontology label rifamycins, source occurrences and all other fields remain '
+    'unchanged. Agent-assisted judgment; no human verification or application.',
+    previous_status='MAPPED', new_status='MAPPED', llm_assisted=True)
+schema = K/'src/mediaingredientmech/schema/mediaingredientmech.yaml'
+assert not validate_ingredient(a, schema_path=schema)
+(O/'candidate').mkdir(exist_ok=False)
+candidate = O/'candidate/Rifamycin.yaml'
+write_validated_ingredient(a, candidate, schema_path=schema)
+assert yaml.safe_load(candidate.read_text()) == a
+restored = copy.deepcopy(a)
+restored['ontology_mapping']['mapping_quality'] = 'EXACT_MATCH'
+restored['ontology_mapping']['evidence'].pop()
+restored['curation_history'].pop()
+assert restored == b
+(O/'candidate.diff').write_text(''.join(difflib.unified_diff(before.read_text().splitlines(True),candidate.read_text().splitlines(True),fromfile='original/Rifamycin.yaml',tofile='private-candidate/Rifamycin.yaml')))
+save('field-differences.json', [
+ {'path':'/ontology_mapping/mapping_quality','before':'EXACT_MATCH','after':'MANUAL_CURATION'},
+ {'path':'/ontology_mapping/evidence/2','operation':'append','after':a['ontology_mapping']['evidence'][-1]},
+ {'path':'/curation_history/4','operation':'append','after':event}])
+modules=[]
+for name, module in sorted(sys.modules.items()):
+    f=getattr(module,'__file__',None)
+    if f and Path(f).is_file() and Path(f).is_relative_to(K):
+        modules.append({'module':name,'path':f,'sha256':sha(Path(f))})
+save('author-receipt.json', {'author':'worker10:/root','candidate_authored_here':True,
+ 'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'native_context_head':subprocess.check_output(['git','-C',str(K),'rev-parse','HEAD'],text=True).strip(),
+ 'actual_modules':modules,'schema':{'path':str(schema),'sha256':sha(schema)},
+ 'before_sha256':sha(before),'candidate_sha256':sha(candidate),'event':event,
+ 'guarded_writer':'mediaingredientmech.validation.write_validated.write_validated_ingredient',
+ 'event_writer':'mediaingredientmech.curate.curation_event.record_curation_event',
+ 'closed_schema_errors':[],'original_history_preserved':4,'original_evidence_preserved':2,
+ 'semantic_changes':3,'new_cm_kg_cases':0,'application':False,'canonical_row':False})
+print(sha(candidate))

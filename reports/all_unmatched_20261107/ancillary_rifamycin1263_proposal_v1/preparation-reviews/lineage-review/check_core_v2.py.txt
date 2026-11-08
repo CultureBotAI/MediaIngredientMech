@@ -1,0 +1,171 @@
+from pathlib import Path, PurePosixPath
+from datetime import datetime,timezone
+from collections import Counter
+import ast,hashlib,json,os,stat,subprocess,yaml
+R=Path.cwd().resolve();C=R.parents[2];K=C/'integration/release-worktree'
+O=R/'.temp/rifamycin1263-publication-preparation-v1';D=O/'lineage-review';AR=O/'package-v2'
+PREFIX='reports/all_unmatched_20261107/ancillary_rifamycin1263_proposal_v1';P=AR/PREFIX
+S=R/'.temp/rifamycin1263-method-proposal-v1'
+start=datetime.now(timezone.utc).isoformat();checks=[];bindings=[]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def pin(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+def load(p):return json.loads(p.read_text())
+def check(n,ok,detail=None):checks.append({'name':n,'pass':bool(ok),'detail':detail})
+def canonical(x):return hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()).hexdigest()
+core=load(O/'package-core-v2.json');tm=load(P/'transport-map.json');original=load(D/'original-checks-v2.json')
+check('original_seal_successor_pass',original['failures']==[])
+check('core_counts',core['count']==len(core['regular_files'])==164 and core['original_transports']==142)
+allpaths={str(x.relative_to(AR)):x for x in AR.rglob('*') if x.is_file()};expected={x['path']:x for x in core['regular_files']}
+check('core_complete_ignored_inclusive_inventory',set(allpaths)==set(expected),{'actual':len(allpaths),'extra':sorted(set(allpaths)-set(expected)),'missing':sorted(set(expected)-set(allpaths))})
+check('core_no_symlinks',not any(x.is_symlink() for x in AR.rglob('*')))
+for rel,row in expected.items():
+ path=AR/rel
+ check('core_bytes:'+rel,path.is_file() and sha(path)==row['sha256'] and path.stat().st_size==row['bytes'])
+ check('private_to_prospective:'+rel,R/row['prepared_path']==path and str(PurePosixPath(rel)).startswith(PREFIX+'/') and '..' not in PurePosixPath(rel).parts and not PurePosixPath(rel).is_absolute())
+ check('mode:'+rel,stat.S_IMODE(path.stat().st_mode)==0o644 and not path.is_symlink())
+check('prospective_repository_path_not_created',not (R/PREFIX).exists(),{'method':'Exact Path.exists includes hidden/ignored path'})
+rows=tm['files'];oldpaths={x['relative_path']:Path(x['path']) for x in original['original_inventory']}
+check('all142_original_transports',len(rows)==142 and {x['original_relative_path'] for x in rows}==set(oldpaths))
+check('transport_unique',len({x['archive_path'] for x in rows})==142)
+check('transport_declared_roots',tm['source_packet']==str(S) and tm['prepared_artifact_root']==str(AR) and tm['prospective_repository_prefix']==PREFIX)
+pycount=0
+for row in rows:
+ rel=row['original_relative_path'];src=S/rel;expectedrel=rel+'.txt' if rel.endswith('.py') else rel
+ if rel.endswith('.py'):pycount+=1
+ dst=AR/row['archive_path']
+ check('transport_map:'+rel,row['original_absolute_path']==str(src) and row['archive_path']==PREFIX+'/archive/'+expectedrel and R/row['prepared_path']==dst)
+ check('transport_bytes:'+rel,src.read_bytes()==dst.read_bytes() and sha(src)==row['sha256'] and len(src.read_bytes())==row['bytes'])
+ check('transport_inert:'+rel,row['executable'] is False and stat.S_IMODE(dst.stat().st_mode)==0o644 and not dst.name.endswith('.py'))
+check('python_inert21',pycount==core['inert_python_transports']==21)
+check('archive_has_exact142',len(list((P/'archive').rglob('*')))>142 and len([x for x in (P/'archive').rglob('*') if x.is_file()])==142)
+newnames={str(p.relative_to(P)) for p in P.rglob('*') if p.is_file() and not p.is_relative_to(P/'archive')}
+check('exact_active_metadata11',newnames-{'metadata-correction-v2.json'}-{x for x in newnames if x.startswith('preparation-history/')}=={'README.md','artifact-role-inventory.json','case-ledger.json','collection/root-collection-HANDOFF.json','decisions.json','native-contract.json','original-proposal-reference.json','proposals.json','reconciliation.json','shard.json','transport-map.json'})
+# All new record-content references are checked in private artifact-root context.
+def references(x,loc):
+ if isinstance(x,dict):
+  if isinstance(x.get('path'),str) and isinstance(x.get('sha256'),str) and x['path'].startswith(PREFIX+'/'):
+   p=AR/x['path'];check('metadata_ref:'+loc,p.is_file() and sha(p)==x['sha256']);bindings.append({'locator':loc,**pin(p)})
+  for k,v in x.items():references(v,loc+'/'+k)
+ elif isinstance(x,list):
+  for i,v in enumerate(x):references(v,loc+'/'+str(i))
+for name in sorted(newnames):
+ if name.endswith('.json') and not name.startswith('preparation-history/') and name not in ['transport-map.json','native-contract.json','metadata-correction-v2.json']:references(load(P/name),name)
+propdoc=load(P/'proposals.json');props=propdoc['proposals'];ledger=load(P/'case-ledger.json');decisions=load(P/'decisions.json')['decisions'];rec=load(P/'reconciliation.json');shard=load(P/'shard.json');ref=load(P/'original-proposal-reference.json')
+check('single_ancillary_case_decision_proposal',len(props)==len(ledger)==len(decisions)==1)
+p=props[0];case=ledger[0];decision=decisions[0];ch=canonical(case);cid=case['case_id'];pid=p['proposal_id']
+check('complete_canonical_case_hash',ch==core['case_hash']=='5457933497c26f69d0a1c96a526d33083d570da19e8f8f7bb024487aed250d79')
+check('proposal_case_binding',p['case_ids']==[cid] and p['case_hashes']=={cid:ch})
+check('decision_case_binding',decision['case_id']==cid and decision['case_sha256']==ch and decision['proposal_ids']==[pid])
+check('reconciliation_case_binding',rec['ancillary_case_id']==cid and rec['case_sha256']==ch and rec['proposal_id']==pid)
+check('core_case_binding',core['case_id']==cid and core['proposal_id']==pid)
+check('shard_case_binding',shard['ancillary_population']==1 and shard['ancillary_case_ids']==[cid])
+check('ancillary_not_source',case['kind']=='review_finding' and all(case[k] is False for k in ['cm_kg_source_case','frozen_campaign_member','source_observation','new_chemical_input']) and case['source_case_ids']==case['source_occurrence_ids']==[])
+check('zero_wrapper_source_membership',p['cm_kg_source_case'] is False and p['ancillary_review_finding'] is True and p['source_case_membership_added']==0 and core['new_original_cm_kg_cases']==0)
+check('zero_shard_new_source_population',all(shard[k]==0 for k in ['new_cm_kg_source_cases','new_source_observations','new_occurrences']))
+check('original934_separate',all(shard[k] is False for k in ['frozen_queue_modified','original_worker_source_accounting_modified','original_campaign934_origins_or_intake_heads_modified']) and shard['descriptor_is_not_a_replacement_frozen_shard'] is True)
+check('no_extra_worker',p['worker_slot']==case['worker_slot']==shard['worker_slot']=='worker-10')
+check('full_same_existing_owner_tuple',p['kind']=='edit_existing_owner' and p['owner_path']==case['owner_path']==rec['same_existing_owner']=='data/ingredients/mapped/Rifamycin.yaml' and p['before_sha256']==case['before_sha256']==rec['before_sha256']==sha(S/'inputs/06-Rifamycin.yaml') and p['after_capture']['sha256']==case['candidate_sha256']==rec['after_sha256']==sha(S/'candidate/Rifamycin.yaml'))
+check('after_capture_native_shape',set(p['after_capture'])=={'root','path','sha256'} and p['after_capture']['root']=='artifact')
+check('genuine_original_reference_nested',case['original_private_proposal']==rec['original_proposal_unchanged']==ref and p['original_private_proposal']['sha256']==sha(P/'original-proposal-reference.json'))
+check('new_wrapper_explicit',ref['new_wrapper_is_not_a_historical_artifact'] is True and 'no standalone original proposal.json existed' in ref['representation'])
+check('not_closed_accepted_applied',all(decision[k] is False for k in ['accepted_for_application','source_role_export_approval','publication_observed']) and all(rec[k] is False for k in ['new_owner','owner_merge','applied','root_selection_vote','future_head_claim']))
+issue=load(P/'archive/inputs/08-readback-00.json');finding=load(P/'archive/inputs/11-findings.json')
+selected=[x for x in finding['new_findings'] if x['finding_id']=='F51-CHEM-001']
+check('genuine_finding_selector',len(selected)==1 and case['finding_selector']=='new_findings[finding_id=F51-CHEM-001]' and case['finding_id']==selected[0]['finding_id'] and selected[0]['owner_sha256']==case['before_sha256'])
+check('genuine_issue1263',case['source_issue_url']==issue['html_url'] and issue['number']==1263 and case['finding_id'] in issue['body'])
+check('finding_authorship_not_transferred','worker04:/root/correction_chemistry' in case['finding_authorship'] and case['candidate_author']==case['publication_wrapper_author']=='worker10:/root')
+# Static canonical contract read; no application API imported or called.
+code=K/'src/mediaingredientmech/curate/campaign_owner_apply.py';tree=ast.parse(code.read_text());constants={}
+for node in tree.body:
+ if isinstance(node,ast.Assign):
+  for target in node.targets:
+   if isinstance(target,ast.Name) and target.id in ['BINDING_KEYS','ROLES','PRODUCERS']:
+    constants[target.id]=ast.literal_eval(node.value)
+roles=load(P/'artifact-role-inventory.json');contract=load(P/'native-contract.json')
+check('native_contract_bytecopy',sha(P/'native-contract.json')==sha(O/'technical/native-contract-pins.json'))
+check('native_entrypoint_pin',sha(code)==contract['entrypoint_sha256'])
+check('native_role_sets',set(roles['required_roles'])==constants['ROLES']==set(contract['native_constant_sets']['ROLES']))
+check('native_binding_keys',set(contract['native_constant_sets']['BINDING_KEYS'])==constants['BINDING_KEYS'])
+check('native_producer_paths',list(constants['PRODUCERS'])==contract['native_producer_paths'])
+check('role_bindings_count',len(roles['bindings'])==26 and len(roles['package_binding_ids'])==15 and len(roles['external_native_producer_binding_ids'])==11)
+check('role_slots_unique_exact',len({x['binding_id'] for x in roles['bindings']})==26 and set(roles['expected_binding_ids'])=={x['binding_id'] for x in roles['bindings']})
+check('role_counts_exact',dict(Counter(x['role'] for x in roles['bindings']))==roles['expected_role_counts'])
+for b in roles['bindings']:
+ check('role_keys:'+b['binding_id'],set(b)==constants['BINDING_KEYS'])
+ check('null_publication:'+b['binding_id'],b['published_head'] is None and b['published_path'] is None)
+ path=(K if b['role']=='producer' else AR)/b['path']
+ check('role_bytes:'+b['binding_id'],path.is_file() and sha(path)==b['sha256'])
+check('producers_exact_canonical_not_copies',{b['path'] for b in roles['bindings'] if b['role']=='producer'}==set(constants['PRODUCERS']))
+check('private_two_root_limitation',roles['prepared_artifact_root']==str(AR) and roles['native_producer_root_observed']==str(K) and roles['unpublished'] is True and roles['native_producers_are_not_archived_report_copies'] is True)
+check('unpublished_heads_paths',all(x['published_head'] is None and x['published_path'] is None for x in [shard,rec]) and core['published_head'] is None and core['application'] is False)
+# Original scopes and source timing stay historical, not rewritten to prospective head.
+n=yaml.safe_load((P/'archive/native/review.yaml').read_text());old=yaml.safe_load((S/'native/review.yaml').read_text())
+check('native_object_exact',n==old)
+check('native_self_review_preserved',n['reviewer']['independence']=='self_review' and 'candidate author' in n['reviewer']['identity'])
+check('native_historical_working_tree',n['source']['state']=='working_tree' and n['source']['git_revision']=='01c173bd914e7b18a04cf70a8e34688f7c1a083a')
+check('native_scope_counts',len(n['targets'])==1 and len(n['assessments'])==9 and len(n['evidence'])==21 and len(n['source']['inputs'])==122)
+check('native_nonterminal_row_limit',next(a for a in n['assessments'] if a['assessment_id']=='ROW-LIMIT')['outcome']=='unknown')
+check('native_original_source_target',n['targets'][0]['path']=='.temp/rifamycin1263-method-proposal-v1/candidate/Rifamycin.yaml')
+for key,num,meta in [('PRIMARY26580',26580,'13-chebi-26580-retry.metadata.json'),('PRIMARY29673',29673,'15-chebi-29673-retry.metadata.json')]:
+ ev=next(e for e in n['evidence'] if e['evidence_id']==key);metadata=load(P/'archive/inputs'/meta)
+ check('primary_original_time:'+key,datetime.fromisoformat(ev['accessed_at'].replace('Z','+00:00'))==datetime.fromisoformat(metadata['retrieved_at'].replace('Z','+00:00')))
+ check('primary_original_url:'+key,ev['reference']==f'https://www.ebi.ac.uk/chebi/backend/api/public/compound/{num}/')
+check('collection_byteexact',sha(P/'collection/root-collection-HANDOFF.json')==sha(O/'inputs/root-collection-HANDOFF.json')=='fbc2bc528397ae42d6e1f05dd3fa21e57fad4ca1d7aea2583343ce91c1c624b9')
+collection=load(P/'collection/root-collection-HANDOFF.json')
+check('collection_mechanical_only',collection['new_scientific_vote'] is False)
+check('maintained_owner_still_before',sha(K/'data/ingredients/mapped/Rifamycin.yaml')==p['before_sha256'])
+cmds={}
+for name,args in [('head',['rev-parse','HEAD']),('status',['status','--porcelain']),('staged',['diff','--cached','--name-only']),('index',['rev-parse','--git-path','index'])]:
+ r=subprocess.run(['git',*args],cwd=R,env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'},capture_output=True,text=True);cmds[name]={'command':['git',*args],'exit_code':r.returncode,'stdout':r.stdout,'stderr':r.stderr}
+check('own_head_still01c',cmds['head']['stdout'].strip()=='01c173bd914e7b18a04cf70a8e34688f7c1a083a')
+check('own_staged_tracked_clean',cmds['status']['stdout']==cmds['staged']['stdout']=='')
+index=Path(cmds['index']['stdout'].strip());index=index if index.is_absolute() else R/index
+check('own_index_exact_start',sha(index)==load(O/'START.json')['index_sha256'])
+
+# Independently constrain every v1→v2 change; historical metadata is inactive.
+V1=O/'package'/PREFIX;core1=load(O/'package-core-v1.json');correction=load(P/'metadata-correction-v2.json')
+expected_changed={'README.md','artifact-role-inventory.json','case-ledger.json','decisions.json','proposals.json','reconciliation.json','transport-map.json'}
+actual_changed=[]
+for row in core1['regular_files']:
+ old=O/'package'/row['path'];now=AR/row['path']
+ check('v1_preserved:'+row['path'],sha(old)==row['sha256'] and old.stat().st_size==row['bytes'])
+ if old.read_bytes()!=now.read_bytes():actual_changed.append(str(old.relative_to(V1)))
+check('exact_seven_metadata_changes',set(actual_changed)==expected_changed)
+check('no_archive_change',all((V1/'archive'/x['original_relative_path'].replace('.py','.py.txt') if False else S/x['original_relative_path']).read_bytes()==(AR/x['archive_path']).read_bytes() for x in rows))
+oldcase=load(V1/'case-ledger.json')[0];case_restored=dict(case);case_restored['issue_capture_scope']=oldcase['issue_capture_scope']
+check('only_case_scope_prose_changed',case_restored==oldcase)
+check('truthful_issue_creation_vs_receipt_time',issue['created_at']=='2026-11-08T14:25:17Z' and issue['updated_at']==issue['created_at'] and load(P/'archive/inputs/07-publication-00.json')['at']=='2026-11-08T14:25:17.739189+00:00' and case['issue_capture_scope']=='Exact coordinator publication readback. GitHub issue created_at and updated_at are 2026-11-08T14:25:17Z; the separate publication receipt is timestamped 2026-11-08T14:25:17.739189+00:00. The precise readback acquisition time was not separately retained. No fresh live issue fetch is claimed by this package preparer.')
+oldhash=canonical(oldcase)
+pr=json.loads(json.dumps(propdoc));pr['proposals'][0]['case_hashes'][cid]=oldhash
+check('only_proposal_case_hash_changed',pr==load(V1/'proposals.json'))
+dr={'decisions':json.loads(json.dumps(decisions))};dr['decisions'][0]['case_sha256']=oldhash
+check('only_decision_case_hash_changed',dr==load(V1/'decisions.json'))
+rr=dict(rec);rr['case_sha256']=oldhash
+check('only_reconciliation_case_hash_changed',rr==load(V1/'reconciliation.json'))
+tr=json.loads(json.dumps(tm));tr['prepared_artifact_root']=str(O/'package')
+for x in tr['files']:x['prepared_path']=str((O/'package'/x['archive_path']).relative_to(R))
+check('only_transport_private_paths_changed',tr==load(V1/'transport-map.json'))
+oldroles=load(V1/'artifact-role-inventory.json');rs=json.loads(json.dumps(roles));rs['prepared_artifact_root']=str(O/'package')
+oldby={x['binding_id']:x for x in oldroles['bindings']};changedbindings=[]
+for x in rs['bindings']:
+ prev=oldby[x['binding_id']]
+ if x['sha256']!=prev['sha256']:changedbindings.append(x['binding_id']);x['sha256']=prev['sha256']
+check('only_role_private_root_and_derived_hashes',rs==oldroles and set(changedbindings)=={'w10-r1263-case-ledger','w10-r1263-decision','w10-r1263-proposal','w10-r1263-reconciliation','w10-r1263-transport'})
+oldread=(V1/'README.md').read_text();newread=(P/'README.md').read_text();expectedread=oldread.replace(str(O/'package'),str(O/'package-v2'))+'\nThe first private preparation core is preserved separately. `metadata-correction-v2.json` records the reported timestamp-attribution clarification and exact dependent joins. Historical preparation metadata under `preparation-history/` is superseded context, not another selected ledger or source origin. No scientific evidence changed.\n'
+check('only_readme_private_root_history_note',newread==expectedread)
+expectednew={'metadata-correction-v2.json','preparation-history/META-001.json','preparation-history/coordinator-finding-report.json','preparation-history/core-v1.json'}|{'preparation-history/core-v1-metadata/'+x for x in expected_changed}
+oldrel={str((O/'package'/x['path']).relative_to(V1)) for x in core1['regular_files']};newrel={str(x.relative_to(P)) for x in allpaths.values()}
+check('exact_eleven_additive_history_files',newrel-oldrel==expectednew and oldrel<=newrel)
+for rel in expected_changed:check('historical_original_metadata:'+rel,(P/'preparation-history/core-v1-metadata'/rel).read_bytes()==(V1/rel).read_bytes())
+for dst,src in [('preparation-history/core-v1.json',O/'package-core-v1.json'),('preparation-history/META-001.json',O/'package-review/findings/META-001.json'),('preparation-history/coordinator-finding-report.json',O/'coordinator-finding-report.json')]:
+ check('history_copy:'+dst,(P/dst).read_bytes()==src.read_bytes())
+check('metadata_correction_joins',correction['old_case_hash']==oldhash and correction['active_case_hash']==ch and correction['finding_id']=='RIFAMYCIN-PACKAGE-META-001' and correction['original_core']['sha256']==sha(O/'package-core-v1.json'))
+check('reported_before_correction',datetime.fromisoformat(correction['finding_reported_before_fix']['at'])<datetime.fromisoformat(correction['created_at']) and correction['finding_reported_before_fix']==load(O/'coordinator-finding-report.json'))
+for row in correction['changed_original_metadata_files']:
+ check('correction_full_before_after:'+row['path'],sha(V1/row['path'])==row['before_sha256'] and sha(P/row['path'])==row['after_sha256'])
+check('one_active_case_ledger_role',len([x for x in roles['bindings'] if x['role']=='case_ledger'])==1 and not any('/preparation-history/' in x['path'] for x in roles['bindings']))
+
+result={'reviewer':'worker10:/root/preparation_skeptic','scientific_review':False,'started_at':start,'finished_at':datetime.now(timezone.utc).isoformat(),'core':pin(O/'package-core-v2.json'),'counts':{'core_files':len(expected),'original_transports':len(rows),'inert_python_transports':pycount,'new_metadata_files':len(newnames),'package_role_bindings':15,'external_producer_bindings':11,'ancillary_cases':1,'new_cm_kg_cases':0},'checks':checks,'check_count':len(checks),'failures':[x for x in checks if not x['pass']],'case_hash':ch,'metadata_references':bindings,'core_inventory':core['regular_files'],'native_contract':pin(code),'git':cmds,'limits':['Static canonical contract read, no import or execution of apply/prepare/_load APIs.','Original scientific and technical controls are byte-preserved and attributed, not repeated.','Only this private prospective package is reviewed; no acceptance, commit, publication, or application.']}
+with (D/'core-checks-v2.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'checks':len(checks),'failures':result['failures'],'sha256':sha(D/'core-checks-v2.json')}))
+raise SystemExit(bool(result['failures']))

@@ -1,0 +1,64 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json,subprocess
+R=Path.cwd();O=Path(__file__).resolve().parent;P=O.parent;REL='reports/all_unmatched_20261107/ancillary_rifamycin1263_proposal_v1';D=P/'package-v2'/REL;sha=lambda b:hashlib.sha256(b).hexdigest()
+def load(p):return json.loads(p.read_bytes())
+def ref(p):return {'path':str(p),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size}
+def save(n,obj):
+ with (O/n).open('x') as f:json.dump(obj,f,indent=2,ensure_ascii=False);f.write('\n')
+audit=load(O/'package-checks-v2.json');pins=load(O/'native-contract-pins.json');start=load(P/'START.json');current=load(O/'native-currentness-supplement.json');core=load(P/'package-core-v2.json')
+for e in audit['input_bindings']:assert sha(Path(e['path']).read_bytes())==e['sha256']
+for e in core['regular_files']:assert sha((P/'package-v2'/e['path']).read_bytes())==e['sha256']
+assert sha(Path(start['index_path']).read_bytes())==start['index_sha256']
+assert subprocess.check_output(['git','rev-parse','HEAD']).decode().strip()==start['own_head']
+assert subprocess.check_output(['git','status','--porcelain','--untracked-files=no'])==b''
+assert not (R/REL).exists()
+commands=[]
+for script,out,err,code,scope in [
+ ('pin_native.py','pin-native.stdout','pin-native.stderr',0,'Actual native source/dependency pins at original7d6d44 context; no transaction API.'),
+ ('source_preflight.py','source-preflight.stdout','source-preflight.stderr',0,'All140original manifestmembers and2seals preserved.'),
+ ('check_package.py','package-check.stdout','package-check.stderr',1,'Initial verifier stopped on Khead advance. Exact producer equality subsequently checked; no package defect or writes.'),
+ ('check_package_v2.py','package-check-v2.stdout','package-check-v2.stderr',1,'Reviewer script syntax error from literal patch markers; no audit or source operation executed. Script/log retained.'),
+ ('check_package_v3.py','package-check-v3.stdout','package-check-v3.stderr',0,'Full private core-v2 byte/role/wrapper checks and22controls; no _load/prepare/apply.')]:
+ commands.append({'command':'PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python '+str((O/script).relative_to(R)),'exit_code':code,'script':ref(O/script),'stdout':ref(O/out),'stderr':ref(O/err),'scope':scope})
+save('command-receipts.json',{'commands':commands,'not_application_receipts':True})
+finished=datetime.now(timezone.utc).isoformat()
+report={'reviewer':'worker10:/root/bio_research','verdict':'pass_with_limitations','scientific_review':False,'new_findings':[],'completion':'completed',
+ 'scope':'Metadata-only technical review of complete private Rifamycin core-v2: original source transport, native-compatible ancillary wrapper/case, exact source/preimage/candidate references, prospective role requirements, timestamp successor and preservation. No prior science rerun, source acceptance, application or publication.',
+ 'prior_participation':'I authored the original Rifamycin technical review and earlier Xanthine technical/package checks; not this candidate or package author, and not the original W04 finding/W09 capture author. This independent package check does not recertify my original technical findings as fresh science. Same existing session and shared task context, not blinded.',
+ 'timing':{'exact_start':'unknown; reading began before the first retained native-pin milestone','first_retained_review_milestone':pins['at'],'completed_at':finished,'audit_execution_started_at':audit['audit_execution_started_at'],'audit_execution_finished_at':audit['audit_execution_finished_at'],'note':'Script audit interval is not the complete reading/review interval.'},
+ 'active_core':ref(P/'package-core-v2.json'),'historical_core':ref(P/'package-core-v1.json'),'native_contract_pins':ref(O/'native-contract-pins.json'),'native_currentness_supplement':ref(O/'native-currentness-supplement.json'),'audit':ref(O/'package-checks-v2.json'),'command_receipts':ref(O/'command-receipts.json'),'counts':audit['counts'],
+ 'target':{'proposal_id':'W10-ANCILLARY-RIFAMYCIN1263-METHOD-001','case_id':'ANCILLARY_REVIEW_FINDING:MIM-1263-RIFAMYCIN-METHOD-001','case_kind':'review_finding','finding_id':'F51-CHEM-001','complete_case_sha256':audit['case_hash'],'owner_path':'data/ingredients/mapped/Rifamycin.yaml','before_sha256':audit['before_sha256'],'candidate_sha256':audit['candidate_sha256'],'worker_slot':'worker-10','new_CM_KG_cases':0,'new_occurrences':0,'source_observations':0,'published_head':None,'applied':False},
+ 'results':[
+ 'All164 active private core files checked and reread. All140 source-manifest members plus original MANIFEST/SHA256SUMS are142 exact transports;21 Python sources are inert .py.txt, no executable modes or symlink/hardlink substitutions.',
+ 'All153 predecessor core files remain exact. Seven active metadata files changed only timestamp attribution, derived case/hash joins and actual private paths. Eleven additive history/correction files preserve the finding, previous metadata and original core receipt.',
+ 'Original proposal representation is honestly HANDOFF+candidate+field-differences with exact author/native receipts. No standalone historical proposal.json is invented. Complete ancillary case hash binds every field/reference; no original CM/KG source case or occurrence is implied.',
+ 'Native-compatible wrapper remains one edit_existing_owner at the authentic0319c489 preimage and40fd0a candidate. Native pure closed/ref/path/digest checks resolve26 prospective bindings:15 package artifacts and11 externalcanonical producers covering all8roles.',
+ 'All22 negative controls refuse missing/duplicate/extra bindings, wrong or unknown roles, extra fields, fake published-head metadata, wrong preimage/payload/casehash/worker, invented CM case, altered completecase, traversal, duplicate JSON/YAML and wrong native ref digest. Package-slot restrictions are private reviewer controls; they do not redefine native role semantics.',
+ 'Original self_review author identity and separate science/skeptic/technical participation are transported unchanged. Original source retrieval metadata and preserved issue publication readback remain historical; no fresh issue fetch or science review claimed.',
+ 'Worker HEAD01c173bd and exact initial index bytes unchanged; tracked tree/index clean and real reports prefix still absent. No Git/GitHub, maintained data, sourceplan, canonical or application mutation.'
+ ],
+ 'prior_finding_disposition':{'finding_id':'RIFAMYCIN-PACKAGE-META-001','original_finding':ref(D/'preparation-history/META-001.json'),'correction':ref(D/'metadata-correction-v2.json'),'disposition':'resolved for exact private core-v2 metadata only','evidence':'Original issue.created_at/updated_at14:25:17Z now separated from publication receipt14:25:17.739189+00:00; precise readback acquisition time explicitly unknown. Finding and coordinator report predate correction. Old case and derived joins preserved; original scientific candidate unchanged.','terminal_native_finding_or_GitHub_closure':False},
+ 'native_context':{'declared_K_head':audit['declared_K_head'],'observed_K_head':audit['observed_K_head'],'all11_producer_bytes_equal_both_heads':True,'intervening_changed_paths':current['intervening_file_count'],'intervening_all_under_reports':current['all_changed_paths_under_reports'],'intervening_report_contents_reviewed':False,'entrypoint_sha256':pins['entrypoint_sha256'],'executed':audit['native_calls'],'not_executed':audit['not_called']},
+ 'failed_attempts':['Initial actual Khead changed from7d6d44 to7b7a4fb. Verifier stopped; successor records both heads and independently compares every declared producer byte. Original pins not rewritten.','Second verifier script had a syntax typo from patch markers and did not execute. Third script passed; every attempted script/stdout/stderr retained. Neither incident is an author or scientific defect.'],
+ 'limits':['Private metadata preparedness only. No permission or readiness claim for future Git publication, source application, root route selection or whole-campaign integration.','Prospective package files resolve under private package-v2 and producers under external K. This is not a one-root accepted native transaction; no acceptance or application template/helper was created.','Published fields remain null. Actual publication heads/Git blobs, current preimages, native inventories/protected inputs/review acceptance and full canonical row review remain future conditions.','Original934 campaign origins/intake heads and frozen1879 case accounting remain separate. Their full census was not re-reviewed here.','Hash preservation is not new scientific, source, role, export or human approval. Current row diagnostic confidence/comment/stamp limits and issue1263 application hold are retained.','Intervening Karchive2097report paths were enumerated only to explain head drift; their operator/scientific content was not inspected or approved.'],
+ 'immutable_prior_seals':True,'maintained_application':False,'canonical_publication':False,'source_role_export_approval':False,'future_HEAD_approval':False}
+save('REPORT.json',report)
+md=f'''# Private Rifamycin publication-preparation technical review
+
+**Pass with limitations; no new findings.** All164 active core-v2 files,142 original transports and153 unchanged predecessor files verified. Twenty-one Python copies are inert `.py.txt` files. All1,589 checks and22 negative controls passed.
+
+The one ancillary `review_finding` and one existing-owner wrapper bind authentic preimage0319c489 and candidate40fd0a. Complete case hash: `{audit['case_hash']}`. No CM/KG cases or occurrences are added. The original proposal is faithfully represented by HANDOFF, candidate and field differences; no historical proposal object is invented.
+
+Peer finding META-001 is resolved for this exact metadata successor: issue creation time, publication receipt time and unknown precise readback time are now distinct. Seven metadata files changed;11 additive files preserve the finding and old metadata. Candidate/scientific bytes remain unchanged.
+
+Actual native pure closed/ref/path/hash functions verified26 bindings—15package artifacts and11canonical producers across8roles. All11 producer bytes match declared K7d6d44 and observed7b7a4fb. The intervening2097report additions were not scientifically or operationally reviewed. No `_load`, prepare, apply, acceptance, schema/science rerun or report-copy execution occurred.
+
+Original technical participation is disclosed. I did not author this candidate or package; this is no fresh scientific vote. Worker HEAD/index remain exact and the real reports prefix remains absent. Future publication/application, root route and complete canonical row review remain separately required.
+
+Two reviewer attempts are retained: a Khead-change stop and a syntax typo before execution. Neither changed package/source bytes. First retained review milestone {pins['at']}; earlier exact start unknown. Completed {finished}; script audit times are separate.
+'''
+with (O/'REPORT.md').open('x') as f:f.write(md)
+members=[{'path':p.relative_to(O).as_posix(),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size} for p in sorted(O.rglob('*')) if p.is_file()]
+save('MANIFEST.json',{'sealed_at':datetime.now(timezone.utc).isoformat(),'root':str(O),'members':len(members),'files':members,'excludes':['MANIFEST.json itself'],'scientific_review':False,'application':False})
+print(json.dumps({'report_sha256':sha((O/'REPORT.json').read_bytes()),'markdown_sha256':sha((O/'REPORT.md').read_bytes()),'manifest_sha256':sha((O/'MANIFEST.json').read_bytes()),'members':len(members),'completed_at':finished}))

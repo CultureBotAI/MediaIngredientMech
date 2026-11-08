@@ -1,0 +1,22 @@
+from pathlib import Path
+import json,hashlib,csv,io,datetime
+R=Path.cwd();O=R/'.temp/rifamycin1263-method-proposal-v1';V=O/'science';K=R.parents[2]/'integration/release-worktree';h=lambda b:hashlib.sha256(b).hexdigest();inputs=[];checks=[]
+def read(p):
+ p=Path(p);b=p.read_bytes();inputs.append({'path':str(p),'sha256':h(b),'bytes':len(b)});return b
+def ck(n,v,d=None):checks.append({'check':n,'pass':bool(v),'detail':d})
+p=O/'technical/native-row-comparison.json';r=json.loads(read(p));ck('exact peer row receipt',h(read(p))=='fc8b1ba8aca61f77ad9846fe831df067ce51495136788619b9f7a803ff92aeff')
+tsv=read(K/'mappings/ingredient_mappings.sssom.tsv').decode();rows=list(csv.DictReader(io.StringIO('\n'.join(x for x in tsv.splitlines() if not x.startswith('#'))),delimiter='\t'));selected=[x for x in rows if x['subject_id']=='MIM:Rifamycin'];canonical=r['current_maintained_canonical_row']['row'];before=r['diagnostic_before_rows'][0];after=r['diagnostic_candidate_rows'][0]
+ck('current whole canonical row independentlyread',selected==[canonical]);ck('all13 complete rowkeys',len(canonical)==len(before)==len(after)==13 and set(canonical)==set(before)==set(after))
+changed={k:{'before':before[k],'after':after[k]} for k in before if before[k]!=after[k]};ck('four actual diagnostic changes',changed==r['diagnostic_changes'] and set(changed)=={'mapping_justification','source','mapping_date','confidence'})
+for key in ['subject_id','subject_label','predicate_id','object_id','object_label','object_source','other']:ck('scientific row bound '+key,canonical[key]==before[key]==after[key])
+ck('ownidentifier predicate unchanged',after['predicate_id']=='skos:exactMatch' and after['object_id']=='CHEBI:26580')
+ck('method interpretationcorrect',after['mapping_justification']==canonical['mapping_justification']=='semapv:ManualMappingCuration' and before['mapping_justification']=='semapv:LexicalMatching')
+ck('API defaults notcanonicalapproval',after['confidence']=='0.9' and canonical['confidence']=='0.99' and after['comment']==after['validation_method']=='' and canonical['comment'] and canonical['validation_method'])
+ck('no CAS or memberalias injected',after['other']=='')
+producer=read(r['producer']['path']);ck('actual producer bytes pinned',h(producer)==r['producer']['sha256'])
+# Read the peer's full checks and actual invocation scope; do not rerun its producer.
+t=json.loads(read(O/'technical/candidate-checks.json'));read(O/'technical/check_candidate.py');read(O/'technical/preflight.json');read(O/'technical/preflight-v2.py')
+ck('technical23 controls refused',len(t['negative_controls'])==23 and all(x['result'].startswith('refused') for x in t['negative_controls']))
+ck('technical scoped noapplication',t['no_source_application'] and t['no_canonical_or_receipt_claim'])
+res={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'worker10:/root/preparation_skeptic','scope':'Independent full13-field receipt/current-canonical read and interpretation. Producer execution is attributed to /root/bio_research. No full builder or canonical publication.','checks':checks,'failed':[x for x in checks if not x['pass']],'input_hashes':inputs,'canonical_vs_candidate_changes':{k:{'canonical':canonical[k],'candidate_diagnostic':after[k]} for k in canonical if canonical[k]!=after[k]},'full_rows':{'canonical':canonical,'before_diagnostic':before,'candidate_diagnostic':after}}
+(V/'row-review.json').write_text(json.dumps(res,indent=2)+'\n');print(json.dumps({'checks':len(checks),'failed':res['failed'],'canonical_vs_candidate_fields':list(res['canonical_vs_candidate_changes'])},indent=2))

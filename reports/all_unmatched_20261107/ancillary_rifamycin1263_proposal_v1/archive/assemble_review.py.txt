@@ -1,0 +1,96 @@
+"""Assemble a private native review; never save/register/apply a canonical artifact."""
+from pathlib import Path
+import datetime, hashlib, importlib.util, json, sys
+
+O=Path(__file__).resolve().parent
+R=O.parents[1]
+K=R.parents[2]/'integration/release-worktree'
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def j(p): return json.loads((O/p).read_text())
+now=datetime.datetime.now(datetime.timezone.utc)
+at=now.isoformat().replace('+00:00','Z')
+native=O/'native'
+spec=importlib.util.spec_from_file_location('rifamycin_native_review',K/'scripts/record_review.py')
+m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+target=j('native/inspection-initial.json')['native_inspection']['targets'][0]
+tid=target['target_id']
+items=[
+ ('BEFORE','record_content','inputs/06-Rifamycin.yaml','Complete unchanged maintained before owner.'),
+ ('AFTER','record_content','candidate/Rifamycin.yaml','Complete guarded private method candidate.'),
+ ('DELTA','validation','field-differences.json','Exhaustive allowed method scalar and appended evidence/event.'),
+ ('AUTHOR','validation','author-receipt.json','Actual root author, native writer and history receipt.'),
+ ('AUTHORITY','authority','inputs/01-MAPPING_SEMANTICS.md','Section0 method provenance and section3 scoped identity.'),
+ ('SCHEMA','authority','inputs/05-mediaingredientmech.yaml','MappingQuality, EvidenceType and history are separate native contracts.'),
+ ('SCOPE','authority','inputs/native-00-INGREDIENT_SCOPE_PROFILE.md','Rifamycin chemical-family scope retained.'),
+ ('ISSUE760','authority','inputs/10-760.json','Full saved issue760 decision and comments list; no new live fetch claimed.'),
+ ('ISSUE1263','authority','inputs/08-readback-00.json','Exact root publication readback of filed F51-CHEM-001.'),
+ ('PUBLICATION','record_content','inputs/07-publication-00.json','Coordinator publication before candidate authoring, not scientific approval.'),
+ ('SCIENCE','prior_review','science/science.json','Separate full-owner scientific review and actual original source reproduction.'),
+ ('SKEPTIC','prior_review','skeptic/candidate-review.json','Separate complete-candidate skeptical assessment and method alternatives.'),
+ ('TECHNICAL','validation','technical/REPORT.json','Independent native closed-schema, guarded replay and bounded controls.'),
+ ('ROWS','validation','technical/native-row-comparison.json','Complete actual maintained row and isolated before/candidate diagnostic rows.'),
+ ('SOURCES','record_content','science/source-reproduction.json','Original full source rows reproduced from hash-bound raw archive; no new source cases.'),
+ ('PRESERVATION','validation','preservation-initial.json','All original Xanthine private/publication/published manifest members rehashed.'),
+ ('CURRENTNESS','validation','input-currentness-preassembly.json','Exact current inputs match captures; unrelated native changes are outside scope.'),
+ ('SCOPES','record_content','reviewer-scopes.json','Actual author and distinct scientific/skeptical/technical identities and scopes.'),
+ ('RATIONALE','record_content','AUTHOR-RATIONALE.md','Method rationale, discarded alternatives and future application boundary.'),
+]
+evidence=[]
+for key,kind,rel,summary in items:
+ p=O/rel;assert p.is_file(),p
+ evidence.append({'evidence_id':key,'kind':kind,'reference':str(p.relative_to(R)),
+  'locator':'Complete exact file; original paths/timestamps remain as recorded, separate from present inspection.',
+  'accessed_at':at,'support':'supports','snapshot_sha256':sha(p),'summary':summary})
+for term,num,meta in [('26580',12,13),('29673',14,15)]:
+ p=next((O/'inputs').glob(f'{num:02d}-*.body'));md=json.loads(next((O/'inputs').glob(f'{meta:02d}-*.json')).read_text())
+ evidence.append({'evidence_id':'PRIMARY'+term,'kind':'database','reference':md['url'],
+ 'locator':str(p.relative_to(R))+'; full primary ChEBI JSON with genuine original retrieval metadata.',
+ 'accessed_at':md['retrieved_at'].replace('+00:00','Z'),'support':'supports','snapshot_sha256':sha(p),
+ 'summary':('Family primary label rifamycins, shared singular synonym, member relations; no family structure.' if term=='26580' else 'SV is a specific family member; shared rifamycin synonym cannot uniquely resolve family or SV. No member chemistry transferred.')})
+
+def assessment(i,area,topic,outcome,summary,ids):
+ return {'assessment_id':i,'area':area,'topic':topic,'outcome':outcome,'summary':summary,'target_ids':[tid],'evidence_ids':ids}
+assessments=[
+ assessment('METHOD','grounding','Performed contextual method','supported','MANUAL_CURATION records the deliberate contextual family judgment actually performed. Neither a singular-to-plural primary label exact match nor unique synonym resolution supports this grounding. The new evidence is LLM_SUGGESTION; no human verification is asserted.',['AUTHORITY','SCHEMA','SCIENCE','SKEPTIC','PRIMARY26580','PRIMARY29673']),
+ assessment('IDENTITY','identity','Retained unspecified family','supported','CHEBI:26580, rifamycins label, Rifamycin preferred term and MAPPED status remain exact. The #760 decision is preserved; SV remains a separate member. No new member identity, supplier, CAS or structure is inferred.',['BEFORE','AFTER','SCOPE','ISSUE760','SCIENCE']),
+ assessment('SOURCE','scope','Three original generic observations','supported','Two generic production cells and one generic resistance cell remain scoped to their exact original MicrobeDecoder fields. Separate SV/O statements elsewhere in BacDive pages do not relabel these cells. The original occurrence counters and notes remain exact; no universal family-member activity or new source-case membership.',['SOURCES','SCIENCE','BEFORE','AFTER']),
+ assessment('HISTORY','provenance','Append-only truthful agent attribution','supported','All two old evidence objects and four old events remain intact. The lexical import is explicitly historical, not renewed method support. One truthful LLM_SUGGESTION object and one actual native llm_assisted event are appended, preserving the old CURATOR_JUDGMENT.',['AUTHOR','DELTA','AFTER','SCIENCE','SKEPTIC']),
+ assessment('OTHER','representation','Complete unchanged owner fields','supported','Empty synonyms, source statistics, notes and all other owner fields remain unchanged. No chemistry, supplied form, component or role is added; absence is not evidence of a false or known optional property.',['BEFORE','AFTER','DELTA','SCIENCE','SKEPTIC']),
+ assessment('PREDICATE','representation','Native identity predicate','supported','The isolated actual native producer retains own-identifier skos:exactMatch to CHEBI:26580. Method correction does not change identity, labels, object source or aliases. Native diagnostic provenance changes are reported separately from actual maintained row content.',['ROWS','TECHNICAL','AUTHORITY']),
+ assessment('ROW-LIMIT','scope','Canonical publication remains unperformed','unknown','All fields of the current maintained row and before/candidate diagnostic rows were examined. Diagnostic defaults and empty scope comment/validation stamp are not canonical replacement values or approved confidence. Future actual generation requires real ancillary context and complete-row review preserving the #760 limits.',['ROWS','SCIENCE','SKEPTIC','RATIONALE']),
+ assessment('VALIDATION','schema','Native validation and preservation','supported','Actual closed-schema validation, guarded rerender, native event reconstruction and meaningful negative controls are reported by the separate technical reviewer. These are narrow diagnostics; no new repository gate or application helper.',['AUTHOR','TECHNICAL','CURRENTNESS']),
+ assessment('BOUNDARY','scope','Ancillary private proposal only','supported','Root is candidate author and self-review assembler; distinct agents independently review the exact candidate. Zero added original CM/KG cases, zero draft-plan changes and no maintained/Git/GitHub/application/source/role/export approval. Existing issue1263 remains for coordinator application decisions.',['SCOPES','ISSUE1263','PRESERVATION','RATIONALE'])]
+checks=[]
+for key,title,ids in [('SCIENCE','Independent complete owner and source review',['SCIENCE','PRIMARY26580','PRIMARY29673']),('SKEPTIC','Distinct whole-candidate skeptical review',['SKEPTIC']),('NATIVE','Guarded writer and independent narrow native controls',['AUTHOR','TECHNICAL','DELTA']),('PRESERVE','Original packet and input preservation',['PRESERVATION','CURRENTNESS'])]:
+ checks.append({'check_id':key,'name':title,'status':'passed','required':True,'summary':'Actual scope, commands, results and limitations are retained in the bound receipts.','target_ids':[tid],'evidence_ids':ids})
+checks.append({'check_id':'APPLICATION','name':'Maintained application and production validation','status':'not_applicable','required':False,'summary':'Not authorized or executed; this private proposal is not application or canonical publication.','target_ids':[tid],'evidence_ids':['RATIONALE']})
+checks.append({'check_id':'AUTHOR-WRITE','name':'Actual private guarded candidate creation','status':'passed','required':True,'summary':'Native event helper and guarded writer rendered the exact40fd candidate; no maintained path was written.','command':'PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python .temp/rifamycin1263-method-proposal-v1/author_candidate.py','exit_code':0,'target_ids':[tid],'evidence_ids':['AUTHOR','DELTA']})
+checks.append({'check_id':'TECH-CONTROLS','name':'Independent focused native controls','status':'passed','required':True,'summary':'Native closed-schema, exact rerender, truthful event reconstruction and23 meaningful negative controls; inventory hashes are mechanical checks, not additional scientific targets.','command':'PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python .temp/rifamycin1263-method-proposal-v1/technical/check_candidate.py','exit_code':0,'target_ids':[tid],'evidence_ids':['TECHNICAL','ROWS']})
+checks.append({'check_id':'INITIAL-ROW-SELECTOR','name':'Preserved reviewer preflight selector failure','status':'failed','required':False,'summary':'Initial reviewer diagnostic sought MediaIngredientMech:Rifamycin instead of native MIM:Rifamycin. The failed attempt remains; separate preflight-v2 uses the actual native subject. No owner/candidate correction followed.','target_ids':[tid],'evidence_ids':['TECHNICAL']})
+extras=[str(p.relative_to(R)) for p in sorted(O.rglob('*')) if p.is_file() and not p.is_relative_to(native)]
+inspection=m.inspect_source(R,[target],extras)
+(native/'inspection-final.json').write_text(json.dumps(inspection,indent=2)+'\n')
+review={'schema_version':'1.0.0','review_id':now.strftime('%Y%m%dT%H%M%SZ')+'-w10-rifamycin1263-private-proposal','kind':'record','repository':'CultureBotAI/MediaIngredientMech','title':'Private Rifamycin contextual mapping-method proposal',
+ 'started_at':j('START.json')['started_at'].replace('+00:00','Z'),'finished_at':at,
+ 'reviewer':{'identity':'worker10:/root, candidate author and assembler','kind':'agent','independence':'self_review','independence_basis':'Root authored the candidate. Actual separate preparation_skeptic scientific, buffers_research skeptical and bio_research technical reviews are hash-bound. Prior Xanthine work is disclosed, not reused as this review. No human verification.'},
+ 'skill':'.claude/skills/curate-yaml-record/SKILL.md','completion':'completed','verdict':'pass_with_limitations','scientific_review':True,
+ 'summary':'Supports the exact private EXACT_MATCH to MANUAL_CURATION correction with truthful appended agent evidence/history. Full family identity, original source scope and old provenance preserved. No application or canonical row approval.',
+ 'source':inspection['source'],'scope':{'description':'One complete private ancillary existing-owner candidate and its bounded native row diagnostic.','selection':'Filed issue1263; exact0319 before and40fd candidate only.','coverage':'full','population_size':1,'reviewed_target_ids':[tid],
+ 'exclusions':[{'target':'Frozen source campaign and934-operation draft','reason':'Zero new CM/KG cases or plan operations; separate ancillary proposal.'},{'target':'Member chemistry, roles, source application and export','reason':'No new evidence or approval; coordinator retains future decisions.'}]},
+ 'targets':[target],'checks':checks,'evidence':evidence,'assessments':assessments,'findings':[],'actions':[],
+ 'limitations':['Issue1263 owner-method defect is unchanged in maintained data; no terminal issue disposition or canonical application is claimed.',
+ 'MappingQuality MANUAL_CURATION denotes the performed contextual judgment, not human verification or credentials. MappingEvidence remains LLM_SUGGESTION; the historical CURATOR_JUDGMENT remains unchanged.',
+ 'Whole-owner scientific scope is Rifamycin only. Mechanical native owner-index inventories are diagnostic context, not scientific review of the corpus.',
+ 'Native isolated row diagnostics use declared current code and explicit context. Their confidence/provenance/default fields are not a canonical replacement or future row approval; real generation and full-row review remain.',
+ 'Exact original primary captures retain their original retrieval times. Original source archive reproduction does not create new observations or refresh the campaign source queue.',
+ 'Native helper inspect/validate/currentness/load/render are used unchanged in this private path. Canonical saver and registration are not invoked because the user authorizes output only here.',
+ 'Reviewer-only failed diagnostics and append-only corrected attempts are retained. No protected prompt, paid provider, new external session, Git/GitHub mutation or maintained write.',
+ 'The first durable start timestamp follows initial opening reads; it is not an invented session-start time.'],
+ 'notes':['Exact reviewer identities/scopes and candidate hash are separately recorded. A valid packet confers no source/role/export approval.']}
+m.validate_review(review);m.assert_current_source(R,review)
+raw=m._dump_document(review);loaded=m.load_document(raw);m.validate_review(loaded)
+assert loaded==review
+assert not (native/'review.yaml').exists()
+(native/'review.yaml').write_text(raw);(native/'review.md').write_text(m.render_markdown(loaded))
+(native/'validation.json').write_text(json.dumps({'at':at,'helper_path':str(K/'scripts/record_review.py'),'helper_sha256':sha(K/'scripts/record_review.py'),'schema_path':str(K/'schema/record_review.yaml'),'schema_sha256':sha(K/'schema/record_review.yaml'),'validated':True,'current_source_verified':True,'yaml_roundtrip_equal':True,'derived_markdown':True,'canonical_save_invoked':False,'source_inputs':len(inspection['source']['inputs']),'targets':1,'assessments':len(assessments),'evidence':len(evidence),'review_yaml_sha256':sha(native/'review.yaml'),'review_md_sha256':sha(native/'review.md')},indent=2)+'\n')
+print(json.dumps({'review_yaml':sha(native/'review.yaml'),'review_md':sha(native/'review.md'),'inputs':len(inspection['source']['inputs'])}))

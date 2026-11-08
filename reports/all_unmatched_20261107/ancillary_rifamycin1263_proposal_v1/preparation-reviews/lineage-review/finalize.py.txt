@@ -1,0 +1,92 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json
+R=Path.cwd().resolve();O=R/'.temp/rifamycin1263-publication-preparation-v1';D=O/'lineage-review';S=R/'.temp/rifamycin1263-method-proposal-v1'
+AR=O/'package-v2';PREFIX='reports/all_unmatched_20261107/ancillary_rifamycin1263_proposal_v1';P=AR/PREFIX
+now=lambda:datetime.now(timezone.utc).isoformat()
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def pin(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+def load(p):return json.loads(p.read_text())
+def save(name,data):
+ with (D/name).open('x') as f:json.dump(data,f,indent=2,ensure_ascii=False);f.write('\n')
+orig=load(D/'original-checks-v2.json');core=load(D/'core-checks-v2.json');c1=load(O/'package-core-v1.json');c2=load(O/'package-core-v2.json')
+assert not orig['failures'] and not core['failures']
+tech=load(O/'technical/REPORT-v2.json');tc=load(O/'technical/package-checks-v2.json');tm=load(O/'technical/MANIFEST-v2.json')
+assert tc['counts']['checks']==1589 and tc['counts']['failed_checks']==0 and len(tc['negative_controls'])==22 and all(x['refused'] for x in tc['negative_controls'])
+assert tech['scientific_review'] is False
+# Rebind precisely the files actually checked/read. This is final byte integrity,
+# not a repeat scientific/technical test or a future-head approval.
+inputs={};fail=[]
+def add(p,expected=None):
+ p=Path(p);entry=pin(p)
+ if expected is not None and entry['sha256']!=expected:fail.append({'path':str(p),'expected':expected,'actual':entry['sha256']})
+ inputs[str(p)]=entry
+for x in orig['original_inventory']:add(x['path'],x['sha256'])
+for c,root in [(c1,O/'package'),(c2,AR)]:
+ for x in c['regular_files']:add(root/x['path'],x['sha256'])
+for name in ['START.json','initial-proposal-integrity.json','inputs/root-collection-HANDOFF.json','package-core-v1.json','package-core-v2.json','coordinator-finding-report.json','package-review/findings/META-001.json','technical/native-contract-pins.json','technical/native-currentness-supplement.json','technical/package-checks-v2.json','technical/check_package_v3.py','technical/REPORT-v2.json','technical/REPORT-v2.md','technical/MANIFEST-v2.json']:add(O/name)
+for x in load(P/'native-contract.json')['input_bindings']:add(x['path'],x['sha256'])
+for name in ['original-checks.json','original-checks-v2.json','core-checks.json','core-checks-v2.json']:add(D/name)
+for row in tm['files']:
+ add(O/'technical'/row['path'],row['sha256'])
+assert not fail,fail
+save('input-bindings.json',{'at':now(),'scope':'Every original file, both exact package cores, actual read contracts/peer receipts and own check receipts; no new science.','count':len(inputs),'inputs':list(inputs.values()),'failures':fail})
+report={
+ 'review_id':'W10-RIFAMYCIN1263-PRIVATE-PREPARATION-LINEAGE-001',
+ 'completion':'completed','verdict':'pass_with_limitations','scientific_review':False,
+ 'reviewer':'worker10:/root/preparation_skeptic','reviewer_kind':'agent',
+ 'independence':{'package_author':False,'candidate_author':False,'author_independent_for_this_metadata_review':True,
+ 'prior_participation':'I authored the original Rifamycin whole-owner scientific report and its method recommendation, and participated in prior W10/W09 provenance and Xanthine scientific/package reviews. I did not author the Rifamycin candidate, original W04 finding, W09 captures, or either new prospective package. This same-session metadata review is not a new scientific vote, a blinded review, or proof of historical uninvolvement. No human credentials or verification are claimed.'},
+ 'timing':{'first_retained_checker_start':load(D/'original-checks.json')['started_at'],'active_package_checker_start':core['started_at'],'active_package_checker_finish':core['finished_at'],'completed_at':now(),'qualification':'Opening reads preceded the first retained checker. Exact earlier review start was not recorded. These checker intervals are execution milestones, not the duration of all reading; primary acquisition times are retained unchanged.'},
+ 'scope':'Complete active private 164-file core-v2, its 142 original transports, new wrapper/ancillary full case/decision/reconciliation/role bindings, original proposal lineage and review attribution, all153 preserved predecessor-core files, exact seven metadata differences and eleven added history files. No science rerun, publication/application execution, or final generated row approval.',
+ 'active_core':pin(O/'package-core-v2.json'),'prepared_artifact_root':str(AR),'prospective_repository_prefix':PREFIX,
+ 'counts':{'active_core_files':164,'preserved_predecessor_core_files':153,'original_manifest_members':140,'original_seal_files':2,'original_transports':142,'inert_python_transports':21,'changed_predecessor_metadata_files':7,'added_history_and_correction_files':11,'package_role_bindings':15,'external_canonical_producer_bindings':11,'native_role_categories':8,'active_case_ledger_roles':1,'ancillary_review_findings':1,'existing_owner_proposals':1,'new_original_CM_KG_cases':0,'new_source_observations':0,'new_occurrences':0,'new_scientific_votes':0},
+ 'exact_bindings':{n:pin(P/n) for n in ['case-ledger.json','proposals.json','decisions.json','reconciliation.json','shard.json','original-proposal-reference.json','artifact-role-inventory.json','transport-map.json','native-contract.json','metadata-correction-v2.json','archive/candidate/Rifamycin.yaml','archive/inputs/06-Rifamycin.yaml','archive/native/review.yaml','archive/native/review.md','archive/HANDOFF.json','archive/MANIFEST.json']},
+ 'active_case_id':c2['case_id'],'active_complete_case_object_sha256':c2['case_hash'],'proposal_id':c2['proposal_id'],
+ 'assessments':[
+ {'area':'Authentic ancillary origin','outcome':'supported','basis':'F51-CHEM-001 selects the actual complete original W04 finding for owner0319. Issue1263 body/readback/publication receipt match original bytes. The ancillary object is review_finding with false source/campaign/observation/chemical-input flags and empty source-case/occurrence lists. Exactly one worker-10 wrapper is selected; no eleventh worker, new original CM/KG case, or second active historical ledger is introduced.'},
+ {'area':'Original proposal representation','outcome':'supported','basis':'A complete ignored-inclusive walk verified140 original manifest members plus MANIFEST/SHA256SUMS and found no standalone proposal.json or proposals.json in that packet. The new reference object honestly binds actual original HANDOFF, guarded candidate, field differences, author receipt and native review. The new proposals.json does not impersonate a historical proposal.'},
+ {'area':'Byte transport and physical paths','outcome':'supported','basis':'All142 transported files match original bytes, including original seals and failed attempts. All21 original .py files receive only inert .py.txt destination suffixes, and all164 prepared regular files are mode0644 with no symlinks. Every prospective relative reference resolves under the explicitly private package-v2 artifact root. The actual repository reports prefix is absent in the checked state.'},
+ {'area':'Full case and tuple binding','outcome':'supported','basis':'The complete active case object canonical hash5457933497c26f69d0a1c96a526d33083d570da19e8f8f7bb024487aed250d79 agrees with proposal, decision, reconciliation and core. The before0319/candidate40fd owner tuple is unchanged and byte-bound. The new wrapper uses edit_existing_owner and the native artifact/path/hash after-capture shape.'},
+ {'area':'Review and scientific provenance','outcome':'supported_retention','basis':'The unchanged native review remains root self_review at actual historical working_tree01c, with one target, nine assessments,21 evidence items and122 inputs. Original science/skeptic/technical report identities, retrieval times, limits and failures remain unchanged. The present transport and root mechanical collection supply no fresh scientific vote or human verification. ROW-LIMIT remains unknown and all canonical-row/application limitations survive.'},
+ {'area':'Native prerequisites and null publication','outcome':'supported_with_limits','basis':'Statically read actual K binding/role/producer/origin contract. All15 package plus11 external canonical producer bindings use exact keys/hashes and eight required roles; every published_head/published_path is null. Inert report copies are not substituted for installed producers. This prospective two-root inventory is not a complete executable or accepted plan and does not satisfy future published-origin requirements.'},
+ {'area':'Metadata correction lineage','outcome':'resolved_in_active_private_v2','basis':'Peer finding RIFAMYCIN-PACKAGE-META-001 was independently confirmed from full issue/receipt. V2 distinguishes issue created_at/updated_at14:25:17Z, publication receipt14:25:17.739189+00:00 and unknown separately retained readback acquisition time. Exactly seven new metadata files change through wording, derived joins and actual private paths; eleven added files preserve finding, report-before-fix and old metadata. All original archives and all153 v1 files remain exact.'},
+ {'area':'Accounting and current local boundaries','outcome':'supported_with_limits','basis':'The package introduces zero source cases/observations/occurrences and no934-origin replacement. Own HEAD01c, tracked tree/index and actual maintained Rifamycin preimage0319 remained unchanged in my read-only checks. This is package accounting and byte preservation, not a new census/scientific re-review of all934 operations or1879 campaign cases; Xanthine dependency, future ordinary publication and application remain root decisions.'}
+ ],
+ 'findings':[],'unresolved_findings':[],
+ 'resolved_peer_findings':[{'finding_id':'RIFAMYCIN-PACKAGE-META-001','severity':'minor','original_reporter':'worker10:/root/buffers_research','finding':pin(O/'package-review/findings/META-001.json'),'correction':pin(P/'metadata-correction-v2.json'),'status':'verified_corrected_in_private_core_v2_only','earlier_reviewer_omission':'My preserved v1 structural/transport checker passed1065 assertions but did not test the issue-time prose distinction. I did not identify that ambiguity before the peer report. My independent read and added v2 semantic/delta assertions confirm the correction. No new scientific defect or issue closure follows.'}],
+ 'validation':{'own_original_integrity_checks':310,'own_active_core_checks':1282,'own_final_failed_checks':0,'original_receipt':pin(D/'original-checks-v2.json'),'active_receipt':pin(D/'core-checks-v2.json'),'own_native_execution':False,'own_contract_method':'Static AST extraction and source reading only; no installed application module import or API execution.',
+ 'technical_peer':{'reviewer':'worker10:/root/bio_research','report':pin(O/'technical/REPORT-v2.json'),'checks_receipt':pin(O/'technical/package-checks-v2.json'),'checks':1589,'negative_controls_refused':22,'input_bindings':len(tc['input_bindings']),'actual_calls':tc['native_calls'],'not_called':tc['not_called'],'execution_attribution':'Read the peer checker/control receipts; these executions are not mine. No science rerun or full application transaction.'}},
+ 'native_context':{'declared_original_K_head':tc['declared_K_head'],'peer_observed_K_head':tc['observed_K_head'],'scope':'Exact eleven producer byte equivalence verified by peer and current body hashes independently checked here; intervening reported-content changes are not reviewed or approved. Original archived native context is not rewritten.'},
+ 'failed_attempts':[{'kind':'own_checker_assumption','receipt':pin(D/'original-checks.json'),'description':'Initial checker expected SHA256SUMS to cover only140 manifest members; original correctly also hashes MANIFEST.json. All individual byte hashes passed. Original failed checker/logs retained; append-only v2 corrects only this membership expectation and passes310 checks.'},{'kind':'peer_execution_history','description':'Technical report preserves original K-head drift condition and its later syntax-error attempt. Currentness supplement establishes unchanged producer bytes and explicitly excludes intervening report-content review. No package/source defect inferred.'}],
+ 'input_bindings':pin(D/'input-bindings.json'),
+ 'limitations':[
+ 'Review is metadata and lineage only. Original chemical/owner science was neither rerun nor newly approved. My historical scientific authorship is disclosed rather than counted as an additional independent vote.',
+ 'The package is private, unstaged and unpublished in the checked state. Null publication fields and original source working_tree attribution are intentional. No actual or future commit, remote head, source-origin acceptance, application, PR readiness, row release or role/export approval is granted.',
+ 'No application/acceptance template or object was created; neither _load, prepare, apply nor source/publication writers were invoked by this reviewer. Only read-only Git queries and private review writes occurred.',
+ 'The exact original issue readback remains open; no fresh network read occurred. Its precise acquisition time is not separately known. Original ChEBI retrieval times remain unchanged and are not current retrieval claims.',
+ 'Archived findings involving other owners and historical CURATOR_JUDGMENT/approval wording are preserved context, not renewed broad owner or human provenance approval.',
+ 'The unchanged native diagnostic defaultconfidence and blank scope comment/stamp remain unapproved canonical replacement values. Actual complete-row review and guarded application, if later authorized, remain separate.',
+ 'Any later supplemental archive, final package manifest, staging, ordinary publication or published-head readback is outside this exact164-file core review unless separately reviewed. Root must resolve the Xanthine dependency and actual current native prerequisites.'
+ ],
+ 'application':False,'publication':False,'source_role_export_approval':False,'new_scientific_vote':False
+}
+save('REPORT.json',report)
+md=f'''# Rifamycin #1263 private preparation lineage review
+
+**Pass with limitations; no open findings in active core-v2.** I independently checked all164 private package files, all142 exact original transports and the preserved153-file predecessor. One ancillary review finding and one existing-owner proposal are selected; zero original CM/KG cases, observations or occurrences are added.
+
+The active full-case hash is `{c2['case_hash']}`. Before0319 and candidate40fd remain exact. The wrapper references the genuine original handoff, guarded candidate and field diff; the original sealed packet had no standalone proposal JSON. All21 Python transports are inert `.py.txt` files. All15 package and11 external native producer bindings are exact, with publication fields null.
+
+The peer's minor **RIFAMYCIN-PACKAGE-META-001** is corrected in v2: issue creation, publication-receipt time and unknown precise readback-acquisition time are distinguished. I verified all seven metadata deltas, derived hashes and eleven added history files. My earlier structural checks did not test that wording distinction; that omission and the original results remain disclosed.
+
+My corrected original-seal check passed310 assertions and active-core check passed1,282. The technical peer's separate1,589 checks and22 refusal controls are hash-bound and attributed. My initial SHA256SUMS membership assumption failed because the original also hashes MANIFEST.json; the failed receipt and append-only correction remain preserved.
+
+I authored the original Rifamycin science report but did not author the candidate or this package. This is a separate metadata review, **not a new scientific vote**. Root's original native review remains self_review; exact timestamps and all source/family/row/role/export limitations survive. No publication, application, acceptance, future-head or complete canonical-row approval is given.
+
+The exact core, findings, command receipts, full input inventory and limits are bound by REPORT.json and MANIFEST.json. No source, Git or GitHub mutation occurred.
+'''
+with (D/'REPORT.md').open('x') as f:f.write(md)
+files=[pin(p)|{'relative_path':str(p.relative_to(D))} for p in sorted(D.rglob('*')) if p.is_file() and p.name!='MANIFEST.json']
+save('MANIFEST.json',{'sealed_at':now(),'root':str(D),'files':files,'regular_member_count':len(files),'excludes':['MANIFEST.json'],'scientific_review':False,'verdict':report['verdict']})
+print(json.dumps({'report':pin(D/'REPORT.json'),'markdown':pin(D/'REPORT.md'),'manifest':pin(D/'MANIFEST.json'),'members':len(files),'input_bindings':len(inputs)}))

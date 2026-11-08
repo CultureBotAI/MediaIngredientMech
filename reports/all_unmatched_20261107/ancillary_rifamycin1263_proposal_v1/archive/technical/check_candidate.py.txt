@@ -1,0 +1,118 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import copy,difflib,hashlib,importlib.util,json,subprocess,sys,yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';CLAW=C.parents[1]/'.temp/kgm-unmapped-20261107/claw';O=Path(__file__).resolve().parent;B=O.parent;S=O/'scratch';S.mkdir();start=datetime.now(timezone.utc).isoformat();inputs={};checks=[];controls=[]
+KH='7d6d44ea132e04709f81ebd9e1577643745110ad';OLD='0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e';NEW='40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575';OWNER=K/'data/ingredients/mapped/Rifamycin.yaml';P=B/'candidate/Rifamycin.yaml';sha=lambda b:hashlib.sha256(b).hexdigest()
+def raw(p):
+ p=Path(p);b=p.read_bytes();inputs[str(p)]={'path':str(p),'sha256':sha(b),'bytes':len(b)};return b
+def ck(n,v):
+ checks.append({'check':n,'pass':bool(v)});assert v,n
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False,default=str);f.write('\n')
+def git(root,*args):return subprocess.check_output(['git','-C',str(root),*args])
+before_bytes=raw(OWNER);candidate_bytes=raw(P);old=yaml.safe_load(before_bytes);new=yaml.safe_load(candidate_bytes)
+ck('before exact',sha(before_bytes)==OLD and before_bytes==raw(B/'inputs/06-Rifamycin.yaml'))
+ck('candidate exact',sha(candidate_bytes)==NEW)
+pre=json.loads(raw(O/'preflight.json'));author=json.loads(raw(B/'author-receipt.json'));inv=json.loads(raw(O/'owner-index-inventory.json'))
+ck('author exact tuple',author['before_sha256']==OLD and author['candidate_sha256']==NEW and author['author']=='worker10:/root')
+ck('current K exact declared head',git(K,'rev-parse','HEAD').decode().strip()==KH)
+sys.path[:0]=[str(K/'src'),str(CLAW/'src'),str(CLAW/'scripts')]
+from mediaingredientmech.validation.write_validated import validate_ingredient,write_validated_ingredient,ValidationFailedError
+from mediaingredientmech.curate.curation_event import record_curation_event
+schema=K/'src/mediaingredientmech/schema/mediaingredientmech.yaml';raw(schema);raw(K/'src/mediaingredientmech/schema/mech_shared.yaml')
+producer=CLAW/'scripts/build_mim_ingredient_sssom.py';pb=raw(producer);spec=importlib.util.spec_from_file_location('rifamycin_candidate_row_producer',producer);m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;exec(compile(pb,str(producer),'exec',dont_inherit=True),m.__dict__)
+owners={key:frozenset(val) for key,val in inv['native_index'].items()}
+for entry in inv['records']:ck('mechanical owner-index input unchanged '+entry['relative_path'],sha(Path(entry['path']).read_bytes())==entry['sha256'])
+before_rows=m._row_from_yaml(OWNER,{},{},{},{},record=old,owners=owners,suppressions=[])
+after_rows=m._row_from_yaml(OWNER,{},{},{},{},record=new,owners=owners,suppressions=[])
+ck('native exact baseline reproduction',before_rows==pre['diagnostic_baseline_rows'])
+native_diffs={k:{'before':before_rows[0][k],'after':after_rows[0][k]} for k in before_rows[0] if before_rows[0][k]!=after_rows[0][k]}
+canonical=pre['current_canonical_rows'][0]
+save('native-row-comparison.json',{'reviewer':'worker10:/root/bio_research','at':datetime.now(timezone.utc).isoformat(),'candidate_sha256':NEW,'before_sha256':OLD,'producer':inputs[str(producer)],'K_head':KH,'Claw_head':git(CLAW,'rev-parse','HEAD').decode().strip(),'mechanical_index':inputs[str(O/'owner-index-inventory.json')],'native_call':'_row_from_yaml(maintained_owner_path,{}, {}, {}, {}, record=before_or_candidate,owners=complete_preferred_owner_index,suppressions=[])','current_maintained_canonical_row':canonical,'diagnostic_before_rows':before_rows,'diagnostic_candidate_rows':after_rows,'diagnostic_changes':native_diffs,'all13_fields_compared':True,'limitation':'Per-owner actual producer API with empty residual/kgm/canonical-label maps. No full builder/main, source application, canonical replacement, final row position or receipt. Current canonical scope comment/stamp remain separate and must not be lost by treating this diagnostic as a publication payload.'})
+print('NATIVE_ROWS_READY '+str(O/'native-row-comparison.json')+' '+sha((O/'native-row-comparison.json').read_bytes()),flush=True)
+def require(ok,msg):
+ if not ok:raise ValueError(msg)
+def boundary(x,preimage=before_bytes):
+ require(sha(preimage)==OLD,'authentic full preimage')
+ require(set(x)==set(old),'exact top-level field scope')
+ require(x['ontology_mapping']['mapping_quality']=='MANUAL_CURATION','actual contextual method grade')
+ om=copy.deepcopy(x['ontology_mapping']);bm=copy.deepcopy(old['ontology_mapping']);om.pop('mapping_quality');bm.pop('mapping_quality');ev=om.pop('evidence');bev=bm.pop('evidence')
+ require(om==bm,'identity/label/ontology scope')
+ require(len(ev)==len(bev)+1 and ev[:-1]==bev,'complete old evidence prefix')
+ require(ev[-1]['evidence_type']=='LLM_SUGGESTION' and ev[-1]['source']=='https://github.com/CultureBotAI/MediaIngredientMech/issues/1263','truthful new agent evidence')
+ require('without human verification' in ev[-1]['notes'],'explicit no human verification limit')
+ h=x['curation_history'];require(len(h)==len(old['curation_history'])+1 and h[:-1]==old['curation_history'],'complete old history prefix')
+ require(h[-1].get('llm_assisted') is True and h[-1]['curator']=='worker10:/root Codex ancillary-rifamycin1263' and h[-1]['previous_status']==h[-1]['new_status']=='MAPPED','actual agent/status history')
+ require('no human verification or application' in h[-1]['changes'],'explicit history limit')
+ for key in old:
+  if key not in ['ontology_mapping','curation_history']:require(x[key]==old[key],'unchanged '+key)
+ return True
+ck('complete reviewed delta contract',boundary(new))
+e=new['curation_history'][-1];h=copy.deepcopy(old);record_curation_event(h,**e);ck('native event exact reconstruction',h['curation_history']==new['curation_history'] and e==author['event'])
+ck('full candidate closed-schema valid',validate_ingredient(new,schema_path=schema)==[])
+out=S/'native-rendered-Rifamycin.yaml';write_validated_ingredient(copy.deepcopy(new),out,schema_path=schema);ck('actual native writer exact output',out.read_bytes()==candidate_bytes)
+out2=S/'idempotent-Rifamycin.yaml';write_validated_ingredient(yaml.safe_load(out.read_bytes()),out2,schema_path=schema);ck('writer idempotence exact',out2.read_bytes()==out.read_bytes())
+ck('single exact identity row before/after',len(before_rows)==len(after_rows)==1 and all(x['predicate_id']=='skos:exactMatch' and x['object_id']=='CHEBI:26580' and x['subject_id']=='MIM:Rifamycin' for x in before_rows+after_rows))
+ck('native candidate actual manual justification',before_rows[0]['mapping_justification']=='semapv:LexicalMatching' and after_rows[0]['mapping_justification']=='semapv:ManualMappingCuration')
+ck('native default confidence lower, not inherited approval',before_rows[0]['confidence']=='0.99' and after_rows[0]['confidence']=='0.9')
+ck('native row exact changed field set',set(native_diffs)=={'mapping_justification','source','mapping_date','confidence'})
+ck('native row retained empty aliases',before_rows[0]['other']==after_rows[0]['other']=='')
+ck('diagnostics do not copy canonical validation/comment',before_rows[0]['comment']==after_rows[0]['comment']==before_rows[0]['validation_method']==after_rows[0]['validation_method']=='' and bool(canonical['row']['comment']) and bool(canonical['row']['validation_method']))
+mutations={
+ 'wrong_identifier':lambda x:x.update(identifier='CHEBI:29673'),
+ 'wrong_ontology_target':lambda x:x['ontology_mapping'].update(ontology_id='CHEBI:29673'),
+ 'wrong_label':lambda x:x['ontology_mapping'].update(ontology_label='rifamycin SV'),
+ 'retain_primary_label_method':lambda x:x['ontology_mapping'].update(mapping_quality='EXACT_MATCH'),
+ 'invent_unique_synonym_method':lambda x:x['ontology_mapping'].update(mapping_quality='SYNONYM_MATCH'),
+ 'invent_CAS_method':lambda x:x['ontology_mapping'].update(mapping_quality='CAS_RN_LOOKUP'),
+ 'invent_human_verified_quality':lambda x:x['ontology_mapping'].update(mapping_quality='LLM_ASSISTED'),
+ 'invent_human_evidence':lambda x:x['ontology_mapping']['evidence'][-1].update(evidence_type='MANUAL_CURATION'),
+ 'remove_human_verification_limit':lambda x:x['ontology_mapping']['evidence'][-1].update(notes='human verified'),
+ 'discard_old_lexical_evidence':lambda x:x['ontology_mapping']['evidence'].pop(0),
+ 'rewrite_old_scope_evidence':lambda x:x['ontology_mapping']['evidence'][1].update(notes='all family members'),
+ 'discard_old_history':lambda x:x['curation_history'].pop(0),
+ 'rewrite_old_history':lambda x:x['curation_history'][0].update(curator='current reviewer'),
+ 'false_nonLLM_history':lambda x:x['curation_history'][-1].update(llm_assisted=False),
+ 'invent_media_occurrences':lambda x:x['occurrence_statistics'].update(total_occurrences=3),
+ 'alter_original_source_count':lambda x:x['occurrence_statistics']['source_occurrences'][0].update(count=4),
+ 'invent_alias':lambda x:x['synonyms'].append({'synonym_text':'rifamycin SV','synonym_type':'EXACT_SYNONYM'}),
+ 'invent_family_CAS':lambda x:x.update(chemical_properties={'cas_rn':'6998-60-3'}),
+ 'erase_family_scope_notes':lambda x:x.update(notes=''),
+}
+for name,change in mutations.items():
+ mutated=copy.deepcopy(new);change(mutated)
+ try:boundary(mutated)
+ except ValueError as ex:controls.append({'name':name,'mechanism':'independent exact-scope/method-preservation condition; not native schema','result':'refused','reason':str(ex)})
+ else:raise AssertionError('Accepted unsafe control '+name)
+try:boundary(new,before_bytes+b'\n')
+except ValueError as ex:controls.append({'name':'wrong_full_preimage','mechanism':'independent exact immutable preimage condition','result':'refused','reason':str(ex)})
+else:raise AssertionError('wrong preimage accepted')
+for name,change in {'unknownfield':lambda x:x.update(unreviewed_field=True),'invalidmethodenum':lambda x:x['ontology_mapping'].update(mapping_quality='AI_HUMAN_APPROVED'),'invalidhistoryaction':lambda x:x['curation_history'][-1].update(action='invalid action')}.items():
+ mutated=copy.deepcopy(new);change(mutated);dest=S/(name+'.yaml')
+ try:write_validated_ingredient(mutated,dest,schema_path=schema)
+ except ValidationFailedError as ex:
+  ck('actual native refusal wrote no file '+name,not dest.exists());controls.append({'name':name,'mechanism':'actual native closed-schema guarded writer','result':'refused before write','error_count':len(ex.errors)})
+ else:raise AssertionError('native accepted bad schema '+name)
+claim=new['ontology_mapping']['evidence'][-1];primary=[]
+for id,body,meta in [(26580,'12-chebi-26580-retry.body','13-chebi-26580-retry.metadata.json'),(29673,'14-chebi-29673-retry.body','15-chebi-29673-retry.metadata.json')]:
+ b=raw(B/'inputs'/body);metadata=json.loads(raw(B/'inputs'/meta));obj=json.loads(b)
+ ck('source capture exact '+str(id),sha(b)==metadata['sha256'] and obj['id']==id and metadata['http_status']==200)
+ ck('new claim original timestamp/source/hash '+str(id),metadata['retrieved_at'] in claim['notes'] and metadata['url'] in claim['notes'] and metadata['sha256'] in claim['notes'])
+ ck('shared synonym literal '+str(id),any(v.get('name','').casefold()=='rifamycin' for v in obj['names']['SYNONYM']))
+ primary.append({'id':id,'name':obj['name'],'metadata':metadata,'capture':inputs[str(B/'inputs'/body)]})
+ck('family primary label plural literal',primary[0]['name']=='rifamycins' and primary[1]['name']=='rifamycin SV')
+ck('full historical evidence/history preserved',len(old['ontology_mapping']['evidence'])==2 and len(new['ontology_mapping']['evidence'])==3 and len(old['curation_history'])==4 and len(new['curation_history'])==5)
+modules=[]
+for name,mod in list(sys.modules.items()):
+ p=getattr(mod,'__file__',None)
+ if p and any(s in p for s in ['/mediaingredientmech/','/kg_microbe_','/build_mim_ingredient_sssom.py','/kgm_unified_mappings.py','/claw/plugins/']):
+  p=Path(p).resolve();b=raw(p);ck('actual executed module root '+name,p.is_relative_to(K) or p.is_relative_to(CLAW))
+  if p.is_relative_to(K):ck('actual module exact K declared commit '+name,git(K,'show',KH+':'+p.relative_to(K).as_posix())==b)
+  modules.append({'module':name,'path':str(p),'sha256':sha(b)})
+ck('no application/publication module execution',not any('campaign_owner_apply' in n or 'campaign_publication' in n for n in sys.modules))
+for p,binding in inputs.items():ck('final exact input reread '+p,sha(Path(p).read_bytes())==binding['sha256'])
+ck('final K head and owner unchanged',git(K,'rev-parse','HEAD').decode().strip()==KH and sha(OWNER.read_bytes())==OLD)
+ck('worker source head/index preserved',git(R,'rev-parse','HEAD').decode().strip()==pre['worker_head'] and git(R,'status','--porcelain','--untracked-files=no')==b'')
+(O/'candidate-native-diff.patch').write_text(''.join(difflib.unified_diff(before_bytes.decode().splitlines(True),candidate_bytes.decode().splitlines(True),fromfile=str(OWNER),tofile=str(P))))
+save('candidate-checks.json',{'reviewer':'worker10:/root/bio_research','candidate_author':'worker10:/root','scientific_review':False,'audit_execution_started_at':start,'audit_execution_finished_at':datetime.now(timezone.utc).isoformat(),'K_head':KH,'worker_head':pre['worker_head'],'Claw_head':git(CLAW,'rev-parse','HEAD').decode().strip(),'before_sha256':OLD,'candidate_sha256':NEW,'checks':checks,'negative_controls':controls,'input_bindings':list(inputs.values()),'actual_executed_modules':modules,'primary_method_premise':primary,'old_history_count':4,'candidate_history_count':5,'old_evidence_count':2,'candidate_evidence_count':3,'full_row_diagnostic':{'path':str(O/'native-row-comparison.json'),'sha256':sha((O/'native-row-comparison.json').read_bytes())},'no_source_application':True,'no_canonical_or_receipt_claim':True})
+print(json.dumps({'checks':len(checks),'negative_controls':len(controls),'failed':0,'report_sha256':sha((O/'candidate-checks.json').read_bytes()),'row_sha256':sha((O/'native-row-comparison.json').read_bytes())}))

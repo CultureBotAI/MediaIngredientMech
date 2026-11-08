@@ -1,0 +1,61 @@
+"""Seal only this private report packet, after distinct final metadata review."""
+from pathlib import Path
+import datetime, hashlib, importlib.util, json, os, subprocess, sys
+O=Path(__file__).resolve().parent;R=O.parents[1];K=R.parents[2]/'integration/release-worktree'
+os.environ['GIT_OPTIONAL_LOCKS']='0'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def j(p):return json.loads((O/p).read_text())
+def write(name,obj):
+ p=O/name;assert not p.exists(),p;p.write_text(json.dumps(obj,indent=2)+'\n')
+assert not (O/'MANIFEST.json').exists()
+audit=j('final-audit/REPORT.json')
+assert audit.get('findings')==[],audit
+assert audit.get('verdict') in ['pass','pass_with_limitations'],audit
+head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip()
+assert head=='01c173bd914e7b18a04cf70a8e34688f7c1a083a'
+assert subprocess.check_output(['git','status','--short'],cwd=R,text=True)==''
+assert sha(K/'data/ingredients/mapped/Rifamycin.yaml')=='0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e'
+assert sha(O/'candidate/Rifamycin.yaml')=='40fd0a434850ea2528d317c1078285e92c42b6fdb2ae5d7acb1b8629ff668575'
+nv=j('native/validation.json')
+assert sha(K/'scripts/record_review.py')==nv['helper_sha256']
+assert sha(K/'schema/record_review.yaml')==nv['schema_sha256']
+spec=importlib.util.spec_from_file_location('rifamycin_seal_native',K/'scripts/record_review.py');m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+review=m.load_document((O/'native/review.yaml').read_text());m.validate_review(review);m.assert_current_source(R,review)
+assert m.render_markdown(review)==(O/'native/review.md').read_text()
+at=datetime.datetime.now(datetime.timezone.utc).isoformat()
+handoff=j('HANDOFF-draft.json');handoff['status']='SEALED_PRIVATE_PROPOSAL_READY_FOR_COORDINATOR_COLLECTION; no application'
+handoff['sealed_at']=at
+handoff['final_metadata_review']={'path':'final-audit/REPORT.json','sha256':sha(O/'final-audit/REPORT.json'),'verdict':audit['verdict'],'independence':'Separate buffers_research metadata audit; prior candidate skeptical role disclosed, no new scientific vote.'}
+handoff['final_native_readback']={'source_input_count':len(review['source']['inputs']),'all_hashes_current':True,'schema_valid':True,'derived_markdown_exact':True,'own_head':head,'tracked_tree_clean':True,'maintained_owner_still_exact_before':True,'observed_K_head':subprocess.check_output(['git','-C',str(K),'rev-parse','HEAD'],text=True).strip(),'helper_and_review_schema_match_original_execution':True}
+write('HANDOFF.json',handoff)
+md=f'''# Private Rifamycin #1263 proposal
+
+Supported exact private candidate with limitations; no new findings. `EXACT_MATCH` becomes `MANUAL_CURATION`, with one truthful `LLM_SUGGESTION` evidence item and one native agent-assisted history event. The complete CHEBI:26580 family identity, all old evidence/history and original three source observations remain unchanged.
+
+- Before: `{handoff['before_sha256']}`
+- Candidate: `{handoff['candidate_sha256']}`
+- Native review: `native/review.yaml` / `native/review.md`.
+- Scientific reviewer: `worker10:/root/preparation_skeptic`; skeptical reviewer: `worker10:/root/buffers_research`; technical reviewer: `worker10:/root/bio_research`. Root authored the candidate and is honestly `self_review` in the native assembly.
+- Separate final metadata audit: `final-audit/REPORT.json`.
+- Native closed-schema, exact guarded rerender/event reconstruction and all23 negative controls passed. Full8 owner fields and13 current/diagnostic row fields were reviewed.
+
+The isolated generator diagnostic is not a canonical replacement. Its default confidence and blank scope comment/stamp remain unapproved. The coordinator must decide any later application against the actual then-current preimage, perform lawful native synchronization/generation with real context, and obtain complete-row review preserving #760 scope and all holds. Issue1263 is not closed by this packet.
+
+Zero new original CM/KG cases, observations or934-plan operations. No maintained data, sourceplan, Git/GitHub or export changes. Own published head remains `{head}`; all205 Xanthine published files match that commit, and original sealed Xanthine packets remain exact. Original failed diagnostics are preserved. No source, role, export, campaign or application approval follows from this packet.
+
+Exact artifact and peer hashes are in `HANDOFF.json`; `MANIFEST.json` binds every regular packet member except itself and `SHA256SUMS`. The checksum list also binds the manifest. Ready for coordinator collection.
+'''
+assert not (O/'HANDOFF.md').exists();(O/'HANDOFF.md').write_text(md)
+for p in sorted(O.rglob('*')):
+ assert not p.is_symlink(),p
+# Nested peer manifests are ordinary members; only the two root seal files excluded.
+members=[]
+for p in sorted(O.rglob('*')):
+ if p.is_file() and p not in [O/'MANIFEST.json',O/'SHA256SUMS']:
+  members.append({'path':str(p.relative_to(O)),'sha256':sha(p),'bytes':p.stat().st_size})
+write('MANIFEST.json',{'sealed_at':at,'root':str(O),'regular_member_count':len(members),'files':members,'excludes':['MANIFEST.json','SHA256SUMS'],'candidate_sha256':handoff['candidate_sha256'],'own_head_unchanged':head,'new_original_cm_kg_cases':0,'application':False,'source_role_export_approval':False})
+assert not (O/'SHA256SUMS').exists()
+(O/'SHA256SUMS').write_text(''.join(f"{x['sha256']}  {x['path']}\n" for x in members)+f"{sha(O/'MANIFEST.json')}  MANIFEST.json\n")
+assert all(sha(O/x['path'])==x['sha256'] for x in members)
+assert len([p for p in O.rglob('*') if p.is_file()])==len(members)+2
+print(json.dumps({'members':len(members),'handoff_sha256':sha(O/'HANDOFF.json'),'manifest_sha256':sha(O/'MANIFEST.json'),'review_yaml_sha256':sha(O/'native/review.yaml'),'candidate_sha256':sha(O/'candidate/Rifamycin.yaml')},indent=2))

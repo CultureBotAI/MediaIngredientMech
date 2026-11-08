@@ -1,0 +1,89 @@
+{
+  "new_findings": [
+    {
+      "finding_id": "F51-CHEM-001",
+      "status": "NEW_CONFIRMED_BOUNDED_METHOD_FIELD",
+      "reported_to_root_before_any_fix": true,
+      "candidate_modified": false,
+      "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+      "owner_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "field": "/ontology_mapping/mapping_quality",
+      "actual": "EXACT_MATCH",
+      "severity": "major",
+      "scope": "Method provenance only; family identity and complete scoped mapping claim remain supported.",
+      "reason": "No formula, CAS or molecular graph is stored, appropriately preserving family scope. However EXACT_MATCH as a grounding method is not substantiated: preferred/source singular rifamycin is a synonym (also on SV29673), while the primary label is rifamycins and the Sept23 history documents contextual re-grounding. Preserve the supported family identity row while withholding fresh certification of this method field.",
+      "reproduction": [
+        "Read owner preferred_term Rifamycin, mapping label rifamycins, EXACT_MATCH and Sept23 contextual CORRECTED event.",
+        "Read primary-019 name=rifamycins and SYNONYM rifamycin; read primary-018 names including rifamycin on SV29673.",
+        "Apply current MAPPING_SEMANTICS §0: primary-label resolution is EXACT_MATCH; shared synonyms cannot establish unique synonym mapping. Current evidence documents contextual/manual family choice."
+      ],
+      "primary_evidence": [
+        {
+          "key": "primary-019",
+          "evidence_id": "chem-chebi-26580-retry",
+          "capture": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi-26580-retry.body",
+            "sha256": "7deff2d6075d5344c25df1cca36166ecf161bff7a4ccb564df9bb54c41444529"
+          },
+          "source_url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/26580/",
+          "source_kind": "primary_http_capture",
+          "retrieved_at": "2026-11-08T06:11:12.405578+00:00",
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/fresh-campaign-companion-review-v1/authors/antibiotics/captures/chebi-26580-retry.body",
+          "retrieval_metadata": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi-26580-retry.metadata.json",
+            "sha256": "ef771f0647bc66b72dd0a3d0dc5e6a44e625b18ab934660c2ed43b2a1fd38d40"
+          }
+        },
+        {
+          "key": "primary-018",
+          "evidence_id": "chem-chebi-29673-retry",
+          "capture": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi-29673-retry.body",
+            "sha256": "36bc675b19e32e24ea1d5fda368458471925ece8b74208ae232c7879ae6ff6fa"
+          },
+          "source_url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/29673/",
+          "source_kind": "primary_http_capture",
+          "retrieved_at": "2026-11-08T06:11:12.711699+00:00",
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/fresh-campaign-companion-review-v1/authors/antibiotics/captures/chebi-29673-retry.body",
+          "retrieval_metadata": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/final-companion-candidate-review-v2/science/chemistry/captures/chebi-29673-retry.metadata.json",
+            "sha256": "4a25c147aab868a276b64d819339ef3416404d56ee0bcb924cfcab43a1ef65f4"
+          }
+        }
+      ],
+      "bounded_proposed_fix": "If author correction is separately authorized, retain CHEBI26580 family identity and all old evidence/history, record actual deliberate MANUAL_CURATION with truthful AI evidence/history. Do not force SYNONYM_MATCH or change identity/predicate/occurrences. Independent exact-byte successor review remains required.",
+      "dedup_scope": "Ignored-inclusive search of this frozen input reference set found no earlier specific Rifamycin method finding; prior chemical reviews support family scope. GitHub not searched or mutated; root owns global dedup.",
+      "independent_challenge": "worker04:/root/assembly_review independently confirmed the method mismatch after reading §0 and exact primary terms; its own report remains separate."
+    }
+  ],
+  "preserved_prior_field_holds": [
+    {
+      "owner": "Acriflavine",
+      "field": "/chemical_properties/molecular_formula",
+      "reason": "The CAS65589-70-0 and PubChem443101 record association are supported. The stored C27H25ClN6, disconnected SMILES and InChI reproduce the PubChem graph containing one of each dye component; GSRS supplies presence but no fixed ratio. All three molecular fields remain WITHHOLD for unqualified whole-mixture chemistry."
+    },
+    {
+      "owner": "Acriflavine",
+      "field": "/chemical_properties/smiles",
+      "reason": "The CAS65589-70-0 and PubChem443101 record association are supported. The stored C27H25ClN6, disconnected SMILES and InChI reproduce the PubChem graph containing one of each dye component; GSRS supplies presence but no fixed ratio. All three molecular fields remain WITHHOLD for unqualified whole-mixture chemistry."
+    },
+    {
+      "owner": "Acriflavine",
+      "field": "/chemical_properties/inchi",
+      "reason": "The CAS65589-70-0 and PubChem443101 record association are supported. The stored C27H25ClN6, disconnected SMILES and InChI reproduce the PubChem graph containing one of each dye component; GSRS supplies presence but no fixed ratio. All three molecular fields remain WITHHOLD for unqualified whole-mixture chemistry."
+    },
+    {
+      "owner": "Rifamycin_Sv",
+      "field": "/chemical_properties/smiles",
+      "reason": "C37H47NO12, molecular_weight697.778 and full stereochemical InChI agree with ChEBI29673. The owner SMILES contains /C(C)=CC=C whereas the current primary has /C(C)=C\\C=C\\; the omitted directional markers leave the retained SMILES incompletely specified. Its stereochemical interpretation remains WITHHOLD, independently of identity support."
+    }
+  ],
+  "xanthine_method_lineage": {
+    "finding": "FC2-XANTHINE-METHOD-001 / issue1258",
+    "before_method": "CAS_RN_LOOKUP",
+    "candidate_method": "MANUAL_CURATION",
+    "disposition": "SUPPORTED_IN_EXACT747d_PROSPECTIVE_CANDIDATE_ONLY",
+    "maintained_issue_closure": false,
+    "actual_final_row": null
+  }
+}

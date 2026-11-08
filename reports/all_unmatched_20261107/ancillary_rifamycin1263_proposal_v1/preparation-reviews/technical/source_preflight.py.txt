@@ -1,0 +1,18 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json,stat,subprocess
+R=Path.cwd();O=Path(__file__).resolve().parent;P=O.parent;S=R/'.temp/rifamycin1263-method-proposal-v1';sha=lambda b:hashlib.sha256(b).hexdigest();start=json.loads((P/'START.json').read_bytes());m=json.loads((S/'MANIFEST.json').read_bytes());checks=[]
+assert sha((S/'MANIFEST.json').read_bytes())=='2f292d09946c2879049213d160c673edeaf2df1b9d1c7aa95cc72437fd315710'
+assert sha((S/'HANDOFF.json').read_bytes())=='1af03e4fcfd178bff0c0a11c5648a58e42a275bdf63b54ca7a6fca1a0b5eaa0b'
+assert len(m['files'])==m['regular_member_count']==140
+names={e['path'] for e in m['files']};assert len(names)==140
+for e in m['files']:
+ p=S/e['path'];info=p.lstat();assert stat.S_ISREG(info.st_mode) and not p.is_symlink();assert sha(p.read_bytes())==e['sha256'] and info.st_size==e['bytes'];checks.append({'path':str(p),'sha256':e['sha256'],'bytes':e['bytes']})
+actual={p.relative_to(S).as_posix() for p in S.rglob('*') if p.is_file() or p.is_symlink()};assert actual==names|{'MANIFEST.json','SHA256SUMS'}
+assert 'proposal.json' not in actual
+for line in (S/'SHA256SUMS').read_text().splitlines():
+ expected,path=line.split('  ',1);assert sha((S/path).read_bytes())==expected
+assert sha(Path(start['index_path']).read_bytes())==start['index_sha256'];assert subprocess.check_output(['git','rev-parse','HEAD']).decode().strip()==start['own_head'];assert subprocess.check_output(['git','status','--porcelain','--untracked-files=no'])==b''
+result={'at':datetime.now(timezone.utc).isoformat(),'scope':'Exact sealed source bytes and Git/index retention only. No science rerun. rglob/Path traverses hidden/ignored files.','source_manifest_sha256':sha((S/'MANIFEST.json').read_bytes()),'source_checksums_sha256':sha((S/'SHA256SUMS').read_bytes()),'source_handoff_sha256':sha((S/'HANDOFF.json').read_bytes()),'regular_member_count':140,'actual_members_including_manifest_checksums':142,'input_bindings':checks,'source_proposal_representation':['HANDOFF.json','candidate/Rifamycin.yaml','field-differences.json'],'no_standalone_proposal_json':True,'worker_head_unchanged':start['own_head'],'index_sha256_unchanged':start['index_sha256'],'findings':[]}
+with (O/'source-preflight.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'report_sha256':sha((O/'source-preflight.json').read_bytes()),'checked_source_members':140,'actual_files':142}))

@@ -1,0 +1,55 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Rifamycin.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-method-proposal-v1/candidate/Rifamycin.yaml
+@@ -4,7 +4,7 @@
+   ontology_id: CHEBI:26580
+   ontology_label: rifamycins
+   ontology_source: CHEBI
+-  mapping_quality: EXACT_MATCH
++  mapping_quality: MANUAL_CURATION
+   evidence:
+   - evidence_type: LEXICAL_MATCH
+     source: microbedecoder
+@@ -17,6 +17,23 @@
+       resistance. None specifies SV or a CAS. Family indexing does not imply production
+       of, or resistance to, every member. The separate Rifamycin_Sv record remains
+       CHEBI:29673; no single CAS is assigned to this family.
++  - evidence_type: LLM_SUGGESTION
++    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1263
++    notes: 'Worker10 Codex agent method review: MANUAL_CURATION records the deliberate
++      contextual family-scope judgment retained from issue #760, reassessed here against
++      the complete owner and primary ChEBI captures. CHEBI:26580 has primary label
++      rifamycins and synonym rifamycin; CHEBI:29673 also carries rifamycin, so neither
++      primary-label EXACT_MATCH nor unique SYNONYM_MATCH describes this grounding.
++      Sources: https://www.ebi.ac.uk/chebi/backend/api/public/compound/26580/ (captured
++      2026-11-08T06:11:12.405578+00:00, SHA256 7deff2d6075d5344c25df1cca36166ecf161bff7a4ccb564df9bb54c41444529)
++      and https://www.ebi.ac.uk/chebi/backend/api/public/compound/29673/ (captured
++      2026-11-08T06:11:12.711699+00:00, SHA256 36bc675b19e32e24ea1d5fda368458471925ece8b74208ae232c7879ae6ff6fa).
++      The original lexical-import evidence/history remains historical and is not renewed
++      as method support. Preserve the three unqualified MicrobeDecoder observations
++      at CHEBI:26580 family scope, separate from Rifamycin_Sv; no member-specific
++      production/resistance, family CAS or molecular structure is inferred. This is
++      an agent-assisted private proposal, without human verification, source application,
++      role or export approval.'
+ synonyms: []
+ mapping_status: MAPPED
+ occurrence_statistics:
+@@ -64,6 +81,19 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T14:29:15.939539+00:00'
++  curator: worker10:/root Codex ancillary-rifamycin1263
++  action: CORRECTED_MAPPING_METHOD
++  changes: 'Private issue #1263 proposal: change ontology_mapping.mapping_quality
++    EXACT_MATCH to MANUAL_CURATION after contextual family-scope review of #760, the
++    complete owner and primary ChEBI:26580/29673 captures. Append one LLM_SUGGESTION
++    evidence item; preserve the original two evidence items and four history events,
++    including the historical lexical import. Identity CHEBI:26580, ontology label
++    rifamycins, source occurrences and all other fields remain unchanged. Agent-assisted
++    judgment; no human verification or application.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ notes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+   rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
+   resistance. None specifies SV or a CAS. Family indexing does not imply production

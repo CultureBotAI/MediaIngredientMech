@@ -1,0 +1,31 @@
+{
+  "finding_id": "RIFAMYCIN-PACKAGE-META-001",
+  "severity": "minor",
+  "status": "open",
+  "scientific_review": false,
+  "observed_at": "2026-11-08T14:52:02.226044+00:00",
+  "field": "case-ledger.json[0].issue_capture_scope",
+  "observation": "The new wrapper calls 2026-11-08T14:25:17Z the time of the coordinator publication readback. The exact saved GitHub JSON contains this as created_at/updated_at; it does not contain a retrieval timestamp. The separate publication receipt records at=2026-11-08T14:25:17.739189+00:00 without a distinct readback acquisition timestamp. The issue creation time is therefore being presented ambiguously as a readback time.",
+  "exact_text": "Exact coordinator publication readback from 2026-11-08T14:25:17Z; not a fresh live issue fetch by this package preparer.",
+  "bounded_correction": "Clarify that 14:25:17Z is the issue created_at; identify the exact publication receipt time separately and state that the precise readback acquisition time was not separately retained. Preserve every archived input byte and the initial wrapper/hash; apply only an explicitly versioned metadata correction and derived case-hash joins.",
+  "source_bindings": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-publication-preparation-v1/package/reports/all_unmatched_20261107/ancillary_rifamycin1263_proposal_v1/case-ledger.json",
+      "sha256": "b89d9683b84e455274d9c90dac7a8b764f5c32173c00067b5da503da45fbfa1a"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-publication-preparation-v1/package/reports/all_unmatched_20261107/ancillary_rifamycin1263_proposal_v1/archive/inputs/07-publication-00.json",
+      "sha256": "cf73b5499db669199019b72e0d3fb15052803f47e24083761583142ba8e26720"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-publication-preparation-v1/package/reports/all_unmatched_20261107/ancillary_rifamycin1263_proposal_v1/archive/inputs/08-readback-00.json",
+      "sha256": "9e1179ef015b5f97180280195af3d78d1b34ecb8cb9c9c1a80a1c1bb112e29be"
+    }
+  ],
+  "core_v1": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/rifamycin1263-publication-preparation-v1/package-core-v1.json",
+    "sha256": "82e6d915ec7f9b0e591bb25992a021b34d3d38da193dfc7eae0edfe68d4c7206"
+  },
+  "candidate_or_science_defect": false,
+  "no_source_edits": true
+}

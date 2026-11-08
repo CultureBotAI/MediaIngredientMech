@@ -1,0 +1,57 @@
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib, json, os, subprocess
+R=Path.cwd().resolve()
+O=R/'.temp/rifamycin1263-publication-preparation-v1'
+D=O/'lineage-review'
+S=R/'.temp/rifamycin1263-method-proposal-v1'
+start=datetime.now(timezone.utc).isoformat()
+checks=[]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def check(name,ok,detail=None):
+ checks.append({'name':name,'pass':bool(ok),'detail':detail})
+def load(p):return json.loads(p.read_text())
+def pin(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+m=load(S/'MANIFEST.json')
+expected={x['path']:x for x in m['files']}
+actual={str(p.relative_to(S)):p for p in S.rglob('*') if p.is_file()}
+links=[str(p.relative_to(S)) for p in S.rglob('*') if p.is_symlink()]
+check('all_files_walk_includes_ignored_and_hidden',set(actual)==set(expected)|{'MANIFEST.json','SHA256SUMS'}, {'actual':len(actual),'manifest':len(expected),'extra':sorted(set(actual)-set(expected)-{'MANIFEST.json','SHA256SUMS'}),'missing':sorted(set(expected)-set(actual))})
+check('no_symlinks',not links,links)
+for rel,row in expected.items():
+ p=S/rel
+ check('original_manifest_member:'+rel,p.is_file() and sha(p)==row['sha256'] and p.stat().st_size==row['bytes'],pin(p))
+check('original_manifest_expected_140',len(expected)==m['regular_member_count']==140)
+standalone=[n for n in actual if Path(n).name.lower() in ('proposal.json','proposals.json')]
+check('original_no_standalone_proposal_json',not standalone,{'matches':standalone,'method':'Path.rglob includes ignored and hidden paths; complete member inventory retained'})
+sums={}
+for line in (S/'SHA256SUMS').read_text().splitlines():
+ digest,rel=line.split('  ',1);sums[rel]=digest
+check('sha256sums_scope',set(sums)==set(expected)|{'MANIFEST.json'}, 'Original SHA256SUMS includes the 140 manifest members and MANIFEST.json itself; predecessor checker incorrectly excluded that legitimate extra binding.')
+for rel,digest in sums.items():check('original_sums:'+rel,sha(S/rel)==digest)
+h=load(S/'HANDOFF.json')
+for rel,row in h['artifacts'].items():check('handoff_binding:'+rel,sha(S/rel)==row['sha256'] and (S/rel).stat().st_size==row['bytes'])
+check('handoff_issue_finding',h['issue'].endswith('/1263') and h['original_finding']=='F51-CHEM-001')
+check('handoff_author_self_review',h['candidate_author']=='worker10:/root' and h['root_native_review_independence']=='self_review')
+check('handoff_population',h['population']=={'complete_private_candidates':1,'new_original_cm_kg_cases':0,'new_source_observations':0,'new_campaign934_operations':0,'new_frozen1879_members':0})
+check('reviewer_scope_objects_exact',h['reviewers']==load(S/'reviewer-scopes.json'))
+check('original_proposal_actual_three_artifacts',all((S/n).is_file() for n in ['HANDOFF.json','candidate/Rifamycin.yaml','field-differences.json']))
+body=(S/'inputs/09-body.md').read_text()
+issue=load(S/'inputs/08-readback-00.json');pub=load(S/'inputs/07-publication-00.json')
+check('original_issue_readback_full_body',issue['body']==body)
+check('original_issue_receipt_hash',pub['readback_sha256']==sha(S/'inputs/08-readback-00.json') and pub['row']['body_sha256']==sha(S/'inputs/09-body.md'))
+check('issue_original_ancillary_scope','ancillary finding' in body and '1,879 source cases' in body and '934-operation draft' in body)
+check('issue_original_open',issue['number']==1263 and issue['state']=='open' and issue['closed_at'] is None)
+collection=O/'inputs/root-collection-HANDOFF.json'
+check('root_collection_expected_hash',sha(collection)=='fbc2bc528397ae42d6e1f05dd3fa21e57fad4ca1d7aea2583343ce91c1c624b9')
+git={}
+for name,args in [('head',['rev-parse','HEAD']),('branch',['branch','--show-current']),('status',['status','--porcelain']),('staged',['diff','--cached','--name-only'])]:
+ p=subprocess.run(['git',*args],cwd=R,env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'},capture_output=True,text=True)
+ git[name]={'command':['git',*args],'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
+check('own_head_unchanged',git['head']['stdout'].strip()=='01c173bd914e7b18a04cf70a8e34688f7c1a083a')
+check('own_clean',git['status']['stdout']=='' and git['staged']['stdout']=='')
+result={'reviewer':'worker10:/root/preparation_skeptic','scope':'Original sealed proposal metadata, issue/finding provenance and complete file integrity; no new science or native-control execution.','scientific_review':False,'started_at':start,'finished_at':datetime.now(timezone.utc).isoformat(),'checks':checks,'check_count':len(checks),'failures':[x for x in checks if not x['pass']],'original_inventory':[{**pin(p),'relative_path':rel} for rel,p in sorted(actual.items())],'original_proposal_artifacts':[pin(S/n) for n in ['HANDOFF.json','candidate/Rifamycin.yaml','field-differences.json']],'collection_handoff':pin(collection),'git':git,'limits':['Issue state is the original saved readback, not a fresh network check.','Original source/owner scientific assessments are preserved, not repeated.','No prospective package or future commit is approved by this initial check.']}
+out=D/'original-checks-v2.json'
+with out.open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'checks':len(checks),'failures':result['failures'],'receipt':str(out),'sha256':sha(out)}))
+raise SystemExit(bool(result['failures']))
