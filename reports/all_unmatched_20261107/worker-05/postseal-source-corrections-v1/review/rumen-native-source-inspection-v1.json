@@ -1,0 +1,81 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/chemicals/decisions.json",
+        "sha256": "201a40207a764b63e7ff5adb3abd393356da1ac7d9a4b5d5f32d38d509b286b1",
+        "role": "target"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json",
+        "sha256": "174dbc2b848e725e45b3200e21dbebbb6c306b868c11196f7c7754bd6eb768be",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+        "sha256": "5aa42dfa4f471d0b830b969869547c706757082a88c9cb1c1729aa55f65f345b",
+        "role": "target"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de",
+        "role": "target"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+        "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a",
+        "role": "target"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/issues/issue1204-comments.json",
+        "sha256": "f9cadfd5cf14c4ba7cd4243a25cb9ea998b8c754e059c0588e194c5db1e466fe",
+        "role": "context"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "R1193-DEP-rumen-pyglucose",
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+      "label": "PY-glucose-rumen_Fluid",
+      "kind": "source",
+      "ownership_note": "Existing causal dependency only; no additional source ownership."
+    },
+    {
+      "target_id": "R1193-DEP-rumen-casitone",
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+      "label": "Casitone_Yeast_Extract_Rumen_Fluid",
+      "kind": "source",
+      "ownership_note": "Existing causal dependency only; no additional source ownership."
+    },
+    {
+      "target_id": "R1193-DEP-rumen-pyg",
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+      "label": "PYG_Rumen_Fluid",
+      "kind": "source",
+      "ownership_note": "Existing causal dependency only; no additional source ownership."
+    },
+    {
+      "target_id": "RUMEN-CASE-91",
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/decisions.json",
+      "selector": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "label": "Rumen fluid, clarified (see Medium No. 266)",
+      "kind": "snapshot_row",
+      "ownership_note": "Two assigned JCM occurrences; source holds retained."
+    }
+  ]
+}

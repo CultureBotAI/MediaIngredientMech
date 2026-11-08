@@ -1,0 +1,438 @@
+{
+  "author": "/root/materials_research",
+  "at": "2026-11-08T08:32:28.638400+00:00",
+  "proposal_id": "W05-FINAL-MAT-007",
+  "before_sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+  "predecessor_capture": {
+    "root": "artifact",
+    "path": "final-correction-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+    "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+  },
+  "after_capture": {
+    "root": "artifact",
+    "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+    "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+  },
+  "semantic_delta": [
+    {
+      "path": "/curation_history/7",
+      "before": null,
+      "after": {
+        "timestamp": "2026-11-08T08:32:28.638400+00:00",
+        "curator": "/root/materials_research (W05 postseal isolated proposal)",
+        "action": "CORRECTED_SOURCE_CONTEXT",
+        "changes": "Resolve W06-TU-004 at https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718748704: replace the irrelevant ADC/OADC context in supplied_form[5].notes with TOGO M194/JCM201 BSK context. Preserve literal Fraction V and the source 50 g batch amount without inventing a final volume or 50 g/L concentration. All other supplied forms, identifiers, mapping evidence, synonyms, occurrence counts, prior history and holds are unchanged. This is an isolated W05 proposal, not a coordinator union or maintained write; JCM220/MediaDive3888 #1222 WITHHOLD and inherited A7030 claim limitations remain.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "llm_model": "gpt-6"
+      }
+    },
+    {
+      "path": "/supplied_form/5/notes",
+      "before": "Exact source case 70; Fraction V explicitly stated; manufacturer/catalog and final ADC/OADC volume not established.",
+      "after": "Exact source case 70, CultureMech:008529: TOGO M194 BSK Medium, with original-source metadata JCM201, explicitly lists Bovine albumin, Fraction V as a 50 g batch input. Manufacturer/catalogue and exact final BSK preparation volume are not established; no 50 g/L concentration is asserted. The formulation is TOGO-provider-backed; the pinned JCM201 response contains no recipe. Source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194. Capture SHA256 84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9."
+    }
+  ],
+  "text_diff_capture": {
+    "root": "artifact",
+    "path": "postseal-source-corrections-v1/materials/predecessor-to-successor.diff",
+    "sha256": "e70622cbc40b11d001ec9a8bf4a9b550d7d5995c7caf68765ca2d21487dc1004"
+  },
+  "history_preserved_as_prefix": true,
+  "other_payload_fields_equal": true,
+  "case_deltas": [
+    {
+      "case_id": "CM_NAME:2701602263ac243d10081e0843627a646720bf7455077968f495cb41466d217a",
+      "case_index": 11,
+      "before_object_sha256": "a0d36df6a0c0e322f800bcc9dc4ee4c5653ebd480fd5f0732950fa7c372522c6",
+      "after_object_sha256": "162c2c61b62683e6b2a6ddd138e9659446e73109873c9483835c39a80c28bd15",
+      "changes": [
+        {
+          "path": "/evidence_ids/13",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+        },
+        {
+          "path": "/independent_review/evidence_ids/0",
+          "before": "FINAL-SCIENTIFIC-REVIEW-MATERIALS",
+          "after": null
+        },
+        {
+          "path": "/independent_review/reviewer",
+          "before": "/root/media_research",
+          "after": null
+        },
+        {
+          "path": "/independent_review/scope",
+          "before": "Review complete, not all scientific questions resolved or any admission approved.",
+          "after": "New whole BSA payload and all five linked cases require independent review; prior complete review remains historical only."
+        },
+        {
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "path": "/postseal_reassessment",
+          "before": null,
+          "after": {
+            "author": "/root/materials_research",
+            "at": "2026-11-08T08:32:28.638400+00:00",
+            "finding_id": "W06-TU-004",
+            "predecessor_decision_object_sha256": "a0d36df6a0c0e322f800bcc9dc4ee4c5653ebd480fd5f0732950fa7c372522c6",
+            "science_changed": false,
+            "scientific_conclusion": "TOGO M2879 and M2880 each explicitly list 2.5 g Bovine albumin fraction V in the ADC composition, separately from the 50 ml ADC receiving dose. Keep the existing Fraction V supplied-form context. The water input is not proof of exact final stock volume, and a named Difco supplement is not proof of a specific albumin catalogue. The M2879 provider table versus quoted study ADC/OADC conflict remains a source hold.",
+            "historical_independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "FINAL-SCIENTIFIC-REVIEW-MATERIALS"
+              ],
+              "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+              "reviewer": "/root/media_research"
+            },
+            "inherited_metadata_limit": "Earlier reassessment, fragment hashes and final_assembly_provenance describe their historical versions. They are retained as lineage and do not bind or approve this changed whole payload.",
+            "after_capture": {
+              "root": "artifact",
+              "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+              "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "CM_NAME:3922dd30207b7e9f6eae52095a5eef697923a50484871e8f52aaa5f0722685e5",
+      "case_index": 20,
+      "before_object_sha256": "e3975d422393c2c85ddda9e8d38491b48f1a12ed5a3c8c2f167961337311bb45",
+      "after_object_sha256": "ec8036980b9e7273581ab17e44a7f706f2bf929ee25f8b4e2c8aedae0039e1c3",
+      "changes": [
+        {
+          "path": "/evidence_ids/10",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+        },
+        {
+          "path": "/independent_review/evidence_ids/0",
+          "before": "FINAL-SCIENTIFIC-REVIEW-MATERIALS",
+          "after": null
+        },
+        {
+          "path": "/independent_review/reviewer",
+          "before": "/root/media_research",
+          "after": null
+        },
+        {
+          "path": "/independent_review/scope",
+          "before": "Review complete, not all scientific questions resolved or any admission approved.",
+          "after": "New whole BSA payload and all five linked cases require independent review; prior complete review remains historical only."
+        },
+        {
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "path": "/postseal_reassessment",
+          "before": null,
+          "after": {
+            "author": "/root/materials_research",
+            "at": "2026-11-08T08:32:28.638400+00:00",
+            "finding_id": "W06-TU-004",
+            "predecessor_decision_object_sha256": "e3975d422393c2c85ddda9e8d38491b48f1a12ed5a3c8c2f167961337311bb45",
+            "science_changed": false,
+            "scientific_conclusion": "TOGO M1946 (original-source metadata NBRC1219) explicitly lists 50 g Bovine albumin (Fraction V) in the OADC preparation. Keep this separate from the 100 ml receiving dose. The listed 1 L water is a stock input, not an independently established exact final volume. Preserve the frozen TOGO-versus-NBRC main-water source-version distinction and the unknown albumin catalogue.",
+            "historical_independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "FINAL-SCIENTIFIC-REVIEW-MATERIALS"
+              ],
+              "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+              "reviewer": "/root/media_research"
+            },
+            "inherited_metadata_limit": "Earlier reassessment, fragment hashes and final_assembly_provenance describe their historical versions. They are retained as lineage and do not bind or approve this changed whole payload.",
+            "after_capture": {
+              "root": "artifact",
+              "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+              "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "CM_NAME:8ba1df295abb60b7fb8cd7e12f80b861e3d2e7634dd64e3bfb7e88df0db0fd08",
+      "case_index": 70,
+      "before_object_sha256": "129a35c888f0da0481988b5183171aa4f9490ac3c8d5fd3bb4b05dd396837a99",
+      "after_object_sha256": "a0c9e7eb467c5456de4a172743c52fe45bf6381cbdb40cb1eb79d67c3e11588d",
+      "changes": [
+        {
+          "path": "/applicability",
+          "before": "Full final materials reassessment, case 70: The inspected TOGO M194 record explicitly says bovine albumin, Fraction V. Retain that grade as constituent provenance; the current unavailable endpoint does not become primary proof and unnumbered fractions remain separate.",
+          "after": "Bound to CultureMech:008529, TOGO M194 BSK, occurrence CM_OCC:553f0c2bb6a0ed4037dcdff9eb7e97c2cbcd332c9d0ee7c301545ead26ab2f85 at ingredients/6. TOGO M194 is BSK Medium with original-source metadata JCM201. Its complete component table explicitly lists Bovine albumin, Fraction V, 50 g, as a main batch input. The recipe has 900 ml water, a 200 ml 7% gelatin input, 100 ml CMRL product and later final 6% rabbit-serum supplementation; these do not establish an exact final preparation volume. Correct only the irrelevant ADC/OADC wording to BSK context. Retain Fraction V, 50 g, unknown manufacturer/catalogue and unknown final volume; do not assert 50 g/L. The pinned JCM201 response says Nothing found, so it supplies no original-page corroboration."
+        },
+        {
+          "path": "/evidence_ids/11",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+        },
+        {
+          "path": "/evidence_ids/12",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSK-PRIMARY"
+        },
+        {
+          "path": "/evidence_ids/13",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSK-FILED-FINDING"
+        },
+        {
+          "path": "/independent_review/evidence_ids/0",
+          "before": "FINAL-SCIENTIFIC-REVIEW-MATERIALS",
+          "after": null
+        },
+        {
+          "path": "/independent_review/reviewer",
+          "before": "/root/media_research",
+          "after": null
+        },
+        {
+          "path": "/independent_review/scope",
+          "before": "Review complete, not all scientific questions resolved or any admission approved.",
+          "after": "New whole BSA payload and all five linked cases require independent review; prior complete review remains historical only."
+        },
+        {
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "path": "/issue_refs/1",
+          "before": null,
+          "after": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718748704"
+        },
+        {
+          "path": "/postseal_reassessment",
+          "before": null,
+          "after": {
+            "author": "/root/materials_research",
+            "at": "2026-11-08T08:32:28.638400+00:00",
+            "finding_id": "W06-TU-004",
+            "predecessor_decision_object_sha256": "129a35c888f0da0481988b5183171aa4f9490ac3c8d5fd3bb4b05dd396837a99",
+            "science_changed": true,
+            "scientific_conclusion": "TOGO M194 is BSK Medium with original-source metadata JCM201. Its complete component table explicitly lists Bovine albumin, Fraction V, 50 g, as a main batch input. The recipe has 900 ml water, a 200 ml 7% gelatin input, 100 ml CMRL product and later final 6% rabbit-serum supplementation; these do not establish an exact final preparation volume. Correct only the irrelevant ADC/OADC wording to BSK context. Retain Fraction V, 50 g, unknown manufacturer/catalogue and unknown final volume; do not assert 50 g/L. The pinned JCM201 response says Nothing found, so it supplies no original-page corroboration.",
+            "historical_independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "FINAL-SCIENTIFIC-REVIEW-MATERIALS"
+              ],
+              "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+              "reviewer": "/root/media_research"
+            },
+            "inherited_metadata_limit": "Earlier reassessment, fragment hashes and final_assembly_provenance describe their historical versions. They are retained as lineage and do not bind or approve this changed whole payload.",
+            "after_capture": {
+              "root": "artifact",
+              "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+              "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+            }
+          }
+        },
+        {
+          "path": "/reasoning",
+          "before": "The inspected TOGO M194 record explicitly says bovine albumin, Fraction V. Retain that grade as constituent provenance; the current unavailable endpoint does not become primary proof and unnumbered fractions remain separate.",
+          "after": "TOGO M194 is BSK Medium with original-source metadata JCM201. Its complete component table explicitly lists Bovine albumin, Fraction V, 50 g, as a main batch input. The recipe has 900 ml water, a 200 ml 7% gelatin input, 100 ml CMRL product and later final 6% rabbit-serum supplementation; these do not establish an exact final preparation volume. Correct only the irrelevant ADC/OADC wording to BSK context. Retain Fraction V, 50 g, unknown manufacturer/catalogue and unknown final volume; do not assert 50 g/L. The pinned JCM201 response says Nothing found, so it supplies no original-page corroboration."
+        }
+      ]
+    },
+    {
+      "case_id": "CM_NAME:f163ec7f355f01963af1b99f566d50cb82749e167f8cce8916145945ad4a2084",
+      "case_index": 118,
+      "before_object_sha256": "218500e07abf792e1f4e1c74a82435e94a22145efda65fbd0455e3ced53b548a",
+      "after_object_sha256": "8c1071b3b5adeb28016dbd3b5aec0973539a924d65683ef0090cc6a57b66ce45",
+      "changes": [
+        {
+          "path": "/evidence_ids/10",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+        },
+        {
+          "path": "/independent_review/evidence_ids/0",
+          "before": "FINAL-SCIENTIFIC-REVIEW-MATERIALS",
+          "after": null
+        },
+        {
+          "path": "/independent_review/reviewer",
+          "before": "/root/media_research",
+          "after": null
+        },
+        {
+          "path": "/independent_review/scope",
+          "before": "Review complete, not all scientific questions resolved or any admission approved.",
+          "after": "New whole BSA payload and all five linked cases require independent review; prior complete review remains historical only."
+        },
+        {
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "path": "/postseal_reassessment",
+          "before": null,
+          "after": {
+            "author": "/root/materials_research",
+            "at": "2026-11-08T08:32:28.638400+00:00",
+            "finding_id": "W06-TU-004",
+            "predecessor_decision_object_sha256": "218500e07abf792e1f4e1c74a82435e94a22145efda65fbd0455e3ced53b548a",
+            "science_changed": false,
+            "scientific_conclusion": "TOGO M2407 explicitly lists 50 g Bovine Albumin (Fraction V) in the OADC Enrichment composition, separately from the 100 ml receiving dose. Preserve the grade and OADC scope. The water input is not an exact final stock volume, and the named Difco enrichment does not independently identify an albumin catalogue.",
+            "historical_independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "FINAL-SCIENTIFIC-REVIEW-MATERIALS"
+              ],
+              "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+              "reviewer": "/root/media_research"
+            },
+            "inherited_metadata_limit": "Earlier reassessment, fragment hashes and final_assembly_provenance describe their historical versions. They are retained as lineage and do not bind or approve this changed whole payload.",
+            "after_capture": {
+              "root": "artifact",
+              "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+              "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "CM_NAME:f50ba478dda27e9481509c871585ed5a3aaeec815eaf4c521d1a58e791e928e1",
+      "case_index": 120,
+      "before_object_sha256": "dc57b1a054a6c10495bff305b4c99dd4f7bb188ce6d6010c23c3bb9dc24f5bca",
+      "after_object_sha256": "3fb62b8c4e7a4fa08cfc71e40346230f6a19b94030af4b547ff2ced309e03911",
+      "changes": [
+        {
+          "path": "/evidence_ids/16",
+          "before": null,
+          "after": "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+        },
+        {
+          "path": "/independent_review/evidence_ids/0",
+          "before": "FINAL-SCIENTIFIC-REVIEW-MATERIALS",
+          "after": null
+        },
+        {
+          "path": "/independent_review/reviewer",
+          "before": "/root/media_research",
+          "after": null
+        },
+        {
+          "path": "/independent_review/scope",
+          "before": "Review complete, not all scientific questions resolved or any admission approved.",
+          "after": "New whole BSA payload and all five linked cases require independent review; prior complete review remains historical only."
+        },
+        {
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "path": "/postseal_reassessment",
+          "before": null,
+          "after": {
+            "author": "/root/materials_research",
+            "at": "2026-11-08T08:32:28.638400+00:00",
+            "finding_id": "W06-TU-004",
+            "predecessor_decision_object_sha256": "dc57b1a054a6c10495bff305b4c99dd4f7bb188ce6d6010c23c3bb9dc24f5bca",
+            "science_changed": false,
+            "scientific_conclusion": "The preserved original M2400 and M2401 API records each list 2.5 g Bovine albumin fraction in their ADC composition, without a fraction number. Retain the unnumbered supplied form; neither the other Fraction V cases nor the ADC label licenses inserting V. The historical archive has a batch fetch timestamp, not exact per-row acquisition times. No successful current retrieval or catalogue identity is inferred.",
+            "historical_independent_review": {
+              "status": "complete",
+              "evidence_ids": [
+                "FINAL-SCIENTIFIC-REVIEW-MATERIALS"
+              ],
+              "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+              "reviewer": "/root/media_research"
+            },
+            "inherited_metadata_limit": "Earlier reassessment, fragment hashes and final_assembly_provenance describe their historical versions. They are retained as lineage and do not bind or approve this changed whole payload.",
+            "after_capture": {
+              "root": "artifact",
+              "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+              "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "proposal_metadata_delta": [
+    {
+      "path": "/after_capture/path",
+      "before": "final-correction-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+      "after": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml"
+    },
+    {
+      "path": "/after_capture/sha256",
+      "before": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a",
+      "after": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+    },
+    {
+      "path": "/description",
+      "before": "Extend source-specific bovine-albumin preparation provenance on the existing generic BSA owner. Fraction V is recorded only where literal; the unnumbered fraction in M2400/M2401 remains unnumbered. No generic exact synonym, catalog, stock volume or albumin-origin reinterpretation is added. The exact scientific payload is retained after full source and owner re-review; historical support is not transferred to unreviewed claims.",
+      "after": "Retain the five source-specific BSA supplied forms on the existing generic owner, correcting only case 70 supplied_form[5].notes from ADC/OADC to TOGO M194/JCM201 BSK context, with literal Fraction V and 50 g batch input. Exact final volume and manufacturer/catalogue remain unknown. All other scientific payload fields are unchanged; one truthful history event is appended. This is a W05-only successor, not adoption or approval of the coordinator union."
+    },
+    {
+      "path": "/evidence_ids/28",
+      "before": null,
+      "after": "POSTSEAL-MATERIALS-BSK-PRIMARY"
+    },
+    {
+      "path": "/evidence_ids/29",
+      "before": null,
+      "after": "POSTSEAL-MATERIALS-BSK-FILED-FINDING"
+    },
+    {
+      "path": "/evidence_ids/30",
+      "before": null,
+      "after": "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+    },
+    {
+      "path": "/independent_review/scope",
+      "before": null,
+      "after": "Exact new full YAML and all five linked decisions; no historical review transfers to changed bytes."
+    },
+    {
+      "path": "/postseal_predecessor",
+      "before": null,
+      "after": {
+        "proposal_id": "W05-FINAL-MAT-007",
+        "proposal_object_sha256": "3365e6e7b14d132cef5d59a30a0b01280b7eab7039696db556e41ee9d82a026e",
+        "base_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+          "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+        },
+        "exact_local_copy": {
+          "root": "artifact",
+          "path": "postseal-source-corrections-v1/materials/inputs/predecessor.yaml",
+          "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+        },
+        "finding_id": "W06-TU-004",
+        "issue_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718748704",
+        "changed_fields": [
+          "/supplied_form/5/notes",
+          "/curation_history/7"
+        ],
+        "author": "/root/materials_research",
+        "at": "2026-11-08T08:32:28.638400+00:00",
+        "conditional_integration_dependency": "Keep the existing independently reviewed #1222 JCM220/MediaDive3888 WITHHOLD on any future coordinator union and preserve every other worker origin. This isolated W05 payload does not contain or supersede that union."
+      }
+    }
+  ],
+  "mapping_evidence_attribution": "No MappingEvidence is added or retagged. This agent interpretation is disclosed in supplied-form notes, the LLM-assisted history and attributed primary assessment; inherited mapping evidence remains historical. Issue 1226 does not require inventing an ontology-mapping assertion for a context-only correction.",
+  "native_guarded_writer": {
+    "function": "mediaingredientmech.validation.write_validated.write_validated_ingredient",
+    "schema_path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    "schema_sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+    "status": "passed"
+  }
+}

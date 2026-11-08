@@ -1,0 +1,314 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "primary_author": "/root/media_research",
+  "completed_at": "2026-11-08T08:31:45.606803+00:00",
+  "completion": "completed",
+  "verdict": "pass_with_limitations",
+  "source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+  "input_manifest": {
+    "path": ".temp/w05-postseal-source-corrections-v1/media/MANIFEST.json",
+    "sha256": "dfca1c0f19b7deb87407da2ecf7311a01396816ad658928b0e4c9fd4bc1df44d"
+  },
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+      "case_input_sha256": "8e896e0ba3dafa169970f56ccf1429597e692b8c2fa9801251fcb7ee3539908b",
+      "selected_decision_object_sha256": "a1af0aa8b87cc5583b455ade77486ff09a46d8c86c8c4e35a2b19fa69348a15f",
+      "occurrence_ids": [
+        "CM_OCC:a74a96f03a905868769b28aca9d191d2ef477e363631b55c808eabde3c470da1",
+        "CM_OCC:432cc90659dd3c147962c14c35f5b74e88e621f9c83e54d808c18be9ce889d59",
+        "CM_OCC:f23017e41a699d752c82811af924efbd8db16207359b9a7d033dc87deb196687"
+      ],
+      "assessment": "The three frozen commercial-Difco occurrences retain their exact product scope: ATCC/TOGO M2266 names the279110 commercial powder separately from its scratch alternative; DSMZ1510 and solution3119 add37.4g named broth with other supplements outside the product. The manufacturer page352 explicitly qualifies its sixteen-input list as approximate and performance-adjustable. The appended qualification is supported without changing input quantities, source routes or assigning complete lot chemistry. No generic Marine owner merge, source admission or component grounding follows.",
+      "conclusion": "supported_bounded_report_successor",
+      "changed_decision_fields": [
+        "independent_review",
+        "evidence_ids",
+        "reasoning",
+        "postseal_reassessment"
+      ]
+    },
+    {
+      "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+      "case_input_sha256": "b62729c11d6e49e63656101ce94b5ce7e7ca73768e9f42a37f863587352a6837",
+      "selected_decision_object_sha256": "dd70c5146752cdc03f7320bc26fa8056eb94139793db14adc90f0695aac6d7be",
+      "occurrence_ids": [],
+      "assessment": "MediaDive ingredient1379 and solution3119 name the commercial Difco2216 preparation; the unrelated six-methylpenicillin grounding remains quarantined. The manufacturer page352 explicitly qualifies its sixteen-input list as approximate and performance-adjustable. The appended qualification is supported without changing input quantities, source routes or assigning complete lot chemistry. No generic Marine owner merge, source admission or component grounding follows.",
+      "conclusion": "supported_bounded_report_successor",
+      "changed_decision_fields": [
+        "independent_review",
+        "evidence_ids",
+        "reasoning",
+        "postseal_reassessment"
+      ]
+    }
+  ],
+  "payload_reviews": [
+    {
+      "proposal_id": "M1193-P-MARINE2216",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml",
+        "sha256": "1aff9c58110b7c111d5930fe60fd935f932ff0437ec17d12fc01e22da0c820be"
+      },
+      "assessment": "The full Marine Broth2216 successor correctly limits COMPLETE to all16 nominal printed dry-product inputs. The source explicitly calls the table approximate and permits performance-driven adjustment/supplementation. Exact quantities, UNMAPPED literal parts, existing commercial owner, catalog scope, three source routes and historical evidence remain intact. Earlier active agar-equivalence correction remains supported; no every-lot closure, new ingredient or owner merge is inferred.",
+      "field_assessments": [
+        {
+          "field": "component_assertion.evidence[0].notes",
+          "assessment": "Both the approximate-formula heading and adjustment/supplementation footnote are visually present on printed352. COMPLETE denotes all16 nominal printed dry inputs. Per-litre values refer to standard37.4g powder/1Lwater reconstitution; water and lot-specific unnamed supplementation are not invented components."
+        },
+        {
+          "field": "components",
+          "assessment": "All16 complete component objects are unchanged and independently compared to the manufacturer table; mg entries correctly retain their g/L-equivalent numeric representation. Generic Peptone and unspecified salts remain ungrounded.",
+          "entries": [
+            {
+              "name": "Peptone",
+              "value": "5",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Yeast extract",
+              "value": "1",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Ferric citrate",
+              "value": ".1",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Sodium chloride",
+              "value": "19.45",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Magnesium chloride",
+              "value": "5.9",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Magnesium sulfate",
+              "value": "3.24",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Calcium chloride",
+              "value": "1.8",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Potassium chloride",
+              "value": ".55",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Sodium bicarbonate",
+              "value": ".16",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Potassium bromide",
+              "value": ".08",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Strontium chloride",
+              "value": ".034",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Boric acid",
+              "value": ".022",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Sodium silicate",
+              "value": ".004",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Sodium fluoride",
+              "value": ".0024",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Ammonium nitrate",
+              "value": ".0016",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            },
+            {
+              "name": "Disodium phosphate",
+              "value": ".008",
+              "unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+            }
+          ]
+        },
+        {
+          "field": "ontology_mapping",
+          "assessment": "Unchanged active LLM_SUGGESTION identifies the existing local commercial preparation and withdraws old agar-only-equivalence support. The manufacturer distinguishes5.9gMgCl2+3.24gMgSO4 broth from8.8gMgCl2+3.24gNa2SO4 agar; this earlier correction remains supported."
+        },
+        {
+          "field": "curation_history",
+          "assessment": "All prior events remain byte-object equivalent and one attributed agent-assisted annotation records the bounded qualification. Historical false assertion remains historical and does not supply current support."
+        },
+        {
+          "field": "identifier/preferred_term/synonyms/supplied_form",
+          "assessment": "Existing registry continuity, product-qualified aliases and catalog279110 powder are retained; the manufacturer page identifies that catalogue. Scope caveat prevents assigning the package to every unqualified historical occurrence."
+        },
+        {
+          "field": "occurrence_statistics/notes/role_graph_fields",
+          "assessment": "Original19/19 counters and full existing notes remain unchanged; no current source release, role or graph claim is created. Current three assigned occurrence routes are independently preserved and are not substituted for historical owner counts."
+        }
+      ],
+      "limitations": [
+        "Generic Peptone and unspecified salts remain ungrounded.",
+        "Generic marine owners, worker03 union, source/role/export holds remain separately unresolved."
+      ]
+    }
+  ],
+  "finding_dispositions": [
+    {
+      "finding_id": "W06-TU-005",
+      "status": "resolved_in_bounded_isolated_successor",
+      "assessment": "Approximate-formula and performance footnote restored to current component evidence; COMPLETE retained relative to printed16inputs."
+    },
+    {
+      "finding_id": "W06-TU-003",
+      "status": "already_correct_in_unchanged_predecessor_fields",
+      "assessment": "Current active ontology notes already distinguish broth from agar on salt composition; only the nominal-formula qualification changes now."
+    }
+  ],
+  "read_ledger": [
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml",
+      "sha256": "1aff9c58110b7c111d5930fe60fd935f932ff0437ec17d12fc01e22da0c820be",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/Marine_Broth_2216.yaml",
+      "sha256": "0629311e2cd70175064d910a739ce425c05a6eece9fc3493738e06d67101ed63",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/full-frozen-cases.json",
+      "sha256": "6278528952abb05e0bcbc37a94540d94a2689334574a0969ed1eae0f8c847cf2",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/decisions.json",
+      "sha256": "218b2c0d11612a29703d4151530e464de110607b690fb777bfa22aaa2750fd1f",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/proposals.json",
+      "sha256": "8f4bdacf001892853c83e0c0585da2418d116e861c7bfed0cf8f60d0df0df073",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/evidence.json",
+      "sha256": "2a305849e03488ed3f7d8ffba4bfa8b8c70dbdb8a334e49119a0d9da23422d60",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/captures/marine-manual-reused.pdf",
+      "sha256": "de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "exact PDF byte authentication plus complete extracted text and rendered page inspection"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/captures/marine-manual-reused.txt",
+      "sha256": "03b4dc21e82a1908c891e97a76338dd76c1731e7a002cf1b0a8001e5d3eba2e7",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/captures/marine-manual-page-352.png",
+      "sha256": "436d51f24f1b9cc26ef023fbfb7c36c3e3245d214eadd9254c42bd6a0e7cccfc",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "visual image inspection"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/captures/marine-manual-original.meta.json",
+      "sha256": "f63ec8216d76ddc540dbd5c570e8de09c2cc0b49739ff265f6f6acbd43cfb5bd",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/captures/marine-manual.meta.json",
+      "sha256": "2a7e516d9f968ffdffeff0508670785afe914247bca49489bbd3d1adb418431f",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-00.txt",
+      "sha256": "f185a0908d88fb1b0318a374cdfe1999062835a28da125934810c1085fcc5161",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-01.txt",
+      "sha256": "45eef4259c17543cd1d9fb0215662d73589b5d61a0933a22b771dd3e541d91a6",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-02.txt",
+      "sha256": "c4788c0fbd52054f7b6f263d23a5ee226f3cfb5f64b8cc67b95b44d6caecb505",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-03.txt",
+      "sha256": "1351d6c4edd9e01317cff31b81870ea781647f04cc80775134438f1c8c9a35ea",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-06.txt",
+      "sha256": "5f74e5947d9ca31a31573c7f61ad3528d8aec1b4ffd8abe0faa76d50be4e0811",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-07.txt",
+      "sha256": "29cf5a04d03a22564305b4db4543394556304330a8ce36fc379fcdf9bd8b9f7a",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/media/input/evidence-08.txt",
+      "sha256": "0492ff4f37cb81b9c5c8a0fe6c27ddfb4c768a8fa0622a75f8f9d5a32a981396",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:31:45.606803+00:00",
+      "mode": "complete scoped content read"
+    }
+  ],
+  "new_findings": [],
+  "limitations": [
+    "Independent primary applicability review of this complete successor, not automatic reuse of prior whole-owner approval.",
+    "Native combined142-payload overlay and final public compilation remain root-owned later steps."
+  ]
+}

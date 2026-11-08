@@ -1,0 +1,153 @@
+identifier: NCIT:C85253
+preferred_term: bovine serum albumin
+ontology_mapping:
+  ontology_id: NCIT:C85253
+  ontology_label: Bovine Serum Albumin
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media;
+      samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the
+      term.'
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (label-exact)
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''bovine serum albumin'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+      CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+      fraction V/products as supplied forms, not exact synonyms. Preserve all seven
+      original recipe memberships and their preparation qualifiers.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 7
+  media_count: 7
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:9048-46-8 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.447453+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.878089+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T04:42:26.939508+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C85253 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518443+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 1/1 -> 7/7 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-24T07:10:47.880128+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+    CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+    fraction V/products as supplied forms, not exact synonyms. Preserve all seven
+    original recipe memberships and their preparation qualifiers.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:47:55.788030+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CORRECTED
+  changes: Extend source-specific bovine-albumin preparation provenance on the existing
+    generic BSA owner. Fraction V is recorded only where literal; the unnumbered fraction
+    in M2400/M2401 remains unnumbered. No generic exact synonym, catalog, stock volume
+    or albumin-origin reinterpretation is added. Exact isolated payload; no maintained
+    write. All prior scientific/publication holds preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:32:28.638400+00:00'
+  curator: /root/materials_research (W05 postseal isolated proposal)
+  action: CORRECTED_SOURCE_CONTEXT
+  changes: 'Resolve W06-TU-004 at https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718748704:
+    replace the irrelevant ADC/OADC context in supplied_form[5].notes with TOGO M194/JCM201
+    BSK context. Preserve literal Fraction V and the source 50 g batch amount without
+    inventing a final volume or 50 g/L concentration. All other supplied forms, identifiers,
+    mapping evidence, synonyms, occurrence counts, prior history and holds are unchanged.
+    This is an isolated W05 proposal, not a coordinator union or maintained write;
+    JCM220/MediaDive3888 #1222 WITHHOLD and inherited A7030 claim limitations remain.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 9048-46-8
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
+ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Bovine Serum Albumin
+  cas_rn: 9048-46-8
+  supplier: Sigma-Aldrich
+  catalog_number: A7030
+  form: lyophilized powder; heat shock fraction; protease free; fatty acid free; essentially
+    globulin free
+  notes: Original CultureBotHT product; supplier page confirms CAS and preparation.
+    Source-specific product, not a restriction on all seven recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md.
+- name: Bovine serum albumin fraction V
+  supplier: Sigma-Aldrich
+  catalog_number: A9647
+  notes: Explicit product in CultureMech:015191 preparation note; preserved from the
+    original recipe, not assigned to other recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json.
+- name: BSA solution
+  supplier: Sigma-Aldrich
+  catalog_number: A7409
+  form: solution
+  notes: Alternative product explicitly named in CultureMech:015191; no concentration
+    or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json.
+- name: Bovine albumin fraction V
+  notes: Exact source case 11; Fraction V explicitly stated; manufacturer/catalog
+    and final ADC/OADC volume not established.
+- name: Bovine albumin (Fraction V)
+  notes: Exact source case 20; Fraction V explicitly stated; manufacturer/catalog
+    and final ADC/OADC volume not established.
+- name: Bovine albumin, Fraction V
+  notes: 'Exact source case 70, CultureMech:008529: TOGO M194 BSK Medium, with original-source
+    metadata JCM201, explicitly lists Bovine albumin, Fraction V as a 50 g batch input.
+    Manufacturer/catalogue and exact final BSK preparation volume are not established;
+    no 50 g/L concentration is asserted. The formulation is TOGO-provider-backed;
+    the pinned JCM201 response contains no recipe. Source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194.
+    Capture SHA256 84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9.'
+- name: Bovine Albumin (Fraction V)
+  notes: Exact source case 118; Fraction V explicitly stated; manufacturer/catalog
+    and final ADC/OADC volume not established.
+- name: Bovine albumin fraction
+  notes: Exact source case 120; fraction number unspecified; do not infer V.
+notes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+  CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+  fraction V/products as supplied forms, not exact synonyms. Preserve all seven original
+  recipe memberships and their preparation qualifiers. Extend source-specific bovine-albumin
+  preparation provenance on the existing generic BSA owner. Fraction V is recorded
+  only where literal; the unnumbered fraction in M2400/M2401 remains unnumbered. No
+  generic exact synonym, catalog, stock volume or albumin-origin reinterpretation
+  is added. Source-qualified proposal under issue1193. No ingredient roles, assay
+  outcomes, complete-owner support or release admission are approved. Preserve all
+  frozen source and owner holds; component uncertainty is stated separately from whole-material
+  identity.

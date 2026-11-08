@@ -1,0 +1,65 @@
+{
+  "reviewer": "/root/final_skeptical/preservation_audit",
+  "completed_at": "2026-11-08T08:40:35.047859+00:00",
+  "payload": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml",
+    "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"
+  },
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "method": "Read-only independent call to pinned native _row_from_yaml with exact full record and explicit empty owner index; no sibling-owner or final export admission asserted. Native closed-schema validate_ingredient independently passes.",
+  "schema_errors": [],
+  "rows": [
+    {
+      "subject_id": "MIM:Tris_Hydrochloride_Salt",
+      "subject_label": "Tris hydrochloride salt",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:9754",
+      "object_label": "tris",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/137/329/t3253pis.pdf|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "Tris hydrochloride (crystalline salt)",
+      "validation_method": ""
+    },
+    {
+      "subject_id": "MIM:Tris_Hydrochloride_Salt",
+      "subject_label": "Tris hydrochloride salt",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "cas:1185-53-1",
+      "object_label": "Tris hydrochloride salt",
+      "object_source": "registry:cas",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/137/329/t3253pis.pdf|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving cas:1185-53-1 alongside parent CHEBI:9754.",
+      "other": "CAS:1185-53-1",
+      "validation_method": ""
+    },
+    {
+      "subject_id": "MIM:Tris_Hydrochloride_Salt",
+      "subject_label": "Tris hydrochloride salt",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.compound:tris_hydrochloride_salt",
+      "object_label": "Tris hydrochloride salt",
+      "object_source": "kgm:compound",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/137/329/t3253pis.pdf|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:tris_hydrochloride_salt alongside parent CHEBI:9754.",
+      "other": "CAS:1185-53-1",
+      "validation_method": ""
+    }
+  ],
+  "matches_author_receipt_rows": true,
+  "stored_mapping_quality": "NARROW_MATCH",
+  "mapping_evidence_type": "LLM_SUGGESTION",
+  "qualification": "Native semapv:ManualMappingCuration output is the producer vocabulary, not evidence of a human-authored MappingEvidence assertion. No maintained export performed."
+}

@@ -1,0 +1,20 @@
+{
+  "finding_id": "W05-POSTSEAL-ASSEMBLY-REVIEW-001",
+  "reviewer": "/root/final_skeptical",
+  "observed_at": "2026-11-08T08:47:15.148341+00:00",
+  "status": "reported_to_root_before_fix",
+  "severity": "report_accuracy",
+  "path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/README.md",
+  "sha256": "e3dffaa8edbcd5796c81e3d8e67e6564efdd5073f02f08b66d4e4c71c2349230",
+  "exact_before": "the remaining UN8 decision objects and UN5 proposal objects retain their exact predecessor content",
+  "independent_reproduction": {
+    "old_core": "reports/all_unmatched_20261107/worker-05/final-correction-v1/core",
+    "new_core": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/core",
+    "method": "Parse old/newDandP; exact object equality keyedbycase_id/proposal_id; all188Dsand142Ps present.",
+    "unchanged_decisions": 180,
+    "changed_decisions": 8,
+    "unchanged_proposals": 137,
+    "changed_proposals": 5
+  },
+  "bounded_fix": "Correct only unresolved README count placeholders using derived180/137values. Preserve exact before README/generator and this finding; rerender successor and rereview. No core, payload, source, or gate change."
+}

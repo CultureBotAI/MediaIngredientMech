@@ -1,0 +1,184 @@
+{
+  "fragment": true,
+  "merge_key": "case_id",
+  "base": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/core/decisions.json",
+    "sha256": "bd500b25a9c23cef63a0eac48ab7b9f00d942e3f405cbad8acae956f9e74081b"
+  },
+  "decisions": [
+    {
+      "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Rumen fluid, clarified (see Medium No. 266)",
+        "source_label": "Rumen fluid, clarified (see Medium No. 266)",
+        "raw_source_label": "Rumen fluid, clarified (see Medium No. 266)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5935adfdab3abba3ad49de3bf66b06bd6ab425af20ea315a7c169ae4ec4a36b8",
+        "CM_OCC:39c25bd01d2ee83bcda7de5b99ec410dab0b50232ce71a257cb1ad3d4adbd3ac"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both JCM1423 and JCM1424 reference clarified rumen fluid from JCM266. JCM266 describes preheated rumen contents followed by centrifugation and supernatant collection. The different receiving doses, 50 versus 20 ml, do not establish a different fluid identity. The three pre-existing dependent MIM mixtures have recovered MicrobeDecoder labels that say only rumen fluid. Their successor proposals withdraw the unsupported clarification claim and retain an UNMAPPED part without an identifier; they do not redirect those parts to the clarified owner or import additional source-case ownership.",
+      "applicability": "The existing Clarified_rumen_fluid owner spans processed ruminal fluid. Its MICRO0000520 exact target requires cow origin, but primary DSMZ161/212 expressly allow cow OR sheep, while JCM266/355/1201 do not state an animal species. Reuse the existing processed-fluid owner with a local registry identity rather than create a duplicate or infer cow. This is a variable biological material, not an assertion that every source preparation has identical species or composition. JCM266 and DSMZ161 processing details remain distinct supplied forms; no unprocessed rumen-fluid equivalence is asserted. The three dependent-owner corrections are causally linked to this assigned owner correction. Their raw MicrobeDecoder source fields have now been inspected for the limited processing claim; neither their full formulations nor all underlying biological observations are approved. The six publication retrieval paths tried by web and direct HTTP did not yield full source publications, so the exact processing bridge remains unverified. Historical JCM/DSMZ clarification protocols cannot supply that bridge for these three separate labels.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1423",
+        "ROOT-jcm-1424",
+        "ROOT-jcm-266",
+        "ROOT-RECIPE-47166c7750acf289",
+        "ROOT-RECIPE-9969248462e7fa50",
+        "R1193-OWNER-Clarified_rumen_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-clarified-rumen",
+        "R1193-final-owner-preflight",
+        "R1193-FLUID-md-161",
+        "R1193-FLUID-md-212",
+        "R1193-FLUID-md-J146",
+        "R1193-FLUID-md-J563",
+        "R1193-FLUID-togo-M567",
+        "R1193-FLUID-jcm-355",
+        "R1193-FLUID-jcm-1201",
+        "R1193-FLUID-md-P2",
+        "R1193-fluid-origin-search",
+        "R1193-synonym-policy",
+        "R1193-DEP-legacy-research",
+        "R1193-DEP-integration-failure",
+        "R1193-DEP-owner-pyglucose",
+        "R1193-DEP-owner-casitone",
+        "R1193-DEP-owner-pyg",
+        "FINAL-SCIENTIFIC-REVIEW-CHEMICALS",
+        "POSTSEAL-CHEM-RAW-PARENTS",
+        "POSTSEAL-CHEM-1204-COMMENT",
+        "POSTSEAL-CHEM-1237",
+        "POSTSEAL-CHEM-FINDING001",
+        "POSTSEAL-CHEM-PRIMARY-ACCESS"
+      ],
+      "proposal_ids": [
+        "R1193-P-clarifiedrumen266",
+        "R1193-DEP-rumen-pyglucose",
+        "R1193-DEP-rumen-casitone",
+        "R1193-DEP-rumen-pyg"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+          "sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967"
+        },
+        {
+          "path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+          "sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777"
+        },
+        {
+          "path": "data/ingredients/mapped/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+          "sha256": "8ce8d3f6c8e8bd0a2548f088e5308a9453319e830e094d3e7785734605ea0da5"
+        },
+        {
+          "path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+          "sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1204",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": [],
+        "scope": "Successor decision and three complete dependent payloads require independent review; prior reviewed bytes remain historical."
+      },
+      "primary_reviewer": "/root",
+      "scope_limitations": "Source identity and preparation boundary only; no role, organism-growth, complete-owner or export approval. Source-only cases have no invented MIM owner; native campaign source-case contract applies.",
+      "authored_fragment_decision_sha256": "503de7bc570ffc11517ffadfd9d6efda739b72d574d5a345a4a1c0eda194a12c",
+      "primary_author": "/root",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+        "downstream_holds": [],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": []
+      },
+      "case_index": 91,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "The existing Clarified_rumen_fluid owner spans processed ruminal fluid. Its MICRO0000520 exact target requires cow origin, but primary DSMZ161/212 expressly allow cow OR sheep, while JCM266/355/1201 do not state an animal species. Reuse the existing processed-fluid owner with a local registry identity rather than create a duplicate or infer cow. This is a variable biological material, not an assertion that every source preparation has identical species or composition. JCM266 and DSMZ161 processing details remain distinct supplied forms; no unprocessed rumen-fluid equivalence is asserted.",
+        "primary_searches_performed": [
+          "ROOT-jcm-266",
+          "R1193-OWNER-Clarified_rumen_fluid",
+          "R1193-current-full-owner-contexts",
+          "R1193-current-occurrence-comparison",
+          "R1193-ols-clarified-rumen"
+        ],
+        "independent_findings_remediation": [
+          "The existing Clarified_rumen_fluid owner spans processed ruminal fluid. Its MICRO0000520 exact target requires cow origin, but primary DSMZ161/212 expressly allow cow OR sheep, while JCM266/355/1201 do not state an animal species. Reuse the existing processed-fluid owner with a local registry identity rather than create a duplicate or infer cow. This is a variable biological material, not an assertion that every source preparation has identical species or composition. JCM266 and DSMZ161 processing details remain distinct supplied forms; no unprocessed rumen-fluid equivalence is asserted."
+        ],
+        "author_field": "correction_reassessment"
+      },
+      "predecessor_decision_sha256": "7047ac936f47716e982d8570307a7f7fed6b30f24e83b4d4239a947eb295ee7a",
+      "prior_independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "C1193-INDEPENDENT-ROOT"
+        ]
+      },
+      "final_correction_review": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "prior_decision_sha256": "1a1352a0d9c13246b0d7538ffc5606ec3b8535db2f9233db9dc53bd3e7be0a3d",
+        "scope": "Complete assigned case and complete linked payload review; original case/occurrence/owner hashes and holds are retained. See read ledger for exact primary capture scope.",
+        "proposal_ids": [
+          "R1193-P-clarifiedrumen266",
+          "R1193-DEP-rumen-pyglucose",
+          "R1193-DEP-rumen-casitone",
+          "R1193-DEP-rumen-pyg"
+        ],
+        "conditional_proposal_ids": [],
+        "whole_owner_approval": false
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "chemicals",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/chemical-supplement-v1/decisions-v2.json",
+        "selected_fragment_sha256": "06f85eefa0dbcaa70f6b5c422ff2cd824f73a467af543694bebe8990ee6caeaa",
+        "selected_decision_object_sha256": "946cfb539b5715dfaa9ae20ce513902e4201f583afb4a50f3774a9604e245ddc",
+        "predecessor_decision_object_sha256": "1a1352a0d9c13246b0d7538ffc5606ec3b8535db2f9233db9dc53bd3e7be0a3d",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "postseal_prior_independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-CHEMICALS"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/materials_research"
+      },
+      "postseal_correction": {
+        "finding_id": "W05-POSTSEAL-CHEM-001",
+        "author": "Codex worker05 /root/chemicals_research postseal source review",
+        "timestamp": "2026-11-08T08:34:36.020247+00:00",
+        "predecessor_decision_object_sha256": "37b9ecd4fb2298a5f72749cae67a50ed43e34c2fc48fda15d2049b31ef393d7c",
+        "changed_proposal_ids": [
+          "R1193-DEP-rumen-pyglucose",
+          "R1193-DEP-rumen-casitone",
+          "R1193-DEP-rumen-pyg"
+        ],
+        "source_case_input_occurrence_owner_and_hold_objects_unchanged": true
+      }
+    }
+  ]
+}

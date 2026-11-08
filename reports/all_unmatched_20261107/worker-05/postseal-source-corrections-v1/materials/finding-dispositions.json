@@ -1,0 +1,42 @@
+{
+  "author": "/root/materials_research",
+  "at": "2026-11-08T08:32:28.638400+00:00",
+  "findings": [
+    {
+      "finding_id": "W06-TU-004",
+      "filed_before_fix": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718748704",
+      "status": "primary correction prepared; independent review pending",
+      "reproduction": {
+        "capture": {
+          "root": "artifact",
+          "path": "postseal-source-corrections-v1/materials/inputs/predecessor.yaml",
+          "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+        },
+        "pointer": "/supplied_form/5/notes",
+        "value": "Exact source case 70; Fraction V explicitly stated; manufacturer/catalog and final ADC/OADC volume not established."
+      },
+      "remedy": {
+        "capture": {
+          "root": "artifact",
+          "path": "postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+          "sha256": "78ea46d77f007d7e7e126bb40d6b7c951e797ff2547e7fb25284ac261c765f86"
+        },
+        "pointer": "/supplied_form/5/notes",
+        "value": "Exact source case 70, CultureMech:008529: TOGO M194 BSK Medium, with original-source metadata JCM201, explicitly lists Bovine albumin, Fraction V as a 50 g batch input. Manufacturer/catalogue and exact final BSK preparation volume are not established; no 50 g/L concentration is asserted. The formulation is TOGO-provider-backed; the pinned JCM201 response contains no recipe. Source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194. Capture SHA256 84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9."
+      },
+      "evidence_ids": [
+        "POSTSEAL-MATERIALS-BSK-PRIMARY",
+        "POSTSEAL-MATERIALS-BSK-FILED-FINDING",
+        "POSTSEAL-MATERIALS-BSA-ASSESSMENT"
+      ],
+      "limits": [
+        "No 50 g/L or exact final volume.",
+        "No new supplier/catalogue identity.",
+        "No change to the other four BSA source cases.",
+        "#1222 quantity WITHHOLD and A7030 processing/purity limits remain separate.",
+        "No owner, role, component or export admission."
+      ]
+    }
+  ],
+  "new_scientific_findings": []
+}

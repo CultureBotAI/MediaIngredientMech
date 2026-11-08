@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T08:31:45.606803+00:00",
+  "reviewer": "/root/final_skeptical",
+  "command_scope": "Read captured issues",
+  "error": "AttributeError: 'list' object has no attribute 'get'",
+  "cause": "Captured gh --paginate --slurp comments are nested page arrays. Initial display loop assumed flat array.",
+  "effect": "No source or report payload written; retried recursive display and read current complete issue text."
+}

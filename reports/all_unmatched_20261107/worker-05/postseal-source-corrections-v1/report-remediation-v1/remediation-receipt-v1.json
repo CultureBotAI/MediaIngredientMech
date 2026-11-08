@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-08T08:47:26.053975+00:00",
+  "author": "/root",
+  "reported_to_user_before_fix": true,
+  "reviewer": "/root/final_skeptical",
+  "finding": "README unchanged-count placeholder collision; exact independent finding ID bound in final assembly review",
+  "before": {
+    "path": "report-remediation-v1/README-before.md",
+    "sha256": "e3dffaa8edbcd5796c81e3d8e67e6564efdd5073f02f08b66d4e4c71c2349230"
+  },
+  "after": {
+    "path": "README.md",
+    "sha256": "7848013d0e3f6d9477aa156a3f38b2f8dbe55c5219953c49239c942260da86cb"
+  },
+  "changes": [
+    {
+      "before": "UN8",
+      "after": "180",
+      "field": "unchanged decision object count"
+    },
+    {
+      "before": "UN5",
+      "after": "137",
+      "field": "unchanged proposal object count"
+    }
+  ],
+  "cause": "write_summary.py replaced CHANGED_D/CHANGED_P before UNCHANGED_D/UNCHANGED_P and accidentally matched suffixes.",
+  "source_or_core_changes": false,
+  "prior_generator_preserved": {
+    "path": "report-remediation-v1/write_summary-before.py",
+    "sha256": "c8bc75a2cf8fbffd39325927ab3b647805a0e7d5ef5140a082d2c471bad41f7e"
+  }
+}

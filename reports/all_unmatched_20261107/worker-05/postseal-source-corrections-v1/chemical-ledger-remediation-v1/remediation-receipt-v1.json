@@ -1,0 +1,144 @@
+{
+  "finding_id": "W05-POSTSEAL-FAMILY-REVIEW-001",
+  "author": "/root/chemicals_research",
+  "llm_assisted": true,
+  "timestamp": "2026-11-08T08:41:02.421411+00:00",
+  "reported_before_fix": "Parent /root reported the independent finding to the coordinator/user before authorizing this isolated successor.",
+  "finding": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-postseal-source-corrections-v1/review/family-audit/new-findings-v1.json",
+    "sha256": "ee9a8646e93cffddff8e167bd65e8b9aee2c5f272979c1d5283fc51c717269c0"
+  },
+  "predecessor_ledger": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-postseal-source-corrections-v1/chemicals/family-applicability-audit-v1.json",
+    "sha256": "91031fef92918eab50f2a1ea411d78f413dd877ebb904797a189ba16ec93f6dd"
+  },
+  "successor_ledger": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-postseal-source-corrections-v1/chemical-ledger-remediation-v1/family-applicability-audit-v2.json",
+    "sha256": "b6c1f299c57b904aa0b0ccc82e025f5acffa43c114596e4f0154c7dab0723670"
+  },
+  "diff": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-postseal-source-corrections-v1/chemical-ledger-remediation-v1/family-applicability-v1-to-v2.diff",
+    "sha256": "4dca6969c4b26e872470a8d5c96c8e043709043123f82cda92427c095b99e71a"
+  },
+  "matrix": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/family-findings-triage-v1/findings-matrix-v2.json",
+    "sha256": "4da250f4e1fb658efb4e45f09507031bda99b1a66e9d5f59d3aabaf6a999fb4f"
+  },
+  "issue_comment_binding": {
+    "path": ".temp/w05-postseal-source-corrections-v1/issues/issue1237-comments.json",
+    "sha256": "5f4d1365343b51ad2bb55c331f0e68ee1f2a753907e4d595e5c3af9a2e0751db",
+    "comment_id": 6719103915,
+    "applies_to": "sv1-bio-calf_blood_togo_m2854 / W10 case44, not entry970 calf-serum1303"
+  },
+  "exact_field_changes": [
+    {
+      "json_pointer": "/rows/2/applicability_assessment",
+      "finding_ids": [
+        "W01-FPC-PA-003"
+      ],
+      "entry_indices": [
+        747
+      ],
+      "before": "The NBRC1321 cyanocobalamin stock and the JCM403 generic B12 comparison concern a W07 stock. The existing W05 thiamine403 stock is a different solute and is not implicated by name or medium number alone. No B12 owner is created or changed here.",
+      "after": "The NBRC1321 cyanocobalamin stock is W08 frozen entry 747. Its source explicitly names cyanocobalamin, while the JCM403 generic B12 comparison remains unresolved as a possible same preparation. The existing W05 thiamine403 stock is a different solute and is not implicated by name or medium number alone. No B12 owner is created or changed here."
+    },
+    {
+      "json_pointer": "/rows/8/applicability_assessment",
+      "finding_ids": [
+        "BIO-COMP-003"
+      ],
+      "entry_indices": [
+        425,
+        540
+      ],
+      "before": "W05 Polypeptone already uses a generic local identity and rejects the three unsupported Hipolypepton product aliases. Bare historical labels do not establish a BD/Japanese product. The competing W08 whole-owner proposal requires coordinator reconciliation; this audit chooses no winner and does not merge its history into W05.",
+      "after": "W05 Polypeptone already uses a generic local identity and rejects the three unsupported Hipolypepton product aliases. Bare historical labels do not establish a BD/Japanese product. The competing W06 whole-owner proposal, frozen entry 540, requires coordinator reconciliation; this audit chooses no winner and does not merge its history into W05."
+    },
+    {
+      "json_pointer": "/rows/11/applicability_assessment",
+      "finding_ids": [
+        "MIN-F01"
+      ],
+      "entry_indices": [
+        624,
+        657
+      ],
+      "before": "Hutner JCM932/JCM1464/NBRC589 union is parent-authored. The 3.335/3.34 g calcium notation can retain rounded and literal forms while malformed molybdate remains ungrounded. COMPLETE means the immediate source list, not complete molecular identity. This audit does not duplicate that union.",
+      "after": "The Hutner DSMZ590/1144 union is parent-authored. The source comparison supports one nominal preparation while retaining both 3.335/3.34 g calcium literals, the nested Metals44 list, pH7 to6.8 adjustment, approximately7.3 g KOH, and NaOH-or-H2SO4 details. Historical malformed molybdate literals remain ungrounded; they do not establish alternative chemical identities. COMPLETE refers to the immediate source list, not complete molecular grounding. Comparison to JCM900/979 remains separately unresolved. This audit does not duplicate that union."
+    },
+    {
+      "json_pointer": "/rows/20/applicability_assessment",
+      "finding_ids": [
+        "BIO-F03"
+      ],
+      "entry_indices": [
+        970
+      ],
+      "before": "W10 calf-blood provenance must preserve blood rather than mistakenly say serum, as current comment 6719103915 clarifies. Calf age does not establish defibrination or whole-blood processing. No W05 selected candidate is this source.",
+      "after": "The W10 JCM1303 heat-inactivated calf-serum proposal shares MediaDive2061 source continuity with the existing Bovine_Calf_Serum owner. Reconcile that continuity and the broader/Gibco occurrences before adding or narrowing an owner; omitted heat metadata or a new filename does not establish a different material. No W05 selected candidate is this source. The calf-blood wording issue in comment6719103915 concerns a separate TOGO M2854 proposal and remains in the distinct additional-comment disposition."
+    }
+  ],
+  "structural_verification": {
+    "changed_json_pointers": [
+      "/rows/2/applicability_assessment",
+      "/rows/8/applicability_assessment",
+      "/rows/11/applicability_assessment",
+      "/rows/20/applicability_assessment"
+    ],
+    "expected_field_change_count": 4,
+    "observed_field_change_count": 4,
+    "source_disposition_objects_unchanged": true,
+    "all_other_ledger_fields_unchanged": true,
+    "sealed_39_manifest_members_unchanged": true,
+    "entire_sealed_tree_file_count": 40,
+    "entire_sealed_tree_unchanged": true
+  },
+  "scope": "Ledger descriptions only. D/P/E, YAMLs, source_disposition objects, row IDs, cases, source captures, ownership and scientific decisions remain unchanged. The full successor keeps original ledger metadata verbatim; this receipt records the new authorship and ancestry.",
+  "sealed_primary_manifest": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-postseal-source-corrections-v1/chemicals/FINAL-MANIFEST-v1.json",
+    "sha256": "a5ac6b4014f4ff0128e758eef5b94628789ea87ed23baf2e8b963950c6ff24a2"
+  },
+  "independent_review": "pending exact successor review",
+  "old_tree_before_and_after_inventory": {
+    "evidence.json": "0ad98fe8b0eb9bff28766b57d0b615c55740e235e951c4f883db3401a39fa5b1",
+    "native-tris-projection-v1.json": "b5fa64cbe828ae8e2bb9a7266f1228118ec16b7e319b122f96d3bc02cdc33d46",
+    "new-rumen-applicability-finding-v1.json": "d6ae41d33719e465a6d64956c0bef9d566a7ede23265096302369ca5b49a4575",
+    "fetch_primary.py": "27b3248485e4ee2c241ffc381f1b888b36f5749ebe9386495eaabd3cd8c5bfcb",
+    "read-evidence-ledger-v1.json": "e06ccffba38295b0e02a6484d9a0da0864d32b3e5290d37cedfd59cf4d344967",
+    "changed-payload-lineage-v1.json": "678151b337fd29aecf133ad03d374bc3226ffec1542d18e95bf36a1cc9ef54e6",
+    "issue1238-comments.txt": "1eb35a67f4650b046c4626d838d56f7d7434ad5c15b8733bcb55975f7d58888e",
+    "family-applicability-audit-v1.json": "91031fef92918eab50f2a1ea411d78f413dd877ebb904797a189ba16ec93f6dd",
+    "strict-errors.tsv": "4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b",
+    "build_applicability_audit.py": "a03cbc3191a694b24bbf2ae0a492603cacda5247f8aaed399cdbd88db55084c9",
+    "finish_rumen_evidence.py": "44372c7041dea17e0a1303cd35d1e1e00cbcd24da6a79156106c2d5d836348eb",
+    "issue1237.txt": "4ad26737a5f3329065b9429591f4cce75cba6e2847c82c06463ea27b67dbbe53",
+    "decisions.json": "201a40207a764b63e7ff5adb3abd393356da1ac7d9a4b5d5f32d38d509b286b1",
+    "rumen-validation-v1.json": "ea0039f7b24ae8cca4fd24d06c2af9b5fb5de78d775615afe3d8f8042b2fbba2",
+    "proposals.json": "23930233fa1ca9e5697c85b47995907adb027668a30abc5b807425d75c0d0470",
+    "historical-selected-objects-v1.json": "0102266897006f1dcadf29965731e6b2ab858c4af5f28aa93c0b743dcb06b191",
+    "microbedecoder-three-parent-source-records-v1.json": "174dbc2b848e725e45b3200e21dbebbb6c306b868c11196f7c7754bd6eb768be",
+    "primary-access-results-v1.json": "73bb428f043b35a05c80617b7ed57b90a236aae2cee2e7177e54f7954e60ced7",
+    "issue1238.txt": "e4e00a48abfc67e207eb0121fd5c2b94359bec0f886ee500c8ed2c5aa80bda10",
+    "author_rumen_successors.py": "df88c7835415030edee61950344e98d1eee1e6c41356d43fa1532ad27c12c4aa",
+    "issue1237-comments.txt": "650e50d375824344afe545895dcc630cc8ec41d69b1a62c1b06f957f76ca40c3",
+    "HANDOFF.md": "6b21d45e708074aff20200b1d7dbbd2e3860debe3255df79b22573ef84ba21be",
+    "FINAL-MANIFEST-v1.json": "a5ac6b4014f4ff0128e758eef5b94628789ea87ed23baf2e8b963950c6ff24a2",
+    "captures/bergey-treponema.receipt.json": "d87df5240cbdad2cdbafbe774f37ac6b362ffdcdaa1494e9861817824d6df65e",
+    "captures/bergey-treponema.txt": "ba1fa70ec315f0f27126dae664f252d7c0eaf41cce21b345e4d28e4b29086b2f",
+    "captures/wallace-2003-full.body": "bfa7ac99e3164ab72f3f0aac113560efc06a2fd836f30ad5d28e767069f93f0f",
+    "captures/bergey-eubacterium.receipt.json": "cc39b452986dfc20fa51c9b756f332d5fdc6b4007db65c97c4cc54edfedfb350",
+    "captures/wallace-2003-full.txt": "004d1fcfd8fad4b8f1bfb5a38a8964c533a767e5756e0af124eac3acbb54776a",
+    "captures/wallace-publisher-web-abstract-v1.json": "c3c3729ec56380be0502886171779f3b5128cf301218d347d0f4e898ab55c4df",
+    "captures/bergey-eubacterium.body": "0a5f72cf61e103d02b9a5773c31d81116a574c9293e0f7bc1b4d79f01deabb73",
+    "captures/bergey-eubacterium.txt": "3ead0f12a187a24f00b5caea1d64edeba508c8ea9928cbe2d822073d8f21343a",
+    "captures/wallace-2003-full.receipt.json": "2f1b0bdd3562f45b087ed72c3111cce2b3b69d7204af8031f792af9eed8de397",
+    "captures/bergey-treponema.body": "2afc90a8b7693a0c6e2dddda13b51a888c99eea784494db7c35d0a3d76f97cae",
+    "captures/free-primary-fetch-web-v1.json": "e63da637cdb2baa12991d2d915c617e177233863a31fca42c87ed64601eea028",
+    "diffs/PYG_Rumen_Fluid.diff": "63cb156f23808e89947657f1775918a1371a38b30201e85020267203cb6f0651",
+    "diffs/PY-glucose-rumen_Fluid.diff": "f8a66b015fc5e42c8a589bdf948f8f35dbe4e59fa36c1fb8ec38e12beb7ad57e",
+    "diffs/Casitone_Yeast_Extract_Rumen_Fluid.diff": "1d1a7fd5eb4fca9f3adacd07eb449f803b402fbf82aa0d110e5c4a4b669ec3cd",
+    "proposed/PY-glucose-rumen_Fluid.yaml": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de",
+    "proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml": "5aa42dfa4f471d0b830b969869547c706757082a88c9cb1c1729aa55f65f345b",
+    "proposed/PYG_Rumen_Fluid.yaml": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a"
+  }
+}

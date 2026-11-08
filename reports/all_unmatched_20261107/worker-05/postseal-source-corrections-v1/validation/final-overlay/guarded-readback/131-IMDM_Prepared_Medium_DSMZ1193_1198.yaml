@@ -1,0 +1,92 @@
+identifier: kgmicrobe.ingredient:imdm_prepared_medium_dsmz1193_1198
+preferred_term: IMDM prepared basal medium (DSMZ1193/1198)
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1069); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named IMDM medium/formulation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/IMDM-Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Recommended record updates — ### Decision No
+    ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:51.384858+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Promote the existing source1069 IMDM owner for its complete DSMZ1193 and1198
+    scope. Both primary PDFs name45mlprepared IMDM plus5mlFBS and0.5ml100xaminoacids;
+    the two frozen aggregate representations with900PERCENT retain their unit hold.
+    The added100xaminoacid preparation is not specifically identified as glutamine.
+    Supplier, glutamine/GlutaMAX state and internal formula remain unknown; the unrelated
+    CARbacillus LifeTechnologies31980030 product is not transferred. A single source
+    owner is reused without declaring all commercial IMDM variants chemically identical.
+    Authentic former active aliases are preserved verbatim as source provenance, not
+    rejected: [{"synonym_text": "IMDM-Medium", "synonym_type": "RAW_TEXT", "source":
+    "mim-queue"}]. Removing active broad aliases prevents a source-qualified identity
+    from resolving unrelated same-name preparations. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Promote the existing source1069 IMDM owner for its complete DSMZ1193 and1198
+  scope. Both primary PDFs name45mlprepared IMDM plus5mlFBS and0.5ml100xaminoacids;
+  the two frozen aggregate representations with900PERCENT retain their unit hold.
+  The added100xaminoacid preparation is not specifically identified as glutamine.
+  Supplier, glutamine/GlutaMAX state and internal formula remain unknown; the unrelated
+  CARbacillus LifeTechnologies31980030 product is not transferred. A single source
+  owner is reused without declaring all commercial IMDM variants chemically identical.
+  Authentic former active aliases are preserved verbatim as source provenance, not
+  rejected: [{"synonym_text": "IMDM-Medium", "synonym_type": "RAW_TEXT", "source":
+  "mim-queue"}]. Removing active broad aliases prevents a source-qualified identity
+  from resolving unrelated same-name preparations.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:imdm_prepared_medium_dsmz1193_1198
+  ontology_label: IMDM prepared basal medium (DSMZ1193/1198)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1193.pdf
+    notes: Promote the existing source1069 IMDM owner for its complete DSMZ1193 and1198
+      scope. Both primary PDFs name45mlprepared IMDM plus5mlFBS and0.5ml100xaminoacids;
+      the two frozen aggregate representations with900PERCENT retain their unit hold.
+      The added100xaminoacid preparation is not specifically identified as glutamine.
+      Supplier, glutamine/GlutaMAX state and internal formula remain unknown; the
+      unrelated CARbacillus LifeTechnologies31980030 product is not transferred. A
+      single source owner is reused without declaring all commercial IMDM variants
+      chemically identical.

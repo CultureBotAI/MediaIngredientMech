@@ -1,0 +1,65 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/issues/marine-comment.json",
+        "sha256": "46a67ba8134dd19113f42c649c1dd4387458012b2143323e5e874bce619ca988",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/media/captures/marine-manual-reused.pdf",
+        "sha256": "de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/media/decisions.json",
+        "sha256": "218b2c0d11612a29703d4151530e464de110607b690fb777bfa22aaa2750fd1f",
+        "role": "target"
+      },
+      {
+        "path": ".temp/w05-postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml",
+        "sha256": "1aff9c58110b7c111d5930fe60fd935f932ff0437ec17d12fc01e22da0c820be",
+        "role": "target"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "M1193-P-MARINE2216",
+      "path": ".temp/w05-postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml",
+      "label": "Marine broth2216 whole nominal dry preparation",
+      "kind": "source",
+      "ownership_note": "Isolated report-only candidate; authentic maintained owner remains unchanged."
+    },
+    {
+      "target_id": "MARINE-CASE-1",
+      "path": ".temp/w05-postseal-source-corrections-v1/media/decisions.json",
+      "label": "Difco Marine Broth 2216",
+      "selector": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+      "kind": "snapshot_row",
+      "ownership_note": "Exact source case and unchanged release holds."
+    },
+    {
+      "target_id": "MARINE-CASE-2",
+      "path": ".temp/w05-postseal-source-corrections-v1/media/decisions.json",
+      "label": "Difco Marine Broth 2216",
+      "selector": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+      "kind": "snapshot_row",
+      "ownership_note": "Exact source case and unchanged release holds."
+    }
+  ]
+}

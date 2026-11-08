@@ -1,0 +1,43 @@
+--- final-correction-v1/media/proposed/Marine_Broth_2216.yaml
++++ postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml
+@@ -110,6 +110,20 @@
+     Cross-reference: CultureMech:008094. A CultureMech id cannot be the identifier — MIM''s primary key
+     is an ontology CURIE or a registry mint — so it is carried here as evidence.", "source": "MIM curation
+     (#260)"}'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T08:29:39.343065+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: ANNOTATED
++  changes: 'Post-seal source correction under issue 1208, comment 6718748333 / W06-TU-005: qualify the
++    component evidence with the manufacturer approximate-formula designation and performance adjustment/supplementation
++    footnote. Preserve COMPLETE relative to all 16 nominal printed dry-product inputs and every component
++    object, quantity and unit. Water remains reconstitution solvent; no salt-form, Peptone, new constituent
++    or every-lot closure inference. W06-TU-003 is already corrected in the active ontology evidence and
++    receives no further edit. All prior history, source/owner/role/export holds and cross-shard dependencies
++    remain. Isolated report-only successor; independent exact-byte review pending.'
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+@@ -203,10 +217,15 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf
+-    notes: Complete manufacturer-listed16constituents of commercial Difco broth2216 at37.4g/L standard
+-      reconstitution. All parts kept UNMAPPED because printed salt names do not establish the previous
+-      specific hydrates/ontology identities. Water is a reconstitution solvent, not a dry-powder constituent.
+-      The ATCC agar-minus-agar scratch variant remains a distinct formulation.
++    notes: The manufacturer manual, printed page 352, labels the Difco Marine Broth 2216 table "Approximate
++      Formula* Per Liter" and states "Adjusted and/or supplemented as required to meet performance criteria."
++      COMPLETE covers all 16 nominal printed inputs of the dehydrated product, not exact chemical closure
++      for every lot. The listed quantities are per litre at the stated standard reconstitution of 37.4
++      g powder in 1 L of purified water; they are not concentrations in the dry powder. All component
++      names and quantities are preserved. Generic Peptone and source-unspecified salt forms remain UNMAPPED;
++      no unprinted ingredient, lot-specific adjustment, hydrate or salt identity is invented. Water is
++      reconstitution solvent, not a dry-product constituent. The ATCC agar-minus-agar scratch variant
++      remains a distinct formulation.
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:marine_broth_2216
+   ontology_label: Marine broth 2216

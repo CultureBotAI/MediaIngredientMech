@@ -1,0 +1,210 @@
+identifier: kgmicrobe.ingredient:py_glucose_rumen_fluid
+preferred_term: PY-glucose-rumen Fluid
+synonyms:
+- synonym_text: PY-glucose-rumen Fluid
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: multi-component blend or named
+    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/PY-glucose-rumen_Fluid-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a legacy shorthand
+    for a **multi-component culture formulation**, most plausibly **peptone–yeast
+    medium supplemented with glucose and rumen fluid**. It is not a single chemical,
+    salt, hydrate, buffer, or chemically defined ingredient. CURIEs discussed: CHEBI:17234.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0768 -> kgmicrobe.ingredient:py_glucose_rumen_fluid (FALLBACK_REGISTRY).
+    Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+    strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
+    an identifier. That file was produced by the research pass and never written into
+    the records; this applies it. It resolves constituents a label split cannot —
+    abbreviations such as PY, and named media such as BHI, state no composition to
+    split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
+    curated row states none.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers,
+    and concentrations were not changed.'
+  llm_assisted: false
+- timestamp: '2026-08-30T10:54:21.025609+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: UPDATED_COMPONENT_SCOPE
+  changes: 'reference_scope EXTERNAL_TERM -> MIM_CATALOG for component 3 (clarified
+    rumen fluid): MICRO:0000520 was outside MIM when this partonomy was written and
+    now has a record, so the component resolves inside the catalog rather than out
+    of it.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:22:40.096085+00:00'
+  curator: Codex worker05 /root correction1193 integration
+  action: CORRECTED
+  changes: Dependency-only reference maintenance for the existing Clarified_rumen_fluid
+    owner after its reviewed cow-specific MICRO:0000520 identity is replaced by kgmicrobe.ingredient:clarified_rumen_fluid.
+    This changes only the destination of an already declared MIM_CATALOG component
+    link. It does not newly endorse the legacy label expansion to clarified fluid,
+    animal species, preparation protocol, mixture composition, quantities, roles or
+    underlying MicrobeDecoder observation. Raw substrate labels state rumen fluid;
+    historical research asserted clarification and a broad ontology comparison. Those
+    inherited claims remain subject to their own source-specific review and holds.
+    No identity equality with a particular JCM/DSMZ preparation is asserted. Apply
+    only together with the exact root rumen-owner correction; do not treat these dependent
+    owners as newly assigned source cases.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:34:36.020247+00:00'
+  curator: Codex worker05 /root/chemicals_research postseal source review
+  action: CORRECTED
+  changes: The rumen-fluid component is retained at the literal source-label scope
+    as rumen fluid, UNMAPPED, with no component identifier. The recovered MicrobeDecoder
+    observation does not specify clarification, animal species, or a preparation protocol.
+    The full cited publication was not retrieved in this review; the captured access
+    failures cannot establish a protocol. This is unresolved processing, not evidence
+    that the fluid was untreated. The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid
+    is withdrawn under https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+    and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated
+    component identities, concentrations, whole-mixture identity and source holds
+    are unchanged. Inherited mapping-evidence objects and research evidence remain
+    historical provenance; their clarification claims and historical all-components-identified
+    counts do not describe this successor. The prior 2026-11-08 dependency-only redirect
+    event is preserved as superseded history. No generic UBERON grounding, recipe
+    equivalence, animal-origin claim or downstream approval is added. MicrobeDecoder
+    database.csv record 20394, Bergey_Substrates_for_end_products = 'PY-glucose-rumen
+    fluid'; full source-row capture and database SHA are retained in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. The rumen-fluid component
+  is retained at the literal source-label scope as rumen fluid, UNMAPPED, with no
+  component identifier. The recovered MicrobeDecoder observation does not specify
+  clarification, animal species, or a preparation protocol. The full cited publication
+  was not retrieved in this review; the captured access failures cannot establish
+  a protocol. This is unresolved processing, not evidence that the fluid was untreated.
+  The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid is withdrawn under
+  https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+  and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated component
+  identities, concentrations, whole-mixture identity and source holds are unchanged.
+  Inherited mapping-evidence objects and research evidence remain historical provenance;
+  their clarification claims and historical all-components-identified counts do not
+  describe this successor. The prior 2026-11-08 dependency-only redirect event is
+  preserved as superseded history. No generic UBERON grounding, recipe equivalence,
+  animal-origin claim or downstream approval is added. MicrobeDecoder database.csv
+  record 20394, Bergey_Substrates_for_end_products = 'PY-glucose-rumen fluid'; full
+  source-row capture and database SHA are retained in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.
+components:
+- component_name: peptone
+  component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: glucose
+  component_id: CHEBI:17234
+  reference_scope: MIM_CATALOG
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: rumen fluid
+  reference_scope: UNMAPPED
+  source: microbedecoder research decomposition (#213/#308)
+component_assertion:
+  method: ABBREVIATION_EXPANSION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: CURATED_DATASET
+    source: mappings/microbedecoder_residual_research_decomposition.tsv
+    source_record: PY-glucose-rumen Fluid
+    notes: 'Reviewed row: strategy=split, confidence=high; PY base + glucose + clarified
+      rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal
+      fluid; no exact term.'
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: database.csv record 20394; Bergey_Substrates_for_end_products;
+      PY-glucose-rumen fluid
+    notes: MicrobeDecoder database.csv record 20394, Bergey_Substrates_for_end_products
+      = 'PY-glucose-rumen fluid'; full source-row capture and database SHA are retained
+      in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.
+      Reviewed by Codex worker05 /root/chemicals_research postseal source review with
+      LLM assistance. The unqualified label supports the retained rumen-fluid part
+      but does not establish clarification. Earlier CURATED_DATASET assertions are
+      preserved as superseded provenance for this component, not renewed scientific
+      support. Component evidence typing is distinct from MappingEvidence typing.
+  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe. The rumen-fluid component is
+    retained at the literal source-label scope as rumen fluid, UNMAPPED, with no component
+    identifier. The recovered MicrobeDecoder observation does not specify clarification,
+    animal species, or a preparation protocol. The full cited publication was not
+    retrieved in this review; the captured access failures cannot establish a protocol.
+    This is unresolved processing, not evidence that the fluid was untreated. The
+    former redirect to kgmicrobe.ingredient:clarified_rumen_fluid is withdrawn under
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+    and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated
+    component identities, concentrations, whole-mixture identity and source holds
+    are unchanged. Inherited mapping-evidence objects and research evidence remain
+    historical provenance; their clarification claims and historical all-components-identified
+    counts do not describe this successor. The prior 2026-11-08 dependency-only redirect
+    event is preserved as superseded history. No generic UBERON grounding, recipe
+    equivalence, animal-origin claim or downstream approval is added.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:py_glucose_rumen_fluid
+  ontology_label: PY-glucose-rumen Fluid
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'

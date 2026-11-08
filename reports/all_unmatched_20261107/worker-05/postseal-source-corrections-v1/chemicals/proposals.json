@@ -1,0 +1,304 @@
+{
+  "fragment": true,
+  "merge_key": "proposal_id",
+  "base": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/core/proposals.json",
+    "sha256": "3e3d3b1bc6d7e045e7bcd497a3fa69cdba978a460d00263691501ed3a4462c7e"
+  },
+  "proposals": [
+    {
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "description": "Withdraw the unsupported clarification assertion from the rumen-fluid component in PY-glucose-rumen Fluid; preserve the literal named part as UNMAPPED without an identifier.",
+      "evidence_ids": [
+        "ROOT-jcm-266",
+        "R1193-OWNER-Clarified_rumen_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-clarified-rumen",
+        "R1193-FLUID-md-161",
+        "R1193-FLUID-md-212",
+        "R1193-FLUID-md-J146",
+        "R1193-FLUID-md-J563",
+        "R1193-FLUID-togo-M567",
+        "R1193-FLUID-jcm-355",
+        "R1193-FLUID-jcm-1201",
+        "R1193-FLUID-md-P2",
+        "R1193-fluid-origin-search",
+        "R1193-synonym-policy",
+        "R1193-DEP-legacy-research",
+        "R1193-DEP-integration-failure",
+        "R1193-DEP-owner-pyglucose",
+        "POSTSEAL-CHEM-RAW-PARENTS",
+        "POSTSEAL-CHEM-1204-COMMENT",
+        "POSTSEAL-CHEM-1237",
+        "POSTSEAL-CHEM-FINDING001",
+        "POSTSEAL-CHEM-PRIMARY-ACCESS"
+      ],
+      "owner_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de"
+      },
+      "identity_consequence": "The whole-mixture identifier, mapping, source labels and occurrence counts remain unchanged. The part retains its source label; its processing and animal origin remain unspecified.",
+      "predicate_consequence": "Remove this one unsupported MIM_CATALOG component link and retain a named UNMAPPED part with no component_id. Whole-record SSSOM predicates are unchanged.",
+      "publication_obligations": "The rumen-fluid component is retained at the literal source-label scope as rumen fluid, UNMAPPED, with no component identifier. The recovered MicrobeDecoder observation does not specify clarification, animal species, or a preparation protocol. The full cited publication was not retrieved in this review; the captured access failures cannot establish a protocol. This is unresolved processing, not evidence that the fluid was untreated. The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid is withdrawn under https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591 and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated component identities, concentrations, whole-mixture identity and source holds are unchanged. Inherited mapping-evidence objects and research evidence remain historical provenance; their clarification claims and historical all-components-identified counts do not describe this successor. The prior 2026-11-08 dependency-only redirect event is preserved as superseded history. No generic UBERON grounding, recipe equivalence, animal-origin claim or downstream approval is added. Original W05 source-case and cross-shard ownership boundaries remain unchanged; this does not add the underlying MicrobeDecoder observations to W05 source ownership.",
+      "depends_on_proposal_ids": [
+        "R1193-P-clarifiedrumen266"
+      ],
+      "source_case_ownership": "Only the existing assigned rumen-fluid cause case is claimed; dependent MicrobeDecoder source cases remain owned by their assigned campaign shards.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/dependencies/after/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8"
+      },
+      "final_correction": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "changes": [],
+        "native_guarded_write": "PASS",
+        "independent_review": "pending",
+        "prior_proposal_object_sha256": "3700e574b003d8cbe3a8e06803e6ff5fef55adad18522aa3ff8bde236d572bd1",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v1/PY-glucose-rumen_Fluid.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "v1_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v1/PY-glucose-rumen_Fluid.yaml",
+          "sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8"
+        },
+        "v2_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v2/PY-glucose-rumen_Fluid.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "postseal_correction": {
+        "finding_id": "W05-POSTSEAL-CHEM-001",
+        "author": "Codex worker05 /root/chemicals_research postseal source review",
+        "timestamp": "2026-11-08T08:34:36.020247+00:00",
+        "predecessor_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v2/PY-glucose-rumen_Fluid.yaml",
+          "sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8"
+        },
+        "predecessor_proposal_object_sha256": "615b6149ec30c990a5a01add814cfce4109c7d6c514d33bb1204c211e01d4bdc",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "postseal-source-corrections-v1/chemicals/diffs/PY-glucose-rumen_Fluid.diff",
+          "sha256": "f8a66b015fc5e42c8a589bdf948f8f35dbe4e59fa36c1fb8ec38e12beb7ad57e"
+        },
+        "guarded_write": "PASS",
+        "independent_review": "pending",
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237"
+        ],
+        "historical_metadata_notice": "Earlier final_correction and predecessor_after_capture fields are retained for historical ancestry, not a claim that their reviews bind this successor."
+      }
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-casitone",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "description": "Withdraw the unsupported clarification assertion from the rumen-fluid component in Casitone + Yeast Extract + Rumen Fluid; preserve the literal named part as UNMAPPED without an identifier.",
+      "evidence_ids": [
+        "ROOT-jcm-266",
+        "R1193-OWNER-Clarified_rumen_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-clarified-rumen",
+        "R1193-FLUID-md-161",
+        "R1193-FLUID-md-212",
+        "R1193-FLUID-md-J146",
+        "R1193-FLUID-md-J563",
+        "R1193-FLUID-togo-M567",
+        "R1193-FLUID-jcm-355",
+        "R1193-FLUID-jcm-1201",
+        "R1193-FLUID-md-P2",
+        "R1193-fluid-origin-search",
+        "R1193-synonym-policy",
+        "R1193-DEP-legacy-research",
+        "R1193-DEP-integration-failure",
+        "R1193-DEP-owner-casitone",
+        "POSTSEAL-CHEM-RAW-PARENTS",
+        "POSTSEAL-CHEM-1204-COMMENT",
+        "POSTSEAL-CHEM-1237",
+        "POSTSEAL-CHEM-FINDING001",
+        "POSTSEAL-CHEM-PRIMARY-ACCESS"
+      ],
+      "owner_path": "data/ingredients/mapped/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "8ce8d3f6c8e8bd0a2548f088e5308a9453319e830e094d3e7785734605ea0da5",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+        "sha256": "5aa42dfa4f471d0b830b969869547c706757082a88c9cb1c1729aa55f65f345b"
+      },
+      "identity_consequence": "The whole-mixture identifier, mapping, source labels and occurrence counts remain unchanged. The part retains its source label; its processing and animal origin remain unspecified.",
+      "predicate_consequence": "Remove this one unsupported MIM_CATALOG component link and retain a named UNMAPPED part with no component_id. Whole-record SSSOM predicates are unchanged.",
+      "publication_obligations": "The rumen-fluid component is retained at the literal source-label scope as rumen fluid, UNMAPPED, with no component identifier. The recovered MicrobeDecoder observation does not specify clarification, animal species, or a preparation protocol. The full cited publication was not retrieved in this review; the captured access failures cannot establish a protocol. This is unresolved processing, not evidence that the fluid was untreated. The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid is withdrawn under https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591 and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated component identities, concentrations, whole-mixture identity and source holds are unchanged. Inherited mapping-evidence objects and research evidence remain historical provenance; their clarification claims and historical all-components-identified counts do not describe this successor. The prior 2026-11-08 dependency-only redirect event is preserved as superseded history. No generic UBERON grounding, recipe equivalence, animal-origin claim or downstream approval is added. Original W05 source-case and cross-shard ownership boundaries remain unchanged; this does not add the underlying MicrobeDecoder observations to W05 source ownership.",
+      "depends_on_proposal_ids": [
+        "R1193-P-clarifiedrumen266"
+      ],
+      "source_case_ownership": "Only the existing assigned rumen-fluid cause case is claimed; dependent MicrobeDecoder source cases remain owned by their assigned campaign shards.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/dependencies/after/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+        "sha256": "2f3c3f811aba49913ed21cc3789cacbb2fd8bcea945d8ba383f939220a1b1045"
+      },
+      "final_correction": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "changes": [],
+        "native_guarded_write": "PASS",
+        "independent_review": "pending",
+        "prior_proposal_object_sha256": "5ad9745eb6ee87c0c8898ef3349f1b9cd655a8dd742a386fb3a416c35d6596b6",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v1/Casitone_Yeast_Extract_Rumen_Fluid.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "v1_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v1/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+          "sha256": "2f3c3f811aba49913ed21cc3789cacbb2fd8bcea945d8ba383f939220a1b1045"
+        },
+        "v2_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v2/Casitone_Yeast_Extract_Rumen_Fluid.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "postseal_correction": {
+        "finding_id": "W05-POSTSEAL-CHEM-001",
+        "author": "Codex worker05 /root/chemicals_research postseal source review",
+        "timestamp": "2026-11-08T08:34:36.020247+00:00",
+        "predecessor_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v2/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+          "sha256": "2f3c3f811aba49913ed21cc3789cacbb2fd8bcea945d8ba383f939220a1b1045"
+        },
+        "predecessor_proposal_object_sha256": "a1fe44eaeee8a436f6ba49251f1efab5bfaa8d1ce2b9cdd1852fbe3845f3dd4c",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "postseal-source-corrections-v1/chemicals/diffs/Casitone_Yeast_Extract_Rumen_Fluid.diff",
+          "sha256": "1d1a7fd5eb4fca9f3adacd07eb449f803b402fbf82aa0d110e5c4a4b669ec3cd"
+        },
+        "guarded_write": "PASS",
+        "independent_review": "pending",
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237"
+        ],
+        "historical_metadata_notice": "Earlier final_correction and predecessor_after_capture fields are retained for historical ancestry, not a claim that their reviews bind this successor."
+      }
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "description": "Withdraw the unsupported clarification assertion from the rumen-fluid component in PYG + Rumen Fluid; preserve the literal named part as UNMAPPED without an identifier.",
+      "evidence_ids": [
+        "ROOT-jcm-266",
+        "R1193-OWNER-Clarified_rumen_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-clarified-rumen",
+        "R1193-FLUID-md-161",
+        "R1193-FLUID-md-212",
+        "R1193-FLUID-md-J146",
+        "R1193-FLUID-md-J563",
+        "R1193-FLUID-togo-M567",
+        "R1193-FLUID-jcm-355",
+        "R1193-FLUID-jcm-1201",
+        "R1193-FLUID-md-P2",
+        "R1193-fluid-origin-search",
+        "R1193-synonym-policy",
+        "R1193-DEP-legacy-research",
+        "R1193-DEP-integration-failure",
+        "R1193-DEP-owner-pyg",
+        "POSTSEAL-CHEM-RAW-PARENTS",
+        "POSTSEAL-CHEM-1204-COMMENT",
+        "POSTSEAL-CHEM-1237",
+        "POSTSEAL-CHEM-FINDING001",
+        "POSTSEAL-CHEM-PRIMARY-ACCESS"
+      ],
+      "owner_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+        "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a"
+      },
+      "identity_consequence": "The whole-mixture identifier, mapping, source labels and occurrence counts remain unchanged. The part retains its source label; its processing and animal origin remain unspecified.",
+      "predicate_consequence": "Remove this one unsupported MIM_CATALOG component link and retain a named UNMAPPED part with no component_id. Whole-record SSSOM predicates are unchanged.",
+      "publication_obligations": "The rumen-fluid component is retained at the literal source-label scope as rumen fluid, UNMAPPED, with no component identifier. The recovered MicrobeDecoder observation does not specify clarification, animal species, or a preparation protocol. The full cited publication was not retrieved in this review; the captured access failures cannot establish a protocol. This is unresolved processing, not evidence that the fluid was untreated. The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid is withdrawn under https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591 and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated component identities, concentrations, whole-mixture identity and source holds are unchanged. Inherited mapping-evidence objects and research evidence remain historical provenance; their clarification claims and historical all-components-identified counts do not describe this successor. The prior 2026-11-08 dependency-only redirect event is preserved as superseded history. No generic UBERON grounding, recipe equivalence, animal-origin claim or downstream approval is added. Original W05 source-case and cross-shard ownership boundaries remain unchanged; this does not add the underlying MicrobeDecoder observations to W05 source ownership.",
+      "depends_on_proposal_ids": [
+        "R1193-P-clarifiedrumen266"
+      ],
+      "source_case_ownership": "Only the existing assigned rumen-fluid cause case is claimed; dependent MicrobeDecoder source cases remain owned by their assigned campaign shards.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/dependencies/after/PYG_Rumen_Fluid.yaml",
+        "sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6"
+      },
+      "final_correction": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "changes": [],
+        "native_guarded_write": "PASS",
+        "independent_review": "pending",
+        "prior_proposal_object_sha256": "cb72f9e3b2cef49efe2662eb89a768693c42c4ec1dce881505fd611366417eb0",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v1/PYG_Rumen_Fluid.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "v1_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v1/PYG_Rumen_Fluid.yaml",
+          "sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6"
+        },
+        "v2_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v2/PYG_Rumen_Fluid.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "postseal_correction": {
+        "finding_id": "W05-POSTSEAL-CHEM-001",
+        "author": "Codex worker05 /root/chemicals_research postseal source review",
+        "timestamp": "2026-11-08T08:34:36.020247+00:00",
+        "predecessor_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v2/PYG_Rumen_Fluid.yaml",
+          "sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6"
+        },
+        "predecessor_proposal_object_sha256": "305055dd316c55e9c385a71ead1a7050c66c3dafc4f5f0d564b98ae887402506",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "postseal-source-corrections-v1/chemicals/diffs/PYG_Rumen_Fluid.diff",
+          "sha256": "63cb156f23808e89947657f1775918a1371a38b30201e85020267203cb6f0651"
+        },
+        "guarded_write": "PASS",
+        "independent_review": "pending",
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237"
+        ],
+        "historical_metadata_notice": "Earlier final_correction and predecessor_after_capture fields are retained for historical ancestry, not a claim that their reviews bind this successor."
+      }
+    }
+  ]
+}

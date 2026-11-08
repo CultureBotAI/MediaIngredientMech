@@ -1,0 +1,534 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "primary_author": "/root/chemicals_research",
+  "completed_at": "2026-11-08T08:38:31.733562+00:00",
+  "completion": "completed",
+  "verdict": "pass_with_limitations",
+  "source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+  "input_manifest": {
+    "path": ".temp/w05-postseal-source-corrections-v1/chemicals/FINAL-MANIFEST-v1.json",
+    "sha256": "a5ac6b4014f4ff0128e758eef5b94628789ea87ed23baf2e8b963950c6ff24a2"
+  },
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "case_index": 91,
+      "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541",
+      "selected_decision_object_sha256": "68b2826393e239ec2e0126cc09372f21346512683223a27d2b1966d2145425b6",
+      "occurrence_ids": [
+        "CM_OCC:5935adfdab3abba3ad49de3bf66b06bd6ab425af20ea315a7c169ae4ec4a36b8",
+        "CM_OCC:39c25bd01d2ee83bcda7de5b99ec410dab0b50232ce71a257cb1ad3d4adbd3ac"
+      ],
+      "assessment": "The two assigned JCM1423/1424 occurrences explicitly name clarified rumen fluid referenced to JCM266 and dose50/20 ml. JCM266 gives120 C15min followed by25000g15min and supernatant use. These positive source facts remain valid. The MICRO cow restriction conflicts with DSMZ161/212 cow-or-sheep input; JCM species remains unspecified. None supplies the absent protocol bridge for the three separately imported MicrobeDecoder labels. The revised dependency clause correctly withdraws those three links without changing this source case, its two raw occurrences or the held clarified-fluid companion.",
+      "conclusion": "supported_bounded_report_successor",
+      "source_and_hold_objects_exactly_preserved": true,
+      "limitations": [
+        "The unchanged companion remains source-qualified and held; this correction does not approve every historical clarified-fluid source occurrence.",
+        "Full cited-publication processing for the three dependent mixtures remains unavailable despite three distinct URL attempts via two mechanisms."
+      ]
+    }
+  ],
+  "payload_reviews": [
+    {
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de"
+      },
+      "selected_proposal_object_sha256": "1d59ffd41e58712d1bb9f4a613ab6feca6325ac1c1e71e8797d0ab10826495f1",
+      "assessment": "MicrobeDecoder record 20394 explicitly stores 'PY-glucose-rumen fluid' in Bergey_Substrates_for_end_products. The complete successor correctly withdraws only the unsupported clarified-fluid link and preserves a named UNMAPPED component. Whole owner identity and other component facts are preserved with explicit limits; no evidence licenses assigning untreated fluid or a species.",
+      "field_assessments": [
+        {
+          "field": "components[3]",
+          "assessment": "MicrobeDecoder record 20394 explicitly stores 'PY-glucose-rumen fluid' in Bergey_Substrates_for_end_products. It supplies no clarification, species or preparation qualifier. Retaining the named UNMAPPED rumen-fluid part without any ID is supported; neither clarified nor untreated processing is inferred."
+        },
+        {
+          "field": "component_assertion.method/completeness",
+          "assessment": "The inherited abbreviated PY/PYG input expansion remains UNKNOWN completeness; this correction does not newly resolve all formulation inputs. Unspecified component grounding does not prevent preserving a named preparation under sections3/6."
+        },
+        {
+          "field": "component_assertion.evidence/notes",
+          "assessment": "The added SOURCE_LABEL entry correctly identifies the original CSV row and actual LLM-assisted assessor, under the separate ComponentEvidence enum. Existing CURATED_DATASET objects remain exact historical evidence; the successor notes explicitly supersede their unsupported processing/all-ID claims. No human-authored MappingEvidence is fabricated."
+        },
+        {
+          "field": "ontology_mapping/identifier/preferred_term/synonyms",
+          "assessment": "Whole local mixture continuity, FALLBACK_REGISTRY and literal imported aliases are unchanged. The old MANUAL_CURATION object remains historical with an explicit current qualification; its enum is not treated as proof of human supply. No new ontology grounding, owner merge or claim that named preparations cannot be substances is adopted."
+        },
+        {
+          "field": "other components/source_occurrences/concentrations/ingredient_type",
+          "assessment": "All other full component objects, inherited source count1, owner counts0/0, absence of concentrations and UNDEFINED_MIXTURE remain exact. These inherited objects are inspected but are not renewed as approval of all underlying biological observations, peptone product identity or complete formulation."
+        },
+        {
+          "field": "curation_history/notes/proposal obligations",
+          "assessment": "All predecessor events remain an exact prefix and one new attributed correction withdraws the prior redirect. Original maintained-before guard and proposal origin are preserved. Plain-fluid processing remains unknown; future application and source/export admission remain coordinator-owned."
+        }
+      ],
+      "limitations": [
+        "Cited complete publisher source text was not obtained; processing, species and a preparation bridge to any JCM/DSMZ stock remain unresolved.",
+        "Other components and full formulations retain historical limitations; no current whole-owner/export approval.",
+        "These dependent source observations do not become new W05 assigned cases."
+      ]
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-casitone",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+        "sha256": "5aa42dfa4f471d0b830b969869547c706757082a88c9cb1c1729aa55f65f345b"
+      },
+      "selected_proposal_object_sha256": "3617e48e164bef6f7b7ea7785ece0397bc8ac2e1746bc29c5ce440cdf6d4e42b",
+      "assessment": "MicrobeDecoder record 5903 explicitly stores 'casitone + yeast extract + rumen fluid' in Literature_Substrates_for_end_products. The complete successor correctly withdraws only the unsupported clarified-fluid link and preserves a named UNMAPPED component. Whole owner identity and other component facts are preserved with explicit limits; no evidence licenses assigning untreated fluid or a species.",
+      "field_assessments": [
+        {
+          "field": "components[2]",
+          "assessment": "MicrobeDecoder record 5903 explicitly stores 'casitone + yeast extract + rumen fluid' in Literature_Substrates_for_end_products. It supplies no clarification, species or preparation qualifier. Retaining the named UNMAPPED rumen-fluid part without any ID is supported; neither clarified nor untreated processing is inferred."
+        },
+        {
+          "field": "component_assertion.method/completeness",
+          "assessment": "Casitone COMPLETE is relative to all three literally enumerated top-level named inputs, not complete molecular composition. Unspecified component grounding does not prevent preserving a named preparation under sections3/6."
+        },
+        {
+          "field": "component_assertion.evidence/notes",
+          "assessment": "The added SOURCE_LABEL entry correctly identifies the original CSV row and actual LLM-assisted assessor, under the separate ComponentEvidence enum. Existing CURATED_DATASET objects remain exact historical evidence; the successor notes explicitly supersede their unsupported processing/all-ID claims. No human-authored MappingEvidence is fabricated."
+        },
+        {
+          "field": "ontology_mapping/identifier/preferred_term/synonyms",
+          "assessment": "Whole local mixture continuity, FALLBACK_REGISTRY and literal imported aliases are unchanged. The old MANUAL_CURATION object remains historical with an explicit current qualification; its enum is not treated as proof of human supply. No new ontology grounding, owner merge or claim that named preparations cannot be substances is adopted."
+        },
+        {
+          "field": "other components/source_occurrences/concentrations/ingredient_type",
+          "assessment": "All other full component objects, inherited source count1, owner counts0/0, absence of concentrations and UNDEFINED_MIXTURE remain exact. These inherited objects are inspected but are not renewed as approval of all underlying biological observations, peptone product identity or complete formulation."
+        },
+        {
+          "field": "curation_history/notes/proposal obligations",
+          "assessment": "All predecessor events remain an exact prefix and one new attributed correction withdraws the prior redirect. Original maintained-before guard and proposal origin are preserved. Plain-fluid processing remains unknown; future application and source/export admission remain coordinator-owned."
+        }
+      ],
+      "limitations": [
+        "Cited complete publisher source text was not obtained; processing, species and a preparation bridge to any JCM/DSMZ stock remain unresolved.",
+        "Other components and full formulations retain historical limitations; no current whole-owner/export approval.",
+        "These dependent source observations do not become new W05 assigned cases."
+      ]
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+        "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a"
+      },
+      "selected_proposal_object_sha256": "f8343bf2ec41842eabdf9d63c16f726edc9e5fcd71e0c493fb62d8c6077057ec",
+      "assessment": "MicrobeDecoder record 5905 explicitly stores 'PYG + rumen fluid' in Bergey_Substrates_for_end_products. The complete successor correctly withdraws only the unsupported clarified-fluid link and preserves a named UNMAPPED component. Whole owner identity and other component facts are preserved with explicit limits; no evidence licenses assigning untreated fluid or a species.",
+      "field_assessments": [
+        {
+          "field": "components[3]",
+          "assessment": "MicrobeDecoder record 5905 explicitly stores 'PYG + rumen fluid' in Bergey_Substrates_for_end_products. It supplies no clarification, species or preparation qualifier. Retaining the named UNMAPPED rumen-fluid part without any ID is supported; neither clarified nor untreated processing is inferred."
+        },
+        {
+          "field": "component_assertion.method/completeness",
+          "assessment": "The inherited abbreviated PY/PYG input expansion remains UNKNOWN completeness; this correction does not newly resolve all formulation inputs. Unspecified component grounding does not prevent preserving a named preparation under sections3/6."
+        },
+        {
+          "field": "component_assertion.evidence/notes",
+          "assessment": "The added SOURCE_LABEL entry correctly identifies the original CSV row and actual LLM-assisted assessor, under the separate ComponentEvidence enum. Existing CURATED_DATASET objects remain exact historical evidence; the successor notes explicitly supersede their unsupported processing/all-ID claims. No human-authored MappingEvidence is fabricated."
+        },
+        {
+          "field": "ontology_mapping/identifier/preferred_term/synonyms",
+          "assessment": "Whole local mixture continuity, FALLBACK_REGISTRY and literal imported aliases are unchanged. The old MANUAL_CURATION object remains historical with an explicit current qualification; its enum is not treated as proof of human supply. No new ontology grounding, owner merge or claim that named preparations cannot be substances is adopted."
+        },
+        {
+          "field": "other components/source_occurrences/concentrations/ingredient_type",
+          "assessment": "All other full component objects, inherited source count1, owner counts0/0, absence of concentrations and UNDEFINED_MIXTURE remain exact. These inherited objects are inspected but are not renewed as approval of all underlying biological observations, peptone product identity or complete formulation."
+        },
+        {
+          "field": "curation_history/notes/proposal obligations",
+          "assessment": "All predecessor events remain an exact prefix and one new attributed correction withdraws the prior redirect. Original maintained-before guard and proposal origin are preserved. Plain-fluid processing remains unknown; future application and source/export admission remain coordinator-owned."
+        }
+      ],
+      "limitations": [
+        "Cited complete publisher source text was not obtained; processing, species and a preparation bridge to any JCM/DSMZ stock remain unresolved.",
+        "Other components and full formulations retain historical limitations; no current whole-owner/export approval.",
+        "These dependent source observations do not become new W05 assigned cases."
+      ]
+    }
+  ],
+  "finding_dispositions": [
+    {
+      "finding_id": "W05-POSTSEAL-CHEM-001",
+      "status": "resolved_in_three_bounded_isolated_successors",
+      "deduplicated_existing_issues": [
+        "1204#issuecomment-6718503591",
+        "1237/BIO-COMP-002"
+      ],
+      "assessment": "Confirmed pre-fix oldredirect in allthree full predecessors. Exact3successors retain literalrumen UNMAPPED/noID. Separate scientifically positive JCM case91 and all ownership boundaries retained."
+    }
+  ],
+  "independent_mechanical_checks": [
+    {
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "predecessor_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de"
+      },
+      "only_changed_fields": [
+        "components[3].component_name",
+        "components[3].reference_scope",
+        "components[3].component_id removed",
+        "notes",
+        "component_assertion.notes",
+        "component_assertion.evidence appended",
+        "curation_history appended"
+      ],
+      "all_other_fields_equal": true,
+      "history_and_component_evidence_prefix_preserved": true
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-casitone",
+      "predecessor_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+        "sha256": "2f3c3f811aba49913ed21cc3789cacbb2fd8bcea945d8ba383f939220a1b1045"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+        "sha256": "5aa42dfa4f471d0b830b969869547c706757082a88c9cb1c1729aa55f65f345b"
+      },
+      "only_changed_fields": [
+        "components[2].component_name",
+        "components[2].reference_scope",
+        "components[2].component_id removed",
+        "notes",
+        "component_assertion.notes",
+        "component_assertion.evidence appended",
+        "curation_history appended"
+      ],
+      "all_other_fields_equal": true,
+      "history_and_component_evidence_prefix_preserved": true
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "predecessor_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/PYG_Rumen_Fluid.yaml",
+        "sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+        "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a"
+      },
+      "only_changed_fields": [
+        "components[3].component_name",
+        "components[3].reference_scope",
+        "components[3].component_id removed",
+        "notes",
+        "component_assertion.notes",
+        "component_assertion.evidence appended",
+        "curation_history appended"
+      ],
+      "all_other_fields_equal": true,
+      "history_and_component_evidence_prefix_preserved": true
+    }
+  ],
+  "raw_parent_authentication": {
+    "path": ".temp/w05-postseal-source-corrections-v1/review/raw-parent-authentication-v1.json",
+    "sha256": "04a390a6dcc594d525d0c8d641f4c0961a3c7d32ce28f155936af8d68a842287"
+  },
+  "unchanged_companion": {
+    "proposal_id": "R1193-P-clarifiedrumen266",
+    "after_capture": {
+      "root": "artifact",
+      "path": "final-correction-v1/chemicals/proposed-v2/Clarified_rumen_fluid.yaml",
+      "sha256": "0b8ea2127cdae48da5dedae89e92a6a5b6cdfa706e80c3fdbe348f9e09497786"
+    },
+    "assessment": "Full companion reread with its original JCM/DSMZ and ontology captures. It is unchanged and not selected as a new corrected payload; source/owner/export limitations remain."
+  },
+  "read_ledger": [
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+      "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/PY-glucose-rumen_Fluid.yaml",
+      "sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+      "sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+      "sha256": "5aa42dfa4f471d0b830b969869547c706757082a88c9cb1c1729aa55f65f345b",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+      "sha256": "2f3c3f811aba49913ed21cc3789cacbb2fd8bcea945d8ba383f939220a1b1045",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "data/ingredients/mapped/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+      "sha256": "8ce8d3f6c8e8bd0a2548f088e5308a9453319e830e094d3e7785734605ea0da5",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+      "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/PYG_Rumen_Fluid.yaml",
+      "sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+      "sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete full YAML read and exact parsed field comparison"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/archaea/JCM_J1423_METHANOBREVIBACTER_CURVATUS_MEDIUM.yaml",
+      "sha256": "47166c7750acf289043ebfe15208f99456a790b686bd65701926642ac3d794ab",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete frozen source recipe parsed; exact raw assigned rumen occurrence and route checked, primary complete recipe separately read"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/archaea/JCM_J1424_METHANOBREVIBACTER_CUTICULARIS_MEDIUM.yaml",
+      "sha256": "9969248462e7fa508100726adb089f3a95ccf241a9891bc31340c543dd435613",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete frozen source recipe parsed; exact raw assigned rumen occurrence and route checked, primary complete recipe separately read"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Clarified_rumen_fluid.yaml",
+      "sha256": "0b8ea2127cdae48da5dedae89e92a6a5b6cdfa706e80c3fdbe348f9e09497786",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete unchanged companion YAML read; source-qualified identity/protocol limits retained, not reauthored"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/root/captures-v2/jcm-1423.body",
+      "sha256": "38133f5e00c1dc09defb426353dbd42df838b6a562cb981752509115523f5bfb",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/root/captures-v2/jcm-1424.body",
+      "sha256": "5c17f97a893350995abd02726e7c17a770d8a9da2b2dd9219e16690836f92648",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/root/captures-v2/jcm-266.body",
+      "sha256": "0054a5cdd60634511ec40a28bc6743000104c8152118dfc019e987afb8886321",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/captures/ols-clarified-rumen.body",
+      "sha256": "59aa8b6a45dbd1f99894bebf2e1c6575be4c43dfa9c07eedb66e58eb429ab566",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/captures-fluid/jcm-1201.body",
+      "sha256": "001352a064ad54ac04480cfda2b02769f32c89a4f7cb7ebb2ad596c042fff7ad",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/captures-fluid/jcm-355.body",
+      "sha256": "8ed4a43bd3f4a71cb9c67cbe7b17543532837c16200ffa6699b97cdf7951ea45",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/captures-fluid/md-161.body",
+      "sha256": "53d710b65b9a45b9d21c2fddd18a86b41de41d18c0a4c2cbd7de44b0a2ef8666",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/captures-fluid/md-212.body",
+      "sha256": "eeb8d159774c373d17aa022fae571326c7df8daf3c3d92eba337cdf78933d989",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete primary recipe/ontology response content read; only source-scoped rumen processing and species claims assessed"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/FINAL-MANIFEST-v1.json",
+      "sha256": "a5ac6b4014f4ff0128e758eef5b94628789ea87ed23baf2e8b963950c6ff24a2",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/HANDOFF.md",
+      "sha256": "6b21d45e708074aff20200b1d7dbbd2e3860debe3255df79b22573ef84ba21be",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/decisions.json",
+      "sha256": "201a40207a764b63e7ff5adb3abd393356da1ac7d9a4b5d5f32d38d509b286b1",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/proposals.json",
+      "sha256": "23930233fa1ca9e5697c85b47995907adb027668a30abc5b807425d75c0d0470",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/evidence.json",
+      "sha256": "0ad98fe8b0eb9bff28766b57d0b615c55740e235e951c4f883db3401a39fa5b1",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/changed-payload-lineage-v1.json",
+      "sha256": "678151b337fd29aecf133ad03d374bc3226ffec1542d18e95bf36a1cc9ef54e6",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json",
+      "sha256": "174dbc2b848e725e45b3200e21dbebbb6c306b868c11196f7c7754bd6eb768be",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/primary-access-results-v1.json",
+      "sha256": "73bb428f043b35a05c80617b7ed57b90a236aae2cee2e7177e54f7954e60ced7",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/free-primary-fetch-web-v1.json",
+      "sha256": "e63da637cdb2baa12991d2d915c617e177233863a31fca42c87ed64601eea028",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete scoped content read and byte binding"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/issues/issue1204.json",
+      "sha256": "4a74db3bc8b33a3d6c8f72b55a38a4a5290458b20f6d116a09645e22d5ed9fea",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete issue body/current captured nested comments read as filed context, not primary science"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/issues/issue1204-comments.json",
+      "sha256": "f9cadfd5cf14c4ba7cd4243a25cb9ea998b8c754e059c0588e194c5db1e466fe",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete issue body/current captured nested comments read as filed context, not primary science"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/issues/issue1237.json",
+      "sha256": "b7b4334befcd7c88c9aba966ff49c1c8ff57103edf611a01082a577ddca0d30c",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete issue body/current captured nested comments read as filed context, not primary science"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/wallace-2003-full.receipt.json",
+      "sha256": "2f1b0bdd3562f45b087ed72c3111cce2b3b69d7204af8031f792af9eed8de397",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete retrieval receipt read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/wallace-2003-full.body",
+      "sha256": "bfa7ac99e3164ab72f3f0aac113560efc06a2fd836f30ad5d28e767069f93f0f",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "byte hash and denial-body identification; no full scientific publication retrieved"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/bergey-eubacterium.receipt.json",
+      "sha256": "cc39b452986dfc20fa51c9b756f332d5fdc6b4007db65c97c4cc54edfedfb350",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete retrieval receipt read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/bergey-eubacterium.body",
+      "sha256": "0a5f72cf61e103d02b9a5773c31d81116a574c9293e0f7bc1b4d79f01deabb73",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "byte hash and denial-body identification; no full scientific publication retrieved"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/bergey-treponema.receipt.json",
+      "sha256": "d87df5240cbdad2cdbafbe774f37ac6b362ffdcdaa1494e9861817824d6df65e",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "complete retrieval receipt read"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/bergey-treponema.body",
+      "sha256": "2afc90a8b7693a0c6e2dddda13b51a888c99eea784494db7c35d0a3d76f97cae",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "byte hash and denial-body identification; no full scientific publication retrieved"
+    },
+    {
+      "path": ".temp/w05-postseal-source-corrections-v1/chemicals/captures/wallace-publisher-web-abstract-v1.json",
+      "sha256": "c3c3729ec56380be0502886171779f3b5128cf301218d347d0f4e898ab55c4df",
+      "read_by": "/root/final_skeptical",
+      "read_at": "2026-11-08T08:38:31.733562+00:00",
+      "mode": "publisher abstract/bibliographic scope read; sheep isolation source does not identify medium rumen-fluid processing or provenance"
+    }
+  ],
+  "new_findings": [],
+  "limitations": [
+    "Family/currentcomment applicability and unchanged Tris audit are independently delegated to /root/final_skeptical/preservation_audit; that separate scope is not represented as this reviewer chemistry.",
+    "Root must validate combined final assembly and retain source ownership/holds; structural PASS is not scientific approval."
+  ]
+}

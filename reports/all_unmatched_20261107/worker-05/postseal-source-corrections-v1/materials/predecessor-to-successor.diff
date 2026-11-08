@@ -1,0 +1,38 @@
+--- sealed/W05-FINAL-MAT-007/Bovine_Serum_Albumin.yaml
++++ postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml
+@@ -82,6 +82,20 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T08:32:28.638400+00:00'
++  curator: /root/materials_research (W05 postseal isolated proposal)
++  action: CORRECTED_SOURCE_CONTEXT
++  changes: 'Resolve W06-TU-004 at https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718748704:
++    replace the irrelevant ADC/OADC context in supplied_form[5].notes with TOGO M194/JCM201
++    BSK context. Preserve literal Fraction V and the source 50 g batch amount without
++    inventing a final volume or 50 g/L concentration. All other supplied forms, identifiers,
++    mapping evidence, synonyms, occurrence counts, prior history and holds are unchanged.
++    This is an isolated W05 proposal, not a coordinator union or maintained write;
++    JCM220/MediaDive3888 #1222 WITHHOLD and inherited A7030 claim limitations remain.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ chemical_properties:
+   cas_rn: 9048-46-8
+   data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+@@ -115,8 +129,12 @@
+   notes: Exact source case 20; Fraction V explicitly stated; manufacturer/catalog
+     and final ADC/OADC volume not established.
+ - name: Bovine albumin, Fraction V
+-  notes: Exact source case 70; Fraction V explicitly stated; manufacturer/catalog
+-    and final ADC/OADC volume not established.
++  notes: 'Exact source case 70, CultureMech:008529: TOGO M194 BSK Medium, with original-source
++    metadata JCM201, explicitly lists Bovine albumin, Fraction V as a 50 g batch input.
++    Manufacturer/catalogue and exact final BSK preparation volume are not established;
++    no 50 g/L concentration is asserted. The formulation is TOGO-provider-backed;
++    the pinned JCM201 response contains no recipe. Source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194.
++    Capture SHA256 84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9.'
+ - name: Bovine Albumin (Fraction V)
+   notes: Exact source case 118; Fraction V explicitly stated; manufacturer/catalog
+     and final ADC/OADC volume not established.

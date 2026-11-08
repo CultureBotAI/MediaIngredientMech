@@ -1,0 +1,13 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T08:36:42.575567+00:00",
+  "events": [
+    {
+      "operation": "display BSA payload diff and decisions",
+      "failure": "Display requested nonexistent payload.diff (actual predecessor-to-successor.diff) and attempted envelope access on a bare list, raising TypeError.",
+      "resolution": "Read actual predecessor-to-successor.diff and parsed five bare-list decisions; no source or review artifact was modified by the failed display."
+    }
+  ],
+  "additional_local_diagnostic": "Initial v1 builder used campaign root rather than frozen queue/preliminary-v5 for source refs; failed before review output. This v2 uses the exact frozen root.",
+  "scientific_finding": false
+}

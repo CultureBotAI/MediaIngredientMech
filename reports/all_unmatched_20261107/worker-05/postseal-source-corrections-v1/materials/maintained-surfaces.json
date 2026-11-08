@@ -1,0 +1,42 @@
+{
+  "scope": "Read-only baseline surface correspondence. No new scientific endorsement of inherited mappings or metadata; no SSSOM rebuild performed.",
+  "individual": {
+    "path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+    "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094"
+  },
+  "aggregate_collections": [
+    {
+      "path": "data/curated/mapped_ingredients.yaml",
+      "sha256": "8d61eef218f045e26fc1f3db6755446008def7bc5d341b1da2e9b08686743e7c"
+    },
+    {
+      "path": "data/curated/unmapped_ingredients.yaml",
+      "sha256": "ad752dc70127edd2b4d073c3ff42d136b89d605a9b5a9151922ffe01d8f873d3"
+    }
+  ],
+  "matching_aggregate_records": 1,
+  "aggregate_record_equals_individual": true,
+  "sssom": {
+    "path": "mappings/ingredient_mappings.sssom.tsv",
+    "sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+    "rows": [
+      {
+        "subject_id": "MIM:Bovine_Serum_Albumin",
+        "subject_label": "bovine serum albumin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C85253",
+        "object_label": "Bovine Serum Albumin",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=refresh_occurrence_statistics|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      }
+    ]
+  },
+  "identity_predicate_synonyms_and_partonomy_inputs_equal_to_predecessor": true,
+  "full_proposed_corpus_not_run": "The full campaign proposal overlay and native compilation are coordinator responsibilities. This check substitutes only the isolated BSA successor into the unchanged maintained baseline."
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "baseline_outcome": "native_no_mim_match",
+    "campaign_requirement": "complete_source_bound_review",
+    "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "native_match_result": {
+      "effective_term_id": "mediadive.compound:1379",
+      "matched": false,
+      "resolved_record": null
+    },
+    "native_occurrence_count": 3,
+    "occurrences": [
+      {
+        "component_path": "ingredients/1",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2266_Marine_Agar_Broth_2216.yaml",
+        "native_name": "Difco Marine Broth 2216",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:a74a96f03a905868769b28aca9d191d2ef477e363631b55c808eabde3c470da1",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "37.4"
+          },
+          "preferred_term": "Difco Marine Broth 2216"
+        },
+        "raw_preferred_term": "Difco Marine Broth 2216",
+        "recipe_id": "CultureMech:008853",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:008853"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "TOGO:M2266"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/TOGO_M2266_Marine_Agar_Broth_2216.yaml",
+        "source_file_sha256": "5f74e5947d9ca31a31573c7f61ad3528d8aec1b4ffd8abe0faa76d50be4e0811",
+        "source_identifiers": []
+      },
+      {
+        "component_path": "composition/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3119_Main_sol_1510.yaml",
+        "native_name": "Difco Marine Broth 2216",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:432cc90659dd3c147962c14c35f5b74e88e621f9c83e54d808c18be9ce889d59",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "37.4"
+          },
+          "evidence": [
+            {
+              "explanation": "Concentration evidence for composition[0].concentration (Difco Marine Broth 2216) in MediaDive solution 3119; locator=$.data.recipe[0] (compound_id=1379). Provider explicitly reports g_l=37.4. Arithmetic check: 37.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 37.4 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:41.645093+00:00; response SHA256=45eef4259c17543cd1d9fb0215662d73589b5d61a0933a22b771dd3e541d91a6.",
+              "reference": "https://mediadive.dsmz.de/rest/solution/3119",
+              "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Difco Marine Broth 2216\",\n                \"compound_id\": 1379,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 37.4,\n                \"unit\": \"g\",\n                \"g_l\": 37.4,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+              "supports": "SUPPORT"
+            }
+          ],
+          "preferred_term": "Difco Marine Broth 2216",
+          "term": {
+            "id": "mediadive.compound:1379",
+            "label": "Difco Marine Broth 2216"
+          }
+        },
+        "raw_preferred_term": "Difco Marine Broth 2216",
+        "recipe_id": "CultureMech:012338",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:012338"
+          },
+          {
+            "path": "/term/id",
+            "value": "mediadive.solution:3119"
+          }
+        ],
+        "record_shape": "SolutionRecipe",
+        "source_file": "data/normalized_yaml/bacterial/mediadive_3119_Main_sol_1510.yaml",
+        "source_file_sha256": "29cf5a04d03a22564305b4db4543394556304330a8ce36fc379fcdf9bd8b9f7a",
+        "source_identifiers": [
+          {
+            "path": "/term/id",
+            "value": "mediadive.compound:1379"
+          }
+        ]
+      },
+      {
+        "component_path": "ingredients/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/modified_medium_514_for_halomonas_sp.yaml",
+        "native_name": "Difco Marine Broth 2216",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:f23017e41a699d752c82811af924efbd8db16207359b9a7d033dc87deb196687",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "37.4"
+          },
+          "evidence": [
+            {
+              "explanation": "Concentration evidence for ingredients[0].concentration (Difco Marine Broth 2216) in MediaDive medium 1510; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=37.4; check: 37.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 37.4 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:42:51.340937+00:00; response SHA256=1351d6c4edd9e01317cff31b81870ea781647f04cc80775134438f1c8c9a35ea.",
+              "reference": "https://mediadive.dsmz.de/rest/medium/1510",
+              "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"Difco Marine Broth 2216\",\n                        \"compound_id\": 1379,\n                        \"amount\": 37.4,\n                        \"unit\": \"g\",\n                        \"g_l\": 37.4,\n                        \"optional\": 0\n                    }",
+              "supports": "SUPPORT"
+            }
+          ],
+          "preferred_term": "Difco Marine Broth 2216"
+        },
+        "raw_preferred_term": "Difco Marine Broth 2216",
+        "recipe_id": "CultureMech:000982",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:000982"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "mediadive.medium:1510"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/modified_medium_514_for_halomonas_sp.yaml",
+        "source_file_sha256": "0492ff4f37cb81b9c5c8a0fe6c27ddfb4c768a8fa0622a75f8f9d5a32a981396",
+        "source_identifiers": []
+      }
+    ],
+    "original_unified_position": 1765,
+    "original_unified_row": {
+      "cas_rn": "",
+      "chebi_id": "",
+      "culturemech_term_id": "mediadive.compound:1379",
+      "example_media": "CultureMech:008853; CultureMech:000982; CultureMech:012338",
+      "ingredient_name": "Difco Marine Broth 2216",
+      "kg_microbe_node_id": "",
+      "mapping_status": "TERM_ID_NO_MIM",
+      "mim_id": "",
+      "occurrence_count": "3",
+      "synonyms": ""
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "Difco Marine Broth 2216",
+    "source": "culturemech",
+    "source_case_id": "Difco Marine Broth 2216",
+    "source_identity_claimed": false,
+    "source_label": "Difco Marine Broth 2216"
+  },
+  {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+    "original_kg_entry": {
+      "candidate_id": "2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [],
+      "downstream_holds": [
+        {
+          "row": {
+            "authority_label": "6-Methylpenicillin",
+            "authority_uri": "https://mediadive.dsmz.de/ingredients/1379",
+            "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+            "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+            "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:2216\",\"object_label\":\"6-Methylpenicillin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:difco_marine_broth_2216\",\"subject_label\":\"Difco Marine Broth 2216\"}",
+            "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=306843",
+            "candidate_route": "material_scope_reviewed_claims",
+            "candidate_target": "CHEBI:2216",
+            "disposition": "historical_quarantined_grounding_claim",
+            "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+            "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+            "qualifier_evidence": "{}",
+            "reason": "source_material_not_native_molecular_identity",
+            "retained_target": "mediadive.ingredient:1379",
+            "source_assertion_id": "mediadive.solution:3119#recipe/1",
+            "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+            "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+            "source_record": "{\"amount\":37.4,\"compound\":\"Difco Marine Broth 2216\",\"compound_id\":1379,\"g_l\":37.4,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+            "source_record_sha256": "40829697cd81b2417596d87b13889f87428f5aba4acba30c7676c700b15c2129"
+          },
+          "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+        },
+        {
+          "row": {
+            "authority_label": "6-Methylpenicillin",
+            "authority_uri": "https://mediadive.dsmz.de/ingredients/1379",
+            "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+            "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+            "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:2216\",\"object_label\":\"6-Methylpenicillin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:difco_marine_broth_difco2216\",\"subject_label\":\"Difco marine broth (Difco2216)\"}",
+            "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=306844",
+            "candidate_route": "material_scope_reviewed_claims",
+            "candidate_target": "CHEBI:2216",
+            "disposition": "historical_quarantined_grounding_claim",
+            "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+            "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+            "qualifier_evidence": "{}",
+            "reason": "source_material_not_native_molecular_identity",
+            "retained_target": "mediadive.ingredient:1379",
+            "source_assertion_id": "mediadive.solution:3119#recipe/1",
+            "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+            "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+            "source_record": "{\"amount\":37.4,\"compound\":\"Difco Marine Broth 2216\",\"compound_id\":1379,\"g_l\":37.4,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+            "source_record_sha256": "40829697cd81b2417596d87b13889f87428f5aba4acba30c7676c700b15c2129"
+          },
+          "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+        },
+        {
+          "row": {
+            "authority_label": "6-Methylpenicillin",
+            "authority_uri": "https://mediadive.dsmz.de/ingredients/1379",
+            "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+            "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+            "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:2216\",\"object_label\":\"6-Methylpenicillin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:difco_marine_broth_difco_2216\",\"subject_label\":\"Difco marine broth (Difco 2216)\"}",
+            "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=306845",
+            "candidate_route": "material_scope_reviewed_claims",
+            "candidate_target": "CHEBI:2216",
+            "disposition": "historical_quarantined_grounding_claim",
+            "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+            "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+            "qualifier_evidence": "{}",
+            "reason": "source_material_not_native_molecular_identity",
+            "retained_target": "mediadive.ingredient:1379",
+            "source_assertion_id": "mediadive.solution:3119#recipe/1",
+            "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+            "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+            "source_record": "{\"amount\":37.4,\"compound\":\"Difco Marine Broth 2216\",\"compound_id\":1379,\"g_l\":37.4,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+            "source_record_sha256": "40829697cd81b2417596d87b13889f87428f5aba4acba30c7676c700b15c2129"
+          },
+          "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+        }
+      ],
+      "name_hits": [],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "Difco Marine Broth 2216",
+      "resolving_owner_paths": [],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:1379",
+      "source_label": "Difco Marine Broth 2216",
+      "source_record": {
+        "amount": 37.4,
+        "compound": "Difco Marine Broth 2216",
+        "compound_id": 1379,
+        "g_l": 37.4,
+        "optional": 0,
+        "recipe_order": 1,
+        "unit": "g"
+      },
+      "triage_flags": [
+        "DOWNSTREAM_MATERIAL_HOLD",
+        "NO_EXACT_CASEFOLD_NAME_MATCH"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "Difco Marine Broth 2216",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1379",
+    "source_identity_claimed": false,
+    "source_label": "Difco Marine Broth 2216"
+  }
+]

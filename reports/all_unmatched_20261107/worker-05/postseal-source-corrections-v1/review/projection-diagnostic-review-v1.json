@@ -1,0 +1,90 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T08:40:46.206549+00:00",
+  "diagnostic_input": {
+    "path": ".temp/w05-postseal-source-corrections-v1/validation/native-row-projections-diagnostic-v1.json",
+    "sha256": "c696dcb545ab9d900bc7199ed805119d87f811eb50e4abbbf6805d2e0be8ad7f"
+  },
+  "status": "supported_diagnostic_interpretation",
+  "assessment": "The failed root equality assertion assumed source cells would be unchanged, overlooking truthful new curation history. Independently compared every complete stored row field and authenticated each changed source cell against actual predecessor/successor last history curator. No payload or native producer correction is indicated. Root validation successor should assert this bounded difference rather than broad equality; preserve this failed diagnostic.",
+  "payload_projection_assessments": [
+    {
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "row_assessments": [
+        {
+          "changed_fields": [
+            "source"
+          ],
+          "source_before": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root correction1193 integration",
+          "source_after": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/chemicals_research postseal source review",
+          "expected_old_last_curator": "Codex worker05 /root correction1193 integration",
+          "expected_new_last_curator": "Codex worker05 /root/chemicals_research postseal source review"
+        }
+      ],
+      "assessment": "Only the authentic appended-history last-curator source token changes; all row identity, predicate, other-display and remaining fields stay exact."
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-casitone",
+      "row_assessments": [
+        {
+          "changed_fields": [
+            "source"
+          ],
+          "source_before": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root correction1193 integration",
+          "source_after": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/chemicals_research postseal source review",
+          "expected_old_last_curator": "Codex worker05 /root correction1193 integration",
+          "expected_new_last_curator": "Codex worker05 /root/chemicals_research postseal source review"
+        }
+      ],
+      "assessment": "Only the authentic appended-history last-curator source token changes; all row identity, predicate, other-display and remaining fields stay exact."
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "row_assessments": [
+        {
+          "changed_fields": [
+            "source"
+          ],
+          "source_before": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root correction1193 integration",
+          "source_after": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/chemicals_research postseal source review",
+          "expected_old_last_curator": "Codex worker05 /root correction1193 integration",
+          "expected_new_last_curator": "Codex worker05 /root/chemicals_research postseal source review"
+        }
+      ],
+      "assessment": "Only the authentic appended-history last-curator source token changes; all row identity, predicate, other-display and remaining fields stay exact."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-007",
+      "row_assessments": [
+        {
+          "changed_fields": [
+            "source"
+          ],
+          "source_before": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=worker05/materials_research correction1193 (isolated proposal)",
+          "source_after": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=/root/materials_research (W05 postseal isolated proposal)",
+          "expected_old_last_curator": "worker05/materials_research correction1193 (isolated proposal)",
+          "expected_new_last_curator": "/root/materials_research (W05 postseal isolated proposal)"
+        }
+      ],
+      "assessment": "Only the authentic appended-history last-curator source token changes; all row identity, predicate, other-display and remaining fields stay exact."
+    },
+    {
+      "proposal_id": "M1193-P-MARINE2216",
+      "row_assessments": [
+        {
+          "changed_fields": [],
+          "source_before": "MIM:https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "source_after": "MIM:https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "expected_old_last_curator": "Codex GPT-6 /root/media_research",
+          "expected_new_last_curator": "Codex GPT-6 /root/media_research"
+        }
+      ],
+      "assessment": "All complete native rows remain exact; appended event retains the same curator token."
+    }
+  ],
+  "tris_assessment": "Complete stored historical2/current3rows inspected. Current already-correct NARROW_MATCH projection has broadMatchCHEBI:9754 plus exactCAS and local registry; parent row omits the unrelated same-substance CAS display. Child independently reproduces native projection and source science.",
+  "limits": [
+    "This receipt checks exact captured native projection results and history-source correspondence; it is not an independent invocation of the native row builder.",
+    "No source/owner/export approval and no changed producer/gate."
+  ]
+}
