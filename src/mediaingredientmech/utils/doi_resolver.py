@@ -9,7 +9,6 @@ uses CultureMech DATABASE_ENTRY citations.
 """
 
 import json
-import os
 import time
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -77,11 +76,9 @@ class DOIResolver:
             cache_dir: Directory for caching metadata (default: ~/.cache/mediaingredientmech/doi_metadata)
             rate_limit: Maximum requests per second
             timeout: Request timeout in seconds
-            contact_email: Email address for Crossref's polite-pool User-Agent.
-                Falls back to the ``MIM_CROSSREF_EMAIL`` environment variable,
-                then to None (which downgrades the User-Agent — Crossref may
-                still serve, but throttling is more aggressive).
+            contact_email: Deprecated and ignored; external API requests run anonymously.
         """
+        _ = contact_email
         self.cache_dir = (
             cache_dir or Path.home() / ".cache" / "mediaingredientmech" / "doi_metadata"
         )
@@ -91,16 +88,9 @@ class DOIResolver:
         self.timeout = timeout
         self.last_request_time = 0.0
 
-        # Crossref API endpoint. The polite pool prefers a real `mailto:` in
-        # the User-Agent — provide one via the constructor or
-        # MIM_CROSSREF_EMAIL. Without it we omit the mailto rather than ship
-        # a placeholder that Crossref might rate-limit or blacklist.
+        # Crossref API endpoint (queried anonymously without email disclosure).
         self.crossref_base = "https://api.crossref.org/works"
-        email = contact_email or os.environ.get("MIM_CROSSREF_EMAIL")
-        if email:
-            self.user_agent = f"MediaIngredientMech/1.0 (mailto:{email}) Python/requests"
-        else:
-            self.user_agent = "MediaIngredientMech/1.0 Python/requests"
+        self.user_agent = "MediaIngredientMech/1.0 Python/requests"
 
     def _get_cache_path(self, doi: str) -> Path:
         """Get cache file path for a DOI.
