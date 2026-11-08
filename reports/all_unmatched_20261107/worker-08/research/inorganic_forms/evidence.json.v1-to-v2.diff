@@ -1,0 +1,126 @@
+--- evidence.json v1
++++ evidence.json v2
+@@ -3941,6 +3941,123 @@
+       "locator": "Complete baseline owner data/ingredients/mapped/Na2moo4_X_2_H2o.yaml",
+       "supports_or_contradicts": "Exact current owner bytes before any proposed edit; existing claims are not approved by copying.",
+       "url": null
++    },
++    {
++      "evidence_id": "if-jcm643-retry-failure",
++      "capture": {
++        "root": "artifact",
++        "path": "research/inorganic_forms/captures/jcm643-retry.json",
++        "sha256": "c127be393ff71fcbe7d9a2cfaf6a49ce79d16e39b5b608d2e11a07c5d0698f1b"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Returned inaccessible response for JCM643",
++      "supports_or_contradicts": "Source recipe was not successfully retrieved; the proposed spelling uses complete frozen occurrence and exact hydrate ontology evidence only.",
++      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=643",
++      "accessed_at": "2026-11-08T05:20:03.029458+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-CHEBI37586",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-CHEBI37586.json",
++        "sha256": "3b1bbcb98f0a127c1bf1c1d61b4193b29e6597eba258a25af47af7f3aacd061a"
++      },
++      "kind": "ontology",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v4.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:37586",
++      "accessed_at": "2026-11-08T05:16:54.375593+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-CAS7783-13-3-search",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-CAS7783-13-3-search.json",
++        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v4.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=7783-13-3&ontology=chebi,ncit&rows=50",
++      "accessed_at": "2026-11-08T05:16:54.375946+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-nah4phosphate-search",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-nah4phosphate-search.json",
++        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v4.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=sodium%20ammonium%20hydrogen%20phosphate%20tetrahydrate&ontology=chebi,ncit&rows=50",
++      "accessed_at": "2026-11-08T05:16:54.376053+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-chebi-CAS7783-search",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-chebi-CAS7783-search.json",
++        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v5.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=7783-13-3&ontology=chebi&rows=50",
++      "accessed_at": "2026-11-08T05:17:46.522095+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-ncit-CAS7783-search",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-ncit-CAS7783-search.json",
++        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v5.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=7783-13-3&ontology=ncit&rows=50",
++      "accessed_at": "2026-11-08T05:17:46.522291+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-chebi-sodium-ammonium-phosphate-search.json",
++        "sha256": "864115be1e443d9b530696561766d84da307c645cf8f38d7e06195e27438d1d9"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v5.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=sodium%20ammonium%20phosphate&ontology=chebi&rows=50",
++      "accessed_at": "2026-11-08T05:17:46.522362+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-ncit-sodium-ammonium-phosphate-search.json",
++        "sha256": "c426a1c37a227f62f378ce220994963d3fcd6ec1e3f559a59823288564bc186f"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v5.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=sodium%20ammonium%20phosphate&ontology=ncit&rows=50",
++      "accessed_at": "2026-11-08T05:17:46.522419+00:00"
++    },
++    {
++      "evidence_id": "if-supplement-if-ols-chebi-sodium-chloride-control",
++      "capture": {
++        "root": "artifact",
++        "path": "shared-primary/if-ols-chebi-sodium-chloride-control.json",
++        "sha256": "4ac6d126701e39b09fdb657ede8e4b04c30642c548a3a676c9d584ef199bd605"
++      },
++      "kind": "unsuccessful_search",
++      "locator": "Exact OLS response docs/numFound and retrieval metadata in shared-primary/retrievals-v5.json",
++      "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
++      "url": "https://www.ebi.ac.uk/ols4/api/search?q=sodium%20chloride&ontology=chebi&rows=5",
++      "accessed_at": "2026-11-08T05:17:47.445051+00:00"
+     }
+   ]
+ }

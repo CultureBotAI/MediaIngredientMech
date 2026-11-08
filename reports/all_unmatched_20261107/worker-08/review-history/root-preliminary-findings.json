@@ -1,0 +1,28 @@
+{
+  "reviewer": "/root",
+  "reviewed_at": "2026-11-08T05:13:00.783931+00:00",
+  "scope": "Preliminary review of seven in-progress inorganic proposal payloads; not completion or whole-shard independent review.",
+  "findings": [
+    {
+      "id": "ROOT-DRAFT-01",
+      "severity": "major",
+      "description": "Draft histories used old_status rather than schema previous_status and marked Na2s2o4 tombstone MAPPED instead of preserved REJECTED. Primary author notified for correction before final review."
+    },
+    {
+      "id": "ROOT-DRAFT-02",
+      "severity": "major",
+      "description": "Draft replaced tombstone structure from ChEBI while retaining older PubChem data_source/retrieval metadata. Primary author notified to maintain truthful provenance or omit unsupported scope."
+    },
+    {
+      "id": "ROOT-DRAFT-03",
+      "severity": "minor",
+      "description": "New source aliases used generic frozen-case source string. Primary author asked to bind exact source ID/recipe URL at the assertion level."
+    },
+    {
+      "id": "ROOT-DRAFT-04",
+      "severity": "major",
+      "description": "Primary author independently found proposed monohydrate destination was a REJECTED tombstone, with canonical active owner distinct; six source-label overrides and memberships/counts remain coupled under issue758."
+    }
+  ],
+  "disposition": "Await revised bytes and separate skeptical review. Maintained YAML was never edited."
+}

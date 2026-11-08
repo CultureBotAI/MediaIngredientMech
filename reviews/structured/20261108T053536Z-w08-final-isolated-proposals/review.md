@@ -1,0 +1,3626 @@
+# Worker 08: bounded review of 46 isolated source-backed proposals
+
+- Review: 20261108T053536Z-w08-final-isolated-proposals
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T05:08:49.272907Z
+- Finished UTC: 2026-11-08T05:35:36.180848Z
+- Reviewer: /root (worker08 integration reviewer) (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+All 46 isolated proposed deltas (17 existing owners, 29 proposed new owners) have evidence-backed case assessments and separate skeptical review. Proposed source-qualified identities and alias/provenance corrections are supported within the stated limits. This observation neither applies the proposals nor approves inherited whole records, roles, mapping rows or publication. The complete 188-case campaign remains authoritative for source-only holds and no-change outcomes.
+
+## Scope And Provenance
+
+Exact final 46 proposed payload deltas selected by proposals.json, with original maintained preimages and source-qualified new-owner boundaries. Unchanged inherited owner claims are outside approval.
+
+Selection: Every proposal in the assembled worker08 proposals.json; no sampling.
+Coverage: full; 46 reviewed / 46 in the declared population.
+Source: working_tree at Git base e000d66dd26ab053e9b17ce7bf8d3c873c3dde99.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| if-add-anhydrous-k2hpo4 | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/K2hpo4.yaml | source | K2HPO4 |
+| if-reject-monohydrate-on-dihydrate | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml | source | NaH2PO4 x 2 H2O |
+| if-add-mono-source-spelling | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml | source | Sodium phosphate monobasic monohydrate |
+| if-repair-dithionite-Na2s2o4 | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2s2o4.yaml | source | Na2S2O4 |
+| if-repair-dithionite-Sodium_Dithionite | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml | source | Sodium dithionite |
+| if-reject-tris-hcl-on-base | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Tris_Base.yaml | source | Tris base |
+| if-new-sodium-ammonium-phosphate-tetrahydrate | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml | source | Sodium ammonium hydrogenphosphate tetrahydrate |
+| if-add-edta-disodium-dihydrate-spelling | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml | source | Na2EDTA·2H2O |
+| op-valeric-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Valeric_Acid.yaml | source | Valeric acid |
+| op-isovaleric-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Isovaleric_Acid.yaml | source | Isovaleric acid |
+| op-methane-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methane.yaml | source | methane |
+| op-soy-flour-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml | source | Soy flour |
+| op-l-asn-hydrate-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml | source | L-Asparagine monohydrate |
+| op-ethane-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Ethane.yaml | source | ethane |
+| op-nalidixic-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Nalidixic_Acid.yaml | source | nalidixic acid |
+| op-glycine-betaine-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml | source | glycine betaine |
+| op-methanethiol-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methanethiol.yaml | source | methanethiol |
+| op-sodium-nicotinate-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Sodium_Nicotinate.yaml | source | Sodium nicotinate |
+| op-glycerol-asparagine-source-note | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml | source | Glycerol-asparagine agar |
+| vm-prop-menadione | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml | source | Menadione |
+| vm-prop-jcm403-vitamin | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml | source | Vitamin solution see Medium No. 403 |
+| vm-prop-jcm403-b12 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml | source | Vitamin B12 solution see Medium No. 403 |
+| vm-prop-linsmaier-skoog | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Linsmaier_Skoog_Medium_Including_Vitamins.yaml | source | Linsmaier &amp; Skoog Medium including vitamins |
+| vm-prop-new-2 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml | source | JCM 296 vitamins mix solution |
+| vm-prop-new-11 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml | source | JCM 995 vitamin solution No. 6 |
+| vm-prop-new-42 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml | source | JCM 1100 vitamin solution B (1000x) |
+| vm-prop-new-58 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml | source | JCM 848 vitamin mixture (100x) |
+| vm-prop-new-65 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1118_Vitamin_Mixture.yaml | source | JCM 1118 vitamin mixture |
+| vm-prop-new-79 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml | source | JCM 1363 vitamin mixture solution |
+| vm-prop-new-82 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml | source | JCM 1097 RST vitamin solution |
+| vm-prop-new-87 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1130_Vitamin_Solution_I.yaml | source | JCM 1130 vitamin solution I |
+| vm-prop-new-110 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml | source | JCM 1100 vitamin solution A (1000x) |
+| vm-prop-new-112 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM923_Major_Metals_Stock.yaml | source | JCM 923 major metals stock |
+| vm-prop-new-119 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM898_Vitamin_Solution.yaml | source | JCM 898 vitamin solution |
+| vm-prop-new-120 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM915_Vitamin_Solution.yaml | source | JCM 915 vitamin solution |
+| vm-prop-new-129 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml | source | JCM 149 Hutner's vitamin free mineral base |
+| vm-prop-new-7 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml | source | DSMZ solution 125 vitamin K1 solution |
+| vm-prop-new-29 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml | source | DSMZ solution 5980 Wolin's vitamin solution (10x) |
+| vm-prop-new-98 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml | source | DSMZ solution 608 volatile fatty acid mixture |
+| vm-prop-new-26 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml | source | ATCC 1249 Component III |
+| vm-prop-new-31 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml | source | NBRC 1321 vitamin B12 solution |
+| vm-prop-new-111 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_Solution.yaml | source | NBRC 1321 vitamin solution |
+| vm-prop-new-73 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Mineral_Base_2.yaml | source | NBRC 1356 mineral base 2 |
+| vm-prop-new-60 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Vitamin_Solution.yaml | source | NBRC 1356 vitamin solution |
+| vm-prop-new-52 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml | source | TOGO M2567 mineral base D |
+| vm-prop-new-106 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml | source | TOGO M2567 mineral base C |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native closed schema for all 46 exact payloads | passed | True | if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-reject-tris-hcl-on-base, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-60, vm-prop-new-52, vm-prop-new-106 | 46 payloads, zero schema failures. |
+| Read-only combined native partonomy and exact preimage validation | passed | True | if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-reject-tris-hcl-on-base, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-60, vm-prop-new-52, vm-prop-new-106 | Baseline 2956 and in-memory overlay 2985 records: zero violations; original before hashes verified; new paths/identifiers unused; 3043 maintained files unchanged including ignored files. |
+| Whole-shard campaign audit | passed | True | if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-reject-tris-hcl-on-base, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-60, vm-prop-new-52, vm-prop-new-106 | 188/188 exact cases; 736 evidence entries; all46 proposal references and capture hashes accounted. Structural pass is not scientific approval. |
+| Post-application synchronization and publication gates | not_applicable | False | if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-reject-tris-hcl-on-base, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-60, vm-prop-new-52, vm-prop-new-106 | No maintained data changes applied; sync, full-data QC, SSSOM generation, companion/semantic approval and downstream rebuilds are not run in this proposal-only shard. |
+
+## Scientific And Domain Assessments
+
+### if-add-anhydrous-k2hpo4 — bounded isolated delta
+
+identity: supported. Targets: if-add-anhydrous-k2hpo4.
+
+Add exact source spelling K2HPO4 (anhydrous base) to the existing anhydrous owner. Identifier and predicate unchanged; one same-substance raw alias added.
+
+CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54: NBRC 268 explicitly names K2HPO4 on an anhydrous basis; ChEBI:131527 has formula HO4P.2K and agrees with the current K2hpo4 owner. The qualifier narrows to the recorded anhydrous salt and does not denote the trihydrate.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved.
+Coordinator must reconcile any other proposal touching this original before-hash owner. Never adopt another worker after bytes silently.
+
+### if-reject-monohydrate-on-dihydrate — bounded isolated delta
+
+identity: supported. Targets: if-reject-monohydrate-on-dihydrate.
+
+Retype three monohydrate labels on the sodium phosphate monobasic dihydrate owner as REJECTED_LABEL, preserving original text and source. No identity or parent predicate change; three wrong-hydrate aliases stop resolving/exporting; all remaining parent/structure holds retained.
+
+KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578: MediaDive678 names sodium dihydrogenphosphate dihydrate while reusing anhydrous chemistry. The current MIM local identity explicitly preserves two waters and is distinct from the monohydrate CHEBI:114249. Its active one-water aliases contradict that distinction; source-matched monohydrate cases must not route here.
+
+KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04: The source explicitly names NaH2PO4·H2O. CHEBI:114249 verifies the monohydrate, distinct from both anhydrous phosphate and the dihydrate. The frozen resolving owner is the dihydrate because it carries active one-water synonyms. The live monohydrate owner is Sodium_phosphate_monobasic_monohydrate; Nah2po4h2o is a REJECTED tombstone. Issue758 requires all three monohydrate labels to move together with six source-label overrides and membership-derived counts across the three forms. Isolated payloads are staged parts of that coupled change only; no alias-only application or exact dihydrate promotion is approved.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved. BLOCKED AS ISOLATED APPLICATION: issue758 requires both aliases, all six source-label overrides and three-form memberships/counts as one reviewed operation; these bytes are staged proposal fragments only.
+Coordinator must reconcile any other proposal touching this original before-hash owner. Never adopt another worker after bytes silently.
+
+### if-add-mono-source-spelling — bounded isolated delta
+
+identity: supported. Targets: if-add-mono-source-spelling.
+
+Add all three source monohydrate spellings to live CHEBI:114249 owner as one staged part of issue758 coupled correction. Requires paired dihydrate rejection plus six source-label overrides, three-form membership/count refresh and native receipt review together; not independently applicable. Existing owner grade/payload not otherwise approved.
+
+KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04: The source explicitly names NaH2PO4·H2O. CHEBI:114249 verifies the monohydrate, distinct from both anhydrous phosphate and the dihydrate. The frozen resolving owner is the dihydrate because it carries active one-water synonyms. The live monohydrate owner is Sodium_phosphate_monobasic_monohydrate; Nah2po4h2o is a REJECTED tombstone. Issue758 requires all three monohydrate labels to move together with six source-label overrides and membership-derived counts across the three forms. Isolated payloads are staged parts of that coupled change only; no alias-only application or exact dihydrate promotion is approved.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved. BLOCKED AS ISOLATED APPLICATION: issue758 requires both aliases, all six source-label overrides and three-form memberships/counts as one reviewed operation; these bytes are staged proposal fragments only.
+Coordinator must reconcile any other proposal touching this original before-hash owner. Never adopt another worker after bytes silently.
+
+### if-repair-dithionite-Na2s2o4 — bounded isolated delta
+
+identity: supported. Targets: if-repair-dithionite-Na2s2o4.
+
+Reject six scutellarin/glucuronide aliases on REJECTED Na2s2o4 merge tombstone; obsolete chemistry remains unchanged and unapproved. Same CHEBI:66870 identity; foreign aliases become nonresolving. Existing issue263 merge and original status retained; no merge, tombstone revival or occurrence-count transfer proposed.
+
+KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26: The source formula Na2S2O4 and its174.11 mass agree with sodium dithionite CHEBI:66870, while MediaDive653 scutellarin names/CHEBI:61278 denote a carbon-rich flavonoid. Issue263 already merged Na2s2o4 into Sodium_Dithionite: the former is a REJECTED tombstone, not a second live owner. Both retain six foreign aliases inherited through that merge. Reject those labels on both files without reviving the tombstone; its obsolete flavonoid structure remains historical, unapproved data outside this bounded alias correction.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved.
+Coordinator must reconcile any other proposal touching this original before-hash owner. Never adopt another worker after bytes silently.
+
+### if-repair-dithionite-Sodium_Dithionite — bounded isolated delta
+
+identity: supported. Targets: if-repair-dithionite-Sodium_Dithionite.
+
+Reject six scutellarin/glucuronide aliases on live Sodium_Dithionite owner. Same CHEBI:66870 identity; foreign aliases become nonresolving. Existing issue263 merge and original status retained; no merge, tombstone revival or occurrence-count transfer proposed.
+
+KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26: The source formula Na2S2O4 and its174.11 mass agree with sodium dithionite CHEBI:66870, while MediaDive653 scutellarin names/CHEBI:61278 denote a carbon-rich flavonoid. Issue263 already merged Na2s2o4 into Sodium_Dithionite: the former is a REJECTED tombstone, not a second live owner. Both retain six foreign aliases inherited through that merge. Reject those labels on both files without reviving the tombstone; its obsolete flavonoid structure remains historical, unapproved data outside this bounded alias correction.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved.
+Worker07 issue1169 proposes the same six-label rejection on this exact original owner. Coordinator must reconcile once and keep one coherent curation event; these before bytes remain worker08 baseline, never worker07 proposed bytes.
+
+### if-reject-tris-hcl-on-base — bounded isolated delta
+
+identity: supported. Targets: if-reject-tris-hcl-on-base.
+
+Reject four hydrochloride/Tris-HCl labels on the free tris base owner; preserve source provenance. Base CHEBI:9754 retained; no chloride salt or solution may resolve to it through these four aliases. Distinct salt owner still requires native lookup.
+
+CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9: The source explicitly names Tris hydrochloride. Sigma T3253 establishes CAS1185-53-1, formula tris·HCl and molecular weight157.60, distinct from free tris CHEBI:9754 (121.136) and Htris cation CHEBI:46097 (no chloride). Current Tris_Base active hydrochloride aliases erase this salt boundary and should be rejected as resolving base synonyms.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved.
+Coordinator must reconcile any other proposal touching this original before-hash owner. Never adopt another worker after bytes silently.
+
+### if-new-sodium-ammonium-phosphate-tetrahydrate — bounded isolated delta
+
+identity: supported. Targets: if-new-sodium-ammonium-phosphate-tetrahydrate.
+
+Propose exact sodium ammonium hydrogenphosphate tetrahydrate as distinct CAS identity with asymmetric sodium phosphate class grounding. Distinct CAS identity; CHEBI37586 broadMatch only, plus required local B1 handle and CAS identity row. Raw hydrate spellings retained; no pure sodium or ammonium phosphate alias collapse.
+
+CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f: The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288 is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride control returned expected terms. This is bounded evidence rather than universal absence.
+
+CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41: The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288 is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride control returned expected terms. This is bounded evidence rather than universal absence.
+
+KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05: The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288 is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride control returned expected terms. This is bounded evidence rather than universal absence.
+
+Application/publication conditions: Current local and successful online exact-term searches are captured; bounded negative results do not establish global absence. Validate closest-parent specificity, new-owner collision and complete source/payload; generate required CAS identity/B1 handle/parent rows. Native schema/SSSOM review remains required, no quantities/memberships/roles/release approved.
+Coordinator must deduplicate CAS7783-13-3 and tetrahydrate source labels across all workers before minting; no current maintained owner found in ignored-inclusive scan.
+
+### if-add-edta-disodium-dihydrate-spelling — bounded isolated delta
+
+identity: supported. Targets: if-add-edta-disodium-dihydrate-spelling.
+
+Add exact source EDTA・2Na・2H2O spelling to live EDTA disodium dihydrate owner; retain existing merge tombstone retirement. CHEBI64758 identity and current grounding/predicate remain unchanged; one exact-form raw spelling becomes resolvable. No anhydrous/free-acid alias, merge, count transfer or tombstone change.
+
+CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f: EDTA・2Na・2H2O explicitly names the disodium dihydrate and matches CHEBI:64758, distinct from EDTA acid and anhydrous disodium salt. Na2-edta_X_2_H2o is a REJECTED merge tombstone with explicit MERGED_INTO CHEBI64758 history; live Na2edta2h2o records the corresponding absorption and exact hydrate chemistry. No new consolidation is required. Propose the precise frozen VRI source spelling on the live owner only, preserving the tombstone, counts and all complete-payload obligations. A live JCM643 retry remained unavailable; no unseen recipe content is asserted.
+
+Application/publication conditions: Withdraw inherited content-bound support for changed owner; complete full published payload/role review, guarded integration, YAML synchronization and native SSSOM/schema gates remain required. Existing annotation-like aliases and provisional CHELATOR evidence are not approved by this narrow addition.
+Coordinator must reconcile any same-owner proposal against original before hash; no alternate owner or other-worker after bytes adopted.
+
+### op-valeric-alias — bounded isolated delta
+
+identity: supported. Targets: op-valeric-alias.
+
+Add source-bound raw alias(es) n--Valeric acid, n -Valeric acid to existing same-scope owner; preserve all other fields and retired labels. Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.
+
+CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb: Doubled hyphen in n--Valeric acid is a source typography variant of straight-chain pentanoic acid. Keep n and iso isomers separate.
+
+CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604: n -Valeric acid denotes straight-chain pentanoic acid; spacing does not remove the n isomer qualifier.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-isovaleric-alias — bounded isolated delta
+
+identity: supported. Targets: op-isovaleric-alias.
+
+Add source-bound raw alias(es) iso -Valeric acid, iso--Valeric acid to existing same-scope owner; preserve all other fields and retired labels. Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.
+
+CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b: Spacing before the hyphen changes no chemical locant: iso-Valeric acid is the branched3-methylbutanoic acid, separate from n-valeric acid.
+
+CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec: iso--Valeric acid retains the branched isomer; repeated punctuation does not indicate a salt or new form.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-methane-alias — bounded isolated delta
+
+identity: supported. Targets: op-methane-alias.
+
+Add source-bound raw alias(es) Methane gas to existing same-scope owner; preserve all other fields and retired labels. Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.
+
+CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c: Methane gas is the methane compound CHEBI:16183 with physical-state wording. Alias applies to gas component identity, never to the full methane/air or methane/CO2 headspace.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-soy-flour-alias — bounded isolated delta
+
+identity: supported. Targets: op-soy-flour-alias.
+
+Add source-bound raw alias(es) Soya flour to existing same-scope owner; preserve all other fields and retired labels. Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.
+
+CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4: Soya flour and soybean flour denote the same generic food material here; supermarket origin does not imply a hydrolysate or specific cultivar. Add the raw Soya spelling to the existing generic flour owner.
+
+KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8: Soya flour from supermarket belongs to the existing generic soybean-flour scope, not soybean peptone. Sharing one alias proposal with the CM case does not collapse two source observations.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-l-asn-hydrate-alias — bounded isolated delta
+
+identity: supported. Targets: op-l-asn-hydrate-alias.
+
+Add source-bound raw alias(es) L-Asparagine*H2O to existing same-scope owner; preserve all other fields and retired labels. Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.
+
+CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307: L-Asparagine*H2O explicitly names L-asparagine monohydrate, CAS5794-13-8. This is not the DL hydrate or anhydrous L amino acid.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-ethane-new — bounded isolated delta
+
+identity: supported. Targets: op-ethane-new.
+
+Create distinct ethane owner; preserve source aliases and distinguish sibling supplied forms. Own-identifier exact identity would be published only after coordinator native and full-payload review. No broad parent is used as exact identity and no roles or occurrence statistics are inferred.
+
+CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468: Ethane is the distinct C2H6 compound CHEBI42266. Gas-phase delivery does not alter component identity; no full headspace mixture identity is asserted. Gitignore-independent owner scan found no ethane-primary owner.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-nalidixic-new — bounded isolated delta
+
+identity: supported. Targets: op-nalidixic-new.
+
+Create distinct nalidixic acid owner; preserve source aliases and distinguish sibling supplied forms. Own-identifier exact identity would be published only after coordinator native and full-payload review. No broad parent is used as exact identity and no roles or occurrence statistics are inferred.
+
+CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e: Both selected occurrences explicitly name nalidixic acid inside stock composition. Acid CHEBI:100147 is distinct from the existing sodium-salt owner and must not be merged with it.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-glycine-betaine-new — bounded isolated delta
+
+identity: supported. Targets: op-glycine-betaine-new.
+
+Create distinct glycine betaine owner; preserve source aliases and distinguish sibling supplied forms. Own-identifier exact identity would be published only after coordinator native and full-payload review. No broad parent is used as exact identity and no roles or occurrence statistics are inferred.
+
+CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b: Glycine betaine is the neutral zwitterion CHEBI:17750. Existing hydrochloride and hydrate owners are distinct supplied forms and cannot absorb this name.
+
+CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2: Trimethylglycine is an independently documented synonym of glycine betaine CHEBI:17750. It is distinct from betaine hydrochloride and hydrate products.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-methanethiol-new — bounded isolated delta
+
+identity: supported. Targets: op-methanethiol-new.
+
+Create distinct methanethiol owner; preserve source aliases and distinguish sibling supplied forms. Own-identifier exact identity would be published only after coordinator native and full-payload review. No broad parent is used as exact identity and no roles or occurrence statistics are inferred.
+
+CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc: Methanethiol is a distinct gas compound CHEBI:16007, not methionine, methyl sulfide or an unnamed sulfur mixture.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-sodium-nicotinate-new — bounded isolated delta
+
+identity: supported. Targets: op-sodium-nicotinate-new.
+
+Create exact sodium-nicotinate salt identity with CAS54-86-4 and acid parent. Require CAS identity/registry row plus skos:broadMatch to CHEBI15940; NARROW_MATCH grade does not authorize exact identity to the acid. Recheck exact ontology salt term before integration.
+
+CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316: Recipe explicitly specifies sodium nicotinate. NIST independently gives CAS54-86-4 and sodium-containing formula. Preserve this salt under its own CAS with broad relation to nicotinic acid, never the acid primary. Bounded searches did not verify an exact ontology salt term.
+
+Application/publication conditions: Proposal bytes only; not applied or export approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release.
+Coordinator must reconcile any overlapping owner proposal before integration.
+
+### op-glycerol-asparagine-source-note — bounded isolated delta
+
+identity: supported. Targets: op-glycerol-asparagine-source-note.
+
+Document source1754-to-JCM60 formulation provenance on the generic named-medium owner while preserving its unproved exact-equivalence boundary. Notes and curation history only. UNMAPPED_0122, UNMAPPED status, raw aliases, zero counts and all other fields unchanged; no assertion that the generic owner is exactly JCM60 and no component/role/mapping row created.
+
+KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997: The exact MediaDive1754 source supplies1000mL and references JCM60/ISP-5, whose official formulation is captured. Existing UNMAPPED_0122 instead originated from a generic synonym extracted from Agar.yaml; it has no source1754/JCM60 provenance, component ratios, supplier or formulation version. Its later Edison history quotes ISP medium5 only as a suggested name, not a primary formulation-equivalence finding. Source1754 is therefore a verified JCM60 medium reference, while equivalence of the complete generic owner to this exact recipe remains unproved. Propose a narrow source-provenance note so the supported recipe and remaining identity boundary are durable.
+
+Application/publication conditions: Isolated exact-preimage proposal; no maintained data changed.; Any changed owner requires fresh content-bound review; no inherited identity or role approval transfers.; Mapping or typed recipe linkage requires evidence bridging the original generic label to the exact formulation/version; the source1754-to-JCM60 reference itself is already supported.
+Coordinator must reconcile any other proposal for this owner against original before hash.
+
+### vm-prop-menadione — bounded isolated delta
+
+identity: supported. Targets: vm-prop-menadione.
+
+ATCC Medium 1257 (https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx) identifies Menadione (Vitamin K3) as the 50 mg solute in its separate Menadione Solution (50 ml 95% ethanol plus 50 ml water). Add the compound alias only; the frozen ETSA flattened 50 G_PER_L amount is not validated and the whole solution is not a synonym of menadione. Only the cited source-defined formulation / exact ingredient; existing mapping and historical holds preserved.
+
+CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff: ATCC1257 identifies Menadione(VitaminK3) as the solute in its separate Menadione Solution. ChEBI28869 is menadione and the current owner already recognizes VitaminK3; the combined raw name can be added to the compound owner. The frozen ETSA50G_PER_L entry is a flattened nested50mg quantity and remains a source-dose defect, not proof of50g/L or whole-solution identity.
+
+Application/publication conditions: Apply only against the stated before hash after independent review; synchronize maintained surfaces through the coordinator.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-jcm403-vitamin — bounded isolated delta
+
+identity: supported. Targets: vm-prop-jcm403-vitamin.
+
+JCM Medium 403 separately defines this vitamin mixture as p-aminobenzoic acid 4 mg, biotin 1 mg, nicotinic acid 10 mg, DL-calcium pantothenate 5 mg and pyridoxine hydrochloride 10 mg in 100 ml sodium phosphate buffer (10 mM, pH 7.1). The separate thiamine and vitamin B12 stocks are excluded. Raw pointer aliases apply only to this JCM formulation. Only the cited source-defined formulation / exact ingredient; existing mapping and historical holds preserved.
+
+CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028: JCM 403 five-vitamin phosphate-buffer stock is separate from its B12 and thiamine solutions. The exact Medium No. 403 pointer allows the raw starred spelling to enrich the existing source-specific registry owner, with its actual 100 mL batch recorded; no pure-vitamin identity or generic solution exact mapping is introduced.
+
+CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f: Every complete frozen occurrence carrying the exact Medium 403 vitamin-solution pointer is bound in the evidence, including the MediaDive JCM-derived main solutions. JCM 403 separately enumerates five vitamins in 100 mL phosphate buffer. These pointers support the existing source-specific Vitamin_Solution_See_Medium_No_403 owner, not its separate B12 stock.
+
+Application/publication conditions: Apply only against the stated before hash after independent review; synchronize maintained surfaces through the coordinator.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-jcm403-b12 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-jcm403-b12.
+
+JCM Medium 403 defines the separate vitamin B12 stock as Vitamin B12 5 mg in distilled water 100 ml. Classify this recipe pointer as STOCK_SOLUTION, not a whole named medium. The source does not identify the B12 vitamer, so neither the stock nor its component is assigned an exact cyanocobalamin identity. Preserve UNMAPPED_0567 and all historical source holds. Only the cited source-defined formulation / exact ingredient; existing mapping and historical holds preserved.
+
+CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596: The explicit JCM 403 pointer resolves to its separately defined B12 stock: 5 mg vitamin B12 in 100 mL distilled water. It is not JCM 403 multi-vitamin solution. The existing UNMAPPED_0567 has the same imported source identity, so the proposal corrects its stock classification and records the pointer spelling and composition while leaving vitamer grounding unresolved.
+
+CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1: All bound JCM-derived occurrences with the explicit B12 Medium403 pointer refer to its separate5mg/100mLwater stock, not the five-vitamin phosphate-buffer mixture. The existing source-import owner UNMAPPED0567 is the correct narrow edit target; the proposal classifies and annotates the stock without choosing a B12 vitamer.
+
+KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2: The complete KG source record mediadive.ingredient1845 is the same imported identity recorded in UNMAPPED0567 history. JCM403 resolves its recipe pointer to5mgB12/100mLwater, supporting classification/alias/provenance enrichment of that owner. The KG source occurrence definition and any embedded publication holds remain bound to the original case; no exact vitamer mapping or downstream release is proposed.
+
+Application/publication conditions: Apply only against the stated before hash after independent review; synchronize maintained surfaces through the coordinator.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-linsmaier-skoog — bounded isolated delta
+
+identity: supported. Targets: vm-prop-linsmaier-skoog.
+
+The frozen mediadive.ingredient:2431 source explicitly specifies Duchefa L0230. The manufacturer formulation (https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins) and certificate (https://duchefa-biochemie.com/ac/download/number/L0230/id/7087) enumerate mineral macro/microelements, myo-inositol 100 mg/L and thiamine HCl 0.4 mg/L, total 4402.49 mg/L. This identifies the existing imported named-medium owner and its abbreviated source label; it does not identify any single vitamin or imply a supplement-only mixture. Retain UNMAPPED_0427 pending a separately scoped registry promotion; this proposal is exact source/product provenance and alias enrichment. Only the cited source-defined formulation / exact ingredient; existing mapping and historical holds preserved.
+
+KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb: The frozen KG record mediadive.ingredient2431 explicitly names DuchefaL0230 and4.4g addition. Exhaustive current-owner search finds UNMAPPED0427 with the same sourceID despite the frozen name_hits result. Manufacturer L0230 composition/certificate establish a mineral-and-vitamin basal medium, not a vitamin-only supplement. Existing owner alias and product provenance enrichment are justified; a second owner would duplicate the source identity.
+
+Application/publication conditions: Apply only against the stated before hash after independent review; synchronize maintained surfaces through the coordinator.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-2 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-2.
+
+Create source-defined JCM 296 vitamins mix solution with complete immediate constituent enumeration and registry identity.  JCM Medium 296: Vitamins mix solution
+
+CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6: The two MPYCY recipes contain the stock inside Solution B. JCM 1037 points to 1036, whose vitamins mix points to JCM 296: seven constituents at 20 mg each and folic acid, B12 and biotin at 1 mg each per 1 L water. This is a ten-vitamin stock, distinct from pure vitamins and from the surrounding Solution B. A source-qualified registry stock is proposed; the generic raw label remains scoped in notes.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-11 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-11.
+
+Create source-defined JCM 995 vitamin solution No. 6 with complete immediate constituent enumeration and registry identity.  JCM Medium 995: Vitamin solution No. 6
+
+CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be: JCM 995 Vitamin solution No. 6 is an explicitly enumerated nine-vitamin stock within Solution 2, including nicotinamide and thiamine hydrochloride dihydrate. Those forms differ from other vitamin stock recipes, so the source-qualified recipe is proposed without collapsing it into generic Vitamin solution or Planctomyces vitamin mix.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-42 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-42.
+
+Create source-defined JCM 1100 vitamin solution B (1000x) with complete immediate constituent enumeration and registry identity.  JCM Medium 1100: Vitamin solution B (1000 x stock)
+
+CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380: The CTM source distinguishes Vitamin solution B (1000x) from solution A. JCM 1100 defines B as vitamin B12 100 mg in 100 mL water, while A is a multi-vitamin phosphate-buffer stock. A separate source-qualified B stock is proposed; B12 form remains unspecified at component level and no generic B12 alias is added.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-58 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-58.
+
+Create source-defined JCM 848 vitamin mixture (100x) with complete immediate constituent enumeration and registry identity.  JCM Medium 848: 100 x Vitamin mixture
+
+CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22: JCM 848 defines the 100x vitamin mixture with biotin/B12 0.1 g each, pABA 0.3 g, folate/thiamine-HCl/riboflavin 0.5 g each and pyridoxine-HCl 1.5 g per L water. The proposed source-qualified stock preserves 100x and the high stock amounts; these are not final-culture doses or the JCM 1023 pyridoxamine stock.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-65 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-65.
+
+Create source-defined JCM 1118 vitamin mixture with complete immediate constituent enumeration and registry identity.  JCM Medium 1118: Vitamin mixture
+
+CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f: JCM 1118 defines this mixture as B12 1.1 mg, biotin 1 mg and thiamine-HCl 200 mg per L water. It is a three-vitamin stock, not the much broader mixtures carrying almost the same typography. A source-qualified registry stock is proposed with the bare raw text retained only in source-scoped notes.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-79 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-79.
+
+Create source-defined JCM 1363 vitamin mixture solution with complete immediate constituent enumeration and registry identity.  JCM Medium 1363: Vitamin mixture solution
+
+CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c: JCM1363 explicitly defines an eight-vitamin stock in 100 mL 10 mM phosphate buffer pH7.1, including B12 5 mg, pyridoxine-HCl15 mg and thiamine-HCl10 mg. JCM1364 points to this exact recipe. A shared source-specific stock proposal covers those two cases while keeping JCM403 separate.
+
+CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1: JCM1364 explicitly points to the Vitamin mixture solution of JCM1363. That provides the same complete eight-vitamin phosphate-buffer formulation as case79, including B125mg and pyridoxine-HCl15mg per100mL. The cases share one qualified new stock proposal; neither is equated to JCM403.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-82 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-82.
+
+Create source-defined JCM 1097 RST vitamin solution with complete immediate constituent enumeration and registry identity.  JCM Medium 1097: RST vitamin solution
+
+CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b: JCM1097 RST stock contains coenzyme M with nine listed vitamins and omits B12; it is not the common Wolfe or Thauer mixture. The exact source pointer supports a distinct JCM-qualified preparation, with coenzyme M preserved as a constituent rather than a synonym for the whole stock.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-87 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-87.
+
+Create source-defined JCM 1130 vitamin solution I with complete immediate constituent enumeration and registry identity.  JCM Medium 1130: Vitamin solution I
+
+CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb: JCM1385 points to JCM1130 YCFA vitamin solution I, explicitly biotin/B12 5 mg each, pABA15 mg, folate25 mg and pyridoxine-HCl75 mg in500 mL water. Vitamin solution II separately contains thiamine/riboflavin. A qualified I-stock proposal preserves that separation.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-110 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-110.
+
+Create source-defined JCM 1100 vitamin solution A (1000x) with complete immediate constituent enumeration and registry identity.  JCM Medium 1100: Vitamin solution A (1000 x stock)
+
+CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724: CTM JCM1100 vitamin solutionA(1000x) contains thirteen specified compounds, including thiamine pyrophosphate, ascorbate and β-NAD, in100 mL10mM potassium phosphate buffer pH7.2. The separate B stock contains B12. The proposed source-specific A identity preserves these components and excludes B12; A/B are not synonyms.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-112 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-112.
+
+Create source-defined JCM 923 major metals stock with complete immediate constituent enumeration and registry identity.  JCM Medium 923: Major metals
+
+CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f: JCM923 Major metals is actually a three-salt stock: KCl0.15 g, KH2PO4 1.36 g and NH4Cl2.68 g in1 Lwater. Its local heading does not mean metallic elements or the separate Trace metal1 solution. The proposal gives the exact source-qualified mineral-stock identity.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-119 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-119.
+
+Create source-defined JCM 898 vitamin solution with complete immediate constituent enumeration and registry identity.  JCM Medium 898: Vitamin solution
+
+CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118: Both JCM1423 and1424 point to the JCM898 vitamin solution. Its seven-vitamin recipe includes B12100mg, pABA80mg, biotin20mg, nicotinic200mg, DL-calcium pantothenate100mg, pyridoxine-HCl300mg and thiamine-HCl200mg perLwater. This supports a distinct source-qualified stock with preserved high concentrations.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-120 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-120.
+
+Create source-defined JCM 915 vitamin solution with complete immediate constituent enumeration and registry identity.  JCM Medium 915: Vitamin solution
+
+CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b: JCM1430/1431/1479 explicitly reference JCM915 vitamin solution, a nine-vitamin stock in100mLwater with thiamine-HCl90mg, myo-inositol40mg, B125mg, pABA5mg, calcium pantothenate/pyridoxine-HCl/nicotinic acid4mg each, biotin0.1mg and folic2mg. The source pointer supports one qualified stock across all three occurrences.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-129 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-129.
+
+Create source-defined JCM 149 Hutner's vitamin free mineral base with complete immediate constituent enumeration and registry identity. Metals 44 is an immediate nested component, not silently flattened; KOH amount is approximate as stated in preparation. JCM Medium 149: Hutner's vitamin free mineral base
+
+CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd: JCM149 Hutner vitamin-free base contains NTA10g,MgSO4·7H2O14.45g,CaCl2·2H2O3.335g,ammonium molybdate tetrahydrate9.25mg,FeSO4·7H2O99mg,Metals44 50mL and water950mL, with approximately7.3gKOH for neutralization. It is a nested mineral stock distinct from modified Hutner recipes; immediate components and preparation qualifier are preserved.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-7 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-7.
+
+Create source-defined DSMZ solution 125 vitamin K1 solution with complete immediate constituent enumeration and registry identity. Source dissolves 0.1 ml vitamin K1 in 20 ml 95% ethanol; these are literal additions, not 0.1 g and not an assumed 20.0 ml final volume. DSMZ MediaDive solution 125: Vitamin K1 solution
+
+CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499: MediaDive main solution 453 explicitly links solution 125. Solution 125 dissolves 0.1 mL vitamin K1 in 20 mL 95% ethanol. The prepared stock is not pure CHEBI:18067 and the amount is volume, not mass. Its literal batch and ethanol qualifier are preserved in a separate stock proposal.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-29 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-29.
+
+Create source-defined DSMZ solution 5980 Wolin's vitamin solution (10x) with complete immediate constituent enumeration and registry identity.  DSMZ MediaDive solution 5980: Wolin's vitamin solution (10x)
+
+CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e: MediaDive main solution 277 directly references solution 5980, Wolin's vitamin solution (10x). That stock enumerates ten vitamins, including calcium D-(+)-pantothenate and B12 1 mg/L. It is tenfold concentrated relative to common Wolfe-type vitamin recipes and differs from the current Thauer and Wolfe stock owners. A source-qualified stock proposal preserves the complete literal formulation.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-98 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-98.
+
+Create source-defined DSMZ solution 608 volatile fatty acid mixture with complete immediate constituent enumeration and registry identity.  DSMZ MediaDive solution 608: Volatile fatty acid mixture
+
+CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3: Both MediaDive main solutions453 and606 explicitly reference solution608. The stock is a seven-acid volumetric blend: acetic548.5 mL, propionic193.5, butyric129 and n-valeric/isobutyric/DL-2-methylbutyric/isovaleric32.25 mL each. A source-specific mixed-acid identity is proposed, with no exact mapping of the whole blend to one fatty acid.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-26 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-26.
+
+Create source-defined ATCC 1249 Component III with complete immediate constituent enumeration and registry identity. Component III is prepared separately at pH 7.5 and then mixed with Components I and II. Its generic sequence label is not a universal identity. ATCC Medium 1249 Modified Baar medium: Component III
+
+CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb: ATCC 1249 primary PDF restores the three separate subpreparations. Component III is sodium lactate 3.5 g and yeast extract 1.0 g in 400 mL DI water, adjusted to pH 7.5 and autoclaved before combining I/II/III. The flattened recipe title is a local preparation label, so the proposal uses an ATCC-qualified stock identity and does not publish bare Component III globally.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-31 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-31.
+
+Create source-defined NBRC 1321 vitamin B12 solution with complete immediate constituent enumeration and registry identity. This source explicitly identifies cyanocobalamin and filter sterilization. It is distinct from a pure cyanocobalamin ingredient and from vitamer-unspecified JCM 403 B12 stock. NBRC 1321: ******Vitamin B12 solution
+
+CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08: NBRC 1321 footnote ****** explicitly defines Cyanocobalamin 5 mg plus distilled water 100 mL and filtration. This resolves the vitamer for this occurrence only. The prepared stock remains distinct from the pure cyanocobalamin ingredient and from JCM 403, which uses the generic B12 name. A source-specific stock owner is proposed.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-111 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-111.
+
+Create source-defined NBRC 1321 vitamin solution with complete immediate constituent enumeration and registry identity. Pyridoxine-HCl is 15 mg per source batch, whereas JCM 403 specifies 10 mg. Do not equate the formulations. NBRC 1321: ****Vitamine solution
+
+CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86: NBRC1321 footnote**** has pABA4 mg, biotin1 mg, nicotinic10 mg, Ca-pantothenate5 mg and pyridoxine-HCl15 mg per100 mL phosphate buffer. JCM403 has10 mg pyridoxine-HCl, so sharing its owner would be chemically incorrect. The NBRC-qualified proposal captures the distinct stock.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-73 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-73.
+
+Create source-defined NBRC 1356 mineral base 2 with complete immediate constituent enumeration and registry identity. Source stock pH is 7.3; it is mixed with carbonate base 1 in 1:1 proportion. The nitrogen atmosphere is a preparation condition, not a material component. NBRC 1356: **Mineral base 2
+
+CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072: NBRC1356 base2 contains NaCl240 g, NH4Cl0.5 g, K2HPO4 2.5 g, KCl5 g and water1 L at pH7.3. It is mixed 1:1 with the precipitate-cleared carbonate base1 and then supplemented. This accurately resolves the local stock context but is not the final medium, base1, or any single salt. The complete immediate source formulation supports an isolated source-qualified registry stock proposal. Its bare local name is retained in scoped notes rather than exported as a global alias.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-60 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-60.
+
+Create source-defined NBRC 1356 vitamin solution with complete immediate constituent enumeration and registry identity. The formula is shared by the three assigned NBRC occurrences. It is distinct from the current Wolfe/Thauer stocks; the unqualified starred name remains source-scoped. NBRC 1356: ***Vitamin solution; matching enumerations checked in NBRC 857 and936
+
+CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51: NBRC 1356, 857 and 936 all supply the same nine-vitamin recipe: biotin/folate 2 mg, pyridoxine-HCl 10 mg, thiamine-HCl/riboflavin/nicotinic acid/Ca-pantothenate 5 mg, pABA 1 mg and B12 0.01 mg per L. This establishes a common source-family stock but differs from current Wolfe/Thauer owners (notably B12, pABA and lipoic acid). The starred generic label cannot serve as a universal alias. The complete immediate source formulation supports an isolated source-qualified registry stock proposal. Its bare local name is retained in scoped notes rather than exported as a global alias.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-52 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-52.
+
+Create source-defined TOGO M2567 mineral base D with complete immediate constituent enumeration and registry identity. Immediate components are two separate solutions; do not flatten the stock amounts into final-medium G_PER_L. TOGO M2567 YPS medium: Mineral base D
+
+CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4: TOGO M2567 API restores Mineral base D as 5 mL 14% (w/v) NH4Cl stock plus 5 mL 7% (w/v) KH2PO4 stock. The source then uses 10 mL base D in YPS. The frozen flat G_PER_L quantity is not a molecular ingredient dose, and D is distinct from bases A–C. The complete immediate source formulation supports an isolated source-qualified registry stock proposal. Its bare local name is retained in scoped notes rather than exported as a global alias.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+### vm-prop-new-106 — bounded isolated delta
+
+identity: supported. Targets: vm-prop-new-106.
+
+Create source-defined TOGO M2567 mineral base C with complete immediate constituent enumeration and registry identity. Immediate components are two separate solutions; source does not specify hydrates or carriers, so no pure-compound identities are assigned. TOGO M2567 YPS medium: Mineral base C
+
+CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533: TOGO M2567 API defines Mineral base C as1 mL10 mM Na2WO4 stock plus1 mL25 mM FeCl3 stock, then adds2 mL baseC to YPS. This is a two-stock preparation rather than either pure tungsten/iron compound. The frozen unit is flattened. The complete immediate source formulation supports an isolated source-qualified registry stock proposal. Its bare local name is retained in scoped notes rather than exported as a global alias.
+
+Application/publication conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+Reconcile equivalent recipes and shared owner proposals before integration.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| peer-inorganic_forms | reports/all_unmatched_20261107/worker-08/independent/organics-reviews-inorganics/review.json; Per-case and per-proposal reviews, final input hashes, findings and dispositions | supports | Separate skeptical review by /root/organics of primary work by /root/inorganics. Scientific acceptance is bounded to each stated delta and preserved source limits. |
+| peer-organic_products | reports/all_unmatched_20261107/worker-08/independent/vitamins-reviews-organics/review.json; Per-case and per-proposal reviews, final input hashes, findings and dispositions | supports | Separate skeptical review by /root/vitamins of primary work by /root/organics. Scientific acceptance is bounded to each stated delta and preserved source limits. |
+| peer-vitamins_mixtures | reports/all_unmatched_20261107/worker-08/independent/inorganics-reviews-vitamins/review-v2.json; Per-case and per-proposal reviews, final input hashes, findings and dispositions | supports | Separate skeptical review by /root/inorganics of primary work by /root/vitamins. Scientific acceptance is bounded to each stated delta and preserved source limits. |
+| proposal-evidence-001 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-6e58176e2c88, if-web-ce1b21e3999c, if-owner-K2hpo4 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-002 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-815e3c20cd7c, if-web-35e2568f4291, if-web-bf59a5cf8cba, if-owner-Nah2po4_X_2_H2o | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-003 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-815e3c20cd7c, if-web-35e2568f4291, if-owner-Sodium_phosphate_monobasic_monohydrate | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-004 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-a6115707524d, if-web-3b45bf729424, if-web-cba02e9e72c1, if-owner-Na2s2o4 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-005 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-a6115707524d, if-web-3b45bf729424, if-web-cba02e9e72c1, if-owner-Sodium_Dithionite | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-006 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-6322279750cf, if-web-dc07e461177a, if-web-c9217d1795e3, if-owner-Tris_Base | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-007 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-web-a21ca13832bf, if-web-1cdd59bc636c, if-web-186326289c79, if-local-ontology-lookup, if-search-scope, if-supplement-if-ols-CHEBI37586, if-supplement-if-ols-CAS7783-13-3-search, if-supplement-if-ols-nah4phosphate-search, if-supplement-if-ols-chebi-CAS7783-search, if-supplement-if-ols-ncit-CAS7783-search, if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search, if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search, if-supplement-if-ols-chebi-sodium-chloride-control | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-008 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: if-case-067, if-recipe-50ac3ed4c871, if-web-9af22132e57e, if-web-872d30616b80, if-owner-Na2-edta_X_2_H2o, if-owner-Na2edta2h2o | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-009 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-108, op-case-41, op-context-108-0, op-context-41-0, op-context-41-1, op-context-41-2, op-context-41-3, op-context-41-4, op-jcm1130, op-jcm1385, op-owner-search, op-valeric | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-010 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-25, op-case-54, op-context-25-0, op-context-54-0, op-context-54-1, op-context-54-2, op-context-54-3, op-context-54-4, op-isovaleric, op-jcm1130, op-jcm1385, op-owner-search | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-011 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-131, op-context-131-0, op-context-131-1, op-context-131-2, op-context-131-3, op-context-131-4, op-context-131-5, op-context-131-6, op-context-131-7, op-context-131-8, op-methane, op-owner-search | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-012 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-13, op-case-157, op-context-13-0, op-medium1894, op-owner-search, op-soy-flour-term | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-013 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-136, op-context-136-0, op-l-asn-hydrate, op-owner-search | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-014 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-23, op-context-23-0, op-ethane, op-ethane-source, op-jcm1120-failed, op-owner-search | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-015 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-24, op-context-24-0, op-context-24-1, op-nalidixic, op-owner-search | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-016 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-betaine, op-betaine-supplier, op-case-113, op-case-83, op-context-113-0, op-context-113-1, op-context-113-2, op-context-113-3, op-context-113-4, op-context-113-5, op-context-113-6, op-context-113-7, op-context-113-8, op-context-113-9, op-context-83-0, op-owner-search | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-017 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-137, op-context-137-0, op-methanethiol, op-owner-search, op-shared-failed-retrievals | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-018 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-5, op-context-5-0, op-jcm393, op-niacin-parent, op-nicotinate, op-owner-search, op-search-search-targeted-final | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-019 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: op-case-166, op-jcm60, op-owner-search, op-glycerol-asparagine-owner-provenance | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-020 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-24e001e2a8ef4c94, vm-fetch-3df06b333d904295, vm-fetch-89421fc5e5288cd1, vm-fetch-4d94772b23d0707c, vm-fetch-9f1823cb1943c3d0, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-021 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-6ecdcd807d50b77e, vm-fetch-d996280764895d68, vm-fetch-085cbb2e66835d73, vm-owner-search, vm-context-review, vm-source-c1bd07b5b48cc6d6, vm-source-e5eedebd2c64fec9, vm-source-1a2f925f303d0aea, vm-source-0ee86e31d4a255b3, vm-source-fb4935b353df974e, vm-source-23823b5cf88a118d, vm-source-5ac1e1c8b87dd263, vm-source-5112a743afaa6d91, vm-source-51db70b2ad43e807, vm-source-ef2f66288af957db, vm-source-faf29f16ed69258d, vm-fetch-390cf52044540743, vm-fetch-64f83901b90fe73e, vm-fetch-23c9ef849d2e2a8c, vm-fetch-b78730e3c9676c6f, vm-fetch-328a5332ec90a975, vm-fetch-71b7d24280626a65, vm-fetch-64dafc4844ce03bb, vm-fetch-c50eda38b1643f9a, vm-fetch-861d699588a13341, vm-fetch-f901f25820abb7d3, vm-fetch-0052360a442cd0a2 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-022 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-68e80aca804beb28, vm-source-6ecdcd807d50b77e, vm-fetch-c51346bafaa787c0, vm-fetch-d996280764895d68, vm-fetch-085cbb2e66835d73, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm-source-0501aab9b61fdecc, vm-source-c1bd07b5b48cc6d6, vm-source-c069e0e9ccad2b33, vm-source-e5eedebd2c64fec9, vm-source-1a2f925f303d0aea, vm-source-0ee86e31d4a255b3, vm-source-fb4935b353df974e, vm-source-23823b5cf88a118d, vm-source-5ac1e1c8b87dd263, vm-source-5112a743afaa6d91, vm-source-51db70b2ad43e807, vm-source-ef2f66288af957db, vm-source-faf29f16ed69258d, vm-source-3c0e91ab157981a0, vm-fetch-f7802d29f49b5fc9, vm-fetch-390cf52044540743, vm-fetch-d74e56f7eaadda34, vm-fetch-64f83901b90fe73e, vm-fetch-23c9ef849d2e2a8c, vm-fetch-b78730e3c9676c6f, vm-fetch-328a5332ec90a975, vm-fetch-71b7d24280626a65, vm-fetch-64dafc4844ce03bb, vm-fetch-c50eda38b1643f9a, vm-fetch-861d699588a13341, vm-fetch-f901f25820abb7d3, vm-fetch-0052360a442cd0a2, vm-fetch-fd3107a1b417fa8d, vm-kg-case-146 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-023 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-kg-case-161, vm-fetch-55478bbdd53a4842, vm-fetch-c17d192b7ba8f73f, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-024 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-b5475f5a05beca3f, vm-source-257817455489aabd, vm-fetch-366c648a332e35b4, vm-fetch-4b00ebd104142c22, vm-fetch-3799e4c66cccca65, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-025 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-a9fb7abe5ee1d741, vm-fetch-9c2e840069cb8057, vm-fetch-d78eaec3d48cf38b, vm-fetch-cb3de946b9eb429a, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-026 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-2c7c0ce87cf42de7, vm-fetch-4e8edb4e6b08818b, vm-fetch-692f41af8d398680, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-027 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-c14918d86bc0078c, vm-fetch-52200f6234b08b10, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-028 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-4b5dc539516ea71e, vm-fetch-82ea031bb1241c65, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-029 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-0a131015ff30eda8, vm-fetch-22afcd66d54001db, vm-owner-search, vm-context-review, vm-source-2a114c4a8610f111, vm-fetch-968193c83d7a5664 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-030 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-7033f91e1e07a0ca, vm-fetch-018ac1b93ee4966b, vm-fetch-98d5aedf61df406f, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-031 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-30885b1364d04801, vm-fetch-84b42f6bfd1ad444, vm-fetch-8fe937c1ef6c1c21, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-032 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-2c7c0ce87cf42de7, vm-fetch-4e8edb4e6b08818b, vm-fetch-692f41af8d398680, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-033 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-3e1e9370445e0f7b, vm-fetch-840c3c16a8268251, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-034 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-3ec8e42c4547421b, vm-source-c1b79ae358782135, vm-fetch-79ff40e0246c791f, vm-fetch-fb1b36265a05cf80, vm-fetch-84a75e38c41f32c1, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-035 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-be0a4c933fcfd841, vm-source-50d3a3ffe8510207, vm-source-c1fa1cb9734c3c24, vm-fetch-6d72693fd96023c1, vm-fetch-e1ddc8bac4c87b3a, vm-fetch-ca36fc1813bc9928, vm-fetch-f7ada6c0c960aa48, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-036 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-510c96b231d4d298, vm-fetch-9c2e840069cb8057, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-037 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-20379b58da18d9b2, vm-fetch-960070b1d415deaf, vm-fetch-1dded859627a404a, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-038 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-26f96ed0714f6d33, vm-fetch-5b0fecab0584dd77, vm-fetch-d4ba6de7b54bd50f, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-039 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-20379b58da18d9b2, vm-source-96983e9c6e3c4f98, vm-fetch-960070b1d415deaf, vm-fetch-7df4b58ccb0630ac, vm-fetch-ca55b8a6996c682b, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-040 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-5e99de08f857e2ac, vm-fetch-ee72f2cda218a8b5, vm-fetch-332e5587cc6b78c3, vm-fetch-93c11b3b00b4e211, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-041 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-e91756f441b7ac12, vm-fetch-2caf4cd3f91d0ec5, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2 | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-042 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-e91756f441b7ac12, vm-fetch-2caf4cd3f91d0ec5, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-043 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-1bddaeef3181377d, vm-fetch-30623db6b794d1cc, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-044 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-1bddaeef3181377d, vm-source-0f2d908b4519424b, vm-source-8f8d8ab982de63af, vm-fetch-30623db6b794d1cc, vm-fetch-340a73a127cf12b1, vm-fetch-88d4946dae9a79f1, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-045 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| proposal-evidence-046 | reports/all_unmatched_20261107/worker-08/evidence.json; Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e, vm-owner-search, vm-context-review | supports | Content-bound evidence index for this proposal; each nested source retains its original URL, capture bytes, retrieval time and applicability in the case decisions. This timestamp records inspection of the index, not source recapture. |
+| structural | reports/all_unmatched_20261107/worker-08/structural-audit-v2.json | supports | Whole-shard exact accounting PASS for all 188 cases after bounded archive extraction. This is structural validation only. |
+| combined | reports/all_unmatched_20261107/worker-08/validation/combined-validation.json | supports | All 46 selected payloads pass closed schema; 2956-record baseline and 2985-record memory overlay have zero partonomy violations; 3043 maintained files unchanged. |
+
+## Limits And Additional Notes
+
+- Pass applies only to reviewed isolated deltas, not authorization to apply or export. Full inherited record claims and roles remain unapproved.
+- Source-specific WITHHOLD/REJECTED decisions and exact missing requirements remain in all188 case decisions. No hold release follows from native validation.
+- Issue758 phosphate proposals require coupled alias/override/membership/count integration. Sodium dithionite owner overlaps worker07 issue1169. Preserve original before hashes.
+- New-owner positive content-bound SSSOM admission limitations in issue1165 remain. Source-qualified stock names do not justify globally resolving generic aliases.
+- The source-only Na and CO cases remain held under issues1172 and1178; CO alias was withdrawn after native resolver casefold reproduction.
+- JCM149 Hutner and worker01NBRC943 are distinct source formulations; no worker01 case approval is claimed.
+- Zero native finding objects means no residual defect in this narrowly reviewed proposal delta scope; open integration and source findings remain in the campaign decisions and issue ledger.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T053536Z-w08-final-isolated-proposals
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Worker 08: bounded review of 46 isolated source-backed proposals'
+started_at: '2026-11-08T05:08:49.272907Z'
+finished_at: '2026-11-08T05:35:36.180848Z'
+reviewer:
+  identity: /root (worker08 integration reviewer)
+  kind: agent
+  independence: self_review
+  independence_basis: Root assembles and validates the bundle. Scientific primary
+    authors and separate skeptical reviewers are explicitly identified in three hashed
+    peer receipts; root does not claim independence from its own assembly.
+skill: map-media-ingredients; add-media; review-sssom-output; native record-review
+  profile
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: All 46 isolated proposed deltas (17 existing owners, 29 proposed new owners)
+  have evidence-backed case assessments and separate skeptical review. Proposed source-qualified
+  identities and alias/provenance corrections are supported within the stated limits.
+  This observation neither applies the proposals nor approves inherited whole records,
+  roles, mapping rows or publication. The complete 188-case campaign remains authoritative
+  for source-only holds and no-change outcomes.
+source:
+  git_revision: e000d66dd26ab053e9b17ce7bf8d3c873c3dde99
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 8d61eef218f045e26fc1f3db6755446008def7bc5d341b1da2e9b08686743e7c
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: ad752dc70127edd2b4d073c3ff42d136b89d605a9b5a9151922ffe01d8f873d3
+    role: context
+  - path: data/ingredients/mapped/Isovaleric_Acid.yaml
+    sha256: a6ea3dec5b1f41d46baaac946df5e96d6aca41cfb6aa3da3fa1d0bff398d22bd
+    role: context
+  - path: data/ingredients/mapped/K2hpo4.yaml
+    sha256: 7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1
+    role: context
+  - path: data/ingredients/mapped/L-Asparagine_Monohydrate.yaml
+    sha256: 0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a
+    role: context
+  - path: data/ingredients/mapped/Menadione.yaml
+    sha256: 2ffe65c6d3f0029bc03ae633447b714b8d2421652aa76c9404dbac6fb9df18d0
+    role: context
+  - path: data/ingredients/mapped/Methane.yaml
+    sha256: c0f1aa55fe19a70d6108f0b9247c852879470d46263195899939cd8e08a6feb3
+    role: context
+  - path: data/ingredients/mapped/Na2edta2h2o.yaml
+    sha256: 9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d
+    role: context
+  - path: data/ingredients/mapped/Na2s2o4.yaml
+    sha256: 2a370f469e3a425a6f79d1bbada66f77767b8a7fff649951dffaa3ec90145fc5
+    role: context
+  - path: data/ingredients/mapped/Nah2po4_X_2_H2o.yaml
+    sha256: a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d
+    role: context
+  - path: data/ingredients/mapped/Sodium_Dithionite.yaml
+    sha256: 5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1
+    role: context
+  - path: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
+    sha256: e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022
+    role: context
+  - path: data/ingredients/mapped/Soy_Flour.yaml
+    sha256: ba96033d326524811bb54040bfca97e7c66140761e4650ca154c8e8621b2dff9
+    role: context
+  - path: data/ingredients/mapped/Tris_Base.yaml
+    sha256: fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1
+    role: context
+  - path: data/ingredients/mapped/Valeric_Acid.yaml
+    sha256: 67ef8d965bb89f4862fac1b03aa2cdfab4505741b27017ae5d2c33fb4ad31a56
+    role: context
+  - path: data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml
+    sha256: 32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48
+    role: context
+  - path: data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml
+    sha256: a20ab80bfd721b38622db05c4890f6f5ae80540ae038959e0e91446d9edaf5d5
+    role: context
+  - path: data/ingredients/unmapped/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    sha256: 997fe910f5f0b1ecbc616496082fefaa08fb3b809afcd98a2f725659443b51f1
+    role: context
+  - path: data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    sha256: 1a9bcd5868a4a1e1385b3574ee5682c571e8f5dcd78fb86ae8d213d11951a471
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/decisions.json
+    sha256: c21fbc7eb1772f9c840900bc86c4c32eaaf061390afc518dddee8adfcb916361
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/evidence.json
+    sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/independent/inorganics-reviews-vitamins/review-v2.json
+    sha256: 984e0c4bf67c30aebb7ac43dc1e5c8e86966f441964eba5aef5d01c2e3067d70
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/independent/organics-reviews-inorganics/review.json
+    sha256: 4a0ad3bb8f2161f1c73f803430bdf1780f53232f35bebef181d1ed0a051d2c95
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/independent/vitamins-reviews-organics/review.json
+    sha256: 32aebf8f2bdccf6812012dfc87eec0dfef63e8a8733d0418099ffd3e28fc279a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/proposals.json
+    sha256: 167e71e699f78c40f3389c8e5000bf26303b6083c1146e35875ab53dd95d1a41
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+    sha256: 1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/K2hpo4.yaml
+    sha256: 6bd2194c63c815c81750a6e61e6da8d85db6579ebeee15626caf1328bbc645a4
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml
+    sha256: 1f981682c97803091dfd5bf91ccf52a8055901df5f132cee2b1effdeb15bb33d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2s2o4.yaml
+    sha256: 569413243139395d50e225efe22b950bd60f5aa3c23ee70d5cfcd002225d1316
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml
+    sha256: 3dcb2ff6d438659777ce8c37d244a19f21ce89a5332392ae9071efffb9217b55
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml
+    sha256: 74e2cca44589dc54aab6363a06a9cb9b1c535eaad86e131f18f63d19956c91a6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml
+    sha256: 4173e5073b8d267983e242a701cdfb275b952372af57514ae7da7aa42c14797b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml
+    sha256: e79903919876ad08323eaa4faabee6255367345d6e092b329e7006dd0bcaa3a0
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Tris_Base.yaml
+    sha256: ff2f93c60edbaa12252ddc22c0fb894b56058179611b836b8f0a83fbb22b857a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Ethane.yaml
+    sha256: 6514d4c20262b17fb07646ba5ba4521588c4f0849364325fbde9ea1a98192714
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml
+    sha256: 7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml
+    sha256: f5addc808ecde52ecab0d29ba812e7d48c979dace5409bdbac0cd6f0f588312e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Isovaleric_Acid.yaml
+    sha256: b5d25061615be15e4055434b7a271e608b78650c37fe992d49a19234090ff6d5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml
+    sha256: 07d8b55d6773f4e16ad57e18e5ed72a4438bdeb207cdfb435da84cc2cb62e20a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methane.yaml
+    sha256: 19e46bb75e6a556511aef6f9467578a5e18c478175c61ee728d4dbf4b956445b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methanethiol.yaml
+    sha256: 754de84e222d4baa52be7e46760b353810ae23188718613b7220b039b1ea3219
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Nalidixic_Acid.yaml
+    sha256: ca0acf4743b49628c9a2086a412abbc2c82840367a40251061e8b43608b50d72
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Sodium_Nicotinate.yaml
+    sha256: 06447906860830a09cd5b77b4f3366e1533edcfb1041cc8f9f3332ce7c3e8f1d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml
+    sha256: d936af5f0aa4d99913af6bf6ec95ccea6e651064cb61aa1e3f57cba793b6aeb9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Valeric_Acid.yaml
+    sha256: 321fc7161a295322c2eb7002583eeefe2f7de49771795235ac68c3e6cea7fc49
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml
+    sha256: 73f37518ec92f98c7bb32e8d6d15ac0e85946bc7e2c366541160426a0cadd9b3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml
+    sha256: 21067756427b40510e5af972a580008ffd0b4b23b4f520e16537a3655e0c50db
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml
+    sha256: fa5869a2f809a679feff7f7c58f074fd32c1efc40e9596dd97a30e591a3edadd
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml
+    sha256: 07195fe7debafe0583588d72428999f65d0a01e5c2c75ed9b7b595cc325af250
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml
+    sha256: ced38b480fb7a57faa8362bb3df67ac0c265a20dc2923659feabc00326a2e81a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml
+    sha256: 65812b5bc2a51018a2e0606ed156414a64f9733c33658f2f7b7af60e6b9ced63
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml
+    sha256: 9a445d95db93999a2861953bcec387c7212fd965a5b8aee70db3d19c15c4f6df
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1118_Vitamin_Mixture.yaml
+    sha256: 8d215b6e039ff7ebdcd711f4a68412e38cffbdabf0c81e4a65e059d9989669b2
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1130_Vitamin_Solution_I.yaml
+    sha256: 17d2b1c408a8bf2d61635843d61ca3b30f92a51f048b9644beba9bf9e37c744b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml
+    sha256: db2acb8781510548d63f8148f215bac554c8583289ce5ae0d496193fbcbaa427
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml
+    sha256: 244f4f42c3b00f640c165d4b558d26d5e3fe949619fb51a1803e9d60ab40ae79
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml
+    sha256: 4f5067b1ee47cbe920dfc989e18e495a1ea575219d5151fc8f54ee0a1cd5877f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml
+    sha256: 63a3e4f42e4dfa13127a253cca16fe4605a265666026bc43b85cedbafc95170a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM898_Vitamin_Solution.yaml
+    sha256: 07d57ab6312a8fe3d0182511e49adea3e7e7bd3659bab3c6841fd2a4d7b22867
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM915_Vitamin_Solution.yaml
+    sha256: fdcc0b1e1a8267acf1170e97891460f2ee72555dc5fa70a46f0dc8316e2d9909
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM923_Major_Metals_Stock.yaml
+    sha256: f75e1999a2c66118f0fc749d8b4fe20e9c2c45785047f7e1d1645c37ede5ff07
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml
+    sha256: 70316a108a327f463346cb42f58ce98f083f3b6b354e683a5a230dda22ba008f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml
+    sha256: 808564e03dd9d66dcabd795be5aa2d7609420a38b9aefbecc9d895ffbd2cacbe
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_Solution.yaml
+    sha256: 7cc39f2a835f5db283cf85aa3c0e6f3a44e9977a616c84f27df855eeddfbb302
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Mineral_Base_2.yaml
+    sha256: 507e9dd99938613ca50e4c18f96f548738d523a77f0fc807b62dd99b8471a3d3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Vitamin_Solution.yaml
+    sha256: c5687a7fdf4457dbc7fca84b55d1d5514ee9358495531dc153813c858b902b7d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml
+    sha256: 501c378191aec2ef6967754bdce4f27ca5bcf044028465f08827480acc2f2fdf
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml
+    sha256: ff88641667a68f53b92085197653096925a27a46450449c795defe2d74f854ed
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    sha256: 85ea6abcfb40e1346da6f38dad3c97bfebbb99993d5237ceb0358026d3501fb0
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml
+    sha256: d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    sha256: 94956716b71347bd431921e64a06ddd2593d6e7bc50e748e1be3c3cc78bb73a8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml
+    sha256: a86933326bed8cdf623c0a8dc41622bd6e3bc54243addf1610be4f884dda1db5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/structural-audit-v2.json
+    sha256: 305950704c288a50985c197c93dbb9c01cc212762c2aefd2d44b4672f22cc314
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/validation/combined-validation.json
+    sha256: 7f9bf869194b35e11b3b802b5f2a512a1b5b0e2d5a431e3de3001a0c453f1e61
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- target_id: if-add-anhydrous-k2hpo4
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/K2hpo4.yaml
+  label: K2HPO4
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/K2hpo4.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:131527; coordinator synchronizes
+      after guarded application
+- target_id: if-reject-monohydrate-on-dihydrate
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml
+  label: NaH2PO4 x 2 H2O
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nah2po4_X_2_H2o.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=kgmicrobe.compound:nah2po4_x_2_h2o;
+      coordinator synchronizes after guarded application
+- target_id: if-add-mono-source-spelling
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml
+  label: Sodium phosphate monobasic monohydrate
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:114249; coordinator synchronizes
+      after guarded application
+- target_id: if-repair-dithionite-Na2s2o4
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2s2o4.yaml
+  label: Na2S2O4
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2s2o4.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:66870; coordinator synchronizes
+      after guarded application
+- target_id: if-repair-dithionite-Sodium_Dithionite
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml
+  label: Sodium dithionite
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Dithionite.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:66870; coordinator synchronizes
+      after guarded application
+- target_id: if-reject-tris-hcl-on-base
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Tris_Base.yaml
+  label: Tris base
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tris_Base.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:9754; coordinator synchronizes
+      after guarded application
+- target_id: if-new-sodium-ammonium-phosphate-tetrahydrate
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml
+  label: Sodium ammonium hydrogenphosphate tetrahydrate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml.
+    Coordinator must reconcile identity and admit the new owner before creation/export.
+- target_id: if-add-edta-disodium-dihydrate-spelling
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml
+  label: Na2EDTA·2H2O
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2edta2h2o.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:64758; coordinator synchronizes
+      after guarded application
+- target_id: op-valeric-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Valeric_Acid.yaml
+  label: Valeric acid
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Valeric_Acid.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:17418; coordinator synchronizes
+      after guarded application
+- target_id: op-isovaleric-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Isovaleric_Acid.yaml
+  label: Isovaleric acid
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Isovaleric_Acid.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:28484; coordinator synchronizes
+      after guarded application
+- target_id: op-methane-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methane.yaml
+  label: methane
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Methane.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:16183; coordinator synchronizes
+      after guarded application
+- target_id: op-soy-flour-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml
+  label: Soy flour
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soy_Flour.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=FOODON:03302142; coordinator synchronizes
+      after guarded application
+- target_id: op-l-asn-hydrate-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml
+  label: L-Asparagine monohydrate
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-Asparagine_Monohydrate.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=cas:5794-13-8; coordinator synchronizes
+      after guarded application
+- target_id: op-ethane-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Ethane.yaml
+  label: ethane
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/Ethane.yaml. Coordinator must reconcile identity and
+    admit the new owner before creation/export.
+- target_id: op-nalidixic-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Nalidixic_Acid.yaml
+  label: nalidixic acid
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/Nalidixic_Acid.yaml. Coordinator must reconcile identity
+    and admit the new owner before creation/export.
+- target_id: op-glycine-betaine-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml
+  label: glycine betaine
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/Glycine_Betaine.yaml. Coordinator must reconcile identity
+    and admit the new owner before creation/export.
+- target_id: op-methanethiol-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methanethiol.yaml
+  label: methanethiol
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/Methanethiol.yaml. Coordinator must reconcile identity
+    and admit the new owner before creation/export.
+- target_id: op-sodium-nicotinate-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Sodium_Nicotinate.yaml
+  label: Sodium nicotinate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/Sodium_Nicotinate.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: op-glycerol-asparagine-source-note
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml
+  label: Glycerol-asparagine agar
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Matching aggregate selector identifier=UNMAPPED_0122; coordinator synchronizes
+      after guarded application
+- target_id: vm-prop-menadione
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml
+  label: Menadione
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menadione.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=CHEBI:28869; coordinator synchronizes
+      after guarded application
+- target_id: vm-prop-jcm403-vitamin
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml
+  label: Vitamin solution see Medium No. 403
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Matching aggregate selector identifier=kgmicrobe.ingredient:vitamin_solution_see_medium_no_403;
+      coordinator synchronizes after guarded application
+- target_id: vm-prop-jcm403-b12
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml
+  label: Vitamin B12 solution see Medium No. 403
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Matching aggregate selector identifier=UNMAPPED_0567; coordinator synchronizes
+      after guarded application
+- target_id: vm-prop-linsmaier-skoog
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+  label: Linsmaier & Skoog Medium including vitamins
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    role: Current maintained individual preimage; proposed delta not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Matching aggregate selector identifier=UNMAPPED_0427; coordinator synchronizes
+      after guarded application
+- target_id: vm-prop-new-2
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml
+  label: JCM 296 vitamins mix solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM296_Vitamins_Mix_Solution.yaml. Coordinator must
+    reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-11
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml
+  label: JCM 995 vitamin solution No. 6
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM995_Vitamin_Solution_No6.yaml. Coordinator must
+    reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-42
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml
+  label: JCM 1100 vitamin solution B (1000x)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM1100_Vitamin_Solution_B_1000x.yaml. Coordinator
+    must reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-58
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml
+  label: JCM 848 vitamin mixture (100x)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM848_Vitamin_Mixture_100x.yaml. Coordinator must
+    reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-65
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1118_Vitamin_Mixture.yaml
+  label: JCM 1118 vitamin mixture
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM1118_Vitamin_Mixture.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-79
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml
+  label: JCM 1363 vitamin mixture solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM1363_Vitamin_Mixture_Solution.yaml. Coordinator
+    must reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-82
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml
+  label: JCM 1097 RST vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM1097_RST_Vitamin_Solution.yaml. Coordinator must
+    reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-87
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1130_Vitamin_Solution_I.yaml
+  label: JCM 1130 vitamin solution I
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM1130_Vitamin_Solution_I.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-110
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml
+  label: JCM 1100 vitamin solution A (1000x)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM1100_Vitamin_Solution_A_1000x.yaml. Coordinator
+    must reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-112
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM923_Major_Metals_Stock.yaml
+  label: JCM 923 major metals stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM923_Major_Metals_Stock.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-119
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM898_Vitamin_Solution.yaml
+  label: JCM 898 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM898_Vitamin_Solution.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-120
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM915_Vitamin_Solution.yaml
+  label: JCM 915 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM915_Vitamin_Solution.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-129
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml
+  label: JCM 149 Hutner's vitamin free mineral base
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml. Coordinator
+    must reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-7
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml
+  label: DSMZ solution 125 vitamin K1 solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/DSMZ125_Vitamin_K1_Solution.yaml. Coordinator must
+    reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-29
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml
+  label: DSMZ solution 5980 Wolin's vitamin solution (10x)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml. Coordinator
+    must reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-98
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml
+  label: DSMZ solution 608 volatile fatty acid mixture
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml. Coordinator
+    must reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-26
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml
+  label: ATCC 1249 Component III
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/ATCC1249_Component_III.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-31
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml
+  label: NBRC 1321 vitamin B12 solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/NBRC1321_Vitamin_B12_Solution.yaml. Coordinator must
+    reconcile identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-111
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_Solution.yaml
+  label: NBRC 1321 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/NBRC1321_Vitamin_Solution.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-73
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Mineral_Base_2.yaml
+  label: NBRC 1356 mineral base 2
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/NBRC1356_Mineral_Base_2.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-60
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Vitamin_Solution.yaml
+  label: NBRC 1356 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/NBRC1356_Vitamin_Solution.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-52
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml
+  label: TOGO M2567 mineral base D
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/TOGO_M2567_Mineral_Base_D.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+- target_id: vm-prop-new-106
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml
+  label: TOGO M2567 mineral base C
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed new owner only; no maintained MIM owner exists
+    at data/ingredients/mapped/TOGO_M2567_Mineral_Base_C.yaml. Coordinator must reconcile
+    identity and admit the new owner before creation/export.
+scope:
+  description: Exact final 46 proposed payload deltas selected by proposals.json,
+    with original maintained preimages and source-qualified new-owner boundaries.
+    Unchanged inherited owner claims are outside approval.
+  selection: Every proposal in the assembled worker08 proposals.json; no sampling.
+  coverage: full
+  population_size: 46
+  reviewed_target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-reject-tris-hcl-on-base
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-60
+  - vm-prop-new-52
+  - vm-prop-new-106
+  exclusions:
+  - target: Source cases without a proposal
+    reason: Their exact frozen source objects are assessed in decisions.json and independent
+      receipts. The local ingredient review profile does not create a maintained MIM
+      owner for a source-only hold.
+  - target: Maintained whole-record and export admission
+    reason: All data remain unchanged. Integration, inherited claim withdrawal and
+      content-bound publication admission belong to the coordinator.
+checks:
+- check_id: strict
+  name: Native closed schema for all 46 exact payloads
+  status: passed
+  required: true
+  command: Python scripts/validate_strict.py --workers 2 --out validation/final-proposals-strict.tsv
+    <46 exact selected payload paths; complete argv in combined-validation.json>
+  exit_code: 0
+  summary: 46 payloads, zero schema failures.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-reject-tris-hcl-on-base
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-60
+  - vm-prop-new-52
+  - vm-prop-new-106
+  evidence_ids:
+  - combined
+- check_id: partonomy-and-preimages
+  name: Read-only combined native partonomy and exact preimage validation
+  status: passed
+  required: true
+  command: .temp/all-unmatched-worker-08/venv/bin/python .temp/all-unmatched-worker-08/validate_final_bundle.py
+  exit_code: 0
+  summary: 'Baseline 2956 and in-memory overlay 2985 records: zero violations; original
+    before hashes verified; new paths/identifiers unused; 3043 maintained files unchanged
+    including ignored files.'
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-reject-tris-hcl-on-base
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-60
+  - vm-prop-new-52
+  - vm-prop-new-106
+  evidence_ids:
+  - combined
+- check_id: source-accounting
+  name: Whole-shard campaign audit
+  status: passed
+  required: true
+  exit_code: 0
+  command: audit_worker_outcomes_v1.py --shard shard-08.json --decisions decisions.json
+    --evidence evidence.json --proposals proposals.json --artifact-root worker08 --source-root
+    preliminary-v5 --mim-root assigned-worktree --output structural-audit-v2.json
+  summary: 188/188 exact cases; 736 evidence entries; all46 proposal references and
+    capture hashes accounted. Structural pass is not scientific approval.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-reject-tris-hcl-on-base
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-60
+  - vm-prop-new-52
+  - vm-prop-new-106
+  evidence_ids:
+  - structural
+- check_id: maintained-release-gates
+  name: Post-application synchronization and publication gates
+  status: not_applicable
+  required: false
+  summary: No maintained data changes applied; sync, full-data QC, SSSOM generation,
+    companion/semantic approval and downstream rebuilds are not run in this proposal-only
+    shard.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-reject-tris-hcl-on-base
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-60
+  - vm-prop-new-52
+  - vm-prop-new-106
+evidence:
+- evidence_id: peer-inorganic_forms
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/independent/organics-reviews-inorganics/review.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: 4a0ad3bb8f2161f1c73f803430bdf1780f53232f35bebef181d1ed0a051d2c95
+  locator: Per-case and per-proposal reviews, final input hashes, findings and dispositions
+  summary: Separate skeptical review by /root/organics of primary work by /root/inorganics.
+    Scientific acceptance is bounded to each stated delta and preserved source limits.
+- evidence_id: peer-organic_products
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/independent/vitamins-reviews-organics/review.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: 32aebf8f2bdccf6812012dfc87eec0dfef63e8a8733d0418099ffd3e28fc279a
+  locator: Per-case and per-proposal reviews, final input hashes, findings and dispositions
+  summary: Separate skeptical review by /root/vitamins of primary work by /root/organics.
+    Scientific acceptance is bounded to each stated delta and preserved source limits.
+- evidence_id: peer-vitamins_mixtures
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/independent/inorganics-reviews-vitamins/review-v2.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: 984e0c4bf67c30aebb7ac43dc1e5c8e86966f441964eba5aef5d01c2e3067d70
+  locator: Per-case and per-proposal reviews, final input hashes, findings and dispositions
+  summary: Separate skeptical review by /root/inorganics of primary work by /root/vitamins.
+    Scientific acceptance is bounded to each stated delta and preserved source limits.
+- evidence_id: proposal-evidence-001
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-6e58176e2c88, if-web-ce1b21e3999c, if-owner-K2hpo4'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-002
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-815e3c20cd7c, if-web-35e2568f4291, if-web-bf59a5cf8cba,
+    if-owner-Nah2po4_X_2_H2o'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-003
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-815e3c20cd7c, if-web-35e2568f4291, if-owner-Sodium_phosphate_monobasic_monohydrate'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-004
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-a6115707524d, if-web-3b45bf729424, if-web-cba02e9e72c1,
+    if-owner-Na2s2o4'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-005
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-a6115707524d, if-web-3b45bf729424, if-web-cba02e9e72c1,
+    if-owner-Sodium_Dithionite'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-006
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-6322279750cf, if-web-dc07e461177a, if-web-c9217d1795e3,
+    if-owner-Tris_Base'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-007
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-web-a21ca13832bf, if-web-1cdd59bc636c, if-web-186326289c79,
+    if-local-ontology-lookup, if-search-scope, if-supplement-if-ols-CHEBI37586, if-supplement-if-ols-CAS7783-13-3-search,
+    if-supplement-if-ols-nah4phosphate-search, if-supplement-if-ols-chebi-CAS7783-search,
+    if-supplement-if-ols-ncit-CAS7783-search, if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search,
+    if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search, if-supplement-if-ols-chebi-sodium-chloride-control'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-008
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: if-case-067, if-recipe-50ac3ed4c871, if-web-9af22132e57e,
+    if-web-872d30616b80, if-owner-Na2-edta_X_2_H2o, if-owner-Na2edta2h2o'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-009
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-108, op-case-41, op-context-108-0, op-context-41-0,
+    op-context-41-1, op-context-41-2, op-context-41-3, op-context-41-4, op-jcm1130,
+    op-jcm1385, op-owner-search, op-valeric'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-010
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-25, op-case-54, op-context-25-0, op-context-54-0,
+    op-context-54-1, op-context-54-2, op-context-54-3, op-context-54-4, op-isovaleric,
+    op-jcm1130, op-jcm1385, op-owner-search'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-011
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-131, op-context-131-0, op-context-131-1, op-context-131-2,
+    op-context-131-3, op-context-131-4, op-context-131-5, op-context-131-6, op-context-131-7,
+    op-context-131-8, op-methane, op-owner-search'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-012
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-13, op-case-157, op-context-13-0, op-medium1894,
+    op-owner-search, op-soy-flour-term'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-013
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-136, op-context-136-0, op-l-asn-hydrate, op-owner-search'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-014
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-23, op-context-23-0, op-ethane, op-ethane-source,
+    op-jcm1120-failed, op-owner-search'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-015
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-24, op-context-24-0, op-context-24-1, op-nalidixic,
+    op-owner-search'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-016
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-betaine, op-betaine-supplier, op-case-113, op-case-83,
+    op-context-113-0, op-context-113-1, op-context-113-2, op-context-113-3, op-context-113-4,
+    op-context-113-5, op-context-113-6, op-context-113-7, op-context-113-8, op-context-113-9,
+    op-context-83-0, op-owner-search'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-017
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-137, op-context-137-0, op-methanethiol, op-owner-search,
+    op-shared-failed-retrievals'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-018
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-5, op-context-5-0, op-jcm393, op-niacin-parent,
+    op-nicotinate, op-owner-search, op-search-search-targeted-final'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-019
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: op-case-166, op-jcm60, op-owner-search, op-glycerol-asparagine-owner-provenance'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-020
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-24e001e2a8ef4c94, vm-fetch-3df06b333d904295, vm-fetch-89421fc5e5288cd1,
+    vm-fetch-4d94772b23d0707c, vm-fetch-9f1823cb1943c3d0, vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-021
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-6ecdcd807d50b77e, vm-fetch-d996280764895d68, vm-fetch-085cbb2e66835d73,
+    vm-owner-search, vm-context-review, vm-source-c1bd07b5b48cc6d6, vm-source-e5eedebd2c64fec9,
+    vm-source-1a2f925f303d0aea, vm-source-0ee86e31d4a255b3, vm-source-fb4935b353df974e,
+    vm-source-23823b5cf88a118d, vm-source-5ac1e1c8b87dd263, vm-source-5112a743afaa6d91,
+    vm-source-51db70b2ad43e807, vm-source-ef2f66288af957db, vm-source-faf29f16ed69258d,
+    vm-fetch-390cf52044540743, vm-fetch-64f83901b90fe73e, vm-fetch-23c9ef849d2e2a8c,
+    vm-fetch-b78730e3c9676c6f, vm-fetch-328a5332ec90a975, vm-fetch-71b7d24280626a65,
+    vm-fetch-64dafc4844ce03bb, vm-fetch-c50eda38b1643f9a, vm-fetch-861d699588a13341,
+    vm-fetch-f901f25820abb7d3, vm-fetch-0052360a442cd0a2'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-022
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-68e80aca804beb28, vm-source-6ecdcd807d50b77e,
+    vm-fetch-c51346bafaa787c0, vm-fetch-d996280764895d68, vm-fetch-085cbb2e66835d73,
+    vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm-source-0501aab9b61fdecc,
+    vm-source-c1bd07b5b48cc6d6, vm-source-c069e0e9ccad2b33, vm-source-e5eedebd2c64fec9,
+    vm-source-1a2f925f303d0aea, vm-source-0ee86e31d4a255b3, vm-source-fb4935b353df974e,
+    vm-source-23823b5cf88a118d, vm-source-5ac1e1c8b87dd263, vm-source-5112a743afaa6d91,
+    vm-source-51db70b2ad43e807, vm-source-ef2f66288af957db, vm-source-faf29f16ed69258d,
+    vm-source-3c0e91ab157981a0, vm-fetch-f7802d29f49b5fc9, vm-fetch-390cf52044540743,
+    vm-fetch-d74e56f7eaadda34, vm-fetch-64f83901b90fe73e, vm-fetch-23c9ef849d2e2a8c,
+    vm-fetch-b78730e3c9676c6f, vm-fetch-328a5332ec90a975, vm-fetch-71b7d24280626a65,
+    vm-fetch-64dafc4844ce03bb, vm-fetch-c50eda38b1643f9a, vm-fetch-861d699588a13341,
+    vm-fetch-f901f25820abb7d3, vm-fetch-0052360a442cd0a2, vm-fetch-fd3107a1b417fa8d,
+    vm-kg-case-146'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-023
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-kg-case-161, vm-fetch-55478bbdd53a4842, vm-fetch-c17d192b7ba8f73f,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-024
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-b5475f5a05beca3f, vm-source-257817455489aabd,
+    vm-fetch-366c648a332e35b4, vm-fetch-4b00ebd104142c22, vm-fetch-3799e4c66cccca65,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-025
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-a9fb7abe5ee1d741, vm-fetch-9c2e840069cb8057, vm-fetch-d78eaec3d48cf38b,
+    vm-fetch-cb3de946b9eb429a, vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-026
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-2c7c0ce87cf42de7, vm-fetch-4e8edb4e6b08818b, vm-fetch-692f41af8d398680,
+    vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-027
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-c14918d86bc0078c, vm-fetch-52200f6234b08b10, vm-owner-search,
+    vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-028
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-4b5dc539516ea71e, vm-fetch-82ea031bb1241c65, vm-owner-search,
+    vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-029
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-0a131015ff30eda8, vm-fetch-22afcd66d54001db, vm-owner-search,
+    vm-context-review, vm-source-2a114c4a8610f111, vm-fetch-968193c83d7a5664'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-030
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-7033f91e1e07a0ca, vm-fetch-018ac1b93ee4966b, vm-fetch-98d5aedf61df406f,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-031
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-30885b1364d04801, vm-fetch-84b42f6bfd1ad444, vm-fetch-8fe937c1ef6c1c21,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-032
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-2c7c0ce87cf42de7, vm-fetch-4e8edb4e6b08818b, vm-fetch-692f41af8d398680,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-033
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-3e1e9370445e0f7b, vm-fetch-840c3c16a8268251, vm-owner-search,
+    vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-034
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-3ec8e42c4547421b, vm-source-c1b79ae358782135,
+    vm-fetch-79ff40e0246c791f, vm-fetch-fb1b36265a05cf80, vm-fetch-84a75e38c41f32c1,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-035
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-be0a4c933fcfd841, vm-source-50d3a3ffe8510207,
+    vm-source-c1fa1cb9734c3c24, vm-fetch-6d72693fd96023c1, vm-fetch-e1ddc8bac4c87b3a,
+    vm-fetch-ca36fc1813bc9928, vm-fetch-f7ada6c0c960aa48, vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-036
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-510c96b231d4d298, vm-fetch-9c2e840069cb8057, vm-owner-search,
+    vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-037
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-20379b58da18d9b2, vm-fetch-960070b1d415deaf, vm-fetch-1dded859627a404a,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-038
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-26f96ed0714f6d33, vm-fetch-5b0fecab0584dd77, vm-fetch-d4ba6de7b54bd50f,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-039
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-20379b58da18d9b2, vm-source-96983e9c6e3c4f98,
+    vm-fetch-960070b1d415deaf, vm-fetch-7df4b58ccb0630ac, vm-fetch-ca55b8a6996c682b,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-040
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-5e99de08f857e2ac, vm-fetch-ee72f2cda218a8b5, vm-fetch-332e5587cc6b78c3,
+    vm-fetch-93c11b3b00b4e211, vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-041
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-e91756f441b7ac12, vm-fetch-2caf4cd3f91d0ec5, vm-owner-search,
+    vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-042
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-e91756f441b7ac12, vm-fetch-2caf4cd3f91d0ec5, vm-owner-search,
+    vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-043
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-1bddaeef3181377d, vm-fetch-30623db6b794d1cc, vm-owner-search,
+    vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-044
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-1bddaeef3181377d, vm-source-0f2d908b4519424b,
+    vm-source-8f8d8ab982de63af, vm-fetch-30623db6b794d1cc, vm-fetch-340a73a127cf12b1,
+    vm-fetch-88d4946dae9a79f1, vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-045
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: proposal-evidence-046
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/evidence.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  snapshot_sha256: b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603
+  locator: 'Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e,
+    vm-owner-search, vm-context-review'
+  summary: Content-bound evidence index for this proposal; each nested source retains
+    its original URL, capture bytes, retrieval time and applicability in the case
+    decisions. This timestamp records inspection of the index, not source recapture.
+- evidence_id: structural
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/structural-audit-v2.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  summary: Whole-shard exact accounting PASS for all 188 cases after bounded archive
+    extraction. This is structural validation only.
+  snapshot_sha256: 305950704c288a50985c197c93dbb9c01cc212762c2aefd2d44b4672f22cc314
+- evidence_id: combined
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/validation/combined-validation.json
+  accessed_at: '2026-11-08T05:35:36.180848Z'
+  support: supports
+  summary: All 46 selected payloads pass closed schema; 2956-record baseline and 2985-record
+    memory overlay have zero partonomy violations; 3043 maintained files unchanged.
+  snapshot_sha256: 7f9bf869194b35e11b3b802b5f2a512a1b5b0e2d5a431e3de3001a0c453f1e61
+assessments:
+- assessment_id: proposal-001
+  area: identity
+  topic: if-add-anhydrous-k2hpo4 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  evidence_ids:
+  - proposal-evidence-001
+  - peer-inorganic_forms
+  summary: Add exact source spelling K2HPO4 (anhydrous base) to the existing anhydrous
+    owner. Identifier and predicate unchanged; one same-substance raw alias added.
+  details: 'CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54:
+    NBRC 268 explicitly names K2HPO4 on an anhydrous basis; ChEBI:131527 has formula
+    HO4P.2K and agrees with the current K2hpo4 owner. The qualifier narrows to the
+    recorded anhydrous salt and does not denote the trihydrate.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; guarded integration, complete owner/payload review, SSSOM synchronization
+    and native validators required. No roles, full owner, hold removal or export approved.
+
+    Coordinator must reconcile any other proposal touching this original before-hash
+    owner. Never adopt another worker after bytes silently.'
+- assessment_id: proposal-002
+  area: identity
+  topic: if-reject-monohydrate-on-dihydrate — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-reject-monohydrate-on-dihydrate
+  evidence_ids:
+  - proposal-evidence-002
+  - peer-inorganic_forms
+  summary: Retype three monohydrate labels on the sodium phosphate monobasic dihydrate
+    owner as REJECTED_LABEL, preserving original text and source. No identity or parent
+    predicate change; three wrong-hydrate aliases stop resolving/exporting; all remaining
+    parent/structure holds retained.
+  details: 'KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578:
+    MediaDive678 names sodium dihydrogenphosphate dihydrate while reusing anhydrous
+    chemistry. The current MIM local identity explicitly preserves two waters and
+    is distinct from the monohydrate CHEBI:114249. Its active one-water aliases contradict
+    that distinction; source-matched monohydrate cases must not route here.
+
+
+    KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04: The
+    source explicitly names NaH2PO4·H2O. CHEBI:114249 verifies the monohydrate, distinct
+    from both anhydrous phosphate and the dihydrate. The frozen resolving owner is
+    the dihydrate because it carries active one-water synonyms. The live monohydrate
+    owner is Sodium_phosphate_monobasic_monohydrate; Nah2po4h2o is a REJECTED tombstone.
+    Issue758 requires all three monohydrate labels to move together with six source-label
+    overrides and membership-derived counts across the three forms. Isolated payloads
+    are staged parts of that coupled change only; no alias-only application or exact
+    dihydrate promotion is approved.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; guarded integration, complete owner/payload review, SSSOM synchronization
+    and native validators required. No roles, full owner, hold removal or export approved.
+    BLOCKED AS ISOLATED APPLICATION: issue758 requires both aliases, all six source-label
+    overrides and three-form memberships/counts as one reviewed operation; these bytes
+    are staged proposal fragments only.
+
+    Coordinator must reconcile any other proposal touching this original before-hash
+    owner. Never adopt another worker after bytes silently.'
+- assessment_id: proposal-003
+  area: identity
+  topic: if-add-mono-source-spelling — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-add-mono-source-spelling
+  evidence_ids:
+  - proposal-evidence-003
+  - peer-inorganic_forms
+  summary: Add all three source monohydrate spellings to live CHEBI:114249 owner as
+    one staged part of issue758 coupled correction. Requires paired dihydrate rejection
+    plus six source-label overrides, three-form membership/count refresh and native
+    receipt review together; not independently applicable. Existing owner grade/payload
+    not otherwise approved.
+  details: 'KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04:
+    The source explicitly names NaH2PO4·H2O. CHEBI:114249 verifies the monohydrate,
+    distinct from both anhydrous phosphate and the dihydrate. The frozen resolving
+    owner is the dihydrate because it carries active one-water synonyms. The live
+    monohydrate owner is Sodium_phosphate_monobasic_monohydrate; Nah2po4h2o is a REJECTED
+    tombstone. Issue758 requires all three monohydrate labels to move together with
+    six source-label overrides and membership-derived counts across the three forms.
+    Isolated payloads are staged parts of that coupled change only; no alias-only
+    application or exact dihydrate promotion is approved.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; guarded integration, complete owner/payload review, SSSOM synchronization
+    and native validators required. No roles, full owner, hold removal or export approved.
+    BLOCKED AS ISOLATED APPLICATION: issue758 requires both aliases, all six source-label
+    overrides and three-form memberships/counts as one reviewed operation; these bytes
+    are staged proposal fragments only.
+
+    Coordinator must reconcile any other proposal touching this original before-hash
+    owner. Never adopt another worker after bytes silently.'
+- assessment_id: proposal-004
+  area: identity
+  topic: if-repair-dithionite-Na2s2o4 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-repair-dithionite-Na2s2o4
+  evidence_ids:
+  - proposal-evidence-004
+  - peer-inorganic_forms
+  summary: Reject six scutellarin/glucuronide aliases on REJECTED Na2s2o4 merge tombstone;
+    obsolete chemistry remains unchanged and unapproved. Same CHEBI:66870 identity;
+    foreign aliases become nonresolving. Existing issue263 merge and original status
+    retained; no merge, tombstone revival or occurrence-count transfer proposed.
+  details: 'KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26:
+    The source formula Na2S2O4 and its174.11 mass agree with sodium dithionite CHEBI:66870,
+    while MediaDive653 scutellarin names/CHEBI:61278 denote a carbon-rich flavonoid.
+    Issue263 already merged Na2s2o4 into Sodium_Dithionite: the former is a REJECTED
+    tombstone, not a second live owner. Both retain six foreign aliases inherited
+    through that merge. Reject those labels on both files without reviving the tombstone;
+    its obsolete flavonoid structure remains historical, unapproved data outside this
+    bounded alias correction.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; guarded integration, complete owner/payload review, SSSOM synchronization
+    and native validators required. No roles, full owner, hold removal or export approved.
+
+    Coordinator must reconcile any other proposal touching this original before-hash
+    owner. Never adopt another worker after bytes silently.'
+- assessment_id: proposal-005
+  area: identity
+  topic: if-repair-dithionite-Sodium_Dithionite — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-repair-dithionite-Sodium_Dithionite
+  evidence_ids:
+  - proposal-evidence-005
+  - peer-inorganic_forms
+  summary: Reject six scutellarin/glucuronide aliases on live Sodium_Dithionite owner.
+    Same CHEBI:66870 identity; foreign aliases become nonresolving. Existing issue263
+    merge and original status retained; no merge, tombstone revival or occurrence-count
+    transfer proposed.
+  details: 'KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26:
+    The source formula Na2S2O4 and its174.11 mass agree with sodium dithionite CHEBI:66870,
+    while MediaDive653 scutellarin names/CHEBI:61278 denote a carbon-rich flavonoid.
+    Issue263 already merged Na2s2o4 into Sodium_Dithionite: the former is a REJECTED
+    tombstone, not a second live owner. Both retain six foreign aliases inherited
+    through that merge. Reject those labels on both files without reviving the tombstone;
+    its obsolete flavonoid structure remains historical, unapproved data outside this
+    bounded alias correction.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; guarded integration, complete owner/payload review, SSSOM synchronization
+    and native validators required. No roles, full owner, hold removal or export approved.
+
+    Worker07 issue1169 proposes the same six-label rejection on this exact original
+    owner. Coordinator must reconcile once and keep one coherent curation event; these
+    before bytes remain worker08 baseline, never worker07 proposed bytes.'
+- assessment_id: proposal-006
+  area: identity
+  topic: if-reject-tris-hcl-on-base — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-reject-tris-hcl-on-base
+  evidence_ids:
+  - proposal-evidence-006
+  - peer-inorganic_forms
+  summary: Reject four hydrochloride/Tris-HCl labels on the free tris base owner;
+    preserve source provenance. Base CHEBI:9754 retained; no chloride salt or solution
+    may resolve to it through these four aliases. Distinct salt owner still requires
+    native lookup.
+  details: 'CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9:
+    The source explicitly names Tris hydrochloride. Sigma T3253 establishes CAS1185-53-1,
+    formula tris·HCl and molecular weight157.60, distinct from free tris CHEBI:9754
+    (121.136) and Htris cation CHEBI:46097 (no chloride). Current Tris_Base active
+    hydrochloride aliases erase this salt boundary and should be rejected as resolving
+    base synonyms.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; guarded integration, complete owner/payload review, SSSOM synchronization
+    and native validators required. No roles, full owner, hold removal or export approved.
+
+    Coordinator must reconcile any other proposal touching this original before-hash
+    owner. Never adopt another worker after bytes silently.'
+- assessment_id: proposal-007
+  area: identity
+  topic: if-new-sodium-ammonium-phosphate-tetrahydrate — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  evidence_ids:
+  - proposal-evidence-007
+  - peer-inorganic_forms
+  summary: Propose exact sodium ammonium hydrogenphosphate tetrahydrate as distinct
+    CAS identity with asymmetric sodium phosphate class grounding. Distinct CAS identity;
+    CHEBI37586 broadMatch only, plus required local B1 handle and CAS identity row.
+    Raw hydrate spellings retained; no pure sodium or ammonium phosphate alias collapse.
+  details: 'CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f:
+    The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22,
+    CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate
+    tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner;
+    read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term.
+    Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586,
+    retaining both counterions and four waters; the class is not chemical identity.
+    ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches
+    by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288
+    is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride
+    control returned expected terms. This is bounded evidence rather than universal
+    absence.
+
+
+    CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41: The
+    exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22,
+    CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate
+    tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner;
+    read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term.
+    Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586,
+    retaining both counterions and four waters; the class is not chemical identity.
+    ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches
+    by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288
+    is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride
+    control returned expected terms. This is bounded evidence rather than universal
+    absence.
+
+
+    KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05: The
+    exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22,
+    CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate
+    tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner;
+    read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term.
+    Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586,
+    retaining both counterions and four waters; the class is not chemical identity.
+    ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches
+    by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288
+    is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride
+    control returned expected terms. This is bounded evidence rather than universal
+    absence.
+
+
+    Application/publication conditions: Current local and successful online exact-term
+    searches are captured; bounded negative results do not establish global absence.
+    Validate closest-parent specificity, new-owner collision and complete source/payload;
+    generate required CAS identity/B1 handle/parent rows. Native schema/SSSOM review
+    remains required, no quantities/memberships/roles/release approved.
+
+    Coordinator must deduplicate CAS7783-13-3 and tetrahydrate source labels across
+    all workers before minting; no current maintained owner found in ignored-inclusive
+    scan.'
+- assessment_id: proposal-008
+  area: identity
+  topic: if-add-edta-disodium-dihydrate-spelling — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - if-add-edta-disodium-dihydrate-spelling
+  evidence_ids:
+  - proposal-evidence-008
+  - peer-inorganic_forms
+  summary: Add exact source EDTA・2Na・2H2O spelling to live EDTA disodium dihydrate
+    owner; retain existing merge tombstone retirement. CHEBI64758 identity and current
+    grounding/predicate remain unchanged; one exact-form raw spelling becomes resolvable.
+    No anhydrous/free-acid alias, merge, count transfer or tombstone change.
+  details: 'CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f:
+    EDTA・2Na・2H2O explicitly names the disodium dihydrate and matches CHEBI:64758,
+    distinct from EDTA acid and anhydrous disodium salt. Na2-edta_X_2_H2o is a REJECTED
+    merge tombstone with explicit MERGED_INTO CHEBI64758 history; live Na2edta2h2o
+    records the corresponding absorption and exact hydrate chemistry. No new consolidation
+    is required. Propose the precise frozen VRI source spelling on the live owner
+    only, preserving the tombstone, counts and all complete-payload obligations. A
+    live JCM643 retry remained unavailable; no unseen recipe content is asserted.
+
+
+    Application/publication conditions: Withdraw inherited content-bound support for
+    changed owner; complete full published payload/role review, guarded integration,
+    YAML synchronization and native SSSOM/schema gates remain required. Existing annotation-like
+    aliases and provisional CHELATOR evidence are not approved by this narrow addition.
+
+    Coordinator must reconcile any same-owner proposal against original before hash;
+    no alternate owner or other-worker after bytes adopted.'
+- assessment_id: proposal-009
+  area: identity
+  topic: op-valeric-alias — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-valeric-alias
+  evidence_ids:
+  - proposal-evidence-009
+  - peer-organic_products
+  summary: Add source-bound raw alias(es) n--Valeric acid, n -Valeric acid to existing
+    same-scope owner; preserve all other fields and retired labels. Identifier and
+    ontology mapping unchanged; raw identity-bearing aliases become candidates for
+    searchable exports only after full owner review. No role evidence is added.
+  details: 'CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb:
+    Doubled hyphen in n--Valeric acid is a source typography variant of straight-chain
+    pentanoic acid. Keep n and iso isomers separate.
+
+
+    CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604: n -Valeric
+    acid denotes straight-chain pentanoic acid; spacing does not remove the n isomer
+    qualifier.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-010
+  area: identity
+  topic: op-isovaleric-alias — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-isovaleric-alias
+  evidence_ids:
+  - proposal-evidence-010
+  - peer-organic_products
+  summary: Add source-bound raw alias(es) iso -Valeric acid, iso--Valeric acid to
+    existing same-scope owner; preserve all other fields and retired labels. Identifier
+    and ontology mapping unchanged; raw identity-bearing aliases become candidates
+    for searchable exports only after full owner review. No role evidence is added.
+  details: 'CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b:
+    Spacing before the hyphen changes no chemical locant: iso-Valeric acid is the
+    branched3-methylbutanoic acid, separate from n-valeric acid.
+
+
+    CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec: iso--Valeric
+    acid retains the branched isomer; repeated punctuation does not indicate a salt
+    or new form.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-011
+  area: identity
+  topic: op-methane-alias — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-methane-alias
+  evidence_ids:
+  - proposal-evidence-011
+  - peer-organic_products
+  summary: Add source-bound raw alias(es) Methane gas to existing same-scope owner;
+    preserve all other fields and retired labels. Identifier and ontology mapping
+    unchanged; raw identity-bearing aliases become candidates for searchable exports
+    only after full owner review. No role evidence is added.
+  details: 'CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c:
+    Methane gas is the methane compound CHEBI:16183 with physical-state wording. Alias
+    applies to gas component identity, never to the full methane/air or methane/CO2
+    headspace.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-012
+  area: identity
+  topic: op-soy-flour-alias — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-soy-flour-alias
+  evidence_ids:
+  - proposal-evidence-012
+  - peer-organic_products
+  summary: Add source-bound raw alias(es) Soya flour to existing same-scope owner;
+    preserve all other fields and retired labels. Identifier and ontology mapping
+    unchanged; raw identity-bearing aliases become candidates for searchable exports
+    only after full owner review. No role evidence is added.
+  details: 'CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4:
+    Soya flour and soybean flour denote the same generic food material here; supermarket
+    origin does not imply a hydrolysate or specific cultivar. Add the raw Soya spelling
+    to the existing generic flour owner.
+
+
+    KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8: Soya
+    flour from supermarket belongs to the existing generic soybean-flour scope, not
+    soybean peptone. Sharing one alias proposal with the CM case does not collapse
+    two source observations.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-013
+  area: identity
+  topic: op-l-asn-hydrate-alias — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-l-asn-hydrate-alias
+  evidence_ids:
+  - proposal-evidence-013
+  - peer-organic_products
+  summary: Add source-bound raw alias(es) L-Asparagine*H2O to existing same-scope
+    owner; preserve all other fields and retired labels. Identifier and ontology mapping
+    unchanged; raw identity-bearing aliases become candidates for searchable exports
+    only after full owner review. No role evidence is added.
+  details: 'CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307:
+    L-Asparagine*H2O explicitly names L-asparagine monohydrate, CAS5794-13-8. This
+    is not the DL hydrate or anhydrous L amino acid.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-014
+  area: identity
+  topic: op-ethane-new — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-ethane-new
+  evidence_ids:
+  - proposal-evidence-014
+  - peer-organic_products
+  summary: Create distinct ethane owner; preserve source aliases and distinguish sibling
+    supplied forms. Own-identifier exact identity would be published only after coordinator
+    native and full-payload review. No broad parent is used as exact identity and
+    no roles or occurrence statistics are inferred.
+  details: 'CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468:
+    Ethane is the distinct C2H6 compound CHEBI42266. Gas-phase delivery does not alter
+    component identity; no full headspace mixture identity is asserted. Gitignore-independent
+    owner scan found no ethane-primary owner.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-015
+  area: identity
+  topic: op-nalidixic-new — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-nalidixic-new
+  evidence_ids:
+  - proposal-evidence-015
+  - peer-organic_products
+  summary: Create distinct nalidixic acid owner; preserve source aliases and distinguish
+    sibling supplied forms. Own-identifier exact identity would be published only
+    after coordinator native and full-payload review. No broad parent is used as exact
+    identity and no roles or occurrence statistics are inferred.
+  details: 'CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e:
+    Both selected occurrences explicitly name nalidixic acid inside stock composition.
+    Acid CHEBI:100147 is distinct from the existing sodium-salt owner and must not
+    be merged with it.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-016
+  area: identity
+  topic: op-glycine-betaine-new — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-glycine-betaine-new
+  evidence_ids:
+  - proposal-evidence-016
+  - peer-organic_products
+  summary: Create distinct glycine betaine owner; preserve source aliases and distinguish
+    sibling supplied forms. Own-identifier exact identity would be published only
+    after coordinator native and full-payload review. No broad parent is used as exact
+    identity and no roles or occurrence statistics are inferred.
+  details: 'CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b:
+    Glycine betaine is the neutral zwitterion CHEBI:17750. Existing hydrochloride
+    and hydrate owners are distinct supplied forms and cannot absorb this name.
+
+
+    CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2: Trimethylglycine
+    is an independently documented synonym of glycine betaine CHEBI:17750. It is distinct
+    from betaine hydrochloride and hydrate products.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-017
+  area: identity
+  topic: op-methanethiol-new — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-methanethiol-new
+  evidence_ids:
+  - proposal-evidence-017
+  - peer-organic_products
+  summary: Create distinct methanethiol owner; preserve source aliases and distinguish
+    sibling supplied forms. Own-identifier exact identity would be published only
+    after coordinator native and full-payload review. No broad parent is used as exact
+    identity and no roles or occurrence statistics are inferred.
+  details: 'CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc:
+    Methanethiol is a distinct gas compound CHEBI:16007, not methionine, methyl sulfide
+    or an unnamed sulfur mixture.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-018
+  area: identity
+  topic: op-sodium-nicotinate-new — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-sodium-nicotinate-new
+  evidence_ids:
+  - proposal-evidence-018
+  - peer-organic_products
+  summary: Create exact sodium-nicotinate salt identity with CAS54-86-4 and acid parent.
+    Require CAS identity/registry row plus skos:broadMatch to CHEBI15940; NARROW_MATCH
+    grade does not authorize exact identity to the acid. Recheck exact ontology salt
+    term before integration.
+  details: 'CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316:
+    Recipe explicitly specifies sodium nicotinate. NIST independently gives CAS54-86-4
+    and sodium-containing formula. Preserve this salt under its own CAS with broad
+    relation to nicotinic acid, never the acid primary. Bounded searches did not verify
+    an exact ontology salt term.
+
+
+    Application/publication conditions: Proposal bytes only; not applied or export
+    approved.; Existing WITHHOLD, REJECTED, source-material and role holds remain
+    unchanged.; Any changed owner invalidates inherited whole-payload support; coordinator
+    must review all published tokens, exact scope, identifier and predicate, native
+    schema, synchronized surfaces and final SSSOM before release.
+
+    Coordinator must reconcile any overlapping owner proposal before integration.'
+- assessment_id: proposal-019
+  area: identity
+  topic: op-glycerol-asparagine-source-note — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - op-glycerol-asparagine-source-note
+  evidence_ids:
+  - proposal-evidence-019
+  - peer-organic_products
+  summary: Document source1754-to-JCM60 formulation provenance on the generic named-medium
+    owner while preserving its unproved exact-equivalence boundary. Notes and curation
+    history only. UNMAPPED_0122, UNMAPPED status, raw aliases, zero counts and all
+    other fields unchanged; no assertion that the generic owner is exactly JCM60 and
+    no component/role/mapping row created.
+  details: 'KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997:
+    The exact MediaDive1754 source supplies1000mL and references JCM60/ISP-5, whose
+    official formulation is captured. Existing UNMAPPED_0122 instead originated from
+    a generic synonym extracted from Agar.yaml; it has no source1754/JCM60 provenance,
+    component ratios, supplier or formulation version. Its later Edison history quotes
+    ISP medium5 only as a suggested name, not a primary formulation-equivalence finding.
+    Source1754 is therefore a verified JCM60 medium reference, while equivalence of
+    the complete generic owner to this exact recipe remains unproved. Propose a narrow
+    source-provenance note so the supported recipe and remaining identity boundary
+    are durable.
+
+
+    Application/publication conditions: Isolated exact-preimage proposal; no maintained
+    data changed.; Any changed owner requires fresh content-bound review; no inherited
+    identity or role approval transfers.; Mapping or typed recipe linkage requires
+    evidence bridging the original generic label to the exact formulation/version;
+    the source1754-to-JCM60 reference itself is already supported.
+
+    Coordinator must reconcile any other proposal for this owner against original
+    before hash.'
+- assessment_id: proposal-020
+  area: identity
+  topic: vm-prop-menadione — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-menadione
+  evidence_ids:
+  - proposal-evidence-020
+  - peer-vitamins_mixtures
+  summary: ATCC Medium 1257 (https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx)
+    identifies Menadione (Vitamin K3) as the 50 mg solute in its separate Menadione
+    Solution (50 ml 95% ethanol plus 50 ml water). Add the compound alias only; the
+    frozen ETSA flattened 50 G_PER_L amount is not validated and the whole solution
+    is not a synonym of menadione. Only the cited source-defined formulation / exact
+    ingredient; existing mapping and historical holds preserved.
+  details: 'CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff:
+    ATCC1257 identifies Menadione(VitaminK3) as the solute in its separate Menadione
+    Solution. ChEBI28869 is menadione and the current owner already recognizes VitaminK3;
+    the combined raw name can be added to the compound owner. The frozen ETSA50G_PER_L
+    entry is a flattened nested50mg quantity and remains a source-dose defect, not
+    proof of50g/L or whole-solution identity.
+
+
+    Application/publication conditions: Apply only against the stated before hash
+    after independent review; synchronize maintained surfaces through the coordinator.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-021
+  area: identity
+  topic: vm-prop-jcm403-vitamin — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-jcm403-vitamin
+  evidence_ids:
+  - proposal-evidence-021
+  - peer-vitamins_mixtures
+  summary: JCM Medium 403 separately defines this vitamin mixture as p-aminobenzoic
+    acid 4 mg, biotin 1 mg, nicotinic acid 10 mg, DL-calcium pantothenate 5 mg and
+    pyridoxine hydrochloride 10 mg in 100 ml sodium phosphate buffer (10 mM, pH 7.1).
+    The separate thiamine and vitamin B12 stocks are excluded. Raw pointer aliases
+    apply only to this JCM formulation. Only the cited source-defined formulation
+    / exact ingredient; existing mapping and historical holds preserved.
+  details: 'CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028:
+    JCM 403 five-vitamin phosphate-buffer stock is separate from its B12 and thiamine
+    solutions. The exact Medium No. 403 pointer allows the raw starred spelling to
+    enrich the existing source-specific registry owner, with its actual 100 mL batch
+    recorded; no pure-vitamin identity or generic solution exact mapping is introduced.
+
+
+    CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f: Every
+    complete frozen occurrence carrying the exact Medium 403 vitamin-solution pointer
+    is bound in the evidence, including the MediaDive JCM-derived main solutions.
+    JCM 403 separately enumerates five vitamins in 100 mL phosphate buffer. These
+    pointers support the existing source-specific Vitamin_Solution_See_Medium_No_403
+    owner, not its separate B12 stock.
+
+
+    Application/publication conditions: Apply only against the stated before hash
+    after independent review; synchronize maintained surfaces through the coordinator.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-022
+  area: identity
+  topic: vm-prop-jcm403-b12 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-jcm403-b12
+  evidence_ids:
+  - proposal-evidence-022
+  - peer-vitamins_mixtures
+  summary: JCM Medium 403 defines the separate vitamin B12 stock as Vitamin B12 5
+    mg in distilled water 100 ml. Classify this recipe pointer as STOCK_SOLUTION,
+    not a whole named medium. The source does not identify the B12 vitamer, so neither
+    the stock nor its component is assigned an exact cyanocobalamin identity. Preserve
+    UNMAPPED_0567 and all historical source holds. Only the cited source-defined formulation
+    / exact ingredient; existing mapping and historical holds preserved.
+  details: 'CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596:
+    The explicit JCM 403 pointer resolves to its separately defined B12 stock: 5 mg
+    vitamin B12 in 100 mL distilled water. It is not JCM 403 multi-vitamin solution.
+    The existing UNMAPPED_0567 has the same imported source identity, so the proposal
+    corrects its stock classification and records the pointer spelling and composition
+    while leaving vitamer grounding unresolved.
+
+
+    CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1: All
+    bound JCM-derived occurrences with the explicit B12 Medium403 pointer refer to
+    its separate5mg/100mLwater stock, not the five-vitamin phosphate-buffer mixture.
+    The existing source-import owner UNMAPPED0567 is the correct narrow edit target;
+    the proposal classifies and annotates the stock without choosing a B12 vitamer.
+
+
+    KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2: The
+    complete KG source record mediadive.ingredient1845 is the same imported identity
+    recorded in UNMAPPED0567 history. JCM403 resolves its recipe pointer to5mgB12/100mLwater,
+    supporting classification/alias/provenance enrichment of that owner. The KG source
+    occurrence definition and any embedded publication holds remain bound to the original
+    case; no exact vitamer mapping or downstream release is proposed.
+
+
+    Application/publication conditions: Apply only against the stated before hash
+    after independent review; synchronize maintained surfaces through the coordinator.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-023
+  area: identity
+  topic: vm-prop-linsmaier-skoog — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-linsmaier-skoog
+  evidence_ids:
+  - proposal-evidence-023
+  - peer-vitamins_mixtures
+  summary: The frozen mediadive.ingredient:2431 source explicitly specifies Duchefa
+    L0230. The manufacturer formulation (https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins)
+    and certificate (https://duchefa-biochemie.com/ac/download/number/L0230/id/7087)
+    enumerate mineral macro/microelements, myo-inositol 100 mg/L and thiamine HCl
+    0.4 mg/L, total 4402.49 mg/L. This identifies the existing imported named-medium
+    owner and its abbreviated source label; it does not identify any single vitamin
+    or imply a supplement-only mixture. Retain UNMAPPED_0427 pending a separately
+    scoped registry promotion; this proposal is exact source/product provenance and
+    alias enrichment. Only the cited source-defined formulation / exact ingredient;
+    existing mapping and historical holds preserved.
+  details: 'KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb:
+    The frozen KG record mediadive.ingredient2431 explicitly names DuchefaL0230 and4.4g
+    addition. Exhaustive current-owner search finds UNMAPPED0427 with the same sourceID
+    despite the frozen name_hits result. Manufacturer L0230 composition/certificate
+    establish a mineral-and-vitamin basal medium, not a vitamin-only supplement. Existing
+    owner alias and product provenance enrichment are justified; a second owner would
+    duplicate the source identity.
+
+
+    Application/publication conditions: Apply only against the stated before hash
+    after independent review; synchronize maintained surfaces through the coordinator.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-024
+  area: identity
+  topic: vm-prop-new-2 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-2
+  evidence_ids:
+  - proposal-evidence-024
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 296 vitamins mix solution with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 296: Vitamins mix solution'
+  details: 'CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6:
+    The two MPYCY recipes contain the stock inside Solution B. JCM 1037 points to
+    1036, whose vitamins mix points to JCM 296: seven constituents at 20 mg each and
+    folic acid, B12 and biotin at 1 mg each per 1 L water. This is a ten-vitamin stock,
+    distinct from pure vitamins and from the surrounding Solution B. A source-qualified
+    registry stock is proposed; the generic raw label remains scoped in notes.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-025
+  area: identity
+  topic: vm-prop-new-11 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-11
+  evidence_ids:
+  - proposal-evidence-025
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 995 vitamin solution No. 6 with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 995: Vitamin solution
+    No. 6'
+  details: 'CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be:
+    JCM 995 Vitamin solution No. 6 is an explicitly enumerated nine-vitamin stock
+    within Solution 2, including nicotinamide and thiamine hydrochloride dihydrate.
+    Those forms differ from other vitamin stock recipes, so the source-qualified recipe
+    is proposed without collapsing it into generic Vitamin solution or Planctomyces
+    vitamin mix.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-026
+  area: identity
+  topic: vm-prop-new-42 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-42
+  evidence_ids:
+  - proposal-evidence-026
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 1100 vitamin solution B (1000x) with complete
+    immediate constituent enumeration and registry identity.  JCM Medium 1100: Vitamin
+    solution B (1000 x stock)'
+  details: 'CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380:
+    The CTM source distinguishes Vitamin solution B (1000x) from solution A. JCM 1100
+    defines B as vitamin B12 100 mg in 100 mL water, while A is a multi-vitamin phosphate-buffer
+    stock. A separate source-qualified B stock is proposed; B12 form remains unspecified
+    at component level and no generic B12 alias is added.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-027
+  area: identity
+  topic: vm-prop-new-58 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-58
+  evidence_ids:
+  - proposal-evidence-027
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 848 vitamin mixture (100x) with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 848: 100 x Vitamin
+    mixture'
+  details: 'CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22:
+    JCM 848 defines the 100x vitamin mixture with biotin/B12 0.1 g each, pABA 0.3
+    g, folate/thiamine-HCl/riboflavin 0.5 g each and pyridoxine-HCl 1.5 g per L water.
+    The proposed source-qualified stock preserves 100x and the high stock amounts;
+    these are not final-culture doses or the JCM 1023 pyridoxamine stock.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-028
+  area: identity
+  topic: vm-prop-new-65 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-65
+  evidence_ids:
+  - proposal-evidence-028
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 1118 vitamin mixture with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 1118: Vitamin mixture'
+  details: 'CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f:
+    JCM 1118 defines this mixture as B12 1.1 mg, biotin 1 mg and thiamine-HCl 200
+    mg per L water. It is a three-vitamin stock, not the much broader mixtures carrying
+    almost the same typography. A source-qualified registry stock is proposed with
+    the bare raw text retained only in source-scoped notes.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-029
+  area: identity
+  topic: vm-prop-new-79 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-79
+  evidence_ids:
+  - proposal-evidence-029
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 1363 vitamin mixture solution with complete
+    immediate constituent enumeration and registry identity.  JCM Medium 1363: Vitamin
+    mixture solution'
+  details: 'CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c:
+    JCM1363 explicitly defines an eight-vitamin stock in 100 mL 10 mM phosphate buffer
+    pH7.1, including B12 5 mg, pyridoxine-HCl15 mg and thiamine-HCl10 mg. JCM1364
+    points to this exact recipe. A shared source-specific stock proposal covers those
+    two cases while keeping JCM403 separate.
+
+
+    CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1: JCM1364
+    explicitly points to the Vitamin mixture solution of JCM1363. That provides the
+    same complete eight-vitamin phosphate-buffer formulation as case79, including
+    B125mg and pyridoxine-HCl15mg per100mL. The cases share one qualified new stock
+    proposal; neither is equated to JCM403.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-030
+  area: identity
+  topic: vm-prop-new-82 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-82
+  evidence_ids:
+  - proposal-evidence-030
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 1097 RST vitamin solution with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 1097: RST vitamin solution'
+  details: 'CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b:
+    JCM1097 RST stock contains coenzyme M with nine listed vitamins and omits B12;
+    it is not the common Wolfe or Thauer mixture. The exact source pointer supports
+    a distinct JCM-qualified preparation, with coenzyme M preserved as a constituent
+    rather than a synonym for the whole stock.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-031
+  area: identity
+  topic: vm-prop-new-87 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-87
+  evidence_ids:
+  - proposal-evidence-031
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 1130 vitamin solution I with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 1130: Vitamin solution
+    I'
+  details: 'CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb:
+    JCM1385 points to JCM1130 YCFA vitamin solution I, explicitly biotin/B12 5 mg
+    each, pABA15 mg, folate25 mg and pyridoxine-HCl75 mg in500 mL water. Vitamin solution
+    II separately contains thiamine/riboflavin. A qualified I-stock proposal preserves
+    that separation.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-032
+  area: identity
+  topic: vm-prop-new-110 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-110
+  evidence_ids:
+  - proposal-evidence-032
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 1100 vitamin solution A (1000x) with complete
+    immediate constituent enumeration and registry identity.  JCM Medium 1100: Vitamin
+    solution A (1000 x stock)'
+  details: 'CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724:
+    CTM JCM1100 vitamin solutionA(1000x) contains thirteen specified compounds, including
+    thiamine pyrophosphate, ascorbate and β-NAD, in100 mL10mM potassium phosphate
+    buffer pH7.2. The separate B stock contains B12. The proposed source-specific
+    A identity preserves these components and excludes B12; A/B are not synonyms.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-033
+  area: identity
+  topic: vm-prop-new-112 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-112
+  evidence_ids:
+  - proposal-evidence-033
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 923 major metals stock with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 923: Major metals'
+  details: 'CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f:
+    JCM923 Major metals is actually a three-salt stock: KCl0.15 g, KH2PO4 1.36 g and
+    NH4Cl2.68 g in1 Lwater. Its local heading does not mean metallic elements or the
+    separate Trace metal1 solution. The proposal gives the exact source-qualified
+    mineral-stock identity.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-034
+  area: identity
+  topic: vm-prop-new-119 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-119
+  evidence_ids:
+  - proposal-evidence-034
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 898 vitamin solution with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 898: Vitamin solution'
+  details: 'CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118:
+    Both JCM1423 and1424 point to the JCM898 vitamin solution. Its seven-vitamin recipe
+    includes B12100mg, pABA80mg, biotin20mg, nicotinic200mg, DL-calcium pantothenate100mg,
+    pyridoxine-HCl300mg and thiamine-HCl200mg perLwater. This supports a distinct
+    source-qualified stock with preserved high concentrations.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-035
+  area: identity
+  topic: vm-prop-new-120 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-120
+  evidence_ids:
+  - proposal-evidence-035
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 915 vitamin solution with complete immediate
+    constituent enumeration and registry identity.  JCM Medium 915: Vitamin solution'
+  details: 'CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b:
+    JCM1430/1431/1479 explicitly reference JCM915 vitamin solution, a nine-vitamin
+    stock in100mLwater with thiamine-HCl90mg, myo-inositol40mg, B125mg, pABA5mg, calcium
+    pantothenate/pyridoxine-HCl/nicotinic acid4mg each, biotin0.1mg and folic2mg.
+    The source pointer supports one qualified stock across all three occurrences.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-036
+  area: identity
+  topic: vm-prop-new-129 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-129
+  evidence_ids:
+  - proposal-evidence-036
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined JCM 149 Hutner''s vitamin free mineral base with
+    complete immediate constituent enumeration and registry identity. Metals 44 is
+    an immediate nested component, not silently flattened; KOH amount is approximate
+    as stated in preparation. JCM Medium 149: Hutner''s vitamin free mineral base'
+  details: 'CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd:
+    JCM149 Hutner vitamin-free base contains NTA10g,MgSO4·7H2O14.45g,CaCl2·2H2O3.335g,ammonium
+    molybdate tetrahydrate9.25mg,FeSO4·7H2O99mg,Metals44 50mL and water950mL, with
+    approximately7.3gKOH for neutralization. It is a nested mineral stock distinct
+    from modified Hutner recipes; immediate components and preparation qualifier are
+    preserved.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-037
+  area: identity
+  topic: vm-prop-new-7 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-7
+  evidence_ids:
+  - proposal-evidence-037
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined DSMZ solution 125 vitamin K1 solution with complete
+    immediate constituent enumeration and registry identity. Source dissolves 0.1
+    ml vitamin K1 in 20 ml 95% ethanol; these are literal additions, not 0.1 g and
+    not an assumed 20.0 ml final volume. DSMZ MediaDive solution 125: Vitamin K1 solution'
+  details: 'CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499:
+    MediaDive main solution 453 explicitly links solution 125. Solution 125 dissolves
+    0.1 mL vitamin K1 in 20 mL 95% ethanol. The prepared stock is not pure CHEBI:18067
+    and the amount is volume, not mass. Its literal batch and ethanol qualifier are
+    preserved in a separate stock proposal.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-038
+  area: identity
+  topic: vm-prop-new-29 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-29
+  evidence_ids:
+  - proposal-evidence-038
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined DSMZ solution 5980 Wolin''s vitamin solution (10x)
+    with complete immediate constituent enumeration and registry identity.  DSMZ MediaDive
+    solution 5980: Wolin''s vitamin solution (10x)'
+  details: 'CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e:
+    MediaDive main solution 277 directly references solution 5980, Wolin''s vitamin
+    solution (10x). That stock enumerates ten vitamins, including calcium D-(+)-pantothenate
+    and B12 1 mg/L. It is tenfold concentrated relative to common Wolfe-type vitamin
+    recipes and differs from the current Thauer and Wolfe stock owners. A source-qualified
+    stock proposal preserves the complete literal formulation.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-039
+  area: identity
+  topic: vm-prop-new-98 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-98
+  evidence_ids:
+  - proposal-evidence-039
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined DSMZ solution 608 volatile fatty acid mixture with
+    complete immediate constituent enumeration and registry identity.  DSMZ MediaDive
+    solution 608: Volatile fatty acid mixture'
+  details: 'CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3:
+    Both MediaDive main solutions453 and606 explicitly reference solution608. The
+    stock is a seven-acid volumetric blend: acetic548.5 mL, propionic193.5, butyric129
+    and n-valeric/isobutyric/DL-2-methylbutyric/isovaleric32.25 mL each. A source-specific
+    mixed-acid identity is proposed, with no exact mapping of the whole blend to one
+    fatty acid.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-040
+  area: identity
+  topic: vm-prop-new-26 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-26
+  evidence_ids:
+  - proposal-evidence-040
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined ATCC 1249 Component III with complete immediate
+    constituent enumeration and registry identity. Component III is prepared separately
+    at pH 7.5 and then mixed with Components I and II. Its generic sequence label
+    is not a universal identity. ATCC Medium 1249 Modified Baar medium: Component
+    III'
+  details: 'CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb:
+    ATCC 1249 primary PDF restores the three separate subpreparations. Component III
+    is sodium lactate 3.5 g and yeast extract 1.0 g in 400 mL DI water, adjusted to
+    pH 7.5 and autoclaved before combining I/II/III. The flattened recipe title is
+    a local preparation label, so the proposal uses an ATCC-qualified stock identity
+    and does not publish bare Component III globally.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-041
+  area: identity
+  topic: vm-prop-new-31 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-31
+  evidence_ids:
+  - proposal-evidence-041
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined NBRC 1321 vitamin B12 solution with complete immediate
+    constituent enumeration and registry identity. This source explicitly identifies
+    cyanocobalamin and filter sterilization. It is distinct from a pure cyanocobalamin
+    ingredient and from vitamer-unspecified JCM 403 B12 stock. NBRC 1321: ******Vitamin
+    B12 solution'
+  details: 'CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08:
+    NBRC 1321 footnote ****** explicitly defines Cyanocobalamin 5 mg plus distilled
+    water 100 mL and filtration. This resolves the vitamer for this occurrence only.
+    The prepared stock remains distinct from the pure cyanocobalamin ingredient and
+    from JCM 403, which uses the generic B12 name. A source-specific stock owner is
+    proposed.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-042
+  area: identity
+  topic: vm-prop-new-111 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-111
+  evidence_ids:
+  - proposal-evidence-042
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined NBRC 1321 vitamin solution with complete immediate
+    constituent enumeration and registry identity. Pyridoxine-HCl is 15 mg per source
+    batch, whereas JCM 403 specifies 10 mg. Do not equate the formulations. NBRC 1321:
+    ****Vitamine solution'
+  details: 'CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86:
+    NBRC1321 footnote**** has pABA4 mg, biotin1 mg, nicotinic10 mg, Ca-pantothenate5
+    mg and pyridoxine-HCl15 mg per100 mL phosphate buffer. JCM403 has10 mg pyridoxine-HCl,
+    so sharing its owner would be chemically incorrect. The NBRC-qualified proposal
+    captures the distinct stock.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-043
+  area: identity
+  topic: vm-prop-new-73 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-73
+  evidence_ids:
+  - proposal-evidence-043
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined NBRC 1356 mineral base 2 with complete immediate
+    constituent enumeration and registry identity. Source stock pH is 7.3; it is mixed
+    with carbonate base 1 in 1:1 proportion. The nitrogen atmosphere is a preparation
+    condition, not a material component. NBRC 1356: **Mineral base 2'
+  details: 'CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072:
+    NBRC1356 base2 contains NaCl240 g, NH4Cl0.5 g, K2HPO4 2.5 g, KCl5 g and water1
+    L at pH7.3. It is mixed 1:1 with the precipitate-cleared carbonate base1 and then
+    supplemented. This accurately resolves the local stock context but is not the
+    final medium, base1, or any single salt. The complete immediate source formulation
+    supports an isolated source-qualified registry stock proposal. Its bare local
+    name is retained in scoped notes rather than exported as a global alias.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-044
+  area: identity
+  topic: vm-prop-new-60 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-60
+  evidence_ids:
+  - proposal-evidence-044
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined NBRC 1356 vitamin solution with complete immediate
+    constituent enumeration and registry identity. The formula is shared by the three
+    assigned NBRC occurrences. It is distinct from the current Wolfe/Thauer stocks;
+    the unqualified starred name remains source-scoped. NBRC 1356: ***Vitamin solution;
+    matching enumerations checked in NBRC 857 and936'
+  details: 'CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51:
+    NBRC 1356, 857 and 936 all supply the same nine-vitamin recipe: biotin/folate
+    2 mg, pyridoxine-HCl 10 mg, thiamine-HCl/riboflavin/nicotinic acid/Ca-pantothenate
+    5 mg, pABA 1 mg and B12 0.01 mg per L. This establishes a common source-family
+    stock but differs from current Wolfe/Thauer owners (notably B12, pABA and lipoic
+    acid). The starred generic label cannot serve as a universal alias. The complete
+    immediate source formulation supports an isolated source-qualified registry stock
+    proposal. Its bare local name is retained in scoped notes rather than exported
+    as a global alias.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-045
+  area: identity
+  topic: vm-prop-new-52 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-52
+  evidence_ids:
+  - proposal-evidence-045
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined TOGO M2567 mineral base D with complete immediate
+    constituent enumeration and registry identity. Immediate components are two separate
+    solutions; do not flatten the stock amounts into final-medium G_PER_L. TOGO M2567
+    YPS medium: Mineral base D'
+  details: 'CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4:
+    TOGO M2567 API restores Mineral base D as 5 mL 14% (w/v) NH4Cl stock plus 5 mL
+    7% (w/v) KH2PO4 stock. The source then uses 10 mL base D in YPS. The frozen flat
+    G_PER_L quantity is not a molecular ingredient dose, and D is distinct from bases
+    A–C. The complete immediate source formulation supports an isolated source-qualified
+    registry stock proposal. Its bare local name is retained in scoped notes rather
+    than exported as a global alias.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+- assessment_id: proposal-046
+  area: identity
+  topic: vm-prop-new-106 — bounded isolated delta
+  outcome: supported
+  target_ids:
+  - vm-prop-new-106
+  evidence_ids:
+  - proposal-evidence-046
+  - peer-vitamins_mixtures
+  summary: 'Create source-defined TOGO M2567 mineral base C with complete immediate
+    constituent enumeration and registry identity. Immediate components are two separate
+    solutions; source does not specify hydrates or carriers, so no pure-compound identities
+    are assigned. TOGO M2567 YPS medium: Mineral base C'
+  details: 'CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533:
+    TOGO M2567 API defines Mineral base C as1 mL10 mM Na2WO4 stock plus1 mL25 mM FeCl3
+    stock, then adds2 mL baseC to YPS. This is a two-stock preparation rather than
+    either pure tungsten/iron compound. The frozen unit is flattened. The complete
+    immediate source formulation supports an isolated source-qualified registry stock
+    proposal. Its bare local name is retained in scoped notes rather than exported
+    as a global alias.
+
+
+    Application/publication conditions: Independent skeptical review and content-bound
+    SSSOM admission before application; this payload is not admission approval.; Reconcile
+    cross-campaign equivalent recipe proposals before creating a registry owner; source
+    numbers alone do not establish distinct substances.
+
+    Reconcile equivalent recipes and shared owner proposals before integration.'
+findings: []
+actions: []
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T053047Z-w08-isolated-proposal-review
+  relationship: Successor after replacing two full literature archives and a derivative
+    extraction log with bounded factual captures. All scientific decisions and proposal
+    payloads remain unchanged; earlier exact assembled inputs are retained under review-history/assembly-before-archive-remediation,
+    and full archive bytes remain privately preserved.
+limitations:
+- Pass applies only to reviewed isolated deltas, not authorization to apply or export.
+  Full inherited record claims and roles remain unapproved.
+- Source-specific WITHHOLD/REJECTED decisions and exact missing requirements remain
+  in all188 case decisions. No hold release follows from native validation.
+- Issue758 phosphate proposals require coupled alias/override/membership/count integration.
+  Sodium dithionite owner overlaps worker07 issue1169. Preserve original before hashes.
+- New-owner positive content-bound SSSOM admission limitations in issue1165 remain.
+  Source-qualified stock names do not justify globally resolving generic aliases.
+- The source-only Na and CO cases remain held under issues1172 and1178; CO alias was
+  withdrawn after native resolver casefold reproduction.
+- JCM149 Hutner and worker01NBRC943 are distinct source formulations; no worker01
+  case approval is claimed.
+- Zero native finding objects means no residual defect in this narrowly reviewed proposal
+  delta scope; open integration and source findings remain in the campaign decisions
+  and issue ledger.
+```

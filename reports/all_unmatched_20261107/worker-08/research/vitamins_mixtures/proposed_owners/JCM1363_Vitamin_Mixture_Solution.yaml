@@ -1,0 +1,82 @@
+identifier: kgmicrobe.ingredient:jcm1363_vitamin_mixture_solution
+preferred_term: JCM 1363 vitamin mixture solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1363_vitamin_mixture_solution
+  ontology_label: JCM 1363 vitamin mixture solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1363
+    notes: 'JCM Medium 1363: Vitamin mixture solution defines this multi-component
+      preparation. Registry identity preserves the recipe-specific stock; no exact
+      molecular ontology mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: ' Raw source labels retained here, with recipe scope: ''Vitamin mixture solution*
+  (see below)''; ''Vitamin mixture solution* (see Medium No. 1363 )''. Generic local
+  labels are not published as global synonyms. Occurrence statistics remain zero until
+  source-specific membership integration; frozen observations are fully recorded in
+  the evidence decisions. Quantities use literal source-batch units, not final culture
+  concentrations. UNMAPPED component references preserve source wording without inventing
+  hydrate, stereoisomer or vitamer groundings.'
+components:
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: DL-Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Pyridoxine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '15.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Thiamine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Sodium phosphate buffer (10 mM, pH 7.1)
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1363
+    source_record: 'JCM Medium 1363: Vitamin mixture solution'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:19:59.969087+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined JCM 1363 vitamin mixture solution with complete immediate
+    constituent enumeration and registry identity.  Isolated proposal only; independent
+    and coordinator review remain required.
+  new_status: MAPPED
+  llm_assisted: true

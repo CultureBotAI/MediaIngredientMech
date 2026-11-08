@@ -1,0 +1,36 @@
+{
+  "validated_at": "2026-11-08T05:26:14.867252+00:00",
+  "commands": [
+    {
+      "command": ".temp/all-unmatched-worker-08/venv/bin/python .temp/all-unmatched-worker-08/organics/validate_fragment.py",
+      "exit_code": 0,
+      "result": "PASS51 exact original cases and three expected negative rejections; see fragment-validation.json"
+    },
+    {
+      "command": ".temp/all-unmatched-worker-08/venv/bin/python scripts/validate_strict.py reports/all_unmatched_20261107/worker-08/research/organic_products/proposals --workers 1 --out reports/all_unmatched_20261107/worker-08/research/organic_products/schema-validation.tsv",
+      "exit_code": 0,
+      "result": "11files;0error files;0error rows"
+    },
+    {
+      "command": "git diff --name-only -- data/ingredients data/curated mappings UNIFIED_INGREDIENT_MAPPING.tsv",
+      "exit_code": 0,
+      "result": "empty output; maintained surfaces unchanged"
+    }
+  ],
+  "disposition_counts": {
+    "broad_parent_relation_only": 4,
+    "new_distinct_ingredient_proposal": 6,
+    "existing_identity_or_alias": 19,
+    "stock_product_mixture_context": 13,
+    "unresolved": 7,
+    "supplied_form_correction": 1,
+    "malformed_or_nonchemical_token": 1
+  },
+  "scientific_approval": false,
+  "fragment_version": "v3",
+  "fragment_hashes": {
+    "decisions": "38e98eb6970640378fd62134b9facafa8008593a2cd1c2abe8e46fb5493d12fc",
+    "evidence": "a4c83b2d737b036dddd8e0b390a7c56686ac4b919d737a78021a8bd16a9b6293",
+    "proposals": "b940e4dbaa6bc2552d07753d411b4bc195cc389fd02362638f9a3ccc48f9faba"
+  }
+}

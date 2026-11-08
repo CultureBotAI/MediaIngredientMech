@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/inorganics",
+  "scope": "Assembler mechanics only; reviewer authored inorganic primary science.",
+  "mode": "synthetic",
+  "completed_at": "2026-11-08T05:29:41.382244+00:00",
+  "harness_sha256": "dfb8beecdc955d8dc9e9d507d363f2fee8d39da5aa674ef80e2563ba10bbf785",
+  "assembler_sha256": "9ce0605f8dee767d7c596d1a579ccaf7c70d402481a395d73b330465d06ad735",
+  "original_inputs_sha256": {
+    ".temp/all-unmatched-worker-08/assemble_bundle.py": "9ce0605f8dee767d7c596d1a579ccaf7c70d402481a395d73b330465d06ad735"
+  },
+  "original_inputs_unchanged": true,
+  "selected_fragment_hashes": {
+    "a": {
+      "decisions": "dc835029b547f56cd1859c13f3db7c322ac7e606be96c017032635cd81fc146a",
+      "evidence": "dc42b48d3db0fee5818fd119c25010462efbf3ab1e11b506e3266e6b981fb644",
+      "proposals": "49baa4bb693c3fd1191413221479a89cd4072f1dbb1e78253717c66fda1cbe6b"
+    },
+    "b": {
+      "decisions": "e2484a62d7108f56f6a69db69a0c52dc85dacafd7229a6a2cbe12b29c3af4fe7",
+      "evidence": "8a532c86f639126e5db25b8c8780dc42b6c203649d1e2a747396a21967355c4a",
+      "proposals": "4713494ec7340a57b064ea83efc2da2f16ffe040932b5c9f4e5147df669eaefb"
+    }
+  },
+  "selected_case_count": 3,
+  "private_fixture_path": ".temp/all-unmatched-worker-08/inorganics/assembler-mechanics/20261108T052941314219Z",
+  "controls": [
+    {
+      "control": "valid_control",
+      "expected": "accept",
+      "observed_exception": null,
+      "stdout": "{\"decisions\": 3, \"evidence\": 4, \"proposals\": 2}",
+      "output_files_created": [
+        "decisions.json",
+        "evidence.json",
+        "proposals.json",
+        "assembly-provenance.json"
+      ],
+      "passed": true,
+      "scientific_fields_unchanged": true,
+      "proposal_objects_unchanged": true,
+      "output_sha256": {
+        "decisions.json": "f6109893b7234ee00400fdd32491da22629cff7be4f54bedb853f036471ebe7a",
+        "evidence.json": "15b4ab42d59484b40b113414c9e71953da06404f52e84401a43fac87b20d444b",
+        "proposals.json": "e648accd263dc3f0e259045b78ce448be8c29911e7b48a31a49bbe179de479df",
+        "assembly-provenance.json": "ce00714adbaece98e8ca4c7bbdc5683fd1b3a8c58f9575c329a0b11064a9eae3"
+      }
+    },
+    {
+      "control": "stale_fragment_hash",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "a",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 41, in main\n    assert hashes == group['reviewed_fragment_sha256'], group['name']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: a\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "omitted_frozen_case_after_roster_update",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 70, in main\n    assert len(decisions) == len(original) == len({d['case_id'] for d in decisions})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "wrong_frozen_occurrence",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 61, in main\n    assert sorted(entry['occurrence_ids']) == sorted(o['occurrence_id'] for o in case.get('occurrences', []))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "wrong_frozen_source",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 60, in main\n    assert entry['source'] == {key: case[key] for key in ('source', 'source_case_id', 'source_label', 'raw_source_label')}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "wrong_frozen_case_digest",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 59, in main\n    assert entry['case_input_sha256'] == case_digest(case)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "duplicate_evidence_id",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 72, in main\n    assert len(evidence) == len({e['evidence_id'] for e in evidence})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "duplicate_proposal_id",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 73, in main\n    assert len(proposals) == len({p['proposal_id'] for p in proposals})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    },
+    {
+      "control": "self_review",
+      "expected": "reject_before_any_output",
+      "observed_exception": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/validation/test_assembler_mechanics.py\", line 170, in run_one\n    module.main()\n    ~~~~~~~~~~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/assemble_bundle.py\", line 45, in main\n    assert group['reviewer'] != group['primary_author']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "stdout": "",
+      "output_files_created": [],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Synthetic mode is only a harness control; final mode is required for real selection acceptance.",
+    "No scientific adequacy, primary-source validity, or reviewer receipt truth is established by these mechanics.",
+    "No maintained data, final fragments, final bundle outputs, or assembler source is modified."
+  ]
+}

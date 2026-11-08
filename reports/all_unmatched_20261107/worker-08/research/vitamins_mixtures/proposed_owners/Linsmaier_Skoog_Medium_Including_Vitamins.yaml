@@ -1,0 +1,72 @@
+identifier: UNMAPPED_0427
+preferred_term: Linsmaier & Skoog Medium including vitamins
+synonyms:
+- synonym_text: Linsmaier & Skoog Medium including vitamins
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Linsmaier & Skoog Med. incl. vitamins
+  synonym_type: RAW_TEXT
+  source: Source-bound all-unmatched worker08 review
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2431); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:52:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named complete plant tissue culture medium formulation
+    and left unmapped rather than identity-mapping to a single component.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Linsmaier_Skoog_Medium_Including_Vitamins-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **named, chemically
+    defined plant tissue-culture basal-medium formulation**, not a single chemical,
+    salt/hydrate, buffer, extract, or generic ingredient family. Literature treats
+    Linsmaier–Skoog (LS) as one of the standard basal plant-culture media and as a
+    formula containing macroelements, microelements, vitamins, and organic additives.
+    Growth regulators, carbohy No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:19:58.971684+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: The frozen mediadive.ingredient:2431 source explicitly specifies Duchefa
+    L0230. The manufacturer formulation (https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins)
+    and certificate (https://duchefa-biochemie.com/ac/download/number/L0230/id/7087)
+    enumerate mineral macro/microelements, myo-inositol 100 mg/L and thiamine HCl
+    0.4 mg/L, total 4402.49 mg/L. This identifies the existing imported named-medium
+    owner and its abbreviated source label; it does not identify any single vitamin
+    or imply a supplement-only mixture. Retain UNMAPPED_0427 pending a separately
+    scoped registry promotion; this proposal is exact source/product provenance and
+    alias enrichment. Isolated proposal only; independent and coordinator review remain
+    required.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2431); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complete plant tissue culture
+  medium formulation pending product/formulation curation. The frozen mediadive.ingredient:2431
+  source explicitly specifies Duchefa L0230. The manufacturer formulation (https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins)
+  and certificate (https://duchefa-biochemie.com/ac/download/number/L0230/id/7087)
+  enumerate mineral macro/microelements, myo-inositol 100 mg/L and thiamine HCl 0.4
+  mg/L, total 4402.49 mg/L. This identifies the existing imported named-medium owner
+  and its abbreviated source label; it does not identify any single vitamin or imply
+  a supplement-only mixture. Retain UNMAPPED_0427 pending a separately scoped registry
+  promotion; this proposal is exact source/product provenance and alias enrichment.
+ingredient_type: NAMED_MEDIUM

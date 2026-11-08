@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:jcm923_major_metals_stock
+preferred_term: JCM 923 major metals stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm923_major_metals_stock
+  ontology_label: JCM 923 major metals stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923
+    notes: 'JCM Medium 923: Major metals defines this multi-component preparation.
+      Registry identity preserves the recipe-specific stock; no exact molecular ontology
+      mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: ' Raw source labels retained here, with recipe scope: ''Major metals (see below)''.
+  Generic local labels are not published as global synonyms. Occurrence statistics
+  remain zero until source-specific membership integration; frozen observations are
+  fully recorded in the evidence decisions. Quantities use literal source-batch units,
+  not final culture concentrations. UNMAPPED component references preserve source
+  wording without inventing hydrate, stereoisomer or vitamer groundings.'
+components:
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.15'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.36'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  concentration_value: '2.68'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923
+    source_record: 'JCM Medium 923: Major metals'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:00.360023+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined JCM 923 major metals stock with complete immediate
+    constituent enumeration and registry identity.  Isolated proposal only; independent
+    and coordinator review remain required.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,88 @@
+identifier: UNMAPPED_0567
+preferred_term: Vitamin B12 solution see Medium No. 403
+synonyms:
+- synonym_text: Vitamin B12 solution see Medium No. 403
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Vitamin B12 solution* (see Medium No. 403 )
+  synonym_type: RAW_TEXT
+  source: Source-bound all-unmatched worker08 review
+- synonym_text: Vitamin B12 solution (see Medium No. 403)
+  synonym_type: RAW_TEXT
+  source: Source-bound all-unmatched worker08 review
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1845); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:07.108270+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:20.006463+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
+    No')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Vitamin_B12_Solution_See_Medium_No_403-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **cross-referenced
+    stock solution/formulation**, not a single chemical. The phrase “see Medium No.
+    403” functions as a recipe pointer; consequently, solvent, vitamin B12 vitamer,
+    concentration, and preparation procedure belong to the referenced formulation
+    and cannot safely be inferred from the words “vitamin B12” alone. No ontology
+    CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:19:58.967852+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: JCM Medium 403 defines the separate vitamin B12 stock as Vitamin B12 5
+    mg in distilled water 100 ml. Classify this recipe pointer as STOCK_SOLUTION,
+    not a whole named medium. The source does not identify the B12 vitamer, so neither
+    the stock nor its component is assigned an exact cyanocobalamin identity. Preserve
+    UNMAPPED_0567 and all historical source holds. Isolated proposal only; independent
+    and coordinator review remain required.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1845); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. JCM Medium 403 defines the separate vitamin
+  B12 stock as Vitamin B12 5 mg in distilled water 100 ml. Classify this recipe pointer
+  as STOCK_SOLUTION, not a whole named medium. The source does not identify the B12
+  vitamer, so neither the stock nor its component is assigned an exact cyanocobalamin
+  identity. Preserve UNMAPPED_0567 and all historical source holds.
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+components:
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403
+    source_record: JCM Medium 403, separately enumerated vitamin stock
+    notes: Amounts are literal source-batch amounts, not finished-medium concentrations.
+      Component references remain UNMAPPED pending form-specific grounding.

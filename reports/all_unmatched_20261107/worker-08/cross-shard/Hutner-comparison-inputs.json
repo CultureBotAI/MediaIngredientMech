@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-11-08T05:20:35.037429+00:00",
+  "scope": "Cross-shard owner-conflict comparison only; no ownership or review of worker01 source cases is claimed.",
+  "worker01": {
+    "commit": "1894d28d94df4e654ebce9752c23a2321aeb21c5",
+    "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml",
+    "sha256": "f62f6736a65ad231a9de433c05e285751bfddbd36a5e9537cea96500943d5291"
+  },
+  "worker08": {
+    "proposal_id": "vm-prop-new-129",
+    "path": "research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml",
+    "sha256": "244f4f42c3b00f640c165d4b558d26d5e3fe949619fb51a1803e9d60ab40ae79"
+  },
+  "assessment": "retain_distinct_source_formulations",
+  "reason": "Inspected exact JCM149 and NBRC943 primary captures support different material quantities/forms and different nested Metal44 stock formulations. No same-substance merge is justified by the shared Hutner name.",
+  "differences": [
+    {
+      "field": "MgSO4 heptahydrate",
+      "JCM149": "14.45 g per stated source batch",
+      "NBRC943": "29.7 g in final1 L"
+    },
+    {
+      "field": "ammonium heptamolybdate hydration",
+      "JCM149": "tetrahydrate stated",
+      "NBRC943": "dihydrate stated; neither source label silently corrected"
+    },
+    {
+      "field": "water basis",
+      "JCM149": "950 mL water plus50 mL Metal44 and solids; no measured final volume asserted",
+      "NBRC943": "make up final1 L explicitly"
+    },
+    {
+      "field": "nested Metal44",
+      "JCM149": "listed salts plus1 L water; EDTA2Na and MnSO4 xH2O",
+      "NBRC943": "same nominal listed masses plus100mL water, few drops H2SO4; Na-EDTA unspecified and MnSO4 monohydrate"
+    }
+  ],
+  "worker01_primary": {
+    "path": "cross-shard/worker01-NBRC943-primary.html",
+    "sha256": "271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593",
+    "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943",
+    "accessed_at": "2026-11-08T04:06:15.551337+00:00"
+  },
+  "worker08_primary_evidence_id": "vm-fetch-9c2e840069cb8057",
+  "review_boundary": "Source comparison for w08case129 only. No review approval of worker01 source cases/proposals or application of either owner is claimed."
+}

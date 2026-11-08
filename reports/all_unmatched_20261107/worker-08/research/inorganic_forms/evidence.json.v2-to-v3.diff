@@ -1,0 +1,21 @@
+--- evidence.json v2
++++ evidence.json v3
+@@ -4058,6 +4058,18 @@
+       "supports_or_contradicts": "CHEBI37586 confirms sodium phosphate class. Separate ChEBI/NCIt CAS7783-13-3 and mixed-salt name searches identify no exact tetrahydrate. NCIT C29288 is a potassium/sodium phosphate combination preparation, not the sodium/ammonium tetrahydrate; sodium-chloride control establishes functioning search. Bounded queries only, not global absence.",
+       "url": "https://www.ebi.ac.uk/ols4/api/search?q=sodium%20chloride&ontology=chebi&rows=5",
+       "accessed_at": "2026-11-08T05:17:47.445051+00:00"
++    },
++    {
++      "evidence_id": "if-co-casefold-counterexample",
++      "capture": {
++        "root": "artifact",
++        "path": "independent/organics-reviews-inorganics/co-casefold-reproduction.json",
++        "sha256": "5e99451d6b6ff0eae89785c0273d812f6b9099865128ec55796243b49c683b43"
++      },
++      "kind": "local_validation",
++      "locator": "Independent organic reviewer actual MIMLabelIndex lookup reproductions for CO and Co",
++      "supports_or_contradicts": "Contradicts the proposed global alias case-sensitivity claim: native normalization casefolds CO and Co, causing both to resolve as carbon monoxide when the alias is added.",
++      "url": null
+     }
+   ]
+ }

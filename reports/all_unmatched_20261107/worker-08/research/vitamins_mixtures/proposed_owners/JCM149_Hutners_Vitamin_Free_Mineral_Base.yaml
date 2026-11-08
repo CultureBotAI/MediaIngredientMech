@@ -1,0 +1,81 @@
+identifier: kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base
+preferred_term: JCM 149 Hutner's vitamin free mineral base
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base
+  ontology_label: JCM 149 Hutner's vitamin free mineral base
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149
+    notes: 'JCM Medium 149: Hutner''s vitamin free mineral base defines this multi-component
+      preparation. Registry identity preserves the recipe-specific stock; no exact
+      molecular ontology mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Metals 44 is an immediate nested component, not silently flattened; KOH amount
+  is approximate as stated in preparation. Raw source labels retained here, with recipe
+  scope: "Hutner''s vitamin free mineral base (see below)". Generic local labels are
+  not published as global synonyms. Occurrence statistics remain zero until source-specific
+  membership integration; frozen observations are fully recorded in the evidence decisions.
+  Quantities use literal source-batch units, not final culture concentrations. UNMAPPED
+  component references preserve source wording without inventing hydrate, stereoisomer
+  or vitamer groundings.'
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '14.45'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.335'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: (NH4)6Mo7O24·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Metals ''44'' (see below)
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '950.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: KOH (neutralizing nitrilotriacetic acid)
+  reference_scope: UNMAPPED
+  concentration_value: ca. 7.3
+  concentration_unit: G_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149
+    source_record: 'JCM Medium 149: Hutner''s vitamin free mineral base'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:00.632054+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined JCM 149 Hutner's vitamin free mineral base with complete
+    immediate constituent enumeration and registry identity. Metals 44 is an immediate
+    nested component, not silently flattened; KOH amount is approximate as stated
+    in preparation. Isolated proposal only; independent and coordinator review remain
+    required.
+  new_status: MAPPED
+  llm_assisted: true

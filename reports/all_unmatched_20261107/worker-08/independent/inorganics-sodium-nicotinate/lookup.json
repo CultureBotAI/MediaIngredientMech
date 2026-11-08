@@ -1,0 +1,548 @@
+{
+  "accessed_at": "2026-11-08T05:17:39.043533+00:00",
+  "reviewer": "/root/inorganics",
+  "author_reviewed": "/root/organic_products",
+  "scope": "Read-only independent exact-term/owner check for sodium nicotinate CAS54-86-4; no author files or maintained data edited. Current local stores, not asserted campaign-pinned.",
+  "databases": [
+    {
+      "path": "/Users/marcin/.data/oaklib/chebi.db",
+      "size": 4137340928,
+      "mtime_ns": 1791961401274785795,
+      "queries": [
+        {
+          "kind": "metadata",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE predicate IN ('owl:versionIRI','owl:versionInfo','dcterms:modified') LIMIT 20",
+          "parameters": [],
+          "results": [
+            {
+              "subject": "obo:chebi.owl",
+              "predicate": "owl:versionIRI",
+              "object": "obo:chebi/255/chebi.owl",
+              "value": null
+            },
+            {
+              "subject": "obo:chebi.owl",
+              "predicate": "owl:versionInfo",
+              "object": null,
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "kind": "cas_literal_any_predicate",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE value IN (?,?,?,?) OR object IN (?,?,?,?)",
+          "parameters": [
+            "54-86-4",
+            "CAS:54-86-4",
+            "CAS-RN:54-86-4",
+            "cas:54-86-4",
+            "54-86-4",
+            "CAS:54-86-4",
+            "CAS-RN:54-86-4",
+            "cas:54-86-4"
+          ],
+          "results": []
+        },
+        {
+          "kind": "cas_embedded",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE value LIKE ? OR object LIKE ?",
+          "parameters": [
+            "%54-86-4%",
+            "%54-86-4%"
+          ],
+          "results": [
+            {
+              "subject": "CHEBI:34457",
+              "predicate": "oio:hasDbXref",
+              "object": null,
+              "value": "cas:107254-86-4"
+            },
+            {
+              "subject": "_:riog00761516",
+              "predicate": "owl:annotatedTarget",
+              "object": null,
+              "value": "cas:107254-86-4"
+            },
+            {
+              "subject": "CHEBI:85394",
+              "predicate": "chemrof:inchi_string",
+              "object": null,
+              "value": "InChI=1S/C123H153N47O88P12/c124-52-1-8-158(117(191)149-52)105-68(179)80(248-259(198,199)222-16-40-65(176)66(177)103(235-40)165-33-143-59-91(127)133-28-138-96(59)165)41(236-105)17-225-266(212,213)255-88-49(244-113(76(88)187)168-36-146-62-94(130)136-31-141-99(62)168)25-231-263(206,207)251-83-44(239-108(71(83)182)162-12-5-56(173)153-121(162)195)20-224-261(202,203)249-81-42(237-106(69(81)180)159-9-2-53(125)150-118(159)192)18-226-267(214,215)256-87-48(243-112(75(87)186)167-35-145-61-93(129)135-30-140-98(61)167)24-230-262(204,205)250-82-43(238-107(70(82)181)160-10-3-54(126)151-119(160)193)19-227-268(216,217)257-89-50(245-114(77(89)188)169-37-147-63-95(131)137-32-142-100(63)169)26-232-264(208,209)252-84-46(241-109(72(84)183)163-13-6-57(174)154-122(163)196)22-229-270(220,221)258-90-51(246-115(78(90)189)170-38-148-64-101(170)156-116(132)157-102(64)190)27-233-265(210,211)253-85-45(240-110(73(85)184)164-14-7-58(175)155-123(164)197)21-228-269(218,219)254-86-47(242-111(74(86)185)166-34-144-60-92(128)134-29-139-97(60)166)23-223-260(200,201)247-79-39(15-171)234-104(67(79)178)161-11-4-55(172)152-120(161)194/h1-14,28-51,65-90,103-115,171,176-189H,15-27H2,(H,198,199)(H,200,201)(H,202,203)(H,204,205)(H,206,207)(H,208,209)(H,210,211)(H,212,213)(H,214,215)(H,216,217)(H,218,219)(H,220,221)(H2,124,149,191)(H2,125,150,192)(H2,126,151,193)(H2,127,133,138)(H2,128,134,139)(H2,129,135,140)(H2,130,136,141)(H2,131,137,142)(H,152,172,194)(H,153,173,195)(H,154,174,196)(H,155,175,197)(H3,132,156,157,190)/t39-,40-,41-,42-,43-,44-,45-,46-,47-,48-,49-,50-,51-,65-,66-,67-,68-,69-,70-,71-,72-,73-,74-,75-,76-,77-,78-,79-,80-,81-,82-,83-,84-,85-,86-,87-,88-,89-,90-,103-,104-,105-,106-,107-,108-,109-,110-,111-,112-,113-,114-,115-/m1/s1"
+            }
+          ]
+        },
+        {
+          "kind": "name_candidates",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND ((lower(value) LIKE '%nicotin%' AND lower(value) LIKE '%sodium%') OR (lower(value) LIKE '%pyridine%carbox%' AND lower(value) LIKE '%sodium%'))",
+          "parameters": [],
+          "results": [
+            {
+              "subject": "CHEBI:31377",
+              "predicate": "oio:hasRelatedSynonym",
+              "object": null,
+              "value": "sodium (6R,7R)-7-((R)-2-(4-hydroxy-6-methylnicotinamido)-2-(p-hydroxyphenyl)acetamido)-3-(((1-methyl-1H-tetrazol-5-yl)thio)methyl)-8-oxo-5-thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylate"
+            }
+          ]
+        }
+      ],
+      "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+      "matched_term_statements": {
+        "CHEBI:34457": [
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:charge",
+            "object": null,
+            "value": "0"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:generalized_empirical_formula",
+            "object": null,
+            "value": "C16H16N2O4"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:inchi_key_string",
+            "object": null,
+            "value": "WBSMIPAMAXNXFS-UHFFFAOYSA-N"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:inchi_string",
+            "object": null,
+            "value": "InChI=1S/C16H16N2O4/c19-16(20)14-11-13(18(21)22)8-9-15(14)17-10-4-7-12-5-2-1-3-6-12/h1-3,5-6,8-9,11,17H,4,7,10H2,(H,19,20)"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:mass",
+            "object": null,
+            "value": "300.314"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:monoisotopic_mass",
+            "object": null,
+            "value": "300.11101"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "chemrof:smiles_string",
+            "object": null,
+            "value": "O=C(O)c1cc(N(=O)=O)ccc1NCCCc1ccccc1"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "cas:107254-86-4"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "kegg.compound:C13705"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "lincs.smallmolecule:LSM-24963"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:hasOBONamespace",
+            "object": null,
+            "value": "chebi_ontology"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "5-Nitro-2-(3-phenylpropylamino)benzoic acid"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "NPPB"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:id",
+            "object": null,
+            "value": "CHEBI:34457"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "oio:inSubset",
+            "object": "obo:chebi/2_STAR",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "rdf:type",
+            "object": "owl:Class",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "rdfs:label",
+            "object": null,
+            "value": "5-Nitro-2-(3-phenylpropylamino)benzoic acid"
+          },
+          {
+            "subject": "CHEBI:34457",
+            "predicate": "rdfs:subClassOf",
+            "object": "CHEBI:25553",
+            "value": null
+          }
+        ],
+        "_:riog00761516": [
+          {
+            "subject": "_:riog00761516",
+            "predicate": "oio:source",
+            "object": null,
+            "value": "cas"
+          },
+          {
+            "subject": "_:riog00761516",
+            "predicate": "owl:annotatedProperty",
+            "object": "oio:hasDbXref",
+            "value": null
+          },
+          {
+            "subject": "_:riog00761516",
+            "predicate": "owl:annotatedSource",
+            "object": "CHEBI:34457",
+            "value": null
+          },
+          {
+            "subject": "_:riog00761516",
+            "predicate": "owl:annotatedTarget",
+            "object": null,
+            "value": "cas:107254-86-4"
+          },
+          {
+            "subject": "_:riog00761516",
+            "predicate": "rdf:type",
+            "object": "owl:Axiom",
+            "value": null
+          }
+        ],
+        "CHEBI:31377": [
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "IAO:0000115",
+            "object": null,
+            "value": "The sodium salt of cefpiramide."
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:charge",
+            "object": null,
+            "value": "0"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:generalized_empirical_formula",
+            "object": null,
+            "value": "C25H23N8O7S2.Na"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:inchi_key_string",
+            "object": null,
+            "value": "RIWWMGQFMUUYIY-ALLHVENQSA-M"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:inchi_string",
+            "object": null,
+            "value": "InChI=1S/C25H24N8O7S2.Na/c1-11-7-16(35)15(8-26-11)20(36)27-17(12-3-5-14(34)6-4-12)21(37)28-18-22(38)33-19(24(39)40)13(9-41-23(18)33)10-42-25-29-30-31-32(25)2;/h3-8,17-18,23,34H,9-10H2,1-2H3,(H,26,35)(H,27,36)(H,28,37)(H,39,40);/q;+1/p-1/t17-,18-,23-;/m1./s1"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:mass",
+            "object": null,
+            "value": "634.632"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:monoisotopic_mass",
+            "object": null,
+            "value": "634.10288"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "chemrof:smiles_string",
+            "object": null,
+            "value": "[H][C@]12SCC(CSc3nnnn3C)=C(C(=O)[O-])N1C(=O)[C@@]2([H])NC(=O)[C@H](NC(=O)c1cnc(C)cc1O)c1ccc(O)cc1.[Na+]"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "cas:74849-93-7"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "drugbank:DB00430"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "kegg.compound:C13376"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "kegg.drug:D01904"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasExactSynonym",
+            "object": null,
+            "value": "sodium (6R,7R)-7-{[(2R)-2-{[(4-hydroxy-6-methylpyridin-3-yl)carbonyl]amino}-2-(4-hydroxyphenyl)acetyl]amino}-3-{[(1-methyl-1H-tetrazol-5-yl)sulfanyl]methyl}-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylate"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasOBONamespace",
+            "object": null,
+            "value": "chebi_ontology"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Cefpiramide sodium"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "sodium (6R,7R)-7-((R)-2-(4-hydroxy-6-methylnicotinamido)-2-(p-hydroxyphenyl)acetamido)-3-(((1-methyl-1H-tetrazol-5-yl)thio)methyl)-8-oxo-5-thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylate"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "sodium (6R,7R)-7-{[(2R)-2-{[(4-hydroxy-6-methylpyridin-3-yl)carbonyl]amino}-2-(4-hydroxyphenyl)acetyl]amino}-3-{[(1-methyl-1H-tetrazol-5-yl)sulfanyl]methyl}-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylate"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:id",
+            "object": null,
+            "value": "CHEBI:31377"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "oio:inSubset",
+            "object": "obo:chebi/3_STAR",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "rdf:type",
+            "object": "owl:Class",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "rdfs:label",
+            "object": null,
+            "value": "cefpiramide sodium"
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "rdfs:subClassOf",
+            "object": "_:riog00728878",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:31377",
+            "predicate": "rdfs:subClassOf",
+            "object": "CHEBI:38700",
+            "value": null
+          }
+        ],
+        "CHEBI:85394": [
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "IAO:0000115",
+            "object": null,
+            "value": "A synthetic RNA fragment comprised of five adenosine, one guanosine, four uridine and three cytidine residues connected by 3'→5' phosphodiester linkages in the sequence U-G-G-G-A-A-G-A-C-A."
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:charge",
+            "object": null,
+            "value": "0"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:generalized_empirical_formula",
+            "object": null,
+            "value": "C123H153N47O88P12"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:inchi_key_string",
+            "object": null,
+            "value": "VYBPDSVUUVISDY-YQEYYAQJSA-N"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:inchi_string",
+            "object": null,
+            "value": "InChI=1S/C123H153N47O88P12/c124-52-1-8-158(117(191)149-52)105-68(179)80(248-259(198,199)222-16-40-65(176)66(177)103(235-40)165-33-143-59-91(127)133-28-138-96(59)165)41(236-105)17-225-266(212,213)255-88-49(244-113(76(88)187)168-36-146-62-94(130)136-31-141-99(62)168)25-231-263(206,207)251-83-44(239-108(71(83)182)162-12-5-56(173)153-121(162)195)20-224-261(202,203)249-81-42(237-106(69(81)180)159-9-2-53(125)150-118(159)192)18-226-267(214,215)256-87-48(243-112(75(87)186)167-35-145-61-93(129)135-30-140-98(61)167)24-230-262(204,205)250-82-43(238-107(70(82)181)160-10-3-54(126)151-119(160)193)19-227-268(216,217)257-89-50(245-114(77(89)188)169-37-147-63-95(131)137-32-142-100(63)169)26-232-264(208,209)252-84-46(241-109(72(84)183)163-13-6-57(174)154-122(163)196)22-229-270(220,221)258-90-51(246-115(78(90)189)170-38-148-64-101(170)156-116(132)157-102(64)190)27-233-265(210,211)253-85-45(240-110(73(85)184)164-14-7-58(175)155-123(164)197)21-228-269(218,219)254-86-47(242-111(74(86)185)166-34-144-60-92(128)134-29-139-97(60)166)23-223-260(200,201)247-79-39(15-171)234-104(67(79)178)161-11-4-55(172)152-120(161)194/h1-14,28-51,65-90,103-115,171,176-189H,15-27H2,(H,198,199)(H,200,201)(H,202,203)(H,204,205)(H,206,207)(H,208,209)(H,210,211)(H,212,213)(H,214,215)(H,216,217)(H,218,219)(H,220,221)(H2,124,149,191)(H2,125,150,192)(H2,126,151,193)(H2,127,133,138)(H2,128,134,139)(H2,129,135,140)(H2,130,136,141)(H2,131,137,142)(H,152,172,194)(H,153,173,195)(H,154,174,196)(H,155,175,197)(H3,132,156,157,190)/t39-,40-,41-,42-,43-,44-,45-,46-,47-,48-,49-,50-,51-,65-,66-,67-,68-,69-,70-,71-,72-,73-,74-,75-,76-,77-,78-,79-,80-,81-,82-,83-,84-,85-,86-,87-,88-,89-,90-,103-,104-,105-,106-,107-,108-,109-,110-,111-,112-,113-,114-,115-/m1/s1"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:mass",
+            "object": null,
+            "value": "4069.506"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:monoisotopic_mass",
+            "object": null,
+            "value": "4067.57933"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "chemrof:smiles_string",
+            "object": null,
+            "value": "Nc1ccn([C@@H]2O[C@H](COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4cnc5c(N)ncnc54)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4ccc(N)nc4=O)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4cnc5c(N)ncnc54)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4ccc(=O)nc4=O)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4cnc5c(=O)nc(N)nc54)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4ccc(=O)nc4=O)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4cnc5c(N)ncnc54)O[C@@H]3COP(=O)(O)O[C@H]3[C@@H](O)[C@H](n4ccc(=O)nc4=O)O[C@@H]3CO)[C@@H](OP(=O)(O)OC[C@H]3O[C@@H](n4ccc(=O)nc4=O)[C@H](O)[C@@H]3OP(=O)(O)OC[C@H]3O[C@@H](n4cnc5c(N)ncnc54)[C@H](O)[C@@H]3OP(=O)(O)OC[C@H]3O[C@@H](n4ccc(N)nc4=O)[C@H](O)[C@@H]3OP(=O)(O)OC[C@H]3O[C@@H](n4cnc5c(N)ncnc54)[C@H](O)[C@@H]3O)[C@H]2O)c(=O)n1"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "pubmed:8612352"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:hasExactSynonym",
+            "object": null,
+            "value": "U-A-U-G-U-A-C-A-C-U-A-C-A"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:hasOBONamespace",
+            "object": null,
+            "value": "chebi_ontology"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "U-A-U-G-U-A-C-A-C-U-A-C-A"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "UpApUpGpUpApCpApCpUpApCpA"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:id",
+            "object": null,
+            "value": "CHEBI:85394"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "oio:inSubset",
+            "object": "obo:chebi/3_STAR",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "rdf:type",
+            "object": "owl:Class",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "rdfs:label",
+            "object": null,
+            "value": "5'-UAUGUACACUACA-3'"
+          },
+          {
+            "subject": "CHEBI:85394",
+            "predicate": "rdfs:subClassOf",
+            "object": "CHEBI:82726",
+            "value": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/Users/marcin/.data/oaklib/ncit.db",
+      "size": 2725199872,
+      "mtime_ns": 1791961409614522199,
+      "queries": [
+        {
+          "kind": "metadata",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE predicate IN ('owl:versionIRI','owl:versionInfo','dcterms:modified') LIMIT 20",
+          "parameters": [],
+          "results": [
+            {
+              "subject": "obo:ncit.owl",
+              "predicate": "owl:versionIRI",
+              "object": "obo:ncit/releases/2026-03-19/ncit.owl",
+              "value": null
+            },
+            {
+              "subject": "obo:ncit.owl",
+              "predicate": "owl:versionInfo",
+              "object": null,
+              "value": "26.02d"
+            }
+          ]
+        },
+        {
+          "kind": "cas_literal_any_predicate",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE value IN (?,?,?,?) OR object IN (?,?,?,?)",
+          "parameters": [
+            "54-86-4",
+            "CAS:54-86-4",
+            "CAS-RN:54-86-4",
+            "cas:54-86-4",
+            "54-86-4",
+            "CAS:54-86-4",
+            "CAS-RN:54-86-4",
+            "cas:54-86-4"
+          ],
+          "results": []
+        },
+        {
+          "kind": "cas_embedded",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE value LIKE ? OR object LIKE ?",
+          "parameters": [
+            "%54-86-4%",
+            "%54-86-4%"
+          ],
+          "results": []
+        },
+        {
+          "kind": "name_candidates",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND ((lower(value) LIKE '%nicotin%' AND lower(value) LIKE '%sodium%') OR (lower(value) LIKE '%pyridine%carbox%' AND lower(value) LIKE '%sodium%'))",
+          "parameters": [],
+          "results": []
+        }
+      ],
+      "sha256": "9aac307a33fcf57fb946944a0eaca6029a7d929e29f7522537909da6c71a31d3",
+      "matched_term_statements": {}
+    }
+  ],
+  "maintained_owner_scan": {
+    "method": "Path.rglob all YAML under data/ingredients, including ignored files; case-insensitive CAS, sodium/nicotinate and pyridine carboxylate name variants across complete text",
+    "files_scanned": 2956,
+    "matches": []
+  }
+}

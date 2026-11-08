@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-08T05:15:32.683727+00:00",
+  "queries": [
+    "site:ebi.ac.uk/chebi sodium ammonium hydrogen phosphate tetrahydrate",
+    "site:ebi.ac.uk/chebi sodium dihydrogenphosphate dihydrate",
+    "site:ebi.ac.uk/chebi dipotassium hydrogenphosphate trihydrate"
+  ],
+  "result": "Queries returned no inspected exact ontology record; search is not exhaustive and does not establish absence.",
+  "url_failures": [
+    "https://togomedium.org/medium/M2262",
+    "https://togomedium.org/medium/M2231",
+    "https://togomedium.org/medium/M2277",
+    "https://togomedium.org/medium/M2809",
+    "https://togomedium.org/medium/M3140",
+    "https://togomedium.org/medium/M3160",
+    "https://togomedium.org/medium/M2256"
+  ],
+  "shell_attempt": {
+    "url": "https://mediadive.dsmz.de/rest/compound/607",
+    "result": "URLError: nodename nor servname provided, or not known"
+  },
+  "repository_search": {
+    "method": "Path.rglob reads all data/ingredients/*.yaml including ignored files; rg -uu for formula/CAS and file-name alternatives",
+    "scope": "assigned worktree data/ingredients mapped and unmapped; candidates not whole-repository absences"
+  }
+}

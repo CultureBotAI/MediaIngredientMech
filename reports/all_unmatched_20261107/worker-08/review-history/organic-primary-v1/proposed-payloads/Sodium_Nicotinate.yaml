@@ -1,0 +1,32 @@
+identifier: cas:54-86-4
+preferred_term: Sodium nicotinate
+ontology_mapping:
+  ontology_id: CHEBI:15940
+  ontology_label: nicotinic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://webbook.nist.gov/cgi/cbook.cgi?ID=54864&Units=SI
+    notes: NIST verifies sodium nicotinate CAS54-86-4; JCM393 explicitly uses the sodium salt. The acid
+      CHEBI15940 is a broader form-of anchor, never exact salt identity. Bounded exact-form search did
+      not verify a salt-specific ontology term; repeat at integration.
+synonyms:
+- synonym_text: sodium nicotinate
+  synonym_type: RAW_TEXT
+  source: CultureMech TOGO M389 / JCM393
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 54-86-4
+  molecular_formula: C6H4NNaO2
+  data_source: NIST Chemistry WebBook
+  retrieval_date: '2026-11-08T05:08:31.964Z'
+curation_history:
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: CREATED
+  changes: Propose CAS-preserved sodium salt with asymmetric nicotinic-acid parent. No release approval;
+    exact-term search must be rechecked at integration.
+  new_status: MAPPED
+  llm_assisted: true

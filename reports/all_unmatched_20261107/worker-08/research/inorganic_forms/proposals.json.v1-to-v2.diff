@@ -1,0 +1,59 @@
+--- proposals.json v1
++++ proposals.json v2
+@@ -179,19 +179,53 @@
+         "if-web-1cdd59bc636c",
+         "if-web-186326289c79",
+         "if-local-ontology-lookup",
+-        "if-search-scope"
++        "if-search-scope",
++        "if-supplement-if-ols-CHEBI37586",
++        "if-supplement-if-ols-CAS7783-13-3-search",
++        "if-supplement-if-ols-nah4phosphate-search",
++        "if-supplement-if-ols-chebi-CAS7783-search",
++        "if-supplement-if-ols-ncit-CAS7783-search",
++        "if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-chebi-sodium-chloride-control"
+       ],
+       "owner_path": "data/ingredients/mapped/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml",
+       "kind": "new_owner",
+       "after_capture": {
+         "root": "artifact",
+         "path": "research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml",
+-        "sha256": "3c6f0edaab70b974e8d31aa9404a4afc3b8aa653446a5c88e69820740b017330"
++        "sha256": "74e2cca44589dc54aab6363a06a9cb9b1c535eaad86e131f18f63d19956c91a6"
+       },
+       "before_sha256": null,
+       "identity_predicate_alias_consequences": "Distinct CAS identity; CHEBI37586 broadMatch only, plus required local B1 handle and CAS identity row. Raw hydrate spellings retained; no pure sodium or ammonium phosphate alias collapse.",
+-      "publication_review_obligations": "Before integration, refresh exact-term lookup against current ontology releases, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Complete new-owner/payload review and native schema/SSSOM gates required; no role/release approval.",
++      "publication_review_obligations": "Current local and successful online exact-term searches are captured; bounded negative results do not establish global absence. Validate closest-parent specificity, new-owner collision and complete source/payload; generate required CAS identity/B1 handle/parent rows. Native schema/SSSOM review remains required, no quantities/memberships/roles/release approved.",
+       "cross_shard_conflict": "Coordinator must deduplicate CAS7783-13-3 and tetrahydrate source labels across all workers before minting; no current maintained owner found in ignored-inclusive scan."
++    },
++    {
++      "proposal_id": "if-add-edta-disodium-dihydrate-spelling",
++      "case_ids": [
++        "CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f"
++      ],
++      "description": "Add exact source EDTA・2Na・2H2O spelling to live EDTA disodium dihydrate owner; retain existing merge tombstone retirement.",
++      "evidence_ids": [
++        "if-case-067",
++        "if-recipe-50ac3ed4c871",
++        "if-web-9af22132e57e",
++        "if-web-872d30616b80",
++        "if-owner-Na2-edta_X_2_H2o",
++        "if-owner-Na2edta2h2o"
++      ],
++      "owner_path": "data/ingredients/mapped/Na2edta2h2o.yaml",
++      "kind": "edit_existing_owner",
++      "before_sha256": "9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d",
++      "after_capture": {
++        "root": "artifact",
++        "path": "research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml",
++        "sha256": "1f981682c97803091dfd5bf91ccf52a8055901df5f132cee2b1effdeb15bb33d"
++      },
++      "identity_predicate_alias_consequences": "CHEBI64758 identity and current grounding/predicate remain unchanged; one exact-form raw spelling becomes resolvable. No anhydrous/free-acid alias, merge, count transfer or tombstone change.",
++      "publication_review_obligations": "Withdraw inherited content-bound support for changed owner; complete full published payload/role review, guarded integration, YAML synchronization and native SSSOM/schema gates remain required. Existing annotation-like aliases and provisional CHELATOR evidence are not approved by this narrow addition.",
++      "cross_shard_conflict": "Coordinator must reconcile any same-owner proposal against original before hash; no alternate owner or other-worker after bytes adopted."
+     }
+   ]
+ }

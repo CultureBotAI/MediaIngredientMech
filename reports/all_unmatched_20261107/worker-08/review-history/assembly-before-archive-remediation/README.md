@@ -1,0 +1,1 @@
+Immutable first assembled bundle and audit before publication-scope archive remediation. The native review20261108T053047Z binds these exact bytes. Later assembly uses bounded factual extracts instead of fullarticle/supplement archives; original fullbytes retained privately with original provenance. This directory is historical, not final proposal selection.

@@ -1,0 +1,85 @@
+identifier: kgmicrobe.ingredient:jcm995_vitamin_solution_no6
+preferred_term: JCM 995 vitamin solution No. 6
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm995_vitamin_solution_no6
+  ontology_label: JCM 995 vitamin solution No. 6
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995
+    notes: 'JCM Medium 995: Vitamin solution No. 6 defines this multi-component preparation.
+      Registry identity preserves the recipe-specific stock; no exact molecular ontology
+      mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: ' Raw source labels retained here, with recipe scope: ''Vitamin solution No.
+  6''. Generic local labels are not published as global synonyms. Occurrence statistics
+  remain zero until source-specific membership integration; frozen observations are
+  fully recorded in the evidence decisions. Quantities use literal source-batch units,
+  not final culture concentrations. UNMAPPED component references preserve source
+  wording without inventing hydrate, stereoisomer or vitamer groundings.'
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '4.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Pyridoxine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '20.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Thiamine·HCl·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '4.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Nicotinamide
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995
+    source_record: 'JCM Medium 995: Vitamin solution No. 6'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:19:59.504518+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined JCM 995 vitamin solution No. 6 with complete immediate
+    constituent enumeration and registry identity.  Isolated proposal only; independent
+    and coordinator review remain required.
+  new_status: MAPPED
+  llm_assisted: true

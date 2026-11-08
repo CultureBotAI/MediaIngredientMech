@@ -1,0 +1,37 @@
+--- proposals.json v1
++++ proposals.json v2
+@@ -329,6 +329,34 @@
+         "Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release."
+       ],
+       "cross_shard_conflict": "Coordinator must reconcile any overlapping owner proposal before integration."
++    },
++    {
++      "proposal_id": "op-glycerol-asparagine-source-note",
++      "case_ids": [
++        "KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997"
++      ],
++      "description": "Document source1754-to-JCM60 formulation provenance on the generic named-medium owner while preserving its unproved exact-equivalence boundary.",
++      "evidence_ids": [
++        "op-case-166",
++        "op-jcm60",
++        "op-owner-search",
++        "op-glycerol-asparagine-owner-provenance"
++      ],
++      "owner_path": "data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml",
++      "kind": "edit_existing_owner",
++      "before_sha256": "a20ab80bfd721b38622db05c4890f6f5ae80540ae038959e0e91446d9edaf5d5",
++      "after_capture": {
++        "root": "artifact",
++        "path": "research/organic_products/proposals/Glycerol-asparagine_Agar.yaml",
++        "sha256": "7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590"
++      },
++      "identity_predicate_alias_consequences": "Notes and curation history only. UNMAPPED_0122, UNMAPPED status, raw aliases, zero counts and all other fields unchanged; no assertion that the generic owner is exactly JCM60 and no component/role/mapping row created.",
++      "publication_review_obligations": [
++        "Isolated exact-preimage proposal; no maintained data changed.",
++        "Any changed owner requires fresh content-bound review; no inherited identity or role approval transfers.",
++        "Mapping or typed recipe linkage requires evidence bridging the original generic label to the exact formulation/version; the source1754-to-JCM60 reference itself is already supported."
++      ],
++      "cross_shard_conflict": "Coordinator must reconcile any other proposal for this owner against original before hash."
+     }
+   ]
+ }

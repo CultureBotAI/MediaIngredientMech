@@ -1,0 +1,130 @@
+--- decisions.json v1
++++ decisions.json v2
+@@ -2806,7 +2806,7 @@
+         "CM_OCC:8829159bd18e08842807d12278a62904a2f256276113e7c4571b0e5eb315e994"
+       ],
+       "disposition": "existing_identity_or_alias",
+-      "reasoning": "EDTA·2Na·2H2O explicitly names the disodium dihydrate and matches CHEBI:64758, distinct from EDTA acid and anhydrous disodium salt. Two existing MIM owners carry this identity; Na2-edta_X_2_H2o also has conflicting CAS/anhydrous structure, so owner consolidation must precede an alias addition.",
++      "reasoning": "EDTA・2Na・2H2O explicitly names the disodium dihydrate and matches CHEBI:64758, distinct from EDTA acid and anhydrous disodium salt. Na2-edta_X_2_H2o is a REJECTED merge tombstone with explicit MERGED_INTO CHEBI64758 history; live Na2edta2h2o records the corresponding absorption and exact hydrate chemistry. No new consolidation is required. Propose the precise frozen VRI source spelling on the live owner only, preserving the tombstone, counts and all complete-payload obligations. A live JCM643 retry remained unavailable; no unseen recipe content is asserted.",
+       "applicability": "Applies only to source culturemech case 'EDTA・2Na・2H2O', label 'EDTA・2Na・2H2O', raw label 'EDTA・2Na・2H2O'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+       "evidence_ids": [
+         "if-case-067",
+@@ -2814,11 +2814,14 @@
+         "if-web-9af22132e57e",
+         "if-web-872d30616b80",
+         "if-owner-Na2-edta_X_2_H2o",
+-        "if-owner-Na2edta2h2o"
+-      ],
+-      "proposal_ids": [],
+-      "no_change_reason": "Exact hydrate is identified but two owners compete; no arbitrary winner or duplicate alias proposal.",
+-      "missing_requirement": "Coordinator must reconcile duplicate EDTA dihydrate owners and inherited chemistry/holds before selecting one target for the new raw spelling.",
++        "if-owner-Na2edta2h2o",
++        "if-jcm643-retry-failure"
++      ],
++      "proposal_ids": [
++        "if-add-edta-disodium-dihydrate-spelling"
++      ],
++      "no_change_reason": null,
++      "missing_requirement": "Complete content-bound review of the live owner after alias addition, including annotation-like synonyms and provisional CHELATOR evidence; preserve original retirement and current memberships/counts. No merge is pending for these two files.",
+       "owner_records": [
+         {
+           "path": "data/ingredients/mapped/Na2-edta_X_2_H2o.yaml",
+@@ -2972,7 +2975,7 @@
+         "CM_OCC:8bf7cb181ef6c60285a67b4888502861af62892de2db15157ce5ef035159a810"
+       ],
+       "disposition": "new_distinct_ingredient_proposal",
+-      "reasoning": "The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. Current online OLS queries failed, so exact-term lookup should be refreshed before application.",
++      "reasoning": "The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288 is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride control returned expected terms. This is bounded evidence rather than universal absence.",
+       "applicability": "Applies only to source culturemech case 'NaNH4HPO4 . 4H2O', label 'NaNH4HPO4 . 4H2O', raw label 'NaNH4HPO4 . 4H2O'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+       "evidence_ids": [
+         "if-case-072",
+@@ -2981,13 +2984,21 @@
+         "if-web-1cdd59bc636c",
+         "if-web-186326289c79",
+         "if-local-ontology-lookup",
+-        "if-search-scope"
++        "if-search-scope",
++        "if-supplement-if-ols-CHEBI37586",
++        "if-supplement-if-ols-CAS7783-13-3-search",
++        "if-supplement-if-ols-nah4phosphate-search",
++        "if-supplement-if-ols-chebi-CAS7783-search",
++        "if-supplement-if-ols-ncit-CAS7783-search",
++        "if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-chebi-sodium-chloride-control"
+       ],
+       "proposal_ids": [
+         "if-new-sodium-ammonium-phosphate-tetrahydrate"
+       ],
+       "no_change_reason": null,
+-      "missing_requirement": "Before integration, refresh exact-term lookup against current ontology releases, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal.",
++      "missing_requirement": "Before integration, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Exact-term search is bounded to inspected local ChEBI/NCIt and current OLS queries.",
+       "owner_records": [],
+       "issue_refs": [],
+       "independent_review": {
+@@ -4756,7 +4767,7 @@
+         "CM_OCC:385815163b3aa29cd68239123980e10ca1fe4168e35fdf0f267c2dec2cb2f67b"
+       ],
+       "disposition": "new_distinct_ingredient_proposal",
+-      "reasoning": "The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. Current online OLS queries failed, so exact-term lookup should be refreshed before application.",
++      "reasoning": "The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288 is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride control returned expected terms. This is bounded evidence rather than universal absence.",
+       "applicability": "Applies only to source culturemech case 'NaNH4HPO4 x 4 H2O', label 'NaNH4HPO4 x 4 H2O', raw label 'NaNH4HPO4 x 4 H2O'. Reviewed all 3 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+       "evidence_ids": [
+         "if-case-107",
+@@ -4767,13 +4778,21 @@
+         "if-web-1cdd59bc636c",
+         "if-web-186326289c79",
+         "if-local-ontology-lookup",
+-        "if-search-scope"
++        "if-search-scope",
++        "if-supplement-if-ols-CHEBI37586",
++        "if-supplement-if-ols-CAS7783-13-3-search",
++        "if-supplement-if-ols-nah4phosphate-search",
++        "if-supplement-if-ols-chebi-CAS7783-search",
++        "if-supplement-if-ols-ncit-CAS7783-search",
++        "if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-chebi-sodium-chloride-control"
+       ],
+       "proposal_ids": [
+         "if-new-sodium-ammonium-phosphate-tetrahydrate"
+       ],
+       "no_change_reason": null,
+-      "missing_requirement": "Before integration, refresh exact-term lookup against current ontology releases, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal.",
++      "missing_requirement": "Before integration, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Exact-term search is bounded to inspected local ChEBI/NCIt and current OLS queries.",
+       "owner_records": [],
+       "issue_refs": [],
+       "independent_review": {
+@@ -6027,7 +6046,7 @@
+       },
+       "occurrence_ids": [],
+       "disposition": "new_distinct_ingredient_proposal",
+-      "reasoning": "The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. Current online OLS queries failed, so exact-term lookup should be refreshed before application.",
++      "reasoning": "The exact NaNH4HPO4·4H2O formula is supported by DSMZ694 and Thermo supplier040320.22, CAS7783-13-3, H13NNaO8P. This is a distinct mixed sodium/ammonium hydrogenphosphate tetrahydrate. The ignored-inclusive maintained-record scan found no exact owner; read-only ChEBI255/NCIt26.02d CAS and mixed-salt name queries found no exact term. Propose CAS identity and asymmetric sodium-phosphate class grounding CHEBI:37586, retaining both counterions and four waters; the class is not chemical identity. ROOT supplementary current OLS queries succeeded: separate ChEBI/NCIt searches by CAS and mixed-salt name found no exact term. The lone NCIT name hit C29288 is a potassium/sodium phosphate preparation, not this salt; the sodium-chloride control returned expected terms. This is bounded evidence rather than universal absence.",
+       "applicability": "Applies only to source mediadive case 'mediadive.ingredient:665', label 'NaNH4HPO4 x 4 H2O', raw label 'NaNH4HPO4 x 4 H2O'. Reviewed complete frozen original_kg_entry, raw source_record, candidate owners and every native_review_rows/downstream_holds entry. Empty occurrence_ids reflects queue representation, not absence of observations.",
+       "evidence_ids": [
+         "if-case-170",
+@@ -6035,13 +6054,21 @@
+         "if-web-1cdd59bc636c",
+         "if-web-186326289c79",
+         "if-local-ontology-lookup",
+-        "if-search-scope"
++        "if-search-scope",
++        "if-supplement-if-ols-CHEBI37586",
++        "if-supplement-if-ols-CAS7783-13-3-search",
++        "if-supplement-if-ols-nah4phosphate-search",
++        "if-supplement-if-ols-chebi-CAS7783-search",
++        "if-supplement-if-ols-ncit-CAS7783-search",
++        "if-supplement-if-ols-chebi-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-ncit-sodium-ammonium-phosphate-search",
++        "if-supplement-if-ols-chebi-sodium-chloride-control"
+       ],
+       "proposal_ids": [
+         "if-new-sodium-ammonium-phosphate-tetrahydrate"
+       ],
+       "no_change_reason": null,
+-      "missing_requirement": "Before integration, refresh exact-term lookup against current ontology releases, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal.",
++      "missing_requirement": "Before integration, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Exact-term search is bounded to inspected local ChEBI/NCIt and current OLS queries.",
+       "owner_records": [],
+       "issue_refs": [],
+       "independent_review": {

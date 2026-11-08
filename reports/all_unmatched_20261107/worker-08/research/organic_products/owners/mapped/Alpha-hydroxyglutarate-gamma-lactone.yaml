@@ -1,0 +1,44 @@
+identifier: kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone
+preferred_term: Alpha-hydroxyglutarate-gamma-lactone
+synonyms:
+- synonym_text: Alpha-hydroxyglutarate-gamma-lactone
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_hydroxyglutarate_gamma_lactone);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0795 -> kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone
+    "Alpha-hydroxyglutarate-gamma-lactone" (FALLBACK_REGISTRY); mapping_status UNMAPPED
+    -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_hydroxyglutarate_gamma_lactone);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone
+  ontology_label: Alpha-hydroxyglutarate-gamma-lactone
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Alpha-hydroxyglutarate-gamma-lactone: absent from every namespace here.
+      Deliberately NOT grounded to 2-hydroxyglutarate (CHEBI:132941) -- a gamma-lactone
+      is a distinct compound from its parent acid, not a naming variant (#213).'

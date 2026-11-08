@@ -1,0 +1,33 @@
+{
+  "baseline": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "source_only_rule": "Do not invent a MIM YAML owner or infer whole-record/role/release approval from source-name assessment.",
+  "evidence_reuse": "Exact bytes and original retrieval timestamps only; per-case applicability required.",
+  "approvals": [
+    {
+      "action": "Organic reviewer shell OLS retrieval",
+      "result": "automatic review rejected",
+      "stated_reason": "request is a low-risk public read, but the user explicitly prohibited additional external sessions, so this network action is outside the authorized scope",
+      "resolution": "Reviewer continued through web tool. Root separately described bounded public recipe HTTPS reads with explicit no-external-session scope; those reads were approved and succeeded. No extra Codex session was launched."
+    }
+  ],
+  "validation_invocation_notes": [
+    {
+      "file": "validation/auditor-controls.log",
+      "exit_code": 4,
+      "reason": "pytest picked unrelated parent repository coverage defaults; no tests ran."
+    },
+    {
+      "file": "validation/auditor-controls-corrected-invocation.log",
+      "exit_code": 0,
+      "result": "22 synthetic auditor controls passed",
+      "scope": "Standalone assignment structural auditor only, run with this worktree configuration and empty addopts; no full-project coverage claim."
+    },
+    {
+      "file": "validation/native-review-initial-alias-rejection.log",
+      "exit_code": 1,
+      "reason": "PyYAML draft serializer emitted aliases; native validator rejected before save. No-alias dumper corrected the draft; exact successful validate/save/check logs retained."
+    }
+  ],
+  "native_review_scope": "Native batch reviews cover exact isolated proposed IngredientRecord deltas, including source-qualified new-owner payloads with explicit ownership limits. They do not invent maintained owners or approve inherited whole-record/role/export assertions. Source-only no-proposal cases remain in the complete campaign format.",
+  "retrieval_limitations": "HTTP success is not assumed to mean usable source content. Empty JS shells, no-result pages and mismatched recipe numbers are excluded as positive evidence."
+}

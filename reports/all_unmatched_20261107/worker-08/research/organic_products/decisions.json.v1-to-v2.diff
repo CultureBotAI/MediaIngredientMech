@@ -1,0 +1,38 @@
+--- decisions.json v1
++++ decisions.json v2
+@@ -677,7 +677,7 @@
+       ],
+       "disposition": "unresolved",
+       "reasoning": "dTMP conventionally denotes thymidine5-monophosphate, CHEBI:17013. The two SONG occurrences have no usable amount and no supplier/salt form; an exact free-acid owner would invent the procurement form.",
+-      "applicability": "Both MediaDB288/289 source contexts cite the same publication and intentionally retain NULL/VARIABLE dose; no stock counterion is exposed.",
++      "applicability": "Both MediaDB288/289 raw occurrences explicitly retain an unavailable quantity (None/NULL in source), and withdraw the former schema-default VARIABLE concentration. Neither zero nor a specified variable dose is supported; no stock counterion is exposed.",
+       "evidence_ids": [
+         "op-case-81",
+         "op-context-81-0",
+@@ -1741,16 +1741,19 @@
+       },
+       "occurrence_ids": [],
+       "disposition": "stock_product_mixture_context",
+-      "reasoning": "ISP-5 glycerol-asparagine agar is a complete medium formulation. JCM60 gives L-asparagine, glycerol, phosphate, agar and trace salts; matching one component does not identify the whole medium.",
+-      "applicability": "MediaDive1754 supplies1000mL and explicitly references medium60; official JCM60 confirms formulation and pH7.4.",
++      "reasoning": "The exact MediaDive1754 source supplies1000mL and references JCM60/ISP-5, whose official formulation is captured. Existing UNMAPPED_0122 instead originated from a generic synonym extracted from Agar.yaml; it has no source1754/JCM60 provenance, component ratios, supplier or formulation version. Its later Edison history quotes ISP medium5 only as a suggested name, not a primary formulation-equivalence finding. Source1754 is therefore a verified JCM60 medium reference, while equivalence of the complete generic owner to this exact recipe remains unproved. Propose a narrow source-provenance note so the supported recipe and remaining identity boundary are durable.",
++      "applicability": "Only source ingredient1754 and its1000mL quantity are linked to JCM60. That recipe uses L-asparagine1g, glycerol10g, K2HPO4 1g, agar15g and1mL trace stock per1L distilled water, pH7.4; trace stock has0.1g each FeSO4.7H2O, MnCl2.4H2O and ZnSO4.7H2O per100mL. These are recipe-specific facts, not asserted composition of every material called glycerol-asparagine agar.",
+       "evidence_ids": [
+         "op-case-166",
+         "op-jcm60",
+-        "op-owner-search"
+-      ],
+-      "proposal_ids": [],
+-      "no_change_reason": "No maintained-data change proposed. ISP-5 glycerol-asparagine agar is a complete medium formulation. JCM60 gives L-asparagine, glycerol, phosphate, agar and trace salts; matching one component does not identify the whole medium.",
+-      "missing_requirement": "Define an exact formulation/version owner and typed recipe linkage before mapping; no arbitrary component or generic agar mapping.",
++        "op-owner-search",
++        "op-glycerol-asparagine-owner-provenance"
++      ],
++      "proposal_ids": [
++        "op-glycerol-asparagine-source-note"
++      ],
++      "no_change_reason": null,
++      "missing_requirement": "Before mapping or decomposing UNMAPPED_0122 as exact JCM60, establish that the original Agar-extracted label denotes this formulation/version, including component ratios, trace-stock hydrate forms and preparation, rather than a generic named-medium family. Its current record carries no primary recipe provenance to establish that bridge. Source1754 itself already has a verified JCM60 formulation; no additional discovery of that recipe is required.",
+       "owner_records": [
+         {
+           "path": "data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml",

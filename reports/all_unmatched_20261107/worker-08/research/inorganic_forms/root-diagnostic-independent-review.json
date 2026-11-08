@@ -1,0 +1,490 @@
+{
+  "at": "2026-11-08T05:17:04.606735+00:00",
+  "reviewer": "/root/inorganics",
+  "independence_scope": "Independent re-execution of ROOT parser diagnostic and proposal preimage/reference checks. This agent authored case55 primary review; this is NOT independent approval of case55 scientific disposition or own proposals.",
+  "status": "PASS",
+  "source_blob_sha": "6b19e990d36f920145f1fb802ee69425f9e570ba",
+  "source_sha256": "5b95ca4155fb8b165b260748c59a30add520cf8747f15b8c08731b2bf48c7ff0",
+  "function_lines": [
+    156,
+    214
+  ],
+  "diagnostic_capture_sha256": "68f7703a629e294ede42fbd662c12e602463653666d2709dfe7e174ef919652a",
+  "six_exact_reproductions": [
+    {
+      "occurrence_id": "CM_OCC:6224b39536ceedb5065c424f6c6671496c1c6fa0bf8828d4b4691f1bb49a499a",
+      "frozen_recipe_sha256": "e76043b3e342198f344620b2d2600f4c1273f0ebb00b208cf95e0135a2e3d6c2",
+      "full_source_notes_match_root_capture": true,
+      "reproduced_output": [
+        {
+          "preferred_term": "Na",
+          "notes": "Extracted from recipe notes (pH buffer)",
+          "data_quality_flags": [
+            "extracted_from_notes"
+          ]
+        }
+      ],
+      "root_exact_output_match": true
+    },
+    {
+      "occurrence_id": "CM_OCC:da35141875a8fb77f2ee721ba0c19ad707edbbdab9dc1840b8f0f3f060a5316c",
+      "frozen_recipe_sha256": "ae84565c4e1330f81b779425d3e5b8b30af0119a522dd42140f2cff7a03bc213",
+      "full_source_notes_match_root_capture": true,
+      "reproduced_output": [
+        {
+          "preferred_term": "Na",
+          "notes": "Extracted from recipe notes (pH buffer)",
+          "data_quality_flags": [
+            "extracted_from_notes"
+          ]
+        }
+      ],
+      "root_exact_output_match": true
+    },
+    {
+      "occurrence_id": "CM_OCC:4639fcbdc7808dfb2e8bd742d754df2ae459dcfed9aa0b01917abf3c48c6e0a2",
+      "frozen_recipe_sha256": "ca4c5555f29b41ce8d0880bf6a923d672426b3361b67dd79286efaa0dd35812c",
+      "full_source_notes_match_root_capture": true,
+      "reproduced_output": [
+        {
+          "preferred_term": "Na",
+          "notes": "Extracted from recipe notes (pH buffer)",
+          "data_quality_flags": [
+            "extracted_from_notes"
+          ]
+        }
+      ],
+      "root_exact_output_match": true
+    },
+    {
+      "occurrence_id": "CM_OCC:a388adb830ab48767eeeb6eac42bc1f827d9d59a64ed54db123f268fe8138c39",
+      "frozen_recipe_sha256": "1c4ad9e06b935d55a40609dba8a4bd2d3eef0760514338d18a72b5f3f8600967",
+      "full_source_notes_match_root_capture": true,
+      "reproduced_output": [
+        {
+          "preferred_term": "Na",
+          "notes": "Extracted from recipe notes (pH buffer)",
+          "data_quality_flags": [
+            "extracted_from_notes"
+          ]
+        }
+      ],
+      "root_exact_output_match": true
+    },
+    {
+      "occurrence_id": "CM_OCC:7b3207531fee53ddaad184bcc97da05e3860cde7e0f7d48d24d409548e2195c0",
+      "frozen_recipe_sha256": "7dff67c4e1337c150838ba89c67503788e14f70365d86d978f676b2e42146448",
+      "full_source_notes_match_root_capture": true,
+      "reproduced_output": [
+        {
+          "preferred_term": "Na",
+          "notes": "Extracted from recipe notes (pH buffer)",
+          "data_quality_flags": [
+            "extracted_from_notes"
+          ]
+        }
+      ],
+      "root_exact_output_match": true
+    },
+    {
+      "occurrence_id": "CM_OCC:c32a7b896d43a42d208a297af2723297be6fe6ca1ef03fd480651879a2c001ff",
+      "frozen_recipe_sha256": "3e5c7cc84abe95388b9c866c3b736eb0a0f719f1d8cfec641ca4194252ecdadf",
+      "full_source_notes_match_root_capture": true,
+      "reproduced_output": [
+        {
+          "preferred_term": "Na",
+          "notes": "Extracted from recipe notes (pH buffer)",
+          "data_quality_flags": [
+            "extracted_from_notes"
+          ]
+        }
+      ],
+      "root_exact_output_match": true
+    }
+  ],
+  "mechanism": "Character class excludes hyphen, captures Na before -sesquicarbonate. Source extraction cause is demonstrated; intended buffer formulation remains separate and is not inferred here.",
+  "proposal_before_checks": [
+    {
+      "proposal_id": "if-add-anhydrous-k2hpo4",
+      "owner_path": "data/ingredients/mapped/K2hpo4.yaml",
+      "before_sha256_verified": "7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": []
+    },
+    {
+      "proposal_id": "if-add-carbon-monoxide-formula",
+      "owner_path": "data/ingredients/mapped/Carbon_Monoxide.yaml",
+      "before_sha256_verified": "be622a5615f098d660d9c32e686163e4f7269387ca5bf93d53dd8b6d482e0ae2",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": []
+    },
+    {
+      "proposal_id": "if-reject-monohydrate-on-dihydrate",
+      "owner_path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+      "before_sha256_verified": "a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": [
+        {
+          "shard": "shard-08.json",
+          "case_id": "KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578",
+          "owner_reference": {
+            "identifier": "kgmicrobe.compound:nah2po4_x_2_h2o",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2053",
+                  "owner_record": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+                  "row_sha256": "120a4fdb223ea42fe4648721b124d3dfc0802cc5472d7386f026db8d8c44c64e",
+                  "source_position": 2053
+                },
+                "row": {
+                  "comment": "[other: dropped ['sodium phosphate monobasic anhydrous']: REJECTED_LABEL, a different form's name (#232)]",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-09-23",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "CHEBI:37585",
+                  "object_label": "sodium dihydrogenphosphate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "NaH2PO4 x 2H2O|NaH2PO4 x H2O|NaH2PO4·2H2O|NaH2PO4·H2O|NaH2PO4・2H2O|NaH2PO4・H2O",
+                  "predicate_id": "skos:closeMatch",
+                  "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=hydrate_family_cas|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]",
+                  "subject_id": "MIM:Nah2po4_X_2_H2o",
+                  "subject_label": "NaH2PO4 x 2 H2O",
+                  "validation_method": "manual:retire_wrong_form_names|OTHER|2026-09-23"
+                }
+              },
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2054",
+                  "owner_record": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: structure strings, kg_microbe_node_id, and final other are stale or over-broad.",
+                  "row_sha256": "20cfc8c4bf83d6bb72a2d36090ca41bcbe24e6c4824094fecee04ac6efe4ae3f",
+                  "source_position": 2054
+                },
+                "row": {
+                  "comment": "Registry/identity row preserving kgmicrobe.compound:nah2po4_x_2_h2o alongside parent CHEBI:37585.",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-08-29",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:nah2po4_x_2_h2o",
+                  "object_label": "NaH2PO4 x 2 H2O",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=hydrate_family_cas|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]",
+                  "subject_id": "MIM:Nah2po4_X_2_H2o",
+                  "subject_label": "NaH2PO4 x 2 H2O",
+                  "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "[HISTORICAL — superseded by the #321 re-grade below: this record is a hydrate of CHEBI:37585, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "identifier CHEBI:37585 -> kgmicrobe.compound:nah2po4_x_2_h2o; mapping_quality SYNONYM_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:37585 ('sodium dihydrogenphosphate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.",
+                  "source": "MIM curation (#321/#334)"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "molecular_formula 'H2O4P.Na' -> 'H2O4P.Na.2H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:37585's ChEBI formula ('H2O4P.Na') — the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation.",
+                  "source": "MIM curation (#321)"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:37585 ('sodium dihydrogenphosphate') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged.",
+                  "source": "MIM curation (#342)"
+                }
+              ],
+              "mapping_quality": "CLOSE_MATCH",
+              "ontology_id": "CHEBI:37585",
+              "ontology_label": "sodium dihydrogenphosphate",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+            "preferred_term": "NaH2PO4 x 2 H2O",
+            "sha256": "a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d",
+            "subject_id": "MIM:Nah2po4_X_2_H2o"
+          }
+        },
+        {
+          "shard": "shard-08.json",
+          "case_id": "KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04",
+          "owner_reference": {
+            "identifier": "kgmicrobe.compound:nah2po4_x_2_h2o",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2053",
+                  "owner_record": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+                  "row_sha256": "120a4fdb223ea42fe4648721b124d3dfc0802cc5472d7386f026db8d8c44c64e",
+                  "source_position": 2053
+                },
+                "row": {
+                  "comment": "[other: dropped ['sodium phosphate monobasic anhydrous']: REJECTED_LABEL, a different form's name (#232)]",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-09-23",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "CHEBI:37585",
+                  "object_label": "sodium dihydrogenphosphate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "NaH2PO4 x 2H2O|NaH2PO4 x H2O|NaH2PO4·2H2O|NaH2PO4·H2O|NaH2PO4・2H2O|NaH2PO4・H2O",
+                  "predicate_id": "skos:closeMatch",
+                  "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=hydrate_family_cas|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]",
+                  "subject_id": "MIM:Nah2po4_X_2_H2o",
+                  "subject_label": "NaH2PO4 x 2 H2O",
+                  "validation_method": "manual:retire_wrong_form_names|OTHER|2026-09-23"
+                }
+              },
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2054",
+                  "owner_record": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: structure strings, kg_microbe_node_id, and final other are stale or over-broad.",
+                  "row_sha256": "20cfc8c4bf83d6bb72a2d36090ca41bcbe24e6c4824094fecee04ac6efe4ae3f",
+                  "source_position": 2054
+                },
+                "row": {
+                  "comment": "Registry/identity row preserving kgmicrobe.compound:nah2po4_x_2_h2o alongside parent CHEBI:37585.",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-08-29",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.compound:nah2po4_x_2_h2o",
+                  "object_label": "NaH2PO4 x 2 H2O",
+                  "object_source": "kgm:compound",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=hydrate_family_cas|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]",
+                  "subject_id": "MIM:Nah2po4_X_2_H2o",
+                  "subject_label": "NaH2PO4 x 2 H2O",
+                  "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "[HISTORICAL — superseded by the #321 re-grade below: this record is a hydrate of CHEBI:37585, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "identifier CHEBI:37585 -> kgmicrobe.compound:nah2po4_x_2_h2o; mapping_quality SYNONYM_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:37585 ('sodium dihydrogenphosphate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.",
+                  "source": "MIM curation (#321/#334)"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "molecular_formula 'H2O4P.Na' -> 'H2O4P.Na.2H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:37585's ChEBI formula ('H2O4P.Na') — the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation.",
+                  "source": "MIM curation (#321)"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:37585 ('sodium dihydrogenphosphate') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged.",
+                  "source": "MIM curation (#342)"
+                }
+              ],
+              "mapping_quality": "CLOSE_MATCH",
+              "ontology_id": "CHEBI:37585",
+              "ontology_label": "sodium dihydrogenphosphate",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+            "preferred_term": "NaH2PO4 x 2 H2O",
+            "sha256": "a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d",
+            "subject_id": "MIM:Nah2po4_X_2_H2o"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "if-add-mono-source-spelling",
+      "owner_path": "data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml",
+      "before_sha256_verified": "e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": []
+    },
+    {
+      "proposal_id": "if-repair-dithionite-Na2s2o4",
+      "owner_path": "data/ingredients/mapped/Na2s2o4.yaml",
+      "before_sha256_verified": "2a370f469e3a425a6f79d1bbada66f77767b8a7fff649951dffaa3ec90145fc5",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": [
+        {
+          "shard": "shard-08.json",
+          "case_id": "KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26",
+          "owner_reference": {
+            "identifier": "CHEBI:66870",
+            "mapping_status": "REJECTED",
+            "native_review_rows": [],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                }
+              ],
+              "mapping_quality": "SYNONYM_MATCH",
+              "ontology_id": "CHEBI:66870",
+              "ontology_label": "sodium dithionite",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Na2s2o4.yaml",
+            "preferred_term": "Na2S2O4",
+            "sha256": "2a370f469e3a425a6f79d1bbada66f77767b8a7fff649951dffaa3ec90145fc5",
+            "subject_id": "MIM:Na2s2o4"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "if-repair-dithionite-Sodium_Dithionite",
+      "owner_path": "data/ingredients/mapped/Sodium_Dithionite.yaml",
+      "before_sha256_verified": "5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": [
+        {
+          "shard": "shard-08.json",
+          "case_id": "KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26",
+          "owner_reference": {
+            "identifier": "CHEBI:66870",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2578",
+                  "owner_record": "data/ingredients/mapped/Sodium_Dithionite.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current sodium dithionite CHEBI:66870 row exports six scutellarin/glucuronide aliases inherited from old CHEBI:61278. The historical report explicitly separates these aliases from otherwise supported dithionite identity. The role concern does not explain away this mapping defect.",
+                  "row_sha256": "1c1961f472ed656c40db77cd552a0173b96facb5146fe77b0718683b9ae8bbc7",
+                  "source_position": 2578
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-08-27",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:66870",
+                  "object_label": "sodium dithionite",
+                  "object_source": "obo:chebi.owl",
+                  "other": "disodium dithionite|sodium hydrosulfite|sodium sulfoxylate|Na2S2O4|5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic acid|Scutellarein 7-O-beta-D-glucuronide|Scutellarein-7-O-beta-D-glucuronide|Scutellarein-7-glucuronide|Scutellarein-7beta-D-glucuronide|Scutellarein-7beta-D-glucuronoside|CAS:7775-14-6",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=reground_263]",
+                  "subject_id": "MIM:Sodium_Dithionite",
+                  "subject_label": "Sodium dithionite",
+                  "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                }
+              ],
+              "mapping_quality": "EXACT_MATCH",
+              "ontology_id": "CHEBI:66870",
+              "ontology_label": "sodium dithionite",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Sodium_Dithionite.yaml",
+            "preferred_term": "Sodium dithionite",
+            "sha256": "5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1",
+            "subject_id": "MIM:Sodium_Dithionite"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "if-reject-tris-hcl-on-base",
+      "owner_path": "data/ingredients/mapped/Tris_Base.yaml",
+      "before_sha256_verified": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+      "new_owner_path_absent": false,
+      "frozen_queue_owner_references": [
+        {
+          "shard": "shard-06.json",
+          "case_id": "KG_CASE:3bef9a6f0e3901c3db7a69b2c6cb9cb9c040316056f9fcde773445471e50ca35",
+          "owner_reference": {
+            "identifier": "CHEBI:9754",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2858",
+                  "owner_record": "data/ingredients/mapped/Tris_Base.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: salt, concentration-qualified, pH-qualified, and wrong-compound labels leak into final SSSOM other.",
+                  "row_sha256": "61b84d7b3de2b3da146679ade43ed469b359235792dd81e6b263062b944050ee",
+                  "source_position": 2858
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-08-30",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:9754",
+                  "object_label": "tris",
+                  "object_source": "obo:chebi.owl",
+                  "other": "1,1,1-tris(hydroxymethyl)methanamine|2-Amino-2-(hydroxymethyl)-1,3-propanediol|2-amino-2-(hydroxymethyl)propane-1,3-diol|THAM|Tris (hydroxymethyl aminomethane)|Tris [tris(hydroxymethyl)aminomethane]|Tris amino|Tris buffer|Tris buffer 1M|Tris hydrochloride|Tris(hydroxymethyl)aminomethane|Tris-base|Tris [tris(hydroxymethyl)aminomethane]|Trizma|Trizma Base pH|Trometamol|Tromethamine|aminotris(hydroxymethyl)methane|nitrilotriacetic acid trisodium salt|Tris(hydroxymethyl)methylamine|Tris-HCl buffer|Tris HCl|Trizma Base pH 8.2|Tris base (buffer)|Tris (hydroxymethyl) aminomethane|Tris・HCl|CAS:77-86-1",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=ingredient_mapping_review_2026_05_05]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+                  "subject_id": "MIM:Tris_Base",
+                  "subject_label": "Tris base",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                }
+              ],
+              "mapping_quality": "EXACT_MATCH",
+              "ontology_id": "CHEBI:9754",
+              "ontology_label": "tris",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Tris_Base.yaml",
+            "preferred_term": "Tris base",
+            "sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+            "subject_id": "MIM:Tris_Base"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "if-new-sodium-ammonium-phosphate-tetrahydrate",
+      "owner_path": "data/ingredients/mapped/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml",
+      "before_sha256_verified": null,
+      "new_owner_path_absent": true,
+      "frozen_queue_owner_references": []
+    }
+  ],
+  "cross_shard_scope": "All immutable shard JSON original_kg_entry.owners references; does not discover proposals or recipe-only latent owners in other workers. Known worker07 Sodium_Dithionite overlap is separately issue1169.",
+  "findings": []
+}

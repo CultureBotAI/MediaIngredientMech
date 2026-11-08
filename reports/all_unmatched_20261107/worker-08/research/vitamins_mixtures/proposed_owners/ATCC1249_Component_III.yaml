@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:atcc1249_component_iii
+preferred_term: ATCC 1249 Component III
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: CARBON_SOURCE_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc1249_component_iii
+  ontology_label: ATCC 1249 Component III
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    notes: 'ATCC Medium 1249 Modified Baar medium: Component III defines this multi-component
+      preparation. Registry identity preserves the recipe-specific stock; no exact
+      molecular ontology mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Component III is prepared separately at pH 7.5 and then mixed with Components
+  I and II. Its generic sequence label is not a universal identity. Raw source labels
+  retained here, with recipe scope: ''Component III''. Generic local labels are not
+  published as global synonyms. Occurrence statistics remain zero until source-specific
+  membership integration; frozen observations are fully recorded in the evidence decisions.
+  Quantities use literal source-batch units, not final culture concentrations. UNMAPPED
+  component references preserve source wording without inventing hydrate, stereoisomer
+  or vitamer groundings.'
+components:
+- component_name: Sodium Lactate
+  reference_scope: UNMAPPED
+  concentration_value: '3.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Yeast Extract
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: DI Water
+  reference_scope: UNMAPPED
+  concentration_value: '400.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    source_record: 'ATCC Medium 1249 Modified Baar medium: Component III'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:01.006217+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined ATCC 1249 Component III with complete immediate constituent
+    enumeration and registry identity. Component III is prepared separately at pH
+    7.5 and then mixed with Components I and II. Its generic sequence label is not
+    a universal identity. Isolated proposal only; independent and coordinator review
+    remain required.
+  new_status: MAPPED
+  llm_assisted: true

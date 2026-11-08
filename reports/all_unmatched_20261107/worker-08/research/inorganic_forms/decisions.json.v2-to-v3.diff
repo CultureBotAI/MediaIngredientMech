@@ -1,0 +1,29 @@
+--- decisions.json v2
++++ decisions.json v3
+@@ -4135,19 +4135,18 @@
+         "CM_OCC:0f526638793d97a966419922f5ef22086e37868441cbe542d578a4c9e2597318"
+       ],
+       "disposition": "existing_identity_or_alias",
+-      "reasoning": "The frozen modified basal medium names CO as a gas component; ChEBI:17245 explicitly defines carbon monoxide with formula CO and the maintained Carbon_Monoxide owner has that formula/structure. The case supports the formula alias, not cobalt (Co) or a mixed gas atmosphere. Formula CO must remain case-sensitive; source retrieval at TOGO M3160 was unavailable but frozen record specifies gas, and primary ontology provides the formula.",
++      "reasoning": "The frozen Modified Basal Medium occurrence explicitly labels CO as a gas, and CHEBI:17245 verifies carbon monoxide formula CO. This supports the source-specific gas identity. Independent execution of native MIMLabelIndex shows strong_label_key casefolds CO and Co; adding global RAW_TEXT CO would incorrectly make the cobalt symbol Co resolve to carbon monoxide. Withdraw the global alias proposal. The source identification does not authorize this unsafe resolver behavior; TOGO M3160 live retrieval remains unavailable.",
+       "applicability": "Applies only to source culturemech case 'CO', label 'CO', raw label 'CO'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+       "evidence_ids": [
+         "if-case-091",
+         "if-recipe-dde8aa000feb",
+         "if-web-26019be3d356",
+-        "if-owner-Carbon_Monoxide"
+-      ],
+-      "proposal_ids": [
+-        "if-add-carbon-monoxide-formula"
+-      ],
+-      "no_change_reason": null,
+-      "missing_requirement": null,
++        "if-owner-Carbon_Monoxide",
++        "if-co-casefold-counterexample"
++      ],
++      "proposal_ids": [],
++      "no_change_reason": "No global CO alias: actual native label normalization collapses CO and Co. Preserve source-bound carbon monoxide identification and unchanged Carbon_Monoxide owner.",
++      "missing_requirement": "A separately reviewed case-sensitive formula lookup or exact source-occurrence override is required before resolving this CO gas occurrence without conflating cobalt Co. No resolver or maintained-data change is proposed here.",
+       "owner_records": [
+         {
+           "path": "data/ingredients/mapped/Carbon_Monoxide.yaml",

@@ -1,0 +1,144 @@
+{
+  "all_corrected_and_rereviewed": true,
+  "findings": [
+    {
+      "primary_group": "inorganic_forms",
+      "reviewer": "/root/organics",
+      "review_path": "independent/organics-reviews-inorganics/review.json",
+      "finding": {
+        "finding_id": "ORGI-001",
+        "severity": "major",
+        "case_ids": [
+          "CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f"
+        ],
+        "description": "v1 falsely treated a retired EDTA dihydrate tombstone as a second live owner and deferred justified source alias on a nonexistent consolidation prerequisite.",
+        "status": "fixed_and_rereviewed",
+        "resolution": "v3 directs exact source alias to live CHEBI64758 owner only; exact payload hash bound in proposal_reviews; tombstone and counts unchanged."
+      }
+    },
+    {
+      "primary_group": "inorganic_forms",
+      "reviewer": "/root/organics",
+      "review_path": "independent/organics-reviews-inorganics/review.json",
+      "finding": {
+        "finding_id": "ORGI-002",
+        "severity": "major",
+        "case_ids": [
+          "CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e"
+        ],
+        "description": "Global CO RAW_TEXT alias would route Co to carbon monoxide because native consumer casefolds labels. Actual native resolver reproduction captured locally.",
+        "status": "fixed_and_rereviewed",
+        "resolution": "v3 proposal/backlink withdrawn; source-bound gas identification retained with explicit future resolver/override requirement.",
+        "capture": "independent/organics-reviews-inorganics/co-casefold-reproduction.json",
+        "followup_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1178",
+        "supplemental_full_index_capture": "review-history/co-full-index-overlay-reproduction.json"
+      }
+    },
+    {
+      "primary_group": "organic_products",
+      "reviewer": "/root/vitamins",
+      "review_path": "independent/vitamins-reviews-organics/review.json",
+      "finding": {
+        "finding_id": "vor-01",
+        "severity": "P2",
+        "case_ids": [
+          "CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71"
+        ],
+        "status": "resolved",
+        "finding": "dTMP v1 described NULL/VARIABLE as retained dose although both frozen occurrences explicitly withdrew VARIABLE.",
+        "resolution": "Final v3 applicability states amount unavailable; neither zero nor a specified variable dose is supported. Missing form/quantity requirement retained."
+      }
+    },
+    {
+      "primary_group": "organic_products",
+      "reviewer": "/root/vitamins",
+      "review_path": "independent/vitamins-reviews-organics/review.json",
+      "finding": {
+        "finding_id": "vor-02",
+        "severity": "P2",
+        "case_ids": [
+          "KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997"
+        ],
+        "status": "resolved",
+        "finding": "The JCM60 exact formulation was already discoverable, while v1 no-change language deferred implementable provenance work without separating the actual unresolved generic-owner bridge.",
+        "resolution": "Re-read full generic owner, original source1754 and primary JCM60. Final v3 establishes the exact source formulation, states why the generic Agar-extracted owner is not proven equivalent, and adds a narrow notes/history proposal without identity or component approval. Reviewer corrected an initial suggestion that the generic owner itself had source1754 provenance; it does not."
+      }
+    },
+    {
+      "primary_group": "organic_products",
+      "reviewer": "/root/vitamins",
+      "review_path": "independent/vitamins-reviews-organics/review.json",
+      "finding": {
+        "finding_id": "vor-03",
+        "severity": "P3",
+        "proposal_ids": [
+          "op-valeric-alias",
+          "op-isovaleric-alias",
+          "op-methane-alias",
+          "op-soy-flour-alias",
+          "op-l-asn-hydrate-alias"
+        ],
+        "status": "resolved",
+        "finding": "New RAW_TEXT aliases on five existing owners cited campaign case IDs without direct primary recipe/product identifiers and URLs at assertion level.",
+        "resolution": "Final v3 additions identify exact frozen context and primary recipe/ontology/supplier URL; every preexisting synonym and source is unchanged."
+      }
+    },
+    {
+      "primary_group": "vitamins_mixtures",
+      "reviewer": "/root/inorganics",
+      "review_path": "independent/inorganics-reviews-vitamins/review-v2.json",
+      "finding": {
+        "id": "ivm-01",
+        "severity": "P2",
+        "finding": "Four existing-owner payloads newly attributed source aliases only to author review, not exact primary recipe/product.",
+        "resolution": "Verified all four versioned successors replace only new alias sources with ATCC1257/JCM403/DuchefaL0230 identifiers andURLs and append accurate history; old inputs remain immutable.",
+        "status": "resolved",
+        "affected_proposals": [
+          "vm-prop-menadione",
+          "vm-prop-jcm403-vitamin",
+          "vm-prop-jcm403-b12",
+          "vm-prop-linsmaier-skoog"
+        ]
+      }
+    },
+    {
+      "primary_group": "vitamins_mixtures",
+      "reviewer": "/root/inorganics",
+      "review_path": "independent/inorganics-reviews-vitamins/review-v2.json",
+      "finding": {
+        "id": "ivm-02",
+        "severity": "P2",
+        "finding": "B12/corrinoid hold omitted four known frozen alternatives and requested mixture ratio.",
+        "resolution": "Independent primary-methods search-rendered retrieval confirms one-of-four; revised decision preserves alternatives and per5mL amounts and narrows condition-selection requirement.",
+        "status": "resolved",
+        "case_id": "CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378"
+      }
+    },
+    {
+      "primary_group": "vitamins_mixtures",
+      "reviewer": "/root/inorganics",
+      "review_path": "independent/inorganics-reviews-vitamins/review-v2.json",
+      "finding": {
+        "id": "ivm-03",
+        "severity": "P2",
+        "finding": "B6 hold incorrectly suggested vitamer/salt candidates were unnamed.",
+        "resolution": "Revised decision names pyridoxal-HCl AND pyridoxal-phosphate; remaining amount allocation and suppliedphosphateform uncertainty justifies hold. Version3 removed aggregate wording; version4 additionally binds direct primaryPMC evidence. Reviewer does not endorse24–40mg/L as proven combined mass.",
+        "status": "resolved",
+        "case_id": "CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca"
+      }
+    },
+    {
+      "primary_group": "vitamins_mixtures",
+      "reviewer": "/root/inorganics",
+      "review_path": "independent/inorganics-reviews-vitamins/review-v2.json",
+      "finding": {
+        "id": "ivm-04",
+        "severity": "P3",
+        "finding": "MineralbaseB hold calledKOHendpoint unspecified though primaryAPI givespH6.5 then7.0.",
+        "resolution": "Revised decision preserves endpoints and limits missing requirement to literalAIK(SO4)2 identity/hydration and quantitative titrant amount.",
+        "status": "resolved",
+        "case_id": "CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6"
+      }
+    }
+  ]
+}
