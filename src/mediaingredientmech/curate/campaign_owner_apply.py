@@ -1257,9 +1257,12 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
             allowed = {e["source_record"] for e in prepared.operations} | {
                 e["before_source_record"] for e in prepared.operations if e["before_source_record"]
             }
+            # #1255: ordinary Git output quotes Unicode/control characters.
+            # Parse literal filesystem paths, never quoted or newline-separated text.
+            changed = git(root, "diff", "--name-only", "-z", "HEAD", "--").split(b"\0")
+            require(changed[-1] == b"" and all(changed[:-1]), "Malformed Git path listing")
             require(
-                set(git(root, "diff", "--name-only", "HEAD", "--").decode().splitlines())
-                <= allowed,
+                {os.fsdecode(path) for path in changed[:-1]} <= allowed,
                 "Unrelated tracked file changed",
             )
             result["state"] = "complete"
