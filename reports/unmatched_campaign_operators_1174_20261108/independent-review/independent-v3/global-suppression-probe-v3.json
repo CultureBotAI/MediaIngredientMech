@@ -1,0 +1,62 @@
+{
+  "publisher_sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+  "results": [
+    {
+      "case": "diagnostic-impact",
+      "native_diagnostic_present": true,
+      "attempts": [
+        {
+          "apply": false,
+          "error": "ValueError: Campaign publication: global projected Rule K impact requires reviewed scope: [{\"reason\": \"Rule K: `other` publishes a name another record owns: [\\\"'B' (owned by MIM:B)\\\"]. kg-microbe merges `other` into the synonym set, so both records would answer to it. Rebuild the SSSOM in claw after fixing the record's synonyms, or add the pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).\", \"source_position\": 2, \"subject_id\": \"MIM:Unrelated\"}]"
+        },
+        {
+          "apply": true,
+          "error": "ValueError: Campaign publication: global projected Rule K impact requires reviewed scope: [{\"reason\": \"Rule K: `other` publishes a name another record owns: [\\\"'B' (owned by MIM:B)\\\"]. kg-microbe merges `other` into the synonym set, so both records would answer to it. Rebuild the SSSOM in claw after fixing the record's synonyms, or add the pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).\", \"source_position\": 2, \"subject_id\": \"MIM:Unrelated\"}]"
+        }
+      ],
+      "canonical_unchanged": true,
+      "policy_unchanged": true,
+      "outputs": []
+    },
+    {
+      "case": "prior-only-impact",
+      "native_diagnostic_present": false,
+      "attempts": [
+        {
+          "apply": false,
+          "error": "ValueError: Campaign publication: global projected Rule K impact requires reviewed scope: [{\"reason\": \"Rule K: `other` publishes a name another record owns: [\\\"'B' (owned by MIM:B)\\\"]. kg-microbe merges `other` into the synonym set, so both records would answer to it. Rebuild the SSSOM in claw after fixing the record's synonyms, or add the pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).\", \"source_position\": 2, \"subject_id\": \"MIM:Unrelated\"}]"
+        },
+        {
+          "apply": true,
+          "error": "ValueError: Campaign publication: global projected Rule K impact requires reviewed scope: [{\"reason\": \"Rule K: `other` publishes a name another record owns: [\\\"'B' (owned by MIM:B)\\\"]. kg-microbe merges `other` into the synonym set, so both records would answer to it. Rebuild the SSSOM in claw after fixing the record's synonyms, or add the pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).\", \"source_position\": 2, \"subject_id\": \"MIM:Unrelated\"}]"
+        }
+      ],
+      "canonical_unchanged": true,
+      "policy_unchanged": true,
+      "outputs": []
+    },
+    {
+      "case": "unowned-positive",
+      "native_diagnostic_present": false,
+      "attempts": [
+        {
+          "apply": false,
+          "status": "dry_run"
+        },
+        {
+          "apply": true,
+          "status": "complete"
+        }
+      ],
+      "canonical_unchanged": false,
+      "policy_unchanged": false,
+      "outputs": [
+        "canonical-before.tsv",
+        "policy-before.json",
+        "publication.json"
+      ]
+    }
+  ],
+  "scope": "Native captured whole-canonical RuleK and native alias-policy event; synthetic ownerproof/generation boundaries are explicit mocks; actual projection/policy/receipt/filesystem path. No corpus application.",
+  "harness_adaptation": "Final publisher requires exact checkpoint/protected snapshot files; refreshed private fixture snapshots after altering its accepted beforeinputs. Original stale-harness refusal is retained separately."
+}

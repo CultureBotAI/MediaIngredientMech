@@ -1,0 +1,22 @@
+{
+  "source_sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+  "scope": "Author's synthetic fixture isolates owner proof and generation as explicit mocks, while native receipt replay, projection, policy and publication filesystem operations are real. Demonstrates the outer validator's missing final membership recheck, not full native generation.",
+  "results": [
+    {
+      "case": "positive",
+      "outcome": {
+        "returned": "verified"
+      },
+      "unexpected_present": false,
+      "inventory_matches_claimed": true
+    },
+    {
+      "case": "late_addition",
+      "outcome": {
+        "error": "ValueError: Campaign publication: source completion owner membership or bytes changed"
+      },
+      "unexpected_present": true,
+      "inventory_matches_claimed": false
+    }
+  ]
+}

@@ -1,0 +1,582 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed bounded deferred-23 contract; planning only",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/plan"
+    },
+    {
+      "$ref": "#/$defs/update"
+    },
+    {
+      "$ref": "#/$defs/inventory"
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "git_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "member": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?/)(?!.*\\\\).+$"
+    },
+    "ref": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/member"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "artifacts": {
+      "type": "object",
+      "properties": {
+        "mappings/ingredient_mappings.sssom.tsv": {
+          "$ref": "#/$defs/sha256"
+        },
+        "mappings/suppressed_aliases.tsv": {
+          "$ref": "#/$defs/sha256"
+        },
+        "mappings/other_cross_record_baseline.tsv": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "mappings/ingredient_mappings.sssom.tsv",
+        "mappings/suppressed_aliases.tsv",
+        "mappings/other_cross_record_baseline.tsv"
+      ],
+      "additionalProperties": false
+    },
+    "row": {
+      "type": "object",
+      "properties": {
+        "subject_id": {
+          "type": "string"
+        },
+        "subject_label": {
+          "type": "string"
+        },
+        "predicate_id": {
+          "type": "string"
+        },
+        "object_id": {
+          "type": "string"
+        },
+        "object_label": {
+          "type": "string"
+        },
+        "object_source": {
+          "type": "string"
+        },
+        "mapping_justification": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "mapping_date": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "other": {
+          "type": "string"
+        },
+        "validation_method": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject_id",
+        "subject_label",
+        "predicate_id",
+        "object_id",
+        "object_label",
+        "object_source",
+        "mapping_justification",
+        "source",
+        "mapping_date",
+        "confidence",
+        "comment",
+        "other",
+        "validation_method"
+      ],
+      "additionalProperties": false
+    },
+    "selector": {
+      "type": "object",
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "predicate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "object_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field": {
+          "const": "other"
+        }
+      },
+      "required": [
+        "subject_id",
+        "predicate_id",
+        "object_id",
+        "field"
+      ],
+      "additionalProperties": false
+    },
+    "baseline_row": {
+      "type": "object",
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "token": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owned_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "disposition": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "subject_id",
+        "token",
+        "owned_by",
+        "disposition"
+      ],
+      "additionalProperties": false
+    },
+    "credited_owner": {
+      "type": "object",
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "$ref": "#/$defs/member"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "subject_id",
+        "path",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "generation": {
+      "type": "object",
+      "properties": {
+        "producer_revision": {
+          "$ref": "#/$defs/git_commit"
+        },
+        "candidate": {
+          "$ref": "#/$defs/ref"
+        },
+        "sidecar": {
+          "$ref": "#/$defs/ref"
+        },
+        "manifest": {
+          "$ref": "#/$defs/ref"
+        },
+        "receipt": {
+          "$ref": "#/$defs/ref"
+        }
+      },
+      "required": [
+        "producer_revision",
+        "candidate",
+        "sidecar",
+        "manifest",
+        "receipt"
+      ],
+      "additionalProperties": false
+    },
+    "pair": {
+      "type": "object",
+      "properties": {
+        "baseline_row": {
+          "$ref": "#/$defs/baseline_row"
+        },
+        "token_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_position": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "selector": {
+          "$ref": "#/$defs/selector"
+        },
+        "before_row": {
+          "$ref": "#/$defs/row"
+        },
+        "after_other": {
+          "type": "string"
+        },
+        "source_owner": {
+          "$ref": "#/$defs/ref"
+        },
+        "credited_owners": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/credited_owner"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_surfaces": {
+          "const": [
+            "prior_sssom"
+          ]
+        },
+        "disposition": {
+          "const": "SUPPRESS"
+        },
+        "review_disposition": {
+          "const": "WITHHOLD"
+        }
+      },
+      "required": [
+        "baseline_row",
+        "token_key",
+        "source_position",
+        "selector",
+        "before_row",
+        "after_other",
+        "source_owner",
+        "credited_owners",
+        "source_ref",
+        "input_surfaces",
+        "disposition",
+        "review_disposition"
+      ],
+      "additionalProperties": false
+    },
+    "inventory": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "operation": {
+          "const": "owned-name-suppression-inventory-v1"
+        },
+        "baseline": {
+          "$ref": "#/$defs/git_commit"
+        },
+        "ingredient_sha256": {
+          "type": "object",
+          "minProperties": 1,
+          "patternProperties": {
+            "^data/ingredients/.+\\.ya?ml$": {
+              "$ref": "#/$defs/sha256"
+            }
+          },
+          "additionalProperties": false
+        },
+        "aggregate_sha256": {
+          "type": "object",
+          "minProperties": 1,
+          "patternProperties": {
+            "^data/curated/.+\\.ya?ml$": {
+              "$ref": "#/$defs/sha256"
+            }
+          },
+          "additionalProperties": false
+        },
+        "protected_sha256": {
+          "type": "object",
+          "properties": {
+            "UNIFIED_INGREDIENT_MAPPING.tsv": {
+              "$ref": "#/$defs/sha256"
+            },
+            "UNIFIED_INGREDIENT_MAPPING.provenance.json": {
+              "$ref": "#/$defs/sha256"
+            },
+            "docs/data/label_index.csv": {
+              "$ref": "#/$defs/sha256"
+            },
+            "MAPPING_SEMANTICS.md": {
+              "$ref": "#/$defs/sha256"
+            },
+            ".github/workflows/qc-evidence.yaml": {
+              "$ref": "#/$defs/sha256"
+            },
+            "scripts/.vendored_canon_ref": {
+              "$ref": "#/$defs/sha256"
+            },
+            "justfile": {
+              "$ref": "#/$defs/sha256"
+            },
+            "pyproject.toml": {
+              "$ref": "#/$defs/sha256"
+            },
+            "src/mediaingredientmech/synonym_policy.py": {
+              "$ref": "#/$defs/sha256"
+            },
+            "src/mediaingredientmech/curie.py": {
+              "$ref": "#/$defs/sha256"
+            },
+            "src/mediaingredientmech/profiles/ingredient_bundle_v1.schema.json": {
+              "$ref": "#/$defs/sha256"
+            },
+            "src/mediaingredientmech/profiles/ingredient_scope_v1.yaml": {
+              "$ref": "#/$defs/sha256"
+            }
+          },
+          "required": [
+            "UNIFIED_INGREDIENT_MAPPING.tsv",
+            "UNIFIED_INGREDIENT_MAPPING.provenance.json",
+            "docs/data/label_index.csv",
+            "MAPPING_SEMANTICS.md",
+            ".github/workflows/qc-evidence.yaml",
+            "scripts/.vendored_canon_ref",
+            "justfile",
+            "pyproject.toml",
+            "src/mediaingredientmech/synonym_policy.py",
+            "src/mediaingredientmech/curie.py",
+            "src/mediaingredientmech/profiles/ingredient_bundle_v1.schema.json",
+            "src/mediaingredientmech/profiles/ingredient_scope_v1.yaml"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "baseline",
+        "ingredient_sha256",
+        "aggregate_sha256",
+        "protected_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "plan": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "operation": {
+          "const": "owned-name-suppression-plan-v1"
+        },
+        "issue": {
+          "const": 669
+        },
+        "issue_url": {
+          "const": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669"
+        },
+        "scope": {
+          "const": "Export-only suppression of the 23 reviewed owned-name alias pairs; no scientific approval"
+        },
+        "approval": {
+          "const": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link."
+        },
+        "baseline": {
+          "$ref": "#/$defs/git_commit"
+        },
+        "policy_evidence": {
+          "type": "string",
+          "pattern": "^https://github\\.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-[0-9]+$"
+        },
+        "artifacts_before": {
+          "$ref": "#/$defs/artifacts"
+        },
+        "artifacts_after": {
+          "$ref": "#/$defs/artifacts"
+        },
+        "unchanged_inventory": {
+          "$ref": "#/$defs/ref"
+        },
+        "generation": {
+          "$ref": "#/$defs/generation"
+        },
+        "receipt_sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pairs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/pair"
+          },
+          "minItems": 23,
+          "maxItems": 23,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "issue",
+        "issue_url",
+        "scope",
+        "approval",
+        "baseline",
+        "policy_evidence",
+        "artifacts_before",
+        "artifacts_after",
+        "unchanged_inventory",
+        "generation",
+        "receipt_sequence",
+        "pairs"
+      ],
+      "additionalProperties": false
+    },
+    "checkpoint": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sssom_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bridge_sequences": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "sequence",
+        "sssom_sha256",
+        "bridge_sequences"
+      ],
+      "additionalProperties": false
+    },
+    "mapping_receipt": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/member"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "sequence"
+      ],
+      "additionalProperties": false
+    },
+    "update": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "operation": {
+          "const": "owned-name-suppression-update-v1"
+        },
+        "issue": {
+          "const": 669
+        },
+        "scope": {
+          "const": "Export-only suppression of the 23 reviewed owned-name alias pairs; no scientific approval"
+        },
+        "approval": {
+          "const": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link."
+        },
+        "baseline": {
+          "$ref": "#/$defs/git_commit"
+        },
+        "prior_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "plan": {
+          "$ref": "#/$defs/ref"
+        },
+        "unchanged_inventory": {
+          "$ref": "#/$defs/ref"
+        },
+        "artifacts_before": {
+          "$ref": "#/$defs/artifacts"
+        },
+        "artifacts_after": {
+          "$ref": "#/$defs/artifacts"
+        },
+        "generation": {
+          "$ref": "#/$defs/generation"
+        },
+        "historical_checkpoint": {
+          "$ref": "#/$defs/checkpoint"
+        },
+        "mapping_receipt": {
+          "$ref": "#/$defs/mapping_receipt"
+        },
+        "publication_log": {
+          "$ref": "#/$defs/member"
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "issue",
+        "scope",
+        "approval",
+        "baseline",
+        "prior_manifest_sha256",
+        "plan",
+        "unchanged_inventory",
+        "artifacts_before",
+        "artifacts_after",
+        "generation",
+        "historical_checkpoint",
+        "mapping_receipt",
+        "publication_log"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

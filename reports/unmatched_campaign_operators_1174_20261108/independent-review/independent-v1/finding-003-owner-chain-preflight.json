@@ -1,0 +1,48 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-3",
+  "severity": "major",
+  "state": "confirmed_in_provisional_snapshot",
+  "title": "Campaign preflight does not validate selected owner continuity before source/canonical writes",
+  "sources": [
+    {
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "74a448602d8d512a1b12037d88d0eba0a9ac9e1ea55c89e6bd3051afb23f0a99"
+    },
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "sha256": "f7350ba3487e12cf4ecd4abd85e6fb3663fe0eb454fcd1483602072eeba29274"
+    }
+  ],
+  "cause": "Source prepare validates the native checkpoint internally but only tests old-path continuity for promotions. It does not require each selected existing owner preimage to equal the last native owner-chain endpoint. Publisher _receipt validates row replay but not the prospective native owner chain; old-policy historical==current-preimage skips its optional bridge branch. Native _owner_chains is only invoked after canonical/policy writes in completed validation.",
+  "source_reproduction": "A valid native checkpoint links Existing.yaml to endpointB while current exact accepted beforeimage isA. Real source prepare/apply/verify_completed all report success and mutate the owner; no mocked source proof.",
+  "publisher_reproduction": "With valid prefix and proposed A->C transition after historical endpointB, dry-run returns dry_run. Real native row/receipt/policy publication then changes canonical and policy before completed validation raises Owner receipt chain has a gap. Success receipts are correctly cleared, but the known invalid transition was not rejected before mutation. This publisher fixture explicitly isolates owner proof/generation; native replay/chain and writes are real.",
+  "positive_control": "Matched native endpoint equals proposed beforeimage: dry-run and apply succeed.",
+  "required_fix": "Before any source/publication writes, prove selected existing preimages equal applicable native latest owner endpoints, and validate the complete prospective native owner chain (including create/promote destination history) in preflight. Retain refusal for unsupported promotion migrations. Do not rebase or overwrite history to make the fixture pass. Add positive bridge and deterministic disconnected-history cases asserting no data mutation.",
+  "artifacts": [
+    {
+      "path": "probe_source_chain_v1.py",
+      "sha256": "c8144acaba4523cb5f8fa5495c58dd55fb9c01bba866742e981415f3afa27320"
+    },
+    {
+      "path": "source-chain-probe-v1.json",
+      "sha256": "72aacc23ef4f283f598282453c844f17f0f080f9868bfe68d2cbb199531fa974"
+    },
+    {
+      "path": "source-chain-probe-v1.log",
+      "sha256": "72aacc23ef4f283f598282453c844f17f0f080f9868bfe68d2cbb199531fa974"
+    },
+    {
+      "path": "probe_chain_preflight_v1.py",
+      "sha256": "a6bbb7873ee1b501332ff4c5d86b3f6ba8d0b1ff3e3de9698aebbcd809d9826b"
+    },
+    {
+      "path": "chain-preflight-probe-v1.json",
+      "sha256": "7c1e6444a7f7a537b0ba660a9beae3ad7789ba4aed64893b2cc7056532746756"
+    },
+    {
+      "path": "chain-preflight-probe-v1.log",
+      "sha256": "7c1e6444a7f7a537b0ba660a9beae3ad7789ba4aed64893b2cc7056532746756"
+    }
+  ],
+  "limitations": "Private fixture results only; no actual campaign data or author files changed. This is a preflight failure, not a claim that the publisher left a success receipt."
+}

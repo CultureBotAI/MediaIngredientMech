@@ -1,0 +1,32 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-5",
+  "severity": "major",
+  "state": "confirmed_in_provisional_snapshot",
+  "title": "Selected new owner can leave an unselected canonical alias violating native Rule K",
+  "source": "src/mediaingredientmech/campaign_publication.py",
+  "source_sha256": "f7350ba3487e12cf4ecd4abd85e6fb3663fe0eb454fcd1483602072eeba29274",
+  "function": "prepare suppression needs filter and row_projection",
+  "cause": "The new-suppression guard only examines diagnostic rows whose subject_id is selected. A selected new/preferred-name owner can invalidate a token published by an unselected subject. Its native suppression is ignored and the old physical canonical row is retained.",
+  "reproduction": "Selected owner MIM:B now owns preferred term B. Unselected MIM:Unrelated previously publishes B in other. Actual native owned-name policy emits a suppression for Unrelated credited to B; complete native candidate has zero Rule K rejects. Publisher dry-run succeeds but its projected canonical still publishes B on Unrelated and actual native evaluate_rule_k yields one reject. No canonical file is written in this dry-run.",
+  "native_proof": "Uses frozen Claw owned_name_policy.filter_owned_aliases/render_suppressed_aliases and actual MIM validate_sssom_invariants.evaluate_rule_k. Publisher source/generation boundaries are isolated by the declared synthetic fixture; projection/policy checks are actual implementation.",
+  "required_fix": "Before any canonical publication, reject unresolved suppression impacts on the actual projected rows across all subjects, including those caused by selected owners but carried by unselected rows. Do not silently expand owner scope, add baseline exemptions, alter prior suppression provenance or delete the unrelated token. Require separately reviewed exact policy/source scope where needed, with a regression asserting refusal and unrelated-row preservation.",
+  "artifacts": [
+    {
+      "path": "probe_global_suppression_v1.py",
+      "sha256": "986bcf2cc1130a891f2427403018e184bc30520c262b8d2d7432fad1e68e3e3a"
+    },
+    {
+      "path": "global-suppression-probe-v1.json",
+      "sha256": "d4be7756d32dab29b6597f922bb9313d8192a96e06025d177cc28db9725aad5c"
+    },
+    {
+      "path": "global-suppression-probe-v1.log",
+      "sha256": "d4be7756d32dab29b6597f922bb9313d8192a96e06025d177cc28db9725aad5c"
+    },
+    {
+      "path": "native-check-snapshot-v1.json",
+      "sha256": "8063e26d9480c0114a77ce09bf4cf341c58e823b73bf9db7c2a44f2e3643be0e"
+    }
+  ],
+  "limitations": "Provisional implementation, private fixture; no actual campaign alias or scientific identity is adjudicated."
+}

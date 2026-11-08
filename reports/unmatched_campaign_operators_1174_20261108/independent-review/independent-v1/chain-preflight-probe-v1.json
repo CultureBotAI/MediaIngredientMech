@@ -1,0 +1,28 @@
+{
+  "source_sha256": "f7350ba3487e12cf4ecd4abd85e6fb3663fe0eb454fcd1483602072eeba29274",
+  "scope": "Private synthetic author fixture; owner proof and generation isolated, actual native history/replay/receipt maker and canonical/policy writes. No corpus publication.",
+  "results": [
+    {
+      "case": "positive",
+      "prefix_verified": true,
+      "latest_native_owner_sha256": "131e1a10fd517c113c1458379cb41e666de12d485a197a74cdd88e11baf23971",
+      "proposed_before_owner_sha256": "131e1a10fd517c113c1458379cb41e666de12d485a197a74cdd88e11baf23971",
+      "dry_run": "dry_run",
+      "apply": "complete",
+      "canonical_changed": true,
+      "policy_changed": true,
+      "publication_log": "{\n  \"schema_version\": 1,\n  \"status\": \"complete\",\n  \"approval\": \"NONE: all touched rows and changed owners require separate scientific review\",\n  \"plan_sha256\": \"8f839fda9e59fe99f9d235fbb3a90add69a8ad6f43aaef26eb10da04ec1a5b78\",\n  \"canonical_sha256\": \"318ed3206da9040067c7e4a9c7071ebd8bf61f7246286ef8a4f5ec62931c059e\",\n  \"policy_sha256\": \"29307fc26c0c91191c2c1a6b4899ef09972c6c73c0fb06e66649163622a961b4\",\n  \"receipt_path\": \"reports/sssom_completion_20260921/mapping_changes/issue1174-fixture.json\",\n  \"receipt_sha256\": \"5297bc7a2d77ef8c8aefef8bf8ea583577e1ca6db55c80b26b55e609a9d6eebf\",\n  \"trace_sha256\": \"752e86cd2ae74e5b998799caeb12d9ef4187df8df5f98f0fc7e35da9c3f74519\",\n  \"owner_count\": 4\n}\n"
+    },
+    {
+      "case": "owner_chain_gap",
+      "prefix_verified": true,
+      "latest_native_owner_sha256": "7cab920903248f32a48e4572c4c3778d4fc49e6f069988a714154880ccd97faa",
+      "proposed_before_owner_sha256": "131e1a10fd517c113c1458379cb41e666de12d485a197a74cdd88e11baf23971",
+      "dry_run": "dry_run",
+      "apply_error": "ValueError: Owner receipt chain has a gap",
+      "canonical_changed": true,
+      "policy_changed": true,
+      "publication_log": ""
+    }
+  ]
+}

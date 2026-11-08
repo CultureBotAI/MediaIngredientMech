@@ -1,0 +1,67 @@
+--- before
++++ after
+@@ -20,7 +20,7 @@
+ from contextlib import ExitStack, contextmanager
+ from copy import deepcopy
+ from pathlib import Path, PurePosixPath
+-from typing import TYPE_CHECKING, Any, cast
++from typing import TYPE_CHECKING, Any, BinaryIO, TextIO, cast
+ 
+ import yaml  # type: ignore[import-untyped]
+ 
+@@ -385,7 +385,7 @@
+         self.files[item.path] = item
+         if expected is not None:
+             require(sha(item.content) == digest(expected), "input digest differs: " + str(path))
+-        return cast(bytes, item.content)
++        return item.content
+ 
+     def ref(self, value: dict) -> bytes:
+         closed(value, {"path", "sha256"}, "file reference")
+@@ -405,13 +405,10 @@
+ def _owner_proof(root: Path, plan: dict) -> dict:
+     from mediaingredientmech.curate.campaign_owner_apply import verify_completed
+ 
+-    return cast(
+-        dict,
+-        verify_completed(
+-            root,
+-            member(root, plan["owner_plan"]["path"]),
+-            member(root, plan["owner_receipt"]["path"]),
+-        ),
++    return verify_completed(
++        root,
++        member(root, plan["owner_plan"]["path"]),
++        member(root, plan["owner_receipt"]["path"]),
+     )
+ 
+ 
+@@ -1147,7 +1144,7 @@
+                 info = os.fstat(handle.fileno())
+                 created.append((path, descriptors[parent], (info.st_dev, info.st_ino)))
+                 handles.append(handle)
+-                check_reserved(handle, path)
++                check_reserved(cast(BinaryIO | TextIO, handle), path)
+                 for ancestor, identity in parents.items():
+                     no_alias(ancestor)
+                     require(
+@@ -1232,10 +1229,17 @@
+                 handle.write(content)
+                 handle.flush()
+             for target, content in destinations.items():
++
++                def render(staged: Path, value: bytes = content) -> None:
++                    staged.write_bytes(value)
++
++                def check_target(path: Path = target) -> None:
++                    recheck(path)
++
+                 current[target] = publish_validated(
+                     current[target],
+-                    lambda staged, value=content: staged.write_bytes(value),
+-                    lambda p=target: recheck(p),
++                    render,
++                    check_target,
+                 )
+                 recheck()
+             native_handle.write(prepared["receipt"])

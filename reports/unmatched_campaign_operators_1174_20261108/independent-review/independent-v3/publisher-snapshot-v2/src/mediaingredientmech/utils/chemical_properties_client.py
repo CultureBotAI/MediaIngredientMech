@@ -1,0 +1,471 @@
+"""Client for retrieving chemical properties from ChEBI and PubChem APIs."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+import math
+import re
+import time
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import quote
+
+import requests
+
+logger = logging.getLogger(__name__)
+
+# Cache directory for chemical properties
+CACHE_DIR = Path.home() / ".cache" / "mediaingredientmech" / "chemical_properties"
+
+# API endpoints
+CHEBI_OLS_API = "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms"
+PUBCHEM_API = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound"
+
+# Rate limiting (5 requests per second)
+MIN_REQUEST_INTERVAL = 0.2
+_last_request_time = 0.0
+
+
+@dataclass
+class ChemicalProperties:
+    """Chemical structure and properties for a chemical entity."""
+
+    molecular_formula: str | None = None
+    smiles: str | None = None
+    inchi: str | None = None
+    molecular_weight: float | None = None
+    data_source: str | None = None
+    retrieval_date: str | None = None
+
+    def to_dict(self) -> dict[str, str | float]:
+        """Convert to dictionary for YAML serialization."""
+        result: dict[str, str | float] = {}
+        if self.molecular_formula:
+            result["molecular_formula"] = self.molecular_formula
+        if self.smiles:
+            result["smiles"] = self.smiles
+        if self.inchi:
+            result["inchi"] = self.inchi
+        if self.molecular_weight is not None:
+            result["molecular_weight"] = self.molecular_weight
+        if self.data_source:
+            result["data_source"] = self.data_source
+        if self.retrieval_date:
+            result["retrieval_date"] = self.retrieval_date
+        return result
+
+
+@dataclass(frozen=True)
+class OlsChemicalProperties:
+    """An exact OLS retrieval and immutable schema-safe property snapshot.
+
+    This establishes source consistency, not the identity of an ingredient.
+    Record-aware callers must still compare the declared substance and form.
+    ``to_dict`` returns a new block; legacy mutable/cache properties are never
+    embedded in this envelope.
+    """
+
+    ontology_id: str
+    returned_ontology_id: str
+    label: str
+    synonyms: tuple[str, ...]
+    source_url: str
+    retrieved_at: str
+    response_sha256: str
+    property_values: tuple[tuple[str, str | float], ...]
+
+    def to_dict(self) -> dict[str, str | float]:
+        """Return a fresh properties block without adding envelope-only slots."""
+        return dict(self.property_values)
+
+
+def _unique_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    """Reject duplicate JSON keys instead of silently replacing source evidence."""
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("Duplicate OLS JSON key")
+        result[key] = value
+    return result
+
+
+def _ols_annotation_value(annotation: dict, *keys: str, numeric: bool = False):
+    """Read one agreed value across current/legacy keys; never choose the first.
+
+    Recognized keys, when present, must contain nonempty lists. Text values
+    may differ only in surrounding whitespace; masses must be finite positive
+    numbers. Repeated identical values are allowed, conflicting values refuse.
+    """
+    values: set[str | float] = set()
+    for key in keys:
+        if key not in annotation:
+            continue
+        raw_values = annotation[key]
+        if not isinstance(raw_values, list) or not raw_values:
+            raise ValueError("Malformed OLS annotation")
+        for value in raw_values:
+            if numeric:
+                if isinstance(value, bool) or not isinstance(value, (str, int, float)):
+                    raise ValueError("Malformed OLS mass")
+                parsed = float(value)
+                if not math.isfinite(parsed) or parsed <= 0:
+                    raise ValueError("Invalid OLS mass")
+                values.add(parsed)
+            else:
+                if not isinstance(value, str) or not value.strip():
+                    raise ValueError("Malformed OLS text annotation")
+                values.add(value.strip())
+    if len(values) > 1:
+        raise ValueError("Conflicting OLS annotation values")
+    return next(iter(values)) if values else None
+
+
+class ChemicalPropertiesClient:
+    """Retrieve chemical properties from ChEBI and PubChem APIs."""
+
+    def __init__(self, cache_enabled: bool = True):
+        """Initialize the client.
+
+        Args:
+            cache_enabled: Whether to use file-based caching.
+        """
+        self.cache_enabled = cache_enabled
+
+    def get_ols_properties(self, ontology_id: str) -> OlsChemicalProperties | None:
+        """Retrieve one exact defining ChEBI term, without cache or PubChem.
+
+        The body hashed is the same byte stream parsed. Missing/conflicting
+        term identity, obsolete/imported terms, malformed recognized annotation
+        fields and ambiguous values refuse. This does not infer ingredient or
+        hydrate identity; callers must apply record/form consistency guards.
+        Transport/HTTP errors propagate as ``requests.RequestException`` so
+        record-aware callers can distinguish provider failures from refusals.
+        """
+        if not isinstance(ontology_id, str) or not re.fullmatch(r"CHEBI:[1-9][0-9]*", ontology_id):
+            return None
+        iri = f"http://purl.obolibrary.org/obo/CHEBI_{ontology_id.split(':')[1]}"
+        url = f"{CHEBI_OLS_API}/{quote(quote(iri, safe=''), safe='')}"
+        try:
+            self._rate_limit()
+            response = requests.get(url, timeout=10, allow_redirects=False)
+            response.raise_for_status()
+            if response.status_code != 200:
+                return None
+            raw = response.content
+            if not isinstance(raw, bytes):
+                return None
+            data = json.loads(raw, object_pairs_hook=_unique_json_object)
+            if not isinstance(data, dict):
+                return None
+            if (
+                data.get("obo_id") != ontology_id
+                or data.get("iri") != iri
+                or data.get("ontology_name") != "chebi"
+                or data.get("is_defining_ontology") is not True
+                or data.get("is_obsolete") is not False
+                or data.get("ontology_prefix", "CHEBI") != "CHEBI"
+                or data.get("short_form", ontology_id.replace(":", "_"))
+                != ontology_id.replace(":", "_")
+                or data.get("term_replaced_by") is not None
+            ):
+                return None
+            label = data.get("label")
+            annotation = data.get("annotation")
+            synonyms = data.get("synonyms", [])
+            if not isinstance(label, str) or not label.strip() or not isinstance(annotation, dict):
+                return None
+            if not isinstance(synonyms, list) or any(
+                not isinstance(value, str) or not value.strip() for value in synonyms
+            ):
+                return None
+            if "id" in annotation and _ols_annotation_value(annotation, "id") != ontology_id:
+                return None
+            formula = _ols_annotation_value(
+                annotation, "generalized_empirical_formula", "formula", "has_molecular_formula"
+            )
+            smiles = _ols_annotation_value(annotation, "smiles_string", "smiles", "SMILES")
+            inchi = _ols_annotation_value(annotation, "inchi_string", "inchi", "InChI")
+            mass = _ols_annotation_value(annotation, "mass", numeric=True)
+            if not any(value is not None for value in (formula, smiles, inchi, mass)):
+                return None
+            retrieved_at = datetime.now(timezone.utc).isoformat()
+            properties = ChemicalProperties(
+                molecular_formula=formula,
+                smiles=smiles,
+                inchi=inchi,
+                molecular_weight=mass,
+                data_source=f"ChEBI {ontology_id}; {url}",
+                retrieval_date=retrieved_at,
+            )
+            return OlsChemicalProperties(
+                ontology_id=ontology_id,
+                returned_ontology_id=data["obo_id"],
+                label=label.strip(),
+                synonyms=tuple(dict.fromkeys(value.strip() for value in synonyms)),
+                source_url=url,
+                retrieved_at=retrieved_at,
+                response_sha256=hashlib.sha256(raw).hexdigest(),
+                property_values=tuple(properties.to_dict().items()),
+            )
+        except (ValueError, TypeError, OverflowError) as exc:
+            logger.warning("Strict OLS properties refused for %s: %s", ontology_id, exc)
+            return None
+
+    def get_properties(
+        self,
+        ontology_id: str,
+        label: str,
+        source: str,
+    ) -> ChemicalProperties | None:
+        """Get chemical properties for an ontology term.
+
+        Args:
+            ontology_id: Ontology ID in CURIE format (e.g., CHEBI:26710).
+            label: Human-readable label for the term.
+            source: Ontology source (CHEBI, FOODON, etc.).
+
+        Returns:
+            ChemicalProperties if available, None otherwise.
+        """
+        # Only process CHEBI terms
+        if source != "CHEBI":
+            logger.debug("Skipping non-CHEBI term: %s (%s)", ontology_id, source)
+            return None
+
+        # Check cache first
+        if self.cache_enabled:
+            cached = self._get_from_cache(ontology_id)
+            if cached is not None:
+                return cached
+
+        # Extract CHEBI numeric ID
+        chebi_id = ontology_id.split(":")[-1]
+
+        # Try to get properties from ChEBI OLS API
+        props = self._get_chebi_properties(chebi_id, ontology_id)
+
+        # If we have ChEBI ID, try to enrich with PubChem SMILES/InChI
+        if props and chebi_id:
+            pubchem_props = self._get_pubchem_properties(chebi_id)
+            if pubchem_props:
+                # Merge PubChem data
+                if pubchem_props.smiles and not props.smiles:
+                    props.smiles = pubchem_props.smiles
+                if pubchem_props.inchi and not props.inchi:
+                    props.inchi = pubchem_props.inchi
+                if pubchem_props.molecular_weight and not props.molecular_weight:
+                    props.molecular_weight = pubchem_props.molecular_weight
+                # Update source to indicate both
+                if props.data_source == "ChEBI":
+                    props.data_source = "ChEBI+PubChem"
+
+        # Cache the result
+        if props and self.cache_enabled:
+            self._save_to_cache(ontology_id, props)
+
+        return props
+
+    def _get_chebi_properties(self, chebi_id: str, ontology_id: str) -> ChemicalProperties | None:
+        """Retrieve properties from ChEBI OLS API v4.
+
+        Args:
+            chebi_id: Numeric ChEBI ID (e.g., 26710).
+            ontology_id: Full ontology ID (e.g., CHEBI:26710).
+
+        Returns:
+            ChemicalProperties with formula and molecular weight if available.
+        """
+        try:
+            # OLS4 requires the IRI to be double-URL-encoded so that the
+            # server's path-decoding step leaves a still-encoded IRI for the
+            # downstream lookup. Single-encoding yields 400 from the API.
+            iri = f"http://purl.obolibrary.org/obo/CHEBI_{chebi_id}"
+            encoded_iri = quote(quote(iri, safe=""), safe="")
+            url = f"{CHEBI_OLS_API}/{encoded_iri}"
+
+            # Rate limiting
+            self._rate_limit()
+
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+
+            data = response.json()
+
+            # Extract annotation fields. OLS4 renamed the chemical-property keys —
+            # formula -> generalized_empirical_formula, and SMILES/InChI are now
+            # *_string (smiles_string / inchi_string) — and dropped the legacy
+            # `formula` key entirely, which silently broke formula/SMILES/InChI
+            # enrichment. Read the current names first, falling back to the legacy
+            # ones for resilience. (Abstract classes / polymers carry none of these,
+            # which is the expected "no formula" ceiling, not a failure.)
+            annotation = data.get("annotation", {})
+
+            def _first(*keys):
+                for k in keys:
+                    vals = annotation.get(k)
+                    if vals:
+                        return vals[0]
+                return None
+
+            formula = _first("generalized_empirical_formula", "formula", "has_molecular_formula")
+            smiles = _first("smiles_string", "smiles", "SMILES")
+            inchi = _first("inchi_string", "inchi", "InChI")
+            molecular_weight = None
+            mass = _first("mass")
+            if mass is not None:
+                try:
+                    molecular_weight = float(mass)
+                except (ValueError, TypeError):
+                    pass
+
+            if formula or smiles or inchi or molecular_weight:
+                return ChemicalProperties(
+                    molecular_formula=formula,
+                    smiles=smiles,
+                    inchi=inchi,
+                    molecular_weight=molecular_weight,
+                    data_source="ChEBI",
+                    retrieval_date=datetime.now(timezone.utc).isoformat(),
+                )
+
+            logger.debug("No chemical properties found in ChEBI for %s", ontology_id)
+            return None
+
+        except requests.RequestException as e:
+            logger.warning("Failed to fetch ChEBI properties for %s: %s", ontology_id, e)
+            return None
+        except (KeyError, ValueError, TypeError) as e:
+            logger.warning("Error parsing ChEBI response for %s: %s", ontology_id, e)
+            return None
+
+    def _get_pubchem_properties(self, chebi_id: str) -> ChemicalProperties | None:
+        """Retrieve SMILES and InChI from PubChem using ChEBI cross-reference.
+
+        Args:
+            chebi_id: Numeric ChEBI ID.
+
+        Returns:
+            ChemicalProperties with SMILES and InChI if available.
+        """
+        try:
+            # Search PubChem by ChEBI ID
+            search_url = f"{PUBCHEM_API}/name/CHEBI:{chebi_id}/cids/JSON"
+
+            # Rate limiting
+            self._rate_limit()
+
+            search_response = requests.get(search_url, timeout=10)
+
+            # PubChem returns 404 if not found - this is normal
+            if search_response.status_code == 404:
+                logger.debug("No PubChem entry found for CHEBI:%s", chebi_id)
+                return None
+
+            search_response.raise_for_status()
+            cids_data = search_response.json()
+
+            cids = cids_data.get("IdentifierList", {}).get("CID", [])
+            if not cids:
+                logger.debug("No PubChem CIDs found for CHEBI:%s", chebi_id)
+                return None
+
+            # Use the first CID
+            cid = cids[0]
+
+            # Get properties for this CID
+            props_url = (
+                f"{PUBCHEM_API}/cid/{cid}/property/" f"CanonicalSMILES,InChI,MolecularWeight/JSON"
+            )
+
+            # Rate limiting
+            self._rate_limit()
+
+            props_response = requests.get(props_url, timeout=10)
+            props_response.raise_for_status()
+            props_data = props_response.json()
+
+            properties = props_data.get("PropertyTable", {}).get("Properties", [])
+            if not properties:
+                return None
+
+            prop = properties[0]
+            smiles = prop.get("CanonicalSMILES")
+            inchi = prop.get("InChI")
+            mol_weight = prop.get("MolecularWeight")
+
+            if smiles or inchi:
+                return ChemicalProperties(
+                    smiles=smiles,
+                    inchi=inchi,
+                    molecular_weight=float(mol_weight) if mol_weight else None,
+                    data_source="PubChem",
+                    retrieval_date=datetime.now(timezone.utc).isoformat(),
+                )
+
+            return None
+
+        except requests.RequestException as e:
+            # Don't log 404s as warnings - they're expected for many ChEBI terms.
+            #
+            # `hasattr(e, "response")` is always True: requests sets `.response`
+            # on every RequestException and leaves it None for errors that never
+            # got a reply (connection reset, DNS, timeout). Reading
+            # `.status_code` off that None raised inside the handler, so a single
+            # transient network blip aborted the whole enrichment batch instead
+            # of skipping one record.
+            response = getattr(e, "response", None)
+            if response is None or response.status_code != 404:
+                logger.debug("Failed to fetch PubChem properties for CHEBI:%s: %s", chebi_id, e)
+            return None
+        except (KeyError, ValueError, TypeError) as e:
+            logger.warning("Error parsing PubChem response for CHEBI:%s: %s", chebi_id, e)
+            return None
+
+    def _rate_limit(self):
+        """Enforce rate limiting (5 requests per second)."""
+        global _last_request_time
+        now = time.time()
+        elapsed = now - _last_request_time
+        if elapsed < MIN_REQUEST_INTERVAL:
+            time.sleep(MIN_REQUEST_INTERVAL - elapsed)
+        _last_request_time = time.time()
+
+    def _get_cache_path(self, ontology_id: str) -> Path:
+        """Get cache file path for an ontology ID."""
+        # Use sanitized ontology ID as filename
+        safe_id = ontology_id.replace(":", "_")
+        return CACHE_DIR / f"{safe_id}.json"
+
+    def _get_from_cache(self, ontology_id: str) -> ChemicalProperties | None:
+        """Retrieve properties from cache if available."""
+        cache_path = self._get_cache_path(ontology_id)
+        if not cache_path.exists():
+            return None
+
+        try:
+            with open(cache_path) as f:
+                data = json.load(f)
+            return ChemicalProperties(
+                molecular_formula=data.get("molecular_formula"),
+                smiles=data.get("smiles"),
+                inchi=data.get("inchi"),
+                molecular_weight=data.get("molecular_weight"),
+                data_source=data.get("data_source"),
+                retrieval_date=data.get("retrieval_date"),
+            )
+        except (OSError, json.JSONDecodeError) as e:
+            logger.warning("Failed to read cache for %s: %s", ontology_id, e)
+            return None
+
+    def _save_to_cache(self, ontology_id: str, props: ChemicalProperties):
+        """Save properties to cache."""
+        cache_path = self._get_cache_path(ontology_id)
+        try:
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(cache_path, "w") as f:
+                json.dump(props.to_dict(), f, indent=2)
+        except OSError as e:
+            logger.warning("Failed to save cache for %s: %s", ontology_id, e)

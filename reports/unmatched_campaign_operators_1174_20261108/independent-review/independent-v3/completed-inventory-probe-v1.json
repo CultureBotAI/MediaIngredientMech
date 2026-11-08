@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T05:50:41.320072+00:00",
+  "source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+  "scope": "Private synthetic repositories; actual native source application and completion verifier. No maintained files or corpus edits.",
+  "results": [
+    {
+      "case": "positive",
+      "injected": [],
+      "outcome": {
+        "returned": "complete",
+        "reported_owner_count": 4
+      },
+      "actual_owner_count": 4,
+      "unexpected_present": false,
+      "actual_inventory_matches_proof": true
+    },
+    {
+      "case": "late_addition",
+      "injected": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/completed-inventory-fixtures-v1/late-addition/data/ingredients/unmapped/Unexpected_late.yaml"
+      ],
+      "outcome": {
+        "error": "ValueError: Owner membership or bytes changed at completion"
+      },
+      "actual_owner_count": 5,
+      "unexpected_present": true,
+      "actual_inventory_matches_proof": false
+    }
+  ]
+}

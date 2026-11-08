@@ -1,0 +1,31 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-4",
+  "severity": "minor",
+  "state": "confirmed_in_provisional_snapshot",
+  "title": "Source application accepts noncanonical top-level proof paths and emits an unverifiable complete receipt",
+  "source": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "source_sha256": "74a448602d8d512a1b12037d88d0eba0a9ac9e1ea55c89e6bd3051afb23f0a99",
+  "functions": [
+    "prepare",
+    "_load",
+    "verify_completed"
+  ],
+  "cause": "Top-level plan_path and acceptance_path are made absolute, but their repository-relative spellings are stored without the relative() canonical-path check. The completed verifier later applies that check to the saved acceptance path. CLI passes Path arguments through without normalizing or rejecting them.",
+  "reproduction": "Private actual source prepare receives root/intake/../plan.json and root/intake/../acceptance.json, both pointing to existing in-root regular files. prepare accepts; apply changes owners and returns complete. verify_completed then rejects Noncanonical relative path for its own saved acceptance reference.",
+  "required_fix": "Before any rendering/reservation/owner mutation, require canonical confined top-level root/plan/acceptance/receipt spellings consistently with the verifier; do not resolve symlinks away. Add noncanonical argument refusals and canonical positive roundtrip.",
+  "artifacts": [
+    {
+      "path": "probe_noncanonical_plan_v1.py",
+      "sha256": "31e6f57c1272e3f259f91392778d8909c8f03b5435caba258231f9cae9008ea4"
+    },
+    {
+      "path": "noncanonical-plan-probe-v1.json",
+      "sha256": "e5eadc31942aa1f5a9d47fc46ab9ffb7e809e29b79b6ef48f7d3960bbcec14e2"
+    },
+    {
+      "path": "noncanonical-plan-probe-v1.log",
+      "sha256": "e5eadc31942aa1f5a9d47fc46ab9ffb7e809e29b79b6ef48f7d3960bbcec14e2"
+    }
+  ],
+  "limits": "No filesystem alias or outside-root target was used. This is proof roundtrip failure, not an identity error or claim that content was silently published."
+}

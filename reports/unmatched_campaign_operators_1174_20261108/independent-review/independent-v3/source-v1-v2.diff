@@ -1,0 +1,194 @@
+--- first-fix
++++ source-v2
+@@ -7,38 +7,142 @@
+ 
+ from __future__ import annotations
+ 
++import builtins
+ import ctypes
+ import hashlib
+ import json
+ import os
+ import re
++import stat
+ import subprocess
+ import sys
+ import tempfile
++import types
++import uuid
+ from dataclasses import dataclass, field
+ from pathlib import Path, PurePosixPath
+-from typing import Any
+-
+-from mediaingredientmech.curate.apply_receipt import reserve_receipt_outputs
+-from mediaingredientmech.curate.publication_guard import (
+-    FrozenFile,
+-    check_reserved,
+-    finish_receipt,
+-    no_alias,
+-    publish_validated,
++from typing import TYPE_CHECKING, Any
++
++
++def captured_native_modules(root: Path, sources: dict[str, str]) -> dict[str, types.ModuleType]:
++    """Execute the bounded native dependencies from captured bytes (#1195).
++
++    Public cached modules are neither reused nor reloaded. The private receipt
++    verifier's deferred SSSOM import resolves to the same private capture.
++    Other MIM helpers imported by reviewed_sssom are not called by read_sssom.
++    """
++    captured = {}
++    for name, source in sources.items():
++        relative_source = Path(source)
++        if (
++            relative_source.is_absolute()
++            or ".." in relative_source.parts
++            or relative_source.as_posix() != source
++        ):
++            raise ValueError("Noncanonical native dependency source")
++        path = root / source
++        if any(p.is_symlink() for p in (path, *path.parents)):
++            raise ValueError("Aliased native dependency source")
++        parents = tuple((p, p.stat().st_dev, p.stat().st_ino) for p in path.parents)
++        info = path.lstat()
++        if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
++            raise ValueError("Nonregular native dependency source")
++        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
++        with os.fdopen(fd, "rb") as stream:
++            opened = os.fstat(stream.fileno())
++            if (opened.st_dev, opened.st_ino, opened.st_nlink) != (info.st_dev, info.st_ino, 1):
++                raise ValueError("Native dependency changed while opening")
++            raw = stream.read()
++        if parents != tuple((p, p.stat().st_dev, p.stat().st_ino) for p in path.parents):
++            raise ValueError("Native dependency parent changed")
++        captured[name] = (path, raw, (info.st_dev, info.st_ino))
++    modules: dict[str, types.ModuleType] = {}
++    prefix = "_mim_campaign_native_" + uuid.uuid4().hex + "."
++
++    def bound_import(name, globals=None, locals=None, fromlist=(), level=0):
++        if level == 0 and fromlist and name in captured:
++            return load(name)
++        return builtins.__import__(name, globals, locals, fromlist, level)
++
++    def load(name):
++        if name in modules:
++            return modules[name]
++        path, raw, identity = captured[name]
++        module = types.ModuleType(prefix + name)
++        module.__file__ = str(path)
++        module.__package__ = name.rpartition(".")[0]
++        module.__dict__["__builtins__"] = {**vars(builtins), "__import__": bound_import}
++        modules[name] = module
++        # Dataclass metadata needs its private module entry. Never replace a
++        # public module or alter a preloaded consumer's functions/globals.
++        sys.modules[module.__name__] = module
++        exec(compile(raw, str(path), "exec"), module.__dict__)
++        return module
++
++    for name in sources:
++        load(name)
++    guard = modules["mediaingredientmech.curate.publication_guard"]
++    for name, (path, raw, identity) in captured.items():
++        frozen = guard.FrozenFile.capture(path)
++        if frozen.content != raw or frozen.identity != identity:
++            raise ValueError("Native dependency changed during captured execution")
++        modules[name].__dict__["_campaign_executed_source"] = frozen
++    return modules
++
++
++_NATIVE_NAMES = (
++    "mediaingredientmech.curate.publication_guard",
++    "mediaingredientmech.curate.apply_receipt",
++    "mediaingredientmech.validation.write_validated",
++    "mediaingredientmech.validation.mapping_change_receipts",
++    "mediaingredientmech.export.reviewed_sssom",
+ )
+-from mediaingredientmech.export.reviewed_sssom import read_sssom
+-from mediaingredientmech.validation.mapping_change_receipts import (
+-    HISTORICAL_CONTEXT,
+-    RECEIPTS_DIR,
+-    receipt_paths,
+-    verify_mapping_chain,
++_BOUND_NATIVE = captured_native_modules(
++    Path(__file__).absolute().parents[3],
++    {name: "src/" + name.replace(".", "/") + ".py" for name in _NATIVE_NAMES},
+ )
+-from mediaingredientmech.validation.write_validated import (
+-    validate_ingredient,
+-    write_validated_ingredient,
+-    yaml,
+-)
++if TYPE_CHECKING:
++    from mediaingredientmech.curate.apply_receipt import reserve_receipt_outputs
++    from mediaingredientmech.curate.publication_guard import (
++        FrozenFile,
++        check_reserved,
++        finish_receipt,
++        no_alias,
++        publish_validated,
++    )
++    from mediaingredientmech.export.reviewed_sssom import read_sssom
++    from mediaingredientmech.validation.mapping_change_receipts import (
++        HISTORICAL_CONTEXT,
++        RECEIPTS_DIR,
++        receipt_paths,
++        verify_mapping_chain,
++    )
++    from mediaingredientmech.validation.write_validated import (
++        validate_ingredient,
++        write_validated_ingredient,
++        yaml,
++    )
++else:
++    _guard = _BOUND_NATIVE["mediaingredientmech.curate.publication_guard"]
++    FrozenFile, check_reserved = _guard.FrozenFile, _guard.check_reserved
++    finish_receipt, no_alias, publish_validated = (
++        _guard.finish_receipt,
++        _guard.no_alias,
++        _guard.publish_validated,
++    )
++    reserve_receipt_outputs = _BOUND_NATIVE[
++        "mediaingredientmech.curate.apply_receipt"
++    ].reserve_receipt_outputs
++    _writer = _BOUND_NATIVE["mediaingredientmech.validation.write_validated"]
++    validate_ingredient, write_validated_ingredient, yaml = (
++        _writer.validate_ingredient,
++        _writer.write_validated_ingredient,
++        _writer.yaml,
++    )
++    _chain = _BOUND_NATIVE["mediaingredientmech.validation.mapping_change_receipts"]
++    HISTORICAL_CONTEXT, RECEIPTS_DIR = _chain.HISTORICAL_CONTEXT, _chain.RECEIPTS_DIR
++    receipt_paths, verify_mapping_chain = _chain.receipt_paths, _chain.verify_mapping_chain
++    read_sssom = _BOUND_NATIVE["mediaingredientmech.export.reviewed_sssom"].read_sssom
+ 
+ PLAN_KEYS = {
+     "schema_version",
+@@ -107,8 +211,8 @@
+ )
+ APPROVAL = "NONE: source application only; no scientific or mapping approval transfers"
+ 
+-# #1195: retain actual imported locations at operator import, before an intake
+-# can pin a later on-disk version. Dependencies may live in another checkout.
++# #1195: keep the dependency captures actually compiled above, not a second
++# reading of their paths that might already contain a later version.
+ _PACKAGE_ROOT = Path(__file__).absolute().parents[3]
+ 
+ 
+@@ -133,8 +237,16 @@
+     ),
+     "src/mediaingredientmech/export/reviewed_sssom.py": _module_path(read_sssom.__module__),
+ }
++_EXECUTED_SOURCES = {
++    "src/" + name.replace(".", "/") + ".py": module._campaign_executed_source
++    for name, module in _BOUND_NATIVE.items()
++}
+ LOADED_PRODUCERS = {
+-    name: FrozenFile.capture(_LOADED_LOCATIONS.get(name, _PACKAGE_ROOT / name))
++    name: (
++        _EXECUTED_SOURCES[name]
++        if name in _EXECUTED_SOURCES
++        else FrozenFile.capture(_LOADED_LOCATIONS.get(name, _PACKAGE_ROOT / name))
++    )
+     for name in PRODUCERS
+ }
+ 

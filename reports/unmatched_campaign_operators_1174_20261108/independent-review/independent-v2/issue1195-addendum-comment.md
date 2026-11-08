@@ -1,0 +1,7 @@
+Independent final-byte re-review found that #1195 remains reproducible in the first proposed fix, owner operator SHA256 `d84ed7b82dfacb90a1c7bb7658c5b45b94a8a8271f4a96785daf5a74b774e010`.
+
+A fresh private process imports native `publication_guard`, changes only its private file, then imports the owner operator. The operator still uses the identical already-cached `FrozenFile` class, but captures the newer on-disk dependency bytes as though they were the executed implementation. Preparation and dry-run accept the later hash. Capturing dependency files when the consuming operator loads does not prove when those dependencies were actually imported.
+
+Bind execution to freshly verified bytes, or reject preloaded implementations whose origin cannot be established. Do not silently reload unrelated shared modules. Add this real cached-module regression plus an ordinary compatible positive path. The original stale-operator, catalog membership, lineage and canonical-path controls now refuse correctly; this narrower dependency case prevents final acceptance. No shared author file or campaign data changed in the probe.
+
+Addendum SHA256 `576f96a88809bcd4bc68bc2fcbca016fefb4ac15cb0796fe49702bb054b5127f`; probe SHA256 `25a08268a260b09883f9c0f2ceada3740232ab5e67419c78a275041e3d842a21`; result SHA256 `d15db2944cc51b313b9bb0a4a46f059183d6ecec922aff870f2232fc82650d7e`. This extends the same finding and does not require a duplicate issue. Original and successor packets remain immutable.

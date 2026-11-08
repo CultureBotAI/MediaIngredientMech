@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/probe_global_suppression_v2.py", line 60, in <module>
+    prepared = c.prepare(root, case["path"])
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/publisher-snapshot-v2/src/mediaingredientmech/campaign_publication.py", line 907, in prepare
+    _capture_source_completion(capture, owner_proof)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/publisher-snapshot-v2/src/mediaingredientmech/campaign_publication.py", line 454, in _capture_source_completion
+    capture.external(member(directory, path), expected_sha)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/publisher-snapshot-v2/src/mediaingredientmech/campaign_publication.py", line 387, in external
+    require(sha(item.content) == digest(expected), "input digest differs: " + str(path))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/publisher-snapshot-v2/src/mediaingredientmech/campaign_publication.py", line 134, in require
+    raise ValueError("Campaign publication: " + message)
+ValueError: Campaign publication: input digest differs: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/global-suppression-fixture-v1/repository/reports/fixture/source-checkpoint/reports/sssom_completion_20260921/baseline-mapping-review.json
