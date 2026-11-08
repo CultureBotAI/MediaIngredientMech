@@ -1,0 +1,51 @@
+identifier: kgmicrobe.ingredient:bbl_fluid_thioglycollate_bd211260
+preferred_term: BBL Fluid Thioglycollate Medium, BD211260
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+synonyms: []
+notes: ATCC474 independently identifies the fluid thioglycollate ingredient in this
+  Eubacterium recipe as BD211260 at 29.5 g/L. The current BD catalog names BBL fluid
+  thioglycollate medium. This resolves the earlier missing product identification
+  and supports a commercial named-medium owner. No dry-product component proportions
+  are inferred from the alternative scratch formula.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bbl_fluid_thioglycollate_bd211260
+  ontology_label: BBL Fluid Thioglycollate Medium, BD211260
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/0f29052bb3524daebdfc48491950d569.ashx
+    notes: Source-supported material or preparation identity under MAPPING_SEMANTICS
+      sections 3 and 6. Bounded ontology and catalog searches found no verified exact
+      term for this scope. No component identity is assigned to the whole preparation.
+supplied_form:
+- name: BBL Fluid Thioglycollate Medium
+  supplier: BD
+  catalog_number: '211260'
+  notes: ATCC474 identifies this product in the assigned recipe. Current BD catalog
+    corroborates the name; no lot or historical formula version is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: ATCC474 independently identifies the fluid thioglycollate ingredient in
+    this Eubacterium recipe as BD211260 at 29.5 g/L. The current BD catalog names
+    BBL fluid thioglycollate medium. This resolves the earlier missing product identification
+    and supports a commercial named-medium owner. Isolated proposal only; all native
+    holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to LLM_SUGGESTION:
+    The registry-product choice is an agent interpretation of the ATCC/BD evidence,
+    including a cross-provider recipe comparison. Isolated successor proposal only;
+    all inherited source, role and export holds remain. Historical evidence and predecessor
+    files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

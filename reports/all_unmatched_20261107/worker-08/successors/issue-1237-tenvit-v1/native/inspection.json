@@ -1,0 +1,1741 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "79d44c84fe550741bbd8de00c119c48560f30bc1",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".claude/skills/add-media/SKILL.md",
+        "sha256": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b",
+        "role": "context"
+      },
+      {
+        "path": ".claude/skills/curate-yaml-record/SKILL.md",
+        "sha256": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a",
+        "role": "context"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+        "role": "context"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "conf/record_review.yaml",
+        "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Biotin.yaml",
+        "sha256": "26056efadc5e57f081cde6e4ce0c2e25c03530c6d564ef0df25da3bcacb59c30",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+        "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Cyanocobalamin.yaml",
+        "sha256": "c5040ab3a4bc376296676ced54da7265cce36b34c573668be6e28592161d260c",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Dl-alpha-lipoic_Acid.yaml",
+        "sha256": "0ed895bde2be0c24acba5da9eb925485ebea8dd04b8058cce77270e1677629bc",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Folic_Acid.yaml",
+        "sha256": "df85938271ec8f32a6d756f5213ba9661c9a7530822f333d2e02493b9f92e615",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+        "sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/P-aminobenzoic_Acid.yaml",
+        "sha256": "088498308b47b9a01c45baa4bfbb3a7a367949a08bb85b11cdfbc89f1a8ca91f",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Pyridoxine_Hydrochloride.yaml",
+        "sha256": "26ea82b1c3e173c0695085ce08a4143db32a702dae3295702d60a61e944d0a40",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Riboflavin.yaml",
+        "sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Thiamine_Hcl.yaml",
+        "sha256": "8e7d3802dc19872e85d753b6c7a0e1fb34c552311e69c450e697d9f1e55b2732",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-review-profile.md",
+        "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-reviews.md",
+        "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/provenance/shard-08.json",
+        "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json",
+        "sha256": "af263c15e4361f42401386bbdd774605c9d58736cafcaea0536f3c0ae473092a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/evidence.json",
+        "sha256": "d2738971f37545a84ed237f9e87d78374f260e3d9d74951e23bbfe8839df9563",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/proposals.json",
+        "sha256": "260cad30a6a48ee0eb658404317aa01395820b82e656caf00330a42f69f72e64",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/selection.json",
+        "sha256": "335806d22ce278eaf628930b521d7164f0dee2493a19fbc790ae3c273d179f92",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/assessment.json",
+        "sha256": "c4c431f42933ae4d57149ff1d948f063d7d2249565a12c41031ffee81790fa1a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/child-bindings.json",
+        "sha256": "cf3c8b4c3e0b14dd6c17f85e0fa9318cd596a98350b3053c4abe31c0a9b12e6f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/decision.json",
+        "sha256": "f1475252112e3608db55f9e441b9d93248c1e73701bf0dbf9ecf32ea5b0d4d29",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/dependency-dispositions.json",
+        "sha256": "49b369f013d0ff79fdce3c0d290c7547ca3d227e18e500477c04ca2d4f80c21f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/proposal.json",
+        "sha256": "73e8fdf31d13a2891482f2ec3ab3b51910a9f902cceea8adef30008071550cb7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/beforeimages/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/decisions.json",
+        "sha256": "3d9354d0042056c665d7d4a41bc18ca2480017cc64eb052e4431f6e63bd5a659",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/evidence.json",
+        "sha256": "972a528ae799c913b1296319513e664979c111a4ff9a68fbbd478cd1faef1a09",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/HANDOFF.json",
+        "sha256": "b40b5c2356bc455920f0ff8f24a3d7e59e62d8f18b8bff422ff8dd2c8cbbf333",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/HANDOFF.md",
+        "sha256": "35ebec95e9bb08d7e2dae794cf86dd7c3b7304c45b29e7d879eb01f6dfa60086",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/MANIFEST.sha256",
+        "sha256": "5b0da692c4fbd010a2732646ce7e7bf9471e6fc6beb5e0ed4f94c5f449d5bc80",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/build_component_assessment.py",
+        "sha256": "ca25e6a411b7d8f701146aa02e853b22c17d39f4666739e42766ecce74acff34",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/component-assessment-v1.json",
+        "sha256": "15508e8939f15a10b173fc678849cfe81f83104ee774f9c007d7c24e90b9678c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/final-bindings-HANDOFF.json",
+        "sha256": "139844e8dfa72915dc63ea0e8dd74b675a9467fb4259dc5e140d733eac20e31a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/final-bindings-checks.json",
+        "sha256": "d0e7cc788c28971e6b37ec67110efc61d1a91b8423abe98b563250be91a8f51c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/final-bindings.json",
+        "sha256": "32751d2a956b2adedeb1385a23d93db0065bb9d71f2cae2977d18e801540b1ba",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/final-bindings.log",
+        "sha256": "37c11531f271de6328a2c70906c4cae4f305bcab20a2a77a673977583ffbca6e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/final-validation.json",
+        "sha256": "6351a9dc2b9c5c9b9cc2355880b9cab76bfde85833460c54328a297a7b4edbe0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/final-validation.log",
+        "sha256": "642cb72ea8f4ad62904522b5f875f94601bbf4048fd203aedc33c5fc6b5e90f8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/findings.json",
+        "sha256": "54d34f3cf33f997be56636e83adbd6d589fed3c349fe87465c252c029e5e925b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/initial-bindings.json",
+        "sha256": "3f74ecfa9fa21f5ddedf85a70aad2771d41266c5eea5b7adf699c6506ad755f0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/progress-v1.json",
+        "sha256": "67333b6f66b3547fb438552caad0fad547277f6eb3c8a5d0494683bfcbab5349",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/review.json",
+        "sha256": "5aef00ae8cbae152c4648ef7f8462163abafccc053cf4afa6984a8ebcf3d57e7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/seal_review.py",
+        "sha256": "f3a7830bf5e207150005ab8d1676c557a42a09c1a0677a3e71ee1e6f1792a805",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/source-read-ledger.json",
+        "sha256": "922cb2310cc4af42ebe97edc9c7d1bc0e3de17e63b85fe9aee70000e7e0bc74e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/verify_final.py",
+        "sha256": "39261f1c844f91384adc769de144f229c28fa1654a3067c16bfe193ccb228392",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/science/verify_final_indices.py",
+        "sha256": "d7bb8e9bf428d290fa73e8392259e2d29d68a0f0de313ee11f1137c5eacba050",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/HANDOFF.json",
+        "sha256": "045f8dff545fff49534f5121ea7c48e4844b041f27d367e45fe20cbae47d2fb5",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/author-byte-checks.json",
+        "sha256": "0d5fa1b2103d3d9efb0e05c89367ea780435b309017c8710fa6edaaee3a0c09a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/check_final_bindings.py",
+        "sha256": "aa090c2fa3100e7ae69eee0f170674bb8724dabec832efb1062808cd67021997",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/check_route.py",
+        "sha256": "655ace3bce9de351e4752cf26d5f19cf0cf011f6fa0e94219c75ae85bc65185b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/command-receipt.json",
+        "sha256": "bda6f58bb85af8ad31c84d6fea299e73a631dd9cb8e60c053b4db3628378c509",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/final-author-check-command.log",
+        "sha256": "d3a083560dbe41207b2a94fb8635ea6146a5de2f49107a5f504d9c5f883a7e65",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/final-bindings-command.log",
+        "sha256": "6ba216b65c70146d0dba1327e9d7a5ff49db246df730f24cc64ccbe70a21351d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/final-bindings.json",
+        "sha256": "24f852243954e6bb1e165e95eae62bbb79810eef8284b53c3095ee31298c3a45",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/findings.json",
+        "sha256": "3606863b117013089b7cdcc1c95e994af61c162aae5f017744a009acec971926",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/preflight-command.log",
+        "sha256": "4d736511d97adcd0ce049b288b7b366edeae27bb45a84438718a517beba52be2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/preflight-review.json",
+        "sha256": "0493ccc2569cde82c8fb8c8499fea9ccb9c73586237657a386ade4bd2e6c0a99",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/progress.json",
+        "sha256": "96e6dfdc4e6ab5e189479f2479009dec4bcf3e94e74dfeb4028698033baaaad9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/review.json",
+        "sha256": "9add6d629ec5529d46aec5e82a31d12d7898d85638157cfec8b16eb912eb8649",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/source-read-ledger.json",
+        "sha256": "22a2a91c272e02b24ae5fdbd366b50549e0805143afc9ce7f43a56ea9f4ddae2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/independent-review/skeptical/write_review.py",
+        "sha256": "9085d403ba0d90268beb9d098b7c5936651939f036f0ffc1c8628f370ba9f981",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/AUTHOR-TASK-W08.md",
+        "sha256": "e16acb227308669f7cc883d5d58b454b325331e2082480616d424bd75856448f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/HANDOFF.json",
+        "sha256": "1286137dd53a49d19ba7ceeec5c11ba702c9f519a88eb338020f315c6f3f91f7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/MANIFEST.json",
+        "sha256": "46ab4b7dee1befa1a1c04ec83371374bff98b3efaacf7d366e821b2eba391ebc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/README.md",
+        "sha256": "657e2f2483c19220d9d059b10907b373d11026e16ddfa0947b43554c884ae82c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/build.log",
+        "sha256": "ca041f8a685e449499f657610f325527f8fbde37c8cbf4c0764ffe3a482ea40f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/build_packet.py",
+        "sha256": "f649dbe785308d3fe9402e50036e72a2faeb9db4d780506dbf001acfdbb824a9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/candidate-boundary-checks.json",
+        "sha256": "f4363fd4fba95527c6915db5140b14b305e0e3906079f3a121ad55dd40f9a986",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/AGENTS.md",
+        "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/SKILL.md",
+        "sha256": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/before-Wolfes_Vitamin_Mix.yaml",
+        "sha256": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/campaign_owner_apply.py",
+        "sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/candidate-fe607027.yaml",
+        "sha256": "fe6070272f269fde7683696e4c46a331902ab88baac8c5cc93db7bddf9d0ec1b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Biotin.yaml",
+        "sha256": "26056efadc5e57f081cde6e4ce0c2e25c03530c6d564ef0df25da3bcacb59c30",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Calcium_Pantothenate.yaml",
+        "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Cyanocobalamin.yaml",
+        "sha256": "c5040ab3a4bc376296676ced54da7265cce36b34c573668be6e28592161d260c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Dl-alpha-lipoic_Acid.yaml",
+        "sha256": "0ed895bde2be0c24acba5da9eb925485ebea8dd04b8058cce77270e1677629bc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Folic_Acid.yaml",
+        "sha256": "df85938271ec8f32a6d756f5213ba9661c9a7530822f333d2e02493b9f92e615",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Nicotinic_Acid.yaml",
+        "sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/P-aminobenzoic_Acid.yaml",
+        "sha256": "088498308b47b9a01c45baa4bfbb3a7a367949a08bb85b11cdfbc89f1a8ca91f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Pyridoxine_Hydrochloride.yaml",
+        "sha256": "26ea82b1c3e173c0695085ce08a4143db32a702dae3295702d60a61e944d0a40",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Riboflavin.yaml",
+        "sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/owners/Thiamine_Hcl.yaml",
+        "sha256": "8e7d3802dc19872e85d753b6c7a0e1fb34c552311e69c450e697d9f1e55b2732",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/triage/HANDOFF.json",
+        "sha256": "ec60e17ff6c911662453ad4dd383bd0c91bbb41306ed2269768cd1f4df32acfa",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/triage/assessment.json",
+        "sha256": "620b7a287fd348b0bcbeac66926b6623dca73ac7c5740dedc9cacf9c9fd7acaf",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/triage/exact-source-and-candidate-audit.json",
+        "sha256": "564ede3dc17d60186cd529f7ffcd9b7b171d99521aaa9f76c5fc4cc2da098b66",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w06/HANDOFF.json",
+        "sha256": "43e5c2fcf7029519b349db5b4d069bd66ded33562851e810df30c29e8f8a0e60",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w06/decisions.json",
+        "sha256": "e626c5147747389c1f1125a22d9b09698700b3e5b4f7bc83b42964c9b47ba54a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w06/evidence.json",
+        "sha256": "a4fdf58bd18e78de1ce824a90d9bf4704db1720a27a76915a6355042dd778914",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w06/proposals.json",
+        "sha256": "e7dee1ca808d8e97e5bdca0462cdf5bafef6fc15e69555b159c5f59d6dc926f7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w06/selected-payload.yaml",
+        "sha256": "df39fbd897b0f0d38c952fae7788fc3be433d142234fd3a095cac50204db06c1",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w06/selection.json",
+        "sha256": "2a8a71a478814d89169122ed3ef6c34ee26bc9ba0d75dbb62d6e349468864348",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/HANDOFF.json",
+        "sha256": "f474e600b3d6ec3dddbf001ab5aac6732fb8e33cbf1b7936a227d26b425d956e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/component-ontology-lookup.json",
+        "sha256": "de61fe4d84c0d8a0e467389e5fec3e9319eee928ad45545ba6940a58d63fafcf",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/component-review.json",
+        "sha256": "7da6b56a5da41f63ac2c70ba4233fc8e8db7ab65ce71f2cb84df916cf2003a58",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/decisions.json",
+        "sha256": "af263c15e4361f42401386bbdd774605c9d58736cafcaea0536f3c0ae473092a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/evidence.json",
+        "sha256": "d2738971f37545a84ed237f9e87d78374f260e3d9d74951e23bbfe8839df9563",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/exact-form-ontology-lookup.json",
+        "sha256": "1ec1b45da45857aacc16bb75be8ec7fa1d944e4f0286f74195f9f0f5df6892a9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/proposals.json",
+        "sha256": "260cad30a6a48ee0eb658404317aa01395820b82e656caf00330a42f69f72e64",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/selected-payload.yaml",
+        "sha256": "e4a7c5d611dd36f449da97ec674100f58679ab5a5871996e79ca9837e73b2802",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/selection.json",
+        "sha256": "335806d22ce278eaf628930b521d7164f0dee2493a19fbc790ae3c273d179f92",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/shared-CAS_68-19-9_properties.json",
+        "sha256": "3fe0d36b38d6014d10958b813fde7f27fb765a48c445b26f7712c17b884a2f15",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w08/shared-CAS_68-19-9_synonyms.json",
+        "sha256": "25607da30469ffe29168c693780e24a8ab927b7c98b341c0b2b4dce4b32e490d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/ADJUDICATION.json",
+        "sha256": "513ed064b0bd74af32a9ed37eb0559effe61328fb98e30739439899af8a8c409",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/HANDOFF.json",
+        "sha256": "5a190140da1e05c1609230aee2f151ff6272f9aa1c48fec6bcb715ab5c3fd681",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/OPTIONS.json",
+        "sha256": "7ff22c17ba0c71b2cb8a0676723e7c5f02456fbb312f5611f7aae03127ba2239",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/history/captures/Mixes.csv",
+        "sha256": "9c58caac081620bbf5700b74fd957e56d3e5e17d17b282767ec26fabec522549",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/nominal-ten-vitamin-source-description.json",
+        "sha256": "295547919f3f914a9b728b01441ee8618d0f0f1113470b49a28c74e8a49a3d5f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/primary/captures/C-E-jcm-197.capture",
+        "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/primary/captures/C-E-nbrc-837.capture",
+        "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/primary/captures/vm-fetch-2630e40c26a0b155.capture",
+        "sha256": "d84e0266df8953fe179cf4976105c8bc93ce36ca90f7b6081f1a92741ec70f57",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/validation/current-origin-bridges.json",
+        "sha256": "d7d3805f6ed42afaf306091ce5494cf80d4ea2008c86587b34d3629f3ec87d8c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/eight-cases-and-scopes.json",
+        "sha256": "852af8ef1d4b5b4cda5d4e99c034db727d40a9f940dc3406dbf0e1239144f1af",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/frozen-case-accounting.json",
+        "sha256": "1e82024c6718b4b6d4f883bbe74eb66036bd96e92b23afcfd135dd685d058f59",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/issue1237-comment-6719499726-network.json",
+        "sha256": "a82fcfff32ec4188861c254192b218b2bad6f9880448b07332006613c2f2e986",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/issue1237-comment-6719499726.json",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/native-route-planning-shape.json",
+        "sha256": "657acfbc4bac849e9b4aa2b3c3d300165bb8782a94efad296c9c0730c931fb09",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/published-origin-bridges.json",
+        "sha256": "b4240d91732e0746af1a669e5f1cc3d6be65358f95d0ff69376de503c632c657",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/source-bindings.json",
+        "sha256": "3ee261ef6eaad8a710fc0a5149f4cb77075670d81f375786749b42812f7e2a98",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/ten-child-identity-matrix.json",
+        "sha256": "b5f0585e161b13923b399f5f06dfea5a4c5a4cde3902b76bab8a793a646f0dd8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/w06-remote.txt",
+        "sha256": "086eae8386619a851a218f4d15eebc74d22ae16876a2bc3e2f064a0cb2e67719",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/w08-remote.txt",
+        "sha256": "6e91cc6f502faa42256cc997ee0e90c943f0affdd2be96826afb6fdaa836726b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/issue1237-comment6719499726.json",
+        "sha256": "a82fcfff32ec4188861c254192b218b2bad6f9880448b07332006613c2f2e986",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/lineage.json",
+        "sha256": "83d78dfee05569fb146af824d8c32f15dd67a5bc0fc7e9f94171f6843a5b0fdf",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/payloads/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/preservation.json",
+        "sha256": "cc9389c12c2e6400e0d8e78a327e3f0f8909d72395ba2c16498e4c37e72a1beb",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-00.capture",
+        "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-01.capture",
+        "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-02.source",
+        "sha256": "22e2640c5a85e9c9d3310993ea9708632618ddcf94a7d7362b41cdb773794af6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-03.source",
+        "sha256": "462b0c42fad89e0cc09e54efe7065e107032eb485650e3b1520cc5611450a1e4",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-04.source",
+        "sha256": "5ec76cdf6f42f262992b722b190972b6fdca39f96a5a0a03c318e86972c88526",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-05.source",
+        "sha256": "d63e870d493374ee74079084520e5e268f01bd9b6599910ed1959bc58ab022f0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-06.source",
+        "sha256": "d84e0266df8953fe179cf4976105c8bc93ce36ca90f7b6081f1a92741ec70f57",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-07.source",
+        "sha256": "cbd9c6e425104ee1c720f17833fd0e0791923a55d47b84caac7d3c99532afaf4",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-08.pdf",
+        "sha256": "b7bbf28efb43cfee8476e83780a55d929e574f3f0b7479583926d927409b4615",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-09.csv",
+        "sha256": "9c58caac081620bbf5700b74fd957e56d3e5e17d17b282767ec26fabec522549",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/primary/capture-bindings.json",
+        "sha256": "ff5f1d3f6d304b34c2dac7b2b1901ec2cc552689e7f2f267166e733121f2af4f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/proposals.json",
+        "sha256": "5f54c67770a44478de521d6103e4d943a53c6fcfcba3269ad88136ff93e56166",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/assemble.py",
+        "sha256": "e4a30ec831f1a97ff588f460f65f58da81a46138c2ecadc39c0f181b12c677a8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/author.py",
+        "sha256": "f39d2c40d8dee2adc806479e2e7c20dbffc6c0cc2920a26c7a80beebf6055cc1",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/build_native.py",
+        "sha256": "e7498978e42691d08e775c65e05d5f33fb6f6c153163eaf8bb8aabdea5f2358b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/command-scope.json",
+        "sha256": "a4cf09d1892c109ee1e01d0fa1ead88de93bc7530f40d006e11c36de5f74595e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/preserve.py",
+        "sha256": "6b4e7b89e8a5d669fcf2e7e9c036fc34b69dfe6d8afa3eac062ce67f6e2f9236",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/preserved-copy-bridge.json",
+        "sha256": "16d640ef1fe8c78c62a08559fbe07a5ee0869bcf4de845d6cd394a169e8fe640",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/remote-before.txt",
+        "sha256": "6e91cc6f502faa42256cc997ee0e90c943f0affdd2be96826afb6fdaa836726b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/restricted-attempts.json",
+        "sha256": "623dae19fc066c858d0e2c306e5838fcbbefa626af907f942af51255d353f76a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/provenance/structural-audit.log",
+        "sha256": "35ef5b5045905e1e009119689919ea31f64e3cb8a2d3d211ae180ffba5d297c3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/HANDOFF.json",
+        "sha256": "6779907baaf64b3010359c502914a9dac374da67aa48de1b20af782eb38a7fe4",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/JCM197-source-text.txt",
+        "sha256": "cdf2a79d5fd71a1db7d8291ccccd267c7d644db4eb9abd8683d0b93f6407afa3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC1050-source-text.txt",
+        "sha256": "5da2b4d6a0cb4d0f924da8db105182c2fe58101c6c532cc276171e3bc0f5bcc0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC1086-source-text.txt",
+        "sha256": "4348a74f724e77983c89e7c6053b5edd14b9cffb42aa76aea5f942dd636955e0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC1226-source-text.txt",
+        "sha256": "cb3e203475d904a481ed4ce247f141a99fdaa2dbd4802b7cc2637cbd96f1dacd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC1274-source-text.txt",
+        "sha256": "9fb6f96e996e5c60bb8332c777f647975c7509a66233a557f9911a3720f29d6b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC837-source-text.txt",
+        "sha256": "fd0fdad08e41c9253d186ebe591bdbd996283d4167771f155341a2a136d249f2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC903-source-text.txt",
+        "sha256": "ecd098c19767d05d302afb2bd95bd95ba4ad72819482024ace4ebb1f59abf36b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NBRC925-source-text.txt",
+        "sha256": "24b21c2d361052ce1d0e87648bd2f98bdb17b2aeff8309b02cbdfb139fc69f39",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/NCMA6-derived-text.txt",
+        "sha256": "182b0c32b298e64b8e0e6d592d58c99f9377a0e91a4eba516e74212177cdc3fe",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/build_evidence.py",
+        "sha256": "da278413badc84dc1564462712cecad9c6283eeb464ee47d6e09c3fea180e464",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/comparison-assessment.json",
+        "sha256": "6018f2bd4e2e9a79754a24bc0ba65772c991f73c939ed41682202a9b8d15c285",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/findings.json",
+        "sha256": "4fe07aa8cc825a57b7d55de2cd1e315647c9bb086602dfa7ffb7cdf249779a4f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/nominal-recipe-evidence.json",
+        "sha256": "423862e269071182f1fd782e2483e25e4004877c6e4687fbc97a78b3827f435e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/occurrence-partitions.json",
+        "sha256": "2c55b762c16b9b1d05e269f1a840b8e80c2517d20ca95449485cf08648763ab2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/source-read-ledger.json",
+        "sha256": "2eb8d3c246d071afa803f37a19078a050d23e89772bc41e22c1e94d762631579",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/validation.json",
+        "sha256": "d60704f1c2ec9594441e4ea953274916c41e63026d08f04eb8636295cebda14e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/selection.json",
+        "sha256": "fb16bf5c29b981dc7dd60cf8d963a9aea25c12a65d6a0e55e29d84dfb2a26699",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/structural-audit.json",
+        "sha256": "8d306cc9db53e2db5f05d7645e895148205c43d6f3dfb8848dcc95f7b746abd6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/MANIFEST.json",
+        "sha256": "ebcd3ed3ddc5515537c4d8f2770082f76ec40b5c4e62a86d71cec80414432534",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/controls/bad-enum.json",
+        "sha256": "ef1c8f8b6fbd1265e26b5281d6c6fa0670ca19934f5494a812b49491f25142ce",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/controls/changed-unit.json",
+        "sha256": "9451913962d05222985c1c89ce129cdc8a6e707e39c6671d023034e658f0021a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/controls/extra-field.json",
+        "sha256": "85f2e6d0278d98cc0681de3dbd52cebaf2cd909fc462536f379a8a062c9bba95",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/controls/invented-water.json",
+        "sha256": "d87568210303f4b0644f5003bf36f0beb6dbffed37e1fc7b7ebce7104aab5349",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/controls/reordered-inputs.json",
+        "sha256": "48b3e9c80347905b823e61aab6292b605afe007b413ca82e5efc9c286ec0eccd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/controls/scaled-X100.json",
+        "sha256": "ebb306bd70da386c4498431f7586dce29311cd3d38c967d72c307a3609507d53",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/finalize_validation.py",
+        "sha256": "bfe424a107ebf52ad58fd8d115d34b49ad1651571715389bdd6ef4f75a478673",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/finalize_validation_v2.py",
+        "sha256": "89ed1d7fc0986a0d1444631d022e08e800f6cf1350fb0442a8f51141a686861c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/finalizer-attempt1-failure.json",
+        "sha256": "394b888360bee258271c6b0d1de5a7ea0f3db19ceca402324e946019d0bed300",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v1/failure.json",
+        "sha256": "7794761a06b209d434314a549a181e313ed1212d67f86b101919943cb488230f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v1/scope.json",
+        "sha256": "bd227e9e96724a5a2ae597f9ec8d1d20dd3c84d5d46e2f26abc60f3c4b89afbe",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/alias-guards.json",
+        "sha256": "43e0280995caf1d5b8791aaa5ed2f0c81fc8efd7373f46f5d0d7e3dfd93ca5bc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/baseline-inputs.json",
+        "sha256": "8d72e64c3b56660616c3f4ee00e72c736c6042136aae83ae52d228a67b913ba7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/baseline-tree.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/baseline-tree.stdout",
+        "sha256": "84c5c01fc3735ba06ac3c00ecceba4829f839eb10a363c56783e81db779a5380",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/claw-actual-projections.json",
+        "sha256": "4d6b830d7c25597b756608ea3fe97a87fbc108b6ba45e5b983aa24a620f00317",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/claw-head.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/claw-head.stdout",
+        "sha256": "0b149759f0cae8c48e6175432125374296fbdf27c9d23d0868b7e4a056780ad7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/claw-producer-source-hashes.json",
+        "sha256": "3959452a5e8133eb94271b3a7c6b42d9446875a07cc1a723e87ad5e5f4e9735b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/failure.json",
+        "sha256": "00b4a4c92f8f820fd01f117d53a1bfcc4cf6f484a50b30b457a82f76e0d0c521",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/full-overlay.json",
+        "sha256": "7b8e77680f7d2ced44f1355b644b5ac5acf553da1f227e2785e5e4c832796532",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/ATCC1249_Component_III.yaml",
+        "sha256": "7925a494844f22f5b310d81bc0a7907dc35400c958a136c23cc19b61726e4aad",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml",
+        "sha256": "946583dcb59a4bade45f8797498769d3f109ef5a1d8238b58bd84a0c62e43932",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Beta-nad.yaml",
+        "sha256": "c3abed5996fc15ad308c159b0370460ccdaf241f1cea2c4b822b7629fc5ab103",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Cereal_Leaves.yaml",
+        "sha256": "a5b8c39c7cfd5cdc75daffbfacb55e639cf6f97c78fb51e293dd78361d6a8e81",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/DL_Asparagine_Monohydrate.yaml",
+        "sha256": "8296d12ef6c92743896cc2fce0010e2ba6723ed451bca9a4d5a6bbe26100235e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml",
+        "sha256": "26565e8825b7ad252006a282d6b97575aa53c7768f110e1560e8ee4cc5b40f19",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/DSMZ125_Vitamin_K1_Solution.yaml",
+        "sha256": "1d0233d39cb6d2fdb86be534c625ac39afb3bc47d9be431d15a9eb4ba3227c7e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+        "sha256": "34fefc81827cf593b52a70c43c95d0b9b78d46557c5d965e2294a7a53fa35651",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+        "sha256": "068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Ethane.yaml",
+        "sha256": "c803a8c73c9191def531ae6b8a53e4cfa0ed35ab2cc31c81544443e6c81fd8a0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Fe4_Po42.yaml",
+        "sha256": "c754fbc05ce108c243968f442e0a7e3ef0f2d9b6bbcd820fac881b0e243f43cc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Gibco11120_MEM_Vitamin_Solution_100X.yaml",
+        "sha256": "0a99f78167b7ce3faaef1f2427e7d0c19abe9dd04e2b3932cee91bb141d73064",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Glycerol-asparagine_Agar.yaml",
+        "sha256": "7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Glycine_Betaine.yaml",
+        "sha256": "8e3f8815431fd840bc81c41a65a48a03356d55bad8b058ff2a5dda1fba698886",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Isovaleric_Acid.yaml",
+        "sha256": "b5d25061615be15e4055434b7a271e608b78650c37fe992d49a19234090ff6d5",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1023_Vitamin_Mixture.yaml",
+        "sha256": "5940e814e39d8223839fa4ef92d62182942fa900d1ff032c9f7e5cefc8c8d0fa",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1097_RST_Vitamin_Solution.yaml",
+        "sha256": "149b7d7e9afc7d349cbcb63d83ce07809f68920441c5ca77764a724e9f11d42a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1100_Vitamin_Solution_A_1000x.yaml",
+        "sha256": "0c23a3fa552fdc7f2561b35c6403d928e069f659dd96b26c2b96fb653b4be54e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1100_Vitamin_Solution_B_1000x.yaml",
+        "sha256": "12ae9699971eec2ba601d56707ed5729f437fc2815ceb798bb431945f063e65c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1118_Vitamin_Mixture.yaml",
+        "sha256": "773111c58446c54f436074db53ef16b436c59bd35ce28444b6cbcd56916b497c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1130_Vitamin_Solution_I.yaml",
+        "sha256": "fa9e0e76b938925bf42a776511ea8497390f6fcdc7cf4b069df75a31e8e3f391",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1354_Vitamin_B12_001percent_Stock.yaml",
+        "sha256": "ce0d4c5a5e41eda069527a44f28bb7b91f9683b6bd18d4244abbf05ba05aa53a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM1363_Vitamin_Mixture_Solution.yaml",
+        "sha256": "85051099d2e34b243d242f37bfa73b8cd3e09527f584f96001b6fadb78e1d182",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml",
+        "sha256": "3bcc09def3c712626c94115d1f138258828e40014eee300bddf15c21bff2e93e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM296_Vitamins_Mix_Solution.yaml",
+        "sha256": "964d9c964ae2367d48ce8778f1da302844324db158c0c4974b2b04abb58665dd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM510_Methane_Air_50_50.yaml",
+        "sha256": "e380b6ebbd28fd12c3c0a1d8494201038b1fa16b14dde093083714fa82e4c890",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM515_Vitamin_B12_20ug_ml_Stock.yaml",
+        "sha256": "4a9f731182073bc7774f061aaeb5c0220966413dbdaa43ca8beadba9bd8e8255",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM554_SL10_Elements_Solution.yaml",
+        "sha256": "4276ddb38f136cabaf72f5bc4f1a3cbe1fbc88bd695a37770c687283e16f13e9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM628_Top_Layer.yaml",
+        "sha256": "13fe1d4d83dc56b5b51be169db7c2e6cdf3beb361d3724b4e3137df6b3e10734",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM629_Top_Layer.yaml",
+        "sha256": "96947f16567443e18cfc3d1c03a53dbed95d9d16aa374f9106fdf2a17c2dd7b6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM647_Vitamin_B12_2mg_ml_Stock.yaml",
+        "sha256": "44f7a4c0665c9bc2cedba0d11dfb72e4977abc1f3ee05ce95636c8d5afdbfb3a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM848_Vitamin_Mixture_100x.yaml",
+        "sha256": "e00f00a7e43becd7cfd3d1cf2df7ad4434c4d4843aff4721552e32aa9a448ab3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM898_Vitamin_Solution.yaml",
+        "sha256": "d2892a1e3151ee9454cfa9c91c9936f6d1c57968394e40fa9be681a9efec2469",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM903_Vitamin_Mixture.yaml",
+        "sha256": "bab8a83499fe4305600a11276137e688fcb90a10815962eeed15705ffd488afa",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM915_Vitamin_Solution.yaml",
+        "sha256": "752eb404de6db0e89ba2a0208149e3dc8a19310e4cae3988764e5c944baddb20",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM923_Major_Metals_Stock.yaml",
+        "sha256": "e490b99c640f34a545f83fc339f1abb5ff9418bc596b7ad124c4bca5b3d2e46c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/JCM995_Vitamin_Solution_No6.yaml",
+        "sha256": "7bcce562d167c1d129f13682d14de0bcb7583c4295ae64acaa9e17d83d0549be",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/K2hpo4.yaml",
+        "sha256": "de3a38207862f0661a3bce2408d6b1686d1b3c8ebdd13267234f362843602dbe",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Kh2po4.yaml",
+        "sha256": "c23172acac0bd27abee380404b04cfea3fcd4cc9632207582712e44a32ccbe99",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/L-Asparagine_Monohydrate.yaml",
+        "sha256": "6aca2073ba7271bc33f7e360b5830af08163841a3913405f28f5959b08f8f832",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Laminarin_From_Laminaria_Digitata.yaml",
+        "sha256": "5698231ae810fce7fce2a15ff4fb03af8a8525618e06e50d3eb27af4d7c9c06f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Linsmaier_Skoog_Medium_Including_Vitamins.yaml",
+        "sha256": "92ff5a91ef9582e3a859b3f985af572b653942e105b43fbdc1bc0d5857401431",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Menadione.yaml",
+        "sha256": "d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Methane.yaml",
+        "sha256": "19e46bb75e6a556511aef6f9467578a5e18c478175c61ee728d4dbf4b956445b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Methanethiol.yaml",
+        "sha256": "be0b0cc1a81754c64670d6193df99475267e1cd96e659d9c201fdbc936a5696b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1020_Vitamin_Solution.yaml",
+        "sha256": "b43abe4cb1f251cdb5e1937355b74292efe21d5c1cb98c1deb25c6ab2dbe449a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1226_Vitamin_Solution.yaml",
+        "sha256": "b4824a5d96a783ad2e927512d20aec0e793536791511339b19ffafcbad7e24bd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1321_Vitamin_B12_Solution.yaml",
+        "sha256": "5db9b9053283a9a636625764f3ced0a65b77f6829cc31b4a01842bd08972bbcb",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1321_Vitamin_Solution.yaml",
+        "sha256": "07ddcc303f994e84d93a93bda8f159f4f72f10b240bf7555caa843a929b03032",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1356_Mineral_Base1_Supernatant.yaml",
+        "sha256": "120d5f61e7857a3057c40c0eabec1b3feee79d01eaa7cc4deb91debc2ec0c603",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1356_Mineral_Base_2.yaml",
+        "sha256": "d6577043ecc6bc9f5ab48a85754e00309a8d13262c7d8f419cb0bdb319ec7e53",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC1356_Vitamin_Solution.yaml",
+        "sha256": "29a70bc825a9b0ecec7a0205b56bdf07898158b2fc72ffa955e051319f8d772c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/NBRC903_Vitamin_Solution.yaml",
+        "sha256": "e4a7c5d611dd36f449da97ec674100f58679ab5a5871996e79ca9837e73b2802",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Na2edta2h2o.yaml",
+        "sha256": "1f981682c97803091dfd5bf91ccf52a8055901df5f132cee2b1effdeb15bb33d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Na2hpo4_X_12_H2o.yaml",
+        "sha256": "a85b1bdcfb6e87f41878477d5e2c087671844aaab28c11db236b8072f9abeb97",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Na2moo4_X_2_H2o.yaml",
+        "sha256": "a81465916836d3c96601136e45f446324ff92091aeb4b9352386afe0760cee97",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Na2s2o4.yaml",
+        "sha256": "569413243139395d50e225efe22b950bd60f5aa3c23ee70d5cfcd002225d1316",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Na2s_X_9_H2o.yaml",
+        "sha256": "9fa6da94e753adc5df70a2b38831644fe7264ca604c8a6baa9a322c918f50570",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Nah2po4_X_2_H2o.yaml",
+        "sha256": "3dcb2ff6d438659777ce8c37d244a19f21ce89a5332392ae9071efffb9217b55",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Nalidixic_Acid.yaml",
+        "sha256": "072861b09dbe72214bd2f3f44a58e5b13d1970db4d2fe1d715dc15ab325461e7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Naoh.yaml",
+        "sha256": "e8764ed4b0e723390eda05423315f884a30ebeebab4c6196945dbac0944887e8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Plain_Flour.yaml",
+        "sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/R2A_agar.yaml",
+        "sha256": "d53585e7ac126e2319ffbd1610201a29181dbcd67d72b27d66563f09ef8b0275",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/R2A_medium.yaml",
+        "sha256": "6ef646d38ae19ef2dd3e7dded41ea95d5cedb5acb1b5e6ce33ab07a91d28f57c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml",
+        "sha256": "e370af536e651fd1e580eafc2795fe0f9bf84fd1e8664862b1a872ceb49d859f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Sodium_Dithionite.yaml",
+        "sha256": "4173e5073b8d267983e242a701cdfb275b952372af57514ae7da7aa42c14797b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Sodium_Lactate.yaml",
+        "sha256": "9459b16119e016b07918ab50afa397b649b57c4ee8c5a286a5a779c7472c278f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Sodium_Nicotinate.yaml",
+        "sha256": "b901b7c43d8ce1a14d51211ef7748823fe5f7e921399af3fa9c8465dc1138d12",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Sodium_phosphate_monobasic_monohydrate.yaml",
+        "sha256": "e79903919876ad08323eaa4faabee6255367345d6e092b329e7006dd0bcaa3a0",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Soy_Flour.yaml",
+        "sha256": "5687f73222f38e2df426700c0012646685c0c6e5458611b92710c57fae29c81b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Soy_Peptone.yaml",
+        "sha256": "4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/TOGO_M125_Vitamin_K1_01percent_Stock.yaml",
+        "sha256": "a1df6d15d30ee64bbb6de0dc30f9fc65ca5adbabcc1e444120e53d93caf82904",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_A.yaml",
+        "sha256": "2022ab3faf780ea9998ca9b6819b17587a42049f27ed6fad2e122aea22fa29ec",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_B.yaml",
+        "sha256": "36c0137ee590cbd4073da5ebd9d1c6cf9121499d348f5de797fc03ffa3982a7e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_C.yaml",
+        "sha256": "1c4be62bdbab9be2f5aafd2e7f52d7d22e7d4b6d320b69ddd8e168b177e1c53c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_D.yaml",
+        "sha256": "1af1b8697fd06e28b4968680aac6acbfec94f8928015c1c44393d0ffa1a763ef",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Thauers_Vitamin_Mix.yaml",
+        "sha256": "5884dfe7efb9e9f007d49d04b96a53e0b983260d98881ac84142c72ce71fcf01",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Tris_Base.yaml",
+        "sha256": "da1673baa37eeed978b5ec7bf79f606b9a3d398eb47b69fbdd805a423e1fa3df",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Trypticase_Soy_Broth.yaml",
+        "sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Valeric_Acid.yaml",
+        "sha256": "321fc7161a295322c2eb7002583eeefe2f7de49771795235ac68c3e6cea7fc49",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+        "sha256": "7182dd568490540f71ac904efd4bbf177f292ceab422e147497f007ce6a9177f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Vitamin_Solution_See_Medium_No_403.yaml",
+        "sha256": "57ec1f3f7540d96d9e90774900146e41eee779f7aaed07b272e8302d8ff54bb9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/allen_m2231_phosphate_stock.yaml",
+        "sha256": "27b8467bab6e05b0116053e52c9b91f214a002046bc441feb367e88fe0ae47e2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/atcc_1340_naoh_4g_100ml.yaml",
+        "sha256": "21cbd942e71d76ea7f1d87e57339b5aba23ec032e4c7dc10fb3b96cb650cfd5f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/atcc_1942_sulfide_5pct.yaml",
+        "sha256": "65d136c991e7b68ef8cdcebf3ce4e2596a64d1bdb5037b9179eb61a738e1eb61",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/atcc_1943_sulfide_25pct.yaml",
+        "sha256": "f19078a9574201f29f6ee9336e9676b82b42e96299d9e0f83974f7e6755e198e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/atcc_nitrosolobus_6n_naoh.yaml",
+        "sha256": "96100762d0f4662991c3daaa7ec98e52b436bbf6729422ff729661240f1a0287",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/bbl_fluid_thioglycollate_bd211260.yaml",
+        "sha256": "9b3b03cb7ff3d6b5d1f1e6c6bba374da426c011cb78af64ff0e83fc8ccce68dd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/deionized_water.yaml",
+        "sha256": "b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/denger2010_racemic_sodium_sulfolactate.yaml",
+        "sha256": "0fa70de5f9efa049f948a80244dea6da40bbbc499bd8592bb38b498df0b9fb9b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/dsmz_104_8n_naoh.yaml",
+        "sha256": "3019e7b51af1853f434eef5f7d752724d04c9dbafdcdcf1e84844cdb737aef15",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/dsmz_trace_2n_naoh.yaml",
+        "sha256": "66b0fee953fbb4b234082782c3d9ae51820a99ccabe06214f22a53bc21581b3b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm600_water_saturated_toluene_stock.yaml",
+        "sha256": "ec3287066d2a66f0a7d30f1fae415d9de93fc92cd13e339deb2b5deb67cc9dba",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml",
+        "sha256": "3a92641f7b7817c2cb40bb752e53921767df90394232f83762c7452f8b04937f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_1130_10n_naoh.yaml",
+        "sha256": "63a38aa9b3a508a195448995ee2e9ab3bc1da116001215366fff07757fff4a29",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_221_02n_naoh.yaml",
+        "sha256": "44e2eaf5271b89b5712b55563f925328504bd17727574ae33985acf417386006",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_574_1m_k2hpo4.yaml",
+        "sha256": "9e123b2c54d77aa95cff33e23e66ec2d745f9d5a50c13db0cf0d6791ad97a390",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_574_1m_kh2po4.yaml",
+        "sha256": "59a4c22506d8d0244064690e661b74e6c74109e2c3663429414a966d9c2a23ea",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_713_sulfide_24pct.yaml",
+        "sha256": "88b1eef07b9c9e8251a5178fd68bc67631dab3c01ca27c1b82173e19c05bfeb6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_908_sulfide_10pct_wv.yaml",
+        "sha256": "513d34d388831f51061ba7d6b74482bc2e583dfe9fe93819a0a8bc6e8eb1d482",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/jcm_941_solution_c.yaml",
+        "sha256": "2fcf9bfa07442ede81043a0222bfc3b8031e7f4366449495526c3e8476529bf1",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/mediadive1140_amphotericin_stock_10mg_ml.yaml",
+        "sha256": "643063b66c092548c59ff2111021dc43d397eeaa6dbebb034778a2dfed8bf11c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/mediadive1938_homopipes_0_5m_ph5_4.yaml",
+        "sha256": "73bba8ade5f8e50dfeb68805baa016fa5b8dd0d1b1d4c772440d1c9e341f0841",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/mediadive_552_thiosulfate_5g_100ml.yaml",
+        "sha256": "51f78e7c87e1f93fa30c05a3f644124b4a5aad7f01ce52e17b67115de7231e97",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/nbrc19_usb_peptic_pepton.yaml",
+        "sha256": "2defa950f7097d1a62a1a64989647b64a5c1e614040481feac0855a545247ec4",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/pbbm_1m_na2hpo4.yaml",
+        "sha256": "d9954703385fde2bf8480a9a8de16700702297d0cdfe843ed46270e5c80c68ab",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/pcr_s11_01n_naoh.yaml",
+        "sha256": "41a2e339a50e6a84a8283fa8e8e52ed3ce2d70d72d71a8b0cee0ba2539c595f2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/pcr_s11_50mm_na2hpo4.yaml",
+        "sha256": "e487df378fee92c65dd801641ea59fae4712f921210bc6ac8de496e1aa10e75a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/pcr_s11_50mm_nah2po4.yaml",
+        "sha256": "ad99c3ec64193d25a066c7cf58430cef977165a97c6ca4390a8eca107c6b793a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/pcr_s11_sodium_phosphate_buffer_ph75.yaml",
+        "sha256": "ad6c46351434f3a99bcf9871072eae37df4d8db59d479eccd031326b423b2fa6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/sulfide_ore.yaml",
+        "sha256": "24873d27341e8b56e27fd8f231cf55d875729aa300b4885687bf808e3f61f3f3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/togo_m2844_bromothymol_blue_koh_stock.yaml",
+        "sha256": "8f87b934890a03ee4df11bcefe34e3b9db899fa5362a00f2547e37ae7308d5c8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligation-fixture/wolin_mineral_05n_naoh.yaml",
+        "sha256": "c7b8dcd343021ed9fbc4dc221c9cf44c7e1710834292354083e84f351ecf5a2e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/identity-obligations.json",
+        "sha256": "0bf81a1007ac2e900219ea1989beeeb26091c23f4a37315204ca5e5b1e872ba5",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/owner-admission-failed-held.json",
+        "sha256": "56593df9ab2cace46c93c664c88cedaac563b9d0089366986c8861aa03c79a17",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/scope.json",
+        "sha256": "e341c91b18ec32c57bf744547d8a69bfda018f570335a4f3b11ee9cd1197cebd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/selection-accounting.json",
+        "sha256": "1c493a5ac5b445fa36aadf5c9612db573706e4a11212d1f5c1134cce58ffc460",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/strict.stderr",
+        "sha256": "00c23c0b855fd94103d1feae41f300a3c0d89308dc78faed475c905d432d8ac3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/strict.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/full-attempt-v2/strict.tsv",
+        "sha256": "4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/guarded-replay/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/D-pantothenate.json",
+        "sha256": "ee9ddc574634d460687eacc4cea643421c177c567c8493265ca19301e506f75b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/bad-enum.json",
+        "sha256": "ef1c8f8b6fbd1265e26b5281d6c6fa0670ca19934f5494a812b49491f25142ce",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/changed-unit.json",
+        "sha256": "9451913962d05222985c1c89ce129cdc8a6e707e39c6671d023034e658f0021a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/extra-field.json",
+        "sha256": "85f2e6d0278d98cc0681de3dbd52cebaf2cd909fc462536f379a8a062c9bba95",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/generic-B12-selected.json",
+        "sha256": "207b909ea0b6d7116ca9e5a01bc1bfde8882335eaeed9c9dac54c30b3f83f8fd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/invented-water.json",
+        "sha256": "4f2b5adc0b8e3eb8a26bcdb5a4f1e074653b9ee968783315563348a3c5d6114b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/lost-W09-author.json",
+        "sha256": "f9350e6045f904806ff468912cf14f42254d4a0b01123f58b65d05657bcfd868",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/lost-occurrence.json",
+        "sha256": "a040739e7dde404419063f4181c32f2983c4d1bdec5c99e84d5a5b5bb7362a0c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/null-beforeimage.json",
+        "sha256": "c6888bf1bdac56e2ccd8e605edf1beffa8ec7117e87afd64bf064e55efbf0421",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/reordered-inputs.json",
+        "sha256": "48b3e9c80347905b823e61aab6292b605afe007b413ca82e5efc9c286ec0eccd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/scaled-X100.json",
+        "sha256": "ebb306bd70da386c4498431f7586dce29311cd3d38c967d72c307a3609507d53",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/controls/water-as-final-volume.json",
+        "sha256": "92cf01ead62278b1138d3aeb7cb6f96a281c9077046a3ddf3ca05b678f11f3ef",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/guarded-replay/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-attempt-v2/payload-checks.json",
+        "sha256": "2db1d29da41c1ff9e6bac80db7d74f8c68031867ea8afcd083ea2a968c3c599d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload-checks-failure.json",
+        "sha256": "c65d6c662fe6ae2c12bab74815ef636079ed5915f9e7f9a10674703778a35951",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload_checks.py",
+        "sha256": "61dd784c48f58991fbd6445bd0120b7714112e5632906e84081838320f1fc2ed",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/payload_checks_v2.py",
+        "sha256": "8dcbc87b13d91c1699e5279564ffd4cc3f08159af25730dde0875a107efc1c87",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/projection-qualification.json",
+        "sha256": "998a4b3d0201cc02ea32d004b139eea3769f6e7cc47b76239b8562a59fc51895",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/receipt.json",
+        "sha256": "7a82818fd370e88b9954d718449c40742b97eb2d05f5c1863163ef5d15df59e5",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/run_full_validation.py",
+        "sha256": "e83917e698a292cab4da09d2111a6d03cff4c8ec03a7e8dd5a6180de582a1e0e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/validation/run_full_validation_v2.py",
+        "sha256": "f30c52a1d9e34291ee4db6c3225c3b6089cf264d0166df7ac2372a557dfbb9fb",
+        "role": "context"
+      },
+      {
+        "path": "schema/record_review.yaml",
+        "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+        "role": "context"
+      },
+      {
+        "path": "scripts/record_review.py",
+        "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+        "role": "context"
+      },
+      {
+        "path": "scripts/validate_strict.py",
+        "sha256": "5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/curate/curation_event.py",
+        "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/validation/component_partonomy.py",
+        "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/validation/write_validated.py",
+        "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "vm1237-prop-wolfe-cb-dependent",
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/payloads/Wolfes_Vitamin_Mix.yaml",
+      "label": "Wolfe's vitamin mix — isolated CB source-continuity dependent proposal",
+      "kind": "source",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Wolfes_Vitamin_Mix.yaml",
+          "role": "Authentic existing owner beforeimage709749bd; proposed bytes only, maintained owner unchanged."
+        }
+      ]
+    }
+  ]
+}

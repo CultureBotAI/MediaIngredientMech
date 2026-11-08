@@ -1,0 +1,10 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/tenvit-dependent-v1/build_native.py", line 55, in <module>
+    save(O/'native/review-content.json',review);native.validate_review(review);path=native.save_review(R,review);assert native.read_review(R,rel(path))==review;md=path.with_name('review.md');assert md.read_text()==native.render_markdown(review)
+                                                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/scripts/record_review.py", line 208, in validate_review
+    raise ReviewError("; ".join(
+    ...<2 lines>...
+    ))
+native_review.ReviewError: actions.0: 'finding_ids' is a required property

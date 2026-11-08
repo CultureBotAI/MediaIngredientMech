@@ -1,0 +1,10 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/tenvit-dependent-v1/build_native_v2.py", line 17, in <module>
+    save(O/'native/review-content-v2.json',review);n.validate_review(review);path=n.save_review(R,review);assert n.read_review(R,rel(path))==review;md=path.with_name('review.md');assert md.read_text()==n.render_markdown(review)
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/scripts/record_review.py", line 208, in validate_review
+    raise ReviewError("; ".join(
+    ...<2 lines>...
+    ))
+native_review_v2.ReviewError: notes: 'The first native draft failed validation because the coordinator follow-up action omitted the required finding_ids list. That rejected draft and actual error log are preserved; this draft adds the empty list because no new finding is claimed or closed. Scientific content and all reviewed payload/selection bytes are unchanged. Actual Claw projection retains identity/label/predicate/aliases but correctly changes only curator/date provenance with the appended history; no canonical export was written.' is not of type 'array', 'null'

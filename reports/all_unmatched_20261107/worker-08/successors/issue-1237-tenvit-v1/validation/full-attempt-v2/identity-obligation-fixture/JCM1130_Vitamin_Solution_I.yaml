@@ -1,0 +1,115 @@
+identifier: kgmicrobe.ingredient:jcm1130_vitamin_solution_i
+preferred_term: JCM 1130 vitamin solution I
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1130_vitamin_solution_i
+  ontology_label: JCM 1130 vitamin solution I
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    notes: 'JCM Medium 1130: Vitamin solution I defines this multi-component preparation.
+      Registry identity preserves the recipe-specific stock; no exact molecular ontology
+      mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: ' Raw source labels retained here, with recipe scope: ''Vitamin solution I
+  (see below)''. Generic local labels are not published as global synonyms. Occurrence
+  statistics remain zero until source-specific membership integration; frozen observations
+  are fully recorded in the evidence decisions. Quantities use literal source-batch
+  units, not final culture concentrations. Component references identify compatible
+  active entities only after source-form review. Remaining UNMAPPED components retain
+  their precise form or nested-preparation limits. Component names and quantities
+  remain source-specific; no role or export approval is inherited.'
+components:
+- component_name: Biotin
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:15956
+  source: 'Literal source component: Biotin. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names Biotin; the inspected active catalog and primary ontology
+    identity CHEBI:15956 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Generic B12 does not select a vitamer.
+    CHEBI:176843 is a class; CHEBI:17439 selects cyanocobalamin. Preserve source and
+    owner holds.'
+- component_name: p-Aminobenzoic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '15.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:30753
+  source: 'Literal source component: p-Aminobenzoic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names p-Aminobenzoic acid; the inspected active
+    catalog and primary ontology identity CHEBI:30753 match this stated chemical form.
+    Source spelling, amount, unit and preparation boundary are preserved; no role,
+    owner-wide or export approval is transferred.'
+- component_name: Folic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '25.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:27470
+  source: 'Literal source component: Folic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Folic acid; the inspected active catalog
+    and primary ontology identity CHEBI:27470 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Pyridoxine·HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '75.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:30961
+  source: 'Literal source component: Pyridoxine·HCl. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Pyridoxine·HCl; the inspected active catalog
+    and primary ontology identity CHEBI:30961 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '500.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  component_id: CHEBI:15377
+  source: 'Literal source component: Distilled water. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Distilled water; the inspected active catalog
+    and primary ontology identity CHEBI:15377 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    source_record: 'JCM Medium 1130: Vitamin solution I'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:00.160937+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined JCM 1130 vitamin solution I with complete immediate
+    constituent enumeration and registry identity.  Isolated proposal only; independent
+    and coordinator review remain required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 5 compatible source components to
+    active catalog entities or explicitly conditional selected-proposal entities without
+    copying role or export approval. Earlier history and all source, scientific, role,
+    withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

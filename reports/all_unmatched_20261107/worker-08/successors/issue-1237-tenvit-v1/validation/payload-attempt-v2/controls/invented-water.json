@@ -1,0 +1,827 @@
+{
+  "payload": {
+    "identifier": "kgmicrobe.ingredient:wolfes_vitamin_mix",
+    "preferred_term": "Wolfe's vitamin mix",
+    "synonyms": [
+      {
+        "synonym_text": "Wolfe's vitamin mix",
+        "synonym_type": "RAW_TEXT",
+        "source": "culturebotht"
+      }
+    ],
+    "mapping_status": "MAPPED",
+    "occurrence_statistics": {
+      "total_occurrences": 61,
+      "media_count": 61
+    },
+    "curation_history": [
+      {
+        "timestamp": "2026-04-29T06:51:33.117170+00:00",
+        "curator": "audit_add_remaining_culturebotht",
+        "action": "CREATED_AS_UNMAPPED",
+        "changes": "Imported from CultureBotHT (consolidated_media.json (media-only)). Used in 61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or CHEBI mapping available; curator review needed.",
+        "new_status": "UNMAPPED",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-11T08:35:00Z",
+        "curator": "mediaingredientmech-agentic-curation",
+        "action": "CLASSIFIED_STOCK_SOLUTION",
+        "changes": "Classified as a vitamin stock/pre-mix and left unmapped because this named formulation should not be identity-mapped to generic vitamin parent terms.",
+        "previous_status": "UNMAPPED",
+        "new_status": "UNMAPPED",
+        "llm_assisted": true
+      },
+      {
+        "timestamp": "2026-08-06T00:00:00+00:00",
+        "curator": "promote_resolved_unmapped",
+        "action": "PROMOTED_TO_MAPPED",
+        "previous_status": "UNMAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": false,
+        "changes": "Promoted UNMAPPED_0306 -> kgmicrobe.ingredient:wolfes_vitamin_mix \"Wolfe's vitamin mix\" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+      },
+      {
+        "timestamp": "2026-09-04T00:00:00+00:00",
+        "curator": "mediaingredientmech-agentic-curation",
+        "action": "ANNOTATED",
+        "changes": "Added nutritional_roles.VITAMIN_SOURCE plus components and component_assertion by transcribing NCMA Medium 6 Wolfe's Vitamin Solution.",
+        "llm_assisted": true,
+        "llm_model": "gpt-5"
+      },
+      {
+        "timestamp": "2026-09-11T14:49:05.979520+00:00",
+        "curator": "fix_lipoic_stereochemistry",
+        "action": "CORRECTED",
+        "changes": "Retargeted Thioctic acid component CHEBI:30314 -> CHEBI:16494 after the source label moved from the R-enantiomer to generic lipoic acid (#454).",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-11-08T08:33:33.399902+00:00",
+        "curator": "Codex worker09 /root ten-vitamin source continuity review",
+        "action": "CORRECTED",
+        "changes": "Isolated TV-003 source-continuity proposal: retain authentic CultureBotHT generic owner path/identifier and all original history; replace the later unbridged NCMA active component assertion with the current CultureBotHT ten literal named solutes and printed mg/L values, retaining X100 only as source metadata. Preserve genuine NCMA eleven-solute/phosphate formula as a separate positive source claim; remove the unbridged NCMA phosphate/water parts from the CultureBotHT active list. Deliberately leave ten component references UNMAPPED pending independent child identity review, preserving all displaced original objects in the review beforeimage/disposition ledger. Retain original61count and legacy roles without approval. No JCM/NBRC exact routing, quantity rescaling, source-number mint, whole-owner, role or export approval.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "llm_model": "Codex"
+      },
+      {
+        "timestamp": "2026-11-08T09:11:37.734370+00:00",
+        "curator": "worker08:/root issue1237 dependent proposal",
+        "action": "CORRECTED",
+        "changes": "Compose the real W09 source-continuity event without changing its authorship, five authentic preceding events, identifier, aliases, historical count61 or inherited role objects. Bind nine literal CB named inputs to current form-compatible MIM catalog identities using preserved primary evidence; keep calcium pantothenate UNMAPPED for exact D/DL uncertainty. Preserve all ten names, order, amounts and MG_PER_L units and X100 metadata; no carrier, phosphate or rescaling. Supersede current blanket-reference deferral with nine bounded bindings and one precise hold. Establish the separate NBRC903-triggered comparator dependency for this existing owner with real beforeimage; original NBRC903 new_owner/null-before origin remains unchanged. Publish nominal JCM/NBRC source recipe separately; exact CB association, owner application, inherited roles and export remain unapproved.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "llm_model": "GPT-6"
+      }
+    ],
+    "notes": "Imported from CultureBotHT (consolidated_media.json (media-only)). Used in 61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix pending component-level recipe curation.\n\nSource-continuity correction proposal under issue1237 TV-003: Current CultureBotHT generic source definition, distinct from its ATCC/MD-VS block. The exact Mixes.csv block names ten solutes at the printed mg/L values and labels the preparation X=100 / Standard 100X vitamin solution. Values are transcribed without multiplying or dividing by X, and receiving doses are unchanged. Carrier, solvent quantity, preparation process and purchase/lot identity are not specified in this block. Cyanocobalamin is explicit here; no exact cyanocobalamin identity is transferred to JCM197/NBRC837/NBRC903 generic Vitamin B12. The preserved W09 precursor deliberately left all ten references UNMAPPED pending child review. The current W08 successor binds nine explicit named inputs to matching current MIM catalog entities after source/form review. Calcium pantothenate alone remains UNMAPPED because the source gives no D/DL designation while active CHEBI:31345 is D-specific. Lipoic acid is generic, not an R/S or racemate assertion; explicit CB cyanocobalamin is not transferred to generic JCM/NBRC Vitamin B12. These component assertions do not approve inherited child aliases, properties, roles or whole-stock equivalence.\n\nSeparate genuine NCMA source claim, preserved rather than refuted: NCMA Medium6 Wolfe's Vitamin Solution explicitly prints composition per liter: pyridoxine HCl10mg; thiamine HCl5mg; riboflavin5mg; nicotinic acid5mg; calcium pantothenate5mg; p-aminobenzoic acid5mg; thioctic acid5mg; biotin2mg; folic acid2mg; Vitamin B12 0.1mg; potassium phosphate monobasic900mg. It directs addition to distilled water and filter sterilization, without a literal 1.0L/L water quantity. Source https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf ; exact current PDF SHA256 b7bbf28efb43cfee8476e83780a55d929e574f3f0b7479583926d927409b4615, accessed2026-11-08T08:27:46.568100+00:00. This positive phosphate-containing source definition is not established as the CultureBotHT generic formulation. The September2026 NCMA annotation and all original component/role assertions remain preserved in the authentic beforeimage and unchanged history; the source itself is not wrong. No NCMA owner is minted or merged here.\n\nThe original occurrence_statistics61 is retained as the historical imported count; later available source versions enumerate62 and63 and do not prove April membership. All original source histories, aliases and identifiers remain. Legacy NCMA-based nutritional role evidence is retained without renewed role or source-equivalence approval. The nominal JCM197/NBRC837/NBRC903 report is supported separately; its eventual common owner scope is not selected by this correction, and its unknown B12 form is neither equated to nor declared different from the explicit CultureBotHT cyanocobalamin input. All8cases71CMoccurrences84KGholds and6exclusions remain outside automatic mapping release.\n\nIssue1237 current comparator supersession: this existing CultureBotHT owner correction is causally required by the NBRC903 comparison in W08 case CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, triggered only by CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531 (CultureMech:007503, frozen NBRC_904.yaml ingredient9). None of the six NBRC case observations is asserted to be a CB occurrence; zero CB campaign occurrences are claimed. The original NBRC903 new-owner proposal and its null beforeimage remain immutable reconciliation input. JCM197/NBRC837/NBRC903 support one common nominal ten-vitamin recipe with 1L distilled-water input batch and source-specific preparation; generic B12 and unspecified calcium-pantothenate stereochemistry remain explicit. Exact association with this CB concentration/X100 definition is unproven. The W06 JCM197 and W08 NBRC903 source-number candidates require central duplicate reconciliation, not installation as two owners or a new human-permission requirement. No W06 case ownership, nominal identifier mint, dose scaling, global exact alias, maintained application or role/export approval is introduced.",
+    "ingredient_type": "STOCK_SOLUTION",
+    "solution_type": "VITAMIN_MIX",
+    "components": [
+      {
+        "component_name": "pyridoxine HCl",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "10",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:30961",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "4-Aminobenzoic acid",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:30753",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "Lipoic acid",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:16494",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. Generic lipoic-acid scope; no R/S or racemate claim. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "Nicotinic Acid",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:15940",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "Riboflavin",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:17015",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "thiamine HCl",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:49105",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "calcium pantothenate",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "5",
+        "concentration_unit": "MG_PER_L",
+        "source": "Literal calcium pantothenate remains UNMAPPED: source specifies no D/DL stereochemistry; active CHEBI:31345 has D-specific structure. No D or racemate identity is inferred."
+      },
+      {
+        "component_name": "biotin",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "2",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:15956",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "Folic Acid",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "2",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:27470",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "Cyanocobalamin",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "0.1",
+        "concentration_unit": "MG_PER_L",
+        "component_id": "CHEBI:17439",
+        "source": "Literal CultureBotHT Mixes.csv input; bounded identity check against the current catalog owner and preserved primary ChEBI descriptor. Cyanocobalamin is explicit in this CB block only; no vitamer inference for generic JCM/NBRC B12. No referenced whole-owner aliases, properties, procurement or roles are approved."
+      },
+      {
+        "component_name": "Distilled water",
+        "concentration_value": "1",
+        "concentration_unit": "L_PER_SOURCE_BATCH",
+        "reference_scope": "MIM_CATALOG",
+        "component_id": "CHEBI:15377"
+      }
+    ],
+    "component_assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureBotHT/CultureBotHT/data/raw/google_sheets/media_definitions/Mixes.csv",
+          "source_record": "CultureBotHT raw Mixes.csv, exact Media=Wolfe's vitamin mix block, CSV lines38-51; vitamin rows42-51 and stock-metadata row40",
+          "notes": "Current CultureBotHT generic source definition, distinct from its ATCC/MD-VS block. The exact Mixes.csv block names ten solutes at the printed mg/L values and labels the preparation X=100 / Standard 100X vitamin solution. Values are transcribed without multiplying or dividing by X, and receiving doses are unchanged. Carrier, solvent quantity, preparation process and purchase/lot identity are not specified in this block. Cyanocobalamin is explicit here; no exact cyanocobalamin identity is transferred to JCM197/NBRC837/NBRC903 generic Vitamin B12. The preserved W09 precursor deliberately left all ten references UNMAPPED pending child review. The current W08 successor binds nine explicit named inputs to matching current MIM catalog entities after source/form review. Calcium pantothenate alone remains UNMAPPED because the source gives no D/DL designation while active CHEBI:31345 is D-specific. Lipoic acid is generic, not an R/S or racemate assertion; explicit CB cyanocobalamin is not transferred to generic JCM/NBRC Vitamin B12. These component assertions do not approve inherited child aliases, properties, roles or whole-stock equivalence. Exact file SHA256 9c58caac081620bbf5700b74fd957e56d3e5e17d17b282767ec26fabec522549; original archived capture access 2026-11-08T08:11:21.012422+00:00. Dated June block agrees; authentic August consolidated source and current occurrence links are separately retained in the review packet."
+        },
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/ten-child-identity-matrix.json",
+          "source_record": "Ten literal CB inputs; nine supplied-entity references and one exact stereochemistry hold",
+          "notes": "Archived matrix SHA256 b5f0585e161b13923b399f5f06dfea5a4c5a4cde3902b76bab8a793a646f0dd8. Current exact catalog owner bytes rechecked in this W08 composition; primary descriptors and their original archive provenance preserved. Source membership and quantities remain RECIPE_TRANSCRIPTION; catalog references are bounded named-entity adjudications assisted by an LLM, not human MappingEvidence MANUAL_CURATION. No component or ontology-mapping release approval."
+        }
+      ],
+      "notes": "Complete ten named solute entries of the inspected source block are retained. UNKNOWN describes the entire stock composition because carrier/preparation closure is not established. This current source correction does not certify the missing April2026 61-occurrence input version, the meaning of X beyond its printed annotation, or any whole-owner, role or export approval."
+    },
+    "ontology_mapping": {
+      "ontology_id": "kgmicrobe.ingredient:wolfes_vitamin_mix",
+      "ontology_label": "Wolfe's vitamin mix",
+      "ontology_source": "kgmicrobe.ingredient",
+      "mapping_quality": "FALLBACK_REGISTRY",
+      "evidence": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "MIM curation (#114)",
+          "notes": "Wolfe's vitamin mix is a named, standard, recurring multi-component supplement (61 media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym with normalisation: no term denotes it, and none could — it is a lab preparation, not a substance. Takes the STOCK_SOLUTION convention used by 12 existing mapped records: a kgmicrobe.ingredient: mint. No parent, because a multi-component mix does not narrow to any single compound (#114)."
+        }
+      ]
+    },
+    "nutritional_roles": [
+      {
+        "role": "VITAMIN_SOURCE",
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "reference_text": "NCMA Medium 6 Wolfe's Vitamin Solution",
+            "reference_type": "TECHNICAL_REPORT",
+            "url": "https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf",
+            "excerpt": "Based on Wolfe's Vitamin Solution",
+            "curator_note": "NCMA Medium 6 enumerates a Wolfe's vitamin stock containing B vitamins and related micronutrient cofactors."
+          }
+        ]
+      }
+    ]
+  },
+  "proposal": {
+    "proposal_id": "vm1237-prop-wolfe-cb-dependent",
+    "kind": "edit_existing_owner",
+    "owner_path": "data/ingredients/mapped/Wolfes_Vitamin_Mix.yaml",
+    "before_sha256": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successors/issue-1237-tenvit-v1/payloads/Wolfes_Vitamin_Mix.yaml",
+      "sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f"
+    },
+    "case_ids": [
+      "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506"
+    ],
+    "source_occurrence_ids": [
+      "CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531"
+    ],
+    "source_scope": "Comparator/source-continuity dependency of NBRC903 only; none of the six observations is a CB stock occurrence. Zero CB campaign occurrences; historical61 retained without recomputation.",
+    "cb_campaign_occurrence_count": 0,
+    "description": "Issue1237 current comparator supersession: this existing CultureBotHT owner correction is causally required by the NBRC903 comparison in W08 case CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, triggered only by CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531 (CultureMech:007503, frozen NBRC_904.yaml ingredient9). None of the six NBRC case observations is asserted to be a CB occurrence; zero CB campaign occurrences are claimed. The original NBRC903 new-owner proposal and its null beforeimage remain immutable reconciliation input. JCM197/NBRC837/NBRC903 support one common nominal ten-vitamin recipe with 1L distilled-water input batch and source-specific preparation; generic B12 and unspecified calcium-pantothenate stereochemistry remain explicit. Exact association with this CB concentration/X100 definition is unproven. The W06 JCM197 and W08 NBRC903 source-number candidates require central duplicate reconciliation, not installation as two owners or a new human-permission requirement. No W06 case ownership, nominal identifier mint, dose scaling, global exact alias, maintained application or role/export approval is introduced.",
+    "evidence_ids": [
+      "vm1237-author-assessment",
+      "vm1237-nominal-source",
+      "vm1237-child-bindings",
+      "vm1237-filed-comment",
+      "vm1237-dependency-dispositions",
+      "vm1237-primary-readback"
+    ],
+    "publication_review_obligations": [
+      "Full final-payload and full changed-case independent scientific and skeptical review.",
+      "Historical roles/aliases/identity remain unchanged, without renewed approval; source membership and catalog references do not imply owner application.",
+      "Coordinate duplicate nominal W08 NBRC903/W06 JCM197 candidates centrally without selecting a winner or silently installing both.",
+      "All prior scientific, role and export holds remain; Trypticase/Bacto admission remains FAILED/HELD."
+    ]
+  },
+  "decision": {
+    "case_id": "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+    "case_input_sha256": "1c8fdd449fe96f1f9a8599fe72941fcf09ef4d0e68a5134be4fdf52b416d9868",
+    "source": {
+      "source": "culturemech",
+      "source_case_id": "Vitamin solution**",
+      "source_label": "Vitamin solution**",
+      "raw_source_label": "Vitamin solution**"
+    },
+    "occurrence_ids": [
+      "CM_OCC:98f39f39a138ac312834b4ca11c5500f0e8c902d7ae97eb2b9f66772f4c79c9d",
+      "CM_OCC:5584b88747d36bc07ab837333c2a3c93b251649657d99cd70c3e6b9efc4ec609",
+      "CM_OCC:fd40358b728388b5f71592d81cfa5e7eb84da8ad36b19fd50c6013b044531809",
+      "CM_OCC:cfdfa2800f8f8101060517e99896c8f30ae8c228e172b6df4eb97cfeec68181a",
+      "CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531",
+      "CM_OCC:afe88130bfdfe1d5222f27f7e5017e4329a858440607c5ccdba1547764c96b99"
+    ],
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12 5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each receive a separate stock proposal. The generic calcium-pantothenate wording is not changed to a D-specific form.\n\nCurrent issue1237 supersession: Issue1237 current comparator supersession: this existing CultureBotHT owner correction is causally required by the NBRC903 comparison in W08 case CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, triggered only by CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531 (CultureMech:007503, frozen NBRC_904.yaml ingredient9). None of the six NBRC case observations is asserted to be a CB occurrence; zero CB campaign occurrences are claimed. The original NBRC903 new-owner proposal and its null beforeimage remain immutable reconciliation input. JCM197/NBRC837/NBRC903 support one common nominal ten-vitamin recipe with 1L distilled-water input batch and source-specific preparation; generic B12 and unspecified calcium-pantothenate stereochemistry remain explicit. Exact association with this CB concentration/X100 definition is unproven. The W06 JCM197 and W08 NBRC903 source-number candidates require central duplicate reconciliation, not installation as two owners or a new human-permission requirement. No W06 case ownership, nominal identifier mint, dose scaling, global exact alias, maintained application or role/export approval is introduced.",
+    "applicability": "Issue1201 reassessment of this exact frozen case, all 6 exposed occurrences and complete source contexts. Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12 5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each receive a separate stock proposal. The generic calcium-pantothenate wording is not changed to a D-specific form.\n\nNBRC903 alone triggers the existing-owner comparator correction; common-nine and NBRC1226 branches remain exact. This is not a mapping of any occurrence to the CB stock.",
+    "evidence_ids": [
+      "vm-source-4d03075e31f54261",
+      "vm-source-6f158428a9227cae",
+      "vm-source-9fd4ffc01aa8e17e",
+      "vm-source-efb7d0aab4aaaae6",
+      "vm-source-074b3fa4fbe1e64f",
+      "vm-source-f2dbcf8bd4878b90",
+      "vm-fetch-1962216682ccb735",
+      "vm-fetch-7d55379a5f033497",
+      "vm-fetch-ede69c87ee45106a",
+      "vm-fetch-19ea505c685bcbd1",
+      "vm-fetch-2630e40c26a0b155",
+      "vm-fetch-571507208cde7532",
+      "vm-owner-search",
+      "vm-context-review",
+      "vm1201-frozen-reinspection",
+      "vm1201-owner-lookup",
+      "vm1201-nbrc1226-vitamin-formulation",
+      "vm1201-nbrc903-vitamin-formulation",
+      "vm1201-common9-comparison",
+      "vm1201-ontology-preparation-lookup",
+      "vm1227-component-adjudication",
+      "vm1227-payload-assessment",
+      "vm1237-author-assessment",
+      "vm1237-nominal-source",
+      "vm1237-child-bindings",
+      "vm1237-filed-comment",
+      "vm1237-dependency-dispositions",
+      "vm1237-primary-readback"
+    ],
+    "proposal_ids": [
+      "vm1201-prop-nbrc1226-vitamin",
+      "vm1201-prop-nbrc903-vitamin",
+      "vm1201-prop-nbrc-common9",
+      "vm1237-prop-wolfe-cb-dependent"
+    ],
+    "no_change_reason": null,
+    "missing_requirement": null,
+    "owner_records": [
+      {
+        "path": "data/ingredients/mapped/ATCC_Wolfes_Vitamin_Mix.yaml",
+        "sha256": "e4acefec68bb48d0906b6fca5e7b72b48e25aac8551bcb666d1bc6ce2edc0e10"
+      },
+      {
+        "path": "data/ingredients/mapped/Wolfes_Vitamin_Mix.yaml",
+        "sha256": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738"
+      }
+    ],
+    "issue_refs": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/114",
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1227",
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719499726"
+    ],
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "publication_scope": "Isolated source-qualified proposal and evidence only; all frozen source-specific holds remain. No maintained data, roles or downstream admission changed.",
+    "prior_independent_reviews": [
+      {
+        "status": "complete",
+        "evidence_ids": [
+          "w08-1201-peer-vitamins_mixtures"
+        ]
+      },
+      {
+        "status": "complete",
+        "evidence_ids": [
+          "w08-1227-peer-vitamins_mixtures"
+        ]
+      }
+    ]
+  },
+  "nominal": {
+    "created_at": "2026-11-08T09:10:34.931462+00:00",
+    "author": "worker08:/root/vitamins",
+    "role": "source_research_assessor_and_prior_W08_author_not_independent_final_reviewer",
+    "kind": "structured_source_facts_not_IngredientRecord",
+    "nominal_recipe_sources": {
+      "JCM197": {
+        "source_id": "JCM197",
+        "capture": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/tenvit-final-application-route-v1/captures/w09/primary/captures/C-E-jcm-197.capture",
+          "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+        },
+        "original_evidence_id": "C-E-jcm-197",
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+        "original_accessed_at": "2026-11-08T05:07:31.962895+00:00",
+        "locator": "Trace vitamins table",
+        "inputs": [
+          {
+            "printed_name": "Biotin",
+            "printed_amount": "2.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 15
+          },
+          {
+            "printed_name": "Folic acid",
+            "printed_amount": "2.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 16
+          },
+          {
+            "printed_name": "Pyridoxine·HCl",
+            "printed_amount": "10.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 17
+          },
+          {
+            "printed_name": "Thiamine·HCl",
+            "printed_amount": "5.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 18
+          },
+          {
+            "printed_name": "Riboflavin",
+            "printed_amount": "5.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 19
+          },
+          {
+            "printed_name": "Nicotinic acid",
+            "printed_amount": "5.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 20
+          },
+          {
+            "printed_name": "Calcium pantothenate",
+            "printed_amount": "5.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 21
+          },
+          {
+            "printed_name": "Vitamin B12",
+            "printed_amount": "0.1",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 22
+          },
+          {
+            "printed_name": "p-Aminobenzoic acid",
+            "printed_amount": "5.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 23
+          },
+          {
+            "printed_name": "Lipoic acid",
+            "printed_amount": "5.0",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 24
+          },
+          {
+            "printed_name": "Distilled water",
+            "printed_amount": "1.0",
+            "printed_unit": "L",
+            "basis": "listed_water_input",
+            "capture_table_row_index": 25
+          }
+        ],
+        "final_stock_volume": null,
+        "no_inferred_final_concentration": true,
+        "preparation_partition": {
+          "stock": "Filter sterilize the trace vitamins while gassing with N2.",
+          "addition": "Aseptically and anaerobically add trace vitamins under N2-CO2 (80:20).",
+          "parent_only": "Parent autoclaving under N2-CO2 (80:20); adjust final parent pH to 6.8.",
+          "excluded": "8% NaHCO3, separately autoclaved 5% reducing-agent stocks, mineral-stock pH 7 with 1 N KOH, and parent pH are not vitamin-stock ingredients or pH. No quantified nitrogen part is asserted."
+        }
+      },
+      "NBRC837": {
+        "source_id": "NBRC837",
+        "capture": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/tenvit-final-application-route-v1/captures/w09/primary/captures/C-E-nbrc-837.capture",
+          "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc"
+        },
+        "original_evidence_id": "C-E-nbrc-837",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=837",
+        "original_accessed_at": "2026-11-08T05:07:37.113945+00:00",
+        "locator": "***Trace vitamins table",
+        "inputs": [
+          {
+            "printed_name": "Biotin",
+            "printed_amount": "2",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 37
+          },
+          {
+            "printed_name": "Folic acid",
+            "printed_amount": "2",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 38
+          },
+          {
+            "printed_name": "Pyridoxine-HCl",
+            "printed_amount": "10",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 39
+          },
+          {
+            "printed_name": "Thiamine-HCl",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 40
+          },
+          {
+            "printed_name": "Riboflavin",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 41
+          },
+          {
+            "printed_name": "Nicotinic acid",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 42
+          },
+          {
+            "printed_name": "Ca-pantothenate",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 43
+          },
+          {
+            "printed_name": "Vitamin B12",
+            "printed_amount": "0.1",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 44
+          },
+          {
+            "printed_name": "p-Aminobenzoic acid",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 45
+          },
+          {
+            "printed_name": "Lipoic acid",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 46
+          },
+          {
+            "printed_name": "Distilled water",
+            "printed_amount": "1",
+            "printed_unit": "L",
+            "basis": "listed_water_input",
+            "capture_table_row_index": 47
+          }
+        ],
+        "final_stock_volume": null,
+        "no_inferred_final_concentration": true,
+        "preparation_partition": {
+          "stock": "Filter-sterile vitamin solution; no explicit vitamin-stock N2-gassing instruction.",
+          "addition": "Aseptically and anaerobically add the vitamin solution.",
+          "parent_only": "Parent autoclaving under N2/CO2 (80/20); parent pH 6.8.",
+          "excluded": "Do not transfer JCM197 stock gassing. Separate 5% sulfide/cysteine preparations and trace-mineral pH 7/KOH are different preparations."
+        }
+      },
+      "NBRC903": {
+        "source_id": "NBRC903",
+        "capture": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/captures/2630e40c26a0b155.source",
+          "sha256": "d84e0266df8953fe179cf4976105c8bc93ce36ca90f7b6081f1a92741ec70f57"
+        },
+        "original_evidence_id": "vm-fetch-2630e40c26a0b155",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=903",
+        "original_accessed_at": "2026-11-08T05:07:24.438665+00:00",
+        "locator": "**Vitamin solution table",
+        "inputs": [
+          {
+            "printed_name": "Biotin",
+            "printed_amount": "2",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 41
+          },
+          {
+            "printed_name": "Folic acid",
+            "printed_amount": "2",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 42
+          },
+          {
+            "printed_name": "Pyridoxine-HCl",
+            "printed_amount": "10",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 43
+          },
+          {
+            "printed_name": "Thiamine-HCl",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 44
+          },
+          {
+            "printed_name": "Riboflavin",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 45
+          },
+          {
+            "printed_name": "Nicotinic acid",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 46
+          },
+          {
+            "printed_name": "Ca-pantothenate",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 47
+          },
+          {
+            "printed_name": "Vitamin B12",
+            "printed_amount": "0.1",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 48
+          },
+          {
+            "printed_name": "p-Aminobenzoic acid",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 49
+          },
+          {
+            "printed_name": "Lipoic acid",
+            "printed_amount": "5",
+            "printed_unit": "mg",
+            "basis": "listed_source_batch",
+            "capture_table_row_index": 50
+          },
+          {
+            "printed_name": "Distilled water",
+            "printed_amount": "1",
+            "printed_unit": "L",
+            "basis": "listed_water_input",
+            "capture_table_row_index": 51
+          }
+        ],
+        "final_stock_volume": null,
+        "no_inferred_final_concentration": true,
+        "preparation_partition": {
+          "stock": "Filter sterilize vitamin solution. No vitamin-stock gas or pH instruction is stated.",
+          "addition": "Before inoculation, aseptically and anaerobically add vitamin solution, sulfur and sulfide.",
+          "parent_only": "Parent pH 7 and autoclaving under N2.",
+          "excluded": "Three successive days of 105 C sulfur sterilization, neutralized 5% sulfide stock, and mineral-stock KOH/pH 6.5 then 7 do not describe the vitamin stock."
+        }
+      }
+    },
+    "nominal_comparison": "Ten named input masses and one litre distilled-water input agree after documented HCl punctuation and calcium abbreviation normalization. Preparation remains partitioned. This is a nominal recipe assertion, not proof of identical supplied B12 form or common owner identity.",
+    "precise_unknowns": [
+      "Generic Vitamin B12 remains ungrounded; do not infer cyanocobalamin or adopt the vitamin-B12 class as a distinct supplied substance.",
+      "Unqualified calcium pantothenate does not select D or DL; no D-specific CHEBI:31345 binding follows.",
+      "Listed 1 L distilled water is an input batch, not stated final stock volume or 1 L/L water fraction.",
+      "No vitamin-stock pH, purchased lot or identical unreported gas handling is inferred."
+    ],
+    "NCMA_separate_positive_source": {
+      "source_id": "NCMA6",
+      "capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/tenvit-continuity-resolution-v1/captures/ncma-medium6-current.pdf",
+        "sha256": "b7bbf28efb43cfee8476e83780a55d929e574f3f0b7479583926d927409b4615"
+      },
+      "capture_receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/tenvit-continuity-resolution-v1/captures/ncma-medium6-current-receipt.json",
+        "sha256": "890464dbb34d9f532e44fd6f2c83c5cc135159e7c0896c5f212f62246befb1f0"
+      },
+      "url": "https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf",
+      "original_accessed_at": "2026-11-08T08:27:46.568100+00:00",
+      "locator": "Complete one-page PDF: Composition per liter table and final preparation sentence",
+      "inputs": [
+        {
+          "printed_name": "Pyridoxine HCl",
+          "printed_amount": "10.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Thiamine HCl",
+          "printed_amount": "5.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Riboflavin",
+          "printed_amount": "5.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Nicotinic Acid",
+          "printed_amount": "5.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Calcium pantothenate",
+          "printed_amount": "5.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "p-Aminobenzoic acid",
+          "printed_amount": "5.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Thioctic acid",
+          "printed_amount": "5.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Biotin",
+          "printed_amount": "2.0",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Folic acid",
+          "printed_amount": "2",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Vitamin B12",
+          "printed_amount": "0.1",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        },
+        {
+          "printed_name": "Potassium phosphate monobasic",
+          "printed_amount": "900",
+          "printed_unit": "mg",
+          "basis": "per_liter_explicit_source_heading"
+        }
+      ],
+      "carrier": {
+        "name": "distilled water",
+        "quantity": null,
+        "unit": null
+      },
+      "preparation": "Add components to distilled water and filter sterilize.",
+      "scope": "Positive eleven-solute phosphate-containing source claim. No numeric 1.0 L/L water claim, no CB association, no new NCMA owner."
+    },
+    "CultureBotHT_source": {
+      "capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/tenvit-final-application-route-v1/captures/w09/history/captures/Mixes.csv",
+        "sha256": "9c58caac081620bbf5700b74fd957e56d3e5e17d17b282767ec26fabec522549"
+      },
+      "original_accessed_at": "2026-11-08T08:11:21.012422+00:00",
+      "original_capture_metadata": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/tenvit-continuity-resolution-v1/history/capture-manifest.json",
+        "sha256": "321110af8a94cf165ac1bef1d6b445dfb6171d101751cc65a16303ebf68661fe"
+      },
+      "locator": "CSV lines 38–51; metadata line 40; ten solute rows 42–51",
+      "inputs": [
+        {
+          "printed_name": "pyridoxine HCl",
+          "printed_amount": "10",
+          "printed_unit": "mg/L",
+          "csv_line": 42
+        },
+        {
+          "printed_name": "4-Aminobenzoic acid",
+          "printed_amount": "5",
+          "printed_unit": "mg/L",
+          "csv_line": 43
+        },
+        {
+          "printed_name": "Lipoic acid",
+          "printed_amount": "5",
+          "printed_unit": "mg/L",
+          "csv_line": 44
+        },
+        {
+          "printed_name": "Nicotinic Acid",
+          "printed_amount": "5",
+          "printed_unit": "mg/L",
+          "csv_line": 45
+        },
+        {
+          "printed_name": "Riboflavin",
+          "printed_amount": "5",
+          "printed_unit": "mg/L",
+          "csv_line": 46
+        },
+        {
+          "printed_name": "thiamine HCl",
+          "printed_amount": "5",
+          "printed_unit": "mg/L",
+          "csv_line": 47
+        },
+        {
+          "printed_name": "calcium pantothenate",
+          "printed_amount": "5",
+          "printed_unit": "mg/L",
+          "csv_line": 48
+        },
+        {
+          "printed_name": "biotin",
+          "printed_amount": "2",
+          "printed_unit": "mg/L",
+          "csv_line": 49
+        },
+        {
+          "printed_name": "Folic Acid",
+          "printed_amount": "2",
+          "printed_unit": "mg/L",
+          "csv_line": 50
+        },
+        {
+          "printed_name": "Cyanocobalamin",
+          "printed_amount": "0.1",
+          "printed_unit": "mg/L",
+          "csv_line": 51
+        }
+      ],
+      "metadata": {
+        "X": "100",
+        "description": "Standard 100X vitamin solution (based on Wolfe's formulation)"
+      },
+      "solvent": null,
+      "preparation": null,
+      "scope": "Transcribe printed mg/L values without applying X as a multiplier. Ten named solutes, explicit Cyanocobalamin. No listed water or phosphate input in this complete block; absence is not a purity assertion."
+    },
+    "whole_owner_or_route_approval": false
+  }
+}

@@ -1,0 +1,144 @@
+identifier: kgmicrobe.ingredient:jcm1023_vitamin_mixture
+preferred_term: JCM 1023 vitamin mixture
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1023_vitamin_mixture
+  ontology_label: JCM 1023 vitamin mixture
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1023
+    notes: JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600.
+      Registry preparation identity, not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600.
+  Distinct from JCM 903: pyridoxamine dihydrochloride 15 mg in a 100 ml water batch;
+  JCM 903 uses pyridoxine hydrochloride and DL-calcium pantothenate in 1 L.   Raw
+  source labels remain source-scoped in the decisions; no generic label is published
+  as a global synonym. Quantified components use the literal preparation batch unless
+  explicitly marked MG_PER_L. Component names retain source specificity without inferred
+  vitamer, hydrate or stereoisomer IDs. Occurrence counts remain zero pending source-specific
+  integration. No roles or downstream hold release is proposed.'
+components:
+- component_name: Biotin
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:15956
+  source: 'Literal source component: Biotin. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names Biotin; the inspected active catalog and primary ontology
+    identity CHEBI:15956 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Generic B12 does not select a vitamer.
+    CHEBI:176843 is a class; CHEBI:17439 selects cyanocobalamin. Preserve source and
+    owner holds.'
+- component_name: p-Aminobenzoic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:30753
+  source: 'Literal source component: p-Aminobenzoic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names p-Aminobenzoic acid; the inspected active
+    catalog and primary ontology identity CHEBI:30753 match this stated chemical form.
+    Source spelling, amount, unit and preparation boundary are preserved; no role,
+    owner-wide or export approval is transferred.'
+- component_name: Folic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:27470
+  source: 'Literal source component: Folic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Folic acid; the inspected active catalog
+    and primary ontology identity CHEBI:27470 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Thiamine·HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:49105
+  source: 'Literal source component: Thiamine·HCl. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Thiamine·HCl; the inspected active catalog
+    and primary ontology identity CHEBI:49105 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Riboflavin
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:17015
+  source: 'Literal source component: Riboflavin. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Riboflavin; the inspected active catalog
+    and primary ontology identity CHEBI:17015 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Pyridoxamine·2HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '15.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:131532
+  source: 'Literal source component: Pyridoxamine·2HCl. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Pyridoxamine·2HCl; the inspected active catalog
+    and primary ontology identity CHEBI:131532 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  component_id: CHEBI:15377
+  source: 'Literal source component: Distilled water. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Distilled water; the inspected active catalog
+    and primary ontology identity CHEBI:15377 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1023
+    source_record: JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600.
+    notes: 'Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. Distinct from JCM 903: pyridoxamine dihydrochloride 15 mg in a
+      100 ml water batch; JCM 903 uses pyridoxine hydrochloride and DL-calcium pantothenate
+      in 1 L.'
+curation_history:
+- timestamp: '2026-11-08T05:57:32.780129+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: 'Create source-qualified preparation proposal after issue1201 reassessment.
+    JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600. Distinct
+    from JCM903: pyridoxamine dihydrochloride 15 mg in a 100 ml water batch; JCM903
+    uses pyridoxine hydrochloride and DL-calcium pantothenate in 1 L.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.042248+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 7 compatible source components to
+    active catalog entities or explicitly conditional selected-proposal entities without
+    copying role or export approval. Earlier history and all source, scientific, role,
+    withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

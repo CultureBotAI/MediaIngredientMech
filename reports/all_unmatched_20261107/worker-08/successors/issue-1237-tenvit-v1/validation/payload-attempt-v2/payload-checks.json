@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "at": "2026-11-08T09:14:17.657893+00:00",
+  "executor": "worker08:/root/vitamins",
+  "role": "technical executor and prior source author; no independent science approval",
+  "payload_sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+  "guarded_replay_sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+  "controls": [
+    {
+      "name": "extra-field",
+      "type": "actual_native_guard",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/extra-field.json",
+        "sha256": "85f2e6d0278d98cc0681de3dbd52cebaf2cd909fc462536f379a8a062c9bba95"
+      },
+      "rejected": true,
+      "diagnostic": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/extra-field-must-not-exist.yaml\n  - Additional properties are not allowed ('unknown_tenvit_native_control' was unexpected) in /",
+      "target_absent": true
+    },
+    {
+      "name": "bad-enum",
+      "type": "actual_native_guard",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/bad-enum.json",
+        "sha256": "ef1c8f8b6fbd1265e26b5281d6c6fa0670ca19934f5494a812b49491f25142ce"
+      },
+      "rejected": true,
+      "diagnostic": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/bad-enum-must-not-exist.yaml\n  - 'INVALID_NATIVE_ENUM' is not one of ['COMPLETE', 'PARTIAL', 'UNKNOWN'] in /component_assertion/completeness",
+      "target_absent": true
+    },
+    {
+      "name": "scaled-X100",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/scaled-X100.json",
+        "sha256": "ebb306bd70da386c4498431f7586dce29311cd3d38c967d72c307a3609507d53"
+      },
+      "rejected": true,
+      "diagnostic": "ten exact source names/order/values/units"
+    },
+    {
+      "name": "changed-unit",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/changed-unit.json",
+        "sha256": "9451913962d05222985c1c89ce129cdc8a6e707e39c6671d023034e658f0021a"
+      },
+      "rejected": true,
+      "diagnostic": "ten exact source names/order/values/units"
+    },
+    {
+      "name": "reordered-inputs",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/reordered-inputs.json",
+        "sha256": "48b3e9c80347905b823e61aab6292b605afe007b413ca82e5efc9c286ec0eccd"
+      },
+      "rejected": true,
+      "diagnostic": "ten exact source names/order/values/units"
+    },
+    {
+      "name": "invented-water",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/invented-water.json",
+        "sha256": "4f2b5adc0b8e3eb8a26bcdb5a4f1e074653b9ee968783315563348a3c5d6114b"
+      },
+      "rejected": true,
+      "diagnostic": "ten exact source names/order/values/units"
+    },
+    {
+      "name": "lost-W09-author",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/lost-W09-author.json",
+        "sha256": "f9350e6045f904806ff468912cf14f42254d4a0b01123f58b65d05657bcfd868"
+      },
+      "rejected": true,
+      "diagnostic": "W09 event authorship retained"
+    },
+    {
+      "name": "null-beforeimage",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/null-beforeimage.json",
+        "sha256": "c6888bf1bdac56e2ccd8e605edf1beffa8ec7117e87afd64bf064e55efbf0421"
+      },
+      "rejected": true,
+      "diagnostic": "genuine nonnull existing beforeimage"
+    },
+    {
+      "name": "lost-occurrence",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/lost-occurrence.json",
+        "sha256": "a040739e7dde404419063f4181c32f2983c4d1bdec5c99e84d5a5b5bb7362a0c"
+      },
+      "rejected": true,
+      "diagnostic": "six occurrence boundaries retained"
+    },
+    {
+      "name": "D-pantothenate",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/D-pantothenate.json",
+        "sha256": "ee9ddc574634d460687eacc4cea643421c177c567c8493265ca19301e506f75b"
+      },
+      "rejected": true,
+      "diagnostic": "planned named entity IDs"
+    },
+    {
+      "name": "generic-B12-selected",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/generic-B12-selected.json",
+        "sha256": "207b909ea0b6d7116ca9e5a01bc1bfde8882335eaeed9c9dac54c30b3f83f8fd"
+      },
+      "rejected": true,
+      "diagnostic": "generic nominal B12 unselected"
+    },
+    {
+      "name": "water-as-final-volume",
+      "type": "same_exact_invariant_path_as_positive",
+      "input": {
+        "path": ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload-attempt-v2/controls/water-as-final-volume.json",
+        "sha256": "92cf01ead62278b1138d3aeb7cb6f96a281c9077046a3ddf3ca05b678f11f3ef"
+      },
+      "rejected": true,
+      "diagnostic": "water input not final volume"
+    }
+  ],
+  "input_hashes": {
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/payloads/Wolfes_Vitamin_Mix.yaml": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/beforeimages/Wolfes_Vitamin_Mix.yaml": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/candidate-fe607027.yaml": "fe6070272f269fde7683696e4c46a331902ab88baac8c5cc93db7bddf9d0ec1b",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/captures/w09/history/captures/Mixes.csv": "9c58caac081620bbf5700b74fd957e56d3e5e17d17b282767ec26fabec522549",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/proposal.json": "73e8fdf31d13a2891482f2ec3ab3b51910a9f902cceea8adef30008071550cb7",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/author/decision.json": "f1475252112e3608db55f9e441b9d93248c1e73701bf0dbf9ecf32ea5b0d4d29",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/research/nominal-recipe-evidence.json": "423862e269071182f1fd782e2483e25e4004877c6e4687fbc97a78b3827f435e",
+    "src/mediaingredientmech/validation/write_validated.py": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+    "src/mediaingredientmech/schema/mediaingredientmech.yaml": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+    ".temp/all-unmatched-worker-08/tenvit-dependent-v1/validation/payload_checks_v2.py": "8dcbc87b13d91c1699e5279564ffd4cc3f08159af25730dde0875a107efc1c87"
+  },
+  "exact_source_invariants": "Ten ordered literal CB inputs and units; X metadata only; five original events plus W09 event retained; nine planned references with pantothenate hold; genuine preimage; all six case occurrences; nominal generic B12 and water input stay unselected.",
+  "scientific_approval": false,
+  "maintained_writes": false,
+  "application_authorized": false
+}

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-08T09:14:23.326275+00:00",
+  "attempts": [
+    {
+      "command": "ps -ax -o pid,etime,command",
+      "result": "Operation not permitted by sandbox",
+      "effect": "Optional process status only; preservation receipt completed and read directly instead."
+    },
+    {
+      "command": "git ls-remote origin refs/heads/review/all-unmatched-w08-source-review-20261107",
+      "initial_result": "Sandbox network could not resolve github.com",
+      "retry": "Same read-only command with authorized network escalation succeeded; remote-before.txt contains actual response."
+    }
+  ],
+  "no_unavailable_source_claimed_read": true
+}
