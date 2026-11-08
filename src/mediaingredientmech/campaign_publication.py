@@ -265,6 +265,28 @@ def row_projection(
     require(
         len(old_slots) == len(old) and len(new_slots) == len(generated), "ambiguous native row slot"
     )
+    for record in records:
+        if record["shape"] == "demotion":
+            previous = relative(record["before_source_record"])
+            destination = relative(record["source_record"])
+            require(
+                record.get("kind") == "demote"
+                and PurePosixPath(previous).parent == PurePosixPath("data/ingredients/mapped")
+                and PurePosixPath(destination).parent == PurePosixPath("data/ingredients/unmapped")
+                and PurePosixPath(previous).name == PurePosixPath(destination).name
+                and subject(previous) == subject(destination)
+                and record["before_yaml_sha256"] is not None,
+                "demotion requires authentic same-subject mapped-to-unmapped relocation",
+            )
+            demoted_subject = subject(destination)
+            require(
+                any(key[0] == demoted_subject for key in old_slots),
+                "demotion has no canonical subject slots to remove",
+            )
+            require(
+                not any(key[0] == demoted_subject for key in new_slots),
+                "native generation retained a demoted subject or registry slot",
+            )
     expected = {}
     for key in old_slots.keys() | new_slots.keys():
         if key[0] in subject_owners:
@@ -462,7 +484,7 @@ def _capture_source_completion(capture: Capture, proof: dict) -> None:
         capture.checks.append(snapshot_recheck)
 
     for record in proof["records"]:
-        if record["shape"] == "promotion":
+        if record["shape"] in {"promotion", "demotion"}:
             old_path = member(root, relative(record["before_source_record"]))
             require(not os.path.lexists(old_path), "retired source reappeared")
             capture.absent.add(old_path)
@@ -495,15 +517,15 @@ def _receipt(
                 "verification",
             )
         }
-        if owner["shape"] == "promotion":
+        if owner["shape"] in {"promotion", "demotion"}:
             previous = relative(owner["before_source_record"])
             require(
                 not proof["owner_chains"].get(previous),
-                "promotion old path has native owner-chain history; migration review required",
+                f"{owner['shape']} old path has native owner-chain history; migration review required",
             )
             require(
                 not proof["owner_chains"].get(owner["source_record"]),
-                "promotion destination has native owner-chain history; migration review required",
+                f"{owner['shape']} destination has native owner-chain history; migration review required",
             )
             record["before_source_record"] = previous
         records.append(record)

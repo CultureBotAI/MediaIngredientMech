@@ -1,8 +1,10 @@
 """Apply an accepted, hash-bound source-only campaign plan (#1174).
 
-This module proves file transitions, not scientific approval. The three allowed
-operations are edit, create and explicit unmapped-to-mapped promotion. A batch
-is recoverable, not atomically rolled back. Mapping publication is separate.
+This module proves file transitions, not scientific approval. The operations
+are edit, create, explicit unmapped-to-mapped promotion and reviewed same-basename
+mapped-to-unmapped demotion (#741). Demotion withholds an AMBIGUOUS owner without
+an ontology mapping and requires an accepted review of the exact relocation.
+A batch is recoverable, not atomically rolled back. Mapping publication is separate.
 
 Inherited surviving collision pairs can receive same-path edits only with their
 identifiers, preferred names and statuses preserved (#1251). Reviewed owners can
@@ -10,7 +12,7 @@ leave a family, but no new colliding pair inherits the old family exception.
 Existing REJECTED owners can receive substantive same-path, same-key maintenance
 while remaining REJECTED (#1252). An existing UNMAPPED owner may also be rejected
 at its unchanged unmapped path with its keys preserved. Neither route approves
-identity, a merge, reactivation or demotion; other provenance guards still apply.
+identity, a merge or reactivation; the separate demotion guards still apply.
 """
 
 from __future__ import annotations
@@ -186,6 +188,17 @@ RECORD_KEYS = {
     "change",
     "verification",
 }
+RELOCATION_REVIEW_KEYS = {
+    "schema_version",
+    "operation",
+    "operation_id",
+    "before_source_record",
+    "source_record",
+    "before_yaml_sha256",
+    "after_yaml_sha256",
+    "origins",
+}
+RELOCATION_SHAPES = {"promote": "promotion", "demote": "demotion"}
 BINDING_KEYS = {"binding_id", "role", "path", "sha256", "published_head", "published_path"}
 ORIGIN_KEYS = {
     "worker_slot",
@@ -560,10 +573,10 @@ def _load(
     payloads, operations, origins_seen, destinations, sources = {}, [], set(), set(), set()
     expected_after = dict(before)
     for entry in plan["records"]:
-        closed(entry, RECORD_KEYS, "owner operation")
+        closed(entry, _record_keys(entry), "owner operation")
         opid, kind = text(entry["operation_id"], "operation id"), entry["kind"]
         require(
-            opid not in payloads and kind in {"edit", "create", "promote"},
+            opid not in payloads and kind in {"edit", "create", "promote", "demote"},
             "Duplicate/unknown operation",
         )
         destination = owner_path(entry["source_record"])
@@ -588,12 +601,21 @@ def _load(
             sources.add(source)
             if kind == "edit":
                 require(source == destination, "Edit cannot relocate an owner")
-            else:
+            elif kind == "promote":
                 require(
                     source.startswith("data/ingredients/unmapped/")
                     and destination.startswith("data/ingredients/mapped/")
                     and destination not in before,
                     "Invalid promotion paths",
+                )
+                del expected_after[source]
+            else:
+                require(
+                    source.startswith("data/ingredients/mapped/")
+                    and destination.startswith("data/ingredients/unmapped/")
+                    and PurePosixPath(source).name == PurePosixPath(destination).name
+                    and destination not in before,
+                    "Invalid demotion paths or changed subject basename",
                 )
                 del expected_after[source]
         text(entry["change"], "change explanation")
@@ -674,6 +696,33 @@ def _load(
                 all(cases.get(caseid) == sha(value) for caseid, value in claim.items()),
                 "Source case hash differs",
             )
+        if kind == "demote":
+            review_id = text(entry["relocation_review_binding"], "relocation review binding")
+            require(
+                review_id in acceptance["review_bindings"]
+                and bindings.get(review_id, {}).get("role") == "review",
+                "Demotion lacks an accepted relocation review",
+            )
+            reviewed = closed(
+                unique_json(binding_bytes[review_id]),
+                RELOCATION_REVIEW_KEYS,
+                "demotion relocation review",
+            )
+            require(
+                type(reviewed["schema_version"]) is int
+                and reviewed
+                == {
+                    "schema_version": 1,
+                    "operation": "review_campaign_owner_demotion",
+                    "operation_id": opid,
+                    "before_source_record": source,
+                    "source_record": destination,
+                    "before_yaml_sha256": entry["before_yaml_sha256"],
+                    "after_yaml_sha256": digest(raw),
+                    "origins": entry["origins"],
+                },
+                "Relocation review does not bind the exact demotion tuple",
+            )
         operations.append(dict(entry))
     require(expected_after == after, "After inventory is not the exact declared transition")
     require(
@@ -698,6 +747,15 @@ def _load(
         protected,
         payloads,
         operations,
+    )
+
+
+def _record_keys(entry):
+    """Keep the original three operation shapes closed and byte-compatible."""
+    return RECORD_KEYS | (
+        {"relocation_review_binding"}
+        if isinstance(entry, dict) and entry.get("kind") == "demote"
+        else set()
     )
 
 
@@ -798,6 +856,13 @@ def _validate_records(root, operations, payloads, before_bytes):
                     and data.get("mapping_status") == "MAPPED",
                     "Wrong promotion lineage",
                 )
+            elif entry["kind"] == "demote":
+                require(
+                    old.get("mapping_status") == "MAPPED"
+                    and data.get("mapping_status") == "AMBIGUOUS"
+                    and data.get("ontology_mapping") is None,
+                    "Demotion requires mapped MAPPED to unmapped AMBIGUOUS without grounding",
+                )
 
 
 def prepare(root: Path, plan_path: Path, acceptance_path: Path) -> Prepared:
@@ -830,10 +895,10 @@ def prepare(root: Path, plan_path: Path, acceptance_path: Path) -> Prepared:
     _validate_records(root, operations, payloads, {p: f.content for p, f in before.items()})
     proof = verify_mapping_chain(root)
     for entry in operations:
-        if entry["kind"] == "promote":
+        if entry["kind"] in RELOCATION_SHAPES:
             require(
                 not proof["owner_chains"].get(entry["before_source_record"]),
-                "Promotion source has prior native owner-chain links",
+                f"{RELOCATION_SHAPES[entry['kind']].title()} source has prior native owner-chain links",
             )
         if entry["kind"] == "edit":
             chain = proof["owner_chains"].get(entry["before_source_record"], [])
@@ -978,7 +1043,7 @@ def _rename_exclusive(source_fd: int, source: str, target_fd: int, target: str) 
     else:
         function, flags = None, 0
     if function is None:
-        raise ValueError("No exclusive promotion-retirement primitive")
+        raise ValueError("No exclusive owner-retirement primitive")
     function.argtypes = [
         ctypes.c_int,
         ctypes.c_char_p,
@@ -996,7 +1061,7 @@ def _retire(source: FrozenFile, recovery: Path, recheck):
     no_alias(recovery)
     require(
         recovery.is_dir() and not list(recovery.iterdir()),
-        "Promotion recovery directory is not fresh",
+        "Relocation recovery directory is not fresh",
     )
     source.verify()
     recheck()
@@ -1005,7 +1070,7 @@ def _retire(source: FrozenFile, recovery: Path, recheck):
     try:
         require(
             (os.fstat(source_fd).st_dev, os.fstat(source_fd).st_ino) == source.parents[0][1],
-            "Promotion source parent changed",
+            "Relocation source parent changed",
         )
         source.verify()
         # No bytes are destroyed. A raced entry is retained here and causes a
@@ -1014,9 +1079,9 @@ def _retire(source: FrozenFile, recovery: Path, recheck):
         retired = FrozenFile.capture(recovery / "retired-owner.yaml")
         require(
             retired.identity == source.identity and retired.content == source.content,
-            "Promotion retired a changed entry; retained for recovery",
+            "Relocation retired a changed entry; retained for recovery",
         )
-        require(not os.path.lexists(source.path), "Promotion source reappeared")
+        require(not os.path.lexists(source.path), "Relocation source reappeared")
         return retired
     finally:
         os.close(source_fd)
@@ -1060,6 +1125,7 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
                 "edit": "campaign_owner_edit",
                 "create": "new_record",
                 "promote": "promotion",
+                "demote": "demotion",
             }[entry["kind"]],
             "destination_path": entry["source_record"],
             "source_path": before_path,
@@ -1071,8 +1137,8 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
             "after_yaml_sha256": digest(prepared.payloads[entry["operation_id"]]),
         }
         rows.append(row)
-        if entry["kind"] == "promote":
-            (receipt_dir / f"promotion-{index:04}").mkdir(mode=0o700)
+        if entry["kind"] in RELOCATION_SHAPES:
+            (receipt_dir / f"{RELOCATION_SHAPES[entry['kind']]}-{index:04}").mkdir(mode=0o700)
     for category, files in (("checkpoint", prepared.checkpoint), ("protected", prepared.protected)):
         (receipt_dir / category).mkdir()
         for name, frozen in files.items():
@@ -1169,10 +1235,10 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
                 else:
                     published = _new_owner(root, destination, raw, lambda: recheck())
                 prepared.states[destination] = published
-                if entry["kind"] == "promote":
+                if entry["kind"] in RELOCATION_SHAPES:
                     retired = _retire(
                         prepared.states[source],
-                        receipt_dir / f"promotion-{index:04}",
+                        receipt_dir / f"{RELOCATION_SHAPES[entry['kind']]}-{index:04}",
                         lambda: recheck(),
                     )
                     result["retired_sources"][source] = {
@@ -1262,7 +1328,7 @@ def verify_completed(root: Path, plan_path: Path, receipt_path: Path) -> dict:
     captures: dict[str, FrozenFile] = {}
     protected_history: dict[str, bytes] = {}
     snapshot_memberships: dict[Path, set[str]] = {}
-    row_keys = RECORD_KEYS | {
+    row_extra_keys = {
         "shape",
         "destination_path",
         "source_path",
@@ -1274,7 +1340,7 @@ def verify_completed(root: Path, plan_path: Path, receipt_path: Path) -> dict:
         "Missing completed owner records",
     )
     for row in saved["records"]:
-        closed(row, row_keys, "completed owner record")
+        closed(row, _record_keys(row) | row_extra_keys, "completed owner record")
         if row["before_source_record"] is not None:
             raw = _ref(root, row["before_capture"], captures)
             require(digest(raw) == row["before_yaml_sha256"], "False source backup")
@@ -1360,6 +1426,7 @@ def verify_completed(root: Path, plan_path: Path, receipt_path: Path) -> dict:
                 "edit": "campaign_owner_edit",
                 "create": "new_record",
                 "promote": "promotion",
+                "demote": "demotion",
             }[entry["kind"]],
             "destination_path": entry["source_record"],
             "source_path": entry["before_source_record"],
@@ -1387,17 +1454,20 @@ def verify_completed(root: Path, plan_path: Path, receipt_path: Path) -> dict:
                 not proof["owner_chains"].get(entry["source_record"]),
                 "New destination has prior native owner-chain links",
             )
-        if entry["kind"] == "promote":
+        if entry["kind"] in RELOCATION_SHAPES:
             source = entry["before_source_record"]
             require(
                 not proof["owner_chains"].get(source),
-                "Promotion source has prior native owner-chain links",
+                f"{RELOCATION_SHAPES[entry['kind']].title()} source has prior native owner-chain links",
             )
-            retired = receipt_path.parent / f"promotion-{index:04}/retired-owner.yaml"
+            retired = (
+                receipt_path.parent
+                / f"{RELOCATION_SHAPES[entry['kind']]}-{index:04}/retired-owner.yaml"
+            )
             frozen = FrozenFile.capture(retired)
             require(
                 frozen.content == historical[source] and not os.path.lexists(root / source),
-                "Promotion relocation proof differs",
+                "Owner relocation proof differs",
             )
             captures[str(retired.relative_to(root))] = frozen
             expected_retired[source] = {

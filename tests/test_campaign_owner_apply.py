@@ -1402,3 +1402,546 @@ def test_1252_completed_rejection_rechecks_final_owner(tmp_path, fault):
         owner.verify_completed(
             tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
         )
+
+
+DEMOTED = "data/ingredients/unmapped/Existing.yaml"
+
+
+def repin_demotion(root, plan, *, update_review=True):
+    """#741: private accepted fixture tuple, never scientific authorization."""
+    before = json.loads((root / plan["before_inventory"]["path"]).read_bytes())["owners"]
+    after = dict(before)
+    for entry in plan["records"]:
+        entry["after_capture"] = ref(root, entry["after_capture"]["path"])
+        if entry["kind"] in {"promote", "demote"}:
+            after.pop(entry["before_source_record"], None)
+        after[entry["source_record"]] = entry["after_capture"]["sha256"]
+        if update_review and entry["kind"] == "demote":
+            put(
+                root,
+                "demotion-review.json",
+                {
+                    "schema_version": 1,
+                    "operation": "review_campaign_owner_demotion",
+                    "operation_id": entry["operation_id"],
+                    "before_source_record": entry["before_source_record"],
+                    "source_record": entry["source_record"],
+                    "before_yaml_sha256": entry["before_yaml_sha256"],
+                    "after_yaml_sha256": entry["after_capture"]["sha256"],
+                    "origins": entry["origins"],
+                },
+            )
+    put(root, "after.json", {"schema_version": 1, "owners": after})
+    plan["after_inventory"] = ref(root, "after.json")
+    for binding in plan["bindings"]:
+        if binding["binding_id"] == "demotion-review":
+            binding.update(ref(root, "demotion-review.json"))
+    save_contract(root, plan)
+    accepted = json.loads((root / "acceptance.json").read_bytes())
+    accepted["review_bindings"].append("demotion-review")
+    put(root, "acceptance.json", accepted)
+
+
+def demotion_case(root, *, chain_owner=None, before_status="MAPPED"):
+    """Real published existing-owner origin and separate exact relocation review."""
+    plan = setup(root, chain_owner=chain_owner, chain_sha="b" * 64 if chain_owner else None)
+    before_data = owner.record((root / EDIT).read_bytes())
+    before_data["mapping_status"] = before_status
+    before_data["curation_history"][0]["new_status"] = before_status
+    before_data["ontology_mapping"] = {
+        "ontology_id": "CHEBI:1",
+        "ontology_label": "Existing",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+    }
+    render(root, EDIT, before_data)
+    before = owner.hashes(owner.inventory(root))
+    put(root, "before.json", {"schema_version": 1, "owners": before})
+    withheld = copy.deepcopy(before_data)
+    withheld.update(identifier="kgmicrobe.compound:existing", mapping_status="AMBIGUOUS")
+    del withheld["ontology_mapping"]
+    change = event("ANNOTATED", "AMBIGUOUS")
+    change["previous_status"] = before_status
+    withheld["curation_history"].append(change)
+    render(root, "intake/payload-0.yaml", withheld)
+    proposals = json.loads((root / "intake/proposals.json").read_bytes())
+    proposals["proposals"][0].update(
+        before_sha256=before[EDIT],
+        after_capture={"root": "artifact", **ref(root, "intake/payload-0.yaml")},
+        publication_obligations=["Explicit same-basename relocation to the unmapped collection"],
+    )
+    put(root, "intake/proposals.json", proposals)
+    run_git(root, "add", "data/ingredients", "before.json", "intake")
+    run_git(
+        root,
+        "-c",
+        "user.email=fixture@example.invalid",
+        "-c",
+        "user.name=Fixture",
+        "commit",
+        "-qm",
+        "#741 explicit demotion source fixture",
+    )
+    head = run_git(root, "rev-parse", "HEAD")
+    plan["baseline_commit"] = head
+    plan["intake_heads"] = {"worker-01": head}
+    plan["before_inventory"] = ref(root, "before.json")
+    plan["records"] = [plan["records"][0]]
+    plan["records"][0].update(
+        kind="demote",
+        source_record=DEMOTED,
+        before_yaml_sha256=before[EDIT],
+        relocation_review_binding="demotion-review",
+    )
+    for binding in plan["bindings"]:
+        binding.update(ref(root, binding["path"]))
+        if binding["published_head"] is not None:
+            binding["published_head"] = head
+    plan["records"][0]["origins"][0]["head_sha"] = head
+    plan["bindings"].append(
+        {
+            "binding_id": "demotion-review",
+            "role": "review",
+            "path": "demotion-review.json",
+            "sha256": "0" * 64,
+            "published_head": None,
+            "published_path": None,
+        }
+    )
+    repin_demotion(root, plan)
+    return plan
+
+
+def test_741_demotion_real_application_and_completed_replay(tmp_path):
+    plan = demotion_case(tmp_path)
+    ready = prepare(tmp_path)
+    before = ready.before[EDIT]
+    dry = owner.apply(ready, tmp_path / "receipt")
+    assert dry["applied"] is False and not (tmp_path / "receipt").exists()
+    result = owner.apply(ready, tmp_path / "receipt", enabled=True)
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert not (tmp_path / EDIT).exists()
+    data = owner.record((tmp_path / DEMOTED).read_bytes())
+    assert data["mapping_status"] == "AMBIGUOUS" and "ontology_mapping" not in data
+    assert data["curation_history"][:-1] == owner.record(before.content)["curation_history"]
+    retired = owner.FrozenFile.capture(tmp_path / "receipt/demotion-0000/retired-owner.yaml")
+    assert retired.identity == before.identity and retired.content == before.content
+    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == before.content
+    row = proof["records"][0]
+    assert row["shape"] == "demotion" and row["kind"] == "demote"
+    assert row["source_record"] == DEMOTED and row["before_source_record"] == EDIT
+    assert row["before_yaml_sha256"] == owner.digest(before.content)
+    assert row["origins"] == plan["records"][0]["origins"]
+    assert row["relocation_review_binding"] == "demotion-review"
+    assert result["state"] == "complete" and proof["after_inventory"] == ready.after_inventory
+    assert all(
+        (tmp_path / path).read_bytes() == frozen.content
+        for path, frozen in ready.before.items()
+        if path != EDIT
+    )
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+    # A later publisher may advance canonical; source completion replays its checkpoint.
+    (tmp_path / CANONICAL).write_bytes(SSSOM + b"# separate mapping publication\n")
+    assert (
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )["records"]
+        == proof["records"]
+    )
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "schema_version",
+        "operation",
+        "operation_id",
+        "before_source_record",
+        "source_record",
+        "before_yaml_sha256",
+        "after_yaml_sha256",
+        "origins",
+        "extra",
+    ],
+)
+def test_741_demotion_review_must_bind_exact_closed_tuple(tmp_path, field):
+    plan = demotion_case(tmp_path)
+    review = json.loads((tmp_path / "demotion-review.json").read_bytes())
+    review[field] = True if field == "schema_version" else [] if field == "origins" else "wrong"
+    put(tmp_path, "demotion-review.json", review)
+    repin_demotion(tmp_path, plan, update_review=False)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError, match="Relocation review|Unexpected fields"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("fault", ["missing", "unrelated", "unaccepted", "wrong_role"])
+def test_741_demotion_requires_explicit_accepted_review(tmp_path, fault):
+    plan = demotion_case(tmp_path)
+    if fault == "missing":
+        del plan["records"][0]["relocation_review_binding"]
+    elif fault == "unrelated":
+        plan["records"][0]["relocation_review_binding"] = "review"
+    elif fault == "wrong_role":
+        plan["bindings"][-1]["role"] = "evidence"
+    repin_demotion(tmp_path, plan)
+    if fault == "unaccepted":
+        accepted = json.loads((tmp_path / "acceptance.json").read_bytes())
+        accepted["review_bindings"] = ["review"]
+        put(tmp_path, "acceptance.json", accepted)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "ordinary_edit",
+        "same_path",
+        "renamed",
+        "reversal",
+        "new_owner",
+        "null_before",
+        "stale_before",
+        "stale_head",
+        "wrong_proposal",
+        "wrong_case",
+        "history",
+        "mapped_status",
+        "unmapped_status",
+        "rejected_status",
+        "ontology_mapping",
+        "empty_mapping",
+        "native_render",
+    ],
+)
+def test_741_demotion_refuses_false_operation_lineage_or_payload(tmp_path, fault):
+    plan = demotion_case(tmp_path)
+    entry = plan["records"][0]
+    if fault == "ordinary_edit":
+        entry["kind"] = "edit"
+        del entry["relocation_review_binding"]
+    elif fault == "same_path":
+        entry["source_record"] = EDIT
+    elif fault == "renamed":
+        entry["source_record"] = "data/ingredients/unmapped/Renamed.yaml"
+    elif fault == "reversal":
+        entry.update(before_source_record=OLD, source_record=MOVED)
+        entry["before_yaml_sha256"] = ref(tmp_path, OLD)["sha256"]
+    elif fault == "new_owner":
+        entry.update(kind="create", before_source_record=None, before_yaml_sha256=None)
+        del entry["relocation_review_binding"]
+    elif fault == "null_before":
+        entry["before_yaml_sha256"] = None
+    elif fault == "stale_before":
+        entry["before_yaml_sha256"] = "0" * 64
+    elif fault == "stale_head":
+        entry["origins"][0]["head_sha"] = "0" * 40
+    elif fault == "wrong_proposal":
+        entry["origins"][0]["proposal_id"] = "missing"
+    elif fault == "wrong_case":
+        entry["origins"][0]["case_hashes"] = {"case-0": "0" * 64}
+    else:
+        data = owner.record((tmp_path / entry["after_capture"]["path"]).read_bytes())
+        if fault == "history":
+            data["curation_history"][0]["changes"] = "Rewritten history"
+        elif fault.endswith("status"):
+            data["mapping_status"] = fault.split("_")[0].upper()
+        elif fault == "ontology_mapping":
+            data["ontology_mapping"] = owner.record((tmp_path / EDIT).read_bytes())[
+                "ontology_mapping"
+            ]
+        elif fault == "empty_mapping":
+            data["ontology_mapping"] = {}
+        path = "demotion-final-variant.yaml"
+        put(tmp_path, path, data)
+        if fault == "native_render":
+            (tmp_path / path).write_bytes(
+                (tmp_path / entry["after_capture"]["path"]).read_bytes() + b"# different bytes\n"
+            )
+        entry["after_capture"] = ref(tmp_path, path)
+    repin_demotion(tmp_path, plan)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("before_status", ["UNMAPPED", "AMBIGUOUS", "REJECTED"])
+def test_741_demotion_requires_genuine_mapped_status_predecessor(tmp_path, before_status):
+    demotion_case(tmp_path, before_status=before_status)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError, match="Demotion requires|Rejected owner requires"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("linked_owner", [EDIT, DEMOTED])
+def test_741_demotion_refuses_either_preceding_owner_chain(tmp_path, linked_owner):
+    demotion_case(tmp_path, chain_owner=linked_owner)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError, match="prior native owner-chain"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("alias", ["leaf", "parent", "hardlink"])
+def test_741_demotion_review_proof_rejects_aliases(tmp_path, alias):
+    demotion_case(tmp_path)
+    review = tmp_path / "demotion-review.json"
+    if alias == "hardlink":
+        os.link(review, tmp_path / "other-proof.json")
+    elif alias == "leaf":
+        saved = tmp_path / "real-review.json"
+        review.rename(saved)
+        review.symlink_to(saved)
+    else:
+        directory = tmp_path / "data/ingredients/unmapped"
+        saved = tmp_path / "saved-unmapped"
+        directory.rename(saved)
+        directory.symlink_to(saved, target_is_directory=True)
+    with pytest.raises(ValueError):
+        prepare(tmp_path)
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("change", ["review", "source", "destination", "membership"])
+def test_741_demotion_late_drift_refuses_before_mutation(tmp_path, change):
+    demotion_case(tmp_path)
+    ready = prepare(tmp_path)
+    if change == "review":
+        (tmp_path / "demotion-review.json").write_bytes(b"{}\n")
+    elif change == "source":
+        (tmp_path / EDIT).write_bytes(ready.before[EDIT].content + b"# changed\n")
+    elif change == "destination":
+        (tmp_path / DEMOTED).write_bytes(b"competitor\n")
+    else:
+        render(tmp_path, NEW, ingredient("CHEBI:2", "Additional"))
+    before = {p: f.content for p, f in owner.inventory(tmp_path).items()}
+    with pytest.raises(ValueError):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert {p: f.content for p, f in owner.inventory(tmp_path).items()} == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("failure", ["before_retire", "occupied_recovery", "reappearing_source"])
+def test_741_demotion_partial_failure_keeps_honest_recovery(tmp_path, monkeypatch, failure):
+    demotion_case(tmp_path)
+    ready = prepare(tmp_path)
+    original = owner._retire
+
+    def interrupted(source, recovery, recheck):
+        assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == source.content
+        assert (tmp_path / DEMOTED).exists()
+        if failure == "before_retire":
+            raise RuntimeError("demotion retirement interrupted")
+        if failure == "occupied_recovery":
+            (recovery / "retired-owner.yaml").write_bytes(b"competitor")
+        retired = original(source, recovery, recheck)
+        if failure == "reappearing_source":
+            source.path.write_bytes(source.content)
+        return retired
+
+    monkeypatch.setattr(owner, "_retire", interrupted)
+    with pytest.raises((ValueError, RuntimeError)):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+    assert receipt["state"] == "failed" and receipt["recovery_required"] is True
+    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == ready.before[EDIT].content
+    assert (tmp_path / DEMOTED).exists()
+    if failure != "reappearing_source":
+        assert (tmp_path / EDIT).read_bytes() == ready.before[EDIT].content
+    with pytest.raises(ValueError):
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )
+
+
+@pytest.mark.parametrize("fault", ["backup", "retired", "source", "review", "receipt"])
+def test_741_demotion_completed_verification_rejects_false_recovery(tmp_path, fault):
+    demotion_case(tmp_path)
+    ready = prepare(tmp_path)
+    owner.apply(ready, tmp_path / "receipt", enabled=True)
+    if fault == "backup":
+        (tmp_path / "receipt/owner-before-0000.yaml").unlink()
+    elif fault == "retired":
+        (tmp_path / "receipt/demotion-0000/retired-owner.yaml").write_bytes(b"wrong beforeimage")
+    elif fault == "source":
+        (tmp_path / EDIT).write_bytes(ready.before[EDIT].content)
+    elif fault == "review":
+        review = tmp_path / "demotion-review.json"
+        review.rename(tmp_path / "real-review.json")
+        review.symlink_to(tmp_path / "real-review.json")
+    else:
+        log = tmp_path / "receipt/application.json"
+        data = json.loads(log.read_bytes())
+        data["state"] = "applying"
+        put(tmp_path, str(log.relative_to(tmp_path)), data)
+    with pytest.raises((ValueError, FileNotFoundError)):
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )
+
+
+def test_741_demotion_composed_final_capture_keeps_original_published_origin(tmp_path):
+    plan = demotion_case(tmp_path)
+    entry = plan["records"][0]
+    original = (tmp_path / entry["after_capture"]["path"]).read_bytes()
+    data = owner.record(original)
+    data["notes"] = "Additional reviewed fixture context, no mapping approval."
+    data["curation_history"].append(event("ANNOTATED", "AMBIGUOUS"))
+    render(tmp_path, "composed-demotion.yaml", data)
+    entry["after_capture"] = ref(tmp_path, "composed-demotion.yaml")
+    repin_demotion(tmp_path, plan)
+    assert entry["after_capture"]["sha256"] != owner.digest(original)
+    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert proof["records"][0]["after_yaml_sha256"] == entry["after_capture"]["sha256"]
+    assert (tmp_path / "intake/payload-0.yaml").read_bytes() == original
+    assert (
+        run_git(tmp_path, "show", f"{plan['intake_heads']['worker-01']}:intake/payload-0.yaml")
+        == original.decode().strip()
+    )
+
+
+def test_741_demotion_cannot_claim_a_genuinely_published_new_owner_origin(tmp_path):
+    plan = demotion_case(tmp_path)
+    proposals = json.loads((tmp_path / "intake/proposals.json").read_bytes())
+    proposals["proposals"][0].update(kind="new_owner", before_sha256=None)
+    put(tmp_path, "intake/proposals.json", proposals)
+    run_git(tmp_path, "add", "intake/proposals.json")
+    run_git(
+        tmp_path,
+        "-c",
+        "user.email=fixture@example.invalid",
+        "-c",
+        "user.name=Fixture",
+        "commit",
+        "-qm",
+        "#741 negative original-kind fixture",
+    )
+    head = run_git(tmp_path, "rev-parse", "HEAD")
+    plan["baseline_commit"] = head
+    plan["intake_heads"]["worker-01"] = head
+    plan["records"][0]["origins"][0]["head_sha"] = head
+    for binding in plan["bindings"]:
+        binding.update(ref(tmp_path, binding["path"]))
+        if binding["published_head"] is not None:
+            binding["published_head"] = head
+    repin_demotion(tmp_path, plan)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError, match="Origin owner preimage differs"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("index", [0, 1, 2])
+def test_741_demotion_field_is_not_an_extension_to_existing_kinds(case, index):
+    root, plan = case
+    plan["records"][index]["relocation_review_binding"] = "review"
+    repin(root, plan)
+    before = owner.hashes(owner.inventory(root))
+    with pytest.raises(ValueError, match="Unexpected fields"):
+        prepare(root)
+    assert owner.hashes(owner.inventory(root)) == before
+    assert not (root / "receipt").exists()
+
+
+@pytest.mark.parametrize("destination", [DEMOTED, "data/ingredients/unmapped/existing.yaml"])
+def test_741_demotion_refuses_occupied_destination_including_casefold(tmp_path, destination):
+    plan = demotion_case(tmp_path)
+    render(tmp_path, destination, ingredient("UNMAPPED_9999", "Competitor", "UNMAPPED"))
+    before = owner.hashes(owner.inventory(tmp_path))
+    put(tmp_path, "before-occupied.json", {"schema_version": 1, "owners": before})
+    plan["before_inventory"] = ref(tmp_path, "before-occupied.json")
+    repin_demotion(tmp_path, plan)
+    with pytest.raises(ValueError, match="Destination collides"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+def test_741_demotion_still_refuses_new_identity_collision(tmp_path):
+    plan = demotion_case(tmp_path)
+    data = owner.record((tmp_path / "intake/payload-0.yaml").read_bytes())
+    data["identifier"] = "CHEBI:99"
+    render(tmp_path, "colliding-demotion.yaml", data)
+    plan["records"][0]["after_capture"] = ref(tmp_path, "colliding-demotion.yaml")
+    repin_demotion(tmp_path, plan)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError, match="new collision pair"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+def test_741_demotion_late_destination_parent_alias_fails_without_source_retirement(
+    tmp_path, monkeypatch
+):
+    demotion_case(tmp_path)
+    ready = prepare(tmp_path)
+    original = owner.os.link
+    parent = tmp_path / "data/ingredients/unmapped"
+    saved = tmp_path / "saved-unmapped"
+
+    def swapped(*args, **kwargs):
+        parent.rename(saved)
+        parent.symlink_to(saved, target_is_directory=True)
+        return original(*args, **kwargs)
+
+    monkeypatch.setattr(owner.os, "link", swapped)
+    with pytest.raises(ValueError):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert (tmp_path / EDIT).read_bytes() == ready.before[EDIT].content
+    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == ready.before[EDIT].content
+    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+    assert receipt["state"] == "failed" and receipt["recovery_required"] is True
+
+
+def test_741_demotion_wrong_retired_inode_is_not_accepted_as_success(tmp_path, monkeypatch):
+    demotion_case(tmp_path)
+    ready = prepare(tmp_path)
+    original = owner._rename_exclusive
+    source = tmp_path / EDIT
+    authentic = tmp_path / "authentic-before.yaml"
+
+    def replaced(*args):
+        source.rename(authentic)
+        source.write_bytes(ready.before[EDIT].content)
+        return original(*args)
+
+    monkeypatch.setattr(owner, "_rename_exclusive", replaced)
+    with pytest.raises(ValueError, match="retired a changed entry"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert owner.FrozenFile.capture(authentic).identity == ready.before[EDIT].identity
+    assert authentic.read_bytes() == ready.before[EDIT].content
+    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == ready.before[EDIT].content
+    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+    assert receipt["state"] == "failed" and receipt["recovery_required"] is True
+
+
+@pytest.mark.parametrize("role", ["owner-before-0000.yaml", "demotion-0000/retired-owner.yaml"])
+def test_741_demotion_completed_recovery_alias_is_refused(tmp_path, role):
+    demotion_case(tmp_path)
+    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
+    path = tmp_path / "receipt" / role
+    original = path.with_name("authentic.yaml")
+    path.rename(original)
+    path.symlink_to(original)
+    with pytest.raises(ValueError):
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )
