@@ -1,0 +1,61 @@
+identifier: UNMAPPED_0122
+preferred_term: Glycerol-asparagine agar
+synonyms:
+- synonym_text: Glycerol-asparagine agar
+  synonym_type: RAW_TEXT
+  source: extracted_from_agar_yaml
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Agar.yaml — 'Glycerol-asparagine agar' is a complete media formulation, not
+    a synonym of the chemical CHEBI:2509 (agar). Pending curator re-mapping (likely FOODON complex medium,
+    or split into per-component ingredients).
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named glycerol-asparagine agar medium/formulation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Glycerol-asparagine_Agar-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: ### Recommended synonyms — - `ISP medium 5` — supported synonym. CURIEs discussed: CHEBI:2509.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:25:00.167347+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: ANNOTATED
+  changes: Record verified source1754-to-JCM60 formulation provenance and explicit lack of an established
+    bridge from this generic Agar-extracted owner to that exact recipe. Preserve all identifiers, mappings,
+    synonyms, components, roles and counts. Independent review requested this bounded enrichment instead
+    of an implementation-only deferral. Isolated proposal; no release approval.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+notes: 'Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as a named medium/formulation,
+  not agar identity.
+
+
+  Source-scoped review (2026-11-08): the frozen MediaDive ingredient1754 occurrence names Glycerol-asparagine
+  agar, supplies1000mL and refers to JCM medium60. The official JCM60 recipe (https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=60),
+  titled GLYCEROL-ASPARAGINE AGAR (ISP-5), specifies L-asparagine1g, glycerol10g, K2HPO4 1g, agar15g,
+  trace salts solution1mL and distilled water1L, pH7.4. The trace stock contains0.1g each FeSO4.7H2O,
+  MnCl2.4H2O and ZnSO4.7H2O in100mL distilled water. This identifies the source1754 formulation only.
+  This generic owner originated from an Agar synonym and has no primary recipe/version provenance establishing
+  equivalence to JCM60. Preserve UNMAPPED status; no exact mapping, component assertion, new resolving
+  alias, role or membership transfer is authorized by this note. See reports/all_unmatched_20261107/worker-08/research/organic_products/decisions.json
+  case KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997.'
+ingredient_type: NAMED_MEDIUM

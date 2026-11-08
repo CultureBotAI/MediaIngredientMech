@@ -1,0 +1,214 @@
+{
+  "schema": "w08-plain-flour-native-validation-plan-v1",
+  "created_at": "2026-11-08T08:38:22.579073+00:00",
+  "author": "worker08:/root/organics",
+  "role": "Read-only validation planning. I authored the previous organic proposal and provide no independent scientific approval. Root authors the correction; vitamins and inorganics supply separate review.",
+  "executions_performed": "Only filesystem searches, source reads and JSON/hash inspection. No guarded write, schema validator, native ontology lookup, partonomy validator, SSSOM projection/rule execution, export, gate change or maintained-data write was run for this task.",
+  "search_scope": "Ignored-inclusive rg searches of .temp/all-unmatched-worker-08 and published issue1227 artifacts, followed by direct reads of concrete helper files. Initial broad listing included environment/cache noise and was truncated; no absence conclusion relies on that listing.",
+  "runtime": ".temp/all-unmatched-worker-08/venv/bin/python with PYTHONDONTWRITEBYTECODE=1",
+  "sealed_reference_selection": {
+    "config": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/provenance/final-selection-v2.json",
+    "proposals": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/proposals.json",
+    "observed_proposal_count": 113,
+    "plain_flour_proposal": {
+      "proposal_id": "op1201-plain-flour",
+      "case_ids": [
+        "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e"
+      ],
+      "description": "FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference.",
+      "evidence_ids": [
+        "op-case-180",
+        "op-owner-search",
+        "op-plain-flour-primary",
+        "op1201-ols-foodon-00001056",
+        "op1201-ols-foodon-00004510",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention",
+        "op1227-categories",
+        "op1227-corrections",
+        "op1227-referrals"
+      ],
+      "owner_path": "data/ingredients/unmapped/Plain_Flour.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Plain_Flour.yaml",
+        "sha256": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83"
+      },
+      "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+      "publication_review_obligations": [
+        "Independently review the exact successor bytes.",
+        "Do not transfer earlier whole-payload approvals onto changed owners.",
+        "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.",
+        "On approved integration, move this existing owner to data/ingredients/mapped/Plain_Flour.yaml and retire the old unmapped path in the same synchronized change. The proposal owner_path remains the exact frozen preimage; do not create a duplicate owner."
+      ],
+      "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+    },
+    "selected_payload_sha256": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83",
+    "reference_baseline_commit": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+    "scope": "Use this exact full113 selection as the predecessor; create a new private successor selector replacing only op1201-plain-flour capture/hash and separately bounded evidence/history metadata. Do not edit this selector."
+  },
+  "native_helpers": [
+    {
+      "path": "src/mediaingredientmech/curate/curation_event.py",
+      "api": "record_curation_event(record, *, curator, action, changes=None, previous_status=None, new_status=None, llm_assisted=False, llm_model=None, timestamp=None, skip_if_recent=False)",
+      "use": "Root appends an explicit LLM-assisted event after authorized preferred-term/evidence change, preserving every existing history event as an exact prefix. No scientific verdict inferred from the helper."
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "apis": [
+        "validate_ingredient(record, *, target_class=None, schema_path=DEFAULT_SCHEMA_PATH)",
+        "write_validated_ingredient(record, private_path, *, target_class=None, schema_path=DEFAULT_SCHEMA_PATH, yaml_kwargs=None)"
+      ],
+      "use": "Validate and replay only into a new task-private candidate/replay path; compare parsed replay with proposed bytes. Never write the maintained unmapped or intended mapped owner."
+    },
+    {
+      "path": "scripts/validate_strict.py",
+      "command_argv": [
+        ".temp/all-unmatched-worker-08/venv/bin/python",
+        "scripts/validate_strict.py",
+        "--workers",
+        "1",
+        "--out",
+        ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/strict.tsv",
+        "<ROOT_AUTHORED_PRIVATE_PLAIN_FLOUR_PATH>"
+      ],
+      "command_status": "Recommendation only; placeholder must be replaced by the root-authored immutable candidate path. Not run.",
+      "use": "Narrow schema check on the changed payload first; optional full113 selected paths can replace the last argument when root requires a new complete strict receipt."
+    },
+    {
+      "path": "src/mediaingredientmech/validation/component_partonomy.py",
+      "api": "validate_component_partonomy(records: Iterable[dict]) -> list[PartonomyViolation]",
+      "use": "Read current data/ingredients/**/*.yaml using Path.rglob (ignored-inclusive), establish baseline violations, replace entries by exact proposal owner_path for all113 selected proposals, with only Plain Flour capture changed, then assess the full in-memory overlay. This is not an owner-admission test."
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/scripts/validate_selection.py",
+      "apis": [
+        "preserved_history(prior, rec, changed)",
+        "disallow_active_collision(catalog, owner_path, identifier)",
+        "record_reviewed_admission_failure(proposal, predecessor, hashes, review, failure)",
+        "official_exact_term(terms, curie, expected)"
+      ],
+      "use": "Reuse pure checks through a private orchestrator with no mutation of these helpers. preserved_history also checks roles, graph and occurrence invariance. Read the exact TSB admission receipt before invoking its narrowly pinned failure recorder.",
+      "unsafe_as_standalone_for_this_task": "main() has sealed OUT and SELECTION globals, writes public attempt directories and finally asserts that the successful combined-validation.json does not exist. Do not run the published main() as-is or alter its gates."
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/scripts/check_identity_obligations.py",
+      "apis": [
+        "projected_obligations(subject, record)",
+        "load_rules()",
+        "controls(native)"
+      ],
+      "use": "Create a new private fixture containing exact113 selected after-bytes with owner basenames. Set only the imported rule instance INGREDIENTS_DIR to that fixture, clear _subject_to_path cache as files are added, require native.record_identifier(subject) equals each record identifier, and run B1/B2/B3/B5/D on projected in-memory rows. Retain degraded-own-identifier Rule D negative checks.",
+      "unsafe_as_standalone_for_this_task": "main() writes the old issue1227 private fixture and sealed public identity-obligations.json with exclusive creation. Do not run it as-is. Use its unchanged projection/rule APIs through a new private orchestrator."
+    },
+    {
+      "path": "src/mediaingredientmech/sssom_grading.py",
+      "apis": [
+        "predicate_for(quality)",
+        "justification_for(quality)",
+        "confidence_for(quality)"
+      ],
+      "use": "Use native grade functions and section0; a mapping-method grade does not weaken the record own-identifier exactMatch obligation. Preferred-term/evidence edits do not themselves authorize a primary ID or predicate change."
+    },
+    {
+      "path": "src/mediaingredientmech/utils/ontology_client.py",
+      "api": "OntologyClient()._get_adapter(\"FOODON\").label(\"FOODON:00004510\")",
+      "use": "Root may perform the existing native canonical-label check and compare actual primary label to the changed preferred term and stored ontology_label. Schema validation alone cannot prove that an evidence category or method grade is truthful."
+    }
+  ],
+  "planned_private_fixture_layout": {
+    "root": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation",
+    "guarded_replay": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/guarded-replay/Plain_Flour.yaml",
+    "full_selection": ".temp/all-unmatched-worker-08/plain-flour-method-v1/selection/proposals.json",
+    "identity_fixture": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/identity-obligation-fixture",
+    "schema_receipt": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/strict.tsv",
+    "overlay_receipt": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/full-overlay.json",
+    "identity_receipt": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/identity-obligations.json",
+    "status": "Intended paths only; this planning turn created none of these fixtures."
+  },
+  "required_scope_checks": [
+    "Keep proposal_id op1201-plain-flour, its exact original case ID and frozen before_sha256 becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e. The original owner_path remains data/ingredients/unmapped/Plain_Flour.yaml; no duplicate owner or maintained move occurs.",
+    "Compare selected predecessor aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83 to the new candidate. Require only root-authorized preferred-term/evidence changes and one appended honest history event; assert original identifier, ontology target/label, aliases, ingredient type, role/count fields, source/occurrence context and all old history are retained unless explicitly separately justified.",
+    "Prove exactly112 other selected payload hashes and proposal IDs unchanged. Recompute113 selected full-overlay membership rather than treating old counts as current proof.",
+    "Keep raw Plain flour source text/provenance and exact receiving/source uncertainty. No wheat, botanical species, fortification, bleaching, CAS, component or role assertion is supplied by a label normalization.",
+    "Read current MAPPING_SEMANTICS section0 when checking method grade: primary-label, unique synonym and CAS lookup evidence are distinct; match_level normalization is separate. The independent reviewers, not this plan, decide whether the correction supplies an honest primary-label resolution.",
+    "Bind fresh independent case/payload/input hashes. Do not transfer the author’s previous scientific approval to the changed bytes or clear inherited source/whole-owner/export holds."
+  ],
+  "admission_hold": {
+    "must_remain_failed_and_held": {
+      "proposal_id": "op1201-trypticase-soy-broth",
+      "gate_status": "failed",
+      "maintained_admission": "HELD",
+      "failure": [
+        "changed identity collides",
+        "MICRO:0000113",
+        [
+          "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml"
+        ]
+      ],
+      "dependency_id": "W08-1227-TSB-OWNER-RECONCILIATION",
+      "selected_sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879",
+      "predecessor_sha256": "cbc788c1a9ce7cea22a92b4360bad7c113f0e99c2cf5a1ecbbd3a0e79f99aa6c",
+      "owner_hashes": {
+        "data/ingredients/unmapped/Trypticase_Soy_Broth.yaml": "217e88e15c71823e46aa27998777a68fa5345302fe595c638227511a2d5adc88",
+        "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml": "c335acb9d1ad86d663702a8e193afb1e84d97c8666d49beef9cce8e16b3548cc"
+      },
+      "scope": "Only bounded grade/evidence correction proceeds to validation. This owner is not admitted; no duplicate winner or general collision exemption is selected."
+    },
+    "exact_review_path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/final_assembly/trypticase-admission-review-v1.json",
+    "exact_review_sha256": "97ba31cd26106faa23642b07692396a972e0147035bb9ab0ea90de479af463cf",
+    "required_behavior": "Retain the exact failed collision between proposed Trypticase_Soy_Broth MICRO:0000113 and maintained Bacto_Tryptic_Soy_Broth. Do not delete either row to make the overlay look admissible, select a winner, or convert this specific recorded failure into a general bypass. The unchanged native collision check should still fail; only its already reviewed, hash-bound held outcome may be recorded separately. Native partonomy/strict pass is not maintained admission."
+  },
+  "historical_reference_results_not_new_results": {
+    "combined_validation_at": "2026-11-08T08:06:18.354091+00:00",
+    "selected113": 113,
+    "baseline_records": 2956,
+    "overlay_records": 3037,
+    "strict_exit_code": 0,
+    "bounded_correction_validation_status": "PASS",
+    "owner_admission_status": "HELD",
+    "identity_projected_obligation_rows": 120,
+    "identity_rule_failures": {
+      "b1": [],
+      "b2": [],
+      "b3": [],
+      "b5": [],
+      "d": []
+    },
+    "interpretation": "These values are from the sealed earlier113 selection. They are reference inputs only, not tests of the forthcoming Plain Flour correction."
+  },
+  "not_to_run": [
+    "Published validate_selection.py main() or check_identity_obligations.py main() with sealed output globals.",
+    "just sync-curated, just sync-individual, just export-*, SSSOM reconciliation --apply, full downstream rebuild or maintained writer.",
+    "Any gate change, predicate shortcut, fake ontology URL, or deletion of the TSB failed admission."
+  ],
+  "input_hashes": {
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/scripts/validate_selection.py": "d4570205bbecc25bdbbf69f2b4a94f930a2f9d150b187f13e2fefe5cdfa9476f",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/scripts/check_identity_obligations.py": "c0fbadb84f86b24e7c9408bd78aefabbcb9b2cb4077158b528988f6367544f98",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/scripts/assemble.py": "70ff90d516518313990a0c3230437ca776b608e37f070a40bc85455bc03ba02a",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/provenance/final-selection-v2.json": "f782e80b475ce775f6434377b9199153b281de17156e79684696193ebbc0ed32",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/proposals.json": "61a8b4f873858c12804a769ba29cb11475be4cabc5907726db9c05087e8bf158",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/decisions.json": "dbf3213c3cf2a61cb4ac7a500f73dadb17ea170ffff10cda846e24fb34d780aa",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/evidence.json": "dcfa4a65f131c7df5a0317d67393a4b95200a63b4401bee59f354d1381c1ff2b",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/assembly-provenance.json": "9f60cdc3aa3557d086dd643e347adb57600fd412d03016b47f1c460cce349794",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/validation/combined-validation.json": "8aa0f682e210067a862a6f2ff64818739e6a799d08772ac654cb345d90b7ab00",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/validation/identity-obligations.json": "5b468889beb406c95f756820f24465be7ee0bba85856f045fbb7383471aa5334",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/final_assembly/trypticase-admission-review-v1.json": "97ba31cd26106faa23642b07692396a972e0147035bb9ab0ea90de479af463cf",
+    "src/mediaingredientmech/validation/write_validated.py": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+    "src/mediaingredientmech/validation/component_partonomy.py": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+    "src/mediaingredientmech/curate/curation_event.py": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34",
+    "src/mediaingredientmech/sssom_grading.py": "20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c",
+    "src/mediaingredientmech/utils/ontology_client.py": "790f1b2c6e06c74e8492fc6025dd128a54fd30016a70301737958ef19edf007e",
+    "scripts/validate_strict.py": "5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a",
+    "scripts/validate_sssom_invariants.py": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303",
+    "MAPPING_SEMANTICS.md": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+    ".claude/skills/curate-yaml-record/SKILL.md": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/research/organic_products/proposed_owners/Plain_Flour.yaml": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83"
+  },
+  "scientific_approval": false,
+  "maintained_writes": false,
+  "new_validation_executions": false
+}

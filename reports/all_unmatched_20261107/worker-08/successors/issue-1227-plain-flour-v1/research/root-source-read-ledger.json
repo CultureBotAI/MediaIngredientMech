@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-08T08:39:47.183147+00:00",
+  "author": "worker08:/root",
+  "source_reads": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/shared-primary/op-bacmedia-ingredient1465.html",
+      "sha256": "040ee2dc07a077a38caeefa4fe8882b0c5829392a79d6f91a99c56b4022394a8",
+      "original_accessed_at": "2026-11-08T05:16:12.135246+00:00",
+      "read_scope": "Full HTML text including ingredient heading, Complex substance and automated-identifier disclaimer; no newly retrieved page claimed."
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/shared-primary/ols-foodon-00004510.json",
+      "sha256": "48c4ece85b7193af6fee377601cc481e86a02b92ae637534a9fd1baf53315c98",
+      "original_accessed_at": "2026-11-08T05:57:13.916914+00:00",
+      "read_scope": "Complete official ontology API response, primary flour label, only captured flour added synonym, definition and obsolete flag."
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/provenance/shard-08.json",
+      "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0",
+      "read_scope": "Complete case180 frozen object and raw source_record; KG occurrence-count helper distinguished from CultureMech occurrenceIDs."
+    }
+  ],
+  "contract_inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": ".claude/skills/map-media-ingredients/SKILL.md",
+      "sha256": "9431c262e190cd57ce05692487a0bc639859c9e877648d3af7612922221f6a1b"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "data/ingredients/unmapped/Plain_Flour.yaml",
+      "sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e"
+    }
+  ],
+  "non_authoritative_read_attempts": [
+    {
+      "failure": "System python3 lacks lxml; full source read succeeded through maintained Python3.13 environment. No dependency change."
+    },
+    {
+      "failure": "Initial guessed shard location omitted queue/preliminary-v5; original assignment located exact source, whose published copy/hash was also verified. No absence claim made."
+    }
+  ],
+  "all_original_capture_times_preserved": true,
+  "new_remote_source_retrieval": false
+}

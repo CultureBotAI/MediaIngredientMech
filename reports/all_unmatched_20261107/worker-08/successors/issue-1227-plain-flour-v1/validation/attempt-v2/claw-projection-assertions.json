@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "projected_payloads": 2,
+  "stable_subject": "MIM:Plain_Flour",
+  "current_subject_label": "flour",
+  "object_id": "FOODON:00004510",
+  "predicate": "skos:exactMatch",
+  "justification": "semapv:LexicalMatching",
+  "raw_alias_retained": true,
+  "invented_CAS": false,
+  "actual_new_row_rule_d_failures": [],
+  "degraded_new_row_rule_d_rejection": [
+    [
+      1,
+      {
+        "subject_id": "MIM:Plain_Flour",
+        "subject_label": "flour",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "FOODON:00004510",
+        "object_label": "flour",
+        "object_source": "obo:foodon.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00004510|MIM:https://bacmedia.dsmz.de/ingredients/1465|MIM:curator=worker08:/root W08-FINAL-001 proposal correction",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Plain flour",
+        "validation_method": ""
+      },
+      "Rule D: MIM:Plain_Flour is published as skos:closeMatch to FOODON:00004510, which is its own `identifier`. A record is not merely close to itself — the identity row must be skos:exactMatch. mapping_quality grades the ontology grounding and must not reach this row's predicate (#438)."
+    ]
+  ],
+  "maintained_publication": false,
+  "held_owners_release": false
+}

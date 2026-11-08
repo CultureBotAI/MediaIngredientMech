@@ -1,0 +1,102 @@
+identifier: CHEBI:16183
+preferred_term: methane
+ontology_mapping:
+  ontology_id: CHEBI:16183
+  ontology_label: methane
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: tetrahydridocarbon
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'produces: methane from acetate'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: 'produces: methane from formate'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: Methane gas
+  synonym_type: RAW_TEXT
+  source: Frozen CultureMech:008437 ingredients/7 TOGO:M1862, CultureMech:007848 ingredients/5 TOGO:M1312,
+    CultureMech:009916 ingredients/15 TOGO:M524, CultureMech:009955 ingredients/9 TOGO:M560, CultureMech:010266
+    ingredients/5 TOGO:M850, CultureMech:010280 ingredients/4 TOGO:M863, CultureMech:008446 ingredients/8
+    TOGO:M1871, CultureMech:008493 ingredients/4 TOGO:M1915, CultureMech:008577 ingredients/4 TOGO:M1993;
+    exact methane identity https://www.ebi.ac.uk/chebi/CHEBI:16183 ; frozen source provenance, not a claim
+    of fresh retrieval of each TOGO page
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 8
+  media_count: 8
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=74-82-8); Imported from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.681042+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.717528+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=CH4; inchi=InChI=1S/CH4/h1H4; smiles=[H]C([H])([H])[H]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.316875+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519279+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 8/8 (media_count/total_occurrences), derived from distinct CultureMech
+    recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453,
+    whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record
+    did, so a rebuild would have dropped them from KGX: ''produces: methane from acetate''. Tokens already
+    present on the kg-microbe ontology node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record
+    did, so a rebuild would have dropped them from KGX: ''produces: methane from formate''. Tokens already
+    present on the kg-microbe ontology node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because they describe a process
+    or organism trait, not an ingredient name (#703): ''produces: methane from acetate''; ''produces:
+    methane from formate''. Preserved original text and source metadata. No identity, mapping, role, or
+    remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: ANNOTATED
+  changes: Add source-bound raw alias(es) Methane gas to existing same-scope owner; preserve all other
+    fields and retired labels. Isolated proposal only; no release approval or hold removal. New alias
+    assertion provenance identifies the exact frozen source context and inspected primary recipe, ontology
+    or supplier URL.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 74-82-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: CH4
+  inchi: InChI=1S/CH4/h1H4
+  smiles: '[H]C([H])([H])[H]'
+ingredient_type: SINGLE_INGREDIENT

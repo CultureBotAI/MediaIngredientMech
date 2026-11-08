@@ -1,0 +1,72 @@
+{
+  "reviewer": "worker08:/root/inorganics",
+  "actual_read_at": "2026-11-08T08:39:22.951290+00:00",
+  "method": "Python sqlite3 read-only URI mode=ro; no OAK download or database mutation",
+  "database": {
+    "path": "/Users/marcin/.data/oaklib/foodon.db",
+    "sha256": "ab21a7b1d712117dceb410e6f92cdd78b67f561d3670f58b0266c8b93f8ad8d0",
+    "size": 306958336,
+    "metadata": [
+      {
+        "subject": "obo:foodon.owl",
+        "predicate": "owl:versionIRI",
+        "object": "obo:foodon/releases/2026-09-20/foodon.owl",
+        "value": null
+      },
+      {
+        "subject": "obo:foodon.owl",
+        "predicate": "owl:versionInfo",
+        "object": null,
+        "value": "2026-02-02"
+      },
+      {
+        "subject": "obo:foodon.owl",
+        "predicate": "owl:versionInfo",
+        "object": null,
+        "value": "2026-09-20"
+      }
+    ]
+  },
+  "sql": "SELECT subject,predicate,object,value FROM statements WHERE predicate IN ('rdfs:label','oio:hasExactSynonym','oio:hasRelatedSynonym','oio:hasBroadSynonym','oio:hasNarrowSynonym') AND lower(value) IN ('flour','plain flour','flour added') ORDER BY subject,predicate,value",
+  "rows": [
+    {
+      "subject": "FOODON:00004510",
+      "predicate": "oio:hasRelatedSynonym",
+      "object": null,
+      "value": "flour added"
+    },
+    {
+      "subject": "FOODON:00004510",
+      "predicate": "rdfs:label",
+      "object": null,
+      "value": "flour"
+    },
+    {
+      "subject": "FOODON:03301116",
+      "predicate": "oio:hasBroadSynonym",
+      "object": null,
+      "value": "flour"
+    }
+  ],
+  "related_term_scope_rows": [
+    {
+      "subject": "FOODON:00004510",
+      "predicate": "IAO:0000115",
+      "object": null,
+      "value": "A fine powder made from cereals or other starchy food sources."
+    },
+    {
+      "subject": "FOODON:00004510",
+      "predicate": "rdfs:label",
+      "object": null,
+      "value": "flour"
+    },
+    {
+      "subject": "FOODON:03301116",
+      "predicate": "rdfs:label",
+      "object": null,
+      "value": "white wheat flour (not heat treated)"
+    }
+  ],
+  "scope": "Exact strings only; sole primary-label flour row is FOODON00004510. The extra broad-synonym flour row is not an exact identity or a reason to infer wheat. No plain flour synonym row was returned in this bounded query. No CAS lookup performed."
+}

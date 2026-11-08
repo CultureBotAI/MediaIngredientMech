@@ -1,0 +1,1216 @@
+# W08 Plain Flour method correction: bounded independent successor review
+
+- Review: 20261108T084543Z-w08-plain-flour-method-successor
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T08:38:45.690887Z
+- Finished UTC: 2026-11-08T08:45:43.704948Z
+- Reviewer: worker08:/root/vitamins (scientific), worker08:/root/inorganics (skeptical); root assembles exact receipts (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+W08-FINAL-001 is corrected in the isolated proposal by an independently reviewed generic preferred label and a truthful new primary-label resolution. Full source/owner/role/export holds and all unaffected selection bytes remain. Coordinator final-head acceptance and public issue disposition are separate.
+
+## Scope And Provenance
+
+One complete changed owner payload and its exact case180 applicability, with full113/188 accounting as context. Other payloads retain prior scope only.
+
+Selection: Exact op1201-plain-flour successor884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873 selected by335806d22ce278eaf628930b521d7164f0dee2493a19fbc790ae3c273d179f92.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 1701ccf2049022866adfcebcc9bba9b6492407c6.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| op1201-plain-flour | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/payloads/Plain_Flour.yaml | source | flour — isolated Plain_Flour owner successor |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Guarded, strict, full-overlay and SSSOM controls | passed | True | op1201-plain-flour | Actual native receipt is bound; this check approves no scientific claims. |
+| 188cases113proposals320occurrenceIDs | passed | True | op1201-plain-flour | Frozen auditor and separate exact final index readbacks pass. |
+| Unchanged predecessor and sealed reviews | passed | True | op1201-plain-flour | Full original source/native history, all other payloads and W05/W06 sealed reviews preserved. |
+
+## Scientific And Domain Assessments
+
+### Generic material scope and source applicability
+
+identity: supported. Targets: op1201-plain-flour.
+
+Source-specific Plain flour evidence supports only the reviewed generic flour material scope under section3 step4. Grain, grade, bleaching, fortification, supplier, catalogue, automatic CAS, roles and product equivalence remain unestablished.
+
+### New primary-label resolution, not retrospective lexical equivalence
+
+grounding: supported. Targets: op1201-plain-flour.
+
+Preferred_term is now flour, exactly the native FOODON00004510 primary label. EXACT_MATCH describes this new recorded resolution. It does not certify that Plain flour was an ontology label/synonym or was looked up by CAS. DATABASE_MATCH ontology facts and LLM_SUGGESTION material interpretation are separated.
+
+### Complete changed owner and all historical fields
+
+provenance: supported. Targets: op1201-plain-flour.
+
+Both independent reviewers assessed the entire final payload: identifier/ontology target unchanged, same original owner/beforeimage/stable filename, exact original raw synonym, five-event history prefix, original counts, no added components, supplied form, CAS or roles. Only preferred label, explicit explanatory notes/evidence and one honest history event changed.
+
+{"science": [{"proposal_id": "op1201-plain-flour", "selected_sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873", "outcome": "accepted_bounded_method_correction", "appraisal": "Read the whole successor. It keeps FOODON00004510, all raw aliases/provenance, zero occurrence counters, UNDEFINED_MIXTURE classification and all five prior history entries. It adopts the verified primary label flour, appends one truthful LLM-assisted correction event, preserves prior notes, and separates DATABASE_MATCH label evidence from LLM_SUGGESTION material-scope interpretation. It expressly says the earlier Plain flour judgment was not an exact lexical lookup and does not claim an ontology synonym or CAS lookup. No new components, roles or chemical properties appear.", "evidence_ids": ["selected-owner", "successor-owner", "foodon-primary", "dsmz-primary", "new-label-resolution", "author-assessment", "successor-proposal"], "finding_ids": ["W08-FINAL-001"]}], "skeptical": [{"proposal_id": "op1201-plain-flour", "case_ids": ["KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e"], "owner_path": "data/ingredients/unmapped/Plain_Flour.yaml", "before_sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e", "after_capture": {"root": "artifact", "path": "successors/issue-1227-plain-flour-v1/payloads/Plain_Flour.yaml", "sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873"}, "full_payload_review": true, "outcome": "supported_bounded_method_correction", "appraisal": "The complete payload preserves FOODON00004510 identity, MAPPED status, original Plain flour RAW_TEXT/source, ingredient type and zero occurrence statistics. It adds no roles, components, supplied form, chemical properties or CAS. The adopted preferred label flour matches the verified primary label in both the archived official term and independently queried local ontology. EXACT_MATCH now records that explicit current primary-label resolution; it does not reclassify the earlier agent material-scope judgment as lexical lookup. DATABASE_MATCH is limited to the ontology facts and primary-label resolution; separate LLM_SUGGESTION records the material-scope interpretation with original source provenance. All five prior history events remain structurally exact and a sixth truthful root/LLM-assisted MAPPED-to-MAPPED event records the old defect and current correction. The stable owner filename and frozen before hash remain; no owner merge or grain/product equivalence follows. RuleD own-identifier exact semantics are unaffected by the corrected evidence method; this review does not claim SSSOM or export approval.", "source_evidence_ids": ["op-plain-flour-primary", "op1201-ols-foodon-00004510", "w08-final001-label-resolution", "w08-final001-author-assessment"], "finding_ids": ["W08-FINAL-001"], "inherited_holds_preserved": true, "whole_owner_role_export_or_source_release_approval": false}]}
+
+### Complete final case and unchanged cohort
+
+scope: supported. Targets: op1201-plain-flour.
+
+Final case180 preserves frozen source object, raw amount4g/g_l4 as transcription, empty KG per-recipe-ID list and all prior beforeimage/source limits. Its new review metadata is bound by both independent final readbacks;187 other decisions and112 other payloads have exact continuity only.
+
+### Guarded native structure and projection
+
+schema: supported. Targets: op1201-plain-flour.
+
+Native results are recorded independently of scientific evidence. Isolated projection retains the stable subject, unchangedFOODON identity and RuleDexact row; no canonical SSSOM or owner admission is performed. The unrelated Trypticase/Bacto FAILED/HELD admission remains.
+
+## Findings
+
+### W08-FINAL-001: Plain Flour mapping-method claim: isolated correction supported; coordinator acceptance pending
+
+minor / deferred / confirmed; issue key: w08-plain-flour-mapping-method.
+
+Original Plain flour preferred label was neither captured primary flour nor synonym flour added, and history documented a material-scope judgment. The successor now separates that judgment from a newly performed resolution of preferred flour.
+
+Disposition: The exact isolated correction is supported by both independent reviews. Formal external finding closure/final-head acceptance is deferred to coordinator. No previous native review ID is invented while the coordinator full1701 review finishes separately. This does not denote an unresolved new payload defect.
+
+## Recommended Actions And Acceptance Checks
+
+### COORDINATOR-FINAL-HEAD
+
+Coordinator independently assesses the ordinary published successor head and separately dispositions W08-FINAL-001; retain PF-LINEAGE-001 referral before any future historical-prose correction.
+
+- Verify exact final selector andpayload hashes,113/188/320 accounting and112 unchanged payloads.
+- Retain all source/owner/role/export holds and prior review bytes; do not infer owner merge or maintained admission.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| SCIENCE | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/review.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/review.json | supports | Full actual source/whole-payload scientific assessment by worker08:/root/vitamins; generic material and new primary-label resolution supported with holds. |
+| SKEPTIC | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/review.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/review.json | supports | Separate whole-payload/source skeptical review by worker08:/root/inorganics; prior organic review miss and historical quotation discrepancy disclosed. |
+| SCIENCE-FINAL | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-bindings.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-bindings.json | supports | Final actual indices/payload readback with1906 checks; no science changed after review. |
+| SKEPTIC-FINAL | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.json | supports | Final exact indices/payload readback with864 checks;112 other payloads unchanged. |
+| FOODON | https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00004510; reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/shared-primary/ols-foodon-00004510.json | supports | Official archived response has primary flour label, generic material definition and related flour added synonym; Plain flour is not a captured ontology synonym. Original capture time retained. |
+| MEDIADIVE | https://bacmedia.dsmz.de/ingredients/1465; reports/all_unmatched_20261107/worker-08/shared-primary/op-bacmedia-ingredient1465.html | supports | Complete archived ingredient1465 page names Plain flour as complex substance and disclaims automatic identifiers. No grain/product or automatic CAS is adopted. |
+| LABEL | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/primary-label-resolution.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/primary-label-resolution.json | supports | Actual current native label and read-only ontology query; primary flour resolves to FOODON00004510. A wheat term broad synonym is not evidence that this source is wheat. |
+| FILED | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/issue1227-comment6719268318.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/issue1227-comment6719268318.json | supports | Exact coordinator issue comment filed before author correction; no issue mutation or closure by this worker. |
+| FINDING | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/finding-001-plain-flour-method.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/finding-001-plain-flour-method.json | supports | Exact original W08-FINAL-001 P3 method-provenance finding; no fabricated prior native review identifier. |
+| AUTHOR | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/assessment.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/assessment.json | supports | Authored exact delta and complete owner appraisal; author is root and does not provide independent approval. |
+| CASE | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json | supports | Complete final188 decisions; scientific reassessment is only case180 KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e. Other187 retain prior exact decisions. |
+| SELECTOR | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/selection.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/selection.json | supports | Complete113-owner/188-case/320-occurrence immutable selection; one changed payload. |
+| LINEAGE | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/lineage.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/lineage.json | supports | Exact112 unchanged payloads,187 unchanged decisions and original1075 evidence entries retained; all original beforeimages, occurrences and holds preserved. |
+| STRUCTURAL | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/structural-audit.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/structural-audit.json | supports | Actual frozen whole-shard accounting PASS; no scientific approval inferred. |
+| NATIVE | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/receipt.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/receipt.json | supports | Actual guarded/schema/full-overlay and isolatedSSSOM projection/control results; scientific acceptance remains separate. |
+| PRESERVATION | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/preservation.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/preservation.json | supports | Original tracked bytes and W05/W06/Soy-referral/source manifests verified unchanged. |
+| HISTORICAL-REFERRAL | reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json; reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json | supports | PF-LINEAGE-001: old reviewer prose adds supermarket not present in frozen source. Immutable prior review retained; new source assessment does not inherit that word. Separate coordinator referral, no other payload fix. |
+
+## Limits And Additional Notes
+
+- Only one changed payload receives fresh independent scientific review here;112 other payloads and187 other cases receive exact continuity checks.
+- Generic flour does not establish a grain, supplier, catalogue, product, molecular composition, treatment, CAS or role.
+- The automatic source CAS is not adopted; raw Plain flour is retained without being declared an ontology synonym.
+- Historical PF-LINEAGE-001 supermarket quotation is separately referred; prior receipt is unmodified and no unrelated payload correction was made.
+- Original Trypticase/Bacto failed owner-admission gate, all original scientific/source/role/export holds and18 unaffected planning-payload limits remain.
+- This native record does not formally close the coordinator legacy finding without an actual previous native finding identity. Correction in proposed bytes is supported; coordinator final-head acceptance remains pending.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T084543Z-w08-plain-flour-method-successor
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'W08 Plain Flour method correction: bounded independent successor review'
+started_at: '2026-11-08T08:38:45.690887Z'
+finished_at: '2026-11-08T08:45:43.704948Z'
+reviewer:
+  identity: worker08:/root/vitamins (scientific), worker08:/root/inorganics (skeptical);
+    root assembles exact receipts
+  kind: agent
+  independence: independent
+  independence_basis: Both scientific reviewers are separate from successor author
+    worker08:/root. The skeptic discloses prior OP review involvement and missed method
+    claim; it independently challenges the newly authored complete bytes. Original
+    OP author /root/organics executes native checks only and grants no independent
+    scientific approval.
+skill: review-yaml-record; map-media-ingredients
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: W08-FINAL-001 is corrected in the isolated proposal by an independently reviewed
+  generic preferred label and a truthful new primary-label resolution. Full source/owner/role/export
+  holds and all unaffected selection bytes remain. Coordinator final-head acceptance
+  and public issue disposition are separate.
+source:
+  git_revision: 1701ccf2049022866adfcebcc9bba9b6492407c6
+  state: working_tree
+  inputs:
+  - path: .claude/skills/map-media-ingredients/SKILL.md
+    sha256: 9431c262e190cd57ce05692487a0bc639859c9e877648d3af7612922221f6a1b
+    role: context
+  - path: .claude/skills/review-yaml-record/SKILL.md
+    sha256: 4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/ingredients/unmapped/Plain_Flour.yaml
+    sha256: becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+    sha256: 1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/shared-primary/op-bacmedia-ingredient1465.html
+    sha256: 040ee2dc07a077a38caeefa4fe8882b0c5829392a79d6f91a99c56b4022394a8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/shared-primary/ols-foodon-00004510.json
+    sha256: 48c4ece85b7193af6fee377601cc481e86a02b92ae637534a9fd1baf53315c98
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/assessment.json
+    sha256: 8b1a52dd7f6c592ec7894b77a7f8dad455dbc663dfe81d56cf33b8ea99339331
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/decision.json
+    sha256: e4d0821ef01e7040cf9153568975e81b1ded050fcadda67c5758319f0a6ff037
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/proposal.json
+    sha256: deb0f3b005c8cd3141a6211f178b104cc217de54226371d6fa126b54b0c95e0f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json
+    sha256: af263c15e4361f42401386bbdd774605c9d58736cafcaea0536f3c0ae473092a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/evidence.json
+    sha256: d2738971f37545a84ed237f9e87d78374f260e3d9d74951e23bbfe8839df9563
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/check_final_bindings_v1.py
+    sha256: 6f5918d1acfe4bbf83803f88bcac2da5558367cce1b3073229df70cd168878bb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/check_final_bindings_v2.py
+    sha256: 6d832d92f326d782a0d32c0a877453debe63b195431c60cd7eec1ab017e11297
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/check_final_bindings_v3.py
+    sha256: 389ab909ba0614c47ce5a4422b0f6bec4ad3073b8b8ed8719d7401a25536df56
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/check_successor_v1.py
+    sha256: 561156201f54a6a3d8a178faf7e73ab5df93e240f2cce751fbd89975d2695343
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-binding-attempt-v1-failure.json
+    sha256: d149cf0ffbea998034f86c089c0b25886a4b5727716cc54759aa40534049444f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-binding-attempt-v2-failure.json
+    sha256: 54d9f6fa16c9dc4147af403eb287168c9e04ff04be4854f10f643b554553a40c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-bindings.json
+    sha256: 5b0d2e21605a815cb16b93886d638f21c17a113350e8d22d1c3a0c9260484a87
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/preliminary-appraisal-v1.json
+    sha256: c7a1ccacfade59a53aaef2b0390c5091742c904d5bd6d123863c527c86509536
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/review.json
+    sha256: eee808bca0310f04b7100ab878f1e6c9c750de08934862027b71c94245f24c08
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/source-read-ledger-preliminary-v1.json
+    sha256: e13b0f333cdb1fe9a23c1cc9ff95d57d46b13bb1015c05d1fede0efe43314865
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/source-read-ledger-v1.json
+    sha256: 18486cd2a1b5048ec2e555691fbc4838d9ec4bc8e13c465d01afc993567e2e7f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/successor-exact-checks-v1.json
+    sha256: 8ccabf836933e8c6f360b2bb77bb195d24ad23c4af9c28d84d2d40de8f9fdec1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/HANDOFF.md
+    sha256: ecd53a18bf12e6f04ca9747267145732cd2b95d2540691b3a9443a2a61d76b93
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/author-validation.json
+    sha256: 64731e50dcd01052652239ec0755b40d3ce17df8dee41a8223d9a61d69294ac1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/author-validation.log
+    sha256: a61f3d3fe90e8516a3922799e18bae3c288ce2e9ad52b0a017075538db53f858
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/check-final-bindings-v1.py
+    sha256: 3f8a0610337510e4b448c9b17f92a9b83f542d9d148cd240757f3f2f7f66b03d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/check-final-bindings-v2.py
+    sha256: 21168e6fdd9e1a2b5f2a23678559e65c73da9bde6fb4d7252f66e274a3fd8a4a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/check_author.py
+    sha256: 38deb4907806096353a135bf86c8006e701c738de05e4f2399d7d484339266d3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/check_final_bindings.py
+    sha256: b969575a41238ab706aa1b532e4ed3981ce205747279f417648cbe580e7cd3b0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json
+    sha256: 1a15fb8cef3e930eab147169252e5ca3327061413cc7ccc5141fc8281fbec225
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings-v1.log
+    sha256: a000e4dce4311452f03793650a2b2196e477d85d1ceb66e54c658595e8d26d04
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings-v2.log
+    sha256: 1da381a571780550f9d3cf31bab43e85ef48ee072122c0500e0f967bce84aedd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.json
+    sha256: 09b803a0e03906d01ea1f601d74286c86adb23ea13fa138c8ac5d3dda7c701e3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.log
+    sha256: 5776e3fd2a9af13712cd72522510d2aaaf939a48774c10c234a728041dae3f39
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/independent-label-query.json
+    sha256: d7d98edb35648e223d223cd3d1442cfd3f3e1778acd3397d5b008f1be5e626cd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/preliminary-source-read-ledger.json
+    sha256: cd266a9281aa94a1e7f3277a283c9758c27c01d0d50737a8827bcf67d7566bec
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/progress.json
+    sha256: 22a00a3a8317fd78c4d2647b2fae2963e152574f58a4d66f0a7f1b49f026e8b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/review.json
+    sha256: 08dfb4b4e72ba57cb8d1fccf57441f500d5a08cb2460d3ac5c73d3c3b788cabe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/source-read-ledger.json
+    sha256: 9d012039899a253e7dffb35a561065298fb4e675add3bbd7309c89d390ad5569
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/finding-001-plain-flour-method.json
+    sha256: c10d1a861172d0751bffd13f1d2cd40649ae36e3b924cbc8d6823d3b13edf721
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/issue1227-comment6719268318.json
+    sha256: c28541852367c9b77e17cbd8cb303ef5e088bab804f80a4e2143f91873701d40
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/lineage.json
+    sha256: 1b503f74033e680618eb8773cb66802a9a7e850f8e36c876a69a2c38ebb49a27
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/payloads/Plain_Flour.yaml
+    sha256: 884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/preservation.json
+    sha256: 7abe1fe37f7931982514bec68abf46ff46a41c7f0765b73714a00982ea5d36c3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/proposals.json
+    sha256: 260cad30a6a48ee0eb658404317aa01395820b82e656caf00330a42f69f72e64
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/assemble.log
+    sha256: eec57e0ce0d5e9767a19bbf2b03ae913b99477b223557eec8afc9c85f07b9982
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/assemble.py
+    sha256: bbaa509048028c7eae55c05db437db4f859afe3452612886ef4aa9b3e3da5ca6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/author.log
+    sha256: 77694a4156f0efaf5ea97626b2e65b4fc20892517b19959ae157b8577d93260e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/author.py
+    sha256: 1790bb6525e047fde7158a4f84ab9a623de43ba8b4a85aa96fc09b5244d8b0c0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/build_native.py
+    sha256: 999830723028073ddda7f7aa83083b6079424ebf1a2517bf3703275b4937c49a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/peer-publication-copy-receipt.json
+    sha256: c51adf24277d7fea6cfe2d1dfee9969b00a58d26fce19fe564ff8454803132eb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/preservation.log
+    sha256: 7abe1fe37f7931982514bec68abf46ff46a41c7f0765b73714a00982ea5d36c3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/structural-audit.log
+    sha256: 35ef5b5045905e1e009119689919ea31f64e3cb8a2d3d211ae180ffba5d297c3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/validation-planning.json
+    sha256: 8ac2d9eb1214351d2648e83cf843eee056f84d9c612a38c5faf31ca84dad1aaf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/verify_preservation.py
+    sha256: 11f5b13577558ce585e06e885bcd401e425bc0cc9eeac23ee2d281afdf4905df
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/primary-label-resolution.json
+    sha256: 9065cf93f0504f48c6317470651a1bb3ef107ff5e5e44a7b8ed007467401024a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/root-source-read-ledger.json
+    sha256: 9eca01169ad6161e675037fc94620ee6b5693a013bb13a3ed1470cb58cd0155c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/selection.json
+    sha256: 335806d22ce278eaf628930b521d7164f0dee2493a19fbc790ae3c273d179f92
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/structural-audit.json
+    sha256: 7374075e10dd6db4d6dc71c215fd8c12738170bdd7e0c031683d9e16b4f5fa2f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/HANDOFF.md
+    sha256: 4b2b71e1d49a7dcaef51b5a768e564839eb55dab15568bfc3a7bd04db6b7c903
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/MANIFEST.sha256
+    sha256: 333f48a7c50d2a93dfc0437cdf7b7e9234a2171e9b50da3992b8c50bd834a9e6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/author-final-metadata-boundary.json
+    sha256: ef43c1ebd3cf3223f1c104e44242bdcc16562f0561a8b2c7a0d32a2344922974
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/baseline-inputs.json
+    sha256: 8d72e64c3b56660616c3f4ee00e72c736c6042136aae83ae52d228a67b913ba7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/baseline-tree.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/baseline-tree.stdout
+    sha256: 84c5c01fc3735ba06ac3c00ecceba4829f839eb10a363c56783e81db779a5380
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/canonical-label-and-control.json
+    sha256: 517cd7a35b4f6c67ed76f63db16525c5c974b9111ace3d188c850496cb3077f5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/claw-actual-projections.json
+    sha256: 0977467c5e785da7bbe3f275feb609f7da6f040bcb76bda253a6160fca663edb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/claw-head.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/claw-head.stdout
+    sha256: 0b149759f0cae8c48e6175432125374296fbdf27c9d23d0868b7e4a056780ad7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/claw-producer-source-hashes.json
+    sha256: 3959452a5e8133eb94271b3a7c6b42d9446875a07cc1a723e87ad5e5f4e9735b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/claw-projection-assertions.json
+    sha256: 40b7faa79e73203393969bb41c8959d072fb8c22b502d83568836e753a379ace
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/commands.json
+    sha256: 5d186371e5de3063d0d4fb2a7fb8bec2ab9e11bb8bd9f7357054aa6223b6f5c6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/completion.json
+    sha256: 4b00a7ebec6f4426db0ca26ba852fadf70f6b192ef6b8334796a505c6ecf6f26
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/controls/invalid-enum.json
+    sha256: 7006d9103c5c19c7e0e19ac04c7b739a2ffa5679ce32b4012d667961f8280dd3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/controls/unknown-field.json
+    sha256: 2cd36d11da9716193598ef1eac2f77b64a57e403fdb1d0247fbe0d07bf001474
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/full-overlay.json
+    sha256: 001e7bac99c690fb5e6de5159a600d66ea3a43efe378338dbaf8cdb5f5c73904
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/guarded-replay.json
+    sha256: d3c68898ea6522f52cca67d5b7c42d43472d338e2582678a9fc4b2597378a98d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/guarded-replay/Plain_Flour.yaml
+    sha256: 884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/ATCC1249_Component_III.yaml
+    sha256: 7925a494844f22f5b310d81bc0a7907dc35400c958a136c23cc19b61726e4aad
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml
+    sha256: 946583dcb59a4bade45f8797498769d3f109ef5a1d8238b58bd84a0c62e43932
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Beta-nad.yaml
+    sha256: c3abed5996fc15ad308c159b0370460ccdaf241f1cea2c4b822b7629fc5ab103
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Cereal_Leaves.yaml
+    sha256: a5b8c39c7cfd5cdc75daffbfacb55e639cf6f97c78fb51e293dd78361d6a8e81
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/DL_Asparagine_Monohydrate.yaml
+    sha256: 8296d12ef6c92743896cc2fce0010e2ba6723ed451bca9a4d5a6bbe26100235e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml
+    sha256: 26565e8825b7ad252006a282d6b97575aa53c7768f110e1560e8ee4cc5b40f19
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/DSMZ125_Vitamin_K1_Solution.yaml
+    sha256: 1d0233d39cb6d2fdb86be534c625ac39afb3bc47d9be431d15a9eb4ba3227c7e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml
+    sha256: 34fefc81827cf593b52a70c43c95d0b9b78d46557c5d965e2294a7a53fa35651
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml
+    sha256: 068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Ethane.yaml
+    sha256: c803a8c73c9191def531ae6b8a53e4cfa0ed35ab2cc31c81544443e6c81fd8a0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Fe4_Po42.yaml
+    sha256: c754fbc05ce108c243968f442e0a7e3ef0f2d9b6bbcd820fac881b0e243f43cc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Gibco11120_MEM_Vitamin_Solution_100X.yaml
+    sha256: 0a99f78167b7ce3faaef1f2427e7d0c19abe9dd04e2b3932cee91bb141d73064
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Glycerol-asparagine_Agar.yaml
+    sha256: 7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Glycine_Betaine.yaml
+    sha256: 8e3f8815431fd840bc81c41a65a48a03356d55bad8b058ff2a5dda1fba698886
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Isovaleric_Acid.yaml
+    sha256: b5d25061615be15e4055434b7a271e608b78650c37fe992d49a19234090ff6d5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1023_Vitamin_Mixture.yaml
+    sha256: 5940e814e39d8223839fa4ef92d62182942fa900d1ff032c9f7e5cefc8c8d0fa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1097_RST_Vitamin_Solution.yaml
+    sha256: 149b7d7e9afc7d349cbcb63d83ce07809f68920441c5ca77764a724e9f11d42a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1100_Vitamin_Solution_A_1000x.yaml
+    sha256: 0c23a3fa552fdc7f2561b35c6403d928e069f659dd96b26c2b96fb653b4be54e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1100_Vitamin_Solution_B_1000x.yaml
+    sha256: 12ae9699971eec2ba601d56707ed5729f437fc2815ceb798bb431945f063e65c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1118_Vitamin_Mixture.yaml
+    sha256: 773111c58446c54f436074db53ef16b436c59bd35ce28444b6cbcd56916b497c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1130_Vitamin_Solution_I.yaml
+    sha256: fa9e0e76b938925bf42a776511ea8497390f6fcdc7cf4b069df75a31e8e3f391
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1354_Vitamin_B12_001percent_Stock.yaml
+    sha256: ce0d4c5a5e41eda069527a44f28bb7b91f9683b6bd18d4244abbf05ba05aa53a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM1363_Vitamin_Mixture_Solution.yaml
+    sha256: 85051099d2e34b243d242f37bfa73b8cd3e09527f584f96001b6fadb78e1d182
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml
+    sha256: 3bcc09def3c712626c94115d1f138258828e40014eee300bddf15c21bff2e93e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM296_Vitamins_Mix_Solution.yaml
+    sha256: 964d9c964ae2367d48ce8778f1da302844324db158c0c4974b2b04abb58665dd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM510_Methane_Air_50_50.yaml
+    sha256: e380b6ebbd28fd12c3c0a1d8494201038b1fa16b14dde093083714fa82e4c890
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM515_Vitamin_B12_20ug_ml_Stock.yaml
+    sha256: 4a9f731182073bc7774f061aaeb5c0220966413dbdaa43ca8beadba9bd8e8255
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM554_SL10_Elements_Solution.yaml
+    sha256: 4276ddb38f136cabaf72f5bc4f1a3cbe1fbc88bd695a37770c687283e16f13e9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM628_Top_Layer.yaml
+    sha256: 13fe1d4d83dc56b5b51be169db7c2e6cdf3beb361d3724b4e3137df6b3e10734
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM629_Top_Layer.yaml
+    sha256: 96947f16567443e18cfc3d1c03a53dbed95d9d16aa374f9106fdf2a17c2dd7b6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM647_Vitamin_B12_2mg_ml_Stock.yaml
+    sha256: 44f7a4c0665c9bc2cedba0d11dfb72e4977abc1f3ee05ce95636c8d5afdbfb3a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM848_Vitamin_Mixture_100x.yaml
+    sha256: e00f00a7e43becd7cfd3d1cf2df7ad4434c4d4843aff4721552e32aa9a448ab3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM898_Vitamin_Solution.yaml
+    sha256: d2892a1e3151ee9454cfa9c91c9936f6d1c57968394e40fa9be681a9efec2469
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM903_Vitamin_Mixture.yaml
+    sha256: bab8a83499fe4305600a11276137e688fcb90a10815962eeed15705ffd488afa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM915_Vitamin_Solution.yaml
+    sha256: 752eb404de6db0e89ba2a0208149e3dc8a19310e4cae3988764e5c944baddb20
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM923_Major_Metals_Stock.yaml
+    sha256: e490b99c640f34a545f83fc339f1abb5ff9418bc596b7ad124c4bca5b3d2e46c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/JCM995_Vitamin_Solution_No6.yaml
+    sha256: 7bcce562d167c1d129f13682d14de0bcb7583c4295ae64acaa9e17d83d0549be
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/K2hpo4.yaml
+    sha256: de3a38207862f0661a3bce2408d6b1686d1b3c8ebdd13267234f362843602dbe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Kh2po4.yaml
+    sha256: c23172acac0bd27abee380404b04cfea3fcd4cc9632207582712e44a32ccbe99
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/L-Asparagine_Monohydrate.yaml
+    sha256: 6aca2073ba7271bc33f7e360b5830af08163841a3913405f28f5959b08f8f832
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Laminarin_From_Laminaria_Digitata.yaml
+    sha256: 5698231ae810fce7fce2a15ff4fb03af8a8525618e06e50d3eb27af4d7c9c06f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    sha256: 92ff5a91ef9582e3a859b3f985af572b653942e105b43fbdc1bc0d5857401431
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Menadione.yaml
+    sha256: d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Methane.yaml
+    sha256: 19e46bb75e6a556511aef6f9467578a5e18c478175c61ee728d4dbf4b956445b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Methanethiol.yaml
+    sha256: be0b0cc1a81754c64670d6193df99475267e1cd96e659d9c201fdbc936a5696b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1020_Vitamin_Solution.yaml
+    sha256: b43abe4cb1f251cdb5e1937355b74292efe21d5c1cb98c1deb25c6ab2dbe449a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1226_Vitamin_Solution.yaml
+    sha256: b4824a5d96a783ad2e927512d20aec0e793536791511339b19ffafcbad7e24bd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1321_Vitamin_B12_Solution.yaml
+    sha256: 5db9b9053283a9a636625764f3ced0a65b77f6829cc31b4a01842bd08972bbcb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1321_Vitamin_Solution.yaml
+    sha256: 07ddcc303f994e84d93a93bda8f159f4f72f10b240bf7555caa843a929b03032
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1356_Mineral_Base1_Supernatant.yaml
+    sha256: 120d5f61e7857a3057c40c0eabec1b3feee79d01eaa7cc4deb91debc2ec0c603
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1356_Mineral_Base_2.yaml
+    sha256: d6577043ecc6bc9f5ab48a85754e00309a8d13262c7d8f419cb0bdb319ec7e53
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC1356_Vitamin_Solution.yaml
+    sha256: 29a70bc825a9b0ecec7a0205b56bdf07898158b2fc72ffa955e051319f8d772c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/NBRC903_Vitamin_Solution.yaml
+    sha256: e4a7c5d611dd36f449da97ec674100f58679ab5a5871996e79ca9837e73b2802
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Na2edta2h2o.yaml
+    sha256: 1f981682c97803091dfd5bf91ccf52a8055901df5f132cee2b1effdeb15bb33d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Na2hpo4_X_12_H2o.yaml
+    sha256: a85b1bdcfb6e87f41878477d5e2c087671844aaab28c11db236b8072f9abeb97
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Na2moo4_X_2_H2o.yaml
+    sha256: a81465916836d3c96601136e45f446324ff92091aeb4b9352386afe0760cee97
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Na2s2o4.yaml
+    sha256: 569413243139395d50e225efe22b950bd60f5aa3c23ee70d5cfcd002225d1316
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Na2s_X_9_H2o.yaml
+    sha256: 9fa6da94e753adc5df70a2b38831644fe7264ca604c8a6baa9a322c918f50570
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Nah2po4_X_2_H2o.yaml
+    sha256: 3dcb2ff6d438659777ce8c37d244a19f21ce89a5332392ae9071efffb9217b55
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Nalidixic_Acid.yaml
+    sha256: 072861b09dbe72214bd2f3f44a58e5b13d1970db4d2fe1d715dc15ab325461e7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Naoh.yaml
+    sha256: e8764ed4b0e723390eda05423315f884a30ebeebab4c6196945dbac0944887e8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Plain_Flour.yaml
+    sha256: 884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/R2A_agar.yaml
+    sha256: d53585e7ac126e2319ffbd1610201a29181dbcd67d72b27d66563f09ef8b0275
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/R2A_medium.yaml
+    sha256: 6ef646d38ae19ef2dd3e7dded41ea95d5cedb5acb1b5e6ce33ab07a91d28f57c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml
+    sha256: e370af536e651fd1e580eafc2795fe0f9bf84fd1e8664862b1a872ceb49d859f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Sodium_Dithionite.yaml
+    sha256: 4173e5073b8d267983e242a701cdfb275b952372af57514ae7da7aa42c14797b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Sodium_Lactate.yaml
+    sha256: 9459b16119e016b07918ab50afa397b649b57c4ee8c5a286a5a779c7472c278f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Sodium_Nicotinate.yaml
+    sha256: b901b7c43d8ce1a14d51211ef7748823fe5f7e921399af3fa9c8465dc1138d12
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Sodium_phosphate_monobasic_monohydrate.yaml
+    sha256: e79903919876ad08323eaa4faabee6255367345d6e092b329e7006dd0bcaa3a0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Soy_Flour.yaml
+    sha256: 5687f73222f38e2df426700c0012646685c0c6e5458611b92710c57fae29c81b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Soy_Peptone.yaml
+    sha256: 4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/TOGO_M125_Vitamin_K1_01percent_Stock.yaml
+    sha256: a1df6d15d30ee64bbb6de0dc30f9fc65ca5adbabcc1e444120e53d93caf82904
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_A.yaml
+    sha256: 2022ab3faf780ea9998ca9b6819b17587a42049f27ed6fad2e122aea22fa29ec
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_B.yaml
+    sha256: 36c0137ee590cbd4073da5ebd9d1c6cf9121499d348f5de797fc03ffa3982a7e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_C.yaml
+    sha256: 1c4be62bdbab9be2f5aafd2e7f52d7d22e7d4b6d320b69ddd8e168b177e1c53c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/TOGO_M2567_Mineral_Base_D.yaml
+    sha256: 1af1b8697fd06e28b4968680aac6acbfec94f8928015c1c44393d0ffa1a763ef
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Thauers_Vitamin_Mix.yaml
+    sha256: 5884dfe7efb9e9f007d49d04b96a53e0b983260d98881ac84142c72ce71fcf01
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Tris_Base.yaml
+    sha256: da1673baa37eeed978b5ec7bf79f606b9a3d398eb47b69fbdd805a423e1fa3df
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Trypticase_Soy_Broth.yaml
+    sha256: 8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Valeric_Acid.yaml
+    sha256: 321fc7161a295322c2eb7002583eeefe2f7de49771795235ac68c3e6cea7fc49
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    sha256: 7182dd568490540f71ac904efd4bbf177f292ceab422e147497f007ce6a9177f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/Vitamin_Solution_See_Medium_No_403.yaml
+    sha256: 57ec1f3f7540d96d9e90774900146e41eee779f7aaed07b272e8302d8ff54bb9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/allen_m2231_phosphate_stock.yaml
+    sha256: 27b8467bab6e05b0116053e52c9b91f214a002046bc441feb367e88fe0ae47e2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/atcc_1340_naoh_4g_100ml.yaml
+    sha256: 21cbd942e71d76ea7f1d87e57339b5aba23ec032e4c7dc10fb3b96cb650cfd5f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/atcc_1942_sulfide_5pct.yaml
+    sha256: 65d136c991e7b68ef8cdcebf3ce4e2596a64d1bdb5037b9179eb61a738e1eb61
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/atcc_1943_sulfide_25pct.yaml
+    sha256: f19078a9574201f29f6ee9336e9676b82b42e96299d9e0f83974f7e6755e198e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/atcc_nitrosolobus_6n_naoh.yaml
+    sha256: 96100762d0f4662991c3daaa7ec98e52b436bbf6729422ff729661240f1a0287
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/bbl_fluid_thioglycollate_bd211260.yaml
+    sha256: 9b3b03cb7ff3d6b5d1f1e6c6bba374da426c011cb78af64ff0e83fc8ccce68dd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/deionized_water.yaml
+    sha256: b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/denger2010_racemic_sodium_sulfolactate.yaml
+    sha256: 0fa70de5f9efa049f948a80244dea6da40bbbc499bd8592bb38b498df0b9fb9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/dsmz_104_8n_naoh.yaml
+    sha256: 3019e7b51af1853f434eef5f7d752724d04c9dbafdcdcf1e84844cdb737aef15
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/dsmz_trace_2n_naoh.yaml
+    sha256: 66b0fee953fbb4b234082782c3d9ae51820a99ccabe06214f22a53bc21581b3b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm600_water_saturated_toluene_stock.yaml
+    sha256: ec3287066d2a66f0a7d30f1fae415d9de93fc92cd13e339deb2b5deb67cc9dba
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml
+    sha256: 3a92641f7b7817c2cb40bb752e53921767df90394232f83762c7452f8b04937f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_1130_10n_naoh.yaml
+    sha256: 63a38aa9b3a508a195448995ee2e9ab3bc1da116001215366fff07757fff4a29
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_221_02n_naoh.yaml
+    sha256: 44e2eaf5271b89b5712b55563f925328504bd17727574ae33985acf417386006
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_574_1m_k2hpo4.yaml
+    sha256: 9e123b2c54d77aa95cff33e23e66ec2d745f9d5a50c13db0cf0d6791ad97a390
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_574_1m_kh2po4.yaml
+    sha256: 59a4c22506d8d0244064690e661b74e6c74109e2c3663429414a966d9c2a23ea
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_713_sulfide_24pct.yaml
+    sha256: 88b1eef07b9c9e8251a5178fd68bc67631dab3c01ca27c1b82173e19c05bfeb6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_908_sulfide_10pct_wv.yaml
+    sha256: 513d34d388831f51061ba7d6b74482bc2e583dfe9fe93819a0a8bc6e8eb1d482
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/jcm_941_solution_c.yaml
+    sha256: 2fcf9bfa07442ede81043a0222bfc3b8031e7f4366449495526c3e8476529bf1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/mediadive1140_amphotericin_stock_10mg_ml.yaml
+    sha256: 643063b66c092548c59ff2111021dc43d397eeaa6dbebb034778a2dfed8bf11c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/mediadive1938_homopipes_0_5m_ph5_4.yaml
+    sha256: 73bba8ade5f8e50dfeb68805baa016fa5b8dd0d1b1d4c772440d1c9e341f0841
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/mediadive_552_thiosulfate_5g_100ml.yaml
+    sha256: 51f78e7c87e1f93fa30c05a3f644124b4a5aad7f01ce52e17b67115de7231e97
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/nbrc19_usb_peptic_pepton.yaml
+    sha256: 2defa950f7097d1a62a1a64989647b64a5c1e614040481feac0855a545247ec4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/pbbm_1m_na2hpo4.yaml
+    sha256: d9954703385fde2bf8480a9a8de16700702297d0cdfe843ed46270e5c80c68ab
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/pcr_s11_01n_naoh.yaml
+    sha256: 41a2e339a50e6a84a8283fa8e8e52ed3ce2d70d72d71a8b0cee0ba2539c595f2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/pcr_s11_50mm_na2hpo4.yaml
+    sha256: e487df378fee92c65dd801641ea59fae4712f921210bc6ac8de496e1aa10e75a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/pcr_s11_50mm_nah2po4.yaml
+    sha256: ad99c3ec64193d25a066c7cf58430cef977165a97c6ca4390a8eca107c6b793a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/pcr_s11_sodium_phosphate_buffer_ph75.yaml
+    sha256: ad6c46351434f3a99bcf9871072eae37df4d8db59d479eccd031326b423b2fa6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/sulfide_ore.yaml
+    sha256: 24873d27341e8b56e27fd8f231cf55d875729aa300b4885687bf808e3f61f3f3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/togo_m2844_bromothymol_blue_koh_stock.yaml
+    sha256: 8f87b934890a03ee4df11bcefe34e3b9db899fa5362a00f2547e37ae7308d5c8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligation-fixture/wolin_mineral_05n_naoh.yaml
+    sha256: c7b8dcd343021ed9fbc4dc221c9cf44c7e1710834292354083e84f351ecf5a2e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligations.json
+    sha256: dfc61b9cd148acb38c5bb6b4a52ea7c8eb3d598edf071478db1a0446d2a51be9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/owner-admission-failed-held.json
+    sha256: 56593df9ab2cace46c93c664c88cedaac563b9d0089366986c8861aa03c79a17
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/scope.json
+    sha256: 3f8cc1ce97e7631999e3f491b6b5576bef852ee84513659f5b7e2b3207288212
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/selection-and-112-unchanged.json
+    sha256: 97b1aa77127c357034009bcd181268b107585a6b1173f1e2d07eae46cb088cf3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/strict.stderr
+    sha256: 248e29eab3dc20d8b5e22032a2ca39f1dfb83aa2a80628c2a902ad9c55e9691e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/strict.stdout
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/execution-v2.log
+    sha256: c5276629b40878091498fe76223ebf4613cd04ba3a80cd8846e413e30336504d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/execution.log
+    sha256: ee0e9e5dfd28145cef85a630791ab9ab3878bfc482403baad533c647f3b9dc04
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/failure-attempt-v1.json
+    sha256: 179ade54c7ba454a31ac246ab1fd547edd243afdbc730ac70251c91cb14e7103
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/finalize_validation.py
+    sha256: 92a10182caa72d71d2a72f665f8762f657badd1af35932469c5c1c53a1c96c32
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/receipt.json
+    sha256: 27d72b5ebbe4cd5c68709615ec4bc688e5a6ac2229908a2bf99c100c51ab7f2e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/run_validation.py
+    sha256: b5d39eca06ace00290d5f46dc1d41c35efdc30afeda988473ef9bdb72321a4d3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/run_validation_v2.py
+    sha256: ba4e7506532364b4a411cfd7a095814ae34e478c889b0bee0c319c40e61ca63d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/scope.json
+    sha256: a5756b34faa5caa89cc6a992632617902346531940f0816887277f25879e9086
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/COORDINATOR-TSB-OWNER-DEPENDENCY-v1.json
+    sha256: 2229306ad27dfcfc76934566708f5acd41fd55b428bb14024f7bb9955bd18a1f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/organic_products/review-v2.json
+    sha256: 5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/research/organic_products/proposed_owners/Plain_Flour.yaml
+    sha256: aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: scripts/validate_sssom_invariants.py
+    sha256: 3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303
+    role: context
+  - path: scripts/validate_strict.py
+    sha256: 5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/sssom_grading.py
+    sha256: 20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c
+    role: context
+  - path: src/mediaingredientmech/validation/component_partonomy.py
+    sha256: d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696
+    role: context
+  - path: src/mediaingredientmech/validation/write_validated.py
+    sha256: 6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9
+    role: context
+scope:
+  description: One complete changed owner payload and its exact case180 applicability,
+    with full113/188 accounting as context. Other payloads retain prior scope only.
+  selection: Exact op1201-plain-flour successor884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873
+    selected by335806d22ce278eaf628930b521d7164f0dee2493a19fbc790ae3c273d179f92.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - op1201-plain-flour
+targets:
+- target_id: op1201-plain-flour
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/payloads/Plain_Flour.yaml
+  label: flour — isolated Plain_Flour owner successor
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Plain_Flour.yaml
+    role: Exact frozen original owner beforeimage; successor is an unapplied promotion
+      proposal preserving stable filename/history.
+checks:
+- check_id: native-structure
+  name: Guarded, strict, full-overlay and SSSOM controls
+  status: passed
+  required: true
+  summary: Actual native receipt is bound; this check approves no scientific claims.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - NATIVE
+- check_id: whole-shard-accounting
+  name: 188cases113proposals320occurrenceIDs
+  status: passed
+  required: true
+  summary: Frozen auditor and separate exact final index readbacks pass.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - STRUCTURAL
+  - SCIENCE-FINAL
+  - SKEPTIC-FINAL
+- check_id: preserved-history
+  name: Unchanged predecessor and sealed reviews
+  status: passed
+  required: true
+  summary: Full original source/native history, all other payloads and W05/W06 sealed
+    reviews preserved.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - LINEAGE
+  - PRESERVATION
+evidence:
+- evidence_id: SCIENCE
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/review.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/review.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Full actual source/whole-payload scientific assessment by worker08:/root/vitamins;
+    generic material and new primary-label resolution supported with holds.
+  snapshot_sha256: eee808bca0310f04b7100ab878f1e6c9c750de08934862027b71c94245f24c08
+- evidence_id: SKEPTIC
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/review.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/review.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Separate whole-payload/source skeptical review by worker08:/root/inorganics;
+    prior organic review miss and historical quotation discrepancy disclosed.
+  snapshot_sha256: 08dfb4b4e72ba57cb8d1fccf57441f500d5a08cb2460d3ac5c73d3c3b788cabe
+- evidence_id: SCIENCE-FINAL
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-bindings.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-bindings.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Final actual indices/payload readback with1906 checks; no science changed
+    after review.
+  snapshot_sha256: 5b0d2e21605a815cb16b93886d638f21c17a113350e8d22d1c3a0c9260484a87
+- evidence_id: SKEPTIC-FINAL
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Final exact indices/payload readback with864 checks;112 other payloads
+    unchanged.
+  snapshot_sha256: 09b803a0e03906d01ea1f601d74286c86adb23ea13fa138c8ac5d3dda7c701e3
+- evidence_id: FOODON
+  kind: database
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00004510
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/shared-primary/ols-foodon-00004510.json
+  accessed_at: '2026-11-08T05:57:13.916914Z'
+  support: supports
+  summary: Official archived response has primary flour label, generic material definition
+    and related flour added synonym; Plain flour is not a captured ontology synonym.
+    Original capture time retained.
+  snapshot_sha256: 48c4ece85b7193af6fee377601cc481e86a02b92ae637534a9fd1baf53315c98
+- evidence_id: MEDIADIVE
+  kind: primary_source
+  reference: https://bacmedia.dsmz.de/ingredients/1465
+  locator: reports/all_unmatched_20261107/worker-08/shared-primary/op-bacmedia-ingredient1465.html
+  accessed_at: '2026-11-08T05:16:12.135246Z'
+  support: supports
+  summary: Complete archived ingredient1465 page names Plain flour as complex substance
+    and disclaims automatic identifiers. No grain/product or automatic CAS is adopted.
+  snapshot_sha256: 040ee2dc07a077a38caeefa4fe8882b0c5829392a79d6f91a99c56b4022394a8
+- evidence_id: LABEL
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/primary-label-resolution.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/primary-label-resolution.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Actual current native label and read-only ontology query; primary flour
+    resolves to FOODON00004510. A wheat term broad synonym is not evidence that this
+    source is wheat.
+  snapshot_sha256: 9065cf93f0504f48c6317470651a1bb3ef107ff5e5e44a7b8ed007467401024a
+- evidence_id: FILED
+  kind: authority
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/issue1227-comment6719268318.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/issue1227-comment6719268318.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Exact coordinator issue comment filed before author correction; no issue
+    mutation or closure by this worker.
+  snapshot_sha256: c28541852367c9b77e17cbd8cb303ef5e088bab804f80a4e2143f91873701d40
+- evidence_id: FINDING
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/finding-001-plain-flour-method.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/inputs/finding-001-plain-flour-method.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Exact original W08-FINAL-001 P3 method-provenance finding; no fabricated
+    prior native review identifier.
+  snapshot_sha256: c10d1a861172d0751bffd13f1d2cd40649ae36e3b924cbc8d6823d3b13edf721
+- evidence_id: AUTHOR
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/assessment.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/assessment.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Authored exact delta and complete owner appraisal; author is root and does
+    not provide independent approval.
+  snapshot_sha256: 8b1a52dd7f6c592ec7894b77a7f8dad455dbc663dfe81d56cf33b8ea99339331
+- evidence_id: CASE
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Complete final188 decisions; scientific reassessment is only case180 KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e.
+    Other187 retain prior exact decisions.
+  snapshot_sha256: af263c15e4361f42401386bbdd774605c9d58736cafcaea0536f3c0ae473092a
+- evidence_id: SELECTOR
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/selection.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/selection.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Complete113-owner/188-case/320-occurrence immutable selection; one changed
+    payload.
+  snapshot_sha256: 335806d22ce278eaf628930b521d7164f0dee2493a19fbc790ae3c273d179f92
+- evidence_id: LINEAGE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/lineage.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/lineage.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Exact112 unchanged payloads,187 unchanged decisions and original1075 evidence
+    entries retained; all original beforeimages, occurrences and holds preserved.
+  snapshot_sha256: 1b503f74033e680618eb8773cb66802a9a7e850f8e36c876a69a2c38ebb49a27
+- evidence_id: STRUCTURAL
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/structural-audit.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/structural-audit.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Actual frozen whole-shard accounting PASS; no scientific approval inferred.
+  snapshot_sha256: 7374075e10dd6db4d6dc71c215fd8c12738170bdd7e0c031683d9e16b4f5fa2f
+- evidence_id: NATIVE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/receipt.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/receipt.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Actual guarded/schema/full-overlay and isolatedSSSOM projection/control
+    results; scientific acceptance remains separate.
+  snapshot_sha256: 27d72b5ebbe4cd5c68709615ec4bc688e5a6ac2229908a2bf99c100c51ab7f2e
+- evidence_id: PRESERVATION
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/preservation.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/preservation.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: Original tracked bytes and W05/W06/Soy-referral/source manifests verified
+    unchanged.
+  snapshot_sha256: 7abe1fe37f7931982514bec68abf46ff46a41c7f0765b73714a00982ea5d36c3
+- evidence_id: HISTORICAL-REFERRAL
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json
+  locator: reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json
+  accessed_at: '2026-11-08T08:45:43.704948Z'
+  support: supports
+  summary: 'PF-LINEAGE-001: old reviewer prose adds supermarket not present in frozen
+    source. Immutable prior review retained; new source assessment does not inherit
+    that word. Separate coordinator referral, no other payload fix.'
+  snapshot_sha256: 1a15fb8cef3e930eab147169252e5ca3327061413cc7ccc5141fc8281fbec225
+assessments:
+- assessment_id: A-SCOPE
+  area: identity
+  topic: Generic material scope and source applicability
+  outcome: supported
+  summary: Source-specific Plain flour evidence supports only the reviewed generic
+    flour material scope under section3 step4. Grain, grade, bleaching, fortification,
+    supplier, catalogue, automatic CAS, roles and product equivalence remain unestablished.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - SCIENCE
+  - SKEPTIC
+  - FOODON
+  - MEDIADIVE
+  - CASE
+- assessment_id: A-METHOD
+  area: grounding
+  topic: New primary-label resolution, not retrospective lexical equivalence
+  outcome: supported
+  summary: Preferred_term is now flour, exactly the native FOODON00004510 primary
+    label. EXACT_MATCH describes this new recorded resolution. It does not certify
+    that Plain flour was an ontology label/synonym or was looked up by CAS. DATABASE_MATCH
+    ontology facts and LLM_SUGGESTION material interpretation are separated.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - LABEL
+  - FOODON
+  - SCIENCE
+  - SKEPTIC
+  - AUTHOR
+- assessment_id: A-ENTIRE
+  area: provenance
+  topic: Complete changed owner and all historical fields
+  outcome: supported
+  summary: 'Both independent reviewers assessed the entire final payload: identifier/ontology
+    target unchanged, same original owner/beforeimage/stable filename, exact original
+    raw synonym, five-event history prefix, original counts, no added components,
+    supplied form, CAS or roles. Only preferred label, explicit explanatory notes/evidence
+    and one honest history event changed.'
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - SCIENCE
+  - SKEPTIC
+  - SCIENCE-FINAL
+  - SKEPTIC-FINAL
+  details: '{"science": [{"proposal_id": "op1201-plain-flour", "selected_sha256":
+    "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873", "outcome":
+    "accepted_bounded_method_correction", "appraisal": "Read the whole successor.
+    It keeps FOODON00004510, all raw aliases/provenance, zero occurrence counters,
+    UNDEFINED_MIXTURE classification and all five prior history entries. It adopts
+    the verified primary label flour, appends one truthful LLM-assisted correction
+    event, preserves prior notes, and separates DATABASE_MATCH label evidence from
+    LLM_SUGGESTION material-scope interpretation. It expressly says the earlier Plain
+    flour judgment was not an exact lexical lookup and does not claim an ontology
+    synonym or CAS lookup. No new components, roles or chemical properties appear.",
+    "evidence_ids": ["selected-owner", "successor-owner", "foodon-primary", "dsmz-primary",
+    "new-label-resolution", "author-assessment", "successor-proposal"], "finding_ids":
+    ["W08-FINAL-001"]}], "skeptical": [{"proposal_id": "op1201-plain-flour", "case_ids":
+    ["KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e"],
+    "owner_path": "data/ingredients/unmapped/Plain_Flour.yaml", "before_sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e",
+    "after_capture": {"root": "artifact", "path": "successors/issue-1227-plain-flour-v1/payloads/Plain_Flour.yaml",
+    "sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873"},
+    "full_payload_review": true, "outcome": "supported_bounded_method_correction",
+    "appraisal": "The complete payload preserves FOODON00004510 identity, MAPPED status,
+    original Plain flour RAW_TEXT/source, ingredient type and zero occurrence statistics.
+    It adds no roles, components, supplied form, chemical properties or CAS. The adopted
+    preferred label flour matches the verified primary label in both the archived
+    official term and independently queried local ontology. EXACT_MATCH now records
+    that explicit current primary-label resolution; it does not reclassify the earlier
+    agent material-scope judgment as lexical lookup. DATABASE_MATCH is limited to
+    the ontology facts and primary-label resolution; separate LLM_SUGGESTION records
+    the material-scope interpretation with original source provenance. All five prior
+    history events remain structurally exact and a sixth truthful root/LLM-assisted
+    MAPPED-to-MAPPED event records the old defect and current correction. The stable
+    owner filename and frozen before hash remain; no owner merge or grain/product
+    equivalence follows. RuleD own-identifier exact semantics are unaffected by the
+    corrected evidence method; this review does not claim SSSOM or export approval.",
+    "source_evidence_ids": ["op-plain-flour-primary", "op1201-ols-foodon-00004510",
+    "w08-final001-label-resolution", "w08-final001-author-assessment"], "finding_ids":
+    ["W08-FINAL-001"], "inherited_holds_preserved": true, "whole_owner_role_export_or_source_release_approval":
+    false}]}'
+- assessment_id: A-CASE
+  area: scope
+  topic: Complete final case and unchanged cohort
+  outcome: supported
+  summary: Final case180 preserves frozen source object, raw amount4g/g_l4 as transcription,
+    empty KG per-recipe-ID list and all prior beforeimage/source limits. Its new review
+    metadata is bound by both independent final readbacks;187 other decisions and112
+    other payloads have exact continuity only.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - CASE
+  - LINEAGE
+  - SCIENCE-FINAL
+  - SKEPTIC-FINAL
+- assessment_id: A-NATIVE
+  area: schema
+  topic: Guarded native structure and projection
+  outcome: supported
+  summary: Native results are recorded independently of scientific evidence. Isolated
+    projection retains the stable subject, unchangedFOODON identity and RuleDexact
+    row; no canonical SSSOM or owner admission is performed. The unrelated Trypticase/Bacto
+    FAILED/HELD admission remains.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - NATIVE
+  - STRUCTURAL
+  - PRESERVATION
+findings:
+- finding_id: W08-FINAL-001
+  issue_key: w08-plain-flour-mapping-method
+  category: provenance
+  severity: minor
+  native_severity: P3
+  normalization_reason: Bounded unsupported mapping-method claim; generic flour scope
+    and identity were not rejected.
+  status: deferred
+  certainty: confirmed
+  title: 'Plain Flour mapping-method claim: isolated correction supported; coordinator
+    acceptance pending'
+  description: Original Plain flour preferred label was neither captured primary flour
+    nor synonym flour added, and history documented a material-scope judgment. The
+    successor now separates that judgment from a newly performed resolution of preferred
+    flour.
+  target_ids:
+  - op1201-plain-flour
+  field_paths:
+  - preferred_term
+  - ontology_mapping.mapping_quality
+  - ontology_mapping.evidence
+  - curation_history
+  evidence_ids:
+  - FINDING
+  - FILED
+  - SCIENCE
+  - SKEPTIC
+  - LABEL
+  disposition_reason: The exact isolated correction is supported by both independent
+    reviews. Formal external finding closure/final-head acceptance is deferred to
+    coordinator. No previous native review ID is invented while the coordinator full1701
+    review finishes separately. This does not denote an unresolved new payload defect.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1227#issuecomment-6719268318
+  ownership_note: Coordinator owns final-head review and issue disposition; maintained
+    application and release remain separate.
+actions:
+- action_id: COORDINATOR-FINAL-HEAD
+  description: Coordinator independently assesses the ordinary published successor
+    head and separately dispositions W08-FINAL-001; retain PF-LINEAGE-001 referral
+    before any future historical-prose correction.
+  finding_ids:
+  - W08-FINAL-001
+  target_ids:
+  - op1201-plain-flour
+  acceptance_checks:
+  - Verify exact final selector andpayload hashes,113/188/320 accounting and112 unchanged
+    payloads.
+  - Retain all source/owner/role/export holds and prior review bytes; do not infer
+    owner merge or maintained admission.
+  ownership_note: No GitHub mutation, owner application or release by this task.
+limitations:
+- Only one changed payload receives fresh independent scientific review here;112 other
+  payloads and187 other cases receive exact continuity checks.
+- Generic flour does not establish a grain, supplier, catalogue, product, molecular
+  composition, treatment, CAS or role.
+- The automatic source CAS is not adopted; raw Plain flour is retained without being
+  declared an ontology synonym.
+- Historical PF-LINEAGE-001 supermarket quotation is separately referred; prior receipt
+  is unmodified and no unrelated payload correction was made.
+- Original Trypticase/Bacto failed owner-admission gate, all original scientific/source/role/export
+  holds and18 unaffected planning-payload limits remain.
+- This native record does not formally close the coordinator legacy finding without
+  an actual previous native finding identity. Correction in proposed bytes is supported;
+  coordinator final-head acceptance remains pending.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1227#issuecomment-6719268318
+```

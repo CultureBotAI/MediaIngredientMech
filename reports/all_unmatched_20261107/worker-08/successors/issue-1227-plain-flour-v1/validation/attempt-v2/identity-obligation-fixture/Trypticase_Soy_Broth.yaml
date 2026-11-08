@@ -1,0 +1,132 @@
+identifier: MICRO:0000113
+preferred_term: Trypticase soy broth
+synonyms:
+- synonym_text: Trypticase soy broth
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.983601+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'soy')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Trypticase_Soy_Broth-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommend `mapping_status: UNMAPPED`; no `skos:exactMatch`;
+    no SSSOM row at present | High confidence | CURIEs discussed: MESH:D003479. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'MICRO:0000113 explicitly includes Trypticase soy broth and describes the
+    standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium
+    phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining
+    its history and counts. The NBRC source uses 30 g of this base with agar supplied
+    separately. Isolated proposal only; all native holds remain preserved in source-case
+    decisions.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to DATABASE_MATCH:
+    MICRO0000113 supplies the exact Trypticase soy broth synonym and canonical tryptic
+    soy broth label. Correct mapping quality to SYNONYM_MATCH because Trypticase soy
+    broth is an exact synonym of canonical tryptic soy broth; identity and exact own-ID
+    relation are unchanged. Isolated successor proposal only; all inherited source,
+    role and export holds remain. Historical evidence and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+
+
+  MICRO:0000113 explicitly includes Trypticase soy broth and describes the standard
+  BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium phosphate.
+  Promote the existing generic Trypticase-soy-broth owner, retaining its history and
+  counts. The NBRC source uses 30 g of this base with agar supplied separately. The
+  standard formula below describes the broth; it excludes agar and the additional
+  NaCl in NBRC957/1045. Product-lot adjustments are not asserted.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: MICRO:0000113
+  ontology_label: tryptic soy broth
+  ontology_source: MICRO
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000113
+    notes: 'MICRO:0000113 explicitly includes Trypticase soy broth and describes the
+      standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and
+      dipotassium phosphate. Promote the existing generic Trypticase-soy-broth owner,
+      retaining its history and counts. The NBRC source uses 30 g of this base with
+      agar supplied separately.'
+components:
+- component_name: Pancreatic digest of casein
+  reference_scope: UNMAPPED
+  concentration_value: '17'
+  concentration_unit: G_PER_L
+- component_name: Papaic digest of soybean
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L
+- component_name: D-glucose
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17634
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: Sodium chloride
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26710
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: dipotassium hydrogen phosphate
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:131527
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000113
+    source_record: MICRO0000113 BBL formula annotation; FAO Trypticase (Tryptic) Soy
+      Broth
+    notes: The standard broth formula is transcribed. Digests retain exact process
+      labels without inheriting disputed generic-peptone identifiers. Water is named
+      in the FAO preparation; its quantity is the preparation solvent, not a constituent
+      mass fraction.
+  notes: One-level material constituents only; no whole-to-part grounding, complete
+    culturing recipe, or speciation assertion.

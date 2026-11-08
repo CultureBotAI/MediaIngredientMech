@@ -1,0 +1,17 @@
+# W08 Plain Flour mapping-method successor
+
+This immutable successor corrects only filed **W08-FINAL-001** relative to `1701ccf2049022866adfcebcc9bba9b6492407c6`. The complete selection remains188 cases,113 proposals and320 occurrence IDs. Exactly one payload and one source-case assessment changed;112 other payloads and187 decisions remain exact. All1075 original evidence entries remain an exact prefix of1082 entries.
+
+The proposed existing owner now uses preferred label **flour**, the verified primary label of FOODON:00004510. A new native primary-label resolution supports current EXACT_MATCH. This does not recast the old raw **Plain flour** lookup as an exact label, ontology synonym or CAS method. Direct ontology facts and the explicitly agent-assisted generic material-scope decision are separated. Raw source synonym, identifier, filename, original beforeimage and all five prior history events remain; one truthful event is appended. No grain, supplier, treatment, product, CAS, role or merge specificity is introduced.
+
+Worker08 root authored the correction. `/root/vitamins` independently reviewed the whole payload/source case; `/root/inorganics` independently challenged science and lineage and disclosed the prior method miss. Both then read the final113/188 indices:1906 and864 checks passed. `/root/organics`, the earlier OP author, performed technical validation only. A separate peer checked the final native assembly.
+
+Native guarded replay, strict113-payload validation, full2956-baseline/3037-overlay partonomy,120 identity obligations and111 actual RuleD negative controls passed. Two non-MAPPED selected records emit no identity row. Actual before/after Claw projections preserve MIM:Plain_Flour → FOODON:00004510 with exactMatch; the current subject label is flour and Plain flour survives as an alias. No canonical SSSOM was written. Trypticase/Bacto admission remains FAILED/HELD.
+
+`selection.json` is authoritative for the new complete proposal selection. `lineage.json` supplies exact changed/unchanged payload and case hashes. `HANDOFF.json` binds all final reviews, source proof, native YAML/Markdown, commands, controls and preservation receipts. The native record covers the one changed full owner with its complete source case as context; it does not grant fresh whole-owner approval to112 unchanged candidates. Formal external finding closure/final-head acceptance remains with the coordinator; the isolated correction itself is independently supported.
+
+**Separate coordinator referral PF-LINEAGE-001:** an old skeptical appraisal inserted “supermarket” into the frozen source label. The actual record says “Plain flour”. The old review remains immutable; this discrepancy is recorded with its exact locator/hash and is not inherited as material evidence. No unrelated payload correction or GitHub mutation was made.
+
+Every original source, scientific, role, owner and export hold remains, including the18 unaffected planning-payload limits. W05/W06 sealed reviews, prior W08 source work and Soy/R2A confirmation manifest members verified unchanged. The coordinator's full1701 review remains separate. No maintained data, shared inputs, gates, pins, workflow, releases or merges changed.
+
+Publication is an ordinary commit/non-force push on the existing W08 branch. The exact new head and remote readback are recorded in the task-private `publication-receipt.json`. Coordinator independent final-head review is the next step.
