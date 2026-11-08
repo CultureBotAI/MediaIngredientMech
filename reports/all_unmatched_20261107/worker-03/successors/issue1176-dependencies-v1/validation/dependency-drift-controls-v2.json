@@ -1,0 +1,58 @@
+{
+  "writer_sha256": "3ee4c4a5a4cd982c36da26dc8a811f56d34fbdfa4fa30735238d61369bb552d2",
+  "finding": "W03-PEPTONE-GUARD-001",
+  "controls": [
+    {
+      "case": "parent",
+      "status": "REFUSED_NO_OUTPUT",
+      "exception": "pinned input drift",
+      "fixture_path": "validation/drift-v2-parent",
+      "input_before_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+      "input_after_sha256": "752689bad5b78e07ef7ce1622f983e9e90f74ee35377071ffa0fa463314b4ca7",
+      "output_exists": false,
+      "mechanism": "actual isolated fixture bytes"
+    },
+    {
+      "case": "primary",
+      "status": "REFUSED_NO_OUTPUT",
+      "exception": "pinned input drift",
+      "fixture_path": "validation/drift-v2-primary",
+      "input_before_sha256": "08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6",
+      "input_after_sha256": "33567f195eb9e7a8ad1029ca8794d3a524c464deafde8ba33c296f3f8e4aa83c",
+      "output_exists": false,
+      "mechanism": "actual isolated fixture bytes"
+    },
+    {
+      "case": "plan",
+      "status": "REFUSED_NO_OUTPUT",
+      "exception": "fresh plan drift",
+      "fixture_path": "validation/drift-v2-plan",
+      "input_before_sha256": "28402d766f56a526d43e97b24513db6dc50415189dd57246560009d981629eae",
+      "input_after_sha256": "2eec2e61a595b2f1c4003932beb4f3b29b47450668e8214bf8b1628d32655678",
+      "output_exists": false,
+      "mechanism": "actual isolated fixture bytes"
+    },
+    {
+      "case": "memory_plan",
+      "status": "REFUSED_NO_OUTPUT",
+      "exception": "in-memory plan drift",
+      "fixture_path": "validation/drift-v2-memory_plan",
+      "input_before_sha256": null,
+      "input_after_sha256": null,
+      "output_exists": false,
+      "mechanism": "in-memory mutation"
+    },
+    {
+      "case": "core",
+      "status": "REFUSED_NO_OUTPUT",
+      "exception": "fresh preserved core drift",
+      "fixture_path": "validation/drift-v2-core",
+      "input_before_sha256": null,
+      "input_after_sha256": null,
+      "output_exists": false,
+      "mechanism": "read interception for immutable source-core check; actual core never modified"
+    }
+  ],
+  "status": "PASS",
+  "actual_inputs_untouched": true
+}

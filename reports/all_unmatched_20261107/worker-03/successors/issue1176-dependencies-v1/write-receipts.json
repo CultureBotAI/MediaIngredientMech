@@ -1,0 +1,149 @@
+{
+  "native_writer": "mediaingredientmech.validation.write_validated.write_validated_ingredient",
+  "native_history": "mediaingredientmech.curate.curation_event.record_curation_event",
+  "rows": [
+    {
+      "dependency_id": "W03-DEP-1176-GYPS",
+      "owner_path": "data/ingredients/mapped/GYPS.yaml",
+      "before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "predecessor_payload_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "payload": {
+        "path": "payloads/GYPS.yaml",
+        "sha256": "ad9fdcf66ef72672060106af433a32583df72252adae2fb5521b03a696a23725"
+      },
+      "component_index": 2,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+      },
+      "after_component": {
+        "component_name": "Bacto Peptone (Difco)",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium); exact printed constituent: bacto-peptone (Difco). Existing MICRO:0000178 reference is retained conditionally for the separately represented Bacto owner, not redirected to generic Peptone."
+      },
+      "history_prefix_preserved": true,
+      "history_appended": {
+        "timestamp": "2026-11-08T10:17:51.294627+00:00",
+        "curator": "codex-worker03 /root dependent-origin author",
+        "action": "COUPLED_PEPTONE_REFERENCE",
+        "changes": "Under issue1176, source-qualify only the GYPS peptone component as Bacto Peptone (Difco), preserving the original printed bacto-peptone (Difco) wording in component provenance. Retain its existing MICRO:0000178 reference conditionally for the distinct existing Bacto owner; never follow the generic Peptone transition to mesh:D010461. Append narrowly scoped publication evidence. No new GYPS frozen case is claimed: this dependency follows the genuine incoming reference and W05 causal parent transition. Bacto whole identity acceptance remains separate; fallback is a reviewed literal UNMAPPED successor if needed. No quantities or other components, complete recipe, roles or exports changed.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "append_evidence": [
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621",
+          "source_record": "p.1622, Culture medium and conditions; source-bound Caminicella sporogenes GYPS",
+          "notes": "Issue1176 dependent reference review: the primary recipe explicitly lists bacto-peptone (Difco). Component label Bacto Peptone (Difco) normalizes capitalization/hyphen only and preserves the literal in component source. Retain existing MICRO:0000178 conditionally against the distinct Bacto_Peptone owner, current selected W05-FINAL-MAT-001 payload42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b. This does not newly establish brand-specific MICRO equivalence or approve the complete Bacto owner. Generic Peptone migrates separately to mesh:D010461 and must never receive this product claim. If final Bacto identity is not accepted, keep the evidenced literal as UNMAPPED in a separately reviewed successor. Historical catalogue/lot is unknown; no modern catalogue assignment or amount projection. Preserve PARTIAL scope, prior omitted constituents, mapping/role/source/export holds. Agent-assisted source assessment."
+        }
+      ],
+      "predecessor_origin_object_sha256": null,
+      "native_source_core_member": false
+    },
+    {
+      "dependency_id": "W03-DEP-1176-PYGS",
+      "owner_path": "data/ingredients/mapped/PYGS.yaml",
+      "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "predecessor_payload_sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+      "payload": {
+        "path": "payloads/PYGS.yaml",
+        "sha256": "f95aa34b0872db40d4f2d08918105b54db401e7fa8cf4409e08258b2df936312"
+      },
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "after_component": {
+        "component_name": "peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "history_prefix_preserved": true,
+      "history_appended": {
+        "timestamp": "2026-11-08T10:17:51.461287+00:00",
+        "curator": "codex-worker03 /root dependent-origin author",
+        "action": "COUPLED_PEPTONE_REFERENCE",
+        "changes": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Preserve original W06 proposal R-P-PYGS-SOURCE-EVIDENCE and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "append_evidence": [
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/10555335/",
+          "source_record": "Clostridium frigidicarnis original species-description abstract; PMID10555335",
+          "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        },
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/10826793/",
+          "source_record": "Clostridium gasigenes original species-description abstract; PMID10826793",
+          "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        },
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/10758868/",
+          "source_record": "Clostridium algidixylanolyticum original species-description abstract; PMID10758868",
+          "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        }
+      ],
+      "predecessor_origin_object_sha256": "ae947ce09bbccffb8cef5eca27c090b37cab883f13f4aff2eae3e9066727e71c",
+      "native_source_core_member": false
+    },
+    {
+      "dependency_id": "W03-DEP-1176-MARINE_AGAR_2216",
+      "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+      "predecessor_payload_sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419",
+      "payload": {
+        "path": "payloads/Marine_agar_2216.yaml",
+        "sha256": "ed61879570d90b147ee7ed7767b7a900738b1cf010c73e596ba8d7f161490082"
+      },
+      "component_index": 0,
+      "before_component": {
+        "component_name": "Peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+      },
+      "after_component": {
+        "component_name": "Peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+      },
+      "history_prefix_preserved": true,
+      "history_appended": {
+        "timestamp": "2026-11-08T10:17:51.512222+00:00",
+        "curator": "codex-worker03 /root dependent-origin author",
+        "action": "COUPLED_PEPTONE_REFERENCE",
+        "changes": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. ATCC2887 scratch formula lists unqualified Peptone5g with1000mL water. Difco names the complete product, not a proven Bacto input. Preserve the current W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows, PARTIAL scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride form. Water1000mL remains preparation context, not an established final volume or dry-product component; do not infer lot fractions or chloramphenicol inheritance. Preserve original W04 proposal FREV-MEDIA-P-media-alias-marine2216 and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "append_evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx",
+          "source_record": "ATCC Medium2887, scratch formulation Peptone row with1000mL water",
+          "notes": "ATCC2887 scratch formula lists unqualified Peptone5g with1000mL water. Difco names the complete product, not a proven Bacto input. Preserve the current W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows, PARTIAL scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride form. Water1000mL remains preparation context, not an established final volume or dry-product component; do not infer lot fractions or chloramphenicol inheritance. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        }
+      ],
+      "predecessor_origin_object_sha256": "ae78b77472a2017ef707e226eb42c140304f126c6185a567767fb6955af9aa1e",
+      "native_source_core_member": false
+    }
+  ]
+}

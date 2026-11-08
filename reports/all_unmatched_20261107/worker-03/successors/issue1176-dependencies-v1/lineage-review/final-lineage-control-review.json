@@ -1,0 +1,181 @@
+{
+  "reviewer": "/root/peptone_final_lineage",
+  "at": "2026-11-08T10:22:00.778549+00:00",
+  "status": "PASS_EXACT_DEPENDENCY_LINEAGE_AND_CONTROL_REVIEW_WITH_INTAKE_LIMITS",
+  "independence": "Did not author any proposed payload, mutation plan, producer or author controls. Earlier work independently inventoried source lineages; this receipt independently reads complete new payloads/selector, recomputes projections and executes exact control scripts in a private fixture. Scientific source decisions and complete owner acceptance remain separate.",
+  "input_pins": [
+    {
+      "path": "dependency-selection.json",
+      "sha256": "b1e181a1dfbbc2d0588b377f00e5922c6b5340e86b171b9ebf8233d963f0ad92"
+    },
+    {
+      "path": "machine-ledger.json",
+      "sha256": "da2b4d69545f4b95d0b5ac354a4a00b6851333384607b1f0cc4dec3a628d68c5"
+    },
+    {
+      "path": "author-plan-v2.json",
+      "sha256": "28402d766f56a526d43e97b24513db6dc50415189dd57246560009d981629eae"
+    },
+    {
+      "path": "write-receipts-v2.json",
+      "sha256": "9e9bf81098ece2d012fe6b8150f68ce9217536b63fc80c165fcb46f30ee6fcab"
+    },
+    {
+      "path": "scripts/guarded_writer_v1.py",
+      "sha256": "7eb1aef40ff697e6688ce4f03e52a58016cbe50353cfd9e7ef5f0758971f4e72"
+    },
+    {
+      "path": "scripts/guarded_writer_v2.py",
+      "sha256": "3ee4c4a5a4cd982c36da26dc8a811f56d34fbdfa4fa30735238d61369bb552d2"
+    },
+    {
+      "path": "scripts/focused_controls_v2.py",
+      "sha256": "9f1116bf17807b66146724be0207213eb81a37b0ce344bf1d14ff23007750eef"
+    },
+    {
+      "path": "scripts/dependency_drift_controls_v2.py",
+      "sha256": "4bb23b6006d9c7cf869ec88b5d491b0ce983489341445f418e4b434b910d27d8"
+    },
+    {
+      "path": "validation/focused-controls-v2.json",
+      "sha256": "784a5549125c6bbaca563bfa8cede2ee658e0669d5eb6fef8717665e69784030"
+    },
+    {
+      "path": "validation/dependency-drift-controls-v2.json",
+      "sha256": "2659807022c05bf312dd6c53fe026eaf74091488eb4e9a49db6b9440814141dd"
+    }
+  ],
+  "preserved_source_core": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json",
+      "sha256": "a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220",
+      "entries": 188,
+      "object_key": "decisions"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json",
+      "sha256": "ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a",
+      "entries": 74,
+      "object_key": "proposals"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json",
+      "sha256": "831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878",
+      "entries": 868,
+      "object_key": "evidence"
+    }
+  ],
+  "payload_assessments": [
+    {
+      "dependency_id": "W03-DEP-1176-GYPS",
+      "payload": {
+        "path": "payloads-v2/GYPS.yaml",
+        "sha256": "fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1"
+      },
+      "before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "selected_predecessor_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "foreign_origin_retained": false,
+      "foreign_case_ids": [],
+      "prior_all_field_projection_sha256": "337e30ba19264c7f1313f4093c42719a444f3a90e94b44b27ada0d892af15256",
+      "all_undeclared_fields_exact": true,
+      "history_and_component_evidence_append_only": true,
+      "quantities_and_absences_exact": true,
+      "whole_owner_approval": false
+    },
+    {
+      "dependency_id": "W03-DEP-1176-PYGS",
+      "payload": {
+        "path": "payloads-v2/PYGS.yaml",
+        "sha256": "d28106eb42ad32b85b68177d035b9ee631a15c14941d04c5744f170cf2497cf5"
+      },
+      "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "selected_predecessor_sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+      "foreign_origin_retained": true,
+      "foreign_case_ids": [
+        "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27"
+      ],
+      "prior_all_field_projection_sha256": "d4cd333585af5eb661ea4b71d7270d3158ed4f284c94dab5e82bd994166a04db",
+      "all_undeclared_fields_exact": true,
+      "history_and_component_evidence_append_only": true,
+      "quantities_and_absences_exact": true,
+      "whole_owner_approval": false
+    },
+    {
+      "dependency_id": "W03-DEP-1176-MARINE_AGAR_2216",
+      "payload": {
+        "path": "payloads-v2/Marine_agar_2216.yaml",
+        "sha256": "3e0263d2bc99643780fd1e3ba8c839661f47c5d64045beb0b71cfc8b058c38b1"
+      },
+      "before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+      "selected_predecessor_sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419",
+      "foreign_origin_retained": true,
+      "foreign_case_ids": [
+        "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+        "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+        "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac"
+      ],
+      "prior_all_field_projection_sha256": "3c28a0afb140d75bd61a5d64d54145e2ed5c4871b211d6bca8d7e09466fb85ab",
+      "all_undeclared_fields_exact": true,
+      "history_and_component_evidence_append_only": true,
+      "quantities_and_absences_exact": true,
+      "whole_owner_approval": false
+    }
+  ],
+  "incoming_accounting": {
+    "fresh_maintained_reference_count": 19,
+    "existing_exact_W05": 16,
+    "new_W03_dependency_sidecar": 3,
+    "combined37_existing": 3,
+    "distinct_owner_component_pairs": 19
+  },
+  "controls": {
+    "independent_execution": "Original exact author script bytes executed using Python3.13; only guarded_writer_v2.O rebound to reviewer fixture. Native runtime/R and actual maintained inputs stayed read-only. Positive outputs are test artifacts, not selected candidates.",
+    "original_controls": 28,
+    "new_drift_controls": 5,
+    "no_assertions_removed": true,
+    "replay_reports": [
+      {
+        "path": "lineage-review/reproduce_controls_v1.py",
+        "sha256": "4097cc7e63af024154359371d33408821f4efbf13689c9ba27a904d57e097a61"
+      },
+      {
+        "path": "lineage-review/final-controls-fixture/validation/focused-controls-v2.json",
+        "sha256": "725fa7adcab239348748e4993557156e28590e1620890ed03317304bc5c4d713"
+      },
+      {
+        "path": "lineage-review/final-controls-fixture/validation/dependency-drift-controls-v2.json",
+        "sha256": "2659807022c05bf312dd6c53fe026eaf74091488eb4e9a49db6b9440814141dd"
+      }
+    ],
+    "native_target_schema": "3PASS",
+    "native_focused_partonomy": "3targetsPASS in2956recordcontext; source-wrong counterfactual alsoPASS, missinggenericparentrefused",
+    "broad_qc_or_native_full_shard_rerun": false
+  },
+  "finding_dispositions": [
+    {
+      "finding_id": "W03-PEPTONE-GUARD-001",
+      "status": "REPAIRED_IN_V2_INDEPENDENTLY_REPRODUCED",
+      "detail": "Fresh plan/disk primary/parent/core validation now precedes every write; all5serial drift controls refuse without output; old writer/probe/false successfulfixture preserved. No native campaign operator changed."
+    },
+    {
+      "finding_id": "W03-PEPTONE-DRAFT-UNIT-001",
+      "status": "CORRECTED_IN_ACTIVE_PLAN_AND_PAYLOAD",
+      "detail": "Marine component and new prose both preserveG_PER_SOURCE_SCRATCH_FORMULA_BATCH; old privateplan retained."
+    }
+  ],
+  "new_findings": [],
+  "intake_limits": [
+    "This is3genuine W03 authored dependent corrections, not3newW03 frozen source cases;188/74/868native core bytes stayexact.",
+    "W04 Marine and W06 PYGS original identities, current complete proposal objects and all4frozen case relationships retained; W03 authors only dependent delta. GYPS is real maintained owner with causalW05 parent reference, no fabricatedoriginalselectedcase.",
+    "If native worker-core intake is demanded, actual W04/W06 must adopt their successors and W05 must bind GYPS to its genuine causalcase/owner/backlink. Explicit coordinator composition can instead retain distinct original+W03dependency origins; it requires separate finalcandidate review.",
+    "GYPS MICRO0000178 is conditional on separateBacto identity acceptance; it never redirects togenericmesh. LiteralUNMAPPEDfallback requires a separatelyreviewed successor if finalBacto identity unavailable.",
+    "PYGS and Marine genericpart references require exactgenericparentc0837946 inactual application. Allsource/role/wholeowner/export holds remain."
+  ],
+  "source_scope_preservations": [
+    "Marine17drysourcebatch rows; MgUNMAPPED;55.2520gversus55.1g conflict; nofinalvolume orproductmassfraction claim.",
+    "PYGS fullpapersnotclaimedinspected; allunknownquantity andmaterial-edgeholds retained.",
+    "GYPS originalspecies/preparation/context kept; noquantityprojection orcatalog/lotassignment.",
+    "FAB Oxoid and16W05dependents not rewritten; MarineBroth/PYrumen combined dependencies not overwritten."
+  ],
+  "approval": "Exact report-sidecar lineage and focused controls acceptable for publication/integration planning only. No finalhead, source scientific selfapproval, wholeowner,role,maintainedapplication or supportedexport approval."
+}

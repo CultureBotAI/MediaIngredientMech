@@ -1,0 +1,62 @@
+{
+  "issue_context": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1176",
+  "coordinator_controls_issue_mutation": true,
+  "github_actions_performed": false,
+  "new_source_scientific_findings": [],
+  "private_producer_findings": [
+    {
+      "finding_id": "W03-PEPTONE-GUARD-001",
+      "status": "REPAIRED_AND_INDEPENDENTLY_REPRODUCED_AS_REFUSED_BEFORE_PUBLICATION",
+      "reproduction": {
+        "path": "skeptical-review/guard-drift-probe-v1.json",
+        "sha256": "72497b6b7ef5ab61813dbbb1d106a6487dc4295b23f83f6fe8031d609495840e"
+      },
+      "finding": {
+        "path": "skeptical-review/confirmed-findings-v1.json",
+        "sha256": "a2be9b55a0566ef21e336ecca9db1b9a36013404579a166e72d9a89c970d87c2"
+      },
+      "original_writer": {
+        "path": "scripts/guarded_writer_v1.py",
+        "sha256": "7eb1aef40ff697e6688ce4f03e52a58016cbe50353cfd9e7ef5f0758971f4e72"
+      },
+      "bounded_repair": {
+        "path": "scripts/guarded_writer_v2.py",
+        "sha256": "3ee4c4a5a4cd982c36da26dc8a811f56d34fbdfa4fa30735238d61369bb552d2"
+      },
+      "post_repair_independent_probe": {
+        "path": "skeptical-review/guard-drift-probe-v2.json",
+        "sha256": "bed5845b1f0aa3eda66dd30480ea47512f8496135bf94dcfc19e17a39497909d"
+      },
+      "full_author_controls": {
+        "path": "validation/focused-controls-v2.json",
+        "sha256": "784a5549125c6bbaca563bfa8cede2ee658e0669d5eb6fef8717665e69784030"
+      },
+      "new_drift_controls": {
+        "path": "validation/dependency-drift-controls-v2.json",
+        "sha256": "2659807022c05bf312dd6c53fe026eaf74091488eb4e9a49db6b9440814141dd"
+      },
+      "independent_control_reexecution": {
+        "path": "lineage-review/final-lineage-control-review.json",
+        "sha256": "d00992e22383d5e692536b93f3b2c3c5d4ec4798047c60882f0eafa1905b562e"
+      },
+      "precise_defect": "Serial change to pinned selected parent after prepare was not checked by v1 write; original primary/core/plan pins also required fresh revalidation. Actual selected proposal inputs remained unchanged.",
+      "fix": "Immutable task-helper-v2 rehashes exact plan, primary captures, selected parent inputs and unchanged core pins before source/body checks and native write. Original helper, false output and fixtures remain. No maintained operator/gate changed.",
+      "issue_suggestion": "Coordinator may attach this bounded private-producer incident/repair evidence to1176, cross-reference1246 as related guard history. It is not asserted to be the same exact old_bytes defect or a newly filed issue. No issue closure requested."
+    }
+  ],
+  "pre_generation_draft_findings": [
+    {
+      "finding_id": "DRAFT-MARINE-UNIT-001",
+      "finding": {
+        "path": "skeptical-review/draft-unit-finding-v1.json",
+        "sha256": "e442cbc702423658fe00b59e03f7b73501ce0ddb376f9d862548b3448bb581d1"
+      },
+      "resolution": {
+        "path": "skeptical-review/draft-unit-resolution-v2.json",
+        "sha256": "32165c2fdde422baa02df2564f672dbc366fc14ec76724005f98b38fed861257"
+      },
+      "status": "superseded before anypayload generation; current batch quantity preserved"
+    }
+  ],
+  "at": "2026-11-08T10:22:38.154694+00:00"
+}

@@ -1,0 +1,218 @@
+--- inputs/current/PYGS.yaml
++++ payloads/PYGS.yaml
+@@ -16,15 +16,15 @@
+ - timestamp: '2026-08-04T02:54:09.684805+00:00'
+   curator: audit_import_ingredients[microbedecoder]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN or CHEBI/NCIT match.
+-    Curator review needed.
++  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN
++    or CHEBI/NCIT match. Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-08-05T00:01:30.894952+00:00'
+   curator: microbedecoder-residual-dispositions
+   action: FLAGGED_NEEDS_EXPERT
+-  changes: 'Not a single-compound grounding target: multi-component blend or named medium; no single ontology
+-    term grounds it -- needs decomposition into constituents.'
++  changes: 'Not a single-compound grounding target: multi-component blend or named
++    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+   previous_status: UNMAPPED
+   new_status: NEEDS_EXPERT
+   llm_assisted: true
+@@ -32,52 +32,72 @@
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/PYGS-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+-    verdict: ## Curation Recommendation — - **Mapping status:** UNMAPPED No ontology CURIE was proposed.
+-    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations are deliberately
+-    conservative, and a plausible identifier promoted by a mechanism that never decided anything is what
+-    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather
++    than linked). Report verdict: ## Curation Recommendation — - **Mapping status:**
++    UNMAPPED No ontology CURIE was proposed. Recorded as provenance only — no grounding
++    applied from this run. Edison''s recommendations are deliberately conservative,
++    and a plausible identifier promoted by a mechanism that never decided anything
++    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
++    or reject.'
+   llm_assisted: true
+ - timestamp: '2026-08-14T00:00:00+00:00'
+   curator: apply_curated_decompositions
+   action: DECOMPOSED_FROM_CURATED_RESEARCH
+   previous_status: NEEDS_EXPERT
+   new_status: MAPPED
+-  changes: 'UNMAPPED_0704 -> kgmicrobe.ingredient:pygs (FALLBACK_REGISTRY). Components taken from the
+-    curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+-    strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That
+-    file was produced by the research pass and never written into the records; this applies it. It resolves
+-    constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no
+-    composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+-    row states none.'
++  changes: 'UNMAPPED_0704 -> kgmicrobe.ingredient:pygs (FALLBACK_REGISTRY). Components
++    taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
++    strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
++    an identifier. That file was produced by the research pass and never written into
++    the records; this applies it. It resolves constituents a label split cannot —
++    abbreviations such as PY, and named media such as BHI, state no composition to
++    split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
++    curated row states none.'
+   llm_assisted: false
+ - timestamp: '2026-08-15T00:00:00+00:00'
+   curator: move_mapped_out_of_unmapped_collection
+   action: MOVED_TO_MAPPED_COLLECTION
+-  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already
+-    MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom
+-    reads only the mapped collection — so its mapping was curated but unpublished.
++  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
++    The record was already MAPPED; it had been promoted in place by a path that does
++    not move between collections, and reconcile_sssom reads only the mapped collection
++    — so its mapping was curated but unpublished.
+   llm_assisted: false
+ - timestamp: '2026-08-24T00:00:00+00:00'
+   curator: migrate_component_partonomy
+   action: TYPED_COMPONENT_PARTONOMY
+-  changes: '#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s)
+-    (MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.'
++  changes: '#369: added method/evidence/completeness and explicit reference scope
++    to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
++    concentrations were not changed.'
+   llm_assisted: false
+ - timestamp: '2026-11-08T05:36:28.285714+00:00'
+   curator: all-unmatched-20261107-worker-06
+   action: SOURCE_REVIEW_PROPOSAL
+   changes: Add primary publication support for starch expansion restricted to microbedecoder4104,4109,8883;
+-    retain all unknown quantities and source-material holds. Proposal only; all source and publication
+-    holds retained.
++    retain all unknown quantities and source-material holds. Proposal only; all source
++    and publication holds retained.
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN or CHEBI/NCIT match.
+-  Curator review needed.
++- timestamp: '2026-11-08T10:17:51.461287+00:00'
++  curator: codex-worker03 /root dependent-origin author
++  action: COUPLED_PEPTONE_REFERENCE
++  changes: Under issue1176, couple only components[0].component_id from MICRO:0000178
++    to the supported generic Peptone owner mesh:D010461, conditional on exact current
++    W05-FINAL-MAT-039. Three exact original species-description abstracts explicitly
++    name peptone/yeast extract/glucose/starch; full papers are not claimed inspected.
++    Unknown quantities, complete formulation and all three material/source holds remain.
++    Preserve original W06 proposal R-P-PYGS-SOURCE-EVIDENCE and its frozen cases/history;
++    W03 authors only this new dependency correction, not that source work. Append
++    source-specific evidence; retain all other fields/quantities, source/role/export
++    holds. No global replacement or maintained application.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN
++  or CHEBI/NCIT match. Curator review needed.
+ components:
+ - component_name: peptone
+-  component_id: MICRO:0000178
++  component_id: mesh:D010461
+   reference_scope: MIM_CATALOG
+   source: microbedecoder research decomposition (#213/#308)
+ - component_name: yeast extract
+@@ -99,33 +119,68 @@
+   - evidence_type: CURATED_DATASET
+     source: mappings/microbedecoder_residual_research_decomposition.tsv
+     source_record: PYGS
+-    notes: 'Reviewed row: strategy=split, confidence=medium; PYG + mineral Salts (usually); ''S'' occasionally
+-      soluble Starch (CHEBI:28017). Ambiguity flagged.'
++    notes: 'Reviewed row: strategy=split, confidence=medium; PYG + mineral Salts (usually);
++      ''S'' occasionally soluble Starch (CHEBI:28017). Ambiguity flagged.'
+   - evidence_type: PUBLICATION
+     source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:10555335&format=json&resultType=core
+     source_record: microbedecoder4104 / PMID10555335
+     supports: SUPPORT
+-    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch broth
+-      for this organism/source context. Supports starch expansion here; no universal quantities, individual
+-      substrate consumption or source-material release.
++    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch
++      broth for this organism/source context. Supports starch expansion here; no universal
++      quantities, individual substrate consumption or source-material release.
+   - evidence_type: PUBLICATION
+     source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1099/00207713-50-1-107&format=json&resultType=core
+     source_record: microbedecoder4109 / PMID10826793
+     supports: SUPPORT
+-    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch broth
+-      for this organism/source context. Supports starch expansion here; no universal quantities, individual
+-      substrate consumption or source-material release.
++    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch
++      broth for this organism/source context. Supports starch expansion here; no universal
++      quantities, individual substrate consumption or source-material release.
+   - evidence_type: PUBLICATION
+     source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:10758868&format=json&resultType=core
+     source_record: microbedecoder8883 / PMID10758868
+     supports: SUPPORT
+-    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch broth
+-      for this organism/source context. Supports starch expansion here; no universal quantities, individual
+-      substrate consumption or source-material release.
+-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy,
+-    or complete culturing recipe. These three source contexts support the starch expansion. Exact recipe
+-    quantities and universal PYGS formulation remain unknown; completeness UNKNOWN and all three material-edge
+-    holds remain.
++    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch
++      broth for this organism/source context. Supports starch expansion here; no universal
++      quantities, individual substrate consumption or source-material release.
++  - evidence_type: PUBLICATION
++    source: https://pubmed.ncbi.nlm.nih.gov/10555335/
++    source_record: Clostridium frigidicarnis original species-description abstract;
++      PMID10555335
++    notes: 'Three exact original species-description abstracts explicitly name peptone/yeast
++      extract/glucose/starch; full papers are not claimed inspected. Unknown quantities,
++      complete formulation and all three material/source holds remain. Issue1176:
++      bind this one supported generic peptone part to mesh:D010461 only with exact
++      W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
++      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
++      or owner/role/export approval follows. Agent-assisted applicability assessment;
++      preserve all predecessor assertions/history and holds.'
++  - evidence_type: PUBLICATION
++    source: https://pubmed.ncbi.nlm.nih.gov/10826793/
++    source_record: Clostridium gasigenes original species-description abstract; PMID10826793
++    notes: 'Three exact original species-description abstracts explicitly name peptone/yeast
++      extract/glucose/starch; full papers are not claimed inspected. Unknown quantities,
++      complete formulation and all three material/source holds remain. Issue1176:
++      bind this one supported generic peptone part to mesh:D010461 only with exact
++      W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
++      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
++      or owner/role/export approval follows. Agent-assisted applicability assessment;
++      preserve all predecessor assertions/history and holds.'
++  - evidence_type: PUBLICATION
++    source: https://pubmed.ncbi.nlm.nih.gov/10758868/
++    source_record: Clostridium algidixylanolyticum original species-description abstract;
++      PMID10758868
++    notes: 'Three exact original species-description abstracts explicitly name peptone/yeast
++      extract/glucose/starch; full papers are not claimed inspected. Unknown quantities,
++      complete formulation and all three material/source holds remain. Issue1176:
++      bind this one supported generic peptone part to mesh:D010461 only with exact
++      W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
++      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
++      or owner/role/export approval follows. Agent-assisted applicability assessment;
++      preserve all predecessor assertions/history and holds.'
++  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
++    variant hierarchy, or complete culturing recipe. These three source contexts support
++    the starch expansion. Exact recipe quantities and universal PYGS formulation remain
++    unknown; completeness UNKNOWN and all three material-edge holds remain.
+ ingredient_type: UNDEFINED_MIXTURE
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:pygs
+@@ -135,9 +190,10 @@
+   evidence:
+   - evidence_type: MANUAL_CURATION
+     source: MIM curation (#213/#308)
+-    notes: 'Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+-      strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That
+-      file was produced by the research pass and never written into the records; this applies it. It resolves
+-      constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state
+-      no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
+-      curated row states none.'
++    notes: 'Components taken from the curated microbedecoder research decomposition
++      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
++      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
++      That file was produced by the research pass and never written into the records;
++      this applies it. It resolves constituents a label split cannot — abbreviations
++      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
++      No concentrations are recorded: the curated row states none.'

@@ -1,0 +1,146 @@
+{
+  "reviewer": "/root/peptone_final_skeptic",
+  "at": "2026-11-08T10:21:00.090481+00:00",
+  "scope": "All complete actual3payloads read; positive assessment limited to bounded peptone correction plus exact preservation of unrelated prior fields, not independent whole-owner chemistry/role/export approval.",
+  "status": "THREE_FINAL_PAYLOAD_DELTAS_SUPPORTED_WITH_EXPLICIT_APPLICATION_CONDITIONS",
+  "source_inspection": "primary-skeptical-assessment-v1.json and raw-source-readback-v1.json",
+  "rows": [
+    {
+      "dependency_id": "W03-DEP-1176-GYPS",
+      "owner_path": "data/ingredients/mapped/GYPS.yaml",
+      "payload_path": ".temp/peptone-final-dependencies-v1/payloads-v2/GYPS.yaml",
+      "payload_sha256": "fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1",
+      "predecessor_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "maintained_before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "component_index": 2,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+      },
+      "after_component": {
+        "component_name": "Bacto Peptone (Difco)",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium); exact printed constituent: bacto-peptone (Difco). Existing MICRO:0000178 reference is retained conditionally for the separately represented Bacto owner, not redirected to generic Peptone."
+      },
+      "added_evidence_objects": 1,
+      "history_events_appended": 1,
+      "history_prefix_unchanged": true,
+      "unchanged_projection_sha256": "337e30ba19264c7f1313f4093c42719a444f3a90e94b44b27ada0d892af15256",
+      "top_level_fields_read": 12,
+      "leaf_fields_read": 107,
+      "all_other_fields_equal_predecessor": true,
+      "all_quantity_fields_unchanged": true,
+      "native_closed_schema_errors": 0,
+      "new_event": {
+        "timestamp": "2026-11-08T10:19:18.576215+00:00",
+        "curator": "codex-worker03 /root dependent-origin author",
+        "action": "COUPLED_PEPTONE_REFERENCE",
+        "changes": "Under issue1176, source-qualify only the GYPS peptone component as Bacto Peptone (Difco), preserving the original printed bacto-peptone (Difco) wording in component provenance. Retain its existing MICRO:0000178 reference conditionally for the distinct existing Bacto owner; never follow the generic Peptone transition to mesh:D010461. Append narrowly scoped publication evidence. No new GYPS frozen case is claimed: this dependency follows the genuine incoming reference and W05 causal parent transition. Bacto whole identity acceptance remains separate; fallback is a reviewed literal UNMAPPED successor if needed. No quantities or other components, complete recipe, roles or exports changed.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "dependency_id": "W03-DEP-1176-PYGS",
+      "owner_path": "data/ingredients/mapped/PYGS.yaml",
+      "payload_path": ".temp/peptone-final-dependencies-v1/payloads-v2/PYGS.yaml",
+      "payload_sha256": "d28106eb42ad32b85b68177d035b9ee631a15c14941d04c5744f170cf2497cf5",
+      "predecessor_sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+      "maintained_before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "after_component": {
+        "component_name": "peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "added_evidence_objects": 3,
+      "history_events_appended": 1,
+      "history_prefix_unchanged": true,
+      "unchanged_projection_sha256": "d4cd333585af5eb661ea4b71d7270d3158ed4f284c94dab5e82bd994166a04db",
+      "top_level_fields_read": 11,
+      "leaf_fields_read": 119,
+      "all_other_fields_equal_predecessor": true,
+      "all_quantity_fields_unchanged": true,
+      "native_closed_schema_errors": 0,
+      "new_event": {
+        "timestamp": "2026-11-08T10:19:18.764652+00:00",
+        "curator": "codex-worker03 /root dependent-origin author",
+        "action": "COUPLED_PEPTONE_REFERENCE",
+        "changes": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Preserve original W06 proposal R-P-PYGS-SOURCE-EVIDENCE and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "dependency_id": "W03-DEP-1176-MARINE_AGAR_2216",
+      "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "payload_path": ".temp/peptone-final-dependencies-v1/payloads-v2/Marine_agar_2216.yaml",
+      "payload_sha256": "3e0263d2bc99643780fd1e3ba8c839661f47c5d64045beb0b71cfc8b058c38b1",
+      "predecessor_sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419",
+      "maintained_before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "Peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+      },
+      "after_component": {
+        "component_name": "Peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+      },
+      "added_evidence_objects": 1,
+      "history_events_appended": 1,
+      "history_prefix_unchanged": true,
+      "unchanged_projection_sha256": "3c28a0afb140d75bd61a5d64d54145e2ed5c4871b211d6bca8d7e09466fb85ab",
+      "top_level_fields_read": 11,
+      "leaf_fields_read": 157,
+      "all_other_fields_equal_predecessor": true,
+      "all_quantity_fields_unchanged": true,
+      "native_closed_schema_errors": 0,
+      "new_event": {
+        "timestamp": "2026-11-08T10:19:18.834775+00:00",
+        "curator": "codex-worker03 /root dependent-origin author",
+        "action": "COUPLED_PEPTONE_REFERENCE",
+        "changes": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. ATCC2887 scratch formula lists unqualified Peptone5g with1000mL water. Difco names the complete product, not a proven Bacto input. Preserve the current W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows, PARTIAL scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride form. Water1000mL remains preparation context, not an established final volume or dry-product component; do not infer lot fractions or chloramphenicol inheritance. Preserve original W04 proposal FREV-MEDIA-P-media-alias-marine2216 and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    }
+  ],
+  "counts": {
+    "payloads-v2": 3,
+    "components_retained": 25,
+    "appended_component_evidence": 5,
+    "appended_history": 3,
+    "top_level_fields": 34,
+    "leaf_fields": 383
+  },
+  "known_conditions": [
+    "PYGS and Marine require separately accepted exact generic parent c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.",
+    "GYPS preserves existing Bacto reference conditionally; Bacto whole identity/mapping must be separately retained/accepted. No source proof supports generic mesh substitution.",
+    "W04/W06 source origins remain foreign predecessor authors, W03 only dependent edit author; GYPS is genuine incoming dependency, no frozen child case invented.",
+    "Native core ingestion route and finalrootapplication need distinct review; final37notapproved here.",
+    "FAB remains Oxoid and all other peptone withdrawals untouched."
+  ],
+  "finding_disposition": [
+    "W03-PEPTONE-GUARD-001 repaired in immutable helper-v2; own exact original probe now refuses with no output. Historical failedfixture/helper/payloads preserved. No GitHub issue closure claimed."
+  ]
+}

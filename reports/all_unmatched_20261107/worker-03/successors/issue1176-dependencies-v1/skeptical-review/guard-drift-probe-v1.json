@@ -1,0 +1,72 @@
+{
+  "reviewer": "/root/peptone_final_skeptic",
+  "at": "2026-11-08T10:18:40.619362+00:00",
+  "method": "Import exact immutable guarded_writer_v1 in isolated copied fixture; rebind only its task output root O. Actual source/author inputs never altered. Prepare genuine PYGS payload, then mutate only fixture-selected generic parent identifier before write.",
+  "writer_sha256": "7eb1aef40ff697e6688ce4f03e52a58016cbe50353cfd9e7ef5f0758971f4e72",
+  "plan_sha256": "28402d766f56a526d43e97b24513db6dc50415189dd57246560009d981629eae",
+  "parent_before_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+  "parent_after_sha256": "acb90e5d2fd912e70b26d55117329a2e08708a4ff3eca9d106bd158a4e57a787",
+  "destination": ".temp/peptone-final-dependencies-v1/skeptical-review/guard-drift-fixture-v1/payloads/PYGS.yaml",
+  "output_exists": true,
+  "output_sha256": "9168dc6d75bcf096122601cbe477b3db244bfdf42c5175878b13ec4d8d911ce8",
+  "exception": null,
+  "receipt": {
+    "dependency_id": "W03-DEP-1176-PYGS",
+    "owner_path": "data/ingredients/mapped/PYGS.yaml",
+    "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+    "predecessor_payload_sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+    "payload": {
+      "path": "payloads/PYGS.yaml",
+      "sha256": "9168dc6d75bcf096122601cbe477b3db244bfdf42c5175878b13ec4d8d911ce8"
+    },
+    "component_index": 0,
+    "before_component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "after_component": {
+      "component_name": "peptone",
+      "component_id": "mesh:D010461",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "history_prefix_preserved": true,
+    "history_appended": {
+      "timestamp": "2026-11-08T10:18:40.460806+00:00",
+      "curator": "codex-worker03 /root dependent-origin author",
+      "action": "COUPLED_PEPTONE_REFERENCE",
+      "changes": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Preserve original W06 proposal R-P-PYGS-SOURCE-EVIDENCE and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application.",
+      "previous_status": "MAPPED",
+      "new_status": "MAPPED",
+      "llm_assisted": true
+    },
+    "append_evidence": [
+      {
+        "evidence_type": "PUBLICATION",
+        "source": "https://pubmed.ncbi.nlm.nih.gov/10555335/",
+        "source_record": "Clostridium frigidicarnis original species-description abstract; PMID10555335",
+        "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+      },
+      {
+        "evidence_type": "PUBLICATION",
+        "source": "https://pubmed.ncbi.nlm.nih.gov/10826793/",
+        "source_record": "Clostridium gasigenes original species-description abstract; PMID10826793",
+        "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+      },
+      {
+        "evidence_type": "PUBLICATION",
+        "source": "https://pubmed.ncbi.nlm.nih.gov/10758868/",
+        "source_record": "Clostridium algidixylanolyticum original species-description abstract; PMID10758868",
+        "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+      }
+    ],
+    "predecessor_origin_object_sha256": "ae947ce09bbccffb8cef5eca27c090b37cab883f13f4aff2eae3e9066727e71c",
+    "native_source_core_member": false
+  },
+  "expected": "Refuse fresh selected-parent input mismatch with no output.",
+  "actual": "WRITE_SUCCEEDED_DESPITE_STALE_SELECTED_PARENT",
+  "finding_id": "W03-PEPTONE-GUARD-001",
+  "classification": "Bounded private producer integrity gap; report before repair. No maintained data affected."
+}

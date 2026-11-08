@@ -1,0 +1,64 @@
+--- inputs/before/GYPS.yaml
++++ payloads/GYPS.yaml
+@@ -92,6 +92,21 @@
+     al. 2002 p.1622, changed guessed abbreviation evidence to source-specific partial
+     recipe transcription, and corrected the limited CultureMech composition comparison.'
+   llm_assisted: true
++- timestamp: '2026-11-08T10:17:51.294627+00:00'
++  curator: codex-worker03 /root dependent-origin author
++  action: COUPLED_PEPTONE_REFERENCE
++  changes: 'Under issue1176, source-qualify only the GYPS peptone component as Bacto
++    Peptone (Difco), preserving the original printed bacto-peptone (Difco) wording
++    in component provenance. Retain its existing MICRO:0000178 reference conditionally
++    for the distinct existing Bacto owner; never follow the generic Peptone transition
++    to mesh:D010461. Append narrowly scoped publication evidence. No new GYPS frozen
++    case is claimed: this dependency follows the genuine incoming reference and W05
++    causal parent transition. Bacto whole identity acceptance remains separate; fallback
++    is a reviewed literal UNMAPPED successor if needed. No quantities or other components,
++    complete recipe, roles or exports changed.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ notes: MicrobeDecoder source label GYPS for Caminicella sporogenes; original species-description
+   recipe resolves the component expansion. Local registry identity is retained; this
+   is not a universal GYPS formulation.
+@@ -106,11 +121,13 @@
+   reference_scope: MIM_CATALOG
+   source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+     GYPS medium)
+-- component_name: peptone
++- component_name: Bacto Peptone (Difco)
+   component_id: MICRO:0000178
+   reference_scope: MIM_CATALOG
+-  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+-    GYPS medium)
++  source: 'https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
++    GYPS medium); exact printed constituent: bacto-peptone (Difco). Existing MICRO:0000178
++    reference is retained conditionally for the separately represented Bacto owner,
++    not redirected to generic Peptone.'
+ - component_name: elemental sulfur
+   component_id: CHEBI:33403
+   reference_scope: MIM_CATALOG
+@@ -132,6 +149,22 @@
+     source_record: database.csv row 3351; Bergey doi:10.1002/9781118960608.gbm00618
+     notes: Exact raw MicrobeDecoder substrate label GYPS belongs to Caminicella sporogenes.
+       This source context distinguishes the preparation from unrelated GYPS expansions.
++  - evidence_type: PUBLICATION
++    source: https://doi.org/10.1099/00207713-52-5-1621
++    source_record: p.1622, Culture medium and conditions; source-bound Caminicella
++      sporogenes GYPS
++    notes: 'Issue1176 dependent reference review: the primary recipe explicitly lists
++      bacto-peptone (Difco). Component label Bacto Peptone (Difco) normalizes capitalization/hyphen
++      only and preserves the literal in component source. Retain existing MICRO:0000178
++      conditionally against the distinct Bacto_Peptone owner, current selected W05-FINAL-MAT-001
++      payload42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b. This
++      does not newly establish brand-specific MICRO equivalence or approve the complete
++      Bacto owner. Generic Peptone migrates separately to mesh:D010461 and must never
++      receive this product claim. If final Bacto identity is not accepted, keep the
++      evidenced literal as UNMAPPED in a separately reviewed successor. Historical
++      catalogue/lot is unknown; no modern catalogue assignment or amount projection.
++      Preserve PARTIAL scope, prior omitted constituents, mapping/role/source/export
++      holds. Agent-assisted source assessment.'
+   notes: Source-specific partial partonomy. S means sulfur here, not starch. Original
+     guessed assertions are retained in the review before-records.json audit.
+ ingredient_type: UNDEFINED_MIXTURE

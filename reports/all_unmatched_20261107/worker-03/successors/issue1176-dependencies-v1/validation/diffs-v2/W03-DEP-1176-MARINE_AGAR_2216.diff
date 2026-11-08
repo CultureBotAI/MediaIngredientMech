@@ -1,0 +1,53 @@
+--- inputs/current/Marine_agar_2216.yaml
++++ payloads-v2/Marine_agar_2216.yaml
+@@ -97,10 +97,28 @@
+     Historical events are preserved verbatim; this event qualifies/retracts conflicting
+     earlier inferences where explicitly described above.
+   llm_assisted: true
++- timestamp: '2026-11-08T10:19:18.834775+00:00'
++  curator: codex-worker03 /root dependent-origin author
++  action: COUPLED_PEPTONE_REFERENCE
++  changes: Under issue1176, couple only components[0].component_id from MICRO:0000178
++    to the supported generic Peptone owner mesh:D010461, conditional on exact current
++    W05-FINAL-MAT-039. ATCC2887 scratch formula lists unqualified Peptone5g with1000mL
++    water. Difco names the complete product, not a proven Bacto input. Preserve the
++    current W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows,
++    PARTIAL scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride
++    form. Water1000mL remains preparation context, not an established final volume
++    or dry-product component; do not infer lot fractions or chloramphenicol inheritance.
++    Preserve original W04 proposal FREV-MEDIA-P-media-alias-marine2216 and its frozen
++    cases/history; W03 authors only this new dependency correction, not that source
++    work. Append source-specific evidence; retain all other fields/quantities, source/role/export
++    holds. No global replacement or maintained application.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ ingredient_type: UNDEFINED_MIXTURE
+ components:
+ - component_name: Peptone
+-  component_id: MICRO:0000178
++  component_id: mesh:D010461
+   reference_scope: MIM_CATALOG
+   concentration_value: '5.0'
+   concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+@@ -206,6 +224,20 @@
+       assertion is withdrawn and its source name/8.8g retained unresolved. Other inherited
+       conventional salt identities are retained; no universal supplied-form purity
+       claim is added.
++  - evidence_type: RECIPE_SOURCE
++    source: https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx
++    source_record: ATCC Medium2887, scratch formulation Peptone row with1000mL water
++    notes: 'ATCC2887 scratch formula lists unqualified Peptone5g with1000mL water.
++      Difco names the complete product, not a proven Bacto input. Preserve the current
++      W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows, PARTIAL
++      scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride form.
++      Water1000mL remains preparation context, not an established final volume or
++      dry-product component; do not infer lot fractions or chloramphenicol inheritance.
++      Issue1176: bind this one supported generic peptone part to mesh:D010461 only
++      with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
++      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
++      or owner/role/export approval follows. Agent-assisted applicability assessment;
++      preserve all predecessor assertions/history and holds.'
+   notes: 'All17 printed dry rows are transcribed, but exact commercial-product composition
+     correspondence is partial/qualified: source uses a separate scratch route and
+     has the55.2520g-versus55.1g discrepancy. Water1000mL remains a preparation input,

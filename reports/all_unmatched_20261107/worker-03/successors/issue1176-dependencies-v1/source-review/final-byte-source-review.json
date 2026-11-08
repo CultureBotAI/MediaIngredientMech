@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/peptone_final_sources",
+  "independence": "Source reviewer supplied an initial bounded source assessment but did not author or write any payload, writer, author plan or lineage proposal. This is a fresh exact-final-byte source/diff review of root-authored payloads. Separate skeptical review remains independently required.",
+  "completed_at": "2026-11-08T10:19:02.843027+00:00",
+  "status": "PASS_FOR_EXACT_BOUNDED_DEPENDENCY_PROPOSALS_WITH_RETAINED_HOLDS",
+  "author_plan": {
+    "path": ".temp/peptone-final-dependencies-v1/author-plan-v2.json",
+    "sha256": "28402d766f56a526d43e97b24513db6dc50415189dd57246560009d981629eae"
+  },
+  "write_receipts_sha256": "1cbf5ab8d1b8f4408e339c19e289d76ccd33b8f8ba0276b43c4bdfb71f35ce0e",
+  "reviewed_complete_payloads": [
+    {
+      "owner_path": "data/ingredients/mapped/GYPS.yaml",
+      "payload_sha256": "ad9fdcf66ef72672060106af433a32583df72252adae2fb5521b03a696a23725",
+      "maintained_before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "composition_parent_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "all_prior_fields_preserved_except_declared_component_change": true,
+      "history_prefix_preserved": true,
+      "history_append_count": 1,
+      "component_evidence_append_count": 1,
+      "components": 4,
+      "top_level_fields": 12,
+      "predecessor_git_verification": null,
+      "result": "PASS_FOR_BOUNDED_DEPENDENCY_PROPOSAL",
+      "all_other_scientific_holds_preserved": true,
+      "whole_owner_role_export_approval": false
+    },
+    {
+      "owner_path": "data/ingredients/mapped/PYGS.yaml",
+      "payload_sha256": "f95aa34b0872db40d4f2d08918105b54db401e7fa8cf4409e08258b2df936312",
+      "maintained_before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "composition_parent_sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+      "all_prior_fields_preserved_except_declared_component_change": true,
+      "history_prefix_preserved": true,
+      "history_append_count": 1,
+      "component_evidence_append_count": 3,
+      "components": 4,
+      "top_level_fields": 11,
+      "predecessor_git_verification": {
+        "worker": 6,
+        "head": "0d7fde51fb3109b10424dd3bcf4091c05aa900e7",
+        "proposal_id": "R-P-PYGS-SOURCE-EVIDENCE",
+        "git_path": "reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml",
+        "exact_blob_matches": true
+      },
+      "result": "PASS_FOR_BOUNDED_DEPENDENCY_PROPOSAL",
+      "all_other_scientific_holds_preserved": true,
+      "whole_owner_role_export_approval": false
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "payload_sha256": "ed61879570d90b147ee7ed7767b7a900738b1cf010c73e596ba8d7f161490082",
+      "maintained_before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+      "composition_parent_sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419",
+      "all_prior_fields_preserved_except_declared_component_change": true,
+      "history_prefix_preserved": true,
+      "history_append_count": 1,
+      "component_evidence_append_count": 1,
+      "components": 17,
+      "top_level_fields": 11,
+      "predecessor_git_verification": {
+        "worker": 4,
+        "head": "7cc3c2540fd1b55281c6f5551f13a90a1e7916b1",
+        "proposal_id": "FREV-MEDIA-P-media-alias-marine2216",
+        "git_path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/proposals/media/Marine_agar_2216.yaml",
+        "exact_blob_matches": true
+      },
+      "result": "PASS_FOR_BOUNDED_DEPENDENCY_PROPOSAL",
+      "all_other_scientific_holds_preserved": true,
+      "whole_owner_role_export_approval": false
+    }
+  ],
+  "source_applicability": {
+    "GYPS": "Printed Alain p1622 explicitly bacto-peptone (Difco); capitalization/hyphen normalization is harmless because exact literal remains in component.source and added evidence. Existing MICRO reference retained conditionally to distinct Bacto owner, not new brand-specific MICRO equivalence or generic peptone. No modern catalogue, quantities, universal formulation or owner approval added.",
+    "PYGS": "All three exact original abstracts explicitly name peptone in organism-bound PYGS. New target uses the separately selected actual generic owner mesh:D010461. All other ingredients, UNKNOWN completeness, absent quantities, W06 source-evidence objects/history and three material-edge holds are exact retained objects. Underlying full papers are not claimed inspected.",
+    "Marine_agar_2216": "ATCC scratch formula explicitly names generic Peptone5g and1000mL water; generic target is supported. Actual current W04 successor already uses G_PER_SOURCE_SCRATCH_FORMULA_BATCH/PARTIAL,17dry rows, MgUNMAPPED,55.2520g-versus55.1g discrepancy. Those current fields are exact preserved. The earlier source-review suggestion to retain5.0G_PER_L concerned the maintained baseline only and is superseded for current successor composition by this review; no quantity change is recommended."
+  },
+  "science_retention_boundary": "Complete final payloads read; full object equivalence to exact current W04/W06/maintained GYPS parents verified after removing only one truthful new history event, appended claim evidence and the declared peptone field delta. Retained whole-owner assertions are not newly independently approved.",
+  "negative_controls": [
+    {
+      "name": "GYPS generic mesh retarget",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "GYPS generic replacement"
+    },
+    {
+      "name": "Marine stale per-litre unit",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "unauthorized retained-field change"
+    },
+    {
+      "name": "Marine lost magnesium withdrawal",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "unauthorized retained-field change"
+    },
+    {
+      "name": "PYGS erased W06 history",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "history append count"
+    },
+    {
+      "name": "PYGS cleared material holds",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "unauthorized retained-field change"
+    },
+    {
+      "name": "GYPS fabricated frozen source origin",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "invented GYPS source origin"
+    },
+    {
+      "name": "GYPS modern catalogue assigned",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "unauthorized retained-field change"
+    },
+    {
+      "name": "Marine old owner alias removed",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "unauthorized retained-field change"
+    },
+    {
+      "name": "PYGS changed other starch part",
+      "expected": "reject",
+      "observed": "reject",
+      "reason": "unauthorized retained-field change"
+    }
+  ],
+  "positive_controls_passed": 3,
+  "new_findings": [],
+  "remaining_conditions": [
+    "Root must independently bind final published head and true sidecar origin intake; this source review does not make external dependencies part of W03 frozen188cases.",
+    "Generic target c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7 and distinct Bacto42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b remain exact separate application dependencies.",
+    "If distinct Bacto identity is not accepted, a separately reviewed literalUNMAPPED successor is required; do not redirect GYPS to mesh.",
+    "Native validation is separate from source proof; no whole owner, role, export or release authority.",
+    "FAB/Oxoid and all other source exclusions are unaffected; no global replacement."
+  ],
+  "failed_tool_attempts": [
+    {
+      "command": "python3 read payloads with PyYAML",
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: No module named yaml",
+      "disposition": "Read-only attempt; rerun successfully with maintained private Python3.13 environment. No candidate output written by either attempt."
+    }
+  ]
+}

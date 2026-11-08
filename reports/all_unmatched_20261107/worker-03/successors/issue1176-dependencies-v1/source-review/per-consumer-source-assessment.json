@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/peptone_final_sources",
+  "role": "Independent primary-source reviewer, not payload author",
+  "completed_at": "2026-11-08T10:15:59.774272+00:00",
+  "population": 3,
+  "coverage": "full three requested peptone component claims",
+  "claims": [
+    {
+      "owner_path": "data/ingredients/mapped/GYPS.yaml",
+      "before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "component_index": 2,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+      },
+      "reviewer": "/root/peptone_final_sources",
+      "reviewed_at": "2026-11-08T10:15:59.774272+00:00",
+      "source_evidence": [
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip",
+          "sha256": "b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e",
+          "locator": "database.csv, rows 3351 Bergey_Substrates_for_end_products; entire member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95"
+        },
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.pdf",
+          "sha256": "a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661",
+          "locator": "Printed p1622, Culture medium and conditions; p1621 title/species context"
+        }
+      ],
+      "source_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/GYPS.yaml",
+          "csv_row_including_header": 3351,
+          "record_index_zero_based": 3349,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "GYPS",
+          "genus": "Caminicella",
+          "species": "sporogenes",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/caminicella-sporogenes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00618"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "quantity_change_recommended": false,
+      "whole_owner_approval": false,
+      "role_or_export_approval": false,
+      "authored_candidate_reviewed": false,
+      "disposition": "RETAIN_SOURCE_SPECIFIC_BACTO_CONDITIONAL_ON_DISTINCT_OWNER",
+      "proposed_component_action": {
+        "component_name": "Bacto-peptone (Difco)",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "rationale": "Original source explicitly names bacto-peptone (Difco) in the GYPS recipe for Caminicella sporogenes. This is positive product evidence, not an abbreviation inference. Current W05 generic Peptone migrates to mesh:D010461 while its distinct Bacto owner remains MICRO:0000178. Preserve the source-specific represented Bacto reference and expose its product wording. Do not convert this source claim to generic mesh:D010461.",
+      "read_extent": "Fresh extraction of exact repository-hosted Alain paper bytes matches sealed text. Read title/species context and printed p1622 Culture medium and conditions. Re-extracted raw dataset row3351 (record index3349), binding GYPS to Caminicella sporogenes. Other article experiments are outside this claim review.",
+      "primary_short_quote": "1 g bacto-peptone (Difco)",
+      "quantities": "Paper gives1g per litre, but current partial owner deliberately has no projected quantities. Recommend no amount addition in this reference-closure task.",
+      "holds": [
+        "Historical product catalogue/lot and exact formulation remain unspecified. Modern catalogue211677 is comparative only; do not assign it to the2002 experiment.",
+        "Bacto owner full identity/mapping/alias/role/export acceptance remains separate. MICRO:0000178 is not treated as a unique document foreign key. Retention must bind the distinct selected Bacto owner, not dictionary order or generic peptone.",
+        "If integration cannot retain/accept that distinct Bacto owner reference, preserve literal Bacto-peptone (Difco) as UNMAPPED without a resolving component_id; never substitute generic Peptone.",
+        "Preserve PARTIAL constituent-list scope and omitted salt/buffer/redox/reducing inputs; no complete-medium approval."
+      ],
+      "source_case_relationship": "No original frozen GYPS case is invented. A genuine dependent-origin may be motivated by the old MICRO:0000178 reference and actual W05 generic-parent transition, while this child recipe proof remains separate."
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "Peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_L"
+      },
+      "reviewer": "/root/peptone_final_sources",
+      "reviewed_at": "2026-11-08T10:15:59.774272+00:00",
+      "source_evidence": [
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/atcc-2887.pdf",
+          "sha256": "08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6",
+          "locator": "p1, Difco Marine Agar2216 scratch formulation, peptone row and water basis"
+        }
+      ],
+      "source_observations": [],
+      "quantity_change_recommended": false,
+      "whole_owner_approval": false,
+      "role_or_export_approval": false,
+      "authored_candidate_reviewed": false,
+      "disposition": "GENERIC_PEPTONE_REFERENCE_SUPPORTED",
+      "proposed_component_action": {
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "preserve_component_name": true
+      },
+      "rationale": "ATCC2887 scratch formulation explicitly lists unqualified Peptone5g with1000mL water. The heading naming Difco whole Marine Agar2216 does not establish Bacto identity for its individual Peptone input.",
+      "read_extent": "Fresh extraction of complete two-page ATCC2887 PDF matches sealed text; formulation/preparation and product headings read.",
+      "quantities": "Preserve existing5.0G_PER_L; no final-volume/dry-product mass-fraction conversion or chloramphenicol inheritance.",
+      "holds": [
+        "Generic target acceptance/application must bind exact current W05 Peptone c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7, identifier mesh:D010461.",
+        "Preserve complete real W04 Marine agar or W06 PYGS source origin and append only accountable coupling history. Do not call their original scientific authorship W03.",
+        "All existing source-specific completeness, component, preparation and role/export holds remain. Exact new payload requires independent final-byte review."
+      ],
+      "source_case_relationship": "Coupling follows actual maintained peptone reference and W05 parent transition; actual W04/W06 observed source-case lineage remains separately bound, never forged as a W03 frozen source case."
+    },
+    {
+      "owner_path": "data/ingredients/mapped/PYGS.yaml",
+      "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "reviewer": "/root/peptone_final_sources",
+      "reviewed_at": "2026-11-08T10:15:59.774272+00:00",
+      "source_evidence": [
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip",
+          "sha256": "b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e",
+          "locator": "database.csv, rows 4105 Bergey_Substrates_for_end_products, 4110 Bergey_Substrates_for_end_products, 8884 Bergey_Substrates_for_end_products; entire member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95"
+        },
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/epmc-algidixylanolyticum.json",
+          "sha256": "0cc89e98e8d4f67ef41faade46f3ca1e5f3b8c6d4dd0ed2015df86ddec48767d",
+          "locator": "resultList.result[0].abstractText; PMID10758868"
+        },
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/epmc-frigidicarnis.json",
+          "sha256": "574c149a422fc9db98e0a71cc25e4b8e2000142d1b6b792e1444fb136ee9853b",
+          "locator": "resultList.result[0].abstractText; PMID10555335"
+        },
+        {
+          "path": ".temp/peptone-consumer-independent-v1/other/captures/epmc-gasigenes.json",
+          "sha256": "0eda4ebadf8d8a487eb29992202b29ec428fcb881d42bf0cf28c2bec5dcab57d",
+          "locator": "resultList.result[0].abstractText; PMID10826793"
+        }
+      ],
+      "source_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PYGS.yaml",
+          "csv_row_including_header": 4105,
+          "record_index_zero_based": 4103,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYGS",
+          "genus": "Clostridium",
+          "species": "frigidicarnis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-frigidicarnis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYGS.yaml",
+          "csv_row_including_header": 4110,
+          "record_index_zero_based": 4108,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYGS",
+          "genus": "Clostridium",
+          "species": "gasigenes",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-gasigenes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYGS.yaml",
+          "csv_row_including_header": 8884,
+          "record_index_zero_based": 8882,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYGS",
+          "genus": "Lacrimispora",
+          "species": "algidixylanolytica",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/lacrimispora-algidixylanolytica",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "quantity_change_recommended": false,
+      "whole_owner_approval": false,
+      "role_or_export_approval": false,
+      "authored_candidate_reviewed": false,
+      "disposition": "GENERIC_PEPTONE_REFERENCE_SUPPORTED",
+      "proposed_component_action": {
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "preserve_component_name": true
+      },
+      "rationale": "All three original article abstracts spell peptone in PYGS broth. Original dataset rows4105,4110,8884 bind the corresponding Clostridium frigidicarnis, Clostridium gasigenes and Lacrimispora algidixylanolytica observations. Generic peptone is supported at these scoped material mentions; supplier and digest details are not required to represent the generic named part.",
+      "read_extent": "Complete exact archived EuropePMC abstracts/bibliographic JSON for PMID10758868,10555335,10826793 inspected. Full articles have not been read. Source database rows re-extracted from exact ZIP.",
+      "quantities": "Absent amounts, final volume and supplier/form details remain absent. No universal PYGS recipe inferred.",
+      "holds": [
+        "Generic target acceptance/application must bind exact current W05 Peptone c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7, identifier mesh:D010461.",
+        "Preserve complete real W04 Marine agar or W06 PYGS source origin and append only accountable coupling history. Do not call their original scientific authorship W03.",
+        "All existing source-specific completeness, component, preparation and role/export holds remain. Exact new payload requires independent final-byte review."
+      ],
+      "source_case_relationship": "Coupling follows actual maintained peptone reference and W05 parent transition; actual W04/W06 observed source-case lineage remains separately bound, never forged as a W03 frozen source case."
+    }
+  ],
+  "limitations": [
+    "No new owner/role/form/export approval.",
+    "No GYPS frozen source case manufactured.",
+    "Current-source identity review is separate from author accountability and future exact-payload review.",
+    "This assessment cannot be used to accept a global MICRO:0000178 replacement."
+  ],
+  "negative_semantic_controls": {
+    "GYPS_to_mesh_D010461": "REJECT: contradicts explicit Bacto wording",
+    "Marine_to_Bacto_from_Difco_heading": "REJECT: whole product heading is not individual peptone brand proof",
+    "PYGS_supplier_requirement_for_generic": "REJECT: genuinely generic explicit named part needs no supplier certificate",
+    "FAB_inherits_LabM_or_Neogen": "REJECT: outside these three claims; known Oxoid source hold retained"
+  }
+}

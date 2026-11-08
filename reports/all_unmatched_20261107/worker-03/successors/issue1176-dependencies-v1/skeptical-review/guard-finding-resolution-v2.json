@@ -1,0 +1,25 @@
+{
+  "reviewer": "/root/peptone_final_skeptic",
+  "at": "2026-11-08T10:22:54.837251+00:00",
+  "finding_id": "W03-PEPTONE-GUARD-001",
+  "status": "BOUNDED_REPAIR_VERIFIED_IN_IMMUTABLE_V2",
+  "original_finding": {
+    "path": ".temp/peptone-final-dependencies-v1/skeptical-review/confirmed-findings-v1.json",
+    "sha256": "a2be9b55a0566ef21e336ecca9db1b9a36013404579a166e72d9a89c970d87c2"
+  },
+  "original_failed_probe": {
+    "path": ".temp/peptone-final-dependencies-v1/skeptical-review/guard-drift-probe-v1.json",
+    "sha256": "72497b6b7ef5ab61813dbbb1d106a6487dc4295b23f83f6fe8031d609495840e"
+  },
+  "new_probe": {
+    "path": ".temp/peptone-final-dependencies-v1/skeptical-review/guard-drift-probe-v2.json",
+    "sha256": "bed5845b1f0aa3eda66dd30480ea47512f8496135bf94dcfc19e17a39497909d"
+  },
+  "fixed_writer": {
+    "path": ".temp/peptone-final-dependencies-v1/scripts/guarded_writer_v2.py",
+    "sha256": "3ee4c4a5a4cd982c36da26dc8a811f56d34fbdfa4fa30735238d61369bb552d2"
+  },
+  "assessment": "Fresh_dependency_pins checks exact pinned plan, in-memory plan equality, all primary/parent captures and preserved cores at start of write; existing fresh child/source-byte checks remain. Independent original serial parent mutation now refuses without output. Root33focusedcontrols inspected and retained; no assertion of hostile-concurrency atomicity. Actualfinal3payloads differ from v1 only by truthful new event timestamps, and independent full field retention/schema checks pass.",
+  "github_issue_status": "Not changed or claimed resolved; this is the bounded private artifact disposition only.",
+  "scientific_limits": "No native operator/gate or maintained record changed, no wholeowner/role/export approval."
+}

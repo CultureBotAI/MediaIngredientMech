@@ -1,0 +1,1541 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-08T10:16:57.707546+00:00",
+  "base_head": "fe31a02850932a7bdf2fe65c93cb636a86f82a2c",
+  "type": "accountable_dependency_sidecar_not_frozen_source_core",
+  "core_unchanged": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json",
+      "sha256": "a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220",
+      "entries": 188,
+      "object_key": "decisions"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json",
+      "sha256": "ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a",
+      "entries": 74,
+      "object_key": "proposals"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json",
+      "sha256": "831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878",
+      "entries": 868,
+      "object_key": "evidence"
+    }
+  ],
+  "rows": [
+    {
+      "dependency_id": "W03-DEP-1176-GYPS",
+      "author": "codex-worker03 /root",
+      "kind": "accountable_dependent_owner_proposal",
+      "native_source_core_member": false,
+      "owner_path": "data/ingredients/mapped/GYPS.yaml",
+      "destination_path": "data/ingredients/mapped/GYPS.yaml",
+      "maintained_before": {
+        "path": "inputs/before/GYPS.yaml",
+        "sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e"
+      },
+      "current_payload": {
+        "path": "inputs/before/GYPS.yaml",
+        "sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e"
+      },
+      "component_index": 2,
+      "original_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+      },
+      "predecessor_origin": null,
+      "predecessor_origin_object_sha256": null,
+      "causal_parent": {
+        "worker": 5,
+        "head": "108e213e96f7d423ee345ce265d692e79063127c",
+        "proposal_id": "W05-FINAL-MAT-039",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "parent_payload_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+        "relationship": "Existing incoming reference couples to real parent identity transition; causal case is not an observation of this child recipe."
+      },
+      "source_support": {
+        "owner_path": "data/ingredients/mapped/GYPS.yaml",
+        "before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+        "component_index": 2,
+        "before_component": {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+        },
+        "reviewer": "/root/peptone_final_sources",
+        "reviewed_at": "2026-11-08T10:15:59.774272+00:00",
+        "source_evidence": [
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip",
+            "sha256": "b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e",
+            "locator": "database.csv, rows 3351 Bergey_Substrates_for_end_products; entire member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95"
+          },
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.pdf",
+            "sha256": "a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661",
+            "locator": "Printed p1622, Culture medium and conditions; p1621 title/species context"
+          }
+        ],
+        "source_observations": [
+          {
+            "owner_path": "data/ingredients/mapped/GYPS.yaml",
+            "csv_row_including_header": 3351,
+            "record_index_zero_based": 3349,
+            "field": "Bergey_Substrates_for_end_products",
+            "literal": "GYPS",
+            "genus": "Caminicella",
+            "species": "sporogenes",
+            "source_links": {
+              "LPSN_Page_link": "https://lpsn.dsmz.de/species/caminicella-sporogenes",
+              "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00618"
+            },
+            "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+          }
+        ],
+        "quantity_change_recommended": false,
+        "whole_owner_approval": false,
+        "role_or_export_approval": false,
+        "authored_candidate_reviewed": false,
+        "disposition": "RETAIN_SOURCE_SPECIFIC_BACTO_CONDITIONAL_ON_DISTINCT_OWNER",
+        "proposed_component_action": {
+          "component_name": "Bacto-peptone (Difco)",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG"
+        },
+        "rationale": "Original source explicitly names bacto-peptone (Difco) in the GYPS recipe for Caminicella sporogenes. This is positive product evidence, not an abbreviation inference. Current W05 generic Peptone migrates to mesh:D010461 while its distinct Bacto owner remains MICRO:0000178. Preserve the source-specific represented Bacto reference and expose its product wording. Do not convert this source claim to generic mesh:D010461.",
+        "read_extent": "Fresh extraction of exact repository-hosted Alain paper bytes matches sealed text. Read title/species context and printed p1622 Culture medium and conditions. Re-extracted raw dataset row3351 (record index3349), binding GYPS to Caminicella sporogenes. Other article experiments are outside this claim review.",
+        "primary_short_quote": "1 g bacto-peptone (Difco)",
+        "quantities": "Paper gives1g per litre, but current partial owner deliberately has no projected quantities. Recommend no amount addition in this reference-closure task.",
+        "holds": [
+          "Historical product catalogue/lot and exact formulation remain unspecified. Modern catalogue211677 is comparative only; do not assign it to the2002 experiment.",
+          "Bacto owner full identity/mapping/alias/role/export acceptance remains separate. MICRO:0000178 is not treated as a unique document foreign key. Retention must bind the distinct selected Bacto owner, not dictionary order or generic peptone.",
+          "If integration cannot retain/accept that distinct Bacto owner reference, preserve literal Bacto-peptone (Difco) as UNMAPPED without a resolving component_id; never substitute generic Peptone.",
+          "Preserve PARTIAL constituent-list scope and omitted salt/buffer/redox/reducing inputs; no complete-medium approval."
+        ],
+        "source_case_relationship": "No original frozen GYPS case is invented. A genuine dependent-origin may be motivated by the old MICRO:0000178 reference and actual W05 generic-parent transition, while this child recipe proof remains separate."
+      },
+      "application_authorized": false,
+      "whole_owner_role_export_approved": false,
+      "new_component": {
+        "component_name": "Bacto Peptone (Difco)",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium); exact printed constituent: bacto-peptone (Difco). Existing MICRO:0000178 reference is retained conditionally for the separately represented Bacto owner, not redirected to generic Peptone."
+      },
+      "append_evidence": [
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621",
+          "source_record": "p.1622, Culture medium and conditions; source-bound Caminicella sporogenes GYPS",
+          "notes": "Issue1176 dependent reference review: the primary recipe explicitly lists bacto-peptone (Difco). Component label Bacto Peptone (Difco) normalizes capitalization/hyphen only and preserves the literal in component source. Retain existing MICRO:0000178 conditionally against the distinct Bacto_Peptone owner, current selected W05-FINAL-MAT-001 payload42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b. This does not newly establish brand-specific MICRO equivalence or approve the complete Bacto owner. Generic Peptone migrates separately to mesh:D010461 and must never receive this product claim. If final Bacto identity is not accepted, keep the evidenced literal as UNMAPPED in a separately reviewed successor. Historical catalogue/lot is unknown; no modern catalogue assignment or amount projection. Preserve PARTIAL scope, prior omitted constituents, mapping/role/source/export holds. Agent-assisted source assessment."
+        }
+      ],
+      "event_text": "Under issue1176, source-qualify only the GYPS peptone component as Bacto Peptone (Difco), preserving the original printed bacto-peptone (Difco) wording in component provenance. Retain its existing MICRO:0000178 reference conditionally for the distinct existing Bacto owner; never follow the generic Peptone transition to mesh:D010461. Append narrowly scoped publication evidence. No new GYPS frozen case is claimed: this dependency follows the genuine incoming reference and W05 causal parent transition. Bacto whole identity acceptance remains separate; fallback is a reviewed literal UNMAPPED successor if needed. No quantities or other components, complete recipe, roles or exports changed."
+    },
+    {
+      "dependency_id": "W03-DEP-1176-PYGS",
+      "author": "codex-worker03 /root",
+      "kind": "accountable_dependent_owner_proposal",
+      "native_source_core_member": false,
+      "owner_path": "data/ingredients/mapped/PYGS.yaml",
+      "destination_path": "data/ingredients/mapped/PYGS.yaml",
+      "maintained_before": {
+        "path": "inputs/before/PYGS.yaml",
+        "sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52"
+      },
+      "current_payload": {
+        "path": "inputs/current/PYGS.yaml",
+        "sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+        "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-final-dependencies-v1/lineage-review/inputs/origins/w06-PYGS.yaml"
+      },
+      "component_index": 0,
+      "original_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "predecessor_origin": {
+        "worker": 6,
+        "head": "0d7fde51fb3109b10424dd3bcf4091c05aa900e7",
+        "proposal": {
+          "proposal_id": "R-P-PYGS-SOURCE-EVIDENCE",
+          "case_ids": [
+            "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27"
+          ],
+          "description": "Attach three primary source-context supports for existing PYGS starch component without clearing material holds.",
+          "evidence_ids": [
+            "R-frozen-shard",
+            "R-issue-718",
+            "R-PYGS-raw-records",
+            "R-epmc-algidixylanolyticum",
+            "R-epmc-frigidicarnis",
+            "R-epmc-gasigenes"
+          ],
+          "owner_path": "data/ingredients/mapped/PYGS.yaml",
+          "kind": "edit_existing_owner",
+          "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml",
+            "sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d"
+          },
+          "identity_predicate_alias_consequences": "Attach three primary source-context supports for existing PYGS starch component without clearing material holds.",
+          "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+          "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+        },
+        "git_path": "reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml",
+        "payload": {
+          "path": "three-external-couplings-v1/origins/w06-PYGS.yaml",
+          "sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d"
+        },
+        "after_peptone_refs": [
+          {
+            "index": 0,
+            "object": {
+              "component_name": "peptone",
+              "component_id": "MICRO:0000178",
+              "reference_scope": "MIM_CATALOG",
+              "source": "microbedecoder research decomposition (#213/#308)"
+            }
+          }
+        ],
+        "history_prefix_preserved": true,
+        "proposal_object_sha256": "07a088e672f866416bdfcae7de42267a53a05844e3b63aeb6f46651ca671dc38",
+        "git_payload_verified": true,
+        "current_decisions_git_path": "reports/all_unmatched_20261107/worker-06/successor-v5/decisions.json",
+        "current_decisions_sha256": "e626c5147747389c1f1125a22d9b09698700b3e5b4f7bc83b42964c9b47ba54a",
+        "frozen_shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-06.json",
+        "frozen_shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+        "cases": [
+          {
+            "case_id": "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+            "case_input_sha256": "5c1f43970dfec31e8bbb2d4873b018473ca8d1aad0a8628eb9e213888350135f",
+            "frozen_case": {
+              "baseline_outcome": "current_source_placeholder_preserved",
+              "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+              "case_id": "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+              "original_kg_entry": {
+                "candidate_id": "4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+                "category": "biolink:ChemicalEntity",
+                "consumed_name_hits": [
+                  {
+                    "candidate_field": "source_label",
+                    "disposition": "WITHHOLD",
+                    "matched_field": "subject_label",
+                    "matched_label": "PYGS",
+                    "review_dispositions": [
+                      {
+                        "disposition": "WITHHOLD",
+                        "evidence_key": "2203",
+                        "object_id": "kgmicrobe.ingredient:pygs",
+                        "owner_record": "data/ingredients/mapped/PYGS.yaml",
+                        "owner_record_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+                        "predicate_id": "skos:exactMatch",
+                        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                        "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the starch component overstates an ambiguous S suffix.; The cited expansion acknowledges that S can mean salts or soluble starch; a definite component choice requires the original recipe context.",
+                        "row_sha256": "db70f84d875ccb770a7d3d139a0a75c8ac46b7fde4ba07d4d6419017ed0a15f2",
+                        "source_position": "2203",
+                        "subject_id": "MIM:PYGS"
+                      }
+                    ],
+                    "row": {
+                      "comment": "",
+                      "confidence": "0.9",
+                      "mapping_date": "2026-08-24",
+                      "mapping_justification": "semapv:ManualMappingCuration",
+                      "object_id": "kgmicrobe.ingredient:pygs",
+                      "object_label": "PYGS",
+                      "object_source": "kgm:ingredient",
+                      "other": "",
+                      "predicate_id": "skos:exactMatch",
+                      "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+                      "subject_id": "MIM:PYGS",
+                      "subject_label": "PYGS",
+                      "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+                    },
+                    "row_sha256": "db70f84d875ccb770a7d3d139a0a75c8ac46b7fde4ba07d4d6419017ed0a15f2"
+                  },
+                  {
+                    "candidate_field": "raw_source_label",
+                    "disposition": "WITHHOLD",
+                    "matched_field": "subject_label",
+                    "matched_label": "PYGS",
+                    "review_dispositions": [
+                      {
+                        "disposition": "WITHHOLD",
+                        "evidence_key": "2203",
+                        "object_id": "kgmicrobe.ingredient:pygs",
+                        "owner_record": "data/ingredients/mapped/PYGS.yaml",
+                        "owner_record_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+                        "predicate_id": "skos:exactMatch",
+                        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                        "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the starch component overstates an ambiguous S suffix.; The cited expansion acknowledges that S can mean salts or soluble starch; a definite component choice requires the original recipe context.",
+                        "row_sha256": "db70f84d875ccb770a7d3d139a0a75c8ac46b7fde4ba07d4d6419017ed0a15f2",
+                        "source_position": "2203",
+                        "subject_id": "MIM:PYGS"
+                      }
+                    ],
+                    "row": {
+                      "comment": "",
+                      "confidence": "0.9",
+                      "mapping_date": "2026-08-24",
+                      "mapping_justification": "semapv:ManualMappingCuration",
+                      "object_id": "kgmicrobe.ingredient:pygs",
+                      "object_label": "PYGS",
+                      "object_source": "kgm:ingredient",
+                      "other": "",
+                      "predicate_id": "skos:exactMatch",
+                      "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+                      "subject_id": "MIM:PYGS",
+                      "subject_label": "PYGS",
+                      "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+                    },
+                    "row_sha256": "db70f84d875ccb770a7d3d139a0a75c8ac46b7fde4ba07d4d6419017ed0a15f2"
+                  }
+                ],
+                "downstream_holds": [
+                  {
+                    "row": {
+                      "agent_type": "manual_agent",
+                      "curation_rationale": "For full pinned records 8883/4104/4109 only, expand medium name as peptone-yeast extract-glucose-starch broth; retain unknown recipe quantities and do not infer component-specific consumption. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+                      "disposition": "reviewed_source_culture_medium",
+                      "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00619|https://doi.org/10.1099/00207713-49-4-1539|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/mapped/PYGS.yaml",
+                      "identity_approved": "false",
+                      "identity_status": "unresolved",
+                      "knowledge_level": "knowledge_assertion",
+                      "object_curie": "kgmicrobe.compound:pygs",
+                      "predicate": "biolink:consumes",
+                      "primary_knowledge_source": "infores:bergey-manual",
+                      "raw_record_sha256": "f0303c20fd16ab2fe3d204ceddb775d20ca89dbc6ba9e6405c1123bb67d5d7ad",
+                      "relation": "RO:0002438",
+                      "source_citation": "https://doi.org/10.1002/9781118960608.gbm00619",
+                      "source_column": "Bergey_Substrates_for_end_products",
+                      "source_literal": "PYGS",
+                      "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=4104",
+                      "subject": "lpsn:774882",
+                      "value_encoding": "backslash"
+                    },
+                    "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+                  },
+                  {
+                    "row": {
+                      "agent_type": "manual_agent",
+                      "curation_rationale": "For full pinned records 8883/4104/4109 only, expand medium name as peptone-yeast extract-glucose-starch broth; retain unknown recipe quantities and do not infer component-specific consumption. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+                      "disposition": "reviewed_source_culture_medium",
+                      "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00619|https://doi.org/10.1099/00207713-50-1-107|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/mapped/PYGS.yaml",
+                      "identity_approved": "false",
+                      "identity_status": "unresolved",
+                      "knowledge_level": "knowledge_assertion",
+                      "object_curie": "kgmicrobe.compound:pygs",
+                      "predicate": "biolink:consumes",
+                      "primary_knowledge_source": "infores:bergey-manual",
+                      "raw_record_sha256": "b0531e07c63bb0ffc8f13b67ab5ee896f2f19af2f5185f869679692d79a2b690",
+                      "relation": "RO:0002438",
+                      "source_citation": "https://doi.org/10.1002/9781118960608.gbm00619",
+                      "source_column": "Bergey_Substrates_for_end_products",
+                      "source_literal": "PYGS",
+                      "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=4109",
+                      "subject": "lpsn:774884",
+                      "value_encoding": "backslash"
+                    },
+                    "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+                  },
+                  {
+                    "row": {
+                      "agent_type": "manual_agent",
+                      "curation_rationale": "For full pinned records 8883/4104/4109 only, expand medium name as peptone-yeast extract-glucose-starch broth; retain unknown recipe quantities and do not infer component-specific consumption. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+                      "disposition": "reviewed_source_culture_medium",
+                      "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00619|https://doi.org/10.1099/00207713-50-2-623|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/mapped/PYGS.yaml",
+                      "identity_approved": "false",
+                      "identity_status": "unresolved",
+                      "knowledge_level": "knowledge_assertion",
+                      "object_curie": "kgmicrobe.compound:pygs",
+                      "predicate": "biolink:consumes",
+                      "primary_knowledge_source": "infores:bergey-manual",
+                      "raw_record_sha256": "82fb32fffc48fbddfae95900805bf7ffbc46a4039b77f1697e67c1ac24d2f946",
+                      "relation": "RO:0002438",
+                      "source_citation": "https://doi.org/10.1002/9781118960608.gbm00619",
+                      "source_column": "Bergey_Substrates_for_end_products",
+                      "source_literal": "PYGS",
+                      "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=8883",
+                      "subject": "lpsn:5942",
+                      "value_encoding": "backslash"
+                    },
+                    "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+                  }
+                ],
+                "name_hits": [
+                  {
+                    "candidate_field": "source_label",
+                    "kind": "preferred_term",
+                    "label": "PYGS",
+                    "owner": "data/ingredients/mapped/PYGS.yaml",
+                    "resolving": true
+                  },
+                  {
+                    "candidate_field": "source_label",
+                    "kind": "synonym",
+                    "label": "PYGS",
+                    "owner": "data/ingredients/mapped/PYGS.yaml",
+                    "resolving": true,
+                    "synonym": {
+                      "source": "microbedecoder",
+                      "synonym_text": "PYGS",
+                      "synonym_type": "RAW_TEXT"
+                    },
+                    "synonym_type": "RAW_TEXT"
+                  },
+                  {
+                    "candidate_field": "raw_source_label",
+                    "kind": "preferred_term",
+                    "label": "PYGS",
+                    "owner": "data/ingredients/mapped/PYGS.yaml",
+                    "resolving": true
+                  },
+                  {
+                    "candidate_field": "raw_source_label",
+                    "kind": "synonym",
+                    "label": "PYGS",
+                    "owner": "data/ingredients/mapped/PYGS.yaml",
+                    "resolving": true,
+                    "synonym": {
+                      "source": "microbedecoder",
+                      "synonym_text": "PYGS",
+                      "synonym_type": "RAW_TEXT"
+                    },
+                    "synonym_type": "RAW_TEXT"
+                  }
+                ],
+                "native_identity_target": "",
+                "native_queue_state": "NATIVE_COMPOUND_PLACEHOLDER",
+                "occurrences": 3,
+                "occurrences_definition": "native per-run placeholder occurrences; helper threshold0",
+                "owners": [
+                  {
+                    "identifier": "kgmicrobe.ingredient:pygs",
+                    "mapping_status": "MAPPED",
+                    "native_review_rows": [
+                      {
+                        "decision": {
+                          "disposition": "WITHHOLD",
+                          "evidence_key": "2203",
+                          "owner_record": "data/ingredients/mapped/PYGS.yaml",
+                          "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the starch component overstates an ambiguous S suffix.; The cited expansion acknowledges that S can mean salts or soluble starch; a definite component choice requires the original recipe context.",
+                          "row_sha256": "db70f84d875ccb770a7d3d139a0a75c8ac46b7fde4ba07d4d6419017ed0a15f2",
+                          "source_position": 2203
+                        },
+                        "row": {
+                          "comment": "",
+                          "confidence": "0.9",
+                          "mapping_date": "2026-08-24",
+                          "mapping_justification": "semapv:ManualMappingCuration",
+                          "object_id": "kgmicrobe.ingredient:pygs",
+                          "object_label": "PYGS",
+                          "object_source": "kgm:ingredient",
+                          "other": "",
+                          "predicate_id": "skos:exactMatch",
+                          "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+                          "subject_id": "MIM:PYGS",
+                          "subject_label": "PYGS",
+                          "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+                        }
+                      }
+                    ],
+                    "ontology_mapping": {
+                      "evidence": [
+                        {
+                          "evidence_type": "MANUAL_CURATION",
+                          "notes": "Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot \u2014 abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+                          "source": "MIM curation (#213/#308)"
+                        }
+                      ],
+                      "mapping_quality": "FALLBACK_REGISTRY",
+                      "ontology_id": "kgmicrobe.ingredient:pygs",
+                      "ontology_label": "PYGS",
+                      "ontology_source": "kgmicrobe.ingredient"
+                    },
+                    "path": "data/ingredients/mapped/PYGS.yaml",
+                    "preferred_term": "PYGS",
+                    "sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+                    "subject_id": "MIM:PYGS"
+                  }
+                ],
+                "raw_label_provenance": "native unmapped_labels.tsv label, not a new source normalization",
+                "raw_source_label": "PYGS",
+                "resolving_owner_paths": [
+                  "data/ingredients/mapped/PYGS.yaml"
+                ],
+                "scientific_identity_approved_by_reconciliation": false,
+                "source": "microbedecoder",
+                "source_columns": "bergey:substrates",
+                "source_id": "kgmicrobe.compound:pygs",
+                "source_label": "PYGS",
+                "source_record": {
+                  "category": "biolink:ChemicalEntity",
+                  "curator_notes": "",
+                  "label": "PYGS",
+                  "mapping_status": "UNMAPPED",
+                  "occurrences": "3",
+                  "placeholder_curie": "kgmicrobe.compound:pygs",
+                  "source_columns": "bergey:substrates",
+                  "target_curie": "",
+                  "target_label": ""
+                },
+                "triage_flags": [
+                  "DOWNSTREAM_MATERIAL_HOLD",
+                  "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+                  "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+                ]
+              },
+              "prior_dependency": "PR1158 candidate baseline, not merged",
+              "raw_source_label": "PYGS",
+              "source": "microbedecoder",
+              "source_case_id": "kgmicrobe.compound:pygs",
+              "source_identity_claimed": false,
+              "source_label": "PYGS"
+            },
+            "current_decision": {
+              "case_id": "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+              "case_input_sha256": "5c1f43970dfec31e8bbb2d4873b018473ca8d1aad0a8628eb9e213888350135f",
+              "source": {
+                "source": "microbedecoder",
+                "source_case_id": "kgmicrobe.compound:pygs",
+                "source_label": "PYGS",
+                "raw_source_label": "PYGS"
+              },
+              "occurrence_ids": [],
+              "disposition": "stock_product_mixture_context",
+              "reasoning": "The frozen records4104,4109,8883 are end-product observations in PYGS, with existing source-specific material holds. Independently retrieved primary species-description abstracts (PMID10555335 for frigidicarnis,10826793 for gasigenes,10758868 for algidixylanolyticum) explicitly use peptone/yeast-extract/glucose/starch broth and report fermentation products in it. This corroborates the starch expansion for each of these three exact organism contexts; it does not establish universal PYGS component quantities, source identity approval, or consumption of each constituent. Preserve all three downstream holds.",
+              "applicability": "Assigned shard index162; source kgmicrobe.compound:pygs; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"curator_notes\": \"\", \"label\": \"PYGS\", \"mapping_status\": \"UNMAPPED\", \"occurrences\": \"3\", \"placeholder_curie\": \"kgmicrobe.compound:pygs\", \"source_columns\": \"bergey:substrates\", \"target_curie\": \"\", \"target_label\": \"\"}. Assessed all 3 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+              "evidence_ids": [
+                "R-frozen-shard",
+                "R-issue-718",
+                "R-PYGS-raw-records",
+                "R-epmc-algidixylanolyticum",
+                "R-epmc-frigidicarnis",
+                "R-epmc-gasigenes"
+              ],
+              "proposal_ids": [
+                "R-P-PYGS-SOURCE-EVIDENCE"
+              ],
+              "no_change_reason": null,
+              "missing_requirement": "Coordinator native content-bound review must assess the revised existing owner and each exact held source-material claim; quantitative recipe and universal PYGS equivalence remain unknown.",
+              "owner_records": [
+                {
+                  "path": "data/ingredients/mapped/PYGS.yaml",
+                  "sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52"
+                }
+              ],
+              "issue_refs": [
+                "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+              ],
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "IR-R"
+                ]
+              },
+              "author": "Codex /root",
+              "source_holds_preserved": true,
+              "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+            },
+            "decision_object_sha256": "e8f56bbbc7a1b2c46923e6815f151f7216c536d47497079bbadc7f141631218f"
+          }
+        ]
+      },
+      "predecessor_origin_object_sha256": "ae947ce09bbccffb8cef5eca27c090b37cab883f13f4aff2eae3e9066727e71c",
+      "causal_parent": {
+        "worker": 5,
+        "head": "108e213e96f7d423ee345ce265d692e79063127c",
+        "proposal_id": "W05-FINAL-MAT-039",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "parent_payload_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+        "relationship": "Existing incoming reference couples to real parent identity transition; causal case is not an observation of this child recipe."
+      },
+      "source_support": {
+        "owner_path": "data/ingredients/mapped/PYGS.yaml",
+        "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+        "component_index": 0,
+        "before_component": {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        "reviewer": "/root/peptone_final_sources",
+        "reviewed_at": "2026-11-08T10:15:59.774272+00:00",
+        "source_evidence": [
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip",
+            "sha256": "b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e",
+            "locator": "database.csv, rows 4105 Bergey_Substrates_for_end_products, 4110 Bergey_Substrates_for_end_products, 8884 Bergey_Substrates_for_end_products; entire member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95"
+          },
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/epmc-algidixylanolyticum.json",
+            "sha256": "0cc89e98e8d4f67ef41faade46f3ca1e5f3b8c6d4dd0ed2015df86ddec48767d",
+            "locator": "resultList.result[0].abstractText; PMID10758868"
+          },
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/epmc-frigidicarnis.json",
+            "sha256": "574c149a422fc9db98e0a71cc25e4b8e2000142d1b6b792e1444fb136ee9853b",
+            "locator": "resultList.result[0].abstractText; PMID10555335"
+          },
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/epmc-gasigenes.json",
+            "sha256": "0eda4ebadf8d8a487eb29992202b29ec428fcb881d42bf0cf28c2bec5dcab57d",
+            "locator": "resultList.result[0].abstractText; PMID10826793"
+          }
+        ],
+        "source_observations": [
+          {
+            "owner_path": "data/ingredients/mapped/PYGS.yaml",
+            "csv_row_including_header": 4105,
+            "record_index_zero_based": 4103,
+            "field": "Bergey_Substrates_for_end_products",
+            "literal": "PYGS",
+            "genus": "Clostridium",
+            "species": "frigidicarnis",
+            "source_links": {
+              "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-frigidicarnis",
+              "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+            },
+            "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+          },
+          {
+            "owner_path": "data/ingredients/mapped/PYGS.yaml",
+            "csv_row_including_header": 4110,
+            "record_index_zero_based": 4108,
+            "field": "Bergey_Substrates_for_end_products",
+            "literal": "PYGS",
+            "genus": "Clostridium",
+            "species": "gasigenes",
+            "source_links": {
+              "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-gasigenes",
+              "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+            },
+            "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+          },
+          {
+            "owner_path": "data/ingredients/mapped/PYGS.yaml",
+            "csv_row_including_header": 8884,
+            "record_index_zero_based": 8882,
+            "field": "Bergey_Substrates_for_end_products",
+            "literal": "PYGS",
+            "genus": "Lacrimispora",
+            "species": "algidixylanolytica",
+            "source_links": {
+              "LPSN_Page_link": "https://lpsn.dsmz.de/species/lacrimispora-algidixylanolytica",
+              "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+            },
+            "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+          }
+        ],
+        "quantity_change_recommended": false,
+        "whole_owner_approval": false,
+        "role_or_export_approval": false,
+        "authored_candidate_reviewed": false,
+        "disposition": "GENERIC_PEPTONE_REFERENCE_SUPPORTED",
+        "proposed_component_action": {
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG",
+          "preserve_component_name": true
+        },
+        "rationale": "All three original article abstracts spell peptone in PYGS broth. Original dataset rows4105,4110,8884 bind the corresponding Clostridium frigidicarnis, Clostridium gasigenes and Lacrimispora algidixylanolytica observations. Generic peptone is supported at these scoped material mentions; supplier and digest details are not required to represent the generic named part.",
+        "read_extent": "Complete exact archived EuropePMC abstracts/bibliographic JSON for PMID10758868,10555335,10826793 inspected. Full articles have not been read. Source database rows re-extracted from exact ZIP.",
+        "quantities": "Absent amounts, final volume and supplier/form details remain absent. No universal PYGS recipe inferred.",
+        "holds": [
+          "Generic target acceptance/application must bind exact current W05 Peptone c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7, identifier mesh:D010461.",
+          "Preserve complete real W04 Marine agar or W06 PYGS source origin and append only accountable coupling history. Do not call their original scientific authorship W03.",
+          "All existing source-specific completeness, component, preparation and role/export holds remain. Exact new payload requires independent final-byte review."
+        ],
+        "source_case_relationship": "Coupling follows actual maintained peptone reference and W05 parent transition; actual W04/W06 observed source-case lineage remains separately bound, never forged as a W03 frozen source case."
+      },
+      "application_authorized": false,
+      "whole_owner_role_export_approved": false,
+      "new_component": {
+        "component_name": "peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "append_evidence": [
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/10555335/",
+          "source_record": "Clostridium frigidicarnis original species-description abstract; PMID10555335",
+          "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        },
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/10826793/",
+          "source_record": "Clostridium gasigenes original species-description abstract; PMID10826793",
+          "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        },
+        {
+          "evidence_type": "PUBLICATION",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/10758868/",
+          "source_record": "Clostridium algidixylanolyticum original species-description abstract; PMID10758868",
+          "notes": "Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        }
+      ],
+      "event_text": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. Three exact original species-description abstracts explicitly name peptone/yeast extract/glucose/starch; full papers are not claimed inspected. Unknown quantities, complete formulation and all three material/source holds remain. Preserve original W06 proposal R-P-PYGS-SOURCE-EVIDENCE and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application."
+    },
+    {
+      "dependency_id": "W03-DEP-1176-MARINE_AGAR_2216",
+      "author": "codex-worker03 /root",
+      "kind": "accountable_dependent_owner_proposal",
+      "native_source_core_member": false,
+      "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "destination_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "maintained_before": {
+        "path": "inputs/before/Marine_agar_2216.yaml",
+        "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+      },
+      "current_payload": {
+        "path": "inputs/current/Marine_agar_2216.yaml",
+        "sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419",
+        "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-final-dependencies-v1/lineage-review/inputs/origins/w04-Marine_agar_2216.yaml"
+      },
+      "component_index": 0,
+      "original_component": {
+        "component_name": "Peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+      },
+      "predecessor_origin": {
+        "worker": 4,
+        "head": "7cc3c2540fd1b55281c6f5551f13a90a1e7916b1",
+        "proposal": {
+          "proposal_id": "FREV-MEDIA-P-media-alias-marine2216",
+          "case_ids": [
+            "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+            "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+            "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac"
+          ],
+          "description": "This owner retains its original Difco/BD Marine Agar2216 dry-product denotation, supported by its creation history and the separately dosed powder in TOGO M2265. ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL water. The dry entries below retain the literal scratch-formula batch masses as source-qualified composition evidence; they are not a manufacturer lot analysis or a claim that the two routes have identical mass closure. Their sum is55.2520g, not the printed55.1g product dose. Both values are preserved without adjustment or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains explicit preparation context here, not a constituent of the dry product. Magnesium Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate assertion is withdrawn and its source name/8.8g retained unresolved. Other inherited conventional salt identities are retained; no universal supplied-form purity claim is added.",
+          "evidence_ids": [
+            "media-case-018",
+            "media-case-034",
+            "media-case-178",
+            "media-fetch-dsmz-604",
+            "media-fetch-jcm-118",
+            "media-fetch-primary-2",
+            "media-owner-snapshots",
+            "media-product-owner-search",
+            "media-recipe-0f9da4eed5a951f1",
+            "media-recipe-b1415b4cbb30bedb",
+            "media-recipe-eefc9fb9382bedcd",
+            "media-validation-proposal-partonomy-validation",
+            "media-validation-proposal-schema-validation-final",
+            "media-validation-v2",
+            "FREV-MEDIA-REUSE-media-fetch-primary-2",
+            "FREV-MEDIA-REUSE-MEDIA-REVIEW-OLS-CHEBI_86345",
+            "FREV-MEDIA-REUSE-media-fetch-dsmz-604",
+            "FREV-MEDIA-ATCC2887",
+            "FREV-MEDIA-MAPPING-AUTHORSHIP-AUDIT"
+          ],
+          "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+          "kind": "edit_existing_owner",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/media/Marine_agar_2216.yaml",
+            "sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419"
+          },
+          "before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+          "application_authorized": false,
+          "publication_status": "WITHHELD: proposal is not native export/content support",
+          "integration_obligations": [
+            "Independent skeptical review of exact proposed bytes.",
+            "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+            "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+            "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+          ],
+          "supersedes_proposal_ids": [
+            "media-alias-marine2216"
+          ],
+          "predecessor_after_capture": {
+            "root": "artifact",
+            "path": "proposals/media/Marine_agar_2216.yaml",
+            "sha256": "1b07179588f4d24497a5a46ce1aef35fabb43acd50347a3c726c154c9ecca063"
+          },
+          "independent_review": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "publication_obligations": [
+            "Existing whole-owner, role, source-specific and export holds remain; this isolated proposal does not approve maintained data or releases.",
+            "New independent review must inspect the complete final owner, not only this correction."
+          ],
+          "case_scope_limits": {
+            "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac": "Named-product context annotation only; source amount1000ml is not exact identity to dry powder. Original DSMZ604 does not supply this amount; no dose conversion is performed."
+          }
+        },
+        "git_path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/proposals/media/Marine_agar_2216.yaml",
+        "payload": {
+          "path": "three-external-couplings-v1/origins/w04-Marine_agar_2216.yaml",
+          "sha256": "41744286890dd2035031368a8c812f2b3d7330f33d463bf75b30157c03d10419"
+        },
+        "after_peptone_refs": [
+          {
+            "index": 0,
+            "object": {
+              "component_name": "Peptone",
+              "component_id": "MICRO:0000178",
+              "reference_scope": "MIM_CATALOG",
+              "concentration_value": "5.0",
+              "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+            }
+          }
+        ],
+        "history_prefix_preserved": true,
+        "proposal_object_sha256": "16d1cc9a1b9bb49e7c68828fe268162467cf8c92cd6c7f9c9027aa97588eff17",
+        "git_payload_verified": true,
+        "current_decisions_git_path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/decisions.json",
+        "current_decisions_sha256": "64fa1b4a11cbb20c261bb40018d507267bfc388d6993dce652adebd46572b57a",
+        "frozen_shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-04.json",
+        "frozen_shard_sha256": "446d8ca4f93e4275a48f42fe29944b09253d2ddd9b7c2575a2ee74b72fcd833a",
+        "cases": [
+          {
+            "case_id": "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+            "case_input_sha256": "e985eee12fba2b553ff16a72ae879d05bd9b8abc050d4710eb4e57fd97552d94",
+            "frozen_case": {
+              "baseline_outcome": "native_no_mim_match",
+              "campaign_requirement": "complete_source_bound_review",
+              "case_id": "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+              "native_match_result": {
+                "effective_term_id": "",
+                "matched": false,
+                "resolved_record": null
+              },
+              "native_occurrence_count": 1,
+              "occurrences": [
+                {
+                  "component_path": "ingredients/1",
+                  "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/marine_agar_broth_2216.yaml",
+                  "native_name": "Difco Marine Agar 2216",
+                  "native_scope": "root_component",
+                  "occurrence_id": "CM_OCC:78e3a19a21bedb9a90f1267c3ec62cf00a77582a046c47fcdc4aa72f000096e8",
+                  "raw_component": {
+                    "concentration": {
+                      "unit": "G_PER_L",
+                      "value": "55.1"
+                    },
+                    "preferred_term": "Difco Marine Agar 2216"
+                  },
+                  "raw_preferred_term": "Difco Marine Agar 2216",
+                  "recipe_id": "CultureMech:008852",
+                  "recipe_source_identifiers": [
+                    {
+                      "path": "/id",
+                      "value": "CultureMech:008852"
+                    },
+                    {
+                      "path": "/media_term/term/id",
+                      "value": "TOGO:M2265"
+                    }
+                  ],
+                  "record_shape": "MediaRecipe",
+                  "source_file": "data/normalized_yaml/bacterial/marine_agar_broth_2216.yaml",
+                  "source_file_sha256": "0f9da4eed5a951f1d250e7523472dac0cd2f36c1290bbbb75a6ce4d0e5c787e4",
+                  "source_identifiers": []
+                }
+              ],
+              "original_unified_position": 3545,
+              "original_unified_row": {
+                "cas_rn": "",
+                "chebi_id": "",
+                "culturemech_term_id": "",
+                "example_media": "CultureMech:008852",
+                "ingredient_name": "Difco Marine Agar 2216",
+                "kg_microbe_node_id": "",
+                "mapping_status": "UNMAPPED",
+                "mim_id": "",
+                "occurrence_count": "1",
+                "synonyms": ""
+              },
+              "prior_dependency": "PR1158 candidate baseline, not merged",
+              "raw_source_label": "Difco Marine Agar 2216",
+              "source": "culturemech",
+              "source_case_id": "Difco Marine Agar 2216",
+              "source_identity_claimed": false,
+              "source_label": "Difco Marine Agar 2216"
+            },
+            "current_decision": {
+              "case_id": "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+              "case_input_sha256": "e985eee12fba2b553ff16a72ae879d05bd9b8abc050d4710eb4e57fd97552d94",
+              "source": {
+                "source": "culturemech",
+                "source_case_id": "Difco Marine Agar 2216",
+                "source_label": "Difco Marine Agar 2216",
+                "raw_source_label": "Difco Marine Agar 2216"
+              },
+              "occurrence_ids": [
+                "CM_OCC:78e3a19a21bedb9a90f1267c3ec62cf00a77582a046c47fcdc4aa72f000096e8"
+              ],
+              "disposition": "existing_identity_or_alias",
+              "reasoning": "This owner retains its original Difco/BD Marine Agar2216 dry-product denotation, supported by its creation history and the separately dosed powder in TOGO M2265. ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL water. The dry entries below retain the literal scratch-formula batch masses as source-qualified composition evidence; they are not a manufacturer lot analysis or a claim that the two routes have identical mass closure. Their sum is55.2520g, not the printed55.1g product dose. Both values are preserved without adjustment or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains explicit preparation context here, not a constituent of the dry product. Magnesium Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate assertion is withdrawn and its source name/8.8g retained unresolved. Other inherited conventional salt identities are retained; no universal supplied-form purity claim is added.",
+              "applicability": "Exact source culturemech / Difco Marine Agar 2216; raw label preserved as 'Difco Marine Agar 2216'. All 1 occurrences assessed: CultureMech:008852 ingredients/1 [CM_OCC:78e3a19a21bedb9a90f1267c3ec62cf00a77582a046c47fcdc4aa72f000096e8]. Complete snapshots anchor recipe-specific qualifications.",
+              "evidence_ids": [
+                "media-case-018",
+                "media-fetch-jcm-118",
+                "media-fetch-primary-2",
+                "media-owner-snapshots",
+                "media-product-owner-search",
+                "media-recipe-0f9da4eed5a951f1",
+                "media-validation-proposal-partonomy-validation",
+                "media-validation-proposal-schema-validation-final",
+                "media-validation-v2",
+                "FREV-MEDIA-REUSE-media-fetch-primary-2",
+                "FREV-MEDIA-REUSE-MEDIA-REVIEW-OLS-CHEBI_86345",
+                "FREV-MEDIA-REUSE-media-fetch-dsmz-604",
+                "FREV-MEDIA-ATCC2887",
+                "FREV-MEDIA-MAPPING-AUTHORSHIP-AUDIT",
+                "FINAL-INDEPENDENT-MEDIA"
+              ],
+              "proposal_ids": [
+                "FREV-MEDIA-P-media-alias-marine2216"
+              ],
+              "no_change_reason": null,
+              "missing_requirement": "Resolve55.2520g scratch-versus55.1g product discrepancy and actual magnesium chloride supplied form before claiming exact product composition closure.",
+              "owner_records": [
+                {
+                  "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                  "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+                }
+              ],
+              "issue_refs": [],
+              "primary_review_author": "worker04/media final-review correction author",
+              "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred.",
+              "publication_scope": "Existing whole-owner, role, source-specific and export holds remain; this isolated proposal does not approve maintained data or releases.",
+              "predecessor_independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "independent-media-final"
+                ]
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "FINAL-INDEPENDENT-MEDIA"
+                ],
+                "reviewer": "/root/correction_chemistry",
+                "scope": "Complete exact case and linked whole payloads; source-specific scientific limits remain. The final assembly reviewer separately checks consolidation and case13 narrowing."
+              },
+              "supersedes_decision_sha256": "835b483fee22baff064110faa5519478cd0ac485a637e9aee21f86c115885498",
+              "correction_scope": "Proposal binding and assigned exact-field corrections; preserved old scientific reasoning remains subject to full independent review. All original holds retained.",
+              "correction_finding_ids": [
+                "MEDIA-SCI-05"
+              ],
+              "correction_predecessor_head": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+              "current_review_scope": "Completed disjoint full-case and whole-payload review; immutable predecessor seals, exact candidate rebindings and separate assembly review are retained. Completion does not lift any scientific, source, role, supported/withheld, whole-owner or export hold."
+            },
+            "decision_object_sha256": "d07411c41107d7440dc915a2aeef6c276fe612eb6a91d473b16786e949997f91"
+          },
+          {
+            "case_id": "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+            "case_input_sha256": "811050883b35bef4e37c09931c555cab8dbacb27f97d20dad0d6d308933a141b",
+            "frozen_case": {
+              "baseline_outcome": "native_no_mim_match",
+              "campaign_requirement": "complete_source_bound_review",
+              "case_id": "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+              "native_match_result": {
+                "effective_term_id": "",
+                "matched": false,
+                "resolved_record": null
+              },
+              "native_occurrence_count": 2,
+              "occurrences": [
+                {
+                  "component_path": "ingredients/0",
+                  "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bacto_marine_agar.yaml",
+                  "native_name": "Marine agar 2216 (Difco 0979)",
+                  "native_scope": "root_component",
+                  "occurrence_id": "CM_OCC:7b2d40941a783f6e58c845b5fe7d5ba249cd361cba865a3c4f6bf116002ed0ff",
+                  "raw_component": {
+                    "concentration": {
+                      "unit": "VARIABLE",
+                      "value": "variable"
+                    },
+                    "culturemech_term": {
+                      "id": "CultureMech:015393",
+                      "label": "Marine Agar 2216"
+                    },
+                    "notes": "DSMZ Medium 604 names Marine Agar 2216 (Difco 0979) as the only component but does not state an amount.",
+                    "preferred_term": "Marine agar 2216 (Difco 0979)",
+                    "source": "DSMZ Medium 604"
+                  },
+                  "raw_preferred_term": "Marine agar 2216 (Difco 0979)",
+                  "recipe_id": "CultureMech:006092",
+                  "recipe_source_identifiers": [
+                    {
+                      "path": "/id",
+                      "value": "CultureMech:006092"
+                    },
+                    {
+                      "path": "/media_term/term/id",
+                      "value": "komodo.medium:604"
+                    }
+                  ],
+                  "record_shape": "MediaRecipe",
+                  "source_file": "data/normalized_yaml/bacterial/bacto_marine_agar.yaml",
+                  "source_file_sha256": "b1415b4cbb30bedbc2b26bdd1b03096af51369b55f660fa4ec1c3706b37786f2",
+                  "source_identifiers": [
+                    {
+                      "path": "/culturemech_term/id",
+                      "value": "CultureMech:015393"
+                    }
+                  ]
+                },
+                {
+                  "component_path": "ingredients/0",
+                  "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/specialized/bacto_marine_agar.yaml",
+                  "native_name": "Marine agar 2216 (Difco 0979)",
+                  "native_scope": "root_component",
+                  "occurrence_id": "CM_OCC:cbd00def664f8325da23a66808a5a85e38e63951f4e9428a591ba605506cc114",
+                  "raw_component": {
+                    "concentration": {
+                      "unit": "VARIABLE",
+                      "value": "variable"
+                    },
+                    "culturemech_term": {
+                      "id": "CultureMech:015393",
+                      "label": "Marine Agar 2216"
+                    },
+                    "notes": "DSMZ Medium 604 names Marine Agar 2216 (Difco 0979) as the only component but does not state an amount.",
+                    "preferred_term": "Marine agar 2216 (Difco 0979)",
+                    "source": "DSMZ Medium 604"
+                  },
+                  "raw_preferred_term": "Marine agar 2216 (Difco 0979)",
+                  "recipe_id": "CultureMech:015364",
+                  "recipe_source_identifiers": [
+                    {
+                      "path": "/id",
+                      "value": "CultureMech:015364"
+                    },
+                    {
+                      "path": "/media_term/term/id",
+                      "value": "mediadive.medium:604"
+                    }
+                  ],
+                  "record_shape": "MediaRecipe",
+                  "source_file": "data/normalized_yaml/specialized/bacto_marine_agar.yaml",
+                  "source_file_sha256": "eefc9fb9382bedcd2509d964a301b39331e5ce36e976b414cf061e09ed37d4ab",
+                  "source_identifiers": [
+                    {
+                      "path": "/culturemech_term/id",
+                      "value": "CultureMech:015393"
+                    }
+                  ]
+                }
+              ],
+              "original_unified_position": 2201,
+              "original_unified_row": {
+                "cas_rn": "",
+                "chebi_id": "",
+                "culturemech_term_id": "",
+                "example_media": "CultureMech:006092; CultureMech:015364",
+                "ingredient_name": "Marine agar 2216 (Difco 0979)",
+                "kg_microbe_node_id": "",
+                "mapping_status": "UNMAPPED",
+                "mim_id": "",
+                "occurrence_count": "2",
+                "synonyms": ""
+              },
+              "prior_dependency": "PR1158 candidate baseline, not merged",
+              "raw_source_label": "Marine agar 2216 (Difco 0979)",
+              "source": "culturemech",
+              "source_case_id": "Marine agar 2216 (Difco 0979)",
+              "source_identity_claimed": false,
+              "source_label": "Marine agar 2216 (Difco 0979)"
+            },
+            "current_decision": {
+              "case_id": "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+              "case_input_sha256": "811050883b35bef4e37c09931c555cab8dbacb27f97d20dad0d6d308933a141b",
+              "source": {
+                "source": "culturemech",
+                "source_case_id": "Marine agar 2216 (Difco 0979)",
+                "source_label": "Marine agar 2216 (Difco 0979)",
+                "raw_source_label": "Marine agar 2216 (Difco 0979)"
+              },
+              "occurrence_ids": [
+                "CM_OCC:7b2d40941a783f6e58c845b5fe7d5ba249cd361cba865a3c4f6bf116002ed0ff",
+                "CM_OCC:cbd00def664f8325da23a66808a5a85e38e63951f4e9428a591ba605506cc114"
+              ],
+              "disposition": "existing_identity_or_alias",
+              "reasoning": "This owner retains its original Difco/BD Marine Agar2216 dry-product denotation, supported by its creation history and the separately dosed powder in TOGO M2265. ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL water. The dry entries below retain the literal scratch-formula batch masses as source-qualified composition evidence; they are not a manufacturer lot analysis or a claim that the two routes have identical mass closure. Their sum is55.2520g, not the printed55.1g product dose. Both values are preserved without adjustment or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains explicit preparation context here, not a constituent of the dry product. Magnesium Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate assertion is withdrawn and its source name/8.8g retained unresolved. Other inherited conventional salt identities are retained; no universal supplied-form purity claim is added.",
+              "applicability": "Exact source culturemech / Marine agar 2216 (Difco 0979); raw label preserved as 'Marine agar 2216 (Difco 0979)'. All 2 occurrences assessed: CultureMech:006092 ingredients/0 [CM_OCC:7b2d40941a783f6e58c845b5fe7d5ba249cd361cba865a3c4f6bf116002ed0ff]; CultureMech:015364 ingredients/0 [CM_OCC:cbd00def664f8325da23a66808a5a85e38e63951f4e9428a591ba605506cc114]. Complete snapshots anchor recipe-specific qualifications.",
+              "evidence_ids": [
+                "media-case-034",
+                "media-fetch-dsmz-604",
+                "media-owner-snapshots",
+                "media-product-owner-search",
+                "media-recipe-b1415b4cbb30bedb",
+                "media-recipe-eefc9fb9382bedcd",
+                "media-validation-proposal-partonomy-validation",
+                "media-validation-proposal-schema-validation-final",
+                "media-validation-v2",
+                "FREV-MEDIA-REUSE-media-fetch-primary-2",
+                "FREV-MEDIA-REUSE-MEDIA-REVIEW-OLS-CHEBI_86345",
+                "FREV-MEDIA-REUSE-media-fetch-dsmz-604",
+                "FREV-MEDIA-ATCC2887",
+                "FREV-MEDIA-MAPPING-AUTHORSHIP-AUDIT",
+                "FINAL-INDEPENDENT-MEDIA"
+              ],
+              "proposal_ids": [
+                "FREV-MEDIA-P-media-alias-marine2216"
+              ],
+              "no_change_reason": null,
+              "missing_requirement": "Resolve55.2520g scratch-versus55.1g product discrepancy and actual magnesium chloride supplied form before claiming exact product composition closure.",
+              "owner_records": [
+                {
+                  "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                  "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+                }
+              ],
+              "issue_refs": [],
+              "primary_review_author": "worker04/media final-review correction author",
+              "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred.",
+              "publication_scope": "Existing whole-owner, role, source-specific and export holds remain; this isolated proposal does not approve maintained data or releases.",
+              "predecessor_independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "independent-media-final"
+                ]
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "FINAL-INDEPENDENT-MEDIA"
+                ],
+                "reviewer": "/root/correction_chemistry",
+                "scope": "Complete exact case and linked whole payloads; source-specific scientific limits remain. The final assembly reviewer separately checks consolidation and case13 narrowing."
+              },
+              "supersedes_decision_sha256": "116fec39ed77a0ac5a73a0064eff992fe7e1354f2df5f7feaf502cf3aef32db8",
+              "correction_scope": "Proposal binding and assigned exact-field corrections; preserved old scientific reasoning remains subject to full independent review. All original holds retained.",
+              "correction_finding_ids": [
+                "MEDIA-SCI-05"
+              ],
+              "correction_predecessor_head": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+              "current_review_scope": "Completed disjoint full-case and whole-payload review; immutable predecessor seals, exact candidate rebindings and separate assembly review are retained. Completion does not lift any scientific, source, role, supported/withheld, whole-owner or export hold."
+            },
+            "decision_object_sha256": "410b06dd2f87596f9763e478ec01ad75e6a2868ed1d67f399ca9f48b17afe3b3"
+          },
+          {
+            "case_id": "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac",
+            "case_input_sha256": "2d6c5f07e9fe9f6cdb12a05fcb31a38c675200dba80511c7c38815be3ab1a3ca",
+            "frozen_case": {
+              "baseline_outcome": "current_source_placeholder_preserved",
+              "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+              "case_id": "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac",
+              "original_kg_entry": {
+                "candidate_id": "cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac",
+                "category": "biolink:ComplexMolecularMixture",
+                "consumed_name_hits": [
+                  {
+                    "candidate_field": "source_label",
+                    "disposition": "WITHHOLD",
+                    "matched_field": "subject_label",
+                    "matched_label": "Marine agar 2216",
+                    "review_dispositions": [
+                      {
+                        "disposition": "WITHHOLD",
+                        "evidence_key": "1806",
+                        "object_id": "kgmicrobe.ingredient:marine_agar_2216",
+                        "owner_record": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                        "owner_record_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+                        "predicate_id": "skos:exactMatch",
+                        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                        "review_reason": "Conservative hold pending independent mapping-only review: The report explicitly passes the local registry mapping and catalog alias; its only recommended edit is ingredient_type. That classification is not a field of this SSSOM row.",
+                        "row_sha256": "6e45836bef1985263d9dff2097421ef2244119feb17e07c4c00600e410021152",
+                        "source_position": "1806",
+                        "subject_id": "MIM:Marine_agar_2216"
+                      }
+                    ],
+                    "row": {
+                      "comment": "",
+                      "confidence": "0.9",
+                      "mapping_date": "2026-08-30",
+                      "mapping_justification": "semapv:ManualMappingCuration",
+                      "object_id": "kgmicrobe.ingredient:marine_agar_2216",
+                      "object_label": "Marine agar 2216",
+                      "object_source": "kgm:ingredient",
+                      "other": "Marine agar 2216 (BD-Difco)",
+                      "predicate_id": "skos:exactMatch",
+                      "source": "MIM:MIM curation (#260)|MIM:curator=claude_culturemech_alias_backfill",
+                      "subject_id": "MIM:Marine_agar_2216",
+                      "subject_label": "Marine agar 2216",
+                      "validation_method": "manual:add_culturemech_gap_labels|2026-08-15"
+                    },
+                    "row_sha256": "6e45836bef1985263d9dff2097421ef2244119feb17e07c4c00600e410021152"
+                  },
+                  {
+                    "candidate_field": "raw_source_label",
+                    "disposition": "WITHHOLD",
+                    "matched_field": "subject_label",
+                    "matched_label": "Marine agar 2216",
+                    "review_dispositions": [
+                      {
+                        "disposition": "WITHHOLD",
+                        "evidence_key": "1806",
+                        "object_id": "kgmicrobe.ingredient:marine_agar_2216",
+                        "owner_record": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                        "owner_record_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+                        "predicate_id": "skos:exactMatch",
+                        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                        "review_reason": "Conservative hold pending independent mapping-only review: The report explicitly passes the local registry mapping and catalog alias; its only recommended edit is ingredient_type. That classification is not a field of this SSSOM row.",
+                        "row_sha256": "6e45836bef1985263d9dff2097421ef2244119feb17e07c4c00600e410021152",
+                        "source_position": "1806",
+                        "subject_id": "MIM:Marine_agar_2216"
+                      }
+                    ],
+                    "row": {
+                      "comment": "",
+                      "confidence": "0.9",
+                      "mapping_date": "2026-08-30",
+                      "mapping_justification": "semapv:ManualMappingCuration",
+                      "object_id": "kgmicrobe.ingredient:marine_agar_2216",
+                      "object_label": "Marine agar 2216",
+                      "object_source": "kgm:ingredient",
+                      "other": "Marine agar 2216 (BD-Difco)",
+                      "predicate_id": "skos:exactMatch",
+                      "source": "MIM:MIM curation (#260)|MIM:curator=claude_culturemech_alias_backfill",
+                      "subject_id": "MIM:Marine_agar_2216",
+                      "subject_label": "Marine agar 2216",
+                      "validation_method": "manual:add_culturemech_gap_labels|2026-08-15"
+                    },
+                    "row_sha256": "6e45836bef1985263d9dff2097421ef2244119feb17e07c4c00600e410021152"
+                  }
+                ],
+                "downstream_holds": [],
+                "name_hits": [
+                  {
+                    "candidate_field": "source_label",
+                    "kind": "preferred_term",
+                    "label": "Marine agar 2216",
+                    "owner": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                    "resolving": true
+                  },
+                  {
+                    "candidate_field": "raw_source_label",
+                    "kind": "preferred_term",
+                    "label": "Marine agar 2216",
+                    "owner": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                    "resolving": true
+                  }
+                ],
+                "native_identity_target": "",
+                "native_queue_state": "STILL_UNMAPPED",
+                "occurrences": 1,
+                "occurrences_definition": "helper constant; not measured recipe frequency",
+                "owners": [
+                  {
+                    "identifier": "kgmicrobe.ingredient:marine_agar_2216",
+                    "mapping_status": "MAPPED",
+                    "native_review_rows": [
+                      {
+                        "decision": {
+                          "disposition": "WITHHOLD",
+                          "evidence_key": "1806",
+                          "owner_record": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                          "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                          "review_reason": "Conservative hold pending independent mapping-only review: The report explicitly passes the local registry mapping and catalog alias; its only recommended edit is ingredient_type. That classification is not a field of this SSSOM row.",
+                          "row_sha256": "6e45836bef1985263d9dff2097421ef2244119feb17e07c4c00600e410021152",
+                          "source_position": 1806
+                        },
+                        "row": {
+                          "comment": "",
+                          "confidence": "0.9",
+                          "mapping_date": "2026-08-30",
+                          "mapping_justification": "semapv:ManualMappingCuration",
+                          "object_id": "kgmicrobe.ingredient:marine_agar_2216",
+                          "object_label": "Marine agar 2216",
+                          "object_source": "kgm:ingredient",
+                          "other": "Marine agar 2216 (BD-Difco)",
+                          "predicate_id": "skos:exactMatch",
+                          "source": "MIM:MIM curation (#260)|MIM:curator=claude_culturemech_alias_backfill",
+                          "subject_id": "MIM:Marine_agar_2216",
+                          "subject_label": "Marine agar 2216",
+                          "validation_method": "manual:add_culturemech_gap_labels|2026-08-15"
+                        }
+                      }
+                    ],
+                    "ontology_mapping": {
+                      "evidence": [
+                        {
+                          "evidence_type": "MANUAL_CURATION",
+                          "notes": "Minted under the #288 named-preparation convention (#260): Difco/BD Marine Agar 2216, ZoBell's seawater formulation. MICRO has `ZoBell marine agar` (MICRO:0000112) and `216L marine agar` (MICRO:0000064), but neither is verified to be the 2216 formulation and grounding to a maybe-equivalent named medium is how wrong identities enter. No ChEBI/FOODON term covers a compounded medium either, so \u00a73 step 3 mints it under the #288 convention, as `Trace element solution see Medium No. 187` already is. Cross-reference: CultureMech:007629. A CultureMech id cannot be the identifier \u2014 MIM's primary key is an ontology CURIE or a registry mint \u2014 so it is carried here as evidence.",
+                          "source": "MIM curation (#260)"
+                        }
+                      ],
+                      "mapping_quality": "FALLBACK_REGISTRY",
+                      "ontology_id": "kgmicrobe.ingredient:marine_agar_2216",
+                      "ontology_label": "Marine agar 2216",
+                      "ontology_source": "kgmicrobe.ingredient"
+                    },
+                    "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                    "preferred_term": "Marine agar 2216",
+                    "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+                    "subject_id": "MIM:Marine_agar_2216"
+                  }
+                ],
+                "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+                "raw_source_label": "Marine agar 2216",
+                "resolving_owner_paths": [
+                  "data/ingredients/mapped/Marine_agar_2216.yaml"
+                ],
+                "scientific_identity_approved_by_reconciliation": false,
+                "source": "mediadive",
+                "source_columns": "compound",
+                "source_id": "mediadive.ingredient:1628",
+                "source_label": "Marine agar 2216",
+                "source_record": {
+                  "amount": 1000,
+                  "attribute": "Difco 0979",
+                  "compound": "Marine agar 2216",
+                  "compound_id": 1628,
+                  "optional": 0,
+                  "recipe_order": 1,
+                  "unit": "ml"
+                },
+                "triage_flags": [
+                  "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+                  "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+                ]
+              },
+              "prior_dependency": "PR1158 candidate baseline, not merged",
+              "raw_source_label": "Marine agar 2216",
+              "source": "mediadive",
+              "source_case_id": "mediadive.ingredient:1628",
+              "source_identity_claimed": false,
+              "source_label": "Marine agar 2216"
+            },
+            "current_decision": {
+              "case_id": "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac",
+              "case_input_sha256": "2d6c5f07e9fe9f6cdb12a05fcb31a38c675200dba80511c7c38815be3ab1a3ca",
+              "source": {
+                "source": "mediadive",
+                "source_case_id": "mediadive.ingredient:1628",
+                "source_label": "Marine agar 2216",
+                "raw_source_label": "Marine agar 2216"
+              },
+              "occurrence_ids": [],
+              "disposition": "stock_product_mixture_context",
+              "reasoning": "This owner retains its original Difco/BD Marine Agar2216 dry-product denotation, supported by its creation history and the separately dosed powder in TOGO M2265. ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL water. The dry entries below retain the literal scratch-formula batch masses as source-qualified composition evidence; they are not a manufacturer lot analysis or a claim that the two routes have identical mass closure. Their sum is55.2520g, not the printed55.1g product dose. Both values are preserved without adjustment or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains explicit preparation context here, not a constituent of the dry product. Magnesium Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate assertion is withdrawn and its source name/8.8g retained unresolved. Other inherited conventional salt identities are retained; no universal supplied-form purity claim is added. The frozen ingredient1628 occurrence uses amount1000 unitml. Original DSMZ604 names the product but states no amount. This volume-use context is not exact identity to dry powder; the proposal backlink documents the named product context only. No dose conversion or prepared formulation is inferred.",
+              "applicability": "Exact source mediadive / mediadive.ingredient:1628; raw label preserved as 'Marine agar 2216'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+              "evidence_ids": [
+                "media-case-178",
+                "media-fetch-dsmz-604",
+                "media-owner-snapshots",
+                "media-product-owner-search",
+                "media-validation-proposal-partonomy-validation",
+                "media-validation-proposal-schema-validation-final",
+                "media-validation-v2",
+                "FREV-MEDIA-REUSE-media-fetch-primary-2",
+                "FREV-MEDIA-REUSE-MEDIA-REVIEW-OLS-CHEBI_86345",
+                "FREV-MEDIA-REUSE-media-fetch-dsmz-604",
+                "FREV-MEDIA-ATCC2887",
+                "FREV-MEDIA-MAPPING-AUTHORSHIP-AUDIT",
+                "FINAL-INDEPENDENT-MEDIA"
+              ],
+              "proposal_ids": [
+                "FREV-MEDIA-P-media-alias-marine2216"
+              ],
+              "no_change_reason": null,
+              "missing_requirement": "Resolve55.2520g scratch-versus55.1g product discrepancy and actual magnesium chloride supplied form before claiming exact product composition closure. The1000mL source usage requires its preparation/product linkage before exact source-material resolution.",
+              "owner_records": [
+                {
+                  "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+                  "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+                }
+              ],
+              "issue_refs": [],
+              "primary_review_author": "worker04/media final-review correction author",
+              "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred.",
+              "publication_scope": "Existing whole-owner, role, source-specific and export holds remain; this isolated proposal does not approve maintained data or releases.",
+              "predecessor_independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "independent-media-final"
+                ]
+              },
+              "independent_review": {
+                "status": "complete",
+                "evidence_ids": [
+                  "FINAL-INDEPENDENT-MEDIA"
+                ],
+                "reviewer": "/root/correction_chemistry",
+                "scope": "Complete exact case and linked whole payloads; source-specific scientific limits remain. The final assembly reviewer separately checks consolidation and case13 narrowing."
+              },
+              "supersedes_decision_sha256": "9b5f41fae3170f5eec0ae490485ddc517435aec1ec316623ae413682cdbbe906",
+              "correction_scope": "Proposal binding and assigned exact-field corrections; preserved old scientific reasoning remains subject to full independent review. All original holds retained.",
+              "correction_finding_ids": [
+                "MEDIA-SCI-05"
+              ],
+              "correction_predecessor_head": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+              "proposal_binding_scope": "Named-product context annotation only; prepared-volume source occurrence is not resolved as exact dry-powder identity.",
+              "current_review_scope": "Completed disjoint full-case and whole-payload review; immutable predecessor seals, exact candidate rebindings and separate assembly review are retained. Completion does not lift any scientific, source, role, supported/withheld, whole-owner or export hold."
+            },
+            "decision_object_sha256": "a68f04e99558c59fdc3c9080a2846cb638097ce866c881972695b514cf003d5d"
+          }
+        ]
+      },
+      "predecessor_origin_object_sha256": "ae78b77472a2017ef707e226eb42c140304f126c6185a567767fb6955af9aa1e",
+      "causal_parent": {
+        "worker": 5,
+        "head": "108e213e96f7d423ee345ce265d692e79063127c",
+        "proposal_id": "W05-FINAL-MAT-039",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "parent_payload_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+        "relationship": "Existing incoming reference couples to real parent identity transition; causal case is not an observation of this child recipe."
+      },
+      "source_support": {
+        "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+        "before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+        "component_index": 0,
+        "before_component": {
+          "component_name": "Peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "5.0",
+          "concentration_unit": "G_PER_L"
+        },
+        "reviewer": "/root/peptone_final_sources",
+        "reviewed_at": "2026-11-08T10:15:59.774272+00:00",
+        "source_evidence": [
+          {
+            "path": ".temp/peptone-consumer-independent-v1/other/captures/atcc-2887.pdf",
+            "sha256": "08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6",
+            "locator": "p1, Difco Marine Agar2216 scratch formulation, peptone row and water basis"
+          }
+        ],
+        "source_observations": [],
+        "quantity_change_recommended": false,
+        "whole_owner_approval": false,
+        "role_or_export_approval": false,
+        "authored_candidate_reviewed": false,
+        "disposition": "GENERIC_PEPTONE_REFERENCE_SUPPORTED",
+        "proposed_component_action": {
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG",
+          "preserve_component_name": true
+        },
+        "rationale": "ATCC2887 scratch formulation explicitly lists unqualified Peptone5g with1000mL water. The heading naming Difco whole Marine Agar2216 does not establish Bacto identity for its individual Peptone input.",
+        "read_extent": "Fresh extraction of complete two-page ATCC2887 PDF matches sealed text; formulation/preparation and product headings read.",
+        "quantities": "Preserve existing5.0G_PER_L; no final-volume/dry-product mass-fraction conversion or chloramphenicol inheritance.",
+        "holds": [
+          "Generic target acceptance/application must bind exact current W05 Peptone c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7, identifier mesh:D010461.",
+          "Preserve complete real W04 Marine agar or W06 PYGS source origin and append only accountable coupling history. Do not call their original scientific authorship W03.",
+          "All existing source-specific completeness, component, preparation and role/export holds remain. Exact new payload requires independent final-byte review."
+        ],
+        "source_case_relationship": "Coupling follows actual maintained peptone reference and W05 parent transition; actual W04/W06 observed source-case lineage remains separately bound, never forged as a W03 frozen source case."
+      },
+      "application_authorized": false,
+      "whole_owner_role_export_approved": false,
+      "new_component": {
+        "component_name": "Peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5.0",
+        "concentration_unit": "G_PER_SOURCE_SCRATCH_FORMULA_BATCH"
+      },
+      "append_evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx",
+          "source_record": "ATCC Medium2887, scratch formulation Peptone row with1000mL water",
+          "notes": "ATCC2887 scratch formula lists unqualified Peptone5g with1000mL water. Difco names the complete product, not a proven Bacto input. Preserve the current W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows, PARTIAL scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride form. Water1000mL remains preparation context, not an established final volume or dry-product component; do not infer lot fractions or chloramphenicol inheritance. Issue1176: bind this one supported generic peptone part to mesh:D010461 only with exact W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7. No supplier, animal source, enzyme, Bacto product identity, organism-consumption or owner/role/export approval follows. Agent-assisted applicability assessment; preserve all predecessor assertions/history and holds."
+        }
+      ],
+      "event_text": "Under issue1176, couple only components[0].component_id from MICRO:0000178 to the supported generic Peptone owner mesh:D010461, conditional on exact current W05-FINAL-MAT-039. ATCC2887 scratch formula lists unqualified Peptone5g with1000mL water. Difco names the complete product, not a proven Bacto input. Preserve the current W04 source-qualified5.0G_PER_SOURCE_SCRATCH_FORMULA_BATCH, all17 dry rows, PARTIAL scope,55.2520g-versus55.1g discrepancy and unresolved Magnesium Chloride form. Water1000mL remains preparation context, not an established final volume or dry-product component; do not infer lot fractions or chloramphenicol inheritance. Preserve original W04 proposal FREV-MEDIA-P-media-alias-marine2216 and its frozen cases/history; W03 authors only this new dependency correction, not that source work. Append source-specific evidence; retain all other fields/quantities, source/role/export holds. No global replacement or maintained application."
+    }
+  ],
+  "primary_captures": [
+    {
+      "path": "inputs/primary/atcc-2887.pdf",
+      "sha256": "08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/atcc-2887.pdf"
+    },
+    {
+      "path": "inputs/primary/atcc-2887.txt",
+      "sha256": "73e56f0e21d72d0b4fc7f633faa1fa12df8f1099bc929ba388d204bbc5c89912",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/atcc-2887.txt"
+    },
+    {
+      "path": "inputs/primary/epmc-algidixylanolyticum.json",
+      "sha256": "0cc89e98e8d4f67ef41faade46f3ca1e5f3b8c6d4dd0ed2015df86ddec48767d",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/epmc-algidixylanolyticum.json"
+    },
+    {
+      "path": "inputs/primary/epmc-frigidicarnis.json",
+      "sha256": "574c149a422fc9db98e0a71cc25e4b8e2000142d1b6b792e1444fb136ee9853b",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/epmc-frigidicarnis.json"
+    },
+    {
+      "path": "inputs/primary/epmc-gasigenes.json",
+      "sha256": "0eda4ebadf8d8a487eb29992202b29ec428fcb881d42bf0cf28c2bec5dcab57d",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/epmc-gasigenes.json"
+    },
+    {
+      "path": "inputs/primary/gyps-publication-528.pdf",
+      "sha256": "a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.pdf"
+    },
+    {
+      "path": "inputs/primary/gyps-publication-528.txt",
+      "sha256": "b5e33274a56df95973ad157275b8ebbdc22be8d25a459cbf2d76c1ef6a4ffda5",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.txt"
+    },
+    {
+      "path": "inputs/primary/microbedecoder_database.zip",
+      "sha256": "b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip"
+    },
+    {
+      "path": "inputs/primary-metadata/original-capture-metadata.json",
+      "sha256": "0e44a74a51648ab426eb3eb3ad4e28ebaa0e1d71334d322c81ae63487ac20ddf",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/context/original-capture-metadata.json"
+    },
+    {
+      "path": "inputs/primary-metadata/captured-source-files.json",
+      "sha256": "fc7a67f2f979b36083546087f906e2bf7d44c8ed121e4518bfb8193ccefad901",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/context/captured-source-files.json"
+    },
+    {
+      "path": "inputs/primary-metadata/original-network-receipt.json",
+      "sha256": "3bfdff96a77ab6bd1e3df5c77c6ea8f56ac8b647c97bc363fc08f5d2104f07e3",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/context/original-network-receipt.json"
+    },
+    {
+      "path": "inputs/primary-metadata/original-source-row-recheck.json",
+      "sha256": "ffc0c826c444b441fe78062794d438f0fd3a7f6b6dbb4b5804cdeb10d6c19ffb",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/other/context/original-source-row-recheck.json"
+    }
+  ],
+  "selected_parent_inputs": [
+    {
+      "path": "inputs/targets/Bacto_Peptone.yaml",
+      "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Peptone.yaml"
+    },
+    {
+      "path": "inputs/targets/Peptone.yaml",
+      "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml"
+    }
+  ],
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1176",
+  "native_intake_limit": "Foreign worker origins remain owned by W04/W06; no W03 frozen case is invented. Native core ingestion requires genuine source-worker adoption if core inclusion is demanded. Coordinator can compose separately bound dependent payloads with preserved origins, then independently review exact final application.",
+  "supersedes_draft_plan": {
+    "path": "author-plan.json",
+    "sha256": "2627c27c1eab58c97138a9fa850cd7721e66bb876b221aee526e7b9917a2f93e",
+    "reason": "Before payload generation, current W04 source readback supersedes old baseline quantity wording in draft narrative. Actual planned component objects were already exact current source units. No payload had been generated."
+  }
+}
