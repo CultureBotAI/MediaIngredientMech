@@ -1,0 +1,95 @@
+{
+  "separate_from_51_claims": true,
+  "holds": [
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.molecular_formula",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false,
+      "value": "C27H25ClN6",
+      "value_sha256": "ce67e5784f96b4cb87991a05a3260945482e2f2361c946f1473ff04fbbc9e536",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.smiles",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false,
+      "value": "C[N+]1=C2C=C(C=CC2=CC3=C1C=C(C=C3)N)N.C1=CC(=CC2=NC3=C(C=CC(=C3)N)C=C21)N.[Cl-]",
+      "value_sha256": "ddf79e8b587914e5846e429736f4f408ffd64de2c91513e09e3025917450b4ca",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.inchi",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false,
+      "value": "InChI=1S/C14H13N3.C13H11N3.ClH/c1-17-13-7-11(15)4-2-9(13)6-10-3-5-12(16)8-14(10)17;14-10-3-1-8-5-9-2-4-11(15)7-13(9)16-12(8)6-10;/h2-8H,1H3,(H3,15,16);1-7H,14-15H2;1H",
+      "value_sha256": "3a9463f603c50149b474ab5a69631e7fe861b9dca60b47e11b5bbf4b045f1f34",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "owner_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "field": "chemical_properties.smiles",
+      "disposition": "WITHHOLD",
+      "reason": "The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches.",
+      "evidence_ids": [
+        "chem-microbedecoder-rifamycin-sv",
+        "chem-chebi-29673-retry",
+        "chem-chebi-26580-retry",
+        "chem-archived-chemical-scope-ontology-evidence"
+      ],
+      "new_finding": false,
+      "value": "CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(cc(O)c4c3C2=O)NC(=O)/C(C)=CC=C[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C",
+      "value_sha256": "00ec00f5e7026c8d659be1ca91080cfc29a64160ff2cba3289ee2105201942e4",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "field": "ontology_mapping.mapping_quality",
+      "disposition": "WITHHOLD",
+      "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+      "evidence_ids": [
+        "chem-chebi17712",
+        "chem-chebi7hxanthine"
+      ],
+      "new_finding": true,
+      "finding_id": "FC2-XANTHINE-METHOD-001",
+      "value": "CAS_RN_LOOKUP",
+      "value_sha256": "286bf2213363b9e259638469dc9f9b380750536e29cefa8996807eb45721a93b",
+      "reviewer": "/root/companion_skeptic"
+    }
+  ]
+}

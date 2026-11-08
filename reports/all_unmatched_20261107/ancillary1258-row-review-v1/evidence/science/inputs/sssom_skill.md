@@ -1,0 +1,232 @@
+---
+name: review-sssom-output
+description: "Review final MediaIngredientMech SSSOM output for GAP/ORPHAN/STALE drift, predicate and registry-row invariant failures, id-label drift, unresolved MIM subjects, and unsafe synonyms in `other` before KG-Microbe publication."
+category: validation
+requires_database: false
+requires_internet: false
+version: 1.0.0
+tags: [sssom, validation, kg-microbe, mappings, synonyms, quality-assurance]
+---
+
+# Review SSSOM Output
+
+## Structured Review Output
+
+For every new review or audit, follow
+[docs/record-reviews.md](../../../docs/record-reviews.md) and
+[the local profile](../../../docs/record-review-profile.md).
+Capture exact targets and input hashes before judging, preserve this skill's
+native rubric, rule IDs, scores and evidence requirements, then author the
+structured assessment and run:
+
+```bash
+uv run python scripts/record_review.py inspect --targets /tmp/review-targets.yaml
+uv run python scripts/record_review.py validate /tmp/completed-review.yaml
+uv run python scripts/record_review.py save --content /tmp/completed-review.yaml
+```
+
+Choose session-unique temporary paths. Save authoritative YAML and derived
+Markdown under `reviews/structured/<timestamp>-<slug>/`; link both in the
+final response. This output contract supersedes prose-only report examples.
+A single record uses `kind: record`; batches declare exact selection,
+population, reviewed targets and limits. Categories also state boundary decisions.
+Every reviewed target must have an assessment. Keep P1-P4 and other native
+severity/rule information with a justified common severity, and metric definitions,
+scales and denominators. Do not infer scientific approval from a native score.
+
+Raw provider drafts and deterministic validator/scan reports are diagnostic
+inputs, not completed scientific reviews. Use `scientific_review: false`
+for deterministic-only or provenance-only assessments; mark required unavailable
+checks and incomplete coverage explicitly. A valid bundle does not change native
+status, clear release holds, authorize edits, or append curation history.
+For audit-only requests, stop after assessment and persistence; any application
+steps below require curation intent.
+
+## Core Scope
+
+Audit `mappings/ingredient_mappings.sssom.tsv` as the final published
+MediaIngredientMech SSSOM product. Every row must agree with
+`data/curated/mapped_ingredients.yaml`, obey the predicate contract in
+`MAPPING_SEMANTICS.md`, carry canonical-or-synonym labels in product columns,
+and restrict every `other` token to a genuine synonym for the MIM subject.
+Treat `other` as a published synonym surface, not as a free-text note.
+
+Use this skill for the published TSV and downstream products:
+
+- `mappings/ingredient_mappings.sssom.tsv`
+- `mappings/needs_curator_review.tsv`
+- `docs/data/mapped_ingredients.csv`
+- `UNIFIED_INGREDIENT_MAPPING.tsv`, when a cross-repo snapshot is part of the
+  review
+
+Do not use this as the primary workflow for new ontology mapping, duplicate
+merging, or deep identity research. Escalate those root-cause fixes to
+`map-media-ingredients`, `merge-ingredients`, or
+`mediaingredientmech-agentic-curation`.
+
+## Read-Only Audit First
+
+Start with commands that report the TSV's current state before editing anything.
+
+```bash
+python scripts/reconcile_sssom.py
+just qc-sssom
+just curie-validate
+python scripts/check_sssom_subject_files.py
+just validate-products
+```
+
+Read the generated reports and validator stderr:
+
+- `scripts/reconcile_sssom.py` reports `GAP`, `ORPHAN`, and `STALE` drift
+  between mapped curated YAML records and the SSSOM.
+- `just qc-sssom` runs `scripts/validate_sssom_invariants.py` and writes
+  rejected rows to `mappings/needs_curator_review.tsv`.
+- `just curie-validate` asserts the published SSSOM uses valid CURIE syntax.
+- `scripts/check_sssom_subject_files.py` reports `MIM:` subjects whose slug no
+  longer resolves to a per-record YAML file. This is reported, not gated, while
+  issue #236 keeps `MIM:` subject semantics undecided.
+- `just validate-products` enforces id-label correspondence across the final
+  SSSOM and docs CSV product columns under the canonical-or-synonym policy from
+  `conf/id_label_targets.yaml`.
+
+## Review Questions
+
+Check each questionable row against these questions:
+
+- **Subject currency:** is every `subject_label` present as a mapped ingredient
+  in `data/curated/mapped_ingredients.yaml`?
+- **Subject slug:** does the `MIM:<slug>` still identify the intended record,
+  even if `scripts/check_sssom_subject_files.py` says the slug no longer
+  matches a file stem?
+- **Object identity:** does `object_id` match the record's current
+  `ontology_mapping.ontology_id` for the ontology row?
+- **Predicate semantics:** does `mapping_quality` map to the right SSSOM
+  predicate: `EXACT_MATCH` and `SYNONYM_MATCH` to `skos:exactMatch`,
+  `CLOSE_MATCH` to `skos:closeMatch`, and `NARROW_MATCH` to `skos:broadMatch`
+  (the record is narrower, so its ontology parent is the *broader* concept;
+  #390)? Every other grade, `BROAD_MATCH` included, publishes `skos:closeMatch`.
+- **Declared semantics:** does the header carry a top-level
+  `# predicate_semantics: skos`? kg-microbe treats its absence as the legacy
+  inverted convention and would read every asymmetric row backwards (Rule L).
+- **Registry sibling:** does every `skos:broadMatch` or `skos:narrowMatch` row
+  have a sibling `MIM:<slug> skos:exactMatch
+  kgmicrobe.{ingredient,compound}:<slug_lc>` row for the same subject?
+- **Identity rows:** is a row that maps to the record's own `identifier` always
+  an `skos:exactMatch` row, regardless of the ontology mapping quality?
+- **Object source:** does every row name the ontology or registry behind its
+  target in `object_source`?
+- **Object label:** is every OBO `object_label` either the canonical ontology
+  label or an exact/related ontology synonym for that exact `object_id`?
+- **Published synonyms:** is every pipe-delimited token in `other` a real
+  resolving synonym for the subject, not a `REJECTED_LABEL`, assay role,
+  concentration note, non-resolving catalog label, or bare CAS value copied from
+  structured chemistry metadata?
+- **Payload placement:** are `source`, `comment`, `other`, and
+  `validation_method` carrying only their own content types, with provenance in
+  `source`, row explanations in `comment`, synonyms in `other`, and the final
+  validation stamp in `validation_method`?
+- **Duplicate pairs:** does each `(subject_id, object_id)` pair appear once and
+  under only one predicate?
+
+## `other` Column Triage
+
+Review `other` as zero or more pipe-delimited labels for the same MIM subject:
+
+1. Split on `|`, trim whitespace, and compare both exact and casefolded text so
+   duplicate spelling and capitalization variants do not hide.
+2. Classify every non-empty token as a curated synonym, raw same-substance
+   label, registry alias, CAS alias, or non-identity payload before deciding to
+   keep it.
+3. Keep CAS values only in `CAS:<cas-rn>` form and only when the CAS-RN belongs
+   to the same subject identity in `supplied_form[].cas_rn` or
+   `chemical_properties.cas_rn`.
+4. Keep supplier/catalog labels only when they are curated as true same-subject
+   `CATALOG_VARIANT` or `RAW_TEXT` synonyms.
+5. Drop tokens that are only procurement notes, assay roles, medium
+   concentrations, import statuses, merge rationales, rejected candidate
+   identifiers, or rejected labels.
+6. For parent mappings, keep synonyms for the specific MIM subject rather than
+   synonyms of the broader parent that erase hydrate, salt, stereochemistry, or
+   mixture boundaries.
+
+When a token is not a true synonym, fix the curated YAML or the SSSOM enrichment
+builder that emitted it. Do not move noise into `comment`; keep rejected labels
+as `REJECTED_LABEL` provenance in the source YAML and omit them from the final
+SSSOM.
+
+## Fix Patterns
+
+Fix the source of truth whenever the final SSSOM reflects bad curation data:
+
+- Edit `data/ingredients/mapped/<Slug>.yaml` or
+  `data/curated/mapped_ingredients.yaml`, depending on where the drift came
+  from.
+- Keep `REJECTED_LABEL` entries as provenance-only typed synonyms. They may stay
+  in YAML, but they must not be emitted in SSSOM `other`.
+- Put assay-only, role-only, concentration-only, and non-resolving catalog labels
+  in provenance or `notes`, not active resolving synonyms.
+- Preserve raw aliases as typed synonyms only when they genuinely resolve the
+  same ingredient surface.
+- Use `kgmicrobe.compound:` for distinct simple chemicals that lack an ontology
+  term; use `kgmicrobe.ingredient:` for distinct non-chemical ingredients.
+- Regenerate the final SSSOM from the sibling CultureBotAI builder after YAML
+  repairs so the committed TSV remains a product of curated records.
+
+Use the reconcile script only for mechanical drift where curated YAML is already
+authoritative:
+
+```bash
+python scripts/reconcile_sssom.py --apply --date YYYY-MM-DD
+```
+
+`reconcile_sssom.py --apply` can rewrite `STALE` ontology rows and drop
+`ORPHAN` subjects. It deliberately reports `GAP` rows without inventing new SSSOM
+provenance, so add those rows through the normal builder or a purpose-built
+apply script.
+
+## Validation
+
+Re-run the narrow gates after every SSSOM repair:
+
+```bash
+python scripts/reconcile_sssom.py
+just qc-sssom
+just curie-validate
+just validate-products
+```
+
+For PR-ready changes, run the repository composite:
+
+```bash
+just qc
+```
+
+If `just validate-products` writes `reports/label_drift.tsv`, triage rows as
+wrong label vs wrong id with `id-label-correspondence`. A mismatched label in the
+SSSOM is often a stale generated product; a mismatched id is a mapping bug.
+
+## Escalation
+
+- Use `map-media-ingredients` when a row points at the wrong CHEBI, FOODON,
+  ENVO, NCIT, MICRO, BTO, PATO, MeSH, CAS, or KG-Microbe target.
+- Use `merge-ingredients` when a GAP/ORPHAN/STALE cluster is caused by duplicate
+  MIM records for one ingredient identity.
+- Use `id-label-correspondence` when the same id-label mismatch appears across
+  YAML inputs, SSSOM, docs CSV, or review TSVs.
+- Use `build-unified-mapping` when the audit must compare the final SSSOM to the
+  cross-repo CultureMech coverage snapshot.
+- Use `mediaingredientmech-agentic-curation` when the correct identity, formula,
+  CAS-RN, synonym, or parent term needs source-backed evidence.
+
+## Final Summary
+
+Report:
+
+- SSSOM row count before and after
+- `GAP`, `ORPHAN`, and `STALE` counts before and after
+- invariant failures fixed, grouped by validator rule
+- `other` synonym decisions, especially removed `REJECTED_LABEL` or noisy
+  tokens
+- YAML records, generated TSVs, and review TSVs changed
+- validation commands and results

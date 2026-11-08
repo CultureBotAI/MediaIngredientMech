@@ -1,0 +1,88 @@
+"""Final read-only preservation rechecks and exclusive private packet seal."""
+from pathlib import Path
+import json,hashlib,datetime,subprocess,os,importlib.util,sys
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';O=R/'.temp/ancillary-xanthine1258-proposal-v1'
+load=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+def save(p,d):
+    with p.open('x') as f:json.dump(d,f,indent=2);f.write('\n')
+def git(root,*args):return subprocess.check_output(['git','-C',str(root),*args],text=True,env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'}).strip()
+def bind(p):return {'path':str(p),'sha256':sha(p)}
+audit=load(O/'final-audit/review.json');assert audit['verdict']=='pass_with_limitations';assert not audit.get('findings',[])
+assert not git(R,'status','--short');assert git(R,'rev-parse','HEAD')==load(O/'START.json')['own_head']
+assert sha(K/'data/ingredients/mapped/Xanthine.yaml')=='c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22'
+assert sha(O/'candidate/Xanthine.yaml')=='747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546'
+closure=load(O/'input-closure.json')
+for b in closure['bindings']:
+    assert sha(Path(b['original_path']))==b['sha256'],b
+    assert sha(R/b['local_path'])==b['sha256'],b
+old=[]
+angust=R/'.temp/angust-exact-relocation-independent-v1'
+for name,h in load(O/'START.json')['prior_angust'].items():assert sha(angust/name)==h
+old_pins={x['path']:x for x in load(angust/'preservation-final.json')['prior_packets']}
+for name in ['angust-exact-relocation-independent-v1','marine-completeness-successor-independent-v1','peptone-final-three-independent-v1','hipolypepton-candidate-independent-v1','toplayer-vitamin-candidate-independent-v1']:
+    p=R/'.temp'/name;m=load(p/'MANIFEST.json')
+    if str(p) in old_pins:
+        assert sha(p/'MANIFEST.json')==old_pins[str(p)]['manifest_sha256']
+        assert sha(p/'HANDOFF.json')==old_pins[str(p)]['handoff_sha256']
+    members=m.get('regular_files',m.get('files',m.get('members',[])))
+    for b in members:
+        f=Path(b['path']);f=f if f.is_absolute() else p/f;assert sha(f)==b['sha256'],f
+    links=m.get('literal_control_symlinks',m.get('symlinks',[]))
+    for b in links:
+        f=Path(b['path']);f=f if f.is_absolute() else p/f;assert os.readlink(f)==b.get('target',b.get('link_target'))
+    old.append({'packet':str(p),'handoff_sha256':sha(p/'HANDOFF.json'),'manifest_sha256':sha(p/'MANIFEST.json'),'regular_members_checked':len(members),'literal_links_checked':len(links),'unchanged':True})
+W=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2';wm=load(W/'MANIFEST.json')
+assert sha(W/'MANIFEST.json')=='003ddab328359fbaeff063749e0d1ddce4ffe55ba58733894e55b0572f6ac204'
+for b in wm['files']:assert sha(W/b['path'])==b['sha256']
+subset=[]
+for d,n in [('science','MANIFEST.json'),('skeptic','method-assessment-v1-manifest.json'),('skeptic','candidate-review-manifest.json'),('technical','MANIFEST.json'),('technical','MANIFEST-v2.json'),('final-audit','MANIFEST.json')]:
+    p=O/d;m=load(p/n);members=m.get('files',m.get('members',[]))
+    for b in members:
+        f=Path(b['path']);f=f if f.is_absolute() else p/f;assert sha(f)==b['sha256'],f
+    subset.append({'manifest':bind(p/n),'members_checked':len(members)})
+plan=C/'integration/final-native-intake-v2/owner-plan.conditional.json';assert sha(plan)==load(O/'preservation-initial.json')['owner_plan_sha256']
+spec=importlib.util.spec_from_file_location('xanthine_seal_native',K/'scripts/record_review.py');n=importlib.util.module_from_spec(spec);sys.modules[spec.name]=n;spec.loader.exec_module(n)
+review=n.load_document((O/'native/review.yaml').read_bytes());n.validate_review(review);n.assert_current_source(R,review);assert n.render_markdown(review)==(O/'native/review.md').read_text()
+pres={'at':now(),'own_head':git(R,'rev-parse','HEAD'),'own_tracked_tree_clean':True,'declared_K_context':'5288c882def177b1b9a5eee2975f039db780ac4e','observed_K_head':git(K,'rev-parse','HEAD'),'actual_input_closure_count':len(closure['bindings']),'all_original_and_local_bytes_unchanged':True,'candidate_sha256':sha(O/'candidate/Xanthine.yaml'),'before_owner_sha256':sha(K/'data/ingredients/mapped/Xanthine.yaml'),'owner_plan_sha256':sha(plan),'owner_plan_unchanged':True,'new_source_cases':0,'new_owner_plan_operations':0,'prior_own_packets':old,'prior_W09_members_checked':len(wm['files']),'prior_W09_manifest_sha256':sha(W/'MANIFEST.json'),'independent_subsets':subset,'native_inputs_current':len(review['source']['inputs']),'native_valid_and_MD_exact':True,'no_source_application_or_role_export_approval':True}
+save(O/'preservation-final.json',pres)
+h=load(O/'HANDOFF-draft.json');h['status']='SEALED_PRIVATE_ANCILLARY_PROPOSAL_READY_FOR_ROOT_COLLECTION';h['completed_at']=now();h['reviewed_draft']=bind(O/'HANDOFF-draft.json');h['final_metadata_review']=bind(O/'final-audit/review.json');h['preservation_final']=bind(O/'preservation-final.json');h['ready_for_collection']=True;h['worker_state']='idle';h['actual_observed_K_head_at_seal']=pres['observed_K_head'];h['manifest_policy']='All regular packet members are hashed. Manifest and SHA256SUMS exclude themselves; SHA256SUMS also binds manifest. No new native application/canonical receipt.'
+save(O/'HANDOFF.json',h)
+md=f'''# Xanthine #1258 private ancillary proposal
+
+**Candidate supported with limitations; no new findings.** Root `/root` authored this proposal and the native pair is honestly `self_review`. Separate `/root/preparation_skeptic` scientific and `/root/buffers_research` skeptical reviewers inspected the complete owner and row. `/root/bio_research` performed technical checks; the distinct final metadata audit is included.
+
+The existing owner method changes **CAS_RN_LOOKUP → MANUAL_CURATION**, describing the actually performed deliberate scope assessment. Shared CAS/name and normalized structure do not uniquely choose a tautomer. New evidence is LLM_SUGGESTION and the native history event records actual agent authorship/LLM assistance. No human verification is claimed.
+
+- Before owner: `{h['before']['sha256']}`.
+- Guarded candidate: `{h['candidate']['sha256']}`.
+- Complete before/candidate bytes: `inputs/07-Xanthine.yaml`, `candidate/Xanthine.yaml`.
+- Exact three semantic changes: `field-differences.json` and `candidate.diff`.
+- Native YAML: `native/review.yaml`, SHA256 `{sha(O/'native/review.yaml')}`.
+- Derived Markdown: `native/review.md`, SHA256 `{sha(O/'native/review.md')}`.
+- Actual review identities/scopes: `reviewer-scopes.json`; full reports in `science`, `skeptic`, `technical`, and `final-audit`.
+
+CHEBI:17712/CAS 69-89-6, generic-trait CHEBI:15318 scope, all seven aliases, all seven original history events, both original evidence objects, chemistry, historical notes and stored occurrence statistics are preserved. One new explanation and one truthful event are appended. No frozen source case or 934-owner-plan operation is added. The existing 1,879-case campaign accounting is not changed by this ancillary proposal.
+
+Checks include 110 independent scientific checks, 100 separate skeptical checks, 38 technical preflight checks, 82 technical candidate checks and 17 meaningful negative controls. These are separately scoped counts, not one independent aggregate score. Native validation binds {len(review['source']['inputs'])} inputs, one target, 11 assessments and 27 evidence entries. All 2,956 inventory records are mechanically bound for the row-index context; only Xanthine received this scientific review.
+
+The exact complete native candidate row retains the own-identifier exactMatch, identity and aliases. Its only differences from the same-context native before row are source and date. It is **not** a publish-ready canonical replacement: source/date/confidence/comment/validation_method differ from the historical maintained row. Its 0.9 confidence and blank comment/stamp are diagnostic defaults. Root must preserve the accepted #760 scope, qualified evidence and real receipt requirements in any later complete-row integration.
+
+Actual K modules/owner/contracts equal the declared 5288c882 context despite concurrent code-only e0a75 publication changes. The new publication code was not executed or reviewed. Claw76c per-owner API use is diagnostic; no fake canonical generation, source-application receipt, final head or future SSSOM position is supplied. The initial technical head-pin refusal, corrected read-command typo and append-only fresh inventory-binding replay are retained with honest timing.
+
+All original/local inputs, 553 W09 packet members and every member of five prior W10 packets were rehashed at seal. The existing owner and owner plan remain unchanged. Own clean source head remains `{h['author_source_head']}`. No maintained/source/Git/GitHub writes, paid research, new external session or release action occurred.
+
+Issue #1258 and its original finding remain open: the method is corrected only in this private candidate. Root owns lawful guarded application, synchronization, complete native receipts and later integration. No source, role, whole-campaign or export approval follows from this valid packet. Ready for collection; worker idle.
+'''
+with (O/'HANDOFF.md').open('x') as f:f.write(md)
+members=[]
+for p in sorted(O.rglob('*')):
+    if p.is_symlink():raise AssertionError(f'unexpected symlink {p}')
+    if p.is_file() and p.name not in [] and str(p.relative_to(O)) not in ['MANIFEST.json','SHA256SUMS']:
+        members.append({'path':str(p.relative_to(O)),'sha256':sha(p),'bytes':p.stat().st_size})
+manifest={'sealed_at':now(),'path_root':str(O),'regular_member_count':len(members),'files':members,'excludes':['MANIFEST.json','SHA256SUMS'],'verdict':'pass_with_limitations','candidate_sha256':sha(O/'candidate/Xanthine.yaml'),'maintained_application':False,'source_role_export_approval':False}
+save(O/'MANIFEST.json',manifest)
+with (O/'SHA256SUMS').open('x') as f:
+    for b in members:f.write(b['sha256']+'  '+b['path']+'\n')
+    f.write(sha(O/'MANIFEST.json')+'  MANIFEST.json\n')
+for b in members:assert sha(O/b['path'])==b['sha256']
+print(json.dumps({'status':h['status'],'handoff_sha256':sha(O/'HANDOFF.json'),'manifest_sha256':sha(O/'MANIFEST.json'),'candidate_sha256':sha(O/'candidate/Xanthine.yaml'),'native_review_sha256':sha(O/'native/review.yaml'),'native_markdown_sha256':sha(O/'native/review.md'),'members':len(members),'source_head':pres['own_head']},indent=2))

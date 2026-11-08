@@ -1,0 +1,235 @@
+"""Private package review; never calls campaign _load/prepare/apply.
+
+Native field/path/hash/ref functions are real captured K code. Exact package
+roles, cardinalities, population and immutable tuples are reviewer conditions,
+not a new native gate or an acceptance object.
+"""
+from pathlib import Path
+from datetime import datetime, timezone
+from collections import Counter
+import copy, hashlib, importlib.util, json, os, stat, subprocess, sys
+
+R = Path.cwd()
+O = Path(__file__).resolve().parent
+P = O.parent
+C = R.parents[2]
+K = C / 'integration/release-worktree'
+S = R / '.temp/ancillary-xanthine1258-proposal-v1'
+D = R / 'reports/all_unmatched_20261107/ancillary_xanthine1258_proposal_v1'
+REL = D.relative_to(R).as_posix()
+BEFORE = 'c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22'
+AFTER = '747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546'
+HEAD = '2c16c0e0f6b1e733493cb5a4a77ee5807ebac732'
+KHEAD = 'e0a75a0c48ba539426b1f70623ea376c7b379ecf'
+CID = 'ANCILLARY_REVIEW_FINDING:MIM-1258-XANTHINE-METHOD-001'
+PID = 'W10-ANCILLARY-XANTHINE1258-METHOD-001'
+OWNER = 'data/ingredients/mapped/Xanthine.yaml'
+EXPECTED_CASE = '878a45dc8a71fa7ebd209e95857dfc54a934d35677f9e6fb795684c333df81b6'
+now = lambda: datetime.now(timezone.utc).isoformat()
+digest = lambda b: hashlib.sha256(b).hexdigest()
+started = now()
+checks, controls, inputs = [], [], {}
+def bind(p):
+    p = Path(p); raw = p.read_bytes()
+    inputs[str(p)] = {'path':str(p), 'sha256':digest(raw), 'bytes':len(raw)}
+    return raw
+def load(p): return json.loads(bind(p))
+def check(label, ok, detail=None, mechanism='reviewer_package_condition'):
+    checks.append({'check':label,'pass':bool(ok),'mechanism':mechanism,'detail':detail})
+    if not ok: raise ValueError(label)
+def require(ok, message):
+    if not ok: raise ValueError(message)
+def save(name, obj):
+    with (O/name).open('x') as f: json.dump(obj,f,indent=2,ensure_ascii=False);f.write('\n')
+def git(root,*args):return subprocess.check_output(['git','-C',str(root),*args])
+
+# Execute the native contract and its captured dependencies, not report copies.
+sys.path.insert(0,str(K/'src'))
+module_path=K/'src/mediaingredientmech/curate/campaign_owner_apply.py'
+raw=bind(module_path)
+spec=importlib.util.spec_from_file_location('x1258_native_package_review',module_path)
+m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m
+exec(compile(raw,str(module_path),'exec',dont_inherit=True),m.__dict__)
+check('K observed exact context',git(K,'rev-parse','HEAD').decode().strip()==KHEAD)
+for name, frozen in m.LOADED_PRODUCERS.items():
+    frozen.verify()
+    check('actual loaded native producer '+name, bind(K/name)==frozen.content==git(K,'show',KHEAD+':'+name), mechanism='captured_native_bytes_and_Git')
+check('worker unchanged initial head',git(R,'rev-parse','HEAD').decode().strip()==HEAD)
+check('worker tracked index/tree initially unchanged',git(R,'status','--porcelain','--untracked-files=no')==b'')
+
+core=load(P/'package-core-v1.json')
+source_manifest=load(S/'MANIFEST.json')
+transport=load(D/'transport-map.json')
+check('source manifest pinned',digest(bind(S/'MANIFEST.json'))=='d19aae2889fbd957eebb8f7d917d15b8cb4c61e29c85bed909031976e75fbfd1')
+check('source handoff pinned',digest(bind(S/'HANDOFF.json'))=='bbc1ee493b1c1d760db2ada007695c7fdeddc20ef687f4950c4464be730c1450')
+check('source manifest complete 155',source_manifest['regular_member_count']==len(source_manifest['files'])==155)
+members={x['path']:x for x in source_manifest['files']}
+check('source manifest member paths unique',len(members)==155)
+transports=transport['files'];by_original={x['original_relative_path']:x for x in transports}
+check('transport exactly 155 members plus original manifest/checksums',len(transports)==len(by_original)==157 and set(by_original)==set(members)|{'MANIFEST.json','SHA256SUMS'})
+check('transport archive paths unique',len({x['archive_path'] for x in transports})==157)
+for src, entry in sorted(by_original.items()):
+    m.relative(src)
+    dest=REL+'/archive/'+src+('.txt' if src.endswith('.py') else '')
+    check('transport exact deterministic path '+src,entry['archive_path']==dest and entry['original_absolute_path']==str(S/src))
+    before_raw, after_raw=bind(S/src),bind(R/dest)
+    expected=members[src]['sha256'] if src in members else entry['sha256']
+    check('transport complete bytes '+src,before_raw==after_raw and digest(before_raw)==expected==entry['sha256'] and len(before_raw)==entry['bytes'])
+    info=(R/dest).lstat()
+    check('transport regular nonexecuting unaliased '+src,stat.S_ISREG(info.st_mode) and info.st_nlink==1 and not(info.st_mode&0o111) and not any(p.is_symlink() for p in (R/dest,*(R/dest).parents)))
+check('all 30 Python copies inert',sum(x.endswith('.py') for x in by_original)==30 and not list((D/'archive').rglob('*.py')))
+sumlines=bind(S/'SHA256SUMS').decode().splitlines()
+check('original checksum file complete',len(sumlines)==156)
+checksum_names=[]
+for line in sumlines:
+    sha,path=line.split('  ',1);checksum_names.append(path)
+    check('original checksum '+path,digest(bind(S/path))==sha)
+check('checksum set',len(set(checksum_names))==156 and set(checksum_names)==set(members)|{'MANIFEST.json'})
+package_files={p.relative_to(R).as_posix() for p in D.rglob('*') if p.is_file() or p.is_symlink()}
+check('initial frozen core exactly 171 files',len(core['regular_files'])==core['count']==171 and {x['path'] for x in core['regular_files']}==package_files)
+for e in core['regular_files']:
+    b=bind(R/e['path']);check('frozen core '+e['path'],digest(b)==e['sha256'] and len(b)==e['bytes'])
+for path in package_files:
+    parts=Path(path).parts
+    check('package allowed file-tree '+path,not set(parts)&{'.git','.venv','venv','__pycache__','node_modules','.aws','.codex','.cache','.ssh'} and not path.endswith(('.pyc','.pyo')))
+
+proposal=load(D/'proposals.json');cases=load(D/'case-ledger.json');roles=load(D/'artifact-role-inventory.json')
+decision=load(D/'decisions.json');reconciliation=load(D/'reconciliation.json');shard=load(D/'shard.json')
+original=load(S/'proposal.json')
+binding_specs={
+ 'case-ledger':('case_ledger','case-ledger.json'), 'shard':('shard','shard.json'),
+ 'decision':('decision','decisions.json'), 'proposal':('proposal','proposals.json'),
+ 'reconciliation':('reconciliation','reconciliation.json'),
+ 'native-review':('review','archive/native/review.yaml'),
+ 'science-review':('review','archive/science/science.json'),
+ 'skeptical-review':('review','archive/skeptic/candidate-review.json'),
+ 'preimage':('evidence','archive/inputs/07-Xanthine.yaml'),
+ 'payload':('evidence','archive/candidate/Xanthine.yaml'),
+ 'issue':('evidence','issue1258-current/issue.json'),
+ 'finding':('evidence','archive/inputs/additional-12-findings.json'),
+ 'transport':('evidence','transport-map.json')}
+expected_specs={'w10-x1258-'+key:(role,REL+'/'+path) for key,(role,path) in binding_specs.items()}
+expected_specs.update({'w10-x1258-producer-%02d'%i:('producer',path) for i,path in enumerate(m.PRODUCERS)})
+package_ids={'w10-x1258-'+key for key in binding_specs}
+expected_counts=dict(Counter(role for role,path in expected_specs.values()))
+native_ref_inputs={}
+def canonical_case(c):return digest(json.dumps(c,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode())
+def validate_role_inventory(value):
+    require(value['worker_slot']=='worker-10','wrong real worker slot')
+    require(value['artifact_type']=='prospective_source_binding_inventory_not_a_plan_or_acceptance','inventory claims application')
+    bindings=value['bindings'];ids=[x['binding_id'] for x in bindings]
+    require(len(ids)==len(set(ids)),'duplicate binding IDs')
+    require(set(ids)==set(expected_specs),'missing or extra declared artifact bindings')
+    for key in ('expected_binding_ids','package_binding_ids','external_native_producer_binding_ids'):
+        expected=set(expected_specs) if key=='expected_binding_ids' else package_ids if key=='package_binding_ids' else set(expected_specs)-package_ids
+        require(len(value[key])==len(set(value[key])) and set(value[key])==expected,'role metadata partition differs: '+key)
+    require(value['expected_role_counts']==expected_counts==dict(Counter(x['role'] for x in bindings)),'missing duplicate or extra artifact role slot')
+    require(set(value['required_roles'])==m.ROLES and len(value['required_roles'])==len(m.ROLES),'native role inventory incomplete or duplicated')
+    for x in bindings:
+        m.closed(x,m.BINDING_KEYS,'binding')
+        require(x['role'] in m.ROLES,'unknown native role')
+        role,path=expected_specs[x['binding_id']]
+        require((x['role'],x['path'])==(role,path),'binding role or path changed')
+        require(x['published_head'] is None and x['published_path'] is None,'future publication claimed')
+        m._ref(K if role=='producer' else R,{'path':x['path'],'sha256':x['sha256']},native_ref_inputs)
+    require({x['path'] for x in bindings if x['role']=='producer'}==set(m.PRODUCERS),'native producer set differs')
+def validate_wrapper(p,case_list):
+    require(isinstance(p,dict) and isinstance(p.get('proposals'),list) and len(p['proposals'])==1,'one proposal required')
+    require(isinstance(case_list,list) and len(case_list)==1,'one complete ancillary case required')
+    a=p['proposals'][0];c=case_list[0]
+    require(a['proposal_id']==PID and a['kind']=='edit_existing_owner','incorrect proposal kind/id')
+    require(m.owner_path(a['owner_path'])==OWNER and a['before_sha256']==BEFORE,'authentic preimage or owner differs')
+    require(c['case_id']==CID and c['kind']=='review_finding' and c['cm_kg_source_case'] is False,'case impersonation')
+    require(c['frozen_campaign_member'] is False and c['source_observation'] is False and c['new_chemical_input'] is False,'new source observation invented')
+    require(c['source_case_ids']==[] and c['source_occurrence_ids']==[],'source membership invented')
+    require(a['case_ids']==[CID] and a['case_hashes']=={CID:canonical_case(c)} and canonical_case(c)==EXPECTED_CASE,'full case object/hash differs')
+    require(a['worker_slot']==c['worker_slot']=='worker-10' and a['cm_kg_source_case'] is False and a['source_case_membership_added']==0,'false worker or source attribution')
+    ref=m.closed(a['after_capture'],{'root','path','sha256'},'original worker payload')
+    require(ref['root']=='artifact' and ref['path']==REL+'/archive/candidate/Xanthine.yaml' and ref['sha256']==AFTER,'wrong artifact payload')
+    b=m._ref(R,{k:ref[k] for k in ('path','sha256')},native_ref_inputs)
+    m.record(b)
+    require(c['owner_path']==OWNER and c['before_sha256']==BEFORE and c['candidate_sha256']==AFTER,'case owner tuple differs')
+    require(c['candidate_author']==c['publication_wrapper_author']=='worker10:/root','invented authorship')
+    require(a['original_private_proposal']==c['original_private_proposal'],'private proposal ref mismatch')
+    require(m.unique_json(m._ref(R,a['original_private_proposal'],native_ref_inputs))==original,'original private proposal changed')
+validate_role_inventory(roles);check('all native role/ref checks and independent package slot rules',True,{'bindings':24,'package':13,'external_native_producers':11},'native_closed_ref_constants_plus_disclosed_package_rules')
+validate_wrapper(proposal,cases);check('complete native-compatible original proposal/case wrapper',True,{'case_sha256':canonical_case(cases[0])},'native_closed_ref_record_functions_plus_disclosed_package_rules')
+
+# Every newly authored concrete file reference is checked with the actual native ref.
+reference_count=0
+def walk_refs(obj):
+    global reference_count
+    if isinstance(obj,dict):
+        if set(obj)=={'path','sha256'}:
+            m._ref(R,obj,native_ref_inputs);reference_count+=1
+        else:
+            for v in obj.values():walk_refs(v)
+    elif isinstance(obj,list):
+        for v in obj:walk_refs(v)
+for obj in (proposal,cases,decision,reconciliation):walk_refs(obj)
+check('new wrapper complete reference traversal',reference_count>0,{'references':reference_count},'native_ref')
+c=cases[0];a=proposal['proposals'][0];d=decision['decisions'][0]
+check('decision exact ancillary association',len(decision['decisions'])==1 and d['case_id']==CID and d['case_sha256']==EXPECTED_CASE and d['proposal_ids']==[PID] and d['kind']=='review_finding' and d['cm_kg_source_case'] is False)
+check('decision no application acceptance',d['maintained_finding_status']=='open' and d['accepted_for_application'] is False and d['source_role_export_approval'] is False)
+check('reconciliation same owner full tuple',reconciliation['ancillary_case_id']==CID and reconciliation['proposal_id']==PID and reconciliation['case_sha256']==EXPECTED_CASE and reconciliation['same_existing_owner']==OWNER and reconciliation['before_sha256']==BEFORE and reconciliation['after_sha256']==AFTER)
+check('reconciliation no application or merge',all(reconciliation[x] is False for x in ['new_owner','owner_merge','applied','root_selection_vote','future_head_claim']))
+check('shard explicitly ancillary',shard['ancillary_population']==1 and shard['ancillary_case_ids']==[CID] and all(shard[x]==0 for x in ['new_cm_kg_source_cases','new_source_observations','new_occurrences']) and shard['descriptor_is_not_a_replacement_frozen_shard'] is True and shard['published_head'] is None)
+check('real worker source head/branch',shard['source_head_at_authoring']==HEAD and shard['worker_slot']=='worker-10' and shard['branch']==git(R,'branch','--show-current').decode().strip())
+check('original private proposal exact tuple/author',original['proposal_id']==PID and original['before']['sha256']==BEFORE and original['candidate']['sha256']==AFTER and original['maintained_destination']==OWNER and original['author']=='worker10:/root' and original['source_case_ids']==[])
+before=m.record(bind(S/'inputs/07-Xanthine.yaml'));after=m.record(bind(S/'candidate/Xanthine.yaml'))
+check('authentic maintained K preimage',bind(K/OWNER)==bind(S/'inputs/07-Xanthine.yaml')==git(K,'show',KHEAD+':'+OWNER))
+expected=copy.deepcopy(before);expected['ontology_mapping']['mapping_quality']='MANUAL_CURATION';expected['ontology_mapping']['evidence']=after['ontology_mapping']['evidence'];expected['curation_history']=after['curation_history']
+check('candidate three-field boundary',expected==after and before['ontology_mapping']['evidence']==after['ontology_mapping']['evidence'][:-1] and before['curation_history']==after['curation_history'][:-1])
+check('candidate historical lengths',len(before['ontology_mapping']['evidence'])==2 and len(after['ontology_mapping']['evidence'])==3 and len(before['curation_history'])==7 and len(after['curation_history'])==8)
+check('new claim honest author evidence',after['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION' and after['curation_history'][-1]['llm_assisted'] is True)
+review=m.yaml.safe_load(bind(S/'native/review.yaml'));scopes=load(S/'reviewer-scopes.json')
+check('original native self review preserved',review['reviewer']['independence']=='self_review' and review['source']['state']=='working_tree' and review['source']['git_revision']==HEAD and review['verdict']=='pass_with_limitations')
+check('actual peer identities retained',scopes['candidate_author']['identity']=='worker10:/root' and scopes['science']['identity']=='worker10:/root/preparation_skeptic' and scopes['skeptical']['identity']=='worker10:/root/buffers_research' and scopes['technical']['identity']=='worker10:/root/bio_research')
+issue=load(D/'issue1258-current/issue.json');receipt=load(D/'issue1258-current/receipt.json')
+check('actual current issue repository/number/open',issue['number']==1258 and issue['html_url']==c['source_issue_url'] and issue['state']=='open')
+for x in receipt['captures']:
+    check('live receipt actual bytes '+x['name'],x['exit_code']==0 and digest(bind(Path(x['path'])))==x['sha256']==digest(bind(D/'issue1258-current'/(x['name']+'.json'))))
+    check('live receipt honest ordering '+x['name'],x['started_at']<=x['finished_at']<transport['created_at'])
+
+def refused(name,fn,mechanism):
+    try:fn()
+    except (ValueError,TypeError,KeyError) as e:
+        controls.append({'control':name,'refused':True,'mechanism':mechanism,'exception':type(e).__name__,'message':str(e)})
+    else:raise AssertionError('unsafe negative control accepted: '+name)
+def role_mutation(name,mutator):
+    q=copy.deepcopy(roles);mutator(q);refused(name,lambda:validate_role_inventory(q),'native primitives plus own explicit package binding allowlist')
+def prop_mutation(name,mutator):
+    q=copy.deepcopy(proposal);mutator(q['proposals'][0]);refused(name,lambda:validate_wrapper(q,cases),'own reviewed tuple conditions plus native refs')
+role_mutation('missing required artifact role binding',lambda q:q['bindings'].pop(0))
+role_mutation('duplicate binding ID',lambda q:q['bindings'].append(copy.deepcopy(q['bindings'][0])))
+role_mutation('extra otherwise valid review binding',lambda q:q['bindings'].append({**q['bindings'][5],'binding_id':'unreviewed-extra'}))
+role_mutation('wrong role with preserved ID/cardinality change',lambda q:q['bindings'][0].update(role='evidence'))
+role_mutation('unknown native role',lambda q:q['bindings'][0].update(role='acceptance'))
+role_mutation('extra key in binding',lambda q:q['bindings'][0].update(unreviewed=True))
+role_mutation('fake future published head',lambda q:q['bindings'][0].update(published_head=HEAD,published_path=q['bindings'][0]['path']))
+role_mutation('wrong actual bound payload hash',lambda q:q['bindings'][9].update(sha256='0'*64))
+role_mutation('archived producer substituted for native path',lambda q:q['bindings'][13].update(path=REL+'/archive/technical/pin_native.py.txt'))
+prop_mutation('wrong preimage',lambda q:q.update(before_sha256='0'*64))
+prop_mutation('wrong payload digest',lambda q:q['after_capture'].update(sha256='0'*64))
+prop_mutation('wrong payload path',lambda q:q['after_capture'].update(path=REL+'/archive/inputs/07-Xanthine.yaml'))
+prop_mutation('wrong complete case hash',lambda q:q.update(case_hashes={CID:'0'*64}))
+prop_mutation('wrong worker slot',lambda q:q.update(worker_slot='worker-11'))
+prop_mutation('case membership rebound',lambda q:q.update(case_ids=['CM:invented']))
+prop_mutation('extra payload reference key',lambda q:q['after_capture'].update(approved=True))
+altered=copy.deepcopy(cases);altered[0]['decision_scope']+=' changed'
+refused('case object changed without matching exact full hash',lambda:validate_wrapper(proposal,altered),'own canonical complete object binding')
+refused('duplicate JSON object key',lambda:m.unique_json(b'{"case_id":"a","case_id":"b"}'),'actual native unique_json')
+refused('noncanonical traversal path',lambda:m.relative('../escape'),'actual native relative')
+refused('extra native reference field',lambda:m._ref(R,{'path':REL+'/case-ledger.json','sha256':digest(bind(D/'case-ledger.json')),'accepted':True},{}),'actual native closed/_ref')
+refused('wrong native ref hash',lambda:m._ref(R,{'path':REL+'/case-ledger.json','sha256':'0'*64},{}),'actual native _ref')
+refused('duplicate YAML mapping key',lambda:m.record(b'identifier: A\nidentifier: B\n'),'actual native record')
+check('all 22 meaningful package/native controls refused',len(controls)==22 and all(x['refused'] for x in controls))
+
+# Re-read exact inputs after all tests. No scientific or native application step.
+for path,e in list(inputs.items()):check('final input preservation '+path,digest(Path(path).read_bytes())==e['sha256'])
+for frozen in native_ref_inputs.values():frozen.verify()
+check('worker head and tracked state preserved',git(R,'rev-parse','HEAD').decode().strip()==HEAD and git(R,'status','--porcelain','--untracked-files=no')==b'')
+check('K head and target preserved',git(K,'rev-parse','HEAD').decode().strip()==KHEAD and digest((K/OWNER).read_bytes())==BEFORE)
+result={'audit_execution_started_at':started,'audit_execution_finished_at':now(),'reviewer':'worker10:/root/bio_research','scope':'Full 171-file package byte/transport and one ancillary wrapper, actual native pure contracts, explicitly bounded package negative controls. No new scientific review or application approval.','checks':checks,'negative_controls':controls,'input_bindings':list(inputs.values()),'counts':{'checks':len(checks),'failed_checks':sum(not x['pass'] for x in checks),'negative_controls':len(controls),'original_members':155,'transported_originals':157,'package_core_members':171,'package_role_bindings':13,'external_native_producer_bindings':11,'ancillary_findings':1,'proposals':1,'new_CM_KG_cases':0,'new_occurrences':0,'new_concrete_reference_checks':reference_count},'native_calls':['closed','relative','sha via _ref','owner_path','unique_json','record','_ref','FrozenFile.verify'],'not_called':['_load','prepare','apply','verify_completed','publication/application code','native receipt reservation'],'findings':[],'case_sha256':canonical_case(cases[0]),'source_head':HEAD,'K_head':KHEAD,'prior_participation':'Authored technical checks of original private Xanthine proposal; not candidate or publication wrapper author. This review is not fresh independent science.'}
+save('package-checks.json',result)
+print(json.dumps({'checks':len(checks),'negative_controls':len(controls),'failed':0,'report_sha256':digest((O/'package-checks.json').read_bytes()),'input_bindings':len(inputs)}))

@@ -1,0 +1,211 @@
+{
+  "new_scientific_findings": [
+    {
+      "finding_id": "FC2-XANTHINE-METHOD-001",
+      "proposed_issue_key": "MediaIngredientMech:Xanthine:nonunique-CAS-method",
+      "category": "mapping_method_provenance",
+      "severity": "major",
+      "native_priority": "P2",
+      "status": "open",
+      "certainty": "confirmed",
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "field_path": "/ontology_mapping/mapping_quality",
+      "observed_value": "CAS_RN_LOOKUP",
+      "description": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+      "reproduction": [
+        "Read exact owner mapping_quality=CAS_RN_LOOKUP and its PubChem CAS_RN_CROSS_REFERENCE evidence.",
+        "Read primary ChEBI17712 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus, NIST).",
+        "Read primary ChEBI48517 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus).",
+        "Read MAPPING_SEMANTICS section0: current CAS must agree uniquely with current target for this method grade.",
+        "Compare retained13field row: mapping_justification=semapv:ManualMappingCuration, explicit no-tautomer-purity source comment."
+      ],
+      "primary_captures": [
+        {
+          "path": "science/chemistry/captures/chebi17712.capture",
+          "sha256": "2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60",
+          "original_retrieved_at": "2026-11-08T06:11:12.472556+00:00"
+        },
+        {
+          "path": "science/chemistry/captures/chebi7hxanthine.capture",
+          "sha256": "b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5",
+          "original_retrieved_at": "2026-11-08T06:15:51.983698+00:00"
+        }
+      ],
+      "contract": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "locator": "section0, CAS_RN_LOOKUP uniqueness requirement"
+      },
+      "scoped_mapping_profile": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/docs/INGREDIENT_SCOPE_PROFILE.md",
+        "sha256": "82729da420d79ceb2a1313580089866a6ed6ff06dd70f317ac61fce17433c642",
+        "locator": "Source context examples: MIM:Xanthine; no physical tautomer purity"
+      },
+      "mapping_row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+      "mapping_claim_disposition": "SUPPORTED",
+      "identifier_claim_disposition": "SUPPORTED",
+      "scientific_scope_change": false,
+      "proposed_bounded_followup": "Root deduplicates/files before any author correction. Accountable curator reconciles current owner method provenance with the actually performed nonunique-CAS manual scope assessment under native supported methods; preserve exact identity, source facts, raw aliases, all original history and tautomer/occurrence limitations. Do not manufacture a unique lexical or CAS resolution.",
+      "acceptance_conditions": [
+        "A fresh performed-method record explains how current target was selected despite the sharedCAS; any changed grade is justified by an actually performed method.",
+        "Independent review of whole owner and full row confirms no identity, scope, source occurrence, role or export-approval expansion.",
+        "All existing history and both ChEBI terms remain preserved as evidence; no arbitrary change to EXACT_MATCH/SYNONYM_MATCH or tautomer owner is presumed."
+      ],
+      "independent_reviews": {
+        "scientific_author": "/root/companion_chemistry",
+        "skeptical_reviewer": "/root/companion_skeptic",
+        "skeptical_result": "Agrees method field needs curation; scoped manual mapping/registry assertions remain supportable."
+      },
+      "dedup_status": "Root issue/history dedup pending; reviewer made no GitHub mutation",
+      "repair_performed": false
+    }
+  ],
+  "root_filing_before_any_correction_required": true,
+  "new_finding_repair_performed": false,
+  "existing_owner_field_holds": [
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.molecular_formula",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false,
+      "value": "C27H25ClN6",
+      "value_sha256": "ce67e5784f96b4cb87991a05a3260945482e2f2361c946f1473ff04fbbc9e536",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.smiles",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false,
+      "value": "C[N+]1=C2C=C(C=CC2=CC3=C1C=C(C=C3)N)N.C1=CC(=CC2=NC3=C(C=CC(=C3)N)C=C21)N.[Cl-]",
+      "value_sha256": "ddf79e8b587914e5846e429736f4f408ffd64de2c91513e09e3025917450b4ca",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Acriflavine.yaml",
+      "owner_sha256": "d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e",
+      "field": "chemical_properties.inchi",
+      "disposition": "WITHHOLD",
+      "reason": "PubChem443101 reproduces the stored formula/SMILES/InChI but its fixed graph supplies one of each component; FDA mixture composition does not establish a fixed molar ratio. Those three fields remain WITHHOLD as unqualified whole-mixture chemistry.",
+      "evidence_ids": [
+        "chem-gsrs-1T3A50395T-retry",
+        "chem-ncit-C76253-retry",
+        "chem-archived-fda-gsrs",
+        "chem-archived-source-records",
+        "chem-original-culturebotht-compounds-to-cas",
+        "chem-pubchem-443101-retry"
+      ],
+      "new_finding": false,
+      "value": "InChI=1S/C14H13N3.C13H11N3.ClH/c1-17-13-7-11(15)4-2-9(13)6-10-3-5-12(16)8-14(10)17;14-10-3-1-8-5-9-2-4-11(15)7-13(9)16-12(8)6-10;/h2-8H,1H3,(H3,15,16);1-7H,14-15H2;1H",
+      "value_sha256": "3a9463f603c50149b474ab5a69631e7fe861b9dca60b47e11b5bbf4b045f1f34",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "owner_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "field": "chemical_properties.smiles",
+      "disposition": "WITHHOLD",
+      "reason": "The owner SMILES omits alkene stereobond markers present in the current primary structure; its fully stereospecified interpretation remains WITHHOLD even though the InChI matches.",
+      "evidence_ids": [
+        "chem-microbedecoder-rifamycin-sv",
+        "chem-chebi-29673-retry",
+        "chem-chebi-26580-retry",
+        "chem-archived-chemical-scope-ontology-evidence"
+      ],
+      "new_finding": false,
+      "value": "CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(cc(O)c4c3C2=O)NC(=O)/C(C)=CC=C[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C",
+      "value_sha256": "00ec00f5e7026c8d659be1ca91080cfc29a64160ff2cba3289ee2105201942e4",
+      "reviewer": "/root/companion_skeptic"
+    },
+    {
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "field": "ontology_mapping.mapping_quality",
+      "disposition": "WITHHOLD",
+      "reason": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+      "evidence_ids": [
+        "chem-chebi17712",
+        "chem-chebi7hxanthine"
+      ],
+      "new_finding": true,
+      "finding_id": "FC2-XANTHINE-METHOD-001",
+      "value": "CAS_RN_LOOKUP",
+      "value_sha256": "286bf2213363b9e259638469dc9f9b380750536e29cefa8996807eb45721a93b",
+      "reviewer": "/root/companion_skeptic"
+    }
+  ],
+  "conditional_native_boundaries": [
+    {
+      "boundary_id": "FCV2-BSA-ROW-JOIN-001",
+      "status": "EXPECTED_CANDIDATE_NATIVE_BOUNDARY",
+      "claim_id": "MIM.mapping:3e31f9ef127f6562283644b6b4e558b04f6ad4acc67b73d931ce7b07057a2b21",
+      "owner_record": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "owner_sha256": "8aa29bf6e0029daa2626e118d7b6a432c6b94eb3563869ae302d87c13f1c50c2",
+      "historical_claim_complete_row_sha256": "d5d310b48803d4fa1ddf1d9b29becb3bcf769ab8dff1fdea05a42a942ab0889f",
+      "proposed_diagnostic_row_sha256": "0a39a3e86b43401f7aaa5856286eb0d63d55a76b7656a5432f81edd2ac227056",
+      "different_fields": {
+        "mapping_justification": {
+          "claim": "semapv:ManualMappingCuration",
+          "proposed_row": "semapv:LexicalMatching"
+        },
+        "source": {
+          "claim": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=refresh_occurrence_statistics|MIM:curator=kgmicrobe_identity_review_20260924",
+          "proposed_row": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=Codex /root/step7d_science_c"
+        },
+        "mapping_date": {
+          "claim": "2026-09-24",
+          "proposed_row": "2026-11-08"
+        },
+        "comment": {
+          "claim": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+          "proposed_row": ""
+        },
+        "other": {
+          "claim": "",
+          "proposed_row": "CAS:9048-46-8"
+        }
+      },
+      "native_error": "Scoped mapping must retain an existing supported complete source row",
+      "scientific_identity_disagreement_asserted": false,
+      "bounded_next_action": "Coordinator must resolve truthful exact final canonical/claim alignment through native contracts and distinct review. No claim, gate or JSON verdict patched; all51claims retained.",
+      "final_canonical_sha256": null,
+      "full_base_review": null
+    }
+  ],
+  "withheld_claims": [
+    {
+      "claim_id": "MIM.annotation:78c235a18311ff2ab4d17d683bbc0f963bc8fc98eb50f24ce3c00a7391bd77c6",
+      "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+      "complete_envelope_sha256": "eb4a2a340fe4f50f094a5d65caef79c6167ab03728234ae8e7aacc1aab50af6d",
+      "reason": "Original row986 reports raw2650-88-3 with blank supplier/catalog. Independently calculated CAS check digit is6, not3. Keep identifier empty, validity INVALID, xref_eligible false and WITHHOLD. A checksum repair or plausible12650-88-3 would be invented material identification."
+    },
+    {
+      "claim_id": "MIM.occurrence:8ef56b6e356d256d79632b07d5dd457b18c7d9c99c5d75a540e11c9b34cfc67f",
+      "owner_record": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "complete_envelope_sha256": "2366b3824d46c5813631d4ccc10cd35f1668e986f3ff32c44562a887d9db7259",
+      "reason": "WITHHOLD CM012955 JCM220 normalized 9.652509652509652 PERCENT_V_V. Actual JCM220 and solution3888 specify 10 mL of 20% BSA fraction V stock with 1000 mL water; provider g_l is null and nominal volume1036 does not prove a final volume. The percentage field both loses the stock-strength distinction and is not supported by source units/basis. Preserve the complete envelope, filter preparation and pH6.6; do not invent a replacement. This is separate from M194/BSK 50 g unknown-final-volume hold."
+    }
+  ],
+  "release_approval": false
+}

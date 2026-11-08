@@ -1,0 +1,11 @@
+# Exact selected-plan verification, preserved bdf diagnostic
+
+The sole typed change from default plan518fd to selected planbdfab is `rows[0].preserve_fields: [] → ["comment"]`. The resulting complete thirteen-field row equals the actual root selection and both independent W03 scientific/skeptical recommendations (semantic hash79bf8781). The original W03 needs_curation verdict still applies to the unchanged blank-comment generated candidate; it has not been rewritten.
+
+Actual production publisher1108/sourcec445 `verify_completed` and `prepare` passed read-only. The exact projection is d50988d2 and trace06520a58. All3,013 unselected physical rows remain byte-identical at their old positions. The selected row changes only source, mapping_date and confidence relative to the old row; its old comment is retained. Separately, native header rendering removes quotes from the same2026-11-08 mapping_date and mapping_set_version strings. No other header change occurred.
+
+The native prepared capture binds3,112 actual inputs. All2,956 owners,34 protected files,27 original receipts, both aggregates, HEAD7b7a4fb1, raw/logical Git index and tracked status were unchanged across the check. The prospective native publication receipt remains absent. No canonical publication, source edit, stage, commit or new acceptance occurred.
+
+One confirmed minor metadata finding prevents treating bdf as the final selected plan: its literal scope still says no historical retention. The separate derivation does not cure that contradiction. The finding packet is preserved under finding-scope-v1 and was filed before correction at1254#6723331230. Root authorized a new scope-only successor; that successor needs its own exact verification. All scientific mapping/role/occurrence/companion/export limitations remain.
+
+Authorship disclosure: C authored the earlier default construction and proposed procedure. A authored the actual selected constructor; root selected the scientific row after distinct W03 science, skeptic and technical contexts. This receipt independently checks A's concrete outputs and native execution mechanically; it is not a second independent scientific vote on C-authored procedure or ingredient content. Historical55-logical/54-physical review-input transport stays qualified and is not relabeled as a fresh native root.

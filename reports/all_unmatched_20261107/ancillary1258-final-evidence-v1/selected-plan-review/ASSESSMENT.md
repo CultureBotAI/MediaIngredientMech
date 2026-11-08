@@ -1,0 +1,9 @@
+# Selected Xanthine publication plan: exact scope successor
+
+PASS within the mechanical scope. Plan `0ebe0d92a27c40ff5187a26ce7ccbf62931a22301129269d3492d3d06177663c` changes only `scope` from preserved bdf, using root's exact filed amendment. The prior metadata finding is resolved in these successor bytes. Every other typed plan field is identical, including retention of only `comment`, all source/generation/preimage/producer/prefix references and `approval: NONE`.
+
+Actual production publisher1108/sourcec445 native `prepare` passed independently. Its verified completed-source proof remains4759d85a. Projectiond509 and trace06520a remain byte-identical to the fully checked predecessor: the selected thirteen-field row equals root's selection and both W03 recommendations79bf; all 3,013 unselected physical rows are identical. Relative to the old selected row, only source, mapping_date and confidence change. The two header quote normalizations remain separate and unchanged.
+
+All 3,112 native preparation input pins are recorded. HEAD7b7, raw/logical Git index, tracked status, 2,956 owners, both aggregates, 34 protected files and 27 original receipts remain unchanged. Prospective policy4b2d and receiptd817 are prepared results only; the new native receipt is still absent. No source/canonical change, publication, staging, commit or new acceptance was performed.
+
+C authored the earlier default construction and procedure; A authored this selected constructor, and root made the scientific selection using distinct W03 science/skeptic/technical contexts. This is an independent mechanical verification of A's concrete successor, not another scientific vote on C's procedure or the ingredient. The original W03 needs_curation pair remains unchanged for the blank-comment candidate. The historical55-logical/54-physical input qualification, all role/tautomer/occurrence limits and later companion/export obligations remain.

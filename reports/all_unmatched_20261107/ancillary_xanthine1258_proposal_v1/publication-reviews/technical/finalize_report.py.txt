@@ -1,0 +1,66 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,re,subprocess
+R=Path.cwd();O=Path(__file__).resolve().parent;P=O.parent;D=R/'reports/all_unmatched_20261107/ancillary_xanthine1258_proposal_v1';S=R/'.temp/ancillary-xanthine1258-proposal-v1'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def load(p):return json.loads(p.read_bytes())
+def ref(p):return {'path':str(p),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size}
+def save(name,obj):
+ with (O/name).open('x') as f:json.dump(obj,f,indent=2,ensure_ascii=False);f.write('\n')
+checks=load(O/'package-checks.json');pins=load(O/'native-contract-pins.json');core=load(P/'package-core-v1.json')
+for e in core['regular_files']:assert sha((R/e['path']).read_bytes())==e['sha256']
+# A bounded indicator scan supplements the exhaustive path inventory. It is not
+# a warranty that arbitrary textual evidence can never contain a secret.
+patterns={'PEM private-key header':rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----','AWS access-key token':rb'\b(?:AKIA|ASIA)[A-Z0-9]{16}\b','GitHub classic token':rb'\bgh[pousr]_[A-Za-z0-9]{36,}\b','GitHub fine-grained token':rb'\bgithub_pat_[A-Za-z0-9_]{60,}\b'}
+hits=[]
+for e in core['regular_files']:
+ raw=(R/e['path']).read_bytes()
+ for name,pattern in patterns.items():
+  if re.search(pattern,raw):hits.append({'path':e['path'],'indicator':name})
+assert not hits
+save('content-indicator-check.json',{'at':datetime.now(timezone.utc).isoformat(),'scope':'All171 exact frozen core bodies; bounded high-specificity credential indicators only; no textual secret values emitted. Exhaustive file paths separately checked for runtime/cache/account trees.','patterns':list(patterns),'files':len(core['regular_files']),'hits':hits,'limitation':'No claim that a finite token-pattern scan is a complete secret detector.'})
+save('command-receipts.json',{'commands':[{'command':'PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python .temp/xanthine1258-proposal-publication-v1/technical/pin_native.py','exit_code':0,'stdout':ref(O/'pin-native.stdout'),'stderr':ref(O/'pin-native.stderr')},{'command':'PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python .temp/xanthine1258-proposal-publication-v1/technical/check_package.py','exit_code':0,'stdout':ref(O/'package-check.stdout'),'stderr':ref(O/'package-check.stderr')}],'read_only_navigation_attempt':{'command':'sed -n 1,260p ../../../../integration/release-worktree/src/mediaingredientmech/curate/campaign_owner_apply.py','result':'No such file or directory; read path had one extra parent segment. Corrected to ../../../integration/release-worktree and read successfully. No source writes or package defect.'},'not_executed':['transported .py.txt','campaign _load','native prepare','native apply','publication code','acceptance creation','Git mutators']})
+complete=datetime.now(timezone.utc).isoformat()
+report={'reviewer':'worker10:/root/bio_research','verdict':'pass_with_limitations','findings':[],
+ 'review_timing':{'exact_start':'unknown; reading began before the first recorded native-contract milestone','first_recorded_review_milestone':pins['at'],'completed_at':complete,'audit_execution_started_at':checks['audit_execution_started_at'],'audit_execution_finished_at':checks['audit_execution_finished_at'],'timing_note':'The automated audit execution interval is not the full reading/review interval.'},
+ 'scope':'Independent technical review of the full frozen171-file evidence/proposal publication core, 157 byte-exact transports, one native-compatible existing-owner wrapper, one explicitly ancillary review-finding population, prospective role inventory, truthful preserved attribution and future conditions. No fresh science or application/route approval.',
+ 'independence':{'independent_of_publication_wrapper_author':True,'candidate_author':'worker10:/root','publication_wrapper_author':'worker10:/root','prior_participation':'I authored the original private Xanthine technical checks and native row/owner inventory supplement now transported unchanged. I did not author the candidate or publication wrapper. I am not historically uninvolved, and this package check does not recertify my old checks or add an independent chemical vote. Earlier W10 biological source and review work also exists, outside this bounded package task.','scientific_review':False},
+ 'reviewed_core':ref(P/'package-core-v1.json'),'audit':ref(O/'package-checks.json'),'native_contract':ref(O/'native-contract-pins.json'),'counts':checks['counts'],
+ 'target':{'worker_slot':'worker-10','proposal_id':'W10-ANCILLARY-XANTHINE1258-METHOD-001','case_id':'ANCILLARY_REVIEW_FINDING:MIM-1258-XANTHINE-METHOD-001','case_kind':'review_finding','cm_kg_source_case':False,'canonical_complete_case_sha256':checks['case_sha256'],'owner_path':'data/ingredients/mapped/Xanthine.yaml','before_sha256':'c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22','after_sha256':'747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546','new_CM_KG_cases':0,'new_source_observations':0,'new_occurrences':0,'new_chemical_input':False,'source_head_observed':checks['source_head'],'publication_head':None},
+ 'results':[
+ 'All155 source-manifest members and original MANIFEST/SHA256SUMS match all157 transported destinations byte for byte; 30 Python copies have inert .py.txt names and no executable mode. No symlink/hardlink substitutions. All171 frozen core files were checked and re-read unchanged.',
+ 'Native closed binding/ref keys, relative/owner paths, unique JSON, duplicate-key-rejecting YAML and actual FrozenFile hash/ref checks passed. Current K e0a75 source contract and11 canonical producer bytes match Git. Pure native functions were executed; no application loader or accepted-plan simulation was run.',
+ 'All24 prospective bindings resolve:13 package artifacts and11 external current native producers. All8 native role categories are represented. Explicit package slot/role/path/cardinality conditions additionally protect this bounded package; valid distinct repeated native roles remain permitted.',
+ 'One genuine edit_existing_owner wrapper preserves original private proposal and authentic c72 preimage /747 candidate. Canonical hashing covers the complete ancillary case object, including all references and disclaimers. Decision/shard/reconciliation bind the same one finding without frozen source membership.',
+ 'All22 negative controls refused: missing/duplicate/extra bindings, wrong/unknown roles, extra fields, prospective publication fabrication, wrong payload/preimage/case/worker, source membership rebound, altered complete case, duplicate JSON/YAML, traversal and wrong native ref digest.',
+ 'Original review remains self_review by the actual candidate author, with exact science, skeptical and technical peer identities and limitations. Prior scientific receipts are transported, not recast as this technical review. Complete old evidence/history and all unchanged owner fields remain exact.',
+ 'Current issue1258 repository/number/open state and recorded capture times resolve to exact bytes. K maintained owner remains the authentic preimage. Worker HEAD/branch and tracked tree/index were unchanged at the checks.'],
+ 'native_vs_package':{'native_executed':checks['native_calls'],'own_controls':'Explicit independently specified package tuple, slot IDs/paths/roles/cardinality, transport and source/occurrence assertions; this is a private reviewer harness, not repository policy or a new native gate.','not_called':checks['not_called'],'future_requirements':'Actual published head/Git blobs, root route and selection, current full inventories/protected inputs, real accepted plan/review bindings, real native application/receipts and full canonical row review remain separate future requirements.'},
+ 'limitations':[
+ 'The prospective inventory intentionally resolves package files in worker10 and producer files in external K. It is not yet a one-root native plan and does not satisfy native application prerequisites by itself.',
+ 'Publication fields are null before the actual commit. No future published-head verification, final row position, receipt, root selection or scientific/source/role/export approval is supplied.',
+ 'No new scientific re-review, full corpus science, source queue census or final campaign-plan validation was performed. Original scope, evidence and occurrence values are retained, not independently expanded.',
+ 'Archived aggregate, canonical TSV, historical plans and code are inert diagnostic evidence. Original absolute paths and timestamps remain historical; transport-map governs relocated copies.',
+ 'Finite high-specificity credential-pattern scan found no hits in171 core files; it is not a guarantee against every possible secret format. All runtime/account/cache path exclusions and original manifest closure were checked.',
+ 'No package defect found. A read-only navigation typo is recorded as a reviewer method incident, not an author finding.'],
+ 'publication_scope_ready':True,'accepted_for_application':False,'source_role_export_approval':False,'whole_campaign_acceptance':False,
+ 'key_inputs':[ref(D/n) for n in ['transport-map.json','proposals.json','case-ledger.json','artifact-role-inventory.json','shard.json','decisions.json','reconciliation.json','archive/HANDOFF.json','archive/MANIFEST.json','archive/SHA256SUMS','archive/proposal.json','archive/native/review.yaml','archive/reviewer-scopes.json']]}
+save('REPORT.json',report)
+md=f'''# Xanthine #1258 publication package technical review
+
+**Pass with limitations; no findings.** Reviewed the complete frozen171-file package: all155 original members plus original manifest/checksums (157 exact transports),30 inert Python copies, one ancillary review finding and one existing-owner proposal. No CM/KG source cases or occurrences were added.
+
+All1,360 checks and22 refusal controls passed. The complete case hash is `{checks['case_sha256']}`. Authentic owner preimage `c72c948…` and candidate `747d1a4…` match the original private packet and current K owner. All24 role bindings resolve:13 package artifacts and11 canonical K producers.
+
+Actual native closed/ref/path/JSON/YAML functions and captured producer bytes were checked at K `{checks['K_head']}`. Additional package slot/cardinality and tuple rules are explicitly private reviewer controls. No `_load`, prepare, apply, acceptance object, publication code or receipt creation ran.
+
+The original self_review identity, separate science/skeptical peers, history, evidence, absolute paths and timestamps remain unchanged. I authored the original technical checks; I did not author this candidate or publication wrapper. This check adds no scientific approval.
+
+Actual publication head and Git blobs, a real root-selected accepted transaction, inventories, native application and complete canonical row review remain future work. The two-root prospective inventory is not an executable source plan. Issue1258 remains open, and all original scope/role/export limits remain.
+
+First recorded review milestone: {pins['at']}; exact earlier reading start is unknown. Review completed: {complete}. Automated audit timestamps describe only the script runtime. Detailed checks,343 input bindings, controls and command receipts are adjacent.
+'''
+with (O/'REPORT.md').open('x') as f:f.write(md)
+files=[{'path':p.relative_to(O).as_posix(),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size} for p in sorted(O.rglob('*')) if p.is_file()]
+save('MANIFEST.json',{'sealed_at':datetime.now(timezone.utc).isoformat(),'root':str(O),'files':files,'members':len(files),'excludes':['MANIFEST.json itself'],'scientific_review':False,'application':False})
+print(json.dumps({'report_sha256':sha((O/'REPORT.json').read_bytes()),'markdown_sha256':sha((O/'REPORT.md').read_bytes()),'manifest_sha256':sha((O/'MANIFEST.json').read_bytes()),'members':len(files),'completed_at':complete}))

@@ -1,0 +1,108 @@
+{
+  "status": "OPEN_PUBLICATION_CONDITION_NO_CORRECTION_PERFORMED",
+  "finding_id": "W03-XANTHINE-SCOPE-COMMENT-001",
+  "same_finding_science_alias": "W03-ACTUAL-XANTHINE-SCOPE-001",
+  "severity": "major",
+  "native_severity": "P2",
+  "reported_to_coordinator_before_recommendation": true,
+  "first_scientific_receipt": {
+    "path": "science/finding-before-recommendation.json",
+    "sha256": "fe1a548bc27cb0fcd46ea35a7e4213cabcb3f4efbf4315776f8dbfe3818e18d1"
+  },
+  "independent_skeptic_receipt": {
+    "path": "skeptic/finding-before-fix.json",
+    "sha256": "77272d9cf3952cc774855b81c7b56941a4ad557fbecf6e99a4dfccfa4846d214"
+  },
+  "reproduction": "Read actual-rows.json and independently select MIM:Xanthine from original A canonical and native candidate. Native row2972.comment is empty; canonical row2961 has exact #760 limits; validation_method is equal. Current owner evidence, notes/history and primary ChEBI parent/tautomer records preserve limits.",
+  "old_canonical": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/ancillary1258-worktree/mappings/ingredient_mappings.sssom.tsv",
+    "sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+    "row_count": 3014,
+    "fields": [
+      "subject_id",
+      "subject_label",
+      "predicate_id",
+      "object_id",
+      "object_label",
+      "object_source",
+      "mapping_justification",
+      "source",
+      "mapping_date",
+      "confidence",
+      "comment",
+      "other",
+      "validation_method"
+    ],
+    "xanthine_rows": [
+      {
+        "position": 2961,
+        "mapping": {
+          "subject_id": "MIM:Xanthine",
+          "subject_label": "Xanthine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17712",
+          "object_label": "9H-xanthine",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+          "mapping_date": "2026-09-23",
+          "confidence": "0.8",
+          "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+          "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+          "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+        },
+        "row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c"
+      }
+    ]
+  },
+  "actual_native": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/ancillary1258-worktree/reports/all_unmatched_20261107/ancillary1258-generation-v1/candidate.sssom.tsv",
+    "sha256": "a144f7e86327c0225e2ac02d997a8fb63697ebe4df1880d045afcbe30663854a",
+    "row_count": 3007,
+    "fields": [
+      "subject_id",
+      "subject_label",
+      "predicate_id",
+      "object_id",
+      "object_label",
+      "object_source",
+      "mapping_justification",
+      "source",
+      "mapping_date",
+      "confidence",
+      "comment",
+      "other",
+      "validation_method"
+    ],
+    "xanthine_rows": [
+      {
+        "position": 2972,
+        "mapping": {
+          "subject_id": "MIM:Xanthine",
+          "subject_label": "Xanthine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17712",
+          "object_label": "9H-xanthine",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+          "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+        },
+        "row_sha256": "d20db1248afe7c61f1fe8773239e6d96bc9d578400d3cfa2d37bec85dca34491"
+      }
+    ]
+  },
+  "bounded_proposed_fix": "Through separately authorized native publication field preservation, retain exactly old comment (preserve_fields=[comment]); other12nativefields as scientifically qualified. Do not alter source owner, immutable candidate, code/gates, confidence semantics or old history.",
+  "recommended_row_sha256": "79bf8781b02fdd3b013ccdd1abf22b0bc1d10429d020c82c17b4c433fdc0ef24",
+  "dedup_context": [
+    "Existing #760 scopes ingredient17712 versus trait15318; do not reopen global identity choice.",
+    "#1258 concerns source method provenance already genuinely applied; this row preservation requirement is not that old owner defect.",
+    "Generated candidate is not published: report bounded condition for eventual publication, not a claim of current canonical corruption or all3007row defect."
+  ],
+  "GitHub_mutation": false,
+  "canonical_correction_applied": false
+}

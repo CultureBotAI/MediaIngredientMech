@@ -1,0 +1,85 @@
+"""Bounded independent method-contract assessment; no candidate/source mutation."""
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json,subprocess,yaml
+R=Path.cwd(); C=R.parents[2]; K=C/'integration/release-worktree'; O=R/'.temp/ancillary-xanthine1258-proposal-v1'; F=Path(__file__).resolve().parent
+Q=C/'workers/w09/worktree/.temp/final-companion-candidate-review-v2'
+start=datetime.now(timezone.utc).isoformat(); bindings=[]; checks=[]; commands=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def canon(x):return sha(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())
+def bind(p,h=None):
+ p=Path(p);a=sha(p.read_bytes());bindings.append({'path':str(p),'sha256':a})
+ if h is not None:check('exact bytes '+str(p),a==h)
+ return a
+def check(n,v):
+ checks.append({'check':n,'passed':bool(v)})
+ if not v:raise AssertionError(n)
+def load(p):bind(p);return json.loads(p.read_bytes())
+def save(p,x):
+ with p.open('x') as f:json.dump(x,f,indent=2);f.write('\n')
+def git(args):
+ p=subprocess.run(['git',*args],cwd=K,capture_output=True);commands.append({'argv':['git',*args],'cwd':str(K),'exit_code':p.returncode,'stdout':p.stdout.decode(),'stderr':p.stderr.decode()});assert p.returncode==0;return p.stdout
+initial=load(O/'input-bindings-initial.json')
+for x in initial:
+ bind(x['original'],x['sha256']);bind(R/x['copy'],x['sha256'])
+ if x['original'].startswith(str(K)+'/'):
+  rel=str(Path(x['original']).relative_to(K));check('exact pinned5288 Git blob '+rel,sha(git(['show','5288c882def177b1b9a5eee2975f039db780ac4e:'+rel]))==x['sha256'])
+head=git(['rev-parse','HEAD']).decode().strip();delta=git(['diff','--name-only','5288c882def177b1b9a5eee2975f039db780ac4e',head]).decode().splitlines()
+schema=yaml.safe_load((O/'inputs/02-mediaingredientmech.yaml').read_bytes());quality=schema['enums']['MappingQualityEnum']['permissible_values'];evidence=schema['enums']['EvidenceTypeEnum']['permissible_values']
+check('native distinct method and evidence definitions',quality['MANUAL_CURATION']['description']=='Manually curated by expert' and quality['LLM_ASSISTED']['description']=='Mapping suggested by LLM, human-verified' and 'human reviewer' in evidence['MANUAL_CURATION']['description'])
+owner=yaml.safe_load((O/'inputs/07-Xanthine.yaml').read_bytes());check('exact current owner before grade',owner['ontology_mapping']['mapping_quality']=='CAS_RN_LOOKUP' and owner['identifier']=='CHEBI:17712')
+for p in [K/'docs/CURATION_GUIDE.md',K/'docs/INGREDIENT_SCOPE_PROFILE.md',K/'src/mediaingredientmech/sssom_grading.py',O/'inputs/user-task.txt'] :bind(p)
+guide=(K/'docs/CURATION_GUIDE.md').read_text();profile=(K/'docs/INGREDIENT_SCOPE_PROFILE.md').read_text()
+check('manual judgment and scoped representation explicit','Expert curator made a judgment call' in guide and 'Reviewed ingredient representation with cas:69-89-6' in profile and 'does not prove a tautomer-pure physical reagent' in profile)
+primary=[]
+for stem,hh in [('chebi17712','2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60'),('chebi7hxanthine','b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5')]:
+ p=Q/f'science/chemistry/captures/{stem}.capture';m=load(Q/f'science/chemistry/captures/{stem}-metadata.json');bind(p,hh);b=load(p)
+ check('actual original capture URL time status and hash '+stem,m['sha256']==hh and m['status']==200 and m['url']==m['final_url'] and m['request_started_at']<m['accessed_at'])
+ check('literal shared CAS and Xanthine name '+stem,'69-89-6' in {x['accession_number'] for x in b['database_accessions']['CAS']} and 'Xanthine' in {x['ascii_name'] for x in b['names']['SYNONYM']})
+ primary.append({'path':str(p),'sha256':hh,'original_request_metadata':m,'definition':b['definition'],'CAS_entries':b['database_accessions']['CAS'],'Xanthine_name_entries':[x for x in b['names']['SYNONYM'] if x['ascii_name']=='Xanthine'],'default_structure':b['default_structure']})
+check('shared normalized structure is not a unique selector',primary[0]['default_structure']['standard_inchi']==primary[1]['default_structure']['standard_inchi'])
+scope={}
+for fn,key,outkey in [('proposed/owner-assessments.json','owners','whole_owner'),('proposed/row-assessments.json','rows','whole_row'),('proposed/claim-assessments.json','claims','claims')]:
+ obj=load(Q/fn);selected=[x for x in obj[key] if x.get('owner_record')=='data/ingredients/mapped/Xanthine.yaml'];scope[outkey]=selected
+check('full prior owner row two claims recovered',len(scope['whole_owner'])==len(scope['whole_row'])==1 and len(scope['claims'])==2)
+scope['peer_scope']=load(Q/'skeptical/peer-chemistry.json');scope['finding']=next(x for x in load(Q/'science/chemistry/findings.json')['new_findings'] if x['finding_id']=='FC2-XANTHINE-METHOD-001')
+scope['primary']=primary;save(F/'prior-xanthine-scope.json',scope)
+row=scope['whole_row'][0]['row'];check('complete historical13field row hash',len(row)==13 and canon(row)==scope['whole_row'][0]['row_sha256']=='2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c')
+check('supported manual row does not assert uniqueCAS method',row['mapping_justification']=='semapv:ManualMappingCuration' and scope['whole_owner'][0]['author_assessment']['verdict']=='needs_curation' and scope['whole_row'][0]['assessment']['disposition']=='SUPPORTED')
+issue=load(O/'inputs/11-readback-00.json');previous=load(O/'inputs/12-760.json')
+check('saved exact issue1258 before any candidate correction',issue['number']==1258 and issue['state']=='open' and issue['comments']==0 and issue['body']==(O/'inputs/10-issue.md').read_text())
+check('accepted760 scope and empty captured comments',previous['number']==760 and previous['state']=='CLOSED' and previous['comments']==[] and 'CHEBI:17712 / CAS 69-89-6' in previous['body'] and 'generic traits use CHEBI:15318' in previous['body'])
+result={'verdict':'supported_bounded_method_recommendation','scientific_review':False,'candidate_author':'Codex /root','reviewer':{'identity':'Codex /root/buffers_research','independent_of_candidate_author':True,'prior_participation':'Prior W10 buffer/HCl/serum authorship and independent technical/metadata reviews; no W09 Xanthine companion-science/candidate authorship. Prior method familiarity is disclosed; no blinded review or human expertise credential is claimed.'},'recommendation':'MANUAL_CURATION','scope':'MappingQuality method applicability for the unchanged accepted scoped CHEBI17712 representation only. Complete owner and both exact ChEBI captures read; not an independent whole-owner scientific vote, candidate acceptance, native application or release.','basis':[
+'MAPPING_SEMANTICS section0 makes mapping quality a provenance/fit statement. Shared69-89-6 and sharedXanthine name do not perform a uniqueCAS or unique-synonym selection. Existing chemistry/history alone cannot manufacture such uniqueness.',
+'The actual performed process is a considered, nonlexical curator reassessment retaining the prior accepted760 ingredient scope, tested against both competing ChEBI entries and the explicit ingredient-scope profile. MappingQuality.MANUAL_CURATION names this expert-judgment method; it does not itself assert human authorship, professional credentials or a new physical tautomer determination.',
+'This conclusion uses the exact enum and the narrower supporting native guide, not a historical example or the existing SSSOM justification alone. The separate MappingEvidence.MANUAL_CURATION enum explicitly requires human evidence; MappingQuality.LLM_ASSISTED explicitly requires human verification. Those claims are not supplied by this review.',
+'The prior whole-owner review retained17712 and the qualifiedCAS annotation, while identifying only the unsupported selection-method grade. Generic source observations remain15318; tautomer-pure physical preparation, registry uniqueness and global child/parent equivalence are not newly established.'
+],'alternatives':[
+{'method':'CAS_RN_LOOKUP','disposition':'reject_current_claim','reason':'Both actual ontology bodies contain69-89-6, so the uniqueness prerequisite is false.'},
+{'method':'EXACT_MATCH or SYNONYM_MATCH','disposition':'reject_convenient_regrade','reason':'No new unique lexical resolution was performed. Xanthine is a synonym in both17712 and48517; preferred owner name is not the17712 primary label.'},
+{'method':'LLM_ASSISTED','disposition':'not_supported','reason':'Native definition requires human-verified mapping. No new human verification is claimed or supplied; original accepted scope is not evidence of human verification of this new method correction.'},
+{'method':'PROVISIONAL','disposition':'not_required_by_present_scope','reason':'Native definition is a tentative mapping needing verification. The narrowly accepted17712 representation is not newly tentative merely because its historicalCAS method was misstated. Use only if the actual scoped identity decision becomes genuinely unresolved, with a precise missing fact.'},
+{'method':'CLOSE_MATCH, NARROW_MATCH, BROAD_MATCH, FALLBACK_REGISTRY, PLACEHOLDER or LEXICAL_MATCH','disposition':'not_the_performed_method','reason':'Would encode an unsupported semantic-distance, registry or lexical process change. They are not substitutes for honest method provenance.'}],
+'proposed_candidate_constraints':[
+'Change only mapping_quality, narrowly necessary explanatory provenance and truthful appended history. Preserve exact identifier/ontology ID/canonical label/status, all aliases, chemistry, occurrence counts and source boundaries.',
+'Retain originalCAS evidence and existing scope judgment as historical evidence, explicitly not current uniqueCAS proof; do not erase original events or overwrite their statements.',
+'Any new agent-authored decision/evidence should identify the actual agent and llm_assisted=true; LLM_SUGGESTION is available for new MappingEvidence. Do not create evidence_type MANUAL_CURATION, human-verified claims, REVIEWED status or a human curator attribution.',
+'Full exact candidate/row and real native predicate/writer regression remain pending. The own-identifier exactMatch contract is independent of method grade; do not infer a predicate change from the standalone grading utility.',
+'No original case/shard accounting,934-operation plan, source/role/export hold, fullcanonicalposition or finalhead changes follow from this ancillary private proposal.'
+],'currentness':{'pinned_K_head':'5288c882def177b1b9a5eee2975f039db780ac4e','observed_K_head':head,'observed_commit_delta_paths':delta,'all_initial_K_owner_and_contract_bytes_equal_pinned_Git_blobs':True,'changing_publication_code_executed':False},'prior_scope_projection':{'path':str(F/'prior-xanthine-scope.json'),'sha256':sha((F/'prior-xanthine-scope.json').read_bytes()),'old_packet_approval_inherited':False},'checks':checks,'read_only_commands':commands,'input_bindings':bindings,'execution_started_at':start,'execution_finished_at':datetime.now(timezone.utc).isoformat(),'timing_note':'Source/contract reading preceded this instrumented binding pass; exact reading start was not recorded.','script_sha256':sha(Path(__file__).read_bytes()),'findings':[],'existing_open_finding':'FC2-XANTHINE-METHOD-001 / issue1258, still open; no correction applied by this assessment','candidate_review_pending':True}
+save(F/'method-assessment-v1.json',result)
+with (F/'method-assessment-v1.md').open('x') as f:f.write('''# Xanthine method assessment
+
+Recommend **MANUAL_CURATION**, limited to the actually performed curator reassessment retaining the accepted #760 / CHEBI:17712 ingredient representation. This method recommendation is not candidate approval or a new whole-owner scientific vote.
+
+The native quality enum says “Manually curated by expert”; the native guide specifies an expert judgment call. It does not impose the explicit human provenance required by the distinct evidence-type MANUAL_CURATION or by mapping-quality LLM_ASSISTED. Record actual agent authorship and LLM assistance, with no invented human verification or credentials.
+
+Both inspected primary ChEBI bodies carry CAS69-89-6 and Xanthine; neither a uniqueCAS nor unique-synonym selection has been performed. Their shared normalized structure also cannot establish tautomer purity. PROVISIONAL would imply a tentative mapping, whereas the accepted bounded representation remains supported. Generic traits retain CHEBI:15318 and all source/role/export limits remain.
+
+The original CAS lookup and scope judgment must remain historical evidence. The new candidate needs explicit method rationale, truthful appended history, new agent evidence with honest type, exact identity/aliases/chemistry/occurrence preservation, and independent whole-candidate/row verification. No method is selected merely to obtain a desired native predicate.
+
+The observed K head advanced from5288 to e0a75a0c; only campaign_publication.py and its test changed between those commits. All eight initial owner/contract inputs remain byte-identical to5288 Git blobs. The changed publication code was not executed. Exact source hashes, original capture times, prior full Xanthine scope and checks are in the structured receipt.
+''')
+members=['assess_method.py','prior-xanthine-scope.json','method-assessment-v1.json','method-assessment-v1.md']
+save(F/'method-assessment-v1-manifest.json',{'path_root':str(F),'files':[{'path':n,'sha256':sha((F/n).read_bytes())} for n in members],'sealed_subset_only':True,'future_separate_candidate_reviews_may_be_added':True})
+print(json.dumps({'report_sha256':sha((F/'method-assessment-v1.json').read_bytes()),'manifest_sha256':sha((F/'method-assessment-v1-manifest.json').read_bytes()),'checks':len(checks),'observed_K_head':head}))

@@ -1,0 +1,119 @@
+[
+  {
+    "field": "subject_id",
+    "old": "MIM:Xanthine",
+    "native": "MIM:Xanthine",
+    "recommendation": "MIM:Xanthine",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Stable exact maintained owner slug; no new source case or generic trait assertion."
+  },
+  {
+    "field": "subject_label",
+    "old": "Xanthine",
+    "native": "Xanthine",
+    "recommendation": "Xanthine",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Retained Xanthine ingredient label under section3 convention and #760 contextual scope. It does not force every bare trait observation to the child."
+  },
+  {
+    "field": "predicate_id",
+    "old": "skos:exactMatch",
+    "native": "skos:exactMatch",
+    "recommendation": "skos:exactMatch",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Own CHEBI17712 identity row stays exactMatch under RuleD and retained ingredient representation. Not a parent-child/global tautomer equivalence."
+  },
+  {
+    "field": "object_id",
+    "old": "CHEBI:17712",
+    "native": "CHEBI:17712",
+    "recommendation": "CHEBI:17712",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Retain CHEBI17712 under explicit #760 representation decision, not unique CAS or shared name. Generic trait CHEBI15318 remains separate; no switch to48517 inferred."
+  },
+  {
+    "field": "object_label",
+    "old": "9H-xanthine",
+    "native": "9H-xanthine",
+    "recommendation": "9H-xanthine",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Exact primary ChEBI ascii_name9H-xanthine. It describes reviewed ontology representation, not proven physical reagent purity."
+  },
+  {
+    "field": "object_source",
+    "old": "obo:chebi.owl",
+    "native": "obo:chebi.owl",
+    "recommendation": "obo:chebi.owl",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "obo:chebi.owl correctly denotes target ontology."
+  },
+  {
+    "field": "mapping_justification",
+    "old": "semapv:ManualMappingCuration",
+    "native": "semapv:ManualMappingCuration",
+    "recommendation": "semapv:ManualMappingCuration",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "ManualMappingCuration truthfully matches the deliberate scope/method review. It does not imply a human performed it."
+  },
+  {
+    "field": "source",
+    "old": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+    "native": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+    "recommendation": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "New six tokens correctly trace current evidence objects/latestcurator plus actual KG native source. Prior source-chain strings remain historical provenance, not evidence that new bytes were approved."
+  },
+  {
+    "field": "mapping_date",
+    "old": "2026-09-23",
+    "native": "2026-11-08",
+    "recommendation": "2026-11-08",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "2026-11-08 is actual latest curation-history date per pinned builder, not the acquisition date or date of independent scope approval. Historical09-23 event survives."
+  },
+  {
+    "field": "confidence",
+    "old": "0.8",
+    "native": "0.9",
+    "recommendation": "0.9",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "0.9 is pinned builder default for MANUAL_CURATION, not a measured probability or demonstrated scientific certainty increase from0.8. Retain as explicit generated grade if full scoped row is reviewed; no requirement to revive0.8 as science."
+  },
+  {
+    "field": "comment",
+    "old": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+    "native": "",
+    "recommendation": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+    "native_value_supported": false,
+    "disposition": "RETAIN_EXACT_OLD_SCOPE_COMMENT",
+    "reason": "WITHHOLD blank replacement. Existing #760 scope restrictions remain material and are repeated in current owner evidence/history/notes and #1258. Preserve exact old comment through native publisher field preservation; scope has not been rescinded."
+  },
+  {
+    "field": "other",
+    "old": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "native": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "recommendation": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Seven exact literal tokens unchanged. Six lexical aliases individually appear in ChEBI17712 names; CAS69-89-6 supported as qualified registry annotation shared with48517, never a unique tautomer selector."
+  },
+  {
+    "field": "validation_method",
+    "old": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+    "native": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+    "recommendation": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+    "native_value_supported": true,
+    "disposition": "KEEP_NATIVE_VALUE_WITH_EXPLICIT_SCOPE",
+    "reason": "Retain only as truthful historical replay from old canonical tuple, not a fresh validation or full current-owner approval. Its SCOPE_REVIEW meaning requires the retained scope text and separate fresh current-row assessment."
+  }
+]

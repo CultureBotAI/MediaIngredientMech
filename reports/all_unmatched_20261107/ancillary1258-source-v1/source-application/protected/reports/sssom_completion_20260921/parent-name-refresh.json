@@ -1,0 +1,668 @@
+{
+  "schema_version": 1,
+  "scope": "Bounded synonym-only refresh; no new identity, predicate, confidence or provenance assertion.",
+  "producer_pin": "44db08d59226073425b206a36a257b2b6a8900df",
+  "producer_sha256": "62fec32826c54257d39daee0ca688f546222a92e730db106cdfd6fbb232cd4d8",
+  "before_sha256": "761b7dee1e7eef7ecd999a848f6188fe1a0d394c79a8b53b957c2e477cec9f3f",
+  "after_sha256": "d51304e7bd30aac75d1f35750e9da37749190080208a99fcc5e71c59deba8792",
+  "row_count": 3018,
+  "changed_rows": 17,
+  "removed_tokens": 26,
+  "changes": [
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "source_record_sha256": "8d5da3b1c891a79adf823a2ea778b04ef2658cc6bc175469631251c3874a314b",
+      "source_position": 184,
+      "before": {
+        "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+        "subject_label": "4-Methyl-2-oxopentanoic acid sodium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:48430",
+        "object_label": "4-methyl-2-oxopentanoic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=backfill_parent_terms|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "4-Methyl-2-oxovaleric acid|Sodium 4-methyl-2-oxovalerate|4-Methyl-2-oxopentanoate",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+        "subject_label": "4-Methyl-2-oxopentanoic acid sodium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:48430",
+        "object_label": "4-methyl-2-oxopentanoic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=backfill_parent_terms|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "4-Methyl-2-oxovaleric acid|Sodium 4-methyl-2-oxovalerate",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "4-Methyl-2-oxopentanoate"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml",
+      "source_record_sha256": "a6b198976cd6372b3a4acba53b8fe91ceb680f51e53cb4c3b4bf02da8d2bab87",
+      "source_position": 362,
+      "before": {
+        "subject_id": "MIM:Ammonium_Molybdate_Tetrahydrate",
+        "subject_label": "ammonium molybdate tetrahydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:91249",
+        "object_label": "ammonium molybdate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=claude_in_session_curation]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Diammonium molybdate|bisammonium dioxido(dioxo)molybdenum|(NH4)6Mo7O4|(NH4)6MoO24\u00b74H2O|(NH4)6MoO7O24|(NH4)6MoO7O24 x 4 H2O|(NH4)Mo7O24\u00b74H2O|(NH4)MoO7O24|(NH4)MoO7O24 x 4 H2O|CAS:12054-85-2",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Ammonium_Molybdate_Tetrahydrate",
+        "subject_label": "ammonium molybdate tetrahydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:91249",
+        "object_label": "ammonium molybdate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=claude_in_session_curation]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Diammonium molybdate|(NH4)6Mo7O4|(NH4)6MoO24\u00b74H2O|(NH4)6MoO7O24|(NH4)6MoO7O24 x 4 H2O|(NH4)Mo7O24\u00b74H2O|(NH4)MoO7O24|(NH4)MoO7O24 x 4 H2O|CAS:12054-85-2",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "bisammonium dioxido(dioxo)molybdenum"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+      "source_record_sha256": "333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241",
+      "source_position": 679,
+      "before": {
+        "subject_id": "MIM:Cecl3_X_7_H2o",
+        "subject_label": "CeCl3 x 7 H2O",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:35458",
+        "object_label": "cerium trichloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=hydrate_family_cas|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=enrich_mim_cas_rn_batch]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-08-29",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "cerium(3+) chloride|cerium(III) chloride|trichloridocerium",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Cecl3_X_7_H2o",
+        "subject_label": "CeCl3 x 7 H2O",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:35458",
+        "object_label": "cerium trichloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=hydrate_family_cas|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=enrich_mim_cas_rn_batch]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-08-29",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "cerium(3+) chloride",
+        "cerium(III) chloride",
+        "trichloridocerium"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Galacturonic_Acid_Monohydrate.yaml",
+      "source_record_sha256": "f6ec943a6dd111bae602dc7f62b3e37b503f0980aba016e9cb9971d079c5d8f9",
+      "source_position": 893,
+      "before": {
+        "subject_id": "MIM:D-Galacturonic_Acid_Monohydrate",
+        "subject_label": "D-Galacturonic Acid monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:18024",
+        "object_label": "D-galacturonic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:MIM curation (#321)|MIM:curator=add_water_of_hydration|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[bacdive_api]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "D-galacturonate|CAS:91510-62-2",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:D-Galacturonic_Acid_Monohydrate",
+        "subject_label": "D-Galacturonic Acid monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:18024",
+        "object_label": "D-galacturonic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:MIM curation (#321)|MIM:curator=add_water_of_hydration|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[bacdive_api]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:91510-62-2",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "D-galacturonate"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+      "source_record_sha256": "cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5",
+      "source_position": 911,
+      "before": {
+        "subject_id": "MIM:D-Maltose_Monohydrate",
+        "subject_label": "D-Maltose monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:17306",
+        "object_label": "maltose",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:family_mismatch_fix|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_energy_source]|kgm:mediaingredientmech_reviewed[curator=merge_cas_conflict_duplicates]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Maltose Hydrate|Maltose monohydrate|alpha-D-glucopyranosyl-(1->4)-D-glucopyranose|alpha-D-glucopyranosyl-(1->4)-D-glucose|CAS:6363-53-7",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:D-Maltose_Monohydrate",
+        "subject_label": "D-Maltose monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:17306",
+        "object_label": "maltose",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:family_mismatch_fix|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_energy_source]|kgm:mediaingredientmech_reviewed[curator=merge_cas_conflict_duplicates]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Maltose Hydrate|Maltose monohydrate|CAS:6363-53-7",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "alpha-D-glucopyranosyl-(1->4)-D-glucopyranose",
+        "alpha-D-glucopyranosyl-(1->4)-D-glucose"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "source_record_sha256": "280c8b5687a3ccd348984cd3b37518d2d1d298a80d1cd0c2b9a911b06f9a0535",
+      "source_position": 913,
+      "before": {
+        "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+        "subject_label": "D-Mannose 6-phosphate sodium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:17369",
+        "object_label": "D-mannose 6-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "Mannose-6-Phosphate|D-mannose 6-(dihydrogen phosphate)",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+        "subject_label": "D-Mannose 6-phosphate sodium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:17369",
+        "object_label": "D-mannose 6-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "Mannose-6-Phosphate",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "D-mannose 6-(dihydrogen phosphate)"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml",
+      "source_record_sha256": "1799f0371433518f3a4add09e07a602ffbc153545880ce15666f6b0399f51a3e",
+      "source_position": 1576,
+      "before": {
+        "subject_id": "MIM:L-Aspartic_Acid_Potassium_Salt",
+        "subject_label": "L-Aspartic acid potassium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:17053",
+        "object_label": "L-aspartic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "(2S)-2-aminobutanedioic acid|ASPARTIC ACID",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:L-Aspartic_Acid_Potassium_Salt",
+        "subject_label": "L-Aspartic acid potassium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:17053",
+        "object_label": "L-aspartic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "(2S)-2-aminobutanedioic acid",
+        "ASPARTIC ACID"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "source_record_sha256": "b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa",
+      "source_position": 1579,
+      "before": {
+        "subject_id": "MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate",
+        "subject_label": "L-Aspartic acid sodium salt monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:17053",
+        "object_label": "L-aspartic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "(2S)-2-aminobutanedioic acid|ASPARTIC ACID|CAS:323194-76-9",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate",
+        "subject_label": "L-Aspartic acid sodium salt monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:17053",
+        "object_label": "L-aspartic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:323194-76-9",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "(2S)-2-aminobutanedioic acid",
+        "ASPARTIC ACID"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml",
+      "source_record_sha256": "0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e",
+      "source_position": 1589,
+      "before": {
+        "subject_id": "MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate",
+        "subject_label": "L-Glutamic acid monopotassium salt monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:16015",
+        "object_label": "L-glutamic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium salt|(2S)-2-aminopentanedioic acid|GLUTAMIC ACID|CAS:6382-01-0",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate",
+        "subject_label": "L-Glutamic acid monopotassium salt monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:16015",
+        "object_label": "L-glutamic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium salt|CAS:6382-01-0",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "(2S)-2-aminopentanedioic acid",
+        "GLUTAMIC ACID"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Nicl2_X_2_H2o.yaml",
+      "source_record_sha256": "ab4f6d9e5c9b4b7bf7151b6541d357f074ac6b4876cc61fd8be82cf7c85b46dd",
+      "source_position": 2108,
+      "before": {
+        "subject_id": "MIM:Nicl2_X_2_H2o",
+        "subject_label": "NiCl2 x 2 H2O",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:34887",
+        "object_label": "nickel dichloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "NiCl2 x 2H2O|NiCl2\u00b72H2O|nickel(2+) chloride|nickel(II) chloride",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Nicl2_X_2_H2o",
+        "subject_label": "NiCl2 x 2 H2O",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:34887",
+        "object_label": "nickel dichloride",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "NiCl2 x 2H2O|NiCl2\u00b72H2O",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "nickel(2+) chloride",
+        "nickel(II) chloride"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Niso4_X_7_H2o.yaml",
+      "source_record_sha256": "18aac3d02606aacb2241a62f07e243436a4aa616685b826333d87f04caee75ff",
+      "source_position": 2121,
+      "before": {
+        "subject_id": "MIM:Niso4_X_7_H2o",
+        "subject_label": "NiSO4 x 7 H2O",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:53504",
+        "object_label": "nickel sulfate heptahydrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321)|MIM:MIM curation (#374/#334)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "NiSO4\u30fb7H2O|nickel(2+) sulfate",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Niso4_X_7_H2o",
+        "subject_label": "NiSO4 x 7 H2O",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:53504",
+        "object_label": "nickel sulfate heptahydrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321)|MIM:MIM curation (#374/#334)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "NiSO4\u30fb7H2O",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "nickel(2+) sulfate"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml",
+      "source_record_sha256": "fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d",
+      "source_position": 2125,
+      "before": {
+        "subject_id": "MIM:Nitrilotriacetic_Acid_Disodium_Salt",
+        "subject_label": "Nitrilotriacetic acid disodium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:44557",
+        "object_label": "nitrilotriacetic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "N,N-bis(carboxymethyl)glycine",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:Nitrilotriacetic_Acid_Disodium_Salt",
+        "subject_label": "Nitrilotriacetic acid disodium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:44557",
+        "object_label": "nitrilotriacetic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "N,N-bis(carboxymethyl)glycine"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml",
+      "source_record_sha256": "9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848",
+      "source_position": 2313,
+      "before": {
+        "subject_id": "MIM:Poly_3-hydroxybutyric_Acid",
+        "subject_label": "Poly(3-hydroxybutyric acid)",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:20067",
+        "object_label": "3-hydroxybutyric acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "3-hydroxybutanoic acid",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:Poly_3-hydroxybutyric_Acid",
+        "subject_label": "Poly(3-hydroxybutyric acid)",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:20067",
+        "object_label": "3-hydroxybutyric acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "3-hydroxybutanoic acid"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml",
+      "source_record_sha256": "94fff493bf4b0ddc19144054a44305ea29de113477254be64e1dc86c0f128f51",
+      "source_position": 2556,
+      "before": {
+        "subject_id": "MIM:Sn-Glycerol_3-phosphate_Lithium_Salt",
+        "subject_label": "sn-Glycerol 3-phosphate lithium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:15978",
+        "object_label": "sn-glycerol 3-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "Glycerol 3-phosphate|(2R)-2,3-dihydroxypropyl dihydrogen phosphate|sn-glycerol 3-(dihydrogen phosphate)",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:Sn-Glycerol_3-phosphate_Lithium_Salt",
+        "subject_label": "sn-Glycerol 3-phosphate lithium salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:15978",
+        "object_label": "sn-glycerol 3-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "Glycerol 3-phosphate",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "(2R)-2,3-dihydroxypropyl dihydrogen phosphate",
+        "sn-glycerol 3-(dihydrogen phosphate)"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "source_record_sha256": "185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1",
+      "source_position": 2560,
+      "before": {
+        "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+        "subject_label": "sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:15978",
+        "object_label": "sn-glycerol 3-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "Glycerol 3-phosphate|(2R)-2,3-dihydroxypropyl dihydrogen phosphate|sn-glycerol 3-(dihydrogen phosphate)",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "after": {
+        "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+        "subject_label": "sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:15978",
+        "object_label": "sn-glycerol 3-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "Glycerol 3-phosphate",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "removed_tokens": [
+        "(2R)-2,3-dihydroxypropyl dihydrogen phosphate",
+        "sn-glycerol 3-(dihydrogen phosphate)"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+      "source_record_sha256": "6884d4a46259d1e6276a9a83c09079678f0da84c7e468181266115788d316d20",
+      "source_position": 2579,
+      "before": {
+        "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+        "subject_label": "sodium carbonate monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:29377",
+        "object_label": "sodium carbonate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped_v2]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Sodium carbonate solution|disodium trioxidocarbonate|CAS:5968-11-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+        "subject_label": "sodium carbonate monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:29377",
+        "object_label": "sodium carbonate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped_v2]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Sodium carbonate solution|CAS:5968-11-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "disodium trioxidocarbonate"
+      ]
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml",
+      "source_record_sha256": "221d045730234ed597aa3a75ad8880a0ffd43aefd881832b29b33108172abd99",
+      "source_position": 2589,
+      "before": {
+        "subject_id": "MIM:Sodium_Deoxycholate_Monohydrate",
+        "subject_label": "Sodium deoxycholate monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:9177",
+        "object_label": "sodium deoxycholate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Sodim deoxycholate monohydrate|sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate|CAS:145224-92-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Sodium_Deoxycholate_Monohydrate",
+        "subject_label": "Sodium deoxycholate monohydrate",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:9177",
+        "object_label": "sodium deoxycholate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Sodim deoxycholate monohydrate|CAS:145224-92-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "removed_tokens": [
+        "sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate"
+      ]
+    }
+  ]
+}

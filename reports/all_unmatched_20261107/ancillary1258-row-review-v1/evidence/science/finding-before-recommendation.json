@@ -1,0 +1,25 @@
+{
+  "finding_id": "W03-ACTUAL-XANTHINE-SCOPE-001",
+  "reviewer": "/root/actual_xanthine_science",
+  "scope": "Actual native Xanthine row only; no source correction or broad generator defect asserted",
+  "status": "confirmed_publication_condition",
+  "severity": "major",
+  "native_priority": "P2",
+  "current_owner_sha256": "747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546",
+  "old_canonical_sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+  "candidate_sha256": "a144f7e86327c0225e2ac02d997a8fb63697ebe4df1880d045afcbe30663854a",
+  "old_position": 2961,
+  "candidate_position": 2972,
+  "field": "comment",
+  "observed": "The actual native candidate removes the entire existing scope comment while retaining manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23. The old comment restricts CHEBI:17712 to the retained ingredient representation, reserves CHEBI:15318 for generic traits, and expressly withholds tautomer purity/new 9H specificity for unqualified source occurrences.",
+  "primary_evidence": [
+    "ChEBI17712 capture SHA2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60: named9H child, is_a15318; CAS69-89-6",
+    "ChEBI48517 capture SHAb6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5: distinct named7H child, same CAS/name/standardInChI and capturedSMILES",
+    "ChEBI15318 capture SHAebfd4d3083325632f86320f5e553629153c6a7214211f036981e897ebf6ec537: generic xanthine with both children"
+  ],
+  "historical_authority": "Exact archived issue760 and chemical-scope-review.md bind a context-dependent canonical representation, not global parent-child identity. Issue1258 preserves that scope and corrects only the method provenance.",
+  "bounded_proposed_fix": "For Xanthine publication only, preserve the exact current canonical comment value via the native field-preservation mechanism, with this actual owner/full-row review as explicit evidence. Do not patch source YAML, generator, native verdict or canonical TSV in this review. Retain the historical SCOPE_REVIEW stamp as historical, not a claim that the whole new row was reviewed in2026-09-23. Re-review/readback the exact final published tuple through the separate native workflow.",
+  "dedup_context": ["#760 scope decision", "#1258 method correction; not a repeat of its corrected CAS_RN_LOOKUP defect"],
+  "correction_performed": false,
+  "scientific_support_for_blank_comment": false
+}

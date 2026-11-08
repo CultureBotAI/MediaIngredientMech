@@ -1,0 +1,29 @@
+from pathlib import Path
+import json,hashlib,datetime
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';O=R/'.temp/ancillary-xanthine1258-proposal-v1'
+load=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+rows=[]
+for n in ['input-bindings-initial.json','input-bindings-additional.json']:
+    for x in load(O/n):rows.append({'path':x['original'],'sha256':x['sha256'],'existing_copy':x['copy']})
+for name,key in [('science/science.json','input_hashes'),('skeptic/candidate-review.json','input_bindings'),('technical/technical.json','input_bindings'),('technical/candidate-checks.json','executed_modules'),('technical/preflight.json','input_bindings'),('technical/native-owner-index-inventory.json','records')]:
+    xs=load(O/name)[key]
+    if isinstance(xs,dict):xs=[{'path':p,'sha256':h} for p,h in xs.items()]
+    rows+=xs
+known={x['path']:x.get('existing_copy') for x in rows if x.get('existing_copy')};seen={};bound=[];(O/'inputs/closure').mkdir()
+for x in rows:
+    p=Path(x['path']);p=p if p.is_absolute() else R/p
+    assert p.is_file(),p
+    h=sha(p);assert h==x['sha256'],(p,h,x['sha256'])
+    if str(p) in seen:assert seen[str(p)]==h;continue
+    seen[str(p)]=h
+    if str(p) in known:q=R/known[str(p)]
+    elif p.is_relative_to(R):q=p
+    elif p.is_relative_to(K) and (R/p.relative_to(K)).is_file() and sha(R/p.relative_to(K))==h:q=R/p.relative_to(K)
+    else:
+        q=O/'inputs/closure'/f'{h}-{p.name}'
+        if not q.exists():q.write_bytes(p.read_bytes())
+    assert sha(q)==h
+    bound.append({'original_path':str(p),'local_path':str(q.relative_to(R)),'sha256':h,'binding_kind':'exact existing working-tree byte' if not q.is_relative_to(O) else 'exact private capture'})
+out={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Exact actual scientific and technical input closure, including mechanical native owner-index records; only Xanthine scientifically assessed.','binding_count':len(bound),'bindings':bound,'no_external_bytes_changed':True}
+with (O/'input-closure.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'bindings':len(bound),'private_copies':sum((R/x['local_path']).is_relative_to(O) for x in bound),'existing_local_exact_paths':sum(not (R/x['local_path']).is_relative_to(O) for x in bound)}))

@@ -1,0 +1,65 @@
+"""Private method-only proposal. Does not apply or synchronize maintained data."""
+from pathlib import Path
+import sys,json,hashlib,copy,datetime,difflib
+import yaml
+R=Path.cwd();C=R.parents[2];K=C/'integration/release-worktree';O=R/'.temp/ancillary-xanthine1258-proposal-v1'
+sys.path.insert(0,str(K/'src'))
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.validation.write_validated import write_validated_ingredient
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def save(p,d):
+    with p.open('x') as f:json.dump(d,f,indent=2);f.write('\n')
+before=O/'inputs/07-Xanthine.yaml';assert sha(before)=='c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22'
+assert before.read_bytes()==(K/'data/ingredients/mapped/Xanthine.yaml').read_bytes()
+b=yaml.safe_load(before.read_text());a=copy.deepcopy(b)
+assert a['identifier']==a['ontology_mapping']['ontology_id']=='CHEBI:17712'
+assert a['ontology_mapping']['mapping_quality']=='CAS_RN_LOOKUP'
+assert a['chemical_properties']['cas_rn']=='69-89-6'
+assert len(a['curation_history'])==7 and len(a['ontology_mapping']['evidence'])==2
+a['ontology_mapping']['mapping_quality']='MANUAL_CURATION'
+notes=(
+ 'Private method correction proposed by worker10 /root (Codex), with LLM assistance, '
+ 'following direct source and contract assessment for issue 1258. MANUAL_CURATION records '
+ 'the deliberate, nonlexical review of the existing scoped ingredient representation '
+ 'retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760; it does not '
+ 'assert human verification. Primary ChEBI captures '
+ 'https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/ '
+ '(retrieved 2026-11-08T06:11:12.472556+00:00) and '
+ 'https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/ '
+ '(retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the name Xanthine. '
+ 'Neither the shared CAS nor the shared name uniquely selects CHEBI:17712. The original '
+ 'PubChem CAS_RN_CROSS_REFERENCE and prior curation evidence/history are preserved as '
+ 'historical provenance, not current proof of a unique CAS-to-target resolution. '
+ 'Retain CHEBI:17712 / CAS 69-89-6 as the accepted ingredient representation; generic '
+ 'xanthine trait observations retain CHEBI:15318 and the native child-to-parent relation. '
+ 'Standard InChI agreement, retained structures and unqualified recipe names do not '
+ 'establish a tautomer-pure reagent or confer 9H specificity on source occurrences. '
+ 'No identifier, chemistry, alias, occurrence, role or export approval changes are proposed.'
+)
+a['ontology_mapping']['evidence'].append({'evidence_type':'LLM_SUGGESTION','source':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1258','notes':notes})
+event=record_curation_event(a,curator='codex_worker10_xanthine1258',action='PROPOSED_MAPPING_METHOD_CORRECTION',changes=(
+ 'Private ancillary proposal for issue 1258: change ontology_mapping.mapping_quality '
+ 'from CAS_RN_LOOKUP to MANUAL_CURATION after deliberate source and scope review; '
+ 'append LLM_SUGGESTION evidence explaining the shared CAS/name and the retained issue '
+ '760 ingredient representation. Both CHEBI:17712 and CHEBI:48517 carry CAS 69-89-6, '
+ 'so CAS lookup does not uniquely select the target. Preserve all original evidence '
+ 'and seven history events, CHEBI:17712 identity, chemistry, aliases, occurrences and '
+ 'generic-trait CHEBI:15318 scope. This is agent-authored with LLM assistance; no human '
+ 'verification, tautomer-purity claim, maintained application or role/export approval.'
+),previous_status='MAPPED',new_status='MAPPED',llm_assisted=True)
+out=O/'candidate/Xanthine.yaml';assert not out.exists()
+write_validated_ingredient(a,out,schema_path=K/'src/mediaingredientmech/schema/mediaingredientmech.yaml')
+parsed=yaml.safe_load(out.read_text());assert parsed==a
+assert parsed['curation_history'][:-1]==b['curation_history']
+assert parsed['ontology_mapping']['evidence'][:-1]==b['ontology_mapping']['evidence']
+z=copy.deepcopy(parsed);z['ontology_mapping']['mapping_quality']=b['ontology_mapping']['mapping_quality'];z['ontology_mapping']['evidence'].pop();z['curation_history'].pop();assert z==b
+changes=[{'path':'/ontology_mapping/mapping_quality','before':'CAS_RN_LOOKUP','after':'MANUAL_CURATION'},{'path':'/ontology_mapping/evidence/2','operation':'append','value':a['ontology_mapping']['evidence'][-1]},{'path':'/curation_history/7','operation':'append','value':event}]
+save(O/'field-differences.json',changes)
+with (O/'candidate.diff').open('x') as f:f.writelines(difflib.unified_diff(before.read_text().splitlines(True),out.read_text().splitlines(True),fromfile='before/Xanthine.yaml',tofile='candidate/Xanthine.yaml'))
+executed=[]
+for name,mod in sorted(sys.modules.items()):
+    f=getattr(mod,'__file__',None)
+    if f and name.startswith('mediaingredientmech'):
+        p=Path(f).resolve();assert p.is_relative_to(K);executed.append({'module':name,'path':str(p),'sha256':sha(p)})
+save(O/'author-receipt.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'author':'worker10:/root','candidate_authored_by_review_assembler':True,'before':{'path':str(before),'sha256':sha(before)},'candidate':{'path':str(out),'sha256':sha(out)},'changes':changes,'guarded_writer':'mediaingredientmech.validation.write_validated.write_validated_ingredient','history_writer':'mediaingredientmech.curate.curation_event.record_curation_event','executed_modules':executed,'K_head':'5288c882def177b1b9a5eee2975f039db780ac4e','schema_sha256':sha(K/'src/mediaingredientmech/schema/mediaingredientmech.yaml'),'maintained_application':False,'new_source_cases':0,'owner_plan_changes':0,'human_verification_claimed':False,'role_or_export_approval':False})
+print(json.dumps({'candidate_sha256':sha(out),'changed_existing_fields':1,'appended_mapping_evidence':1,'appended_history':1,'old_history_preserved':7,'old_evidence_preserved':2}))

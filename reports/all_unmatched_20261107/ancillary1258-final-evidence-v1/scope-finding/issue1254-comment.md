@@ -1,0 +1,5 @@
+Private plan metadata finding ANCILLARY1258-SELECTED-PLAN-METADATA-001 (minor; confirmed before publication).
+
+The actual selected Xanthine plan `bdfab80203f05d632896e79b15fd3c919f959e47619c4e869c917694f6e88c1c` sets `rows[0].preserve_fields = ["comment"]`, but its inherited `scope` still says “exact native projection with no historical-field retention selected.” The separate derivation qualifies this inherited wording; it does not make the literal plan claim true. The root/C one-field-change constraint caused this metadata inconsistency; the constructor followed that constraint.
+
+This is not a source, scientific mapping, native guard or projection defect. Preserve this unpublished plan and create an immutable successor changing only the scope prose to describe exact historical comment retention and its bounded authority/holds. All other typed fields, the complete reviewed row, projection `d50988d274c040481c4090c369dce3a270ed2e84109fa90530080bcd91bfd49e` and trace must remain exact. Re-run native preparation and bounded successor verification before publication; do not rewrite the original W03 needs_curation review.

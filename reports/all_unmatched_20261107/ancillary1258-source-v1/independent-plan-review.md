@@ -1,0 +1,13 @@
+# Independent review of the actual Xanthine source-only plan
+
+**Pass with limitations; no findings.** Exact plan `f8567c87d2386540eb7d9ebfd8d19db2b96ac0e6506742aac9202c8e895283fb` binds A at `7b7a4fb1e557c2115d48aebedfeda0cc5eb7bbb5` and the genuine published W10 origin at `01c173bd914e7b18a04cf70a8e34688f7c1a083a`.
+
+The complete candidate changes only `CAS_RN_LOOKUP` to `MANUAL_CURATION` and appends truthful agent evidence/history. Its two old evidence objects, seven history events, seven aliases, chemistry, notes, counts and scoped CHEBI:17712 identity remain exact. Inspected ChEBI17712/48517 captures share CAS69-89-6 and the bare name; the correction records deliberate reviewed method rather than an unsupported unique lookup. Generic traits remain CHEBI:15318, with no tautomer-purity or new source-occurrence claim.
+
+Read-only checks passed for all350 sealed preparation members, the complete219 materialization references (208 private files +11 unchanged producers), all24 bindings/eight roles, authentic proposal/payload/case Git joins and exact2956-owner transition. Actual native record validation and the complete27-receipt chain passed; receipt8 ends at the authentic c72 preimage and all34 protected inputs match. A and W10 HEAD/status/logical index stayed unchanged. No original campaign case is added.
+
+The original native pair is correctly a historical author self-review; all3102 input bytes still match and schema/Markdown validation passes. The distinct full-owner science and skeptical peer reports bind exact747d candidate bytes. Root should select existing `w10-x1258-science-review` and `w10-x1258-skeptical-review` bindings for source-only acceptance; the author native pair remains context. Native role/hash checks do not themselves prove scientific truth or actor independence. The root acceptance decision remains separate from this report and the immutable plan, avoiding a self-hash cycle.
+
+Reviewer `/root/step7d_independent_review` authored earlier operator work and runtime relocation, but not this Xanthine candidate, W01 helper or A draft. This review does not independently approve that code or repeat whole-corpus science. It is a private actual-plan report, not a newly fleet-registered record review or acceptance object.
+
+No acceptance, materialization, full prepare, apply, synchronization, generation, Git mutation or canonical publication was performed. Actual final row/confidence/scope stamp and fresh companion review remain separate; diagnostic defaults are not approved replacements. Existing scientific, role, quantity and export holds remain. Sources were inspected from exact prior captures, not newly fetched; W10 remote provenance is A's retained14:55:06Z observation.

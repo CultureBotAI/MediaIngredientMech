@@ -1,0 +1,63 @@
+{
+  "finding_id": "W03-XANTHINE-REVIEW-PATH-CASE-001",
+  "severity": "minor",
+  "scope": "Private saved-review evidence transport portability; no scientific owner/row defect or maintained change",
+  "source_handoff": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/actual-xanthine-row-review-v1/HANDOFF.json",
+    "sha256": "00c47b708eb4f9f4ada301654a89831081250939368b242cddba84d5d49096cc",
+    "bytes": 5603
+  },
+  "source_manifest": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/actual-xanthine-row-review-v1/MANIFEST.json",
+    "sha256": "25c87bfaaac4ab3fee80fa8a00f8ea9d6e22ae997a9efa87e3b4877c1c480ca3",
+    "bytes": 101511
+  },
+  "native_pair": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/actual-xanthine-row-review-v1/native-checks/private-fixture/reviews/structured/20261108T151522Z-w03-actual-xanthine-owner-row/review.yaml",
+      "sha256": "b0e405ab71146a52c894d962361e64102febcae96b8f462452f01c536f03c7a6",
+      "bytes": 38858
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/actual-xanthine-row-review-v1/native-checks/private-fixture/reviews/structured/20261108T151522Z-w03-actual-xanthine-owner-row/review.md",
+      "sha256": "6b1d6ed609198c84c89ea175cb2d5f8af564e0e506c8b0d7fc4b1f3769d6099c",
+      "bytes": 56150
+    }
+  ],
+  "copy_map": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/actual-xanthine-row-review-v1/native-evidence-copy-map-v2.json",
+    "sha256": "8b03de12d1416da41a94340105d92fb298a5447b7014df0ad09ac6d1fb42bec9",
+    "bytes": 24004
+  },
+  "declared_inputs": 55,
+  "unique_physical_native_input_files": 54,
+  "aliases": [
+    {
+      "declared_path": "reports/actual-xanthine-review-evidence/science-ASSESSMENT-json.json",
+      "sha256": "d4eb97ae92328753a4b7c9e897ee6ebd62132ef3ca607bfb96e887e6735d172f",
+      "actual_sha256": "d4eb97ae92328753a4b7c9e897ee6ebd62132ef3ca607bfb96e887e6735d172f",
+      "device": 16777233,
+      "inode": 158702565,
+      "nlink": 1,
+      "literal_directory_member": true
+    },
+    {
+      "declared_path": "reports/actual-xanthine-review-evidence/science-assessment-json.json",
+      "sha256": "d4eb97ae92328753a4b7c9e897ee6ebd62132ef3ca607bfb96e887e6735d172f",
+      "actual_sha256": "d4eb97ae92328753a4b7c9e897ee6ebd62132ef3ca607bfb96e887e6735d172f",
+      "device": 16777233,
+      "inode": 158702565,
+      "nlink": 1,
+      "literal_directory_member": false
+    }
+  ],
+  "observation": "Two case-variant source.inputs and copy-map names address one inode. Only science-ASSESSMENT-json.json is a literal manifest/directory member. Native parse on this filesystem succeeds; a literal path transport cannot pretend these are two original independent files.",
+  "failed_selection_attempt": {
+    "source_trace": "KeyError while joining declared lowercase native input to literal source-manifest transport entries",
+    "private_selection_written": false,
+    "A_copies_performed": false,
+    "candidate_or_pair_edited": false
+  },
+  "proposed_disposition": "Retain original pair/source paths and working-tree fixture provenance. Explicitly map both declared logical aliases to the single literal original file and exact transport hash; do not invent second original capture or resave native review at A. Record the metadata occurrence on existing1254; root decides whether disclosed noncanonical report transport is sufficient.",
+  "native_full_review_claim": "Original needs_curation remains unchanged; this is not a new science vote."
+}

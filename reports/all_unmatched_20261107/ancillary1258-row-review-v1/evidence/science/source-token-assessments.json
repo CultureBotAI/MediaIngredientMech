@@ -1,0 +1,82 @@
+{
+  "old": [
+    {
+      "token": "MIM:PubChem",
+      "assessment": "Historical PubChem origin; retained, not current uniqueCAS selection proof.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "MIM:curator=refresh_occurrence_statistics",
+      "assessment": "Historical last-curator occurrence recount provenance; not identity author evidence.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "kgm:chebi_xrefs",
+      "assessment": "Historical ChEBI-xref pipeline provenance; preserved in exactoldrow, not a fresh source assertion.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "kgm:mediaingredientmech_reviewed",
+      "assessment": "Historical reviewedMIM propagation provenance; preserve archivedvalue, not independentcurrentapproval.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]",
+      "assessment": "Historical automatic chemistry classifier provenance; not independenthumanreview.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]",
+      "assessment": "Historical kg_microbe synonym sweep provenance; aliases independently corroborated now.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "kgm:primary_mappings[kegg_compound]",
+      "assessment": "Historical KEGG primary mapping pipeline provenance; current ChEBI has C00385 xref but this review doesnotreplaytheoldKEGGpipeline.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    },
+    {
+      "token": "MIM:curator=kgmicrobe_scope_review",
+      "assessment": "Actual prior kgmicrobe_scope_review curator, tied to760 historical scope decision and stamp.",
+      "disposition": "ARCHIVE_EXACT_OLD_PROVENANCE"
+    }
+  ],
+  "native": [
+    {
+      "token": "MIM:PubChem",
+      "classification": "Historical PubChem provenance retained by owner",
+      "assessment": "Current preserved properties capture corroborates formula and StandardInChI, but contains no CAS-to-ChEBI cross-reference; do not claim it independently reconstructs the2026-04-07 lookup or selects17712 uniquely.",
+      "disposition": "KEEP_CURRENT_PROVENANCE_NOT_SCIENTIFIC_VOTE"
+    },
+    {
+      "token": "MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md",
+      "classification": "Existing actualscope review document",
+      "assessment": "760 context review is actual named local source, still applicable to retained ingredient vs15318 trait distinction.",
+      "disposition": "KEEP_CURRENT_PROVENANCE_NOT_SCIENTIFIC_VOTE"
+    },
+    {
+      "token": "MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258",
+      "classification": "Issue1258 method finding",
+      "assessment": "Actual archived issue explains sharedCAS, preservedscope and honest nonlexical method; issue is review history, not primary chemical evidence.",
+      "disposition": "KEEP_CURRENT_PROVENANCE_NOT_SCIENTIFIC_VOTE"
+    },
+    {
+      "token": "MIM:curator=codex_worker10_xanthine1258",
+      "classification": "Last curator identity",
+      "assessment": "Exact current last event curator is codex_worker10_xanthine1258; agent/LLM authorship, not humanverification.",
+      "disposition": "KEEP_CURRENT_PROVENANCE_NOT_SCIENTIFIC_VOTE"
+    },
+    {
+      "token": "kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]",
+      "classification": "Inherited reviewed KG manifest provenance",
+      "assessment": "Exact native KG input attributes thisMIMsubject to b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703. Inherited derived review provenance, not an independent new actual-owner/row review.",
+      "disposition": "KEEP_CURRENT_PROVENANCE_NOT_SCIENTIFIC_VOTE"
+    },
+    {
+      "token": "kgm:native_ontology:chebi",
+      "classification": "Native ChEBI input provenance",
+      "assessment": "Exact KG input uses native_ontology:chebi for synonym/name enrichment. Current captured primary names separately corroboratealltokens; do not promote its closeMatch name rows as chemicalidentityproof by dropping predicates.",
+      "disposition": "KEEP_CURRENT_PROVENANCE_NOT_SCIENTIFIC_VOTE"
+    }
+  ]
+}

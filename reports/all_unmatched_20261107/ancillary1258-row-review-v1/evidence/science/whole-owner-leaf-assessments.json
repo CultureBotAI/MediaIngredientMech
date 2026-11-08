@@ -1,0 +1,477 @@
+{
+  "owner_sha256": "747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546",
+  "leaf_count": 94,
+  "all_current_leaves_assessed": true,
+  "leaf_assessments": [
+    {
+      "path": "identifier",
+      "value": "CHEBI:17712",
+      "assessment": "SUPPORT_SCOPED_REPRESENTATION: retained17712 convention under760; no new source9Hidentity or tautomerpurity."
+    },
+    {
+      "path": "preferred_term",
+      "value": "Xanthine",
+      "assessment": "SUPPORT_SCOPED_NAME: Xanthine is sharedname; routingcontext required; not uniquelexicalresolution."
+    },
+    {
+      "path": "ontology_mapping.ontology_id",
+      "value": "CHEBI:17712",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.ontology_label",
+      "value": "9H-xanthine",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.ontology_source",
+      "value": "CHEBI",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.mapping_quality",
+      "value": "MANUAL_CURATION",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[0].evidence_type",
+      "value": "CAS_RN_CROSS_REFERENCE",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[0].source",
+      "value": "PubChem",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[0].cas_rn",
+      "value": "69-89-6",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[0].notes",
+      "value": "ChEBI ID CHEBI:17712 found via PubChem CAS-RN cross-reference",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[1].evidence_type",
+      "value": "CURATOR_JUDGMENT",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[1].source",
+      "value": "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[1].notes",
+      "value": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[2].evidence_type",
+      "value": "LLM_SUGGESTION",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[2].source",
+      "value": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1258",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "ontology_mapping.evidence[2].notes",
+      "value": "Private method correction proposed by worker10 /root (Codex), with LLM assistance, following direct source and contract assessment for issue 1258. MANUAL_CURATION records the deliberate, nonlexical review of the existing scoped ingredient representation retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760; it does not assert human verification. Primary ChEBI captures https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/ (retrieved 2026-11-08T06:11:12.472556+00:00) and https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/ (retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the name Xanthine. Neither the shared CAS nor the shared name uniquely selects CHEBI:17712. The original PubChem CAS_RN_CROSS_REFERENCE and prior curation evidence/history are preserved as historical provenance, not current proof of a unique CAS-to-target resolution. Retain CHEBI:17712 / CAS 69-89-6 as the accepted ingredient representation; generic xanthine trait observations retain CHEBI:15318 and the native child-to-parent relation. Standard InChI agreement, retained structures and unqualified recipe names do not establish a tautomer-pure reagent or confer 9H specificity on source occurrences. No identifier, chemistry, alias, occurrence, role or export approval changes are proposed.",
+      "assessment": "SUPPORT_METHOD_AND_SCOPED_GROUNDING: MANUAL_CURATION describes deliberate scope choice; originalCAS evidence remains historical, newLLM evidence explicitly rejects uniqueness. No humanverification claimed."
+    },
+    {
+      "path": "synonyms[0].synonym_text",
+      "value": "2,6-dihydroxypurine",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[0].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[0].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[1].synonym_text",
+      "value": "2,6-dioxo-1,2,3,6-tetrahydropurine",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[1].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[1].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[2].synonym_text",
+      "value": "3,9-dihydro-1H-purine-2,6-dione",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[2].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[2].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[3].synonym_text",
+      "value": "9H-purine-2,6-(1H,3H)-dione",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[3].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[3].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[4].synonym_text",
+      "value": "9H-xanthine",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[4].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[4].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[5].synonym_text",
+      "value": "Xan",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[5].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[5].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[6].synonym_text",
+      "value": "purine-2(3H),6(1H)-dione",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[6].synonym_type",
+      "value": "EXACT_SYNONYM",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "synonyms[6].source",
+      "value": "kg_microbe",
+      "assessment": "SUPPORT_SCOPED_ALIASES: each of7owner synonyms directly present as17712 canonicalname/synonym/IUPACname inprimarycapture, with alias/routinglimits."
+    },
+    {
+      "path": "mapping_status",
+      "value": "MAPPED",
+      "assessment": "STRUCTURAL_STATE_ONLY: MAPPED records availability of grounding, not whole-owner or release approval."
+    },
+    {
+      "path": "occurrence_statistics.total_occurrences",
+      "value": 21,
+      "assessment": "RETAIN_HISTORICAL_COUNTS:21/21 event-provenance preserved; no independent recipe recount or added9H specificity."
+    },
+    {
+      "path": "occurrence_statistics.media_count",
+      "value": 21,
+      "assessment": "RETAIN_HISTORICAL_COUNTS:21/21 event-provenance preserved; no independent recipe recount or added9H specificity."
+    },
+    {
+      "path": "curation_history[0].timestamp",
+      "value": "2026-04-07T10:20:20.193637+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[0].curator",
+      "value": "feba_ontology_enrichment_batch",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[0].action",
+      "value": "CREATED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[0].changes",
+      "value": "Created ingredient file from FEBA ontology enrichment batch with ChEBI ID CHEBI:17712",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[0].new_status",
+      "value": "MAPPED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[0].llm_assisted",
+      "value": false,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[1].timestamp",
+      "value": "2026-04-18T00:00:00+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[1].curator",
+      "value": "cbclaw_kg_microbe_sweep",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[1].action",
+      "value": "ADDED_SYNONYMS",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[1].changes",
+      "value": "Added 7 synonyms from kg-microbe P4.4 enrichment: 2,6-dihydroxypurine, 2,6-dioxo-1,2,3,6-tetrahydropurine, 3,9-dihydro-1H-purine-2,6-dione, 9H-purine-2,6-(1H,3H)-dione, 9H-xanthine, ... (2 more)",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[1].new_status",
+      "value": "MAPPED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[1].llm_assisted",
+      "value": true,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[2].timestamp",
+      "value": "2026-05-01T07:35:36.905609+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[2].curator",
+      "value": "auto_classify_ingredient_type",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[2].action",
+      "value": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[2].changes",
+      "value": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[2].llm_assisted",
+      "value": false,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[3].timestamp",
+      "value": "2026-05-01T08:08:32.993208+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[3].curator",
+      "value": "auto_classify_ingredient_type",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[3].action",
+      "value": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[3].changes",
+      "value": "molecular_formula=C5H4N4O2; inchi=InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H; smiles=O=c1nc(=O)c2ncnc2n1",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[3].llm_assisted",
+      "value": false,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[4].timestamp",
+      "value": "2026-05-02T03:12:19.260955+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[4].curator",
+      "value": "auto_classify_ingredient_type",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[4].action",
+      "value": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[4].changes",
+      "value": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[4].llm_assisted",
+      "value": false,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[5].timestamp",
+      "value": "2026-08-27T03:16:39.520156+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[5].curator",
+      "value": "refresh_occurrence_statistics",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[5].action",
+      "value": "CORRECTED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[5].changes",
+      "value": "occurrence_statistics 16/16 -> 21/21 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].timestamp",
+      "value": "2026-09-23T19:20:33.158882+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].curator",
+      "value": "kgmicrobe_scope_review",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].action",
+      "value": "CORRECTED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].changes",
+      "value": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].previous_status",
+      "value": "MAPPED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].new_status",
+      "value": "MAPPED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].llm_assisted",
+      "value": true,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[6].llm_model",
+      "value": "gpt-6",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].timestamp",
+      "value": "2026-11-08T12:58:09.578563+00:00",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].curator",
+      "value": "codex_worker10_xanthine1258",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].action",
+      "value": "PROPOSED_MAPPING_METHOD_CORRECTION",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].changes",
+      "value": "Private ancillary proposal for issue 1258: change ontology_mapping.mapping_quality from CAS_RN_LOOKUP to MANUAL_CURATION after deliberate source and scope review; append LLM_SUGGESTION evidence explaining the shared CAS/name and the retained issue 760 ingredient representation. Both CHEBI:17712 and CHEBI:48517 carry CAS 69-89-6, so CAS lookup does not uniquely select the target. Preserve all original evidence and seven history events, CHEBI:17712 identity, chemistry, aliases, occurrences and generic-trait CHEBI:15318 scope. This is agent-authored with LLM assistance; no human verification, tautomer-purity claim, maintained application or role/export approval.",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].previous_status",
+      "value": "MAPPED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].new_status",
+      "value": "MAPPED",
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "curation_history[7].llm_assisted",
+      "value": true,
+      "assessment": "PRESERVE_HISTORY: first7events exactly unchanged; addedproposal event records agent-assisted method proposal atactualtime. Subsequent real sourceapplication is separately receipted and doesnotmakethathistoricalproposal description false."
+    },
+    {
+      "path": "notes",
+      "value": "Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.\nRetain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "assessment": "PRESERVE_SCOPE_AND_HISTORICAL_CONTEXT:16FEBA formulations is source-qualified historical prose;21globaloccurrences is later distinct-recipe total. No automatic contradiction or newrecount. Fullscopewarning remainsnecessary."
+    },
+    {
+      "path": "chemical_properties.cas_rn",
+      "value": "69-89-6",
+      "assessment": "SUPPORT_REPRESENTATION_NOT_PURITY: formula/InChI/SMILES match17712capture; samecapturedstructuresalso48517, so cannot distinguish physicaltautomer. CASshared. Retrievaldate/sourceorigin historicalnot anewaccess."
+    },
+    {
+      "path": "chemical_properties.data_source",
+      "value": "FEBA ontology enrichment (via PubChem)",
+      "assessment": "SUPPORT_REPRESENTATION_NOT_PURITY: formula/InChI/SMILES match17712capture; samecapturedstructuresalso48517, so cannot distinguish physicaltautomer. CASshared. Retrievaldate/sourceorigin historicalnot anewaccess."
+    },
+    {
+      "path": "chemical_properties.retrieval_date",
+      "value": "2026-04-07T10:20:20.193647+00:00",
+      "assessment": "SUPPORT_REPRESENTATION_NOT_PURITY: formula/InChI/SMILES match17712capture; samecapturedstructuresalso48517, so cannot distinguish physicaltautomer. CASshared. Retrievaldate/sourceorigin historicalnot anewaccess."
+    },
+    {
+      "path": "chemical_properties.molecular_formula",
+      "value": "C5H4N4O2",
+      "assessment": "SUPPORT_REPRESENTATION_NOT_PURITY: formula/InChI/SMILES match17712capture; samecapturedstructuresalso48517, so cannot distinguish physicaltautomer. CASshared. Retrievaldate/sourceorigin historicalnot anewaccess."
+    },
+    {
+      "path": "chemical_properties.inchi",
+      "value": "InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",
+      "assessment": "SUPPORT_REPRESENTATION_NOT_PURITY: formula/InChI/SMILES match17712capture; samecapturedstructuresalso48517, so cannot distinguish physicaltautomer. CASshared. Retrievaldate/sourceorigin historicalnot anewaccess."
+    },
+    {
+      "path": "chemical_properties.smiles",
+      "value": "O=c1nc(=O)c2ncnc2n1",
+      "assessment": "SUPPORT_REPRESENTATION_NOT_PURITY: formula/InChI/SMILES match17712capture; samecapturedstructuresalso48517, so cannot distinguish physicaltautomer. CASshared. Retrievaldate/sourceorigin historicalnot anewaccess."
+    },
+    {
+      "path": "ingredient_type",
+      "value": "SINGLE_INGREDIENT",
+      "assessment": "SUPPORT_SINGLE_INGREDIENT_REPRESENTATION: single neutral xanthine chemical representation; no salt, hydrate, vendorproduct or stockassertion."
+    }
+  ]
+}

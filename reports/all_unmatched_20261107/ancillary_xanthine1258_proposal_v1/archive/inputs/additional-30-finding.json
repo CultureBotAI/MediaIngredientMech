@@ -1,0 +1,60 @@
+{
+  "finding_id": "FC2-XANTHINE-METHOD-001",
+  "proposed_issue_key": "MediaIngredientMech:Xanthine:nonunique-CAS-method",
+  "category": "mapping_method_provenance",
+  "severity": "major",
+  "native_priority": "P2",
+  "status": "open",
+  "certainty": "confirmed",
+  "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+  "owner_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+  "field_path": "/ontology_mapping/mapping_quality",
+  "observed_value": "CAS_RN_LOOKUP",
+  "description": "The owner currently declares CAS_RN_LOOKUP, but both primary ChEBI17712 and48517 assert CAS69-89-6. Current MAPPING_SEMANTICS section0 requires this grade to have a unique CAS-to-target resolution; the inspected manual representation review does not prove that uniqueness. This affects current owner method metadata, not the explicitly manual complete mapping row or source-qualified CAS annotation.",
+  "reproduction": [
+    "Read exact owner mapping_quality=CAS_RN_LOOKUP and its PubChem CAS_RN_CROSS_REFERENCE evidence.",
+    "Read primary ChEBI17712 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus, NIST).",
+    "Read primary ChEBI48517 database_accessions.CAS:69-89-6 (KEGG, ChemIDplus).",
+    "Read MAPPING_SEMANTICS section0: current CAS must agree uniquely with current target for this method grade.",
+    "Compare retained13field row: mapping_justification=semapv:ManualMappingCuration, explicit no-tautomer-purity source comment."
+  ],
+  "primary_captures": [
+    {
+      "path": "science/chemistry/captures/chebi17712.capture",
+      "sha256": "2aa1bf444738308831318e577ae7e6a0fed981702348d6ccc35ae3eb06f44e60",
+      "original_retrieved_at": "2026-11-08T06:11:12.472556+00:00"
+    },
+    {
+      "path": "science/chemistry/captures/chebi7hxanthine.capture",
+      "sha256": "b6c12c0f7b903706701f57b7291e6dd4fc3e7f886127d77ee8092729f45e0cc5",
+      "original_retrieved_at": "2026-11-08T06:15:51.983698+00:00"
+    }
+  ],
+  "contract": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/MAPPING_SEMANTICS.md",
+    "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+    "locator": "section0, CAS_RN_LOOKUP uniqueness requirement"
+  },
+  "scoped_mapping_profile": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/docs/INGREDIENT_SCOPE_PROFILE.md",
+    "sha256": "82729da420d79ceb2a1313580089866a6ed6ff06dd70f317ac61fce17433c642",
+    "locator": "Source context examples: MIM:Xanthine; no physical tautomer purity"
+  },
+  "mapping_row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+  "mapping_claim_disposition": "SUPPORTED",
+  "identifier_claim_disposition": "SUPPORTED",
+  "scientific_scope_change": false,
+  "proposed_bounded_followup": "Root deduplicates/files before any author correction. Accountable curator reconciles current owner method provenance with the actually performed nonunique-CAS manual scope assessment under native supported methods; preserve exact identity, source facts, raw aliases, all original history and tautomer/occurrence limitations. Do not manufacture a unique lexical or CAS resolution.",
+  "acceptance_conditions": [
+    "A fresh performed-method record explains how current target was selected despite the sharedCAS; any changed grade is justified by an actually performed method.",
+    "Independent review of whole owner and full row confirms no identity, scope, source occurrence, role or export-approval expansion.",
+    "All existing history and both ChEBI terms remain preserved as evidence; no arbitrary change to EXACT_MATCH/SYNONYM_MATCH or tautomer owner is presumed."
+  ],
+  "independent_reviews": {
+    "scientific_author": "/root/companion_chemistry",
+    "skeptical_reviewer": "/root/companion_skeptic",
+    "skeptical_result": "Agrees method field needs curation; scoped manual mapping/registry assertions remain supportable."
+  },
+  "dedup_status": "Root issue/history dedup pending; reviewer made no GitHub mutation",
+  "repair_performed": false
+}

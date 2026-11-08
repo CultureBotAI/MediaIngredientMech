@@ -1,0 +1,73 @@
+{
+  "performed_method": "Deliberate claim-specific review of the complete existing ingredient representation under the preserved #760 decision and native ingredient scope profile, against both tautomer definitions, shared CAS/names/normalized structures, existing aliases/chemistry and full current row. This review establishes the maintained representation scope; it does not derive a pure tautomer from CAS or a generic name.",
+  "recommended_and_observed_quality": "MANUAL_CURATION",
+  "native_definition": {
+    "description": "Manually curated by expert"
+  },
+  "applicability": "Applicable to this performed expert curation method. The MappingQualityEnum category describes the deliberate reviewed method and does not contain the human-supplier requirement of EvidenceTypeEnum.MANUAL_CURATION. This is a bounded reading of the actual enum in its provenance context, not a declaration that AI authors are human or a claim of external professional credentials. Existing #760 establishes the canonical representation decision; the present independent chemical comparison confirms its stated limits and the need to correct the method.",
+  "not_a_new_identity_choice": "Retain CHEBI:17712/CAS69-89-6 as the already scoped ingredient representation; keep generic traits CHEBI:15318 and the primary child relationship. No new missing human or scientific choice was identified for this limited correction. Exact physical tautomer purity remains unestablished and is not required or claimed by that representation decision.",
+  "new_claim_attribution": {
+    "actual": {
+      "evidence_type": "LLM_SUGGESTION",
+      "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1258",
+      "notes": "Private method correction proposed by worker10 /root (Codex), with LLM assistance, following direct source and contract assessment for issue 1258. MANUAL_CURATION records the deliberate, nonlexical review of the existing scoped ingredient representation retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760; it does not assert human verification. Primary ChEBI captures https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/ (retrieved 2026-11-08T06:11:12.472556+00:00) and https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/ (retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the name Xanthine. Neither the shared CAS nor the shared name uniquely selects CHEBI:17712. The original PubChem CAS_RN_CROSS_REFERENCE and prior curation evidence/history are preserved as historical provenance, not current proof of a unique CAS-to-target resolution. Retain CHEBI:17712 / CAS 69-89-6 as the accepted ingredient representation; generic xanthine trait observations retain CHEBI:15318 and the native child-to-parent relation. Standard InChI agreement, retained structures and unqualified recipe names do not establish a tautomer-pure reagent or confer 9H specificity on source occurrences. No identifier, chemistry, alias, occurrence, role or export approval changes are proposed."
+    },
+    "appropriate_type": "LLM_SUGGESTION",
+    "history_llm_assisted": true,
+    "reason": "New judgment is explicitly attributed to Codex worker10 /root, with no invented human verification. Original evidence/history remain exact and are expressly qualified as historical."
+  },
+  "alternatives": [
+    {
+      "value": "CAS_RN_LOOKUP",
+      "decision": "reject for current method",
+      "reason": "Both inspected primary specific terms carry69-89-6. §0 requires unique CAS-to-target resolution; an old import or standard InChI cannot establish it."
+    },
+    {
+      "value": "EXACT_MATCH",
+      "decision": "reject automatic replacement",
+      "reason": "Bare Xanthine is not the17712 primary label; a primary-label match would be a different method and is not the performed scope decision."
+    },
+    {
+      "value": "SYNONYM_MATCH",
+      "decision": "reject automatic replacement",
+      "reason": "Both17712 and48517 carry Xanthine. No unique-synonym resolution is established under §0."
+    },
+    {
+      "value": "LLM_ASSISTED",
+      "decision": "reject here",
+      "definition": {
+        "description": "Mapping suggested by LLM, human-verified"
+      },
+      "reason": "The native definition explicitly requires human verification, which this fresh work does not have or claim."
+    },
+    {
+      "value": "PROVISIONAL",
+      "decision": "unnecessary for the accepted scope decision",
+      "reason": "The specific defect is the untrue selection method. The already accepted scoped representation has been independently reviewed; marking the whole mapping tentative would not document the actual performed method. This does not remove downstream holds."
+    },
+    {
+      "value": "LEXICAL_MATCH",
+      "decision": "reject as description of this work",
+      "reason": "The work includes semantic/source review and is not an unverified string match."
+    },
+    {
+      "value": "CLOSE_MATCH / parent-as-exact / another tautomer",
+      "decision": "out of scope and unsupported by this method correction",
+      "reason": "Method quality does not itself change own-identifier predicate, select7H, collapse generic15318, or authorize new parent/identity assertions."
+    }
+  ],
+  "evidence_type_distinction": {
+    "MappingQualityEnum_MANUAL_CURATION": {
+      "description": "Manually curated by expert"
+    },
+    "EvidenceTypeEnum_MANUAL_CURATION": {
+      "description": "Manually curated evidence supplied by a human reviewer (distinct from CURATOR_JUDGMENT, which records the decision rather than the source of evidence)."
+    },
+    "EvidenceTypeEnum_CURATOR_JUDGMENT": {
+      "description": "Expert curator decision"
+    },
+    "EvidenceTypeEnum_LLM_SUGGESTION": {
+      "description": "LLM-generated suggestion"
+    }
+  }
+}

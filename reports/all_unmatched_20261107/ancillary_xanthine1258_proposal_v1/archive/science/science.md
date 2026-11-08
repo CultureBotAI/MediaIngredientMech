@@ -1,0 +1,15 @@
+# Xanthine #1258: independent candidate review
+
+**Verdict: pass with limitations.** Exact private candidate `747d1a4f21bc6a234b0dd167d385c282aa6784084fa4fe54f604161da0e1b546` corrects the method defect without changing the accepted #760 ingredient representation. No new finding was identified.
+
+Both complete primary ChEBI responses carry CAS69-89-6 and the name Xanthine, despite defining distinct N9 and N7 representations. Their normalized InChI/SMILES also coincide. These facts defeat a unique-CAS or unique-synonym method; they do not justify selecting a different tautomer. The original capture URLs and times (`06:11:12.472556+00:00` and `06:15:51.983698+00:00`,2026-11-08) remain exact in the [source matrix](whole-owner-source-matrix.json).
+
+`MappingQualityEnum.MANUAL_CURATION` fits the deliberate source and scope review actually performed. It is distinct from human-supplied `EvidenceTypeEnum.MANUAL_CURATION` and the expressly human-verified `LLM_ASSISTED` grade. The new evidence is `LLM_SUGGESTION` and history is explicitly AI-assisted. The [method assessment](method-assessment-v1.json) records this interpretation and the rejected alternatives. No new human decision is invented or required for this bounded retained representation.
+
+The complete ten-field owner and full native diagnostic row were independently assessed. Exactly three semantic changes occur: method grade, one appended evidence object and one appended history event. All seven original events, two evidence objects, seven aliases, chemistry, occurrence metadata and scope notes remain exact. The native closed-schema check and110 independent checks passed. See the [full field matrix](full-field-matrix.json) and [actual receipt](candidate-verification.json).
+
+The row API changes only source/date from its own baseline; however, its candidate output differs from the maintained reviewed row in five fields. Its blank comment/validation_method and0.9 confidence are diagnostic defaults, not approval to erase #760 scope or increase certainty. The [13-field row review](candidate-row-scientific-review.json) preserves that distinction. Full canonical generation, current owner/row binding and guarded application remain separate.
+
+FC2-XANTHINE-METHOD-001 is corrected **in this candidate only**. Issue1258 remains open pending lawful application; no source membership, tautomer-purity, role, whole-owner, application or release approval is granted. CHEBI17712/CAS69-89-6 remains the accepted ingredient representation; generic trait scope stays CHEBI15318.
+
+Reviewer: AI Codex `/root/preparation_skeptic`, independent of root candidate authorship, with prior W10/W09 provenance participation and the current pre-candidate recommendation disclosed. First saved milestone `2026-11-08T12:57:45.114782+00:00` follows initial reading; exact earlier start was not recorded. Finished `2026-11-08T13:01:32.466823+00:00`. [Authoritative JSON](science.json) binds all inputs and limitations. No maintained or prior sealed file was changed.

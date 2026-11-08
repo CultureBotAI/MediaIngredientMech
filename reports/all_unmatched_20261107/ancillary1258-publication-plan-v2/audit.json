@@ -1,0 +1,119 @@
+{
+  "approval": "NONE",
+  "cell_classes": {
+    "comment": {
+      "retained_different": 1
+    },
+    "confidence": {
+      "retained_different": 1
+    },
+    "mapping_date": {
+      "retained_different": 1
+    },
+    "mapping_justification": {
+      "retained_equal": 1
+    },
+    "object_id": {
+      "retained_equal": 1
+    },
+    "object_label": {
+      "retained_equal": 1
+    },
+    "object_source": {
+      "retained_equal": 1
+    },
+    "other": {
+      "retained_equal": 1
+    },
+    "predicate_id": {
+      "retained_equal": 1
+    },
+    "source": {
+      "retained_different": 1
+    },
+    "subject_id": {
+      "retained_equal": 1
+    },
+    "subject_label": {
+      "retained_equal": 1
+    },
+    "validation_method": {
+      "retained_equal": 1
+    }
+  },
+  "counts": {
+    "alignment_classes": {
+      "changed": 1
+    },
+    "canonical_rows": 3014,
+    "historical_provenance_differences": 3,
+    "native_rows": 3007,
+    "operation_classes": {
+      "retained": 1
+    },
+    "owners": 1,
+    "projected_rows": 3014,
+    "row_operations": 1,
+    "selected_native_rows": 1,
+    "selected_old_rows": 1,
+    "unselected_physical_rows_preserved": 3013
+  },
+  "historical_provenance_differences": [
+    {
+      "before_position": 2961,
+      "before_row_sha256": "e7e489ced2307618692d2111346604c49e45e2d29842c2c9eeb1890c7f958701",
+      "eligible_for_native_preserve_fields": true,
+      "field": "source",
+      "historical": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+      "native": "MIM:PubChem|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:https://github.com/CultureBotAI/MediaIngredientMech/issues/1258|MIM:curator=codex_worker10_xanthine1258|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+      "native_position": 2972,
+      "native_row_sha256": "290e15829e79071e44568643390bf84e04186a601437bade056086ce22e0c17f",
+      "owner": "data/ingredients/mapped/Xanthine.yaml",
+      "preserve": false,
+      "rationale_proposal": "Use native projection by default; any historical retention requires separate exact-cell scoped review. Removed rows cannot retain cells.",
+      "scientific_or_role_approval": false
+    },
+    {
+      "before_position": 2961,
+      "before_row_sha256": "e7e489ced2307618692d2111346604c49e45e2d29842c2c9eeb1890c7f958701",
+      "eligible_for_native_preserve_fields": true,
+      "field": "confidence",
+      "historical": "0.8",
+      "native": "0.9",
+      "native_position": 2972,
+      "native_row_sha256": "290e15829e79071e44568643390bf84e04186a601437bade056086ce22e0c17f",
+      "owner": "data/ingredients/mapped/Xanthine.yaml",
+      "preserve": false,
+      "rationale_proposal": "Use native projection by default; any historical retention requires separate exact-cell scoped review. Removed rows cannot retain cells.",
+      "scientific_or_role_approval": false
+    },
+    {
+      "before_position": 2961,
+      "before_row_sha256": "e7e489ced2307618692d2111346604c49e45e2d29842c2c9eeb1890c7f958701",
+      "eligible_for_native_preserve_fields": true,
+      "field": "comment",
+      "historical": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "native": "",
+      "native_position": 2972,
+      "native_row_sha256": "290e15829e79071e44568643390bf84e04186a601437bade056086ce22e0c17f",
+      "owner": "data/ingredients/mapped/Xanthine.yaml",
+      "preserve": false,
+      "rationale_proposal": "Use native projection by default; any historical retention requires separate exact-cell scoped review. Removed rows cannot retain cells.",
+      "scientific_or_role_approval": false
+    }
+  ],
+  "input_sha256": {
+    "before": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+    "candidate": "a144f7e86327c0225e2ac02d997a8fb63697ebe4df1880d045afcbe30663854a"
+  },
+  "limits": [
+    "Counts/row validity do not approve science or source application.",
+    "Every preserve_fields list is empty. No historical claim/support is transferred.",
+    "The complete native prepare still must verify actual source completion, generator replay, policy and prefix."
+  ],
+  "projected_sha256": "65680a79ab3a2c37501cc7ef8e41095fb6fab535f566d2ab6548b289953e7d08",
+  "row_hash_encoding": "SHA256 over campaign_publication.encoded(row)",
+  "schema_version": 1,
+  "source_only_owners": [],
+  "status": "NO_PROVENANCE_RETENTION_SELECTED"
+}

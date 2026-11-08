@@ -1,0 +1,71 @@
+{
+  "targets": [
+    {
+      "target_id": "actual-owner",
+      "path": "data/ingredients/mapped/Xanthine.yaml",
+      "label": "Actual applied Xanthine owner copied byte-exact",
+      "kind": "maintained",
+      "selector": "entire YAML document",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Xanthine.yaml",
+          "role": "actual maintained owner at A; exact byte copy here"
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "matching maintained aggregate; equality separately verified"
+        }
+      ]
+    },
+    {
+      "target_id": "old-canonical-row",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "label": "Actual prepublication canonical Xanthine row copied byte-exact",
+      "kind": "snapshot_row",
+      "selector": "subject_id=MIM:Xanthine; predicate_id=skos:exactMatch; object_id=CHEBI:17712; full thirteen fields",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Xanthine.yaml",
+          "role": "actual maintained owner at A; exact byte copy here"
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "matching maintained aggregate; equality separately verified"
+        }
+      ],
+      "semantic_digest": {
+        "algorithm": "sha256-canonical-json-sortkeys-utf8-v1",
+        "sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+        "description": "Complete literal thirteen-field row, UTF-8 sorted compact JSON; physical position separately observed"
+      }
+    },
+    {
+      "target_id": "actual-native-row",
+      "path": "reports/all_unmatched_20261107/ancillary1258-generation-v1/candidate.sssom.tsv",
+      "label": "Actual native generated Xanthine candidate row copied byte-exact",
+      "kind": "snapshot_row",
+      "selector": "subject_id=MIM:Xanthine; candidate position 2972; full thirteen fields; not published",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Xanthine.yaml",
+          "role": "actual maintained owner at A; exact byte copy here"
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "matching maintained aggregate; equality separately verified"
+        }
+      ],
+      "semantic_digest": {
+        "algorithm": "sha256-canonical-json-sortkeys-utf8-v1",
+        "sha256": "d20db1248afe7c61f1fe8773239e6d96bc9d578400d3cfa2d37bec85dca34491",
+        "description": "Complete literal thirteen-field row, UTF-8 sorted compact JSON; physical position separately observed"
+      }
+    }
+  ]
+}
