@@ -1,0 +1,182 @@
+schema_version: 1.0.0
+review_id: 20261108T052211Z-w10-levorin-bounded-template
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Bounded Levorin identity-scope review example for campaign integration
+started_at: '2026-11-08T05:22:10.255188Z'
+finished_at: '2026-11-08T05:22:11.547833Z'
+reviewer:
+  identity: worker-10 kg_research
+  kind: agent
+  independence: self_review
+  independence_basis: KG partition author prepared this example; root supplies independent scientific
+    review separately.
+skill: review-yaml-record (.claude/skills/review-yaml-record/SKILL.md)
+completion: partial
+verdict: needs_curation
+scientific_review: true
+summary: Exact MeSH descriptor identity loses a narrower concept distinction. This validates only a bounded
+  native input example; it is not a saved review or full publication assessment.
+source:
+  git_revision: e000d66dd26ab053e9b17ce7bf8d3c873c3dde99
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Levorin.yaml
+    sha256: 77cccb8ad35797ec34744abe85b0125c5783466a832ec52b7a3442e51cd441a4
+    role: target
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/kg/captures/mesh_M0003252.json
+    sha256: 64f9b7848db417cea779343884bdb1a0d8b750ad8bc3944a8b6d505b65ef5fa8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/kg/captures/mesh_M0352008.json
+    sha256: ad4f0ee681c3092a5f1beb2ecbe9e2d7be784345ebca30b512fb6ffeb60f5037
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Levorin primary identifier and Candicidin grounding, with complete target bytes read; other
+    publication fields not adjudicated.
+  selection: One exact actual maintained owner resolved from KG case138; no source-only target fabricated.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - MIM:Levorin
+targets:
+- target_id: MIM:Levorin
+  path: data/ingredients/mapped/Levorin.yaml
+  label: Levorin
+  kind: maintained
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Levorin.yaml
+    role: maintained individual owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: maintained aggregate mirror; select ingredient preferred_term=Levorin
+  record_class: IngredientRecord
+checks:
+- check_id: inspect
+  name: Native input-byte inspection
+  status: passed
+  required: true
+  summary: Captured current Git base and exact target/context SHA256 inputs.
+  target_ids:
+  - MIM:Levorin
+  command: .temp/all-unmatched-worker-10/venv/bin/python scripts/record_review.py inspect --targets reports/all_unmatched_20261107/worker-10/kg/native-template-targets.yaml
+    --input MAPPING_SEMANTICS.md --input src/mediaingredientmech/schema/mediaingredientmech.yaml --input
+    docs/record-review-profile.md --input reports/all_unmatched_20261107/worker-10/kg/captures/mesh_M0003252.json
+    --input reports/all_unmatched_20261107/worker-10/kg/captures/mesh_M0352008.json
+  exit_code: 0
+  expected_exit_code: 0
+- check_id: closed-schema
+  name: Maintained closed-schema validation of before owner
+  status: passed
+  required: true
+  summary: Strict LinkML validation returned zero errors for exact Levorin owner.
+  target_ids:
+  - MIM:Levorin
+  command: .temp/all-unmatched-worker-10/venv/bin/python scripts/validate_strict.py data/ingredients/mapped/Levorin.yaml
+    --workers 1 --out reports/all_unmatched_20261107/worker-10/kg/native-template-strict.tsv
+  exit_code: 0
+  expected_exit_code: 0
+- check_id: publication-surface
+  name: Full downstream publication and other claim approval
+  status: not_applicable
+  required: false
+  summary: Outside this bounded identity review example; no publication support or hold removal is conferred.
+  target_ids:
+  - MIM:Levorin
+  scope_note: Coordinator separately reviews proposed bytes, both maintained surfaces, SSSOM, aliases,
+    roles and status gates.
+evidence:
+- evidence_id: mesh_M0003252
+  kind: authority
+  reference: https://id.nlm.nih.gov/mesh/M0003252.json
+  locator: 'Exact NLM concept JSON: label and narrowerConcept links'
+  accessed_at: '2026-11-08T05:09:30.015164Z'
+  support: refutes
+  summary: Candicidin preferred concept explicitly identifies Levorin M0352008 as a narrower concept;
+    flattened synonym identity is unsupported.
+  snapshot_sha256: 64f9b7848db417cea779343884bdb1a0d8b750ad8bc3944a8b6d505b65ef5fa8
+- evidence_id: mesh_M0352008
+  kind: authority
+  reference: https://id.nlm.nih.gov/mesh/M0352008.json
+  locator: 'Exact NLM concept JSON: label and narrowerConcept links'
+  accessed_at: '2026-11-08T05:09:30.014997Z'
+  support: context_only
+  summary: NLM has a distinct concept labelled Levorin.
+  snapshot_sha256: ad4f0ee681c3092a5f1beb2ecbe9e2d7be784345ebca30b512fb6ffeb60f5037
+assessments:
+- assessment_id: concept-scope
+  area: identity
+  topic: Descriptor entry term versus chemical identity
+  outcome: concern
+  summary: Levorin M0352008 is narrower than preferred Candicidin M0003252; mesh:D002174 exact identity
+    is overbroad.
+  target_ids:
+  - MIM:Levorin
+  evidence_ids:
+  - mesh_M0003252
+  - mesh_M0352008
+findings:
+- finding_id: levorin-concept
+  issue_key: levorin-candicidin-concept-scope
+  category: grounding
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Levorin exact descriptor identity overstates ontology concept scope
+  description: NLM narrowerConcept relation contradicts treating the flattened entry term as exact substance
+    identity. Retain the distinct local identity and review a directed broader relation before integration.
+  target_ids:
+  - MIM:Levorin
+  field_paths:
+  - identifier
+  - ontology_mapping.mapping_quality
+  evidence_ids:
+  - mesh_M0003252
+  - mesh_M0352008
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Levorin.yaml
+    role: maintained individual owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: maintained aggregate mirror; select ingredient preferred_term=Levorin
+  rule_id: MAPPING_SEMANTICS supplied identity specificity
+  native_severity: P2
+  normalization_reason: Wrong exact grounding materially broadens named ingredient identity; no particular
+    molecular member has been demonstrated.
+actions:
+- action_id: reground-levorin
+  description: Independently review the exact local-identity/broad-parent proposal, retaining all raw
+    source provenance and unadjudicated ingredient-type hold.
+  finding_ids:
+  - levorin-concept
+  target_ids:
+  - MIM:Levorin
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Levorin.yaml
+    role: maintained individual owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: maintained aggregate mirror; select ingredient preferred_term=Levorin
+  acceptance_checks:
+  - Confirm NLM concept scope and proposed before/after payload hashes.
+  - Reconcile ingredient_type and full published alias/role/identity payload before any support activation.
+  - Guarded integration, paired-surface synchronization and applicable native SSSOM/roundtrip gates are
+    coordinator work.
+limitations:
+- Input example only; not saved using record_review.py save.
+- 'Partial claim coverage: inherited SINGLE_INGREDIENT classification is unadjudicated in the antibiotic-complex
+  context.'
+- Existing review holds, rejected claims and downstream source dispositions remain unchanged.
+- This example uses one actual owner; a consolidated campaign owner review should use kind=batch with
+  exact deduplicated actual-owner denominator and per-target evidence-linked assessments.

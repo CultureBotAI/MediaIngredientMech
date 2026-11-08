@@ -1,0 +1,55 @@
+identifier: MICRO:0001570
+preferred_term: Defibrinated sheep blood
+ontology_mapping:
+  ontology_id: MICRO:0001570
+  ontology_label: defibrinated sheep blood
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Created to cover a CultureMech label MIM could not resolve (#260): MICRO models
+      the defibrinated preparation as its own class, separate from MICRO:0001230 ''sheep blood''.
+      Defibrination removes fibrin so the blood stays liquid in agar, so the preparation is
+      the thing weighed out and the specific term is right under MAPPING_SEMANTICS §3 step 1.'
+synonyms:
+- synonym_text: defibrinated ovine blood
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen source case CM_NAME:b3e27772bedaebcb7dfd05c4fcfdd5e087bed0bd1e6e5db3e5f7fbf1eb88da74
+- synonym_text: Sheep Blood (defibrinated)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen source case CM_NAME:bbd6001c5f985ee74bc12c9def9089e15d6b87b216202fb7f7c3333d6d78bcd0
+- synonym_text: Sheep Blood, defibrinated
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen source case CM_NAME:e48d2ee0ce541df75c2b2c5a77efc237934e38d30d42977a69c0fea50aa610f9
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+occurrence_statistics:
+  total_occurrences: 25
+  media_count: 25
+curation_history:
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: CREATED_FROM_CULTUREMECH_GAP
+  changes: 'Created to cover a CultureMech label MIM could not resolve (#260): MICRO models
+    the defibrinated preparation as its own class, separate from MICRO:0001230 ''sheep blood''.
+    Defibrination removes fibrin so the blood stays liquid in agar, so the preparation is the
+    thing weighed out and the specific term is right under MAPPING_SEMANTICS §3 step 1.'
+  llm_assisted: false
+  new_status: MAPPED
+- timestamp: '2026-08-27T03:16:39.518126+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 25/25 (media_count/total_occurrences), derived from
+    distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from
+    the importer retired in #453, whose media_count counted a list truncated to 50 examples
+    (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:12:55.505566+00:00'
+  curator: all_unmatched_worker_10_bio_review
+  action: ADDED_SYNONYMS
+  changes: 'Proposed reviewed source-material aliases: [''defibrinated ovine blood'', ''Sheep
+    Blood (defibrinated)'', ''Sheep Blood, defibrinated'']. Preserve occurrence quantities and
+    preparation stages; alias review does not approve roles or complete publication payload.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

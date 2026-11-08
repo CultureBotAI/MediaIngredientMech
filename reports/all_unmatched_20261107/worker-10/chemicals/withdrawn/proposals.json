@@ -1,0 +1,59 @@
+{
+  "proposals": [
+    {
+      "proposal_id": "chem-proposal-72",
+      "case_ids": [
+        "CM_NAME:95046b1b726b92f96f099c9b9db177a9b7a01ab4c2ad73c5fdfc393c56705fe1"
+      ],
+      "description": "Create distinct source ingredient with exact identity; do not transfer approval from a broader or related owner. The frozen DSMZ478-derived recipe explicitly names methoxyacetate and retains its archived10mM source assertion. ChEBI132097 is the methoxyacetic-acid conjugate base, formula C3H5O3 and charge-1. The named source is an anion without sodium qualifier, so it is not CHEBI132096 sodium methoxyacetate. The archived concentration is contextual and not independently recertified here.",
+      "evidence_ids": [
+        "chem-case-72",
+        "chem-recipe-72-0",
+        "chem-detail-132097",
+        "chem-detail-132096"
+      ],
+      "owner_path": "data/ingredients/mapped/Methoxyacetate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/withdrawn/Methoxyacetate.yaml",
+        "sha256": "070a4379f7e716e9f02d48c8fc3021447ed98befd91c8d885e9d25d5df23da75"
+      },
+      "before_sha256": null,
+      "identity_consequences": "New primary CHEBI:132097; target CHEBI:132097.",
+      "predicate_consequences": "Own-identifier skos:exactMatch under RuleD.",
+      "publication_review_obligations": "Coordinator must resolve owner conflicts, validate proposed payload, withdraw inherited support on changed owner bytes, perform native content-bound mapping/form/full synonym review, use guarded writer, synchronize and regenerate exports. No role or whole-record approval.",
+      "cross_shard_conflict": "Owner may be proposed elsewhere; coordinator must reconcile all proposals against this frozen before hash. No other worker bytes adopted.",
+      "status": "withdrawn_after_independent_review"
+    },
+    {
+      "proposal_id": "chem-proposal-74",
+      "case_ids": [
+        "CM_NAME:99df8a469bab9c4a0077745698decb935068f3ca0c18b749870d25b94e7bb10b"
+      ],
+      "description": "Create distinct source ingredient with exact identity; do not transfer approval from a broader or related owner. All four MediaDB253-256 records name Propenoate with the same KEGG acryl cross-reference and varying molar doses. ChEBI37080 explicitly lists Propenoate and2-propenoate as synonyms of acrylate, formula C3H3O2 charge-1. This defines the named anion; it does not select sodium acrylate or recertify original dose conversions.",
+      "evidence_ids": [
+        "chem-case-74",
+        "chem-recipe-74-0",
+        "chem-recipe-74-1",
+        "chem-recipe-74-2",
+        "chem-recipe-74-3",
+        "chem-detail-37080"
+      ],
+      "owner_path": "data/ingredients/mapped/Propenoate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/withdrawn/Propenoate.yaml",
+        "sha256": "32ebb4679e7db18f9f3eabfff733315a71c5e5bdeaec1f25fac955f5b51d107d"
+      },
+      "before_sha256": null,
+      "identity_consequences": "New primary CHEBI:37080; target CHEBI:37080.",
+      "predicate_consequences": "Own-identifier skos:exactMatch under RuleD.",
+      "publication_review_obligations": "Coordinator must resolve owner conflicts, validate proposed payload, withdraw inherited support on changed owner bytes, perform native content-bound mapping/form/full synonym review, use guarded writer, synchronize and regenerate exports. No role or whole-record approval.",
+      "cross_shard_conflict": "Owner may be proposed elsewhere; coordinator must reconcile all proposals against this frozen before hash. No other worker bytes adopted.",
+      "status": "withdrawn_after_independent_review"
+    }
+  ],
+  "warning": "NOT actionable proposals. Initial author drafts retained solely as rejected review evidence."
+}

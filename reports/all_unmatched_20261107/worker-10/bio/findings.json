@@ -1,0 +1,926 @@
+{
+  "schema_version": 1,
+  "source_unit_discrepancies": [
+    {
+      "case_id": "CM_NAME:067391003dd185eefff507afa5af4e426d1ef47303a0c92801fc75ee876dab75",
+      "source_label": "Clarified tomato juice",
+      "occurrence_id": "CM_OCC:4abc5ab9f474af2bf3012f9faf0bf182ec7fc557d59920e405022367c50e8d92",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/ytp_2_medium.yaml",
+      "snapshot_sha256": "9760b46d3b85213ce5251e51855aa37b8b69ce58cc846eb75be3575ba71eff61",
+      "component_path": "ingredients/8",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "2"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2271",
+      "primary_capture": "bio/captures/259b322edfd6187e",
+      "primary_sha256": "fd6890c43d6f427252a3b4ff38d594ad7fc220f3fed9ad578e3cdf65045e2cea",
+      "primary_locator": "components[0].items[8]",
+      "primary_item": {
+        "component_name": "Clarified tomato juice",
+        "volume": 2,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002254",
+        "gmo_id": "GMO_002254",
+        "label": "Clarified tomato juice",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000067",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000067",
+            "label": "Growth factor"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212",
+      "source_label": "Rabbit serum heat--inactivated at 56C for 1 hr",
+      "occurrence_id": "CM_OCC:6229336edab4995d4d12e7db9e8c4666b57c17dbbfafe212406a57e71984cffc",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M135_Modified_NOS_Medium.yaml",
+      "snapshot_sha256": "91db2299c5939106f818bc3f93be621c9c54a1fe925a3b33eadc097d283ef219",
+      "component_path": "ingredients/11",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "2"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M135",
+      "primary_capture": "bio/captures/e8590f04c1945824",
+      "primary_sha256": "22f64cfd7e8ebfb5261f842f7fa5b3f4b94967ce762047262700b74221ee953a",
+      "primary_locator": "components[1].items[1]",
+      "primary_item": {
+        "component_name": "Rabbit serum heat--inactivated at 56C for 1 hr",
+        "volume": 2,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001635",
+        "gmo_id": "GMO_001635",
+        "label": "Rabbit serum",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:39e5014231767fa76f07a19d59096709ae1c885b295f162a0f48b2f8337b0b27",
+      "source_label": "laked horse blood (Hema Resource & Supply, Aurora, OR)",
+      "occurrence_id": "CM_OCC:c1b55129c424c39ec22be1fb9967635d39e2836155a9fb46d4c93a736c0191ba",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_agar_amended_with_5_v_v_laked_horse_blood.yaml",
+      "snapshot_sha256": "0632f2e2c411d9ef34a502d40d4c1f0e818dc1dd9bea0e62847565bad4091b28",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "5"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2932",
+      "primary_capture": "bio/captures/5cb0c2f09412651a",
+      "primary_sha256": "46a61a5b37d081cb96ec75961a5bfab092aa5e1e642f3e7823d46c7f67c41509",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "laked horse blood (Hema Resource & Supply, Aurora, OR)",
+        "volume": 5,
+        "unit": "% (v/v)",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002277",
+        "gmo_id": "GMO_002277",
+        "label": "Laked horse blood (Hema Resource & Supply)",
+        "properties": [],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:476112c47845e5420e3f8087392a3bfa6b9a925db47ed21f7ed933eb1d699c2f",
+      "source_label": "Rabbit serum heat--inactivated at 56&#8451; for 30 min",
+      "occurrence_id": "CM_OCC:cdc24b2fa1dc86849bb185f51cd8df53fe18fadffa8eb9bd049986282c9050bd",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M993_Korthof_s_Medium.yaml",
+      "snapshot_sha256": "b9c3c61223f256cccc98fa577c12172c612154356841df6a3b9f74c918b42414",
+      "component_path": "ingredients/1",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M993",
+      "primary_capture": "bio/captures/c0ddfe1f0c0eb505",
+      "primary_sha256": "2397de1dc770bdc2d8b9224bb73d533db62d47e901cd713daaace34a70d826d4",
+      "primary_locator": "components[0].items[1]",
+      "primary_item": {
+        "component_name": "Rabbit serum heat--inactivated at 56&#8451; for 30 min",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001635",
+        "gmo_id": "GMO_001635",
+        "label": "Rabbit serum",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258",
+      "source_label": "calf blood",
+      "occurrence_id": "CM_OCC:40ac166a2c1d36a666e270dcefce2a12f95d8cb037c9ede3946b5cb41285b8a3",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_agar_upplemented_with_10_calf_blood_and_antibiotics.yaml",
+      "snapshot_sha256": "65c5b93a39ab047aa4a148c910b9bdda9f573cd18a8298971e6526752a3fcc1c",
+      "component_path": "ingredients/1",
+      "frozen_concentration": {
+        "unit": "PERCENT_W_V",
+        "value": "10"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2854",
+      "primary_capture": "bio/captures/aff5f4b09e39e12c",
+      "primary_sha256": "12f6464a1dcc66a32160e85433034cfd067ea5e930f3ae6d12ce2c60d6af2770",
+      "primary_locator": "components[0].items[1]",
+      "primary_item": {
+        "component_name": "calf blood",
+        "volume": 10,
+        "unit": "%",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002150",
+        "gmo_id": "GMO_002150",
+        "label": "Calf blood",
+        "properties": [],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:74dd03601e58fe60e5c79650cee65e6148b04ded88efff0ad9c2919cc24c4af6",
+      "source_label": "sterile bovine serum (heat inactivated at 56°C for 45 min)",
+      "occurrence_id": "CM_OCC:3e0aadbaa0ae7dcab5f79c9dc44a1a9d50008e0954cb574f6cd01592cc92b275",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2773_Serpulina_Murdochii_Medium.yaml",
+      "snapshot_sha256": "8fcf1b996d58e72c6a3e8ed7d05291843f44709f43400425c174e85068c1ff48",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "0.35"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2773",
+      "primary_capture": "bio/captures/57545b144fd4afc4",
+      "primary_sha256": "3342a9e2416139d1d6050672b6a67eb622eb1f767560dc507685a2a5af1a201f",
+      "primary_locator": "components[0].items[2]",
+      "primary_item": {
+        "component_name": "sterile bovine serum (heat inactivated at 56°C for 45 min)",
+        "volume": 0.35,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002286",
+        "gmo_id": "GMO_002286",
+        "label": "Bovine serum, heat-inactivated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:74dd03601e58fe60e5c79650cee65e6148b04ded88efff0ad9c2919cc24c4af6",
+      "source_label": "sterile bovine serum (heat inactivated at 56°C for 45 min)",
+      "occurrence_id": "CM_OCC:ebcb0a1ca478f236b716efe52a3a4dfd35866071331b5b29dd284baddba7f5eb",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2774_Serpulina_Murdochii_Medium.yaml",
+      "snapshot_sha256": "99067cbb7992a5a69db0a4efe0a4cc1cc4b22be829e467e10598e7ecfc045613",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "0.7"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2774",
+      "primary_capture": "bio/captures/cc90d7014fcbe90d",
+      "primary_sha256": "b063240c91ec9ca64af2f6bdc7bc980804ce2016df1c191aeb3fe527a84e385b",
+      "primary_locator": "components[0].items[2]",
+      "primary_item": {
+        "component_name": "sterile bovine serum (heat inactivated at 56°C for 45 min)",
+        "volume": 0.7,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002286",
+        "gmo_id": "GMO_002286",
+        "label": "Bovine serum, heat-inactivated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:9e0daf07c84add8c2499587be6ec223b0627e90c79005c25ea1babded42efaf9",
+      "source_label": "distilled or deionized water",
+      "occurrence_id": "CM_OCC:81b76fd0976f57695c636589f43cc98b11660c344f6379a0952a189c83b40056",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/basal_salts_medium.yaml",
+      "snapshot_sha256": "caff240045d6453eaeaa273e718559a49f220e6c7214b58d07e862475c803aad",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "1"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2877",
+      "primary_capture": "bio/captures/19a6d22775596961",
+      "primary_sha256": "b7f2e24e7876a518d6cbc766c0a88eb9b15a0e85a3a3dfda9c0b5dfd496526a7",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "distilled or deionized water",
+        "volume": 1,
+        "unit": "L",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001001",
+        "gmo_id": "GMO_001001",
+        "label": "Distilled water",
+        "properties": [
+          {
+            "id": "GMO_000046",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+            "label": "Defined component"
+          },
+          {
+            "id": "GMO_000040",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+            "label": "Inorganic compound"
+          },
+          {
+            "id": "GMO_000049",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+            "label": "Simple component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000044",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000044",
+            "label": "Solvating media"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:b3e27772bedaebcb7dfd05c4fcfdd5e087bed0bd1e6e5db3e5f7fbf1eb88da74",
+      "source_label": "defibrinated ovine blood",
+      "occurrence_id": "CM_OCC:1da13a073744a1b5a7eb56ab053de0f115bae72683709da04a5f7990c8354c9a",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/trypticase_soy_agar_containing_5_v_v_defibrinated_ovine_blood.yaml",
+      "snapshot_sha256": "d6b867a9b57d076daf4bf6ca3480f3cb366b3a9e89d0a5ab0e0f3875892d3133",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "5"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2824",
+      "primary_capture": "bio/captures/c53bc301182d3e5d",
+      "primary_sha256": "5fb6f5b2de70576cd28b0ea8bef979276e2f7fbbef36ec58526aa22e77e79e95",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "defibrinated ovine blood",
+        "volume": 5,
+        "unit": "% (v/v)",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001506",
+        "gmo_id": "GMO_001506",
+        "label": "Sheep blood, defibrinated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bbd6001c5f985ee74bc12c9def9089e15d6b87b216202fb7f7c3333d6d78bcd0",
+      "source_label": "Sheep Blood (defibrinated)",
+      "occurrence_id": "CM_OCC:e0219023a7e30fe578d26a965723cc95aa040d95a34f3b6de3badf958ca7db31",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2573_Tryptic_Soy_Agar_Broth_with_5_Sheep_Blood_defibrinated.yaml",
+      "snapshot_sha256": "1ff7799edca894228ac2f0dfa6ea81f7f3471b5bdefc5ea11a7d32770f343dd5",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2573",
+      "primary_capture": "bio/captures/9a353315f11f694c",
+      "primary_sha256": "d693c02923bc32aa02177ee2dd8561eac74993dc8518ff9f59fe462c30cb8f74",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "Sheep Blood (defibrinated)",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001506",
+        "gmo_id": "GMO_001506",
+        "label": "Sheep blood, defibrinated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bbd6001c5f985ee74bc12c9def9089e15d6b87b216202fb7f7c3333d6d78bcd0",
+      "source_label": "Sheep Blood (defibrinated)",
+      "occurrence_id": "CM_OCC:56f449f1f3f17b9b159f331faf0ea322264a2cbc8838b956533566f6cafa9e37",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/tryptic_soy_agar_broth_with_5_sheep_blood_defibrinated.yaml",
+      "snapshot_sha256": "7db9940dce15fb16d6cf1e9271cbf0817e05248778e2ae376e7c355002b82a08",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2572",
+      "primary_capture": "bio/captures/fd472fcabc6b53a8",
+      "primary_sha256": "762aaf5f5b9ebba29b4f3dbecdd4ce42c090d6cdaae202188309561b73c16a39",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "Sheep Blood (defibrinated)",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001506",
+        "gmo_id": "GMO_001506",
+        "label": "Sheep blood, defibrinated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bbd6001c5f985ee74bc12c9def9089e15d6b87b216202fb7f7c3333d6d78bcd0",
+      "source_label": "Sheep Blood (defibrinated)",
+      "occurrence_id": "CM_OCC:3f17735ef1ea9547ac8f432d6ca00ca204ea9f7bd79da5a3fd7d2e7d137307f2",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/tryptic_soy_agar_with_5_sheep_blood_defibrinated.yaml",
+      "snapshot_sha256": "4bb9c0cc787e1925b1cdc475f32533cd82bf0c2d943d0f8f7095b198c5fa5e7e",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2428",
+      "primary_capture": "bio/captures/d77008e88238a9de",
+      "primary_sha256": "4b39497d854b2949617d7e3432231cd0cc605b55aa997d7a42444d318c994c7b",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "Sheep Blood (defibrinated)",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001506",
+        "gmo_id": "GMO_001506",
+        "label": "Sheep blood, defibrinated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bbd6001c5f985ee74bc12c9def9089e15d6b87b216202fb7f7c3333d6d78bcd0",
+      "source_label": "Sheep Blood (defibrinated)",
+      "occurrence_id": "CM_OCC:11d3b562679bc977d841f0422b08a5aba945f7c0ce4b1d2ccb8e72db143562ed",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/tryptic_soy_broth_with_5_sheep_blood_defibrinated.yaml",
+      "snapshot_sha256": "2464fc365dc3121bf04dfbef8b104a82303011e3a5de7940af385f1b69e7ec1d",
+      "component_path": "ingredients/0",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2429",
+      "primary_capture": "bio/captures/cf05f5a361125d4b",
+      "primary_sha256": "a1b2fa9c9ce0faf188b59ab85918ea6bf3d0e262edd3b8a4ea9cddcda6940722",
+      "primary_locator": "components[0].items[0]",
+      "primary_item": {
+        "component_name": "Sheep Blood (defibrinated)",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001506",
+        "gmo_id": "GMO_001506",
+        "label": "Sheep blood, defibrinated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bdb56c0c5ee5e606a579073cd4b9cb90602d87f0258d7a9d55b127b3ababbe7a",
+      "source_label": "clarified tomato juice",
+      "occurrence_id": "CM_OCC:e08827afcd07604483548ff495d8efb3cd859eeb4ac9289c1c201dae3e24f7ef",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2488_YTP-2_medium.yaml",
+      "snapshot_sha256": "498f197ae65521e9f64154211fa5540ca3498b313794e994135f4f277309795f",
+      "component_path": "ingredients/8",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "2"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2488",
+      "primary_capture": "bio/captures/dad17385bf23a5dc",
+      "primary_sha256": "b9c8d029494f0bf9218a0d4e56f348eef344926cace8ede50045668b8f4c2b68",
+      "primary_locator": "components[0].items[8]",
+      "primary_item": {
+        "component_name": "clarified tomato juice",
+        "volume": 2,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002254",
+        "gmo_id": "GMO_002254",
+        "label": "Clarified tomato juice",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000067",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000067",
+            "label": "Growth factor"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bdb56c0c5ee5e606a579073cd4b9cb90602d87f0258d7a9d55b127b3ababbe7a",
+      "source_label": "clarified tomato juice",
+      "occurrence_id": "CM_OCC:765bc2663f5aa9dc0f298a8f8d8fd6d4c1332d8163ed5d9d17327feb9d680bf2",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/ytp_2_media.yaml",
+      "snapshot_sha256": "ab0d7a5ccc9acc802e824348902f6757c545e3c337adcbbe9db588769250618a",
+      "component_path": "ingredients/8",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "2"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2430",
+      "primary_capture": "bio/captures/4225b267bacf5b1b",
+      "primary_sha256": "9cec6d0e4655251017d6b26fc464faf37088f81ca65db3ad95d84e90fa60d40c",
+      "primary_locator": "components[0].items[8]",
+      "primary_item": {
+        "component_name": "clarified tomato juice",
+        "volume": 2,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002254",
+        "gmo_id": "GMO_002254",
+        "label": "Clarified tomato juice",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000067",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000067",
+            "label": "Growth factor"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bdb5ad2073270836075cf5636034bef7bf10604d82ad474a72fbccd2adbaa029",
+      "source_label": "Heat inactivated fetal bovine serum",
+      "occurrence_id": "CM_OCC:ac2d57de6cd4d431944286110f92595089bed5cb98c7a5fab9754c1005e54106",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2764_BHI_w_heat-inactivated_Fetal_Bovine_Serum_and_Glucose.yaml",
+      "snapshot_sha256": "5840e03733454a10f1cfbbc6c32285e9f078908959ad85501ec837e04d49124d",
+      "component_path": "ingredients/10",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "100"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2764",
+      "primary_capture": "bio/captures/922e81eccedb3b7e",
+      "primary_sha256": "410b07b0db4a70045770d8da8619c1c828ad4b687da8277a8f7ea83d3941f295",
+      "primary_locator": "components[1].items[0]",
+      "primary_item": {
+        "component_name": "Heat inactivated fetal bovine serum",
+        "volume": 100,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001397",
+        "gmo_id": "GMO_001397",
+        "label": "Fetal bovine serum, heat-inactivated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:bdb5ad2073270836075cf5636034bef7bf10604d82ad474a72fbccd2adbaa029",
+      "source_label": "Heat inactivated fetal bovine serum",
+      "occurrence_id": "CM_OCC:697d300772a0715bc7005709e97926e42471c39c2a13066b7d08d538a3c479b5",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bhi_w_heat_inactivated_fetal_bovine_serum_and_glucose.yaml",
+      "snapshot_sha256": "28d9983e10a384f8297818f1be3e77b1098ac1f52fb9b1ae4a6418dbd2b36446",
+      "component_path": "ingredients/10",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "100"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2622",
+      "primary_capture": "bio/captures/2979850e4bdc8738",
+      "primary_sha256": "2a4440bc703f278641e795282765e5f21319459dfa99c9fb940c08fc0d0bcec0",
+      "primary_locator": "components[2].items[0]",
+      "primary_item": {
+        "component_name": "Heat inactivated fetal bovine serum",
+        "volume": 100,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001397",
+        "gmo_id": "GMO_001397",
+        "label": "Fetal bovine serum, heat-inactivated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:c5033da6c082cf089a2e354f2c57ca3f6ee97f4c688478a37642372122e1a041",
+      "source_label": "Pig serum (Invitrogen)",
+      "occurrence_id": "CM_OCC:e05b9ba18a1f74740590bae55cc58a84e38dda7f69de8cb2bcbf35d4b5a91b95",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml",
+      "snapshot_sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295",
+      "component_path": "ingredients/8",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2927",
+      "primary_capture": "bio/captures/429b78763024f2f9",
+      "primary_sha256": "e7040fcd88bb2eddd5d07aadd2c2049943474d691bddcc3c635a01e28e49278d",
+      "primary_locator": "components[1].items[0]",
+      "primary_item": {
+        "component_name": "Pig serum (Invitrogen)",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002242",
+        "gmo_id": "GMO_002242",
+        "label": "Gibco &trade; Porcine serum",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:ca4ab7074f06060667908f39e7f729f2e576b7610ca01bc42fce022d304ec18c",
+      "source_label": "Fetal bovine serum (heat-inactivated)",
+      "occurrence_id": "CM_OCC:516b06abb7a1ff43865531ab10fc505a16597ee73a36aebfadacedd0367d870f",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/m1d_medium.yaml",
+      "snapshot_sha256": "6b0a69b8bcff7f68386bb3d35aa1458de0177fb36facf7071ad65ecb2694343e",
+      "component_path": "ingredients/5",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "50"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1591",
+      "primary_capture": "bio/captures/b008f99181e22e67",
+      "primary_sha256": "e162f2a7183e49990a2d8fc5050668a7ad7da609a50fed133354af91a5d283a9",
+      "primary_locator": "components[0].items[5]",
+      "primary_item": {
+        "component_name": "Fetal bovine serum (heat-inactivated)",
+        "volume": 50,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001397",
+        "gmo_id": "GMO_001397",
+        "label": "Fetal bovine serum, heat-inactivated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:e48d2ee0ce541df75c2b2c5a77efc237934e38d30d42977a69c0fea50aa610f9",
+      "source_label": "Sheep Blood, defibrinated",
+      "occurrence_id": "CM_OCC:0bc2c357f9fc2de7eec5a4e3f6ee1faebb186d0aba65cc6618e0a40d81c851e6",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/brucella_agar_plates_supplemented_with_hemin_and_vitamin_k1.yaml",
+      "snapshot_sha256": "077edc3866055dc5a27dcd6a7404d4c22755096ad806f56919b6775952283a56",
+      "component_path": "ingredients/4",
+      "frozen_concentration": {
+        "unit": "PERCENT_W_V",
+        "value": "5"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2694",
+      "primary_capture": "bio/captures/b7da5bd5332810ec",
+      "primary_sha256": "bde5e2626ab697ab20fd1b36072426beeecb7786a11d6e5dfb245487b605887e",
+      "primary_locator": "components[0].items[4]",
+      "primary_item": {
+        "component_name": "Sheep Blood, defibrinated",
+        "volume": 5,
+        "unit": "%",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001506",
+        "gmo_id": "GMO_001506",
+        "label": "Sheep blood, defibrinated",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:edde03482aa2f4f915d7cab127975a3ecf620997013e5e4293710550f8e77024",
+      "source_label": "mannan (Saccharomyces cerevisiae)",
+      "occurrence_id": "CM_OCC:7f90271714a61d60296d64119c9a469bbd5d958524dec5f106a5703e34cdba2c",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/minimal_media.yaml",
+      "snapshot_sha256": "a1c2ef58d6c029684210986a59e8189c070713adbe27d27e824f98568c288cff",
+      "component_path": "ingredients/16",
+      "frozen_concentration": {
+        "unit": "PERCENT_W_V",
+        "value": "0.2"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313",
+      "primary_capture": "bio/captures/61217b46be42b027",
+      "primary_sha256": "5fa9f5e652ed2f6cfa5cbe63402338d87899e77e0c56a2d42ac1939aca3572b3",
+      "primary_locator": "components[0].items[16]",
+      "primary_item": {
+        "component_name": "mannan (Saccharomyces cerevisiae)",
+        "volume": 0.2,
+        "unit": "%",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_002013",
+        "gmo_id": "GMO_002013",
+        "label": "Mannan from yeast",
+        "properties": [],
+        "roles": [
+          {
+            "id": "GMO_000063",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+            "label": "Carbon source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    },
+    {
+      "case_id": "CM_NAME:f35ff91c244fc7f47eafcfeb3a3a62e5315556fd81a89333f1f5dd03151d1a36",
+      "source_label": "Rabbit serum sterile non--hemolyzed young (Pel--Freez code No. 31125)",
+      "occurrence_id": "CM_OCC:784b022da170da75ebf2f5b23b5d2fe1f34ac81ccab8e063a6fc0c62fa09081d",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M937_Modified_BSK_Medium.yaml",
+      "snapshot_sha256": "bdf4eebf07d22ecde191a4a359433415bab7b4b2612315b8dc8798ad0638811c",
+      "component_path": "ingredients/7",
+      "frozen_concentration": {
+        "unit": "G_PER_L",
+        "value": "40"
+      },
+      "primary_source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M937",
+      "primary_capture": "bio/captures/ba28891788b2574b",
+      "primary_sha256": "1d9a07f6221cb64acd37befc791df9a25d303faa63ba33fe94c70df39e148f9b",
+      "primary_locator": "components[0].items[7]",
+      "primary_item": {
+        "component_name": "Rabbit serum sterile non--hemolyzed young (Pel--Freez code No. 31125)",
+        "volume": 40,
+        "unit": "ml",
+        "gmo": "http://purl.jp/bio/10/gmo/GMO_001726",
+        "gmo_id": "GMO_001726",
+        "label": "Rabbit serum sterile non-hemolyzed (Pel-Freez)",
+        "properties": [
+          {
+            "id": "GMO_000047",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+            "label": "Undefined component"
+          }
+        ],
+        "roles": [
+          {
+            "id": "GMO_000042",
+            "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+            "label": "Nutrient source"
+          }
+        ]
+      },
+      "finding": "Primary liquid volume or unspecified percentage was projected as a mass concentration/basis without density or explicit weight basis. No corrected final concentration is inferred.",
+      "proposed_followup": "Restore original amount/unit/batch scope through CultureMech guarded source repair; inspect enclosing stock/final-medium denominator; do not alter MIM identity to compensate.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408"
+    }
+  ],
+  "additional_source_findings": [
+    {
+      "case_id": "CM_NAME:4b00439babd374e3458c169625024e2df7c6bb3a395fb37c42b02eebe6033c15",
+      "source_label": "Defibrinated Blood",
+      "finding": "Standalone solution mediadive_5693_Main_sol_1331 records50 PERCENT_V_V, whereas DSMZ1331 gives50 ml blood and5% addition. All eight generic-blood occurrences also span sheep-specific, horse/sheep-alternative and animal-unspecified materials; no global sheep alias is valid.",
+      "existing_issue": "https://github.com/CultureBotAI/CultureMech/issues/408",
+      "proposed_followup": "Inspect raw DSMZ1331 table and final addition; repair source units at occurrence level while retaining generic animal ambiguity elsewhere."
+    }
+  ],
+  "mim_owner_findings": [
+    {
+      "finding_id": "bio-mannan-material-organism-and-oligoglucan",
+      "case_id": "CM_NAME:edde03482aa2f4f915d7cab127975a3ecf620997013e5e4293710550f8e77024",
+      "owner": "data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml",
+      "severity": "major",
+      "finding": "CAS9036-88-8 yeast mannan uses fungus species NCIT:C14271 as broader mapping parent and PubChem870 amylotetraose/alpha-1,4-tetraglucose as its molecular formula/SMILES/InChI. Primary material and ontology captures contradict both projections.",
+      "evidence_ids": [
+        "bio-primary-a7072f9a893aeec1",
+        "bio-primary-e272148d74af3938",
+        "bio-primary-5038a6f6a4d190c8",
+        "bio-primary-ad3ef633be746bdb"
+      ],
+      "proposal_id": "bio-proposal-Mannan_From_Saccharomyces_Cerevisiae",
+      "proposed_followup": "Review isolated proposal preserving material CAS, replacing organism parent with broadMatch to CHEBI28808 mannan and removing unrelated oligoglucan structure fields; reconcile all owner conflicts and publish only after new content-bound review."
+    }
+  ],
+  "scope": "Only assigned biological source cases; findings identify source projections, not permission to edit CultureMech. Issue408 dedup status supplied by root live issue inspection."
+}

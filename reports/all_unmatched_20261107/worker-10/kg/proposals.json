@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "kg-glyoxylate-label",
+      "case_ids": [
+        "KG_CASE:01b5e3408f553b76c98eb4b5b0c8178d9ac4da5a74be30389847f2727b90aee1"
+      ],
+      "description": "Correct preferred label to sodium glyoxylate from source361 monosodium chemistry; preserve original Na2-glyoxalate literal as provenance-only REJECTED_LABEL, not an exact alias.",
+      "evidence_ids": [
+        "kg-md361",
+        "kg-medium_298b",
+        "kg-CHEBI_91251",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2-glyoxalate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "4f40039bb78bdf2657e2bbbbf6a1c6f8ca6d31a1fd56f3101f795cc9e3c4ebc8",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/glyoxylate-label.yaml",
+        "sha256": "33eff8fa0f121579f1c42bc3cef6ac49abae0ac5415b647dca299b10cd811349"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review."
+      ]
+    },
+    {
+      "proposal_id": "kg-levorin-concept-scope",
+      "case_ids": [
+        "KG_CASE:0d14840f20bf58d58e8b1101ef28c1c1fdf97b81b7cafd3ac4af2a30bdcd30d1"
+      ],
+      "description": "Restore kgmicrobe.compound:levorin and change Candicidin grounding from exact to NARROW_MATCH (published broadMatch) using NLM concept hierarchy; historical raw source identifier remains stable.",
+      "evidence_ids": [
+        "kg-mesh_D002174",
+        "kg-mesh_M0003252",
+        "kg-mesh_M0352008",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Levorin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "77cccb8ad35797ec34744abe85b0125c5783466a832ec52b7a3442e51cd441a4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/levorin-concept-scope.yaml",
+        "sha256": "7490a66ecda86d31016fc8096b10a5b20f5da32803e3bdc19af55bc31da27079"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review.",
+        "Inherited SINGLE_INGREDIENT classification remains unadjudicated against the NLM antibiotic-complex scope; local identity and broad parent proposal do not authorize publication of a specific molecular species."
+      ]
+    },
+    {
+      "proposal_id": "kg-isp4-remove-salt-parent",
+      "case_ids": [
+        "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188"
+      ],
+      "description": "Remove chemically invalid inorganic-salt parent from named ISP4 medium; preserve UNMAPPED status and exact raw source name pending distinct formulation curation.",
+      "evidence_ids": [
+        "kg-md1692",
+        "kg-jcm58",
+        "kg-CHEBI_24839",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/isp4-remove-salt-parent.yaml",
+        "sha256": "70c4b138c58230159aa991533c6048a4503761e01853a0a54b7759b96eb76435"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review."
+      ]
+    },
+    {
+      "proposal_id": "kg-ristocetin-b-parent-chemistry",
+      "case_ids": [
+        "KG_CASE:34293ff2cf9b01d8b668894647ee23826b8af7d2d52e338fe8e8925f82901c81",
+        "KG_CASE:ca525564b3f22d6135b7f82f05921bf65ed60513771d887b947507f82216e525"
+      ],
+      "description": "Remove erroneous parent-derived formula/InChI/SMILES and unsupported CHEBI85129 molecule parent; preserve local ristocetinB identity with fallback registry mapping and rejected trait synonym.",
+      "evidence_ids": [
+        "kg-pc_ristocetin_b",
+        "kg-pc_ristocetin_b_names",
+        "kg-CHEBI_85129",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Ristocetin_B.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "9630cba6e27f198278c5aa247dfc10bef5de0a07ea34991777913de887b1e1e6",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/ristocetin-b-parent-chemistry.yaml",
+        "sha256": "31f6897af214e673e8a859c1c2c14bd60e119a3a8c4373ae2266a3197ab4c3de"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review."
+      ]
+    },
+    {
+      "proposal_id": "kg-vanadate-variable-hydrate",
+      "case_ids": [
+        "KG_CASE:76b01bd2362ae269955c4fa983ab3b8e4bd44320a76eb6bef78b878fa9cc7802",
+        "KG_CASE:7e2d1f3cd7154d836fbfc76b5306fe83675f358d0459c06a2f0566e338b89ca5"
+      ],
+      "description": "Retype NaVO3 x n H2O as provenance-only REJECTED_LABEL; CHEBI132095 specifies monohydrate, while source700 variable hydration remains unresolved. Exact source182 monohydrate is unchanged.",
+      "evidence_ids": [
+        "kg-md700",
+        "kg-md182",
+        "kg-CHEBI_132095",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Navo3_X_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "d4d3f05a57d260547b23249d5fb316600c7b5adb56887463394cbe3417dc57e4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/vanadate-variable-hydrate.yaml",
+        "sha256": "74df07af5a618ea4f2bc0402fb6566b1a7777c1ff8befa8612ca4a1d9c881e7a"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review.",
+        "Inherited unqualified sodium vanadate hydrate and sodium metavanadate hydrate aliases require full cohort review; their scope is not approved by the narrow variable-n alias correction."
+      ]
+    },
+    {
+      "proposal_id": "kg-halomicin-complex",
+      "case_ids": [
+        "KG_CASE:8aa0732451ad0db374fe81f13ada6b3da9493e9d13d3ef23e2b9f44b2303f763",
+        "KG_CASE:93878ef294ceaafe3345cb829898c6e521a7a7221f7cdc52919def7808e37b03"
+      ],
+      "description": "Reclassify unsuffixed halomicin as undefined antibiotic mixture with kgmicrobe.ingredient local identity, based on original patent componentsA-D; preserve all historical source provenance.",
+      "evidence_ids": [
+        "kg-halomicin_patent",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Halomicin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "8c0bad7398d8e43ee0812117f6d368303dc8c6a0ff5a2f098b976b565bf5ac5e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/halomicin-complex.yaml",
+        "sha256": "61cc2355010ce9a7bea6d2e5534cbaad49ab443147a217346d9f37c3df4db09c"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review."
+      ]
+    },
+    {
+      "proposal_id": "kg-aqds-dianion-alias",
+      "case_ids": [
+        "KG_CASE:aefcac45566718d2ede9d8c26e7444baa78c6c641af4dbdf2a4e65a4669bae9d"
+      ],
+      "description": "Retype anthraquinone-2,6-disulfonate exact synonym as REJECTED_LABEL because source521 and CAS853-68-9 identify the disodium salt; retain qualified Na2 alias and supplied salt identity.",
+      "evidence_ids": [
+        "kg-md521",
+        "kg-pc_aqds",
+        "kg-CHEBI_85112",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/AQDS.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "0d70097612d9e5c0c4855bb8d86dc22fbbfc754f09a553819f5f1fcb5fa0eb29",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/aqds-dianion-alias.yaml",
+        "sha256": "58adfba88aa6819f3af7877287f27afc0fda277f0032d4d851aeb551cccc5007"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review."
+      ]
+    },
+    {
+      "proposal_id": "kg-metals44-recipe",
+      "case_ids": [
+        "KG_CASE:c03dead07d378e4f7a42e33a5f2cc27fa4a6ad3fa911e7dbc4cc345693e8252c"
+      ],
+      "description": "Add source-backed Metals44 has-part decomposition from DSMZ590, preserving hydrate forms and explicitly unresolved Na-EDTA/concentrated acid identities; no mapping of whole stock to one salt.",
+      "evidence_ids": [
+        "kg-md615",
+        "kg-medium590",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Metall_Salt_Sol_44.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "f407b239b589ad35764c99509dd8c289f7691a26adc87cebd26a6201488ef3cf",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/metals44-recipe.yaml",
+        "sha256": "afb9ed5238a85b72782ea29351c5ef77ccb537c7e4f070cb637b1cbae0138bb4"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review.",
+        "Borax decahydrate component identity awaits issue1168 cross-shard owner reconciliation; no baseline131366 or pending38888 identity is applied."
+      ],
+      "cross_shard_conflict": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1168 tracks baseline borax CHEBI131366 supplied-form defect. Other worker proposes CHEBI38888; only coordinator may reconcile pending owner correction. This proposal uses UNMAPPED exact decahydrate component17.7mg and retains the source."
+    },
+    {
+      "proposal_id": "kg-carbonate-buffer-alias",
+      "case_ids": [
+        "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4"
+      ],
+      "description": "Reject Na2CO3-CO2 buffer as an exact identity synonym of pure sodium carbonate, preserving the raw source label and stock-specific unresolved preparation requirements.",
+      "evidence_ids": [
+        "kg-md1685",
+        "kg-mdJ209",
+        "kg-CHEBI_29377",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2co3.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/carbonate-buffer-alias.yaml",
+        "sha256": "b8e08c21022fcbd8b96d492f0365309e23cc52c241ea5ae47af5d37848efa9b8"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review.",
+        "Inherited malformed NaCO3 and Na CO aliases remain unadjudicated and publication-withheld; rejecting the CO2 buffer alias does not validate the rest of the owner."
+      ]
+    }
+  ]
+}

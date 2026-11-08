@@ -1,0 +1,60 @@
+identifier: kgmicrobe.ingredient:phosphate_buffer_jcm_822
+preferred_term: 1 M phosphate buffer stock (JCM 822)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:phosphate_buffer_jcm_822
+  ontology_label: 1 M phosphate buffer stock (JCM 822)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=822
+    notes: Source-defined stock with preserved composition. No exact ontology identity
+      established; local preparation identity avoids conflating it with any individual
+      phosphate salt.
+components:
+- component_name: 1 M KH2PO4 solution
+  reference_scope: UNMAPPED
+  source: 50mL of this separately prepared stock; its supplied salt hydration is not
+    stated.
+- component_name: 1 M Na2HPO4 solution
+  reference_scope: UNMAPPED
+  source: 50mL of this separately prepared stock; its supplied salt hydration is not
+    stated.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=822
+    source_record: 1 M phosphate buffer stock (JCM 822)
+    notes: JCM822 explicitly mixes50mL of1.0M KH2PO4 solution with50mL of1.0M Na2HPO4
+      solution to prepare100mL of1.0M total phosphate buffer. The two input solutions
+      are retained as UNMAPPED component references, without falsely pointing their
+      stock identities at the pure salts. Do not merge with JCM556, whose28+78mL instruction
+      is inconsistent.
+  notes: Constituent list is complete as printed. This does not assert supply-form
+    chemistry for unspecified hydration or certify the entire CultureMech recipe.
+notes: 'JCM822 explicitly mixes50mL of1.0M KH2PO4 solution with50mL of1.0M Na2HPO4
+  solution to prepare100mL of1.0M total phosphate buffer. The two input solutions
+  are retained as UNMAPPED component references, without falsely pointing their stock
+  identities at the pure salts. Do not merge with JCM556, whose28+78mL instruction
+  is inconsistent. Provenance-only raw label: ''1.0 M Phosphate buffer (see below)''
+  (frozen case CM_NAME:a694665ba4984428f9b60e248e040370a36a6248ba3e05881a34d7edd54a2636).
+  This generic source-local text is deliberately excluded from resolving synonyms;
+  the source-qualified preferred term identifies this formulation. This stock is a
+  component of the cited medium, not the whole medium; no EXACT_FORMULATION link to
+  the parent recipe is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: CREATED
+  changes: Created distinct source-defined stock identity in isolated proposal; preserved
+    the original label only as nonresolving provenance and retained recipe-owned component
+    evidence.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.

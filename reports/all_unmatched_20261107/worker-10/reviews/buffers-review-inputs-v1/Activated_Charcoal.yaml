@@ -1,0 +1,52 @@
+identifier: NCIT:C77524
+preferred_term: Activated charcoal
+ontology_mapping:
+  ontology_id: NCIT:C77524
+  ontology_label: Activated Charcoal
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: mim-queue
+    notes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:582; '
+synonyms:
+- synonym_text: Activated carbon
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:194ebe6f7c71ae935bb8a8828f20e412290132e2818d1690bed007e544195926
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 13
+  media_count: 13
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:582; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.053587+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.303062+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518301+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 13/13 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: NBRC1357 and DSMZ811 name activated carbon as a weighed solid. NCIT C77524 defines carbon treated to create adsorption pores, matching this material; untreated Charcoal is not substituted. New ChEBI753771 is an unstructured two-star import with an uninformative organic-molecule parent; this source-alias review retains the established specific NCIT owner. Proposed only; integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT

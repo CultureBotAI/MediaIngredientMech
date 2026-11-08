@@ -1,0 +1,1741 @@
+{
+  "schema_version": 1,
+  "worker_slot": 10,
+  "shard_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:01dd93e5cf4b30e8b25b7c4321d92baee3e00ecb16efc03b2b691e1c469214f8",
+      "case_input_sha256": "90d052ecc671efbc9339b695fb636d2e9ce708f371053603043b96e4043722d1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Potassium phosphate buffer (pH 7.5)",
+        "source_label": "Potassium phosphate buffer (pH 7.5)",
+        "raw_source_label": "Potassium phosphate buffer (pH 7.5)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9c9da291ccdec2b874624459795e34c17556257b277e23e935b30d54b119f670",
+        "CM_OCC:f03d68a215394b4c05d7cc8e5a6e3294be69f44acdb0c0236588919cdd6f04ed",
+        "CM_OCC:595aa02c7e383777c090f21f5195a9519685c9bf19f92de86f12db997e043e06"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ833 SolutionB is0.1M potassium phosphate atpH7.5. All three frozen records are source duplicates of that formulation. The component label drops0.1M, but its MOLAR field retains it. It is a prepared potassium-phosphate stock, not KH2PO4 alone or generic phosphate.",
+      "applicability": "Reviewed all 3 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-0",
+        "buffers-primary-8a790ec4cd07467f",
+        "buffers-recipe-0-0",
+        "buffers-recipe-0-1",
+        "buffers-recipe-0-2",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain the exact constituent ratio and stock preparation specification before adding a concentration/pH-specific owner or merging into an existing potassium-phosphate stock.",
+      "missing_requirement": "Obtain the exact constituent ratio and stock preparation specification before adding a concentration/pH-specific owner or merging into an existing potassium-phosphate stock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:027eefccc7351f91151328ec29620bc936e045332508e1a1f953bc75e5471af6",
+      "case_input_sha256": "258e3d941b0f41e1f5da0270b3c869d75a636f3d9c7a6efa069f8765730c0474",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M Tris--HCl buffer (pH 7.5)",
+        "source_label": "0.1 M Tris--HCl buffer (pH 7.5)",
+        "raw_source_label": "0.1 M Tris--HCl buffer (pH 7.5)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f5b1318224eefbc80be099061d03969fbe12235aad421e19b12f4a891513ed7e",
+        "CM_OCC:50013a2c3458b1e518a661b64d1c5ffde0365f3c8cfea83f25acd7b092f8c7e2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM995 and900 supply50mL of0.1M Tris-HCl pH7.5 stock. JCM900 additionally directspH8.5 for agar plates, so the source label does not fix every realized preparation. TOGO raw units aremL while frozen rows say50g/L. This stock cannot be an alias for Tris base or Tris hydrochloride solid.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-1",
+        "buffers-primary-afed65308f937d6d",
+        "buffers-primary-cb3de946b9eb429a",
+        "buffers-primary-d78eaec3d48cf38b",
+        "buffers-recipe-1-0",
+        "buffers-recipe-1-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Resolve occurrence-specific agar/liquidpH and retrieve the stock preparation/counterion details before a single exact stock proposal.",
+      "missing_requirement": "Resolve occurrence-specific agar/liquidpH and retrieve the stock preparation/counterion details before a single exact stock proposal.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:03d699039590d9ae0fcc9a25a67237f63ee6851f2c1405f8b8f90e5a906f9c0d",
+      "case_input_sha256": "2ab160541a69843dba7eb604ae4b7a10c19e35a339a6c1100fa049c42e2d157e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M Phosphate buffer",
+        "source_label": "1 M Phosphate buffer",
+        "raw_source_label": "1 M Phosphate buffer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:47298a7669f8dc75e5f50c3cf8e43b35b509282c0dc48282506dfd21592632ac"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "TOGO M3225 explicitly defines its nominal1M phosphate stock as47gKH2PO4 plus113gK2HPO4 per litre of water. Those masses identify a potassium-only preparation distinct from the mixed sodium/potassium stocks. The35.2mL addition was flattened to35.2g/L in CultureMech. A source-defined stock proposal preserves the batch denominator without calculating final molarity.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-2",
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-712c306afd311885",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-2-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [
+        "buffers-phosphate-m3225"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:0a185d93e165ad3aaa6a1ff9dc08fb8010d4663c3691673b2e7da472771352f1",
+      "case_input_sha256": "181adbe60a04957476acbfecd9984f831588f450a15699e12195a40cbf0205f7",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M Na2HPO4--KH2PO4 buffer (pH 6.8)",
+        "source_label": "1 M Na2HPO4--KH2PO4 buffer (pH 6.8)",
+        "raw_source_label": "1 M Na2HPO4--KH2PO4 buffer (pH 6.8)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c4f8de49343aa7e20513ff027ec486681a1139dc9196ddbec51935d010da5fc2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM149 identifies40mL of1M Na2HPO4-KH2PO4 buffer,pH6.8, within Standard mineral base. Both sodium and potassium are explicit; generic potassium phosphate and either single salt would erase composition. Frozen40g/L is a volume-normalization artifact.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-7",
+        "buffers-primary-9c2e840069cb8057",
+        "buffers-primary-d41064a5ad70acb9",
+        "buffers-recipe-7-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Retrieve the Na2HPO4:KH2PO4 preparation ratio and distinguish stock final volume from40mL addition before exact-owner assignment.",
+      "missing_requirement": "Retrieve the Na2HPO4:KH2PO4 preparation ratio and distinguish stock final volume from40mL addition before exact-owner assignment.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:10ae9613291d16a03d5e59cad87fe836d9885ac4917422a5244a7833493f4b4f",
+      "case_input_sha256": "c56d0805b73d986eb672b503ae6141b0c6245d3e850a37304d07ce23ae1bb516",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "10 mM Potassium phosphate buffer (pH 7.2)",
+        "source_label": "10 mM Potassium phosphate buffer (pH 7.2)",
+        "raw_source_label": "10 mM Potassium phosphate buffer (pH 7.2)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f3f541cf25125ce703d137e29a4f3d42fd24644c16c32d7f42085a7f34cc9e72"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1100 places100mL of10mM potassium phosphatepH7.2 inside Vitamin solutionA, a1000x stock. It is the vitamin-stock solvent/buffer, not100g/L final-medium phosphate. The10mM andpH7.2 qualifiers belong to that nested buffer.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-8",
+        "buffers-primary-692f41af8d398680",
+        "buffers-primary-6b4bfed4b4c00d2f",
+        "buffers-recipe-8-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Source preparation specifying the potassium phosphate components and ratio is needed before a unique buffer owner; restore nested vitamin-stock context upstream.",
+      "missing_requirement": "Source preparation specifying the potassium phosphate components and ratio is needed before a unique buffer owner; restore nested vitamin-stock context upstream.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:1756d7568bc5fccde680b5e66c0cd507c9f01316038ae2a1cda4d137ffb0202d",
+      "case_input_sha256": "f56f9a07029a94c67fc21b3bb471c572682cb494f80c76b03fefd118d7ca415f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "20 mM Potassium phosphate buffer (pH 7.8)",
+        "source_label": "20 mM Potassium phosphate buffer (pH 7.8)",
+        "raw_source_label": "20 mM Potassium phosphate buffer (pH 7.8)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ee03cef5ecaec4b759a35b9def1db39d5e1c8d9ad7372bd952e7ccce1e6b8b2e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM194 explicitly uses500mL of20mM potassium phosphatepH7.8 as SolutionII, then mixes SolutionsI/II and adjusts finalpH7.7-7.8. The final medium differs from the input stock and500g/L is not supported.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-11",
+        "buffers-primary-54e6db3ad5db014f",
+        "buffers-primary-b029597753af131b",
+        "buffers-recipe-11-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain the20mM,pH7.8 stock preparation and ratio; do not substitute final-mediumpH or infer500g/L.",
+      "missing_requirement": "Obtain the20mM,pH7.8 stock preparation and ratio; do not substitute final-mediumpH or infer500g/L.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:232f2cc81a44bcae4debd4d5f2b0a8a8f26346774a73f840e1bf872a31cdd9ff",
+      "case_input_sha256": "53a1cd76019ba2f865d687ba11e9e2c67d17c9e034f60bf786888080826fd640",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "20 mM Potassium phosphate buffer",
+        "source_label": "20 mM Potassium phosphate buffer",
+        "raw_source_label": "20 mM Potassium phosphate buffer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e02d61978801bd592a17dd8090eaddc5366fd316ae2320c3d201f82c35c85d96"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC372 supplies500mL20mM potassium phosphate as SolutionII, with a separatepH7.8 line. The omittedpH in the raw label can be recovered only from this context. It aligns descriptively with JCM194 but neither source gives a constituent ratio, so no identity merge is asserted.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-16",
+        "buffers-primary-67571e41287e97f2",
+        "buffers-primary-9a8768ce3646b844",
+        "buffers-recipe-16-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify exact stock composition before merging with case11; carrypH7.8 as this source preparation context and correct volume units upstream.",
+      "missing_requirement": "Verify exact stock composition before merging with case11; carrypH7.8 as this source preparation context and correct volume units upstream.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+      "case_input_sha256": "d93c3e9449958e0834ae3df292dbbff10b287ec57cde8b07510433d9241d6fda",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "4% Na2CO3--CO2 buffer",
+        "source_label": "4% Na2CO3--CO2 buffer",
+        "raw_source_label": "4% Na2CO3--CO2 buffer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M202 records100mL of4%Na2CO3-CO2 buffer and final-mediumpH6.7-6.8. JCM209 currently returns Nothing found, so the available primary source is the TOGO record. Carbon dioxide equilibration and percentage basis remain part of stock identity, not sodium carbonate solid.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-21",
+        "buffers-primary-2b7e3ee4d3ec3dfb",
+        "buffers-recipe-21-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Recover JCM209 archived preparation or an equivalent primary source specifying4% basis, CO2 equilibration and stock volume; no whole-stock-to-carbonate mapping.",
+      "missing_requirement": "Recover JCM209 archived preparation or an equivalent primary source specifying4% basis, CO2 equilibration and stock volume; no whole-stock-to-carbonate mapping.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:30d535bf6e7b33c8e1f49d1271b5232d9cf24cbc7e96a022cebe18b0734a4789",
+      "case_input_sha256": "dd5cd2f30107e075d4ee9dbd4053c749cb8e30015906b229af89d3187efa0b49",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.5 M Na2HPO4--NaH2PO4 buffer (pH 7.3)",
+        "source_label": "0.5 M Na2HPO4--NaH2PO4 buffer (pH 7.3)",
+        "raw_source_label": "0.5 M Na2HPO4--NaH2PO4 buffer (pH 7.3)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:cbcc276ecce07d9de5237808f63ef5864962c266f90109c21fe23d19e10e3651",
+        "CM_OCC:110916ad324a26009de29da0d3e24ab5ee92f9fbf3b436c4e3ca96e0bb2856e6"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1036 SolutionB and JCM296 SolutionA each use2mL0.5M Na2HPO4-NaH2PO4 bufferpH7.3. They establish the same named stock boundary but differing surrounding vitamin/iron mixtures; those surrounding mixtures are not identities for the buffer.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-24",
+        "buffers-primary-366c648a332e35b4",
+        "buffers-primary-3799e4c66cccca65",
+        "buffers-primary-3f06aa56925a7b79",
+        "buffers-recipe-24-0",
+        "buffers-recipe-24-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Confirm stock preparation/ratio before exact stock minting; correct2mL stock input versus frozen2g/L upstream.",
+      "missing_requirement": "Confirm stock preparation/ratio before exact stock minting; correct2mL stock input versus frozen2g/L upstream.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:38510e80f455bcaf5c39b9b3ca38de457604c9b5747ce37c5ed4473d291067d7",
+      "case_input_sha256": "212046ab0e511d6008f560aa59ef29ad826c5225e2337537f4da8b1257a5017a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Phosphate buffer (see below)",
+        "source_label": "Phosphate buffer (see below)",
+        "raw_source_label": "Phosphate buffer (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3edef55e49caf0cb94614c02e4312440f0c4e75a9e3c73b07678644a0a4d0566",
+        "CM_OCC:8ce1d4ff0223309c7c720652c7b6754312522714a40913b1a4e533ba5f377bd6"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM1142 and1143 both explicitly print the same stock:12.5gKH2PO4,20gK2HPO4 and1L distilled water. Both occurrences use5mL. This supports one source-defined preparation proposal, with two source cases retained as occurrences and no assumed final-volume molarity.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-31",
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-4a5f971eaf6f8d2e",
+        "buffers-primary-6ff059d8503fe1ef",
+        "buffers-primary-a546f19a345acc25",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-31-0",
+        "buffers-recipe-31-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [
+        "buffers-phosphate-jcm1142"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:5a7b862b150c97f5af04c60734dc9c5c76b2724fe04f4c93dc16bb084ae7cb1f",
+      "case_input_sha256": "6fb7891123b9dc85ff8c5861da1101434812ee212246270121a86b211d5e758a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Reducing agent (100×)",
+        "source_label": "Reducing agent (100×)",
+        "raw_source_label": "Reducing agent (100×)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3c53b355454a715715edbb7371589f12bd06cbf7f9030c0d6c82bff5fe987d50"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M3163 defines the reducing stock underN2 using0.9gNaOH,4gcysteine-HCl and2.17g/LNa2S(60weight%) per100mL anaerobic water. The mixed per100mL/perL wording plus60weight% makes sulfide loading ambiguous. The source confirms a multicomponent stock rather than any single reductant.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-48",
+        "buffers-primary-411ee2f348a3eea9",
+        "buffers-recipe-48-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Resolve whether2.17g/L is literal or a transcription of2.17g per100mL and how60weight% corrects the suppliedNa2S before exact quantitative decomposition.",
+      "missing_requirement": "Resolve whether2.17g/L is literal or a transcription of2.17g per100mL and how60weight% corrects the suppliedNa2S before exact quantitative decomposition.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:5fe9c425c5b961fd152aeb859617db55f9daa8addbd938da2fd142aef3a8bf95",
+      "case_input_sha256": "4e635bb9e52e6d4b5b150fa380708749398c1e70d3852a1cff8723e593f27cdf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "100 mM NaHCO3/100 mM Na2CO3 buffer (pH 10)",
+        "source_label": "100 mM NaHCO3/100 mM Na2CO3 buffer (pH 10)",
+        "raw_source_label": "100 mM NaHCO3/100 mM Na2CO3 buffer (pH 10)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:93bced76f98dddd83a2dacb75696e8da84810a255dac1d1ca8f1c6cf55334957"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC944 supplies1L of100mMNaHCO3/100mMNa2CO3 bufferpH10 as the medium solvent. It distinguishes both component concentration strings, whereas JCM1452 names a1M premix diluted tenfold. They cannot be silently equated as the same stock.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-49",
+        "buffers-primary-c0c62579f3d1a063",
+        "buffers-recipe-49-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Clarify whether the two100mM values are constituent concentrations or alternative starting solutions and howpH10 was obtained; preserve the NBRC wording.",
+      "missing_requirement": "Clarify whether the two100mM values are constituent concentrations or alternative starting solutions and howpH10 was obtained; preserve the NBRC wording.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:64f0b65d9c6ae9614992ee9eec4e10fc8302aadf1c120feb1593f8d50be9bb3e",
+      "case_input_sha256": "1d0d2634a6fea4960caeb1d688b2355dcee40efd326160c1c49ecbddaab99546",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "KP buffer*",
+        "source_label": "KP buffer*",
+        "raw_source_label": "KP buffer*"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b2113af73e7abb64a1f692f885c4aa87bce2162906b23c942655103672816268",
+        "CM_OCC:c3d4afe92e95d45c09c21dc12823ff27ab346f9433f5bfe9e49da2c6e832cede"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "NBRC857 and936 both define KP buffer as119gKH2PO4,21gK2HPO4 and1L water, separately autoclaved underN2. This verified shared formulation supports a new specific stock; it is distinct from the12.5/20 and47/113 phosphate recipes.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-50",
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-340a73a127cf12b1",
+        "buffers-primary-88d4946dae9a79f1",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-50-0",
+        "buffers-recipe-50-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [
+        "buffers-kp-nbrc857"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:683c7c6d4c20497f0d41c08de82c151baab05feff6f164e54f712ccd78903d90",
+      "case_input_sha256": "8ce67cb55db12155af2497db73b4204a1032f7612cd161710f09cc1d52edbfa7",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Riboflavin solution (see Medium No. 462)",
+        "source_label": "Riboflavin solution (see Medium No. 462)",
+        "raw_source_label": "Riboflavin solution (see Medium No. 462)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:52fd7e53c72c405eb7821768a139178fc29a1313f818a413b0fc3e08bddeb2b4"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "The frozen mediadive.solution4719/J772 occurrence names compound1893. JCM772 points to JCM462, whose riboflavin stock contains2.5mg riboflavin and100mL distilled water. This resolves the existing UNMAPPED_0508 stock owner without mapping the preparation to riboflavin or a complete medium. DSMZ462 is not the referenced namespace.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-51",
+        "buffers-owner-Riboflavin_Solution_See_Medium_No_462",
+        "buffers-primary-19f06f111fc4fdb0",
+        "buffers-primary-bc000a84b25fe466",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-primary-e8f4562866a418fc",
+        "buffers-recipe-51-0",
+        "buffers-retrieval-log",
+        "buffers-web-jcm462"
+      ],
+      "proposal_ids": [
+        "buffers-riboflavin-jcm462"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Riboflavin_Solution_See_Medium_No_462.yaml",
+          "sha256": "91ab27a3dde263a063cb2dd4d599d610f60960e959283dd94797a18557ffef2b"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:6b90aad5835c3226489c1d9e25193c7daa32737b11a64fac1938830bb76b542a",
+      "case_input_sha256": "67231ba84ef68fcef8a11cb82051c9db91064f193a156239ded30fcc9ce612da",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Penicillin G (100,000 U/ml)",
+        "source_label": "Penicillin G (100,000 U/ml)",
+        "raw_source_label": "Penicillin G (100,000 U/ml)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:69ba6381fb53b1e8f7daa17369b00a74af6f351bdd603ba7aae9a7c791e967d0"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC400 adds2.5mL of PenicillinG100000U/mL after autoclaving into a multicomponentM1D batch. Potency units identify an antibiotic stock; they do not specify chemical salt, solvent or mass concentration. Frozen2.5g/L is unsupported.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-55",
+        "buffers-primary-b008f99181e22e67",
+        "buffers-primary-e8abd935a388517e",
+        "buffers-recipe-55-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Identify the penicillinG salt/product, solvent and potency-standard basis for that stock; retain100000U/mL and2.5mL source quantities.",
+      "missing_requirement": "Identify the penicillinG salt/product, solvent and potency-standard basis for that stock; retain100000U/mL and2.5mL source quantities.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:6ce3c037c190869f8f71aaca3bb3d151685e43e6ff8ea749636befc6223f42bd",
+      "case_input_sha256": "a66cd6ec3a316bf4ebb13c702ef0a623729e7c5df3640257eec6da04999796f9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M Tris-HCl buffer (pH 7.5)",
+        "source_label": "0.1 M Tris-HCl buffer (pH 7.5)",
+        "raw_source_label": "0.1 M Tris-HCl buffer (pH 7.5)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4bdb47ec3d40143602286ce7a32cba3b90e4175f795251f6f174b592943aed3a",
+        "CM_OCC:4736319b8877c1424d45939dc9f44b4791dfc4d16ad06fa46a44d1d865fef763"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM979 and995 explicitly add50mL of0.1MTris-HClpH7.5. One frozen occurrence now preservesml/L whereas the TOGO1032 occurrence still says50g/L. Both are buffer preparations, not pure tris. The exact printed salt/base ratio is not supplied.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-56",
+        "buffers-primary-7994c01631f9607b",
+        "buffers-primary-f166d1f9c21f8bb8",
+        "buffers-recipe-56-0",
+        "buffers-recipe-56-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify the preparation recipe and review source occurrence units; retain JCM995M30 and JCM979M13 contexts without inferring interchangeable whole media.",
+      "missing_requirement": "Verify the preparation recipe and review source occurrence units; retain JCM995M30 and JCM979M13 contexts without inferring interchangeable whole media.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:6eaa1db1cbb641a0ecfe9c716337000c8bb518e60b4bb5a7686656ad58f07be2",
+      "case_input_sha256": "4a29544c6796d3ff62e14534e1b69f2ac19702d79806b4baf6c587e97e99939e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "ACES buffer",
+        "source_label": "ACES buffer",
+        "raw_source_label": "ACES buffer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:395969b7b93f3344871751dcd407179807162c9872c3aed9295767fed241288c",
+        "CM_OCC:41a75a25c673e792e1e901d706fc5566031c36b2f79568e2b805745a74089340"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "NBRC1469 and1366 list10g ACES buffer as a reagent before medium preparation. Official Sigma ACES is the CAS7365-82-4 acid/zwitterion reagent; ChEBI39060 carries its structure andCAS, while39061 is a grouping parent. Existing MIM ruling and canonical owner favor39060. This evidence supports a reagent alias, not a prepared buffer stock or revival of rejected Aces.yaml.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-57",
+        "buffers-owner-N-_2-acetamido-2-aminoethanesulfonic_Acid",
+        "buffers-primary-44b408da97422913",
+        "buffers-primary-5d64dd0d169e092f",
+        "buffers-primary-78d54fc76828ec0b",
+        "buffers-primary-797f589513511f25",
+        "buffers-primary-c2fcf60f29239e64",
+        "buffers-recipe-57-0",
+        "buffers-recipe-57-1",
+        "buffers-retrieval-log",
+        "buffers-web-aces-supplier"
+      ],
+      "proposal_ids": [
+        "buffers-aces-aliases"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+          "sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/320",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/334"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:7483eaa7f39a065d133f8474f96eb831330dc913e50eab9adaf0a81a5e983f12",
+      "case_input_sha256": "f43123ef9c7036189c5c69c45b52d69bd91cfb8cc162536e90a1ec685e205a9e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "HEPES buffer pH 7.8",
+        "source_label": "HEPES buffer pH 7.8",
+        "raw_source_label": "HEPES buffer pH 7.8"
+      },
+      "occurrence_ids": [
+        "CM_OCC:788702190bd2a369860b747313382804d45722577221fa4f5121b66d55e70a69",
+        "CM_OCC:15225b3e5439e39fe5b5fcba5596b90d533359161d890405125dea83fde18fbe",
+        "CM_OCC:f230cba112e612e9fe753e2bd9bd69056f6940c0ffe6a6cb1dd078758f5c0809",
+        "CM_OCC:4dcd5d9576f5f57736aed2232abbad879f5ed5b30f7b80d88e6065782282e5af",
+        "CM_OCC:c4645f6907b2b74a8f4a0d322dc5717e18e6b2254a66e749f62c5ea471c951a3",
+        "CM_OCC:8ed4fdf734ab8d36688d329b6c5e333f02fa3c5957a5b6d00fbf0fed3295cfb4",
+        "CM_OCC:5038c49f07ff474dff42519cf8a1063e712c232c0c2817871e77f204f7a9a7bc",
+        "CM_OCC:fd172d621c8a45f53117743824283b540a833dbafa3f64b63320fe6792b426ae",
+        "CM_OCC:d959a1ac29404f8dbacf63032c0f09d75183858ea522ebfaced611c80557a3a7",
+        "CM_OCC:342e8e8a661d9e323fa3ce9d5ba970212e6e18afe5f59eb4520f48806a33c571",
+        "CM_OCC:dd24bd75fbfce419535031f144047813917c0454ea4e756995942269c599bdfa",
+        "CM_OCC:a43962738c49d266ded7ab12454b26593e900a12dd7a7d4903337dbe707e0e8f",
+        "CM_OCC:ed0209151bd649f33bc688edc5c8673c0acb24b665ac4da2cd9e8dba831d40c4",
+        "CM_OCC:fe909df5f1d1586b3dc33b48491c9c67834de35500a219d29d4f2682c3ba50a6",
+        "CM_OCC:0ef8169caa7c9c97df92837a6794b0e21dc5eeb34539cd512c54e6de2523b554",
+        "CM_OCC:7dade2d6ff549acbcb94b2a6a5035a469e53e0e37fc53b729607804441d449ba",
+        "CM_OCC:343cf0c3a3537e74d770841045f32309afbdf1023855554a1907152969168a99",
+        "CM_OCC:d41a4721e3956043748df50da976122efcb3cd3a0419a83429eb7c9e4bac5d0c",
+        "CM_OCC:2cd31c917d4c4c875f4735b9794beacb26aca5ea8b96db4928c11ed5b85397d2",
+        "CM_OCC:230f39d6e0f9d069f21dfec13582934b34fa5893e89e38b06312730e7c906da8",
+        "CM_OCC:2ed9c80e53ad76689279de10f3e2bf59fe15b080cda717436bc51faf654588e8",
+        "CM_OCC:afa6c8c4162d0faf43c59348f3e60ff925b6c2d132556c32c6eb43987dfa8a68",
+        "CM_OCC:5b50596379eea98dc680aa24401007678974a254f5e0d53799d4ce96019edca5",
+        "CM_OCC:273074d9f46e42c45723bfc75947164a2e1eedd227c13fac474be8c0b4a3a144",
+        "CM_OCC:5a068b59d0fcae2284f96d7111fb3bd5e0058fb1af5cc559fcb6764fc476b13d",
+        "CM_OCC:3581df16b1ba570665d2ebe9cc41a31b66829f46815799c927ad0bf3bd8fea74",
+        "CM_OCC:5e4e2dee366f7066896cb0a8305c91c41a007220f0f70f42608f36b64e519069",
+        "CM_OCC:424ba7b7d78e00e4a33ef5133e137715a5b9ce34245fbe03f0c4252f404114e4",
+        "CM_OCC:b46e34ada7722d6ca119ea90cf0338ac01501d874891df870c2de6c907868f68",
+        "CM_OCC:243ff22273b929f276251fc42b2b5faf51c1a69950638507f1c7807c11b01d05",
+        "CM_OCC:cb28a5a6a95ee9d7ed341745aab62a7964a5e30994743acb9a565d449f393a27",
+        "CM_OCC:2c18f891ce65a5c9bf1cfe54fb70e433107a6b63e74b543227512f2888312993",
+        "CM_OCC:d565585bc51ca7f0332fd5d14218a81e7bc5d5e374c2356c3fab98da8344c96c",
+        "CM_OCC:9f6ab6dd6ac4faec7c7258a3fb940e7efc1b85f0ac93622efcec6e73e45fff22",
+        "CM_OCC:3b352202a92b9b68027dd75a7d224086240daf1dc32cb9c3d6d9ebbc8a0447f3",
+        "CM_OCC:2e219f5dad100a13ba5ba0f815d91dc4c69d1f0e704b0a31ecba65284b11a5a7",
+        "CM_OCC:eb2af63f6448a1260fd54b102705fb08f09f8a42184dc43933c8ba4e47b1fb9b",
+        "CM_OCC:bc48f21c2cd4b5a471c2f51fa90b9db538d123b57721daa72250f000c9dd2229",
+        "CM_OCC:2ddce348c93aaaeb84460f9fae679cc14ce0241b03e54cfaacb673ff956a7e29",
+        "CM_OCC:0a55b292c352a355141f0e2680539ba39e7d5151abf4ee9e6eceb855726b9dba",
+        "CM_OCC:48557e27d37be3bc325d653fb5943ad5530dec08ebccf7ae519ec3c77fb4e496",
+        "CM_OCC:80c9d34c0f7e4596d97d2137893aabd3ddb9e46fe2252956a0895e755e904f80",
+        "CM_OCC:c1e9c36db4244891198a54dee1497b96a56e115ecb436e79a17f3c48a3f59c3d",
+        "CM_OCC:ff47715dabd1a085461d42aa15c5f01de45a9880c476c96c5ea5e18cee7a4ba9",
+        "CM_OCC:a8b6abd55a558622d42a7b8abdcf74af4b7366d728e3d40f80ef3831d75afb8a",
+        "CM_OCC:3694ca9c36b3d0840cf81ca57d343ab1f21d9d9a83839ad526142e621dcb7f34",
+        "CM_OCC:85df8aad5d0862bb74dd07c49ad38252ca4b945cbc45f8ebfd25f9ea5616a4dc",
+        "CM_OCC:a9711be9483b01c11cb3b7b658f0e62c53de92749f24ec4c87cf8f7a96906bf2",
+        "CM_OCC:299ab4fafea6373c6dac80730fad4367036f6603112502e5066c14472c55878a",
+        "CM_OCC:8a966fa538f5a60aecfd7a57e3c1c1db3e14f9dc61be43f8c88f5df2d3df5114",
+        "CM_OCC:383cbd1949fe4cf019a2f40cb441a6167ef2ff34277f7cfec7ee10bf9a091ac7",
+        "CM_OCC:5ac960dfa8720503c572f2f684a87420ddf3279b7883809cf2d60d2de10d6613",
+        "CM_OCC:46b61e4422e6d6a66a8349f98c663725de7c03e2c22650166401e8d367dd1d1d",
+        "CM_OCC:1793078c7e809a73635d68c4152201e3f796222b8df9269b4ce05836394b4f4c",
+        "CM_OCC:6e1ebac1a88773d9771fdaead25274390d2d9f112e1a8b2063afa93f31bda414",
+        "CM_OCC:8c9d6cdbca6446e8c690ffdce39f82a95b52c5448c810b3c2d276136115e43f9",
+        "CM_OCC:7ca35b96ac8558da19df818138382043c62d1c64c749d4ddcfa28aa36d16c2a8",
+        "CM_OCC:f95df108fe19e1881f1ba4ef6391ec880e44612a59767884332e015a0440deb8",
+        "CM_OCC:b5f968a8c42337a61a4e2c81938432204d95336b6cf5b5deeab2291205bf01d7",
+        "CM_OCC:993b4b4b879216c3e1f92874264b1567ced1f6545cb26437047d259494b2833e",
+        "CM_OCC:4ff10be122c2398c50918ba12616994230a4ea8bb4a1ed5a56f6cf179f8a0d11",
+        "CM_OCC:749fec76c8679f6d1ac527992d1b64d0c5cf42d4c536c778bbab3b111b8c2a55",
+        "CM_OCC:4d1ce10136eddf10fa5baf4bebb3af00944e25f56ab8e35c22f80cf863e4b01d",
+        "CM_OCC:3061ec032d92ce59331f874e2d4893278123196b12d2c0dd51017b8ad4857ffe",
+        "CM_OCC:3ed7d0e4cbeedc4dc03f1861a8d3a88b90c40758659ccf8564bfb88d737adc58",
+        "CM_OCC:478ac6ef6887c00b52728b2675d96ec5de2552f898145907bb26cc19a3c98b30",
+        "CM_OCC:8d07bb869b930710e6ad732f772038bb88e929921337807a92200b881eceff0e",
+        "CM_OCC:6921f3cd5d5abcf06a42792b1449f4399617f825b81a9c5b750eee0c137e80c7"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "All68 frozen occurrences use the UTEX vitaminB12,biotin or thiamine-stock pattern:2.4g HEPES per200mL water represented as12g/L. The three official UTEX directions first prepare50mM HEPES and adjustpH7.8, then add the vitamin; SigmaH3375 is the weighed acid reagent. The case label denotes the adjusted buffer in stock context, so globally adding it as an acid synonym would conflate preparation and solute.",
+      "applicability": "Reviewed all 68 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-60",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-recipe-60-0",
+        "buffers-recipe-60-1",
+        "buffers-recipe-60-10",
+        "buffers-recipe-60-11",
+        "buffers-recipe-60-12",
+        "buffers-recipe-60-13",
+        "buffers-recipe-60-14",
+        "buffers-recipe-60-15",
+        "buffers-recipe-60-16",
+        "buffers-recipe-60-17",
+        "buffers-recipe-60-18",
+        "buffers-recipe-60-19",
+        "buffers-recipe-60-2",
+        "buffers-recipe-60-20",
+        "buffers-recipe-60-21",
+        "buffers-recipe-60-22",
+        "buffers-recipe-60-23",
+        "buffers-recipe-60-24",
+        "buffers-recipe-60-25",
+        "buffers-recipe-60-26",
+        "buffers-recipe-60-27",
+        "buffers-recipe-60-28",
+        "buffers-recipe-60-29",
+        "buffers-recipe-60-3",
+        "buffers-recipe-60-30",
+        "buffers-recipe-60-31",
+        "buffers-recipe-60-32",
+        "buffers-recipe-60-33",
+        "buffers-recipe-60-34",
+        "buffers-recipe-60-35",
+        "buffers-recipe-60-36",
+        "buffers-recipe-60-37",
+        "buffers-recipe-60-38",
+        "buffers-recipe-60-39",
+        "buffers-recipe-60-4",
+        "buffers-recipe-60-40",
+        "buffers-recipe-60-41",
+        "buffers-recipe-60-42",
+        "buffers-recipe-60-43",
+        "buffers-recipe-60-44",
+        "buffers-recipe-60-45",
+        "buffers-recipe-60-46",
+        "buffers-recipe-60-47",
+        "buffers-recipe-60-48",
+        "buffers-recipe-60-49",
+        "buffers-recipe-60-5",
+        "buffers-recipe-60-50",
+        "buffers-recipe-60-51",
+        "buffers-recipe-60-52",
+        "buffers-recipe-60-53",
+        "buffers-recipe-60-54",
+        "buffers-recipe-60-55",
+        "buffers-recipe-60-56",
+        "buffers-recipe-60-57",
+        "buffers-recipe-60-58",
+        "buffers-recipe-60-59",
+        "buffers-recipe-60-6",
+        "buffers-recipe-60-60",
+        "buffers-recipe-60-61",
+        "buffers-recipe-60-62",
+        "buffers-recipe-60-63",
+        "buffers-recipe-60-64",
+        "buffers-recipe-60-65",
+        "buffers-recipe-60-66",
+        "buffers-recipe-60-67",
+        "buffers-recipe-60-7",
+        "buffers-recipe-60-8",
+        "buffers-recipe-60-9",
+        "buffers-retrieval-log",
+        "buffers-web-hepes-supplier",
+        "buffers-web-utex-b12",
+        "buffers-web-utex-biotin",
+        "buffers-web-utex-thiamine"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: To create a completepH7.8 buffer owner, resolve the titrant/counterion and final stock preparation; keep vitamin stocks distinct from the HEPES buffer constituent.",
+      "missing_requirement": "To create a completepH7.8 buffer owner, resolve the titrant/counterion and final stock preparation; keep vitamin stocks distinct from the HEPES buffer constituent.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:7515e27a95e6262c56a3b2489af7b22e0413d7911c7ce0302ccc88b17bfaf6c4",
+      "case_input_sha256": "78a4531da477e39834a5ab83ea1035e884c846bf05ede85adc7d169626cf87f0",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M Potassium phosphate buffer, pH 7.5",
+        "source_label": "0.1 M Potassium phosphate buffer, pH 7.5",
+        "raw_source_label": "0.1 M Potassium phosphate buffer, pH 7.5"
+      },
+      "occurrence_ids": [
+        "CM_OCC:345ab6e9588e9409fb8ebcb93a2406fdaf2452053071bc8f6a7123e0e8343f7e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM753 adds10mL of0.1M potassium phosphatepH7.5 from an anaerobic stock. Its wording agrees with DSMZ833 SolutionB, but source agreement on concentration/pH does not establish the salt ratio or transferable whole-record identity.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-62",
+        "buffers-primary-05295ed25f148c27",
+        "buffers-primary-8a790ec4cd07467f",
+        "buffers-primary-b45eb20b19e61138",
+        "buffers-recipe-62-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify the constituent ratio and anaerobic stock preparation before merging with case0 or an existing generic buffer owner.",
+      "missing_requirement": "Verify the constituent ratio and anaerobic stock preparation before merging with case0 or an existing generic buffer owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:80adb38b0894cb8f5c9c9be2fd5d4ffb98a0b83eface75534fa1b619afd144a2",
+      "case_input_sha256": "1a1b869c5201c6599faef352ca7d2be2b9026d9e2bb1064d9e0dd0f2d3eaa01b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "HEPES buffer (acid) (SIGMA H3375)",
+        "source_label": "HEPES buffer (acid) (SIGMA H3375)",
+        "raw_source_label": "HEPES buffer (acid) (SIGMA H3375)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:bf22445b2fbf249e27774304877ffb6904be6e304af1ecb6c262ff8bda5662be"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M2366/DSMZ403 lists6g HEPES buffer(acid)(SigmaH3375) before adjustment withNaOH. The exact supplier product is a crystalline acid withCAS7365-45-9 and structure matchingCHEBI42334. The acid-qualified weighed ingredient supports an existing-owner alias; the laterpH7.6 mixture does not become the same identity.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-64",
+        "buffers-owner-Hepes",
+        "buffers-primary-0601c054fc0b3983",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-primary-b7d9d34bf3d8036e",
+        "buffers-recipe-64-0",
+        "buffers-retrieval-log",
+        "buffers-web-hepes-supplier"
+      ],
+      "proposal_ids": [
+        "buffers-hepes-acid-alias"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hepes.yaml",
+          "sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/320",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/334"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d",
+      "case_input_sha256": "63c2dde71e0d6be449f56a0d9647219a303224e10f81ea69c5ffb7ef5e2bd869",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Concentrated HCl",
+        "source_label": "Concentrated HCl",
+        "raw_source_label": "Concentrated HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a9a9cba2d7fee305379ca1951a6a9c16542a85009957d70c52bc1ff8d2e64046",
+        "CM_OCC:238b33c03ed3a21162867efa7bc1b87cb9a1a4814a3d08712c6238b06cfd90cd",
+        "CM_OCC:ff1996a4eebebfb7024d98194e96c34c80f85d9ee52119cf18b505e716f9ae50",
+        "CM_OCC:0862ab4cbb5a833a1bcafea8bbeaebf0805a4bbd315598ab57cea61265948e32",
+        "CM_OCC:cc7ac5abc8e19325fbb8f49abcd6258103594091bbdcfc82448a24bfc0fd92f5",
+        "CM_OCC:6f7b290e09c1b00f8a53a8ddb40fdc6399ef0e05babd05618a6e688919fadc80",
+        "CM_OCC:46f5fbcb21d14fec3498797dbd720bdbdc08907d84253213a2dfa272c91ce5a5"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The7 occurrences specify concentrated hydrochloric-acid reagent, with differing quantities and contexts. NBRC1195/1196 print51.3microlitres whereas NBRC1200 prints51.3millilitres; TOGO snapshots additionally flatten volumes to g/L and nested stocks into ingredients. Concentrated is not a definedpercentage or hydrogen-chloride gas identity. Occurrence-specific additional primary records confirm M2186 CENS uses 3 mL in Chelated Iron Solution, M2708 PYE uses 1.5 mL in its Chelated Iron Solution, and M3181 anaerobic butyrate RM uses 0.25 mL per litre of Trace metals. These nested reagent inputs do not specify acid strength or establish a final-medium HCl mass.",
+      "applicability": "Reviewed all 7 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-65",
+        "buffers-final-M2186",
+        "buffers-final-M2708",
+        "buffers-final-M3181",
+        "buffers-primary-03edca67ae96a682",
+        "buffers-primary-ba7a82033a7b9478",
+        "buffers-primary-f41f350dc810b643",
+        "buffers-recipe-65-0",
+        "buffers-recipe-65-1",
+        "buffers-recipe-65-2",
+        "buffers-recipe-65-3",
+        "buffers-recipe-65-4",
+        "buffers-recipe-65-5",
+        "buffers-recipe-65-6",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Resolve occurrence-specific concentration specification and NBRC1200 versus1195/1196 unit discrepancy; preserve each raw input rather than creating one exact pure-HCl alias.",
+      "missing_requirement": "Resolve occurrence-specific concentration specification and NBRC1200 versus1195/1196 unit discrepancy; preserve each raw input rather than creating one exact pure-HCl alias.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:9a0bcb1be7b9fb2ddc124ee4cccd91d41c2b78bb63f6f4db3e3f52276a1daeb5",
+      "case_input_sha256": "a4561e85dfd0e3eb30cfa546ab13e2a37fb0d475ba6bb75b24f52d2e5ebf81c3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Phosphate buffer (1 M, pH 7.2)",
+        "source_label": "Phosphate buffer (1 M, pH 7.2)",
+        "raw_source_label": "Phosphate buffer (1 M, pH 7.2)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:774b3ef6f97b5c71a4f76339ea2e7b676f4c24268bbcbffeb90e870b9be3a25e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2760 definespH7.2 phosphate buffer from10mL1M KH2PO4 plus10mL1M Na2HPO4 and citesPMID16232686 for PBBM. Its stated1M is total phosphate; the constituents are separate stock solutions. Similarity to JCM822 is not independently verified preparation equivalence.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-75",
+        "buffers-primary-2dca2ffb29c8ce04",
+        "buffers-recipe-75-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify the cited primary study buffer recipe andpH convention before sharing the JCM822 owner; preserve20mL batch mixture and10mL medium addition separately.",
+      "missing_requirement": "Verify the cited primary study buffer recipe andpH convention before sharing the JCM822 owner; preserve20mL batch mixture and10mL medium addition separately.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:a18f98ca48aca47e78ff9cbc03d48e4bff39eef21b2fee380c09b74eaf865230",
+      "case_input_sha256": "082d1b2a5f99136d5391c29fb8c1985c72f199b5d4ba6bba61a7747f1bed2deb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Tris-HCl-buffer (0.2 M; pH 7.5)",
+        "source_label": "Tris-HCl-buffer (0.2 M; pH 7.5)",
+        "raw_source_label": "Tris-HCl-buffer (0.2 M; pH 7.5)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:caf04745c1e4aaad7023d28ea9e57f7d5efe0eaf740d3d3d475d723b29371ec5"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ273 lists250mL Tris-HCl buffer0.2MpH7.5 with750mL seawater. This is an explicit prepared buffer volume, distinct from0.1MTris-HCl and from dryTris base. The final medium adjustment topH7.5 does not supply the stock recipe.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-80",
+        "buffers-primary-f8881b46c26d0843",
+        "buffers-recipe-80-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain the0.2MTris-HCl preparation or supplier specification, including titrant/salt ratio, before exact-stock assignment.",
+      "missing_requirement": "Obtain the0.2MTris-HCl preparation or supplier specification, including titrant/salt ratio, before exact-stock assignment.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:a1b254a2a6ee3f53d1db2da3427921398d434cdd53e48f831f00aa9b6129ba95",
+      "case_input_sha256": "d8cd4b1cfccba98303070f7f2fcf8e9d8879dc6bfb3dd41ff839b69cdf3f83b0",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.5 M Potassium phosphate buffer (pH 7.0)",
+        "source_label": "0.5 M Potassium phosphate buffer (pH 7.0)",
+        "raw_source_label": "0.5 M Potassium phosphate buffer (pH 7.0)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1e63b207287c31a6fc6ad5fc914572eee327ba9d90bf6826c7051dd8c6afbdc3",
+        "CM_OCC:79ab2e19b1be370c99d043777e823e4be995ebff2e4ebacd2a703e42daf79c2a",
+        "CM_OCC:504b81aaa1be4f13d3f4a79ae2673bc704e86c0984dd0838b4d7258a4eff118a",
+        "CM_OCC:3ab9342e83c8018eb2a325325750f4d1b442b27a568713efd105f6f1b5c542f7"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1430,1431,915 and918 each list1.8mL0.5M potassium phosphatepH7.0 as a separate sterilized stock. The4 frozen contexts preserve two1.8ml/L values and two erroneous1.8g/L values. Shared stock wording is retained without replacing the formulation by a single phosphate salt.",
+      "applicability": "Reviewed all 4 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-81",
+        "buffers-primary-6d72693fd96023c1",
+        "buffers-primary-b760a63b742c75a6",
+        "buffers-primary-e1ddc8bac4c87b3a",
+        "buffers-primary-f7ada6c0c960aa48",
+        "buffers-recipe-81-0",
+        "buffers-recipe-81-1",
+        "buffers-recipe-81-2",
+        "buffers-recipe-81-3",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Retrieve the0.5Mpotassium-phosphatepH7.0 preparation ratio; harmonize occurrence units upstream before a unified stock owner.",
+      "missing_requirement": "Retrieve the0.5Mpotassium-phosphatepH7.0 preparation ratio; harmonize occurrence units upstream before a unified stock owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:a694665ba4984428f9b60e248e040370a36a6248ba3e05881a34d7edd54a2636",
+      "case_input_sha256": "01937451798fe780c71c73e8bf11296b4a128029916ef97be1156bf04dca1e81",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1.0 M Phosphate buffer (see below)",
+        "source_label": "1.0 M Phosphate buffer (see below)",
+        "raw_source_label": "1.0 M Phosphate buffer (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:aa75af76ab90313adb28f15d916e1e1540e98cafc0c8bd64f71b24a9d7232514"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM822 unambiguously combines50mL1M KH2PO4 and50mL1M Na2HPO4 to100mL1M total-phosphate stock. This supplies a complete preparation-level composition. The proposed components remain the two1Msolutions with UNMAPPED references, avoiding false identity links to dry salts.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-84",
+        "buffers-primary-a88471724f63d66b",
+        "buffers-primary-b04109d959a9a0a6",
+        "buffers-primary-bfc194cd7d38c7d1",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-84-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [
+        "buffers-phosphate-jcm822"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f",
+      "case_input_sha256": "565f80ba5cc18317961c162fcfc2243acc6e4e7b3e83b5a409aa8d945c9417e4",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "35% HCl",
+        "source_label": "35% HCl",
+        "raw_source_label": "35% HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8b301b8884da9722a128723d3f1b41c1f1b807a3d57ecd3453c1690c98733ac1"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M3216 lists10mL35%HCl in a trace-element stock, then adds1mL of that stock to the fermentation medium. It is neither10g/L final-medium HCl nor an unqualified hydrogen-chloride substance.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-87",
+        "buffers-primary-ded69954ea792c68",
+        "buffers-recipe-87-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify35% mass/volume basis and reagent specification; retain nested trace-stock context and correct the volume transcription before exact preparation mapping.",
+      "missing_requirement": "Verify35% mass/volume basis and reagent specification; retain nested trace-stock context and correct the volume transcription before exact preparation mapping.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd",
+      "case_input_sha256": "cbc195e89853f66b36840aee7a4d209a03549be76ad0f23685af638f34e24f8f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "32% HCl",
+        "source_label": "32% HCl",
+        "raw_source_label": "32% HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6fcf99e4a0da721b6a132c6acb830d53f661801ecc5f9c3496f4f3bcf49a0215"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM770 uses1mL32%HCl in its trace-element solution. The percentage-qualified aqueous reagent is distinct from hydrogen-chloride gas and from25%/35% stocks; source does not explicitly state percentage basis.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-94",
+        "buffers-primary-b756bb7cb9a632e8",
+        "buffers-primary-d03fb1b0aa631950",
+        "buffers-recipe-94-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain source/supplier32% specification, including mass-versus-volume basis, before registering a precise stock owner.",
+      "missing_requirement": "Obtain source/supplier32% specification, including mass-versus-volume basis, before registering a precise stock owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:c1a3cbf4a57f849ef6ee12c0edd0a634e2509c41650558959d6cdfb631f18dc9",
+      "case_input_sha256": "27b9c8acaa76423283b215a79cad707af1c247eb19d65cf7ff2f2a2b4a017afd",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1M Tris/HCl buffer pH 7.5",
+        "source_label": "0.1M Tris/HCl buffer pH 7.5",
+        "raw_source_label": "0.1M Tris/HCl buffer pH 7.5"
+      },
+      "occurrence_ids": [
+        "CM_OCC:700aa270224cf039dc505adeede7317e744cfac07aa0232604b370f9d82f781a"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ600/TOGO M2346 uses50mL0.1MTris/HClpH7.5 in M14 medium. It shares printed qualifiers with other Tris stock cases but no explicit recipe ratio. The raw source volume contradicts frozen50g/L.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-100",
+        "buffers-primary-094c5b650a091f4a",
+        "buffers-primary-d307d207abd04fea",
+        "buffers-recipe-100-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Resolve precise Tris/HClstock preparation and source normalization; no alias toTris_Base is supported.",
+      "missing_requirement": "Resolve precise Tris/HClstock preparation and source normalization; no alias toTris_Base is supported.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:c3670da453732681e6eba32d3fdf0d4ea5e4c7afbabf8aa46ee2f2e863dccdd2",
+      "case_input_sha256": "37b636d9d738664128ab1288e6ffcfc4b1e492c633b95606a0202c9eb332bcd2",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "TPP/VFA mixture (see below)",
+        "source_label": "TPP/VFA mixture (see below)",
+        "raw_source_label": "TPP/VFA mixture (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:182962d97a4f35550e71983757d3d7e06aa1b17726eec2b338a6a95ed290f2e2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM144/TOGO M135 defines a TPP/VFA blend using0.2%thiamine-pyrophosphate solution,water and a separateVFA mixture. VFA comprises valeric,isovaleric,isobutyric and2-methylbutyric acids brought to100mL with0.1NNaOH. This multicomponent preparation must not map toTPP or any one fatty acid.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-101",
+        "buffers-primary-d282bb942d513790",
+        "buffers-primary-e8590f04c1945824",
+        "buffers-recipe-101-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify the TPP0.2% basis and supplied salt form, plus the printed1.5+8.4+1mL mixture amount; complete source-bound components need separate TPPstock andVFAstock owners.",
+      "missing_requirement": "Verify the TPP0.2% basis and supplied salt form, plus the printed1.5+8.4+1mL mixture amount; complete source-bound components need separate TPPstock andVFAstock owners.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd",
+      "case_input_sha256": "8f7cd6646c80fcaa50e453f3f7c07128d4a5aa00194f3188f7cb10d755f33e2c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "25% HCl",
+        "source_label": "25% HCl",
+        "raw_source_label": "25% HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:38989dc728f37eae111d076594dd5dec3dcbf2af729e8bc41a6047a69e134b75",
+        "CM_OCC:836abf2fb49317a625bb625da256797566f1510199001b08d95e44d88d5c6043"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM431 and899 use25%HCl at12.5mL and5mL within different trace-metal stocks. These are the same percentage label but not evidence for interchangeable complete trace stocks; source does not statepercentage basis.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-102",
+        "buffers-primary-a7277ddb9aa30cb4",
+        "buffers-primary-a95d21757d9f5e59",
+        "buffers-primary-f7a675e1c6976e01",
+        "buffers-recipe-102-0",
+        "buffers-recipe-102-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain25%reagent basis/product specification; preserve both nested occurrences and avoid adding the solution label to pureHCl.",
+      "missing_requirement": "Obtain25%reagent basis/product specification; preserve both nested occurrences and avoid adding the solution label to pureHCl.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:c913149f291090dbd1a988198e9564ece146c9a85eca72b3def86a0bb333e673",
+      "case_input_sha256": "0b6b843a72dbf2defc679597c81364f7e78e9a5046d9c6c6b1bd1e083c7beb80",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.5 M Na2HPO4-NaH2PO4 buffer (pH 7.3)",
+        "source_label": "0.5 M Na2HPO4-NaH2PO4 buffer (pH 7.3)",
+        "raw_source_label": "0.5 M Na2HPO4-NaH2PO4 buffer (pH 7.3)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:540b7a813ee19064c45de035968aabf788210cb1f63e159450a0f9c3ffa3f25b",
+        "CM_OCC:e96b91e185c10b669388f91ad23757ecfdcf8318a89263979f56f3b7de84db05"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1037 requiresSolutionB fromJCM1036; that referenced preparation uses2mL0.5M Na2HPO4-NaH2PO4pH7.3 with vitamins and iron. The two frozenMPYCY occurrences correctly preserve the nested2mLbuffer input. The hyphen difference from case24 is lexical, not whole-mixture identity proof.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-107",
+        "buffers-primary-2cd71a0cecaa19bd",
+        "buffers-primary-366c648a332e35b4",
+        "buffers-recipe-107-0",
+        "buffers-recipe-107-1",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Confirm stock recipe ratio before shared stock registration with case24; preserve cross-reference toJCM1036 and distinctMPYCY media.",
+      "missing_requirement": "Confirm stock recipe ratio before shared stock registration with case24; preserve cross-reference toJCM1036 and distinctMPYCY media.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:ced1adce1e3db79484e82ca60266f7aa51b1992c9a311172dca3fbac280b7981",
+      "case_input_sha256": "ce6a66ad291a332642aba97eda5b4a9ee4d624ffb42377841b72c7e3556f778e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2 g/L Resazurin",
+        "source_label": "2 g/L Resazurin",
+        "raw_source_label": "2 g/L Resazurin"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2e528fc040a37d0f96a4da06a4075e42660bf2bf74633d66bbefb6dac85f79ea"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M3155 specifies0.5mL of2g/L resazurin solution per litrePETC-MES. The frozen0.5g/L is a unit error; the source is a0.2%w/v stock, not the final-medium concentration or dry indicator. Acid versus sodium resazurin supplied form is not explicit.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-112",
+        "buffers-primary-578bad19e849e0fe",
+        "buffers-recipe-112-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Identify the indicator salt and stock solvent/preparation before a distinct exact stock proposal; retain2g/Lstock and0.5mLaddition separately.",
+      "missing_requirement": "Identify the indicator salt and stock solvent/preparation before a distinct exact stock proposal; retain2g/Lstock and0.5mLaddition separately.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:d219f28b63c5dc11a89719386012001ac1d379480663e81ec70de592b52cf5e7",
+      "case_input_sha256": "54a8d4730f357a0dc97bc366901781e13b26b7e7032ee832b3cfd1e1bad17b5a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.25 M Potassium phosphate buffer (pH 7.0)",
+        "source_label": "0.25 M Potassium phosphate buffer (pH 7.0)",
+        "raw_source_label": "0.25 M Potassium phosphate buffer (pH 7.0)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c3a20a01401bb29e1797bc0c49b613fcb77c8fdd10e5bca0c94784302866ff5c"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1205 lists5.6mL0.25Mpotassium-phosphatepH7.0 from a sterile anaerobic stock. Neither the dry phosphate form nor its component ratio is provided; frozen5.6g/L does not represent the source input.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-114",
+        "buffers-primary-0bcac7f38d202632",
+        "buffers-primary-b224b75d33d77081",
+        "buffers-recipe-114-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Recover the0.25M stock preparation ratio and correct volume/nesting upstream before assigning a specific existing owner.",
+      "missing_requirement": "Recover the0.25M stock preparation ratio and correct volume/nesting upstream before assigning a specific existing owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:d93f46c2300415c7ab93a2928153794062e60f6f63132b610c81fac7ac190337",
+      "case_input_sha256": "7be6aed610606eca7123e1ef34175bbf443afebbad805fc7b83611a06eb21d94",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "100 mg/ml flucloxacillin",
+        "source_label": "100 mg/ml flucloxacillin",
+        "raw_source_label": "100 mg/ml flucloxacillin"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5ddd237841cd89df24af751bd2228ef6147da51d1cbac3bdfa658b52581458e6"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2927 uses25microlitres of100mg/mLflucloxacillin stock; its stock section contains100mgflucloxacillin and1mLdistilled water. The antibiotic salt/hydrate is unspecified. Frozen25g/L is not supported by the source, and the stock is not the dry antibiotic.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-115",
+        "buffers-primary-429b78763024f2f9",
+        "buffers-recipe-115-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Identify the supplied flucloxacillin form and verify the study/protocol behindTOGO M2927; correct25microlitre input upstream before exact-stock creation.",
+      "missing_requirement": "Identify the supplied flucloxacillin form and verify the study/protocol behindTOGO M2927; correct25microlitre input upstream before exact-stock creation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:e247c1c5cd79b6fb7ff18406a6b8d73ea248d7fb661876f2be9fb34e11909380",
+      "case_input_sha256": "543966c62b5408a481e87bc3248d52ac3e590b7c9f574bce26d5899740d1998b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "100 mg/ml azlocillin",
+        "source_label": "100 mg/ml azlocillin",
+        "raw_source_label": "100 mg/ml azlocillin"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c9b6ae2e5cc01850ca44b241acb983631e7099d40970084aeb00dca5f10aca39"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2927 uses25microlitres of100mg/mLazlocillin stock; its stock section contains100mgazlocillin and1mLdistilled water. Salt/form is unspecified, so sodiumazlocillin must not be silently chosen. Frozen25g/L is not supported.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-119",
+        "buffers-primary-429b78763024f2f9",
+        "buffers-recipe-119-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Identify the supplied azlocillin form and verify the primary study protocol; restore25microlitre addition and separate stock composition before exact owner creation.",
+      "missing_requirement": "Identify the supplied azlocillin form and verify the primary study protocol; restore25microlitre addition and separate stock composition before exact owner creation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:e477f61317bf39561d26ec48a120308fe1a695b63d62907fac95c552c75850ff",
+      "case_input_sha256": "fddfc8ab6d683009a70355a5c0adba422f6a3eb66d6da4fe51e98b9859a9be8a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "ACES Buffer",
+        "source_label": "ACES Buffer",
+        "raw_source_label": "ACES Buffer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:11dab1c854e34bebf12b315823f08573a9fcb4e5593f035c087b762b8cedff09"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "NBRC1596 lists10gACES Buffer separately from2.8gKOH and explicitly mixes them during preparation. This supports the weighed ACES reagent before base addition, not an already adjusted buffer solution. Official ACES supplier/ChEBI39060 evidence and prior MIM acid-owner ruling support the capitalization alias.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-121",
+        "buffers-owner-N-_2-acetamido-2-aminoethanesulfonic_Acid",
+        "buffers-primary-5d64dd0d169e092f",
+        "buffers-primary-71a35a9c2b95030a",
+        "buffers-primary-bdb6a20baf71b757",
+        "buffers-primary-c2fcf60f29239e64",
+        "buffers-recipe-121-0",
+        "buffers-retrieval-log",
+        "buffers-web-aces-supplier"
+      ],
+      "proposal_ids": [
+        "buffers-aces-aliases"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+          "sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/320",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/334"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:e533c74f6a51e498259ba29feb1d8c7490c669ab2068ea2f317152ffe577b15f",
+      "case_input_sha256": "205691933b9e5a9f168fd3a24af627a8125c2d5f5c388fdfa98a0a41f7695470",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M Phosphate buffer (pH 7.2, see below)",
+        "source_label": "1 M Phosphate buffer (pH 7.2, see below)",
+        "raw_source_label": "1 M Phosphate buffer (pH 7.2, see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:179d3dc8280137728b092ade8c30177e0476d61f74e9fdaccca6c5d2972b3617"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "JCM556 itself says28mL1M KH2PO4 plus78mL1M Na2HPO4 prepare100mL1Mbuffer. The arithmetic yields106mL and cannot be silently repaired to72mL. TOGO reproduces this inconsistency; the frozen label alone does not resolve it.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-123",
+        "buffers-primary-4dad67facb543532",
+        "buffers-primary-a5a4ec5e544b62f0",
+        "buffers-recipe-123-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain a correctedJCM556 recipe or authoritative underlying experimental formulation resolving78versus72mL or the claimed100mLfinal volume before a quantitative stock proposal.",
+      "missing_requirement": "Obtain a correctedJCM556 recipe or authoritative underlying experimental formulation resolving78versus72mL or the claimed100mLfinal volume before a quantitative stock proposal.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:e665b825fbda7fa942884bbe313e925d87d37d27dfb29d2c32ed270eb2d70131",
+      "case_input_sha256": "3cb974e208819a8e79b9593e3b08e15462645bd534444e4ee200ee28e6063e99",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bicarbonate-buffered basal medium (BBM)",
+        "source_label": "Bicarbonate-buffered basal medium (BBM)",
+        "raw_source_label": "Bicarbonate-buffered basal medium (BBM)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:107bad1714763ae5565752ac63abeb0ec3168db5bd4423ffb6ce231233520d2d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2185 definesBBM asNH4Cl,KCl,NaHCO3,NaH2PO4,vitamin and mineral stocks; nitrate and varied acetate are added around it. It is a named basal-medium mixture, not bicarbonate or an exact synonym for any nitrate/acetate variant.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-124",
+        "buffers-primary-912d33270672f032",
+        "buffers-recipe-124-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Verify the citedBruce etal.1999 formulation and full vitamin/mineral stock provenance before proposing the completeBBM owner; keep electron-donor/acceptor additions outside basal identity.",
+      "missing_requirement": "Verify the citedBruce etal.1999 formulation and full vitamin/mineral stock provenance before proposing the completeBBM owner; keep electron-donor/acceptor additions outside basal identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0",
+      "case_input_sha256": "0433762c684ef31b340751c4e6deb69c68a7072c415c3d5fcfab4417e6ea63dd",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "HCl (concentrated)",
+        "source_label": "HCl (concentrated)",
+        "raw_source_label": "HCl (concentrated)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:51b1ee8e8f86684d1dd12b5c1b09d01a4af34cfd0f6e088cd88a5de66a862840"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1116 places0.3mLconcentratedHCl inside100mLchelated-iron stock withferric-ammoniumcitrate andEDTAsodiumsalt. The frozen0.3g/L row has lost source volume/nesting. Concentration is unspecified and cannot be inferred from a genericHClowner.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-125",
+        "buffers-primary-45ae719b1421974f",
+        "buffers-primary-76e91583349d0f75",
+        "buffers-recipe-125-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Retrieve the concentrated acid specification and restore chelated-iron stock context; do not map the whole preparation or unquantifiedacidstock to pureHCl.",
+      "missing_requirement": "Retrieve the concentrated acid specification and restore chelated-iron stock context; do not map the whole preparation or unquantifiedacidstock to pureHCl.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:e88d9dba7b6c89f143d72d69e57c72390ec19461c2bb1456f248e761559e41cd",
+      "case_input_sha256": "d84d0ce8802bf404d4682c1c0e06889e99fd240201784eaeaaaefb151f51c72a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Artificial sea water",
+        "source_label": "Artificial sea water",
+        "raw_source_label": "Artificial sea water"
+      },
+      "occurrence_ids": [
+        "CM_OCC:bbfd66f438bf915118c20aac0ab29fa70d74bfc8c8835a17da3cac1ce47f8bf0",
+        "CM_OCC:31b59ca8a4036400359b17a70dc58930d7ea33719cfbfe56075c52336d1923af",
+        "CM_OCC:80e8ae7028814b1f332cde1a5cca190d087e39c60fb39cc531e3eda1c90047d9",
+        "CM_OCC:ead0bccae529f4f6b5b09cfdc567136cb70f0630743d15efc8c69de9d128a12c"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ601 andNBRC1183 explicitly prepare artificial seawater from marine aquarium salt mixtures. The4 occurrences therefore name a synthetic multi-salt preparation whose manufacturer/formula is not given. They do not establish an exact natural seawater identity or a single common aquarium product.",
+      "applicability": "Reviewed all 4 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-126",
+        "buffers-primary-5939a819cce95c5d",
+        "buffers-primary-6490b59a55812105",
+        "buffers-recipe-126-0",
+        "buffers-recipe-126-1",
+        "buffers-recipe-126-2",
+        "buffers-recipe-126-3",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain source-specific salt-mix product and mixing concentration before a precise formulation owner; preserve artificial preparation versus natural seawater.",
+      "missing_requirement": "Obtain source-specific salt-mix product and mixing concentration before a precise formulation owner; preserve artificial preparation versus natural seawater.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:ed9f9e1aa81d1195cbfd9d276dd29428dd9906541cc7c2d53dd6f5b95f79fff9",
+      "case_input_sha256": "242b5576f7dc1e0195b018051d823e8c624534fd3bb0ed9e46c19877da626ed6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Antifoam SI (Wako)",
+        "source_label": "Antifoam SI (Wako)",
+        "raw_source_label": "Antifoam SI (Wako)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:56ba24c33a9cc67361ae087a0df688f6cc819ab0def0dae7334b83ad00550a99",
+        "CM_OCC:6193aba293dc3c4347fef18943fc4d7f581595c1ae05d6a28e9af2b4b4b22e2c"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "NBRC1574/TOGO M3044-M3045 names1mLWakoAntifoamSI in9mLwater, with2.5mLworking stock used in liquidmedium. Wako identifiesAntifoamSI as a silicone-type liquid product family. This supports a distinct opaque product owner while withholding constituent identity and separating the dilutedworkingstock.",
+      "applicability": "Reviewed all 2 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. Isolated proposed owner bytes preserve the specific supported interpretation.",
+      "evidence_ids": [
+        "buffers-case-127",
+        "buffers-primary-10024d40ccec0315",
+        "buffers-primary-35c2182b244f2c26",
+        "buffers-recipe-127-0",
+        "buffers-recipe-127-1",
+        "buffers-retrieval-log",
+        "buffers-web-wako-antifoam"
+      ],
+      "proposal_ids": [
+        "buffers-antifoam-wako"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:f1b0ce9481ab30567b063060b381e0e1ea5e61d0b72e3feba04d8798c5427f4f",
+      "case_input_sha256": "db57a5c3562307eb25d097ab7635cf5e0617f49a346719252bf5ad875ca7c081",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M NaHCO3/Na2CO3 buffer (pH 10.0)",
+        "source_label": "1 M NaHCO3/Na2CO3 buffer (pH 10.0)",
+        "raw_source_label": "1 M NaHCO3/Na2CO3 buffer (pH 10.0)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:eef02fd2fd681a19ce643af3647158c9eccf5599a9b2eda07117c016c3c8aac5"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1452 explicitly adds100mL1MNaHCO3/Na2CO3pH10stock to900mLwater and reports100mMfinal buffer. This does not equal a stock containing100mMofeachcomponent as written inNBRC944. The component ratio is absent.",
+      "applicability": "Reviewed all 1 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-130",
+        "buffers-primary-947e5eff24deb387",
+        "buffers-recipe-130-0",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Obtain the1Mtotal-buffer ratio/preparation and distinguish total from per-component molarity before any merge with case49.",
+      "missing_requirement": "Obtain the1Mtotal-buffer ratio/preparation and distinguish total from per-component molarity before any merge with case49.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    },
+    {
+      "case_id": "CM_NAME:ff120d19b0c8b8a01c2e0ca8fd970242da364171932d36a9b4d8fdbbacf5e1b0",
+      "case_input_sha256": "4f4142c4f74eb643aa2a3667dba25e3b853360ab5630da43800809119990c3cc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2 M HEPES buffer (pH 7.0)",
+        "source_label": "2 M HEPES buffer (pH 7.0)",
+        "raw_source_label": "2 M HEPES buffer (pH 7.0)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d7362723e27c2bc568a58ebd95e63329482eca660b454dfe7c0aa95dfce448a8",
+        "CM_OCC:a7463d673fa8fe272664ec7410ca01d6e56729833bc6bd5ca7adea83dd653f8a",
+        "CM_OCC:c0220dcd34e9981fbb5e79eea42245c274fe0592ecace708dc6160273bbbba37"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1200 and556 use5mL2MHEPESpH7.0, added as a sterilized stock. This is a concentrated adjusted preparation, not H3375 acid powder or the50mMUTEXpH7.8stock. The3 frozen rows flatten5mL to5g/L.",
+      "applicability": "Reviewed all 3 frozen occurrences and complete recipe snapshots for this exact spelling, retaining their IDs, raw quantities, nested component paths and source catalog references. The primary captures apply only to the explicitly described reagent/product/stock; no source-family lexical link is treated as identity. This decision preserves the identified material boundary and states the outstanding exact-formulation requirement.",
+      "evidence_ids": [
+        "buffers-case-135",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-primary-44445462ffa7bfa8",
+        "buffers-primary-a5a4ec5e544b62f0",
+        "buffers-primary-d4b7335ac7808d9d",
+        "buffers-recipe-135-0",
+        "buffers-recipe-135-1",
+        "buffers-recipe-135-2",
+        "buffers-retrieval-log"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact owner edit justified: Determine titrant/counterion and complete2MHEPESpH7.0 preparation; restore source volumes and keep it separate from acid andUTEXstock.",
+      "missing_requirement": "Determine titrant/counterion and complete2MHEPESpH7.0 preparation; restore source volumes and keep it separate from acid andUTEXstock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "reviewer": "/root/buffers_research",
+      "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval."
+    }
+  ]
+}

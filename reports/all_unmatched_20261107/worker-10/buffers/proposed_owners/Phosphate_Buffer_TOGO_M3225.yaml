@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:phosphate_buffer_togo_m3225
+preferred_term: Phosphate buffer stock (TOGO M3225)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:phosphate_buffer_togo_m3225
+  ontology_label: Phosphate buffer stock (TOGO M3225)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3225
+    notes: Source-defined stock with preserved composition. No exact ontology identity
+      established; local preparation identity avoids conflating it with any individual
+      phosphate salt.
+components:
+- component_name: KH2PO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:63036
+  source: Source batch input:47g per1L distilled water; final solution volume not
+    specified.
+- component_name: K2HPO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:131527
+  source: Source batch input:113g per1L distilled water; final solution volume not
+    specified.
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  source: Source batch solvent:1L; not asserted to be final stock volume.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3225
+    source_record: Phosphate buffer stock (TOGO M3225)
+    notes: TOGO M3225 components[3] and final comment define the stock labelled 1M
+      as47gKH2PO4 plus113gK2HPO4 per1L water. Batch amounts are retained in component
+      provenance; no exact final-volume molarity is calculated. This differs from
+      sodium/potassium equal-molar phosphate preparations.
+  notes: Constituent list is complete as printed. This does not assert supply-form
+    chemistry for unspecified hydration or certify the entire CultureMech recipe.
+notes: 'TOGO M3225 components[3] and final comment define the stock labelled 1M as47gKH2PO4
+  plus113gK2HPO4 per1L water. Batch amounts are retained in component provenance;
+  no exact final-volume molarity is calculated. This differs from sodium/potassium
+  equal-molar phosphate preparations. Provenance-only raw label: ''1 M Phosphate buffer''
+  (frozen case CM_NAME:03d699039590d9ae0fcc9a25a67237f63ee6851f2c1405f8b8f90e5a906f9c0d).
+  This generic source-local text is deliberately excluded from resolving synonyms;
+  the source-qualified preferred term identifies this formulation. This stock is a
+  component of the cited medium, not the whole medium; no EXACT_FORMULATION link to
+  the parent recipe is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: CREATED
+  changes: Created distinct source-defined stock identity in isolated proposal; preserved
+    the original label only as nonresolving provenance and retained recipe-owned component
+    evidence.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.

@@ -1,0 +1,2259 @@
+{
+  "schema_version": 1,
+  "worker_slot": 10,
+  "shard_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "KG_CASE:01b5e3408f553b76c98eb4b5b0c8178d9ac4da5a74be30389847f2727b90aee1",
+      "case_input_sha256": "6d2baa857f77a6c3cfffab0e737a71d490269147414e017dd0a3b969d73f2dfd",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:361",
+        "source_label": "Na2-glyoxalate",
+        "raw_source_label": "Na2-glyoxalate"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "Source ingredient361 formula C2HNaO3 and mass96.017 identify monosodium glyoxylate, concordant with CHEBI91251. The recipe0.598802g/L divided by6.23642mmol/L is approximately96.017g/mol, an internally consistent derived conversion rather than independent experimental identity evidence. Literal Na2-glyoxalate overstates the sodium count; no disodium structure is supplied.",
+      "applicability": "Only ingredient361 and recipe298b support the preferred-label correction. Preserve the exact raw erroneous name as REJECTED_LABEL; do not make it a universal chemical synonym.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md361",
+        "kg-medium_298b",
+        "kg-CHEBI_91251"
+      ],
+      "proposal_ids": [
+        "kg-glyoxylate-label"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2-glyoxalate.yaml",
+          "sha256": "4f40039bb78bdf2657e2bbbbf6a1c6f8ca6d31a1fd56f3101f795cc9e3c4ebc8"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 136,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:055b9cf4f84da1d921bbdaed17eba325afa5d46814dba4793c27474e0163b08f",
+      "case_input_sha256": "8c78f185e3395139a4aed1fcc130628bd9fde1b24947ec8d9eebd1c454d79bd4",
+      "source": {
+        "source": "microbedecoder",
+        "source_case_id": "kgmicrobe.compound:cmc_py_horse_serum",
+        "source_label": "CMC + PY + horse serum",
+        "raw_source_label": "CMC + PY + horse serum"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Frozen raw record6108 preserves the exact substrate literal CMC + PY + horse serum; Bergey_Text_for_substrates is NA. Its separately bound prior disposition interprets separate cooked-meat-carbohydrate and peptone-yeast-extract contexts with horse-serum supplementation. That historical interpretation and unresolved hold are retained, not newly established from the incomplete Love1979 retrieval. No carboxymethylcellulose expansion or single premixed formulation is justified by the raw literal.",
+      "applicability": "Preserves downstream reported_combined_culture_context, consumes assertion, subject lpsn776204, original source literal and existing AMBIGUOUS owner.",
+      "missing_requirement": "Separate source recipes and experimental context are needed before any material endpoint or component decomposition can replace the combined assertion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1151"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-microbedecoder-raw",
+        "kg-love-primary"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml",
+          "sha256": "39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 137,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [
+          {
+            "row": {
+              "agent_type": "manual_agent",
+              "curation_rationale": "Record 6108 requires separate cooked-meat-carbohydrate and peptone-yeast-extract preparation contexts with horse-serum supplementation; no single-mixture identity and no carboxymethylcellulose expansion. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+              "disposition": "reported_combined_culture_context",
+              "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00667|https://doi.org/10.1099/00207713-29-3-241|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml",
+              "identity_approved": "false",
+              "identity_status": "unresolved",
+              "knowledge_level": "knowledge_assertion",
+              "object_curie": "kgmicrobe.compound:cmc_py_horse_serum",
+              "predicate": "biolink:consumes",
+              "primary_knowledge_source": "infores:bergey-manual",
+              "raw_record_sha256": "96da1a12f3353397fa69ffbbf0e595a084e9d24963401b85ecd93b6cd5d511c2",
+              "relation": "RO:0002438",
+              "source_citation": "https://doi.org/10.1002/9781118960608.gbm00667",
+              "source_column": "Bergey_Substrates_for_end_products",
+              "source_literal": "CMC + PY + horse serum",
+              "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=6108",
+              "subject": "lpsn:776204",
+              "value_encoding": "backslash"
+            },
+            "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+          }
+        ],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:0d14840f20bf58d58e8b1101ef28c1c1fdf97b81b7cafd3ac4af2a30bdcd30d1",
+      "case_input_sha256": "2ef5814772f79702acadf19bde9eb628ef7b1aff611d95cf4b873044e4f6e4bd",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:levorin",
+        "source_label": "levorin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "NLM descriptorD002174 contains distinct concepts. Preferred Candicidin M0003252 explicitly lists Levorin M0352008 as narrower. OLS flattening this to an exact synonym loses the concept distinction; inherited SUPPORTED is not scientific identity approval.",
+      "applicability": "Metatraits levorin has no additional structure or supplier metadata. Restore its existing historical local compound identifier and a directed broader Candicidin relation; do not substitute candicidinD or infer mixture composition.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/312"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-mesh_D002174",
+        "kg-mesh_M0003252",
+        "kg-mesh_M0352008"
+      ],
+      "proposal_ids": [
+        "kg-levorin-concept-scope"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Levorin.yaml",
+          "sha256": "77cccb8ad35797ec34744abe85b0125c5783466a832ec52b7a3442e51cd441a4"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 138,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:0f237b4273a0b452a51a48fa9782cfaf431480ac312cd92a1c0fe997adb776f6",
+      "case_input_sha256": "9b7fca28385e87046c435a5616fdd2e0a76e772e4f4196194d5a0da6dedf3db6",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:atrop_abyssomicin_c",
+        "source_label": "atrop-abyssomicin C",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Current owner already uses CHEBI208735, not the old broad MeSH antibiotic-class target. Original2007 research explicitly distinguishes atrop-abyssomicinC; PubChem23232701 and CHEBI208735 agree in formula and recorded InChI. These representations do not alone settle every absolute stereocentre.",
+      "applicability": "This exact named atropisomer in metatraits supports the current named identity at the evidence level provided. The stale withheld target is not reactivated, and no equivalence to abyssomicinC/G/H is inferred.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/312"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin2007_princeton",
+        "kg-CHEBI_208735",
+        "kg-pc_atrop"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Atrop_Abyssomicin_C.yaml",
+          "sha256": "c4e80c84b617f9577c8320bed14f15cebf5262cda47c58bae73a586e292a7ca1"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 139,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:15495e6817af9458c8632f262e2f55f959728dac18618f2384c676b5182c44a9",
+      "case_input_sha256": "7402a825678aca4ee7d3e3ee6a6055ceec297ed6e1e3596529b550a66c7ccf19",
+      "source": {
+        "source": "microbedecoder",
+        "source_case_id": "kgmicrobe.compound:3_methylacetate",
+        "source_label": "3-methylacetate",
+        "raw_source_label": "3-methylacetate"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Literal3-methylacetate appears in both raw prose and structured minor-product field of record19685. Neither source occurrence establishes a chemically valid unambiguous structure, and it is not evidence for an importer fragment or a guessed3-methylbutyrate correction. This is verified from frozen raw record19685, not a newly retrieved full Bergey article.",
+      "applicability": "Preserves REJECTED owner, downstream unresolved_product_identity and produces assertion for lpsn789679; source-only product is not converted to a growth ingredient.",
+      "missing_requirement": "Obtain analytical identification or an explicit correction in the Bergey Telmatobacter source gbm01426 (record19685), resolving the literal minor fermentation product and its structure before changing the endpoint.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1151"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-microbedecoder-raw",
+        "kg-network-attempts"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/3-methylacetate.yaml",
+          "sha256": "3ce45f6d8c8757b762b1d57fb5dd7c0c9907a8dd2829ab1431d2f522e98bf0aa"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 140,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [
+          {
+            "row": {
+              "agent_type": "manual_agent",
+              "curation_rationale": "Preserve record 19685 minor-product evidence; literal appears in raw prose and structured field; do not classify as importer fragment or guess a replacement. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+              "disposition": "unresolved_product_identity",
+              "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm01426|https://github.com/CultureBotAI/MediaIngredientMech/blob/1848b0fe521bc2462f165912fcf92d09ad9a8cec/data/ingredients/unmapped/3-methylacetate.yaml",
+              "identity_approved": "false",
+              "identity_status": "unresolved",
+              "knowledge_level": "knowledge_assertion",
+              "object_curie": "kgmicrobe.compound:3_methylacetate",
+              "predicate": "biolink:produces",
+              "primary_knowledge_source": "infores:bergey-manual",
+              "raw_record_sha256": "f96206bc73f8fa93d7a144e6f4f586e8e464d23b31d8093a0d510bc5d272302a",
+              "relation": "RO:0002234",
+              "source_citation": "https://doi.org/10.1002/9781118960608.gbm01426",
+              "source_column": "Bergey_Minor_end_products",
+              "source_literal": "3-methylacetate",
+              "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=19685",
+              "subject": "lpsn:789679",
+              "value_encoding": "backslash"
+            },
+            "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+          }
+        ],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:17624297676c66504685c4115de7ab7a57d84cefe9b9379eed391982920871d3",
+      "case_input_sha256": "03e66a9ba3867b2c03db627b9271a0968a0ebed675caf3f357060aa339913747",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2130",
+        "source_label": "Blood Agar Base",
+        "raw_source_label": "Blood Agar Base"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Official medium646 prepares Difco0045 base before adding5% rabbit or sheep blood. The base and final blood agar are different preparations; millilitres in the source row denote prepared base volume.",
+      "applicability": "Ingredient2130, Difco0045 attribute and medium646 are bound; no generic agarCHEBI2509 or blood-only identity follows.",
+      "missing_requirement": "A verified exact Difco0045 formulation and preparation scope are required for a formulation-specific mapped owner; current named-medium owner remains.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2130",
+        "kg-medium_646"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Blood_Agar_Base.yaml",
+          "sha256": "eca59b059303d5c49b6f9a11fe111490cb5be522fcabe54b8b1d069b2b0d704d"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 141,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:177849875d16a8be67d46a9e74cce1b4b83a339b99c5cbb063a34f05f589f08b",
+      "case_input_sha256": "d2b0eb8406f96f5c3a412368432a01027a0bbbbc90e3a5cdb8b76a294da5bb31",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:abyssomicin_g",
+        "source_label": "abyssomicin G",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original authors report abyssomicinG as a distinct isolated metabolite alongside H and atropC. The existing local registry preserves G specificity, while broad family or related congener ontology terms would erase it.",
+      "applicability": "Applies to the exact abyssomicinG token and MIM xref in metatraits; cross-source repeated names do not independently establish additional structures or relationships.",
+      "missing_requirement": "An exact form- and stereochemistry-matched ontology/registry identifier with primary structural correspondence is needed for promotion beyond the existing local identity.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin2007_princeton"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Abyssomicin_G.yaml",
+          "sha256": "2fa726b15b881eb658b52e9dc948a7f7d8da8576561d6d4901e167395f46ad17"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 142,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188",
+      "case_input_sha256": "495ce2505d9a0dc368a9c5e03a3eabc1f75d4a68925bf6d21cb48d58a786a9c2",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1692",
+        "source_label": "Inorganic salts-starch agar",
+        "raw_source_label": "Inorganic salts-starch agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM58 ISP4 includes soluble starch, K2HPO4, MgSO4 heptahydrate, NaCl, ammonium sulfate, CaCO3, trace salts, agar and water. A medium containing organic polymer and many salts is not a narrower inorganic salt or pure agar.",
+      "applicability": "Raw ISP4/seeMedium58 refers to JCM namespace through ingredient1692. Remove unsupported CHEBI24839 parent; retain named medium and raw label pending formulation-specific curation.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1692",
+        "kg-jcm58",
+        "kg-CHEBI_24839"
+      ],
+      "proposal_ids": [
+        "kg-isp4-remove-salt-parent"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+          "sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 143,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:2c239a7679fcf03d338eb65dbae2322ec04dabea12c326dfaae5427d23b75581",
+      "case_input_sha256": "c6f9ee0fdc9c8195a84043d2987a56ab8c9fdd17fc289428efdb11f471fd975c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2360",
+        "source_label": "Cerophyll",
+        "raw_source_label": "Cerophyll"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Source specifies Cerophyll as cereal grass leaves. MediumC61 boils1g in seawater then filters; this is a botanical preparation, and the dry named material differs from final seawater infusion.",
+      "applicability": "Ingredient2360 and cereal-grass-leaves qualifier support the existing undefined-mixture scope, not a pure compound or arbitrary grass species.",
+      "missing_requirement": "Historical supplier composition and species/process definition would be needed to establish a more specific product identity.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2360",
+        "kg-medium_C61"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Cerophyll.yaml",
+          "sha256": "005c5ca4840a0580f0e5b7e3dcfcccb8a90e4ff2a93ab9bb147131d7cf25a94b"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 144,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:32553f392e0b7d4d72c9abd31340d256dd9885e6407becde05aa5c881c5e11ad",
+      "case_input_sha256": "2ffe172120bbc2c5b78d409384f33667b35ad675dda411110322c54635ddda14",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:401",
+        "source_label": "Na acetate",
+        "raw_source_label": "Na acetate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Official ingredient entry gives CAS127-09-3, C2H3NaO2 and82.0338g/mol. The source derived concentration arithmetic is internally consistent with anhydrous sodium acetate, but is computed from ingredient metadata and is not independent corroboration, whereas the trihydrate is separately identified by CAS6131-90-4 and CHEBI32138.",
+      "applicability": "This supports ingredient401 only; it does not validate hydrate synonyms or all historical Na-acetate owner aliases.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-CHEBI_32954",
+        "kg-md401"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-acetate.yaml",
+          "sha256": "81fae683dc7acb9eb097e4fde9f80d5f146e2d00373b726fb9ee2ae05768e3e2"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 145,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:33beb944a759ea3827bc4f68145355ab643a4cbff1f583f37e9dd4fd32e7fad8",
+      "case_input_sha256": "824bf7a5fcc222f6c4d5436e25c53def3c20bc40a1ee15c81b7a6829bf46892b",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:exfoliatin",
+        "source_label": "exfoliatin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Exfoliatin is used for staphylococcal exfoliative toxins; primary toxin research and MeSH show multiple toxins/fractions. A generic name does not specify protein sequence, isoform, purified preparation or mixture.",
+      "applicability": "Metatraits provides only unsuffixed exfoliatin plus local xref. Retain raw local identity without mapping to a specific toxin protein.",
+      "missing_requirement": "The source assay or producer citation must identify the toxin subtype/sequence or define the isolated preparation before a precise protein/chemical identity can be assigned.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-exfoliatin_primary",
+        "kg-exfoliatin-mesh"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Exfoliatin.yaml",
+          "sha256": "aa9c0eb9eee36e19e7d4023a6b71daea610e969b48a114d67f3c774521591eb0"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 146,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:33d8df48120b03dab028ae0056eb7bf17bfb1fe3a76ab84606a67bcd1e7e86c6",
+      "case_input_sha256": "c9ddd48295dc06e60451877b52bdf9a62a3ee10c2fcaa64f386db4ccee55e64e",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:461",
+        "source_label": "HEPES buffer",
+        "raw_source_label": "HEPES buffer"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Source explicitly says acid, SIGMAH3375, weighed6g. Ingredient461 CAS7365-45-9, molecular mass238.3 and formula agree with HEPES free acid CHEBI42334. The word buffer here describes function, not evidence of a premade stock.",
+      "applicability": "Only this weighed acid source supports HEPES identity; do not approve generic HEPES-buffer labels lacking acid/catalog/form metadata.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md461",
+        "kg-CHEBI_42334"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hepes.yaml",
+          "sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 147,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:34293ff2cf9b01d8b668894647ee23826b8af7d2d52e338fe8e8925f82901c81",
+      "case_input_sha256": "5253319d6630915e21a202a74dc711387c5117a12895d2eeaaa3db34212756cf",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:ristocetin_b",
+        "source_label": "ristocetin B",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "PubChem90478637 assigns ristocetinB formulaC84H92N8O35. Current owner copied CHEBI85129 formulaC95H110N8O44 and full structure from the broader-looking label ristocetin, which is a different glycosylated molecule. A name-stem match is neither exact chemistry nor a demonstrated form-of relation.",
+      "applicability": "Exact B token in metatraits_gtdb supports retaining local B identity, removing parent-derived chemistry and unsupported molecule parent. Keep produces:ristocetinB REJECTED_LABEL; no source assertion is reinterpreted.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/703",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/312"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-pc_ristocetin_b",
+        "kg-pc_ristocetin_b_names",
+        "kg-CHEBI_85129"
+      ],
+      "proposal_ids": [
+        "kg-ristocetin-b-parent-chemistry"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ristocetin_B.yaml",
+          "sha256": "9630cba6e27f198278c5aa247dfc10bef5de0a07ea34991777913de887b1e1e6"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 148,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:45d3a0aaa7556cc466b5670c25ebebd4dded6dbb4c38a02469929563fe8c14a1",
+      "case_input_sha256": "c990beb17b309fb2ddf01b8468550b2e937ec801983f1a061a6db4e92e6d86be",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:potassium_5-dehydro-d-gluconate",
+        "source_label": "potassium 5-dehydro-D-gluconate",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "CHEBI58143 is 5-dehydro-D-gluconate anion, not potassium salt. Local identifier retains counterion and D configuration; replacing it with the anion would lose supplied identity.5-keto and5-dehydro vocabulary is chemically related but does not independently certify every owner/form equivalence.",
+      "applicability": "The exact potassium5-dehydro-D-gluconate token in metatraits supplies no hydrate, CAS or supplier. Preserve directed broader anion relation and local salt identity; do not merge any5-keto owner on label alone.",
+      "missing_requirement": "Exact potassium salt stoichiometry and hydrate/anhydrous form, supported by a primary structural or supplier record, are needed for registry promotion or duplicate-owner consolidation.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-CHEBI_58143"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Potassium_5-dehydro-D-gluconate.yaml",
+          "sha256": "fcf4b55d2ab4a3d6b3a1216c07d1ba1f97156ffac3a277efda62fb850bb1b017"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 149,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:4c0c215f19c4f44c267e6d7d382f680a5c8405bcbd7d1bda49e107dd3a8f8965",
+      "case_input_sha256": "d1439109a4940b952a93003f7a63ab35a1aa0dbe5956ae5643e3c4daa6fb9212",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:abyssomicin_h",
+        "source_label": "abyssomicin H",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original2007 publication reports abyssomicinH separately from G and atropC. Existing local registry retains the specifically named metabolite; no exact external target has been established by this review.",
+      "applicability": "Exact H name and MIM xref in metatraits_gtdb are preserved. This is a source-scoped named identity, not permission to collapse congeners.",
+      "missing_requirement": "An exact stereochemistry/form-matched external identifier and primary structure correspondence are required for promotion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin2007_princeton"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Abyssomicin_H.yaml",
+          "sha256": "06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 150,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:5049fdd9b24024f5b39e54c0d125b9b84f7650022297989cdd8e874267fba9ba",
+      "case_input_sha256": "e8592efcf4f2a98d1f0feb43dbd63235f835116f20c6b8f195ac645e3f636fb9",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:abyssomicin_b",
+        "source_label": "abyssomicin B",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original2004 isolation paper identifies abyssomicinsB,C,D as distinct compounds. B cannot be assigned the C antibiotic structure or a generic abyssomicin class as exact identity.",
+      "applicability": "Exact B token in metatraits_gtdb and local xref support keeping the existing local B identity, without approving source organism traits or a new external structure mapping.",
+      "missing_requirement": "Primary structural correspondence to an exact B ontology/registry term is required for promotion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin_2004"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Abyssomicin_B.yaml",
+          "sha256": "efe32f4e766299de8dfb6b2ded78214ca6c97186a7bead132e1fdf37400cf46f"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 151,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:51e1c98e72b5aa9d49776fc32412fef6fb6401c5bcf57777ab745c69387c2b1b",
+      "case_input_sha256": "e853c5504fc1442e88a76d26d2e07893cdb1121d6a161fe9ca001e57d6cba782",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:726",
+        "source_label": "NH4-oxalate",
+        "raw_source_label": "NH4-oxalate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Ingredient726 has CAS1113-38-8, C2H8N2O4 and124.096g/mol; its15g/L and120.874mmol/L are internally consistent derived metadata, not independent experimental confirmation. CHEBI91241 defines diammonium oxalate2:1, not ammonium hydrogen oxalate. Abbreviated NH4-oxalate is resolved by source identity/formula metadata in concordance with ontology definition.",
+      "applicability": "Source ingredient726 supports existing diammonium identity. It does not approve unqualified ammonium oxalate hydrates elsewhere.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md726",
+        "kg-CHEBI_91241"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nh4-oxalate.yaml",
+          "sha256": "3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 152,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:520ab77d7afb2f2a3678def08258944322157fe043108eb6b5c068b5b5fafa0b",
+      "case_input_sha256": "95d7f32e17c4c3a1065641141cbb270b6d6d0ea50d4535ec72bf4c4670854cf7",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:abyssomicin_h",
+        "source_label": "abyssomicin H",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original2007 publication reports abyssomicinH separately from G and atropC. Existing local registry retains the specifically named metabolite; no exact external target has been established by this review.",
+      "applicability": "Exact H name and MIM xref in metatraits are preserved. This is a source-scoped named identity, not permission to collapse congeners.",
+      "missing_requirement": "An exact stereochemistry/form-matched external identifier and primary structure correspondence are required for promotion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin2007_princeton"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Abyssomicin_H.yaml",
+          "sha256": "06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 153,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:61ae87868616c933b54f35a6178649acee6917c26bd38c9f6f5214543f277862",
+      "case_input_sha256": "15eb64eeeb7154846d071c441e0de20f8e7ca13f521fce81e5da89665acab912",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1315",
+        "source_label": "Na acetate x 3 H2O",
+        "raw_source_label": "Na acetate x 3 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Literal specifies3waters; source CAS6131-90-4 and CHEBI32138 identify sodium acetate trihydrate. MediaDive formula text has inconsistent proton accounting, so name/CAS/exact hydrate ontology, not that malformed formula, establish correspondence.",
+      "applicability": "Ingredient1315 matches the current trihydrate owner and already preserved exact raw alias. No change is needed and no anhydrous owner is merged.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1315",
+        "kg-CHEBI_32138"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+          "sha256": "77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 154,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:6957259e47a54f89c8f91de4880ab60c27c43f7071a9d542c002105cfadd9e35",
+      "case_input_sha256": "ec1e886386af832ba2ed8fc68696995b71882a846b59942b9a3d29c9a60e034d",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:hortesin",
+        "source_label": "hortesin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Original patentUS2972569A describes hortesin as a Streptomyces versipellis-derived antifungal agent with isolation and biological characterization. This verifies the historical name but does not establish a modern exact molecular identity.",
+      "applicability": "Metatraits contains only hortesin and local xref, so the historical product cannot be replaced by a guessed modern antibiotic synonym.",
+      "missing_requirement": "A primary structural reassignment explicitly linking historical hortesin preparations to a unique compound or defined mixture is needed before ontology promotion or new chemical properties.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-hortesin_patent"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Hortesin.yaml",
+          "sha256": "e5bcc8c7ece864d85398790ba2e4df9b0d1a94448d0676dc118d6cb1e9f5009e"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 155,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:727b89bb6c1050a10d6fe57810ed1a550f757e499364ee9bc944917059cf9c29",
+      "case_input_sha256": "aa9e3dd16ac5be14aba9f5bdada7ab76d1533af70840fcfa1e275e595c772de6",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:891",
+        "source_label": "Na2O4W x 2 H2O",
+        "raw_source_label": "Na2O4W x 2 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Ingredient891 CAS10213-10-2 and explicit2H2O agree with sodium tungstate dihydrate CHEBI63939. Reordering Na2O4W toNa2WO4 changes formula order, not atom counts.",
+      "applicability": "Source ingredient891 and medium996 support actual Na2wo4_X_2_H2o owner. Root owns the coordinated raw-alias proposal shared with its CultureMech case.",
+      "missing_requirement": null,
+      "no_change_reason": "Coordinated root sodium-tungstate-dihydrate alias proposal pending integration; this partition does not duplicate its owner payload.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md891",
+        "kg-medium_996",
+        "kg-CHEBI_63939",
+        "kg-additional-owners"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2wo4_X_2_H2o.yaml",
+          "sha256": "b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 156,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:76b01bd2362ae269955c4fa983ab3b8e4bd44320a76eb6bef78b878fa9cc7802",
+      "case_input_sha256": "ee1ae46491d3671bae2389781be5d4b1798cb129ef0935a17a5c60329c3c2cc3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:700",
+        "source_label": "NaVO3 x n H2O",
+        "raw_source_label": "NaVO3 x n H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Raw source specifies variable n waters. CHEBI132095 definition and structure specify exactly one water; MediaDive inherited monohydrate formula/mass cannot override its own variable-n source label. Historical merge created an unsafe HYDRATE_FORM alias.",
+      "applicability": "Reject only NaVO3xnH2O as an identity-resolving synonym of the monohydrate, preserving literal and provenance; ingredient700 remains unresolved.",
+      "missing_requirement": "Obtain source supplier/catalog or original formulation specifying hydration number n for ingredient700; n=1 must not be inferred from derived molecular-weight metadata.",
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md700",
+        "kg-CHEBI_132095"
+      ],
+      "proposal_ids": [
+        "kg-vanadate-variable-hydrate"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Navo3_X_H2o.yaml",
+          "sha256": "d4d3f05a57d260547b23249d5fb316600c7b5adb56887463394cbe3417dc57e4"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 157,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:78ddf97e0ebb1a6c7c1281f860500011a62b6bc60f59c9707ee6de6cbc095029",
+      "case_input_sha256": "7ac471abdd9412d8b7ec8ad78fe98c16cfcb55608b314325163fe3c3de8b8e82",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2061",
+        "source_label": "Bovine calf serum",
+        "raw_source_label": "Bovine calf serum"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Source and JCM1303 explicitly require heat-inactivated bovine calf serum, a processed biological material. Calf origin and heat treatment distinguish it from unspecified bovine serum and fetal serum.",
+      "applicability": "Ingredient2061 existing calf-serum owner is a candidate broad material context; generic MICRO grounding does not establish this prepared supplied form.",
+      "missing_requirement": "Exact heat-inactivation conditions and product specification are needed before a source-specific prepared-material owner or preparation-equivalence assertion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2061",
+        "kg-medium_J1303",
+        "kg-jcm1303"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Bovine_Calf_Serum.yaml",
+          "sha256": "3303d83e01c861d0344266c6f5ecc3f34f8ab6f79c7e649c203ea01b0c651857"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 158,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:7a01e2a06678509dfb1e854df38ae893ea432e6cbe9dae40ddc5908a238babc4",
+      "case_input_sha256": "14b34b5f7ecf67695c734340a630464167da5ac6acd900fa4aed7d2115eb010c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:275",
+        "source_label": "Potassium phosphate buffer",
+        "raw_source_label": "Potassium phosphate buffer"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Source gives a prepared potassium phosphate buffer1M,pH7.1. Ingredient275 CAS7778-77-0 names monopotassium phosphate, a possible component, and cannot establish the whole buffer including counterion ratio or titrant.",
+      "applicability": "The5ml stock addition is retained. Do not map the stock exactly to KH2PO4 or a generic phosphate ion, and do not infer Henderson-Hasselbalch component amounts as source facts.",
+      "missing_requirement": "An original recipe giving salt forms, quantities, solvent, pH-adjustment reagent and final volume is needed to define this1M,pH7.1 stock.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md275"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Potassium_Phosphate_Buffer.yaml",
+          "sha256": "9a33ce5d93f8928878ab1309f834d49f505d27abf4d5ee41e23b79a40a2ac40e"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 159,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:7e2d1f3cd7154d836fbfc76b5306fe83675f358d0459c06a2f0566e338b89ca5",
+      "case_input_sha256": "842418a284ac7cc77c3cec231a34d5887b52dcb33ae9ee963e2df1d353b302c2",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:182",
+        "source_label": "NaVO3 x H2O",
+        "raw_source_label": "NaVO3 x H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Literal explicitly has one water and source ingredient182 formulaH2NaO4V agrees with CHEBI132095 monohydrate definition. This is distinct from ingredient700 variable-n hydrate.",
+      "applicability": "Existing monohydrate owner is appropriate for ingredient182; paired unsafe variable-n synonym proposal does not alter the exact one-water identity.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md182",
+        "kg-CHEBI_132095"
+      ],
+      "proposal_ids": [
+        "kg-vanadate-variable-hydrate"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Navo3_X_H2o.yaml",
+          "sha256": "d4d3f05a57d260547b23249d5fb316600c7b5adb56887463394cbe3417dc57e4"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 160,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:7feb499a3db3ae13a53be47a7c50f881042b1c1dae19042a1e702410107e6c26",
+      "case_input_sha256": "f78947ea6fd6ff7e9680a1796a748f65f06103aeb50eb5bd84464c233f9b1764",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:846",
+        "source_label": "Pyridoxin",
+        "raw_source_label": "Pyridoxin"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Ingredient846 CAS65-23-6, C8H11NO3 and169.18g/mol identify pyridoxine free base, consistent with CHEBI16709; hydrochloride would add HCl and differ in mass.",
+      "applicability": "Source Pyridoxin15mg supports the free-base spelling correspondence only; generic vitaminB6 or hydrochloride aliases remain unadjudicated.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md846",
+        "kg-CHEBI_16709"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Pyridoxine.yaml",
+          "sha256": "49fdccccd2f7e20ea18baeb37688aab3a0e97876e06fc8d5f0fe7bb35508ccb8"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 161,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:81d3c88f6ba4a540a30a19cffec2d003b9df45431f92a467de44158501f65ad2",
+      "case_input_sha256": "f2df9914b00fab45f9d6f36faef3b2450087f1a8ef1077d5e24b4682cd14575f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2094",
+        "source_label": "Sterile serum",
+        "raw_source_label": "Sterile serum"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Medium301 permits sterile horse,bovine OR lamb serum. Alternatives are not a mixture of three serums and do not pick one species; sterilization does not specify heat-inactivation.",
+      "applicability": "Ingredient2094 owner remains an ambiguous preparation/material class. Preserve the exact alternative-species attribute instead of mapping to bovine serum.",
+      "missing_requirement": "Which permitted serum was actually supplied, and its preparation specification, are required for a unique material identity.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2094",
+        "kg-medium_301"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Sterile_Serum.yaml",
+          "sha256": "29287e70537f3ceaa457f2e6eb178e12ca9fbb7bbe135e0d1b10047bd5f8183a"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 162,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:89f09171eb61661882167d80086db5bfa9561b7cc01039244718f3e9e6e71f9c",
+      "case_input_sha256": "cd5c93f5386e9c9fafb9b34863957849be1e67c42d7670906991a6842288032f",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:atrop_abyssomicin_c",
+        "source_label": "atrop-abyssomicin C",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Current owner already uses CHEBI208735, not the old broad MeSH antibiotic-class target. Original2007 research explicitly distinguishes atrop-abyssomicinC; PubChem23232701 and CHEBI208735 agree in formula and recorded InChI. These representations do not alone settle every absolute stereocentre.",
+      "applicability": "This exact named atropisomer in metatraits_gtdb supports the current named identity at the evidence level provided. The stale withheld target is not reactivated, and no equivalence to abyssomicinC/G/H is inferred.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/312"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin2007_princeton",
+        "kg-CHEBI_208735",
+        "kg-pc_atrop"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Atrop_Abyssomicin_C.yaml",
+          "sha256": "c4e80c84b617f9577c8320bed14f15cebf5262cda47c58bae73a586e292a7ca1"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 163,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:8aa0732451ad0db374fe81f13ada6b3da9493e9d13d3ef23e2b9f44b2303f763",
+      "case_input_sha256": "cadb4da819e05c75cc5f366f837636bca3a58cfb960eed2a2724d1e48e17ae66",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:halomicin",
+        "source_label": "halomicin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Original patentUS3511909A describes halomicin as at least four components A,B,C,D. Unsuffixed source name cannot identify componentA or any one molecule; automatic SINGLE_INGREDIENT classification lacks support.",
+      "applicability": "Preserve the exact unsuffixed metatraits token and local provenance while proposing an undefined-mixture material identity. No component proportions or component-specific structure are invented.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-halomicin_patent"
+      ],
+      "proposal_ids": [
+        "kg-halomicin-complex"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Halomicin.yaml",
+          "sha256": "8c0bad7398d8e43ee0812117f6d368303dc8c6a0ff5a2f098b976b565bf5ac5e"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 164,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:93878ef294ceaafe3345cb829898c6e521a7a7221f7cdc52919def7808e37b03",
+      "case_input_sha256": "abd4c5f32b1067e9f7d08bed193330976d73dcbd685d090904d6996221a3a447",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:halomicin",
+        "source_label": "halomicin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Original patentUS3511909A describes halomicin as at least four components A,B,C,D. Unsuffixed source name cannot identify componentA or any one molecule; automatic SINGLE_INGREDIENT classification lacks support.",
+      "applicability": "Preserve the exact unsuffixed metatraits_gtdb token and local provenance while proposing an undefined-mixture material identity. No component proportions or component-specific structure are invented.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-halomicin_patent"
+      ],
+      "proposal_ids": [
+        "kg-halomicin-complex"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Halomicin.yaml",
+          "sha256": "8c0bad7398d8e43ee0812117f6d368303dc8c6a0ff5a2f098b976b565bf5ac5e"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 165,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:9561564c2907ddfd00d8adb1d0d1a5c4d2d8d2b4ac0bbe65a2e041abb7356450",
+      "case_input_sha256": "d42cebd7ac20e96811710667b592e9d482bf262d7bd2b50375a738788effd687",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1445",
+        "source_label": "DL-aspartic acid",
+        "raw_source_label": "DL-aspartic acid"
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "Source ingredient1445 CAS617-45-8 specifies DL racemate. CHEBI22660 aspartic acid is stereo-unspecified and includes DL labels, but a synonym does not erase the distinction between racemic material and unspecified stereochemistry.",
+      "applicability": "Keep raw DL specificity and review hold; noL-aspartate mapping or universal aspartic-acid alias approval follows. Existing owner needs primary-identity treatment for the racemate at integration.",
+      "missing_requirement": "Verify the racemate-specific registry identity and full owner cohort before replacing its current stereo-unspecified primary target; source evidence alone does not validate all synonyms.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1445",
+        "kg-CHEBI_22660"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Dl-aspartic_Acid.yaml",
+          "sha256": "85fd87594581ff3d8cf8b20b1bdad67adcd3cf2dc3624890da002c2c9894a034"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 166,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:9a2b64484c0c7d883e22e2e49d5fcada7e0e95271b0f64a1c0b4e9900656291d",
+      "case_input_sha256": "c0124fcf5e33a007dcc205e8d14ec6e3db370dc6b2154c076f36199197726220",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:abyssomicin_g",
+        "source_label": "abyssomicin G",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original authors report abyssomicinG as a distinct isolated metabolite alongside H and atropC. The existing local registry preserves G specificity, while broad family or related congener ontology terms would erase it.",
+      "applicability": "Applies to the exact abyssomicinG token and MIM xref in metatraits_gtdb; cross-source repeated names do not independently establish additional structures or relationships.",
+      "missing_requirement": "An exact form- and stereochemistry-matched ontology/registry identifier with primary structural correspondence is needed for promotion beyond the existing local identity.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin2007_princeton"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Abyssomicin_G.yaml",
+          "sha256": "2fa726b15b881eb658b52e9dc948a7f7d8da8576561d6d4901e167395f46ad17"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 167,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:9d9b55e4747c5317c4423b911bcab44751feb02b50228a26c4b880c93ab51762",
+      "case_input_sha256": "508858ea17b10a332cfd6ff4ed59e97b08c57f6aa8c613befc089a0e41ee6559",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:indochrome",
+        "source_label": "indochrome",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Original Finger2019 study separates indochrome-related fractions/isomers. Unsuffixed historical pigment name does not select one isomer, and it is not sufficient evidence of equivalence to indigoidine or a similarly named pigment.",
+      "applicability": "The metatraits name and local xref are preserved as named-pigment context; source does not identify fraction or chemical structure.",
+      "missing_requirement": "Original source producer/citation and fraction-specific structural assignment are needed before a unique compound mapping or mixture classification can be finalized.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-indochrome-primary"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Indochrome.yaml",
+          "sha256": "0c92e8e9a2036ebff9af78ee5b37475c04b09911b34ec9e076878290cca2551c"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 168,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:a5e1c3a62d1e5281d4b1f723552f3586bcf8d4f69e25e4cc7126ca04652d3164",
+      "case_input_sha256": "c9392822e4864840f1ec990d0aaa1230decc1b6531476ee13cbbedd62617ce4d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2111",
+        "source_label": "Blood agar No 2",
+        "raw_source_label": "Blood agar No 2"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Medium420 names Oxoid Blood AgarNo2 base, then separately adds horse blood after sterilization. Source prepared-base volume is not pure agar, blood, or arbitrary complete blood agar formulation.",
+      "applicability": "Ingredient2111 binds a named product/preparation stage; retain current named-medium owner and distinguish its horseblood supplement.",
+      "missing_requirement": "Exact historical Oxoid product formulation and whether source denotes dry or prepared base are needed before formulation-specific identity promotion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2111",
+        "kg-medium_420"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Blood_Agar_No_2.yaml",
+          "sha256": "a1e85787c11199da3a3fba0d891857eeeac9f8a5ee1db0ad025af9f5ad7f0980"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 169,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:ab5812cb554f70e32535a927c69280114a2bf580a299c29c2d5d2a77bb897277",
+      "case_input_sha256": "05a5ef4a3ce8078c4f2d36427dd210a0450e5010a3d6907e69ce5d396544d9ea",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:indochrome",
+        "source_label": "indochrome",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Original Finger2019 study separates indochrome-related fractions/isomers. Unsuffixed historical pigment name does not select one isomer, and it is not sufficient evidence of equivalence to indigoidine or a similarly named pigment.",
+      "applicability": "The metatraits_gtdb name and local xref are preserved as named-pigment context; source does not identify fraction or chemical structure.",
+      "missing_requirement": "Original source producer/citation and fraction-specific structural assignment are needed before a unique compound mapping or mixture classification can be finalized.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-indochrome-primary"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Indochrome.yaml",
+          "sha256": "0c92e8e9a2036ebff9af78ee5b37475c04b09911b34ec9e076878290cca2551c"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 170,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:ac0e10c0da8616b9a9877917bdcd5756f949d1bed8e99c0d87678e26166639f9",
+      "case_input_sha256": "4c1e465ad200f49dc233bceadd529266d8a748ec66b9533f8b84deb20f27b97f",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:alboverticillin",
+        "source_label": "alboverticillin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original1958 publication verifies alboverticillin as a named antibiotic. A later lasso-peptide reassignment is a research lead, not a verified same-substance mapping in this evidence set.",
+      "applicability": "Exact metatraits spelling and existing local owner remain. No guessed synonym to albomycin, albocycline or triculamin is activated.",
+      "missing_requirement": "Obtain primary structural comparison explicitly establishing historical alboverticillin equivalence, including sequence/topology, before external protein/chemical promotion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-alboverticillin_original"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Alboverticillin.yaml",
+          "sha256": "bfdc3f61820466a9c73e46ce9f538574c59722266433dc6458cf6dfce77176d7"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 171,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:aefcac45566718d2ede9d8c26e7444baa78c6c641af4dbdf2a4e65a4669bae9d",
+      "case_input_sha256": "9747d5a97690cd6e0576a83f1434e2383d7fcbed95a5cccb288e4f1194e08894",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:521",
+        "source_label": "Na2-9,10-anthraquinone-2,6-disulfonate",
+        "raw_source_label": "Na2-9,10-anthraquinone-2,6-disulfonate"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "MediaDive521 specifiesTCIA0308 and CAS853-68-9; PubChem70070 identifies C14H6Na2O8S2 disodium salt. CHEBI85112 is the dianion. Exact synonym anthraquinone-2,6-disulfonate would erase the two sodium ions.",
+      "applicability": "Retain the disodium owner and qualified Na2 source alias; reject only bare dianion name as exact identity. Supplier request403 does not override corroborated source and structure records.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md521",
+        "kg-pc_aqds",
+        "kg-CHEBI_85112"
+      ],
+      "proposal_ids": [
+        "kg-aqds-dianion-alias"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/AQDS.yaml",
+          "sha256": "0d70097612d9e5c0c4855bb8d86dc22fbbfc754f09a553819f5f1fcb5fa0eb29"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 172,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:b44656a815fb0e4ac1bf9b54a72ba7d4647c22d7810fc59c7a0118fe3766ec63",
+      "case_input_sha256": "5546c2d23a13dc4f08957b9bda809273140a03fc7c5d11c869044f880e6e6b2f",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:e_4_aminostyryl_acetate",
+        "source_label": "(E)-4-Aminostyryl acetate",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM13217 Streptomyces vayuensis record explicitly lists(E)-4-aminostyryl acetate. This corroborates a named E-isomer product; no exact external chemical identifier was established here.",
+      "applicability": "Preserve metatraits E geometry and existing local id; do not generalize to unspecified aminostyryl acetate, Z isomer or a protein.",
+      "missing_requirement": "A primary structure report/catalog specifying this E-isomer is needed for external identifier promotion or chemical-property enrichment.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-aminostyryl_jcm"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/E_4_Aminostyryl_Acetate.yaml",
+          "sha256": "a0d51849ecc2d492b133f4e1e80c1e9c44ab695357d80829f94aa744ea77de7c"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 173,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:c03dead07d378e4f7a42e33a5f2cc27fa4a6ad3fa911e7dbc4cc345693e8252c",
+      "case_input_sha256": "7b168ed485ba10cd7dabba80eb77152eaf7a260b5811dd670fd6599ccc953548",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:615",
+        "source_label": "Metall salt sol. 44",
+        "raw_source_label": "Metall salt sol. 44"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ590 Metals44 recipe explicitly lists Na-EDTA250mg, ZnSO4.7H2O1095mg, FeSO4.7H2O500mg, MnSO4.H2O154mg, CuSO4.5H2O39.2mg, Co(NO3)2.6H2O24.8mg, Na2B4O7.10H2O17.7mg, distilled water1000ml and a few drops concentrated sulfuric acid.",
+      "applicability": "Ingredient615 explicitly says seeMedium590 and50ml stock. Proposed has-part recipe preserves exact hydrates and leaves Na-EDTA counterion stoichiometry unresolved; mixture is not a salt identity. Borax component remains UNMAPPED pending issue1168 reconciliation of the known unsupported baseline owner identifier; its exact source amount17.7mg is preserved.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1168"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md615",
+        "kg-medium590"
+      ],
+      "proposal_ids": [
+        "kg-metals44-recipe"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Metall_Salt_Sol_44.yaml",
+          "sha256": "f407b239b589ad35764c99509dd8c289f7691a26adc87cebd26a6201488ef3cf"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 174,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:c8d4c34c28d56e47a29faaded83046921f8f9de417366109cfecf599824c4dae",
+      "case_input_sha256": "d021c569cc0034363c651b5f4e94512a30c70ad2faa339749d6194a376f86e38",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:23",
+        "source_label": "Na-acetate",
+        "raw_source_label": "Na-acetate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Official ingredient entry gives CAS127-09-3, C2H3NaO2 and82.0338g/mol. The source derived concentration arithmetic is internally consistent with anhydrous sodium acetate, but is computed from ingredient metadata and is not independent corroboration, whereas the trihydrate is separately identified by CAS6131-90-4 and CHEBI32138.",
+      "applicability": "This supports ingredient23 only; it does not validate hydrate synonyms or all historical Na-acetate owner aliases.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-CHEBI_32954",
+        "kg-md23"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-acetate.yaml",
+          "sha256": "81fae683dc7acb9eb097e4fde9f80d5f146e2d00373b726fb9ee2ae05768e3e2"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 175,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:ca525564b3f22d6135b7f82f05921bf65ed60513771d887b947507f82216e525",
+      "case_input_sha256": "406f15a78afe98199777436cf6b881d53193f081001bac9e1e1ccf74ff3131e3",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:ristocetin_b",
+        "source_label": "ristocetin B",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "PubChem90478637 assigns ristocetinB formulaC84H92N8O35. Current owner copied CHEBI85129 formulaC95H110N8O44 and full structure from the broader-looking label ristocetin, which is a different glycosylated molecule. A name-stem match is neither exact chemistry nor a demonstrated form-of relation.",
+      "applicability": "Exact B token in metatraits supports retaining local B identity, removing parent-derived chemistry and unsupported molecule parent. Keep produces:ristocetinB REJECTED_LABEL; no source assertion is reinterpreted.",
+      "missing_requirement": null,
+      "no_change_reason": null,
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/703",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/312"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-pc_ristocetin_b",
+        "kg-pc_ristocetin_b_names",
+        "kg-CHEBI_85129"
+      ],
+      "proposal_ids": [
+        "kg-ristocetin-b-parent-chemistry"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ristocetin_B.yaml",
+          "sha256": "9630cba6e27f198278c5aa247dfc10bef5de0a07ea34991777913de887b1e1e6"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 176,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:cc7e7f8c315b429506d4610b0310eb73fb99d323743139edd72f89a4dd0949f6",
+      "case_input_sha256": "94c871ea03bf0e04c8a88c42558a7362f1fdf77405b31a9f84c31521cbc0b323",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2354",
+        "source_label": "Rice starch",
+        "raw_source_label": "Rice starch"
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "Rice starch is botanical-source-specific starch. MediumC39 adds5g starch to20mlwater to prepare a suspension, then uses a drop;250g/L describes the suspension, not a new pure compound. CHEBI28017 describes generic starch polymer.",
+      "applicability": "Ingredient2354 supports rice-derived material and only broader starch context. Existing generic Starch owner cannot make all rice-starch products exact aliases.",
+      "missing_requirement": "A rice-specific material owner and primary product/source specification are needed before exact material identity is asserted; generic starch remains only a parent context.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2354",
+        "kg-medium_C39",
+        "kg-CHEBI_28017"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Starch.yaml",
+          "sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 177,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905",
+      "case_input_sha256": "6e6e0e595d4efe93df94656a115035c8ad25f4e3ff25dc08251f30389a0716c0",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2046",
+        "source_label": "Columbia blood agar base",
+        "raw_source_label": "Columbia blood agar base"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Ingredient2046 is BD-Difco Columbia blood agar BASE at44g. It is a commercial multicomponent base; its CHEBI2509 annotation denotes agar component, not the whole product.",
+      "applicability": "Preserve source catalog brand and base wording; do not conflate with finished blood-supplemented Columbia agar or pure agar.",
+      "missing_requirement": "Exact BD-Difco product formulation/catalog version and subsequent blood supplementation context are needed for a formulation-specific mapped record.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md2046"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Columbia_Blood_Agar_Base.yaml",
+          "sha256": "29ed63a00d3f4f7a1652beee549526d625eef231f29b40691bd128d2f7608324"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 178,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:de900d8208c3a703fdc5ec480bee415e6634ace8be31be539be7035b10486902",
+      "case_input_sha256": "6e060c8c02e26f5bb5a81ea7bae9dce775c21207a4f4b304ff7c59a5fc134d7a",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1893",
+        "source_label": "Riboflavin solution see Medium No. 462",
+        "raw_source_label": "Riboflavin solution (see Medium No. 462)"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM772 points to JCM462 riboflavin solution2.5mg/100mlwater, i.e.0.025g/L, and adds1ml as a stock. DSMZ462 is unrelated and cannot resolve this cross-reference.",
+      "applicability": "Ingredient1893 raw parentheses and source namespace are preserved. buffers-riboflavin-jcm462 is the coordinated exact owner proposal, with no pure-riboflavin alias.",
+      "missing_requirement": null,
+      "no_change_reason": "Coordinated buffers-riboflavin-jcm462 proposal is owned by buffer partition; root adds this source case backlink during integration.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1893",
+        "kg-jcm772",
+        "kg-jcm462"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Riboflavin_Solution_See_Medium_No_462.yaml",
+          "sha256": "91ab27a3dde263a063cb2dd4d599d610f60960e959283dd94797a18557ffef2b"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 179,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:e0653e091db2b5e8d0b7882a4c4fa1f03832c3ca533884cf0c136b25ff593466",
+      "case_input_sha256": "f0221fcb5cc044d890401d09cff90cfda6e6e991a27f82686eab02e4c21d6f08",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1283",
+        "source_label": "Ampicillin sodium salt",
+        "raw_source_label": "Ampicillin sodium salt"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Source1283 CAS69-52-3, C16H18N3NaO4S and371.4g/mol identify ampicillin sodium CHEBI34535. Existing Na-ampicillin is active; Ampicillin_Sodium_Salt is a REJECTED duplicate and remains rejected.",
+      "applicability": "Source exact sodium salt routes only to active owner. No revival of tombstone, no free-ampicillin or trihydrate equivalence.",
+      "missing_requirement": null,
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1283",
+        "kg-CHEBI_34535"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml",
+          "sha256": "e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8"
+        },
+        {
+          "path": "data/ingredients/mapped/Na-ampicillin.yaml",
+          "sha256": "def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 180,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:e75ff261366a1a20c02ae2e61199377135a3f67e13a4bace3ac2b27c9f65253a",
+      "case_input_sha256": "7a5ea5db51c19040279932bd859bef2b61ac61c431bc4d47707d48161cc1dc03",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:960",
+        "source_label": "Swine serum",
+        "raw_source_label": "Swine serum"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Medium1076b separately lists heat-inactivated swine serum17ml and heat-inactivated fetal bovine serum17ml. Different species/age material is not interchangeable, and combined recipe presence is not synonymy.",
+      "applicability": "Ingredient960 and heat-treatment qualifier retain source-specific biological material; unresolved owner is not replaced with bovine serum.",
+      "missing_requirement": "Supplier source, heat-inactivation procedure and material specification are needed before exact prepared-serum identity or a source-specific owner can be finalized.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md960",
+        "kg-medium_1076b"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Swine_Serum.yaml",
+          "sha256": "856b3f7388b406ffb2b0095a9faa5fb9942b78b41bdb0c5124ba3171a90df981"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 181,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:ea3cfb64be65db9f9a2cca06e0d0e54651dad5bdae4414006ac3d5827cbd1a69",
+      "case_input_sha256": "e08d24355fe929877044dfb1fa296c4e6f1f9510d6059da07a1a41894fa3b51f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1238",
+        "source_label": "B12",
+        "raw_source_label": "B12"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Ingredient1238 explicitly links CAS68-19-9, CID5311498 and C63H88CoN14O14P, identifying cyanocobalamin CHEBI17439. CHEBI176843 is a B12 vitamer class and does not pick a vitamer by itself.",
+      "applicability": "This source-ID-specific B12 row can route to actual Cyanocobalamin owner. Do not install B12 as global exact synonym; other B12 source occurrences must independently establish their vitamer.",
+      "missing_requirement": null,
+      "no_change_reason": "Source-specific identity established without owner alias change; global B12 lexical routing would overclaim this evidence.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1238",
+        "kg-pc_cyano",
+        "kg-CHEBI_17439",
+        "kg-CHEBI_176843",
+        "kg-additional-owners"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cyanocobalamin.yaml",
+          "sha256": "c5040ab3a4bc376296676ced54da7265cce36b34c573668be6e28592161d260c"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 182,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:f4127948014a9bedf43f7f2f8ab9a985f794f21929491f75d28bda7977f827b0",
+      "case_input_sha256": "7ef5df39d7aa7447f62b7e54878b5d48a3be78a455f4f28d238230169a938f3e",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1753",
+        "source_label": "Sodium phosphate buffer",
+        "raw_source_label": "Sodium phosphate buffer"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Source specifies10mM sodium phosphate buffer,pH7.1 in100ml. CAS7558-79-4 in ingredient1753 identifies one sodium phosphate salt, not the complete adjusted buffer solution.",
+      "applicability": "Preserve concentration,pH and volume as preparation context; no exact identity to disodium hydrogen phosphate or parent phosphate ion.",
+      "missing_requirement": "Original preparation recipe with acid/base salt ratio, hydrate forms, solvent and pH-adjustment reagent is needed for a distinct10mM stock identity.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1753"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Phosphate_Buffer.yaml",
+          "sha256": "ce046dc294a3b03325e251676ea7f5e3c978dd81a122d187a110a35c58df5c29"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 183,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:f88168df5813701dbe2770345695a6d7d728cdae328571096a1587dfc441ee3f",
+      "case_input_sha256": "82c710ef98ba9eaecf5cbd5893d0c0e95b487f62d0e136cb24da4950757ac158",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:867",
+        "source_label": "PIPES buffer",
+        "raw_source_label": "PIPES buffer"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "Source weighs6.05g SIGMA PIPES and ingredient867 gives CAS5625-37-6,C8H18N2O6S2,302.37g/mol. Medium964 dissolves ingredients then adjusts pH, so this row is supplied free-acid PIPES, not a preprepared buffer stock. CHEBI39033 is structureless PIPES grouping; the acid specificity comes from source chemistry.",
+      "applicability": "This contradicts applying stock owner PIPES_Buffer to this source867 alone. Actual Pipes owner is a candidate chemical route, but #114 stock cohorts and unspecified PIPES strings remain distinct.",
+      "missing_requirement": "Before changing shared owners or activation, reconcile #114 source cohort and acid-specific primary identity/CAS on Pipes owner; do not resolve every PIPES-buffer label by this one weighed-reagent case.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md867",
+        "kg-medium_964",
+        "kg-CHEBI_39033",
+        "kg-additional-owners"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/PIPES_Buffer.yaml",
+          "sha256": "922e5db0a551c7b74e42409c70434df417999ec0d4afb530d88241cbeaaee163"
+        },
+        {
+          "path": "data/ingredients/mapped/Pipes.yaml",
+          "sha256": "b1c03abbda78f24f8a0c533d6e25e4e067da3f54558fc53295348b244b66d28a"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 184,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:fd7411299576fa2e2e1b2760b62e4a748e02a86805eefc10318cc69a1677e625",
+      "case_input_sha256": "85b79f62f438947e3e58a2cf2c2810c00d4e0118b418322db9dd66bfe94bac15",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:potassium_5-dehydro-d-gluconate",
+        "source_label": "potassium 5-dehydro-D-gluconate",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "CHEBI58143 is 5-dehydro-D-gluconate anion, not potassium salt. Local identifier retains counterion and D configuration; replacing it with the anion would lose supplied identity.5-keto and5-dehydro vocabulary is chemically related but does not independently certify every owner/form equivalence.",
+      "applicability": "The exact potassium5-dehydro-D-gluconate token in metatraits_gtdb supplies no hydrate, CAS or supplier. Preserve directed broader anion relation and local salt identity; do not merge any5-keto owner on label alone.",
+      "missing_requirement": "Exact potassium salt stoichiometry and hydrate/anhydrous form, supported by a primary structural or supplier record, are needed for registry promotion or duplicate-owner consolidation.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-CHEBI_58143"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Potassium_5-dehydro-D-gluconate.yaml",
+          "sha256": "fcf4b55d2ab4a3d6b3a1216c07d1ba1f97156ffac3a277efda62fb850bb1b017"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 185,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:fe9cfa53715b2ced052d126c3491fa7d2e5d0da16429afc9b8d7ff533426eace",
+      "case_input_sha256": "5d5a4f8dc61d473b655eb1795603e6eb491dccfddf3de9c529d924a4d7f27986",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:abyssomicin_b",
+        "source_label": "abyssomicin B",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Original2004 isolation paper identifies abyssomicinsB,C,D as distinct compounds. B cannot be assigned the C antibiotic structure or a generic abyssomicin class as exact identity.",
+      "applicability": "Exact B token in metatraits and local xref support keeping the existing local B identity, without approving source organism traits or a new external structure mapping.",
+      "missing_requirement": "Primary structural correspondence to an exact B ontology/registry term is required for promotion.",
+      "no_change_reason": "Existing owner or source context is retained; this evidence does not authorize global alias activation or downstream hold removal.",
+      "issue_refs": [],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-abyssomicin_2004"
+      ],
+      "proposal_ids": [],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Abyssomicin_B.yaml",
+          "sha256": "efe32f4e766299de8dfb6b2ded78214ca6c97186a7bead132e1fdf37400cf46f"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 186,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+      "case_input_sha256": "4bc991048af287a1e92299b9e9758092dedd80ca2222887dc196095f03d16b63",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1685",
+        "source_label": "Na2CO3-CO2 buffer",
+        "raw_source_label": "Na2CO3-CO2 buffer"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM209 source is100ml of4%Na2CO3-CO2 buffer. CHEBI29377 is sodium carbonate solute; neither percent concentration nor CO2 preparation is represented by pure solute identity. MediaDive annotation of solute formula cannot define the stock.",
+      "applicability": "Reject Na2CO3-CO2 buffer as identity synonym on Na2co3 while retaining source literal. Sodium_Carbonate_Solution owner also needs independent identity correction; exact CO2 loading/preparation remains unresolved.",
+      "missing_requirement": "Original stock preparation and CO2 equilibration specification are needed, followed by separate stock primary identifier and full alias review; do not guess carbonate/bicarbonate composition.",
+      "no_change_reason": null,
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+      ],
+      "evidence_ids": [
+        "kg-frozen-shard",
+        "kg-owners-before",
+        "kg-md1685",
+        "kg-mdJ209",
+        "kg-CHEBI_29377"
+      ],
+      "proposal_ids": [
+        "kg-carbonate-buffer-alias"
+      ],
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2co3.yaml",
+          "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+        }
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "source_index": 187,
+      "release_authorization": false,
+      "preserved_hold_scope": {
+        "downstream_holds": [],
+        "inherited_native_mapping_review_not_overridden": true,
+        "rejected_owner_not_revived": true
+      }
+    }
+  ]
+}

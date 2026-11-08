@@ -1,0 +1,38 @@
+{
+  "reviewer": "/root/buffers_research",
+  "findings": [
+    {
+      "finding_id": "buffers-source-volume-nesting",
+      "severity": "major",
+      "status": "existing_issue",
+      "issue_url": "https://github.com/CultureBotAI/CultureMech/issues/408",
+      "description": "Frozen TOGO imports flatten nested liquid stock volumes to root G_PER_L amounts. Strong examples are M2927:25 microlitres of 100mg/mL azlocillin and flucloxacillin become25G_PER_L; M3155:0.5mL of2g/L resazurin becomes0.5G_PER_L. This must not drive MIM whole-stock identity or concentration calculations.",
+      "source_locators": ["TOGO M2927 components[1].items[6:8] and separate antibiotic stocks", "TOGO M3155 components[0], resazurin row", "frozen cases115,119,112 raw_component.concentration"],
+      "follow_up": "Coordinator should attach these content-bound observations to existing CultureMech#408 or its review ledger; source-owned repairs and native recipe validation belong upstream. MIM proposals retain raw source evidence and do not rewrite CultureMech."
+    },
+    {
+      "finding_id": "buffers-jcm556-volume-conflict",
+      "severity": "major",
+      "status": "needs_coordinator_issue_dedup",
+      "description": "JCM556 official source says28mL1M KH2PO4 plus78mL1M Na2HPO4 make100mL1M phosphate buffer. The sum is106mL. TOGO M560 repeats the instruction. Changing78to72or changing the final volume would be unsupported; case123 retains an unresolved specific requirement.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=556",
+      "locator": "1 M Phosphate buffer subsection",
+      "follow_up": "Obtain corrected primary formulation or underlying protocol before exact stock composition is integrated. Preserve source text and the discrepancy; no external contact is authorized."
+    },
+    {
+      "finding_id": "buffers-inherited-tris-aliases",
+      "severity": "major",
+      "status": "existing_issue",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+      "description": "Tris_Base.yaml includes salt and stock aliases on CHEBI:9754. Source-specific Tris/HCl stocks in cases1,56,80,100 are not added as aliases to this owner. The existing issue retains the inherited cleanup obligation."
+    },
+    {
+      "finding_id": "buffers-inherited-hcl-solution-aliases",
+      "severity": "major",
+      "status": "needs_coordinator_issue_dedup",
+      "description": "Hcl.yaml identifies hydrogen chloride CHEBI:17883 but carries active25%,32%,35%aqueous preparation labels. These existing aliases cannot justify new percentage/concentrated-HCl source mappings. Cases65,87,94,102,125 retain solution context and missing concentration-basis obligations.",
+      "owner_path": "data/ingredients/mapped/Hcl.yaml",
+      "follow_up": "Review the complete Hcl owner/source-form payload and export aliases under existing publication holds; split or suppress only with exact source evidence and independent re-review."
+    }
+  ]
+}

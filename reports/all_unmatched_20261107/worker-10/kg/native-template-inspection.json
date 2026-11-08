@@ -1,0 +1,61 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Levorin.yaml",
+        "sha256": "77cccb8ad35797ec34744abe85b0125c5783466a832ec52b7a3442e51cd441a4",
+        "role": "target"
+      },
+      {
+        "path": "docs/record-review-profile.md",
+        "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-10/kg/captures/mesh_M0003252.json",
+        "sha256": "64f9b7848db417cea779343884bdb1a0d8b750ad8bc3944a8b6d505b65ef5fa8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-10/kg/captures/mesh_M0352008.json",
+        "sha256": "ad4f0ee681c3092a5f1beb2ecbe9e2d7be784345ebca30b512fb6ffeb60f5037",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "MIM:Levorin",
+      "path": "data/ingredients/mapped/Levorin.yaml",
+      "label": "Levorin",
+      "kind": "maintained",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Levorin.yaml",
+          "role": "maintained individual owner"
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "maintained aggregate mirror; select ingredient preferred_term=Levorin"
+        }
+      ],
+      "record_class": "IngredientRecord"
+    }
+  ]
+}

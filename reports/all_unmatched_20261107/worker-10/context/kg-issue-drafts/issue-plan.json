@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "round_id": "20261108T052536Z-worker10-kg-source-review",
+  "created_at": "2026-11-08T05:25:36.761532+00:00",
+  "base_commit": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "destination": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+  "input_artifacts": {
+    "kg/decisions.json": "8d6ed2f4eb7ff872082114a6ce0ebea1d555a5a7529f48b32e011127c1f0d999",
+    "kg/evidence.json": "e678093fdc99406fd72c145c245c245d2287e2e24c115e4faa6b2f5a89c48c0c",
+    "kg/proposals.json": "8fd68571b899939c58a55dd14d277791c87f127baf62b7566006d162bf310970",
+    "reviews/root-review-of-kg-v1.json": "c158cdd8446d704384f37b60fa198d63c2531f6cd2d8973355660edbf05731d2"
+  },
+  "dedup_scope": {
+    "all_state_issue_count": 635,
+    "open_issue_count": 139,
+    "issue_list_limit": 1000,
+    "relevant_full_comment_snapshots": 13,
+    "ignored_local_artifacts_included": true,
+    "limitations": "GitHub all-state issue bodies and selected relevant comments, not all comments across every issue. Findings concern exact frozen baseline, not an assertion about an unexamined current-main replacement."
+  },
+  "dedup_snapshots": [
+    {
+      "path": "context/kg-issues-all-live.json",
+      "sha256": "33dacaf11813a61b63537864724e9cba1a2ca508bec313f8f64fd27a5f4d4a3f"
+    },
+    {
+      "path": "context/kg-issue-1117-live.json",
+      "sha256": "3f676ccf126aa9416e2761f1aa01ecd935e25430c9390d5fef15085ce3cc0485"
+    },
+    {
+      "path": "context/kg-issue-1121-live.json",
+      "sha256": "7ac5c4ccc2de8e8851402ad06de98572e1538c07333d0feea6c42df37f7eada6"
+    },
+    {
+      "path": "context/kg-issue-114-live.json",
+      "sha256": "f97cad2da06502a8ecf2684ab637de47b8ad4401844422a0ff92357bcd7f7d45"
+    },
+    {
+      "path": "context/kg-issue-1157-live.json",
+      "sha256": "1cb28e012f7cd774f2ce766f1bd773d1d31f7c9f983a030041bc6f191099ec07"
+    },
+    {
+      "path": "context/kg-issue-1160-live.json",
+      "sha256": "c791bc2860be6a90511d72398feb727c6313e9b8a65dae2b9abe863ee82ea9cc"
+    },
+    {
+      "path": "context/kg-issue-245-live.json",
+      "sha256": "2273bca9bff99a74cf257d0566fa984e8251b5a0f41332b541b642133b8f0e3c"
+    },
+    {
+      "path": "context/kg-issue-251-live.json",
+      "sha256": "f9396e73fdbb31b67feda5ba28bf8666622a73ba1f7fec9a248d1641ad7375b5"
+    },
+    {
+      "path": "context/kg-issue-288-live.json",
+      "sha256": "84495228a2d859d33d411171bfd699c7b043e92ea0b53b43e8aafe74dea13815"
+    },
+    {
+      "path": "context/kg-issue-312-live.json",
+      "sha256": "c3a887c922c5513f25b108439713bb8db3c85a75a4c312b72a4f25568065ff8a"
+    },
+    {
+      "path": "context/kg-issue-459-live.json",
+      "sha256": "00e26a2cb50de731b28aef17c5d74a29bb1d5b7462debe36a46d15ca54e6a55b"
+    },
+    {
+      "path": "context/kg-issue-703-live.json",
+      "sha256": "ad00ec6cda17dcbd6b9701287516aa03bc0cab2d671823d4f72957e6bf870f14"
+    },
+    {
+      "path": "context/kg-issue-718-live.json",
+      "sha256": "a11b1acf2ac598572a1f1e103bdcab6f03f28cff5acc17e5fd45b1e98104649a"
+    },
+    {
+      "path": "context/kg-issue-901-live.json",
+      "sha256": "f9bd0f63e602ad82fb2db60d04d4282b40a41b524255d61f00cc3a7b34c0e701"
+    }
+  ],
+  "bundles": [
+    {
+      "bundle_id": "kg-owner-identity-defects",
+      "title": "Correct four source-owner identity and parent-chemistry defects: Levorin, ristocetin B, halomicin and ISP4",
+      "dedup": "The live all-state issue snapshot and relevant comments did not contain these four owner-specific defects. #312 is a broader historical research-versus-mapping conflict ledger, and #718 is the continuing withheld-claim umbrella. #703 already resolved process/trait synonyms; the ristocetin B finding here concerns borrowed chemistry and does not reopen that completed cleanup.",
+      "body_path": "context/kg-issue-drafts/kg-owner-identity-defects.md",
+      "body_sha256": "efb97d830cc95f71d1eaf676acd1d983f7d015d04b71aad801b955ec725665aa",
+      "proposed_action": "create",
+      "status": "ready_to_file_awaiting_public_destination_approval",
+      "issue_number": null,
+      "issue_url": null,
+      "source_indices": [
+        138,
+        143,
+        148,
+        164,
+        165,
+        176
+      ],
+      "finding_ids": [
+        "kg-levorin-concept-scope",
+        "kg-ristocetin-b-parent-chemistry",
+        "kg-halomicin-complex",
+        "kg-isp4-remove-salt-parent"
+      ]
+    },
+    {
+      "bundle_id": "kg-form-stock-aliases",
+      "title": "Preserve chemical form and stock boundaries in glyoxylate, vanadate, AQDS and carbonate aliases",
+      "dedup": "No exact four-owner bundle was found in the live all-state issue snapshot. #251 concerns the historical hydrate-report blind spot and is closed; #459 is a wider hydrate cohort and #901 concerns asymmetric parent predicates. #1157 records five different source IDs. #718 comment 6717638594 already preserves a whole-owner carbonate hold and a different DSMZ 863 stock proposal; this JCM 209 alias finding is a bounded continuation, not proof that the whole carbonate owner is releasable. #1117 concerns carbonate monohydrate, and #1121 concerns carbonate used as a ceftazidime stabilizer. None establishes that these specific aliases are safe. Link this scoped follow-up to #718/#459 and do not close those umbrellas.",
+      "body_path": "context/kg-issue-drafts/kg-form-stock-aliases.md",
+      "body_sha256": "f6736421ada14c8b428207ec9648deab6692bc579e25f8cc5d59c79f3a14256a",
+      "proposed_action": "create",
+      "status": "ready_to_file_awaiting_public_destination_approval",
+      "issue_number": null,
+      "issue_url": null,
+      "source_indices": [
+        136,
+        157,
+        160,
+        172,
+        187
+      ],
+      "finding_ids": [
+        "kg-glyoxylate-label",
+        "kg-vanadate-variable-hydrate",
+        "kg-aqds-dianion-alias",
+        "kg-carbonate-buffer-alias"
+      ]
+    }
+  ],
+  "normalized_finding_count": 8,
+  "publication": {
+    "performed": false,
+    "attempted_by_this_agent": false,
+    "reason": "Coordinator reported automatic approval review rejected a sibling public-issue mutation because campaign review/branch authorization was insufficient for that destination. Coordinator instructed KG agent not to attempt public mutation and to prepare exact reviewable bodies only.",
+    "approval_request_scope": "Approve publishing the two exact body SHA256 payloads in this ledger as new issues in CultureBotAI/MediaIngredientMech. Recheck dedup immediately before publication. No mentions, data writes, PRs, merges or downstream rebuilds are included."
+  }
+}

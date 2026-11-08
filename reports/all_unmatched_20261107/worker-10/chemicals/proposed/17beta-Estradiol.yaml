@@ -1,0 +1,30 @@
+identifier: CHEBI:16469
+preferred_term: 17β-Estradiol
+ontology_mapping:
+  ontology_id: CHEBI:16469
+  ontology_label: 17beta-estradiol
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1181; https://www.ebi.ac.uk/chebi/backend/api/public/compound/16469/
+    notes: NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion formulation. ChEBI16469
+      defines the17beta isomer, so the beta qualifier is preserved rather than choosing generic estradiol
+      or17alpha. The frozen1g/L value contradicts the primary1mg input and is not imported into MIM.
+synonyms:
+- synonym_text: 17β-Estradiol
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:bf95441dfe84a25316206b45e2b482da582422f4309fc061b7603038dfe73894
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: CREATED_FROM_SOURCE_REVIEW
+  changes: NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion formulation. ChEBI16469
+    defines the17beta isomer, so the beta qualifier is preserved rather than choosing generic estradiol
+    or17alpha. The frozen1g/L value contradicts the primary1mg input and is not imported into MIM. Proposed
+    only; integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
