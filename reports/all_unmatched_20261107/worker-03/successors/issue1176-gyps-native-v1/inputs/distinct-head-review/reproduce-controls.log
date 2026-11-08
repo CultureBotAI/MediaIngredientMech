@@ -1,0 +1,7 @@
+PASS controls 28 target_errors 0 unrelated 0
+PASS fresh dependency controls 5
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w03-peptone-final-head-independent-v1/reproduce_controls.py", line 30, in <module>
+    assert (dest.is_file() and error is None) if version=='v1' else (not dest.exists() and error and error['message']=='pinned input drift')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

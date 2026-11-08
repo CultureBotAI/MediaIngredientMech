@@ -1,0 +1,296 @@
+{
+  "reviewer": "/root/gyps_native_skeptic",
+  "at": "2026-11-08T10:45:56.382137+00:00",
+  "status": "PASS_EXACT_REPRESENTATION_WITH_LIMITS",
+  "ledger_sha256": "582ea36dd479b8ecd244d996a6eb772569eb232b1631f87ef5f4aa143a20ce67",
+  "proposal_object_sha256": "66bb10da3a73e57a473ad1cb9ba0c852ca1aef7fc41c888cc2b012a8a32661cf",
+  "payload_sha256": "fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1",
+  "before_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+  "old_sidecar_full_object_sha256": "89224f16fdf93d997318b151179101a1963edb75c204f6299e1ab7bdbfde2c54",
+  "foreign_original_full_proposal_sha256": "c52010aa91f4484edff947cff7498356bd2119f63ab2f3723389137858aa94e1",
+  "foreign_original_source_decision_sha256": "794cfb038adb6051188cd72832890c0d5c1d633bce9a106c4329aab128ce25cf",
+  "global_case_count": 1879,
+  "real_case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+  "real_case_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+  "case_source": "microbedecoder",
+  "case_label": "peptones",
+  "W05_assigned": true,
+  "W03_assigned": false,
+  "foreign_original_to_observed_bridge": [
+    {
+      "kind": "proposal_ledger",
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+      "old_head": "108e213e96f7d423ee345ce265d692e79063127c",
+      "observed_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+      "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+      "exact": true
+    },
+    {
+      "kind": "decision_ledger",
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json",
+      "old_head": "108e213e96f7d423ee345ce265d692e79063127c",
+      "observed_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+      "sha256": "741bf2c03be4b5ec1ec8dc170508cf6b5d40f606bfacdc10dd2f1d109fda827e",
+      "exact": true
+    },
+    {
+      "kind": "parent_payload",
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+      "old_head": "108e213e96f7d423ee345ce265d692e79063127c",
+      "observed_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+      "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+      "exact": true
+    }
+  ],
+  "original_188_74_868_cores": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json",
+      "sha256": "a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220",
+      "count": 188,
+      "git_and_current_byte_identical": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json",
+      "sha256": "ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a",
+      "count": 74,
+      "git_and_current_byte_identical": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json",
+      "sha256": "831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878",
+      "count": 868,
+      "git_and_current_byte_identical": true
+    }
+  ],
+  "evidence_captures": [
+    {
+      "evidence_id": "GYPS-REVIEWED-SIDECAR",
+      "path": "inputs/prior-sidecar/dependency-selection.json",
+      "sha256": "b1e181a1dfbbc2d0588b377f00e5922c6b5340e86b171b9ebf8233d963f0ad92",
+      "interpretation": "selector is record content, not an independent reviewer verdict"
+    },
+    {
+      "evidence_id": "GYPS-ACTUAL-BEFORE",
+      "path": "inputs/before/GYPS.yaml",
+      "sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+      "interpretation": "Actual maintained existing-owner preimage, not manufactured or null."
+    },
+    {
+      "evidence_id": "GYPS-PRIMARY-ALAIN",
+      "path": "inputs/prior-sidecar/inputs/primary/gyps-publication-528.pdf",
+      "sha256": "a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661",
+      "interpretation": "Exact archived Alain2002p1622 source used in reviewed GYPS payload; identifies Difco Bacto. No source rerefetch or new scientific interpretation."
+    },
+    {
+      "evidence_id": "GYPS-FOREIGN-CAUSAL-PROOF",
+      "path": "lineage-review/lineage-proof-v1.json",
+      "sha256": "8bd0be1de3e1a20a6049e48bb6c784428b5bcd6b744c3b605a0843039554c38d",
+      "interpretation": "Real W05 global case and original proposal/backlink, unchanged108e213e-to-a43ada34 bridge. Causal only; neither W03 assignment nor GYPS observation."
+    },
+    {
+      "evidence_id": "GYPS-ROUTE-1176",
+      "path": "inputs/issue1176-route-comment.json",
+      "sha256": "e16e0a3bcb0f3c541437fdd363b5a684aa132dece0766de2467bffd11271eec7",
+      "interpretation": "Coordinator route filed before this task; representation authorization, not scientific approval."
+    },
+    {
+      "evidence_id": "GYPS-DISTINCT-HEAD-REVIEW",
+      "path": "inputs/distinct-head-review/HANDOFF.json",
+      "sha256": "2d97691f4c83391fcd0d83abc97e3139654b57606e9610ddb018131f6b5ea328",
+      "interpretation": "Distinct actual784ee254 review with all source/identity/role/export limits. New native representation still receives separate current review."
+    }
+  ],
+  "complete_payload_bytes_equal_prior_published": true,
+  "new_payload_or_case_or_occurrence_counts": {
+    "native_dependency_proposals": 1,
+    "new_scientific_payloads": 0,
+    "added_frozen_cases": 0,
+    "added_observations": 0,
+    "added_occurrences": 0
+  },
+  "source_science_authority": "No new science approval. Complete unchanged payload preserves prior conditional Bacto, PARTIAL recipe and source limits. Foreign generic parent is causal context only.",
+  "native_semantic_boundary": "Native operator verifies real global case binding but does not reject false W03-assignment/observation fields. This independent semantic checker is private and is not represented as native gate enforcement.",
+  "negative_controls": [
+    {
+      "control": "wrong_causal_case_hash",
+      "status": "REFUSED",
+      "reason": "actual causal case/hash required",
+      "mutated_ledger_sha256": "4a75119829ccca58131314ed07b32c272e9746423b1d394e7e272c810ed79937",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "wrong_maintained_preimage",
+      "status": "REFUSED",
+      "reason": "real GYPS preimage required",
+      "mutated_ledger_sha256": "8ccd81434e5b26986c1418953b93ed3c55723e2996796f27e56bef67033653fb",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "wrong_payload_hash",
+      "status": "REFUSED",
+      "reason": "exact unchanged reviewed payload binding required",
+      "mutated_ledger_sha256": "e975ce9086fa8e368313166a828f7f5c03dd3d1388545509b6d6b27ab633ac02",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "foreign_case_claimed_W03_assigned_array",
+      "status": "REFUSED",
+      "reason": "false assignment/observation/occurrence claim: assigned_W03_case_ids",
+      "mutated_ledger_sha256": "513cad1c2f6a913b3e52bb1e67cf55516fc964a7baf053791194b27e02b85683",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "foreign_case_claimed_W03_assigned_flag",
+      "status": "REFUSED",
+      "reason": "actual foreign W05 assignment required",
+      "mutated_ledger_sha256": "c790dc8efcc9aabf0cbda7f934b9561c8712fe9ddb09c55964bc86dda75ddbf5",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "foreign_case_relabelled_worker03",
+      "status": "REFUSED",
+      "reason": "actual foreign W05 assignment required",
+      "mutated_ledger_sha256": "96c48bbac5eb5070dd5878daf4b58cd484b7d46f7f077210add583782e151d47",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "causal_case_claimed_GYPS_observation_array",
+      "status": "REFUSED",
+      "reason": "false assignment/observation/occurrence claim: observed_GYPS_case_ids",
+      "mutated_ledger_sha256": "6190e4438bbcaaea11a701ce250e677cadeffb9262e2e18bc9b606f49f9578c2",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "causal_case_claimed_GYPS_observation_flag",
+      "status": "REFUSED",
+      "reason": "causal context is not a GYPS observation",
+      "mutated_ledger_sha256": "74eccf667773685b0fdfac57b1c62edb1444cbe0b22726673ca719f580e58e14",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "invented_frozen_case",
+      "status": "REFUSED",
+      "reason": "false assignment/observation/occurrence claim: added_source_case_ids",
+      "mutated_ledger_sha256": "0d94217842893ce98b63b286b184a4b5a5feeba99ae76c6b2b9b6be8295c51b3",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "invented_occurrence",
+      "status": "REFUSED",
+      "reason": "false assignment/observation/occurrence claim: added_occurrence_ids",
+      "mutated_ledger_sha256": "31877cfde5f19dff8334ff6e892759553d11d5f5f133c92a3865de312a3a0d3a",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "invented_source_core_membership",
+      "status": "REFUSED",
+      "reason": "new dependency is outside original source core",
+      "mutated_ledger_sha256": "35c3c8f2d858fc7d5b6751607197818113ebc1a970ca7ca41c376b8b7cddcee6",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "foreign_authorship_claimed_W03",
+      "status": "REFUSED",
+      "reason": "foreign authors must remain original",
+      "mutated_ledger_sha256": "45820e260208e2690418104fc60d7397019a381a5239d6d2f69dde80f880c7be",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "fabricated_foreign_GYPS_backlink",
+      "status": "REFUSED",
+      "reason": "foreign decision cannot claim new GYPS backlink",
+      "mutated_ledger_sha256": "4d61b34c5e785428809ba707719b3dada138d1898a3cddcf2dcb13269f44dfa1",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "false_GYPS_backlink_flag",
+      "status": "REFUSED",
+      "reason": "foreign decision cannot claim new GYPS backlink",
+      "mutated_ledger_sha256": "5405f8175a48f47efe2f37df64df405e61f95c129679e8f97cc9aeb218070584",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "conditional_Bacto_requirement_removed",
+      "status": "REFUSED",
+      "reason": "conditional Bacto/fallback constraints changed",
+      "mutated_ledger_sha256": "25edcb249a945fe9dcab3bb613511ee02d74949cec8d9f6f3e5c6f2e00052b0e",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "source_application_holds_removed",
+      "status": "REFUSED",
+      "reason": "conditional Bacto/fallback constraints changed",
+      "mutated_ledger_sha256": "4807cc3a53c4e8bcb2055726647d2467612c139a9e616309efb550d7787a9870",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "duplicate_Marine_origin",
+      "status": "REFUSED",
+      "reason": "one GYPS origin only",
+      "mutated_ledger_sha256": "965bfcf35fabdb8e633721cdfe43687a8199323ec4c71fc10a2d79347d23ba8f",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "false_retirement",
+      "status": "REFUSED",
+      "reason": "no invented publication/retirement/observed case",
+      "mutated_ledger_sha256": "bc818a90425a92c6d3c53b4b9f2b470c9f308d3ce2687ab1bd1ed6d0a1a0872c",
+      "mutated_binding_sha256": "6a7f4f311ba20c99f4dd8b152a250d7f1b3a586203a22e03bd87d3b4db6e4189",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "future_head_claimed_published",
+      "status": "REFUSED",
+      "reason": "no invented publication/retirement/observed case",
+      "mutated_ledger_sha256": "bc818a90425a92c6d3c53b4b9f2b470c9f308d3ce2687ab1bd1ed6d0a1a0872c",
+      "mutated_binding_sha256": "2d62de073750c638051a59dfd533e6087d1b0661bbed4c93ce5a209a7b8da551",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "occurrence_count_inflation",
+      "status": "REFUSED",
+      "reason": "false count increase: new_occurrences",
+      "mutated_ledger_sha256": "73301e705cd1ed678e8c9e1bd9bf7eda60b18a56062fbf6146de31ccb5426ce9",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "whole_owner_approval_leak",
+      "status": "REFUSED",
+      "reason": "no application or whole-owner approval",
+      "mutated_ledger_sha256": "a6b5ada8c34c06f48da3b621381138ad27b27b6bfa8a19bf81821d5ca5aedbff",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    },
+    {
+      "control": "new_history_claim",
+      "status": "REFUSED",
+      "reason": "representation cannot imply new science/history/source scope",
+      "mutated_ledger_sha256": "b50be70de85981910c108e2607752e453f262fa5164db4ca98bcc9f0b6427360",
+      "mutated_binding_sha256": "0c7fe27a254cdc0708b9ff5b55665e0a637f8d47eaf1d6c00ca7cc070eecc1a9",
+      "actual_source_writes": 0
+    }
+  ],
+  "negative_count": 22,
+  "new_confirmed_findings": [],
+  "publication_pending": true,
+  "whole_owner_role_export_approval": false,
+  "full_campaign_prepared": false
+}
