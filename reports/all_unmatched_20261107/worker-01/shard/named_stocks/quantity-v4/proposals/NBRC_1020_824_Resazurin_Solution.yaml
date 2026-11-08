@@ -1,0 +1,104 @@
+identifier: kgmicrobe.ingredient:nbrc_1020_824_resazurin_solution
+preferred_term: NBRC 1020/824 resazurin solution
+synonyms:
+- synonym_text: Resazurin solution****
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1020,
+    nbrc.medium:824; retained source-local label, excluded from global resolution
+    (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1020_824_resazurin_solution
+  ontology_label: NBRC 1020/824 resazurin solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Resazurin
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    source_record: NBRC 1020/824 resazurin solution; complete named stock table and
+      preparation notes
+    notes: Both primary sources explicitly specify resazurin1g plus1Lwater. Source-defined
+      stock identity is resolved; exact free-compound versus sodium-salt reagent is
+      not supplied and remains ungrounded. No alias to a neat-resazurin or sodium-salt
+      owner is asserted. Literal printed masses and added distilled-water volume per
+      source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch
+      containing1L added water, not a final1L solution or final concentration.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+    source_record: NBRC 1020/824 resazurin solution; complete named stock table and
+      preparation notes
+    notes: Both primary sources explicitly specify resazurin1g plus1Lwater. Source-defined
+      stock identity is resolved; exact free-compound versus sodium-salt reagent is
+      not supplied and remains ungrounded. No alias to a neat-resazurin or sodium-salt
+      owner is asserted. Literal printed masses and added distilled-water volume per
+      source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch
+      containing1L added water, not a final1L solution or final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'Both primary sources explicitly specify resazurin1g plus1Lwater. Source-defined
+  stock identity is resolved; exact free-compound versus sodium-salt reagent is not
+  supplied and remains ungrounded. No alias to a neat-resazurin or sodium-salt owner
+  is asserted. Literal printed masses and added distilled-water volume per source
+  preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L
+  added water, not a final1L solution or final concentration. Source-local raw labels
+  are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions
+  but native resolution must not expose them as global synonyms. The source-qualified
+  preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+  vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal
+  source identity; component grounding is separate from established whole-stock recipe
+  identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.878916+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 160. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.626181+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true

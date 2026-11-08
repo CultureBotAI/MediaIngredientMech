@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:jcm1430_ferrous_sulfate_hcl_stock
+preferred_term: JCM1430 ferrous sulfate stock in hydrochloric acid
+synonyms:
+- synonym_text: 0.01 M FeSO4·7H2O solution (in 0.02 N HCl)
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1430_ferrous_sulfate_hcl_stock
+  ontology_label: JCM1430 ferrous sulfate stock in hydrochloric acid
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430
+    notes: JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL
+      aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration
+      inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity.
+components:
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: M
+- component_name: Hydrochloric acid carrier
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430
+    source_record: JCM1430 ferrous sulfate stock in hydrochloric acid
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL
+  aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration
+  inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity.
+  Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech;
+  no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.184565+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. JCM1430 and1431 explicitly give0.01MFeSO4·7H2O
+    in0.02NHCl; stock is added3mL aftercoolingto50C. Normality is preserved and no
+    unsupported1Mconversionorfinaldoseconcentration inferred. Exactsourcecarrier defines
+    thisstock withoutclaiming solidFeSO4identity. No maintaineddatawrites; rawcontextlabelsdo
+    notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true

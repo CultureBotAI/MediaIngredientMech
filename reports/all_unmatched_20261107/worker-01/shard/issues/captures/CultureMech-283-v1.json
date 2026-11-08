@@ -1,0 +1,57 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "283",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:11.038081+00:00",
+  "completed_at": "2026-11-08T04:18:11.617871+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Found probing #282 for rename-induced collisions. It is **not** caused by that PR — the\nsame rows exist on main under the corrupted spellings — but repairing the names made it\nlegible.\n\n`data/normalized_yaml/algae/ucm.yaml` (and its merged twin) carries each of two trace\nelements **twice**, at values exactly 1000× apart:\n\n| ingredient | value A | value B | ratio |\n|---|---|---|---|\n| `As2O3` (was `As O`) | 0.000093 g/L | 0.093 g/L | 1000× |\n| `Na2WO4.2H2O` (was `Na WO .2H O`) | 0.000066 g/L | 0.066 g/L | 1000× |\n\nBoth rows in each pair carry the same grounding and the same source\n(`CCAP Medium MR_UCM.pdf`).\n\nA factor of exactly 1000 between two copies of one ingredient is the **flattened-cocktail\nsignature** from #150: the stock-strength value and the final per-litre value both present\nas sibling ingredient rows, rather than the stock nested under a `solutions:` entry with an\naddition volume. Here it has not been flattened *into* the medium — both readings are\nsitting next to each other, which is arguably worse, because any consumer summing\ningredients counts the trace element at ~1000× its real contribution.\n\nWorth checking against the CCAP source PDF which figure is the medium's and which is the\nstock's, then either nesting the stock (the #150 repair) or dropping the stock-strength\nrow.\n\nAlso worth a corpus-wide sweep for the same shape — two rows, one name, values differing\nby a clean factor of 1000 — since this one only surfaced by accident. The existing\n`audit_concentration_plausibility` looks at absolute magnitude, not at ratios between\nsibling rows, so it would not catch this pattern.\n\nRelated: #263 removed rows duplicated *verbatim*; this is the sibling case where the\nduplicate carries a different value and so is a real (wrong) datum rather than redundancy.",
+    "closedAt": null,
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABSBmmmQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "**This is understated — it is 8 duplicated ingredients, not 2, and there are\nthree distinct patterns.** Re-measured on `main` at `e75a797bbf`,\n`data/normalized_yaml/algae/ucm.yaml` (`CultureMech:000140`, 47 ingredients):\n\n| ingredient | values (g/L) | ratio |\n|---|---|---|\n| `Na2SeO3 x 5 H2O` | 0.00263 / 2.63 | **1000x** |\n| `As2O3` | 0.000093 / 0.093 | **1000x** |\n| `Na2WO4.2H2O` | 0.000066 / 0.066 | **1000x** |\n| `TeO` | 0.000034 / 0.034 | **1000x** |\n| `Folinic acid (citrovorum)` | 0.0004 / 0.04 | **100x** |\n| `Cyanocobalamin` | 0.0001 / 0.01 | **100x** |\n| `Pyridoxamine.2HCl` | 0.00004 / 0.004 | **100x** |\n| `NaOH` | 4.0 / 4.0 | **1x** |\n\nEvery pair carries the same grounding, so none of these is a\nsame-name-different-compound case.\n\n## Three patterns, not one\n\n1. **1000x, four trace elements** — the stock-strength/final-concentration pair\n   the issue describes. Consistent with a trace-element stock added at 1 mL/L.\n2. **100x, three vitamins** — same shape, different factor, so a *second* stock\n   at a different addition volume. The issue's \"1000x\" framing hides this: a\n   repair that assumes one factor would put the vitamins out by 10x.\n3. **1x, `NaOH`** — a plain duplicate, listed twice at an identical 4.0 g/L.\n   Nothing to disentangle; one row is simply redundant, and unlike the others it\n   would survive any ratio-based detector.\n\n## Bearing on the repair\n\nThis looks like exactly the `flattened_stock_cocktail` shape #150 owns, except\nthe flattening left **both** rows instead of overwriting. That makes it easier,\nnot harder: the pairing itself carries the addition volume that #150's 183\nremaining cocktails lack — 1000x implies 1 mL/L, 100x implies 10 mL/L — so the\nevidence #344 goes looking for externally is already on the record here.\n\nWorth checking whether the pattern generalises before treating this as one\nrecord: any record carrying the same ingredient twice at an exact power-of-ten\nratio is a candidate, and none of the three PR-blocking gates looks for it.",
+        "createdAt": "2026-09-02T04:58:33Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/283#issuecomment-5504607897",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDORCzsts8AAAABSDchHw",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Root cause found, and a large part of this is fixed in #395.\n\n## What this record actually is\n\n`ucm.yaml`'s duplicate pairs are one instance of a corpus-wide defect:\n`cleanup_media_quality.py` merged duplicate ingredient rows by **adding** their\nconcentrations (#394). 5,081 rows across 2,667 records carry the note it left\nbehind; 4,503 hold a summed value.\n\n#395 stops the mutator summing, adds `just audit-merged-duplicates` as a\nblocking gate, and repairs the **731 rows** where every merged part was the same\nvalue — collapsing `Methanol 1584.0` back to `792.0`, `NaCl 400 -> 200`, and so\non. Verified against the primary source in one case: MediaDive medium 1497 lists\nNaCl twice at `g_l: 200` each, and 400 g/L would exceed NaCl's solubility\n(~359 g/L), so the sum was not merely wrong but impossible.\n\n## What is still this issue's\n\n`ucm.yaml` is **not** in that repaired set — its pairs are two separate rows,\nnot one summed row, so the merge note is absent and the collapse does not apply.\n\nRe-measured on `main`, the wider family this belongs to:\n\n```\nrecords with a repeated (name, unit) at more than one value: 496\n  exact duplicates (same value twice)                          87\n  power-of-ten pairs (1000x / 100x / 10x)                      18\n  integer ratios                                               98\n  other ratios                                                407\n```\n\n#395's `COEXISTING_ROW` detector sees only the 276 where one of the rows carries\na merge note. The other ~220 records — `ucm.yaml` among them — are invisible to\nevery gate.\n\n## Correction to my earlier comment\n\nI said the 100x group implies a 10 mL/L addition and 1000x implies 1 mL/L. That\ninference does not survive #150's finding that a stock's addition volume belongs\nto the **citing medium**, not the stock: `Seven vitamins solution` is observed at\nfour different volumes corpus-wide. The ratio narrows the candidates; it does not\nsupply the volume. Treat it as a lead for the source lookup, not a substitute.\n\n## Suggested residual\n\nA detector for repeated `(name, unit)` within one record that does **not** depend\non a merge note, classified as above, with the exact-duplicate class separated\nout — 87 rows where the same value is simply listed twice are redundancy with no\ncuration question attached, and are the cheapest thing here to clear.",
+        "createdAt": "2026-09-02T08:11:03Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/283#issuecomment-5506539807",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 283,
+    "state": "OPEN",
+    "title": "ucm.yaml lists the same trace elements twice, 1000x apart — stock strength and final concentration side by side",
+    "updatedAt": "2026-09-02T08:11:04Z",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/283"
+  }
+}

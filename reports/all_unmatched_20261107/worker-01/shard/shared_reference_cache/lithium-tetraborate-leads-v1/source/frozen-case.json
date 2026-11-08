@@ -1,0 +1,109 @@
+{
+  "baseline_outcome": "native_no_mim_match",
+  "campaign_requirement": "complete_source_bound_review",
+  "case_id": "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065",
+  "native_match_result": {
+    "effective_term_id": "mediadive.compound:1323",
+    "matched": false,
+    "resolved_record": null
+  },
+  "native_occurrence_count": 2,
+  "occurrences": [
+    {
+      "component_path": "composition/6",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3061_Main_sol_1493.yaml",
+      "native_name": "Li2B4O7",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:627df4b3b23ade6a74616071cd3a5443ddf0641928e1e9808fc47db84567b7ca",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.01"
+        },
+        "evidence": [
+          {
+            "explanation": "Concentration evidence for composition[6].concentration (Li2B4O7) in MediaDive solution 3061; locator=$.data.recipe[6] (compound_id=1323). Provider explicitly reports g_l=0.01. Arithmetic check: 0.01 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.01 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67.",
+            "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+            "snippet": "{\n                \"recipe_order\": 7,\n                \"compound\": \"Li2B4O7\",\n                \"compound_id\": 1323,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.01,\n                \"unit\": \"g\",\n                \"g_l\": 0.01,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+            "supports": "SUPPORT"
+          }
+        ],
+        "preferred_term": "Li2B4O7",
+        "term": {
+          "id": "mediadive.compound:1323",
+          "label": "Li2B4O7"
+        }
+      },
+      "raw_preferred_term": "Li2B4O7",
+      "recipe_id": "CultureMech:012285",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:012285"
+        },
+        {
+          "path": "/term/id",
+          "value": "mediadive.solution:3061"
+        }
+      ],
+      "record_shape": "SolutionRecipe",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_3061_Main_sol_1493.yaml",
+      "source_file_sha256": "a8f4695d7d3a5b1667cd647c6f8f3eb509c3c6ef8bb22bc718114eeb145951ac",
+      "source_identifiers": [
+        {
+          "path": "/term/id",
+          "value": "mediadive.compound:1323"
+        }
+      ]
+    },
+    {
+      "component_path": "ingredients/6",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/verrucomicrobia_medium.yaml",
+      "native_name": "Li2B4O7",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:2c87b939d2b4f67d2d329af9c7c61f7e5f14891d60bb2cd4b15e6d77511b9dc1",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.01"
+        },
+        "preferred_term": "Li2B4O7"
+      },
+      "raw_preferred_term": "Li2B4O7",
+      "recipe_id": "CultureMech:000961",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:000961"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "mediadive.medium:1493"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/verrucomicrobia_medium.yaml",
+      "source_file_sha256": "44b694cb40105c780dafabe479ceb2283f7814b4e74a8815ca3304bbe2c38b51",
+      "source_identifiers": []
+    }
+  ],
+  "original_unified_position": 2319,
+  "original_unified_row": {
+    "cas_rn": "",
+    "chebi_id": "",
+    "culturemech_term_id": "mediadive.compound:1323",
+    "example_media": "CultureMech:000961; CultureMech:012285",
+    "ingredient_name": "Li2B4O7",
+    "kg_microbe_node_id": "",
+    "mapping_status": "TERM_ID_NO_MIM",
+    "mim_id": "",
+    "occurrence_count": "2",
+    "synonyms": ""
+  },
+  "prior_dependency": "PR1158 candidate baseline, not merged",
+  "raw_source_label": "Li2B4O7",
+  "source": "culturemech",
+  "source_case_id": "Li2B4O7",
+  "source_identity_claimed": false,
+  "source_label": "Li2B4O7"
+}

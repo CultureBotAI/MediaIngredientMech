@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T04:22:37.241074+00:00",
+  "reviewer": "/root/skeptical_review",
+  "findings": [
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-5",
+      "severity": "minor",
+      "status": "open",
+      "category": "incorrect-source-quantity",
+      "allocation_index": 103,
+      "affected_case_ids": [
+        "CM_NAME:aea5b82bb8b325d32caea162cf6ddce3fd9315de6a54415741478811d688a029"
+      ],
+      "field_path": "reasoning",
+      "observed_in_decision_fragment_sha256": "00cea154bcbf264785ca0b608dad03c03d10369b1b7ca113b839937eaef79010",
+      "observed_text": "the receiving medium adds5 ml",
+      "counterevidence": {
+        "frozen_component": {
+          "concentration": {
+            "unit": "ML_PER_L",
+            "value": "10"
+          },
+          "preferred_term": "K solution**"
+        },
+        "primary_capture": "named_stocks/captures/nbrc-989.html",
+        "primary_sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+        "locator": "Receiving medium table K solution**10ml"
+      },
+      "description": "Primary NBRC989 receiving dose is10mL, not5mL. Stock identity/disposition unaffected; recipe-bound quantity claim must be corrected.",
+      "requested_correction": "Correct primary dose to10mL, preserving any frozen/current discrepancy if present.",
+      "re_review_required": true
+    }
+  ]
+}

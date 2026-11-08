@@ -1,0 +1,38 @@
+{
+  "reviewer": "Codex /root (worker01 technical accounting)",
+  "checked_at": "2026-11-08T08:01:46.195784+00:00",
+  "result": "PASS",
+  "stage": "pre-review",
+  "auditor": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+    "sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad"
+  },
+  "positive_receipt_sha256": "e0cbf3c62120ac356c287223a643fe576060aa71837a2b59d3aa4ad5bdef59df",
+  "controls": [
+    {
+      "control": "stale-full-case-object",
+      "rejected": true,
+      "exception": "InvalidOutcome",
+      "message": "input case hash differs: CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658",
+      "counterexample_path": "checks/accounting-pre-review-v2/stale-full-case-object.json",
+      "sha256": "248b5d6480fdf72d661f147e28ebb0de93fc72ad4eeb76d5af7103f78995c75a"
+    },
+    {
+      "control": "missing-original-occurrence",
+      "rejected": true,
+      "exception": "InvalidOutcome",
+      "message": "missing/changed occurrence reference: CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658",
+      "counterexample_path": "checks/accounting-pre-review-v2/missing-original-occurrence.json",
+      "sha256": "2fae7201dec86ffabbd97aa2f30a0a357aca4e2de4dc8b1648be24d74e413570"
+    },
+    {
+      "control": "raw-source-label-changed",
+      "rejected": true,
+      "exception": "InvalidOutcome",
+      "message": "source identity/name differs: CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658",
+      "counterexample_path": "checks/accounting-pre-review-v2/raw-source-label-changed.json",
+      "sha256": "d33c4bfb98136cf7812a6128361d9de42ca5dde8694e565d623cc712c6c0bb50"
+    }
+  ],
+  "scientific_adequacy_or_approval_established": false
+}

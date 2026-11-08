@@ -1,0 +1,45 @@
+identifier: CHEBI:30621
+preferred_term: diarsenic trioxide
+ontology_mapping:
+  ontology_id: CHEBI:30621
+  ontology_label: diarsenic trioxide
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/backend/api/public/compound/30621/
+    notes: Definition covers arsenic/oxygen2:3 ratio and includesAs2O3 synonym. The
+      structural depictionAs4O6 is a molecular representation of that ratio; no molecular-weight,
+      polymorph or actual reagent-lot claim is imported.
+synonyms:
+- synonym_text: As2O3
+  synonym_type: EXACT_SYNONYM
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+notes: Primary CCAP UCM usesAs2O3 as the weighed input to an alkaline trace preparation.
+  This owner denotes the oxide reagent, not the NaOH-containing stock or the resulting
+  arsenite species. No role, formula-weight, polymorph, vendor or lot assertion. Exact
+  stock-level quantity correction remains CultureMech#283.
+curation_history:
+- timestamp: '2026-11-08T04:35:21.165319+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create source-supported diarsenic trioxide identity with exact empirical-formula
+    source alias; distinguish molecular representation from the source-owned alkaline
+    preparation.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.057305+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

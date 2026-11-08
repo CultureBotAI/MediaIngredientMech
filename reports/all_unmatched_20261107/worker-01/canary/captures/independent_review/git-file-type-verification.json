@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/skeptical_review",
+  "at": "2026-11-08T03:53:01.209136+00:00",
+  "baseline": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "method": "git ls-tree -rz baseline followed by exact readlink versus git cat-file blob comparison; content manifest inspected separately",
+  "git_mode_counts": {
+    "120000": 2,
+    "100644": 14370,
+    "100755": 35
+  },
+  "git_regular_file_count": 14405,
+  "file_content_hash_count": 14406,
+  "manifest_explanation": "Content hashes cover14,405 Git regular files plus dereferenced CLAUDE.md file-symlink target. .agents/skills directory symlink is checked by target string, not dereferenced content hash.",
+  "symlinks": [
+    {
+      "path": ".agents/skills",
+      "baseline_git_blob": "454b8427cd757f30dc7fdb9a325d19c399770417",
+      "baseline_target": "../.claude/skills",
+      "actual_target": "../.claude/skills",
+      "matches": true,
+      "dereferenced_target_is_file": false,
+      "included_in_manifest": false
+    },
+    {
+      "path": "CLAUDE.md",
+      "baseline_git_blob": "47dc3e3d863cfb5727b87d785d09abf9743c0a72",
+      "baseline_target": "AGENTS.md",
+      "actual_target": "AGENTS.md",
+      "matches": true,
+      "dereferenced_target_is_file": true,
+      "included_in_manifest": true
+    }
+  ],
+  "result": "PASS",
+  "supersedes_count_terminology_in": [
+    "captures/independent_review/artifact-integrity-independent-v1.json",
+    "captures/independent_review/final-content-review-v1.json",
+    "captures/independent_review/final-metadata-review-v1.json"
+  ],
+  "clarification": "Earlier14406 regular-file wording was imprecise. The source content hash preservation results remain valid; both actual link targets additionally match baseline."
+}

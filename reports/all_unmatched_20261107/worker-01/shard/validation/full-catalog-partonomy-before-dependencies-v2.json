@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-08T04:58:58.696857+00:00",
+  "phase": "before-dependencies",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1168",
+  "validator": "src/mediaingredientmech/validation/component_partonomy.py",
+  "validator_sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+  "proposals_sha256": "f7427f04e6dcfb482d8636dfa1884bbe49c6a442dd960935abd433e87c5f0689",
+  "baseline_record_count": 2956,
+  "proposal_count": 73,
+  "dependent_proposal_count": 0,
+  "overlay_method": "Remove each edited exact before owner_path; validate original before hash; add its exact after record under intended target path. New owners must not replace existing paths. Never retain an old identifier by keying the replacement on the after identifier. Native validator runs on every record, without filtering to proposed IDs.",
+  "scenarios": {
+    "baseline": [],
+    "borax_only": [
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+        "message": "component 10 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      }
+    ],
+    "other_proposals_without_borax_or_dependencies": [],
+    "all_without_dependency_proposals": [
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+        "message": "component 10 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      }
+    ],
+    "all_proposals": [
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+        "message": "component 10 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      }
+    ]
+  },
+  "prior_receipt_scope_correction": "combined-proposals-content-final-v1.json checked only proposed-parent errors. Its unrelated_baseline_partonomy_violation_count=3 was incorrectly called baseline: this actual baseline has zero, and those three errors are induced by borax identifier retirement. That limited PASS is superseded for integration integrity, with its original bytes preserved.",
+  "result": "EXPECTED_FAILURE_REPRODUCED"
+}

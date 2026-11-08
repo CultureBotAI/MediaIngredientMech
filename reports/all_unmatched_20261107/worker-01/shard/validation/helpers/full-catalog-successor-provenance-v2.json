@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T04:59:18.107106+00:00",
+  "helper": "validate-full-catalog-proposals-v2.py",
+  "sha256": "bd5f642fa4897dc09a6c98116213dea0915cbaec836e6e321b3ad4ebd45ceb46",
+  "supersedes_scope_of": "validate-combined-proposals.py partonomy subset assurance only; native strict schema check remains valid for its exact payloads.",
+  "why": "Issue1168: the whole catalog must be checked after removing exact before owner paths, including unchanged dependent records. The original helper/receipts are retained, not silently rewritten.",
+  "required_final_result": "zero native full-catalog violations; negative controls isolate all three orphanedUW references without dependencies."
+}

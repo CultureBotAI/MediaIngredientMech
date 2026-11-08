@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "finding_id": "W01-SCIENCE-002",
+  "title": "Filtered tomato juice pH 7 proposal emits closeMatch instead of intended broadMatch",
+  "severity": "major",
+  "status": "open",
+  "reviewer": "/root/step7d_science_c",
+  "created_at": "2026-11-08T04:38:35.146603+00:00",
+  "review_scope": "Provisional frozen proposal, not a final-head verdict; reviewer did not author it.",
+  "proposal": {
+    "proposal_id": "RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7",
+    "kind": "new_owner",
+    "case_ids": [
+      "CM_NAME:0dc13fb68df565d0eef04de1316b22b9acca4c5456a7e3642b9dd33f071b8819"
+    ],
+    "description": "Source TOGO M4 explicitly identifies filtered tomato juice atpH7.0, separate from final medium pH6.0. Preserve a distinct preparation identity and broad relation to filtered tomato juice. Titrant and amount are unspecified; no component or exact equivalence with untreated juice is asserted. Current JCM11 is unavailable, so TOGO is source database evidence, not newly inspected JCM corroboration.",
+    "owner_path": "data/ingredients/mapped/Filtered_Tomato_Juice_PH7.yaml",
+    "before_sha256": null,
+    "after_capture": {
+      "root": "artifact",
+      "path": "shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after.yaml",
+      "sha256": "5eee7fc3592ed6737079ca272b43cbc06e815ea8276dc0ed3ec370b793887e56"
+    },
+    "evidence_ids": [
+      "RS-008-FROZEN",
+      "RS-008-PRIMARY-000",
+      "RS-008-PRIMARY-001",
+      "RS-008-PRIMARY-002",
+      "RS-008-PRIMARY-003",
+      "RS-008-PRIMARY-004",
+      "RS-COMPLETE-SEARCH",
+      "RS-COMPLETE-WRITER"
+    ],
+    "identity_predicate_consequence": "Distinct ingredient registry identity; broadMatch to MICRO:0000556 plus mandatory exact registry row.",
+    "publication_obligations": "Guarded coordinator integration, cross-shard duplicate/label reconciliation, component-partonomy validation and fresh complete payload/native publication review; no inherited hold cleared.",
+    "cross_shard_conflict": "Exact identifier, prepared material and source-local alias conflicts must be checked across all shards; do not globally reassign an unqualified stock label where another formulation uses it.",
+    "applied": false
+  },
+  "proposals_sha256": "eb27d6de8b6a3403b131cb9ec1e21c65d300a2a977fa2acabdf6b463dcda1354",
+  "actual_native_output": {
+    "ontology_row": "skos:closeMatch MICRO:0000556",
+    "registry_row": "skos:exactMatch kgmicrobe.ingredient:filtered_tomato_juice_ph7"
+  },
+  "expected_native_output": {
+    "ontology_row": "skos:broadMatch MICRO:0000556",
+    "registry_row": "skos:exactMatch kgmicrobe.ingredient:filtered_tomato_juice_ph7"
+  },
+  "reproduction": {
+    "path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/finding-002-native-predicate-reproduction.json",
+    "sha256": "8eb2844955c2cde108d34eb05e97e1c3f071b4ba5bd88574136daab2ca013785",
+    "positive_control": "Only in-memory mapping_quality changed BROAD_MATCH to NARROW_MATCH; native output then matches the proposal intention."
+  },
+  "authority": [
+    {
+      "path": ".temp/all-unmatched-20261107/workers/w01/worktree/MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "locator": "lines 138-151; broadMatch target is broader; NARROW_MATCH names the narrower ingredient grade"
+    },
+    {
+      "path": ".temp/all-unmatched-20261107/workers/w01/worktree/docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+      "locator": "SSSOM rubric retains NARROW_MATCH to skos:broadMatch"
+    },
+    {
+      "path": ".temp/all-unmatched-20261107/workers/w01/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "locator": "lines 1243-1249 enum descriptions conflict with higher-priority MAPPING_SEMANTICS and producer behavior"
+    }
+  ],
+  "requested_resolution": [
+    "Change the proposal grade to NARROW_MATCH, preserving its exact local identity and source evidence, and verify both emitted ontology/registry rows with the actual pinned producer.",
+    "Check other new proposal payloads for the same grade/predicate confusion. A raw sodium-selenate-decahydrate draft also uses BROAD_MATCH, but was not in the frozen 17 assembled proposals and is not counted as a second published proposal defect.",
+    "Deduplicate the pre-existing schema-description discrepancy separately; do not weaken or change native predicate rules to fit the proposal."
+  ],
+  "limitations": [
+    "No scientific approval is conferred on the complete tomato-juice payload by this predicate-only reproduction.",
+    "No proposal or maintained file was edited; the corrected control existed only in process memory.",
+    "Live issue deduplication is left to the coordinator."
+  ]
+}

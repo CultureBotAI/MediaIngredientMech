@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/skeptical_review",
+  "at": "2026-11-08T04:13:34.655984+00:00",
+  "review_scope": "First concentration-stock authored fragment; metadata finding only. Full substantive188-case review pending.",
+  "authored_input_sha256": {
+    "concentration_stocks/decisions.fragment.json": "cf304c837eeca4f45d6bc4cee41b9f1264c7f04f76dec2df49da8c0c5c1ae3ec",
+    "concentration_stocks/evidence.fragment.json": "8231a8ac7bea7cb40c8afa1ed5f6737781743db82a401622915e5abb1afe214d"
+  },
+  "findings": [
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-1",
+      "severity": "minor",
+      "status": "open",
+      "category": "evidence-provenance",
+      "affected_cases": [
+        {
+          "index": 57,
+          "case_id": "CM_NAME:5ece4ae56e69c682a02721e1a5e4a30127ddc104938633823be8c52e48f4dfb5",
+          "label": "1 M CaCl2 solution"
+        }
+      ],
+      "field_paths": [
+        "evidence[CS-P-JCM-956].kind",
+        "evidence[CS-P-JCM-956].locator",
+        "evidence[CS-P-JCM-956].supports_or_contradicts"
+      ],
+      "observation": "Capture is an HTTP200 Nothing found response, but evidence entry calls it primary_source, Complete recipe and source formulation support. The case reasoning correctly acknowledges unavailability; the shared evidence metadata contradicts that accurate limit.",
+      "capture_sha256": "d6c770e92b0936d8d66826206f1b8988c62f0267dbeda28e889794d274bea73b",
+      "requested_correction": "Retain original capture and actual HTTP200 retrieval provenance; mark unavailable/unsuccessful search evidence with exact response locator and state what it cannot support. Keep fallback recipe support attributed to the inspected alternate sources and frozen context.",
+      "scientific_disposition_effect": "Does not by itself invalidate the stock-context/no-change outcome; no successful recipe retrieval or identity support may be inferred from this page.",
+      "re_review_required": true
+    }
+  ]
+}

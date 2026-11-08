@@ -1,0 +1,85 @@
+identifier: cas:7705-07-9
+preferred_term: TitaniumIII chloride
+synonyms:
+- synonym_text: TitaniumIII chloride
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T09:31:08Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_OXIDATION_STATE_SHORTHAND
+  changes: Classified as a single titanium chloride surface form and left unmapped
+    because the source oxidation-state shorthand was not locally verified as exact
+    TiCl3/titanium trichloride identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TitaniumIII_chloride-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **single inorganic
+    chemical**, normalized as **titanium(III) chloride**, formula **TiCl₃**, also
+    called **titanium trichloride**. A specialist inorganic-chemistry reference assigns
+    titanium trichloride **CAS RN 7705-07-9** and describes four solid polymorphs—α,
+    β, γ, and δ—rather than a mixture or named medium formulation. The α, γ, and δ
+    forms are violet; β-TiCl₃ No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 7705-07-9 (titanium trichloride) from Edison literature research:
+    the report says "a specialist inorganic-chemistry reference assigns titanium trichloride
+    CAS RN 7705-07-9" and describes four solid polymorphs rather than a mixture or
+    named formulation, so the number denotes the compound this record names. Enrichment
+    only — the mapping status is unchanged, because a CAS identifies a substance without
+    supplying an ontology term. Applied only because the report AFFIRMS the number
+    for this record''s own substance: the same scan pulled CAS numbers out of five
+    other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+    xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
+    rejected-candidate row looks identical to one in a conclusion.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0541 -> cas:7705-07-9 "TitaniumIII chloride" (FALLBACK_REGISTRY);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to TiCl3 without exact source
+  normalization evidence.
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7705-07-9
+  data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: cas:7705-07-9
+  ontology_label: TitaniumIII chloride
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: 'Titanium(III) chloride. The report quotes a specialist inorganic-chemistry
+      reference assigning titanium trichloride CAS RN 7705-07-9 and describing four
+      solid polymorphs, so this is a defined compound rather than a mixture or formulation.
+      Parentless: the local CHEBI build carries titanium OXIDES and elemental titanium
+      but no titanium chloride at any oxidation state, so there is no term to narrowMatch.'

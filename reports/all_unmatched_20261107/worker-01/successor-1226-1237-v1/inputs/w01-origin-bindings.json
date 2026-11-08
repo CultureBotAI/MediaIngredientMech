@@ -1,0 +1,1408 @@
+[
+  {
+    "index": 6,
+    "entry_id": "w01::NSV4-PROP-NBRC_1020_Se_W_Solution",
+    "worker": 1,
+    "head": "26445f23b5a905ac26d864acfbd658570c88769c",
+    "provisional": false,
+    "proposal_id": "NSV4-PROP-NBRC_1020_Se_W_Solution",
+    "kind": "new_owner",
+    "owner_path": "data/ingredients/mapped/NBRC_1020_Se_W_Solution.yaml",
+    "destination_path_as_declared": "data/ingredients/mapped/NBRC_1020_Se_W_Solution.yaml",
+    "before_sha256": null,
+    "payload_path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml",
+    "payload_sha256": "235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7",
+    "proposal_ledger_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+    "identifier": "kgmicrobe.ingredient:nbrc_1020_se_w_solution",
+    "preferred_term": "NBRC 1020 Se/W solution",
+    "case_ids": [
+      "CM_NAME:8f4f818454b45cde5b8fac36155fb028ce405d508d1c62d696f00675a673e89b"
+    ],
+    "case_bindings": [
+      {
+        "case_id": "CM_NAME:8f4f818454b45cde5b8fac36155fb028ce405d508d1c62d696f00675a673e89b",
+        "input_sha256": "f95482bf375675e08e0407b3a1d0d31259266de0ebb902a88aac39a0a2aa9ee3",
+        "occurrence_ids": [
+          "CM_OCC:3ca02a4ab3591954534121c836fd35a19da58990c45852d0ea309e271afca84d",
+          "CM_OCC:15405dcb3cbb40949319994fd15e5832143e4a282c7a1c38bb1bed9679f1c812"
+        ],
+        "missing_requirement": "NBRC824 source omits solvent/preparation volume; require that exact missing denominator before assigning its occurrence to quantified stock. NBRC1020 occurrence has a complete separate proposal.",
+        "issue_refs": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "NS-S-019",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1021.yaml",
+          "sha256": "6951f451b544ec640faa39b5f9b4f412a018adeb79e5779507b570c110644db1"
+        },
+        "url": null,
+        "locator": "Complete frozen MediaRecipe/StockSolution; occurrence-specific component_path, source IDs, all nested stocks and retained evidence/history"
+      },
+      {
+        "evidence_id": "NS-S-020",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_825.yaml",
+          "sha256": "690f6c8c78635d6c80b1c2027e93019e0ff924a5bf4cc7f757d10fc6f6833f19"
+        },
+        "url": null,
+        "locator": "Complete frozen MediaRecipe/StockSolution; occurrence-specific component_path, source IDs, all nested stocks and retained evidence/history"
+      },
+      {
+        "evidence_id": "NS-L-DOSES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/numerical-dose-crosscheck.json",
+          "sha256": "5ef014cab91468ab732e9347fd76013cdf3ffe9e0b626f4bceaf21a5ca406696"
+        },
+        "url": null,
+        "locator": "All73 occurrence rows, exact primary table/API/PDF locators, frozen amount comparison; summary68 numeric matches and5unquantifiedtitrants"
+      },
+      {
+        "evidence_id": "NS-P-nbrc-1020",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/captures/nbrc-1020.html",
+          "sha256": "6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c"
+        },
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+        "locator": "complete primary recipe; named stock table and preparation notes"
+      },
+      {
+        "evidence_id": "NSC-OLS-NBRC_1020_Se_W_Solution",
+        "kind": "ontology",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json",
+          "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+        },
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&exact=true&rows=100",
+        "locator": "response.numFound=0; exact source-qualified stock-name query"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-VALIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/validation.json",
+          "sha256": "d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-SEARCH",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/search.json",
+          "sha256": "0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-APPLICABILITY",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/applicability.json",
+          "sha256": "692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSV2-terms",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/stock431-v2/fetch-receipt.json",
+          "sha256": "ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSV2-components",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/stock431-v2/component-owners.json",
+          "sha256": "73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-NATIVE",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/native-reviews/20261108T043720Z-w01-defined-stock-proposals/review.yaml",
+          "sha256": "260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74"
+        },
+        "url": null,
+        "locator": "Complete native self-review; declared scope/assessment and exact input hashes"
+      },
+      {
+        "evidence_id": "NSV4-QUANTITIES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/quantity-audit.json",
+          "sha256": "c82edc2298be43204ff5cf861b371d41d28c399e283aa9c27daabf33a76f03be"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-ALIASES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/alias-projection.json",
+          "sha256": "46f6a8a3d28c960454a520c91d3589c888592b5f54cb9fd7bd0f487bdf706b58"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-VALIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/validation.json",
+          "sha256": "cde31e1993b75dae1c2da69684c184a263a976e8b58371de0b5603a765d74fd7"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-CONSOLIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/crosslane-canonical-manifest.json",
+          "sha256": "a0d1bacf87b9494374da590c8610c9233e0b010e0561b6fb42d103b2c3ad5a3e"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-NATIVE",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/native-review.yaml",
+          "sha256": "8015d2bc76983e5a546392aaa0493f67e5bd5acf94afd4c996018d0de97b5a59"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "W01-FINAL-INDEPENDENT-SCIENTIFIC-REVIEW",
+        "kind": "independent_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/independent_review/final-188-scientific-review-v1.json",
+          "sha256": "02b2be72b448d35b573ad992a3d2c98afcd3f16430709e10d6837564b595edcf"
+        },
+        "url": null,
+        "locator": "Complete per-case and per-proposal independent disposition, exact input hashes and retained limitations."
+      }
+    ],
+    "record": {
+      "identifier": "kgmicrobe.ingredient:nbrc_1020_se_w_solution",
+      "preferred_term": "NBRC 1020 Se/W solution",
+      "synonyms": [
+        {
+          "synonym_text": "Se/W solution***",
+          "synonym_type": "REJECTED_LABEL",
+          "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1020; retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "MINERAL_STOCK",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc_1020_se_w_solution",
+        "ontology_label": "NBRC 1020 Se/W solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+            "notes": "Exact source-defined stock formulation under MAPPING_SEMANTICS section3 and add-media. Bounded exact source-qualified stock-name OLS lookup found no exact ontology term. Registry identity denotes the whole preparation; no exact mapping to any component or broad parent is asserted."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+            "source_record": "NBRC 1020 Se/W solution; complete named stock table and preparation notes",
+            "notes": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed unhydrated formulas are retained. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration."
+          }
+        ],
+        "notes": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity."
+      },
+      "notes": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed unhydrated formulas are retained. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T04:36:11.802481+00:00",
+          "curator": "worker01_named_stock_source_curation",
+          "action": "CREATED_AS_PROPOSAL",
+          "changes": "Isolated proposal only; exact source stock formula and constituent enumeration reviewed for case 86. No maintained owner created. Component grounding limitations retained; all original case/occurrence objects remain in applicability artifact.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-08T04:50:12.552013+00:00",
+          "curator": "worker01_named_stock_source_curation",
+          "action": "PROPOSAL_CORRECTED",
+          "changes": "Isolated successor: preserve literal source preparation quantities without added-water/final-volume conflation; exclude source-local labels from native global resolution. Prior exact proposal bytes and reviews retained. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ]
+    },
+    "changed_fields": [
+      "component_assertion",
+      "components",
+      "curation_history",
+      "identifier",
+      "ingredient_type",
+      "mapping_status",
+      "notes",
+      "ontology_mapping",
+      "preferred_term",
+      "solution_type",
+      "synonyms"
+    ],
+    "names": [
+      {
+        "text": "NBRC 1020 Se/W solution",
+        "type": "PREFERRED",
+        "role": "preferred"
+      },
+      {
+        "text": "Se/W solution***",
+        "type": "REJECTED_LABEL",
+        "role": "synonym"
+      }
+    ],
+    "source_recipe_leads": [],
+    "url_leads": [
+      "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&exact=true&rows=100",
+      "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020"
+    ],
+    "prior_inventory_status": "same_payload_as_previous_inventory",
+    "prior_inventory_payload_sha256": "235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7",
+    "known_family_recommendations": [],
+    "authorship_exclusions": [
+      "w01"
+    ],
+    "scientific_equivalence": null
+  },
+  {
+    "index": 13,
+    "entry_id": "w01::NSV4-PROP-JCM_317_Se_W_Solution",
+    "worker": 1,
+    "head": "26445f23b5a905ac26d864acfbd658570c88769c",
+    "provisional": false,
+    "proposal_id": "NSV4-PROP-JCM_317_Se_W_Solution",
+    "kind": "new_owner",
+    "owner_path": "data/ingredients/mapped/JCM_317_Se_W_Solution.yaml",
+    "destination_path_as_declared": "data/ingredients/mapped/JCM_317_Se_W_Solution.yaml",
+    "before_sha256": null,
+    "payload_path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml",
+    "payload_sha256": "1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62",
+    "proposal_ledger_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+    "identifier": "kgmicrobe.ingredient:jcm_317_se_w_solution",
+    "preferred_term": "JCM 317 Se/W solution",
+    "case_ids": [
+      "CM_NAME:bb437f3399b9bb25eecebdf8961226f0e498c508494f893b21186a8974484bbd"
+    ],
+    "case_bindings": [
+      {
+        "case_id": "CM_NAME:bb437f3399b9bb25eecebdf8961226f0e498c508494f893b21186a8974484bbd",
+        "input_sha256": "f69565813c3c02e5b13de1a2dc97f437531719a816ff02fc1634cdb9d0334d6a",
+        "occurrence_ids": [
+          "CM_OCC:9300dd8c6e6f187114f06672f3a5ea0fb228d6137791214da2e2f1da656d5946"
+        ],
+        "missing_requirement": null,
+        "issue_refs": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "NS-S-034",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1425_SPOROMUSA_MEDIUM_2.yaml",
+          "sha256": "9e8b323a7e5f4948f2c2b4e29f6cdbc869a2286320f543cb3ecac1e70fbccfb6"
+        },
+        "url": null,
+        "locator": "Complete frozen MediaRecipe/StockSolution; occurrence-specific component_path, source IDs, all nested stocks and retained evidence/history"
+      },
+      {
+        "evidence_id": "NS-L-DOSES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/numerical-dose-crosscheck.json",
+          "sha256": "5ef014cab91468ab732e9347fd76013cdf3ffe9e0b626f4bceaf21a5ca406696"
+        },
+        "url": null,
+        "locator": "All73 occurrence rows, exact primary table/API/PDF locators, frozen amount comparison; summary68 numeric matches and5unquantifiedtitrants"
+      },
+      {
+        "evidence_id": "NS-P-jcm-317",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/captures/jcm-317.html",
+          "sha256": "fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e"
+        },
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317",
+        "locator": "complete primary recipe; named stock table and preparation notes"
+      },
+      {
+        "evidence_id": "NSC-OLS-JCM_317_Se_W_Solution",
+        "kind": "ontology",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json",
+          "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+        },
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&exact=true&rows=100",
+        "locator": "response.numFound=0; exact source-qualified stock-name query"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-VALIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/validation.json",
+          "sha256": "d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-SEARCH",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/search.json",
+          "sha256": "0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-APPLICABILITY",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/applicability.json",
+          "sha256": "692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSV2-terms",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/stock431-v2/fetch-receipt.json",
+          "sha256": "ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSV2-components",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/stock431-v2/component-owners.json",
+          "sha256": "73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-NATIVE",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/native-reviews/20261108T043720Z-w01-defined-stock-proposals/review.yaml",
+          "sha256": "260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74"
+        },
+        "url": null,
+        "locator": "Complete native self-review; declared scope/assessment and exact input hashes"
+      },
+      {
+        "evidence_id": "NSV4-QUANTITIES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/quantity-audit.json",
+          "sha256": "c82edc2298be43204ff5cf861b371d41d28c399e283aa9c27daabf33a76f03be"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-ALIASES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/alias-projection.json",
+          "sha256": "46f6a8a3d28c960454a520c91d3589c888592b5f54cb9fd7bd0f487bdf706b58"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-VALIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/validation.json",
+          "sha256": "cde31e1993b75dae1c2da69684c184a263a976e8b58371de0b5603a765d74fd7"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-CONSOLIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/crosslane-canonical-manifest.json",
+          "sha256": "a0d1bacf87b9494374da590c8610c9233e0b010e0561b6fb42d103b2c3ad5a3e"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-NATIVE",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/native-review.yaml",
+          "sha256": "8015d2bc76983e5a546392aaa0493f67e5bd5acf94afd4c996018d0de97b5a59"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "W01-FINAL-INDEPENDENT-SCIENTIFIC-REVIEW",
+        "kind": "independent_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/independent_review/final-188-scientific-review-v1.json",
+          "sha256": "02b2be72b448d35b573ad992a3d2c98afcd3f16430709e10d6837564b595edcf"
+        },
+        "url": null,
+        "locator": "Complete per-case and per-proposal independent disposition, exact input hashes and retained limitations."
+      }
+    ],
+    "record": {
+      "identifier": "kgmicrobe.ingredient:jcm_317_se_w_solution",
+      "preferred_term": "JCM 317 Se/W solution",
+      "synonyms": [
+        {
+          "synonym_text": "Se/W solution (see Medium No. 317 )",
+          "synonym_type": "REJECTED_LABEL",
+          "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1425; retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "MINERAL_STOCK",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_317_se_w_solution",
+        "ontology_label": "JCM 317 Se/W solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317",
+            "notes": "Exact source-defined stock formulation under MAPPING_SEMANTICS section3 and add-media. Bounded exact source-qualified stock-name OLS lookup found no exact ontology term. Registry identity denotes the whole preparation; no exact mapping to any component or broad parent is asserted."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317",
+            "source_record": "JCM 317 Se/W solution; complete named stock table and preparation notes",
+            "notes": "Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852 lower amounts/hydrated selenite, and JCM431 alkaline formula. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration."
+          }
+        ],
+        "notes": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity."
+      },
+      "notes": "Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852 lower amounts/hydrated selenite, and JCM431 alkaline formula. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T04:36:11.824334+00:00",
+          "curator": "worker01_named_stock_source_curation",
+          "action": "CREATED_AS_PROPOSAL",
+          "changes": "Isolated proposal only; exact source stock formula and constituent enumeration reviewed for case 110. No maintained owner created. Component grounding limitations retained; all original case/occurrence objects remain in applicability artifact.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-08T04:50:12.575525+00:00",
+          "curator": "worker01_named_stock_source_curation",
+          "action": "PROPOSAL_CORRECTED",
+          "changes": "Isolated successor: preserve literal source preparation quantities without added-water/final-volume conflation; exclude source-local labels from native global resolution. Prior exact proposal bytes and reviews retained. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ]
+    },
+    "changed_fields": [
+      "component_assertion",
+      "components",
+      "curation_history",
+      "identifier",
+      "ingredient_type",
+      "mapping_status",
+      "notes",
+      "ontology_mapping",
+      "preferred_term",
+      "solution_type",
+      "synonyms"
+    ],
+    "names": [
+      {
+        "text": "JCM 317 Se/W solution",
+        "type": "PREFERRED",
+        "role": "preferred"
+      },
+      {
+        "text": "Se/W solution (see Medium No. 317 )",
+        "type": "REJECTED_LABEL",
+        "role": "synonym"
+      }
+    ],
+    "source_recipe_leads": [
+      "JCM:317"
+    ],
+    "url_leads": [
+      "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&exact=true&rows=100",
+      "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317"
+    ],
+    "prior_inventory_status": "same_payload_as_previous_inventory",
+    "prior_inventory_payload_sha256": "1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62",
+    "known_family_recommendations": [],
+    "authorship_exclusions": [
+      "w01"
+    ],
+    "scientific_equivalence": null
+  },
+  {
+    "index": 35,
+    "entry_id": "w01::CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK",
+    "worker": 1,
+    "head": "26445f23b5a905ac26d864acfbd658570c88769c",
+    "provisional": false,
+    "proposal_id": "CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK",
+    "kind": "new_owner",
+    "owner_path": "data/ingredients/mapped/JCM1430_Ferrous_Sulfate_HCl_Stock.yaml",
+    "destination_path_as_declared": "data/ingredients/mapped/JCM1430_Ferrous_Sulfate_HCl_Stock.yaml",
+    "before_sha256": null,
+    "payload_path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/JCM1430_Ferrous_Sulfate_HCl_Stock.yaml",
+    "payload_sha256": "6e0ae3d8ec0984d7e29034b2fd41d3589f26fb7f236bdcc7a829d632837e0c59",
+    "proposal_ledger_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+    "identifier": "kgmicrobe.ingredient:jcm1430_ferrous_sulfate_hcl_stock",
+    "preferred_term": "JCM1430 ferrous sulfate stock in hydrochloric acid",
+    "case_ids": [
+      "CM_NAME:5d9e2026ac8ea68a5e50d234ffa4d2b73bea306b5a9bb33353d17aeb26f713d0"
+    ],
+    "case_bindings": [
+      {
+        "case_id": "CM_NAME:5d9e2026ac8ea68a5e50d234ffa4d2b73bea306b5a9bb33353d17aeb26f713d0",
+        "input_sha256": "d92005351efd035f4eaa67b872cd41265d2cfadd55ea9194dcfe91c0939e268f",
+        "occurrence_ids": [
+          "CM_OCC:bb1b5df5045f670da059e7f489b1394769d29c0fd7dfa4d6166bbc671a28b794",
+          "CM_OCC:f9adc99d071b88c2754c63f1a71ae5fe75566ec185bc4ef4799f19dae20c3e18"
+        ],
+        "missing_requirement": null,
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1163"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "CS-055-O01",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1430_SEMI_SOLID_HETEROTROPHIC_GROWTH_MEDIUM_FOR_ALPHAPROTEOBACTERIA.yaml",
+          "sha256": "5172e4c7d8ec3245079affdeeff8ec50297fa984e466dd5b3b815195b07ea7b3"
+        },
+        "url": null,
+        "locator": "ingredients/16; complete recipe, nested solution definitions, notes and preparation steps"
+      },
+      {
+        "evidence_id": "CS-055-O02",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1431_SEMI_SOLID_AUTOTROPHIC_GROWTH_MEDIUM_FOR_GAMMAPROTEOBACTERIA.yaml",
+          "sha256": "40f3a44e508c3503a723d97373f71f84371e2f55a3b7da72b2b31d0e5231ebd6"
+        },
+        "url": null,
+        "locator": "ingredients/13; complete recipe, nested solution definitions, notes and preparation steps"
+      },
+      {
+        "evidence_id": "CS-P-JCM-1430",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/primary/JCM-1430.html",
+          "sha256": "1ef26e91d1007c1271a846bf63eba954587484830625935f4fe7dd0deebc9b48"
+        },
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430",
+        "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning"
+      },
+      {
+        "evidence_id": "CS-P-JCM-1431",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/primary/JCM-1431.html",
+          "sha256": "5dac3a613f9cd40af54eefeb8f8ef2228375eb44c59cdc779508587cc8fb8edb"
+        },
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1431",
+        "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning"
+      },
+      {
+        "evidence_id": "CS-broad-owner-candidate-search",
+        "kind": "unsuccessful_search",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/broad-owner-candidate-search.json",
+          "sha256": "4d0f85125687b2ef1085e28f35938c01f1a137c93749b8fcaf4c4375bacf8759"
+        },
+        "url": null,
+        "locator": "Complete command, ignored_files_included flag, exit result, candidate paths and hashes"
+      },
+      {
+        "evidence_id": "CS-exact-name-owner-searches",
+        "kind": "unsuccessful_search",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/exact-name-owner-searches.json",
+          "sha256": "1ce575fbcc8d27ec396ab9bd57351aba2da8f1d4241f89708bb1421d2ae7e59d"
+        },
+        "url": null,
+        "locator": "Complete command, ignored_files_included flag, exit result, candidate paths and hashes"
+      },
+      {
+        "evidence_id": "CS-COMP-stock-proposal-guards-v1",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/stock-proposal-guards-v1.json",
+          "sha256": "d3cd0352d0243653c1b8d100952be5f77b4eff8254502177d0f796cadcd0ace8"
+        },
+        "url": null,
+        "locator": "Complete sourcecontexts or proposalguards"
+      },
+      {
+        "evidence_id": "CS-COMP-NATIVE-STOCK-V3",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/native-stock-author-review-v3.yaml",
+          "sha256": "7c3a93d4ab07022e2530b41848d324720dada4831687b9633aa344aafdb83e8f"
+        },
+        "url": null,
+        "locator": "Complete native author successor: fifteen final stock payloads including Metal44v3 precise added-water comparison"
+      },
+      {
+        "evidence_id": "W01-FINAL-INDEPENDENT-SCIENTIFIC-REVIEW",
+        "kind": "independent_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/independent_review/final-188-scientific-review-v1.json",
+          "sha256": "02b2be72b448d35b573ad992a3d2c98afcd3f16430709e10d6837564b595edcf"
+        },
+        "url": null,
+        "locator": "Complete per-case and per-proposal independent disposition, exact input hashes and retained limitations."
+      }
+    ],
+    "record": {
+      "identifier": "kgmicrobe.ingredient:jcm1430_ferrous_sulfate_hcl_stock",
+      "preferred_term": "JCM1430 ferrous sulfate stock in hydrochloric acid",
+      "synonyms": [
+        {
+          "synonym_text": "0.01 M FeSO4·7H2O solution (in 0.02 N HCl)",
+          "synonym_type": "REJECTED_LABEL",
+          "source": "Exact source-context label from https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430; unqualified/cross-reference spelling is retained for provenance only and requires the bound source occurrence to resolve."
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "MINERAL_STOCK",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1430_ferrous_sulfate_hcl_stock",
+        "ontology_label": "JCM1430 ferrous sulfate stock in hydrochloric acid",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430",
+            "notes": "JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Hydrochloric acid carrier",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "N"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430",
+            "source_record": "JCM1430 ferrous sulfate stock in hydrochloric acid",
+            "notes": "Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit. Seeoriginalrecipeforprocedure."
+          }
+        ],
+        "notes": "Complete operational precursor list, not complete molecularspeciation. UNMAPPED component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners."
+      },
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0
+      },
+      "notes": "JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity. Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T04:40:36.184565+00:00",
+          "curator": "worker01_add_media_source_stock",
+          "action": "CREATED",
+          "changes": "Isolatedsource-qualifiedstockproposal. JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity. No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ]
+    },
+    "changed_fields": [
+      "component_assertion",
+      "components",
+      "curation_history",
+      "identifier",
+      "ingredient_type",
+      "mapping_status",
+      "notes",
+      "occurrence_statistics",
+      "ontology_mapping",
+      "preferred_term",
+      "solution_type",
+      "synonyms"
+    ],
+    "names": [
+      {
+        "text": "JCM1430 ferrous sulfate stock in hydrochloric acid",
+        "type": "PREFERRED",
+        "role": "preferred"
+      },
+      {
+        "text": "0.01 M FeSO4·7H2O solution (in 0.02 N HCl)",
+        "type": "REJECTED_LABEL",
+        "role": "synonym"
+      }
+    ],
+    "source_recipe_leads": [
+      "JCM:1430",
+      "JCM:1431"
+    ],
+    "url_leads": [
+      "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430",
+      "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1431"
+    ],
+    "prior_inventory_status": "same_payload_as_previous_inventory",
+    "prior_inventory_payload_sha256": "6e0ae3d8ec0984d7e29034b2fd41d3589f26fb7f236bdcc7a829d632837e0c59",
+    "known_family_recommendations": [],
+    "authorship_exclusions": [
+      "w01"
+    ],
+    "scientific_equivalence": null
+  },
+  {
+    "index": 36,
+    "entry_id": "w01::CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+    "worker": 1,
+    "head": "26445f23b5a905ac26d864acfbd658570c88769c",
+    "provisional": false,
+    "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+    "kind": "new_owner",
+    "owner_path": "data/ingredients/mapped/NBRC1321_CO2_Bicarbonate_Stock.yaml",
+    "destination_path_as_declared": "data/ingredients/mapped/NBRC1321_CO2_Bicarbonate_Stock.yaml",
+    "before_sha256": null,
+    "payload_path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+    "payload_sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c",
+    "proposal_ledger_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+    "identifier": "kgmicrobe.ingredient:nbrc1321_co2_bicarbonate_stock",
+    "preferred_term": "NBRC1321 CO2-saturated bicarbonate stock",
+    "case_ids": [
+      "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3",
+      "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a"
+    ],
+    "case_bindings": [
+      {
+        "case_id": "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3",
+        "input_sha256": "33a10ef69fd5e2aa6b1e14fe1dc8b005b7c5fab65dd1ad0de632ff3286f94780",
+        "occurrence_ids": [
+          "CM_OCC:d72552467e12be95f7f895cc5bfa945338d508dfc48d1a2003b3e5b2b95c83ac"
+        ],
+        "missing_requirement": null,
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1163",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1166"
+        ]
+      },
+      {
+        "case_id": "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a",
+        "input_sha256": "244d3526418c6c9c79fa2b696a93350f7c7ce873eb0d08b4a51f23939b683395",
+        "occurrence_ids": [
+          "CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78"
+        ],
+        "missing_requirement": null,
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1166",
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "CS-106-O01",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1323.yaml",
+          "sha256": "1ef35c927501e745e3a0d0d6b39594428fe1ade21228d877f51dc81bc849493e"
+        },
+        "url": null,
+        "locator": "ingredients/12; complete recipe, nested solution definitions, notes and preparation steps"
+      },
+      {
+        "evidence_id": "CS-CURRENT-STOCK-CANDIDATES",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/current-stock-candidate-bodies.json",
+          "sha256": "a847bb4b3b52a88e62a1f48aba40df96846796bda26bef74ed8104f0184f3a4c"
+        },
+        "url": null,
+        "locator": "Six complete current MIM candidate YAML bodies, exact paths and SHA256"
+      },
+      {
+        "evidence_id": "CS-P-NBRC-1321",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/primary/NBRC-1321.html",
+          "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+        },
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+        "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning"
+      },
+      {
+        "evidence_id": "CS-broad-owner-candidate-search",
+        "kind": "unsuccessful_search",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/broad-owner-candidate-search.json",
+          "sha256": "4d0f85125687b2ef1085e28f35938c01f1a137c93749b8fcaf4c4375bacf8759"
+        },
+        "url": null,
+        "locator": "Complete command, ignored_files_included flag, exit result, candidate paths and hashes"
+      },
+      {
+        "evidence_id": "CS-exact-name-owner-searches",
+        "kind": "unsuccessful_search",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/exact-name-owner-searches.json",
+          "sha256": "1ce575fbcc8d27ec396ab9bd57351aba2da8f1d4241f89708bb1421d2ae7e59d"
+        },
+        "url": null,
+        "locator": "Complete command, ignored_files_included flag, exit result, candidate paths and hashes"
+      },
+      {
+        "evidence_id": "CS-COMP-stock-proposal-guards-v1",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/stock-proposal-guards-v1.json",
+          "sha256": "d3cd0352d0243653c1b8d100952be5f77b4eff8254502177d0f796cadcd0ace8"
+        },
+        "url": null,
+        "locator": "Complete sourcecontexts or proposalguards"
+      },
+      {
+        "evidence_id": "CS-XL-NS-P-nbrc-1257",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/crosslane-nbrc-1257.html",
+          "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06"
+        },
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+        "locator": "complete primary recipe; named stock table and preparation notes"
+      },
+      {
+        "evidence_id": "CS-XL-NS-P-nbrc-1321",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/crosslane-nbrc-1321.html",
+          "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+        },
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+        "locator": "complete primary recipe; named stock table and preparation notes"
+      },
+      {
+        "evidence_id": "CS-XL-CONSOLIDATION-V2",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/crosslane-consolidation-final-v2.json",
+          "sha256": "a0d1bacf87b9494374da590c8610c9233e0b010e0561b6fb42d103b2c3ad5a3e"
+        },
+        "url": null,
+        "locator": "Exact canonical/retired proposal correspondence and all source occurrences; four full primary recipe comparisons"
+      },
+      {
+        "evidence_id": "CS-COMP-NATIVE-STOCK-V3",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/captures/native-stock-author-review-v3.yaml",
+          "sha256": "7c3a93d4ab07022e2530b41848d324720dada4831687b9633aa344aafdb83e8f"
+        },
+        "url": null,
+        "locator": "Complete native author successor: fifteen final stock payloads including Metal44v3 precise added-water comparison"
+      },
+      {
+        "evidence_id": "NS-P-nbrc-1257",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/captures/nbrc-1257.html",
+          "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06"
+        },
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+        "locator": "complete primary recipe; named stock table and preparation notes"
+      },
+      {
+        "evidence_id": "NS-S-000",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1261.yaml",
+          "sha256": "fdfc71b36ae754b647849895979f5689f828b6463fbe39dd65cedee1a4d1289f"
+        },
+        "url": null,
+        "locator": "Complete frozen MediaRecipe/StockSolution; occurrence-specific component_path, source IDs, all nested stocks and retained evidence/history"
+      },
+      {
+        "evidence_id": "NS-L-candidate-search",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/candidate-search.json",
+          "sha256": "be3d800d79e5d78937846eb8e5eb38bbe6bd2360401791aa38a81d83c79a997b"
+        },
+        "url": null,
+        "locator": "cases exact_casefold_label_synonym_hits; contextual_candidates complete records"
+      },
+      {
+        "evidence_id": "NS-L-DOSES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/numerical-dose-crosscheck.json",
+          "sha256": "5ef014cab91468ab732e9347fd76013cdf3ffe9e0b626f4bceaf21a5ca406696"
+        },
+        "url": null,
+        "locator": "All73 occurrence rows, exact primary table/API/PDF locators, frozen amount comparison; summary68 numeric matches and5unquantifiedtitrants"
+      },
+      {
+        "evidence_id": "NSC-OLS-NBRC_1257_Bicarbonate_Solution",
+        "kind": "ontology",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json",
+          "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+        },
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&exact=true&rows=100",
+        "locator": "response.numFound=0; exact source-qualified stock-name query"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-VALIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/validation.json",
+          "sha256": "d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-SEARCH",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/search.json",
+          "sha256": "0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-FAMILY-APPLICABILITY",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/completeness-v2/applicability.json",
+          "sha256": "692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSV2-terms",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/stock431-v2/fetch-receipt.json",
+          "sha256": "ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSV2-components",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/stock431-v2/component-owners.json",
+          "sha256": "73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c"
+        },
+        "url": null,
+        "locator": "Entire artifact and exact referenced payloads"
+      },
+      {
+        "evidence_id": "NSC-NATIVE",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/native-reviews/20261108T043720Z-w01-defined-stock-proposals/review.yaml",
+          "sha256": "260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74"
+        },
+        "url": null,
+        "locator": "Complete native self-review; declared scope/assessment and exact input hashes"
+      },
+      {
+        "evidence_id": "NSV4-QUANTITIES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/quantity-audit.json",
+          "sha256": "c82edc2298be43204ff5cf861b371d41d28c399e283aa9c27daabf33a76f03be"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-ALIASES",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/alias-projection.json",
+          "sha256": "46f6a8a3d28c960454a520c91d3589c888592b5f54cb9fd7bd0f487bdf706b58"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-VALIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/validation.json",
+          "sha256": "cde31e1993b75dae1c2da69684c184a263a976e8b58371de0b5603a765d74fd7"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-CONSOLIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/crosslane-canonical-manifest.json",
+          "sha256": "a0d1bacf87b9494374da590c8610c9233e0b010e0561b6fb42d103b2c3ad5a3e"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV4-NATIVE",
+        "kind": "native_record_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v4/native-review.yaml",
+          "sha256": "8015d2bc76983e5a546392aaa0493f67e5bd5acf94afd4c996018d0de97b5a59"
+        },
+        "url": null,
+        "locator": "Complete artifact; exact per-proposal source/case bindings and linked immutable captures"
+      },
+      {
+        "evidence_id": "NSV5-CONSOLIDATION",
+        "kind": "local_validation",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/quantity-v5/crosslane-canonical-manifest.json",
+          "sha256": "54d7af9b2e0586e369480f0da2fee6a058afa583a68cf58f7f60086b3aa8f7b8"
+        },
+        "url": null,
+        "locator": "Entireexactsuccessorartifact"
+      },
+      {
+        "evidence_id": "W01-FINAL-INDEPENDENT-SCIENTIFIC-REVIEW",
+        "kind": "independent_review",
+        "capture": {
+          "root": "artifact",
+          "path": "shard/independent_review/final-188-scientific-review-v1.json",
+          "sha256": "02b2be72b448d35b573ad992a3d2c98afcd3f16430709e10d6837564b595edcf"
+        },
+        "url": null,
+        "locator": "Complete per-case and per-proposal independent disposition, exact input hashes and retained limitations."
+      }
+    ],
+    "record": {
+      "identifier": "kgmicrobe.ingredient:nbrc1321_co2_bicarbonate_stock",
+      "preferred_term": "NBRC1321 CO2-saturated bicarbonate stock",
+      "synonyms": [
+        {
+          "synonym_text": "Bicarbonate solution (1.0 M)***",
+          "synonym_type": "REJECTED_LABEL",
+          "source": "Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321; unqualified/cross-reference spelling is retained for provenance only and requires the bound source occurrence to resolve."
+        },
+        {
+          "synonym_text": "Bicarbonate solution***",
+          "synonym_type": "REJECTED_LABEL",
+          "source": "Frozen named-stock occurrence CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78; source-qualified binding only, no global alias resolution."
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "BUFFER_SOLUTION",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1321_co2_bicarbonate_stock",
+        "ontology_label": "NBRC1321 CO2-saturated bicarbonate stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+            "notes": "This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity."
+          },
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+            "notes": "NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "NaHCO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "8.4",
+          "concentration_unit": "G_PER_100_ML_PREPARATION_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "ML_PREPARATION_WATER"
+        },
+        {
+          "component_name": "Carbon dioxide",
+          "reference_scope": "UNMAPPED",
+          "source": "Saturatewater/solutionwithCO2,sealunderCO2,thenautoclave; dissolvedgasamountnotquantified."
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+            "source_record": "NBRC1321 CO2-saturated bicarbonate stock",
+            "notes": "Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit. Seeoriginalrecipeforprocedure."
+          }
+        ],
+        "notes": "Complete operational precursor list, not complete molecularspeciation. UNMAPPED component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners."
+      },
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0
+      },
+      "notes": "This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity. Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence. Cross-lane deduplication: NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T04:40:36.186093+00:00",
+          "curator": "worker01_add_media_source_stock",
+          "action": "CREATED",
+          "changes": "Isolatedsource-qualifiedstockproposal. This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity. No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-08T04:48:20.664175+00:00",
+          "curator": "worker01_add_media_source_stock",
+          "action": "CORRECTED",
+          "changes": "Consolidate exact cross-lane proposal identity and preserve source-specific labels as REJECTED_LABEL. NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL. Earlier draft payloads/reviews remain immutable; no maintained records are changed.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ]
+    },
+    "changed_fields": [
+      "component_assertion",
+      "components",
+      "curation_history",
+      "identifier",
+      "ingredient_type",
+      "mapping_status",
+      "notes",
+      "occurrence_statistics",
+      "ontology_mapping",
+      "preferred_term",
+      "solution_type",
+      "synonyms"
+    ],
+    "names": [
+      {
+        "text": "NBRC1321 CO2-saturated bicarbonate stock",
+        "type": "PREFERRED",
+        "role": "preferred"
+      },
+      {
+        "text": "Bicarbonate solution (1.0 M)***",
+        "type": "REJECTED_LABEL",
+        "role": "synonym"
+      },
+      {
+        "text": "Bicarbonate solution***",
+        "type": "REJECTED_LABEL",
+        "role": "synonym"
+      }
+    ],
+    "source_recipe_leads": [],
+    "url_leads": [
+      "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&exact=true&rows=100",
+      "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+      "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321"
+    ],
+    "prior_inventory_status": "same_payload_as_previous_inventory",
+    "prior_inventory_payload_sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c",
+    "known_family_recommendations": [],
+    "authorship_exclusions": [
+      "w01"
+    ],
+    "scientific_equivalence": null
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "408",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:54:10.280476+00:00",
+  "completed_at": "2026-11-08T04:54:10.692223+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Found while verifying the source spelling for #406 — the raw TOGO capture is\ntracked, so the import can be compared against it directly.\n\n## The substitution\n\n`data/raw/togo/togo_media.json` records each component's own unit. Comparing\n2,900 matched TOGO media, component by component:\n\n```\ncomparable rows                                32,841\nsource unit is a VOLUME (ml, ml/l, L, ul)       3,808\n  -> recorded as G_PER_L                        3,803\n  -> recorded as ML_PER_L or L                      2\n```\n\nThe unit is not converted, it is **replaced**. `CultureMech:008849`\n(`TOGO:M2262`, PCR-S11 medium) side by side with its source:\n\n| ingredient | TOGO says | record says |\n|---|---|---|\n| Seawater (autoclaved) | 1000 **ml** | 1000 **G_PER_L** |\n| Trace metals 'Gaffron+Se' | 0.5 **ml/l** | 0.5 **G_PER_L** |\n| 50mM NaH2PO4 | 100 **ml** | 100 **G_PER_L** |\n| 0.1N HCl | 40 **ml** | 40 **G_PER_L** |\n| (NH4)2SO4 | 400 uM | 400 MICROMOLAR ✅ |\n| Vitamin B12 | 10 ug/L | 10 MICROG_PER_L ✅ |\n| Hepes | 119.15 g | 119.15 G_PER_L ✅ |\n\nMolar and mass units convert correctly. Only volumes are mislabelled, and the\nschema already has `ML_PER_L` and `L` for them.\n\n## Where it is and is not defensible\n\n**Water — 2,579 rows.** Water's density is 1, so `1000 ml -> 1000 g/L` is\nnumerically near-exact. Ugly, and it is what feeds `WATER_AS_VOLUME` in\n`audit-concentration-plausibility`, but not a wrong quantity.\n\n**Everything else — 1,224 rows across 751 records.** The density is not 1, so\nthe number itself is wrong:\n\n| ingredient | rows | density | error |\n|---|--:|--:|---|\n| `HCl (25%; 7.7 M)` | 72 | ~1.12 | 12% low |\n| `Methanol` | 26 | 0.792 | 26% high |\n| `Glycerol` | 21 | 1.26 | 21% low |\n| `Tween 80` | 20 | 1.06 | |\n| `Ethanol` | 14 | 0.789 | 27% high |\n| `Sol. 1`, `Artificial seawater`, `Seawater`, `NaOH 1 N`, ... | | | |\n\n`0.5 ml/l` of a trace-metal stock recorded as `0.5 g/L` is not a rounding\ndifference — it is a different physical quantity, and nothing downstream can\ntell.\n\n## No gate sees the non-water half\n\n`audit-concentration-plausibility` has `WATER_AS_VOLUME` (water >= 1000 G_PER_L),\nwhich is why the water rows are already inside #150's backlog. Methanol at\n`792 G_PER_L`, glycerol at `50 G_PER_L` and HCl at `40 G_PER_L` match no\ndetector — not a trace salt, not an indicator, not water.\n\n## Suggested\n\n1. Map source volume units onto `ML_PER_L` / `L` at import rather than\n   defaulting to `G_PER_L`. The enum values exist.\n2. Repair the 1,224 non-water rows from the tracked raw capture, which holds\n   the original unit — so this is a relabelling, not a re-derivation, and needs\n   no source lookup.\n3. Decide the water case deliberately: `2,579` rows are numerically fine and\n   semantically wrong, and they currently inflate `WATER_AS_VOLUME`.\n4. Check whether the same substitution exists in the other volume-bearing\n   importers (MediaDive, KOMODO, JCM) — this was found by comparing against a\n   tracked raw capture, which not every source has.\n\nRelated: #150 (the plausibility backlog the water half sits in), #381 (absolute\namounts with no representable unit), #394 (a different import-time arithmetic\ndefect), #406 (the record this was found from).",
+    "closedAt": null,
+    "comments": [],
+    "number": 408,
+    "state": "OPEN",
+    "title": "TOGO import substitutes G_PER_L for volume units: 3,803 rows, of which 1,224 are non-water and numerically wrong",
+    "updatedAt": "2026-09-03T07:08:06Z",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/408"
+  }
+}

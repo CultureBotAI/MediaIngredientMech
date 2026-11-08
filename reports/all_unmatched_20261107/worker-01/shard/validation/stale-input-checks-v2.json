@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-08T05:04:01.912950+00:00",
+  "status": "NOT_FINAL_ACCEPTANCE",
+  "observation": "Assembly stopped on two duplicated shared atmosphere evidence IDs. Subsequent calls were incorrectly allowed to run on the previous73-proposal ledger; the full-catalog final assertion correctly failed because dependency proposals were not in that old ledger. These receipts bind their actual old input hashes and are not76-proposal acceptance evidence.",
+  "affected_receipts": [
+    {
+      "path": "validation/native-generated-predicates-corrected-v2.json",
+      "sha256": "62e10f5f33d3d779d29f26c2f18beebecf904a50f1ea5131b084c3323a4b6b89"
+    },
+    {
+      "path": "validation/combined-proposals-corrected-v2.json",
+      "sha256": "428eb9e1bfbaf651f726535e7dc54395a6b1664c19b06c3d8c8595db78eecbc5"
+    },
+    {
+      "path": "structural-corrected-v2.json",
+      "sha256": "802e60c149344450644b2d3fbe1c9fa459aa65a88e4f0c31942e3fdcd15e9039"
+    }
+  ],
+  "correction": "Only the two known shared ATM1167 receipts may coalesce identical capture/science fields with explicit lane-local case-list union. The input manifest records this. Subsequent validation is gated on successful assembly.",
+  "tracking_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1159"
+}

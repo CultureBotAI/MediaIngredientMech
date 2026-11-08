@@ -1,0 +1,57 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "788",
+    "--repo",
+    "Knowledge-Graph-Hub/kg-microbe",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T05:05:19.971681+00:00",
+  "completed_at": "2026-11-08T05:05:20.412268+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Found by adversarial review of #786 and verified independently.\n\nThe re-sync in #786 pulls `mappings/culturebotai_reviewed_ingredients.tsv` and `mappings/ingredient_mappings.sssom.tsv` from `../MediaIngredientMech` at `5530527b`. It fixes Cobalamine, but brings in regressions.\n\n**Live in the shipped SSSOM** (name -> CURIE resolution changes):\n\n| name | master | after sync |\n|---|---|---|\n| `alpha-Lactose` | CHEBI:36219 alpha-lactose | **CHEBI:189432 Alpha-lactose monohydrate** |\n| `Carboxymethyl cellulose` | CHEBI:85146 carboxymethylcellulose | **CHEBI:234035 carboxymethylcellulose sodium salt** |\n\nBoth arrive as `skos:exactMatch` on the `MIM:` subject — an anhydrous/hydrate and a free-acid/sodium-salt false identity, exactly what the `hydrate_equivalences` closeMatch machinery exists to prevent. The other new MIM rows use closeMatch correctly, so this looks like a slip rather than a policy change. Also wrong in the file though not yet moving resolution: `MIM:Berberine` -> `CHEBI:31271 \"Berberine chloride (TN)\"` exactMatch, and `MIM:36-Dihydroxyflavone` -> `CHEBI:24698 hydroxyflavone` (a class) with its CAS dropped.\n\n**Latent in the vendored TSV** (held back only because the additive baseline still holds the correct record — verified in `mappings/culturebotai_reviewed_ingredients.tsv`):\n\n* `D-Glucose`, 589 occurrences: `CHEBI:17634 D-glucose` -> **`CHEBI:42758 aldehydo-D-glucose`** (the open-chain tautomer), and `mapping_status` flipped `MAPPED` -> `REJECTED`.\n* `Cysteine-HCl`, 103 occurrences: `CHEBI:91247 L-cysteine hydrochloride` -> **`CHEBI:52891 QSY9 succinimidyl ester(1+)`**, a fluorescence quencher. 52891 was already on master (pre-existing), but the sync now ratifies it and discards the correct `mim_id=CHEBI:91247`, which `best_primary` demotes to an xref.\n* `Na2S2O3` -> sodium thiosulfate **pentahydrate**; `Sodium citrate` -> sodium citrate **dihydrate**; `MIM:02_Thiamine_Pyrophosphate` loses `CHEBI:9532` for a `kgmicrobe.ingredient` stub.\n\nGenuine improvements in the same sync, for balance: `Casamino acids` x6 drops `CHEBI:78020` (heptacosanoate, a C27 fatty acid) for `FOODON:03315719`, and `Co-carboxylase` moves from `CHEBI:18290` (a chloride salt) to `CHEBI:9532` (TPP).\n\n**Aggregate.** Counting `kgm.name:` subjects carrying more than one exactMatch object: **572 on master, 634 after the sync** (+68 new, 6 resolved). So a change whose purpose was removing one name/two-object ambiguity net-increases that ambiguity by 11%.\n\nDecide before merging #786 whether to (a) split the re-sync out and land the retraction mechanism alone, (b) hold the sync until the upstream rows are fixed, or (c) take it knowingly and file the four rows upstream.",
+    "closedAt": "2026-09-27T08:01:19Z",
+    "comments": [
+      {
+        "id": "IC_kwDOEqLYd88AAAABXC6WkQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "The finite original-case runtime fixes are now merged in #1152 and #1156. The final conservative candidate passes all original named-case controls and actual strict/hydrate fallback replays; generic glucose/citrate and explicit native identities survive, while underspecified preparations/salts remain source-local. Candidate exact lexical multi-target subjects decrease from the current baseline 647 to 366 (not a count of chemically false rows). Candidate SHA-256 ecd223cd573132e63d2fdc684c1ce021915ba8c71e9f2cc129c127b5c9ab9725 is byte-identical across two generations. Keep this issue open until coordinated production artifact replacement and producer/merge verification; the historical production artifact is deliberately unchanged. Full audit and remaining input-selection decision are recorded in #1123.",
+        "createdAt": "2026-09-26T00:29:35Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/788#issuecomment-5841524369",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDOEqLYd88AAAABXO1TLQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "The finite sync regressions are now addressed through the installed conservative\nmapping pair and current producer/archive checks. This closes those scoped\nregressions, not global chemical curation or #1123 release acceptance.\n\nThe installed unified artifact is SHA-256\n`9e481e31f23b7a2414537f967ea513a7b494824799a002ca4300765f5acea0f1`,\npaired with supported product `6b52b30e…` and release pin `f082c056…`.\nThe earlier `ecd223cd…` comment described an intermediate candidate; final\n9e48 has its own completed audit and current input bindings.\n\nCurrent 8dc runtime replay preserves all 19 original named observations and\neight native-positive controls: alpha-lactose remains CHEBI:36219;\ncarboxymethyl cellulose does not become the sodium salt; Berberine and its\nchloride remain distinct; generic D-glucose does not become its open-chain or\nglucopyranose form; cysteine-HCl cannot become the dye/free parent; and generic\ncitrate/thiosulfate do not acquire an unstated hydrate. Positional\ndihydroxyflavone and underspecified thiamine/Co-carboxylase preparations remain\nunresolved/source-local rather than receiving guessed class, salt or charge\nidentities. Explicit native forms remain usable. Casamino acids use supported\nmesh:C017721, not heptacosanoate. General TPP acronym ambiguity is not declared\nsolved.\n\nThe current archive SHA is\n`cb77e4b7e2bf7aa6ec2dff5176a862a4ef737c69dfeb6e98d1e0c3055c11ba10`.\nIts occurrence verifier preserves all 39,879 selected MediaDive positions,\ncomplete source records and original quantities, including the exposed\nsource-local controls. The coordinated fixed67 migration also passes for\n67 IDs / 510 historical assertions / 356 routes. The all-source finite\nidentity scan retains 28 attributed native-alias findings for separate review;\nthese are not permission for consumers to choose narrower identities.\n\nThe exact final mapping's lexical diagnostic is **647→366** multi-target\nexact-name subjects against its pinned historical baseline, not zero. Full\nbefore/after lists are preserved (297 subjects removed, 16 newly multi-target,\n25 surviving groups with changed target lists). The issue's earlier **572→634**\ndescribed different historical snapshots. Neither count is automatically a\ncount of chemically false identities. The separate historical audit preserves\nall 196 original rows for 98 conflicting pairs in quarantine and finds zero\nsuch active candidate conflicts; it does not turn quarantine into scientific\nrejection.\n\nExact evidence under `data/mim-ship-20260925.QDVfoK/`:\n\n- Final mapping/control audit: `occurrence-candidate-audits/finite-identity.json`, SHA `122909870e6157e660a690b9fe44b41be6204887d494ae5ec4be3834eac0b684`.\n- Current runtime replay: `native-replay-8dc51abd-cb77e4b7-20260927/report.json`, SHA `736670b16573143f808f9c5693cb6df8b3e65c252833d09b7ad22cd6c89f7a66`; structural/guard checks pass, its separate native-delta REVIEW_REQUIRED status is unchanged.\n- Current occurrence proof: `mediadive-occurrence-v2-8dc51abd-cb77e4b7-20260927.json`, SHA `232873da0c0d85545a1a12fdc7dfdd96edcae1afa44d92d2b8a7e8ca5f601bc1`.\n- Current migration: `mim-migration-v3-8dc51abd-cb77e4b7-20260927/report.json`, SHA `2d5680c1db838847ff1b09a66eace920dfe89918252970305b535de99762b28b`.\n- Current finite identity: `finite-identity-v2-8dc51abd-cb77e4b7-20260927/report.json`, SHA `e262777e6d047125eda9fc63f7729456dd60311fefd81948f57113ad5f5862c2`.\n- Current 98-pair mapping audit: `historical-conflicts-8dc51abd-cb77e4b7-20260927.json`, SHA `58a54c9355759f8a630325b76383aafc8d7cdb187227c463e834ba4283650150`.\n\nAll current input/code guards passed. The independent composite review is\n`ISSUE788-CB77-COMPOSITE-INDEPENDENT-REVIEW-20260927.md`. Remaining native,\nSpecial55, taxonomy, freshness and overall release work retain their own scope\nand status; no baseline or machine result has been waived or rewritten.\n",
+        "createdAt": "2026-09-27T08:01:17Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/788#issuecomment-5854024493",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 788,
+    "state": "CLOSED",
+    "title": "The upstream re-sync imports four grounding regressions and net-increases name ambiguity 572 -> 634",
+    "updatedAt": "2026-09-27T08:01:19Z",
+    "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/788"
+  }
+}

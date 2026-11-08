@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "finding_id": "W01-SCIENCE-001",
+  "title": "Complete source-defined concentration stocks stop at a generic no-proposal disposition",
+  "severity": "major",
+  "status": "open",
+  "review_kind": "provisional_artifact_completeness",
+  "reviewer": "/root/step7d_science_c",
+  "independence": "Reviewer did not author the worker decisions, proposals or source captures. Source captures are author-collected primary evidence; their original authorship and retrieval timestamps are retained.",
+  "created_at": "2026-11-08T04:37:53.366933+00:00",
+  "decisions_sha256": "5dbbf63b1736fbac74bc5f6457be48fb3613b3bd38a3ab4d4e37a279ce3ce704",
+  "proposals_sha256": "eb27d6de8b6a3403b131cb9ec1e21c65d300a2a977fa2acabdf6b463dcda1354",
+  "scope": "Nine frozen case decisions representing seven source-qualified preparations. This is not a demand to mint every stock, approval of any owner, or a finding against a final published head.",
+  "description": "Each selected decision records a recovered source formulation, no proposal, no missing requirement, and the same future-integration no-change text. Avoiding dry-solute or generic-stock equivalence is correct, but does not itself explain why the authorized proposal stage should stop once a source-qualified preparation is established. Exact next steps or a concrete unresolved identity/ownership requirement are missing.",
+  "cases": [
+    {
+      "display_index": 17,
+      "allocation_index": 16,
+      "case_id": "CM_NAME:18cf0b81d1622e45b08207ddf43598dfa9fb88d869010a21e36fed3365ef9532",
+      "case_input_sha256": "628e33a0d95da6a57fcd2f15b461ac554fb9ff07fb0a82331a336092de82681f",
+      "label": "CaCl2 solution (0.1 M)***",
+      "occurrence_ids": [
+        "CM_OCC:38c7d74fcfad91d7e0c32be20d5add82c8041fcc52772b16f3396a495ed94d7e"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:38c7d74fcfad91d7e0c32be20d5add82c8041fcc52772b16f3396a495ed94d7e",
+          "recipe_id": "CultureMech:007473",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1340.yaml",
+          "component_path": "ingredients/3",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "CaCl2 solution (0.1 M)***"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "NBRC1339 lists 1 mL of 0.1 M CaCl2 stock. Footnote *** explicitly specifies distilled water and autoclaving. The stock is distinct from a dry calcium chloride hydrate; no hydrate is stated.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1339",
+      "reviewer_source_observation": "0.1 M CaCl2 aqueous stock; distilled water and autoclaving are explicit."
+    },
+    {
+      "display_index": 92,
+      "allocation_index": 91,
+      "case_id": "CM_NAME:98a1e1f9c5238725137f3c6e41fa3f2eaaebac8566b80c370708a64bc780bc5f",
+      "case_input_sha256": "9820e0eaf933046065b9961ba8a455a3dca038c8083f6049cda73cf1e1ee447d",
+      "label": "CaCl2 solution",
+      "occurrence_ids": [
+        "CM_OCC:9d209ade467f019c12eefcfa43c8b01f87d82fbc3db97ce093f8041758888b3b"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:9d209ade467f019c12eefcfa43c8b01f87d82fbc3db97ce093f8041758888b3b",
+          "recipe_id": "CultureMech:008631",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/m9_phenanthrene.yaml",
+          "component_path": "ingredients/3",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "notes": "TOGO M2041 / NBRC Medium 1339 adds 1 ml/L 0.1 M CaCl2 stock.",
+            "preferred_term": "CaCl2 solution",
+            "source": "TOGO M2041 / NBRC Medium 1339"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "The unqualified CaCl2 solution frozen occurrence is in M9-Phenanthrene; NBRC1339 resolves it locally to0.1M in distilled water,1mL, autoclaved. This is the same specified stock context as the longer label in this allocation, not authority for a global unqualified synonym or a dry hydrate.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1339",
+      "reviewer_source_observation": "The short label is locally resolved to that 0.1 M stock in M9-Phenanthrene, without global synonym promotion."
+    },
+    {
+      "display_index": 101,
+      "allocation_index": 100,
+      "case_id": "CM_NAME:abb63ad7b2d77d697c4dd4727520602a644bdef3e2088a5bd155554c9cc10c8e",
+      "case_input_sha256": "991a497296926ae25484c955c7d74c6316f2b6cbdfdadba4078eefe207fe7cdf",
+      "label": "MgSO4 solution (1 M)***",
+      "occurrence_ids": [
+        "CM_OCC:436007b7ec691dfbae6e2b7c1dccaeb9b93eb57c32dc932ae78c045411ad445f"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:436007b7ec691dfbae6e2b7c1dccaeb9b93eb57c32dc932ae78c045411ad445f",
+          "recipe_id": "CultureMech:007473",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1340.yaml",
+          "component_path": "ingredients/2",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.1"
+            },
+            "preferred_term": "MgSO4 solution (1 M)***"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "NBRC1339 table and***footnote define1M MgSO4 in distilled water, autoclaved,2.1mL in M9-Phenanthrene. Hydrate is unstated; retained source-defined aqueous stock is narrower than generic magnesium sulfate and cannot be an exact dry-salt alias.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1339",
+      "reviewer_source_observation": "1 M MgSO4 aqueous stock; distilled water and autoclaving are explicit; no dry hydrate identity is inferred."
+    },
+    {
+      "display_index": 66,
+      "allocation_index": 65,
+      "case_id": "CM_NAME:751e18a68ff5d0912d630949e1d0eedb15ac47949d9f1da81dd0f2d76f1f7b38",
+      "case_input_sha256": "7135d42013b59c07a1304ec38f70ce01e4616dcabaab5f23b142a1b9be815d21",
+      "label": "MgSO4 solution",
+      "occurrence_ids": [
+        "CM_OCC:c959afae65af4392044184451d959f3cc2b93782471f5450ce25b1ea9b10c690"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:c959afae65af4392044184451d959f3cc2b93782471f5450ce25b1ea9b10c690",
+          "recipe_id": "CultureMech:008631",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/m9_phenanthrene.yaml",
+          "component_path": "ingredients/2",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.1"
+            },
+            "notes": "TOGO M2041 / NBRC Medium 1339 adds 2.1 ml/L 1 M MgSO4 stock.",
+            "preferred_term": "MgSO4 solution",
+            "source": "TOGO M2041 / NBRC Medium 1339"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "The short frozen label MgSO4 solution belongs to M9-Phenanthrene from NBRC1339. Primary footnote*** supplies distilled-water solvent/autoclaving and the table supplies1M,2.1mL. The omitted concentration is recoverable for this occurrence only; it does not make every MgSO4 solution label globally1M.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1339",
+      "reviewer_source_observation": "The short label is locally resolved to that 1 M stock in M9-Phenanthrene, without global synonym promotion."
+    },
+    {
+      "display_index": 68,
+      "allocation_index": 67,
+      "case_id": "CM_NAME:7883f66635a17cc5e5a6458b5b97b4dd8988ba47388e5100da6d2a5400dd94f0",
+      "case_input_sha256": "f58b787046378c86c49551422c168ff3d98ac8569337ae5226174d678d7171d1",
+      "label": "Phenanthrene solution (250 mM) in dimethyl sulfoxide (DMSO)****",
+      "occurrence_ids": [
+        "CM_OCC:1a81760cfec9ded54b1e9a6a38ac8375c79e1725ac9bfacd2da5fc94205c63b5"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:1a81760cfec9ded54b1e9a6a38ac8375c79e1725ac9bfacd2da5fc94205c63b5",
+          "recipe_id": "CultureMech:007473",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1340.yaml",
+          "component_path": "ingredients/4",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Phenanthrene solution (250 mM) in dimethyl sulfoxide (DMSO)****"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "NBRC1339 specifies250mM phenanthrene in DMSO,10mL added after cooling the main medium to65C. Footnote**** requires filtration with DMSO-safe filters. The solvent is a constitutive part of the preparation; neither neat phenanthrene nor aqueous phenanthrene is an exact stock identity.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1339",
+      "reviewer_source_observation": "250 mM phenanthrene in DMSO, filtered with DMSO-safe filters; solvent is explicitly supplied."
+    },
+    {
+      "display_index": 116,
+      "allocation_index": 115,
+      "case_id": "CM_NAME:c344ecf9bd9da249781a7db71b6a1eef747cd97e0c0e496b1c5cef4afef7500b",
+      "case_input_sha256": "f57b6a0df2a5892a0644d67b152b88906e9d5da28fbd982825397da36d80c831",
+      "label": "Tween 80 solution**",
+      "occurrence_ids": [
+        "CM_OCC:1fa8f0ac04f731e56e5b67a1cc695f55ef31ffbb9d17c75c4e3dba2e7da8aace"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:1fa8f0ac04f731e56e5b67a1cc695f55ef31ffbb9d17c75c4e3dba2e7da8aace",
+          "recipe_id": "CultureMech:007501",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_882.yaml",
+          "component_path": "ingredients/4",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Tween 80 solution**"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "NBRC881**footnote resolves Tween80 solution to50g Tween80 in1L distilled water,10mL added to GYP medium. It is a50g/L polysorbate80 stock, not neat Tween80; the polymer/surfactant mixture retains its reagent identity rather than a single idealized molecular composition.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-881",
+      "reviewer_source_observation": "Preparation lists Tween 80 50 g and distilled water 1 L; preserve added-water amount rather than assume measured final volume."
+    },
+    {
+      "display_index": 107,
+      "allocation_index": 106,
+      "case_id": "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3",
+      "case_input_sha256": "33a10ef69fd5e2aa6b1e14fe1dc8b005b7c5fab65dd1ad0de632ff3286f94780",
+      "label": "Bicarbonate solution (1.0 M)***",
+      "occurrence_ids": [
+        "CM_OCC:d72552467e12be95f7f895cc5bfa945338d508dfc48d1a2003b3e5b2b95c83ac"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:d72552467e12be95f7f895cc5bfa945338d508dfc48d1a2003b3e5b2b95c83ac",
+          "recipe_id": "CultureMech:007472",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1323.yaml",
+          "component_path": "ingredients/12",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "30"
+            },
+            "preferred_term": "Bicarbonate solution (1.0 M)***"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "NBRC1321***footnote defines bicarbonate1M stock as8.4g NaHCO3 in100mL distilled water, CO2-saturated, sealed underCO2 then autoclaved. It adds30mL to the main recipe. Existing84g/L record has concentration correspondence but no evidence for the CO2-conditioned preparation, and carries an incompatible5%w/v raw alias; no unreviewed merge is proposed.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1321",
+      "reviewer_source_observation": "NaHCO3 8.4 g and distilled water 100 mL; CO2 saturation, sealed CO2 atmosphere and autoclaving are explicit. Existing 84 g/L overlap requires bounded ownership resolution."
+    },
+    {
+      "display_index": 114,
+      "allocation_index": 113,
+      "case_id": "CM_NAME:be907c95d1757e8248331771aea41181491ad29a1bd5b7a09850ef8e31a4a00a",
+      "case_input_sha256": "eba16abe9f68493b1f3ff028e4aa3a23fc73fba8f64b19ffeb477df2106e93ee",
+      "label": "Sulfide solution (1.0 M)*******",
+      "occurrence_ids": [
+        "CM_OCC:517c373512f0ae3df514549f7fc3c231e26204f12ec347727caebd66b38ccdeb"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:517c373512f0ae3df514549f7fc3c231e26204f12ec347727caebd66b38ccdeb",
+          "recipe_id": "CultureMech:007472",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1323.yaml",
+          "component_path": "ingredients/16",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.5"
+            },
+            "preferred_term": "Sulfide solution (1.0 M)*******"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "NBRC1321*******footnote defines1M sulfide stock as24g Na2S·9H2O in100mL water, filter sterilized and stored underN2; the recipe takes1.5mL. This supplies the nonahydrate and solvent omitted by the short label. It is neither neutralized sulfide nor5% nonahydrate stock.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-NBRC-1321",
+      "reviewer_source_observation": "Na2S·9H2O 24 g and distilled water 100 mL; filtration and N2 storage are explicit."
+    },
+    {
+      "display_index": 128,
+      "allocation_index": 127,
+      "case_id": "CM_NAME:d2beafdb7af99f6bf56a963ff6ddce100455e0134eff5640ce2cc98e47892ea4",
+      "case_input_sha256": "05a341a7e99b3ada226973af1f688be690bb2a44e3a5133986b6c4e7360cd2fc",
+      "label": "FeCl3 solution",
+      "occurrence_ids": [
+        "CM_OCC:1142f84a6c7bf707020f19a1bdb547285e96df6de1448b3ee7809df48f89898f",
+        "CM_OCC:e3c57327b2a333a4260267dde77a66a107bcb9872e01ac5931d78dafdab3ab88"
+      ],
+      "source_context": [
+        {
+          "occurrence_id": "CM_OCC:1142f84a6c7bf707020f19a1bdb547285e96df6de1448b3ee7809df48f89898f",
+          "recipe_id": "CultureMech:007620",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1101_MPYCY_Agar_Medium.yaml",
+          "component_path": "solutions/1/composition/2",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "notes": "TOGO M1100 / JCM Medium 1036 lists 1.0 ml FeCl3 solution per 8.0 ml Solution B.",
+            "preferred_term": "FeCl3 solution",
+            "source": "TOGO M1100 / JCM Medium 1036"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:e3c57327b2a333a4260267dde77a66a107bcb9872e01ac5931d78dafdab3ab88",
+          "recipe_id": "CultureMech:007621",
+          "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1102_MPYCY_Agar_Medium.yaml",
+          "component_path": "solutions/1/composition/2",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "notes": "TOGO M1100 / JCM Medium 1036 lists 1.0 ml FeCl3 solution per 8.0 ml Solution B.",
+            "preferred_term": "FeCl3 solution",
+            "source": "TOGO M1100 / JCM Medium 1036"
+          }
+        }
+      ],
+      "proposal_ids": [],
+      "missing_requirement": null,
+      "author_reasoning": "Both MPYCY variants inherit SolutionB fromJCM1036: the FeCl3 stock is0.15g FeCl3·6H2O in300mL water, freshly prepared, and1mL enters the8mL SolutionB mix. JCM296 independently contains the same stock but a different SolutionA usage. This resolves the previously unqualified FeCl3 solution only in these occurrences; it does not authorize global FeCl3-solution identity.",
+      "author_no_change_reason": "The exact source-bound preparation is retained with its recovered formulation and qualifiers. Current searches identify no verified equivalent owner for this precise preparation; adding its label to a dry solute or a generic stock would change identity scope. No owner payload is proposed from lexical similarity. The source recipe remains the formulation owner; any future MIM stock integration must use a formulation-qualified record, preserve component evidence and resolve cross-source ownership before publication.",
+      "evidence_id": "CS-P-JCM-1036",
+      "reviewer_source_observation": "FeCl3·6H2O 0.15 g and distilled water 300 mL, freshly prepared; source-qualified nested Solution B occurrences only."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "CS-P-NBRC-1339",
+      "capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/captures/primary/NBRC-1339.html",
+        "sha256": "a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837"
+      },
+      "kind": "primary_source",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339",
+      "accessed_at": "2026-11-08T04:06:28.551850+00:00",
+      "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning",
+      "supports_or_contradicts": "Source-bound recipe formulation used in the explicitly linked case reasoning; does not approve an existing MIM record or generic lexical synonym.",
+      "frozen_capture_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/snapshot/worker-01/shard/concentration_stocks/captures/primary/NBRC-1339.html",
+      "reviewer_extraction_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/CS-P-NBRC-1339-reviewer-extracted-text-v1.txt",
+      "reviewer_extraction_sha256": "ca5d1b26d1da4a56e5492851fd6f14a97afee992e86a3365d87b2c314ac60481"
+    },
+    {
+      "evidence_id": "CS-P-NBRC-881",
+      "capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/captures/primary/NBRC-881.html",
+        "sha256": "6bf300eade6e04eb3e0047615fbafeb7d8ce795758966df1d562c8462eba2565"
+      },
+      "kind": "primary_source",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=881",
+      "accessed_at": "2026-11-08T04:06:28.986009+00:00",
+      "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning",
+      "supports_or_contradicts": "Source-bound recipe formulation used in the explicitly linked case reasoning; does not approve an existing MIM record or generic lexical synonym.",
+      "frozen_capture_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/snapshot/worker-01/shard/concentration_stocks/captures/primary/NBRC-881.html",
+      "reviewer_extraction_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/CS-P-NBRC-881-reviewer-extracted-text-v1.txt",
+      "reviewer_extraction_sha256": "0d9f292185fe00640a136886fc288dafc5984bf931bdb8a6cb7a132dc30b2562"
+    },
+    {
+      "evidence_id": "CS-P-NBRC-1321",
+      "capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/captures/primary/NBRC-1321.html",
+        "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+      },
+      "kind": "primary_source",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+      "accessed_at": "2026-11-08T04:06:28.356376+00:00",
+      "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning",
+      "supports_or_contradicts": "Source-bound recipe formulation used in the explicitly linked case reasoning; does not approve an existing MIM record or generic lexical synonym.",
+      "frozen_capture_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/snapshot/worker-01/shard/concentration_stocks/captures/primary/NBRC-1321.html",
+      "reviewer_extraction_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/CS-P-NBRC-1321-reviewer-extracted-text-v1.txt",
+      "reviewer_extraction_sha256": "347e65c0e92a62bd776359fda7b9ed127eaa9a261b03def67ca31e89b45eeda7"
+    },
+    {
+      "evidence_id": "CS-P-JCM-1036",
+      "capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/captures/primary/JCM-1036.html",
+        "sha256": "b50c448cb435eda7dd35bb52c171e56db259c40f097332035990ec931d8ea22d"
+      },
+      "kind": "primary_source",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1036",
+      "accessed_at": "2026-11-08T04:06:17.244749+00:00",
+      "locator": "Complete recipe; named component/stock table, footnotes and inherited formulation references specified in the case reasoning",
+      "supports_or_contradicts": "Source-bound recipe formulation used in the explicitly linked case reasoning; does not approve an existing MIM record or generic lexical synonym.",
+      "frozen_capture_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/snapshot/worker-01/shard/concentration_stocks/captures/primary/JCM-1036.html",
+      "reviewer_extraction_path": ".temp/all-unmatched-20261107/preflight/w01-shard-coordinator-review-v1/CS-P-JCM-1036-reviewer-extracted-text-v1.txt",
+      "reviewer_extraction_sha256": "cba4d0e68eeacba8840aa63d7a5954601a9a5b016e1cc3c661e6ad8a40789f39"
+    }
+  ],
+  "requested_resolution": [
+    "For each bounded source-qualified preparation, produce a native-schema-valid proposal with exact source/formulation/component provenance and proposed identity scope, or state the specific scientific/ownership requirement that prevents it.",
+    "Consolidate the two pairs of long/short labels only within their verified NBRC1339 source context; do not promote unqualified global stock aliases.",
+    "Preserve source water-addition quantities, preparation endpoints, component form limits and final-volume uncertainty; do not infer a dry hydration state from stock molarity.",
+    "Resolve cross-worker or existing-owner duplication before integration; an explicit owner conflict is a legitimate blocker, unlike generic future-work wording.",
+    "Run proposal validation and independent scientific review before any integration, support promotion, or release."
+  ],
+  "limitations": [
+    "Only the nine listed frozen decisions are the confirmed finding; no global claim that all held stocks are resolvable.",
+    "The worker was still revising the shard when the snapshot was captured.",
+    "No current GitHub deduplication or issue mutation was performed by this reviewer.",
+    "Existing canary issue 1159 concerns different artifact corrections; this finding is not a request to broaden it."
+  ]
+}

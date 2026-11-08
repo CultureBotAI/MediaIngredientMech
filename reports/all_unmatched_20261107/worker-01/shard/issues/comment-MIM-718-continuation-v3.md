@@ -1,0 +1,29 @@
+Worker01 continuation separates established source identities with concrete proposals from precise unresolved chemistry and source-version conflicts. Existing source snapshots and inherited holds remain preserved; a pending integration step is not itself missing scientific evidence.
+
+| Scope | Finding and disposition |
+| --- | --- |
+| PIPES, case118 | CHEBI:39033 is a grouping term; the final 10 mM source label does not select the supplied neutral/salt form. Retain the scoped form requirement. The separate native author and independent PIPES reviews preserve this concern; #868 concerns different records. |
+| JCM976 stock, KG170 | JCM978 explicitly references JCM976, not DSMZ976. The complete stock is now an isolated existing-owner proposal, including every listed precursor, variable KOH to pH6, literal preparation-water quantities and non-resolving ambiguous cross-reference labels. |
+| DSMZ863 carbonate stock, KG186 | A distinct source-qualified owner proposal preserves 106 g Na2CO3 plus 1 L degassed water and sealed CO2 autoclaving. The current broadly shared CHEBI:29377 owner and its mixed dry/buffer aliases are untouched; they retain their separate whole-owner review obligations. |
+| Selenate forms, KG167 and root14/42 | Explicit decahydrate in DSMZ1493/1685 has a distinct CAS10102-23-5 proposal with CHEBI77775 as broad parent. TOGO M3118 prints Na2SeO4·5H2O, but Frolov's author-institution thesis p52 prints Na2SeO4 without hydrate at94mg/L trace stock (p53 dose1mL/L). That version conflict remains explicit; the thesis is not the exact publisher article. ATCC2133/TOGO M2657 prints Na2SeO4·6H2O at26mg/L. Do not silently substitute selenite or anhydrous forms. |
+| Original selenium formulas, KG169/187 | DSMZ863 itself prints Na2Se2O3; DSMZ973 itself prints Na2Se3·5H2O. Neither verifies the proposed familiar selenite spelling. Preserve literal source formulas pending authoritative reagent/formula clarification. |
+| Rubradirin, KG179/181 | Unsuffixed source rubradirin does not establish RubradirinB. This concern is inherited from closed #752; do not reopen the already completed process-alias cleanup as a new defect. |
+| EBIOS, KG172 | JCM969's Asahi dried-yeast tablets now have a product-specific registry proposal. Current tablet information is not backdated to a historical lot and does not identify EBIOS P2G yeast extract. |
+| Selenite/tungstate stock431, cases0/1/137/144 | Recovered source identity and decomposition now support the guarded registry/component proposal. The old generic composition hold is superseded for that exact scope; unrelated components, roles and release claims are not automatically approved. |
+
+The following original-collection ambiguities stay in this MIM source-followup tracker rather than being assigned as KG-Microbe source-maintenance defects:
+
+| Original source and case | Specific clarification needed |
+| --- | --- |
+| DSMZ1783 Solution2, concentration122 | K2HPO4 amount15.30 has no unit in the API and original PDF. Obtain the missing unit; do not assume grams. |
+| JCM1419, concentration145 | Literal `0.1 M M FeCl2 solution` contains a duplicated concentration token. Preserve it until an authoritative correction. |
+| JCM1462 and inherited1463/1464 Ni/Se/W, named71/111 | Printed `Na2WO2·2H2O`,0.4mg/L, requires an authoritative formula correction before exact tungstate grounding. |
+| DSMZ436 Mineral solution2, named129 | Both PDF/API print `CaCl2·7H2O` and percentages without a basis. Clarify the hydrate and percent basis; neither is an established API-only typo. |
+| CCAP S77, root146 | Original prints `NaSiO3·5H2O`,0.10g. Restoring subscripts in the frozen instruction fragment does not establish disodium metasilicate. |
+| JCM1430, root82 | Original itself prints `Distilled waterv`; the source spelling defect is distinct from the frozen L-to-mL error tracked with CultureMech. |
+
+The borax hydration discrepancy is detailed in [#318](https://github.com/CultureBotAI/MediaIngredientMech/issues/318), including the source-supported CHEBI:38888 owner proposal and separate stock exception. Source-defined products, water grades and complete stock formulations are supplied as isolated proposals instead of being left unresolved solely for integration.
+
+The parenthetical labels on `84_GL_NaHCO3_Solution` are already non-resolving under current native text policy. Closed [#606](https://github.com/CultureBotAI/MediaIngredientMech/issues/606) and [#610](https://github.com/CultureBotAI/MediaIngredientMech/issues/610) cover that behavior. Optional REJECTED_LABEL typing changes no present resolver/export behavior and is not a new defect or a release fix.
+
+Exact case IDs, frozen count definitions, source captures and proposal hashes: [KG26 decisions](https://github.com/CultureBotAI/MediaIngredientMech/blob/review/all-unmatched-w01-source-review-20261107/reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/decisions.fragment.json), [concentration decisions](https://github.com/CultureBotAI/MediaIngredientMech/blob/review/all-unmatched-w01-source-review-20261107/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/decisions.fragment.json), [named-stock source findings](https://github.com/CultureBotAI/MediaIngredientMech/blob/review/all-unmatched-w01-source-review-20261107/reports/all_unmatched_20261107/worker-01/shard/named_stocks/issues-for-root.json) and [root-substance decisions](https://github.com/CultureBotAI/MediaIngredientMech/blob/review/all-unmatched-w01-source-review-20261107/reports/all_unmatched_20261107/worker-01/shard/root_substances/decisions.fragment.json). No source chemistry, maintained MIM record or publication hold was changed by this evidence-lane work. Final independent review and coordinator integration govern the proposed corrections.

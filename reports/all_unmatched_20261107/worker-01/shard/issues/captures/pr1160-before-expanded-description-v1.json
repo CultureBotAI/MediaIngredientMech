@@ -1,0 +1,175 @@
+{
+  "at": "2026-11-08T05:15:43.148611+00:00",
+  "pr": {
+    "baseRefName": "curate/kgm-unmapped-chemicals-20261107",
+    "body": "MediaDive ingredient `1944` has a blank name and is reused for yeast-extract, Trypticase-peptone and MES stocks. This worker01 canary traces the exact frozen case to original JCM recipes, preserves all original fields, and records a malformed-source disposition with no MIM owner or mapping proposal.\n\nDepends on #1158 at frozen base `e000d66dd26ab053e9b17ce7bf8d3c873c3dde99`; targets `curate/kgm-unmapped-chemicals-20261107`. This is an evidence-only canary PR for coordinator verification. [KG-Microbe #1824](https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1824) tracks the deduplicated source correction. [MIM #1159](https://github.com/CultureBotAI/MediaIngredientMech/issues/1159) separately tracks the three corrected and re-reviewed artifact findings (IR-DRAFT-1, IR-DRAFT-2 and IR-VALIDATION-1), with corrections and evidence in `review-dispositions.json`. No merge or release approval is requested.\n\n- Scope: one exact source case from worker01's 188-case shard; the other 187 cases remain outside this phase.\n- Evidence: frozen and live MediaDive bodies, original JCM recipes, contradicted ChEBI cross-reference, live issue/comment searches, explicit source repair requirements, and separate in-process skeptical review with resolved draft findings.\n- Validation: Python 3.13 structural outcome audit and exact source accounting; SHA256 verification of 14,406 file-content hashes: 14,405 Git regular files plus the dereferenced CLAUDE.md file-symlink target. Both tracked symlink targets (`.agents/skills` and `CLAUDE.md`) separately match baseline Git blobs; exact proof is retained at `captures/coordinator-mim-preservation-v2.json` in the evidence bundle. Native data/export generation and data QC gates were not run because no maintained data or publication surface changed. No skipped check is represented as a pass. Full staged `git diff --check` reports preserved source HTML/header whitespace (exit 2); authored artifacts pass their scoped check, and captured primary bytes are not reformatted.\n- Native review limitation: the current configured MIM routes do not cover this source-only no-owner assessment; the campaign's source-only exception applies. Generic snapshot serialization is supported by the shared schema, but no native ingredient review is claimed.\n- Limits: no supplier SKU inferred, no global identity assigned to1944, no current KG endpoint defect asserted, and no inherited WITHHOLD/REJECTED/source-material hold removed. Independent review is by a separate Codex agent, not human scientific sign-off.\n\nThe complete bundle is `reports/all_unmatched_20261107/worker-01/canary/`, beginning with `report.md`, `decisions.json`, `evidence.json`, `proposals.json`, `progress.json`, `validation/` and the SHA256 manifest. Actual published head/check status is captured separately in the worker's durable completion receipt after PR creation, avoiding a self-referential commit hash. The worker stops for coordinator verification after this bounded canary.\n",
+    "headRefName": "review/all-unmatched-w01-source-review-20261107",
+    "headRefOid": "1894d28d94df4e654ebce9752c23a2321aeb21c5",
+    "number": 1160,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045690/job/128637101493",
+        "name": "history",
+        "startedAt": "2026-11-08T05:15:19Z",
+        "status": "QUEUED",
+        "workflowName": "Curation history"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450046082/job/128637102463",
+        "name": "qc-sssom",
+        "startedAt": "2026-11-08T05:15:20Z",
+        "status": "QUEUED",
+        "workflowName": "QC \u2014 SSSOM invariant validation"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045826/job/128637102131",
+        "name": "qc-duplicate-ids",
+        "startedAt": "2026-11-08T05:15:20Z",
+        "status": "QUEUED",
+        "workflowName": "QC \u2014 duplicate mapped identifiers"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045789/job/128637101779",
+        "name": "qc-evidence",
+        "startedAt": "2026-11-08T05:15:19Z",
+        "status": "QUEUED",
+        "workflowName": "QC \u2014 evidence reference validation"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045752/job/128637101295",
+        "name": "reviewed-sssom",
+        "startedAt": "2026-11-08T05:15:19Z",
+        "status": "QUEUED",
+        "workflowName": "QC \u2014 reviewed MIM SSSOM"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045756/job/128637101612",
+        "name": "qc-unified-freshness",
+        "startedAt": "2026-11-08T05:15:19Z",
+        "status": "QUEUED",
+        "workflowName": "QC \u2014 unified snapshot freshness"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450046026/job/128637102384",
+        "name": "id-label-gate / label-correspondence",
+        "startedAt": "2026-11-08T05:15:20Z",
+        "status": "QUEUED",
+        "workflowName": "label-correspondence"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045677/job/128637101616",
+        "name": "vendored-sync",
+        "startedAt": "2026-11-08T05:15:19Z",
+        "status": "QUEUED",
+        "workflowName": "vendored-sync"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045773/job/128637101540",
+        "name": "check",
+        "startedAt": "2026-11-08T05:15:37Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Python quality gate"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045675/job/128637101101",
+        "name": "roundtrip",
+        "startedAt": "2026-11-08T05:15:21Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "QC \u2014 collection/per-record round-trip"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045782/job/128637101529",
+        "name": "qc-component-partonomy",
+        "startedAt": "2026-11-08T05:15:32Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "QC \u2014 component partonomy"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045736/job/128637101197",
+        "name": "qc-flat-coverage",
+        "startedAt": "2026-11-08T05:15:21Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "QC \u2014 flat export coverage"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045720/job/128637101218",
+        "name": "supported-graph",
+        "startedAt": "2026-11-08T05:15:21Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "QC \u2014 supported MIM graph"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045758/job/128637101406",
+        "name": "pytest",
+        "startedAt": "2026-11-08T05:15:23Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Tests (pytest)"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045696/job/128637101192",
+        "name": "validate-strict",
+        "startedAt": "2026-11-08T05:15:21Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "validate-strict"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-08T05:15:41Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/CultureBotAI/MediaIngredientMech/actions/runs/42450045697/job/128637101283",
+        "name": "instruction-refs",
+        "startedAt": "2026-11-08T05:15:22Z",
+        "status": "COMPLETED",
+        "workflowName": "QC \u2014 agent-instruction references"
+      }
+    ],
+    "title": "Canary evidence: worker01 MediaDive 1944 source-only disposition",
+    "url": "https://github.com/CultureBotAI/MediaIngredientMech/pull/1160"
+  }
+}

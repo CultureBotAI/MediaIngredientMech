@@ -1,0 +1,42 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "344",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:11.310145+00:00",
+  "completed_at": "2026-11-08T04:18:11.753893+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "## Current state\n\nThe media-content manifest finds 204 stock-solution descriptors without an asserted working concentration across 99 media. Of these, 140 carry one or more non-asserted candidates; 64 have no candidate at all. This issue owns the source-research lane for those 64, not automatic promotion of the 140 candidates.\n\nA missing working concentration means the stock composition cannot be converted into the final medium formulation. Guessing a customary dose would silently corrupt the recipe.\n\n## Work\n\n1. Produce a stable worklist for the 64 descriptors with exact record and solution locations.\n2. Resolve each addition volume or dilution from the citing medium's own catalogue sheet or primary publication.\n3. Record source evidence and units; distinguish stock preparation volume from stock addition volume.\n4. Apply only source-backed values and regenerate the master manifest.\n5. Keep unresolved entries explicit and lower a dedicated ratchet as reviewed batches land.\n\nRelated but distinct: #150 covers already-flattened stock cocktails whose stock-strength ingredients sit at media level.",
+    "closedAt": null,
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABQzFNDw",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Re-audited at the end of PR #349: 204 stock-solution additions still lack an asserted concentration. Of these, 140 retain non-asserted candidates and 64 have no candidate at all; this issue continues to own only those 64. No value for those 64 exists in the preserved source inputs, so the next safe action is external catalogue/publication recovery. Candidate promotion or customary-dose inference remains explicitly out of scope.",
+        "createdAt": "2026-08-26T07:52:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/344#issuecomment-5422271759",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 344,
+    "state": "OPEN",
+    "title": "Resolve 64 stock-solution additions with no concentration evidence",
+    "updatedAt": "2026-08-26T07:52:19Z",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/344"
+  }
+}

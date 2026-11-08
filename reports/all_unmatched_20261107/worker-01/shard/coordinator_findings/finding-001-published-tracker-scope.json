@@ -1,0 +1,40 @@
+{
+  "finding_id": "W01-PUBLISHED-001",
+  "created_at": "2026-11-08T05:17:14.102746+00:00",
+  "severity": "minor",
+  "category": "provenance/finding-tracker-scope",
+  "head": "1894d28d94df4e654ebce9752c23a2321aeb21c5",
+  "summary": "Published full-shard report and final review attribute twelve new shard findings to the canary-only issue1159.",
+  "evidence": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/report.md",
+      "sha256": "762ba8d961cfdfc856c724d2a4b232cc776bbc43861e34a0f7d28af70b06f1df"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/independent_review/final-188-scientific-review-v1.json",
+      "sha256": "02b2be72b448d35b573ad992a3d2c98afcd3f16430709e10d6837564b595edcf"
+    },
+    {
+      "path": "issue1159-live-v1.json",
+      "sha256": "50b0d92f0ce241e45f18518d38164808a3d060b52d0defa7c602bc3dbb08d6b5",
+      "scope": "Live title/body explicitly three canary findings IR-DRAFT-1,IR-DRAFT-2,IR-VALIDATION-1; zero comments."
+    }
+  ],
+  "affected_findings": [
+    "IR-SHARD-ARTIFACT-1",
+    "IR-SHARD-ARTIFACT-2",
+    "IR-SHARD-ARTIFACT-3",
+    "IR-SHARD-ARTIFACT-4",
+    "IR-SHARD-ARTIFACT-5",
+    "IR-SHARD-ARTIFACT-6",
+    "IR-SHARD-ARTIFACT-7",
+    "IR-SHARD-ARTIFACT-8",
+    "IR-SHARD-ARTIFACT-9",
+    "IR-SHARD-ARTIFACT-10",
+    "IR-SHARD-ARTIFACT-11",
+    "IR-SHARD-ARTIFACT-12"
+  ],
+  "current_science_affected": false,
+  "required_action": "Use a separately deduplicated real tracker for the full-shard internal findings, retain original canary scope and old immutable observations, and append a correction/successor rather than rewrite native saved review history. Update active report/issue references once actual publication is verified.",
+  "limitation": "Worker publication is still in progress; this is a confirmed misattribution at this exact head, not evidence of a final missing publication action. Root decides filing/deduplication and worker remediation."
+}

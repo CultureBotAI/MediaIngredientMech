@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "NS-PROP-431-REGISTRY-PARTONOMY-V2",
+      "case_ids": [
+        "CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658",
+        "CM_NAME:02783a861c0e56af08c3200c5b0d7e38abe217083d6b11fdb2c1a3bfcf623d93",
+        "CM_NAME:e02348fe0ebd141d90ae6def5fe66edd1bfc8e6bdb615f57bdae64f069362e79",
+        "CM_NAME:e8c97b4daa00f2d94ddf163af75ac2c44dc57f5bfa688d5d03ee70271a22c632"
+      ],
+      "kind": "existing_owner",
+      "owner_path": "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+      "new_owner_path": "data/ingredients/mapped/Selenite_tungstate_Solution_See_Medium_No_431.yaml",
+      "description": "Promote source-resolved JCM431 stock to its registry identity; preserve original owner history and aliases, add four raw aliases and complete four-component primary recipe. No mixture-to-solute mapping.",
+      "evidence_ids": [
+        "NS-P-jcm-431",
+        "NS-P-nbrc-1257",
+        "NS-P-nbrc-1321",
+        "NS-L-frozen1921",
+        "NSV2-terms",
+        "NSV2-validation",
+        "NSV2-applicability"
+      ],
+      "before_sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposal-after.yaml",
+        "sha256": "878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806"
+      },
+      "supersedes_proposal": "NS-PROP-431-CLASSIFICATION-ALIASES",
+      "integration_obligations": [
+        "Move exact owner to normalized mapped filename; synchronize aggregate surfaces; preserve all original history and statistics.",
+        "Generate MIM:Selenite_tungstate_Solution_See_Medium_No_431 skos:exactMatch kgmicrobe.ingredient:selenite_tungstate_solution_see_medium_no_431; same slug registry primary, no component broadMatch.",
+        "Independent review, applicable native integration gates, and explicit issue718/history reconciliation remain workflow work; source identity itself is now supported."
+      ],
+      "hold_scope": "No unsupported role/mechanism or component-owner claims approved; existing negative release holds need content-specific successor assessment."
+    }
+  ]
+}

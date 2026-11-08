@@ -1,0 +1,96 @@
+identifier: kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+preferred_term: DSMZ863 sodium carbonate stock
+synonyms:
+- synonym_text: Sodium carbonate solution
+  synonym_type: REJECTED_LABEL
+  source: mediadive.ingredient:797; DSMZ863
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved
+  sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified
+  stock has its own registry identity. Existing CHEBI29377 stock-labelled owner has1751
+  historical membership and mixed dry/buffer aliases; this proposal neither repurposes
+  that owner nor moves its counts/aliases. Raw Sodium carbonate solution requires
+  this exact occurrence context and is retained as non-resolving source text on the
+  new owner. Atmosphere/component correction forMIM1167: DSMZ863 carbonate:106g Na2CO3
+  dissolved in1L degassed water, autoclaved in sealed serum bottles underCO2. This
+  describes the autoclaving atmosphere, without stating CO2 saturation or addition
+  to the liquid. The material ingredient enumeration contains Na2CO3 and degassed
+  water; no numerical final concentration, dissolved gas amount or final speciation
+  is inferred. Preparation atmosphere conditions remain in notes and primary evidence,
+  not material has-part components. Explicit CO2-saturated bicarbonate is a separate
+  preparation and is not altered by this correction.'
+curation_history:
+- timestamp: '2026-11-08T04:34:34.039179+00:00'
+  curator: worker01_add_media_identity
+  action: CREATED
+  changes: Isolated source-bound owner proposal. Original DSMZ863 specifies106g Na2CO3
+    dissolved in1L degassed water, autoclaved sealed underCO2 and supplied at24mL
+    to the receiving medium. This preparation-qualified stock has its own registry
+    identity. Existing CHEBI29377 stock-labelled owner has1751 historical membership
+    and mixed dry/buffer aliases; this proposal neither repurposes that owner nor
+    moves its counts/aliases. Raw Sodium carbonate solution requires this exact occurrence
+    context and is retained as non-resolving source text on the new owner.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:59:57.997457+00:00'
+  curator: worker01_atmosphere_partonomy_correction
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor forMIM1167: remove unsupported Carbon dioxide material
+    component; retain its source-stated autoclave/storage atmosphere as preparation
+    evidence. All other component rows, literal batch quantities, identifiers, synonyms,
+    source applicability and original history are preserved. No maintained edits or
+    release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  ontology_label: DSMZ863 sodium carbonate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf
+    notes: Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved
+      sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified
+      stock has its own registry identity. Existing CHEBI29377 stock-labelled owner
+      has1751 historical membership and mixed dry/buffer aliases; this proposal neither
+      repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution
+      requires this exact occurrence context and is retained as non-resolving source
+      text on the new owner.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '106'
+  concentration_unit: G_PER_L_PREPARATION_WATER
+- component_name: Degassed water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PREPARATION_WATER
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf
+    source_record: Sodium carbonate solution
+    notes: DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved
+      in sealed serum bottles underCO2. This describes the autoclaving atmosphere,
+      without stating CO2 saturation or addition to the liquid. The material ingredient
+      enumeration contains Na2CO3 and degassed water; no numerical final concentration,
+      dissolved gas amount or final speciation is inferred. Complete material input
+      enumeration relative to this primary recipe; gas atmosphere is procedural context,
+      not a material component. All unspecified reagent amounts and source form limitations
+      remain explicit.
+  notes: Complete source-specified material inputs, not final molecular speciation.
+    DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved in sealed
+    serum bottles underCO2. This describes the autoclaving atmosphere, without stating
+    CO2 saturation or addition to the liquid. The material ingredient enumeration
+    contains Na2CO3 and degassed water; no numerical final concentration, dissolved
+    gas amount or final speciation is inferred. UNMAPPED component references preserve
+    literal source ingredient identity without a guessed catalog owner.

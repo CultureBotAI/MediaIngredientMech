@@ -1,0 +1,41 @@
+from pathlib import Path
+import json,yaml,hashlib,datetime,subprocess,copy
+R=Path('reports/all_unmatched_20261107/worker-01');O=R/'shard/root_substances/kg26';C=O/'captures';PY='.temp/all-unmatched-worker-01/shard-venv/bin/python';now=lambda:datetime.datetime.now(datetime.UTC).isoformat().replace('+00:00','Z');sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+manifest=json.loads((C/'uw-dependency-manifest-v2.json').read_text());props=manifest['proposals'];targets=yaml.safe_load((C/'uw-native-targets-v2.yaml').read_text())['targets'];tids=[x['target_id'] for x in targets];t=now()
+paths=[C/'uw-mixes-primary-v1.json',C/'uw-dependency-guard-regression-v2.json',C/'uw-native-strict-v1.tsv',O/'proposals/Na2b4o7_X_10_H2o.yaml',C/'borate175-structure-web-v1.json',C/'borate175-ols-38888-v1.json',Path('MAPPING_SEMANTICS.md'),Path('src/mediaingredientmech/schema/mediaingredientmech.yaml'),Path('src/mediaingredientmech/validation/component_partonomy.py')]+[Path(q['owner_path']) for q in props]
+cmd=[PY,'scripts/record_review.py','inspect','--targets',str(C/'uw-native-targets-v2.yaml')]
+for p in paths:assert p.exists(),p;cmd+=['--input',str(p)]
+r=subprocess.run(cmd,capture_output=True,text=True);assert r.returncode==0,r.stderr;ins=json.loads(r.stdout);(C/'uw-native-inspect-v2.json').write_text(r.stdout)
+e=[]
+def ev(eid,p,kind,loc,summary,reference=None,access=t):e.append(dict(evidence_id=eid,kind=kind,reference=reference or str(p),locator=loc,accessed_at=access,support='supports',summary=summary,snapshot_sha256=sha(p)))
+s=json.loads((C/'uw-mixes-primary-v1.json').read_text());ev('mixes',C/'uw-mixes-primary-v1.json','primary_source','Live full A1598:Q1645; borax rows1612/1627/1643','Each preparation explicitly names sodium tetraborate decahydrate at0.0177g/L; surrounding recipe blocks identify the three exact stock variants.',s['url'],s['retrieved_at'])
+ev('structural',C/'borate175-structure-web-v1.json','primary_source','Gainsford et al.2008 original borax crystal structure, p.1','Na2[B4O5(OH)4]·8H2O is conventional sodium tetraborate decahydrate; matches corrected CHEBI38888 bulk formula.','https://doi.org/10.1107/S1600536808010441')
+ev('ontology',C/'borate175-ols-38888-v1.json','ontology','Complete official CHEBI38888 response','Structural formula and mass support supplied borax form; no global redirect of erroneous131366 entity.')
+ev('regression',C/'uw-dependency-guard-regression-v2.json','validation','Every full-catalog native partonomy violation, no target filtering','Baseline0; borax-only3 orphaned references; borax plus3 corrected dependencies0. Structural rollback reproduces originals exactly.')
+ev('strict',C/'uw-native-strict-v1.tsv','validation','Complete strict output for all3 proposed dependent records','3files,0schema errors.')
+assess=[]
+for i,q in enumerate(props):
+ p=R/q['after_capture']['path'];ev(f'proposal-{i}',p,'record_content','Complete after payload','Only borax component identifier plus bounded evidence/history change.');ev(f'before-{i}',Path(q['owner_path']),'record_content','Complete original owner','All inherited components, quantities, mapping, roles and history read; preserved, not given whole-record approval.')
+ assess.append(dict(assessment_id=f'uw-{i}',area='identity',topic='Source-scoped borax component reference',outcome='supported',summary='The explicit decahydrate reagent reference follows the source-verified corrected borax owner. Quantity0.0177G_PER_L, label, scope and all other claims are unchanged.',target_ids=[tids[i]],evidence_ids=['mixes','structural','ontology','regression',f'proposal-{i}',f'before-{i}']))
+checks=[dict(check_id='identity',name='Primary component identity and structural correspondence',status='passed',required=True,summary='Exact source rows and complete records reviewed; supplied borax identity matches corrected owner.',target_ids=tids,evidence_ids=['mixes','structural','ontology']),dict(check_id='guard',name='Exact rollback and native validated writes',status='passed',required=True,summary='Restoring one component identifier and removing added evidence/history yields each exact original parsed record; original byte hashes unchanged.',target_ids=tids,evidence_ids=['regression']),dict(check_id='catalog',name='Whole-catalog negative and positive native regression',status='passed',required=True,summary='0baseline /3borax-only /0corrected; no parent filter hides introduced errors.',target_ids=tids,evidence_ids=['regression']),dict(check_id='strict',name='Strict closed schema',status='passed',required=True,summary='3files0errors',command=PY+' scripts/validate_strict.py '+' '.join(str(R/q['after_capture']['path']) for q in props)+' --out '+str(C/'uw-native-strict-v1.tsv')+' --workers 1',exit_code=0,target_ids=tids,evidence_ids=['strict'])]
+rid=datetime.datetime.now(datetime.UTC).strftime('%Y%m%dT%H%M%SZ')+'-w01-uw-borax-dependencies-author'
+review=dict(schema_version='1.0.0',review_id=rid,kind='batch',repository='CultureBotAI/MediaIngredientMech',title='Worker01 three UW borax dependency proposals',started_at=t,finished_at=now(),reviewer=dict(identity='/root/issue_context',kind='agent',independence='self_review',independence_basis='Dependency proposal author; separate independent reviewer required.'),skill='curate-yaml-record',completion='completed',verdict='pass_with_limitations',scientific_review=True,summary='Source-verified decahydrate parts follow the corrected CHEBI38888 owner in all3 UW stocks. Native whole-catalog regression and strict schema pass; unrelated inherited formulation and role assertions are not approved.',source=ins['source'],targets=ins['targets'],scope=dict(description='All3 dependent UW records and exact proposed changes, with original primary Mixes rows and structural borax correspondence.',selection='Exact3 maintained MIM_CATALOG references orphaned by KG26-PROP-175-STRUCTURAL-IDENTITY in issue1168.',coverage='full',population_size=3,reviewed_target_ids=tids,exclusions=[dict(target='Unrelated inherited component identities, nutritional roles, full SSSOM publication and entire campaign integration',reason='Scope is the borax component identity and dependent reference integrity only.')]),checks=checks,evidence=e,assessments=assess,findings=[],actions=[],limitations=['Author self-review does not satisfy independent review.','Full original records were read, but unrelated inherited assertions are preserved without renewed scientific approval.','Whole-catalog check covers baseline plus borax and three dependencies; root separately validates all campaign proposals.','No maintained source, aggregate or export was changed.'])
+class NoAlias(yaml.SafeDumper):
+ def ignore_aliases(self,data):return True
+rp=C/'uw-native-author-review-v2.yaml';rp.write_text(yaml.dump(review,Dumper=NoAlias,sort_keys=False,allow_unicode=True));logs=[]
+for cmd in [[PY,'scripts/record_review.py','validate',str(rp)],[PY,'scripts/record_review.py','save','--content',str(rp)]]:
+ r=subprocess.run(cmd,capture_output=True,text=True);logs.append(dict(command=cmd,exit_code=r.returncode,stdout=r.stdout,stderr=r.stderr));print(r.stdout,r.stderr);assert r.returncode==0
+(C/'uw-native-save-log-v2.json').write_text(json.dumps(logs,indent=2)+'\n')
+for n in ['decisions','evidence','proposals']:
+ p=O/(n+'.fragment.json');a=json.loads(p.read_text())
+ if n=='evidence':
+  for x in a['evidence']:
+   if x.get('kind')=='current_owner':x['kind']='local_validation'
+  a['evidence'].append(dict(evidence_id='KG26-UW-NATIVE-AUTHOR-V1',kind='native_record_review',capture=dict(root='artifact',path=str(rp.relative_to(R)),sha256=sha(rp)),locator='Immutable native author review of all three dependent proposals',supports_or_contradicts='Scoped source identity, guarded diff, full-catalog regression and strict schema. Independent review required.',url=None,accessed_at=now(),case_ids=props[0]['case_ids']))
+ elif n=='decisions':
+  next(x for x in a['decisions'] if x['allocation_index']==175)['evidence_ids'].append('KG26-UW-NATIVE-AUTHOR-V1')
+ else:
+  for x in a['proposals']:
+   if x['proposal_id'] in [q['proposal_id'] for q in props]:x['evidence_ids'].append('KG26-UW-NATIVE-AUTHOR-V1')
+ p.write_text(json.dumps(a,indent=2,ensure_ascii=False)+'\n')
+print(rid)

@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "704",
+    "--repo",
+    "CultureBotAI/MediaIngredientMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:10.160516+00:00",
+  "completed_at": "2026-11-08T04:18:10.544979+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Three findings from reviewers on #699 that need a ruling rather than a rule, filed together because each is small.\n\n**1. `Na2-citrate` is an `EXACT_SYNONYM` on the Trisodium citrate record.** By nomenclature Na2-citrate is *disodium hydrogen* citrate, a different salt from Na3. #699's test cannot see it: that test fires when ChEBI assigns the name to another term, and this ChEBI build has no disodium citrate term at all. The 2026-04-19 `audit_mim_merge` absorbed `Na2-citrate.yaml` *and* `Citric_Acid_2.yaml` / `Citric_Acid_3.yaml` into the trisodium record — so the merge itself conflated an acid and two salts, and summed their occurrence counts. #699 retires `Citric Acid` there; whether recipe rows whose raw label is \"Citric Acid\" or \"Na2-citrate\" still count toward this record's 182 occurrences was not checked.\n\n**2. The Tricine record maps to a structureless grouping class.** `Tricine.yaml` → `CHEBI:46760 tricine`, which in this build has a label and nothing else: no formula, no InChIKey, no definition. Its children are `CHEBI:39063` (the neutral form, which owns the structure and the systematic names) and `CHEBI:46759` (the zwitterion). Section 3 asks for the most specific stable identifier; CHEBI:39063 looks like it, and the three tricine names #699 retired from *Lithocholic acid* would be legitimate synonyms there. The record has CAS 5704-04-1 and 44 occurrences.\n\n**3. Two tracked review ledgers still list the cadmium names against calcium nitrate.** `mappings/ingredient_mappings_synonym_enrich_review.tsv` (line 98, `ALREADY_REPRESENTED`) and `mappings/ingredient_mappings_oak_ols_review.tsv` (line 441, verdict `SYNONYM_ENRICH`). They are historical artifacts and probably how the names got in. The backfill is safe — it treats a `REJECTED_LABEL` entry as already present — but a re-run of *that enrichment* reading these ledgers could re-propose them. Either regenerate the ledgers or have the enrichment honour `REJECTED_LABEL`.\n\nSmaller, same records: several carry a stale first `evidence` entry (`DATABASE_MATCH`, \"quality=DIRECT_MATCH\") that was produced for the original *wrong* mapping and now sits under the corrected `ontology_id`, reading as database support for a mapping it never supported.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01BP6MDZgidgzS79c75Ykhac",
+    "closedAt": "2026-09-24T09:02:06Z",
+    "comments": [],
+    "number": 704,
+    "state": "CLOSED",
+    "title": "Curator calls surfaced by the #699 review: Na2-citrate on trisodium citrate, Tricine on a grouping class, ledgers that can re-propose retired names",
+    "updatedAt": "2026-09-24T09:02:06Z",
+    "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/704"
+  }
+}

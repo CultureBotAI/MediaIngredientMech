@@ -1,0 +1,170 @@
+{
+  "reviewer": "/root/step7d_science_c",
+  "created_at": "2026-11-08T04:54:39.537390+00:00",
+  "state": "provisional frozen payload; no final-head or release approval",
+  "frozen_proposals_sha256": "eb456ecef3f68b587a2f0281336f88b33679eb8d65a38f842661457ec05866f0",
+  "no_maintained_changes": true,
+  "finding_id": "W01-V2-DUPLICATE-PREPARATIONS",
+  "severity": "medium",
+  "title": "Reconcile two cross-source duplicate stock-owner proposals before integration",
+  "peer_review": {
+    "path": "peer-stock-review/duplicate-addendum-v1/comparison.json",
+    "sha256": "1efe59deafe86709301536500ac9a885ab9b2d793144591c1b3ab8c92a573a26",
+    "author": "/root/next23_context"
+  },
+  "affected_proposals": [
+    {
+      "proposal_id": "NSC-PROP-NBRC_1257_Bicarbonate_Solution",
+      "case_ids": [
+        "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a"
+      ],
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/NBRC_1257_Bicarbonate_Solution.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml",
+        "sha256": "27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8"
+      },
+      "description": "Original batch: NaHCO3 8.4 g and water 100 mL, saturated with CO2 and autoclaved under CO2. Source calls it 1.0 M. CO2 amount is variable saturation, not a guessed numerical amount. Frozen nested 8.4 G_PER_L is a denominator error, not inherited here.",
+      "evidence_ids": [
+        "NS-S-000",
+        "NS-L-DOSES",
+        "NS-P-nbrc-1257",
+        "NSC-OLS-NBRC_1257_Bicarbonate_Solution",
+        "NSC-FAMILY-VALIDATION",
+        "NSC-FAMILY-SEARCH",
+        "NSC-FAMILY-APPLICABILITY",
+        "NSV2-terms",
+        "NSV2-components",
+        "NSC-NATIVE"
+      ],
+      "applicable_occurrence_ids": [
+        "CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78"
+      ],
+      "scope": "Exact source formulation and selected source occurrences only; generic raw alias requires original recipe context.",
+      "integration_obligations": [
+        "Own-identifier identity row MIM:NBRC_1257_Bicarbonate_Solution skos:exactMatch kgmicrobe.ingredient:nbrc_1257_bicarbonate_solution; no broadMatch to a component.",
+        "Synchronize maintained surfaces and validate exact proposed partonomy against integrated owners; no implicit whole-record release approval."
+      ]
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1257_Sulfide_Solution",
+      "case_ids": [
+        "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+      ],
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/NBRC_1257_Sulfide_Solution.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml",
+        "sha256": "d4fbaffcfa77390358456d30b6a8e78aeaa1a18b3513f039c285029baffc8922"
+      },
+      "description": "Source batch: Na2S·9H2O12g and water50mL, designated1.0M, filter sterilized and stored underN2. 240g/L is explicit12g/0.05L nominal recipe-basis conversion; frozen12G_PER_L is rejected. Receiving dose1.5mL.",
+      "evidence_ids": [
+        "NS-S-000",
+        "NS-L-DOSES",
+        "NS-P-nbrc-1257",
+        "NSC-OLS-NBRC_1257_Sulfide_Solution",
+        "NSC-FAMILY-VALIDATION",
+        "NSC-FAMILY-SEARCH",
+        "NSC-FAMILY-APPLICABILITY",
+        "NSV2-terms",
+        "NSV2-components",
+        "NSC-NATIVE"
+      ],
+      "applicable_occurrence_ids": [
+        "CM_OCC:5363a3ab2202806c37b285d87d656a7172751c8fe3242e5823133ce37f65d297"
+      ],
+      "scope": "Exact source formulation and selected source occurrences only; generic raw alias requires original recipe context.",
+      "integration_obligations": [
+        "Own-identifier identity row MIM:NBRC_1257_Sulfide_Solution skos:exactMatch kgmicrobe.ingredient:nbrc_1257_sulfide_solution; no broadMatch to a component.",
+        "Synchronize maintained surfaces and validate exact proposed partonomy against integrated owners; no implicit whole-record release approval."
+      ]
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3"
+      ],
+      "description": "This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity.",
+      "evidence_ids": [
+        "CS-106-O01",
+        "CS-CURRENT-STOCK-CANDIDATES",
+        "CS-P-NBRC-1321",
+        "CS-broad-owner-candidate-search",
+        "CS-exact-name-owner-searches",
+        "CS-COMP-stock-proposal-guards-v1",
+        "CS-COMP-NATIVE-STOCK-V1"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC1321_CO2_Bicarbonate_Stock.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock.yaml",
+        "sha256": "62b148b39cfdc0a93cb058c83f4266a35693b1267cf4a63f1b78e4aa13cb7e2d"
+      },
+      "identity_predicate_consequence": "Exactregistryidentityforthiswhole source-qualifiedstock. Noexactsolutemappingandnoglobalresolutionofbarecontextlabels.",
+      "integration_requirements": "Coordinator mustapplyafterindependentreviewwithsource-occurrenceassignment, then synchronizeallmaintainedsurfacesandSSSOM/nativepublicationchecks. Proposed registry doesnotauthorizeunqualifiedglobalaliaslookup.",
+      "applied": false
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_SULFIDE_STOCK",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:be907c95d1757e8248331771aea41181491ad29a1bd5b7a09850ef8e31a4a00a"
+      ],
+      "description": "Footnote*******states24gNa2S·9H2O and100mLdistilledwater,filtersterilizedandstoredunderN2; sourcecallsit1M. Preservewateraddedbasisandnominalmolaritywithoutasserting24gperfinal100mL. Receivingdoseis1.5mL; different5%andneutralizedsulfidestocksremainseparate.",
+      "evidence_ids": [
+        "CS-113-O01",
+        "CS-P-NBRC-1321",
+        "CS-broad-owner-candidate-search",
+        "CS-exact-name-owner-searches",
+        "CS-COMP-stock-proposal-guards-v1",
+        "CS-COMP-NATIVE-STOCK-V1"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC1321_Sulfide_Stock.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock.yaml",
+        "sha256": "352593f699f121e5c8feb3b66529ac2206afcd11b70ba41ddc66a6ca74ad3817"
+      },
+      "identity_predicate_consequence": "Exactregistryidentityforthiswhole source-qualifiedstock. Noexactsolutemappingandnoglobalresolutionofbarecontextlabels.",
+      "integration_requirements": "Coordinator mustapplyafterindependentreviewwithsource-occurrenceassignment, then synchronizeallmaintainedsurfacesandSSSOM/nativepublicationchecks. Proposed registry doesnotauthorizeunqualifiedglobalaliaslookup.",
+      "applied": false
+    }
+  ],
+  "confirmed": [
+    {
+      "pair": [
+        1,
+        40
+      ],
+      "basis": "Both primary NBRC1257 and1321 prescribe8.4gNaHCO3 plus100mL distilled water,CO2 saturation,sealed CO2 bottles and autoclaving. Different source numbers add no material distinction. Preserve both source cases/occurrences and raw labels; do not equate this to generic84g/L or assert a final100mL volume."
+    },
+    {
+      "pair": [
+        15,
+        41
+      ],
+      "basis": "NBRC1257 prescribes12g sodium sulfide nonahydrate plus50mL distilled water;1321 prescribes24g plus100mL. Both call it1M,filter sterilize and store underN2. Batch scale is exactly2x,with no source-supported preparation difference. Preserve original batch sizes and1.5mL receiving doses; do not equate it to neutralized or5% sulfide."
+    }
+  ],
+  "known_prior_worker_items": {
+    "same_source_pairs": [
+      [
+        16,
+        37
+      ],
+      [
+        18,
+        35
+      ]
+    ],
+    "status": "already reported pending by worker; included only for cross-lane reconciliation, not a new duplicate issue"
+  },
+  "required_fix": "Choose one proposal per scientifically identical preparation through author/coordinator reconciliation, binding both source cases and all occurrence IDs. No reviewer chooses a preferred path/ID; no maintained-owner merge is authorized. Apply the established water-volume and non-resolving-context-label rules to the retained payload. Re-review the final proposal set."
+}

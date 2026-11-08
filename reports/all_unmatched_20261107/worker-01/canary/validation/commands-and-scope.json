@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-08T03:50:11.310254+00:00",
+  "python": "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+  "actual_runs": [
+    {
+      "command": [
+        "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+        ".temp/all-unmatched-worker-01/initialize.py"
+      ],
+      "exit_code": 0,
+      "result": "Baseline HEAD, branch, shard, extracted case, exact raw compound record verified; acceptance/protected baseline written."
+    },
+    {
+      "command": [
+        "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+        ".temp/all-unmatched-worker-01/validate.py",
+        "initial"
+      ],
+      "exit_code": 1,
+      "result": "Zero regular-file mismatches; wrapper falsely considered pre-existing tracked .agents/skills directory symlink new. No structural auditor run in this failed invocation."
+    },
+    {
+      "command": [
+        "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+        ".temp/all-unmatched-worker-01/validate.py",
+        "v1"
+      ],
+      "exit_code": 0,
+      "result": "All regular hashes and pre-existing directory symlink match; structural auditor passes singleton canary, review pending."
+    },
+    {
+      "command": [
+        "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+        ".temp/all-unmatched-worker-01/validate.py",
+        "pre-review"
+      ],
+      "exit_code": 0,
+      "result": "Same preservation and structural checks pass; staged authored-artifact whitespace check passes. Immutable capture bytes excluded from whitespace normalization."
+    },
+    {
+      "command": [
+        "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+        ".temp/all-unmatched-worker-01/negative-controls.py"
+      ],
+      "exit_code": 0,
+      "result": "8 deliberately invalid private decision copies rejected by unchanged auditor; guards only, not scientific validation."
+    }
+  ],
+  "iteration_note": "First negative-control runner stopped on too-specific expected error text after correct rejection; expected strings were corrected to actual auditor messages, no auditor or gate logic changed. Initial uv interpreter discovery could not open shared cache; worktree-local UV_CACHE_DIR allowed read-only discovery. No environment installed or shared environment altered.",
+  "unrun_native_gates": "See no-change-receipt.json: source-only route/data generation and data validation not applicable, not counted as passing. Coordinator synthetic pytest tests copied as contract provenance, not claimed executed.",
+  "private_helper_hashes": {
+    ".temp/all-unmatched-worker-01/initialize.py": "15267fdc27d2c9054bf0178638f6b19ee63537929416c62061b715124975755f",
+    ".temp/all-unmatched-worker-01/validate.py": "e93e745285201647afdac1eabd8faec41ccf54cf3d3d5491d2f9e5d868bc08e0",
+    ".temp/all-unmatched-worker-01/negative-controls.py": "81a2310cdf2441506a91de89bc5ca08923e839a2d8a353c240a30ae1a20c9927"
+  }
+}

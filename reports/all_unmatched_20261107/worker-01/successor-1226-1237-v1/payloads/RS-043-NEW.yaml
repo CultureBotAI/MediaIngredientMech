@@ -1,0 +1,43 @@
+identifier: CHEBI:16971
+preferred_term: benzene-1,2,4-triol
+ontology_mapping:
+  ontology_id: CHEBI:16971
+  ontology_label: benzene-1,2,4-triol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/backend/api/public/compound/16971/
+    notes: Official ChEBI identity, substitution pattern and source spelling checked
+      for the frozen CultureMech case; source recipe does not establish biological
+      roles.
+synonyms:
+- synonym_text: 1,2,4-trihydroxybenzene
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen KOMODO799 replacement case CM_NAME:3f823ade49b74b6f507c41f0b06f1129ff984b06bdc7250656de9fceebf1914d
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+notes: Isolated worker01 proposed owner. No experimental growth, nutritional-role
+  or mechanism assertion is made. Coordinator must reconcile other shards and review
+  complete published payload before integration/release.
+curation_history:
+- timestamp: '2026-11-08T04:15:49.074743+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create minimal benzene-1,2,4-triol identity with exact 1,2,4-trihydroxybenzene
+    source alias and official ChEBI grounding; no roles inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.969456+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

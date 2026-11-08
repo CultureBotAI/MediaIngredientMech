@@ -1,0 +1,489 @@
+{
+  "reviewed_at": "2026-11-08T04:44:47.505386+00:00",
+  "reviewer": "/root/skeptical_review",
+  "finding_id": "IR-SHARD-ARTIFACT-9",
+  "severity": "major",
+  "status": "open_pending_corrected_payloads_and_native_rereview",
+  "description": "Context-only generic source labels are stored as resolving RAW_TEXT synonyms. Native synonym policy ignores source/notes context and exposes the labels globally. Two distinct Solution A* stocks and partial Se/W source scope demonstrate actual identity-boundary consequences.",
+  "native_reproduction": {
+    "command": "PYTHONPATH=src .temp/all-unmatched-worker-01/shard-venv/bin/python3.13 importing mediaingredientmech.synonym_policy.is_resolving_synonym on each actual proposed synonym",
+    "function_file": "src/mediaingredientmech/synonym_policy.py",
+    "function_sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+    "results": [
+      {
+        "proposal": "NSC-PROP-JCM_1474_Solution_A",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml",
+        "sha256": "070f11e282e6bde44c155ad3043c344b5f82df6809e8d3db76105d5494a658f6",
+        "synonyms": [
+          {
+            "synonym_text": "Solution A (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1474",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_1257_Bicarbonate_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml",
+        "sha256": "27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8",
+        "synonyms": [
+          {
+            "synonym_text": "Bicarbonate solution***",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1257",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_915_Modified_Wolfe_Mineral_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml",
+        "sha256": "9be21e0e62c06b4e4ffce7ed7a67d0c8c142ad3883289e7a3e9dbc7b0237414a",
+        "synonyms": [
+          {
+            "synonym_text": "Modified Wolfe\u2019s mineral solution (see Medium No. 915 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1430, jcm.grmd:1431, jcm.grmd:1479",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-CCAP-PE-STOCK-V3",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml",
+        "sha256": "be93933219ca5f8914b6b8cf85483679547dcc5d27806b149f3320047ad22152",
+        "synonyms": [
+          {
+            "synonym_text": "Salt solution stock",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: CultureMech:000110",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_628_Modified_Wolfe_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml",
+        "sha256": "e85b1d6e1b3925405cfba5edce4a191e9692e6ae5a00e043aa64336c8d7d8365",
+        "synonyms": [
+          {
+            "synonym_text": "Modified Wolfe's solution (see Medium No. 628 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1347",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_265_Wolfe_Mineral_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml",
+        "sha256": "0bc15ad609fb39f33c9f1b7ad5dbac5fa06b9684390734957a6f1258852aaeec",
+        "synonyms": [
+          {
+            "synonym_text": "Wolfe's mineral solution (see Medium No. 265 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1362, jcm.grmd:1412, jcm.grmd:1429",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "Wolfe\u2019s mineral solution (see Medium No. 265 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1362, jcm.grmd:1412, jcm.grmd:1429",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_1353_Mineral_Solution_A",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml",
+        "sha256": "aef67bb65754d17d30728598c10bf81460effbc7d9fcb123203a66bff93e59ba",
+        "synonyms": [
+          {
+            "synonym_text": "Mineral solution A (see Medium No. 1353 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1353, jcm.grmd:1366",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "Mineral solution A (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1353, jcm.grmd:1366",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_1020_Se_W_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml",
+        "sha256": "2f1ac6a1bcf12e6f0dd6010d44bc8fd9a32dc189a890ace25fa55557706595af",
+        "synonyms": [
+          {
+            "synonym_text": "Se/W solution***",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1020",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_1130_Mineral_Solution_II",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml",
+        "sha256": "365dbe14ec365d2d8987cff143dae15d10a3e1aa35b764d276360a3c0f5eab01",
+        "synonyms": [
+          {
+            "synonym_text": "Mineral solution II (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1385",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_187_FeCl2_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml",
+        "sha256": "c011573a720fa312202cc1db271b5eb36f40d3bbd422b1854d6c5b076723c82e",
+        "synonyms": [
+          {
+            "synonym_text": "FeCl2 solution (see Medium No. 187 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1351, jcm.grmd:1365, jcm.grmd:1388, jcm.grmd:1389, jcm.grmd:1406, jcm.grmd:1423, jcm.grmd:1424, jcm.grmd:1425, jcm.grmd:1456, jcm.grmd:1468, jcm.grmd:1475",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_323_Solution_A",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml",
+        "sha256": "52ddbceee46b2f27732571109c399a9415b3389d5594d734f270cdec950efe8f",
+        "synonyms": [
+          {
+            "synonym_text": "Solution A*",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:323",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_971_Solution_A",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml",
+        "sha256": "6282cfcc8a31398ee542c833563665c24bdf898b2b2ceddf6cd3e32ce4303e60",
+        "synonyms": [
+          {
+            "synonym_text": "Solution A*",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:971",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_989_K_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml",
+        "sha256": "0436902d616dc92e98d05f149ccd156b032f1e0b62b81f9ebcf81dcdb6740bf6",
+        "synonyms": [
+          {
+            "synonym_text": "K solution**",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:989",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_1353_Mineral_Solution_B",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml",
+        "sha256": "c5d329a8d87532c65f6d3e962d95b0b62512696ba6560e65cad6aed14671caa2",
+        "synonyms": [
+          {
+            "synonym_text": "Mineral solution B* (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1353",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_317_Se_W_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml",
+        "sha256": "04ba647c6ccc5a160ecfa4fee0433d20a2d6e2fce09e51ac598a2c27cb6e4d37",
+        "synonyms": [
+          {
+            "synonym_text": "Se/W solution (see Medium No. 317 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1425",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_1257_Sulfide_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml",
+        "sha256": "d4fbaffcfa77390358456d30b6a8e78aeaa1a18b3513f039c285029baffc8922",
+        "synonyms": [
+          {
+            "synonym_text": "Sulfide solution****",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1257",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_943_Metal_Salt_44",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml",
+        "sha256": "05b5ca36872439f8bf24e0fe077f5fe175d4880d96d881d924744a1b5a006aaf",
+        "synonyms": [
+          {
+            "synonym_text": "Metal salt solution 44",
+            "synonym_type": "RAW_TEXT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943; nested source preparation used by modified Hutner solution",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_943_Modified_Hutner_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml",
+        "sha256": "a52153cbd1962c292f5dcebd92d36e02fcc08232a5342e84ce663d7ccb04eeca",
+        "synonyms": [
+          {
+            "synonym_text": "Modified Hutner's solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:943",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_1339_Phenanthrene_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml",
+        "sha256": "5b40b69031ff9b73f4a259f979d86f283cca9584890dce9c5d865824a653db06",
+        "synonyms": [
+          {
+            "synonym_text": "Phenanthrene solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: TOGO:M2041",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-MediaDive_3774_VFA_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml",
+        "sha256": "20d9e794f9786d16188211a9bf9a7c2bb3e150d9e63eca194d65907103b245ad",
+        "synonyms": [
+          {
+            "synonym_text": "VFA solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: CultureMech:013996",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_989_M_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml",
+        "sha256": "45183d618f04b39f1d00553dfd63f7719c096b66529cefcfe7fae8923dbc76fa",
+        "synonyms": [
+          {
+            "synonym_text": "M solution***",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:989",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-MediaDive_607_Mineral_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml",
+        "sha256": "835b1b41a6377070fe9267e13b8e0813ecea56714ec360a998d3deb11b058d17",
+        "synonyms": [
+          {
+            "synonym_text": "Mineral solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: CultureMech:013996, CultureMech:014786",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml",
+        "sha256": "c4883a3f5e02cd837ee8c99fc9138f82d2ad9941943c2977bdc6cab0acb406fe",
+        "synonyms": [
+          {
+            "synonym_text": "Modified Wolin's mineral solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: CultureMech:012076",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_989_C_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml",
+        "sha256": "f960a7fc1de689f346aa1955fb1e2d5d7728f7efcc2de6104e38599942ad28e8",
+        "synonyms": [
+          {
+            "synonym_text": "C solution****",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:989",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_1339_10xM9_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml",
+        "sha256": "0746c92c69d9e2a8242d1fd106b67bb8a6aefc7648a92fc2e5aaf964af595dde",
+        "synonyms": [
+          {
+            "synonym_text": "10xM9 solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: TOGO:M2041, nbrc.medium:1339",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "10xM9 solution**",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: TOGO:M2041, nbrc.medium:1339",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_852_Se_W_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml",
+        "sha256": "f8b59772d07337aef1cdff2fa7df453d024d9bd12932d4f3cfeebe8988c8983c",
+        "synonyms": [
+          {
+            "synonym_text": "Se/W solution (Medium No.852)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: mediadive.medium:J1188",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_521_Reducing_Agent_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml",
+        "sha256": "44092c4d5203001b76e9839a92fb855d32983e5dc7d959fd8e07c088f731824f",
+        "synonyms": [
+          {
+            "synonym_text": "Reducing agent solution (see Medium No. 521 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1344",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_1130_Mineral_Solution_I",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml",
+        "sha256": "b07fde256a692290585e4e9e1a599a183169ce6b05042ee2385affd2bc0aafa9",
+        "synonyms": [
+          {
+            "synonym_text": "Mineral solution I (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1385",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_1474_Solution_B",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml",
+        "sha256": "baf8eeb9b415749681ec66e5cd1b05a124a8aec8c5fc6a384f742a9ffefd6949",
+        "synonyms": [
+          {
+            "synonym_text": "Solution B (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1474",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-JCM_1365_Selenite_Tungustate_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml",
+        "sha256": "88e368198166e242c72401d620d7bc381b1db0f6afc3e539fb0f5391c8a289a1",
+        "synonyms": [
+          {
+            "synonym_text": "Selenite-tungustate solution (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1365",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_971_Solution_B",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml",
+        "sha256": "8bfb09ad4e6c7d0d19da72cc116bec2d920586a3107b50100fa8a46a8dac38bf",
+        "synonyms": [
+          {
+            "synonym_text": "Solution B**",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:971",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NSC-PROP-NBRC_1020_824_Resazurin_Solution",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml",
+        "sha256": "34dc5f26d7369080768f32e08fab2b4850cb93e641590cc9a1a1b102a1c0d3cf",
+        "synonyms": [
+          {
+            "synonym_text": "Resazurin solution****",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1020, nbrc.medium:824",
+            "native_resolving": true
+          }
+        ]
+      },
+      {
+        "proposal": "NS-PROP-431-REGISTRY-PARTONOMY-V2",
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-after.yaml",
+        "sha256": "878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806",
+        "synonyms": [
+          {
+            "synonym_text": "Selenite-tungstate solution see Medium No. 431",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "Selenite-tungstate solution**",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; nbrc.medium:1257, nbrc.medium:1321",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "Selenite tungstate solution (see Medium No. 431 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; jcm.grmd:1400, jcm.grmd:1468",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "Selenite-tungstate solution* (see Medium No. 431 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; jcm.grmd:1364",
+            "native_resolving": true
+          },
+          {
+            "synonym_text": "Selenite-tungstate solution (see Medium No. 431 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech frozen 20261107; jcm.grmd:1363, jcm.grmd:1388, jcm.grmd:1389, jcm.grmd:1406, jcm.grmd:1423, jcm.grmd:1424",
+            "native_resolving": true
+          }
+        ]
+      }
+    ]
+  },
+  "reviewer_self_correction": "Independent431v2 saved review 20261108T043713Z-w01-independent-selenite431-v2 missed this native projection for unqualified Selenite-tungstate solution**. Its positive composition assessment remains evidence; its alias safety conclusion is superseded by this finding and requires a new exact successor review. Original review remains immutable.",
+  "required_correction": "Preserve all raw labels and provenance; make unsupported global/context-only labels non-resolving through native representation. Retain actual qualified identity aliases only where source evidence supports them. Re-run native resolver/publication projections on all final proposal bytes; do not rely on notes as executable restrictions.",
+  "scope": "Isolated proposals only; no maintained owner mutations or issue closure."
+}

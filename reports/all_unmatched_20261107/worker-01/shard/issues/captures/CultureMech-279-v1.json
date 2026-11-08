@@ -1,0 +1,42 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "279",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:11.666818+00:00",
+  "completed_at": "2026-11-08T04:18:12.071989+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Found by the element-mismatch detector added for #276/#278.\n\nThree groundings replace selenium or silicon with **sulfur** — the same substitution three\ntimes, which makes it a systematic cause rather than three typos:\n\n| ingredient | grounded to | which is | should be |\n|---|---|---|---|\n| `H2SeO3` | CHEBI:48854 | **sulfurous** acid | selenous acid (CHEBI:26642) |\n| `Na2SeO4 x 10 H2O` | CHEBI:32586 | sodium **sulfate** decahydrate | sodium selenate decahydrate |\n| `Na2SiO3 x 5 H2O` | CHEBI:86477 | sodium **sulfite** | sodium metasilicate pentahydrate |\n\nThe `H2SeO3` case is fixed (2 rows). **The other two cannot be**: ChEBI has no term for\n`sodium selenate decahydrate` or `sodium metasilicate pentahydrate`. Regrounding them to a\nnear-miss would repeat the error in a new place.\n\nThey are recorded in `tests/test_name_term_elements.py` as `KNOWN_WRONG_PENDING_279`,\ndeliberately separate from the `KNOWN_NO_SALT_TERM` allowlist above it. That distinction\nmatters: one set is \"ChEBI lacks the salt, the free acid is the best available answer\", the\nother is \"this is wrong and we have not fixed it\". A test asserts the wrong-set stays at\nexactly 2, so it cannot quietly absorb new defects.\n\nOptions:\n1. **Unground them** — set no `term`, as was done for `Infusion from Potatoes` in #266.\n   Honestly unmapped beats confidently wrong, and this is what I would do absent a better\n   target.\n2. **Ground to the parent** — `selenate` / `silicate` without the hydrate and cation. Less\n   wrong, still imprecise.\n3. **Request the terms from ChEBI.** Correct in the long run and slow.\n\nWorth chasing the shared cause too. Three independent Se/Si → S substitutions suggests\nsomething upstream — a fuzzy name match scoring `selenate`/`silicate` against `sulfate`, or\na lookup keyed on a normalized string where the distinguishing letters were already lost\n(compare the subscript-stripping in #276, where `Na WO .2H O` lost its digits). Whatever\nproduced these probably produced others that happen to land on a plausible compound and so\nare invisible to this detector.",
+    "closedAt": "2026-08-22T08:02:59Z",
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABQJ9Nmg",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Fixed in #316 (`0aebc10`), merged.\n\n**This issue's premise no longer holds.** It recorded that ChEBI has no term for either correct compound, so they could not be regrounded — only ungrounded, sent to the parent, or requested upstream. ChEBI has both:\n\n| ingredient | was | is now |\n|---|---|---|\n| `Na2SeO4 x 10 H2O` | CHEBI:32586 sodium **sulfate** decahydrate | **CHEBI:77775** sodium selenate |\n| `Na2SiO3 x 5 H2O` | CHEBI:86477 sodium **sulfite** | **CHEBI:60720** sodium silicate |\n\nBoth are the anhydrous parents — option 2 in this issue — which is the same tolerance `KNOWN_NO_SALT_TERM` already grants elsewhere (\"ChEBI lacks the salt, the parent is the best available answer\"). CHEBI:77775 was already the target of the existing `CHEBI:32149` selenate rule in `migrate_chebi_regrounding.py`, so this matches precedent rather than setting one. The element-mismatch gate accepts both, so no allowlist entry was needed.\n\n**Only 3 rows were wrong, not 45.** Each id is also used correctly, so the rules are label-conditional: CHEBI:32586 legitimately carries `Na2SO4 x 10 H2O` (5 rows) and CHEBI:86477 carries `Na2SO3` / `Sodium sulfite` (26). Verified by id counts before and after — only the Se/Si rows moved.\n\n`KNOWN_WRONG_PENDING_279` is **deleted rather than emptied**, which is what its own docstring asked for. Its coverage is replaced by `test_the_se_si_collapse_is_gone_from_the_corpus`, which asserts the three wrong ids are absent from **both** record roots — so an import cannot quietly reintroduce them.\n\nOn the shared cause this issue asked about: the same collapse put `H2SeO3` on sulfurous acid and was already fixed, and `migrate_chebi_regrounding.py` already carried a selenate rule. Whatever produced them is upstream of this repo; the detector added for #276/#278 is what would catch a recurrence, and it now runs clean.",
+        "createdAt": "2026-08-22T08:02:58Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/279#issuecomment-5379149210",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 279,
+    "state": "CLOSED",
+    "title": "Selenate read as sulfate, silicate as sulfite: Se/Si groundings collapsing onto their sulfur analogues",
+    "updatedAt": "2026-08-22T08:02:59Z",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/279"
+  }
+}

@@ -1,0 +1,92 @@
+identifier: kgmicrobe.ingredient:nbrc_943_modified_hutner_solution
+preferred_term: NBRC 943 modified Hutner solution
+synonyms:
+- synonym_text: Modified Hutner's solution
+  synonym_type: RAW_TEXT
+  source: 'CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:943'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_943_modified_hutner_solution
+  ontology_label: NBRC 943 modified Hutner solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: '7.3'
+  concentration_unit: G_PER_L
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '29.7'
+  concentration_unit: G_PER_L
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.34'
+  concentration_unit: G_PER_L
+- component_name: (NH4)6Mo7O24·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_L
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99'
+  concentration_unit: MG_PER_L
+- component_name: NBRC 943 Metal salt 44
+  reference_scope: MIM_CATALOG
+  component_id: kgmicrobe.ingredient:nbrc_943_metal_salt_44
+  concentration_value: '50'
+  concentration_unit: ML_PER_L
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    source_record: NBRC 943 modified Hutner solution; complete named stock table and
+      preparation notes
+    notes: Source total preparation1L includes50mL Metal salt44, which is separately
+      proposed with its entire printed composition. NTA neutralized using7.3gKOH to
+      pH6.6–6.8. Solvent amount is not forced to1L in addition to the50mL nested stock.
+      Printed molybdate dihydrate retained without substituting tetrahydrate.
+  notes: Complete printed constituent enumeration, including unquantified titrants/solvent
+    where stated. Quantities use the explicitly described nominal preparation basis;
+    not a measurement of final volume or post-dissolution species. UNMAPPED constituent
+    scope preserves literal source identity without guessing a chemical or hydration-specific
+    catalog owner. Known quartet constituent identities use independently verified
+    official ontology/MIM references; this does not approve unrelated claims on those
+    component owners.
+notes: 'Source total preparation1L includes50mL Metal salt44, which is separately
+  proposed with its entire printed composition. NTA neutralized using7.3gKOH to pH6.6–6.8.
+  Solvent amount is not forced to1L in addition to the50mL nested stock. Printed molybdate
+  dihydrate retained without substituting tetrahydrate. Raw generic names retain source-specific
+  provenance and must not be resolved globally without original recipe context. The
+  registry record describes this source formulation only. No roles, mechanism, vendor/grade
+  or supported-release approval asserted. No invented occurrence statistics: these
+  scoped input rows are not a corpus census. Selected CultureMech recipes are receiving
+  media, not exact standalone stock formulations; typed whole-recipe equivalence would
+  be false unless separately verified.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.833902+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 116. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true

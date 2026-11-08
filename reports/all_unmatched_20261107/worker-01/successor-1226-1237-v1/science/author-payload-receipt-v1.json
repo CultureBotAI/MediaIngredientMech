@@ -1,0 +1,328 @@
+{
+  "author": "Codex /root/primary_context (worker01)",
+  "created_at_utc": "2026-11-08T07:58:44.153507+00:00",
+  "schema_version": 1,
+  "input_check": {
+    "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/science/input-bindings-and-owned-name-check-v1.json",
+    "sha256": "97a314d431623a42e593dff9895c96a095e3ad5426fb962bd540ca7cb53101ef"
+  },
+  "payloads": [
+    {
+      "proposal_id": "NSV4-PROP-NBRC_1020_Se_W_Solution",
+      "entry_index": 6,
+      "predecessor": {
+        "path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml",
+        "sha256": "235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/payloads/NSV4-PROP-NBRC_1020_Se_W_Solution.yaml",
+        "sha256": "d6a2c6de6bb04cc2c7ea3fc2c97dc1a0227151caa331af1baed4875dfbe8651f"
+      },
+      "native_staged_path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/science/native-staged-v1/NSV4-PROP-NBRC_1020_Se_W_Solution.yaml",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:8f4f818454b45cde5b8fac36155fb028ce405d508d1c62d696f00675a673e89b",
+          "input_sha256": "f95482bf375675e08e0407b3a1d0d31259266de0ebb902a88aac39a0a2aa9ee3",
+          "occurrence_ids": [
+            "CM_OCC:3ca02a4ab3591954534121c836fd35a19da58990c45852d0ea309e271afca84d",
+            "CM_OCC:15405dcb3cbb40949319994fd15e5832143e4a282c7a1c38bb1bed9679f1c812"
+          ],
+          "missing_requirement": "NBRC824 source omits solvent/preparation volume; require that exact missing denominator before assigning its occurrence to quantified stock. NBRC1020 occurrence has a complete separate proposal.",
+          "issue_refs": []
+        }
+      ],
+      "native_validation": "pass",
+      "native_guarded_write": "pass",
+      "exclusive_publication": "O_CREAT|O_EXCL, flushed/fsynced and byte-equal native output",
+      "complete_semantic_leaf_deltas": [
+        {
+          "path": "/component_assertion/evidence/0/notes",
+          "before": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed unhydrated formulas are retained. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+          "after": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed formulas are retained literally; omitted hydration is unresolved, not an anhydrous assignment. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water. The shared nominal amounts and omitted NBRC hydrate do not establish either identical or distinct supplied preparations. Retain both source-bound partial proposals without merging or co-installing them as proved-distinct owners until supplied-form/applicability evidence or an explicitly reviewed common nominal scope resolves the overlap. The water amounts are added-water batch quantities, not instructions to make up a final litre. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration."
+        },
+        {
+          "path": "/component_assertion/notes",
+          "before": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity.",
+          "after": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water. The shared nominal amounts and omitted NBRC hydrate do not establish either identical or distinct supplied preparations. Retain both source-bound partial proposals without merging or co-installing them as proved-distinct owners until supplied-form/applicability evidence or an explicitly reviewed common nominal scope resolves the overlap. The water amounts are added-water batch quantities, not instructions to make up a final litre."
+        },
+        {
+          "path": "/curation_history/2",
+          "before": null,
+          "after": {
+            "timestamp": "2026-11-08T07:58:44.001528+00:00",
+            "curator": "Codex /root/primary_context (worker01)",
+            "action": "CORRECTED_PROPOSAL",
+            "changes": "Correct CHEM-COMP-002 (#1237): replace inferred unhydrated NBRC wording with literal formulas and unresolved supplied hydration; retain NBRC824 missing-denominator hold, literal batch quantities, and merge/co-installation hold against JCM317. Correct 1 individually allowlisted MappingEvidence type(s) to LLM_SUGGESTION under #1226; all other evidence-object fields remain unchanged. Isolated successor only; no maintained owner, merge, or release approval.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        },
+        {
+          "path": "/notes",
+          "before": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed unhydrated formulas are retained. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity.",
+          "after": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed formulas are retained literally; omitted hydration is unresolved, not an anhydrous assignment. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water. The shared nominal amounts and omitted NBRC hydrate do not establish either identical or distinct supplied preparations. Retain both source-bound partial proposals without merging or co-installing them as proved-distinct owners until supplied-form/applicability evidence or an explicitly reviewed common nominal scope resolves the overlap. The water amounts are added-water batch quantities, not instructions to make up a final litre. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity."
+        },
+        {
+          "path": "/ontology_mapping/evidence/0/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_317_Se_W_Solution",
+      "entry_index": 13,
+      "predecessor": {
+        "path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml",
+        "sha256": "1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/payloads/NSV4-PROP-JCM_317_Se_W_Solution.yaml",
+        "sha256": "7d2da1da0d6d56cd8db3bdffbda87c94fdc2457caa693f9506684472bf0f22e2"
+      },
+      "native_staged_path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/science/native-staged-v1/NSV4-PROP-JCM_317_Se_W_Solution.yaml",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:bb437f3399b9bb25eecebdf8961226f0e498c508494f893b21186a8974484bbd",
+          "input_sha256": "f69565813c3c02e5b13de1a2dc97f437531719a816ff02fc1634cdb9d0334d6a",
+          "occurrence_ids": [
+            "CM_OCC:9300dd8c6e6f187114f06672f3a5ea0fb228d6137791214da2e2f1da656d5946"
+          ],
+          "missing_requirement": null,
+          "issue_refs": []
+        }
+      ],
+      "native_validation": "pass",
+      "native_guarded_write": "pass",
+      "exclusive_publication": "O_CREAT|O_EXCL, flushed/fsynced and byte-equal native output",
+      "complete_semantic_leaf_deltas": [
+        {
+          "path": "/component_assertion/evidence/0/notes",
+          "before": "Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852 lower amounts/hydrated selenite, and JCM431 alkaline formula. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+          "after": "The JCM317 dihydrate is explicit; a difference from NBRC1020 is not established by its omitted hydrate qualifier. The previously recorded comparisons with JCM852 lower amounts/hydrated selenite and JCM431 alkaline formula are retained. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water. The shared nominal amounts and omitted NBRC hydrate do not establish either identical or distinct supplied preparations. Retain both source-bound partial proposals without merging or co-installing them as proved-distinct owners until supplied-form/applicability evidence or an explicitly reviewed common nominal scope resolves the overlap. The water amounts are added-water batch quantities, not instructions to make up a final litre. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration."
+        },
+        {
+          "path": "/component_assertion/notes",
+          "before": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity.",
+          "after": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water. The shared nominal amounts and omitted NBRC hydrate do not establish either identical or distinct supplied preparations. Retain both source-bound partial proposals without merging or co-installing them as proved-distinct owners until supplied-form/applicability evidence or an explicitly reviewed common nominal scope resolves the overlap. The water amounts are added-water batch quantities, not instructions to make up a final litre."
+        },
+        {
+          "path": "/curation_history/2",
+          "before": null,
+          "after": {
+            "timestamp": "2026-11-08T07:58:44.128849+00:00",
+            "curator": "Codex /root/primary_context (worker01)",
+            "action": "CORRECTED_PROPOSAL",
+            "changes": "Correct CHEM-COMP-002 (#1237): withdraw unsupported NBRC1020 unhydrated/distinct claim while preserving explicit JCM317 dihydrate, literal batch amounts and other source comparisons; retain unresolved overlap and merge/co-installation hold. Correct 1 individually allowlisted MappingEvidence type(s) to LLM_SUGGESTION under #1226; all other evidence-object fields remain unchanged. Isolated successor only; no maintained owner, merge, or release approval.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        },
+        {
+          "path": "/notes",
+          "before": "Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852 lower amounts/hydrated selenite, and JCM431 alkaline formula. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity.",
+          "after": "The JCM317 dihydrate is explicit; a difference from NBRC1020 is not established by its omitted hydrate qualifier. The previously recorded comparisons with JCM852 lower amounts/hydrated selenite and JCM431 alkaline formula are retained. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water. The shared nominal amounts and omitted NBRC hydrate do not establish either identical or distinct supplied preparations. Retain both source-bound partial proposals without merging or co-installing them as proved-distinct owners until supplied-form/applicability evidence or an explicitly reviewed common nominal scope resolves the overlap. The water amounts are added-water batch quantities, not instructions to make up a final litre. Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions but native resolution must not expose them as global synonyms. The source-qualified preferred term denotes this exact preparation. No unsupported roles, mechanisms, vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal source identity; component grounding is separate from established whole-stock recipe identity."
+        },
+        {
+          "path": "/ontology_mapping/evidence/0/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        }
+      ]
+    },
+    {
+      "proposal_id": "CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK",
+      "entry_index": 35,
+      "predecessor": {
+        "path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/JCM1430_Ferrous_Sulfate_HCl_Stock.yaml",
+        "sha256": "6e0ae3d8ec0984d7e29034b2fd41d3589f26fb7f236bdcc7a829d632837e0c59"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/payloads/CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK.yaml",
+        "sha256": "9ce46ee43a275add8f13d2fcabe353f15829654b6f623cdf4fae26dcf717517a"
+      },
+      "native_staged_path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/science/native-staged-v1/CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK.yaml",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:5d9e2026ac8ea68a5e50d234ffa4d2b73bea306b5a9bb33353d17aeb26f713d0",
+          "input_sha256": "d92005351efd035f4eaa67b872cd41265d2cfadd55ea9194dcfe91c0939e268f",
+          "occurrence_ids": [
+            "CM_OCC:bb1b5df5045f670da059e7f489b1394769d29c0fd7dfa4d6166bbc671a28b794",
+            "CM_OCC:f9adc99d071b88c2754c63f1a71ae5fe75566ec185bc4ef4799f19dae20c3e18"
+          ],
+          "missing_requirement": null,
+          "issue_refs": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1163"
+          ]
+        }
+      ],
+      "native_validation": "pass",
+      "native_guarded_write": "pass",
+      "exclusive_publication": "O_CREAT|O_EXCL, flushed/fsynced and byte-equal native output",
+      "complete_semantic_leaf_deltas": [
+        {
+          "path": "/curation_history/1",
+          "before": null,
+          "after": {
+            "timestamp": "2026-11-08T07:58:44.130515+00:00",
+            "curator": "Codex /root/primary_context (worker01)",
+            "action": "CORRECTED_PROPOSAL",
+            "changes": "Correct CHEM-COMP-006 (#1237): reactivate only the fully qualified 0.01 M FeSO4·7H2O solution (in 0.02 N HCl) name as EXACT_SYNONYM using both primary recipes and the scoped preferred-owner check; preserve the superseded rejected object/source/history in separate immutable audit lineage. Correct 1 individually allowlisted MappingEvidence type(s) to LLM_SUGGESTION under #1226; all other evidence-object fields remain unchanged. Isolated successor only; no maintained owner, merge, or release approval.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        },
+        {
+          "path": "/notes",
+          "before": "JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity. Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.",
+          "after": "JCM1430 and1431 explicitly give0.01MFeSO4·7H2O in0.02NHCl; stock is added3mL aftercoolingto50C. Normality is preserved and no unsupported1Mconversionorfinaldoseconcentration inferred. Exactsourcecarrier defines thisstock withoutclaiming solidFeSO4identity. Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence. MAPPING_SEMANTICS section 3 / CHEM-COMP-006 (#1237): the complete raw label '0.01 M FeSO4·7H2O solution (in 0.02 N HCl)' is an identity-bearing name for this operational stock: it states the ferrous sulfate heptahydrate reagent, 0.01 M strength, and 0.02 N HCl carrier. JCM1430 and JCM1431 print that name and a 3.0 mL receiving dose after cooling to 50 C. Its former blanket REJECTED_LABEL disposition is superseded by EXACT_SYNONYM; the exact old rejection text, source and prior history are retained in science/qualifier-negative-audit-lineage-v1.json and the immutable predecessor. No competing preferred owner was found for the complete token in the explicitly checked current mapped directory and worker01 selected proposals, so owned-name SUPPRESS is not warranted in that scope. This change does not make shortened ferrous sulfate names equivalent to the stock, infer molecular speciation, or alter component grounding."
+        },
+        {
+          "path": "/ontology_mapping/evidence/0/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        },
+        {
+          "path": "/synonyms/0/source",
+          "before": "Exact source-context label from https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430; unqualified/cross-reference spelling is retained for provenance only and requires the bound source occurrence to resolve.",
+          "after": "JCM1430 https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430 and JCM1431 https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1431, complete stock label in post-cooling additions. CHEM-COMP-006 (#1237) individual reassessment; original rejected assertion/source preserved in immutable predecessor and science/qualifier-negative-audit-lineage-v1.json."
+        },
+        {
+          "path": "/synonyms/0/synonym_type",
+          "before": "REJECTED_LABEL",
+          "after": "EXACT_SYNONYM"
+        }
+      ]
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+      "entry_index": 36,
+      "predecessor": {
+        "path": "snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+        "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/payloads/CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK.yaml",
+        "sha256": "f7aca68cf65299a813290c8831a568126f3f18eb4ecf50dec60c8f178246a61a"
+      },
+      "native_staged_path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/science/native-staged-v1/CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK.yaml",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3",
+          "input_sha256": "33a10ef69fd5e2aa6b1e14fe1dc8b005b7c5fab65dd1ad0de632ff3286f94780",
+          "occurrence_ids": [
+            "CM_OCC:d72552467e12be95f7f895cc5bfa945338d508dfc48d1a2003b3e5b2b95c83ac"
+          ],
+          "missing_requirement": null,
+          "issue_refs": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1163",
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1166"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a",
+          "input_sha256": "244d3526418c6c9c79fa2b696a93350f7c7ce873eb0d08b4a51f23939b683395",
+          "occurrence_ids": [
+            "CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78"
+          ],
+          "missing_requirement": null,
+          "issue_refs": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1166",
+            "https://github.com/CultureBotAI/CultureMech/issues/408"
+          ]
+        }
+      ],
+      "native_validation": "pass",
+      "native_guarded_write": "pass",
+      "exclusive_publication": "O_CREAT|O_EXCL, flushed/fsynced and byte-equal native output",
+      "complete_semantic_leaf_deltas": [
+        {
+          "path": "/curation_history/2",
+          "before": null,
+          "after": {
+            "timestamp": "2026-11-08T07:58:44.132788+00:00",
+            "curator": "Codex /root/primary_context (worker01)",
+            "action": "CORRECTED_PROPOSAL",
+            "changes": "Resolve CHEM-COMP-006 (#1237) per string: retain each bicarbonate footnote pointer as REJECTED_LABEL for the specific CO2-conditioned stock, with individual cited applicability reasons; preserve both exact labels/sources and positive NBRC1257/NBRC1321 stock union, literal added-water quantities and explicit CO2 saturation. Correct 2 individually allowlisted MappingEvidence type(s) to LLM_SUGGESTION under #1226; all other evidence-object fields remain unchanged. Isolated successor only; no maintained owner, merge, or release approval.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        },
+        {
+          "path": "/notes",
+          "before": "This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity. Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence. Cross-lane deduplication: NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL.",
+          "after": "This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity. Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence. Cross-lane deduplication: NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL. 'Bicarbonate solution (1.0 M)***': NBRC1321 uses this exact string as the receiving-table pointer to its *** footnote. The text gives a nominal strength but does not name the sodium salt, added-water recipe, or CO2 saturation that defines this proposed preparation. The *** footnote supplies NaHCO3 8.4 g plus 100 mL distilled water, CO2 saturation, and autoclaving in tightly sealed CO2-filled bottles. It is a valid source pointer and broader material description, but is not an identity-bearing standalone name for this particular CO2-conditioned stock. Retain the original sourced REJECTED_LABEL entry and resolve only the explicitly bound source occurrence, rather than claim exact identity for that token outside its footnote.MAPPING_SEMANTICS section 3 / CHEM-COMP-006 (#1237), individual label assessments:  'Bicarbonate solution***': NBRC1257 uses this exact string as its receiving-table *** pointer, without even the nominal strength. Its *** footnote positively specifies the same NaHCO3 8.4 g plus 100 mL distilled water and CO2 saturation/sealed autoclaving as NBRC1321. The bare token does not identify that sodium/quantity/CO2 preparation independently of the footnote. Retain its exact sourced REJECTED_LABEL entry as a non-name for this specific owner, while retaining the positive source-occurrence assignment and source-supported NBRC1257/NBRC1321 union. No competing preferred owner of either exact token was found in the explicitly checked current mapped directory and worker01 proposal set, so no owned-name suppression is proposed. These dispositions concern name applicability to this specific preparation, not rejection of bicarbonate as a material. The reported 1.0 M remains nominal: 100 mL is added water, not verified final solution volume; dissolved CO2 amount/speciation is unquantified. Carbon dioxide remains a source-listed material input because the solution is explicitly saturated, independently of the CO2 headspace condition."
+        },
+        {
+          "path": "/ontology_mapping/evidence/0/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        },
+        {
+          "path": "/ontology_mapping/evidence/1/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        }
+      ]
+    }
+  ],
+  "mapping_evidence_type_changes": [
+    {
+      "proposal_id": "NSV4-PROP-NBRC_1020_Se_W_Solution",
+      "audit_row_id": "provenance-flag-008",
+      "field": "ontology_mapping.evidence[0].evidence_type",
+      "before": "MANUAL_CURATION",
+      "after": "LLM_SUGGESTION",
+      "other_complete_object_fields_unchanged": true,
+      "reason": "Agent-authored stock-identity/registry interpretation, not evidence supplied by a human reviewer; #1226 claim-specific allowlist."
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_317_Se_W_Solution",
+      "audit_row_id": "provenance-flag-015",
+      "field": "ontology_mapping.evidence[0].evidence_type",
+      "before": "MANUAL_CURATION",
+      "after": "LLM_SUGGESTION",
+      "other_complete_object_fields_unchanged": true,
+      "reason": "Agent-authored stock-identity/registry interpretation, not evidence supplied by a human reviewer; #1226 claim-specific allowlist."
+    },
+    {
+      "proposal_id": "CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK",
+      "audit_row_id": "provenance-flag-043",
+      "field": "ontology_mapping.evidence[0].evidence_type",
+      "before": "MANUAL_CURATION",
+      "after": "LLM_SUGGESTION",
+      "other_complete_object_fields_unchanged": true,
+      "reason": "Agent-authored stock-identity/registry interpretation, not evidence supplied by a human reviewer; #1226 claim-specific allowlist."
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+      "audit_row_id": "provenance-flag-044",
+      "field": "ontology_mapping.evidence[0].evidence_type",
+      "before": "MANUAL_CURATION",
+      "after": "LLM_SUGGESTION",
+      "other_complete_object_fields_unchanged": true,
+      "reason": "Agent-authored stock-identity/registry interpretation, not evidence supplied by a human reviewer; #1226 claim-specific allowlist."
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+      "audit_row_id": "provenance-flag-045",
+      "field": "ontology_mapping.evidence[1].evidence_type",
+      "before": "MANUAL_CURATION",
+      "after": "LLM_SUGGESTION",
+      "other_complete_object_fields_unchanged": true,
+      "reason": "Agent-authored stock-identity/registry interpretation, not evidence supplied by a human reviewer; #1226 claim-specific allowlist."
+    }
+  ],
+  "four_histories_preserved_as_exact_prefix": true,
+  "components_and_identifiers_unchanged": true,
+  "independent_review_status": "pending; author validation is not independent review",
+  "limits": [
+    "No whole-owner, role, ontology grounding, merge, co-installation or release approval.",
+    "No maintained data or source-capture changes.",
+    "The helper does not claim hostile-concurrency atomicity; all candidate outputs are exclusive-create, pinned and read back."
+  ]
+}

@@ -1,0 +1,41 @@
+identifier: kgmicrobe.ingredient:atcc_173_middlebrook_7h10_agar_base
+preferred_term: ATCC 173 Middlebrook 7H10 agar base
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_173_middlebrook_7h10_agar_base
+  ontology_label: ATCC 173 Middlebrook 7H10 agar base
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/E44FDED36A7940E3B4078EA6A49B7199.ashx
+    notes: ATCC173 and TOGO M2399 list 19 g Middlebrook 7H10 agar as a separate input
+      from 5 mL glycerol, 100 mL OADC and 900 mL water. This source-qualified identity
+      denotes that base input. NCIT:C85509 describes the enriched complete medium,
+      including OADC and glycerol, and cannot be asserted as its exact identity. The
+      unqualified source label is retained only as source-scoped RAW_TEXT. Manufacturer,
+      complete base formulation, component IDs and roles are not established and are
+      not invented.
+synonyms:
+- synonym_text: Middlebrook 7H10
+  synonym_type: RAW_TEXT
+  source: TOGO:M2399; ATCC173 input only; not a globally resolving complete-medium
+    alias
+notes: ATCC173 and TOGO M2399 list 19 g Middlebrook 7H10 agar as a separate input
+  from 5 mL glycerol, 100 mL OADC and 900 mL water. This source-qualified identity
+  denotes that base input. NCIT:C85509 describes the enriched complete medium, including
+  OADC and glycerol, and cannot be asserted as its exact identity. The unqualified
+  source label is retained only as source-scoped RAW_TEXT. Manufacturer, complete
+  base formulation, component IDs and roles are not established and are not invented.
+  Exact source-qualified stock/product identity is supported independently of a full
+  decomposition. Existing complete-medium owner remains unchanged; cross-shard owner
+  reconciliation is required before integration.
+curation_history:
+- timestamp: '2026-11-08T04:44:02.163027+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: 'IR-SHARD-ARTIFACT-8: replace the unsupported enriched-medium alias proposal
+    with the distinct source-qualified base-input identity. Isolated proposal only.'
+  new_status: MAPPED
+  llm_assisted: true

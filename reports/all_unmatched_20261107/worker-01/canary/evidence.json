@@ -1,0 +1,999 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "evidence_id": "PC-MEDIADIVE-1944-HTML",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-ingredient-1944.html",
+        "sha256": "d6bda8590ba8d3ee9a9a666dd674c15757ba359795301373c3b6d0fafca597be"
+      },
+      "locator": "HTML lines 1-9, 383-405, 425-439",
+      "supports_or_contradicts": "Blank name and ingredient ID1944 coexist with yeast-extract, Trypticase-peptone and MES attributes; the page emits CHEBI:1 and warns most identifiers/parameters are automatic and uncurated; exact assignment mechanism not established. UI 3-solutions count is not treated as distinct solution-ID frequency.",
+      "url": "https://mediadive.dsmz.de/ingredients/1944",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.914839+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-1944-JSON",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-ingredient-1944.json",
+        "sha256": "49be88790dd88abf7d301f81ba856ec41a0502caad044ccacb474b77b58e4759"
+      },
+      "locator": "JSON /0: id,name,group,chebi_id,cas,mass,formula",
+      "supports_or_contradicts": "The live ingredient record is ID1944 with blank name/group, chebi_id=1, null CAS/formula/mass. No supplier product identity or unique stock identity is supplied.",
+      "url": "https://mediadive.dsmz.de/download/ingredient/1944/json",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.915068+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J935-LIVE",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-rest-medium-J935.json",
+        "sha256": "b1ca9aace98e485c5bda71f778fe9f83bac56eb72ce6a2f9c23bfcbc311ef8df"
+      },
+      "locator": "JSON /data/solutions/0/recipe/11 and /12; /data/solutions/0/steps/0",
+      "supports_or_contradicts": "Same blank compound_id1944 is used for yeast-extract stock at order12 (5 ml) and Trypticase-peptone stock at order13 (20 ml); the instruction explicitly calls these anaerobic stocks. Exact bytes equal the frozen admitted API body.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.915137+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J1053-LIVE",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-rest-medium-J1053.json",
+        "sha256": "e220ccdbf37ac879e8661c3aa75591a3e863fecaa67b39f841dc03f3be22bf98"
+      },
+      "locator": "JSON /data/solutions/0/recipe/12 and /data/solutions/0/steps/0",
+      "supports_or_contradicts": "ID1944 is additionally reused for MES pH6.0 20% at order13 (10 ml), contradicting an ID-wide yeast-extract identity. Exact bytes equal the frozen admitted API body.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J1053",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.915628+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J935-WEB",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-medium-J935.html",
+        "sha256": "8d12091d8f8c4e9d0d092cbba47d2bacd3889b8b1f6b41db5152b1713b124c5d"
+      },
+      "locator": "Main solution J935, recipe rows after the anaerobic-stock addition instruction",
+      "supports_or_contradicts": "The rendered source still displays damaged parenthesized yeast-extract and Trypticase preparations; this defect is visible upstream of MIM, not only in the local queue.",
+      "url": "https://mediadive.dsmz.de/medium/J935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.442613+00:00"
+    },
+    {
+      "evidence_id": "PC-JCM-935",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/jcm-medium-935.html",
+        "sha256": "94265b41e387fb64780d00e3eae8735e352655a51eb9cfcb97b05c3f7dab7a4d"
+      },
+      "locator": "HTML lines 39-44: stock addition instruction and first two stock rows",
+      "supports_or_contradicts": "Original JCM recipe independently distinguishes 10% (w/v) BD-Difco yeast-extract solution (5 ml) from 10% (w/v) BD-BBL Trypticase-peptone solution (20 ml). It resolves the intended preparation of the exact canary row, but does not provide a catalogue number or authorize any shared-ID identity mapping.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.604427+00:00"
+    },
+    {
+      "evidence_id": "PC-JCM-1053",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/jcm-medium-1053.html",
+        "sha256": "53572e0223bee08bc3ffc18f3afb41d5454b3cf877b20bd9999c840eb0f63b83"
+      },
+      "locator": "HTML lines 37-43, especially line42",
+      "supports_or_contradicts": "Original JCM recipe independently identifies a separate 20% (w/v) MES pH6.0 solution (10 ml), confirming source-ID heterogeneity.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1053",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.612216+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J935-FROZEN",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/frozen-rest-medium-J935.json",
+        "sha256": "b1ca9aace98e485c5bda71f778fe9f83bac56eb72ce6a2f9c23bfcbc311ef8df"
+      },
+      "locator": "JSON /data/solutions/0/recipe and /data/solutions/0/steps; original observation_id 1bf70ca8d2fb6dcd4fb1554dc2feacdf1cc80dad2c033b4c5f784a2676f57f3e",
+      "supports_or_contradicts": "Exact admitted-generation source body, copied without modification; original acquisition time retained. Crosschecked against full frozen generation manifest and live response bytes.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-05T06:25:10.168226+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J1053-FROZEN",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/frozen-rest-medium-J1053.json",
+        "sha256": "e220ccdbf37ac879e8661c3aa75591a3e863fecaa67b39f841dc03f3be22bf98"
+      },
+      "locator": "JSON /data/solutions/0/recipe and /data/solutions/0/steps; original observation_id ba641c0bafb603d20e8980357d55479365a99ed4bad01bfbf83fde98aab09951",
+      "supports_or_contradicts": "Exact admitted-generation source body, copied without modification; original acquisition time retained. Crosschecked against full frozen generation manifest and live response bytes.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J1053",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-05T06:25:14.453328+00:00"
+    },
+    {
+      "evidence_id": "PC-FROZEN-CONTEXT",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/frozen-source-context.json",
+        "sha256": "19bfb2acc88032bd396e2b7d4d7650100c2be5a4169dc25f967e4f1fadbf8ccb"
+      },
+      "locator": "/verified_source_files; /media_recipe_hits; /solution_recipe_hits; /preserved_primary_bodies",
+      "supports_or_contradicts": "Complete admitted media and solution scan binds all ID1944 rows to source selectors and hashes. Three recipe rows occur across two medium IDs/two unique solution IDs, represented twice across distinct exports. Full manifest equality and each input hash were verified; counts are scoped to this generation.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "PC-LIVE-FETCH",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-fetch-receipt.json",
+        "sha256": "f8846826e9274e3d7e045110c9fa3f7ae035dc6508f869bd358994b4ac5a999b"
+      },
+      "locator": "/fetches",
+      "supports_or_contradicts": "Records actual public-source acquisition commands, start/finish UTC times, return codes, HTTP200 outcomes, body hashes, and explicitly redacted header derivatives. Raw cookie-bearing headers are private; source bodies are unmodified.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "FROZEN-EXACT-CASE",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/protocol/canary-1944-case-v1.json",
+        "sha256": "2968f96971a4597464a2938f93c9ca83b509edfa536fd5d0f5d8a00318edfb51"
+      },
+      "locator": "/case and /exact_source_object",
+      "supports_or_contradicts": "Complete original case, blank source labels and all original fields; byte-verified against assigned shard and frozen compound1944.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "FROZEN-COMPOUNDS",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "source",
+        "path": "preliminary-v5/inputs/kg-source-audit/snapshots/data/raw/mediadive/generations/resolution-admitted-r2/compounds.json",
+        "sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729"
+      },
+      "locator": "JSON object key1944",
+      "supports_or_contradicts": "Complete frozen source file binds exact compound1944 raw object; no altered or inferred label.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "FROZEN-BASELINE",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/protocol/frozen-baseline.json",
+        "sha256": "622bd1bb65656c4277dd0d5dc97f84275c49e76845c29cae247485b44f134fdb"
+      },
+      "locator": "/worker_base_commit and /dependency",
+      "supports_or_contradicts": "Baseline and explicit unmerged PR1158 dependency, verified against actual initial checkout HEAD.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "CHEBI-1",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/ontology/chebi-1-ols.json",
+        "sha256": "0c6c4950b6628be082c07252032e5f41779242f9f102acc6bca261fe2addecc8"
+      },
+      "locator": "/_embedded/terms/0",
+      "supports_or_contradicts": "CHEBI:1 is obsolete with replacement CHEBI:18357; replacement denotes (R)-noradrenaline. Neither source xref establishes identity of the three stock preparations.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:1",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:18.628986+00:00"
+    },
+    {
+      "evidence_id": "CHEBI-18357",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/ontology/chebi-18357-ols.json",
+        "sha256": "a10f251c476b1527b4f8fbf8852f1b5b8b59f1e409b9e836b43c8d0accd2cc10"
+      },
+      "locator": "/_embedded/terms/0",
+      "supports_or_contradicts": "CHEBI:1 is obsolete with replacement CHEBI:18357; replacement denotes (R)-noradrenaline. Neither source xref establishes identity of the three stock preparations.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:18357",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.795149+00:00"
+    },
+    {
+      "evidence_id": "MIM-EXACT-SOURCE-SEARCH",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/exact-source-search.json",
+        "sha256": "5697d83cce5ebd5bea9919e2af246193bfcee55242b78c6569e86e13490ea991"
+      },
+      "locator": "command, stdout, stderr, exit_code",
+      "supports_or_contradicts": "No exact source ID or damaged attribute found in data/, mappings/, docs/data/ or unified TSV using rg --no-ignore --hidden. Bounded negative result does not establish absence outside these maintained surfaces.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "MIM-CONTEXT-SEARCH",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/preparation-names-search.json",
+        "sha256": "0e8372095c6f95a19228cbf24f16d9fbcc73a48f4eb24ab9b4057110553a5a29"
+      },
+      "locator": "command and stdout",
+      "supports_or_contradicts": "Preparation-word search finds contextual mentions but does not identify one owner of the reused blank source ID.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "MIM-CONTEXTUAL-YEAST",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/contextual-Yeast_Extract.yaml",
+        "sha256": "e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28"
+      },
+      "locator": "Complete contextual comparator copied from data/ingredients/mapped/Yeast_Extract.yaml",
+      "supports_or_contradicts": "Contextual existing record only. This is not an owner identification, claim review or approval of that record; its whole-record bytes remain unchanged.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "GH-CultureBotAI-MediaIngredientMech-issue-1025",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/CultureBotAI-MediaIngredientMech-issue-1025.json",
+        "sha256": "ac0a1a5bd482bcd6c4ae3fcbf893b27200a4e6ec29c21b5171c963a62bc8cc50"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1025",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:01.392206+00:00"
+    },
+    {
+      "evidence_id": "GH-CultureBotAI-MediaIngredientMech-issue-587",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/CultureBotAI-MediaIngredientMech-issue-587.json",
+        "sha256": "fb9a67d05c2aecaf0cd7882c596de470f59b2dfdae079e11f89494a81c7d6030"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/587",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:01.008061+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1009",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1009.json",
+        "sha256": "b69c96f175cb3e0ed5db7bd89d8c84424b033b00ca290648ae7516dd5c850ae3"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1009",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:34.878279+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1113",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1113.json",
+        "sha256": "ad4c2545c21bae6c989d7d63902ea485392d0f503c20daa3542162b259ee45f2"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1113",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:04.231614+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1167",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1167.json",
+        "sha256": "d9a98a1fb5c03fbe985c1a121cb1dc61fd9dc4b634fdbb0c21899b8f98f17c8a"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1167",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:03.866614+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1171",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1171.json",
+        "sha256": "45732775fc68e222ec1ffe55a16af8bf28f75411c700fd159363bfc21f2d9931"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1171",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:02.995917+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1319",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1319.json",
+        "sha256": "8f59fa8ccdd03b6a36ffa7587a0621747071200012c4ad72f1b2d3469e8d2f86"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1319",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:03.412778+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1674",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1674.json",
+        "sha256": "a0d5bd7f4d3ac84670ac4184c387f095e6b535b27330d784d7f57306674a7347"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1674",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:01.799854+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1760",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1760.json",
+        "sha256": "5af3e160a1f35d3135143ef70f4af3f8fd405dfac7cf8bcf8f4a89259af55181"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1760",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:02.277142+00:00"
+    },
+    {
+      "evidence_id": "GH-Knowledge-Graph-Hub-kg-microbe-issue-1788",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/Knowledge-Graph-Hub-kg-microbe-issue-1788.json",
+        "sha256": "54642c8cffc661d839fb6ef7112171a172bf3f2ab5de4a5a6a84903d2c5d46f4"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1788",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:02.631831+00:00"
+    },
+    {
+      "evidence_id": "GH-mim-issue-1157",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/mim-issue-1157.json",
+        "sha256": "1cb28e012f7cd774f2ce766f1bd773d1d31f7c9f983a030041bc6f191099ec07"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:45.395221+00:00"
+    },
+    {
+      "evidence_id": "GH-mim-issue-294",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/mim-issue-294.json",
+        "sha256": "427ffcf99d1598b80ba958e3f6dd9cd83e46d1fdb89d5b160d1848333d70f30a"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/294",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:47.191650+00:00"
+    },
+    {
+      "evidence_id": "GH-mim-issue-718",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/mim-issue-718.json",
+        "sha256": "a1ae420dd57fae7453397fc6532537354e5dc6ceafe6c4d4bb519f2c09b98d72"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/718",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:45.796005+00:00"
+    },
+    {
+      "evidence_id": "GH-mim-issue-811",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/mim-issue-811.json",
+        "sha256": "29f2e93918492af021ca7de9ca32658bb7b1bdcc413c21de0478e26d38a6b564"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:46.317662+00:00"
+    },
+    {
+      "evidence_id": "GH-mim-issue-868",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/mim-issue-868.json",
+        "sha256": "f9b93dda4c666b0e4dad7a9bf36a5ec951bf29c0dbefc7dfcf9d190051022c62"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/868",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:46.763866+00:00"
+    },
+    {
+      "evidence_id": "GH-mim-pr-1158",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/mim-pr-1158.json",
+        "sha256": "222b16aa7519ce188bec0f4245b8dc87db5cb90a0e8285965c6f76d3aa5a136a"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/pull/1158",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:47.536325+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-1944-comments",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-1944-comments.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:23.984573+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-1944",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-1944.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues?q=1944",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:32.910976+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-blank-compound",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-blank-compound.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:31.883667+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-blank-mediadive",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-blank-mediadive.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:25.576174+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-blank",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-blank.json",
+        "sha256": "5d793e0bba049f86be7e2a82fcf810b7a9f02b680565b652b0b23a4affc58cf5"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues?q=blank",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:33.629306+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-empty-compound",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-empty-compound.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:27.511249+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-exact-id",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-exact-id.json",
+        "sha256": "0bd648631c8163f692d118ccd5c1ae8114b2b3f27d8f0eeb1ea090ad16dd2767"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:29.275937+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-mediadive",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-mediadive.json",
+        "sha256": "1ad25781073dabbf568503f93d657966b680a5cfa8a4f7f787671a718fc0aca3"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues?q=MediaDive",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:34.721378+00:00"
+    },
+    {
+      "evidence_id": "GH-search-kg-trypticase",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-kg-trypticase.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:30.519400+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-1944-comments",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-1944-comments.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:23.304262+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-1944",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-1944.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues?q=1944",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:29.406486+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-blank-compound",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-blank-compound.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:31.183088+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-blank-mediadive",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-blank-mediadive.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:24.897641+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-blank",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-blank.json",
+        "sha256": "05b3caec03122373396731d40affd1e88c9dc990ee4b0cc94070524b8ff212d0"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues?q=blank",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.471762+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-empty-compound",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-empty-compound.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:26.839818+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-exact-id",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-exact-id.json",
+        "sha256": "5e4133cbb5b7af3428e92eaf527e10c162fa83689bc4cc5f012cf1911a27dd58"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:28.464655+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-mediadive",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-mediadive.json",
+        "sha256": "f04cc764c0754df0f1b33892f37ffd5ee37012fe799ba007f6aa10f2d730c356"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues?q=MediaDive",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.276168+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-trypticase",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-trypticase.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:45:29.870393+00:00"
+    },
+    {
+      "evidence_id": "GH-search-mim-yeast",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/search-mim-yeast.json",
+        "sha256": "761a5fe96620310cfbf993c628839df495669d79a23fe6e8cbe9f3e59b09217d"
+      },
+      "locator": "Complete query response; exact command/scope/time in sibling provenance file",
+      "supports_or_contradicts": "Live bounded deduplication query or related issue/PR body and comments. Historical claims inside issue bodies are contextual; no current code-state approval inferred.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues?q=yeast",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:32.081601+00:00"
+    },
+    {
+      "evidence_id": "NATIVE-PROFILE-APPLICABILITY",
+      "kind": "independent_review",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/independent_review/native-profile-applicability.json",
+        "sha256": "a33be42afe1b36483fe2763638f9eb60b2a963f5e9820097c46be860846e2ff2"
+      },
+      "locator": "/native_review_applicability, /technical_distinction and /checks_not_run",
+      "supports_or_contradicts": "Independent verification that current configured MIM routes do not cover this source-only assessment. Generic helper capability is acknowledged; no native review run is claimed.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "INDEPENDENT-SOURCE-CHECK",
+      "kind": "independent_review",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/independent_review/preliminary-source-check.json",
+        "sha256": "ff83d659a841b9f37b12baaf0cf536d1d7758f43d7267123f4c34bde12fe1b8d"
+      },
+      "locator": "Complete preliminary source audit",
+      "supports_or_contradicts": "Separate reviewer independently scanned full manifest-bound raw source context. Preliminary, not final branch approval.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "GH-DEDUPLICATION",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/deduplication-assessment.json",
+        "sha256": "037bc69cda95c02addda39b65ad3b458cb030d77c3df81a1e83d2c550c0bb8d2"
+      },
+      "locator": "Complete JSON object",
+      "supports_or_contradicts": "Bounded successful and failed searches, inspected issue bodies/comments, explicit scope distinctions and absence limitations.",
+      "url": null,
+      "accessed_at": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "GH-FILED-1824",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue-filed-1824.json",
+        "sha256": "fb8fa362992a59281e68b74dd70b4f29f5f2b5976dc23fc7d81580b83719bafd"
+      },
+      "locator": "Complete JSON object",
+      "supports_or_contradicts": "Exact readback of independently reviewed and deduplicated source finding filed in KG-Microbe; unresolved source correction, not a MIM owner edit.",
+      "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1824",
+      "accessed_at": "2026-11-08T03:48:39.229747+00:00",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "INDEPENDENT-FINAL-CONTENT-REVIEW",
+      "kind": "independent_review",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/independent_review/final-content-review-v1.json",
+        "sha256": "1bf2a87132675d3c4fe0023a723f180b0ddd4fd449ced4ab5f60262f544ab751"
+      },
+      "locator": "/positive_assessments, /artifact_findings, /scientific_payload_hashes and /complete_reviewed_artifact_inventory",
+      "supports_or_contradicts": "Separate skeptical agent accepted exact source-only no-change content with stated limitations; three minor artifact findings resolved, source defect remains open. Status/reference bookkeeping is subject to a separate final re-review.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "COORDINATOR-PRESERVATION-PROOF",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/coordinator-mim-preservation-v2.json",
+        "sha256": "4a2cb0bcc325ae2dd8f4e2ca04f8eb08b8c6b6ebbd154438e0eb4759f126b4b3"
+      },
+      "locator": "/regular_file_count, /worker_manifest_count, /symlinks, /hash_mismatches_or_missing and /unexpected_diff",
+      "supports_or_contradicts": "Coordinator verifies14405 Git regular files,14406 worker file-content hashes including dereferenced CLAUDE.md target, and both tracked symlink targets against baseline Git blobs. Corrects count terminology, not source science or preservation result.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "GH-ARTIFACT-FINDINGS-DEDUP",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue_context/artifact-findings-deduplication-assessment.json",
+        "sha256": "17d3595a75d8daba3f621b6624b5d4a7fe39dd11d947aab7427e8b98edeed156"
+      },
+      "locator": "Complete JSON object",
+      "supports_or_contradicts": "Live exact-findings/worker queries and related issue bodies/comments distinguish this group from earlier closed review trackers.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "GH-ARTIFACT-FINDINGS-1159",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/issue-filed-1159.json",
+        "sha256": "bbe818720baf3c8e608d809b358d98d6b805285262585dca5087ae3dec935fe3"
+      },
+      "locator": "Complete JSON object",
+      "supports_or_contradicts": "Exact published grouped MIM tracker records3 corrected/re-reviewed artifact findings and coordinator verification boundary. Not a new scientific defect.",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1159",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:56:02.627608+00:00"
+    },
+    {
+      "evidence_id": "INDEPENDENT-ARTIFACT-TRACKER-REVIEW",
+      "kind": "independent_review",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/independent_review/artifact-tracker-draft-review.json",
+        "sha256": "444ed4bed2675aaea53877baf99f6eab794a63ac868c173f8158b725f4fc71ab"
+      },
+      "locator": "Complete JSON object",
+      "supports_or_contradicts": "Separate reviewer verifies grouped tracker finding IDs, corrections, evidence references and no-change scope before filing.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    }
+  ]
+}

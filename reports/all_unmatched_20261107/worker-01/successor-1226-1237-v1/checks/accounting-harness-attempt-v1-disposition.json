@@ -1,0 +1,10 @@
+{
+  "result": "FAILED_HARNESS_AFTER_POSITIVE_PASS",
+  "original_program_sha256": "9f8e97605a51cd154a4b659765698f0c33872b8f66ec80214bc182499df58b72",
+  "positive_audit_path": "checks/accounting-pre-review-v1/positive-native-audit.json",
+  "positive_audit_sha256": "e0cbf3c62120ac356c287223a643fe576060aa71837a2b59d3aa4ad5bdef59df",
+  "negative_probe": "The native auditor correctly rejected a deliberately stale case hash; receipt formatting then failed on relative_path.relative_to(absolute_D).",
+  "correction": "New program version resolves only its own output directory to absolute before recording paths. Native auditor, source inputs, candidates and cores unchanged.",
+  "successor_program": "scripts/accounting_controls_v2.py",
+  "scientific_finding": false
+}

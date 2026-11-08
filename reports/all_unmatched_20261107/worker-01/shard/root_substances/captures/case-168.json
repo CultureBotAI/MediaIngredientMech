@@ -1,0 +1,254 @@
+{
+  "index": 168,
+  "case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:40807d0c4ddf4b0b92a6c30af027c0e8c5bd1b962c0b3a517bbde4f278a3d8df",
+    "original_kg_entry": {
+      "candidate_id": "40807d0c4ddf4b0b92a6c30af027c0e8c5bd1b962c0b3a517bbde4f278a3d8df",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [
+        {
+          "candidate_field": "source_label",
+          "disposition": "SUPPORTED",
+          "matched_field": "subject_label",
+          "matched_label": "Proteose",
+          "review_dispositions": [
+            {
+              "disposition": "SUPPORTED",
+              "evidence_key": "2377",
+              "object_id": "kgmicrobe.compound:proteose",
+              "owner_record": "data/ingredients/mapped/Proteose.yaml",
+              "owner_record_sha256": "a073604df8971479f320374f15391cb72d28fa8ceb52aadb8dc61c88f7b39829",
+              "predicate_id": "skos:exactMatch",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+              "row_sha256": "9c607cfedc62983601a366f6a3bc49998a94be6cfcd8114e5a87ef55e35f894c",
+              "source_position": "2377",
+              "subject_id": "MIM:Proteose"
+            }
+          ],
+          "row": {
+            "comment": "",
+            "confidence": "0.9",
+            "mapping_date": "2026-08-06",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "object_id": "kgmicrobe.compound:proteose",
+            "object_label": "Proteose",
+            "object_source": "kgm:compound",
+            "other": "",
+            "predicate_id": "skos:exactMatch",
+            "source": "MIM:MIM curation (#213)|MIM:curator=promote_resolved_unmapped",
+            "subject_id": "MIM:Proteose",
+            "subject_label": "Proteose",
+            "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+          },
+          "row_sha256": "9c607cfedc62983601a366f6a3bc49998a94be6cfcd8114e5a87ef55e35f894c"
+        }
+      ],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "Proteose",
+          "owner": "data/ingredients/mapped/Proteose.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "Proteose",
+          "owner": "data/ingredients/mapped/Proteose.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "microbedecoder",
+            "synonym_text": "Proteose",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "CURRENT_GRAPH_COMPOUND_PLACEHOLDER",
+      "occurrences": 1,
+      "occurrences_definition": "current_graph_incident_edges",
+      "owners": [
+        {
+          "identifier": "kgmicrobe.compound:proteose",
+          "mapping_status": "MAPPED",
+          "native_review_rows": [
+            {
+              "decision": {
+                "disposition": "SUPPORTED",
+                "evidence_key": "2377",
+                "owner_record": "data/ingredients/mapped/Proteose.yaml",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+                "row_sha256": "9c607cfedc62983601a366f6a3bc49998a94be6cfcd8114e5a87ef55e35f894c",
+                "source_position": 2377
+              },
+              "row": {
+                "comment": "",
+                "confidence": "0.9",
+                "mapping_date": "2026-08-06",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "object_id": "kgmicrobe.compound:proteose",
+                "object_label": "Proteose",
+                "object_source": "kgm:compound",
+                "other": "",
+                "predicate_id": "skos:exactMatch",
+                "source": "MIM:MIM curation (#213)|MIM:curator=promote_resolved_unmapped",
+                "subject_id": "MIM:Proteose",
+                "subject_label": "Proteose",
+                "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+              }
+            }
+          ],
+          "ontology_mapping": {
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "notes": "Searched every ontology available to this repo -- CHEBI, NCIT, FOODON, ENVO, MeSH, BTO, UBERON by label and synonym with normalisation, plus an exact query across all of live OLS4 -- and no term denotes this substance. Takes the FALLBACK_REGISTRY shape used by 82 existing records (#213).",
+                "source": "MIM curation (#213)"
+              }
+            ],
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "ontology_id": "kgmicrobe.compound:proteose",
+            "ontology_label": "Proteose",
+            "ontology_source": "kgmicrobe.compound"
+          },
+          "path": "data/ingredients/mapped/Proteose.yaml",
+          "preferred_term": "Proteose",
+          "sha256": "a073604df8971479f320374f15391cb72d28fa8ceb52aadb8dc61c88f7b39829",
+          "subject_id": "MIM:Proteose"
+        }
+      ],
+      "predicate_counts": {
+        "METPO:2000012": 1
+      },
+      "raw_label_provenance": "not separately extracted; source_label is the current graph node name",
+      "raw_source_label": "",
+      "resolving_owner_paths": [
+        "data/ingredients/mapped/Proteose.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "metatraits",
+      "source_columns": "current graph placeholder",
+      "source_id": "kgmicrobe.compound:proteose",
+      "source_label": "Proteose",
+      "source_record": {
+        "category": "biolink:ChemicalEntity",
+        "deprecated": "",
+        "description": "",
+        "id": "kgmicrobe.compound:proteose",
+        "name": "Proteose",
+        "provided_by": "infores:metatraits",
+        "same_as": "",
+        "synonym": "",
+        "xref": "MIM:Proteose"
+      },
+      "triage_flags": [
+        "CONSUMED_SUPPORTED_LEXICAL_COVERAGE"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "",
+    "source": "metatraits",
+    "source_case_id": "kgmicrobe.compound:proteose",
+    "source_identity_claimed": false,
+    "source_label": "Proteose"
+  },
+  "occurrence_contexts": [],
+  "current_queue_owners": [
+    {
+      "path": "data/ingredients/mapped/Proteose.yaml",
+      "sha256": "a073604df8971479f320374f15391cb72d28fa8ceb52aadb8dc61c88f7b39829",
+      "record": {
+        "identifier": "kgmicrobe.compound:proteose",
+        "preferred_term": "Proteose",
+        "synonyms": [
+          {
+            "synonym_text": "Proteose",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 1,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:proteose); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0838 -> kgmicrobe.compound:proteose \"Proteose\" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          }
+        ],
+        "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:proteose); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:proteose",
+          "ontology_label": "Proteose",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MIM curation (#213)",
+              "notes": "Searched every ontology available to this repo -- CHEBI, NCIT, FOODON, ENVO, MeSH, BTO, UBERON by label and synonym with normalisation, plus an exact query across all of live OLS4 -- and no term denotes this substance. Takes the FALLBACK_REGISTRY shape used by 82 existing records (#213)."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "lexical_candidates_not_identity": [
+    {
+      "path": "data/ingredients/mapped/Proteose.yaml",
+      "sha256": "a073604df8971479f320374f15391cb72d28fa8ceb52aadb8dc61c88f7b39829",
+      "matched_labels": [
+        "Proteose",
+        "Proteose"
+      ],
+      "preferred_term": "Proteose",
+      "identifier": "kgmicrobe.compound:proteose",
+      "status": "MAPPED",
+      "mapping": {
+        "ontology_id": "kgmicrobe.compound:proteose",
+        "ontology_label": "Proteose",
+        "ontology_source": "kgmicrobe.compound",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#213)",
+            "notes": "Searched every ontology available to this repo -- CHEBI, NCIT, FOODON, ENVO, MeSH, BTO, UBERON by label and synonym with normalisation, plus an exact query across all of live OLS4 -- and no term denotes this substance. Takes the FALLBACK_REGISTRY shape used by 82 existing records (#213)."
+          }
+        ]
+      },
+      "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:proteose); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+      "supplied_form": null
+    }
+  ],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

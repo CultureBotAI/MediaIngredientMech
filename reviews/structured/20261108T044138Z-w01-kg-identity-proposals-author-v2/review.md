@@ -1,0 +1,1785 @@
+# Worker01 source-defined KG product and stock identity proposals
+
+- Review: 20261108T044138Z-w01-kg-identity-proposals-author-v2
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:41:38.681028Z
+- Finished UTC: 2026-11-08T04:41:38.681139Z
+- Reviewer: /root/issue_context (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Nine guarded source-defined identity proposals complete established product, stock and hydrate identities. This successor reviews correctedcase167v2NARROW_MATCH aftercoordinator1164; its oldBROAD_MATCHpayloadandpriorreviewremainpreserved. Source scopes, current/historical evidence limits, component uncertainty and existing publication obligations remain explicit. No maintained data are changed and no inherited whole-row hold is released.
+
+## Scope And Provenance
+
+Every proposed payload and every original owner plus complete primary source evidence for cases166,167,170,171,172,175,182,183,186; sharedCM46 LabLemco alias bound to all3original recipe occurrences.
+
+Selection: All9 substantive identity proposals authored in KG26 completeness reassessment; optional163 typing is covered in its separate immutable review.
+Coverage: full; 9 reviewed / 9 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| kgmicrobe.ingredient:lab_lemco_powder | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Lab_Lemco_Powder.yaml | source | Lab Lemco powder |
+| kgmicrobe.ingredient:sigmacell_alpha_type_50 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sigmacell_Alpha_Type_50.yaml | source | Sigmacell cellulose Type 50 |
+| kgmicrobe.ingredient:hy_case_amino | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Hy-Case_Amino.yaml | source | Hy-Case Amino |
+| kgmicrobe.ingredient:ebios | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/EBIOS.yaml | source | EBIOS dried-yeast tablets |
+| kgmicrobe.ingredient:corn_steep_powder | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Corn_Steep_Powder.yaml | source | Corn steep powder |
+| kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Mineral_Solution_See_Medium_No_976.yaml | source | JCM976 mineral solution |
+| cas:10102-23-5 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sodium_Selenate_Decahydrate-v2.yaml | source | Sodium selenate decahydrate |
+| kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml | source | DSMZ863 sodium carbonate stock |
+| CHEBI:38888 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Na2b4o7_X_10_H2o.yaml | source | Na2B4O7 x 10 H2O |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Source identity and exact form applicability | passed | True | kgmicrobe.ingredient:lab_lemco_powder, kgmicrobe.ingredient:sigmacell_alpha_type_50, kgmicrobe.ingredient:hy_case_amino, kgmicrobe.ingredient:ebios, kgmicrobe.ingredient:corn_steep_powder, kgmicrobe.ingredient:mineral_solution_see_medium_no_976, cas:10102-23-5, kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock, CHEBI:38888 | Every product/stock source and supplied-form distinction assessed; conventional versus structural borax naming resolved through original crystal study. |
+| Guarded native writes and immutable original hashes | passed | True | kgmicrobe.ingredient:lab_lemco_powder, kgmicrobe.ingredient:sigmacell_alpha_type_50, kgmicrobe.ingredient:hy_case_amino, kgmicrobe.ingredient:ebios, kgmicrobe.ingredient:corn_steep_powder, kgmicrobe.ingredient:mineral_solution_see_medium_no_976, cas:10102-23-5, kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock, CHEBI:38888 | Artifacts only; existing history/counts retained, intendednewIDs checkedagainstignored-inclusivecatalog. |
+| Exact proposed payload strict schema validation | passed | True | kgmicrobe.ingredient:lab_lemco_powder, kgmicrobe.ingredient:sigmacell_alpha_type_50, kgmicrobe.ingredient:hy_case_amino, kgmicrobe.ingredient:ebios, kgmicrobe.ingredient:corn_steep_powder, kgmicrobe.ingredient:mineral_solution_see_medium_no_976, cas:10102-23-5, kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock, CHEBI:38888 | 9 files,0errors |
+| Native component partonomy against current catalog | passed | True | kgmicrobe.ingredient:lab_lemco_powder, kgmicrobe.ingredient:sigmacell_alpha_type_50, kgmicrobe.ingredient:hy_case_amino, kgmicrobe.ingredient:ebios, kgmicrobe.ingredient:corn_steep_powder, kgmicrobe.ingredient:mineral_solution_see_medium_no_976, cas:10102-23-5, kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock, CHEBI:38888 | 0proposed-targetviolations; literalunmappedcomponentnames preventguessedidentitybindings. |
+| Full repository synchronization and publication release | not_applicable | False | kgmicrobe.ingredient:lab_lemco_powder, kgmicrobe.ingredient:sigmacell_alpha_type_50, kgmicrobe.ingredient:hy_case_amino, kgmicrobe.ingredient:ebios, kgmicrobe.ingredient:corn_steep_powder, kgmicrobe.ingredient:mineral_solution_see_medium_no_976, cas:10102-23-5, kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock, CHEBI:38888 | No maintainedwrites; coordinatorintegrationandfullgatesstillrequired. |
+
+## Scientific And Domain Assessments
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:lab_lemco_powder.
+
+Oxoid Lab-Lemco is a refined meat-extract powder, identified by original DSMZ727 and CCAP CHM/EG/EG:JM formulations and current official LP0029 specification. This whole variable-composition product is not one molecule or a finished medium. The exact molecular constituent list and historical lot composition are not established and are not required to preserve the named product identity. Current supplier compositional ranges are not backdated to historical lots.
+
+DSMZ727 uses5g Lab Lemco powder(Oxoid); admitted CCAP C23 andC26 use1g OxoidL29 perlitre, andC27 uses that ingredient in its EG submedium mixed1:1withJM. Current CCAP originals confirm the Lab-Lemco quantities and nesting. The official Oxoid LP0029 specification identifies a refined powder meat-extract product with bounded analytical properties, not a molecular chemical or an arbitrary beef extract. The earlier ThermoL0029B capture is an error wrapper and supplies no scientific support. Completeness reassessment: Oxoid Lab-Lemco is a refined meat-extract powder, identified by original DSMZ727 and CCAP CHM/EG/EG:JM formulations and current official LP0029 specification. This whole variable-composition product is not one molecule or a finished medium. The exact molecular constituent list and historical lot composition are not established and are not required to preserve the named product identity. Current supplier compositional ranges are not backdated to historical lots. An isolated guarded existing-owner promotion now supplies the exact registry identity and supported material scope.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:sigmacell_alpha_type_50.
+
+Original DSMZ1433 explicitly specifies Sigma S5504. The current official S5504 specification identifies Sigmacell cellulose Type50, nominal particle size50 micrometres. Retain the original alpha wording as a source label, but do not equate this product to the separately listed alpha-cellulose product C6429 or assign the supplier web page disaccharide SMILES to the polymer. The registry identifies the source-specific cellulose preparation, not generic cellulose as an exact identity.
+
+DSMZ1433 specifies 5 g Sigmacell alpha Type 50 (Sigma S5504). The current official S5504 page identifies Sigmacell Cellulose, Type 50, 50 micrometres, CAS 9004-34-6, and separately lists alpha-cellulose C6429 as another product. The catalog code therefore supports this specific cellulose product, while the recipe word alpha is retained as source wording rather than used to assert a polymorph, alpha-cellulose grade or different catalog identity. The existing UNMAPPED_0520 is the corresponding source-label placeholder; bulk cellulose equivalence would lose the Type50 physical product detail. Completeness reassessment: Original DSMZ1433 explicitly specifies Sigma S5504. The current official S5504 specification identifies Sigmacell cellulose Type50, nominal particle size50 micrometres. Retain the original alpha wording as a source label, but do not equate this product to the separately listed alpha-cellulose product C6429 or assign the supplier web page disaccharide SMILES to the polymer. The registry identifies the source-specific cellulose preparation, not generic cellulose as an exact identity. An isolated guarded existing-owner promotion now supplies the exact registry identity and supported material scope.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:hy_case_amino.
+
+Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies the named bovine-milk casein acid hydrolysate. It is a complex powder of free amino acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact casein or any single amino acid. Current product identity supports the named product; historical lot quantitative composition is not asserted.
+
+JCM722 specifies 3 g Hy-Case Amino (Sigma) in CYS medium. Sigma/Millipore C0501 explicitly calls Hy-Case Amino a bovine-milk casein acid hydrolysate, powder, predominantly free amino acids with some peptides, and reports 25-40% sodium chloride. This supports the branded acid digest product and contradicts equivalence to intact casein, an enzymatic casein digest, or a single amino acid. The recipe has no lot or catalog number, so C0501 is current supplier product corroboration rather than proof of the exact historical lot. Completeness reassessment: Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies the named bovine-milk casein acid hydrolysate. It is a complex powder of free amino acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact casein or any single amino acid. Current product identity supports the named product; historical lot quantitative composition is not asserted. An isolated guarded existing-owner promotion now supplies the exact registry identity and supported material scope.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:ebios.
+
+JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner.
+
+JCM969 uses 10 g EBIOS dried yeast tablets and footnotes Asahi Food &amp; Healthcare, Tokyo. The current official Asahi EBIOS tablet page confirms dried yeast tablets and lists lactose hydrate, calcium hydrogen phosphate, anhydrous silica and hardened oil as excipients. It does not establish the historical recipe lot formulation, but it demonstrates that the branded tablet is not interchangeable with pure yeast extract or the EBIOS P2G extract discussed in the owner’s old research. The source material here is the tablet preparation. Completeness reassessment: JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner. An isolated guarded existing-owner promotion now supplies the exact registry identity and supported material scope.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:corn_steep_powder.
+
+Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify corn steep powder as a5g medium ingredient. Preserve this process-derived powder as its own undefined complex material. No vendor, drying process, fixed chemical composition or equivalence to a particular corn-steep-liquor concentrate is asserted. The absence of a fixed molecular formula does not prevent a source-defined material registry identity.
+
+DSMZ581 specifies5g Cornsteep powder in Glycerol Cornsteep Agar, alongside separate yeast extract, beef extract and casein peptone. Both admitted source and original PDF establish the dry corn-steep product class but give no vendor, drying process or lot composition. The current UNMAPPED_0366 is the matching powder placeholder. A liquid corn-steep liquor record or a carbohydrate/protein molecule would erase the stated physical mixture form. Completeness reassessment: Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify corn steep powder as a5g medium ingredient. Preserve this process-derived powder as its own undefined complex material. No vendor, drying process, fixed chemical composition or equivalence to a particular corn-steep-liquor concentrate is asserted. The absence of a fixed molecular formula does not prevent a source-defined material registry identity. An isolated guarded existing-owner promotion now supplies the exact registry identity and supported material scope.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:mineral_solution_see_medium_no_976.
+
+JCM978 points to JCM976 mineral solution. The earlier DSMZ976 attribution in immutable history is incorrect. Original JCM976 specifies the listed precursor amounts in1L distilled water and KOH adjustment to pH6.0. KOH amount is endpoint-defined; this is a source-qualified stock formulation, not a fixed solution-speciation assertion.
+
+The full JCM978 recipe uses 5 ml Mineral solution (see Medium No. 976, including its unclosed parenthesis. The referenced source is JCM976, not DSMZ976. Its mineral stock is EDTA 3.7 g, FeSO4·7H2O 1.1 g, MnCl2·4H2O 98.4 mg, ZnSO4·7H2O 28.8 mg, CoCl2·6H2O 23.8 mg, CuCl2·2H2O 17.2 mg, Na2MoO4·2H2O 24.2 mg and H3BO3 31.0 mg in 1 L distilled water, adjusted to pH6 with KOH. The existing local stock record is lexical continuity but lacks components and incorrectly names DSMZ976 in its history. The raw punctuation defect does not make the preparation scientifically uninterpretable. The guarded proposal now corrects the active source attribution and supplies every listed precursor plus variable KOH, preserving original history and current registry identity.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: cas:10102-23-5.
+
+Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0 and is only a broader form anchor. Correctedproposalv2 usesNARROW_MATCH for intendedskos:broadMatch, perMIM1164; formerBROAD_MATCHbytesarepreserved.
+
+Both DSMZ1493 and1685 specify 0.440 g Na2SeO4 x 10 H2O in the shared one-litre trace solution, after dissolving nitrilotriacetic acid and adjusting pH. The supplied form is explicitly sodium selenate decahydrate. Current Na2seo4.yaml denotes CHEBI:77775, whose official structure and formula 2Na.O4Se are anhydrous; it already rejects the decahydrate alias. The hydrate must remain distinct. Its formula is source supported, but assigning the anhydrous identifier to it would erase ten waters. Completeness reassessment: Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0 and is only a broader form anchor. A complete isolated new-owner proposal is supplied. CoordinatorMIM1164 identified the initialdraftBROAD_MATCH grade wouldprojectcloseMatch. Artifactv2 nowusesNARROW_MATCH for intendedskos:broadMatch; the exactspecificCASidentityandsoluteparentareunchanged. Actualpinnedproducerprojectionisrequiredandownedbycoordinator.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock.
+
+Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified stock has its own registry identity. Existing CHEBI29377 stock-labelled owner has1751 historical membership and mixed dry/buffer aliases; this proposal neither repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution requires this exact occurrence context and is retained as non-resolving source text on the new owner.
+
+DSMZ863 fully defines Sodium carbonate solution: dissolve106g Na2CO3 in1litre degassedH2O, then autoclave in sealed serum bottles underCO2; add24ml to the basal medium. This is source-specific formulation evidence, not an unspecified carbonate stock. The current Sodium_Carbonate_Solution owner is typed as a stock but uses neat-compound CHEBI:29377 and carries anhydrous reagent, buffer and malformed aliases. Official CHEBI:29377 describes the dry carbonate formula CO3.2Na, not this prepared solution. The admitted g_l59.7638 is not used as a stock formulation. Completeness reassessment: Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified stock has its own registry identity. Existing CHEBI29377 stock-labelled owner has1751 historical membership and mixed dry/buffer aliases; this proposal neither repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution requires this exact occurrence context and is retained as non-resolving source text on the new owner. A complete isolated new-owner proposal is supplied.
+
+### Whole source-defined material or exact supplied form
+
+identity: supported. Targets: CHEBI:38888.
+
+The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material. Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888 has that structural formula and381.371 mass; its octahydrate label counts the eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied form. CHEBI131366 and86222 instead contain two excess waters and remain upstream defects. This identity proposal covers explicitly weighed decahydrate reagent contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no global mediadive.ingredient:196 exact redirect is approved.
+
+All104 admitted media rows across103 media and29 overlapping solution rows specify Na2B4O7 x10H2O; the exact frozen source rows and full recipe bodies are preserved. One row in DSMZ770 is explicitly a0.1%w/v stock added at1.8ml, also confirmed by the original PDF, and cannot be treated as neat hydrate. The other source contexts retain the decahydrate reagent formula. The maintained owner and official CHEBI:131366 name decahydrate, yet its current formula10H2O.H4B4O9.2Na and structure expand to Na2B4H24O19, two H2O more than source Na2B4O7·10H2O (Na2B4H20O17). A label/CAS match therefore cannot approve the current exact assertion or imported chemical properties. Completeness reassessment: The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material. Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888 has that structural formula and381.371 mass; its octahydrate label counts the eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied form. CHEBI131366 and86222 instead contain two excess waters and remain upstream defects. This identity proposal covers explicitly weighed decahydrate reagent contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no global mediadive.ingredient:196 exact redirect is approved.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| proposal-0 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Lab_Lemco_Powder.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | Oxoid Lab-Lemco is a refined meat-extract powder, identified by original DSMZ727 and CCAP CHM/EG/EG:JM formulations and current official LP0029 specification. This whole variable-composition product is not one molecule or a finished medium. The exact molecular constituent list and historical lot composition are not established and are not required to preserve the named product identity. Current supplier compositional ranges are not backdated to historical lots. |
+| before-0 | data/ingredients/unmapped/Lab_Lemco_Powder.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| proposal-1 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sigmacell_Alpha_Type_50.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | Original DSMZ1433 explicitly specifies Sigma S5504. The current official S5504 specification identifies Sigmacell cellulose Type50, nominal particle size50 micrometres. Retain the original alpha wording as a source label, but do not equate this product to the separately listed alpha-cellulose product C6429 or assign the supplier web page disaccharide SMILES to the polymer. The registry identifies the source-specific cellulose preparation, not generic cellulose as an exact identity. |
+| before-1 | data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| proposal-2 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Hy-Case_Amino.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies the named bovine-milk casein acid hydrolysate. It is a complex powder of free amino acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact casein or any single amino acid. Current product identity supports the named product; historical lot quantitative composition is not asserted. |
+| before-2 | data/ingredients/unmapped/Hy-Case_Amino.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| proposal-3 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/EBIOS.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner. |
+| before-3 | data/ingredients/unmapped/EBIOS.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| proposal-4 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Corn_Steep_Powder.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify corn steep powder as a5g medium ingredient. Preserve this process-derived powder as its own undefined complex material. No vendor, drying process, fixed chemical composition or equivalence to a particular corn-steep-liquor concentrate is asserted. The absence of a fixed molecular formula does not prevent a source-defined material registry identity. |
+| before-4 | data/ingredients/unmapped/Corn_Steep_Powder.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| proposal-5 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Mineral_Solution_See_Medium_No_976.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | JCM978 points to JCM976 mineral solution. The earlier DSMZ976 attribution in immutable history is incorrect. Original JCM976 specifies the listed precursor amounts in1L distilled water and KOH adjustment to pH6.0. KOH amount is endpoint-defined; this is a source-qualified stock formulation, not a fixed solution-speciation assertion. |
+| before-5 | data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| proposal-6 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sodium_Selenate_Decahydrate-v2.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0 and is only a broader form anchor. Correctedproposalv2 usesNARROW_MATCH for intendedskos:broadMatch, perMIM1164; formerBROAD_MATCHbytesarepreserved. |
+| proposal-7 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified stock has its own registry identity. Existing CHEBI29377 stock-labelled owner has1751 historical membership and mixed dry/buffer aliases; this proposal neither repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution requires this exact occurrence context and is retained as non-resolving source text on the new owner. |
+| proposal-8 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Na2b4o7_X_10_H2o.yaml; Entire proposed IngredientRecord including history and mapping fields | supports | The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material. Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888 has that structural formula and381.371 mass; its octahydrate label counts the eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied form. CHEBI131366 and86222 instead contain two excess waters and remain upstream defects. This identity proposal covers explicitly weighed decahydrate reagent contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no global mediadive.ingredient:196 exact redirect is approved. |
+| before-8 | data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml; Entire unchanged original owner | context_only | Before identity, aliases, counts and historical holds read; byte hash guards isolated change. |
+| identity-proposal-guards-v1 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-proposal-guards-v1.json; Complete guard or validator receipt | supports | Executed native schema/partonomy or exact byte guards, with scope limitations. |
+| borate175-proposal-guard-v1 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-proposal-guard-v1.json; Complete guard or validator receipt | supports | Executed native schema/partonomy or exact byte guards, with scope limitations. |
+| identity-partonomy-v2 | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-partonomy-v2.json; Complete guard or validator receipt | supports | Executed native schema/partonomy or exact byte guards, with scope limitations. |
+| identity-proposals-strict-v3-command | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-proposals-strict-v3-command.json; Complete guard or validator receipt | supports | Executed native schema/partonomy or exact byte guards, with scope limitations. |
+
+## Limits And Additional Notes
+
+- Author self-review does not satisfy independent review.
+- Unknown molecular composition does not block complex product identity; unverified component identifiers and historical lot quantities are not invented.
+- Borax structural octahydrate has the same bulk formula as conventionaldecahydrate; no different hydrate is silently substituted. DSMZ770stock remains separate.
+- No generic Sodium carbonate solution alias or whole MediaDive196 ID is globally redirected.
+- Historical roles and withheld SSSOM payloads remain outside approval; final integration requires maintained-surface and native publication gates.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T044138Z-w01-kg-identity-proposals-author-v2
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Worker01 source-defined KG product and stock identity proposals
+started_at: '2026-11-08T04:41:38.681028Z'
+finished_at: '2026-11-08T04:41:38.681139Z'
+reviewer:
+  identity: /root/issue_context
+  kind: agent
+  independence: self_review
+  independence_basis: The proposal author reviewed all original and proposed bytes
+    and complete bound primary captures; a separate skeptical reviewer owns independent
+    approval.
+skill: add-media
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: Nine guarded source-defined identity proposals complete established product,
+  stock and hydrate identities. This successor reviews correctedcase167v2NARROW_MATCH
+  aftercoordinator1164; its oldBROAD_MATCHpayloadandpriorreviewremainpreserved. Source
+  scopes, current/historical evidence limits, component uncertainty and existing publication
+  obligations remain explicit. No maintained data are changed and no inherited whole-row
+  hold is released.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml
+    sha256: 911de800edd62dc119f74d48432257ba1f22c2be95ebeb37f8e79385aecdd238
+    role: context
+  - path: data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml
+    sha256: 596380ddafeefb860cebe7e69d4ac6f336b93987ece57a2d005a86a2d6a29d09
+    role: context
+  - path: data/ingredients/unmapped/Corn_Steep_Powder.yaml
+    sha256: 90782981bcc54dc066b91cadf4794b0f166ea7d6a2d0a80336dcfe302ace35bb
+    role: context
+  - path: data/ingredients/unmapped/EBIOS.yaml
+    sha256: 130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4
+    role: context
+  - path: data/ingredients/unmapped/Hy-Case_Amino.yaml
+    sha256: 9b3e37fd766d6f5c587dc30bcd266e3e9602b2f924bbe6cff7ca79835f50d1bc
+    role: context
+  - path: data/ingredients/unmapped/Lab_Lemco_Powder.yaml
+    sha256: 60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb
+    role: context
+  - path: data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml
+    sha256: 628c06aea5f0041e8c57febeaaf8a80fc90a08940bc6dbb2b822032f721696e5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-166-kg-context.json
+    sha256: 27acb6e93165e1b7bbc1bee327affbd7429d5f52105b83fb4ca2653c69020d78
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-166.json
+    sha256: 6c192afd2c1a841e65bc22680ac554964a6aa799fbee2ff7d5c3d0fbbbd7d3db
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-167-kg-context.json
+    sha256: bdf51b875ec4abfd4f25f1497ca117842b712b065927a5ce157c64801072f7a9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-167.json
+    sha256: 8ee093dc1bb214d6e194f3023b2beeb70e1cf4a6a98de66fc3b659263a00b022
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-170-kg-context.json
+    sha256: 40e62df65cbac10ffb203e21bf6dc7f331139883fadf6d64b1ed9a7b3fce27d8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-170.json
+    sha256: f8577a539624946fb48caf0033d7cbb783a8db599c4a6d78c5827d550d3ba111
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-171-kg-context.json
+    sha256: 40dbbe5eae819e7ad19053fedb8e4c066c9c8d54929a80264f9e9a7e131f2549
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-171.json
+    sha256: c7e7fa98f3a3af88fe0a42a86e5accedf6efadfa672a7e6fcfa6f011770ae231
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-172-kg-context.json
+    sha256: 32b5937583fe437457c0ef11e545e8497af6e90fef37a8746b22c31957f28173
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-172.json
+    sha256: 194bc222660f8923ca1db8b2f33c76838c0c7cbfe8e0e7687a879cb7980d35d9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-175-kg-context.json
+    sha256: 004e9e8c7ca5a41f070305d485a9c462d175d80a7b54943de453b9e6180d7b74
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-175.json
+    sha256: 83a86fbe721d3db8759bba6dea3fce40e05c6aecc297e33698e0aa62a5f45b67
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-182-kg-context.json
+    sha256: fb8ddfd301e8203bd39f3ca8705d39455f599c3d092977d00648ff0902acb7d8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-182.json
+    sha256: 99d907a03b2419adbee4dab5e2de366bd82c9f640920d7b7226a8dac8a96ccbc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-183-kg-context.json
+    sha256: 7044d32c73018ac1de31f64524cc547ca7f87662cd6e98e143819219587ed599
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-183.json
+    sha256: 4a857857efae68b24b572d987ed6949bae034e2a366aec314f328e03d99d56d9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-186-kg-context.json
+    sha256: 309d294aa30a2e908c9f6345ece3557c9be5d5b11c0d831bcfa9e941c56e7ccb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-186.json
+    sha256: b80a827b8a36606cee0eea055cb3c81c1e65e6781c147b5597ffb5d4ed8c255d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/007e73577bd08705f7b8.pdf
+    sha256: ed2c9a5d1389376b687d9b0213f82dc1fb6b87b23eaeddf51655109c6b5ddc1d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/01e96c0d522676fa1f93.pdf
+    sha256: ec96b9b165f05a1dd902eb90e6c1cf453f4d6abad3dd672b79b0e995145ea804
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/02c8822a96b572c92883.html
+    sha256: 730216f6fed77ec381d95c9c77e7518dbb441553413624f03e865daf28a3c156
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/065e8322a34b67df1b09.pdf
+    sha256: 72e82245893ede3bb815caedc3337592c71f93edee97264205bd398ad478b7c8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/094c5b650a091f4a9acd.pdf
+    sha256: c3c7dedb8a87b25088fc5f55383ff8867faea35550923681196b8be5408790b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0a5c29c490a9417e7455.json
+    sha256: aca39e453c502f1e7e64469f40f05fea5f81e460edf16ffcb4bfef7cfdc46f42
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0f6ad1214f93504e018f.json
+    sha256: da96c00acb7b52fb38712f646967383fbeecc0bf30d7b20b9e50959f72733d87
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/105d410a56d4065d6c07.html
+    sha256: d384a91e3d700669945c0ad2c38c1e21b5584fb70609b496bf24f945d670c611
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/191035d7a47d8629fe78.html
+    sha256: d87ad8699b9dd31cd7bcd01c1c9581a91bffb786c904208feebe577c38abd5e9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1c0b7ce681e14ed21afd.pdf
+    sha256: cfe7b326f1454f978e1e971edfc36c5c3f7165ab115ea256a219236d6e2e16a3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1c4956f7e17730381883.html
+    sha256: 898ec8e60ddb46439397486316edbcebfa6b4edf6cceb347bef6b4c5b0886512
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/236096b118af4d3049f6.pdf
+    sha256: 51ad5249e3ccd1b5dbf703f6b83402554da079fb6fadf7645d45f413f61136cc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/24a20d69e974b662311d.pdf
+    sha256: 904a0973cffadca97f2da8c6b8cd2a89f5f842d53bdb98212d27aa86741ab173
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/26be76a89f6635ddf202.html
+    sha256: a8a954b6d88b1c3ce8d9f6f47076a6b5f8a59a6e6c53581e8352c9b1bd027b07
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/347cd4e7cf06edc870e0.json
+    sha256: 0ab488bbd5d81366b65cb9b316c9b16a1269ee412b61e863a915fecdf32dd690
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/37d6c117641051228f7c.pdf
+    sha256: d8565d69a42c766a495ee471da5c3085d6adf73deb0196ff17ac5fc1ccfad3b2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/389e12c407d69a31158b.html
+    sha256: 198dcb6249dd4414d0acc6a1ae786720d6e4dcb9acbf6960230bf4a8977095d5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/389e2c9705ab5ce559f4.pdf
+    sha256: 43f779206d37a2660396ebb1dc114b54bf1afccb5ad6cea0ab5dbea88c8aa01f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/38cacfa584b009601a49.pdf
+    sha256: 1785f32d47fb66726d27a8ef2ece1016b4d9362463edfd8bfb41194fa2afd26b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/39ae052179d6c858d234.html
+    sha256: bacb98e2b50aac34813f42dec9ac6641f3e1972ff842c526e1b53a663664697d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3b124f69877be0a504c1.html
+    sha256: ba0cd40593df73b2c0418b20195b0a64df52b9ab5307756e1e7decd4afd26e15
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3c00e48bd02e7165499e.html
+    sha256: 863752af0b79a8cd64ba67f71f92fdf303024db1d4b704bddde2b288ba8dd534
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3d8364ac0fac71f1e808.json
+    sha256: 2b32eb0accc5fec4acc25172b7f65771ca66602e30e82eab633706b660cbcbd5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3d9a7cc22a055a3ad503.html
+    sha256: 8b4c06ee72c7ec9a020a4a44acc08aae183bb272aa1faf5ce763f3027a145521
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3f90be81b6fd7f2b3ee4.pdf
+    sha256: 25a7f9223c62438713a52e22653b1cb9eb3a3aaf37ce3407389f1a2d5db2e6b6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/42be9069de07c3ff89e9.pdf
+    sha256: 02d206cf4e7c58285096a7c6245576f1849dcb15df4c33708b3ef3d107d1e19d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/43163b1ec83c547442f7.json
+    sha256: da7edaae0c7ea19ff87546c96f7babb8f9bc9a3f617967b33bfd92f951652c58
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/47d07b18433c2fa4dd1d.json
+    sha256: 9f67a531f43079d25d24e36252111dc397e0bac0d41c8df76c2c13a7dcb1d2ab
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/49a8c49471dee7c5a465.html
+    sha256: cb3d82de098c36986ac256b47713f29c48cb1778e57dbfa48f409fdf7371c26e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/4be84d488bffb6152170.html
+    sha256: 16bff237854c7a65ebece0be03267bb49cb711378c1000e84eb1357e75fbd4dd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/4d1f48b92f08b2dcff8c.metadata.json
+    sha256: 9db6fdf898a1bff13ab1bc840df9ae2efd5f9b24f3daa3ed95b536f839740045
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/4e32b6db3ce656beaf3e.pdf
+    sha256: a8351162eb6e17d2eae2353795293b149a1419663b6a42d8d8bd0f87a7bc85dd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/518d0491b6ab5203538b.json
+    sha256: 1f6c6bd80dab60ddf455812b3e50d2b48bdad6b6271becd458dfaf2406b69235
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54283487f2b91f2caf94.pdf
+    sha256: cc05c98b1608e8d1640c067c1834d8125364fe29c330f7d5195765288accaf5d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/55e7add3c0f09dd17566.pdf
+    sha256: ce7ff83cd8a3f1b331de0831caf86de4d04a199fd99a733dda965ba910d9cab1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/57862ac71b29685d7073.html
+    sha256: 0a38646cc0613ae9270d0bf50eda19f6788ed7e5b9a3cdaa015e76f0536451ca
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/593d5eb6b1fdae1a2831.pdf
+    sha256: ef29470b675131d33cff473b406856ca543fe1dcacbaa7689f4be062c6adb05d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/59610325f4b914067f12.html
+    sha256: fcaba2afe09b41b7f0d9672cd0a3ba1b44a196842e8f88cb3f411e5b5f463fd8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/59e848b9733e11f933f2.pdf
+    sha256: 53df998ef2b14fa2f6a6f660687ed39dd478c781273d45864f308ac404dd3cdc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/5b711244ceb254e85b9b.html
+    sha256: 7bbd4870777b416905017801cce40c9f0fdb781a680ac0718599d3f54ea0c62d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/5b7daf3aafbbabb1d25d.html
+    sha256: a5e51987a8ca4563970f468f35f9cff24e7aa4c6607b9d3c17de80190d4815aa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/5e86d6878dcaa6c86502.html
+    sha256: 25c5484101f2b55c5e8d7623bbc656618ce38bad23398615c726104bef31c1b9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/61a84be5a49592d35f95.html
+    sha256: d69e631042ee07074af17f4453489d22cdc84195f3fa3419deaa475545139133
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/61f25ed404c360cab38d.pdf
+    sha256: c5c9f9a87eedaca9bd3f9352f62e855d608087e95259069e33a4ccc0317e61ea
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/665dfcb63fcdc235a409.pdf
+    sha256: c32e274fc772231ff587793e6476f0f59dbd1c38347e2f9b12a57062200ec8ed
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/66ba1996cd0f91356c55.html
+    sha256: 01b46bb7d8842c620f2c6188910a8987b7b0fb389e06e7a87ec4b10afff9d5a1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7122b49bb12faf37c70c.pdf
+    sha256: b8a9951f24b060475b4d2adea096a065331c8a481f863da131783d4291886eea
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7414b607d42988d6d9f6.pdf
+    sha256: cd387883f003f6764461eec27fa844b616551d3c3060399f53315250b9ce4a27
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/750f2f9570adcd824315.pdf
+    sha256: 31b7fff6a2dbaf6927a87c7c2d9a8f6efe3e93c5f8e32c26b52c98cc13b1a3f3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/777b300db380ad6a2b8c.pdf
+    sha256: 14b4fc4e90a9327ca3b3ec47bc5507c9df1a942205967afa92e3589d13f4f75b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7994c01631f9607bbbe7.html
+    sha256: e916f2c4d87a5b98eb7cae7655caf95677f1bb7a4e24a9e8adfd453135901eeb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7e5fccbb37c0724aa77b.pdf
+    sha256: dd8999dfcc9f10555a0b96b5fde97fec851e0595eeb03400aaeb1d341bbda51c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7e74f458a4889b95b3fe.json
+    sha256: f880382b9fecacd2acc641ce9bb142f0e484c9052a89b583519e9838a75beaa5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/834d85d2c1296db7bf90.pdf
+    sha256: 2e4cc6bd6b6eba8dc4c5209aca839ce4cb30767de6f8f8a5f882df8749a45e4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/83a20841804c2dc76559.html
+    sha256: d50e78472176d61a37d1b9c6811728120dd1870a2b67539385f68af485bee249
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/845417d1d431275aa037.json
+    sha256: 70e4cf6b35b94e8dcd7ce31355d8350839827e4288fdc47e1f8808fb0c40fdca
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/86b8a947098884f32f63.pdf
+    sha256: 8167eff4763a7a9c19e6b532240c65653f97ff9f327fffa4668b685e1cd0a44a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/888d422f7e641b027c94.pdf
+    sha256: 659278da0430175e0af37123b7526a99a5cebe68ae371d6a0024bc8a54f128b5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8eb8bca8f9ca3eeadf45.pdf
+    sha256: 6558f7a2f9bfd0f104592bd9af99cfbc48abdf92a773613d922bbf544ee8946e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8f78720d273001286b58.pdf
+    sha256: 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/920e229a3a6c256e2c53.pdf
+    sha256: 7448ef846bbfacda2597970e921f0f47d6a8f7fd01508411b8b1e254b36b030b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/93230dbd49c7a154e09c.pdf
+    sha256: 11def73c8220adcc80349eda36441195913e15b4001a243b81fd306df24e4b20
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/942b39d3277ed59a6e5e.json
+    sha256: b63597896ea6ea093cfb7cb20547aeb3b627fe4bb9ae1c8e9049ee5ea315338b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/95f8c5df0a53185950ab.html
+    sha256: d3293b3a572a899b1971e8da7046252ff521df300921ac067ec906e2cf51e788
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/98eb16d6b73f0f1d8741.pdf
+    sha256: 474ad6e423b18899f16e8a23dab61b4d290699e394f542302317d2f7e39bb60a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9a7c1be5daba4b08ece7.pdf
+    sha256: b3923aeed926fe8176633eb27c32c0ff91db802a90a485c0b86ff23c2ea23da7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9c2e840069cb805794c8.html
+    sha256: 7489686c0f8b4a1fadd428de69fde4f0eaf5a7eebbbd7d60ac725684d49b7490
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9cec8ae58bf9b5453052.pdf
+    sha256: 43f66ddcbb7ebe801b2afe2929f73299f480d94b70c7ae1974c4efac95b0c584
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9d8e37896575108c9e67.html
+    sha256: 636d33620f991e794b0462ecbacfcd825dbec33ebf9fd5171c7c4d052dde8cb3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f3ddc49e9abf4f27c42.pdf
+    sha256: 748c524b06b56cc43de945317980fff10ec631167246d5ebb8b54656f71c9c09
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a0a25b526c977ea17e6d.pdf
+    sha256: e29ac7df8a34a2c029dd49d183417ad9bd4d1f414637d8ac00a5281164037c16
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a5144b885a34ee4dbe20.html
+    sha256: 5750ffc6dd7279a2860e67c19f845416b57b295488963ef6c0c869e69002fe6a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a6177fe7d92ed517a8d3.html
+    sha256: f4848d00a77de5f298a1ccb541be33d7d55ecb1426d5b1a46321aefab2ed0036
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/aa8e5b13b83679bdf02a.html
+    sha256: 8a9fd7ff4cc9f3a8d4fb7564fac2e4083304e069f0fd21d696817fd96b772ad8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/aac0116cbb49cf85befe.pdf
+    sha256: cf84ea0d423a592b710c04fbdfe2a9408bc82a35e04288eed6ec3110df636322
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ac8034c292bdd719242a.pdf
+    sha256: ff02402e1f4a1d4efdd2945786b858eb871047e2f981461e4d5ce9fcd86ccfba
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ad7fb94a130056f1bbf4.json
+    sha256: 08ea9661d2b294bf5ae77081577b5b4c2ab30c5c9605953d848f651068019058
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b540322bdf802917cdc3.pdf
+    sha256: d166187f1e5d519aeed294b42b71b5f3f25c77dd5f94caefe24cf9cc8a8147db
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b5b7c980233c6203ed2a.html
+    sha256: f6e6a55db9a0400b35557bfbd8fdc93c50b358345c36b8dc9534ee8ce7cff84b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b5ce604ce82ebe1d094f.html
+    sha256: b8c84a98fcb82864418420611619ff03c1a3d2df69d770e2c9553fe1ce695857
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/bdb3f18955ac3a0ca063.pdf
+    sha256: beeb3f1c77827401fc12a088672b93ebfd612e12aac88c622eb466f745a80358
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/be2d7bcdf296ac972fd3.pdf
+    sha256: 32a7b6cd942adf57d44035cf77c224df0bc678e60d5fc96353f5ec4cae093e2c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c2a823ffedb86220b301.pdf
+    sha256: 4d6957757cef4be4e5c7109c851a9b4e5c1b1d885754c535238fc3323c06a6b5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c2bf306294cd7e62a401.pdf
+    sha256: 8c73577caafc8c082adf043f9cae0fe4afe56667daf5133f875a1430aedcd1db
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c4623b6d8327a0431b56.pdf
+    sha256: 442ca06199c6e46338d6122dca5844200ebd173cc7e041b072ccf8ce27b4d9e4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c506737edc55c6435c28.pdf
+    sha256: de661267b6f339fbed69d10af79748549a2fa982f3b89d2518a7a9521772785b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c5289f441fe790ace61d.json
+    sha256: 91869670c67877e378fdb1fcd0a8705307db563b248b1ad61a70d24228ed259f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c7f41871800f36b322f9.pdf
+    sha256: 805a62e51e3b768102d5aef6903e9fdc659dae5cd379e375d14b21fa58506f7f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c81b11b75b019e40d647.html
+    sha256: 4429b809760e580e11fba2d048a487da64fe10ea18f7e3c0b8a89b132def08cb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c8cf2ac8b94cd0d91a2a.pdf
+    sha256: 0dd3bcc46955213a7b1167782f1506ba6057a0c22c8b586f2480301b1cdf79a3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c8ede08b4d6a44f5af9a.pdf
+    sha256: 7abdf50c05251b2c7ec928a224ed2e0566292591ac08f3b6f1056c0542b69ffa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c9187e8f49c4c47cc3f5.html
+    sha256: 770a998f8b5ad250d4ff22b9ea658c18808de22c117b740030067f22bf92eee7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cb6a90cde0d7669372d3.pdf
+    sha256: 6f6b4f29b224801a542c7907ad6d57537f01e00fd18bdf028fc529f1366cf1f6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cb7709012ff0add05aeb.pdf
+    sha256: 9489b77804731d4fbf84e9e67e9477b37228d78fe25f926757b4ed8f75a6352a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cf631c20b4bcdf04845b.pdf
+    sha256: e2d135e00725b671493e2c4914fc1027fa03ad543639659ff1630700a4c1316f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d1bd2bc530c556490af2.html
+    sha256: a783d50aa9e66f29ab7d5be1e612fc5c0d58656857f021779152fd400df3c8f5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d30816ebde2cd39b1439.html
+    sha256: e0a5b7970d48f4ec47c071f9f21eb039465e95b58ca05efb3a4ed9a69508a1ca
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d4d206dbacd38ab4d148.pdf
+    sha256: 9eb5d84c7c9fbf6492dfbdb7fd4435d78732d9d6645306ce5d801ab390430dae
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d579656dcd15699ee9b4.pdf
+    sha256: d09c8acab6d3e7c1cde2dc28835dea0f4e03f229236d9836253b9fadb4cdd059
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d604e49b20f7f2e6a470.html
+    sha256: 4b090f244317163c5c4274c2a34a31f3bfd53bdd993d7c2f5125941aa55e4949
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d78eaec3d48cf38b5934.html
+    sha256: a933ef7d21a623d1371164611e7eb6105851a197dcbaf72bed68341a52a0b8eb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d8ba59dcb901ea127a30.pdf
+    sha256: 198531d5f08ebf394167346ace4ebd41a7f0136a699aaa802e4675c501c998ce
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d9497bd17a552d733348.html
+    sha256: 75880a4ad4564c788115727bb7b46accf237f3ab7eda853fc134d0be6dbcd820
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/daa3879a029aa9890728.pdf
+    sha256: 64ea87620735286ba1732e9977ca0e7774f004d061d0d55f409b40c3daefe417
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ddad0ad174d4edc2a4f8.html
+    sha256: 5c2266593f0839ef8e3c677ba857b5ec46ed58459654774a5d7db34fae92ab6a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/de111d026fb35aec7941.pdf
+    sha256: b6db9a7c99797d3c00ac8e2d4a1cbfeefad3e8fe7af651de8597a73422dec917
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/de1869faba9502c2d6e4.pdf
+    sha256: 4a86779b3c8ff845258b7772def101989717e12b397c31d415b7a3eea3cd704f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/de49dcfefd96fe655cee.pdf
+    sha256: e4785028fb4e480035d4e17d35ef37602a60f0745dcaf7526531073a81082e43
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/defd9c651cabb418920c.metadata.json
+    sha256: ba08393b573a531e8f71623267aee731869aa6a01c1ea4c69f650846ea59ee20
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e502cfdf8aba2e4200ed.html
+    sha256: 08a2fb926de9ad2c6b40d1cd7a11cc7c4265259cd2836626d5e14fb7b56a585c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e617ea8d2ec71a8060f9.pdf
+    sha256: c7c3b80c2b570e29d549678f26441070f3412456458a3efcaafabe6ed74d542c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e673c14eb43a92ea233b.html
+    sha256: 00343a13344352b678e1e7c3d3dc5de970af9e4366f721c506b706505aa64f3c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e7131e6b99610ae7e761.pdf
+    sha256: 5cff5a3b71f6099858d2f22e6976048cadf41722aba97e2edc7f237822cb7250
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e909b1108ca34a419ca0.pdf
+    sha256: 47575e5434ec313513f8354adf0ba02b48e0a10ae78a7aab53568062e4470078
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ef4505a2571d361fea37.html
+    sha256: badc4c905f514b3de359bd2988aa93c50e0bdf66330484884260f0ed0a744cd7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/efb29f793faa53029368.pdf
+    sha256: 4e1acd1de8c5c2e1781e0506afd33a1c35680a0dce81db1b7d9cc1f56f884b0f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/efe3057cb69c03699abb.pdf
+    sha256: 270a0a00d68ecdbb3361c08610cf7a790123b2395fd9a83477a2f8ecac30afd9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f47ac24545f8c1509d2e.pdf
+    sha256: 0612e97a3e5e6209661845ecdf6d716a496713ecca07a89831fa350a84474ac8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f66dd0d137e71f0276e9.pdf
+    sha256: 863c687e73b355e39b67a4b853a3642150189e38b4dbbc5635ca071b3479f341
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f7f4015d4abf9f82df2b.html
+    sha256: 88d4e41e52551c0de46d2d730198d08913562139c2e6df85a8814f1210f63b39
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1137.json
+    sha256: 29135234557c49451397df92b860db26bab71e008eceb6726de298976efb4f4c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1144.json
+    sha256: 1607b979073ab6dd2adf68f13f37bbe249276ac7b300ff3124bd6da490985f27
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1150.json
+    sha256: 4f1a481b6e204e6c47c0a8862fcd8bf778ba99611ee3ffb4f14537b6802db6dc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1189.json
+    sha256: 30ebd7297954bc47757e74c4269a775a29877dde772806cbc74fefbe46e8f1c9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1196.json
+    sha256: c5f41b29f71474af83f6d60b5a69fa21aab080851fbba6383a25e26313a35eb5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1244.json
+    sha256: f36563d08ff99db39daef83c6b7c20253818f1e45391d336262370db6e590be7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1327.json
+    sha256: 8bc1733a4b73213030736d9a3facc940bc16797fbd7f14a8879a65c3fc366280
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1360.json
+    sha256: 73d1014d62587570e647677276bed03d874f45bcc515b51dff4e7cb0501a9590
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1367.json
+    sha256: ae10bb761f3e24dfbdf36ad71cbcb5a3864eabd55381267c093189804b9324e8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1417.json
+    sha256: fc493ee9dc03c10c443a896391a75cf96d5f8fade828403b3b602e5c1b193fc9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1419.json
+    sha256: b5e94e1a75415a84d19361fd8c56586fec772657032a834d71b75488d13633e4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1420.json
+    sha256: ed480b1917da770073732a8cf1a197d5e50a71c41f4a85b9643a290d9f5cdce1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1432.json
+    sha256: 8c7b91cfaf36dc06ef89b6fa2bc80cabe71493c765a439f18cf2897490d8a3a3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1433.json
+    sha256: 2b4f67c8da106c98d540a27d9b0e1f1a9d0618e667b2a7c514fa19198963e777
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1436.json
+    sha256: 8c37dc91b0fd6ef155579bd546be641d115381f89488b4aa2af4743cbf6d5c46
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1437.json
+    sha256: f094491e5e339d1e218259e2cd728e1d266369083d74501a3da095f9a2d10a95
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1438.json
+    sha256: 19faaf3177f6a668a0a10522dfc021735b8e3e34442903390ed9777ca72f47d1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1439.json
+    sha256: 16b9f3820f3a5e46a9d02a132f6b3a466e09f44faf6d3500ca835006e4ad28c8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1440.json
+    sha256: bbaef353c6f1754c8783d5fc30c90dfbbf04c472a7b14a1c95d8123d6a944f13
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1441.json
+    sha256: d6ca67121f1dbec14c30279b91b62a823b255dc0f28b6c97b838e52489c37166
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1442.json
+    sha256: 990601f2c72e297e3c0ed5524a283a8ad36bb99c185e5743ff3287d42e7c84d7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1443.json
+    sha256: d213f3a8f4df651e2a96f6cd359d8782379e795c5a657af451928452d25f7b3a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1444.json
+    sha256: 53fd9c05ef484d95f1d4347fe8ea555ad2e5b766f0783fbf8139825523477ac4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1493.json
+    sha256: 4b5dccd39ceeaae1a4bd783c9ba29bf546189e3ef56ebae2c559b041ed900008
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1531.json
+    sha256: 34c9366fdd1060859dd8ea6c278315be7fc5482bde919be1a391e9cda54b1ec2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1544.json
+    sha256: 4d85a3c92f02e3e8044bbb4553be2043d4a88aa7e0e805a7b3f0968e5a5309b4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1557.json
+    sha256: 4f892e069bc941015a7c45ef2119fad78cf2395911bf60752614486f164c21d5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1560.json
+    sha256: 84cc60876b8631ed0ede5bc52418c9462481d450a3c0741a2ca5878820625a9c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1560a.json
+    sha256: 379f3f89b77277dfe5a6c4da23958b2637b79a5e1b9f2e98bb790e4c355640b6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-158.json
+    sha256: 71164e4166935fc47af34992c70bcf958c0ee74c1022cb05fc25bbc85bf75150
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1601.json
+    sha256: f3aa7902fcf9ee20bedddecf1a93688e24b12dd5b7c891cfd7ceb10af4e3c82f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1604.json
+    sha256: 4f04f62552ad3daa5083cb0670269ffd6090fb422c52cb6c292afc177d537d2c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1633.json
+    sha256: 332b1179ea1df416b13f8959b82a80fc95f620a3d0d8873cce9d1082eeace96e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1651.json
+    sha256: ff3d5ca5a21efce6bed58dace464e10d9fabe3c314f22eb80d22e2c147580832
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1685.json
+    sha256: d2a019e0ed1649738d77ea4d0ce181e1d3745a8697817bb04a2e018ac074c68e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1695.json
+    sha256: 448afcb38b98f79399de24bbdfcc9c1297cf0283447b1da11a5417ffbca5f427
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1714.json
+    sha256: cc4e24e8d3982dd37c26d5375e6d233f03585ed552f46599faecdeaaa55a12a7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-1728.json
+    sha256: 6a789a6c64e6456386ac7a7cbaaa3369ceb4863b8233938227bea33f7952c468
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-182.json
+    sha256: 7d768ea80d53f04eed7bc2ccddc7ff84639c85ffcbf5fd23808a9fc4d53fe2e6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-185.json
+    sha256: 2df811e9f488456070cfc61eca2d0662f02a7eadc36454b09f695154e9313d0b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-265.json
+    sha256: f2c57ed580e65928e82bad4eb0a6d48371d2c6fc60b0bb2f2369754570306dea
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-266.json
+    sha256: fcf98385891431be398f7e4fbf3192bf68ec6f4b5a88fb6b0e07abf7006c23cf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-291.json
+    sha256: f1cded90e07b6ca16546882ce050b553c39967ca8ca7d3d19bfb27bd7daa48f8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-358.json
+    sha256: 84fc6b3514703880e71a5648c7973c6ab894f2d3e4a3b375bc0f72880c89ec4a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-358a.json
+    sha256: 5e1f12abedc271f34af51f3d9da0e891c57c7bda9695b0d28ce631fd27c65307
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-390.json
+    sha256: 09cda8ca9f5e6d658f258ee6736fe837f5baa9a2a267bc7907582078511864f6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-501.json
+    sha256: 1c637ccf416f2f175d06c76480f7dfa51393cff8124ad61886d776ae3b54bd48
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-581.json
+    sha256: 3223537a8348c03401142edb3ab53f2f779eceb587bcfa6dd507ba16685fbe37
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-590.json
+    sha256: 96361bdb8b92e3ac5afcc5c29a7485f251e97d058277ffee5672f4aab3b7a0ad
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-592.json
+    sha256: 4bf515641d432a688b28bd54de37eb5c07b8bc422c81ee5833fd632b83a59db8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-600.json
+    sha256: 4378ac7374ec5eeff710a6e646e3d24f0562bc2b222ac3306c7c24aa911936f3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-600a.json
+    sha256: 070bc7295dde6bda3e7fe61ddce8d9265b9119238020f58c44537fea6177ba10
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-600b.json
+    sha256: d07241719e8d5fd5f9a53c774611e582e2704d317b8dc33b5d6b635392db961e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-602.json
+    sha256: a27448631a32818f5dd2d947354ce89bb48f8419d23eb00d8705de3da8d169a1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-603.json
+    sha256: e331f9d3f4349068c335c056d921960dc063613749f6e9a4352c59f023b13010
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-607.json
+    sha256: 40e1349abac0de118110d1bcd230d53cc22a8478dc68e193892676a0d8301cf4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-607a.json
+    sha256: 278e33adf327707e35f929c6ed39fad9f33b7f258d7a722377f839693e266796
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-628.json
+    sha256: bf0057914ffd033e073a01925e16ce8a0001d479787026ef224abf476416492d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-629.json
+    sha256: bb53658fe2834ebd6688708d1a2c53fde3bdf8b6f612c3caf5890b71f0532b26
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-673.json
+    sha256: f9ac85d56271c462168625b9dbcca63e543c3d9533d3cc3c7dc86ebf1fcdf33e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-727.json
+    sha256: e1585a4ce227384519be5057b04d947b18f6ef057419080dbd2c0cd4b22930ac
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-768.json
+    sha256: 197802434b6fce218d030edd1f4f2004bbf86283d842c299237ef79af0d01f1a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-770.json
+    sha256: 70e58a941876fb9439ebcc2f44b544df109c149789ac8ec7367e8db1d1907899
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-773.json
+    sha256: 52dd47f087700de114dc037de12523d1a4693b4bf534bc679ad6bf88d9790368
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-808.json
+    sha256: b198c6db0f0e785455ea67df4e1e98c312086eb2bf65875aa6d30a12461b9269
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-863.json
+    sha256: 872fc6c0fba97925c8e97370a68f597e71274f0acaa7d43866ab89ed87b4b741
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-874.json
+    sha256: 5d824793638cdc753cb1c7b21e62da47331d595e565765e4935000c212d23957
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-88.json
+    sha256: 174527de47239fcc149a1b2fedf305d402d99b0ab308d52d8f44755092313e73
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-883.json
+    sha256: 42688e84a41a8468fbe753ff144cdf822aaf7495cf94192a99bed6245687f17d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-88a.json
+    sha256: ea16a2ad9e90ff4a58ec2c711f0fa9c3fa4b2d48e15572c3611e538d9db93f69
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-88b.json
+    sha256: 97e18daf0033aedb903f2d3e109cf5526a0c3e9e635494d4b5556b4e50b8440e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-88c.json
+    sha256: 1e1444ef7460bfaa985aa0ceca71249205540d3094f8cc6f6e25ac3ce994866d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-991.json
+    sha256: e84322054619b2a5cb4ac832ef9c24d1ad4d902e5e9a32e6b9c5bc72ca0793f8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-C23.json
+    sha256: c7b83dc0172b62a6b3c48b5d6a6d01ea942e3d8369c3437b0344ba239c017823
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-C26.json
+    sha256: 0866dd1129f84638d8b8cecaf52daf010389b282975d241fc9ed227cedc5b85a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-C27.json
+    sha256: 7f6be1d2edf90a39233c3a4c2df70d6047c05e89129d73cecd621a7c5b65cc47
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1014.json
+    sha256: ca40031e555e7a69dd93deddb0563bfccbbc6c27ac2e4961cbb125a6bde0e226
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1044.json
+    sha256: e6a7afcc869bb70d82eae41e68f7a8a6be870ff251787acea57a75e89664ec79
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1059.json
+    sha256: cf8b8ca3ccf51cb62b3f1f2a332aa74cb4ac4700f3ad4574bce00415162999b0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1126.json
+    sha256: eb8972de8f0d3f73e2ec411ec1aad3fd066bdd5111eebe702db0d0cf568a17ea
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1162.json
+    sha256: 34a1d25fd2bb714c2e4f9be2c98252a622abea301fb15a9c763bc98de928ed98
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1227.json
+    sha256: 11efba8880aa5257e88140c4303f33dcae23c1178df038db784d8845722582fc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1275.json
+    sha256: 39e6bb91c6b4afca056b7ed1d401393780229e12b4ea7b507523945321aefb6c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J1322.json
+    sha256: 323d25cef4dc8bdf134736f1330770c73de6b9a90e2fee0609f0d05f0358e6e7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J149.json
+    sha256: 8bc5a9f8fd167271e38475e6b883bdc635939a5e9faaa30ba236c0741c15888e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J159.json
+    sha256: 7b9f1e9921d3742284becdd846543d9df5d0f97af1b706cb70e33c27d32efd13
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J160.json
+    sha256: 021eada87ee8317bbaa47bc47e6ce8aebd186f2f591d8f0b0eb3ee0b8f81d1b3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J165.json
+    sha256: 9aacb7493152f51f564ebf5a27e89a7b3a1ea5818fd54b56fc9e077ca3965a1d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J171.json
+    sha256: e4af46670573c8a0bf0e721db04820abeefab2a19000c3aa5780a9d61dec18a6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J172.json
+    sha256: f108ee60b4348204bd3f51d26fb1702132293504b536e9edb62f736522d0f4ac
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J174.json
+    sha256: fad95c48abe3d115f0e46967a63d4798da9d0ccf0d7f025b32f4fbdcd83b877a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J175.json
+    sha256: b7fcc98e5c2d260e38ba0b70025cb056d58a9cbc7af7f503a6d90bbb6042bdef
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J183.json
+    sha256: c1baf24ef1a3b70454fdbabb8c87c4eabefa7630d065081f1bee37617944c62f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J184.json
+    sha256: eeeb3f88165af72e01d30d7a3eb555f8bce1b37982bba59ecf1d5ec439b1f367
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J195.json
+    sha256: 2f417f2579484356c750f53108c8fff0b6ab2a88f0125363b8e647d1324c1619
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J196.json
+    sha256: 22ad3a57da0ace2b23a35557948b8c658b8acc58297002d825dc20bd01609522
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J236.json
+    sha256: d47aae298291eb9f34eff1f2a7c8ffd0a34670c72e59f300b51c849570c8799b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J252.json
+    sha256: 2af9190b793ae4c7289bdc796e4fe9726db548077cc9ccdba5347f395a89cbe2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J304.json
+    sha256: 702d303e33ec46ccff488826ef1b7e001c923d436eb44d69673bb46d9a0aac26
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J500.json
+    sha256: 1eb9e6cdc0bd5391392d5c5e66c7e592300dc78dd1667b80276e51d1737bbe87
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J525.json
+    sha256: 7568bb7f210e69832ea75a5a9ffb4e976ca029597c1e2dd4ea2405e264539979
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J542.json
+    sha256: 0a6c20a856d864ce4b780b866873ec51be8c6e53ec645fa79506577af837dc7a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J601.json
+    sha256: be71cbd8593335a40427e476b5155ce3fbee83a049d3c847a12d5dfa78244bb3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J607.json
+    sha256: 4aaa8622cf5011792659effc3a90b502daab500a2d2f21aeec8820ae4b010f20
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J626.json
+    sha256: 89ec3a466ca4db60fd55874e83fa37255b2e221693c8ac06a7c6e72e96c809d8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J631.json
+    sha256: 1e0dbc788b492cc43b24314fa9be7854e92435ba2f9888d25cce32444bc114b4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J691.json
+    sha256: 5f6378c959d887cec011fd6204fa034ce35bda88b611b3cae83fdd36f66bd2f4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J692.json
+    sha256: c8e1f55145587dc307f1c9c620172f001ce4a98aeae5ff10742d00984882b82b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J722.json
+    sha256: 6982ffa5d5b54a3374e83d1f1f22561a76f4da946ffbf54f8980c77a2ff37c35
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J864.json
+    sha256: 1fda0f843d656e2c4803a4f8b736039437d8408be63d8d828afab47ddaf2a02b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J893.json
+    sha256: d933814189ea114da7557546f5ec6d84088c24e9dfe4a68b10d2e73c8d2ad9b9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J900.json
+    sha256: 19a2d05cc452552bb8f43877a9f1674d264318e94b10f7e980598db67f7cb0cc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J969.json
+    sha256: 6c451d824a91683092260b9ec22f572857c3771b47f2f766106e46cc970d617a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J978.json
+    sha256: 941a9581a4c8742b65f48fb23b248d36430db80c80eb1cce4af7e058580adada
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J979.json
+    sha256: b553788cf3d946b11a17b41ab31f36a98fffc2a8061e628f94ea32950f927c94
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-0.json
+    sha256: 83cc84053c03640edebfd2426ae63aff82afa2ed9b14af4662b4af5485a3cd4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-3.json
+    sha256: 2476d1611ce11b7f30ebd1642cbe6735ee0bea7d6e33be63beba53aa7fd47f5d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate-variant-originals.json
+    sha256: 3a35e0a0204a46c8bdbeffadca055fffc04a9f7051d26e0a7be3e6164eb4c399
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-ols-38888-v1.json
+    sha256: 6933410e4ae1d55f63500c3a537f617d0f910fe2e2a8af5be5c21e2ee0825bf2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-ols-38892-v1.json
+    sha256: d1a877122e5decb6ac4b7e93beb6a1b43ea9bea18aa1430b502c09a1bf6f029c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-ols-86222-v1.json
+    sha256: 7dbe9d183142fdeb7baf988df17f5da8f0d1d6c1e66b4dd007f23a9759d8ceed
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-ols-search-v1.json
+    sha256: f6c6f38928adb5ec4f640c4c5782246f382a7a62c76fe767e02be286fc128b6c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-proposal-guard-v1.json
+    sha256: 2a42efe2a6001fac0b4d798a70dddb07e3403cad74a1497bc395b29cfa4cbad8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-structure-web-v1.json
+    sha256: e23bf55ef6dcc3b75354d692f0c4d8c2aceacd920cdaa1a0b56a2c98e118fae7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-supplier-web-v1.json
+    sha256: da1665a28301040081c5babe497aa0a093022ee83cd4cfbaaa358084e4d51ae3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/completeness-owner-preflight-v1.json
+    sha256: e3a226eb88d581d1b0f4fff6adbbabb8d5219bae9c502888f366288bdcb43804
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/context-review-ledger.json
+    sha256: a9635bae0271ce4b403c4919ce9ef270dc8f1c7f7353b1a7d1e5adb721a13194
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-partonomy-v2.json
+    sha256: 16e51beace4d34ea0d383a50b75175f2ad6254216a2cc803d54c4ac7c1cd3bd4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-proposal-guards-v1.json
+    sha256: 67ceb534307a53b01bd0d24b84df4aa7abecd0010b5ee52381999187e06d1bab
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-proposals-strict-v3-command.json
+    sha256: 2ecc3d071f95023c6d7387ffb426e95d40487b5ec4ea73305f7df902bf1977b4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/native-identity-author-review-v1.yaml
+    sha256: 810756cb326f203d662853dcaca2a3cdadb830b4011b8ee581a4f9a355b36876
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/parent-grade-correction-v2.json
+    sha256: 8288c389e4b4eae32456397e57043756dce6a517d4a9cb32c2ca54b919e93f6b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/selenate167-authoritative-web-v1.json
+    sha256: 0af7ff58b700afa769c8fdbb171be08afdd9578114b4412425e07763bab058b4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/selenate167-ols-parent-v1.json
+    sha256: 5eec117569a02e7afb5ca8236e15c898cc8c7907126d6c787045d18485db9759
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/selenate167-ols-search-v1.json
+    sha256: b961a3766d15debbafc36efb2b85930a3814a1c322cdb88487b3ca19de4bf396
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/web-supplement-2.json
+    sha256: 84a6ceaa5524ef93d00f61aa262390983ebcb4c913942efbd122e61a80ef0ddc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/web-supplement-3.json
+    sha256: 0238afb5066b1b40c2765af705c2997ce0be7c22446676ef12fa2906f21f3f0e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Corn_Steep_Powder.yaml
+    sha256: d7eb316c1de3a8daba8a3c7580893d3b2a844a54f3ae05560bea87104867e9e1
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml
+    sha256: 9d3619e9eee30553bd509f082fc99c3576252a8af9c473e3ab583135bc193baa
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/EBIOS.yaml
+    sha256: ad84636fcfdfa606ce97d7655145ed968b3c0d36e2387b5ccad1850245ffe91b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Hy-Case_Amino.yaml
+    sha256: 19c67cd2e07025d23b1de702f53bd53de7ecd36e167842e93711ab27d124459e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Lab_Lemco_Powder.yaml
+    sha256: 8855786c12d6a6c3ec95fce888d9182a4a52b31fa9271ed1824d0b61a988086f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Mineral_Solution_See_Medium_No_976.yaml
+    sha256: 260884ab08b4549d0df33512d48c546143d8218d398700f980d8066761dce816
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Na2b4o7_X_10_H2o.yaml
+    sha256: b93a00e61c3a9ecc88328c44897808c0dd93d89f45ffb1c3e79f8ba1b5d8d69b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sigmacell_Alpha_Type_50.yaml
+    sha256: 15e9c39f69363d60adf1036be268abe61531d9e03bacb086d3ac7819b7e1086c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sodium_Selenate_Decahydrate-v2.yaml
+    sha256: c7c5384a98129420b987f182b93671db3a8793b278cad35d3ae2ab901c064fda
+    role: target
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/sssom_grading.py
+    sha256: 20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c
+    role: context
+targets:
+- target_id: kgmicrobe.ingredient:lab_lemco_powder
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Lab_Lemco_Powder.yaml
+  label: Lab Lemco powder
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Lab_Lemco_Powder.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: kgmicrobe.ingredient:sigmacell_alpha_type_50
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sigmacell_Alpha_Type_50.yaml
+  label: Sigmacell cellulose Type 50
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: kgmicrobe.ingredient:hy_case_amino
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Hy-Case_Amino.yaml
+  label: Hy-Case Amino
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Hy-Case_Amino.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: kgmicrobe.ingredient:ebios
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/EBIOS.yaml
+  label: EBIOS dried-yeast tablets
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/EBIOS.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: kgmicrobe.ingredient:corn_steep_powder
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Corn_Steep_Powder.yaml
+  label: Corn steep powder
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Corn_Steep_Powder.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Mineral_Solution_See_Medium_No_976.yaml
+  label: JCM976 mineral solution
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: cas:10102-23-5
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sodium_Selenate_Decahydrate-v2.yaml
+  label: Sodium selenate decahydrate
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Selenate_Decahydrate.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml
+  label: DSMZ863 sodium carbonate stock
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DSMZ863_Sodium_Carbonate_Stock.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+- target_id: CHEBI:38888
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Na2b4o7_X_10_H2o.yaml
+  label: Na2B4O7 x 10 H2O
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml
+    role: Intended maintained owner after guarded coordinator integration; artifact-only
+      proposal is reviewed here
+scope:
+  description: Every proposed payload and every original owner plus complete primary
+    source evidence for cases166,167,170,171,172,175,182,183,186; sharedCM46 LabLemco
+    alias bound to all3original recipe occurrences.
+  selection: All9 substantive identity proposals authored in KG26 completeness reassessment;
+    optional163 typing is covered in its separate immutable review.
+  coverage: full
+  population_size: 9
+  reviewed_target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  - kgmicrobe.ingredient:hy_case_amino
+  - kgmicrobe.ingredient:ebios
+  - kgmicrobe.ingredient:corn_steep_powder
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  - cas:10102-23-5
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  - CHEBI:38888
+  exclusions:
+  - target: Unchanged historical roles, whole published SSSOM rows, other shared-source-ID
+      contexts and final integration
+    reason: This is scoped identity/formulation author review; complete publication
+      selector approval and independent review are separate gates.
+checks:
+- check_id: identity
+  name: Source identity and exact form applicability
+  status: passed
+  required: true
+  summary: Every product/stock source and supplied-form distinction assessed; conventional
+    versus structural borax naming resolved through original crystal study.
+  target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  - kgmicrobe.ingredient:hy_case_amino
+  - kgmicrobe.ingredient:ebios
+  - kgmicrobe.ingredient:corn_steep_powder
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  - cas:10102-23-5
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  - CHEBI:38888
+  evidence_ids:
+  - proposal-0
+  - proposal-1
+  - proposal-2
+  - proposal-3
+  - proposal-4
+  - proposal-5
+  - proposal-6
+  - proposal-7
+  - proposal-8
+- check_id: guard
+  name: Guarded native writes and immutable original hashes
+  status: passed
+  required: true
+  summary: Artifacts only; existing history/counts retained, intendednewIDs checkedagainstignored-inclusivecatalog.
+  target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  - kgmicrobe.ingredient:hy_case_amino
+  - kgmicrobe.ingredient:ebios
+  - kgmicrobe.ingredient:corn_steep_powder
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  - cas:10102-23-5
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  - CHEBI:38888
+  evidence_ids:
+  - identity-proposal-guards-v1
+  - borate175-proposal-guard-v1
+- check_id: strict
+  name: Exact proposed payload strict schema validation
+  status: passed
+  required: true
+  summary: 9 files,0errors
+  target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  - kgmicrobe.ingredient:hy_case_amino
+  - kgmicrobe.ingredient:ebios
+  - kgmicrobe.ingredient:corn_steep_powder
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  - cas:10102-23-5
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  - CHEBI:38888
+  evidence_ids:
+  - identity-proposals-strict-v3-command
+  exit_code: 0
+- check_id: partonomy
+  name: Native component partonomy against current catalog
+  status: passed
+  required: true
+  summary: 0proposed-targetviolations; literalunmappedcomponentnames preventguessedidentitybindings.
+  target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  - kgmicrobe.ingredient:hy_case_amino
+  - kgmicrobe.ingredient:ebios
+  - kgmicrobe.ingredient:corn_steep_powder
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  - cas:10102-23-5
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  - CHEBI:38888
+  evidence_ids:
+  - identity-partonomy-v2
+- check_id: release
+  name: Full repository synchronization and publication release
+  status: not_applicable
+  required: false
+  summary: No maintainedwrites; coordinatorintegrationandfullgatesstillrequired.
+  target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  - kgmicrobe.ingredient:hy_case_amino
+  - kgmicrobe.ingredient:ebios
+  - kgmicrobe.ingredient:corn_steep_powder
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  - cas:10102-23-5
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  - CHEBI:38888
+  evidence_ids: []
+evidence:
+- evidence_id: proposal-0
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Lab_Lemco_Powder.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.213536Z'
+  support: supports
+  summary: Oxoid Lab-Lemco is a refined meat-extract powder, identified by original
+    DSMZ727 and CCAP CHM/EG/EG:JM formulations and current official LP0029 specification.
+    This whole variable-composition product is not one molecule or a finished medium.
+    The exact molecular constituent list and historical lot composition are not established
+    and are not required to preserve the named product identity. Current supplier
+    compositional ranges are not backdated to historical lots.
+  snapshot_sha256: 8855786c12d6a6c3ec95fce888d9182a4a52b31fa9271ed1824d0b61a988086f
+- evidence_id: before-0
+  kind: record_content
+  reference: data/ingredients/unmapped/Lab_Lemco_Powder.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.213608Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb
+- evidence_id: proposal-1
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sigmacell_Alpha_Type_50.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.216260Z'
+  support: supports
+  summary: Original DSMZ1433 explicitly specifies Sigma S5504. The current official
+    S5504 specification identifies Sigmacell cellulose Type50, nominal particle size50
+    micrometres. Retain the original alpha wording as a source label, but do not equate
+    this product to the separately listed alpha-cellulose product C6429 or assign
+    the supplier web page disaccharide SMILES to the polymer. The registry identifies
+    the source-specific cellulose preparation, not generic cellulose as an exact identity.
+  snapshot_sha256: 15e9c39f69363d60adf1036be268abe61531d9e03bacb086d3ac7819b7e1086c
+- evidence_id: before-1
+  kind: record_content
+  reference: data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.216309Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 628c06aea5f0041e8c57febeaaf8a80fc90a08940bc6dbb2b822032f721696e5
+- evidence_id: proposal-2
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Hy-Case_Amino.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.218636Z'
+  support: supports
+  summary: Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies
+    the named bovine-milk casein acid hydrolysate. It is a complex powder of free
+    amino acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact
+    casein or any single amino acid. Current product identity supports the named product;
+    historical lot quantitative composition is not asserted.
+  snapshot_sha256: 19c67cd2e07025d23b1de702f53bd53de7ecd36e167842e93711ab27d124459e
+- evidence_id: before-2
+  kind: record_content
+  reference: data/ingredients/unmapped/Hy-Case_Amino.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.218682Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 9b3e37fd766d6f5c587dc30bcd266e3e9602b2f924bbe6cff7ca79835f50d1bc
+- evidence_id: proposal-3
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/EBIOS.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.220943Z'
+  support: supports
+  summary: JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked
+    owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical
+    research. Current official tablet ingredients are evidence for the present product
+    only; the historical source establishes dried-yeast tablet form but not excipient
+    quantities or unchanged composition across time. Bare EBIOS is retained as a rejected
+    unqualified brand label so it cannot globally resolve P2G or other EBIOS products
+    to this tablet owner.
+  snapshot_sha256: ad84636fcfdfa606ce97d7655145ed968b3c0d36e2387b5ccad1850245ffe91b
+- evidence_id: before-3
+  kind: record_content
+  reference: data/ingredients/unmapped/EBIOS.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.220990Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4
+- evidence_id: proposal-4
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Corn_Steep_Powder.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.222901Z'
+  support: supports
+  summary: Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify
+    corn steep powder as a5g medium ingredient. Preserve this process-derived powder
+    as its own undefined complex material. No vendor, drying process, fixed chemical
+    composition or equivalence to a particular corn-steep-liquor concentrate is asserted.
+    The absence of a fixed molecular formula does not prevent a source-defined material
+    registry identity.
+  snapshot_sha256: d7eb316c1de3a8daba8a3c7580893d3b2a844a54f3ae05560bea87104867e9e1
+- evidence_id: before-4
+  kind: record_content
+  reference: data/ingredients/unmapped/Corn_Steep_Powder.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.222961Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 90782981bcc54dc066b91cadf4794b0f166ea7d6a2d0a80336dcfe302ace35bb
+- evidence_id: proposal-5
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Mineral_Solution_See_Medium_No_976.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.226405Z'
+  support: supports
+  summary: JCM978 points to JCM976 mineral solution. The earlier DSMZ976 attribution
+    in immutable history is incorrect. Original JCM976 specifies the listed precursor
+    amounts in1L distilled water and KOH adjustment to pH6.0. KOH amount is endpoint-defined;
+    this is a source-qualified stock formulation, not a fixed solution-speciation
+    assertion.
+  snapshot_sha256: 260884ab08b4549d0df33512d48c546143d8218d398700f980d8066761dce816
+- evidence_id: before-5
+  kind: record_content
+  reference: data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.226465Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 911de800edd62dc119f74d48432257ba1f22c2be95ebeb37f8e79385aecdd238
+- evidence_id: proposal-6
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Sodium_Selenate_Decahydrate-v2.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.227832Z'
+  support: supports
+  summary: Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo
+    specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography
+    DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name
+    query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0
+    and is only a broader form anchor. Correctedproposalv2 usesNARROW_MATCH for intendedskos:broadMatch,
+    perMIM1164; formerBROAD_MATCHbytesarepreserved.
+  snapshot_sha256: c7c5384a98129420b987f182b93671db3a8793b278cad35d3ae2ab901c064fda
+- evidence_id: proposal-7
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.229631Z'
+  support: supports
+  summary: Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved
+    sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified
+    stock has its own registry identity. Existing CHEBI29377 stock-labelled owner
+    has1751 historical membership and mixed dry/buffer aliases; this proposal neither
+    repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution
+    requires this exact occurrence context and is retained as non-resolving source
+    text on the new owner.
+  snapshot_sha256: 9d3619e9eee30553bd509f082fc99c3576252a8af9c473e3ab583135bc193baa
+- evidence_id: proposal-8
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Na2b4o7_X_10_H2o.yaml
+  locator: Entire proposed IngredientRecord including history and mapping fields
+  accessed_at: '2026-11-08T04:41:38.233056Z'
+  support: supports
+  summary: The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O
+    and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material.
+    Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate
+    decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888
+    has that structural formula and381.371 mass; its octahydrate label counts the
+    eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official
+    supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied
+    form. CHEBI131366 and86222 instead contain two excess waters and remain upstream
+    defects. This identity proposal covers explicitly weighed decahydrate reagent
+    contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no global mediadive.ingredient:196
+    exact redirect is approved.
+  snapshot_sha256: b93a00e61c3a9ecc88328c44897808c0dd93d89f45ffb1c3e79f8ba1b5d8d69b
+- evidence_id: before-8
+  kind: record_content
+  reference: data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml
+  locator: Entire unchanged original owner
+  accessed_at: '2026-11-08T04:41:38.233129Z'
+  support: context_only
+  summary: Before identity, aliases, counts and historical holds read; byte hash guards
+    isolated change.
+  snapshot_sha256: 596380ddafeefb860cebe7e69d4ac6f336b93987ece57a2d005a86a2d6a29d09
+- evidence_id: identity-proposal-guards-v1
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-proposal-guards-v1.json
+  locator: Complete guard or validator receipt
+  accessed_at: '2026-11-08T04:41:38.241638Z'
+  support: supports
+  summary: Executed native schema/partonomy or exact byte guards, with scope limitations.
+  snapshot_sha256: 67ceb534307a53b01bd0d24b84df4aa7abecd0010b5ee52381999187e06d1bab
+- evidence_id: borate175-proposal-guard-v1
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-proposal-guard-v1.json
+  locator: Complete guard or validator receipt
+  accessed_at: '2026-11-08T04:41:38.241680Z'
+  support: supports
+  summary: Executed native schema/partonomy or exact byte guards, with scope limitations.
+  snapshot_sha256: 2a42efe2a6001fac0b4d798a70dddb07e3403cad74a1497bc395b29cfa4cbad8
+- evidence_id: identity-partonomy-v2
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-partonomy-v2.json
+  locator: Complete guard or validator receipt
+  accessed_at: '2026-11-08T04:41:38.241708Z'
+  support: supports
+  summary: Executed native schema/partonomy or exact byte guards, with scope limitations.
+  snapshot_sha256: 16e51beace4d34ea0d383a50b75175f2ad6254216a2cc803d54c4ac7c1cd3bd4
+- evidence_id: identity-proposals-strict-v3-command
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/identity-proposals-strict-v3-command.json
+  locator: Complete guard or validator receipt
+  accessed_at: '2026-11-08T04:41:38.241734Z'
+  support: supports
+  summary: Executed native schema/partonomy or exact byte guards, with scope limitations.
+  snapshot_sha256: 2ecc3d071f95023c6d7387ffb426e95d40487b5ec4ea73305f7df902bf1977b4
+assessments:
+- assessment_id: case-182
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: Oxoid Lab-Lemco is a refined meat-extract powder, identified by original
+    DSMZ727 and CCAP CHM/EG/EG:JM formulations and current official LP0029 specification.
+    This whole variable-composition product is not one molecule or a finished medium.
+    The exact molecular constituent list and historical lot composition are not established
+    and are not required to preserve the named product identity. Current supplier
+    compositional ranges are not backdated to historical lots.
+  target_ids:
+  - kgmicrobe.ingredient:lab_lemco_powder
+  evidence_ids:
+  - proposal-0
+  - before-0
+  details: 'DSMZ727 uses5g Lab Lemco powder(Oxoid); admitted CCAP C23 andC26 use1g
+    OxoidL29 perlitre, andC27 uses that ingredient in its EG submedium mixed1:1withJM.
+    Current CCAP originals confirm the Lab-Lemco quantities and nesting. The official
+    Oxoid LP0029 specification identifies a refined powder meat-extract product with
+    bounded analytical properties, not a molecular chemical or an arbitrary beef extract.
+    The earlier ThermoL0029B capture is an error wrapper and supplies no scientific
+    support. Completeness reassessment: Oxoid Lab-Lemco is a refined meat-extract
+    powder, identified by original DSMZ727 and CCAP CHM/EG/EG:JM formulations and
+    current official LP0029 specification. This whole variable-composition product
+    is not one molecule or a finished medium. The exact molecular constituent list
+    and historical lot composition are not established and are not required to preserve
+    the named product identity. Current supplier compositional ranges are not backdated
+    to historical lots. An isolated guarded existing-owner promotion now supplies
+    the exact registry identity and supported material scope.'
+- assessment_id: case-166
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: Original DSMZ1433 explicitly specifies Sigma S5504. The current official
+    S5504 specification identifies Sigmacell cellulose Type50, nominal particle size50
+    micrometres. Retain the original alpha wording as a source label, but do not equate
+    this product to the separately listed alpha-cellulose product C6429 or assign
+    the supplier web page disaccharide SMILES to the polymer. The registry identifies
+    the source-specific cellulose preparation, not generic cellulose as an exact identity.
+  target_ids:
+  - kgmicrobe.ingredient:sigmacell_alpha_type_50
+  evidence_ids:
+  - proposal-1
+  - before-1
+  details: 'DSMZ1433 specifies 5 g Sigmacell alpha Type 50 (Sigma S5504). The current
+    official S5504 page identifies Sigmacell Cellulose, Type 50, 50 micrometres, CAS
+    9004-34-6, and separately lists alpha-cellulose C6429 as another product. The
+    catalog code therefore supports this specific cellulose product, while the recipe
+    word alpha is retained as source wording rather than used to assert a polymorph,
+    alpha-cellulose grade or different catalog identity. The existing UNMAPPED_0520
+    is the corresponding source-label placeholder; bulk cellulose equivalence would
+    lose the Type50 physical product detail. Completeness reassessment: Original DSMZ1433
+    explicitly specifies Sigma S5504. The current official S5504 specification identifies
+    Sigmacell cellulose Type50, nominal particle size50 micrometres. Retain the original
+    alpha wording as a source label, but do not equate this product to the separately
+    listed alpha-cellulose product C6429 or assign the supplier web page disaccharide
+    SMILES to the polymer. The registry identifies the source-specific cellulose preparation,
+    not generic cellulose as an exact identity. An isolated guarded existing-owner
+    promotion now supplies the exact registry identity and supported material scope.'
+- assessment_id: case-171
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies
+    the named bovine-milk casein acid hydrolysate. It is a complex powder of free
+    amino acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact
+    casein or any single amino acid. Current product identity supports the named product;
+    historical lot quantitative composition is not asserted.
+  target_ids:
+  - kgmicrobe.ingredient:hy_case_amino
+  evidence_ids:
+  - proposal-2
+  - before-2
+  details: 'JCM722 specifies 3 g Hy-Case Amino (Sigma) in CYS medium. Sigma/Millipore
+    C0501 explicitly calls Hy-Case Amino a bovine-milk casein acid hydrolysate, powder,
+    predominantly free amino acids with some peptides, and reports 25-40% sodium chloride.
+    This supports the branded acid digest product and contradicts equivalence to intact
+    casein, an enzymatic casein digest, or a single amino acid. The recipe has no
+    lot or catalog number, so C0501 is current supplier product corroboration rather
+    than proof of the exact historical lot. Completeness reassessment: Original JCM722
+    identifies Hy-Case Amino (Sigma), and official C0501 identifies the named bovine-milk
+    casein acid hydrolysate. It is a complex powder of free amino acids, some peptides
+    and salts, distinct from enzymatic N-Z-Amine, intact casein or any single amino
+    acid. Current product identity supports the named product; historical lot quantitative
+    composition is not asserted. An isolated guarded existing-owner promotion now
+    supplies the exact registry identity and supported material scope.'
+- assessment_id: case-172
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked
+    owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical
+    research. Current official tablet ingredients are evidence for the present product
+    only; the historical source establishes dried-yeast tablet form but not excipient
+    quantities or unchanged composition across time. Bare EBIOS is retained as a rejected
+    unqualified brand label so it cannot globally resolve P2G or other EBIOS products
+    to this tablet owner.
+  target_ids:
+  - kgmicrobe.ingredient:ebios
+  evidence_ids:
+  - proposal-3
+  - before-3
+  details: 'JCM969 uses 10 g EBIOS dried yeast tablets and footnotes Asahi Food &
+    Healthcare, Tokyo. The current official Asahi EBIOS tablet page confirms dried
+    yeast tablets and lists lactose hydrate, calcium hydrogen phosphate, anhydrous
+    silica and hardened oil as excipients. It does not establish the historical recipe
+    lot formulation, but it demonstrates that the branded tablet is not interchangeable
+    with pure yeast extract or the EBIOS P2G extract discussed in the owner’s old
+    research. The source material here is the tablet preparation. Completeness reassessment:
+    JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked
+    owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical
+    research. Current official tablet ingredients are evidence for the present product
+    only; the historical source establishes dried-yeast tablet form but not excipient
+    quantities or unchanged composition across time. Bare EBIOS is retained as a rejected
+    unqualified brand label so it cannot globally resolve P2G or other EBIOS products
+    to this tablet owner. An isolated guarded existing-owner promotion now supplies
+    the exact registry identity and supported material scope.'
+- assessment_id: case-183
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify
+    corn steep powder as a5g medium ingredient. Preserve this process-derived powder
+    as its own undefined complex material. No vendor, drying process, fixed chemical
+    composition or equivalence to a particular corn-steep-liquor concentrate is asserted.
+    The absence of a fixed molecular formula does not prevent a source-defined material
+    registry identity.
+  target_ids:
+  - kgmicrobe.ingredient:corn_steep_powder
+  evidence_ids:
+  - proposal-4
+  - before-4
+  details: 'DSMZ581 specifies5g Cornsteep powder in Glycerol Cornsteep Agar, alongside
+    separate yeast extract, beef extract and casein peptone. Both admitted source
+    and original PDF establish the dry corn-steep product class but give no vendor,
+    drying process or lot composition. The current UNMAPPED_0366 is the matching powder
+    placeholder. A liquid corn-steep liquor record or a carbohydrate/protein molecule
+    would erase the stated physical mixture form. Completeness reassessment: Original
+    DSMZ581 and admitted MediaDive ingredient2075 explicitly identify corn steep powder
+    as a5g medium ingredient. Preserve this process-derived powder as its own undefined
+    complex material. No vendor, drying process, fixed chemical composition or equivalence
+    to a particular corn-steep-liquor concentrate is asserted. The absence of a fixed
+    molecular formula does not prevent a source-defined material registry identity.
+    An isolated guarded existing-owner promotion now supplies the exact registry identity
+    and supported material scope.'
+- assessment_id: case-170
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: JCM978 points to JCM976 mineral solution. The earlier DSMZ976 attribution
+    in immutable history is incorrect. Original JCM976 specifies the listed precursor
+    amounts in1L distilled water and KOH adjustment to pH6.0. KOH amount is endpoint-defined;
+    this is a source-qualified stock formulation, not a fixed solution-speciation
+    assertion.
+  target_ids:
+  - kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  evidence_ids:
+  - proposal-5
+  - before-5
+  details: The full JCM978 recipe uses 5 ml Mineral solution (see Medium No. 976,
+    including its unclosed parenthesis. The referenced source is JCM976, not DSMZ976.
+    Its mineral stock is EDTA 3.7 g, FeSO4·7H2O 1.1 g, MnCl2·4H2O 98.4 mg, ZnSO4·7H2O
+    28.8 mg, CoCl2·6H2O 23.8 mg, CuCl2·2H2O 17.2 mg, Na2MoO4·2H2O 24.2 mg and H3BO3
+    31.0 mg in 1 L distilled water, adjusted to pH6 with KOH. The existing local stock
+    record is lexical continuity but lacks components and incorrectly names DSMZ976
+    in its history. The raw punctuation defect does not make the preparation scientifically
+    uninterpretable. The guarded proposal now corrects the active source attribution
+    and supplies every listed precursor plus variable KOH, preserving original history
+    and current registry identity.
+- assessment_id: case-167
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo
+    specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography
+    DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name
+    query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0
+    and is only a broader form anchor. Correctedproposalv2 usesNARROW_MATCH for intendedskos:broadMatch,
+    perMIM1164; formerBROAD_MATCHbytesarepreserved.
+  target_ids:
+  - cas:10102-23-5
+  evidence_ids:
+  - proposal-6
+  details: 'Both DSMZ1493 and1685 specify 0.440 g Na2SeO4 x 10 H2O in the shared one-litre
+    trace solution, after dissolving nitrilotriacetic acid and adjusting pH. The supplied
+    form is explicitly sodium selenate decahydrate. Current Na2seo4.yaml denotes CHEBI:77775,
+    whose official structure and formula 2Na.O4Se are anhydrous; it already rejects
+    the decahydrate alias. The hydrate must remain distinct. Its formula is source
+    supported, but assigning the anhydrous identifier to it would erase ten waters.
+    Completeness reassessment: Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O.
+    Current official Thermo specification identifies CAS10102-23-5 and H20Na2O14Se;
+    original crystallography DOI10.1107/S1600536814011799 confirms the decahydrate.
+    Current OLS exact-name query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0
+    and is only a broader form anchor. A complete isolated new-owner proposal is supplied.
+    CoordinatorMIM1164 identified the initialdraftBROAD_MATCH grade wouldprojectcloseMatch.
+    Artifactv2 nowusesNARROW_MATCH for intendedskos:broadMatch; the exactspecificCASidentityandsoluteparentareunchanged.
+    Actualpinnedproducerprojectionisrequiredandownedbycoordinator.'
+- assessment_id: case-186
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved
+    sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified
+    stock has its own registry identity. Existing CHEBI29377 stock-labelled owner
+    has1751 historical membership and mixed dry/buffer aliases; this proposal neither
+    repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution
+    requires this exact occurrence context and is retained as non-resolving source
+    text on the new owner.
+  target_ids:
+  - kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  evidence_ids:
+  - proposal-7
+  details: 'DSMZ863 fully defines Sodium carbonate solution: dissolve106g Na2CO3 in1litre
+    degassedH2O, then autoclave in sealed serum bottles underCO2; add24ml to the basal
+    medium. This is source-specific formulation evidence, not an unspecified carbonate
+    stock. The current Sodium_Carbonate_Solution owner is typed as a stock but uses
+    neat-compound CHEBI:29377 and carries anhydrous reagent, buffer and malformed
+    aliases. Official CHEBI:29377 describes the dry carbonate formula CO3.2Na, not
+    this prepared solution. The admitted g_l59.7638 is not used as a stock formulation.
+    Completeness reassessment: Original DSMZ863 specifies106g Na2CO3 dissolved in1L
+    degassed water, autoclaved sealed underCO2 and supplied at24mL to the receiving
+    medium. This preparation-qualified stock has its own registry identity. Existing
+    CHEBI29377 stock-labelled owner has1751 historical membership and mixed dry/buffer
+    aliases; this proposal neither repurposes that owner nor moves its counts/aliases.
+    Raw Sodium carbonate solution requires this exact occurrence context and is retained
+    as non-resolving source text on the new owner. A complete isolated new-owner proposal
+    is supplied.'
+- assessment_id: case-175
+  area: identity
+  topic: Whole source-defined material or exact supplied form
+  outcome: supported
+  summary: The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O
+    and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material.
+    Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate
+    decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888
+    has that structural formula and381.371 mass; its octahydrate label counts the
+    eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official
+    supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied
+    form. CHEBI131366 and86222 instead contain two excess waters and remain upstream
+    defects. This identity proposal covers explicitly weighed decahydrate reagent
+    contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no global mediadive.ingredient:196
+    exact redirect is approved.
+  target_ids:
+  - CHEBI:38888
+  evidence_ids:
+  - proposal-8
+  - before-8
+  details: 'All104 admitted media rows across103 media and29 overlapping solution
+    rows specify Na2B4O7 x10H2O; the exact frozen source rows and full recipe bodies
+    are preserved. One row in DSMZ770 is explicitly a0.1%w/v stock added at1.8ml,
+    also confirmed by the original PDF, and cannot be treated as neat hydrate. The
+    other source contexts retain the decahydrate reagent formula. The maintained owner
+    and official CHEBI:131366 name decahydrate, yet its current formula10H2O.H4B4O9.2Na
+    and structure expand to Na2B4H24O19, two H2O more than source Na2B4O7·10H2O (Na2B4H20O17).
+    A label/CAS match therefore cannot approve the current exact assertion or imported
+    chemical properties. Completeness reassessment: The source conventional sodium
+    tetraborate decahydrate formula Na2B4O7·10H2O and structural borax formula Na2[B4O5(OH)4]·8H2O
+    denote the same bulk material. Gainsford etal2008 DOI10.1107/S1600536808010441
+    explicitly identifies sodium tetraborate decahydrate as the latter structural
+    formula, with Mr381.38. Official CHEBI38888 has that structural formula and381.371
+    mass; its octahydrate label counts the eight molecular waters after hydroxylation
+    and does not mean Na2B4O7·8H2O. Official supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37
+    independently corroborates supplied form. CHEBI131366 and86222 instead contain
+    two excess waters and remain upstream defects. This identity proposal covers explicitly
+    weighed decahydrate reagent contexts; DSMZ7700.1%w/v stock remains a distinct
+    preparation, so no global mediadive.ingredient:196 exact redirect is approved.'
+findings: []
+actions: []
+limitations:
+- Author self-review does not satisfy independent review.
+- Unknown molecular composition does not block complex product identity; unverified
+  component identifiers and historical lot quantities are not invented.
+- Borax structural octahydrate has the same bulk formula as conventionaldecahydrate;
+  no different hydrate is silently substituted. DSMZ770stock remains separate.
+- No generic Sodium carbonate solution alias or whole MediaDive196 ID is globally
+  redirected.
+- Historical roles and withheld SSSOM payloads remain outside approval; final integration
+  requires maintained-surface and native publication gates.
+```

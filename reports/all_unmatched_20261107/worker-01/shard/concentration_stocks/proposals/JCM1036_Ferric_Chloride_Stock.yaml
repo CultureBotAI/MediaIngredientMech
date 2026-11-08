@@ -1,0 +1,60 @@
+identifier: kgmicrobe.ingredient:jcm1036_ferric_chloride_stock
+preferred_term: JCM1036 fresh ferric chloride stock
+synonyms:
+- synonym_text: FeCl3 solution
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1036;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1036_ferric_chloride_stock
+  ontology_label: JCM1036 fresh ferric chloride stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1036
+    notes: FullsourceFeCl3subrecipegives0.15gexplicithexahydratein300mLdistilledwater,preparedjustbeforeuse.
+      AllassignedMPYCYvariantsinheritthisstock;JCM296independentlyrepeatsit.1mLentersSolutionB,butthatreceivingdoseisnotthepreparationvolume.
+      RawgenericFeCl3solutionisnotgloballyassigned.
+components:
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.15'
+  concentration_unit: G_PER_300_ML_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '300.0'
+  concentration_unit: ML_PREPARATION_WATER
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1036
+    source_record: JCM1036 fresh ferric chloride stock
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: FullsourceFeCl3subrecipegives0.15gexplicithexahydratein300mLdistilledwater,preparedjustbeforeuse.
+  AllassignedMPYCYvariantsinheritthisstock;JCM296independentlyrepeatsit.1mLentersSolutionB,butthatreceivingdoseisnotthepreparationvolume.
+  RawgenericFeCl3solutionisnotgloballyassigned. Source occurrence IDs and receiving
+  doses remain in the campaign ledger/CultureMech; no complete medium is asserted
+  as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.190773+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. FullsourceFeCl3subrecipegives0.15gexplicithexahydratein300mLdistilledwater,preparedjustbeforeuse.
+    AllassignedMPYCYvariantsinheritthisstock;JCM296independentlyrepeatsit.1mLentersSolutionB,butthatreceivingdoseisnotthepreparationvolume.
+    RawgenericFeCl3solutionisnotgloballyassigned. No maintaineddatawrites; rawcontextlabelsdo
+    notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true

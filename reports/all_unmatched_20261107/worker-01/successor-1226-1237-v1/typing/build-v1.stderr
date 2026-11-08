@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/typing_build_v1.py", line 288, in <module>
+    main()
+    ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/typing_build_v1.py", line 202, in main
+    capture(source, cap["sha256"])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/typing_build_v1.py", line 62, in capture
+    frozen[path] = FrozenFile.capture(path)
+                   ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/src/mediaingredientmech/curate/publication_guard.py", line 47, in capture
+    _regular(info, path)
+    ~~~~~~~~^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/src/mediaingredientmech/curate/publication_guard.py", line 31, in _regular
+    raise ValueError(f"Nonregular file or hardlink alias refused: {path}")
+ValueError: Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1474_BL_BROTH_WITH_2_NaCl.yaml

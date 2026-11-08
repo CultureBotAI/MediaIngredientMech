@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T04:21:40.206594+00:00",
+  "reviewer": "/root/skeptical_review",
+  "findings": [
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-3",
+      "severity": "minor",
+      "status": "open",
+      "category": "incorrect-source-quantity",
+      "allocation_index": 104,
+      "affected_case_ids": [
+        "CM_NAME:b13689acf4e6c7a6ab020a299f72c5dd4b77d780a294399aaa7fc2c3abf9455d"
+      ],
+      "field_path": "reasoning",
+      "observed_in_decision_fragment_sha256": "cf1b9fee86bc144acf13c9824ff9678ab1f7007632abd594789f03c88a6fcf26",
+      "observed_text": "the receiving medium adds1 ml",
+      "counterevidence": {
+        "frozen_component": {
+          "concentration": {
+            "unit": "ML_PER_L",
+            "value": "2.0"
+          },
+          "preferred_term": "Mineral solution B* (see below)"
+        },
+        "primary_capture": "named_stocks/captures/jcm-1353.html",
+        "primary_sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1",
+        "locator": "Post-autoclave stock addition table, Mineral solutionB*:2.0ml"
+      },
+      "description": "Reasoning contradicts both exact frozen component and inspected primary recipe dose. Correct dose is2mL/L. Stock identity/disposition unaffected.",
+      "requested_correction": "Correct rationale dose to2mL and preserve exact occurrence binding.",
+      "re_review_required": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "rg",
+    "--no-ignore",
+    "--hidden",
+    "-n",
+    "-i",
+    "yeast.{0,50}(10\\s*%|stock|solution)|(10\\s*%|stock|solution).{0,50}yeast",
+    "data/ingredients",
+    "data/curated",
+    "mappings",
+    "docs/data/label_index.csv",
+    "UNIFIED_INGREDIENT_MAPPING.tsv"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree",
+  "accessed_at": "2026-11-08T03:43:46.050185+00:00",
+  "exit_code": 0,
+  "stdout": "UNIFIED_INGREDIENT_MAPPING.tsv:2666:1% Yeast extract solution\t1\t\t\t\t\t\tUNMAPPED\t\tCultureMech:015834\nUNIFIED_INGREDIENT_MAPPING.tsv:2728:10% Yeast extract (Oxoid) solution\t1\t\t\t\t\t\tUNMAPPED\t\tCultureMech:015867\nUNIFIED_INGREDIENT_MAPPING.tsv:3847:25% Yeast extract solution\t1\t\t\t\t\t\tUNMAPPED\t\tCultureMech:015909\nmappings/culturemech_residual_triage.tsv:713:RESIDUAL\t10% Yeast extract solution\t2\t2\t10 yeast extract solution\t\t\tlabel not found in pinned MIM index and no usable local identity\nmappings/culturemech_residual_triage.tsv:920:RESIDUAL\t1% Yeast extract solution\t1\t1\t1 yeast extract solution\t\t\tlabel not found in pinned MIM index and no usable local identity\nmappings/culturemech_residual_triage.tsv:948:RESIDUAL\t10% Yeast extract (Oxoid) solution\t1\t1\t10 yeast extract solution\t\t\tlabel not found in pinned MIM index and no usable local identity\n",
+  "stderr": "",
+  "ignored_files_included": true,
+  "scope": "Only the explicit paths in command; no whole-repository or external absence claim."
+}

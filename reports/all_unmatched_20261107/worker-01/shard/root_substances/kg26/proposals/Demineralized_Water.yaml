@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:demineralized_water
+preferred_term: Demineralized water
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+synonyms:
+- synonym_text: Demineralized water
+  synonym_type: EXACT_SYNONYM
+  source: mediadive.ingredient:1448; original DSMZ1191/1279/1600/1793
+ontology_mapping:
+  ontology_id: CHEBI:15377
+  ontology_label: water
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1191.pdf
+    notes: The source grade demineralized water is explicitly named in all nine admitted
+      ingredient1448 rows across DSMZ1191,1279,1600 and1793, including the source
+      abbreviations H2O demin. and Aqua dem. It is represented as a distinct preparation-qualified
+      solvent, with CHEBI15377 water as a broader molecular parent only. No ion-removal
+      method, conductivity, resistivity, reagent standard, quantitative purity or
+      universal sterility is asserted. The one sterile addition in DSMZ1600 retains
+      that operational qualifier in its recipe; this owner does not globally equate
+      sterile water, distilled water or tap water. The exact-name OLS search found
+      TransformON c_ROHSUO, but TFO is outside the maintained OntologySourceEnum and
+      its conductivity scope is not specified by these sources; the candidate is preserved
+      as context rather than silently adopted or reported absent.
+supplied_form:
+- name: Demineralized water
+  form: preparation-qualified water
+  notes: Source specifies the demineralized grade but no quantitative specification
+    or treatment route. Sterility is occurrence-specific.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: The source grade demineralized water is explicitly named in all nine admitted
+  ingredient1448 rows across DSMZ1191,1279,1600 and1793, including the source abbreviations
+  H2O demin. and Aqua dem. It is represented as a distinct preparation-qualified solvent,
+  with CHEBI15377 water as a broader molecular parent only. No ion-removal method,
+  conductivity, resistivity, reagent standard, quantitative purity or universal sterility
+  is asserted. The one sterile addition in DSMZ1600 retains that operational qualifier
+  in its recipe; this owner does not globally equate sterile water, distilled water
+  or tap water. The exact-name OLS search found TransformON c_ROHSUO, but TFO is outside
+  the maintained OntologySourceEnum and its conductivity scope is not specified by
+  these sources; the candidate is preserved as context rather than silently adopted
+  or reported absent.
+curation_history:
+- timestamp: '2026-11-08T04:47:24.889403+00:00'
+  curator: worker01_add_media_identity
+  action: CREATED
+  changes: Isolated source-grade identity proposal with NARROW_MATCH broad-parent
+    grounding and mandatory registry sibling; preserve Distilled_Water and all historical
+    rejected-label boundaries. No maintained writes or inherited membership reassignment.
+  new_status: MAPPED
+  llm_assisted: true

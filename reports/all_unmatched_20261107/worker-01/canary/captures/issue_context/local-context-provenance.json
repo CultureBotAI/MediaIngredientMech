@@ -1,0 +1,88 @@
+{
+  "author": "In-process subagent /root/issue_context",
+  "created_at": "2026-11-08T03:43:46.116851+00:00",
+  "searches": [
+    {
+      "path": "exact-source-search.json",
+      "sha256": "5697d83cce5ebd5bea9919e2af246193bfcee55242b78c6569e86e13490ea991",
+      "command": [
+        "rg",
+        "--no-ignore",
+        "--hidden",
+        "-n",
+        "-F",
+        "-e",
+        "mediadive.ingredient:1944",
+        "-e",
+        "w/v) Yeast extract (BD-Difco, 10%",
+        "data",
+        "mappings",
+        "docs/data",
+        "UNIFIED_INGREDIENT_MAPPING.tsv"
+      ],
+      "exit_code": 1
+    },
+    {
+      "path": "preparation-names-search.json",
+      "sha256": "0e8372095c6f95a19228cbf24f16d9fbcc73a48f4eb24ab9b4057110553a5a29",
+      "command": [
+        "rg",
+        "--no-ignore",
+        "--hidden",
+        "-n",
+        "-i",
+        "yeast.{0,50}(10\\s*%|stock|solution)|(10\\s*%|stock|solution).{0,50}yeast",
+        "data/ingredients",
+        "data/curated",
+        "mappings",
+        "docs/data/label_index.csv",
+        "UNIFIED_INGREDIENT_MAPPING.tsv"
+      ],
+      "exit_code": 0
+    },
+    {
+      "path": "contextual-records-search.json",
+      "sha256": "1b78ccf9149814ed6b71887ce7256890b2259ae2d4b2225692fce54d037b0aab",
+      "command": [
+        "rg",
+        "--no-ignore",
+        "--hidden",
+        "-l",
+        "-i",
+        "yeast.*extract|extract.*yeast",
+        "data/ingredients"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "contextual_record": {
+    "source_path": "data/ingredients/mapped/Yeast_Extract.yaml",
+    "capture_path": "contextual-Yeast_Extract.yaml",
+    "sha256": "e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28",
+    "owner_claim": false,
+    "usage": "Contextual comparator only. Blank label and preparation fragment do not establish this record as owner."
+  },
+  "baseline_inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/github-context-v1/capture.json",
+      "sha256": "8f6c468979d4508613e307374fbc0851ee02e3c28d770ad2b77a0ca4d9395b19",
+      "used_as": "Starting index only; not a live-state assertion."
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/github-context-v1/main.json",
+      "sha256": "00cd185e9c989d7b85472496a33ccd3c94a2783ca58058fa45eb0f5795ca8190",
+      "used_as": "Starting index only; not a live-state assertion."
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/github-context-v1/open-issues.json",
+      "sha256": "bb985da3f41d82e01fc35ba5ffe2b77fc3558c94fe27e017a1510e9515c3d6d9",
+      "used_as": "Starting index only; not a live-state assertion."
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/github-context-v1/open-prs.json",
+      "sha256": "f9b168fb7f3261632b87ca27d8e1b4700376a55ac45cf818b2d79edf17d0a74d",
+      "used_as": "Starting index only; not a live-state assertion."
+    }
+  ],
+  "git_head": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99"
+}

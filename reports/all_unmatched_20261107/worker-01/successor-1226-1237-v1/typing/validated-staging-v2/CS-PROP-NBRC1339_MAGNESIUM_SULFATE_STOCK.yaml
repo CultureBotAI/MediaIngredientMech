@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:nbrc1339_magnesium_sulfate_stock
+preferred_term: NBRC1339 magnesium sulfate stock,1M
+synonyms:
+- synonym_text: MgSO4 solution
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+- synonym_text: MgSO4 solution (1 M)***
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1339_magnesium_sulfate_stock
+  ontology_label: NBRC1339 magnesium sulfate stock,1M
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    notes: Footnote*** supplies distilled-water solvent/autoclaving and the table
+      defines1M with2.1mL receivingdose. Hydration of the starting solid is unstated
+      and is not required to identify the concentration-defined dissolved stock. No
+      reagent mass or global MgSO4 solution identity is inferred.
+components:
+- component_name: MgSO4
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    source_record: NBRC1339 magnesium sulfate stock,1M
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Footnote*** supplies distilled-water solvent/autoclaving and the table defines1M
+  with2.1mL receivingdose. Hydration of the starting solid is unstated and is not
+  required to identify the concentration-defined dissolved stock. No reagent mass
+  or global MgSO4 solution identity is inferred. Source occurrence IDs and receiving
+  doses remain in the campaign ledger/CultureMech; no complete medium is asserted
+  as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.175729+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. Footnote*** supplies distilled-water
+    solvent/autoclaving and the table defines1M with2.1mL receivingdose. Hydration
+    of the starting solid is unstated and is not required to identify the concentration-defined
+    dissolved stock. No reagent mass or global MgSO4 solution identity is inferred.
+    No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.806174+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

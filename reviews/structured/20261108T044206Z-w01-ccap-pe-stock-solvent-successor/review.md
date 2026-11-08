@@ -1,0 +1,317 @@
+# CCAP PE stock solvent evidence correction and exact successor proposal
+
+- Review: 20261108T044206Z-w01-ccap-pe-stock-solvent-successor
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:42:00Z
+- Finished UTC: 2026-11-08T04:42:06Z
+- Reviewer: Codex /root/primary_context (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Exact successor retains two primary PE salts per1000cm3 stock and grounds solvent through explicit CCAP deionized-water instructions; removes invented fixed distilled-water volume. Organization-level policy applicability is explicitly an inference.
+
+## Scope And Provenance
+
+All assertions in one exact corrected CCAP source-stock proposal; only CCAP target of earlier32target batch reassessed.
+
+Selection: Author discovered missing specific solvent row during full-source crosscheck, then pursued authoritative general CCAP preparation instructions.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| CCAP_PE_Salt_Solution_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml | source | CCAP PE salt solution stock |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native successor provenance inspection | passed | True | CCAP_PE_Salt_Solution_Stock | Binds old/new payload, old review, specific PE PDF, generalCCAPfactsheet, current water-owner and officialwaterterm, mappingrules/schema. |
+| Guarded/strict/partonomy | passed | True | CCAP_PE_Salt_Solution_Stock | New exact successor passes all three scoped checks. |
+
+## Scientific And Domain Assessments
+
+### Specific source stock and salt forms
+
+identity: supported. Targets: CCAP_PE_Salt_Solution_Stock.
+
+Two salts and per1000cm3 basis are directly printed; sodium phosphate dodecahydrate is retained, without relying on frozen erroneous ontology label.
+
+### Explicit CCAP general policy applicability
+
+evidence: supported. Targets: CCAP_PE_Salt_Solution_Stock.
+
+General source-author policy supplies deionizedwater forstocks; applies as explicit inference to PE absent contraryinstructions. Water amount is not printed and is omitted. No distilled/deionized process equivalence claim.
+
+### All successor fields and honest correction history
+
+completeness: supported. Targets: CCAP_PE_Salt_Solution_Stock.
+
+All exact proposed fields reviewed, old draft preserved, revisedhistory records correction. No guessed volume, chemicalcomponent owner, roles or release claims added.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| pe-recipe | https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf; Page1 Stocks per1000cm3; NaNO3200g andNa2HPO4·12H2O20g; no solvent row | supports | Specific stock solute identities and preparation volume basis; does not itself specify distilledwater or fixed1L solvent addition. |
+| ccap-policy | https://www.ccap.ac.uk/wp-content/uploads/KB_CCAPCultureMediaFactsheet.pdf; Page2 STOCK SOLUTIONS, lines58–59 in webextract; explicit general stock solvent instruction | supports | CCAP explicitly states stock solutions are made with deionized water. Applying this general policy to PE with no contrary solvent is a source-policy inference, clearly separated from the specific recipe table. |
+| successor | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml; Complete exact successor payload | supports | Replaces unsupported fixed distilledwater amount with chemical water identity and deionized preparation provenance; no solvent amount invented. All other exact source solute identities/amounts preserved. |
+| validation | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json; Entire receipt | supports | Guarded/schema and proposed-parent partonomy checks pass. |
+| prior-draft | reviews/structured/20261108T043720Z-w01-defined-stock-proposals/review.yaml; Target CCAP_PE_Salt_Solution_Stock and its earlier exact payload | refutes | Earlier author review overclaimed distilledwater1L from the PE table. This successor explicitly corrects that single target without modifying or claiming failure of the other31 target observations. |
+
+## Limits And Additional Notes
+
+- Self-review; independent reviewer assessing correction.
+- PE-specific recipe lacks solvent row; applicability of explicit CCAP general stock policy is an inference.
+- No fixed solvent volume or processing-equivalence assertion; no full water-owner or release approval.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T044206Z-w01-ccap-pe-stock-solvent-successor
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: CCAP PE stock solvent evidence correction and exact successor proposal
+started_at: '2026-11-08T04:42:00Z'
+finished_at: '2026-11-08T04:42:06Z'
+reviewer:
+  identity: Codex /root/primary_context
+  kind: agent
+  independence: self_review
+  independence_basis: Author traced sources and drafted each proposal; separate agent
+    must independently review exact proposed bytes and cases.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: Exact successor retains two primary PE salts per1000cm3 stock and grounds
+  solvent through explicit CCAP deionized-water instructions; removes invented fixed
+  distilled-water volume. Organization-level policy applicability is explicitly an
+  inference.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: .claude/skills/add-media/SKILL.md
+    sha256: c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Distilled_Water.yaml
+    sha256: 458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf
+    sha256: a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml
+    sha256: be93933219ca5f8914b6b8cf85483679547dcc5d27806b149f3320047ad22152
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-culture-media-factsheet.pdf
+    sha256: 2326c72d9d9e31ceec524dd64e3a841d49e991a5bd3ebf8ecf4cfcc85e15ef67
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-media-supply-factsheet.pdf
+    sha256: 6ef049b26f3d1f72e7435b442d99bece9007738d0d63f71fe448316079814f71
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/fetch-receipt.json
+    sha256: 1ef2cf13b57c08107b99a81410633730fc3c4459973a14c2f5512925eb848443
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json
+    sha256: a42d9ffaa954ee2a59af8311e2d77d878826deb2efac961e78438f5a2a8a2c9a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml
+    sha256: 85efca4816551571534c0112fd8ea70edc867e0961bb9d83c896fa2586a10919
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    sha256: de9102073c3761a24130636f90e898445dce83eb118592609a618bf61149ff4b
+    role: context
+  - path: reviews/structured/20261108T043720Z-w01-defined-stock-proposals/review.yaml
+    sha256: 260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: All assertions in one exact corrected CCAP source-stock proposal; only
+    CCAP target of earlier32target batch reassessed.
+  selection: Author discovered missing specific solvent row during full-source crosscheck,
+    then pursued authoritative general CCAP preparation instructions.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  exclusions:
+  - target: Other31 stock proposals and full water-owner claims
+    reason: Separate declared reviews apply; this successor changes only CCAP proposed
+      solvent assertion.
+targets:
+- target_id: CCAP_PE_Salt_Solution_Stock
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml
+  label: CCAP PE salt solution stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/CCAP_PE_Salt_Solution_Stock.yaml
+    and matching aggregate entry; no existing owner is invented.
+checks:
+- check_id: inspect
+  name: Native successor provenance inspection
+  status: passed
+  required: true
+  summary: Binds old/new payload, old review, specific PE PDF, generalCCAPfactsheet,
+    current water-owner and officialwaterterm, mappingrules/schema.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/record_review.py
+    inspect --targets .temp/all-unmatched-worker-01/shard/named_stocks/ccap-targets.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/strict.tsv
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/fetch-receipt.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-culture-media-factsheet.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-media-supply-factsheet.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf
+    --input data/ingredients/mapped/Distilled_Water.yaml --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    --input reviews/structured/20261108T043720Z-w01-defined-stock-proposals/review.yaml
+    --input MAPPING_SEMANTICS.md --input .claude/skills/add-media/SKILL.md --input
+    src/mediaingredientmech/schema/mediaingredientmech.yaml
+  exit_code: 0
+  evidence_ids:
+  - successor
+  - ccap-policy
+  - prior-draft
+- check_id: schema
+  name: Guarded/strict/partonomy
+  status: passed
+  required: true
+  summary: New exact successor passes all three scoped checks.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python .temp/all-unmatched-worker-01/shard/named_stocks/revise_ccap.py
+  exit_code: 0
+  evidence_ids:
+  - validation
+evidence:
+- evidence_id: pe-recipe
+  kind: primary_source
+  reference: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf
+  locator: Page1 Stocks per1000cm3; NaNO3200g andNa2HPO4·12H2O20g; no solvent row
+  accessed_at: '2026-11-08T04:06:05.516292Z'
+  support: supports
+  summary: Specific stock solute identities and preparation volume basis; does not
+    itself specify distilledwater or fixed1L solvent addition.
+  snapshot_sha256: a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233
+- evidence_id: ccap-policy
+  kind: primary_source
+  reference: https://www.ccap.ac.uk/wp-content/uploads/KB_CCAPCultureMediaFactsheet.pdf
+  locator: Page2 STOCK SOLUTIONS, lines58–59 in webextract; explicit general stock
+    solvent instruction
+  accessed_at: '2026-11-08T04:40:41.225758Z'
+  support: supports
+  summary: CCAP explicitly states stock solutions are made with deionized water. Applying
+    this general policy to PE with no contrary solvent is a source-policy inference,
+    clearly separated from the specific recipe table.
+  snapshot_sha256: 2326c72d9d9e31ceec524dd64e3a841d49e991a5bd3ebf8ecf4cfcc85e15ef67
+- evidence_id: successor
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml
+  locator: Complete exact successor payload
+  accessed_at: '2026-11-08T04:42:00Z'
+  support: supports
+  summary: Replaces unsupported fixed distilledwater amount with chemical water identity
+    and deionized preparation provenance; no solvent amount invented. All other exact
+    source solute identities/amounts preserved.
+  snapshot_sha256: be93933219ca5f8914b6b8cf85483679547dcc5d27806b149f3320047ad22152
+- evidence_id: validation
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json
+  locator: Entire receipt
+  accessed_at: '2026-11-08T04:42:00Z'
+  support: supports
+  summary: Guarded/schema and proposed-parent partonomy checks pass.
+  snapshot_sha256: a42d9ffaa954ee2a59af8311e2d77d878826deb2efac961e78438f5a2a8a2c9a
+- evidence_id: prior-draft
+  kind: prior_review
+  reference: reviews/structured/20261108T043720Z-w01-defined-stock-proposals/review.yaml
+  locator: Target CCAP_PE_Salt_Solution_Stock and its earlier exact payload
+  accessed_at: '2026-11-08T04:42:00Z'
+  support: refutes
+  summary: Earlier author review overclaimed distilledwater1L from the PE table. This
+    successor explicitly corrects that single target without modifying or claiming
+    failure of the other31 target observations.
+  snapshot_sha256: 260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74
+assessments:
+- assessment_id: solutes
+  area: identity
+  topic: Specific source stock and salt forms
+  outcome: supported
+  summary: Two salts and per1000cm3 basis are directly printed; sodium phosphate dodecahydrate
+    is retained, without relying on frozen erroneous ontology label.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  evidence_ids:
+  - pe-recipe
+  - successor
+- assessment_id: solvent
+  area: evidence
+  topic: Explicit CCAP general policy applicability
+  outcome: supported
+  summary: General source-author policy supplies deionizedwater forstocks; applies
+    as explicit inference to PE absent contraryinstructions. Water amount is not printed
+    and is omitted. No distilled/deionized process equivalence claim.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  evidence_ids:
+  - ccap-policy
+  - pe-recipe
+  - successor
+- assessment_id: claims
+  area: completeness
+  topic: All successor fields and honest correction history
+  outcome: supported
+  summary: All exact proposed fields reviewed, old draft preserved, revisedhistory
+    records correction. No guessed volume, chemicalcomponent owner, roles or release
+    claims added.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  evidence_ids:
+  - successor
+  - validation
+  - prior-draft
+findings: []
+actions: []
+limitations:
+- Self-review; independent reviewer assessing correction.
+- PE-specific recipe lacks solvent row; applicability of explicit CCAP general stock
+  policy is an inference.
+- No fixed solvent volume or processing-equivalence assertion; no full water-owner
+  or release approval.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T043720Z-w01-defined-stock-proposals
+  relationship: Corrects only CCAP target solvent overstatement with new primary evidence
+    and exact successor payload; all original bytes preserved.
+tags:
+- worker01
+- ccap
+- proposal-correction
+```

@@ -1,0 +1,189 @@
+identifier: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+preferred_term: JCM976 mineral solution
+synonyms:
+- synonym_text: Mineral solution see Medium No. 976
+  synonym_type: REJECTED_LABEL
+  source: mim-queue; source-local cross-reference is non-resolving, exact JCM978 occurrence
+    required
+- synonym_text: Mineral solution (see Medium No. 976
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv; source-local cross-reference
+    is non-resolving, exact JCM978 occurrence required
+- synonym_text: JCM976 mineral solution
+  synonym_type: EXACT_SYNONYM
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=976
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:07.078790+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.749949+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Mineral
+    solution')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Promoted UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+    mint with no parent, because a multi-component mix does not narrow to any single
+    compound (#288).'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: FLAGGED_NEEDS_EXPERT
+  previous_status: MAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+  changes: 'Reverted the mint and flagged NEEDS_EXPERT instead. "Mineral solution
+    see Medium No. 976" is a CROSS-REFERENCE to another medium, not the name of a
+    substance -- minting an identifier for it would give a pointer its own identity.
+    The #288 batch minted it because it filtered on ingredient_type STOCK_SOLUTION
+    without reading the label. The referenced medium should be resolved and this record
+    either replaced by that mineral solution or retired (#288).'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mineral_Solution_See_Medium_No_976-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report reached no single bolded verdict; see the report. No ontology
+    CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: retire_assay_labels
+  action: PROMOTED_TO_MAPPED
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+    (FALLBACK_REGISTRY). Minted under the #288 STOCK_SOLUTION convention: a MediaDive
+    cross-reference to the mineral/trace-elements solution of DSMZ Medium 976. The
+    corpus already treats this shape as a stock solution rather than retiring it —
+    `Trace element solution see Medium No. 187` and `Vitamin solution see Medium No.
+    403` are both live kgmicrobe.ingredient mints under the #288 convention — so this
+    follows its siblings. The composition is not transcribed here: it lives in the
+    referenced medium, and #288''s rule is to mint the named preparation rather than
+    inline someone else''s recipe.'
+  llm_assisted: false
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Mineral solution (see Medium No. 976'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T04:34:34.034390+00:00'
+  curator: worker01_add_media_identity
+  action: CORRECTED
+  changes: 'Isolated proposal: resolve the cross-reference to JCM976, correct prior
+    DSMZ976 attribution in active evidence, add full source precursor decomposition
+    including variable KOH pH6 titration, and retain original identity/history/counts.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:47:24.977452+00:00'
+  curator: worker01_add_media_identity
+  action: CORRECTED
+  changes: Successor artifact corrects prior G_PER_L/MG_PER_L notation to explicit
+    preparation-water units and marks collection-ambiguous cross-reference aliases
+    REJECTED_LABEL. Prior proposal and native author reviews remain immutable; original
+    maintained owner is unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: JCM978 points to JCM976 mineral solution. The earlier DSMZ976 attribution in
+  immutable history is incorrect. Original JCM976 specifies the listed precursor amounts
+  in1L distilled water and KOH adjustment to pH6.0. KOH amount is endpoint-defined;
+  this is a source-qualified stock formulation, not a fixed solution-speciation assertion.
+  Quantity units preserve masses per the listed one litre of preparation water, not
+  a measured final litre after salts and KOH addition. Unqualified Medium No.976 cross-reference
+  aliases are retained as REJECTED_LABEL; only the collection-qualified JCM976 name
+  resolves globally.
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  ontology_label: JCM976 mineral solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=976
+    notes: JCM978 points to JCM976 mineral solution. The earlier DSMZ976 attribution
+      in immutable history is incorrect. Original JCM976 specifies the listed precursor
+      amounts in1L distilled water and KOH adjustment to pH6.0. KOH amount is endpoint-defined;
+      this is a source-qualified stock formulation, not a fixed solution-speciation
+      assertion.
+solution_type: MINERAL_STOCK
+components:
+- component_name: EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '3.7'
+  concentration_unit: G_PER_L_PREPARATION_WATER
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.1'
+  concentration_unit: G_PER_L_PREPARATION_WATER
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '98.4'
+  concentration_unit: MG_PER_L_PREPARATION_WATER
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '28.8'
+  concentration_unit: MG_PER_L_PREPARATION_WATER
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '23.8'
+  concentration_unit: MG_PER_L_PREPARATION_WATER
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '17.2'
+  concentration_unit: MG_PER_L_PREPARATION_WATER
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24.2'
+  concentration_unit: MG_PER_L_PREPARATION_WATER
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '31.0'
+  concentration_unit: MG_PER_L_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PREPARATION_WATER
+- component_name: KOH
+  reference_scope: UNMAPPED
+  source: 'JCM976: amount sufficient to adjust pH6.0; no numeric amount is specified.'
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=976
+    source_record: Mineral solution subsection
+    notes: Complete listed precursor set; KOH variable endpoint amount retained. Components
+      are source names without guessed exact registry bindings.
+  notes: Complete source constituent list, not an assertion of exact final molecular
+    speciation or measured final volume after titration. Receiving JCM978 medium is
+    not an exact-formulation CultureMech cross-reference for the stock.

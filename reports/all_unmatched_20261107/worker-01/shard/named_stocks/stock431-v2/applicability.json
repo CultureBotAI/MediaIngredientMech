@@ -1,0 +1,391 @@
+{
+  "checked_at": "2026-11-08T04:30:51.077818+00:00",
+  "cases": [
+    {
+      "case_id": "CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658",
+      "case_input_sha256": "aa6647cb024edea778df997a1081add7feea759c39ebd5ff56ebb02cc4137820",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Selenite-tungstate solution**",
+        "source_label": "Selenite-tungstate solution**",
+        "raw_source_label": "Selenite-tungstate solution**"
+      },
+      "occurrence_ids": [
+        "CM_OCC:29fe8b0f92803988d3084998e64cf471d79f538a4778900c50f9adce1e8ebf25",
+        "CM_OCC:d5fb62021cd692ba7eddf1725f7b702baa56b901b295ada69ef26e3268ef56c2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both NBRC recipes explicitly define the stock as NaOH 0.4 g, Na2SeO3·5H2O 6 mg and Na2WO4·2H2O 8 mg in distilled water 1 L, autoclaved; each receiving recipe adds 1 ml. These amounts coincide with JCM431, but the raw name is a source-local footnote rather than an explicit JCM431 reference. Retain the two NBRC recipe stock contexts; no exact mapping to selenite, tungstate or either sodium salt represents the mixture.",
+      "applicability": "Reviewed every one of the 2 original occurrences and complete frozen recipe objects. The following occurrence_bindings retain exact labels, nested/root location, original amount and source IDs; primary claims apply only to their explicit recipe/stock chain. The case-level native occurrence count is not replaced with any helper constant.",
+      "evidence_ids": [
+        "NS-P-nbrc-1257",
+        "NS-P-nbrc-1321",
+        "NS-P-jcm-431",
+        "NS-S-000",
+        "NS-S-001",
+        "NS-L-candidate-search",
+        "NS-L-DOSES"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The exact stock is already source-bound in its CultureMech recipe context; this review preserves that formulation and does not create an artificial standalone ingredient or replace a mixture with one solute. For any future shared owner, bind both NBRC footnotes and the full formula to the same preparation identity and retain their source-specific raw labels; do not globally normalize all selenite-tungstate stocks to this formulation.",
+      "missing_requirement": "For any future shared owner, bind both NBRC footnotes and the full formula to the same preparation identity and retain their source-specific raw labels; do not globally normalize all selenite-tungstate stocks to this formulation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "allocation_index": 0,
+      "occurrence_bindings": [
+        {
+          "occurrence_id": "CM_OCC:29fe8b0f92803988d3084998e64cf471d79f538a4778900c50f9adce1e8ebf25",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1261.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:007467",
+          "recipe_primary_identifier": "nbrc.medium:1257",
+          "raw_preferred_term": "Selenite-tungstate solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Selenite-tungstate solution**"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:d5fb62021cd692ba7eddf1725f7b702baa56b901b295ada69ef26e3268ef56c2",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1323.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:007472",
+          "recipe_primary_identifier": "nbrc.medium:1321",
+          "raw_preferred_term": "Selenite-tungstate solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Selenite-tungstate solution**"
+          }
+        }
+      ],
+      "candidate_assessment": "Only exact source-identity UNMAPPED_0519 is identified as owner for the three explicit JCM431 cases. Other catalogue matches are contextual candidates: shared labels/components do not establish whole-stock identity. Complete candidate bytes and exact search results are in candidate-search.json."
+    },
+    {
+      "case_id": "CM_NAME:02783a861c0e56af08c3200c5b0d7e38abe217083d6b11fdb2c1a3bfcf623d93",
+      "case_input_sha256": "8d68f5d10595ee5659b16c972878676eaa1148c33d1c21086ce0ca62c4b267e6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Selenite tungstate solution (see Medium No. 431 )",
+        "source_label": "Selenite tungstate solution (see Medium No. 431 )",
+        "raw_source_label": "Selenite tungstate solution (see Medium No. 431 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3ec424c2c489a072a60815a035f102d8b90a420c416784ca9bcc45613ab0bf0d",
+        "CM_OCC:a619ccabfb6eb5bfbfd33b8c5238a9ababa8b7e65ec9c6b5f9f9a85c92dbb7c6"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both JCM receiving recipes explicitly reference the selenite/tungstate stock in Medium431. JCM431 defines NaOH 0.4 g, Na2SeO3·5H2O 6 mg, Na2WO4·2H2O 8 mg and water 1 L. The actual MIM owner imports MediaDive ingredient1921, whose live label explicitly references Medium431. This source identity, rather than lexical similarity, supports the exact raw alias and STOCK_SOLUTION/MINERAL_STOCK classification proposal. JCM1400 and1468 use 1 and0.5 ml respectively; doses do not alter the stock identity. Frozen source1921 is independently traced to JCM887 Basal minerals (solution4878, recipe_order7) with the explicit431 reference; full admitted medium/solution exports contain that one unique row. LiveJCM887 returns Nothing found; the original response is preserved with its actual2026-11-05 retrieval time.",
+      "applicability": "Reviewed every one of the 2 original occurrences and complete frozen recipe objects. The following occurrence_bindings retain exact labels, nested/root location, original amount and source IDs; primary claims apply only to their explicit recipe/stock chain. The case-level native occurrence count is not replaced with any helper constant.",
+      "evidence_ids": [
+        "NS-P-jcm-1400",
+        "NS-P-jcm-1468",
+        "NS-P-jcm-431",
+        "NS-P-mediadive-ingredient-1921",
+        "NS-S-002",
+        "NS-S-003",
+        "NS-L-candidate-search",
+        "NS-L-proposal-before",
+        "NS-L-proposal-validation",
+        "NS-L-proposal-strict",
+        "NS-S-1921-CONTEXT",
+        "NS-P-FROZEN-J887",
+        "NS-S-1921-MANIFEST",
+        "NS-P-jcm-887",
+        "NS-NATIVE-431",
+        "NS-L-DOSES"
+      ],
+      "proposal_ids": [
+        "NS-PROP-431-CLASSIFICATION-ALIASES"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "The proposal leaves component/registry grounding and the inherited unresolved-identity/decomposition hold open; coordinator must review exact bytes and source-specific alias semantics before application.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+          "sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "allocation_index": 1,
+      "occurrence_bindings": [
+        {
+          "occurrence_id": "CM_OCC:3ec424c2c489a072a60815a035f102d8b90a420c416784ca9bcc45613ab0bf0d",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1400_SULFURIMONAS_MEDIUM_WITH_SULFUR.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015886",
+          "recipe_primary_identifier": "jcm.grmd:1400",
+          "raw_preferred_term": "Selenite tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:a619ccabfb6eb5bfbfd33b8c5238a9ababa8b7e65ec9c6b5f9f9a85c92dbb7c6",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1468_FRESHWATER_R2A_MEDIUM.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015874",
+          "recipe_primary_identifier": "jcm.grmd:1468",
+          "raw_preferred_term": "Selenite tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "0.5"
+            },
+            "preferred_term": "Selenite tungstate solution (see Medium No. 431 )"
+          }
+        }
+      ],
+      "candidate_assessment": "Only exact source-identity UNMAPPED_0519 is identified as owner for the three explicit JCM431 cases. Other catalogue matches are contextual candidates: shared labels/components do not establish whole-stock identity. Complete candidate bytes and exact search results are in candidate-search.json."
+    },
+    {
+      "case_id": "CM_NAME:e02348fe0ebd141d90ae6def5fe66edd1bfc8e6bdb615f57bdae64f069362e79",
+      "case_input_sha256": "b16699f88727eef4d9d6b9a0117cf7aeb9cac29c51524ca2327fa871f6ae2d72",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Selenite-tungstate solution* (see Medium No. 431 )",
+        "source_label": "Selenite-tungstate solution* (see Medium No. 431 )",
+        "raw_source_label": "Selenite-tungstate solution* (see Medium No. 431 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:82ce2b9611bdbb55d7135ad3b0e67c31013aecb92b6bc2be598d23604855dfe6"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM1364 explicitly references Medium431 selenite-tungstate stock and uses1 ml; the asterisk is a footnote marker, not a new substance. JCM431 specifiesNaOH0.4 g,Na2SeO3·5H2O6 mg,Na2WO4·2H2O8 mg,water1 L. MIM UNMAPPED_0519 importsMediaDive1921 with the same explicit431 source reference. The bounded proposal adds this exact raw alias and stock classification only. Frozen source1921 is independently traced to JCM887 Basal minerals (solution4878, recipe_order7) with the explicit431 reference; full admitted medium/solution exports contain that one unique row. LiveJCM887 returns Nothing found; the original response is preserved with its actual2026-11-05 retrieval time.",
+      "applicability": "Reviewed every one of the 1 original occurrences and complete frozen recipe objects. The following occurrence_bindings retain exact labels, nested/root location, original amount and source IDs; primary claims apply only to their explicit recipe/stock chain. The case-level native occurrence count is not replaced with any helper constant.",
+      "evidence_ids": [
+        "NS-P-jcm-1364",
+        "NS-P-jcm-431",
+        "NS-P-mediadive-ingredient-1921",
+        "NS-S-047",
+        "NS-L-candidate-search",
+        "NS-L-proposal-before",
+        "NS-L-proposal-validation",
+        "NS-L-proposal-strict",
+        "NS-S-1921-CONTEXT",
+        "NS-P-FROZEN-J887",
+        "NS-S-1921-MANIFEST",
+        "NS-P-jcm-887",
+        "NS-NATIVE-431",
+        "NS-L-DOSES"
+      ],
+      "proposal_ids": [
+        "NS-PROP-431-CLASSIFICATION-ALIASES"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Keep the inherited decomposition/grounding hold; review proposed bytes before application. The star-free generic name and JCM1365 formula are outside this alias claim.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+          "sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "allocation_index": 137,
+      "occurrence_bindings": [
+        {
+          "occurrence_id": "CM_OCC:82ce2b9611bdbb55d7135ad3b0e67c31013aecb92b6bc2be598d23604855dfe6",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1364_WIDDEL_FRESHWATER_MEDIUM_WITH_FORMATE_AND_ACETATE.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015842",
+          "recipe_primary_identifier": "jcm.grmd:1364",
+          "raw_preferred_term": "Selenite-tungstate solution* (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution* (see Medium No. 431 )"
+          }
+        }
+      ],
+      "candidate_assessment": "Only exact source-identity UNMAPPED_0519 is identified as owner for the three explicit JCM431 cases. Other catalogue matches are contextual candidates: shared labels/components do not establish whole-stock identity. Complete candidate bytes and exact search results are in candidate-search.json."
+    },
+    {
+      "case_id": "CM_NAME:e8c97b4daa00f2d94ddf163af75ac2c44dc57f5bfa688d5d03ee70271a22c632",
+      "case_input_sha256": "60163b201b4d29fa2c01aef10313b023741a1db12f0b23aa1f371622e5d11acf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Selenite-tungstate solution (see Medium No. 431 )",
+        "source_label": "Selenite-tungstate solution (see Medium No. 431 )",
+        "raw_source_label": "Selenite-tungstate solution (see Medium No. 431 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5175e4133b10edb74b7d45e6b7d451b581de06fb43ae7f4765cdc953cfb21ddc",
+        "CM_OCC:dae9b53112a52eb8e3ffe9aa02132b90d5694eb1acec3f8e24dcc7373ece02f0",
+        "CM_OCC:1b0e3ac5eff08c3daed18540d1e5c0d0e2fac4db3bd1bd776c3be2a2bfd8e373",
+        "CM_OCC:d3c73100e4b55b9a50936d2c251dbc459911b4503d92ed1c5f305e0f8128d682",
+        "CM_OCC:ad076da79102b16d1a72ab6d4c4cbafaa42e7d4bbf340c616dc5dd5e091cca18",
+        "CM_OCC:729b30b62e5efabb77a119a58a206f0602c2c84239a78df5c6bbb870c35b4819"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "All six frozen occurrences explicitly reference JCM431 and add1 ml. The referenced alkalineNaOH0.4 g/Na2SeO3·5H2O6 mg/Na2WO4·2H2O8 mg/water1 L stock matches the source identity imported by actual MIMownerUNMAPPED_0519 fromMediaDive1921. The exact raw alias plus stock classification is supported; the source reference distinguishes it from other selenium/tungsten stocks. Frozen source1921 is independently traced to JCM887 Basal minerals (solution4878, recipe_order7) with the explicit431 reference; full admitted medium/solution exports contain that one unique row. LiveJCM887 returns Nothing found; the original response is preserved with its actual2026-11-05 retrieval time.",
+      "applicability": "Reviewed every one of the 6 original occurrences and complete frozen recipe objects. The following occurrence_bindings retain exact labels, nested/root location, original amount and source IDs; primary claims apply only to their explicit recipe/stock chain. The case-level native occurrence count is not replaced with any helper constant.",
+      "evidence_ids": [
+        "NS-P-jcm-1423",
+        "NS-P-jcm-1424",
+        "NS-P-jcm-1363",
+        "NS-P-jcm-1388",
+        "NS-P-jcm-1389",
+        "NS-P-jcm-1406",
+        "NS-P-jcm-431",
+        "NS-P-mediadive-ingredient-1921",
+        "NS-S-026",
+        "NS-S-027",
+        "NS-S-049",
+        "NS-S-031",
+        "NS-S-032",
+        "NS-S-033",
+        "NS-L-candidate-search",
+        "NS-L-proposal-before",
+        "NS-L-proposal-validation",
+        "NS-L-proposal-strict",
+        "NS-S-1921-CONTEXT",
+        "NS-P-FROZEN-J887",
+        "NS-S-1921-MANIFEST",
+        "NS-P-jcm-887",
+        "NS-NATIVE-431",
+        "NS-L-DOSES"
+      ],
+      "proposal_ids": [
+        "NS-PROP-431-CLASSIFICATION-ALIASES"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Retain UNMAPPED and the inherited identity/decomposition hold; component/registry promotion and release support are not part of the proposal.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+          "sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "allocation_index": 144,
+      "occurrence_bindings": [
+        {
+          "occurrence_id": "CM_OCC:5175e4133b10edb74b7d45e6b7d451b581de06fb43ae7f4765cdc953cfb21ddc",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1423_METHANOBREVIBACTER_CURVATUS_MEDIUM.yaml",
+          "component_path": "ingredients/13",
+          "recipe_id": "CultureMech:015860",
+          "recipe_primary_identifier": "jcm.grmd:1423",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:dae9b53112a52eb8e3ffe9aa02132b90d5694eb1acec3f8e24dcc7373ece02f0",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1424_METHANOBREVIBACTER_CUTICULARIS_MEDIUM.yaml",
+          "component_path": "ingredients/12",
+          "recipe_id": "CultureMech:015861",
+          "recipe_primary_identifier": "jcm.grmd:1424",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:1b0e3ac5eff08c3daed18540d1e5c0d0e2fac4db3bd1bd776c3be2a2bfd8e373",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1363_WIDDEL_FRESHWATER_MEDIUM_WITH_SPERMIDINE.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015841",
+          "recipe_primary_identifier": "jcm.grmd:1363",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:d3c73100e4b55b9a50936d2c251dbc459911b4503d92ed1c5f305e0f8128d682",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1388_ACC8_MEDIUM.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015848",
+          "recipe_primary_identifier": "jcm.grmd:1388",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:ad076da79102b16d1a72ab6d4c4cbafaa42e7d4bbf340c616dc5dd5e091cca18",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015849",
+          "recipe_primary_identifier": "jcm.grmd:1389",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:729b30b62e5efabb77a119a58a206f0602c2c84239a78df5c6bbb870c35b4819",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015856",
+          "recipe_primary_identifier": "jcm.grmd:1406",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        }
+      ],
+      "candidate_assessment": "Only exact source-identity UNMAPPED_0519 is identified as owner for the three explicit JCM431 cases. Other catalogue matches are contextual candidates: shared labels/components do not establish whole-stock identity. Complete candidate bytes and exact search results are in candidate-search.json."
+    }
+  ],
+  "composition_equivalence": "NBRC1257 and1321 match all four JCM431 forms and preparation quantities; sterilization workflow is source-specific.",
+  "culturemech_reference": "No standalone stock recipe ID established in these eleven receiving full media; typed exact/variant/similar link to full receiving medium would misrepresent stock identity."
+}

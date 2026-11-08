@@ -1,0 +1,135 @@
+{
+  "finding_id": "IR-SHARD-ARTIFACT-12",
+  "reviewer": "/root/skeptical_review",
+  "at": "2026-11-08T04:58:00.393713+00:00",
+  "severity": "major",
+  "status": "open",
+  "scope": "Contradictory scientific requirements in final case decisions; requires actual source-specific gap, not a generic gate.",
+  "cases": [
+    {
+      "allocation_index": 38,
+      "decision": {
+        "case_id": "CM_NAME:362d090f6f318542299620706e34451ffd06cd0563a8d5e4eebb87ae36d6ec33",
+        "case_input_sha256": "f5ff12a1f83cd7c50327c91523c5c5f17c14c2a8b073179a3ea76823e3c9c2d2",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "2 M trimethylammonium chloride solution*",
+          "source_label": "2 M trimethylammonium chloride solution*",
+          "raw_source_label": "2 M trimethylammonium chloride solution*"
+        },
+        "occurrence_ids": [
+          "CM_OCC:f783885efd36043f8de3aa646ce3e3122d2c462b3e9c97fe5b33004b4786c8db",
+          "CM_OCC:8b21d755f4e8f6028f1cff21c297478a37dbf4cfa24818de1650b833e59f5fc7"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM1462 supplies 35mL/L of filter-sterilized 2 M trimethylammonium chloride stock under N2; JCM1463 changes only NaCl from9 to21g/L and inherits this stock. The chloride counterion is explicit. Neither trimethylamine free base nor tetramethylammonium chloride is equivalent.",
+        "applicability": "Applies to every exact occurrence listed in occurrence_context below, including full frozen recipe and component path. Evidence establishes this source formulation only; no equivalence is inferred from a shared solute, blank/generic label, or concentration arithmetic. No current MIM record is declared the owner from lexical proximity.",
+        "evidence_ids": [
+          "CS-exact-name-owner-searches",
+          "CS-broad-owner-candidate-search",
+          "CS-038-O01",
+          "CS-038-O02",
+          "CS-P-JCM-1462",
+          "CS-P-JCM-1463"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "The completefrozenoccurrencesandprimaryrecipeswereinspected. The retainedscopeisexactlythesource-describedconcentration/preparationcontext. The specificremainingevidencerequirementisrecordedbelow; nointegration-onlyholdorunjustifiedneat-soluteidentityisused.",
+        "missing_requirement": "Source-specific next requirement: the specified solute reagent/counterion identity; the source stock solvent/carrier and full preparation specification; molarity or normality alone does not specify all supplied constituents. JCM1462 supplies 35mL/L of filter-sterilized 2 M trimethylammonium chloride stock under N2; JCM1463 changes only NaCl from9 to21g/L and inherits this stock. The chloride counterion is explicit. Neither trimethylamine free base nor tetramethylammonium chloride is equivalent.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        },
+        "author": "/root/issue_context",
+        "allocation_index": 38,
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:f783885efd36043f8de3aa646ce3e3122d2c462b3e9c97fe5b33004b4786c8db",
+            "recipe_id": "CultureMech:015871",
+            "source_file": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1462_METHANOSARCINA_T3_MEDIUM.yaml",
+            "component_path": "ingredients/13",
+            "raw_component": {
+              "concentration": {
+                "unit": "ML_PER_L",
+                "value": "35.0"
+              },
+              "preferred_term": "2 M trimethylammonium chloride solution*"
+            }
+          },
+          {
+            "occurrence_id": "CM_OCC:8b21d755f4e8f6028f1cff21c297478a37dbf4cfa24818de1650b833e59f5fc7",
+            "recipe_id": "CultureMech:015881",
+            "source_file": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1463_METHANOSARCINA_MFA9_MEDIUM.yaml",
+            "component_path": "ingredients/13",
+            "raw_component": {
+              "concentration": {
+                "unit": "ML_PER_L",
+                "value": "35.0"
+              },
+              "preferred_term": "2 M trimethylammonium chloride solution*"
+            }
+          }
+        ]
+      },
+      "decision_sha256": "852036def045e2149fc27f6a523b5f713f64d7c296f5108bca76cca8bc20cefa",
+      "finding": "Source explicitly states chloride, so asking for counterion identity is unsupported; actual solvent gap may remain."
+    },
+    {
+      "allocation_index": 64,
+      "decision": {
+        "case_id": "CM_NAME:6e101ac3b996ba96d9dffdc83e76605b27d90185a727208a98d3a78a649b56aa",
+        "case_input_sha256": "f4c50fc0b72735ccd852805833797bf2c2015d88996cb1f43279d4a36183af63",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "3% (w/v) Na2S x 9H2O solution",
+          "source_label": "3% (w/v) Na2S x 9H2O solution",
+          "raw_source_label": "3% (w/v) Na2S x 9H2O solution"
+        },
+        "occurrence_ids": [
+          "CM_OCC:505da94266e5f03e103555d37d2fe9ad0379952b858ddfce2d916dd40589b3a4"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM1009 adds0.05mL3%(w/v) Na2S·9H2O stock per5mL base medium, alongside0.05mL10%(w/v) bicarbonate and0.1mL20% glucose. Here the percent basis is explicitly mass/volume; the supplied form is nonahydrate. Preserve tube-scale addition and anaerobic sterilized-stock context.",
+        "applicability": "Applies to every exact occurrence listed in occurrence_context below, including full frozen recipe and component path. Evidence establishes this source formulation only; no equivalence is inferred from a shared solute, blank/generic label, or concentration arithmetic. No current MIM record is declared the owner from lexical proximity.",
+        "evidence_ids": [
+          "CS-exact-name-owner-searches",
+          "CS-broad-owner-candidate-search",
+          "CS-064-O01",
+          "CS-P-JCM-1009"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "The completefrozenoccurrencesandprimaryrecipeswereinspected. The retainedscopeisexactlythesource-describedconcentration/preparationcontext. The specificremainingevidencerequirementisrecordedbelow; nointegration-onlyholdorunjustifiedneat-soluteidentityisused.",
+        "missing_requirement": "Source-specific next requirement: explicit percentage basis. JCM1009 adds0.05mL3%(w/v) Na2S·9H2O stock per5mL base medium, alongside0.05mL10%(w/v) bicarbonate and0.1mL20% glucose. Here the percent basis is explicitly mass/volume; the supplied form is nonahydrate. Preserve tube-scale addition and anaerobic sterilized-stock context.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        },
+        "author": "/root/issue_context",
+        "allocation_index": 64,
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:505da94266e5f03e103555d37d2fe9ad0379952b858ddfce2d916dd40589b3a4",
+            "recipe_id": "CultureMech:007583",
+            "source_file": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1066_Clostridium_Swellfunianum_Medium.yaml",
+            "component_path": "solutions/1/composition/0",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "TOGO M1066 / JCM Medium 1009 adds 0.05 ml 3% (w/v) Na2S x 9H2O solution per 5.0 ml medium after autoclaving.",
+              "preferred_term": "3% (w/v) Na2S x 9H2O solution",
+              "source": "TOGO M1066 / JCM Medium 1009"
+            }
+          }
+        ]
+      },
+      "decision_sha256": "c71d27926f686d4fe94fb15f26c6e58b5df58c1ff739841fdc92f9382a0162b5",
+      "finding": "Source and rationale explicitly state3%(w/v), but missing_requirement requires percentbasis. JCM1009fullprimary reread independently confirmsw/v; no solvent inferred."
+    }
+  ],
+  "acceptance": "Correct the exact case requirements and reread all remaining missing_requirement statements against their reasoning/source. Retain explicit sourceknown forms and concentration bases; do not invent solvent."
+}

@@ -1,0 +1,3850 @@
+# Independent complete proposed-payload review of 29 ns source identities
+
+- Review: 20261108T045611Z-w01-independent-ns-proposals
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:56:11.682235Z
+- Finished UTC: 2026-11-08T04:56:11.682235Z
+- Reviewer: /root/skeptical_review (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+All 29 isolated payloads have individual positive scoped assessments. Preparation amounts, hydration, supplied product and context-only alias boundaries preserved. Exact registry and parent output verified; no maintained changes or campaign-wide release approval. Final consolidated case ledger and duplicate proposal removal remain separately checked.
+
+## Scope And Provenance
+
+Entire exact isolated payloads and source-supported applicability; no blanket approval of inherited unmodified owner claims.
+
+Selection: All current proposals in this lane, no sampling.
+Coverage: full; 29 reviewed / 29 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| NSV4-PROP-JCM_1474_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_A.yaml | source | JCM 1474 Solution A |
+| NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml | source | JCM 915 modified Wolfe mineral solution |
+| NSV5-PROP-CCAP_PE_Salt_Solution_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml | source | CCAP PE salt solution stock |
+| NSV4-PROP-JCM_628_Modified_Wolfe_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_628_Modified_Wolfe_Solution.yaml | source | JCM 628 modified Wolfe solution |
+| NSV4-PROP-JCM_265_Wolfe_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_265_Wolfe_Mineral_Solution.yaml | source | JCM 265 Wolfe mineral solution |
+| NSV4-PROP-JCM_1353_Mineral_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_A.yaml | source | JCM 1353 mineral solution A |
+| NSV4-PROP-NBRC_1020_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml | source | NBRC 1020 Se/W solution |
+| NSV4-PROP-JCM_1130_Mineral_Solution_II | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_II.yaml | source | JCM 1130 mineral solution II |
+| NSV4-PROP-JCM_187_FeCl2_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_187_FeCl2_Solution.yaml | source | JCM 187 FeCl2 solution |
+| NSV4-PROP-NBRC_323_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_323_Solution_A.yaml | source | NBRC 323 Solution A |
+| NSV4-PROP-NBRC_971_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_A.yaml | source | NBRC 971 Solution A |
+| NSV4-PROP-NBRC_989_K_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_K_Solution.yaml | source | NBRC 989 K solution |
+| NSV4-PROP-JCM_1353_Mineral_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_B.yaml | source | JCM 1353 mineral solution B |
+| NSV4-PROP-JCM_317_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml | source | JCM 317 Se/W solution |
+| NSV4-PROP-NBRC_943_Modified_Hutner_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml | source | NBRC 943 modified Hutner solution |
+| NSV4-PROP-MediaDive_3774_VFA_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_3774_VFA_Solution.yaml | source | MediaDive 3774 VFA solution |
+| NSV4-PROP-NBRC_989_M_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_M_Solution.yaml | source | NBRC 989 M solution |
+| NSV4-PROP-MediaDive_607_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_607_Mineral_Solution.yaml | source | MediaDive 607 mineral solution |
+| NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml | source | DSMZ 161 modified Wolin mineral solution |
+| NSV4-PROP-NBRC_989_C_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_C_Solution.yaml | source | NBRC 989 C solution |
+| NSV4-PROP-NBRC_1339_10xM9_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1339_10xM9_Solution.yaml | source | NBRC 1339 10xM9 solution |
+| NSV4-PROP-JCM_852_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_852_Se_W_Solution.yaml | source | JCM 852 Se/W solution |
+| NSV4-PROP-JCM_521_Reducing_Agent_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_521_Reducing_Agent_Solution.yaml | source | JCM 521 reducing agent solution |
+| NSV4-PROP-JCM_1130_Mineral_Solution_I | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_I.yaml | source | JCM 1130 mineral solution I |
+| NSV4-PROP-JCM_1474_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_B.yaml | source | JCM 1474 Solution B |
+| NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml | source | JCM 1365 selenite-tungustate solution |
+| NSV4-PROP-NBRC_971_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_B.yaml | source | NBRC 971 Solution B |
+| NSV4-PROP-NBRC_1020_824_Resazurin_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_824_Resazurin_Solution.yaml | source | NBRC 1020/824 resazurin solution |
+| NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/Selenite_tungstate_Solution_See_Medium_No_431.yaml | source | JCM 431 selenite-tungstate solution |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent native closed-schema validation | passed | True | NSV4-PROP-JCM_1474_Solution_A, NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution, NSV5-PROP-CCAP_PE_Salt_Solution_Stock, NSV4-PROP-JCM_628_Modified_Wolfe_Solution, NSV4-PROP-JCM_265_Wolfe_Mineral_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_A, NSV4-PROP-NBRC_1020_Se_W_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_II, NSV4-PROP-JCM_187_FeCl2_Solution, NSV4-PROP-NBRC_323_Solution_A, NSV4-PROP-NBRC_971_Solution_A, NSV4-PROP-NBRC_989_K_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_B, NSV4-PROP-JCM_317_Se_W_Solution, NSV4-PROP-NBRC_943_Modified_Hutner_Solution, NSV4-PROP-MediaDive_3774_VFA_Solution, NSV4-PROP-NBRC_989_M_Solution, NSV4-PROP-MediaDive_607_Mineral_Solution, NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution, NSV4-PROP-NBRC_989_C_Solution, NSV4-PROP-NBRC_1339_10xM9_Solution, NSV4-PROP-JCM_852_Se_W_Solution, NSV4-PROP-JCM_521_Reducing_Agent_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_I, NSV4-PROP-JCM_1474_Solution_B, NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution, NSV4-PROP-NBRC_971_Solution_B, NSV4-PROP-NBRC_1020_824_Resazurin_Solution, NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431 | 29 actual proposed files; zero errors. |
+| Actual pinned native producer, nonresolving aliases and partonomy | passed | True | NSV4-PROP-JCM_1474_Solution_A, NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution, NSV5-PROP-CCAP_PE_Salt_Solution_Stock, NSV4-PROP-JCM_628_Modified_Wolfe_Solution, NSV4-PROP-JCM_265_Wolfe_Mineral_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_A, NSV4-PROP-NBRC_1020_Se_W_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_II, NSV4-PROP-JCM_187_FeCl2_Solution, NSV4-PROP-NBRC_323_Solution_A, NSV4-PROP-NBRC_971_Solution_A, NSV4-PROP-NBRC_989_K_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_B, NSV4-PROP-JCM_317_Se_W_Solution, NSV4-PROP-NBRC_943_Modified_Hutner_Solution, NSV4-PROP-MediaDive_3774_VFA_Solution, NSV4-PROP-NBRC_989_M_Solution, NSV4-PROP-MediaDive_607_Mineral_Solution, NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution, NSV4-PROP-NBRC_989_C_Solution, NSV4-PROP-NBRC_1339_10xM9_Solution, NSV4-PROP-JCM_852_Se_W_Solution, NSV4-PROP-JCM_521_Reducing_Agent_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_I, NSV4-PROP-JCM_1474_Solution_B, NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution, NSV4-PROP-NBRC_971_Solution_B, NSV4-PROP-NBRC_1020_824_Resazurin_Solution, NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431 | Actual proposed source predicates and own-identity rows match assessed semantics; rejectedlabels excluded; activeidentifiersearch includesignored; proposedpartonomy validates. |
+| Independent per-payload scientific assessment | passed | True | NSV4-PROP-JCM_1474_Solution_A, NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution, NSV5-PROP-CCAP_PE_Salt_Solution_Stock, NSV4-PROP-JCM_628_Modified_Wolfe_Solution, NSV4-PROP-JCM_265_Wolfe_Mineral_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_A, NSV4-PROP-NBRC_1020_Se_W_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_II, NSV4-PROP-JCM_187_FeCl2_Solution, NSV4-PROP-NBRC_323_Solution_A, NSV4-PROP-NBRC_971_Solution_A, NSV4-PROP-NBRC_989_K_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_B, NSV4-PROP-JCM_317_Se_W_Solution, NSV4-PROP-NBRC_943_Modified_Hutner_Solution, NSV4-PROP-MediaDive_3774_VFA_Solution, NSV4-PROP-NBRC_989_M_Solution, NSV4-PROP-MediaDive_607_Mineral_Solution, NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution, NSV4-PROP-NBRC_989_C_Solution, NSV4-PROP-NBRC_1339_10xM9_Solution, NSV4-PROP-JCM_852_Se_W_Solution, NSV4-PROP-JCM_521_Reducing_Agent_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_I, NSV4-PROP-JCM_1474_Solution_B, NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution, NSV4-PROP-NBRC_971_Solution_B, NSV4-PROP-NBRC_1020_824_Resazurin_Solution, NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431 | Full source preparation and exact current payload read individually; distinct doses,solvents,forms,products and uncertainty retained. |
+| Full maintained synchronization and release checks | not_applicable | False | NSV4-PROP-JCM_1474_Solution_A, NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution, NSV5-PROP-CCAP_PE_Salt_Solution_Stock, NSV4-PROP-JCM_628_Modified_Wolfe_Solution, NSV4-PROP-JCM_265_Wolfe_Mineral_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_A, NSV4-PROP-NBRC_1020_Se_W_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_II, NSV4-PROP-JCM_187_FeCl2_Solution, NSV4-PROP-NBRC_323_Solution_A, NSV4-PROP-NBRC_971_Solution_A, NSV4-PROP-NBRC_989_K_Solution, NSV4-PROP-JCM_1353_Mineral_Solution_B, NSV4-PROP-JCM_317_Se_W_Solution, NSV4-PROP-NBRC_943_Modified_Hutner_Solution, NSV4-PROP-MediaDive_3774_VFA_Solution, NSV4-PROP-NBRC_989_M_Solution, NSV4-PROP-MediaDive_607_Mineral_Solution, NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution, NSV4-PROP-NBRC_989_C_Solution, NSV4-PROP-NBRC_1339_10xM9_Solution, NSV4-PROP-JCM_852_Se_W_Solution, NSV4-PROP-JCM_521_Reducing_Agent_Solution, NSV4-PROP-JCM_1130_Mineral_Solution_I, NSV4-PROP-JCM_1474_Solution_B, NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution, NSV4-PROP-NBRC_971_Solution_B, NSV4-PROP-NBRC_1020_824_Resazurin_Solution, NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431 | Isolated artifact proposals only, no maintained edits. |
+
+## Scientific And Domain Assessments
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1474_Solution_A.
+
+10g each phosphate with100mL addedwater; no final100mL concentration.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution.
+
+Only three explicit final concentrations retainG_PER_L:CuSO4penta.02,Na2MoO4di.4,NiCl2hex.01. Other151baseamounts per1Laddedwater, mixedbasis explicit.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV5-PROP-CCAP_PE_Salt_Solution_Stock.
+
+200gNaNO3/20gNa2HPO4dodeca per1000cm3stock; officialCCAPgeneralpolicy suppliesdeionizedwater as explicitinference withunquantifiedamount. V5RAW_TEXTprose correctedtoREJECTED_LABEL.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_628_Modified_Wolfe_Solution.
+
+FourprintedNH4Cl/MgSO4hepta/CaCl2di/KH2PO4 amountsplus1Lwater match628, no genericWolfe merge.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_265_Wolfe_Mineral_Solution.
+
+1LpreparedJCM151aliquot remainsnestedUNMAPPED plus20mgNiCl2hex,1mgNa2SeO3,10mgNa2WO4di. No entirebatchflattened into1Laliquot; existing0553 ambiguity preserved.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1353_Mineral_Solution_A.
+
+Nineprintedsolutes,1Lwater andvariableHClpH6.5 preserved;EDTAform notinvented.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_1020_Se_W_Solution.
+
+4mgNa2SeO3/4mgNa2WO4+1Lwater;1020only, not824missingdenominator or317W-dihydrate.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1130_Mineral_Solution_II.
+
+Sixprinted salts/hydrates+1Lwater; separate1130I notmerged.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_187_FeCl2_Solution.
+
+10mL25percent7.7MHCl+1.5gFeCl2tetra+990mLwater; no final1Lnormalization. Elevenreceivingreferences187.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_323_Solution_A.
+
+Yeastextract/fiveprinted salts+500mLwater,pH3–4. Distinct971;unknownpHadjuster notinvented.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_971_Solution_A.
+
+5gferricammoniumcitrate/.5gCaCl2+1Lwater; complexstoichiometry unknown, distinct323.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_989_K_Solution.
+
+90g eachKH2PO4/NaCl/ammoniumsulfate+1Lwater;10mLreceivingdose independentlycorrected.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1353_Mineral_Solution_B.
+
+1.65gNa2WO4di/19.8mgNi(NH4)2(SO4)2hex/.82mgVOSO4+1Lwater,2mLreceivingdose.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_317_Se_W_Solution.
+
+4mgNa2SeO3/4mgNa2WO4di+1Lwater distinct1020unhydratedW.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_943_Modified_Hutner_Solution.
+
+Explicitfinal1L justifiesG/MG/ML_PER_L for6solutes+50mLcanonicalMetal44;waterq.s.unquantified. Printedmolybdatedi preserved. CanonicalMetal44v3 dependency distinctwholeidentity.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-MediaDive_3774_VFA_Solution.
+
+Sevenliquidinputs17,6,4,1,1,1,1mL; no inventedsolvent or31mLfinalvolume.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_989_M_Solution.
+
+4gMnCl2tetra+4gCoCl2hex+1Lwater;2.5mLreceivingdose separate.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-MediaDive_607_Mineral_Solution.
+
+Fiveamounts6/12/6/1.6/2.5g+1000mLwater;J1029/DSMZ33038mL. CM014792 onlyCANDIDATE_UNVERIFIED notexactstock.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution.
+
+15solutes/hydrates/mg amounts+1Lwater+variableKOH matchoriginal161; no globalWolin alias.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_989_C_Solution.
+
+10.6gCaCl2di+1Lwater;2.5mLreceivingdose.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_1339_10xM9_Solution.
+
+30gKH2PO4/60gNa2HPO4/10gNH4Cl/5gNaCl+1Lwater;nominal10x notfinalvolumeproof.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_852_Se_W_Solution.
+
+1.7mgNa2SeO3penta/3.3mgNa2WO4di+1Lwater;current1188direct852 distinctfrozen1187narrative.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_521_Reducing_Agent_Solution.
+
+12.5gNa2Snonahydrate/12.5gLcysteineHClmono+1Lwater;N2processing preserved.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1130_Mineral_Solution_I.
+
+3gK2HPO4+1Lwater;1385mannitol change onlyreceivingmedium.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1474_Solution_B.
+
+4gMgSO4hepta/.2gNaCl/.2gFeSO4hepta/.2gMnSO4unknownhydrate+100mLwater.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution.
+
+60mgselenitepenta/80mgtungstatedi/.4gNaOH+1Lwater;Se/Wtenfold431,NaOHsame, notuniformstockscale.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_971_Solution_B.
+
+100gsucrose+1Lwater;971only,323glucoseoptionalagarbranch excluded.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-NBRC_1020_824_Resazurin_Solution.
+
+Both1gresazurin+1Lwater;unknowncounterion retainedUNMAPPEDpart.
+
+### Whole preparation identity, source quantities/forms and exact proposed payload
+
+identity: supported. Targets: NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431.
+
+JCMqualifiedregistry;0.4gNaOH/6mgselenitepenta/8mgtungstatedi+1Lwater;fourcomponentidentityrefs verified. AllrawlabelsREJECTED. NBRC1257/1321compositionequivalent, processingdistinct. Corrects oldindependent431v2misses IR9/11; oldreviewimmutable, no inheritedreleaseapproval.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| e000 | MAPPING_SEMANTICS.md; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e001 | data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e002 | reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC943_Metal_Salt_44_Stock-v3.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e003 | reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v10.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e004 | reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v11.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e005 | reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v9.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e006 | reports/all_unmatched_20261107/worker-01/shard/independent_review/named-stocks-all44-v1.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e007 | reports/all_unmatched_20261107/worker-01/shard/independent_review/named-stocks-corrections-rereview-v1.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e008 | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-ns-projection-v1.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e009 | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-ns-proposals-validation-v1.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e010 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e011 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e012 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-161.pdf; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e013 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-330.pdf; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e014 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-436.pdf; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e015 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-829.pdf; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e016 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e017 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1012.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e018 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1029.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e019 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1130.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e020 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1187.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e021 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1188.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e022 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1344.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e023 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1347.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e024 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1351.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e025 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1353.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e026 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1362.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e027 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1363.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e028 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1364.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e029 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1365.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e030 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1366.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e031 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1385.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e032 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1388.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e033 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1389.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e034 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1400.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e035 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1406.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e036 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1412.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e037 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1423.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e038 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1424.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e039 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1425.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e040 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1429.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e041 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1430.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e042 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1431.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e043 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1456.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e044 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1462.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e045 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1463.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e046 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1464.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e047 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1468.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e048 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1474.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e049 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1475.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e050 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1479.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e051 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-151.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e052 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-187.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e053 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-261.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e054 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-265.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e055 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-317.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e056 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e057 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-521.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e058 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-628.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e059 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-687.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e060 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-688.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e061 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-702.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e062 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-703.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e063 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-852.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e064 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-887.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e065 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-915.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e066 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-ingredient-1921.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e067 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J1029.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e068 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J688.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e069 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J703.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e070 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-241.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e071 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-277.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e072 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-3774.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e073 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-5080.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e074 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-606.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e075 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-607.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e076 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-882.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e077 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-883.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e078 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-884.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e079 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1020.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e080 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e081 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e082 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1339.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e083 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1356.html; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e084 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-323.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e085 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-824.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e086 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-943.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e087 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-971.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e088 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-989.html; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e089 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M1070.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e090 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M142.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e091 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2041.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e092 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M253.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e093 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2587.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e094 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M708.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e095 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M725.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e096 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e097 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/CCAP_PE_Salt_Solution_Stock.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e098 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e099 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_I.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e100 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_II.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e101 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_A.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e102 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_B.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e103 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1365_Selenite_Tungustate_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e104 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_A.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e105 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_B.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e106 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_187_FeCl2_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e107 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_265_Wolfe_Mineral_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e108 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e109 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_521_Reducing_Agent_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e110 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_628_Modified_Wolfe_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e111 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_852_Se_W_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e112 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e113 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_3774_VFA_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e114 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_607_Mineral_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e115 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_824_Resazurin_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e116 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e117 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e118 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Sulfide_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e119 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_10xM9_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e120 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_Phenanthrene_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e121 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_323_Solution_A.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e122 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Metal_Salt_44.ols.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e123 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Modified_Hutner_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e124 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_A.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e125 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_B.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e126 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_C_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e127 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_K_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e128 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_M_Solution.ols.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e129 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-culture-media-factsheet.pdf; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e130 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-media-supply-factsheet.pdf; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e131 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e132 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e133 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e134 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/frozen-1921-context.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e135 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-review.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e136 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T043148Z-w01-selenite431-registry-v2/review.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e137 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T043720Z-w01-defined-stock-proposals/review.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e138 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T044206Z-w01-ccap-pe-stock-solvent-successor/review.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e139 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/numerical-dose-crosscheck.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e140 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-before.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e141 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-strict.tsv; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e142 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-validation.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e143 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/alias-projection.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e144 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/crosslane-canonical-manifest.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e145 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/jcm151-owner-conflict.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e146 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/native-review.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e147 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e148 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_I.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e149 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_II.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e150 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_A.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e151 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_B.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e152 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e153 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_A.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e154 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_B.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e155 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_187_FeCl2_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e156 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_265_Wolfe_Mineral_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e157 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e158 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_521_Reducing_Agent_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e159 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_628_Modified_Wolfe_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e160 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_852_Se_W_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e161 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e162 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_3774_VFA_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e163 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_607_Mineral_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e164 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_824_Resazurin_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e165 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e166 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1339_10xM9_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e167 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_323_Solution_A.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e168 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e169 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_A.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e170 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_B.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e171 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_C_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e172 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_K_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e173 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_M_Solution.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e174 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/Selenite_tungstate_Solution_See_Medium_No_431.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e175 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/quantity-audit.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e176 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/validation.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e177 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e178 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/correction-receipt.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e179 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/crosslane-canonical-manifest.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e180 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/native-review.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e181 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability-scope-addendum.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e182 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e183 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e184 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e185 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e186 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e187 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e188 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json; Complete captured input, with claim-specific scope in linked assessment | supports | Inspected source supports the exact bounded scientific claims identified in linked assessment. |
+| e189 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e190 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/shared-cache-assessment.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e191 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/validation.json; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e192 | src/mediaingredientmech/schema/mediaingredientmech.yaml; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e193 | src/mediaingredientmech/sssom_grading.py; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e194 | src/mediaingredientmech/synonym_policy.py; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+| e195 | src/mediaingredientmech/validation/component_partonomy.py; Complete captured input, with claim-specific scope in linked assessment | context_only | Hashed evidence/owner/proposed payload; not blanket claim support. |
+
+## Limits And Additional Notes
+
+- Passing isolated proposals do not clear inherited full-owner roles/alias/release holds.
+- Exact source occurrences must be explicitly bound; generic rejectedsource labels intentionally do notresolveglobally.
+- Native producer tested with empty ancillary dictionaries; fullpublication ownership/residual/canonicalterm checks remain required atintegration.
+- Final combined ledger/deduplication and188caseaccounting are separately reviewed; no whole-campaign approval from this bundle.
+- Supersedes old431v2 review for alias and quantity misses IR9/11; oldreview remains immutable.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T045611Z-w01-independent-ns-proposals
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Independent complete proposed-payload review of 29 ns source identities
+started_at: '2026-11-08T04:56:11.682235Z'
+finished_at: '2026-11-08T04:56:11.682235Z'
+reviewer:
+  identity: /root/skeptical_review
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process reviewer; did not author decisions or proposals.
+    Independently read complete current after payloads and exact primary/form/quantity
+    context, ran strict, native projection, alias and catalog-reference checks.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: All 29 isolated payloads have individual positive scoped assessments. Preparation
+  amounts, hydration, supplied product and context-only alias boundaries preserved.
+  Exact registry and parent output verified; no maintained changes or campaign-wide
+  release approval. Final consolidated case ledger and duplicate proposal removal
+  remain separately checked.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC943_Metal_Salt_44_Stock-v3.yaml
+    sha256: 9eb2584dd9655546783024395041cb99c0d1eb7923b6b7749d32b34ea09bfd4e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v10.json
+    sha256: 8e8a680e75372f03a8cd19e3cdbcddaffae1981c7b0dc8b3a1ed668d6f0f5d13
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v11.json
+    sha256: 12e4565827ae438fd497e42c2b0ccf7060877a176fd0064ef65c31c392601a03
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v9.json
+    sha256: 60b37798e70dc7eb0873c144f1babd2a5074bc1e192a3e7dc59106ee3138b6d2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/named-stocks-all44-v1.json
+    sha256: f6a02a3f193d0a47f12859db76a4d29219dfa15a9c800995dce85e07b202d823
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/named-stocks-corrections-rereview-v1.json
+    sha256: 744596cc150bf2b134e14262a5d247af0542db02308b13d4bea780d1cffe68b3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-ns-projection-v1.json
+    sha256: e7064e8176631fc67c2954c8c38354fe4a1b4005c1151fb009f0b8b2071bbca8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-ns-proposals-validation-v1.json
+    sha256: b25529b53da1b15804711c5deb0b204520ab505668feb68ddaa1b9013ee223ba
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json
+    sha256: be3d800d79e5d78937846eb8e5eb38bbe6bd2360401791aa38a81d83c79a997b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf
+    sha256: a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-161.pdf
+    sha256: 0f4ea6194efcb146abe36366dd72ce890643e9cfe39bc947a9df7281959478e0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-330.pdf
+    sha256: 8229d2b6a229d3448df71516a755965110bf57fb93c5190de4cbebe741847e29
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-436.pdf
+    sha256: 35a6a8b2f8480565c2e101b6eeb36e3243fc27641e1a196474c3e9180370ca07
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-829.pdf
+    sha256: 73b87bbb602b5d40fa5a442a74b8a227fc26774281d333b7718a15317fd1cb27
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json
+    sha256: 652471bf29f2bfa6e62b7acd4ccc83a7848b15be7ea8f69f4b2e09798c6d5f3d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1012.html
+    sha256: 130739a6160be3fe84c48c468a5330ae843d02fe12372a1742cec3066192751d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1029.html
+    sha256: 3f1e4f5d5109abe8901f17928d696022f92dcb219181f19f05c308fe8bebd724
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1130.html
+    sha256: dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1187.html
+    sha256: 0d86d0b6ec7987f5f82b5d1aca16ac07c1c7eeda5829d2067e930d66ad124536
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1188.html
+    sha256: dc35417cfc4b253af3792cec0dc2bf5b12bf0d9fc45192b6437436b3942dc633
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1344.html
+    sha256: c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1347.html
+    sha256: 6fac275389567ae2274bc32d329d69e9f5abd7fe047d6edb2d540e854e73527c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1351.html
+    sha256: fc46c2da2652f972403fcd46d9fb82e0e2e692b09bc49e72f1abc0953112cb46
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1353.html
+    sha256: cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1362.html
+    sha256: a42c0ee8511fa98972e1660199908c92b985aef9e59ea92c02bdc7d1911afd97
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1363.html
+    sha256: 8deeeed5cb7a71084747c96a2c89dc4085d2e8194d99ed6c95ad14fd0ce3eac9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1364.html
+    sha256: 50e515f49b47b2f5dea490eb09d3d3ee89f0326a233b4211c28e4652b49b2ee7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1365.html
+    sha256: 8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1366.html
+    sha256: 726872969bce4df697e83cd2b51b0b81cc553311029d72c34f4f3ad99f4be019
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1385.html
+    sha256: b0b238e9fdf963fc8dd663943487462d20b71337017da1c84b45b9caeed20ab1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1388.html
+    sha256: 4f05d07dfa779383c7225a96db30f421ac96de3cbd895f3281f26ec59cb91965
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1389.html
+    sha256: fbfe2b0ff18fc42c48e7e0455193e48bad1e7048cbcea21fa5301cf4849ff30d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1400.html
+    sha256: dfbca9e9ca398a94e0c176d4f89b7b680e3bcdc97ad18fea37644f7d52906598
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1406.html
+    sha256: c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1412.html
+    sha256: f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1423.html
+    sha256: 38133f5e00c1dc09defb426353dbd42df838b6a562cb981752509115523f5bfb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1424.html
+    sha256: 5c17f97a893350995abd02726e7c17a770d8a9da2b2dd9219e16690836f92648
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1425.html
+    sha256: 9a98023711d497f1681ab28d068e6d8534572870d0b4280a6c61ab68622db543
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1429.html
+    sha256: 82c83849a34933b3b8965b7d2759e97b0f576302123985ede5145659b941035c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1430.html
+    sha256: 1ef26e91d1007c1271a846bf63eba954587484830625935f4fe7dd0deebc9b48
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1431.html
+    sha256: 5dac3a613f9cd40af54eefeb8f8ef2228375eb44c59cdc779508587cc8fb8edb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1456.html
+    sha256: e4b00e471e369b05c05f85b95d60a8042a7e9f8d1871e059b2fdc79e6d1080e6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1462.html
+    sha256: fdc9e5021cc3636eacc8a5595588e124c405dce007121d5b9389e97f6ef01bbc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1463.html
+    sha256: 23985036b1501ee775fb3528abf2fb2b7a1ea079979a527de2c7cfabfdba72d1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1464.html
+    sha256: 86c3b66efb67dc46d5a1f362bcabbd724e55db76b276d79dd7eff8b8de963471
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1468.html
+    sha256: ee9887987a6103031c35e812c4d0df4e8f0dd8d03c5dfa6adf3fc246f2091c76
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1474.html
+    sha256: fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1475.html
+    sha256: 64e432cdcdc137d817e68baeffdc1f86158ded20c789e06b9f598fe104a96bd0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1479.html
+    sha256: 50b164124feab780b93845afdb8d99a88045ceacdd7ac6d96dd1da2f96065877
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-151.html
+    sha256: 6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-187.html
+    sha256: e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-261.html
+    sha256: 2f64b31105f997668cbc06f195426434ae928ac75f0f79d322b2b9ee16be5e7d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-265.html
+    sha256: 9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-317.html
+    sha256: fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html
+    sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-521.html
+    sha256: a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-628.html
+    sha256: 9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-687.html
+    sha256: a7d933e920e5778df2a38a4d5e829c44fb9a6772e7d053a6a35b06370d2074eb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-688.html
+    sha256: a803c82c63d29c77b881660cddd7f124a1e574c6a16e058550052544e12c8452
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-702.html
+    sha256: a3f0c715f1d0cc35f9adf81e7fc6f18c0e7b32007e56db7ac3fb5c4ea675dfbf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-703.html
+    sha256: 8bdf1b7a8da1aefc14d7988f0f33f5ebbed7e61185c14b756e68b8c6d2d40352
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-852.html
+    sha256: 6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-887.html
+    sha256: 864cc8128e031bb75d6fc2f5974e1ae464181c88a1c5360590da6cd6ded0f76d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-915.html
+    sha256: a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-ingredient-1921.html
+    sha256: b8b4a72985669dc6d73fd74d74d0f096e63796ebfbd596add849001e87618c01
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J1029.json
+    sha256: 841c4264b9a3e38c5fd825c6b6c8fc14d4950b6b43d8c7edbb81f1ae764bb1d1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J688.json
+    sha256: fe3aa808fd52840b425befb4845aec4027cf0f90c6f41281480578a818701df1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J703.json
+    sha256: b435ab85954be23c6dccce4226c2482abcd259caf6b8e64b682e3fce0fbbf818
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-241.json
+    sha256: 50cc42c209f550b7abc4a5f48b455553516220b6ef9613f481941f9e15f0b25d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-277.json
+    sha256: f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-3774.json
+    sha256: 74510f4009af302d60b1f15565a82f4ab166e0553b9e17744d584c12a1ccd4b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-5080.json
+    sha256: b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-606.json
+    sha256: da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-607.json
+    sha256: d1b947d90e8193e9626b323eb32fa1c82bdcf2fb2c1486e064d6c1994d83fa11
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-882.json
+    sha256: 80c28f54488ef57fe90f78e80f82c8fd468e8fed7308c34291eccdf13756fb97
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-883.json
+    sha256: dc0f7015cdb6a9cfdd6c3f1b0cad9adf6c270096987600e725941b8c933bab2c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-884.json
+    sha256: 810bb750396963ccc80677ade7c8935e1705f3dd1358f724da875046130f00fb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1020.html
+    sha256: 6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    sha256: 3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html
+    sha256: 471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1339.html
+    sha256: a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1356.html
+    sha256: 87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-323.html
+    sha256: 5a82a281b6f01560f93d530a0a694c32d165bcd0f2b6156506d7c1141e061382
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-824.html
+    sha256: 0317a82ebb8fff38df7bb305fc69a392c2f45d4e63969a0a6714616fa9676c2e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-943.html
+    sha256: 271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-971.html
+    sha256: 6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-989.html
+    sha256: 527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M1070.json
+    sha256: 109f27f167e7674d09d5cb00d6bfbe7c7de224fceb636904274df107614e8bfd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M142.json
+    sha256: 610b8b81872be555185d912ce93fed547485e0b9f3a1c1ee14fe4c6fc0e14c33
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2041.json
+    sha256: 4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M253.json
+    sha256: 038e5565979fd1fc8325fa66627d090643ac5fae4c50afe7f529dd27ca115b4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2587.json
+    sha256: ab7ea3ea0014701a9effaa5abec0effcd03276f79f9c36b1d2ceb0c5b9b0a034
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M708.json
+    sha256: 59f6fe9323fc95cc8f634330bb6053351b8389ae157ab20f092b5603421f85af
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M725.json
+    sha256: c4c2dd81e597f1100292db7cb5ad055ef3961f2a2a73b8e0eefe0919674b34e5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json
+    sha256: 692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/CCAP_PE_Salt_Solution_Stock.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_I.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_II.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_B.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1365_Selenite_Tungustate_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_B.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_187_FeCl2_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_265_Wolfe_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_521_Reducing_Agent_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_628_Modified_Wolfe_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_852_Se_W_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_3774_VFA_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_607_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_824_Resazurin_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Sulfide_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_10xM9_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_Phenanthrene_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_323_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Metal_Salt_44.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Modified_Hutner_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_B.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_C_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_K_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_M_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-culture-media-factsheet.pdf
+    sha256: 2326c72d9d9e31ceec524dd64e3a841d49e991a5bd3ebf8ecf4cfcc85e15ef67
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-media-supply-factsheet.pdf
+    sha256: 6ef049b26f3d1f72e7435b442d99bece9007738d0d63f71fe448316079814f71
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json
+    sha256: a42d9ffaa954ee2a59af8311e2d77d878826deb2efac961e78438f5a2a8a2c9a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json
+    sha256: 0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json
+    sha256: d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/frozen-1921-context.json
+    sha256: 5d3a08620ca3c55f349ba024978ee098004393533a0fc3fe29f874ff069e2184
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-review.yaml
+    sha256: ea3e47c93c809d65c2292cd68cf5d654fa975df1411979e1edd178437e7d6127
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T043148Z-w01-selenite431-registry-v2/review.yaml
+    sha256: cd00e1554e43b74bfc901e5c66539a206286738e2e8f68851a27f2c8c9ece463
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T043720Z-w01-defined-stock-proposals/review.yaml
+    sha256: 260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T044206Z-w01-ccap-pe-stock-solvent-successor/review.yaml
+    sha256: 7d5856acc16658e1b9212ba852026d6820b5426bb53523c4fd44f0953069cdd1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/numerical-dose-crosscheck.json
+    sha256: 5ef014cab91468ab732e9347fd76013cdf3ffe9e0b626f4bceaf21a5ca406696
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-before.yaml
+    sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-validation.json
+    sha256: e87ba85097f2794b83e7ec955208bf3280c6adeb1d2d683dabc4a126d5612021
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/alias-projection.json
+    sha256: 46f6a8a3d28c960454a520c91d3589c888592b5f54cb9fd7bd0f487bdf706b58
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/crosslane-canonical-manifest.json
+    sha256: a0d1bacf87b9494374da590c8610c9233e0b010e0561b6fb42d103b2c3ad5a3e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/jcm151-owner-conflict.json
+    sha256: 040f24f3a54eda3d82c1b8f8d1da9205d793ab6e35bb089ae72f9c8d4803a322
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/native-review.yaml
+    sha256: 8015d2bc76983e5a546392aaa0493f67e5bd5acf94afd4c996018d0de97b5a59
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+    sha256: 3c41dfef6ee3981a62da99cebdbfd6259cbe4908228952153527e41d1f9da64c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_I.yaml
+    sha256: 04c96e31241d106393e95ca6b1a4cb962ec95a909fbb5a09fe60a64e480b9fbe
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_II.yaml
+    sha256: 1cf552c39b335838f03ae6e6634922aee83711c52815edb2c3c11f039b2faf88
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_A.yaml
+    sha256: 1ae9a632b26e5dad799db6d55fc4dee5237c0e7d9959dc0ccf8ac17b7bdcfbb8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_B.yaml
+    sha256: ef0ec461f42838d7199ef11abef8e7106ebc195c11cb334781d1a09abc8ee5f3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+    sha256: 2058b95831b25f2cfbd010e82e7edd3614de5b2598f854e5a584b9cabde5cc48
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_A.yaml
+    sha256: 17e34e57d378ef768543e5d24ccf082764d4d79958246c0bbc0d92e690cd6ed5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_B.yaml
+    sha256: f882f92f6b5336af2b8e4cdf65284409c248f126f1a67c8828781bdef1723472
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_187_FeCl2_Solution.yaml
+    sha256: 635fd6bb2b1b319be28de58a640c078151d4eb9d37e915c30fd2854526291632
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+    sha256: 0686fa46a1a7d52febed67633cafde9480c7b3302a399957524b3cd7546f1d0c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml
+    sha256: 1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_521_Reducing_Agent_Solution.yaml
+    sha256: c3c49f9aee3429e7b2fd831d7b4d1cdde1b3f60a27b1f7bf7c22b16d3efed657
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+    sha256: 376ba96ab30b203bcba9afcd592f7970b02b7363225fa0ca1a90d3fab76337d1
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_852_Se_W_Solution.yaml
+    sha256: 668bf61c3d226ab8051816105141caf49c82d5ec13d0436c27e34f1fd6b66fc0
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+    sha256: 2ef2a54ee11a2d642662067836273b728fa26322fd096e797d8982a128582e93
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_3774_VFA_Solution.yaml
+    sha256: 645d9505752de697ac15945da875cf10e4d3f1fc2ca70e2f086b930abc87648e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_607_Mineral_Solution.yaml
+    sha256: 7566713f2dc096dc1512993982aaabdcf281fc20cc81d307be187198397533e9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+    sha256: 559990485f2a650a5f6e6d98d5863465d37977b497e016de7df64ed248a3b43b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml
+    sha256: 235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1339_10xM9_Solution.yaml
+    sha256: 491d616079ce25966e424cd1831274cc261f68ef2f9f968434162b086893372b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_323_Solution_A.yaml
+    sha256: 104586d945fb81b5a443c265a54f3de04254e131a42973d8fcfbe2fc787f1e45
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+    sha256: f62f6736a65ad231a9de433c05e285751bfddbd36a5e9537cea96500943d5291
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_A.yaml
+    sha256: 1d375712c4c92a52ff8b38a89934800c5c6a70a94b93cde4a14f8757d5fe87cd
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_B.yaml
+    sha256: b4bee9623cb4baedf3eb0b6955b4e1f1d2e217cc4dc874748768dea023d66167
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_C_Solution.yaml
+    sha256: b48d96d7448efc819b56e1f95603652361ed3ef0af9f5a2fba40894976b2923c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_K_Solution.yaml
+    sha256: f3a29ba2592c92cdbf633104b4f7987124bb6175fd6dc39dc8bde509e85e9c71
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_M_Solution.yaml
+    sha256: d5c9895c08a79b1f4175cc617fe08abaf41f02e05c8f7fa6679d360940b797bb
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/Selenite_tungstate_Solution_See_Medium_No_431.yaml
+    sha256: 5e6c9e17dba64208e589d3f872006080c2ac5b00aef2307c2c966a34f5069731
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/quantity-audit.json
+    sha256: c82edc2298be43204ff5cf861b371d41d28c399e283aa9c27daabf33a76f03be
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/validation.json
+    sha256: cde31e1993b75dae1c2da69684c184a263a976e8b58371de0b5603a765d74fd7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml
+    sha256: 2ec4c2a0281df23021f000d07bb515de43a148e65ffec4ef3a6ea079b4ef61a1
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/correction-receipt.json
+    sha256: d822b9aec138639eb00e8b6d9fb269768e72eec9c6b5fb361d46ed583e8e5295
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/crosslane-canonical-manifest.json
+    sha256: 54d7af9b2e0586e369480f0da2fee6a058afa583a68cf58f7f60086b3aa8f7b8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/native-review.yaml
+    sha256: 464804e46b72aedf79834bd5e2288852d843518579537b77a502a6a9efffa8af
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability-scope-addendum.json
+    sha256: 853fb78b7c7731d423a7667485f88f6be877e2f0b8c75a2f8c4e4f2ffa6925e3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability.json
+    sha256: fcd6427c3952dcdda78bb868629a737f94e4b905e1959ecb1aafe7712b7d22bc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json
+    sha256: 643fefa89a2c0afeb2a00a0dd6149dbbf86cc4824369c58bde1c6ea6d4316d10
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    sha256: de9102073c3761a24130636f90e898445dce83eb118592609a618bf61149ff4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json
+    sha256: 2373bbcef187826c692b5378554daa4d799085002aa8616ff418e067655027b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json
+    sha256: 987144fa0342502834f116860a4b4f71696f62c18e7b701301667c15e588562a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+    sha256: 73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+    sha256: ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/shared-cache-assessment.json
+    sha256: 878b5cf0ce85e9686348990a67fdbdc5fdf1e563479c6c17a2f5a334b9656f80
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/validation.json
+    sha256: aeb4102d7f92eba664cef10a8c0e7a77089d6ed230411457f22f606dce1e6a1e
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/sssom_grading.py
+    sha256: 20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c
+    role: context
+  - path: src/mediaingredientmech/synonym_policy.py
+    sha256: f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069
+    role: context
+  - path: src/mediaingredientmech/validation/component_partonomy.py
+    sha256: d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696
+    role: context
+targets:
+- target_id: NSV4-PROP-JCM_1474_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_A.yaml
+  label: JCM 1474 Solution A
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1474_Solution_A.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+  label: JCM 915 modified Wolfe mineral solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml
+  label: CCAP PE salt solution stock
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/CCAP_PE_Salt_Solution_Stock.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+  label: JCM 628 modified Wolfe solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_628_Modified_Wolfe_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+  label: JCM 265 Wolfe mineral solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_265_Wolfe_Mineral_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_1353_Mineral_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_A.yaml
+  label: JCM 1353 mineral solution A
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1353_Mineral_Solution_A.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_1020_Se_W_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml
+  label: NBRC 1020 Se/W solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_1020_Se_W_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_1130_Mineral_Solution_II
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_II.yaml
+  label: JCM 1130 mineral solution II
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1130_Mineral_Solution_II.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_187_FeCl2_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_187_FeCl2_Solution.yaml
+  label: JCM 187 FeCl2 solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_187_FeCl2_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_323_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_323_Solution_A.yaml
+  label: NBRC 323 Solution A
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_323_Solution_A.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_971_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_A.yaml
+  label: NBRC 971 Solution A
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_971_Solution_A.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_989_K_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_K_Solution.yaml
+  label: NBRC 989 K solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_989_K_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_1353_Mineral_Solution_B
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_B.yaml
+  label: JCM 1353 mineral solution B
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1353_Mineral_Solution_B.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_317_Se_W_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml
+  label: JCM 317 Se/W solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_317_Se_W_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+  label: NBRC 943 modified Hutner solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_943_Modified_Hutner_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-MediaDive_3774_VFA_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_3774_VFA_Solution.yaml
+  label: MediaDive 3774 VFA solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MediaDive_3774_VFA_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_989_M_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_M_Solution.yaml
+  label: NBRC 989 M solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_989_M_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-MediaDive_607_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_607_Mineral_Solution.yaml
+  label: MediaDive 607 mineral solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MediaDive_607_Mineral_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+  label: DSMZ 161 modified Wolin mineral solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_989_C_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_C_Solution.yaml
+  label: NBRC 989 C solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_989_C_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_1339_10xM9_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1339_10xM9_Solution.yaml
+  label: NBRC 1339 10xM9 solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_1339_10xM9_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_852_Se_W_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_852_Se_W_Solution.yaml
+  label: JCM 852 Se/W solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_852_Se_W_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_521_Reducing_Agent_Solution.yaml
+  label: JCM 521 reducing agent solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_521_Reducing_Agent_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_1130_Mineral_Solution_I
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_I.yaml
+  label: JCM 1130 mineral solution I
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1130_Mineral_Solution_I.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_1474_Solution_B
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_B.yaml
+  label: JCM 1474 Solution B
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1474_Solution_B.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+  label: JCM 1365 selenite-tungustate solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM_1365_Selenite_Tungustate_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_971_Solution_B
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_B.yaml
+  label: NBRC 971 Solution B
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_971_Solution_B.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+  label: NBRC 1020/824 resazurin solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/NBRC_1020_824_Resazurin_Solution.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+- target_id: NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/Selenite_tungstate_Solution_See_Medium_No_431.yaml
+  label: JCM 431 selenite-tungstate solution
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: Maintained destination only after separately authorized coordinator integration
+scope:
+  description: Entire exact isolated payloads and source-supported applicability;
+    no blanket approval of inherited unmodified owner claims.
+  selection: All current proposals in this lane, no sampling.
+  coverage: full
+  population_size: 29
+  reviewed_target_ids:
+  - NSV4-PROP-JCM_1474_Solution_A
+  - NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  - NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  - NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  - NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_A
+  - NSV4-PROP-NBRC_1020_Se_W_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_II
+  - NSV4-PROP-JCM_187_FeCl2_Solution
+  - NSV4-PROP-NBRC_323_Solution_A
+  - NSV4-PROP-NBRC_971_Solution_A
+  - NSV4-PROP-NBRC_989_K_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_B
+  - NSV4-PROP-JCM_317_Se_W_Solution
+  - NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  - NSV4-PROP-MediaDive_3774_VFA_Solution
+  - NSV4-PROP-NBRC_989_M_Solution
+  - NSV4-PROP-MediaDive_607_Mineral_Solution
+  - NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NSV4-PROP-NBRC_989_C_Solution
+  - NSV4-PROP-NBRC_1339_10xM9_Solution
+  - NSV4-PROP-JCM_852_Se_W_Solution
+  - NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_I
+  - NSV4-PROP-JCM_1474_Solution_B
+  - NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  - NSV4-PROP-NBRC_971_Solution_B
+  - NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  - NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+  exclusions:
+  - target: Maintained full-owner release, generated corpus and otherlanes
+    reason: Separate integration/review obligations; no maintained mutation or sourcehold
+      clearance.
+checks:
+- check_id: strict
+  name: Independent native closed-schema validation
+  status: passed
+  required: true
+  summary: 29 actual proposed files; zero errors.
+  target_ids:
+  - NSV4-PROP-JCM_1474_Solution_A
+  - NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  - NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  - NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  - NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_A
+  - NSV4-PROP-NBRC_1020_Se_W_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_II
+  - NSV4-PROP-JCM_187_FeCl2_Solution
+  - NSV4-PROP-NBRC_323_Solution_A
+  - NSV4-PROP-NBRC_971_Solution_A
+  - NSV4-PROP-NBRC_989_K_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_B
+  - NSV4-PROP-JCM_317_Se_W_Solution
+  - NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  - NSV4-PROP-MediaDive_3774_VFA_Solution
+  - NSV4-PROP-NBRC_989_M_Solution
+  - NSV4-PROP-MediaDive_607_Mineral_Solution
+  - NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NSV4-PROP-NBRC_989_C_Solution
+  - NSV4-PROP-NBRC_1339_10xM9_Solution
+  - NSV4-PROP-JCM_852_Se_W_Solution
+  - NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_I
+  - NSV4-PROP-JCM_1474_Solution_B
+  - NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  - NSV4-PROP-NBRC_971_Solution_B
+  - NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  - NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+  command: See native-independent-ns-proposals-validation-v1.json exact command
+  exit_code: 0
+  evidence_ids:
+  - e009
+- check_id: projection
+  name: Actual pinned native producer, nonresolving aliases and partonomy
+  status: passed
+  required: true
+  summary: Actual proposed source predicates and own-identity rows match assessed
+    semantics; rejectedlabels excluded; activeidentifiersearch includesignored; proposedpartonomy
+    validates.
+  target_ids:
+  - NSV4-PROP-JCM_1474_Solution_A
+  - NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  - NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  - NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  - NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_A
+  - NSV4-PROP-NBRC_1020_Se_W_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_II
+  - NSV4-PROP-JCM_187_FeCl2_Solution
+  - NSV4-PROP-NBRC_323_Solution_A
+  - NSV4-PROP-NBRC_971_Solution_A
+  - NSV4-PROP-NBRC_989_K_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_B
+  - NSV4-PROP-JCM_317_Se_W_Solution
+  - NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  - NSV4-PROP-MediaDive_3774_VFA_Solution
+  - NSV4-PROP-NBRC_989_M_Solution
+  - NSV4-PROP-MediaDive_607_Mineral_Solution
+  - NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NSV4-PROP-NBRC_989_C_Solution
+  - NSV4-PROP-NBRC_1339_10xM9_Solution
+  - NSV4-PROP-JCM_852_Se_W_Solution
+  - NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_I
+  - NSV4-PROP-JCM_1474_Solution_B
+  - NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  - NSV4-PROP-NBRC_971_Solution_B
+  - NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  - NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+  command: PYTHONPATH=src .temp/all-unmatched-worker-01/shard-venv/bin/python3.13
+    .temp/all-unmatched-worker-01/shard/review/ns-native-checks-v1.py
+  exit_code: 0
+  evidence_ids:
+  - e008
+- check_id: science
+  name: Independent per-payload scientific assessment
+  status: passed
+  required: true
+  summary: Full source preparation and exact current payload read individually; distinct
+    doses,solvents,forms,products and uncertainty retained.
+  target_ids:
+  - NSV4-PROP-JCM_1474_Solution_A
+  - NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  - NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  - NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  - NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_A
+  - NSV4-PROP-NBRC_1020_Se_W_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_II
+  - NSV4-PROP-JCM_187_FeCl2_Solution
+  - NSV4-PROP-NBRC_323_Solution_A
+  - NSV4-PROP-NBRC_971_Solution_A
+  - NSV4-PROP-NBRC_989_K_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_B
+  - NSV4-PROP-JCM_317_Se_W_Solution
+  - NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  - NSV4-PROP-MediaDive_3774_VFA_Solution
+  - NSV4-PROP-NBRC_989_M_Solution
+  - NSV4-PROP-MediaDive_607_Mineral_Solution
+  - NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NSV4-PROP-NBRC_989_C_Solution
+  - NSV4-PROP-NBRC_1339_10xM9_Solution
+  - NSV4-PROP-JCM_852_Se_W_Solution
+  - NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_I
+  - NSV4-PROP-JCM_1474_Solution_B
+  - NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  - NSV4-PROP-NBRC_971_Solution_B
+  - NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  - NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+- check_id: integration
+  name: Full maintained synchronization and release checks
+  status: not_applicable
+  required: false
+  summary: Isolated artifact proposals only, no maintained edits.
+  target_ids:
+  - NSV4-PROP-JCM_1474_Solution_A
+  - NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  - NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  - NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  - NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_A
+  - NSV4-PROP-NBRC_1020_Se_W_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_II
+  - NSV4-PROP-JCM_187_FeCl2_Solution
+  - NSV4-PROP-NBRC_323_Solution_A
+  - NSV4-PROP-NBRC_971_Solution_A
+  - NSV4-PROP-NBRC_989_K_Solution
+  - NSV4-PROP-JCM_1353_Mineral_Solution_B
+  - NSV4-PROP-JCM_317_Se_W_Solution
+  - NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  - NSV4-PROP-MediaDive_3774_VFA_Solution
+  - NSV4-PROP-NBRC_989_M_Solution
+  - NSV4-PROP-MediaDive_607_Mineral_Solution
+  - NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NSV4-PROP-NBRC_989_C_Solution
+  - NSV4-PROP-NBRC_1339_10xM9_Solution
+  - NSV4-PROP-JCM_852_Se_W_Solution
+  - NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  - NSV4-PROP-JCM_1130_Mineral_Solution_I
+  - NSV4-PROP-JCM_1474_Solution_B
+  - NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  - NSV4-PROP-NBRC_971_Solution_B
+  - NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  - NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+evidence:
+- evidence_id: e000
+  reference: MAPPING_SEMANTICS.md
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+- evidence_id: e001
+  reference: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+- evidence_id: e002
+  reference: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC943_Metal_Salt_44_Stock-v3.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 9eb2584dd9655546783024395041cb99c0d1eb7923b6b7749d32b34ea09bfd4e
+- evidence_id: e003
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v10.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8e8a680e75372f03a8cd19e3cdbcddaffae1981c7b0dc8b3a1ed668d6f0f5d13
+- evidence_id: e004
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v11.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 12e4565827ae438fd497e42c2b0ccf7060877a176fd0064ef65c31c392601a03
+- evidence_id: e005
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v9.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 60b37798e70dc7eb0873c144f1babd2a5074bc1e192a3e7dc59106ee3138b6d2
+- evidence_id: e006
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/named-stocks-all44-v1.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f6a02a3f193d0a47f12859db76a4d29219dfa15a9c800995dce85e07b202d823
+- evidence_id: e007
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/named-stocks-corrections-rereview-v1.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 744596cc150bf2b134e14262a5d247af0542db02308b13d4bea780d1cffe68b3
+- evidence_id: e008
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-ns-projection-v1.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: e7064e8176631fc67c2954c8c38354fe4a1b4005c1151fb009f0b8b2071bbca8
+- evidence_id: e009
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-ns-proposals-validation-v1.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b25529b53da1b15804711c5deb0b204520ab505668feb68ddaa1b9013ee223ba
+- evidence_id: e010
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: be3d800d79e5d78937846eb8e5eb38bbe6bd2360401791aa38a81d83c79a997b
+- evidence_id: e011
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233
+- evidence_id: e012
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-161.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 0f4ea6194efcb146abe36366dd72ce890643e9cfe39bc947a9df7281959478e0
+- evidence_id: e013
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-330.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8229d2b6a229d3448df71516a755965110bf57fb93c5190de4cbebe741847e29
+- evidence_id: e014
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-436.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 35a6a8b2f8480565c2e101b6eeb36e3243fc27641e1a196474c3e9180370ca07
+- evidence_id: e015
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-829.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 73b87bbb602b5d40fa5a442a74b8a227fc26774281d333b7718a15317fd1cb27
+- evidence_id: e016
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 652471bf29f2bfa6e62b7acd4ccc83a7848b15be7ea8f69f4b2e09798c6d5f3d
+- evidence_id: e017
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1012.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 130739a6160be3fe84c48c468a5330ae843d02fe12372a1742cec3066192751d
+- evidence_id: e018
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1029.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 3f1e4f5d5109abe8901f17928d696022f92dcb219181f19f05c308fe8bebd724
+- evidence_id: e019
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1130.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed
+- evidence_id: e020
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1187.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 0d86d0b6ec7987f5f82b5d1aca16ac07c1c7eeda5829d2067e930d66ad124536
+- evidence_id: e021
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1188.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: dc35417cfc4b253af3792cec0dc2bf5b12bf0d9fc45192b6437436b3942dc633
+- evidence_id: e022
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1344.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63
+- evidence_id: e023
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1347.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 6fac275389567ae2274bc32d329d69e9f5abd7fe047d6edb2d540e854e73527c
+- evidence_id: e024
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1351.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: fc46c2da2652f972403fcd46d9fb82e0e2e692b09bc49e72f1abc0953112cb46
+- evidence_id: e025
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1353.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1
+- evidence_id: e026
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1362.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: a42c0ee8511fa98972e1660199908c92b985aef9e59ea92c02bdc7d1911afd97
+- evidence_id: e027
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1363.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8deeeed5cb7a71084747c96a2c89dc4085d2e8194d99ed6c95ad14fd0ce3eac9
+- evidence_id: e028
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1364.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 50e515f49b47b2f5dea490eb09d3d3ee89f0326a233b4211c28e4652b49b2ee7
+- evidence_id: e029
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1365.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45
+- evidence_id: e030
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1366.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 726872969bce4df697e83cd2b51b0b81cc553311029d72c34f4f3ad99f4be019
+- evidence_id: e031
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1385.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b0b238e9fdf963fc8dd663943487462d20b71337017da1c84b45b9caeed20ab1
+- evidence_id: e032
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1388.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 4f05d07dfa779383c7225a96db30f421ac96de3cbd895f3281f26ec59cb91965
+- evidence_id: e033
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1389.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: fbfe2b0ff18fc42c48e7e0455193e48bad1e7048cbcea21fa5301cf4849ff30d
+- evidence_id: e034
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1400.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: dfbca9e9ca398a94e0c176d4f89b7b680e3bcdc97ad18fea37644f7d52906598
+- evidence_id: e035
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1406.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03
+- evidence_id: e036
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1412.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29
+- evidence_id: e037
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1423.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 38133f5e00c1dc09defb426353dbd42df838b6a562cb981752509115523f5bfb
+- evidence_id: e038
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1424.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 5c17f97a893350995abd02726e7c17a770d8a9da2b2dd9219e16690836f92648
+- evidence_id: e039
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1425.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 9a98023711d497f1681ab28d068e6d8534572870d0b4280a6c61ab68622db543
+- evidence_id: e040
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1429.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 82c83849a34933b3b8965b7d2759e97b0f576302123985ede5145659b941035c
+- evidence_id: e041
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1430.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 1ef26e91d1007c1271a846bf63eba954587484830625935f4fe7dd0deebc9b48
+- evidence_id: e042
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1431.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 5dac3a613f9cd40af54eefeb8f8ef2228375eb44c59cdc779508587cc8fb8edb
+- evidence_id: e043
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1456.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: e4b00e471e369b05c05f85b95d60a8042a7e9f8d1871e059b2fdc79e6d1080e6
+- evidence_id: e044
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1462.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: fdc9e5021cc3636eacc8a5595588e124c405dce007121d5b9389e97f6ef01bbc
+- evidence_id: e045
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1463.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 23985036b1501ee775fb3528abf2fb2b7a1ea079979a527de2c7cfabfdba72d1
+- evidence_id: e046
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1464.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 86c3b66efb67dc46d5a1f362bcabbd724e55db76b276d79dd7eff8b8de963471
+- evidence_id: e047
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1468.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ee9887987a6103031c35e812c4d0df4e8f0dd8d03c5dfa6adf3fc246f2091c76
+- evidence_id: e048
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1474.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108
+- evidence_id: e049
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1475.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 64e432cdcdc137d817e68baeffdc1f86158ded20c789e06b9f598fe104a96bd0
+- evidence_id: e050
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1479.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 50b164124feab780b93845afdb8d99a88045ceacdd7ac6d96dd1da2f96065877
+- evidence_id: e051
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-151.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7
+- evidence_id: e052
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-187.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804
+- evidence_id: e053
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-261.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 2f64b31105f997668cbc06f195426434ae928ac75f0f79d322b2b9ee16be5e7d
+- evidence_id: e054
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-265.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c
+- evidence_id: e055
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-317.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e
+- evidence_id: e056
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+- evidence_id: e057
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-521.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff
+- evidence_id: e058
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-628.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f
+- evidence_id: e059
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-687.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: a7d933e920e5778df2a38a4d5e829c44fb9a6772e7d053a6a35b06370d2074eb
+- evidence_id: e060
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-688.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: a803c82c63d29c77b881660cddd7f124a1e574c6a16e058550052544e12c8452
+- evidence_id: e061
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-702.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: a3f0c715f1d0cc35f9adf81e7fc6f18c0e7b32007e56db7ac3fb5c4ea675dfbf
+- evidence_id: e062
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-703.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8bdf1b7a8da1aefc14d7988f0f33f5ebbed7e61185c14b756e68b8c6d2d40352
+- evidence_id: e063
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-852.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458
+- evidence_id: e064
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-887.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 864cc8128e031bb75d6fc2f5974e1ae464181c88a1c5360590da6cd6ded0f76d
+- evidence_id: e065
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-915.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82
+- evidence_id: e066
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-ingredient-1921.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b8b4a72985669dc6d73fd74d74d0f096e63796ebfbd596add849001e87618c01
+- evidence_id: e067
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J1029.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 841c4264b9a3e38c5fd825c6b6c8fc14d4950b6b43d8c7edbb81f1ae764bb1d1
+- evidence_id: e068
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J688.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: fe3aa808fd52840b425befb4845aec4027cf0f90c6f41281480578a818701df1
+- evidence_id: e069
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-medium-J703.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b435ab85954be23c6dccce4226c2482abcd259caf6b8e64b682e3fce0fbbf818
+- evidence_id: e070
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-241.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 50cc42c209f550b7abc4a5f48b455553516220b6ef9613f481941f9e15f0b25d
+- evidence_id: e071
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-277.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d
+- evidence_id: e072
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-3774.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 74510f4009af302d60b1f15565a82f4ab166e0553b9e17744d584c12a1ccd4b7
+- evidence_id: e073
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-5080.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf
+- evidence_id: e074
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-606.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804
+- evidence_id: e075
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-607.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: d1b947d90e8193e9626b323eb32fa1c82bdcf2fb2c1486e064d6c1994d83fa11
+- evidence_id: e076
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-882.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 80c28f54488ef57fe90f78e80f82c8fd468e8fed7308c34291eccdf13756fb97
+- evidence_id: e077
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-883.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: dc0f7015cdb6a9cfdd6c3f1b0cad9adf6c270096987600e725941b8c933bab2c
+- evidence_id: e078
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-884.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 810bb750396963ccc80677ade7c8935e1705f3dd1358f724da875046130f00fb
+- evidence_id: e079
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1020.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c
+- evidence_id: e080
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06
+- evidence_id: e081
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b
+- evidence_id: e082
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1339.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837
+- evidence_id: e083
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1356.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49
+- evidence_id: e084
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-323.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 5a82a281b6f01560f93d530a0a694c32d165bcd0f2b6156506d7c1141e061382
+- evidence_id: e085
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-824.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 0317a82ebb8fff38df7bb305fc69a392c2f45d4e63969a0a6714616fa9676c2e
+- evidence_id: e086
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-943.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593
+- evidence_id: e087
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-971.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311
+- evidence_id: e088
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-989.html
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88
+- evidence_id: e089
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M1070.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 109f27f167e7674d09d5cb00d6bfbe7c7de224fceb636904274df107614e8bfd
+- evidence_id: e090
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M142.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 610b8b81872be555185d912ce93fed547485e0b9f3a1c1ee14fe4c6fc0e14c33
+- evidence_id: e091
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2041.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90
+- evidence_id: e092
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M253.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 038e5565979fd1fc8325fa66627d090643ac5fae4c50afe7f529dd27ca115b4b
+- evidence_id: e093
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2587.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ab7ea3ea0014701a9effaa5abec0effcd03276f79f9c36b1d2ceb0c5b9b0a034
+- evidence_id: e094
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M708.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 59f6fe9323fc95cc8f634330bb6053351b8389ae157ab20f092b5603421f85af
+- evidence_id: e095
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M725.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: c4c2dd81e597f1100292db7cb5ad055ef3961f2a2a73b8e0eefe0919674b34e5
+- evidence_id: e096
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2
+- evidence_id: e097
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/CCAP_PE_Salt_Solution_Stock.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e098
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e099
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_I.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e100
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_II.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e101
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_A.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e102
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_B.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e103
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1365_Selenite_Tungustate_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e104
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_A.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e105
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_B.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e106
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_187_FeCl2_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e107
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_265_Wolfe_Mineral_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e108
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e109
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_521_Reducing_Agent_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e110
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_628_Modified_Wolfe_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e111
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_852_Se_W_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e112
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e113
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_3774_VFA_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e114
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_607_Mineral_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e115
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_824_Resazurin_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e116
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e117
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e118
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Sulfide_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e119
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_10xM9_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e120
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_Phenanthrene_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e121
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_323_Solution_A.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e122
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Metal_Salt_44.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e123
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Modified_Hutner_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e124
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_A.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e125
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_B.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e126
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_C_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e127
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_K_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e128
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_M_Solution.ols.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e129
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-culture-media-factsheet.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 2326c72d9d9e31ceec524dd64e3a841d49e991a5bd3ebf8ecf4cfcc85e15ef67
+- evidence_id: e130
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/captures/CCAP-media-supply-factsheet.pdf
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 6ef049b26f3d1f72e7435b442d99bece9007738d0d63f71fe448316079814f71
+- evidence_id: e131
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/ccap-followup/validation.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: a42d9ffaa954ee2a59af8311e2d77d878826deb2efac961e78438f5a2a8a2c9a
+- evidence_id: e132
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c
+- evidence_id: e133
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f
+- evidence_id: e134
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/frozen-1921-context.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 5d3a08620ca3c55f349ba024978ee098004393533a0fc3fe29f874ff069e2184
+- evidence_id: e135
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-review.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ea3e47c93c809d65c2292cd68cf5d654fa975df1411979e1edd178437e7d6127
+- evidence_id: e136
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T043148Z-w01-selenite431-registry-v2/review.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: cd00e1554e43b74bfc901e5c66539a206286738e2e8f68851a27f2c8c9ece463
+- evidence_id: e137
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T043720Z-w01-defined-stock-proposals/review.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 260bb36fd11b9b6390abebf8b1a66330f9a0ab76bc16314db18f0e4ad53dfd74
+- evidence_id: e138
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/native-reviews/20261108T044206Z-w01-ccap-pe-stock-solvent-successor/review.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 7d5856acc16658e1b9212ba852026d6820b5426bb53523c4fd44f0953069cdd1
+- evidence_id: e139
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/numerical-dose-crosscheck.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 5ef014cab91468ab732e9347fd76013cdf3ffe9e0b626f4bceaf21a5ca406696
+- evidence_id: e140
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-before.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+- evidence_id: e141
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-strict.tsv
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+- evidence_id: e142
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-validation.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: e87ba85097f2794b83e7ec955208bf3280c6adeb1d2d683dabc4a126d5612021
+- evidence_id: e143
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/alias-projection.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 46f6a8a3d28c960454a520c91d3589c888592b5f54cb9fd7bd0f487bdf706b58
+- evidence_id: e144
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/crosslane-canonical-manifest.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: a0d1bacf87b9494374da590c8610c9233e0b010e0561b6fb42d103b2c3ad5a3e
+- evidence_id: e145
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/jcm151-owner-conflict.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 040f24f3a54eda3d82c1b8f8d1da9205d793ab6e35bb089ae72f9c8d4803a322
+- evidence_id: e146
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/native-review.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8015d2bc76983e5a546392aaa0493f67e5bd5acf94afd4c996018d0de97b5a59
+- evidence_id: e147
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 3c41dfef6ee3981a62da99cebdbfd6259cbe4908228952153527e41d1f9da64c
+- evidence_id: e148
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_I.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 04c96e31241d106393e95ca6b1a4cb962ec95a909fbb5a09fe60a64e480b9fbe
+- evidence_id: e149
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1130_Mineral_Solution_II.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 1cf552c39b335838f03ae6e6634922aee83711c52815edb2c3c11f039b2faf88
+- evidence_id: e150
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_A.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 1ae9a632b26e5dad799db6d55fc4dee5237c0e7d9959dc0ccf8ac17b7bdcfbb8
+- evidence_id: e151
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1353_Mineral_Solution_B.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ef0ec461f42838d7199ef11abef8e7106ebc195c11cb334781d1a09abc8ee5f3
+- evidence_id: e152
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 2058b95831b25f2cfbd010e82e7edd3614de5b2598f854e5a584b9cabde5cc48
+- evidence_id: e153
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_A.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 17e34e57d378ef768543e5d24ccf082764d4d79958246c0bbc0d92e690cd6ed5
+- evidence_id: e154
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_1474_Solution_B.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f882f92f6b5336af2b8e4cdf65284409c248f126f1a67c8828781bdef1723472
+- evidence_id: e155
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_187_FeCl2_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 635fd6bb2b1b319be28de58a640c078151d4eb9d37e915c30fd2854526291632
+- evidence_id: e156
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 0686fa46a1a7d52febed67633cafde9480c7b3302a399957524b3cd7546f1d0c
+- evidence_id: e157
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62
+- evidence_id: e158
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_521_Reducing_Agent_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: c3c49f9aee3429e7b2fd831d7b4d1cdde1b3f60a27b1f7bf7c22b16d3efed657
+- evidence_id: e159
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 376ba96ab30b203bcba9afcd592f7970b02b7363225fa0ca1a90d3fab76337d1
+- evidence_id: e160
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_852_Se_W_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 668bf61c3d226ab8051816105141caf49c82d5ec13d0436c27e34f1fd6b66fc0
+- evidence_id: e161
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 2ef2a54ee11a2d642662067836273b728fa26322fd096e797d8982a128582e93
+- evidence_id: e162
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_3774_VFA_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 645d9505752de697ac15945da875cf10e4d3f1fc2ca70e2f086b930abc87648e
+- evidence_id: e163
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/MediaDive_607_Mineral_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 7566713f2dc096dc1512993982aaabdcf281fc20cc81d307be187198397533e9
+- evidence_id: e164
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 559990485f2a650a5f6e6d98d5863465d37977b497e016de7df64ed248a3b43b
+- evidence_id: e165
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7
+- evidence_id: e166
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1339_10xM9_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 491d616079ce25966e424cd1831274cc261f68ef2f9f968434162b086893372b
+- evidence_id: e167
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_323_Solution_A.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 104586d945fb81b5a443c265a54f3de04254e131a42973d8fcfbe2fc787f1e45
+- evidence_id: e168
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f62f6736a65ad231a9de433c05e285751bfddbd36a5e9537cea96500943d5291
+- evidence_id: e169
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_A.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 1d375712c4c92a52ff8b38a89934800c5c6a70a94b93cde4a14f8757d5fe87cd
+- evidence_id: e170
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_971_Solution_B.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b4bee9623cb4baedf3eb0b6955b4e1f1d2e217cc4dc874748768dea023d66167
+- evidence_id: e171
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_C_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: b48d96d7448efc819b56e1f95603652361ed3ef0af9f5a2fba40894976b2923c
+- evidence_id: e172
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_K_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f3a29ba2592c92cdbf633104b4f7987124bb6175fd6dc39dc8bde509e85e9c71
+- evidence_id: e173
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_989_M_Solution.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: d5c9895c08a79b1f4175cc617fe08abaf41f02e05c8f7fa6679d360940b797bb
+- evidence_id: e174
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/Selenite_tungstate_Solution_See_Medium_No_431.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 5e6c9e17dba64208e589d3f872006080c2ac5b00aef2307c2c966a34f5069731
+- evidence_id: e175
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/quantity-audit.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: c82edc2298be43204ff5cf861b371d41d28c399e283aa9c27daabf33a76f03be
+- evidence_id: e176
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/validation.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: cde31e1993b75dae1c2da69684c184a263a976e8b58371de0b5603a765d74fd7
+- evidence_id: e177
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 2ec4c2a0281df23021f000d07bb515de43a148e65ffec4ef3a6ea079b4ef61a1
+- evidence_id: e178
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/correction-receipt.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: d822b9aec138639eb00e8b6d9fb269768e72eec9c6b5fb361d46ed583e8e5295
+- evidence_id: e179
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/crosslane-canonical-manifest.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 54d7af9b2e0586e369480f0da2fee6a058afa583a68cf58f7f60086b3aa8f7b8
+- evidence_id: e180
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/native-review.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 464804e46b72aedf79834bd5e2288852d843518579537b77a502a6a9efffa8af
+- evidence_id: e181
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability-scope-addendum.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 853fb78b7c7731d423a7667485f88f6be877e2f0b8c75a2f8c4e4f2ffa6925e3
+- evidence_id: e182
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: fcd6427c3952dcdda78bb868629a737f94e4b905e1959ecb1aafe7712b7d22bc
+- evidence_id: e183
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 643fefa89a2c0afeb2a00a0dd6149dbbf86cc4824369c58bde1c6ea6d4316d10
+- evidence_id: e184
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: de9102073c3761a24130636f90e898445dce83eb118592609a618bf61149ff4b
+- evidence_id: e185
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 2373bbcef187826c692b5378554daa4d799085002aa8616ff418e067655027b7
+- evidence_id: e186
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 987144fa0342502834f116860a4b4f71696f62c18e7b701301667c15e588562a
+- evidence_id: e187
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e188
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: supports
+  summary: Inspected source supports the exact bounded scientific claims identified
+    in linked assessment.
+  snapshot_sha256: 73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c
+- evidence_id: e189
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1
+- evidence_id: e190
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/shared-cache-assessment.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 878b5cf0ce85e9686348990a67fdbdc5fdf1e563479c6c17a2f5a334b9656f80
+- evidence_id: e191
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/validation.json
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: aeb4102d7f92eba664cef10a8c0e7a77089d6ed230411457f22f606dce1e6a1e
+- evidence_id: e192
+  reference: src/mediaingredientmech/schema/mediaingredientmech.yaml
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+- evidence_id: e193
+  reference: src/mediaingredientmech/sssom_grading.py
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: 20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c
+- evidence_id: e194
+  reference: src/mediaingredientmech/synonym_policy.py
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069
+- evidence_id: e195
+  reference: src/mediaingredientmech/validation/component_partonomy.py
+  kind: record_content
+  locator: Complete captured input, with claim-specific scope in linked assessment
+  accessed_at: '2026-11-08T04:56:11.682235Z'
+  support: context_only
+  summary: Hashed evidence/owner/proposed payload; not blanket claim support.
+  snapshot_sha256: d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696
+assessments:
+- assessment_id: assessment-1
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 10g each phosphate with100mL addedwater; no final100mL concentration.
+  target_ids:
+  - NSV4-PROP-JCM_1474_Solution_A
+  evidence_ids:
+  - e153
+  - e139
+  - e048
+  - e104
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-2
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Only three explicit final concentrations retainG_PER_L:CuSO4penta.02,Na2MoO4di.4,NiCl2hex.01.
+    Other151baseamounts per1Laddedwater, mixedbasis explicit.
+  target_ids:
+  - NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution
+  evidence_ids:
+  - e161
+  - e139
+  - e065
+  - e051
+  - e112
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-3
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 200gNaNO3/20gNa2HPO4dodeca per1000cm3stock; officialCCAPgeneralpolicy suppliesdeionizedwater
+    as explicitinference withunquantifiedamount. V5RAW_TEXTprose correctedtoREJECTED_LABEL.
+  target_ids:
+  - NSV5-PROP-CCAP_PE_Salt_Solution_Stock
+  evidence_ids:
+  - e177
+  - e139
+  - e011
+  - e097
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e129
+  - e130
+  - e138
+  - e131
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+  - e178
+  - e180
+  - e179
+- assessment_id: assessment-4
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: FourprintedNH4Cl/MgSO4hepta/CaCl2di/KH2PO4 amountsplus1Lwater match628,
+    no genericWolfe merge.
+  target_ids:
+  - NSV4-PROP-JCM_628_Modified_Wolfe_Solution
+  evidence_ids:
+  - e159
+  - e139
+  - e058
+  - e110
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-5
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 1LpreparedJCM151aliquot remainsnestedUNMAPPED plus20mgNiCl2hex,1mgNa2SeO3,10mgNa2WO4di.
+    No entirebatchflattened into1Laliquot; existing0553 ambiguity preserved.
+  target_ids:
+  - NSV4-PROP-JCM_265_Wolfe_Mineral_Solution
+  evidence_ids:
+  - e156
+  - e139
+  - e054
+  - e051
+  - e107
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e145
+  - e146
+- assessment_id: assessment-6
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Nineprintedsolutes,1Lwater andvariableHClpH6.5 preserved;EDTAform notinvented.
+  target_ids:
+  - NSV4-PROP-JCM_1353_Mineral_Solution_A
+  evidence_ids:
+  - e150
+  - e139
+  - e025
+  - e101
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-7
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 4mgNa2SeO3/4mgNa2WO4+1Lwater;1020only, not824missingdenominator or317W-dihydrate.
+  target_ids:
+  - NSV4-PROP-NBRC_1020_Se_W_Solution
+  evidence_ids:
+  - e165
+  - e139
+  - e079
+  - e116
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-8
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Sixprinted salts/hydrates+1Lwater; separate1130I notmerged.
+  target_ids:
+  - NSV4-PROP-JCM_1130_Mineral_Solution_II
+  evidence_ids:
+  - e149
+  - e139
+  - e019
+  - e100
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-9
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 10mL25percent7.7MHCl+1.5gFeCl2tetra+990mLwater; no final1Lnormalization.
+    Elevenreceivingreferences187.
+  target_ids:
+  - NSV4-PROP-JCM_187_FeCl2_Solution
+  evidence_ids:
+  - e155
+  - e139
+  - e052
+  - e106
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-10
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Yeastextract/fiveprinted salts+500mLwater,pH3–4. Distinct971;unknownpHadjuster
+    notinvented.
+  target_ids:
+  - NSV4-PROP-NBRC_323_Solution_A
+  evidence_ids:
+  - e167
+  - e139
+  - e084
+  - e121
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-11
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 5gferricammoniumcitrate/.5gCaCl2+1Lwater; complexstoichiometry unknown,
+    distinct323.
+  target_ids:
+  - NSV4-PROP-NBRC_971_Solution_A
+  evidence_ids:
+  - e169
+  - e139
+  - e087
+  - e124
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-12
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 90g eachKH2PO4/NaCl/ammoniumsulfate+1Lwater;10mLreceivingdose independentlycorrected.
+  target_ids:
+  - NSV4-PROP-NBRC_989_K_Solution
+  evidence_ids:
+  - e172
+  - e139
+  - e088
+  - e127
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-13
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 1.65gNa2WO4di/19.8mgNi(NH4)2(SO4)2hex/.82mgVOSO4+1Lwater,2mLreceivingdose.
+  target_ids:
+  - NSV4-PROP-JCM_1353_Mineral_Solution_B
+  evidence_ids:
+  - e151
+  - e139
+  - e025
+  - e102
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-14
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 4mgNa2SeO3/4mgNa2WO4di+1Lwater distinct1020unhydratedW.
+  target_ids:
+  - NSV4-PROP-JCM_317_Se_W_Solution
+  evidence_ids:
+  - e157
+  - e139
+  - e055
+  - e108
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-15
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Explicitfinal1L justifiesG/MG/ML_PER_L for6solutes+50mLcanonicalMetal44;waterq.s.unquantified.
+    Printedmolybdatedi preserved. CanonicalMetal44v3 dependency distinctwholeidentity.
+  target_ids:
+  - NSV4-PROP-NBRC_943_Modified_Hutner_Solution
+  evidence_ids:
+  - e168
+  - e139
+  - e086
+  - e123
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+  - e178
+  - e180
+  - e179
+- assessment_id: assessment-16
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Sevenliquidinputs17,6,4,1,1,1,1mL; no inventedsolvent or31mLfinalvolume.
+  target_ids:
+  - NSV4-PROP-MediaDive_3774_VFA_Solution
+  evidence_ids:
+  - e162
+  - e139
+  - e072
+  - e113
+  - e133
+  - e132
+  - e096
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-17
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 4gMnCl2tetra+4gCoCl2hex+1Lwater;2.5mLreceivingdose separate.
+  target_ids:
+  - NSV4-PROP-NBRC_989_M_Solution
+  evidence_ids:
+  - e173
+  - e139
+  - e088
+  - e128
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-18
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Fiveamounts6/12/6/1.6/2.5g+1000mLwater;J1029/DSMZ33038mL. CM014792 onlyCANDIDATE_UNVERIFIED
+    notexactstock.
+  target_ids:
+  - NSV4-PROP-MediaDive_607_Mineral_Solution
+  evidence_ids:
+  - e163
+  - e139
+  - e075
+  - e013
+  - e114
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-19
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 15solutes/hydrates/mg amounts+1Lwater+variableKOH matchoriginal161; no
+    globalWolin alias.
+  target_ids:
+  - NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution
+  evidence_ids:
+  - e147
+  - e139
+  - e012
+  - e070
+  - e098
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-20
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 10.6gCaCl2di+1Lwater;2.5mLreceivingdose.
+  target_ids:
+  - NSV4-PROP-NBRC_989_C_Solution
+  evidence_ids:
+  - e171
+  - e139
+  - e088
+  - e126
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-21
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 30gKH2PO4/60gNa2HPO4/10gNH4Cl/5gNaCl+1Lwater;nominal10x notfinalvolumeproof.
+  target_ids:
+  - NSV4-PROP-NBRC_1339_10xM9_Solution
+  evidence_ids:
+  - e166
+  - e139
+  - e082
+  - e091
+  - e119
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-22
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 1.7mgNa2SeO3penta/3.3mgNa2WO4di+1Lwater;current1188direct852 distinctfrozen1187narrative.
+  target_ids:
+  - NSV4-PROP-JCM_852_Se_W_Solution
+  evidence_ids:
+  - e160
+  - e139
+  - e063
+  - e111
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-23
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 12.5gNa2Snonahydrate/12.5gLcysteineHClmono+1Lwater;N2processing preserved.
+  target_ids:
+  - NSV4-PROP-JCM_521_Reducing_Agent_Solution
+  evidence_ids:
+  - e158
+  - e139
+  - e057
+  - e109
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-24
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 3gK2HPO4+1Lwater;1385mannitol change onlyreceivingmedium.
+  target_ids:
+  - NSV4-PROP-JCM_1130_Mineral_Solution_I
+  evidence_ids:
+  - e148
+  - e139
+  - e019
+  - e099
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-25
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 4gMgSO4hepta/.2gNaCl/.2gFeSO4hepta/.2gMnSO4unknownhydrate+100mLwater.
+  target_ids:
+  - NSV4-PROP-JCM_1474_Solution_B
+  evidence_ids:
+  - e154
+  - e139
+  - e048
+  - e105
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-26
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 60mgselenitepenta/80mgtungstatedi/.4gNaOH+1Lwater;Se/Wtenfold431,NaOHsame,
+    notuniformstockscale.
+  target_ids:
+  - NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution
+  evidence_ids:
+  - e152
+  - e139
+  - e029
+  - e103
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-27
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: 100gsucrose+1Lwater;971only,323glucoseoptionalagarbranch excluded.
+  target_ids:
+  - NSV4-PROP-NBRC_971_Solution_B
+  evidence_ids:
+  - e170
+  - e139
+  - e087
+  - e125
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-28
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: Both1gresazurin+1Lwater;unknowncounterion retainedUNMAPPEDpart.
+  target_ids:
+  - NSV4-PROP-NBRC_1020_824_Resazurin_Solution
+  evidence_ids:
+  - e164
+  - e139
+  - e079
+  - e085
+  - e115
+  - e133
+  - e132
+  - e096
+  - e189
+  - e188
+  - e137
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+- assessment_id: assessment-29
+  area: identity
+  topic: Whole preparation identity, source quantities/forms and exact proposed payload
+  outcome: supported
+  summary: JCMqualifiedregistry;0.4gNaOH/6mgselenitepenta/8mgtungstatedi+1Lwater;fourcomponentidentityrefs
+    verified. AllrawlabelsREJECTED. NBRC1257/1321compositionequivalent, processingdistinct.
+    Corrects oldindependent431v2misses IR9/11; oldreviewimmutable, no inheritedreleaseapproval.
+  target_ids:
+  - NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431
+  evidence_ids:
+  - e174
+  - e056
+  - e080
+  - e081
+  - e134
+  - e189
+  - e188
+  - e191
+  - e182
+  - e181
+  - e136
+  - e190
+  - e175
+  - e143
+  - e176
+  - e144
+  - e146
+findings: []
+actions: []
+limitations:
+- Passing isolated proposals do not clear inherited full-owner roles/alias/release
+  holds.
+- Exact source occurrences must be explicitly bound; generic rejectedsource labels
+  intentionally do notresolveglobally.
+- Native producer tested with empty ancillary dictionaries; fullpublication ownership/residual/canonicalterm
+  checks remain required atintegration.
+- Final combined ledger/deduplication and188caseaccounting are separately reviewed;
+  no whole-campaign approval from this bundle.
+- Supersedes old431v2 review for alias and quantity misses IR9/11; oldreview remains
+  immutable.
+```

@@ -1,0 +1,144 @@
+{
+    "status": 200,
+    "count": 1,
+    "data": {
+        "medium": {
+            "id": 1793,
+            "name": "Chlamydia serpentis & poikilotherma Medium",
+            "complex_medium": "yes",
+            "source": "DSMZ",
+            "description": "For cultivation in  LLC-MK2 cells"
+        },
+        "solutions": [
+            {
+                "id": 5951,
+                "name": "Main sol. 1793",
+                "volume": 607,
+                "recipe": [
+                    {
+                        "recipe_order": 1,
+                        "compound": "MEM-Medium",
+                        "compound_id": 1377,
+                        "attribute": "+ Glutamine",
+                        "amount": 500,
+                        "unit": "ml",
+                        "optional": 0
+                    },
+                    {
+                        "recipe_order": 2,
+                        "compound": "Fetal bovine serum",
+                        "compound_id": 954,
+                        "amount": 100,
+                        "unit": "ml",
+                        "optional": 0
+                    },
+                    {
+                        "recipe_order": 3,
+                        "solution": "D-glucose solution",
+                        "solution_id": 5952,
+                        "amount": 6,
+                        "unit": "ml",
+                        "optional": 0
+                    },
+                    {
+                        "recipe_order": 6,
+                        "solution": "Cycloheximid solution",
+                        "solution_id": 5953,
+                        "amount": 0.7,
+                        "unit": "ml",
+                        "optional": 0
+                    }
+                ],
+                "steps": [
+                    {
+                        "recipe_order": 4,
+                        "step": "Filter-sterilize (0.2 \u00b5m) and keep no longer than 4 weeks. Store at room temperature to facilitate detection of contamination."
+                    },
+                    {
+                        "recipe_order": 5,
+                        "step": "Prepare a 25 cm2 flask and seed cells according to standard protocols. Incubate at 37\u00b0C plus 5% CO2. When a confluent layer has formed, infection can be carried out."
+                    },
+                    {
+                        "step": "Exchange medium with Infection Medium (as above with the addition of cycloheximide) and add 500 - 1000 \u00b5l of EB stock solution (thawed quickly to 37\u00b0C)."
+                    },
+                    {
+                        "step": "Centrifuge for 1 h onto the cell layer at 1000 x g at >20\u00b0C."
+                    },
+                    {
+                        "step": "Incubate at 37\u00b0C + 5% CO2. Control cells daily and look for inclusions. Not all Chlamydiae form well-visible inclusions, ultimately, immunofluorescence or in situ-hybridization techniques are necessary to visualize inclusions."
+                    }
+                ],
+                "equipment": {
+                    "5121": "Filter",
+                    "5122": "Centrifuge"
+                }
+            },
+            {
+                "id": 5952,
+                "name": "D-glucose solution",
+                "volume": 50,
+                "recipe": [
+                    {
+                        "recipe_order": 2,
+                        "compound": "D-Glucose",
+                        "compound_id": 211,
+                        "amount": 3,
+                        "unit": "g",
+                        "g_l": 60,
+                        "mmol_l": 333.037,
+                        "optional": 0
+                    },
+                    {
+                        "recipe_order": 3,
+                        "compound": "Demineralized water",
+                        "compound_id": 1448,
+                        "amount": 50,
+                        "unit": "ml",
+                        "optional": 0
+                    }
+                ],
+                "steps": [
+                    {
+                        "step": "Filtrate."
+                    }
+                ],
+                "equipment": {
+                    "5091": "Filter"
+                }
+            },
+            {
+                "id": 5953,
+                "name": "Cycloheximid solution",
+                "volume": 10,
+                "recipe": [
+                    {
+                        "recipe_order": 2,
+                        "compound": "Cycloheximid",
+                        "compound_id": 1286,
+                        "amount": 10,
+                        "unit": "mg",
+                        "g_l": 1,
+                        "mmol_l": 3.55433,
+                        "optional": 0
+                    },
+                    {
+                        "recipe_order": 3,
+                        "compound": "Demineralized water",
+                        "compound_id": 1448,
+                        "amount": 10,
+                        "unit": "ml",
+                        "optional": 0
+                    }
+                ],
+                "steps": [
+                    {
+                        "step": "Filtrate."
+                    }
+                ],
+                "equipment": {
+                    "5092": "Filter"
+                }
+            }
+        ]
+    }
+}

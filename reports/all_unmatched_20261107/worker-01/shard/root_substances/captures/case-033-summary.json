@@ -1,0 +1,101 @@
+{
+  "i": 33,
+  "name": "Co(NO )2.6H O",
+  "source": "culturemech",
+  "source_id": "Co(NO )2.6H O",
+  "record": null,
+  "owners": [],
+  "holds": [],
+  "downstream_holds": [],
+  "candidate_hits": [],
+  "occurrences": [
+    {
+      "id": "CM_OCC:36ab7c76e903230f7ae9655918c0b998f6fb678e5fa961bbd95d754f0e6f3af0",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/algae/bg.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:000055"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.05"
+        },
+        "notes": "Ontology mapping not yet available; From CCAP Medium MR_BG11.pdf; Curated from CCAP Medium MR_BG11.pdf specification",
+        "preferred_term": "Co(NO )2.6H O",
+        "source": "CCAP Medium MR_BG11.pdf"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "category",
+        "sources",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "description",
+        "notes",
+        "light_intensity",
+        "light_cycle",
+        "temperature_range",
+        "applications",
+        "curation_history",
+        "references",
+        "ingredients",
+        "data_quality_flags",
+        "original_name",
+        "preparation_steps"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:000055",
+        "name": "bg",
+        "category": "algae",
+        "sources": [
+          {
+            "database": "CCAP",
+            "database_id": "BG11",
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_BG11.pdf"
+          }
+        ],
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "description": "Algae culture medium from CCAP Culture Collection. Suitable for freshwater algae cultivation. Recipe available in PDF format.",
+        "notes": "Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_BG11.pdf",
+        "light_intensity": "Varies by species; typically 50-100 µmol photons m⁻² s⁻¹",
+        "light_cycle": "Varies by species; commonly 12:12 or 16:8 light:dark",
+        "temperature_range": "15-30°C depending on species",
+        "data_quality_flags": [
+          "has_ontology_mappings",
+          "ingredients_curated",
+          "curation_method:automated_expert_mapping"
+        ],
+        "original_name": "BG",
+        "preparation_steps": [
+          {
+            "step_number": 1,
+            "action": "MIX",
+            "description": "Bring to 1 L with deionised water."
+          },
+          {
+            "step_number": 2,
+            "action": "ADJUST_PH",
+            "description": "Adjust pH to 7.1 with 1 M NaOH or HCl before autoclaving."
+          },
+          {
+            "step_number": 3,
+            "action": "ADD_AGAR",
+            "description": "For an agar formulation, add 15.0 g/L Bacteriological Agar."
+          },
+          {
+            "step_number": 4,
+            "action": "AUTOCLAVE",
+            "description": "Autoclave at 15 psi for 15 minutes."
+          }
+        ]
+      }
+    }
+  ]
+}

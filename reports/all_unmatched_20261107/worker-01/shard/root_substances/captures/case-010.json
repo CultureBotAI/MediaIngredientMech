@@ -1,0 +1,1097 @@
+{
+  "index": 10,
+  "case": {
+    "baseline_outcome": "native_no_mim_match",
+    "campaign_requirement": "complete_source_bound_review",
+    "case_id": "CM_NAME:11bdcd78ca97207911e401876f3208cbe70128af36855cf870a83761fc1658f3",
+    "native_match_result": {
+      "effective_term_id": "mediadive.compound:1609",
+      "matched": false,
+      "resolved_record": null
+    },
+    "native_occurrence_count": 4,
+    "occurrences": [
+      {
+        "component_path": "ingredients/3",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M40_Peptone_Corn_Agar.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:4f17779d85bcea4c38430b28d4fd93a0f58a9d3f6e798214abc5e051c35d8a3b",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "5"
+          },
+          "notes": "Role: Nitrogen source; Properties: Undefined component",
+          "preferred_term": "Corn steep liquor"
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:009794",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:009794"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "TOGO:M40"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/TOGO_M40_Peptone_Corn_Agar.yaml",
+        "source_file_sha256": "0324b961b01428e08376f123818cbdc659f7e2718df57b0e0f37741130433d62",
+        "source_identifiers": []
+      },
+      {
+        "component_path": "ingredients/7",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/corn_steep_liquor_medium_csl_medium.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:a7828b5eb4767679b20d5364de5eef76bcc29d160313ef091a6d9c59cd7bc015",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "10"
+          },
+          "notes": "Role: Nitrogen source; Properties: Undefined component",
+          "preferred_term": "Corn steep liquor"
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:009439",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:009439"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "TOGO:M2901"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/corn_steep_liquor_medium_csl_medium.yaml",
+        "source_file_sha256": "7397c1db2e12fe1250d457396501deaa3f9e1d9deb41003ae67242cc01e543d0",
+        "source_identifiers": []
+      },
+      {
+        "component_path": "composition/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3670_Main_sol_J48.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:ff9ef200b8d64842f60ad02ae52655427a8dbacdbaca79acd887ec47c6e66973",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "5"
+          },
+          "evidence": [
+            {
+              "explanation": "Concentration evidence for composition[0].concentration (Corn steep liquor) in MediaDive solution 3670; locator=$.data.recipe[0] (compound_id=1609). Provider explicitly reports g_l=5. Arithmetic check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:23:40.395255+00:00; response SHA256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa.",
+              "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+              "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Corn steep liquor\",\n                \"compound_id\": 1609,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 5,\n                \"unit\": \"g\",\n                \"g_l\": 5,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+              "supports": "SUPPORT"
+            }
+          ],
+          "preferred_term": "Corn steep liquor",
+          "term": {
+            "id": "mediadive.compound:1609",
+            "label": "Corn steep liquor"
+          }
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:012753",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:012753"
+          },
+          {
+            "path": "/term/id",
+            "value": "mediadive.solution:3670"
+          }
+        ],
+        "record_shape": "SolutionRecipe",
+        "source_file": "data/normalized_yaml/bacterial/mediadive_3670_Main_sol_J48.yaml",
+        "source_file_sha256": "a81ecf96bd4d64c475407893d32805c20170e611122c7e2c294db745b2cc8638",
+        "source_identifiers": [
+          {
+            "path": "/term/id",
+            "value": "mediadive.compound:1609"
+          }
+        ]
+      },
+      {
+        "component_path": "ingredients/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/peptone_corn_agar.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:7291ff98477cf7865e2cc423080abacb69af88aada91a3a8cfee964e596abeaf",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "5"
+          },
+          "evidence": [
+            {
+              "explanation": "Concentration evidence for ingredients[0].concentration (Corn steep liquor) in MediaDive medium J48; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=5; check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:01:21.695752+00:00; response SHA256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88.",
+              "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+              "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"Corn steep liquor\",\n                        \"compound_id\": 1609,\n                        \"amount\": 5,\n                        \"unit\": \"g\",\n                        \"g_l\": 5,\n                        \"optional\": 0\n                    }",
+              "supports": "SUPPORT"
+            }
+          ],
+          "preferred_term": "Corn steep liquor"
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:002840",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:002840"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "mediadive.medium:J48"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/peptone_corn_agar.yaml",
+        "source_file_sha256": "19414efbce61790c3360306ce37e615c51401ddce4f7e0d9ed34f36a95b3f64a",
+        "source_identifiers": []
+      }
+    ],
+    "original_unified_position": 1485,
+    "original_unified_row": {
+      "cas_rn": "",
+      "chebi_id": "",
+      "culturemech_term_id": "mediadive.compound:1609",
+      "example_media": "CultureMech:009794; CultureMech:009439; CultureMech:002840",
+      "ingredient_name": "Corn steep liquor",
+      "kg_microbe_node_id": "",
+      "mapping_status": "TERM_ID_NO_MIM",
+      "mim_id": "",
+      "occurrence_count": "4",
+      "synonyms": ""
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "Corn steep liquor",
+    "source": "culturemech",
+    "source_case_id": "Corn steep liquor",
+    "source_identity_claimed": false,
+    "source_label": "Corn steep liquor"
+  },
+  "occurrence_contexts": [
+    {
+      "occurrence": {
+        "component_path": "ingredients/3",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M40_Peptone_Corn_Agar.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:4f17779d85bcea4c38430b28d4fd93a0f58a9d3f6e798214abc5e051c35d8a3b",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "5"
+          },
+          "notes": "Role: Nitrogen source; Properties: Undefined component",
+          "preferred_term": "Corn steep liquor"
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:009794",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:009794"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "TOGO:M40"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/TOGO_M40_Peptone_Corn_Agar.yaml",
+        "source_file_sha256": "0324b961b01428e08376f123818cbdc659f7e2718df57b0e0f37741130433d62",
+        "source_identifiers": []
+      },
+      "full_recipe": {
+        "id": "CultureMech:009794",
+        "name": "peptone_corn_agar",
+        "original_name": "Peptone Corn Agar",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "SOLID_AGAR",
+        "ingredients": [
+          {
+            "preferred_term": "Distilled water",
+            "concentration": {
+              "value": "1",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Solvating media; Properties: Defined component, Inorganic compound, Simple component",
+            "term": {
+              "id": "CHEBI:15377",
+              "label": "water"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:15377",
+              "label": "water"
+            }
+          },
+          {
+            "preferred_term": "NaCl",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Mineral source; Properties: Inorganic compound, Simple component, Defined component",
+            "term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride"
+            }
+          },
+          {
+            "preferred_term": "CaCl2・2H2O",
+            "concentration": {
+              "value": "0.5",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Mineral source; Properties: Inorganic compound, Simple component, Defined component",
+            "term": {
+              "id": "CHEBI:86158",
+              "label": "calcium chloride dihydrate"
+            }
+          },
+          {
+            "preferred_term": "Corn steep liquor",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Nitrogen source; Properties: Undefined component"
+          },
+          {
+            "preferred_term": "Soluble starch",
+            "concentration": {
+              "value": "10",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Carbon source; Properties: Undefined component",
+            "term": {
+              "id": "CHEBI:28017",
+              "label": "starch"
+            }
+          },
+          {
+            "preferred_term": "Agar",
+            "concentration": {
+              "value": "16",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Solidifying component",
+            "term": {
+              "id": "CHEBI:2509",
+              "label": "agar"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:2509",
+              "label": "agar"
+            }
+          },
+          {
+            "preferred_term": "Peptone (Oxoid)",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "notes": "Properties: Undefined component"
+          }
+        ],
+        "media_term": {
+          "preferred_term": "TOGO Medium M40",
+          "term": {
+            "id": "TOGO:M40",
+            "label": "Peptone Corn Agar"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M40\nOriginal source: JCM - JCM_M48\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=48",
+        "applications": [
+          "Microbial cultivation"
+        ],
+        "curation_history": [
+          {
+            "timestamp": "2026-01-27T06:35:54.987926Z",
+            "curator": "togo-import",
+            "action": "Imported from TOGO Medium",
+            "notes": "Source: JCM, ID: M40"
+          },
+          {
+            "timestamp": "2026-01-28T19:48:24.475195Z",
+            "curator": "chebi-enrichment",
+            "action": "Added CHEBI ontology terms to ingredients",
+            "notes": "Enriched using MicrobeMediaParam and MediaDive chemical mappings"
+          },
+          {
+            "timestamp": "2026-03-13T06:20:08.930493Z",
+            "curator": "culturemech-id-assigner-v1.0",
+            "action": "Assigned CultureMech ID",
+            "notes": "Assigned stable identifier: CultureMech:009794"
+          },
+          {
+            "timestamp": "2026-03-17T06:30:17.000000Z",
+            "curator": "mediaingredientmech-enrichment-v1.0",
+            "action": "Added MediaIngredientMech links",
+            "notes": "Linked ingredients to MediaIngredientMech identifiers"
+          },
+          {
+            "timestamp": "2026-03-17T19:46:27.921187+00:00",
+            "curator": "normalize_media_names_to_snake_case.py",
+            "action": "NAME_NORMALIZED",
+            "notes": "Normalized name from \"Peptone Corn Agar\" to \"peptone_corn_agar\" for consistent matching"
+          },
+          {
+            "timestamp": "2026-06-05T07:40:41.141590+00:00",
+            "curator": "mim-legacy-to-chebi-migration-v1.0",
+            "action": "Refreshed legacy MediaIngredientMech links to CHEBI keying",
+            "notes": "Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term (id-safe: ingredient's own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN id scheme."
+          }
+        ]
+      },
+      "snapshot_sha256": "0324b961b01428e08376f123818cbdc659f7e2718df57b0e0f37741130433d62"
+    },
+    {
+      "occurrence": {
+        "component_path": "ingredients/7",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/corn_steep_liquor_medium_csl_medium.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:a7828b5eb4767679b20d5364de5eef76bcc29d160313ef091a6d9c59cd7bc015",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "10"
+          },
+          "notes": "Role: Nitrogen source; Properties: Undefined component",
+          "preferred_term": "Corn steep liquor"
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:009439",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:009439"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "TOGO:M2901"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/corn_steep_liquor_medium_csl_medium.yaml",
+        "source_file_sha256": "7397c1db2e12fe1250d457396501deaa3f9e1d9deb41003ae67242cc01e543d0",
+        "source_identifiers": []
+      },
+      "full_recipe": {
+        "id": "CultureMech:009439",
+        "name": "corn_steep_liquor_medium_csl_medium",
+        "original_name": "Corn steep liquor medium (CSL medium)",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "ingredients": [
+          {
+            "preferred_term": "Distilled water",
+            "concentration": {
+              "value": "1",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Solvating media; Properties: Defined component, Inorganic compound, Simple component",
+            "term": {
+              "id": "CHEBI:15377",
+              "label": "water"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:15377",
+              "label": "water"
+            }
+          },
+          {
+            "preferred_term": "KH2PO4",
+            "concentration": {
+              "value": "1",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Buffer; Properties: Defined component, Simple component, Inorganic compound",
+            "term": {
+              "id": "CHEBI:63036",
+              "label": "potassium dihydrogen phosphate"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:63036",
+              "label": "potassium dihydrogen phosphate"
+            }
+          },
+          {
+            "preferred_term": "K2HPO4",
+            "concentration": {
+              "value": "0.5",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Simple component",
+            "term": {
+              "id": "CHEBI:131527",
+              "label": "dipotassium hydrogen phosphate"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:131527",
+              "label": "dipotassium hydrogen phosphate"
+            }
+          },
+          {
+            "preferred_term": "MgCl2.6H2O",
+            "concentration": {
+              "value": "0.4",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Mineral source; Properties: Defined component, Inorganic compound, Simple component",
+            "term": {
+              "id": "CHEBI:86345",
+              "label": "magnesium dichloride hexahydrate"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:86345",
+              "label": "magnesium dichloride hexahydrate"
+            }
+          },
+          {
+            "preferred_term": "(NH4)2SO4",
+            "concentration": {
+              "value": "3.1",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Nitrogen source; Properties: Simple component, Defined component, Inorganic compound",
+            "term": {
+              "id": "CHEBI:62946",
+              "label": "ammonium sulfate"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:62946",
+              "label": "ammonium sulfate"
+            }
+          },
+          {
+            "preferred_term": "FeCl3.6H2O",
+            "concentration": {
+              "value": "20",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Mineral source; Properties: Simple component, Defined component, Inorganic compound",
+            "term": {
+              "id": "CHEBI:86254",
+              "label": "iron trichloride hexahydrate"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:86254",
+              "label": "iron trichloride hexahydrate"
+            }
+          },
+          {
+            "preferred_term": "Xylose",
+            "concentration": {
+              "value": "90",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Carbon source; Properties: Simple component, Defined component, Organic compound",
+            "term": {
+              "id": "CHEBI:18222",
+              "label": "xylose"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:18222",
+              "label": "xylose"
+            }
+          },
+          {
+            "preferred_term": "Corn steep liquor",
+            "concentration": {
+              "value": "10",
+              "unit": "G_PER_L"
+            },
+            "notes": "Role: Nitrogen source; Properties: Undefined component"
+          }
+        ],
+        "media_term": {
+          "preferred_term": "TOGO Medium M2901",
+          "term": {
+            "id": "TOGO:M2901",
+            "label": "Corn steep liquor medium (CSL medium)"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M2901",
+        "applications": [
+          "Microbial cultivation"
+        ],
+        "curation_history": [
+          {
+            "timestamp": "2026-01-27T06:35:57.393095Z",
+            "curator": "togo-import",
+            "action": "Imported from TOGO Medium",
+            "notes": "Source: TOGO, ID: M2901"
+          },
+          {
+            "timestamp": "2026-01-28T19:48:11.987431Z",
+            "curator": "chebi-enrichment",
+            "action": "Added CHEBI ontology terms to ingredients",
+            "notes": "Enriched using MicrobeMediaParam and MediaDive chemical mappings"
+          },
+          {
+            "timestamp": "2026-03-13T06:20:06.192762Z",
+            "curator": "culturemech-id-assigner-v1.0",
+            "action": "Assigned CultureMech ID",
+            "notes": "Assigned stable identifier: CultureMech:009439"
+          },
+          {
+            "timestamp": "2026-03-17T06:29:50.000000Z",
+            "curator": "mediaingredientmech-enrichment-v1.0",
+            "action": "Added MediaIngredientMech links",
+            "notes": "Linked ingredients to MediaIngredientMech identifiers"
+          },
+          {
+            "timestamp": "2026-03-17T19:46:25.160088+00:00",
+            "curator": "normalize_media_names_to_snake_case.py",
+            "action": "NAME_NORMALIZED",
+            "notes": "Normalized name from \"Corn steep liquor medium (CSL medium)\" to \"corn_steep_liquor_medium_csl_medium\" for consistent matching"
+          },
+          {
+            "timestamp": "2026-06-05T07:40:54.870133+00:00",
+            "curator": "mim-legacy-to-chebi-migration-v1.0",
+            "action": "Refreshed legacy MediaIngredientMech links to CHEBI keying",
+            "notes": "Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term (id-safe: ingredient's own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN id scheme."
+          },
+          {
+            "timestamp": "2026-06-10T07:46:54.998790+00:00",
+            "curator": "primary-term-label-canonicalization-v1.0",
+            "action": "Canonicalized primary term label to OBO canonical (OAK)",
+            "notes": "3 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi."
+          }
+        ]
+      },
+      "snapshot_sha256": "7397c1db2e12fe1250d457396501deaa3f9e1d9deb41003ae67242cc01e543d0"
+    },
+    {
+      "occurrence": {
+        "component_path": "composition/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3670_Main_sol_J48.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:ff9ef200b8d64842f60ad02ae52655427a8dbacdbaca79acd887ec47c6e66973",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "5"
+          },
+          "evidence": [
+            {
+              "explanation": "Concentration evidence for composition[0].concentration (Corn steep liquor) in MediaDive solution 3670; locator=$.data.recipe[0] (compound_id=1609). Provider explicitly reports g_l=5. Arithmetic check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:23:40.395255+00:00; response SHA256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa.",
+              "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+              "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Corn steep liquor\",\n                \"compound_id\": 1609,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 5,\n                \"unit\": \"g\",\n                \"g_l\": 5,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+              "supports": "SUPPORT"
+            }
+          ],
+          "preferred_term": "Corn steep liquor",
+          "term": {
+            "id": "mediadive.compound:1609",
+            "label": "Corn steep liquor"
+          }
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:012753",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:012753"
+          },
+          {
+            "path": "/term/id",
+            "value": "mediadive.solution:3670"
+          }
+        ],
+        "record_shape": "SolutionRecipe",
+        "source_file": "data/normalized_yaml/bacterial/mediadive_3670_Main_sol_J48.yaml",
+        "source_file_sha256": "a81ecf96bd4d64c475407893d32805c20170e611122c7e2c294db745b2cc8638",
+        "source_identifiers": [
+          {
+            "path": "/term/id",
+            "value": "mediadive.compound:1609"
+          }
+        ]
+      },
+      "full_recipe": {
+        "id": "CultureMech:012753",
+        "preferred_term": "Main sol. J48",
+        "term": {
+          "id": "mediadive.solution:3670",
+          "label": "Main sol. J48"
+        },
+        "composition": [
+          {
+            "preferred_term": "Corn steep liquor",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:1609",
+              "label": "Corn steep liquor"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Corn steep liquor\",\n                \"compound_id\": 1609,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 5,\n                \"unit\": \"g\",\n                \"g_l\": 5,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[0].concentration (Corn steep liquor) in MediaDive solution 3670; locator=$.data.recipe[0] (compound_id=1609). Provider explicitly reports g_l=5. Arithmetic check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:23:40.395255+00:00; response SHA256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Peptone",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:1",
+              "label": "Peptone"
+            }
+          },
+          {
+            "preferred_term": "Starch",
+            "concentration": {
+              "value": "10",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:199",
+              "label": "Starch"
+            },
+            "chebi_term": {
+              "id": "CHEBI:28017",
+              "label": "starch",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            }
+          },
+          {
+            "preferred_term": "NaCl",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:43",
+              "label": "NaCl"
+            },
+            "chebi_term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 4,\n                \"compound\": \"NaCl\",\n                \"compound_id\": 43,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 5,\n                \"unit\": \"g\",\n                \"g_l\": 5,\n                \"mmol_l\": 85.5578,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[3].concentration (NaCl) in MediaDive solution 3670; locator=$.data.recipe[3] (compound_id=43). Provider explicitly reports g_l=5. Arithmetic check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:23:40.395255+00:00; response SHA256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa."
+              }
+            ]
+          },
+          {
+            "preferred_term": "CaCl2 x 2 H2O",
+            "concentration": {
+              "value": "0.5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:7",
+              "label": "CaCl2 x 2 H2O"
+            },
+            "chebi_term": {
+              "id": "CHEBI:86158",
+              "label": "calcium chloride dihydrate",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 5,\n                \"compound\": \"CaCl2 x 2 H2O\",\n                \"compound_id\": 7,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.5,\n                \"unit\": \"g\",\n                \"g_l\": 0.5,\n                \"mmol_l\": 3.40101,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[4].concentration (CaCl2 x 2 H2O) in MediaDive solution 3670; locator=$.data.recipe[4] (compound_id=7). Provider explicitly reports g_l=0.5. Arithmetic check: 0.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:23:40.395255+00:00; response SHA256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Agar",
+            "concentration": {
+              "value": "16",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:3",
+              "label": "Agar"
+            },
+            "chebi_term": {
+              "id": "CHEBI:2509",
+              "label": "agar",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 6,\n                \"compound\": \"Agar\",\n                \"compound_id\": 3,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 16,\n                \"unit\": \"g\",\n                \"g_l\": 16,\n                \"mmol_l\": 47.5723,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[5].concentration (Agar) in MediaDive solution 3670; locator=$.data.recipe[5] (compound_id=3). Provider explicitly reports g_l=16. Arithmetic check: 16 g * 1 g/g / (1000 ml / 1000 ml per L) = 16 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:23:40.395255+00:00; response SHA256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Distilled water",
+            "concentration": {
+              "value": "1000",
+              "unit": "PERCENT_V_V"
+            },
+            "term": {
+              "id": "mediadive.compound:4",
+              "label": "Distilled water"
+            },
+            "chebi_term": {
+              "id": "CHEBI:15377",
+              "label": "water",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            }
+          }
+        ],
+        "preparation_notes": "Adjust pH to 7.2.\nCorn steep liquor, powder (Wako Pure Chemicals) may be substituted for corn steep liquor.",
+        "curation_history": [
+          {
+            "timestamp": "2026-03-13T06:20:27.528974Z",
+            "curator": "culturemech-id-assigner-v1.0",
+            "action": "Assigned CultureMech ID",
+            "notes": "Assigned stable identifier: CultureMech:012753"
+          },
+          {
+            "curator": "schema-defaulter-v1.0",
+            "action": "Applied schema defaults and normalizations",
+            "notes": "Added placeholder ingredients for missing composition",
+            "timestamp": "2026-03-14T00:00:00+00:00"
+          },
+          {
+            "timestamp": "2026-03-14T21:09:31.880820",
+            "curator": "quality-tagger-v1.0",
+            "action": "Added data quality flag",
+            "notes": "Marked as incomplete_composition due to placeholder ingredients"
+          },
+          {
+            "timestamp": "2026-04-04T17:49:59.985030",
+            "curator": "categorize_unknown_media",
+            "action": "CATEGORIZED",
+            "changes": "Set category to 'bacterial' (was: MISSING)",
+            "notes": "Automated categorization (confidence: 0.30). No clear match, defaulting to bacterial"
+          },
+          {
+            "timestamp": "2026-05-16T09:03:54.869360+00:00",
+            "curator": "migrate_legacy_fields.py",
+            "action": "MIGRATED_LEGACY_FIELDS",
+            "notes": "curation_history.date->timestamp=1"
+          },
+          {
+            "timestamp": "2026-06-10T06:38:28.002759+00:00",
+            "curator": "kg-fallback-consensus-v1.0",
+            "action": "Replaced low-confidence kg_fallback chebi_term with corpus consensus",
+            "notes": "Re-grounded 3 chebi_term(s) to the unanimous reliable CHEBI for the ingredient label seen elsewhere in the corpus (G25 Phase 1, zero external lookups)."
+          },
+          {
+            "timestamp": "2026-06-10T06:47:52.332118+00:00",
+            "curator": "kg-fallback-oak-ols-v1.0",
+            "action": "Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)",
+            "notes": "1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority disambiguation, or mixture de-ground."
+          },
+          {
+            "timestamp": "2026-06-10T06:56:15.745491+00:00",
+            "curator": "kg-fallback-llm-curation-v1.0",
+            "action": "LLM-curated low-confidence chebi_term (G25 Phase 3)",
+            "notes": "1 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded as a mixture, or confirmed correct."
+          },
+          {
+            "timestamp": "2026-10-07T09:30:59.704035+00:00",
+            "curator": "codex",
+            "action": "CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE",
+            "notes": "Source review decision captured at plan timestamp. Exact source IDs, labels, snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium concentration inferred.",
+            "source": "https://mediadive.dsmz.de/rest/solution/3670",
+            "changes": "composition[0].concentration: {\"unit\": \"G_PER_L\", \"value\": \"5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"5\"} (evidence_only); composition[3].concentration: {\"unit\": \"G_PER_L\", \"value\": \"5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"5\"} (evidence_only); composition[4].concentration: {\"unit\": \"G_PER_L\", \"value\": \"0.5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"0.5\"} (evidence_only); composition[5].concentration: {\"unit\": \"G_PER_L\", \"value\": \"16\"} -> {\"unit\": \"G_PER_L\", \"value\": \"16\"} (evidence_only)"
+          }
+        ],
+        "ingredients": [
+          {
+            "preferred_term": "See source for composition",
+            "concentration": {
+              "value": "variable",
+              "unit": "VARIABLE"
+            }
+          }
+        ],
+        "data_quality_flags": [
+          "incomplete_composition"
+        ],
+        "category": "bacterial",
+        "references": [
+          {
+            "reference": "https://mediadive.dsmz.de/rest/solution/3670",
+            "title": "MediaDive solution 3670: Main sol. J48",
+            "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07; source_organization=DSMZ; locator=$.data; response_sha256=c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa; individual authors and publication year not supplied. Provider-declared solution amounts, not receiving-medium concentrations."
+          }
+        ]
+      },
+      "snapshot_sha256": "a81ecf96bd4d64c475407893d32805c20170e611122c7e2c294db745b2cc8638"
+    },
+    {
+      "occurrence": {
+        "component_path": "ingredients/0",
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/peptone_corn_agar.yaml",
+        "native_name": "Corn steep liquor",
+        "native_scope": "root_component",
+        "occurrence_id": "CM_OCC:7291ff98477cf7865e2cc423080abacb69af88aada91a3a8cfee964e596abeaf",
+        "raw_component": {
+          "concentration": {
+            "unit": "G_PER_L",
+            "value": "5"
+          },
+          "evidence": [
+            {
+              "explanation": "Concentration evidence for ingredients[0].concentration (Corn steep liquor) in MediaDive medium J48; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=5; check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:01:21.695752+00:00; response SHA256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88.",
+              "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+              "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"Corn steep liquor\",\n                        \"compound_id\": 1609,\n                        \"amount\": 5,\n                        \"unit\": \"g\",\n                        \"g_l\": 5,\n                        \"optional\": 0\n                    }",
+              "supports": "SUPPORT"
+            }
+          ],
+          "preferred_term": "Corn steep liquor"
+        },
+        "raw_preferred_term": "Corn steep liquor",
+        "recipe_id": "CultureMech:002840",
+        "recipe_source_identifiers": [
+          {
+            "path": "/id",
+            "value": "CultureMech:002840"
+          },
+          {
+            "path": "/media_term/term/id",
+            "value": "mediadive.medium:J48"
+          }
+        ],
+        "record_shape": "MediaRecipe",
+        "source_file": "data/normalized_yaml/bacterial/peptone_corn_agar.yaml",
+        "source_file_sha256": "19414efbce61790c3360306ce37e615c51401ddce4f7e0d9ed34f36a95b3f64a",
+        "source_identifiers": []
+      },
+      "full_recipe": {
+        "id": "CultureMech:002840",
+        "name": "peptone_corn_agar",
+        "original_name": "PEPTONE CORN AGAR",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "SOLID_AGAR",
+        "ph_value": 7.2,
+        "media_term": {
+          "preferred_term": "JCM Medium J48",
+          "term": {
+            "id": "mediadive.medium:J48",
+            "label": "PEPTONE CORN AGAR"
+          }
+        },
+        "notes": "Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=48",
+        "ingredients": [
+          {
+            "preferred_term": "Corn steep liquor",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 1,\n                        \"compound\": \"Corn steep liquor\",\n                        \"compound_id\": 1609,\n                        \"amount\": 5,\n                        \"unit\": \"g\",\n                        \"g_l\": 5,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[0].concentration (Corn steep liquor) in MediaDive medium J48; locator=$.data.solutions[0].recipe[0]. Provider explicitly reports g_l=5; check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:01:21.695752+00:00; response SHA256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Peptone",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            }
+          },
+          {
+            "preferred_term": "Starch",
+            "term": {
+              "id": "CHEBI:28017",
+              "label": "starch"
+            },
+            "concentration": {
+              "value": "10",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:28017",
+              "label": "starch"
+            }
+          },
+          {
+            "preferred_term": "NaCl",
+            "term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride"
+            },
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 4,\n                        \"compound\": \"NaCl\",\n                        \"compound_id\": 43,\n                        \"amount\": 5,\n                        \"unit\": \"g\",\n                        \"g_l\": 5,\n                        \"mmol_l\": 85.5578,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[3].concentration (NaCl) in MediaDive medium J48; locator=$.data.solutions[0].recipe[3]. Provider explicitly reports g_l=5; check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:01:21.695752+00:00; response SHA256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88."
+              }
+            ]
+          },
+          {
+            "preferred_term": "CaCl2 x 2 H2O",
+            "term": {
+              "id": "CHEBI:86158",
+              "label": "calcium chloride dihydrate"
+            },
+            "concentration": {
+              "value": "0.5",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:86158",
+              "label": "calcium chloride dihydrate"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 5,\n                        \"compound\": \"CaCl2 x 2 H2O\",\n                        \"compound_id\": 7,\n                        \"amount\": 0.5,\n                        \"unit\": \"g\",\n                        \"g_l\": 0.5,\n                        \"mmol_l\": 3.40101,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[4].concentration (CaCl2 x 2 H2O) in MediaDive medium J48; locator=$.data.solutions[0].recipe[4]. Provider explicitly reports g_l=0.5; check: 0.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:01:21.695752+00:00; response SHA256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Agar",
+            "term": {
+              "id": "CHEBI:2509",
+              "label": "agar"
+            },
+            "concentration": {
+              "value": "16",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:2509",
+              "label": "agar"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 6,\n                        \"compound\": \"Agar\",\n                        \"compound_id\": 3,\n                        \"amount\": 16,\n                        \"unit\": \"g\",\n                        \"g_l\": 16,\n                        \"mmol_l\": 47.5723,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[5].concentration (Agar) in MediaDive medium J48; locator=$.data.solutions[0].recipe[5]. Provider explicitly reports g_l=16; check: 16 g * 1 g/g / (1000 ml / 1000 ml per L) = 16 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:01:21.695752+00:00; response SHA256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88."
+              }
+            ]
+          }
+        ],
+        "preparation_steps": [
+          {
+            "step_number": 1,
+            "action": "ADJUST_PH",
+            "description": "Adjust pH to 7.2."
+          },
+          {
+            "step_number": 2,
+            "action": "MIX",
+            "description": "Corn steep liquor, powder (Wako Pure Chemicals) may be substituted for corn steep liquor."
+          }
+        ],
+        "applications": [
+          "Microbial cultivation"
+        ],
+        "curation_history": [
+          {
+            "timestamp": "2026-01-26T17:53:15.642134Z",
+            "curator": "mediadive-import",
+            "action": "Imported from MediaDive",
+            "notes": "Source: JCM, ID: J48"
+          },
+          {
+            "timestamp": "2026-03-13T06:19:16.011578Z",
+            "curator": "culturemech-id-assigner-v1.0",
+            "action": "Assigned CultureMech ID",
+            "notes": "Assigned stable identifier: CultureMech:002840"
+          },
+          {
+            "timestamp": "2026-03-17T06:29:47.000000Z",
+            "curator": "mediaingredientmech-enrichment-v1.0",
+            "action": "Added MediaIngredientMech links",
+            "notes": "Linked ingredients to MediaIngredientMech identifiers"
+          },
+          {
+            "timestamp": "2026-03-17T19:45:29.488163+00:00",
+            "curator": "normalize_media_names_to_snake_case.py",
+            "action": "NAME_NORMALIZED",
+            "notes": "Normalized name from \"PEPTONE CORN AGAR\" to \"peptone_corn_agar\" for consistent matching"
+          },
+          {
+            "timestamp": "2026-06-05T07:41:41.303606+00:00",
+            "curator": "mim-legacy-to-chebi-migration-v1.0",
+            "action": "Refreshed legacy MediaIngredientMech links to CHEBI keying",
+            "notes": "Replaced 4 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term (id-safe: ingredient's own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN id scheme."
+          },
+          {
+            "timestamp": "2026-10-07T14:33:27.670564+00:00",
+            "curator": "codex",
+            "action": "CURATED_MEDIUM_CONCENTRATION_SOURCE_EVIDENCE",
+            "notes": "Exact medium/source membership, ingredient inventory/forms, physical-state conditions, literal snippets, and arithmetic checked. Stock boundaries, source-only rows, preparation context, and variants remain explicit follow-up tasks; secondary chemical mappings unchanged.",
+            "source": "https://mediadive.dsmz.de/rest/medium/J48",
+            "changes": "ingredients[0].concentration: {\"unit\": \"G_PER_L\", \"value\": \"5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"5\"} (evidence_only); ingredients[3].concentration: {\"unit\": \"G_PER_L\", \"value\": \"5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"5\"} (evidence_only); ingredients[4].concentration: {\"unit\": \"G_PER_L\", \"value\": \"0.5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"0.5\"} (evidence_only); ingredients[5].concentration: {\"unit\": \"G_PER_L\", \"value\": \"16\"} -> {\"unit\": \"G_PER_L\", \"value\": \"16\"} (evidence_only)"
+          }
+        ],
+        "references": [
+          {
+            "reference": "https://mediadive.dsmz.de/rest/medium/J48",
+            "title": "MediaDive medium J48: PEPTONE CORN AGAR",
+            "notes": "source_type=dataset; discovery_mode=existing_record_reference; source_organization=DSMZ; accessed_on=2026-10-07; locator=$.data.solutions[0]; response_sha256=6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88; original_recipe=https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=48; individual authors and publication year not supplied. Provider-declared main-recipe amounts only. Original recipe collection=JCM; GRMD accession=48; DSMZ is the MediaDive dataset provider, not the original recipe collection."
+          }
+        ]
+      },
+      "snapshot_sha256": "19414efbce61790c3360306ce37e615c51401ddce4f7e0d9ed34f36a95b3f64a"
+    }
+  ],
+  "current_queue_owners": [],
+  "lexical_candidates_not_identity": [],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

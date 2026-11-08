@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T04:16:03.824870+00:00",
+  "reviewer": "/root/skeptical_review",
+  "review_scope": "Incremental concentration-stock batch2; full188-case review pending.",
+  "findings": [
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-2",
+      "severity": "minor",
+      "status": "open",
+      "category": "incorrect-source-description",
+      "affected_case_ids": [
+        "CM_NAME:b4a980ad916cbb11e5bdd5de46252e0fd69efe2715eb1f26effe43c8d70a4929"
+      ],
+      "allocation_index": 105,
+      "field_path": "reasoning",
+      "observed_in_decision_fragment_sha256": "1afcc1a1b1a0e90e2920528d329914eb0d730f35f3b87dae76725cc073f78c88",
+      "observed_text": "The frozen ML_PER_L-like interpretation must be checked against the explicit mM unit",
+      "counterevidence": {
+        "frozen_component_path": "ingredients/10",
+        "raw_component": {
+          "concentration": {
+            "unit": "MILLIMOLAR",
+            "value": "10"
+          },
+          "notes": "Role: Growth factor; Properties: Defined component, Simple component, Inorganic compound",
+          "preferred_term": "Thiosulfate (final concentration)"
+        },
+        "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M700_Pfennig_s_Medium.yaml",
+        "source_file_sha256": "92198102d94740c92f6c8e00ae5bee53afbe2aab5a532b3a5ddf695297f3eae6"
+      },
+      "description": "Frozen source already stores10MILLIMOLAR; claim of anML_PER_L-like frozen interpretation is unsupported. Source and frozen normalization agree on the concentration unit.",
+      "requested_correction": "Remove invented unit-normalization discrepancy; state10mM agreement while retaining counterion and hydration uncertainty and no supplied-reagent identity approval.",
+      "scientific_disposition_effect": "Does not invalidate the broad-parent-only outcome, but evidence/report must not invent a source defect.",
+      "re_review_required": true
+    }
+  ]
+}

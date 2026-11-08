@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-08T03:49:44.387505+00:00",
+  "command": [
+    "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/all-unmatched-worker-01/negative-controls.py"
+  ],
+  "helper_sha256": "81a2310cdf2441506a91de89bc5ca08923e839a2d8a353c240a30ae1a20c9927",
+  "auditor_sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad",
+  "base_decisions_sha256": "c06e368376232770ca3234ac0fb44a6b5737889d43cbfd859e9b384061a4ae7f",
+  "scope": "Structural negative controls over copied real case; no original decisions/sources changed; no scientific approval",
+  "results": [
+    {
+      "name": "blank-label-replacement",
+      "result": "PASS_rejected",
+      "error": "source identity/name differs: KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf",
+      "mutated_decision_sha256": "3dc8e8f31215d781700eead6d9bd71ba60256c6b678d5c22edfbc60997f354f3"
+    },
+    {
+      "name": "wrong-case-content-hash",
+      "result": "PASS_rejected",
+      "error": "input case hash differs: KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf",
+      "mutated_decision_sha256": "4fbce03bf23734b2febc4cb10d048ab4de2d4d9a241d5d4051720fb4c91f0e64"
+    },
+    {
+      "name": "duplicate-case",
+      "result": "PASS_rejected",
+      "error": "duplicate decision case_id",
+      "mutated_decision_sha256": "fc117d5dee0e05657a631805af4b8f21b1241fdf5e176404accb61e0c442f4b1"
+    },
+    {
+      "name": "out-of-scope-case",
+      "result": "PASS_rejected",
+      "error": "missing or out-of-scope decision case_id",
+      "mutated_decision_sha256": "fa9b9f013d1ef2fa12504309b93044d2cee438c91ed0d7fe0c404b6260df9546"
+    },
+    {
+      "name": "full-shard-claim",
+      "result": "PASS_rejected",
+      "error": "phase must match explicit audit scope",
+      "mutated_decision_sha256": "8ae03a06e552e7519b14b98bae5c183d29135bd9f9e52268e90a4745f1f5e631"
+    },
+    {
+      "name": "invented-owner",
+      "result": "PASS_rejected",
+      "error": "--mim-root required to verify owner references",
+      "mutated_decision_sha256": "a5e77303163cc97dbc8d6cef0cf6762181279b944bf3de9150f821af8c69e183"
+    },
+    {
+      "name": "unsubstantiated-review-complete",
+      "result": "PASS_rejected",
+      "error": "independent review evidence: at least one evidence reference required",
+      "mutated_decision_sha256": "d5d83103e79ebbbbd254e03677d070421b712962326208ce506ef470289a8883"
+    },
+    {
+      "name": "invented-occurrence-id",
+      "result": "PASS_rejected",
+      "error": "missing/changed occurrence reference: KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf",
+      "mutated_decision_sha256": "30076756c4e21cfc30ae6fc063799f72ae2cbd8153ca3724776947fd94079c1f"
+    }
+  ]
+}

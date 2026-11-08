@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-08T04:22:44.561959Z",
+  "before_path": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+  "before_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+  "after_path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/84_GL_NaHCO3_Solution.yaml",
+  "after_sha256": "2c3bf046048b8ce6158d78df6e35c0e5cd58a9e323f99cf4beb401bf8d7c4d43",
+  "guarded_assertions": [
+    "Original owner byte hash and full parsed object match captured before",
+    "Identifier and preferred label exact",
+    "Exactly two RAW_TEXT to REJECTED_LABEL changes; original text/source retained",
+    "Exactly one appended curation event; original history retained",
+    "Restoring two types and removing final history produces identical original object",
+    "Native validated writer emitted only artifact proposal; maintained owner bytes unchanged"
+  ],
+  "semantic_changes": [
+    {
+      "field": "synonyms/1/synonym_type",
+      "text": "(5% w/v solution)",
+      "before": "RAW_TEXT",
+      "after": "REJECTED_LABEL",
+      "before_resolves": false,
+      "after_resolves": false
+    },
+    {
+      "field": "synonyms/2/synonym_type",
+      "text": "(after autoclaving)",
+      "before": "RAW_TEXT",
+      "after": "REJECTED_LABEL",
+      "before_resolves": false,
+      "after_resolves": false
+    }
+  ],
+  "native_policy_path": "src/mediaingredientmech/synonym_policy.py",
+  "native_policy_sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+  "present_resolution_behavior_changed": false,
+  "remaining_holds": "Both consumed mapping rows remain WITHHOLD. Source formulation/components and complete payload integration are outside the optional type cleanup."
+}

@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "1668",
+    "--repo",
+    "Knowledge-Graph-Hub/kg-microbe",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T05:05:20.325750+00:00",
+  "completed_at": "2026-11-08T05:05:20.723981+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Adversarial review of PR #1667 (#1556), head `3f023ff04`. Read-only pass; each finding is recorded here, whatever its disposition.\n\nFound correct:\n- The fix sits in the merge, which knows which files it publishes, rather than in finalization, which would have to guess among merge configurations that disagree.\n- Only finalized graph members count, verified on real outputs.\n- The call stays inside the merge's diagnostic isolation.\n- The new column is appended, so existing readers by name are unaffected.\n\n1. **Finalization records hold absolute host paths.** On outputs copied to another machine or directory, the recorded node files do not exist there, so the column stays empty and no warning is printed. That is a missed explanation, never a wrong one. *Disposition: no change. This is a diagnostic, and #1556 asks only to name the references when they can be named.*\n2. **Cost.** When there are stubs, every left-out file is read whole. Measured on this Mac's build: all 14 ontology node files (230 MB) in 1.2 s with a warm cache, against a merge of hours. *Disposition: no change.*\n3. **The test doubles' fixed signatures hid the new keyword.** The merge's isolation turned the `TypeError` into \"check skipped\", and only the tests' own `observed` assertions noticed. *Disposition: fixed in #1667 (the doubles accept the keyword). Recorded here because a future keyword will hit the same trap; it is noted in the commit.*\n4. **No end-to-end merge ran with this change.** The canary exercised the two new functions on real outputs and configurations, and a unit test covers the merge's wiring. *Disposition: no change; stated in the PR body.*\n",
+    "closedAt": "2026-10-15T00:52:17Z",
+    "comments": [],
+    "number": 1668,
+    "state": "CLOSED",
+    "title": "Review findings: PR #1667 (stub report names unmerged declarations, #1556)",
+    "updatedAt": "2026-10-15T00:52:17Z",
+    "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1668"
+  }
+}

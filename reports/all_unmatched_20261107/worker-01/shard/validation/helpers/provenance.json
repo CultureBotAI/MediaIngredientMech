@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-11-08T04:55:47.143862+00:00",
+  "purpose": "Reproduce worker01 evidence validation without maintained data changes.",
+  "inputs": "Frozen shard, current proposal ledger, isolated after payloads, exact Git baseline/canary and pinned native producer; source paths are those in the assignment.",
+  "outputs": "Uniquely named receipts under shard/validation; existing receipts are not overwritten.",
+  "runtime": "Python3.13 in the worker private frozen-lock environment.",
+  "files": [
+    {
+      "file": "native-proposal-projection.py",
+      "sha256": "2862097266eace54c305b045a5bf48e3b8105a1ac6dcd6adcf395a122e535bd8"
+    },
+    {
+      "file": "validate-combined-proposals.py",
+      "sha256": "277d74291cccd7b431e22ef92945d2d22d407055d2a3e43a38c153496e34d9ad"
+    },
+    {
+      "file": "preservation-check.py",
+      "sha256": "7e66a3deda39a016c11f64c969576835f182ca4befc00eb1f2d46dccbdb930cf"
+    },
+    {
+      "file": "negative-controls.py",
+      "sha256": "d6fa2a6f254e69595302a78095dfb273780972e54a594391ab643e8681a3d94b"
+    }
+  ]
+}
