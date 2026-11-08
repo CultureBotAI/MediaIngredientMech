@@ -970,6 +970,58 @@ def _check_mutation_git_state(prepared: Prepared):
         {os.fsdecode(path) for path in changed[:-1]} <= allowed,
         "Unrelated tracked file changed",
     )
+    # #1256: restored working bytes do not prove that the index stayed in scope.
+    # Disable rename folding so both endpoints remain literal scope members.
+    cached = git(
+        root,
+        "diff",
+        "--cached",
+        "--no-renames",
+        "--ita-visible-in-index",
+        "--name-only",
+        "-z",
+        baseline,
+        "--",
+    ).split(b"\0")
+    require(cached[-1] == b"" and all(cached[:-1]), "Malformed cached Git path listing")
+    cached_paths = {os.fsdecode(path) for path in cached[:-1]}
+    require(cached_paths <= allowed, "Unrelated staged file changed")
+    for path in sorted(cached_paths):
+        entries = git(root, "--literal-pathspecs", "ls-files", "--stage", "-z", "--", path)
+        if not entries:
+            require(
+                path not in prepared.after_inventory and not os.path.lexists(root / path),
+                "Staged owner deletion differs from actual retirement",
+            )
+            continue
+        parts = entries.split(b"\0")
+        require(len(parts) == 2 and parts[-1] == b"", "Ambiguous staged owner entry")
+        metadata, separator, name = parts[0].partition(b"\t")
+        fields = metadata.split(b" ")
+        require(
+            separator == b"\t"
+            and os.fsdecode(name) == path
+            and len(fields) == 3
+            and fields[0] in {b"100644", b"100755"}
+            and fields[2] == b"0"
+            and re.fullmatch(b"[0-9a-f]{40}(?:[0-9a-f]{24})?", fields[1]) is not None,
+            "Nonregular or conflicted staged owner entry",
+        )
+        require(os.path.lexists(root / path), "Staged owner endpoint is not installed")
+        current = FrozenFile.capture(root / path)
+        index_raw = git(root, "cat-file", "blob", fields[1].decode("ascii"))
+        endpoints = {prepared.after_inventory[path]} if path in prepared.after_inventory else set()
+        if path in prepared.before:
+            endpoints.add(digest(prepared.before[path].content))
+        require(
+            index_raw == current.content and digest(index_raw) in endpoints,
+            "Staged owner bytes differ from installed accepted endpoint",
+        )
+        require(
+            fields[0] == (b"100755" if (root / path).stat().st_mode & 0o111 else b"100644"),
+            "Staged owner mode differs from working file",
+        )
+        current.verify()
     require(
         git(root, "rev-parse", "HEAD").decode().strip() == baseline,
         "Integration HEAD changed during source application",

@@ -1585,3 +1585,38 @@ def test_1256_live_publication_allows_uncommitted_derived_sync(case):
     derived.write_text("fixture: synchronized derived data\n")
     assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
     assert c.validate(root, case["path"])["status"] == "verified"
+
+
+@pytest.mark.parametrize("boundary", ["prepare-completion", "dry-run-output-preflight"])
+def test_1256_live_preparation_closes_head_after_all_checks(case, monkeypatch, boundary):
+    root = case["root"]
+    injected = []
+
+    def change_head():
+        injected.append(boundary)
+        commit_publication_boundary(root)
+
+    if boundary == "prepare-completion":
+        original = c.Capture.verify
+
+        def final_capture(self, *args, **kwargs):
+            result = original(self, *args, **kwargs)
+            change_head()
+            return result
+
+        monkeypatch.setattr(c.Capture, "verify", final_capture)
+    else:
+        original = c.no_alias
+
+        def output_boundary(path):
+            result = original(path)
+            if path == case["out"]:
+                change_head()
+            return result
+
+        monkeypatch.setattr(c, "no_alias", output_boundary)
+    with pytest.raises(ValueError, match="live publication HEAD changed"):
+        c.publish(root, case["path"], case["out"], apply=False)
+    assert injected == [boundary]
+    assert not list(case["out"].iterdir())
+    assert (root / c.SOURCE).read_bytes() == case["before"]

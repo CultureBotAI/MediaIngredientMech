@@ -2316,3 +2316,280 @@ def test_1256_unrelated_staged_drift_rechecked_throughout_transaction(
         ]
     assert (tmp_path / "notes/unrelated_ß\nchange.txt").read_bytes() == b"unapproved staged bytes\n"
     assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+
+
+def stage_index_only_1256(root, name, value):
+    """#1256 residual: real index mutation, then exact working-byte restoration."""
+    path = root / name
+    original = path.read_bytes() if path.exists() else None
+    put(root, name, value)
+    run_git(root, "--literal-pathspecs", "add", "--", name)
+    if original is None:
+        path.unlink()
+    else:
+        path.write_bytes(original)
+
+
+def inject_index_boundary_1256(monkeypatch, kind, boundary, callback):
+    """#1256: retain real native writes and receipt flushes around injected drift."""
+    if boundary == "final_flush":
+        original = owner.finish_receipt
+
+        def finish(handle, path, payload, recheck):
+            count = 0
+
+            def check():
+                nonlocal count
+                count += 1
+                if count == 2:
+                    callback()
+                recheck()
+
+            return original(handle, path, payload, check)
+
+        monkeypatch.setattr(owner, "finish_receipt", finish)
+    else:
+        name = "publish_validated" if kind == "edit" else "_new_owner"
+        original = getattr(owner, name)
+
+        def writer(*args, **kwargs):
+            if boundary == "before_write":
+                callback()
+            result = original(*args, **kwargs)
+            if boundary == "after_write":
+                callback()
+            return result
+
+        monkeypatch.setattr(owner, name, writer)
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize(
+    "boundary", ["initial", "before_apply", "before_write", "after_write", "final_flush"]
+)
+def test_1256_index_only_contract_drift_refused_at_every_live_boundary(
+    tmp_path, monkeypatch, kind, boundary
+):
+    """#1256/W08-21061-SRC-001: restored contract bytes cannot hide a staged edit."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    before = owner.hashes(owner.inventory(tmp_path))
+    contract = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+    fired = False
+
+    def stage():
+        nonlocal fired
+        assert not fired
+        fired = True
+        stage_index_only_1256(tmp_path, "MAPPING_SEMANTICS.md", contract + b"\nnot accepted\n")
+        assert (tmp_path / "MAPPING_SEMANTICS.md").read_bytes() == contract
+        assert owner.git(tmp_path, "show", ":MAPPING_SEMANTICS.md") != contract
+        assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
+
+    if boundary == "initial":
+        stage()
+        with pytest.raises(ValueError, match="Unrelated staged file changed"):
+            prepare(tmp_path)
+    else:
+        ready = prepare(tmp_path)
+        if boundary == "before_apply":
+            stage()
+        else:
+            inject_index_boundary_1256(monkeypatch, kind, boundary, stage)
+        with pytest.raises(ValueError, match="Unrelated staged file changed"):
+            owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert fired
+    if boundary in {"initial", "before_apply"}:
+        assert not (tmp_path / "receipt").exists()
+    else:
+        receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+        assert receipt["state"] == "failed" and receipt["recovery_required"]
+        with pytest.raises(ValueError):
+            owner.verify_completed(
+                tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+            )
+    if boundary in {"initial", "before_apply", "before_write"}:
+        assert owner.hashes(owner.inventory(tmp_path)) == before
+    else:
+        entry = plan["records"][0]
+        assert (tmp_path / entry["source_record"]).read_bytes() == ready.payloads[
+            entry["operation_id"]
+        ]
+    assert (tmp_path / "MAPPING_SEMANTICS.md").read_bytes() == contract
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("boundary", ["before_apply", "after_write", "final_flush"])
+def test_1256_index_only_owner_bytes_cannot_hide_behind_allowed_path(
+    tmp_path, monkeypatch, kind, boundary
+):
+    """#1256: path permission does not authorize a different staged owner blob."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    before = owner.hashes(owner.inventory(tmp_path))
+    entry = plan["records"][0]
+    fired = False
+
+    def stage():
+        nonlocal fired
+        assert not fired
+        fired = True
+        # Existing paths exercise hidden blob substitution; fresh destinations
+        # before install exercise staged nonexistent endpoints too.
+        stage_index_only_1256(tmp_path, entry["source_record"], b"unaccepted staged owner\n")
+
+    if boundary == "before_apply":
+        stage()
+    else:
+        inject_index_boundary_1256(monkeypatch, kind, boundary, stage)
+    with pytest.raises(ValueError, match="Staged owner"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert fired
+    if boundary == "before_apply":
+        assert not (tmp_path / "receipt").exists()
+        assert owner.hashes(owner.inventory(tmp_path)) == before
+    else:
+        receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+        assert receipt["state"] == "failed" and receipt["recovery_required"]
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+def test_1256_staged_actual_accepted_endpoints_complete_and_verify_historically(
+    tmp_path, monkeypatch, kind
+):
+    """#1256: caller staging of actual approved endpoints is not forbidden."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    original = owner.finish_receipt
+    staged = False
+
+    def finish(handle, path, payload, recheck):
+        nonlocal staged
+        assert not staged
+        staged = True
+        run_git(tmp_path, "add", "-A", "--", "data/ingredients")
+        return original(handle, path, payload, recheck)
+
+    monkeypatch.setattr(owner, "finish_receipt", finish)
+    result = owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert result["state"] == "complete" and staged
+    assert owner.hashes(owner.inventory(tmp_path)) == ready.after_inventory
+    owner.verify_completed(tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json")
+    late_git_commit(tmp_path, unrelated=True)
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert proof["baseline_commit"] == plan["baseline_commit"]
+    assert proof["after_inventory"] == ready.after_inventory
+
+
+@pytest.mark.parametrize(
+    "name",
+    ["notes/Poly-ß.txt", "notes/new\nline.txt", 'notes/tab\tquote".txt', "notes/[literal]*?.txt"],
+)
+def test_1256_cached_literal_unrelated_path_cannot_disappear(tmp_path, name):
+    """#1256/#1255: deleted working files still retain a literal staged scope."""
+    plan = head_lifecycle_case(tmp_path, "edit")
+    ready = prepare(tmp_path)
+    stage_index_only_1256(tmp_path, name, b"unrelated index bytes\n")
+    assert owner.git(tmp_path, "diff", "--name-only", "-z", plan["baseline_commit"], "--") == b""
+    with pytest.raises(ValueError, match="Unrelated staged file changed"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+
+
+@pytest.mark.parametrize("malformed", [b"unterminated", b"\0", b"name\0\0"])
+def test_1256_malformed_cached_nul_listing_refused(tmp_path, monkeypatch, malformed):
+    """#1256: independently retain the strict literal cached-list framing."""
+    head_lifecycle_case(tmp_path, "edit")
+    ready = prepare(tmp_path)
+    real_git = owner.git
+
+    def malformed_git(root, *args):
+        if args[:2] == ("diff", "--cached"):
+            return malformed
+        return real_git(root, *args)
+
+    monkeypatch.setattr(owner, "git", malformed_git)
+    with pytest.raises(ValueError, match="Malformed cached Git path listing"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+def test_1256_staged_future_approved_payload_is_not_installed_authority(tmp_path, kind):
+    """#1256: even exact accepted after bytes must not be staged ahead of install."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    entry = plan["records"][0]
+    before = owner.hashes(owner.inventory(tmp_path))
+    stage_index_only_1256(tmp_path, entry["source_record"], ready.payloads[entry["operation_id"]])
+    with pytest.raises(ValueError, match="Staged owner"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+
+
+@pytest.mark.parametrize("kind", ["edit", "promote", "demote"])
+def test_1256_staged_deletion_cannot_precede_actual_retirement(tmp_path, kind):
+    """#1256: a reviewed old path is not permission for premature index deletion."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    before = owner.hashes(owner.inventory(tmp_path))
+    source = plan["records"][0]["before_source_record"]
+    run_git(tmp_path, "--literal-pathspecs", "rm", "--cached", "--", source)
+    with pytest.raises(ValueError, match="Staged owner deletion differs"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+
+
+def test_1256_cached_rename_checks_unrelated_old_endpoint(tmp_path):
+    """#1256: a destination in scope cannot hide a renamed unrelated source."""
+    plan = head_lifecycle_case(tmp_path, "create")
+    ready = prepare(tmp_path)
+    destination = plan["records"][0]["source_record"]
+    original = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+    stage_index_only_1256(tmp_path, destination, original)
+    run_git(tmp_path, "rm", "--cached", "--", "MAPPING_SEMANTICS.md")
+    assert b"R100\0MAPPING_SEMANTICS.md\0" in owner.git(
+        tmp_path, "diff", "--cached", "--find-renames", "--name-status", "-z", "HEAD", "--"
+    )
+    assert set(
+        owner.git(
+            tmp_path, "diff", "--cached", "--no-renames", "--name-only", "-z", "HEAD", "--"
+        ).split(b"\0")[:-1]
+    ) == {b"MAPPING_SEMANTICS.md", destination.encode()}
+    # The existing working-scope guard already sees the staged deletion here.
+    # Retain that earlier refusal; do not bypass it to reach the new index guard.
+    with pytest.raises(ValueError, match="Unrelated tracked file changed"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+
+
+def test_1256_intent_to_add_unrelated_index_entry_is_refused(tmp_path):
+    """#1256: intent-to-add remains an index change even with no normal blob delta."""
+    head_lifecycle_case(tmp_path, "edit")
+    ready = prepare(tmp_path)
+    put(tmp_path, "notes/intent.txt", b"")
+    run_git(tmp_path, "add", "--intent-to-add", "--", "notes/intent.txt")
+    (tmp_path / "notes/intent.txt").unlink()
+    with pytest.raises(ValueError, match="Unrelated staged file changed"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+
+
+def test_1256_staged_owner_mode_must_match_installed_file(tmp_path):
+    """#1256: a same-byte index entry cannot hide a different file mode."""
+    plan = head_lifecycle_case(tmp_path, "edit")
+    ready = prepare(tmp_path)
+    source = plan["records"][0]["source_record"]
+    run_git(tmp_path, "--literal-pathspecs", "update-index", "--chmod=+x", "--", source)
+    with pytest.raises(ValueError, match="Staged owner mode differs"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)

@@ -881,6 +881,13 @@ def _verify_projected_rule_k(capture: Capture, canonical: bytes) -> None:
     )
 
 
+def _require_live_source_head(root: Path, baseline_commit: str) -> None:
+    current_head = subprocess.check_output(
+        ["git", "rev-parse", "--verify", "HEAD"], cwd=root, text=True
+    ).strip()
+    require(current_head == baseline_commit, "live publication HEAD changed from source baseline")
+
+
 def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
     capture = Capture(root)
     root = capture.root
@@ -927,13 +934,7 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         baseline_commit = owner_proof["baseline_commit"]
 
         def mutation_head_recheck() -> None:
-            current_head = subprocess.check_output(
-                ["git", "rev-parse", "--verify", "HEAD"], cwd=root, text=True
-            ).strip()
-            require(
-                current_head == baseline_commit,
-                "live publication HEAD changed from source baseline",
-            )
+            _require_live_source_head(root, baseline_commit)
 
         mutation_head_recheck()
         capture.checks.append(mutation_head_recheck)
@@ -1108,6 +1109,8 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         set(native._names(root)) == set(prefix) | ({receipt_name} if completed else set()),
         "native receipt membership changed during verification",
     )
+    if not completed:
+        _require_live_source_head(root, owner_proof["baseline_commit"])
     return {
         "capture": capture,
         "plan": plan,
@@ -1234,6 +1237,7 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
             path.parent.is_dir() and not path.exists(), "output already exists or parent absent"
         )
     if not apply:
+        _require_live_source_head(root, prepared["owner_proof"]["baseline_commit"])
         return summary(prepared, "dry_run")
     destinations = {root / SOURCE: prepared["canonical"], root / POLICY: prepared["policy"]}
     current = {p: capture.files[p] for p in destinations}
@@ -1268,6 +1272,10 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
                     item.verify()
             expected_native = prepared["receipt"] if native_written else b""
             require(native_path.read_bytes() == expected_native, "reserved native receipt changed")
+            # #1256 residual: the actual source proof and remaining checks can
+            # outlive capture.verify's initial HEAD check. Close this complete
+            # live boundary before another write or a success return.
+            _require_live_source_head(root, prepared["owner_proof"]["baseline_commit"])
 
         try:
             recheck()
