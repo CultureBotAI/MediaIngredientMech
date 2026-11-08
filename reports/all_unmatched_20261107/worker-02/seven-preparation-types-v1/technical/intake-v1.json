@@ -1,0 +1,949 @@
+{
+  "reviewer": "/root/research_b",
+  "started_at": "2026-11-08T09:17:12.435336+00:00",
+  "scope": "Independent technical review only; seven root-authored category corrections plus append-onlyhistory. No chemistry or unrequested owner/application decision.",
+  "head": "f0d2be8b220d9e0c6ae415704d291ed40d3c292e",
+  "contracts_read": [
+    {
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b"
+    },
+    {
+      "path": "src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/ingredient_bundle_refresh.py",
+      "sha256": "d0826b8ac0867604a233ae3df951b569e90dfa5b7892e62ce40015e9d8c15ee3"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": ".claude/skills/curate-yaml-record/SKILL.md",
+      "sha256": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a"
+    }
+  ],
+  "triage_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/ASSESSMENT.md",
+      "sha256": "e20e80906fa6d8fe7d0af0f73f7b5e8241b9de24083f15819c889524ab370b01"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/HANDOFF.json",
+      "sha256": "405757f1739c448ee66f8e73c36988e76613cbdd4bbf519b56ae61945f2668ce"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/boundary-dsmz40.json",
+      "sha256": "84e162112969ba2171a9da09706f47b2cfbdfed166d3bbaeddf23d6aa7533e14"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/comment-read-receipt.json",
+      "sha256": "49513defecb3e693cfde7137a5f96fe68915eb6f5876aa7261368369c4ad3910"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/hash-ledger.json",
+      "sha256": "ec9cdf6354955276d4fbb98b9cb690743d47449ca5eb70c07a2b9e906fa73b93"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/issue1241-addendum.md",
+      "sha256": "b35045108bc83c026cfec4e0fdd9a62a0746fb1e63ef720b891a5fda29912e02"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/issue1241-comment6719690144.json",
+      "sha256": "d1fb4218666f5e141259ef77c6b70ae612a7e934ec97ffaae09b7aba10e260fb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/narrow-schema-checks.json",
+      "sha256": "629a88d9c021771cfb17e938e7efd0b223a25a6d8d48b69b1bb677df3c29c2c9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/context/triage-copy-receipt.json",
+      "sha256": "a9aa3540d96997c14e5d57b73b3c1ff5e4f18b4b6244e90a065c933ef4e8e126"
+    }
+  ],
+  "selected_predecessor": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3",
+  "core_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3/decisions.json",
+      "sha256": "943f53dd2e6c756bd5ba3f6c0839f62b36ee72b9b4851a8041290947aa8e7d0b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3/proposals.json",
+      "sha256": "caedf6ece7d6f1618315c3722d8b9ad317c7a097dc24f5cccb70b9980342219c"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3/evidence.json",
+      "sha256": "c4229dcb22a084b78dc88894daea7b48a8ade152dc68d6619b9aab47594a9c6d"
+    }
+  ],
+  "git_committed_byte_checks": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3/decisions.json",
+      "sha256": "943f53dd2e6c756bd5ba3f6c0839f62b36ee72b9b4851a8041290947aa8e7d0b",
+      "git_blob": "79ac2db5bdc8e8464d8f713f0878e97f29b64ae2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3/proposals.json",
+      "sha256": "caedf6ece7d6f1618315c3722d8b9ad317c7a097dc24f5cccb70b9980342219c",
+      "git_blob": "9a1211429ba9f7911551c5bdd39991de85f875b9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/selected-v3/evidence.json",
+      "sha256": "c4229dcb22a084b78dc88894daea7b48a8ade152dc68d6619b9aab47594a9c6d",
+      "git_blob": "6661f003cb66674dee9e06dbfa3df052cae13f91"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/CrKSO42_X_12_H2O.yaml",
+      "sha256": "f2204869bfffd8546eac4918208ae4e136d22b82cd7f2b71ccdd1e95f7fb747a",
+      "git_blob": "7522a602295467a90f50f011c3be9bde7d103c15"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/a/proposed-owners/Urea.yaml",
+      "sha256": "70685cb3d8f4acfa292401a0f60aea1be5f238f1634b99114091b943196a471e",
+      "git_blob": "ffa070459e7b3e1e327d48cf06ca83b6a7019051"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/a/proposed-owners/Alk_So42.yaml",
+      "sha256": "8b74660fe96d2e9cc2eaeb36ad1e995a6d86f548f817041541959f754f2c60ce",
+      "git_blob": "f3991f2a04e94de01126243cd3fbc97b4e8a9579"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/root-v2/after/Strontium_sulfate.yaml",
+      "sha256": "3141db406027997188456210ffd8742d03b0cef20cb35789d8f3cd42c518561e",
+      "git_blob": "d33f8088fd2204c2fc78906e983d9cdd057bebdf"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/a/proposed-owners/Magnesium_sulfate_dihydrate.yaml",
+      "sha256": "31eeabb657ec9349c39e7fe0dab8ccb8fc79af18f591d91147dbbd3302e2fe32",
+      "git_blob": "83b4532551436c2f45f3b8852abcb4d55ee09e54"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/a/proposed-owners/Chromium_III_nitrate_nonahydrate.yaml",
+      "sha256": "02f51e0d2a1fb7227c7eed5d3917aa0cb55bd4e96938fbce15223001a6ec7ea5",
+      "git_blob": "233cccb62be1a7d037b659e513c7e8dd1fc65471"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/a/proposed-owners/Iron_II_sulfate_tetrahydrate.yaml",
+      "sha256": "0c4804b157245ed905a3653c8279c875cd34dc19183e39b79ff1ab2c4caa668f",
+      "git_blob": "082911b22360c78095357df9f55471f4da647a49"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-paba.yaml",
+      "sha256": "a819177e9831144c6ce0172feb1135cf13bc6926d393097a8e8a81456fc1efbd",
+      "git_blob": "471583dece4ef7bd7ceee1d274e0eedb03a2d606"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-ammonium_carbonate.yaml",
+      "sha256": "763279fac424beabe643977c47b45de3710523c7ad8768737a43119a7c57adde",
+      "git_blob": "0a1db54c76e22596163dac8842c980fcb7e581d2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-ferrous_hepta.yaml",
+      "sha256": "80f45eba8c0d5970f3d2d44ad324efc9814acb3a2e93bfd5e8c8ce969c9345d6",
+      "git_blob": "b3c38c220f5b228c0a5d60b7a9512e4da6e6fd2d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-trimethyl.yaml",
+      "sha256": "026aa46024d66239b4f5eda75e293c1dde089d96228706cd1c62e272825d3fad",
+      "git_blob": "20b1b0a7a9d1e773387dc0bd9f7f309be948600d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-selenous.yaml",
+      "sha256": "2ae2d5b2008502c83a08585e5088e3e6499e77a431368239fa17114c034a1a74",
+      "git_blob": "888aaeda81c264d99cbe1301f51911b93504bbd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-silver_nitrate.yaml",
+      "sha256": "75a40ba39c64a1c7c7af5e7208a0b746594d0d71d28dfc54079abdb2f8c3b19a",
+      "git_blob": "cd8cd5ba541ffac134721a9a7458c443c1cea978"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-heedta.yaml",
+      "sha256": "15f0196e77d3f99153d69d90b4cfddaec69793cd2a5d9061534cd5d4b77a10ed",
+      "git_blob": "e51691229d0cccdea35cbb25f74969a286ff7d62"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b-proposal-ferric_ammonium_dodeca.yaml",
+      "sha256": "ca868d61609a80cae7df824b2324b4c6dba74dff267a52379b9cae865fba918e",
+      "git_blob": "596fc33df6f5097ab2042d9d5bda910f9fc0d53f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/c/proposed-owners/c-proposal-cerium-nitrate-hexahydrate.yaml",
+      "sha256": "9d866fd31aacee61796c647228dfc42817335b193ba5dad8c6eed05469c379e2",
+      "git_blob": "442db14e9472221b0e0d5cb7a8c15605a790e8d1"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/c/proposed-owners/c-proposal-lanthanum-nitrate-hexahydrate.yaml",
+      "sha256": "9cb5b03b12dac60f07141e7722a88f3b211459e9dd88318bf9c606385f2c1a38",
+      "git_blob": "74e293abc58fc21051eda7f91efa255938643733"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Sodium_Malate.yaml",
+      "sha256": "329ba68405a6579013c1c8e664da099b47dee026ada63af4ce4b3317f7107d1f",
+      "git_blob": "48adbeca8084c0ec41591fdc73e93d69047593b2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/c/proposed-owners/c-proposal-nickel-sulfate-6-water-properties.yaml",
+      "sha256": "5af4d77e4240a5e452ee0760075144d64be40829ec25caf785e5a38ca9772371",
+      "git_blob": "f423d31012dee47b7ded2c98bafabca52ab97a50"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/c/proposed-owners/c-proposal-nickel-sulfate-7-water-properties.yaml",
+      "sha256": "2a2df4ff5776b64af861c6d49d13fb7f122c5457371f2854b14ab84b6bb37b08",
+      "git_blob": "457a4e68b7eaed3c8cc3787bcaef8766ebbc40b1"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/c/proposed-owners/c-proposal-o-carbamyl-d-serine-scope.yaml",
+      "sha256": "14f263cd3c67a3f2327408414d1f411a66f2ba005525223b4a25106e0ca81592",
+      "git_blob": "421b523286214041abbfd9f1aebae978a4a0620c"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/w02-proposal-ammonium-nickel-hexahydrate.yaml",
+      "sha256": "7ad2a20ca7bdef1b87c2e372de8a3f754c0f281e69b8632c85bda7ef96ddf8a2",
+      "git_blob": "0862168cdfaf0091c3a56ea1a45d27c43a6fac5d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/w02-proposal-clarified-rumen-fluid.yaml",
+      "sha256": "6b6363fd3c4b32bee1530e904d6fe8ec52d94429e67b4f0982515bfdccc72c37",
+      "git_blob": "732f7e0f5dfe8c6a591c33d4ae14a5750d2f1e00"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/togo_m2235_acidified_ferrous_sulfate_stock.yaml",
+      "sha256": "022fb061b9027d5a77b1cb002ba9fa64efb87e8428afbf21ddfa2362241a5aff",
+      "git_blob": "32c40315addb58f8521e77eb5a753829995fc39c"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/water/after/Distilled_Water.yaml",
+      "sha256": "45b00768443f21bd0322a5fcdd2eb20fb0c8d1952ee398527b80d620bad26985",
+      "git_blob": "fb03478de7002a9d5b46c3bc016e239d05534f21"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm1182_sulfuric_acid_001m.yaml",
+      "sha256": "e6aa9ee59fbaeae049eebcaad996dbe1e8ea846487baf4674dba5337acff3b0f",
+      "git_blob": "5055f502b236450137c82f452f3a7c60097acc02"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v6/Methanol.yaml",
+      "sha256": "de3969545ff64b75aa8ded4c783eb37c5db2307348bd09bed3dec7d579f34d08",
+      "git_blob": "3c1ce5db3b00658584f6141b5804f40b1f64aea0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/togo_m3246_sulfuric_acid_01m.yaml",
+      "sha256": "05293ae1b4956f9c6a111bb344339da7b011da15bc1ef38de4ed82e3a37d4cf4",
+      "git_blob": "96a4edc112b044911a08a5541f0a24318a66a512"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/nbrc213_manganese_sulfate_001m.yaml",
+      "sha256": "7a47ebbc4807fbe3ef7c1c284f728ee8b098cdaa8470ad0eab619bc94aebb199",
+      "git_blob": "ded1bcef9d67a3bd34a499b7bc52a65363f8b0b7"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm621_1066_acidified_iron_stock.yaml",
+      "sha256": "93377ed60848883feb6329ab3aedfeadb9050d7448c1f2ff673cc9d006d5cce9",
+      "git_blob": "38e8d7fee752ced5ac14385aabc2ed3e49fd6f3f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v4/togo_m2746_m2305_hydrochloric_acid_25percent.yaml",
+      "sha256": "70c016d0e74a8487668258f66ab8ae63722e4ecbf6cce3b4c7890caaa9054a51",
+      "git_blob": "9a53da5a79ec7b432808be003b97e5b6976d4c3e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm636_methanol_50percent.yaml",
+      "sha256": "f6a820aa1c77852f01426e0fbd578b2c2f88b2735e429b86f9936083d606a3d7",
+      "git_blob": "dbc316400f71d2487e4aede87ba572ebd5ce5120"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/dsmz88a_sulfuric_acid_1n.yaml",
+      "sha256": "2e1896610252f7a1838d4fab21aac3ff581055601bc3c3ec54f7a8d917771f1b",
+      "git_blob": "1db18ee17bef199337cb937a69fc78776c310e1d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/dsmz161_acidified_ferrous_sulfate_stock.yaml",
+      "sha256": "85970ee04784552c52051f6cb87e58f25c385708d21bbcf14ed63036906aa3e0",
+      "git_blob": "44bc8d811a6c23139ddb285fe0a1948350966694"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/nbrc1627_ferrous_sulfate_498percent.yaml",
+      "sha256": "90a1bef6ea9a8525a9ef66e483b9472312ff642cb4f8f7ce7641884af3a4472a",
+      "git_blob": "677853ea8e2c702061a2de804cdcf85c430064b8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/dsmz110a_meat_filtrate.yaml",
+      "sha256": "a4da6355623f43a48e69ad93e09458a05488db2d1775f8bb1529a0748d916922",
+      "git_blob": "82b3b0d0d17310bc45d2633d8fe2628afcc3fe46"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/nbrc1132_asahi_ebios_tablets.yaml",
+      "sha256": "3275012aad49e7d7e353507d106a3a26c8b2313fad80e5e587ade3bec857bc3c",
+      "git_blob": "6fd59052dafbfbc91c3fec2c730c6d720af87a08"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/whatman_grade1_filter_paper.yaml",
+      "sha256": "240c656976a8efa69b1f12b965e461ddf2c3b31688f160b8ab1c49f375c40e0c",
+      "git_blob": "03a4906cec048524d59f7a4a8c77d90629fe1c0b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-dsmz1107-cysteine-hydrochloride-stock.yaml",
+      "sha256": "a64faad371873b3d06e40106dd9039ec20d6ecd5db01a3f93db326ec73e64a95",
+      "git_blob": "5ac71b55695151ee31132d3d350bc2e930d4d728"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/Carrot.yaml",
+      "sha256": "718897851804cb7a322c6ba99b8dd7c53ce568582717336bccafbe7b2544536b",
+      "git_blob": "5b866d7c5223a61fbe7b31237284f85845e26b3d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm525_mineral_suspension.yaml",
+      "sha256": "f3f3705509a45cb090369f03a4adc20fef93c445338118365f5e84c74ba9df94",
+      "git_blob": "1c37c0a119cc64f9a2a02225d042d2fcb9d3665e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v4/jcm382_acidified_ferrous_sulfate_solution.yaml",
+      "sha256": "dc246d3fc9d2f5e7747e3414b5e717695bbda1897d85e1d17f490f4a756e2496",
+      "git_blob": "e7b4f940c22e66287e0faf03de4236f7a381650f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm414_calcium_magnesium_trace_solution.yaml",
+      "sha256": "e6647e4648742e4f37defa217adb51bd2365851c56f19a9d5a4bffa630cb6a8b",
+      "git_blob": "f7cda5d632a0cbba13c2470f811292359f0c8d9f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-jcm378-preaddition-basal-preparation.yaml",
+      "sha256": "2ec9ff1cfb283e4669f1f192780c11bd73c2f530d5d53887f48dbb9bfcba509e",
+      "git_blob": "926ecebffbced7f4c109136ef8da46bfd0b0749b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm149_standard_mineral_base.yaml",
+      "sha256": "3e18a60004edbd6d51ec1611244abe29d7f6367bfd431965cc2025630315513d",
+      "git_blob": "b841cdda8060de6d53e3e8ba6eca1f4e99be97dd"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm525_mineral_yeast_basal_preparation.yaml",
+      "sha256": "58d80ce8654f651428175d8eb5526187ab74e5d8945dc5696c866be9d9829d1a",
+      "git_blob": "ad71062c1f4c27d29cc999700d7177fad79d1956"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v4/jcm382_basal_salts_preparation.yaml",
+      "sha256": "23ce77cc0aa31b2c0600221fc106a81b039b456ff8053b51915522fa22d4648d",
+      "git_blob": "3ab0d38d98d697dfb7caf33795a1a734caf0c35d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm414_phosphate_thiosulfate_preparation.yaml",
+      "sha256": "7ad2478c7cec12b63924c8a2fd3afb9b589fac679435d35bcb98bef51555557f",
+      "git_blob": "e66985adb9df660fa45fce58e2bb135cf5dcd696"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm438_preaddition_basal_preparation.yaml",
+      "sha256": "420eef750813f96bc3d60cb0ca48a6d64621cf9cbff80ce244f24412e75ad3cc",
+      "git_blob": "63628194a1fcdf8cc6f1206ccf8124e95de7e3f7"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm480_preaddition_basal_preparation.yaml",
+      "sha256": "35db9be9de92588c8c6b5686bc0dda6638a06213e404195d5cbfc4001d36fa4d",
+      "git_blob": "eb69ce306c704db2298aa3c27d9b25bd680cd090"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v4/togo_m491_preaddition_basal_preparation.yaml",
+      "sha256": "19dbafdbb482d84410c7f468b40a072c1fd4d4cc796b7d23e78b88ec9babe457",
+      "git_blob": "c555ddc170858340ae34bf20c016f6f273f8f687"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm537_preaddition_basal_preparation.yaml",
+      "sha256": "e6f95a0685f2edad28fea77b6f902415e6dfec547f39519c81e564d1fc70c147",
+      "git_blob": "adc8fdfbe028442157d98bd6999c853443871ae2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm573_preaddition_basal_preparation.yaml",
+      "sha256": "c645fba326d23f43a5621f29b6562726595044960a9a210e29ed0fe2777ae97b",
+      "git_blob": "47b2bca79965573be350d557d3baf865b9d805ad"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-jcm665-preaddition-iron-gel-base.yaml",
+      "sha256": "9b6a2de359e7eb7bf682f5d88405ebbb3341312b3bbb5d8c667d4f5f4a463a74",
+      "git_blob": "917ed36cebd3a20b774320486db7b35d0c1468d0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm706_preaddition_basal_preparation.yaml",
+      "sha256": "628b95a7b06eb597817c02bad1f94b9c666ddec00219692be27ae092215da3b3",
+      "git_blob": "5500dd764566c964cdfba0817745a010f36bb391"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm862_basal_salts_preparation.yaml",
+      "sha256": "359713a837583fa7702bd6cb250ad8fa7c34335e90aa29f3d4365e51585251de",
+      "git_blob": "8ddbb33854bdf7fa8a8250dc7013d532bcd6f233"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/jcm866_preaddition_basal_preparation.yaml",
+      "sha256": "2f869e92e75bfb14911b504a415383c25680478f9ed4f34b8d151e1aeab19001",
+      "git_blob": "c92cad377c77bd66a44e53321ba6f6978bf1b8c6"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-togo-m2491-mrssi-base.yaml",
+      "sha256": "4a62f5fe75a4c6384269ccf3118962a1ba11cc4b96a805d54da9840c569086ee",
+      "git_blob": "a2ca5aa3d6bb01963bb81638279a93a69ce2c169"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-jcm167-precarbonate-basal-agar.yaml",
+      "sha256": "fbbea2abe379a7a49270320dc2fd89c4f16a85b4249b4f209c2542ffe83222e4",
+      "git_blob": "7bdd02114b5b6359055dbca7a487ab2fd216aba5"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-dsmz40-cde-mixed-preparation.yaml",
+      "sha256": "62abd4790d274fa4806b0236d1f881c87f60bc9b0d325bca61ba28b1068d3d44",
+      "git_blob": "a0b034f6e60b1d682ec5e90c8eeedd50c5817149"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/a2-proposal-manganese-sulfate-variable-hydrate.yaml",
+      "sha256": "77efa4a7d4f3b3371c59eb0f801d24d8fccc3cdaab6195791b73eb70d00c9bf6",
+      "git_blob": "a07374e7d6bd1cf4648a42f88075f10b5bf9930b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/sulfuric_acid_2m_preparation.yaml",
+      "sha256": "cbb2ad32e81e66a8f085d35700e480c08255926636f3aaff48c3f5fbff2547f1",
+      "git_blob": "60e2e181d2c3bfc8405d61aa49302b47ba90b0b6"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v4/jcm462_463_preaddition_basal_preparation.yaml",
+      "sha256": "da1b0fe7584ce6f0dbe847da3d8058acb071462e5f9b9b7cc9a60625dcc70454",
+      "git_blob": "3ca758886df7e90a9ce08172553fffc57cc842c5"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-sodium_carbonate_8_percent_wv_jcm1023_363.yaml",
+      "sha256": "728dbcfb715bfa10fb8d52073a7f5a398c346cc36aa2c47e2c02f47d6bcb0724",
+      "git_blob": "74353670c24ea48aa191fece9a3bb74e1d8875c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-ferrous_sulfate_heptahydrate_02_percent_wv_togo_m2649.yaml",
+      "sha256": "a173752c529c7b64ae731da51a2b8f4f339e81cc7917f5384bb7de6216871d94",
+      "git_blob": "52ac9bacf8d488edb76ca241ec3679fc1aafca72"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-methanol_50_percent_vv_jcm_sources.yaml",
+      "sha256": "4da028b0c91adf964f40927a0ac52f3318b6befcb2abd8853579f13d2f50c6a1",
+      "git_blob": "7356467dde1d28a84d5213acf229208f56654374"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-ferrous_sulfate_002m_nbrc213.yaml",
+      "sha256": "a2a1c81a8e3168d698e8777739ef5368d3cb4bf898f2056417d85d73709995d1",
+      "git_blob": "5ed96decf02ce01f73fd63ef666a2ad3347d10ad"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-magnesium_sulfate_heptahydrate_10_percent_jcm987.yaml",
+      "sha256": "dafeb550b89b46b13a15193c75218974da53455a553899522c2da783b20146a7",
+      "git_blob": "ffa98e6a19525469cd3f14ac0dfdcdd2263e00fd"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-magnesium_sulfate_heptahydrate_6gl_togo_m2231.yaml",
+      "sha256": "2d31f5feddfd81110de29e5faeecf711d94d1a1248e851feced504834121d073",
+      "git_blob": "657b7d1f8d96ad92fa4d75f2181529697b471729"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/review-input-v2/after/b2-proposal-sodium_resazurin_01_percent_wv_jcm363_1023.yaml",
+      "sha256": "a2d0cfdd9af155d53d528700eb9047a1ae054701a4e8149dcb469ca5a3e35c70",
+      "git_blob": "3ab8b6456d3b0bbaba9ec9d90ae44b88d3567977"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-sulfuric_acid_2n_dsmz29_40_206_897.yaml",
+      "sha256": "73a3c6df6970a4a5eafa2c8b717739dc65fa937989656d583737272f594dd6fa",
+      "git_blob": "ffd8cad3dd3ae79cfa45a1865ed752e0b093df5b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-sodium_bicarbonate_solution3_jcm414.yaml",
+      "sha256": "531ec8be03521ba0241fc47457af4387b2ce0c3b30b3f48d83688d46b21a90dd",
+      "git_blob": "2eaca2802ca220b94b8925845ca847cf5104499b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-magnesium_sulfate_1m_togo_m2790.yaml",
+      "sha256": "819213d2f0ddfb4e8e4e8cf58776c911d66b3eadbedde6945faafce8a70ee4f4",
+      "git_blob": "01d6c507bcf755ec3ce25bc9c2df83ebdfdea093"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-selenite_tungstate_atcc2686.yaml",
+      "sha256": "f9b7b270d57e9a21b3c76290c40c038ff92fc6cdcba905d3e0c031688b197b9e",
+      "git_blob": "0c0907c9fbc4a5e7dbccb5778138c59e9b373c15"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-ferrous_sulfate_heptahydrate_02_percent_atcc1340.yaml",
+      "sha256": "92e2b6bbe14a6c9601ef9d3fcfe620b31bbef0f05bc0e35ab16149a3f44118cf",
+      "git_blob": "7bfbb8859ce32c0d32abc7582cec5de1fe6669c1"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-sulfuric_acid_025n_nbrc1379.yaml",
+      "sha256": "50ba351051a43fd4133d2ffa565d0277f07f24329666609fe77e41de1b4cbce7",
+      "git_blob": "f4d01d14c24f4804afe1d54dbbd97c900752421e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-sulfuric_acid_10n_named_sources.yaml",
+      "sha256": "95aca3c8092ca7430df24c8cbdaa65151b36d5cb15346abb86f7d7cb7d934ee1",
+      "git_blob": "ff1beb400d9347bfbfdf4b50c7a767d6dfff30a3"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-mohr_salt_02_percent_hcl0037_percent_jcm764.yaml",
+      "sha256": "fd1c645f14e07085f73c4448977b605eb9c9fb99c76814819c465b2f0d0e3d1e",
+      "git_blob": "f1045aae68c8c130897d7f3bc37bb2924bc49ab2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-resazurin_0025_percent_atcc_chopped_meat.yaml",
+      "sha256": "cda688e6f0fc06a2aaea7eb753fa8a9839eabfc2284a5469efcbd2ac1dde25c4",
+      "git_blob": "2af4b2ddcb3a49b29312db8e2fc11f6ec8b475fc"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-concentrated_sulfuric_acid_assay_unspecified.yaml",
+      "sha256": "e21feb0bdac7e7f7e2802e195c49fe29d1033f6bd52497eaa099ecedc90ad3b1",
+      "git_blob": "2475bd6c3e1eeb9a07b677136633ce4cf281288e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-middlebrook_oadc_bd_bbl.yaml",
+      "sha256": "f44c27e2bef0f8f65c2015b07136b04e631b03a5e4e965a12af036a2ed801492",
+      "git_blob": "4424c0f0aab1082a418e889dda55418a61cefaeb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-Ferric_sulfate_hexahydrate.yaml",
+      "sha256": "35f824666261147fb74a5a6f48a092594d0a5369ebe4a4204f4ba10b46188f22",
+      "git_blob": "1d941ec7943211a9c85db995434c522999e3d714"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/after/Pipes.yaml",
+      "sha256": "f07fff16a65a1901f10c1cc89168be20ff8a4914f5ea9f1142d5db60f5829deb",
+      "git_blob": "515f1838e71070eafc09b4c4502656a3606875fc"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-silicone_antifoam_bdh_reported.yaml",
+      "sha256": "cf869415077b3c929b16c0588b05fda4e8f4529bcf3845d506e9a5af187e7d6a",
+      "git_blob": "5003f93ffd21f684abf73d0513a947bf59adc1d3"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-chromium_sulfate_variable_hydrate.yaml",
+      "sha256": "7b76c3a6eae9318668588a9fc9637edceaafc5712a1e1b37a9502994a14921b6",
+      "git_blob": "61ca477ed29935d06f6f28826bd8371d3f2fc7ba"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-Larch_arabinogalactan.yaml",
+      "sha256": "3b206b0213ff71a37456322ba34013e91e6edd20f04634d38cf93b5cc0d6a711",
+      "git_blob": "0463fa913e764cf9f0bb32a09f9a259a22a9d2fb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-Ferric_ammonium_EDTA.yaml",
+      "sha256": "d8fb33b50034844336e0188d83201e8303514c40a160b47b683e994cdb520ac5",
+      "git_blob": "a79d8f7f8272b5b51c53f3c780211386a0aaa6e0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/b2-proposal-ferric_ammonium_edta_4mgml_dsmz1132.yaml",
+      "sha256": "42db9c2636c4111502cd79d457f440e11f707c3cc0df2b923e7c88ae72221650",
+      "git_blob": "033acdbbfba90b4dbe817454d252eac10ff69003"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-cherry-pulp.yaml",
+      "sha256": "fe9872ee1ef077f2d678178e795235f30226adf1b49d6b8946e4833073c608e3",
+      "git_blob": "7251e4db9e1503c3c4ff8a53b4085c9d7c1dfd0b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-lipoprotein-concentrate.yaml",
+      "sha256": "a7fe6d42cfe4985d0a88dd44ca0d3ca97d6011c3d7ab53dc31fbec8a991cb0be",
+      "git_blob": "3a42d9381387a5481a99343cd3b99d67f4e24094"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-desiccated-ox-bile.yaml",
+      "sha256": "26598b46bfb01416c186dfa53b87b868832f184c0642980d206c13df85ec83dd",
+      "git_blob": "bfaf675da0236ba770de4e83b7518cc2f40a9627"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-poly-hexamethylene-carbonate.yaml",
+      "sha256": "9361e8e5f3560a701556929ae62c87241ef136a96cc44e93d118f96c6d12bf2e",
+      "git_blob": "eb1698e6398c756760c524b669d285876e25aedb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-mucin-type-iii-material.yaml",
+      "sha256": "3e7cc58d78cc50e06f5070238a797e03f73f67f2e035f91aa597efa687b72db3",
+      "git_blob": "dba79b10f20ab01fbf15bcd5e377bf329a0d928d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-nickel-ammonium-stock.yaml",
+      "sha256": "8c06230841e2a3f0ccb2eaae596939985ac469f803aec933ff29d2e4615c5d75",
+      "git_blob": "cc913b1bfb605ab5c3c56b8d32aa4ce7ec586110"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-copper-sulfate-stock.yaml",
+      "sha256": "ac3662145bba618b69da443372d8fd26c48290554c3341f9cb4010de9e45e9e9",
+      "git_blob": "f590ab992bc1b140826e713e4f0653c7fdcc339e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-emjh-enrichment.yaml",
+      "sha256": "2b53edf0d3ad97f54c32e3499838d68bf1182bd2714eb00280464f67bb373664",
+      "git_blob": "b4ec6d89585cd708ab0f276b891871ec847029a9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-silicate-related-aliases.yaml",
+      "sha256": "0b163e0156119de34e9f42f3952d4a4633dada91efe839c54c23551f12f6ba88",
+      "git_blob": "21e54968ae76ff26bfe99aa01e51014d109607b2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-magnesium-nitrate-raw-formula.yaml",
+      "sha256": "630de821f10b97f92d60eecffb6381a7a693d5fdb30c58f31ecfc54bc2d8a90c",
+      "git_blob": "63493e287e9798ac8587560b8d4376604c138589"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-pyruvate-stock-alias.yaml",
+      "sha256": "ac45af07da16facf2d7b4dc257cfb9a334b04eff60bda184be2d2f6974375c18",
+      "git_blob": "66850d01ea95567d3393f0db143c0802fc759180"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-vanadyl-stock-and-bare-aliases.yaml",
+      "sha256": "cc069f560fa1fc987986c09185a4f93a47aade42970a19fdaae0db406b53a28e",
+      "git_blob": "84a9d91af47da97d48018944158502a038865fcb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-netropsin-congocidin-alias.yaml",
+      "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e",
+      "git_blob": "e74b6c62c6348277202a87219d8868fcd6690be7"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-magnesium-sulfate-hexahydrate-cas.yaml",
+      "sha256": "788e08e365d7cea5b4f0d12d320cc87d2eda1f856bd8dbaa2b0abbeb1e20f34c",
+      "git_blob": "60b5588770584b819d87d945aa01e051e1c85e47"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/w02-v2-ferric-variable-composed.yaml",
+      "sha256": "8e568b467ae05151f6eb03fc587374934a4f6cd01bb4310a423cea03a5edb44a",
+      "git_blob": "cdf8c77f456d759759c58315c98d50dea53a3eeb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/w02-v2-mohr-hexahydrate-composed.yaml",
+      "sha256": "a1db3acf2cbc05b3357f6914f12229309ee216e8f92d53e1e09a2235aa403627",
+      "git_blob": "49236fce08d0ac5e5abcb4baec8928fc08f27119"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Nh42ni_So42.yaml",
+      "sha256": "ccf6bac1dd242b5b7370d2f75cf6fc21b2ccc975f4ed9c25ed3dbc927ca9e142",
+      "git_blob": "024148df3b63943c1208cbcda3bdedd8f7b6259a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Coso4.yaml",
+      "sha256": "870a1af14196538a3429ef2b97c6a61de8a523101fd0c3da196db1fe2f7e149f",
+      "git_blob": "21acd4ac5051698d17e1966fdca5d113478d9e71"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Cobalt_chloride_hexahydrate.yaml",
+      "sha256": "9e9324a40fef804aefdc23c990e4e41a19b58c55c117d2c40ac10266f5c52800",
+      "git_blob": "d5a2e833610ee02299480f5b24f74d68bf191400"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Mncl2_X_4_H2o.yaml",
+      "sha256": "add30599c1786ab0a8513c59718a3dc7e6de4c9529512b9919df77f9b691c8fa",
+      "git_blob": "bc9fdeab34246bb25fd72fc03aacb9a19fc7a01d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Feso4_X_H2o.yaml",
+      "sha256": "b1c772ec996fbb8cf4a2269a7b6ac8421841838d2e4141923c8327b3330a0792",
+      "git_blob": "a7820b3e1684c156994017e0d74088656aad3949"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Coso4_X_7_H2o.yaml",
+      "sha256": "1cd4451323ecf2b5d2317dbdc640383571e9987483475206bc555452dcba6750",
+      "git_blob": "0b88b4e5eb11632600114c766d9e6018c11c2a07"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/Voso4_X_N_H2o.yaml",
+      "sha256": "6b0686756d9e0937822f0289e319ed272200ed741d8836a419ede86e0376cce1",
+      "git_blob": "6d43a764614853aec44f850c9f407910eb8a9917"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/after-v1/L-Malic_Acid_Disodium_Salt_Monohydrate.yaml",
+      "sha256": "339216321776646a451defca9496e5906e8d96b116d6b39fdf39c8b670e9ab14",
+      "git_blob": "cecb327aac7c5611dc8c6b8fdde9a24e33a99e8a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/p4-proposal-common-ferrous-ammonium-heptahydrate-stock.yaml",
+      "sha256": "5c307387634b9a21332de415d1cf08b733b7278ffc30008b510b6a59bc7c55e0",
+      "git_blob": "7b0f8394256854ee52e95e8de360aebca545ea59"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/p4-proposal-nominal20percent-sodium-malate.yaml",
+      "sha256": "1450dc6baa7331e5f38481660e4c823523c7c11fe3d0aa0b2279407642cefa58",
+      "git_blob": "ecafa6a8caf73911d0ed5c3c6a46115218d6711f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/p4-proposal-nbrc869-dithionite-preparation.yaml",
+      "sha256": "376cd384cc6d55d3928a63017f96aa1c1773950f74c026f93513270eab639b5c",
+      "git_blob": "7c4e54d18e6cf82e631cd9616a095313d5bb77cf"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/p4-proposal-cysteine-anoxic-strength-unspecified.yaml",
+      "sha256": "fe12e1e341da0f437fc733bb495ac3f37f838b248114dd2b3259fd8103d81a77",
+      "git_blob": "0e376e7a1ff5d4369fe4bac0f1a179ac699faa04"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/after/p4-proposal-paba-point3ug-per-ul.yaml",
+      "sha256": "d12c490162bc579c12d5788faca565459520526973ffeb76f550ebf38119bd61",
+      "git_blob": "a5dc19679fd7b8646be5a000ddf04d90bcb75064"
+    }
+  ],
+  "case_count": 188,
+  "occurrence_count": 322,
+  "proposal_count": 117,
+  "target_count": 7,
+  "target_case_index": 58,
+  "target_case_id": "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0",
+  "target_case_input_sha256": "cedb12279d806e39d2f8ceaf2f5d16b0ecab4d5b60df16d371cd8a5b9a093109",
+  "target_whole_case_occurrences": 24,
+  "targets": [
+    {
+      "proposal_id": "a2-proposal-jcm480-preaddition-basal-preparation",
+      "owner_path": "data/ingredients/mapped/jcm480_preaddition_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm480_preaddition_basal_preparation.yaml",
+        "sha256": "35db9be9de92588c8c6b5686bc0dda6638a06213e404195d5cbfc4001d36fa4d"
+      },
+      "history_length": 2,
+      "history_canonical_sha256": "e2e95d42440f9bba9319b33cc9900934fa9eba5d683c5cb00b22dddf6648520d",
+      "occurrence_ids": [
+        "CM_OCC:a69a92d5e2630f0d7fc827a8d415a1656313ebf6dc55ef53ffbafd9c8cbdcdf9"
+      ]
+    },
+    {
+      "proposal_id": "a2-proposal-jcm438-preaddition-basal-preparation",
+      "owner_path": "data/ingredients/mapped/jcm438_preaddition_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm438_preaddition_basal_preparation.yaml",
+        "sha256": "420eef750813f96bc3d60cb0ca48a6d64621cf9cbff80ce244f24412e75ad3cc"
+      },
+      "history_length": 2,
+      "history_canonical_sha256": "166ed279c96487fa6ccb832bd4b70c18104d02fc49ea73d6b19fa30f57655a55",
+      "occurrence_ids": [
+        "CM_OCC:5cbf78f16358b70d64a98ccafb41d56050692bf1aa99710519f28c6cb0db5d56"
+      ]
+    },
+    {
+      "proposal_id": "a2-proposal-togo-m491-preaddition-basal-preparation",
+      "owner_path": "data/ingredients/mapped/togo_m491_preaddition_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v4/togo_m491_preaddition_basal_preparation.yaml",
+        "sha256": "19dbafdbb482d84410c7f468b40a072c1fd4d4cc796b7d23e78b88ec9babe457"
+      },
+      "history_length": 3,
+      "history_canonical_sha256": "b5f0f8ca2fadf710ed46772bd0fe3926c107053b8112e4be3e7a6e96a34040fd",
+      "occurrence_ids": [
+        "CM_OCC:2474b8b733ce2962daced402668cb63eaa22d37ac2e60171052dc308ab157352"
+      ]
+    },
+    {
+      "proposal_id": "a2-proposal-jcm537-preaddition-basal-preparation",
+      "owner_path": "data/ingredients/mapped/jcm537_preaddition_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm537_preaddition_basal_preparation.yaml",
+        "sha256": "e6f95a0685f2edad28fea77b6f902415e6dfec547f39519c81e564d1fc70c147"
+      },
+      "history_length": 2,
+      "history_canonical_sha256": "8b03ccf3388ea63b744d24ca082c118e2ccd0223ac3a869b5e4db1b61bf03860",
+      "occurrence_ids": [
+        "CM_OCC:c5bb6e81aa4d3e27fc99b8e2077d97e4c09d4e2ca5ce389131931ac0d80c39cd"
+      ]
+    },
+    {
+      "proposal_id": "a2-proposal-jcm573-preaddition-basal-preparation",
+      "owner_path": "data/ingredients/mapped/jcm573_preaddition_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm573_preaddition_basal_preparation.yaml",
+        "sha256": "c645fba326d23f43a5621f29b6562726595044960a9a210e29ed0fe2777ae97b"
+      },
+      "history_length": 2,
+      "history_canonical_sha256": "11cc8a597dc8bd05d0f06db1b826eb71086cff0e1395bd0f704476eb3e799e9a",
+      "occurrence_ids": [
+        "CM_OCC:9d8cb94491cf73825466b17fe80a33e2de8ca3d0403c9fd382543a1c1543bebe"
+      ]
+    },
+    {
+      "proposal_id": "a2-proposal-jcm706-preaddition-basal-preparation",
+      "owner_path": "data/ingredients/mapped/jcm706_preaddition_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm706_preaddition_basal_preparation.yaml",
+        "sha256": "628b95a7b06eb597817c02bad1f94b9c666ddec00219692be27ae092215da3b3"
+      },
+      "history_length": 2,
+      "history_canonical_sha256": "7cb58d97d902f688567fe8d6aff548059352b69b90803e1e052e9955f7b7de76",
+      "occurrence_ids": [
+        "CM_OCC:74655ed5510d71e410407554500ead760c6f5b65d9a2e93d2d395b7693602f39"
+      ]
+    },
+    {
+      "proposal_id": "a2-proposal-jcm525-mineral-yeast-basal-preparation",
+      "owner_path": "data/ingredients/mapped/jcm525_mineral_yeast_basal_preparation.yaml",
+      "before_sha256": null,
+      "payload": {
+        "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after-v3/jcm525_mineral_yeast_basal_preparation.yaml",
+        "sha256": "58d80ce8654f651428175d8eb5526187ab74e5d8945dc5696c866be9d9829d1a"
+      },
+      "history_length": 2,
+      "history_canonical_sha256": "f5ba3464be6f95889e5fb4ec0aeecde3bc94f78c8de88907cee0d7ef56b28cb8",
+      "occurrence_ids": [
+        "CM_OCC:9913ddf203fc31141d521835d7705d7f1da3b2f0d2d4f618d7c09a5524d5648d"
+      ]
+    }
+  ],
+  "untouched_boundary": {
+    "proposal_id": "a2-proposal-dsmz40-cde-mixed-preparation",
+    "case_ids": [
+      "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0"
+    ],
+    "description": "DSMZ40 inherits DSMZ29. In29, C uses50mLwater, D uses450mLwater plus0.5mLresazurin solution, and E uses25mLwater plus1mLtrace solution and solutes; the prepared C/D/E solutions are combined. TOGO M2477 section volumes50/450/25mL are provider group-volume claims, not measured final aliquots of those stocks. No final-volume or concentration calculation is asserted.",
+    "owner_path": "data/ingredients/mapped/dsmz40_cde_mixed_preparation.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "final-corrections-v1/preparations/after/a2-proposal-dsmz40-cde-mixed-preparation.yaml",
+      "sha256": "62abd4790d274fa4806b0236d1f881c87f60bc9b0d325bca61ba28b1068d3d44"
+    },
+    "before_sha256": null,
+    "evidence_ids": [
+      "a-case-58-input",
+      "a-case-58-occ-00",
+      "a-case-58-occ-01",
+      "a-case-58-occ-02",
+      "a-case-58-occ-03",
+      "a-case-58-occ-04",
+      "a-case-58-occ-05",
+      "a-case-58-occ-06",
+      "a-case-58-occ-07",
+      "a-case-58-occ-08",
+      "a-case-58-occ-09",
+      "a-case-58-occ-10",
+      "a-case-58-occ-11",
+      "a-case-58-occ-12",
+      "a-case-58-occ-13",
+      "a-case-58-occ-14",
+      "a-case-58-occ-15",
+      "a-case-58-occ-16",
+      "a-case-58-occ-17",
+      "a-case-58-occ-18",
+      "a-case-58-occ-19",
+      "a-case-58-occ-20",
+      "a-case-58-occ-21",
+      "a-case-58-occ-22",
+      "a-case-58-occ-23",
+      "a2-unsuccessful-original-jcm-06c82845cf85343d",
+      "a2-unsuccessful-original-jcm-35d62fba3be2fc9f",
+      "a-primary-primary-3f852a56428bf9b0",
+      "a-primary-primary-4317351a57e041e0",
+      "a-primary-primary-4801f18449de54e9",
+      "a-primary-primary-5ee38548831fad9b",
+      "a-primary-primary-627ff3dd192d02a6",
+      "a2-unsuccessful-original-jcm-6dbfe7abf51bc0ab",
+      "a-primary-primary-76189601fcf42e69",
+      "a-primary-primary-84122ecbb9e908f5",
+      "a-primary-primary-85d6397dff79ee1e",
+      "a-primary-primary-a961d8836825c87a",
+      "a-primary-primary-b2fd6b00c870f479",
+      "a-primary-primary-b542d9724d51d06b",
+      "a-primary-primary-c81b11b75b019e40",
+      "a-primary-primary-cafff472840122be",
+      "a-primary-primary-d5a7aaaa78aba9d2",
+      "a-primary-primary-e2aba2dd2e8b673a",
+      "a-primary-primary-e8f4562866a418fc",
+      "a-primary-primary-f0bdc89b615d7574",
+      "a-primary-primary-f509f6135173d9c1",
+      "a-primary-primary-f5ae8bbd6edc4eab",
+      "a-primary-primary-faf9798d3df2b31a",
+      "a-primary-togo-M158",
+      "a-primary-togo-M2477",
+      "a-primary-togo-M2491",
+      "a-primary-togo-M377",
+      "a-primary-togo-M412",
+      "a-primary-togo-M438",
+      "a-primary-togo-M463",
+      "a-primary-togo-M464",
+      "a-primary-togo-M481",
+      "a-primary-togo-M491",
+      "a-primary-togo-M522",
+      "a-primary-togo-M526",
+      "a-primary-togo-M539",
+      "a-primary-togo-M550",
+      "a-primary-togo-M551",
+      "a-primary-togo-M553",
+      "a-primary-togo-M569",
+      "a-primary-togo-M577",
+      "a-primary-togo-M683",
+      "a-primary-togo-M702",
+      "a-primary-togo-M728",
+      "a-primary-togo-M772",
+      "a-primary-togo-M899",
+      "a-primary-togo-M903",
+      "a2-case-58-component-owner-validation",
+      "a2-case-58-owner-and-occurrence-review",
+      "a2-case-58-source-preparation-scope",
+      "a2-ols-search-17",
+      "p4-a-primary-primary-f5ae8bbd6edc4eab",
+      "p4-b-source-d8d1f6cf56b42751",
+      "p4-a-primary-togo-M2477",
+      "p4-preparation-owner-lookup",
+      "p4-source-occurrence-bindings",
+      "p4-a-primary-togo-M683",
+      "p4-a-primary-togo-M2491",
+      "p4-a-primary-primary-e2aba2dd2e8b673a",
+      "p4-a-primary-togo-M158"
+    ],
+    "publication_authorization": "None. Isolated review proposal only; every inherited source, ingredient and downstream publication hold remains.",
+    "mapping_consequence": "Preserve exact preparation identity and has-part relations. Review native YAML/SSSOM synchronization at integration; no downstream rebuild is authorized.",
+    "inherited_owner_findings": [],
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "final_correction": {
+      "author": "/root/research_c",
+      "issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1241"
+      ],
+      "finding_ids": [
+        "W02-F-QUANTITY"
+      ],
+      "supersedes_proposal_ids": [
+        "a2-proposal-dsmz40-cde-mixed-preparation"
+      ],
+      "predecessor_payloads": [
+        {
+          "proposal_id": "a2-proposal-dsmz40-cde-mixed-preparation",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/a/after/dsmz40_cde_mixed_preparation.yaml",
+            "sha256": "1d4bb6decf8b68edebbdc1dabf670804624c20d01b0e59adb5bd0526d25cd97e"
+          },
+          "proposal_canonical_sha256": "77d356682e1dbed823a12b0ae8e313b51c95cbf965cf7104a1f14584350c094c"
+        }
+      ],
+      "old_head": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+      "no_maintained_write": true,
+      "no_hold_clearance": true
+    },
+    "publication_holds": [
+      "Original source, exact form, owner, role, sibling/cross-shard and downstream release holds remain; fresh independent final-byte review required."
+    ],
+    "applicable_occurrence_ids": [
+      "CM_OCC:0234855ebf26bd130de15443de99c21e991f5fe6b850d446729142802b0dc50f"
+    ],
+    "superseded_proposal_ids": [
+      "a2-proposal-dsmz40-cde-mixed-preparation"
+    ]
+  },
+  "runtime_cache_preinventory": {
+    "path": ".temp/w02-seven-preparation-types-v1/technical/runtime-cache-baseline-v1.json",
+    "sha256": "002fc99ee6ea625dc9cee59c6f49efcfb186853e6190288a64c824eb66fe851c"
+  },
+  "python_controls": "Every Python command uses PYTHONDONTWRITEBYTECODE=1 plus -B; tests will run in private cwd with addopts cleared, no cov/cache.",
+  "status": "awaiting_root_helpers"
+}

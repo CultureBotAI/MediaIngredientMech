@@ -1,0 +1,7 @@
+{
+  "recorded_at": "2026-11-08T09:21:03.276747+00:00",
+  "attempt": "First read-only prior-object preservation inventory traversal",
+  "result": "IsADirectoryError on historical symlink-to-directory test artifact; no receipt or mutations produced.",
+  "cause": "Reader initially assumed every baseline entry had regular-file SHA; baseline explicitly contains49 symlink-target entries.",
+  "resolution": "Successor audit distinguishes symlink target-text checks from20057 regular-file hashes, retaining the original20106-object inventory unchanged."
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="23" time="0.629" timestamp="2026-11-08T01:22:05.477769-08:00" hostname="marcins-MacBook-Pro-3.local"><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_exact_complete_proof_positive" time="0.005" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[wrong_reviewer]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[self_author]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[false_independence]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[release_approval]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[omitted_case]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[duplicate_case]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[omitted_proposal]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[duplicate_proposal]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[eighth_target]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[stale_case]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[stale_payload]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[wrong_status]" time="0.003" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_incomplete_stale_or_overbroad_review_refused[old_proof]" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_whitespace_only_raw_context_drift_refused[0]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_whitespace_only_raw_context_drift_refused[1]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_whitespace_only_raw_context_drift_refused[2]" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_unreviewed_context_change_refused" time="0.004" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_case58_omitted_occurrence_refused" time="0.004" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.test_review_binding" name="test_missing_raw_input_pin_refused" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.technical.test_binding_controls_v1" name="test_duplicate_full_context_pin_refused" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.technical.test_binding_controls_v1" name="test_actual_proof_input_drift_refused_without_published_files[before_main]" time="0.092" /><testcase classname="reports.all_unmatched_20261107.worker-02.seven-preparation-types-v1.technical.test_binding_controls_v1" name="test_actual_proof_input_drift_refused_without_published_files[during_publication]" time="0.100"><failure message="AssertionError: Regex pattern did not match.&#10;  Expected regex: 'Frozen input bytes changed'&#10;  Actual message: &quot;'/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-seven-preparation-types-v1/technical/runtime-binding-v1/basetemp/test_actual_proof_input_drift_1/packet/independent/scientific-review-v1.json' is not in the subpath of '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02'&quot;">stage = 'during_publication'
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-seven-preparation-types-v1/technical/runtime-binding-v1/basetemp/test_actual_proof_input_drift_1')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10b491940&gt;
+
+    @pytest.mark.parametrize('stage',['before_main','during_publication'])
+    def test_actual_proof_input_drift_refused_without_published_files(stage,tmp_path,monkeypatch):
+        original_s=m.S;original_r=m.R;root=tmp_path/'packet';selection=root/'review-input-v1';selection.mkdir(parents=True);(root/'independent').mkdir()
+        for name in ['decisions','proposals','evidence']:(selection/(name+'.json')).write_bytes((original_s/(name+'.json')).read_bytes())
+        proof=json.loads((original_r/'independent/scientific-review-v1.json').read_bytes())
+        for row in proof['input_hash_manifest']:
+            for name in ['decisions','proposals','evidence']:
+                if row['path']==str((original_s/(name+'.json')).absolute()):row['path']=str((selection/(name+'.json')).absolute())
+        aux=tmp_path/'auxiliary-source';aux.write_bytes(b'captured')
+        proof['input_hash_manifest'].append({'path':str(aux),'sha256':hashlib.sha256(aux.read_bytes()).hexdigest()})
+        (root/'independent/scientific-review-v1.json').write_text(json.dumps(proof))
+        original_output=m.b.require_output;native_publish=m.b.publish_new_files
+        monkeypatch.setattr(m,'R',root);monkeypatch.setattr(m,'S',selection)
+        monkeypatch.setattr(m.b,'require_output',lambda p:original_output(p,root=tmp_path))
+        if stage=='before_main':aux.write_bytes(b'changed')
+        else:
+            def publication(outputs,verify):
+                aux.write_bytes(b'changed')
+                return native_publish(outputs,verify)
+            monkeypatch.setattr(m.b,'publish_new_files',publication)
+&gt;       with pytest.raises(ValueError,match='Frozen input bytes changed'):m.main()
+                                                                          ^^^^^^^^
+
+../../../../reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/test_binding_controls_v1.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/bind_review.py:53: in main
+    es['evidence'].append({'evidence_id':eid,'kind':'independent_review','capture':{'root':'artifact','path':str(proof_path.relative_to(b.A)),'sha256':b.sha(proof_path)},'url':None,'locator':'One complete case58 retaining all24 occurrences; seven complete changed preparation payloads; author-independent bounded category review','supports_or_contradicts':'Supports seven exact OTHER category corrections and truthful history only. Other source dispositions and110payloads inherit predecessor scopes by exact hashes. No component, identity, owner, role or release hold cleared.'})
+                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/w...v1/technical/runtime-binding-v1/basetemp/test_actual_proof_input_drift_1/packet/independent/scientific-review-v1.json')
+other = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02')
+walk_up = False, _deprecated = (), step = 0
+
+    def relative_to(self, other, /, *_deprecated, walk_up=False):
+        """Return the relative path to another path identified by the passed
+        arguments.  If the operation is not possible (because this is not
+        related to the other path), raise ValueError.
+    
+        The *walk_up* parameter controls whether `..` may be used to resolve
+        the path.
+        """
+        if _deprecated:
+            msg = ("support for supplying more than one positional argument "
+                   "to pathlib.PurePath.relative_to() is deprecated and "
+                   "scheduled for removal in Python 3.14")
+            warnings.warn(msg, DeprecationWarning, stacklevel=2)
+            other = self.with_segments(other, *_deprecated)
+        elif not isinstance(other, PurePath):
+            other = self.with_segments(other)
+        for step, path in enumerate(chain([other], other.parents)):
+            if path == self or path in self.parents:
+                break
+            elif not walk_up:
+&gt;               raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+E               ValueError: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-seven-preparation-types-v1/technical/runtime-binding-v1/basetemp/test_actual_proof_input_drift_1/packet/independent/scientific-review-v1.json' is not in the subpath of '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:385: ValueError
+
+During handling of the above exception, another exception occurred:
+
+stage = 'during_publication'
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-seven-preparation-types-v1/technical/runtime-binding-v1/basetemp/test_actual_proof_input_drift_1')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10b491940&gt;
+
+    @pytest.mark.parametrize('stage',['before_main','during_publication'])
+    def test_actual_proof_input_drift_refused_without_published_files(stage,tmp_path,monkeypatch):
+        original_s=m.S;original_r=m.R;root=tmp_path/'packet';selection=root/'review-input-v1';selection.mkdir(parents=True);(root/'independent').mkdir()
+        for name in ['decisions','proposals','evidence']:(selection/(name+'.json')).write_bytes((original_s/(name+'.json')).read_bytes())
+        proof=json.loads((original_r/'independent/scientific-review-v1.json').read_bytes())
+        for row in proof['input_hash_manifest']:
+            for name in ['decisions','proposals','evidence']:
+                if row['path']==str((original_s/(name+'.json')).absolute()):row['path']=str((selection/(name+'.json')).absolute())
+        aux=tmp_path/'auxiliary-source';aux.write_bytes(b'captured')
+        proof['input_hash_manifest'].append({'path':str(aux),'sha256':hashlib.sha256(aux.read_bytes()).hexdigest()})
+        (root/'independent/scientific-review-v1.json').write_text(json.dumps(proof))
+        original_output=m.b.require_output;native_publish=m.b.publish_new_files
+        monkeypatch.setattr(m,'R',root);monkeypatch.setattr(m,'S',selection)
+        monkeypatch.setattr(m.b,'require_output',lambda p:original_output(p,root=tmp_path))
+        if stage=='before_main':aux.write_bytes(b'changed')
+        else:
+            def publication(outputs,verify):
+                aux.write_bytes(b'changed')
+                return native_publish(outputs,verify)
+            monkeypatch.setattr(m.b,'publish_new_files',publication)
+&gt;       with pytest.raises(ValueError,match='Frozen input bytes changed'):m.main()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Frozen input bytes changed'
+E         Actual message: "'/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-seven-preparation-types-v1/technical/runtime-binding-v1/basetemp/test_actual_proof_input_drift_1/packet/independent/scientific-review-v1.json' is not in the subpath of '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02'"
+
+../../../../reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/test_binding_controls_v1.py:33: AssertionError</failure></testcase></testsuite></testsuites>

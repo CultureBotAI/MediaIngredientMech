@@ -1,0 +1,43 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree
+configfile: pyproject.toml
+collected 45 items
+
+../../../reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/test_preservation.py . [  2%]
+................F...........................                             [100%]
+
+=================================== FAILURES ===================================
+______ test_scientific_and_provenance_negative_paths[component_reference] ______
+
+kind = 'component_reference'
+
+    @pytest.mark.parametrize('kind',['quantity','component_reference','completeness','history_prefix','llm_false','human_author','extra_history','missing_history','same_type','wrong_type','future_scope'])
+    def test_scientific_and_provenance_negative_paths(kind):
+     pid=m.TARGET_IDS[0];new=m.correct_payload(OLD[pid],ROWS[pid])
+     if kind=='quantity':new['components'][0]['concentration_value']='999'
+     elif kind=='component_reference':new['components'][0]['component_id']='CHEBI:15377'
+     elif kind=='completeness':new['component_assertion']['completeness']='UNKNOWN' if new['component_assertion']['completeness']!='UNKNOWN' else 'COMPLETE'
+     elif kind=='history_prefix':new['curation_history'][0]['changes']='rewrite'
+     elif kind=='llm_false':new['curation_history'][-1]['llm_assisted']=False
+     elif kind=='human_author':new['curation_history'][-1]['curator']='human reviewer'
+     elif kind=='extra_history':new['curation_history'].append(deepcopy(new['curation_history'][-1]))
+     elif kind=='missing_history':new['curation_history'].pop()
+     elif kind=='same_type':new['solution_type']='MINERAL_STOCK'
+     elif kind=='wrong_type':new['solution_type']='BUFFER_SOLUTION'
+     else:new['curation_history'][-1]['changes']='All source owners and exports approved'
+>    with pytest.raises(ValueError):m.validate_payload_delta(OLD[pid],new,pid)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+E    Failed: DID NOT RAISE <class 'ValueError'>
+
+../../../reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/test_preservation.py:33: Failed
+=============================== warnings summary ===============================
+../../all-unmatched-worker-02/venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/all-unmatched-worker-02/venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-seven-preparation-types-v1/tests/results-v1.xml -
+=========================== short test summary info ============================
+FAILED ../../../reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/test_preservation.py::test_scientific_and_provenance_negative_paths[component_reference]
+================== 1 failed, 44 passed, 12 warnings in 0.59s ===================

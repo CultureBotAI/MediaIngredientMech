@@ -1,0 +1,9 @@
+The seven-target extension of W01-W02-PREP-TYPE-001 is confirmed at the exact current published W02 head. Recommend adding the enclosed bounded comment to existing issue1241, then dispatching the author correction without an additional scientific-permission gate. OTHER is supported by the actual prepared-material boundary in each cited source. No worker or corpus writes were performed.
+
+This is coordinator triage of the seven existing independently reported findings. It is not another full source review. The 117 selected proposals were read only to locate the exact seven and the separately documented DSMZ40 boundary; the other110 were not re-reviewed. Both current and OTHER-only copies passed the actual native schema function in memory, with no candidate publication. Schema acceptance does not establish scientific correctness.
+
+The full case58 frozen hash and24 occurrence IDs are preserved. Each target binds one exact source occurrence and full recipe; named preparations are not equated merely because they share the Sol.1 label. Each existing two-event history is captured by canonical JSON SHA256 for append-only successor checks. Genuine new-owner before=null values remain; no maintained application is implied.
+
+No contrary source evidence for this bounded category correction was found. Existing provider/original-source differences for M491 are explicitly retained. DSMZ40's separate mixed concentrate remains a boundary clarification, not an eighth confirmed defect. The source PDFs and full text are captured with their parent29 formulation.
+
+The first optional PDF text helper could not import PyMuPDF and stopped before writes. Its script/log are preserved. The successor used already-installed pdftotext/pdftoppm; no dependency installation or shared environment mutation occurred. This affects only evidence rendering, not source or category conclusions.

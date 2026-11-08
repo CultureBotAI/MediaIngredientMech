@@ -1,0 +1,35 @@
+{
+  "finding_id": "W02-SEVEN-TECH-ACTUAL-AUTHOR-FIELD-002",
+  "reviewer": "/root/research_b",
+  "reported_at": "2026-11-08T09:23:26.739788+00:00",
+  "status": "needs_bounded_helper_revision",
+  "scope": "Private binder provenance guard only; no actual selected/scientific data error",
+  "helper": {
+    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/bind_review.py",
+    "sha256": "a2c5899a29b8614c1093bc42ee1d46184aa2bb2f07082d32043a8023e8a7086b"
+  },
+  "actual_proof": {
+    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/independent/scientific-review-v1.json",
+    "sha256": "b0161dba767d92b7feec56aa6e2774cf4d11e4eb50fba82e23eb9deafd2da569"
+  },
+  "finding": "require_reviewer checks optional original_authors, but the actual proof expresses current author in current_correction_author. Contradictory self-authorship in that actual field can evade the stated author-independence guard when the boolean conflict field remains false. The actual sealed proof names root correctly and all source/candidate bytes are unchanged.",
+  "reproduction": [
+    {
+      "proof_field": "case_reviews[0].current_correction_author",
+      "actual_value": "worker02 /root",
+      "in_memory_mutation": "/root/final_reviewer",
+      "declared_authorship_conflict": false,
+      "validator_accepts": true
+    },
+    {
+      "proof_field": "proposal_reviews[0].current_correction_author",
+      "actual_value": "worker02 /root",
+      "in_memory_mutation": "/root/final_reviewer",
+      "declared_authorship_conflict": false,
+      "validator_accepts": true
+    }
+  ],
+  "publication_attempted": false,
+  "inputs_or_candidates_edited": false,
+  "proposed_fix": "Validate actual current_correction_author against the known root correction author and independently reviewed append-history provenance; reject reviewer equality, missing/unexpected author, and contradictory declarations. Retain v1; add case and proposal negative tests using the real field."
+}

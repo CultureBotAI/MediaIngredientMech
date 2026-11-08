@@ -1,0 +1,9 @@
+The reported author-field bypass is real and the new draft's v2 repair passes an independent counterexample replay. The actual scientific proof is correctly attributed; the binder repair changes no selected core or payload bytes.
+
+The precise `current_correction_author` mismatch occurs in the unpublished seven-preparation packet, absent from observed local and remote head `f0d2be8b220d9e0c6ae415704d291ed40d3c292e`. Its older published filed-followups binder instead uses the field actually supplied by its fresh approvals, but has a related missing/empty-author fail-open boundary. No actual self-review was established in either supplied proof. The preserved sulfuric-acid context row does not claim fresh whole-payload science approval.
+
+The private worker repaired the draft before coordinator issue filing. Preserve that chronology, file one bounded helper-validation issue if root accepts the recommendation, and select the repaired v2 before publication. Preserve historical code/reviews unchanged; any future reuse of the older permissive helper requires a successor with explicit author validation.
+
+`ASSESSMENT.json` binds exact observed source, actual Git objects, original finding, copied technical proof, independent controls and limitations. `reproduction.json` records real binder `validate()` calls on complete frozen input documents with only copied proof-author fields varied. `actual-author-history-readback.json` verifies the seven real last curation events. No `main()` or output publisher was called by this reviewer. `live-reads/` preserves request/response hashes for bounded issue deduplication and remote-head observation. `issue-draft.md` is unpublished material for root.
+
+This task does not approve the complete final shard, chemistry, integrated owner application, roles or exports. Later publication or source-head movement needs explicit readback. No worker or maintained file was edited.

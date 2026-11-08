@@ -1,0 +1,19 @@
+--- bind_review.py
++++ bind_review_v2.py
+@@ -8,6 +8,7 @@
+ import build_successor_v2 as b
+ R=b.R;S=R/'review-input-v1'
+ def require_reviewer(row):
++ if row.get('current_correction_author')!='worker02 /root' or row.get('current_correction_author')==row.get('reviewer'):raise ValueError('Wrong actual correction author or self review')
+  if row['reviewer']!='/root/final_reviewer' or row['authorship_conflict'] is not False or row['status']!='approve_bounded_correction' or not row['reasoning'].strip() or row.get('full_owner_or_release_approval') is not False:raise ValueError('Invalid reviewer or approval scope')
+  if any(x.removeprefix('worker02 ').strip()=='/root/final_reviewer' for x in row.get('original_authors',[])):raise ValueError('Author cannot independently approve')
+ def validate_raw_context(contents,proof):
+@@ -33,7 +34,7 @@
+   require_reviewer(row)
+  return cr,pr
+ def main():
+- out=b.require_output(R/'selected-v1');proof_path=R/'independent/scientific-review-v1.json'
++ out=b.require_output(R/'selected-v2');proof_path=R/'independent/scientific-review-v1.json'
+  held=[b.FrozenFile.capture(S/(n+'.json')) for n in ['decisions','proposals','evidence']]+[b.FrozenFile.capture(proof_path)]
+  ds,ps,es,proof=[json.loads(x.content) for x in held]
+  validate_raw_context([x.content for x in held[:3]],proof);validate(ds,ps,proof)

@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-08T09:29:03.727399+00:00",
+  "finding_id": "W02-CASE98-TECH-PIN-ANCHOR",
+  "author": "worker02 /root",
+  "scope": "Private reusable companion caller guard; actual input/output data correct",
+  "finding": "Raw precursor pins are held in a FrozenFile local receipt but its own bytes were not independently anchored by caller; a changed initial pin receipt would not itself be refused.",
+  "actual_pin_sha256": "7b1b888aec076585bc52fa344fcdb22962aa71f223d84c226c9192fd51a2c3da",
+  "actual_values_verified_against_sealed_selected_v2": true,
+  "actual_data_error": false,
+  "fix_plan": "Preserve original helper and produced review-input-v2; active v2 pins the exact receipt SHA before any output. Test actual fixed input and changed-pin refusal without rewriting the already correct reviewed input."
+}

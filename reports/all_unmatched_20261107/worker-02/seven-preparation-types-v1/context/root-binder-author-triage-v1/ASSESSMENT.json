@@ -1,0 +1,316 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "observed_at": "2026-11-08T09:29:16.857299+00:00",
+  "status": "CONFIRMED_DRAFT_GUARD_DEFECT_REPAIR_INDEPENDENTLY_REPRODUCED",
+  "original_finding_id": "W02-SEVEN-TECH-ACTUAL-AUTHOR-FIELD-002",
+  "source_scope": {
+    "local_and_remote_head": "f0d2be8b220d9e0c6ae415704d291ed40d3c292e",
+    "seven_preparation_paths_in_that_head": 0,
+    "earlier_published_binder_git_bytes_verified": [
+      {
+        "head": "f0d2be8b220d9e0c6ae415704d291ed40d3c292e",
+        "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/bind_review_v2.py",
+        "sha256": "15da8a352e78bdfc5d2ab4c7824fc3e4ff7ff5cd22748c3c1d0f510e5ad93452"
+      },
+      {
+        "head": "f0d2be8b220d9e0c6ae415704d291ed40d3c292e",
+        "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/scientific-review-v2.json",
+        "sha256": "f55c30dd5faedaf5be2d811f8e729a0cb00b04e839da1265d09499e5a1a96161"
+      },
+      {
+        "head": "f0d2be8b220d9e0c6ae415704d291ed40d3c292e",
+        "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/bind_independent_review.py",
+        "sha256": "89f1e0bc49db0e99320cbefacdb7f4119a845556a8ce4c447b0bf7dd8f9ee6ec"
+      }
+    ]
+  },
+  "defect": "Seven-preparation v1 checks optional original_authors, while actual approved proof rows declare current_correction_author. Six copied case/proposal mutations (self, missing, unexpected actual author) pass.",
+  "actual_effect": "The genuine proof names worker02 /root, distinct from /root/final_reviewer. All seven last history events independently match that author and are explicitly LLM-assisted. No actual false independent approval or candidate corruption is evidenced.",
+  "repair": {
+    "v2_sha256": "52e73683905d36f68fc9c559039c8b4f275aa66209eb128711b8906c45a2285b",
+    "exact_code_delta": "Require actual current_correction_author to equal the known worker02 /root author and differ from reviewer; retain all earlier checks; use fresh selected-v2 output.",
+    "independent_controls": [
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "control": "actual positive",
+        "accepted": true,
+        "case_reviews": 1,
+        "proposal_reviews": 7
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "collection": "case_reviews",
+        "control": "self",
+        "accepted": true,
+        "error": null
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "collection": "case_reviews",
+        "control": "missing",
+        "accepted": true,
+        "error": null
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "collection": "case_reviews",
+        "control": "unexpected",
+        "accepted": true,
+        "error": null
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "collection": "proposal_reviews",
+        "control": "self",
+        "accepted": true,
+        "error": null
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "collection": "proposal_reviews",
+        "control": "missing",
+        "accepted": true,
+        "error": null
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "collection": "proposal_reviews",
+        "control": "unexpected",
+        "accepted": true,
+        "error": null
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review.py",
+        "control": "old explicit original_authors self-negative remains",
+        "accepted": false
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "control": "actual positive",
+        "accepted": true,
+        "case_reviews": 1,
+        "proposal_reviews": 7
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "collection": "case_reviews",
+        "control": "self",
+        "accepted": false,
+        "error": "Wrong actual correction author or self review"
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "collection": "case_reviews",
+        "control": "missing",
+        "accepted": false,
+        "error": "Wrong actual correction author or self review"
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "collection": "case_reviews",
+        "control": "unexpected",
+        "accepted": false,
+        "error": "Wrong actual correction author or self review"
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "collection": "proposal_reviews",
+        "control": "self",
+        "accepted": false,
+        "error": "Wrong actual correction author or self review"
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "collection": "proposal_reviews",
+        "control": "missing",
+        "accepted": false,
+        "error": "Wrong actual correction author or self review"
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "collection": "proposal_reviews",
+        "control": "unexpected",
+        "accepted": false,
+        "error": "Wrong actual correction author or self review"
+      },
+      {
+        "packet": "seven-preparation-types-v1",
+        "binder": "bind_review_v2.py",
+        "control": "old explicit original_authors self-negative remains",
+        "accepted": false
+      }
+    ],
+    "old_test_function_ASTs_identical": 6,
+    "new_test_functions": [
+      "test_actual_current_author_field_refused"
+    ],
+    "six_author_negatives_in_actual_29_pass_XML": [
+      "test_actual_current_author_field_refused[/root/final_reviewer-case_reviews]",
+      "test_actual_current_author_field_refused[/root/final_reviewer-proposal_reviews]",
+      "test_actual_current_author_field_refused[human reviewer-case_reviews]",
+      "test_actual_current_author_field_refused[human reviewer-proposal_reviews]",
+      "test_actual_current_author_field_refused[None-case_reviews]",
+      "test_actual_current_author_field_refused[None-proposal_reviews]"
+    ],
+    "selected_core_hashes_identical": {
+      "decisions": "9ee8613a968241478c0956faa3debdda619229aad1b9f00c051040971cade87b",
+      "proposals": "062a71f90bd78a2161853ea8448e69bcc21b656f212f01747c6d4b81e27f7ae9",
+      "evidence": "991e3556dbf7d9f96c8144bc1c5ce98e0ce5cb1b8b94371a427b749c22441201"
+    },
+    "binding_receipt_only_changed_field": [
+      "bound_at"
+    ]
+  },
+  "published_predecessor": {
+    "precise_current_field_mismatch": false,
+    "approved_rows": 5,
+    "correct_author_supplied_on_every_approved_row": true,
+    "explicit_self_author_rejected_for_case_and_proposal": true,
+    "related_gap": "The published filed-followups binder accepts missing or empty original_authors on a newly approved row; independently reproduced. This is related fail-open validation, not evidence the original published proof was self-authored.",
+    "preserved_context_row": {
+      "proposal_id": "b2-proposal-sulfuric_acid_10n_named_sources",
+      "status": "preserved_unchanged_context",
+      "fresh_whole_payload_science_approval": false
+    },
+    "earlier_final_corrections_binder": "Separately checks explicit bound author routing plus row original_authors; no same field-mismatch finding established."
+  },
+  "chronology": {
+    "draft_finding_reported": "2026-11-08T09:23:26.739788+00:00",
+    "worker_v2_recheck_finished": "2026-11-08T09:24:37.490388+00:00",
+    "worker_v2_technical_review": "2026-11-08T09:25:20.711959+00:00",
+    "issue_status": "This private repair preceded coordinator issue filing. No issue-first claim is made; root owns any filing before final publication."
+  },
+  "issue_recommendation": {
+    "action": "One new bounded issue for the actual-author provenance guard; attach preserved v1 and repaired v2 evidence. Do not reopen chemistry findings or rewrite historical reports.",
+    "dedup": {
+      "binder-search": {
+        "total_count": 1,
+        "incomplete_results": false,
+        "issues": [
+          {
+            "number": 1220,
+            "title": "Preserve stock and supplied-form boundaries in Mohr, pyruvate, vanadyl and methanol aliases"
+          }
+        ]
+      },
+      "actual-field-search": {
+        "total_count": 0,
+        "incomplete_results": false,
+        "issues": []
+      },
+      "independence-search": {
+        "total_count": 1,
+        "incomplete_results": false,
+        "issues": [
+          {
+            "number": 1165,
+            "title": "Provide explicit content-bound admission for genuinely new reviewed SSSOM owners"
+          }
+        ]
+      }
+    },
+    "related_but_distinct": [
+      1165,
+      1220,
+      1247
+    ],
+    "search_limit": "Live all-state GitHub keyword searches and direct body/comments of 1247; no exhaustive assertion that no differently-worded issue exists. Local binder searches included ignored files.",
+    "historical_code": "Keep archived historical producers immutable. Explicitly select fixed v2 for the new packet. If an older helper is reused, require nonempty known author provenance in an immutable successor before use."
+  },
+  "limits": [
+    "Bounded technical triage and validate() counterexamples only; no binder main/publication called by this reviewer.",
+    "No new scientific approval, complete final shard acceptance, integrated owner application, release approval or CI claim.",
+    "The precise defect is unpublished at observed f0d2be8b; later worker publication requires explicit re-verification."
+  ],
+  "copied_source_inputs": [
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/bind_review.py",
+      "capture": "snapshot/seven-preparation-types-v1/bind_review.py",
+      "sha256": "a2c5899a29b8614c1093bc42ee1d46184aa2bb2f07082d32043a8023e8a7086b"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/bind_review_v2.py",
+      "capture": "snapshot/seven-preparation-types-v1/bind_review_v2.py",
+      "sha256": "52e73683905d36f68fc9c559039c8b4f275aa66209eb128711b8906c45a2285b"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/test_review_binding.py",
+      "capture": "snapshot/seven-preparation-types-v1/test_review_binding.py",
+      "sha256": "223b502e35293804f40b64e57f386ae7802046f2adcc805b49c256aefbc78392"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/test_review_binding_v2.py",
+      "capture": "snapshot/seven-preparation-types-v1/test_review_binding_v2.py",
+      "sha256": "feaa9ef7d2a205a4d41274cf3933dab122d865daa941046d60cca1b02aae7e24"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/build_successor_v2.py",
+      "capture": "snapshot/seven-preparation-types-v1/build_successor_v2.py",
+      "sha256": "67db40e8877c32819a77dc596920f239b3c7ea659bc75f526babbf2ae3cb6767"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/independent/scientific-review-v1.json",
+      "capture": "snapshot/seven-preparation-types-v1/independent/scientific-review-v1.json",
+      "sha256": "b0161dba767d92b7feec56aa6e2774cf4d11e4eb50fba82e23eb9deafd2da569"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/finding-actual-author-field-v1.json",
+      "capture": "snapshot/seven-preparation-types-v1/technical/finding-actual-author-field-v1.json",
+      "sha256": "d6cbb9a99674ffe77912fc623dd5d270f2c9d263ba19090e49b6fbb255626f25"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/technical-review-final-v2.json",
+      "capture": "snapshot/seven-preparation-types-v1/technical/technical-review-final-v2.json",
+      "sha256": "41cf6522ff00997c15129029eec722b14644228232ce7200d494ac24625b9225"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/binding-preservation-final-v1.json",
+      "capture": "snapshot/seven-preparation-types-v1/technical/binding-preservation-final-v1.json",
+      "sha256": "46a9f46646748d8b753bd6454a8bd5dabb1e7d02a0996fbb3517088fb971bf36"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/binding-controls-final-run-v1.json",
+      "capture": "snapshot/seven-preparation-types-v1/technical/binding-controls-final-run-v1.json",
+      "sha256": "b72df75f48abbdcf385ce6aae5f25d6b217d7a8a1dab407efcdaa9f3238749a7"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/binding-controls-final-v1.log",
+      "capture": "snapshot/seven-preparation-types-v1/technical/binding-controls-final-v1.log",
+      "sha256": "5da37edb4a4793348efd203ce97180e69e6b366ecf92ad2041f1ef59159479cb"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/binding-controls-final-v1.xml",
+      "capture": "snapshot/seven-preparation-types-v1/technical/binding-controls-final-v1.xml",
+      "sha256": "57fff3d94aebe6d0f32df0774d5c23aba3354b923b43011e8ca1da6b064afa72"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v1/review-binding.json",
+      "capture": "snapshot/seven-preparation-types-v1/selected-v1/review-binding.json",
+      "sha256": "96eadcbb5de1d9885076f5f5f253c273c9ff04fde7fce4a8fc94ac20916d3382"
+    },
+    {
+      "source": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v2/review-binding.json",
+      "capture": "snapshot/seven-preparation-types-v1/selected-v2/review-binding.json",
+      "sha256": "0a736e095a9fdbb9b5e1769a1b26033e59fbcebf17d4675990edaf845bf12893"
+    }
+  ],
+  "source_diffs": {
+    "bind_review.py": "6eb6351a383e7cf198b80b983c080fb1e7d8bedbae0545d8eea9e89b041689b2",
+    "test_review_binding.py": "a95ab4406f79241ce66947f1b6c16785097d06e30893e6d81399b7840e719b60"
+  }
+}

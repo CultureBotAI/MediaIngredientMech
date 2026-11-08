@@ -1,0 +1,25 @@
+{
+  "reviewer": "/root/research_b",
+  "recorded_at": "2026-11-08T09:22:53.039907+00:00",
+  "status": "reviewer_fixture_correction",
+  "failed_run": {
+    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/binding-controls-run-v1.json",
+    "sha256": "74e06a98d6a6176fa20b5d4783ae21d0eb7c81b0a0f9a791b8e349d9e94bfce9"
+  },
+  "failed_log": {
+    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/binding-controls-v1.log",
+    "sha256": "6d83512b3a723684d24d1ed226bbd3484b4ac0eb1fdb79a7c55c1a80336e2ced"
+  },
+  "original_test": {
+    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/test_binding_controls_v1.py",
+    "sha256": "8abb0866bc32b910ab35a52eee51e65cc52a69b91770e158574ff5af66ac5353"
+  },
+  "cause": "The during_publication fixture reached a legitimate report-root relative-path construction before the intended injected failure. Fixture proof was outside artifact root A, causing ValueError before publication; expected drift-error matcher correctly refused to count this as a passing drift test.",
+  "fix": "New immutable testversion puts private copied context beneath assigned R/technical/runtime-binding-fixtures-v2, retaining actual artifact-root relative semantics. Root helper/selection/proof untouched.",
+  "successor_test": {
+    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/technical/test_binding_controls_v2.py",
+    "sha256": "8a27bb2901ca888d0aba217c303207897b828d34d087a1d906b249d5ee184975"
+  },
+  "root_defect": false,
+  "root_tests_status": "All20 root controls passed; initialextra2passed/1fixturefailed retained."
+}

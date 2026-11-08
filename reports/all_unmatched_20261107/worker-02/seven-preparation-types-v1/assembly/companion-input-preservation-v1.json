@@ -1,0 +1,105 @@
+{
+  "reviewer": "/root/research_c",
+  "reviewed_at": "2026-11-08T09:29:33.558197+00:00",
+  "status": "PASS_BOUNDED_ASSEMBLY_PRESERVATION",
+  "input_hash_manifest": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v2/decisions.json",
+      "sha256": "9ee8613a968241478c0956faa3debdda619229aad1b9f00c051040971cade87b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/review-input-v2/decisions.json",
+      "sha256": "4aec9969ca720fbce615d0c38ac2f9c211040844094bdad4e7d32c2b5a44c1d3"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v2/proposals.json",
+      "sha256": "062a71f90bd78a2161853ea8448e69bcc21b656f212f01747c6d4b81e27f7ae9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/review-input-v2/proposals.json",
+      "sha256": "062a71f90bd78a2161853ea8448e69bcc21b656f212f01747c6d4b81e27f7ae9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v2/evidence.json",
+      "sha256": "991e3556dbf7d9f96c8144bc1c5ce98e0ce5cb1b8b94371a427b749c22441201"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/review-input-v2/evidence.json",
+      "sha256": "40372faaf54453b0031d5f487f3218d218fe0fb6abd714db2c6c71027a751296"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/independent/scientific-review-v2.json",
+      "sha256": "a82206604ac8357f48d2b1f992faa0cbe5fc213d3c8a84aab9e05df984ec2de9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/independent/case98-attribution-source-review-v1.json",
+      "sha256": "880223365919717e267b05b23d762ddde47799950f3969fa2436f15aa6381dbb"
+    }
+  ],
+  "counts": {
+    "cases": 188,
+    "unchanged_complete_cases_from_selected_v2": 186,
+    "case58_metadata_only": 1,
+    "case98_two_attribution_fields_plus_metadata": 1,
+    "same_complete_proposals_and_payloads": 117,
+    "prior_evidence_prefix": 1827,
+    "new_evidence_objects": 2,
+    "D_proof_inputs_rehashed": 192
+  },
+  "changed_cases": [
+    {
+      "index": 58,
+      "case_id": "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0",
+      "before_canonical_sha256": "7e067c88749bae39348d49dd5071626f6b0cdbbdfdcaca70bf50b2e44a8430a4",
+      "after_canonical_sha256": "a80df7bab183e0648db51618b5330fa3471f7dc7540ff6b4d6900005d04ead62",
+      "changed_fields": {
+        "independent_review": {
+          "before": {
+            "status": "complete",
+            "evidence_ids": [
+              "w02-seven-preparations-independent-exact-review-v1"
+            ]
+          },
+          "after": {
+            "status": "pending",
+            "evidence_ids": []
+          }
+        }
+      }
+    },
+    {
+      "index": 98,
+      "case_id": "CM_NAME:b2842dee958925abda8f2e56af9eb9a5fd009b8306848c04ae6782597864506c",
+      "before_canonical_sha256": "e7193106a41400544583644d50fc2ceee5edd6c84ed4b4c312b35d327cbf51c9",
+      "after_canonical_sha256": "c3eda6894ae8593e8a49e0bc2c9802baa357a7db872d15a6e64762981318a078",
+      "changed_fields": {
+        "independent_review": {
+          "before": {
+            "status": "complete",
+            "evidence_ids": [
+              "w02-v2-review-c-of-b"
+            ]
+          },
+          "after": {
+            "status": "pending",
+            "evidence_ids": []
+          }
+        },
+        "reasoning": {
+          "before": "Original NIES source marks manganese sulfate pentahydrate with footnote1). Its substitution note distinguishes250mgheptahydrate from217mgpentahydrate. Existing CHEBI131524 is the five-water substance; the marker is not part of a resolving chemical name.",
+          "after": "The successfully inspected TOGO M2509 capture reports the NIES table/footnote marking manganese sulfate pentahydrate with footnote1). Its reported NIES substitution note distinguishes250mgheptahydrate from217mgpentahydrate. Existing CHEBI131524 is the five-water substance; the marker is not part of a resolving chemical name. The direct NIES capture remains an unsuccessful formulation lookup."
+        },
+        "applicability": {
+          "before": "All 1 frozen occurrences and full recipe snapshots reviewed. Original NIES source marks manganese sulfate pentahydrate with footnote1). Its substitution note distinguishes250mgheptahydrate from217mgpentahydrate. Existing CHEBI131524 is the five-water substance; the marker is not part of a resolving chemical name. Exact occurrence scope is preserved; source transcription/receiving-medium errors remain separate publication holds. No downstream release, synchronization or rebuild is approved.",
+          "after": "All 1 frozen occurrences and full recipe snapshots reviewed. The successfully inspected TOGO M2509 capture reports the NIES table/footnote marking manganese sulfate pentahydrate with footnote1). Its reported NIES substitution note distinguishes250mgheptahydrate from217mgpentahydrate. Existing CHEBI131524 is the five-water substance; the marker is not part of a resolving chemical name. The direct NIES capture remains an unsuccessful formulation lookup. Exact occurrence scope is preserved; source transcription/receiving-medium errors remain separate publication holds. No downstream release, synchronization or rebuild is approved."
+        }
+      }
+    }
+  ],
+  "case58_all24_occurrences_preserved": true,
+  "case98_single_occurrence_all11existing_evidence_ids_and_sourceholds_preserved": true,
+  "seven_preparation_payloads_remain_only_payload_edits_since_published_head": true,
+  "D_combined_proof_exact2case7payload_bindings": true,
+  "scope": "C independent assembly and exact-object preservation only. Case98 attribution assessment and seven category science belong to D; C does not newly approve historical source chemistry or prior authored case58 science.",
+  "final_selected_native_handoff_index": "pending"
+}
