@@ -1260,6 +1260,8 @@ def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
     for name in (
         "scripts/apply_unmatched_campaign_owners.py",
         "scripts/validate_sssom_invariants.py",
+        "scripts/record_review.py",
+        "schema/record_review.yaml",
         "MAPPING_SEMANTICS.md",
         "uv.lock",
         "tests/test_campaign_publication.py",

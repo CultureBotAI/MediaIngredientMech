@@ -19,6 +19,7 @@ import types
 from collections.abc import Callable
 from contextlib import ExitStack, contextmanager
 from copy import deepcopy
+from functools import lru_cache
 from pathlib import Path, PurePosixPath
 from typing import TYPE_CHECKING, Any, BinaryIO, TextIO, cast
 
@@ -33,6 +34,7 @@ _NATIVE_SOURCES = {
     "mediaingredientmech.sssom_metadata": "src/mediaingredientmech/sssom_metadata.py",
     "mediaingredientmech.synonym_policy": "src/mediaingredientmech/synonym_policy.py",
     "campaign_native_sssom_invariants": "scripts/validate_sssom_invariants.py",
+    "campaign_native_record_review": "scripts/record_review.py",
 }
 _BOUND_NATIVE = _source_owner.captured_native_modules(
     Path(__file__).absolute().parents[2], _NATIVE_SOURCES
@@ -117,6 +119,20 @@ PLAN_KEYS = frozenset(
         "rows",
     }
 )
+SUPPRESSION_ISSUE = "https://github.com/CultureBotAI/MediaIngredientMech/issues/1259"
+SUPPRESSION_DECISION_SHA = "26c5f381bcf3600f18c54722213c076389d0d17d732bbf760783e1cfdc4d333c"
+SUPPRESSION_REVIEW_SHA = "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71"
+REVIEW_SCHEMA = "schema/record_review.yaml"
+SUPPRESSION_COLUMNS = (
+    "subject_id",
+    "token_key",
+    "token",
+    "owner_subject_ids",
+    "disposition",
+    "input_surfaces",
+    "source_refs",
+    "evidence_refs",
+)
 _LOADED = Path(__file__).read_bytes()
 LOADED_PRODUCERS = {
     path: _BOUND_NATIVE[name]._campaign_executed_source for name, path in _NATIVE_SOURCES.items()
@@ -126,6 +142,10 @@ LOADED_PRODUCERS["src/mediaingredientmech/campaign_publication.py"] = FrozenFile
 )
 LOADED_PRODUCERS["src/mediaingredientmech/curate/campaign_owner_apply.py"] = (
     _source_owner.LOADED_PRODUCERS["src/mediaingredientmech/curate/campaign_owner_apply.py"]
+)
+
+LOADED_PRODUCERS[REVIEW_SCHEMA] = FrozenFile.capture(
+    Path(__file__).absolute().parents[2] / REVIEW_SCHEMA
 )
 
 
@@ -464,6 +484,8 @@ class Capture:
         self.files: dict[Path, FrozenFile] = {}
         self.absent: set[Path] = set()
         self.checks: list[Callable[[], None]] = []
+        self.pair_validator: Callable[[bytes, bytes], None] | None = None
+        self.review_refs: set[Path] = set()
 
     def read(self, name: str, expected: str | None = None) -> bytes:
         return self.external(member(self.root, name), expected)
@@ -855,7 +877,518 @@ def _generation(
         )
 
     capture.checks.append(producer_recheck)
+    capture.pair_validator = module._ARTIFACT_PRODUCER._validate_pair
     return candidate, sidecar, manifest
+
+
+@lru_cache(maxsize=8)
+def _validated_review(raw: bytes, schema_raw: bytes) -> dict:
+    """Validate immutable content; callers separately verify every input byte."""
+    validator = _BOUND_NATIVE["campaign_native_record_review"]
+    schema_path = LOADED_PRODUCERS[REVIEW_SCHEMA].path
+    require(schema_path.read_bytes() == schema_raw, "review schema changed")
+    review = validator.load_document(raw)
+    validator.validate_review(review, schema_path)
+    return cast(dict, review)
+
+
+def _review_bundle(capture: Capture, config: dict) -> tuple[dict, dict[str, bytes]]:
+    closed(config, {"yaml", "markdown", "inputs"}, "review bundle")
+    raw = capture.ref(config["yaml"])
+    markdown = capture.ref(config["markdown"])
+    schema_raw = capture.read(REVIEW_SCHEMA, sha(LOADED_PRODUCERS[REVIEW_SCHEMA].content))
+    review = deepcopy(_validated_review(raw, schema_raw))
+    validator = _BOUND_NATIVE["campaign_native_record_review"]
+    require(
+        validator.render_markdown(review, LOADED_PRODUCERS[REVIEW_SCHEMA].path).encode()
+        == markdown,
+        "review Markdown is not its native rendering",
+    )
+    declared = {i["path"]: i["sha256"] for i in review["source"]["inputs"]}
+    require(
+        isinstance(config["inputs"], dict) and set(config["inputs"]) == set(declared),
+        "review input capture membership differs",
+    )
+    inputs = {}
+    seen = {config["yaml"]["path"], config["markdown"]["path"]}
+    require(len(seen) == 2, "review document roles alias")
+    for recorded, expected in declared.items():
+        relative(recorded)
+        ref = config["inputs"][recorded]
+        require(
+            ref["sha256"] == expected and ref["path"] not in seen,
+            "review input digest/role differs",
+        )
+        inputs[recorded] = capture.ref(ref)
+        seen.add(ref["path"])
+    capture.review_refs.update(capture.root / p for p in seen)
+    require(review["completion"] == "completed", "incomplete transition review")
+    require(
+        review["verdict"] in {"pass", "pass_with_limitations"}
+        and all(not check["required"] or check["status"] == "passed" for check in review["checks"]),
+        "transition review verdict/required checks do not pass",
+    )
+    require(
+        review["reviewer"]["independence"] == "independent"
+        and bool(review["reviewer"].get("independence_basis")),
+        "review lacks an independent provenance basis",
+    )
+    return review, inputs
+
+
+def _suppression_table(raw: bytes) -> tuple[list[dict], list[bytes]]:
+    require(raw.endswith(b"\n"), "suppression input lacks final newline")
+    reader = csv.DictReader(io.StringIO(raw.decode()), delimiter="\t")
+    require(reader.fieldnames == list(SUPPRESSION_COLUMNS), "suppression header differs")
+    rows = list(reader)
+    lines = raw.splitlines(keepends=True)[1:]
+    require(len(rows) == len(lines), "suppression physical row boundary differs")
+    seen = set()
+    for row in rows:
+        require(
+            set(row) == set(SUPPRESSION_COLUMNS) and None not in row.values(),
+            "malformed suppression row",
+        )
+        key = row["subject_id"], row["token_key"]
+        require(
+            key not in seen
+            and row["token"].strip().casefold() == key[1]
+            and key[1]
+            and "|" not in row["token"]
+            and row["disposition"] == "SUPPRESS",
+            "duplicate/malformed suppression pair",
+        )
+        seen.add(key)
+        for name in ("owner_subject_ids", "input_surfaces", "source_refs", "evidence_refs"):
+            value = read_json(row[name].encode())
+            require(
+                isinstance(value, list)
+                and value
+                and all(isinstance(v, str) and v for v in value)
+                and value == sorted(set(value)),
+                "invalid native suppression provenance",
+            )
+        require(
+            row["subject_id"] not in read_json(row["owner_subject_ids"].encode()),
+            "self suppression",
+        )
+    return rows, lines
+
+
+def _record_path(original: str) -> tuple[str, str]:
+    """An archived root/path tuple, never a rewritten source-ref string."""
+    require(isinstance(original, str), "invalid original source path")
+    p = PurePosixPath(original)
+    require(
+        p.is_absolute()
+        and str(p) == original
+        and ".." not in p.parts
+        and p.suffix == ".yaml"
+        and p.parent.name == "mapped"
+        and p.parent.parent.name == "ingredients"
+        and p.parent.parent.parent.name == "data",
+        "original owner path is not a canonical mapped-record tuple",
+    )
+    name = "data/ingredients/mapped/" + p.name
+    return str(p.parents[3]), relative(name)
+
+
+def _field(record: dict, locator: str) -> Any:
+    if locator == "ontology_mapping.ontology_label":
+        return record.get("ontology_mapping", {}).get("ontology_label")
+    match = re.fullmatch(r"synonyms\[(0|[1-9][0-9]*)\]", locator)
+    require(match is not None, "unsupported reviewed suppression field locator")
+    values = record.get("synonyms", [])
+    index = int(cast(re.Match, match)[1])
+    require(index < len(values), "reviewed synonym locator missing")
+    return values[index]
+
+
+def derive_suppression_transition(
+    capture: Capture,
+    plan: dict,
+    before: dict,
+    proof: dict,
+    diagnostic: bytes,
+    canonical: bytes,
+    needs: list[dict],
+    original_review: dict,
+) -> tuple[bytes, dict, dict]:
+    """Construct exact technical evidence for a subsequent independent review.
+
+    This function consumes the fixed original scientific review but does not
+    select or authenticate a future actual-transition review. prepare() replays
+    the native/source chain and separately consumes that review/root selection.
+    Returning this object is never publication or scientific authorization.
+    """
+    original, inputs = _review_bundle(capture, original_review)
+    require(
+        original_review["yaml"]["sha256"] == SUPPRESSION_REVIEW_SHA,
+        "unreviewed original suppression science",
+    )
+    decision_path = "review-inputs/conditional-decisions.json"
+    require(
+        decision_path in inputs and sha(inputs[decision_path]) == SUPPRESSION_DECISION_SHA,
+        "original conditional decision differs",
+    )
+    decision = read_json(inputs[decision_path])
+    pairs = decision["pairs"]
+    require(
+        len(pairs) == 4 and original["scientific_review"] is True,
+        "original four-event scientific scope differs",
+    )
+    old_rows, _ = _suppression_table(before["sidecar"])
+    native_rows, native_lines = _suppression_table(diagnostic)
+    require(len(old_rows) == 34, "historical suppression scope differs")
+    require(
+        before["sidecar"].splitlines(keepends=True)[0] == diagnostic.splitlines(keepends=True)[0],
+        "native/historical suppression headers differ",
+    )
+    old_keys = {(r["subject_id"], r["token_key"]) for r in old_rows}
+    by_key = {
+        (r["subject_id"], r["token_key"]): (r, line)
+        for r, line in zip(native_rows, native_lines, strict=True)
+    }
+    keys = {(p["subject"], p["token_key"]) for p in pairs}
+    require(
+        len(keys) == 4
+        and {(n["subject_id"], n["token_key"]) for n in needs} == keys
+        and not keys & old_keys,
+        "reviewed new suppression set differs or reattributes history",
+    )
+    original_prefix = {
+        native.RECEIPTS_DIR + "/" + Path(ref["path"]).name: ref["sha256"]
+        for ref in decision["historical_retention"]["historical_receipts"]
+    }
+    require(
+        len(original_prefix) == 27
+        and all(
+            plan["receipt_prefix"].get(path) == expected
+            for path, expected in original_prefix.items()
+        ),
+        "reviewed historical receipt prefix differs",
+    )
+    # prepare() independently replays the complete contiguous native chain and
+    # binds it to the completed source checkpoint. These immutable original
+    # receipts are sequences 1–27; any already-completed suffix is carried in
+    # full by receipt_prefix and the exact actual-transition review below.
+    require(
+        sha(before["sidecar"]) == decision["historical_retention"]["sidecar"]["sha256"],
+        "reviewed historical sidecar differs",
+    )
+    mapped = {
+        p: h
+        for p, h in proof["after_inventory"].items()
+        if p.startswith("data/ingredients/mapped/")
+    }
+    records = {subject(p): yaml.safe_load(capture.read(p, h)) for p, h in mapped.items()}
+    owner_policy = _BOUND_NATIVE["mediaingredientmech.synonym_policy"]
+    credits = owner_policy.preferred_term_owners(records)
+    operations = {r["source_record"]: r for r in proof["records"]}
+    targets = {t["target_id"]: t for t in original["targets"]}
+    events, after_lines, owners_seen = [], [], {}
+    for pair in pairs:
+        key = pair["subject"], pair["token_key"]
+        actual, line = by_key[key]
+        original_event = pair["exact_native_event"]
+        require(
+            all(actual[k] == original_event[k] for k in SUPPRESSION_COLUMNS if k != "source_refs"),
+            "reviewed native event columns/credits differ",
+        )
+        require(
+            sorted(credits.get(key[1], ())) == read_json(actual["owner_subject_ids"].encode()),
+            "complete native credited-owner set differs",
+        )
+        require(
+            pair["recommendation"] == "SUPPRESS"
+            and pair["status"] == "CONDITIONAL_RECOMMENDATION_ONLY"
+            and all(
+                pair[k] == "WITHHOLD"
+                for k in (
+                    "execution_disposition",
+                    "owner_merge_disposition",
+                    "row_admission",
+                    "role_approval",
+                    "new_external_mapping",
+                )
+            ),
+            "original suppression holds changed",
+        )
+        target = targets[pair["decision_id"]]
+        require(
+            target["selector"] == f"subject={key[0]}; token_key={key[1]}"
+            and any(
+                a["outcome"] == "supported" and pair["decision_id"] in a["target_ids"]
+                for a in original["assessments"]
+            ),
+            "original pair assessment differs",
+        )
+        for ref in pair["proofs"]:
+            raw = inputs.get("review-inputs/" + relative(ref["path"]))
+            require(raw is not None and sha(raw) == ref["sha256"], "original peer proof omitted")
+            require(isinstance(read_json(cast(bytes, raw)), dict), "invalid original peer proof")
+        owner_rows = []
+        for binding in pair["complete_owner_bindings"]:
+            original_root, path = _record_path(binding["proposed"]["original_path"])
+            proposed = inputs["review-inputs/" + relative(binding["proposed"]["capture"])]
+            expected = binding["proposed"]["sha256"]
+            require(
+                sha(proposed) == expected
+                and mapped.get(path) == expected
+                and subject(path) == binding["subject"],
+                "reviewed complete owner differs",
+            )
+            before_owner = binding["before"]
+            previous = None
+            if before_owner is not None:
+                _, before_path = _record_path(before_owner["original_path"])
+                previous = inputs["review-inputs/" + relative(before_owner["capture"])]
+                require(
+                    before_path == path
+                    and sha(previous) == before_owner["sha256"]
+                    and proof["before_inventory"].get(path) == before_owner["sha256"],
+                    "authentic reviewed before-owner differs",
+                )
+            else:
+                require(
+                    path not in proof["before_inventory"], "genuine create preimage is not absent"
+                )
+            frozen_operation = binding["operation"]
+            operation = operations.get(path)
+            role: dict[str, Any]
+            if frozen_operation is None:
+                require(
+                    operation is None
+                    and previous == proposed
+                    and proof["before_inventory"].get(path) == expected,
+                    "unchanged credited owner acquired an invented operation",
+                )
+                role = {"kind": "unchanged", "operation": None}
+            else:
+                require(operation is not None, "reviewed source operation missing")
+                operation = cast(dict, operation)
+                for field in (
+                    "operation_id",
+                    "kind",
+                    "before_source_record",
+                    "source_record",
+                    "before_yaml_sha256",
+                    "origins",
+                ):
+                    require(
+                        operation.get(field) == frozen_operation.get(field),
+                        "reviewed original operation/case join differs: " + field,
+                    )
+                require(
+                    operation["after_yaml_sha256"] == expected
+                    and (operation["kind"] == "create") == (previous is None),
+                    "reviewed operation endpoint differs",
+                )
+                role = {"kind": "selected", "operation": operation}
+            row = {
+                "subject": binding["subject"],
+                "source_record": path,
+                "original_root": original_root,
+                "before_sha256": sha(previous) if previous else None,
+                "after_sha256": expected,
+                **role,
+            }
+            owners_seen[path] = row
+            owner_rows.append(row)
+        require(
+            {r["subject"] for r in owner_rows}
+            == {key[0], *read_json(actual["owner_subject_ids"].encode())},
+            "reviewed whole-owner role coverage differs",
+        )
+        emitter = next(r for r in owner_rows if r["subject"] == key[0])
+        joins = []
+        for field in pair["source_fields"]:
+            original_ref = field["source_ref"]
+            original_path, locator = original_ref.rsplit("#", 1)
+            old_root, path = _record_path(original_path)
+            require(
+                old_root == emitter["original_root"]
+                and path == emitter["source_record"]
+                and field["source_owner_sha256"] == emitter["after_sha256"]
+                and _field(records[key[0]], locator) == field["literal_field"],
+                "source-ref owner/field/literal join differs",
+            )
+            actual_ref = str(capture.root / path) + "#" + locator
+            joins.append(
+                {
+                    "original_ref": original_ref,
+                    "actual_ref": actual_ref,
+                    "original_root": old_root,
+                    "actual_root": str(capture.root),
+                    "source_record": path,
+                    "owner_sha256": emitter["after_sha256"],
+                    "field_locator": locator,
+                    "literal": field["literal_field"],
+                }
+            )
+        require(
+            sorted(j["original_ref"] for j in joins)
+            == read_json(original_event["source_refs"].encode())
+            and sorted(j["actual_ref"] for j in joins) == read_json(actual["source_refs"].encode()),
+            "actual native source refs differ from reviewed tuples",
+        )
+        events.append(
+            {
+                "decision_id": pair["decision_id"],
+                "native_event": actual,
+                "owners": owner_rows,
+                "source_ref_joins": joins,
+            }
+        )
+        after_lines.append(line)
+    require(
+        len(owners_seen) == 8
+        and sum(r["kind"] == "selected" for r in owners_seen.values()) == 6
+        and sum(r["before_sha256"] is None for r in owners_seen.values()) == 1,
+        "original eight-owner role counts differ",
+    )
+    sidecar = before["sidecar"] + b"".join(after_lines)
+    require(
+        capture.pair_validator is not None, "native pair validator was not captured by generation"
+    )
+    cast(Callable[[bytes, bytes], Any], capture.pair_validator)(canonical, sidecar)
+    expected_transition = {
+        "schema_version": 1,
+        "operation": "campaign_suppression_transition",
+        "issue": SUPPRESSION_ISSUE,
+        "original_decision_sha256": SUPPRESSION_DECISION_SHA,
+        "owner_plan": plan["owner_plan"],
+        "owner_receipt": plan["owner_receipt"],
+        "generation": plan["generation"],
+        "publication_producers": plan["publication_producers"],
+        "before": plan["before"],
+        "receipt_prefix": plan["receipt_prefix"],
+        "native_context": plan["native_context"],
+        "mapped_inventory": mapped,
+        "events": events,
+        "after_sha256": {
+            "canonical": sha(canonical),
+            "sidecar": sha(sidecar),
+            "baseline": sha(before["baseline"]),
+        },
+        "approval": "NONE",
+    }
+    return sidecar, expected_transition, original
+
+
+def _suppression_projection(
+    capture: Capture,
+    plan: dict,
+    before: dict,
+    proof: dict,
+    diagnostic: bytes,
+    canonical: bytes,
+    needs: list[dict],
+) -> tuple[bytes, dict]:
+    """Consume original science and a distinct exact actual-transition review.
+
+    Root selects the review artifacts in this plan. Metadata cannot authenticate
+    a human/agent assignment: that remains an audited external acceptance act.
+    This guard proves the complete selected evidence/transition, never approval
+    of source owners, mapping rows, quantities, roles or companion claims.
+    """
+    selection_raw = capture.ref(plan["suppression_review"])
+    capture.review_refs.add(capture.root / plan["suppression_review"]["path"])
+    selection = closed(
+        read_json(selection_raw),
+        {
+            "schema_version",
+            "operation",
+            "issue",
+            "selected_by",
+            "selection_basis",
+            "original_review",
+            "transition",
+            "transition_review",
+        },
+        "suppression review selection",
+    )
+    require(
+        type(selection["schema_version"]) is int
+        and selection["schema_version"] == 1
+        and selection["operation"] == "select_campaign_suppression_transition"
+        and selection["issue"] == SUPPRESSION_ISSUE
+        and selection["selected_by"] == "/root"
+        and isinstance(selection["selection_basis"], str)
+        and selection["selection_basis"].strip(),
+        "unsupported suppression selection",
+    )
+    sidecar, expected_transition, _ = derive_suppression_transition(
+        capture, plan, before, proof, diagnostic, canonical, needs, selection["original_review"]
+    )
+    events = expected_transition["events"]
+    transition_raw = capture.ref(selection["transition"])
+    capture.review_refs.add(capture.root / selection["transition"]["path"])
+    transition = read_json(transition_raw)
+    require(
+        type(transition.get("schema_version")) is int and transition == expected_transition,
+        "independently reviewed actual suppression transition differs",
+    )
+    review, review_inputs = _review_bundle(capture, selection["transition_review"])
+    require(
+        review["reviewer"]["identity"] != selection["selected_by"]
+        and review["source"]["git_revision"] == proof["baseline_commit"]
+        and review["source"]["state"] == "working_tree",
+        "actual transition reviewer/base provenance differs",
+    )
+    require(
+        any(raw == transition_raw for raw in review_inputs.values()),
+        "transition review does not bind the actual transition bytes",
+    )
+    required_hashes = {
+        SUPPRESSION_DECISION_SHA,
+        SUPPRESSION_REVIEW_SHA,
+        plan["owner_plan"]["sha256"],
+        plan["owner_receipt"]["sha256"],
+        *[plan["generation"][k]["sha256"] for k in ("candidate", "sidecar", "manifest")],
+    }
+    require(
+        required_hashes <= {sha(raw) for raw in review_inputs.values()},
+        "transition review omits source/generation/original review inputs",
+    )
+    target_ids = set()
+    for event in events:
+        key = event["native_event"]["subject_id"], event["native_event"]["token_key"]
+        matches = [
+            t
+            for t in review["targets"]
+            if t["selector"] == f"subject={key[0]}; token_key={key[1]}"
+            and review_inputs.get(t["path"]) == transition_raw
+        ]
+        require(len(matches) == 1, "actual transition review target differs")
+        target_ids.add(matches[0]["target_id"])
+        require(
+            any(
+                a["outcome"] == "supported" and matches[0]["target_id"] in a["target_ids"]
+                for a in review["assessments"]
+            ),
+            "actual transition lacks a supported assessment",
+        )
+    require(
+        len(review["targets"]) == 4
+        and review["scope"]["coverage"] == "full"
+        and set(review["scope"]["reviewed_target_ids"]) == target_ids
+        and not any(
+            f["status"] in {"open", "deferred"} and set(f["target_ids"]) & target_ids
+            for f in review["findings"]
+        ),
+        "actual suppression transition has unresolved review findings",
+    )
+    return sidecar, {
+        "issue": SUPPRESSION_ISSUE,
+        "selection": plan["suppression_review"],
+        "transition": selection["transition"],
+        "original_decision_sha256": SUPPRESSION_DECISION_SHA,
+        "before_sha256": sha(before["sidecar"]),
+        "after_sha256": sha(sidecar),
+        "events": events,
+        "approval": "NONE",
+    }
 
 
 def _policy(
@@ -867,6 +1400,7 @@ def _policy(
     receipt_raw: bytes,
     canonical: bytes,
     trace: list[dict],
+    suppression: dict | None = None,
 ) -> bytes:
     old = read_json(before)
     require(
@@ -906,6 +1440,11 @@ def _policy(
             "suppression_policy": "unchanged historical sidecar and baseline",
         }
     ]
+    if suppression is not None:
+        result["artifacts"][SIDECAR] = suppression["after_sha256"]
+        result[UPDATE][-1]["schema_version"] = 2
+        result[UPDATE][-1]["suppression_policy"] = suppression
+        result[UPDATE][-1]["native_mapping_receipt"] = result[UPDATE][-1].pop("mapping_receipt")
     # Deliberately leave every historical owner attribution and old history untouched.
     return encoded(result)
 
@@ -968,7 +1507,19 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         plan_path.is_absolute() and plan_path.is_relative_to(root), "plan must be inside repository"
     )
     plan_raw = capture.external(plan_path)
-    plan = closed(read_json(plan_raw), PLAN_KEYS, "publication plan")
+    raw_plan = read_json(plan_raw)
+    require(
+        isinstance(raw_plan, dict)
+        and type(raw_plan.get("schema_version")) is int
+        and raw_plan["schema_version"] in (1, 2),
+        "unsupported publication plan version",
+    )
+    version = raw_plan["schema_version"]
+    plan = closed(
+        raw_plan,
+        PLAN_KEYS | ({"suppression_review"} if version == 2 else set()),
+        "publication plan",
+    )
     producers = hash_map(plan["publication_producers"])
     require(set(producers) == set(LOADED_PRODUCERS), "publication producer set differs")
     for path, loaded in LOADED_PRODUCERS.items():
@@ -983,8 +1534,8 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
     capture.checks.append(loaded_recheck)
     require(
         type(plan["schema_version"]) is int
-        and plan["schema_version"] == 1
-        and plan["kind"] == "unmatched_campaign_publication_v1"
+        and plan["schema_version"] == version
+        and plan["kind"] == f"unmatched_campaign_publication_v{version}"
         and plan["issue"] == ISSUE
         and plan["approval"] == "NONE",
         "unsupported plan contract/approval",
@@ -1027,7 +1578,8 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         )
     }
     require(
-        actual["sidecar"] == before["sidecar"] and actual["baseline"] == before["baseline"],
+        (version == 2 or actual["sidecar"] == before["sidecar"])
+        and actual["baseline"] == before["baseline"],
         "historical suppression sidecar/baseline changed",
     )
     if not completed:
@@ -1135,8 +1687,14 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
             != old_suppressed[(r["subject_id"], r["token_key"])]["owner_subject_ids"]
         )
     ]
-    require(not needs, "new suppression review required: " + json.dumps(needs, sort_keys=True))
+    if version == 1:
+        require(not needs, "new suppression review required: " + json.dumps(needs, sort_keys=True))
     canonical, trace = row_projection(before["canonical"], candidate, records, plan["rows"])
+    sidecar, suppression = before["sidecar"], None
+    if version == 2:
+        sidecar, suppression = _suppression_projection(
+            capture, plan, before, owner_proof, diagnostic_sidecar, canonical, needs
+        )
     _verify_projected_rule_k(capture, canonical)
     receipt = _receipt(previous, _maker(capture), plan, records, before["canonical"], canonical)
     receipt_raw = encoded(receipt)
@@ -1149,10 +1707,13 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         receipt_raw,
         canonical,
         trace,
+        suppression,
     )
     if completed:
         require(
-            actual["canonical"] == canonical and actual["policy"] == policy,
+            actual["canonical"] == canonical
+            and actual["policy"] == policy
+            and actual["sidecar"] == sidecar,
             "published projection/policy differs",
         )
         require(capture.read(receipt_name) == receipt_raw, "published native receipt differs")
@@ -1173,6 +1734,11 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         & {root / SOURCE, root / POLICY, root / SIDECAR, root / BASELINE, root / receipt_name},
         "evidence aliases publication surface",
     )
+    require(
+        not capture.review_refs
+        & {root / SOURCE, root / POLICY, root / SIDECAR, root / BASELINE, root / receipt_name},
+        "review evidence aliases publication surface",
+    )
     capture.verify()
     require(
         set(native._names(root)) == set(prefix) | ({receipt_name} if completed else set()),
@@ -1189,6 +1755,8 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
         "before": before,
         "canonical": canonical,
         "policy": policy,
+        "sidecar": sidecar,
+        "suppression": suppression,
         "receipt": receipt_raw,
         "receipt_name": receipt_name,
         "trace": trace,
@@ -1210,7 +1778,7 @@ def validate(root: Path, plan_path: Path) -> dict:
 
 
 def summary(prepared: dict, status: str) -> dict:
-    return {
+    result = {
         "schema_version": 1,
         "status": status,
         "approval": APPROVAL,
@@ -1222,6 +1790,10 @@ def summary(prepared: dict, status: str) -> dict:
         "trace_sha256": sha(encoded(prepared["trace"])),
         "owner_count": len(prepared["owner_proof"]["records"]),
     }
+    if prepared["plan"]["schema_version"] == 2:
+        result["sidecar_sha256"] = sha(prepared["sidecar"])
+        result["suppression_review"] = prepared["plan"]["suppression_review"]
+    return result
 
 
 @contextmanager
@@ -1293,7 +1865,12 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
         "receipt directory must be an existing unaliased report directory",
     )
     log = receipt_dir / "publication.json"
-    backups = (receipt_dir / "canonical-before.tsv", receipt_dir / "policy-before.json")
+    backups: tuple[Path, ...] = (
+        receipt_dir / "canonical-before.tsv",
+        receipt_dir / "policy-before.json",
+    )
+    if prepared["plan"]["schema_version"] == 2:
+        backups += (receipt_dir / "sidecar-before.tsv",)
     native_path = member(root, prepared["receipt_name"])
     outputs = (log, *backups, native_path)
     require(
@@ -1309,10 +1886,12 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
         _require_live_source_head(root, prepared["owner_proof"]["baseline_commit"])
         return summary(prepared, "dry_run")
     destinations = {root / SOURCE: prepared["canonical"], root / POLICY: prepared["policy"]}
+    if prepared["plan"]["schema_version"] == 2:
+        destinations[root / SIDECAR] = prepared["sidecar"]
     current = {p: capture.files[p] for p in destinations}
     original_inventory = set(prepared["plan"]["receipt_prefix"])
     with _reserve(outputs) as (handles, parents):
-        receipt_handle, canonical_backup, policy_backup, native_handle = handles
+        receipt_handle, *backup_handles, native_handle = handles
         all_handles = list(zip(outputs, handles, strict=True))
         native_written = False
         expected_backups = dict.fromkeys(backups, b"")
@@ -1348,10 +1927,9 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
 
         try:
             recheck()
-            for path, handle, content in (
-                (backups[0], canonical_backup, prepared["before"]["canonical"]),
-                (backups[1], policy_backup, prepared["before"]["policy"]),
-            ):
+            backup_roles = ["canonical", "policy"] + (["sidecar"] if len(backups) == 3 else [])
+            for path, handle, role in zip(backups, backup_handles, backup_roles, strict=True):
+                content = prepared["before"][role]
                 handle.write(content)
                 handle.flush()
                 expected_backups[path] = content
