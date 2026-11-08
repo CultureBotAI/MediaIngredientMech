@@ -1,0 +1,183 @@
+{
+  "issue": 1265,
+  "phase": "local_validation_before_final_committed_head_review",
+  "source_scientific_data_changed_after_migration": false,
+  "records": 2956,
+  "sssom_rows": 3014,
+  "full_local_run_before_repairs": {
+    "passed": 4898,
+    "skipped": 530,
+    "failed": 4,
+    "failures": [
+      "archive schema discovered as live schema",
+      "implicit helper destination portability",
+      "two historical fixture callers"
+    ]
+  },
+  "repair_context_run": {
+    "passed": 339
+  },
+  "package_alias_native_runs": {
+    "passed": 141,
+    "skipped": 1
+  },
+  "inventory_date_run": {
+    "passed": 23
+  },
+  "required_gate_controls": {
+    "passed": 2,
+    "mutations_killed": 3
+  },
+  "static_quality": {
+    "ruff": "pass",
+    "black": "pass",
+    "mypy_source_files": 68
+  },
+  "strict_schema": {
+    "files": 2963,
+    "errors": 0
+  },
+  "stable_id_history": {
+    "base": "5f0ba3018de6743eb2c92f1721149c4ce05b4dec",
+    "records": 2956,
+    "minted_ids": 2956,
+    "lifecycle_events": 0,
+    "checked": true
+  },
+  "pages": {
+    "verified_ingredient_pages": 2956,
+    "deployment": "NOT PERFORMED"
+  },
+  "export_commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.kgx",
+        "--output",
+        "output/mim-kgx-710-full"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.identity_projection",
+        "--graph",
+        "--replace-derived"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.identity_projection",
+        "--graph",
+        "--check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.reviewed_sssom",
+        "--review",
+        "reports/stable_ids_1265_20261108/mapping-review.json",
+        "--output",
+        "output/mim-reviewed-sssom"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.reviewed_sssom",
+        "--review",
+        "reports/stable_ids_1265_20261108/mapping-review.json",
+        "--output",
+        "output/mim-reviewed-sssom",
+        "--validate-only"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/validate_reviewed_sssom_schema.py",
+        "output/mim-reviewed-sssom"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.ingredient_bundle",
+        "export",
+        "--review",
+        "reports/stable_ids_1265_20261108/companion-review.json",
+        "--output",
+        "output/mim-reviewed-ingredient-bundle"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.supported_kgx",
+        "--root",
+        ".",
+        "--report",
+        "reports/stable_ids_1265_20261108/semantic-review.json",
+        "--output",
+        "output/mim-kgx-710-supported"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.supported_kgx",
+        "--root",
+        ".",
+        "--report",
+        "reports/stable_ids_1265_20261108/semantic-review.json",
+        "--output",
+        "output/mim-kgx-710-supported",
+        "--validate-only"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "science": {
+    "supported_mappings": 1739,
+    "withheld_mappings": 1275,
+    "supported_graph_edges": 2150,
+    "backlog_graph_edges": 2369,
+    "full_graph_release_verdict": "FAIL",
+    "new_scientific_approvals": 0
+  },
+  "findings": [
+    1267,
+    1268,
+    1269,
+    1270,
+    1271,
+    1272,
+    1273,
+    1274,
+    1275,
+    1276,
+    1277,
+    1278
+  ],
+  "final_head_review": "pending",
+  "final_ci": "pending",
+  "merge": "NOT PERFORMED"
+}

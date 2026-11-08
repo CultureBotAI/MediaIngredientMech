@@ -1,0 +1,28 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1277",
+  "date": "2026-11-08",
+  "maintained_files_modified": false,
+  "command": "uv run --frozen python scripts/adhoc/check_migration_inventory_mutations_1277.py",
+  "probes": [
+    {
+      "probe": "before_staging_inventory",
+      "test": "tests/test_stable_id_migration.py::test_inventory_mismatch_refused_before_any_staging_write",
+      "baseline_exit": 0,
+      "baseline_log_sha256": "65d6f57e31da53615f5ad6bf8db32378a1143b3d6922ff634ae8174279ba4ee1",
+      "mutation_exit": 1,
+      "mutation_log_sha256": "2c59bed75675af96dc876bad63772b3ae03f8eed06e448ffa0f288a0db45966a",
+      "failed_tests": 2,
+      "status": "KILLED"
+    },
+    {
+      "probe": "before_publication_inventory",
+      "test": "tests/test_stable_id_migration.py::test_inventory_change_after_prepare_refused_before_transaction",
+      "baseline_exit": 0,
+      "baseline_log_sha256": "55cef7f63dda7321ec6b34e65096fd9f648b99661ed4c5778337bdddbb608573",
+      "mutation_exit": 1,
+      "mutation_log_sha256": "637c9fe87dd303973cf06e6ae6917630ec47426d15ac22d305a215bfecf50a3f",
+      "failed_tests": 2,
+      "status": "KILLED"
+    }
+  ]
+}

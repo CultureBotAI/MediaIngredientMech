@@ -1,0 +1,43 @@
+{
+  "issue": 1278,
+  "purpose": "Required CI history gate wiring and real ledger rewrite distinction",
+  "date": "2026-11-08",
+  "control_tests": 2,
+  "mutation_results": [
+    {
+      "case": "control",
+      "exit_code": 0,
+      "failed_tests": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "history-disabled",
+      "exit_code": 1,
+      "failed_tests": 2,
+      "status": "KILLED"
+    },
+    {
+      "case": "shallow-history",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED"
+    },
+    {
+      "case": "missing-ledger-trigger",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED"
+    },
+    {
+      "case": "restored-control",
+      "exit_code": 0,
+      "failed_tests": 0,
+      "status": "PASS"
+    }
+  ],
+  "helper": "scripts/adhoc/check_required_gate_mutations_1278.py",
+  "workflow_sha256": "9b3d167a03ed100337772f0feaea3b3c6c3ee2fc8d9427b2d2df4fe11559d942",
+  "test_sha256": "90a1b56a107ac6bd4eaa825ad5b249dc14406eb52faa1448cc571373520b5de5",
+  "helper_sha256": "3d988f11d4781f0ae8a17b36f8728550b73b5c8c8acb460a8df99badd7a75a2a",
+  "post_format_control_tests": 2
+}
