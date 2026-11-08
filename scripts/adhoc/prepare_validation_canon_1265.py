@@ -13,6 +13,7 @@ import sys
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--claw', required=True, type=Path)
+parser.add_argument('--destination', required=True, type=Path, help='Explicit durable worktree path')
 args = parser.parse_args()
 claw = args.claw.resolve()
 root = Path(__file__).resolve().parents[2]
@@ -24,7 +25,13 @@ RepositoryTarget('claw', claw, 'CultureBotAI/culturebotai-claw').open()
 pin = (root / 'scripts/.vendored_canon_ref').read_text().strip()
 if not re.fullmatch('[0-9a-f]{40}', pin):
     raise SystemExit('Invalid existing canonical pin')
-destination = Path.home() / 'agent-work/claw' / ('mim-1265-evidence-canon-' + pin[:8])
+if not args.destination.is_absolute():
+    raise SystemExit('Destination must be an explicit absolute durable path')
+destination = args.destination.resolve()
+import tempfile
+for temporary in (Path('/tmp').resolve(), Path('/private/tmp').resolve(), Path(tempfile.gettempdir()).resolve()):
+    if destination.is_relative_to(temporary):
+        raise SystemExit('Session worktrees must not be stored in temporary directories')
 with LockManager().lock('claw', 'mim1265_prepare_pinned_validation_source'):
     RepositoryTarget('claw', claw, 'CultureBotAI/culturebotai-claw').open()
     if subprocess.run(['git', 'cat-file', '-e', pin + '^{commit}'], cwd=claw).returncode:

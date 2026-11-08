@@ -11,7 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 
-SCHEMA_DIR = Path(__file__).resolve().parents[1] / "schema"
+SCHEMA_DIR = Path(__file__).resolve().parents[1] / "schema" / "historical"
 
 
 def historical_schema(path: Path, root: Path) -> Path | None:

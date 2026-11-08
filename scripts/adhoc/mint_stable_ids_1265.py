@@ -10,14 +10,14 @@ Run from the isolated MIM worktree, with no concurrent writers to these paths.
 from __future__ import annotations
 
 import argparse
-from copy import deepcopy
-from datetime import datetime, timedelta
 import hashlib
 import json
-from pathlib import Path
 import re
 import subprocess
 import sys
+from copy import deepcopy
+from datetime import datetime, timedelta
+from pathlib import Path
 
 import yaml
 
@@ -26,8 +26,14 @@ sys.path.insert(0, str(ROOT / "src"))
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
 from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.stable_ids import (  # noqa: E402
-    LIFECYCLE_PATH, MIM_PREFIX, REGISTRY_PATH, Registry, allocate_ids,
-    dump_lifecycle, dump_registry, validate_records,
+    LIFECYCLE_PATH,
+    MIM_PREFIX,
+    REGISTRY_PATH,
+    Registry,
+    allocate_ids,
+    dump_lifecycle,
+    dump_registry,
+    validate_records,
 )
 from mediaingredientmech.validation.write_validated import write_validated_ingredient  # noqa: E402
 
@@ -89,6 +95,29 @@ def migrate_sssom(raw: bytes, aliases: dict[str, str]) -> bytes:
     return "".join(result).encode()
 
 
+def require_complete_inventory(root: Path) -> None:
+    """Require every direct mapped/unmapped owner from the frozen Git tree (#1277)."""
+    groups = ("data/ingredients/mapped", "data/ingredients/unmapped")
+    raw = subprocess.check_output(
+        ["git", "ls-tree", "-rz", "--name-only", SOURCE_COMMIT, "--", *groups],
+        cwd=root, timeout=60,
+    )
+    baseline = {
+        name for item in raw.split(b"\0") if item
+        for name in (item.decode(),)
+        if Path(name).parent.as_posix() in groups and Path(name).suffix == ".yaml"
+    }
+    current = {
+        path.relative_to(root).as_posix()
+        for group in groups for path in (root / group).glob("*.yaml")
+    }
+    if current != baseline:
+        raise ValueError(
+            "Complete record inventory differs from frozen baseline: "
+            f"missing={sorted(baseline - current)}, extra={sorted(current - baseline)}"
+        )
+
+
 def prepare(root: Path, stage: Path, timestamp: str) -> tuple[dict, dict, dict]:
     when = datetime.fromisoformat(timestamp)
     if when.utcoffset() != timedelta(0):
@@ -100,6 +129,7 @@ def prepare(root: Path, stage: Path, timestamp: str) -> tuple[dict, dict, dict]:
     for relative in (REGISTRY_PATH, LIFECYCLE_PATH, RECEIPT):
         if (root / relative).exists():
             raise ValueError("Initial mint refuses existing registry or receipt")
+    require_complete_inventory(root)
     inputs = {}
     records = {}
     for group in ("mapped", "unmapped"):
@@ -154,6 +184,7 @@ def prepare(root: Path, stage: Path, timestamp: str) -> tuple[dict, dict, dict]:
 
 
 def publish(root: Path, stage: Path, inputs: dict, outputs: dict, *, apply: bool):
+    require_complete_inventory(root)
     from kg_microbe_write import ValidatedWriteTransaction
 
     def validate(path, text):

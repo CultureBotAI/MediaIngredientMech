@@ -1,6 +1,6 @@
 
 
-# Slot: mim_id 
+# Slot: mim_id
 
 
 _Permanent opaque record identifier from the append-only MIM registry. Preserved through name, filename, mapping and status changes; never reused._

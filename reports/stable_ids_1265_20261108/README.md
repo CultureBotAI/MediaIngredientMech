@@ -50,7 +50,7 @@ Historical source copies are byte-preserved, including their existing provenance
 Review findings are tracked in #1267 (ambiguous alias waiver), #1268 (numeric ID
 impersonation), #1269 (portable mint-order authority), #1270 (freshness stamp),
 #1271 (lifecycle mapping transfer), #1272 (visualization build hashes), #1273
-(duplicate YAML keys), and #1274 (mutation setup errors). Final validation and
+(duplicate YAML keys), #1274 (mutation setup errors), and #1275 (installed package resources), #1276 (numeric alias authority across APIs), and #1277 (pre-publication inventory completeness), and #1278 (required CI history enforcement). Final validation and
 re-review disposition accompany the pull request; this directory does not claim
 that a branch has merged or that Pages has deployed.
 

@@ -1,6 +1,6 @@
 
 
-# Slot: legacy_identifiers 
+# Slot: legacy_identifiers
 
 
 _Preserved former identifiers and slug-based aliases. Aliases may be shared by distinct records and must not be used as unique record keys._

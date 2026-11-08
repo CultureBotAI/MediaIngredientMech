@@ -8,8 +8,13 @@ import yaml
 
 from mediaingredientmech.curie import CurieNormalizer
 from mediaingredientmech.stable_ids import (
-    LIFECYCLE_PATH, REGISTRY_PATH, Lifecycle, Mint, Registry,
-    dump_lifecycle, dump_registry,
+    LIFECYCLE_PATH,
+    REGISTRY_PATH,
+    Lifecycle,
+    Mint,
+    Registry,
+    dump_lifecycle,
+    dump_registry,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,13 +28,19 @@ def save_registry(root, registry):
 
 @pytest.fixture
 def corpus(tmp_path):
-    registry = Registry(tuple(Mint(f"MIM:{number:07d}", f"Ingredient {number}", "2026-11-08")
-                              for number in (1, 2, 3)))
+    registry = Registry(
+        tuple(
+            Mint(f"MIM:{number:07d}", f"Ingredient {number}", "2026-11-08") for number in (1, 2, 3)
+        )
+    )
     save_registry(tmp_path, registry)
     for number in (1, 2, 3):
-        record = {"mim_id": f"MIM:{number:07d}", "identifier": f"CHEBI:{number}",
-                  "preferred_term": f"Ingredient {number}",
-                  "legacy_identifiers": [f"MIM:Old_{number}", f"kgmicrobe.compound:old_{number}"]}
+        record = {
+            "mim_id": f"MIM:{number:07d}",
+            "identifier": f"CHEBI:{number}",
+            "preferred_term": f"Ingredient {number}",
+            "legacy_identifiers": [f"MIM:Old_{number}", f"kgmicrobe.compound:old_{number}"],
+        }
         path = tmp_path / f"data/ingredients/unmapped/Old_{number}.yaml"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(yaml.safe_dump(record))
@@ -84,8 +95,9 @@ def test_retired_id_chain_resolves_without_filename_or_sssom_authority(corpus):
 @pytest.mark.parametrize("reverse", [False, True])
 def test_lifecycle_redirect_never_transfers_old_mapping_evidence(corpus, status, subject, reverse):
     root, registry = corpus
-    event = Lifecycle("MIM:0000001", status, "MIM:0000002",
-                      "2026-11-08T01:00:00Z", "Reviewed replacement")
+    event = Lifecycle(
+        "MIM:0000001", status, "MIM:0000002", "2026-11-08T01:00:00Z", "Reviewed replacement"
+    )
     save_registry(root, Registry(registry.entries, (event,)))
     (root / "data/ingredients/unmapped/Old_1.yaml").unlink()
     mappings = root / "mappings"
@@ -93,8 +105,7 @@ def test_lifecycle_redirect_never_transfers_old_mapping_evidence(corpus, status,
     (mappings / "mim_curie_aliases.tsv").write_text(
         "old_curie\tcurrent_curie\nMIM:Historical\tMIM:0000001\n"
     )
-    rows = [f"{subject}\tCHEBI:1\tskos:exactMatch\n",
-            "MIM:0000002\tCHEBI:2\tskos:exactMatch\n"]
+    rows = [f"{subject}\tCHEBI:1\tskos:exactMatch\n", "MIM:0000002\tCHEBI:2\tskos:exactMatch\n"]
     if reverse:
         rows.reverse()
     (mappings / "ingredient_mappings.sssom.tsv").write_text(
@@ -109,8 +120,9 @@ def test_lifecycle_redirect_never_transfers_old_mapping_evidence(corpus, status,
 
 def test_replacement_without_own_mapping_does_not_inherit_old_equivalence(corpus):
     root, registry = corpus
-    event = Lifecycle("MIM:0000001", "retired", "MIM:0000002",
-                      "2026-11-08T01:00:00Z", "Reviewed replacement")
+    event = Lifecycle(
+        "MIM:0000001", "retired", "MIM:0000002", "2026-11-08T01:00:00Z", "Reviewed replacement"
+    )
     save_registry(root, Registry(registry.entries, (event,)))
     (root / "data/ingredients/unmapped/Old_1.yaml").unlink()
     mappings = root / "mappings"
@@ -152,11 +164,17 @@ def test_legacy_non_curie_placeholder_remains_explicitly_resolvable(corpus):
 
 
 def test_browser_uses_stable_identity_and_preserves_mapping_and_alias_search():
-    spec = importlib.util.spec_from_file_location("stable_browser", ROOT / "scripts/browser_export.py")
+    spec = importlib.util.spec_from_file_location(
+        "stable_browser", ROOT / "scripts/browser_export.py"
+    )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    record = {"mim_id": "MIM:0000001", "identifier": "CHEBI:123", "preferred_term": "Current label",
-              "legacy_identifiers": ["kgmicrobe.compound:old_label", "MIM:Old_filename"]}
+    record = {
+        "mim_id": "MIM:0000001",
+        "identifier": "CHEBI:123",
+        "preferred_term": "Current label",
+        "legacy_identifiers": ["kgmicrobe.compound:old_label", "MIM:Old_filename"],
+    }
     first = module.extract_ingredient_for_browser(record, "unmapped/Old_filename.yaml")
     second = module.extract_ingredient_for_browser(record, "mapped/Corrected.yaml")
     assert first["record_id"] == second["record_id"] == "MIM:0000001"
@@ -167,3 +185,64 @@ def test_browser_uses_stable_identity_and_preserves_mapping_and_alias_search():
     assert first["detail_page"] != second["detail_page"]
     with pytest.raises(ValueError, match="seven-digit"):
         module.extract_ingredient_for_browser({"identifier": "CHEBI:123"}, "mapped/Corrected.yaml")
+
+
+@pytest.mark.parametrize(
+    "reference",
+    [
+        " MIM:12 ",
+        "MIM:12",
+        "mim:12",
+        "MIM:0000000",
+        "MIM:9999999",
+        "MIM:٠٠٠٠٠٠١",
+        "mim:٠٠٠٠٠٠١",
+        "MIM:００００００１",
+    ],
+)
+@pytest.mark.parametrize("chained", [False, True])
+def test_numeric_mim_spellings_never_fall_through_to_aliases(corpus, reference, chained):
+    root, _ = corpus
+    path = root / "data/ingredients/unmapped/Old_1.yaml"
+    record = yaml.safe_load(path.read_text())
+    record["legacy_identifiers"].extend([reference, reference.replace("mim:", "MIM:")])
+    path.write_text(yaml.safe_dump(record))
+    mappings = root / "mappings"
+    mappings.mkdir()
+    # Both alias mechanisms offer the bad spelling a real owner. Neither is
+    # allowed to override the authoritative numeric namespace.
+    (mappings / "mim_curie_aliases.tsv").write_text(
+        f"old_curie\tcurrent_curie\nMIM:Historical\t{reference}\n{reference}\tMIM:0000001\n"
+    )
+    queried = "MIM:Historical" if chained else reference
+    (mappings / "ingredient_mappings.sssom.tsv").write_text(
+        "subject_id\tobject_id\tpredicate_id\n"
+        f"{queried}\tCHEBI:0\tskos:exactMatch\n"
+        "MIM:0000001\tCHEBI:1\tskos:exactMatch\n"
+    )
+    normalizer = CurieNormalizer(repo_root=root)
+    assert not normalizer.resolve(queried)
+    assert not normalizer.equivalent_term(queried)
+    assert normalizer.equivalent_term("MIM:0000001").curie == "CHEBI:1"
+    assert normalizer._mappings["MIM:0000001"] == [("CHEBI:1", "skos:exactMatch")]
+    assert normalizer.resolve("MIM:Old_1").curie == "MIM:0000001"
+
+
+def test_alias_chain_normalizes_numeric_prefix_and_preserves_registry_authority(corpus):
+    root, registry = corpus
+    mappings = root / "mappings"
+    mappings.mkdir()
+    (mappings / "mim_curie_aliases.tsv").write_text(
+        "old_curie\tcurrent_curie\nMIM:Historical\tmim:0000001\n"
+        "mim:0000001\tMIM:0000002\nMIM:0000001\tMIM:0000002\n"
+    )
+    normalizer = CurieNormalizer(repo_root=root)
+    assert normalizer.resolve("MIM:Historical").curie == "MIM:0000001"
+    event = Lifecycle(
+        "MIM:0000001", "merged", "MIM:0000002", "2026-11-08T01:00:00Z", "Reviewed replacement"
+    )
+    save_registry(root, Registry(registry.entries, (event,)))
+    (root / "data/ingredients/unmapped/Old_1.yaml").unlink()
+    normalizer = CurieNormalizer(repo_root=root)
+    assert normalizer.resolve("MIM:Historical").curie == "MIM:0000002"
+    assert normalizer.equivalent_term("MIM:Historical").problem == "RETIRED_SUBJECT"

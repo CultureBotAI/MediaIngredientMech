@@ -101,6 +101,14 @@ EQUIVALENT_PREDICATES = {"skos:exactMatch"}
 _CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9_.]*):([A-Za-z0-9_.~%\-]+)$")
 
 
+def _numeric_mim_reference(value: str) -> str | None:
+    """Reserve all decimal MIM spellings for registry lookup, never aliases."""
+    prefix, separator, local = value.strip().partition(":")
+    if separator and prefix.casefold() == "mim" and local.isdecimal():
+        return f"MIM:{local}"
+    return None
+
+
 def mim_curie_for_stem(stem: str) -> str:
     """`MIM:<stem>` with non-URL-safe characters ~HEX escaped.
 
@@ -329,11 +337,16 @@ class CurieNormalizer:
         v = self.normalize(curie)
         if not v:
             raw = (curie or "").strip()
+            # Even a retained spelling cannot turn malformed numeric identity
+            # into an alias (including Unicode decimal digits, #1276).
+            if _numeric_mim_reference(raw) is not None:
+                return v
             if raw not in self._alias_targets and raw not in self._aliases:
                 return v
             v = Verdict(True, curie=raw)
         cur = v.curie
-        if re.fullmatch(r"MIM:[0-9]{7}", cur):
+        if (numeric := _numeric_mim_reference(cur)) is not None:
+            cur = numeric
             target = self._resolved_ids.get(cur)
             if target is None:
                 return Verdict(
@@ -349,10 +362,13 @@ class CurieNormalizer:
         targets: set[str] = set()
         visited: set[str] = set()
         while True:
+            numeric = _numeric_mim_reference(cur)
+            if numeric is not None:
+                cur = numeric
             if cur in visited:
                 return Verdict(False, curie=cur, problem="ALIAS_CYCLE")
             visited.add(cur)
-            if re.fullmatch(r"MIM:[0-9]{7}", cur):
+            if numeric is not None:
                 target = self._resolved_ids.get(cur)
                 if target is None:
                     return Verdict(
@@ -364,6 +380,9 @@ class CurieNormalizer:
                 if not follow_replacements and target != cur:
                     return Verdict(False, curie=cur, problem="RETIRED_SUBJECT")
                 targets.add(target)
+                # Permanent IDs terminate aliases; an alias keyed by the same
+                # numeric spelling cannot redirect registered identity.
+                break
             targets.update(self._alias_targets.get(cur, set()))
             if cur not in self._aliases:
                 break

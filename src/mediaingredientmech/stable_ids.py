@@ -290,12 +290,15 @@ class RecordIndex:
         return {key: paths for key, paths in self.aliases.items() if len(paths) > 1}
 
     def lookup(self, identifier: str) -> str:
-        if identifier in self.stable_ids:
-            return self.stable_ids[identifier]
-        # Numeric MIM identities are authoritative, never legacy aliases (#1268).
-        if identifier.startswith("MIM:") and identifier[4:].isdecimal():
-            validate_id(identifier)
-            raise StableIdError(f"Unknown permanent MIM ID: {identifier}")
+        # Reserve numeric MIM references regardless of prefix case (#1276).
+        # Record IDs remain strict uppercase; reference normalization must never
+        # let another record's retained alias impersonate their identity.
+        prefix, separator, local = identifier.strip().partition(":")
+        if separator and prefix.casefold() == "mim" and local.isdecimal():
+            canonical = validate_id(f"MIM:{local}")
+            if canonical in self.stable_ids:
+                return self.stable_ids[canonical]
+            raise StableIdError(f"Unknown permanent MIM ID: {canonical}")
         candidates = self.aliases.get(identifier, ())
         if len(candidates) != 1:
             raise StableIdError(f"Unknown or ambiguous record alias: {identifier}")
