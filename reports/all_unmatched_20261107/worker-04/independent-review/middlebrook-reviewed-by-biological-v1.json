@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/biological",
+  "status": "complete",
+  "reviewed_at": "2026-11-08T05:32:54.365298+00:00",
+  "case_ids": [
+    "CM_NAME:4fe1a939ea0f24773027db0083a92d88b51b53c05b5532f0197f207151904000",
+    "KG_CASE:cb39d82a11eab728fed6b3c0668311c274cdce5d1f01bf593a282dae40a05009"
+  ],
+  "owners": {
+    "data/ingredients/mapped/Middlebrook_7H10_Agar.yaml": "8d216d089026948aa2a1a6ee4439b8aab525b09f9c0fe8de53e7403dbc4540c0",
+    "data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml": "f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4"
+  },
+  "captures": {
+    "captures/media/ols-middlebrook.json": "2827426c90e5594fb4e6a536ecade64602a4e70ca8767b43f9a35776994e90a3",
+    "captures/media/jcm-386.html": "b4a1eb91297ab8dcaf9cd9f3b9176c4e40bf8ce30ff0779d563f86a684e4254d",
+    "captures/media/case-043.json": "abdb47884a73225bcccf02b07c68ba48c0e7bd3279bcd5e1c424b3bf9d463fa0",
+    "captures/media/case-179.json": "fa9ec70c9fa25a5a190790b41ec9981005157c305fb238a1ca213765d8392baa",
+    "independent-review/middlebrook-issue1173.json": "2241adfb464efb62bf1039b8f45d4a3d0160f73c01b8f7885f8945c0c7a0137e",
+    "independent-review/middlebrook-issue1173-comments.json": "03feeb51838e7814e7ac63418ca7919d689dfb026d97a36592135917e2c80b70",
+    "independent-review/middlebrook-live-issue-retrieval.json": "f0e4addc517bc3c4e571e2692a927b510e3f768c1c3ef3d1c8005978480f1f2a"
+  },
+  "finding": "NCIT:C85509 alternate definition describes the supplemented medium, including oleic acid-albumin enrichment and glycerol. JCM386 uses 19g BD-Difco base and separately adds 5ml glycerol and100ml OADC; JCM714 inherits this and adds hemin. The mapped owner has a resolving Difco catalog variant based on a lexical ontology synonym. The unmapped Bacto owner retains the distinct Difco262710 base catalog variant. Treating the dry base as exact NCIT finished medium is unsupported.",
+  "specific_action": "Coordinator must compare dry-base versus supplemented-medium owner scope, source occurrences, catalog evidence and cross-worker proposals; revise inappropriate resolving aliases/identity only after reconciliation. Preserve old decisions and reject generic mapping to agar. No automatic merge, reground or owner approval.",
+  "dedup_search": {
+    "inventory": ".temp/all-unmatched-worker-04/issues-pre-filing.json",
+    "inventory_sha256": "9e92e2c0d10da547a1dd060871e44404cb68e3d682993c367f20ad5c5ea3d834",
+    "scope": "All retrieved issue/PR titles and bodies parsed, including the gitignored inventory, searched for Middlebrook, C85509,7H10/7H 10,262710; then live issue1173 and comments retrieved. Not a search of every historical comment.",
+    "matching_issues": [
+      1173,
+      917,
+      116
+    ],
+    "existing_reference": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1173",
+    "disposition": "Use existing open IR-SHARD-ARTIFACT-8 boundary finding on #1173 and retain concrete owner reconciliation under campaign integration/#1157. #1173 is a provenance tracker, not evidence of completed owner repair; no duplicate finding issue recommended."
+  },
+  "approval_scope": "Confirms source-bound distinction and tracking only. Does not approve full inherited owner payloads or propose maintained changes."
+}

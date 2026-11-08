@@ -1,0 +1,37 @@
+identifier: kgmicrobe.ingredient:dsmz_781_horse_dung_extract
+preferred_term: DSMZ 781 Horse dung extract
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_781_horse_dung_extract
+  ontology_label: DSMZ 781 Horse dung extract
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium781.pdf
+    notes: Protocol-qualified aqueous horse-dung extract. Distinct from dry cow manure,
+      whole dung and generic animal manure. Preparation provenance defines the proposed
+      local material; no molecular or ENVO parent mapping asserted.
+synonyms:
+- synonym_text: Dung extract
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium781.pdf
+notes: 'DSMZ781 preparation: boil an average-sized piece of horse dung, fresh or frozen,
+  in 150 ml water in a water bath for two hours; filter and use immediately. The starting
+  dung mass and final extract yield are unspecified. The medium uses 100 ml extract
+  with 900 ml distilled water plus other ingredients. Starting dung/water are extraction
+  inputs, not asserted molecular constituents of the resulting filtrate, so no has-part
+  decomposition is supplied. The current DSMZ PDF does not state separate sterilization;
+  the frozen CultureMech note that does so remains a source discrepancy, not an added
+  identity property. Raw generic synonym requires source-scoped collision review before
+  publication. Proposed payload only; no maintained data or release decision changed.'
+curation_history:
+- timestamp: '2026-11-08T05:17:21.931497+00:00'
+  curator: codex_worker04_biological
+  action: CREATED_SOURCE_QUALIFIED_MATERIAL_PROPOSAL
+  changes: Proposed protocol-qualified DSMZ781 horse-dung extract from primary preparation.
+    Retained unknown starting mass and extraction yield, source volume and preparation
+    discrepancy. No parent or molecular identity inferred.
+  new_status: MAPPED
+  llm_assisted: true

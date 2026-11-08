@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-11-08T05:35:11.177529+00:00",
+  "script": "reports/all_unmatched_20261107/worker-04/scripts/build_native_review.py",
+  "script_sha256": "fbd7f23d8ee14f04cc045999e74d99c1ae5fe74576c8e4b7794527994498bc9d",
+  "harness_sha256": "9e24a527c3f1da037ab1a6b8b653647efe26615a53758585be1cb6ab552a56be",
+  "scope": "Unchanged AST prefix of actual native builder through all validation assertions; isolated inputs; no scientific report produced or production artifact modified.",
+  "controls": [
+    {
+      "name": "valid_gates",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "assertion": null,
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "nonzero_schema_exit",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "('schema', {'exit_code': 1, 'log': 'validation/fixture-schema.log', 'log_sha256': 'de48576fb70ddd6418f5d1f4e1cfd3925e33f1ad9e56b2ef915d4b6be7590327', 'input_bindings_sha256': '5abc7bc2d19e4dae48550cd30ac34602e47b484ac4e585910a401f207766f7fd'})",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "changed_check_output",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "structural",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "structural_fail",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "mechanical_audit_claims_scientific_approval",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "overlay_fail",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "changed_native_targets",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "changed_bound_input",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/biological/native-controls-20261108T053511153128Z/changed_bound_input/reports/all_unmatched_20261107/worker-04/fixture-input.json",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "wrong_input_binding_receipt",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "missing_independent_case",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    }
+  ],
+  "status": "PASS"
+}

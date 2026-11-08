@@ -1,0 +1,44 @@
+identifier: kgmicrobe.ingredient:nbrc_989_biotin_ethanol_stock
+preferred_term: NBRC 989 biotin ethanol stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_989_biotin_ethanol_stock
+  ontology_label: NBRC 989 biotin ethanol stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+    notes: Source-qualified formulation identity. No molecular exactMatch or generic-stock equivalence is asserted. NBRC989 *Biotin solution table explicitly gives5mg biotin and100ml ethanol; this differs from the HEPES-buffered UTEX biotin vitamin stock in the frozen F/2 comparator. The2ml receiving-medium addition is not stock composition.
+synonyms:
+- synonym_text: Biotin solution*
+  synonym_type: REJECTED_LABEL
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: mg per source batch
+- component_name: Ethanol
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ml per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+    source_record: NBRC 989 biotin ethanol stock
+    notes: NBRC989 *Biotin solution table explicitly gives5mg biotin and100ml ethanol; this differs from the HEPES-buffered UTEX biotin vitamin stock in the frozen F/2 comparator. The2ml receiving-medium addition is not stock composition.
+  notes: Amounts retain their explicit stock or source-batch basis; no measured final volume or receiving-medium concentration is inferred.
+notes: Isolated source-review proposal. Generic raw source spelling retained as nonresolving provenance so this specific formulation cannot capture other preparations. NBRC989 *Biotin solution table explicitly gives5mg biotin and100ml ethanol; this differs from the HEPES-buffered UTEX biotin vitamin stock in the frozen F/2 comparator. The2ml receiving-medium addition is not stock composition.
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: Proposed source-qualified stock nbrc989-biotin-ethanol with source-stated component scope. No maintained owner or publication selector was changed.
+  new_status: MAPPED
+  llm_assisted: true

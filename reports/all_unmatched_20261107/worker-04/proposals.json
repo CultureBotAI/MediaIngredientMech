@@ -1,0 +1,2075 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "w04-chem-proposal-trisodium-edta",
+      "case_ids": [
+        "CM_NAME:02591f4a5364db919b1a8890e8f6800a87eea943fff102ed0405d0de9b069fa5"
+      ],
+      "description": "The three frozen occurrences explicitly specify three sodium ions. Live CHEBI:63125 defines the trisodium salt, distinct from disodium CHEBI:64734/64758. The owner is correctly trisodium but its active 'EDTA di sodium salt' synonym is chemically wrong. Add the explicit 3Na spelling and retain the wrong disodium string only as rejected provenance; no interpretation of case125 is imported here. Original NBRC387/900/391 all corroborate3Na-EDTA; NBRC387 specifies200mg in a vitamin stock, not the frozen200g/L flattened component.",
+      "evidence_ids": [
+        "w04-chem-case-1",
+        "w04-chem-recipe-d61418d71add6115f0d5",
+        "w04-chem-nbrc-387-html",
+        "w04-chem-failed-togo-1579-json",
+        "w04-chem-recipe-e15623f3d657cd3df301",
+        "w04-chem-nbrc-900-html",
+        "w04-chem-failed-togo-1694-json",
+        "w04-chem-recipe-ef59535c8e26aa7d09e1",
+        "w04-chem-nbrc-391-html",
+        "w04-chem-failed-togo-1583-json",
+        "w04-chem-ols-CHEBI-63125-json",
+        "w04-chem-ols-CHEBI-64734-json",
+        "w04-chem-ols-CHEBI-64758-json",
+        "w04-chem-owner-Na3-edta"
+      ],
+      "owner_path": "data/ingredients/mapped/Na3-edta.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Na3-edta.after.yaml",
+        "sha256": "513b2792fc95fcb83e08e7812bc050f7f1da753fb3db998a60c9bd54fd1a808f"
+      },
+      "before_sha256": "ea8dbade6d6bfd0bbb478bd146a1266dbb2742c7d022a3de16904465ea73238a",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-polysorbate80-alias",
+      "case_ids": [
+        "CM_NAME:053be99fda23ac3dde845cbe31b24635ad5d8a01f30a9a682a50095249afdabc"
+      ],
+      "description": "Polyoxyethylene sorbitan mono-oleate explicitly identified as Tween80 is polysorbate80 CHEBI:53426. The polyoxyethylene qualifier distinguishes it from sorbitan monooleate; this is a safe source alias to the existing Tween80 owner, not to Span80.",
+      "evidence_ids": [
+        "w04-chem-case-5",
+        "w04-chem-recipe-bbb1666a29557a4be146",
+        "w04-chem-failed-togo-2833-json",
+        "w04-chem-recipe-e80758210d7d3c28abc4",
+        "w04-chem-failed-togo-2238-json",
+        "w04-chem-recipe-c8582241d578ca5aa927",
+        "w04-chem-failed-togo-2950-json",
+        "w04-chem-ols-CHEBI-53426-json",
+        "w04-chem-owner-Tween_80",
+        "w04-chem-issue-761",
+        "w04-chem-issue-761-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Tween_80.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Tween_80.after.yaml",
+        "sha256": "dfb5f2a4019bf5ff8af77270a0cab636b578911a7fd768849b0e3b63df8b6cc5"
+      },
+      "before_sha256": "b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-water-spelling",
+      "case_ids": [
+        "CM_NAME:168c30f0e3785001c6a528a4c9291068148d8b7db73a4fd4b5206023fd48705a"
+      ],
+      "description": "Destilled water is an orthographic variant of distilled water in the complete recipe, with no saline or solution qualifier. CHEBI:15377 and the current Distilled_Water chemistry support a narrow spelling alias. Other aliases on that shared owner are outside this spelling decision and do not gain approval.",
+      "evidence_ids": [
+        "w04-chem-case-14",
+        "w04-chem-recipe-35be554f72b358b5a822",
+        "w04-chem-failed-togo-2775-json",
+        "w04-chem-ols-CHEBI-15377-json",
+        "w04-chem-owner-Distilled_Water"
+      ],
+      "owner_path": "data/ingredients/mapped/Distilled_Water.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Distilled_Water.after.yaml",
+        "sha256": "85237940b2c7bcdb44101143c4355d75ec72b305830ce46a34f63e8c3e802c1e"
+      },
+      "before_sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-glycerol-anhydrous",
+      "case_ids": [
+        "CM_NAME:16e47b149124530b03a4bb6bcf96902c7b547202bd073cb5c88bf13b54f12b1a",
+        "KG_CASE:9865fbfd5c379c393bf499adaeaef906b2c0d84973a1fbd058209181ca1feb4d"
+      ],
+      "description": "The explicit anhydrous glycerol reagent is the neutral molecule CHEBI:17754, not a distinct crystalline hydrate. The owner already carries the unparenthesized qualifier. Preserve the exact parenthesized raw label as an alias without inferring purity, grade or concentration beyond the source. The raw Glycerol(anhydrous) reagent and processed label agree with neutral glycerol17754 and its source2178 metadata. This is the same substance as the existing glycerol owner, with an explicit water-exclusion qualifier; it is not a new hydrate or a solution concentration.",
+      "evidence_ids": [
+        "w04-chem-case-15",
+        "w04-chem-recipe-be4f7ef93eeaeb4186f4",
+        "w04-chem-recipe-f2fcb9bd3f659405b0d7",
+        "w04-chem-mediadive-solution-5857-json",
+        "w04-chem-ols-CHEBI-17754-json",
+        "w04-chem-mediadive-ingredient-2178-html",
+        "w04-chem-owner-Glycerol",
+        "w04-chem-case-167",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Glycerol.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Glycerol.after.yaml",
+        "sha256": "6a6289db455a617dfaac264f34512b7ef839b08542b9a0b10efa351c45b24f03"
+      },
+      "before_sha256": "c70babb47ba9f6da0b803dd52ae1ba9a094e7ed19c66f30b5568ff6a57e5809a",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-d-biotin-spellings",
+      "case_ids": [
+        "CM_NAME:21aeddfd4e35d925d9fb2aa0433ed0cc7adf48af721383c2e69fd1ce912d4e54",
+        "CM_NAME:85a1b12108a8b80ea7c22164861f692f51f6a787faddde39f2e94cb21be447ae"
+      ],
+      "description": "D--Biotin preserves the D stereochemical designation despite duplicated dashes. Live CHEBI:15956 contains the corresponding D-biotin identity and structure. The punctuation variant can be attached to the existing biotin owner without asserting a stock identity. D(+)--Biotin preserves the D-(+) optical designation; CHEBI:15956 includes D-(+)-biotin and the matching stereostructure. Double dashes are a formatting variant and can be preserved as an alias without broadening to racemic biotin.",
+      "evidence_ids": [
+        "w04-chem-case-24",
+        "w04-chem-recipe-2c4d8bd6ac5527e2efce",
+        "w04-chem-jcm-558-html",
+        "w04-chem-failed-togo-562-json",
+        "w04-chem-recipe-9b67031acc7f2ab1f229",
+        "w04-chem-jcm-239-html",
+        "w04-chem-failed-togo-231-json",
+        "w04-chem-ols-CHEBI-15956-json",
+        "w04-chem-owner-Biotin",
+        "w04-chem-case-78",
+        "w04-chem-recipe-ce51e547a3128da31db7",
+        "w04-chem-jcm-537-html",
+        "w04-chem-failed-togo-539-json",
+        "w04-chem-recipe-799aacd7e0eb4ba12d21",
+        "w04-chem-jcm-699-html",
+        "w04-chem-failed-togo-720-json"
+      ],
+      "owner_path": "data/ingredients/mapped/Biotin.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Biotin.after.yaml",
+        "sha256": "f5e754785ccf5509bc133fb413dddba09ff6e4f1767b8997b89294bb3eaf54d9"
+      },
+      "before_sha256": "26056efadc5e57f081cde6e4ce0c2e25c03530c6d564ef0df25da3bcacb59c30",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-nacetyl-d-monomer",
+      "case_ids": [
+        "CM_NAME:3aac2db9a46d8f5721c59e7e69a8d1cdc5866103fcaf734860d9d3f701bb6fca",
+        "CM_NAME:3cc15a7cad37c950fde61af07431feec1fb05e8ef3547b3b48db60d887976d1d"
+      ],
+      "description": "The D-configured N-acetylglucosamine monomer is explicit despite doubled dashes. CHEBI:506227 defines the free monosaccharide; CHEBI:8006 is a peptidoglycan residue/polymer context and is not the ingredient. TOGO M194 is provider-backed; its historical JCM201 endpoint absence does not justify swapping in LB-medium context. JCM1429 lists N-acetyl-D-glucosamine as a free ingredient. The frozen CHEBI:8006 annotation conflicts with this monomer and its formula; the existing CHEBI:506227 owner is correct. Add the exact spaced N -Acetyl spelling and flag the upstream term independently of the alias.",
+      "evidence_ids": [
+        "w04-chem-case-35",
+        "w04-chem-recipe-7c69961a498dfc2ca583",
+        "w04-chem-jcm-201-html",
+        "w04-chem-failed-togo-194-json",
+        "w04-chem-ols-CHEBI-506227-json",
+        "w04-chem-ols-CHEBI-8006-json",
+        "w04-chem-owner-N-acetyl-d-glucosamine",
+        "w04-chem-case-37",
+        "w04-chem-recipe-c1f7ade67eabe4e754cd",
+        "w04-chem-jcm-1429-html"
+      ],
+      "owner_path": "data/ingredients/mapped/N-acetyl-d-glucosamine.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/N-acetyl-d-glucosamine.after.yaml",
+        "sha256": "25a227a0317a98a4a401fb7ba2e15acf3707e622c9beca56af1c5ba4c0351443"
+      },
+      "before_sha256": "2e327aaa86d1cb081b72e506dae1bd7f21b937573c60fb9a41dd5828a8bed7cb",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-glutamate-monohydrate",
+      "case_ids": [
+        "CM_NAME:6443039e386c491c89767d2bd3172cd009e6f1c8e3ece54320206ab6ac211fe3",
+        "KG_CASE:8b8132641194a6ac99b475e8b178ac9d95b032a1e2497e6b888f1ff010331615"
+      ],
+      "description": "NBRC1625 explicitly specifies L-glutamic acid monosodium salt monohydrate. CHEBI:232425 has one water and L stereochemistry, so the existing monohydrate owner is the correct identity. Its InChI/SMILES still omit water despite the correct formula; repair those exact form properties and add the explicit L alias. Ingredient1291 explicitly names sodium glutamate monohydrate and supplies CAS6106-04-3 and mass187.13, consistent with monosodium L-glutamate monohydrate232425. Its older anhydrous CHEBI annotation is not controlling. The owner has the correct formula but dehydrated InChI/SMILES; the shared exact-form repair is appropriate while all publication holds remain.",
+      "evidence_ids": [
+        "w04-chem-case-58",
+        "w04-chem-recipe-3055e98dc1e521bd17d4",
+        "w04-chem-nbrc-1625-html",
+        "w04-chem-togo-3058-json",
+        "w04-chem-ols-CHEBI-232425-json",
+        "w04-chem-owner-Sodium_Glutamate_Monohydrate",
+        "w04-chem-issue-655",
+        "w04-chem-issue-655-comments",
+        "w04-chem-case-166",
+        "w04-chem-ols-CHEBI-64220-json",
+        "w04-chem-mediadive-ingredient-1291-html",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Sodium_Glutamate_Monohydrate.after.yaml",
+        "sha256": "5150e54eacd961dd7c5436659b72da736ed89a20ce86cf0f31d02aa48f212233"
+      },
+      "before_sha256": "1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-folate-b9",
+      "case_ids": [
+        "CM_NAME:8322cd3f33f8a5bb35b786bc7d42e2091f8ac1cd77f1da6fee7533b81e605a5a"
+      ],
+      "description": "Folic acid with vitaminB9 is an explicit single solute even where nested in a vitamin stock. CHEBI:27470 identifies folic acid and supports the B9 label. Add the qualified alias to the existing owner while retaining the original nested occurrence context.",
+      "evidence_ids": [
+        "w04-chem-case-76",
+        "w04-chem-recipe-cb5a972f2d1da8e1c0f8",
+        "w04-chem-ols-CHEBI-27470-json",
+        "w04-chem-owner-Folic_Acid"
+      ],
+      "owner_path": "data/ingredients/mapped/Folic_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Folic_Acid.after.yaml",
+        "sha256": "79b9b94956ba546897ca69172654b62bc1ff4ecd894a828da51dbe91cf4d2e2a"
+      },
+      "before_sha256": "df85938271ec8f32a6d756f5213ba9661c9a7530822f333d2e02493b9f92e615",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-ferric-ammonium-citrate",
+      "case_ids": [
+        "CM_NAME:83637b465eeb4e8f0203f455ed0e87a88f2463531cf5f294bf72466f46483953"
+      ],
+      "description": "Fe(III)NH4-Citrate denotes ferric ammonium citrate. CHEBI:31604 describes this material as an indefinite-composition ferric ammonium citrate mixture, so the existing owner is suitable without inventing a fixed molecular stoichiometry. The explicit FeIII and ammonium qualifiers are retained.",
+      "evidence_ids": [
+        "w04-chem-case-77",
+        "w04-chem-recipe-600b7655a50032427e08",
+        "w04-chem-failed-togo-3209-json",
+        "w04-chem-recipe-52aef727781152da6ac0",
+        "w04-chem-failed-togo-3208-json",
+        "w04-chem-ols-CHEBI-31604-json",
+        "w04-chem-owner-Ferric_Ammonium_Citrate"
+      ],
+      "owner_path": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Ferric_Ammonium_Citrate.after.yaml",
+        "sha256": "f55993b7b4a2c8a30bd46f8d39e1abfb25c5b563f5a914fbf4cfa4707153916e"
+      },
+      "before_sha256": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-ferric-edta",
+      "case_ids": [
+        "CM_NAME:a6f38120b9c4d04154e2d9fca451708a85c00e121152783d86f6c47a7eab1c3f"
+      ],
+      "description": "EDTA・Fe(III) names the ferric EDTA coordination entity CHEBI:30729. The three frozen sources specify the complex without a sodium counterion; a sodium feredetate identity78292 would add an unsupported constituent. The existing ferric-EDTA owner can retain the exact typographic alias.",
+      "evidence_ids": [
+        "w04-chem-case-94",
+        "w04-chem-recipe-fcf9a203c7ee9c636a94",
+        "w04-chem-jcm-246-html",
+        "w04-chem-failed-togo-238-json",
+        "w04-chem-recipe-e68c62bea1f376623654",
+        "w04-chem-jcm-815-html",
+        "w04-chem-failed-togo-850-json",
+        "w04-chem-recipe-1a7fa50addc94c155450",
+        "w04-chem-jcm-886-html",
+        "w04-chem-failed-togo-927-json",
+        "w04-chem-ols-CHEBI-30729-json",
+        "w04-chem-ols-CHEBI-78292-json",
+        "w04-chem-owner-Fe_Iii-edta"
+      ],
+      "owner_path": "data/ingredients/mapped/Fe_Iii-edta.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Fe_Iii-edta.after.yaml",
+        "sha256": "f6166de4951a66032986107f6dac307cf264b15cd555f2d935c4cd3cd22d80bc"
+      },
+      "before_sha256": "583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-retinol",
+      "case_ids": [
+        "CM_NAME:2f584565c4ff185bd8b19a6907d8222b4d0651298f5e195f154b529abac98d6e"
+      ],
+      "description": "The frozen MediaDB component is retinol without geometrical qualifiers. CHEBI:50211 deliberately leaves the geometry of its four double bonds unspecified, matching that level of source specificity. A new retinol owner can use this class; all-trans-retinol, retinyl esters and vitamin-A mixtures must not be substituted.",
+      "evidence_ids": [
+        "w04-chem-case-28",
+        "w04-chem-recipe-880d388577afcbf670bc",
+        "w04-chem-ols-CHEBI-50211-json"
+      ],
+      "owner_path": "data/ingredients/mapped/Retinol.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Retinol.after.yaml",
+        "sha256": "ed99bc2f5f2b7c7a3694c6deadd4ee44b5b2f7aebfe92fc77788bf709c32c62d"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-barium-carbonate",
+      "case_ids": [
+        "CM_NAME:42e3e3b30b625d5fd11aff35fd8788ab676d585ec68a4fd8437ae142d8e6045e"
+      ],
+      "description": "BaCO3 is the explicit barium carbonate component in the P4 recipe's nested stock. CHEBI:190439 identifies BaCO3, CAS513-77-9. The ingredient identity can be represented separately from the user-supplied stock; this does not endorse the stock's aqueous solubility or filtration instructions.",
+      "evidence_ids": [
+        "w04-chem-case-40",
+        "w04-chem-recipe-f751bf318cda4d4053f6",
+        "w04-chem-mediadive-P4-html",
+        "w04-chem-ols-CHEBI-190439-json"
+      ],
+      "owner_path": "data/ingredients/mapped/Barium_Carbonate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Barium_Carbonate.after.yaml",
+        "sha256": "1079d8633d41505978e4884ac36442abf3ace068d01466a887e92d040b45abfb"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-bis-tris-propane",
+      "case_ids": [
+        "CM_NAME:cae0c1c4f4ea239dce3e46c1ff4dfe0b9fd9e50f394ffc57a480111e83661db4"
+      ],
+      "description": "Bis Tris Propane in NBRC1050/1049 is the propane-linked buffer CHEBI:40947. The existing Bis-tris owner denotes a different single-center buffer and cannot absorb the propane qualifier. All three frozen occurrences retain2.25g/L and the same explicit buffer identity.",
+      "evidence_ids": [
+        "w04-chem-case-103",
+        "w04-chem-recipe-57df5bf30acedb61e837",
+        "w04-chem-nbrc-1050-html",
+        "w04-chem-recipe-986008bf01b22a16329a",
+        "w04-chem-failed-togo-1818-json",
+        "w04-chem-recipe-32f6cd9ceb9d74ef376b",
+        "w04-chem-nbrc-1049-html",
+        "w04-chem-failed-togo-1817-json",
+        "w04-chem-ols-CHEBI-40947-json",
+        "w04-chem-owner-Bis-tris"
+      ],
+      "owner_path": "data/ingredients/mapped/Bis_Tris_Propane.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Bis_Tris_Propane.after.yaml",
+        "sha256": "74017b3c62599a66405e8e26db3af670377576f0286db10fd303d28160db8e7f"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-2-oxoglutarate",
+      "case_ids": [
+        "CM_NAME:fb48edc526c860e30f643c29615e9fadc306e6a8c588c536b74829ccc5fa1f75"
+      ],
+      "description": "The label2-Oxoglutarate names an anion, and live CHEBI:16810 defines the dianion from both carboxyl-group deprotonations. Under the repository's bare-anion protonation rule, this is the appropriate neutral-medium species; it is not exact identity to alpha-ketoglutaric acid30915. The14.6g stock amount may derive from weighed acid, so that supplied-form and stock context remains separate and unresolved.",
+      "evidence_ids": [
+        "w04-chem-case-128",
+        "w04-chem-recipe-1a6894b1a0f1182db7e8",
+        "w04-chem-jcm-1100-html",
+        "w04-chem-failed-togo-1173-json",
+        "w04-chem-recipe-501240c9425617e9e530",
+        "w04-chem-recipe-d79e65b5ee4197c8cb71",
+        "w04-chem-recipe-9062e96a77d866b75895",
+        "w04-chem-mediadive-solution-5181-json",
+        "w04-chem-ols-CHEBI-16810-json",
+        "w04-chem-ols-CHEBI-30915-json",
+        "w04-chem-mediadive-ingredient-1992-html"
+      ],
+      "owner_path": "data/ingredients/mapped/2-Oxoglutarate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/2-Oxoglutarate.after.yaml",
+        "sha256": "1fb91d22b8c33fb4c386f4c694c8b5a3b58fe9c0bd68df9866d90c5603b5136a"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-putrescine-dihydrochloride",
+      "case_ids": [
+        "KG_CASE:1b6a580d68b62f221688a2e601f74135dd37692f23623c1a89f08262b4efd3bd"
+      ],
+      "description": "Putrescine2HCl, CAS333-93-7 and C4H12N2.2ClH identify the dihydrochloride, not free putrescine. CHEBI:201718 now denotes this exact salt; the existing CAS-primary owner still treats it as a broad parent. Promote the owner to the exact ontology salt while retaining CAS, rejecting the free-base alias and preserving history.",
+      "evidence_ids": [
+        "w04-chem-case-137",
+        "w04-chem-ols-CHEBI-201718-json",
+        "w04-chem-mediadive-ingredient-1352-html",
+        "w04-chem-owner-Putrescine_Dihydrochloride",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Putrescine_Dihydrochloride.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Putrescine_Dihydrochloride.after.yaml",
+        "sha256": "593a77599233d785f614452e5141ab795a5e74fad8bd534f0dec6d2707032b3a"
+      },
+      "before_sha256": "d0afce92c76850d141b4d0aeadc377a217efa26487a5e9966ff2e03298d7c491",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-orthomolybdate-alias",
+      "case_ids": [
+        "KG_CASE:2b3d618b22b4ea8fe5e1e90bbe262449f99b21b7fbf96288f9427d7e75640c4f"
+      ],
+      "description": "The raw source(NH4)6Mo7O24 x4H2O, ingredient120 CAS12054-85-2 and mass1235.86 identify hexaammonium heptamolybdate tetrahydrate86244. Diammonium orthomolybdate91249 has one Mo and two ammoniums and is not its parent. The current wrong owner already rejects the tetrahydrate strings but still resolves the anhydrous heptamolybdate formula; reject that residual polyanion alias and link the source to the existing correct tetrahydrate owner. OLS86244's prose says heptahydrate in error; its name/formula/mass and source CAS all specify four waters.",
+      "evidence_ids": [
+        "w04-chem-case-140",
+        "w04-chem-ols-CHEBI-86244-json",
+        "w04-chem-ols-CHEBI-91249-json",
+        "w04-chem-mediadive-ingredient-120-html",
+        "w04-chem-ccap-MR_TAP-pdf",
+        "w04-chem-owner-Diammonium_molybdate",
+        "w04-chem-owner-Ammonium_Molybdate_Tetrahydrate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-312",
+        "w04-chem-issue-312-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Diammonium_molybdate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Diammonium_molybdate.after.yaml",
+        "sha256": "5621f9788aa11aef035f90d1ef0d83b4e2d4ec100a5f5deeab1053009db12d51"
+      },
+      "before_sha256": "04f56b6dd9464f2c7fcb63db2a055d507d9a4498224847ad841a78306a35e1a7",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-heptamolybdate-tetrahydrate",
+      "case_ids": [
+        "KG_CASE:2b3d618b22b4ea8fe5e1e90bbe262449f99b21b7fbf96288f9427d7e75640c4f"
+      ],
+      "description": "The raw source(NH4)6Mo7O24 x4H2O, ingredient120 CAS12054-85-2 and mass1235.86 identify hexaammonium heptamolybdate tetrahydrate86244. Diammonium orthomolybdate91249 has one Mo and two ammoniums and is not its parent. The current wrong owner already rejects the tetrahydrate strings but still resolves the anhydrous heptamolybdate formula; reject that residual polyanion alias and link the source to the existing correct tetrahydrate owner. OLS86244's prose says heptahydrate in error; its name/formula/mass and source CAS all specify four waters.",
+      "evidence_ids": [
+        "w04-chem-case-140",
+        "w04-chem-ols-CHEBI-86244-json",
+        "w04-chem-ols-CHEBI-91249-json",
+        "w04-chem-mediadive-ingredient-120-html",
+        "w04-chem-ccap-MR_TAP-pdf",
+        "w04-chem-owner-Diammonium_molybdate",
+        "w04-chem-owner-Ammonium_Molybdate_Tetrahydrate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-312",
+        "w04-chem-issue-312-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Ammonium_Molybdate_Tetrahydrate.after.yaml",
+        "sha256": "c20e984063cf76d054808badec005678dd9703c9faeecd1edc46c3ddb00da64c"
+      },
+      "before_sha256": "8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-taps-salt-alias",
+      "case_ids": [
+        "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255"
+      ],
+      "description": "The original DSMZ1344 medium uses Taps17.4g atpH8.3, consistent with buffer usage. MediaDive1188 automatically assigns the unrelated tetrapeptide Tyr-Arg-Phe-Sar(CAS90549-86-3), while the MIM TAPS_Sodium_Salt owner is CAS91000-53-2. Live191055 defines the free buffer acid. Neither the peptide metadata nor generic TAPS spelling proves the sodium salt; reject that salt owner's unqualified alias without choosing the source form.",
+      "evidence_ids": [
+        "w04-chem-case-152",
+        "w04-chem-ols-CHEBI-191055-json",
+        "w04-chem-mediadive-ingredient-1188-html",
+        "w04-chem-dsmz-1344-pdf",
+        "w04-chem-owner-TAPS_Sodium_Salt",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/TAPS_Sodium_Salt.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/TAPS_Sodium_Salt.after.yaml",
+        "sha256": "11ebbd108256245d780b152b838e855008cda86d7769bfb518ba3fa9dc621ade"
+      },
+      "before_sha256": "8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-tungstate-malformed-alias",
+      "case_ids": [
+        "KG_CASE:9f198597ee346fe7fa3800c5f8b41421f7be6b58ec864e341c57eaf0a5298010"
+      ],
+      "description": "Ingredient1743 saysNa2WO2 x2H2O and lacks independent chemistry. The existing tungstate-dihydrate owner63939 incorrectly accepts that oxygen-deficient formula. Reject this alias while preserving its source; the likely O2-toO4 typo is not a verified source correction.",
+      "evidence_ids": [
+        "w04-chem-case-168",
+        "w04-chem-ols-CHEBI-63939-json",
+        "w04-chem-ols-CHEBI-63940-json",
+        "w04-chem-mediadive-ingredient-1743-html",
+        "w04-chem-owner-Na2wo4_X_2_H2o",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2wo4_X_2_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Na2wo4_X_2_H2o.after.yaml",
+        "sha256": "ee4ddb16dcd7db924f74c49b55dbfb563d9da489a7a2adb9a0b03ee575a9da57"
+      },
+      "before_sha256": "b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-monosodium-glutamate-alias",
+      "case_ids": [
+        "KG_CASE:42e69ed549b10bc3e563a0c61ab9e63db6b8c663965806e1dfebe69dd5d53f33",
+        "KG_CASE:a5cb822b735b8b3e9e2e93abcb590f83b5d5274f4bc8590fb08f459c92efbe47"
+      ],
+      "description": "Ingredient839's Na glutamate is concordant with one-sodium glutamate64220 and mass169.112; it does not specify L or a hydrate. The existing owner has that identity but still carries an active wrong Na2-glutamate alias; its monohydrate alias is already REJECTED_LABEL. The matching source is scientifically distinguishable from those conflicts, and publication remains held pending owner cleanup. Ingredient415's Na2-glutamate implies two sodium ions but its automatic CAS142-47-2, CHEBI64220 and169.111mass describe one sodium. The current monosodium owner wrongly exports the disodium string; stoichiometric disagreement must be fixed in the source or separated, not silently normalized.",
+      "evidence_ids": [
+        "w04-chem-case-149",
+        "w04-chem-ols-CHEBI-64220-json",
+        "w04-chem-ols-CHEBI-232425-json",
+        "w04-chem-mediadive-ingredient-839-html",
+        "w04-chem-owner-Na_Glutamate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-655",
+        "w04-chem-issue-655-comments",
+        "w04-chem-case-171",
+        "w04-chem-mediadive-ingredient-415-html"
+      ],
+      "owner_path": "data/ingredients/mapped/Na_Glutamate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Na_Glutamate.after.yaml",
+        "sha256": "fe0471b0cf017b1d2c8efc3db67805727c81416061dcfe0d9e264a8b4f52dfe0"
+      },
+      "before_sha256": "72b5545a5d6c93ba6eb3556542ee0d5df2daa37aa816785e3a8d29c45750ce89",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-thiosulfate-malformed-alias",
+      "case_ids": [
+        "KG_CASE:df8eb2f44fbf35cdd009127d8e42a583a63c8bf8ca647e721846fdac964c0c67"
+      ],
+      "description": "Na2S2SO3 contains three sulfur atoms as written, whereas thiosulfate132112 is Na2S2O3. Ingredient1492 has no corroborating registry data. The thiosulfate owner must not resolve this malformed string; preserve it as rejected source provenance until a source correction exists.",
+      "evidence_ids": [
+        "w04-chem-case-182",
+        "w04-chem-ols-CHEBI-132112-json",
+        "w04-chem-mediadive-ingredient-1492-html",
+        "w04-chem-owner-Na2s2o3",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2s2o3.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Na2s2o3.after.yaml",
+        "sha256": "743b6a3391e05f18fb51bc069d3b02fae141f178d5f4dc9a63fe8e922977efa3"
+      },
+      "before_sha256": "8721a533a7671b464ce2c9104f12e273da24ce3f1566d0b33df6b59ba2e44146",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-nbrc989-biotin-ethanol",
+      "case_ids": [
+        "CM_NAME:6e94272892c45c0c7df2b54e7723c0d5591101dfd237b3e2a3c139007f7358ad"
+      ],
+      "description": "NBRC989 explicitly defines the asterisked biotin stock as5mg biotin in100ml ethanol, added2ml to TYL medium. This is an ethanol stock, not pure biotin and not an unspecified aqueous vitamin mixture. The frozen NBRC990 filename and its NBRC989 owner distinction are preserved. Complete stock composition is sufficient for a distinct NBRC989 formulation proposal:5mg biotin and100ml ethanol per source batch. Existing Biotin_Vitamin_Solution is an unspecified18-occurrence stock owner with no component assertion, so it cannot be asserted equivalent to this exactly defined ethanol stock; no global unspecified stock alias is released.",
+      "evidence_ids": [
+        "w04-chem-case-61",
+        "w04-chem-recipe-9fa52b66687c6fe07751",
+        "w04-chem-nbrc-989-html",
+        "w04-chem-ols-CHEBI-15956-json",
+        "w04-chem-owner-Biotin_Vitamin_Solution",
+        "w04-chem-biotin-stock-comparator",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_989_Biotin_Ethanol_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/NBRC_989_Biotin_Ethanol_Stock.after.yaml",
+        "sha256": "79b5b005de4d29477652dfa3768d89d2186a3fea772fb969f720fb5c8d728bc3"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-togo2809-carbonate8percent",
+      "case_ids": [
+        "CM_NAME:5f00f7259e7dc162fd15228c3b4c4fb86c2699bb8eab422306849a3a37d67eb8"
+      ],
+      "description": "TOGO2809 places8%(wt/vol) Na2CO3 within the titanium-citrate preparation. It is an80g/L carbonate solution, with100ml addition in that preparation; the frozen100g/L is not the stock concentration. CHEBI:29377 identifies only its solute, and other carbonate stock concentrations are different formulations. Propose a source-qualified8%w/v carbonate stock with a PARTIAL component assertion for the known Na2CO3 solute at80g/L; solvent is not independently specified and is not invented.",
+      "evidence_ids": [
+        "w04-chem-case-55",
+        "w04-chem-recipe-af629e1b04957e39db52",
+        "w04-chem-togo-2809-json",
+        "w04-chem-ols-CHEBI-29377-json",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_2809_Sodium_Carbonate_8_Percent.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/TOGO_2809_Sodium_Carbonate_8_Percent.after.yaml",
+        "sha256": "62237b92eec4efe7f39ec860a6cba608fd356eb896dea14c895abe086ce11b4e"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-togo2809-titanium-citrate",
+      "case_ids": [
+        "CM_NAME:d5c2ddbc1084d1ed44abdf16a9b3813a68ee1e3463aa7c54b0943c95cff5eb8a"
+      ],
+      "description": "TOGO2809 defines titanium citrate in the LS4D preparation using precursor and carbonate solution steps. The raw titanium-citrate label therefore names a prepared reducing stock, not a pure titanium citrate with known fixed composition; the frozen5g/L cannot substitute for stock addition volume. The complete original TOGO preparation defines500ml0.2M sodium-citrate solution,37.5ml20%w/v TiCl3 solution and100ml8%w/v Na2CO3 under nitrogen. A source-qualified formulation can preserve those batch additions without claiming measured final volume, chemical speciation or an exact pure compound. Existing UNMAPPED_0618 is a distinct generic communitymech source, not proof of the LS4D formulation.",
+      "evidence_ids": [
+        "w04-chem-case-112",
+        "w04-chem-recipe-af629e1b04957e39db52",
+        "w04-chem-togo-2809-json",
+        "w04-chem-owner-Titanium_Iii_Citrate",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_2809_Titanium_Citrate_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/TOGO_2809_Titanium_Citrate_Stock.after.yaml",
+        "sha256": "fad9e9c1dd82f87ce50f3b52b916c99a9128d2c258ca7bdd284989df0afb09d9"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-togo2262-hepes-naoh",
+      "case_ids": [
+        "CM_NAME:7bf2647954128b435654cf3b536599dcc4ceb5252513e3a14d4fd36dd73de091"
+      ],
+      "description": "TOGO2262 explicitly defines the HEPES-NaOH stock:119.15g HEPES in250ml water, adjustpH7.5,bring final volume to500ml,1M. Its medium occurrence is1mM, not the stock concentration. Propose a source-qualified1M pH7.5 buffer with PARTIAL assertion: HEPES238.3g/L,NaOH present by title with unquantified titration, water solvent without invented water volume. CHEBI42334 identifies solute only, not the buffer.",
+      "evidence_ids": [
+        "w04-chem-case-68",
+        "w04-chem-recipe-d999969421b96869ea83",
+        "w04-chem-togo-2262-json",
+        "w04-chem-ols-CHEBI-42334-json",
+        "w04-chem-owner-Hepes",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_2262_HEPES_NaOH_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/TOGO_2262_HEPES_NaOH_Stock.after.yaml",
+        "sha256": "26a52014cb1129f49712d7bf8d4bff8e6769c05480ab1003013831efa8cd3dc9"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration."
+    },
+    {
+      "proposal_id": "w04-chem-proposal-togo1146-crotonate-stock",
+      "case_ids": [
+        "CM_NAME:04489c180637c0f451e1a7c6b4acd561ee2dc6cdb2727149e7e299d4bb0d76e9"
+      ],
+      "description": "TOGO M1146/M1147 specify a 0.5 M crotonic-acid stock at pH7, added as20ml. This is a neutralized solution, not the pure trans acid CHEBI:41131; the frozen20g/L is not reliable stock-to-medium arithmetic. Preserve concentration, pH and addition context. A source-qualified PARTIAL stock proposal preserves0.5M solute andpH7 without guessing the neutralizing reagent or solvent; no pure-crotonic-acid synonym is emitted.",
+      "evidence_ids": [
+        "w04-chem-case-3",
+        "w04-chem-recipe-403d86cc591979de3a82",
+        "w04-chem-jcm-1077-html",
+        "w04-chem-togo-1146-json",
+        "w04-chem-recipe-a39801f1764aceadf05b",
+        "w04-chem-jcm-1078-html",
+        "w04-chem-togo-1147-json",
+        "w04-chem-ols-CHEBI-41131-json",
+        "w04-chem-owner-Crotonic_Acid",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_1146_1147_Crotonic_Acid_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/TOGO_1146_1147_Crotonic_Acid_Stock.after.yaml",
+        "sha256": "71b1fe96361b065928a8afbc274a1553566afac32edd8fee573a4c38aefd35c1"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration."
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-filtered-seawater-aliases",
+      "case_ids": [
+        "CM_NAME:12fab181fb7a8d829e375acb04a7267dabc69b22aa48ee624c3c417aee9e473d",
+        "CM_NAME:7ce67d784e648c4b596c43e62c319bf29cdf19710f09454cde8be8612d650b98"
+      ],
+      "description": "Add two source-verified filtered natural seawater synonyms to the existing filtered seawater owner. Proposal only; no native data or release status changed.",
+      "evidence_ids": [
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-FAILED-retrievals-5",
+        "BIO-FAILED-retrievals-70",
+        "BIO-FAILED-retrievals-72",
+        "BIO-FAILED-retrievals-73",
+        "BIO-FAILED-retrievals-74",
+        "BIO-OWNER-Filtered_Seawater",
+        "BIO-PRIMARY-0c1e7fd46063ca00",
+        "BIO-PRIMARY-0d8880a8bce366da",
+        "BIO-PRIMARY-171a1240b2e16508",
+        "BIO-PRIMARY-2c8500ee6101e866",
+        "BIO-PRIMARY-3d890e248ce5aa41",
+        "BIO-PRIMARY-c9440f55c5fd86de",
+        "BIO-PRIMARY-cfa9107ea335833e",
+        "BIO-PRIMARY-e985257a8f05541b",
+        "BIO-PRIMARY-supp-e985257a8f05541b",
+        "BIO-RECIPE-039298d806a3c37f",
+        "BIO-RECIPE-10def676385acac7",
+        "BIO-RECIPE-47bbd520021f151e",
+        "BIO-RECIPE-575bba2696be8cbe",
+        "BIO-RECIPE-9a4a25c9d4ae9b23",
+        "BIO-RECIPE-bd6a9550f0465707",
+        "BIO-RECIPE-c44ec99e4326848e",
+        "BIO-RECIPE-cee9321f0230d004",
+        "BIO-RECIPE-cfbb705908544cf0",
+        "BIO-RECIPE-d2b5e82be908c19a",
+        "BIO-RECIPE-e282ba50c75c82f9",
+        "BIO-SOURCE-11",
+        "BIO-SOURCE-69",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ],
+      "owner_path": "data/ingredients/mapped/Filtered_Seawater.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "5256325a957d3055e060f04a7fa4d658e3d31f4a5d6cedd182e9b1ffe9d0841f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Filtered_Seawater.yaml",
+        "sha256": "662ce1bb0dec3d644b66f65447410303dbbd9cf3060935196716856b6f440831"
+      },
+      "identity_consequences": "No identifier, ontology target or predicate change; new synonyms retain filtration and natural-water scope. Synthetic salt alternatives and recipe dilutions are not new aliases.",
+      "publication_review_obligations": "Withdraw inherited support for changed owner bytes. Reassess complete current mapping payload and existing Natural seawater synonym before publication; no hold removed.",
+      "cross_shard_conflict": "Existing owner may be referenced by other shard cases; coordinator must reconcile on original baseline hash without adopting other proposed bytes."
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_492_modified_mj_synthetic_seawater",
+      "case_ids": [
+        "CM_NAME:40c0c894c4b6bbb50dbaf8a3ffd4617c5eba2537f88f2397b17fd86fc07b840b"
+      ],
+      "description": "Create source-qualified stock owner JCM 492 Modified MJ synthetic seawater from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+        "sha256": "ddd35feefd2df9b1f2a3d721f5b3d89926988efc6e7210a1269e243d324d8f16"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=492",
+      "source_locator": "Modified MJ synthetic seawater table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-294a2f71fde4efbe",
+        "BIO-PRIMARY-6b74fe99558a128c",
+        "BIO-RECIPE-63e3c7aa3b66f9c0",
+        "BIO-SOURCE-39",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_611_synthetic_seawater_mix",
+      "case_ids": [
+        "CM_NAME:489879a7e87e7a699d78827333788bb166ae73b2c834ca7cd4ef439a2d7b3b80"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 611 Synthetic seawater mix from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+        "sha256": "fde3eda1565395d85eb7f90094978e7b367c7710a737c784e741f993adce2633"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium611.pdf",
+      "source_locator": "Page1 Synthetic seawater mix table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-0c282238beb9b54a",
+        "BIO-PRIMARY-f93c582c16f11798",
+        "BIO-RECIPE-5769ce12f5239e85",
+        "BIO-SOURCE-41",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_512_dl_minerals",
+      "case_ids": [
+        "CM_NAME:5053010207e6a25275b07ded5e00096c9743b06a65917aa299596a07d7822ec0"
+      ],
+      "description": "Create source-qualified stock owner JCM 512 DL minerals from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_512_DL_Minerals.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_512_DL_Minerals.yaml",
+        "sha256": "245391b1c557bdb7673657098583d269e767905646e9fdbe9ac82e4af53a77b7"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512",
+      "source_locator": "DL minerals (refrigerated) table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-OWNER-Sulfur-free_DL_Minerals",
+        "BIO-PRIMARY-1c28eda81cff76c7",
+        "BIO-PRIMARY-7e29fc85a844d1a0",
+        "BIO-RECIPE-f8ed0e149c2204e2",
+        "BIO-SOURCE-44",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_946a_synthetic_seawater_2x",
+      "case_ids": [
+        "CM_NAME:55e03ac3f1e2010248ef84417fc0b47e6d82d7345a3e19d88c5688451d2456c1"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 946a Synthetic seawater (2 x conc.) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+        "sha256": "344e7b970587916303854ebb1743726652155ce17d44688194fbd2e15883cfad"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium946a.pdf",
+      "source_locator": "Page2 Synthetic seawater (2 x conc.) (from medium795)",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-251d30ed6e239c8a",
+        "BIO-PRIMARY-f21af9734c76ece4",
+        "BIO-RECIPE-dea10ee1e675adcb",
+        "BIO-SOURCE-49",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_651_artificial_seawater_05x",
+      "case_ids": [
+        "CM_NAME:d2d3612b39dbe00f78cfb34452b2a457722c69f111f1ba1966f865b3b2bec892"
+      ],
+      "description": "Create source-qualified stock owner JCM 651 Artificial seawater (0.5 x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_651_Artificial_Seawater_05x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_651_Artificial_Seawater_05x.yaml",
+        "sha256": "0adde845da6ee89a25d28a821e889727dd5136c6ae3015c4e6eb17781dc9095a"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=651",
+      "source_locator": "0.5 x Artificial seawater table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-retrievals-113",
+        "BIO-PRIMARY-ea90e577fff6331e",
+        "BIO-RECIPE-78aa92c14f524afa",
+        "BIO-SOURCE-108",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_910_artificial_seawater_1x",
+      "case_ids": [
+        "CM_NAME:8cb304e452d84e6d4ec5cbc5d75323b0ed6db6ff52c7782ab6489972a0af6c16"
+      ],
+      "description": "Create source-qualified stock owner JCM 910 Artificial seawater (1.0 x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_910_Artificial_Seawater_1x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_910_Artificial_Seawater_1x.yaml",
+        "sha256": "4557113d7ff49fdd8722ba409e1d5e1016d44b5f51f528a644c0048d9eeaa107"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=910",
+      "source_locator": "Instruction replacing JCM651 0.5x artificial seawater with 1.0x",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-retrievals-83",
+        "BIO-PRIMARY-ba94778d8e851661",
+        "BIO-RECIPE-c111f454e691870e",
+        "BIO-SOURCE-81",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_1009_artificial_seawater",
+      "case_ids": [
+        "CM_NAME:db13060723b46cd5621e5d34b182346c99697edb81b0b10951cfb2236d12b093"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 1009 Artificial seawater (32 g sea salt per litre water) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_1009_Artificial_Seawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_1009_Artificial_Seawater.yaml",
+        "sha256": "85d9eff24c54bad5e6daa013fd28496d81c3429ef0b65f625070df37de0b34d3"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf",
+      "source_locator": "Artificial seawater footnote",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-1bd0d036a214812b",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-RECIPE-15d053e487c597ff",
+        "BIO-RECIPE-3c64593e6a95dc23",
+        "BIO-SOURCE-115",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_1269_artificial_seawater_4x",
+      "case_ids": [
+        "CM_NAME:8f55a2cf22d316d1e69ee4141a16291e5deeb1cf7f396c08b5fd3eac6924cd78"
+      ],
+      "description": "Create source-qualified stock owner JCM 1269 Artificial seawater (4x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_1269_Artificial_Seawater_4x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_1269_Artificial_Seawater_4x.yaml",
+        "sha256": "71008fd600cde88d17a6315c0147b00ca48890df2cb53ce643c794853640899c"
+      },
+      "primary_url": "https://bacmedia.dsmz.de/pdf/J1269",
+      "source_locator": "Artificial seawater (4x) table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-final-retrievals-reconstructed-v2-3",
+        "BIO-FAILED-retrievals-86",
+        "BIO-PRIMARY-f0fa77fefe0df7a2",
+        "BIO-PRIMARY-final-135b07b3c8e2778e",
+        "BIO-PRIMARY-final-b23a1a331ed0ed06",
+        "BIO-RECEIPT-RECOVERY-v2",
+        "BIO-RECIPE-3920d6fe2ac2df93",
+        "BIO-SOURCE-85",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_781_horse_dung_extract",
+      "case_ids": [
+        "CM_NAME:82ed92170a6907ff3bba19b261fc010ac343554ae8299ca5dbb3c6a4632be2d2",
+        "KG_CASE:50a3e82d96fde8b0ff490cdc2f0a77956358274265d79ba97d23a983c4978534"
+      ],
+      "description": "Create the protocol-qualified horse-dung aqueous extract explicitly defined in DSMZ781; keep extraction inputs distinct from measured filtrate composition.",
+      "owner_path": "data/ingredients/mapped/DSMZ_781_Horse_Dung_Extract.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_781_Horse_Dung_Extract.yaml",
+        "sha256": "5799874520bfb23194cac5dae89f04b2a02ad13c4b4a6d9480a159e35f3795b8"
+      },
+      "identity_consequences": "Own fallback registry identity only; no equivalence to animal manure or dry cow manure. No guessed components, concentration or sterilization property.",
+      "publication_review_obligations": "Native review and full source-scoped alias assessment required for the new payload before guarded integration. Existing source-unit defects remain separately tracked.",
+      "cross_shard_conflict": "Coordinator must reconcile any other dung/extract proposal on source protocol, not raw label alone.",
+      "evidence_ids": [
+        "BIO-CHECK-material-guarded-validation.log",
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-PRIMARY-0de3fb431dbb0e36",
+        "BIO-PRIMARY-6686a0a4b7979389",
+        "BIO-PRIMARY-b4d2ad90228abe4e",
+        "BIO-RECIPE-126d5309cd25b389",
+        "BIO-RECIPE-56091d3148f18c35",
+        "BIO-RECIPE-fb6b41b73d777cb6",
+        "BIO-SOURCE-153",
+        "BIO-SOURCE-75",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-colloidal-chitin-protocol",
+      "case_ids": [
+        "KG_CASE:7dc99e7d679a1969a6c2582ca7b76c4cd5f81157aca8b8b5a73ecb2aa5e81a37"
+      ],
+      "description": "Annotate existing colloidal-chitin owner with the verified DSMZ1681 preparation, explicitly scoped to that recipe and without promotion.",
+      "owner_path": "data/ingredients/unmapped/Colloidal_Chitin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "d212ac576d63e4504a5b1b60a4df4af327a7941f263e56070cbf19b33f9f6e51",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Colloidal_Chitin.yaml",
+        "sha256": "5a94355a128c81b2b1745cc56263b1a58ab12d0a231b2bac7a81d2fbac4d0ea3"
+      },
+      "identity_consequences": "No identifier/mapping/status change. Source-bound process annotation only; CHEBI17029 remains a chemically broader candidate, not exact identity.",
+      "publication_review_obligations": "Edited complete owner payload requires new content-bound native review; no inherited approval or hold clearance.",
+      "cross_shard_conflict": "Existing UNMAPPED0361 may have other source claims; coordinator must merge annotations against original baseline bytes and retain source boundaries.",
+      "evidence_ids": [
+        "BIO-CHECK-material-guarded-validation.log",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-OWNER-Colloidal_Chitin",
+        "BIO-PRIMARY-73b797bc52f14d60",
+        "BIO-PRIMARY-final-39aa3b4fe5e386a5",
+        "BIO-PRIMARY-final-b0e89dde5cceef54",
+        "BIO-PRIMARY-link-02b5efd605865c73",
+        "BIO-SOURCE-160",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "media-alias-marine2216",
+      "case_ids": [
+        "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+        "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+        "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac"
+      ],
+      "description": "Preserve exact identity-bearing source labels on the existing owner without changing identifier, grounding, status, ingredient type, roles or components.",
+      "evidence_ids": [
+        "media-case-018",
+        "media-case-034",
+        "media-case-178",
+        "media-fetch-dsmz-604",
+        "media-fetch-jcm-118",
+        "media-fetch-primary-2",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-0f9da4eed5a951f1",
+        "media-recipe-b1415b4cbb30bedb",
+        "media-recipe-eefc9fb9382bedcd",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "owner_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Marine_agar_2216.yaml",
+        "sha256": "1b07179588f4d24497a5a46ce1aef35fabb43acd50347a3c726c154c9ecca063"
+      },
+      "before_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+      "application_authorized": false,
+      "publication_status": "WITHHELD: proposal is not native export/content support",
+      "integration_obligations": [
+        "Independent skeptical review of exact proposed bytes.",
+        "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+        "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+        "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+      ]
+    },
+    {
+      "proposal_id": "media-alias-fastidious",
+      "case_ids": [
+        "CM_NAME:131a8e248fe0135c4bb98273caf16db471557f041feab4d559fee2cf53ceccad",
+        "KG_CASE:0ba079b2fde240b65a27c45b035c117ffb5f51c294f8825b01743270f22d40dd"
+      ],
+      "description": "Preserve exact identity-bearing source labels on the existing owner without changing identifier, grounding, status, ingredient type, roles or components.",
+      "evidence_ids": [
+        "media-case-012",
+        "media-case-134",
+        "media-fetch-api-M2521",
+        "media-fetch-dsmz-1203",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-2853248face159a1",
+        "media-recipe-92dad8e37d4b7d70",
+        "media-recipe-af2dfe52efa87ecd",
+        "media-recipe-c5eab3dc4fcaeae5",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "owner_path": "data/ingredients/unmapped/Fastidious_Anaerobe_Agar.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Fastidious_Anaerobe_Agar.yaml",
+        "sha256": "9ec1adeb403811f953c4a6e5f841d8c7f684000ae71316d85545149863d91104"
+      },
+      "before_sha256": "b6948a273ca480ffb537ecd2d8b425b12df23fc90bcf8fb1a0704723e9a32406",
+      "application_authorized": false,
+      "publication_status": "WITHHELD: proposal is not native export/content support",
+      "integration_obligations": [
+        "Independent skeptical review of exact proposed bytes.",
+        "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+        "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+        "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+      ]
+    },
+    {
+      "proposal_id": "media-alias-casman",
+      "case_ids": [
+        "CM_NAME:71dba1198cea456db5d1c3e0728b61e91e2e6b025338c1782d343d633ce8728a",
+        "KG_CASE:d8184c2a41720358cc53225b47320f3115bea4f15a71ccdfa0f3401685998838"
+      ],
+      "description": "Preserve exact identity-bearing source labels on the existing owner without changing identifier, grounding, status, ingredient type, roles or components.",
+      "evidence_ids": [
+        "media-case-064",
+        "media-case-181",
+        "media-fetch-dsmz-439",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-82f492761b358042",
+        "media-recipe-bdd66a7f3d93301b",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "owner_path": "data/ingredients/unmapped/Casman-Agar-Base.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Casman-Agar-Base.yaml",
+        "sha256": "324da40b6944c4a9717beb1af72181e6df7726fcc4f90e05cae722d76481eb80"
+      },
+      "before_sha256": "74be2c231c9d88860aff20a0822c688a6fedcad3c80ec17212a40dff3d59a603",
+      "application_authorized": false,
+      "publication_status": "WITHHELD: proposal is not native export/content support",
+      "integration_obligations": [
+        "Independent skeptical review of exact proposed bytes.",
+        "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+        "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+        "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+      ]
+    },
+    {
+      "proposal_id": "media-alias-optional-agar",
+      "case_ids": [
+        "CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166",
+        "CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b"
+      ],
+      "description": "Preserve exact identity-bearing source labels on the existing owner without changing identifier, grounding, status, ingredient type, roles or components.",
+      "evidence_ids": [
+        "media-case-050",
+        "media-case-122",
+        "media-fetch-api-M2357",
+        "media-fetch-ols-agar",
+        "media-fetch-primary-10",
+        "media-fetch-primary-12",
+        "media-fetch-primary-41",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-0c4d9c38fc879ac2",
+        "media-recipe-71da0f61b978daa4",
+        "media-recipe-e974fc0b6efa3ad6",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "owner_path": "data/ingredients/mapped/Agar.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Agar.yaml",
+        "sha256": "d319886649a75f387ad38b54ff602896a9685f00325381535f364dbb1eb1ea6b"
+      },
+      "before_sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db",
+      "application_authorized": false,
+      "publication_status": "WITHHELD: proposal is not native export/content support",
+      "integration_obligations": [
+        "Independent skeptical review of exact proposed bytes.",
+        "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+        "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+        "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+      ]
+    },
+    {
+      "proposal_id": "media-new-mem11140",
+      "case_ids": [
+        "CM_NAME:02bdd299770183a650ca472becfdd7aa2b9f7bd83f855268ca002353b02326bc"
+      ],
+      "description": "Create a distinct catalog-bound100x stock; the generic source label remains context-bound in this review, not a global resolving alias.",
+      "evidence_ids": [
+        "media-case-002",
+        "media-duplicate-check",
+        "media-fetch-dsmz-1850",
+        "media-fetch-mem11140",
+        "media-product-owner-search",
+        "media-recipe-b4d50521d6d02595",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2",
+        "media-web-mem-product"
+      ],
+      "owner_path": "data/ingredients/mapped/MEM_Nonessential_Amino_Acids_100x_Gibco11140.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/MEM_Nonessential_Amino_Acids_100x_Gibco11140.yaml",
+        "sha256": "929d0c907a485df228914697cb4ebf51e7b2e002f1fbc8aa4b5fc12ccbc31bea"
+      },
+      "before_sha256": null,
+      "application_authorized": false,
+      "publication_status": "WITHHELD: proposal is not native export/content support",
+      "integration_obligations": [
+        "Independent skeptical review of exact proposed bytes.",
+        "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+        "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+        "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+      ]
+    },
+    {
+      "proposal_id": "media-new-agar-nbrc1339",
+      "case_ids": [
+        "CM_NAME:277e7ebdb3d83d9fcc3becc2c70862779a9a9105490abb975cb5d08c6b728762",
+        "CM_NAME:f0e316ff55f0d984573920d7d21a1565d211bb3f145fb4c34b64615f880b86ba"
+      ],
+      "description": "Create the source-specific agar-water stock; raw generic Agar solution labels remain source-bound and do not become global aliases.",
+      "evidence_ids": [
+        "media-case-025",
+        "media-case-124",
+        "media-duplicate-check",
+        "media-fetch-api-M2041",
+        "media-fetch-nbrc-1339",
+        "media-product-owner-search",
+        "media-recipe-00d4143386b0fce6",
+        "media-recipe-a8199094b6b1d454",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "owner_path": "data/ingredients/mapped/Agar_Solution_NBRC1339.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Agar_Solution_NBRC1339.yaml",
+        "sha256": "db51a9702c31b26f247032ab6a866e971a003ce4a844bf8c356ded94274cda37"
+      },
+      "before_sha256": null,
+      "application_authorized": false,
+      "publication_status": "WITHHELD: proposal is not native export/content support",
+      "integration_obligations": [
+        "Independent skeptical review of exact proposed bytes.",
+        "Full owner payload and identity support review, including any preexisting unresolved roles, components, synonyms or mapping evidence.",
+        "Apply through guarded writer only after coordinator review; regenerate synchronized surfaces and require native publication gates.",
+        "Reconcile overlapping Agar/Marine/product owners with other workers; prior frozen supports do not apply to edited bytes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-jcm_443_lb_agar",
+      "case_ids": [
+        "CM_NAME:5e52b67d9c269f28d4fbca46753e0fdbd0ee3b0341c1b4cd312b7ab4e0ae78c8"
+      ],
+      "description": "JCM443 defines LB agar from BD-Difco tryptone10g, BD-Difco yeast extract5g, NaCl10g, agar15g and distilled water1L. This named preparation is separate from JCM1500 additional NaCl and other LB variants. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/JCM_443_LB_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/JCM_443_LB_Agar.yaml",
+        "sha256": "a50fad444a62834b7c46f9c614de01e8fb53e9f2f0131a24c6efc07ade0bbb55"
+      },
+      "evidence_ids": [
+        "media-case-053",
+        "media-fetch-jcm-443",
+        "media-fetch-primary-13",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-56a7b1b83dd06270",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-oxoid_cm0331_columbia_blood_agar_base",
+      "case_ids": [
+        "CM_NAME:803ebd39439d4fe774abf7128a18312c9fe23ffbda21653ee9280e35f8fc73b2"
+      ],
+      "description": "Oxoid CM0331 is a dehydrated Columbia blood agar base, before added blood or selective supplement. Its nominal four-input formula differs from the BBL formula in MICRO:0000536, so no exact mapping to the generic owner is asserted. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Oxoid_CM0331_Columbia_Blood_Agar_Base.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Oxoid_CM0331_Columbia_Blood_Agar_Base.yaml",
+        "sha256": "560e2e3301550c952b729956e1a04c87941304888130adbe52a254e747207e69"
+      },
+      "evidence_ids": [
+        "media-case-074",
+        "media-fetch-api-M2935",
+        "media-fetch-oxoid-columbia",
+        "media-followup-ols-columbia",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-followup-oxoid-columbia-spec",
+        "media-product-owner-search",
+        "media-recipe-7a9caa4d6ca00b79",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-gibco_31980_imdm_glutamax",
+      "case_ids": [
+        "CM_NAME:b5fd6b8ffc1e17499b9d7c5c0a43a103fa3b11dc01adfe454b5d9fa9192e24d7"
+      ],
+      "description": "Gibco31980030 is the1x IMDM GlutaMAX liquid product with phenol red, before JCM996 serum supplementation and cell conditioning. It is distinct from generic IMDM, free glutamine, or conditioned medium. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Gibco_31980_IMDM_GlutaMAX.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Gibco_31980_IMDM_GlutaMAX.yaml",
+        "sha256": "d42dd60ba82777c0d502982fa5187cb061918665917860de520824d52761922d"
+      },
+      "evidence_ids": [
+        "media-case-097",
+        "media-fetch-imdm31980",
+        "media-fetch-jcm-996",
+        "media-followup-imdm31980-formulation",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-e86c1ff90e7fc435",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-oxoid_cm0003_nutrient_agar",
+      "case_ids": [
+        "KG_CASE:7df9a8f68356560db595892a0b982a189f79abc101d9df90e61b762198ff2d4d"
+      ],
+      "description": "Oxoid CM0003/CM3 nutrient agar is a specific dehydrated product reconstituted at28g/L. Generic Nutrient_Agar UNMAPPED0481 remains a broader unresolved family owner; this proposed product has no generic resolving aliases and does not narrow unrelated source uses. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Oxoid_CM0003_Nutrient_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Oxoid_CM0003_Nutrient_Agar.yaml",
+        "sha256": "08392068799de5e1753117550f9797fb1878e3af5d63355432272d275b61c928"
+      },
+      "evidence_ids": [
+        "media-case-161",
+        "media-fetch-oxoid-nutrient",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-duchefa_p1001_plant_agar",
+      "case_ids": [
+        "KG_CASE:84674ee04f3b22aa6bd53debe4a201140a1f9b43144270dc5ca7b711cdcbd29a"
+      ],
+      "description": "Duchefa P1001 Plant agar is a supplier-defined plant-culture gelling agar grade, not a complete growth medium. Supplier lists gel strength above1100g/cm2, crude ash below3% and acid-insoluble ash below0.5%; its generic agar CAS does not erase grade identity. Raw source9g/L is recipe dose, not product concentration. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Duchefa_P1001_Plant_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Duchefa_P1001_Plant_Agar.yaml",
+        "sha256": "2cf1e8e5f346c574001426685ae33715842bd2f06ff89ace25768a91c4c67ca4"
+      },
+      "evidence_ids": [
+        "media-case-164",
+        "media-fetch-ols-agar",
+        "media-fetch-plant-agar",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-bd_difco_noble_agar",
+      "case_ids": [
+        "CM_NAME:94372f614f3b45ca293d01fb5969772dce2b0748402976f4681537d46acce5aa",
+        "CM_NAME:eb8229c7a93109958ebe2b9d6e2975596e8bb3cdff6a21fb1289c3d2e6861eec"
+      ],
+      "description": "BD-Difco Noble agar is a named supplier grade supported by three source occurrences and the manufacturer Noble product identity. The owner denotes the grade, not a historical package-code crosswalk; current214220 is a supporting100g presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/BD_Difco_Noble_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/BD_Difco_Noble_Agar.yaml",
+        "sha256": "aad44555c02223fdd85124b1be770423ab44853d9123ff8ef05d051a9550233e"
+      },
+      "evidence_ids": [
+        "media-case-089",
+        "media-case-123",
+        "media-fetch-api-M163",
+        "media-fetch-api-M1957",
+        "media-fetch-api-M2498",
+        "media-fetch-primary-27",
+        "media-fetch-primary-43",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-380e99e4b72a3dbf",
+        "media-recipe-55b0a07f049dee11",
+        "media-recipe-a52616eafb5f839c",
+        "media-validation-v2",
+        "media-web-bd-noble"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ]
+    },
+    {
+      "proposal_id": "media-followup-brewer_anaerobic_agar",
+      "case_ids": [
+        "KG_CASE:cd17d357728f3a4a240aa09af921f5b82b0f0d29994f5e105991df2ea6f156af"
+      ],
+      "description": "BD-Difco Brewer Anaerobic Agar is now identified from the BD-authored nine-ingredient formulation and source58g/L powder dose. Promote this existing owner only to an own-registry formulation identity; no external ontology exact match or agar identity is asserted. JCM667 additional2% NaCl is outside this product. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical raw label Brewer anaerobic agar is preserved here without a globally resolving generic alias; non-BD uses require separate comparison.",
+      "kind": "edit_existing_owner",
+      "owner_path": "data/ingredients/unmapped/Brewer_Anaerobic_Agar.yaml",
+      "before_sha256": "768eed9a01ab4eea99ddf161a565795f41c3cbab592a4d781005957c81d5c74d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Brewer_Anaerobic_Agar.yaml",
+        "sha256": "74204eb4fb0911c0ee21db790cd29e2cbad672f6923bd9713769e99b942736dc"
+      },
+      "evidence_ids": [
+        "media-case-180",
+        "media-fetch-bd-brewer",
+        "media-fetch-jcm-667",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Complete owner payload requires content-bound native and independent review before any integration.",
+        "Own-registry identity creates no exact external ontology mapping and clears no preexisting holds.",
+        "Coordinator must reconcile same-owner/source/product overlap against frozen before hashes."
+      ],
+      "destination_owner_path": "data/ingredients/mapped/Brewer_Anaerobic_Agar.yaml"
+    },
+    {
+      "proposal_id": "media-product-bd_228950_gc_agar_base",
+      "case_ids": [
+        "CM_NAME:5fe3f1b4d88f962548f45dd148fc3025edf986ec3a2a6a6ed1c861da0b5e5be0"
+      ],
+      "description": "BD-authored SDS explicitly identifies228950 as Chocolate Agar Base (GC Medium), corroborating the source GC base catalog. Opaque product identity is sufficient; the SDS lists only selected hazardous ingredients, so no full formulation or supplemented-medium composition is inferred. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/BD_228950_GC_Agar_Base.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/BD_228950_GC_Agar_Base.yaml",
+        "sha256": "0372144e888937706c0c71cbca4a4c2ee04a4c3729dab6281f520e1e35a4e6e2"
+      },
+      "evidence_ids": [
+        "media-case-056",
+        "media-fetch-primary-14",
+        "media-product-bd-gc228950-sds",
+        "media-product-failed-bd-gc228950",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-a14f00106b73de6a",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-bd_288210_lactobacilli_mrs_agar",
+      "case_ids": [
+        "CM_NAME:da2bf79478b349753e9c4116e671fed15cdb012b9662370bd82117454194bded"
+      ],
+      "description": "TOGO M2434 exact catalog288210 and the BD Lactobacilli MRS Agar product heading support this distinct dehydrated agar product. It is neither MRS broth nor automatically identical to the Oxoid MRS agar owner. Internal composition remains unasserted. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/BD_288210_Lactobacilli_MRS_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/BD_288210_Lactobacilli_MRS_Agar.yaml",
+        "sha256": "f73cea63b5e88d6e458cc787f354ce1ddcce782cd7891f606228e4ee8a633fd7"
+      },
+      "evidence_ids": [
+        "media-case-114",
+        "media-fetch-api-M2434",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-30108e2c7ec6c1dc",
+        "media-validation-v2",
+        "media-web-bd-mrs"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-nissui_modified_gam_agar",
+      "case_ids": [
+        "CM_NAME:8ce0cf9e2746f52d4a36c71140a23b0912ee82e15fafb7568649aa0976264963",
+        "KG_CASE:f15e145ce0818d23a497de388a5e0a58d37bce94a1222ee01023256f0cd460c5"
+      ],
+      "description": "JCM655 and the KG condition identify Nissui modified GAM56.7g/L. The successor supplier catalogue distinguishes this product from regular GAM74g/L; the manufacturer name-change notice establishes corporate continuity. Proposal retains modified product identity and separates later horse blood. Current nominal composition is supplier evidence, not proof of every historical lot. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Nissui_Modified_GAM_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Nissui_Modified_GAM_Agar.yaml",
+        "sha256": "40aeda98d42d6c496fd1bcff569503faa7602d804a8d336e8e72116f51fa7d21"
+      },
+      "evidence_ids": [
+        "media-case-082",
+        "media-case-187",
+        "media-fetch-api-M3025",
+        "media-fetch-api-M671",
+        "media-fetch-jcm-655",
+        "media-owner-snapshots",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-recipe-31db124ed572f3c9",
+        "media-recipe-34ce591c5fc256ff",
+        "media-recipe-94fc34d2cfc860f4",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-nissui_bl_agar_base",
+      "case_ids": [
+        "CM_NAME:1a978fc9c22276c5bff999712b2582100406b3aa10f39b5fc99f288c149b61e5"
+      ],
+      "description": "NBRC848 specifies Nissui58g dry BL base before adding horse blood. Successor supplier catalogue p7 independently confirms58g/L powder and separate5% horse blood. This product is distinct from the JCM13 finished blood-containing medium and generic BL_Agar owner. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Nissui_BL_Agar_Base.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Nissui_BL_Agar_Base.yaml",
+        "sha256": "1bf34e816854dfed6caac944ae7bd59b9206bd0940c0a92025b05e18be21c308"
+      },
+      "evidence_ids": [
+        "media-case-017",
+        "media-fetch-api-M1645",
+        "media-fetch-jcm-13",
+        "media-fetch-nbrc-848",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-recipe-de76e9b7060c4ca8",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-nissui_trypto_soya_agar",
+      "case_ids": [
+        "CM_NAME:93d6dcbcaf792f1b6475b1d58757499fef6ef661a4817bc33337494c52271f76",
+        "KG_CASE:0c33dd9e9ceaab739f72ebea8fec18406fc980c3ae95009a9b20fc44b5cfdd53"
+      ],
+      "description": "JCM27 identifies Nissui Trypto-soya agar40g/L; the KG raw supplier also says Nissui40g/L despite Trypticase spelling. Successor supplier catalogue p15 confirms this named product and four-input formula. It is separated from BD Trypticase and generic Trypticase_Soy_Agar; generic source spelling is not installed as an alias. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Nissui_Trypto_Soya_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Nissui_Trypto_Soya_Agar.yaml",
+        "sha256": "3a0f98b3cb2fdd32cdcf2025fa0deef996a5ca611a6e6716e10d5941d3733251"
+      },
+      "evidence_ids": [
+        "media-case-088",
+        "media-case-135",
+        "media-fetch-api-M20",
+        "media-fetch-jcm-27",
+        "media-owner-snapshots",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-recipe-28ec3b8dea90f8d4",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-nissui_potato_dextrose_agar",
+      "case_ids": [
+        "CM_NAME:d42f208862f785f90b878088de16951b8b0ebef661597c74f4176f29a3c50397"
+      ],
+      "description": "NBRC930 directly names Nissui Potato Dextrose Agar39g/L as a purchased dehydrated medium. The source binds a supplier-product identity even without a formula/catalog number. No composition from another vendor is borrowed; decomposition remains unspecified. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Nissui_Potato_Dextrose_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Nissui_Potato_Dextrose_Agar.yaml",
+        "sha256": "66ec6e5053c937207a86f766eaab65ccc9d4ac5f4cfaae7f94f70a6cd5df8e91"
+      },
+      "evidence_ids": [
+        "media-case-110",
+        "media-fetch-api-M1721",
+        "media-fetch-nbrc-930",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-fb8dfbe80430cba9",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-eiken_poremedia_bcye_alpha_agar",
+      "case_ids": [
+        "CM_NAME:e7eaa1050c08bb29a7dee84290a9316338aecd0b896e1e2b1047bb4dde8c9194"
+      ],
+      "description": "JCM1087 names the commercial Eiken POREMEDIA B-CYE alpha product. Manufacturer list separately identifies POREMEDIA B-CYEα agar plates (E-MP96); this corroborates the product family and prepared-plate state without inventing the historical package. This medium remains distinct from dry BD BCYE or Oxoid CYE base. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Eiken_POREMEDIA_BCYE_Alpha_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Eiken_POREMEDIA_BCYE_Alpha_Agar.yaml",
+        "sha256": "21d15a0acffa0edcf8af6f7f3ccdbaeaf3aee8cadb4219cbf468d77cf63a983f"
+      },
+      "evidence_ids": [
+        "media-case-118",
+        "media-fetch-jcm-1087",
+        "media-product-eiken-product-list",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-479a7dbadff8a5ff",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-bd_difco_bacto_agar",
+      "case_ids": [
+        "CM_NAME:73794c22e4b0174b2d45cf4efbc29aaad5274ab6247bc6cd6c45502eea238d25",
+        "CM_NAME:9ffa59ec060eb41a36cb7f3d173b31cda16931a8e3c81f062911d7aba4ec1c3e"
+      ],
+      "description": "JCM905/906 and the source M460-derived record explicitly identify BD-Difco Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product identity as distinct from Noble214220. The owner represents the unwashed Bacto grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/BD_Difco_Bacto_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/BD_Difco_Bacto_Agar.yaml",
+        "sha256": "54fbbd0609299136d06029db621fd5b36b991d3d7cf967c379f18415ef35437e"
+      },
+      "evidence_ids": [
+        "media-case-065",
+        "media-case-092",
+        "media-fetch-api-M460",
+        "media-fetch-bd-bacto214050",
+        "media-fetch-primary-18",
+        "media-fetch-primary-19",
+        "media-fetch-primary-20",
+        "media-fetch-primary-21",
+        "media-fetch-primary-29",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-498ad8e2dfeb584a",
+        "media-recipe-4ed72e89185ed129",
+        "media-recipe-6df52c0b59da7bb5",
+        "media-validation-v2",
+        "media-web-bd-bacto"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-difco_bordet_gengou_agar_base",
+      "case_ids": [
+        "CM_NAME:bb8a315e678638012404f7ef5005c2d01da2d73d03820aa2c23838557f39e9df"
+      ],
+      "description": "The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood separately; manufacturer248200 identifies the named base product. This source-bound opaque base is not the finished blood agar and does not restore the existing generic owner malformed MICRO accession. Current package number is corroboration, not inferred historical procurement. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Difco_Bordet_Gengou_Agar_Base.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Difco_Bordet_Gengou_Agar_Base.yaml",
+        "sha256": "98bcd2a33a7fa1fac7be83dc7b1039187adbb562d2c77b4515f0021da5b0e180"
+      },
+      "evidence_ids": [
+        "media-case-098",
+        "media-fetch-api-M2851",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-d338d950ff380fad",
+        "media-validation-v2",
+        "media-web-bd-bordet"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-mueller_hinton_ii_agar",
+      "case_ids": [
+        "KG_CASE:369a898c223d9e1689697ccaa9deb6f072d8c30cba98e39760fc2ef4dbb3491f"
+      ],
+      "description": "The raw KG source expressly identifies BD-BBL Mueller Hinton II agar38g/L and the manufacturer211438 product corroborates the II product identity. Promote the existing II owner to its own registry rather than generic MH or a guessed ontology. Internal cation/thymidine specifications and formulation are not invented. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical generic labels remain preserved in curation history/source evidence without global resolving aliases. Existing prior review holds persist until independent coordinator disposition.",
+      "kind": "edit_existing_owner",
+      "owner_path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+      "before_sha256": "a0f0c5365069fa748d0a83b0a196e2bdb3c4ea7c9cd8705b79ba46cce0a90a5f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Mueller_Hinton_II_Agar.yaml",
+        "sha256": "d064bc3b3133dd2dcf50eba09a0c4d62a04dbaa777eb5a9bd61653742be230af"
+      },
+      "evidence_ids": [
+        "media-case-145",
+        "media-owner-snapshots",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-validation-v2",
+        "media-web-bd-mhii"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ],
+      "destination_owner_path": "data/ingredients/mapped/Mueller_Hinton_II_Agar.yaml"
+    },
+    {
+      "proposal_id": "media-product-bacto_middlebrook_7h10_agar",
+      "case_ids": [
+        "CM_NAME:4fe1a939ea0f24773027db0083a92d88b51b53c05b5532f0197f207151904000",
+        "KG_CASE:cb39d82a11eab728fed6b3c0668311c274cdce5d1f01bf593a282dae40a05009"
+      ],
+      "description": "JCM386 explicitly adds glycerol and OADC separately to19g BD-Difco7H10 base, and KG identifies Difco262710. Live NCIT:C85509 alternate definition includes oleic acid-albumin enrichment and glycerol, so the mapped generic owner does not establish exact identity of this unsupplemented base. Promote existing Bacto product owner to own registry; retain the other owner and its unsafe Difco alias as an unresolved coordinator finding. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical generic labels remain preserved in curation history/source evidence without global resolving aliases. Existing prior review holds persist until independent coordinator disposition.",
+      "kind": "edit_existing_owner",
+      "owner_path": "data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml",
+      "before_sha256": "f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Bacto_Middlebrook_7H10_Agar.yaml",
+        "sha256": "df204b8ccfea3cd42300b19f64229509891269f77637e3740ab0c41d3353b71f"
+      },
+      "evidence_ids": [
+        "media-case-043",
+        "media-case-179",
+        "media-fetch-jcm-386",
+        "media-fetch-jcm-714",
+        "media-owner-snapshots",
+        "media-product-failed-bd-product-catalogue",
+        "media-product-ols-middlebrook",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-6f333ed2123da2ef",
+        "media-recipe-c5e9f35cc71349e8",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ],
+      "destination_owner_path": "data/ingredients/mapped/Bacto_Middlebrook_7H10_Agar.yaml"
+    },
+    {
+      "proposal_id": "media-product-sigma_reinforced_clostridial_agar",
+      "case_ids": [
+        "CM_NAME:fe2bf998020c35ff2b6d2440e7ff996f9b9c1f943fb7c19ff9a6d1d1fa258d2c"
+      ],
+      "description": "JCM455 binds the purchased Sigma reinforced clostridial agar product51g before separate sodium carbonate addition. This supplier-product identity can remain opaque without equating it to the current91365 comparator or importing the final alkaline-medium formulation. Generic mixed-vendor RCM owners are not narrowed. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Sigma_Reinforced_Clostridial_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Sigma_Reinforced_Clostridial_Agar.yaml",
+        "sha256": "65575d4e9fd960a75adbaa9659a77a9b7e6e9e6f4ea706e5ede6405f2e85ef44"
+      },
+      "evidence_ids": [
+        "media-case-130",
+        "media-fetch-api-M455",
+        "media-fetch-jcm-455",
+        "media-fetch-sigma-rca",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-42ea3ad0c8e46a9e",
+        "media-recipe-64e497cd9800e914",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    },
+    {
+      "proposal_id": "media-product-merck_czapek_dox_agar",
+      "case_ids": [
+        "KG_CASE:735496bb1541d6efb8b74ac490e843696d4ab3ccb37322813f302bc3bc1e8147"
+      ],
+      "description": "The exact KG raw record binds Merck Czapek-Dox agar48g/L. DSMZ130 is a scratch-recipe comparator only and is not used to transcribe this product. A supplier-bound opaque product proposal preserves that raw identity without merging generic Czapek-Dox or borrowing another recipe formulation. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/Merck_Czapek_Dox_Agar.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/media/Merck_Czapek_Dox_Agar.yaml",
+        "sha256": "ca1b00ba26d4ed5e04c5799a0a39f7fc9dab9eeb04c379551b5c54258a394dc3"
+      },
+      "evidence_ids": [
+        "media-case-158",
+        "media-fetch-dsmz-130",
+        "media-fetch-dsmz-550",
+        "media-owner-snapshots",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "publication_obligations": [
+        "Own-registry product identity only; no parent/exact chemical mapping is inferred.",
+        "Complete final payload needs native/independent review and guarded integration.",
+        "Resolve any existing generic-owner published aliases and cross-shard overlap against original before hashes; no inherited support or hold clearance."
+      ]
+    }
+  ]
+}

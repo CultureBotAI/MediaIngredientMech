@@ -1,0 +1,48 @@
+{
+  "proposals": [
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_781_horse_dung_extract",
+      "case_indices": [
+        75,
+        153
+      ],
+      "case_ids": [
+        "CM_NAME:82ed92170a6907ff3bba19b261fc010ac343554ae8299ca5dbb3c6a4632be2d2",
+        "KG_CASE:50a3e82d96fde8b0ff490cdc2f0a77956358274265d79ba97d23a983c4978534"
+      ],
+      "description": "Create the protocol-qualified horse-dung aqueous extract explicitly defined in DSMZ781; keep extraction inputs distinct from measured filtrate composition.",
+      "owner_path": "data/ingredients/mapped/DSMZ_781_Horse_Dung_Extract.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_781_Horse_Dung_Extract.yaml",
+        "sha256": "5799874520bfb23194cac5dae89f04b2a02ad13c4b4a6d9480a159e35f3795b8"
+      },
+      "identity_consequences": "Own fallback registry identity only; no equivalence to animal manure or dry cow manure. No guessed components, concentration or sterilization property.",
+      "publication_review_obligations": "Native review and full source-scoped alias assessment required for the new payload before guarded integration. Existing source-unit defects remain separately tracked.",
+      "cross_shard_conflict": "Coordinator must reconcile any other dung/extract proposal on source protocol, not raw label alone."
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-colloidal-chitin-protocol",
+      "case_indices": [
+        160
+      ],
+      "case_ids": [
+        "KG_CASE:7dc99e7d679a1969a6c2582ca7b76c4cd5f81157aca8b8b5a73ecb2aa5e81a37"
+      ],
+      "description": "Annotate existing colloidal-chitin owner with the verified DSMZ1681 preparation, explicitly scoped to that recipe and without promotion.",
+      "owner_path": "data/ingredients/unmapped/Colloidal_Chitin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "d212ac576d63e4504a5b1b60a4df4af327a7941f263e56070cbf19b33f9f6e51",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Colloidal_Chitin.yaml",
+        "sha256": "5a94355a128c81b2b1745cc56263b1a58ab12d0a231b2bac7a81d2fbac4d0ea3"
+      },
+      "identity_consequences": "No identifier/mapping/status change. Source-bound process annotation only; CHEBI17029 remains a chemically broader candidate, not exact identity.",
+      "publication_review_obligations": "Edited complete owner payload requires new content-bound native review; no inherited approval or hold clearance.",
+      "cross_shard_conflict": "Existing UNMAPPED0361 may have other source claims; coordinator must merge annotations against original baseline bytes and retain source boundaries."
+    }
+  ]
+}

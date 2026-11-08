@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:oxoid_cm0331_columbia_blood_agar_base
+preferred_term: Columbia Blood Agar Base (Oxoid CM0331)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:oxoid_cm0331_columbia_blood_agar_base
+  ontology_label: Columbia Blood Agar Base (Oxoid CM0331)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0331-V6.pdf
+    notes: Oxoid CM0331 is a dehydrated Columbia blood agar base, before added blood
+      or selective supplement. Its nominal four-input formula differs from the BBL
+      formula in MICRO:0000536, so no exact mapping to the generic owner is asserted.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: Oxoid CM0331 is a dehydrated Columbia blood agar base, before added blood or
+  selective supplement. Its nominal four-input formula differs from the BBL formula
+  in MICRO:0000536, so no exact mapping to the generic owner is asserted. Raw source
+  labels remain in campaign case evidence; no unqualified global alias is added. This
+  isolated proposal does not clear inherited owner publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:28:06.867869+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: Oxoid CM0331 is a dehydrated Columbia blood agar base, before added blood
+    or selective supplement. Its nominal four-input formula differs from the BBL formula
+    in MICRO:0000536, so no exact mapping to the generic owner is asserted. Isolated
+    proposal; no maintained data mutation.
+  llm_assisted: true
+supplied_form:
+- name: Columbia Blood Agar Base
+  supplier: Oxoid / Thermo Fisher Scientific
+  catalog_number: CM0331
+  form: dehydrated powder
+components:
+- component_name: Special peptone
+  reference_scope: UNMAPPED
+  concentration_value: '23'
+  concentration_unit: G_PER_L
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0331-V6.pdf
+    notes: Supplier nominal amounts per litre at39g powder/litre reconstitution; adjusted
+      as needed for performance. These describe product recipe equivalents, not concentration
+      in dry powder. Water and subsequent5% blood are external additions.
+  notes: Supplier nominal amounts per litre at39g powder/litre reconstitution; adjusted
+    as needed for performance. These describe product recipe equivalents, not concentration
+    in dry powder. Water and subsequent5% blood are external additions.

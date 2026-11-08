@@ -1,0 +1,594 @@
+{
+  "1": [
+    "existing_identity_or_alias",
+    "The three frozen occurrences explicitly specify three sodium ions. Live CHEBI:63125 defines the trisodium salt, distinct from disodium CHEBI:64734/64758. The owner is correctly trisodium but its active 'EDTA di sodium salt' synonym is chemically wrong. Add the explicit 3Na spelling and retain the wrong disodium string only as rejected provenance; no interpretation of case125 is imported here. Original NBRC387/900/391 all corroborate3Na-EDTA; NBRC387 specifies200mg in a vitamin stock, not the frozen200g/L flattened component.",
+    "63125,64734,64758",
+    "Na3-edta",
+    "",
+    "nbrc-387.html,nbrc-900.html,nbrc-391.html"
+  ],
+  "3": [
+    "stock_product_mixture_context",
+    "TOGO M1146/M1147 specify a 0.5 M crotonic-acid stock at pH7, added as20ml. This is a neutralized solution, not the pure trans acid CHEBI:41131; the frozen20g/L is not reliable stock-to-medium arithmetic. Preserve concentration, pH and addition context. A source-qualified PARTIAL stock proposal preserves0.5M solute andpH7 without guessing the neutralizing reagent or solvent; no pure-crotonic-acid synonym is emitted.",
+    "41131",
+    "Crotonic_Acid",
+    "",
+    "togo-1146.json,togo-1147.json"
+  ],
+  "4": [
+    "unresolved",
+    "TOGO2692 contains the complete50ml preparation:2.58g trisodium citrate,0.75g TiCl2,approximately30ml water, sodium carbonate to pH7,then water to50ml. This directly conflicts with its neutralized titanium(III)-citrate title: TiCl2 implies titanium(II), not Ti(III). The generic current UNMAPPED_0618 owner already records aqueous reducing-reagent ambiguity and cannot resolve this source precursor contradiction. The frozen1g/L also flattens a1ml/L stock addition.",
+    "",
+    "",
+    "Obtain the original ATCC PDF or an authoritative erratum confirming whether TiCl2 or TiCl3 was intended, then preserve the source-defined50ml stock and pH titration without pure-compound exact identity.",
+    "togo-2692.json"
+  ],
+  "5": [
+    "existing_identity_or_alias",
+    "Polyoxyethylene sorbitan mono-oleate explicitly identified as Tween80 is polysorbate80 CHEBI:53426. The polyoxyethylene qualifier distinguishes it from sorbitan monooleate; this is a safe source alias to the existing Tween80 owner, not to Span80.",
+    "53426",
+    "Tween_80",
+    "",
+    ""
+  ],
+  "6": [
+    "unresolved",
+    "All three occurrences trace to DSMZ1047 commercial Raka-Ray medium and ingredient942. The primary recipe specifies potassium glutamate but neither optical form nor hydration. MediaDive's automatic CAS19473-49-5 and formula C5H9NO4.K are not independently curated evidence of L stereochemistry or a neutral potassium salt. Exact L-salt mapping would add unsupported specificity. Independent reviewer retrieved the Difco/BBL manufacturer Raka-Ray insert (catalog218671): its formula also says only Potassium Glutamate2.5g, leaving the same stereo/form gap.",
+    "",
+    "",
+    "Obtain the Difco Raka-Ray No.3 ingredient specification or supplier CAS/form confirming potassium stoichiometry, D/L configuration and hydration; bounded OLS search found no sufficiently generic exact term.",
+    "dsmz-1047.pdf,mediadive-ingredient-942.html,ols-search-9.json"
+  ],
+  "10": [
+    "stock_product_mixture_context",
+    "The exact source label includes5mM quinic acid. CHEBI:26493 is the solute identity but the concentration-qualified reagent is a solution context. The source does not establish a purchasable pure stereospecific quinic-acid form or a globally reusable stock identity. The original JCM401 endpoint was retrieved and explicitly returned Nothing found; TOGO397 request timed out. This access limitation is recorded, not inferred absence of the recipe. A JCM-authored bacmedia PDF recovered independently lists Quinic acid(5mM)1ml but also final volume13ml and water1ml, without defining the quinic stock solvent. This confirms the concentration-qualified stock context while introducing an explicit source volume ambiguity.",
+    "26493",
+    "Quinic_Acid",
+    "Resolve the JCM401/bacmedia13ml-total and1ml-water discrepancy and obtain the quinic stock definition; preserve5mM and1ml source values without inferring receiving-medium concentration.",
+    "jcm-401.html"
+  ],
+  "13": [
+    "unresolved",
+    "Fe(III)dicitrate names a two-citrate coordination species, whereas ferric citrate CHEBI:144421 contains one citrate; CHEBI:4991 is iron(3+) dicitrate(3-). The MediaDB mnemonic KEGG:fe3dcit is not a verified KEGG compound accession. Diverse recipe occurrences and literature leads do not identify counterions or prove that a dicitrate reagent was weighed. Direct inspection of Lovley1988 p1473 specifies Fe(III)-citrate20mM, without dicitrate or supplier form. This corroborates a ferric-citrate material but does not establish the2:1 ligand species asserted by the shared MediaDB mnemonic; other source papers have distinct contexts.",
+    "4991,144421",
+    "",
+    "Recover the original methods for each frozen MediaDB occurrence and establish whether this is a modeled dicitrate complex, prepared stock, or ferric-citrate reagent; do not collapse two-citrate and one-citrate substances.",
+    "lovley1988-pmc.html,lovley1988-pmc-page2.png,pubmed-fe-dicitrate.xml"
+  ],
+  "14": [
+    "existing_identity_or_alias",
+    "Destilled water is an orthographic variant of distilled water in the complete recipe, with no saline or solution qualifier. CHEBI:15377 and the current Distilled_Water chemistry support a narrow spelling alias. Other aliases on that shared owner are outside this spelling decision and do not gain approval.",
+    "15377",
+    "Distilled_Water",
+    "",
+    ""
+  ],
+  "15": [
+    "existing_identity_or_alias",
+    "The explicit anhydrous glycerol reagent is the neutral molecule CHEBI:17754, not a distinct crystalline hydrate. The owner already carries the unparenthesized qualifier. Preserve the exact parenthesized raw label as an alias without inferring purity, grade or concentration beyond the source.",
+    "17754",
+    "Glycerol",
+    "",
+    "mediadive-ingredient-2178.html"
+  ],
+  "19": [
+    "unresolved",
+    "Na-citrate in the BSK recipe does not specify one, two or three sodium ions or hydration. The legacy MediaIngredientMech:000794 reference is not proof of identity. The original DSMZ403 recipe can confirm the reagent wording but not erase salt-form ambiguity; trisodium CHEBI:53258 is not a generic sodium-citrate umbrella.",
+    "53258",
+    "",
+    "Require the DSMZ403 reagent supplier/catalogue or explicit citrate salt stoichiometry and hydrate form, then connect this occurrence to the matching owner.",
+    "dsmz-403.pdf"
+  ],
+  "24": [
+    "existing_identity_or_alias",
+    "D--Biotin preserves the D stereochemical designation despite duplicated dashes. Live CHEBI:15956 contains the corresponding D-biotin identity and structure. The punctuation variant can be attached to the existing biotin owner without asserting a stock identity.",
+    "15956",
+    "Biotin",
+    "",
+    ""
+  ],
+  "27": [
+    "existing_identity_or_alias",
+    "The CCAP TAP original PDF explicitly gives Na2EDTA.2H2O, whereas the frozen label lost subscripts. This occurrence therefore denotes disodium EDTA dihydrate CHEBI:64758, not anhydrous disodium EDTA. Two existing owners share64758 and one has incompatible CAS/chemistry; the source interpretation is resolved but an arbitrary duplicate owner must not be selected.",
+    "64758,64734",
+    "Na2-edta_X_2_H2o,Na2edta2h2o",
+    "Consolidate the duplicate64758 owners with full provenance and correct CAS6381-92-6 before adding this source-specific alias; retain both original owner hashes.",
+    "ccap-MR_TAP.pdf"
+  ],
+  "28": [
+    "new_distinct_ingredient_proposal",
+    "The frozen MediaDB component is retinol without geometrical qualifiers. CHEBI:50211 deliberately leaves the geometry of its four double bonds unspecified, matching that level of source specificity. A new retinol owner can use this class; all-trans-retinol, retinyl esters and vitamin-A mixtures must not be substituted.",
+    "50211",
+    "",
+    "",
+    ""
+  ],
+  "30": [
+    "stock_product_mixture_context",
+    "The two Thermus162 occurrences are0.01M Fe-citrate solution, added0.5ml in the original DSMZ878 preparation. The frozen0.5g/L is an addition-unit flattening, not evidence of pure ferric citrate mass. Oxidation state and solute stoichiometry remain unspecified in the shorthand.",
+    "144421",
+    "",
+    "Recover the stock recipe and reagent specification, and repair the ml-versus-g lineage before proposing a stock owner or component concentration.",
+    "dsmz-878.pdf"
+  ],
+  "31": [
+    "unresolved",
+    "Both original DSMZ906 and MediaDive ingredient825 explicitly retain trisodium citrate pentahydrate. CHEBI:53258 is anhydrous trisodium citrate and cannot absorb five waters. The unusual hydrate is not silently changed to the common dihydrate; repeated source wording is not independent crystallographic or supplier confirmation.",
+    "53258",
+    "",
+    "Obtain DSMZ906 reagent supplier/CAS or an authoritative erratum confirming five waters; bounded live ontology search did not establish a form-specific term.",
+    "dsmz-906.pdf,mediadive-ingredient-825.html,ols-search-7.json"
+  ],
+  "32": [
+    "malformed_or_nonchemical_token",
+    "The original NBRC1632 repeats(NH4)6Mo7O4·4H2O. Its oxygen count does not denote heptamolybdate Mo7O24; neither the word-level GMO interpretation nor familiarity with trace-element stocks proves the missing20 oxygens. Preserve the malformed formula without resolving it to orthomolybdate or tetrahydrate.",
+    "86244,91249",
+    "",
+    "Obtain a source erratum or supplier-defined molybdate reagent for NBRC1632; do not automatically repair O4 toO24.",
+    "nbrc-1632.html"
+  ],
+  "35": [
+    "existing_identity_or_alias",
+    "The D-configured N-acetylglucosamine monomer is explicit despite doubled dashes. CHEBI:506227 defines the free monosaccharide; CHEBI:8006 is a peptidoglycan residue/polymer context and is not the ingredient. TOGO M194 is provider-backed; its historical JCM201 endpoint absence does not justify swapping in LB-medium context.",
+    "506227,8006",
+    "N-acetyl-d-glucosamine",
+    "",
+    "togo-194.json,jcm-201.html"
+  ],
+  "37": [
+    "existing_identity_or_alias",
+    "JCM1429 lists N-acetyl-D-glucosamine as a free ingredient. The frozen CHEBI:8006 annotation conflicts with this monomer and its formula; the existing CHEBI:506227 owner is correct. Add the exact spaced N -Acetyl spelling and flag the upstream term independently of the alias.",
+    "506227,8006",
+    "N-acetyl-d-glucosamine",
+    "",
+    "jcm-1429.html"
+  ],
+  "40": [
+    "new_distinct_ingredient_proposal",
+    "BaCO3 is the explicit barium carbonate component in the P4 recipe's nested stock. CHEBI:190439 identifies BaCO3, CAS513-77-9. The ingredient identity can be represented separately from the user-supplied stock; this does not endorse the stock's aqueous solubility or filtration instructions.",
+    "190439",
+    "",
+    "",
+    "mediadive-P4.html"
+  ],
+  "47": [
+    "unresolved",
+    "Sodium glutamate・H2O fixes a monohydrate but not D/L stereochemistry. CHEBI:232425 and the existing monohydrate owner are L-specific. JCM904's raw reagent wording does not independently establish L, so the abbreviated label must not inherit stereo from a convenient owner.",
+    "232425,64220",
+    "Sodium_Glutamate_Monohydrate",
+    "Obtain JCM904 supplier/CAS establishing the L monohydrate or create a properly unspecified hydrate identity after registry/ontology review.",
+    "jcm-904.html"
+  ],
+  "54": [
+    "malformed_or_nonchemical_token",
+    "(NH4)6(MO7)24 is a malformed element/formula expression in the TOGO2978 micronutrient context. Uppercase MO and misplaced24 cannot be silently interpreted as Mo7O24, and hydration is absent. Trace-element usage narrows the candidate family but not exact identity.",
+    "86244,91249",
+    "",
+    "Obtain the original source reagent formula and hydration or an erratum; retain the exact source token without a resolving chemical alias.",
+    "togo-2978.json"
+  ],
+  "55": [
+    "stock_product_mixture_context",
+    "TOGO2809 places8%(wt/vol) Na2CO3 within the titanium-citrate preparation. It is an80g/L carbonate solution, with100ml addition in that preparation; the frozen100g/L is not the stock concentration. CHEBI:29377 identifies only its solute, and other carbonate stock concentrations are different formulations. Propose a source-qualified8%w/v carbonate stock with a PARTIAL component assertion for the known Na2CO3 solute at80g/L; solvent is not independently specified and is not invented.",
+    "29377",
+    "",
+    "",
+    "togo-2809.json"
+  ],
+  "58": [
+    "existing_identity_or_alias",
+    "NBRC1625 explicitly specifies L-glutamic acid monosodium salt monohydrate. CHEBI:232425 has one water and L stereochemistry, so the existing monohydrate owner is the correct identity. Its InChI/SMILES still omit water despite the correct formula; repair those exact form properties and add the explicit L alias.",
+    "232425",
+    "Sodium_Glutamate_Monohydrate",
+    "",
+    "nbrc-1625.html"
+  ],
+  "59": [
+    "unresolved",
+    "The original NBRC392/931/809 recipes repeatedly specify sodium tungstate monohydrate. CHEBI:63939 is the dihydrate and63940 is anhydrous; neither is exact for one water. Repetition in derivative recipes does not permit changing the water count.",
+    "63939,63940",
+    "",
+    "Obtain the supplier/CAS or source correction confirming whether one water is intentional; bounded OLS monohydrate search did not resolve an exact form.",
+    "nbrc-392.html,nbrc-931.html,nbrc-809.html,ols-search-5.json"
+  ],
+  "60": [
+    "unresolved",
+    "DSMZ661 explicitly lists Na3-citrate x3H2O and MediaDive650 preserves it across five frozen occurrences, including variants. Anhydrous trisodium citrate CHEBI:53258 cannot identify the trihydrate; no evidence supports normalizing to dihydrate.",
+    "53258",
+    "",
+    "Require DSMZ661 supplier/CAS or an erratum documenting the three-water material; then choose a form-specific ontology or registry identity.",
+    "dsmz-661.pdf,mediadive-ingredient-650.html,ols-search-8.json"
+  ],
+  "61": [
+    "stock_product_mixture_context",
+    "NBRC989 explicitly defines the asterisked biotin stock as5mg biotin in100ml ethanol, added2ml to TYL medium. This is an ethanol stock, not pure biotin and not an unspecified aqueous vitamin mixture. The frozen NBRC990 filename and its NBRC989 owner distinction are preserved. Complete stock composition is sufficient for a distinct NBRC989 formulation proposal:5mg biotin and100ml ethanol per source batch. Existing Biotin_Vitamin_Solution is an unspecified18-occurrence stock owner with no component assertion, so it cannot be asserted equivalent to this exactly defined ethanol stock; no global unspecified stock alias is released.",
+    "15956",
+    "Biotin_Vitamin_Solution",
+    "",
+    "nbrc-989.html"
+  ],
+  "62": [
+    "unresolved",
+    "D-glutamate is stereospecific and cannot map to L or unspecified glutamate. CHEBI:29986 is D-glutamate(1-) with both carboxylates anionic and amino group protonated. The MediaDB source links include KEGG:glu-D model shorthand, and three recipes do not establish whether the source meant an acid, salt, or modeled ion; no original reagent form is documented. Directly inspected Lee2009 full text Table4 row13 specifies L-glutamic acid250mg, and its methods say AAM-minus omits L-glutamic acid. This directly contradicts frozen MediaDB292 AAM-minus D-glutamate1.71mM. Klein1979 publisher landing page is public, but its linked full-text endpoint returned403; original D stereochemistry remains unverified for its two occurrences.",
+    "29986",
+    "",
+    "Correct the MediaDB292 AAM-minus ingredient/stereochemistry against Lee2009 Table4 and omission statement; obtain Klein1979 full methods/table for MediaDB279/280 rather than extending that correction to their D labels.",
+    "lee2009-pmc.html,lee2009-epmc.xml,klein1979-fulltext.html,web-primary-followup.json"
+  ],
+  "63": [
+    "unresolved",
+    "NBRC1378 repeats Sodium alpha-ketoglutamate, a spelling that conflates glutarate and glutamate. The stock context and20mM annotation are compatible with a ketoglutarate salt but do not prove the correction, sodium stoichiometry or hydration. Alpha-ketoglutaric acid is not a sodium-salt identity.",
+    "30915,16810",
+    "Alpha-ketoglutaric_Acid",
+    "Obtain NBRC1378 reagent catalogue/CAS or erratum resolving ketoglutamate versus ketoglutarate and sodium/hydrate form; retain its amount and unit discrepancy separately.",
+    "nbrc-1378.html"
+  ],
+  "68": [
+    "stock_product_mixture_context",
+    "TOGO2262 explicitly defines the HEPES-NaOH stock:119.15g HEPES in250ml water, adjustpH7.5,bring final volume to500ml,1M. Its medium occurrence is1mM, not the stock concentration. Propose a source-qualified1M pH7.5 buffer with PARTIAL assertion: HEPES238.3g/L,NaOH present by title with unquantified titration, water solvent without invented water volume. CHEBI42334 identifies solute only, not the buffer.",
+    "42334",
+    "Hepes",
+    "",
+    "togo-2262.json"
+  ],
+  "73": [
+    "existing_identity_or_alias",
+    "CCAP Waris-H explicitly specifies Na2EDTA.2H2O4.08g in Fe-EDTA preparation. The truncated frozen Na EDTA.2H2O label is therefore contextually disodium EDTA dihydrate64758. The two duplicate64758 owners remain a native consolidation obligation, not chemical uncertainty about this original recipe.",
+    "64758,64734",
+    "Na2-edta_X_2_H2o,Na2edta2h2o",
+    "Reconcile duplicate owner bytes/CAS and provenance before adding an ambiguous abbreviated alias; do not use this stock evidence to resolve KG175 globally.",
+    "ccap-MR_Waris_H.pdf"
+  ],
+  "76": [
+    "existing_identity_or_alias",
+    "Folic acid with vitaminB9 is an explicit single solute even where nested in a vitamin stock. CHEBI:27470 identifies folic acid and supports the B9 label. Add the qualified alias to the existing owner while retaining the original nested occurrence context.",
+    "27470",
+    "Folic_Acid",
+    "",
+    ""
+  ],
+  "77": [
+    "existing_identity_or_alias",
+    "Fe(III)NH4-Citrate denotes ferric ammonium citrate. CHEBI:31604 describes this material as an indefinite-composition ferric ammonium citrate mixture, so the existing owner is suitable without inventing a fixed molecular stoichiometry. The explicit FeIII and ammonium qualifiers are retained.",
+    "31604",
+    "Ferric_Ammonium_Citrate",
+    "",
+    ""
+  ],
+  "78": [
+    "existing_identity_or_alias",
+    "D(+)--Biotin preserves the D-(+) optical designation; CHEBI:15956 includes D-(+)-biotin and the matching stereostructure. Double dashes are a formatting variant and can be preserved as an alias without broadening to racemic biotin.",
+    "15956",
+    "Biotin",
+    "",
+    ""
+  ],
+  "80": [
+    "malformed_or_nonchemical_token",
+    "NaCI uses capital I after C rather than lowercase l, so it is not a valid sodium chloride formula as written. The S-medium mineral context makes an OCR substitution plausible, but a plausible intended NaCl is not a source-authorized exact identity.",
+    "",
+    "",
+    "Obtain the original S-medium table or source erratum confirming NaCl for this0.2g/L occurrence; retain NaCI as provenance rather than an unrestricted chloride synonym.",
+    "togo-2498.json"
+  ],
+  "87": [
+    "unresolved",
+    "NBRC1109/TOGO1865 call the reagent ammonium tartrate without optical configuration or ammonium stoichiometry. CHEBI:63075 from bounded search is specifically diammonium L-tartrate; a generic abbreviation does not establish L or dibasic form.",
+    "",
+    "",
+    "Obtain the Modified Norkans C supplier/CAS or formulation specification giving tartrate stereo and one-versus-two ammonium ions before choosing a form-specific owner.",
+    "nbrc-1109.html,ols-search-10.json"
+  ],
+  "90": [
+    "malformed_or_nonchemical_token",
+    "Myo-inositol identifies CHEBI:17268, but the appended B7 designation conflicts with biotin's conventional vitaminB7 identity CHEBI:15956. Preserve the complete source annotation as provenance; a global B7-containing alias would conflate two compounds.",
+    "17268,15956",
+    "Myo-inositol",
+    "Source correction should retain myo-inositol while clarifying its vitamin-number annotation; no B7 alias is added to either chemical.",
+    ""
+  ],
+  "94": [
+    "existing_identity_or_alias",
+    "EDTA・Fe(III) names the ferric EDTA coordination entity CHEBI:30729. The three frozen sources specify the complex without a sodium counterion; a sodium feredetate identity78292 would add an unsupported constituent. The existing ferric-EDTA owner can retain the exact typographic alias.",
+    "30729,78292",
+    "Fe_Iii-edta",
+    "",
+    "jcm-246.html,jcm-815.html,jcm-886.html"
+  ],
+  "95": [
+    "unresolved",
+    "Fe-Citrate in TOGO3181 omits oxidation state, ligand stoichiometry and counterions. Ferric citrate144421 and ferric dicitrate4991 are chemically distinct; the anaerobic medium context does not itself specify which reagent was supplied.",
+    "144421,4991",
+    "",
+    "Obtain the original anaerobic-butyrate RM reagent specification or stock recipe with iron valence, citrate ratio and hydrate information.",
+    "togo-3181.json"
+  ],
+  "102": [
+    "malformed_or_nonchemical_token",
+    "(NH4)6Mo7O7・4H2O has seven oxygens in the molybdate fragment and cannot be identified with Mo7O24 tetrahydrate by deleting the discrepancy. Neither diammonium orthomolybdate nor heptamolybdate mapping is justified by this exact formula.",
+    "86244,91249",
+    "",
+    "Require the original supplier formula or source erratum resolving O7 versusO24 and confirming four waters; preserve the raw string.",
+    ""
+  ],
+  "103": [
+    "new_distinct_ingredient_proposal",
+    "Bis Tris Propane in NBRC1050/1049 is the propane-linked buffer CHEBI:40947. The existing Bis-tris owner denotes a different single-center buffer and cannot absorb the propane qualifier. All three frozen occurrences retain2.25g/L and the same explicit buffer identity.",
+    "40947",
+    "Bis-tris",
+    "",
+    "nbrc-1049.html,nbrc-1050.html"
+  ],
+  "107": [
+    "unresolved",
+    "The six-water tungstate label is repeated by ingredient803. DSMZ863 adds a further discrepancy by printing NaWO4 x6H2O, missing one sodium. Known dihydrate63939 or anhydrous63940 cannot validate either the six-water form or the sodium stoichiometry.",
+    "63939,63940",
+    "",
+    "Obtain DSMZ863 supplier/CAS or corrected formula covering both sodium count and hydration; bounded hexahydrate search yielded no validated exact form.",
+    "dsmz-863.pdf,mediadive-ingredient-803.html,ols-search-6.json"
+  ],
+  "112": [
+    "stock_product_mixture_context",
+    "TOGO2809 defines titanium citrate in the LS4D preparation using precursor and carbonate solution steps. The raw titanium-citrate label therefore names a prepared reducing stock, not a pure titanium citrate with known fixed composition; the frozen5g/L cannot substitute for stock addition volume. The complete original TOGO preparation defines500ml0.2M sodium-citrate solution,37.5ml20%w/v TiCl3 solution and100ml8%w/v Na2CO3 under nitrogen. A source-qualified formulation can preserve those batch additions without claiming measured final volume, chemical speciation or an exact pure compound. Existing UNMAPPED_0618 is a distinct generic communitymech source, not proof of the LS4D formulation.",
+    "",
+    "",
+    "",
+    "togo-2809.json"
+  ],
+  "119": [
+    "unresolved",
+    "NBRC943 explicitly prints(NH4)6Mo7O24·2H2O9.25mg in modified Hutner solution. Live CHEBI:86244 is four-water heptamolybdate; its formula and mass contradict a two-water exact mapping. The dihydrate label is not automatically a typo merely because tetrahydrate is familiar.",
+    "86244,91249",
+    "",
+    "Obtain the NBRC943 reagent supplier/CAS or source correction confirming two waters; then use a form-specific identity. Current bounded search did not establish one.",
+    "nbrc-943.html,ols-search-4.json"
+  ],
+  "120": [
+    "unresolved",
+    "FeNaEDTA fixes sodium ferric EDTA chemistry, but NBRC1378 gives578mg per preparation and1.5mM, whereas the frozen occurrence says578g/L. The implied formula mass is not an independent hydration measurement and may reflect a monohydrate. Anhydrous sodium feredetate78292 must not absorb a potentially hydrated supplied form without confirmation.",
+    "78292,30729",
+    "",
+    "Resolve NBRC1378 stock volume/unit transcription and supplier hydrate/CAS for FeNaEDTA before selecting anhydrous or monohydrate identity.",
+    "nbrc-1378.html"
+  ],
+  "125": [
+    "unresolved",
+    "The frozen TOGO2734 label says Na3EDTA but its cited original DSMZ1005 PDF says Na2-EDTA0.04g. This is a direct sodium-stoichiometry conflict, not harmless punctuation. Neither a trisodium alias nor a silent disodium replacement is authorized.",
+    "63125,64734,64758",
+    "Na3-edta",
+    "Reconcile TOGO2734 against DSMZ1005 and obtain source correction identifying intended salt/hydration; keep source labels and source IDs intact.",
+    "dsmz-1005.pdf,togo-2734.json"
+  ],
+  "126": [
+    "stock_product_mixture_context",
+    "Tris-HC1(pH7.6) includes an OCR-like digit1 and explicitly describes a50mM pH-adjusted buffer in TOGO2240. Even after HCl spelling correction, a buffer is not identical to pure tris hydrochloride because acid/base proportions and preparation are material.",
+    "",
+    "",
+    "Obtain the original Tris/HCl preparation and correct the source spelling while retaining50mM andpH7.6; a defined buffer owner must encode composition rather than map to pure salt.",
+    "togo-2240.json"
+  ],
+  "128": [
+    "new_distinct_ingredient_proposal",
+    "The label2-Oxoglutarate names an anion, and live CHEBI:16810 defines the dianion from both carboxyl-group deprotonations. Under the repository's bare-anion protonation rule, this is the appropriate neutral-medium species; it is not exact identity to alpha-ketoglutaric acid30915. The14.6g stock amount may derive from weighed acid, so that supplied-form and stock context remains separate and unresolved.",
+    "16810,30915",
+    "",
+    "",
+    "mediadive-ingredient-1992.html,jcm-1100.html"
+  ],
+  "132": [
+    "existing_identity_or_alias",
+    "MediaDive143's Na-fumarate source has concordant CAS17013-01-3, formulaC4H2Na2O4 and mass160.036 for disodium fumarate115156. The existing Na2-fumarate owner already has this alias. This source-bound interpretation does not turn Na- into a universal disodium convention or release the inherited full-payload hold.",
+    "115156",
+    "Na2-fumarate",
+    "",
+    "mediadive-ingredient-143.html"
+  ],
+  "137": [
+    "supplied_form_correction",
+    "Putrescine2HCl, CAS333-93-7 and C4H12N2.2ClH identify the dihydrochloride, not free putrescine. CHEBI:201718 now denotes this exact salt; the existing CAS-primary owner still treats it as a broad parent. Promote the owner to the exact ontology salt while retaining CAS, rejecting the free-base alias and preserving history.",
+    "201718",
+    "Putrescine_Dihydrochloride",
+    "",
+    "mediadive-ingredient-1352.html"
+  ],
+  "138": [
+    "unresolved",
+    "MediaDive706's label saysNa2-citrate but its auto-CAS/formula/mass and frozen g/L-to-mM arithmetic describe trisodium citrate53258. Both disodium and trisodium owners exist; the frozen consumed export carries the disodium alias on the latter, although the current owner has already retyped it REJECTED_LABEL. The contradictory source cannot be resolved by choosing metadata over its reagent label.",
+    "53258",
+    "Na2-citrate,Trisodium_Citrate",
+    "Obtain ingredient706's original reagent supplier or correction establishing two versus three sodium ions and hydration; coordinate issue704's owner/alias repair before releasing this source.",
+    "mediadive-ingredient-706.html"
+  ],
+  "139": [
+    "unresolved",
+    "MediaDive803 retains six waters with no usable CAS/formula confirmation. DSMZ863 has an additional NaWO4 versusNa2WO4 discrepancy. Dihydrate63939 and anhydrous63940 remain distinct; no supplied-form collapse is permissible.",
+    "63939,63940",
+    "",
+    "Require the original six-water tungstate supplier/CAS or a DSMZ863 erratum addressing sodium count and hydration.",
+    "mediadive-ingredient-803.html,dsmz-863.pdf,ols-search-6.json"
+  ],
+  "140": [
+    "supplied_form_correction",
+    "The raw source(NH4)6Mo7O24 x4H2O, ingredient120 CAS12054-85-2 and mass1235.86 identify hexaammonium heptamolybdate tetrahydrate86244. Diammonium orthomolybdate91249 has one Mo and two ammoniums and is not its parent. The current wrong owner already rejects the tetrahydrate strings but still resolves the anhydrous heptamolybdate formula; reject that residual polyanion alias and link the source to the existing correct tetrahydrate owner. OLS86244's prose says heptahydrate in error; its name/formula/mass and source CAS all specify four waters.",
+    "86244,91249",
+    "Diammonium_molybdate,Ammonium_Molybdate_Tetrahydrate",
+    "",
+    "mediadive-ingredient-120.html,ccap-MR_TAP.pdf"
+  ],
+  "147": [
+    "existing_identity_or_alias",
+    "Ingredient104's(NH4)citrate abbreviation is accompanied by CAS3458-72-8 and three-ammonium citrate composition, agreeing with CHEBI:63037 and the existing triammonium-citrate owner. This supports only this source-bound identity; abbreviation alone elsewhere would not establish three ammoniums.",
+    "63037",
+    "Nh43_Citrate",
+    "",
+    "mediadive-ingredient-104.html"
+  ],
+  "148": [
+    "unresolved",
+    "Ingredient825 and the original DSMZ906 both specify trisodium citrate pentahydrate, without a verified form-specific CAS. Anhydrous53258 is not exact. This KG source retains its own identifier and helper occurrence count independently of the CultureMech31 occurrences.",
+    "53258",
+    "",
+    "Obtain the original reagent/CAS or DSMZ906 erratum confirming five waters before a distinct supplied-form proposal.",
+    "mediadive-ingredient-825.html,dsmz-906.pdf,ols-search-7.json"
+  ],
+  "149": [
+    "existing_identity_or_alias",
+    "Ingredient839's Na glutamate is concordant with one-sodium glutamate64220 and mass169.112; it does not specify L or a hydrate. The existing owner has that identity but still carries an active wrong Na2-glutamate alias; its monohydrate alias is already REJECTED_LABEL. The matching source is scientifically distinguishable from those conflicts, and publication remains held pending owner cleanup.",
+    "64220,232425",
+    "Na_Glutamate",
+    "",
+    "mediadive-ingredient-839.html"
+  ],
+  "150": [
+    "unresolved",
+    "Ingredient650 and DSMZ661 explicitly retain trisodium citrate trihydrate. No verified CAS or exact ontology hydrate was found in the bounded search, and53258 omits all three waters. The KG helper count is not a recipe frequency.",
+    "53258",
+    "",
+    "Obtain DSMZ661 supplier/CAS or a source erratum confirming the trihydrate before assigning an exact identity.",
+    "mediadive-ingredient-650.html,dsmz-661.pdf,ols-search-8.json"
+  ],
+  "151": [
+    "existing_identity_or_alias",
+    "Ingredient399's Na-laurate has CAS629-25-4 and sodium-dodecanoate chemistry/mass222.3 consistent with CHEBI:131839 and the existing owner. Laurate and dodecanoate name the same C12 carboxylate here; the sodium ion is preserved. No new alias is needed.",
+    "131839",
+    "Na-laurate",
+    "",
+    "mediadive-ingredient-399.html"
+  ],
+  "152": [
+    "unresolved",
+    "The original DSMZ1344 medium uses Taps17.4g atpH8.3, consistent with buffer usage. MediaDive1188 automatically assigns the unrelated tetrapeptide Tyr-Arg-Phe-Sar(CAS90549-86-3), while the MIM TAPS_Sodium_Salt owner is CAS91000-53-2. Live191055 defines the free buffer acid. Neither the peptide metadata nor generic TAPS spelling proves the sodium salt; reject that salt owner's unqualified alias without choosing the source form.",
+    "191055",
+    "TAPS_Sodium_Salt",
+    "Obtain DSMZ1344 buffer supplier/CAS and whether acid or sodium salt was weighed; separately correct MediaDive1188's peptide metadata and re-review the complete salt payload.",
+    "mediadive-ingredient-1188.html,dsmz-1344.pdf"
+  ],
+  "154": [
+    "unresolved",
+    "Ardacin B is a source graph placeholder with no source structure, CAS or formulation. Bounded ontology and literature discovery did not yield an inspected primary isolation/structure record linking this exact spelling to a unique antibiotic. Aridicin/ardacin naming similarity cannot authorize a glycopeptide identity.",
+    "",
+    "Ardacin_B",
+    "Recover the originating Metatraits antibiotic vocabulary entry and primary isolation/structure or supplier record identifying ardacin B, including stereostructure or registry identifier.",
+    "ols-search-12.json,web-search-secondary-targets.json"
+  ],
+  "157": [
+    "unresolved",
+    "Ingredient404's CAS144-23-0, C6H6MgO7,214.413mass and frozen g/L-to-mM ratio consistently support1:1 magnesium hydrogen citrate131389. The current owner is3:2 trimagnesium dicitrate131391/CAS3344-18-1 but retains1:1 chemistry and synonyms. Issue320 deliberately regrounded it using a name-preprocessed CAS, not this source404 evidence. One source cannot reverse the five-occurrence owner's entire history: a source-bound split is required.",
+    "131389,131391",
+    "Mg-citrate",
+    "Trace all five CultureMech owner occurrences and their supplier/CAS evidence to separate1:1 from3:2 material; then propose a reviewed split or justified reground, withdrawing inherited full-payload support. Preserve the issue320 ruling as historical evidence, not unquestioned truth.",
+    "mediadive-ingredient-404.html"
+  ],
+  "159": [
+    "unresolved",
+    "The pentahydrate label conflicts with ingredient1201's anhydrous sodium sulfite CAS7757-83-7,mass126.043 and frozen g/L-to-mM ratio. The owner also maps to anhydrous86477. An unusual five-water salt cannot be asserted or erased from automatic metadata; issue896 already tracks this exact conflict.",
+    "86477",
+    "Na2so3_X_5_H2o",
+    "Obtain reagent catalogue/lot or authoritative source correction distinguishing intended anhydrous sulfite from a verified pentahydrate; retain label, CAS conflict and existing holds.",
+    "mediadive-ingredient-1201.html"
+  ],
+  "162": [
+    "unresolved",
+    "The PubMed record of Sawazaki etal1955(PMID13242476) establishes a primary paper naming grisamine, but supplies no abstract/structure or link from the Metatraits node to a defined purified material. Secondary molecular-formula snippets cannot establish an exact compound mapping. Additional primary discovery by exact title/author and JSTAGE query located only the PubMed bibliographic record and secondary1958 review, not an accessible original1955 structure paper.",
+    "",
+    "Grisamine",
+    "Inspect the original1955 isolation paper or authenticated supplier specification and connect its defined product to the source vocabulary; do not infer griseofulvin or another antibiotic from name similarity.",
+    "pubmed-grisamine.xml,ols-search-13.json,web-primary-discovery-final.json"
+  ],
+  "166": [
+    "existing_identity_or_alias",
+    "Ingredient1291 explicitly names sodium glutamate monohydrate and supplies CAS6106-04-3 and mass187.13, consistent with monosodium L-glutamate monohydrate232425. Its older anhydrous CHEBI annotation is not controlling. The owner has the correct formula but dehydrated InChI/SMILES; the shared exact-form repair is appropriate while all publication holds remain.",
+    "232425,64220",
+    "Sodium_Glutamate_Monohydrate",
+    "",
+    "mediadive-ingredient-1291.html"
+  ],
+  "167": [
+    "existing_identity_or_alias",
+    "The raw Glycerol(anhydrous) reagent and processed label agree with neutral glycerol17754 and its source2178 metadata. This is the same substance as the existing glycerol owner, with an explicit water-exclusion qualifier; it is not a new hydrate or a solution concentration.",
+    "17754",
+    "Glycerol",
+    "",
+    "mediadive-ingredient-2178.html"
+  ],
+  "168": [
+    "malformed_or_nonchemical_token",
+    "Ingredient1743 saysNa2WO2 x2H2O and lacks independent chemistry. The existing tungstate-dihydrate owner63939 incorrectly accepts that oxygen-deficient formula. Reject this alias while preserving its source; the likely O2-toO4 typo is not a verified source correction.",
+    "63939,63940",
+    "Na2wo4_X_2_H2o",
+    "Require original reagent formula or source erratum before connecting ingredient1743 to sodium tungstate dihydrate.",
+    "mediadive-ingredient-1743.html"
+  ],
+  "169": [
+    "unresolved",
+    "Ingredient676's label explicitly says disodium EDTA dihydrate, but its auto-CAS139-33-3, CHEBI64734 and336.206mass are anhydrous; frozen g/L-to-mM arithmetic also uses336.2 rather than372.2. Two MIM dihydrate64758 owners exist with conflicting properties. The label/property conflict cannot be solved by an alias.",
+    "64734,64758",
+    "Na2-edta_X_2_H2o,Na2edta2h2o",
+    "Confirm ingredient676 supplier hydrate/CAS and consolidate the duplicate64758 owners; recalculate source molarity only from the verified form and volume.",
+    "mediadive-ingredient-676.html"
+  ],
+  "170": [
+    "unresolved",
+    "Ingredient2384 alpha-ketoglutamate has no registry grounding and is not the correctly spelled alpha-ketoglutarate. The acid30915 owner accepting it does not prove the source intended acid rather than a salt or the modeled dianion16810. Preserve the typo without a new identity assertion.",
+    "30915,16810",
+    "Alpha-ketoglutaric_Acid",
+    "Obtain the original ingredient2384 reagent record or erratum resolving ketoglutamate spelling, salt/acid and hydration before owner/export release.",
+    "mediadive-ingredient-2384.html"
+  ],
+  "171": [
+    "unresolved",
+    "Ingredient415's Na2-glutamate implies two sodium ions but its automatic CAS142-47-2, CHEBI64220 and169.111mass describe one sodium. The current monosodium owner wrongly exports the disodium string; stoichiometric disagreement must be fixed in the source or separated, not silently normalized.",
+    "64220",
+    "Na_Glutamate",
+    "Require ingredient415's supplier/CAS or original-method correction specifying sodium count and stereo; coordinate issue655 alias/payload correction before releasing the source.",
+    "mediadive-ingredient-415.html"
+  ],
+  "172": [
+    "existing_identity_or_alias",
+    "The raw4-(2-hydroxyethyl)-1-piperazineethanesulfonic acid label, ingredient1566 CAS7365-45-9 and HEPES attribute agree with CHEBI:42334. The processed label loses parentheses but the complete source record supplies them. Existing owner aliases suffice; no sodium salt or titrated-buffer identity is inferred.",
+    "42334",
+    "Hepes",
+    "",
+    "mediadive-ingredient-1566.html"
+  ],
+  "174": [
+    "stock_product_mixture_context",
+    "This GTDB-Metatraits graph node preserves actinomycetin with no extracted raw label or molecular identifier. Primary1947 Welsch paper discovery establishes the historical term, while later literature concerns bacteriolytic preparations. It does not establish a unique small-molecule structure for this graph node; an existing supported lexical placeholder is not fresh scientific approval. Directly inspected original Welsch1947 pp101–102 explicitly describes actinomycetin as crude culture filtrate, potentially containing more than one active agent. This establishes a preparation context and contradicts a unique small-molecule interpretation. The attempted PDF returned HTML; original scanned pages were separately captured and inspected.",
+    "",
+    "Actinomycetin",
+    "A particular source vocabulary or product preparation is still needed for a formulation-specific record; the historical term itself is resolved as crude culture filtrate, so no exact molecular ontology claim is made.",
+    "actinomycetin-primary.html,actinomycetin-enzymes.html,ols-search-14.json,actinomycetin-primary-page1.png,actinomycetin-primary-page2.png,actinomycetin-primary.pdf"
+  ],
+  "175": [
+    "unresolved",
+    "Ingredient890's Na-EDTA x2H2O omits sodium count, while its automatic metadata and g/L-to-mM arithmetic use anhydrous disodium64734/336.2. The two-water label conflicts with those properties and does not establish disodium through abbreviation alone.",
+    "64734,64758",
+    "Na2-edta_X_2_H2o",
+    "Obtain ingredient890 supplier/CAS specifying sodium stoichiometry and waters, then reconcile the anhydrous molarity and duplicate dihydrate owners.",
+    "mediadive-ingredient-890.html"
+  ],
+  "182": [
+    "malformed_or_nonchemical_token",
+    "Na2S2SO3 contains three sulfur atoms as written, whereas thiosulfate132112 is Na2S2O3. Ingredient1492 has no corroborating registry data. The thiosulfate owner must not resolve this malformed string; preserve it as rejected source provenance until a source correction exists.",
+    "132112",
+    "Na2s2o3",
+    "Require the original recipe or authoritative source erratum confirming which sulfur compound was intended.",
+    "mediadive-ingredient-1492.html"
+  ],
+  "184": [
+    "stock_product_mixture_context",
+    "The non-GTDB Metatraits actinomycetin node is a separately retained source case. Its lexical overlap with the existing local placeholder and the GTDB node does not supply molecular identity. Historical primary-paper discovery supports further preparation-specific investigation, not an exact chemical equivalence. Directly inspected original Welsch1947 pp101–102 explicitly describes actinomycetin as crude culture filtrate, potentially containing more than one active agent. This establishes a preparation context and contradicts a unique small-molecule interpretation. The attempted PDF returned HTML; original scanned pages were separately captured and inspected.",
+    "",
+    "Actinomycetin",
+    "A particular source vocabulary or product preparation is still needed for a formulation-specific record; the historical term itself is resolved as crude culture filtrate, so no exact molecular ontology claim is made.",
+    "actinomycetin-primary.html,actinomycetin-enzymes.html,ols-search-14.json,actinomycetin-primary-page1.png,actinomycetin-primary-page2.png,actinomycetin-primary.pdf"
+  ],
+  "186": [
+    "existing_identity_or_alias",
+    "Na2-fumarate explicitly has two sodium ions and ingredient276's CAS17013-01-3,formula and160.036mass agree with disodium fumarate115156. Existing owner identity is correct; no new alias is required and the inherited full-payload hold still requires native review.",
+    "115156",
+    "Na2-fumarate",
+    "",
+    "mediadive-ingredient-276.html"
+  ]
+}

@@ -1,0 +1,40 @@
+identifier: kgmicrobe.ingredient:togo_2809_sodium_carbonate_8_percent
+preferred_term: TOGO 2809 sodium carbonate 8% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2809_sodium_carbonate_8_percent
+  ontology_label: TOGO 2809 sodium carbonate 8% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/medium/M2809
+    notes: Source-qualified formulation identity. No molecular exactMatch or generic-stock equivalence is asserted. The stock label8%(wt/vol) explicitly supplies80g/L Na2CO3. Solvent identity and amount are not separately specified, so neither is invented. The100ml quantity is the amount added in titanium-citrate preparation.
+synonyms:
+- synonym_text: 8% (wt/vol) Na2CO3
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/medium/M2809
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '80'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2809
+    source_record: TOGO 2809 sodium carbonate 8% w/v stock
+    notes: The stock label8%(wt/vol) explicitly supplies80g/L Na2CO3. Solvent identity and amount are not separately specified, so neither is invented. The100ml quantity is the amount added in titanium-citrate preparation.
+  notes: Amounts retain their explicit stock or source-batch basis; no measured final volume or receiving-medium concentration is inferred.
+notes: Isolated source-review proposal. Generic raw source spelling retained as nonresolving provenance so this specific formulation cannot capture other preparations. The stock label8%(wt/vol) explicitly supplies80g/L Na2CO3. Solvent identity and amount are not separately specified, so neither is invented. The100ml quantity is the amount added in titanium-citrate preparation.
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: Proposed source-qualified stock togo2809-carbonate8percent with source-stated component scope. No maintained owner or publication selector was changed.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "BIO-PROPOSAL-filtered-seawater-aliases",
+      "case_ids": [
+        "CM_NAME:12fab181fb7a8d829e375acb04a7267dabc69b22aa48ee624c3c417aee9e473d",
+        "CM_NAME:7ce67d784e648c4b596c43e62c319bf29cdf19710f09454cde8be8612d650b98"
+      ],
+      "description": "Add two source-verified filtered natural seawater synonyms to the existing filtered seawater owner. Proposal only; no native data or release status changed.",
+      "evidence_ids": [
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-FAILED-retrievals-5",
+        "BIO-FAILED-retrievals-70",
+        "BIO-FAILED-retrievals-72",
+        "BIO-FAILED-retrievals-73",
+        "BIO-FAILED-retrievals-74",
+        "BIO-OWNER-Filtered_Seawater",
+        "BIO-PRIMARY-0c1e7fd46063ca00",
+        "BIO-PRIMARY-0d8880a8bce366da",
+        "BIO-PRIMARY-171a1240b2e16508",
+        "BIO-PRIMARY-2c8500ee6101e866",
+        "BIO-PRIMARY-3d890e248ce5aa41",
+        "BIO-PRIMARY-c9440f55c5fd86de",
+        "BIO-PRIMARY-cfa9107ea335833e",
+        "BIO-PRIMARY-e985257a8f05541b",
+        "BIO-PRIMARY-supp-e985257a8f05541b",
+        "BIO-RECIPE-039298d806a3c37f",
+        "BIO-RECIPE-10def676385acac7",
+        "BIO-RECIPE-47bbd520021f151e",
+        "BIO-RECIPE-575bba2696be8cbe",
+        "BIO-RECIPE-9a4a25c9d4ae9b23",
+        "BIO-RECIPE-bd6a9550f0465707",
+        "BIO-RECIPE-c44ec99e4326848e",
+        "BIO-RECIPE-cee9321f0230d004",
+        "BIO-RECIPE-cfbb705908544cf0",
+        "BIO-RECIPE-d2b5e82be908c19a",
+        "BIO-RECIPE-e282ba50c75c82f9",
+        "BIO-SOURCE-11",
+        "BIO-SOURCE-69",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ],
+      "owner_path": "data/ingredients/mapped/Filtered_Seawater.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "5256325a957d3055e060f04a7fa4d658e3d31f4a5d6cedd182e9b1ffe9d0841f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Filtered_Seawater.yaml",
+        "sha256": "662ce1bb0dec3d644b66f65447410303dbbd9cf3060935196716856b6f440831"
+      },
+      "identity_consequences": "No identifier, ontology target or predicate change; new synonyms retain filtration and natural-water scope. Synthetic salt alternatives and recipe dilutions are not new aliases.",
+      "publication_review_obligations": "Withdraw inherited support for changed owner bytes. Reassess complete current mapping payload and existing Natural seawater synonym before publication; no hold removed.",
+      "cross_shard_conflict": "Existing owner may be referenced by other shard cases; coordinator must reconcile on original baseline hash without adopting other proposed bytes."
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_492_modified_mj_synthetic_seawater",
+      "case_ids": [
+        "CM_NAME:40c0c894c4b6bbb50dbaf8a3ffd4617c5eba2537f88f2397b17fd86fc07b840b"
+      ],
+      "description": "Create source-qualified stock owner JCM 492 Modified MJ synthetic seawater from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+        "sha256": "ddd35feefd2df9b1f2a3d721f5b3d89926988efc6e7210a1269e243d324d8f16"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=492",
+      "source_locator": "Modified MJ synthetic seawater table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-294a2f71fde4efbe",
+        "BIO-PRIMARY-6b74fe99558a128c",
+        "BIO-RECIPE-63e3c7aa3b66f9c0",
+        "BIO-SOURCE-39",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_611_synthetic_seawater_mix",
+      "case_ids": [
+        "CM_NAME:489879a7e87e7a699d78827333788bb166ae73b2c834ca7cd4ef439a2d7b3b80"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 611 Synthetic seawater mix from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+        "sha256": "fde3eda1565395d85eb7f90094978e7b367c7710a737c784e741f993adce2633"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium611.pdf",
+      "source_locator": "Page1 Synthetic seawater mix table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-0c282238beb9b54a",
+        "BIO-PRIMARY-f93c582c16f11798",
+        "BIO-RECIPE-5769ce12f5239e85",
+        "BIO-SOURCE-41",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_512_dl_minerals",
+      "case_ids": [
+        "CM_NAME:5053010207e6a25275b07ded5e00096c9743b06a65917aa299596a07d7822ec0"
+      ],
+      "description": "Create source-qualified stock owner JCM 512 DL minerals from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_512_DL_Minerals.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_512_DL_Minerals.yaml",
+        "sha256": "245391b1c557bdb7673657098583d269e767905646e9fdbe9ac82e4af53a77b7"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512",
+      "source_locator": "DL minerals (refrigerated) table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-OWNER-Sulfur-free_DL_Minerals",
+        "BIO-PRIMARY-1c28eda81cff76c7",
+        "BIO-PRIMARY-7e29fc85a844d1a0",
+        "BIO-RECIPE-f8ed0e149c2204e2",
+        "BIO-SOURCE-44",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_946a_synthetic_seawater_2x",
+      "case_ids": [
+        "CM_NAME:55e03ac3f1e2010248ef84417fc0b47e6d82d7345a3e19d88c5688451d2456c1"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 946a Synthetic seawater (2 x conc.) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+        "sha256": "344e7b970587916303854ebb1743726652155ce17d44688194fbd2e15883cfad"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium946a.pdf",
+      "source_locator": "Page2 Synthetic seawater (2 x conc.) (from medium795)",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-251d30ed6e239c8a",
+        "BIO-PRIMARY-f21af9734c76ece4",
+        "BIO-RECIPE-dea10ee1e675adcb",
+        "BIO-SOURCE-49",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_651_artificial_seawater_05x",
+      "case_ids": [
+        "CM_NAME:d2d3612b39dbe00f78cfb34452b2a457722c69f111f1ba1966f865b3b2bec892"
+      ],
+      "description": "Create source-qualified stock owner JCM 651 Artificial seawater (0.5 x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_651_Artificial_Seawater_05x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_651_Artificial_Seawater_05x.yaml",
+        "sha256": "0adde845da6ee89a25d28a821e889727dd5136c6ae3015c4e6eb17781dc9095a"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=651",
+      "source_locator": "0.5 x Artificial seawater table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-retrievals-113",
+        "BIO-PRIMARY-ea90e577fff6331e",
+        "BIO-RECIPE-78aa92c14f524afa",
+        "BIO-SOURCE-108",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_910_artificial_seawater_1x",
+      "case_ids": [
+        "CM_NAME:8cb304e452d84e6d4ec5cbc5d75323b0ed6db6ff52c7782ab6489972a0af6c16"
+      ],
+      "description": "Create source-qualified stock owner JCM 910 Artificial seawater (1.0 x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_910_Artificial_Seawater_1x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_910_Artificial_Seawater_1x.yaml",
+        "sha256": "4557113d7ff49fdd8722ba409e1d5e1016d44b5f51f528a644c0048d9eeaa107"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=910",
+      "source_locator": "Instruction replacing JCM651 0.5x artificial seawater with 1.0x",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-retrievals-83",
+        "BIO-PRIMARY-ba94778d8e851661",
+        "BIO-RECIPE-c111f454e691870e",
+        "BIO-SOURCE-81",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_1009_artificial_seawater",
+      "case_ids": [
+        "CM_NAME:db13060723b46cd5621e5d34b182346c99697edb81b0b10951cfb2236d12b093"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 1009 Artificial seawater (32 g sea salt per litre water) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_1009_Artificial_Seawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_1009_Artificial_Seawater.yaml",
+        "sha256": "85d9eff24c54bad5e6daa013fd28496d81c3429ef0b65f625070df37de0b34d3"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf",
+      "source_locator": "Artificial seawater footnote",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-1bd0d036a214812b",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-RECIPE-15d053e487c597ff",
+        "BIO-RECIPE-3c64593e6a95dc23",
+        "BIO-SOURCE-115",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_1269_artificial_seawater_4x",
+      "case_ids": [
+        "CM_NAME:8f55a2cf22d316d1e69ee4141a16291e5deeb1cf7f396c08b5fd3eac6924cd78"
+      ],
+      "description": "Create source-qualified stock owner JCM 1269 Artificial seawater (4x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_1269_Artificial_Seawater_4x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_1269_Artificial_Seawater_4x.yaml",
+        "sha256": "71008fd600cde88d17a6315c0147b00ca48890df2cb53ce643c794853640899c"
+      },
+      "primary_url": "https://bacmedia.dsmz.de/pdf/J1269",
+      "source_locator": "Artificial seawater (4x) table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-final-retrievals-reconstructed-v2-3",
+        "BIO-FAILED-retrievals-86",
+        "BIO-PRIMARY-f0fa77fefe0df7a2",
+        "BIO-PRIMARY-final-135b07b3c8e2778e",
+        "BIO-PRIMARY-final-b23a1a331ed0ed06",
+        "BIO-RECEIPT-RECOVERY-v2",
+        "BIO-RECIPE-3920d6fe2ac2df93",
+        "BIO-SOURCE-85",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_781_horse_dung_extract",
+      "case_ids": [
+        "CM_NAME:82ed92170a6907ff3bba19b261fc010ac343554ae8299ca5dbb3c6a4632be2d2",
+        "KG_CASE:50a3e82d96fde8b0ff490cdc2f0a77956358274265d79ba97d23a983c4978534"
+      ],
+      "description": "Create the protocol-qualified horse-dung aqueous extract explicitly defined in DSMZ781; keep extraction inputs distinct from measured filtrate composition.",
+      "owner_path": "data/ingredients/mapped/DSMZ_781_Horse_Dung_Extract.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_781_Horse_Dung_Extract.yaml",
+        "sha256": "5799874520bfb23194cac5dae89f04b2a02ad13c4b4a6d9480a159e35f3795b8"
+      },
+      "identity_consequences": "Own fallback registry identity only; no equivalence to animal manure or dry cow manure. No guessed components, concentration or sterilization property.",
+      "publication_review_obligations": "Native review and full source-scoped alias assessment required for the new payload before guarded integration. Existing source-unit defects remain separately tracked.",
+      "cross_shard_conflict": "Coordinator must reconcile any other dung/extract proposal on source protocol, not raw label alone.",
+      "evidence_ids": [
+        "BIO-CHECK-material-guarded-validation.log",
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-PRIMARY-0de3fb431dbb0e36",
+        "BIO-PRIMARY-6686a0a4b7979389",
+        "BIO-PRIMARY-b4d2ad90228abe4e",
+        "BIO-RECIPE-126d5309cd25b389",
+        "BIO-RECIPE-56091d3148f18c35",
+        "BIO-RECIPE-fb6b41b73d777cb6",
+        "BIO-SOURCE-153",
+        "BIO-SOURCE-75",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-colloidal-chitin-protocol",
+      "case_ids": [
+        "KG_CASE:7dc99e7d679a1969a6c2582ca7b76c4cd5f81157aca8b8b5a73ecb2aa5e81a37"
+      ],
+      "description": "Annotate existing colloidal-chitin owner with the verified DSMZ1681 preparation, explicitly scoped to that recipe and without promotion.",
+      "owner_path": "data/ingredients/unmapped/Colloidal_Chitin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "d212ac576d63e4504a5b1b60a4df4af327a7941f263e56070cbf19b33f9f6e51",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Colloidal_Chitin.yaml",
+        "sha256": "5a94355a128c81b2b1745cc56263b1a58ab12d0a231b2bac7a81d2fbac4d0ea3"
+      },
+      "identity_consequences": "No identifier/mapping/status change. Source-bound process annotation only; CHEBI17029 remains a chemically broader candidate, not exact identity.",
+      "publication_review_obligations": "Edited complete owner payload requires new content-bound native review; no inherited approval or hold clearance.",
+      "cross_shard_conflict": "Existing UNMAPPED0361 may have other source claims; coordinator must merge annotations against original baseline bytes and retain source boundaries.",
+      "evidence_ids": [
+        "BIO-CHECK-material-guarded-validation.log",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-OWNER-Colloidal_Chitin",
+        "BIO-PRIMARY-73b797bc52f14d60",
+        "BIO-PRIMARY-final-39aa3b4fe5e386a5",
+        "BIO-PRIMARY-final-b0e89dde5cceef54",
+        "BIO-PRIMARY-link-02b5efd605865c73",
+        "BIO-SOURCE-160",
+        "BIO-SOURCE-BODY-UNCHANGED-v2"
+      ]
+    }
+  ]
+}

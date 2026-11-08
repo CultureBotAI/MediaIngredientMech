@@ -1,0 +1,35 @@
+identifier: kgmicrobe.ingredient:merck_czapek_dox_agar
+preferred_term: Czapek-Dox agar (Merck)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:merck_czapek_dox_agar
+  ontology_label: Czapek-Dox agar (Merck)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium550.pdf
+    notes: DSMZ550 explicitly lists Merck Czapek Dox agar48g as a purchased product.
+      Source-bound registry identity only; DSMZ130 is a scratch comparator and does
+      not establish this product composition.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: The exact KG raw record binds Merck Czapek-Dox agar48g/L. DSMZ130 is a scratch-recipe
+  comparator only and is not used to transcribe this product. A supplier-bound opaque
+  product proposal preserves that raw identity without merging generic Czapek-Dox
+  or borrowing another recipe formulation. Raw source labels remain in campaign case
+  evidence; no unqualified global alias is added. This isolated proposal does not
+  clear inherited owner publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: The exact KG raw record binds Merck Czapek-Dox agar48g/L. DSMZ130 is a
+    scratch-recipe comparator only and is not used to transcribe this product. A supplier-bound
+    opaque product proposal preserves that raw identity without merging generic Czapek-Dox
+    or borrowing another recipe formulation. Isolated proposal; no maintained data
+    mutation.
+  llm_assisted: true
+supplied_form:
+- name: Czapek-Dox agar (Merck)
+  supplier: Merck
+  form: dehydrated Czapek-Dox agar

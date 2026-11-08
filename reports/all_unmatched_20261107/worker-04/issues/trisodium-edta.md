@@ -1,0 +1,9 @@
+`data/ingredients/mapped/Na3-edta.yaml` correctly denotes CHEBI:63125 EDTA trisodium salt but contains the active exact synonym `EDTA di sodium salt`. This makes a two-sodium label resolve to a three-sodium substance.
+
+The owner was checked against live `main` on 2026-11-08 at 05:13 UTC and matches the frozen worker04 baseline, SHA256 `ea8dbade6d6bfd0bbb478bd146a1266dbb2742c7d022a3de16904465ea73238a`. [CHEBI:63125](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:63125) is trisodium; disodium EDTA and its dihydrate are distinct CHEBI:64734 and CHEBI:64758 identities. Worker04's `3Na-EDTA` case includes three original recipe occurrences whose sodium count agrees with the trisodium owner.
+
+Worker04 proposes exact isolated owner bytes that retain the incorrect disodium string as `REJECTED_LABEL`, add the supported `3Na-EDTA` spelling, and append a curation-history event. The maintained owner and exports remain unchanged until coordinator integration. This does not resolve other EDTA hydrate/duplicate-owner conflicts and does not approve unrelated existing aliases or the complete published payload.
+
+Acceptance: the disodium string no longer resolves as an active trisodium alias; source provenance remains visible; the three source occurrences retain their original amounts and stock context; coordinator reconciliation uses the original before hash and new complete-payload review before any export release.
+
+Frozen case `CM_NAME:02591f4a5364db919b1a8890e8f6800a87eea943fff102ed0405d0de9b069fa5`; proposal `w04-chem-proposal-trisodium-edta`. Exact payload and evidence are under `reports/all_unmatched_20261107/worker-04/` on branch `review/all-unmatched-w04-source-review-20261107` (dependency #1158). Full current issue/PR title/body search found no matching open task; this remains under the broader #1157 publication hold.

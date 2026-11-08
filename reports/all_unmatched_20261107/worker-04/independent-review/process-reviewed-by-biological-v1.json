@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/biological",
+  "status": "complete",
+  "reviewed_at": "2026-11-08T05:32:54.364176+00:00",
+  "scope": "Independent process review of three issue drafts and three root-authored worker scripts; no maintained-owner, source-case or publication approval conferred.",
+  "files": {
+    "issues/magnesium-citrate.md": "1a7ce41b78f7f6e9eb8d0a928ec5ddc7f0b5b49d030f8aeb9e5c1958aa86a3cd",
+    "issues/trisodium-edta.md": "d09080c0404b92665ba03fa076071c313b29a7b4d09eddd6666926fd561861bf",
+    "issues/upstream-source-conflicts.md": "025061d0076e0ea7237c51383207495e8064329e854781bd00e1e3b28c4e2787",
+    "scripts/build_handoff.py": "b552d9fa2528c704396efe34fda8d628bb1009c797ac6b2aec41fb04a80e0791",
+    "scripts/build_native_review.py": "9aa0e27624a57e27527b252df46a1f706d03836d275e5e24e2f8ef78a49eb428",
+    "scripts/assemble_outcomes.py": "931effcc0cf4c6a0e76f4184553f8635a4db897f05a81f3a2b6eb6022e7a24c8",
+    "scripts/validate_proposal_overlay.py": "cd24671cd5bd674c9acd620feb5236df15ee6bc33cbf4e0d181ff17daf1e2563"
+  },
+  "issue_body_assessments": [
+    {
+      "path": "issues/magnesium-citrate.md",
+      "result": "supported_bounded",
+      "notes": "Full owner/current capture and #320 comments support inherited 3:2 versus source404 1:1 conflict. Body explicitly avoids treating automatically derived CAS/conversion as independent procurement. Trace all five occurrences before reground/split is appropriate; preserve #353 history."
+    },
+    {
+      "path": "issues/trisodium-edta.md",
+      "result": "supported_bounded",
+      "notes": "Full owner and chemistry independent review support rejecting the active two-sodium spelling and adding the three-sodium spelling. No approval of unrelated full payload/hydrate/duplicate issues."
+    },
+    {
+      "path": "issues/upstream-source-conflicts.md",
+      "result": "supported_bounded",
+      "notes": "CCAP phase/stock reconstruction, Bacto214050/Noble214220 conflict, JCM1429 free-monomer grounding, and Lee2009 Table4/AAM-minus distinction are all supported. Preserve four separate repair obligations and source variants."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "PROCESS-1",
+      "script": "scripts/validate_proposal_overlay.py",
+      "issue": "Duplicate existing-owner proposals silently overwrote one another.",
+      "resolution": "Explicit seen-owner-path guard now rejects duplicate proposals for existing and new paths; actual negative control passed."
+    },
+    {
+      "id": "PROCESS-2",
+      "script": "scripts/validate_proposal_overlay.py",
+      "issue": "Collision detection applied only to new owners.",
+      "resolution": "Edited identifier changes are checked for baseline/proposed collisions; actual new/edit collision controls passed. Unchanged inherited duplicates remain separately visible."
+    },
+    {
+      "id": "PROCESS-3",
+      "script": "scripts/validate_proposal_overlay.py",
+      "issue": "Local registry self-identities incorrectly required external ontology adapter.",
+      "resolution": "Registry branch checks self-identity, FALLBACK_REGISTRY quality and preferred-term label; valid registry passes without external adapter and each malformed variant rejects."
+    },
+    {
+      "id": "PROCESS-4",
+      "script": "scripts/validate_proposal_overlay.py",
+      "issue": "Current catalog was called frozen without whole maintained-tree drift guard.",
+      "resolution": "git diff BASE plus git ls-files --others without exclusion filters guard tracked and ignored/untracked maintained changes. Both refusal controls passed."
+    },
+    {
+      "id": "PROCESS-5",
+      "script": "scripts/build_native_review.py",
+      "issue": "Validation checks were serialized as passed without checking their results.",
+      "resolution": "Builder now asserts actual command receipt exits and log hashes, overlay PASS, structural PASS, and explicit absence of scientific approval by mechanical audit. Failed exit, changed output, failed structural/overlay status and false scientific-approval claims reject in unchanged AST-prefix controls."
+    }
+  ],
+  "script_assessments": [
+    {
+      "path": "scripts/assemble_outcomes.py",
+      "result": "supported_for_current_fixed_worker_inputs",
+      "notes": "Reads exact final reviewer fragment hashes, requires complete review status and per-case set equality, asserts all188 case identities/unique IDs, copies exact evidence/proposal payload references. Permitted changes to combined decision copies are independent-review pointers, publication scope, and filed issue references. Separate structural auditor validates evidence, source and payload byte bindings. This is assembly, not independent science or full owner approval."
+    },
+    {
+      "path": "scripts/build_native_review.py",
+      "result": "supported_with_stated_scope",
+      "notes": "Targets exact frozen snapshot rows with existing owner paths only; no owner is invented for source-only cases. Formal completed/needs_curation/self_review accurately describes root consolidation; all full-owner/export holds remain. Validation receipts must be actual final command outputs; final report production still belongs to root."
+    },
+    {
+      "path": "scripts/validate_proposal_overlay.py",
+      "result": "supported_with_stated_scope",
+      "notes": "Checks prospective bytes, before/frozen/current identity, new collision introductions, component partonomy delta, ontology labels or explicit registry identity. Strict LinkML is a separate required gate. MICRO fallback independently checked against exact captured OLS hash, identifier, obsolete/defining flags, canonical label and true original timestamp; exercised registry/collision controls reran against final fallback-containing script bytes. The MICRO fallback itself was statically inspected, not covered by these fixture tests."
+    }
+  ],
+  "negative_controls": [
+    {
+      "path": "independent-review/process-negative-controls-20261108T053215553148Z.json",
+      "sha256": "3c793a2b82e04d96e242286eb05e77d3c458114d5843e2b7e1a69e4fe2aa8497",
+      "status": "PASS",
+      "count": 12
+    },
+    {
+      "path": "independent-review/native-gate-negative-controls-20261108T053123799656Z.json",
+      "sha256": "e250cc6b780299a8a593db773e26c5593827be37d985f994d788adf0991c98fb",
+      "status": "PASS",
+      "count": 7
+    }
+  ],
+  "remaining_findings": [],
+  "limitations": [
+    "Negative controls use isolated fixture trees and mocked git metadata; they do not replace final actual maintained-tree checks.",
+    "Native controls execute unchanged AST prefix through gates, not a fabricated scientific report.",
+    "This process review does not certify final native saved output or commit/push; final root assembly is reviewed separately."
+  ]
+}

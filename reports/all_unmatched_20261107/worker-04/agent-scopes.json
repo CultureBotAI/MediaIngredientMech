@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "worker_slot": 4,
+  "observed_at": "2026-11-08T05:40:48.856341+00:00",
+  "external_session": "assigned worker04 only; no additional external sessions launched",
+  "coordinator_agent": {
+    "identity": "/root",
+    "scope": "Preflight, live issue histories/deduplication, environment, input integrity, bundle assembly, proposal validation, native formal packaging, final diff review, authorized commit/push/handoff"
+  },
+  "primary_review_agents": [
+    {
+      "identity": "/root/chemistry",
+      "assignment": "fragments/chemistry-assignment.json",
+      "case_count": 74,
+      "scope": "All listed cases: complete frozen source context, primary research, owner-byte review, proposed disposition and isolated curation payloads",
+      "independence": "Primary author, not independent reviewer of own work"
+    },
+    {
+      "identity": "/root/biological",
+      "assignment": "fragments/biological-assignment.json",
+      "case_count": 51,
+      "scope": "All listed cases: complete frozen source context, primary research, owner-byte review, proposed disposition and isolated curation payloads",
+      "independence": "Primary author, not independent reviewer of own work"
+    },
+    {
+      "identity": "/root/media",
+      "assignment": "fragments/media-assignment.json",
+      "case_count": 63,
+      "scope": "All listed cases: complete frozen source context, primary research, owner-byte review, proposed disposition and isolated curation payloads",
+      "independence": "Primary author, not independent reviewer of own work"
+    }
+  ],
+  "independent_review_assignments": [
+    {
+      "reviewer": "/root/media",
+      "primary_author": "/root/biological",
+      "case_count": 51,
+      "input": "fragments/biological-decisions.json",
+      "status": "complete",
+      "actual_case_count": 51,
+      "actual_proposal_count": 11,
+      "final_review": "independent-review/biological-reviewed-by-media-v2.json",
+      "review_sha256": "fdce098163cb02d8164c1fbc3ed955d5d34c9aabba7d7ac6578db2c31186db91",
+      "final_fragment_hashes": {
+        "fragments/biological-decisions.json": "ea99dbb7383f701d187962de9ebb497b34bffb362b7cad724d2165b3949c458d",
+        "fragments/biological-evidence.json": "71b95081610306003e21addb113c76963809f17a17b402abe793818d2894afd5",
+        "fragments/biological-proposals.json": "273b5c4bef21bf69f38b16107d8b42b550ebdf84edb26cfa1c1a16f6fb55cc84"
+      }
+    },
+    {
+      "reviewer": "/root/biological",
+      "primary_author": "/root/chemistry",
+      "case_count": 74,
+      "input": "fragments/chemistry-decisions.json",
+      "status": "complete",
+      "actual_case_count": 74,
+      "actual_proposal_count": 26,
+      "final_review": "independent-review/chemistry-reviewed-by-biological-v1.json",
+      "review_sha256": "126dcdd33fba79fe7cf62babcfa4dc4ce3679f6f0d1040e38733a566e2782360",
+      "final_fragment_hashes": {
+        "fragments/chemistry-decisions.json": "066a5cd0629b5d77544e6dd6cb86ac8b9d5921bb2f8958e32f0bd5ca6eb063b7",
+        "fragments/chemistry-evidence.json": "498b116cffe504394a17c8ceedefd3d7685ee8e75bfded864f621b0cff82871f",
+        "fragments/chemistry-proposals.json": "d3c6384c8fb355304adeb3e2bac9069d695827a64ba5b568287027517b77a500"
+      }
+    },
+    {
+      "reviewer": "/root/chemistry",
+      "primary_author": "/root/media",
+      "case_count": 63,
+      "input": "fragments/media-decisions.json",
+      "status": "complete",
+      "actual_case_count": 63,
+      "actual_proposal_count": 26,
+      "final_review": "independent-review/media-reviewed-by-chemistry-v2.json",
+      "review_sha256": "06df7024ae3f93dfc5af7e20f1250e3bb4019905d2950b9fe9d7100964efebe9",
+      "final_fragment_hashes": {
+        "fragments/media-decisions.json": "c503be4a8ee4cba608098110061fda994ebe59ec7e9c0c690818d36685f38c28",
+        "fragments/media-evidence.json": "6aba65f3858a2908114a20e0c45b1197a2470ba48d31973e9ff02255f3e3893b",
+        "fragments/media-proposals.json": "25d6b43527c508a2a677753a8f198b41319f564d20570c278752ebb916a313e7"
+      }
+    }
+  ]
+}

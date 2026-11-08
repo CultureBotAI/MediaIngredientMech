@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:dsmz_1009_artificial_seawater
+preferred_term: DSMZ 1009 Artificial seawater (32 g sea salt per litre water)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_1009_artificial_seawater
+  ontology_label: DSMZ 1009 Artificial seawater (32 g sea salt per litre water)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf
+    notes: Source-qualified multi-component stock identity. No molecular term or generic
+      seawater identity is asserted. Proposed fallback registry identity pending coordinator
+      integration and full content-bound review.
+components:
+- component_name: Sea salt (e.g. Instant Ocean)
+  reference_scope: UNMAPPED
+  concentration_value: '32'
+  concentration_unit: g per source batch
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1000'
+  concentration_unit: ml per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf
+    source_record: Artificial seawater footnote
+    notes: All top-level source stock components transcribed. Nested stock identity
+      and unspecified forms remain source-stated; no chemical identity is guessed.
+  notes: Amounts retain the source batch basis, including the stated water amount,
+    rather than claiming a measured final volume or finished-medium concentrations.
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+notes: 'Isolated worker04 proposal. The complete stock is distinct from its components,
+  natural seawater, and finished medium. Both frozen DSMZ1009 occurrences already
+  preserve the litre dose correctly; no source-unit repair is required for this case.
+  Component reference_scope UNMAPPED deliberately preserves source-stated chemical
+  forms without asserting current MIM equivalence. Raw source labels are retained
+  here as contextual provenance only, without resolving aliases: [''Seawater (see
+  below)''].'
+curation_history:
+- timestamp: '2026-11-08T05:26:00.860201+00:00'
+  curator: codex_worker04_biological
+  action: CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Proposed exact source-qualified stock from Artificial seawater footnote;
+    preserved original source label, component forms and batch quantities. No maintained
+    data or release status was changed.
+  new_status: MAPPED
+  llm_assisted: true

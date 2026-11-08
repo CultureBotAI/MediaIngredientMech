@@ -1,0 +1,162 @@
+{
+  "checked_at": "2026-11-08T05:32:18.088440+00:00",
+  "script": "reports/all_unmatched_20261107/worker-04/scripts/validate_proposal_overlay.py",
+  "script_sha256": "cd24671cd5bd674c9acd620feb5236df15ee6bc33cbf4e0d181ff17daf1e2563",
+  "harness_sha256": "c5b095ec23945465d4da9596656b4cbb8aee17696a299066c2ebf5a90ad175f2",
+  "scope": "Actual exact overlay script in isolated fixtures; git metadata mocked to retained fixture bytes or explicit drift paths. Parsing, collision, registry, native partonomy and output code unchanged. No production artifacts or maintained files changed.",
+  "controls": [
+    {
+      "name": "valid_registry_without_external_adapter",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "exit_code": 0,
+      "expected_error": null,
+      "errors": [],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/valid_registry_without_external_adapter/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "duplicate_existing_owner",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "duplicate proposed owner",
+      "errors": [
+        "duplicate proposed owner data/ingredients/mapped/Alpha.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/duplicate_existing_owner/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "edited_identifier_collision",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "introduced identifier collision",
+      "errors": [
+        "introduced identifier collision data/ingredients/mapped/Alpha.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/edited_identifier_collision/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "new_identifier_collision",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "introduced identifier collision",
+      "errors": [
+        "introduced identifier collision data/ingredients/mapped/New.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/new_identifier_collision/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "registry_wrong_identity",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "registry",
+      "errors": [
+        "registry self mapping differs from identifier data/ingredients/mapped/New.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/registry_wrong_identity/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "registry_wrong_label",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "registry",
+      "errors": [
+        "registry label differs from preferred term data/ingredients/mapped/New.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/registry_wrong_label/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "registry_wrong_mapping_quality",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "registry",
+      "errors": [
+        "registry mapping quality is not FALLBACK_REGISTRY data/ingredients/mapped/New.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/registry_wrong_mapping_quality/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "introduced_unresolved_component",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "UNRESOLVED_MIM_REFERENCE",
+      "errors": [
+        "introduced partonomy: UNRESOLVED_MIM_REFERENCE\tkgmicrobe.ingredient:fixture\tcomponent 1 (Missing material): no active MIM record has identifier TEST:missing"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/introduced_unresolved_component/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "wrong_proposal_payload_hash",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "after hash mismatch",
+      "errors": [
+        "after hash mismatch data/ingredients/mapped/New.yaml"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/wrong_proposal_payload_hash/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "inherited_duplicate_unchanged",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "exit_code": 0,
+      "expected_error": null,
+      "errors": [],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/inherited_duplicate_unchanged/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "tracked_maintained_drift",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "maintained inputs differ",
+      "errors": [
+        "('maintained inputs differ from frozen baseline', ['data/ingredients/mapped/Drift.yaml'], [])"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/tracked_maintained_drift/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    },
+    {
+      "name": "ignored_untracked_maintained_input",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1,
+      "expected_error": "maintained inputs differ",
+      "errors": [
+        "('maintained inputs differ from frozen baseline', [], ['data/ingredients/mapped/Ignored.yaml'])"
+      ],
+      "fixture_maintained_bytes_unchanged": true,
+      "passed": true,
+      "result_path": ".temp/all-unmatched-worker-04/biological/process-controls-20261108T053215553148Z/ignored_untracked_maintained_input/reports/all_unmatched_20261107/worker-04/validation/proposal-overlay.json"
+    }
+  ],
+  "status": "PASS"
+}

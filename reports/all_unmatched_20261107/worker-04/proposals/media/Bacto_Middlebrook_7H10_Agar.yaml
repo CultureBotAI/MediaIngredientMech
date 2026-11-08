@@ -1,0 +1,90 @@
+identifier: kgmicrobe.ingredient:bacto_middlebrook_7h10_agar
+preferred_term: Middlebrook7H10 agar base (BD-Difco)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bacto_middlebrook_7h10_agar
+  ontology_label: Middlebrook7H10 agar base (BD-Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=386
+    notes: JCM386 explicitly adds glycerol and OADC separately to19g BD-Difco7H10
+      base, and KG identifies Difco262710. Live NCIT:C85509 alternate definition includes
+      oleic acid-albumin enrichment and glycerol, so the mapped generic owner does
+      not establish exact identity of this unsupplemented base. Promote existing Bacto
+      product owner to own registry; retain the other owner and its unsafe Difco alias
+      as an unresolved coordinator finding.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: JCM386 explicitly adds glycerol and OADC separately to19g BD-Difco7H10 base,
+  and KG identifies Difco262710. Live NCIT:C85509 alternate definition includes oleic
+  acid-albumin enrichment and glycerol, so the mapped generic owner does not establish
+  exact identity of this unsupplemented base. Promote existing Bacto product owner
+  to own registry; retain the other owner and its unsafe Difco alias as an unresolved
+  coordinator finding. Raw source labels remain in campaign case evidence; no unqualified
+  global alias is added. This isolated proposal does not clear inherited owner publication
+  holds. Historical generic labels remain preserved in curation history/source evidence
+  without global resolving aliases. Existing prior review holds persist until independent
+  coordinator disposition.
+curation_history:
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Agar.yaml — 'Bacto Middlebrook 7H10 agar' is a complete
+    media formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator
+    re-mapping (likely FOODON complex medium, or split into per-component ingredients).
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a commercial agar medium/base preparation and left unmapped
+    pending recipe- or product-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bacto_Middlebrook_7H10_Agar-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Recommended record updates — ### Mapping decision
+    CURIEs discussed: CHEBI:2509. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Bacto Middlebrook 7H10 agar (Difco 262710)'' (x1 CultureMech
+    mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: MAPPED_TO_REGISTRY
+  changes: JCM386 explicitly adds glycerol and OADC separately to19g BD-Difco7H10
+    base, and KG identifies Difco262710. Live NCIT:C85509 alternate definition includes
+    oleic acid-albumin enrichment and glycerol, so the mapped generic owner does not
+    establish exact identity of this unsupplemented base. Promote existing Bacto product
+    owner to own registry; retain the other owner and its unsafe Difco alias as an
+    unresolved coordinator finding. Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+  previous_status: UNMAPPED
+  new_status: MAPPED
+supplied_form:
+- name: Middlebrook7H10 agar base (BD-Difco)
+  supplier: BD Difco
+  form: dehydrated unsupplemented7H10 basal medium
+  catalog_number: '262710'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0

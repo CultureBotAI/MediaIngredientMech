@@ -1,0 +1,140 @@
+identifier: CHEBI:53426
+preferred_term: Tween 80
+ontology_mapping:
+  ontology_id: CHEBI:53426
+  ontology_label: polysorbate 80
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: all_unmatched_20261107 worker04 primary proposal polysorbate80-alias
+    notes: Polyoxyethylene sorbitan mono-oleate explicitly identified as Tween80 is polysorbate80 CHEBI:53426. The polyoxyethylene qualifier distinguishes it from sorbitan monooleate; this is a safe source alias to the existing Tween80 owner, not to Span80. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json. This proposed delta does not approve complete owner/export payload or remove inherited holds.
+synonyms:
+- synonym_text: 'Role: Surfactant; Properties: Defined component, Organic compound, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Surfactant; Properties: Defined component, Simple component, Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Surfactant; Properties: Organic compound, Defined component, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Surfactant; Properties: Organic compound, Simple component, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Surfactant; Properties: Simple component, Defined component, Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Glycol (polysorbate 80)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Polyethylene oxide sorbitan mono-oleate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Polyoxyethylene (20) sorbitan monooleate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Polyoxyethylene sorbitan monooleate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Polyoxyethylene sorbitan oleate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Polysorbate 80
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Tween 80 (BD)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Tween 80 (pH 8.0)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: polyoxyethylene sorbitan mono-oleate (Tween 80)
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 299
+  media_count: 299
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.934088+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9005-65-6 from CultureBotHT compounds_to_cas.csv (matched: Tween 80)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Glycol (polysorbate 80), Polyethylene oxide sorbitan mono-oleate, Polyoxyethylene (20) sorbitan monooleate, Polyoxyethylene sorbitan monooleate, Polyoxyethylene sorbitan oleate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.794231+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.877458+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=(C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C24H44O6; inchi=InChI=1S/C32H60O10/c1-2-3-4-5-6-7-8-9-10-11-12-13-; smiles=[H][C@]1(C(COCCOC(=O)CCCCCCC/C=CCCCCCCCC)OCCO)OCC(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.096001+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113292+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SURFACTANT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.847776+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Tween 80'' -> ''polysorbate 80'': synced to canonical CHEBI label (preferred_term ''Tween 80'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
+- timestamp: '2026-08-27T03:16:39.520044+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/229 -> 299/299 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s published label but were absent from MIM''s label index, so CultureMech could not resolve them: ''Tween 80 (BD)'' (x2 CultureMech mentions); ''Tween 80 (pH 8.0)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal polysorbate80-alias: added aliases [''polyoxyethylene sorbitan mono-oleate (Tween 80)'']; rejected provenance labels [] Subject to independent skeptical review and guarded coordinator integration; inherited full-payload support must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 9005-65-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:45.934086+00:00'
+  molecular_formula: (C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C24H44O6
+  inchi: InChI=1S/C32H60O10/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-30(36)40-25-24-37-26-28(38-21-18-33)32-31(41-23-20-35)29(27-42-32)39-22-19-34/h9-10,28-29,31-35H,2-8,11-27H2,1H3/b10-9-/t28?,29?,31-,32-/m1/s1
+  smiles: '[H][C@]1(C(COCCOC(=O)CCCCCCC/C=CCCCCCCCC)OCCO)OCC(OCCO)[C@H]1OCCO'
+kg_microbe_node_id: CHEBI:53426
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SURFACTANT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (229 occurrences as 'Surfactant')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Surfactant; Properties: Defined component, Organic compound, Simple component'
+    curator_note: Widespread use in media formulations (229 occurrences). High confidence based on 'Defined component' property.

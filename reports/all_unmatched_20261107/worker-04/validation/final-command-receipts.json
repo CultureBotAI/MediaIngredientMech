@@ -1,0 +1,68 @@
+{
+  "structural": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+      "--shard",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-04.json",
+      "--decisions",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/decisions.json",
+      "--evidence",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/evidence.json",
+      "--proposals",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/proposals.json",
+      "--artifact-root",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04",
+      "--source-root",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5",
+      "--mim-root",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "--output",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/structural-audit-v1.json"
+    ],
+    "started_at": "2026-11-08T05:37:34.964380+00:00",
+    "finished_at": "2026-11-08T05:37:35.202914+00:00",
+    "exit_code": 0,
+    "log": "validation/structural-audit-final.log",
+    "log_sha256": "35ef5b5045905e1e009119689919ea31f64e3cb8a2d3d211ae180ffba5d297c3",
+    "input_bindings_sha256": "e935ea0a4925e6d808b120b05bf830aac0744aef90de282ca474fee8b708169a"
+  },
+  "schema": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "scripts/validate_strict.py",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/proposals",
+      "--out",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/validation/proposal-schema-final.tsv"
+    ],
+    "started_at": "2026-11-08T05:37:34.964506+00:00",
+    "finished_at": "2026-11-08T05:37:37.699854+00:00",
+    "exit_code": 0,
+    "log": "validation/proposal-schema-final.log",
+    "log_sha256": "0312fa164969a9b602d7413efa72784fe42839a3cc6ec615900445f7440e0cd1",
+    "input_bindings_sha256": "e935ea0a4925e6d808b120b05bf830aac0744aef90de282ca474fee8b708169a"
+  },
+  "overlay": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/scripts/validate_proposal_overlay.py"
+    ],
+    "started_at": "2026-11-08T05:37:34.967446+00:00",
+    "finished_at": "2026-11-08T05:37:51.248813+00:00",
+    "exit_code": 0,
+    "log": "validation/proposal-overlay-final.log",
+    "log_sha256": "ebf51a023996315e087cb4f7348a452e25fbfa4c434b9a2f6d0075b427aeb607",
+    "input_bindings_sha256": "e935ea0a4925e6d808b120b05bf830aac0744aef90de282ca474fee8b708169a"
+  },
+  "auditor-controls": {
+    "command": "python -m pytest -c /dev/null --rootdir . <campaign>/scripts/test_audit_worker_outcomes_v1.py -q --basetemp .temp/all-unmatched-worker-04/auditor-test-temp",
+    "exit_code": 0,
+    "log": "validation/auditor-negative-controls-retry.log",
+    "log_sha256": "6f45adadadb62914ad2dd0541c5cff79ba38974082fd288d78048736adff7866",
+    "execution_note": "Earlier actual run reused; no claim of rerunning controls here.",
+    "input_bindings_sha256": "e935ea0a4925e6d808b120b05bf830aac0744aef90de282ca474fee8b708169a"
+  }
+}

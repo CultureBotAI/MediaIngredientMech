@@ -1,0 +1,94 @@
+identifier: cas:91000-53-2
+preferred_term: TAPS sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:191055
+  ontology_label: N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 91000-53-2 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 6 CultureBot media; samples: RCH2 defined TAPS, MTM noNitrogen noCarbon, RCH2 defined glucose TAPS…. Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='TAPS sodium salt'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:191055 (''N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid''). The previous parent was the class of all sodium salts: it retained the counterion and discarded the compound, collapsing unrelated ingredients onto one node. Chosen because it is the systematic name of TAPS. The record stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
+  - evidence_type: MANUAL_CURATION
+    source: all_unmatched_20261107 worker04 primary proposal taps-salt-alias
+    notes: The original DSMZ1344 medium uses Taps17.4g atpH8.3, consistent with buffer usage. MediaDive1188 automatically assigns the unrelated tetrapeptide Tyr-Arg-Phe-Sar(CAS90549-86-3), while the MIM TAPS_Sodium_Salt owner is CAS91000-53-2. Live191055 defines the free buffer acid. Neither the peptide metadata nor generic TAPS spelling proves the sodium salt; reject that salt owner's unqualified alias without choosing the source form. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json. This proposed delta does not approve complete owner/export payload or remove inherited holds.
+synonyms:
+- synonym_text: TAPS
+  synonym_type: REJECTED_LABEL
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 8
+  media_count: 8
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:91000-53-2 as primary identifier; no CHEBI entry exists for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.536661+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:40.551451+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C7H16NNaO6S; smiles=C(CNC(CO)(CO)CO)CS(=O)(=O)[O-].[Na+]; inchi=InChI=1S/C7H17NO6S.Na/c9-4-7(5-10,6-11)8-2-1-3-15(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.742179+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:03:08.549623+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.752095+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_compositional_classes
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:191055 'N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid' (#322); the systematic name of TAPS.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519937+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 6/6 -> 8/8 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal taps-salt-alias: added aliases []; rejected provenance labels [''TAPS''] Subject to independent skeptical review and guarded coordinator integration; inherited full-payload support must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 91000-53-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C7H16NNaO6S
+  smiles: C(CNC(CO)(CO)CO)CS(=O)(=O)[O-].[Na+]
+  inchi: InChI=1S/C7H17NO6S.Na/c9-4-7(5-10,6-11)8-2-1-3-15(12,13)14;/h8-11H,1-6H2,(H,12,13,14);/q;+1/p-1
+  pubchem_cid: 23667519
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: BUFFER
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

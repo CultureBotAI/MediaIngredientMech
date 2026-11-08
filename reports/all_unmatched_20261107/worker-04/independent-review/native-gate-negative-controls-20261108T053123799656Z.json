@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-08T05:31:23.819159+00:00",
+  "script": "reports/all_unmatched_20261107/worker-04/scripts/build_native_review.py",
+  "script_sha256": "9aa0e27624a57e27527b252df46a1f706d03836d275e5e24e2f8ef78a49eb428",
+  "harness_sha256": "11da4fbc7535f341838e433c02d6a07a8cd72d7e9d5ca9ecf298c7491d003b6d",
+  "scope": "Unchanged AST prefix of actual native builder through all validation assertions; isolated inputs; no scientific report produced or production artifact modified.",
+  "controls": [
+    {
+      "name": "valid_gates",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "assertion": null,
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "nonzero_schema_exit",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "('schema', {'exit_code': 1, 'log': 'validation/fixture-schema.log', 'log_sha256': 'de48576fb70ddd6418f5d1f4e1cfd3925e33f1ad9e56b2ef915d4b6be7590327'})",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "changed_check_output",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "structural",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "structural_fail",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "mechanical_audit_claims_scientific_approval",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "overlay_fail",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    },
+    {
+      "name": "changed_native_targets",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "assertion": "",
+      "passed": true,
+      "native_output_not_created": true
+    }
+  ],
+  "status": "PASS"
+}

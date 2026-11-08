@@ -1,0 +1,44 @@
+identifier: kgmicrobe.ingredient:togo_2262_hepes_naoh_stock
+preferred_term: TOGO 2262 HEPES-NaOH 1 M pH 7.5 stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2262_hepes_naoh_stock
+  ontology_label: TOGO 2262 HEPES-NaOH 1 M pH 7.5 stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/medium/M2262
+    notes: Source-qualified formulation identity. No molecular exactMatch or generic-stock equivalence is asserted. TOGO2262 comments paragraph6 gives119.15g HEPES and final500ml stock volume, yielding238.3g/L; pH7.5 and nominal1M are source-stated. NaOH is explicit in the stock title but its titration amount is unspecified. Initial250ml water followed by making up to500ml is not a measured final pure-water amount. The medium1mM occurrence is distinct from the1M stock.
+synonyms:
+- synonym_text: HEPES-NaOH (pH 7.5)
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/medium/M2262
+components:
+- component_name: HEPES
+  reference_scope: UNMAPPED
+  concentration_value: '238.3'
+  concentration_unit: G_PER_L
+- component_name: NaOH
+  reference_scope: UNMAPPED
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2262
+    source_record: TOGO 2262 HEPES-NaOH 1 M pH 7.5 stock
+    notes: TOGO2262 comments paragraph6 gives119.15g HEPES and final500ml stock volume, yielding238.3g/L; pH7.5 and nominal1M are source-stated. NaOH is explicit in the stock title but its titration amount is unspecified. Initial250ml water followed by making up to500ml is not a measured final pure-water amount. The medium1mM occurrence is distinct from the1M stock.
+  notes: Amounts retain their explicit stock or source-batch basis; no measured final volume or receiving-medium concentration is inferred.
+notes: Isolated source-review proposal. Generic raw source spelling retained as nonresolving provenance so this specific formulation cannot capture other preparations. TOGO2262 comments paragraph6 gives119.15g HEPES and final500ml stock volume, yielding238.3g/L; pH7.5 and nominal1M are source-stated. NaOH is explicit in the stock title but its titration amount is unspecified. Initial250ml water followed by making up to500ml is not a measured final pure-water amount. The medium1mM occurrence is distinct from the1M stock.
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: Proposed source-qualified stock togo2262-hepes-naoh with source-stated component scope. No maintained owner or publication selector was changed.
+  new_status: MAPPED
+  llm_assisted: true

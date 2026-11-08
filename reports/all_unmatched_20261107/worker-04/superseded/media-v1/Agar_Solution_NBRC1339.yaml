@@ -1,0 +1,44 @@
+identifier: kgmicrobe.ingredient:agar_solution_nbrc1339
+preferred_term: Agar solution (NBRC1339 stock)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:agar_solution_nbrc1339
+  ontology_label: Agar solution (NBRC1339 stock)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    notes: NBRC1339 defines15g agar in900ml distilled water as an independently prepared
+      stock. These are source-batch ingredient amounts, not a measured final volume;
+      no15g/L or16.67g/L concentration is asserted.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+curation_history:
+- timestamp: '2026-11-08T05:18:48.447621+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: NBRC1339 defines15g agar in900ml distilled water as an independently prepared
+    stock. These are source-batch ingredient amounts, not a measured final volume;
+    no15g/L or16.67g/L concentration is asserted. Isolated proposal only; no maintained
+    owner was changed and no publication hold is released.
+  llm_assisted: true
+components:
+- component_name: Agar
+  component_id: CHEBI:2509
+  reference_scope: MIM_CATALOG
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    source_record: NBRC1339 agar-solution subsection
+    notes: 'Complete two-ingredient stock recipe: Agar15g and distilled water900ml.
+      M9 salts and the other medium additions are outside this stock.'
+  notes: Amounts retained in evidence prose because900ml is solvent input, not measured
+    final solution volume. The stock is not neat agar or the complete M9-phenanthrene
+    medium.

@@ -1,0 +1,63 @@
+identifier: UNMAPPED_0361
+preferred_term: Colloidal chitin
+synonyms:
+- synonym_text: Colloidal chitin
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1506); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a prepared chitin substrate form and left unmapped pending
+    exact polymer preparation and ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Colloidal_chitin-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** “colloidal chitin”
+    is not a discrete small chemical, salt, hydrate, buffer, or invariant commercial
+    formulation. It is a **protocol-defined, finely dispersed/pretreated form of the
+    chitin polymer**, usually retained as a hydrated preparation or suspension for
+    culture media and chitinase assays. In the best recovered preparation-level evidence,
+    purified shrimp-derive CURIEs discussed: CHEBI:17029, MESH:D002798. Recorded as
+    provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:26:02.116293+00:00'
+  curator: codex_worker04_biological
+  action: ANNOTATED_SOURCE_BOUND_PROTOCOL
+  changes: 'Proposed annotation of primary DSMZ1681 protocol linked to MediaDive1506.
+    Maintains generic owner UNMAPPED and preserves commercial-powder alternative;
+    no exact chitin mapping or generic whole-owner preparation claim. Primary source:
+    https://bacmedia.dsmz.de/pdf/1681'
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1506); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a prepared chitin substrate form pending
+  exact polymer preparation curation. Source-bound 2026-11-08 review: DSMZ1681, one
+  of the MediaDive1506 recipe uses, specifies commercial crab (shrimp) shell flakes
+  treated with hydrochloric acid, precipitated into cold water, centrifuged and washed
+  to pH6-6.5. The recipe lists 5g colloidal chitin and permits commercial chitin powder
+  as an alternative. This evidence describes that source protocol only; it does not
+  establish that every generic colloidal-chitin source is made by this method, identify
+  a single polymer fraction/acetylation state, or promote the owner to CHEBI:17029.
+  Full primary capture is retained in the worker04 source-review bundle.'
+ingredient_type: UNDEFINED_MIXTURE

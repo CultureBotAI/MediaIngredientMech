@@ -1,0 +1,48 @@
+identifier: kgmicrobe.ingredient:togo_2809_titanium_citrate_stock
+preferred_term: TOGO 2809 LS4D titanium citrate stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2809_titanium_citrate_stock
+  ontology_label: TOGO 2809 LS4D titanium citrate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/medium/M2809
+    notes: Source-qualified formulation identity. No molecular exactMatch or generic-stock equivalence is asserted. TOGO2809 comments paragraph16 gives these three stock additions. Nitrogen is the preparation atmosphere and is not asserted as a quantified dissolved constituent. These are formulation inputs; Ti/citrate speciation and the final reacted composition/volume are not claimed. The source5ml addition to LS4D must not become5g/L.
+synonyms:
+- synonym_text: Titanium citrate
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/medium/M2809
+components:
+- component_name: 0.2 M Sodium citrate solution
+  reference_scope: UNMAPPED
+  concentration_value: '500'
+  concentration_unit: ml per source batch
+- component_name: 20% (wt/vol) TiCl3 solution
+  reference_scope: UNMAPPED
+  concentration_value: '37.5'
+  concentration_unit: ml per source batch
+- component_name: 8% (wt/vol) Na2CO3 solution
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ml per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2809
+    source_record: TOGO 2809 LS4D titanium citrate stock
+    notes: TOGO2809 comments paragraph16 gives these three stock additions. Nitrogen is the preparation atmosphere and is not asserted as a quantified dissolved constituent. These are formulation inputs; Ti/citrate speciation and the final reacted composition/volume are not claimed. The source5ml addition to LS4D must not become5g/L.
+  notes: Amounts retain their explicit stock or source-batch basis; no measured final volume or receiving-medium concentration is inferred.
+notes: Isolated source-review proposal. Generic raw source spelling retained as nonresolving provenance so this specific formulation cannot capture other preparations. TOGO2809 comments paragraph16 gives these three stock additions. Nitrogen is the preparation atmosphere and is not asserted as a quantified dissolved constituent. These are formulation inputs; Ti/citrate speciation and the final reacted composition/volume are not claimed. The source5ml addition to LS4D must not become5g/L.
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: Proposed source-qualified stock togo2809-titanium-citrate with source-stated component scope. No maintained owner or publication selector was changed.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,47 @@
+{
+  "updated_at": "2026-11-08T05:17:54.221330+00:00",
+  "commands": [
+    {
+      "command": "UV_PROJECT_ENVIRONMENT=.temp/all-unmatched-worker-04/venv uv sync --frozen --python <maintained Python3.13.2> --cache-dir .temp/all-unmatched-worker-04/uv-cache",
+      "exit_code": 0,
+      "scope": "Private environment only; frozen uv.lock unchanged",
+      "log": ".temp/all-unmatched-worker-04/environment-setup.log"
+    },
+    {
+      "command": "python -m pytest <campaign>/scripts/test_audit_worker_outcomes_v1.py -q --basetemp <private>",
+      "exit_code": 4,
+      "scope": "Initial external test invocation inherited coordinator pyproject coverage options but pytest-cov was not installed; no tests ran",
+      "log": "validation/auditor-negative-controls.log"
+    },
+    {
+      "command": "python -m pytest -c /dev/null --rootdir . <campaign>/scripts/test_audit_worker_outcomes_v1.py -q --basetemp .temp/all-unmatched-worker-04/auditor-test-temp",
+      "exit_code": 0,
+      "scope": "Standalone campaign auditor controls;22 passed; neutral config avoids unrelated project coverage options",
+      "log": "validation/auditor-negative-controls-retry.log"
+    },
+    {
+      "command": "python -B scripts/record_review.py check --base e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+      "exit_code": 0,
+      "scope": "Existing1019 native review bundles; declared scopes only",
+      "log": "validation/native-review-baseline-check.log"
+    },
+    {
+      "command": "python -B scripts/validate_strict.py reports/all_unmatched_20261107/worker-04/proposals/biological --out <draft.tsv>",
+      "exit_code": 0,
+      "scope": "Early8 biological prospective payloads; final set still requires final validation",
+      "log": "validation/proposal-schema-biological-draft.log"
+    },
+    {
+      "command": "python -B scripts/validate_strict.py reports/all_unmatched_20261107/worker-04/proposals --out <draft.tsv>",
+      "exit_code": 0,
+      "scope": "43 interim proposal files; zero strictschemaerrors; laterproposal additions requirefinalrerun",
+      "log": "validation/proposal-schema-combined-draft.log"
+    },
+    {
+      "command": "python -B reports/all_unmatched_20261107/worker-04/scripts/validate_proposal_overlay.py",
+      "exit_code": 1,
+      "scope": "50 interim proposals; componentpartonomy andidentifierchecks passed; localMICROcacheabsent; originalOLSfallbackadded forfinalrerun",
+      "log": "validation/proposal-overlay-draft.log"
+    }
+  ]
+}

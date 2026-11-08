@@ -1,0 +1,94 @@
+{
+  "assembled_at": "2026-11-08T05:37:34.844419+00:00",
+  "bindings": [
+    {
+      "group": "chemistry",
+      "review": "independent-review/chemistry-reviewed-by-biological-v1.json",
+      "review_sha256": "126dcdd33fba79fe7cf62babcfa4dc4ce3679f6f0d1040e38733a566e2782360",
+      "fragment_hashes": {
+        "fragments/chemistry-decisions.json": "066a5cd0629b5d77544e6dd6cb86ac8b9d5921bb2f8958e32f0bd5ca6eb063b7",
+        "fragments/chemistry-evidence.json": "498b116cffe504394a17c8ceedefd3d7685ee8e75bfded864f621b0cff82871f",
+        "fragments/chemistry-proposals.json": "d3c6384c8fb355304adeb3e2bac9069d695827a64ba5b568287027517b77a500"
+      },
+      "cases": 74,
+      "proposals": 26
+    },
+    {
+      "group": "biological",
+      "review": "independent-review/biological-reviewed-by-media-v2.json",
+      "review_sha256": "fdce098163cb02d8164c1fbc3ed955d5d34c9aabba7d7ac6578db2c31186db91",
+      "fragment_hashes": {
+        "fragments/biological-decisions.json": "ea99dbb7383f701d187962de9ebb497b34bffb362b7cad724d2165b3949c458d",
+        "fragments/biological-evidence.json": "71b95081610306003e21addb113c76963809f17a17b402abe793818d2894afd5",
+        "fragments/biological-proposals.json": "273b5c4bef21bf69f38b16107d8b42b550ebdf84edb26cfa1c1a16f6fb55cc84"
+      },
+      "cases": 51,
+      "proposals": 11
+    },
+    {
+      "group": "media",
+      "review": "independent-review/media-reviewed-by-chemistry-v2.json",
+      "review_sha256": "06df7024ae3f93dfc5af7e20f1250e3bb4019905d2950b9fe9d7100964efebe9",
+      "fragment_hashes": {
+        "fragments/media-decisions.json": "c503be4a8ee4cba608098110061fda994ebe59ec7e9c0c690818d36685f38c28",
+        "fragments/media-evidence.json": "6aba65f3858a2908114a20e0c45b1197a2470ba48d31973e9ff02255f3e3893b",
+        "fragments/media-proposals.json": "25d6b43527c508a2a677753a8f198b41319f564d20570c278752ebb916a313e7"
+      },
+      "cases": 63,
+      "proposals": 26
+    }
+  ],
+  "reference_normalizations": [
+    {
+      "evidence_id": "BIO-PRIMARY-supp-ab082efe127ab014",
+      "field": "case_ids",
+      "before": [
+        "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+        "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956",
+        "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+      ],
+      "after": [
+        "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+        "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+      ],
+      "reason": "Remove duplicate references only; unchanged applicability set and capture bytes. Frozen author fragment and independent review remain untouched."
+    },
+    {
+      "evidence_id": "BIO-PRIMARY-supp-a98ecda936855826",
+      "field": "case_ids",
+      "before": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "KG_CASE:35db9f746182b82fe17caff755d6f482e5a96d363b704024a2d224a275450042",
+        "KG_CASE:35db9f746182b82fe17caff755d6f482e5a96d363b704024a2d224a275450042"
+      ],
+      "after": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "KG_CASE:35db9f746182b82fe17caff755d6f482e5a96d363b704024a2d224a275450042"
+      ],
+      "reason": "Remove duplicate references only; unchanged applicability set and capture bytes. Frozen author fragment and independent review remain untouched."
+    }
+  ],
+  "permitted_assembly_changes": [
+    "independent_review status/evidence references",
+    "explicit retained publication scope",
+    "issue_refs for filed exact case findings",
+    "deduplicate evidence case_ids references without changing their set"
+  ],
+  "case_count": 188,
+  "evidence_count": 1017,
+  "proposal_count": 63,
+  "sources": {
+    "culturemech": 131,
+    "mediadive": 53,
+    "metatraits": 3,
+    "metatraits_gtdb": 1
+  },
+  "dispositions": {
+    "stock_product_mixture_context": 64,
+    "existing_identity_or_alias": 39,
+    "new_distinct_ingredient_proposal": 42,
+    "unresolved": 33,
+    "malformed_or_nonchemical_token": 8,
+    "supplied_form_correction": 2
+  }
+}

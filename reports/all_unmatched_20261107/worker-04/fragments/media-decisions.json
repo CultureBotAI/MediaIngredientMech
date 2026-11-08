@@ -1,0 +1,2453 @@
+{
+  "schema_version": 1,
+  "worker_slot": 4,
+  "shard_sha256": "446d8ca4f93e4275a48f42fe29944b09253d2ddd9b7c2575a2ee74b72fcd833a",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:00a0ce7aeea6e1792ac70177fc6bf338892c833f22b64d6f9a5c17d8b26ca53c",
+      "case_input_sha256": "302db2a19f19bb14fd0913136365ebd39205fc5633dc1338390bb6e5f7aaa17b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "CMRL 1066 tissue culture supplement- (10x)(with glutamine)",
+        "source_label": "CMRL 1066 tissue culture supplement- (10x)(with glutamine)",
+        "raw_source_label": "CMRL 1066 tissue culture supplement- (10x)(with glutamine)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e80a4294f11000de72c9c3f7047d11381ef401d3306fecff416ee45d37d064cd"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The SP-4 occurrence specifies a 10x CMRL 1066 supplement with glutamine at 50 ml/L. This is a multicomponent concentrated culture-medium supplement, not glutamine or the complete SP-4 medium. The existing CMRL_1066 owner groups different catalog products without binding this 10x with-glutamine formulation. The currently marketed Gibco 21540 10x product explicitly lacks glutamine, so it cannot supply an exact replacement formulation for this historical source.",
+      "applicability": "Exact source culturemech / CMRL 1066 tissue culture supplement- (10x)(with glutamine); raw label preserved as 'CMRL 1066 tissue culture supplement- (10x)(with glutamine)'. All 1 occurrences assessed: CultureMech:009489 ingredients/6 [CM_OCC:e80a4294f11000de72c9c3f7047d11381ef401d3306fecff416ee45d37d064cd]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-000",
+        "media-recipe-fe7adfd6fbf8863d",
+        "media-fetch-api-M2964",
+        "media-fetch-cmrl21540",
+        "media-fetch-primary-7"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Obtain the formulation/catalog identity for the with-glutamine 10x supplement actually used in TOGO M2964; keep it distinct from Gibco 21540 no-glutamine and from 1x CMRL.",
+      "missing_requirement": "Obtain the formulation/catalog identity for the with-glutamine 10x supplement actually used in TOGO M2964; keep it distinct from Gibco 21540 no-glutamine and from 1x CMRL.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:02bdd299770183a650ca472becfdd7aa2b9f7bd83f855268ca002353b02326bc",
+      "case_input_sha256": "3caa745072cdc2e00c539975bc86366d44fb7d55327435586907806ade1cabbf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MEM Non-Essential Amino Acids",
+        "source_label": "MEM Non-Essential Amino Acids",
+        "raw_source_label": "MEM Non-Essential Amino Acids"
+      },
+      "occurrence_ids": [
+        "CM_OCC:247543277dad488b4d18b775151c4873de37e9a6a7b4e95a7e42630190624c5b"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "DSMZ 1850 binds the otherwise generic label to Gibco 11140-050 in the Sf1Ep-cell medium. The manufacturer's 11140 formulation lists seven non-essential amino acids at 10 mM each, and the product is a 100x aqueous supplement. This identifies a distinct stock, not MEM basal medium or any single amino acid. The proposed product-bound owner retains the unqualified raw label only with this exact source context.",
+      "applicability": "Exact source culturemech / MEM Non-Essential Amino Acids; raw label preserved as 'MEM Non-Essential Amino Acids'. All 1 occurrences assessed: CultureMech:001271 ingredients/1 [CM_OCC:247543277dad488b4d18b775151c4873de37e9a6a7b4e95a7e42630190624c5b]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-002",
+        "media-duplicate-check",
+        "media-fetch-dsmz-1850",
+        "media-fetch-mem11140",
+        "media-product-owner-search",
+        "media-recipe-b4d50521d6d02595",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2",
+        "media-web-mem-product"
+      ],
+      "proposal_ids": [
+        "media-new-mem11140"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:114f561910a7275d66e34ef77ad0f93fd305df239f96fb0efdd0ffa066ca25c7",
+      "case_input_sha256": "25a114874f459a0d34ee397c605bf7c12165263b880e3231de3315154a3762eb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Columbia agar",
+        "source_label": "Columbia agar",
+        "raw_source_label": "Columbia agar"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9e07139e8605078be3d39fb9f9999f578b35314d75c68f1c7ac9106c2b6e7977",
+        "CM_OCC:7c5c48043c4b30838a2605dd793199b0ff11279a8ba011e8bfd8a57f8f05d4f4",
+        "CM_OCC:984e82b96a9fd2a3b7a49e45856cd27eb9563f1c34f17379e290b04d0d4545d6"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "All three occurrences use Columbia agar as a basal mixture, with sheep blood or yeast extract/NAD/haemin added separately. Those additions are not part of the source ingredient identity. The frozen records explicitly do not select the manufacturer or internal base formulation; the Oxoid CM0331 example establishes that a Columbia base is a multicomponent product but does not establish that these unnamed bases are CM0331 or identical to MICRO:0000536's full scope.",
+      "applicability": "Exact source culturemech / Columbia agar; raw label preserved as 'Columbia agar'. All 3 occurrences assessed: CultureMech:009079 ingredients/1 [CM_OCC:9e07139e8605078be3d39fb9f9999f578b35314d75c68f1c7ac9106c2b6e7977]; CultureMech:009379 ingredients/1 [CM_OCC:7c5c48043c4b30838a2605dd793199b0ff11279a8ba011e8bfd8a57f8f05d4f4]; CultureMech:008781 ingredients/0 [CM_OCC:984e82b96a9fd2a3b7a49e45856cd27eb9563f1c34f17379e290b04d0d4545d6]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-007",
+        "media-recipe-b66b5bb9da280331",
+        "media-recipe-51828a2369ffbb1a",
+        "media-recipe-4c363e98cdb2f608",
+        "media-fetch-api-M2189",
+        "media-fetch-api-M2508",
+        "media-fetch-api-M2836",
+        "media-fetch-oxoid-columbia"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: For exact product grounding, identify the Columbia base manufacturer/formulation in each of M2508, M2836 and M2189; keep their separately added supplements outside the base identity.",
+      "missing_requirement": "For exact product grounding, identify the Columbia base manufacturer/formulation in each of M2508, M2836 and M2189; keep their separately added supplements outside the base identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:122cecb2a1753d70ec627b254d24f4ad7dd014cdadf33b55d0ad993b5954aeb1",
+      "case_input_sha256": "b1507810619197f0d4d7dffee8c47a6437bb73f8a10d5895f57a48b2ba21aeb8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar Noble (Difco 0142) (if needed)",
+        "source_label": "Agar Noble (Difco 0142) (if needed)",
+        "raw_source_label": "Agar Noble (Difco 0142) (if needed)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ff764d79392a21e8820299791cf2aa4e7e6a0c0fb6e971a571c7bb2efddc87ef"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2482 explicitly names Noble Agar, legacy Difco 0142, as optional solidifier and associates the row with the Noble product concept. Noble is a purified/washed grade; neither the optional-use phrase nor an agar-containing complete medium denotes its identity. Preserve the grade and historical catalog code rather than treating it as evidence that every agar product is interchangeable.",
+      "applicability": "Exact source culturemech / Agar Noble (Difco 0142) (if needed); raw label preserved as 'Agar Noble (Difco 0142) (if needed)'. All 1 occurrences assessed: CultureMech:009056 ingredients/8 [CM_OCC:ff764d79392a21e8820299791cf2aa4e7e6a0c0fb6e971a571c7bb2efddc87ef]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-008",
+        "media-recipe-2974bd401ab1d5c2",
+        "media-fetch-primary-0",
+        "media-web-bd-noble"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Before minting or merging a grade-specific owner, bind the historical Difco 0142 Noble specification to the intended modern product and review the generic Agar owner's grade claims.",
+      "missing_requirement": "Before minting or merging a grade-specific owner, bind the historical Difco 0142 Noble specification to the intended modern product and review the generic Agar owner's grade claims.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:131a8e248fe0135c4bb98273caf16db471557f041feab4d559fee2cf53ceccad",
+      "case_input_sha256": "23c040c469e5753cff77648781ce9f7c3ffe4b9adaeb3851bb5aa9c32c88a48a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Fastidious Anaerobe Agar (Acumedia)",
+        "source_label": "Fastidious Anaerobe Agar (Acumedia)",
+        "raw_source_label": "Fastidious Anaerobe Agar (Acumedia)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:739ffd1e9dbcda2c21fed122383ff92a71bca362892436dfdbe1e03cae2f0854",
+        "CM_OCC:238b050d6c638242399563956b9245bf47b4a585586126fa8e94ed50378c4f38",
+        "CM_OCC:9438edaa26e0bbe4e3408958443f941e84e6f0b49a6e7310e57ce0f5edbf3c8a",
+        "CM_OCC:c345f3288e17e78ad5a252fba379692655c8788b1707967ad457431b18b13c54"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Four frozen occurrences explicitly identify Acumedia Fastidious Anaerobe Agar at 45.7 g/L. DSMZ 1203 independently states the same base and amount and adds horse blood only after sterilization/cooling. The source-bound Acumedia qualifier is supported as an alias of the existing unmapped base owner also reached by MediaDive ingredient1077; it does not turn the base into agar polymer or approve an ontology mapping.",
+      "applicability": "Exact source culturemech / Fastidious Anaerobe Agar (Acumedia); raw label preserved as 'Fastidious Anaerobe Agar (Acumedia)'. All 4 occurrences assessed: CultureMech:003951 ingredients/0 [CM_OCC:739ffd1e9dbcda2c21fed122383ff92a71bca362892436dfdbe1e03cae2f0854]; CultureMech:004984 ingredients/0 [CM_OCC:238b050d6c638242399563956b9245bf47b4a585586126fa8e94ed50378c4f38]; CultureMech:009091 ingredients/1 [CM_OCC:9438edaa26e0bbe4e3408958443f941e84e6f0b49a6e7310e57ce0f5edbf3c8a]; CultureMech:000653 ingredients/0 [CM_OCC:c345f3288e17e78ad5a252fba379692655c8788b1707967ad457431b18b13c54]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-012",
+        "media-fetch-api-M2521",
+        "media-fetch-dsmz-1203",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-2853248face159a1",
+        "media-recipe-92dad8e37d4b7d70",
+        "media-recipe-af2dfe52efa87ecd",
+        "media-recipe-c5eab3dc4fcaeae5",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-fastidious"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Fastidious_Anaerobe_Agar.yaml",
+          "sha256": "b6948a273ca480ffb537ecd2d8b425b12df23fc90bcf8fb1a0704723e9a32406"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:1a978fc9c22276c5bff999712b2582100406b3aa10f39b5fc99f288c149b61e5",
+      "case_input_sha256": "38d9c049ce598ad68536632ec4df8ef93f0df8c4161e05d41ed7e80e7a725dcc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "BL Agar*",
+        "source_label": "BL Agar*",
+        "raw_source_label": "BL Agar*"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9d2fba654afcf1c9bb9bb9485ad19c7c22ca186d374e72c0c23e95060b8f67b7"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "NBRC848 specifies Nissui58g dry BL base before adding horse blood. Successor supplier catalogue p7 independently confirms58g/L powder and separate5% horse blood. This product is distinct from the JCM13 finished blood-containing medium and generic BL_Agar owner. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / BL Agar*; raw label preserved as 'BL Agar*'. All 1 occurrences assessed: CultureMech:008201 ingredients/0 [CM_OCC:9d2fba654afcf1c9bb9bb9485ad19c7c22ca186d374e72c0c23e95060b8f67b7]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-017",
+        "media-fetch-api-M1645",
+        "media-fetch-jcm-13",
+        "media-fetch-nbrc-848",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-recipe-de76e9b7060c4ca8",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-nissui_bl_agar_base"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d",
+      "case_input_sha256": "e985eee12fba2b553ff16a72ae879d05bd9b8abc050d4710eb4e57fd97552d94",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Difco Marine Agar 2216",
+        "source_label": "Difco Marine Agar 2216",
+        "raw_source_label": "Difco Marine Agar 2216"
+      },
+      "occurrence_ids": [
+        "CM_OCC:78e3a19a21bedb9a90f1267c3ec62cf00a77582a046c47fcdc4aa72f000096e8"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M2265/ATCC Marine Agar/Broth 2216 names the Difco Marine Agar 2216 powder at 55.1 g and distinguishes agar and broth options. The existing Marine_agar_2216 owner explicitly denotes the Difco/BD 2216 preparation. This supports the supplier-first spelling as an alias of that named mixture, retaining all existing withheld/publication obligations.",
+      "applicability": "Exact source culturemech / Difco Marine Agar 2216; raw label preserved as 'Difco Marine Agar 2216'. All 1 occurrences assessed: CultureMech:008852 ingredients/1 [CM_OCC:78e3a19a21bedb9a90f1267c3ec62cf00a77582a046c47fcdc4aa72f000096e8]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-018",
+        "media-fetch-jcm-118",
+        "media-fetch-primary-2",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-0f9da4eed5a951f1",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-marine2216"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+          "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:1f7a94f373b6ed7516250d4bc323527ccfc2edbcbda2f2977775479f20e1715b",
+      "case_input_sha256": "8f82e57caa542f440d49c6b5fe5ce56e313d38298fae7c361724f871cdf80ad9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Skirrow supplement (Oxoid)",
+        "source_label": "Skirrow supplement (Oxoid)",
+        "raw_source_label": "Skirrow supplement (Oxoid)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:899b63728811a767e8cf5e52082036e39323377069ae83a45450c86acb88449e",
+        "CM_OCC:e6f47c235c014f00c23aeb8957d5ccfbb4264d0e8d5d34a0daa39f29d940df38"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both frozen occurrences are the same JCM1305 preparation: one Oxoid Skirrow vial is reconstituted in 2 ml water and 0.4 ml is added to the source batch. The 4 ml/L normalized row is therefore a reconstituted multicomponent stock. The existing Skirrow supplement registry owner does not specify that reconstitution concentration; an unqualified active alias would hide the stock-versus-product distinction.",
+      "applicability": "Exact source culturemech / Skirrow supplement (Oxoid); raw label preserved as 'Skirrow supplement (Oxoid)'. All 2 occurrences assessed: CultureMech:002469 ingredients/5 [CM_OCC:899b63728811a767e8cf5e52082036e39323377069ae83a45450c86acb88449e]; CultureMech:007939 ingredients/5 [CM_OCC:e6f47c235c014f00c23aeb8957d5ccfbb4264d0e8d5d34a0daa39f29d940df38]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-021",
+        "media-recipe-15569836a459025c",
+        "media-recipe-6e467731118fea32",
+        "media-fetch-jcm-1305",
+        "media-fetch-primary-5"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Bind the source vial catalog and its antibiotic contents to the 2 ml reconstitution before assigning this aqueous stock to the existing Skirrow owner.",
+      "missing_requirement": "Bind the source vial catalog and its antibiotic contents to the 2 ml reconstitution before assigning this aqueous stock to the existing Skirrow owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:277e7ebdb3d83d9fcc3becc2c70862779a9a9105490abb975cb5d08c6b728762",
+      "case_input_sha256": "9f028c2eac02f2ea30daca2e198a78fa7b91a6cc52e2e090cb7a47bbaa3550ff",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar solution",
+        "source_label": "Agar solution",
+        "raw_source_label": "Agar solution"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8d8191a3453f18bfa787f63d655a94c12ad2d1118202e9cf04634c0e187fc9aa"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "NBRC1339 explicitly prepares this stock from 15 g agar and 900 ml distilled water, autoclaved separately from the M9 salts; the frozen TOGO mirror preserves that same preparation. This is the agar-water stock addition, not neat agar and not the full M9-phenanthrene medium. The proposed source-specific stock records the measured batch recipe without pretending 15 g/900 ml water is a directly measured final-volume molarity.",
+      "applicability": "Exact source culturemech / Agar solution; raw label preserved as 'Agar solution'. All 1 occurrences assessed: CultureMech:008631 ingredients/0 [CM_OCC:8d8191a3453f18bfa787f63d655a94c12ad2d1118202e9cf04634c0e187fc9aa]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-025",
+        "media-duplicate-check",
+        "media-fetch-api-M2041",
+        "media-fetch-nbrc-1339",
+        "media-product-owner-search",
+        "media-recipe-a8199094b6b1d454",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-new-agar-nbrc1339"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e",
+      "case_input_sha256": "811050883b35bef4e37c09931c555cab8dbacb27f97d20dad0d6d308933a141b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Marine agar 2216 (Difco 0979)",
+        "source_label": "Marine agar 2216 (Difco 0979)",
+        "raw_source_label": "Marine agar 2216 (Difco 0979)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7b2d40941a783f6e58c845b5fe7d5ba249cd361cba865a3c4f6bf116002ed0ff",
+        "CM_OCC:cbd00def664f8325da23a66808a5a85e38e63951f4e9428a591ba605506cc114"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both frozen recipes cite DSMZ604, whose complete text names Marine Agar 2216 (Difco0979). This is the same supplier/numbered formulation described by the existing Marine_agar_2216 owner. The PDF supplies no mass, so the historical 1000-g/L placeholder is not reinstated and no amount is inferred from an identity alias.",
+      "applicability": "Exact source culturemech / Marine agar 2216 (Difco 0979); raw label preserved as 'Marine agar 2216 (Difco 0979)'. All 2 occurrences assessed: CultureMech:006092 ingredients/0 [CM_OCC:7b2d40941a783f6e58c845b5fe7d5ba249cd361cba865a3c4f6bf116002ed0ff]; CultureMech:015364 ingredients/0 [CM_OCC:cbd00def664f8325da23a66808a5a85e38e63951f4e9428a591ba605506cc114]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-034",
+        "media-fetch-dsmz-604",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-b1415b4cbb30bedb",
+        "media-recipe-eefc9fb9382bedcd",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-marine2216"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+          "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:3bdb3b8df68560440772f949c952b47c02cd5af9c78b5fa65ec8296a8c6be5be",
+      "case_input_sha256": "49479ef6cdffc5e7bcef22ec803a4b01cd3e4bbe22d2c07b8e5f226a993d8836",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "CMRL 1066/10 x Glutamin (GIBCO 042-1545)",
+        "source_label": "CMRL 1066/10 x Glutamin (GIBCO 042-1545)",
+        "raw_source_label": "CMRL 1066/10 x Glutamin (GIBCO 042-1545)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:108d3d6e9989dc6df7951a00cf3921ba19dd91e266b0e84bffa58ae95e38be82"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ403 confirms the exact historical CMRL1066/10x Glutamin (Gibco042-1545) string in solution A and separately lists L-glutamine. This is a commercial concentrated multicomponent medium within a larger stock. Neither that additional glutamine row nor the current no-glutamine CMRL product determines the historical product's composition. Preserve the original string/catalog and concentration.",
+      "applicability": "Exact source culturemech / CMRL 1066/10 x Glutamin (GIBCO 042-1545); raw label preserved as 'CMRL 1066/10 x Glutamin (GIBCO 042-1545)'. All 1 occurrences assessed: CultureMech:008950 solutions/0/composition/10 [CM_OCC:108d3d6e9989dc6df7951a00cf3921ba19dd91e266b0e84bffa58ae95e38be82]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-036",
+        "media-recipe-4a9be7a5fae3fc88",
+        "media-fetch-primary-7",
+        "media-fetch-primary-6",
+        "media-fetch-cmrl21540"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Recover the historical Gibco042-1545 product formulation, including whether 'Glutamin' denotes an included component, before reconciling with CMRL1066 or the other 10x source case.",
+      "missing_requirement": "Recover the historical Gibco042-1545 product formulation, including whether 'Glutamin' denotes an included component, before reconciling with CMRL1066 or the other 10x source case.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:4fe1a939ea0f24773027db0083a92d88b51b53c05b5532f0197f207151904000",
+      "case_input_sha256": "904627b342761bb2203d5dcd9b9b7d06ae0573c82ee869589619d784cd079f0a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Middlebrook 7H10 agar (BD-Difco)",
+        "source_label": "Middlebrook 7H10 agar (BD-Difco)",
+        "raw_source_label": "Middlebrook 7H10 agar (BD-Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:cb718929e282ab8395decae272c348b816c734535daab0c9129d257686341ca3",
+        "CM_OCC:26e055ec007296c944e32b82c4662dae326a58dc2533566f080fd024ade11687"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM386 explicitly adds glycerol and OADC separately to19g BD-Difco7H10 base, and KG identifies Difco262710. Live NCIT:C85509 alternate definition includes oleic acid-albumin enrichment and glycerol, so the mapped generic owner does not establish exact identity of this unsupplemented base. Promote existing Bacto product owner to own registry; retain the other owner and its unsafe Difco alias as an unresolved coordinator finding. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical generic labels remain preserved in curation history/source evidence without global resolving aliases. Existing prior review holds persist until independent coordinator disposition. Existing open MIM issue1173 tracks the dry-base versus enriched-NCIT-medium finding; the mapped owner exact Difco alias remains unresolved and no owner-wide release is inferred.",
+      "applicability": "Exact source culturemech / Middlebrook 7H10 agar (BD-Difco); raw label preserved as 'Middlebrook 7H10 agar (BD-Difco)'. All 2 occurrences assessed: CultureMech:003061 ingredients/0 [CM_OCC:cb718929e282ab8395decae272c348b816c734535daab0c9129d257686341ca3]; CultureMech:002743 ingredients/0 [CM_OCC:26e055ec007296c944e32b82c4662dae326a58dc2533566f080fd024ade11687]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-043",
+        "media-fetch-jcm-386",
+        "media-fetch-jcm-714",
+        "media-product-failed-bd-product-catalogue",
+        "media-product-ols-middlebrook",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-6f333ed2123da2ef",
+        "media-recipe-c5e9f35cc71349e8",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-bacto_middlebrook_7h10_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1173"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166",
+      "case_input_sha256": "c1d69c7e10fb5793404ab43d64d0ed143a660550c5e504ba3a03a71d174b66d6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar (alternative)",
+        "source_label": "Agar (alternative)",
+        "raw_source_label": "Agar (alternative)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3ddea1246b6126424dda27b4377c8d923077ac92e7617b2e41f34724d1a832c6",
+        "CM_OCC:8af2b923e33452f2b5e1649410d8a1d7c2af8f872a4f2aa3183e72d2c214f1df"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both TOGO Castenholz TYE records explicitly list agar as the optional solidifier; the API also uses the same Agar concept for the parallel 'if needed' spelling. 'Alternative' changes whether the recipe is solidified, not the substance. The complete raw name remains identity-bearing and can be added as RAW_TEXT; the detached token '(alternative)' is not supported by this decision.",
+      "applicability": "Exact source culturemech / Agar (alternative); raw label preserved as 'Agar (alternative)'. All 2 occurrences assessed: CultureMech:008899 ingredients/1 [CM_OCC:3ddea1246b6126424dda27b4377c8d923077ac92e7617b2e41f34724d1a832c6]; CultureMech:008898 ingredients/1 [CM_OCC:8af2b923e33452f2b5e1649410d8a1d7c2af8f872a4f2aa3183e72d2c214f1df]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-050",
+        "media-fetch-ols-agar",
+        "media-fetch-primary-10",
+        "media-fetch-primary-12",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-0c4d9c38fc879ac2",
+        "media-recipe-71da0f61b978daa4",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-optional-agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Agar.yaml",
+          "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:5cfdd2e5b104f3143ce7ffd5366ff819ae4b10ed4d994f73ddb4fa84cd3feae1",
+      "case_input_sha256": "a1dea0626b2271e06708effe730154a5d85f1d20f8dbfe306233854987898771",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wilkins-Chalgren agar plates (Oxoid)",
+        "source_label": "Wilkins-Chalgren agar plates (Oxoid)",
+        "raw_source_label": "Wilkins-Chalgren agar plates (Oxoid)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:964b13d2d806c9509da602ba8f05423ec91756d227daf4eebb57e9fecd5aefaa"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source specifies pre-poured Oxoid Wilkins-Chalgren plates; human blood and antibiotics are separate additions in the recipe. A finished agar substrate is not agar polymer, and the base-powder formula alone would not establish the actual pre-poured product. No per-liter product mass or exact plate catalog is supplied in this occurrence.",
+      "applicability": "Exact source culturemech / Wilkins-Chalgren agar plates (Oxoid); raw label preserved as 'Wilkins-Chalgren agar plates (Oxoid)'. All 1 occurrences assessed: CultureMech:009395 ingredients/0 [CM_OCC:964b13d2d806c9509da602ba8f05423ec91756d227daf4eebb57e9fecd5aefaa]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-051",
+        "media-recipe-284e60952695e1a7",
+        "media-fetch-api-M2852",
+        "media-fetch-oxoid-wilkins"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Retrieve the original study's plate catalog or Oxoid plate formulation, preserving pre-poured state and separating the added human blood and antibiotics.",
+      "missing_requirement": "Retrieve the original study's plate catalog or Oxoid plate formulation, preserving pre-poured state and separating the added human blood and antibiotics.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:5e52b67d9c269f28d4fbca46753e0fdbd0ee3b0341c1b4cd312b7ab4e0ae78c8",
+      "case_input_sha256": "d43455d8a5c47777d354beed3cd12971b4858cb2ff70575b41c684002d77b173",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "LB (Luria-Bertani) agar (see Medium No. 443 )",
+        "source_label": "LB (Luria-Bertani) agar (see Medium No. 443 )",
+        "raw_source_label": "LB (Luria-Bertani) agar (see Medium No. 443 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:587f1c5c79fae72d0b1441c6039135811768074df5c8d5c45eceef63f3df95d2"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM443 defines LB agar from BD-Difco tryptone10g, BD-Difco yeast extract5g, NaCl10g, agar15g and distilled water1L. This named preparation is separate from JCM1500 additional NaCl and other LB variants. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / LB (Luria-Bertani) agar (see Medium No. 443 ); raw label preserved as 'LB (Luria-Bertani) agar (see Medium No. 443 )'. All 1 occurrences assessed: CultureMech:015892 ingredients/0 [CM_OCC:587f1c5c79fae72d0b1441c6039135811768074df5c8d5c45eceef63f3df95d2]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-053",
+        "media-fetch-jcm-443",
+        "media-fetch-primary-13",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-56a7b1b83dd06270",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-followup-jcm_443_lb_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:5fe3f1b4d88f962548f45dd148fc3025edf986ec3a2a6a6ed1c861da0b5e5be0",
+      "case_input_sha256": "59a82850f88662af2e9899b1517045bcd71edc0b37d43fc46e39b31b90ab58f2",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "GC agar base (BD 228950)",
+        "source_label": "GC agar base (BD 228950)",
+        "raw_source_label": "GC agar base (BD 228950)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9d0a9c1c819abfd47bc676d6d9f28f726b9bb0f5ae8108c8c9b4fcca022b7c09"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "BD-authored SDS explicitly identifies228950 as Chocolate Agar Base (GC Medium), corroborating the source GC base catalog. Opaque product identity is sufficient; the SDS lists only selected hazardous ingredients, so no full formulation or supplemented-medium composition is inferred. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / GC agar base (BD 228950); raw label preserved as 'GC agar base (BD 228950)'. All 1 occurrences assessed: CultureMech:008798 ingredients/2 [CM_OCC:9d0a9c1c819abfd47bc676d6d9f28f726b9bb0f5ae8108c8c9b4fcca022b7c09]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-056",
+        "media-fetch-primary-14",
+        "media-product-bd-gc228950-sds",
+        "media-product-failed-bd-gc228950",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-a14f00106b73de6a",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-bd_228950_gc_agar_base"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:61cbcfbc637832462fc74e54f8a2772aa7d2f661eec8636e4ac25011bf82f777",
+      "case_input_sha256": "636954e4dea45e4b3d9d8d9c17623862992d948988e3c22721734b4d8de2f005",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar-agar (Difco)",
+        "source_label": "Agar-agar (Difco)",
+        "raw_source_label": "Agar-agar (Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:337ae1d27c25b7ffe8bd48131122087aa4278dddeead6d3be0e43c8de28d4624"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ1144/TOGO M2279 names Agar-agar (Difco) at18 g; the TOGO concept points to Bacto Agar. This supports a commercial agar solidifier, not a whole medium. The supplier grade is broader than a specific catalog number and should not be merged into Noble or purified electrophoresis products on the word agar alone.",
+      "applicability": "Exact source culturemech / Agar-agar (Difco); raw label preserved as 'Agar-agar (Difco)'. All 1 occurrences assessed: CultureMech:008864 ingredients/5 [CM_OCC:337ae1d27c25b7ffe8bd48131122087aa4278dddeead6d3be0e43c8de28d4624]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-057",
+        "media-recipe-796245aae5855d90",
+        "media-fetch-primary-17",
+        "media-fetch-primary-16",
+        "media-web-bd-bacto"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Resolve the Difco/Bacto grade at source and compare with a grade-specific agar owner before creating a supplier alias on generic Agar.",
+      "missing_requirement": "Resolve the Difco/Bacto grade at source and compare with a grade-specific agar owner before creating a supplier alias on generic Agar.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:71dba1198cea456db5d1c3e0728b61e91e2e6b025338c1782d343d633ce8728a",
+      "case_input_sha256": "0c7098498247fd124bb131c7a1dcb876c502321b283ffc2de4b4f30343b2f544",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Casman-Agar-Base (Difco)",
+        "source_label": "Casman-Agar-Base (Difco)",
+        "raw_source_label": "Casman-Agar-Base (Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f056a962929d4edcbef063511d65e395f39cdfe486644f562e044af30553230c",
+        "CM_OCC:93079d7fd39a9ff56c1e1e5bfe81fb6613b3af3630e39535e82110723549435a"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both source recipes reproduce DSMZ439: Difco Casman-Agar-Base receives sheep blood and water-lysed sheep blood separately. The existing unmapped Casman owner represents this basal named formulation, and the KG source attribute independently says Difco. Adding this source supplier spelling preserves base identity and leaves the documented unusable MICRO accession/demotion untouched.",
+      "applicability": "Exact source culturemech / Casman-Agar-Base (Difco); raw label preserved as 'Casman-Agar-Base (Difco)'. All 2 occurrences assessed: CultureMech:005287 ingredients/0 [CM_OCC:f056a962929d4edcbef063511d65e395f39cdfe486644f562e044af30553230c]; CultureMech:001547 ingredients/0 [CM_OCC:93079d7fd39a9ff56c1e1e5bfe81fb6613b3af3630e39535e82110723549435a]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-064",
+        "media-fetch-dsmz-439",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-82f492761b358042",
+        "media-recipe-bdd66a7f3d93301b",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-casman"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Casman-Agar-Base.yaml",
+          "sha256": "74be2c231c9d88860aff20a0822c688a6fedcad3c80ec17212a40dff3d59a603"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:73794c22e4b0174b2d45cf4efbc29aaad5274ab6247bc6cd6c45502eea238d25",
+      "case_input_sha256": "3e4465ad0360d73fb020192a6baf58c39c0a5d93ca2138ada7ddc527fd6fe2f5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bacto agar(BD-Difco)",
+        "source_label": "Bacto agar(BD-Difco)",
+        "raw_source_label": "Bacto agar(BD-Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:790e139b857ed846e054b50e3a1c69a517adebf7e9c957408a0b3ce903caed82",
+        "CM_OCC:85d3b22acce140710343b6b7bb91f2d00e2dc1491bfc5b2a43c78d1729bbc1ac"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM905/906 and the source M460-derived record explicitly identify BD-Difco Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product identity as distinct from Noble214220. The owner represents the unwashed Bacto grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Bacto agar(BD-Difco); raw label preserved as 'Bacto agar(BD-Difco)'. All 2 occurrences assessed: CultureMech:010371 ingredients/7 [CM_OCC:790e139b857ed846e054b50e3a1c69a517adebf7e9c957408a0b3ce903caed82]; CultureMech:010374 ingredients/9 [CM_OCC:85d3b22acce140710343b6b7bb91f2d00e2dc1491bfc5b2a43c78d1729bbc1ac]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-065",
+        "media-fetch-bd-bacto214050",
+        "media-fetch-primary-18",
+        "media-fetch-primary-19",
+        "media-fetch-primary-20",
+        "media-fetch-primary-21",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-4ed72e89185ed129",
+        "media-recipe-6df52c0b59da7bb5",
+        "media-validation-v2",
+        "media-web-bd-bacto"
+      ],
+      "proposal_ids": [
+        "media-product-bd_difco_bacto_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:76f43f76dcd938f71e3a926205a8a977939103aabd2f26e567df8d46b8193b90",
+      "case_input_sha256": "07a3a75639b72e8d382de5d7baa8394c7cabd1add2069450433d35091082d415",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Columbia Agar Plates with 5% sheep blood (BBL 4354005)",
+        "source_label": "Columbia Agar Plates with 5% sheep blood (BBL 4354005)",
+        "raw_source_label": "Columbia Agar Plates with 5% sheep blood (BBL 4354005)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:35d9b3d17743e49253cce31b9adfe12bf7693b1762c42310955cc520aaf1d6fe"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The exact BBL4354005 Columbia plates include 5% sheep blood in the purchased/prepared product. This is a finished blood-containing formulation. It cannot become Columbia base, sheep blood, or agar by dropping the plate and blood qualifiers; it is not proven identical to every other supplier's Columbia blood plate.",
+      "applicability": "Exact source culturemech / Columbia Agar Plates with 5% sheep blood (BBL 4354005); raw label preserved as 'Columbia Agar Plates with 5% sheep blood (BBL 4354005)'. All 1 occurrences assessed: CultureMech:009320 ingredients/0 [CM_OCC:35d9b3d17743e49253cce31b9adfe12bf7693b1762c42310955cc520aaf1d6fe]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-067",
+        "media-recipe-3e9e814fca512af3",
+        "media-fetch-dsmz-840",
+        "media-fetch-api-M2772"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Verify the historical BBL4354005 plate specification and bind a finished-product owner before linking the less-specific BD-BBL plate case.",
+      "missing_requirement": "Verify the historical BBL4354005 plate specification and bind a finished-product owner before linking the less-specific BD-BBL plate case.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:7d80bd27b70964988d4f77bf527dce91193f492f0e3463c60d3aa97329fb5cf2",
+      "case_input_sha256": "ee441cdb78e10cf40eabbe3052687b4395c6fe4e7d05ea79021d24de1125593e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Columbia Agar with 5% Sheep Blood (BD-BBL)",
+        "source_label": "Columbia Agar with 5% Sheep Blood (BD-BBL)",
+        "raw_source_label": "Columbia Agar with 5% Sheep Blood (BD-BBL)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:99cc94ade465886e76efbb8e84fd4c38f4948fe99f671816031d07ce7c8c6a23"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen M2062 recipe is a ready-to-use BD-BBL Columbia agar with5% sheep blood. Blood is part of this source product's identity, unlike the separate blood additions in the generic Columbia-base cases. Without a catalog the relationship to BBL4354005 is a product-family lead, not an exact alias.",
+      "applicability": "Exact source culturemech / Columbia Agar with 5% Sheep Blood (BD-BBL); raw label preserved as 'Columbia Agar with 5% Sheep Blood (BD-BBL)'. All 1 occurrences assessed: CultureMech:008653 ingredients/0 [CM_OCC:99cc94ade465886e76efbb8e84fd4c38f4948fe99f671816031d07ce7c8c6a23]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-071",
+        "media-recipe-4908cfee494a9eb3",
+        "media-fetch-nbrc-1365",
+        "media-fetch-api-M2062",
+        "media-fetch-api-M2772"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Determine the BD-BBL plate catalog/formulation for M2062 and compare with BBL4354005 without stripping the5% sheep-blood qualifier.",
+      "missing_requirement": "Determine the BD-BBL plate catalog/formulation for M2062 and compare with BBL4354005 without stripping the5% sheep-blood qualifier.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:803ebd39439d4fe774abf7128a18312c9fe23ffbda21653ee9280e35f8fc73b2",
+      "case_input_sha256": "f652d3d6553e83d4753fba152eb9e035234e7694d5a3366b68f34a93e7db3522",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Columbia Agar Base (Oxoid CM0331)",
+        "source_label": "Columbia Agar Base (Oxoid CM0331)",
+        "raw_source_label": "Columbia Agar Base (Oxoid CM0331)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5354bbb06f2aabe22e98b4a418858e4e319fa4d8fb1af6018f04b1a56b9fdf0d"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Oxoid CM0331 is a dehydrated Columbia blood agar base, before added blood or selective supplement. Its nominal four-input formula differs from the BBL formula in MICRO:0000536, so no exact mapping to the generic owner is asserted. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Columbia Agar Base (Oxoid CM0331); raw label preserved as 'Columbia Agar Base (Oxoid CM0331)'. All 1 occurrences assessed: CultureMech:009467 ingredients/0 [CM_OCC:5354bbb06f2aabe22e98b4a418858e4e319fa4d8fb1af6018f04b1a56b9fdf0d]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-074",
+        "media-fetch-api-M2935",
+        "media-fetch-oxoid-columbia",
+        "media-followup-ols-columbia",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-followup-oxoid-columbia-spec",
+        "media-product-owner-search",
+        "media-recipe-7a9caa4d6ca00b79",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-followup-oxoid_cm0331_columbia_blood_agar_base"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:8ce0cf9e2746f52d4a36c71140a23b0912ee82e15fafb7568649aa0976264963",
+      "case_input_sha256": "e78408f6421baac6f7d64eedc8a0858f398c630a27b896b9af919f6fe34701d5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "GAM agar, modified (Nissui)",
+        "source_label": "GAM agar, modified (Nissui)",
+        "raw_source_label": "GAM agar, modified (Nissui)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a529e60ff2abfdfb03c94a4ff0c7fffc0d1500c3e712bd5f7db4503e9f19c288",
+        "CM_OCC:63d5eb388ea679caacf46f3175783fa41372348a25d2cc0d47b731c46dccdcf4",
+        "CM_OCC:820e3df30d12a6c34c164a53dd7043c754233dd25627cb8c71c926744ed76019"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM655 and the KG condition identify Nissui modified GAM56.7g/L. The successor supplier catalogue distinguishes this product from regular GAM74g/L; the manufacturer name-change notice establishes corporate continuity. Proposal retains modified product identity and separates later horse blood. Current nominal composition is supplier evidence, not proof of every historical lot. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / GAM agar, modified (Nissui); raw label preserved as 'GAM agar, modified (Nissui)'. All 3 occurrences assessed: CultureMech:010075 ingredients/0 [CM_OCC:a529e60ff2abfdfb03c94a4ff0c7fffc0d1500c3e712bd5f7db4503e9f19c288]; CultureMech:003001 ingredients/0 [CM_OCC:63d5eb388ea679caacf46f3175783fa41372348a25d2cc0d47b731c46dccdcf4]; CultureMech:009536 ingredients/1 [CM_OCC:820e3df30d12a6c34c164a53dd7043c754233dd25627cb8c71c926744ed76019]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-082",
+        "media-fetch-api-M3025",
+        "media-fetch-api-M671",
+        "media-fetch-jcm-655",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-recipe-31db124ed572f3c9",
+        "media-recipe-34ce591c5fc256ff",
+        "media-recipe-94fc34d2cfc860f4",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-nissui_modified_gam_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:8ec7957af613009938e339371e809fee2170cef67decfc87f587ff2a7aef26a7",
+      "case_input_sha256": "089cc16bbede1fbf7e65cc0e1ea2599b459a59e6b061099391010c89f48905df",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bacto agar",
+        "source_label": "Bacto agar",
+        "raw_source_label": "Bacto agar"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2930117f5bf04422383589ad23e137037c0ab5440fadff06a86288c6ed02aeb6",
+        "CM_OCC:7c7b309a217a8fb3f84f2769de8a4d5c5708bc5f7c7ec42cf32fd5730b96e021",
+        "CM_OCC:e5d71090a0be02cbf0837fc097d96e239aa84521141f140ec7a4ecf3b1e48c7b",
+        "CM_OCC:4f4e4f6f3ae8d9710d6de049275f039669bac16cf25e40046e4a698e89934949"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The four occurrences do not have uniform supplied preparation: three identify Bacto agar as a solidifier, while MediaDive P1 explicitly washes it three times with ultrapure water before use. The primary TOGO M2300 and M2873 records confirm the Bacto product use but cannot erase P1's preparation. A global source-name alias would collapse washed and unwashed occurrence context.",
+      "applicability": "Exact source culturemech / Bacto agar; raw label preserved as 'Bacto agar'. All 4 occurrences assessed: CultureMech:000069 ingredients/6 [CM_OCC:2930117f5bf04422383589ad23e137037c0ab5440fadff06a86288c6ed02aeb6]; CultureMech:008887 ingredients/3 [CM_OCC:7c7b309a217a8fb3f84f2769de8a4d5c5708bc5f7c7ec42cf32fd5730b96e021]; CultureMech:010431 ingredients/1 [CM_OCC:e5d71090a0be02cbf0837fc097d96e239aa84521141f140ec7a4ecf3b1e48c7b]; CultureMech:009407 ingredients/4 [CM_OCC:4f4e4f6f3ae8d9710d6de049275f039669bac16cf25e40046e4a698e89934949]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-084",
+        "media-recipe-1f91c921dbad9edd",
+        "media-recipe-569d615fdb2bccc0",
+        "media-recipe-4e307e8786fe5419",
+        "media-recipe-9b0eb99a436fee2a",
+        "media-fetch-primary-22",
+        "media-fetch-primary-24",
+        "media-fetch-primary-23",
+        "media-fetch-primary-25",
+        "media-fetch-bd-bacto214050",
+        "media-web-bd-bacto"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Reconcile each occurrence to Bacto versus washed-Bacto product/preparation scope; preserve P1 washing and its source recipe before publishing a label-wide identity link.",
+      "missing_requirement": "Reconcile each occurrence to Bacto versus washed-Bacto product/preparation scope; preserve P1 washing and its source recipe before publishing a label-wide identity link.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:8fb0b2cde3d035c7fe12aca133b0e6e1565351631a2a25174f0eab93ccdc2318",
+      "case_input_sha256": "77530c132b2ac5bbb29816938fab5fc998f98b6b8c358a02cdaadd8dbe757a5b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Chocolate agar plates",
+        "source_label": "Chocolate agar plates",
+        "raw_source_label": "Chocolate agar plates"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0aa8a9189ec10ce8e55ceed978d270664f502c2f99221b4607542c12f5e84e61"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "M2975 specifies chocolate agar plates with IsoVitaleX added separately. The bare plate label describes a medium family with unspecified manufacturer/base; the existing chocolate_agar owner is grounded lexically but does not supply this plate's complete composition. Retain the ready-to-use plate context and separate supplement. The TOGO endpoint did not yield a live recipe. DSMZ429b is an explicit composition comparator using Columbia base and heated horse or sheep blood; it establishes the whole-medium boundary but is not proof of the exact unspecified plates in this case.",
+      "applicability": "Exact source culturemech / Chocolate agar plates; raw label preserved as 'Chocolate agar plates'. All 1 occurrences assessed: CultureMech:009498 ingredients/1 [CM_OCC:0aa8a9189ec10ce8e55ceed978d270664f502c2f99221b4607542c12f5e84e61]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-086",
+        "media-recipe-8fabf21ebcff89bd",
+        "media-fetch-api-M2975",
+        "media-fetch-dsmz-chocolate"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Identify the plate manufacturer/formula in the source study before treating it as the exact current chocolate_agar owner.",
+      "missing_requirement": "Identify the plate manufacturer/formula in the source study before treating it as the exact current chocolate_agar owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:93d6dcbcaf792f1b6475b1d58757499fef6ef661a4817bc33337494c52271f76",
+      "case_input_sha256": "f49c6e72717527762b6cfdee4ae91fa630a054e96c1848f17f83c1b28cb66f77",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trypto-soya agar (Nissui)",
+        "source_label": "Trypto-soya agar (Nissui)",
+        "raw_source_label": "Trypto-soya agar (Nissui)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:78d33477b2c3de9eec47d14fb2b31a7c2e7b3aa537e24746312176585f9d9471"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM27 identifies Nissui Trypto-soya agar40g/L; the KG raw supplier also says Nissui40g/L despite Trypticase spelling. Successor supplier catalogue p15 confirms this named product and four-input formula. It is separated from BD Trypticase and generic Trypticase_Soy_Agar; generic source spelling is not installed as an alias. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Trypto-soya agar (Nissui); raw label preserved as 'Trypto-soya agar (Nissui)'. All 1 occurrences assessed: CultureMech:008691 ingredients/0 [CM_OCC:78d33477b2c3de9eec47d14fb2b31a7c2e7b3aa537e24746312176585f9d9471]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-088",
+        "media-fetch-api-M20",
+        "media-fetch-jcm-27",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-recipe-28ec3b8dea90f8d4",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-nissui_trypto_soya_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:94372f614f3b45ca293d01fb5969772dce2b0748402976f4681537d46acce5aa",
+      "case_input_sha256": "16dce52fbdc2bfd2d1a986b895613f49527cfcbf9d76797ff635333d896fec97",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Noble Agar (BD-Difco)",
+        "source_label": "Noble Agar (BD-Difco)",
+        "raw_source_label": "Noble Agar (BD-Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c05907340d1909ca701a7fb1c5f6c79ce2e124d33eca9b3f0286cf187657ec4e"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "BD-Difco Noble agar is a named supplier grade supported by three source occurrences and the manufacturer Noble product identity. The owner denotes the grade, not a historical package-code crosswalk; current214220 is a supporting100g presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Noble Agar (BD-Difco); raw label preserved as 'Noble Agar (BD-Difco)'. All 1 occurrences assessed: CultureMech:008195 ingredients/7 [CM_OCC:c05907340d1909ca701a7fb1c5f6c79ce2e124d33eca9b3f0286cf187657ec4e]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-089",
+        "media-fetch-api-M163",
+        "media-fetch-primary-27",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-380e99e4b72a3dbf",
+        "media-validation-v2",
+        "media-web-bd-noble"
+      ],
+      "proposal_ids": [
+        "media-followup-bd_difco_noble_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:9ffa59ec060eb41a36cb7f3d173b31cda16931a8e3c81f062911d7aba4ec1c3e",
+      "case_input_sha256": "b149bad26e4430a7ef4d21daba6713b37f789828c2dfac27068a389bd697fd02",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bacto agar (BD-Difco) (for solid medium)",
+        "source_label": "Bacto agar (BD-Difco) (for solid medium)",
+        "raw_source_label": "Bacto agar (BD-Difco) (for solid medium)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8f42ff92349d069dfc9d783761f28295c74cfb25a5fa50a258f75605fa57f7a0"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM905/906 and the source M460-derived record explicitly identify BD-Difco Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product identity as distinct from Noble214220. The owner represents the unwashed Bacto grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Bacto agar (BD-Difco) (for solid medium); raw label preserved as 'Bacto agar (BD-Difco) (for solid medium)'. All 1 occurrences assessed: CultureMech:009848 ingredients/5 [CM_OCC:8f42ff92349d069dfc9d783761f28295c74cfb25a5fa50a258f75605fa57f7a0]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-092",
+        "media-fetch-api-M460",
+        "media-fetch-bd-bacto214050",
+        "media-fetch-primary-29",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-498ad8e2dfeb584a",
+        "media-validation-v2",
+        "media-web-bd-bacto"
+      ],
+      "proposal_ids": [
+        "media-product-bd_difco_bacto_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:b5e3a5d2d848f93bda51e52f849ea61c101301981a71b28a72ad9a6f6d6783f8",
+      "case_input_sha256": "d4ca8d2c1a12207548859330eb6c079c1f9ecf6a7f98c3180f9e7e33c7051a5e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Purified Agar (e.g., Oxoid L28)",
+        "source_label": "Purified Agar (e.g., Oxoid L28)",
+        "raw_source_label": "Purified Agar (e.g., Oxoid L28)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8d7d6d5d5b8436f20c9367871d9b12e03e5f3344e1c983dfeeb8f0cc3f7c9949"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1116 recommends purified agar and gives Oxoid L28 as an example. Oxoid LP0028 is a purified grade with electrophoresis/diffusion specifications. 'e.g.' permits alternatives; it does not say that every occurrence used LP0028. Preserve the purified-grade requirement without inventing a mandatory Oxoid catalog identity.",
+      "applicability": "Exact source culturemech / Purified Agar (e.g., Oxoid L28); raw label preserved as 'Purified Agar (e.g., Oxoid L28)'. All 1 occurrences assessed: CultureMech:008446 ingredients/6 [CM_OCC:8d7d6d5d5b8436f20c9367871d9b12e03e5f3344e1c983dfeeb8f0cc3f7c9949]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-096",
+        "media-recipe-3025ce915b3af823",
+        "media-fetch-primary-31",
+        "media-fetch-api-M1871",
+        "media-fetch-oxoid-purified"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact grade/product proposal: NBRC1116 permits purified agar alternatives and names Oxoid L28 only as an example. The actual supplied product is unidentified: obtain its supplier/catalog or its exact purification and grade specifications before assigning LP0028 or another specific purified-agar identity.",
+      "missing_requirement": "NBRC1116 permits purified agar alternatives and names Oxoid L28 only as an example. The actual supplied product is unidentified: obtain its supplier/catalog or its exact purification and grade specifications before assigning LP0028 or another specific purified-agar identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:b5fd6b8ffc1e17499b9d7c5c0a43a103fa3b11dc01adfe454b5d9fa9192e24d7",
+      "case_input_sha256": "f6a59293f547a1d3d3689fcabb7b3277b57c46c018b5cb909244db434205ae3d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)",
+        "source_label": "Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)",
+        "raw_source_label": "Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:42629b563ed0f3c046143b53cd06684d888d17eb6e44d253a4ef0d7550a3fd86"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Gibco31980030 is the1x IMDM GlutaMAX liquid product with phenol red, before JCM996 serum supplementation and cell conditioning. It is distinct from generic IMDM, free glutamine, or conditioned medium. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX); raw label preserved as \"Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)\". All 1 occurrences assessed: CultureMech:003345 solutions/0/composition/0 [CM_OCC:42629b563ed0f3c046143b53cd06684d888d17eb6e44d253a4ef0d7550a3fd86]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-097",
+        "media-fetch-imdm31980",
+        "media-fetch-jcm-996",
+        "media-followup-imdm31980-formulation",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-e86c1ff90e7fc435",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-followup-gibco_31980_imdm_glutamax"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:bb8a315e678638012404f7ef5005c2d01da2d73d03820aa2c23838557f39e9df",
+      "case_input_sha256": "c9357b517d0b0a33059ee041d0f19bd0b933859cc1353db8eb082065eb613fb6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bordet Gengou agar (Difco)",
+        "source_label": "Bordet Gengou agar (Difco)",
+        "raw_source_label": "Bordet Gengou agar (Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fe9c1bb1538edad86c4c3326b0159c5883bf92f4cb5b57c029d220e1a71a8132"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood separately; manufacturer248200 identifies the named base product. This source-bound opaque base is not the finished blood agar and does not restore the existing generic owner malformed MICRO accession. Current package number is corroboration, not inferred historical procurement. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Bordet Gengou agar (Difco); raw label preserved as 'Bordet Gengou agar (Difco)'. All 1 occurrences assessed: CultureMech:009394 ingredients/0 [CM_OCC:fe9c1bb1538edad86c4c3326b0159c5883bf92f4cb5b57c029d220e1a71a8132]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-098",
+        "media-fetch-api-M2851",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-d338d950ff380fad",
+        "media-validation-v2",
+        "media-web-bd-bordet"
+      ],
+      "proposal_ids": [
+        "media-product-difco_bordet_gengou_agar_base"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:bc3b983c896d3a0483e44dbf528bc7242893ef12cd95d81c121ffda379081e1f",
+      "case_input_sha256": "bf4d51a95014e0714bcd8c8aa89ba302e3061c86d5cddf6df9f8a6f3d179757e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1/5 Marine Agar",
+        "source_label": "1/5 Marine Agar",
+        "raw_source_label": "1/5 Marine Agar"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9a75dbf12e84994b30a9931246fffbbc15b338fc6c144601774be5fd42cfc392"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1096 defines a one-fifth marine agar preparation with additional phenanthrene-agar layering. The source entry100 ml is not full-strength Marine Agar2216 powder and the fraction cannot be dropped. The complete recipe contains its own diluted nutrient/salt composition; a 2216 alias would invent equivalence. NBRC1096 explicitly allows filtered aged natural seawater OR Daigo Artificial Seawater SP and labels agar optional. The100ml subrecipe input does not identify which seawater or optional-agar branch was supplied.",
+      "applicability": "Exact source culturemech / 1/5 Marine Agar; raw label preserved as '1/5 Marine Agar'. All 1 occurrences assessed: CultureMech:015906 ingredients/7 [CM_OCC:9a75dbf12e84994b30a9931246fffbbc15b338fc6c144601774be5fd42cfc392]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-099",
+        "media-recipe-3fe2d4b835d2e22c",
+        "media-fetch-nbrc-1096",
+        "media-fetch-primary-33"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No single source-qualified composition proposed because the primary recipe explicitly permits unresolved seawater and agar alternatives; all branch evidence is retained.",
+      "missing_requirement": "Identify whether the specific100ml basal input used filtered aged natural seawater or Daigo SP artificial seawater, and confirm the agar branch. A single composition-specific owner cannot choose these alternatives from the raw source.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:d33a27abb3e5de408b8293fc3592eca59a66e34f694e66474555907e69452e22",
+      "case_input_sha256": "5af1ccf2ff1cfea701523ef106fb23cbb494bf59918feb6e320e804a1d067d7b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agarose (Electrophoresis grade,  if needed)",
+        "source_label": "Agarose (Electrophoresis grade,  if needed)",
+        "raw_source_label": "Agarose (Electrophoresis grade,  if needed)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1d1f00ad18f1605bfef99eeed407fc6457f9e8b0d61fd0a70cd8f282643fdc90"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1326 specifies electrophoresis-grade agarose if needed. Agarose is distinct from agar, and the electrophoresis-grade qualification should not be discarded. CHEBI:2511 can establish the parent polymer concept; it does not certify an unspecified vendor's grade or supplier identity.",
+      "applicability": "Exact source culturemech / Agarose (Electrophoresis grade,  if needed); raw label preserved as 'Agarose (Electrophoresis grade,  if needed)'. All 1 occurrences assessed: CultureMech:008622 ingredients/7 [CM_OCC:1d1f00ad18f1605bfef99eeed407fc6457f9e8b0d61fd0a70cd8f282643fdc90]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-109",
+        "media-recipe-8b509bbc79b7713a",
+        "media-fetch-primary-35",
+        "media-fetch-api-M2033",
+        "media-fetch-ols-agarose"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact grade/product proposal: NBRC1326 requires electrophoresis-grade agarose but supplies no manufacturer, catalog, or exact grade specifications. Identify the supplied product or documented grade criteria before asserting a particular grade identity; the parent agarose polymer and optional-use instruction do not resolve that missing material specification.",
+      "missing_requirement": "NBRC1326 requires electrophoresis-grade agarose but supplies no manufacturer, catalog, or exact grade specifications. Identify the supplied product or documented grade criteria before asserting a particular grade identity; the parent agarose polymer and optional-use instruction do not resolve that missing material specification.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:d42f208862f785f90b878088de16951b8b0ebef661597c74f4176f29a3c50397",
+      "case_input_sha256": "b200f27417f206efe525dca6fda836dcef8e658fd12874fef4c1278173acb25a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Nissui Potato Dextrose Agar",
+        "source_label": "Nissui Potato Dextrose Agar",
+        "raw_source_label": "Nissui Potato Dextrose Agar"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7edabdba868ff7083e4dda00e20afe4873d6080f0d06e3fe0be209cac7f57a4b"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "NBRC930 directly names Nissui Potato Dextrose Agar39g/L as a purchased dehydrated medium. The source binds a supplier-product identity even without a formula/catalog number. No composition from another vendor is borrowed; decomposition remains unspecified. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Nissui Potato Dextrose Agar; raw label preserved as 'Nissui Potato Dextrose Agar'. All 1 occurrences assessed: CultureMech:008284 ingredients/0 [CM_OCC:7edabdba868ff7083e4dda00e20afe4873d6080f0d06e3fe0be209cac7f57a4b]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-110",
+        "media-fetch-api-M1721",
+        "media-fetch-nbrc-930",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-fb8dfbe80430cba9",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-nissui_potato_dextrose_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:d549b316bb338403523ec8262144e4fdac6ab8f92c348d232e14b2f14ad456b9",
+      "case_input_sha256": "5516e22b3761075467f87cfad4069793f7c870b69c6020eca49abc1959bf5e1d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bordet-Gengou agar",
+        "source_label": "Bordet-Gengou agar",
+        "raw_source_label": "Bordet-Gengou agar"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d1f589d04e50676a7a24f17fc4fcff6e02179fa79e406425540c3061aa9e963f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "M2850 uses Bordet-Gengou agar with sheep blood separately added15%. It does not specify the manufacturer. This is a basal medium occurrence and cannot inherit the specific Difco catalog or horse-blood formulation from M2851 merely because both share a named-medium family.",
+      "applicability": "Exact source culturemech / Bordet-Gengou agar; raw label preserved as 'Bordet-Gengou agar'. All 1 occurrences assessed: CultureMech:009393 ingredients/1 [CM_OCC:d1f589d04e50676a7a24f17fc4fcff6e02179fa79e406425540c3061aa9e963f]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-111",
+        "media-recipe-c42018bb887d5f25",
+        "media-fetch-api-M2850",
+        "media-web-bd-bordet"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Recover the base manufacturer/formula for M2850 before matching to a supplier-specific Bordet-Gengou owner; retain sheep blood outside the base.",
+      "missing_requirement": "Recover the base manufacturer/formula for M2850 before matching to a supplier-specific Bordet-Gengou owner; retain sheep blood outside the base.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:d8d5db5bb86c3655717e4b136a0c0a2bda7e77384bb5d4bcec58362e9bf15343",
+      "case_input_sha256": "d3625e591c38f65507c09aac7675e485b9615ffc986cd27d9a565e85c863e1d4",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thoroughly disperse the agar in cold",
+        "source_label": "Thoroughly disperse the agar in cold",
+        "raw_source_label": "Thoroughly disperse the agar in cold"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fe747ef097c813cad222c778e079d818ae1dde36d0424a43ccdd0a49a5a8997c"
+      ],
+      "disposition": "malformed_or_nonchemical_token",
+      "reasoning": "The CCAP MY75S primary PDF places this exact phrase in a preparation sentence: the agar is dispersed in75% seawater. The ingredient table instead names bacteriological agar15 g plus filtered seawater750 ml and deionized water250 ml. The frozen75% w/v ingredient entry is a parsing artifact, not an ingredient or valid agar concentration. Reject ontology/alias creation and route the recipe correction upstream. The current full CCAP sheet is biphasic and points to separate phase recipes. The frozen CultureMech recipe containing only Na2HPO4 and the phantom instruction is also compositionally truncated.",
+      "applicability": "Exact source culturemech / Thoroughly disperse the agar in cold; raw label preserved as 'Thoroughly disperse the agar in cold'. All 1 occurrences assessed: CultureMech:000090 ingredients/1 [CM_OCC:fe747ef097c813cad222c778e079d818ae1dde36d0424a43ccdd0a49a5a8997c]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-113",
+        "media-recipe-720aa28e6e052cfb",
+        "media-fetch-ccap-MY75S"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Upstream recipe repair is required: both phantom instruction parsing and loss of the biphasic preparation must be corrected.",
+      "missing_requirement": "Reconstruct the complete biphasic MR/MErds/MY75S source preparation, preserving distinct phase and stock recipes and their quantity bases; remove the phantom instruction only as part of this source-backed reconstruction.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:da2bf79478b349753e9c4116e671fed15cdb012b9662370bd82117454194bded",
+      "case_input_sha256": "fd2a0abec5c790521bf91c433b28265f4950acbb11e87d311db1724ca9074b97",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Lactobacilli MRS Agar (BD 288210)",
+        "source_label": "Lactobacilli MRS Agar (BD 288210)",
+        "raw_source_label": "Lactobacilli MRS Agar (BD 288210)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:bfea15fbcc7dec0a915e34b4312d30b8af1993d180a21044bc8769709bf9137c"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "TOGO M2434 exact catalog288210 and the BD Lactobacilli MRS Agar product heading support this distinct dehydrated agar product. It is neither MRS broth nor automatically identical to the Oxoid MRS agar owner. Internal composition remains unasserted. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Lactobacilli MRS Agar (BD 288210); raw label preserved as 'Lactobacilli MRS Agar (BD 288210)'. All 1 occurrences assessed: CultureMech:009016 ingredients/1 [CM_OCC:bfea15fbcc7dec0a915e34b4312d30b8af1993d180a21044bc8769709bf9137c]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-114",
+        "media-fetch-api-M2434",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-30108e2c7ec6c1dc",
+        "media-validation-v2",
+        "media-web-bd-mrs"
+      ],
+      "proposal_ids": [
+        "media-product-bd_288210_lactobacilli_mrs_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:e5d138ead4dbe387334ad78774a8dcbbfdcc510f046a82e969004f43b26c0ffc",
+      "case_input_sha256": "92cd2867a60ac99c8e3f8e75c77116f3d4554f4d25eae141760654bcc009f766",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Mueller Hinton (MH) agar",
+        "source_label": "Mueller Hinton (MH) agar",
+        "raw_source_label": "Mueller Hinton (MH) agar"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1a58dede9cc277fe37c33af4ef7753c8fbe5b1bedc38b1614a116b548e718522"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source names Mueller Hinton (MH) agar as an entire medium. The frozen1 g/L value is not sufficient to infer a dry-powder formulation or a correct per-liter recipe. The existing MH_agar owner was created by lexical match only; the label does not prove equivalence with Mueller Hinton II or a specific vendor's product.",
+      "applicability": "Exact source culturemech / Mueller Hinton (MH) agar; raw label preserved as 'Mueller Hinton (MH) agar'. All 1 occurrences assessed: CultureMech:009472 ingredients/0 [CM_OCC:1a58dede9cc277fe37c33af4ef7753c8fbe5b1bedc38b1614a116b548e718522]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-117",
+        "media-recipe-28c8f4a133e969cc",
+        "media-fetch-api-M2942",
+        "media-web-bd-mhii"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Inspect the original M2942 recipe/publication to resolve the1-unit quantity and vendor/formulation before asserting identity with MH_agar or Mueller Hinton II.",
+      "missing_requirement": "Inspect the original M2942 recipe/publication to resolve the1-unit quantity and vendor/formulation before asserting identity with MH_agar or Mueller Hinton II.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:e7eaa1050c08bb29a7dee84290a9316338aecd0b896e1e2b1047bb4dde8c9194",
+      "case_input_sha256": "609805fa6f9223168b5509bb1a0f4fb2c254da9d0471ab419d97ba37d16042de",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "POREMEDIA B-CYE alpha Agar Medium (Eiken Chemical)",
+        "source_label": "POREMEDIA B-CYE alpha Agar Medium (Eiken Chemical)",
+        "raw_source_label": "POREMEDIA B-CYE alpha Agar Medium (Eiken Chemical)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3797b293d4128ffc76f306e66a5a530cfd99bb58802514f27af2c9e05cc8c128"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM1087 names the commercial Eiken POREMEDIA B-CYE alpha product. Manufacturer list separately identifies POREMEDIA B-CYE\u03b1 agar plates (E-MP96); this corroborates the product family and prepared-plate state without inventing the historical package. This medium remains distinct from dry BD BCYE or Oxoid CYE base. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / POREMEDIA B-CYE alpha Agar Medium (Eiken Chemical); raw label preserved as 'POREMEDIA B-CYE alpha Agar Medium (Eiken Chemical)'. All 1 occurrences assessed: CultureMech:002267 ingredients/0 [CM_OCC:3797b293d4128ffc76f306e66a5a530cfd99bb58802514f27af2c9e05cc8c128]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-118",
+        "media-fetch-jcm-1087",
+        "media-product-eiken-product-list",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-479a7dbadff8a5ff",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-eiken_poremedia_bcye_alpha_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:e91be9251b390abcefeefaf5c6043731136c2ddb4715a5be2bbfa6cf30f9b6c7",
+      "case_input_sha256": "3e3bac076d67b73f797c3939645709e615943f6e68a6628a34e334020b998fea",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar, Noble (BD 214050), if needed",
+        "source_label": "Agar, Noble (BD 214050), if needed",
+        "raw_source_label": "Agar, Noble (BD 214050), if needed"
+      },
+      "occurrence_ids": [
+        "CM_OCC:eec7ba93dfa1cffa7c04d63cf11be0cb0b361dd6553676601e1b66589b373690"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The source combines the grade name Noble with BD214050. The manufacturer's product page identifies214050 as Bacto Agar, whereas the BD product page independently identifies Noble214220. This is a real name-versus-catalog contradiction. Optional use does not resolve it, and neither field may silently win during normalization.",
+      "applicability": "Exact source culturemech / Agar, Noble (BD 214050), if needed; raw label preserved as 'Agar, Noble (BD 214050), if needed'. All 1 occurrences assessed: CultureMech:008891 ingredients/8 [CM_OCC:eec7ba93dfa1cffa7c04d63cf11be0cb0b361dd6553676601e1b66589b373690]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-121",
+        "media-recipe-5b2fb45d1a57bb9a",
+        "media-fetch-api-M2305",
+        "media-fetch-bd-bacto214050",
+        "media-web-bd-bacto",
+        "media-web-bd-noble"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Recover the original ATCC Isosphaera recipe version or procurement record and determine whether Noble grade or Bacto214050 was intended; retain the contradictory raw label until then.",
+      "missing_requirement": "Recover the original ATCC Isosphaera recipe version or procurement record and determine whether Noble grade or Bacto214050 was intended; retain the contradictory raw label until then.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b",
+      "case_input_sha256": "a7a45e6da1b6d416096c3decc2c969ae438aecc31e5e4ef321d6ba8fa45eacd0",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar if required",
+        "source_label": "Agar if required",
+        "raw_source_label": "Agar if required"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4ae3773e00f881aec494eded4a46ba925edce22242a64a6d760be57888354bb3"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "DSMZ535b states that agar may be added15 g/L for solid medium. The source label names plain agar; 'if required' is a use condition, not a grade or stock concentration. The full raw name can be preserved as an identity-bearing RAW_TEXT alias, while the detached instruction 'if required' is not a resolving name.",
+      "applicability": "Exact source culturemech / Agar if required; raw label preserved as 'Agar if required'. All 1 occurrences assessed: CultureMech:008942 ingredients/4 [CM_OCC:4ae3773e00f881aec494eded4a46ba925edce22242a64a6d760be57888354bb3]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-122",
+        "media-fetch-api-M2357",
+        "media-fetch-ols-agar",
+        "media-fetch-primary-41",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-recipe-e974fc0b6efa3ad6",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-optional-agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Agar.yaml",
+          "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:eb8229c7a93109958ebe2b9d6e2975596e8bb3cdff6a21fb1289c3d2e6861eec",
+      "case_input_sha256": "c5c9c412ca84159613d1b74623eb5da326a8d2901cb2d1e49da30365ac052f4c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar Noble (Difco)",
+        "source_label": "Agar Noble (Difco)",
+        "raw_source_label": "Agar Noble (Difco)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2f0f097c9a958199f41e66d80b9c2610291da3b570b6eb69002c43e8465a4140",
+        "CM_OCC:e5c62be310dd46147af81d128b3d314bbee2557f7cc743e67f4edd49a950a07f"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "BD-Difco Noble agar is a named supplier grade supported by three source occurrences and the manufacturer Noble product identity. The owner denotes the grade, not a historical package-code crosswalk; current214220 is a supporting100g presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Agar Noble (Difco); raw label preserved as 'Agar Noble (Difco)'. All 2 occurrences assessed: CultureMech:008537 ingredients/6 [CM_OCC:2f0f097c9a958199f41e66d80b9c2610291da3b570b6eb69002c43e8465a4140]; CultureMech:009071 ingredients/8 [CM_OCC:e5c62be310dd46147af81d128b3d314bbee2557f7cc743e67f4edd49a950a07f]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-123",
+        "media-fetch-api-M1957",
+        "media-fetch-api-M2498",
+        "media-fetch-primary-43",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-recipe-55b0a07f049dee11",
+        "media-recipe-a52616eafb5f839c",
+        "media-validation-v2",
+        "media-web-bd-noble"
+      ],
+      "proposal_ids": [
+        "media-followup-bd_difco_noble_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:f0e316ff55f0d984573920d7d21a1565d211bb3f145fb4c34b64615f880b86ba",
+      "case_input_sha256": "456e9a6904f6931b2af43ae98a6bc22d53cf64746c5c64a999a844b2f775b18c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Agar solution*",
+        "source_label": "Agar solution*",
+        "raw_source_label": "Agar solution*"
+      },
+      "occurrence_ids": [
+        "CM_OCC:01f34feb3f2a013aebde923f879269c5107ba093c478fdfa9a4f9980f2f797bc"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "NBRC1339's asterisk expands to the same15 g agar/900 ml distilled-water preparation as the TOGO mirror. This source case remains separately accounted, but both can support one source-specific stock proposal. The solution is distinct from neat agar and from the complete M9 medium.",
+      "applicability": "Exact source culturemech / Agar solution*; raw label preserved as 'Agar solution*'. All 1 occurrences assessed: CultureMech:007473 ingredients/0 [CM_OCC:01f34feb3f2a013aebde923f879269c5107ba093c478fdfa9a4f9980f2f797bc]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-124",
+        "media-duplicate-check",
+        "media-fetch-nbrc-1339",
+        "media-product-owner-search",
+        "media-recipe-00d4143386b0fce6",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-new-agar-nbrc1339"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "CM_NAME:fe2bf998020c35ff2b6d2440e7ff996f9b9c1f943fb7c19ff9a6d1d1fa258d2c",
+      "case_input_sha256": "02c09604627756cc19fcd3b067223b137a5b3b124936f783b7c21b22a11bf793",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Reinforced clostridial agar (Sigma)",
+        "source_label": "Reinforced clostridial agar (Sigma)",
+        "raw_source_label": "Reinforced clostridial agar (Sigma)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d09c8e973b8d76499286b27101df78fca21217f723b1f20eab297384c17b061d",
+        "CM_OCC:327b3a5ea86599afebe73bcc809a44fa90d93b36b669f8b1ddd7cc59a9885fac"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM455 binds the purchased Sigma reinforced clostridial agar product51g before separate sodium carbonate addition. This supplier-product identity can remain opaque without equating it to the current91365 comparator or importing the final alkaline-medium formulation. Generic mixed-vendor RCM owners are not narrowed. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source culturemech / Reinforced clostridial agar (Sigma); raw label preserved as 'Reinforced clostridial agar (Sigma)'. All 2 occurrences assessed: CultureMech:009842 ingredients/0 [CM_OCC:d09c8e973b8d76499286b27101df78fca21217f723b1f20eab297384c17b061d]; CultureMech:002805 ingredients/0 [CM_OCC:327b3a5ea86599afebe73bcc809a44fa90d93b36b669f8b1ddd7cc59a9885fac]. Complete snapshots anchor recipe-specific qualifications.",
+      "evidence_ids": [
+        "media-case-130",
+        "media-fetch-api-M455",
+        "media-fetch-jcm-455",
+        "media-fetch-sigma-rca",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-recipe-42ea3ad0c8e46a9e",
+        "media-recipe-64e497cd9800e914",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-sigma_reinforced_clostridial_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:06b86f368649e42654bf71dcdc326c6c50a15bf49f01ef3ba39d931a3fee8436",
+      "case_input_sha256": "bf1a1bccc865cba5d9a92a216de854a8ce0a8414560df0f66acad177df3c1101",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1757",
+        "source_label": "BL Agar",
+        "raw_source_label": "BL Agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The KG raw source says1000 ml BL Agar, 'see Medium No.13'. JCM13 supplies the glucose-blood-liver agar recipe including liver extract, multiple peptones, agar and horse blood. This is the prepared whole medium, not the dry Nissui58-g base of case17. The existing generic BL_Agar owner remains a scope candidate, with no automatic identity merge or promotion. The raw Medium No.13 cross-reference does not encode an institution/version, so the matching JCM13 recipe is a strong candidate rather than an authenticated namespace link. Identify the original source reference namespace before assigning its finished formulation; Nissui dry-base proposal is separately supported.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1757; raw label preserved as 'BL Agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-131",
+        "media-fetch-jcm-13",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained edit proposed: The raw Medium No.13 cross-reference does not encode an institution/version, so the matching JCM13 recipe is a strong candidate rather than an authenticated namespace link. Identify the original source reference namespace before assigning its finished formulation; Nissui dry-base proposal is separately supported.",
+      "missing_requirement": "The raw Medium No.13 cross-reference does not encode an institution/version, so the matching JCM13 recipe is a strong candidate rather than an authenticated namespace link. Identify the original source reference namespace before assigning its finished formulation; Nissui dry-base proposal is separately supported.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/BL_Agar.yaml",
+          "sha256": "9b4a48c0eb12b6a14fcef2f75225b2b06a523b3e89a2f9a19aaf5aff564f23ae"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:0b76fadbf2c20d3f238d65e7d9570eb6d932ebf5575d0890b2af0a79dfb882c9",
+      "case_input_sha256": "dbcb87746815b0beea6eb1a67959fc52a05ca32f869fbf5b68ff16f7326fbe8a",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1619",
+        "source_label": "R agar",
+        "raw_source_label": "R agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The KG source explicitly references Medium26 and1000 ml R agar. JCM26 is a defined named recipe containing peptone/extracts, glycerol, Tween80, magnesium sulfate and agar. The R_Agar owner already retains the complete-medium boundary; the evidence does not authorize replacing it by agar or R2A agar. The raw Medium26 reference lacks an institution/version; JCM26 matching label is not enough to authenticate that link. Recover the reference namespace or original full recipe before promoting the generic R-agar owner.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1619; raw label preserved as 'R agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-133",
+        "media-fetch-jcm-26",
+        "media-fetch-jcm-76",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained edit proposed: The raw Medium26 reference lacks an institution/version; JCM26 matching label is not enough to authenticate that link. Recover the reference namespace or original full recipe before promoting the generic R-agar owner.",
+      "missing_requirement": "The raw Medium26 reference lacks an institution/version; JCM26 matching label is not enough to authenticate that link. Recover the reference namespace or original full recipe before promoting the generic R-agar owner.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/R_Agar.yaml",
+          "sha256": "1153b72d9c74e6ee6f15037261a07fd2c799086e1f3dc766a8774072224dd390"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:0ba079b2fde240b65a27c45b035c117ffb5f51c294f8825b01743270f22d40dd",
+      "case_input_sha256": "bdae4de0e6c377be8d8cb3293e07d5f25f46b1d9e1c7f3851a30f1928f93259b",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1077",
+        "source_label": "Fastidious Anaerobe Agar",
+        "raw_source_label": "Fastidious Anaerobe Agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Ingredient1077's full raw record specifies Acumedia Fastidious Anaerobe Agar45.7 g/L. DSMZ1203 names the same base and separately adds horse blood. It supports the existing unmapped owner and the supplier alias proposed from the four CM occurrences, but no ontology promotion or complete-medium merger.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1077; raw label preserved as 'Fastidious Anaerobe Agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-134",
+        "media-fetch-dsmz-1203",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-fastidious"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Fastidious_Anaerobe_Agar.yaml",
+          "sha256": "b6948a273ca480ffb537ecd2d8b425b12df23fc90bcf8fb1a0704723e9a32406"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:0c33dd9e9ceaab739f72ebea8fec18406fc980c3ae95009a9b20fc44b5cfdd53",
+      "case_input_sha256": "1000c81733cf6e5f6922b8734939553d7bc56ad51dc4d1a401a7a67f60ac2931",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1617",
+        "source_label": "Trypticase soy agar",
+        "raw_source_label": "Trypticase soy agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM27 identifies Nissui Trypto-soya agar40g/L; the KG raw supplier also says Nissui40g/L despite Trypticase spelling. Successor supplier catalogue p15 confirms this named product and four-input formula. It is separated from BD Trypticase and generic Trypticase_Soy_Agar; generic source spelling is not installed as an alias. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1617; raw label preserved as 'Trypticase soy agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-135",
+        "media-fetch-jcm-27",
+        "media-owner-snapshots",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-nissui_trypto_soya_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Trypticase_Soy_Agar.yaml",
+          "sha256": "4a3700dd02e697b78714e2aea0158e82c5394cc6cbd88bb85c5e3ae001463ada"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:2c2915cde315d09d0c981ed8395772ac4980420e5488b627324bf2fd34b9cae9",
+      "case_input_sha256": "c6bfbb0b7696db6f24bf386a6a3606ae34c8ed3f313b7ddcb7ca19e7d6e8eedc",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1629",
+        "source_label": "BCYE agar",
+        "raw_source_label": "BCYE agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The raw record specifies BD-Difco BCYE agar37 g/L. It is a charcoal/yeast-extract medium product, not agar. DSMZ585's Oxoid CYE base plus supplement is a different supplier/preparation path and cannot supply exact identity for this BD base. The existing unmapped owner already excludes agar identity. The supplied BD-Difco37g/L BCYE label does not state whether the product includes cysteine/iron supplement or requires it separately. Resolve that base-versus-complete product boundary from the original supplier label; Oxoid/Eiken recipes do not determine it.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1629; raw label preserved as 'BCYE agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-142",
+        "media-fetch-dsmz-585",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained edit proposed: The supplied BD-Difco37g/L BCYE label does not state whether the product includes cysteine/iron supplement or requires it separately. Resolve that base-versus-complete product boundary from the original supplier label; Oxoid/Eiken recipes do not determine it.",
+      "missing_requirement": "The supplied BD-Difco37g/L BCYE label does not state whether the product includes cysteine/iron supplement or requires it separately. Resolve that base-versus-complete product boundary from the original supplier label; Oxoid/Eiken recipes do not determine it.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/BCYE_Agar.yaml",
+          "sha256": "8c19e2c5c18fa8f0531d714d1818e266b81563ce94e04e03edfa5e8117ef1d57"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:369a898c223d9e1689697ccaa9deb6f072d8c30cba98e39760fc2ef4dbb3491f",
+      "case_input_sha256": "8276b6dbad4f6d6f33a0798a535f7e6e770a1046a5f649f1abffd8f8ec78f0ec",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1775",
+        "source_label": "Mueller Hinton II agar",
+        "raw_source_label": "Mueller Hinton II agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "The raw KG source expressly identifies BD-BBL Mueller Hinton II agar38g/L and the manufacturer211438 product corroborates the II product identity. Promote the existing II owner to its own registry rather than generic MH or a guessed ontology. Internal cation/thymidine specifications and formulation are not invented. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical generic labels remain preserved in curation history/source evidence without global resolving aliases. Existing prior review holds persist until independent coordinator disposition.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1775; raw label preserved as 'Mueller Hinton II agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-145",
+        "media-owner-snapshots",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-validation-v2",
+        "media-web-bd-mhii"
+      ],
+      "proposal_ids": [
+        "media-product-mueller_hinton_ii_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+          "sha256": "a0f0c5365069fa748d0a83b0a196e2bdb3c4ea7c9cd8705b79ba46cce0a90a5f"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:6aec9fc6db83834e683dfb3d4a36d4c144747bdcc5ad6e23bca6a370bddbf0f3",
+      "case_input_sha256": "d46a211addb63b8d986be630638ea501156b8441b578db13942533878b51f1b2",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2177",
+        "source_label": "Dichloran-Glycerol-agar base",
+        "raw_source_label": "Dichloran-Glycerol-agar base"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ1775, recovered from the live bacmedia.dsmz.de primary site, adds dichloran-glycerol agar base31.5g separately from220g anhydrous glycerol and trace salts. The source base is therefore not the complete18%-glycerol medium; the ingredient name cannot transfer separately added glycerol into the base powder. OxoidCM0729 is a manufacturer comparator only, because the source does not identify its base supplier. The current unmapped owner is retained pending product-bound formulation evidence.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:2177; raw label preserved as 'Dichloran-Glycerol-agar base'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-156",
+        "media-fetch-dsmz-1775",
+        "media-fetch-oxoid-dg18",
+        "media-fetch-merck-dg18",
+        "media-owner-snapshots",
+        "media-web-dsmz1775"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Identify the actual base supplier/catalog and its dry formula; keep separately added glycerol and salts outside its identity.",
+      "missing_requirement": "Identify the actual base supplier/catalog and its dry formula; keep separately added glycerol and salts outside its identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Dichloran-Glycerol-agar_Base.yaml",
+          "sha256": "523f5790afd08bf3cdbeb9e0869c11c13bdda790612fbd06a9d398c514f84872"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:735496bb1541d6efb8b74ac490e843696d4ab3ccb37322813f302bc3bc1e8147",
+      "case_input_sha256": "34488f65ab555c3969bb985e9081b71262e1825882ca8b03533f3aa414ae310d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:565",
+        "source_label": "Czapek Dox agar",
+        "raw_source_label": "Czapek Dox agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "The exact KG raw record binds Merck Czapek-Dox agar48g/L. DSMZ130 is a scratch-recipe comparator only and is not used to transcribe this product. A supplier-bound opaque product proposal preserves that raw identity without merging generic Czapek-Dox or borrowing another recipe formulation. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Captured original DSMZ550 explicitly lists Merck Czapek Dox agar48g, independently corroborating this source-bound opaque product.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:565; raw label preserved as 'Czapek Dox agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-158",
+        "media-fetch-dsmz-130",
+        "media-fetch-dsmz-550",
+        "media-owner-snapshots",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-merck_czapek_dox_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Czapek_Dox_Agar.yaml",
+          "sha256": "8960783ee7229aa45df5ea7dc22cb6a741f4b0931b50e88ff4bb47e51795a9e9"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:7df9a8f68356560db595892a0b982a189f79abc101d9df90e61b762198ff2d4d",
+      "case_input_sha256": "95256c7dc46e7ecf59d35579214cd3a74db72715644b4d247b1620524a61dd9f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2364",
+        "source_label": "Nutrient agar",
+        "raw_source_label": "Nutrient agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Oxoid CM0003/CM3 nutrient agar is a specific dehydrated product reconstituted at28g/L. Generic Nutrient_Agar UNMAPPED0481 remains a broader unresolved family owner; this proposed product has no generic resolving aliases and does not narrow unrelated source uses. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:2364; raw label preserved as 'Nutrient agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-161",
+        "media-fetch-oxoid-nutrient",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-followup-oxoid_cm0003_nutrient_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Nutrient_Agar.yaml",
+          "sha256": "388e1ef281ecb16b643b4f9b97e2b59fb8b74da2ac5128c9fcb027ef0c08e3a6"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:84674ee04f3b22aa6bd53debe4a201140a1f9b43144270dc5ca7b711cdcbd29a",
+      "case_input_sha256": "dd4fbb014167b6f36995c95e6f2e49d2e1800b86fe744aa57d8a02c47bad3940",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2441",
+        "source_label": "Plant Agar",
+        "raw_source_label": "Plant Agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Duchefa P1001 Plant agar is a supplier-defined plant-culture gelling agar grade, not a complete growth medium. Supplier lists gel strength above1100g/cm2, crude ash below3% and acid-insoluble ash below0.5%; its generic agar CAS does not erase grade identity. Raw source9g/L is recipe dose, not product concentration. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:2441; raw label preserved as 'Plant Agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-164",
+        "media-fetch-ols-agar",
+        "media-fetch-plant-agar",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-followup-duchefa_p1001_plant_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:b5c99b57b57a7930758c8a1afba953eb4ca34d8f4ec92c48fb7e8d25aeb87fb6",
+      "case_input_sha256": "e01ee566bc0efbea8bbf05f75650c0b481dffb41386b90f4b16b3b722b2be810",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2112",
+        "source_label": "Bordet-Gengou-Agar-Base",
+        "raw_source_label": "Bordet-Gengou-Agar-Base"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source says1000 ml Bordet-Gengou-Agar-Base with no manufacturer. It denotes a prepared basal medium, not a single polymer and not a blood-supplemented finished plate. The current owner's MICRO0002398 demotion records an unusable ontology IRI; this review does not reinstate it.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:2112; raw label preserved as 'Bordet-Gengou-Agar-Base'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-173",
+        "media-web-bd-bordet",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Resolve the actual base formulation/product and a usable ontology/registry representation while retaining the prior demotion and blood-supplement boundary.",
+      "missing_requirement": "Resolve the actual base formulation/product and a usable ontology/registry representation while retaining the prior demotion and blood-supplement boundary.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+          "sha256": "f0c7d3cbe473d0feba72e981abcf5cbff714a241eca1621a0412a62231686ba4"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:c7583c9b4dca1033bb3416955eb2d06a3acb1fb8af607e5f66180fd3c1574b81",
+      "case_input_sha256": "73d1814d693b03af2e6b065db434f45f6d5a7972888c6a1d71d441cf0f9239cd",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:702",
+        "source_label": "Corn meal agar",
+        "raw_source_label": "Corn meal agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source uses17 g corn meal agar without supplier. This is a whole cornmeal-derived medium, not cornmeal or agar alone. The current owner contains multiple vendor variants, so matching an available brand formula by the17-g number would not establish the source supplier or authorize a global product merge.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:702; raw label preserved as 'Corn meal agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-176",
+        "media-web-bd-cornmeal",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Identify the source supplier or full corn-meal-agar recipe and compare all vendor scopes in Corn_Meal_Agar before promotion.",
+      "missing_requirement": "Identify the source supplier or full corn-meal-agar recipe and compare all vendor scopes in Corn_Meal_Agar before promotion.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Corn_Meal_Agar.yaml",
+          "sha256": "1b9bf8bf4a702dd002c0c516852742461b245f4d577716e4319de93fca30c278"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:c84ca83448be5b9d8bc59179186d03fe06e961ad66206cda7fde98eee78af3a6",
+      "case_input_sha256": "6dc12cadaf175fd3aaa7ecabcdafbfa5e99058b9f474055875d87e0ac9ad8f9d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1611",
+        "source_label": "Oatmeal agar",
+        "raw_source_label": "Oatmeal agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The raw attribute explicitly identifies ISP-3 and Medium50. JCM50 gives oatmeal extraction plus agar and trace salts, making this a prepared ISP-3 medium rather than oatmeal itself. The source's1000-ml whole-medium entry cannot inherit pure agar identity or a vendor dry mix from amount matching. The raw ISP-3/Medium50 reference does not encode collection/version; current Oatmeal_Agar pools vendor and prepared-medium forms. Authenticate the original recipe reference and actual supplied preparation before narrowing the entire owner.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1611; raw label preserved as 'Oatmeal agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-177",
+        "media-fetch-jcm-50",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained edit proposed: The raw ISP-3/Medium50 reference does not encode collection/version; current Oatmeal_Agar pools vendor and prepared-medium forms. Authenticate the original recipe reference and actual supplied preparation before narrowing the entire owner.",
+      "missing_requirement": "The raw ISP-3/Medium50 reference does not encode collection/version; current Oatmeal_Agar pools vendor and prepared-medium forms. Authenticate the original recipe reference and actual supplied preparation before narrowing the entire owner.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Oatmeal_Agar.yaml",
+          "sha256": "aa4f77229d6fc8516ec918b5d784ca5d2482f655e4c81e6073b342069fc534b3"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:cb0bac742c1ab56b4fd6dc043803304c6f351eb6322d145ec8d25bf8f18e28ac",
+      "case_input_sha256": "2d6c5f07e9fe9f6cdb12a05fcb31a38c675200dba80511c7c38815be3ab1a3ca",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1628",
+        "source_label": "Marine agar 2216",
+        "raw_source_label": "Marine agar 2216"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The raw ingredient1628 specifies Marine Agar2216/Difco0979. DSMZ604 confirms that exact named product, and the existing registry owner explicitly describes Difco/BD2216. This is positive source-to-existing-identity evidence; the withheld native export remains withheld and the alias proposal for the same owner withdraws inherited content support.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1628; raw label preserved as 'Marine agar 2216'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-178",
+        "media-fetch-dsmz-604",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-marine2216"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+          "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:cb39d82a11eab728fed6b3c0668311c274cdce5d1f01bf593a282dae40a05009",
+      "case_input_sha256": "e76f8c949443a43a5b29886551becfe0dba2275b147dad6168956766764b9c5f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:635",
+        "source_label": "Bacto Middlebrook 7H10 agar",
+        "raw_source_label": "Bacto Middlebrook 7H10 agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM386 explicitly adds glycerol and OADC separately to19g BD-Difco7H10 base, and KG identifies Difco262710. Live NCIT:C85509 alternate definition includes oleic acid-albumin enrichment and glycerol, so the mapped generic owner does not establish exact identity of this unsupplemented base. Promote existing Bacto product owner to own registry; retain the other owner and its unsafe Difco alias as an unresolved coordinator finding. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical generic labels remain preserved in curation history/source evidence without global resolving aliases. Existing prior review holds persist until independent coordinator disposition. Existing open MIM issue1173 tracks the dry-base versus enriched-NCIT-medium finding; the mapped owner exact Difco alias remains unresolved and no owner-wide release is inferred.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:635; raw label preserved as 'Bacto Middlebrook 7H10 agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-179",
+        "media-fetch-jcm-386",
+        "media-owner-snapshots",
+        "media-product-failed-bd-product-catalogue",
+        "media-product-ols-middlebrook",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-bacto_middlebrook_7h10_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml",
+          "sha256": "f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1173"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:cd17d357728f3a4a240aa09af921f5b82b0f0d29994f5e105991df2ea6f156af",
+      "case_input_sha256": "3be7273fd3cf1b571f399c87ef362b845a5523cad18c1a39eea280fabd6e1a61",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1847",
+        "source_label": "Brewer anaerobic agar",
+        "raw_source_label": "Brewer anaerobic agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "BD-Difco Brewer Anaerobic Agar is now identified from the BD-authored nine-ingredient formulation and source58g/L powder dose. Promote this existing owner only to an own-registry formulation identity; no external ontology exact match or agar identity is asserted. JCM667 additional2% NaCl is outside this product. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical raw label Brewer anaerobic agar is preserved here without a globally resolving generic alias; non-BD uses require separate comparison.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1847; raw label preserved as 'Brewer anaerobic agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-180",
+        "media-fetch-bd-brewer",
+        "media-fetch-jcm-667",
+        "media-followup-owner-comparison",
+        "media-followup-owner-search",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-followup-brewer_anaerobic_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review and guarded coordinator integration; no external identity or inherited hold release is asserted.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Brewer_Anaerobic_Agar.yaml",
+          "sha256": "768eed9a01ab4eea99ddf161a565795f41c3cbab592a4d781005957c81d5c74d"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:d8184c2a41720358cc53225b47320f3115bea4f15a71ccdfa0f3401685998838",
+      "case_input_sha256": "cb2887daacbfa65cd2c9b8946606d2dabdf08dca99e66a07931f976430139876",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2099",
+        "source_label": "Casman-Agar-Base",
+        "raw_source_label": "Casman-Agar-Base"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The KG raw record says Difco Casman-Agar-Base1000 ml, agreeing with DSMZ439's named basal product. It supports the same existing unmapped owner as the CM supplier-qualified label. Blood additions remain separate and the prior malformed MICRO0002402 accession is not restored.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:2099; raw label preserved as 'Casman-Agar-Base'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-181",
+        "media-fetch-dsmz-439",
+        "media-owner-snapshots",
+        "media-product-owner-search",
+        "media-validation-proposal-partonomy-validation",
+        "media-validation-proposal-schema-validation-final",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-alias-casman"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Casman-Agar-Base.yaml",
+          "sha256": "74be2c231c9d88860aff20a0822c688a6fedcad3c80ec17212a40dff3d59a603"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:e44792d8fc7da1abbee059937c4cd9d2a61e3b944df555628252a5d469328c67",
+      "case_input_sha256": "355d2b16c7df04db34b8e8d8cb94bc8e3a79ef8685ba658d3feec40028f85a47",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2125",
+        "source_label": "OXOID Legionella CYE-Agar base",
+        "raw_source_label": "OXOID Legionella CYE-Agar base"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The raw label says Oxoid CYE base, but its attribute explicitly says 'with Legionella BCYE supplement'. DSMZ585 states that same combined preparation. Thus this occurrence may denote the prepared base-plus-supplement system, while the current owner names base alone. Ignoring the attribute would collapse a whole preparation into a component.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:2125; raw label preserved as 'OXOID Legionella CYE-Agar base'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-183",
+        "media-fetch-dsmz-585",
+        "media-owner-snapshots"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation or mapping release: Reconcile whether ingredient2125 denotes dry CYE base or prepared supplemented BCYE medium, using the source recipe; keep the supplement in the identity/context instead of dropping it.",
+      "missing_requirement": "Reconcile whether ingredient2125 denotes dry CYE base or prepared supplemented BCYE medium, using the source recipe; keep the supplement in the identity/context instead of dropping it.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/OXOID_Legionella_CYE-Agar_Base.yaml",
+          "sha256": "f9e07a9e71fc41844bbd60446748606b4a05fa3aa89afd93d116929fd50b7656"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    },
+    {
+      "case_id": "KG_CASE:f15e145ce0818d23a497de388a5e0a58d37bce94a1222ee01023256f0cd460c5",
+      "case_input_sha256": "c910c6faf3d945c9673831a04ec166f3c03ac3022c057532d297f64fbb7a62c1",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1843",
+        "source_label": "GAM agar",
+        "raw_source_label": "GAM agar"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM655 and the KG condition identify Nissui modified GAM56.7g/L. The successor supplier catalogue distinguishes this product from regular GAM74g/L; the manufacturer name-change notice establishes corporate continuity. Proposal retains modified product identity and separates later horse blood. Current nominal composition is supplier evidence, not proof of every historical lot. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+      "applicability": "Exact source mediadive / mediadive.ingredient:1843; raw label preserved as 'GAM agar'. The complete raw KG source record, supplier/catalog/condition/amount fields, owners and every embedded downstream hold were assessed. The frozen helper occurrence count is not interpreted as measured recipe prevalence.",
+      "evidence_ids": [
+        "media-case-187",
+        "media-fetch-jcm-655",
+        "media-owner-snapshots",
+        "media-product-nissui-name-change",
+        "media-product-owner-comparison",
+        "media-product-owner-search",
+        "media-product-shimadzu-culture-media",
+        "media-validation-v2"
+      ],
+      "proposal_ids": [
+        "media-product-nissui_modified_gam_agar"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Independent complete-payload review, resolution of existing broad-owner aliases, and guarded coordinator integration; formulation gaps do not erase verified supplier-product identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/GAM_Agar.yaml",
+          "sha256": "79e02455ec44f5500df86d57fe6ef99f16e2fbca295ef470b0927caa4e2a6f2e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "primary_review_author": "worker04/media (separate authorship from subsequent skeptical review)",
+      "primary_evidence_limitations": "Primary references are source recipes or explicitly limited manufacturer comparators. Failed endpoints are unsuccessful_search evidence; no absence of product is inferred."
+    }
+  ]
+}

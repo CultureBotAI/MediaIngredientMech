@@ -1,0 +1,110 @@
+identifier: kgmicrobe.ingredient:dsmz_611_synthetic_seawater_mix
+preferred_term: DSMZ 611 Synthetic seawater mix
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_611_synthetic_seawater_mix
+  ontology_label: DSMZ 611 Synthetic seawater mix
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium611.pdf
+    notes: Source-qualified multi-component stock identity. No molecular term or generic
+      seawater identity is asserted. Proposed fallback registry identity pending coordinator
+      integration and full content-bound review.
+components:
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '47.15'
+  concentration_unit: g per source batch
+- component_name: MgCl2 x 6 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '18.10'
+  concentration_unit: g per source batch
+- component_name: MgSO4 x 7 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '7.00'
+  concentration_unit: g per source batch
+- component_name: CaCl2 x 2 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.13'
+  concentration_unit: g per source batch
+- component_name: Na2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '3.24'
+  concentration_unit: g per source batch
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.20'
+  concentration_unit: g per source batch
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.10'
+  concentration_unit: g per source batch
+- component_name: NaBr
+  reference_scope: UNMAPPED
+  concentration_value: '0.10'
+  concentration_unit: g per source batch
+- component_name: KBr
+  reference_scope: UNMAPPED
+  concentration_value: '80.00'
+  concentration_unit: mg per source batch
+- component_name: SrCl2 x 6 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '72.00'
+  concentration_unit: mg per source batch
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '52.00'
+  concentration_unit: mg per source batch
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '8.10'
+  concentration_unit: mg per source batch
+- component_name: NaF
+  reference_scope: UNMAPPED
+  concentration_value: '2.40'
+  concentration_unit: mg per source batch
+- component_name: Na-silicate
+  reference_scope: UNMAPPED
+  concentration_value: '0.40'
+  concentration_unit: mg per source batch
+- component_name: KI
+  reference_scope: UNMAPPED
+  concentration_value: '50.00'
+  concentration_unit: microgram per source batch
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1000.00'
+  concentration_unit: ml per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium611.pdf
+    source_record: Page1 Synthetic seawater mix table
+    notes: All top-level source stock components transcribed. Nested stock identity
+      and unspecified forms remain source-stated; no chemical identity is guessed.
+  notes: Amounts retain the source batch basis, including the stated water amount,
+    rather than claiming a measured final volume or finished-medium concentrations.
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+notes: 'Isolated worker04 proposal. The complete stock is distinct from its components,
+  natural seawater, and finished medium. CultureMech raw unit discrepancies remain
+  in the campaign source cases and require separate upstream repair. Component reference_scope
+  UNMAPPED deliberately preserves source-stated chemical forms without asserting current
+  MIM equivalence. Raw source labels are retained here as contextual provenance only,
+  without resolving aliases: [''Synthetic seawater mix''].'
+curation_history:
+- timestamp: '2026-11-08T05:26:00.860201+00:00'
+  curator: codex_worker04_biological
+  action: CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Proposed exact source-qualified stock from Page1 Synthetic seawater mix
+    table; preserved original source label, component forms and batch quantities.
+    No maintained data or release status was changed.
+  new_status: MAPPED
+  llm_assisted: true
