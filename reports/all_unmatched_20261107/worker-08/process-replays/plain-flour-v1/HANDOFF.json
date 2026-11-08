@@ -1,0 +1,95 @@
+{
+  "at": "2026-11-08T09:29:10.145312+00:00",
+  "status": "COMPLETE_IMMUTABLE_PROCESS_REPLAY; coordinator_final_head_disposition_pending",
+  "finding_id": "W08-PF-PROCESS-001",
+  "finding_alias": "W08-PF-WORKFLOW-001",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1227#issuecomment-6719637789",
+  "branch": "review/all-unmatched-w08-source-review-20261107",
+  "parent_head": "4a4042561328f2a507770d3c85100a7790855aaa",
+  "original_author_script_sha256": "1790bb6525e047fde7158a4f84ab9a623de43ba8b4a85aa96fc09b5244d8b0c0",
+  "predecessor_payload_sha256": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83",
+  "selected_and_replay_payload_sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873",
+  "complete_event_and_payload_equivalent": true,
+  "semantic_differences": [],
+  "historical_event": {
+    "timestamp": "2026-11-08T08:38:45.690887+00:00",
+    "curator": "worker08:/root W08-FINAL-001 proposal correction",
+    "action": "REVIEW_CORRECTION",
+    "changes": "Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged.",
+    "previous_status": "MAPPED",
+    "new_status": "MAPPED",
+    "llm_assisted": true,
+    "llm_model": "GPT-6"
+  },
+  "actual_replay_time": "2026-11-08T09:25:19.625059+00:00",
+  "selected_history_events_added": 0,
+  "selected_source_payloads_changed": 0,
+  "new_source_cases": 0,
+  "new_source_proposals": 0,
+  "active_source_selector_unchanged": {
+    "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/selection.json",
+    "sha256": "fb16bf5c29b981dc7dd60cf8d963a9aea25c12a65d6a0e55e29d84dfb2a26699"
+  },
+  "active_source_counts": {
+    "cases": 188,
+    "proposals": 114,
+    "occurrence_ids": 320,
+    "evidence": 1101,
+    "unchanged_original_payloads": 113,
+    "new_dependent_payloads": 1,
+    "changed_cases": 1,
+    "unchanged_cases": 187
+  },
+  "replay_script": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/provenance/replay.py",
+    "sha256": "bc6ce9cc7325e83e40f640759a8a4877cf739fb6347536e384ac1eaa7b9f5a8a"
+  },
+  "replay_receipt": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/replay/receipt.json",
+    "sha256": "9c03f21853372a7616df2cad6cf1b66a0d2f03eb6da2525d6ea1abcf03cb1779"
+  },
+  "replay_specimen": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/replay/Plain_Flour.yaml",
+    "sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873"
+  },
+  "native_call_proof": "receipt.actual_calls records real native code objects: one record_curation_event with llm_assisted=True and exact historical kwargs, then one write_validated_ingredient; no mocks.",
+  "author_controls": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/controls/receipt.json",
+    "sha256": "dcc0bdad0a7ffc9beab88b45cd469c35d6c4cf0c2f2a7a207e1c803a2ee0eb91"
+  },
+  "independent_review": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/independent/review.json",
+    "sha256": "4dbffabeca9fc6d4664c691497bee3af7dff61224f8f470d0526a66363c180bd"
+  },
+  "independent_final_bindings": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/independent/final-bindings.json",
+    "sha256": "5f9c96f906a0beadf76065a02657ee32eb19b0b2c6fc5012ffe1250e238dc0bb"
+  },
+  "native_review_yaml": {
+    "path": "reviews/structured/20261108T092753Z-w08-plain-flour-process-replay/review.yaml",
+    "sha256": "8c70a3697e5d044de9215ed2da67bf566e20866af72e19000a0addfd05f83c47"
+  },
+  "native_review_markdown": {
+    "path": "reviews/structured/20261108T092753Z-w08-plain-flour-process-replay/review.md",
+    "sha256": "ce4480d0a1512305228234782622b2213fd9b631f0d3deec41a198d0ca72a37a"
+  },
+  "native_receipt": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/native/receipt.json",
+    "sha256": "8f962924971359be93a6bb762d0b286fea9d14accb119c63a8c432bad8a8fcf2"
+  },
+  "preservation": {
+    "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/preservation.json",
+    "sha256": "710c99816f12da59e10eeead51e34b2dcabef594fac0a2aa2186d32fb2e60bd6"
+  },
+  "reviewer_identity": "worker08:/root/inorganics, separate from replay author worker08:/root; prior Plain Flour skeptical involvement disclosed",
+  "scientific_review": false,
+  "scope": "Immutable workflow evidence only. Old script remains an honest direct-append execution record. Replaying the original transition does not append another event to or replace the selected scientific payload. No current primary lookup, chemical reassessment or experimental evidence is claimed.",
+  "holds": "All source/scientific/owner/role/export holds remain, including separate PF-LINEAGE-001, Trypticase/Bacto FAILED/HELD and nominal vitamin central reconciliation.",
+  "failure_preservation": "Initial preflight sibling-path error preserved with corrected path successor; no native/source failure concealed.",
+  "publication_receipt": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/publication-receipt.json",
+  "maintained_edits": false,
+  "GitHub_mutation": false,
+  "paid_research": false,
+  "external_sessions": false,
+  "release_approval": false
+}

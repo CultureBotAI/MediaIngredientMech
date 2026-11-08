@@ -1,0 +1,238 @@
+{
+  "at": "2026-11-08T08:52:52.827002+00:00",
+  "reviewer": "worker09:/root/w08_flour_bridge",
+  "author_and_peer_roles": {
+    "author": "worker08:/root",
+    "scientific_reviewer": "worker08:/root/vitamins",
+    "skeptical_reviewer": "worker08:/root/inorganics",
+    "technical_executor": "worker08:/root/organics; prior OP author, no independent scientific approval",
+    "native_assembly_author": "worker08:/root",
+    "native_assembly_reviewer": "worker08:/root/vitamins"
+  },
+  "independence_assessment": "Recorded distinct root author and vitamins/inorganics reviewers are supported by complete source-read ledgers, exact full-payload bound receipts and separate final readback scripts. Inorganics discloses prior predecessor miss and authorship of PF-LINEAGE-001 prose; that self-referral is independently confirmed here. Organics technical executor previously authored OP and is correctly not counted independent science. External execution identity cannot be independently authenticated beyond these preserved in-process artifacts.",
+  "author_scope_and_final_scope_distinction": {
+    "author_decision": {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/decision.json",
+      "sha256": "e4d0821ef01e7040cf9153568975e81b1ded050fcadda67c5758319f0a6ff037"
+    },
+    "final_decisions": {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json",
+      "sha256": "af263c15e4361f42401386bbdd774605c9d58736cafcaea0536f3c0ae473092a"
+    },
+    "initial_scientific_case_hashes": {
+      "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e": "53f61b4fabda376b159f5cb6c6085dfcf621f5d9d051d951824882039ba29808"
+    },
+    "initial_skeptical_case_hashes": {
+      "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e": "4491f6fb6011153615afcae55de86072c21a2a4159d5fdb935a7f2e6dcec7d0f"
+    },
+    "final_receipts_preserve_changed_index_binding": true,
+    "note": "Initial source-review case hashes cover different declared representations; final-bindings receipts bind actual final188/113objects. Do not label their initial hashes as the final complete decision hash."
+  },
+  "guard_receipt": {
+    "status": "PASS",
+    "input_sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873",
+    "replay_sha256": "884fee1ea6a5082a51b8769f2a827199b1703972ad80fa48e1bb8d2d09ab3873",
+    "parsed_equal": true,
+    "controls": [
+      {
+        "control": "unknown-field",
+        "rejected": true,
+        "error_type": "ValidationFailedError",
+        "diagnostic": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/plain-flour-method-v1/validation/attempt-v2/controls/unknown-field-must-not-be-written.yaml\n  - Additional properties are not allowed ('plain_flour_native_unknown_field_control' was unexpected) in /",
+        "input_sha256": "2cd36d11da9716193598ef1eac2f77b64a57e403fdb1d0247fbe0d07bf001474",
+        "target_absent": true
+      },
+      {
+        "control": "invalid-enum",
+        "rejected": true,
+        "error_type": "ValidationFailedError",
+        "diagnostic": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/plain-flour-method-v1/validation/attempt-v2/controls/invalid-enum-must-not-be-written.yaml\n  - 'INVALID_NATIVE_ENUM_CONTROL' is not one of ['EXACT_MATCH', 'SYNONYM_MATCH', 'CLOSE_MATCH', 'MANUAL_CURATION', 'LLM_ASSISTED', 'PROVISIONAL', 'NARROW_MATCH', 'BROAD_MATCH', 'LEXICAL_MATCH', 'CAS_RN_LO",
+        "input_sha256": "7006d9103c5c19c7e0e19ac04c7b739a2ffa5679ce32b4012d667961f8280dd3",
+        "target_absent": true
+      }
+    ],
+    "replay_path": ".temp/all-unmatched-worker-08/plain-flour-method-v1/validation/attempt-v2/guarded-replay/Plain_Flour.yaml"
+  },
+  "native_identity_count_readback": {
+    "selected": 113,
+    "rows": 120,
+    "negative_inputs_actually_enumerated": 111,
+    "negative_rejections_enumerated": 111,
+    "rule_failures": {
+      "b1": [],
+      "b2": [],
+      "b3": [],
+      "b5": [],
+      "d": []
+    }
+  },
+  "Trypticase_hold_complete": {
+    "status": "FAILED/HELD",
+    "failures": [
+      {
+        "proposal_id": "op1201-trypticase-soy-broth",
+        "gate_status": "failed",
+        "maintained_admission": "HELD",
+        "failure": [
+          "changed identity collides",
+          "MICRO:0000113",
+          [
+            "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml"
+          ]
+        ],
+        "dependency_id": "W08-1227-TSB-OWNER-RECONCILIATION",
+        "selected_sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879",
+        "predecessor_sha256": "cbc788c1a9ce7cea22a92b4360bad7c113f0e99c2cf5a1ecbbd3a0e79f99aa6c",
+        "owner_hashes": {
+          "data/ingredients/unmapped/Trypticase_Soy_Broth.yaml": "217e88e15c71823e46aa27998777a68fa5345302fe595c638227511a2d5adc88",
+          "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml": "c335acb9d1ad86d663702a8e193afb1e84d97c8666d49beef9cce8e16b3548cc"
+        },
+        "scope": "Only bounded grade/evidence correction proceeds to validation. This owner is not admitted; no duplicate winner or general collision exemption is selected."
+      }
+    ],
+    "exact_prior_review": {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/final_assembly/trypticase-admission-review-v1.json",
+      "sha256": "97ba31cd26106faa23642b07692396a972e0147035bb9ab0ea90de479af463cf"
+    },
+    "qualification": "The unchanged native collision gate still fails. This is a narrowly pinned recorded hold, not an exemption or owner admission."
+  },
+  "native_receipt_scope": "Inspected actual author validator source and published receipts/negativeinputobjects; no broad gate or writer run here. Root separately performs narrow independent checks. Schema/partonomy passes do not admit held owner or prove scientific equality.",
+  "native_event_helper_process_finding": {
+    "finding_id": "W08-PF-WORKFLOW-001",
+    "issue_key": "w08-plain-flour-native-history-helper-bypass",
+    "severity": "minor",
+    "category": "process",
+    "certainty": "confirmed",
+    "reviewed_head": "79d44c84fe550741bbd8de00c119c48560f30bc1",
+    "file": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/author.py",
+    "file_sha256": "1790bb6525e047fde7158a4f84ab9a623de43ba8b4a85aa96fc09b5244d8b0c0",
+    "line": 46,
+    "actual_operation": "rec['curation_history'].append({...})",
+    "contract": ".claude/skills/curate-yaml-record/SKILL.md §5",
+    "contract_sha256": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a",
+    "contract_line": 270,
+    "required_operation": "Use native record_curation_event with llm_assisted=True before validated writer.",
+    "interpretation": "Published isolated author mutator uses the validated YAML writer but bypasses the focused native event helper. Existing appended event is truthful and schema-valid; this process finding does not reject the scientific method correction or prove a malformed payload. It does not authorize a fix.",
+    "bounded_followup": "Coordinator deduplicate/file the process deviation before any author successor. Preserve original script/payload/reviews; document or replay the bounded authoring path through native event helper and guarded writer with exact semantic diff, truthful event provenance and independent review. No broader source, identity, role or export change.",
+    "admission_or_science_release": false
+  },
+  "independent_reviews_and_metadata_limits": [
+    "Reviewer did not author the selected Plain Flour predecessor or this successor. Read actual primary captures and all proposed successor fields independently.",
+    {
+      "basis": "The root agent authored this successor. This reviewer did not alter author data or the correction and independently reread its complete payload, exact prior history, frozen source and primary captures. Separate /root/vitamins performs scientific review.",
+      "prior_involvement": "This reviewer previously reviewed the organic issue1227 packet, including the predecessor Plain Flour payload, and failed to detect its method-grade provenance defect. That prior review is not treated as independent proof that the successor is correct. Its unrelated supermarket quotation discrepancy is separately referred as PF-LINEAGE-001 with exact frozen evidence.",
+      "self_approval_excluded": "No independent approval of any W08 inorganic material authored by this reviewer, or of the earlier organic review itself."
+    },
+    "Non-independent technical executor; authored predecessor organic proposal."
+  ],
+  "input_bindings": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/HANDOFF.json",
+      "sha256": "f474e600b3d6ec3dddbf001ab5aac6732fb8e33cbf1b7936a227d26b425d956e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/assessment.json",
+      "sha256": "8b1a52dd7f6c592ec7894b77a7f8dad455dbc663dfe81d56cf33b8ea99339331"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/decision.json",
+      "sha256": "e4d0821ef01e7040cf9153568975e81b1ded050fcadda67c5758319f0a6ff037"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/proposal.json",
+      "sha256": "deb0f3b005c8cd3141a6211f178b104cc217de54226371d6fa126b54b0c95e0f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/author.py",
+      "sha256": "1790bb6525e047fde7158a4f84ab9a623de43ba8b4a85aa96fc09b5244d8b0c0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/review.json",
+      "sha256": "eee808bca0310f04b7100ab878f1e6c9c750de08934862027b71c94245f24c08"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/source-read-ledger-v1.json",
+      "sha256": "18486cd2a1b5048ec2e555691fbc4838d9ec4bc8e13c465d01afc993567e2e7f"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/science/final-bindings.json",
+      "sha256": "5b0d2e21605a815cb16b93886d638f21c17a113350e8d22d1c3a0c9260484a87"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/review.json",
+      "sha256": "08dfb4b4e72ba57cb8d1fccf57441f500d5a08cb2460d3ac5c73d3c3b788cabe"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/source-read-ledger.json",
+      "sha256": "9d012039899a253e7dffb35a561065298fb4e675add3bbd7309c89d390ad5569"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/final-bindings.json",
+      "sha256": "09b803a0e03906d01ea1f601d74286c86adb23ea13fa138c8ac5d3dda7c701e3"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/final-native-assembly.json",
+      "sha256": "7fcf9c801c617eba580777bbd0e1b357f340cb9da836ccb6d3f60dd26a28b72d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/receipt.json",
+      "sha256": "27d72b5ebbe4cd5c68709615ec4bc688e5a6ac2229908a2bf99c100c51ab7f2e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/run_validation_v2.py",
+      "sha256": "ba4e7506532364b4a411cfd7a095814ae34e478c889b0bee0c319c40e61ca63d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/guarded-replay.json",
+      "sha256": "d3c68898ea6522f52cca67d5b7c42d43472d338e2582678a9fc4b2597378a98d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/canonical-label-and-control.json",
+      "sha256": "517cd7a35b4f6c67ed76f63db16525c5c974b9111ace3d188c850496cb3077f5"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/identity-obligations.json",
+      "sha256": "dfc61b9cd148acb38c5bb6b4a52ea7c8eb3d598edf071478db1a0446d2a51be9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/owner-admission-failed-held.json",
+      "sha256": "56593df9ab2cace46c93c664c88cedaac563b9d0089366986c8861aa03c79a17"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/validation/attempt-v2/full-overlay.json",
+      "sha256": "001e7bac99c690fb5e6de5159a600d66ea3a43efe378338dbaf8cdb5f5c73904"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/research/primary-label-resolution.json",
+      "sha256": "9065cf93f0504f48c6317470651a1bb3ef107ff5e5e44a7b8ed007467401024a"
+    },
+    {
+      "path": ".claude/skills/curate-yaml-record/SKILL.md",
+      "sha256": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a"
+    },
+    {
+      "path": "src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+      "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/provenance/shard-08.json",
+      "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json",
+      "sha256": "1a15fb8cef3e930eab147169252e5ca3327061413cc7ccc5141fc8281fbec225"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/author/decision.json",
+      "sha256": "e4d0821ef01e7040cf9153568975e81b1ded050fcadda67c5758319f0a6ff037"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/decisions.json",
+      "sha256": "af263c15e4361f42401386bbdd774605c9d58736cafcaea0536f3c0ae473092a"
+    }
+  ]
+}

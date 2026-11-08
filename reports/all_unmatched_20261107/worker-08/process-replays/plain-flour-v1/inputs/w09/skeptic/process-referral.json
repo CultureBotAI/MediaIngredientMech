@@ -1,0 +1,15 @@
+{
+  "finding_id": "W08-PF-PROCESS-001",
+  "severity_proposed": "minor",
+  "status": "confirmed_workflow_deviation_for_coordinator_triage; no payload science defect shown",
+  "head": "79d44c84fe550741bbd8de00c119c48560f30bc1",
+  "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/author.py",
+  "script_sha256": "1790bb6525e047fde7158a4f84ab9a623de43ba8b4a85aa96fc09b5244d8b0c0",
+  "pointer": "rec['curation_history'].append({...})",
+  "contract": ".claude/skills/curate-yaml-record/SKILL.md section5 requires record_curation_event with llm_assisted=True and validated writer",
+  "contract_sha256": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a",
+  "exact_reproduction": "Read the complete published mutator. It imports/calls write_validated_ingredient but directly appends the sixth event and never imports/calls record_curation_event. Independently applied helper in memory with the exact event fields; full history list is equal.",
+  "bounded_followup": "Coordinator may deduplicate/file this actual author-workflow deviation before any later correction. Preserve published history/payload. A future immutable workflow correction can invoke native helper with same exact event semantics; do not add a false new scientific event or change supported flour identity to repair this process issue.",
+  "scientific_effect": "No demonstrated wrong payload event or history loss; current event is truthful and helper-equivalent. Does not refute generic flour source/method correction.",
+  "not_repaired": true
+}

@@ -1,0 +1,39 @@
+{
+  "new_findings": [],
+  "bounded_existing_finding_disposition": [
+    {
+      "finding_id": "W08-PF-PROCESS-001",
+      "alias": "W08-PF-WORKFLOW-001",
+      "issue_key": "w08-plain-flour-native-history-helper-bypass",
+      "severity": "minor",
+      "historical_fact": "The published author.py directly appended the truthful event instead of calling the required native helper. That immutable historical fact remains disclosed.",
+      "current_disposition": "BOUNDED_WORKFLOW_REPLAY_SUPPORTED",
+      "resolution_evidence": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/provenance/replay.py",
+          "sha256": "bc6ce9cc7325e83e40f640759a8a4877cf739fb6347536e384ac1eaa7b9f5a8a"
+        },
+        {
+          "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/reexecution/receipt.json",
+          "sha256": "05ff845b0b5c48d12e2b214eaea741ec4f48c0dfc730b0ff136dd653a4415cea"
+        },
+        {
+          "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/independent-probes.json",
+          "sha256": "1a1c96f48825defccd5a21efa20f462bdee0c5b52436cd84abaf32a5ccb2d78d"
+        },
+        {
+          "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/root-replay-probes.json",
+          "sha256": "c6023e2f44c3bb49067d00c251e82f7a31921f5d89c37012ae639f16d31898a1"
+        }
+      ],
+      "reason": "Actual new replay starts from the exact five-event predecessor, invokes native record_curation_event once with llm_assisted=True and original event fields, invokes native guarded writer once, and produces the entire selected payload byte for byte. The old sixth event is reconstructed, not a seventh event invented. The execution timestamp is kept separately from the historical event timestamp.",
+      "issue_closure_performed": false,
+      "scientific_reapproval": false
+    }
+  ],
+  "unrelated_historical_referral": {
+    "id": "PF-LINEAGE-001",
+    "status": "UNCHANGED_AND_OUT_OF_SCOPE",
+    "reason": "The prior reviewer quotation discrepancy remains a separately filed historical referral; this process replay does not repair or retire it."
+  }
+}

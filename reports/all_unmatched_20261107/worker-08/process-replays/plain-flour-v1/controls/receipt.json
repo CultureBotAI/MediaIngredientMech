@@ -1,0 +1,109 @@
+{
+  "at": "2026-11-08T09:25:55.538010+00:00",
+  "status": "PASS",
+  "controls": [
+    {
+      "name": "wrong-timestamp",
+      "path": "same complete-equivalence guard",
+      "rejected": true,
+      "differences": [
+        {
+          "path": "/curation_history/5/timestamp",
+          "expected": "2026-11-08T08:38:45.690887+00:00",
+          "actual": "2026-11-09T00:00:00+00:00"
+        }
+      ],
+      "diagnostic": "{\"complete_payload_differences\": [{\"path\": \"/curation_history/5/timestamp\", \"expected\": \"2026-11-08T08:38:45.690887+00:00\", \"actual\": \"2026-11-09T00:00:00+00:00\"}]}"
+    },
+    {
+      "name": "wrong-attribution",
+      "path": "same complete-equivalence guard",
+      "rejected": true,
+      "differences": [
+        {
+          "path": "/curation_history/5/curator",
+          "expected": "worker08:/root W08-FINAL-001 proposal correction",
+          "actual": "synthetic_wrong_actor"
+        }
+      ],
+      "diagnostic": "{\"complete_payload_differences\": [{\"path\": \"/curation_history/5/curator\", \"expected\": \"worker08:/root W08-FINAL-001 proposal correction\", \"actual\": \"synthetic_wrong_actor\"}]}"
+    },
+    {
+      "name": "changed-meaning",
+      "path": "same complete-equivalence guard",
+      "rejected": true,
+      "differences": [
+        {
+          "path": "/curation_history/5/changes",
+          "expected": "Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged.",
+          "actual": "Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged. Synthetic extra unsupported claim."
+        }
+      ],
+      "diagnostic": "{\"complete_payload_differences\": [{\"path\": \"/curation_history/5/changes\", \"expected\": \"Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged.\", \"actual\": \"Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged. Synthetic extra unsupported claim.\"}]}"
+    },
+    {
+      "name": "duplicate-event",
+      "path": "same complete-equivalence guard",
+      "rejected": true,
+      "differences": [
+        {
+          "path": "/curation_history",
+          "expected_length": 6,
+          "actual_length": 7
+        }
+      ],
+      "diagnostic": "{\"complete_payload_differences\": [{\"path\": \"/curation_history\", \"expected_length\": 6, \"actual_length\": 7}]}"
+    },
+    {
+      "name": "missing-llm-disclosure",
+      "path": "same complete-equivalence guard",
+      "rejected": true,
+      "differences": [
+        {
+          "path": "/curation_history/5/llm_assisted",
+          "expected": true,
+          "actual": null,
+          "missing_key": true
+        },
+        {
+          "path": "/curation_history/5/llm_model",
+          "expected": "GPT-6",
+          "actual": null,
+          "missing_key": true
+        }
+      ],
+      "diagnostic": "{\"complete_payload_differences\": [{\"path\": \"/curation_history/5/llm_assisted\", \"expected\": true, \"actual\": null, \"missing_key\": true}, {\"path\": \"/curation_history/5/llm_model\", \"expected\": \"GPT-6\", \"actual\": null, \"missing_key\": true}]}"
+    },
+    {
+      "name": "unknown-field",
+      "path": "actual native closed-schema writer",
+      "rejected": true,
+      "no_output_written": true,
+      "diagnostic": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/controls/unknown-field-must-not-exist.yaml\n  - Additional properties are not allowed ('unknown_process_probe' was unexpected) in /"
+    },
+    {
+      "name": "invalid-history-action",
+      "path": "actual native closed-schema writer",
+      "rejected": true,
+      "no_output_written": true,
+      "diagnostic": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/controls/invalid-history-action-must-not-exist.yaml\n  - 'invalid action' does not match '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$' in /curation_history/5/action"
+    },
+    {
+      "name": "selected-payload-as-predecessor",
+      "path": "actual replay preimage guard",
+      "rejected": true,
+      "no_output_written": true,
+      "diagnostic": "wrong predecessor: replay must start from exact five-event aa8390 payload"
+    },
+    {
+      "name": "overwrite-existing-replay",
+      "path": "actual replay immutable-output guard",
+      "rejected": true,
+      "diagnostic": "immutable replay output already exists"
+    }
+  ],
+  "count": 9,
+  "actual_native_functions": true,
+  "scope": "Process/equivalence/immutability checks only; fixture mutations are deliberate negatives and not selected science.",
+  "new_scientific_claims": false
+}

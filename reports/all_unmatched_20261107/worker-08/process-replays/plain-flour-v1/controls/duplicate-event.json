@@ -1,0 +1,102 @@
+{
+  "identifier": "FOODON:00004510",
+  "preferred_term": "flour",
+  "synonyms": [
+    {
+      "synonym_text": "Plain flour",
+      "synonym_type": "RAW_TEXT",
+      "source": "mim-queue"
+    }
+  ],
+  "mapping_status": "MAPPED",
+  "occurrence_statistics": {
+    "total_occurrences": 0,
+    "media_count": 0
+  },
+  "curation_history": [
+    {
+      "timestamp": "2026-04-30T18:43:03.698454+00:00",
+      "curator": "audit_import_ingredients[mim-queue]",
+      "action": "CREATED_AS_UNMAPPED",
+      "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1465); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+      "new_status": "UNMAPPED",
+      "llm_assisted": false
+    },
+    {
+      "timestamp": "2026-05-11T20:05:00Z",
+      "curator": "mediaingredientmech-agentic-curation",
+      "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+      "changes": "Classified as flour food/material preparation and left unmapped pending material-level curation.",
+      "previous_status": "UNMAPPED",
+      "new_status": "UNMAPPED",
+      "llm_assisted": true
+    },
+    {
+      "timestamp": "2026-08-06T00:00:00+00:00",
+      "curator": "edison_literature_identity",
+      "action": "ANNOTATED",
+      "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Plain_flour-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Curation recommendation — ### Record status CURIEs discussed: FOODON:00001210, FOODON:03302340. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+      "llm_assisted": true
+    },
+    {
+      "timestamp": "2026-11-08T06:08:53.266256+00:00",
+      "curator": "all-unmatched-worker-08 issue1201 /root/organics",
+      "action": "SOURCE_REVIEW_PROPOSAL",
+      "changes": "FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference. Isolated proposal only; all native holds remain preserved in source-case decisions.",
+      "previous_status": "UNMAPPED",
+      "new_status": "MAPPED",
+      "llm_assisted": true,
+      "llm_model": "GPT-6"
+    },
+    {
+      "timestamp": "2026-11-08T07:24:47.312939+00:00",
+      "curator": "worker08 /root/organics issue1227 bounded correction",
+      "action": "REVIEW_CORRECTION",
+      "changes": "Correct ontology_mapping.evidence[0] from MANUAL_CURATION to DATABASE_MATCH: FoodOn directly supplies the generic flour concept. The source supplies no narrower grain/material specification. Isolated successor proposal only; all inherited source, role and export holds remain. Historical evidence and predecessor files are immutable.",
+      "previous_status": "MAPPED",
+      "new_status": "MAPPED",
+      "llm_assisted": true,
+      "llm_model": "GPT-6"
+    },
+    {
+      "timestamp": "2026-11-08T08:38:45.690887+00:00",
+      "curator": "worker08:/root W08-FINAL-001 proposal correction",
+      "action": "REVIEW_CORRECTION",
+      "changes": "Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged.",
+      "previous_status": "MAPPED",
+      "new_status": "MAPPED",
+      "llm_assisted": true,
+      "llm_model": "GPT-6"
+    },
+    {
+      "timestamp": "2026-11-08T08:38:45.690887+00:00",
+      "curator": "worker08:/root W08-FINAL-001 proposal correction",
+      "action": "REVIEW_CORRECTION",
+      "changes": "Filed issue1227 comment6719268318 identifies the unsupported earlier EXACT_MATCH method claim for preferred label Plain flour. Preserve that history as history. Reassess the unchanged generic flour material scope under section3 step4, adopt the verified primary label flour, and perform a new native primary-label resolution supporting current EXACT_MATCH under section0. Separate ontology DATABASE_MATCH facts from the explicitly LLM-assisted material-scope judgment; raw Plain flour remains unchanged RAW_TEXT provenance. No synonym lookup of Plain flour, CAS lookup, grain/product specificity, identity-target change, owner merge or role/export approval is claimed. Original source captures, frozen owner beforeimage and all prior source holds remain unchanged.",
+      "previous_status": "MAPPED",
+      "new_status": "MAPPED",
+      "llm_assisted": true,
+      "llm_model": "GPT-6"
+    }
+  ],
+  "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1465); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a food/material preparation pending material-level curation.\n\nFOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference.\n\nW08-FINAL-001 correction: The record is reviewed at the generic flour material scope under MAPPING_SEMANTICS section3 step4. The frozen MediaDive ingredient1465 record and its original primary page name Plain flour as a complex substance, without establishing a grain, supplier, catalogue, bleaching/fortification treatment or defined composition. The page flags identifiers as automatically matched; its CAS is not adopted. This agent-assisted material-scope judgment is separate from lexical resolution and grants no product equivalence, owner merge, role or export approval. The archived official FOODON:00004510 response has primary label flour, definition A fine powder made from cereals or other starchy food sources, and captured synonym flour added. A new native label check resolves the adopted preferred_term flour to that primary label. EXACT_MATCH describes this current primary-label resolution under MAPPING_SEMANTICS section0. It does not assert that raw Plain flour was a primary label, a unique ontology synonym, or resolved by CAS; the earlier material-scope judgment was not an exact lexical lookup. The original Plain flour RAW_TEXT synonym and stable owner filename remain unchanged.",
+  "ingredient_type": "UNDEFINED_MIXTURE",
+  "ontology_mapping": {
+    "ontology_id": "FOODON:00004510",
+    "ontology_label": "flour",
+    "ontology_source": "FOODON",
+    "mapping_quality": "EXACT_MATCH",
+    "evidence": [
+      {
+        "evidence_type": "DATABASE_MATCH",
+        "source": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00004510",
+        "notes": "The archived official FOODON:00004510 response has primary label flour, definition A fine powder made from cereals or other starchy food sources, and captured synonym flour added. A new native label check resolves the adopted preferred_term flour to that primary label. EXACT_MATCH describes this current primary-label resolution under MAPPING_SEMANTICS section0. It does not assert that raw Plain flour was a primary label, a unique ontology synonym, or resolved by CAS; the earlier material-scope judgment was not an exact lexical lookup."
+      },
+      {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://bacmedia.dsmz.de/ingredients/1465",
+        "notes": "The record is reviewed at the generic flour material scope under MAPPING_SEMANTICS section3 step4. The frozen MediaDive ingredient1465 record and its original primary page name Plain flour as a complex substance, without establishing a grain, supplier, catalogue, bleaching/fortification treatment or defined composition. The page flags identifiers as automatically matched; its CAS is not adopted. This agent-assisted material-scope judgment is separate from lexical resolution and grants no product equivalence, owner merge, role or export approval. Source facts use the original capture from2026-11-08T05:16:12.135246+00:00; no new remote source retrieval is claimed."
+      }
+    ]
+  }
+}

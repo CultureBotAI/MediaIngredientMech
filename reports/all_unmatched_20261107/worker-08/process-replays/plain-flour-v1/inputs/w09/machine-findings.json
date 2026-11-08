@@ -1,0 +1,161 @@
+{
+  "at": "2026-11-08T08:55:00.223553Z",
+  "reviewed_head": "79d44c84fe550741bbd8de00c119c48560f30bc1",
+  "source_method_conclusion": "SUPPORTED_BOUNDED_CURRENT_METHOD_CORRECTION",
+  "native_verdict": "needs_curation for1newminorworkflowreferral and1existingminorhistoricalreferral; no currentflourscientificmethoddefect",
+  "counts": {
+    "resolved_method_findings": 1,
+    "new_minor_findings": 1,
+    "confirmed_existing_minor_referrals": 1
+  },
+  "findings": [
+    {
+      "finding_id": "W08-FINAL-001",
+      "issue_key": "w08-plain-flour-mapping-method",
+      "category": "provenance",
+      "severity": "minor",
+      "native_severity": "P3",
+      "normalization_reason": "Originalboundedmethodclaim; currentgenericidentitynotrejected.",
+      "status": "resolved",
+      "certainty": "confirmed",
+      "title": "Plain Flour current primary-label method is supported at exact published successor",
+      "description": "Genericflourmaterialscope is independently supported by actualsource/ontologydefinition; preferredflour is then resolved by an actualnewprimarylabelquery. LLMinterpretation and DATABASE_MATCHfacts remain separate. It is not a retrospective exactlookup of rawPlainflour.",
+      "target_ids": [
+        "op1201-plain-flour"
+      ],
+      "field_paths": [
+        "preferred_term",
+        "ontology_mapping.mapping_quality",
+        "ontology_mapping.evidence",
+        "curation_history"
+      ],
+      "evidence_ids": [
+        "e-science",
+        "e-skeptic",
+        "e-ontology",
+        "e-primary",
+        "e-html",
+        "e-filed",
+        "e-oldnative"
+      ],
+      "previous_occurrences": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "review_id": "20261108T084543Z-w08-plain-flour-method-successor",
+          "finding_id": "W08-FINAL-001"
+        }
+      ],
+      "disposition_reason": "Independently read complete finalpayload884fee1 and sources, replayed currentlabel evidence and preserved history/RAW_TEXT; originalmethoddefect corrected at79d44. This review does not close GitHubissue, admitmaintainedowner, approve roles/exports or waive separate processreferral. Originalroot1701review islegacyJSON and is cited as evidence without inventednativeid.",
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1227#issuecomment-6719268318"
+      ],
+      "ownership_note": "W08author ownsproposal; coordinatorowns issueclosure/integration."
+    },
+    {
+      "finding_id": "W08-PF-PROCESS-001",
+      "issue_key": "w08-plain-flour-native-history-helper-bypass",
+      "category": "provenance",
+      "severity": "minor",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Published author mutator bypasses required native curation-event helper",
+      "description": "Read the complete published mutator. It imports/calls write_validated_ingredient but directly appends the sixth event and never imports/calls record_curation_event. Independently applied helper in memory with the exact event fields; full history list is equal.",
+      "target_ids": [
+        "author-workflow"
+      ],
+      "field_paths": [
+        "rec['curation_history'].append at line46"
+      ],
+      "evidence_ids": [
+        "e-process",
+        "e-workflow",
+        "e-curate"
+      ],
+      "ownership_note": "Coordinator issue-first deduplication before any immutable authorworkflow successor. No correction performed."
+    },
+    {
+      "finding_id": "PF-LINEAGE-001",
+      "issue_key": "w08-plain-flour-historical-supermarket-quotation",
+      "category": "evidence",
+      "severity": "minor",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Historical reviewer quotation adds unsupported supermarket qualifier",
+      "description": "Actual frozen compound text is Plain flour, not plain flour (supermarket). The complete ingredient HTML gives no supermarket provenance and warns automatic identifiers. Current payload makes no supermarket product claim. This unsubstantiated old quotation cannot be inherited as a narrower product witness.",
+      "target_ids": [
+        "historical-quotation"
+      ],
+      "field_paths": [
+        "case_reviews[45].appraisal"
+      ],
+      "evidence_ids": [
+        "e-referral",
+        "e-html",
+        "e-casebridge"
+      ],
+      "ownership_note": "PreexistingW08self-referral independentlyconfirmed here. Coordinator routesclarificationbefore anycorrection; originalreviewunchanged."
+    }
+  ],
+  "exact_reproductions": {
+    "process": {
+      "finding_id": "W08-PF-PROCESS-001",
+      "severity_proposed": "minor",
+      "status": "confirmed_workflow_deviation_for_coordinator_triage; no payload science defect shown",
+      "head": "79d44c84fe550741bbd8de00c119c48560f30bc1",
+      "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/provenance/author.py",
+      "script_sha256": "1790bb6525e047fde7158a4f84ab9a623de43ba8b4a85aa96fc09b5244d8b0c0",
+      "pointer": "rec['curation_history'].append({...})",
+      "contract": ".claude/skills/curate-yaml-record/SKILL.md section5 requires record_curation_event with llm_assisted=True and validated writer",
+      "contract_sha256": "4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a",
+      "exact_reproduction": "Read the complete published mutator. It imports/calls write_validated_ingredient but directly appends the sixth event and never imports/calls record_curation_event. Independently applied helper in memory with the exact event fields; full history list is equal.",
+      "bounded_followup": "Coordinator may deduplicate/file this actual author-workflow deviation before any later correction. Preserve published history/payload. A future immutable workflow correction can invoke native helper with same exact event semantics; do not add a false new scientific event or change supported flour identity to repair this process issue.",
+      "scientific_effect": "No demonstrated wrong payload event or history loss; current event is truthful and helper-equivalent. Does not refute generic flour source/method correction.",
+      "not_repaired": true
+    },
+    "historical": {
+      "at": "2026-11-08T08:51:47.792105+00:00",
+      "reviewer": "worker09:/root/w08_flour_skeptic",
+      "finding_id": "PF-LINEAGE-001",
+      "status": "independently_confirmed_historical_review_quotation_discrepancy",
+      "severity": "minor",
+      "original_reporter_and_affected_author": "worker08:/root/inorganics",
+      "independence": "This W09 reviewer did not author the historical reviewer prose, referral or W08 payload. Re-read actual old complete case_review object, complete frozen case and full captured primary HTML.",
+      "historical_review": {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+        "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a",
+        "pointer": "/case_reviews/45/appraisal",
+        "actual_appraisal": "The frozen raw Flour row says plain flour (supermarket) and g/L4. The corrected notes now preserve 4 g/L, correcting the predecessor applicability claim of2 g/L. FOODON00004510 is generic flour, unlike flour food product00001056; neither the label nor source proves wheat or a closed molecular mixture."
+      },
+      "source": {
+        "case_id": "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e",
+        "case_capture_sha256": "172644be4882a41a3c29be1ee71d169042a541777db20e7d63dc550b4bc667d3",
+        "full_frozen_shard_sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0",
+        "pointer": "/cases/180/original_kg_entry/source_record",
+        "actual_source_record": {
+          "amount": 4,
+          "compound": "Plain flour",
+          "compound_id": 1465,
+          "g_l": 4,
+          "optional": 0,
+          "recipe_order": 1,
+          "unit": "g"
+        },
+        "primary_html_sha256": "040ee2dc07a077a38caeefa4fe8882b0c5829392a79d6f91a99c56b4022394a8"
+      },
+      "referral": {
+        "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-plain-flour-v1/independent-review/skeptical/coordinator-referral.json",
+        "sha256": "1a15fb8cef3e930eab147169252e5ca3327061413cc7ccc5141fc8281fbec225"
+      },
+      "assessment": "Actual frozen compound text is Plain flour, not plain flour (supermarket). The complete ingredient HTML gives no supermarket provenance and warns automatic identifiers. Current payload makes no supermarket product claim. This unsubstantiated old quotation cannot be inherited as a narrower product witness.",
+      "source_quantity": "amount4/unitg/derivedg_l4 remains transcription, not independently verified experimental concentration.",
+      "bounded_followup": "Keep immutable original review and explicit superseding observation/referral. Coordinator deduplicates/routes before future correction. No extra current payload correction is indicated by this historical prose defect.",
+      "source_review_boundary": "The old skeptical reviewer self-reported this discrepancy; its verification here is independent. This does not negate a separate scientific reviewer acceptance of current bounded method correction.",
+      "no_mutation": true
+    }
+  },
+  "finding_id_aliases": {
+    "W08-PF-WORKFLOW-001": "W08-PF-PROCESS-001"
+  },
+  "dedup_limits": "Exactfiled1227comment and predecessor/currentreports read. No claim of globalallissue search; coordinator owns dedup/routing before fixes.",
+  "corrections_performed": false
+}

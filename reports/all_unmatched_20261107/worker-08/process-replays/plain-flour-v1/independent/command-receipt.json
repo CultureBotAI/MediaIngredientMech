@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-08T09:27:26.666200+00:00",
+  "status": "PASS",
+  "runtime": "Python 3.13.2",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "python_flag": "-B"
+  },
+  "executions": [
+    {
+      "script": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/probe_native_replay.py",
+        "sha256": "926638e6cab1bd77f1d3a946b1f35e6dda1872c69fea22983c67c4660ff9551f"
+      },
+      "log": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/independent-probes-command.log",
+        "sha256": "ab8b4eba905845a3524ecad3ce5680db735d0f5266962a6d028159c9e7cccad9"
+      },
+      "result": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/independent-probes.json",
+        "sha256": "1a1c96f48825defccd5a21efa20f462bdee0c5b52436cd84abaf32a5ccb2d78d"
+      },
+      "exit_code": 0,
+      "actual_positive_count": 2,
+      "actual_negative_count": 10
+    },
+    {
+      "script": {
+        "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/provenance/replay.py",
+        "sha256": "bc6ce9cc7325e83e40f640759a8a4877cf739fb6347536e384ac1eaa7b9f5a8a"
+      },
+      "arguments": [
+        "--output-dir",
+        ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/reexecution",
+        "--executor",
+        "worker08:/root/inorganics"
+      ],
+      "log": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/reexecution-command.log",
+        "sha256": "851105b103dcccecb7f0553bf495f4f88b35bf806549394c8bdbc0e35cbb9ccd"
+      },
+      "result": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/reexecution/receipt.json",
+        "sha256": "05ff845b0b5c48d12e2b214eaea741ec4f48c0dfc730b0ff136dd653a4415cea"
+      },
+      "exit_code": 0,
+      "actual_positive_count": 1
+    },
+    {
+      "script": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/probe_root_replay.py",
+        "sha256": "7440afc57d0e293e1f5a4177fad3d52bdb1cb8397fe0a0fa6b23a930d1d79318"
+      },
+      "log": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/root-replay-probes-command.log",
+        "sha256": "e4aa3abcf4e61dc568f1a24e1187467a92a28fefe881fa9ca92347dda7c77904"
+      },
+      "result": {
+        "path": ".temp/all-unmatched-worker-08/plain-flour-process-replay-v1/independent/root-replay-probes.json",
+        "sha256": "c6023e2f44c3bb49067d00c251e82f7a31921f5d89c37012ae639f16d31898a1"
+      },
+      "exit_code": 0,
+      "actual_negative_count": 7
+    }
+  ],
+  "author_nine_controls": {
+    "receipt": {
+      "path": "reports/all_unmatched_20261107/worker-08/process-replays/plain-flour-v1/controls/receipt.json",
+      "sha256": "dcc0bdad0a7ffc9beab88b45cd469c35d6c4cf0c2f2a7a207e1c803a2ee0eb91"
+    },
+    "execution_claim": "Author execution read and code independently inspected; separately exercised equivalent and additional controls above."
+  },
+  "no_mocked_native_functions": true
+}
