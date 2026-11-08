@@ -1,0 +1,54 @@
+{
+  "reviewed_revision": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "verdict": "needs_curation",
+  "new_distinct_publisher_findings": [],
+  "existing_or_coordinator_findings_assessed": [
+    {
+      "finding_id": "REJECTION-CODE-001",
+      "coordinator_alias": "W08-16C-CODE-001",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1255",
+      "severity": "major",
+      "status": "open",
+      "introduced_by_publisher_delta": false,
+      "title": "Literal Git path decoding can fail after an intended source write",
+      "locator": "src/mediaingredientmech/curate/campaign_owner_apply.py:1256-1264",
+      "source_sha256": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "evidence": "source-interface-readback.json /results/0; exact retained technical Unicode demotion receipt is failed with recovery_required true; actual publisher _owner_proof rejects it as incomplete.",
+      "reproduction_scope": "Independently read the actual retained lifecycle fixture and called the frozen publisher source-proof function read-only. Source execution was performed by the distinct technical reviewer. Complete frozen control flow was inspected.",
+      "cause": "git diff --name-only returns quoted pathname text for ordinary Unicode/control characters; .decode().splitlines() is compared to literal allowed paths only after owner mutation/retirement.",
+      "bounded_fix": "Parse literal NUL-delimited Git paths with the native allowed-set semantics intact, and verify unrelated paths remain refused. Do not weaken the guard or use global core.quotePath configuration as the fix.",
+      "required_regressions": [
+        "Actual prepare/apply/verify_completed with Unicode and newline owner paths for edit/rejection and demotion.",
+        "A genuine unrelated tracked modification remains rejected; failed partial operations preserve recovery evidence."
+      ],
+      "publisher_consequence": "The common source apply failure affects demotion. The publisher correctly refuses the failed source receipt; no distinct publisher pathname parser defect was found."
+    },
+    {
+      "finding_id": "W08-16C-CODE-002",
+      "severity": "major",
+      "status": "open",
+      "introduced_by_publisher_delta": false,
+      "title": "Live source apply does not retain accepted HEAD and tracked-scope freshness",
+      "locators": [
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:885-892",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:958-989",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1256-1264"
+      ],
+      "source_sha256": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "evidence": "source-interface-readback.json /results/1-3; root late_unrelated_tracked_commit and independent technical late_empty_commit/late_unrelated_tracked fixtures.",
+      "reproduction_scope": "Read exact plan, acceptance and receipt; compared literal NUL-delimited diffs against accepted baseline and current HEAD; called the actual frozen publisher source-proof interface without altering fixtures.",
+      "cause": "prepare checks HEAD and tracked cleanliness once. Repeated _recheck verifies selected owners and bound inputs but does not retain HEAD/tracked-scope checks. The final check compares against then-current HEAD, allowing a late committed unrelated file to disappear from its comparison.",
+      "observed": "The committed-unrelated fixture has a complete source receipt and verifies complete although its current HEAD differs from the accepted baseline and the accepted-baseline diff includes an unapproved tracked file. An uncommitted unrelated edit is noticed only after the owner mutation.",
+      "bounded_fix": "Enforce accepted-baseline HEAD and literal tracked-path scope throughout the live prepare/apply transition, including before writes and through completion; preserve intended-operation allowance and recovery behavior. Keep historical completed verification based on exact retained evidence rather than requiring HEAD to remain permanently frozen.",
+      "required_regressions": [
+        "Late empty commit after prepare must refuse before owner mutation.",
+        "Late committed unrelated addition must refuse before owner mutation.",
+        "Late uncommitted unrelated tracked edit must refuse before owner mutation.",
+        "Test late boundaries during publication and completion; intended owner changes remain allowed.",
+        "Positive later historical verify_completed after legitimate mapping publication must remain valid."
+      ],
+      "publisher_consequence": "The publisher historical source-proof interface accepts the defective live-complete receipt, as designed for historical reconstruction. This is not proof of complete mapping publication bypass; the live source stage must prevent issuing the stale completion."
+    }
+  ],
+  "fixes_applied": false
+}

@@ -1,0 +1,33 @@
+import hashlib
+import io
+import json
+from pathlib import Path
+import subprocess
+import tarfile
+
+D=Path(__file__).absolute().parent;C=D.parents[1];K=C/'integration/release-worktree'
+P=D/'private';P.mkdir()
+base='7d4db26a2ce75e9942badaca954bb8e8f821c75c'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=K,text=True).strip()==base
+paths=['src','scripts','tests','conf','profiles','pyproject.toml','uv.lock','MAPPING_SEMANTICS.md','AGENTS.md','reports/sssom_completion_20260921/mapping_changes/make_receipt.py']
+actual=[]
+for path in paths:
+    if subprocess.check_output(['git','ls-tree',base,'--',path],cwd=K):actual.append(path)
+archive=subprocess.check_output(['git','archive',base,'--',*actual],cwd=K)
+with tarfile.open(fileobj=io.BytesIO(archive)) as stream:stream.extractall(P,filter='data')
+before=D/'before';before.mkdir()
+files=['src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py']
+pins={}
+for path in files:
+    raw=(P/path).read_bytes();target=before/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(raw)
+    pins[path]=hashlib.sha256(raw).hexdigest()
+source=C/'integration/source-index-coherence1256-fix-v2/runtime/repo'
+overrides={
+ 'src/mediaingredientmech/curate/campaign_owner_apply.py':'c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52',
+ 'tests/test_campaign_owner_apply.py':'27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3'}
+for path,expected in overrides.items():
+    raw=(source/path).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
+    old=P/path;target=before/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(old.read_bytes());old.write_bytes(raw)
+with (D/'BASELINE.json').open('x') as f:
+    json.dump({'base':base,'copied_git_paths':actual,'archive_sha256':hashlib.sha256(archive).hexdigest(),'publisher_baseline_files':pins,'source_successor_readonly_dependency':{'root':str(source),'files':overrides},'source_dependency_not_authored_here':True,'no_maintained_worktree_edits':True},f,indent=2);f.write('\n')
+print(json.dumps(pins,indent=2))

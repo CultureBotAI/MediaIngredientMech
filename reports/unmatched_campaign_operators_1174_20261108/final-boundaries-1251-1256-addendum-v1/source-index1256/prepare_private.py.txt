@@ -1,0 +1,45 @@
+"""Freeze exact21061 in this private packet only, before residual1256 edits."""
+from pathlib import Path
+import hashlib
+import json
+import subprocess
+import tarfile
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+K = C / "integration/release-worktree"
+HEAD = "21061aa532401398db70c59a596debf330f70744"
+paths = ["src", "scripts/apply_unmatched_campaign_owners.py", "scripts/publish_unmatched_campaign_mapping.py",
+         "scripts/validate_sssom_invariants.py", "MAPPING_SEMANTICS.md", "pyproject.toml", "uv.lock", ".python-version",
+         "tests/test_campaign_owner_apply.py", "tests/test_campaign_publication.py", "tests/test_campaign_demotion_integration.py"]
+assert subprocess.check_output(["git", "-C", str(K), "rev-parse", "HEAD"], text=True).strip() == HEAD
+archive = D / "baseline21061.tar"
+with archive.open("xb") as f:
+    subprocess.run(["git", "-C", str(K), "archive", HEAD, *paths], stdout=f, check=True)
+out = D / "portable"
+out.mkdir()
+with tarfile.open(archive) as t:
+    t.extractall(out, filter="data")
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+before = {}
+for rel in ["src/mediaingredientmech/curate/campaign_owner_apply.py", "tests/test_campaign_owner_apply.py"]:
+    p = D / "before" / rel
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_bytes((out / rel).read_bytes())
+    before[rel] = sha(p)
+assert before["src/mediaingredientmech/curate/campaign_owner_apply.py"] == "21ced557b3ff36bb3db2ac8d092b0af3d46bff1db6045221bdeabb128d4b9022"
+assert before["tests/test_campaign_owner_apply.py"] == "6ead533c601956a0441e127cd411cb73c54b76fcfa8ab06a2890f4bd3e987189"
+finding = C / "preflight/late-head1256-residual-findings-publication-v1"
+evidence = {}
+for name in ["publication-00.json", "readback-00.json", "verified-manifest.json", "body.md",
+             "evidence-00-FINDING-W08-21061-SRC-001.json", "evidence-01-staged-index-results.json",
+             "evidence-02-probe_staged_index.py", "evidence-03-index-readback.json"]:
+    p = D / "independent-inputs" / name
+    p.parent.mkdir(exist_ok=True)
+    p.write_bytes((finding / name).read_bytes())
+    evidence[name] = sha(p)
+with (D / "baseline.json").open("x") as f:
+    json.dump({"commit": HEAD, "archive_sha256": sha(archive), "exact_before": before,
+               "filed_before_edit": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721304487",
+               "independent_evidence": evidence, "I_K_J_writes": False}, f, indent=2)
+    f.write("\n")

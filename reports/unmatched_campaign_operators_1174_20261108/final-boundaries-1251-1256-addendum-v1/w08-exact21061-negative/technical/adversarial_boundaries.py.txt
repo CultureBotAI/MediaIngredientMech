@@ -1,0 +1,53 @@
+"""Actual native functions remain intact; sys.setprofile injects real private Git drift."""
+from pathlib import Path
+import hashlib,importlib.util,json,sys
+W=Path.cwd();P=W/'.temp/final-21061-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path.insert(0,str(F/'src'))
+from mediaingredientmech.curate import campaign_owner_apply as owner
+s=importlib.util.spec_from_file_location('adversarial_fixture_helpers',F/'tests/test_campaign_owner_apply.py');f=importlib.util.module_from_spec(s);s.loader.exec_module(f)
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(n,v):(O/n).write_text(json.dumps(v,indent=2,ensure_ascii=False)+'\n')
+results=[]
+for mode in ['head_before_write','head_after_write','head_final_flush','head_between_git_checks','staged_before_write','staged_after_write','staged_final_flush','later_commit_valid','later_commit_owner_drift','later_commit_receipt_drift']:
+ root=O/'extra-fixtures'/mode;root.mkdir(parents=True);plan=f.demotion_case(root);ready=f.prepare(root);before=owner.hashes(owner.inventory(root));state={'fired':False,'profile_events':[]};phase='apply';error=None;proof=None;outcome=None
+ def mutate():
+  assert not state['fired'];state['fired']=True
+  if mode.startswith('head_'):f.late_git_commit(root,unrelated=True)
+  else:
+   f.put(root,'notes/independent_ß\nextra.txt',b'unapproved staged index addition\n');f.run_git(root,'add','--','notes/independent_ß\nextra.txt')
+ def profile(frame,event,arg):
+  if state['fired']:return
+  trigger=False
+  if mode.endswith('before_write'):trigger=event=='call' and frame.f_code is owner._new_owner.__code__
+  elif mode.endswith('after_write'):trigger=event=='return' and frame.f_code is owner._new_owner.__code__
+  elif mode.endswith('final_flush'):trigger=event=='c_return' and frame.f_code is owner.finish_receipt.__code__ and getattr(arg,'__name__',None)=='flush'
+  elif mode=='head_between_git_checks':trigger=event=='return' and frame.f_code is owner.git.__code__ and frame.f_locals.get('args')==('diff','--name-only','-z',plan['baseline_commit'],'--')
+  if trigger:
+   state['profile_events'].append({'event':event,'function':frame.f_code.co_name,'filename':frame.f_code.co_filename,'line':frame.f_lineno,'native_function_called_without_replacement':True});mutate()
+ try:
+  if mode.startswith(('head_','staged_')):sys.setprofile(profile)
+  try:outcome=owner.apply(ready,root/'receipt',enabled=True)
+  finally:sys.setprofile(None)
+  if mode.startswith('later_commit'):
+   f.run_git(root,'add','--','data/ingredients');f.late_git_commit(root,unrelated=True)
+   if mode.endswith('owner_drift'):
+    path=root/f.DEMOTED;path.write_bytes(path.read_bytes()+b'# changed later owner\n')
+   elif mode.endswith('receipt_drift'):
+    path=root/'receipt/application.json';data=json.loads(path.read_bytes());data['state']='failed';f.put(root,str(path.relative_to(root)),data)
+  phase='verify_completed';proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json');phase='completed'
+ except Exception as e:error={'type':type(e).__name__,'message':str(e)}
+ finally:sys.setprofile(None)
+ receipt=root/'receipt/application.json';record=json.loads(receipt.read_bytes()) if receipt.exists() else None
+ row={'mode':mode,'phase':phase,'error':error,'fired':state['fired'],'profile_events':state['profile_events'],'fixture':str(root.relative_to(W)),'baseline':plan['baseline_commit'],'head_after':f.run_git(root,'rev-parse','HEAD'),'before_inventory':before,'after_inventory':owner.hashes(owner.inventory(root)),'receipt_exists':receipt.exists(),'receipt_state':record['state'] if record else None,'recovery_required':record.get('recovery_required') if record else None,'receipt_sha256':h(receipt) if receipt.exists() else None,'completed_verification':proof is not None}
+ if mode.startswith(('head_','staged_')):
+  assert state['fired'] and error and proof is None
+  if mode=='head_between_git_checks':assert record is None and row['after_inventory']==before
+  else:assert record['state']=='failed' and record['recovery_required'] is True
+  if mode.endswith('before_write'):assert row['after_inventory']==before
+  if record:
+   assert (root/'receipt/owner-before-0000.yaml').read_bytes()==ready.before[f.EDIT].content
+   try:owner.verify_completed(root,root/'plan.json',receipt)
+   except (ValueError,OSError):row['failed_receipt_refused']=True
+   else:raise AssertionError('Failed receipt admitted')
+ elif mode=='later_commit_valid':assert proof and row['baseline']!=row['head_after'] and record['state']=='complete'
+ else:assert error and proof is None
+ results.append(row);save('adversarial-boundaries.json',{'status':'PASS_EXPECTED_OUTCOMES','results':results,'source_sha256':h(Path(owner.__file__)),'function_replacements':False,'injection':'sys.setprofile invokes real private Git operations at native call/return/flush boundaries; native code bytes and function objects stay unchanged.'});print(json.dumps({k:row[k] for k in ['mode','phase','error','receipt_state','completed_verification']},ensure_ascii=False),flush=True)

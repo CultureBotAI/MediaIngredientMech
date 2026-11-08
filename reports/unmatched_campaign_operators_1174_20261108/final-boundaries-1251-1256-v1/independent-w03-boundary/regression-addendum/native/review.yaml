@@ -1,0 +1,755 @@
+schema_version: 1.0.0
+review_id: 20261108T112603Z-w03-d691-first-rejection-regression
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: 'Superseding independent code review: d691 rejects valid first retirement of
+  an unmapped owner'
+started_at: '2026-11-08T11:23:40.119542Z'
+finished_at: '2026-11-08T11:26:03.348749Z'
+reviewer:
+  identity: worker03:/root/boundary_assembly
+  kind: agent
+  independence: independent
+  independence_basis: 'Separate in-process reviewer of the code change, not its author.
+    Independently verified two actual preimages against d691 Git and both original
+    payloads against784 Git, and reviewed separate technical/adversarial confirmations.
+    W03 authored those source proposals: they are author-related code counterexamples
+    only, with no independent scientific self-approval or normalization acceptance.'
+skill: user-assigned native technical code review using docs/record-reviews.md
+completion: completed
+verdict: needs_curation
+native_verdict: 'DO_NOT_ACCEPT_EXACT_D691: confirmed major regression already filed
+  under1252 comment6720840145; a separately reviewed repair is required.'
+scientific_review: false
+summary: The exact d691 two-file change retains previously tested collision reductions
+  and existing-tombstone maintenance, but its new REJECTED condition also blocks valid
+  same-path UNMAPPED-to-REJECTED retirement. Two genuine published W03 origins and
+  a separate authenticated synthetic native prepare counterexample establish the regression.
+  Earlier positive results remain true within their tested scope; the earlier overall
+  technical pass is superseded. No future repair, source science, normalization or
+  campaign application is approved.
+source:
+  git_revision: d691c079cf3923daed89284b7579913b84c3a34c
+  state: git_commit
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/curate/apply_receipt.py
+    sha256: 6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f
+    role: context
+  - path: src/mediaingredientmech/curate/campaign_owner_apply.py
+    sha256: 4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70
+    role: target
+  - path: src/mediaingredientmech/curate/publication_guard.py
+    sha256: f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: tests/test_campaign_owner_apply.py
+    sha256: 049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569
+    role: target
+  snapshot_id: PR1205-d691c079cf3923daed89284b7579913b84c3a34c
+scope:
+  description: Superseding complete assessment of the same exact two d691 changed
+    files, including the newly filed valid-retirement regression and preserved earlier
+    bounded positive evidence.
+  selection: Both files changed by d691 versus eac469 remain the same fully covered
+    target set. Added evidence includes both genuine W03 retirement origins and a
+    synthetic full native prepare counterexample; no source-scientific population
+    approval.
+  coverage: full
+  population_size: 2
+  reviewed_target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  exclusions:
+  - target: Current complete campaign prepare/apply/export and individual source scientific
+      approval
+    reason: Read-only bounded code review; synthetic native application has no authority
+      over maintained catalog or releases.
+  - target: Future demote operation, Angust relocation, TSB owner reconciliation
+    reason: Not in this two-file commit; samepath Angust and genuine TSB collision
+      remain refusals.
+  - target: Current mutable I code, any future fix, and normalization acceptance for
+      the polymer candidates
+    reason: All code inputs remain committed d691 bytes. Normalization needs distinct
+      review; source authorship conflict is explicit.
+targets:
+- target_id: native-owner-operator
+  path: src/mediaingredientmech/curate/campaign_owner_apply.py
+  label: Campaign owner operator at d691c079
+  kind: maintained
+  ownership_note: Maintained implementation; bounded code review, no ingredient scientific
+    judgment.
+- target_id: native-owner-tests
+  path: tests/test_campaign_owner_apply.py
+  label: Campaign owner tests at d691c079
+  kind: maintained
+  ownership_note: Maintained regression tests for the native operator; no source-data
+    ownership.
+checks:
+- check_id: exact-source
+  name: Exact head, parent, two-file diff and immutable author/context bindings
+  status: passed
+  required: true
+  summary: Exact committed bytes, old AST/prefix and observed remote are bound; no
+    gate/corpus change.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - operator
+  - tests
+  - patch
+  - remote
+  - exact-static
+  - root-static
+- check_id: regressions
+  name: Existing and appended tests plus unchanged publisher integration
+  status: passed
+  required: true
+  summary: 121 owner tests and2 focused publisher tests passed; first publisher setup
+    failure remains preserved with exact overlay repair.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - owner-tests
+  - owner-test-log
+  - publisher-tests
+  - publisher-overlay
+  - technical-final
+- check_id: independent-positive
+  name: Independent real prepare/apply/completed replay reductions
+  status: passed
+  required: true
+  summary: 23 synthetic scenarios exercise2/3-member identity/name families, single/full/reverse
+    selection, real reductions and positive retained tombstones.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - reductions
+  - historical-sensitivity
+  - technical-final
+- check_id: independent-adversarial
+  name: Independent new-pair, tombstone and unchanged-guard counterexamples
+  status: passed
+  required: true
+  summary: 36 base scenarios,4 successful overlap followups and corrected shape-valid
+    membership proof meet their expected native outcomes. One NameError attempt is
+    preserved and excluded from passing counts.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - adversarial-base
+  - overlap
+  - membership
+  - adversarial-final
+- check_id: actual-boundaries
+  name: Actual archived payloads against complete frozen catalog
+  status: passed
+  required: true
+  summary: '13 independent record-stage probes preserve unresolved science: actual
+    TSB and samepath Angust still refused; nickname/tombstone maintenance follows
+    bounded contract.'
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - actual-records
+  - w08-findings
+  - issue1251
+  - issue1252
+- check_id: production-application
+  name: Current campaign application and future demote implementation
+  status: not_applicable
+  required: false
+  summary: Neither is authorized or claimed in this bounded code review.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+- check_id: valid-first-retirement-regression
+  name: Previously supported first retirement of existing unmapped owner
+  status: failed
+  required: true
+  summary: Exactd691 rejects both authentic same-path UNMAPPED-to-REJECTED originals.
+    Independent authenticated synthetic native load succeeds but full prepare fails
+    at line764; expected capability is lost. This is a confirmed product regression,
+    not a harness failure.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - filed-retirement-regression
+  - original-retirement-bindings
+  - regression-technical
+  - synthetic-retirement-counterexample
+  - regression-adversarial
+evidence:
+- evidence_id: operator
+  kind: record_content
+  reference: .temp/native-boundary-final-head-independent-v1/frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py
+  snapshot_sha256: 4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Complete exact d691 operator bytes; collision pair subset and same-key
+    REJECTED maintenance are the only changed function behavior.
+  locator: _validate_records lines701-791 and full unchanged prepare/apply/completed
+    context
+- evidence_id: tests
+  kind: record_content
+  reference: .temp/native-boundary-final-head-independent-v1/frozen-src/tests/test_campaign_owner_apply.py
+  snapshot_sha256: 049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Exact appended tests and helpers at d691; old test/helper ASTs and original
+    byte prefix remain unchanged.
+- evidence_id: patch
+  kind: record_content
+  reference: .temp/native-boundary-final-head-independent-v1/inputs/exact-commit.patch
+  snapshot_sha256: 8dd79435db858aff52ec008132f078da2339516277e3660ed082bc3cc6180021
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Exact two-file patch d691 versus eac469; no gate, threshold, workflow,
+    pin, schema or corpus changes.
+- evidence_id: remote
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/inputs/live/receipt.json
+  snapshot_sha256: b63260985727aef2d651e2f28920c574c78d9ec7de5c70828f68ed891421b96e
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Read-only PR and Git remote observations both bind d691 at capture time;
+    no transfer to a later head.
+- evidence_id: issue1251
+  kind: authority
+  reference: .temp/native-boundary-final-head-independent-v1/inputs/live/issue1251.json
+  snapshot_sha256: 1f5be230387a18f3e11fd69329981983a3c33ea698993b94517553bb8fe86ec1
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Filed collision capability boundary with exact surviving path-pair restrictions;
+    unresolved nickel identity remains separate.
+- evidence_id: reduction-addendum
+  kind: authority
+  reference: .temp/native-boundary-final-head-independent-v1/inputs/live/issue1251-comments.json
+  snapshot_sha256: 497ce7e05d5f4d8326d34329f0090bae39671ef5de5d587be68fcbf53187bd0d
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Filed correction rejects family equality; removing pairs is allowed, new
+    pairs and changed surviving keys/statuses remain refused.
+  locator: comment6720714388
+- evidence_id: issue1252
+  kind: authority
+  reference: .temp/native-boundary-final-head-independent-v1/inputs/live/issue1252.json
+  snapshot_sha256: 82d472ec3ff08ad514fe266df7702d2dd00e501809cf26bc9b9e56dc59244416
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Filed bounded same-path REJECTED maintenance route excludes revival, key
+    changes, relocation, new tombstones, Angust demotion and TSB collision.
+- evidence_id: w08-findings
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/assembly/w08-context/findings.json
+  snapshot_sha256: dd40f468b21ee641a30a87d5e20bbad78907632a9b08bf4a3b2c7b7b042b549d
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: context_only
+  summary: Exact earlier W08 capability findings and scientific boundaries retained;
+    current code review does not close their source/owner/role/export holds.
+- evidence_id: actual-records
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/assembly/lineage-and-actual-probes.json
+  snapshot_sha256: 6e3d2b78a42a4d83e154f5aa07dfc0fcf8274850f0f08c7ee5b413c8e33933ad
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Independent thirteen exact archived W08 record-stage calls over full2956
+    frozen catalog; nickel and retained tombstone maintenance pass, actual TSB/Angust
+    remain refused. All2231 original W08 manifest members rehashed; only scoped context
+    copied.
+- evidence_id: exact-static
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/assembly/exact-code-and-tests-readback.json
+  snapshot_sha256: 15ff49f90b2e72d21e3c897e32cb3a9e5e2f97abca2befc720ec3fbfb53984a3
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Separate exact code/test hash and old42 AST/prefix corroboration.
+- evidence_id: root-static
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/root-static-assessment-v1.json
+  snapshot_sha256: 60c12a9edf212dcc3c8be36b6a5996ffd51425ca1c4d45dc004090ccaeb77c0b
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Root read complete operator safety context, exact622-file snapshot and
+    unchanged native guards; only _validate_records changed among32 declarations.
+- evidence_id: module-safety
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/module-safety-retention-v1.json
+  snapshot_sha256: 24e7605d15fc021da3079180d579319665860f180cfa37d9c9e85005d829d4b7
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Entire module AST equals parent after removing only documentation, added
+    itertools import and changed _validate_records; constants, operation kinds, roles,
+    producer set and approval marker are retained.
+- evidence_id: technical-final
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/technical/HANDOFF.json
+  snapshot_sha256: 45bedb7688990c4ac6840e16027dfa77b224e430e0e2078c20b2000c3f690c4a
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Separate technical reviewer final assessment of every changed test/helper
+    and independent full-route reductions.
+- evidence_id: adversarial-final
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/adversarial/HANDOFF.json
+  snapshot_sha256: a12ad02972a48e5b16e0c49f9b73c0168c9cb04b4d3d19a91a1b4aa89ab52d84
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Separate adversarial reviewer final assessment; findings and failed harness
+    attempts remain explicit.
+- evidence_id: owner-tests
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/technical/author-owner-tests-v1-receipt.json
+  snapshot_sha256: f0a870706ffae92cbbb2d9a85ae452b2d77dc7941aa12ab66017f8769faae01a
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Independent exact frozen operator suite rerun exits0; separate retained
+    log records121 passed.
+- evidence_id: owner-test-log
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/technical/author-owner-tests-v1.log
+  snapshot_sha256: 0ec4a7cdc4622cd3af31c9a8b30ee884134a8e09164a90c355e1b1fec6e44b18
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Actual121-test rerun log, including dependency warnings.
+- evidence_id: publisher-tests
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/technical/author-publisher-tests-v2-receipt.json
+  snapshot_sha256: 041a004e9da4f94197bfdbf3d2b35aae0834c9d738b3b0da953711dc027e534d
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Two unchanged publisher integration tests pass in exact private overlay;116
+    other publisher tests intentionally deselected.
+- evidence_id: publisher-overlay
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/technical/publisher-private-overlay-v2.json
+  snapshot_sha256: 0e3c3740264d957cf11c449fd486d5643d06ead6bd3195e8772e698397fabdcd
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Initial copied source omitted unchanged receipt maker; private v2 adds
+    exact d691 Git bytes only. The root frozen snapshot and operator remain unchanged.
+- evidence_id: reductions
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/technical/independent-reduction-results-v1.json
+  snapshot_sha256: 0f48f17ae6d9c05a0d050080bd285e6c97df980007de9c3ae5122aa90533a6f2
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Twenty-three independent synthetic scenarios exercise actual prepare, dry
+    apply, enabled apply and completed replay, including2/3-member reductions, selection
+    orders and preserved keys/statuses.
+- evidence_id: historical-sensitivity
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/technical/predecessor-sensitivity-v1.json
+  snapshot_sha256: c133539e2988449ee2ff9475cf0e1f081c7b401d77361867264a19423d24c045
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Six comparisons execute exact historical validator-function ASTs against
+    unchanged fixture data to distinguish original capability/equality-draft behavior
+    from final code; not historical full-pipeline replay.
+- evidence_id: adversarial-base
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/adversarial/probe-results-v1.json
+  snapshot_sha256: 1627d553679826e6ae028db7c6a2228c4ca23cd315be944e4ac7f74e986ebc2e
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Thirty-six independently designed full native route scenarios, including
+    replacement/new-member/key/status and stale/alias/inode/late-drift counterexamples;
+    all meet recorded expectations.
+- evidence_id: overlap
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/adversarial/overlap-results-v1.json
+  snapshot_sha256: 1d371922000ec9549698c6064cc42c45337a9b8de87ca3f1fed9c2f16271f58f
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: partial
+  summary: Four successful overlapping-family/precise-preimage followups and one preserved
+    reviewer NameError before membership target execution. The failed attempt is not
+    a passing operator result.
+- evidence_id: membership
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/adversarial/membership-result-v2.json
+  snapshot_sha256: 55d81a860e46f3a42dcf65644f9c160a6f2c3e7af8b4ff28f5c2af95c03a9cb9
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: supports
+  summary: Corrected private harness executes shape-valid native receipt membership
+    drift and reaches the specific membership guard; no assertions weakened.
+- evidence_id: author-failures
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/author-diagnostics-dispositions-v1.json
+  snapshot_sha256: 9af4d40056462e82eae6c4d6d3c8f3c9f3cf961eab1448e87e669270f6aae1ca
+  accessed_at: '2026-11-08T11:20:10.858175Z'
+  support: context_only
+  summary: Preserved author draft failures include real equality-regression, concurrent-producer
+    refusals, draft lint and replay-harness failures; independently distinguished
+    from final-head results.
+- evidence_id: filed-retirement-regression
+  kind: authority
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/inputs/issue1252-comment6720840145.json
+  snapshot_sha256: ce7666a15cf444f5fabdac2324fed65526070db3e74922ed3d63ebf46ce81f33
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: refutes
+  summary: Filed and readback-verified addendum identifies the valid first-rejection
+    capability regression; same-path UNMAPPED retirement is neither revival nor create.
+  locator: issue1252 comment6720840145
+- evidence_id: original-retirement-bindings
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/assembly/context-and-original-bindings.json
+  snapshot_sha256: 283d2230a1afa74fbf6d125180f96730070271a6a4cb313c244285dc5fa58ff2
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: supports
+  summary: Both actual beforeimages equal d691 Git; original payloads equal784 Git
+    and retain source/destination path, identifier, preferred name and ordered history
+    prefix. Normalized objects compare equal only as diagnostic context, without normalization
+    or scientific approval.
+- evidence_id: coordinator-failed-cohort
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/assembly/coordinator-capture/HANDOFF.json
+  snapshot_sha256: 05c4a50ccffa42aa0581281d131e8dff06eb4f64e0f9491d01ab6a5b52dc5752
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: context_only
+  summary: Coordinator933-operation diagnostic remains FAIL_RECORD_STAGE with two
+    distinct known refusals, zero new pairs and12 removed. It is not a successful
+    full prepare or campaign acceptance.
+- evidence_id: coordinator-boundary-details
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/assembly/coordinator-capture/remaining-native-boundaries.json
+  snapshot_sha256: 4218f07cecb094bac46d1cf5e4de066f197f9e7672b1c2f5239ffbe2b4d4dbf0
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: supports
+  summary: The same complete933 cohort is reordered only to expose first errors; all
+    payloads remain. Other931 checks were traversed before reaching a known refusal,
+    with both polymer first-rejection failures retained.
+- evidence_id: cohort-accounting
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/cohort-accounting-review-v1.json
+  snapshot_sha256: 119adbfbe68e8b3156723e84f8d06d47b82520b2342ec9874b36dccbfb3c5972
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: supports
+  summary: Root independently checked933 unique selected actions and status inventory,2956
+    before and3550 projected owners,0 new and12 removed collision pairs. Diagnostic
+    producer logic and all failed calls were inspected; no fresh full prepare or passing
+    cohort is claimed.
+- evidence_id: regression-technical
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/technical/HANDOFF.json
+  snapshot_sha256: 412a8358df28d2b8305a74bf20dffcf2188f1387cf25ce34fc4d0c3f6f677d0c
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: refutes
+  summary: Separate technical reviewer confirms each exact original retirement passes
+    the unchanged parent validator function and fails exact d691; code/source scope
+    and COI remain bounded.
+- evidence_id: regression-adversarial
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/adversarial/HANDOFF.json
+  snapshot_sha256: 6e5956d58c8be7b865b45bf36c6eb0d6f74307e4d67709b5a3b94b98081305c4
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: refutes
+  summary: Separate adversarial reviewer confirms authenticated native load then full
+    prepare refusal for valid synthetic first retirement, with maintenance positive
+    controls and wrong-preimage negative.
+- evidence_id: synthetic-retirement-counterexample
+  kind: validation
+  reference: .temp/native-boundary-final-head-independent-v1/regression-addendum/adversarial/counterexample-v1.json
+  snapshot_sha256: 30bed3962179035f9555670c2588dc9e3ef4f43088470dd9217189c2e66b0cff
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: refutes
+  summary: Valid same-path first retirement passes native load but fails full d691
+    prepare specifically at the new REJECTED guard. No apply or receipt follows that
+    counterexample. Two maintenance controls complete apply/replay; wrong preimage
+    is refused.
+- evidence_id: prior-native-review
+  kind: prior_review
+  reference: .temp/native-boundary-final-head-independent-v1/native/review.yaml
+  snapshot_sha256: a95f9ef88daf78d69d5228e871ea5c94c1b403a95030bcf851f302e65e6d03e7
+  accessed_at: '2026-11-08T11:26:03.348749Z'
+  support: context_only
+  summary: Earlier exactd691 technical pass remains immutable, including genuine bounded
+    positive results; this same-target review supersedes its overall verdict after
+    the newly confirmed regression.
+assessments:
+- assessment_id: collision-boundary
+  area: consistency
+  topic: Complete catalog keyed path-pair subset and surviving-owner invariants
+  outcome: supported
+  target_ids:
+  - native-owner-operator
+  evidence_ids:
+  - operator
+  - reduction-addendum
+  - root-static
+  - reductions
+  - adversarial-base
+  - overlap
+  summary: Final pairs are a subset of prior pairs, keyed by identity/name and exact
+    sorted owner paths. Surviving members retain raw keys/status/path; leaving all
+    collision families follows ordinary guards.
+  details: No family equality or count-only exception remains. Cross-key overlap,
+    same-count replacement, new third members, shared new keys and case-only changes
+    are independently exercised. Order safety additionally relies on unchanged _load
+    unique source/destination and preimage checks.
+- assessment_id: tombstone-boundary
+  area: representation
+  topic: Same-path REJECTED maintenance without revival
+  outcome: concern
+  target_ids:
+  - native-owner-operator
+  evidence_ids:
+  - operator
+  - issue1252
+  - actual-records
+  - adversarial-base
+  - filed-retirement-regression
+  - original-retirement-bindings
+  - regression-technical
+  - synthetic-retirement-counterexample
+  summary: Samepath REJECTED maintenance and revival refusal work in their tested
+    scopes, but requiring both statuses REJECTED whenever either is REJECTED incorrectly
+    rejects a genuine first rejection.
+  details: Lines760-767 cover old or new REJECTED and require old==new==REJECTED.
+    A genuine existing unmapped owner can first become REJECTED under the prior ordinary
+    category rule without any revival/new owner/path/key change. Such first retirement
+    must not be treated as existing-tombstone maintenance.
+- assessment_id: guard-retention
+  area: provenance
+  topic: Other native safety guards and completed replay
+  outcome: supported
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - root-static
+  - module-safety
+  - owner-tests
+  - publisher-tests
+  - reductions
+  - adversarial-base
+  - membership
+  summary: Existing source/proposal/acceptance/preimage/history/schema/inventory/capture/publication
+    protections remain; independent late drift and completed replay checks corroborate
+    structural retention.
+- assessment_id: tests
+  area: completeness
+  topic: Exact appended test coverage and independent challenge
+  outcome: concern
+  target_ids:
+  - native-owner-tests
+  evidence_ids:
+  - tests
+  - exact-static
+  - technical-final
+  - owner-tests
+  - reductions
+  - adversarial-final
+  - filed-retirement-regression
+  - regression-technical
+  - synthetic-retirement-counterexample
+  summary: The old42 ASTs and121 passing tests remain verified, but the appended tests
+    omit valid existing UNMAPPED-to-REJECTED retirement and therefore miss a real
+    regression.
+- assessment_id: scope-retention
+  area: scope
+  topic: Scientific holds and capability versus integration authority
+  outcome: supported
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - issue1251
+  - issue1252
+  - w08-findings
+  - actual-records
+  - author-failures
+  summary: Nickel1050, Bacto representative, rejected-owner science, TSB collision
+    and Angust relocation remain explicit. Earlier W08 findings are context, not silently
+    regraded scientific approvals.
+- assessment_id: first-retirement-regression
+  area: representation
+  topic: New rejection versus maintenance of an already rejected owner
+  outcome: concern
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  evidence_ids:
+  - filed-retirement-regression
+  - original-retirement-bindings
+  - regression-technical
+  - regression-adversarial
+  - synthetic-retirement-counterexample
+  - coordinator-failed-cohort
+  summary: The exactd691 implementation is unacceptable until a bounded repair restores
+    previously supported genuine unmapped retirement without weakening existing-tombstone
+    guards.
+  details: Both original actual payloads are W03-authored and are used only to demonstrate
+    code behavior. Full synthetic prepare refusal removes the possibility that the
+    actual record-stage regression is solely caused by unrelated cohort state. No
+    actual full933 campaign prepare/apply is claimed.
+findings:
+- finding_id: W03-NATIVE-1252-RETIREMENT-REGRESSION
+  issue_key: MIM-NATIVE-1252-UNMAPPED-RETIREMENT-REGRESSION
+  category: representation
+  severity: major
+  status: open
+  certainty: confirmed
+  title: First retirement of an existing unmapped owner is blocked by the new rejected-maintenance
+    guard
+  description: At exactd691, _validate_records lines760-767 enter the REJECTED branch
+    whenever old or new status is REJECTED, then line764 requires both statuses REJECTED.
+    This blocks real edit operations preserving same unmapped owner path, identifier,
+    preferred name and history while changing UNMAPPED to REJECTED. The unchanged
+    parent function accepts both original W03 polymer retirements against the full2956-owner
+    baseline. A separate authenticated synthetic plan passes _load but d691 prepare
+    refuses with Rejected owner requires same-path, same-key rejected maintenance.
+    This is already filed under1252 comment6720840145; no duplicate issue is requested.
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  field_paths:
+  - _validate_records:760-767
+  - tests/test_campaign_owner_apply.py:995-1257 missing valid UNMAPPED-to-REJECTED
+    positive
+  evidence_ids:
+  - filed-retirement-regression
+  - original-retirement-bindings
+  - regression-technical
+  - regression-adversarial
+  - synthetic-retirement-counterexample
+  rule_id: issue1252-comment6720840145
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/curate/campaign_owner_apply.py
+    role: maintained_operator
+  - repository: CultureBotAI/MediaIngredientMech
+    path: tests/test_campaign_owner_apply.py
+    role: maintained_regression_tests
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145
+  tags:
+  - already-filed
+  - capability-regression
+  - d691-not-accepted
+  - no-source-self-approval
+actions:
+- action_id: restore-bounded-existing-unmapped-retirement
+  description: Separately authorize and implement a narrow path for genuine same-path
+    existing UNMAPPED-to-REJECTED retirement retaining identity/name, while keeping
+    existing REJECTED maintenance/revival/create/relocation and every ordinary provenance/schema/history/collision
+    guard. Do not expand unrelated status routes.
+  finding_ids:
+  - W03-NATIVE-1252-RETIREMENT-REGRESSION
+  target_ids:
+  - native-owner-operator
+  - native-owner-tests
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/curate/campaign_owner_apply.py
+    role: maintained_operator
+  - repository: CultureBotAI/MediaIngredientMech
+    path: tests/test_campaign_owner_apply.py
+    role: maintained_regression_tests
+  acceptance_checks:
+  - Separate independent review of the exact repaired head; no approval transferred
+    from this rejected d691 review.
+  - Real prepare, enabled private application and completed-verifier parity for valid
+    samepath unmapped retirement, with original published before/payload bindings
+    and substantive history.
+  - Negative wrong kind, wrong path, unknown/stale preimage, altered history, identity/name
+    mutation, new rejected create, revival and relocation must retain precise native
+    refusals and no operator writes.
+  - Retain collision reductions and surviving-pair invariants, existing rejected maintenance,
+    original safety suite and publisher guards.
+  - Rerun the same full933 diagnostic cohort with no silent removal of the two retirements;
+    any remaining refusal stays explicit. This still does not itself grant complete
+    campaign/application/scientific approval.
+  - Normalization and scientific assessment of W03-authored source payloads remain
+    distinct and independently reviewed.
+limitations:
+- This is CODE review with scientific_review:false. No source-case, whole-owner, role,
+  supported export, release or maintained application approval follows.
+- The source is the exact d691 Git commit, not any later integration HEAD. Live remote
+  observations apply only to their captured times.
+- Independent prepare/apply/completed replay occurred only in synthetic private fixture
+  repositories. Their acceptance files and fixture Git heads are not actual campaign
+  acceptance or publication.
+- Actual2956-catalog probes execute _validate_records only; no claim of complete actual
+  campaign prepare/apply. Thirteen independently executed calls are separate from
+  the author14 reported probes.
+- All prior scientific holds remain. Genuine TSB collision and samepath Angust refusal
+  are expected; explicit demotion design is outside this commit.
+- Only2 focused publisher tests ran;116 publisher tests were deselected. No extra
+  whole-repository QC or provider research was run.
+- The original W08 manifest was fully rehashed at its original root. w08-context holds
+  selected exact copies and the captured original manifest, not a portable copy of
+  all2231 members.
+- Author failed drafts, root intake mistakes, publisher missing-receipt-maker setup
+  failure and adversarial membership followup NameError remain preserved with attribution;
+  none is hidden or counted as a final passing result.
+- Private pair persistence is authorized by this task. Native validation/render/currentness/parse
+  APIs ran; canonical reviews/structured and all source/I/J/worker branches remain
+  untouched.
+- No GitHub issue mutation or automatic closure is performed. Root controls filing/deduplication
+  and final application decisions.
+- This addendum explicitly supersedes the earlier overall pass for the same exactd691
+  targets. Earlier passing test/probe results remain correct only within their recorded
+  cases and cannot override the known regression.
+- I is mutable while a separate fix is developed. No current or future operator bytes
+  were inspected for this addendum; native source rechecks use committed d691 Git
+  blobs only.
+- W03 authored the two actual source proposals. Their identity/name/path/history facts
+  are code-counterexample bindings, not independent scientific self-approval.
+- The coordinator serialization successors have equal parsed objects in the diagnostic
+  but await independent normalization review; this packet grants none.
+- The full933-operation coordinator diagnostic failed in every reordered call. Traversal
+  of the other931 per-record checks is not a successful full prepare or source-application
+  approval.
+notes:
+- Known major regression is already filed under1252 comment6720840145. Root controls
+  issue disposition; no duplicate GitHub mutation or fix is performed here.
+- 'Both exact target IDs of the prior native pair are retained. No fabricated prior
+  finding occurrence: v1 had findings:[]; the new regression is distinct from earlier
+  W08 capability findings.'
+- Earlier positive checks are retained from their exact same-head executed evidence
+  rather than rerun unnecessarily; they cannot override the failed newly required
+  retirement check.
+- The earlier native pair and assembly manifest were rehashed and preserved unchanged.
+  Its overall acceptance is superseded, not its empirical bounded positive outputs.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/pull/1205
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1251
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1251#issuecomment-6720714388
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1252
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145
+tags:
+- code-review
+- native-boundary
+- independent
+- no-scientific-approval
+- no-application-approval
+- superseding-review
+- known-regression
+- needs-curation
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T112010Z-w03-native-boundary-final-head-independent
+  relationship: supersedes overall technical verdict for the identical two-target
+    set; earlier positive case results preserved as bounded historical evidence

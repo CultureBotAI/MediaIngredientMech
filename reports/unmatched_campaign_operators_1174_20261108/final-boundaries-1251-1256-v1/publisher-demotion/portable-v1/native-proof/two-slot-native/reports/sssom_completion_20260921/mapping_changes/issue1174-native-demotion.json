@@ -1,0 +1,78 @@
+{
+  "added_rows": 0,
+  "after_row_count": 1,
+  "after_sha256": "5af46f2c5b98c92082ab798f42349165795102bf908dd1303582febf2972c02c",
+  "approval": "NONE: all touched rows and changed owners require separate scientific review",
+  "batch": "issue1174-native-demotion",
+  "before_row_count": 3,
+  "before_sha256": "a540b1b5d9ff0b971760153ee5d75078217226e4e5fbf846461e3fecdc807a58",
+  "changed_rows": 0,
+  "changes": [
+    {
+      "after": null,
+      "after_position": null,
+      "before": {
+        "comment": "retained",
+        "confidence": "0.9",
+        "mapping_date": "2026-10-01",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "object_id": "CHEBI:1",
+        "object_label": "Existing",
+        "object_source": "CHEBI",
+        "other": "",
+        "predicate_id": "skos:exactMatch",
+        "source": "historic",
+        "subject_id": "MIM:Existing",
+        "subject_label": "Existing",
+        "validation_method": "old stamp"
+      },
+      "before_position": 1,
+      "kind": "removed"
+    },
+    {
+      "after": null,
+      "after_position": null,
+      "before": {
+        "comment": "retained",
+        "confidence": "0.9",
+        "mapping_date": "2026-10-01",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "object_id": "kgmicrobe.compound:existing",
+        "object_label": "Existing",
+        "object_source": "kgmicrobe.compound",
+        "other": "",
+        "predicate_id": "skos:exactMatch",
+        "source": "historic",
+        "subject_id": "MIM:Existing",
+        "subject_label": "Existing",
+        "validation_method": "old stamp"
+      },
+      "before_position": 2,
+      "kind": "removed"
+    }
+  ],
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1174",
+  "position_map": [
+    null,
+    null,
+    1
+  ],
+  "records": [
+    {
+      "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+      "before_source_record": "data/ingredients/mapped/Existing.yaml",
+      "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "change": "Fixture source change with explicit paths",
+      "shape": "demotion",
+      "source_record": "data/ingredients/unmapped/Existing.yaml",
+      "verification": "Schema and exact preimage; no scientific approval"
+    }
+  ],
+  "removed_rows": 2,
+  "schema_version": 1,
+  "scope": "Private real source/generation/publication integration; no scientific approval",
+  "sequence": 1,
+  "touched_subjects": [
+    "MIM:Existing"
+  ]
+}

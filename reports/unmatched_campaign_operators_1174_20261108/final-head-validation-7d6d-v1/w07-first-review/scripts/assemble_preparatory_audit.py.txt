@@ -1,0 +1,32 @@
+from pathlib import Path
+import json,re,collections,hashlib,datetime,subprocess
+O=Path(__file__).resolve().parents[1];W=O.parents[1];C=W.parents[2];K=C/'integration/release-worktree'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+def put(p,x):
+ q=O/p;assert not q.exists();q.parent.mkdir(parents=True,exist_ok=True);q.write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n')
+log=O/'inputs/author-checks/combined-final-v1/run.log';text=log.read_text();headers=list(re.finditer(r'^_+ .* _+$',text,re.M));assert len(headers)==11
+fails=[]
+for i,m in enumerate(headers):
+ block=text[m.start():headers[i+1].start() if i+1<len(headers) else len(text)];name=m.group(0).strip('_ ')
+ if name.startswith('test_1195_preloaded_public_dependencies'):
+  assert 'scripts/record_review.py' in block and 'FileNotFoundError' in block
+  cause='Missing scripts/record_review.py in unchanged isolated child fixture before stale-code assertion; schema dependency also absent from its copied set.';issue='https://github.com/CultureBotAI/MediaIngredientMech/issues/1259#issuecomment-6722193253'
+ else:
+  assert name=='test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets]' and 'completed review has explicitly selected targets left unreviewed' in block
+  cause='Native ReviewError occurs at the correct earlier native schema boundary, outside the new negative fixture expected-refusal assertion.';issue='https://github.com/CultureBotAI/MediaIngredientMech/issues/1259#issuecomment-6722200668'
+ fails.append(dict(test=name,cause=cause,issue=issue,block_sha256=hashlib.sha256(block.encode()).hexdigest(),log_line=text[:m.start()].count('\n')+1))
+ids=[l for l in (O/'validation/collection-v1/stdout.log').read_text().splitlines() if l.startswith('tests/') and '::' in l];assert len(ids)==630 and len(set(ids))==630
+counts=collections.Counter(l.split('::')[0] for l in ids);assert counts['tests/test_campaign_demotion_integration.py']==20 and counts['tests/test_campaign_suppression_integration.py']==10
+r=json.loads((O/'inputs/author-checks/combined-final-v1/run.json').read_text());assert r['before']==r['after'] and r['exit_code']==1 and '11 failed, 619 passed' in text
+affected=json.loads((O/'inputs/author-checks/fixture-corrections-affected-v1/run.json').read_text());assert affected['exit_code']==0 and affected['before']==affected['after'] and '13 passed' in (O/'inputs/author-checks/fixture-corrections-affected-v1/run.log').read_text()
+assert all('integration.py' not in f['test'] for f in fails)
+put('validation/test-execution-accounting.json',dict(at=now(),independent_collection=dict(cases=630,counts=dict(counts),native_integration_nodeids=[x for x in ids if '_integration.py' in x],scope='Collection does not execute fixtures.'),original_combined=dict(exit_code=1,passed=619,failed=11,skipped=0,source_test_before_after_equal=True,failures=fails,receipt_sha256=sha(O/'inputs/author-checks/combined-final-v1/run.json'),log_sha256=sha(log)),completed_native_execution=dict(original_cases=20,new_cases=10,passed=30,failed=0,skipped=0,evidence='All630 collected cases executed under original complete combined run; no integration failures or skips and exact final summary. Additional independent read-only completed native replay verifies genuine27/28/28/29 receipts.',limits='This is original frozen-run execution, not a new final-committed-head full suite or campaign application.'),affected_after_fixture_correction=dict(passed=13,failed=0,skipped=0,receipt_sha256=sha(O/'inputs/author-checks/fixture-corrections-affected-v1/run.json')),scope='Do not relabel original combined run PASS or add619+13 into a fictional632-case suite. Two affected cases were already passing in the original run. Final root full QC/suite remains a separate actual receipt requirement.'))
+contracts=[]
+base='reports/unmatched_campaign_operators_1174_20261108/'
+for rel in [base+'independent-review/source-author-v1/README.md',base+'independent-review/source-author-v1/interface.json',base+'independent-review/source-author-v2/README.md',base+'independent-review/source-author-v2/interface.json',base+'final-boundaries-1251-1256-v1/source-demotion/INTERFACE.md',base+'independent-review/publisher-author/HANDOFF.json']:
+ p=K/rel;q=O/'inputs/contracts-history'/rel;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes());contracts.append(dict(path=rel,sha256=sha(q),source=str(p),accessed_at=now(),scope='Historical interface contract; current source code and later filed1251-1259 decisions remain authoritative for exact implemented behavior.'))
+put('inputs/contracts-history/index.json',dict(files=contracts))
+put('validation/root-read-probes.json',dict(recorded_at=now(),failed_probes=[dict(probe='Sandbox gh api issues1251-1259 bodies/comments',result='18 read requests failed connection; original empty stdout/error files retained underinputs/issues. Successful escalated read-only capture separately retained inputs/issues-live.'),dict(probe='Publisher author README/HANDOFF.md guessed path',result='Directory listing showed HANDOFF.json; attempted README read raised FileNotFoundError. Actual HANDOFF.json read next. No absence inference or input change.')],write_boundary='Only private review output; no source/helperfix, Git or GitHub write, native source application or publication executed.'))
+pending=C/'preflight/campaign-suppressions1259-commit-v1/receipt.json'
+put('validation/final-head-prerequisite-preparation.json',dict(checked_at=now(),required_receipt=str(pending),exists=pending.exists(),observed_K_head=subprocess.check_output(['git','-C',str(K),'rev-parse','HEAD']).decode().strip(),status='FINAL_HEAD_PENDING' if not pending.exists() else 'RECEIPT_ARRIVED_REQUIRES_EXACT_VERIFICATION',scope='No guessed final head, parent, remote equality or final code approval.'))
+print(json.dumps(dict(collected=630,original_failed=11,original_passed=619,native_integrations=30,affected_fixed_cases=13,final_receipt_present=pending.exists())))

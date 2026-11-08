@@ -1,0 +1,23 @@
+from pathlib import Path
+import ast,hashlib,json
+W=Path.cwd();P=W/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'technical';OLD=W/'.temp/final-21061-independent-v1/frozen/repo';SIX=W/'.temp/combined-16c-independent-v1/frozen/repo'
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def nodes(p):return {n.name:n for n in ast.parse(p.read_bytes()).body if isinstance(n,(ast.FunctionDef,ast.ClassDef))}
+def a(n):return ast.dump(n,include_attributes=False)
+def count(p):
+ rows=[]
+ for n in nodes(p).values():
+  if not n.name.startswith('test_'):continue
+  c=1;params=[]
+  for d in n.decorator_list:
+   if isinstance(d,ast.Call) and isinstance(d.func,ast.Attribute) and d.func.attr=='parametrize':
+    assert isinstance(d.args[1],(ast.List,ast.Tuple));c*=len(d.args[1].elts);params.append(ast.unparse(d))
+  rows.append({'name':n.name,'cases':c,'assertions':sum(isinstance(x,ast.Assert) for x in ast.walk(n)),'parameters':params})
+ return rows
+src='src/mediaingredientmech/curate/campaign_owner_apply.py';test='tests/test_campaign_owner_apply.py';oldsrc,newsrc=nodes(OLD/src),nodes(F/src);oldt,newt=nodes(OLD/test),nodes(F/test)
+rows=count(F/test);oldrows=count(OLD/test);newrows=[r for r in rows if r['name'] not in oldt]
+r={'revision':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','source_sha256':h(F/src),'tests_sha256':h(F/test),'source_changed_nodes':[n for n in oldsrc if a(oldsrc[n])!=a(newsrc[n])],'source_removed_nodes':sorted(set(oldsrc)-set(newsrc)),'source_added_nodes':sorted(set(newsrc)-set(oldsrc)),'verify_completed_AST_unchanged':a(oldsrc['verify_completed'])==a(newsrc['verify_completed']),'tests_21061_prefix_bytes':len((OLD/test).read_bytes()),'tests_21061_exact_byte_prefix':(F/test).read_bytes().startswith((OLD/test).read_bytes()),'tests_16c_prefix_bytes':len((SIX/test).read_bytes()),'tests_16c_exact_byte_prefix':(F/test).read_bytes().startswith((SIX/test).read_bytes()),'all_21061_test_helper_AST_preserved':all(n in newt and a(v)==a(newt[n]) for n,v in oldt.items()),'old_function_class_nodes':len(oldt),'new_function_class_nodes':len(newt),'old_source_cases':sum(r['cases'] for r in oldrows),'new_added_cases':sum(r['cases'] for r in newrows),'total_source_cases':sum(r['cases'] for r in rows),'old_assertions':sum(r['assertions'] for r in oldrows),'new_added_assertions':sum(r['assertions'] for r in newrows),'total_assertions':sum(r['assertions'] for r in rows),'new_test_functions':newrows,'all_test_rows':rows,'method':'Direct exact-byte prefix comparison and complete top-level function/class AST comparison, with static parameter-list cardinality (not pytest execution). Entire source operator reread. All appended test bodies read; unchanged prior whole-test review is preserved by exact prefix and every function/helper AST, with authentic native regression probes separately rerun.'}
+assert r['source_changed_nodes']==['_check_mutation_git_state'] and not r['source_removed_nodes'] and not r['source_added_nodes']
+assert r['tests_21061_exact_byte_prefix'] and r['tests_16c_exact_byte_prefix'] and r['all_21061_test_helper_AST_preserved']
+assert r['old_source_cases']==301 and r['new_added_cases']==53 and r['total_source_cases']==354
+(O/'static-review.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps({k:v for k,v in r.items() if k not in ['new_test_functions','all_test_rows']}))

@@ -1,0 +1,27 @@
+--- a/tests/test_campaign_publication.py
++++ b/tests/test_campaign_publication.py
+@@ -1260,6 +1260,8 @@
+     for name in (
+         "scripts/apply_unmatched_campaign_owners.py",
+         "scripts/validate_sssom_invariants.py",
++        "scripts/record_review.py",
++        "schema/record_review.yaml",
+         "MAPPING_SEMANTICS.md",
+         "uv.lock",
+         "tests/test_campaign_publication.py",
+--- a/tests/test_campaign_suppressions.py
++++ b/tests/test_campaign_suppressions.py
+@@ -328,6 +328,13 @@
+         review["scope"]["coverage"] = "partial"
+         review["scope"]["reviewed_target_ids"] = review["scope"]["reviewed_target_ids"][:-1]
+     module = c._BOUND_NATIVE["campaign_native_record_review"]
++    if fault == "partial-reviewed-targets":
++        with pytest.raises(
++            module.ReviewError,
++            match="completed review has explicitly selected targets left unreviewed",
++        ):
++            module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
++        return
+     module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+     selection["transition_review"]["yaml"] = put(
+         root, "reports/actual-review/review.yaml", module._dump_document(review).encode()

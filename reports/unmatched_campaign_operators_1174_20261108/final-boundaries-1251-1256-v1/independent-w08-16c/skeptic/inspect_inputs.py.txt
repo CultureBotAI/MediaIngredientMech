@@ -1,0 +1,68 @@
+import ast
+import datetime
+import hashlib
+import json
+from pathlib import Path
+
+P = Path(__file__).resolve().parent
+F = P.parent / 'frozen/repo'
+C = Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107')
+A = C / 'integration/campaign-demotion-publisher-v1/portable-v1'
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+checks = []
+inputs = {}
+def bind(path):
+    inputs[str(path)] = sha(path)
+    return path.read_bytes()
+
+archive = json.loads(bind(F.parent / 'ARCHIVE.json'))
+manifest = json.loads(bind(A / 'MANIFEST.json'))
+for path, expected in manifest['files'].items():
+    actual = sha(A / path)
+    checks.append({'scope': 'portable-manifest', 'path': path, 'expected': expected,
+                   'actual': actual, 'pass': expected == actual})
+
+asts = {}
+for name in ('src/mediaingredientmech/campaign_publication.py',
+             'tests/test_campaign_publication.py', 'tests/test_campaign_demotion_integration.py'):
+    final = bind(F / name)
+    checks.append({'scope': 'published-equals-author-after', 'path': name,
+                   'pass': final == bind(A / 'after' / name)})
+    before = A / 'before' / name
+    if before.exists():
+        previous = bind(before)
+        funcs = lambda b: {n.name: n for n in ast.parse(b).body
+                           if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))}
+        left, right = funcs(previous), funcs(final)
+        rows = []
+        for fn, node in left.items():
+            equal = fn in right and ast.dump(node, include_attributes=False) == ast.dump(right[fn], include_attributes=False)
+            old_asserts = [ast.dump(a, include_attributes=False) for a in ast.walk(node) if isinstance(a, ast.Assert)]
+            new_asserts = [ast.dump(a, include_attributes=False) for a in ast.walk(right[fn]) if isinstance(a, ast.Assert)] if fn in right else []
+            rows.append({'function': fn, 'ast_equal': equal, 'assertions_equal': old_asserts == new_asserts,
+                         'before_assertions':len(old_asserts), 'after_assertions':len(new_asserts)})
+        asts[name] = {'previous_functions':len(left), 'final_functions':len(right),
+                     'new_functions': sorted(set(right)-set(left)), 'functions':rows}
+        if name.startswith('tests/'):
+            assert all(r['ast_equal'] and r['assertions_equal'] for r in rows)
+
+for name in ('src/mediaingredientmech/curate/campaign_owner_apply.py',
+             'src/mediaingredientmech/curate/publication_guard.py',
+             'src/mediaingredientmech/validation/mapping_change_receipts.py',
+             'src/mediaingredientmech/schema/mediaingredientmech.yaml',
+             'tests/test_campaign_owner_apply.py','MAPPING_SEMANTICS.md','justfile'):
+    bind(F/name)
+bind(A/'README.md'); bind(A/'RESULTS.json')
+assert all(c['pass'] for c in checks)
+result={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'status':'PASS','revision':archive['revision'],'input_hashes':inputs,
+        'checks':checks,'ast_comparison':asts,
+        'scope':'Full publication module and every publication/integration test inspected; source transition/interface inspected. No native suite rerun.'}
+(P/'input-inspection.json').write_text(json.dumps(result,indent=2)+'\n')
+(P/'progress.json').write_text(json.dumps({'status':'ADVERSARIAL_PROBES_IN_PROGRESS','revision':archive['revision'],
+  'full_publisher_and_tests_read':True,'preserved_old_test_functions':len(asts['tests/test_campaign_publication.py']['functions']),
+  'known_open_finding':'REJECTION-CODE-001 / #1255 is inherited; no approval of exact16c application'},indent=2)+'\n')
+print(json.dumps({'status':'PASS','checks':len(checks),'input_hashes':len(inputs),'ast_comparison':{k:{x:v for x,v in d.items() if x!='functions'} for k,d in asts.items()}}))

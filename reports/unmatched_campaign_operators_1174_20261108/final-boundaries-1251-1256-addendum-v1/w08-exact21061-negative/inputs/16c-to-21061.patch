@@ -1,0 +1,753 @@
+diff --git a/src/mediaingredientmech/campaign_publication.py b/src/mediaingredientmech/campaign_publication.py
+index da3091286..ab8a94a32 100644
+--- a/src/mediaingredientmech/campaign_publication.py
++++ b/src/mediaingredientmech/campaign_publication.py
+@@ -921,6 +921,22 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
+     for key in ("owner_plan", "owner_receipt"):
+         capture.ref(plan[key])
+     owner_proof = _owner_proof(root, plan)
++    if not completed:
++        # #1256: source application and live publication are one uncommitted
++        # transaction. Historical standalone verification may follow commits.
++        baseline_commit = owner_proof["baseline_commit"]
++
++        def mutation_head_recheck() -> None:
++            current_head = subprocess.check_output(
++                ["git", "rev-parse", "--verify", "HEAD"], cwd=root, text=True
++            ).strip()
++            require(
++                current_head == baseline_commit,
++                "live publication HEAD changed from source baseline",
++            )
++
++        mutation_head_recheck()
++        capture.checks.append(mutation_head_recheck)
+     require(
+         owner_proof["plan_sha256"] == plan["owner_plan"]["sha256"]
+         and owner_proof["receipt_sha256"] == plan["owner_receipt"]["sha256"],
+diff --git a/src/mediaingredientmech/curate/campaign_owner_apply.py b/src/mediaingredientmech/curate/campaign_owner_apply.py
+index 44c79ad16..98ff0b1e2 100644
+--- a/src/mediaingredientmech/curate/campaign_owner_apply.py
++++ b/src/mediaingredientmech/curate/campaign_owner_apply.py
+@@ -953,6 +953,29 @@ def prepare(root: Path, plan_path: Path, acceptance_path: Path) -> Prepared:
+     return result
+ 
+ 
++def _check_mutation_git_state(prepared: Prepared):
++    """#1256: pin live transaction HEAD and scope, not later historical replay."""
++    root, baseline = prepared.root, prepared.plan["baseline_commit"]
++    require(
++        git(root, "rev-parse", "HEAD").decode().strip() == baseline,
++        "Integration HEAD changed during source application",
++    )
++    # #1255: names are literal filesystem paths, never quoted/newline text.
++    changed = git(root, "diff", "--name-only", "-z", baseline, "--").split(b"\0")
++    require(changed[-1] == b"" and all(changed[:-1]), "Malformed Git path listing")
++    allowed = {e["source_record"] for e in prepared.operations} | {
++        e["before_source_record"] for e in prepared.operations if e["before_source_record"]
++    }
++    require(
++        {os.fsdecode(path) for path in changed[:-1]} <= allowed,
++        "Unrelated tracked file changed",
++    )
++    require(
++        git(root, "rev-parse", "HEAD").decode().strip() == baseline,
++        "Integration HEAD changed during source application",
++    )
++
++
+ def _recheck(prepared: Prepared, transition=None):
+     _check_loaded_producers()
+     native_members = set(receipt_paths(prepared.root))
+@@ -987,6 +1010,7 @@ def _recheck(prepared: Prepared, transition=None):
+         frozen.verify()
+     for frozen in prepared.protected.values():
+         frozen.verify()
++    _check_mutation_git_state(prepared)
+ 
+ 
+ def _new_owner(root: Path, name: str, raw: bytes, recheck):
+@@ -1254,14 +1278,7 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
+                 hashes(inventory(root)) == prepared.after_inventory,
+                 "Final complete inventory differs",
+             )
+-            allowed = {e["source_record"] for e in prepared.operations} | {
+-                e["before_source_record"] for e in prepared.operations if e["before_source_record"]
+-            }
+-            require(
+-                set(git(root, "diff", "--name-only", "HEAD", "--").decode().splitlines())
+-                <= allowed,
+-                "Unrelated tracked file changed",
+-            )
++            _check_mutation_git_state(prepared)
+             result["state"] = "complete"
+             reserved()
+             receipt.seek(0)
+diff --git a/tests/test_campaign_demotion_integration.py b/tests/test_campaign_demotion_integration.py
+index c628e5dce..528d4cda3 100644
+--- a/tests/test_campaign_demotion_integration.py
++++ b/tests/test_campaign_demotion_integration.py
+@@ -251,6 +251,7 @@ def prepare_native_case(root, historical_root=None):
+         "MEDIAINGREDIENTMECH_ROOT": str(root),
+         "KGMICROBE_ROOT": str(kg),
+         "TMPDIR": str(temporary),
++        "OPENCLAW_WORKSPACE": str(root / "private-openclaw-workspace"),
+         "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+     }
+     run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+@@ -262,7 +263,12 @@ def prepare_native_case(root, historical_root=None):
+             "returncode": run.returncode,
+             "environment": {
+                 key: environment[key]
+-                for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
++                for key in (
++                    "MEDIAINGREDIENTMECH_ROOT",
++                    "KGMICROBE_ROOT",
++                    "TMPDIR",
++                    "OPENCLAW_WORKSPACE",
++                )
+             },
+         },
+     )
+@@ -555,3 +561,83 @@ def test_real_source_generation_publication_demotion(tmp_path):
+         (tmp_path / publication.SOURCE).read_bytes()
+     )
+     assert {k: v for k, v in current_policy.items() if k != publication.UPDATE} == old_policy
++
++
++@pytest.mark.parametrize("unrelated", [False, True])
++def test_real_1256_commit_between_source_generation_and_publication_refused(tmp_path, unrelated):
++    source, plan, path, destination, _ = prepare_native_case(tmp_path)
++    mapping = fixture_module("test_campaign_publication")
++    before = {p: (tmp_path / p).read_bytes() for p in (publication.SOURCE, publication.POLICY)}
++    mapping.commit_publication_boundary(tmp_path, unrelated=unrelated)
++    # Completion remains a historical source proof; it is the live publisher
++    # transaction which must refuse this intervening commit.
++    assert source.owner.verify_completed(
++        tmp_path, tmp_path / "plan.json", tmp_path / "source-receipt/application.json"
++    )
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        publication.publish(tmp_path, path, destination, apply=True)
++    assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())
++    assert not list(destination.iterdir())
++    assert native.verify_mapping_chain(tmp_path)["receipt_inputs"] == plan["receipt_prefix"]
++
++
++@pytest.mark.parametrize("phase", ["reserved", "before-completion", "after-completion"])
++def test_real_1256_late_commit_rechecks_actual_source_generation_publication(
++    tmp_path, monkeypatch, phase
++):
++    _, plan, path, destination, _ = prepare_native_case(tmp_path)
++    mapping = fixture_module("test_campaign_publication")
++    before = {p: (tmp_path / p).read_bytes() for p in (publication.SOURCE, publication.POLICY)}
++    entered = []
++
++    def change_head():
++        entered.append(phase)
++        mapping.commit_publication_boundary(tmp_path)
++
++    if phase == "reserved":
++        original = publication._reserve
++
++        @contextmanager
++        def reservation(paths):
++            with original(paths) as handles:
++                change_head()
++                yield handles
++
++        monkeypatch.setattr(publication, "_reserve", reservation)
++    else:
++        original = publication.finish_receipt
++
++        def completion(*args, **kwargs):
++            if phase == "before-completion":
++                change_head()
++            result = original(*args, **kwargs)
++            if phase == "after-completion":
++                change_head()
++            return result
++
++        monkeypatch.setattr(publication, "finish_receipt", completion)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        publication.publish(tmp_path, path, destination, apply=True)
++    assert entered == [phase]
++    if phase == "reserved":
++        assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())
++    for p in [
++        destination / "publication.json",
++        tmp_path / native.RECEIPTS_DIR / (plan["batch"] + ".json"),
++    ]:
++        assert not p.exists() or p.read_bytes() == b""
++
++
++def test_real_1256_historical_completed_validation_after_commit(tmp_path):
++    source, _, path, destination, _ = prepare_native_case(tmp_path)
++    mapping = fixture_module("test_campaign_publication")
++    # Source synchronization may create derived files without committing.
++    source.put(tmp_path, "data/curated/fixture-derived.yaml", b"fixture: derived sync\n")
++    assert publication.publish(tmp_path, path, destination, apply=True)["status"] == "complete"
++    before = {p: (tmp_path / p).read_bytes() for p in (publication.SOURCE, publication.POLICY)}
++    mapping.commit_publication_boundary(tmp_path, unrelated=True)
++    assert publication.validate(tmp_path, path)["status"] == "verified"
++    assert source.owner.verify_completed(
++        tmp_path, tmp_path / "plan.json", tmp_path / "source-receipt/application.json"
++    )
++    assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())
+diff --git a/tests/test_campaign_owner_apply.py b/tests/test_campaign_owner_apply.py
+index ee4d1252a..fbf16eaa6 100644
+--- a/tests/test_campaign_owner_apply.py
++++ b/tests/test_campaign_owner_apply.py
+@@ -1945,3 +1945,374 @@ def test_741_demotion_completed_recovery_alias_is_refused(tmp_path, role):
+         owner.verify_completed(
+             tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+         )
++
++
++@pytest.mark.parametrize("quote_path", ["true", "false"])
++@pytest.mark.parametrize(
++    "name",
++    [
++        "Poly-ß-hydroxybutyric_Acid.yaml",
++        "With space.yaml",
++        "Literal\ttab.yaml",
++        "Literal\nnewline.yaml",
++        "Literal\rcarriage.yaml",
++        'Literal"quote.yaml',
++    ],
++)
++def test_1255_literal_git_paths_complete_rejection(tmp_path, monkeypatch, quote_path, name):
++    """#1255: real Git quoting never changes the approved filesystem path."""
++    source = "data/ingredients/unmapped/" + name
++    monkeypatch.setitem(globals(), "OLD", source)
++    plan = unmapped_rejection_case(tmp_path)
++    run_git(tmp_path, "config", "core.quotePath", quote_path)
++    before = owner.hashes(owner.inventory(tmp_path))
++    original = (tmp_path / source).read_bytes()
++    ready = prepare(tmp_path)
++    assert owner.hashes(owner.inventory(tmp_path)) == before
++    result = owner.apply(ready, tmp_path / "receipt", enabled=True)
++    proof = owner.verify_completed(
++        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++    )
++    assert result["state"] == "complete"
++    assert proof["after_inventory"] == ready.after_inventory
++    assert proof["records"][0]["before_source_record"] == source
++    assert proof["records"][0]["source_record"] == source
++    assert (tmp_path / source).read_bytes() == (
++        tmp_path / plan["records"][0]["after_capture"]["path"]
++    ).read_bytes()
++    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == original
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++    assert all(
++        owner.digest((tmp_path / path).read_bytes()) == digest
++        for path, digest in before.items()
++        if path != source
++    )
++    assert owner.git(tmp_path, "diff", "--name-only", "-z", "HEAD", "--") == (
++        os.fsencode(source) + b"\0"
++    )
++
++
++@pytest.mark.parametrize("quote_path", ["true", "false"])
++@pytest.mark.parametrize(
++    "name", ["unrelated.txt", "unrelated_ß.txt", "unrelated\nfile.txt", "unrelated\tfile.txt"]
++)
++def test_1255_unrelated_literal_tracked_file_still_refused(tmp_path, monkeypatch, quote_path, name):
++    """#1255: literal parsing must retain the complete allowed-path boundary."""
++    monkeypatch.setitem(globals(), "OLD", "data/ingredients/unmapped/Poly-ß.yaml")
++    plan = unmapped_rejection_case(tmp_path)
++    unrelated = "notes/" + name
++    put(tmp_path, unrelated, b"original unrelated bytes\n")
++    run_git(tmp_path, "add", "--", unrelated)
++    run_git(
++        tmp_path,
++        "-c",
++        "user.email=fixture@example.invalid",
++        "-c",
++        "user.name=Fixture",
++        "commit",
++        "-qm",
++        "#1255 unrelated tracked-path fixture",
++    )
++    plan["baseline_commit"] = run_git(tmp_path, "rev-parse", "HEAD")
++    save_contract(tmp_path, plan)
++    run_git(tmp_path, "config", "core.quotePath", quote_path)
++    ready = prepare(tmp_path)
++    before = ready.before[OLD].content
++    put(tmp_path, unrelated, b"unapproved concurrent change\n")
++    with pytest.raises(ValueError, match="Unrelated tracked file changed"):
++        owner.apply(ready, tmp_path / "receipt", enabled=True)
++    # #1256 detects already-present scope drift before any owned write/reservation.
++    assert not (tmp_path / "receipt").exists()
++    assert (tmp_path / OLD).read_bytes() == before
++    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
++    assert (tmp_path / unrelated).read_bytes() == b"unapproved concurrent change\n"
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++
++
++@pytest.mark.parametrize("malformed", [b"unterminated", b"\0", b"name\0\0"])
++def test_1255_malformed_nul_listing_is_not_accepted(tmp_path, monkeypatch, malformed):
++    """#1255: a broken listing cannot silently become an empty allowed diff."""
++    plan = unmapped_rejection_case(tmp_path)
++    ready = prepare(tmp_path)
++    original_git = owner.git
++
++    def broken_git(root, *args):
++        # #1256 pins the comparison revision; the malformed-listing guard is unchanged.
++        if args == ("diff", "--name-only", "-z", plan["baseline_commit"], "--"):
++            return malformed
++        return original_git(root, *args)
++
++    monkeypatch.setattr(owner, "git", broken_git)
++    with pytest.raises(ValueError, match="Malformed Git path listing"):
++        owner.apply(ready, tmp_path / "receipt", enabled=True)
++    # #1256 invokes the unchanged listing guard before output reservation too.
++    assert not (tmp_path / "receipt").exists()
++    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
++
++
++def head_lifecycle_case(root, kind):
++    """#1256: select one real native shape without changing its original authority."""
++    if kind == "demote":
++        return demotion_case(root)
++    plan = setup(root)
++    plan["records"] = [entry for entry in plan["records"] if entry["kind"] == kind]
++    assert len(plan["records"]) == 1
++    repin(root, plan)
++    return plan
++
++
++def late_git_commit(root, unrelated=False):
++    """#1256: actual private Git commit, no mocked HEAD or native proof."""
++    if unrelated:
++        put(root, "notes/post-acceptance.txt", b"unrelated committed bytes\n")
++        run_git(root, "add", "--", "notes/post-acceptance.txt")
++    run_git(
++        root,
++        "-c",
++        "user.email=fixture@example.invalid",
++        "-c",
++        "user.name=Fixture",
++        "commit",
++        "--allow-empty",
++        "-qm",
++        "#1256 private lifecycle HEAD change",
++    )
++
++
++@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
++@pytest.mark.parametrize("unrelated", [False, True])
++@pytest.mark.parametrize("enabled", [False, True])
++def test_1256_late_head_refused_before_receipt_or_source_write(tmp_path, kind, unrelated, enabled):
++    """#1256: a prepared object cannot carry acceptance across a new commit."""
++    plan = head_lifecycle_case(tmp_path, kind)
++    ready = prepare(tmp_path)
++    before = owner.hashes(owner.inventory(tmp_path))
++    late_git_commit(tmp_path, unrelated)
++    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
++    with pytest.raises(ValueError, match="Integration HEAD changed during source application"):
++        owner.apply(ready, tmp_path / "receipt", enabled=enabled)
++    assert owner.hashes(owner.inventory(tmp_path)) == before
++    assert not (tmp_path / "receipt").exists()
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++
++
++@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
++@pytest.mark.parametrize("unrelated", [False, True])
++@pytest.mark.parametrize("boundary", ["before_write", "after_write", "final_receipt_flush"])
++def test_1256_head_drift_at_write_boundaries_invalidates_completion(
++    tmp_path, monkeypatch, kind, unrelated, boundary
++):
++    """#1256: real commits injected at native boundaries never yield success."""
++    plan = head_lifecycle_case(tmp_path, kind)
++    ready = prepare(tmp_path)
++    before = owner.hashes(owner.inventory(tmp_path))
++    fired = False
++
++    def commit_once():
++        nonlocal fired
++        assert not fired
++        fired = True
++        late_git_commit(tmp_path, unrelated)
++
++    if boundary == "final_receipt_flush":
++        finish = owner.finish_receipt
++
++        def changed_finish(handle, path, payload, recheck):
++            calls = 0
++
++            def check():
++                nonlocal calls
++                calls += 1
++                if calls == 2:
++                    commit_once()
++                recheck()
++
++            return finish(handle, path, payload, check)
++
++        monkeypatch.setattr(owner, "finish_receipt", changed_finish)
++    else:
++        name = "publish_validated" if kind == "edit" else "_new_owner"
++        writer = getattr(owner, name)
++
++        def changed_write(*args, **kwargs):
++            if boundary == "before_write":
++                commit_once()
++            result = writer(*args, **kwargs)
++            if boundary == "after_write":
++                commit_once()
++            return result
++
++        monkeypatch.setattr(owner, name, changed_write)
++    with pytest.raises(ValueError, match="Integration HEAD changed during source application"):
++        owner.apply(ready, tmp_path / "receipt", enabled=True)
++    assert fired
++    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
++    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
++    assert receipt["state"] == "failed" and receipt["recovery_required"]
++    assert receipt["baseline_commit"] == plan["baseline_commit"]
++    if boundary == "before_write":
++        assert owner.hashes(owner.inventory(tmp_path)) == before
++    else:
++        entry = plan["records"][0]
++        assert (tmp_path / entry["source_record"]).read_bytes() == ready.payloads[
++            entry["operation_id"]
++        ]
++    if plan["records"][0]["before_source_record"]:
++        source = plan["records"][0]["before_source_record"]
++        assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == ready.before[
++            source
++        ].content
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++    with pytest.raises(ValueError):
++        owner.verify_completed(
++            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++        )
++
++
++@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
++@pytest.mark.parametrize("unrelated", [False, True])
++def test_1256_valid_completed_history_survives_later_commits(tmp_path, kind, unrelated):
++    """#1256: transaction freshness is not an eternal historical HEAD lock."""
++    plan = head_lifecycle_case(tmp_path, kind)
++    ready = prepare(tmp_path)
++    owner.apply(ready, tmp_path / "receipt", enabled=True)
++    receipt_raw = (tmp_path / "receipt/application.json").read_bytes()
++    run_git(tmp_path, "add", "--", "data/ingredients")
++    late_git_commit(tmp_path, unrelated)
++    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
++    proof = owner.verify_completed(
++        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++    )
++    assert proof["baseline_commit"] == plan["baseline_commit"]
++    assert proof["after_inventory"] == ready.after_inventory
++    assert (tmp_path / "receipt/application.json").read_bytes() == receipt_raw
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++
++
++@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
++@pytest.mark.parametrize("fault", ["owner", "receipt"])
++def test_1256_historical_replay_still_refuses_changed_proof(tmp_path, kind, fault):
++    """#1256: allowing later commits does not relax current content checks."""
++    plan = head_lifecycle_case(tmp_path, kind)
++    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
++    run_git(tmp_path, "add", "--", "data/ingredients")
++    late_git_commit(tmp_path)
++    if fault == "owner":
++        path = tmp_path / plan["records"][0]["source_record"]
++        path.write_bytes(path.read_bytes() + b"# unauthorised later owner bytes\n")
++    else:
++        path = tmp_path / "receipt/application.json"
++        document = json.loads(path.read_bytes())
++        document["state"] = "failed"
++        put(tmp_path, str(path.relative_to(tmp_path)), document)
++    with pytest.raises(ValueError):
++        owner.verify_completed(
++            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++        )
++
++
++def test_1256_scope_diff_uses_accepted_baseline_with_literal_paths(tmp_path, monkeypatch):
++    """#1256 and #1255: capture actual Git argv without changing its result."""
++    plan = head_lifecycle_case(tmp_path, "edit")
++    original_git = owner.git
++    diffs = []
++
++    def record_git(root, *args):
++        if args[:3] == ("diff", "--name-only", "-z"):
++            diffs.append(args)
++        return original_git(root, *args)
++
++    monkeypatch.setattr(owner, "git", record_git)
++    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
++    assert diffs
++    assert all(
++        args == ("diff", "--name-only", "-z", plan["baseline_commit"], "--") for args in diffs
++    )
++    owner.verify_completed(tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json")
++
++
++@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
++@pytest.mark.parametrize("unrelated", [False, True])
++def test_1256_initial_head_drift_remains_refused(tmp_path, kind, unrelated):
++    """#1256: preserve the original pre-prepare baseline refusal."""
++    head_lifecycle_case(tmp_path, kind)
++    before = owner.hashes(owner.inventory(tmp_path))
++    late_git_commit(tmp_path, unrelated)
++    with pytest.raises(ValueError, match="Integration HEAD differs"):
++        prepare(tmp_path)
++    assert owner.hashes(owner.inventory(tmp_path)) == before
++    assert not (tmp_path / "receipt").exists()
++
++
++@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
++@pytest.mark.parametrize("boundary", ["before_apply", "before_write", "after_write", "final_flush"])
++def test_1256_unrelated_staged_drift_rechecked_throughout_transaction(
++    tmp_path, monkeypatch, kind, boundary
++):
++    """#1256: unchanged HEAD is insufficient when tracked scope drifts."""
++    plan = head_lifecycle_case(tmp_path, kind)
++    ready = prepare(tmp_path)
++    before = owner.hashes(owner.inventory(tmp_path))
++    staged = False
++
++    def stage_once():
++        nonlocal staged
++        assert not staged
++        staged = True
++        put(tmp_path, "notes/unrelated_ß\nchange.txt", b"unapproved staged bytes\n")
++        run_git(tmp_path, "add", "--", "notes/unrelated_ß\nchange.txt")
++        assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
++
++    if boundary == "before_apply":
++        stage_once()
++    elif boundary == "final_flush":
++        finish = owner.finish_receipt
++
++        def changed_finish(handle, path, payload, recheck):
++            calls = 0
++
++            def check():
++                nonlocal calls
++                calls += 1
++                if calls == 2:
++                    stage_once()
++                recheck()
++
++            return finish(handle, path, payload, check)
++
++        monkeypatch.setattr(owner, "finish_receipt", changed_finish)
++    else:
++        name = "publish_validated" if kind == "edit" else "_new_owner"
++        writer = getattr(owner, name)
++
++        def changed_write(*args, **kwargs):
++            if boundary == "before_write":
++                stage_once()
++            result = writer(*args, **kwargs)
++            if boundary == "after_write":
++                stage_once()
++            return result
++
++        monkeypatch.setattr(owner, name, changed_write)
++    with pytest.raises(ValueError, match="Unrelated tracked file changed"):
++        owner.apply(ready, tmp_path / "receipt", enabled=True)
++    assert staged
++    assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
++    if boundary == "before_apply":
++        assert not (tmp_path / "receipt").exists()
++    else:
++        receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
++        assert receipt["state"] == "failed" and receipt["recovery_required"]
++        with pytest.raises(ValueError):
++            owner.verify_completed(
++                tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++            )
++    if boundary in {"before_apply", "before_write"}:
++        assert owner.hashes(owner.inventory(tmp_path)) == before
++    else:
++        entry = plan["records"][0]
++        assert (tmp_path / entry["source_record"]).read_bytes() == ready.payloads[
++            entry["operation_id"]
++        ]
++    assert (tmp_path / "notes/unrelated_ß\nchange.txt").read_bytes() == b"unapproved staged bytes\n"
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+diff --git a/tests/test_campaign_publication.py b/tests/test_campaign_publication.py
+index ea17b516b..8465db415 100644
+--- a/tests/test_campaign_publication.py
++++ b/tests/test_campaign_publication.py
+@@ -91,6 +91,25 @@ def inventory(root):
+ def case(tmp_path, monkeypatch):
+     root = tmp_path / "repository"
+     root.mkdir()
++    subprocess.run(["git", "init", "-q"], cwd=root, check=True)
++    subprocess.run(
++        [
++            "git",
++            "-c",
++            "user.name=Fixture",
++            "-c",
++            "user.email=fixture@example.invalid",
++            "commit",
++            "--allow-empty",
++            "-qm",
++            "Private publication fixture baseline",
++        ],
++        cwd=root,
++        check=True,
++    )
++    baseline_commit = subprocess.check_output(
++        ["git", "rev-parse", "HEAD"], cwd=root, text=True
++    ).strip()
+     before = sssom([row("A"), row("Unrelated", "CHEBI:9")])
+     candidate = sssom(
+         [
+@@ -199,7 +218,10 @@ def case(tmp_path, monkeypatch):
+             "sidecar": reference("diagnostic-sidecar.tsv", sidecar),
+             "manifest": reference(
+                 "generation.json",
+-                {"fixture": "isolated producer boundary", "source_revisions": {"mim": "a" * 40}},
++                {
++                    "fixture": "isolated producer boundary",
++                    "source_revisions": {"mim": baseline_commit},
++                },
+             ),
+             "producer_root": str(root / "producer"),
+             "kg_root": str(root / "kg"),
+@@ -236,7 +258,7 @@ def case(tmp_path, monkeypatch):
+         "before_inventory": before_inventory,
+         "after_inventory": after_inventory,
+         "records": records,
+-        "baseline_commit": "a" * 40,
++        "baseline_commit": baseline_commit,
+         "immutable_input_sha256": {},
+         "checkpoint": {
+             "root": "reports/fixture/source-checkpoint",
+@@ -1439,3 +1461,127 @@ def test_1214_standalone_validation_scope_excludes_later_recovery_file_drift(cas
+     for role in ("canonical", "policy"):
+         reference = case["plan"]["before"][role]
+         assert c.sha((case["root"] / reference["path"]).read_bytes()) == reference["sha256"]
++
++
++# #1256: live transaction HEAD versus historical completed proof.
++def commit_publication_boundary(root, *, unrelated=False):
++    if unrelated:
++        (root / "unrelated-commit.txt").write_text("Unrelated committed evidence\n")
++        subprocess.run(["git", "add", "unrelated-commit.txt"], cwd=root, check=True)
++    subprocess.run(
++        [
++            "git",
++            "-c",
++            "user.name=Fixture",
++            "-c",
++            "user.email=fixture@example.invalid",
++            "commit",
++            "--allow-empty",
++            "-qm",
++            "Intervening fixture commit",
++        ],
++        cwd=root,
++        check=True,
++    )
++
++
++@pytest.mark.parametrize("unrelated", [False, True])
++@pytest.mark.parametrize("apply", [False, True])
++def test_1256_intervening_head_refused_before_publication_outputs(case, unrelated, apply):
++    root = case["root"]
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY, c.SIDECAR, c.BASELINE)}
++    commit_publication_boundary(root, unrelated=unrelated)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        c.publish(root, case["path"], case["out"], apply=apply)
++    assert all((root / p).read_bytes() == raw for p, raw in before.items())
++    assert not list(case["out"].iterdir())
++    assert native.verify_mapping_chain(root)["receipt_inputs"] == case["plan"]["receipt_prefix"]
++
++
++def test_1256_prepare_final_boundary_rechecks_head(case, monkeypatch):
++    original = c._generation
++
++    def intervening(*args, **kwargs):
++        result = original(*args, **kwargs)
++        commit_publication_boundary(case["root"])
++        return result
++
++    monkeypatch.setattr(c, "_generation", intervening)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        c.prepare(case["root"], case["path"])
++    assert not list(case["out"].iterdir())
++
++
++@pytest.mark.parametrize(
++    "phase", ["reserved", "after-first-replace", "before-completion", "after-completion"]
++)
++def test_1256_late_commit_never_leaves_success_receipts(case, monkeypatch, phase):
++    from contextlib import contextmanager
++
++    root = case["root"]
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY)}
++    entered = []
++
++    def change_head():
++        entered.append(phase)
++        commit_publication_boundary(root)
++
++    if phase == "reserved":
++        original = c._reserve
++
++        @contextmanager
++        def reservation(paths):
++            with original(paths) as handles:
++                change_head()
++                yield handles
++
++        monkeypatch.setattr(c, "_reserve", reservation)
++    elif phase == "after-first-replace":
++        original = c.publish_validated
++
++        def replacement(*args, **kwargs):
++            result = original(*args, **kwargs)
++            change_head()
++            return result
++
++        monkeypatch.setattr(c, "publish_validated", replacement)
++    else:
++        original = c.finish_receipt
++
++        def completion(*args, **kwargs):
++            if phase == "before-completion":
++                change_head()
++            result = original(*args, **kwargs)
++            if phase == "after-completion":
++                change_head()
++            return result
++
++        monkeypatch.setattr(c, "finish_receipt", completion)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        c.publish(root, case["path"], case["out"], apply=True)
++    assert entered == [phase]
++    if phase == "reserved":
++        assert all((root / p).read_bytes() == raw for p, raw in before.items())
++    for path in [
++        case["out"] / "publication.json",
++        root / native.RECEIPTS_DIR / (case["plan"]["batch"] + ".json"),
++    ]:
++        assert not path.exists() or path.read_bytes() == b""
++
++
++def test_1256_completed_validation_permits_later_commit(case):
++    root = case["root"]
++    assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY)}
++    commit_publication_boundary(root, unrelated=True)
++    assert c.validate(root, case["path"])["status"] == "verified"
++    assert all((root / p).read_bytes() == raw for p, raw in before.items())
++
++
++def test_1256_live_publication_allows_uncommitted_derived_sync(case):
++    root = case["root"]
++    derived = root / "data/curated/fixture-derived.yaml"
++    derived.parent.mkdir(parents=True)
++    derived.write_text("fixture: synchronized derived data\n")
++    assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
++    assert c.validate(root, case["path"])["status"] == "verified"

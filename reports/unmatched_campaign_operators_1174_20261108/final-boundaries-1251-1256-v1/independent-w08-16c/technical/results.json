@@ -1,0 +1,447 @@
+[
+  {
+    "name": "positive_demote",
+    "phase": "completed",
+    "error": null,
+    "prepare_succeeded": true,
+    "completed_proof": true,
+    "baseline_commit": "0e29181330e3398f7563ae3ec5667833f1af92f7",
+    "head_exit": "0e29181330e3398f7563ae3ec5667833f1af92f7",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": true,
+    "receipt_state": "complete",
+    "recovery_required": false,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/positive_demote",
+    "plan_sha256": "0cc68b06cedd9ce0c4921ac7025b6b537035559c3a428da5f0eaaa5d6cda4cb2",
+    "acceptance_sha256": "69a48f5aac302958013a492b8c7f81dae4fea4a915245cf02b7d7b9fa5ec4de3",
+    "head_at_apply": "0e29181330e3398f7563ae3ec5667833f1af92f7",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "positive_composed",
+    "phase": "completed",
+    "error": null,
+    "prepare_succeeded": true,
+    "completed_proof": true,
+    "baseline_commit": "54bde9a594bb93774950e31f279692e8dd01efa1",
+    "head_exit": "54bde9a594bb93774950e31f279692e8dd01efa1",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Existing.yaml": "dc80fd82afd82ccf0606750ffb60579e302e9879ad379f5909e8c33e9be239fa",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": true,
+    "receipt_state": "complete",
+    "recovery_required": false,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/positive_composed",
+    "plan_sha256": "44ebc91a1f71d038ed1de81e4ebe8f715b8e6e03d42d858e8b876db5081c9503",
+    "acceptance_sha256": "654986cf1678b44290d062873c2ae20341a7966f9a9773a29e017b91d1e62a3d",
+    "head_at_apply": "54bde9a594bb93774950e31f279692e8dd01efa1",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "wrong_exact_review",
+    "phase": "prepare",
+    "error": {
+      "type": "ValueError",
+      "message": "Relocation review does not bind the exact demotion tuple"
+    },
+    "prepare_succeeded": false,
+    "completed_proof": false,
+    "baseline_commit": "54bde9a594bb93774950e31f279692e8dd01efa1",
+    "head_exit": "54bde9a594bb93774950e31f279692e8dd01efa1",
+    "owner_inventory_changed": false,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": false,
+    "receipt_state": null,
+    "recovery_required": null,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/wrong_exact_review",
+    "plan_sha256": "ca84373db9e0edc1f7c2b3b35c7a8bf41b42c153aa1ea70c79d30b4d3150b9f6",
+    "acceptance_sha256": "25ea11b6995347378d58249f44cde0ee93a1238391a56da84c2994cd45368104"
+  },
+  {
+    "name": "new_collision",
+    "phase": "prepare",
+    "error": {
+      "type": "ValueError",
+      "message": "Final proposed owners introduce a new collision pair"
+    },
+    "prepare_succeeded": false,
+    "completed_proof": false,
+    "baseline_commit": "019720de3047acb2339ca42c128e077bf6c39a63",
+    "head_exit": "019720de3047acb2339ca42c128e077bf6c39a63",
+    "owner_inventory_changed": false,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": false,
+    "receipt_state": null,
+    "recovery_required": null,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/new_collision",
+    "plan_sha256": "881d13815f46b1bd379e24cbc27c192f10092d9da0d508dc2034cbb72192b5fe",
+    "acceptance_sha256": "4d5d98b083f34a9474f70d59958ee8065b5e40bc888852f9bf5ccee81ae48139"
+  },
+  {
+    "name": "grounding_retained",
+    "phase": "prepare",
+    "error": {
+      "type": "ValueError",
+      "message": "Demotion requires mapped MAPPED to unmapped AMBIGUOUS without grounding"
+    },
+    "prepare_succeeded": false,
+    "completed_proof": false,
+    "baseline_commit": "019720de3047acb2339ca42c128e077bf6c39a63",
+    "head_exit": "019720de3047acb2339ca42c128e077bf6c39a63",
+    "owner_inventory_changed": false,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": false,
+    "receipt_state": null,
+    "recovery_required": null,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/grounding_retained",
+    "plan_sha256": "c206fcc7bd56a23035947fcbb6f5801171fd1555adfb66d15fcab8f43c40d9a8",
+    "acceptance_sha256": "3a1fac3503c63169c42c411ed65146e90d79b073c64e0c44f49a918697e00cc7"
+  },
+  {
+    "name": "tombstone_revival",
+    "phase": "prepare",
+    "error": {
+      "type": "ValueError",
+      "message": "Rejected owner requires same-path, same-key maintenance or unmapped rejection"
+    },
+    "prepare_succeeded": false,
+    "completed_proof": false,
+    "baseline_commit": "75d49c14c1194b090c5cbcd1cdc5871ca01e8bb5",
+    "head_exit": "75d49c14c1194b090c5cbcd1cdc5871ca01e8bb5",
+    "owner_inventory_changed": false,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "26ef22511b2161b6ff89dcfc3290ef9f3c9bbe5bddec1c73f1cea23a8708972c",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "26ef22511b2161b6ff89dcfc3290ef9f3c9bbe5bddec1c73f1cea23a8708972c",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": false,
+    "receipt_state": null,
+    "recovery_required": null,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/tombstone_revival",
+    "plan_sha256": "c67199fc6edbf208bca40dfe070bc0d0177c6db27e5742de870d27dee43f546d",
+    "acceptance_sha256": "3142b983e097931d24c6ce4fa9dc26fa3caa960c97e4063de2c7a78642506efa"
+  },
+  {
+    "name": "late_review_drift",
+    "phase": "apply",
+    "error": {
+      "type": "ValueError",
+      "message": "Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_review_drift/acceptance.json"
+    },
+    "prepare_succeeded": true,
+    "completed_proof": false,
+    "baseline_commit": "2f5a00d573a54f368bab13cb2dad9b4fcbb8235c",
+    "head_exit": "2f5a00d573a54f368bab13cb2dad9b4fcbb8235c",
+    "owner_inventory_changed": false,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": false,
+    "receipt_state": null,
+    "recovery_required": null,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/late_review_drift",
+    "plan_sha256": "bab88ceac7a3be70897b1ed4a7a74f576dcb3c54392d9194220af12c3c5af0f1",
+    "acceptance_sha256": "5a2a8a0223be8a5befa11b380e1410fcafcf778c1a571a7628922f09f686ba97",
+    "head_at_apply": "2f5a00d573a54f368bab13cb2dad9b4fcbb8235c",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "late_empty_commit",
+    "phase": "completed",
+    "error": null,
+    "prepare_succeeded": true,
+    "completed_proof": true,
+    "baseline_commit": "2f5a00d573a54f368bab13cb2dad9b4fcbb8235c",
+    "head_exit": "7685c1b8d22d54c4715a3ee06de833983f592f77",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": true,
+    "receipt_state": "complete",
+    "recovery_required": false,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/late_empty_commit",
+    "plan_sha256": "bab88ceac7a3be70897b1ed4a7a74f576dcb3c54392d9194220af12c3c5af0f1",
+    "acceptance_sha256": "20253fc14d1ccdd13b89bde5ef18adcde6649a22582a61b96938f6daa5194e67",
+    "head_at_apply": "7685c1b8d22d54c4715a3ee06de833983f592f77",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "late_unrelated_tracked",
+    "phase": "apply",
+    "error": {
+      "type": "ValueError",
+      "message": "Unrelated tracked file changed"
+    },
+    "prepare_succeeded": true,
+    "completed_proof": false,
+    "baseline_commit": "0381500850302d9c57b4a42c3fd74b5cbcd77bc7",
+    "head_exit": "0381500850302d9c57b4a42c3fd74b5cbcd77bc7",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": true,
+    "receipt_state": "failed",
+    "recovery_required": true,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/late_unrelated_tracked",
+    "plan_sha256": "7821dceef0051b4b1ecaa8512651d6e7a8c74bb512f16886e29b9a5cfb26f1c2",
+    "acceptance_sha256": "1082248825e8a66216cbedced40dfa1793531bdf6ec74a253dfbf5826de774ee",
+    "head_at_apply": "0381500850302d9c57b4a42c3fd74b5cbcd77bc7",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "completed_source_reappears",
+    "phase": "verify_completed",
+    "error": {
+      "type": "ValueError",
+      "message": "Current after-owner inventory differs"
+    },
+    "prepare_succeeded": true,
+    "completed_proof": false,
+    "baseline_commit": "a9a147490741fae88f27e82733dc1d1a1bcdca64",
+    "head_exit": "a9a147490741fae88f27e82733dc1d1a1bcdca64",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": true,
+    "receipt_state": "complete",
+    "recovery_required": false,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/completed_source_reappears",
+    "plan_sha256": "11a85e46b37e619dd0915a892b63172da664706c697f0732012d31b930f22801",
+    "acceptance_sha256": "d4d05c7e770e40551c2d6a0455560d4033fb7a801c0837e5f2961059c940b76f",
+    "head_at_apply": "a9a147490741fae88f27e82733dc1d1a1bcdca64",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "unicode_rejection",
+    "phase": "apply",
+    "error": {
+      "type": "ValueError",
+      "message": "Unrelated tracked file changed"
+    },
+    "prepare_succeeded": true,
+    "completed_proof": false,
+    "baseline_commit": "efbbef6c9a9d14e8567b20a825e45603974dc8fc",
+    "head_exit": "efbbef6c9a9d14e8567b20a825e45603974dc8fc",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Poly-ß.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Poly-ß.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Poly-ß.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Poly-ß.yaml": "787e838106b3e99e9c375cb3914ddb1b5025b01d2c7c50425877a836920d648c"
+    },
+    "receipt_exists": true,
+    "receipt_state": "failed",
+    "recovery_required": true,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/unicode_rejection",
+    "plan_sha256": "d391ce9a4c79ec07564b1e83f23b7e5c7bdc1fcd4457f888a369f4e0722dbc9c",
+    "acceptance_sha256": "b0e2dd416b17f859f2c4740efb8cf0d46ac5414c59b6d796af31ae15cc68d201",
+    "head_at_apply": "efbbef6c9a9d14e8567b20a825e45603974dc8fc",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Poly-ß.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Poly-ß.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "newline_rejection",
+    "phase": "apply",
+    "error": {
+      "type": "ValueError",
+      "message": "Unrelated tracked file changed"
+    },
+    "prepare_succeeded": true,
+    "completed_proof": false,
+    "baseline_commit": "39a3382484a127a7afa2bad380551bac91d9b707",
+    "head_exit": "39a3382484a127a7afa2bad380551bac91d9b707",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/A\nB.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/A\nB.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/A\nB.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/A\nB.yaml": "787e838106b3e99e9c375cb3914ddb1b5025b01d2c7c50425877a836920d648c"
+    },
+    "receipt_exists": true,
+    "receipt_state": "failed",
+    "recovery_required": true,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/newline_rejection",
+    "plan_sha256": "46c5bcb9d0c7d54e52f1c313270c36133aad2d7b97cdc8a54719ff4b6b0d4879",
+    "acceptance_sha256": "c220826df90dbbae824b00a5345428553d4b89f02fd8a9b192998c434ada3f07",
+    "head_at_apply": "39a3382484a127a7afa2bad380551bac91d9b707",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/A\nB.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/A\nB.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "unicode_demote",
+    "phase": "apply",
+    "error": {
+      "type": "ValueError",
+      "message": "Unrelated tracked file changed"
+    },
+    "prepare_succeeded": true,
+    "completed_proof": false,
+    "baseline_commit": "6a591e5b6968883a58ac067983621155bee30ca5",
+    "head_exit": "6a591e5b6968883a58ac067983621155bee30ca5",
+    "owner_inventory_changed": true,
+    "before_inventory": {
+      "data/ingredients/mapped/Poly-ß.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "after_inventory": {
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Poly-ß.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    },
+    "receipt_exists": true,
+    "receipt_state": "failed",
+    "recovery_required": true,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/unicode_demote",
+    "plan_sha256": "613d8bc62a7972db240d69d5d390396d8cc6bcadd3672306f7420ffaffb12e7e",
+    "acceptance_sha256": "4cd40cc758670516c7b67a4fea6df51548b90343c0704904125d97382eab067b",
+    "head_at_apply": "6a591e5b6968883a58ac067983621155bee30ca5",
+    "inventory_at_apply": {
+      "data/ingredients/mapped/Poly-ß.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+      "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  {
+    "name": "old_chain",
+    "phase": "prepare",
+    "error": {
+      "type": "ValueError",
+      "message": "Demotion source has prior native owner-chain links"
+    },
+    "owner_inventory_changed": false,
+    "receipt_exists": false,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/old_chain"
+  },
+  {
+    "name": "destination_chain",
+    "phase": "prepare",
+    "error": {
+      "type": "ValueError",
+      "message": "New destination has prior native owner-chain links"
+    },
+    "owner_inventory_changed": false,
+    "receipt_exists": false,
+    "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/destination_chain"
+  }
+]

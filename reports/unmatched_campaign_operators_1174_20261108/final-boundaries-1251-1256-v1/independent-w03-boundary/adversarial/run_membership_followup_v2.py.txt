@@ -1,0 +1,23 @@
+"""Correct only omitted private late_mutation helper; prior failure stays exact."""
+from pathlib import Path
+import ast, hashlib
+here=Path(__file__).resolve().parent
+source=(here/'run_independent_probes_v1.py').read_text();prefix=source.split("run('positive_disjoint_edit_with_unselected_family'",1)[0]
+exec(compile(prefix,str(here/'run_independent_probes_v1.py'),'exec'),globals())
+node=next(n for n in ast.parse(source).body if isinstance(n,ast.FunctionDef) and n.name=='late_mutation')
+exec(compile(ast.Module(body=[node],type_ignores=[]),str(here/'run_independent_probes_v1.py'),'exec'),globals())
+
+def valid_receipt(r,p):
+ s=o.digest(t.SSSOM);h=o.digest((r/C).read_bytes())
+ t.put(r,o.RECEIPTS_DIR+'/late-valid.json',{'schema_version':1,'batch':'late-valid','sequence':1,'approval':'NONE: private adversarial fixture','before_sha256':s,'after_sha256':s,'before_row_count':1,'after_row_count':1,'position_map':[1],'changes':[],'changed_rows':0,'added_rows':0,'removed_rows':0,'records':[{'source_record':C,'shape':'existing','before_yaml_sha256':h,'after_yaml_sha256':h}]})
+ assert o.receipt_paths(r)==[o.RECEIPTS_DIR+'/late-valid.json']
+result=late_mutation('late_valid_native_receipt_membership_v2',valid_receipt)
+assert result['exception']['message']=='Native receipt membership changed',result
+retention=[]
+for name in ['positive_disjoint_edit_with_unselected_family','positive_rejected_unmapped_maintenance','positive_both_collision_kinds']:
+ r=O/'fixtures'/name;receipt=json.loads((r/'receipt/application.json').read_bytes());checks=[]
+ for row in receipt['records']:
+  old=o.record((r/row['before_capture']['path']).read_bytes());new=o.record((r/row['source_record']).read_bytes());assert all(old[k]==new[k] for k in ['identifier','preferred_term','mapping_status']);checks.append({'owner_path':row['source_record'],'identifier_name_status_exact':True})
+ retention.append({'fixture':name,'retention_checks':checks})
+report={'reviewer':'/root/boundary_adversarial','head':'d691c079cf3923daed89284b7579913b84c3a34c','status':'PASS','name':'late_valid_native_receipt_membership_v2','result':result,'positive_payload_retention_readback':retention,'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'corrected_private_harness_failure':{'path':'overlap-results-v1.json','sha256':hashlib.sha256((here/'overlap-results-v1.json').read_bytes()).hexdigest(),'failure':'NameError: late_mutation helper was outside the extracted prefix; native target did not execute for that one control.','repair':'Load exact original helper AST into private test namespace. No test assertions weakened; strict native-membership message additionally required.','prior_incorrect_prospective_qualification':'The v1 follow-up qualification described intended valid-membership proof, but its result failed before execution. Only this v2 result establishes that proof.'},'operator_sha256':o.digest((F/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes())}
+(here/'membership-result-v2.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'status':'PASS','message':result['exception']['message'],'positive_retention_fixtures':len(retention)}))

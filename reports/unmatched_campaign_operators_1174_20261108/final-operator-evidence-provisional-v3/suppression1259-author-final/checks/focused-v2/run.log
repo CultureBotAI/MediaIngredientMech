@@ -1,0 +1,553 @@
+FFFFFFFFFFFFF...................                                         [100%]
+=================================== FAILURES ===================================
+_________ test_consumes_actual_review_and_keeps_acyclic_policy_binding _________
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_consumes_actua...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+
+    def test_consumes_actual_review_and_keeps_acyclic_policy_binding(suppression_case):
+>       reviewed_selection(suppression_case)
+
+tests/test_campaign_suppressions.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+------------------------------ Captured log call -------------------------------
+WARNING  linkml.generators.jsonschemagen:jsonschemagen.py:270 topClass is deprecated - use top_class
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[bool-version] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'bool-version'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[float-version] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'float-version'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[unknown-selection] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'unknown-selection'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-transition] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'wrong-transition'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[missing-actual-input] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'missing-actual-input'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-actual-input] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'wrong-actual-input'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[native-event-cell] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'native-event-cell'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-current-root] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'wrong-current-root'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[owner-role] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'owner-role'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[baseline-hash] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'baseline-hash'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[prefix] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'prefix'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+_ test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-reviewed-target] _
+
+suppression_case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11285/test_actual_transit...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'wrong-reviewed-target'
+
+    @pytest.mark.parametrize("fault", ["bool-version", "float-version", "unknown-selection", "wrong-transition", "missing-actual-input", "wrong-actual-input", "native-event-cell", "wrong-current-root", "owner-role", "baseline-hash", "prefix", "wrong-reviewed-target"])
+    def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(suppression_case, fault):
+        case = suppression_case
+        root, _, plan, _, _, _, _, _, _, _ = case
+>       selection, review = reviewed_selection(case)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppressions.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_campaign_suppressions.py:163: in reviewed_selection
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...ransport', 'evidence_ids': ['TRANSITION'], 'outcome': 'supported', ...}], 'checks': [], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+>           raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+E           _mim_campaign_native_5440b6c582374dfab05928c62b2f890d.campaign_native_record_review.ReviewError: checks: [] should be non-empty; evidence.0: 'accessed_at' is a required property
+
+scripts/record_review.py:208: ReviewError
+=============================== warnings summary ===============================
+../../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_suppressions.py::test_consumes_actual_review_and_keeps_acyclic_policy_binding
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[bool-version]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[float-version]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[unknown-selection]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-transition]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[missing-actual-input]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-actual-input]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[native-event-cell]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-current-root]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[owner-role]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[baseline-hash]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[prefix]
+FAILED tests/test_campaign_suppressions.py::test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums[wrong-reviewed-target]
+13 failed, 19 passed, 12 warnings in 6.87s

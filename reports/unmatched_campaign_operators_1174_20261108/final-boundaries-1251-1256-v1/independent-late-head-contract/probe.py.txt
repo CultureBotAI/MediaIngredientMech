@@ -1,0 +1,159 @@
+"""#1256 independent private transaction/historical-boundary characterization.
+
+Source cases use actual native prepare/apply/verification without function mocks.
+Publisher cases reuse the maintained native interface test: only external
+generation is an explicit fixture, not a claimed full Claw reconstruction.
+"""
+import datetime
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+os.environ.update(PYTHONDONTWRITEBYTECODE="1", GIT_OPTIONAL_LOCKS="0")
+C = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).resolve().parent
+K = C / "integration/release-worktree"
+sys.path[:0] = [str(K / "src"), str(K)]
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+fixture = load("independent1256_owner_fixture", K / "tests/test_campaign_owner_apply.py")
+owner = fixture.owner
+publisher_fixture = load("independent1256_publisher_fixture", K / "tests/test_campaign_publication.py")
+publisher = publisher_fixture.c
+import pytest
+
+
+def commit(root, label, unrelated=False, include_owners=False):
+    if unrelated:
+        (root / "unrelated-after-acceptance.txt").write_text("Unrelated committed fixture data.\n")
+        fixture.run_git(root, "add", "unrelated-after-acceptance.txt")
+    if include_owners:
+        fixture.run_git(root, "add", "data/ingredients")
+    fixture.run_git(root, "-c", "user.email=fixture@example.invalid", "-c",
+                    "user.name=Independent transaction review", "commit", "--allow-empty", "-qm", label)
+
+
+pins = {str(p.relative_to(K)): sha(p) for p in [
+    K / "src/mediaingredientmech/curate/campaign_owner_apply.py",
+    K / "src/mediaingredientmech/campaign_publication.py",
+    K / "src/mediaingredientmech/curate/publication_guard.py",
+    K / "tests/test_campaign_owner_apply.py",
+    K / "tests/test_campaign_publication.py",
+]}
+head = fixture.run_git(K, "rev-parse", "HEAD")
+assert head == "16c39b63bc95d3e7978ddccc6280b0d57954f4a5", head
+assert pins["src/mediaingredientmech/curate/campaign_owner_apply.py"] == "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78"
+results = []
+for mode in ["unchanged", "initial_moved", "late_empty", "late_unrelated",
+             "historical_later_empty", "historical_committed_owners_and_unrelated",
+             "historical_tampered_current_owner"]:
+    root = OUT / "fixtures" / ("source-" + mode)
+    root.mkdir(parents=True, exist_ok=False)
+    plan = fixture.demotion_case(root)
+    baseline = plan["baseline_commit"]
+    result = {"scope": "actual_source_lifecycle_no_native_mocks", "mode": mode,
+              "fixture": str(root), "baseline": baseline}
+    if mode == "initial_moved":
+        commit(root, mode)
+    try:
+        prepared = owner.prepare(root, root / "plan.json", root / "acceptance.json")
+    except ValueError as error:
+        assert mode == "initial_moved"
+        result.update(prepare="refused", error=str(error), no_receipt=not (root / "receipt").exists())
+    else:
+        result["prepare"] = "passed"
+        if mode.startswith("late_"):
+            commit(root, mode, unrelated=mode == "late_unrelated")
+        result["head_at_apply"] = fixture.run_git(root, "rev-parse", "HEAD")
+        result["apply"] = owner.apply(prepared, root / "receipt", enabled=True)["state"]
+        proof = owner.verify_completed(root, root / "plan.json", root / "receipt/application.json")
+        result["initial_verify"] = proof["state"]
+        if mode.startswith("historical_"):
+            commit(root, mode, unrelated=mode.endswith("owners_and_unrelated"),
+                   include_owners=mode.endswith("owners_and_unrelated"))
+            if mode == "historical_tampered_current_owner":
+                path = root / fixture.DEMOTED
+                path.write_bytes(path.read_bytes() + b"\n# independent current-byte tamper\n")
+            try:
+                later = owner.verify_completed(root, root / "plan.json", root / "receipt/application.json")
+            except ValueError as error:
+                assert mode == "historical_tampered_current_owner"
+                result.update(historical_verify="refused", historical_error=str(error))
+            else:
+                assert mode != "historical_tampered_current_owner"
+                assert later == proof
+                result.update(historical_verify=later["state"], historical_proof_exactly_unchanged=True)
+        result["receipt_sha256"] = sha(root / "receipt/application.json")
+    result.update(current_head=fixture.run_git(root, "rev-parse", "HEAD"),
+                  baseline_diff=fixture.run_git(root, "diff", "--name-only", "-z", baseline, "--").split("\0"),
+                  current_head_diff=fixture.run_git(root, "diff", "--name-only", "-z", "HEAD", "--").split("\0"))
+    results.append(result)
+    print(json.dumps(result), flush=True)
+
+for mode in ["unchanged", "late_empty_before_publish", "late_unrelated_before_publish",
+             "late_empty_after_publish_prepare", "historical_after_valid_publish"]:
+    root = OUT / "fixtures" / ("publisher-" + mode)
+    root.mkdir(parents=True, exist_ok=False)
+    result = {"scope": "actual_owner_and_publisher_interface_external_generation_fixture",
+              "mode": mode, "fixture": str(root)}
+    patch = pytest.MonkeyPatch()
+    real_publish, real_prepare = publisher.publish, publisher.prepare
+
+    def publish_with_commit(actual_root, plan_path, receipt_dir, *, apply=False):
+        assert actual_root == root
+        result["baseline"] = json.loads((root / "plan.json").read_bytes())["baseline_commit"]
+        if mode in {"late_empty_before_publish", "late_unrelated_before_publish"}:
+            commit(root, mode, unrelated=mode == "late_unrelated_before_publish")
+        result["head_at_publish"] = fixture.run_git(root, "rev-parse", "HEAD")
+        outcome = real_publish(actual_root, plan_path, receipt_dir, apply=apply)
+        result["publish"] = outcome["status"]
+        if mode == "historical_after_valid_publish":
+            commit(root, mode, unrelated=True, include_owners=True)
+        return outcome
+
+    def prepare_with_commit(actual_root, plan_path, *, completed=False):
+        outcome = real_prepare(actual_root, plan_path, completed=completed)
+        if mode == "late_empty_after_publish_prepare" and not completed:
+            commit(root, mode)
+            result["head_after_prepare"] = fixture.run_git(root, "rev-parse", "HEAD")
+        return outcome
+
+    patch.setattr(publisher, "publish", publish_with_commit)
+    patch.setattr(publisher, "prepare", prepare_with_commit)
+    try:
+        publisher_fixture.test_actual_owner_writer_checkpoint_survives_native_mapping_publication(root, patch)
+        result["all_native_interface_assertions"] = "passed"
+        result["historical_source_and_publication_verification"] = "passed"
+    finally:
+        patch.undo()
+    result.update(current_head=fixture.run_git(root, "rev-parse", "HEAD"),
+                  publication_receipt_sha256=sha(root / "reports/publication/publication.json"))
+    results.append(result)
+    print(json.dumps(result), flush=True)
+
+assert pins == {path: sha(K / path) for path in pins}
+assert fixture.run_git(K, "rev-parse", "HEAD") == head
+result = {"schema_version": 1, "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          "author": "/root/step7d_science_c", "issue": 1256, "runtime": sys.version,
+          "reviewed_head": head, "producer_pins": pins, "results": results,
+          "limitations": ["Publisher external native generation is an explicit maintained-test fixture; this is not a fresh full Claw replay.",
+                          "All Git commits are private fixture commits; no source corpus, I/J/K, worker, GitHub, or acceptance changes.",
+                          "Mechanical fixture acceptance has no scientific approval meaning."]}
+with (OUT / "results.json").open("x") as handle:
+    json.dump(result, handle, indent=2)
+    handle.write("\n")

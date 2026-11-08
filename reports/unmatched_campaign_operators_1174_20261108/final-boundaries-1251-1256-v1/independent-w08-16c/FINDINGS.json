@@ -1,0 +1,73 @@
+{
+  "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "verdict": "needs_curation",
+  "findings": [
+    {
+      "finding_id": "REJECTION-CODE-001",
+      "issue_key": "campaign-owner-apply-literal-git-paths",
+      "category": "other",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Quoted Git paths reject a legitimate Unicode or control-character owner after mutation",
+      "description": "The exact16c final apply guard still decodes ordinary git diff --name-only HEAD -- and splits on newlines. New independent Unicode rejection, newline rejection and Unicode demotion fixtures write or relocate the intended owner before refusing their own path as unrelated. Failed/recovery_required receipts preserve evidence. W04 authentic Poly-ß proof and filed1255 remain open; no future NUL repair is substituted.",
+      "target_ids": [
+        "exact9a1-operator",
+        "exact9a1-tests"
+      ],
+      "field_paths": [
+        "apply.final_allowed_path_check"
+      ],
+      "evidence_ids": [
+        "ISSUE1255",
+        "TECHNICAL",
+        "SKEPTIC",
+        "PRIOR-LINEAGE"
+      ],
+      "ownership_note": "Coordinator/code author owns the maintained operator and regression tests; reviewer makes no fix or issue mutation.",
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1255"
+      ],
+      "previous_occurrences": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "review_id": "20261108T113742Z-rejection-fix-independent-v2",
+          "finding_id": "REJECTION-CODE-001"
+        }
+      ]
+    },
+    {
+      "finding_id": "W08-16C-CODE-002",
+      "issue_key": "campaign-owner-apply-late-baseline-freshness",
+      "category": "provenance",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Apply does not retain the accepted Git baseline after prepare",
+      "description": "prepare verifies actual HEAD and clean tracked state once. _recheck does not repeat either check. A later empty commit is accepted, and a later unrelated tracked-file commit can be hidden because apply compares the final changed-path set to moving HEAD instead of the accepted baseline. Actual demotion apply and verify_completed return complete while accepted baseline differs from HEAD and the baseline diff includes an unrelated file. An uncommitted staged unrelated file is detected only after the owner was installed and retired, producing failed/recovery_required instead of refusal before owner mutation.",
+      "target_ids": [
+        "exact9a1-operator",
+        "exact9a1-tests"
+      ],
+      "field_paths": [
+        "prepare.baseline_check",
+        "_recheck",
+        "apply.final_allowed_path_check"
+      ],
+      "evidence_ids": [
+        "NEW-FINDING",
+        "ROOT-PROBES",
+        "TECHNICAL",
+        "SKEPTIC"
+      ],
+      "ownership_note": "Coordinator deduplicates/files before fixing source application freshness; no reviewer fix."
+    }
+  ],
+  "new_independent_finding_ids": [
+    "W08-16C-CODE-002"
+  ],
+  "existing_filed_finding_ids": [
+    "REJECTION-CODE-001"
+  ],
+  "fixes_applied": false
+}

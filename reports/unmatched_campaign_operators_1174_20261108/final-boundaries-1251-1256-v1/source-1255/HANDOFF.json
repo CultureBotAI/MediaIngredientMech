@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-08T11:48:05.724661+00:00",
+  "status": "AUTHOR_COMPLETE_PRIVATE_PATCH_PENDING_DISTINCT_REVIEW",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1255",
+  "base_commit": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "files": {
+    "src/mediaingredientmech/curate/campaign_owner_apply.py": "8871c5183f7dd55f966781f77f036923af7eda01e4bb5b27cc75676f5986357f",
+    "tests/test_campaign_owner_apply.py": "5883cf58de10d1fe82123ce36adf3a2a585303dc562e241c72522b968b3aa258"
+  },
+  "patch": {
+    "path": "patch-v2.diff",
+    "sha256": "350b9e7958116e296077e29fdd73f2482e5132cf870f3a87bd7df66923c193f4",
+    "apply_check": "PASS against exact private preimages"
+  },
+  "preservation": {
+    "original_test_prefix_bytes": 80127,
+    "old_functions_preserved": 75,
+    "old_assertions_preserved": 154,
+    "new_test_functions": [
+      "test_1255_literal_git_paths_complete_rejection",
+      "test_1255_malformed_nul_listing_is_not_accepted",
+      "test_1255_unrelated_literal_tracked_file_still_refused"
+    ],
+    "old_test_prefix_exact": true,
+    "files": {
+      "src/mediaingredientmech/curate/campaign_owner_apply.py": "8871c5183f7dd55f966781f77f036923af7eda01e4bb5b27cc75676f5986357f",
+      "tests/test_campaign_owner_apply.py": "5883cf58de10d1fe82123ce36adf3a2a585303dc562e241c72522b968b3aa258"
+    },
+    "baseline_files": {
+      "src/mediaingredientmech/curate/campaign_owner_apply.py": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "tests/test_campaign_owner_apply.py": "58ae678e1cc16dfd435758678be3a770f42ac9090403a403de6f2128d3dea180"
+    },
+    "patch_sha256": "d1089439f5e28e243919339b667705b79a335c0473973cae6ffa97ccdfdd2439",
+    "final_patch_sha256": "350b9e7958116e296077e29fdd73f2482e5132cf870f3a87bd7df66923c193f4"
+  },
+  "checks": {
+    "combined": {
+      "tests": 360,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 9,
+      "passed": 351
+    },
+    "separate_explicit_pinned_integration": {
+      "tests": 9,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "passed": 9
+    },
+    "distinct_source_publication_integration_tests_passed": 360,
+    "new_parameterized_cases_included": 23,
+    "actual_W03_private_prepare_apply_completed_proofs": 4,
+    "ruff": "PASS",
+    "black": "PASS",
+    "mypy": "PASS",
+    "git_diff_whitespace_check": "No diagnostics; no-index exit1 reflects changed files"
+  },
+  "test_environment": "Python3.13.2, existing T/env read-only; private cwd, --no-cov, disabled pytest cache, explicit private basetemp",
+  "integration_inputs": {
+    "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+    "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree"
+  },
+  "scope": "Only final source-application Git pathname decoding; exact allowed-path scope and all existing owner/provenance/receipt guards retained.",
+  "actual_application": false,
+  "I_J_K_or_worker_writes": false,
+  "commits_pushes_GitHub_session_actions": false,
+  "scientific_approval": false,
+  "limitations": [
+    "The first combined run omitted optional native integration environment inputs and has9skips; all9 were separately rerun with exact Claw/history and passed. No zero-skip claim for that first run.",
+    "Genuine W03 proofs are bounded private two-owner fixtures with authentic published origins and normalized bytes; no complete campaign application or scientific review is inferred.",
+    "W04 independently established the original defect. This patch and replay are authored by the source operator author; distinct exact-successor review remains required.",
+    "Root separately reported a late-HEAD application finding under16c; this patch does not attempt to resolve it or claim whole-operator application readiness.",
+    "Intermediate patch-v1 has malformed path prefixes and is preserved only as a generation diagnostic; patch-v2 is the checked final patch."
+  ]
+}

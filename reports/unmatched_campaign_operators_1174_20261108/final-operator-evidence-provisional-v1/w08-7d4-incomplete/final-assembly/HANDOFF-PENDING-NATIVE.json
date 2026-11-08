@@ -1,0 +1,93 @@
+{
+  "reviewer": "worker08:/root/vitamins",
+  "at": "2026-11-08T12:43:37.221937+00:00",
+  "status": "PENDING_COORDINATOR_NATIVE_PAIR",
+  "reviewed_head": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "completed_readbacks": {
+    "actual_integration_cases": 20,
+    "integration_checks": 67,
+    "residual_object_checks": 55,
+    "nested_peer_digest_bindings": 99,
+    "all_completed_checks": "PASS"
+  },
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/final-assembly/residual-readback.json",
+      "sha256": "ee3b22cde5158c8fc04357b0cdf4b58332533af6d9d0b86112f2712c2f91deb7",
+      "size": 47179
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/final-assembly/integration-readback.json",
+      "sha256": "10b1359416246c06bfed0146cda0fb6677a381eafcad2372dbc66dc2106b4691",
+      "size": 194765
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/final-assembly/peer-reference-readback.json",
+      "sha256": "da7da9eac99ebd200e6f03b14cbc5dd153eaa964c5219f43e4ac2b1e8b3a9c14",
+      "size": 43603
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/final-assembly/read_residuals.py",
+      "sha256": "30f799795682f5cd7060b8a31c909d805dbc111f03ac4ba280122e44ceb0aad0",
+      "size": 8049
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/final-assembly/read_integration.py",
+      "sha256": "a05528c2ee1e590a6aab5c04b5e89f16dd41e96a4bfd026150d902f7867f0ab7",
+      "size": 7284
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/final-assembly/check_native.py",
+      "sha256": "da8fa3c286bc5ab106b0e0a4edeb77d85a16e7b6ace9ae8a549a6ad6974ae662",
+      "size": 12805
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/technical/review-v2.json",
+      "sha256": "668502f4e50b85762dd7b121558f191c7b7d1c9daf7f9e2c85c50acc52716ff8",
+      "size": 10961
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/skeptic/review-v2.json",
+      "sha256": "408aabc8bab10cbf86fbd568d51e65958689c10650bedd8b7ba244016fdcc2af",
+      "size": 18077
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/lineage/review.json",
+      "sha256": "6368869780116e333e1a810f8826605be92618cdfbdc169fd03044f31b367b70",
+      "size": 6378
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/focused/result.json",
+      "sha256": "535a6734e47e00301b4ea9d6a1c6912f4b8ce70b1ce41c371c6a925af875ff44",
+      "size": 7956
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/exit-verification-v2.json",
+      "sha256": "56500cade4bd4d6b70ad63133404a2b63718b02885dc3fc3fc40422c447bbbaf",
+      "size": 4860
+    }
+  ],
+  "native_validation_receipt_exists": false,
+  "root_assessment_exists": false,
+  "pending": [
+    "Coordinator must produce the final exact native pair and native-validation.json under its authorized authorship.",
+    "Reviewer then independently runs already-prepared check_native.py and reads complete pair/assessment before issuing final review.json and seal."
+  ],
+  "blocker_observation": {
+    "tool": "collaboration.list_agents",
+    "observed_root_status": "errored",
+    "reported_reason": "This content was flagged for possible cybersecurity risk.",
+    "interpretation": "Coordinator unavailable in this turn; no substitute authorship or self-approval attempted."
+  },
+  "known_code_verdict": "needs_curation",
+  "open_native_finding": "W08-16C-CODE-002",
+  "open_diagnostic_members": [
+    "W08-7D4DB26-SRC-001",
+    "W08-7D4DB26-SRC-002"
+  ],
+  "final_assembly_approved": false,
+  "scientific_or_application_approval": false,
+  "new_assembly_findings": [],
+  "prior_lineage_and_other_sealed_files_unchanged": true,
+  "no_more_writes_until_native_handoff": true
+}

@@ -1,0 +1,46 @@
+{
+  "source_baseline": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "files": {
+    "src/mediaingredientmech/campaign_publication.py": {
+      "before": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+      "after": "5abfc833c8b52ab1d83a13cf1cdfb67b8c325afc354d015b1e09e42e6ed0a60c"
+    },
+    "tests/test_campaign_publication.py": {
+      "before": "c8f02f3da1f3ed07fcea8207d82abc636922fed85c8633a47180d4363ebde17e",
+      "after": "7536ff9250c44bcceeb57e5a01162decc496b019e4695b23a6000558b2b1c47c"
+    },
+    "tests/test_campaign_demotion_integration.py": {
+      "before": "4abdcca5f92ed97317f3768fb390f25060c3048e3d47180479aca57dbc45aa43",
+      "after": "86673b32d4cc581b8dc639813afec6c971c0a38ec174c9d6ab8ea68545b425da"
+    }
+  },
+  "existing_test_assertions": {
+    "tests/test_campaign_publication.py": {
+      "all_preserved": true,
+      "function_count": 51,
+      "new_functions": [
+        "commit_publication_boundary",
+        "test_1256_completed_validation_permits_later_commit",
+        "test_1256_intervening_head_refused_before_publication_outputs",
+        "test_1256_late_commit_never_leaves_success_receipts",
+        "test_1256_live_publication_allows_uncommitted_derived_sync",
+        "test_1256_prepare_final_boundary_rechecks_head"
+      ],
+      "modified_existing_functions": [
+        "case"
+      ]
+    },
+    "tests/test_campaign_demotion_integration.py": {
+      "all_preserved": true,
+      "function_count": 8,
+      "new_functions": [
+        "test_real_1256_commit_between_source_generation_and_publication_refused",
+        "test_real_1256_historical_completed_validation_after_commit",
+        "test_real_1256_late_commit_rechecks_actual_source_generation_publication"
+      ],
+      "modified_existing_functions": [
+        "prepare_native_case"
+      ]
+    }
+  }
+}

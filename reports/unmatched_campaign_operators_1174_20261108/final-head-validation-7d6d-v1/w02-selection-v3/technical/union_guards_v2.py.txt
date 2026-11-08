@@ -1,0 +1,39 @@
+"""Closed v1-to-v2 union checks; metadata only, no archive execution."""
+from pathlib import Path
+from collections import Counter
+import json
+from guards_snapshot import require, destination, copy_index, sha, regular_snapshot
+
+OLD_SHA = "932ecf28849fe6ff51ad985692a3caa7597ae29e3c0abe074a39cca5f3766ee6"
+OLD_BASE = "reports/unmatched_campaign_operators_1174_20261108/final-operator-evidence-provisional-v1"
+NEW_BASE = "reports/unmatched_campaign_operators_1174_20261108/final-operator-evidence-provisional-v2"
+
+
+def union_delta(old, new):
+    require(old["archive_base"] == OLD_BASE and new["archive_base"] == NEW_BASE, "union archive base differs")
+    require(len(old["entries"]) == 656 and len(new["entries"]) == 691, "union count differs")
+    require(json.dumps(new["entries"][:656], sort_keys=True, ensure_ascii=False, separators=(",", ":")) ==
+            json.dumps(old["entries"], sort_keys=True, ensure_ascii=False, separators=(",", ":")),
+            "old entries changed, omitted, reordered, or changed JSON scalar type")
+    require(new["immediate_predecessor"]["sha256"] == OLD_SHA, "immediate predecessor differs")
+    require(len({r["original_path"] for r in new["entries"]}) == 691, "union duplicate original")
+    delta = new["entries"][656:]
+    require(dict(Counter(r["disposition"] for r in delta)) == {
+        "copy_exact_bytes_when_authorized": 31, "reuse_selected_new_archive_bytes": 3,
+        "reuse_committed_archive": 1}, "delta dispositions differ")
+    copies = [r for r in delta if r["disposition"] == "copy_exact_bytes_when_authorized"]
+    require(sum(r["bytes"] for r in copies) == 603678, "delta byte total differs")
+    require(all(r["archive_path"].startswith(NEW_BASE + "/") for r in copies), "delta copy base differs")
+    return delta
+
+
+def union_copies(old, new, root):
+    delta = union_delta(old, new)
+    retained = copy_index(old["entries"], OLD_BASE, root)
+    added = copy_index(delta, NEW_BASE, root)
+    require(len(retained) == 407 and len(added) == 31 and not set(retained) & set(added), "copy union differs")
+    return {**retained, **added}
+
+
+def union_destination(path, old_paths, root):
+    return destination(OLD_BASE if path in old_paths else NEW_BASE, path, root)

@@ -1,0 +1,51 @@
+"""Read-only independent inspection of the coordinator's actual source fixtures."""
+import hashlib
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+sys.path.insert(0,str(F/'src'))
+os.environ['GIT_OPTIONAL_LOCKS']='0'
+from mediaingredientmech.curate import campaign_owner_apply as owner
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def git(root,*args):return subprocess.check_output(['git','--literal-pathspecs','-C',str(root),*args])
+source=P.parent/'index-window-probes/results.json'
+script=P.parent/'provenance/probe_index_window.py'
+report=json.loads(source.read_bytes())
+assert h(Path(owner.__file__))==report['source_sha256']
+reads=[]
+for item in report['results']:
+    root=Path(item['fixture']); receipt=root/'receipt/application.json'
+    before=h(receipt); data=json.loads(receipt.read_bytes())
+    actual_head=git(root,'rev-parse','HEAD').decode().strip()
+    # The positive fixture deliberately has a subsequent historical commit.
+    if item['mode']!='positive_staged_installed':assert actual_head==item['accepted_baseline']
+    assert before==item['receipt_sha256'] and data['state']==item['receipt_state']
+    try:
+        proof=owner.verify_completed(root,root/'plan.json',receipt)
+        verification={'accepted':True,'state':proof['state']}
+    except ValueError as e: verification={'accepted':False,'error':str(e)}
+    assert verification['accepted']==item['historical_verification']['accepted']
+    blobs=[]
+    for injection in item['injections']:
+        name=injection['path']; staged=git(root,'show',':'+name); working=(root/name).read_bytes()
+        a,b=hashlib.sha256(staged).hexdigest(),hashlib.sha256(working).hexdigest()
+        assert a==injection['index_sha256'] and b==injection['working_sha256'] and a!=b
+        blobs.append({'path':name,'index_sha256':a,'working_sha256':b,'index_bytes_hex':staged.hex(),'git_index_entries':git(root,'ls-files','--stage','-z','--',name).decode()})
+    assert h(receipt)==before
+    reads.append({'mode':item['mode'],'fixture':str(root),'accepted_baseline':item['accepted_baseline'],'actual_head':actual_head,
+                  'receipt_sha256':before,'receipt_state':data['state'],'fresh_native_completed_verification':verification,
+                  'actual_index_blobs':blobs,'receipt_unchanged_by_readback':True})
+assert reads[1]['receipt_state']=='failed'
+assert all(x['receipt_state']=='complete' and x['actual_index_blobs'] for x in reads[2:])
+result={'status':'CONFIRMED_NEW_SOURCE_INDEX_WINDOW','reviewer':'/root/organics','reviewed_head':report['reviewed_head'],
+        'scope':'Independent exact readback of actual coordinator fixtures and fresh native completed verification; not an independent rerun of the injection lifecycle.',
+        'input_hashes':{str(source):h(source),str(script):h(script),str(Path(owner.__file__)):h(Path(owner.__file__))},'fixture_readbacks':reads,
+        'assessment':'The cached path enumeration and per-owner blob read are not protected by an index snapshot or lock. A later index mutation leaves both HEAD and working bytes unchanged, so the final HEAD check cannot detect it. The positive staged installed endpoints and early mutation refusal constrain this to late index freshness, not a blanket prohibition on staging or later historical validation.',
+        'bounded_fix_requirements':['Protect or verify one coherent index state throughout the final live boundary, including paths, stages, modes and content.','Retain legitimate staged installed endpoints, literal paths, actual retirement, and later historical verification.','Do not claim the source gap is corrected merely because the original publisher HEAD residual now refuses.'],
+        'scientific_or_application_approval':False,'root_fixture_files_modified':False}
+with (P/'source-index-window-readback.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'status':result['status'],'actual_fixture_count':len(reads),'late_failures_confirmed':2}))

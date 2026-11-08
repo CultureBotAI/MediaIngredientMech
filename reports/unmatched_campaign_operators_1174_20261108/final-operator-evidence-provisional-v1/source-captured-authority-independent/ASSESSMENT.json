@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-08T12:39:02.225791+00:00",
+  "verdict": "PASS_WITH_BOUNDED_OBSERVATION_AND_PENDING_EXTERNAL_HEAD_REVIEW",
+  "reviewer": "/root/step7d_science_c",
+  "independence": "Reviewer authored neither native operator nor either fix; reviewer authored independent counterexample and this assessment. No scientific candidate/application approval.",
+  "source_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+  "tests_sha256": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3",
+  "prior_finding": {
+    "finding_id": "IR-INDEX-COHERENCE-001",
+    "prior_native_id": "W08-7D4DB26-SRC-001",
+    "issue_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721556759",
+    "disposition": "resolved_in_exact_private_c4452c59_bytes; issue-wide closure not inferred"
+  },
+  "independent_actual_native_controls": 12,
+  "new_findings": [],
+  "static_preservation": {
+    "only_old_function_changed": [
+      "_check_mutation_git_state"
+    ],
+    "new_helpers": [
+      "_baseline_index_entries",
+      "_index_entries"
+    ],
+    "historical_verify_completed_AST_exact_to_7d4": true,
+    "original_7d4_and_failed_v1_test_files_exact_prefix": true,
+    "publisher_schema_gates_pins_or_scientific_payload_edits": false
+  },
+  "scope_mode_stage_blob_analysis": [
+    {
+      "aspect": "captured scope",
+      "basis": "Initial ls-files --stage -z is parsed into full literal per-path entries. Immutable accepted Git commit tree is converted to stage-zero entries. Complete path-set union differences become captured_changes. Actual cached diff paths must equal this set; an invalid initial path cannot disappear only during live diff."
+    },
+    {
+      "aspect": "captured entry",
+      "basis": "Each actual per-path ls-files result must byte-equal its initial captured entry before retirement or stage/mode/blob validation. A permitted-path bad initial blob cannot be hidden behind a later valid entry."
+    },
+    {
+      "aspect": "mode and stages",
+      "basis": "NUL framing and entry metadata are checked. Changed staged owner must have a single regular100644/100755 stage0 entry, matching installed mode; conflict/multiple stages and same-byte mode drift refuse. Baseline unchanged entries remain accepted baseline context."
+    },
+    {
+      "aspect": "blob identity and endpoint",
+      "basis": "cat-file reads an OID from an entry already equal to captured state. Its actual immutable blob bytes must equal the current regular installed owner and an accepted before/after endpoint. Retirement requires actual absence and no after owner. No later mutable colon-index lookup supplies authority."
+    },
+    {
+      "aspect": "end observation",
+      "basis": "Final full logical index must equal the validated captured index. The two original one-way races still refuse; valid staging is assessed anew between separate calls."
+    },
+    {
+      "aspect": "literal/stat/history",
+      "basis": "Independent actual Git tests retain tab/newline/\u00df/pathspec characters, mode/conflict refusal, stat-cache-only refresh, and later legitimate commit historical verification. No index lock or new historical freshness requirement introduced."
+    }
+  ],
+  "author_checks_inspected": [
+    {
+      "tag": "focused-v1",
+      "exit_code": 0,
+      "receipt_sha256": "af131ae0379ff132ee19aca88b347c78b064f0267b30af8cee1d56527f52fc0e",
+      "log_sha256": "fc1230435a094344f21c94ddf7d3c01e4a05aecf15ad9e7124bd7c275dafe87d"
+    },
+    {
+      "tag": "black-v1",
+      "exit_code": 0,
+      "receipt_sha256": "12de70700b82b57a6893c3a3c9feb3d546a233caf9ae15e85bd4f677a275def6",
+      "log_sha256": "b9cf511501d306d2bd8355ccb165c8ddc0a6fdd62d7c72c4a7b1795cf8934c8c"
+    },
+    {
+      "tag": "ruff-v1",
+      "exit_code": 0,
+      "receipt_sha256": "3fdfec9d8884f0ac6d8e9522586fafd6ff2629458f22d60f03a0fdb7ebf79250",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "tag": "mypy-v1",
+      "exit_code": 0,
+      "receipt_sha256": "61965513b0f1556b571427fec96b7c8230bf345db818b48fe790843bf3ae1f95",
+      "log_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+    }
+  ],
+  "broader_combined_author_run": "Still running / no final receipt at this review cutoff; must be collected separately. This review does not rerun or claim completion of all original354 cases. Exact file-prefix preservation is verified.",
+  "limits": [
+    "Bounded observations do not establish an atomic OS transaction or prohibit arbitrary mutation after the final observation.",
+    "HEAD, working files and logical index are separately checked observations, not a claim of one global simultaneous snapshot.",
+    "Final maintained commit/archive baseline, external W08 exact-head review and complete root validation remain required.",
+    "No native campaign source application or scientific/role/mapping/export approval is supplied."
+  ]
+}

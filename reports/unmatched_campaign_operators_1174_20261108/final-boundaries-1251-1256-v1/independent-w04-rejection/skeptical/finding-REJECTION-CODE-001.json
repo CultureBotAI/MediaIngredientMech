@@ -1,0 +1,45 @@
+{
+  "finding_id": "REJECTION-CODE-001",
+  "severity": "major",
+  "status": "open",
+  "certainty": "confirmed",
+  "head": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "parent": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "target": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "target_sha256": "14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f",
+  "field_or_function": "apply final unrelated tracked-file guard; git diff --name-only HEAD -- .decode().splitlines()",
+  "actual_source_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+  "private_fixture_path": ".temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection",
+  "actual_git_diff_bytes_hex": "22646174612f696e6772656469656e74732f756e6d61707065642f556e7265736f6c7665645f5c3330335c3233372e79616d6c220a",
+  "actual_git_diff_decoded": "\"data/ingredients/unmapped/Unresolved_\\303\\237.yaml\"\n",
+  "diagnostic_nul_delimited_bytes_hex": "646174612f696e6772656469656e74732f756e6d61707065642f556e7265736f6c7665645fc39f2e79616d6c00",
+  "actual_receipt": {
+    "path": ".temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection/receipt/application.json",
+    "sha256": "81b0fc57ad504ef1d607f5ba9bd7606734b4532467ce65ce59f00ec4e800c769",
+    "state": "failed",
+    "error": "ValueError: Unrelated tracked file changed",
+    "completed_operations": [
+      "rejection-proof"
+    ],
+    "recovery_required": true
+  },
+  "actual_plan": {
+    "path": ".temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection/plan.json",
+    "sha256": "e9d61dbafd9a1a0f281b3aa0b160c8f9db7e2d1e60219008a480be605781450d"
+  },
+  "actual_before": {
+    "path": ".temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection/receipt/owner-before-0000.yaml",
+    "sha256": "14d4f78d3976330b0cd98e2285d40232740c7d57892b80a9f88b5b956be31292"
+  },
+  "actual_after": {
+    "path": ".temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection/data/ingredients/unmapped/Unresolved_ß.yaml",
+    "sha256": "65f77f4d5d1f7eaa293cb190f8416939841874a1b0e040c15fd0177c6ffa4041"
+  },
+  "reproduction": "Native exact-9a1 prepare passes; native apply(enabled=True) changes the intended Unicode-named owner, then rejects its own correctly scoped change because ordinary git diff quotes the non-ASCII filename. No unrelated tracked file changed. Native receipt remains honestly failed/recovery_required. No rollback or cleanup performed.",
+  "lineage": "The string parsing guard predates9a1 and is unchanged from d691; this is a coupled application defect exposed by the newly restored legitimate W03 rejection path, not a claim that the22-line status patch introduced Git quoting. The author933-record-stage check never reaches this postwrite guard.",
+  "bounded_fix": "Use a NUL-delimited literal path listing (git diff --name-only -z HEAD --) and parse NUL-delimited decoded filesystem paths; do not rely on global core.quotePath settings or splitlines. Preserve nonempty-name and complete allowed-set checks. Add actual prepare/apply/verify_completed regression for literal Unicode and whitespace-control filenames with unrelated-file negative checks.",
+  "acceptance_check": "Exact successor commit must allow genuine same-path UNMAPPED→REJECTED Unicode owner to apply and verify_completed, retaining authentic preimage/history and all unrelated owners. Actual unapproved tracked path must remain refused; control characters/newlines must not be mistaken for separators.",
+  "scientific_approval": false,
+  "fix_applied": false,
+  "at": "2026-11-08T11:30:14.860977+00:00"
+}

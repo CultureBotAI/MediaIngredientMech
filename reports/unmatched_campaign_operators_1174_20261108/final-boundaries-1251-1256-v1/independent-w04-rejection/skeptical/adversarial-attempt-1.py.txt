@@ -1,0 +1,165 @@
+"""Independent exact-9a1 rejection adversaries, only private fixture writes."""
+from pathlib import Path
+import ast, collections, copy, hashlib, importlib, json, os, shutil, subprocess, sys
+
+S=Path(__file__).resolve().parent;O=S.parent;F=O/'frozen-head'
+HEAD='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b';PARENT='d691c079cf3923daed89284b7579913b84c3a34c'
+R=O.parents[1];C=R.parents[3]
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def jwrite(p,d):
+ p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+def save(name,d):
+ p=S/name
+ with p.open('x') as f:json.dump(d,f,indent=2,ensure_ascii=False);f.write('\n')
+def gitbytes(rev,path):return subprocess.check_output(['git','--no-optional-locks','show',f'{rev}:{path}'],cwd=R)
+
+assert F.is_dir(),F
+OP='src/mediaingredientmech/curate/campaign_owner_apply.py';TEST='tests/test_campaign_owner_apply.py'
+for p in [OP,TEST]:assert (F/p).read_bytes()==gitbytes(HEAD,p)
+assert sha((F/OP).read_bytes())=='14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f'
+assert sha((F/TEST).read_bytes())=='2ede1b72bd369898f2ed99f093ec0700da404a9a85342ea2f15883e29eb272ce'
+sys.path.insert(0,str(F/'src'))
+from mediaingredientmech.curate import campaign_owner_apply as native
+assert Path(native.__file__)==F/OP
+for p,f in native.LOADED_PRODUCERS.items():assert f.content==gitbytes(HEAD,p)
+
+before_ast=ast.parse(gitbytes(PARENT,TEST));after_ast=ast.parse((F/TEST).read_bytes())
+def funcs(t):return {n.name:n for n in t.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))}
+old,new=funcs(before_ast),funcs(after_ast)
+preserved=[]
+for name,node in old.items():
+ assert name in new and ast.dump(node,include_attributes=False)==ast.dump(new[name],include_attributes=False),name
+ preserved.append({'name':name,'ast_sha256':sha(ast.dump(node,include_attributes=False).encode()),'assertions':sum(isinstance(n,ast.Assert) for n in ast.walk(node))})
+assert len(preserved)==51
+save('prior-test-preservation.json',{'head':HEAD,'parent':PARENT,'old_functions_preserved':preserved,'old_count':len(old),'new_functions':sorted(set(new)-set(old)),'entire_old_assertion_and_decorator_AST_preserved':True})
+
+FIX=S/'fixtures';FIX.mkdir(exist_ok=False)
+CAN='mappings/ingredient_mappings.sssom.tsv'
+SSSOM=b'# mapping_set_id: https://example.invalid/rejection-proof\n# predicate_semantics: skos\nsubject_id\tsubject_label\tpredicate_id\tobject_id\tobject_label\tother\nMIM:Sentinel\tSentinel\tskos:exactMatch\tCHEBI:9009\tSentinel\t\n'
+def event(status,action='CREATED'):
+ return {'timestamp':'2026-11-08T11:40:00Z','curator':'independent mechanical fixture','action':action,'changes':'Private adversarial fixture, no scientific claim','new_status':status,'llm_assisted':False}
+def record(status='UNMAPPED',identifier='UNMAPPED_9001',term='Private unresolved source'):
+ return {'identifier':identifier,'preferred_term':term,'mapping_status':status,'curation_history':[event(status)]}
+def put(root,name,raw):
+ p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw);return p
+def reference(root,name):return {'path':name,'sha256':sha((root/name).read_bytes())}
+def render(root,name,data):
+ p=root/name;p.parent.mkdir(parents=True,exist_ok=True)
+ native.write_validated_ingredient(data,p,schema_path=F/'src/mediaingredientmech/schema/mediaingredientmech.yaml');return p
+def g(root,*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*args],stderr=subprocess.STDOUT).decode().strip()
+def contract(root,plan):
+ before=json.loads((root/plan['before_inventory']['path']).read_bytes())['owners'];after=dict(before)
+ for e in plan['records']:
+  if e['kind']=='promote':after.pop(e['before_source_record'],None)
+  e['after_capture']=reference(root,e['after_capture']['path']);after[e['source_record']]=e['after_capture']['sha256']
+ jwrite(root/'after.json',{'schema_version':1,'owners':after});plan['after_inventory']=reference(root,'after.json')
+ jwrite(root/'plan.json',plan)
+ jwrite(root/'acceptance.json',{'schema_version':1,'scope':'source_application_only','plan_sha256':sha((root/'plan.json').read_bytes()),'baseline_commit':plan['baseline_commit'],'intake_heads':plan['intake_heads'],'binding_sha256':{b['binding_id']:b['sha256'] for b in plan['bindings']},'accepted_operations':{e['operation_id']:e['after_capture']['sha256'] for e in plan['records']},'review_bindings':['review']})
+def fixture(name,oldstatus='UNMAPPED',newstatus='REJECTED',category='unmapped',source_name='Unresolved_ß.yaml',kind='edit',fault=None):
+ root=FIX/name;root.mkdir()
+ for p in native.PRODUCERS:put(root,p,gitbytes(HEAD,p))
+ (root/'data/ingredients/mapped').mkdir(parents=True);(root/'data/ingredients/unmapped').mkdir(parents=True)
+ source=f'data/ingredients/{category}/{source_name}' if kind!='create' else None
+ oldrec=record(oldstatus)
+ if source:render(root,source,oldrec)
+ sentinel='data/ingredients/mapped/Sentinel.yaml';render(root,sentinel,record('MAPPED','CHEBI:9009','Untouched sentinel'))
+ if fault=='inherited_collision':render(root,'data/ingredients/unmapped/Sibling.yaml',record('UNMAPPED','UNMAPPED_9001','Different name'))
+ put(root,CAN,SSSOM)
+ newrec=copy.deepcopy(oldrec);newrec['mapping_status']=newstatus;newrec['curation_history'].append(event(newstatus,'REJECTED' if newstatus=='REJECTED' else 'ANNOTATED'))
+ if newstatus==oldstatus:newrec['notes']='A substantive private correction, no owner approval.'
+ if fault=='identifier':newrec['identifier']='UNMAPPED_9002'
+ if fault=='name':newrec['preferred_term']='A different source'
+ if fault=='case_name':newrec['preferred_term']=newrec['preferred_term'].upper()
+ if fault=='history':newrec['curation_history'][0]['changes']='Rewritten older event'
+ if fault=='no_history_append':newrec['curation_history'].pop()
+ if fault=='history_only':newrec=copy.deepcopy(oldrec);newrec['curation_history'].append(event(oldstatus,'ANNOTATED'))
+ if fault=='exact_noop':newrec=copy.deepcopy(oldrec)
+ if fault=='new_collision':newrec['identifier']='CHEBI:9009'
+ destination=source or 'data/ingredients/unmapped/NewRejected.yaml'
+ if fault=='relocate':destination='data/ingredients/unmapped/Renamed.yaml'
+ if fault=='category':destination='data/ingredients/mapped/Unresolved_ß.yaml'
+ if fault=='path_traversal':destination='data/ingredients/unmapped/../unmapped/Unresolved_ß.yaml'
+ if fault=='source_traversal':source='data/ingredients/unmapped/../unmapped/Unresolved_ß.yaml'
+ before=native.hashes(native.inventory(root));jwrite(root/'before.json',{'schema_version':1,'owners':before})
+ proof=native.verify_mapping_chain(root);jwrite(root/'protected.json',{'schema_version':1,'files':proof['input_hashes']})
+ render(root,'intake/original.yaml',newrec)
+ cases=[{'case_id':'bounded-source-case','source':'independent fixture','name':'No scientific fact asserted'}];jwrite(root/'intake/cases.json',cases)
+ proposal={'proposal_id':'genuine-original','case_ids':['bounded-source-case'],'kind':'new_owner' if kind=='create' else 'edit_existing_owner','owner_path':source or destination,'before_sha256':before.get(source),'after_capture':{'root':'artifact',**reference(root,'intake/original.yaml')}}
+ if fault=='origin_kind':proposal['kind']='new_owner'
+ if fault=='origin_preimage':proposal['before_sha256']='b'*64
+ jwrite(root/'intake/proposals.json',{'proposals':[proposal]})
+ for role in ('shard','decision','evidence','review','reconciliation'):jwrite(root/f'intake/{role}.json',{'scope':'mechanical fixture only','role':role,'approval':'NONE'})
+ g(root,'init','-q');g(root,'add','.');g(root,'-c','user.name=Independent fixture','-c','user.email=fixture@example.invalid','commit','-qm','Immutable private mechanical source baseline')
+ head=g(root,'rev-parse','HEAD');bindings=[]
+ def bind(bid,role,path,published=False):bindings.append({'binding_id':bid,'role':role,**reference(root,path),'published_head':head if published else None,'published_path':path if published else None})
+ bind('cases','case_ledger','intake/cases.json');bind('proposal','proposal','intake/proposals.json',True);bind('payload','evidence','intake/original.yaml',True)
+ for role in ('shard','decision','evidence','review','reconciliation'):bind(role,role,f'intake/{role}.json')
+ for n,p in enumerate(native.PRODUCERS):bind(f'producer-{n}','producer',p)
+ origin={'worker_slot':'worker-03','head_sha':head,'proposal_id':'genuine-original','proposal_binding':'proposal','payload_binding':'payload','case_hashes':{'bounded-source-case':sha(json.dumps(cases[0],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())}}
+ entry={'operation_id':'rejection-proof','kind':kind,'before_source_record':source,'source_record':destination,'before_yaml_sha256':before.get(source),'after_capture':reference(root,'intake/original.yaml'),'origins':[origin],'change':'Bounded mechanical fixture; no science approval','verification':'Independent native source transition test only'}
+ if fault=='false_head':origin['head_sha']='0'*40
+ if fault=='false_case':origin['case_hashes']['bounded-source-case']='0'*64
+ if fault=='false_preimage':entry['before_yaml_sha256']='0'*64
+ if fault=='promote':entry.update(kind='promote',source_record='data/ingredients/mapped/Unresolved_ß.yaml')
+ if fault=='demote':entry['kind']='demote'
+ plan={'schema_version':1,'operation':'apply_reviewed_campaign_owners','repository':'CultureBotAI/MediaIngredientMech','baseline_commit':head,'intake_heads':{'worker-03':head},'before_inventory':reference(root,'before.json'),'after_inventory':{},'protected_inputs':reference(root,'protected.json'),'bindings':bindings,'records':[entry]}
+ contract(root,plan)
+ return root,plan,source,before
+
+results=[]
+def trial(name,expect,**kw):
+ root,plan,source,before=fixture(name,**kw)
+ try:
+  ready=native.prepare(root,root/'plan.json',root/'acceptance.json')
+ except Exception as e:
+  result={'name':name,'expected':expect,'actual':'rejected_prepare','exception':type(e).__name__,'reason':str(e),'owner_inventory_unchanged':native.hashes(native.inventory(root))==before,'receipt_exists':(root/'receipt').exists()}
+  assert expect=='reject' and result['owner_inventory_unchanged'] and not result['receipt_exists'],result
+ else:
+  assert expect=='pass',(name,'unexpectedly accepted')
+  report=native.apply(ready,root/'receipt',enabled=True);verified=native.verify_completed(root,root/'plan.json',root/'receipt/application.json')
+  assert report['state']=='complete' and verified['approval']==native.APPROVAL
+  assert verified['after_inventory']==native.hashes(native.inventory(root)) and (root/CAN).read_bytes()==SSSOM
+  if source:
+   assert (root/'receipt/owner-before-0000.yaml').read_bytes()==ready.before[source].content
+   assert verified['records'][0]['before_source_record']==source
+  result={'name':name,'expected':expect,'actual':'prepare_apply_verify_completed_PASS','operation':plan['records'][0]['kind'],'before_inventory':before,'after_inventory':verified['after_inventory'],'receipt_sha256':sha((root/'receipt/application.json').read_bytes()),'approval':verified['approval']}
+ results.append(result)
+
+for name,kwargs in [('genuine_unicode_rejection',{}),('rejected_unmapped_maintenance',{'oldstatus':'REJECTED','newstatus':'REJECTED'}),('rejected_mapped_maintenance',{'oldstatus':'REJECTED','newstatus':'REJECTED','category':'mapped'}),('ordinary_mapped_edit',{'oldstatus':'MAPPED','newstatus':'MAPPED','category':'mapped'})]:trial(name,'pass',**kwargs)
+for fault in ['identifier','name','case_name','history','no_history_append','history_only','exact_noop','new_collision','inherited_collision','relocate','category','path_traversal','source_traversal','origin_kind','origin_preimage','false_head','false_case','false_preimage','promote','demote']:trial(fault,'reject',fault=fault)
+for name,kwargs in [('mapped_to_rejected',{'oldstatus':'MAPPED','category':'mapped'}),('mapped_in_unmapped_to_rejected',{'oldstatus':'MAPPED'}),('unmapped_in_mapped_to_rejected',{'category':'mapped'}),('ambiguous_to_rejected',{'oldstatus':'AMBIGUOUS'}),('rejected_to_unmapped',{'oldstatus':'REJECTED','newstatus':'UNMAPPED'}),('rejected_to_mapped',{'oldstatus':'REJECTED','newstatus':'MAPPED'}),('new_create_rejected',{'kind':'create'})]:trial(name,'reject',**kwargs)
+
+# Post-prepare and completed-proof attacks use actual native code and change
+# only private inputs, never source snapshots or pinned executable modules.
+for fault in ['late_review','late_owner','final_status','final_identity','final_history','final_backup','final_head','final_membership']:
+ root,plan,source,before=fixture('proof-'+fault);ready=native.prepare(root,root/'plan.json',root/'acceptance.json')
+ if fault.startswith('late_'):
+  p=root/('intake/review.json' if fault=='late_review' else source);p.write_bytes(p.read_bytes()+b'\n')
+  expected=native.hashes(native.inventory(root))
+  try:native.apply(ready,root/'receipt',enabled=True)
+  except Exception as e:
+   assert native.hashes(native.inventory(root))==expected and not (root/'receipt').exists()
+   results.append({'name':fault,'actual':'rejected_before_apply','exception':type(e).__name__,'reason':str(e),'no_further_owner_mutation':True})
+  else:raise AssertionError(fault)
+ else:
+  native.apply(ready,root/'receipt',enabled=True)
+  if fault in ['final_status','final_identity','final_history']:
+   d=native.record((root/source).read_bytes())
+   if fault=='final_status':d['mapping_status']='UNMAPPED'
+   elif fault=='final_identity':d['identifier']='UNMAPPED_9002'
+   else:d['curation_history'][0]['changes']='Altered historic proof'
+   render(root,source,d)
+  elif fault=='final_backup':
+   p=root/'receipt/owner-before-0000.yaml';p.write_bytes(p.read_bytes()+b'\n')
+  elif fault=='final_membership':render(root,'data/ingredients/unmapped/Unexpected.yaml',record('UNMAPPED','UNMAPPED_9003','Unexpected owner'))
+  else:
+   plan['records'][0]['origins'][0]['head_sha']='0'*40;contract(root,plan)
+  try:native.verify_completed(root,root/'plan.json',root/'receipt/application.json')
+  except Exception as e:results.append({'name':fault,'actual':'completed_proof_refused','exception':type(e).__name__,'reason':str(e)})
+  else:raise AssertionError(fault)
+
+assert not any('integration/worktree' in str(m.__file__) for m in sys.modules.values() if getattr(m,'__file__',None) and 'mediaingredientmech' in str(m.__file__))
+executed=[{'name':name,'path':str(m.__file__),'sha256':sha(Path(m.__file__).read_bytes())} for name,m in sys.modules.items() if getattr(m,'__file__',None) and str(m.__file__).startswith(str(F))]
+for p,f in native.LOADED_PRODUCERS.items():f.verify();assert f.content==gitbytes(HEAD,p)
+save('adversarial-results.json',{'status':'PASS','head':HEAD,'parent':PARENT,'tests':results,'count':len(results),'prepare_apply_completed_positives':4,'expected_refusals':len(results)-4,'executed_modules':executed,'loaded_producers':{p:sha(f.content) for p,f in native.LOADED_PRODUCERS.items()},'actual_source_application':False,'scope':'Actual private-fixture prepare/apply/completed-proof only; no real source/maintained application or scientific approval.'})
+print(json.dumps({'status':'PASS','count':len(results),'positives':4,'refusals':len(results)-4}))

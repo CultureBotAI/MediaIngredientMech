@@ -1,0 +1,120 @@
+"""Recheck and seal the private archive-selection proposal; copy no inputs."""
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import stat
+import subprocess
+from datetime import datetime, timezone
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+K = C / "integration/release-worktree"
+
+
+def read(path):
+    path = Path(path)
+    assert stat.S_ISREG(path.lstat().st_mode), path
+    assert not any(parent.is_symlink() for parent in path.parents), path
+    return path.read_bytes()
+
+
+def sha(path):
+    return hashlib.sha256(read(path)).hexdigest()
+
+
+def load(path):
+    return json.loads(read(path))
+
+
+def put(name, value):
+    with (D / name).open("x") as stream:
+        json.dump(value, stream, indent=2, ensure_ascii=False)
+        stream.write("\n")
+
+
+selection = load(D / "SELECTION.json")
+assert sha(D / "SELECTION.json") == "f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34"
+prior = C / "preflight/pr1205-evidence-final-selection-v2"
+assert sha(prior / "HANDOFF.json") == "f349ce23506500ec79c11ffef3c72a65f677bdd3c0437851609a0a79d1b55868"
+assert sha(prior / "SELECTION.json") == "40b900ec95d849543f955e81d2ff7c043dfd09d469c1a9b7cc232aee8b55e85e"
+assert selection["entries"][:691] == load(prior / "SELECTION.json")["entries"]
+copies = {
+    item["archive_path"]: item["sha256"]
+    for item in selection["entries"]
+    if item["disposition"] == "copy_exact_bytes_when_authorized"
+}
+assert len(copies) == 655
+git_checks = {}
+for item in selection["entries"]:
+    assert sha(item["original_path"]) == item["sha256"]
+    assert len(read(item["original_path"])) == item["bytes"]
+    if item.get("upstream_origin_path"):
+        assert sha(item["upstream_origin_path"]) == item["sha256"]
+    kind = item["disposition"]
+    if kind in {"reference_exact_committed_blob", "reuse_committed_archive"}:
+        target = item["target"]
+        key = (target["commit"], target["path"])
+        if key not in git_checks:
+            raw = subprocess.check_output(
+                ["git", "-C", str(K), "show", ":".join(key)],
+                env={**os.environ, "GIT_OPTIONAL_LOCKS": "0"},
+            )
+            git_checks[key] = hashlib.sha256(raw).hexdigest()
+        assert git_checks[key] == item["sha256"]
+    elif kind == "reuse_existing_copied_archive":
+        assert sha(K / item["archive_path"]) == item["sha256"]
+    else:
+        assert copies[item["archive_path"]] == item["sha256"]
+        assert not os.path.lexists(K / item["archive_path"])
+        if item["original_path"].endswith(".py"):
+            assert item["archive_path"].endswith(".py.txt")
+copied = 0
+for previous in selection["predecessor_selections"]:
+    assert sha(previous["selection"]) == previous["sha256"]
+    assert sha(previous["copy_receipt"]) == previous["copy_receipt_sha256"]
+    for item in load(previous["copy_receipt"])["copied"]:
+        assert sha(K / item["path"]) == item["sha256"]
+        copied += 1
+assert copied == 1077
+put("FINAL-RECHECK.json", {
+    "status": "PASS_METADATA_INTEGRITY_ONLY",
+    "checked_at_utc": datetime.now(timezone.utc).isoformat(),
+    "selection_sha256": sha(D / "SELECTION.json"),
+    "original_references_rehashed": len(selection["entries"]),
+    "old_entries_exact": 691,
+    "old_copied_files_rehashed": copied,
+    "unique_git_targets_rehashed": len(git_checks),
+    "source_archive_copy_or_application": False,
+    "limitations": "No independent code/science approval or final maintained-head validation; historical observations remain qualified in README.",
+})
+members = []
+for path in sorted(D.iterdir()):
+    assert path.is_file() and not path.is_symlink(), path
+    members.append({"path": path.name, "sha256": sha(path), "bytes": len(read(path))})
+put("MANIFEST.json", {
+    "kind": "private_archive_selection_metadata_manifest",
+    "files": members,
+    "scope": "Own proposal metadata only; selected original evidence stays at explicit original/Git/archive locations.",
+})
+put("HANDOFF.json", {
+    "status": "PROVISIONAL_SELECTION_READY_FOR_DISTINCT_REVIEW_NOT_COPY_OR_ACCEPTANCE",
+    "author": "/root/next23_context",
+    "authorship_limitation": "Selection and byte verification only; includes earlier self-authored evidence without self-approval.",
+    "selection": {"path": "SELECTION.json", "sha256": sha(D / "SELECTION.json")},
+    "manifest": {"path": "MANIFEST.json", "sha256": sha(D / "MANIFEST.json"), "members": len(members)},
+    "summary": load(D / "SUMMARY.json"),
+    "effective_status_readback": "README.md qualifies inherited historical observations and pending inclusion flags; no fresh absence assertion.",
+    "required_later": "Actual root commit/readback, final QC/full suite, external final-head review, W02 exact selection review and authorized-copy/content review; no future hashes invented.",
+    "failed_construction": "Original build-v1 exit1 retained; build-v2 exit0 uses explicit native manifest size key with unchanged exact size/hash checks.",
+    "validation_limit": "Original combined11FAIL619PASS and corrected13PASS remain separate; no clean combined/full-suite claim.",
+    "final_recheck": {"path": "FINAL-RECHECK.json", "sha256": sha(D / "FINAL-RECHECK.json")},
+})
+put("SEAL.json", {
+    "handoff_sha256": sha(D / "HANDOFF.json"),
+    "manifest_sha256": sha(D / "MANIFEST.json"),
+    "selection_sha256": sha(D / "SELECTION.json"),
+    "immutable_after_seal": True,
+})
+print(json.dumps(load(D / "SEAL.json"), indent=2))

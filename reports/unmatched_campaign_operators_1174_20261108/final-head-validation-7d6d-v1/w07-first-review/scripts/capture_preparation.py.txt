@@ -1,0 +1,53 @@
+from pathlib import Path
+import json,hashlib,subprocess,datetime,ast,difflib,os
+O=Path(__file__).resolve().parents[1];W=O.parents[1];C=W.parents[2];K=C/'integration/release-worktree';A=C/'integration/campaign-suppressions1259-v1';P=A/'runtime/repo'
+sha=lambda b:hashlib.sha256(b).hexdigest();now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+os.environ.update(GIT_OPTIONAL_LOCKS='0',GIT_NO_LAZY_FETCH='1')
+ledger=[]
+def cp(p,rel):
+ b=p.read_bytes();q=O/rel;q.parent.mkdir(parents=True,exist_ok=True);assert not q.exists();q.write_bytes(b);ledger.append(dict(source=str(p),capture=rel,sha256=sha(b),bytes=len(b),accessed_at=now()));return b
+cp(A/'SOURCE-FREEZE-v1.json','inputs/precommit/SOURCE-FREEZE-v1.json')
+cp(A/'IMPLEMENTATION-NOTES.md','inputs/precommit/IMPLEMENTATION-NOTES.md')
+for p in sorted((A/'checks').glob('*/run.json')):
+ x=json.loads(p.read_text());b=cp(p,'inputs/author-checks/'+p.parent.name+'/run.json');log=p.parent/'run.log';raw=cp(log,'inputs/author-checks/'+p.parent.name+'/run.log');assert sha(raw)==x['log_sha256']
+for rel in ['fixture-correction-v1/preservation.json','fixture-correction-v1/test-only.diff','correct_fixtures_v1.py','fixture-dependency-finding-v1/RESULT.json','partial-review-fixture-finding-v1/RESULT.json']:
+ cp(A/rel,'inputs/author/'+rel)
+# Code-only portable snapshot, no environment, Git metadata, owner data, or source application.
+files=[]
+for d in ['src','scripts','schema','conf']:
+ files.extend(p for p in (P/d).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
+files.extend(P/r for r in ['pyproject.toml','uv.lock','MAPPING_SEMANTICS.md','justfile'])
+tests=['tests/test_campaign_owner_apply.py','tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py','tests/test_campaign_suppressions.py','tests/test_campaign_suppression_integration.py']
+files.extend(P/r for r in tests+['tests/conftest.py','tests/historical_source_anchors.py','tests/__init__.py'] if (P/r).is_file())
+for p in sorted(set(files)):cp(p,'runtime-code/'+str(p.relative_to(P)))
+freeze=json.loads((A/'SOURCE-FREEZE-v1.json').read_text());fix=json.loads((A/'fixture-correction-v1/preservation.json').read_text())
+assert fix['before']==freeze['files'];assert fix['publisher_unchanged']
+for path,h in fix['after'].items():assert sha((P/path).read_bytes())==h
+assert sha((P/'src/mediaingredientmech/campaign_publication.py').read_bytes())=='1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24'
+assert sha((K/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes())=='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52'
+astchecks=[]
+for path in tests:
+ before_path=A/'fixture-correction-v1/before'/path
+ if before_path.exists():before=cp(before_path,'inputs/tests-before-fixture-correction/'+path)
+ else:before=(P/path).read_bytes();assert sha(before)==freeze['files'][path]
+ after=(P/path).read_bytes();bt=ast.parse(before);at=ast.parse(after)
+ assertions=lambda tree:[ast.dump(n,include_attributes=False) for n in ast.walk(tree) if isinstance(n,ast.Assert)]
+ defs=lambda tree:{n.name:ast.dump(n,include_attributes=False) for n in tree.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))}
+ decorators=lambda tree:{n.name:[ast.dump(d,include_attributes=False) for d in n.decorator_list] for n in tree.body if isinstance(n,ast.FunctionDef)}
+ assert assertions(bt)==assertions(at);assert decorators(bt)==decorators(at)
+ bd,ad=defs(bt),defs(at);changed=[k for k in bd if bd[k]!=ad[k]]
+ row=dict(path=path,before_sha256=sha(before),after_sha256=sha(after),all_assert_nodes_exact=True,all_function_parameter_decorators_exact=True,changed_functions=changed)
+ if (K/path).exists():
+  kb=subprocess.check_output(['git','-C',str(K),'show','e0a75a0c48ba539426b1f70623ea376c7b379ecf:'+path]);assert kb==(K/path).read_bytes();kt=ast.parse(kb)
+  row['predecessor_committed_sha256']=sha(kb);row['existing_asserts_exact_to_predecessor']=assertions(kt)==assertions(at);row['existing_decorators_exact_to_predecessor']=decorators(kt)==decorators(at)
+  assert row['existing_asserts_exact_to_predecessor'] and row['existing_decorators_exact_to_predecessor']
+  cp(K/path,'inputs/committed-predecessor/'+path)
+ astchecks.append(row)
+actual_diff=''.join(difflib.unified_diff((A/'fixture-correction-v1/before/tests/test_campaign_publication.py').read_text().splitlines(True),(P/'tests/test_campaign_publication.py').read_text().splitlines(True),fromfile='a/tests/test_campaign_publication.py',tofile='b/tests/test_campaign_publication.py'))+''.join(difflib.unified_diff((A/'fixture-correction-v1/before/tests/test_campaign_suppressions.py').read_text().splitlines(True),(P/'tests/test_campaign_suppressions.py').read_text().splitlines(True),fromfile='a/tests/test_campaign_suppressions.py',tofile='b/tests/test_campaign_suppressions.py'))
+assert actual_diff==(A/'fixture-correction-v1/test-only.diff').read_text()
+(O/'validation/fixture-diff-independent.json').write_text(json.dumps(dict(at=now(),checks=astchecks,actual_diff_sha256=sha(actual_diff.encode()),exact_author_diff=True,scope='Independent exact AST and inverse diff verification; existing assertions and parametrization preserved. Two known fixture-only corrections; source code frozen. No helper fix performed.'),indent=2)+'\n')
+old=W/'.temp/four-suppression-policy-independent-v1';m=json.loads((old/'MANIFEST.json').read_text());assert sha((old/'MANIFEST.json').read_bytes())=='96283373897369bdd1f010087442fefea84f574000a46e8314d678010c913076'
+assert all(sha((old/r['path']).read_bytes())==r['sha256'] for r in m['files'])
+(O/'validation/prior-science-preservation.json').write_text(json.dumps(dict(at=now(),path=str(old),manifest_sha256=sha((old/'MANIFEST.json').read_bytes()),members=len(m['files']),all_exact=True,scope='Preserved prior W07 scientific participation; technical review does not create a second independent science vote.'),indent=2)+'\n')
+(O/'inputs/preparation-capture-ledger.json').write_text(json.dumps(dict(at=now(),files=ledger,code_files=len(files),code_bytes=sum(p.stat().st_size for p in files),precommit=True,receipt_present=(C/'preflight/campaign-suppressions1259-commit-v1/receipt.json').exists(),own_head=subprocess.check_output(['git','-C',str(W),'rev-parse','HEAD']).decode().strip()),indent=2)+'\n')
+print(json.dumps(dict(captures=len(ledger),code_files=len(files),ast_tests=len(astchecks),prior_science_members=len(m['files']))))

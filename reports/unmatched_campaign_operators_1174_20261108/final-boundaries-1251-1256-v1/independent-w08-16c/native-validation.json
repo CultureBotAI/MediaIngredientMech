@@ -1,0 +1,57 @@
+{
+  "status": "PASS_NATIVE_REVIEW_CONTRACT",
+  "review_id": "20261108T115104Z-w08-combined-16c-independent",
+  "review_verdict": "needs_curation",
+  "source_state": "git_commit",
+  "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "committed_inputs": 27,
+  "private_evidence_inputs": 23,
+  "targets": 5,
+  "yaml": {
+    "path": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.yaml",
+    "sha256": "e73327f51f0c72260e9c9938df54d20b830df7ddc13a0125e18b1e6403da4cd2"
+  },
+  "markdown": {
+    "path": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.md",
+    "sha256": "547e61017f62e48576704a7dfaf753bfff6d7f7ef97746f2a4b68114b3303c41"
+  },
+  "actual_native_methods": [
+    "inspect_source",
+    "validate_review",
+    "assert_current_source",
+    "render_markdown",
+    "parse_review_bundle",
+    "read_review",
+    "source_provenance"
+  ],
+  "private_readonly_Git_context": {
+    "GIT_DIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.git/worktrees/worktree8",
+    "GIT_WORK_TREE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native",
+    "GIT_OPTIONAL_LOCKS": "0"
+  },
+  "provenance": {
+    "status": "git_commit_verified",
+    "reason": "Historical regular-file blobs match the declared hashes."
+  },
+  "negative_controls": [
+    {
+      "name": "false_committed_digest",
+      "refused": true,
+      "error": "committed input digest disagrees: .claude/skills/reconcile-review-records/SKILL.md"
+    },
+    {
+      "name": "markdown_drift",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "name": "false_pass_with_open_major_findings",
+      "refused": true,
+      "error": "a passing verdict cannot conceal unresolved major/blocker findings or failed required checks"
+    }
+  ],
+  "prior_pairs_verified": 2,
+  "initial_harness_failure": "build_native_review.py wrote a valid exact-commit pair, then private nested-root read_review resolved ls-tree paths relative to the packet subdirectory and refused provenance. Original log/script/pair preserved. This readback supplies native explicit GIT_DIR/GIT_WORK_TREE context for read-only verification; no gate patch or pair rewrite.",
+  "maintained_saver_used": false,
+  "application_approval": false
+}

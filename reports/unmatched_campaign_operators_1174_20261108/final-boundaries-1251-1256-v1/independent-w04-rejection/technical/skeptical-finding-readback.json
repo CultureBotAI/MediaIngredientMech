@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-08T11:35:00.454780+00:00",
+  "reviewer": "/root/assembly_review",
+  "finding": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/finding-REJECTION-CODE-001.json",
+    "sha256": "06fc1e4aee66332acf59acd14d82f592a75153ac07c9797611ba510348a6bf32"
+  },
+  "actual_probe": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-path-probe.py",
+    "sha256": "3551d7301e28aa2b6d9ddb0deb87a67c8ac70f1c12e6b08b7f901c748c5f899b"
+  },
+  "actual_results": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-path-results.json",
+    "sha256": "a09f45115732b2c84e00b403d5a55a627c4fcc03226f79272bf94cbfcf13d68a"
+  },
+  "readback": [
+    {
+      "action_id": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "source": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "source_plan": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-fixtures/c-generic-polymer-tombstone/plan.json",
+        "sha256": "9e5acc683b48880829b8a6707f5887f20659a9d0f9ef93b36a67c3332a737878"
+      },
+      "source_receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-fixtures/c-generic-polymer-tombstone/receipt/application.json",
+        "sha256": "cba62af2fa7467d47d71e02a7ea5f7712061b04be561b410b4c76d60b46dbdf0"
+      },
+      "state": "failed",
+      "recovery_required": true,
+      "case_hashes_and_original_head_reverified": true,
+      "before_and_after_exact": true,
+      "ordinary_diff": "\"data/ingredients/unmapped/Poly-\\303\\237-hydroxybutyric_Acid.yaml\"\n",
+      "literal_nul_diff": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml\u0000",
+      "only_intended_tracked_path_changed": true
+    },
+    {
+      "action_id": "ORIGINAL-w03::c-r-polymer-tombstone",
+      "source": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "source_plan": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-fixtures/c-r-polymer-tombstone/plan.json",
+        "sha256": "1d80f36ac74cfcf9102fe90f1e549cee1a42a64c00de3f21d001e6c2a2bb1a55"
+      },
+      "source_receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-fixtures/c-r-polymer-tombstone/receipt/application.json",
+        "sha256": "e1689db14ac7e740b784f23b22a51a972a35654001e2001c189347f55795c433"
+      },
+      "state": "complete",
+      "recovery_required": false,
+      "case_hashes_and_original_head_reverified": true,
+      "before_and_after_exact": true,
+      "ordinary_diff": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml\n",
+      "literal_nul_diff": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml\u0000",
+      "only_intended_tracked_path_changed": true
+    }
+  ],
+  "adjudication": "CONFIRMED_REJECTION_CODE_001; full bounded compatibility not established despite record-stage and automated test passes.",
+  "new_duplicate_finding_created": false,
+  "independent_scope": "Read exact scripts, receipt, payload, beforeimage, case ledger, plan/origin and literal Git diff in both existing private fixtures; did not rerun or modify those fixtures."
+}

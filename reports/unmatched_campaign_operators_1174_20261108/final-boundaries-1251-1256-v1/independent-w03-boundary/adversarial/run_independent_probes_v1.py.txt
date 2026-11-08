@@ -1,0 +1,140 @@
+"""Independent adversarial counterexamples. Fixture acceptance is not science approval.
+Uses only pre-existing setup/render helpers for native boilerplate, never the new
+inherited_family_case helper. All families and mutations are authored here.
+"""
+from pathlib import Path
+import copy, datetime, hashlib, importlib.util, json, os, sys, traceback
+O=Path(__file__).resolve().parent; F=O.parent/'frozen-src';sys.path.insert(0,str(F/'src'))
+spec=importlib.util.spec_from_file_location('original_scaffold',F/'tests/test_campaign_owner_apply.py');t=importlib.util.module_from_spec(spec);spec.loader.exec_module(t);o=t.owner
+ROWS=[];START=datetime.datetime.now(datetime.timezone.utc).isoformat()
+A=t.EDIT;B=t.UNTOUCHED;C='data/ingredients/mapped/Third.yaml';D='data/ingredients/mapped/Fourth.yaml';U='data/ingredients/unmapped/Rejected.yaml'
+
+def capture_error(fn):
+ try:return {'returned':fn(),'exception':None}
+ except Exception as e:return {'returned':None,'exception':{'type':type(e).__name__,'message':str(e)}}
+
+def fixture(name, *, statuses=None, ids=None, terms=None, paths=None, select=None):
+ root=O/'fixtures'/name;assert not root.exists();root.mkdir(parents=True)
+ plan=t.setup(root)
+ paths=paths or [A,B,C,D];ids=ids or ['CHEBI:1','CHEBI:1','CHEBI:90','CHEBI:91'];terms=terms or ['Alpha','Beta','Gamma','Delta'];statuses=statuses or ['MAPPED']*len(paths)
+ for p,i,n,s in zip(paths,ids,terms,statuses,strict=True):t.render(root,p,t.ingredient(i,n,s))
+ # If the scenario replaces default named owners, maintain them independently
+ # and prevent accidental scaffold collisions by giving them distinct keys.
+ for p,i,n in [(A,'CHEBI:81','Scaffold existing'),(B,'CHEBI:82','Scaffold untouched')]:
+  if p not in paths:t.render(root,p,t.ingredient(i,n))
+ before=o.hashes(o.inventory(root));t.put(root,'before.json',{'schema_version':1,'owners':before})
+ selected=paths if select is None else select
+ cases=[];proposals=[];entries=[]
+ for index,p in enumerate(selected):
+  before_data=o.record((root/p).read_bytes());after=copy.deepcopy(before_data);after['notes']='Independent fixture maintenance; all scientific holds retained.';after['curation_history'].append(t.event('ANNOTATED',before_data['mapping_status']))
+  payload=f'intake/independent-{index}.yaml';t.render(root,payload,after)
+  case={'case_id':f'adversarial-case-{index}','source_id':f'independent-{index}','label':p};cases.append(case)
+  proposals.append({'proposal_id':f'independent-p{index}','case_ids':[case['case_id']],'kind':'edit_existing_owner','owner_path':p,'before_sha256':before[p],'after_capture':{'root':'artifact',**t.ref(root,payload)}})
+  entries.append({'operation_id':f'independent-o{index}','kind':'edit','before_source_record':p,'source_record':p,'before_yaml_sha256':before[p],'after_capture':t.ref(root,payload),'origins':[{'worker_slot':'worker-01','head_sha':'pending','proposal_id':f'independent-p{index}','proposal_binding':'proposals','payload_binding':f'independent-payload-{index}','case_hashes':{case['case_id']:o.digest(json.dumps(case,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode())}}],'change':'Fixture note maintenance; no science approval','verification':'Exact published fixture lineage and bounded transition only'})
+ t.put(root,'intake/cases.json',cases);t.put(root,'intake/proposals.json',{'proposals':proposals})
+ t.run_git(root,'add','data/ingredients','before.json','intake');t.run_git(root,'-c','user.email=independent@example.invalid','-c','user.name=Independent adversarial reviewer','commit','-qm','Independent family fixture, no scientific approval');head=t.run_git(root,'rev-parse','HEAD')
+ plan['baseline_commit']=head;plan['intake_heads']={'worker-01':head};plan['before_inventory']=t.ref(root,'before.json');plan['records']=entries
+ plan['bindings']=[b for b in plan['bindings'] if not b['binding_id'].startswith('payload-')]
+ for b in plan['bindings']:
+  b.update(t.ref(root,b['path']))
+  if b['published_head'] is not None:b['published_head']=head
+ for index,e in enumerate(entries):
+  e['origins'][0]['head_sha']=head
+  plan['bindings'].append({'binding_id':f'independent-payload-{index}','role':'evidence',**t.ref(root,e['after_capture']['path']),'published_head':head,'published_path':e['after_capture']['path']})
+ t.repin(root,plan)
+ return root,plan
+
+def delta(root,plan,index,changes):
+ e=plan['records'][index];data=o.record((root/e['after_capture']['path']).read_bytes());data.update(changes);p=f'composed/final-{index}.yaml';t.render(root,p,data);e['after_capture']=t.ref(root,p);t.repin(root,plan)
+
+def bytes_inventory(root):
+ return {str(p.relative_to(root)):o.digest(p.read_bytes()) for cat in ['mapped','unmapped'] for p in sorted((root/'data/ingredients'/cat).glob('*.yaml'))}
+
+def run(name,fn):
+ started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ try:
+  result=fn();row={'name':name,'status':'PASS','started_at':started,'result':result}
+ except BaseException as e:
+  row={'name':name,'status':'FAIL','started_at':started,'exception_type':type(e).__name__,'message':str(e),'traceback':traceback.format_exc()}
+ ROWS.append(row);(O/'progress-v1.json').write_text(json.dumps(ROWS,indent=2)+'\n');print(name,row['status'],flush=True)
+
+
+def reject_before(name,mutator,kwargs=None):
+ root,plan=fixture(name,**(kwargs or {}));mutator(root,plan);before=bytes_inventory(root);result=capture_error(lambda:t.prepare(root));assert result['exception'], 'unsafe prepare unexpectedly accepted';assert bytes_inventory(root)==before;assert not (root/'receipt').exists()
+ return {'stage':'real_prepare','expected':'refusal before owner or receipt writes',**result,'owner_bytes_unchanged':True,'receipt_absent':True}
+
+def valid(name,kwargs=None):
+ root,plan=fixture(name,**(kwargs or {}));ready=t.prepare(root);result=o.apply(ready,root/'receipt',enabled=True);proof=o.verify_completed(root,root/'plan.json',root/'receipt/application.json');assert result['state']=='complete';assert proof['after_inventory']==ready.after_inventory;assert all(o.record((root/p).read_bytes())['mapping_status']==o.record(f.content)['mapping_status'] for p,f in ready.before.items());return {'stage':'real_prepare_apply_completed_replay','state':result['state'],'operations':len(plan['records']),'unchanged_identity_and_status':True,'approval':proof['approval']}
+
+run('positive_disjoint_edit_with_unselected_family',lambda:valid('positive_disjoint_edit_with_unselected_family',{'select':[C]}))
+run('positive_rejected_unmapped_maintenance',lambda:valid('positive_rejected_unmapped_maintenance',{'paths':[U,C],'ids':['CHEBI:77','CHEBI:90'],'terms':['Rejected precise','Other'],'statuses':['REJECTED','MAPPED'],'select':[U]}))
+run('positive_both_collision_kinds',lambda:valid('positive_both_collision_kinds',{'terms':['same','SAME','Gamma','Delta'],'select':[B,A]}))
+
+negative={
+ 'same_count_replacement':lambda r,p:(delta(r,p,0,{'identifier':'CHEBI:80'}),delta(r,p,2,{'identifier':'CHEBI:1'})),
+ 'new_third_member':lambda r,p:delta(r,p,2,{'identifier':'CHEBI:1'}),
+ 'family_identifier_swap':lambda r,p:[delta(r,p,k,{'identifier':('CHEBI:90' if k<2 else 'CHEBI:1')}) for k in range(4)],
+ 'both_surviving_pair_names_changed':lambda r,p:[delta(r,p,k,{'preferred_term':('Renamed '+str(k))}) for k in [0,1]],
+ 'surviving_pair_case_only_name':lambda r,p:delta(r,p,0,{'preferred_term':'ALPHA'}),
+ 'cross_key_family_join':lambda r,p:(delta(r,p,0,{'identifier':'CHEBI:80','preferred_term':'Gamma'})),
+ 'surviving_pair_status_change':lambda r,p:delta(r,p,0,{'mapping_status':'AMBIGUOUS'}),
+ 'rejected_revival':lambda r,p:delta(r,p,0,{'mapping_status':'MAPPED'}),
+ 'rejected_family_exit_reidentification':lambda r,p:delta(r,p,0,{'identifier':'CHEBI:80'}),
+ 'rejected_unmapped_key_change':lambda r,p:delta(r,p,0,{'preferred_term':'other literal'}),
+ 'unknown_owner_source':lambda r,p:(p['records'][0].update(before_source_record='data/ingredients/mapped/Unknown.yaml'),t.repin(r,p)),
+ 'relocated_rejected_edit':lambda r,p:(p['records'][0].update(source_record='data/ingredients/unmapped/Moved.yaml'),t.repin(r,p)),
+ 'wrong_causal_hash':lambda r,p:(p['records'][0]['origins'][0]['case_hashes'].update({'adversarial-case-0':'0'*64}),t.repin(r,p)),
+ 'wrong_preimage':lambda r,p:(p['records'][0].update(before_yaml_sha256='0'*64),t.repin(r,p)),
+ 'stale_acceptance':lambda r,p:(p['records'][0].update(change='Changed plan with stale acceptance'),t.put(r,'plan.json',p)),
+ 'history_prefix_removed':lambda r,p:delta(r,p,0,{'curation_history':[t.event('ANNOTATED')]}),
+}
+for name,mutator in negative.items():
+ kw={}
+ if name=='family_identifier_swap':kw={'ids':['CHEBI:1','CHEBI:1','CHEBI:90','CHEBI:90']}
+ if name in ['rejected_revival','rejected_family_exit_reidentification','relocated_rejected_edit']:kw={'statuses':['REJECTED','MAPPED','MAPPED','MAPPED']}
+ if name=='rejected_unmapped_key_change':kw={'paths':[U,C],'ids':['CHEBI:77','CHEBI:90'],'terms':['Rejected precise','Other'],'statuses':['REJECTED','MAPPED'],'select':[U]}
+ run(name,lambda n=name,m=mutator,k=kw:reject_before(n,m,k))
+
+def stale_original(r,p):
+ path='intake/independent-0.yaml';data=o.record((r/path).read_bytes());data['notes']='Changed original capture while keeping its original Git head';t.render(r,path,data)
+ for b in p['bindings']:
+  if b['path']==path:b.update(t.ref(r,path))
+ t.repin(r,p)
+run('stale_published_original',lambda:reject_before('stale_published_original',stale_original))
+
+def late_mutation(name,mutator):
+ root,plan=fixture(name,select=[A,B]);ready=t.prepare(root);before=bytes_inventory(root);mutator(root,plan);after_external=bytes_inventory(root);result=capture_error(lambda:o.apply(ready,root/'receipt',enabled=True));assert result['exception'],'late drift applied';assert bytes_inventory(root)==after_external;assert not(root/'receipt').exists();return {'stage':'real_prepare_then_drift_then_apply','expected':'refusal before operator owner/receipt writes',**result,'external_mutation_expected':before!=after_external,'no_operator_writes':True}
+def replace_inode(p):
+ q=p.with_name(p.name+'.replacement');q.write_bytes(p.read_bytes());os.replace(q,p)
+def alias_owner(r,p):
+ target=r/A;copyto=r/'preserved-owner.bin';copyto.write_bytes(target.read_bytes());target.unlink();target.symlink_to(copyto)
+def replace_parent(r,p):
+ old=r/'data/ingredients/mapped';saved=r/'private-old-mapped';old.rename(saved);old.mkdir()
+ for child in saved.iterdir():(old/child.name).write_bytes(child.read_bytes())
+late={
+ 'late_owner_inode':lambda r,p:replace_inode(r/A),
+ 'late_owner_hardlink':lambda r,p:os.link(r/A,r/'extra-hardlink.bin'),
+ 'late_owner_alias':alias_owner,
+ 'late_owner_parent_identity':replace_parent,
+ 'late_ignored_member':lambda r,p:(t.put(r,'.gitignore',b'data/ingredients/mapped/Late.yaml\n'),t.render(r,'data/ingredients/mapped/Late.yaml',t.ingredient('CHEBI:678','Late owner'))),
+ 'late_removed_owner':lambda r,p:(r/C).unlink(),
+ 'late_acceptance_bytes':lambda r,p:(r/'acceptance.json').write_bytes((r/'acceptance.json').read_bytes()+b'\n'),
+ 'late_evidence_inode':lambda r,p:replace_inode(r/'intake/independent-0.yaml'),
+ 'late_producer_inode':lambda r,p:replace_inode(r/o.PRODUCERS[0]),
+ 'late_native_receipt_membership':lambda r,p:t.put(r,o.RECEIPTS_DIR+'/unexpected.json',{'schema_version':1}),
+}
+for name,mutator in late.items():run(name,lambda n=name,m=mutator:late_mutation(n,m))
+
+def completed_mutation(name,mutator):
+ root,plan=fixture(name,statuses=['REJECTED','MAPPED','MAPPED','MAPPED'],select=[A,B]);ready=t.prepare(root);o.apply(ready,root/'receipt',enabled=True);assert o.verify_completed(root,root/'plan.json',root/'receipt/application.json')['state']=='complete';mutator(root,plan);result=capture_error(lambda:o.verify_completed(root,root/'plan.json',root/'receipt/application.json'));assert result['exception'],'completed drift verified';return {'stage':'completed_replay_after_external_drift','expected':'refusal',**result,'initial_completed_replay_passed':True}
+completed={
+ 'completed_revival':lambda r,p:t.render(r,A,{**o.record((r/A).read_bytes()),'mapping_status':'MAPPED'}),
+ 'completed_unselected_member_added':lambda r,p:t.render(r,'data/ingredients/mapped/Late.yaml',t.ingredient('CHEBI:1','Late collision')),
+ 'completed_backup_alias':lambda r,p:os.link(r/'receipt/owner-before-0000.yaml',r/'backup-alias.bin'),
+ 'completed_snapshot_addition':lambda r,p:t.put(r,'receipt/checkpoint/unexpected.json',{}),
+ 'completed_origin_changed':lambda r,p:(r/'intake/proposals.json').write_bytes((r/'intake/proposals.json').read_bytes()+b'\n'),
+ 'completed_acceptance_changed':lambda r,p:(r/'acceptance.json').write_bytes((r/'acceptance.json').read_bytes()+b'\n'),
+}
+for name,mutator in completed.items():run(name,lambda n=name,m=mutator:completed_mutation(n,m))
+report={'reviewer':'/root/boundary_adversarial','head':'d691c079cf3923daed89284b7579913b84c3a34c','operator_sha256':o.digest((F/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()),'started_at':START,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Independent synthetic counterexamples; actual native prepare/apply/completed replay. Prior unchanged boilerplate helpers used, appended family helper never called. Private fixture acceptance grants no scientific approval.','results':ROWS,'counts':{'total':len(ROWS),'pass':sum(r['status']=='PASS' for r in ROWS),'fail':sum(r['status']=='FAIL' for r in ROWS)},'writes_only':str(O)}
+(O/'probe-results-v1.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report['counts']));sys.exit(bool(report['counts']['fail']))

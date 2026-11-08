@@ -1,0 +1,35 @@
+"""Seal diagnostic-only evidence; no maintained mutations."""
+from pathlib import Path
+import datetime,hashlib,json,subprocess,shutil
+D=Path(__file__).resolve().parent;I=D.parents[1]/'integration/worktree';sha=lambda b:hashlib.sha256(b).hexdigest()
+def save(name,obj):
+ with (D/name).open('x') as f:json.dump(obj,f,indent=2);f.write('\n')
+pins=json.loads((D/'input-pins.json').read_text());assert all(sha(Path(p).read_bytes())==h for p,h in pins.items())
+head=subprocess.check_output(['git','-C',str(I),'rev-parse','HEAD'],text=True).strip();status=subprocess.check_output(['git','-C',str(I),'status','--porcelain'],text=True)
+assert head=='d691c079cf3923daed89284b7579913b84c3a34c' and not status
+expected=json.loads((D/'before-inventory.json').read_text());actual={str(p.relative_to(I)):sha(p.read_bytes()) for cat in ('mapped','unmapped') for p in (I/'data/ingredients'/cat).glob('*.yaml')};assert actual==expected
+captures=D/'captures';captures.mkdir();shutil.copyfile(I/'src/mediaingredientmech/curate/campaign_owner_apply.py',captures/'campaign_owner_apply-d691c079.py')
+findings=json.loads((D/'remaining-native-boundaries.json').read_text())['findings']
+for ix,finding in enumerate(findings,1):
+ item=captures/f'polymer-{ix}';item.mkdir();a=finding['action']
+ for name,source in [('before.yaml',I/a['source']),('original-candidate.yaml',Path(a['original_candidate']['path'])),('normalized-candidate.yaml',Path(a['effective_candidate']['path']))]:shutil.copyfile(source,item/name)
+save('final-preservation.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'head':head,'git_status_porcelain':status,'all_input_pins_unchanged':True,'owner_inventory_unchanged':True,'owner_count':len(actual),'application':False})
+readme='''# Complete current record-stage diagnostic
+
+This packet records the unchanged native `_validate_records` behavior at integration commit d691c079cf3923daed89284b7579913b84c3a34c. It is structural preflight only: no owner application, full prepare, source-case acceptance, scientific approval or release is claimed.
+
+The pinned current registry has 936 actions / 1,022 origins / 1,879 source cases. The bounded record probe includes 933 operations (272 edit, 67 promote, 594 create); the report-only ten-vitamin action has no owner bytes, the genuinely held TSB promotion stays excluded, and the separately unsupported Angustmycin demotion stays excluded. Before inventory has 2,956 direct owner files; the hypothetical after inventory has 3,550. Global collision pairs add zero and remove twelve.
+
+Native validation FAILS at two same-path UNMAPPED→REJECTED W03 polymer retirements. Both preserve identifiers, names and ordered history prefixes; the exact original native record function accepts each. Reordering the SAME entire 933 operations moved known failures to the end and traversed all other 931 per-record validations before a known failure. No rejected operation was dropped to fabricate a pass, and all three full-cohort calls remain failed. See remaining-native-boundaries.json and status-kind-inventory.json; no other status transition or new rejected creation appears in the selected cohort.
+
+Normalization is explicit: 154 of the 156 historic serialization successors apply to this bounded selection with exact action/origin/preimage joins and parsed-object equality. One belongs to excluded Angustmycin. One historical PYGS normalization is stale against its later semantic successor and was NOT applied. The normalization author's independent review is still pending; this diagnostic does not approve it. The 155 denominator used by the separate overlay includes Angustmycin and therefore differs intentionally.
+
+Each source payload, complete direct-owner inventory, registry, normalization pin and operator source was rechecked after execution. I remained clean at d691c079; no J or source corpus writes occurred. Current operator and both counterexamples are captured byte-for-byte. Original prior-function provenance remains bound to the earlier sealed native-boundary-fix-v1/before source; its AST is executed unchanged for record-stage comparison only, not a recreated full old prepare.
+
+The original failure logs are retained. The #1252 addendum is a draft for the root coordinator to publish before any code correction. This packet does not itself change or publish an issue. Reproduction uses the scripts here with Python3.13 and PYTHONPATH pointing to the pinned integration source; original outputs use exclusive paths and should not be overwritten. A future code fix requires a new result packet and independent review.
+'''
+with (D/'README.md').open('x') as f:f.write(readme)
+manifest={str(p.relative_to(D)):sha(p.read_bytes()) for p in sorted(D.rglob('*')) if p.is_file() and p.name not in ('MANIFEST.json','HANDOFF.json')}
+save('MANIFEST.json',{'schema':'private-diagnostic-sha256-v1','files':manifest})
+result=json.loads((D/'result.json').read_text());save('HANDOFF.json',{'scope':'Read-only full current native record-stage diagnostic; no application/approval','manifest_sha256':sha((D/'MANIFEST.json').read_bytes()),'member_count':len(manifest),'result':{'status':'FAIL_RECORD_STAGE','distinct_refusals':2,'operations':933,'before_owners':2956,'projected_owners':3550,'other_per_record_checks_traversed_before_known_refusal':931,'new_collision_pairs':0,'removed_collision_pairs':12,'full_prepare':False},'issue_draft':{'path':'issue1252-addendum-draft.md','sha256':sha((D/'issue1252-addendum-draft.md').read_bytes())},'remaining_boundaries_sha256':sha((D/'remaining-native-boundaries.json').read_bytes()),'status_kind_inventory_sha256':sha((D/'status-kind-inventory.json').read_bytes()),'source_commit':head,'operator_sha256':result['operator_sha256'],'normalization_independent_review':'pending','maintained_files_unchanged':True})
+print(json.dumps({n:sha((D/n).read_bytes()) for n in ('HANDOFF.json','MANIFEST.json')},indent=2))

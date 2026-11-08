@@ -1,0 +1,15 @@
+"""Exact complete-cohort status/kind accounting; no application or owner edits."""
+from pathlib import Path
+from collections import Counter
+import json,hashlib
+from mediaingredientmech.curate import campaign_owner_apply as owner
+D=Path(__file__).resolve().parent;I=D.parents[1]/'integration/worktree';sha=lambda b:hashlib.sha256(b).hexdigest()
+selection=json.loads((D/'selection.json').read_text());before={p:f.content for p,f in owner.inventory(I).items()};rows=[]
+for r in selection['selected']:
+ raw=Path(r['effective_candidate']['path']).read_bytes();assert sha(raw)==r['effective_candidate']['sha256'];new=owner.record(raw);old=owner.record(before[r['source']]) if r['source'] else {}
+ rows.append({'action_id':r['action_id'],'kind':r['kind'],'before_status':old.get('mapping_status'),'after_status':new['mapping_status'],'source_category':r['source'].split('/')[2] if r['source'] else None,'destination_category':r['destination'].split('/')[2],'same_path':r['source']==r['destination'],'same_identifier':old.get('identifier')==new['identifier'],'same_preferred_term':old.get('preferred_term')==new['preferred_term'],'before_history_prefix':new.get('curation_history',[])[:len(old.get('curation_history',[]))]==old.get('curation_history',[]),'before_sha256':r['before_sha256'],'after_sha256':r['effective_candidate']['sha256']})
+keys=['kind','before_status','after_status','source_category','destination_category'];counts=Counter(tuple(r[k] for k in keys) for r in rows)
+summary=[dict(zip(keys,k),count=n) for k,n in sorted(counts.items(),key=lambda kv:str(kv[0]))]
+result={'total':len(rows),'combinations':summary,'status_changes':[r for r in rows if r['before_status']!=r['after_status'] and r['before_status'] is not None],'rejected_operations':[r for r in rows if 'REJECTED' in (r['before_status'],r['after_status'])],'new_rejected_create_count':sum(r['kind']=='create' and r['after_status']=='REJECTED' for r in rows),'scope':'All933 diagnostic operations; neither full prepare nor scientific approval','rows':rows}
+with (D/'status-kind-inventory.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'total':len(rows),'combinations':summary,'rejected_operations':result['rejected_operations'],'new_rejected_create_count':result['new_rejected_create_count']},indent=2))

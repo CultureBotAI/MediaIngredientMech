@@ -1,0 +1,82 @@
+"""Bounded read-only full-record validator replay; never application/acceptance."""
+from pathlib import Path
+from itertools import combinations
+from collections import Counter
+import datetime, hashlib, json, subprocess, traceback
+from mediaingredientmech.curate import campaign_owner_apply as owner
+D=Path(__file__).resolve().parent;C=D.parents[1];I=C/'integration/worktree';N=C/'integration/final-native-intake-v1';Z=C/'integration/native-payload-normalization-v1'
+REGISTRY=N/'projected-diagnostic-v2/candidate-action-registry-diagnostic.json';REGISTRY_SHA='ef38888fe7805a71e4ec6a80c59770219a7b7ae035cc9e98e13465b331a445fb'
+NORMAL=Z/'SELECTOR.json';NORMAL_SHA='bd1827383b71fe84c318543ea5e8250198a521f4800617bfa3fa26f37aab9a91'
+CODE_SHA='4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70';HEAD='d691c079cf3923daed89284b7579913b84c3a34c'
+sha=lambda b:hashlib.sha256(b).hexdigest();pins={}
+def read(path,expected=None):
+ path=Path(path);raw=path.read_bytes();s=sha(raw)
+ if expected is not None:assert s==expected,(str(path),s,expected)
+ pins[str(path)]=s;return raw
+def save(name,value):
+ with (D/name).open('x') as f:json.dump(value,f,indent=2,ensure_ascii=False);f.write('\n')
+def git(*args):return subprocess.check_output(['git','-C',str(I),*args],text=True).strip()
+assert git('rev-parse','HEAD')==HEAD and not git('status','--porcelain')
+read(I/'src/mediaingredientmech/curate/campaign_owner_apply.py',CODE_SHA)
+registry=json.loads(read(REGISTRY,REGISTRY_SHA));normal=json.loads(read(NORMAL,NORMAL_SHA))
+for rel in ['HANDOFF.json','MANIFEST.json']:read(Z/rel)
+for rel in ['projected-diagnostic-v2/input-bindings.json','projected-diagnostic-v2/overlay.json']:read(N/rel)
+prior_registry=json.loads(read(N/'candidate-action-registry-v3.json','5279e5aebac81489561158d2e0e84d9e47812222b1346559a8b35bbf560c6f73'))
+normal_by_id={r['action_id']:r for r in normal['selected']};assert len(normal_by_id)==len(normal['selected'])
+before={p:f.content for p,f in owner.inventory(I).items()};before_hashes={p:sha(b) for p,b in before.items()}
+operations=[];payloads={};selected=[];excluded=[];normalizations=[];unapplied_normalizations=[];declared=[]
+EXCLUDE={'ORIGINAL-w08::op1201-trypticase-soy-broth':'genuine new MICRO0000113 owner collision / owner-admission hold; no guard bypass','ORIGINAL-w09::ab-proposal-angustmycin':'explicit demotion is unsupported in current operator; no same-path exception or inferred relocation'}
+for a in registry['actions']:
+ aid=a['action_id'];original=a.get('candidate_payload')
+ if not original or not a.get('candidate_selection_proposed') or aid in EXCLUDE:
+  excluded.append({'action_id':aid,'reason':EXCLUDE.get(aid,'explicit report-only action without an owner payload'),'registry_selected':a.get('candidate_selection_proposed'),'candidate':original,'origin_ids':a.get('origin_ids',[])});continue
+ assert a['native_kind'] in {'edit','create','promote'}
+ raw=read(original['path'],original['sha256']);effective=original
+ if aid in normal_by_id:
+  n=normal_by_id[aid];pinned_original=json.loads(read(Z/n['complete_original_action']['path'],n['complete_original_action']['sha256']))
+  assert pinned_original['action_id']==aid
+  old=read(n['supersedes_exact_candidate']['path'],n['supersedes_exact_candidate']['sha256'])
+  candidate=read(Z/n['payload']['path'],n['payload']['sha256']);read(Z/n['trace']['path'],n['trace']['sha256'])
+  assert owner.record(old)==owner.record(candidate),'Normalization changes semantic object'
+  if original['sha256']==n['supersedes_exact_candidate']['sha256']:
+   for key in ['native_kind','destination_path','before_source_record','before_yaml_sha256','origin_ids']:assert a[key]==n[key],(aid,key)
+   assert owner.record(raw)==owner.record(candidate)
+   raw=candidate;effective={'path':str(Z/n['payload']['path']),'sha256':n['payload']['sha256']};normalizations.append({'action_id':aid,'original':original,'effective':effective,'semantic_object_equal':True,'independent_review':n['independent_exact_byte_review']})
+  else:unapplied_normalizations.append({'action_id':aid,'reason':'Current semantic successor differs from historical normalization source; use exact current semantic bytes','current':original,'historical_normalization':n['supersedes_exact_candidate']})
+ src=a['before_source_record'];dest=a['destination_path']
+ if src is None:assert a['native_kind']=='create' and a['before_yaml_sha256'] is None and dest not in before
+ else:assert src in before and sha(before[src])==a['before_yaml_sha256']
+ assert aid not in payloads
+ payloads[aid]=raw;operations.append({'operation_id':aid,'kind':a['native_kind'],'source_record':dest,'before_source_record':src})
+ selected.append({'action_id':aid,'kind':a['native_kind'],'source':src,'destination':dest,'before_sha256':a['before_yaml_sha256'],'original_candidate':original,'effective_candidate':effective,'origin_ids':a['origin_ids'],'origin_bindings':[{'origin_id':o['origin_id'],'published_head':o['published_head'],'proposal_object_sha256':o['proposal_object_sha256'],'payload_sha256':o['payload_sha256'],'case_hashes':o['case_hashes']} for o in a['origins']]})
+assert len({o['source_record'] for o in operations})==len(operations)
+assert len([o['before_source_record'] for o in operations if o['before_source_record']])==len({o['before_source_record'] for o in operations if o['before_source_record']})
+after=dict(before)
+for o in operations:
+ if o['before_source_record'] is not None:del after[o['before_source_record']]
+ after[o['source_record']]=payloads[o['operation_id']]
+def pairs(records):
+ indexes={}
+ for p,b in records.items():
+  r=owner.record(b)
+  for field,value in [('identifier',r['identifier']),('preferred_name',r['preferred_term'].casefold())]:indexes.setdefault((field,value),set()).add(p)
+ return {(*key,left,right) for key,paths in indexes.items() for left,right in combinations(sorted(paths),2)}
+old_pairs=pairs(before);new_pairs=pairs(after)
+save('collision-pairs.json',{'before':sorted(old_pairs),'after':sorted(new_pairs),'new_pairs':sorted(new_pairs-old_pairs),'removed_pairs':sorted(old_pairs-new_pairs),'retained_pairs':len(old_pairs&new_pairs),'diagnostic_only':True})
+save('selection.json',{'registry':{'path':str(REGISTRY),'sha256':REGISTRY_SHA},'normalization_selector':{'path':str(NORMAL),'sha256':NORMAL_SHA},'selected':selected,'excluded':excluded,'applied_serialization_successors':normalizations,'unapplied_stale_serialization_successors':unapplied_normalizations,'scope':'Read-only structural probe selection only; does not alter original registries or grant source/owner/release approval'})
+save('before-inventory.json',before_hashes);save('projected-inventory.json',{p:sha(b) for p,b in after.items()})
+print(json.dumps({'phase':'native_validate_records','selected':len(operations),'before_owners':len(before),'projected_owners':len(after),'normalizations':len(normalizations),'stale_normalizations_not_applied':len(unapplied_normalizations),'new_collisions':len(new_pairs-old_pairs)}),flush=True)
+try:
+ owner._validate_records(I,operations,payloads,before)
+ result={'status':'PASS_RECORD_STAGE_ONLY','exception':None,'first_failing_action':None}
+except Exception as e:
+ tb=e.__traceback__;action=None
+ while tb:
+  if tb.tb_frame.f_code.co_name=='_validate_records':action=tb.tb_frame.f_locals.get('entry',{}).get('operation_id')
+  tb=tb.tb_next
+ result={'status':'FAIL_RECORD_STAGE','exception':{'type':type(e).__name__,'message':str(e)},'first_failing_action':action,'traceback':traceback.format_exc(),'all_other_native_checks_complete':False}
+assert owner.hashes(owner.inventory(I))==before_hashes
+assert git('rev-parse','HEAD')==HEAD and not git('status','--porcelain')
+assert all(sha(Path(p).read_bytes())==s for p,s in pins.items())
+result.update(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),operator_sha256=CODE_SHA,integration_head=HEAD,registry_actions=len(registry['actions']),registry_declared_source_cases=registry['case_count'],registry_declared_proposal_origins=registry['origin_count'],selected_actions=len(operations),operation_kinds=dict(Counter(o['kind'] for o in operations)),before_owners=len(before),projected_owners=len(after),selected_distinct_source_cases=len({cid for x in selected for o in x['origin_bindings'] for cid in o['case_hashes']}),selected_origin_count=sum(len(x['origin_bindings']) for x in selected),exclusions=excluded,normalizations_applied=len(normalizations),stale_normalizations_skipped=len(unapplied_normalizations),new_collision_pairs=len(new_pairs-old_pairs),removed_collision_pairs=len(old_pairs-new_pairs),all_source_payloads_preserved=True,all_before_owners_preserved=True,source_application=False,acceptance=False,full_prepare=False,full_scientific_review=False)
+save('result.json',result);save('input-pins.json',pins);print(json.dumps(result),flush=True)

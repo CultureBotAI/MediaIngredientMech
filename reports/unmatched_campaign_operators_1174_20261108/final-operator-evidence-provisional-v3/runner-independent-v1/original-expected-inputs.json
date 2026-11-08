@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "expected_final_code": {
+    "src/mediaingredientmech/curate/campaign_owner_apply.py": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+    "tests/test_campaign_owner_apply.py": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3",
+    "tests/test_campaign_publication.py": "d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa",
+    "tests/test_campaign_demotion_integration.py": "060a891c10bf6d057f719e4c8ad9bc77ab1188225476316405a55ff4e2dc8e03",
+    "src/mediaingredientmech/campaign_publication.py": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24",
+    "tests/test_campaign_suppressions.py": "d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816",
+    "tests/test_campaign_suppression_integration.py": "faf71c2bb4c2878894762529801a818d4fed6a915d6a9ea63ba2b9e4eab1a7a4"
+  },
+  "required_native_cases": {
+    "tests/test_campaign_demotion_integration.py": 20,
+    "tests/test_campaign_suppression_integration.py": 10
+  },
+  "new_cases_actually_collected": [
+    "tests/test_campaign_suppression_integration.py::test_real_four_suppressions_source_generation_publication_and_historical_replay",
+    "tests/test_campaign_suppression_integration.py::test_real_completed_native_suffix_then_suppression_preserves_original_27",
+    "tests/test_campaign_suppression_integration.py::test_third_destination_preflight_refuses_without_publication[existing-third-backup]",
+    "tests/test_campaign_suppression_integration.py::test_third_destination_preflight_refuses_without_publication[aliased-sidecar]",
+    "tests/test_campaign_suppression_integration.py::test_real_third_target_and_review_boundaries_clear_success_receipts[review-after-canonical]",
+    "tests/test_campaign_suppression_integration.py::test_real_third_target_and_review_boundaries_clear_success_receipts[third-destination-failure]",
+    "tests/test_campaign_suppression_integration.py::test_real_third_target_and_review_boundaries_clear_success_receipts[sidecar-backup-before-finish]",
+    "tests/test_campaign_suppression_integration.py::test_real_third_target_and_review_boundaries_clear_success_receipts[sidecar-backup-after-finish]",
+    "tests/test_campaign_suppression_integration.py::test_real_third_target_and_review_boundaries_clear_success_receipts[owner-membership-after-finish]",
+    "tests/test_campaign_suppression_integration.py::test_real_third_target_and_review_boundaries_clear_success_receipts[head-after-finish]"
+  ],
+  "source_history_checkout": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "pinned_claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+  "final_author_and_independent_handoffs": "PENDING; no readiness or execution claimed",
+  "require_actual_final_commit_and_readiness_evidence": true
+}

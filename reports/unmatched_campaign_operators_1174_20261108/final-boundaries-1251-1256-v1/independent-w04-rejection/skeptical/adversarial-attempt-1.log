@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/adversarial.py", line 128, in <module>
+    for name,kwargs in [('genuine_unicode_rejection',{}),('rejected_unmapped_maintenance',{'oldstatus':'REJECTED','newstatus':'REJECTED'}),('rejected_mapped_maintenance',{'oldstatus':'REJECTED','newstatus':'REJECTED','category':'mapped'}),('ordinary_mapped_edit',{'oldstatus':'MAPPED','newstatus':'MAPPED','category':'mapped'})]:trial(name,'pass',**kwargs)
+                                                                                                                                                                                                                                                                                                                                         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/adversarial.py", line 119, in trial
+    report=native.apply(ready,root/'receipt',enabled=True);verified=native.verify_completed(root,root/'plan.json',root/'receipt/application.json')
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/frozen-head/src/mediaingredientmech/curate/campaign_owner_apply.py", line 1194, in apply
+    require(
+    ~~~~~~~^
+        set(git(root, "diff", "--name-only", "HEAD", "--").decode().splitlines())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        <= allowed,
+        ^^^^^^^^^^^
+        "Unrelated tracked file changed",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/frozen-head/src/mediaingredientmech/curate/campaign_owner_apply.py", line 270, in require
+    raise ValueError(message)
+ValueError: Unrelated tracked file changed

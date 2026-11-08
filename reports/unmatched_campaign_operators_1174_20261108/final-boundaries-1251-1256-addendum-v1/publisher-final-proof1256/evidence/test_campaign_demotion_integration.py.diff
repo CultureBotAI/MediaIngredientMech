@@ -1,0 +1,129 @@
+--- a/tests/test_campaign_demotion_integration.py
++++ b/tests/test_campaign_demotion_integration.py
+@@ -641,3 +641,126 @@
+         tmp_path, tmp_path / "plan.json", tmp_path / "source-receipt/application.json"
+     )
+     assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())
++
++
++@pytest.mark.parametrize("boundary", ["source-proof", "reserved-output-proof"])
++@pytest.mark.parametrize("complete_call", [1, 2])
++def test_real_1256_full_final_recheck_closes_head_after_proofs(
++    tmp_path, monkeypatch, boundary, complete_call
++):
++    """W08-21061-PUB-001: real proof results are unchanged by the fault wrapper."""
++    source, plan, path, destination, proof = prepare_native_case(tmp_path)
++    mapping = fixture_module("test_campaign_publication")
++    native_path = tmp_path / native.RECEIPTS_DIR / (plan["batch"] + ".json")
++    log = destination / "publication.json"
++    seen = []
++    injected = []
++
++    def after_actual_proof():
++        if (
++            log.exists()
++            and log.read_bytes()
++            and json.loads(log.read_bytes()).get("status") == "complete"
++        ):
++            seen.append(boundary)
++            if len(seen) == complete_call:
++                mapping.commit_publication_boundary(tmp_path, unrelated=True)
++                injected.append(source.run_git(tmp_path, "rev-parse", "HEAD"))
++
++    if boundary == "source-proof":
++        actual = publication._owner_proof
++
++        def source_proof(*args, **kwargs):
++            result = actual(*args, **kwargs)
++            after_actual_proof()
++            return result
++
++        monkeypatch.setattr(publication, "_owner_proof", source_proof)
++    else:
++        actual = publication.check_reserved
++
++        def reserved_proof(handle, target):
++            result = actual(handle, target)
++            if target == native_path:
++                after_actual_proof()
++            return result
++
++        monkeypatch.setattr(publication, "check_reserved", reserved_proof)
++    error = None
++    result = None
++    try:
++        result = publication.publish(tmp_path, path, destination, apply=True)
++    except ValueError as caught:
++        error = str(caught)
++    source.put(
++        tmp_path,
++        "reports/final-recheck-observation.json",
++        {
++            "scope": "Real source, native generation, native receipt and guarded publication; fault wrapper only commits after unchanged real proof",
++            "boundary": boundary,
++            "complete_call": complete_call,
++            "baseline": proof["baseline_commit"],
++            "actual_head": source.run_git(tmp_path, "rev-parse", "HEAD"),
++            "injected": injected,
++            "error": error,
++            "returned_result": result,
++            "publication_receipt_nonempty": bool(log.read_bytes()),
++            "native_receipt_nonempty": bool(native_path.read_bytes()),
++        },
++    )
++    assert len(injected) == 1
++    assert injected[0] != proof["baseline_commit"]
++    assert error is not None and "live publication HEAD changed" in error
++    assert result is None
++    assert log.read_bytes() == b""
++    assert native_path.read_bytes() == b""
++    assert (destination / "canonical-before.tsv").read_bytes() == (
++        tmp_path / plan["before"]["canonical"]["path"]
++    ).read_bytes()
++    assert (destination / "policy-before.json").read_bytes() == (
++        tmp_path / plan["before"]["policy"]["path"]
++    ).read_bytes()
++
++
++def test_real_1256_tracked_derived_sync_and_historical_proof_remain_valid(tmp_path, monkeypatch):
++    """Actual tracked synchronization is allowed; historical owner drift is not."""
++    original = make_source_case
++
++    def tracked_fixture(root, historical_root=None):
++        values = original(root, historical_root)
++        source, _, plan, *_ = values
++        source.put(root, "data/curated/derived-fixture.yaml", b"fixture: before synchronization\n")
++        source.run_git(root, "add", "--", "data/curated/derived-fixture.yaml")
++        source.run_git(
++            root,
++            "-c",
++            "user.name=Fixture",
++            "-c",
++            "user.email=fixture@example.invalid",
++            "commit",
++            "-qm",
++            "Private tracked derived baseline",
++        )
++        plan["baseline_commit"] = source.run_git(root, "rev-parse", "HEAD")
++        source.repin_demotion(root, plan)
++        return values
++
++    monkeypatch.setattr(sys.modules[__name__], "make_source_case", tracked_fixture)
++    source, _, path, destination, proof = prepare_native_case(tmp_path)
++    derived = tmp_path / "data/curated/derived-fixture.yaml"
++    derived.write_bytes(b"fixture: synchronized uncommitted data\n")
++    assert b"data/curated/derived-fixture.yaml\0" in source.owner.git(
++        tmp_path, "diff", "--name-only", "-z", "HEAD", "--"
++    )
++    assert publication.publish(tmp_path, path, destination, apply=True)["status"] == "complete"
++    mapping = fixture_module("test_campaign_publication")
++    mapping.commit_publication_boundary(tmp_path, unrelated=True)
++    assert publication.validate(tmp_path, path)["status"] == "verified"
++    receipt_before = (destination / "publication.json").read_bytes()
++    policy_before = (tmp_path / publication.POLICY).read_bytes()
++    owner = tmp_path / proof["records"][0]["source_record"]
++    owner.write_bytes(owner.read_bytes() + b"# unapproved current owner drift\n")
++    with pytest.raises((ValueError, RuntimeError), match="inventory|changed"):
++        publication.validate(tmp_path, path)
++    assert (destination / "publication.json").read_bytes() == receipt_before
++    assert (tmp_path / publication.POLICY).read_bytes() == policy_before

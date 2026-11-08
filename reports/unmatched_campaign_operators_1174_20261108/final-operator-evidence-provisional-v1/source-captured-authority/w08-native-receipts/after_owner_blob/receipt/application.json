@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "operation": "apply_reviewed_campaign_owners",
+  "state": "failed",
+  "approval": "NONE: source application only; no scientific or mapping approval transfers",
+  "plan": {
+    "path": "plan.json",
+    "sha256": "d84524b2d11ff489fdb4e8d3c689a92481a69082ea733b48b9c4a78f5d4a9ae0"
+  },
+  "acceptance": {
+    "path": "acceptance.json",
+    "sha256": "eed20812dca7eb94367472782a80efcb0a24927b93b0184fd4b0f3d81ab4808e"
+  },
+  "baseline_commit": "aedbe61a465aeb959907c93ca59d1eee583d1479",
+  "before_inventory": {
+    "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+    "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+    "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+  },
+  "after_inventory": {
+    "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+    "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9",
+    "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+  },
+  "records": [
+    {
+      "operation_id": "o0",
+      "kind": "demote",
+      "before_source_record": "data/ingredients/mapped/Existing.yaml",
+      "source_record": "data/ingredients/unmapped/Existing.yaml",
+      "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "after_capture": {
+        "path": "intake/payload-0.yaml",
+        "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-01",
+          "head_sha": "aedbe61a465aeb959907c93ca59d1eee583d1479",
+          "proposal_id": "p0",
+          "proposal_binding": "proposals",
+          "payload_binding": "payload-0",
+          "case_hashes": {
+            "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+          }
+        }
+      ],
+      "change": "Fixture source change with explicit paths",
+      "verification": "Schema and exact preimage; no scientific approval",
+      "relocation_review_binding": "demotion-review",
+      "shape": "demotion",
+      "destination_path": "data/ingredients/unmapped/Existing.yaml",
+      "source_path": "data/ingredients/mapped/Existing.yaml",
+      "before_capture": {
+        "path": "receipt/owner-before-0000.yaml",
+        "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+      },
+      "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+    }
+  ],
+  "checkpoint": {
+    "root": "receipt/checkpoint",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "68d1b15454d67862c65959ccbcaae504dd5cc6600aefd513441a641cc12bcbe7"
+    }
+  },
+  "protected_snapshot": {
+    "root": "receipt/protected",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "68d1b15454d67862c65959ccbcaae504dd5cc6600aefd513441a641cc12bcbe7"
+    }
+  },
+  "completed_operations": [
+    "o0"
+  ],
+  "retired_sources": {
+    "data/ingredients/mapped/Existing.yaml": {
+      "path": "receipt/demotion-0000/retired-owner.yaml",
+      "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+    }
+  },
+  "recovery_required": true,
+  "error": "ValueError: Git index changed during live source check"
+}

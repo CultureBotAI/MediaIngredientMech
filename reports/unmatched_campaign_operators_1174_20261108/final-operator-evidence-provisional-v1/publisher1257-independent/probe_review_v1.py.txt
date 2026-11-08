@@ -1,0 +1,135 @@
+"""Independent private mechanical review; no source/publication acceptance."""
+from pathlib import Path
+import ast, collections, copy, hashlib, json, sys
+D=Path(__file__).absolute().parent
+C=D.parents[1]; A=C/'integration/publisher-local-slots1257-fix-v1'; P=A/'private'
+K=C/'integration/release-worktree'; W=C/'workers/w07/worktree/.temp/final-projected-native-independent-v1'
+sys.path.insert(0,str(P/'src'))
+from mediaingredientmech import campaign_publication as pub
+O=D/'run-v1'; O.mkdir()
+def digest(b): return hashlib.sha256(b).hexdigest()
+def pin(p): return {'path':str(p),'sha256':digest(p.read_bytes()),'bytes':p.stat().st_size}
+def save(n,x):
+ with (O/n).open('x') as f: json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+inputs={'publisher':P/'src/mediaingredientmech/campaign_publication.py','source':P/'src/mediaingredientmech/curate/campaign_owner_apply.py','tests':P/'tests/test_campaign_publication.py','before_publisher':A/'before/src/mediaingredientmech/campaign_publication.py','before_tests':A/'before/tests/test_campaign_publication.py','canonical':K/pub.SOURCE,'candidate':W/'generation/candidate.sssom.tsv','plan':C/'integration/final-native-intake-v4-preparation/owner-plan.draft.json','prior_rowset':C/'preflight/final-publication-plan-construction-v1/bounded-rowset-diagnostic.tsv','maker':P/pub.MAKER}
+pins={k:pin(p) for k,p in inputs.items()}
+assert pins['publisher']['sha256']=='9df83185a1c4ac4e0aa9b6497138a9923841bb3b9fe656671ac905987bc2d5f1'
+assert pins['source']['sha256']=='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52'
+assert pins['tests']['sha256']=='d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa'
+assert pins['canonical']['sha256']=='097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221'
+assert pins['candidate']['sha256']=='e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de'
+assert pins['maker']['sha256']==pub.MAKER_SHA
+assert pins['plan']['sha256']=='039eecdae5c86b406f3622e8766095e7970dc7c8a1158c5a9fc0925c0ea06427'
+
+def functions(p): return {n.name:n for n in ast.parse(p.read_text()).body if isinstance(n,(ast.FunctionDef,ast.ClassDef,ast.AsyncFunctionDef))}
+def ad(n):return ast.dump(n,include_attributes=False)
+bf,nf=functions(inputs['before_publisher']),functions(inputs['publisher'])
+changed=[n for n in bf if ad(bf[n])!=ad(nf[n])]; added=sorted(set(nf)-set(bf))
+assert changed==['slot','_receipt'] and added==['_align_rows']
+# The receipt delta is exactly maker.align(old,new) -> _align_rows(old,new).
+old_receipt=copy.deepcopy(bf['_receipt']); changed_call=0
+for n in ast.walk(old_receipt):
+ if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and isinstance(n.func.value,ast.Name) and n.func.value.id=='maker' and n.func.attr=='align':
+  n.func=ast.Name(id='_align_rows',ctx=ast.Load());changed_call+=1
+assert changed_call==1 and ad(old_receipt)==ad(nf['_receipt'])
+bt,nt=functions(inputs['before_tests']),functions(inputs['tests'])
+assert inputs['tests'].read_bytes().startswith(inputs['before_tests'].read_bytes())
+assert all(ad(n)==ad(nt[k]) for k,n in bt.items())
+preservation={'changed_original_functions':changed,'new_functions':added,'receipt_only_call_replaced':True,'original_test_functions':len(bt),'original_test_AST_and_byte_prefix_exact':True,'unchanged_original_publisher_functions':sorted(set(bf)-set(changed))}
+save('preservation.json',preservation)
+
+before=inputs['canonical'].read_bytes(); candidate=inputs['candidate'].read_bytes()
+_,fields,old,oldlines=pub.table(before); _,nflds,new,_=pub.table(candidate);assert fields==nflds
+sourceplan=json.loads(inputs['plan'].read_text())
+shapes={'edit':'campaign_owner_edit','create':'new_record','promote':'promotion','demote':'demotion'}
+records=[dict(r,shape=shapes[r['kind']]) for r in sourceplan['records']]
+selected={pub.subject(r['source_record']):r['source_record'] for r in records}
+assert len(selected)==len(records)==934
+# Independent contract key: do not call implementation slot() to build the plan.
+def key(r):
+ obj=r['object_id'];namespace=obj.partition(':')[0]
+ return (r['subject_id'],obj if namespace in ('kgmicrobe.ingredient','kgmicrobe.compound') else 'cas' if namespace=='cas' else 'ontology')
+a={key(r):i for i,r in enumerate(old,1)};b={key(r):i for i,r in enumerate(new,1)}
+assert len(a)==len(old) and len(b)==len(new)
+keys=sorted(k for k in a.keys()|b.keys() if k[0] in selected)
+plan=[{'owner':selected[k[0]],'before_position':a.get(k),'native_position':b.get(k),'preserve_fields':[]} for k in keys]
+projected,trace=pub.row_projection(before,candidate,records,plan)
+_,_,after,afterlines=pub.table(projected)
+changes,positions=pub._align_rows(old,after)
+assert len(positions)==len(old)
+assert collections.Counter(tuple(sorted(r.items())) for r in after)==collections.Counter(tuple(sorted(r.items())) for r in pub.table(inputs['prior_rowset'].read_bytes())[2])
+selected_native=[r for r in new if r['subject_id'] in selected]
+assert collections.Counter(tuple(sorted(r.items())) for r in after if r['subject_id'] in selected)==collections.Counter(tuple(sorted(r.items())) for r in selected_native)
+unselected=[i for i,r in enumerate(old,1) if r['subject_id'] not in selected]
+assert all(positions[i-1] and afterlines[positions[i-1]-1]==oldlines[i-1] for i in unselected)
+assert not any(r['subject_id']=='MIM:Angustmycin' for r in after)
+assert 'MIM:Sodium_Nitrate_070_M_Stock' not in selected
+# Deliberately incomplete diagnostic row link. Not a complete campaign receipt.
+link={'schema_version':1,'batch':'INDEPENDENT-ROW-DIAGNOSTIC-NO-APPROVAL','sequence':1,'approval':'NONE: row transport diagnostic only','before_sha256':digest(before),'after_sha256':digest(projected),'before_row_count':len(old),'after_row_count':len(after),'changes':changes,'position_map':positions}
+pub.native._validate_receipt(link,complete=False)
+replay=pub.native.walk_mapping_changes([link],start_sha256=digest(before),reviewed_sha256=digest(projected),baseline_rows=old,refreshed_rows={})
+assert replay[2]==after and replay[0]==positions
+with (O/'projected-diagnostic.tsv').open('xb') as f:f.write(projected)
+save('conditional-row-plan.json',{'scope':'diagnostic-only; no accepted source or publication plan','rows':plan})
+save('row-alignment.json',{'scope':'incomplete row transport only; not a campaign receipt','changes':changes,'position_map':positions})
+
+checks=[]
+def negative(name,fn):
+ try:fn()
+ except (ValueError,TypeError) as exc:checks.append({'name':name,'outcome':'refused','exception':type(exc).__name__,'message':str(exc)})
+ else:raise AssertionError('NOT REFUSED: '+name)
+def project(p,bo=before,ca=candidate,recs=records):return pub.row_projection(bo,ca,recs,p)
+# Adversarial exact full data row controls.
+ix=next(i for i,p in enumerate(plan) if p['owner'].endswith('/Desicatted_Ox-bile.yaml') and p['native_position'] and new[p['native_position']-1]['object_id']=='kgmicrobe.ingredient:desicatted_ox-bile')
+q=copy.deepcopy(plan); q.pop(ix);negative('full-plan-missing-handle',lambda:project(q))
+q=copy.deepcopy(plan);q.append(copy.deepcopy(q[ix]));negative('full-plan-duplicate-handle',lambda:project(q))
+q=copy.deepcopy(plan);q[ix]['owner']=next(p['owner'] for p in plan if p['owner']!=q[ix]['owner']);negative('full-plan-wrong-selected-owner',lambda:project(q))
+for value in [True,0,len(new)+1]:
+ q=copy.deepcopy(plan);q[ix]['native_position']=value;negative('full-plan-invalid-position-'+str(value),lambda:project(q))
+q=copy.deepcopy(plan);q[ix]['preserve_fields']=['object_id'];negative('full-plan-preserve-identity-field',lambda:project(q))
+q=copy.deepcopy(plan);q[ix]['preserve_fields']=['comment'];negative('full-plan-new-handle-old-comment-transfer',lambda:project(q))
+q=copy.deepcopy(plan);q[ix]['before_position']=next(p['before_position'] for p in q if p['before_position']);negative('full-plan-cross-slot-pair',lambda:project(q))
+q=copy.deepcopy(plan);q.append({'owner':records[0]['source_record'],'before_position':unselected[0],'native_position':None,'preserve_fields':[]});negative('full-plan-unselected-row-scope-expansion',lambda:project(q))
+for side in ['old','new']:
+ for predicate in [False,True]:
+  vals=copy.deepcopy(old if side=='old' else new)
+  row=next(copy.deepcopy(r) for r in new if r['object_id']=='kgmicrobe.ingredient:desicatted_ox-bile')
+  if side=='old':vals.append(copy.deepcopy(row))
+  if predicate:row['predicate_id']='skos:closeMatch'
+  vals.append(row)
+  raw=(''.join(pub.table(before if side=='old' else candidate)[0])+''.join(pub.render_row(fields,r) for r in vals)).encode()
+  negative(f'full-plan-duplicate-{side}-predicate-{predicate}',lambda:project(plan,bo=raw if side=='old' else before,ca=raw if side=='new' else candidate))
+  negative(f'alignment-duplicate-{side}-predicate-{predicate}',lambda:pub._align_rows(vals,new) if side=='old' else pub._align_rows(old,vals))
+
+# Real 27-receipt history equivalence, every native checkpoint pin retained.
+proof=pub.native.verify_mapping_chain(K);assert len(proof['receipts'])==27
+maker=pub._maker(pub.Capture(P)); maker_slot=maker.slot
+historical=[]
+for n,receipt in enumerate(proof['receipts'],1):
+ l,r=proof['states_after_sequence'][n-1],proof['states_after_sequence'][n]
+ actual=pub._align_rows(l,r);original=maker.align(l,r)
+ assert actual==original==(receipt['changes'],receipt['position_map'])
+ historical.append({'sequence':n,'rows_before':len(l),'rows_after':len(r),'changes':len(actual[0]),'maker_equal_recorded_equal':True})
+assert maker.slot is maker_slot
+save('historical-27.json',{'sequences':historical,'input_hashes':proof['input_hashes'],'all27_old_receipt_bytes_preserved':True})
+# Local retarget must null the old position, never transfer original provenance.
+for namespace in ['kgmicrobe.ingredient','kgmicrobe.compound']:
+ l=copy.deepcopy(old[0]);l.update(subject_id='MIM:TechnicalFixture',object_id=namespace+':before',comment='held old local identity')
+ r=copy.deepcopy(l);r.update(object_id=namespace+':after',comment='new identity evidence')
+ cs,ps=pub._align_rows([l],[r]);assert ps==[None] and [x['kind'] for x in cs]==['removed','added']
+ assert cs[0]['before']==l and cs[1]['after']==r
+ local_link={**link,'before_row_count':1,'after_row_count':1,'changes':cs,'position_map':ps}
+ pub.native._validate_receipt(local_link,complete=False)
+ played=pub.native.walk_mapping_changes([local_link],start_sha256=local_link['before_sha256'],reviewed_sha256=local_link['after_sha256'],baseline_rows=[l],refreshed_rows={})
+ assert played[0]==[None] and played[2]==[r] and played[1][1]['kind']=='added'
+ checks.append({'name':namespace+'-retarget-old-position-null','outcome':'pass; old hold cannot follow to new ID','legacy_alignment_difference_explicit':maker.align([l],[r])!= (cs,ps)})
+# CAS / ontology updates retain unchanged historical pairing.
+l=[dict(old[0],subject_id='MIM:TechnicalFixture',object_id=obj) for obj in ['CHEBI:1','cas:1-1-1','kgmicrobe.compound:stable']]
+r=[dict(l[1],object_id='cas:2-2-2'),dict(l[2],comment='new provenance'),dict(l[0],object_id='CHEBI:2')]
+assert pub._align_rows(l,r)==maker.align(l,r)
+checks.append({'name':'ontology-CAS-stable-local-historical-pairing','outcome':'pass'})
+assert all(pin(p)==pins[k] for k,p in inputs.items())
+assert all(digest((K/p).read_bytes())==h for p,h in proof['input_hashes'].items())
+save('controls.json',checks)
+save('RESULT.json',{'status':'PASS_WITH_LIMITATIONS','scope':'independent mechanical projection/alignment only; no source science/application/approval','inputs':pins,'counts':{'conditional_operations':len(records),'old_rows':len(old),'native_rows':len(new),'projected_rows':len(after),'selected_native_rows':len(selected_native),'unselected_physical_lines_exact':len(unselected),'row_operations':len(plan),'alignment':dict(collections.Counter(c['kind'] for c in changes)),'historical_receipts':len(historical),'adversarial_negative_controls':sum(x['outcome']=='refused' for x in checks),'additional_pairing_controls':sum(x['outcome']!='refused' for x in checks)},'preservation':preservation,'native_incomplete_row_validator_replay':'PASS','all_read_inputs_unchanged':True,'suppression_policy_guards_AST_unchanged':True,'limitations':['Exact private9df/c445 code only; eventual maintained-head review remains required.','No actual campaign source receipt, approval or completed publication constructed.','Full row multiset equals prior native invariant diagnostic; invariant result itself not recomputed here.','New selected suppression requirements remain separate and open.','Some owner composition science was authored by this reviewer; none is approved by this technical review.','Native generation authority and B5 remain separate from row projection.']})
+print(json.dumps(json.loads((O/'RESULT.json').read_text())['counts'],indent=2))

@@ -1,0 +1,117 @@
+{
+  "reviewed_head": "21061aa532401398db70c59a596debf330f70744",
+  "verdict": "needs_curation",
+  "findings": [
+    {
+      "finding_id": "REJECTION-CODE-001",
+      "issue_key": "campaign-owner-apply-literal-git-paths",
+      "category": "other",
+      "severity": "major",
+      "status": "resolved",
+      "certainty": "confirmed",
+      "title": "Literal NUL-delimited Git paths now preserve Unicode and control characters",
+      "description": "Exact21061 uses literal NUL-delimited paths at all live scope checks. Actual original Unicode/newline rejection and demotion controls complete. All23 authored1255 inputs remain; unrelated changes and malformed lists refuse earlier with no owned writes/receipt. No change to prior16c failure evidence.",
+      "disposition_reason": "Corrected at reviewed21061/ordinary7a successor. Complete source and test targets reassessed with exact AST/prefix and real native controls. This scoped observation does not close GitHub or accept the remaining1256 defects.",
+      "target_ids": [
+        "exact9a1-operator",
+        "exact9a1-tests"
+      ],
+      "field_paths": [
+        "_check_mutation_git_state"
+      ],
+      "evidence_ids": [
+        "TECHNICAL",
+        "TESTS",
+        "AST",
+        "PRIOR"
+      ],
+      "ownership_note": "Coordinator/code author; no reviewer fix.",
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1255"
+      ],
+      "previous_occurrences": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "review_id": "20261108T115104Z-w08-combined-16c-independent",
+          "finding_id": "REJECTION-CODE-001"
+        }
+      ]
+    },
+    {
+      "finding_id": "W08-16C-CODE-002",
+      "issue_key": "campaign-owner-apply-late-baseline-freshness",
+      "category": "provenance",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Unrelated staged index changes can evade all live source scope checks when working bytes are restored",
+      "description": "The new live guard compares the working tree with the accepted commit using git diff --name-only -z <baseline> --. It never inspects the cached index delta. A real unrelated staged change to MAPPING_SEMANTICS.md with working bytes restored to the original passes prepare, apply, and verify_completed and emits a complete non-recovery receipt. This works when staged before prepare and after prepare. HEAD and working contract bytes remain exact, but the index contains a different contract outside the allowed owner paths.",
+      "disposition_reason": "Partly corrected: late HEAD and ordinary changed working bytes now refuse at live boundaries. Residual diagnostic W08-21061-SRC-001 demonstrates omitted index-only staged scope. Keep original1256 finding open; no historical proof HEAD lock requested.",
+      "target_ids": [
+        "exact9a1-operator",
+        "exact9a1-tests"
+      ],
+      "field_paths": [
+        "_check_mutation_git_state",
+        "_recheck",
+        "apply"
+      ],
+      "evidence_ids": [
+        "SRC-FINDING",
+        "SRC-PROBE",
+        "INDEX-READBACK",
+        "TECHNICAL",
+        "SKEPTIC"
+      ],
+      "ownership_note": "Coordinator deduplicates/files bounded residual before author correction.",
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256"
+      ],
+      "previous_occurrences": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "review_id": "20261108T115104Z-w08-combined-16c-independent",
+          "finding_id": "W08-16C-CODE-002"
+        }
+      ]
+    },
+    {
+      "finding_id": "W08-21061-PUB-001",
+      "issue_key": "publisher-final-proof-head-freshness",
+      "category": "provenance",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Final source-proof replay can outlive the last live publisher HEAD check",
+      "description": "The registered HEAD check runs at the beginning of capture.verify. Live recheck subsequently performs the substantial source-proof replay and other checks without checking HEAD again at its completion. The added preflight/final-callback coverage therefore does not retain freshness through the entire final recheck. Run the retained probe with the frozen21061 source and actual pinned Claw76c. The independent negative wrapper calls the real _owner_proof and returns its unchanged result. During the second such call after the publication log has been flushed as complete, make a real private Git commit. This happens in the final live recheck after its capture.verify HEAD check. publish returns complete and both publication/native receipts remain nonempty although actual HEAD differs from accepted source baseline.",
+      "target_ids": [
+        "combined-publisher",
+        "combined-publication-tests",
+        "combined-integration-tests"
+      ],
+      "field_paths": [
+        "prepare.mutation_head_recheck",
+        "publish.recheck",
+        "publish.final_success"
+      ],
+      "evidence_ids": [
+        "PUB-FINDING",
+        "PUB-PROBE",
+        "PUB-READBACK",
+        "SKEPTIC",
+        "ISSUE1256"
+      ],
+      "ownership_note": "Coordinator owns filed1256 publisher lineage and any follow-up; no reviewer code edit.",
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721136073"
+      ]
+    }
+  ],
+  "new_residual_diagnostic_ids": [
+    "W08-21061-SRC-001",
+    "W08-21061-PUB-001"
+  ],
+  "file_ready_before_fix": true,
+  "fixes_applied": false,
+  "GitHub_mutation": false
+}

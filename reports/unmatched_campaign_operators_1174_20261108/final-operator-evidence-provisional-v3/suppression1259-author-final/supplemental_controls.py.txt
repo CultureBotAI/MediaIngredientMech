@@ -1,0 +1,56 @@
+"""Isolated native-credit/transport controls; no source-application claim."""
+import importlib.util
+import json
+from pathlib import Path
+
+from mediaingredientmech import campaign_publication as c
+
+D = Path(__file__).absolute().parent
+P = D / "runtime/repo"
+spec = importlib.util.spec_from_file_location("suppression_controls", P / "tests/test_campaign_suppressions.py")
+h = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(h)
+out = D / "supplemental-native-controls-v1"
+out.mkdir(exist_ok=False)
+results = []
+for fault in ("true-unrelated-multiple-credits", "duplicate-selection-key", "hardlinked-review-input"):
+    root = out / fault
+    root.mkdir()
+    case = h.suppression_case.__wrapped__(root)
+    if fault == "true-unrelated-multiple-credits":
+        records = {}
+        for name in ("Control_A", "Control_B"):
+            path = "data/ingredients/mapped/" + name + ".yaml"
+            record = {"identifier": "kgmicrobe.ingredient:" + name.lower(),
+                      "preferred_term": "Unrelated multiple-credit control", "mapping_status": "MAPPED"}
+            ref = h.put(root, path, c.encoded(record))
+            case[4]["before_inventory"][path] = ref["sha256"]
+            case[4]["after_inventory"][path] = ref["sha256"]
+            records[c.subject(path)] = record
+        policy = c._BOUND_NATIVE["mediaingredientmech.synonym_policy"]
+        credits = policy.preferred_term_owners(records)
+        assert credits["unrelated multiple-credit control"] == {"MIM:Control_A", "MIM:Control_B"}
+        h.reviewed_selection(case)
+        sidecar, _ = h.project(case)
+        assert len(c._suppression_table(sidecar)[0]) == 38
+        results.append({"control": fault, "outcome": "PASS", "actual_native_credits": sorted(credits["unrelated multiple-credit control"]),
+                        "limit": "Two unchanged unrelated synthetic owners in the complete inventory; no invented ninth credit on the fixed four reviewed events."})
+    else:
+        selection, _ = h.reviewed_selection(case)
+        if fault == "duplicate-selection-key":
+            raw = (root / case[2]["suppression_review"]["path"]).read_bytes()
+            raw = raw.replace(b'"schema_version": 1', b'"schema_version": 1, "schema_version": 1')
+            case[2]["suppression_review"] = h.put(root, "reports/selection.json", raw)
+        else:
+            ref = next(iter(selection["original_review"]["inputs"].values()))
+            import os
+            os.link(root / ref["path"], root / "aliased-review-input")
+        try:
+            h.project(case)
+        except ValueError as error:
+            results.append({"control": fault, "outcome": "REFUSED_AS_REQUIRED", "error": str(error)})
+        else:
+            raise AssertionError(fault)
+result = {"scope": "Isolated source/generation proof boundary; actual native ownership policy, original119-input review and transition consumer", "publisher_sha256": c.sha((P / "src/mediaingredientmech/campaign_publication.py").read_bytes()), "results": results}
+(out / "result.json").write_text(json.dumps(result, indent=2)+"\n")
+print(json.dumps(result, indent=2))

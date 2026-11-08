@@ -1,0 +1,54 @@
+"""Read-only re-verification of independently retained lifecycle fixtures."""
+import hashlib
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+sys.path.insert(0,str(F/'src'))
+from mediaingredientmech import campaign_publication as c
+
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+results=[]; bindings={}
+for name,relative in [
+    ('quoted_unicode_demotion','technical/fixtures/unicode_demote'),
+    ('late_unrelated_committed','root-probes/late_unrelated_tracked_commit'),
+    ('late_empty_commit','technical/fixtures/late_empty_commit'),
+    ('late_uncommitted','technical/fixtures/late_unrelated_tracked'),
+]:
+    root=P.parent/relative
+    files=[root/'plan.json',root/'acceptance.json',root/'receipt/application.json']
+    before={str(f):sha(f) for f in files}
+    plan=json.loads(files[0].read_bytes()); receipt=json.loads(files[-1].read_bytes())
+    env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'}
+    def git(*args):return subprocess.check_output(['git',*args],cwd=root,env=env)
+    head=git('rev-parse','HEAD').decode().strip()
+    paths=lambda ref:git('diff','--name-only','-z',ref,'--').decode().split('\x00')[:-1]
+    allowed={e['source_record'] for e in plan['records']}|{e['before_source_record'] for e in plan['records'] if e['before_source_record']}
+    try:
+        proof=c._owner_proof(root,{'owner_plan':{'path':'plan.json'},'owner_receipt':{'path':'receipt/application.json'}})
+    except (ValueError,RuntimeError) as exc:
+        verified=False;error=str(exc)
+    else:
+        verified=proof['state']=='complete';error=None
+    after={str(f):sha(f) for f in files}
+    assert before==after
+    bindings.update(before)
+    results.append({'name':name,'fixture':str(root),'baseline_commit':plan['baseline_commit'],'current_head':head,
+       'diff_against_current_head':paths('HEAD'),'diff_against_accepted_baseline':paths(plan['baseline_commit']),
+       'allowed_paths':sorted(allowed),'unexpected_against_baseline':sorted(set(paths(plan['baseline_commit']))-allowed),
+       'receipt_state':receipt['state'],'recovery_required':receipt['recovery_required'],
+       'actual_publisher_owner_proof_verified':verified,'error':error,'bound_bytes_unchanged':True})
+assert results[0]['receipt_state']=='failed' and not results[0]['actual_publisher_owner_proof_verified']
+assert results[1]['receipt_state']=='complete' and results[1]['actual_publisher_owner_proof_verified']
+assert results[1]['current_head']!=results[1]['baseline_commit'] and results[1]['unexpected_against_baseline']
+assert results[2]['actual_publisher_owner_proof_verified'] and results[2]['current_head']!=results[2]['baseline_commit']
+assert results[3]['receipt_state']=='failed' and not results[3]['actual_publisher_owner_proof_verified']
+out={'status':'CONFIRMED_EXISTING_TWO_FINDINGS','read_only_external_fixture_verification':True,
+ 'actual_publisher_owner_proof_called':True,'full_publication_called':False,'input_hashes':bindings,'results':results,
+ 'interpretation':'Known quoted-path failures correctly prevent publisher source-proof acceptance. A live source apply that completed after late HEAD drift is accepted by the historical source-proof interface: this confirms why freshness must be enforced during live prepare/apply, not by blanket rejection of later historical verification. No mapping publication bypass is claimed from this stage-level call.'}
+(P/'source-interface-readback.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({'status':out['status'],'fixtures':len(results),'bindings':len(bindings)}))

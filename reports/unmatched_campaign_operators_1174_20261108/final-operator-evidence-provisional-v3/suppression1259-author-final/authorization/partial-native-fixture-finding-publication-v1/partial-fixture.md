@@ -1,0 +1,11 @@
+#1259 new negative fixture asserts rejection after the native boundary that already rejects it
+
+The frozen new test `test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets]` (file SHA `d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816`) constructs a completed review with four explicitly selected targets but only three reviewed target IDs. It changes coverage to partial, then calls native `validate_review` outside its expected-refusal assertion.
+
+The unchanged native review validator correctly raises `ReviewError: completed review has explicitly selected targets left unreviewed` at `scripts/record_review.py:240`. The intended negative is therefore rejected before the fixture enters its expected publisher refusal. A bounded actual run of the three scope cases produced 2 passed / 1 failed, with exact source1108 and test bytes unchanged; log SHA `ad38f445b8d0d235dd058d86fda093badb203a8382185534906ad8841984e854`.
+
+This is a newly authored negative-test setup defect, not a product acceptance or scientific review bypass. The native gate is behaving correctly. The original combined run remains intact and its complete outcome is reported separately.
+
+Bounded proposed repair after this record: preserve this exact malformed completed-review negative and explicitly assert the native ReviewError at the actual validation boundary. Keep the other two schema-valid review cases (required check not applicable; partial coverage) passing native validation and exercising publisher refusal. Do not weaken the native validator, publisher guard, existing assertions or parameter set. Preserve pre-repair bytes/logs. Re-run all three scope cases together with the affected ten predecessor fixture cases; final committed-head full validation remains mandatory.
+
+The separate reviewer confirmed the actual native boundary and exact minimal test correction in `preflight/campaign-suppressions1259-independent-v1/frozen-review-v1/SCOPE-FIXTURE-ASSESSMENT-v1.json`. No code or fixture has yet been edited.

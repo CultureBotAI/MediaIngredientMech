@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-08T11:24:28.398337+00:00",
+  "status": "REVIEWER_FIXTURE_SETUP_FAILURE_PRESERVED",
+  "attempt": "inline synthetic-native-prepare v1",
+  "exit_code": 1,
+  "exception": "ValueError: Tracked checkout has outstanding changes, then AssertionError on expected retirement error",
+  "cause": "Builder second commit staged prior intake/after.json before recomputing the after inventory; post-commit after.json change made the fixture dirty. Native tracked-checkout guard correctly refused before changed rejected route.",
+  "diff": "M\tintake/after.json\n",
+  "fixture_root": "regression-addendum/technical/synthetic-retirement-fixture-v1",
+  "operator_finding": false,
+  "fixture_or_assertions_weakened": false,
+  "next": "New immutable fixture v2 commits before/after inventories before generating external plan/acceptance; preserve v1."
+}

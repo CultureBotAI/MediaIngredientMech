@@ -1,0 +1,208 @@
+[
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "71bb343b11b2009a8f2553c2f528706afb2d93568a38a650c7aec633c26af28e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c4533c2dcfac9ef7b676492b56ba6416cc52fbf7a6bf59a15283236980ce5797",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "-uall"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/curate/all-unmatched-source-integration-20261107"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bc832ec06c63d9f3f27b6e791c66380494d54c5178988f2086ea7688fd3323b6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/portable/publisher-local-slots1257.patch"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/portable/publisher-local-slots1257.patch"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "-z"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "98e5856a8fdf78b667554b9d9e0ce3f79f21a1ef584d98acfbbd90470804765d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "src/mediaingredientmech/campaign_publication.py",
+      "tests/test_campaign_publication.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only",
+      "-z"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "98e5856a8fdf78b667554b9d9e0ce3f79f21a1ef584d98acfbbd90470804765d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "commit",
+      "-m",
+      "fix: preserve distinct native local registry rows (#1257)\n\nAlign local identities by their full object IDs in the scoped publisher and explicit maintained receipt helper. A changed local ID is an auditable removal plus addition; historical receipt maker and receipts1-27 stay unchanged.\n\nPreserve every prior test and add32 cases. Publisher/native integration:196 passed, zero skips; independent review confirmed complete3756-row replay,2719 unchanged unselected lines and all27 historical alignments. Four reviewed suppression events remain a separate publication prerequisite."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b1d4eb35e7b260f926e8221cc09ccec256d8fab73e12704deb046b9f34f5c89a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "d2e02c6dd5d480258d1de5f4791506bdb2e4b1d3f95712d4c38d125e6271e5d8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD^"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "71bb343b11b2009a8f2553c2f528706afb2d93568a38a650c7aec633c26af28e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff-tree",
+      "--no-commit-id",
+      "--name-only",
+      "-r",
+      "-z",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "98e5856a8fdf78b667554b9d9e0ce3f79f21a1ef584d98acfbbd90470804765d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e0a75a0c48ba539426b1f70623ea376c7b379ecf:src/mediaingredientmech/campaign_publication.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9df83185a1c4ac4e0aa9b6497138a9923841bb3b9fe656671ac905987bc2d5f1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e0a75a0c48ba539426b1f70623ea376c7b379ecf:tests/test_campaign_publication.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "-uall"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "push",
+      "origin",
+      "HEAD:refs/heads/curate/all-unmatched-source-integration-20261107"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "2a620f54ec25294ea1a933654640adc28dbc64f376d8d9ff1f70a5fae1e43722"
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/curate/all-unmatched-source-integration-20261107"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "ce27fd2e52e259a516cf9ec70e35fd9c5717074e0d0c2d1f231bb31ce0075fdc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

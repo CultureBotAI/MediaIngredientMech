@@ -1,0 +1,38 @@
+"""Independent overlap controls and strengthened native-membership negatives.
+Reuses only our preceding immutable fixture constructor, without rerunning its
+36 probes; target operator bytes remain unchanged.
+"""
+from pathlib import Path
+import hashlib
+here=Path(__file__).resolve().parent
+source=(here/'run_independent_probes_v1.py').read_text()
+helper_source=source.split("run('positive_disjoint_edit_with_unselected_family'",1)[0]
+assert helper_source != source
+exec(compile(helper_source,str(here/'run_independent_probes_v1.py'),'exec'),globals())
+ROWS=[]
+
+def run_follow(name,fn):
+ started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ try:row={'name':name,'status':'PASS','started_at':started,'result':fn()}
+ except BaseException as e:row={'name':name,'status':'FAIL','started_at':started,'exception_type':type(e).__name__,'message':str(e),'traceback':traceback.format_exc()}
+ ROWS.append(row);print(name,row['status'],flush=True)
+
+shared={'ids':['CHEBI:1','CHEBI:1','CHEBI:90','CHEBI:91'],'terms':['Same','SAME','Gamma','Delta'],'select':[A,B]}
+run_follow('overlap_leaves_id_remains_name',lambda:reject_before('overlap_leaves_id_remains_name',lambda r,p:delta(r,p,0,{'identifier':'CHEBI:80'}),shared))
+run_follow('overlap_leaves_name_remains_id',lambda:reject_before('overlap_leaves_name_remains_id',lambda r,p:delta(r,p,0,{'preferred_term':'Distinct'}),shared))
+
+def exit_both():
+ r,p=fixture('overlap_exits_both_without_new_pair',**shared);delta(r,p,0,{'identifier':'CHEBI:80','preferred_term':'Distinct'});ready=t.prepare(r);o.apply(ready,r/'receipt',enabled=True);proof=o.verify_completed(r,r/'plan.json',r/'receipt/application.json');assert proof['state']=='complete';return {'stage':'real_prepare_apply_completed_replay','state':'complete','removed_both_old_collision_kinds':True,'introduced_pairs':0}
+run_follow('overlap_exits_both_without_new_pair',exit_both)
+
+def unknown(r,p):
+ p['records'][0].update(before_source_record='data/ingredients/mapped/Unknown.yaml',source_record='data/ingredients/mapped/Unknown.yaml');t.repin(r,p)
+run_follow('unknown_preimage_exact_guard',lambda:reject_before('unknown_preimage_exact_guard',unknown))
+
+def valid_receipt(r,p):
+ s=o.digest(t.SSSOM);h=o.digest((r/C).read_bytes())
+ t.put(r,o.RECEIPTS_DIR+'/late-valid.json',{'schema_version':1,'batch':'late-valid','sequence':1,'approval':'NONE: private adversarial fixture','before_sha256':s,'after_sha256':s,'before_row_count':1,'after_row_count':1,'position_map':[1],'changes':[],'changed_rows':0,'added_rows':0,'removed_rows':0,'records':[{'source_record':C,'shape':'existing','before_yaml_sha256':h,'after_yaml_sha256':h}]})
+ assert o.receipt_paths(r)==[o.RECEIPTS_DIR+'/late-valid.json']
+run_follow('late_valid_native_receipt_membership',lambda:late_mutation('late_valid_native_receipt_membership',valid_receipt))
+report={'reviewer':'/root/boundary_adversarial','head':'d691c079cf3923daed89284b7579913b84c3a34c','scope':'Additional independent overlapping-key families and strengthened guard-specific negatives','helper_script_sha256':hashlib.sha256((here/'run_independent_probes_v1.py').read_bytes()).hexdigest(),'operator_sha256':o.digest((F/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()),'results':ROWS,'counts':{'total':len(ROWS),'pass':sum(r['status']=='PASS' for r in ROWS),'fail':sum(r['status']=='FAIL' for r in ROWS)},'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'prior_results_preserved':True,'qualification':'Original late_native_receipt_membership reached malformed-receipt refusal, not membership-equality guard. This follow-up injects a shape-valid native receipt and proves membership-equality refusal. Original unknown-source negative hit an earlier destination collision; this follow-up keeps source/destination equal and reaches the missing-preimage guard.'}
+(here/'overlap-results-v1.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report['counts']));sys.exit(bool(report['counts']['fail']))

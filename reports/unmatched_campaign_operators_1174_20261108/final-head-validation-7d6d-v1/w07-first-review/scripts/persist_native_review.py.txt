@@ -1,0 +1,21 @@
+from pathlib import Path
+import datetime, hashlib, json, os, subprocess, sys
+
+O=Path(__file__).resolve().parents[1]
+F=O/'native-fixture'
+ctx=json.loads((O/'validation/native-review-context.json').read_text())
+env=dict(os.environ,**ctx['environment'])
+for action in ['validate','save']:
+    cmd=[sys.executable,str(F/'scripts/record_review.py'),'--repo-root',str(F),action]
+    cmd+=['--content',str(O/'native-review.json')] if action=='save' else [str(O/'native-review.json')]
+    start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    r=subprocess.run(cmd,cwd=F,env=env,capture_output=True)
+    for n,b in [('stdout',r.stdout),('stderr',r.stderr)]:
+        with (O/'validation'/f'native-{action}.{n}.log').open('xb') as f:f.write(b)
+    result={'command':cmd,'started_at':start,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exit_code':r.returncode,'environment':ctx['environment'],'scope':'Bounded private native review validation/persistence, no shared source or Git writes.'}
+    with (O/'validation'/f'native-{action}-receipt.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+    print(json.dumps({'action':action,'exit_code':r.returncode,'stdout':r.stdout.decode()[:1000],'stderr':r.stderr.decode()[:1000]}))
+    if r.returncode:sys.exit(r.returncode)
+    if action=='save':
+        pair={k:{'path':str(Path(v).relative_to(O)),'sha256':hashlib.sha256(Path(v).read_bytes()).hexdigest()} for k,v in json.loads(r.stdout).items()}
+        with (O/'native-pair.json').open('x') as f:json.dump(pair,f,indent=2);f.write('\n')

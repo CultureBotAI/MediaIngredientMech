@@ -1,0 +1,101 @@
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import platform
+import subprocess
+import sys
+
+R = Path.cwd()
+P = R / '.temp/combined-16c-independent-v1'
+F = P / 'frozen/repo'
+O = P / 'focused'
+O.mkdir(exist_ok=False)
+(O / 'temporary').mkdir()
+C = R.parents[2]
+J = C / 'integration/curation-worktree'
+CLAW = C.parent / 'kgm-unmapped-20261107/claw'
+os.environ.update(PYTHONDONTWRITEBYTECODE='1', GIT_OPTIONAL_LOCKS='0',
+                  CLAW_ROOT=str(CLAW), CAMPAIGN_HISTORY_ROOT=str(J),
+                  PYTHONPATH=str(F / 'src') + os.pathsep + str(F),
+                  TMPDIR=str(O / 'temporary'))
+sys.path[:0] = [str(F / 'src'), str(F)]
+import pytest
+from mediaingredientmech.curate import campaign_owner_apply as owner
+from mediaingredientmech import campaign_publication as publication
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def save(name, value):
+    with (O / name).open('x') as f:
+        json.dump(value, f, indent=2)
+        f.write('\n')
+
+assert Path(owner.__file__).resolve() == F / 'src/mediaingredientmech/curate/campaign_owner_apply.py'
+assert Path(publication.__file__).resolve() == F / 'src/mediaingredientmech/campaign_publication.py'
+assert subprocess.check_output(['git', '-C', str(CLAW), 'rev-parse', 'HEAD'], text=True).strip() == publication.PRODUCER_REVISION
+assert sha(CLAW / 'scripts/build_mim_ingredient_sssom.py') == publication.PRODUCER_SHA
+assert subprocess.check_output(['git', '-C', str(J), 'rev-parse', 'HEAD'], text=True).strip() == 'eac469f1d94f06bab0714fff891abf64b8ebdbe9'
+args = ['-c', str(F / 'pyproject.toml'), '-o', 'addopts=', '--strict-markers',
+        '-p', 'no:cacheprovider', '--basetemp', str(O / 'fixtures'),
+        '--junitxml', str(O / 'junit.xml'), '-q',
+        *[str(F / 'tests' / name) for name in ['test_campaign_owner_apply.py',
+          'test_campaign_publication.py', 'test_campaign_demotion_integration.py']]]
+started = datetime.datetime.now(datetime.timezone.utc).isoformat()
+save('command.json', {'started_at': started, 'python': sys.executable,
+                     'python_version': sys.version, 'platform': platform.platform(),
+                     'cwd': str(R), 'argv': [sys.executable, '-I', __file__],
+                     'pytest_args': args, 'environment': {k: os.environ[k] for k in [
+                         'PYTHONDONTWRITEBYTECODE', 'GIT_OPTIONAL_LOCKS', 'CLAW_ROOT',
+                         'CAMPAIGN_HISTORY_ROOT', 'PYTHONPATH', 'TMPDIR']},
+                     'source_files': {str(F / name): sha(F / name) for name in [
+                         'src/mediaingredientmech/curate/campaign_owner_apply.py',
+                         'src/mediaingredientmech/campaign_publication.py',
+                         'tests/test_campaign_owner_apply.py',
+                         'tests/test_campaign_publication.py',
+                         'tests/test_campaign_demotion_integration.py',
+                         'tests/conftest.py', 'pyproject.toml']},
+                     'producer': {'revision': publication.PRODUCER_REVISION,
+                                  'sha256': publication.PRODUCER_SHA}})
+
+class Recorder:
+    def __init__(self):
+        self.collected = []
+        self.reports = []
+
+    def pytest_collection_finish(self, session):
+        self.collected = [item.nodeid for item in session.items]
+
+    def pytest_runtest_logreport(self, report):
+        self.reports.append({'nodeid': report.nodeid, 'when': report.when,
+                             'outcome': report.outcome, 'duration': report.duration,
+                             'longrepr': str(report.longrepr) if report.longrepr else None})
+
+recorder = Recorder()
+code = int(pytest.main(args, plugins=[recorder]))
+loaded = {}
+for name, module in sorted(sys.modules.items()):
+    f = getattr(module, '__file__', None)
+    if f and (name.startswith('mediaingredientmech') or name.startswith('test_campaign_')):
+        path = Path(f).resolve()
+        if path.is_file():
+            loaded[name] = {'path': str(path), 'sha256': sha(path)}
+integration = [r for r in recorder.reports if 'test_campaign_demotion_integration.py' in r['nodeid'] and r['when'] == 'call']
+summary = {'exit_code': code, 'started_at': started,
+           'finished_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+           'collected': len(recorder.collected),
+           'passed_calls': sum(r['when'] == 'call' and r['outcome'] == 'passed' for r in recorder.reports),
+           'skips': [r for r in recorder.reports if r['outcome'] == 'skipped'],
+           'failures': [r for r in recorder.reports if r['outcome'] == 'failed'],
+           'integration_executed': len(integration),
+           'integration_passed': sum(r['outcome'] == 'passed' for r in integration),
+           'actual_loaded_files': loaded}
+save('collected.json', recorder.collected)
+save('test-reports.json', recorder.reports)
+save('result.json', summary)
+print(json.dumps({k: v for k, v in summary.items() if k != 'actual_loaded_files'}, indent=2))
+assert code == 0 and summary['collected'] == 337 and summary['passed_calls'] == 337
+assert summary['integration_executed'] == summary['integration_passed'] == 9
+assert not summary['skips'] and not summary['failures']

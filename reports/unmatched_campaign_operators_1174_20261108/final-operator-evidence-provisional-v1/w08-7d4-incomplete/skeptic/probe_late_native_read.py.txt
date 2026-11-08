@@ -1,0 +1,77 @@
+"""Fresh independent boundary probe; native functions/results remain untouched.
+
+The profiler schedules a real private commit after the last reserved native
+receipt byte read, later in recheck than the original owner-proof injection.
+"""
+import hashlib
+import importlib.util
+import json
+import platform
+import sys
+from pathlib import Path
+
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+J=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree')
+sys.path.insert(0,str(F/'src'))
+from mediaingredientmech import campaign_publication as c
+def load(name):
+    spec=importlib.util.spec_from_file_location(name,F/'tests'/f'{name}.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+i=load('test_campaign_demotion_integration');fx=load('test_campaign_publication')
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def run(call):
+    try:return {'accepted':True,'result':call()}
+    except (ValueError,RuntimeError) as e:return {'accepted':False,'error':str(e)}
+root=P/'fresh-native-fixture';root.mkdir()
+source,plan,path,dest,proof=i.prepare_native_case(root,J)
+native=root/c.native.RECEIPTS_DIR/(plan['batch']+'.json')
+log=dest/'publication.json'
+results=[]
+initial={p:h(root/p) for p in [c.SOURCE,c.POLICY,c.SIDECAR,c.BASELINE]}
+
+# Same bytes at a symlink target still cannot satisfy literal captured input.
+candidate=root/plan['generation']['candidate']['path']
+held=candidate.with_suffix('.held-native-bytes')
+candidate.rename(held);candidate.symlink_to(held)
+try:
+    result=run(lambda:c.publish(root,path,dest,apply=True))
+    assert not result['accepted'] and 'alias' in result['error']
+    assert not list(dest.iterdir()) and not native.exists()
+finally:
+    candidate.unlink();held.rename(candidate)
+results.append({'name':'same_bytes_generation_symlink','outcome':result,'no_publication_outputs':True})
+
+# Real proof/input/generation with a same-commit detached HEAD is still valid:
+# the contract binds the accepted commit, not an arbitrary local branch name.
+source.run_git(root,'checkout','--detach','-q',proof['baseline_commit'])
+dry=c.publish(root,path,dest,apply=False)
+assert dry['status']=='dry_run' and not list(dest.iterdir()) and not native.exists()
+results.append({'name':'same_commit_detached_head_dry_run','outcome':dry,'no_publication_outputs':True})
+assert all(h(root/p)==v for p,v in initial.items())
+
+seen=[];injections=[]
+def profiler(frame,event,arg):
+    if event!='return' or frame.f_code is not Path.read_bytes.__code__ or injections:return
+    if frame.f_locals.get('self')!=native:return
+    caller=frame.f_back
+    if caller is None or caller.f_code.co_name!='recheck' or caller.f_code.co_filename!=c.__file__:return
+    if not log.exists() or not log.read_bytes():return
+    if json.loads(log.read_bytes()).get('status')!='complete':return
+    seen.append({'actual_native_sha256':hashlib.sha256(arg).hexdigest(),'caller_line':caller.f_lineno})
+    if len(seen)==2:
+        fx.commit_publication_boundary(root,unrelated=True)
+        injections.append({'head':source.run_git(root,'rev-parse','HEAD'),'after_actual_native_read_sha256':hashlib.sha256(arg).hexdigest()})
+sys.setprofile(profiler)
+try:result=run(lambda:c.publish(root,path,dest,apply=True))
+finally:sys.setprofile(None)
+assert len(injections)==1 and not result['accepted'] and 'live publication HEAD changed' in result['error']
+assert log.read_bytes()==b'' and native.read_bytes()==b''
+assert (dest/'canonical-before.tsv').read_bytes()==(root/plan['before']['canonical']['path']).read_bytes()
+assert (dest/'policy-before.json').read_bytes()==(root/plan['before']['policy']['path']).read_bytes()
+results.append({'name':'head_drift_after_final_native_receipt_byte_read','outcome':result,'injections':injections,'real_read_events':seen,'both_success_receipts_empty':True,'both_authentic_recovery_backups_exact':True,'rollback_claimed':False})
+bindings={str(x.path):c.sha(x.content) for x in c.LOADED_PRODUCERS.values()}
+for x in c.LOADED_PRODUCERS.values():x.verify()
+out={'status':'PASS','reviewed_head':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','runtime':{'python':platform.python_version(),'executable':sys.executable},'source_hashes':bindings,'fixture':str(root),'historical_receipts':27,'native_function_objects_or_results_replaced':False,'fault_injection':'sys.setprofile schedules one actual private unrelated Git commit after actual Path.read_bytes returned inside final recheck; no result changed.','results':results,'artifact_hashes':{str(p.relative_to(root)):h(p) for p in [path,log,native,dest/'canonical-before.tsv',dest/'policy-before.json',root/'source-receipt/application.json',root/'reports/native/generation.json',root/'reports/native/command.json',root/'reports/native/command.log']},'scientific_or_campaign_application_approval':False}
+with (P/'fresh-native-results.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':'PASS','fresh_native_probes':len(results),'late_native_read':result}))

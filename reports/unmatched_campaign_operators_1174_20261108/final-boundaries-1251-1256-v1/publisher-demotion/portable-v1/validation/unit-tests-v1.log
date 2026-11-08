@@ -1,0 +1,77 @@
+.....F.......                                                            [100%]
+=================================== FAILURES ===================================
+_ test_demotion_explicit_relocation_and_complete_removal_required[before-hash] _
+
+case = {'before': b'# mapping_set_id: https://example.org/fixture\n# predicate_semantics: skos\n# mapping_date: 2026-10-01\n#...n-publisher-v1/unit-fixture-v1/test_demotion_explicit_relocat2/repository/reports/fixture/publication-plan.json'), ...}
+mutation = 'before-hash'
+
+    @pytest.mark.parametrize("mutation", ["kind", "old-path", "before-hash", "omitted-row"])
+    def test_demotion_explicit_relocation_and_complete_removal_required(case, mutation):
+        demotion_case(case)
+        record = case["records"][0]
+        if mutation == "kind":
+            record["kind"] = "edit"
+        elif mutation == "old-path":
+            record["before_source_record"] = "data/ingredients/mapped/Renamed.yaml"
+        elif mutation == "before-hash":
+            record["before_yaml_sha256"] = None
+        else:
+            case["plan"]["rows"].pop(0)
+        save(case)
+        before = (case["root"] / c.SOURCE).read_bytes()
+        with pytest.raises(ValueError, match="demotion requires|does not cover every"):
+>           c.publish(case["root"], case["path"], case["out"], apply=True)
+
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_publication.py:377: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/campaign_publication.py:1198: in publish
+    prepared = prepare(root, plan_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/campaign_publication.py:1024: in prepare
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = None, message = 'selected historical owner pin lacks native bridge'
+
+    def require(condition: object, message: str) -> None:
+        if not condition:
+>           raise ValueError("Campaign publication: " + message)
+E           ValueError: Campaign publication: selected historical owner pin lacks native bridge
+
+.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/campaign_publication.py:134: ValueError
+
+During handling of the above exception, another exception occurred:
+
+case = {'before': b'# mapping_set_id: https://example.org/fixture\n# predicate_semantics: skos\n# mapping_date: 2026-10-01\n#...n-publisher-v1/unit-fixture-v1/test_demotion_explicit_relocat2/repository/reports/fixture/publication-plan.json'), ...}
+mutation = 'before-hash'
+
+    @pytest.mark.parametrize("mutation", ["kind", "old-path", "before-hash", "omitted-row"])
+    def test_demotion_explicit_relocation_and_complete_removal_required(case, mutation):
+        demotion_case(case)
+        record = case["records"][0]
+        if mutation == "kind":
+            record["kind"] = "edit"
+        elif mutation == "old-path":
+            record["before_source_record"] = "data/ingredients/mapped/Renamed.yaml"
+        elif mutation == "before-hash":
+            record["before_yaml_sha256"] = None
+        else:
+            case["plan"]["rows"].pop(0)
+        save(case)
+        before = (case["root"] / c.SOURCE).read_bytes()
+>       with pytest.raises(ValueError, match="demotion requires|does not cover every"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'demotion requires|does not cover every'
+E         Actual message: 'Campaign publication: selected historical owner pin lacks native bridge'
+
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_publication.py:376: AssertionError
+=============================== warnings summary ===============================
+.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED .temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[before-hash]
+1 failed, 12 passed, 118 deselected, 12 warnings in 2.01s

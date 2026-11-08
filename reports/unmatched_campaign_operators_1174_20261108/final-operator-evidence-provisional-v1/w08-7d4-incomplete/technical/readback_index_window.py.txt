@@ -1,0 +1,25 @@
+"""Read-only independent corroboration of root's actual four native fixtures."""
+from pathlib import Path
+import hashlib,json,os,subprocess,sys
+W=Path.cwd();P=W/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path[:0]=[str(F/'src'),str(F)]
+os.environ['GIT_OPTIONAL_LOCKS']='0'
+from mediaingredientmech.curate import campaign_owner_apply as owner
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def digest(raw):return hashlib.sha256(raw).hexdigest()
+def git(root,*args):return subprocess.run(['git','-C',str(root),*args],check=True,capture_output=True,env=os.environ).stdout
+rows=[]
+source=json.loads((P/'index-window-probes/results.json').read_bytes())
+for prior in source['results']:
+ root=Path(prior['fixture']);plan=json.loads((root/'plan.json').read_bytes());receipt=root/'receipt/application.json';saved=json.loads(receipt.read_bytes());target=plan['records'][0]['source_record'];pins={'.git/index':h(root/'.git/index'),'receipt/application.json':h(receipt),'plan.json':h(root/'plan.json'),'acceptance.json':h(root/'acceptance.json')};owner_pins=owner.hashes(owner.inventory(root));proof=None;error=None
+ index_contract=git(root,'show',':MAPPING_SEMANTICS.md');index_owner=git(root,'show',':'+target)
+ try:proof=owner.verify_completed(root,root/'plan.json',receipt)
+ except Exception as exc:error={'type':type(exc).__name__,'message':str(exc)}
+ row={'mode':prior['mode'],'fixture':str(root.relative_to(W)),'plan_sha256':pins['plan.json'],'receipt_sha256':pins['receipt/application.json'],'receipt_matches_root_capture':h(receipt)==prior['receipt_sha256'],'state':saved['state'],'recovery_required':saved['recovery_required'],'real_head':git(root,'rev-parse','HEAD').decode().strip(),'accepted_baseline':plan['baseline_commit'],'working_contract_sha256':h(root/'MAPPING_SEMANTICS.md'),'index_contract_sha256':digest(index_contract),'working_owner_sha256':h(root/target),'index_owner_sha256':digest(index_owner),'accepted_owner_sha256':plan['records'][0]['after_capture']['sha256'],'cached_paths':git(root,'diff','--cached','--no-renames','--ita-visible-in-index','--name-only','-z',plan['baseline_commit'],'--').decode(),'actual_index_entries':git(root,'--literal-pathspecs','ls-files','--stage','-z','--','MAPPING_SEMANTICS.md',target).decode(),'historical_verify_completed':proof is not None,'historical_error':error,'index_and_proof_unchanged_by_readback':all(h(root/p)==v for p,v in pins.items()),'owners_unchanged_by_readback':owner.hashes(owner.inventory(root))==owner_pins}
+ assert row['receipt_matches_root_capture'] and row['index_and_proof_unchanged_by_readback'] and row['owners_unchanged_by_readback']
+ if row['mode']=='before_cached_control':assert error and saved['state']=='failed'
+ else:assert proof and saved['state']=='complete' and row['working_owner_sha256']==row['accepted_owner_sha256']
+ if row['mode']=='after_cached_enumeration':assert row['index_contract_sha256']!=row['working_contract_sha256'] and row['real_head']==row['accepted_baseline']
+ if row['mode']=='after_owner_blob':assert row['index_owner_sha256']!=row['accepted_owner_sha256'] and row['real_head']==row['accepted_baseline']
+ rows.append(row)
+r={'status':'CONFIRMED_LIVE_INDEX_CONSISTENCY_GAP','reviewer':'/root/inorganics','source_sha256':h(Path(owner.__file__)),'script_sha256':h(Path(__file__)),'root_script_sha256':h(P/'provenance/probe_index_window.py'),'root_results_sha256':h(P/'index-window-probes/results.json'),'root_finding_sha256':h(P/'FINDING-W08-7D4DB26-SRC-001.json'),'scope':'Independent actual Git object/index/receipt readbacks and real historical verifier calls. No reproduction claimed for root scheduling. Historical verification is deliberately not a live-index gate; the defect is complete returned during the final live check.','results':rows}
+(O/'index-window-readback.json').write_text(json.dumps(r,indent=2,ensure_ascii=False)+'\n');print(json.dumps({'status':r['status'],'rows':[{k:x[k] for k in ['mode','state','historical_verify_completed','index_and_proof_unchanged_by_readback']} for x in rows]},indent=2))

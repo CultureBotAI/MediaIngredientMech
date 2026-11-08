@@ -1,0 +1,47 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree
+configfile: pyproject.toml
+plugins: cov-7.0.0, anyio-4.13.0
+collected 134 items / 121 deselected / 13 selected
+
+../worktree/tests/test_campaign_owner_apply.py F............             [100%]
+
+=================================== FAILURES ===================================
+______ test_1252_unmapped_rejection_real_application_and_completed_replay ______
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-rejection-regression-fix-v1/pytest-focused-v1/test_1252_unmapped_rejection_r0')
+
+    def test_1252_unmapped_rejection_real_application_and_completed_replay(tmp_path):
+        """Rejecting an authentic unmapped record retains its preimage and lineage."""
+        plan = unmapped_rejection_case(tmp_path)
+        before = owner.hashes(owner.inventory(tmp_path))
+        original = (tmp_path / OLD).read_bytes()
+        ready = prepare(tmp_path)
+        assert owner.hashes(owner.inventory(tmp_path)) == before
+        result = owner.apply(ready, tmp_path / "receipt", enabled=True)
+        proof = owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )
+        data = owner.record((tmp_path / OLD).read_bytes())
+        previous = owner.record(original)
+        assert data["mapping_status"] == "REJECTED"
+        assert all(data[k] == previous[k] for k in ("identifier", "preferred_term"))
+        assert data["curation_history"][:-1] == previous["curation_history"]
+        assert data["synonyms"][0]["synonym_type"] == "REJECTED_LABEL"
+>       assert proof["records"][0]["shape"] == "existing"
+E       AssertionError: assert 'campaign_owner_edit' == 'existing'
+E         
+E         - existing
+E         + campaign_owner_edit
+
+../worktree/tests/test_campaign_owner_apply.py:1325: AssertionError
+=============================== warnings summary ===============================
+../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1252_unmapped_rejection_real_application_and_completed_replay
+========== 1 failed, 12 passed, 121 deselected, 12 warnings in 4.75s ===========

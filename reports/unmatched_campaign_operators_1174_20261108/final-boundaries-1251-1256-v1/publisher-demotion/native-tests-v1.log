@@ -1,0 +1,76 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_real_source_generation_publication_demotion _______________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/native-fixture-v1/test_real_source_generation_pu0')
+
+    def test_real_source_generation_publication_demotion(tmp_path):
+>       source, plan, plan_path, destination, source_proof = prepare_native_case(tmp_path)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/native-fixture-v1/test_real_source_generation_pu0')
+
+    def prepare_native_case(root):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(root)
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(kg, "-c", "user.email=fixture@example.invalid", "-c", "user.name=Fixture", "commit", "--allow-empty", "-qm", "Private empty KG fixture")
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {"candidate": output / "candidate.tsv", "sidecar": output / "suppressed.tsv", "manifest": output / "generation.json"}
+        command = [sys.executable, "-B", str(claw / "scripts/build_mim_ingredient_sssom.py"), "--output", str(paths["candidate"]), "--suppressed-aliases-output", str(paths["sidecar"]), "--generation-manifest-output", str(paths["manifest"]), "--prior-stamps-from", str(root / publication.SOURCE)]
+        environment = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "MEDIAINGREDIENTMECH_ROOT": str(root), "KGMICROBE_ROOT": str(kg), "TMPDIR": str(temporary), "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", "")}
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(root, "reports/native/command.json", {"argv": command, "returncode": run.returncode, "environment": {key: environment[key] for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")}})
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/native-fixture-v1/test_real_source_generation_pu0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E         Replayed 0 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1537, in _build_candidate
+E             _write_sssom(final, staged)
+E             ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1275, in _write_sssom
+E             version = _mapping_set_version(rows)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1252, in _mapping_set_version
+E             raise ValueError("Cannot derive mapping_date from an empty mapping set")
+E         ValueError: Cannot derive mapping_date from an empty mapping set
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/e...t derive mapping_date from an empty mapping set")\nValueError: Cannot derive mapping_date from an empty mapping set\n').returncode
+
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py:120: AssertionError
+=============================== warnings summary ===============================
+.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED .temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py::test_real_source_generation_publication_demotion
+1 failed, 12 warnings in 3.69s

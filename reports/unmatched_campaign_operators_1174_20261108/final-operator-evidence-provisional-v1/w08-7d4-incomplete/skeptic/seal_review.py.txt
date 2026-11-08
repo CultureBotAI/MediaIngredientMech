@@ -1,0 +1,99 @@
+import datetime
+import hashlib
+import json
+from pathlib import Path
+
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+head='7d4db26a2ce75e9942badaca954bb8e8f821c75c'
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(n):return json.loads((P/n).read_bytes())
+def save(n,obj):
+    with (P/n).open('x') as f:json.dump(obj,f,indent=2);f.write('\n')
+inspection=load('input-inspection.json')
+initial=load('INITIAL-PUBLISHER-RESIDUAL.json')
+native=load('native-boundary-results.json')
+fresh=load('fresh-native-results.json')
+stage=load('adversarial-results.json')
+index=load('source-index-window-readback.json')
+assert inspection['status']==fresh['status']==stage['status']=='PASS'
+assert index['status']=='CONFIRMED_NEW_SOURCE_INDEX_WINDOW'
+assert stage['probe_count']==31
+rootfinding=P.parent/'FINDING-W08-7D4DB26-SRC-001.json'
+rf=json.loads(rootfinding.read_bytes())
+assert rf['finding_id']=='W08-7D4DB26-SRC-001' and rf['reviewed_head']==head
+
+assessments=[
+('Whole publisher and exact regression continuity',
+ 'The entire current publisher module and entire integration test file were read. All 68 previous publication/integration test and helper functions are AST-identical to the exact sealed 21061 review, including all assertions. Unchanged publication test bodies use that explicit full-content review bridge; all three added test bodies and their seven parameterized cases were read afresh. Only publisher prepare/publish changed, plus the new shared HEAD helper. The source interface delta is confined to its live Git-state check; whole source operator review remains assigned to the separate technical reviewer.'),
+('Final live HEAD closure',
+ 'The shared helper compares actual Git HEAD to the genuine completed source baseline. The original initial callback remains, and explicit checks now close complete preparation, dry-run output preflight and each complete publisher recheck after the actual source proof and all reserved/native-output checks. The exact prior PUB001 counterexample now raises instead of returning complete, and clears both success receipts. A new actual late commit after the final native-receipt byte read also refuses.'),
+('Positive synchronization and historical verification',
+ 'A genuinely tracked derived file was included in the accepted private baseline and changed without committing after source application. Actual source application, Claw generation and publication pass. After a later unrelated commit, historical validation passes; changing current owner bytes then refuses. This is not a relaxed current owner/proof check, and the live HEAD restriction was not incorrectly applied to historical completed validation. A same-commit detached HEAD dry run passes, consistent with commit-based authority.'),
+('Actual execution and injection disclosure',
+ 'Three reviewer private fixtures use real source prepare/apply, the tracked native make_receipt.py, pinned Claw76c generation, native row replay and publisher gates with the actual J/eac 27-receipt history. The original negative wraps the real owner proof only to schedule a private Git commit after its unchanged result. The fresh negative uses sys.setprofile without replacing native function objects or results. Neither positive path substitutes proof, generation or validation.'),
+('Accepted relocation and full row scope',
+ 'The source completion tuple, authentic old owner hash, same basename/subject mapped-to-unmapped relocation, zero generated demoted ontology/registry slots and every old selected slot remain required. Thirty-one re-executed stage controls cover ontology plus all three registry slots, omissions, unexpected generated prefixes, malformed relocation tuples, unrelated rows, subject collision, and both prior owner chains. These stage probes are expressly not whole prepare/apply claims.'),
+('Native lineage, policy and holds',
+ 'The prospective receipt is validated and replayed through unchanged native chain code; either relocation path with a prior owner chain refuses. Old policy pins/history, suppression sidecar/baseline and unrelated physical rows remain preserved. The inherited 27-receipt held-row lineage integration test is AST-identical. Mechanical fixtures and this code review confer no source, ontology, ingredient, role, export, merge or release acceptance.'),
+('Capture, alias and recovery boundaries',
+ 'Complete source inventories, checkpoint/protected membership, immutable identities and retired-path absence are retained. Stage probes refuse hidden additions, same-byte inode swaps, aliases, hardlinks and proof drift. A fresh actual native generation input symlink with identical target bytes refuses before any output. Both late HEAD failures preserve authentic canonical/policy recovery backups and leave empty native/publication success receipts; no rollback is claimed. Standalone validate intentionally reconstructs accepted state rather than verifying later arbitrary recovery-folder changes.'),
+('Source index correction and remaining gap',
+ 'The new source check examines cached paths with literal NUL framing, disables rename folding, checks stages/modes/blobs against installed accepted endpoints, and rechecks HEAD. This corrects the earlier already-present index-only examples. It does not retain one coherent index across enumeration and entry reads. Independent readback of all four root fixtures and actual native completed verification confirms the two late index mutations are still accepted despite unaccepted staged content. The unchanged HEAD and working bytes are directly verified; this retains W08-7D4DB26-SRC-001 under the existing #1256 native lineage.'),
+('Test limits and conditional outcome',
+ 'Static accounting finds 144 publisher cases and 20 real-generator integration cases, including seven additions (five native). The reviewer did not duplicate the full combined suite or claim its result. The author manifest has 132 exact checked members, but its PASS is author evidence only. Publisher-specific checks support correction of PUB001; the confirmed source freshness residual prevents acceptance of the combined head for application.')]
+save('full-content-assessment.json',{'reviewed_head':head,'assessments':[{'domain':d,'assessment':a} for d,a in assessments],
+                                    'full_publisher_scope_assessed':True,'whole_source_operator_review_claimed':False,'scientific_approval':False})
+findings=[
+ {'finding_id':'W08-21061-PUB-001','issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1256',
+  'status':'resolved_for_exact_reviewed_head','severity':'major','prior_artifacts_preserved':True,
+  'basis':'Exact original final real source-proof counterexample refuses at the new end-of-recheck live HEAD comparison. Positive tracked-derived and later historical validation remain valid; changed owner proof refuses. Additional later native-byte-read fault also refuses.',
+  'evidence':['INITIAL-PUBLISHER-RESIDUAL.json','native-boundary-results.json','fresh-native-results.json'],
+  'limits':'Resolution of this publisher diagnostic only; does not resolve the separate source freshness lineage or approve campaign source payloads.'},
+ {'finding_id':rf['finding_id'],'native_predecessor_finding_id':rf['native_predecessor_finding_id'],'issue_key':rf['issue_key'],
+  'severity':rf['severity'],'status':'open','issue':rf['related_issue'],'title':rf['title'],
+  'root_finding_path':str(rootfinding),'root_finding_sha256':h(rootfinding),
+  'independent_confirmation':'Read the full actual source check, root reproduction script and all four saved fixture states; inspected actual Git staged blobs and unchanged installed bytes/HEAD; reran actual frozen completed verification. This is independent exact readback, not a second injection-lifecycle run.',
+  'reproduction':rf['reproduction'],'locators':rf['locators'],'bounded_fix':rf['minimal_fix_scope'],'required_tests':rf['required_tests'],
+  'evidence':['source-index-window-readback.json'],'fix_applied':False}
+]
+save('findings.json',{'reviewed_head':head,'findings':findings,'new_publisher_findings':[],'open_blocking_findings':[rf['finding_id']]})
+
+commands=[
+ {'script':'probe_native_boundaries.py','log':'native-boundary.log','exit_code':0,'scope':'Two actual native/J27 source-generation-publication fixtures; original negative plus positive historical checks.'},
+ {'script':'inspect_inputs.py','log':'input-inspection.log','exit_code':0,'scope':'Exact archive/author-manifest/test AST review.'},
+ {'script':'stage_probes.py','log':'stage-probes.log','exit_code':0,'scope':'31 native stage controls; no whole application claim.'},
+ {'script':'probe_late_native_read.py','log':'fresh-native.log','exit_code':0,'scope':'One actual native/J27 fixture with three new probes.'},
+ {'script':'read_source_index_window.py','log':'source-index-window-readback.log','exit_code':0,'scope':'Read-only four coordinator-fixture confirmations and actual completed verification.'},
+]
+for command in commands:
+ command.update(script_sha256=h(P/command['script']),log_sha256=h(P/command['log']),
+                argv=[str(P.parents[1]/'all-unmatched-worker-08/venv/bin/python'),'-P','-B',str(P/command['script'])])
+save('commands.json',{'runtime':native['runtime'],'environment':{'PYTHONDONTWRITEBYTECODE':'1','CLAW_ROOT':'/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw','CAMPAIGN_HISTORY_ROOT':initial['historical_root'],'OPENCLAW_WORKSPACE':'Task-private absolute directories recorded in actual native command.json captures','TMPDIR':str(P/'scratch'),'GIT_OPTIONAL_LOCKS':'0 for external-fixture readback'},'commands':commands,'no_network_or_paid_research':True})
+
+inputs=dict(inspection['input_hashes'])
+inputs.update(index['input_hashes'])
+for name in ['INITIAL-PUBLISHER-RESIDUAL.json','native-boundary-results.json','fresh-native-results.json','adversarial-results.json','source-index-window-readback.json','input-inspection.json','test-accounting.json','full-content-assessment.json','findings.json','commands.json']:
+ inputs[str(P/name)]=h(P/name)
+for q in [rootfinding,P.parent/'inputs/issue1256-residual-comment.json',P/'seal_review.py']:
+ inputs[str(q)]=h(q)
+for path,expected in inputs.items():assert h(Path(path))==expected,(path,expected)
+for group in [native,fresh]:
+ for path,expected in group.get('executed_source_hashes',group.get('source_hashes',{})).items():assert h(Path(path))==expected
+save('review.json',{'schema_version':1,'reviewer':'worker08:/root/organics','author':'separate publisher/source implementation agents; no authorship by this reviewer',
+ 'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_head':head,'parent_head':'21061aa532401398db70c59a596debf330f70744',
+ 'verdict':'needs_curation','publisher_specific_verdict':'supported bounded correction of W08-21061-PUB-001; no additional publisher defect found in assigned full review',
+ 'open_blocking_findings':[rf['finding_id']],'resolved_publisher_findings':['W08-21061-PUB-001'],
+ 'scope':'Entire campaign_publication.py, all publication/integration tests through exact full-review continuity plus new bodies, actual source-completion interface, three fresh actual native lifecycle fixtures, 31 stage probes, and read-only source residual confirmation.',
+ 'actual_counts':{'prior_test_helper_ASTs_exact':68,'author_manifest_files_verified':132,'publisher_cases_static':144,'integration_cases_static':20,'new_cases_static':7,'new_native_cases_static':5,'reviewer_actual_native_fixtures':3,'reviewer_stage_probes':31,'fresh_additional_native_probes':3,'root_source_fixtures_independently_read':4},
+ 'input_hashes':inputs,'executed_native_source_hashes':native['executed_source_hashes'],
+ 'full_suite_repeated':False,'full_source_operator_review_claimed':False,
+ 'scientific_review':False,'maintained_campaign_application':False,'source_scientific_release_or_merge_approval':False,
+ 'limitations':['Root owns the separate full combined test run and consolidated finding/publication.','The whole source operator is independently reviewed by the technical peer; this receipt checks its publisher interface and the exact demonstrated index residual.','Unchanged prior full-read test bodies are explicitly bound by AST/hash continuity rather than represented as a fresh entire source review.','Negative schedulers are disclosed; they do not fabricate successful native proof results.','All prior sealed negative packets remain unchanged.']})
+save('progress.json',{'status':'SEALED','reviewed_head':head,'verdict':'needs_curation','open_blocking_findings':[rf['finding_id']]})
+review_sha=h(P/'review.json')
+with (P/'HANDOFF.md').open('x') as f:
+ f.write(f'# Exact-head independent publisher review\n\nHead `{head}`. Review SHA256 `{review_sha}`.\n\nThe original PUB001 late-proof failure is corrected on these exact bytes. Both real positive synchronization/historical checks and the fresh later native-read boundary behave correctly. All 68 prior publisher/integration helper ASTs are preserved.\n\nThe combined head still needs curation: independently confirmed `{rf["finding_id"]}` retains the existing #1256 source-index freshness lineage. No publisher/source fixes or maintained campaign application were performed.\n\nSee `review.json`, `findings.json`, `INITIAL-PUBLISHER-RESIDUAL.json`, `fresh-native-results.json`, and `source-index-window-readback.json`. Commands, logs, exact code hashes and private native fixtures are retained. This is not scientific, source-routing, export or release approval.\n')
+files={q.name:h(q) for q in sorted(P.iterdir()) if q.is_file() and q.name!='MANIFEST.json'}
+save('MANIFEST.json',{'reviewed_head':head,'files':files,'fixture_scope':'Exact individual fixture artifacts are bound in native-boundary-results.json and fresh-native-results.json; no bulk private fixture copies published.'})
+print(json.dumps({'review':str(P/'review.json'),'sha256':review_sha,'finding':rf['finding_id'],'verdict':'needs_curation'}))

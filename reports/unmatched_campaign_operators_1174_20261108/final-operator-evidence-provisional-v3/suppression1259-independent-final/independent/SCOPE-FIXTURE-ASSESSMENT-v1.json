@@ -1,0 +1,29 @@
+{
+  "status": "CONFIRMED_TEST_SETUP_BOUNDARY_ERROR",
+  "scope": "Independent readback of actual three-case diagnostic and native validator; no repeated suite or product edit",
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/tests/test_campaign_suppressions.py",
+      "sha256": "d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/scripts/record_review.py",
+      "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/scope-diagnostic-v1/run.json",
+      "sha256": "a094cde5bb40b413221cd8a2adc6e7e0253e5d4cde286411dcd6e0845d887721"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/scope-diagnostic-v1/run.log",
+      "sha256": "ad38f445b8d0d235dd058d86fda093badb203a8382185534906ad8841984e854"
+    }
+  ],
+  "actual_result": "2 passed; partial-reviewed-targets failed during module.validate_review at testline331, before expected publisher refusal at341.",
+  "native_refusal": "completed review has explicitly selected targets left unreviewed",
+  "native_rule": "record_review.py240 requires every explicitly selected target reviewed when completion=completed.",
+  "minimal_fix": "For only partial-reviewed-targets, assert native module.ReviewError with the exact applicable message around module.validate_review and return. Keep the same parameter/case and all assertions for required-not-applicable and partial-coverage, which remain valid native documents rejected by publisher. Do not remove/relax native validation or pretend the malformed fixture reached publication.",
+  "product_source_unchanged_required": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24",
+  "publisher_bypass": false,
+  "final_readiness": false
+}

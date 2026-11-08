@@ -1,0 +1,75 @@
+"""Late finding readback; preserve the sealed initial reviewer packet."""
+import copy
+import datetime
+import hashlib
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+P=Path(__file__).resolve().parent; F=P.parent/'frozen/repo'
+sys.path.insert(0,str(F/'src'));os.environ['GIT_OPTIONAL_LOCKS']='0'
+from mediaingredientmech.curate import campaign_owner_apply as owner
+def sha(b):return hashlib.sha256(b).hexdigest()
+def h(p):return sha(p.read_bytes())
+def git(root,*args):return subprocess.check_output(['git','--literal-pathspecs','-C',str(root),*args])
+def save(name,value):
+    with (P/name).open('x') as f:json.dump(value,f,indent=2);f.write('\n')
+old_review=P/'review.json'; old_manifest=P/'MANIFEST.json'
+assert h(old_review)=='297553b5dd6dfc08807e8fad82f4588aab4865fec7b2ec757efbe592f2964466'
+old_members=json.loads(old_manifest.read_bytes())['files']
+for name,expected in old_members.items():assert h(P/name)==expected
+t=P.parent/'technical'; finding=t/'FINDING-W08-7D4DB26-SRC-002.json'
+f=json.loads(finding.read_bytes()); data=json.loads((t/'index-flag-results.json').read_bytes())
+assert h(t/'index_flag_probes.py')==data['script_sha256']
+inputs={str(q):h(q) for q in [finding,t/'index-flag-results.json',t/'index_flag_probes.py',t/'index-flag-command.log',P.parent/'flag-finding-root-readback.json',Path(owner.__file__),old_review,old_manifest,Path(__file__)]}
+rows=[]
+for item in data['results']:
+    root=(Path.cwd()/item['fixture']).resolve(); name=item['path']
+    baseline=git(root,'show',item['baseline']+':'+name); index=git(root,'show',':'+name); working=(root/name).read_bytes()
+    assert sha(baseline)==item['baseline_sha256'] and sha(index)==item['index_sha256'] and sha(working)==item['working_sha256']
+    assert baseline==index and baseline!=working
+    actual_head=git(root,'rev-parse','HEAD').decode().strip();assert actual_head==item['baseline']
+    flag=git(root,'ls-files','-v','-z','--',name).decode()
+    diff=git(root,'diff','--name-only','-z',item['baseline'],'--').decode()
+    cached=git(root,'diff','--cached','--no-renames','--ita-visible-in-index','--name-only','-z',item['baseline'],'--').decode()
+    receipt=root/'receipt/application.json'
+    if item['completed']:
+        before=h(receipt);assert before==item['receipt_sha256']
+        proof=owner.verify_completed(root,root/'plan.json',receipt)
+        assert proof['state']=='complete' and h(receipt)==before
+        assert name+'\0' not in diff and cached==''
+        verified='complete'
+    else:
+        assert not receipt.exists() and name+'\0' in diff
+        assert owner.hashes(owner.inventory(root))==item['before_inventory']
+        before=None;verified='no receipt; saved prewrite failure and unchanged owner inventory confirmed'
+    rows.append({'mode':item['mode'],'fixture':str(root),'baseline':item['baseline'],'actual_head':actual_head,'path':name,
+                 'baseline_sha256':sha(baseline),'index_sha256':sha(index),'working_sha256':sha(working),
+                 'working_bytes_hex':working.hex(),'flags_nul':flag,'working_diff_nul':diff,'cached_diff_nul':cached,
+                 'receipt_sha256':before,'fresh_native_completed_verification':verified})
+assessment='Confirmed separate stable-flag bypass of the live out-of-scope working-byte guard. Unlike SRC001 this needs no race: the caller sets assume-unchanged or skip-worktree and changes an ordinary tracked notes file before apply. Native code does not write that notes file; it fails to refuse the pre-existing unauthorized change. Actual baseline/index bytes and HEAD stay equal while current working bytes differ. Ordinary unflagged drift refuses before output or owner mutation. A coherent index snapshot alone would not fix this case; the live check must reject unsupported flags or verify actual flagged-path working state without silently changing the caller index. Historical completed verification keeps its separate scope.'
+save('source-index-flags-readback.json',{'status':'CONFIRMED','finding_id':f['finding_id'],'reviewed_head':data['reviewed_head'],'reviewer':'/root/organics',
+     'scope':'Full reproduction-script/result read and independent actual Git object/flag/byte inspection plus two actual completed verifications; not a repeated injection lifecycle.',
+     'input_hashes':inputs,'actual_readbacks':rows,'assessment':assessment,'root_or_technical_fixtures_modified':False,'scientific_or_application_approval':False})
+findings=json.loads((P/'findings.json').read_bytes())
+findings['findings'].append({'finding_id':f['finding_id'],'native_predecessor_finding_id':f['native_predecessor_finding_id'],'issue_key':f['issue_key'],'severity':f['severity'],'status':'open','issue':f['related_issue'],'title':f['title'],'source_finding_path':str(finding),'source_finding_sha256':h(finding),'independent_confirmation':assessment,'evidence':['source-index-flags-readback.json'],'locators':f['locators'],'bounded_fix':f['bounded_fix_scope'],'required_tests':f['required_tests'],'fix_applied':False})
+findings['open_blocking_findings'].append(f['finding_id'])
+findings['supersedes_finding_set']={'path':str(P/'findings.json'),'sha256':h(P/'findings.json'),'reason':'New technical SRC002 arrived after the original skeptical receipt sealed; prior bytes remain immutable.'}
+save('findings-v2.json',findings)
+review=copy.deepcopy(json.loads(old_review.read_bytes()))
+review['at']=datetime.datetime.now(datetime.timezone.utc).isoformat()
+review['supersedes_review']={'path':str(old_review),'sha256':h(old_review),'change_scope':'Append independent readback of newly delivered SRC002; publisher technical outcomes unchanged.'}
+review['open_blocking_findings']=findings['open_blocking_findings']
+review['source_addendum']=assessment
+review['actual_counts']['technical_flag_fixtures_independently_read']=3
+review['actual_counts']['additional_completed_verifications']=2
+review['input_hashes'].update(inputs)
+review['input_hashes'].update({str(P/n):h(P/n) for n in ['source-index-flags-readback.json','findings-v2.json']})
+review['limitations'].append('An initial read used the wrong candidate script name probe_index_flags.py and failed; the exact actual index_flag_probes.py was then read in full and hash-bound. A first tool-call patch envelope failed parsing before execution; no prior file changed. No conclusion relies on those failed attempts.')
+save('review-v2.json',review)
+for name,expected in old_members.items():assert h(P/name)==expected
+with (P/'HANDOFF-v2.md').open('x') as out:
+ out.write('# Final exact-head skeptical review\n\nSelect review-v2.json, SHA256 '+h(P/'review-v2.json')+'. The original review and manifest remain immutable.\n\nPUB001 is resolved on exact 7d4db26. Two independently confirmed source diagnostics remain open under #1256: SRC001 late index-read coherence and SRC002 stable index flags hiding unrelated working-byte drift. No additional publisher defect was found; this is not approval of the combined head for application.\n\nThe added three-fixture readback and two actual completed verifications are in source-index-flags-readback.json. No author or maintained files were changed.\n')
+save('MANIFEST-v2.json',{'reviewed_head':review['reviewed_head'],'previous_manifest':{'path':str(old_manifest),'sha256':h(old_manifest)},'new_files':{n:h(P/n) for n in ['read_index_flags_and_seal_v2.py','source-index-flags-readback.json','findings-v2.json','review-v2.json','HANDOFF-v2.md']}})
+print(json.dumps({'review':str(P/'review-v2.json'),'sha256':h(P/'review-v2.json'),'findings':review['open_blocking_findings'],'verdict':review['verdict']}))

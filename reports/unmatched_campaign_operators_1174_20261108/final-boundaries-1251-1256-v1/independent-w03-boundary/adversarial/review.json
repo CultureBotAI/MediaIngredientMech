@@ -1,0 +1,598 @@
+{
+  "reviewer": "/root/boundary_adversarial",
+  "independence": "Did not author the changed operator, appended tests, root review or technical review. Used only original unchanged fixture boilerplate setup/render/repin for structure, not appended inherited_family_case helper. Independent family construction and mutants are in the archived scripts.",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "parent": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "started_at": "2026-11-08T11:16:11.057628+00:00",
+  "finished_at": "2026-11-08T11:18:28.840234+00:00",
+  "status": "PASS_ADVERSARIAL_CODE_SCOPE_WITH_EXPLICIT_LIMITATIONS",
+  "scientific_review": false,
+  "findings": [],
+  "operator_assessment": [
+    {
+      "lines": "701-734",
+      "claim": "Complete before/after keyed path-pair subset blocks newly introduced member/replacement/key collisions while allowing actual reductions. Each pair includes key kind, exact key value (casefolded name), and sorted paths; no family-size-only comparison or dictionary-order winner.",
+      "evidence": [
+        "same_count_replacement",
+        "new_third_member",
+        "family_identifier_swap",
+        "cross_key_family_join",
+        "overlap_exits_both_without_new_pair"
+      ]
+    },
+    {
+      "lines": "735-751",
+      "claim": "Selected surviving colliding paths must retain both raw ID/name and status, including when one collision kind disappears but the other remains.",
+      "evidence": [
+        "both_surviving_pair_names_changed",
+        "surviving_pair_case_only_name",
+        "overlap_leaves_id_remains_name",
+        "overlap_leaves_name_remains_id"
+      ]
+    },
+    {
+      "lines": "758-780",
+      "claim": "REJECTED exception is bounded to existing same-path same-ID/name REJECTED maintenance, including a genuine existing unmapped-path tombstone. Rejected owner cannot exit identity family by reidentification or revive.",
+      "evidence": [
+        "positive_rejected_unmapped_maintenance",
+        "rejected_revival",
+        "rejected_family_exit_reidentification",
+        "rejected_unmapped_key_change",
+        "relocated_rejected_edit"
+      ]
+    },
+    {
+      "lines": "_load/prepare/_recheck/apply/verify_completed unchanged around new validator",
+      "claim": "Real prepared plans retain original published object, case, preimage, acceptance and history guards; post-prepare aliases/inodes/parent identity/membership/proof drift fail before application writes. Completed replay revalidates owner/proof inputs.",
+      "evidence": [
+        "wrong_causal_hash",
+        "wrong_preimage",
+        "stale_acceptance",
+        "history_prefix_removed",
+        "stale_published_original",
+        "late_owner_inode",
+        "late_owner_hardlink",
+        "late_owner_alias",
+        "late_owner_parent_identity",
+        "late_ignored_member",
+        "late_evidence_inode",
+        "late_producer_inode",
+        "late_valid_native_receipt_membership_v2",
+        "completed_revival",
+        "completed_backup_alias",
+        "completed_snapshot_addition",
+        "completed_origin_changed",
+        "completed_acceptance_changed"
+      ]
+    }
+  ],
+  "counts": {
+    "successful_native_outcomes": 41,
+    "positive_full_prepare_apply_completed_replay_scenarios": 4,
+    "expected_refusals": 37,
+    "prepare_refusals": 20,
+    "post_prepare_drift_refusals": 11,
+    "completed_replay_drift_refusals": 6,
+    "recorded_attempts_including_reviewer_harness_failure": 42,
+    "reviewer_harness_failures": 1,
+    "target_product_failures": 0
+  },
+  "coverage": [
+    {
+      "name": "positive_disjoint_edit_with_unselected_family",
+      "status": "PASS",
+      "stage": "real_prepare_apply_completed_replay",
+      "result_source": "probe-results-v1.json",
+      "exception": null
+    },
+    {
+      "name": "positive_rejected_unmapped_maintenance",
+      "status": "PASS",
+      "stage": "real_prepare_apply_completed_replay",
+      "result_source": "probe-results-v1.json",
+      "exception": null
+    },
+    {
+      "name": "positive_both_collision_kinds",
+      "status": "PASS",
+      "stage": "real_prepare_apply_completed_replay",
+      "result_source": "probe-results-v1.json",
+      "exception": null
+    },
+    {
+      "name": "same_count_replacement",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Final proposed owners introduce a new collision pair"
+      }
+    },
+    {
+      "name": "new_third_member",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Final proposed owners introduce a new collision pair"
+      }
+    },
+    {
+      "name": "family_identifier_swap",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Final proposed owners introduce a new collision pair"
+      }
+    },
+    {
+      "name": "both_surviving_pair_names_changed",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      }
+    },
+    {
+      "name": "surviving_pair_case_only_name",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      }
+    },
+    {
+      "name": "cross_key_family_join",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Final proposed owners introduce a new collision pair"
+      }
+    },
+    {
+      "name": "surviving_pair_status_change",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      }
+    },
+    {
+      "name": "rejected_revival",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      }
+    },
+    {
+      "name": "rejected_family_exit_reidentification",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Rejected owner requires same-path, same-key rejected maintenance"
+      }
+    },
+    {
+      "name": "rejected_unmapped_key_change",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Rejected owner requires same-path, same-key rejected maintenance"
+      }
+    },
+    {
+      "name": "unknown_owner_source",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Destination collides with an existing owner path"
+      }
+    },
+    {
+      "name": "relocated_rejected_edit",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Edit cannot relocate an owner"
+      }
+    },
+    {
+      "name": "wrong_causal_hash",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Source case hash differs"
+      }
+    },
+    {
+      "name": "wrong_preimage",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Missing, reused or stale owner preimage"
+      }
+    },
+    {
+      "name": "stale_acceptance",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Acceptance does not bind plan"
+      }
+    },
+    {
+      "name": "history_prefix_removed",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "History prefix was altered or not extended"
+      }
+    },
+    {
+      "name": "stale_published_original",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Published artifact bytes differ"
+      }
+    },
+    {
+      "name": "late_owner_inode",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_inode/data/ingredients/mapped/Existing.yaml"
+      }
+    },
+    {
+      "name": "late_owner_hardlink",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_hardlink/data/ingredients/mapped/Existing.yaml"
+      }
+    },
+    {
+      "name": "late_owner_alias",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Filesystem alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_alias/data/ingredients/mapped/Existing.yaml"
+      }
+    },
+    {
+      "name": "late_owner_parent_identity",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Input parent changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_parent_identity/data/ingredients/mapped"
+      }
+    },
+    {
+      "name": "late_ignored_member",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Owner membership changed"
+      }
+    },
+    {
+      "name": "late_removed_owner",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Owner membership changed"
+      }
+    },
+    {
+      "name": "late_acceptance_bytes",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_acceptance_bytes/acceptance.json"
+      }
+    },
+    {
+      "name": "late_evidence_inode",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_evidence_inode/intake/independent-0.yaml"
+      }
+    },
+    {
+      "name": "late_producer_inode",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_producer_inode/src/mediaingredientmech/curate/campaign_owner_apply.py"
+      }
+    },
+    {
+      "name": "late_native_receipt_membership",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Missing receipt batch"
+      }
+    },
+    {
+      "name": "completed_revival",
+      "status": "PASS",
+      "stage": "completed_replay_after_external_drift",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Current after-owner inventory differs"
+      }
+    },
+    {
+      "name": "completed_unselected_member_added",
+      "status": "PASS",
+      "stage": "completed_replay_after_external_drift",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Current after-owner inventory differs"
+      }
+    },
+    {
+      "name": "completed_backup_alias",
+      "status": "PASS",
+      "stage": "completed_replay_after_external_drift",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/completed_backup_alias/receipt/owner-before-0000.yaml"
+      }
+    },
+    {
+      "name": "completed_snapshot_addition",
+      "status": "PASS",
+      "stage": "completed_replay_after_external_drift",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Historical snapshot membership changed"
+      }
+    },
+    {
+      "name": "completed_origin_changed",
+      "status": "PASS",
+      "stage": "completed_replay_after_external_drift",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Input hash differs: intake/proposals.json"
+      }
+    },
+    {
+      "name": "completed_acceptance_changed",
+      "status": "PASS",
+      "stage": "completed_replay_after_external_drift",
+      "result_source": "probe-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Receipt plan binding differs"
+      }
+    },
+    {
+      "name": "overlap_leaves_id_remains_name",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "overlap-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      }
+    },
+    {
+      "name": "overlap_leaves_name_remains_id",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "overlap-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      }
+    },
+    {
+      "name": "overlap_exits_both_without_new_pair",
+      "status": "PASS",
+      "stage": "real_prepare_apply_completed_replay",
+      "result_source": "overlap-results-v1.json",
+      "exception": null
+    },
+    {
+      "name": "unknown_preimage_exact_guard",
+      "status": "PASS",
+      "stage": "real_prepare",
+      "result_source": "overlap-results-v1.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Missing, reused or stale owner preimage"
+      }
+    },
+    {
+      "name": "late_valid_native_receipt_membership",
+      "status": "FAIL",
+      "stage": null,
+      "result_source": "overlap-results-v1.json",
+      "exception": "name 'late_mutation' is not defined"
+    },
+    {
+      "name": "late_valid_native_receipt_membership_v2",
+      "status": "PASS",
+      "stage": "real_prepare_then_drift_then_apply",
+      "result_source": "membership-result-v2.json",
+      "exception": {
+        "type": "ValueError",
+        "message": "Native receipt membership changed"
+      }
+    }
+  ],
+  "failure_attribution": {
+    "attempt": "overlap-results-v1.json: late_valid_native_receipt_membership",
+    "failure": "Reviewer NameError before fixture/native execution because prefix extraction omitted late_mutation helper.",
+    "original_script_and_log_preserved": true,
+    "successor": "membership-result-v2.json loads the exact helper AST and requires Native receipt membership changed; no assertion weakened.",
+    "additional_qualifications": "Initial v1 malformed-receipt case proves malformed input refusal, not membership equality. Initial unknown-source case reached earlier destination collision; precise missing-preimage follow-up also refused. All results retain their actual messages."
+  },
+  "prior_finding_lineage": [
+    {
+      "previous_id": "W08-NATIVE-BOUNDARY-001",
+      "issue": 1251,
+      "assessment": "Exact new guard addresses selection-dependent structural rejection in synthetic code review. Root/assembly reviewer separately checks actual archived nickel pair and complete catalog. This reviewer does not retire scientific1050hold or approve owners."
+    },
+    {
+      "previous_id": "W08-NATIVE-BOUNDARY-002",
+      "issue": 1252,
+      "assessment": "Bounded tombstone maintenance route works end-to-end and activation/key/path mutants refuse. Actual historical tombstone facts remain separately reviewed; no revival or representative selection is authorized."
+    },
+    {
+      "issue": 1251,
+      "comment": 6720714388,
+      "assessment": "Corrected pair-subset design admits removal of both overlapping pair kinds while refusing key changes for surviving pairs. Original failed equality draft remains author evidence; no blanket equality gate added."
+    }
+  ],
+  "input_hashes": [
+    {
+      "path": "../frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+      "inspected": true
+    },
+    {
+      "path": "../frozen-src/tests/test_campaign_owner_apply.py",
+      "sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/exact-commit.patch",
+      "sha256": "8dd79435db858aff52ec008132f078da2339516277e3660ed082bc3cc6180021",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/live/issue1251.json",
+      "sha256": "1f5be230387a18f3e11fd69329981983a3c33ea698993b94517553bb8fe86ec1",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/live/issue1252.json",
+      "sha256": "82d472ec3ff08ad514fe266df7702d2dd00e501809cf26bc9b9e56dc59244416",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/live/issue1251-comments.json",
+      "sha256": "497ce7e05d5f4d8326d34329f0090bae39671ef5de5d587be68fcbf53187bd0d",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/live/issue1252-comments.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/live/pr1205.json",
+      "sha256": "f55e704e24acada9b52fbd6f9adb03312cb9c51e10a9ca2815ce4886b8ee8079",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/live/remote-head.txt",
+      "sha256": "7c98c984abefae1d9e469a4c0a65d0770b6cd09bcab1200f741b9bbe68e6d67e",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/author-packet/HANDOFF.json",
+      "sha256": "833e005328f680899c286eaf0ee0a29f8583d3dfadb9778a9cb152b6ad282774",
+      "inspected": true
+    },
+    {
+      "path": "../inputs/author-packet/MANIFEST.json",
+      "sha256": "252c5674db28ac9dff15a3b384175140531da7033eb4a8f7df09bb3aecaebfdd",
+      "inspected": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/native-application-boundary-independent-v1/HANDOFF.json",
+      "sha256": "8b90e241579e53674206f347caa24dc4a149385f9a1e579fee39b83b710efbed",
+      "inspected": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/native-application-boundary-independent-v1/findings.json",
+      "sha256": "dd40f468b21ee641a30a87d5e20bbad78907632a9b08bf4a3b2c7b7b042b549d",
+      "inspected": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/native-application-boundary-independent-v1/skeptic/HANDOFF.json",
+      "sha256": "6a4c970fe98dc06b1bd635d6672b58291458307aa149211dedf48daac0e25927",
+      "inspected": true
+    }
+  ],
+  "fixture_evidence": {
+    "path": "fixture-transport-v1.json",
+    "sha256": "88bb6988d05d758382ded97729411cb4e15e883acf9eb1041ea958c0d1d3cf8a"
+  },
+  "limitations": [
+    "No full campaign prepare/application or source-owner scientific review. Fixtures have small synthetic catalogs and native published Git object bindings; acceptance is explicitly approval-free fixture data.",
+    "Technical reviewer runs full owner/publisher tests and reduction permutations; assembly reviewer checks exact actual W08 captures/2956-record catalog. This scope does not duplicate those counts as its own.",
+    "Future demote design remains outside this commit; no TSB/Angustmycin source acceptance follows. Existing role/export/source scientific holds remain.",
+    "No I/J/maintained/corpus/gate/pin/workflow/source-branch/GitHub mutations. Private fixture repos and test writes are within this adversarial output only."
+  ]
+}

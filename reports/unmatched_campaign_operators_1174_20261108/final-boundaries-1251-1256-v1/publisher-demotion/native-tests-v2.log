@@ -1,0 +1,54 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_real_source_generation_publication_demotion _______________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/native-fixture-v2/test_real_source_generation_pu0')
+
+    def test_real_source_generation_publication_demotion(tmp_path):
+>       source, plan, plan_path, destination, source_proof = prepare_native_case(tmp_path)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py:98: in prepare_native_case
+    source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(root)
+                                                                      ^^^^^^^^^^^^^^^^^^^^^^
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py:49: in make_source_case
+    source.render(root, source.UNTOUCHED, source.ingredient("kgmicrobe.ingredient:untouched", "Untouched") | {
+.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_owner_apply.py:73: in render
+    write_validated_ingredient(payload, path, target_class="IngredientRecord")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'curation_history': [{'action': 'CREATED', 'changes': 'Explicit fixture change', 'curator': 'fixture', 'llm_assisted'..., 'ontology_id': 'kgmicrobe.ingredient:untouched', 'ontology_label': 'Untouched', 'ontology_source': 'KGMICROBE'}, ...}
+path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/native-fixture-v2/test_real_source_generation_pu0/data/ingredients/mapped/Untouched.yaml')
+
+    def write_validated_ingredient(
+        record: dict[str, Any],
+        path: Path,
+        *,
+        target_class: str | None = None,
+        schema_path: Path = DEFAULT_SCHEMA_PATH,
+        yaml_kwargs: dict[str, Any] | None = None,
+    ) -> None:
+        """Write `record` to `path` as YAML, but only if validation passes.
+    
+        Raises `ValidationFailedError` (without writing) when closed-schema
+        validation finds any error. Use in place of `yaml.safe_dump(record, fh)`
+        inside enrichment / migration / merge scripts.
+        """
+        errors = validate_ingredient(record, target_class=target_class, schema_path=schema_path)
+        if errors:
+>           raise ValidationFailedError(path, errors)
+E           mediaingredientmech.validation.write_validated.ValidationFailedError: validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/native-fixture-v2/test_real_source_generation_pu0/data/ingredients/mapped/Untouched.yaml
+E             - 'KGMICROBE' is not one of ['CHEBI', 'FOODON', 'NCIT', 'MESH', 'UBERON', 'ENVO', 'MICRO', 'BTO', 'CAS', 'registry', 'kgmicrobe.compound', 'kgmicrobe.ingredient'] in /ontology_mapping/ontology_source
+
+.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/validation/write_validated.py:127: ValidationFailedError
+=============================== warnings summary ===============================
+.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED .temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py::test_real_source_generation_publication_demotion
+1 failed, 12 warnings in 0.99s

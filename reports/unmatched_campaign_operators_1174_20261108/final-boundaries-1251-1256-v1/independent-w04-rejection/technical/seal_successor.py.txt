@@ -1,0 +1,21 @@
+"""Immutable manifest successor for the finalizer's self-observed stdout log."""
+from pathlib import Path
+import datetime, hashlib, json
+T=Path(__file__).resolve().parent
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p.read_bytes())}
+def put(name,obj):
+    with (T/name).open('x') as f:json.dump(obj,f,indent=2);f.write('\n')
+old=json.loads((T/'MANIFEST.json').read_bytes())
+errors=[{'path':x['path'],'expected':x['sha256'],'actual':sha((T/x['path']).read_bytes())} for x in old['files'] if sha((T/x['path']).read_bytes())!=x['sha256']]
+assert len(errors)==1 and errors[0]['path']=='finalize-review.log'
+put('packaging-observation-v1.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reported_to_root_before_correction':True,'scope':'Review packaging only, no source/code/test/science result changed.','original_manifest':ref(T/'MANIFEST.json'),'original_seal':ref(T/'SEAL.json'),'observed_mismatches':errors,'cause':'Finalizer hashed its redirected stdout log before printing final receipt hashes. The log was empty when hashed and complete after process exit.','bounded_correction':'Preserve all original files; add MANIFEST-v2/SEAL-v2 binding the now-finished log, observation and historical initial seal. Authoritative assessment unchanged.','original_pair_status':'Superseded packaging draft; original MANIFEST/SEAL must not be used as the final portable checksum contract.'})
+files=[]
+for p in sorted(T.iterdir()):
+    if p.name in {'runtime-fixtures','MANIFEST-v2.json','SEAL-v2.json'}:continue
+    assert p.is_file() and not p.is_symlink() and p.stat().st_nlink==1
+    files.append({'path':p.name,'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size})
+put('MANIFEST-v2.json',{'schema':'technical-portable-manifest-v2','root':str(T),'files':files,'supersedes_manifest':ref(T/'MANIFEST.json'),'correction':ref(T/'packaging-observation-v1.json'),'excluded':[{'path':'runtime-fixtures/**','reason':'Private test repositories including intentional symlink/hardlink controls; preserved and separately enumerated by runtime-fixture-inventory.json; never candidate/source outputs.'},{'path':'MANIFEST-v2.json','reason':'Self-reference excluded.'},{'path':'SEAL-v2.json','reason':'Final seal binds manifest, circularity excluded.'}],'frozen_external_context':old['frozen_external_context'],'frozen_external_supplement':old['frozen_external_supplement']})
+for row in files:assert sha((T/row['path']).read_bytes())==row['sha256']
+put('SEAL-v2.json',{'schema':'independent-review-seal-v2','reviewer':'/root/assembly_review','sealed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'head':'9a1a4a35498a1bee0fc8b68653d1fc152cfff81b','assessment':ref(T/'assessment.json'),'manifest':ref(T/'MANIFEST-v2.json'),'supersedes_seal':ref(T/'SEAL.json'),'packaging_observation':ref(T/'packaging-observation-v1.json'),'all_portable_members_rehashed':len(files),'verdict':'NEEDS_CODE_FIX','open_finding':'REJECTION-CODE-001','publication_or_application_approval':False,'immutable_outputs':'All direct technical files now frozen. Runtime fixtures preserved and separately inventoried, no cleanup. Initial stale-log manifest remains historical only.'})
+print(json.dumps({'assessment':ref(T/'assessment.json'),'manifest':ref(T/'MANIFEST-v2.json'),'seal':ref(T/'SEAL-v2.json'),'portable_files':len(files),'all_members_exact':all(sha((T/r['path']).read_bytes())==r['sha256'] for r in files)},indent=2))

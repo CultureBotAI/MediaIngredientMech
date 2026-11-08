@@ -1,0 +1,16 @@
+def test_1256_cached_rename_checks_unrelated_old_endpoint(tmp_path):
+    """#1256: a destination in scope cannot hide a renamed unrelated source."""
+    plan = head_lifecycle_case(tmp_path, "create")
+    ready = prepare(tmp_path)
+    destination = plan["records"][0]["source_record"]
+    original = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+    stage_index_only_1256(tmp_path, destination, original)
+    run_git(tmp_path, "rm", "--cached", "--", "MAPPING_SEMANTICS.md")
+    assert b"R100\0MAPPING_SEMANTICS.md\0" in owner.git(
+        tmp_path, "diff", "--cached", "--find-renames", "--name-status", "-z", "HEAD", "--"
+    )
+    with pytest.raises(ValueError, match="Unrelated staged file changed"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+

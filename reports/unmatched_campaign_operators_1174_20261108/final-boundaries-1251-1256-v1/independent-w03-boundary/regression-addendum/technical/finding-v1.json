@@ -1,0 +1,63 @@
+{
+  "finding_id": "W03-CODE-REJECT-RETIREMENT-REGRESSION-001",
+  "issue_key": "CultureBotAI/MediaIngredientMech#1252:existing-unmapped-retirement-regression",
+  "existing_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145",
+  "status": "confirmed_existing_filed_finding",
+  "severity": "major",
+  "reviewed_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "owner_path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "lines": [
+    760,
+    767
+  ],
+  "title": "New rejected maintenance guard also rejects valid existing unmapped retirements",
+  "actual": "Both exact original W03 payloads retain source/destination, identifier, preferred term and history prefix, but transition UNMAPPED to REJECTED. Exact parent validator accepts each against the complete2956 catalog. Exact d691 refuses each with Rejected owner requires same-path, same-key rejected maintenance. Independently constructed truthful native fixture reaches same failure during real prepare before owner writes or receipts.",
+  "cause": "The disjunction on old OR new REJECTED routes all rejection transitions into a conjunction requiring old==new==REJECTED. It blocks a previously supported same-path existing-owner retirement rather than only preventing revival or rejected creation.",
+  "affected_proposals": [
+    {
+      "proposal_id": "c-generic-polymer-tombstone",
+      "source_origin_head": "784ee2541506c914b4c34f091de688d39784d548",
+      "owner_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "before_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+      "original_payload_sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2",
+      "proposal_object_sha256": "2438b8d1a6db54063f7332de112949aa10188ad10b2da0b1db07655bf3f2160e"
+    },
+    {
+      "proposal_id": "c-r-polymer-tombstone",
+      "source_origin_head": "784ee2541506c914b4c34f091de688d39784d548",
+      "owner_path": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "before_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+      "original_payload_sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5",
+      "proposal_object_sha256": "98059d7daa63f624fdcc9d8697fe32fe09c6bef320290518580dfd4412072df5"
+    }
+  ],
+  "test_gap": {
+    "current_added_tests": "Seven added test functions cover REJECTED-to-REJECTED maintenance, rejected revival, rejected creation and collision mutations/reductions, but none exercises same-path existing UNMAPPED-to-REJECTED retirement.",
+    "prior_review_gap": "Earlier technical independent positives covered inherited REJECTED and MAPPED records; its status-transition coverage omitted existing UNMAPPED retirement. The earlier PASS is superseded, not reinterpreted as coverage of this route.",
+    "acceptance": [
+      "Use a narrowly separate admitted route for genuine edit at existing unmapped path, exact same source/destination, old UNMAPPED and new REJECTED, unchanged ID and preferred name, material delta and ordered appended history.",
+      "Retain old REJECTED anti-revival/rename/reidentification/relocation rules, reject new rejected create, wrong kind/path/preimage/history/identity, keep complete collision pair lock and all native acceptance/original bindings/producers/schema/rendering/receipt guards.",
+      "Exercise exact original retirement record-stage plus truthful native prepare/apply/completed replay; test wrong operation, unknown/relocated path, stale preimage/history/key and revival controls.",
+      "Rerun same full933 selected cohort after separately reviewed repair; a failed first-error walk is not a successful full prepare."
+    ]
+  },
+  "bounded_fix": "Add only the previously supported same-path existing UNMAPPED-to-REJECTED retirement alternative alongside inherited REJECTED maintenance. Keep both routes narrow; do not allow new rejected records, general status transitions, colliding status changes, fake demotion or arbitrary source origin. No implementation in this review.",
+  "evidence": [
+    {
+      "path": "regression-addendum/technical/original-retirement-reproduction-v1.json",
+      "sha256": "0f8e548f4ab9133bd63bcc44db6e3b691ae525c4fa7f1bdab50c9fd49994e712"
+    },
+    {
+      "path": "regression-addendum/technical/synthetic-native-prepare-refusal-v2.json",
+      "sha256": "edd6586fcfae0c20dd1e41218771c15bf586f0b8dd2fb8f7e673ced580c8ef19"
+    },
+    {
+      "path": "regression-addendum/inputs/issue1252-comment6720840145.json",
+      "sha256": "ce7666a15cf444f5fabdac2324fed65526070db3e74922ed3d63ebf46ce81f33"
+    }
+  ],
+  "scientific_conflict_boundary": "These W03 source origins are author-related to the parent session. This technical review neither reapproves chemistry nor accepts source normalization or final atomic polymer composition. Existing cross-owner atomic obligations and every hold remain.",
+  "full933_independent_replay": false,
+  "full_actual_campaign_prepare": false,
+  "fix_applied": false
+}

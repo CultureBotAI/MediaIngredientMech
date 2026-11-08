@@ -1,0 +1,128 @@
+{
+  "mode": "Same full933-operation cohort reordered solely to expose native first-error boundaries; every call retains all operations and all original payloads; no application/acceptance",
+  "native_runs": [
+    {
+      "round": 0,
+      "native_result": "FAIL",
+      "complete_action_count": 933,
+      "first_failing_action": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "message": "Rejected owner requires same-path, same-key rejected maintenance",
+      "known_failures_at_end": []
+    },
+    {
+      "round": 1,
+      "native_result": "FAIL",
+      "complete_action_count": 933,
+      "first_failing_action": "ORIGINAL-w03::c-r-polymer-tombstone",
+      "message": "Rejected owner requires same-path, same-key rejected maintenance",
+      "known_failures_at_end": [
+        "ORIGINAL-w03::c-generic-polymer-tombstone"
+      ]
+    },
+    {
+      "round": 2,
+      "native_result": "FAIL",
+      "complete_action_count": 933,
+      "first_failing_action": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "message": "Rejected owner requires same-path, same-key rejected maintenance",
+      "known_failures_at_end": [
+        "ORIGINAL-w03::c-generic-polymer-tombstone",
+        "ORIGINAL-w03::c-r-polymer-tombstone"
+      ]
+    }
+  ],
+  "all_distinct_native_first_failures": [
+    "ORIGINAL-w03::c-generic-polymer-tombstone",
+    "ORIGINAL-w03::c-r-polymer-tombstone"
+  ],
+  "no_other_per_record_failure_before_known_failures": true,
+  "findings": [
+    {
+      "action": {
+        "action_id": "ORIGINAL-w03::c-generic-polymer-tombstone",
+        "kind": "edit",
+        "source": "data/ingredients/unmapped/Poly-\u00df-hydroxybutyric_Acid.yaml",
+        "destination": "data/ingredients/unmapped/Poly-\u00df-hydroxybutyric_Acid.yaml",
+        "before_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+        "original_candidate": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w03/reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-tombstone.yaml",
+          "sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2"
+        },
+        "effective_candidate": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-payload-normalization-v1/publication-v1/pairs/0018/candidate/Poly-\u00df-hydroxybutyric_Acid.yaml",
+          "sha256": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f"
+        },
+        "origin_ids": [
+          "w03::c-generic-polymer-tombstone"
+        ],
+        "origin_bindings": [
+          {
+            "origin_id": "w03::c-generic-polymer-tombstone",
+            "published_head": "784ee2541506c914b4c34f091de688d39784d548",
+            "proposal_object_sha256": "2438b8d1a6db54063f7332de112949aa10188ad10b2da0b1db07655bf3f2160e",
+            "payload_sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2",
+            "case_hashes": {
+              "KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba": "60659735ca2949f27515013453c384c018c2092af97d3ed2f60193bf67366d4d"
+            }
+          }
+        ]
+      },
+      "before_status": "UNMAPPED",
+      "after_status": "REJECTED",
+      "before_identifier": "UNMAPPED_0493",
+      "after_identifier": "UNMAPPED_0493",
+      "before_name": "poly-\u00df-hydroxybutyric acid",
+      "after_name": "poly-\u00df-hydroxybutyric acid",
+      "history_prefix_preserved": true,
+      "original_record_stage": "PASS"
+    },
+    {
+      "action": {
+        "action_id": "ORIGINAL-w03::c-r-polymer-tombstone",
+        "kind": "edit",
+        "source": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+        "destination": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+        "before_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+        "original_candidate": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w03/reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-tombstone.yaml",
+          "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5"
+        },
+        "effective_candidate": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-payload-normalization-v1/publication-v1/pairs/0021/candidate/PolyR-3-hydroxybutyric_Acid.yaml",
+          "sha256": "33c80accdc68562e600e06b0d3abd7be4fc8b2e2d37d8bba01ad3865f65b0cdb"
+        },
+        "origin_ids": [
+          "w03::c-r-polymer-tombstone"
+        ],
+        "origin_bindings": [
+          {
+            "origin_id": "w03::c-r-polymer-tombstone",
+            "published_head": "784ee2541506c914b4c34f091de688d39784d548",
+            "proposal_object_sha256": "98059d7daa63f624fdcc9d8697fe32fe09c6bef320290518580dfd4412072df5",
+            "payload_sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5",
+            "case_hashes": {
+              "KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef": "74c1f4b6828f9a5bb64089e9477f555a5c0dfab176430ad5da3e609ef0334b81"
+            }
+          }
+        ]
+      },
+      "before_status": "UNMAPPED",
+      "after_status": "REJECTED",
+      "before_identifier": "UNMAPPED_0494",
+      "after_identifier": "UNMAPPED_0494",
+      "before_name": "Poly[R-3-hydroxybutyric acid]",
+      "after_name": "Poly[R-3-hydroxybutyric acid]",
+      "history_prefix_preserved": true,
+      "original_record_stage": "PASS"
+    }
+  ],
+  "original_function_source": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/before/campaign_owner_apply.py",
+    "sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+    "scope": "Exact original function AST, unchanged native helper APIs; single-record-stage comparison, not original complete prepare"
+  },
+  "operator_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+  "owners_preserved": true,
+  "application": false,
+  "approval": false
+}

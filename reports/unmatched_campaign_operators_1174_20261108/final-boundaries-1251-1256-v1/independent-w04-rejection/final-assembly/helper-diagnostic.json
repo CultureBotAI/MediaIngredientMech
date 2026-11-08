@@ -1,0 +1,14 @@
+{
+  "scope": "Unsealed final assembly helper only; no source, native review, subreview or test-result correction",
+  "first_execution": "Assertion comparing parsed JUnit rows to coverage rows failed because my parser initially omitted existing error metadata fields message/error_type/traceback_sha256/missing_historical_maker. Actual report rows were correct.",
+  "correction": "Extended private parser to reproduce and validate these actual XML error fields as well as status/name/time; reran only readback, not tests.",
+  "first_execution_exit_code": 1,
+  "second_execution_exit_code": 0,
+  "final_receipt": {
+    "path": "final-assembly/final-readback.json",
+    "sha256": "53cb6c26b46044edc08aae7f2e6e3e3c289b2e63a23e0132935fa3654550e8cf"
+  },
+  "outputs_before_success": "No final-readback.json had been written on the failed attempt.",
+  "native_deprecation_notice": "topClass is deprecated - use top_class",
+  "fixes_to_reviewed_code": false
+}

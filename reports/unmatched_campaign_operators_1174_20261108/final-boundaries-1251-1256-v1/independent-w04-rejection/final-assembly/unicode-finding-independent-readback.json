@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-08T11:30:58.817810+00:00",
+  "reviewer": "/root/correction_chemistry",
+  "finding_id": "REJECTION-CODE-001",
+  "disposition": "independently_confirmed_open_major_blocks_completed_acceptance",
+  "finding_sha256": "06fc1e4aee66332acf59acd14d82f592a75153ac07c9797611ba510348a6bf32",
+  "exact_head": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "operator_sha256": "14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f",
+  "origin": "Preexisting apply path parser unchanged from parent, newly exposed by legitimate restored rejection with Unicode basename. Not introduced by the22-line status diff.",
+  "independent_readonly_commands": [
+    [
+      "git",
+      "--no-optional-locks",
+      "-C",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection",
+      "diff",
+      "--name-only",
+      "HEAD",
+      "--"
+    ],
+    [
+      "git",
+      "--no-optional-locks",
+      "-C",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection",
+      "diff",
+      "--name-only",
+      "-z",
+      "HEAD",
+      "--"
+    ]
+  ],
+  "actual_quoted_bytes_hex": "22646174612f696e6772656469656e74732f756e6d61707065642f556e7265736f6c7665645f5c3330335c3233372e79616d6c220a",
+  "literal_nul_bytes_hex": "646174612f696e6772656469656e74732f756e6d61707065642f556e7265736f6c7665645fc39f2e79616d6c00",
+  "allowed_paths": [
+    "data/ingredients/unmapped/Unresolved_ß.yaml"
+  ],
+  "actual_changed_paths": [
+    "data/ingredients/unmapped/Unresolved_ß.yaml"
+  ],
+  "literal_changed_paths_within_declared_allowed_set": true,
+  "current_splitlines_guard_false_positive": true,
+  "receipt": {
+    "path": ".temp/rejection-fix-independent-v1/skeptical/fixtures/genuine_unicode_rejection/receipt/application.json",
+    "sha256": "81b0fc57ad504ef1d607f5ba9bd7606734b4532467ce65ce59f00ec4e800c769",
+    "state": "failed",
+    "error": "ValueError: Unrelated tracked file changed",
+    "completed_operations": [
+      "rejection-proof"
+    ],
+    "recovery_required": true
+  },
+  "intended_owner_was_changed_before_refusal": true,
+  "receipt_state": "failed",
+  "recovery_required": true,
+  "complete_fixture_before_and_after_read": true,
+  "substantive_scope": "Exact native committed apply guard and actual saved adversarial result verified read-only; no operator execution or owner mutation by this final reviewer. Native prepare/apply execution attributed to /root/biological.",
+  "bounded_fix": "Use a NUL-delimited literal path listing (git diff --name-only -z HEAD --) and parse NUL-delimited decoded filesystem paths; do not rely on global core.quotePath settings or splitlines. Preserve nonempty-name and complete allowed-set checks. Add actual prepare/apply/verify_completed regression for literal Unicode and whitespace-control filenames with unrelated-file negative checks.",
+  "acceptance_check": "Exact successor commit must allow genuine same-path UNMAPPED→REJECTED Unicode owner to apply and verify_completed, retaining authentic preimage/history and all unrelated owners. Actual unapproved tracked path must remain refused; control characters/newlines must not be mistaken for separators.",
+  "fix_applied": false,
+  "scientific_approval": false,
+  "application_approval": false
+}

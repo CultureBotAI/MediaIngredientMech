@@ -1,0 +1,189 @@
+{
+  "reviewer": "/root/operator_final_skeptic",
+  "at": "2026-11-08T13:43:36.734277+00:00",
+  "scope": "Exact native review parser/render/consumer gates, physical sidecar parsing, full local identity slots, logical literal index parser. In-memory Capture adapter supplies real frozen119inputs; no filesystem/source application/Claw generation/publication transaction or independence authentication is claimed.",
+  "scientific_review": false,
+  "runtime": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+  "python": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+  "original_review_sha256": "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71",
+  "original_input_count": 119,
+  "publisher_sha256": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24",
+  "source_operator_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+  "results": [
+    {
+      "name": "authentic_complete_original_review",
+      "expected_refusal": false,
+      "accepted": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "name": "nonpassing_blocked",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: transition review verdict/required checks do not pass",
+      "passed": true
+    },
+    {
+      "name": "nonpassing_needs_curation",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: transition review verdict/required checks do not pass",
+      "passed": true
+    },
+    {
+      "name": "completed_nonpassing_failed_required",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: transition review verdict/required checks do not pass",
+      "passed": true
+    },
+    {
+      "name": "self_review_refused",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: review lacks an independent provenance basis",
+      "passed": true
+    },
+    {
+      "name": "native_markdown_mismatch",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: review Markdown is not its native rendering",
+      "passed": true
+    },
+    {
+      "name": "declared_input_omitted",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: review input capture membership differs",
+      "passed": true
+    },
+    {
+      "name": "historical_sidecar34_physical_rows",
+      "expected_refusal": false,
+      "accepted": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "name": "duplicate_historical_pair_refused",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: duplicate/malformed suppression pair",
+      "passed": true
+    },
+    {
+      "name": "unterminated_sidecar_refused",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: suppression input lacks final newline",
+      "passed": true
+    },
+    {
+      "name": "local_full_object_and_case_distinction",
+      "passed": true,
+      "changes": [
+        {
+          "kind": "removed",
+          "before_position": 1,
+          "after_position": null,
+          "before": {
+            "subject_id": "MIM:Case",
+            "object_id": "kgmicrobe.ingredient:Case"
+          },
+          "after": null
+        },
+        {
+          "kind": "added",
+          "before_position": null,
+          "after_position": 1,
+          "before": null,
+          "after": {
+            "subject_id": "MIM:Case",
+            "object_id": "kgmicrobe.ingredient:case"
+          }
+        }
+      ],
+      "positions": [
+        null
+      ]
+    },
+    {
+      "name": "genuine_duplicate_local_slot_refused",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Campaign publication: Two pre-batch rows share a slot: ('MIM:Case', 'kgmicrobe.ingredient:Case')",
+      "passed": true
+    },
+    {
+      "name": "invalid_stage_index_entry",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Malformed logical Git index entry",
+      "passed": true
+    },
+    {
+      "name": "unterminated_index_entry",
+      "expected_refusal": true,
+      "accepted": false,
+      "error": "ValueError: Malformed logical Git index",
+      "passed": true
+    }
+  ],
+  "native_modules": [
+    {
+      "name": "src/mediaingredientmech/curate/publication_guard.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/curate/publication_guard.py",
+      "sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b"
+    },
+    {
+      "name": "src/mediaingredientmech/validation/mapping_change_receipts.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/validation/mapping_change_receipts.py",
+      "sha256": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d"
+    },
+    {
+      "name": "src/mediaingredientmech/export/reviewed_sssom.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/export/reviewed_sssom.py",
+      "sha256": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2"
+    },
+    {
+      "name": "src/mediaingredientmech/sssom_metadata.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/sssom_metadata.py",
+      "sha256": "0c5e08a55ff6845959ec84b1f530f9891e361f1a1b16b9f81b42beafb8a20d66"
+    },
+    {
+      "name": "src/mediaingredientmech/synonym_policy.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/synonym_policy.py",
+      "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+    },
+    {
+      "name": "scripts/validate_sssom_invariants.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/scripts/validate_sssom_invariants.py",
+      "sha256": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303"
+    },
+    {
+      "name": "scripts/record_review.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/scripts/record_review.py",
+      "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d"
+    },
+    {
+      "name": "src/mediaingredientmech/campaign_publication.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/campaign_publication.py",
+      "sha256": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24"
+    },
+    {
+      "name": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52"
+    },
+    {
+      "name": "schema/record_review.yaml",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml",
+      "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb"
+    }
+  ],
+  "all_pass": true,
+  "private_Code_fixes": false,
+  "Git_writes": false
+}

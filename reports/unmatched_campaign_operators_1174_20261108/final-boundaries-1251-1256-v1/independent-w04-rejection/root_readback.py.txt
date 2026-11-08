@@ -1,0 +1,44 @@
+from pathlib import Path
+import ast,collections,datetime,hashlib,json,os,subprocess
+R=Path.cwd();O=R/'.temp/rejection-fix-independent-v1';F=O/'frozen-head';H='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b';P='d691c079cf3923daed89284b7579913b84c3a34c'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def load(n):return json.loads((O/n).read_bytes())
+def git(*args):return subprocess.check_output(['git','--no-optional-locks',*args])
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,ensure_ascii=False,indent=2);f.write('\n')
+m=load('FROZEN-HEAD-MANIFEST.json')
+for x in m['members']:
+ p=F/x['path'];b=os.fsencode(os.readlink(p)) if p.is_symlink() else p.read_bytes()
+ assert sha(b)==x['sha256'],p
+ assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==x['git_blob'],p
+changed=git('diff','--name-only','-z',P,H).decode().strip('\0').split('\0');assert changed==['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py']
+astrows=[]
+for p in changed:
+ old=git('show',P+':'+p);new=(F/p).read_bytes();assert new==git('show',H+':'+p)
+ defs=lambda b:{n.name:ast.dump(n,include_attributes=False) for n in ast.parse(b).body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef))}
+ a,b=defs(old),defs(new);delta=[n for n in a if a[n]!=b.get(n)];added=sorted(set(b)-set(a))
+ if p.startswith('tests'):
+  assert not delta and len(a)==51 and new.startswith(old)
+ else:assert delta==['_validate_records']
+ astrows.append({'path':p,'old_named_definitions':len(a),'preserved':len(a)-len(delta),'changed':delta,'added':added,'old_byte_prefix_preserved':new.startswith(old),'old_bytes':len(old),'old_sha256':sha(old),'new_sha256':sha(new)})
+sel=load('inputs/prior-933-probe/selection.json')['selected'];cov=load('technical/same933-coverage.json');assert len(sel)==len(cov)==933
+for r,v in zip(sel,cov):
+ assert r['action_id']==v['operation_id'] and r['kind']==v['kind'] and r['source']==v['before_source_record'] and r['destination']==v['source_record']
+ assert r['before_sha256']==v['before_sha256'] and r['effective_candidate']['sha256']==v['payload_sha256']
+ assert sha(Path(r['effective_candidate']['path']).read_bytes())==v['payload_sha256']
+ if r['source']:assert sha((F/r['source']).read_bytes())==r['before_sha256']
+actual=load('skeptical/actual-w03-path-results.json');w03=[]
+for x in actual['results']:
+ f=Path(x['fixture_path']);rc=Path(x['receipt_path']);r=json.loads(rc.read_bytes());assert sha(rc.read_bytes())==x['receipt_sha256']
+ assert sha((f/x['source']).read_bytes())==x['accepted_normalized_sha256']
+ assert sha((f/'receipt/owner-before-0000.yaml').read_bytes())==x['before_sha256']
+ assert sha(git('show',H+':'+x['source']))==x['before_sha256']
+ quoted=subprocess.check_output(['git','--no-optional-locks','-C',str(f),'diff','--name-only','HEAD','--'])
+ literal=subprocess.check_output(['git','--no-optional-locks','-C',str(f),'diff','--name-only','-z','HEAD','--'])
+ assert set(literal.decode().strip('\0').split('\0'))=={x['source']}
+ false_positive=set(quoted.decode().splitlines())!={x['source']}
+ assert false_positive==('ß' in x['source'])
+ w03.append({'action_id':x['action_id'],'authentic_before_sha256':x['before_sha256'],'normalized_after_sha256':x['accepted_normalized_sha256'],'receipt_sha256':x['receipt_sha256'],'actual_receipt_state':r['state'],'recovery_required':r['recovery_required'],'actual_changed_paths':literal.decode().strip('\0').split('\0'),'quoted_guard_false_positive':false_positive,'actual_git_diff_output':quoted.decode(),'root_role':'Independent read-only hash/receipt/path reproduction; native prepare/apply attributed to skeptical subagent.'})
+assert git('rev-parse','HEAD').decode().strip()=='7cc3c2540fd1b55281c6f5551f13a90a1e7916b1';assert not git('status','--short').strip()
+save('ROOT-EXACT-READBACK.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'head':H,'parent':P,'frozen_blob_count':len(m['members']),'all_frozen_git_blob_hashes_reverified':True,'changed_tracked_paths':changed,'ast_preservation':astrows,'record_stage_selection_order_and_all933_hashes_rechecked':True,'kind_counts':dict(collections.Counter(x['kind'] for x in cov)),'actual_two_W03_private_application_readback':w03,'finding':'REJECTION-CODE-001 confirmed; coupled preexisting quoted-path guard; not a new defect in changed status predicate itself.','own_head_and_clean_tracked_status_preserved':True,'no_actual_campaign_application':True,'scientific_review':False})
+print('ROOT readback PASS;933 selection joins; two actual W03 fixture receipts; one confirmed major application defect.')

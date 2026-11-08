@@ -1,0 +1,41 @@
+from pathlib import Path
+import json, hashlib, shutil, datetime, subprocess
+d=Path(__file__).resolve().parent; w=d/'private'; c=d.parents[1]; o=d/'portable'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert not (o/'MANIFEST.json').exists()
+proofs=[]
+paths=[p for p in sorted((d/'focused-v2/fixtures').glob('*/reports/native/command.json')) if not p.parents[2].is_symlink()]
+assert len(paths)==15,len(paths)
+for index,p in enumerate(paths):
+ fixture=p.parents[2]; cmd=json.loads(p.read_bytes()); assert cmd['returncode']==0
+ assert Path(cmd['environment']['OPENCLAW_WORKSPACE']).is_relative_to(fixture)
+ manifest=json.loads((p.parent/'generation.json').read_bytes()); assert manifest['external_sssom_validation']=='passed'
+ evidence={}
+ for label,s in [('command',p),('log',p.parent/'command.log'),('manifest_after_control',p.parent/'generation.json'),('source_application',fixture/'source-receipt/application.json')]:
+  t=o/'evidence/native-cases'/f'{index:02d}'/s.name;t.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(s,t);evidence[label]={'path':t.relative_to(o).as_posix(),'sha256':sha(t)}
+ pub=list(fixture.glob('reports/publication/publication.json'))
+ proofs.append({'case_directory':str(fixture),'native_command_exit':0,'note':'Manifest is the post-test snapshot; negative controls may deliberately mutate generation evidence after the real successful native command','evidence':evidence,'publication_receipt_present':bool(pub),'publication_receipt_empty':bool(pub and not pub[0].read_bytes())})
+(o/'evidence/native-cases-index.json').write_text(json.dumps(proofs,indent=2)+'\n')
+shutil.copy2(d/'packaging-observation-v1.json',o/'evidence/packaging-observation-v1.json')
+files=['src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py']
+source=c/'integration/late-head1256-fix-v1/portable/src/mediaingredientmech/curate/campaign_owner_apply.py'; stest=c/'integration/late-head1256-fix-v1/portable/tests/test_campaign_owner_apply.py'
+assert sha(source)==sha(w/'src/mediaingredientmech/curate/campaign_owner_apply.py'); assert sha(stest)==sha(w/'tests/test_campaign_owner_apply.py')
+checks={'at':datetime.datetime.now(datetime.UTC).isoformat(),'author_validation_only':True,'issue_addendum':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721136073','scope':'Live publisher accepted-baseline HEAD checks; historical validate remains permitted','code':{p:sha(w/p) for p in files},'source_dependencies':{str(source):sha(source),str(stest):sha(stest)},'focused':{'passed':157,'failed':0,'skipped':0,'warnings':12,'seconds':150.35,'log_sha256':sha(d/'focused-v2/run.log')},'actual_generator_cases':15,'existing_assertions_preserved':True,'static':{'Black':0,'Ruff':0,'Mypy':0},'I_head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=c/'integration/worktree',text=True).strip(),'I_tracked_status':subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=c/'integration/worktree',text=True),'limits':['No corpus application, independent review, CI or final new-head fullsuite approval','Full immutable16c validation is separate and still running','Original unit source/generation mocks remain explicitly isolated; all15 real-generator cases use genuine source proofs and native producer','Initial private collection failed because uv.lock had not been copied; preserved as setup failure, immutable input copied without implementation/gate changes']}
+(o/'RESULTS.json').write_text(json.dumps(checks,indent=2)+'\n')
+(o/'README.md').write_text('''# Publisher live transaction HEAD correction (#1256)
+
+Author-only patch, not independent approval. The issue addendum was published before this correction.
+
+Only live prepare(completed=False) requires actual repository HEAD to equal the source application's accepted baseline. The same check is registered in existing captured-input verification callbacks, covering reservation, mutations, native receipt, completion and final return. Historical validate remains valid after later commits. No tracked-dirty allowlist was added to the publisher; legitimate uncommitted synchronization products remain allowed.
+
+The three implementation/test files are the complete publisher patch. The source operator and its tests are separately authored by next23_context; exact executed private dependency hashes are in RESULTS.json. No I/J/K files changed.
+
+157 focused cases passed, zero skipped:142 publisher cases and15 genuine source-to-pinned-generator-to-publisher cases. Seventeen added cases cover4 preflight unit refusals,1 late preparation refusal,4 late mutation/completion refusals,2 unit positives,2 actual-generator preflight refusals,3 actual-generator late refusals and1 actual-generator historical positive. Every old assertion is preserved. Existing fixture changes replace the synthetic baseline with a genuine private Git commit and explicitly isolate OPENCLAW_WORKSPACE.
+
+Real-generator cases bind immutable Claw76c and actual J/eac receipt prefix1–27. Prior native demotion, position-map and held-row assertions remain intact. All15 native command/log, post-control manifest and source-receipt packets are included. Negative controls deliberately mutate some manifests after real generation; those snapshots are identified as such. Private fixture trees are excluded. Publication failures retain recovery evidence and clear success-shaped receipts; no rollback claim is made.
+
+Black, Ruff and Mypy passed. Initial focused-v1 failed at collection because the private copy lacked uv.lock; the failure and copy correction remain preserved. focused-v2 is the successful complete run. One packaging pass refused pytest's current-directory symlink; the final inventory excludes such aliases and includes all15 genuine regular case directories. No thresholds, schemas, gates, pins, old receipts or scientific approvals changed.
+''')
+manifest={p.relative_to(o).as_posix():sha(p) for p in sorted(o.rglob('*')) if p.is_file()};(o/'MANIFEST.json').write_text(json.dumps({'schema_version':1,'files':manifest},indent=2)+'\n')
+handoff={'schema_version':1,'role':'author_only_private_publisher_correction','packet':str(o),'manifest_sha256':sha(o/'MANIFEST.json'),'results_sha256':sha(o/'RESULTS.json'),'files':checks['code'],'tests':checks['focused'],'actual_native_generator_cases':15,'source_dependency_hashes':checks['source_dependencies'],'implementation_not_applied':True,'independent_review_required':True}
+(d/'HANDOFF.json').write_text(json.dumps(handoff,indent=2)+'\n'); print(json.dumps({'HANDOFF':sha(d/'HANDOFF.json'),'MANIFEST':sha(o/'MANIFEST.json'),'RESULTS':sha(o/'RESULTS.json'),'members':len(manifest)},indent=2))

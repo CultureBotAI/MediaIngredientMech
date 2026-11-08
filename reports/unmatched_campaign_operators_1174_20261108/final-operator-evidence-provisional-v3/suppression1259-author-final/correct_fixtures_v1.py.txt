@@ -1,0 +1,73 @@
+"""Only the two issue-recorded fixture corrections, after frozen run completion."""
+import ast
+import difflib
+import hashlib
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+P = D / "runtime/repo"
+run = json.loads((D / "checks/combined-final-v1/run.json").read_bytes())
+assert run["before"] == run["after"] and run["exit_code"] == 1
+for name in ("native-fixture-and-preparation-findings-publication-v1", "partial-native-fixture-finding-publication-v1"):
+    receipt = json.loads((C / "preflight" / name / "publication-00.json").read_bytes())
+    assert receipt["body_verified"] and receipt["returncode"] == 0
+sha = lambda raw: hashlib.sha256(raw).hexdigest()
+out = D / "fixture-correction-v1"
+out.mkdir(exist_ok=False)
+before = {name: (P / name).read_bytes() for name in run["after"]}
+assert {k: sha(v) for k, v in before.items()} == run["after"]
+publication = "tests/test_campaign_publication.py"
+scopes = "tests/test_campaign_suppressions.py"
+old = '        "scripts/validate_sssom_invariants.py",\n        "MAPPING_SEMANTICS.md",'
+new = '        "scripts/validate_sssom_invariants.py",\n        "scripts/record_review.py",\n        "schema/record_review.yaml",\n        "MAPPING_SEMANTICS.md",'
+s = before[publication].decode()
+assert s.count(old) == 1
+publication_after = s.replace(old, new)
+assert publication_after.replace(new, old) == s
+s = before[scopes].decode()
+start = s.index("def test_completed_native_review_requires_full_actual_transition_scope(")
+end = s.index("\ndef test_original_independent_reviewer", start)
+original_function = s[start:end]
+old_scope = '    module = c._BOUND_NATIVE["campaign_native_record_review"]\n    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)'
+new_scope = '''    module = c._BOUND_NATIVE["campaign_native_record_review"]
+    if fault == "partial-reviewed-targets":
+        with pytest.raises(
+            module.ReviewError,
+            match="completed review has explicitly selected targets left unreviewed",
+        ):
+            module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+        return
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)'''
+assert original_function.count(old_scope) == 1
+fixed_function = original_function.replace(old_scope, new_scope)
+scopes_after = s[:start] + fixed_function + s[end:]
+assert scopes_after.replace(new_scope, old_scope) == s
+changed = {publication: publication_after.encode(), scopes: scopes_after.encode()}
+diffs = []
+for name, raw in changed.items():
+    dest = out / "before" / name
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(before[name])
+    old_tree, new_tree = ast.parse(before[name]), ast.parse(raw)
+    old_asserts = [ast.dump(n, include_attributes=False) for n in ast.walk(old_tree) if isinstance(n, ast.Assert)]
+    new_asserts = [ast.dump(n, include_attributes=False) for n in ast.walk(new_tree) if isinstance(n, ast.Assert)]
+    assert old_asserts == new_asserts
+    old_params = {n.name: [ast.dump(d, include_attributes=False) for d in n.decorator_list] for n in old_tree.body if isinstance(n, ast.FunctionDef)}
+    new_params = {n.name: [ast.dump(d, include_attributes=False) for d in n.decorator_list] for n in new_tree.body if isinstance(n, ast.FunctionDef)}
+    assert old_params == new_params
+    (P / name).write_bytes(raw)
+    diffs.extend(difflib.unified_diff(before[name].decode().splitlines(True), raw.decode().splitlines(True), fromfile="a/" + name, tofile="b/" + name))
+(out / "test-only.diff").write_text("".join(diffs))
+after = {name: sha((P / name).read_bytes()) for name in before}
+assert [name for name in before if sha(before[name]) != after[name]] == [publication, scopes]
+result = {"at": datetime.now(timezone.utc).isoformat(), "before": run["after"], "after": after,
+          "publisher_unchanged": after["src/mediaingredientmech/campaign_publication.py"] == run["after"]["src/mediaingredientmech/campaign_publication.py"],
+          "all_existing_assert_nodes_and_parameter_decorators_unchanged": True,
+          "inverse_exact_bytes": True,
+          "scope": "Two fixture-only corrections recorded in #1259 comments6722193253 and6722200668; original combined failure remains unchanged.",
+          "diff_sha256": sha((out / "test-only.diff").read_bytes())}
+(out / "preservation.json").write_text(json.dumps(result, indent=2) + "\n")
+print(json.dumps(result))

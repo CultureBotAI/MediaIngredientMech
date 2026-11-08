@@ -1,0 +1,68 @@
+"""Independent record-stage replay from frozen 9a1, never mutable I code."""
+from pathlib import Path
+import collections, datetime, hashlib, json, os, sys, time, traceback
+
+T=Path(__file__).resolve().parent; O=T.parent; R=O.parents[1]; C=R.parents[2]
+F=O/'frozen-head'; D=C/'integration/native-boundary-full-candidate-probe-v1'
+assert Path(os.environ['PYTHONPATH']).resolve()==(F/'src').resolve()
+from mediaingredientmech.curate import campaign_owner_apply as owner
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def save(name,obj):
+    with (T/name).open('x') as stream:json.dump(obj,stream,indent=2,ensure_ascii=False);stream.write('\n')
+start=datetime.datetime.now(datetime.timezone.utc).isoformat(); tick=time.monotonic()
+assert Path(owner.__file__).resolve()==F/'src/mediaingredientmech/curate/campaign_owner_apply.py'
+assert sha(Path(owner.__file__).read_bytes())=='14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f'
+manifest=json.loads((D/'MANIFEST.json').read_bytes())
+assert sha((D/'MANIFEST.json').read_bytes())=='5bede9c0acb826024789a14b31407aeaf72047276cccf61ecd7304c7baad31b1'
+for p,h in manifest['files'].items():assert sha((D/p).read_bytes())==h,p
+selection=json.loads((D/'selection.json').read_bytes()); rows=selection['selected'];assert len(rows)==933
+pins=json.loads((D/'input-pins.json').read_bytes())
+old_operator=str(C/'integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py')
+assert pins[old_operator]=='4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70'
+inputs=[]
+for p,h in pins.items():
+    if p==old_operator:continue
+    assert '/integration/worktree/' not in p,p
+    assert sha(Path(p).read_bytes())==h,p
+    inputs.append({'path':p,'sha256':h,'read':'complete bytes/hash; scientific meaning not reassessed'})
+expected=json.loads((D/'before-inventory.json').read_bytes())
+before={p:f.content for p,f in owner.inventory(F).items()}
+assert {p:sha(b) for p,b in before.items()}==expected
+payloads={};operations=[];coverage=[]
+for r in rows:
+    raw=Path(r['effective_candidate']['path']).read_bytes();assert sha(raw)==r['effective_candidate']['sha256']
+    if r['source'] is not None:assert expected[r['source']]==r['before_sha256']
+    payloads[r['action_id']]=raw
+    op={'operation_id':r['action_id'],'kind':r['kind'],'source_record':r['destination'],'before_source_record':r['source']}
+    operations.append(op)
+    old=owner.record(before[r['source']]) if r['source'] else {}
+    new=owner.record(raw)
+    coverage.append({**op,'before_sha256':r['before_sha256'],'payload_sha256':sha(raw),'original_candidate':r['original_candidate'],'effective_candidate':r['effective_candidate'],'before_status':old.get('mapping_status'),'after_status':new.get('mapping_status'),'retained_identity':old.get('identifier')==new.get('identifier'),'retained_name':old.get('preferred_term')==new.get('preferred_term'),'history_prefix_preserved':new.get('curation_history',[])[:len(old.get('curation_history',[]))]==old.get('curation_history',[])})
+after=dict(before)
+for op in operations:
+    if op['before_source_record'] is not None:del after[op['before_source_record']]
+    after[op['source_record']]=payloads[op['operation_id']]
+assert {p:sha(b) for p,b in after.items()}==json.loads((D/'projected-inventory.json').read_bytes())
+try:
+    owner._validate_records(F,operations,payloads,before)
+    result={'status':'PASS_RECORD_STAGE_ONLY','exception':None}
+except Exception as error:
+    result={'status':'FAIL_RECORD_STAGE','exception':{'type':type(error).__name__,'message':str(error)},'traceback':traceback.format_exc()}
+assert owner.hashes(owner.inventory(F))==expected
+for r in inputs:assert sha(Path(r['path']).read_bytes())==r['sha256'],r['path']
+modules=[]
+for name,module in sorted(sys.modules.items()):
+    path=getattr(module,'__file__',None)
+    if path and ('mediaingredientmech' in name or name.startswith('_mim_campaign_native')):
+        p=Path(path).resolve()
+        assert p.is_relative_to(F), (name,str(p))
+        modules.append({'module':name,'path':str(p),'sha256':sha(p.read_bytes())})
+producers=[]
+for p in owner.PRODUCERS:
+    raw=(F/p).read_bytes();producers.append({'path':p,'sha256':sha(raw)})
+save('same933-coverage.json',coverage)
+save('same933-inputs.json',{'probe_manifest':{'path':str(D/'MANIFEST.json'),'sha256':sha((D/'MANIFEST.json').read_bytes())},'manifest_members':manifest['files'],'all_pinned_nonsource_inputs':inputs,'frozen_before_owners':expected,'executed_modules':modules,'native_producers':producers,'old_operator_ref':'Historical nonexecuted operator pin retained, reviewed operator selected only from exact frozen9a1.'})
+result.update(started_at=start,finished_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),seconds=round(time.monotonic()-tick,3),reviewer='/root/assembly_review',reviewed_head='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b',operator_sha256=sha(Path(owner.__file__).read_bytes()),selection_sha256=sha((D/'selection.json').read_bytes()),complete_operations=len(operations),operation_kinds=dict(collections.Counter(x['kind'] for x in operations)),before_owners=len(before),projected_owners=len(after),original_order_and_all_candidate_bytes_unchanged=True,all_1406_nonsource_input_pins_rehashed=True,frozen_owner_bytes_unchanged=True,full_prepare=False,source_application=False,scientific_approval=False,exclusions=selection['excluded'],genuine_w03_rejections=[x for x in coverage if 'polymer-tombstone' in x['operation_id']],limitations=['_validate_records executes schema/history/status/collision logic only, not complete plan or published-origin validation.','Unicode post-apply path guard finding is independently investigated by skeptical reviewer and cannot be waived by this record-stage PASS.','No chemistry, owner identity, candidate acceptance, final application or export approval.'])
+save('same933-result.json',result)
+print(json.dumps(result,indent=2,ensure_ascii=False))
+if result['exception']:sys.exit(1)

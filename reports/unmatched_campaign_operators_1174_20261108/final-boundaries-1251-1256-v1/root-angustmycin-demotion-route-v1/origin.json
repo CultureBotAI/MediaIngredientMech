@@ -1,0 +1,283 @@
+{
+  "action_id": "ORIGINAL-w09::ab-proposal-angustmycin",
+  "planning_action": "USE_EXACT_CURRENT_PUBLISHED_COMPLETE_PAYLOAD",
+  "origin_ids": [
+    "w09::ab-proposal-angustmycin"
+  ],
+  "origins": [
+    {
+      "origin_id": "w09::ab-proposal-angustmycin",
+      "worker_slot": 9,
+      "published_head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+      "proposal_object_sha256": "c07809c3f01c79a1bb0a8cf08e4432ce4ea1d43c08c18e9f572e25a95df0cffd",
+      "proposal": {
+        "proposal_id": "ab-proposal-angustmycin",
+        "case_ids": [
+          "KG_CASE:4b79b661593ffc55ea301458bd3418323914b523dd52e9f19ada9fb07d364cf8",
+          "KG_CASE:f6ae6d20f4c2b5360590b86732480ef64b3fa2b0b7d6168633287f17c38a34a2"
+        ],
+        "description": "Propose curator-selected Step5 AMBIGUOUS disposition for bare Angustmycin; no mapping row. Withdraw false A=C evidence and C-derived chemistry from active assertion fields, preserve all history/raw synonym provenance.",
+        "evidence_ids": [
+          "ab-term-CHEBI-8612",
+          "ab-term-CHEBI-191094",
+          "ab-primary-angustmycin",
+          "ab-ols-04",
+          "ab-frozen-cases",
+          "ab-owner-snapshots",
+          "ab-local-terms"
+        ],
+        "owner_path": "data/ingredients/mapped/Angustmycin.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+        "after_capture": {
+          "root": "artifact",
+          "path": "antibiotics/after/Angustmycin.yaml",
+          "sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f"
+        },
+        "prior_mapping_payload": {
+          "ontology_id": "CHEBI:8612",
+          "ontology_label": "psicofuranin",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "SYNONYM_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "CURATOR_CONFIRMED_SYNONYM",
+              "source": "kgmicrobe.compound:angustmycin",
+              "notes": "angustmycin A is a historical/trade name for the antibiotic psicofuranin \u2014 same molecule (curator-confirmed synonym)."
+            }
+          ]
+        },
+        "identity_consequence": "kgmicrobe.compound:angustmycin",
+        "intended_predicate": "none; mapping_status AMBIGUOUS suppresses all mapping rows",
+        "alias_consequence": "Preserve all original raw/rejected synonyms and preferred label; review any proposed canonical synonym against full publication payload.",
+        "publication_obligations": [
+          "Every changed owner invalidates inherited content-bound support; fresh native complete-payload mapping review before publication.",
+          "Preserve all existing WITHHOLD/REJECTED decisions until exact obligations independently resolved.",
+          "Coordinator must synchronize YAML surfaces and regenerate SSSOM only through native guarded integration; no generation performed here.",
+          "Cross-shard owner overlap must be reconciled by coordinator.",
+          "#741 Step5/no rename ruling and #745 integration blocker remain; source-specific A/C disambiguation is unresolved.",
+          "owner_path identifies the frozen existing mapped owner only. Integration must use native guarded writer to place AMBIGUOUS in the correct unmapped individual and aggregate collections, preserve subject/source provenance, remove the prior exact mapping from generated outputs, and validate both surfaces. This proposal does not authorize leaving contradictory mapped-collection placement or resolve #745."
+        ]
+      },
+      "payload_sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f",
+      "case_hashes": {
+        "KG_CASE:4b79b661593ffc55ea301458bd3418323914b523dd52e9f19ada9fb07d364cf8": "4f06ee513279d982f7451074686fccca5572f6630d94ceb0fe6274ee2a093a5e",
+        "KG_CASE:f6ae6d20f4c2b5360590b86732480ef64b3fa2b0b7d6168633287f17c38a34a2": "8b410f2f90946636687e0815a5654b8925a12245d72c4153face872c3e741b6d"
+      },
+      "occurrence_ids": [],
+      "declared_target_key": "data/ingredients/mapped/Angustmycin.yaml",
+      "before_preflight": {
+        "kind": "edit_candidate",
+        "before_path": "data/ingredients/mapped/Angustmycin.yaml",
+        "before_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+        "destination_path": "data/ingredients/mapped/Angustmycin.yaml",
+        "remaining": [
+          "extend actual native owner-chain endpoint",
+          "independent exact complete candidate review",
+          "semantic no-op/history-only refusal"
+        ]
+      },
+      "before_preflight_errors": [],
+      "source_review_refs": [
+        {
+          "evidence_id": "w09-independent-antibiotics",
+          "kind": "independent_review",
+          "capture": {
+            "root": "artifact",
+            "path": "salts/review-of-antibiotics/review-final.json",
+            "sha256": "dd58ced00ee6ddbee0eb3eac264082645b5ada0009102b6b61bc3489b8a72916"
+          },
+          "url": null,
+          "locator": "Complete case_reviews and proposal_reviews, exact input hashes, initial challenges and final re-review",
+          "supports_or_contradicts": "Separate in-process agent reviewed every assigned scientific decision and exact proposal; accepts bounded dispositions with source gaps and publication holds preserved. This is not export approval.",
+          "case_ids": [
+            "KG_CASE:0240b832334234930818c2210302daf26ed6460e399caa5cb2b836c086e1ab48",
+            "KG_CASE:13b25797b7931e6f679a3b2750035144c275ad1a4caf24149a81cac903fc1518",
+            "KG_CASE:13fd8c4ffb2c95fdb2c2ec2e6aa3eae22f067ab53cd3f058c2d20b407db1f9aa",
+            "KG_CASE:1477176bb725ffc16e92f169e2be9f276e9ada355a2787873cf384b9bd0155a8",
+            "KG_CASE:156a72bad032d3908aafa216145161307b9e2b9efc6deb816b065bcecb7fb5fe",
+            "KG_CASE:16cd6c76b25287a990bde6939fdc070ebbf3151f86761cc98b2f627dd8714ac0",
+            "KG_CASE:193900aa19713cba907ddd40ee880aec870e285ea8e7e09a76837ce4f12b6806",
+            "KG_CASE:1e2558fa54fc7179fe6b1014271caa9666b98aa673d855a549982483eaeb0aeb",
+            "KG_CASE:27ae1d106388368d00459a9d7ffd5aad31ad780d2a3bb21ac886e4769821930b",
+            "KG_CASE:36dad603023df0ef94d37825e00cb94da3e2bb840be9a806b97267255b839f80",
+            "KG_CASE:3c14b492c7bc0a650c8d0a36add073ccb270b85ae6cccc4e2e4212111bff9c16",
+            "KG_CASE:3c9f127156392d16a019d581641d497c6e53290f73ae53d44c9d6b35a816485f",
+            "KG_CASE:3dffb43ee84681dcce08a18ae8f26d6662349a302a05b29bae020a7ff8937ed8",
+            "KG_CASE:41def302095dcfc60349fcb934f66cc4d92a880cd72c960e0ef4addbdd7c8850",
+            "KG_CASE:4386590aa16f403589f31e38422bc8d99a1b53cb2fbfaa47e0889c5ec22744a4",
+            "KG_CASE:43ae7535292e00b293fd09f2adc16d4bc1d4a7de5bd031f62e75bafb9bd87613",
+            "KG_CASE:477bfc984a8f330407f560b71de738179e1ccb08dd2a651fc9965ff521c18f39",
+            "KG_CASE:4a7c7ebea24f383d05164c205cd90f4ca55ffb8cbc32dc77c0aeaa68a4fca825",
+            "KG_CASE:4b79b661593ffc55ea301458bd3418323914b523dd52e9f19ada9fb07d364cf8",
+            "KG_CASE:52b9f7b5436bf45389bc371a671a05d53d6f5439557c2ced295ad7f8fdee9bfc",
+            "KG_CASE:5a444eaeede983a3fae3da7b1db5d9a65dac593e2799b173f834ac3b4ae00ee5",
+            "KG_CASE:6331e616ce5732724c366db8d76839b4d370342514b29aaa2587f9b67393e9e6",
+            "KG_CASE:6989e61ec701125fde733f22457e20134886d123f3ff7c50abaecb8b1261db94",
+            "KG_CASE:6f05d56cabd5d31d3ca5be3429cc18968970b0ac8a2d0b6f6888a30d63840a09",
+            "KG_CASE:71a3633a84475203563951a6d741fed5fd69c18dde2711dcd70990b6839b271b",
+            "KG_CASE:76b5bef18c522fbd5d3928b7fe22ea1f91884b886dc694df7b3505d221cf6772",
+            "KG_CASE:7e8d4fb4b5e488e92c7bdedea47eec5af880e7b64c2191f562b7522fd8f062ed",
+            "KG_CASE:7f844a440365230c668065e85d2b190f7ece72f4c79a28142a123e979c0170bf",
+            "KG_CASE:7f8fe6714739ec034ab245e5a11d8c9ce1e306d07dedc05a8a25aa8496f65f70",
+            "KG_CASE:88762d7e6dbfd72399a93315b9e28b2f5c96fe2f9be57d151c62b8708c4fbe4e",
+            "KG_CASE:892953976d393fcf99a3dc836f07435d64e305454d739a5b116dbf1fa77a0a97",
+            "KG_CASE:8a032b6d8c3fbc4b205163cc7ac430d471d0270169c8dba80464352dc2b88cc6",
+            "KG_CASE:8f4931295197327c660cc7b4a7b4df5e3a9a4691b923eae6c3b39b527e4e6518",
+            "KG_CASE:94be203edf9cc9f7848e07b1ad5097ac94d674b18219c51d0538a2099c8bd628",
+            "KG_CASE:95ef91bffa349e236f9bd4fdd547f10511cfcaf099d6543017ef35f81ebe4745",
+            "KG_CASE:9768119caf72716bbcf2a7df010f23be5b1efb4a3d5cc52f2b803ad2ff640be4",
+            "KG_CASE:98d1cba4b8a5d95eb7b332e1ce5897aa30a633b7f79923df32708e76a9d19570",
+            "KG_CASE:a3f5db12c9d28150bb1b035668268f2832055e02b4ac928a6bf4a77a5d28c285",
+            "KG_CASE:a4f44e28d496fa8184e72c47cf2effd77665194e04edbbaf55eb7001fc06873a",
+            "KG_CASE:ae749368869d7e96437db525fe05f187b2f729b86634b8eab210e7bf03d18802",
+            "KG_CASE:b0c6140569a119ad8856b9a261905203c1f690124a8afd10d989a65c3108c712",
+            "KG_CASE:b7505c4a7dd6b233c972555cd74160221aa8f94dd6e1a23805b6760568d2bf96",
+            "KG_CASE:bb7039292ec1743621cd3908a68717b999d710d5da808475b7deb2f673d0c9bf",
+            "KG_CASE:bf2e24ef1bbddb861e3b91f5dedca3ad46729b3ba7c6fdd963fc7cebaefa6331",
+            "KG_CASE:c10e940af9974fe12adc1a430da864d2c75e38c8025999b9d2b94c18762f30ad",
+            "KG_CASE:c1b8080cf230fe9d70aa08ef1df3ba9b08b3386250e2acc19ec00e6d656c6fd3",
+            "KG_CASE:c924317eaf012e603186d9d89a6ef7f6b6a249c37fc6355cc32380ae96f795eb",
+            "KG_CASE:cc1d01ab576d924872d2cf2c923628ca8638c1697e2f84d38635ce19c73f09f5",
+            "KG_CASE:d31fc228e50c8322a6c1b80059a5db3a757e46335e97230e3fa2d6bbf9d93cf1",
+            "KG_CASE:da3469b49ac826f45c97e9efbd808a100f1b1e5420f0271b3d0e23f81dab7908",
+            "KG_CASE:f1e09e50983410d9ba925cd336150a022b2f940e6b9ddf7dcf402c8d992b420a",
+            "KG_CASE:f3efb6dbcc62ca093f0e5102aa4561e9b4b4c3589d932138ad3499d4042f465c",
+            "KG_CASE:f419beea6cc2bb60088a6d1477f641016c60c358ce819dbcabfa6bf18aea9cc7",
+            "KG_CASE:f521bf9858b1bc3f56844c7eb9af74c6bad3099eedbd53900ebb08f978875f4b",
+            "KG_CASE:f6ae6d20f4c2b5360590b86732480ef64b3fa2b0b7d6168633287f17c38a34a2",
+            "KG_CASE:f7962ac4b3511ec2b48c87cb9ec4c1ed80fd88d57f175c4680383be2b856a740",
+            "KG_CASE:fa8dcaeae943e911484df218fc1a8aa7f87200cd7905807ab88493e70a2b80ac",
+            "KG_CASE:ff9c61159588c678ffb82510253e2de10653b674c8837d44f90abf602e31797e"
+          ]
+        }
+      ],
+      "source_acceptance": {
+        "status": "ROOT_ADOPTED_EXISTING_SOURCE_ACCEPTANCE_CHAIN",
+        "head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+        "scope": "Existing source-case planning outcomes retained through exact bounded reviews; no new scientific, owner, role or export approval.",
+        "source_case_count": 187,
+        "accepted_case_increment": 0,
+        "original_source_case_acceptance": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w09-source-case-acceptance-v1/acceptance.json",
+          "sha256": "8dcccb27c6dfa01018e74a461718e234d4748ad3226eba6ea27ad0a46d9faf95"
+        },
+        "review_chain": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w09-provenance-successor-root-collection-v2/root-acceptance.json",
+            "sha256": "952236220f5625b3293a9680d02af9242344f4a8670546b76ed621d2d46b35e7"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w09-provenance-successor-root-collection-v2/review.yaml",
+            "sha256": "deaa3f4d7316b1ca21d0704726685e9bb675fee793d5dc3d5660bef5fb2aae92"
+          }
+        ],
+        "complete_core": {
+          "decisions": {
+            "path": "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/effective-decisions.json",
+            "sha256": "ff27e5f3b5663ab977e9c9b2b01861b4e1c5c8eed3bd6e7d0e1fbae652a58e8e",
+            "git_blob": "2169d367ab9e6b845dc7c3a3f966606f835832af",
+            "items": 187
+          },
+          "evidence": {
+            "path": "reports/all_unmatched_20261107/worker-09/followups/hexahydrates-v1/validation/integrated-evidence.json",
+            "sha256": "ccecf4c6c2fee08e7969796ff6a5526adca3a61803ec4e61f5782f9aa927a379",
+            "git_blob": "3bd3f5e7a1141b40e29b049ac7ade371c916536e",
+            "items": 582
+          },
+          "proposals": {
+            "path": "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/proposals.json",
+            "sha256": "1ccab8a007b80ffa335d6913439cfde4d95075192a727b90863243a176e96cfc",
+            "git_blob": "83a032ddd42d78ab6a51c4a67999a08ce5363258",
+            "items": 32
+          }
+        },
+        "selector": {
+          "head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+          "path": "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/selection.json",
+          "sha256": "00354aea1980051e77e2c0c8c0793cfdfc5ccc87f04a028d091eb37b7b34f048"
+        },
+        "audit_ref": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/four-source-acceptance-binding-audit-v1/HANDOFF.json",
+          "sha256": "c9a0673b883d159ddf4fb0a3c84c03a87c9455317125f010f1af92b260b2e8bb"
+        },
+        "independent_metadata_verification": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-source-binding-root-reconciliation-v1/committed-core-bindings.json",
+          "sha256": "b1eca76601f33762ea0f6509a22a5cefc62508e610aa41133ccd95d3ced4c7c7"
+        },
+        "original_limits_ref": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/four-source-acceptance-binding-audit-v1/proposed-bindings.json",
+          "sha256": "1e776a417135d0dc6a374deb6c5208eebb52bef5f114136b0fdab06fdeebdd5d"
+        },
+        "root_adoption_pending": false,
+        "root_adopted_at": "2026-11-08T10:16:12.678534+00:00",
+        "root_proposal": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-source-binding-root-reconciliation-v1/root-ledger-correction-proposal.json",
+          "sha256": "47331d0a1928863a5dcb43c51ac387bf573abd1c3d6fdd908cd06481007e2271"
+        },
+        "refs": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w09-source-case-acceptance-v1/acceptance.json",
+            "sha256": "8dcccb27c6dfa01018e74a461718e234d4748ad3226eba6ea27ad0a46d9faf95"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w09-provenance-successor-root-collection-v2/root-acceptance.json",
+            "sha256": "952236220f5625b3293a9680d02af9242344f4a8670546b76ed621d2d46b35e7"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w09-provenance-successor-root-collection-v2/review.yaml",
+            "sha256": "deaa3f4d7316b1ca21d0704726685e9bb675fee793d5dc3d5660bef5fb2aae92"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/input-bindings/coordinator-ledger-cutoff.json",
+            "sha256": "23721b8ca9d733323836f0ec32cf395fcac1b8d40dac7931a98950ef2f926ff0"
+          }
+        ]
+      },
+      "pending_successor": "Current published source selected; final whole-owner/composed-payload acceptance remains separate.",
+      "historical_bridge": {
+        "historical_origin_present": true,
+        "historical_payload_sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f",
+        "payload_unchanged": true
+      },
+      "classification": "UNRESOLVED_APPLICATION_SELECTION",
+      "application_eligible": false,
+      "payload_facts": {
+        "mapping_status": "AMBIGUOUS",
+        "identifier": "kgmicrobe.compound:angustmycin",
+        "preferred_term": "Angustmycin",
+        "full_yaml_bytes_sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f",
+        "mapping_evidence": []
+      }
+    }
+  ],
+  "destination_path": "data/ingredients/mapped/Angustmycin.yaml",
+  "candidate_payload": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w09/reports/all_unmatched_20261107/worker-09/antibiotics/after/Angustmycin.yaml",
+    "sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f"
+  },
+  "candidate_selection_proposed": true,
+  "evidence_refs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/publication-selections.json",
+      "sha256": "d4f204c47381710ceaac90728bee90727ef6b53ebbe6b57b172f73b5fc44cb6c"
+    }
+  ],
+  "blocking_requirements": [
+    "Exact final native plan, whole-candidate acceptance and complete integrated dependency/alias validation."
+  ],
+  "limits": "Preserve the exact source-case applicability, occurrence exclusions, missing requirements and historical reviews. This is a concrete planning choice, not fresh scientific, role or export approval.",
+  "scientific_approval": false,
+  "application_authorized": false,
+  "prior_action": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/candidate-action-registry.json",
+    "sha256": "bbc5534ede88586547d7fc2208b6a998084a15b2c9df2947b3737d8cecd788fa"
+  },
+  "independent_whole_candidate_acceptance": null,
+  "native_origin_compatible": true,
+  "final_identifier": "kgmicrobe.compound:angustmycin",
+  "final_preferred_term": "Angustmycin",
+  "native_kind": "edit",
+  "before_source_record": "data/ingredients/mapped/Angustmycin.yaml",
+  "before_yaml_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0"
+}

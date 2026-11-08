@@ -1,0 +1,47 @@
+"""Independent actual-native tests of whether the equal observed tuples were validated."""
+from pathlib import Path
+import datetime,hashlib,importlib.util,json,os,sys
+D=Path(__file__).resolve().parent;C=D.parents[1];F=C/'integration/source-index-coherence1256-fix-v1/runtime/repo';O=D/'actual-probes-v1';O.mkdir()
+os.environ.update(PYTHONDONTWRITEBYTECODE='1',GIT_OPTIONAL_LOCKS='0');sys.path[:0]=[str(F/'src'),str(F)]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+assert sha(F/'src/mediaingredientmech/curate/campaign_owner_apply.py')=='adba0b6b237de4fa8636fcdd7fa28c9d952859b6f0008d4e9d0671acdd323575'
+spec=importlib.util.spec_from_file_location('index_coherence_native_fixture',F/'tests/test_campaign_owner_apply.py');fx=importlib.util.module_from_spec(spec);spec.loader.exec_module(fx);o=fx.owner
+results=[]
+for mode in ['clean','invalid_snapshot_stays','invalid_contract_hidden_between_equal_snapshots','invalid_owner_hidden_between_equal_snapshots']:
+ root=O/mode;root.mkdir();plan=fx.demotion_case(root);ready=fx.prepare(root);target=plan['records'][0]['source_record'];events=[];state={'started':False,'installed':False,'snapshot_calls':0};bad_path=target if 'invalid_owner' in mode else 'MAPPING_SEMANTICS.md';bad_blob=None;good_blob=None
+ def complete():
+  p=root/'receipt/application.json';return p.exists() and bool(p.read_bytes()) and json.loads(p.read_bytes()).get('state')=='complete'
+ def set_blob(blob):o.git(root,'update-index','--add','--cacheinfo','100644',blob,bad_path)
+ def profile(frame,event,arg):
+  global bad_blob,good_blob
+  if frame.f_code is o.finish_receipt.__code__ and event=='call' and not state['installed']:
+   o.git(root,'add','-A','--','data/ingredients');state['installed']=True
+  if mode=='clean':return
+  if frame.f_code is o._check_mutation_git_state.__code__ and event=='call' and complete() and not state['started']:
+   state['started']=True;good_blob=o.git(root,'rev-parse',':'+bad_path).decode().strip();bad_blob=fx.stage_index_only_1256(root,bad_path,b'unaccepted index blob within observed snapshot\n')
+   bad_blob=o.git(root,'rev-parse',':'+bad_path).decode().strip();events.append({'event':'before_initial_snapshot','path':bad_path,'bad_blob':bad_blob,'good_blob':good_blob})
+  if not state['started'] or frame.f_code is not o.git.__code__ or frame.f_back.f_code is not o._check_mutation_git_state.__code__:return
+  args=frame.f_locals.get('args',())
+  if args==('ls-files','--stage','-z'):
+   if event=='call':
+    state['snapshot_calls']+=1
+    if state['snapshot_calls']==2 and 'hidden_between' in mode:
+     set_blob(bad_blob);events.append({'event':'restore_bad_before_final_snapshot','blob':bad_blob})
+   elif event=='return':
+    events.append({'event':'actual_snapshot','number':state['snapshot_calls'],'sha256':hashlib.sha256(arg).hexdigest(),'affected_entry':[os.fsdecode(x) for x in arg.split(b'\0') if x.endswith(b'\t'+os.fsencode(bad_path))]})
+    if state['snapshot_calls']==1 and 'hidden_between' in mode:
+     set_blob(good_blob);events.append({'event':'hide_bad_during_validation','blob':good_blob})
+  elif args[:2]==('diff','--cached') and event=='return':events.append({'event':'actual_cached_validation_paths','paths':os.fsdecode(arg)})
+  elif args[:2]==('cat-file','blob') and event=='return':events.append({'event':'actual_validated_blob','oid':args[2],'sha256':hashlib.sha256(arg).hexdigest()})
+ sys.setprofile(profile)
+ try:r=o.apply(ready,root/'receipt',enabled=True);observed={'complete':r['state']=='complete','state':r['state']}
+ except Exception as e:observed={'complete':False,'error':repr(e)}
+ finally:sys.setprofile(None)
+ receipt=root/'receipt/application.json';rr=json.loads(receipt.read_bytes());snapshots=[e['sha256'] for e in events if e['event']=='actual_snapshot']
+ row={'mode':mode,'observed':observed,'events':events,'actual_receipt_state':rr['state'],'recovery_required':rr['recovery_required'],'actual_bad_path':bad_path,'actual_index_blob':o.git(root,'rev-parse',':'+bad_path).decode().strip(),'snapshots_equal':len(snapshots)==2 and snapshots[0]==snapshots[1],'baseline':plan['baseline_commit'],'head':o.git(root,'rev-parse','HEAD').decode().strip(),'all_installed_owners_accepted':o.hashes(o.inventory(root))==ready.after_inventory,'receipt_sha256':sha(receipt),'native_functions_or_outputs_replaced':False,'mutations_after_final_observation':False}
+ try:row['historical_verifier']=o.verify_completed(root,root/'plan.json',receipt)['state']
+ except Exception as e:row['historical_verifier']=repr(e)
+ results.append(row)
+ (O/(mode+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+assert sha(F/'src/mediaingredientmech/curate/campaign_owner_apply.py')=='adba0b6b237de4fa8636fcdd7fa28c9d952859b6f0008d4e9d0671acdd323575'
+output={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_sha256':sha(F/'src/mediaingredientmech/curate/campaign_owner_apply.py'),'fixture_sha256':sha(F/'tests/test_campaign_owner_apply.py'),'results':results,'scope':'Actual native lifecycle in private fixtures. sys.setprofile schedules real Git writes only. Initial and final observed tuples contain the same bad blob; no mutation occurs after final snapshot. This tests validation of the observed tuple, not global atomicity.'};(D/'results-v1.json').write_text(json.dumps(output,indent=2)+'\n');print(json.dumps([(r['mode'],r['observed'],r['snapshots_equal']) for r in results],indent=2))

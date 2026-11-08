@@ -1,0 +1,52 @@
+{
+  "reviewed_head": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "findings": [
+    {
+      "finding_id": "W08-21061-PUB-001",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+      "status": "resolved_for_exact_reviewed_head",
+      "severity": "major",
+      "prior_artifacts_preserved": true,
+      "basis": "Exact original final real source-proof counterexample refuses at the new end-of-recheck live HEAD comparison. Positive tracked-derived and later historical validation remain valid; changed owner proof refuses. Additional later native-byte-read fault also refuses.",
+      "evidence": [
+        "INITIAL-PUBLISHER-RESIDUAL.json",
+        "native-boundary-results.json",
+        "fresh-native-results.json"
+      ],
+      "limits": "Resolution of this publisher diagnostic only; does not resolve the separate source freshness lineage or approve campaign source payloads."
+    },
+    {
+      "finding_id": "W08-7D4DB26-SRC-001",
+      "native_predecessor_finding_id": "W08-16C-CODE-002",
+      "issue_key": "campaign-owner-apply-late-baseline-freshness",
+      "severity": "major",
+      "status": "open",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+      "title": "Final live source check does not retain a coherent Git index through staged-entry verification",
+      "root_finding_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/FINDING-W08-7D4DB26-SRC-001.json",
+      "root_finding_sha256": "baeb59614d7c5622046168c1046da90871908dcca5de70156570a8582d816fbd",
+      "independent_confirmation": "Read the full actual source check, root reproduction script and all four saved fixture states; inspected actual Git staged blobs and unchanged installed bytes/HEAD; reran actual frozen completed verification. This is independent exact readback, not a second injection-lifecycle run.",
+      "reproduction": "Run provenance/probe_index_window.py under the recorded Python against frozen7d. Native apply and receipt helper functions are not replaced. A sys.setprofile hook stages actual installed accepted owner endpoints on entry to the real finish_receipt. Once the receipt is flushed complete, it schedules a real git hash-object/update-index operation either after the actual cached diff returns, or after actual cat-file returns. Hooks neither substitute results nor change native code. Both late modes complete and verify historically while the recorded real index differs from approved scope/bytes.",
+      "locators": [
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:973-1024 (cached listing and staged-entry reads)",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1025-1028 (final HEAD-only check)",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1338-1339 (finish_receipt final recheck followed by complete return)"
+      ],
+      "bounded_fix": "Bind the index state used for cached enumeration and stage/blob validation through the end of each live check, and refuse concurrent changes before success. Use a coherent stage/path/mode/blob snapshot or equivalent native-safe verification; account for legitimate Git stat-cache refresh instead of blindly prohibiting every index-file metadata change. Preserve legitimate installed endpoint staging between boundaries, literal paths, and historical completed verification without a current-index lock. Do not merely add a HEAD check, which cannot see index-only changes.",
+      "required_tests": [
+        "Actual final-recheck index addition after cached enumeration must refuse and leave honest failed recovery evidence.",
+        "Actual planned-owner index substitution after its genuine blob read must refuse; working bytes/HEAD remain unchanged to isolate index freshness.",
+        "Clean actual installed-endpoint staging and later historical validation still pass; initial/postprepare/midflight hidden-index controls remain refused.",
+        "Unrelated cached paths, conflict stages, mode mismatch, intent-to-add and premature deletion/accepted payload must remain refused with all original tests intact."
+      ],
+      "evidence": [
+        "source-index-window-readback.json"
+      ],
+      "fix_applied": false
+    }
+  ],
+  "new_publisher_findings": [],
+  "open_blocking_findings": [
+    "W08-7D4DB26-SRC-001"
+  ]
+}

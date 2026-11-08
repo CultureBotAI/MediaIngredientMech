@@ -1,0 +1,110 @@
+{
+  "status": "PASS_RECORD_STAGE_ONLY",
+  "exception": null,
+  "started_at": "2026-11-08T11:31:14.546386+00:00",
+  "finished_at": "2026-11-08T11:31:30.757195+00:00",
+  "seconds": 16.211,
+  "reviewer": "/root/assembly_review",
+  "reviewed_head": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "operator_sha256": "14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f",
+  "selection_sha256": "1638ca2976b2905f3bd8dcbcd75168d52d867ff1ec4ae50b34476f03dfecb4e6",
+  "complete_operations": 933,
+  "operation_kinds": {
+    "edit": 272,
+    "promote": 67,
+    "create": 594
+  },
+  "before_owners": 2956,
+  "projected_owners": 3550,
+  "original_order_and_all_candidate_bytes_unchanged": true,
+  "all_1406_nonsource_input_pins_rehashed": true,
+  "frozen_owner_bytes_unchanged": true,
+  "full_prepare": false,
+  "source_application": false,
+  "scientific_approval": false,
+  "exclusions": [
+    {
+      "action_id": "TENVIT-NOMINAL",
+      "reason": "explicit report-only action without an owner payload",
+      "registry_selected": false,
+      "candidate": null,
+      "origin_ids": [
+        "w06::C-P-JCM197",
+        "w08::vm1201-prop-nbrc903-vitamin"
+      ]
+    },
+    {
+      "action_id": "ORIGINAL-w08::op1201-trypticase-soy-broth",
+      "reason": "genuine new MICRO0000113 owner collision / owner-admission hold; no guard bypass",
+      "registry_selected": false,
+      "candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/research/organic_products/proposed_owners/Trypticase_Soy_Broth.yaml",
+        "sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879"
+      },
+      "origin_ids": [
+        "w08::op1201-trypticase-soy-broth"
+      ]
+    },
+    {
+      "action_id": "ORIGINAL-w09::ab-proposal-angustmycin",
+      "reason": "explicit demotion is unsupported in current operator; no same-path exception or inferred relocation",
+      "registry_selected": true,
+      "candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w09/reports/all_unmatched_20261107/worker-09/antibiotics/after/Angustmycin.yaml",
+        "sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f"
+      },
+      "origin_ids": [
+        "w09::ab-proposal-angustmycin"
+      ]
+    }
+  ],
+  "genuine_w03_rejections": [
+    {
+      "operation_id": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "kind": "edit",
+      "source_record": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "before_source_record": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "before_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+      "payload_sha256": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f",
+      "original_candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w03/reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-tombstone.yaml",
+        "sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2"
+      },
+      "effective_candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-payload-normalization-v1/publication-v1/pairs/0018/candidate/Poly-ß-hydroxybutyric_Acid.yaml",
+        "sha256": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f"
+      },
+      "before_status": "UNMAPPED",
+      "after_status": "REJECTED",
+      "retained_identity": true,
+      "retained_name": true,
+      "history_prefix_preserved": true
+    },
+    {
+      "operation_id": "ORIGINAL-w03::c-r-polymer-tombstone",
+      "kind": "edit",
+      "source_record": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "before_source_record": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "before_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+      "payload_sha256": "33c80accdc68562e600e06b0d3abd7be4fc8b2e2d37d8bba01ad3865f65b0cdb",
+      "original_candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w03/reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-tombstone.yaml",
+        "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5"
+      },
+      "effective_candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-payload-normalization-v1/publication-v1/pairs/0021/candidate/PolyR-3-hydroxybutyric_Acid.yaml",
+        "sha256": "33c80accdc68562e600e06b0d3abd7be4fc8b2e2d37d8bba01ad3865f65b0cdb"
+      },
+      "before_status": "UNMAPPED",
+      "after_status": "REJECTED",
+      "retained_identity": true,
+      "retained_name": true,
+      "history_prefix_preserved": true
+    }
+  ],
+  "limitations": [
+    "_validate_records executes schema/history/status/collision logic only, not complete plan or published-origin validation.",
+    "Unicode post-apply path guard finding is independently investigated by skeptical reviewer and cannot be waived by this record-stage PASS.",
+    "No chemistry, owner identity, candidate acceptance, final application or export approval."
+  ]
+}

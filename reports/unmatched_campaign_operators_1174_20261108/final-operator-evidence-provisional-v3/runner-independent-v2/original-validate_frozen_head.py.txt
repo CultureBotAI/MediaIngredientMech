@@ -1,0 +1,318 @@
+"""Private native validation runner; not an application or approval gate.
+
+Run only after root confirms the independent residual probes and fast-forwards I.
+An explicit expected head and immutable readiness evidence are required.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import stat
+import subprocess
+import sys
+
+HERE = Path(__file__).resolve().parent
+C = HERE.parents[1]
+R = C.parents[1]
+I = C / "integration/worktree"
+J = C / "integration/curation-worktree"
+T = R / ".temp/kgm-unmapped-20261107"
+J_HEAD = "eac469f1d94f06bab0714fff891abf64b8ebdbe9"
+CLAW_HEAD = "76c1ebeea3fc7f80bf1abe044688f298f390cfac"
+OLD_HEADS = {
+    "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+    "21061aa532401398db70c59a596debf330f70744",
+    "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+    "5288c882def177b1b9a5eee2975f039db780ac4e",
+    "e0a75a0c48ba539426b1f70623ea376c7b379ecf",
+}
+
+
+def now():
+    return datetime.datetime.now(datetime.UTC).isoformat()
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def require(condition, message):
+    if not condition:
+        raise RuntimeError(message)
+
+
+def save(path, value):
+    with path.open("x") as handle:
+        json.dump(value, handle, indent=2)
+        handle.write("\n")
+
+
+def git(root, *args):
+    return subprocess.check_output(
+        ["git", "-C", str(root), *args],
+        env={**os.environ, "GIT_OPTIONAL_LOCKS": "0"},
+    )
+
+
+def head(root):
+    return git(root, "rev-parse", "HEAD").decode().strip()
+
+
+def clean(root):
+    return git(root, "status", "--porcelain=v1", "--untracked-files=all").decode()
+
+
+def environment(output):
+    return {
+        "PATH": "/Users/marcin/.local/bin:/opt/homebrew/bin:/usr/bin:/bin",
+        "UV_OFFLINE": "1",
+        "UV_CACHE_DIR": str(T / "uv-cache"),
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONPATH": f"{I / 'src'}:{T / 'claw/src'}",
+        "CLAW_ROOT": str(T / "claw"),
+        "CLAW_SRC": str(T / "claw/src"),
+        "CAMPAIGN_HISTORY_ROOT": str(J),
+        "CAMPAIGN_SUPPRESSION_REVIEW_ROOT": str(C / "workers/w07/worktree/.temp/four-suppression-policy-independent-v1"),
+        "CAMPAIGN_SUPPRESSION_INTAKE_ROOT": str(C / "integration/final-native-intake-v4-preparation"),
+        "CULTUREMECH_ROOT": str(R.parent / "CultureMech"),
+        "KG_MICROBE_ROOT": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107",
+        "OPENCLAW_WORKSPACE": str(output / "private-openclaw-workspace"),
+        "TMPDIR": str(output / "temporary"),
+    }
+
+
+def tracked_snapshot(root):
+    result = {}
+    for raw in git(root, "ls-files", "-z").split(b"\0"):
+        if not raw:
+            continue
+        name = os.fsdecode(raw)
+        path = root / name
+        if not os.path.lexists(path):
+            result[name] = {"missing": True}
+            continue
+        info = path.lstat()
+        if stat.S_ISLNK(info.st_mode):
+            result[name] = {"symlink": os.readlink(path)}
+        else:
+            require(stat.S_ISREG(info.st_mode), "Unexpected tracked file type: " + name)
+            result[name] = {"sha256": sha(path), "executable": bool(info.st_mode & 0o111)}
+    return result
+
+
+def suppression_fixture_snapshot(output):
+    """Bind original external fixture sources and logical Git blobs, never generated outputs."""
+    inventory_path = HERE / "fixture-input-inventory.json"
+    expected = json.loads((HERE / "expected-inputs.json").read_bytes())
+    require(sha(inventory_path) == expected["suppression_fixture_inventory_sha256"],
+            "Frozen external fixture inventory changed")
+    inventory = json.loads(inventory_path.read_bytes())
+    env = environment(output)
+    require(env["CAMPAIGN_SUPPRESSION_REVIEW_ROOT"] == inventory["original_review_root"],
+            "Original suppression review root differs")
+    require(env["CAMPAIGN_SUPPRESSION_INTAKE_ROOT"] == inventory["intake_root"],
+            "Original suppression intake root differs")
+    files = {}
+    for entry in inventory["external_input_files"]:
+        path = Path(entry["path"])
+        require(path.is_absolute() and not any(p.is_symlink() for p in (path, *path.parents)),
+                "Aliased external fixture input: " + str(path))
+        require(stat.S_ISREG(path.lstat().st_mode), "Nonregular external fixture input")
+        digest = sha(path)
+        require(digest == entry["sha256"] and path.stat().st_size == entry["bytes"],
+                "External fixture source changed: " + str(path))
+        require(str(path) not in files, "Repeated external fixture input")
+        files[str(path)] = digest
+    tracked_inputs = {}
+    for relative, entry in inventory["expected_internal_tracked_code_inputs"].items():
+        path = I / relative
+        require(not Path(relative).is_absolute() and ".." not in Path(relative).parts,
+                "Noncanonical tracked fixture input")
+        require(stat.S_ISREG(path.lstat().st_mode) and not path.is_symlink(),
+                "Nonregular tracked fixture input")
+        digest = sha(path)
+        require(digest == entry["sha256"] and path.stat().st_size == entry["bytes"],
+                "Tracked fixture producer changed: " + relative)
+        tracked_inputs[relative] = digest
+    repositories = [Path(value) for value in inventory["worker_object_repositories"]]
+    logical_blobs = []
+    for entry in inventory["actual_published_git_object_reads"]:
+        worker = entry["binding_id"].split("-", 1)[0]
+        matches = [p for p in repositories if p == C / "workers" / worker / "worktree"]
+        require(len(matches) == 1, "Missing exact worker object repository")
+        repo = matches[0]
+        require(not any(p.is_symlink() for p in (repo, *repo.parents)),
+                "Aliased worker object repository")
+        require(re.fullmatch(r"[0-9a-f]{40}", entry["head"]), "Invalid published fixture head")
+        path = Path(entry["path"])
+        require(not path.is_absolute() and ".." not in path.parts, "Invalid published fixture path")
+        content = git(repo, "show", entry["head"] + ":" + entry["path"])
+        digest = hashlib.sha256(content).hexdigest()
+        require(digest == entry["raw_sha256"], "Published fixture blob differs")
+        logical_blobs.append({"repository": str(repo), "head": entry["head"],
+                              "path": entry["path"], "sha256": digest})
+    return {"inventory_sha256": sha(inventory_path), "external_files": files,
+            "tracked_fixture_producers": tracked_inputs, "logical_published_blobs": logical_blobs,
+            "review_root": env["CAMPAIGN_SUPPRESSION_REVIEW_ROOT"],
+            "intake_root": env["CAMPAIGN_SUPPRESSION_INTAKE_ROOT"]}
+
+
+def snapshot(output):
+    # Direct-owner enumeration includes gitignored files, not nested backups.
+    owners = {}
+    for bucket in ("mapped", "unmapped"):
+        for path in sorted((I / "data/ingredients" / bucket).glob("*.yaml")):
+            require(not path.is_symlink(), "Owner alias: " + str(path))
+            owners[path.relative_to(I).as_posix()] = sha(path)
+    producer_paths = {
+        T / "claw/scripts/build_mim_ingredient_sssom.py",
+        T / "claw/scripts/kgm_unified_mappings.py",
+        T / "claw/plugins/lock_manager.py",
+    }
+    for package in ("kg_microbe_utils", "kg_microbe_write", "kg_microbe_fleet"):
+        producer_paths.update((T / "claw/src" / package).rglob("*.py"))
+    env = {**os.environ, **environment(output)}
+    command = [str(I / ".venv/bin/python"), "-B", "-c", (
+        "import json;from pathlib import Path;"
+        "from mediaingredientmech.validation.mapping_change_receipts import verify_mapping_chain;"
+        f"p=verify_mapping_chain(Path({str(J)!r}));"
+        "assert len(p['receipts'])==27;"
+        "print(json.dumps({'inputs':p['input_hashes'],'receipt_inputs':p['receipt_inputs']}))"
+    )]
+    history = json.loads(subprocess.check_output(command, cwd=I, env=env))
+    return {
+        "at": now(), "head": head(I), "status": clean(I),
+        "tracked": tracked_snapshot(I), "direct_owner_sha256": owners,
+        "claw_head": head(T / "claw"), "claw_status": clean(T / "claw"),
+        "producer_sha256": {str(p): sha(p) for p in sorted(producer_paths)},
+        "history_head": head(J), "history_status": clean(J), "history": history,
+        "suppression_fixture_inputs": suppression_fixture_snapshot(output),
+    }
+
+
+def verify_start(expected_head):
+    require(re.fullmatch(r"[0-9a-f]{40}", expected_head), "Explicit full commit SHA required")
+    require(expected_head not in OLD_HEADS, "Do not repeat a superseded validation checkpoint")
+    require(head(I) == expected_head, "I has not been fast-forwarded to the expected head")
+    require(not clean(I), "I must be clean before native validation")
+    expected = json.loads((HERE / "expected-inputs.json").read_bytes())
+    for name, digest in expected["expected_final_code"].items():
+        require(sha(I / name) == digest, "Final corrected code differs: " + name)
+    require(head(J) == J_HEAD and not clean(J), "Frozen historical checkout changed")
+    require(head(T / "claw") == CLAW_HEAD, "Pinned native producer revision changed")
+    require(not clean(T / "claw"), "Native producer checkout must be clean")
+
+
+def equivalent(before, after):
+    return {key: before[key] == after[key] for key in before if key != "at"}
+
+
+def integration_marks(log, filename):
+    """Keep the original full-dot requirement for every pinned native integration file."""
+    lines = log.splitlines()
+    starts = [n for n, line in enumerate(lines) if line.startswith(filename + " ")]
+    require(len(starts) == 1, "Missing or repeated native integration file: " + filename)
+    first = starts[0]
+    block = [lines[first].split(".py ", 1)[1]]
+    for line in lines[first + 1:]:
+        if line.startswith("tests/"):
+            break
+        block.append(line)
+    return "".join(re.sub(r"\[.*?\]", "", line).strip() for line in block)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("mode", choices=("capture", "qc", "test", "seal"))
+    parser.add_argument("--head", required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--readiness-evidence", type=Path)
+    parser.add_argument("--readiness-sha256")
+    args = parser.parse_args(argv)
+    verify_start(args.head)
+    output = args.output.absolute()
+    require(".." not in output.parts, "Noncanonical output path refused")
+    require(output.is_relative_to(C / "preflight"), "Output must stay under task preflight")
+    require(not any(p.is_symlink() for p in (output, *output.parents)), "Aliased output refused")
+    if args.mode == "capture":
+        require(args.readiness_evidence is not None and args.readiness_sha256 is not None,
+                "Pin root-confirmed independent readiness evidence before capture")
+        evidence = args.readiness_evidence.absolute()
+        require(sha(evidence) == args.readiness_sha256, "Readiness evidence bytes differ")
+        output.mkdir(exist_ok=False)
+        (output / "temporary").mkdir()
+        (output / "private-openclaw-workspace").mkdir()
+        before = snapshot(output)
+        save(output / "before.json", before)
+        env = environment(output)
+        run = subprocess.run(["/Users/marcin/.local/bin/uv", "run", "--frozen", "python", "-c",
+                              "import sys;assert sys.version_info[:2]==(3,13);print(sys.executable);print(sys.version)"],
+                             cwd=I, env={**os.environ, **env}, capture_output=True, text=True)
+        save(output / "runtime.json", {"exit": run.returncode, "stdout": run.stdout, "stderr": run.stderr,
+             "environment": env, "readiness_evidence": str(evidence), "readiness_sha256": sha(evidence),
+             "readiness_interpretation": "Root confirms initial independent residual probes; this runner only pins that evidence, not a new approval gate",
+             "runner_sha256": sha(Path(__file__)), "expected_inputs_sha256": sha(HERE / "expected-inputs.json")})
+        require(run.returncode == 0, "Maintained runtime check failed")
+        return
+    before = json.loads((output / "before.json").read_bytes())
+    require(before["head"] == args.head, "Captured baseline differs")
+    runtime = json.loads((output / "runtime.json").read_bytes())
+    require(runtime["runner_sha256"] == sha(Path(__file__)), "Captured runner changed")
+    require(runtime["expected_inputs_sha256"] == sha(HERE / "expected-inputs.json"), "Expected code pins changed")
+    if args.mode in ("qc", "test"):
+        env = environment(output)
+        start = snapshot(output)
+        require(all(equivalent(before, start).values()), "Inputs changed before validation")
+        command = ["/opt/homebrew/bin/just", args.mode]
+        save(output / (args.mode + "-command.json"), {"at": now(), "argv": command, "cwd": str(I), "environment": env, "head": args.head})
+        with (output / (args.mode + ".log")).open("xb") as log:
+            process = subprocess.Popen(command, cwd=I, env={**os.environ, **env}, stdout=log, stderr=subprocess.STDOUT)
+            save(output / (args.mode + "-process.json"), {"pid": process.pid, "parent_pid": os.getpid(), "argv": command, "head": args.head})
+            exit_code = process.wait()
+        after = snapshot(output)
+        save(output / (args.mode + "-after.json"), after)
+        receipt = {"at": now(), "head": after["head"], "exit_code": exit_code,
+                   "input_equivalence": equivalent(before, after), "log_sha256": sha(output / (args.mode + ".log"))}
+        save(output / (args.mode + "-receipt.json"), receipt)
+        require(all(receipt["input_equivalence"].values()), "Input drift preserved; stop without repair")
+        raise SystemExit(exit_code)
+    receipts = {mode: json.loads((output / (mode + "-receipt.json")).read_bytes()) for mode in ("qc", "test")}
+    require(all(r["exit_code"] == 0 and all(r["input_equivalence"].values()) for r in receipts.values()),
+            "Cannot seal a failed/interrupted full validation as PASS")
+    final = snapshot(output)
+    require(all(equivalent(before, final).values()), "Final input drift")
+    log = (output / "test.log").read_text()
+    lines = log.splitlines()
+    result = [line for line in log.splitlines() if re.search(r"\d+ passed.* in \d+", line)]
+    require(len(result) == 1, "Missing unambiguous complete pytest summary")
+    expected_counts = json.loads((HERE / "expected-inputs.json").read_bytes())["required_native_cases"]
+    native_counts = {}
+    for filename, expected_count in expected_counts.items():
+        require(type(expected_count) is int and expected_count > 0, "Invalid native case count")
+        marks = integration_marks(log, filename)
+        require(marks == "." * expected_count,
+                f"Every required native integration case must execute and pass: {filename}")
+        native_counts[filename] = {"passed": expected_count, "skipped": 0}
+    summary = {"head": args.head, "scope": "Author native full validation; not scientific/application/merge approval",
+               "pytest": result[0], "real_generator_cases_passed": sum(v["passed"] for v in native_counts.values()),
+               "real_generator_cases_skipped": 0, "required_native_files": native_counts,
+               "coverage_lines": [line for line in lines if line.startswith("TOTAL") or "fail-under" in line],
+               "B4_lines": [line for line in (output / "qc.log").read_text().splitlines() if "B4" in line],
+               "all_tracked_inputs": len(before["tracked"]), "direct_owner_count": len(before["direct_owner_sha256"]),
+               "all_input_membership_and_bytes_unchanged": True, "receipts": receipts}
+    save(output / "SUMMARY.json", summary)
+    manifest = {p.name: sha(p) for p in sorted(output.iterdir()) if p.is_file()}
+    save(output / "MANIFEST.json", {"files": manifest, "private_temporary_trees_excluded": True})
+    save(output / "HANDOFF.json", {"head": args.head, "status": "AUTHOR_FULL_VALIDATION_PASS",
+         "manifest_sha256": sha(output / "MANIFEST.json"), "summary_sha256": sha(output / "SUMMARY.json"),
+         "scientific_or_merge_approval": False})
+
+
+if __name__ == "__main__":
+    main()

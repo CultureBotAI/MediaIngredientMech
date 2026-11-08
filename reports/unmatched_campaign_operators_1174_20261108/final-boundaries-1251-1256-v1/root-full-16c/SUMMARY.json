@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-08T12:08:15.386629+00:00",
+  "scope": "Author full native validation at immutable historical16c checkpoint; no independent, CI, application or later-head approval",
+  "head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "pytest_summary": "========= 5654 passed, 116 skipped, 31 warnings in 1798.26s (0:29:58) ==========",
+  "new_real_integration_cases": {
+    "passed": 9,
+    "skipped": 0,
+    "actual_log_line": "tests/test_campaign_demotion_integration.py .........                    [  2%]"
+  },
+  "coverage_log_lines": [
+    "TOTAL                                                           41272  23192    44%",
+    "uv run --frozen --extra dev coverage report --include='src/mediaingredientmech/*' --fail-under=35",
+    "TOTAL                                                            8980   2417    73%",
+    "TOTAL                                                        32292  20775    36%"
+  ],
+  "rule_b4_limit": [
+    "WARNING: Rule B4 skipped \u2014 kg-microbe ontology transforms not found at /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/kg-microbe/data/transformed/ontologies for prefix(es): BTO, CHEBI, ENVO, FOODON, MICRO, UBERON. To enable Rule B4 locally, check out kg-microbe at the sibling path and run its `just transform` recipe. (CI typically lacks these transforms; the validator does not exit-2 on B4 alone in that case.)"
+  ],
+  "maintained_inputs_unchanged": 3672,
+  "producer_and_historical_inputs_unchanged": true,
+  "clean_worktree": true,
+  "receipts": {
+    "qc": {
+      "path": "qc-receipt.json",
+      "sha256": "3a8b7dbaf69364f0184bcc6d620d6384fd6e0462b3d8d971371295291cdabcb8",
+      "log_sha256": "b906a58ff032eb30fc58f5898da51f546a746209dfe8516a8e476670c8d16fe2"
+    },
+    "test": {
+      "path": "test-receipt.json",
+      "sha256": "2aab69193cc0272c5004571637fe88e473749fc173a088e84bab91246ad01e6c",
+      "log_sha256": "8f535a2a725b8ecb371d09814b5fd238560f95de23301b992747e214fb6d7bb7"
+    }
+  },
+  "limitations": [
+    "Native default RuleB4 skipped where nested sibling ontology input path is absent; no gate or path topology changed.",
+    "Known1255/1256 corrections are separate private successors, not part of this16c validation.",
+    "Any later committed source head requires its own full validation."
+  ]
+}

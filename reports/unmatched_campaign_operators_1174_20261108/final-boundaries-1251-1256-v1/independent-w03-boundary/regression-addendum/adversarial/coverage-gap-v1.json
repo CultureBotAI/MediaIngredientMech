@@ -1,0 +1,66 @@
+{
+  "scope": "Exact appended tests/helper ASTs in frozen d691 tests/test_campaign_owner_apply.py relative to exact parent; no whole repository absence claim. Both files directly read irrespective of ignore rules.",
+  "tests_sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569",
+  "parent_tests_sha256": "c86993e88a3b270789470aacf0312cc35e0d76c7a7c591808dd74b4db4a98bd2",
+  "added_definitions": [
+    {
+      "name": "inherited_family_case",
+      "start_line": 995,
+      "end_line": 1060,
+      "ast_sha256": "a0009e75ccfe05100eb24fd148ba5af3cfdb27b2b27f61a67511f757f7488284"
+    },
+    {
+      "name": "final_fixture_delta",
+      "start_line": 1063,
+      "end_line": 1071,
+      "ast_sha256": "7d12999558cdd1fbe4143c15adb2a45edbfee5285101121cd96b8e768b42021c"
+    },
+    {
+      "name": "test_1251_1252_inherited_family_real_application_and_completed_replay",
+      "start_line": 1076,
+      "end_line": 1102,
+      "ast_sha256": "0a8ea7005f142e05c4a60f1829c8fa7e148fcecacb5eb0d2343c98ef8e6e22ce"
+    },
+    {
+      "name": "test_1251_1252_family_changes_refused_before_any_write",
+      "start_line": 1120,
+      "end_line": 1150,
+      "ast_sha256": "58b0426525613a453bfd6ecbf205681a97241e05cb85039a8131baef7b95f1bb"
+    },
+    {
+      "name": "test_1251_1252_new_owner_does_not_inherit_exception",
+      "start_line": 1154,
+      "end_line": 1168,
+      "ast_sha256": "b515076dbcce77d4c7400bec5e67e3fdf5fdc387bd16e84547a61962e81c4126"
+    },
+    {
+      "name": "test_1252_completed_replay_rejects_changed_tombstone",
+      "start_line": 1172,
+      "end_line": 1189,
+      "ast_sha256": "7feba334c0d8a3db2bf5ba88cdca907734da142927386622bb82ddb22b4002f7"
+    },
+    {
+      "name": "test_1252_unique_tombstone_real_application_and_completed_replay",
+      "start_line": 1192,
+      "end_line": 1203,
+      "ast_sha256": "07710e8533b0665903b604b0497117ebbca25c71f905360c572d3db143931d88"
+    },
+    {
+      "name": "test_1252_unique_tombstone_activation_and_key_changes_refused",
+      "start_line": 1215,
+      "end_line": 1223,
+      "ast_sha256": "058037b6a49ec6a200e0ed3ba8406b64bc5acb3c786bc03b1fa928cc5fdbbf68"
+    },
+    {
+      "name": "test_1251_reviewed_family_reduction_preserves_surviving_pairs",
+      "start_line": 1228,
+      "end_line": 1257,
+      "ast_sha256": "58d983251dfec30efa0ed9c9be7cb1ac7b0fe3dc1bfa810bedf853e597dc2e7a"
+    }
+  ],
+  "appended_test_functions": 7,
+  "added_helpers": 2,
+  "gap": "The seven appended test functions construct selected inherited family owners as MAPPED or already REJECTED. Positive status cases cover maintenance of those states. create_rejected is an invalid new-owner negative; unique tombstone -> UNMAPPED is an outgoing-negative case. None supplies an authenticated same-path existing UNMAPPED -> REJECTED retirement as a positive prepare/apply/replay test. Thus all existing positives and safety negatives can pass despite the broad new status branch refusing this earlier supported route.",
+  "earlier_adversarial_gap": "Our sealed41 successful native outcomes likewise covered existing rejected maintenance, its revival/key/path negatives, collision families and late drift; no incoming UNMAPPED->REJECTED positive was selected. That omission limits the earlier PASS and is now explicitly corrected by an additive finding, not a rewrite of its actual results.",
+  "future_required_control": "Add same-path existing UNMAPPED->REJECTED positive with authentic beforeimage, published existing-owner source proposal, exact identity/name/history prefix and substantive rejection; require native prepare/application/completed-verifier parity and scoped negative controls."
+}

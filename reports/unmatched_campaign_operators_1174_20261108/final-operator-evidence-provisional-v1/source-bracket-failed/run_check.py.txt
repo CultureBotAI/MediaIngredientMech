@@ -1,0 +1,10 @@
+from pathlib import Path
+import datetime,hashlib,json,os,subprocess,sys,time
+D=Path(__file__).resolve().parent; R=D.parents[3]; T=R/'.temp/kgm-unmapped-20261107'; C=D.parents[1]
+tag=sys.argv[1]; command=sys.argv[2:]; out=D/'checks'/tag;out.mkdir(parents=True)
+env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','GIT_OPTIONAL_LOCKS':'0','UV_OFFLINE':'1','PYTHONPATH':str(D/'runtime/repo/src'),'CLAW_ROOT':str(T/'claw'),'CLAW_SRC':str(T/'claw/src'),'CAMPAIGN_HISTORY_ROOT':str(C/'integration/curation-worktree'),'OPENCLAW_WORKSPACE':str(out/'openclaw'),'TMPDIR':str(out/'temporary')}
+Path(env['TMPDIR']).mkdir();Path(env['OPENCLAW_WORKSPACE']).mkdir()
+start=time.monotonic();at=datetime.datetime.now(datetime.UTC).isoformat()
+with (out/'run.log').open('xb') as log:r=subprocess.run(command,cwd=D/'runtime/repo',env=env,stdout=log,stderr=subprocess.STDOUT)
+receipt={'at':at,'command':command,'cwd':str(D/'runtime/repo'),'environment':{k:env[k] for k in ['PYTHONDONTWRITEBYTECODE','GIT_OPTIONAL_LOCKS','UV_OFFLINE','PYTHONPATH','CLAW_ROOT','CAMPAIGN_HISTORY_ROOT','OPENCLAW_WORKSPACE','TMPDIR']},'exit_code':r.returncode,'seconds':time.monotonic()-start,'log_sha256':hashlib.sha256((out/'run.log').read_bytes()).hexdigest()}
+(out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt));sys.exit(r.returncode)

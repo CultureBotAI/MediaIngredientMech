@@ -1,0 +1,39 @@
+"""Author validation at immutable 16c: unchanged native full just recipes."""
+from pathlib import Path
+import datetime,hashlib,json,os,subprocess,sys
+O=Path(__file__).resolve().parent; C=O.parents[1]; R=C.parents[1]; I=C/'integration/worktree'; J=C/'integration/curation-worktree'; T=R/'.temp/kgm-unmapped-20261107'
+HEAD='16c39b63bc95d3e7978ddccc6280b0d57954f4a5'; JHEAD='eac469f1d94f06bab0714fff891abf64b8ebdbe9'; CLAW='76c1ebeea3fc7f80bf1abe044688f298f390cfac'
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def now(): return datetime.datetime.now(datetime.UTC).isoformat()
+def git(root,*args): return subprocess.check_output(['git','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'},text=True).strip()
+def save(path,value):
+ with path.open('x') as f:json.dump(value,f,indent=2);f.write('\n')
+ENV={'PATH':'/Users/marcin/.local/bin:/opt/homebrew/bin:/usr/bin:/bin','UV_OFFLINE':'1','UV_CACHE_DIR':str(T/'uv-cache'),'PYTHONDONTWRITEBYTECODE':'1','GIT_OPTIONAL_LOCKS':'0','PYTHONPATH':f'{I / "src"}:{T / "claw/src"}','CLAW_ROOT':str(T/'claw'),'CLAW_SRC':str(T/'claw/src'),'CAMPAIGN_HISTORY_ROOT':str(J),'CULTUREMECH_ROOT':str(R.parent/'CultureMech'),'KG_MICROBE_ROOT':'/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107','TMPDIR':str(O/'temporary')}
+
+def snapshot():
+ names=subprocess.check_output(['git','-C',str(I),'ls-files','-z','src','scripts','tests','data','mappings','.github','justfile','pyproject.toml','uv.lock','.python-version','AGENTS.md','MAPPING_SEMANTICS.md','UNIFIED_INGREDIENT_MAPPING.tsv','UNIFIED_INGREDIENT_MAPPING.provenance.json'],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'}).decode().split('\0')
+ source={n:sha(I/n) for n in names if n and (I/n).is_file()}
+ producers={T/'claw/scripts/build_mim_ingredient_sssom.py',T/'claw/scripts/kgm_unified_mappings.py',T/'claw/plugins/lock_manager.py'}
+ for package in ('kg_microbe_utils','kg_microbe_write','kg_microbe_fleet'):producers.update((T/'claw/src'/package).rglob('*.py'))
+ return {'at':now(),'head':git(I,'rev-parse','HEAD'),'tracked_status':git(I,'status','--porcelain=v1','--untracked-files=no'),'all_status':git(I,'status','--porcelain=v1','--untracked-files=all'),'source_sha256':source,'history_head':git(J,'rev-parse','HEAD'),'history_status':git(J,'status','--porcelain=v1','--untracked-files=no'),'history_mapping_sha256':sha(J/'mappings/ingredient_mappings.sssom.tsv'),'claw_head':git(T/'claw','rev-parse','HEAD'),'claw_status':git(T/'claw','status','--porcelain=v1','--untracked-files=no'),'producer_sha256':{str(p):sha(p) for p in sorted(producers)}}
+mode=sys.argv[1]
+if mode=='capture':
+ (O/'temporary').mkdir()
+ before=snapshot();assert before['head']==HEAD and not before['tracked_status'] and not before['all_status'];assert before['history_head']==JHEAD and not before['history_status'];assert before['claw_head']==CLAW
+ env={**os.environ,**ENV}
+ runtime=subprocess.run(['/Users/marcin/.local/bin/uv','run','--frozen','python','-c','import sys;print(sys.executable);print(sys.version)'],cwd=I,env=env,capture_output=True,text=True)
+ assert runtime.returncode==0,runtime.stderr
+ save(O/'before.json',before);save(O/'runtime.json',{'environment':ENV,'runtime_stdout':runtime.stdout,'runtime_stderr':runtime.stderr,'runtime_exit':runtime.returncode,'I_venv_pyvenv_sha256':sha(I/'.venv/pyvenv.cfg'),'T_env_pyvenv_sha256':sha(T/'env/pyvenv.cfg'),'prior_profile':str(C/'scripts/run_infrastructure_eac469_checks_v1.py'),'prior_profile_sha256':sha(C/'scripts/run_infrastructure_eac469_checks_v1.py'),'deltas_from_prior_profile':['CAMPAIGN_HISTORY_ROOT=immutable J/eac','TMPDIR=private validation temporary directory','GIT_OPTIONAL_LOCKS=0'],'scope':'Author full validation; no independent review or corpus application'})
+ print(json.dumps({'head':before['head'],'inputs':len(before['source_sha256']),'producer_files':len(before['producer_sha256']),'runtime':runtime.stdout,'before_sha256':sha(O/'before.json')}))
+else:
+ assert mode in {'qc','test'}
+ before=json.loads((O/'before.json').read_bytes()); assert git(I,'rev-parse','HEAD')==HEAD
+ command=['/opt/homebrew/bin/just',mode]; start=now(); save(O/(mode+'-command.json'),{'started_at':start,'argv':command,'cwd':str(I),'environment':ENV,'expected_head':HEAD,'before_sha256':sha(O/'before.json'),'runtime_sha256':sha(O/'runtime.json')})
+ with (O/(mode+'.log')).open('xb') as log:
+  result=subprocess.run(command,cwd=I,env={**os.environ,**ENV},stdout=log,stderr=subprocess.STDOUT)
+ after=snapshot();save(O/(mode+'-after.json'),after)
+ differences={p:{'before':before['source_sha256'].get(p),'after':after['source_sha256'].get(p)} for p in before['source_sha256'].keys()|after['source_sha256'].keys() if before['source_sha256'].get(p)!=after['source_sha256'].get(p)}
+ receipt={'started_at':start,'finished_at':now(),'command':command,'exit_code':result.returncode,'head':after['head'],'tracked_status':after['tracked_status'],'all_status':after['all_status'],'source_differences':differences,'producer_unchanged':after['producer_sha256']==before['producer_sha256'],'history_unchanged':after['history_head']==before['history_head'] and after['history_mapping_sha256']==before['history_mapping_sha256'] and after['history_status']==before['history_status'],'log_sha256':sha(O/(mode+'.log')),'after_sha256':sha(O/(mode+'-after.json')),'command_sha256':sha(O/(mode+'-command.json')),'runtime_sha256':sha(O/'runtime.json')}
+ save(O/(mode+'-receipt.json'),receipt);print(json.dumps(receipt),flush=True)
+ assert after['head']==HEAD and receipt['producer_unchanged'] and receipt['history_unchanged']
+ sys.exit(result.returncode)

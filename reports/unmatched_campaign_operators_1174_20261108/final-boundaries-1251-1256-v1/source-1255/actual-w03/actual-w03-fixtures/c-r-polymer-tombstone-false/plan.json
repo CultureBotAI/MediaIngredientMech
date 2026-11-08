@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "operation": "apply_reviewed_campaign_owners",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "baseline_commit": "e10930d9bfa3573bd6e06ccecf4ebd57974dce37",
+  "intake_heads": {
+    "worker-03": "784ee2541506c914b4c34f091de688d39784d548"
+  },
+  "before_inventory": {
+    "path": "before.json",
+    "sha256": "8c86e6da231b52387bcf2a86005b82c7956b699e9ab912932db0c65cc4e9a638"
+  },
+  "after_inventory": {
+    "path": "after.json",
+    "sha256": "4d8c197f9318bb5f59ea0a0b17c7613967e4be33eb95936af837a1dfdf66fd08"
+  },
+  "protected_inputs": {
+    "path": "protected.json",
+    "sha256": "137881f859e9e58c83cc13bbd2773cf0fbc521372c103f07d6f69b2059baea98"
+  },
+  "bindings": [
+    {
+      "binding_id": "cases",
+      "role": "case_ledger",
+      "path": "intake/cases.json",
+      "sha256": "65a109578b67f1a6852045692f330b7507706f898e8be998ff857c29d8671562",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "proposal",
+      "role": "proposal",
+      "path": "intake/proposals.json",
+      "sha256": "ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a",
+      "published_head": "784ee2541506c914b4c34f091de688d39784d548",
+      "published_path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json"
+    },
+    {
+      "binding_id": "payload",
+      "role": "evidence",
+      "path": "intake/original.yaml",
+      "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5",
+      "published_head": "784ee2541506c914b4c34f091de688d39784d548",
+      "published_path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-tombstone.yaml"
+    },
+    {
+      "binding_id": "shard",
+      "role": "shard",
+      "path": "intake/shard.json",
+      "sha256": "90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "decision",
+      "role": "decision",
+      "path": "intake/decision.json",
+      "sha256": "a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "evidence",
+      "role": "evidence",
+      "path": "intake/evidence.json",
+      "sha256": "831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "review",
+      "role": "review",
+      "path": "intake/review.json",
+      "sha256": "fe18a7278f8fe01d5d2d8268668083c740fb6afd1d26d7ee1dc7c5c57bfa5101",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "reconciliation",
+      "role": "reconciliation",
+      "path": "intake/reconciliation.json",
+      "sha256": "b54a6976b058eb203f60e25c58d6b6a03e4343e8b27e0b1b24078fb690b75c74",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-0",
+      "role": "producer",
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "8871c5183f7dd55f966781f77f036923af7eda01e4bb5b27cc75676f5986357f",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-1",
+      "role": "producer",
+      "path": "scripts/apply_unmatched_campaign_owners.py",
+      "sha256": "d68fff3b69e6502bb8adad828019b91e9b664687cdaaf4453159dfb81f16cbdb",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-2",
+      "role": "producer",
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-3",
+      "role": "producer",
+      "path": "src/mediaingredientmech/curate/apply_receipt.py",
+      "sha256": "6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-4",
+      "role": "producer",
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-5",
+      "role": "producer",
+      "path": "src/mediaingredientmech/validation/mapping_change_receipts.py",
+      "sha256": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-6",
+      "role": "producer",
+      "path": "src/mediaingredientmech/export/reviewed_sssom.py",
+      "sha256": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-7",
+      "role": "producer",
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-8",
+      "role": "producer",
+      "path": "src/mediaingredientmech/schema/mech_shared.yaml",
+      "sha256": "c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-9",
+      "role": "producer",
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "published_head": null,
+      "published_path": null
+    },
+    {
+      "binding_id": "producer-10",
+      "role": "producer",
+      "path": "uv.lock",
+      "sha256": "f5ce4325376797ada321c0ffba1e6050355e3185c0a079d2c731d17480aeca1a",
+      "published_head": null,
+      "published_path": null
+    }
+  ],
+  "records": [
+    {
+      "operation_id": "rejection-proof",
+      "kind": "edit",
+      "before_source_record": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "source_record": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "before_yaml_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+      "after_capture": {
+        "path": "accepted-normalized.yaml",
+        "sha256": "33c80accdc68562e600e06b0d3abd7be4fc8b2e2d37d8bba01ad3865f65b0cdb"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-03",
+          "head_sha": "784ee2541506c914b4c34f091de688d39784d548",
+          "proposal_id": "c-r-polymer-tombstone",
+          "proposal_binding": "proposal",
+          "payload_binding": "payload",
+          "case_hashes": {
+            "KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef": "74c1f4b6828f9a5bb64089e9477f555a5c0dfab176430ad5da3e609ef0334b81"
+          }
+        }
+      ],
+      "change": "Bounded mechanical fixture; no science approval",
+      "verification": "Independent native source transition test only"
+    }
+  ]
+}

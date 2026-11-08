@@ -1,0 +1,46 @@
+{
+  "targets": [
+    {
+      "target_id": "source-operator",
+      "path": "review-inputs/runtime-code/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "kind": "source",
+      "label": "Whole source application operator and CLI",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+          "role": "operator_source"
+        }
+      ],
+      "ownership_note": "Read-only review. Root owns issue filing and fixes; no source/application/export permission follows."
+    },
+    {
+      "target_id": "publication-operator",
+      "path": "review-inputs/runtime-code/src/mediaingredientmech/campaign_publication.py",
+      "kind": "source",
+      "label": "Whole native publication operator and CLI",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "src/mediaingredientmech/campaign_publication.py",
+          "role": "operator_source"
+        }
+      ],
+      "ownership_note": "Read-only review. Root owns issue filing and fixes; no source/application/export permission follows."
+    },
+    {
+      "target_id": "private-review-helper",
+      "path": "review-inputs/scripts/assemble_preparatory_audit.py",
+      "kind": "source",
+      "label": "Disclosed failed private review-accounting helper",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": ".temp/final-operator-head-review-v1/scripts/assemble_preparatory_audit.py",
+          "role": "private_review_helper"
+        }
+      ],
+      "ownership_note": "Read-only review. Root owns issue filing and fixes; no source/application/export permission follows."
+    }
+  ]
+}

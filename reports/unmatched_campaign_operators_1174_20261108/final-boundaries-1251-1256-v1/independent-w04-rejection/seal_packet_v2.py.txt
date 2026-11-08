@@ -1,0 +1,59 @@
+from pathlib import Path
+import datetime,hashlib,json,os,subprocess
+R=Path.cwd();O=R/'.temp/rejection-fix-independent-v1';H='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b';P='d691c079cf3923daed89284b7579913b84c3a34c';sha=lambda b:hashlib.sha256(b).hexdigest()
+def j(n):return json.loads((O/n).read_bytes())
+def ref(n):return {'path':n,'sha256':sha((O/n).read_bytes())}
+def put(n,b):
+ with (O/n).open('xb') as f:f.write(b)
+def save(n,x):put(n,(json.dumps(x,indent=2,ensure_ascii=False)+'\n').encode())
+def check_manifest(n):
+ p=O/n;m=j(n);base=Path(m.get('root',str(p.parent)));v=m.get('files',m.get('members'));assert v is not None
+ rows=[{'path':k,'sha256':h} for k,h in v.items()] if isinstance(v,dict) else v
+ for x in rows:assert sha((base/x['path']).read_bytes())==x['sha256'],(n,x['path'])
+ return {'manifest':ref(n),'members_rehashed':len(rows)}
+subs=[check_manifest(n) for n in ['technical/MANIFEST-v2.json','skeptical/MANIFEST.json','final-assembly/SEAL.json']]
+assembly=j('final-assembly/assessment.json');native=j('native-review-receipt-v2.json');assert native['verdict']=='needs_curation' and native['scientific_review'] is False
+for x in j('REVIEW-CORE-v2.json')['files']:assert sha((O/x['path']).read_bytes())==x['sha256'],x
+for n in ['FROZEN-HEAD-MANIFEST.json','FROZEN-HEAD-SUPPLEMENT-001.json']:
+ for x in j(n)['members']:
+  p=O/'frozen-head'/x['path'];b=os.fsencode(os.readlink(p)) if p.is_symlink() else p.read_bytes();assert sha(b)==x['sha256'];assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==x['git_blob']
+assert subprocess.check_output(['git','--no-optional-locks','rev-parse','HEAD']).decode().strip()=='7cc3c2540fd1b55281c6f5551f13a90a1e7916b1';assert not subprocess.check_output(['git','--no-optional-locks','status','--short']).strip()
+for n in ['native-payload-normalization-independent-v1','promotion-relocation-independent-v1','positive-candidate-current-bridges-v1','tenvit-final-disposition-v1']:
+ T=R/'.temp'/n
+ for x in json.loads((T/'MANIFEST.json').read_bytes())['files']:assert sha((T/x['path']).read_bytes())==x['sha256']
+assert subprocess.check_output(['git','--no-optional-locks','branch','--show-current']).decode().strip()=='review/all-unmatched-w04-source-review-20261107'
+now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+seals=['technical/SEAL-v2.json','skeptical/SEAL.json','final-assembly/SEAL.json']
+selector={'sealed_at':now,'reviewed_head':H,'parent':P,'verdict':'needs_curation','open_major_findings':['REJECTION-CODE-001'],'active_native_pair':{'yaml':ref(native['yaml']),'markdown':ref(native['markdown']),'receipt':ref('native-review-receipt-v2.json')},'active_core':ref('REVIEW-CORE-v2.json'),'report_precision_lineage':ref('NATIVE-REPORT-CLARIFICATION.json'),'finding':ref('FINDINGS-FOR-COORDINATOR.json'),'exact_reproduction':ref('skeptical/actual-w03-path-results.json'),'subreview_seals':[ref(n) for n in seals],'remote_proof':ref('inputs/REMOTE-PR-PROOF.json'),'frozen_manifests':[ref(n) for n in ['FROZEN-HEAD-MANIFEST.json','FROZEN-HEAD-SUPPLEMENT-001.json']],'source_branch':'review/all-unmatched-w04-source-review-20261107','source_branch_unchanged':'7cc3c2540fd1b55281c6f5551f13a90a1e7916b1','scientific_or_campaign_application_approval':False,'do_not_select':['native-review-receipt.json (preserved report v1, use v2)','technical/SEAL.json (preserved packaging draft, use SEAL-v2.json)']};save('FINAL-SELECTOR.json',selector)
+readback={'at':now,'subreview_manifest_verification':subs,'frozen_git_blobs_rehashed':4183,'prior_sealed_members_rehashed':4515,'review_core_v2_all_pins_rehashed':True,'native_pair_hashes_rechecked':True,'own_head':'7cc3c2540fd1b55281c6f5551f13a90a1e7916b1','own_tracked_status':'','reviewed_code_fixed':False,'actual_campaign_applied':False};save('FINAL-READBACK.json',readback)
+hand={'at':now,'task':'Independent adversarial code review of exact PR1205 correction for issue1252 comment6720840145','reviewed_head':H,'parent':P,'operator_sha256':'14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f','tests_sha256':'2ede1b72bd369898f2ed99f093ec0700da404a9a85342ea2f15883e29eb272ce','completion':'completed','verdict':'needs_curation','primary_conclusion':'The narrow UNMAPPED-to-REJECTED predicate is supported; complete application compatibility remains blocked by one confirmed coupled Unicode Git-path parsing defect.','finding':'REJECTION-CODE-001','finding_details':ref('FINDINGS-FOR-COORDINATOR.json'),'authentic_W03_proof':ref('skeptical/actual-w03-path-results.json'),'tests':{'distinct_passed':252,'source_passed_initial':134,'publication_passed_supplemented':118,'initial_failed_run_preserved':True,'initial_fixture_dependency_failure':'11 failed +107 errors from omitted historical producer; exact Git blob supplement; only118 rerun.','prior_helper_test_ASTs_preserved':51,'prior_assertions_preserved':85,'old_test_prefix_bytes':50699,'skeptical_independent_controls':39,'technical_additional_controls':7},'record_stage':{'operations':933,'before_owners':2956,'projected_owners':3550,'kinds':{'edit':272,'promote':67,'create':594},'status':'PASS_RECORD_STAGE_ONLY','new_collision_pairs':0,'not_full_prepare':True},'genuine_W03_private_application':{'generic_unicode':'Prepare passes; exact intended write occurs; apply refuses its own quoted path; failed receipt with recovery_required and authentic beforeimage retained.','R_polymer_ascii':'Prepare, apply and verify_completed pass.','inventory_scope':'Two owners per private fixture, authentic original W03 source/case/head/preimage/payload bindings, mechanical acceptance only.'},'native_pair':selector['active_native_pair'],'authoritative_selector':ref('FINAL-SELECTOR.json'),'independent_reviewers':j('REVIEW-SCOPE.json')['reviewers'],'authorship_disclosure':j('REVIEW-SCOPE.json')['authorship_disclosure'],'subreview_seals':selector['subreview_seals'],'final_readback':ref('FINAL-READBACK.json'),'remote_proof':selector['remote_proof'],'preservation':ref('FINAL-PRESERVATION-READBACK.json'),'limitations':j('REVIEW-SCOPE.json')['limitations'],'coordinator_next_step':'Deduplicate/file the open Unicode finding, direct a bounded literal NUL-delimited path fix, and obtain exact successor tests/review. This reviewer applied no fix and grants no future demotion, scientific, source, owner, role, export or full campaign application approval.','idle_after_seal':True};save('HANDOFF.json',hand)
+md=f'''Independent review of `{H}` (parent `{P}`) is complete: **needs curation**.
+
+The narrow status repair works, but **REJECTION-CODE-001** blocks complete application of the authentic W03 `Poly-ß` retirement. Native preparation passes and writes the intended owner; Git quotes its Unicode path, then the postwrite scope check falsely reports an unrelated change. The failed receipt correctly retains `recovery_required` and the authentic beforeimage. The ASCII W03 peer completes native application and verification.
+
+All 252 distinct tests pass across the preserved 134-source and 118-publication runs. The initial missing private fixture dependency and its exact Git-blob supplement are retained. All 51 prior helper/test ASTs, 85 assertions and the 50,699-byte old test prefix are unchanged. The complete 933-record stage passes against 2,956 beforeowners and 3,550 projected owners; it is not full campaign preparation or scientific approval. There are 39 skeptical controls and seven additional technical controls.
+
+Use [FINAL-SELECTOR.json](FINAL-SELECTOR.json). The active native report is [Markdown]({native['markdown']}) / [YAML]({native['yaml']}). [FINDINGS-FOR-COORDINATOR.json](FINDINGS-FOR-COORDINATOR.json) gives the bounded fix and acceptance checks; [actual W03 proof](skeptical/actual-w03-path-results.json) retains exact source and receipt bindings. The first native report and first technical packaging seal remain preserved; the selector explicitly selects their successors.
+
+Separate reviewers: `/root/assembly_review` (technical), `/root/biological` (skeptical), `/root/correction_chemistry` (final assembly), with W04 `/root` integration. Prior W04 source/candidate authorship is disclosed, with no authorship of the reviewed code. No code fix, maintained application, GitHub mutation, source-branch change, future demotion approval or scientific/role/export approval occurred. All source holds remain.
+
+The remote PR head matched the reviewed commit when captured; later heads are outside this review. W04 remains clean at `7cc3c2540fd1b55281c6f5551f13a90a1e7916b1`; 4,515 prior sealed members, including all 2,903 normalization members, were rehashed unchanged. Root owns issue filing and integration. Idle after this report.
+''';put('HANDOFF.md',md.encode())
+files=[];exclusions=[]
+# Runtime fixtures preserve alias/inode tests and private Git stores. Portable proof is in
+# frozen code, logs, JUnit, receipts, recorded per-fixture inventories and actual W03 bytes.
+for directory,dirs,names in os.walk(O,followlinks=False):
+ base=Path(directory)
+ for name in list(dirs):
+  p=base/name;rel=p.relative_to(O).as_posix()
+  if name in {'.git','__pycache__','.pytest_cache'} or rel=='technical/runtime-fixtures' or p.is_symlink():
+   dirs.remove(name);exclusions.append({'path':rel,'reason':'Retained runtime/Git/cache or aliased directory, not a portable regular-file proof member.'})
+ for name in names:
+  p=base/name;rel=p.relative_to(O).as_posix()
+  if rel in {'MANIFEST.json','SEAL.json'}:continue
+  if p.is_symlink():exclusions.append({'path':rel,'reason':'Symbolic link retained; exact Git archive link target is separately bound where applicable.'});continue
+  if not p.is_file():exclusions.append({'path':rel,'reason':'Nonregular fixture entry retained, not read.'});continue
+  files.append({'path':rel,'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size})
+files.sort(key=lambda x:x['path']);save('MANIFEST.json',{'sealed_at':now,'root':str(O),'reviewed_head':H,'scope':'Portable independent exact-head technical code-review evidence. Original records, prior seals and all runtime fixtures remain preserved. No approval or application.','files':files,'member_count':len(files),'excluded_retained':exclusions,'technical_runtime_inventory':ref('technical/runtime-fixture-inventory.json'),'self_excluded':['MANIFEST.json','SEAL.json']})
+for x in files:assert sha((O/x['path']).read_bytes())==x['sha256'],x['path']
+seal={'sealed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_head':H,'parent':P,'verdict':'needs_curation','completion':'completed','open_major_findings':['REJECTION-CODE-001'],'member_count':len(files),'manifest':ref('MANIFEST.json'),'selector':ref('FINAL-SELECTOR.json'),'handoff':ref('HANDOFF.json'),'handoff_markdown':ref('HANDOFF.md'),'native_pair':selector['active_native_pair'],'all_members_rehashed':True,'own_source_head':'7cc3c2540fd1b55281c6f5551f13a90a1e7916b1','idle':True};save('SEAL.json',seal);print(json.dumps(seal,indent=2))

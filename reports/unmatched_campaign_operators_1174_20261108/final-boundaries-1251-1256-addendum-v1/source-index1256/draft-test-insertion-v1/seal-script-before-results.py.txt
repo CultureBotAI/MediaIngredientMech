@@ -1,0 +1,36 @@
+from pathlib import Path
+import datetime,hashlib,json,re
+D=Path(__file__).resolve().parent
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def read(name):return json.loads((D/name).read_bytes())
+def dump(name,data):
+ with (D/name).open('x') as f:json.dump(data,f,indent=2);f.write('\n')
+checks={}
+for tag in ['focused-v4','combined-v1','ruff-v2','black-v2','mypy-v1']:
+ receipt=read(f'checks/{tag}/receipt.json');assert receipt['exit_code']==0,tag
+ text=(D/f'checks/{tag}/stdout.txt').read_text()+(D/f'checks/{tag}/stderr.txt').read_text()
+ checks[tag]={'receipt':f'checks/{tag}/receipt.json','receipt_sha256':sha(D/f'checks/{tag}/receipt.json'),'exit_code':0,'seconds':receipt['seconds']}
+ if tag.startswith(('focused','combined')):
+  m=re.search(r'(\d+) passed[^\n]*',text);assert m and not re.search(r'\d+ (?:failed|error|skipped)',m.group(0));checks[tag]['summary']=m.group(0);checks[tag]['passed']=int(m.group(1));checks[tag]['skipped']=0
+assert checks['focused-v4']['passed']==53
+assert checks['combined-v1']['passed']==511
+files={n:sha(D/'portable'/n) for n in ['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py']}
+assert files==read('checks/combined-v1/receipt.json')['input_sha256']
+replay=read('original-probe-replay-v1/receipt.json');assert replay['exit_code']==0
+preserve=read('preservation-proof-v2.json')
+for n,h in files.items():assert preserve[n]['after_sha256']==h
+handoff={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'AUTHOR_COMPLETE_PRIVATE_PATCH_PENDING_DISTINCT_REVIEW','issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721304487','finding':'W08-21061-SRC-001','base_commit':read('baseline.json')['commit'],'files':files,'patch':{'path':'source-index1256.patch','sha256':sha(D/'source-index1256.patch'),'private_exact_replay':'PASS'},'checks':checks,'original_four_case_adversarial_replay':{'receipt':'original-probe-replay-v1/receipt.json','sha256':sha(D/'original-probe-replay-v1/receipt.json'),'native_functions_mocked':False,'outcomes':'Clean actual prepare/apply/completed succeeds; initial and post-prepare hidden index plus ordinary working drift refuse before mutation. Hardcoded21061 reviewed_head is historical; actual patched source hash is explicitly recorded.'},'preservation':{'original_tests_exact_byte_prefix':True,'original_tests_count':301,'new_cases':53,'source_only_changed_function':'_check_mutation_git_state','historical_verify_completed_AST_unchanged':True,'proof':'preservation-proof-v2.json','proof_sha256':sha(D/'preservation-proof-v2.json'),'I_K_J_maintained_writes':False},'index_contract':{'all_changed_cached_paths':'Subset of authentic operation source/destination paths, literal NUL, no rename folding, intent-to-add visible','unchanged_baseline_index':'Allowed during native unstaged owner writes','changed_present_entry':'Unique regular stage0 blob; matches actual installed working bytes and authentic before or accepted after digest; mode matches working file','changed_absent_entry':'Only actual absent retired source not in after inventory','operator_stages_or_repairs_index':False,'historical_verifier_current_index_constraint':False},'limits':['Author regression results are not an independent review.','No source science, final-plan acceptance, maintained application or release approval.','Separate publisher residual is not included in this patch.','All prior failed runs and unrun drafting artifacts retained; no original tests altered.','Runtime Git fixtures, complete extracted dependencies, caches and original-probe runtime trees are retained locally but omitted from selected evidence manifest; exact baseline archive is included.']}
+dump('HANDOFF.json',handoff)
+selected=[]
+for p in sorted(D.rglob('*')):
+ if not p.is_file():continue
+ rel=p.relative_to(D);s=str(rel)
+ if rel.parts[0] in {'runtime','__pycache__','.pytest_cache','.ruff_cache','.mypy_cache'}:continue
+ if rel.parts[0]=='portable' and s not in {'portable/'+n for n in files}:continue
+ if rel.parts[0]=='checks' and len(rel.parts)>2 and rel.parts[2]=='openclaw':continue
+ if s in {'MANIFEST.json','SEAL.json'}:continue
+ assert not p.is_symlink(),s
+ selected.append({'path':s,'sha256':sha(p),'bytes':p.stat().st_size})
+dump('MANIFEST.json',{'scope':'Selected concise evidence, not the omitted complete runtime fixture trees','files':selected})
+dump('SEAL.json',{'HANDOFF_sha256':sha(D/'HANDOFF.json'),'MANIFEST_sha256':sha(D/'MANIFEST.json'),'selected_files':len(selected),'selected_bytes':sum(x['bytes'] for x in selected),'frozen':True})
+print(json.dumps(read('SEAL.json'),indent=2))

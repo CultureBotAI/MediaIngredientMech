@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-08T11:19:13.888871+00:00",
+  "reviewer": "/root/boundary_technical",
+  "status": "PASS_WITH_EXPLICIT_LIMITATIONS",
+  "reviewed_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "parent": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "assessment": {
+    "path": "technical/assessment-v1.json",
+    "sha256": "7ed363eb7b0d67f4458592b39f877f57b03d42dae382d366e1c79e2c371c9177"
+  },
+  "source_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+  "tests_sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569",
+  "commands_and_results": [
+    {
+      "path": "technical/author-owner-tests-v1-receipt.json",
+      "sha256": "f0a870706ffae92cbbb2d9a85ae452b2d77dc7941aa12ab66017f8769faae01a"
+    },
+    {
+      "path": "technical/author-publisher-tests-v1-receipt.json",
+      "sha256": "94faa2e735a7132496591c53cd1944a63d2a652542c5777ef63745cf7fcaab59"
+    },
+    {
+      "path": "technical/author-publisher-tests-v2-receipt.json",
+      "sha256": "041a004e9da4f94197bfdbf3d2b35aae0834c9d738b3b0da953711dc027e534d"
+    },
+    {
+      "path": "technical/independent-reduction-v1-run.json",
+      "sha256": "6d5279bd6ddc2fa285905779667f96ff7ebf64b8b4215e91d30a5d8c2ec31ff9"
+    }
+  ],
+  "independent_results": {
+    "path": "technical/independent-reduction-results-v1.json",
+    "sha256": "0f48f17ae6d9c05a0d050080bd285e6c97df980007de9c3ae5122aa90533a6f2"
+  },
+  "historical_sensitivity": {
+    "path": "technical/predecessor-sensitivity-v1.json",
+    "sha256": "c133539e2988449ee2ff9475cf0e1f081c7b401d77361867264a19423d24c045"
+  },
+  "runtime": {
+    "version": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+    "optimize": 0
+  },
+  "findings": [],
+  "fixture_failure_attribution": {
+    "attempt": "author-publisher-tests-v1",
+    "result": "1 failed / 1 error / 116 deselected",
+    "cause": "Root frozen-src extraction omitted tracked reports/sssom_completion_20260921/mapping_changes/make_receipt.py; fail before intended native maker operation.",
+    "remedy": {
+      "path": "technical/publisher-private-overlay-v2.json",
+      "sha256": "0e3c3740264d957cf11c449fd486d5643d06ead6bd3195e8772e698397fabdcd"
+    },
+    "retry": "author-publisher-tests-v2: 2 passed, 116 deselected",
+    "assertions_weakened": false
+  },
+  "counts": {
+    "old_definitions_unchanged": 42,
+    "added_helpers": 2,
+    "added_test_functions": 7,
+    "author_owner_cases_passed": 121,
+    "publisher_cases_passed": 2,
+    "independent_full_pipeline_scenarios": 23,
+    "historical_function_comparisons": 6
+  },
+  "no_maintained_application": true,
+  "scientific_review": false,
+  "whole_owner_role_export_approval": false,
+  "manifest": "MANIFEST.json",
+  "fixture_policy": "Fixture repos/source-copy/cache directories remain durable but outside portable manifest. No .git or credentials scan. Scripts/results/logs and exact helper overlay proof are portable sealed evidence."
+}

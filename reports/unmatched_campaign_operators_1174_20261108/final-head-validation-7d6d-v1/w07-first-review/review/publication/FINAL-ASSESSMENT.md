@@ -1,0 +1,9 @@
+The complete publication operator at `7d6d44ea132e04709f81ebd9e1577643745110ad` passes this bounded technical review, with final whole-repository QC and suite still pending. No new operator finding was confirmed.
+
+The final `1108dd82…` publisher is byte-identical to the complete source reviewed in the preserved preparatory packet. All ten producers used by the 18 passing pure native controls, both CLIs, and final tests match current K and committed blobs. The only existing-test change copies two native review dependencies; the new partial-target negative now asserts the actual native rejection boundary. Existing assertions and parameters remain intact.
+
+The original combined run remains **11 failed / 619 passed**. Author and separate independent repaired-case runs each passed 13 cases. Root independently replayed genuine 27→28 and 27→28→29 receipt histories; this child rehashed their receipt inputs. These are separate checks, not a claim that the final full suite passed.
+
+The reviewed code preserves unselected physical canonical rows, full local identifiers, native source/generation/history replay, the original 34 physical suppression rows and 27 receipts, and admits only the four exact reviewed native events after the actual source/owner/credit and completed passing transition-review bridge. Metadata does not authenticate the reviewer; root must verify actual assignment.
+
+This is implementation review, not a new independent science vote, owner/role/export approval, ancillary1258 approval, or campaign application approval. Parent W07's earlier suppression-science participation is disclosed. No Git-writing fixtures, source application, canonical publication, fixes or shared writes were performed by this child. The preparatory packet and all historical failed attempts remain intact.

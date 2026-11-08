@@ -1,0 +1,86 @@
+{
+  "approval": "NONE",
+  "batch": "issue1174-real-owner-interface",
+  "before": {
+    "baseline": {
+      "path": "reports/fixture/before-baseline.tsv",
+      "sha256": "fbae0a79f49926a9e59a6a890171fe0c863b34216fdb1683f9942d5c3d40644e"
+    },
+    "canonical": {
+      "path": "reports/fixture/before.tsv",
+      "sha256": "45dc3610652ba5deb14ef1df854c647e42050f37304c248ea15b4197014809c8"
+    },
+    "policy": {
+      "path": "reports/fixture/before-policy.json",
+      "sha256": "47d23ad737510850b04f70fc1f4af1a1ed42607c811d11f5b19cbcee0987ca8a"
+    },
+    "sidecar": {
+      "path": "reports/fixture/before-sidecar.tsv",
+      "sha256": "675720ff302b6e852dee454dd9f937a6c6fdcb595998254183c30326ee6ce22a"
+    }
+  },
+  "generation": {
+    "candidate": {
+      "path": "reports/fixture/candidate.tsv",
+      "sha256": "21752668b4bfb901c1e82f6542032ead9e5146e195b55a89f37f763f7a3e3d5b"
+    },
+    "kg_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/late-head-transaction-independent-v1/fixtures/publisher-unchanged/kg",
+    "manifest": {
+      "path": "reports/fixture/generation.json",
+      "sha256": "cf2994c666f9ee44f9a7e827adfed5b35799369cc3705d08b05b01397c535dd1"
+    },
+    "producer_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/late-head-transaction-independent-v1/fixtures/publisher-unchanged/producer",
+    "sidecar": {
+      "path": "reports/fixture/diagnostic-sidecar.tsv",
+      "sha256": "675720ff302b6e852dee454dd9f937a6c6fdcb595998254183c30326ee6ce22a"
+    }
+  },
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1174",
+  "kind": "unmatched_campaign_publication_v1",
+  "native_context": {
+    "reports/sssom_completion_20260921/baseline-mapping-review.json": "dc248ba28a5343b37eeaca7acbbd9952042fcc5b5f8b1e7381d5a470b55c1df8",
+    "reports/sssom_completion_20260921/parent-name-refresh.json": "7b733d83eca0b49bc8c014137487e18f86d45b952ec370fbed30dd2222cc2f9c",
+    "reports/sssom_completion_20260921/trait-synonym-refresh.json": "7b733d83eca0b49bc8c014137487e18f86d45b952ec370fbed30dd2222cc2f9c"
+  },
+  "owner_plan": {
+    "path": "plan.json",
+    "sha256": "dace5f6a3470fc2f283f1b2bf5fe34102eae60e95bea95cd1572db616e8af8c4"
+  },
+  "owner_receipt": {
+    "path": "source-receipt/application.json",
+    "sha256": "a4713344dfd6e18914cd795e6bb0d47ca4ac68753b43f28ca69c50d0f377034e"
+  },
+  "publication_producers": {
+    "scripts/validate_sssom_invariants.py": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303",
+    "src/mediaingredientmech/campaign_publication.py": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+    "src/mediaingredientmech/curate/campaign_owner_apply.py": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+    "src/mediaingredientmech/curate/publication_guard.py": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+    "src/mediaingredientmech/export/reviewed_sssom.py": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2",
+    "src/mediaingredientmech/sssom_metadata.py": "0c5e08a55ff6845959ec84b1f530f9891e361f1a1b16b9f81b42beafb8a20d66",
+    "src/mediaingredientmech/synonym_policy.py": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+    "src/mediaingredientmech/validation/mapping_change_receipts.py": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d"
+  },
+  "receipt_prefix": {},
+  "rows": [
+    {
+      "before_position": 1,
+      "native_position": 1,
+      "owner": "data/ingredients/mapped/Existing.yaml",
+      "preserve_fields": []
+    },
+    {
+      "before_position": null,
+      "native_position": 2,
+      "owner": "data/ingredients/mapped/New.yaml",
+      "preserve_fields": []
+    },
+    {
+      "before_position": null,
+      "native_position": 3,
+      "owner": "data/ingredients/mapped/Stock_curated.yaml",
+      "preserve_fields": []
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Private native interface fixture"
+}

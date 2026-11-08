@@ -1,0 +1,288 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.0.2, pluggy-1.6.0 -- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo
+configfile: pyproject.toml
+plugins: cov-7.0.0, anyio-4.13.0
+collecting ... collected 176 items
+
+tests/test_campaign_publication.py::test_demotion_publisher_policy_receipt_and_completed_replay PASSED [  0%]
+tests/test_campaign_publication.py::test_demotion_generated_identity_or_registry_slot_refused_before_write[CHEBI:1] PASSED [  1%]
+tests/test_campaign_publication.py::test_demotion_generated_identity_or_registry_slot_refused_before_write[kgmicrobe.ingredient:a] PASSED [  1%]
+tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[kind] PASSED [  2%]
+tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[old-path] PASSED [  2%]
+tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[before-hash] PASSED [  3%]
+tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[omitted-row] PASSED [  3%]
+tests/test_campaign_publication.py::test_demotion_must_remove_every_old_subject_slot PASSED [  4%]
+tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[False-before_source_record] PASSED [  5%]
+tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[False-source_record] PASSED [  5%]
+tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[True-before_source_record] PASSED [  6%]
+tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[True-source_record] PASSED [  6%]
+tests/test_campaign_publication.py::test_demotion_retired_source_reappearance_invalidates_completion PASSED [  7%]
+tests/test_campaign_publication.py::test_actual_native_multi_owner_new_promotion_and_source_only_publication PASSED [  7%]
+tests/test_campaign_publication.py::test_dry_run_has_no_outputs PASSED   [  8%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[unknown] PASSED [  9%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[approval] PASSED [  9%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-missing] PASSED [ 10%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-extra] PASSED [ 10%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-owner] PASSED [ 11%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-native] PASSED [ 11%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-preserve] PASSED [ 12%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-position-bool] PASSED [ 13%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[old-policy] PASSED [ 13%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[prefix] PASSED [ 14%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[source-extra] PASSED [ 14%]
+tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[new-suppression] PASSED [ 15%]
+tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[existing-output] PASSED [ 15%]
+tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[symlink-output] PASSED [ 16%]
+tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[hardlink-input] PASSED [ 17%]
+tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[aliased-role] PASSED [ 17%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[candidate-before] PASSED [ 18%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[candidate-after] PASSED [ 18%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[manifest-before] PASSED [ 19%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[manifest-after] PASSED [ 19%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_plan-before] PASSED [ 20%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_plan-after] PASSED [ 21%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_receipt-before] PASSED [ 21%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_receipt-after] PASSED [ 22%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner-before] PASSED [ 22%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner-after] PASSED [ 23%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[receipt_inventory-before] PASSED [ 23%]
+tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[receipt_inventory-after] PASSED [ 24%]
+tests/test_campaign_publication.py::test_changed_policy_history_cannot_be_validated_even_after_hash_restamping PASSED [ 25%]
+tests/test_campaign_publication.py::test_native_receipt_approval_transfer_refused PASSED [ 25%]
+tests/test_campaign_publication.py::test_final_completion_boundary_drift_invalidates_both_success_receipts PASSED [ 26%]
+tests/test_campaign_publication.py::test_promotion_with_native_old_path_history_refused PASSED [ 26%]
+tests/test_campaign_publication.py::test_bad_native_chain_refused PASSED [ 27%]
+tests/test_campaign_publication.py::test_selected_historical_owner_pin_requires_exact_native_bridge PASSED [ 27%]
+tests/test_campaign_publication.py::test_missing_historical_owner_bridge_refused PASSED [ 28%]
+tests/test_campaign_publication.py::test_source_swap_same_bytes_still_refused PASSED [ 28%]
+tests/test_campaign_publication.py::test_late_output_parent_swap_never_writes_replacement_directory PASSED [ 29%]
+tests/test_campaign_publication.py::test_removal_is_traced_and_unrelated_physical_line_preserved PASSED [ 30%]
+tests/test_campaign_publication.py::test_untraced_candidate_cell_cannot_be_written_from_plan PASSED [ 30%]
+tests/test_campaign_publication.py::test_hardlink_created_at_last_replace_is_refused_without_touching_old_inode[canonical] PASSED [ 31%]
+tests/test_campaign_publication.py::test_hardlink_created_at_last_replace_is_refused_without_touching_old_inode[policy] PASSED [ 31%]
+tests/test_campaign_publication.py::test_hidden_receipt_addition_after_completion_replay_is_rejected PASSED [ 32%]
+tests/test_campaign_publication.py::test_sidecar_reattribution_is_refused_even_with_unchanged_canonical PASSED [ 32%]
+tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[../outside] PASSED [ 33%]
+tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[/absolute] PASSED [ 34%]
+tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[a//b] PASSED [ 34%]
+tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[a/./b] PASSED [ 35%]
+tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[a\\b] PASSED [ 35%]
+tests/test_campaign_publication.py::test_actual_owner_writer_checkpoint_survives_native_mapping_publication PASSED [ 36%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-owner-False] PASSED [ 36%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-owner-True] PASSED [ 37%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-checkpoint-False] PASSED [ 38%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-checkpoint-True] PASSED [ 38%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-protected_snapshot-False] PASSED [ 39%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-protected_snapshot-True] PASSED [ 39%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-owner-False] PASSED [ 40%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-owner-True] PASSED [ 40%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-checkpoint-False] PASSED [ 41%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-checkpoint-True] PASSED [ 42%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-protected_snapshot-False] PASSED [ 42%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-protected_snapshot-True] PASSED [ 43%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-owner-False] PASSED [ 43%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-owner-True] PASSED [ 44%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-checkpoint-False] PASSED [ 44%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-checkpoint-True] PASSED [ 45%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-protected_snapshot-False] PASSED [ 46%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-protected_snapshot-True] PASSED [ 46%]
+tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_receipt_membership PASSED [ 47%]
+tests/test_campaign_publication.py::test_policy_beforeimage_cannot_escape_source_protected_checkpoint PASSED [ 47%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-0] PASSED [ 48%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-1] PASSED [ 48%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-2] PASSED [ 49%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-3] PASSED [ 50%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-0] PASSED [ 50%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-1] PASSED [ 51%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-2] PASSED [ 51%]
+tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-3] PASSED [ 52%]
+tests/test_campaign_publication.py::test_1195_publication_producer_pins_are_closed_and_loaded[missing] PASSED [ 52%]
+tests/test_campaign_publication.py::test_1195_publication_producer_pins_are_closed_and_loaded[extra] PASSED [ 53%]
+tests/test_campaign_publication.py::test_1195_publication_producer_pins_are_closed_and_loaded[stale] PASSED [ 53%]
+tests/test_campaign_publication.py::test_1195_replaced_loaded_dependency_rejected_at_late_boundary PASSED [ 54%]
+tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{"approval":"NONE","approval":"SUPPORTED"}] PASSED [ 55%]
+tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{"value":NaN}] PASSED [ 55%]
+tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{"value":Infinity}] PASSED [ 56%]
+tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{"value":-Infinity}] PASSED [ 56%]
+tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[False-False] PASSED [ 57%]
+tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[False-True] PASSED [ 57%]
+tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[True-False] PASSED [ 58%]
+tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[True-True] PASSED [ 59%]
+tests/test_campaign_publication.py::test_1200_unowned_prior_alias_is_preserved_without_scope_expansion PASSED [ 59%]
+tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard] FAILED [ 60%]
+
+=================================== FAILURES ===================================
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0')
+dependency = 'mediaingredientmech.curate.publication_guard', stale_pin = False
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...stic-v1/fixtures/test_1195_preloaded_public_dep0/workspace', 'mediaingredientmech.curate.publication_guard', 'False'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...iginal-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/workspace', 'mediaingredientmech.curate.publication_guard', 'False']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+=============================== warnings summary ===============================
+../../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard] - subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/original-publication-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/workspace', 'mediaingredientmech.curate.publication_guard', 'False']' returned non-zero exit status 1.
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+================= 1 failed, 105 passed, 12 warnings in 37.50s ==================

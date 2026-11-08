@@ -1,0 +1,7 @@
+The complete source operator is technically supported at published head `7d6d44ea132e04709f81ebd9e1577643745110ad` within its source-only contract. Its source hash remains `c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52`, and all 11 producers plus the source tests, CLI, helpers and contracts used by this review exactly match the committed final bytes. The 20 review domains and 36 top-level functions/classes from the preserved preparatory review remain applicable through explicit byte continuity.
+
+No new confirmed source-operator finding was found. Thirty pure/read-only controls passed; a fresh read-only logical-index/HEAD check at the final head also passed. The 382 source test cases were collected, not executed here. Root audits actual native execution and assertion preservation separately. The original combined 11-failure run is retained and is not a pass. Full committed-head QC and suite remain pending.
+
+The operator binds exact case/proposal/origin/review artifacts and root acceptance; it does not turn their hashes into scientific approval. Ancillary #1258 remains a separate transaction. W07's previous scientific participation is disclosed and supplies no new independent science vote in this technical review. No source application, canonical publication, role/export approval or campaign acceptance is granted.
+
+The old preparatory publisher copy is explicitly excluded from the final source selector. The changed publication operator has its own independent review lane. The preparatory packet is unchanged byte-for-byte.

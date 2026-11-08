@@ -1,0 +1,228 @@
+diff --git a/src/mediaingredientmech/campaign_publication.py b/src/mediaingredientmech/campaign_publication.py
+index 968b4c05a..da3091286 100644
+--- a/src/mediaingredientmech/campaign_publication.py
++++ b/src/mediaingredientmech/campaign_publication.py
+@@ -265,6 +265,28 @@ def row_projection(
+     require(
+         len(old_slots) == len(old) and len(new_slots) == len(generated), "ambiguous native row slot"
+     )
++    for record in records:
++        if record["shape"] == "demotion":
++            previous = relative(record["before_source_record"])
++            destination = relative(record["source_record"])
++            require(
++                record.get("kind") == "demote"
++                and PurePosixPath(previous).parent == PurePosixPath("data/ingredients/mapped")
++                and PurePosixPath(destination).parent == PurePosixPath("data/ingredients/unmapped")
++                and PurePosixPath(previous).name == PurePosixPath(destination).name
++                and subject(previous) == subject(destination)
++                and record["before_yaml_sha256"] is not None,
++                "demotion requires authentic same-subject mapped-to-unmapped relocation",
++            )
++            demoted_subject = subject(destination)
++            require(
++                any(key[0] == demoted_subject for key in old_slots),
++                "demotion has no canonical subject slots to remove",
++            )
++            require(
++                not any(key[0] == demoted_subject for key in new_slots),
++                "native generation retained a demoted subject or registry slot",
++            )
+     expected = {}
+     for key in old_slots.keys() | new_slots.keys():
+         if key[0] in subject_owners:
+@@ -462,7 +484,7 @@ def _capture_source_completion(capture: Capture, proof: dict) -> None:
+         capture.checks.append(snapshot_recheck)
+ 
+     for record in proof["records"]:
+-        if record["shape"] == "promotion":
++        if record["shape"] in {"promotion", "demotion"}:
+             old_path = member(root, relative(record["before_source_record"]))
+             require(not os.path.lexists(old_path), "retired source reappeared")
+             capture.absent.add(old_path)
+@@ -495,15 +517,15 @@ def _receipt(
+                 "verification",
+             )
+         }
+-        if owner["shape"] == "promotion":
++        if owner["shape"] in {"promotion", "demotion"}:
+             previous = relative(owner["before_source_record"])
+             require(
+                 not proof["owner_chains"].get(previous),
+-                "promotion old path has native owner-chain history; migration review required",
++                f"{owner['shape']} old path has native owner-chain history; migration review required",
+             )
+             require(
+                 not proof["owner_chains"].get(owner["source_record"]),
+-                "promotion destination has native owner-chain history; migration review required",
++                f"{owner['shape']} destination has native owner-chain history; migration review required",
+             )
+             record["before_source_record"] = previous
+         records.append(record)
+diff --git a/tests/test_campaign_publication.py b/tests/test_campaign_publication.py
+index c79f10cff..ea17b516b 100644
+--- a/tests/test_campaign_publication.py
++++ b/tests/test_campaign_publication.py
+@@ -286,6 +286,162 @@ def save(case):
+     case["path"].write_bytes(c.encoded(case["plan"]))
+ 
+ 
++def demotion_case(case):
++    """Isolate publisher boundaries; the separate integration uses real source proof."""
++    root, plan = case["root"], case["plan"]
++    old = "data/ingredients/mapped/A.yaml"
++    destination = "data/ingredients/unmapped/A.yaml"
++    (root / old).unlink()
++    raw = b"identifier: UNMAPPED_0002\npreferred_term: A\nmapping_status: AMBIGUOUS\n"
++    put(root, destination, raw)
++    record = case["records"][0]
++    record.update(
++        kind="demote",
++        shape="demotion",
++        before_source_record=old,
++        source_record=destination,
++        source_path=old,
++        destination_path=destination,
++        after_yaml_sha256=c.sha(raw),
++    )
++    after = case["owner_proof"]["after_inventory"]
++    after.clear()
++    after.update(inventory(root))
++    candidate_ref = plan["generation"]["candidate"]
++    _, _, rows, _ = c.table((root / candidate_ref["path"]).read_bytes())
++    candidate = sssom([r for r in rows if r["subject_id"] != "MIM:A"])
++    put(root, candidate_ref["path"], candidate)
++    candidate_ref["sha256"] = c.sha(candidate)
++    plan["rows"][0].update(owner=destination, native_position=None, preserve_fields=[])
++    plan["rows"][1]["native_position"] = 1
++    plan["rows"][2]["native_position"] = 2
++    save(case)
++    return case
++
++
++def test_demotion_publisher_policy_receipt_and_completed_replay(case):
++    demotion_case(case)
++    root, plan = case["root"], case["plan"]
++    before_policy = json.loads((root / c.POLICY).read_bytes())
++    unrelated_line = c.table(case["before"])[3][1]
++    assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
++    assert c.validate(root, case["path"])["status"] == "verified"
++    chain = native.verify_mapping_chain(root)
++    record = chain["receipts"][-1]["records"][0]
++    assert record["shape"] == "demotion"
++    assert record["before_source_record"] == "data/ingredients/mapped/A.yaml"
++    assert record["source_record"] == "data/ingredients/unmapped/A.yaml"
++    assert record["before_yaml_sha256"] == c.sha(b"old A")
++    assert chain["receipts"][-1]["removed_rows"] == 1
++    assert chain["receipts"][-1]["position_map"] == [None, 1]
++    assert not any(r["subject_id"] == "MIM:A" for r in chain["state"])
++    assert c.table((root / c.SOURCE).read_bytes())[3][0] == unrelated_line
++    policy = json.loads((root / c.POLICY).read_bytes())
++    assert policy["source_owner_sha256"] == before_policy["source_owner_sha256"]
++    assert policy["source_alias_addition_updates"] == before_policy["source_alias_addition_updates"]
++    assert policy[c.UPDATE][-1]["records"][0]["kind"] == "demote"
++    assert policy[c.UPDATE][-1]["owner_plan"] == plan["owner_plan"]
++
++
++@pytest.mark.parametrize("target", ["CHEBI:1", "kgmicrobe.ingredient:a"])
++def test_demotion_generated_identity_or_registry_slot_refused_before_write(case, target):
++    demotion_case(case)
++    root, plan = case["root"], case["plan"]
++    ref = plan["generation"]["candidate"]
++    rows = c.table((root / ref["path"]).read_bytes())[2]
++    put(root, ref["path"], sssom(rows + [row("A", target)]))
++    ref["sha256"] = c.sha((root / ref["path"]).read_bytes())
++    save(case)
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY, c.SIDECAR, c.BASELINE)}
++    with pytest.raises(ValueError, match="native generation retained a demoted"):
++        c.publish(root, case["path"], case["out"], apply=True)
++    assert {p: (root / p).read_bytes() for p in before} == before
++    assert not list(case["out"].iterdir())
++
++
++@pytest.mark.parametrize("mutation", ["kind", "old-path", "before-hash", "omitted-row"])
++def test_demotion_explicit_relocation_and_complete_removal_required(case, mutation):
++    demotion_case(case)
++    record = case["records"][0]
++    if mutation == "kind":
++        record["kind"] = "edit"
++    elif mutation == "old-path":
++        record["before_source_record"] = "data/ingredients/mapped/Renamed.yaml"
++    elif mutation == "before-hash":
++        record["before_yaml_sha256"] = None
++    else:
++        case["plan"]["rows"].pop(0)
++    save(case)
++    before = (case["root"] / c.SOURCE).read_bytes()
++    expected = (
++        "selected historical owner pin lacks native bridge"
++        if mutation == "before-hash"
++        else "demotion requires|does not cover every"
++    )
++    with pytest.raises(ValueError, match=expected):
++        c.publish(case["root"], case["path"], case["out"], apply=True)
++    assert (case["root"] / c.SOURCE).read_bytes() == before
++    assert not list(case["out"].iterdir())
++
++
++def test_demotion_must_remove_every_old_subject_slot(case):
++    demotion_case(case)
++    record = case["records"][0]
++    before = sssom([row("A"), row("A", "kgmicrobe.ingredient:a"), row("Other")])
++    candidate = sssom([row("Other")])
++    removal = {
++        "owner": record["source_record"],
++        "before_position": 1,
++        "native_position": None,
++        "preserve_fields": [],
++    }
++    with pytest.raises(ValueError, match="does not cover every"):
++        c.row_projection(before, candidate, [record], [removal])
++    after, trace = c.row_projection(
++        before, candidate, [record], [removal, {**removal, "before_position": 2}]
++    )
++    assert c.table(after)[2] == c.table(candidate)[2]
++    assert all(t["after"] is None for t in trace)
++    assert c.table(after)[3] == c.table(before)[3][2:]
++
++
++@pytest.mark.parametrize("path_role", ["before_source_record", "source_record"])
++@pytest.mark.parametrize("completed", [False, True])
++def test_demotion_either_preceding_native_owner_chain_refused(case, path_role, completed):
++    demotion_case(case)
++    root = case["root"]
++    if completed:
++        c.publish(root, case["path"], case["out"], apply=True)
++    proof = native.verify_mapping_chain(root)
++    if completed:
++        proof["receipts"] = proof["receipts"][:-1]
++        proof["receipt_paths"] = proof["receipt_paths"][:-1]
++        proof["receipt_inputs"] = {}
++    # This unit isolates the publisher's own defensive chain check. The
++    # integration suite exercises actual source/native receipt proof replay.
++    owner_path = case["records"][0][path_role]
++    proof["owner_chains"][owner_path] = [{"before_sha256": "a" * 64, "after_sha256": "b" * 64}]
++    prepared_after = sssom([row("Unrelated", "CHEBI:9")])
++    with pytest.raises(ValueError, match="demotion.*native owner-chain history"):
++        c._receipt(
++            proof,
++            c._maker(c.Capture(root)),
++            case["plan"],
++            case["records"],
++            case["before"],
++            prepared_after,
++        )
++
++
++def test_demotion_retired_source_reappearance_invalidates_completion(case):
++    demotion_case(case)
++    root = case["root"]
++    c.publish(root, case["path"], case["out"], apply=True)
++    put(root, "data/ingredients/mapped/A.yaml", b"restored: old-source\n")
++    with pytest.raises(ValueError, match="fixture owner membership/bytes changed"):
++        c.validate(root, case["path"])
++
++
+ def source_snapshots(root, proof):
+     for key in ("checkpoint", "protected_snapshot"):
+         snapshot = proof[key]

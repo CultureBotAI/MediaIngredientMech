@@ -1,0 +1,131 @@
+"""Bounded accounting of immutable original and repaired fixture runs; no tests run."""
+from pathlib import Path
+import argparse
+import collections
+import hashlib
+import json
+import re
+
+BINDINGS_SHA256 = '80f4e6f5c29c63a6919331d830a626e406dd5da2fb33f0bd99e789cbd2beb6cf'
+SOURCE = 'src/mediaingredientmech/curate/campaign_owner_apply.py'
+PUBLISHER = 'src/mediaingredientmech/campaign_publication.py'
+PUBLICATION_TEST = 'tests/test_campaign_publication.py'
+REVIEW_TEST = 'tests/test_campaign_suppressions.py'
+PRELOAD = PUBLICATION_TEST + '::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution'
+REVIEW = REVIEW_TEST + '::test_completed_native_review_requires_full_actual_transition_scope'
+DEPS = ['mediaingredientmech.curate.publication_guard', 'mediaingredientmech.validation.mapping_change_receipts', 'mediaingredientmech.export.reviewed_sssom', 'mediaingredientmech.sssom_metadata', 'mediaingredientmech.synonym_policy']
+DEPENDENCY_FAILURES = {f'{PRELOAD}[{flag}-{dep}]' for flag in ['False', 'True'] for dep in DEPS}
+EXPECTED_FAILURES = DEPENDENCY_FAILURES | {REVIEW + '[partial-reviewed-targets]'}
+EXPECTED_REPAIRED = DEPENDENCY_FAILURES | {REVIEW + '[' + p + ']' for p in ['required-not-applicable', 'partial-coverage', 'partial-reviewed-targets']}
+GROUPS = {'tests/test_campaign_owner_apply.py':382, PUBLICATION_TEST:176, 'tests/test_campaign_demotion_integration.py':20, REVIEW_TEST:42, 'tests/test_campaign_suppression_integration.py':10}
+sha = lambda b: hashlib.sha256(b).hexdigest()
+
+class AccountingError(ValueError):
+    pass
+
+def require(condition, message):
+    if not condition:
+        raise AccountingError(message)
+
+def load_inputs(root):
+    raw=(root/'BINDINGS.json').read_bytes()
+    require(sha(raw)==BINDINGS_SHA256, 'input binding manifest mismatch')
+    binding=json.loads(raw)
+    result={}
+    for item in binding['files']:
+        name=item['name']
+        require(Path(name).name==name and name not in result, 'unsafe or duplicate input name')
+        p=root/name
+        require(not p.is_symlink() and p.is_file(), 'input is not a regular capture')
+        b=p.read_bytes()
+        require(sha(b)==item['sha256'] and len(b)==item['bytes'], 'input hash/size mismatch: '+name)
+        result[name]=b
+    return result
+
+def summary(text):
+    lines=[l for l in text.splitlines() if re.match(r'^\d+ (failed|passed)', l)]
+    require(len(lines)==1, 'missing or ambiguous final summary')
+    match=re.fullmatch(r'([a-z0-9, ]+) in [0-9.]+s(?: \([^\n]*\))?', lines[0])
+    require(match is not None, 'unrecognized final summary')
+    counts={}
+    for item in match.group(1).split(', '):
+        part=re.fullmatch(r'(\d+) ([a-z]+)',item)
+        require(part is not None, 'malformed status count')
+        n,status=part.groups()
+        require(status not in counts,'duplicate status count')
+        counts[status]=int(n)
+    return counts
+
+def audit(data):
+    """Semantic validation also exposed to negative controls; CLI first pins all bytes."""
+    j=lambda n:json.loads(data[n])
+    text=lambda n:data[n].decode('utf-8')
+    old=j('original-run.json');fixed=j('corrected-run.json');col=j('collection.json');proof=j('trace-result.json')
+    for run,name,code in [(old,'original-run.log',1),(fixed,'corrected-run.log',0)]:
+        require(type(run['exit_code']) is int and run['exit_code']==code,'incorrect actual run exit code')
+        require(run['before']==run['after'],'run input drift')
+        require(run['log_sha256']==sha(data[name]),'receipt/log mismatch')
+        require(run['started_at']<run['ended_at'],'run is not completed')
+    require(old['ended_at']<fixed['started_at'],'repair run does not follow original completion')
+    require(summary(text('original-run.log'))=={'failed':11,'passed':619,'warnings':12},'original run is not exactly619PASS11FAIL')
+    require(summary(text('corrected-run.log'))=={'passed':13,'warnings':12},'repaired run is not exactly13PASS')
+    require(col['exit_code']==0 and col['stdout_sha256']==sha(data['collection.log']),'collection receipt mismatch')
+    ids=[l for l in text('collection.log').splitlines() if l.startswith('tests/') and '::' in l]
+    require(len(ids)==630 and len(set(ids))==630,'incorrect or duplicate collected membership')
+    require(dict(collections.Counter(i.split('::')[0] for i in ids))==GROUPS,'wrong collected test groups')
+    require([a for a in old['argv'] if a in GROUPS]==list(GROUPS),'original run test selection differs')
+    failed=re.findall(r'^FAILED (tests/\S+)\s*$',text('original-run.log'),re.M)
+    require(len(failed)==11 and len(set(failed))==11 and set(failed)==EXPECTED_FAILURES,'wrong failed node membership')
+    require(set(failed)<=set(ids),'failed node absent from collected inputs')
+    require(set(i for i in ids if i.startswith(PRELOAD+'[') or i.startswith(REVIEW+'['))==EXPECTED_REPAIRED,'wrong corrected node membership')
+    require([a for a in fixed['argv'] if a.startswith('tests/')] == [PRELOAD,REVIEW],'incorrect corrected run selector')
+    require(not re.search(r'^FAILED ',text('corrected-run.log'),re.M),'unexpected repaired failure node')
+    require(all(old['before'][p]==fixed['before'][p] for p in old['before'] if p not in [PUBLICATION_TEST,REVIEW_TEST]),'unrelated input changed across fixture repair')
+    diff=j('fixture-diff-proof.json')
+    require(diff['exact_author_diff'] is True,'fixture diff proof is not exact')
+    for row in diff['checks']:
+        require(row['before_sha256']==old['before'][row['path']] and row['after_sha256']==fixed['before'][row['path']],'fixture proof/input mismatch')
+        require(row['all_assert_nodes_exact'] is True and row['all_function_parameter_decorators_exact'] is True,'fixture assertions or parameters changed')
+    require({r['path'] for r in diff['checks']}==set(GROUPS),'incomplete fixture preservation scope')
+    require(proof['frozen_inputs_unchanged'] is True and proof['old_test_bytes_preserved'] is True,'trace lacks frozen input continuity')
+    require(proof['test_file_sha256']==old['before'][PUBLICATION_TEST]==sha(data['trace-test-before.py.txt']),'trace test input mismatch')
+    require(proof['inputs'][old['cwd']+'/'+PUBLISHER]==old['before'][PUBLISHER]==sha(data['trace-publisher.py.txt']),'trace publisher input mismatch')
+    require(old['before'][SOURCE]==sha(data['trace-source-operator.py.txt']),'trace source operator input mismatch')
+    runs=[r for r in proof['runs'] if r['name']=='frozen-import-full-trace']
+    require(len(runs)==1,'ambiguous complete traceback provenance')
+    trace_run=runs[0]
+    require(trace_run['exit_code']==1 and trace_run['stderr_sha256']==sha(data['full-trace.stderr']),'trace receipt mismatch')
+    require(old['started_at']<=trace_run['started_at']<trace_run['ended_at']<=old['ended_at'],'trace timing outside authentic original run')
+    trace=text('full-trace.stderr')
+    require(trace.startswith('Traceback (most recent call last):\n'),'incomplete traceback')
+    missing=trace_run['cwd']+'/scripts/record_review.py'
+    require(trace.rstrip().endswith("FileNotFoundError: [Errno 2] No such file or directory: '"+missing+"'"),'trace is for a different failure/input')
+    require(trace_run['cwd']+'/'+PUBLISHER in trace and trace_run['cwd']+'/'+SOURCE in trace,'trace source scope mismatch')
+    require({r['path'] for r in proof['missing_files'] if r['absent_in_failed_fixture'] is True}=={'scripts/record_review.py','schema/record_review.yaml'},'missing dependency scope mismatch')
+    boundary='completed review has explicitly selected targets left unreviewed'
+    require(boundary in text('original-run.log'),'native partial-target boundary evidence missing')
+    issue=j('issue-receipt.json');finding=j('finding.json')
+    require(issue['finding']==finding['finding_id']=='W07-OPERATOR-LOG-AUDIT-001','wrong finding receipt')
+    require(issue['finding_sha256']==sha(data['finding.json']) and issue['body_sha256']==sha(data['issue-body.md']),'issue/finding body mismatch')
+    require(issue['readback_verified'] is True,'issue is not GET verified')
+    comments=[c for c in j('issue-GET.json')['comments'] if c['url']==issue['url']]
+    require(len(comments)==1 and comments[0]['body']==text('issue-body.md'),'actual GET body mismatch')
+    causes=[dict(node_id=n,scope='shared isolated fixture import failure',support='Preserved complete single-case diagnostic with exact original test/publisher/source inputs; not an individual new traceback for this node.') for n in sorted(DEPENDENCY_FAILURES)]
+    causes.append(dict(node_id=REVIEW+'[partial-reviewed-targets]',scope='Native review rejects incomplete target coverage at an earlier boundary',support=boundary))
+    return dict(original_combined=dict(status='FAILED',passed=619,failed=11,skipped=0,total=630,failure_node_ids=sorted(failed),causes=causes),corrected_affected=dict(status='PASSED',passed=13,failed=0,skipped=0,total=13,node_ids=sorted(EXPECTED_REPAIRED),already_passing_in_original=2),collection=dict(status='COLLECTION_ONLY',total=630,groups=GROUPS),original_native_integration=dict(original=20,new=10,passed=30,failed=0,skipped=0,scope='Original completed630case run only; no final clean suite or new source/application execution.'),full_suite=dict(status='NOT_ASSESSED_BY_THIS_ACCOUNTING',scope='Separate actual completed final-head receipt required; never derive a full-suite pass from619+13.'),trace_scope='One authentic preserved complete original diagnostic supports the shared fixture cause for ten failed nodes. No exception-class requirement in abbreviated pytest repr.',approval='NONE')
+
+def check_claim(actual, claim):
+    require(actual==claim,'claimed accounting differs from actual checked runs')
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--inputs',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--claim',type=Path)
+    args=p.parse_args();root=Path(__file__).resolve().parents[1]
+    require(args.out.resolve().is_relative_to(root),'output outside new private addendum')
+    actual=audit(load_inputs(args.inputs))
+    if args.claim:check_claim(actual,json.loads(args.claim.read_text()))
+    with args.out.open('x') as f:json.dump(actual,f,indent=2);f.write('\n')
+    print(json.dumps({'original':'619PASS11FAIL','corrected':'13PASS','full_suite':'separate_unassessed','out':str(args.out)}))
+
+if __name__=='__main__':
+    try:main()
+    except AccountingError as exc:raise SystemExit('REFUSED: '+str(exc))

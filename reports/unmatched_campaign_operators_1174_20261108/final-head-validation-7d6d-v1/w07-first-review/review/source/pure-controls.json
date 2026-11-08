@@ -1,0 +1,200 @@
+{
+  "reviewer": "/root/operator_source_technical",
+  "executed_at": "2026-11-08T13:43:01.965269+00:00",
+  "runtime": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+  "executable": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+  "source_operator_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+  "observed_code_head": "e0a75a0c48ba539426b1f70623ea376c7b379ecf",
+  "final_committed_head_review": false,
+  "scope": "Pure/native read-only controls only. No native apply/prepare or Git-writing test fixtures execute. Original native unit/integration test results are audited separately from actual root receipts.",
+  "results": [
+    {
+      "name": "closed-extra-plan",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in plan"
+    },
+    {
+      "name": "closed-missing-plan",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in plan"
+    },
+    {
+      "name": "closed-extra-acceptance",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in acceptance"
+    },
+    {
+      "name": "closed-missing-acceptance",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in acceptance"
+    },
+    {
+      "name": "closed-extra-record",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in record"
+    },
+    {
+      "name": "closed-missing-record",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in record"
+    },
+    {
+      "name": "closed-extra-origin",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in origin"
+    },
+    {
+      "name": "closed-missing-origin",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in origin"
+    },
+    {
+      "name": "closed-extra-binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in binding"
+    },
+    {
+      "name": "closed-missing-binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in binding"
+    },
+    {
+      "name": "closed-extra-demotion review",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in demotion review"
+    },
+    {
+      "name": "closed-missing-demotion review",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unexpected fields in demotion review"
+    },
+    {
+      "name": "JSON-duplicate-key",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Duplicate JSON key"
+    },
+    {
+      "name": "YAML-duplicate-key",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Duplicate YAML key"
+    },
+    {
+      "name": "relative-'/absolute.yaml'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Noncanonical relative path"
+    },
+    {
+      "name": "relative-'../escape.yaml'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Noncanonical relative path"
+    },
+    {
+      "name": "relative-'data/../escape.yaml'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Noncanonical relative path"
+    },
+    {
+      "name": "relative-'a\\\\b'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Noncanonical relative path"
+    },
+    {
+      "name": "relative-'a//b'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Noncanonical relative path"
+    },
+    {
+      "name": "index-invalid-b'not-null-terminated'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Malformed logical Git index"
+    },
+    {
+      "name": "index-invalid-b'\\x00'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Malformed logical Git index"
+    },
+    {
+      "name": "index-invalid-b'100644 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 4\\tx\\x00'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Malformed logical Git index entry"
+    },
+    {
+      "name": "index-invalid-b'100644 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0\\tx\\x00'",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Malformed logical Git index entry"
+    },
+    {
+      "name": "literal-Unicode-tab-newline-index",
+      "actual": "passed",
+      "path": "data/ingredients/unmapped/Poly-ß-\tnewline\nowner.yaml"
+    },
+    {
+      "name": "actual-K-read-only-live-state",
+      "result": "passed",
+      "head": "e0a75a0c48ba539426b1f70623ea376c7b379ecf",
+      "index_before_sha256": "4ed827320580b05fcea45213fdf9ef3a576cc56f3d4fb59f96a6a52b6376709b",
+      "index_after_sha256": "4ed827320580b05fcea45213fdf9ef3a576cc56f3d4fb59f96a6a52b6376709b",
+      "logical_entries": 14725,
+      "writes": false,
+      "scope": "Direct actual K read-only observation. If root advances concurrently, a refusal is recorded without calling it a product defect."
+    },
+    {
+      "name": "pure-coherent-clean-index",
+      "actual": "passed",
+      "mode": "Injected immutable command outputs; no Git mutation claim."
+    },
+    {
+      "name": "pure-captured-invalid-hidden-between-snapshots",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Cached path view differs from captured Git index"
+    },
+    {
+      "name": "pure-late-index-change",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Git index changed during live source check"
+    },
+    {
+      "name": "pure-late-HEAD-change",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Integration HEAD changed during source application"
+    },
+    {
+      "name": "pure-unrelated-cached-path",
+      "expected": "reject",
+      "actual": "rejected",
+      "reason": "Unrelated staged file changed"
+    }
+  ],
+  "all_expected_controls_passed": true,
+  "failures": [],
+  "limitations": [
+    "These response-injection controls are not the real Git mutations exercised by existing native integration tests.",
+    "No scientific review, root acceptance, source application, mapping admission or export approval."
+  ]
+}

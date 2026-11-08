@@ -1,0 +1,55 @@
+{
+  "id": "W02-ARCHIVE-REVIEWER-GRAPHQL-001",
+  "at": "2026-11-08T14:07:39.287358+00:00",
+  "reporter": "/root/final_reviewer",
+  "status": "CONFIRMED_UNUSED_REVIEWER_HELPER_ASSUMPTION_REPORTED_NO_FIX_REQUESTED",
+  "severity": "minor_private_reviewer_harness",
+  "scope": "Unnecessary duplicate post-filing pair recheck helper only. No original archive, published finding, C independent pair review or maintained operator defect.",
+  "helper": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/recheck_numbered_pairs_post_filing_v1.py",
+    "sha256": "73b95f81fee288dfd96d35face52bbcba8914441b82b086850aa1bf040ef3cf3",
+    "bytes": 5838
+  },
+  "reproduction": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 ../../../.temp/all-unmatched-worker-02/venv/bin/python -B recheck_numbered_pairs_post_filing_v1.py",
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic",
+    "tool_chunk": "2d5b63",
+    "exit_code": 1,
+    "line": 32,
+    "exception": "AssertionError: len(matches)==1 and exactbody; no post-filing result emitted and no native pair execution reached."
+  },
+  "cause": "Helper expects REST numeric id6722465798/created_at. Saved gh issue view JSON has comments/state; matching comment uses GraphQL idIC_kwDORhCjFc8AAAABkLCwBg, URL ending#issuecomment-6722465798 and createdAt. Exact saved body matches. This is a reviewer format assumption, not a missing or invalid filing.",
+  "read_only_diagnosis": {
+    "tool_chunk": "e21577",
+    "actual_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1254#issuecomment-6722465798",
+    "actual_createdAt": "2026-11-08T14:05:18Z",
+    "body_exact": true,
+    "saved_GET": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w02-v3-checker-findings-publication-v1/after.json",
+      "sha256": "59bc6b6d94e6492aa02fa472ea0e899346cf6468f58294e4bc1fe75312cfb13b",
+      "bytes": 15462
+    },
+    "body": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w02-v3-checker-findings-publication-v1/body.md",
+      "sha256": "cb6443f68fd3d794f77ab24a7e367a1db8654356a97adbab105d606790850711",
+      "bytes": 2206
+    },
+    "receipt": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w02-v3-checker-findings-publication-v1/receipt.json",
+      "sha256": "b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f",
+      "bytes": 655
+    }
+  },
+  "chronology": [
+    "Root receipt authorized bounded post-filing review.",
+    "Reviewer wrote and attempted unnecessary duplicate own recheck; refused before native pairs.",
+    "Reviewer immediately reported refusal and diagnosed field shape read-only.",
+    "Root directed no correction/rerun; distinct C actual post-filing six-pair/six-refusal evidence already suffices.",
+    "This helper and failure remain immutable, excluded from acceptance evidence. No dependent correction is requested."
+  ],
+  "corrected": false,
+  "rerun": false,
+  "replacement_scope": "Use distinct C native/numbered-pair-fix-review-v1.json f4cd83e6ea7e84f79912aeff784737f50e960e71b639bd2893f2e2af5f64a808 and rootchecker-filing-readback1e7bfc5d..., independently read as actual evidence, not this failed helper.",
+  "scientific_review": false,
+  "source_or_operator_changes": false
+}

@@ -1,0 +1,145 @@
+{
+  "status": "SEALED_AUTHOR_PRIVATE_FIX_PENDING_DISTINCT_REVIEW_AND_ROOT_PUBLICATION",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1257",
+  "receipt_alignment_addendum": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1257#issuecomment-6721685098",
+  "files": {
+    "src/mediaingredientmech/campaign_publication.py": "9df83185a1c4ac4e0aa9b6497138a9923841bb3b9fe656671ac905987bc2d5f1",
+    "tests/test_campaign_publication.py": "d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa"
+  },
+  "patch_sha256": "9c912f35bae7037982151c470b4aad16185f6f86caa12c89b364c1c75c8f7309",
+  "original_test_functions_unchanged": 58,
+  "original_test_file_exact_prefix": true,
+  "changed_existing_publisher_functions": [
+    "slot",
+    "_receipt"
+  ],
+  "new_publisher_functions": [
+    "_align_rows"
+  ],
+  "focused_new_cases": 32,
+  "full_changed_scope": {
+    "publisher_cases": 176,
+    "real_native_generation_integration_cases": 20,
+    "passed": 196,
+    "skipped": 0,
+    "summary": "196 passed, 12 warnings in 144.50s (0:02:24)"
+  },
+  "static_checks": {
+    "ruff-v2": 0,
+    "black-v2": 0,
+    "mypy-v2": 0
+  },
+  "actual_row_projection": {
+    "scope": "AUTHOR MECHANICAL DIAGNOSTIC; no source application, completed owner receipt, scientific acceptance, or publication approval",
+    "inputs": {
+      "source_plan": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v4-preparation/owner-plan.draft.json",
+        "sha256": "039eecdae5c86b406f3622e8766095e7970dc7c8a1158c5a9fc0925c0ea06427",
+        "bytes": 6794831
+      },
+      "canonical": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/mappings/ingredient_mappings.sssom.tsv",
+        "sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+        "bytes": 1675816
+      },
+      "native_candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/generation/candidate.sssom.tsv",
+        "sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de",
+        "bytes": 1518227
+      },
+      "diagnostic_same_rowset": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-publication-plan-construction-v1/bounded-rowset-diagnostic.tsv",
+        "sha256": "72c3e8fc9cbfa5b6a89cc3d237b80fd6d717a3a5991fbf04e8f16dde60f73925",
+        "bytes": 1920329
+      },
+      "publisher": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/private/src/mediaingredientmech/campaign_publication.py",
+        "sha256": "9df83185a1c4ac4e0aa9b6497138a9923841bb3b9fe656671ac905987bc2d5f1",
+        "bytes": 54737
+      },
+      "test": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/private/tests/test_campaign_publication.py",
+        "sha256": "d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa",
+        "bytes": 77631
+      },
+      "maker": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/private/reports/sssom_completion_20260921/mapping_changes/make_receipt.py",
+        "sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121",
+        "bytes": 6734
+      },
+      "source": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/private/src/mediaingredientmech/curate/campaign_owner_apply.py",
+        "sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+        "bytes": 65726
+      }
+    },
+    "counts": {
+      "conditional_operations": 934,
+      "canonical_rows": 3014,
+      "native_rows": 3750,
+      "projected_rows": 3756,
+      "selected_native_rows": 1037,
+      "unselected_physical_lines_preserved": 2719,
+      "row_operations": 1062,
+      "changed_cells": 11202,
+      "alignment": {
+        "removed": 25,
+        "changed": 270,
+        "added": 767
+      }
+    },
+    "native_row_validator_and_replay": "PASS; incomplete diagnostic row link only, actual completed source/generator/publication covered separately by integration tests",
+    "same_row_multiset_as_prior_invariant_diagnostic": true,
+    "no_unselected_native_adoption": true,
+    "demotion_subject_absent": true,
+    "all_input_hashes_unchanged": true,
+    "original_test_function_count": 58,
+    "original_function_AST_and_exact_file_prefix_unchanged": true,
+    "four_suppression_event_extension": "Not implemented; current publisher policy guard remains a separate blocking prerequisite"
+  },
+  "historical_maker_sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121",
+  "historical_receipt_prefix": {
+    "count": 27,
+    "native_replay_unchanged": true,
+    "all_historical_alignments_equal": true,
+    "proof": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/historical-alignment-before.json",
+      "sha256": "52a4086a6736ddcfcd9f4663cef0657e6478c94c933f7d73472c1d0f4b52636b",
+      "bytes": 9876
+    }
+  },
+  "source_dependency": {
+    "source": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/private/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+      "bytes": 65726
+    },
+    "test": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/private/tests/test_campaign_owner_apply.py",
+      "sha256": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3",
+      "bytes": 118575
+    },
+    "distinct_prior_author_hand_off": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/HANDOFF.json",
+      "sha256": "1d222eeff11b9d2b86f9ed9566fd853fab4aa268f3b0610ff96a4626a25fed2a",
+      "bytes": 1402
+    },
+    "prior_run": "546 passed, including382 source/144 baseline publisher/20 real native; separate unchanged-source evidence, not a new summed test run"
+  },
+  "preserved_failures": [
+    "Initial Black formatting check",
+    "focused-v1:23 passed/1 failure at immutable maker.align; filed before maintained helper repair"
+  ],
+  "scope_limits": [
+    "No I/K/J, worker, maintained owner, Git, or GitHub mutation.",
+    "No complete campaign application/publication receipt is fabricated. The actual934-operation probe is pure row projection; no source acceptance or scientific approval.",
+    "Separate four new suppression-event capability remains blocked; historical sidecar/baseline guards unchanged.",
+    "Distinct C review and final root combined-head verification remain pending.",
+    "Local-ID replacement deliberately changes legacy changed-row alignment to removed+added; old position becomes null, no identity/support transfer."
+  ],
+  "archive_omissions": [
+    "Private runtime repository and test temporary Git repositories, caches and environment are omitted. Original checks and all failure logs are retained.",
+    "Source dependency full original manifest is copied for attribution, not a claim this partial reference set contains every source packet member.",
+    "Actual diagnostic source files referenced by exact absolute path/hash remain in their immutable local packets; full projected rowset and trace are included."
+  ]
+}

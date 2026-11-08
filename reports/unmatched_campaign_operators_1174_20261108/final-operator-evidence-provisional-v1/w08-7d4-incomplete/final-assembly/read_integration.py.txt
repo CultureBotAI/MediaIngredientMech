@@ -1,0 +1,55 @@
+"""Read actual completed518/20 run artifacts; do not follow pytest aliases."""
+import csv
+import datetime
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+
+R=Path.cwd();C=R.parents[2];P=R/'.temp/final-7d4db26-independent-v1';O=P/'final-assembly';Q=P/'focused/fixtures';J=C/'integration/curation-worktree'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p),'size':p.stat().st_size}
+def js(p):return json.loads(p.read_text())
+def rows(p):return list(csv.DictReader(io.StringIO('\n'.join(s for s in p.read_text().splitlines() if not s.startswith('#'))),delimiter='\t'))
+checks=[]
+def ck(n,v,**kw):checks.append({'check':n,'passed':bool(v),**kw})
+result=js(P/'focused/result.json'); reports=js(P/'focused/test-reports.json')
+calls=[x for x in reports if x['when']=='call']; integration=[x for x in calls if 'test_campaign_demotion_integration.py' in x['nodeid']]
+groups={n:sum(n in x['nodeid'] for x in calls) for n in ['test_campaign_owner_apply.py','test_campaign_publication.py','test_campaign_demotion_integration.py']}
+ck('actual completed518 single run, zero failures/skips',result['exit_code']==0 and result['collected']==result['passed_calls']==518 and not result['failures'] and not result['skips'] and len(calls)==518 and all(x['outcome']=='passed' for x in calls),counts=groups)
+ck('actual20 distinct integration case reports',len(integration)==len({x['nodeid'] for x in integration})==20)
+aliases=[];cases=[]
+for d in sorted(Q.iterdir()):
+    if d.is_symlink():
+        aliases.append({'path':str(d.relative_to(Q)),'literal_target':os.readlink(d),'link_target_sha256':hashlib.sha256(os.fsencode(os.readlink(d))).hexdigest(),'followed':False})
+        continue
+    if not d.is_dir() or not (d/'reports/native/command.json').is_file():continue
+    cmd=js(d/'reports/native/command.json');g=js(d/'reports/native/generation.json');a=js(d/'source-receipt/application.json')
+    pp=d/'reports/publication/publication.json';np=d/'reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json'
+    published=js(pp) if pp.exists() and pp.stat().st_size else None
+    native=js(np) if np.exists() and np.stat().st_size else None
+    source_before=d/a['records'][0]['before_capture']['path']; captured=d/a['records'][0]['after_capture']['path']
+    ck(d.name+' actual source complete and genuine captures',a['state']=='complete' and a['approval'].startswith('NONE') and a['recovery_required'] is False and a['records'][0]['shape']=='demotion' and sha(source_before)==a['records'][0]['before_yaml_sha256'] and sha(captured)==a['records'][0]['after_yaml_sha256'])
+    ck(d.name+' actual native command and private workspace',cmd['returncode']==0 and g['external_sssom_validation']=='passed' and g['source_revisions']['claw']=='76c1ebeea3fc7f80bf1abe044688f298f390cfac' and cmd['environment']['OPENCLAW_WORKSPACE']==str(d/'private-openclaw-workspace'))
+    actualkind='negative_after_real_generation'
+    if native:
+        actualkind='positive_complete'
+        ck(d.name+' complete publication/native proof agree',published is not None and published['status']=='complete' and published['approval'].startswith('NONE') and published['receipt_sha256']==sha(np) and native['approval'].startswith('NONE'))
+    else:ck(d.name+' expected negative leaves no success shaped receipts',published is None)
+    files=[d/'reports/native/command.json',d/'reports/native/command.log',d/'reports/native/generation.json',d/'source-receipt/application.json',source_before,captured]
+    if pp.exists():files.append(pp)
+    if np.exists():files.append(np)
+    cases.append({'fixture':d.name,'path':str(d),'inspection':actualkind,'inputs':[ref(x) for x in files],'source_records':a['records'],'source_baseline':a['baseline_commit'],'generation_revisions_after_control':g['source_revisions'],'generation_manifest_scope':g['scope'],'positive_native_sequence':native['sequence'] if native else None,'publication_status':published['status'] if published else 'absent_or_empty','actual_native_generator_returncode':cmd['returncode'],'manifest_mutation_note':'Negative tests deliberately mutate some candidate/manifest fields after genuine generation; false revision or changed row is not reported as authentic producer content.'})
+ck('exact20 regular fixture directories counted',len(cases)==20)
+native_aliases=[x for x in aliases if x['path'].startswith('test_real_')]
+ck('native current aliases recorded literally and excluded',all(x['followed'] is False for x in native_aliases),count=len(native_aliases))
+H=Q/'test_real_demotion_preserves_20';hold=js(H/'reports/hold-proof.json');native=js(H/'reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json')
+ck('27 historical receipt bytes exact J',len(hold['receipt_prefix'])==27 and all(sha(H/p)==sha(J/p)==h for p,h in hold['receipt_prefix'].items()))
+before=rows(J/'mappings/ingredient_mappings.sssom.tsv');after=rows(H/'mappings/ingredient_mappings.sssom.tsv')
+ck('receipt28 removes only Angust389 and preserves held436to435',native['sequence']==28 and hold['before_position']==436 and hold['after_position']==435 and native['position_map'][435]==435 and after[434]==before[435] and before[388]['subject_id']=='MIM:Angustmycin' and after==before[:388]+before[389:])
+ck('frozen held checkpoint11position431 intact',hold['checkpoint']['sequence']==11 and hold['checkpoint']['position']==431 and sha(J/hold['checkpoint']['path'])==hold['checkpoint']['sha256'])
+heldrefs=[H/'reports/hold-proof.json',H/'reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json',H/'mappings/ingredient_mappings.sssom.tsv',J/'mappings/ingredient_mappings.sssom.tsv',J/'data/ingredients/mapped/Aromatic_Compound.yaml']
+out={'reviewer':'worker08:/root/vitamins','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS' if all(x['passed'] for x in checks) else 'FAIL','scope':'Actual coordinator-run518/20 metadata and complete source/generation/publication receipt readback; no execution rerun or scientific acceptance.','checks':checks,'suite_inputs':[ref(P/'focused/result.json'),ref(P/'focused/test-reports.json'),ref(P/'focused/command.json')],'actual_case_count':len(cases),'case_readbacks':cases,'all_top_level_fixture_aliases':aliases,'native_alias_count':len(native_aliases),'native_aliases':native_aliases,'held_inputs':[ref(x) for x in heldrefs],'held_proof':hold,'limits':['Literal pytest symlinks are inventoried without following and never counted as distinct native cases.','Passing518 authored tests does not remove the independently confirmed source index-coherence and stable-flag diagnostics.','Source and native success refers to private fixture transactions, not actual campaign application, Angust identity, wholeplan, role, mapping or release acceptance.','Only projected held edge/position lineage is validated by these receipts, not full semantic_release; archived scientific holds remain.']}
+with (O/'integration-readback.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':out['status'],'checks':len(checks),'failed':[x for x in checks if not x['passed']],'cases':len(cases),'aliases':len(aliases),'output':ref(O/'integration-readback.json')},indent=2))

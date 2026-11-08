@@ -1,0 +1,248 @@
+"""Bounded read-only archive review. Does not copy or execute archived scripts."""
+from pathlib import Path
+from collections import Counter
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+import stat
+import sys
+import unicodedata
+from guards_snapshot import (GitRead, require, sha, read, relative, no_alias,
+                             regular_snapshot, destination, copy_index, reused_target)
+
+T = Path(__file__).resolve().parent
+W = T.parents[2]
+C = W.parents[2]
+K = C / "integration/release-worktree"
+P = C / "preflight/pr1205-evidence-archive-addendum-v1"
+P4 = C / "preflight/pr1205-evidence-archive-selection-v2"
+HEAD = "7d4db26a2ce75e9942badaca954bb8e8f821c75c"
+NEW_SHA = "c57116fd4d9329a3521aed2317efa4e5ca69ec2c44a35bc88a4667e72bf27c49"
+OLD_SHA = "1f14ef2e3ee950fdf3c6b7fe8e8605d4c129aad9aae8ee10b3783890171dee44"
+COPY_SHA = "0073d442b55bd221f6aa840f5a75bffe127c695540ea03f760a8e4cacb1e2e3c"
+ARCHIVE = "reports/unmatched_campaign_operators_1174_20261108"
+
+
+def encode(obj):
+    return json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+def check_population(entries, expected):
+    require(dict(Counter(r["disposition"] for r in entries)) == expected, "disposition population differs")
+    require(len({r["original_path"] for r in entries}) == len(entries), "duplicate source path")
+
+
+def inventory(root, repo, allowed_legacy_python=frozenset()):
+    """Ignored-inclusive physical membership, rejecting all symlink/other entries."""
+    no_alias(root)
+    require(root.is_dir(), "archive directory missing")
+    files = {}
+    folded = set()
+    for top, dirs, names in os.walk(root, followlinks=False):
+        for name in dirs + names:
+            path = Path(top) / name
+            no_alias(path)
+            mode = path.lstat().st_mode
+            require(stat.S_ISDIR(mode) if name in dirs else stat.S_ISREG(mode), "nonregular directory entry")
+            rel = str(path.relative_to(repo))
+            key = unicodedata.normalize("NFC", rel).casefold()
+            require(key not in folded, "physical case/normalization collision")
+            folded.add(key)
+            if name in names:
+                require(path.suffix not in {".py", ".pyc", ".pyo"} or rel in allowed_legacy_python, "active Python archive file")
+                require(".git" not in path.parts and "__pycache__" not in path.parts, "runtime archive entry")
+                files[rel] = path
+    return files
+
+
+def exact_members(actual, expected):
+    require(set(actual) == set(expected), "archive membership differs")
+
+
+def copied_file(original, target, digest, size):
+    raw, source = regular_snapshot(original, digest, size)
+    copied, result = regular_snapshot(target, digest, size)
+    require(raw == copied, "copied bytes differ")
+    require((original.stat().st_dev, source["inode"]) !=
+            (target.stat().st_dev, result["inode"]), "copy is source inode")
+    return {"source": source, "copy": result, "distinct_inodes": True}
+
+
+def closure_rows(closure, old_ledger, entries):
+    pending = old_ledger["pending_original_objects"]
+    require(len(pending) == len(closure["objects"]) == 8, "pending closure population differs")
+    bypath = {r["original_path"]: r for r in entries}
+    originals = {(r["finding"], r["path"], r["sha256"]) for r in pending}
+    require(len(originals) == 8, "duplicate original pending object")
+    actual = {(r["finding"], r["path"], r["sha256"]) for r in closure["objects"]}
+    require(actual == originals, "pending closure original identities differ")
+    result = []
+    for r in closure["objects"]:
+        require(r["path"] in bypath, "pending object omitted from selection")
+        entry = bypath[r["path"]]
+        require(entry == r["addendum_entry"] and entry["sha256"] == r["sha256"], "pending entry differs")
+        require(r["selected_exact_hash"] is True, "closure flag false")
+        result.append({"finding": r["finding"], "path": r["path"], "sha256": r["sha256"],
+                       "disposition": entry["disposition"], "target": entry.get("archive_path", entry.get("target")),
+                       "status": "PASS"})
+    return result
+
+
+def tracked_state(git):
+    """Compare every actual tracked blob to HEAD; snapshot raw index without refresh."""
+    require(git.git("rev-parse", "HEAD").decode().strip() == HEAD, "current head drift")
+    index_path = Path(git.git("rev-parse", "--git-path", "index").decode().strip())
+    if not index_path.is_absolute():
+        index_path = K / index_path
+    index_raw = index_path.read_bytes()
+    staged = git.git("ls-files", "--stage", "-z")
+    tree = git.tree(HEAD)
+    rows = []
+    for item in staged.split(b"\0"):
+        if not item:
+            continue
+        meta, raw_path = item.split(b"\t", 1)
+        mode, oid, stage = meta.decode().split()
+        rel = raw_path.decode()
+        require(stage == "0" and tree.get(rel) == (mode, "blob", oid), "index differs from HEAD")
+        path = K / str(relative(rel))
+        if mode == "120000":
+            require(path.is_symlink(), "tracked symlink type changed")
+            no_alias(path.parent)
+            raw = os.fsencode(os.readlink(path))
+        else:
+            require(mode in {"100644", "100755"}, "unsupported tracked mode")
+            raw, _ = regular_snapshot(path)
+            require(bool(path.stat().st_mode & stat.S_IXUSR) == (mode == "100755"), "tracked execute mode differs")
+        actual_oid = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
+        require(actual_oid == oid, "tracked bytes differ from HEAD")
+        rows.append({"path": rel, "mode": mode, "git_blob": oid, "sha256": sha(raw), "bytes": len(raw)})
+    require({r["path"] for r in rows} == set(tree), "tracked/HEAD membership differs")
+    require(index_path.read_bytes() == index_raw, "index changed during snapshot")
+    return {"head": HEAD, "index_path": str(index_path), "index_sha256": sha(index_raw),
+            "staged_entries_sha256": sha(staged), "tracked_count": len(rows),
+            "tracked_rows_sha256": sha(encode(rows)), "rows": rows}
+
+
+def run():
+    started = datetime.now(timezone.utc).isoformat()
+    new_raw, _ = regular_snapshot(P / "SELECTION.json", NEW_SHA)
+    old_raw, _ = regular_snapshot(P4 / "proposal-v4/SELECTION.json", OLD_SHA)
+    receipt_raw, _ = regular_snapshot(C / "preflight/pr1205-archive-copy-v4-v1/receipt.json", COPY_SHA)
+    new, old, receipt = map(json.loads, [new_raw, old_raw, receipt_raw])
+    require(new["git_evidence_head"] == HEAD and new["predecessor_selection_sha256"] == OLD_SHA, "head/predecessor mismatch")
+    require(receipt["head"] == HEAD and receipt["selection_sha256"] == OLD_SHA, "copy receipt pins differ")
+    check_population(new["entries"], {"copy_exact_bytes_when_authorized": 286, "reuse_committed_archive": 66,
+                     "reference_exact_committed_blob": 22, "reuse_proposed_archive_bytes": 77})
+    check_population(old["entries"], {"copy_exact_bytes_when_authorized": 787, "reuse_committed_archive": 148,
+                     "reference_exact_committed_blob": 47, "reuse_proposed_archive_bytes": 106})
+    git = GitRead(K)
+    before = tracked_state(git)
+    new_base = K / str(relative(new["archive_base"]))
+    no_alias(new_base)
+    require(not new_base.exists(), "addendum archive already exists")
+    new_copies = copy_index(new["entries"], new["archive_base"], K)
+    old_copies = {r["archive_path"]: r for r in old["entries"] if r["disposition"] == "copy_exact_bytes_when_authorized"}
+    require(len(old_copies) == 787 and not set(old_copies) & set(new_copies), "copy destination overlap")
+    union = {**old_copies, **new_copies}
+    packages_new = {r["packet"]: r["root"] for r in read(P / "PACKETS.json")["packets"]}
+    packages_old = {r["id"]: str(C / r["root"]) for r in read(P4 / "PACKETS.json")}
+    results = {"addendum": [], "actual_v4": []}
+    source_inputs = []
+    for label, selection, packages in [("actual_v4", old, packages_old), ("addendum", new, packages_new)]:
+        for i, row in enumerate(selection["entries"]):
+            root = Path(row["packet_root"])
+            require(root.is_absolute() and root.is_relative_to(C), "source packet root outside campaign")
+            no_alias(root)
+            original = root / str(relative(row["packet_relative_path"]))
+            require(str(original) == row["original_path"], "source path identity differs")
+            raw, fact = regular_snapshot(original, row["sha256"], row["bytes"])
+            require(fact["inode"] == row["inode"] and fact["link_count"] == row["link_count"], "selected source inode/link drift")
+            source_inputs.append({"path": str(original), "sha256": fact["sha256"], "bytes": fact["bytes"]})
+            disposition = row["disposition"]
+            if disposition in {"copy_exact_bytes_when_authorized", "reuse_proposed_archive_bytes"}:
+                path = row["archive_path"]
+                target_row = reused_target(row, union if label == "addendum" else old_copies)
+                is_old = path in old_copies
+                destination(old["archive_base"] if is_old else new["archive_base"], path, K)
+                if is_old:
+                    target = {"archive_path": path, "state": "actual_v4_copy",
+                              **copied_file(original, K / path, row["sha256"], row["bytes"])}
+                else:
+                    require(not (K / path).exists(), "addendum target exists")
+                    target = {"archive_path": path, "state": "proposed_absent",
+                              "selected_original_copy": target_row["original_path"]}
+            else:
+                target_raw, target = git.check(row["target"])
+                require(target_raw == raw, "original/Git bytes differ")
+                if disposition == "reuse_committed_archive":
+                    require(row["target"]["path"].startswith(ARCHIVE + "/"), "archive reuse outside archive")
+                    regular_snapshot(K / row["target"]["path"], row["sha256"], row["bytes"])
+            results[label].append({"index": i, "packet": row["packet"], "original_path": str(original),
+                                   "packet_relative_path": row["packet_relative_path"], **fact,
+                                   "disposition": disposition, "target": target,
+                                   "packet_catalog_root": packages.get(row["packet"]),
+                                   "packet_catalog_root_matches_row": packages.get(row["packet"]) == str(root),
+                                   "status": "PASS"})
+    require(sum(r["bytes"] for r in new_copies.values()) == 18347519, "new copy byte total differs")
+    require(sum(r["packet_relative_path"].endswith(".py") for r in new_copies.values()) == 33, "new Python count differs")
+    copied = {r["path"]: r for r in receipt["copied"]}
+    require(len(copied) == len(receipt["copied"]) == 789, "copy receipt population differs")
+    descriptors = {old["archive_base"] + "/ARCHIVE-SELECTION.json", old["archive_base"] + "/ARCHIVE-README.md"}
+    require(set(copied) == set(old_copies) | descriptors, "copy receipt membership differs")
+    actual = inventory(K / old["archive_base"], K)
+    exact_members(actual, copied)
+    actual_rows = []
+    for path, r in copied.items():
+        _, fact = regular_snapshot(actual[path], r["sha256"], r["bytes"])
+        if path in old_copies:
+            require((r["sha256"], r["bytes"]) == (old_copies[path]["sha256"], old_copies[path]["bytes"]), "copy receipt content mismatch")
+        actual_rows.append({"path": path, **fact, "status": "PASS"})
+    regular_snapshot(K / old["archive_base"] / "ARCHIVE-SELECTION.json", OLD_SHA, len(old_raw))
+    regular_snapshot(K / old["archive_base"] / "ARCHIVE-README.md", "884e98b0f1b7d818a34da2de13479ef5119993af0a0147b5aa9a0b7951a3a357", 982)
+    prior_refs = read(P4 / "GIT-REFERENCES.json")["archive_content_map"]
+    require(len(prior_refs) == 310, "prior archive population differs")
+    prior = []
+    for ref in prior_refs:
+        raw, checked = git.check(ref)
+        actual_raw, _ = regular_snapshot(K / ref["path"], ref["sha256"], ref["bytes"])
+        require(raw == actual_raw, "prior archive changed")
+        prior.append(checked)
+    legacy_python = {r["path"] for r in prior_refs if Path(r["path"]).suffix in {".py", ".pyc", ".pyo"}}
+    require(len(legacy_python) == 116, "legacy Python population differs")
+    exact_members(inventory(K / ARCHIVE, K, legacy_python), set(copied) | {r["path"] for r in prior_refs})
+    closure = read(P / "EIGHT-PENDING-ORIGINALS-CLOSURE.json")
+    ledger_raw, _ = regular_snapshot(Path(closure["original_ledger"]), closure["original_sha256"])
+    closed = closure_rows(closure, json.loads(ledger_raw), new["entries"])
+    for ref in read(P / "GIT-REFERENCES.json")["verified_code_blobs"]:
+        git.check(ref)
+    # Final byte readback is separate from old author receipts.
+    for row in source_inputs:
+        regular_snapshot(Path(row["path"]), row["sha256"], row["bytes"])
+    for row in actual_rows + prior:
+        regular_snapshot(K / row["path"], row["sha256"], row["bytes"])
+    after = tracked_state(git)
+    require(before == after, "tracked bytes or index changed during review")
+    require(not new_base.exists(), "addendum appeared during review")
+    return {"status": "PASS_WITH_SCOPE_LIMITATIONS", "started_at": started,
+            "completed_at": datetime.now(timezone.utc).isoformat(), "reviewer": "/root/research_b",
+            "selection_sha256": NEW_SHA, "predecessor_selection_sha256": OLD_SHA,
+            "copy_receipt_sha256": COPY_SHA, "head": HEAD,
+            "counts": {"addendum_references": 451, "new_copies": 286, "new_copy_bytes": 18347519,
+                       "new_python_py_txt": 33, "git": 22, "existing_archive": 66, "duplicate_reuse": 77,
+                       "actual_v4_references": 1088, "actual_v4_files": 789, "prior_archive_files": 310,
+                       "closed_pending_objects": 8},
+            "addendum_absent_before_after": True, "row_checks": results,
+            "actual_v4_inventory": actual_rows, "prior_archive_inventory": prior, "unchanged_legacy_python_paths": sorted(legacy_python),
+            "pending_closure": closed, "git_checks": git.checked,
+            "tracked_before": before, "tracked_after_summary": {k: v for k, v in after.items() if k != "rows"},
+            "limitations": ["Read-only point-in-time checks, not hostile-concurrency or filesystem atomicity guarantees.",
+                            "No archived script executed, no copy/operator run, no Git mutation.",
+                            "Exact historical self-authored W02 review continuity is not a new independent approval.",
+                            "No scientific, code, application, or final-head acceptance; addendum remains uninstalled."]}
+
+
+if __name__ == "__main__":
+    json.dump(run(), sys.stdout, indent=2, ensure_ascii=False)
+    print()

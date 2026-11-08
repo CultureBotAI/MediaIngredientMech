@@ -1,0 +1,241 @@
+import copy
+import datetime
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import subprocess
+
+R = Path.cwd()
+C = R.parents[2]
+P = R / '.temp/combined-16c-independent-v1'
+F = P / 'frozen/repo'
+N = P / 'native'
+REV = '16c39b63bc95d3e7978ddccc6280b0d57954f4a5'
+REPO = 'CultureBotAI/MediaIngredientMech'
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def read(path):
+    return json.loads(path.read_text())
+
+def save(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open('x') as f:
+        json.dump(value, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+
+assert sha(R / 'scripts/record_review.py') == sha(F / 'scripts/record_review.py')
+spec = importlib.util.spec_from_file_location('native_record_review', R / 'scripts/record_review.py')
+rr = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rr)
+now = datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00', 'Z')
+rid = datetime.datetime.fromisoformat(now.replace('Z', '+00:00')).strftime('%Y%m%dT%H%M%SZ') + '-w08-combined-16c-independent'
+
+targets = []
+for tid, path in [
+    ('exact9a1-operator', 'src/mediaingredientmech/curate/campaign_owner_apply.py'),
+    ('exact9a1-tests', 'tests/test_campaign_owner_apply.py'),
+    ('combined-publisher', 'src/mediaingredientmech/campaign_publication.py'),
+    ('combined-publication-tests', 'tests/test_campaign_publication.py'),
+    ('combined-integration-tests', 'tests/test_campaign_demotion_integration.py'),
+]:
+    targets.append({'target_id': tid, 'path': path, 'kind': 'source', 'label': path,
+                    'selector': 'Git commit ' + REV,
+                    'ownership_note': 'Maintained native code/test owned by coordinator/code author. First two stable target IDs retain earlier9a1 finding lineage while the assessed bytes are exact16c. No source science or application approval.'})
+ids = [t['target_id'] for t in targets]
+source_paths = {t['path'] for t in targets} | {
+    'AGENTS.md', 'MAPPING_SEMANTICS.md', 'justfile', 'pyproject.toml', 'uv.lock',
+    'src/mediaingredientmech/curate/publication_guard.py',
+    'src/mediaingredientmech/curate/apply_receipt.py',
+    'src/mediaingredientmech/validation/write_validated.py',
+    'src/mediaingredientmech/validation/mapping_change_receipts.py',
+    'src/mediaingredientmech/validation/semantic_release.py',
+    'src/mediaingredientmech/export/reviewed_sssom.py',
+    'src/mediaingredientmech/schema/mediaingredientmech.yaml',
+    'src/mediaingredientmech/schema/mech_shared.yaml',
+    'scripts/apply_unmatched_campaign_owners.py', 'scripts/record_review.py',
+    'schema/record_review.yaml', 'conf/record_review.yaml',
+    'docs/record-reviews.md', 'docs/record-review-profile.md',
+    '.claude/skills/reconcile-review-records/SKILL.md', 'tests/conftest.py',
+    'tests/historical_source_anchors.py',
+}
+inputs = []
+for name in sorted(source_paths):
+    raw = subprocess.check_output(['git', 'show', REV + ':' + name])
+    assert raw == (F / name).read_bytes()
+    inputs.append({'path': name, 'sha256': sha(F / name),
+                   'role': 'target' if name in {t['path'] for t in targets} else 'context'})
+source = {'git_revision': REV, 'state': 'git_commit', 'inputs': inputs}
+rr.assert_current_source(R, {'repository': REPO, 'source': source})
+save(P / 'committed-source-bindings.json', source)
+
+# Retain the exact known-finding predecessor closure as native pairs. This is
+# a new observation, never an edit or terminal disposition of the W04 reviews.
+oldroot = C / 'workers/w04/worktree/.temp/rejection-fix-independent-v1/native-private-overlay'
+prior_ids = ['20261108T113551Z-rejection-fix-independent',
+             '20261108T113742Z-rejection-fix-independent-v2']
+prior_refs = []
+for oldid in prior_ids:
+    relative = f'reviews/structured/{oldid}/review.yaml'
+    prior = rr.read_review(oldroot, relative)
+    assert any(f['finding_id'] == 'REJECTION-CODE-001' for f in prior['findings'])
+    for ext in ['yaml', 'md']:
+        src = oldroot / f'reviews/structured/{oldid}/review.{ext}'
+        out = N / f'reviews/structured/{oldid}/review.{ext}'
+        out.parent.mkdir(parents=True, exist_ok=True)
+        with out.open('xb') as stream:
+            stream.write(src.read_bytes())
+        prior_refs.append({'original_path': str(src), 'snapshot': str(out.relative_to(R)), 'sha256': sha(out)})
+    assert rr.read_review(N, relative) == prior
+save(P / 'prior-finding-lineage.json', {'predecessors': prior_refs,
+                                      'retained_target_ids': ids[:2],
+                                      'original_issue_key': 'campaign-owner-apply-literal-git-paths',
+                                      'terminal_disposition_claimed': False})
+
+evidence_specs = [
+    ('ENTRY', 'entry.json', 'validation', 'Actual entry heads/status, successful live exactPR observation and network retry limitations.'),
+    ('ARCHIVE', 'frozen/ARCHIVE.json', 'validation', 'Complete immutable exact16c Git tar and extracted-file hashes; links listed literally.'),
+    ('COMMIT', 'committed-source-bindings.json', 'validation', 'Exact regular Git blobs at16c match frozen executed native code and contract files.'),
+    ('TECHNICAL', 'technical/review.json', 'prior_review', 'Independent whole source lifecycle review and19 actual native controls; both major findings confirmed.'),
+    ('SKEPTIC', 'skeptic/review.json', 'prior_review', 'Independent whole publisher/tests review and31 native stage probes; no additional publisher delta defect.'),
+    ('LINEAGE', 'lineage/review.json', 'prior_review', 'Exact source26/publisher71/prior22 members, J27 receipt history and CLAW14 producer graph; nine-case and933 boundaries.'),
+    ('TESTS', 'focused-summary.json', 'validation', '337 distinct cases pass across initial328 source/publication and separate9 native integration. Initial9 lock failures retained.'),
+    ('RUN1', 'focused/result.json', 'validation', 'Actual initial337-case runtime:328pass,9native lock failures,0skips; actual imported module paths/hashes.'),
+    ('RUN2', 'focused-integration-v2/result.json', 'validation', 'All9 actual integration cases pass,0skips, using real external pinned producer and private native locks.'),
+    ('RUN2-COMMAND', 'focused-integration-v2/command.json', 'validation', 'Exact Python3.13 runtime, source/test hashes, native external roots and private OPENCLAW_WORKSPACE.'),
+    ('ROOT-PROBES', 'root-probes/late-head-results-v2.json', 'validation', 'Five actual lifecycle scenarios, true receipt readback, late unrelated committed-file bypass and preserved first harness failure.'),
+    ('NEW-FINDING', 'FINDING-W08-16C-CODE-002.json', 'record_content', 'File-ready late baseline freshness finding disclosed before any fix.'),
+    ('ISSUE1255', 'inputs/issue1255-live.json', 'authority', 'Live filed literal Git path finding; known defect retained rather than silently approved.'),
+    ('PRIOR-LINEAGE', 'prior-finding-lineage.json', 'validation', 'Exact two earlier W04 native pairs read through native helper, copied unchanged and stable targets retained.'),
+    ('SOURCE-AST', 'technical/ast-preservation.json', 'validation', '55 old source functions/101 assertions and prior51/85 regression prefix preserved.'),
+    ('PUB-AST', 'skeptic/input-inspection.json', 'validation', '44 original publisher functions and80 assertions retained; exact committed source/test file comparison.'),
+    ('HOLD', 'focused-integration-v2/fixtures/test_real_demotion_preserves_20/reports/hold-proof.json', 'validation', 'Actual independent integration receipt28 retains27 original bytes and held lineage431→436→435; bounded proof, not semantic release approval.'),
+    ('ASSESSMENT', 'ASSESSMENT.md', 'record_content', 'Whole combined-code reasoning, exact defects, meaningful controls, inherited boundaries and no-approval limits.'),
+]
+evidence = []
+for eid, name, kind, summary in evidence_specs:
+    path = P / name
+    evidence.append({'evidence_id': eid, 'kind': kind, 'reference': str(path.relative_to(R)),
+                     'locator': str(path.relative_to(R)), 'accessed_at': now,
+                     'support': 'supports', 'summary': summary, 'snapshot_sha256': sha(path)})
+
+# Working-input attestation supplements committed code provenance; it does not
+# relabel the private evidence as committed16c content.
+private_targets = [{**t, 'path': str((F / t['path']).relative_to(R))} for t in targets]
+inspection = rr.inspect_source(R, private_targets, [e['reference'] for e in evidence])
+save(P / 'private-evidence-inspection.json', inspection)
+save(P / 'input-ref-index.json', {'committed_source': source, 'private_evidence': evidence,
+                                'prior_finding_lineage': prior_refs,
+                                'private_inspection_base_is_not_reviewed_code_revision': True})
+new = read(P / 'FINDING-W08-16C-CODE-002.json')
+findings = [
+    {'finding_id': 'REJECTION-CODE-001', 'issue_key': 'campaign-owner-apply-literal-git-paths',
+     'category': 'other', 'severity': 'major', 'status': 'open', 'certainty': 'confirmed',
+     'title': 'Quoted Git paths reject a legitimate Unicode or control-character owner after mutation',
+     'description': 'The exact16c final apply guard still decodes ordinary git diff --name-only HEAD -- and splits on newlines. New independent Unicode rejection, newline rejection and Unicode demotion fixtures write or relocate the intended owner before refusing their own path as unrelated. Failed/recovery_required receipts preserve evidence. W04 authentic Poly-ß proof and filed1255 remain open; no future NUL repair is substituted.',
+     'target_ids': ids[:2], 'field_paths': ['apply.final_allowed_path_check'],
+     'evidence_ids': ['ISSUE1255', 'TECHNICAL', 'SKEPTIC', 'PRIOR-LINEAGE'],
+     'ownership_note': 'Coordinator/code author owns the maintained operator and regression tests; reviewer makes no fix or issue mutation.',
+     'external_issues': ['https://github.com/CultureBotAI/MediaIngredientMech/issues/1255'],
+     'previous_occurrences': [{'repository': REPO, 'review_id': prior_ids[-1], 'finding_id': 'REJECTION-CODE-001'}]},
+    {'finding_id': new['finding_id'], 'issue_key': 'campaign-owner-apply-late-baseline-freshness',
+     'category': 'provenance', 'severity': 'major', 'status': 'open', 'certainty': 'confirmed',
+     'title': new['title'], 'description': new['description'], 'target_ids': ids[:2],
+     'field_paths': ['prepare.baseline_check', '_recheck', 'apply.final_allowed_path_check'],
+     'evidence_ids': ['NEW-FINDING', 'ROOT-PROBES', 'TECHNICAL', 'SKEPTIC'],
+     'ownership_note': 'Coordinator deduplicates/files before fixing source application freshness; no reviewer fix.'},
+]
+save(P / 'FINDINGS.json', {'reviewed_head': REV, 'verdict': 'needs_curation',
+                         'findings': findings, 'new_independent_finding_ids': [new['finding_id']],
+                         'existing_filed_finding_ids': ['REJECTION-CODE-001'], 'fixes_applied': False})
+
+review = {
+ 'schema_version': '1.0.0', 'review_id': rid, 'kind': 'repository', 'repository': REPO,
+ 'title': 'Independent adversarial combined16c source and demotion publication code review',
+ 'started_at': read(P / 'entry.json')['at'].replace('+00:00', 'Z'), 'finished_at': now,
+ 'reviewer': {'identity': 'worker08:/root; technical /root/inorganics; skeptical /root/organics; lineage /root/vitamins',
+              'kind': 'agent', 'independence': 'independent',
+              'independence_basis': 'None authored the exact16c code/test changes. Earlier W08 source and demotion design involvement is disclosed; this review casts no scientific vote on those proposals. Separate technical/skeptical readers inspected complete assigned code and actual private native probes.'},
+ 'skill': 'reconcile-review-records', 'completion': 'completed', 'verdict': 'needs_curation',
+ 'scientific_review': False,
+ 'summary': 'Exact combined16c needs curation: existing major1255 literal Git-path failure and new major late-baseline freshness defect are confirmed. Explicit demotion tuple/lifecycle/publisher paths are supported within tested scope, but do not override these source-application defects.337 distinct tests passed across two runs, with original9 lock failures retained; all9 real integration cases passed without skips.',
+ 'source': source,
+ 'scope': {'description': 'Whole final source operator and publisher plus all three focused test modules; inherited1251/1252 and prior9a1 regression boundaries, current exact16c demotion and relevant native dependencies.',
+           'selection': 'PR1205 head16c39b63; parent9a1a4a35; frozen eac historical context and real CLAW76c producer. Five exact committed target files.',
+           'coverage': 'full', 'population_size': 5, 'reviewed_target_ids': ids,
+           'exclusions': [{'target': 'Angustmycin candidate science and whole accepted campaign plan', 'reason': 'Separate reviews/acceptance; mechanical fixtures do not establish science.'},
+                          {'target': 'Future fixes or current broader full QC', 'reason': 'Only exact16c code is assessed; root owns repairs and independent full QC.'}]},
+ 'targets': targets,
+ 'checks': [
+   {'check_id': 'frozen-current', 'name': 'Exact pushed code and producer/context provenance', 'status': 'passed', 'required': True, 'summary': 'LivePR16c, completeGitarchive, committed native input blobs and actual imported hashes; J/CLAW context separately pinned.', 'target_ids': ids, 'evidence_ids': ['ENTRY', 'ARCHIVE', 'COMMIT', 'LINEAGE']},
+   {'check_id': 'focused-native', 'name': 'Focused source/publication and real integration coverage', 'status': 'passed', 'required': True, 'exit_code': 0, 'summary': '197source+131publication initial passes,9integration pass in separate native-private-workspace retry;0skips. Not a clean first337-run claim.', 'target_ids': ids, 'evidence_ids': ['TESTS', 'RUN1', 'RUN2', 'RUN2-COMMAND', 'HOLD']},
+   {'check_id': 'preserved-assertions', 'name': 'Preexisting function ASTs and assertions preserved', 'status': 'passed', 'required': True, 'summary': 'All55source functions/101assertions and44publisher functions/80assertions retained; prior regression51/85 preserved.', 'target_ids': [ids[1], ids[3]], 'evidence_ids': ['SOURCE-AST', 'PUB-AST']},
+   {'check_id': 'literal-path-safety', 'name': 'Actual literal-path application safety', 'status': 'failed', 'required': True, 'summary': 'Known1255 reproduced after intended writes at frozen16c; failure/recovery evidence retained.', 'target_ids': ids[:2], 'evidence_ids': ['TECHNICAL', 'SKEPTIC', 'ISSUE1255']},
+   {'check_id': 'live-baseline', 'name': 'Prepare-to-apply baseline freshness', 'status': 'failed', 'required': True, 'summary': 'Late empty/unrelated commits are accepted; uncommitted unrelated drift detected only after owner mutation.', 'target_ids': ids[:2], 'evidence_ids': ['ROOT-PROBES', 'TECHNICAL', 'NEW-FINDING']},
+ ],
+ 'evidence': evidence,
+ 'assessments': [
+   {'assessment_id': 'source-route', 'area': 'provenance', 'topic': 'Explicit genuine demotion authority and lifecycle', 'outcome': 'supported', 'summary': 'Closed integer-version exact review tuple, genuine origin/preimage, same basename/status/no-grounding, exclusive destination, backups/retirement and both-path chain refusal are implemented; inherited boundary controls remain narrow.', 'target_ids': ids[:2], 'evidence_ids': ['COMMIT', 'TECHNICAL', 'TESTS']},
+   {'assessment_id': 'source-defects', 'area': 'consistency', 'topic': 'Two inherited live application defects remain', 'outcome': 'concern', 'summary': 'Literal path parser and stale baseline controls prevent exact16c code acceptance. Honest failed receipts do not undo prior mutations; movingHEAD can hide an unrelated committed change entirely.', 'target_ids': ids[:2], 'evidence_ids': ['ROOT-PROBES', 'TECHNICAL', 'ISSUE1255', 'NEW-FINDING']},
+   {'assessment_id': 'publisher-route', 'area': 'consistency', 'topic': 'Complete subject removal and publisher completion', 'outcome': 'supported', 'summary': 'All prior slots removed, zero native ontology/registry rows required, both path chains refused and current source proof preserved.31 independent stage probes find no separate publisher-delta defect; source freshness defect still blocks combined acceptance.', 'target_ids': ids[2:4], 'evidence_ids': ['SKEPTIC', 'TESTS', 'HOLD']},
+   {'assessment_id': 'native-integration', 'area': 'scope', 'topic': 'Actual pinned producer integration and scientific boundaries', 'outcome': 'supported', 'summary': 'All9 real cases execute and pass after private native lock configuration.27 actual receipt bytes and held431→436→435 continuity retained. OptionalCI absence is explicitskip; private fixture authority is not actual Angust science, wholeplan or release acceptance.', 'target_ids': [ids[4]], 'evidence_ids': ['LINEAGE', 'RUN2', 'RUN2-COMMAND', 'HOLD']},
+ ],
+ 'findings': findings,
+ 'actions': [
+   {'action_id': 'literal-path-fix', 'description': 'Coordinator applies separately reviewed issue1255 literal NUL-delimited path correction; preserve strict allowed-set and all evidence/receipt guards.', 'finding_ids': ['REJECTION-CODE-001'], 'target_ids': ids[:2], 'ownership_note': 'Root/code author; no reviewer changes.', 'acceptance_checks': ['Actual Unicode/newline/control-character owner prepare/apply/completed cases pass under both quotePath settings.', 'Genuine W03 provenance and all unrelated tracked-file negative checks remain; no gate weakening or future-code approval.']},
+   {'action_id': 'baseline-fix', 'description': new['minimal_fix_scope'], 'finding_ids': [new['finding_id']], 'target_ids': ids[:2], 'ownership_note': 'Root deduplicates/files before fix, then obtains exact-successor review.', 'acceptance_checks': new['required_tests']},
+ ],
+ 'limitations': [
+   'Exact16c technical review only. Both major defects remain open; no repaired successor is reviewed or approved.',
+   'No scientific source/candidate/owner/mapping/role/export/whole-plan application approval; earlier source and design reviews are preserved.',
+   '337distinct passes are across two runs. Initial9integration failures were real native lock setup failures; retry changes only supported private lock-workspace configuration and uses new fixtures. No gate/producer/test change.',
+   'Integration source/proposal/acceptance data are private mechanical fixtures. Actual historical context/held edge proof is bounded and does not renew full semantic release; archived FAIL remains.',
+   'Missing CLAW_ROOT skips integration; missing CAMPAIGN_HISTORY_ROOT skips historical hold case. Actual reviewed retry used both and skipped none.',
+   'KnownW04 genuine source evidence is reused without scientific reapproval.933-record-stage evidence remains separate, not full campaign prepare/apply.',
+   'Root first late-head harness failed on fifth absent.gitignore assumption; prior4 receipts retained and read back, fifth completed with staged unrelated file in successor harness. All failures remain.',
+   'Native document source is exactgit_commit16c. Separate private-evidence attestation is rooted at unchanged W08head; private run files are not misrepresented as committed16c bytes.',
+ ],
+ 'notes': ['Stable exact9a1 target identifiers retain the two earlier finding targets while paths/selectors bind current16c code. No prior finding is closed.', 'Review routing and code fixes belong to coordinator; no GitHub mutation, maintained edit or production application occurred.'],
+}
+rr.validate_review(review)
+rr.assert_current_source(R, review)
+out = N / f'reviews/structured/{rid}/review.yaml'
+out.parent.mkdir(parents=True, exist_ok=False)
+with out.open('x') as f:
+    f.write(rr._dump_document(review))
+md = out.with_suffix('.md')
+with md.open('x') as f:
+    f.write(rr.render_markdown(review))
+relative = str(out.relative_to(N))
+assert rr.parse_review_bundle(relative, out.read_bytes(), md.read_bytes()) == review
+assert rr.read_review(N, relative) == review
+rr.assert_current_source(R, review)
+rr.assert_current_source(R, {'repository': inspection['repository'], 'source': inspection['source']})
+controls = []
+def refuse(name, call):
+    try:
+        call()
+    except rr.ReviewError as error:
+        controls.append({'name': name, 'refused': True, 'error': str(error)})
+    else:
+        raise AssertionError(name)
+bad = copy.deepcopy(review)
+bad['source']['inputs'][0]['sha256'] = '0' * 64
+refuse('false_committed_digest', lambda: rr.assert_current_source(R, bad))
+refuse('markdown_drift', lambda: rr.parse_review_bundle(relative, out.read_bytes(), md.read_bytes() + b'changed'))
+bad = copy.deepcopy(review)
+bad['verdict'] = 'pass'
+refuse('false_pass_with_open_major_findings', lambda: rr.validate_review(bad))
+save(P / 'native-validation.json', {'status': 'PASS_NATIVE_REVIEW_CONTRACT', 'review_id': rid,
+     'review_verdict': 'needs_curation', 'scientific_review': False,
+     'source_state': 'git_commit', 'reviewed_head': REV, 'committed_inputs': len(inputs),
+     'private_evidence_inputs': len(inspection['source']['inputs']), 'targets': 5,
+     'yaml': {'path': str(out.relative_to(R)), 'sha256': sha(out)},
+     'markdown': {'path': str(md.relative_to(R)), 'sha256': sha(md)},
+     'actual_native_methods': ['inspect_source', 'validate_review', 'assert_current_source',
+                              'render_markdown', 'parse_review_bundle', 'read_review'],
+     'retained_prior_pairs': prior_ids, 'negative_controls': controls,
+     'maintained_saver_used': False, 'application_approval': False})
+print(json.dumps(read(P / 'native-validation.json'), indent=2))

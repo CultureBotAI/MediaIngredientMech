@@ -1,0 +1,36 @@
+from pathlib import Path
+import hashlib,json,subprocess,os
+M=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech');C=M/'.temp/all-unmatched-20261107'
+D=C/'preflight/final-suppression-validation-runner-independent-v3';V2=C/'preflight/final-suppression-validation-preparation-v2';V3=C/'preflight/final-suppression-validation-preparation-v3'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def load(p):return json.loads(p.read_text())
+def diffs(a,b,p=''):
+ if type(a)!=type(b):return [{'path':p,'before':a,'after':b}]
+ if isinstance(a,dict):
+  assert a.keys()==b.keys(),p
+  return [d for k in a for d in diffs(a[k],b[k],p+'/'+k)]
+ if isinstance(a,list):
+  assert len(a)==len(b),p
+  return [d for i,(x,y) in enumerate(zip(a,b)) for d in diffs(x,y,p+'/'+str(i))]
+ return [] if a==b else [{'path':p,'before':a,'after':b}]
+assert (V2/'validate_frozen_head.py').read_bytes()==(V3/'validate_frozen_head.py').read_bytes()
+a,b=load(V2/'expected-inputs.json'),load(V3/'expected-inputs.json'); e=diffs(a,b)
+assert {r['path'] for r in e}=={'/expected_final_code/tests/test_campaign_publication.py','/expected_final_code/tests/test_campaign_suppressions.py','/suppression_fixture_inventory_sha256'}
+x,y=load(V2/'fixture-input-inventory.json'),load(V3/'fixture-input-inventory.json'); i=diffs(x,y)
+assert {r['path'] for r in i}=={'/expected_internal_tracked_code_inputs/'+f+'/'+k for f in ['tests/test_campaign_publication.py','tests/test_campaign_suppressions.py'] for k in ['sha256','bytes']}
+assert b['suppression_fixture_inventory_sha256']==sha(V3/'fixture-input-inventory.json')
+checked=[]
+for r in y['external_input_files']+list(y['expected_internal_tracked_code_inputs'].values()):
+ p=Path(r['path']);assert sha(p)==r['sha256'] and p.stat().st_size==r['bytes'];checked.append(r)
+logical=[]
+for r in y['actual_published_git_object_reads']:
+ w=r['binding_id'].split('-')[0];repo=C/'workers'/w/'worktree';assert str(repo) in y['worker_object_repositories']
+ raw=subprocess.run(['git','-C',str(repo),'show',r['head']+':'+r['path']],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'}).stdout
+ assert hashlib.sha256(raw).hexdigest()==r['raw_sha256'];logical.append(r)
+R=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+for name,digest in b['expected_final_code'].items():assert sha(R/name)==digest
+assert b['required_native_cases']=={'tests/test_campaign_demotion_integration.py':20,'tests/test_campaign_suppression_integration.py':10}
+assert len(b['new_cases_actually_collected'])==10
+result={'status':'EXACT_TEST_PIN_BRIDGE_PASS','runner_sha256':sha(V3/'validate_frozen_head.py'),'expectations_sha256':sha(V3/'expected-inputs.json'),'inventory_sha256':sha(V3/'fixture-input-inventory.json'),'expectation_deltas':e,'inventory_deltas':i,'actual_external_files_checked':len(y['external_input_files']),'actual_private_internal_files_checked':len(y['expected_internal_tracked_code_inputs']),'actual_logical_git_blobs_checked':len(logical),'mandatory_old_and_new_native_cases':b['required_native_cases'],'prior_runner_logic_and_all_other_membership_unchanged':True,'independent_13_case_receipt_sha256':sha(C/'preflight/campaign-suppressions1259-independent-v1/test-correction-review-v1/RESULT.json'),'limitations':['This is a private fixture/code input bridge, not actual I/K readiness or full-run success.','Final ordinary code commit, root readiness evidence and complete native integration execution remain required.','Original runner v1 defects and v2 correction packet remain unchanged.']}
+(D/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

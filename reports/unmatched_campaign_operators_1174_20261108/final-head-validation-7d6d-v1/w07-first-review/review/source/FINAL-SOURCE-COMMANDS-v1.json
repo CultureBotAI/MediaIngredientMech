@@ -1,0 +1,1152 @@
+{
+  "created_at": "2026-11-08T13:49:49.793512+00:00",
+  "commands": [
+    {
+      "at": "2026-11-08T13:49:48.427758+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "635c20bfd1a57ffdf808f9830e5d59d4e401c2130eb6b2f8e885067b4cd2fffc",
+      "stderr": "",
+      "stdout_text": "7d6d44ea132e04709f81ebd9e1577643745110ad\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.435991+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "-s",
+        "--format=%P",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d2e02c6dd5d480258d1de5f4791506bdb2e4b1d3f95712d4c38d125e6271e5d8",
+      "stderr": "",
+      "stdout_text": "e0a75a0c48ba539426b1f70623ea376c7b379ecf\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.490367+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout_text": ""
+    },
+    {
+      "at": "2026-11-08T13:49:48.498606+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "diff",
+        "--name-only",
+        "e0a75a0c48ba539426b1f70623ea376c7b379ecf",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d8f769b424c2bcaf0b14cc286b657af4115e7e1295ede600e79cf8fce7ab2420",
+      "stderr": "",
+      "stdout_text": "src/mediaingredientmech/campaign_publication.py\ntests/test_campaign_publication.py\ntests/test_campaign_suppression_integration.py\ntests/test_campaign_suppressions.py\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.513056+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/render_ingredient_pages.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d6645360fea5768f23726a77563f11f0ed45b8ed3afefd4cb9524ac4fa0e0e20",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.521855+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/record_refresh.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "999e4e2bf2a257a26172096221c6472c10782fd67bc00d6857c42e3a80ad63f2",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.530277+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/owned_name_suppression_refresh.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7c8f24773c62eaaf3647b1d3c849bacc267f703d1ca3dadd6a1b4939faa13fa6",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.538410+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/import_quality.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "50f3c617152a89e9e64de24fd2ff152b03afb0366afb42d203f5e8b025f8249f",
+      "stderr": "",
+      "stdout_text": "\"\"\"Conservative mapping-quality translation at the CultureMech boundary.\n\nCultureMech's current aggregate writes ``DIRECT_MATCH`` as a default assumption\nfor every mapped ingredient. It does not preserve whether the recipe surface\nmatched an ontology primary label, a synonym, or some other lookup path. MIM\nmust therefore not translate that value to its stronger, label-level\n``EXACT_MATCH`` grade.\n\nThe unsafe bulk intake scripts are retired under #453, but this side-effect-free\ncontract remains for any future replacement built under #447 and #449.\n\"\"\"\n\nfrom __future__ import annotations\n\n\ndef map_culturemech_quality(source_quality: str | None) -> str:\n    \"\"\"Translate only source grades whose MIM meaning is actually known.\"\"\"\n    if source_quality is None:\n        return \"PROVISIONAL\"\n    mapping = {\n        \"EXACT_MATCH\": \"EXACT_MATCH\",\n        \"SYNONYM_MATCH\": \"SYNONYM_MATCH\",\n        \"CAS_RN_LOOKUP\": \"CAS_RN_LOOKUP\",\n        \"CLOSE_MATCH\": \"CLOSE_MATCH\",\n        \"MANUAL_CURATION\": \"MANUAL_CURATION\",\n    }\n    return mapping.get(source_quality, \"PROVISIONAL\")\n\n\ndef culturemech_quality_note(\n    source_quality: str | None,\n    imported_quality: str,\n    preferred_term: object,\n    ontology_label: object,\n    *,\n    operation: str = \"Imported\",\n) -> str:\n    \"\"\"Explain the translation, retaining source surfaces for later review.\"\"\"\n    prefix = f\"{operation} from CultureMech pipeline, source quality={source_quality or 'MISSING'}\"\n    if source_quality != \"DIRECT_MATCH\":\n        return f\"{prefix}; MIM quality={imported_quality}\"\n    return (\n        f\"{prefix}; MIM quality=PROVISIONAL because CultureMech DIRECT_MATCH is an \"\n        f\"aggregate default, not preserved primary-label/synonym provenance (#317); \"\n        f\"source surfaces were preferred_term={preferred_term!r}, \"\n        f\"ontology_label={ontology_label!r}\"\n    )\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.546624+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/sssom_grading.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.555280+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/review_claims.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bf214f5791223ed318b017db7206bc4ba8cf48bc9ce30d80fba5728cc5ca62fd",
+      "stderr": "",
+      "stdout_text": "\"\"\"Complete-payload and owning-record evidence checks shared by reviewed exports.\"\"\"\n\nfrom __future__ import annotations\n\nimport hashlib\nimport json\n\n\ndef payload_sha256(payload: dict) -> str:\n    \"\"\"Hash the entire reviewed payload, including structured source qualifiers.\"\"\"\n    return hashlib.sha256(\n        json.dumps(\n            payload, sort_keys=True, separators=(\",\", \":\"), ensure_ascii=False, allow_nan=False\n        ).encode()\n    ).hexdigest()\n\n\ndef _unique_object(pairs):\n    result = {}\n    for key, value in pairs:\n        if key in result:\n            raise ValueError(f\"Duplicate JSON key: {key}\")\n        result[key] = value\n    return result\n\n\ndef _proof(content: bytes, name: str) -> dict:\n    result = json.loads(content, object_pairs_hook=_unique_object)\n    if not isinstance(result, dict):\n        raise ValueError(f\"Expected JSON object: {name}\")\n    return result\n\n\ndef validate_review_decision(\n    decision: dict,\n    payload: dict,\n    owner: str,\n    owner_sha256: str,\n    verified: dict[str, bytes],\n    proofs: dict,\n    *,\n    require_owner_path: bool = False,\n) -> None:\n    \"\"\"Verify a complete claim against the existing owner/evidence review format.\n\n    Callers independently resolve the owning record and verify every input's\n    digest before supplying its bytes. This verifier is shared by mapping and\n    companion-claim exports; a checksum or receipt alone confers no approval.\n    \"\"\"\n    if (\n        decision.get(\"row_sha256\") != payload_sha256(payload)\n        or decision.get(\"owner_record\") != owner\n    ):\n        raise ValueError(\"Review row payload or owner does not match source\")\n    if decision.get(\"disposition\") not in {\"SUPPORTED\", \"WITHHOLD\"}:\n        raise ValueError(\"Invalid scientific disposition\")\n    if not isinstance(decision.get(\"review_reason\"), str) or not decision[\"review_reason\"].strip():\n        raise ValueError(\"Missing scientific review reason\")\n    evidence, key = decision.get(\"review_evidence\"), decision.get(\"evidence_key\")\n    if evidence not in verified or not isinstance(key, str) or not key.strip():\n        raise ValueError(\"Missing hash-bound evidence reference\")\n    if evidence not in proofs:\n        proofs[evidence] = _proof(verified[evidence], evidence)\n    entry = proofs[evidence].get(\"entries\", {}).get(key)\n    expected = {field: decision[field] for field in (\"row_sha256\", \"disposition\", \"review_reason\")}\n    expected[\"owner_record_sha256\"] = owner_sha256\n    if require_owner_path:\n        expected[\"owner_record\"] = owner\n    if not isinstance(entry, dict) or any(\n        entry.get(field) != value for field, value in expected.items()\n    ):\n        raise ValueError(\"Scientific decision disagrees with exact evidence entry\")\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.563273+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/registry_correction_refresh.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7503fccf6d7dfe37106786a2b9a4048111219b04db10ffccb5d6bc90ccf6e7a3",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.571231+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curie.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "65349560f9f946446e5c81d90b4c42669805459bb814db508b90aeb41610e923",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.579618+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/campaign_publication.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.587957+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/micro_source.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9d444379edb0377595e29c1300ba5d67ad6b0c07d796089ec00d75bff8781cbe",
+      "stderr": "",
+      "stdout_text": "\"\"\"Reviewed MICRO identifiers backed by the pinned KG-Microbe ontology extract.\n\nSome MicrO classes use legacy ``MicrO.owl/MICRO_`` IRIs. KG-Microbe assigns\nthem MICRO CURIEs. Keep that explicit correspondence instead of treating an\nunresolvable canonical IRI as evidence that the ontology class does not exist.\nOnly individually reviewed entries in the manifest are accepted here.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport csv\nimport hashlib\nimport json\nfrom dataclasses import dataclass\nfrom functools import lru_cache\nfrom pathlib import Path\n\nSOURCE = Path(__file__).resolve().parent / \"ontology_sources\" / \"micro\"\n\n\n@dataclass(frozen=True)\nclass MicroTerm:\n    \"\"\"A reviewed source identifier, label, original IRI and parent references.\"\"\"\n\n    curie: str\n    label: str\n    iri: str\n    parents: tuple[str, ...]\n\n\ndef load_source(directory: Path = SOURCE) -> dict[str, MicroTerm]:\n    \"\"\"Validate the archived evidence before admitting any source-backed term.\"\"\"\n    manifest = json.loads((directory / \"manifest.json\").read_text())\n    tables = {}\n    for filename in (\"micro_nodes.tsv\", \"micro_edges.tsv\", \"legacy_nodes.tsv\"):\n        path = directory / filename\n        expected = manifest[\"files\"][filename]\n        if hashlib.sha256(path.read_bytes()).hexdigest() != expected[\"sha256\"]:\n            raise ValueError(f\"MICRO source checksum mismatch: {filename}\")\n        with path.open(encoding=\"utf-8\", newline=\"\") as handle:\n            tables[filename] = list(csv.DictReader(handle, delimiter=\"\\t\"))\n        if len(tables[filename]) != expected[\"records\"]:\n            raise ValueError(f\"MICRO source row count mismatch: {filename}\")\n    nodes = {row[\"id\"]: row for row in tables[\"micro_nodes.tsv\"]}\n    legacy = {row[\"id\"]: row for row in tables[\"legacy_nodes.tsv\"]}\n    terms = {}\n    for curie, reviewed in manifest[\"reviewed_terms\"].items():\n        iri = reviewed[\"iri\"]\n        expected_iri = \"http://purl.obolibrary.org/obo/MicrO.owl/\" + curie.replace(\":\", \"_\")\n        if iri != expected_iri:\n            raise ValueError(f\"MICRO source IRI mismatch: {curie}\")\n        legacy_id = iri.replace(\"http://purl.obolibrary.org/obo/\", \"OBO:\")\n        for node in (nodes.get(curie), legacy.get(legacy_id)):\n            if (\n                not node\n                or node[\"name\"] != reviewed[\"label\"]\n                or node.get(\"deprecated\", \"\").lower() not in {\"\", \"false\", \"0\"}\n            ):\n                raise ValueError(f\"MICRO source label or status mismatch: {curie}\")\n        parents = tuple(\n            sorted(\n                row[\"object\"]\n                for row in tables[\"micro_edges.tsv\"]\n                if row[\"subject\"] == curie and row[\"predicate\"] == \"biolink:subclass_of\"\n            )\n        )\n        if not parents or list(parents) != sorted(reviewed[\"parents\"]):\n            raise ValueError(f\"MICRO source parent mismatch: {curie}\")\n        if any(parent not in nodes for parent in parents):\n            raise ValueError(f\"MICRO source parent node missing: {curie}\")\n        terms[curie] = MicroTerm(curie, reviewed[\"label\"], iri, parents)\n    return terms\n\n\n@lru_cache(maxsize=1)\ndef _reviewed_terms() -> dict[str, MicroTerm]:\n    return load_source()\n\n\ndef source_term(curie: str) -> MicroTerm | None:\n    \"\"\"Resolve a reviewed term, without admitting other nodes in the snapshot.\"\"\"\n    return _reviewed_terms().get(curie)\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.596158+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout_text": ""
+    },
+    {
+      "at": "2026-11-08T13:49:48.604439+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/form_mapping_review.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c83a7c57839528f99bdb5fe376cd4b4bd7c8ba73530fa7e5e441787237178c4a",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.612654+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/ingredient_bundle_contract.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "524904e0663cbabce3ac46ff7be3960d465b8206902ce9e5010b801a256c0551",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.621435+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/stock_cas_removal_refresh.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6e81a66967a107593dc9445e24f513efec69b8e55abbbb54b7a9db7b7e018415",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.630870+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema_site.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1229c028a2deaac8d88cdfbf76bb83c65983172d1f526958d45b7a6d311fcc38",
+      "stderr": "",
+      "stdout_text": "\"\"\"Publish a rendered schema reference, including imported enums and types.\"\"\"\n\nfrom html import escape\nfrom pathlib import Path\nfrom urllib.parse import quote\n\nfrom linkml_runtime.dumpers import json_dumper  # type: ignore[import-untyped]\nfrom linkml_runtime.utils.schemaview import SchemaView  # type: ignore[import-untyped]\n\nfrom mediaingredientmech.render_ingredient_pages import structured_value\n\n\ndef write_schema_site(schema: Path, output: Path) -> list[str]:\n    view = SchemaView(str(schema))\n    groups = {\n        \"Classes\": view.all_classes(),\n        \"Slots\": view.all_slots(),\n        \"Enumerations\": view.all_enums(),\n        \"Types\": view.all_types(),\n    }\n    output.mkdir(parents=True, exist_ok=True)\n\n    def shell(title, content):\n        return (\n            '<!doctype html><html lang=\"en\"><meta charset=\"utf-8\">'\n            '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">'\n            f\"<title>{escape(title)} — MediaIngredientMech schema</title>\"\n            '<link rel=\"stylesheet\" href=\"../records/style.css\">'\n            '<nav><a href=\"../index.html\">Home</a> · <a href=\"index.html\">Schema index</a> · '\n            '<a href=\"https://culturebotai.github.io/mechs/\">All Mech projects</a></nav>'\n            f\"<main><h1>{escape(title)}</h1>{content}</main>\"\n            '<script src=\"../theme-toggle.js\"></script></html>'\n        )\n\n    sections = []\n    for group, definitions in groups.items():\n        links = []\n        for name, definition in sorted(definitions.items()):\n            filename = group.lower() + \"-\" + quote(name, safe=\"\") + \".html\"\n            (output / filename).write_text(\n                shell(name, str(structured_value(json_dumper.to_dict(definition))))\n            )\n            links.append(f'<li><a href=\"{escape(filename, quote=True)}\">{escape(name)}</a></li>')\n        sections.append(\n            f'<section id=\"{group.lower()}\"><h2>{group} ({len(definitions)})</h2><ul>{\"\".join(links)}</ul></section>'\n        )\n    (output / \"index.html\").write_text(\n        shell(\n            \"Schema reference\",\n            '<p>Generated from the schema and its imports. <a href=\"../index.md\">Raw Markdown index</a>.</p>'\n            + \"\".join(sections),\n        )\n    )\n    return sorted(\"schema/\" + p.name for p in output.glob(\"*.html\"))\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.640020+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/synonym_policy.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+      "stderr": "",
+      "stdout_text": "\"\"\"Shared policy for labels retained in an ingredient's synonym history.\"\"\"\n\nfrom __future__ import annotations\n\nimport re\nfrom collections.abc import Mapping\nfrom typing import Any\n\n# These entries preserve a rejected candidate and its provenance in curated\n# YAML.  They are not names the record answers to and must not be exposed by\n# search/resolution exports or by the SSSOM ``other`` synonym channel.\nNON_RESOLVING_SYNONYM_TYPES = frozenset({\"REJECTED_LABEL\"})\n\n# Curation strings that live in ``synonyms`` but are not names anything answers\n# to: role/property annotations carried over from the CultureMech import,\n# CultureMech original-amount notes, and bare parentheticals like\n# ``(sodium salt)`` or ``(for solid medium, alternative)`` that are fragments of\n# a name, not a name. Publishing them as resolvable labels would make internal\n# notes resolve to real ingredients.\n_CURATION_NOTE_SYNONYM_TEXT = r\"^\\s*(?:role|properties|cross-references?|original amount)\\s*:\"\n# Organism assay assertions name a relationship to an ingredient, not the\n# ingredient itself (#703). Require the complete prefix and colon: chemical\n# ratios, CURIEs, and names such as \"reduction indicator\" remain valid labels.\n_TRAIT_SYNONYM_TEXT = (\n    r\"^\\s*(?:produces|reduction|degradation|hydrolysis|electron acceptor|\"\n    r\"aerobic catabolization|anaerobic catabolization|assimilation|growth|\"\n    r\"fermentation|oxidation(?: in darkness)?)\\s*:\"\n)\n_BARE_PARENTHETICAL = r\"^\\s*\\([^)]*\\)\\s*$\"\n\nCURATION_NOTE_SYNONYM_TEXT = re.compile(_CURATION_NOTE_SYNONYM_TEXT, re.IGNORECASE)\nNON_RESOLVING_SYNONYM_TEXT = re.compile(\n    f\"{_CURATION_NOTE_SYNONYM_TEXT}|{_TRAIT_SYNONYM_TEXT}|{_BARE_PARENTHETICAL}\",\n    re.IGNORECASE,\n)\n\n\ndef is_curation_note_synonym_text(text: Any) -> bool:\n    \"\"\"Return whether synonym text is an importer or curator note.\"\"\"\n    if not text:\n        return False\n    return bool(CURATION_NOTE_SYNONYM_TEXT.match(str(text)))\n\n\ndef is_resolving_synonym_text(text: Any) -> bool:\n    \"\"\"Return whether synonym text is a real label for a record.\"\"\"\n    if not text:\n        return False\n    return not NON_RESOLVING_SYNONYM_TEXT.match(str(text))\n\n\ndef is_resolving_synonym(synonym: Mapping[str, Any]) -> bool:\n    \"\"\"Return whether a synonym row is allowed to resolve to its record.\"\"\"\n    synonym_type = str(synonym.get(\"synonym_type\") or \"\").strip().upper()\n    if synonym_type in NON_RESOLVING_SYNONYM_TYPES:\n        return False\n    return is_resolving_synonym_text(synonym.get(\"synonym_text\"))\n\n\ndef preferred_term_owners(records: Mapping[str, Mapping[str, Any]]) -> dict[str, frozenset[str]]:\n    \"\"\"Native Rule K ownership, including credited or unresolved tombstones.\n\n    Callers supply the complete mapped-directory snapshot, keyed by forward\n    escaped MIM subjects. An explicit representative takes precedence even when\n    empty or unresolved; only an absent representative permits legacy fallback.\n    \"\"\"\n\n    def rejected(data: Mapping[str, Any]) -> bool:\n        return str(data.get(\"mapping_status\") or \"\").strip().upper() == \"REJECTED\"\n\n    live_by_identifier: dict[str, set[str]] = {}\n    for subject, data in records.items():\n        identifier = str(data.get(\"identifier\") or \"\").strip()\n        if identifier and not rejected(data):\n            live_by_identifier.setdefault(identifier, set()).add(subject)\n    owners: dict[str, set[str]] = {}\n    for subject, data in records.items():\n        term = str(data.get(\"preferred_term\") or \"\").strip()\n        if not term:\n            continue\n        if rejected(data):\n            target = (\n                data.get(\"representative\") if \"representative\" in data else data.get(\"identifier\")\n            )\n            credited = live_by_identifier.get(str(target or \"\").strip())\n            owners.setdefault(term.casefold(), set()).update(credited or {subject})\n        else:\n            owners.setdefault(term.casefold(), set()).add(subject)\n    return {term: frozenset(subjects) for term, subjects in owners.items()}\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.648514+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/mapping_scope.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fefb95d4a1fb96acc3fbdcd1a6948256df27d0df11e694bae90d4709e26a6400",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.656410+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/source_alias_refresh.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "94b054569f5ecc084b913817b62017f3432dcfda8eb3a76f8f3138d677e4809a",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.665106+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/ingredient_bundle_refresh.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d0826b8ac0867604a233ae3df951b569e90dfa5b7892e62ce40015e9d8c15ee3",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.673151+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/sssom_metadata.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0c5e08a55ff6845959ec84b1f530f9891e361f1a1b16b9f81b42beafb8a20d66",
+      "stderr": "",
+      "stdout_text": "\"\"\"Data-derived metadata for emitted SSSOM mapping sets.\"\"\"\n\nfrom __future__ import annotations\n\nimport re\nfrom collections.abc import Iterable, Mapping\nfrom datetime import date\nfrom typing import Any\n\n\ndef subset_date_metadata(\n    metadata: Mapping[str, Any], rows: Iterable[Mapping[str, str]]\n) -> dict[str, Any]:\n    \"\"\"Describe the emitted rows without inheriting an excluded row's date.\n\n    Empty or wholly dateless sets omit both optional date fields; they have no\n    row date to substantiate a version. Missing row dates stay untouched for\n    Rule F to diagnose. Nonblank dates must be ASCII calendar dates, so malformed\n    values cannot silently determine the set version. This adds no approval and\n    does not modify row payloads, source provenance or other metadata (#1090).\n    \"\"\"\n    dates = []\n    for position, row in enumerate(rows, 1):\n        raw = row.get(\"mapping_date\", \"\")\n        if not isinstance(raw, str):\n            raise ValueError(f\"Invalid mapping_date in emitted row {position}: {raw!r}\")\n        value = raw.strip()\n        if not value:\n            continue\n        if not re.fullmatch(r\"[0-9]{4}-[0-9]{2}-[0-9]{2}\", value):\n            raise ValueError(f\"Invalid mapping_date in emitted row {position}: {raw!r}\")\n        try:\n            dates.append(date.fromisoformat(value))\n        except ValueError as exc:\n            raise ValueError(f\"Invalid mapping_date in emitted row {position}: {raw!r}\") from exc\n    result = dict(metadata)\n    if dates:\n        newest = max(dates).isoformat()\n        result.update(mapping_date=newest, mapping_set_version=newest)\n    else:\n        result.pop(\"mapping_date\", None)\n        result.pop(\"mapping_set_version\", None)\n    return result\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.681651+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/hydrate_guard.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "af68f74d6371ddaf26adf50a1fdea14d78498448d3bf6215a1b799936a6b9aad",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.689820+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/solution_matcher.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "81f74e55b93de31799b9068dbde8ad5c14864ceb367fe91ef8283efa8c7c93cf",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.698072+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/synonym_manager.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1be9ea1023d4a27995dbb5ee2472ea579748fdb77e39ca8d71079dd822d99584",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.706584+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/chebi_deduplicator.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "36867971b9d44753ce44538b426ed0a8655d95848a6b74c13e95270c141055d5",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.714736+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b631271863918eb77fb90a0d7e3f3692b0fc4f3d3d5eaad6ebfc62087e85be2d",
+      "stderr": "",
+      "stdout_text": "\"\"\"Curation tools for ingredient ontology mapping.\"\"\"\n\nfrom __future__ import annotations\n\nfrom typing import TYPE_CHECKING, Any\n\nif TYPE_CHECKING:\n    from mediaingredientmech.curation.ingredient_curator import IngredientCurator\n    from mediaingredientmech.curation.synonym_manager import SynonymManager\n\n__all__ = [\"IngredientCurator\", \"SynonymManager\"]\n\n\ndef __getattr__(name: str) -> Any:\n    \"\"\"Load the heavyweight curator only when its public export is requested.\n\n    Lightweight helpers such as ``solution_matcher`` should not need to parse\n    the LinkML schema merely because Python initializes this package.\n    \"\"\"\n    if name == \"IngredientCurator\":\n        from mediaingredientmech.curation.ingredient_curator import IngredientCurator\n\n        return IngredientCurator\n    if name == \"SynonymManager\":\n        from mediaingredientmech.curation.synonym_manager import SynonymManager\n\n        return SynonymManager\n    raise AttributeError(name)\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.723029+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/ingredient_curator.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c54093a7287b837507c1a3881400762edc224b44c841a61ce6e61f063dc9f528",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.730845+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curation/chemical_properties_guard.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "20e6db5f2d608639b78108ff40e397c93a98b72b9ea2261f47f101bffd5b2474",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.739246+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/culturemech_occurrences.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "847fcee4814d9abb1d5f10d236eb23038eb171e275f3745c23d336b2e958a2be",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.748206+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/kg_microbe_searcher.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3a349bc2919c960b3647ac281acf80de3b8d7ff00cf5f424472efd9f6e58b8e",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.756534+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/role_facets.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "afec5772d68ec5b9e38a9073e57971ec7d49ef3dbe96ef3a012a9a509ffddc10",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.764923+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/role_iteration.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "52f4c0173752495d83d9442a42173aa4dca5c6406aa93478d87f89549bf7f65c",
+      "stderr": "",
+      "stdout_text": "\"\"\"Shared iteration over all role-assignment slots on an IngredientRecord.\n\nScripts under `scripts/` historically walked the flat `media_roles` slot\ndirectly with a hard-coded `record.get(\"media_roles\", [])`. That slot, along\nwith `IngredientRoleEnum` and `RoleAssignment`, was retired in #128 once its\nassignments were rehomed onto the three role facets, so consumers must walk the\nfacet slots or they silently miss every role in the corpus.\n\n`iter_role_assignments(record)` yields `(slot_name, role_assignment)` tuples\nacross every role slot on `IngredientRecord`. Consumers pick which slots they\ncare about via the `slots` filter, or take everything by default.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom collections.abc import Iterable, Iterator\nfrom typing import Any\n\n# Matches the schema's declaration order on IngredientRecord: the\n# organism-level slot first, then the three ingredient-role facets.\nALL_ROLE_SLOTS: tuple[str, ...] = (\n    \"community_organism_roles\",\n    \"nutritional_roles\",\n    \"physicochemical_roles\",\n    \"cellular_metabolic_roles\",\n)\n\n# The three ingredient-role facets; convenient shorthand for callers that want\n# ingredient roles only, without the organism-in-community slot.\nFACET_ROLE_SLOTS: tuple[str, ...] = (\n    \"nutritional_roles\",\n    \"physicochemical_roles\",\n    \"cellular_metabolic_roles\",\n)\n\n\ndef iter_role_assignments(\n    record: dict[str, Any],\n    slots: Iterable[str] | None = None,\n) -> Iterator[tuple[str, dict[str, Any]]]:\n    \"\"\"Yield (slot_name, role_assignment) for every role-assignment dict on `record`.\n\n    Args:\n        record: An IngredientRecord dict (as loaded from YAML).\n        slots: Optional iterable of slot names to restrict iteration to. Defaults\n            to `ALL_ROLE_SLOTS`. Unknown slot names are silently skipped so\n            callers can pass literals like `FACET_ROLE_SLOTS` without guarding\n            for schema evolution.\n\n    Yields:\n        Two-tuples of `(slot_name, role_assignment_dict)`. A record with no\n        role assignments yields nothing. Slots present but set to `None` or\n        `[]` yield nothing.\n\n    Example:\n        >>> for slot, assignment in iter_role_assignments(record):\n        ...     if not is_plausible(assignment[\"role\"]):\n        ...         print(f\"suspect {slot} value: {assignment['role']}\")\n    \"\"\"\n    target_slots = tuple(slots) if slots is not None else ALL_ROLE_SLOTS\n    for slot in target_slots:\n        assignments = record.get(slot) or []\n        for assignment in assignments:\n            yield slot, assignment\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.772785+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/llm_curator.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d2734b45dea7ec85dc31f0cf1a490be1d4f3d710861f48a00f4928a683707198",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.781054+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ff8d901c7978656856e09c47e99a79023eec2b240ff1a562d542d5fe683f26c4",
+      "stderr": "",
+      "stdout_text": "\"\"\"Utility modules for MediaIngredientMech.\"\"\"\n\nfrom mediaingredientmech.utils.ontology_client import OntologyClient\n\n__all__ = [\"OntologyClient\"]\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.789042+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/fleet_paths.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a47f81981c73c81fefb11f31e163cce569036bba78a06158c0a073a549a4567c",
+      "stderr": "",
+      "stdout_text": "\"\"\"\nResolving another Mech checkout from its fleet environment variable.\n\nThe fleet addresses sibling repositories through ``<REPO>_ROOT`` variables --\n``CULTUREMECH_ROOT``, ``KGMICROBE_ROOT``, ``MEDIAINGREDIENTMECH_ROOT``. The\nobvious way to read one is wrong in two ways that both fail quietly:\n\n.. code-block:: python\n\n    Path(os.environ.get(\"CULTUREMECH_ROOT\", REPO_ROOT.parent / \"CultureMech\"))\n\n``os.environ.get`` falls back only when the variable is **absent**, so an\nexported-but-empty value becomes ``Path(\"\")``, which is ``.`` -- every path\nbuilt on it then resolves against whatever the working directory happens to\nbe, and the script reads a file that is not there instead of failing. And a\n``~/checkouts/CultureMech`` value becomes a literal directory named ``~``.\n\nAn empty value is ordinary: a wrapper that sets the variable from an unset\none, or a CI step whose input was blank. See MediaIngredientMech#580.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport logging\nimport os\nfrom collections.abc import Sequence\nfrom pathlib import Path\n\nlogger = logging.getLogger(__name__)\n\n\ndef _value_of(env_var: str) -> str | None:\n    \"\"\"\n    Return the variable's value when it names something, else None.\n\n    :param env_var: Environment variable to read.\n    :return: The stripped value, or None when unset, empty or whitespace.\n    \"\"\"\n    value = os.environ.get(env_var)\n    return value.strip() if value and value.strip() else None\n\n\ndef checkout_root(env_var: str, fallback: Path, *, deprecated: Sequence[str] = ()) -> Path:\n    \"\"\"\n    Return the checkout root named by ``env_var``, else ``fallback``.\n\n    A variable that is unset, empty, or whitespace counts as unset. A value\n    starting with ``~`` is expanded.\n\n    ``deprecated`` names older spellings that still work. The fleet-standard\n    ``env_var`` always wins; a deprecated name is honoured only when the\n    standard one names nothing, and doing so logs a warning naming both. A\n    silently-ignored variable is the defect this argument exists to prevent:\n    before it, exporting ``CULTUREMECH_ROOT`` steered one script and was\n    ignored by another that read ``CULTUREMECH_DIR``, with no indication\n    (MediaIngredientMech#593).\n\n    :param env_var: Fleet environment variable naming the checkout, e.g.\n        ``\"CULTUREMECH_ROOT\"``.\n    :param fallback: Path to use when no variable names one.\n    :param deprecated: Older variable names, tried in order after ``env_var``.\n    :return: The resolved checkout root. Existence is not checked -- callers\n        report a missing checkout in their own terms.\n    \"\"\"\n    value = _value_of(env_var)\n    if value:\n        return Path(value).expanduser()\n\n    for old_name in deprecated:\n        old_value = _value_of(old_name)\n        if old_value:\n            logger.warning(\n                \"%s is deprecated; use %s. Honouring %s=%s for now.\",\n                old_name,\n                env_var,\n                old_name,\n                old_value,\n            )\n            return Path(old_value).expanduser()\n\n    return Path(fallback).expanduser()\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.797061+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/oaklib_cache.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "771d202e9e290ec360569f41468cde244250f8f7a627ba29163437941e60331e",
+      "stderr": "",
+      "stdout_text": "\"\"\"Where oaklib actually caches its sqlite builds (#306).\n\n`~/.data/oaklib` is oaklib's *default*, not its location. oaklib resolves the\ncache through pystow, which honours ``PYSTOW_HOME``, so a developer who has set\nit gets a different directory — and a script that derives the path from ``$HOME``\nreads somewhere no build exists.\n\nThat is worse than a missing file, because of what the caller then reports.\n`promote_microbedecoder_residual.canonical_label` raises\n``SystemExit(f\"{cid} has no rdfs:label (absent / wrong id)\")`` when the lookup\nreturns nothing, so a path problem is announced as a verdict about the\nidentifier. #197 is what that costs: a tool stating a confident wrong conclusion\nabout an id led someone to demote 17 valid terms.\n\nSeven scripts derived this path by hand, in three spellings\n(``Path.home() / \".data/oaklib\"``, ``expanduser(\"~/.data/oaklib/x.db\")``, and an\nf-string sqlite URL). This is the one rule they now share.\n\nNote this is a different question from #573's machine-independence guard, which\ndeliberately *allows* a dot-directory under home as \"a tool cache, not a\ncheckout\". Such a path is portable and still wrong: portability asks whether it\nruns on another machine, this asks whether it is where oaklib put the data.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport os\nfrom pathlib import Path\n\n__all__ = [\"OAK_DB_ENV\", \"db_path\", \"oaklib_cache_dir\"]\n\n#: Per-prefix override, e.g. ``OAK_CHEBI_DB``. Checked before the cache dir so a\n#: caller can point one ontology at a build without relocating the whole cache.\nOAK_DB_ENV = \"OAK_{prefix}_DB\"\n\n\ndef oaklib_cache_dir() -> Path:\n    \"\"\"\n    Return the directory oaklib caches its sqlite builds in.\n\n    Resolved through pystow, which oaklib itself uses (``oaklib/constants.py``),\n    so this honours ``PYSTOW_HOME``. Falls back to oaklib's documented default\n    when pystow is absent or refuses, because a wrong-but-conventional path is a\n    better failure than an import error in a curation script.\n\n    :return: The cache directory, which is not guaranteed to exist.\n    \"\"\"\n    try:\n        import pystow\n\n        return Path(pystow.module(\"oaklib\").base)\n    except Exception:\n        return Path.home() / \".data\" / \"oaklib\"\n\n\ndef db_path(prefix: str) -> Path:\n    \"\"\"\n    Return the semsql build path for one ontology prefix.\n\n    :param prefix: An ontology prefix such as ``CHEBI`` — case-insensitive.\n    :return: ``<cache>/<prefix lowercased>.db``, or the per-prefix env override.\n    \"\"\"\n    override = os.environ.get(OAK_DB_ENV.format(prefix=prefix.upper()))\n    if override:\n        return Path(override)\n    return oaklib_cache_dir() / f\"{prefix.lower()}.db\"\n\n\ndef require_db(prefix: str) -> Path:\n    \"\"\"\n    Return the build path for `prefix`, or exit naming the path that was tried.\n\n    The point is the message. Callers that let a missing build fall through to a\n    label lookup report \"no rdfs:label (absent / wrong id)\", which blames the\n    identifier for a path problem (#306, #197).\n\n    :param prefix: An ontology prefix such as ``CHEBI``.\n    :return: An existing build path.\n    :raises SystemExit: When no build exists at the resolved path.\n    \"\"\"\n    path = db_path(prefix)\n    if path.is_file():\n        return path\n    raise SystemExit(\n        f\"No {prefix.upper()} semsql build at {path}.\\n\"\n        f\"  This is a missing or misconfigured cache, not a bad identifier.\\n\"\n        f\"  The cache directory resolves through pystow (PYSTOW_HOME\"\n        f\"{'=' + os.environ['PYSTOW_HOME'] if os.environ.get('PYSTOW_HOME') else ' unset'}).\\n\"\n        f\"  Build it with `runoak -i sqlite:obo:{prefix.lower()} info {prefix.upper()}:0000000`, \"\n        f\"or point {OAK_DB_ENV.format(prefix=prefix.upper())} at an existing file.\"\n    )\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.805707+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/doi_resolver.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0bbddb6749304de4f39e1f27770cdeddf1779f0d7ed8ed919671232d2776ce48",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.814313+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/chemical_properties_client.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bef883b16b09759040420ff152b9a36e5f869db20f7847729d00209b74d7cdd2",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.822633+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/object_source.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "998647c6243f4f40449ebf052958564ee1bfd1e02250efddf76f6b96b70af98a",
+      "stderr": "",
+      "stdout_text": "\"\"\"\nThe one table mapping a published prefix to its ``object_source``.\n\n``object_source`` is how a consumer knows which ontology or registry to\nresolve ``object_id`` against, so a row without one publishes an identifier\nwith no stated origin.\n\nThere were two of these tables (#385). ``reconcile_sssom`` listed eleven\nprefixes; ``promote_resolved_unmapped`` listed eight, missing ``cas``,\n``kgmicrobe.compound`` and ``kgmicrobe.ingredient`` -- **682 of the 2,999\npublished rows, 23%**. Both looked the value up with ``.get(prefix, \"\")``, so\npromoting a record to a missing prefix did not raise: it wrote an empty column\nand everything downstream kept working (#386). Rule C in\n``validate_sssom_invariants`` catches the result after the fact; nothing\nstopped it being written.\n\nSo there is one table, and :func:`object_source_for` raises rather than\nreturning a blank. A prefix this project does not publish is a decision\nsomebody has to make, not a cell to leave empty.\n\"\"\"\n\nfrom __future__ import annotations\n\n#: Prefix (as it appears in an ``object_id``) to its ``object_source`` value.\n#: Keys are matched case-insensitively, because CURIEs in the corpus are not\n#: consistently cased -- ``mesh:`` is lowercase while OBO CURIEs are upper.\nOBJECT_SOURCE: dict[str, str] = {\n    \"CHEBI\": \"obo:chebi.owl\",\n    \"FOODON\": \"obo:foodon.owl\",\n    \"ENVO\": \"obo:envo.owl\",\n    \"UBERON\": \"obo:uberon.owl\",\n    \"NCIT\": \"obo:ncit.owl\",\n    \"MICRO\": \"obo:micro.owl\",\n    \"BTO\": \"obo:bto.owl\",\n    \"MESH\": \"registry:mesh\",\n    \"CAS\": \"registry:cas\",\n    \"kgmicrobe.compound\": \"kgm:compound\",\n    \"kgmicrobe.ingredient\": \"kgm:ingredient\",\n}\n\n_BY_UPPER = {prefix.upper(): source for prefix, source in OBJECT_SOURCE.items()}\n\n\nclass UnknownObjectSource(KeyError):\n    \"\"\"A published prefix has no declared ``object_source``.\"\"\"\n\n\ndef prefix_of(curie_or_prefix: str) -> str:\n    \"\"\"\n    Return the prefix of a CURIE, or the argument when it is already one.\n\n    :param curie_or_prefix: ``\"CHEBI:17234\"`` or ``\"CHEBI\"``.\n    :return: The prefix, unchanged in case.\n    \"\"\"\n    text = (curie_or_prefix or \"\").strip()\n    return text.split(\":\", 1)[0] if \":\" in text else text\n\n\ndef object_source_for(curie_or_prefix: str) -> str:\n    \"\"\"\n    Return the ``object_source`` for a CURIE or prefix.\n\n    :param curie_or_prefix: ``\"CHEBI:17234\"`` or ``\"CHEBI\"``.\n    :return: The declared ``object_source``.\n    :raises UnknownObjectSource: When the prefix is not declared. Refusing is\n        the point: the alternative is an empty column nobody notices (#386).\n    \"\"\"\n    prefix = prefix_of(curie_or_prefix)\n    try:\n        return _BY_UPPER[prefix.upper()]\n    except KeyError:\n        raise UnknownObjectSource(\n            f\"no object_source declared for prefix {prefix!r}. Add it to \"\n            f\"mediaingredientmech.utils.object_source.OBJECT_SOURCE, which is \"\n            f\"the single table every writer reads; publishing a row with an \"\n            f\"empty object_source is not an option (#385, #386).\"\n        ) from None\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.831776+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/ontology_client.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "790f1b2c6e06c74e8492fc6025dd128a54fd30016a70301737958ef19edf007e",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.841952+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/chemical_normalizer.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "42369f60ead4b8546d5c736decd668f089fd384e7ce23efb2568671b269b1ed1",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.850798+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/yaml_handler.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ddb77a0f4244db4829b698c8d79a8f4c57dc045322877020a73ef2ca26911ec8",
+      "stderr": "",
+      "stdout_text": "\"\"\"Safe YAML I/O with error handling and backups.\n\nThe ``save_yaml`` helper accepts an opt-in ``validate=`` flag that routes\nthe write through ``write_validated_ingredient`` for closed-schema\nvalidation. Callers that write IngredientRecord / IngredientCollection\nYAMLs should pass ``validate=True``; callers that write reports, indexes,\nor UMAP outputs should leave it off (default).\n\"\"\"\n\nimport shutil\nfrom datetime import datetime\nfrom pathlib import Path\nfrom typing import Any\n\nimport yaml\n\n\ndef load_yaml(path: str | Path) -> dict:\n    \"\"\"Load a YAML file safely.\n\n    Args:\n        path: Path to YAML file.\n\n    Returns:\n        Parsed YAML data as dict.\n\n    Raises:\n        FileNotFoundError: If file does not exist.\n        yaml.YAMLError: If YAML is malformed.\n    \"\"\"\n    path = Path(path)\n    if not path.exists():\n        raise FileNotFoundError(f\"YAML file not found: {path}\")\n    with open(path, encoding=\"utf-8\") as f:\n        data = yaml.safe_load(f)\n    if data is None:\n        return {}\n    if not isinstance(data, dict):\n        raise TypeError(f\"Expected a YAML mapping in {path}, got {type(data).__name__}\")\n    return data\n\n\ndef save_yaml(\n    data: Any,\n    path: str | Path,\n    *,\n    backup: bool = True,\n    validate: bool = False,\n    target_class: str | None = None,\n) -> Path:\n    \"\"\"Save data to a YAML file with optional backup and optional validation.\n\n    Args:\n        data: Data to serialize.\n        path: Output file path.\n        backup: If True and file exists, create timestamped backup.\n        validate: When True, route the write through\n            ``write_validated_ingredient`` so the data is checked against\n            the LinkML schema in closed mode before disk is touched. Use\n            for IngredientRecord / IngredientCollection writes. Leave off\n            for reports / indexes / non-ingredient YAML.\n        target_class: Optional LinkML target class override (e.g.\n            ``\"IngredientCollection\"`` or ``\"IngredientRecord\"``). Only\n            consulted when ``validate=True``; defaults to auto-detect from\n            the data shape.\n\n    Returns:\n        Path to saved file.\n\n    Raises:\n        ValidationFailedError: When ``validate=True`` and the data fails\n            closed-schema validation. Disk is not modified.\n    \"\"\"\n    path = Path(path)\n\n    if validate:\n        # Local import to avoid a circular dependency at module import time.\n        from mediaingredientmech.validation.write_validated import (\n            validate_ingredient,\n            write_validated_ingredient,\n        )\n\n        # Validate before snapshotting so a failing validation neither\n        # touches the destination nor creates a backup of the existing\n        # good copy (which would spam backups/ on repeated bad runs).\n        errors = validate_ingredient(data, target_class=target_class)\n        if errors:\n            from mediaingredientmech.validation.write_validated import (\n                ValidationFailedError,\n            )\n\n            raise ValidationFailedError(path, errors)\n        if backup and path.exists():\n            _create_backup(path)\n        write_validated_ingredient(data, path, target_class=target_class)\n        return path\n\n    if backup and path.exists():\n        _create_backup(path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    with open(path, \"w\", encoding=\"utf-8\") as f:\n        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)\n\n    return path\n\n\ndef _create_backup(path: Path) -> Path:\n    \"\"\"Create a timestamped backup of an existing file.\"\"\"\n    timestamp = datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n    backup_dir = path.parent / \"backups\"\n    backup_dir.mkdir(exist_ok=True)\n    backup_path = backup_dir / f\"{path.stem}_{timestamp}{path.suffix}\"\n    shutil.copy2(path, backup_path)\n    return backup_path\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.858851+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/utils/purity_detector.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8577480a131e0f7dd0874f89b62f8cda47f5adefc8ade296dd579288c58b79b0",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.868410+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/history.yaml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b01b06f1b9a37db205c26c31ec0fd910690848507c7e1bfb73b424ac0829c52d",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.876878+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/mapped_ingredients_schema.yaml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "46a0fa42262f07b96f00c513fdd9d9dc90cad9befb1a407c3ea971e2c5eb501e",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.885857+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout_text": ""
+    },
+    {
+      "at": "2026-11-08T13:49:48.894822+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/mech_shared.yaml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.903761+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/mapped_ingredients_schema.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9b29f19f1b4dcd82974d3c67a96d061b2d9e52561e3a2e22827d699f2084e9f4",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.912269+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/mediaingredientmech.yaml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.920450+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/schema/unmapped_ingredients_schema.yaml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "95deae1ab0b0886517ca302a860ead4123617432917797eec6234239b0266dc4",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.928923+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curate/publication_guard.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.938455+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curate/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "92cd8cc6811a0032c32f4d2fab13b0cb500d618d8cf3bc5b477521f99be7248b",
+      "stderr": "",
+      "stdout_text": "\"\"\"Curation helpers shared across MediaIngredientMech writer scripts.\"\"\"\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.946886+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curate/curation_event.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.955745+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curate/apply_receipt.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f",
+      "stderr": "",
+      "stdout_text": "\"\"\"Reserve fresh curation evidence outputs before a mutator writes its owner.\"\"\"\n\nimport os\nfrom contextlib import ExitStack, contextmanager\nfrom pathlib import Path\n\n\ndef _still_reserved(path: Path, identity: tuple[int, int]) -> bool:\n    \"\"\"Check the directory entry itself, without following a replacement symlink.\"\"\"\n    try:\n        current = path.lstat()\n    except (FileNotFoundError, NotADirectoryError):\n        return False\n    return (current.st_dev, current.st_ino) == identity\n\n\n@contextmanager\ndef reserve_receipt_outputs(log: Path, *, backup_paths: tuple[Path, ...] | None = None):\n    \"\"\"Yield the exclusive receipt handle followed by binary backup handles.\n\n    By default, reserve ``log.with_suffix(\".before.yaml\")`` and yield the\n    existing ``(receipt, backup)`` pair. Explicit ``backup_paths`` are reserved\n    in order, and yield ``(receipt, *backups)`` only after every open succeeds.\n    An existing receipt or backup, including a symlink, refuses the operation.\n\n    Check reservation identities before yielding. On reservation failure,\n    remove only paths still naming this call's open files; a competing\n    replacement is not ours to remove. Keep handles open through cleanup so\n    an unlinked reserved file's inode cannot be reused during these checks.\n    Once the mutator starts, keep its evidence even if a later write fails;\n    never erase a source backup after the owner may have changed.\n    \"\"\"\n    log.parent.mkdir(parents=True, exist_ok=True)\n    paths = backup_paths if backup_paths is not None else (log.with_suffix(\".before.yaml\"),)\n    stack = ExitStack()\n    created = []\n    try:\n        receipt = stack.enter_context(log.open(\"x\", encoding=\"utf-8\"))\n        info = os.fstat(receipt.fileno())\n        created.append((log, (info.st_dev, info.st_ino)))\n        backups = []\n        for path in paths:\n            backup = stack.enter_context(path.open(\"xb\"))\n            info = os.fstat(backup.fileno())\n            created.append((path, (info.st_dev, info.st_ino)))\n            backups.append(backup)\n        for path, identity in created:\n            if not _still_reserved(path, identity):\n                raise ValueError(f\"Reserved evidence output was replaced or removed: {path}\")\n    except Exception:\n        try:\n            for path, identity in created:\n                if _still_reserved(path, identity):\n                    path.unlink(missing_ok=True)\n        finally:\n            stack.close()\n        raise\n    try:\n        yield (receipt, *backups)\n    finally:\n        stack.close()\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.964424+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/curate/campaign_owner_apply.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.973338+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/profiles/ingredient_scope_v1.yaml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dd2f78e6b6fcbdf8a715bebcec14e0f86c1e431bf28e5b9d7f3524a62e5bce3a",
+      "stderr": "",
+      "stdout_text": "profile_id: https://w3id.org/mediaingredientmech/sssom/ingredient-scope/v1\nprofile_version: 1\ncurie_map:\n  mimscope: https://w3id.org/mediaingredientmech/scope/\n  mimprofile: https://w3id.org/mediaingredientmech/sssom/\n  xsd: http://www.w3.org/2001/XMLSchema#\n  linkml: https://w3id.org/linkml/\nscope_values:\n  chemical_family: A family or broader grouping of chemical entities.\n  defined_substance: A substance with a reviewed specific chemical identity.\n  material: A generic ingredient material, including compositionally variable material.\n  preparation: A specified preparation, grade, form or formulation of a material.\n  catalog_product: A supplier's commercial product specification, not an individual lot.\n  unknown: The entity scope has not been established.\ncomposition_values:\n  single_component: A reviewed single chemical component.\n  mixture: Multiple chemical components, whether defined or variable.\n  unknown: Composition has not been established.\nreview_status_values: [SUPPORTED, WITHHOLD, UNREVIEWED]\nidentity_predicates: [skos:exactMatch]\nnonidentity_predicates: [skos:broadMatch, skos:narrowMatch, skos:closeMatch, skos:relatedMatch]\nextension_definitions:\n  - slot_name: ext_scope_profile\n    property: mimprofile:scopeProfile\n    type_hint: linkml:Uriorcurie\n  - slot_name: ext_subject_scope\n    property: mimprofile:subjectScope\n    type_hint: linkml:Uriorcurie\n  - slot_name: ext_object_scope\n    property: mimprofile:objectScope\n    type_hint: linkml:Uriorcurie\n  - slot_name: ext_subject_composition\n    property: mimprofile:subjectComposition\n    type_hint: linkml:Uriorcurie\n  - slot_name: ext_object_composition\n    property: mimprofile:objectComposition\n    type_hint: linkml:Uriorcurie\n  - slot_name: ext_scope_review_status\n    property: mimprofile:scopeReviewStatus\n    type_hint: xsd:string\n  - slot_name: ext_scope_evidence\n    property: mimprofile:scopeEvidence\n    type_hint: linkml:Uriorcurie\n  - slot_name: ext_identity_authorized\n    property: mimprofile:identityAuthorized\n    type_hint: xsd:boolean\n"
+    },
+    {
+      "at": "2026-11-08T13:49:48.982120+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/export/ingredient_bundle.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6195c21085060742af7050ec794341b373ba44907e4687c4ce00e278089eaf82",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.990470+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/export/kgx.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "db605917599e4f868a70b028a4a3c0b0aa378c23973ae8f8132fa5b9038b18be",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:48.998213+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/export/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout_text": ""
+    },
+    {
+      "at": "2026-11-08T13:49:49.006239+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/export/supported_kgx.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c63ed9a9a6f1f4c0af70afd877737484c48f7ee281a17613ef84e2c1f6eab851",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.014305+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/export/report_generator.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f22aa26a5ec0e7ab0dd803c4520ad9683ac3b8cfa22f7ac6d816ba30cd13d98b",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.023442+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/export/reviewed_sssom.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.031544+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/schema_validator.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "52d737d19b2801820e2e86d4c6ff984668d38161a0397c5970b75aca1044bab7",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.039804+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/ontology_validator.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "35ba7b03b68cf260bfbe841807deb7e70833f637f5f11b2a28a51e877a7b2c45",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.047934+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/component_partonomy.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.056085+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/kg_microbe_dict.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3ac551ff33b19798b842cd3efb395e360132d6e1d174c25fbf4341fdd0da15ef",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.064037+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/__init__.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "64fb7c891e465775172b9dec11aa6cedef51f4c71c0bc81e3fa72e93daf50caf",
+      "stderr": "",
+      "stdout_text": "\"\"\"Validation module for MediaIngredientMech data files.\"\"\"\n\nfrom mediaingredientmech.validation.ontology_validator import (\n    OntologyMessage,\n    OntologyValidationResult,\n    validate_curie_format,\n    validate_records,\n    validate_term_via_oak,\n)\nfrom mediaingredientmech.validation.schema_validator import (\n    SchemaValidationResult,\n    ValidationMessage,\n    validate_data,\n    validate_file,\n)\n\n__all__ = [\n    \"SchemaValidationResult\",\n    \"ValidationMessage\",\n    \"validate_data\",\n    \"validate_file\",\n    \"OntologyValidationResult\",\n    \"OntologyMessage\",\n    \"validate_curie_format\",\n    \"validate_records\",\n    \"validate_term_via_oak\",\n]\n"
+    },
+    {
+      "at": "2026-11-08T13:49:49.072157+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/write_validated.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.080471+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/ingredient_reviewer.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b6224bdc1f90a0b4481bd7e27208dbcefdd6a06f33f209d6bba6fdfabc917c82",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.088216+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/mapping_change_receipts.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.096145+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:src/mediaingredientmech/validation/semantic_release.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.107880+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:uv.lock"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f5ce4325376797ada321c0ffba1e6050355e3185c0a079d2c731d17480aeca1a",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.118099+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:pyproject.toml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6f9eebf51774adb8c9ab742f832518ba1682fc43704ad994f73b25829645fef6",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.126649+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:MAPPING_SEMANTICS.md"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.134725+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:AGENTS.md"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.143391+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:justfile"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a",
+      "stderr": "",
+      "stdout_text": null
+    },
+    {
+      "at": "2026-11-08T13:49:49.151632+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:scripts/apply_unmatched_campaign_owners.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d68fff3b69e6502bb8adad828019b91e9b664687cdaaf4453159dfb81f16cbdb",
+      "stderr": "",
+      "stdout_text": "#!/usr/bin/env python3\n\"\"\"Apply only accepted campaign owner bytes; dry run by default (#1174).\"\"\"\n\nimport argparse\nimport json\nimport sys\nfrom pathlib import Path\n\nsys.path.insert(0, str(Path(__file__).resolve().parents[1] / \"src\"))\n\nfrom mediaingredientmech.curate.campaign_owner_apply import apply, prepare\n\n\ndef main(argv=None):\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--root\", type=Path, required=True)\n    parser.add_argument(\"--plan\", type=Path, required=True)\n    parser.add_argument(\"--acceptance\", type=Path, required=True)\n    parser.add_argument(\"--receipt-dir\", type=Path, required=True)\n    mode = parser.add_mutually_exclusive_group()\n    mode.add_argument(\"--apply\", action=\"store_true\")\n    mode.add_argument(\"--dry-run\", action=\"store_true\")\n    args = parser.parse_args(argv)\n    prepared = prepare(args.root, args.plan, args.acceptance)\n    result = apply(prepared, args.receipt_dir, enabled=args.apply)\n    print(json.dumps(result, indent=2))\n\n\nif __name__ == \"__main__\":\n    main()\n"
+    },
+    {
+      "at": "2026-11-08T13:49:49.160477+00:00",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "show",
+        "7d6d44ea132e04709f81ebd9e1577643745110ad:tests/test_campaign_owner_apply.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3",
+      "stderr": "",
+      "stdout_text": null
+    }
+  ],
+  "environment": {
+    "GIT_OPTIONAL_LOCKS": "0",
+    "GIT_NO_LAZY_FETCH": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "supplemental_native_git_reads": "Fresh final-head control directly calls native git() read commands. No Git-writing command or fixture used.",
+  "exploratory_read_failures_retained": [
+    "Preparation records its three original failed discovery/read probes. Later readback inspection overprinted a bounded view and a substring locator failed with ValueError; no output artifact or source was changed, and direct sed then located the genuine control."
+  ]
+}

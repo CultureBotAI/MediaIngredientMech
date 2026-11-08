@@ -1,0 +1,73 @@
+{
+  "finding_id": "IR-INDEX-COHERENCE-001",
+  "prior_finding_id": "W08-7D4DB26-SRC-001",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+  "prior_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721505891",
+  "severity": "major",
+  "status": "confirmed_open",
+  "reviewed_private_source_sha256": "adba0b6b237de4fa8636fcdd7fa28c9d952859b6f0008d4e9d0671acdd323575",
+  "title": "Matching index brackets do not establish that the observed index tuple was validated",
+  "description": "The initial full ls-files snapshot and final full snapshot can both contain the same invalid staged blob. Actual cached-path/blob validation can read a temporarily restored accepted index in between. The only new check compares bracket equality, so native apply returns complete although its final observed index tuple is invalid. This is a within-observation mismatch, not a mutation after the last observation or a demand for global atomicity.",
+  "locators": [
+    "campaign_owner_apply.py:966 initial full snapshot is stored, not used as validation authority",
+    "campaign_owner_apply.py:982-1032 cached-path and entry/blob validation independently rereads mutable index",
+    "campaign_owner_apply.py:1037-1040 equality compares endpoints without binding the validated middle view"
+  ],
+  "actual_native_proof": {
+    "probe": {
+      "path": "probe_snapshot_validation.py.txt",
+      "sha256": "7ec42c7aad99553683db15da9f562add0addf9b96bb4904ed1d4c52742af2413"
+    },
+    "results": {
+      "path": "results-v1.json",
+      "sha256": "9f949131f3f1f735f2be9f0b5dfb6db81e50ec7c0a239ad27959dd9e12d20865"
+    },
+    "controls": [
+      {
+        "mode": "clean",
+        "observed": {
+          "complete": true,
+          "state": "complete"
+        },
+        "snapshots_equal": false
+      },
+      {
+        "mode": "invalid_snapshot_stays",
+        "observed": {
+          "complete": false,
+          "error": "ValueError('Unrelated staged file changed')"
+        },
+        "snapshots_equal": false
+      },
+      {
+        "mode": "invalid_contract_hidden_between_equal_snapshots",
+        "observed": {
+          "complete": true,
+          "state": "complete"
+        },
+        "snapshots_equal": true
+      },
+      {
+        "mode": "invalid_owner_hidden_between_equal_snapshots",
+        "observed": {
+          "complete": true,
+          "state": "complete"
+        },
+        "snapshots_equal": true
+      }
+    ],
+    "native_functions_or_results_replaced": false,
+    "real_Git_mutations_only": true,
+    "mutation_after_final_observation": false,
+    "maintained_files_changed": false
+  },
+  "required_fix_scope": "Validate actual stage/path/mode/blob tuples from one captured logical index as the authority, and bind any separate cached/entry view to that same tuple; then compare final logical snapshot. A baseline tree comparison may derive the changed-path set from that captured map. Hash-addressed cat-file reads should use captured OIDs, not later index lookups. Keep literal NUL paths, stage/mode/retirement checks, before-versus-installed accepted endpoint checks, harmless stat refresh and legitimate staging between validation boundaries.",
+  "historical_contract": "verify_completed remains historical content/provenance verification. Its success after a legitimate later commit is correct. The failure is live apply publishing complete for an invalid observed index, not historical verifier lack of a present-index lock.",
+  "bounded_limit": "Even a corrected captured-tuple validation is a bounded observation and cannot prevent arbitrary mutations after the final read; no global OS/index lock or atomicity claim is requested.",
+  "regressions": [
+    "Actual initial/final bad unrelated staged blob with good middle view must refuse.",
+    "Actual initial/final bad owner blob with good middle view must refuse.",
+    "Retain existing two late mutation refusals, stat-cache positive, all original tests and later-commit historical positive."
+  ],
+  "fix_authored_by_reviewer": false
+}

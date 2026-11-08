@@ -1,0 +1,34 @@
+"""Bounded issue1252 fix evidence; all corpus mutation remains prohibited."""
+from pathlib import Path
+import datetime,hashlib,json,subprocess,shutil
+D=Path(__file__).resolve().parent;I=D.parents[1]/'integration/worktree';sha=lambda b:hashlib.sha256(b).hexdigest()
+def save(n,o):
+ with (D/n).open('x') as f:json.dump(o,f,indent=2);f.write('\n')
+freeze=json.loads((D/'source-freeze-v1.json').read_text());code=I/'src/mediaingredientmech/curate/campaign_owner_apply.py';tests=I/'tests/test_campaign_owner_apply.py';assert sha(code.read_bytes())==freeze['operator_sha256'] and sha(tests.read_bytes())==freeze['tests_sha256']
+assert '252 passed' in (D/'pytest-full-source-publication-v1.log').read_text();assert '13 passed' in (D/'pytest-focused-v2.log').read_text()
+result=json.loads((D/'same933-result.json').read_text());assert result['status']=='PASS_RECORD_STAGE_ONLY'
+assert subprocess.check_output(['git','-C',str(I),'rev-parse','HEAD'],text=True).strip()=='d691c079cf3923daed89284b7579913b84c3a34c'
+status=subprocess.check_output(['git','-C',str(I),'status','--porcelain'],text=True);assert set(status.splitlines())=={' M src/mediaingredientmech/curate/campaign_owner_apply.py',' M tests/test_campaign_owner_apply.py'}
+subprocess.run(['git','-C',str(I),'diff','--check'],check=True)
+(D/'final.patch').write_bytes(subprocess.check_output(['git','-C',str(I),'diff','--','src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py']))
+(D/'final-source').mkdir();shutil.copyfile(code,D/'final-source/campaign_owner_apply.py');shutil.copyfile(tests,D/'final-source/test_campaign_owner_apply.py')
+save('runtime.json',{'python':subprocess.check_output([str(D.parents[2]/'kgm-unmapped-20261107/env/bin/python'),'--version'],text=True).strip(),'baseline':'d691c079cf3923daed89284b7579913b84c3a34c','checks':{'source_tests':134,'publication_tests':118,'combined_pass':252,'new_cases':13,'warnings':'12 upstream LinkML/Pydantic deprecation warnings','ruff':'PASS','black_check':'PASS','mypy':'PASS one source file; follow-imports=silent','diff_check':'PASS'},'git_status_porcelain':status,'at':datetime.datetime.now(datetime.timezone.utc).isoformat()})
+readme='''# Issue1252: preserve genuine unmapped rejection
+
+Issue-first authority: https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145; exact verified publication receipt is retained here. Root's previous ordinary commit d691c079 is captured byte-exact under before/. Only campaign_owner_apply.py and its dedicated test file changed.
+
+The existing REJECTED branch now distinguishes two same-path/same-key cases: an existing tombstone remains rejected, or an existing UNMAPPED owner at its unmapped path becomes REJECTED. Both require kind edit and unchanged identifier/preferred name. Create, relocation, revival, wrong identity/status and inherited-collision family guards remain. No source payload or maintained owner was changed, no application occurred, and no commit or push was performed by this author.
+
+All 51 prior named helper/test ASTs and the complete 50,699-byte previous test file prefix are unchanged. Thirteen new cases cover a genuinely published rejection fixture through real prepare/apply/verify_completed; operation, relocation, identity, name, schema type, preimage, history and stale-origin failures before writes; and completed-verifier owner drift. All other existing source function/class ASTs are unchanged; only _validate_records changes besides the module docstring.
+
+Validation: 252 tests PASS (134 source +118 publication), including all existing refusal and integration controls; 13 new cases also passed separately. Ruff, Black check, Mypy and Git diff check pass. Twelve upstream LinkML/Pydantic warnings remain. The first focused run had a newly authored test's wrong shape literal (existing versus actual campaign_owner_edit); its failed log/draft and exact real receipt are preserved. The correction changes only that new expectation to the actual native contract; no old assertion is changed.
+
+The complete same933 replay PASSes native _validate_records with the exact prior selection, original order, all source/candidate bytes and 2,956 before owners unchanged. Projected after inventory remains3,550. This is record-stage structural proof, not full campaign prepare, scientific acceptance or application. TSB remains scientifically held; Angustmycin still needs the separate explicit demote operation; report-only ten-vitamin has no owner bytes. The normalization selector remains author-only pending its distinct review. Historical failed933 packet is untouched.
+
+Private pytest fixture repositories, their symlinks/recovery files and MyPy cache remain in this directory. They are not part of the compact manifest; they are retained without cleanup. The compact manifest includes scripts, logs, old/final source snapshots, failed new-test draft, issue receipt, native replay result and exact patch. No later demote work is included in this freeze.
+'''
+with (D/'README.md').open('x') as f:f.write(readme)
+manifest={str(p.relative_to(D)):sha(p.read_bytes()) for p in sorted(D.rglob('*')) if p.is_file() and not p.is_symlink() and not any(part.startswith('pytest-') or part.startswith('mypy-cache') for part in p.relative_to(D).parts[:-1]) and p.name not in ('MANIFEST.json','HANDOFF.json')}
+save('MANIFEST.json',{'schema':'bounded-private-code-fix-sha256-v1','files':manifest,'excluded_retained_private_directories':['pytest-focused-v1','pytest-focused-v2','pytest-full-source-publication-v1','mypy-cache-v1']})
+save('HANDOFF.json',{'issue':1252,'issue_comment':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145','base_commit':'d691c079cf3923daed89284b7579913b84c3a34c','author':'root/next23_context; independent review pending','manifest_sha256':sha((D/'MANIFEST.json').read_bytes()),'member_count':len(manifest),'operator_sha256':freeze['operator_sha256'],'tests_sha256':freeze['tests_sha256'],'patch_sha256':sha((D/'final.patch').read_bytes()),'tests':{'source':134,'publication':118,'combined_pass':252,'new_regressions':13,'old_tests_unchanged':True},'same933_record_stage':'PASS_RECORD_STAGE_ONLY','same933_result_sha256':sha((D/'same933-result.json').read_bytes()),'static_checks':['Ruff PASS','Black PASS','Mypy PASS','git diff --check PASS'],'maintained_owner_changes':False,'source_application':False,'commit_or_push':False,'independent_review':'required; not self-approved','next_step':'Root ordinary commit and distinct review; demote implementation is separate and unstarted.'})
+print(json.dumps({n:sha((D/n).read_bytes()) for n in ('HANDOFF.json','MANIFEST.json','final.patch')},indent=2))

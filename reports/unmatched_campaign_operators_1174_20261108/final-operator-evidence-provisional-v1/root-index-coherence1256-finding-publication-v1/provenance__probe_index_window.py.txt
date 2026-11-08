@@ -1,0 +1,52 @@
+import datetime,hashlib,importlib.util,json,os,subprocess,sys
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'index-window-probes';O.mkdir()
+os.environ.update(PYTHONDONTWRITEBYTECODE='1',GIT_OPTIONAL_LOCKS='0');sys.path[:0]=[str(F/'src'),str(F)]
+spec=importlib.util.spec_from_file_location('current_fixture',F/'tests/test_campaign_owner_apply.py');fx=importlib.util.module_from_spec(spec);spec.loader.exec_module(fx);o=fx.owner
+assert Path(o.__file__).resolve()==F/'src/mediaingredientmech/curate/campaign_owner_apply.py'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def stage_blob(root,path,value):
+ digest=subprocess.run(['git','-C',str(root),'hash-object','-w','--stdin'],input=value,capture_output=True,check=True).stdout.decode().strip()
+ o.git(root,'update-index','--add','--cacheinfo','100644',digest,path)
+ return digest
+results=[]
+for mode in ['positive_staged_installed','before_cached_control','after_cached_enumeration','after_owner_blob']:
+ root=O/mode;root.mkdir();plan=fx.demotion_case(root);ready=fx.prepare(root);baseline=plan['baseline_commit'];installed=False;injected=[];events=[]
+ target=plan['records'][0]['source_record'];contract=(root/'MAPPING_SEMANTICS.md').read_bytes()
+ def is_complete():
+  p=root/'receipt/application.json'
+  return p.exists() and bool(p.read_bytes()) and json.loads(p.read_bytes()).get('state')=='complete'
+ def inject(phase):
+  path=target if mode=='after_owner_blob' else 'MAPPING_SEMANTICS.md'
+  value=b'unapproved private concurrent staged blob\n'
+  blob=stage_blob(root,path,value)
+  injected.append({'phase':phase,'path':path,'git_blob':blob,'working_sha256':sha(root/path),'index_sha256':hashlib.sha256(value).hexdigest()})
+ def profiler(frame,event,arg):
+  global installed
+  if frame.f_code is o.finish_receipt.__code__ and event=='call' and not installed:
+   o.git(root,'add','-A','--','data/ingredients');installed=True;events.append('real installed endpoints staged before native finish_receipt')
+  if frame.f_code is not o.git.__code__ or injected or mode=='positive_staged_installed':return
+  args=frame.f_locals.get('args',())
+  if not is_complete():return
+  if mode=='before_cached_control' and event=='call' and args[:2]==('diff','--cached'):inject('before actual cached enumeration in final recheck')
+  elif mode=='after_cached_enumeration' and event=='return' and args[:2]==('diff','--cached'):
+   events.append({'real_cached_result':os.fsdecode(arg)});inject('after actual cached enumeration returned in final recheck')
+  elif mode=='after_owner_blob' and event=='return' and args[:2]==('cat-file','blob'):
+   events.append({'real_blob_sha256':hashlib.sha256(arg).hexdigest()});inject('after actual staged owner blob read returned in final recheck')
+ sys.setprofile(profiler)
+ try:
+  result=o.apply(ready,root/'receipt',enabled=True);observed={'accepted':True,'state':result['state']}
+ except Exception as e:observed={'accepted':False,'error':repr(e)}
+ finally:sys.setprofile(None)
+ receipt=root/'receipt/application.json';raw=json.loads(receipt.read_bytes())
+ try:proof=o.verify_completed(root,root/'plan.json',receipt);historical={'accepted':True,'state':proof['state']}
+ except Exception as e:historical={'accepted':False,'error':repr(e)}
+ row={'mode':mode,'fixture':str(root),'accepted_baseline':baseline,'actual_head':o.git(root,'rev-parse','HEAD').decode().strip(),'injections':injected,'events':events,'native_functions_replaced':False,'fault_schedule':'sys.setprofile only schedules real private Git index writes at real function call/return; does not replace native results or functions','observed':observed,'receipt_state':raw['state'],'recovery_required':raw['recovery_required'],'receipt_sha256':sha(receipt),'historical_verification':historical,'actual_cached_paths':[os.fsdecode(x) for x in o.git(root,'diff','--cached','--no-renames','--name-only','-z',baseline,'--').split(b'\0')[:-1]],'working_contract_original':(root/'MAPPING_SEMANTICS.md').read_bytes()==contract,'working_owner_is_accepted_after':sha(root/target)==ready.after_inventory[target]}
+ if mode=='positive_staged_installed':
+  assert observed['accepted'];fx.late_git_commit(root,True);row['later_commit_historical']=o.verify_completed(root,root/'plan.json',receipt)['state']
+ results.append(row)
+ with (O/(mode+'.json')).open('x') as s:json.dump(row,s,indent=2);s.write('\n')
+assert results[0]['observed']['accepted'] and not results[1]['observed']['accepted']
+output={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_head':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','runtime':sys.version,'source_sha256':sha(Path(o.__file__)),'fixture_sha256':sha(Path(fx.__file__)),'scope':'Four new independent actual native source lifecycle probes; no maintained apply or scientific authority. Positive real installed staging and early negative bound the two late index mutations.','results':results}
+with (O/'results.json').open('x') as s:json.dump(output,s,indent=2);s.write('\n')
+print(json.dumps({'results':[(r['mode'],r['observed'],r['receipt_state']) for r in results]},indent=2))

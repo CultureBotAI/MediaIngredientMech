@@ -1,0 +1,27 @@
+"""Filed #1254 correction: bind retained manifest context to exact upstream bytes."""
+from pathlib import Path
+from guards_snapshot import regular_snapshot, require, no_alias, relative
+
+
+def manifest_context(row, campaign_root):
+    copied = Path(row["original_path"])
+    copied_raw, copied_fact = regular_snapshot(copied, row["sha256"], row["bytes"])
+    upstream_value = row.get("upstream_origin_path")
+    require(not row.get("upstream_exact_bytes_rechecked") or upstream_value,
+            "declared upstream origin is missing")
+    if upstream_value is None:
+        return copied.parent, {"basis": "original_selected_manifest_location",
+                               "manifest": str(copied), "manifest_sha256": copied_fact["sha256"],
+                               "member_base": str(copied.parent)}
+    require(isinstance(upstream_value, str), "upstream origin is not a literal path")
+    upstream = Path(upstream_value)
+    require(upstream.is_absolute() and upstream.is_relative_to(campaign_root),
+            "upstream origin outside campaign")
+    relative(str(upstream.relative_to(campaign_root)))
+    no_alias(upstream)
+    upstream_raw, upstream_fact = regular_snapshot(upstream, row["sha256"], row["bytes"])
+    require(upstream_raw == copied_raw, "original/copy manifest bytes differ")
+    return upstream.parent, {"basis": "explicit_byte_verified_upstream_manifest_origin",
+                             "copied_manifest": str(copied), "copied_manifest_sha256": copied_fact["sha256"],
+                             "upstream_manifest": str(upstream), "upstream_manifest_sha256": upstream_fact["sha256"],
+                             "bytes": len(copied_raw), "member_base": str(upstream.parent)}

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "operation": "apply_reviewed_campaign_owners",
+  "state": "complete",
+  "approval": "NONE: source application only; no scientific or mapping approval transfers",
+  "plan": {
+    "path": "plan.json",
+    "sha256": "ccdb6c760fee3d4a04ec0efb7ee7cc5fa622dba5e27a4feb3e2db46e71bf0424"
+  },
+  "acceptance": {
+    "path": "acceptance.json",
+    "sha256": "76bd1fc28770634bd4b495f28f5f41a60f6566676969861cd6f6e3e24e0e18b3"
+  },
+  "baseline_commit": "0153fb876aff04936580150bf969951e141204e5",
+  "before_inventory": {
+    "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+    "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+    "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+  },
+  "after_inventory": {
+    "data/ingredients/mapped/Existing.yaml": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d",
+    "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+    "data/ingredients/mapped/New.yaml": "4cf743cc58d36cfbbb0b9a32c2365e00757871419d73e6ad77d61a1dc58817b9",
+    "data/ingredients/mapped/Stock_curated.yaml": "3040c2137027e91baae1e4ae7741e3cedb21ca4eb0886e7b3a914b397a944a22"
+  },
+  "records": [
+    {
+      "operation_id": "o0",
+      "kind": "edit",
+      "before_source_record": "data/ingredients/mapped/Existing.yaml",
+      "source_record": "data/ingredients/mapped/Existing.yaml",
+      "before_yaml_sha256": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+      "after_capture": {
+        "path": "intake/payload-0.yaml",
+        "sha256": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-01",
+          "head_sha": "776ef50a7f02ebe0402688c778452db3725e5b12",
+          "proposal_id": "p0",
+          "proposal_binding": "proposals",
+          "payload_binding": "payload-0",
+          "case_hashes": {
+            "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+          }
+        }
+      ],
+      "change": "Fixture source change with explicit paths",
+      "verification": "Schema and exact preimage; no scientific approval",
+      "shape": "campaign_owner_edit",
+      "destination_path": "data/ingredients/mapped/Existing.yaml",
+      "source_path": "data/ingredients/mapped/Existing.yaml",
+      "before_capture": {
+        "path": "source-receipt/owner-before-0000.yaml",
+        "sha256": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2"
+      },
+      "after_yaml_sha256": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d"
+    },
+    {
+      "operation_id": "o1",
+      "kind": "create",
+      "before_source_record": null,
+      "source_record": "data/ingredients/mapped/New.yaml",
+      "before_yaml_sha256": null,
+      "after_capture": {
+        "path": "intake/payload-1.yaml",
+        "sha256": "4cf743cc58d36cfbbb0b9a32c2365e00757871419d73e6ad77d61a1dc58817b9"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-01",
+          "head_sha": "776ef50a7f02ebe0402688c778452db3725e5b12",
+          "proposal_id": "p1",
+          "proposal_binding": "proposals",
+          "payload_binding": "payload-1",
+          "case_hashes": {
+            "case-1": "0faee15a152be377448c4bd2bae6eb02dde244663ae4d2fa22efa60635d9fd95"
+          }
+        }
+      ],
+      "change": "Fixture source change with explicit paths",
+      "verification": "Schema and exact preimage; no scientific approval",
+      "shape": "new_record",
+      "destination_path": "data/ingredients/mapped/New.yaml",
+      "source_path": null,
+      "before_capture": null,
+      "after_yaml_sha256": "4cf743cc58d36cfbbb0b9a32c2365e00757871419d73e6ad77d61a1dc58817b9"
+    },
+    {
+      "operation_id": "o2",
+      "kind": "promote",
+      "before_source_record": "data/ingredients/unmapped/Stock_old.yaml",
+      "source_record": "data/ingredients/mapped/Stock_curated.yaml",
+      "before_yaml_sha256": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9",
+      "after_capture": {
+        "path": "intake/payload-2.yaml",
+        "sha256": "3040c2137027e91baae1e4ae7741e3cedb21ca4eb0886e7b3a914b397a944a22"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-01",
+          "head_sha": "776ef50a7f02ebe0402688c778452db3725e5b12",
+          "proposal_id": "p2",
+          "proposal_binding": "proposals",
+          "payload_binding": "payload-2",
+          "case_hashes": {
+            "case-2": "fe2ed2a21d12a6f6b3e016d988d8f6be5e4c7c79bd878aa7964253a4d6c8eb08"
+          }
+        }
+      ],
+      "change": "Fixture source change with explicit paths",
+      "verification": "Schema and exact preimage; no scientific approval",
+      "shape": "promotion",
+      "destination_path": "data/ingredients/mapped/Stock_curated.yaml",
+      "source_path": "data/ingredients/unmapped/Stock_old.yaml",
+      "before_capture": {
+        "path": "source-receipt/owner-before-0002.yaml",
+        "sha256": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_yaml_sha256": "3040c2137027e91baae1e4ae7741e3cedb21ca4eb0886e7b3a914b397a944a22"
+    }
+  ],
+  "checkpoint": {
+    "root": "source-receipt/checkpoint",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "45dc3610652ba5deb14ef1df854c647e42050f37304c248ea15b4197014809c8",
+      "reports/sssom_completion_20260921/baseline-mapping-review.json": "dc248ba28a5343b37eeaca7acbbd9952042fcc5b5f8b1e7381d5a470b55c1df8",
+      "reports/sssom_completion_20260921/parent-name-refresh.json": "7b733d83eca0b49bc8c014137487e18f86d45b952ec370fbed30dd2222cc2f9c",
+      "reports/sssom_completion_20260921/trait-synonym-refresh.json": "7b733d83eca0b49bc8c014137487e18f86d45b952ec370fbed30dd2222cc2f9c"
+    }
+  },
+  "protected_snapshot": {
+    "root": "source-receipt/protected",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "45dc3610652ba5deb14ef1df854c647e42050f37304c248ea15b4197014809c8",
+      "mappings/ingredient_mappings.sssom.tsv.manifest.json": "47d23ad737510850b04f70fc1f4af1a1ed42607c811d11f5b19cbcee0987ca8a",
+      "mappings/other_cross_record_baseline.tsv": "fbae0a79f49926a9e59a6a890171fe0c863b34216fdb1683f9942d5c3d40644e",
+      "mappings/suppressed_aliases.tsv": "675720ff302b6e852dee454dd9f937a6c6fdcb595998254183c30326ee6ce22a",
+      "reports/sssom_completion_20260921/baseline-mapping-review.json": "dc248ba28a5343b37eeaca7acbbd9952042fcc5b5f8b1e7381d5a470b55c1df8",
+      "reports/sssom_completion_20260921/parent-name-refresh.json": "7b733d83eca0b49bc8c014137487e18f86d45b952ec370fbed30dd2222cc2f9c",
+      "reports/sssom_completion_20260921/trait-synonym-refresh.json": "7b733d83eca0b49bc8c014137487e18f86d45b952ec370fbed30dd2222cc2f9c"
+    }
+  },
+  "completed_operations": [
+    "o0",
+    "o1",
+    "o2"
+  ],
+  "retired_sources": {
+    "data/ingredients/unmapped/Stock_old.yaml": {
+      "path": "source-receipt/promotion-0002/retired-owner.yaml",
+      "sha256": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+    }
+  },
+  "recovery_required": false
+}

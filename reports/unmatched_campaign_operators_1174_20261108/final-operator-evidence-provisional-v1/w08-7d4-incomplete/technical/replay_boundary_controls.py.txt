@@ -1,0 +1,22 @@
+from pathlib import Path
+import hashlib,importlib.util,json,sys
+W=Path.cwd();P=W/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path.insert(0,str(F/'src'))
+from mediaingredientmech.curate import campaign_owner_apply as owner
+s=importlib.util.spec_from_file_location('boundary_helpers',F/'tests/test_campaign_owner_apply.py');f=importlib.util.module_from_spec(s);s.loader.exec_module(f)
+results=[]
+for name in ['ascii_rejection','inherited_family_both','reviewed_family_reduction','inherited_family_status_change']:
+ root=O/'fixtures'/name;root.mkdir(parents=True)
+ if name=='ascii_rejection':plan=f.unmapped_rejection_case(root)
+ else:
+  plan=f.inherited_family_case(root,third=True);plan['records']=plan['records'][:2];f.repin(root,plan)
+  if name=='reviewed_family_reduction':f.final_fixture_delta(root,plan,0,{'identifier':'CHEBI:3'})
+  elif name=='inherited_family_status_change':f.final_fixture_delta(root,plan,0,{'mapping_status':'AMBIGUOUS'})
+ before=owner.hashes(owner.inventory(root));phase='prepare';error=None;proof=None
+ try:
+  ready=f.prepare(root);phase='apply';owner.apply(ready,root/'receipt',enabled=True);phase='verify_completed';proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json');phase='completed'
+ except Exception as e:error={'type':type(e).__name__,'message':str(e)}
+ r={'name':name,'phase':phase,'error':error,'proof_complete':proof is not None,'before_inventory':before,'after_inventory':owner.hashes(owner.inventory(root)),'receipt_exists':(root/'receipt').exists(),'fixture':str(root.relative_to(W))};results.append(r)
+ if name=='inherited_family_status_change':assert error and phase=='prepare' and before==r['after_inventory'] and not r['receipt_exists']
+ else:assert proof and proof['approval']==owner.APPROVAL
+ print(json.dumps({k:r[k] for k in ['name','phase','error','proof_complete']},ensure_ascii=False),flush=True)
+(O/'boundary-controls.json').write_text(json.dumps({'status':'PASS_EXPECTED_OUTCOMES','module_sha256':hashlib.sha256(Path(owner.__file__).read_bytes()).hexdigest(),'controls':results},indent=2)+'\n')

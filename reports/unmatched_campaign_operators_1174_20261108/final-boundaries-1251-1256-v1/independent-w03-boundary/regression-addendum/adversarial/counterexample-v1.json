@@ -1,0 +1,108 @@
+{
+  "reviewer": "/root/boundary_adversarial",
+  "reviewed_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "reviewed_operator_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+  "parent_operator_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+  "started_at": "2026-11-08T11:23:40.300751+00:00",
+  "finished_at": "2026-11-08T11:23:42.800600+00:00",
+  "result": "CONFIRMED_ALREADY_FILED_REGRESSION_DO_NOT_APPROVE_D691",
+  "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145",
+  "results": [
+    {
+      "name": "valid_retirement",
+      "before_status": "UNMAPPED",
+      "after_status": "REJECTED",
+      "same_path": true,
+      "same_identifier_name": true,
+      "ordered_history_prefix_exact": true,
+      "original_parent_record_stage": {
+        "returned": null,
+        "exception": null
+      },
+      "current_record_stage": {
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Rejected owner requires same-path, same-key rejected maintenance"
+        }
+      },
+      "current_native_load_passed": true,
+      "full_prepare_exception": {
+        "type": "ValueError",
+        "message": "Rejected owner requires same-path, same-key rejected maintenance"
+      },
+      "before_sha256": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9",
+      "after_sha256": "a091223b49c2dd608198aecc882f304ac18ccaa1e09cb8a2a26f9cdf59802619",
+      "fixture_published_head": "2c5c0a5924acf6c48ed4e8356de853af95292d76",
+      "real_campaign_source_case": false,
+      "counterexample_confirmed": true,
+      "native_apply_called": false,
+      "maintained_bytes_unchanged": true,
+      "receipt_absent": true
+    },
+    {
+      "name": "unmapped_maintenance_control",
+      "before_status": "UNMAPPED",
+      "after_status": "UNMAPPED",
+      "same_path": true,
+      "same_identifier_name": true,
+      "ordered_history_prefix_exact": true,
+      "original_parent_record_stage": {
+        "returned": null,
+        "exception": null
+      },
+      "current_record_stage": {
+        "returned": null,
+        "exception": null
+      },
+      "current_native_load_passed": true,
+      "full_prepare_exception": null,
+      "before_sha256": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9",
+      "after_sha256": "601e2fc48a3408ab1955ac4450ea5bf58721c38d59585cfef256e591b407fae4",
+      "fixture_published_head": "bf87e7096a1ab396be11899fa378ebe36536192b",
+      "real_campaign_source_case": false,
+      "full_prepare_apply_completed_replay": "PASS",
+      "native_apply_called": "private control fixture only"
+    },
+    {
+      "name": "rejected_maintenance_control",
+      "before_status": "REJECTED",
+      "after_status": "REJECTED",
+      "same_path": true,
+      "same_identifier_name": true,
+      "ordered_history_prefix_exact": true,
+      "original_parent_record_stage": {
+        "returned": null,
+        "exception": null
+      },
+      "current_record_stage": {
+        "returned": null,
+        "exception": null
+      },
+      "current_native_load_passed": true,
+      "full_prepare_exception": null,
+      "before_sha256": "374f9303c51c2fc07aea5ddca0d71085fb97fe4b0ba9edb875d81895fd9c11f0",
+      "after_sha256": "facc5f9e7a4e89e8ef9157dc7990ecd589730323695f6edc3fb1370fc9ba468f",
+      "fixture_published_head": "10fdaa495f1666e784d88b94071710b623925800",
+      "real_campaign_source_case": false,
+      "full_prepare_apply_completed_replay": "PASS",
+      "native_apply_called": "private control fixture only"
+    },
+    {
+      "name": "wrong_retirement_preimage",
+      "full_prepare_exception": {
+        "type": "ValueError",
+        "message": "Missing, reused or stale owner preimage"
+      },
+      "owner_unchanged": true,
+      "receipt_absent": true
+    }
+  ],
+  "scope_limits": [
+    "Private synthetic authenticated native load and prepare counterexample; no full actual campaign prepare/application.",
+    "Parent comparison executes exact old _validate_records AST only, not old full prepare.",
+    "Positive controls use actual current private prepare/apply/completed replay; no future fixed code read or tested.",
+    "W03 source authorship conflict remains: no scientific acceptance of actual polymer payloads is provided.",
+    "Existing earlier41native outcomes and sealedPASS are historical narrow coverage, not disproved data or current final acceptance."
+  ]
+}

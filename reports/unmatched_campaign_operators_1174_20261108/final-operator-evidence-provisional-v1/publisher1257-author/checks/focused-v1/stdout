@@ -1,0 +1,72 @@
+......................F.                                                 [100%]
+=================================== FAILURES ===================================
+_____ test_1257_multiple_local_rows_publish_and_replay_with_native_receipt _____
+
+case = {'before': b'# mapping_set_id: https://example.org/fixture\n# predicate_semantics: skos\n# mapping_date: 2026-10-01\n#...v1/checks/focused-v1/temporary/test_1257_multiple_local_rows_0/repository/reports/fixture/publication-plan.json'), ...}
+
+    def test_1257_multiple_local_rows_publish_and_replay_with_native_receipt(case):
+        root, plan = case["root"], case["plan"]
+        candidate_ref = plan["generation"]["candidate"]
+        rows = c.table((root / candidate_ref["path"]).read_bytes())[2]
+        rows.extend(
+            [
+                row("A", "kgmicrobe.ingredient:curated_primary", comment="Primary"),
+                row("A", "kgmicrobe.ingredient:a", comment="Subject handle"),
+            ]
+        )
+        raw = sssom(rows)
+        put(root, candidate_ref["path"], raw)
+        candidate_ref["sha256"] = c.sha(raw)
+        plan["rows"].extend(
+            {
+                "owner": "data/ingredients/mapped/A.yaml",
+                "before_position": None,
+                "native_position": position,
+                "preserve_fields": [],
+            }
+            for position in (5, 6)
+        )
+        put(root, case["path"].relative_to(root).as_posix(), plan)
+>       assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_publication.py:1844: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/mediaingredientmech/campaign_publication.py:1227: in publish
+    prepared = prepare(root, plan_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+src/mediaingredientmech/campaign_publication.py:1083: in prepare
+    receipt = _receipt(previous, _maker(capture), plan, records, before["canonical"], canonical)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/mediaingredientmech/campaign_publication.py:517: in _receipt
+    changes, positions = maker.align(old, new)
+                         ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+before = [{'comment': 'retained', 'confidence': '0.9', 'mapping_date': '2026-10-01', 'mapping_justification': 'semapv:ManualMap...ned', 'confidence': '0.9', 'mapping_date': '2026-10-01', 'mapping_justification': 'semapv:ManualMappingCuration', ...}]
+after = [{'comment': 'retained', 'confidence': '0.9', 'mapping_date': '2026-11-08', 'mapping_justification': 'semapv:ManualMap...dle', 'confidence': '0.9', 'mapping_date': '2026-10-01', 'mapping_justification': 'semapv:ManualMappingCuration', ...}]
+
+    def align(before: list[dict], after: list[dict]) -> tuple[list[dict], list[int | None]]:
+        before_by = {}
+        for i, row in enumerate(before, 1):
+            key = slot(row)
+            if key in before_by:
+                raise ValueError(f"Two pre-batch rows share a slot: {key}")
+            before_by[key] = (i, row)
+        after_by = {}
+        for j, row in enumerate(after, 1):
+            key = slot(row)
+            if key in after_by:
+>               raise ValueError(f"Two post-batch rows share a slot: {key}")
+E               ValueError: Two post-batch rows share a slot: ('MIM:A', 'kgmicrobe.ingredient')
+
+../checks/focused-v1/temporary/test_1257_multiple_local_rows_0/repository/reports/sssom_completion_20260921/mapping_changes/make_receipt.py:73: ValueError
+=============================== warnings summary ===============================
+../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_publication.py::test_1257_multiple_local_rows_publish_and_replay_with_native_receipt
+1 failed, 23 passed, 144 deselected, 12 warnings in 0.69s

@@ -1,0 +1,108 @@
+"""Seal only owned #1257 code and bounded reproducible evidence, not runtime trees."""
+import ast
+import datetime
+import difflib
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+P = D/'private'
+O = D/'portable'
+
+def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
+def write(path, value):
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with path.open('x') as f: json.dump(value,f,indent=2,ensure_ascii=False);f.write('\n')
+def pin(path):return {'path':str(path),'sha256':sha(path),'bytes':path.stat().st_size}
+def copy(path, rel):
+    target=O/rel;target.parent.mkdir(parents=True,exist_ok=True)
+    with target.open('xb') as f:f.write(path.read_bytes())
+    assert sha(target)==sha(path)
+
+targets=['src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py']
+expected=['9df83185a1c4ac4e0aa9b6497138a9923841bb3b9fe656671ac905987bc2d5f1','d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa']
+assert all(sha(P/r)==h for r,h in zip(targets,expected,strict=True))
+check_names=['focused-v2','ruff-v2','black-v2','mypy-v2','publisher-native-v2']
+checks={n:json.loads((D/'checks'/n/'receipt.json').read_text()) for n in check_names}
+assert all(r['returncode']==0 for r in checks.values())
+summary=(D/'checks/publisher-native-v2/stdout').read_text().strip().splitlines()[-1]
+assert re.search(r'196 passed, 12 warnings', summary),summary
+assert 'skipped' not in summary
+old=(D/'before'/targets[1]).read_text(); new=(P/targets[1]).read_text()
+def funcs(text):return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(text).body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))}
+a,b=funcs(old),funcs(new)
+assert new.startswith(old) and all(b[k]==v for k,v in a.items())
+a_code,b_code=funcs((D/'before'/targets[0]).read_text()),funcs((P/targets[0]).read_text())
+changed=[k for k,v in a_code.items() if b_code.get(k)!=v]
+assert changed==['slot','_receipt'],changed
+assert set(b_code)-set(a_code)=={'_align_rows'}
+old_receipt=ast.parse((D/'before'/targets[0]).read_text());new_receipt=ast.parse((P/targets[0]).read_text())
+# Whole-file patches are reviewable; no historical maker/test changes are included.
+patch=''.join(''.join(difflib.unified_diff((D/'before'/r).read_text().splitlines(keepends=True),(P/r).read_text().splitlines(keepends=True),fromfile='a/'+r,tofile='b/'+r)) for r in targets)
+assert sha(P/'reports/sssom_completion_20260921/mapping_changes/make_receipt.py')=='2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121'
+source=C/'integration/source-index-coherence1256-fix-v2'
+assert sha(source/'HANDOFF.json')=='1d222eeff11b9d2b86f9ed9566fd853fab4aa268f3b0610ff96a4626a25fed2a'
+assert sha(source/'portable/MANIFEST.json')=='7f8b9f8c7183137b5fb090b2ea9a98555327a00e9922e62fb5e9f7e7791a798d'
+assert sha(P/'src/mediaingredientmech/curate/campaign_owner_apply.py')=='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52'
+assert sha(P/'tests/test_campaign_owner_apply.py')=='27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3'
+O.mkdir()
+with (O/'publisher-local-slots1257.patch').open('x') as f:f.write(patch)
+for r in targets:copy(P/r,'files/'+r);copy(D/'before'/r,'before/'+r)
+for r in ['BASELINE.json','prepare_private.py','run_check.py','probe_full_projection_v2.py','seal_author_v1.py','receipt-slot-design-v2.md','ISSUE-ADDENDUM-v2.md','historical-alignment-before.json','black-initial.stdout','black-initial.stderr']:
+    copy(D/r,r)
+for d in ['checks','full-projection-v2','receipt-slot-addendum-v1']:
+    if d=='checks':
+        # Original failure, each actual command/result, no temporary repos/caches.
+        members=[p for p in (D/d).glob('*/*') if p.is_file() and p.name in {'stdout','stderr','receipt.json'}]
+    else:members=[p for p in (D/d).rglob('*') if p.is_file()]
+    for p in sorted(members):copy(p,p.relative_to(D))
+for name in ['publisher-slot-finding-publication-v2','publisher1257-receipt-addendum-publication-v1']:
+    for p in sorted((C/'preflight'/name).iterdir()):
+        if p.is_file():copy(p,'issue-first/'+name+'/'+p.name)
+copy(source/'HANDOFF.json','source-dependency/HANDOFF.json')
+copy(source/'portable/MANIFEST.json','source-dependency/MANIFEST.json')
+copy(source/'portable/RESULTS.json','source-dependency/RESULTS.json')
+copy(source/'portable/checks/combined-v1/receipt.json','source-dependency/combined-receipt.json')
+copy(source/'portable/checks/combined-v1/run.log','source-dependency/combined.log')
+for name in ['HANDOFF.json','MANIFEST.json','ISSUE-DRAFT.md']:
+    p=C/'preflight/final-publication-plan-construction-v1/slot-finding-v1'/name
+    if p.exists():copy(p,'original-finding/'+name)
+results={'status':'SEALED_AUTHOR_PRIVATE_FIX_PENDING_DISTINCT_REVIEW_AND_ROOT_PUBLICATION',
+         'issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1257',
+         'receipt_alignment_addendum':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1257#issuecomment-6721685098',
+         'files':{r:sha(P/r) for r in targets},'patch_sha256':sha(O/'publisher-local-slots1257.patch'),
+         'original_test_functions_unchanged':len(a),'original_test_file_exact_prefix':True,
+         'changed_existing_publisher_functions':changed,'new_publisher_functions':['_align_rows'],
+         'focused_new_cases':32,'full_changed_scope':{'publisher_cases':176,'real_native_generation_integration_cases':20,'passed':196,'skipped':0,'summary':summary},
+         'static_checks':{n:checks[n]['returncode'] for n in ['ruff-v2','black-v2','mypy-v2']},
+         'actual_row_projection':json.loads((D/'full-projection-v2/RESULT.json').read_text()),
+         'historical_maker_sha256':'2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121',
+         'historical_receipt_prefix':{'count':27,'native_replay_unchanged':True,'all_historical_alignments_equal':True,'proof':pin(D/'historical-alignment-before.json')},
+         'source_dependency':{'source':pin(P/'src/mediaingredientmech/curate/campaign_owner_apply.py'),'test':pin(P/'tests/test_campaign_owner_apply.py'),'distinct_prior_author_hand_off':pin(source/'HANDOFF.json'),'prior_run':'546 passed, including382 source/144 baseline publisher/20 real native; separate unchanged-source evidence, not a new summed test run'},
+         'preserved_failures':['Initial Black formatting check','focused-v1:23 passed/1 failure at immutable maker.align; filed before maintained helper repair'],
+         'scope_limits':['No I/K/J, worker, maintained owner, Git, or GitHub mutation.','No complete campaign application/publication receipt is fabricated. The actual934-operation probe is pure row projection; no source acceptance or scientific approval.','Separate four new suppression-event capability remains blocked; historical sidecar/baseline guards unchanged.','Distinct C review and final root combined-head verification remain pending.','Local-ID replacement deliberately changes legacy changed-row alignment to removed+added; old position becomes null, no identity/support transfer.'],
+         'archive_omissions':['Private runtime repository and test temporary Git repositories, caches and environment are omitted. Original checks and all failure logs are retained.','Source dependency full original manifest is copied for attribution, not a claim this partial reference set contains every source packet member.','Actual diagnostic source files referenced by exact absolute path/hash remain in their immutable local packets; full projected rowset and trace are included.']}
+write(O/'RESULTS.json',results)
+(O/'README.md').write_text('''# Private #1257 publisher correction\n\nThe maintained publisher now distinguishes a curated local primary from a different required B1 subject handle in the same namespace. Exact full local object IDs are used in both projection and an explicit maintained alignment helper. The immutable historical maker still parses rows; its bytes, hash and all27 receipts are unchanged. Ordinary ontology/CAS replacement and stable local identity alignment retain the historical algorithm. A local-ID replacement is an explicit removal and addition, with no inherited position or support.\n\nOnly the two files under `files/` are proposed maintained changes. All58 original top-level test functions and the entire original test-file byte prefix remain unchanged.32 new cases cover the actual four collision groups, mixed case and Unicode, duplicate pairs, misownership/coverage/provenance refusals, local replacement and demotion. The full changed scope passed196 cases:176 publisher plus20 actual native-generator integration cases, against source c445. Ruff, Black and Mypy passed. The separate source author result is linked honestly rather than rerun or added into a fictitious combined count.\n\nThe actual conditional934-operation projection accounts for3014 canonical and3750 native rows and yields3756 rows:1037 selected native rows plus2719 byte-identical unselected physical lines. Native row-level validation/replay reconstructs that exact rowset. This diagnostic is not a completed campaign receipt or an approved application plan. The three selected same-namespace primary/handle pairs survive; unselected Sodium's canonical row is preserved. All27 historical alignments and receipt bytes retain their original semantics.\n\nInitial formatting and focused native-maker failures are preserved with the issue-first repair evidence. Runtime trees and caches are omitted. Full original reference manifests do not imply every referenced runtime member is copied here. No scientific decision, owner merge, generator modification, gate change, source application or release approval is granted. Four new suppression events remain a separate reviewed-policy/capability prerequisite. Independent review and root publication follow this author packet.\n''')
+# Prove this ordinary patch applies to authentic preimages in a private miniature tree.
+R=D/'patch-check';R.mkdir()
+for r in targets:
+    q=R/r;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes((D/'before'/r).read_bytes())
+patch_env={**os.environ,'GIT_CEILING_DIRECTORIES':str(R.parent)}
+p=subprocess.run(['git','apply','--check',str(O/'publisher-local-slots1257.patch')],cwd=R,env=patch_env,text=True,capture_output=True)
+assert p.returncode==0,(p.stdout,p.stderr)
+p=subprocess.run(['git','apply',str(O/'publisher-local-slots1257.patch')],cwd=R,env=patch_env,text=True,capture_output=True)
+assert p.returncode==0,(p.stdout,p.stderr)
+assert all((R/r).read_bytes()==(P/r).read_bytes() for r in targets)
+write(O/'patch-replay.json',{'status':'PASS','paths':targets,'before':{r:sha(D/'before'/r) for r in targets},'after':{r:sha(R/r) for r in targets},'only_private_patch_check_tree_written':True})
+manifest={'files':[{'path':p.relative_to(O).as_posix(),'sha256':sha(p),'bytes':p.stat().st_size} for p in sorted(O.rglob('*')) if p.is_file()]}
+write(O/'MANIFEST.json',manifest)
+handoff={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':results['status'],'issue':results['issue'],'files':results['files'],'patch_sha256':results['patch_sha256'],'portable_manifest_sha256':sha(O/'MANIFEST.json'),'results_sha256':sha(O/'RESULTS.json'),'members':len(manifest['files']),'bytes':sum(x['bytes'] for x in manifest['files']),'full_tests':results['full_changed_scope'],'source_dependency_handoff_sha256':sha(source/'HANDOFF.json'),'independent_review':'PENDING_C_EXACT_PRIVATE_REVIEW','suppression_capability':'UNCHANGED_BLOCKED_SEPARATE_SCOPE'}
+write(D/'HANDOFF.json',handoff)
+print(json.dumps(handoff,indent=2))

@@ -1,0 +1,57 @@
+"""Independent authenticated fixture for already-filed #1252 regression.
+All fixtures are synthetic and private. No actual W03 candidate is accepted.
+Only frozen d691 code is imported; original parent validator AST is separately
+executed for bounded record-stage comparison, not a claim of old full prepare.
+"""
+from pathlib import Path
+import ast,copy,datetime,hashlib,importlib.util,json,sys,traceback
+O=Path(__file__).resolve().parent;P=O.parents[1];F=P/'frozen-src';sys.path.insert(0,str(F/'src'))
+spec=importlib.util.spec_from_file_location('original_boilerplate_for_regression',F/'tests/test_campaign_owner_apply.py');t=importlib.util.module_from_spec(spec);spec.loader.exec_module(t);o=t.owner
+START=datetime.datetime.now(datetime.timezone.utc).isoformat();OLD=t.OLD
+HEAD='d691c079cf3923daed89284b7579913b84c3a34c';OLD_SHA='4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca';NEW_SHA='4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70'
+assert o.digest((F/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes())==NEW_SHA
+old_source=(P/'inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py').read_text();assert o.digest(old_source.encode())==OLD_SHA
+oldnode=next(n for n in ast.parse(old_source).body if isinstance(n,ast.FunctionDef) and n.name=='_validate_records');oldns=dict(o.__dict__);exec(compile(ast.Module(body=[oldnode],type_ignores=[]),'<exact-parent-_validate_records-only>','exec'),oldns);oldvalidate=oldns['_validate_records']
+
+def fixture(name,new_status='REJECTED',old_status='UNMAPPED'):
+ r=O/'fixtures'/name;assert not r.exists();r.mkdir(parents=True);p=t.setup(r)
+ old=o.record((r/OLD).read_bytes())
+ if old_status!=old['mapping_status']:
+  old['mapping_status']=old_status;old['curation_history'][0]['new_status']=old_status;t.render(r,OLD,old)
+ before=o.hashes(o.inventory(r));t.put(r,'before.json',{'schema_version':1,'owners':before});p['before_inventory']=t.ref(r,'before.json')
+ after=copy.deepcopy(old);after['mapping_status']=new_status;after['notes']='Synthetic source retirement or maintenance; no source science approval.';after['curation_history'].append(t.event('REJECTED' if new_status=='REJECTED' else 'ANNOTATED',new_status));payload='intake/payload-2.yaml';t.render(r,payload,after)
+ proposals=json.loads((r/'intake/proposals.json').read_bytes());proposals['proposals'][2].update(kind='edit_existing_owner',owner_path=OLD,before_sha256=before[OLD],after_capture={'root':'artifact',**t.ref(r,payload)});t.put(r,'intake/proposals.json',proposals)
+ p['records']=p['records'][2:];entry=p['records'][0];entry.update(kind='edit',before_source_record=OLD,source_record=OLD,before_yaml_sha256=before[OLD],after_capture=t.ref(r,payload),change='Authentic same-path synthetic existing-owner retirement, identity and preferred name retained',verification='No current campaign application or scientific approval')
+ t.run_git(r,'add','data/ingredients','before.json','intake');t.run_git(r,'-c','user.email=independent@example.invalid','-c','user.name=Independent adversarial reviewer','commit','-qm','Synthetic published same-path status transition for regression test')
+ h=t.run_git(r,'rev-parse','HEAD');p['baseline_commit']=h;p['intake_heads']={'worker-01':h};entry['origins'][0]['head_sha']=h
+ for b in p['bindings']:
+  b.update(t.ref(r,b['path']))
+  if b['published_head'] is not None:b['published_head']=h
+ t.repin(r,p)
+ return r,p,old,after
+
+def attempt(fn):
+ try:return {'returned':fn(),'exception':None}
+ except Exception as e:return {'returned':None,'exception':{'type':type(e).__name__,'message':str(e)}}
+rows=[]
+for name,new,old,expected in [('valid_retirement','REJECTED','UNMAPPED','regression_refusal'),('unmapped_maintenance_control','UNMAPPED','UNMAPPED','pass'),('rejected_maintenance_control','REJECTED','REJECTED','pass')]:
+ r,p,b,a=fixture(name,new,old);before=o.hashes(o.inventory(r));entry=p['records'][0];payloads={entry['operation_id']:(r/entry['after_capture']['path']).read_bytes()};beforebytes={k:f.content for k,f in o.inventory(r).items()}
+ bound=o._load(r,r/'plan.json',r/'acceptance.json');assert len(bound[-1])==1
+ original=attempt(lambda:oldvalidate(r,p['records'],payloads,beforebytes))
+ current=attempt(lambda:o._validate_records(r,p['records'],payloads,beforebytes))
+ prepared=attempt(lambda:t.prepare(r));result={'name':name,'before_status':old,'after_status':new,'same_path':entry['source_record']==entry['before_source_record'],'same_identifier_name':all(b[k]==a[k] for k in ['identifier','preferred_term']),'ordered_history_prefix_exact':a['curation_history'][:len(b['curation_history'])]==b['curation_history'],'original_parent_record_stage':original,'current_record_stage':current,'current_native_load_passed':True,'full_prepare_exception':prepared['exception'],'before_sha256':before[OLD],'after_sha256':o.digest(payloads[entry['operation_id']]),'fixture_published_head':p['baseline_commit'],'real_campaign_source_case':False}
+ if expected=='regression_refusal':
+  assert original['exception'] is None
+  assert current['exception']['message']=='Rejected owner requires same-path, same-key rejected maintenance'
+  assert prepared['exception']==current['exception']
+  assert o.hashes(o.inventory(r))==before and not(r/'receipt').exists()
+  result.update(counterexample_confirmed=True,native_apply_called=False,maintained_bytes_unchanged=True,receipt_absent=True)
+ else:
+  assert prepared['exception'] is None;ready=prepared['returned'];applied=o.apply(ready,r/'receipt',enabled=True);proof=o.verify_completed(r,r/'plan.json',r/'receipt/application.json');assert applied['state']==proof['state']=='complete';result.update(full_prepare_apply_completed_replay='PASS',native_apply_called='private control fixture only')
+ rows.append(result)
+# A false beforeimage is refused by authenticated native load, independently of
+# the broad status guard. This does not pretend blocked retirement establishes
+# downstream history/key negative coverage for a future implementation.
+r,p,b,a=fixture('wrong_retirement_preimage');p['records'][0]['before_yaml_sha256']='0'*64;t.repin(r,p);before=o.hashes(o.inventory(r));res=attempt(lambda:t.prepare(r));assert res['exception']['message']=='Missing, reused or stale owner preimage';assert o.hashes(o.inventory(r))==before and not(r/'receipt').exists();rows.append({'name':'wrong_retirement_preimage','full_prepare_exception':res['exception'],'owner_unchanged':True,'receipt_absent':True})
+report={'reviewer':'/root/boundary_adversarial','reviewed_head':HEAD,'reviewed_operator_sha256':NEW_SHA,'parent_operator_sha256':OLD_SHA,'started_at':START,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'result':'CONFIRMED_ALREADY_FILED_REGRESSION_DO_NOT_APPROVE_D691','issue_url':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145','results':rows,'scope_limits':['Private synthetic authenticated native load and prepare counterexample; no full actual campaign prepare/application.','Parent comparison executes exact old _validate_records AST only, not old full prepare.','Positive controls use actual current private prepare/apply/completed replay; no future fixed code read or tested.','W03 source authorship conflict remains: no scientific acceptance of actual polymer payloads is provided.','Existing earlier41native outcomes and sealedPASS are historical narrow coverage, not disproved data or current final acceptance.']}
+out=O/'counterexample-v1.json';assert not out.exists();out.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'result':report['result'],'checks':len(rows),'counterexample_sha256':o.digest(out.read_bytes())}))

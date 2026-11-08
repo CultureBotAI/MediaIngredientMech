@@ -1,0 +1,1947 @@
+.....................................FFFFFFFFFFFFFFFFFFFFFFFF......FFFFF [ 64%]
+.FFFF...........FFFFFFFFF............FFF                                 [100%]
+=================================== FAILURES ===================================
+____ test_completed_verifier_rejects_current_or_archived_drift[checkpoint] _____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+drift = 'checkpoint'
+
+    @pytest.mark.parametrize(
+        "drift", ["review", "owner", "backup", "checkpoint", "receipt_alias", "producer"]
+    )
+    def test_completed_verifier_rejects_current_or_archived_drift(case, drift):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+
+../worktree/tests/test_campaign_owner_apply.py:584: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:1152: in apply
+    else:
+          
+../worktree/src/mediaingredientmech/curate/publication_guard.py:115: in publish_validated
+    recheck()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:1150: in during_edit
+    ???
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:1111: in recheck
+    ???
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:876: in _recheck
+    native_members = set(receipt_paths(prepared.root))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+___ test_completed_verifier_rejects_current_or_archived_drift[receipt_alias] ___
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+drift = 'receipt_alias'
+
+    @pytest.mark.parametrize(
+        "drift", ["review", "owner", "backup", "checkpoint", "receipt_alias", "producer"]
+    )
+    def test_completed_verifier_rejects_current_or_archived_drift(case, drift):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:584: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_____ test_completed_verifier_rejects_current_or_archived_drift[producer] ______
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+drift = 'producer'
+
+    @pytest.mark.parametrize(
+        "drift", ["review", "owner", "backup", "checkpoint", "receipt_alias", "producer"]
+    )
+    def test_completed_verifier_rejects_current_or_archived_drift(case, drift):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:584: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+__________ test_late_archive_byte_drift_cannot_finish_success[backup] __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111c680c0>
+role = 'backup'
+
+    @pytest.mark.parametrize("role", ["backup", "protected", "retired"])
+    def test_late_archive_byte_drift_cannot_finish_success(case, monkeypatch, role):
+        root, _ = case
+        original = owner.finish_receipt
+    
+        def corrupt(receipt, path, payload, recheck):
+            target = {
+                "backup": root / "receipt/owner-before-0000.yaml",
+                "protected": root / "receipt/protected" / CANONICAL,
+                "retired": root / "receipt/promotion-0002/retired-owner.yaml",
+            }[role]
+            target.write_bytes(target.read_bytes() + b"# corrupt\n")
+            return original(receipt, path, payload, recheck)
+    
+        monkeypatch.setattr(owner, "finish_receipt", corrupt)
+        with pytest.raises(ValueError, match="changed"):
+            owner.apply(prepare(root), root / "receipt", enabled=True)
+>       receipt = json.loads((root / "receipt/application.json").read_bytes())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:621: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_late_archive_byte_drift_c0/receipt/application.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_late_archive_byte_drift_c0/receipt/application.json'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+________ test_late_archive_byte_drift_cannot_finish_success[protected] _________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111560670>
+role = 'protected'
+
+    @pytest.mark.parametrize("role", ["backup", "protected", "retired"])
+    def test_late_archive_byte_drift_cannot_finish_success(case, monkeypatch, role):
+        root, _ = case
+        original = owner.finish_receipt
+    
+        def corrupt(receipt, path, payload, recheck):
+            target = {
+                "backup": root / "receipt/owner-before-0000.yaml",
+                "protected": root / "receipt/protected" / CANONICAL,
+                "retired": root / "receipt/promotion-0002/retired-owner.yaml",
+            }[role]
+            target.write_bytes(target.read_bytes() + b"# corrupt\n")
+            return original(receipt, path, payload, recheck)
+    
+        monkeypatch.setattr(owner, "finish_receipt", corrupt)
+        with pytest.raises(ValueError, match="changed"):
+            owner.apply(prepare(root), root / "receipt", enabled=True)
+>       receipt = json.loads((root / "receipt/application.json").read_bytes())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:621: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_late_archive_byte_drift_c1/receipt/application.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_late_archive_byte_drift_c1/receipt/application.json'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+_________ test_late_archive_byte_drift_cannot_finish_success[retired] __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d124b40>
+role = 'retired'
+
+    @pytest.mark.parametrize("role", ["backup", "protected", "retired"])
+    def test_late_archive_byte_drift_cannot_finish_success(case, monkeypatch, role):
+        root, _ = case
+        original = owner.finish_receipt
+    
+        def corrupt(receipt, path, payload, recheck):
+            target = {
+                "backup": root / "receipt/owner-before-0000.yaml",
+                "protected": root / "receipt/protected" / CANONICAL,
+                "retired": root / "receipt/promotion-0002/retired-owner.yaml",
+            }[role]
+            target.write_bytes(target.read_bytes() + b"# corrupt\n")
+            return original(receipt, path, payload, recheck)
+    
+        monkeypatch.setattr(owner, "finish_receipt", corrupt)
+        with pytest.raises(ValueError, match="changed"):
+            owner.apply(prepare(root), root / "receipt", enabled=True)
+>       receipt = json.loads((root / "receipt/application.json").read_bytes())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:621: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_late_archive_byte_drift_c2/receipt/application.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_late_archive_byte_drift_c2/receipt/application.json'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+___________ test_final_verifier_rechecks_original_proof_roles[leaf] ____________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d55be70>
+alias = 'leaf'
+
+    @pytest.mark.parametrize("alias", ["leaf", "parent", "hardlink"])
+    def test_final_verifier_rechecks_original_proof_roles(case, monkeypatch, alias):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:628: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+__________ test_final_verifier_rechecks_original_proof_roles[parent] ___________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11073a660>
+alias = 'parent'
+
+    @pytest.mark.parametrize("alias", ["leaf", "parent", "hardlink"])
+    def test_final_verifier_rechecks_original_proof_roles(case, monkeypatch, alias):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:628: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_________ test_final_verifier_rechecks_original_proof_roles[hardlink] __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ec89240>
+alias = 'hardlink'
+
+    @pytest.mark.parametrize("alias", ["leaf", "parent", "hardlink"])
+    def test_final_verifier_rechecks_original_proof_roles(case, monkeypatch, alias):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:628: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+________ test_late_new_owner_parent_swap_cannot_write_into_replacement _________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1111b99b0>
+
+    def test_late_new_owner_parent_swap_cannot_write_into_replacement(case, monkeypatch):
+        root, _ = case
+>       prepared = prepare(root)
+                   ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:653: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_________ test_archived_protection_never_excuses_current_review_drift __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+
+    def test_archived_protection_never_excuses_current_review_drift(case):
+        root, plan = case
+        protected = json.loads((root / "protected.json").read_bytes())
+        protected["files"]["intake/review.json"] = ref(root, "intake/review.json")["sha256"]
+        put(root, "protected-plus.json", protected)
+        plan["protected_inputs"] = ref(root, "protected-plus.json")
+        save_contract(root, plan)
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:680: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_______ test_noop_is_rejected_and_selected_case_subset_keeps_full_ledger _______
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+
+    def test_noop_is_rejected_and_selected_case_subset_keeps_full_ledger(case):
+        root, plan = case
+        plan["records"] = [plan["records"][0]]
+        repin(root, plan)
+>       result = owner.apply(prepare(root), root / "receipt", enabled=True)
+                             ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:690: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+___________ test_casefold_destination_collision_refused_before_write ___________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+
+    def test_casefold_destination_collision_refused_before_write(case):
+        root, plan = case
+        plan["records"][1]["source_record"] = "data/ingredients/mapped/UNTOUCHED.yaml"
+        repin(root, plan)
+        with pytest.raises(ValueError, match="Destination collides"):
+>           prepare(root)
+
+../worktree/tests/test_campaign_owner_apply.py:703: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+
+    def test_casefold_destination_collision_refused_before_write(case):
+        root, plan = case
+        plan["records"][1]["source_record"] = "data/ingredients/mapped/UNTOUCHED.yaml"
+        repin(root, plan)
+>       with pytest.raises(ValueError, match="Destination collides"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Destination collides'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:702: AssertionError
+__________ test_1194_final_owner_membership_is_reenumerated[addition] __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c5f4f30>
+change = 'addition'
+
+    @pytest.mark.parametrize(
+        "change", ["addition", "removal", "symlink", "hardlink", "old_source_reappears"]
+    )
+    def test_1194_final_owner_membership_is_reenumerated(case, monkeypatch, change):
+        root, _ = case
+>       ready = prepare(root)
+                ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+__________ test_1194_final_owner_membership_is_reenumerated[removal] ___________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10fb450f0>
+change = 'removal'
+
+    @pytest.mark.parametrize(
+        "change", ["addition", "removal", "symlink", "hardlink", "old_source_reappears"]
+    )
+    def test_1194_final_owner_membership_is_reenumerated(case, monkeypatch, change):
+        root, _ = case
+>       ready = prepare(root)
+                ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+__________ test_1194_final_owner_membership_is_reenumerated[symlink] ___________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10fb44c90>
+change = 'symlink'
+
+    @pytest.mark.parametrize(
+        "change", ["addition", "removal", "symlink", "hardlink", "old_source_reappears"]
+    )
+    def test_1194_final_owner_membership_is_reenumerated(case, monkeypatch, change):
+        root, _ = case
+>       ready = prepare(root)
+                ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+__________ test_1194_final_owner_membership_is_reenumerated[hardlink] __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cdaa430>
+change = 'hardlink'
+
+    @pytest.mark.parametrize(
+        "change", ["addition", "removal", "symlink", "hardlink", "old_source_reappears"]
+    )
+    def test_1194_final_owner_membership_is_reenumerated(case, monkeypatch, change):
+        root, _ = case
+>       ready = prepare(root)
+                ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+____ test_1194_final_owner_membership_is_reenumerated[old_source_reappears] ____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111c6a5f0>
+change = 'old_source_reappears'
+
+    @pytest.mark.parametrize(
+        "change", ["addition", "removal", "symlink", "hardlink", "old_source_reappears"]
+    )
+    def test_1194_final_owner_membership_is_reenumerated(case, monkeypatch, change):
+        root, _ = case
+>       ready = prepare(root)
+                ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+___ test_1194_final_snapshot_membership_is_reenumerated[addition-checkpoint] ___
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d127000>
+snapshot = 'checkpoint', change = 'addition'
+
+    @pytest.mark.parametrize("snapshot", ["checkpoint", "protected"])
+    @pytest.mark.parametrize("change", ["addition", "removal", "alias"])
+    def test_1194_final_snapshot_membership_is_reenumerated(case, monkeypatch, snapshot, change):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+___ test_1194_final_snapshot_membership_is_reenumerated[addition-protected] ____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10f3eaf90>
+snapshot = 'protected', change = 'addition'
+
+    @pytest.mark.parametrize("snapshot", ["checkpoint", "protected"])
+    @pytest.mark.parametrize("change", ["addition", "removal", "alias"])
+    def test_1194_final_snapshot_membership_is_reenumerated(case, monkeypatch, snapshot, change):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+___ test_1194_final_snapshot_membership_is_reenumerated[removal-checkpoint] ____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1111b8c90>
+snapshot = 'checkpoint', change = 'removal'
+
+    @pytest.mark.parametrize("snapshot", ["checkpoint", "protected"])
+    @pytest.mark.parametrize("change", ["addition", "removal", "alias"])
+    def test_1194_final_snapshot_membership_is_reenumerated(case, monkeypatch, snapshot, change):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+____ test_1194_final_snapshot_membership_is_reenumerated[removal-protected] ____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10e8efa80>
+snapshot = 'protected', change = 'removal'
+
+    @pytest.mark.parametrize("snapshot", ["checkpoint", "protected"])
+    @pytest.mark.parametrize("change", ["addition", "removal", "alias"])
+    def test_1194_final_snapshot_membership_is_reenumerated(case, monkeypatch, snapshot, change):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+____ test_1194_final_snapshot_membership_is_reenumerated[alias-checkpoint] _____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10f79f7e0>
+snapshot = 'checkpoint', change = 'alias'
+
+    @pytest.mark.parametrize("snapshot", ["checkpoint", "protected"])
+    @pytest.mark.parametrize("change", ["addition", "removal", "alias"])
+    def test_1194_final_snapshot_membership_is_reenumerated(case, monkeypatch, snapshot, change):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_____ test_1194_final_snapshot_membership_is_reenumerated[alias-protected] _____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x111cecd70>
+snapshot = 'protected', change = 'alias'
+
+    @pytest.mark.parametrize("snapshot", ["checkpoint", "protected"])
+    @pytest.mark.parametrize("change", ["addition", "removal", "alias"])
+    def test_1194_final_snapshot_membership_is_reenumerated(case, monkeypatch, snapshot, change):
+        root, _ = case
+>       owner.apply(prepare(root), root / "receipt", enabled=True)
+                    ^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:738: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1197_disconnected_or_reused_owner_history_refused_before_write[data/ingredients/mapped/Existing.yaml] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_disconnected_or_reus0')
+linked_owner = 'data/ingredients/mapped/Existing.yaml'
+
+    @pytest.mark.parametrize("linked_owner", [EDIT, NEW, MOVED])
+    def test_1197_disconnected_or_reused_owner_history_refused_before_write(tmp_path, linked_owner):
+        setup(tmp_path, chain_owner=linked_owner, chain_sha="b" * 64)
+        before = owner.hashes(owner.inventory(tmp_path))
+        with pytest.raises(ValueError, match="disconnected|destination has prior"):
+>           prepare(tmp_path)
+
+../worktree/tests/test_campaign_owner_apply.py:837: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_disconnected_or_reus0')
+linked_owner = 'data/ingredients/mapped/Existing.yaml'
+
+    @pytest.mark.parametrize("linked_owner", [EDIT, NEW, MOVED])
+    def test_1197_disconnected_or_reused_owner_history_refused_before_write(tmp_path, linked_owner):
+        setup(tmp_path, chain_owner=linked_owner, chain_sha="b" * 64)
+        before = owner.hashes(owner.inventory(tmp_path))
+>       with pytest.raises(ValueError, match="disconnected|destination has prior"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'disconnected|destination has prior'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:836: AssertionError
+_ test_1197_disconnected_or_reused_owner_history_refused_before_write[data/ingredients/mapped/New.yaml] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_disconnected_or_reus1')
+linked_owner = 'data/ingredients/mapped/New.yaml'
+
+    @pytest.mark.parametrize("linked_owner", [EDIT, NEW, MOVED])
+    def test_1197_disconnected_or_reused_owner_history_refused_before_write(tmp_path, linked_owner):
+        setup(tmp_path, chain_owner=linked_owner, chain_sha="b" * 64)
+        before = owner.hashes(owner.inventory(tmp_path))
+        with pytest.raises(ValueError, match="disconnected|destination has prior"):
+>           prepare(tmp_path)
+
+../worktree/tests/test_campaign_owner_apply.py:837: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_disconnected_or_reus1')
+linked_owner = 'data/ingredients/mapped/New.yaml'
+
+    @pytest.mark.parametrize("linked_owner", [EDIT, NEW, MOVED])
+    def test_1197_disconnected_or_reused_owner_history_refused_before_write(tmp_path, linked_owner):
+        setup(tmp_path, chain_owner=linked_owner, chain_sha="b" * 64)
+        before = owner.hashes(owner.inventory(tmp_path))
+>       with pytest.raises(ValueError, match="disconnected|destination has prior"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'disconnected|destination has prior'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:836: AssertionError
+_ test_1197_disconnected_or_reused_owner_history_refused_before_write[data/ingredients/mapped/Stock_curated.yaml] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_disconnected_or_reus2')
+linked_owner = 'data/ingredients/mapped/Stock_curated.yaml'
+
+    @pytest.mark.parametrize("linked_owner", [EDIT, NEW, MOVED])
+    def test_1197_disconnected_or_reused_owner_history_refused_before_write(tmp_path, linked_owner):
+        setup(tmp_path, chain_owner=linked_owner, chain_sha="b" * 64)
+        before = owner.hashes(owner.inventory(tmp_path))
+        with pytest.raises(ValueError, match="disconnected|destination has prior"):
+>           prepare(tmp_path)
+
+../worktree/tests/test_campaign_owner_apply.py:837: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_disconnected_or_reus2')
+linked_owner = 'data/ingredients/mapped/Stock_curated.yaml'
+
+    @pytest.mark.parametrize("linked_owner", [EDIT, NEW, MOVED])
+    def test_1197_disconnected_or_reused_owner_history_refused_before_write(tmp_path, linked_owner):
+        setup(tmp_path, chain_owner=linked_owner, chain_sha="b" * 64)
+        before = owner.hashes(owner.inventory(tmp_path))
+>       with pytest.raises(ValueError, match="disconnected|destination has prior"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'disconnected|destination has prior'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:836: AssertionError
+_______ test_1197_matching_native_endpoint_can_continue_without_approval _______
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_matching_native_endp0')
+
+    def test_1197_matching_native_endpoint_can_continue_without_approval(tmp_path):
+        setup(tmp_path, chain_owner=EDIT)
+>       ready = prepare(tmp_path)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:844: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_______ test_1197_explicit_native_bridge_can_connect_a_current_preimage ________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1197_explicit_native_brid0')
+
+    def test_1197_explicit_native_bridge_can_connect_a_current_preimage(tmp_path):
+        setup(tmp_path, chain_owner=EDIT, chain_sha="b" * 64, bridge_to_current=True)
+>       ready = prepare(tmp_path)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:855: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+___ test_1198_noncanonical_top_level_arguments_refused_before_mutation[plan] ___
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+argument = 'plan'
+
+    @pytest.mark.parametrize("argument", ["root", "plan", "acceptance", "receipt"])
+    def test_1198_noncanonical_top_level_arguments_refused_before_mutation(case, argument):
+        root, _ = case
+        before = owner.hashes(owner.inventory(root))
+        call_root = root / "intake/.." if argument == "root" else root
+        plan = root / ("intake/../plan.json" if argument == "plan" else "plan.json")
+        acceptance = root / (
+            "intake/../acceptance.json" if argument == "acceptance" else "acceptance.json"
+        )
+        with pytest.raises(ValueError, match="Noncanonical"):
+>           ready = owner.prepare(call_root, plan, acceptance)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:874: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+argument = 'plan'
+
+    @pytest.mark.parametrize("argument", ["root", "plan", "acceptance", "receipt"])
+    def test_1198_noncanonical_top_level_arguments_refused_before_mutation(case, argument):
+        root, _ = case
+        before = owner.hashes(owner.inventory(root))
+        call_root = root / "intake/.." if argument == "root" else root
+        plan = root / ("intake/../plan.json" if argument == "plan" else "plan.json")
+        acceptance = root / (
+            "intake/../acceptance.json" if argument == "acceptance" else "acceptance.json"
+        )
+>       with pytest.raises(ValueError, match="Noncanonical"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Noncanonical'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:873: AssertionError
+_ test_1198_noncanonical_top_level_arguments_refused_before_mutation[acceptance] _
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+argument = 'acceptance'
+
+    @pytest.mark.parametrize("argument", ["root", "plan", "acceptance", "receipt"])
+    def test_1198_noncanonical_top_level_arguments_refused_before_mutation(case, argument):
+        root, _ = case
+        before = owner.hashes(owner.inventory(root))
+        call_root = root / "intake/.." if argument == "root" else root
+        plan = root / ("intake/../plan.json" if argument == "plan" else "plan.json")
+        acceptance = root / (
+            "intake/../acceptance.json" if argument == "acceptance" else "acceptance.json"
+        )
+        with pytest.raises(ValueError, match="Noncanonical"):
+>           ready = owner.prepare(call_root, plan, acceptance)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:874: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+argument = 'acceptance'
+
+    @pytest.mark.parametrize("argument", ["root", "plan", "acceptance", "receipt"])
+    def test_1198_noncanonical_top_level_arguments_refused_before_mutation(case, argument):
+        root, _ = case
+        before = owner.hashes(owner.inventory(root))
+        call_root = root / "intake/.." if argument == "root" else root
+        plan = root / ("intake/../plan.json" if argument == "plan" else "plan.json")
+        acceptance = root / (
+            "intake/../acceptance.json" if argument == "acceptance" else "acceptance.json"
+        )
+>       with pytest.raises(ValueError, match="Noncanonical"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Noncanonical'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:873: AssertionError
+_ test_1198_noncanonical_top_level_arguments_refused_before_mutation[receipt] __
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+argument = 'receipt'
+
+    @pytest.mark.parametrize("argument", ["root", "plan", "acceptance", "receipt"])
+    def test_1198_noncanonical_top_level_arguments_refused_before_mutation(case, argument):
+        root, _ = case
+        before = owner.hashes(owner.inventory(root))
+        call_root = root / "intake/.." if argument == "root" else root
+        plan = root / ("intake/../plan.json" if argument == "plan" else "plan.json")
+        acceptance = root / (
+            "intake/../acceptance.json" if argument == "acceptance" else "acceptance.json"
+        )
+        with pytest.raises(ValueError, match="Noncanonical"):
+>           ready = owner.prepare(call_root, plan, acceptance)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:874: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+argument = 'receipt'
+
+    @pytest.mark.parametrize("argument", ["root", "plan", "acceptance", "receipt"])
+    def test_1198_noncanonical_top_level_arguments_refused_before_mutation(case, argument):
+        root, _ = case
+        before = owner.hashes(owner.inventory(root))
+        call_root = root / "intake/.." if argument == "root" else root
+        plan = root / ("intake/../plan.json" if argument == "plan" else "plan.json")
+        acceptance = root / (
+            "intake/../acceptance.json" if argument == "acceptance" else "acceptance.json"
+        )
+>       with pytest.raises(ValueError, match="Noncanonical"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Noncanonical'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:873: AssertionError
+__________ test_native_checkpoint_must_be_accepted_before_application __________
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+
+    def test_native_checkpoint_must_be_accepted_before_application(case):
+        root, plan = case
+        put(root, "unbound-checkpoint.json", {"schema_version": 1, "files": {}})
+        plan["protected_inputs"] = ref(root, "unbound-checkpoint.json")
+        save_contract(root, plan)
+        before = owner.hashes(owner.inventory(root))
+        with pytest.raises(ValueError, match="omit native checkpoint"):
+>           prepare(root)
+
+../worktree/tests/test_campaign_owner_apply.py:887: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+
+During handling of the above exception, another exception occurred:
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...'binding_id': 'review', 'path': 'intake/review.json', 'published_head': None, 'published_path': None, ...}, ...], ...})
+
+    def test_native_checkpoint_must_be_accepted_before_application(case):
+        root, plan = case
+        put(root, "unbound-checkpoint.json", {"schema_version": 1, "files": {}})
+        plan["protected_inputs"] = ref(root, "unbound-checkpoint.json")
+        save_contract(root, plan)
+        before = owner.hashes(owner.inventory(root))
+>       with pytest.raises(ValueError, match="omit native checkpoint"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'omit native checkpoint'
+E         Actual message: 'Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+../worktree/tests/test_campaign_owner_apply.py:886: AssertionError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[one-False-False] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil0')
+rejected = False, name_family = False, selected = 'one'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[one-True-False] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil1')
+rejected = True, name_family = False, selected = 'one'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[one-False-True] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil2')
+rejected = False, name_family = True, selected = 'one'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[both-False-False] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil3')
+rejected = False, name_family = False, selected = 'both'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[both-True-False] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil4')
+rejected = True, name_family = False, selected = 'both'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[both-False-True] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil5')
+rejected = False, name_family = True, selected = 'both'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[reverse-False-False] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil6')
+rejected = False, name_family = False, selected = 'reverse'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[reverse-True-False] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil7')
+rejected = True, name_family = False, selected = 'reverse'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_ test_1251_1252_inherited_family_real_application_and_completed_replay[reverse-False-True] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1251_1252_inherited_famil8')
+rejected = False, name_family = True, selected = 'reverse'
+
+        repin(root, plan)
+        return plan
+    
+    
+    def final_fixture_delta(root, plan, index, changes):
+        """Keep published source bytes immutable; accept a separate composed fixture."""
+        entry = plan["records"][index]
+        data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+        data.update(changes)
+        path = f"final-boundary-{index}.yaml"
+>       render(root, path, data)
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+_______ test_1252_completed_replay_rejects_changed_tombstone[activation] _______
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1252_completed_replay_rej0')
+fault = 'activation'
+
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "same_count_swap":
+        final_fixture_delta(tmp_path, plan, 0, {"identifier": "CHEBI:3"})
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "promotion_collision":
+>       final_fixture_delta(tmp_path, plan, 2, {"preferred_term": "EXISTING"})
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+________ test_1252_completed_replay_rejects_changed_tombstone[identity] ________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1252_completed_replay_rej1')
+fault = 'identity'
+
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "same_count_swap":
+        final_fixture_delta(tmp_path, plan, 0, {"identifier": "CHEBI:3"})
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "promotion_collision":
+>       final_fixture_delta(tmp_path, plan, 2, {"preferred_term": "EXISTING"})
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+__________ test_1252_completed_replay_rejects_changed_tombstone[name] __________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/pytest-v1/test_1252_completed_replay_rej2')
+fault = 'name'
+
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "same_count_swap":
+        final_fixture_delta(tmp_path, plan, 0, {"identifier": "CHEBI:3"})
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "promotion_collision":
+>       final_fixture_delta(tmp_path, plan, 2, {"preferred_term": "EXISTING"})
+                ^^^^^^^^^^^^^^^^^
+
+../worktree/tests/test_campaign_owner_apply.py:1128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../worktree/tests/test_campaign_owner_apply.py:307: in prepare
+    return owner.prepare(root, root / "plan.json", root / "acceptance.json")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:791: in prepare
+    (
+      
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:449: in _load
+    _check_loaded_producers()
+../worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:262: in _check_loaded_producers
+    frozen.verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FrozenFile(path=PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-202611...Path('/Users/marcin'), (16777233, 330136)), (PosixPath('/Users'), (16777233, 18488)), (PosixPath('/'), (16777233, 2))))
+
+    def verify(self) -> None:
+        self.check_location()
+        current = FrozenFile.capture(self.path)
+        if current.identity != self.identity or current.content != self.content:
+>           raise ValueError(f"Captured input changed: {self.path}")
+E           ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+
+../worktree/src/mediaingredientmech/curate/publication_guard.py:75: ValueError
+=============================== warnings summary ===============================
+../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_completed_verifier_rejects_current_or_archived_drift[checkpoint]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_completed_verifier_rejects_current_or_archived_drift[receipt_alias]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_completed_verifier_rejects_current_or_archived_drift[producer]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_late_archive_byte_drift_cannot_finish_success[backup]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_late_archive_byte_drift_cannot_finish_success[protected]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_late_archive_byte_drift_cannot_finish_success[retired]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_final_verifier_rechecks_original_proof_roles[leaf]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_final_verifier_rechecks_original_proof_roles[parent]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_final_verifier_rechecks_original_proof_roles[hardlink]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_late_new_owner_parent_swap_cannot_write_into_replacement
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_archived_protection_never_excuses_current_review_drift
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_noop_is_rejected_and_selected_case_subset_keeps_full_ledger
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_casefold_destination_collision_refused_before_write
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_owner_membership_is_reenumerated[addition]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_owner_membership_is_reenumerated[removal]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_owner_membership_is_reenumerated[symlink]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_owner_membership_is_reenumerated[hardlink]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_owner_membership_is_reenumerated[old_source_reappears]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_snapshot_membership_is_reenumerated[addition-checkpoint]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_snapshot_membership_is_reenumerated[addition-protected]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_snapshot_membership_is_reenumerated[removal-checkpoint]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_snapshot_membership_is_reenumerated[removal-protected]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_snapshot_membership_is_reenumerated[alias-checkpoint]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1194_final_snapshot_membership_is_reenumerated[alias-protected]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1197_disconnected_or_reused_owner_history_refused_before_write[data/ingredients/mapped/Existing.yaml]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1197_disconnected_or_reused_owner_history_refused_before_write[data/ingredients/mapped/New.yaml]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1197_disconnected_or_reused_owner_history_refused_before_write[data/ingredients/mapped/Stock_curated.yaml]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1197_matching_native_endpoint_can_continue_without_approval
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1197_explicit_native_bridge_can_connect_a_current_preimage
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1198_noncanonical_top_level_arguments_refused_before_mutation[plan]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1198_noncanonical_top_level_arguments_refused_before_mutation[acceptance]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1198_noncanonical_top_level_arguments_refused_before_mutation[receipt]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_native_checkpoint_must_be_accepted_before_application
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[one-False-False]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[one-True-False]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[one-False-True]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[both-False-False]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[both-True-False]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[both-False-True]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[reverse-False-False]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[reverse-True-False]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1251_1252_inherited_family_real_application_and_completed_replay[reverse-False-True]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1252_completed_replay_rejects_changed_tombstone[activation]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1252_completed_replay_rejects_changed_tombstone[identity]
+FAILED ../worktree/tests/test_campaign_owner_apply.py::test_1252_completed_replay_rejects_changed_tombstone[name]
+45 failed, 67 passed, 12 warnings in 32.47s

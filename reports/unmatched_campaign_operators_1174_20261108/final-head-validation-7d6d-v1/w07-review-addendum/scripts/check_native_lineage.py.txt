@@ -1,0 +1,28 @@
+from pathlib import Path
+import datetime, hashlib, importlib.util, json, os, subprocess, sys
+
+O=Path(__file__).resolve().parents[1];F=O/'native-fixture';W=O.parents[1];K=W.parents[2]/'integration/release-worktree'
+ctx=json.loads((O/'validation/native-context.json').read_text());os.environ.update(ctx['environment'])
+spec=importlib.util.spec_from_file_location('bounded_record_review',F/'scripts/record_review.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+prior='reviews/structured/20261108T135356Z-w07-final-operator-head-technical/review.yaml'
+new=Path(json.loads((O/'native-pair.json').read_text())['review']['path']).relative_to('native-fixture').as_posix()
+before=m.read_review(F,prior,F/'schema/record_review.yaml');after=m.read_review(F,new,F/'schema/record_review.yaml');m.assert_current_source(F,after)
+fid='W07-OPERATOR-LOG-AUDIT-001';old=[f for f in before['findings'] if f['finding_id']==fid];cur=[f for f in after['findings'] if f['finding_id']==fid]
+assert len(old)==len(cur)==1 and old[0]['status']=='open' and cur[0]['status']=='resolved'
+assert old[0]['issue_key']==cur[0]['issue_key']==fid
+assert old[0]['target_ids']==cur[0]['target_ids']==['private-review-helper']
+assert cur[0]['previous_occurrences']==[dict(repository=before['repository'],review_id=before['review_id'],finding_id=fid)]
+assert after['reviewer']['independence']=='self_review' and after['scientific_review'] is False
+assert after['scope']['reviewed_target_ids']==['private-review-helper']
+assert not any(t['target_id'] in ['source-operator','publication-operator'] for t in after['targets'])
+out=dict(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),native_pairs_read=2,current_new_input_hashes_verified=len(after['source']['inputs']),native_read_review_and_render_valid=True,source_state='working_tree_attestation',actual_base=after['source']['git_revision'],finding_id=fid,previous=dict(review_id=before['review_id'],finding_status='open',review_verdict=before['verdict']),successor=dict(review_id=after['review_id'],finding_status='resolved',review_verdict=after['verdict']),exact_affected_target_retained=True,scope='Explicit selected two-observation predecessor closure only. No competing selected head found in ignored-aware W07 native YAML search; operators and all other findings remain outside this reconciliation.')
+(O/'validation/selected-native-lineage.json').write_text(json.dumps(out,indent=2)+'\n')
+# Read-only maintained native review-corpus preservation check, distinct from the two private pairs above.
+env=dict(os.environ);[env.pop(k,None) for k in ['GIT_DIR','GIT_WORK_TREE']]
+cmd=[sys.executable,'-B',str(F/'scripts/record_review.py'),'--repo-root',str(K),'check','--base',ctx['native_base'],'--require-reviews']
+start=datetime.datetime.now(datetime.timezone.utc).isoformat();r=subprocess.run(cmd,cwd=O,env=env,capture_output=True)
+for k,b in [('stdout',r.stdout),('stderr',r.stderr)]: (O/'validation'/('native-maintained-check.'+k+'.log')).write_bytes(b)
+receipt=dict(command=cmd,started_at=start,finished_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),exit_code=r.returncode,scope='Actual unchanged K retained native review corpus only, read-only; private two-pair closure separately verified in selected-native-lineage.json. This is not science, source application or full project suite.',environment={'GIT_OPTIONAL_LOCKS':'0','PYTHONDONTWRITEBYTECODE':'1'},stdout_sha256=hashlib.sha256(r.stdout).hexdigest(),stderr_sha256=hashlib.sha256(r.stderr).hexdigest())
+(O/'validation/native-maintained-check-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(dict(selected_lineage='PASS',maintained_check_exit=r.returncode,stdout=r.stdout.decode()[:1000],stderr=r.stderr.decode()[:1000])))
+raise SystemExit(r.returncode)

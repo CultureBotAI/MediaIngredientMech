@@ -1,0 +1,51 @@
+import ast
+import datetime
+import hashlib
+import json
+from pathlib import Path
+
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+OLD=P.parents[1]/'combined-16c-independent-v1/frozen/repo'
+C=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107')
+A=C/'integration/publisher-late-head1256-fix-v1/portable'
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+inputs={};checks=[]
+def read(p):inputs[str(p)]=h(p);return p.read_bytes()
+archive=json.loads(read(F.parent/'ARCHIVE.json'));arch={x['path']:x['sha256'] for x in archive['files']}
+previous=json.loads(read(P.parents[1]/'combined-16c-independent-v1/skeptic/review.json'))
+assert h(P.parents[1]/'combined-16c-independent-v1/skeptic/review.json')=='08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1'
+manifest=json.loads(read(A/'MANIFEST.json'))
+for n,e in manifest['files'].items():
+    checks.append({'scope':'author-manifest','path':n,'expected':e,'actual':h(A/n),'pass':e==h(A/n)})
+comparisons={}
+for name in ('src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py','src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py'):
+    old=read(OLD/name);new=read(F/name)
+    if str(OLD/name) in previous['input_hashes']:assert h(OLD/name)==previous['input_hashes'][str(OLD/name)]
+    assert h(F/name)==arch[name]
+    def funcs(b):return {n.name:n for n in ast.parse(b).body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef))}
+    a,b=funcs(old),funcs(new);rows=[]
+    for k,n in a.items():
+        assert k in b
+        asserts=lambda node:[ast.dump(v,include_attributes=False) for v in ast.walk(node) if isinstance(v,ast.Assert)]
+        rows.append({'function':k,'entire_ast_equal':ast.dump(n,include_attributes=False)==ast.dump(b[k],include_attributes=False),
+                     'assertions_equal':asserts(n)==asserts(b[k]),'prior_assertions':len(asserts(n)),'final_assertions':len(asserts(b[k]))})
+    comparisons[name]={'old_functions':len(a),'final_functions':len(b),'new_functions':sorted(set(b)-set(a)),'functions':rows}
+    if name in ('tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py'):
+        assert all(x['assertions_equal'] for x in rows)
+    # All final bodies are parsed/read; unchanged bodies are bridged to the
+    # sealed full16c read, while all changed/new bodies were read in full now.
+for name in ('MAPPING_SEMANTICS.md','src/mediaingredientmech/curate/publication_guard.py','src/mediaingredientmech/validation/mapping_change_receipts.py','src/mediaingredientmech/schema/mediaingredientmech.yaml','justfile'):
+    read(F/name);assert h(F/name)==arch[name]
+for p in (A/'README.md',A/'RESULTS.json',P.parent/'inputs/issue1256-publisher-comment.json',
+          C/'preflight/late-head-transaction-independent-v1/HANDOFF.json',C/'preflight/late-head-transaction-independent-v1/results.json',
+          C/'integration/late-head1256-fix-v1/HANDOFF.json'):
+    read(p)
+assert all(c['pass'] for c in checks)
+out={'status':'PASS','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_head':archive['revision'],
+ 'input_hashes':inputs,'manifest_checks':checks,'ast_comparison':comparisons,
+ 'actual_read_scope':'Complete changed publisher prepare and current publish/finalization reread; entire unchanged publisher/test bodies bound to exact sealed16c full-content read; all new/changed publication/integration tests and source interface read. Full source operator review assigned separately.',
+ 'known_old_interface_evidence_limit':'The prior late-head-transaction publisher reproduction used the disclosed maintained generation stub. It proves the old interface failure, not fresh Claw execution; current reviewer full boundary probes use actual pinned generation.'}
+(P/'input-inspection.json').write_text(json.dumps(out,indent=2)+'\n')
+(P/'progress.json').write_text(json.dumps({'status':'NATIVE_ADVERSARIAL_REVIEW_RUNNING','reviewed_head':archive['revision'],'prior_publisher_assertions_preserved':True,'full_suite_repeated':False},indent=2)+'\n')
+print(json.dumps({'checks':len(checks),'functions':{k:{'old':v['old_functions'],'new':v['final_functions'],'changed':[r['function'] for r in v['functions'] if not r['entire_ast_equal']],'assertions_changed':[r['function'] for r in v['functions'] if not r['assertions_equal']]} for k,v in comparisons.items()}}))

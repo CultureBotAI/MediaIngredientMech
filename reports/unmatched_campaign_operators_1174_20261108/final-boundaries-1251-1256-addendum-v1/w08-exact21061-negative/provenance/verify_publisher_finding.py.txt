@@ -1,0 +1,36 @@
+import hashlib,json,subprocess,datetime
+from pathlib import Path
+P=Path(__file__).resolve().parents[1]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_text())
+f=read(P/'skeptic/FINDING-W08-21061-PUB-001-v2.json')
+res=read(P/'skeptic/native-boundary-results.json')
+checked=[]
+for path,expected in f['input_hashes'].items():
+ p=Path(path);assert sha(p)==expected;checked.append({'path':path,'sha256':expected})
+negative=res['results'][1]
+root=Path(negative['fixture'])
+head=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
+assert head==negative['head_at_return']!=negative['baseline']
+application=read(root/'source-receipt/application.json')
+publication=read(root/'reports/publication/publication.json')
+command=read(root/'reports/native/command.json')
+generation=read(root/'reports/native/generation.json')
+assert application['state']=='complete'
+assert publication['status']=='complete'
+assert command['returncode']==0
+assert command['environment']['OPENCLAW_WORKSPACE'].startswith(str(root))
+assert negative['observed']['accepted'] and negative['native_receipt_nonempty']
+positive=res['results'][0]
+assert positive['publication']['status']=='complete'
+assert positive['historical_validation']['status']=='verified'
+assert positive['tracked_derived_uncommitted']
+assert not positive['later_current_owner_drift']['accepted']
+out={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'worker08:/root','reviewed_head':res['reviewed_head'],'finding_id':f['finding_id'],
+ 'checked_artifacts':checked,'actual_private_head':head,'accepted_source_baseline':negative['baseline'],
+ 'source_receipt_state':application['state'],'publication_receipt_status':publication['status'],'native_generator_exit_code':command['returncode'],
+ 'actual_native_command':command,'generation':generation,
+ 'conclusion':'Confirmed by reading full negative probe, complete source/publisher transition order, and actual independently authored native command/application/publication receipts. Injection calls the real proof then makes a real private commit after the final capture HEAD callback; no fake proof/generation result is returned. Success persists. Positive tracked-derived sync and later historical verification remain distinct.',
+ 'scope':'Readback of actual skeptical-agent execution; root did not duplicate native generation.', 'fix_applied':False,'approval':False}
+with (P/'publisher-finding-root-readback.json').open('x') as s:json.dump(out,s,indent=2);s.write('\n')
+print(sha(P/'publisher-finding-root-readback.json'))

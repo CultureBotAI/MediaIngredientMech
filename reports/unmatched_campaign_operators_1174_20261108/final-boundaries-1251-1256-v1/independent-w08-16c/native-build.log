@@ -1,0 +1,8 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/provenance/build_native_review.py", line 213, in <module>
+    assert rr.read_review(N, relative) == review
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/scripts/record_review.py", line 666, in read_review
+    raise ReviewError(f"source provenance {provenance['status']}: {provenance['reason']}")
+native_record_review.ReviewError: source provenance invalid: claimed committed input is absent or nonregular: .claude/skills/reconcile-review-records/SKILL.md

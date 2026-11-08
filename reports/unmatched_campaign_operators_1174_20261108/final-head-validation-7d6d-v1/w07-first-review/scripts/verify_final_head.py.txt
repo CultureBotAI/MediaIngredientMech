@@ -1,0 +1,29 @@
+from pathlib import Path
+import json,subprocess,hashlib,datetime,os
+O=Path(__file__).resolve().parents[1];W=O.parents[1];C=W.parents[2];K=C/'integration/release-worktree';F=O/'inputs/final-publication'
+os.environ.update(GIT_OPTIONAL_LOCKS='0',GIT_NO_LAZY_FETCH='1')
+sha=lambda b:hashlib.sha256(b).hexdigest();now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+r=json.loads((F/'coordinator-receipt.json').read_text());assert r['head']=='7d6d44ea132e04709f81ebd9e1577643745110ad';assert r['parent']=='e0a75a0c48ba539426b1f70623ea376c7b379ecf'
+commands=[]
+def git(*args):
+ cmd=['git','-C',str(K),*args];p=subprocess.run(cmd,capture_output=True);commands.append(dict(command=cmd,at=now(),exit_code=p.returncode,stdout=p.stdout.decode(),stderr=p.stderr.decode()));assert p.returncode==0;return p.stdout
+head=git('rev-parse','HEAD').decode().strip();assert head==r['head']
+assert git('rev-list','--parents','-n','1',head).decode().split()==[head,r['parent']]
+assert not git('status','--short').strip()
+assert r['remote']=='refs/heads/curate/all-unmatched-source-integration-20261107'
+remote=git('ls-remote','origin',r['remote']).decode().strip().split();assert remote==[head,r['remote']]
+prcmd=['gh','api','repos/CultureBotAI/MediaIngredientMech/pulls/1205'];prrun=subprocess.run(prcmd,capture_output=True);(F/'PR1205.json').write_bytes(prrun.stdout);(F/'PR1205.stderr').write_bytes(prrun.stderr);assert prrun.returncode==0;pr=json.loads(prrun.stdout);assert pr['head']['sha']==head
+changed=git('diff-tree','--no-commit-id','--name-only','-r',head).decode().splitlines();assert set(changed)==set(r['files'])
+files=[]
+for p in sorted((O/'runtime-code').rglob('*')):
+ if not p.is_file():continue
+ rel=p.relative_to(O/'runtime-code').as_posix();b=p.read_bytes();gb=git('show',head+':'+rel)
+ assert gb==b==(K/rel).read_bytes(),rel
+ files.append(dict(path=rel,sha256=sha(b),bytes=len(b),git_blob_exact=True,current_K_exact=True))
+for rel,h in r['files'].items():assert sha((K/rel).read_bytes())==h
+diff=git('diff',r['parent'],head,'--',*changed);(F/'actual-commit.diff').write_bytes(diff)
+# The native operator commit changes no gates, pins, workflows, thresholds or maintained owner/data files.
+assert not any(p.startswith(('data/','mappings/','.github/')) for p in changed)
+out=dict(verified_at=now(),head=head,parent=r['parent'],ordinary_single_parent=True,remote_ref=r['remote'],remote_head=remote[0],PR1205_head=pr['head']['sha'],K_branch=git('branch','--show-current').decode().strip(),K_clean=True,changed_files=changed,changed_hashes=r['files'],all_captured_code_test_blobs=files,verified_blob_count=len(files),actual_diff_sha256=sha(diff),producer_source_unchanged='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52',publisher_frozen_exact='1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24',full_QC_and_suite='PENDING; receipt not a runtime-pass claim',approval='NONE: bounded technical review only; no source application, science vote, export approval or Git writes',remote_command_receipts=[x for x in commands if 'ls-remote' in x['command']],PR_read=dict(command=prcmd,exit_code=prrun.returncode,sha256=sha(prrun.stdout)))
+(O/'validation/final-head-readback.json').write_text(json.dumps(out,indent=2)+'\n');(F/'git-read-command-receipts.json').write_text(json.dumps(commands,indent=2)+'\n')
+print(json.dumps(dict(head=head,parent=r['parent'],remote_equal=True,PR_equal=True,verified_code_test_blobs=len(files),changed_files=changed,receipt_sha256=sha((O/'validation/final-head-readback.json').read_bytes()))))

@@ -1,0 +1,61 @@
+import ast
+import datetime
+import hashlib
+import json
+from pathlib import Path
+
+P = Path(__file__).resolve().parent
+F = P.parent / 'frozen/repo'
+OLD = P.parents[1] / 'final-21061-independent-v1/frozen/repo'
+C = Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107')
+A = C / 'integration/publisher-late-head1256-fix-v2/portable'
+inputs = {}
+def h(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):
+    raw = p.read_bytes(); inputs[str(p)] = hashlib.sha256(raw).hexdigest(); return raw
+archive = json.loads(read(F.parent / 'ARCHIVE.json'))
+arch = {x['path']: x['sha256'] for x in archive['files']}
+oldreview = P.parents[1] / 'final-21061-independent-v1/skeptic/review.json'
+previous = json.loads(read(oldreview))
+assert h(oldreview) == '460be7e1e5330eab40e32c83c2d0bc398aae9c30f990d4d25aefbbbec7258bdb'
+manifest = json.loads(read(A / 'MANIFEST.json'))
+checks = []
+for name, expected in manifest['files'].items():
+    checks.append({'path': name, 'expected': expected, 'actual': h(A/name), 'pass': h(A/name) == expected})
+comparisons = {}
+for name in ['src/mediaingredientmech/campaign_publication.py', 'tests/test_campaign_publication.py',
+             'tests/test_campaign_demotion_integration.py', 'src/mediaingredientmech/curate/campaign_owner_apply.py',
+             'tests/test_campaign_owner_apply.py']:
+    before, after = read(OLD/name), read(F/name)
+    assert h(F/name) == arch[name]
+    if str(OLD/name) in previous['input_hashes']:
+        assert h(OLD/name) == previous['input_hashes'][str(OLD/name)]
+    def funcs(raw):
+        return {n.name:n for n in ast.parse(raw).body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef))}
+    old, new = funcs(before), funcs(after)
+    rows = []
+    for key, node in old.items():
+        assert key in new
+        assertions = lambda n: [ast.dump(x, include_attributes=False) for x in ast.walk(n) if isinstance(x,ast.Assert)]
+        rows.append({'function':key, 'entire_ast_equal':ast.dump(node,include_attributes=False)==ast.dump(new[key],include_attributes=False),
+                     'assertions_equal':assertions(node)==assertions(new[key]), 'old_assertion_count':len(assertions(node)), 'new_assertion_count':len(assertions(new[key]))})
+    comparisons[name] = {'old_functions':len(old), 'new_functions':len(new), 'new_names':sorted(set(new)-set(old)), 'old_function_comparisons':rows}
+    if name in ['tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py']:
+        assert all(x['entire_ast_equal'] for x in rows)
+for name in ['MAPPING_SEMANTICS.md', 'justfile', 'src/mediaingredientmech/curate/publication_guard.py',
+             'src/mediaingredientmech/validation/mapping_change_receipts.py', 'src/mediaingredientmech/schema/mediaingredientmech.yaml']:
+    read(F/name); assert h(F/name)==arch[name]
+for name in ['README.md','RESULTS.json']:
+    read(A/name)
+read(A.parent/'HANDOFF.json')
+assert all(x['pass'] for x in checks)
+testnames = ['tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py']
+old_count = sum(comparisons[n]['old_functions'] for n in testnames)
+assert old_count == 68
+out = {'status':'PASS','reviewed_head':archive['revision'],'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+       'input_hashes':inputs,'author_manifest_checks':checks,'ast_comparisons':comparisons,
+       'original_test_helper_functions_ast_identical':old_count,
+       'reading_scope':'Entire current publisher module and integration test file read afresh; unchanged publication test bodies bridge to the exact sealed full previous review, with every old function AST identical. All changed/new publication tests and all changed source-interface code read now. Full source operator scientific/technical verdict belongs to the separate technical reviewer.',
+       'full_suite_repeated':False,'old_findings_not_deleted':True}
+with (P/'input-inspection.json').open('x') as f: json.dump(out,f,indent=2); f.write('\n')
+print(json.dumps({'status':'PASS','author_manifest_files':len(checks),'old_test_helper_ASTs':old_count,'changes':{k:[x['function'] for x in v['old_function_comparisons'] if not x['entire_ast_equal']] for k,v in comparisons.items()}}))

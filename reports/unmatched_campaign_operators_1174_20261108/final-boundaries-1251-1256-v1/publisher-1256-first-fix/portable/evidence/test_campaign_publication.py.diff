@@ -1,0 +1,177 @@
+--- a/tests/test_campaign_publication.py
++++ b/tests/test_campaign_publication.py
+@@ -91,6 +91,25 @@
+ def case(tmp_path, monkeypatch):
+     root = tmp_path / "repository"
+     root.mkdir()
++    subprocess.run(["git", "init", "-q"], cwd=root, check=True)
++    subprocess.run(
++        [
++            "git",
++            "-c",
++            "user.name=Fixture",
++            "-c",
++            "user.email=fixture@example.invalid",
++            "commit",
++            "--allow-empty",
++            "-qm",
++            "Private publication fixture baseline",
++        ],
++        cwd=root,
++        check=True,
++    )
++    baseline_commit = subprocess.check_output(
++        ["git", "rev-parse", "HEAD"], cwd=root, text=True
++    ).strip()
+     before = sssom([row("A"), row("Unrelated", "CHEBI:9")])
+     candidate = sssom(
+         [
+@@ -199,7 +218,10 @@
+             "sidecar": reference("diagnostic-sidecar.tsv", sidecar),
+             "manifest": reference(
+                 "generation.json",
+-                {"fixture": "isolated producer boundary", "source_revisions": {"mim": "a" * 40}},
++                {
++                    "fixture": "isolated producer boundary",
++                    "source_revisions": {"mim": baseline_commit},
++                },
+             ),
+             "producer_root": str(root / "producer"),
+             "kg_root": str(root / "kg"),
+@@ -236,7 +258,7 @@
+         "before_inventory": before_inventory,
+         "after_inventory": after_inventory,
+         "records": records,
+-        "baseline_commit": "a" * 40,
++        "baseline_commit": baseline_commit,
+         "immutable_input_sha256": {},
+         "checkpoint": {
+             "root": "reports/fixture/source-checkpoint",
+@@ -1439,3 +1461,127 @@
+     for role in ("canonical", "policy"):
+         reference = case["plan"]["before"][role]
+         assert c.sha((case["root"] / reference["path"]).read_bytes()) == reference["sha256"]
++
++
++# #1256: live transaction HEAD versus historical completed proof.
++def commit_publication_boundary(root, *, unrelated=False):
++    if unrelated:
++        (root / "unrelated-commit.txt").write_text("Unrelated committed evidence\n")
++        subprocess.run(["git", "add", "unrelated-commit.txt"], cwd=root, check=True)
++    subprocess.run(
++        [
++            "git",
++            "-c",
++            "user.name=Fixture",
++            "-c",
++            "user.email=fixture@example.invalid",
++            "commit",
++            "--allow-empty",
++            "-qm",
++            "Intervening fixture commit",
++        ],
++        cwd=root,
++        check=True,
++    )
++
++
++@pytest.mark.parametrize("unrelated", [False, True])
++@pytest.mark.parametrize("apply", [False, True])
++def test_1256_intervening_head_refused_before_publication_outputs(case, unrelated, apply):
++    root = case["root"]
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY, c.SIDECAR, c.BASELINE)}
++    commit_publication_boundary(root, unrelated=unrelated)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        c.publish(root, case["path"], case["out"], apply=apply)
++    assert all((root / p).read_bytes() == raw for p, raw in before.items())
++    assert not list(case["out"].iterdir())
++    assert native.verify_mapping_chain(root)["receipt_inputs"] == case["plan"]["receipt_prefix"]
++
++
++def test_1256_prepare_final_boundary_rechecks_head(case, monkeypatch):
++    original = c._generation
++
++    def intervening(*args, **kwargs):
++        result = original(*args, **kwargs)
++        commit_publication_boundary(case["root"])
++        return result
++
++    monkeypatch.setattr(c, "_generation", intervening)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        c.prepare(case["root"], case["path"])
++    assert not list(case["out"].iterdir())
++
++
++@pytest.mark.parametrize(
++    "phase", ["reserved", "after-first-replace", "before-completion", "after-completion"]
++)
++def test_1256_late_commit_never_leaves_success_receipts(case, monkeypatch, phase):
++    from contextlib import contextmanager
++
++    root = case["root"]
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY)}
++    entered = []
++
++    def change_head():
++        entered.append(phase)
++        commit_publication_boundary(root)
++
++    if phase == "reserved":
++        original = c._reserve
++
++        @contextmanager
++        def reservation(paths):
++            with original(paths) as handles:
++                change_head()
++                yield handles
++
++        monkeypatch.setattr(c, "_reserve", reservation)
++    elif phase == "after-first-replace":
++        original = c.publish_validated
++
++        def replacement(*args, **kwargs):
++            result = original(*args, **kwargs)
++            change_head()
++            return result
++
++        monkeypatch.setattr(c, "publish_validated", replacement)
++    else:
++        original = c.finish_receipt
++
++        def completion(*args, **kwargs):
++            if phase == "before-completion":
++                change_head()
++            result = original(*args, **kwargs)
++            if phase == "after-completion":
++                change_head()
++            return result
++
++        monkeypatch.setattr(c, "finish_receipt", completion)
++    with pytest.raises(ValueError, match="live publication HEAD changed"):
++        c.publish(root, case["path"], case["out"], apply=True)
++    assert entered == [phase]
++    if phase == "reserved":
++        assert all((root / p).read_bytes() == raw for p, raw in before.items())
++    for path in [
++        case["out"] / "publication.json",
++        root / native.RECEIPTS_DIR / (case["plan"]["batch"] + ".json"),
++    ]:
++        assert not path.exists() or path.read_bytes() == b""
++
++
++def test_1256_completed_validation_permits_later_commit(case):
++    root = case["root"]
++    assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
++    before = {p: (root / p).read_bytes() for p in (c.SOURCE, c.POLICY)}
++    commit_publication_boundary(root, unrelated=True)
++    assert c.validate(root, case["path"])["status"] == "verified"
++    assert all((root / p).read_bytes() == raw for p, raw in before.items())
++
++
++def test_1256_live_publication_allows_uncommitted_derived_sync(case):
++    root = case["root"]
++    derived = root / "data/curated/fixture-derived.yaml"
++    derived.parent.mkdir(parents=True)
++    derived.write_text("fixture: synchronized derived data\n")
++    assert c.publish(root, case["path"], case["out"], apply=True)["status"] == "complete"
++    assert c.validate(root, case["path"])["status"] == "verified"

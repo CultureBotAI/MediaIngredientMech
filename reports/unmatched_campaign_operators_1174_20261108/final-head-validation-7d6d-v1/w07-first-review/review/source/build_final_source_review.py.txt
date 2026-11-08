@@ -1,0 +1,65 @@
+from pathlib import Path
+import os,sys,json,hashlib,datetime,subprocess,types,ast
+O=Path(__file__).resolve().parent; W=O.parents[3]; C=W.parents[2]; K=C/'integration/release-worktree'; P=O.parents[1]
+os.environ.update(GIT_OPTIONAL_LOCKS='0',GIT_NO_LAZY_FETCH='1',GIT_TERMINAL_PROMPT='0')
+assert sys.dont_write_bytecode
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def write(path,value):
+ p=O/path;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f:f.write(json.dumps(value,indent=2,ensure_ascii=False)+'\n')
+def proof(p):return {'path':str(p),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size}
+commands=[]
+def git(*args):
+ cmd=['git','-C',str(K),*args];r=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,check=False)
+ commands.append({'at':now(),'argv':cmd,'exit_code':r.returncode,'stdout_sha256':sha(r.stdout),'stderr':r.stderr.decode(errors='replace'),'stdout_text':r.stdout.decode(errors='replace') if len(r.stdout)<4096 else None})
+ assert r.returncode==0,(cmd,r.stderr);return r.stdout
+prep=json.loads((O/'PREPARATORY-REVIEW-v1.json').read_text()); pm=json.loads((O/'PREPARATORY-MANIFEST-v1.json').read_text())
+for x in pm['files']:assert sha((O/x['path']).read_bytes())==x['sha256'],x
+head=git('rev-parse','HEAD').decode().strip();assert head=='7d6d44ea132e04709f81ebd9e1577643745110ad'
+parent=git('show','-s','--format=%P',head).decode().strip();assert parent=='e0a75a0c48ba539426b1f70623ea376c7b379ecf'
+assert not git('status','--short').strip()
+changed=git('diff','--name-only',parent,head).decode().splitlines();assert set(changed)=={'src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py','tests/test_campaign_suppressions.py','tests/test_campaign_suppression_integration.py'}
+receipt=C/'preflight/campaign-suppressions1259-commit-v1/receipt.json';receipt_data=json.loads(receipt.read_text());assert receipt_data['head']==head and receipt_data['parent']==parent
+remote=P/'validation/final-head-readback.json';assert sha(remote.read_bytes())=='93f8ec924d57db1bb33cbe29b59a7c2f145b4b0fd3f724f9bf4506f7781f542d';remote_data=json.loads(remote.read_text());assert remote_data['remote_head']==remote_data['head']==remote_data['PR1205_head']==head
+reference_paths=[receipt,C/'preflight/campaign-suppressions1259-final-root-collection-v2/receipt.json',C/'preflight/campaign-suppressions1259-independent-v1/HANDOFF.json',remote]
+references=[{**proof(p),'read_at':now()} for p in reference_paths]
+for i,p in enumerate(reference_paths[:3]):
+ dest=O/'final'/(str(i)+'-'+p.parent.name+'-'+p.name);dest.parent.mkdir(parents=True,exist_ok=True)
+ with dest.open('xb') as f:f.write(p.read_bytes())
+bridges=[]
+for item in json.loads((O/'preparatory-inputs.json').read_text())['files']:
+ path=item['path'];old=(O/'runtime'/path).read_bytes();actual=(K/path).read_bytes();blob=git('show',head+':'+path)
+ assert sha(old)==item['sha256'];assert actual==blob
+ same=old==actual
+ assert same or path=='src/mediaingredientmech/campaign_publication.py',path
+ bridges.append({'path':path,'preparatory_sha256':sha(old),'final_sha256':sha(actual),'final_K_equals_committed_blob':True,'byte_identical_to_preparatory':same,'selected_for_source_bridge':same})
+assert len(bridges)==77 and sum(x['byte_identical_to_preparatory'] for x in bridges)==76
+sys.path.insert(0,str(O/'runtime/src'))
+from mediaingredientmech.curate import campaign_owner_apply as m
+assert len(m.PRODUCERS)==11
+required=list(m.PRODUCERS)+['tests/test_campaign_owner_apply.py','src/mediaingredientmech/curie.py','src/mediaingredientmech/review_claims.py','src/mediaingredientmech/sssom_metadata.py','src/mediaingredientmech/synonym_policy.py','AGENTS.md','justfile','pyproject.toml']
+by_path={x['path']:x for x in bridges};assert all(x in by_path and by_path[x]['byte_identical_to_preparatory'] for x in required)
+raw_before=m.git(K,'ls-files','--stage','-z');observed_head=m.git(K,'rev-parse','HEAD').decode().strip();assert observed_head==head
+ready=types.SimpleNamespace(root=K,plan={'baseline_commit':head},operations=[],before={},after_inventory={})
+m._check_mutation_git_state(ready)
+raw_after=m.git(K,'ls-files','--stage','-z');assert raw_before==raw_after;assert m.git(K,'rev-parse','HEAD').decode().strip()==head
+control={'at':now(),'reviewer':'/root/operator_source_technical','source_sha256':sha((K/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()),'exact_executed_copy':str(O/'runtime/src/mediaingredientmech/curate/campaign_owner_apply.py'),'head':head,'runtime':sys.version,'python':sys.executable,'check':'_check_mutation_git_state(actual K, exact current baseline, empty operations)','result':'PASS','logical_index_entries':len(m._index_entries(raw_before)),'index_before_sha256':sha(raw_before),'index_after_sha256':sha(raw_after),'git_writes':False,'owner_writes':False,'scope':'Read-only actual final-head boundary observation only; no source preparation/application or Git-writing test fixture.'}
+write('FINAL-READONLY-CONTROL-v1.json',control)
+write('FINAL-SOURCE-BRIDGE-v1.json',{'created_at':now(),'reviewer':'/root/operator_source_technical','head':head,'parent':parent,'changed_paths':changed,'local_head_parent_clean_independently_verified':True,'remote_proof':references[-1],'remote_scope':'Live remote/PR readback performed by root; exact proof hash and head/ref/PR independently checked here. No duplicate network request by this subagent.','preparatory_manifest':proof(O/'PREPARATORY-MANIFEST-v1.json'),'preserved_preparatory_members':len(pm['files']),'all_preparatory_members_hash_exact':True,'continuity':bridges,'selected_source_producer_paths':list(m.PRODUCERS),'selected_additional_source_test_contract_helpers':required[11:],'excluded_historical_runtime_path':'runtime/src/mediaingredientmech/campaign_publication.py','excluded_reason':'Historical preparatory publisher is changed in final head and is never selected/executed by this source-only review. Final publication operator independently reviewed in another lane.','final_receipt_references':references})
+assessment={'review_id':'W07-FINAL-OPERATOR-SOURCE-FINAL-HEAD-v1','created_at':now(),'reviewer':'/root/operator_source_technical','scope':'Independent full source-operator technical review at exact published final head; not scientific review or campaign/source/export acceptance.','status':'BOUNDED_TECHNICAL_PASS_WITH_FULL_QC_SUITE_PENDING','head':head,'parent':parent,'source_operator_sha256':prep['source_code_sha256'],'source_tests_sha256':by_path['tests/test_campaign_owner_apply.py']['final_sha256'],'coverage_matrix':prep['coverage_matrix'],'source_functions':prep['source_functions'],'native_source_producers':list(m.PRODUCERS),'published_binding_proof':proof(O/'FINAL-SOURCE-BRIDGE-v1.json'),'preparatory_review_preserved':proof(O/'PREPARATORY-REVIEW-v1.json'),'source_contract_limit':prep['source_contract_limit'],'existing_finding_dispositions':prep['existing_finding_dispositions'],'new_confirmed_findings':[],'controls':{'preparatory_pure_native_readonly_controls':proof(O/'pure-controls.json'),'count':30,'status':'All expected pure controls passed; response-injection negatives are not actual Git-mutating integration runs.','actual_final_head_readonly_control':proof(O/'FINAL-READONLY-CONTROL-v1.json'),'source_collection':proof(O/'source-test-collection-receipt.json'),'source_collected_cases':382,'source_test_functions':83,'collection_is_execution':False,'native_integration_and_final_fixture_assertions':'Root audit owns actual preserved native execution receipts and all-test AST assertion/parameter comparisons. This subagent does not execute prohibited Git-writing fixtures.','historical_combined':'Original 11 failed / 619 passed combined run is preserved and not promoted to PASS; root traces exact fixture fixes and final execution. Earlier 546-pass source-coherence run is historical scope only.','full_committed_head_QC_and_suite':'PENDING per actual final receipt; not executed here.'},'limits':['All eight role bindings and acceptance prove exact inputs; they are not scientific verdict parsing or new science approval. Genuine independent review and complete campaign accounting remain caller prerequisites.','Read-only technical review covers closed intake, exact source origins/cases, captured producer code, guards, mutation-state coherence, failure/recovery, historical receipt replay and CLI interactions. It does not apply the actual934 plan or ancillary1258.','W07 prior source and four-suppression scientific participation is disclosed; this source-operator reviewer contributes a technical assessment only, not another independent scientific vote.','Batch mutation is recoverable rather than globally atomic. Read-only boundary controls do not establish arbitrary future races impossible.','Actual complete source application, canonical publication, role/export approval and final full QC/suite are not authorized by this packet.','Final publication operator/suppression policy implementation is separately reviewed by root and publication/skeptical lanes, not approved by this source-only assessment.'],'source_application':False,'scientific_approval':False,'role_export_approval':False,'final_campaign_acceptance':False}
+write('FINAL-SOURCE-ASSESSMENT-v1.json',assessment)
+md='''The complete source operator is technically supported at published head `{head}` within its source-only contract. Its source hash remains `{code}`, and all 11 producers plus the source tests, CLI, helpers and contracts used by this review exactly match the committed final bytes. The 20 review domains and 36 top-level functions/classes from the preserved preparatory review remain applicable through explicit byte continuity.
+
+No new confirmed source-operator finding was found. Thirty pure/read-only controls passed; a fresh read-only logical-index/HEAD check at the final head also passed. The 382 source test cases were collected, not executed here. Root audits actual native execution and assertion preservation separately. The original combined 11-failure run is retained and is not a pass. Full committed-head QC and suite remain pending.
+
+The operator binds exact case/proposal/origin/review artifacts and root acceptance; it does not turn their hashes into scientific approval. Ancillary #1258 remains a separate transaction. W07's previous scientific participation is disclosed and supplies no new independent science vote in this technical review. No source application, canonical publication, role/export approval or campaign acceptance is granted.
+
+The old preparatory publisher copy is explicitly excluded from the final source selector. The changed publication operator has its own independent review lane. The preparatory packet is unchanged byte-for-byte.
+'''.format(head=head,code=prep['source_code_sha256'])
+with (O/'FINAL-SOURCE-ASSESSMENT-v1.md').open('x') as f:f.write(md)
+write('FINAL-SOURCE-COMMANDS-v1.json',{'created_at':now(),'commands':commands,'environment':{'GIT_OPTIONAL_LOCKS':'0','GIT_NO_LAZY_FETCH':'1','PYTHONDONTWRITEBYTECODE':'1'},'supplemental_native_git_reads':'Fresh final-head control directly calls native git() read commands. No Git-writing command or fixture used.','exploratory_read_failures_retained':['Preparation records its three original failed discovery/read probes. Later readback inspection overprinted a bounded view and a substring locator failed with ValueError; no output artifact or source was changed, and direct sed then located the genuine control.']})
+write('SOURCE-HANDOFF-v1.json',{'created_at':now(),'reviewer':'/root/operator_source_technical','status':assessment['status'],'head':head,'parent':parent,'assessment':proof(O/'FINAL-SOURCE-ASSESSMENT-v1.json'),'bridge':proof(O/'FINAL-SOURCE-BRIDGE-v1.json'),'read_only_check':proof(O/'FINAL-READONLY-CONTROL-v1.json'),'source_operator_sha256':prep['source_code_sha256'],'new_confirmed_findings':0,'full_QC_suite':'PENDING','source_application':False,'scientific_approval':False,'parent_assembly':'Root incorporates this source-only assessment into final native structured review/rendered Markdown with publication and skeptical subagents.'})
+files=[{'path':str(p.relative_to(O)),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size} for p in sorted(O.rglob('*')) if p.is_file() and p.name!='SOURCE-MANIFEST-v1.json']
+write('SOURCE-MANIFEST-v1.json',{'sealed_at':now(),'scope':'Complete append-only source technical review at final published head, including unchanged preserved preparatory packet.','files':files})
+print(json.dumps({'head':head,'domains':len(assessment['coverage_matrix']),'functions':len(assessment['source_functions']),'source_producers':len(m.PRODUCERS),'manifest_members':len(files),'handoff':proof(O/'SOURCE-HANDOFF-v1.json'),'assessment':proof(O/'FINAL-SOURCE-ASSESSMENT-v1.json'),'manifest':proof(O/'SOURCE-MANIFEST-v1.json')},indent=2))

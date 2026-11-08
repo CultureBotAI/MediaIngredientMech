@@ -1,0 +1,72 @@
+"""Bounded post-filing pair recheck; original delta helpers/results untouched."""
+from pathlib import Path
+from datetime import datetime, timezone
+import ast
+import hashlib
+import importlib.util
+import json
+import sys
+
+S=Path(__file__).resolve().parent;O=S.parent;W=S.parents[2];C=W.parents[2]
+F=C/'preflight/w02-v3-checker-findings-publication-v1'
+inputs={}
+
+
+def read(p, expected=None):
+    p=Path(p);assert p.is_absolute() and p.is_file() and not p.is_symlink()
+    b=p.read_bytes();h=hashlib.sha256(b).hexdigest()
+    assert expected is None or h==expected,str(p)
+    inputs[str(p)]={'path':str(p),'sha256':h,'bytes':len(b)}
+    return b
+
+
+def load(p, expected=None):return json.loads(read(p,expected))
+
+
+filing=load(F/'receipt.json','b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f')
+body=read(F/'body.md','cb6443f68fd3d794f77ab24a7e367a1db8654356a97adbab105d606790850711')
+after=load(F/'after.json','59bc6b6d94e6492aa02fa472ea0e899346cf6468f58294e4bc1fe75312cfb13b')
+# The saved GET is a comment list; identify the actual filed id, not a guessed index.
+comments=after if isinstance(after,list) else after.get('comments',[after])
+matches=[x for x in comments if x.get('id')==6722465798]
+assert len(matches)==1 and matches[0]['body'].encode()==body
+created=datetime.fromisoformat(matches[0]['created_at'].replace('Z','+00:00'))
+started=datetime.now(timezone.utc);assert started>created
+load(O/'checker-filing-readback.json','1e7bfc5d93be6312dd9e309d75b6107d17dc7c9b6c381844ac91e715f696fb5d')
+load(S/'finding-numbered-pair-helper-v1.json',filing['finding_sha256']['skeptic/finding-numbered-pair-helper-v1.json'])
+pending=load(S/'MANIFEST-pending-v1.json','e2a3ee553ae803578f615e4c29058aa3454f2d184931ccde7e8f244789dbecad')
+for row in pending['files']:read(S/row['path'],row['sha256'])
+old=read(S/'read_delta_v1.py').decode();new=read(S/'read_delta_v2.py').decode()
+a="    mdpath=p.with_suffix('.md');md=read(mdpath)"
+b="    numbered_pairs = {'13-review.yaml':'14-review.md','17-review.yaml':'18-review.md','21-review.yaml':'22-review.md'}\n    mdpath=p.with_name(numbered_pairs[p.name]) if p.name in numbered_pairs else p.with_suffix('.md')\n    md=read(mdpath)"
+assert old.count(a)==1 and old.replace(a,b)==new
+tree=ast.parse(new)
+assignment=next(n for n in ast.walk(tree) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='numbered_pairs' for t in n.targets))
+mapping=ast.literal_eval(assignment.value)
+assert mapping=={'13-review.yaml':'14-review.md','17-review.yaml':'18-review.md','21-review.yaml':'22-review.md'}
+observed=load(S/'delta-readback-v1.json','069f04d05ff324a39db5b59d615ab883ebfd3a7598acc549dac801492e426b42')
+helper=W/'scripts/record_review.py';read(helper)
+spec=importlib.util.spec_from_file_location('d_post_filing_pairs',helper);m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+positives=[];rawpairs={}
+for row in observed['historical_native_pairs']:
+    yp=Path(row['path']);mp=yp.with_name(mapping[yp.name]) if yp.name in mapping else yp.with_suffix('.md')
+    assert str(mp)==row['markdown']
+    y=read(yp,row['yaml_sha256']);md=read(mp,row['markdown_sha256'])
+    d=m.load_document(y);m.validate_review(d);assert m.render_markdown(d).encode()==md
+    virtual='reviews/structured/'+d['review_id']+'/review.yaml'
+    assert m.parse_review_bundle(virtual,y,md)==d
+    rawpairs[yp.name]=(virtual,y,md)
+    positives.append({'yaml':str(yp),'yaml_sha256':row['yaml_sha256'],'markdown':str(mp),'markdown_sha256':row['markdown_sha256'],'historical_verdict':d['verdict'],'native_validate_render_parse':True,'current_source_or_approval':False})
+assert len(positives)==6
+negatives=[]
+for yname,wrong in [('13-review.yaml','17-review.yaml'),('17-review.yaml','21-review.yaml'),('21-review.yaml','13-review.yaml')]:
+    virtual,y,_=rawpairs[yname];wrong_md=rawpairs[wrong][2]
+    try:m.parse_review_bundle(virtual,y,wrong_md)
+    except m.ReviewError as e:
+        negatives.append({'yaml':yname,'wrong_markdown_from_yaml':wrong,'refused':True,'native_exception':type(e).__name__,'message':str(e)})
+    else:raise AssertionError('Mismatched original pair accepted')
+read(Path(__file__).resolve())
+out={'reviewer':'/root/final_reviewer','started_at':started.isoformat(),'ended_at':datetime.now(timezone.utc).isoformat(),'status':'BOUNDED_POST_FILING_AUTHOR_RECHECK_PASS_DISTINCT_C_REVIEW_SEPARATE','scope':'Exact immutable v2 numbered pair map only; six real retained native pairs and three actual native mismatched-pair refusals. No full delta checker or archived operator rerun.','filing_url':filing['url'],'filing_created_at':matches[0]['created_at'],'filing_body_exact':True,'original_and_successor_delta':'Only exact13/14,17/18,21/22 map replaces basename assumption. Entire remaining helper text exact.','positive_pairs':positives,'negative_controls':negatives,'prior_pending_manifest_members_exact':len(pending['files']),'chronology':'Original failed helper and successful successor execution preceded filing. Their bytes and069f observation remain unchanged. This is a new actual post-filing execution, never retroactive issue-first validation.','independence':'I authored the private pair-map successor, so this bounded own-code recheck is not its independent approval. C supplies a distinct exact-byte review. I remain independent of selected archive/operator authors.','scientific_review':False,'code_operator_source_application_final_head_or_final_archive_approval':False,'input_hash_manifest':sorted(inputs.values(),key=lambda x:x['path'])}
+p=S/'numbered-pair-post-filing-review-v1.json'
+with p.open('x') as f:f.write(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps({'status':out['status'],'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'positive_pairs':len(positives),'negative_controls':len(negatives)}))

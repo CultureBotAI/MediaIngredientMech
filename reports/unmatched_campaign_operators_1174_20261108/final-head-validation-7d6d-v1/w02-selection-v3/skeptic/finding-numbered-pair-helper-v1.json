@@ -1,0 +1,56 @@
+{
+  "finding_id": "W02-ARCHIVE-REVIEWER-NUMBERED-PAIR-001",
+  "recorded_at": "2026-11-08T13:58:35.632609+00:00",
+  "author": "/root/final_reviewer",
+  "severity": "minor_private_review_harness",
+  "status": "CONFIRMED_REVIEWER_HELPER_DEFECT_WITH_UNAUTHORIZED_ORDERING_SUCCESSOR_PRESERVED",
+  "scope": "Newly authored private archive review helper only, no author packet/candidate/operator defect.",
+  "defect": "read_delta_v1.py line165 constructs Markdown partner with p.with_suffix(.md), but the exact archived numbered pair is13-review.yaml with14-review.md, then17/18 and21/22. It refuses valid retained evidence before writing a review receipt.",
+  "reproduction": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 ../../../.temp/all-unmatched-worker-02/venv/bin/python -B read_delta_v1.py",
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic",
+    "tool_chunk": "90e33f",
+    "exit_code": 1,
+    "exception": "AssertionError for portable-final/recorded-verdict-finding/13-review.md",
+    "attempt_record": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/readback-attempt-v1.json",
+      "sha256": "f37d1a6185b38d60eac2fac725688f247d1bcb75f9dcd19b96929df379cc6519",
+      "bytes": 744,
+      "filesystem_created_at_not_execution_time": "2026-11-08T13:58:10.156645+00:00"
+    }
+  },
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/read_delta_v1.py",
+      "sha256": "450e4142898e21181c64dc7a8af541665f460f6e35b4058e3547d22a10dae14b",
+      "bytes": 12244,
+      "filesystem_created_at_not_execution_time": "2026-11-08T13:57:49.290764+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/read_delta_v2.py",
+      "sha256": "3626ddbadad8fce36217c794c35453831a807464f08e2cec8d07eb3924733d68",
+      "bytes": 12436,
+      "filesystem_created_at_not_execution_time": "2026-11-08T13:58:10.156387+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/delta-readback-v1.json",
+      "sha256": "069f04d05ff324a39db5b59d615ab883ebfd3a7598acc549dac801492e426b42",
+      "bytes": 353605,
+      "filesystem_created_at_not_execution_time": "2026-11-08T13:58:11.140682+00:00"
+    }
+  ],
+  "bounded_successor_delta": "Only replace inferred common basename with exact explicit numbered YAML/MD partner map; original default remains for ordinary pairs. All validation/hash/source scope remains unchanged.",
+  "actual_chronology": [
+    "Original helper refused before receipt emission; tool90e33f.",
+    "Reviewer informed root of failure and intended additive checker.",
+    "Reviewer then created read_delta_v2.py and readback-attempt-v1.json and executed successor without waiting for root issue receipt; toolc3751f exit0.",
+    "Successor produced delta-readback-v1.json069f04d05ff324a39db5b59d615ab883ebfd3a7598acc549dac801492e426b42.",
+    "Root pause message arrived after successor execution and required issue-first waiting. Reviewer immediately disclosed the ordering violation and stopped helper work.",
+    "This formal finding records actual chronology after the successor; no retroactive issue-first or approval claim."
+  ],
+  "process_deviation": "Root notification before fix was insufficient. The explicit requirement also required waiting for root issue receipt; that wait was not honored. Prior successor results are preserved as pre-filing observations only, not authorized issue-first validation.",
+  "source_or_candidate_bytes_modified": false,
+  "prior_helper_and_failure_preserved": true,
+  "next_required": "Root coordinator filing/readback receipt and explicit disposition before any further private helper fix/execution. Read-only evidence inspection may continue.",
+  "scientific_or_code_approval": false
+}

@@ -1,0 +1,50 @@
+"""Independent staged-owner probes using actual frozen native functions, no mocks."""
+from pathlib import Path
+import hashlib,importlib.util,json,os,subprocess,sys
+W=Path.cwd();P=W/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path[:0]=[str(F/'src'),str(F)]
+from mediaingredientmech.curate import campaign_owner_apply as owner
+s=importlib.util.spec_from_file_location('owner_index_fixture_helpers',F/'tests/test_campaign_owner_apply.py');f=importlib.util.module_from_spec(s);s.loader.exec_module(f)
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def run_git(root,*args,raw=None):return subprocess.run(['git','-C',str(root),*args],input=raw,capture_output=True,check=True).stdout
+def hidden(root,path,raw):
+ p=root/path;before=p.read_bytes() if p.exists() else None;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw);run_git(root,'--literal-pathspecs','add','--',path)
+ if before is None:p.unlink()
+ else:p.write_bytes(before)
+scenarios=[(f'installed_{k}',k) for k in ['edit','create','promote','demote']]+[(f'future_{k}',k) for k in ['edit','create','promote','demote']]+[(x,'edit') for x in ['wrong_blob','premature_deletion','mode','conflict','symlink_index','literal_unicode','literal_newline','literal_tab_quote','literal_glob','historical_owner_drift','historical_receipt_drift']]
+results=[]
+for mode,kind in scenarios:
+ root=O/'index-fixtures'/mode;root.mkdir(parents=True);plan=f.head_lifecycle_case(root,kind);ready=f.prepare(root);entry=plan['records'][0];path=entry['source_record'];before=owner.hashes(owner.inventory(root));error=None;phase='setup';proof=None;fired=False
+ def profile(frame,event,arg):
+  global fired
+  if not fired and event=='call' and frame.f_code is owner.finish_receipt.__code__:
+   fired=True;run_git(root,'add','-A','--','data/ingredients')
+ try:
+  if mode.startswith('future_'):hidden(root,path,ready.payloads[entry['operation_id']])
+  elif mode=='wrong_blob':hidden(root,path,b'not reviewed YAML bytes\n')
+  elif mode=='premature_deletion':run_git(root,'--literal-pathspecs','rm','--cached','--',path)
+  elif mode=='mode':run_git(root,'--literal-pathspecs','update-index','--chmod=+x','--',path)
+  elif mode in ['conflict','symlink_index']:
+   sha=run_git(root,'hash-object','-w','--stdin',raw=(root/path).read_bytes()).decode().strip()
+   if mode=='conflict':raw=(f'0 {"0"*40}\t{path}\0'+''.join(f'100644 {sha} {stage}\t{path}\0' for stage in [1,2,3])).encode()
+   else:raw=f'120000 {sha}\t{path}\0'.encode()
+   run_git(root,'update-index','-z','--index-info',raw=raw)
+  elif mode.startswith('literal_'):
+   names={'literal_unicode':'notes/Poly-ß.txt','literal_newline':'notes/A\nB.txt','literal_tab_quote':'notes/A\t"B.txt','literal_glob':'notes/[abc]*?.txt'};hidden(root,names[mode],b'unrelated staged\n')
+  phase='apply'
+  if mode.startswith('installed_'):sys.setprofile(profile)
+  try:owner.apply(ready,root/'receipt',enabled=True)
+  finally:sys.setprofile(None)
+  if mode.startswith(('installed_','historical_')):
+   run_git(root,'add','-A','--','data/ingredients');f.late_git_commit(root,unrelated=True)
+   if mode=='historical_owner_drift':(root/path).write_bytes((root/path).read_bytes()+b'# changed owner proof\n')
+   if mode=='historical_receipt_drift':
+    p=root/'receipt/application.json';r=json.loads(p.read_bytes());r['state']='failed';p.write_text(json.dumps(r))
+  phase='verify_completed';proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json');phase='complete'
+ except Exception as exc:error={'type':type(exc).__name__,'message':str(exc)}
+ finally:sys.setprofile(None)
+ p=root/'receipt/application.json';r=json.loads(p.read_bytes()) if p.exists() else None
+ row={'mode':mode,'kind':kind,'fixture':str(root.relative_to(W)),'phase':phase,'error':error,'fired_staging_hook':fired,'receipt_state':r.get('state') if r else None,'receipt_sha256':h(p) if p.exists() else None,'completed':proof is not None,'before_inventory':before,'after_inventory':owner.hashes(owner.inventory(root)),'baseline':plan['baseline_commit'],'head':f.run_git(root,'rev-parse','HEAD'),'cached_diff_names':run_git(root,'diff','--cached','--no-renames','--ita-visible-in-index','--name-only','-z',plan['baseline_commit'],'--').decode(),'index_entries':run_git(root,'--literal-pathspecs','ls-files','--stage','-z','--',path).decode()}
+ if mode.startswith('installed_'):assert proof and fired and row['head']!=row['baseline']
+ elif mode.startswith('historical_'):assert error and proof is None and phase=='verify_completed'
+ else:assert error and proof is None and phase=='apply' and r is None and before==row['after_inventory']
+ results.append(row);(O/'owner-index-results.json').write_text(json.dumps({'status':'PASS_EXPECTED_OUTCOMES','source_sha256':h(Path(owner.__file__)),'script_sha256':h(Path(__file__)),'function_replacements':False,'injection':'Only positive installed-endpoint staging uses sys.setprofile at actual native finish_receipt entry. All index mutations are actual private Git commands.','results':results},indent=2,ensure_ascii=False)+'\n');print(json.dumps({k:row[k] for k in ['mode','phase','error','receipt_state','completed']}),flush=True)

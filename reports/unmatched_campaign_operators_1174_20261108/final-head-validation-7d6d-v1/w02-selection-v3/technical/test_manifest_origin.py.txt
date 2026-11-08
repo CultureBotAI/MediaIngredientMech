@@ -1,0 +1,46 @@
+"""Real colliding handoff regression and bounded origin/hash refusals."""
+from copy import deepcopy
+from pathlib import Path
+import json
+import pytest
+from manifest_origin_v1 import manifest_context
+from verify_v3 import P, C, read, sha
+
+
+def relocated_row():
+    return deepcopy(next(r for r in read(P / "SELECTION.json")["entries"]
+                         if r["packet_relative_path"] == "author/portable-final-MANIFEST.json"))
+
+
+@pytest.mark.parametrize("case", ["real_collision", "ordinary_original", "wrong_origin", "wrong_hash",
+                                  "wrong_size", "missing_origin", "relative_origin", "outside_origin", "symlink_origin"])
+def test_origin(case, tmp_path):
+    row = relocated_row()
+    expected_origin = row["upstream_origin_path"]
+    if case == "ordinary_original":
+        row = deepcopy(next(r for r in read(P / "SELECTION.json")["entries"] if r["original_path"] == expected_origin))
+    elif case == "wrong_origin": row["upstream_origin_path"] = str(Path(row["original_path"]).parent / "HANDOFF.json")
+    elif case == "wrong_hash": row["sha256"] = "0" * 64
+    elif case == "wrong_size": row["bytes"] += 1
+    elif case == "missing_origin": row.pop("upstream_origin_path")
+    elif case == "relative_origin": row["upstream_origin_path"] = "relative/MANIFEST.json"
+    elif case == "outside_origin": row["upstream_origin_path"] = "/outside-campaign/MANIFEST.json"
+    elif case == "symlink_origin":
+        alias = tmp_path / "alias.json"; alias.symlink_to(expected_origin); row["upstream_origin_path"] = str(alias)
+    if case in {"real_collision", "ordinary_original"}:
+        base, receipt = manifest_context(row, C)
+        assert base == Path(expected_origin).parent
+        correct = base / "HANDOFF.json"
+        assert sha(correct.read_bytes()) == "958d29fb02c5f6c8c9571711b1cca487467d9e9344040404b21f28c69232abc8"
+        if case == "real_collision":
+            false_member = Path(row["original_path"]).parent / "HANDOFF.json"
+            assert sha(false_member.read_bytes()) == "0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da"
+            assert false_member != correct
+            receipt["distinct_false_member"] = str(false_member)
+            receipt["distinct_false_member_sha256"] = sha(false_member.read_bytes())
+        result = {"case": case, "status": "PASS", "correct_member": str(correct), "correct_member_sha256": sha(correct.read_bytes()), "context": receipt}
+    else:
+        with pytest.raises(ValueError) as caught:
+            manifest_context(row, C)
+        result = {"case": case, "status": "REFUSED_AS_EXPECTED", "error": str(caught.value)}
+    (tmp_path / "result.json").write_text(json.dumps(result, indent=2) + "\n")

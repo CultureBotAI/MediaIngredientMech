@@ -1,0 +1,145 @@
+"""Seal this exact-head review and its immutable superseding addendum.
+
+Only this private packet is written. Fixture Git bookkeeping and runtime
+caches are excluded before traversal; aliases are recorded without following.
+The active review withholds acceptance of d691. Earlier passing observations
+remain unchanged, explicitly superseded for the overall verdict.
+"""
+from pathlib import Path
+import datetime
+import hashlib
+import json
+import os
+import stat
+import subprocess
+
+O = Path(__file__).resolve().parent
+R = O.parents[1]
+SKIP_DIRS = {'.git', '__pycache__', '.pytest_cache', '.mypy_cache'}
+SKIP_ROOT = {'MANIFEST.json', 'SHA256SUMS', 'SEAL.json'}
+
+
+def digest(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_bytes())
+
+
+def put(path, value):
+    assert not path.exists(), f'immutable output exists: {path}'
+    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+
+
+def check_members(root, rows):
+    for item in rows:
+        p = root / item['path']
+        assert not p.is_symlink()
+        assert digest(p.read_bytes()) == item['sha256'], str(p)
+
+
+def inventory():
+    rows, aliases, special = [], [], []
+    for parent, dirs, files in os.walk(O, followlinks=False):
+        parent = Path(parent)
+        for name in list(dirs):
+            path = parent / name
+            if name in SKIP_DIRS:
+                dirs.remove(name)
+            elif path.is_symlink():
+                aliases.append({'path': str(path.relative_to(O)), 'target': os.readlink(path), 'kind': 'directory_symlink'})
+                dirs.remove(name)
+        for name in files:
+            path = parent / name
+            rel = str(path.relative_to(O))
+            if rel in SKIP_ROOT:
+                continue
+            info = path.lstat()
+            if stat.S_ISLNK(info.st_mode):
+                aliases.append({'path': rel, 'target': os.readlink(path), 'kind': 'file_symlink'})
+            elif stat.S_ISREG(info.st_mode):
+                raw = path.read_bytes()
+                after = path.lstat()
+                assert (info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_nlink) == (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns, after.st_nlink), rel
+                rows.append({'path': rel, 'sha256': digest(raw), 'bytes': len(raw), 'link_count': info.st_nlink})
+            else:
+                special.append({'path': rel, 'mode': info.st_mode, 'kind': 'special_fixture_node_not_opened'})
+    return tuple(sorted(items, key=lambda item: item['path']) for items in (rows, aliases, special))
+
+
+def main():
+    for n in SKIP_ROOT:
+        assert not (O / n).exists(), n
+    active = read(O / 'SELECTION.json')
+    assert active['active_handoff']['path'] == 'HANDOFF-v2.json'
+    h = read(O / 'HANDOFF-v2.json')
+    assert h['reviewed_head'] == 'd691c079cf3923daed89284b7579913b84c3a34c'
+    assert h['d691_approved'] is False and h['known_major_findings'] == 1
+    assert digest((O / 'HANDOFF-v2.json').read_bytes()) == active['active_handoff']['sha256']
+    assert digest((O / 'HANDOFF.json').read_bytes()) == 'f651e4e4a8f9e11c7ea71c8bd27da79cd00e31ea150037b2bacfc0231d5eaef0'
+    for p in ['technical', 'adversarial', 'regression-addendum/technical', 'regression-addendum/adversarial']:
+        check_members(O / p, read(O / p / 'MANIFEST.json')['members'])
+    for mpath in ['assembly/MANIFEST.json', 'regression-addendum/assembly/MANIFEST.json']:
+        check_members(O, read(O / mpath)['members'])
+    for relative, sha in read(O / 'inputs/author-packet/MANIFEST.json')['members'].items():
+        assert digest((O / 'inputs/author-packet' / relative).read_bytes()) == sha
+    for relative, sha in read(O / 'regression-addendum/inputs/coordinator-packet/MANIFEST.json')['files'].items():
+        assert digest((O / 'regression-addendum/inputs/coordinator-packet' / relative).read_bytes()) == sha
+    check_members(O / 'frozen-src', read(O / 'inputs/frozen-code-manifest.json')['members'])
+    for pin in h['exact_changed_files']:
+        assert digest((O / 'frozen-src' / pin['path']).read_bytes()) == pin['sha256']
+    assert subprocess.check_output(['git', '-C', str(R), 'rev-parse', 'HEAD'], text=True).strip() == 'f167aa0ca9cd05bb652bf5ebf54d315279e13b18'
+    assert not subprocess.check_output(['git', '-C', str(R), 'status', '--porcelain'], text=True).strip()
+    prior = R / '.temp/gyps-native-origin-v1'
+    check_members(prior, read(prior / 'MANIFEST.json')['members'])
+    report = R / 'reports/all_unmatched_20261107/worker-03/successors/issue1176-gyps-native-v1'
+    check_members(report, read(report / 'MANIFEST.json')['members'])
+    for pin in read(report / 'HANDOFF.json')['preserved_source_cores']:
+        assert digest((R / pin['path']).read_bytes()) == pin['sha256']
+    rows, aliases, special = inventory()
+    manifest = {
+        'schema_version': 1,
+        'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'root': str(O.relative_to(R)),
+        'active_selection': 'SELECTION.json',
+        'active_handoff': 'HANDOFF-v2.json',
+        'verdict': 'NEEDS_CORRECTION_D691_NOT_APPROVED',
+        'members': rows,
+        'member_count': len(rows),
+        'literal_alias_descriptors': aliases,
+        'special_node_descriptors': special,
+        'exclusions': ['MANIFEST.json (self)', 'SHA256SUMS (binds manifest and regular members)', 'SEAL.json (post-seal receipt)', '**/.git/** (private fixture bookkeeping; pruned before traversal)', '**/__pycache__/**', '**/.pytest_cache/**', '**/.mypy_cache/**'],
+        'scope': 'All regular files in this private review, including immutable failed fixture evidence and superseded reviews, plus literal alias descriptors. No credentials search, symlink traversal, or source/application approval.',
+        'historical_W08_manifest_boundary': 'assembly/w08-context/MANIFEST.json is the captured original manifest; only declared context subset was copied, while all2231original members were checked at originalroot.'
+    }
+    put(O / 'MANIFEST.json', manifest)
+    manifest_sha = digest((O / 'MANIFEST.json').read_bytes())
+    (O / 'SHA256SUMS').write_text(''.join(f"{r['sha256']}  {r['path']}\n" for r in rows) + f'{manifest_sha}  MANIFEST.json\n')
+    check_members(O, rows)
+    new_rows, new_aliases, new_special = inventory()
+    assert (rows, aliases, special) == (new_rows, new_aliases, new_special)
+    seal = {
+        'status': 'SEALED_KNOWN_MAJOR_REGRESSION_NO_D691_APPROVAL',
+        'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'reviewed_head': h['reviewed_head'],
+        'active_handoff_sha256': digest((O / 'HANDOFF-v2.json').read_bytes()),
+        'selection_sha256': digest((O / 'SELECTION.json').read_bytes()),
+        'manifest_sha256': manifest_sha,
+        'transport_sha256': digest((O / 'SHA256SUMS').read_bytes()),
+        'regular_members': len(rows),
+        'literal_alias_descriptors': len(aliases),
+        'special_nodes': len(special),
+        'all_members_rehashed_after_seal': True,
+        'prior_peer_seals_and_W03_source_cores_preserved': True,
+        'W03_source_head_unchanged': 'f167aa0ca9cd05bb652bf5ebf54d315279e13b18',
+        'mutable_I_or_future_code_inspected_by_sealer': False,
+        'no_maintained_or_tracked_changes': True,
+        'await_coordinator_collection': True
+    }
+    put(O / 'SEAL.json', seal)
+    print(json.dumps(seal, indent=2))
+
+
+if __name__ == '__main__':
+    main()

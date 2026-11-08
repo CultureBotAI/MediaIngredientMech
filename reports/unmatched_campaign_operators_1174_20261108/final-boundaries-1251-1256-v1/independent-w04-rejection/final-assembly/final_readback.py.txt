@@ -1,0 +1,153 @@
+from pathlib import Path
+import collections, datetime, hashlib, importlib.util, json, os, subprocess, sys
+import xml.etree.ElementTree as ET
+import yaml
+
+R=Path.cwd(); O=R/'.temp/rejection-fix-independent-v1'; Q=O/'final-assembly'
+F=O/'frozen-head'; N=O/'native-private-overlay'
+HEAD='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b'
+PARENT='d691c079cf3923daed89284b7579913b84c3a34c'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+load=lambda p:json.loads(p.read_text())
+register=[]
+def read(path, expected=None):
+    path=Path(path)
+    raw=os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
+    if expected is not None:assert sha(raw)==expected,str(path)
+    register.append({'path':str(path),'sha256':sha(raw),'bytes':len(raw)})
+    return raw
+def bound(base, ref):
+    raw=read(base/ref['path'],ref['sha256'])
+    if 'bytes' in ref:assert len(raw)==ref['bytes']
+    return raw
+def git(*args):return subprocess.check_output(['git','--no-optional-locks',*args])
+
+core=json.loads(read(O/'REVIEW-CORE-v2.json'))
+assert core['head']==HEAD and core['parent']==PARENT and core['verdict']=='needs_curation' and core['findings']==1
+for ref in core['files']:bound(O,ref)
+ts=load(O/'technical/SEAL-v2.json')
+for key in ['assessment','manifest','supersedes_seal','packaging_observation']:bound(Path('/'),ts[key])
+tm=load(Path(ts['manifest']['path']))
+for ref in tm['files']:bound(O/'technical',ref)
+ss=load(O/'skeptical/SEAL.json')
+for name,path in [('assessment','assessment.json'),('manifest','MANIFEST.json'),('finding','finding-REJECTION-CODE-001.json')]:read(O/'skeptical'/path,ss[name+'_sha256'])
+sm=load(O/'skeptical/MANIFEST.json')
+for ref in sm['members']:bound(O/'skeptical',ref)
+
+tree={}
+for line in git('ls-tree','-rz',HEAD).split(b'\0'):
+    if not line:continue
+    metadata,path=line.split(b'\t',1);mode,kind,blob=metadata.decode().split()
+    tree[path.decode()]={'mode':mode,'kind':kind,'blob':blob}
+fm=load(O/'FROZEN-HEAD-MANIFEST.json');supp=load(O/'FROZEN-HEAD-SUPPLEMENT-001.json')
+assert len(fm['members'])==4182 and len(supp['members'])==1
+assert supp['head']==HEAD and supp['previous_manifest_sha256']==sha((O/'FROZEN-HEAD-MANIFEST.json').read_bytes())
+for ref in fm['members']+supp['members']:
+    raw=bound(F,ref);obj=tree[ref['path']]
+    assert obj['kind']=='blob' and obj['blob']==ref['git_blob']
+    assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==obj['blob']
+    if 'git_mode' in ref:assert obj['mode']==ref['git_mode']
+    assert (F/ref['path']).is_symlink()==(obj['mode']=='120000')
+
+def xmlrows(path):
+    root=ET.fromstring(read(path));out=[]
+    for node in root.iter('testcase'):
+        status='error' if node.find('error') is not None else 'failed' if node.find('failure') is not None else 'skipped' if node.find('skipped') is not None else 'passed'
+        row={'classname':node.attrib['classname'],'name':node.attrib['name'],'time_seconds':float(node.attrib['time']),'status':status}
+        issue=node.find('error')
+        if issue is None:issue=node.find('failure')
+        if issue is not None:
+            trace=issue.text or ''
+            row.update(message=issue.attrib.get('message'),error_type=issue.attrib.get('type'),traceback_sha256=sha(trace.encode()),missing_historical_maker='make_receipt.py' in trace and 'FileNotFoundError' in trace)
+        out.append(row)
+    return out
+first=xmlrows(O/'technical/pytest-252.xml')
+second=xmlrows(O/'technical/pytest-publication-supplement.xml')
+coverage=load(O/'technical/test-coverage.json')
+assert first==coverage['full_initial_run'] and second==coverage['targeted_publication_successor_run']
+assert collections.Counter(x['status'] for x in first)=={'passed':134,'failed':11,'error':107}
+assert len(second)==118 and all(x['status']=='passed' for x in second)
+key=lambda x:(x['classname'],x['name'])
+assert {key(x) for x in second}=={key(x) for x in first if x['status']!='passed'}
+effective={key(x):x for x in first};effective.update({key(x):x for x in second})
+assert len(effective)==252 and all(x['status']=='passed' for x in effective.values())
+assert effective=={key(x):x for x in coverage['effective_distinct_cases']}
+assert collections.Counter(x['classname'] for x in effective.values())=={'tests.test_campaign_owner_apply':134,'tests.test_campaign_publication':118}
+commands=load(O/'technical/execution-receipts.json')
+assert {x['id']:x['exit_code'] for x in commands['commands']}=={'full252-initial':1,'publication118-supplement':0,'same933':0,'additional-path-controls':0}
+for command in commands['commands']:
+    for key in ['log','junit','result_ref']:
+        if key in command:bound(Path('/'),command[key])
+assert commands['environment']['PYTHONPATH']==str(F/'src')
+
+our933=load(Q/'same933-independent-assembly-readback.json')
+assert sha(read(O/'technical/same933-result.json'))==our933['technical_result_sha256']
+assert sha(read(O/'technical/same933-coverage.json'))==our933['technical_coverage_sha256']
+assert len(our933['rows'])==933 and our933['nonsource_pins_verified']==1406
+controls=load(O/'technical/additional-path-controls.json')
+assert controls['count']==len(controls['results'])==7 and controls['all_expected']
+adversarial=load(O/'skeptical/adversarial-results.json')
+assert adversarial['count']==len(adversarial['tests'])==39
+assert adversarial['prepare_apply_completed_positives']==4 and adversarial['expected_refusals']==35
+assert sum(x['actual']=='prepare_apply_verify_completed_PASS' for x in adversarial['tests'])==4
+lineage=load(O/'skeptical/record-stage-lineage-results.json')
+assert len(lineage['rows'])==6
+assert collections.Counter((x['revision'],x['record_stage']) for x in lineage['rows'])=={('eac469f1d94f06bab0714fff891abf64b8ebdbe9','PASS'):2,(PARENT,'REFUSED'):2,(HEAD,'PASS'):2}
+
+w03=load(O/'skeptical/actual-w03-path-results.json')
+rootrows=load(O/'ROOT-EXACT-READBACK.json')['actual_two_W03_private_application_readback']
+ours={r['action_id']:r for r in load(Q/'author-counterexample-readback.json')['genuine_W03_counterexamples']}
+actuals=[]
+for row in w03['results']:
+    match=ours[row['action_id']]
+    assert row['before_sha256']==match['before_sha256'] and row['accepted_normalized_sha256']==match['effective_payload_sha256']
+    receipt=json.loads(read(Path(row['receipt_path']),row['receipt_sha256']))
+    fixture=Path(row['fixture_path']);path=row['source']
+    assert sha(read(fixture/path))==row['accepted_normalized_sha256']
+    assert sha(read(fixture/'receipt/owner-before-0000.yaml'))==row['before_sha256']
+    assert receipt['state']==row['receipt_state'] and receipt['recovery_required']==row['recovery_required']
+    literal=git('-C',str(fixture),'diff','--name-only','-z','HEAD','--')
+    quoted=git('-C',str(fixture),'diff','--name-only','HEAD','--')
+    assert {x.decode() for x in literal.split(b'\0') if x}=={path}
+    assert literal.decode()==row['nul_git_diff_decoded'] and quoted.decode()==row['ordinary_git_diff_decoded']
+    rr=next(x for x in rootrows if x['action_id']==row['action_id'])
+    assert rr['receipt_sha256']==row['receipt_sha256'] and rr['actual_changed_paths']==[path]
+    if 'generic' in row['action_id']:
+        assert receipt['state']=='failed' and receipt['error']=='ValueError: Unrelated tracked file changed'
+        assert quoted.decode().splitlines()!=[path]
+    else:assert receipt['state']=='complete' and quoted.decode().splitlines()==[path]
+    actuals.append({'action_id':row['action_id'],'source':path,'before_sha256':row['before_sha256'],'after_sha256':row['accepted_normalized_sha256'],'receipt_sha256':row['receipt_sha256'],'receipt_state':receipt['state'],'recovery_required':receipt['recovery_required'],'only_intended_path_changed':True})
+
+nr=load(O/'native-review-receipt-v2.json')
+yraw=bound(O,{'path':nr['yaml'],'sha256':nr['yaml_sha256']});mraw=bound(O,{'path':nr['markdown'],'sha256':nr['markdown_sha256']})
+review=yaml.safe_load(yraw)
+assert review['verdict']=='needs_curation' and review['scientific_review'] is False
+assert len(review['targets'])==2 and len(review['source']['inputs'])==57 and len(review['findings'])==1
+finding=review['findings'][0]
+assert (finding['finding_id'],finding['severity'],finding['status'])==('REJECTION-CODE-001','major','open')
+assert finding['previous_occurrences']
+assert any(ref['path']=='technical/execution-receipts.json' for ref in review['source']['inputs'])
+assert next(x for x in review['checks'] if x['check_id']=='actual-w03-application')['status']=='failed'
+for ref in review['source']['inputs']:
+    raw=bound(N,ref)
+    authoritative=(F/Path(ref['path']).relative_to('frozen-code')) if ref['path'].startswith('frozen-code/') else O/ref['path']
+    assert raw==read(authoritative,ref['sha256'])
+for target in review['targets']:
+    relative=Path(target['path']).relative_to('frozen-code')
+    assert (N/target['path']).read_bytes()==git('show',HEAD+':'+str(relative))
+
+helper=F/'scripts/record_review.py';schema=F/'schema/record_review.yaml'
+assert helper.read_bytes()==git('show',HEAD+':scripts/record_review.py')
+assert schema.read_bytes()==git('show',HEAD+':schema/record_review.yaml')
+os.environ['GIT_DIR']=git('rev-parse','--absolute-git-dir').decode().strip()
+os.environ['GIT_WORK_TREE']=str(N);os.environ['GIT_OPTIONAL_LOCKS']='0'
+spec=importlib.util.spec_from_file_location('rejection_final_native_readback',helper)
+mod=importlib.util.module_from_spec(spec);sys.modules[spec.name]=mod;spec.loader.exec_module(mod)
+parsed=mod.read_review(N,str(Path(nr['yaml']).relative_to('native-private-overlay')),schema)
+mod.validate_review(parsed,schema);mod.assert_current_source(N,parsed)
+assert mod.render_markdown(parsed,schema).encode()==mraw and parsed==review
+
+result={'reviewer':'/root/correction_chemistry','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'head':HEAD,'parent':PARENT,'assembly_verdict':'needs_curation','readback_status':'PASS_EXACT_REPORT_BINDINGS_WITH_OPEN_MAJOR','core_sha256':sha((O/'REVIEW-CORE-v2.json').read_bytes()),'core_file_count':len(core['files']),'frozen_git_members_verified':4183,'technical_manifest_version':'v2','technical_manifest_members':len(tm['files']),'skeptical_manifest_members':len(sm['members']),'native_targets':2,'native_inputs':57,'native_read_validate_current_hash_render':'PASS','native_yaml_sha256':sha(yraw),'native_markdown_sha256':sha(mraw),'distinct_tests':252,'first_run':{'passed':134,'failed':11,'errors':107},'exact_supplement_publication_rerun_passed':118,'record_stage_operations':933,'record_stage_before_owners':2956,'record_stage_projected_owners':3550,'technical_additional_controls':7,'skeptical_adversarial_controls':39,'skeptical_positive_controls':4,'skeptical_expected_refusals':35,'genuine_W03_results':actuals,'old_parent_current_record_stage_calls':6,'open_major_findings':['REJECTION-CODE-001'],'test_attempts_and_stale_log_packaging_preserved':True,'full_campaign_prepare_or_application':False,'science_approval':False,'mutable_I_read_or_import':False,'operator_or_test_execution_by_this_final_reviewer':False,'actual_execution_attribution':'Distinct technical reviewer ran tests/933 and7 controls; skeptical reviewer ran39 controls,6 lineage calls and2 actual W03 applications. Final reviewer independently read source, exact immutable data/report hashes, XML outcomes and actual retained fixture readbacks; only native report helper invoked.','read_register':register}
+destination=Q/'final-readback.json'
+with destination.open('x') as stream:stream.write(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps({'path':str(destination),'sha256':sha(destination.read_bytes()),'status':result['readback_status'],'core_sha256':result['core_sha256']}))

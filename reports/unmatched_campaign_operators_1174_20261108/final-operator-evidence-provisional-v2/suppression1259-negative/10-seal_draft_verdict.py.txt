@@ -1,0 +1,46 @@
+import hashlib
+import json
+from pathlib import Path
+import yaml
+
+R=Path(__file__).absolute().parent
+D=R/'draft-verdict-v1'
+P=D/'portable';P.mkdir()
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def pin(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+def save(p,v):
+ with p.open('x') as f:json.dump(v,f,indent=2);f.write('\n')
+result=json.loads((D/'RESULT.json').read_bytes())
+assert result['stable_during_probe'] and len(result['results'])==3
+assert all(x['result']['status']=='ACCEPTED_TRANSITION' for x in result['results'])
+input_checks=[]
+for control in ('positive','blocked-required-failure','needs-curation-required-failure'):
+ root=D/control
+ original=yaml.safe_load((root/'reports/science/review.yaml').read_bytes())
+ selected=json.loads((root/'reports/selection.json').read_bytes())
+ refs=selected['original_review']['inputs']
+ assert len(original['source']['inputs'])==len(refs)==119
+ checked=[]
+ for ref in original['source']['inputs']:
+  actual=refs[ref['path']];p=root/actual['path']
+  assert sha(p)==actual['sha256']==ref['sha256']
+  checked.append({'original_declared_path':ref['path'],'capture':pin(p)})
+ input_checks.append({'control':control,'original_native_pair':{'yaml':pin(root/'reports/science/review.yaml'),'markdown':pin(root/'reports/science/review.md')},'checked119':checked,'synthetic_transition_native_pair':{'yaml':pin(root/'reports/actual-review/review.yaml'),'markdown':pin(root/'reports/actual-review/review.md')}})
+save(D/'INPUT-CHECKS.json',input_checks)
+save(D/'COMMAND.json',{'cwd':str(R),'argv':['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python','-B','probe_draft_review_verdict.py'],'environment':{'PYTHONDONTWRITEBYTECODE':'1','GIT_OPTIONAL_LOCKS':'0','CLAW_ROOT':str(R.parents[2]/'kgm-unmapped-20261107/claw'),'CAMPAIGN_SUPPRESSION_REVIEW_ROOT':str(R.parents[1]/'workers/w07/worktree/.temp/four-suppression-policy-independent-v1'),'PYTHONPATH':str(R.parents[1]/'integration/campaign-suppressions1259-v1/runtime/repo/src')},'exit_code':0,'stdout':pin(R/'draft-verdict-v1.stdout'),'stderr':pin(R/'draft-verdict-v1.stderr')})
+selected=[D/n for n in ('ISSUE-ADDENDUM.md','RESULT.json','INPUT-CHECKS.json','COMMAND.json','draft-publisher.py.txt','draft-focused-fixture.py.txt')]
+selected += [R/'probe_draft_review_verdict.py',R/'draft-verdict-v1.stdout',R/'draft-verdict-v1.stderr',Path(__file__).absolute()]
+for control in ('positive','blocked-required-failure','needs-curation-required-failure'):
+ for name in ('reports/selection.json','reports/transition.json','reports/actual-review/review.yaml','reports/actual-review/review.md'):
+  selected.append(D/control/name)
+selection=[]
+for i,p in enumerate(selected,1):
+ name=f'{i:02d}-'+p.name+('.txt' if p.suffix=='.py' else '')
+ target=P/name
+ with target.open('xb') as f:f.write(p.read_bytes())
+ selection.append({'original':pin(p),'archive_path':name})
+save(P/'SELECTION.json',{'files':selection,'scope':'Bounded private draft finding. Original119-input fixtures remain intact beside this selection; their complete checked hashes are retained, no source/publication approval or whole-fixture archival claim.'})
+members=[{'path':p.name,'sha256':sha(p),'bytes':p.stat().st_size} for p in sorted(P.iterdir())]
+save(P/'MANIFEST.json',{'files':members,'count':len(members)})
+save(D/'HANDOFF.json',{'finding_id':'SUPPRESSION1259-REVIEW-001','status':'CONFIRMED_PRIVATE_DRAFT_REVIEW_CONSUMER_FINDING','scope':result['scope'],'source_sha256':result['draft_source_sha256'],'test_sha256':result['draft_test_sha256'],'result':pin(D/'RESULT.json'),'manifest':pin(P/'MANIFEST.json'),'issue_draft':pin(D/'ISSUE-ADDENDUM.md'),'members':len(members),'maintained_writes':False})
+print(json.dumps({'handoff':pin(D/'HANDOFF.json'),'manifest':pin(P/'MANIFEST.json'),'draft':pin(D/'ISSUE-ADDENDUM.md'),'members':len(members)},indent=2))

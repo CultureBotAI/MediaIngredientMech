@@ -1,0 +1,5 @@
+Both filed preparation-runner defects are fixed in exact runner0959ef08 and expected-inputs38184186. The original summary AST now evaluates with its restored lines binding; the actual frozen fixture passes its explicit environment/Claw guard and is intentionally stopped before copies or source application. No QC/full suite was invoked.
+
+The new snapshot reader independently rehashed all169 actual external files and ten published logical blobs. Its24 prospective tracked code inputs were checked against the exact private1108/c445 runtime, with that harness substitution disclosed; actual I remains a separate prerequisite. The full original20 and new10 integration counts remain mandatory, and twelve parser controls reject skip/failure/missing/duplicate cases. Prior start/head/tracked-input/parser/equality guard ASTs are unchanged.
+
+No new finding. This is a preparation-only correction assessment, not permission to run on an obsolete or unreviewed head. Publisher combined-test failures are under separate author investigation; any source/test successor requires new explicit runner pins and independent readiness before root execution.

@@ -1,0 +1,19 @@
+import hashlib,json,sys,datetime
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';sys.path[:0]=[str(F/'src'),str(F)]
+from mediaingredientmech.curate import campaign_owner_apply as o
+rows=json.loads((P/'technical/index-flag-results.json').read_text())['results'];out=[]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+for row in rows:
+ root=R/row['fixture'];p=root/row['path'];base=o.git(root,'show',row['baseline']+':'+row['path']);index=o.git(root,'show',':'+row['path']);flag=o.git(root,'ls-files','-v','--',row['path']).decode()
+ assert hashlib.sha256(base).hexdigest()==hashlib.sha256(index).hexdigest()==row['baseline_sha256']
+ assert sha(p)==row['working_sha256']!=row['baseline_sha256'];assert flag==row['actual_flags']
+ assert o.git(root,'rev-parse','HEAD').decode().strip()==row['baseline']
+ receipt=root/'receipt/application.json'
+ if row['mode']=='ordinary_working_drift':assert not receipt.exists();proof=None
+ else:
+  assert sha(receipt)==row['receipt_sha256'];proof=o.verify_completed(root,root/'plan.json',receipt);assert proof['state']=='complete';assert sha(receipt)==row['receipt_sha256']
+ out.append({'mode':row['mode'],'fixture':str(root),'flag':flag,'baseline_sha256':row['baseline_sha256'],'working_sha256':sha(p),'completed_verifier':proof['state'] if proof else 'not_applicable_no_receipt','receipt_sha256':sha(receipt) if receipt.exists() else None})
+d={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'worker08:/root','finding_id':'W08-7D4DB26-SRC-002','reviewed_head':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','source_sha256':sha(Path(o.__file__)),'script_review':'Read complete actual private fixture script, exact baseline repinning and three outcomes. No native replacements or timing injection.','results':out,'conclusion':'Confirmed live allowed-tracked-scope bypass. The operator did not write the unrelated notes file; its caller changed it before apply. The promised live guard accepts that already changed out-of-scope tracked file because Git flags suppress both diff views. This does not invalidate separate scientific payload content or require an eternal clean index for historical verification.','new_application_runs':0,'scientific_or_application_approval':False}
+with (P/'flag-finding-root-readback.json').open('x') as s:json.dump(d,s,indent=2);s.write('\n')
+print(sha(P/'flag-finding-root-readback.json'))

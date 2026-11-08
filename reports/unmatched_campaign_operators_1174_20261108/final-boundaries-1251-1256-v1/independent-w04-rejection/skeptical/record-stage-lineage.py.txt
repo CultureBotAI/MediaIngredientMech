@@ -1,0 +1,32 @@
+"""Compare exact old/parent/final record guard bodies on actual W03 bytes only."""
+from pathlib import Path
+import ast,hashlib,json,subprocess,sys
+S=Path(__file__).resolve().parent;O=S.parent;F=O/'frozen-head';R=O.parents[1]
+HEAD='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b';PARENT='d691c079cf3923daed89284b7579913b84c3a34c';OLD='eac469f1d94f06bab0714fff891abf64b8ebdbe9'
+OP='src/mediaingredientmech/curate/campaign_owner_apply.py';TEST='tests/test_campaign_owner_apply.py'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def gitread(h,p):return subprocess.check_output(['git','--no-optional-locks','show',f'{h}:{p}'],cwd=R)
+sys.path.insert(0,str(F/'src'))
+from mediaingredientmech.curate import campaign_owner_apply as native
+assert (F/OP).read_bytes()==gitread(HEAD,OP)
+oldtest=gitread(PARENT,TEST);newtest=gitread(HEAD,TEST);assert newtest.startswith(oldtest)
+subjects=json.loads((S/'actual-w03-path-results.json').read_text())['results'];rows=[];sourcebindings=[]
+for revision in [OLD,PARENT,HEAD]:
+ raw=gitread(revision,OP);tree=ast.parse(raw);fn=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='_validate_records')
+ mod=ast.Module(body=[fn],type_ignores=[]);scope=dict(native.__dict__)
+ exec(compile(mod,f'{revision}:{OP}','exec'),scope)
+ f=scope['_validate_records'];segment=ast.get_source_segment(raw.decode(),fn).encode()
+ sourcebindings.append({'git_revision':revision,'source_path':OP,'source_sha256':sha(raw),'exact_function_sha256':sha(segment),'execution':'Only exact _validate_records AST function body; unchanged9a1 schema/writer helpers bound from frozen-head. Not full old-version prepare/apply.'})
+ for subject in subjects:
+  root=Path(subject['fixture_path']);plan=json.loads((root/'plan.json').read_text());entry=plan['records'][0];before=json.loads((root/'before.json').read_text())['owners']
+  beforebytes={p:(root/'receipt/owner-before-0000.yaml').read_bytes() if p==entry['before_source_record'] else (root/p).read_bytes() for p in before}
+  assert {p:sha(v) for p,v in beforebytes.items()}==before
+  payloads={entry['operation_id']:(root/entry['after_capture']['path']).read_bytes()}
+  try:f(root,[entry],payloads,beforebytes)
+  except Exception as e:outcome='REFUSED';reason=str(e)
+  else:outcome='PASS';reason=None
+  assert (outcome=='REFUSED')==(revision==PARENT),(revision,subject['action_id'],outcome,reason)
+  rows.append({'revision':revision,'action_id':subject['action_id'],'authentic_before_sha256':subject['before_sha256'],'accepted_candidate_sha256':subject['accepted_normalized_sha256'],'private_inventory_owners':len(beforebytes),'record_stage':outcome,'reason':reason})
+report={'scope':'Exact two authentic W03 before/normalized-after pairs and genuine edit operation metadata in isolated two-owner inventories. These6 record-stage calls prove the regression/restoration; they do not prove whole2956/933 acceptance or application. Unicode application defect remains separately open.','source_bindings':sourcebindings,'rows':rows,'old_51_helper_test_full_byte_prefix_preserved':True,'parent_test_sha256':sha(oldtest),'final_test_sha256':sha(newtest),'scientific_approval':False}
+with(S/'record-stage-lineage-results.json').open('x')as f:json.dump(report,f,indent=2,ensure_ascii=False);f.write('\n')
+print(json.dumps({'record_stage_calls':len(rows),'outcomes':[r['record_stage']for r in rows],'old_test_full_prefix_preserved':True}))

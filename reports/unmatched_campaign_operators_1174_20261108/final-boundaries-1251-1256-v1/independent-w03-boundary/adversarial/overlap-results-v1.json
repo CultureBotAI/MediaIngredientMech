@@ -1,0 +1,84 @@
+{
+  "reviewer": "/root/boundary_adversarial",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "scope": "Additional independent overlapping-key families and strengthened guard-specific negatives",
+  "helper_script_sha256": "290ee44db93394f9592f77bbe70b701084e741dfb258b14017520d9a21888392",
+  "operator_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+  "results": [
+    {
+      "name": "overlap_leaves_id_remains_name",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:55.945121+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Inherited collision family requires unchanged paths, keys and statuses"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "overlap_leaves_name_remains_id",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:56.301786+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Inherited collision family requires unchanged paths, keys and statuses"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "overlap_exits_both_without_new_pair",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:56.546195+00:00",
+      "result": {
+        "stage": "real_prepare_apply_completed_replay",
+        "state": "complete",
+        "removed_both_old_collision_kinds": true,
+        "introduced_pairs": 0
+      }
+    },
+    {
+      "name": "unknown_preimage_exact_guard",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:57.484268+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Missing, reused or stale owner preimage"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "late_valid_native_receipt_membership",
+      "status": "FAIL",
+      "started_at": "2026-11-08T11:16:57.740976+00:00",
+      "exception_type": "NameError",
+      "message": "name 'late_mutation' is not defined",
+      "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/run_overlap_followup_v1.py\", line 16, in run_follow\n    try:row={'name':name,'status':'PASS','started_at':started,'result':fn()}\n                                                                       ~~^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/run_overlap_followup_v1.py\", line 36, in <lambda>\n    run_follow('late_valid_native_receipt_membership',lambda:late_mutation('late_valid_native_receipt_membership',valid_receipt))\n                                                             ^^^^^^^^^^^^^\nNameError: name 'late_mutation' is not defined\n"
+    }
+  ],
+  "counts": {
+    "total": 5,
+    "pass": 4,
+    "fail": 1
+  },
+  "at": "2026-11-08T11:16:57.741647+00:00",
+  "prior_results_preserved": true,
+  "qualification": "Original late_native_receipt_membership reached malformed-receipt refusal, not membership-equality guard. This follow-up injects a shape-valid native receipt and proves membership-equality refusal. Original unknown-source negative hit an earlier destination collision; this follow-up keeps source/destination equal and reaches the missing-preimage guard."
+}

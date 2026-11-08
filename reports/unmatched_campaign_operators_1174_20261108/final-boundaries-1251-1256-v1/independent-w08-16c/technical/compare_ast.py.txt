@@ -1,0 +1,23 @@
+from pathlib import Path
+import ast, hashlib,json,subprocess,difflib
+W=Path.cwd();C=W.parents[2];P=W/'.temp/combined-16c-independent-v1';O=P/'technical';F=P/'frozen/repo';I=C/'integration/worktree'
+revisions={'d691':'d691c079cf3923daed89284b7579913b84c3a34c','9a1':'9a1a4a35498a1bee0fc8b68653d1fc152cfff81b','16c':'16c39b63bc95d3e7978ddccc6280b0d57954f4a5'}
+paths=['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py']; blobs={}; results=[]
+(O/'inputs').mkdir(exist_ok=True)
+def h(b):return hashlib.sha256(b).hexdigest()
+def nodes(b):return {x.name:ast.dump(x,include_attributes=False) for x in ast.parse(b).body if isinstance(x,(ast.FunctionDef,ast.ClassDef))}
+def asserts(b):return [ast.dump(x,include_attributes=False) for x in ast.walk(ast.parse(b)) if isinstance(x,ast.Assert)]
+for nick,rev in revisions.items():
+ for p in paths:
+  raw=subprocess.check_output(['git','-C',str(I),'show',rev+':'+p]);blobs[nick,p]=raw
+  (O/'inputs'/f'{nick}-{Path(p).name}').write_bytes(raw)
+  if nick=='16c':assert raw==(F/p).read_bytes()
+for old,new in [('d691','9a1'),('9a1','16c'),('d691','16c')]:
+ for p in paths:
+  b,a=blobs[old,p],blobs[new,p];bn,an=nodes(b),nodes(a)
+  priorasserts=asserts(b);currentasserts=asserts(a)
+  item={'from':revisions[old],'to':revisions[new],'path':p,'before_sha256':h(b),'after_sha256':h(a),'old_named_nodes':len(bn),'new_named_nodes':len(an),'removed_named_nodes':sorted(set(bn)-set(an)),'changed_named_nodes':[k for k in bn.keys()&an.keys() if bn[k]!=an[k]],'added_named_nodes':sorted(set(an)-set(bn)),'old_assertions':len(priorasserts),'new_assertions':len(currentasserts),'missing_prior_assertions':[s for s in priorasserts if s not in currentasserts],'exact_old_file_prefix':a.startswith(b),'old_file_bytes':len(b)}
+  results.append(item)
+  (O/'inputs'/f'{old}-to-{new}-{Path(p).name}.patch').write_text(''.join(difflib.unified_diff(b.decode().splitlines(True),a.decode().splitlines(True),fromfile=old+'/'+p,tofile=new+'/'+p)))
+  print(json.dumps({k:v for k,v in item.items() if k not in ['added_named_nodes','missing_prior_assertions']},ensure_ascii=False))
+(O/'ast-preservation.json').write_text(json.dumps({'status':'COMPLETE','comparisons':results,'git_reads_use_exact_revisions_not_mutable_head':True},indent=2)+'\n')

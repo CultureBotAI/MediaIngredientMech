@@ -1,0 +1,67 @@
+"""Read-only diagnostic of frozen publisher; private predecessor counterfactual."""
+import ast
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
+
+D = Path(__file__).absolute().parent
+P = D / "runtime/repo"
+R = D.parents[3]
+PY = R / ".temp/kgm-unmapped-20261107/env/bin/python"
+OUT = D / "fixture-dependency-finding-v1"
+OUT.mkdir(exist_ok=False)
+sha = lambda raw: hashlib.sha256(raw).hexdigest()
+test = P / "tests/test_campaign_publication.py"
+publisher = P / "src/mediaingredientmech/campaign_publication.py"
+before = D / "before/src/mediaingredientmech/campaign_publication.py"
+failed = D / "checks/preload-single-diagnostic-v1/fixtures/test_1195_preloaded_public_dep0/private-package"
+inputs = {str(p): sha(p.read_bytes()) for p in (test, publisher, before)}
+env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1", PYTEST_ADDOPTS="", UV_OFFLINE="1")
+results = []
+
+def run(name, argv, root):
+    local_env = dict(env, PYTHONPATH=str(root / "src"))
+    started = datetime.now(timezone.utc).isoformat()
+    result = subprocess.run(argv, cwd=root, env=local_env, capture_output=True)
+    (OUT / (name + ".stdout")).write_bytes(result.stdout)
+    (OUT / (name + ".stderr")).write_bytes(result.stderr)
+    receipt = {"name": name, "argv": argv, "cwd": str(root), "started_at": started,
+               "ended_at": datetime.now(timezone.utc).isoformat(), "exit_code": result.returncode,
+               "PYTHONPATH": local_env["PYTHONPATH"], "stdout_sha256": sha(result.stdout),
+               "stderr_sha256": sha(result.stderr)}
+    results.append(receipt)
+    print(json.dumps(receipt), flush=True)
+    return result
+
+actual = run("frozen-import-full-trace", [str(PY), "-B", "-c", "from mediaingredientmech import campaign_publication"], failed)
+assert actual.returncode != 0 and b"scripts/record_review.py" in actual.stderr
+baseline = OUT / "baseline-runtime"
+shutil.copytree(P / "src", baseline / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+names = ("scripts/apply_unmatched_campaign_owners.py", "scripts/validate_sssom_invariants.py",
+         "MAPPING_SEMANTICS.md", "uv.lock", "tests/test_campaign_publication.py",
+         "reports/sssom_completion_20260921/mapping_changes/make_receipt.py")
+for name in names:
+    dest = baseline / name
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes((P / name).read_bytes())
+(baseline / "src/mediaingredientmech/campaign_publication.py").write_bytes(before.read_bytes())
+old = run("baseline-import", [str(PY), "-B", "-c", "from mediaingredientmech import campaign_publication; print('imported')"], baseline)
+assert old.returncode == 0
+old_tests = run("baseline-all-ten", [str(PY), "-B", "-m", "pytest", "-q", "-o", "addopts=", "tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution", "--basetemp", str(OUT / "baseline-fixtures")], baseline)
+assert old_tests.returncode == 0
+assert inputs == {str(p): sha(p.read_bytes()) for p in (test, publisher, before)}
+node = next(n for n in ast.parse(test.read_text()).body if isinstance(n, ast.FunctionDef) and n.name == "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution")
+(OUT / "test-function.py.txt").write_text(ast.get_source_segment(test.read_text(), node) + "\n")
+result = {"inputs": inputs, "test_file_sha256": sha(test.read_bytes()), "frozen_inputs_unchanged": True,
+          "old_test_bytes_preserved": (baseline / "tests/test_campaign_publication.py").read_bytes() == test.read_bytes(),
+          "missing_files": [{"path": name, "absent_in_failed_fixture": not (failed / name).exists(),
+                              "real_input_sha256": sha((P / name).read_bytes())}
+                             for name in ("scripts/record_review.py", "schema/record_review.yaml")],
+          "runs": results,
+          "scope": "Fixture import failure before publication. No stale-public-module bypass or v2 application failure demonstrated."}
+(OUT / "RESULT.json").write_text(json.dumps(result, indent=2) + "\n")
+print(json.dumps({"RESULT_sha256": sha((OUT / "RESULT.json").read_bytes())}))

@@ -1,0 +1,75 @@
+from pathlib import Path
+import copy, hashlib, importlib.util, json, os, sys, traceback
+from datetime import datetime, timezone
+W=Path.cwd(); P=W/'.temp/final-7d4db26-independent-v1'; F=P/'frozen/repo'; O=P/'technical'
+sys.path.insert(0,str(F/'src'))
+from mediaingredientmech.curate import campaign_owner_apply as owner
+spec=importlib.util.spec_from_file_location('frozen_source_test_helpers',F/'tests/test_campaign_owner_apply.py')
+f=importlib.util.module_from_spec(spec);spec.loader.exec_module(f)
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(name,obj):(O/name).write_text(json.dumps(obj,indent=2,ensure_ascii=False)+'\n')
+archive=json.loads((P/'frozen/ARCHIVE.json').read_text()); manifest={x['path']:x['sha256'] for x in archive['files']}
+runtime={'python':sys.version,'module':owner.__file__,'module_sha256':h(Path(owner.__file__)),'code_filenames':{x:getattr(owner,x).__code__.co_filename for x in ['_load','_validate_records','prepare','apply','verify_completed']},'actual_loaded_producers':{p:{'path':str(c.path),'sha256':owner.digest(c.content),'matches_archive':owner.digest(c.content)==manifest[p]} for p,c in owner.LOADED_PRODUCERS.items()},'helper_sha256':h(F/'tests/test_campaign_owner_apply.py'),'archive_revision':archive['revision']}
+assert runtime['archive_revision']=='7d4db26a2ce75e9942badaca954bb8e8f821c75c'
+assert all(x['matches_archive'] for x in runtime['actual_loaded_producers'].values())
+save('runtime.json',runtime)
+results=[]
+def run(name,mode='demote',mutate=None,late=None,post=None,unicode_name=None):
+ root=O/'fixtures'/name;root.mkdir(parents=True)
+ oldedit,oldold,olddem=f.EDIT,f.OLD,f.DEMOTED
+ if unicode_name:
+  f.EDIT='data/ingredients/mapped/'+unicode_name+'.yaml';f.DEMOTED='data/ingredients/unmapped/'+unicode_name+'.yaml'
+  if mode=='reject':f.OLD='data/ingredients/unmapped/'+unicode_name+'.yaml'
+ try:
+  plan=f.unmapped_rejection_case(root) if mode=='reject' else f.inherited_family_case(root,rejected=True,family=False) if mode=='tombstone' else f.demotion_case(root)
+  if mode=='tombstone':plan['records']=plan['records'][:1];f.repin(root,plan)
+  if name=='late_unrelated_tracked':
+   f.put(root,'unrelated.txt',b'baseline\n');f.run_git(root,'add','unrelated.txt');f.run_git(root,'-c','user.email=fixture@example.invalid','-c','user.name=Fixture','commit','-qm','unrelated baseline')
+   plan['baseline_commit']=f.run_git(root,'rev-parse','HEAD');f.repin_demotion(root,plan)
+  if mutate:mutate(root,plan)
+  before=owner.hashes(owner.inventory(root)); baseline=plan['baseline_commit']; phase='prepare'; ready=None; result=None; proof=None;error=None
+  try:
+   ready=f.prepare(root)
+   if late:late(root,plan,ready)
+   inv_at_apply=owner.hashes(owner.inventory(root)); head_at_apply=f.run_git(root,'rev-parse','HEAD')
+   phase='apply';result=owner.apply(ready,root/'receipt',enabled=True)
+   if post:post(root,plan,ready)
+   phase='verify_completed';proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json')
+   phase='completed'
+  except Exception as e:error={'type':type(e).__name__,'message':str(e)}
+  after=owner.hashes(owner.inventory(root));log=root/'receipt/application.json'
+  outcome={'name':name,'phase':phase,'error':error,'prepare_succeeded':ready is not None,'completed_proof':proof is not None,'baseline_commit':baseline,'head_exit':f.run_git(root,'rev-parse','HEAD'),'owner_inventory_changed':before!=after,'before_inventory':before,'after_inventory':after,'receipt_exists':log.exists(),'receipt_state':json.loads(log.read_bytes())['state'] if log.exists() else None,'recovery_required':json.loads(log.read_bytes()).get('recovery_required') if log.exists() else None,'fixture':str(root.relative_to(W)),'plan_sha256':h(root/'plan.json'),'acceptance_sha256':h(root/'acceptance.json')}
+  if ready is not None:outcome.update(head_at_apply=head_at_apply,inventory_at_apply=inv_at_apply)
+  results.append(outcome);save('results.json',results);print(json.dumps({k:outcome[k] for k in ['name','phase','error','owner_inventory_changed','receipt_state','completed_proof']},ensure_ascii=False),flush=True)
+ finally:f.EDIT,f.OLD,f.DEMOTED=oldedit,oldold,olddem
+
+def mutate_review(root,plan):
+ r=json.loads((root/'demotion-review.json').read_bytes());r['after_yaml_sha256']='0'*64;f.put(root,'demotion-review.json',r);f.repin_demotion(root,plan,update_review=False)
+def composed(root,plan):
+ r=owner.record((root/plan['records'][0]['after_capture']['path']).read_bytes());r['notes']='Independently composed source context';r['curation_history'].append(f.event('ANNOTATED','AMBIGUOUS'));f.render(root,'independent-final.yaml',r);plan['records'][0]['after_capture']=f.ref(root,'independent-final.yaml');f.repin_demotion(root,plan)
+def collision(root,plan):
+ r=owner.record((root/plan['records'][0]['after_capture']['path']).read_bytes());r['identifier']='CHEBI:99';f.render(root,'collision.yaml',r);plan['records'][0]['after_capture']=f.ref(root,'collision.yaml');f.repin_demotion(root,plan)
+def revival(root,plan):f.final_fixture_delta(root,plan,0,{'mapping_status':'MAPPED'})
+def emptycommit(root,plan,ready):f.run_git(root,'-c','user.email=fixture@example.invalid','-c','user.name=Fixture','commit','--allow-empty','-qm','late unrelated HEAD change')
+def altered_acceptance(root,plan,ready):(root/'acceptance.json').write_bytes((root/'acceptance.json').read_bytes()+b'\n')
+def grounding(root,plan):
+ r=owner.record((root/plan['records'][0]['after_capture']['path']).read_bytes());r['ontology_mapping']=owner.record((root/f.EDIT).read_bytes())['ontology_mapping'];f.render(root,'grounded.yaml',r);plan['records'][0]['after_capture']=f.ref(root,'grounded.yaml');f.repin_demotion(root,plan)
+run('positive_demote')
+run('positive_composed',mutate=composed)
+run('wrong_exact_review',mutate=mutate_review)
+run('new_collision',mutate=collision)
+run('grounding_retained',mutate=grounding)
+run('tombstone_revival',mode='tombstone',mutate=revival)
+run('late_review_drift',late=altered_acceptance)
+run('late_empty_commit',late=emptycommit)
+run('late_unrelated_tracked',late=lambda r,p,q:(r/'unrelated.txt').write_bytes(b'late modification\n'))
+run('completed_source_reappears',post=lambda r,p,q:(r/f.EDIT).write_bytes(q.before[f.EDIT].content))
+run('unicode_rejection',mode='reject',unicode_name='Poly-ß')
+run('newline_rejection',mode='reject',unicode_name='A\nB')
+run('unicode_demote',unicode_name='Poly-ß')
+for label,chainpath in [('old_chain',f.EDIT),('destination_chain',f.DEMOTED)]:
+ root=O/'fixtures'/label;root.mkdir(parents=True);plan=f.demotion_case(root,chain_owner=chainpath);before=owner.hashes(owner.inventory(root))
+ try:f.prepare(root);error=None
+ except Exception as e:error={'type':type(e).__name__,'message':str(e)}
+ results.append({'name':label,'phase':'prepare','error':error,'owner_inventory_changed':before!=owner.hashes(owner.inventory(root)),'receipt_exists':(root/'receipt').exists(),'fixture':str(root.relative_to(W))});save('results.json',results)
+print(json.dumps({'probes':len(results),'module_and_producers_unchanged':all(h(F/p)==d['sha256'] for p,d in runtime['actual_loaded_producers'].items()),'finished_at':datetime.now(timezone.utc).isoformat()}))

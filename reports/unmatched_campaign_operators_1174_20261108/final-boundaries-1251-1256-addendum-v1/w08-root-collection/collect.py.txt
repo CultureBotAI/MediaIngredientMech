@@ -1,0 +1,134 @@
+"""Mechanical full sealed-packet collection; no new independent review or approval."""
+from pathlib import Path, PurePosixPath
+from concurrent.futures import ThreadPoolExecutor
+import datetime
+import hashlib
+import json
+import os
+import stat
+D=Path(__file__).absolute().parent
+C=D.parents[1]
+W=C/'workers/w08/worktree'
+P=W/'.temp/final-21061-independent-v1'
+def read(p):
+    return json.loads(p.read_bytes())
+
+def save(name, obj):
+    with (D / name).open("x") as stream:
+        json.dump(obj, stream, indent=2)
+        stream.write("\n")
+
+def digest(p):
+    before = p.lstat()
+    assert stat.S_ISREG(before.st_mode), (p, "not regular")
+    fd = os.open(p, os.O_RDONLY | os.O_NOFOLLOW)
+    h = hashlib.sha256()
+    with os.fdopen(fd, "rb") as stream:
+        opened = os.fstat(stream.fileno())
+        assert (opened.st_dev, opened.st_ino) == (before.st_dev, before.st_ino)
+        while chunk := stream.read(1024 * 1024):
+            h.update(chunk)
+        end = os.fstat(stream.fileno())
+    after = p.lstat()
+    signature = lambda s: (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns)
+    assert signature(before) == signature(end) == signature(after), (p, "changed")
+    return h.hexdigest()
+
+def member_path(root, spelling):
+    rel = PurePosixPath(spelling)
+    assert spelling == rel.as_posix() and not rel.is_absolute() and ".." not in rel.parts
+    current = root
+    for part in rel.parts[:-1]:
+        current /= part
+        assert stat.S_ISDIR(current.lstat().st_mode), (current, "aliased parent")
+    return root / spelling
+
+def verify_manifest(path, complete=False):
+    obj, root = read(path), path.parent
+    entries = obj.get("members", obj.get("files"))
+    if isinstance(entries, dict):
+        entries = [{"path": k, "sha256": v} for k, v in entries.items()]
+    assert isinstance(entries, list), path
+    files = [x for x in entries if x.get("kind", "file") == "file"]
+    links = [x for x in entries if x.get("kind") == "diagnostic_symlink"]
+    links += obj.get("symlinks", obj.get("literal_symlinks_not_followed", []))
+    assert len({x["path"] for x in files + links}) == len(files + links)
+    def regular(entry):
+        p = member_path(root, entry["path"])
+        actual = digest(p)
+        assert actual == entry["sha256"], (p, actual, entry["sha256"])
+        expected_size = entry.get("bytes", entry.get("size"))
+        if expected_size is not None:
+            assert p.stat().st_size == expected_size, p
+        return {"path": entry["path"], "sha256": actual}
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        verified = list(pool.map(regular, files))
+    for entry in links:
+        p = member_path(root, entry["path"])
+        assert stat.S_ISLNK(p.lstat().st_mode), p
+        assert os.readlink(p) == entry.get("target", entry.get("literal_target")), p
+    hardlinks = obj.get("hardlink_groups", obj.get("private_fixture_hardlinks", []))
+    for entry in hardlinks:
+        paths = entry.get("paths") or ([m["path"] for m in entry["members"]] if "members" in entry else [entry["path"]])
+        states = [member_path(root, p).lstat() for p in paths]
+        expected_links = entry.get("link_count", entry.get("members", [{}])[0].get("nlink"))
+        assert all(s.st_nlink == expected_links for s in states)
+        assert len({(s.st_dev, s.st_ino) for s in states}) == 1
+        if "device" in entry:
+            assert all((s.st_dev, s.st_ino) == (entry["device"], entry["inode"]) for s in states)
+    extra = []
+    if complete:
+        actual = set()
+        for base, dirs, names in os.walk(root, followlinks=False):
+            for name in dirs[:]:
+                p = Path(base) / name
+                if p.is_symlink():
+                    actual.add(str(p.relative_to(root)))
+                    dirs.remove(name)
+            actual.update(str((Path(base) / name).relative_to(root)) for name in names)
+        declared = {x["path"] for x in files + links}
+        extra = sorted(actual - declared)
+        assert set(extra) <= {"MANIFEST.json", "MANIFEST.sha256", "SEAL.json"}, extra
+    return {"manifest": str(path), "sha256": digest(path), "regular_files": len(verified),
+            "literal_symlinks": len(links), "hardlink_metadata_entries": len(hardlinks),
+            "all_members_verified": True, "ignored_and_hidden_included": True,
+            "symlinks_followed": False, "extra_root_seal_files": extra}
+
+PINNED={
+ 'HANDOFF.json':'18a2190985640af2369df959bb5ef0db88037487606af9957dba461b7110ee35',
+ 'MANIFEST.json':'434d88d14ae103a540630248315fc67b3e87439e0e8482a086e49eabe0103c9b',
+ 'SEAL.json':'4162f00780ca4a0bce5efec3aabca03a025e669d94bf7a2fb237dbbc6a0d1932',
+}
+started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+for name,expected in PINNED.items(): assert digest(P/name)==expected,(name,'pin')
+verification=verify_manifest(P/'MANIFEST.json',complete=True)
+save('manifest-verification.json',verification)
+handoff=read(P/'HANDOFF.json'); seal=read(P/'SEAL.json')
+references=[]
+def refs(obj,where):
+ if isinstance(obj,dict):
+  if isinstance(obj.get('path'),str) and isinstance(obj.get('sha256'),str):
+   path=Path(obj['path'])
+   if not path.is_absolute(): path=W/path if obj['path'].startswith('.temp/') else P/path
+   assert digest(path)==obj['sha256'],(where,path,'reference differs')
+   references.append({'where':where,'path':str(path),'sha256':obj['sha256']})
+  for key,value in obj.items(): refs(value,where+'.'+key)
+ elif isinstance(obj,list):
+  for index,value in enumerate(obj): refs(value,where+'['+str(index)+']')
+refs(handoff,'HANDOFF');refs(seal,'SEAL')
+assert handoff['reviewed_head']=='21061aa532401398db70c59a596debf330f70744'
+assert handoff['verdict']=='needs_curation'
+assert len(handoff['open_major_residuals'])==2
+assert handoff['resolved_scoped_finding']['issue']==1255
+assert handoff['tests']['passed']==458 and handoff['tests']['failed']==0 and handoff['tests']['skipped']==0
+assert handoff['native_review_pair']['review_verdict']=='needs_curation'
+for name,expected in PINNED.items(): assert digest(P/name)==expected,(name,'postcheck')
+save('referenced-proof-verification.json',{'references':references,'all_verified':True,'actual_reviewers':handoff['actual_reviewers']})
+save('receipt.json',{'status':'COMPLETE_SEALED_PACKET_COLLECTED_MECHANICALLY','started_at':started,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'packet':str(P),'pins':PINNED,'all_original_manifest_members_rehashed':True,'regular_members':verification['regular_files'],
+ 'literal_symlinks':verification['literal_symlinks'],'hardlink_metadata_entries':verification['hardlink_metadata_entries'],'proof_references':len(references),
+ 'membership_includes_ignored_hidden_paths':True,'symlinks_followed':False,'verdict_preserved':'needs_curation','reviewed_head':handoff['reviewed_head'],
+ 'resolved_scoped_finding':handoff['resolved_scoped_finding'],'open_major_residuals':handoff['open_major_residuals'],
+ 'recorded_review_tests':handoff['tests'],'collector_executed_tests':False,'new_independent_review':False,'code_or_science_or_application_approval':False,
+ 'source_worker_K_I_J_Git_GitHub_mutations':False,'original_failed_attempts_preserved_in_packet':True})
+print(json.dumps({'regular':verification['regular_files'],'literal_symlinks':verification['literal_symlinks'],'references':len(references),'verdict':handoff['verdict']},indent=2))

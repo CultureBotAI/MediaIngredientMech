@@ -1,0 +1,32 @@
+{
+  "base": "7a990e36b0e08d1deff943fe58bdc40d24d3834f",
+  "original16c_test_prefix_bytes": 80127,
+  "original16c_test_prefix_exact": true,
+  "prior_1255_test_functions_unchanged": 76,
+  "1255_negative_harnesses_strengthened_for_earlier_refusal": [
+    "test_1255_malformed_nul_listing_is_not_accepted",
+    "test_1255_unrelated_literal_tracked_file_still_refused"
+  ],
+  "new_helpers_tests": [
+    "head_lifecycle_case",
+    "late_git_commit",
+    "test_1256_head_drift_at_write_boundaries_invalidates_completion",
+    "test_1256_historical_replay_still_refuses_changed_proof",
+    "test_1256_initial_head_drift_remains_refused",
+    "test_1256_late_head_refused_before_receipt_or_source_write",
+    "test_1256_scope_diff_uses_accepted_baseline_with_literal_paths",
+    "test_1256_unrelated_staged_drift_rechecked_throughout_transaction",
+    "test_1256_valid_completed_history_survives_later_commits"
+  ],
+  "source_functions_changed": [
+    "_recheck",
+    "apply"
+  ],
+  "new_source_helper": "_check_mutation_git_state",
+  "historical_verify_completed_AST_exact": true,
+  "files": {
+    "src/mediaingredientmech/curate/campaign_owner_apply.py": "21ced557b3ff36bb3db2ac8d092b0af3d46bff1db6045221bdeabb128d4b9022",
+    "tests/test_campaign_owner_apply.py": "6ead533c601956a0441e127cd411cb73c54b76fcfa8ab06a2890f4bd3e987189"
+  },
+  "patch_sha256": "716e43b96fdacc66bed2469eaf923395cee11c3ad11ffeb64474e99a91e64937"
+}

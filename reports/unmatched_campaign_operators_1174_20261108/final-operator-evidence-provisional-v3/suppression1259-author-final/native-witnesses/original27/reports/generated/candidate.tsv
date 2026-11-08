@@ -1,0 +1,45 @@
+# curie_map:
+#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"
+#   FOODON: "http://purl.obolibrary.org/obo/FOODON_"
+#   UBERON: "http://purl.obolibrary.org/obo/UBERON_"
+#   ENVO: "http://purl.obolibrary.org/obo/ENVO_"
+#   NCIT: "http://purl.obolibrary.org/obo/NCIT_"
+#   MICRO: "http://purl.obolibrary.org/obo/MICRO_"
+#   mesh: "http://id.nlm.nih.gov/mesh/"
+#   BTO: "http://purl.obolibrary.org/obo/BTO_"
+#   kgmicrobe.compound: "https://w3id.org/kg-microbe/compound/"
+#   kgmicrobe.ingredient: "https://w3id.org/kg-microbe/ingredient/"
+#   cas: "https://commonchemistry.cas.org/detail?cas_rn="
+#   registry: "https://w3id.org/kg-microbe/registry/"
+#   MIM: "https://github.com/CultureBotAI/MediaIngredientMech/blob/main/data/ingredients/mapped/"
+#   obo: "http://purl.obolibrary.org/obo/"
+#   kgm: "https://w3id.org/kg-microbe/"
+#   semapv: "https://w3id.org/semapv/vocab/"
+#   skos: "http://www.w3.org/2004/02/skos/core#"
+#   orcid: "https://orcid.org/"
+#   cbclaw: "https://github.com/culturebotai/culturebotai-claw/blob/main/"
+# license: "https://creativecommons.org/publicdomain/zero/1.0/"
+# mapping_set_id: "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient"
+# mapping_set_version: "2026-11-08"
+# mapping_set_description: "Canonical MediaIngredientMech → ingredient-ontology mappings (CHEBI + FOODON; UBERON/ENVO when populated). One row per mapped MIM ingredient record. Per-row object_source distinguishes ontologies. Predicate is skos:exactMatch by default; narrowMatch/broadMatch/closeMatch where residual-P2.5 triage found a specificity or symmetry difference, or where mapping_quality != EXACT_MATCH. The `source` extension column records the upstream origin (MIM evidence + kg-microbe source pipeline, CHEBI only). owned-name-policy-v1; suppression-sidecar-required."
+# mapping_date: "2026-11-08"
+# predicate_semantics: skos
+# creator_id:
+#   - "orcid:0000-0001-8175-045X"
+# subject_source: "MIM:ingredients"
+# extension_definitions:
+#   - slot_name: source
+#     property: "cbclaw:provenance-source"
+#     type_hint: "xsd:string"
+#   - slot_name: validation_method
+#     property: "cbclaw:validation-method"
+#     type_hint: "xsd:string"
+subject_id	subject_label	predicate_id	object_id	object_label	object_source	mapping_justification	source	mapping_date	confidence	comment	other	validation_method
+MIM:Bacto_Peptone	Bacto peptone	skos:exactMatch	MICRO:0000178	peptone	obo:micro.owl	semapv:LexicalMatching	MIM:cbclaw_foodon_promotion|MIM:manual review of MICRO ontology coverage|MIM:curator=Codex /root/materials_research; W05 final report-only correction	2026-11-08	0.99		Bacto peptone (BD-Difco)|Bacto Peptone (Difco)|Bacto-Peptone (BD)|Peptone, Bacto (BD 211677)|Peptone (BD--Difco)|Peptone (BD Bacto)|Peptone (BD-Difco)|Peptone (BBL 11910)|Bacto peptone (BD--Difco)|Peptone from meat|Peptone (meat)|Peptone from meat (pepsin-digested)|Bacteriological peptone|Gelatin peptone|Peptone mixture	manual:apply_669_704_rulings|OTHER|2026-09-24
+MIM:Bluensomycin	Bluensomycin	skos:exactMatch	CHEBI:81193	Bluensomycin	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=classify_ingredient_type	2026-08-13	0.99			manual:review-ingredients|APPROVED|2026-08-04
+MIM:Congocidin	Congocidin	skos:exactMatch	kgmicrobe.compound:congocidin	Congocidin	kgm:compound	semapv:ManualMappingCuration	MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:curator=mediaingredientmech-agentic-curation	2026-05-09	0.9			none|UNKNOWN_TERM|2026-07-07
+MIM:Corn_Starch	Corn starch	skos:exactMatch	FOODON:00005791	corn starch	obo:foodon.owl	semapv:LexicalMatching	MIM:https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1812|MIM:curator=Codex worker10 /root claim-specific provenance correction	2026-11-08	0.99			
+MIM:Glebomycin	Glebomycin	skos:exactMatch	NCIT:C90636	Bluensomycin	obo:ncit.owl	semapv:ManualMappingCuration	MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via EBI OLS exact synonym search|MIM:https://doi.org/10.1128/jb.172.10.5844-5851.1990|MIM:curator=codex_worker09_antibiotics_primary	2026-11-08	0.99			none|UNKNOWN_TERM|2026-07-07
+MIM:Netropsin	Netropsin	skos:exactMatch	mesh:D009429	Netropsin	registry:mesh	semapv:LexicalMatching	MIM:MIM curation (#213)|MIM:https://id.nlm.nih.gov/mesh/M0014675.json|MIM:curator=worker02 /root	2026-11-08	0.99		Congocidine	manual:promote_resolved_unmapped|PROMOTED|2026-08-06
+MIM:Peptone	Peptone	skos:exactMatch	mesh:D010461	Peptones	registry:mesh	semapv:LexicalMatching	MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0017860|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0016245|MIM:https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl|MIM:https://id.nlm.nih.gov/mesh/D010461|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://foodon.org/design/foodon-relations/|MIM:curator=Codex /root/buffer_hepes; W05 direct generic Peptone reassessment	2026-11-08	0.99			
+MIM:Starch	Starch	skos:exactMatch	CHEBI:28017	starch	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureMech|MIM:curator=worker10_successor_kg_source_review	2026-11-08	0.99		Soluble starch|Amidon (starch)|Staerke|amidon|amylum|Starch soluble|Starch (soluble)|Starch, soluble|Soluble starch (BD-Difco)|Soluble starch (Sigma)|CAS:9005-25-8	OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07

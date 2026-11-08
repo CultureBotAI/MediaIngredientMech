@@ -1,0 +1,41 @@
+{
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/technical",
+  "runtime": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/all-unmatched-worker-02/venv/bin/python",
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 ../../all-unmatched-worker-02/venv/bin/python -B verify_v3.py > full-verification-v1.json 2> full-verification-v1.stderr.txt",
+      "exit_code": 1,
+      "meaning": "Preserved false mismatch from copied manifest base assumption; filed before correction."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 ../../all-unmatched-worker-02/venv/bin/python -B -m pytest -o addopts='' -p no:cov -p no:cacheprovider --basetemp=pytest-v1 --junitxml=tests-v1.xml -q test_v3.py > tests-v1.log 2>&1",
+      "exit_code": 0,
+      "passed": 34
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 ../../all-unmatched-worker-02/venv/bin/python -B verify_v3_origin_successor.py > full-verification-v2.json 2> full-verification-v2.stderr.txt",
+      "exit_code": 0,
+      "after_filing": true
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 ../../all-unmatched-worker-02/venv/bin/python -B -m pytest -o addopts='' -p no:cov -p no:cacheprovider --basetemp=pytest-origin-v1 --junitxml=tests-origin-v1.xml -q test_manifest_origin.py > tests-origin-v1.log 2>&1",
+      "exit_code": 0,
+      "passed": 9,
+      "after_filing": true
+    },
+    {
+      "command": "git check-ignore -z --stdin",
+      "scope": "Exact1077actual copied paths; compared with independently read14727-row currentHEAD/index inventory. GIT_OPTIONAL_LOCKS=0.",
+      "exit_code": 0
+    }
+  ],
+  "setup_attempt": {
+    "path": "setup-attempt-v1.json",
+    "sha256": "bb98faf488ec62bf13e962a4c0650cb80f093b9eb0e270870b5af66753830f6d",
+    "bytes": 362
+  },
+  "read_command_cwd_failure": "One filing-read command used technical-relative Python path from W cwd and exited127; preserved in post-filing-correction-v1.json. Correct read succeeded before any helper edit.",
+  "archived_code_executed": false,
+  "operator_or_full_suite_executed": false,
+  "git_mutations": false
+}

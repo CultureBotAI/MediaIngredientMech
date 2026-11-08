@@ -1,0 +1,191 @@
+schema_version: 1.0.0
+review_id: 20261108T124921Z-mechanical-fixture-transition-review
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'PRIVATE MECHANICAL FIXTURE: no scientific or application approval'
+started_at: '2026-11-08T12:45:53.394300Z'
+finished_at: '2026-11-08T12:49:21.879184Z'
+reviewer:
+  identity: fixture-distinct-reviewer
+  kind: agent
+  independence: independent
+  independence_basis: Synthetic assigned reviewer role for a test; no real scientific
+    decision is manufactured.
+skill: review-sssom-output
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Private structural test fixture; no approval
+scientific_review: false
+summary: Mechanical fixture validates the closed review-consumption boundary only.
+source:
+  git_revision: a7bc1737e8a74e4d52b60fa5fdf62fec339234bc
+  state: working_tree
+  inputs:
+  - path: reports/transition.json
+    sha256: 5cee96a4c58e2181079833716c672742d773a96cac7825c4238bb2b57d8381c4
+    role: target
+  - path: intake/plan.json
+    sha256: 610944e9c6921184f88b6da637f0c0adfedbef395b94303b0a4bb8c535994276
+    role: context
+  - path: source-receipt-suppression/application.json
+    sha256: 727fbe46704d29c86de2b16968f261aeb40aca80e3625e5916f873c9578cb6e7
+    role: context
+  - path: reports/science/review.yaml
+    sha256: 99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71
+    role: context
+  - path: reports/science/review-inputs/conditional-decisions.json
+    sha256: 26c5f381bcf3600f18c54722213c076389d0d17d732bbf760783e1cfdc4d333c
+    role: context
+  - path: reports/generated/candidate.tsv
+    sha256: f7cf171476311860f69b216eb06794af31aa6b7f2f5022343ba6df3badccfab3
+    role: context
+  - path: reports/generated/sidecar.tsv
+    sha256: 1686655ef3efead7b3f22f8c3e7b999b9b7330db46d40f4c28bbe45638c2b4b2
+    role: context
+  - path: reports/generated/manifest.json
+    sha256: fef2fc15c639f31cb40637f15a92b6b9470f30dd67269100353663d402a657a7
+    role: context
+targets:
+- target_id: W07-SUPPRESSION-01
+  path: reports/transition.json
+  kind: snapshot_row
+  label: MIM:Bacto_Peptone / Peptone
+  selector: subject=MIM:Bacto_Peptone; token_key=peptone
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bacto_Peptone.yaml
+    role: authentic_emitter_or_credited_owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone.yaml
+    role: authentic_emitter_or_credited_owner
+  ownership_note: Read-only frozen whole-owner pair assessment. Source workers own
+    source changes; root owns future capability/application. No owner edit or scientific/release
+    approval.
+- target_id: W07-SUPPRESSION-02
+  path: reports/transition.json
+  kind: snapshot_row
+  label: MIM:Glebomycin / Bluensomycin
+  selector: subject=MIM:Glebomycin; token_key=bluensomycin
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glebomycin.yaml
+    role: authentic_emitter_or_credited_owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bluensomycin.yaml
+    role: authentic_emitter_or_credited_owner
+  ownership_note: Read-only frozen whole-owner pair assessment. Source workers own
+    source changes; root owns future capability/application. No owner edit or scientific/release
+    approval.
+- target_id: W07-SUPPRESSION-03
+  path: reports/transition.json
+  kind: snapshot_row
+  label: MIM:Netropsin / Congocidin
+  selector: subject=MIM:Netropsin; token_key=congocidin
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Netropsin.yaml
+    role: authentic_emitter_or_credited_owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Congocidin.yaml
+    role: authentic_emitter_or_credited_owner
+  ownership_note: Read-only frozen whole-owner pair assessment. Source workers own
+    source changes; root owns future capability/application. No owner edit or scientific/release
+    approval.
+- target_id: W07-SUPPRESSION-04
+  path: reports/transition.json
+  kind: snapshot_row
+  label: MIM:Starch / Corn Starch
+  selector: subject=MIM:Starch; token_key=corn starch
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Starch.yaml
+    role: authentic_emitter_or_credited_owner
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Corn_Starch.yaml
+    role: authentic_emitter_or_credited_owner
+  ownership_note: Read-only frozen whole-owner pair assessment. Source workers own
+    source changes; root owns future capability/application. No owner edit or scientific/release
+    approval.
+scope:
+  description: Mechanical fixture four-event transition input coverage
+  selection: Frozen09fe42ca four-pair bindings with15exactYAMLcaptures,7beforeimages/8proposals;
+    all4emitters in934conditionaloperations.
+  coverage: full
+  population_size: 4
+  reviewed_target_ids:
+  - W07-SUPPRESSION-01
+  - W07-SUPPRESSION-02
+  - W07-SUPPRESSION-03
+  - W07-SUPPRESSION-04
+  exclusions:
+  - target: Other17native candidate events, all other aliases/owners and whole campaign
+      application or export
+    reason: Outside four selected obligations; no broad token or owner approval transfers.
+  - target: Source-case acceptance, supplied-form completion, role and mapping-row
+      admission
+    reason: Retained separate scientific/approval decisions; current name evidence
+      does not resolve these holds.
+checks:
+- check_id: mechanical
+  name: Fixture tuple equality
+  status: passed
+  required: true
+  target_ids:
+  - W07-SUPPRESSION-01
+  - W07-SUPPRESSION-02
+  - W07-SUPPRESSION-03
+  - W07-SUPPRESSION-04
+  evidence_ids:
+  - TRANSITION
+  summary: Synthetic mechanical fixture only
+evidence:
+- evidence_id: TRANSITION
+  kind: record_content
+  reference: reports/transition.json
+  snapshot_sha256: 5cee96a4c58e2181079833716c672742d773a96cac7825c4238bb2b57d8381c4
+  support: supports
+  accessed_at: '2026-11-08T12:49:21Z'
+  summary: Exact synthetic mechanical fixture transition; original science remains
+    separately bound.
+assessments:
+- assessment_id: W07-SUPPRESSION-01-transport
+  area: provenance
+  topic: Exact mechanical transition binding
+  outcome: supported
+  target_ids:
+  - W07-SUPPRESSION-01
+  evidence_ids:
+  - TRANSITION
+  summary: Fixture-only complete transition equality
+- assessment_id: W07-SUPPRESSION-02-transport
+  area: provenance
+  topic: Exact mechanical transition binding
+  outcome: supported
+  target_ids:
+  - W07-SUPPRESSION-02
+  evidence_ids:
+  - TRANSITION
+  summary: Fixture-only complete transition equality
+- assessment_id: W07-SUPPRESSION-03-transport
+  area: provenance
+  topic: Exact mechanical transition binding
+  outcome: supported
+  target_ids:
+  - W07-SUPPRESSION-03
+  evidence_ids:
+  - TRANSITION
+  summary: Fixture-only complete transition equality
+- assessment_id: W07-SUPPRESSION-04-transport
+  area: provenance
+  topic: Exact mechanical transition binding
+  outcome: supported
+  target_ids:
+  - W07-SUPPRESSION-04
+  evidence_ids:
+  - TRANSITION
+  summary: Fixture-only complete transition equality
+findings: []
+actions: []
+limitations:
+- Synthetic fixture only, not real scientific authorization.
+notes: []

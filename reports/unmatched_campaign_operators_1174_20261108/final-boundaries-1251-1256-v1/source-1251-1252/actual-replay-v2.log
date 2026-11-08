@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/replay_actual_v2.py", line 11, in <module>
+    selected={name:target(name) for name in names};before={p:f.content for p,f in owner.inventory(I).items()};pins={p:sha(b) for p,b in before.items()};results=[]
+                   ~~~~~~^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/replay_actual_v2.py", line 9, in target
+    def target(name):return next(a for a in actions if a['destination_path'].endswith('/'+name+'.yaml'))
+                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-fix-v1/replay_actual_v2.py", line 9, in <genexpr>
+    def target(name):return next(a for a in actions if a['destination_path'].endswith('/'+name+'.yaml'))
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'endswith'

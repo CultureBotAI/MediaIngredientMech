@@ -1,0 +1,70 @@
+from pathlib import Path
+import sys,os,json,hashlib,datetime,types,copy,traceback,subprocess
+O=Path(__file__).resolve().parent;R=O/'runtime';W=O.parents[3];C=W.parents[2];K=C/'integration/release-worktree'
+assert sys.dont_write_bytecode
+os.environ.update(GIT_OPTIONAL_LOCKS='0',GIT_NO_LAZY_FETCH='1',GIT_TERMINAL_PROMPT='0')
+sys.path.insert(0,str(R/'src'))
+from mediaingredientmech.curate import campaign_owner_apply as m
+results=[]
+def reject(name,fn,expected):
+ try:fn()
+ except ValueError as e:
+  assert expected in str(e),(name,str(e),expected);results.append(dict(name=name,expected='reject',actual='rejected',reason=str(e)))
+ else:raise AssertionError(name+' unexpectedly passed')
+
+for label,keys in [('plan',m.PLAN_KEYS),('acceptance',m.ACCEPTANCE_KEYS),('record',m.RECORD_KEYS),('origin',m.ORIGIN_KEYS),('binding',m.BINDING_KEYS),('demotion review',m.RELOCATION_REVIEW_KEYS)]:
+ value={k:None for k in keys};assert m.closed(value,keys,label)==value
+ reject('closed-extra-'+label,lambda v={**value,'unapproved':True},k=keys,l=label:m.closed(v,k,l),'Unexpected fields')
+ reject('closed-missing-'+label,lambda v={k:None for k in sorted(keys)[1:]},k=keys,l=label:m.closed(v,k,l),'Unexpected fields')
+reject('JSON-duplicate-key',lambda:m.unique_json(b'{"x":1,"x":2}'),'Duplicate JSON key')
+reject('YAML-duplicate-key',lambda:m.record(b'identifier: CHEBI:1\nidentifier: CHEBI:2\n'),'Duplicate YAML key')
+for p in ['/absolute.yaml','../escape.yaml','data/../escape.yaml','a\\b','a//b']:
+ reject('relative-'+repr(p),lambda p=p:m.relative(p),'Noncanonical')
+for raw in [b'not-null-terminated',b'\0',b'100644 '+b'a'*40+b' 4\tx\0',b'100644 '+b'a'*39+b' 0\tx\0']:
+ reject('index-invalid-'+repr(raw),lambda raw=raw:m._index_entries(raw),'Malformed')
+literal='data/ingredients/unmapped/Poly-ß-\tnewline\nowner.yaml'
+entry=b'100644 '+b'a'*40+b' 0\t'+os.fsencode(literal)+b'\0'
+assert m._index_entries(entry)=={literal:entry};results.append(dict(name='literal-Unicode-tab-newline-index',actual='passed',path=literal))
+
+# No index/ref/commit or shared working-file writes. Actual native read-only live observation.
+head=m.git(K,'rev-parse','HEAD').decode().strip();raw_before=m.git(K,'ls-files','--stage','-z')
+ready=types.SimpleNamespace(root=K,plan={'baseline_commit':head},operations=[],before={},after_inventory={})
+try:m._check_mutation_git_state(ready);live=dict(result='passed')
+except ValueError as e:live=dict(result='refused',reason=str(e))
+raw_after=m.git(K,'ls-files','--stage','-z')
+live.update(head=head,index_before_sha256=hashlib.sha256(raw_before).hexdigest(),index_after_sha256=hashlib.sha256(raw_after).hexdigest(),logical_entries=len(m._index_entries(raw_before)),writes=False,scope='Direct actual K read-only observation. If root advances concurrently, a refusal is recorded without calling it a product defect.')
+results.append(dict(name='actual-K-read-only-live-state',**live))
+
+# Pure native boundary controls: exact command responses, no pretend actual Git mutation.
+original_git=m.git
+base='a'*40;path='MAPPING_SEMANTICS.md';good='1'*40;bad='2'*40
+good_idx=f'100644 {good} 0\t{path}\0'.encode();bad_idx=f'100644 {bad} 0\t{path}\0'.encode();tree=f'100644 blob {good}\t{path}\0'.encode()
+def run_model(mode):
+ calls=[];counts={}
+ def modeled_git(root,*args):
+  calls.append(args);counts[args]=counts.get(args,0)+1
+  if args==('ls-files','--stage','-z'):
+   if mode=='captured-invalid-hidden-between-snapshots':return bad_idx
+   if mode=='late-index-change' and counts[args]==2:return bad_idx
+   return good_idx
+  if args[:1]==('ls-tree',):return tree
+  if args==('rev-parse','HEAD'):
+   return (('b'*40 if mode=='late-HEAD-change' and counts[args]==2 else base)+'\n').encode()
+  if args[:2]==('diff','--name-only'):return b''
+  if args[:2]==('diff','--cached'):
+   if mode=='unrelated-cached-path':return (path+'\0').encode()
+   return b''
+  raise AssertionError(('unexpected Git call',args))
+ m.git=modeled_git
+ p=types.SimpleNamespace(root=O,plan={'baseline_commit':base},operations=[],before={},after_inventory={})
+ try:m._check_mutation_git_state(p)
+ finally:m.git=original_git
+ return calls
+assert run_model('clean');results.append(dict(name='pure-coherent-clean-index',actual='passed',mode='Injected immutable command outputs; no Git mutation claim.'))
+for mode,msg in [('captured-invalid-hidden-between-snapshots','Cached path view differs from captured Git index'),('late-index-change','Git index changed during live source check'),('late-HEAD-change','Integration HEAD changed during source application'),('unrelated-cached-path','Unrelated staged file changed')]:
+ reject('pure-'+mode,lambda mode=mode:run_model(mode),msg)
+
+inputs=json.loads((O/'preparatory-inputs.json').read_text())
+out=dict(reviewer='/root/operator_source_technical',executed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),runtime=sys.version,executable=sys.executable,source_operator_sha256=inputs['source_operator_sha256'],observed_code_head=inputs['observed_K_head'],final_committed_head_review=False,scope='Pure/native read-only controls only. No native apply/prepare or Git-writing test fixtures execute. Original native unit/integration test results are audited separately from actual root receipts.',results=results,all_expected_controls_passed=True,failures=[],limitations=['These response-injection controls are not the real Git mutations exercised by existing native integration tests.','No scientific review, root acceptance, source application, mapping admission or export approval.'])
+(O/'pure-controls.json').write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps(dict(controls=len(results),live_K_result=live['result'],all_expected_controls_passed=True)))

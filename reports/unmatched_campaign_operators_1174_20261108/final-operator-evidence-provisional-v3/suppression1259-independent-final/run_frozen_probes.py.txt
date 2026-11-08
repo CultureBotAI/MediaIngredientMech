@@ -1,0 +1,30 @@
+import hashlib
+import json
+import os
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
+
+D=Path(__file__).absolute().parent
+C=D.parents[1]
+T=C.parent/'kgm-unmapped-20261107'
+R=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+F=D/'frozen-review-v1'
+freeze=json.loads((F/'SOURCE-FREEZE-v1.json').read_bytes())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def verify():
+ for p,h in freeze['files'].items():assert sha(R/p)==h,(p,h,sha(R/p))
+verify()
+env=os.environ.copy()
+values={'PYTHONDONTWRITEBYTECODE':'1','GIT_OPTIONAL_LOCKS':'0','UV_OFFLINE':'1','UV_NO_SYNC':'1','PYTHONPATH':str(R/'src'),'CLAW_ROOT':str(T/'claw'),'CAMPAIGN_HISTORY_ROOT':str(C/'integration/curation-worktree'),'CAMPAIGN_SUPPRESSION_REVIEW_ROOT':str(C/'workers/w07/worktree/.temp/four-suppression-policy-independent-v1'),'CAMPAIGN_SUPPRESSION_INTAKE_ROOT':str(C/'integration/final-native-intake-v4-preparation'),'OPENCLAW_WORKSPACE':str(F/'openclaw'),'INDEPENDENT_EXPECTED_PUBLISHER_SHA':freeze['files']['src/mediaingredientmech/campaign_publication.py']}
+env.update(values)
+commands=[('fixed-verdict',[str(T/'env/bin/python'),'-B',str(D/'probe_fixed_review_verdict.py')]),('extra-native',[str(T/'env/bin/python'),'-B','-m','pytest','--no-cov','-p','no:cacheprovider','-q',str(D/'test_additional_suppressions.py'),'--basetemp',str(F/'native-fixtures')])]
+for tag,argv in commands:
+ start=datetime.now(timezone.utc).isoformat()
+ with (F/(tag+'.stdout')).open('xb') as out,(F/(tag+'.stderr')).open('xb') as err:
+  result=subprocess.run(argv,cwd=D,env=env,stdout=out,stderr=err,timeout=600)
+ verify()
+ receipt={'started_at':start,'finished_at':datetime.now(timezone.utc).isoformat(),'argv':argv,'cwd':str(D),'environment_overrides':values,'exit_code':result.returncode,'stdout_sha256':sha(F/(tag+'.stdout')),'stderr_sha256':sha(F/(tag+'.stderr')),'source_and_tests_unchanged':True,'fixture_only':True}
+ with (F/(tag+'-receipt.json')).open('x') as f:json.dump(receipt,f,indent=2);f.write('\n')
+ print(json.dumps({'tag':tag,'exit_code':result.returncode,'stdout_sha256':receipt['stdout_sha256']},indent=2),flush=True)
+ if result.returncode:raise SystemExit(result.returncode)

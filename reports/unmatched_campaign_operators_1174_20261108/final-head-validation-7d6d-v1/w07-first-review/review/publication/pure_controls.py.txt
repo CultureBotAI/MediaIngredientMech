@@ -1,0 +1,62 @@
+from pathlib import Path
+import os,sys,hashlib,json,datetime,copy
+W=Path.cwd();C=W.parents[2];O=W/'.temp/final-operator-head-review-v1/review/publication';R=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+assert sys.dont_write_bytecode
+sys.path.insert(0,str(R/'src'))
+from mediaingredientmech import campaign_publication as p
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+sha=lambda b:hashlib.sha256(b).hexdigest()
+assert sha(Path(p.__file__).read_bytes())=='1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24'
+checks=[]
+def reject(name,fn):
+ try:fn()
+ except (ValueError,KeyError) as e:checks.append(dict(name=name,result='REJECTED_AS_EXPECTED',exception=type(e).__name__,message=str(e)))
+ else:raise AssertionError(name+' unexpectedly accepted')
+started=now()
+old=(W/'.temp/four-suppression-policy-independent-v1/inputs/historical/mappings/suppressed_aliases.tsv').read_bytes()
+native=(W/'.temp/four-suppression-policy-independent-v1/inputs/projected-generation/suppressed-aliases.tsv').read_bytes()
+assert len(p._suppression_table(old)[0])==34 and len(p._suppression_table(native)[0])==21
+checks.append(dict(name='Actual historical34/native21 strict physical parsing',result='PASS',historical_sha256=sha(old),native_sha256=sha(native)))
+reject('Duplicate JSON approval keys',lambda:p.read_json(b'{"approval":"NONE","approval":"YES"}'))
+reject('Nonfinite JSON value',lambda:p.read_json(b'{"x":NaN}'))
+for path in ['../escape','/absolute','a/../b','a\\b','a\x00b']:
+ reject('Unsafe relative path '+repr(path),lambda path=path:p.relative(path))
+reject('Duplicate physical suppression key',lambda:p._suppression_table(old+old.splitlines(keepends=True)[1]))
+reject('Missing suppression final newline',lambda:p._suppression_table(old[:-1]))
+bad=native.decode().splitlines();head=bad[0].split('\t');row=bad[1].split('\t');row[head.index('owner_subject_ids')]=json.dumps([row[0]],separators=(',',':'));bad[1]='\t'.join(row)
+reject('Self-credited suppression',lambda:p._suppression_table(('\n'.join(bad)+'\n').encode()))
+def minimal(oid,src='MIM:Selected',source='prior source'):
+ return dict(subject_id=src,object_id=oid,predicate_id='skos:exactMatch',mapping_date='2026-11-08',source=source,comment='',confidence='0.9',validation_method='none|HOLD|2026-11-08',other='')
+old_rows=[minimal('kgmicrobe.ingredient:Case'),minimal('kgmicrobe.ingredient:case')]
+assert len({p.slot(r) for r in old_rows})==2
+new_rows=[minimal('kgmicrobe.ingredient:new'),minimal('kgmicrobe.ingredient:case')]
+changes,positions=p._align_rows(old_rows,new_rows)
+assert positions==[None,2] and sorted(r['kind'] for r in changes)==['added','removed']
+checks.append(dict(name='Exact-case local identities and explicit retarget removal/addition',result='PASS',position_map=positions,changes=changes))
+reject('Repeated same local object slot',lambda:p._align_rows(old_rows,[new_rows[0],dict(new_rows[0],predicate_id='skos:broadMatch')]))
+fields=list(old_rows[0]);header=['# mapping_date: 2026-11-08\n','# mapping_set_version: 2026-11-08\n','\t'.join(fields)+'\n']
+unselected=minimal('CHEBI:7','MIM:Unselected','exact physical prior');selected=old_rows[0]
+before=(''.join(header)+p.render_row(fields,unselected)+p.render_row(fields,selected)).encode()
+candidate=(''.join(header)+p.render_row(fields,dict(unselected,source='unselected new value NOT to select'))+p.render_row(fields,new_rows[0])).encode()
+records=[dict(source_record='data/ingredients/mapped/Selected.yaml',shape='existing')]
+plan=[dict(owner=records[0]['source_record'],before_position=2,native_position=None,preserve_fields=[]),dict(owner=records[0]['source_record'],before_position=None,native_position=2,preserve_fields=[])]
+projected,trace=p.row_projection(before,candidate,records,plan)
+assert p.table(projected)[3][0]==p.table(before)[3][0]
+assert p.table(projected)[2][1]==new_rows[0]
+checks.append(dict(name='Unselected physical line exact despite differing native candidate',result='PASS',unselected_before=p.table(before)[3][0],unselected_after=p.table(projected)[3][0]))
+reject('Missing selected slot accounting',lambda:p.row_projection(before,candidate,records,plan[:-1]))
+reject('Wrong owner in selected row plan',lambda:p.row_projection(before,candidate,records,[dict(plan[0],owner='data/ingredients/mapped/Unselected.yaml'),plan[1]]))
+reject('Historical provenance transfer across local-ID replacement',lambda:p.row_projection(before,candidate,records,[plan[0],dict(plan[1],preserve_fields=['source'])]))
+# Validate original reviewed science with the exact native validator; no passing transition or publication is invented.
+original=W/'.temp/four-suppression-policy-independent-v1/native-fixture/reviews/structured/20261108T124921Z-w07-four-suppression-policy-independent/review.yaml'
+raw=original.read_bytes();schema=p.LOADED_PRODUCERS[p.REVIEW_SCHEMA].content
+doc=p._validated_review(raw,schema)
+assert doc['scientific_review'] is True and doc['completion']=='completed'
+validator=p._BOUND_NATIVE['campaign_native_record_review'];badreview=copy.deepcopy(doc);badreview['scope']['coverage']='partial';badreview['scope']['reviewed_target_ids']=badreview['scope']['reviewed_target_ids'][:-1]
+try:validator.validate_review(badreview,p.LOADED_PRODUCERS[p.REVIEW_SCHEMA].path)
+except validator.ReviewError as e:checks.append(dict(name='Malformed partial completed review rejected at native schema/semantic boundary',result='REJECTED_AS_EXPECTED',exception=type(e).__name__,message=str(e)))
+else:raise AssertionError('Partial review unexpectedly accepted')
+bindings=[dict(path=k,absolute_path=str(v.path),sha256=sha(v.content)) for k,v in p.LOADED_PRODUCERS.items()]
+result=dict(started_at=started,finished_at=now(),reviewer='/root/operator_publication_technical',python=sys.version,executable=sys.executable,command='PYTHONDONTWRITEBYTECODE=1 W/.temp/all-unmatched-worker-07/venv/bin/python '+str(Path(__file__)),publisher_path=p.__file__,publisher_sha256=sha(Path(p.__file__).read_bytes()),executed_producers=bindings,checks=checks,control_count=len(checks),all_passed=True,limits='Pure native controls only: no Git writes, full prepare, source apply, generation, publication or canonical write. Full real integration counts belong to actual root run receipts. This does not confer source/science/application/export approval.')
+(O/'pure-controls-result.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(dict(control_count=len(checks),all_passed=True,publisher_sha256=result['publisher_sha256'])))

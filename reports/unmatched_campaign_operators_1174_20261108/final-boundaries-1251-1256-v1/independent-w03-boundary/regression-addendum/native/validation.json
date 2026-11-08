@@ -1,0 +1,48 @@
+{
+  "status": "VALID_NATIVE_METADATA_FOR_NEEDS_CURATION_CODE_REVIEW",
+  "code_verdict": "DO_NOT_ACCEPT_EXACT_D691",
+  "reviewer": "/root/boundary_assembly",
+  "review_id": "20261108T112603Z-w03-d691-first-rejection-regression",
+  "supersedes_review_id": "20261108T112010Z-w03-native-boundary-final-head-independent",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "source_state": "git_commit",
+  "targets": [
+    "native-owner-operator",
+    "native-owner-tests"
+  ],
+  "yaml_sha256": "2729f08fc2c952ebb7737845cbfe61ffeadd782e2ffafaf1602cc35b574ecba1",
+  "markdown_sha256": "f8e8295883fe582bddf9fec62b2301f941df24b56c2679d70d3108122ccc93d5",
+  "source_inputs": 10,
+  "scientific_review": false,
+  "known_findings": [
+    {
+      "finding_id": "W03-NATIVE-1252-RETIREMENT-REGRESSION",
+      "severity": "major",
+      "status": "open",
+      "external_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145"
+    }
+  ],
+  "technical_receipt": {
+    "path": "technical/HANDOFF.json",
+    "sha256": "412a8358df28d2b8305a74bf20dffcf2188f1387cf25ce34fc4d0c3f6f677d0c"
+  },
+  "adversarial_receipt": {
+    "path": "adversarial/HANDOFF.json",
+    "sha256": "6e5956d58c8be7b865b45bf36c6eb0d6f74307e4d67709b5a3b94b98081305c4"
+  },
+  "native_calls": [
+    "load_document",
+    "validate_review",
+    "assert_current_source using git_commit only",
+    "render_markdown",
+    "parse_review_bundle"
+  ],
+  "prior_source_inspection_reused_with_fresh_exact_git_verification": true,
+  "current_or_future_mutable_I_code_read": false,
+  "metadata_negatives": 4,
+  "canonical_saver_called": false,
+  "private_persistence": true,
+  "source_or_normalization_approval": false,
+  "full_campaign_prepared": false,
+  "maintained_application": false
+}

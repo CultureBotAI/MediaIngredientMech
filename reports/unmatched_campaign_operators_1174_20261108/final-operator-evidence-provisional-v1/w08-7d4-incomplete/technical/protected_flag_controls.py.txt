@@ -1,0 +1,15 @@
+"""Negative controls bounding flag findings to the separate tracked-file scope guard."""
+from pathlib import Path
+import hashlib,importlib.util,json,sys
+W=Path.cwd();P=W/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path[:0]=[str(F/'src'),str(F)]
+from mediaingredientmech.curate import campaign_owner_apply as owner
+s=importlib.util.spec_from_file_location('protected_flag_helpers',F/'tests/test_campaign_owner_apply.py');f=importlib.util.module_from_spec(s);s.loader.exec_module(f)
+rows=[]
+for flag in ['assume-unchanged','skip-worktree']:
+ root=O/'protected-flag-fixtures'/flag;root.mkdir(parents=True);f.demotion_case(root);ready=f.prepare(root);before=owner.hashes(owner.inventory(root));path='MAPPING_SEMANTICS.md';f.run_git(root,'update-index','--'+flag,'--',path);(root/path).write_bytes((root/path).read_bytes()+b'\nUnauthorized protected input change\n')
+ try:owner.apply(ready,root/'receipt',enabled=True);error=None
+ except Exception as exc:error={'type':type(exc).__name__,'message':str(exc)}
+ row={'flag':flag,'fixture':str(root.relative_to(W)),'error':error,'owners_unchanged':before==owner.hashes(owner.inventory(root)),'receipt_absent':not (root/'receipt').exists(),'captured_input':path,'native_function_replacements':False}
+ assert error and 'Captured input changed' in error['message'] and row['owners_unchanged'] and row['receipt_absent'];rows.append(row)
+r={'status':'PASS_EXPECTED_REFUSALS','source_sha256':hashlib.sha256(Path(owner.__file__).read_bytes()).hexdigest(),'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'scope':'Captured contract bytes are guarded independently of Git visibility; these controls do not fail the operator. SRC002 is limited to separate genuine tracked working changes governed only by the explicit live scope guard.','results':rows}
+(O/'protected-flag-results.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r,indent=2))

@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-08T11:15:57.179902+00:00",
+  "reviewer": "worker03:/root",
+  "scope": "Independent complete code read/static guard retention and exact commit/manifest proof; dynamic probes are separate reviewer scopes. No scientific payload approval.",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "parent": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "exact_changed_paths": [
+    "src/mediaingredientmech/curate/campaign_owner_apply.py",
+    "tests/test_campaign_owner_apply.py"
+  ],
+  "operator_declarations": 32,
+  "changed_operator_declarations": [
+    "_validate_records"
+  ],
+  "unchanged_operator_declarations": [
+    "captured_native_modules",
+    "_module_path",
+    "_check_loaded_producers",
+    "require",
+    "digest",
+    "encoded",
+    "closed",
+    "text",
+    "sha",
+    "commit",
+    "relative",
+    "owner_path",
+    "unique_json",
+    "UniqueLoader",
+    "_yaml_mapping",
+    "record",
+    "git",
+    "inventory",
+    "_snapshot_members",
+    "hashes",
+    "Prepared",
+    "_ref",
+    "_map",
+    "_load",
+    "prepare",
+    "_recheck",
+    "_new_owner",
+    "_rename_exclusive",
+    "_retire",
+    "apply",
+    "verify_completed"
+  ],
+  "parent_tests_are_exact_byte_prefix": true,
+  "unchanged_test_helper_ASTs": 42,
+  "added_test_helper_definitions": [
+    "final_fixture_delta",
+    "inherited_family_case",
+    "test_1251_1252_family_changes_refused_before_any_write",
+    "test_1251_1252_inherited_family_real_application_and_completed_replay",
+    "test_1251_1252_new_owner_does_not_inherit_exception",
+    "test_1251_reviewed_family_reduction_preserves_surviving_pairs",
+    "test_1252_completed_replay_rejects_changed_tombstone",
+    "test_1252_unique_tombstone_activation_and_key_changes_refused",
+    "test_1252_unique_tombstone_real_application_and_completed_replay"
+  ],
+  "selected_frozen_files_verified": 622,
+  "assessments": [
+    {
+      "topic": "Complete catalogue and batch ordering",
+      "source_lines": "701-712 and 564-597",
+      "assessment": "The after view starts from every before owner, then applies operations. _load refuses repeated sources, repeated/casefolded destinations, edits that relocate, and destinations occupied by any different before owner. These prerequisites prevent sequential construction from overwriting a different owner; selection order cannot change the final complete catalogue."
+    },
+    {
+      "topic": "New collision pairs and real reductions",
+      "source_lines": "712-733",
+      "assessment": "Pair tokens include key kind, exact identifier or casefolded preferred name, and the sorted pair of owner paths. Final subset of prior pairs permits a pair to disappear and rejects a new path member, same-count replacement, or movement to a newly shared key. The earlier equality-draft regression is not present."
+    },
+    {
+      "topic": "Surviving collisions",
+      "source_lines": "734-751",
+      "assessment": "Every selected owner whose source path participates in any surviving collision must remain an edit at the same path, with raw preferred term, identifier, and mapping status equal to its original owner. Thus leaving only one of overlapping identifier/name families does not excuse changes while another collision survives. Unselected owners retain exact bytes by complete before/after inventory plus guarded recheck."
+    },
+    {
+      "topic": "Rejected-owner maintenance",
+      "source_lines": "760-780",
+      "assessment": "If old or new status is REJECTED, only edit with identical source/destination, old==new==REJECTED, unchanged identifier and exact preferred term passes. This blocks revival, new rejected creation, rejected relocation and key changes. Existing tombstone preservation still requires native schema, material non-history delta and append-only history. Separate MAPPED-to-AMBIGUOUS demotion is not added."
+    },
+    {
+      "topic": "Preserved native trust boundaries",
+      "source_lines": "_load; prepare; _recheck; apply; verify_completed",
+      "assessment": "All these declarations and their helper classes/functions are AST-identical to parent. Full original proposal/head/payload/case binding, complete inventories, protected producer/checkpoint pins, native schema/rendered-byte checks, history checks, alias/inode checks, no-output-before-prepare, recoverable application, and completed replay remain structurally present. Dynamic correctness is assessed by separate meaningful probes, not inferred only from AST equality."
+    },
+    {
+      "topic": "Source and release limits",
+      "source_lines": "module docstring; APPROVAL constant; verify_completed approval check",
+      "assessment": "The operator remains source-application infrastructure only. Shared identifiers do not resolve form/product identity or #1050; no status promotion or owner/role/export approval follows from structural allowance. TSB and same-path Angust need independent refusal checks; current campaign execution and demotion implementation are excluded."
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "Static proof is not a claim of full native application or complete adversarial coverage; peer run receipts supply actual dynamic evidence.",
+    "Collision comparison materializes O(k^2) pairs within a key family; no performance finding or new threshold is inferred without an actual unsupported workload.",
+    "Only exact two-file commit is reviewed; later heads require separate observation/review."
+  ]
+}

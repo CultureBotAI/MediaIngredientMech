@@ -1,0 +1,78 @@
+import ast
+import datetime
+import hashlib
+import json
+from pathlib import Path
+
+P=Path(__file__).resolve().parent;F=P.parent/'frozen/repo'
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(n):return json.loads((P/n).read_text())
+def write(n,d):
+    with (P/n).open('x') as f:json.dump(d,f,indent=2);f.write('\n')
+i=load('input-inspection.json');n=load('native-boundary-results.json');s=load('adversarial-results.json');source=load('source-index-readback.json')
+bindings=i['input_hashes']|n['executed_source_hashes']|s['executed_source_hashes']|source['input_hashes']
+for result in n['results']:
+    root=Path(result['fixture'])
+    for name,sha in result['artifacts'].items():bindings[str(root/name)]=sha
+for name,sha in bindings.items():assert h(Path(name))==sha,name
+archive=json.loads((F.parent/'ARCHIVE.json').read_text());entries={r['path']:r['sha256'] for r in archive['files']}
+for name,sha in bindings.items():
+    if Path(name).is_relative_to(F):assert entries[Path(name).relative_to(F).as_posix()]==sha
+
+counts={}
+for name in ('tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py'):
+    rows=[]
+    for fn in ast.parse((F/name).read_bytes()).body:
+        if not isinstance(fn,ast.FunctionDef) or not fn.name.startswith('test_'):continue
+        count=1
+        for decorator in fn.decorator_list:
+            if isinstance(decorator,ast.Call) and isinstance(decorator.func,ast.Attribute) and decorator.func.attr=='parametrize':
+                count*=len(ast.literal_eval(decorator.args[1]))
+        rows.append({'test':fn.name,'parameterized_cases':count})
+    counts[name]={'test_functions':len(rows),'parameterized_cases':sum(r['parameterized_cases'] for r in rows),'rows':rows}
+assert counts['tests/test_campaign_demotion_integration.py']['parameterized_cases']==15
+write('test-accounting.json',{'scope':'Static exact final AST test-case accounting, not an execution claim. Root separately runs the full458 suite.','counts':counts})
+
+assessments=[
+ {'domain':'Entire publisher and regression continuity','assessment':'All28 functions/classes inspected through exact sealed16c full-content read plus complete changed prepare and current publish/finalization reread. Only prepare changed; all other27 function ASTs are exact. All51 old publisher helper/test functions retain every101 prior assertion; only case fixture setup changed. All8 old integration helper/test functions retain every49 prior assertion; only prepare_native_case environment isolation changed. All new test bodies were read in full.'},
+ {'domain':'Live accepted baseline binding','assessment':'prepare now requires actual MIM HEAD to equal the genuine completed source baseline, registers that check in capture callbacks, and retains prior plan/receipt/pin checks. This closes old preflight and ordinary later phase drift, but HEAD is tested before source-proof replay in recheck; the independent final-replay fault reaches complete with changed HEAD. W08-21061-PUB-001 remains open.'},
+ {'domain':'Historical versus live verification','assessment':'completed=True deliberately omits the live HEAD callback and retains full exact source, owner inventory, plan, generation, row, policy and native receipt reconstruction. My real full pipeline positive survives a later unrelated commit; changing current owner bytes then fails. This exemption is valid historical semantics, not the residual bug.'},
+ {'domain':'Tracked derived synchronization','assessment':'Publisher adds no tracked dirty-state allowlist. My positive created a genuinely tracked private derived YAML in the accepted baseline, changed it without committing after source completion, then completed real generation and mapping publication. This is stronger than a newly untracked derived-file fixture and is consistent with permitted synchronization.'},
+ {'domain':'Native generation and source proof','assessment':'Both reviewer lifecycle fixtures use actual source prepare/apply, actual Claw76c generation with command/log/manifest, actual native replay/maker and publisher. No owner-proof or generation stub is used on positive paths. The negative schedules a real private commit after the actual source-proof result, returning that result unchanged. Original preflight publisher evidence used an explicit generation stub; that historical limitation remains disclosed.'},
+ {'domain':'Demotion authority and all-slot removal','assessment':'Authentic preimage, exact accepted relocation tuple, same-basename MAPPED-to-AMBIGUOUS/no-grounding source shape, both-path chain refusal, full selected canonical/native slot coverage and zero generated demoted-subject slots remain unchanged. Re-executed31 independent stage probes cover four ontology/registry slots, omission, unexpected generated prefixes, prior chains, late capture mutation and policy preservation.'},
+ {'domain':'Late capture and output protections','assessment':'Publisher retains complete source inventory/checkpoint/protected membership, exact original file identities, no-alias checks, old-path absence, complete receipt inventory and guarded backup checks through completion. The residual is ordering of the HEAD check within that whole recheck, not removal of other native guards. Partial failure recovery and standalone historical backup limits remain unchanged.'},
+ {'domain':'Policy and held-row evidence','assessment':'Old policy owner pins, suppression sidecar/baseline, historical history and exact untouched physical rows remain preserved. New integration tests retain all historical27 receipt, true Angust preimage and hold-lineage assertions. That test is a private mechanical fixture and bounded lineage proof, not whole semantic-release or real source acceptance.'},
+ {'domain':'Source interface fixes and residual','assessment':'Source now parses literal NUL paths against accepted baseline and checks HEAD around the diff at every live recheck. Old #1255 and ordinary #1256 failures are materially addressed; separate technical probes report Unicode/newline success and earlier ordinary drift refusals. Root staged-index-only counterexamples remain: net baseline/worktree diff misses unrelated index content restored in the working tree. This reviewer independently read actual index blobs and ran real completed verification on retained fixtures, confirming W08-21061-SRC-001.'},
+ {'domain':'Test changes and scope','assessment':'Publisher fixture now uses a genuine private Git baseline; original assertion content is unchanged. Integration explicitly isolates OPENCLAW_WORKSPACE; original assertions and held-lineage tests remain. Source1255 negatives changed to stronger no-output/no-owner-mutation checks at earlier refusal and to the accepted-baseline diff argument; full source test review remains independently assigned. No native thresholds, enums or scientific acceptance were changed by this review.'},
+]
+write('full-content-assessment.json',{'reviewed_head':archive['revision'],'assessments':assessments,
+ 'full_source_operator_review_claimed':False,'full_publisher_scope_assessed':True,'scientific_approval':False})
+findings={'reviewed_head':archive['revision'],'verdict':'needs_curation','findings':[
+ {'finding_id':'W08-21061-PUB-001','severity':'major','status':'open','path':'FINDING-W08-21061-PUB-001-v2.json','sha256':h(P/'FINDING-W08-21061-PUB-001-v2.json'),'relationship':'Independent real native publisher residual under1256; exact v1 and metadata-only locator v2 both preserved.'},
+ {'finding_id':'W08-21061-SRC-001','severity':'major','status':'open','path':'source-index-readback.json','sha256':h(P/'source-index-readback.json'),'relationship':'Root source residual independently confirmed through exact fixture/index-object/completed-verifier readback; separate from publisher finding.'}],
+ 'old_findings':'No issue is automatically closed. Original16c receipts remain immutable; this successor records partial correction and precise residuals only.','fixes_applied':False}
+write('findings.json',findings)
+names=['inspect_inputs.py','input-inspection.json','input-inspection.log','probe_native_boundaries.py','native-boundary-results.json','native-boundary.log','stage_probes.py','adversarial-results.json','stage-probes.log','source-index-readback.json','FINDING-W08-21061-PUB-001.json','FINDING-W08-21061-PUB-001-v2.json','test-accounting.json','full-content-assessment.json','findings.json','seal_review.py']
+bindings.update({str(P/name):h(P/name) for name in names})
+review={'status':'COMPLETE','verdict':'needs_curation','reviewed_head':archive['revision'],
+ 'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'worker08:/root/organics',
+ 'authors':'Publisher /root/step7d_independent_review; source /root/next23_context',
+ 'independence':'Did not author these implementations or authored tests. Previously reviewed exact16c code and demotion design; unchanged bodies are explicitly bound to the sealed prior full-content review, not approved by recollection. Prior TSB source authorship confers no approval here.',
+ 'input_hashes':bindings,'full_publisher_and_all_publication_tests_assessed':True,'all15_integration_cases_assessed':True,
+ 'unchanged_body_read_bridge':'Full16c reading is sealed in combined-16c-independent-v1/skeptic/review.json SHA08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1. Every exact final function/test body was compared; all changed and new publisher/integration/interface bodies were read now.',
+ 'independent_validation':{'actual_full_native_fixture_runs':2,'positive_full_native_paths_unmocked':True,'real_pinned_generator_runs':2,
+ 'new_negative_fault':'Actual Git commit after real final source-proof replay; unchanged real proof returned.','native_stage_probes':31,'native_stage_probes_passed':31,
+ 'root_staged_index_fixtures_read':4,'root_actual_index_and_completed_readback':True,
+ 'full458_suite_repeated':False,'authored_suite_results_claimed_as_own':False},
+ 'actual_test_accounting':{k:{x:y for x,y in v.items() if x!='rows'} for k,v in counts.items()},
+ 'open_blocking_findings':['W08-21061-PUB-001','W08-21061-SRC-001'],
+ 'conclusion':'Exact21061 remains needs_curation. The old ordinary source/publisher failures are partly corrected, and valid historical/derived behavior is retained, but a new native final-proof replay probe still completes across HEAD drift. Independently confirmed index-only source drift is a separate residual. No future fix is substituted for these bytes.',
+ 'limits':['Tiny private mechanical acceptance is not actual campaign source acceptance.','The negative wrapper injects concurrency but neither fabricates source proof nor replaces native generation.','No entire source implementation review is claimed here; technical agent owns that disjoint scope.','No full semantic-release rerun, source-science, owner-role, actual corpus-application or release approval.','No live network reads needed; exact coordinator capture of issue1256 comment6721136073 was inspected.'],
+ 'writes_scope':str(P),'source_or_gate_changes':False,'scientific_approval':False,'application_approval':False,'release_approval':False}
+write('review.json',review)
+write('HANDOFF.json',{'status':'SEALED','verdict':review['verdict'],'reviewed_head':archive['revision'],
+ 'review':{'path':str(P/'review.json'),'sha256':h(P/'review.json')},'findings':{'path':str(P/'findings.json'),'sha256':h(P/'findings.json')},
+ 'publisher_finding':{'path':str(P/'FINDING-W08-21061-PUB-001-v2.json'),'sha256':h(P/'FINDING-W08-21061-PUB-001-v2.json')},
+ 'native_results_sha256':h(P/'native-boundary-results.json'),'source_index_readback_sha256':h(P/'source-index-readback.json'),
+ 'all_old_packets_preserved':True,'no_fixes':True})
+print(json.dumps({'review_sha256':h(P/'review.json'),'handoff_sha256':h(P/'HANDOFF.json'),'findings_sha256':h(P/'findings.json'),'bound_inputs':len(bindings),'counts':review['actual_test_accounting']}))

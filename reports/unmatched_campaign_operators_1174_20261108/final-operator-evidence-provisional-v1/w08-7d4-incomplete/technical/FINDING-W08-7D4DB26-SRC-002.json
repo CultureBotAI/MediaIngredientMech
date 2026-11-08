@@ -1,0 +1,131 @@
+{
+  "finding_id": "W08-7D4DB26-SRC-002",
+  "native_predecessor_finding_id": "W08-16C-CODE-002",
+  "issue_key": "campaign-owner-apply-late-baseline-freshness",
+  "related_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+  "severity": "major",
+  "status": "open",
+  "reviewer": "/root/inorganics",
+  "reviewed_head": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "title": "Stable Git index flags hide unrelated tracked working-byte drift from the live source scope guard",
+  "description": "A tracked path outside the accepted owner operation can change after prepare and remain invisible to both diff commands when its index entry is marked assume-unchanged or skip-worktree. The flag is set before apply starts; no timing race or substituted native result is necessary. Actual source apply returns complete and verify_completed replays the completed proof. HEAD, accepted owner payloads and the flagged path’s baseline/index blob stay unchanged, while its working bytes are unauthorized. The ordinary unflagged working-byte mutation is refused before receipt reservation. This is separate from the late index snapshot-consistency window: merely pinning a stable flagged index does not make git diff a complete working-byte comparison.",
+  "locators": [
+    "src/mediaingredientmech/curate/campaign_owner_apply.py:956-972 (_check_mutation_git_state working-tree scope from git diff)",
+    "src/mediaingredientmech/curate/campaign_owner_apply.py:975-989 (cached changed-path enumeration does not enumerate unchanged-blob flagged entries)",
+    "src/mediaingredientmech/curate/campaign_owner_apply.py:1067 (_recheck invokes this live guard)"
+  ],
+  "reproduction": "Execute technical/index_flag_probes.py using Python -I -B. Each mode uses an authentic edit plan produced by frozen test helpers, adds and commits an ordinary unrelated baseline notes file, updates and binds the accepted baseline, and invokes real native prepare. The two late modes set a real index flag with git update-index, modify that file’s working bytes, and invoke real native apply/verify_completed. No frozen code or native function is replaced. Only isolated synthetic Git repositories are mutated.",
+  "controls": [
+    {
+      "mode": "ordinary_working_drift",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/flag-fixtures/ordinary_working_drift",
+      "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated tracked file changed"
+      },
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "baseline": "7a18b46034e71358b5ad73a6e92c2d31a62ad2cb",
+      "head": "7a18b46034e71358b5ad73a6e92c2d31a62ad2cb",
+      "path": "notes/unrelated-tracked.txt",
+      "baseline_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "index_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "working_sha256": "71d95e363b14dedf359744ccaaa4b6d076bfe76054f5f73a020e94b4ab2dc6c8",
+      "working_diff": "notes/unrelated-tracked.txt\u0000",
+      "cached_diff": "",
+      "actual_flags": "H notes/unrelated-tracked.txt\n",
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "native_function_replacements": false
+    },
+    {
+      "mode": "assume_unchanged",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/flag-fixtures/assume_unchanged",
+      "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+      "phase": "complete",
+      "error": null,
+      "receipt_state": "complete",
+      "receipt_sha256": "84d9c0e3e9b4b095d76e81189df25a50652e92acc228afb084b5df688a612df8",
+      "completed": true,
+      "baseline": "eec673380afe3597a824ebe243ce0509110cd04e",
+      "head": "eec673380afe3597a824ebe243ce0509110cd04e",
+      "path": "notes/unrelated-tracked.txt",
+      "baseline_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "index_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "working_sha256": "71d95e363b14dedf359744ccaaa4b6d076bfe76054f5f73a020e94b4ab2dc6c8",
+      "working_diff": "data/ingredients/mapped/Existing.yaml\u0000",
+      "cached_diff": "",
+      "actual_flags": "h notes/unrelated-tracked.txt\n",
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "native_function_replacements": false
+    },
+    {
+      "mode": "skip_worktree",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/flag-fixtures/skip_worktree",
+      "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+      "phase": "complete",
+      "error": null,
+      "receipt_state": "complete",
+      "receipt_sha256": "507c8856de671a110b86020543f2eda0f43732b87ffdbf1652fdd4f20584f2e6",
+      "completed": true,
+      "baseline": "72d63b13c8787272b6bd98d2a8082cc57a14abf8",
+      "head": "72d63b13c8787272b6bd98d2a8082cc57a14abf8",
+      "path": "notes/unrelated-tracked.txt",
+      "baseline_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "index_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "working_sha256": "71d95e363b14dedf359744ccaaa4b6d076bfe76054f5f73a020e94b4ab2dc6c8",
+      "working_diff": "data/ingredients/mapped/Existing.yaml\u0000",
+      "cached_diff": "",
+      "actual_flags": "S notes/unrelated-tracked.txt\n",
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "native_function_replacements": false
+    }
+  ],
+  "impact": "The operator claims only declared source changes were applied while an unrelated tracked working file is already changed. A later commit or publication may include that unreviewed change. This violates live application scope independently of scientific identity or historical verifier semantics.",
+  "bounded_fix_scope": "Either explicitly reject unsupported assume-unchanged/skip-worktree state at the relevant live boundaries, or prove the actual working bytes for flagged tracked paths against the accepted baseline with literal path handling, regular-file/path checks and coherent index state. Do not clear flags or rewrite the caller’s index as validation. Preserve legitimate staging of already-installed accepted owner endpoints and later-commit historical verification. Coordinate with the separate final-index consistency correction; a stable index alone is insufficient.",
+  "required_tests": [
+    "The exact two stable postprepare flag modes must refuse before owner mutation/receipt, with ordinary unflagged drift retained as a control.",
+    "Cover initially flagged baseline paths, later flag changes, flagged owned endpoints and literal paths without weakening independent source/proof checks.",
+    "If flagged state is supported instead of explicitly refused, demonstrate that unchanged real working bytes pass while changed real bytes fail despite identical HEAD/index blobs.",
+    "Retain all 301 old source cases and 53 index additions, plus positive installed-endpoint staging and historical completed verification."
+  ],
+  "lineage": "Additional reproducible diagnostic under the still-open W08-16C-CODE-002/#1256, alongside W08-7D4DB26-SRC-001. Original #1255 is not reopened. No GitHub mutation or code fix performed.",
+  "input_hashes": {
+    "technical/index_flag_probes.py": "0f008c4370567cdf0f8cc63fd16adb134c940a2dda17cacab39fb844415692df",
+    "technical/index-flag-results.json": "5bcc1298faad7528b7068f0a3f690d8491a3caeb9aab5c22af8eaea3f71897f9",
+    "technical/index-flag-command.log": "1e9848b676cb68ba547d55bf7a1eaa1158d9aa48466f9c4ec1ea13ea99af6a58",
+    "frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6"
+  },
+  "scientific_or_application_approval": false,
+  "fix_applied": false,
+  "created_at": "2026-11-08T12:30:23.360633+00:00"
+}

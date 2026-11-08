@@ -1,0 +1,41 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json
+W=Path.cwd();O=W/'.temp/pr1205-final-archive-subset-independent-v3';N=O/'native'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();load=lambda p:json.loads(p.read_text())
+c=load(O/'context-and-chronology.json');assert sha(O/'context-and-chronology.json')=='3bb09812be83e2cd89674bec86f51a08290e14fa329e5078ff0e84fc08b344b2'
+copies=[]
+def capture(p,name):
+ raw=p.read_bytes();q=N/'inputs/chronology'/name;q.parent.mkdir(parents=True,exist_ok=True)
+ with q.open('xb') as f:f.write(raw)
+ copies.append({'original_path':str(p),'copy_path':str(q.relative_to(W)),'sha256':sha(p),'accessed_at':datetime.now(timezone.utc).isoformat()})
+oldmap=Path(c['W02_original_locator']['explicit_addendum']['path']);assert sha(oldmap)==c['W02_original_locator']['explicit_addendum']['sha256']
+created=datetime.fromisoformat(load(oldmap)['at']);events=[]
+for i,r in enumerate(c['W02_filing_chronology']['publications']):
+ for k in ['receipt','readback','body']:
+  p=Path(r[k]['path']);assert sha(p)==r[k]['sha256'];capture(p,str(i)+'-'+k+p.suffix)
+ rec=load(Path(r['receipt']['path']));read=load(Path(r['readback']['path']));body=Path(r['body']['path']).read_text()
+ assert rec['returncode']==0 and rec['body_verified'] is True and rec['readback_sha256']==r['readback']['sha256']
+ assert body==read['body'] and read['html_url']==r['issue_url'] and read['created_at']==r['created_at']
+ events.append({'url':read['html_url'],'created_at':read['created_at'],'body_sha256':r['body']['sha256']})
+assert created < datetime.fromisoformat(events[0]['created_at']) < datetime.fromisoformat(events[1]['created_at'])
+a=Path(c['author_locator']['addendum']['path']);assert sha(a)==c['author_locator']['addendum']['sha256'];capture(a,'author-1259-LOCATOR-ADDENDUM.json');d=load(a)
+refs=[]
+def walk(x,pointer=''):
+ if isinstance(x,dict):
+  if 'absolute_path' in x and 'sha256' in x:
+   p=Path(x['absolute_path']);assert p.is_absolute() and sha(p)==x['sha256'];refs.append({'pointer':pointer,**x})
+  for k,v in x.items():walk(v,pointer+'/'+k)
+ elif isinstance(x,list):
+  for i,v in enumerate(x):walk(v,pointer+'/'+str(i))
+walk(d);assert len(refs)==21
+outer=load(Path(d['original_outer_handoff']['absolute_path']))
+for r in d['outer_locator_corrections']:
+ v=outer
+ for part in r['json_pointer'].strip('/').split('/'):v=v[part]
+ assert v==r['declared'];assert not (Path(r['declared_base'])/v).exists()
+ assert str(Path(r['effective_base'])/r['effective'])==r['target']['absolute_path']
+inner=load(Path(d['original_inner_handoff']['absolute_path']));assert sha(Path(d['inner_handoff_base']['base'])/inner['patch'])==d['inner_handoff_base']['patch']['sha256']
+out={'at':datetime.now(timezone.utc).isoformat(),'reviewer':'worker02 /root/research_c','scope':'Recorded chronology and exact locator context only; no fresh vote on old W02 map or source code.','root_context_sha256':sha(O/'context-and-chronology.json'),'source_copies':copies,'W02_addendum_created_at':load(oldmap)['at'],'actual_recorded_GitHub_events':events,'conclusion':'Local reporting preceded private addendum; GitHub filing followed addendum and later comment explicitly corrected original inaccurate sequence. Old bytes/pending-at-write wording remain historical.','actual_live_query':False,'author_locator_references':refs,'author_outer_original_bad_literals_preserved':2,'inner_patch_resolves_own_portable_base':True,'independence':'C authored prior native assembly. Root authored old W02 map. This is exact historical continuity/chronology, not renewed independent approval.','scientific_review':False}
+with (N/'chronology-readback-v1.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'copies':len(copies),'author_absolute_refs':len(refs),'sha256':sha(N/'chronology-readback-v1.json')}))

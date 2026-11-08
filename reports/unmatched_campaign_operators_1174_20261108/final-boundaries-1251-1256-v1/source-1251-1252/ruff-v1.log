@@ -1,0 +1,12 @@
+F402 Import `field` from line 28 shadowed by loop variable
+   --> /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py:712:17
+    |
+710 |         indexes: dict[tuple[str, Any], set[str]] = {}
+711 |         for path, data in records.items():
+712 |             for field, value in (
+    |                 ^^^^^
+713 |                 ("identifier", data.get("identifier")),
+714 |                 ("preferred name", str(data.get("preferred_term", "")).casefold()),
+    |
+
+Found 1 error.

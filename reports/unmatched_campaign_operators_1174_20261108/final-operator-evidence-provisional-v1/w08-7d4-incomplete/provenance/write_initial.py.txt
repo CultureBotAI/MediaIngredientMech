@@ -1,0 +1,23 @@
+import hashlib,json,datetime
+from pathlib import Path
+P=Path(__file__).resolve().parents[1]
+def read(n):return json.loads((P/n).read_text())
+def ref(n):return {'path':str(P/n),'sha256':hashlib.sha256((P/n).read_bytes()).hexdigest()}
+s=read('root-probes/staged-index-results.json');t=read('technical/initial-results.json');p=read('skeptic/INITIAL-PUBLISHER-RESIDUAL.json');new=read('index-window-probes/results.json')
+assert s['results'][0]['apply']=='complete' and s['results'][1]['prepare']=='REFUSED' and s['results'][2]['apply']=='REFUSED'
+assert t['status']=='PASS_EXPECTED_OUTCOMES' and p['status']=='PASS_ORIGINAL_PUBLISHER_RESIDUAL_REPLAY'
+assert not p['negative']['observed']['accepted'] and not p['negative']['native_receipt_nonempty'] and p['negative']['publication_log'] is None
+assert p['positive']['historical_validation']['status']=='verified'
+for group in ['positive','negative']:
+ root=Path(p[group]['fixture'])
+ for name,h in p[group]['artifacts'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==h
+ command=json.loads((root/'reports/native/command.json').read_text());assert command['returncode']==0
+ assert Path(command['environment']['OPENCLAW_WORKSPACE']).is_relative_to(root)
+assert all(x['observed']['accepted'] for x in new['results'][2:])
+d={'schema_version':1,'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_head':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','status':'ORIGINAL_RESIDUAL_REPLAYS_PASS_NEW_SOURCE_RESIDUAL_FOUND','initial_only':True,'final_approval':False,
+ 'original_SRC001':{'outcome':'Initial and postprepare hidden contract index changes refuse before writes or receipt; independent beforewrite/afterwrite/finalflush cases refuse with honest recovery.','root_replay':ref('root-probes/staged-index-results.json'),'independent_midflight':ref('technical/initial-results.json')},
+ 'original_PUB001':{'outcome':'Actual commit after real final source-proof replay refuses; native/publication success receipts empty. Actual pinnedClaw, source proofs, immutableJ27 history and private lock workspaces. Tracked derived positive/later historical verification supported; altered owner proof refused.','replay':ref('skeptic/INITIAL-PUBLISHER-RESIDUAL.json'),'root_independent_receipt_hash_check':True,'negative_historical_check':'Attempt to validate intentionally empty failed receipt gives JSONDecodeError, retained as expected failed proof, not a legitimate historical-positive failure.'},
+ 'new_source_residual':{'finding_id':'W08-7D4DB26-SRC-001','native_lineage':'W08-16C-CODE-002 / #1256 remains open','finding':ref('FINDING-W08-7D4DB26-SRC-001.json'),'actual_proof':ref('index-window-probes/results.json'),'outcome':'Real index mutation AFTER final cached enumeration, or AFTER actual owner blob read, escapes index validation and yields complete receipts with unchanged HEAD/working bytes. Technical and skeptical final confirmation in progress.','root_status':'Confirmed actual reproduction; original repaired examples do not imply readiness.'},
+ 'reviewers':{'source_root':'worker08:/root','source_midflight':'worker08:/root/inorganics','publisher_native':'worker08:/root/organics'},'scope':'Prompt initial result for coordinator validation scheduling only. Full code/tests/lineage/adversarial review and combined518 execution continue. No wholeplan/scientific/application/role/export approval; no fixes applied.'}
+with (P/'INITIAL-RESIDUAL-RESULTS.json').open('x') as o:json.dump(d,o,indent=2);o.write('\n')
+print(ref('INITIAL-RESIDUAL-RESULTS.json'))

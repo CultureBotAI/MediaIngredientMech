@@ -1,0 +1,33 @@
+"""Additional actual-native mode/stage negatives and harmless refresh/historical positive."""
+from pathlib import Path
+import hashlib,importlib.util,json,os,subprocess,sys,datetime
+D=Path(__file__).resolve().parent;C=D.parents[1];F=C/'integration/source-index-coherence1256-fix-v2/runtime/repo';O=D/'additional-native-controls';O.mkdir();sys.path[:0]=[str(F/'src'),str(F)]
+spec=importlib.util.spec_from_file_location('native_scope_fixture',F/'tests/test_campaign_owner_apply.py');fx=importlib.util.module_from_spec(spec);spec.loader.exec_module(fx);o=fx.owner
+h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();assert h(Path(o.__file__))=='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52'
+rows=[]
+for mode in ['index_mode_only','conflict_stage_only','literal_unrelated_path','stat_refresh_historical_positive']:
+ root=O/mode;root.mkdir();plan=fx.head_lifecycle_case(root,'edit');ready=fx.prepare(root);target=plan['records'][0]['source_record'];events=[];index_before=o.git(root,'ls-files','--stage','-z')
+ if mode=='index_mode_only':o.git(root,'--literal-pathspecs','update-index','--chmod=+x','--',target)
+ elif mode=='conflict_stage_only':
+  blob=o.git(root,'rev-parse',':'+target).decode().strip();subprocess.run(['git','-C',str(root),'update-index','-z','--index-info'],input=f'100644 {blob} 2\t{target}\0'.encode(),check=True,capture_output=True)
+ elif mode=='literal_unrelated_path':fx.stage_index_only_1256(root,'notes/Poly-ß\tline\n[literal]*.txt',b'unrelated')
+ state={'staged':False,'refreshed':False}
+ def profile(frame,event,arg):
+  if mode!='stat_refresh_historical_positive':return
+  if frame.f_code is o.finish_receipt.__code__ and event=='call' and not state['staged']:
+   o.git(root,'add','-A','--','data/ingredients');state['staged']=True
+  if state['refreshed'] or frame.f_code is not o.git.__code__ or event!='return' or frame.f_locals.get('args',())[:2]!=('diff','--cached'):return
+  receipt=root/'receipt/application.json'
+  if not receipt.exists() or not receipt.read_bytes() or json.loads(receipt.read_bytes()).get('state')!='complete':return
+  state['refreshed']=True;logical_before=o.git(root,'ls-files','--stage','-z');raw_before=(root/'.git/index').read_bytes();p=root/'MAPPING_SEMANTICS.md';s=p.stat();os.utime(p,ns=(s.st_atime_ns,s.st_mtime_ns+2_000_000_000));o.git(root,'update-index','--refresh');events.append({'raw_index_changed':raw_before!=(root/'.git/index').read_bytes(),'logical_tuple_unchanged':logical_before==o.git(root,'ls-files','--stage','-z')})
+ sys.setprofile(profile)
+ try:r=o.apply(ready,root/'receipt',enabled=True);observed={'accepted':True,'state':r['state']}
+ except Exception as e:observed={'accepted':False,'error':repr(e)}
+ finally:sys.setprofile(None)
+ row={'mode':mode,'observed':observed,'events':events,'receipt_exists':(root/'receipt/application.json').exists(),'HEAD_unchanged_during_apply':o.git(root,'rev-parse','HEAD').decode().strip()==plan['baseline_commit'],'original_index_sha256':hashlib.sha256(index_before).hexdigest(),'index_after_sha256':hashlib.sha256(o.git(root,'ls-files','--stage','-z')).hexdigest(),'native_functions_or_results_replaced':False}
+ if mode=='stat_refresh_historical_positive':
+  assert observed['accepted'] and events==[{'raw_index_changed':True,'logical_tuple_unchanged':True}];fx.late_git_commit(root,True);proof=o.verify_completed(root,root/'plan.json',root/'receipt/application.json');row['later_legitimate_commit_historical_verification']=proof['state'];assert proof['state']=='complete'
+ else:assert not observed['accepted'] and not row['receipt_exists']
+ rows.append(row)
+assert h(Path(o.__file__))=='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52'
+(D/'additional-controls.json').write_text(json.dumps({'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_sha256':h(Path(o.__file__)),'results':rows},indent=2)+'\n');print(json.dumps(rows,indent=2))

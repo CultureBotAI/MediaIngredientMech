@@ -1,0 +1,107 @@
+"""Seal completed private #1255 evidence; never applies the patch."""
+from pathlib import Path
+import datetime
+import hashlib
+import json
+import tarfile
+import xml.etree.ElementTree as ET
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+def read(path):
+    return json.loads(path.read_text())
+def save(name, value):
+    with (D / name).open("x") as stream:
+        json.dump(value, stream, indent=2, ensure_ascii=False)
+        stream.write("\n")
+def junit(name):
+    suites = ET.parse(D / name).getroot().iter("testsuite")
+    result = {key: 0 for key in ("tests", "errors", "failures", "skipped")}
+    for suite in suites:
+        for key in result:
+            result[key] += int(suite.get(key, "0"))
+    result["passed"] = result["tests"] - sum(result[key] for key in ("errors", "failures", "skipped"))
+    return result
+
+combined = junit("pytest-combined-v1.xml")
+integration = junit("pytest-integration-v2.xml")
+assert combined == {"tests": 360, "errors": 0, "failures": 0, "skipped": 9, "passed": 351}, combined
+assert integration == {"tests": 9, "errors": 0, "failures": 0, "skipped": 0, "passed": 9}, integration
+replay = read(D / "actual-w03/actual-w03-path-results.json")
+assert len(replay["results"]) == 4
+assert all(row["apply_and_verification"] == "prepare_apply_verify_completed_PASS" for row in replay["results"])
+changed = {"src/mediaingredientmech/curate/campaign_owner_apply.py", "tests/test_campaign_owner_apply.py"}
+archive_checks = []
+with tarfile.open(D / "baseline16c.tar") as archive:
+    for member in archive:
+        if not member.isfile():
+            continue
+        old = archive.extractfile(member).read()
+        current = (D / "portable" / member.name).read_bytes()
+        if member.name not in changed:
+            assert current == old, member.name
+        archive_checks.append({"path": member.name, "old_sha256": hashlib.sha256(old).hexdigest(),
+                               "current_sha256": hashlib.sha256(current).hexdigest(), "changed": current != old})
+assert {r["path"] for r in archive_checks if r["changed"]} == changed
+save("archive-preservation-final.json", {"files": archive_checks, "only_two_proposed_files_differ": True})
+original_inventory = read(C / "preflight/final-application-readiness-v1/complete-observation-v3/before-owner-inventory.json")["owners"]
+prefix = read(C / "preflight/final-application-readiness-v1/complete-observation-v3/receipt-prefix-1-27.json")
+preservation = {}
+for name in ("worktree", "curation-worktree", "release-worktree"):
+    root = C / "integration" / name
+    inventory = {str(p.relative_to(root)): sha(p) for category in ("mapped", "unmapped")
+                 for p in sorted((root / "data/ingredients" / category).glob("*.yaml"))}
+    assert inventory == original_inventory
+    assert all(sha(root / path) == expected["sha256"] for path, expected in prefix.items())
+    preservation[name] = {"direct_owner_files": len(inventory), "receipt_prefix_files": len(prefix), "unchanged": True}
+save("maintained-owner-receipt-preservation-final.json", preservation)
+hand = {
+    "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    "status": "AUTHOR_COMPLETE_PRIVATE_PATCH_PENDING_DISTINCT_REVIEW",
+    "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1255",
+    "base_commit": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+    "files": {path: sha(D / "portable" / path) for path in sorted(changed)},
+    "patch": {"path": "patch-v2.diff", "sha256": sha(D / "patch-v2.diff"), "apply_check": "PASS against exact private preimages"},
+    "preservation": read(D / "preservation-v1.json") | {"final_patch_sha256": sha(D / "patch-v2.diff")},
+    "checks": {"combined": combined, "separate_explicit_pinned_integration": integration,
+               "distinct_source_publication_integration_tests_passed": 360,
+               "new_parameterized_cases_included": 23,
+               "actual_W03_private_prepare_apply_completed_proofs": 4,
+               "ruff": "PASS", "black": "PASS", "mypy": "PASS",
+               "git_diff_whitespace_check": "No diagnostics; no-index exit1 reflects changed files"},
+    "test_environment": "Python3.13.2, existing T/env read-only; private cwd, --no-cov, disabled pytest cache, explicit private basetemp",
+    "integration_inputs": {"CLAW_ROOT": str(C.parents[1] / ".temp/kgm-unmapped-20261107/claw"),
+                           "CAMPAIGN_HISTORY_ROOT": str(C / "integration/curation-worktree")},
+    "scope": "Only final source-application Git pathname decoding; exact allowed-path scope and all existing owner/provenance/receipt guards retained.",
+    "actual_application": False,
+    "I_J_K_or_worker_writes": False,
+    "commits_pushes_GitHub_session_actions": False,
+    "scientific_approval": False,
+    "limitations": [
+        "The first combined run omitted optional native integration environment inputs and has9skips; all9 were separately rerun with exact Claw/history and passed. No zero-skip claim for that first run.",
+        "Genuine W03 proofs are bounded private two-owner fixtures with authentic published origins and normalized bytes; no complete campaign application or scientific review is inferred.",
+        "W04 independently established the original defect. This patch and replay are authored by the source operator author; distinct exact-successor review remains required.",
+        "Root separately reported a late-HEAD application finding under16c; this patch does not attempt to resolve it or claim whole-operator application readiness.",
+        "Intermediate patch-v1 has malformed path prefixes and is preserved only as a generation diagnostic; patch-v2 is the checked final patch."
+    ],
+}
+save("HANDOFF.json", hand)
+selected = []
+for path in sorted(D.rglob("*")):
+    if not path.is_file():
+        continue
+    rel = path.relative_to(D)
+    if any(part.startswith("pytest-") for part in rel.parts[:-1]) or "mypy-cache-v1" in rel.parts or ".git" in rel.parts:
+        continue
+    if rel.parts[0] == "portable" and str(Path(*rel.parts[1:])) not in changed:
+        continue
+    if rel.parts[0] == "before" and str(Path(*rel.parts[1:])) not in changed:
+        continue
+    if path.name == "MANIFEST.json" and path.parent == D:
+        continue
+    selected.append({"path": str(rel), "sha256": sha(path), "bytes": path.stat().st_size})
+save("MANIFEST.json", {"files": selected, "member_count": len(selected),
+                      "runtime_exclusions": "pytest fixture trees, mypy cache and private Git internals; retained on disk. Unchanged portable source is bound by baseline16c.tar and archive-preservation-final.json."})
+print(json.dumps({"handoff_sha256": sha(D / "HANDOFF.json"), "manifest_sha256": sha(D / "MANIFEST.json"), "members": len(selected)}))

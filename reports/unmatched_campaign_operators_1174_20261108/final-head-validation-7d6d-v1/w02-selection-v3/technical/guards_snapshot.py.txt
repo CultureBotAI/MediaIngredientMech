@@ -1,0 +1,253 @@
+"""Read-only independent archive-selection verifier; never copy/execute archive code."""
+from pathlib import Path, PurePosixPath
+from datetime import datetime, timezone
+from collections import Counter
+import hashlib
+import json
+import os
+import stat
+import subprocess
+import unicodedata
+
+T = Path(__file__).resolve().parent
+W = T.parents[2]
+C = W.parents[2]
+P = C / 'preflight/pr1205-evidence-archive-selection-v2'
+K = C / 'integration/release-worktree'
+HEAD = '21061aa532401398db70c59a596debf330f70744'
+SELECTION_SHA = '1f14ef2e3ee950fdf3c6b7fe8e8605d4c129aad9aae8ee10b3783890171dee44'
+ARCHIVE = 'reports/unmatched_campaign_operators_1174_20261108'
+DISPOSITIONS = {'copy_exact_bytes_when_authorized': 787, 'reuse_committed_archive': 148,
+                'reference_exact_committed_blob': 47, 'reuse_proposed_archive_bytes': 106}
+
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_bytes())
+
+
+def relative(value):
+    require(isinstance(value, str) and bool(value) and '\\' not in value and '\0' not in value, 'invalid relative path')
+    path = PurePosixPath(value)
+    require(not path.is_absolute() and '..' not in path.parts and str(path) == value and value != '.', 'noncanonical relative path')
+    return path
+
+
+def no_alias(path):
+    path = Path(path).absolute()
+    for item in [path, *path.parents]:
+        if item.exists() or item.is_symlink():
+            require(not item.is_symlink(), 'symlink alias in path')
+    require(path.resolve() == path, 'resolved path alias')
+    return path
+
+
+def regular_snapshot(path, expected_sha=None, expected_size=None):
+    path = no_alias(path)
+    before = path.lstat()
+    require(stat.S_ISREG(before.st_mode), 'input is not regular file')
+    require(before.st_nlink == 1, 'hardlinked input')
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+    with os.fdopen(fd, 'rb') as stream:
+        opened = os.fstat(stream.fileno())
+        require((opened.st_dev, opened.st_ino) == (before.st_dev, before.st_ino), 'input replaced at open')
+        raw = stream.read()
+    after = path.lstat()
+    require((before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) ==
+            (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns), 'input changed during read')
+    no_alias(path)
+    require(expected_sha is None or sha(raw) == expected_sha, 'content hash drift')
+    require(expected_size is None or len(raw) == expected_size, 'size mismatch')
+    return raw, {'sha256': sha(raw), 'bytes': len(raw), 'inode': after.st_ino, 'link_count': after.st_nlink}
+
+
+def destination(base, archive_path, root):
+    base = relative(base); path = relative(archive_path)
+    require(path.is_relative_to(base) and path != base, 'destination outside selected archive')
+    require(path.parts[:1] == ('reports',), 'destination not report-only')
+    require('.git' not in path.parts and '__pycache__' not in path.parts, 'forbidden archive path component')
+    require(path.suffix not in {'.py', '.pyc', '.pyo'}, 'active Python destination')
+    no_alias(Path(root) / str(path))
+    return str(path)
+
+
+def copy_index(entries, base, root):
+    result = {}; folded = set()
+    for row in entries:
+        if row['disposition'] != 'copy_exact_bytes_when_authorized':
+            continue
+        path = destination(base, row['archive_path'], root)
+        key = unicodedata.normalize('NFC', path).casefold()
+        require(path not in result and key not in folded, 'duplicate or case/normalization-colliding destination')
+        require(not (Path(root) / path).exists(), 'proposed copy destination already exists')
+        if row['packet_relative_path'].endswith('.py'):
+            require(path.endswith('.py.txt'), 'Python source must archive as py.txt')
+        result[path] = row; folded.add(key)
+    return result
+
+
+def reused_target(row, copies):
+    require(row['archive_path'] in copies, 'reuse target missing from selected new copies')
+    target = copies[row['archive_path']]
+    require((row['sha256'], row['bytes']) == (target['sha256'], target['bytes']), 'dedupe target content differs')
+    return target
+
+
+class GitRead:
+    def __init__(self, root):
+        self.root = Path(root); self.trees = {}; self.blobs = {}; self.checked = []
+
+    def git(self, *args):
+        return subprocess.check_output(['git', '-C', str(self.root), *args],
+            env={**os.environ, 'GIT_OPTIONAL_LOCKS': '0'}, stderr=subprocess.PIPE)
+
+    def tree(self, commit):
+        require(isinstance(commit, str) and len(commit) == 40 and all(c in '0123456789abcdef' for c in commit), 'invalid full Git commit')
+        if commit not in self.trees:
+            rows = {}
+            for entry in self.git('ls-tree', '-r', '-z', commit).split(b'\0'):
+                if not entry: continue
+                meta, path = entry.split(b'\t', 1); mode, kind, oid = meta.decode().split()
+                rows[path.decode()] = (mode, kind, oid)
+            self.trees[commit] = rows
+        return self.trees[commit]
+
+    def check(self, ref):
+        path = str(relative(ref['path'])); tree = self.tree(ref['commit'])
+        require(path in tree, 'Git path absent at pinned commit')
+        mode, kind, oid = tree[path]
+        require(kind == 'blob' and mode in {'100644','100755'}, 'Git proof is not regular blob')
+        require(oid == ref['git_blob'], 'Git blob id mismatch')
+        if oid not in self.blobs: self.blobs[oid] = self.git('cat-file', 'blob', oid)
+        raw = self.blobs[oid]
+        require(sha(raw) == ref['sha256'] and len(raw) == ref['bytes'], 'Git blob byte/size mismatch')
+        row = {**ref, 'mode': mode, 'status': 'PASS'}; self.checked.append(row)
+        return raw, row
+
+
+def manifest_members(obj):
+    rows = obj.get('files', obj.get('members', []))
+    if isinstance(rows, dict):
+        return [{'path': key, 'sha256': val if isinstance(val, str) else val.get('sha256')} for key,val in rows.items()]
+    return rows if isinstance(rows, list) else []
+
+
+def run():
+    selection_raw, _ = regular_snapshot(P/'proposal-v4/SELECTION.json', SELECTION_SHA)
+    selected = json.loads(selection_raw); entries = selected['entries']
+    require(len(entries) == 1088 and dict(Counter(r['disposition'] for r in entries)) == DISPOSITIONS, 'selection denominator/dispositions differ')
+    require(len({r['original_path'] for r in entries}) == 1088, 'duplicate original source reference')
+    require(selected['git_evidence_head'] == HEAD, 'selection Git head differs')
+    packets = {r['id']: r for r in read(P/'PACKETS.json')}
+    require(len(packets) == 30 and {r['packet']for r in entries} == set(packets), 'packet population differs')
+    git = GitRead(K); observed_head = git.git('rev-parse','HEAD').decode().strip()
+    status_before = git.git('status','--porcelain=v1','-z').hex()
+    copies = copy_index(entries, selected['archive_base'], K)
+    rows = []; source_inputs = []; proposed_python = 0
+    for i,row in enumerate(entries):
+        packet_root = C/packets[row['packet']]['root']
+        require(str(packet_root) == row['packet_root'], 'packet root identity differs')
+        rel = relative(row['packet_relative_path']); original = packet_root/str(rel)
+        require(str(original) == row['original_path'], 'original/relative source path differs')
+        raw, fact = regular_snapshot(original, row['sha256'], row['bytes'])
+        disposition = row['disposition']; target = None
+        if disposition in {'copy_exact_bytes_when_authorized','reuse_proposed_archive_bytes'}:
+            path = destination(selected['archive_base'], row['archive_path'], K)
+            if disposition == 'reuse_proposed_archive_bytes':
+                reused = reused_target(row,copies); target = {'archive_path':path, 'selected_original_copy':reused['original_path']}
+            else:
+                target = {'archive_path':path,'absent_at_review':True}
+                proposed_python += int(str(original).endswith('.py'))
+        else:
+            require(disposition in {'reference_exact_committed_blob','reuse_committed_archive'}, 'unknown disposition')
+            target_raw, checked = git.check(row['target'])
+            require(target_raw == raw, 'source/Git target exact byte difference')
+            if disposition == 'reuse_committed_archive':
+                require(row['target']['commit'] == HEAD and str(relative(row['target']['path'])).startswith(ARCHIVE+'/'), 'reuse target not pinned existing archive')
+                regular_snapshot(K/row['target']['path'], row['sha256'], row['bytes'])
+            target = checked
+        rows.append({'index':i,'packet':row['packet'],'original_path':str(original), 'packet_relative_path':str(rel),
+                     'sha256':fact['sha256'],'bytes':fact['bytes'],'disposition':disposition,'target':target,
+                     'inode_matches_selection':fact['inode']==row['inode'],'link_count':fact['link_count'],'status':'PASS'})
+        source_inputs.append({'path':str(original),'sha256':fact['sha256'],'bytes':fact['bytes']})
+    # Full existing 1174 archive, including its issue1214 subtree: direct ignored-
+    # inclusive traversal is compared against exact pinned Git, not .gitignore.
+    baseline = read(P/'GIT-REFERENCES.json'); archive_refs = baseline['archive_content_map']
+    tree = git.tree(HEAD)
+    expected = {p:(m,k,o)for p,(m,k,o)in tree.items()if p.startswith(ARCHIVE+'/')}
+    require(len(expected)==len(archive_refs)==310 and set(expected)=={r['path']for r in archive_refs}, 'existing archive baseline inventory differs')
+    physical = {}; aliases=[]
+    for top, dirs, files in os.walk(K/ARCHIVE, followlinks=False):
+        for name in dirs+files:
+            p=Path(top)/name
+            if p.is_symlink(): aliases.append(str(p.relative_to(K)))
+        dirs[:]=[name for name in dirs if not (Path(top)/name).is_symlink()]
+        for name in files:
+            p=Path(top)/name
+            if not p.is_symlink():physical[str(p.relative_to(K))]=p
+    require(not aliases and set(physical)==set(expected), 'physical existing archive added/missing/aliased paths')
+    archive=[]
+    for ref in archive_refs:
+        raw, checked=git.check(ref); actual,_=regular_snapshot(physical[ref['path']],ref['sha256'],ref['bytes'])
+        require(raw==actual,'existing archive changed');archive.append(checked)
+    # Check every exact historical reference retained in original metadata, even
+    # four references no longer selected by the narrowed v4 subset.
+    all_git_refs=[]
+    for ref in baseline['referenced_code_blobs']:
+        _,checked=git.check(ref);all_git_refs.append(checked)
+    # Independently enumerate all joins from selected manifest full values.
+    bypath={r['original_path']:r for r in entries};joins=[]
+    for row in entries:
+        path=Path(row['original_path'])
+        if 'MANIFEST' not in path.name or path.suffix!='.json':continue
+        for member in manifest_members(read(path)):
+            if not isinstance(member,dict)or not isinstance(member.get('path'),str)or not isinstance(member.get('sha256'),str):continue
+            target=str(path.parent/member['path'])
+            if target in bypath:
+                joins.append({'manifest':str(path),'manifest_sha256':row['sha256'],'member':member['path'],'selected_original_path':target,
+                              'declared_sha256':member['sha256'],'actual_sha256':bypath[target]['sha256'],'matches':member['sha256']==bypath[target]['sha256']})
+    mismatches=[r for r in joins if not r['matches']]
+    require(len(joins)==958 and len(mismatches)==1,'unexpected selected manifest join/mismatch population')
+    technical=C/'workers/w04/worktree/.temp/rejection-fix-independent-v1/technical'
+    mismatch=mismatches[0]
+    require(mismatch['manifest']==str(technical/'MANIFEST.json') and mismatch['member']=='finalize-review.log'
+            and mismatch['declared_sha256']=='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+            and mismatch['actual_sha256']=='b80915417573e8e0b3509a033dc09c0bcf205c74d5ed60850eeab582698f73e2','historical mismatch is not exact known finding')
+    seal=read(technical/'SEAL-v2.json');lineage=[]
+    for key,leaf in [('manifest','MANIFEST-v2.json'),('supersedes_seal','SEAL.json'),('packaging_observation','packaging-observation-v1.json')]:
+        raw,fact=regular_snapshot(technical/leaf,seal[key]['sha256']);lineage.append({'path':str(technical/leaf),**fact})
+        require(str(technical/leaf)in bypath,'supersession support missing from selected references')
+    active=manifest_members(read(technical/'MANIFEST-v2.json'))
+    require(next(r['sha256']for r in active if r['path']=='finalize-review.log')==mismatch['actual_sha256'],'active historical manifest does not bind final log')
+    require(str(technical/'SEAL-v2.json')in bypath,'active historical seal omitted')
+    require(not (K/selected['archive_base']).exists(),'proposed archive already exists at review')
+    # Final selected source and full old archive readback; recheck actual bytes,
+    # not only names or an inherited summary. No preserved input is edited.
+    for row in source_inputs:regular_snapshot(row['path'],row['sha256'],row['bytes'])
+    for row in archive:regular_snapshot(K/row['path'],row['sha256'],row['bytes'])
+    require(git.git('rev-parse','HEAD').decode().strip()==observed_head and git.git('status','--porcelain=v1','-z').hex()==status_before,'K changed during review')
+    return {'at':datetime.now(timezone.utc).isoformat(),'reviewer':'worker02 /root/research_b','scientific_review':False,
+        'selection_sha256':SELECTION_SHA,'source_scope':'Full1088 exact selected references; no omitted original members rehashed or full-packet completeness claimed.',
+        'pinned_git_head':HEAD,'observed_local_K_head':observed_head,'observed_K_status_hex':status_before,'K_head_and_status_unchanged':True,
+        'counts':{'references':len(rows),'packets':len(packets),'dispositions':dict(Counter(r['disposition']for r in rows)),
+                  'new_files':len(copies),'new_bytes':sum(r['bytes']for r in copies.values()),'new_python_py_txt':proposed_python,
+                  'existing_archive':len(archive),'existing_issue1214_subtree':sum('/issue1214/'in r['path']for r in archive),
+                  'existing_other1174_subtree':sum('/issue1214/'not in r['path']for r in archive),'all_historical_git_reference_rows':len(all_git_refs),
+                  'selected_manifest_joins':len(joins),'exact_manifest_joins':len(joins)-len(mismatches),'historical_superseded_mismatches':1},
+        'reference_results':rows,'existing_archive_results':archive,'all_historical_git_refs':all_git_refs,
+        'selected_manifest_joins':joins,'historical_supersession':{'mismatch':mismatch,'seal_v2_path':str(technical/'SEAL-v2.json'),
+        'seal_v2_sha256':sha((technical/'SEAL-v2.json').read_bytes()),'bindings':lineage,'interpretation':'Existing authoritative successor preserves original stale manifest and binds completed log; no original rewrite or new mismatch tolerated.'},
+        'ignored_files_included':True,'source_rechecked_at_end':True,'archive_rechecked_at_end':True,
+        'archive_copy_or_script_execution':False,'gate_or_code_application_approval':False,'findings':[]}
+
+
+if __name__=='__main__':
+    print(json.dumps(run(),indent=2,ensure_ascii=False))

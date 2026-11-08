@@ -1,0 +1,65 @@
+"""Compare exact historical validator ASTs on immutable independent fixtures.
+
+This is an isolated record-stage comparison, not prepare/application of a
+historical producer. The positive final producer was already exercised through
+real native prepare, apply and completed replay by the independent harness.
+"""
+from pathlib import Path
+import ast
+import json
+import hashlib
+from mediaingredientmech.curate import campaign_owner_apply as owner
+
+T = Path(__file__).resolve().parent
+O = T.parent
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def historical_function(path):
+    source = path.read_bytes()
+    node = next(n for n in ast.parse(source).body if isinstance(n, ast.FunctionDef) and n.name == '_validate_records')
+    namespace = dict(vars(owner))
+    exec(compile(ast.Module(body=[node], type_ignores=[]), str(path), 'exec'), namespace)
+    return namespace['_validate_records'], sha(source)
+
+
+def main():
+    parent, parent_sha = historical_function(O / 'inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py')
+    draft, draft_sha = historical_function(O / 'inputs/author-packet/equality-draft-v1/campaign_owner_apply.py')
+    rows = []
+    choices = [
+        ('parent', parent, parent_sha, 'identifier-pair-both-reverse', 'Final proposed owners collide'),
+        ('parent', parent, parent_sha, 'unique-mapped-rejected', 'Owner category differs'),
+        ('equality-draft', draft, draft_sha, 'identifier-pair-reduction-single', 'change an inherited collision family'),
+        ('equality-draft', draft, draft_sha, 'identifier-triple-reduction-all', 'change an inherited collision family'),
+        ('equality-draft', draft, draft_sha, 'name-pair-reduction-single', 'change an inherited collision family'),
+        ('equality-draft', draft, draft_sha, 'name-triple-reduction-all', 'change an inherited collision family'),
+    ]
+    for label, fn, source_hash, scenario, expected in choices:
+        root = T / 'independent-reduction-fixtures-v1' / scenario
+        plan = json.loads((root / 'plan.json').read_bytes())
+        before_hashes = json.loads((root / plan['before_inventory']['path']).read_bytes())['owners']
+        before = {p: owner.git(root, 'show', plan['baseline_commit'] + ':' + p) for p in before_hashes}
+        assert {p: sha(b) for p, b in before.items()} == before_hashes
+        payloads = {op['operation_id']: (root / op['after_capture']['path']).read_bytes() for op in plan['records']}
+        original_inventory = owner.hashes(owner.inventory(root))
+        owner._validate_records(root, plan['records'], payloads, before)
+        try:
+            fn(root, plan['records'], payloads, before)
+        except ValueError as error:
+            assert expected in str(error), str(error)
+            rows.append({'historical_producer': label, 'historical_source_sha256': source_hash, 'scenario': scenario, 'exact_final_record_stage': 'PASS', 'historical_record_stage': 'REFUSED', 'refusal': str(error), 'isolated_AST_function_only': True})
+        else:
+            raise AssertionError('Historical counterexample did not fail: ' + scenario)
+        assert owner.hashes(owner.inventory(root)) == original_inventory
+    path = T / 'predecessor-sensitivity-v1.json'
+    assert not path.exists()
+    path.write_text(json.dumps({'status': 'PASS_SENSITIVITY_TO_ORIGINAL_AND_DRAFT_DEFECTS', 'comparison_count': len(rows), 'rows': rows, 'historical_prepare_apply_claimed': False, 'existing_fixture_bytes_unchanged': True}, indent=2) + '\n')
+    print('PASS historical sensitivity', len(rows))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,54 @@
+{
+  "finding_id": "W08-21061-PUB-001",
+  "issue_key": "publisher-final-proof-head-freshness",
+  "related_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+  "severity": "major",
+  "status": "open",
+  "at": "2026-11-08T12:06:30.973819+00:00",
+  "reviewed_commit": "21061aa532401398db70c59a596debf330f70744",
+  "title": "Final source-proof replay can outlive the last live publisher HEAD check",
+  "target": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/frozen/repo/src/mediaingredientmech/campaign_publication.py",
+  "locators": [
+    "campaign_publication.py:924-940 (registers HEAD callback)",
+    "campaign_publication.py:1247-1273 (recheck checks capture then source proof and remaining state)",
+    "campaign_publication.py:1305-1307 (finish receipt then final recheck and complete return)"
+  ],
+  "reproduction": "Run the retained probe with the frozen21061 source and actual pinned Claw76c. The independent negative wrapper calls the real _owner_proof and returns its unchanged result. During the second such call after the publication log has been flushed as complete, make a real private Git commit. This happens in the final live recheck after its capture.verify HEAD check. publish returns complete and both publication/native receipts remain nonempty although actual HEAD differs from accepted source baseline.",
+  "actual": {
+    "baseline": "735d978b68326d5e7f66321b920e87594014a9b0",
+    "head_at_return": "73c6156b2fdd04e84c2424ba4fd7dc361bf8f059",
+    "publication_status": "complete",
+    "publication_receipt_status": "complete",
+    "native_receipt_nonempty": true
+  },
+  "cause": "The registered HEAD check runs at the beginning of capture.verify. Live recheck subsequently performs the substantial source-proof replay and other checks without checking HEAD again at its completion. The added preflight/final-callback coverage therefore does not retain freshness through the entire final recheck.",
+  "bounded_fix": "Retain the live transaction HEAD check through the end of the live recheck after actual source-proof replay and remaining validation, before final success return. Keep the historical completed validator exempt and do not restrict ordinary uncommitted derived synchronization or weaken existing content/proof checks.",
+  "acceptance_tests": [
+    "Actual source and pinned generation positive with tracked uncommitted derived sync remains complete.",
+    "Inject a real HEAD-changing commit after real source-proof replay during the final live publication recheck; publication must fail and clear success-shaped receipts, retaining recovery evidence.",
+    "Historical validate after a legitimate later commit still verifies exact required bytes; modified current owner/receipt/native proof still refuses."
+  ],
+  "fault_injection_disclosure": "Negative wrapper only schedules the private commit after the real proof; no fabricated source proof, native generation, receipt maker, or positive-path gate is substituted. This is a tiny private mechanical fixture, not actual campaign application or scientific admission.",
+  "prior_finding_relationship": "Residual implementation gap in #1256 publisher correction, not a renewed blanket current-HEAD requirement on historical verification.",
+  "source_and_generator_actual": true,
+  "input_hashes": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/probe_native_boundaries.py": "4bb35988d438ec181deefb8bdf198b8689da357dc298a437701653c54f8417bb",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/native-boundary-results.json": "6f26de0d1aedac258eed89d4498be53d04e4f119f7425f0c73592429095e6ab6",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/native-boundary.log": "5bbc7617e4fc74adeb3ff37e085cc0c64916c1314b2cde279fca42ae483a7d6c",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/frozen/repo/src/mediaingredientmech/campaign_publication.py": "5abfc833c8b52ab1d83a13cf1cdfb67b8c325afc354d015b1e09e42e6ed0a60c",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/reports/publication-input/plan.json": "f7a0cc49d0d326eceb5bd33998b290ed982e780502ad9338dbfaa8c94bcda716",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/reports/publication/publication.json": "43c9d28bb9a8acd51956e45587ad187724c69870f03902c29bf4cf77cca016d4",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json": "c47d81e83e6a30e46f5783a4010b9a31b8bfe6c55a765850721a1af2eb254558",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/source-receipt/application.json": "ad54814c9ee97a074b1db9021a43b33efd4bc7321b8c57e5e1a3b2ef6c08e14d",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/reports/native/generation.json": "ffde12a6c8cad51b666da7465520e5887996adba4ea685aaa5936ff740ea1f8f",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/reports/native/command.json": "d7539147fecf5c648a9c8a14d085f25399df24e062aea622fcc86c0e4580eb4c",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/skeptic/fixtures/late-head-inside-final-source-proof/reports/native/command.log": "24cd5f019c3fbcc1f8602d68d12ad739e4c1d338d3c379b8ee2d69a3d6f07e90"
+  },
+  "fix_applied": false,
+  "scientific_or_application_approval": false,
+  "supersedes_metadata": {
+    "path": ".temp/final-21061-independent-v1/skeptic/FINDING-W08-21061-PUB-001.json",
+    "sha256": "ca75b211c941b042bec32facec7188d9d4fe0bf6ae69881372830ef3a32f6961",
+    "change": "Precise final-recheck source locator only; finding and evidence unchanged."
+  }
+}

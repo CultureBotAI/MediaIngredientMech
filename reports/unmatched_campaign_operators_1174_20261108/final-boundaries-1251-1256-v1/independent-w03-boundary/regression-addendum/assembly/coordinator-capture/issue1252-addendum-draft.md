@@ -1,0 +1,20 @@
+The complete current record-stage preflight found a regression in the #1252 implementation at PR #1205 head `d691c079cf3923daed89284b7579913b84c3a34c`: the new check runs when either the old or new status is `REJECTED`, then requires both statuses to be `REJECTED`. This rejects two genuine, previously supported same-path `UNMAPPED → REJECTED` retirements. Neither is a revival, a new owner, a relocation, or an identity/name change.
+
+The two exact current W03 origins are:
+
+| Proposal | Authentic unmapped owner | Before SHA-256 | Current original payload SHA-256 |
+|---|---|---|---|
+| `c-generic-polymer-tombstone` | `Poly-ß-hydroxybutyric_Acid.yaml` (`UNMAPPED_0493`) | `6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640` | `5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2` |
+| `c-r-polymer-tombstone` | `PolyR-3-hydroxybutyric_Acid.yaml` (`UNMAPPED_0494`) | `f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8` | `64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5` |
+
+Both origins are pinned to published W03 head `784ee2541506c914b4c34f091de688d39784d548`. Both preserve the exact identifier, preferred name, source/destination path and complete ordered history prefix. The independently preserved serialization successors used by the diagnostic have equal parsed objects: `c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f` and `33c80accdc68562e600e06b0d3abd7be4fc8b2e2d37d8bba01ad3865f65b0cdb`; that normalization packet still awaits its separate review.
+
+The exact original `_validate_records` function, extracted unchanged from source SHA-256 `4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca`, accepts each retirement against the full 2,956-owner before inventory. The current function (source SHA-256 `4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70`) refuses both with `Rejected owner requires same-path, same-key rejected maintenance`.
+
+The bounded complete diagnostic keeps all 933 selected operations and original candidate bytes in every call; reordering only exposes first-error boundaries. It found these two refusals. With those operations last, the other 931 per-record validations were traversed before reaching a known refusal. This is still a failed record-stage diagnostic, not a successful full prepare or scientific/application approval. The full projected catalog adds no collision pairs and removes 12 existing pairs.
+
+All 933 status/kind combinations were inventoried: 594 mapped creates; 249 mapped-to-mapped edits; three rejected-to-rejected mapped-path maintenance edits; two unmapped-to-rejected same-path edits; 18 unmapped-to-unmapped edits; and 67 unmapped-to-mapped promotions. There are no new rejected creates or other status transitions in this selected cohort. The report-only ten-vitamin action, scientifically held TSB promotion, and separately unsupported Angustmycin demotion are explicitly outside this bounded owner-operation selection; they were not silently made to pass.
+
+Requested correction: preserve the previously supported, genuine same-path, identity/name-preserving rejection of an existing unmapped owner, while retaining the #1252 refusal of rejected-owner revival, replacement, relocation and new-owner evasion. Keep all schema, authentic preimage, published-origin, history-prefix, no-op, full-catalog collision and publication guards. Add real prepare/application/completed-verifier parity coverage for valid retirement and negative wrong operation/path/preimage/history/identity cases. No new rejected-create allowance or unrelated status exception is inferred from this finding. Rerun the same full cohort after the repair, rather than stopping at the first formerly failing case.
+
+Evidence is preserved under `.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/`: `remaining-native-boundaries.json`, `old-rejection-counterexample.json`, `status-kind-inventory.json`, the exact input pins, original failed log and complete selection. No maintained owner, source proposal, Git history or application receipt was changed by these probes.

@@ -1,0 +1,45 @@
+from pathlib import Path
+import datetime,hashlib,json,os,subprocess,tarfile
+R=Path.cwd();C=R.parents[2];O=R/'.temp/rejection-fix-independent-v1';F=O/'frozen-head';P=C/'integration/native-rejection-regression-fix-v1';D=C/'integration/native-boundary-full-candidate-probe-v1';HEAD='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b';PARENT='d691c079cf3923daed89284b7579913b84c3a34c';env=dict(os.environ,GIT_OPTIONAL_LOCKS='0')
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def git(*args):return subprocess.check_output(['git',*args],env=env)
+def put(p,b):
+    p.parent.mkdir(parents=True,exist_ok=True)
+    if p.exists():assert p.read_bytes()==b,p
+    else:p.write_bytes(b)
+def save(p,obj):put(p,(json.dumps(obj,indent=2,ensure_ascii=False)+'\n').encode())
+assert git('show','-s','--format=%P',HEAD).decode().strip()==PARENT
+tops=git('ls-tree','--name-only',HEAD).decode().splitlines();excluded={'reports','reviews','ATTIC'};included=[x for x in tops if x not in excluded]
+assert F.is_dir() # Archive already extracted by v1; rehash all members from exact Git blobs.
+tree=git('ls-tree','-r','-l','-z',HEAD).decode().rstrip('\0').split('\0');members=[]
+for line in tree:
+    meta,name=line.split('\t',1);mode,kind,oid,size=meta.split()
+    if name.split('/')[0] in excluded:continue
+    p=F/name
+    if kind!='blob':continue
+    b=os.readlink(p).encode() if p.is_symlink() else p.read_bytes()
+    assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==oid,name
+    members.append({'path':name,'git_blob':oid,'git_mode':mode,'sha256':sha(b),'bytes':len(b),'symlink':p.is_symlink()})
+paths=['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py']
+required=['14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f','2ede1b72bd369898f2ed99f093ec0700da404a9a85342ea2f15883e29eb272ce']
+for path,h in zip(paths,required):
+    assert sha((F/path).read_bytes())==h
+    put(O/'inputs/parent'/path,git('show',PARENT+':'+path))
+put(O/'inputs/exact-parent-to-head.patch',git('diff','--binary',PARENT,HEAD))
+authorpins={'HANDOFF.json':'80431c847f1f1d176a38e2d9a661f23ee72c4000f31c4204d5b1a36835182ea3','MANIFEST.json':'0a3416a54b35e579c2d5dd13468761a4145ae90820d1ab1fb3af0306603e209b'}
+for name,h in authorpins.items():assert sha((P/name).read_bytes())==h
+author=json.loads((P/'MANIFEST.json').read_text());author_members=[]
+for name,h in author['files'].items():
+    b=(P/name).read_bytes();assert sha(b)==h;put(O/'inputs/author-packet'/name,b);author_members.append({'path':name,'sha256':h})
+for name in ['HANDOFF.json','MANIFEST.json']:put(O/'inputs/author-packet'/name,(P/name).read_bytes())
+diagnostic=json.loads((D/'MANIFEST.json').read_text());diagnostic_members=[]
+for name,h in diagnostic['files'].items():
+    b=(D/name).read_bytes();assert sha(b)==h;put(O/'inputs/prior-933-probe'/name,b);diagnostic_members.append({'path':name,'sha256':h})
+for name in ['HANDOFF.json','MANIFEST.json']:
+    if (D/name).is_file():put(O/'inputs/prior-933-probe'/name,(D/name).read_bytes())
+previous=R/'.temp/native-payload-normalization-independent-v1';m=json.loads((previous/'MANIFEST.json').read_text())
+for f in m['files']:assert sha((previous/f['path']).read_bytes())==f['sha256']
+source_head=git('rev-parse','HEAD').decode().strip();status=git('status','--short').decode();assert source_head=='7cc3c2540fd1b55281c6f5551f13a90a1e7916b1' and not status
+save(O/'FROZEN-HEAD-MANIFEST.json',{'head':HEAD,'parent':PARENT,'source':'Exact git archive and per-member git-blob rehash from W04read-onlysharedobjectstore. No mutableI read or imports.','scope':'All committed top-level paths except unrelated historical reports/reviews/ATTIC. Allsrc,tests,scripts,schemas,config,docs,data,mappings and declared native producers captured. Any additional needed excluded input must be read by exact Gitblob, never mutableI.','excluded_top_level':sorted(excluded),'root':str(F),'members':members,'member_count':len(members),'bytes':sum(x['bytes'] for x in members)})
+save(O/'PINNED-INPUTS.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewed_head':HEAD,'reviewed_parent':PARENT,'operator_sha256':required[0],'test_sha256':required[1],'frozen_root':str(F),'frozen_manifest_sha256':sha((O/'FROZEN-HEAD-MANIFEST.json').read_bytes()),'author_pins':authorpins,'author_members':author_members,'prior_probe_manifest_sha256':sha((D/'MANIFEST.json').read_bytes()),'prior_probe_members':diagnostic_members,'previous_normalization_packet':{'root':str(previous),'manifest_sha256':sha((previous/'MANIFEST.json').read_bytes()),'seal_sha256':sha((previous/'SEAL.json').read_bytes()),'portable_members_rehashed':len(m['files'])},'own_head':source_head,'own_status':status,'application':False,'scientific_approval':False,'mutableI_not_selected':True})
+print(json.dumps({'frozen_root':str(F),'head':HEAD,'parent':PARENT,'frozen_files':len(members),'bytes':sum(x['bytes'] for x in members),'author_members':len(author_members),'probe_members':len(diagnostic_members),'prior_normalization_members':len(m['files'])},indent=2))

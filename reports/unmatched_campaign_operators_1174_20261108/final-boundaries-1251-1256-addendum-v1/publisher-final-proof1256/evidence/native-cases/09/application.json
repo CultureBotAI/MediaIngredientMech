@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "operation": "apply_reviewed_campaign_owners",
+  "state": "complete",
+  "approval": "NONE: source application only; no scientific or mapping approval transfers",
+  "plan": {
+    "path": "plan.json",
+    "sha256": "0faebf50127173f1f3b923138f95658ef2477ae7ccbbc0dc0317d3e40af2d11e"
+  },
+  "acceptance": {
+    "path": "acceptance.json",
+    "sha256": "071f33048aba4b10406b3a367236855f299beaa3163d5548b6a639d968673a78"
+  },
+  "baseline_commit": "66738dfd06feed49653f21ccd2100dbca74a63e1",
+  "before_inventory": {
+    "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+    "data/ingredients/mapped/Untouched.yaml": "27efd932bf32b1d1213bd54eb7af380bbb0033d0c7ffba00034cceb66e1a902b",
+    "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+  },
+  "after_inventory": {
+    "data/ingredients/mapped/Untouched.yaml": "27efd932bf32b1d1213bd54eb7af380bbb0033d0c7ffba00034cceb66e1a902b",
+    "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9",
+    "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+  },
+  "records": [
+    {
+      "operation_id": "o0",
+      "kind": "demote",
+      "before_source_record": "data/ingredients/mapped/Existing.yaml",
+      "source_record": "data/ingredients/unmapped/Existing.yaml",
+      "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+      "after_capture": {
+        "path": "intake/payload-0.yaml",
+        "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-01",
+          "head_sha": "92d2184affc613eb323d1cd003c9c12028cf35a2",
+          "proposal_id": "p0",
+          "proposal_binding": "proposals",
+          "payload_binding": "payload-0",
+          "case_hashes": {
+            "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+          }
+        }
+      ],
+      "change": "Fixture source change with explicit paths",
+      "verification": "Schema and exact preimage; no scientific approval",
+      "relocation_review_binding": "demotion-review",
+      "shape": "demotion",
+      "destination_path": "data/ingredients/unmapped/Existing.yaml",
+      "source_path": "data/ingredients/mapped/Existing.yaml",
+      "before_capture": {
+        "path": "source-receipt/owner-before-0000.yaml",
+        "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+      },
+      "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+    }
+  ],
+  "checkpoint": {
+    "root": "source-receipt/checkpoint",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "a540b1b5d9ff0b971760153ee5d75078217226e4e5fbf846461e3fecdc807a58",
+      "reports/sssom_completion_20260921/baseline-mapping-review.json": "ad5b9b46a8f424b254f911e68b9f24b65d7a580f47a95617268fe155a16f1758",
+      "reports/sssom_completion_20260921/parent-name-refresh.json": "8dbdbd25054a9b8499a572544c51c38502908602bf3b41249faf55da34b336b0",
+      "reports/sssom_completion_20260921/trait-synonym-refresh.json": "8dbdbd25054a9b8499a572544c51c38502908602bf3b41249faf55da34b336b0"
+    }
+  },
+  "protected_snapshot": {
+    "root": "source-receipt/protected",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "a540b1b5d9ff0b971760153ee5d75078217226e4e5fbf846461e3fecdc807a58",
+      "mappings/ingredient_mappings.sssom.tsv.manifest.json": "9c863ab79136a54a848eebf7702ce223f814b7e07276cee7c07629c4b65a20b3",
+      "mappings/other_cross_record_baseline.tsv": "fbae0a79f49926a9e59a6a890171fe0c863b34216fdb1683f9942d5c3d40644e",
+      "mappings/suppressed_aliases.tsv": "675720ff302b6e852dee454dd9f937a6c6fdcb595998254183c30326ee6ce22a",
+      "reports/sssom_completion_20260921/baseline-mapping-review.json": "ad5b9b46a8f424b254f911e68b9f24b65d7a580f47a95617268fe155a16f1758",
+      "reports/sssom_completion_20260921/parent-name-refresh.json": "8dbdbd25054a9b8499a572544c51c38502908602bf3b41249faf55da34b336b0",
+      "reports/sssom_completion_20260921/trait-synonym-refresh.json": "8dbdbd25054a9b8499a572544c51c38502908602bf3b41249faf55da34b336b0"
+    }
+  },
+  "completed_operations": [
+    "o0"
+  ],
+  "retired_sources": {
+    "data/ingredients/mapped/Existing.yaml": {
+      "path": "source-receipt/demotion-0000/retired-owner.yaml",
+      "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+    }
+  },
+  "recovery_required": false
+}

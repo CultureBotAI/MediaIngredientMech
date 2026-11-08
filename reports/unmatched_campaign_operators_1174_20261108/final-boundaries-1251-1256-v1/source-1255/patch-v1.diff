@@ -1,0 +1,136 @@
+diff --git asrc/mediaingredientmech/curate/campaign_owner_apply.py bsrc/mediaingredientmech/curate/campaign_owner_apply.py
+index 44c79ad..85886c5 100644
+--- asrc/mediaingredientmech/curate/campaign_owner_apply.py
++++ bsrc/mediaingredientmech/curate/campaign_owner_apply.py
+@@ -1257,9 +1257,12 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
+             allowed = {e["source_record"] for e in prepared.operations} | {
+                 e["before_source_record"] for e in prepared.operations if e["before_source_record"]
+             }
++            # #1255: ordinary Git output quotes Unicode/control characters.
++            # Parse literal filesystem paths, never quoted or newline-separated text.
++            changed = git(root, "diff", "--name-only", "-z", "HEAD", "--").split(b"\0")
++            require(changed[-1] == b"" and all(changed[:-1]), "Malformed Git path listing")
+             require(
+-                set(git(root, "diff", "--name-only", "HEAD", "--").decode().splitlines())
+-                <= allowed,
++                {os.fsdecode(path) for path in changed[:-1]} <= allowed,
+                 "Unrelated tracked file changed",
+             )
+             result["state"] = "complete"
+diff --git atests/test_campaign_owner_apply.py btests/test_campaign_owner_apply.py
+index ee4d125..aeb11ca 100644
+--- atests/test_campaign_owner_apply.py
++++ btests/test_campaign_owner_apply.py
+@@ -1945,3 +1945,112 @@ def test_741_demotion_completed_recovery_alias_is_refused(tmp_path, role):
+         owner.verify_completed(
+             tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+         )
++
++
++@pytest.mark.parametrize("quote_path", ["true", "false"])
++@pytest.mark.parametrize(
++    "name",
++    [
++        "Poly-ß-hydroxybutyric_Acid.yaml",
++        "With space.yaml",
++        "Literal\ttab.yaml",
++        "Literal\nnewline.yaml",
++        "Literal\rcarriage.yaml",
++        'Literal"quote.yaml',
++    ],
++)
++def test_1255_literal_git_paths_complete_rejection(tmp_path, monkeypatch, quote_path, name):
++    """#1255: real Git quoting never changes the approved filesystem path."""
++    source = "data/ingredients/unmapped/" + name
++    monkeypatch.setitem(globals(), "OLD", source)
++    plan = unmapped_rejection_case(tmp_path)
++    run_git(tmp_path, "config", "core.quotePath", quote_path)
++    before = owner.hashes(owner.inventory(tmp_path))
++    original = (tmp_path / source).read_bytes()
++    ready = prepare(tmp_path)
++    assert owner.hashes(owner.inventory(tmp_path)) == before
++    result = owner.apply(ready, tmp_path / "receipt", enabled=True)
++    proof = owner.verify_completed(
++        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++    )
++    assert result["state"] == "complete"
++    assert proof["after_inventory"] == ready.after_inventory
++    assert proof["records"][0]["before_source_record"] == source
++    assert proof["records"][0]["source_record"] == source
++    assert (tmp_path / source).read_bytes() == (
++        tmp_path / plan["records"][0]["after_capture"]["path"]
++    ).read_bytes()
++    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == original
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++    assert all(
++        owner.digest((tmp_path / path).read_bytes()) == digest
++        for path, digest in before.items()
++        if path != source
++    )
++    assert owner.git(tmp_path, "diff", "--name-only", "-z", "HEAD", "--") == (
++        os.fsencode(source) + b"\0"
++    )
++
++
++@pytest.mark.parametrize("quote_path", ["true", "false"])
++@pytest.mark.parametrize(
++    "name", ["unrelated.txt", "unrelated_ß.txt", "unrelated\nfile.txt", "unrelated\tfile.txt"]
++)
++def test_1255_unrelated_literal_tracked_file_still_refused(tmp_path, monkeypatch, quote_path, name):
++    """#1255: literal parsing must retain the complete allowed-path boundary."""
++    monkeypatch.setitem(globals(), "OLD", "data/ingredients/unmapped/Poly-ß.yaml")
++    plan = unmapped_rejection_case(tmp_path)
++    unrelated = "notes/" + name
++    put(tmp_path, unrelated, b"original unrelated bytes\n")
++    run_git(tmp_path, "add", "--", unrelated)
++    run_git(
++        tmp_path,
++        "-c",
++        "user.email=fixture@example.invalid",
++        "-c",
++        "user.name=Fixture",
++        "commit",
++        "-qm",
++        "#1255 unrelated tracked-path fixture",
++    )
++    plan["baseline_commit"] = run_git(tmp_path, "rev-parse", "HEAD")
++    save_contract(tmp_path, plan)
++    run_git(tmp_path, "config", "core.quotePath", quote_path)
++    ready = prepare(tmp_path)
++    before = ready.before[OLD].content
++    put(tmp_path, unrelated, b"unapproved concurrent change\n")
++    with pytest.raises(ValueError, match="Unrelated tracked file changed"):
++        owner.apply(ready, tmp_path / "receipt", enabled=True)
++    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
++    assert receipt["state"] == "failed" and receipt["recovery_required"]
++    assert (tmp_path / OLD).read_bytes() == ready.payloads[plan["records"][0]["operation_id"]]
++    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == before
++    assert (tmp_path / unrelated).read_bytes() == b"unapproved concurrent change\n"
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++    with pytest.raises(ValueError):
++        owner.verify_completed(
++            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++        )
++
++
++@pytest.mark.parametrize("malformed", [b"unterminated", b"\0", b"name\0\0"])
++def test_1255_malformed_nul_listing_is_not_accepted(tmp_path, monkeypatch, malformed):
++    """#1255: a broken listing cannot silently become an empty allowed diff."""
++    unmapped_rejection_case(tmp_path)
++    ready = prepare(tmp_path)
++    original_git = owner.git
++
++    def broken_git(root, *args):
++        if args == ("diff", "--name-only", "-z", "HEAD", "--"):
++            return malformed
++        return original_git(root, *args)
++
++    monkeypatch.setattr(owner, "git", broken_git)
++    with pytest.raises(ValueError, match="Malformed Git path listing"):
++        owner.apply(ready, tmp_path / "receipt", enabled=True)
++    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
++    assert receipt["state"] == "failed" and receipt["recovery_required"]
++    with pytest.raises(ValueError):
++        owner.verify_completed(
++            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++        )

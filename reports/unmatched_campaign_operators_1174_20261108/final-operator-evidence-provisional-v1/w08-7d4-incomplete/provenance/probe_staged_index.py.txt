@@ -1,0 +1,51 @@
+import datetime, hashlib, importlib.util, json, os, sys
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'root-probes';O.mkdir(exist_ok=False)
+assert sys.dont_write_bytecode
+os.environ.update(PYTHONDONTWRITEBYTECODE='1',GIT_OPTIONAL_LOCKS='0')
+sys.path[:0]=[str(F/'src'),str(F)]
+spec=importlib.util.spec_from_file_location('exact7d4db26_fixture',F/'tests/test_campaign_owner_apply.py');fixture=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixture);owner=fixture.owner
+assert Path(owner.__file__).resolve()==F/'src/mediaingredientmech/curate/campaign_owner_apply.py'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def git(root,*args):return owner.git(root,*args)
+def scope(root,baseline):
+ return {'status':git(root,'status','--porcelain').decode(),
+         'baseline_worktree_paths':git(root,'diff','--name-only','-z',baseline,'--').split(b'\0')[:-1],
+         'baseline_index_paths':git(root,'diff','--cached','--name-only','-z',baseline,'--').split(b'\0')[:-1],
+         'index_worktree_paths':git(root,'diff','--name-only','-z','--').split(b'\0')[:-1]}
+def serial(x):
+ if isinstance(x,bytes):return os.fsdecode(x)
+ if isinstance(x,dict):return {k:serial(v) for k,v in x.items()}
+ if isinstance(x,list):return [serial(v) for v in x]
+ return x
+results=[]
+for mode in ['positive','initial_staged_index_only','late_staged_index_only','late_staged_worktree_control']:
+ root=O/mode;root.mkdir();plan=fixture.demotion_case(root);baseline=plan['baseline_commit'];path=root/'MAPPING_SEMANTICS.md';original=path.read_bytes()
+ result={'mode':mode,'fixture':str(root),'accepted_baseline':baseline,'source_sha256':sha(Path(owner.__file__)),'fixture_module_sha256':sha(Path(fixture.__file__)),'native_functions_mocked':False}
+ def stage(restore):
+  path.write_bytes(original+b'\nIndependent private staged-only drift probe.\n');git(root,'add','--','MAPPING_SEMANTICS.md')
+  if restore:path.write_bytes(original)
+ if mode=='initial_staged_index_only':stage(True)
+ result['before_prepare']=scope(root,baseline)
+ initial_inventory=owner.hashes(owner.inventory(root))
+ try:
+  prepared=owner.prepare(root,root/'plan.json',root/'acceptance.json');result['prepare']='PASS'
+ except Exception as error:
+  result.update(prepare='REFUSED',error=repr(error),receipt_exists=(root/'receipt').exists(),owner_inventory_unchanged=owner.hashes(owner.inventory(root))==initial_inventory,working_contract_restored=path.read_bytes()==original,source_exists=(root/fixture.EDIT).exists(),destination_exists=(root/fixture.DEMOTED).exists());results.append(result);continue
+ if mode=='late_staged_index_only':stage(True)
+ elif mode=='late_staged_worktree_control':stage(False)
+ result['before_apply']=scope(root,baseline)
+ result['working_contract_bytes_original_before_apply']=path.read_bytes()==original
+ try:
+  applied=owner.apply(prepared,root/'receipt',enabled=True);result['apply']=applied['state']
+  completed=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json');result['verify_completed']=completed['state']
+ except Exception as error:result.update(apply='REFUSED',error=repr(error))
+ receipt=root/'receipt/application.json'
+ if receipt.exists():
+  d=json.loads(receipt.read_text());result.update(receipt_state=d['state'],recovery_required=d['recovery_required'],receipt_sha256=sha(receipt),completed_operations=d['completed_operations'])
+ result.update(after_apply=scope(root,baseline),source_retired=not(root/fixture.EDIT).exists(),destination_exists=(root/fixture.DEMOTED).exists(),receipt_exists=receipt.exists(),working_contract_sha256=sha(path),original_contract_sha256=hashlib.sha256(original).hexdigest(),current_HEAD=git(root,'rev-parse','HEAD').decode().strip())
+ result['staged_contract_sha256']=hashlib.sha256(git(root,'show',':MAPPING_SEMANTICS.md')).hexdigest()
+ results.append(result)
+out=serial({'reviewed_head':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'runtime':sys.version,'python':sys.executable,'scope':'Actual private source prepare/apply/completed with no mocks; index-only unrelated staged changes versus true clean and changed-working-bytes controls. No maintained application.','results':results})
+with (O/'staged-index-results.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps(out,indent=2))

@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-08T11:25:32.995056+00:00",
+  "reviewer": "/root/boundary_technical",
+  "status": "NEEDS_FIX_KNOWN_FILED_REGRESSION_CONFIRMED",
+  "reviewed_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "code_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+  "parent_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+  "supersedes_for_acceptance": {
+    "path": "technical/HANDOFF.json",
+    "sha256": "45bedb7688990c4ac6840e16027dfa77b224e430e0e2078c20b2000c3f690c4a"
+  },
+  "supersession_reason": "Earlier PASS omitted an existing supported status transition. The actual old test passes and earlier fixture evidence remain true but do not qualify this exact head for overall code acceptance. Original sealed outputs unchanged.",
+  "finding": {
+    "path": "regression-addendum/technical/finding-v1.json",
+    "sha256": "62658fdcc02af8c9d8d06d656dd5607f19df6a447f4175936b0ddd311d91dcb6"
+  },
+  "exact_original_reproduction": {
+    "path": "regression-addendum/technical/original-retirement-reproduction-v1.json",
+    "sha256": "0f8e548f4ab9133bd63bcc44db6e3b691ae525c4fa7f1bdab50c9fd49994e712"
+  },
+  "native_prepare_counterexample": {
+    "path": "regression-addendum/technical/synthetic-native-prepare-refusal-v2.json",
+    "sha256": "edd6586fcfae0c20dd1e41218771c15bf586f0b8dd2fb8f7e673ced580c8ef19"
+  },
+  "coordinator_fullcohort_evidence_only": {
+    "HANDOFF.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/HANDOFF.json",
+      "sha256": "05c4a50ccffa42aa0581281d131e8dff06eb4f64e0f9491d01ab6a5b52dc5752"
+    },
+    "MANIFEST.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/MANIFEST.json",
+      "sha256": "5bede9c0acb826024789a14b31407aeaf72047276cccf61ecd7304c7baad31b1"
+    },
+    "remaining-native-boundaries.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/remaining-native-boundaries.json",
+      "sha256": "4218f07cecb094bac46d1cf5e4de066f197f9e7672b1c2f5239ffbe2b4d4dbf0"
+    },
+    "status-kind-inventory.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/status-kind-inventory.json",
+      "sha256": "36b8af0417aea68d0a3ab5eb68e83ca2f2a1963dcc1d3d93b79be583a06d93c4"
+    },
+    "selection.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/selection.json",
+      "sha256": "1638ca2976b2905f3bd8dcbcd75168d52d867ff1ec4ae50b34476f03dfecb4e6"
+    },
+    "collision-pairs.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/collision-pairs.json",
+      "sha256": "0efc75b4a9c1aa1001f76edfe95646e6b535c7e11c9f2773dfdc2916b27b42ca"
+    }
+  },
+  "coverage": {
+    "exact_original_source_payloads": 2,
+    "complete_catalog_beforeowners": 2956,
+    "parent_validator_passes": 2,
+    "exact_d691_record_refusals": 2,
+    "actual_native_prepare_counterexamples": 1,
+    "actual_native_apply_calls": 0,
+    "full933_reruns": 0
+  },
+  "failed_fixture_attempt": {
+    "path": "regression-addendum/technical/synthetic-prepare-failed-attempt-v1.json",
+    "sha256": "dbc4874b9652a02d99fd3aea1ed19e2bf299c7691a0c86bdbcd720fb6838b0dd"
+  },
+  "limits": [
+    "This reproduces code behavior using exact original payloads and complete before catalog; no chemistry or source-self-approval.",
+    "Parent validator is exact extracted AST executed with unchanged captured native helpers; it is a record-stage comparison, not historical full prepare/application.",
+    "The 933-operation coordinator result is evidence only; not rerun or treated as full preparation.",
+    "No maintained/source/GitHub edits; no fix attempted; future code not loaded.",
+    "Full native prepare evidence uses a synthetic private Git repository, not actual source campaign acceptance.",
+    "Original payloads are unnormalized committed bytes; no approval of serialization successors.",
+    "No future code or mutable currentI operator loaded; only exact frozen d691 and parent AST.",
+    "Known finding already filed; root controls fixes/issues. No chemistry/owner/role/export approval."
+  ],
+  "manifest": "MANIFEST.json",
+  "source_author_related": true,
+  "operator_fix": false,
+  "prior_sealed_review_modified": false
+}

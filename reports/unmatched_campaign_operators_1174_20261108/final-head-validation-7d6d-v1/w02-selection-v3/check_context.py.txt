@@ -1,0 +1,117 @@
+"""Read-only prior-seal and locator chronology verification for archive v3."""
+from datetime import datetime, timezone
+from pathlib import Path
+import hashlib
+import json
+import os
+
+O = Path(__file__).resolve().parent
+W = O.parent.parent
+C = W.parents[2]
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def ref(path):
+    return {"path": str(path), "sha256": sha(path)}
+
+
+def load(path):
+    return json.loads(path.read_text())
+
+
+prior = W / ".temp/pr1205-final-archive-subset-independent-v2"
+manifest = load(prior / "MANIFEST.json")
+assert sha(prior / "MANIFEST.json") == "34b6c584f00ff590bcffab487228265a46ba916424e6cb47554ed9ee88a34550"
+for row in manifest["members"]:
+    path = prior / row["path"]
+    if row["kind"] == "diagnostic_symlink":
+        assert path.is_symlink() and os.readlink(path) == row["target"]
+    else:
+        assert not path.is_symlink() and sha(path) == row["sha256"]
+        assert path.stat().st_size == row["bytes"]
+actual = {str(p.relative_to(prior)) for p in prior.rglob("*") if p.is_file() or p.is_symlink()}
+assert actual == {r["path"] for r in manifest["members"]} | {"MANIFEST.json", "SEAL.json", "SHA256SUMS"}
+for line in (prior / "SHA256SUMS").read_text().splitlines():
+    digest, name = line.split("  ", 1)
+    assert sha(prior / name) == digest
+
+locator_path = prior / "HANDOFF-LOCATOR-ADDENDUM.json"
+locator = load(locator_path)
+assert sha(locator_path) == "3fb11ff59666f63cfb5d4ddc6cac2eee99abec7a791bbc5a31a78ecf569c4bdf"
+original = locator["affected_handoff"]
+original_path = Path(original["path"])
+assert sha(original_path) == original["sha256"]
+for row in locator["corrected_references"]:
+    assert not os.path.lexists(original_path.parent / row["historical_literal_path"])
+    current = row["explicit_corrected_reference"]
+    assert Path(current["path"]).is_absolute()
+    assert sha(Path(current["path"])) == current["sha256"]
+
+publications = []
+for packet, index in [("native-fixture-and-preparation-findings-publication-v1", "01"), ("partial-native-fixture-finding-publication-v1", "01")]:
+    base = C / "preflight" / packet
+    receipt_path = base / f"publication-{index}.json"
+    receipt = load(receipt_path)
+    readback_path = base / f"readback-{index}.json"
+    readback = load(readback_path)
+    body_path = base / receipt["row"]["body_file"]
+    assert sha(readback_path) == receipt["readback_sha256"]
+    assert sha(body_path) == receipt["row"]["body_sha256"]
+    assert body_path.read_text() == readback["body"]
+    assert readback["html_url"] == receipt["url"]
+    assert sha(base / f"transport-{index}.stdout") == receipt["stdout_sha256"]
+    assert sha(base / f"transport-{index}.stderr") == receipt["stderr_sha256"]
+    publications.append({"receipt": ref(receipt_path), "readback": ref(readback_path), "body": ref(body_path), "issue_url": readback["html_url"], "created_at": readback["created_at"]})
+parse = lambda value: datetime.fromisoformat(value.replace("Z", "+00:00"))
+assert parse(locator["at"]) < parse(publications[0]["created_at"]) < parse(publications[1]["created_at"])
+
+author_locator_path = C / "integration/campaign-suppressions1259-v1/LOCATOR-ADDENDUM-v1.json"
+assert sha(author_locator_path) == "7d32e7e25b628c948211dee91cd30c3b8faa2471f49735aed2bfb4d97f409d3d"
+author_locator = load(author_locator_path)
+absolute_refs = []
+
+
+def check_refs(node, pointer=""):
+    if isinstance(node, dict):
+        if "absolute_path" in node and "sha256" in node:
+            path = Path(node["absolute_path"])
+            assert path.is_absolute() and sha(path) == node["sha256"]
+            absolute_refs.append({"pointer": pointer, **ref(path)})
+        for key, value in node.items():
+            check_refs(value, pointer + "/" + key)
+    elif isinstance(node, list):
+        for i, value in enumerate(node):
+            check_refs(value, pointer + "/" + str(i))
+
+
+check_refs(author_locator)
+outer = load(Path(author_locator["original_outer_handoff"]["absolute_path"]))
+inner = load(Path(author_locator["original_inner_handoff"]["absolute_path"]))
+author_base = Path(author_locator["bases"]["author_directory"])
+portable_base = Path(author_locator["inner_handoff_base"]["base"])
+assert sha(portable_base / inner["patch"]) == inner["patch_sha256"]
+outer_failures = []
+for row in author_locator["outer_locator_corrections"]:
+    path = Path(row["declared_base"]) / row["declared"]
+    exact = path.is_file() and sha(path) == row["target"]["sha256"]
+    assert not exact
+    outer_failures.append({"pointer": row["json_pointer"], "historical_literal": row["declared"], "exact_literal_resolution": False, "explicit_target": row["target"]})
+
+result = {
+    "at": datetime.now(timezone.utc).isoformat(),
+    "reviewer": "worker02 /root",
+    "scope": "Archive chronology and immutable locator/preservation context only",
+    "prior_packet": {"manifest": ref(prior / "MANIFEST.json"), "seal": ref(prior / "SEAL.json"), "members_verified": len(manifest["members"]), "complete_membership_including_ignored_hidden": True, "old_failed_attempts_unchanged": True},
+    "W02_original_locator": {"handoff": original, "explicit_addendum": ref(locator_path), "old_broken_locations_still_broken": True, "corrected_locations_exact": 2, "authorship": "Root authored the original and map; this fresh check is mechanical context, not a new independent approval of own work."},
+    "W02_filing_chronology": {"addendum_created_at": locator["at"], "publications": publications, "conclusion": "Local report preceded additive correction; additive correction preceded GitHub filing. Later coordinator correction explicitly records this. No issue-first remediation claim for that private metadata correction.", "root_current_issue_status_claim": False, "no_live_GitHub_query_or_write": True},
+    "author_locator": {"addendum": ref(author_locator_path), "absolute_references": absolute_refs, "old_outer_failures_preserved": outer_failures, "inner_portable_base": str(portable_base), "inner_patch_literal_resolves_exactly": True, "approval_upgrade": False},
+    "context": "e0a75 is the archived predecessor Git reference; current selection observed K7d6. This is provenance context, not drift of immutable selected originals or approval of current code.",
+    "scientific_review": False,
+    "code_source_application_or_final_validation_approval": False,
+}
+with (O / "context-and-chronology.json").open("x") as stream:
+    stream.write(json.dumps(result, indent=2) + "\n")
+print(json.dumps({"status": "PASS", "prior_members": len(manifest["members"]), "author_addendum_absolute_references": len(absolute_refs), "output": ref(O / "context-and-chronology.json")}))

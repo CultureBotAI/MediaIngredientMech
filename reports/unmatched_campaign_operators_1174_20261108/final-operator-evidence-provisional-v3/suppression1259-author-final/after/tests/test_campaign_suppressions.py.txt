@@ -1,0 +1,520 @@
+"""#1259 authentic original-science transport and exact transition controls.
+
+These focused fixtures isolate source completion/generation as declared proof
+inputs. They execute the unchanged native owner policy, pair validator and
+structured-review parser. They do not claim real source application; the separate
+integration tests exercise that full path. All future transition reviews here
+are explicitly private mechanical test artifacts, never scientific approvals.
+"""
+
+import copy
+import importlib
+import json
+import os
+import sys
+from pathlib import Path
+
+import pytest
+import yaml
+
+from mediaingredientmech import campaign_publication as c
+
+
+def put(root, path, value):
+    target = root / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(value if isinstance(value, bytes) else c.encoded(value))
+    return {"path": path, "sha256": c.sha(target.read_bytes())}
+
+
+def original_bundle(root):
+    configured = os.environ.get("CAMPAIGN_SUPPRESSION_REVIEW_ROOT")
+    if not configured:
+        pytest.skip("CAMPAIGN_SUPPRESSION_REVIEW_ROOT is required for authentic W07 evidence")
+    archive = Path(configured).resolve()
+    original = (
+        archive
+        / "native-fixture/reviews/structured/20261108T124921Z-w07-four-suppression-policy-independent"
+    )
+    raw = (original / "review.yaml").read_bytes()
+    assert c.sha(raw) == c.SUPPRESSION_REVIEW_SHA
+    validator = c._BOUND_NATIVE["campaign_native_record_review"]
+    document = validator.load_document(raw)
+    bundle = {
+        "yaml": put(root, "reports/science/review.yaml", raw),
+        "markdown": put(root, "reports/science/review.md", (original / "review.md").read_bytes()),
+        "inputs": {},
+    }
+    for ref in document["source"]["inputs"]:
+        value = (archive / "native-fixture" / ref["path"]).read_bytes()
+        assert c.sha(value) == ref["sha256"]
+        bundle["inputs"][ref["path"]] = put(root, "reports/science/" + ref["path"], value)
+    return bundle, document
+
+
+@pytest.fixture
+def suppression_case(tmp_path):
+    claw = os.environ.get("CLAW_ROOT")
+    if not claw:
+        pytest.skip("CLAW_ROOT is required for unchanged native policy/pair functions")
+    sys.path.insert(0, str(Path(claw) / "src"))
+    policy = importlib.import_module("kg_microbe_utils.owned_name_policy")
+    artifact = importlib.import_module("kg_microbe_utils.sssom_artifacts")
+    root = tmp_path
+    for path, frozen in c.LOADED_PRODUCERS.items():
+        put(root, path, frozen.content)
+    bundle, review = original_bundle(root)
+
+    def original(path):
+        return (root / bundle["inputs"]["review-inputs/" + path]["path"]).read_bytes()
+
+    decision = c.read_json(original("conditional-decisions.json"))
+    before_inventory, after_inventory, operations, records = {}, {}, [], {}
+    for pair in decision["pairs"]:
+        for binding in pair["complete_owner_bindings"]:
+            _, path = c._record_path(binding["proposed"]["original_path"])
+            raw = original(binding["proposed"]["capture"])
+            put(root, path, raw)
+            records[binding["subject"]] = yaml.safe_load(raw)
+            after_inventory[path] = c.sha(raw)
+            if binding["before"]:
+                before_inventory[path] = binding["before"]["sha256"]
+            if binding["operation"]:
+                operation = copy.deepcopy(binding["operation"])
+                operation["after_yaml_sha256"] = c.sha(raw)
+                operations.append(operation)
+    owners = policy.build_owner_index(records)
+    suppressions = []
+    for pair in decision["pairs"]:
+        candidates = []
+        for field in pair["source_fields"]:
+            old_path, locator = field["source_ref"].rsplit("#", 1)
+            _, path = c._record_path(old_path)
+            literal = field["literal_field"]
+            candidates.append(
+                policy.AliasCandidate(
+                    literal if isinstance(literal, str) else literal["synonym_text"],
+                    (
+                        "mim.ontology_label"
+                        if locator.startswith("ontology_mapping")
+                        else "mim.synonym"
+                    ),
+                    (str(root / path) + "#" + locator,),
+                    tuple(json.loads(pair["exact_native_event"]["evidence_refs"])),
+                )
+            )
+        kept, events = policy.filter_owned_aliases(pair["subject"], candidates, owners)
+        assert not kept
+        suppressions.extend(events)
+    diagnostic = policy.render_suppressed_aliases(suppressions)
+    canonical = original(decision["candidate"]["path"])
+    before = {
+        "sidecar": original(decision["historical_retention"]["sidecar"]["path"]),
+        "baseline": b"subject_id\ttoken_key\n",
+        "canonical": b"fixture canonical preimage; focused evidence test only\n",
+        "policy": b"fixture policy preimage; focused evidence test only\n",
+    }
+    prefix = {
+        "reports/sssom_completion_20260921/mapping_changes/" + Path(r["path"]).name: r["sha256"]
+        for r in decision["historical_retention"]["historical_receipts"]
+    }
+    proof = {
+        "before_inventory": before_inventory,
+        "after_inventory": after_inventory,
+        "records": operations,
+        "baseline_commit": "a" * 40,
+    }
+    plan = {
+        "owner_plan": put(root, "reports/owner-plan.json", {"fixture": "isolated proof boundary"}),
+        "owner_receipt": put(root, "reports/owner-receipt.json", proof),
+        "before": {k: put(root, "reports/before/" + k, v) for k, v in before.items()},
+        "generation": {
+            "candidate": put(root, "reports/generation/candidate.tsv", canonical),
+            "sidecar": put(root, "reports/generation/sidecar.tsv", diagnostic),
+            "manifest": put(
+                root, "reports/generation/manifest.json", {"fixture": "isolated generation proof"}
+            ),
+            "producer_root": str(Path(claw).resolve()),
+            "kg_root": str(root),
+        },
+        "publication_producers": {p: c.sha(f.content) for p, f in c.LOADED_PRODUCERS.items()},
+        "receipt_prefix": prefix,
+        "native_context": {},
+    }
+    capture = c.Capture(root)
+    capture.pair_validator = artifact._validate_pair
+    needs = c._suppression_table(diagnostic)[0]
+    return root, capture, plan, before, proof, diagnostic, canonical, needs, bundle, review
+
+
+def derive(case):
+    _, capture, plan, before, proof, diagnostic, canonical, needs, bundle, _ = case
+    return c.derive_suppression_transition(
+        capture, plan, before, proof, diagnostic, canonical, needs, bundle
+    )
+
+
+def reviewed_selection(case, transition=None):
+    """An explicitly synthetic bridge review, using the real native schema."""
+    root, _, plan, _, proof, _, _, _, bundle, original = case
+    if transition is None:
+        _, transition, _ = derive(case)
+    transition_ref = put(root, "reports/transition.json", transition)
+    review = copy.deepcopy(original)
+    review.update(
+        review_id="20261108T124921Z-mechanical-fixture-transition-review",
+        title="PRIVATE MECHANICAL FIXTURE: no scientific or application approval",
+        scientific_review=False,
+        reviewer={
+            "identity": "fixture-distinct-reviewer",
+            "kind": "agent",
+            "independence": "independent",
+            "independence_basis": "Synthetic assigned reviewer role for a test; no real scientific decision is manufactured.",
+        },
+        summary="Mechanical fixture validates the closed review-consumption boundary only.",
+        checks=[
+            {
+                "check_id": "mechanical",
+                "name": "Fixture tuple equality",
+                "status": "passed",
+                "required": True,
+                "target_ids": [t["target_id"] for t in original["targets"]],
+                "evidence_ids": ["TRANSITION"],
+                "summary": "Synthetic mechanical fixture only",
+            }
+        ],
+        findings=[],
+        actions=[],
+        notes=[],
+        limitations=["Synthetic fixture only, not real scientific authorization."],
+        native_verdict="Private structural test fixture; no approval",
+    )
+    required = [
+        transition_ref,
+        plan["owner_plan"],
+        plan["owner_receipt"],
+        bundle["yaml"],
+        bundle["inputs"]["review-inputs/conditional-decisions.json"],
+        *[plan["generation"][k] for k in ("candidate", "sidecar", "manifest")],
+    ]
+    review["source"] = {
+        "git_revision": proof["baseline_commit"],
+        "state": "working_tree",
+        "inputs": [
+            dict(ref, role="target" if ref == transition_ref else "context") for ref in required
+        ],
+    }
+    review["targets"] = [dict(t, path=transition_ref["path"]) for t in original["targets"]]
+    review["scope"]["description"] = "Mechanical fixture four-event transition input coverage"
+    review["evidence"] = [
+        {
+            "evidence_id": "TRANSITION",
+            "kind": "record_content",
+            "reference": transition_ref["path"],
+            "snapshot_sha256": transition_ref["sha256"],
+            "support": "supports",
+            "accessed_at": "2026-11-08T12:49:21Z",
+            "summary": "Exact synthetic mechanical fixture transition; original science remains separately bound.",
+        }
+    ]
+    review["assessments"] = [
+        {
+            "assessment_id": t["target_id"] + "-transport",
+            "area": "provenance",
+            "topic": "Exact mechanical transition binding",
+            "outcome": "supported",
+            "target_ids": [t["target_id"]],
+            "evidence_ids": ["TRANSITION"],
+            "summary": "Fixture-only complete transition equality",
+        }
+        for t in review["targets"]
+    ]
+    module = c._BOUND_NATIVE["campaign_native_record_review"]
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+    actual = {
+        "yaml": put(
+            root, "reports/actual-review/review.yaml", module._dump_document(review).encode()
+        ),
+        "markdown": put(
+            root,
+            "reports/actual-review/review.md",
+            module.render_markdown(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode(),
+        ),
+        "inputs": {r["path"]: {k: r[k] for k in ("path", "sha256")} for r in required},
+    }
+    selection = {
+        "schema_version": 1,
+        "operation": "select_campaign_suppression_transition",
+        "issue": c.SUPPRESSION_ISSUE,
+        "selected_by": "/root",
+        "selection_basis": "EXPLICIT SYNTHETIC MECHANICAL FIXTURE, not actual root acceptance",
+        "original_review": bundle,
+        "transition": transition_ref,
+        "transition_review": actual,
+    }
+    plan["suppression_review"] = put(root, "reports/selection.json", selection)
+    return selection, review
+
+
+def project(case):
+    _, capture, plan, before, proof, diagnostic, canonical, needs, _, _ = case
+    return c._suppression_projection(capture, plan, before, proof, diagnostic, canonical, needs)
+
+
+def test_consumes_actual_review_and_keeps_acyclic_policy_binding(suppression_case):
+    reviewed_selection(suppression_case)
+    sidecar, evidence = project(suppression_case)
+    assert len(c._suppression_table(sidecar)[0]) == 38
+    assert evidence["approval"] == "NONE"
+    assert "publication_log" not in c.encoded(evidence).decode()
+
+
+@pytest.mark.parametrize("verdict", ["blocked", "needs_curation"])
+@pytest.mark.parametrize("required_status", ["failed", "passed"])
+def test_nonpassing_native_review_is_not_suppression_authority(
+    suppression_case, verdict, required_status
+):
+    root, _, plan, *_ = suppression_case
+    selection, review = reviewed_selection(suppression_case)
+    review["verdict"] = verdict
+    review["checks"][0]["status"] = required_status
+    module = c._BOUND_NATIVE["campaign_native_record_review"]
+    # These are native-valid completed reviews, including four supported targets.
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+    selection["transition_review"]["yaml"] = put(
+        root, "reports/actual-review/review.yaml", module._dump_document(review).encode()
+    )
+    selection["transition_review"]["markdown"] = put(
+        root,
+        "reports/actual-review/review.md",
+        module.render_markdown(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode(),
+    )
+    plan["suppression_review"] = put(root, "reports/selection.json", selection)
+    with pytest.raises(ValueError, match="verdict/required checks"):
+        project(suppression_case)
+
+
+@pytest.mark.parametrize("verdict", ["pass", "pass_with_limitations"])
+def test_passing_native_verdict_retains_conditional_science_holds(suppression_case, verdict):
+    root, _, plan, *_ = suppression_case
+    selection, review = reviewed_selection(suppression_case)
+    review["verdict"] = verdict
+    module = c._BOUND_NATIVE["campaign_native_record_review"]
+    selection["transition_review"]["yaml"] = put(
+        root, "reports/actual-review/review.yaml", module._dump_document(review).encode()
+    )
+    selection["transition_review"]["markdown"] = put(
+        root,
+        "reports/actual-review/review.md",
+        module.render_markdown(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode(),
+    )
+    plan["suppression_review"] = put(root, "reports/selection.json", selection)
+    sidecar, evidence = project(suppression_case)
+    assert len(c._suppression_table(sidecar)[0]) == 38
+    assert evidence["approval"] == "NONE"
+
+
+@pytest.mark.parametrize(
+    "fault", ["required-not-applicable", "partial-coverage", "partial-reviewed-targets"]
+)
+def test_completed_native_review_requires_full_actual_transition_scope(suppression_case, fault):
+    root, _, plan, *_ = suppression_case
+    selection, review = reviewed_selection(suppression_case)
+    if fault == "required-not-applicable":
+        review["checks"][0]["status"] = "not_applicable"
+    elif fault == "partial-coverage":
+        review["scope"]["coverage"] = "partial"
+    else:
+        review["scope"]["coverage"] = "partial"
+        review["scope"]["reviewed_target_ids"] = review["scope"]["reviewed_target_ids"][:-1]
+    module = c._BOUND_NATIVE["campaign_native_record_review"]
+    if fault == "partial-reviewed-targets":
+        with pytest.raises(
+            module.ReviewError,
+            match="completed review has explicitly selected targets left unreviewed",
+        ):
+            module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+        return
+    module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+    selection["transition_review"]["yaml"] = put(
+        root, "reports/actual-review/review.yaml", module._dump_document(review).encode()
+    )
+    selection["transition_review"]["markdown"] = put(
+        root,
+        "reports/actual-review/review.md",
+        module.render_markdown(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode(),
+    )
+    plan["suppression_review"] = put(root, "reports/selection.json", selection)
+    with pytest.raises(ValueError):
+        project(suppression_case)
+
+
+def test_original_independent_reviewer_may_review_a_distinct_actual_transition(suppression_case):
+    root, _, plan, *_ = suppression_case
+    selection, review = reviewed_selection(suppression_case)
+    review["reviewer"] = copy.deepcopy(suppression_case[-1]["reviewer"])
+    module = c._BOUND_NATIVE["campaign_native_record_review"]
+    selection["transition_review"]["yaml"] = put(
+        root, "reports/actual-review/review.yaml", module._dump_document(review).encode()
+    )
+    selection["transition_review"]["markdown"] = put(
+        root,
+        "reports/actual-review/review.md",
+        module.render_markdown(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode(),
+    )
+    plan["suppression_review"] = put(root, "reports/selection.json", selection)
+    assert len(c._suppression_table(project(suppression_case)[0])[0]) == 38
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "bool-version",
+        "float-version",
+        "unknown-selection",
+        "wrong-transition",
+        "missing-actual-input",
+        "wrong-actual-input",
+        "native-event-cell",
+        "wrong-current-root",
+        "owner-role",
+        "baseline-hash",
+        "prefix",
+        "wrong-reviewed-target",
+    ],
+)
+def test_actual_transition_review_cannot_be_replaced_by_self_issued_checksums(
+    suppression_case, fault
+):
+    case = suppression_case
+    root, _, plan, _, _, _, _, _, _, _ = case
+    selection, review = reviewed_selection(case)
+    if fault == "bool-version":
+        selection["schema_version"] = True
+    elif fault == "float-version":
+        selection["schema_version"] = 1.0
+    elif fault == "unknown-selection":
+        selection["allow"] = True
+    elif fault == "missing-actual-input":
+        selection["transition_review"]["inputs"].pop(
+            next(iter(selection["transition_review"]["inputs"]))
+        )
+    elif fault == "wrong-actual-input":
+        ref = next(iter(selection["transition_review"]["inputs"].values()))
+        ref["sha256"] = "f" * 64
+    elif fault == "wrong-reviewed-target":
+        review["targets"][0]["selector"] = "subject=MIM:Other; token_key=other"
+        module = c._BOUND_NATIVE["campaign_native_record_review"]
+        selection["transition_review"]["yaml"] = put(
+            root, "reports/actual-review/review.yaml", module._dump_document(review).encode()
+        )
+        selection["transition_review"]["markdown"] = put(
+            root,
+            "reports/actual-review/review.md",
+            module.render_markdown(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode(),
+        )
+    else:
+        transition = c.read_json((root / selection["transition"]["path"]).read_bytes())
+        if fault == "wrong-transition":
+            transition["approval"] = "SUPPORTED"
+        elif fault == "native-event-cell":
+            transition["events"][0]["native_event"]["token"] = "other"
+        elif fault == "wrong-current-root":
+            transition["events"][0]["source_ref_joins"][0]["actual_root"] = "/other"
+        elif fault == "owner-role":
+            transition["events"][1]["owners"][1]["kind"] = "selected"
+        elif fault == "baseline-hash":
+            transition["after_sha256"]["baseline"] = "f" * 64
+        elif fault == "prefix":
+            transition["receipt_prefix"].pop(next(iter(transition["receipt_prefix"])))
+        selection, _ = reviewed_selection(case, transition)
+    plan["suppression_review"] = put(root, "reports/selection.json", selection)
+    with pytest.raises((ValueError, KeyError)):
+        project(case)
+
+
+def test_authentic_four_event_transport_preserves_history_and_genuine_roles(suppression_case):
+    sidecar, transition, _ = derive(suppression_case)
+    assert sidecar.startswith(suppression_case[3]["sidecar"])
+    assert len(c._suppression_table(sidecar)[0]) == 38
+    owners = {o["source_record"]: o for e in transition["events"] for o in e["owners"]}
+    assert len(owners) == 8
+    assert sum(o["kind"] == "unchanged" for o in owners.values()) == 2
+    assert sum(o["before_sha256"] is None for o in owners.values()) == 1
+    assert transition["approval"] == "NONE"
+    assert len(transition["receipt_prefix"]) == 27
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "missing-input",
+        "input-bytes",
+        "native-markdown",
+        "owner-bytes",
+        "before-owner",
+        "create-preimage",
+        "unchanged-operation",
+        "operation-case",
+        "credit-extra",
+        "event-extra",
+        "event-missing",
+        "old-duplicate",
+        "old-no-newline",
+        "prefix-missing",
+        "source-locator",
+    ],
+)
+def test_authentic_transition_refuses_incomplete_or_changed_binding(suppression_case, fault):
+    case = list(suppression_case)
+    root, capture, plan, before, proof, diagnostic, canonical, needs, bundle, _ = case
+    if fault == "missing-input":
+        bundle["inputs"].pop(next(iter(bundle["inputs"])))
+    elif fault == "input-bytes":
+        (root / next(iter(bundle["inputs"].values()))["path"]).write_bytes(b"changed")
+    elif fault == "native-markdown":
+        bundle["markdown"] = put(root, bundle["markdown"]["path"], b"not a native rendering")
+    elif fault == "owner-bytes":
+        name = next(iter(proof["after_inventory"]))
+        (root / name).write_bytes(b"changed")
+    elif fault == "before-owner":
+        proof["before_inventory"]["data/ingredients/mapped/Bacto_Peptone.yaml"] = "f" * 64
+    elif fault == "create-preimage":
+        proof["before_inventory"]["data/ingredients/mapped/Corn_Starch.yaml"] = "f" * 64
+    elif fault == "unchanged-operation":
+        proof["records"].append({"source_record": "data/ingredients/mapped/Bluensomycin.yaml"})
+    elif fault == "operation-case":
+        proof["records"][0]["origins"][0]["case_hashes"] = {}
+    elif fault == "credit-extra":
+        path = "data/ingredients/mapped/Extra.yaml"
+        ref = put(
+            root, path, b"identifier: cas:1-2-3\npreferred_term: Peptone\nmapping_status: MAPPED\n"
+        )
+        proof["after_inventory"][path] = ref["sha256"]
+    elif fault == "event-extra":
+        case[7] = needs + [dict(needs[0], subject_id="MIM:Extra")]
+    elif fault == "event-missing":
+        case[7] = needs[:-1]
+    elif fault == "old-duplicate":
+        before["sidecar"] += before["sidecar"].splitlines(keepends=True)[1]
+    elif fault == "old-no-newline":
+        before["sidecar"] = before["sidecar"].rstrip(b"\n")
+    elif fault == "prefix-missing":
+        plan["receipt_prefix"].pop(next(iter(plan["receipt_prefix"])))
+    elif fault == "source-locator":
+        case[5] = diagnostic.replace(b"#synonyms[28]", b"#synonyms[29]")
+    with pytest.raises((ValueError, KeyError)):
+        derive(case)
+
+
+@pytest.mark.parametrize(
+    "raw",
+    [
+        b"",
+        b"wrong\theader\n",
+        b"subject_id\ttoken_key\ttoken\towner_subject_ids\tdisposition\tinput_surfaces\tsource_refs\tevidence_refs",
+    ],
+)
+def test_suppression_table_refuses_malformed_physical_input(raw):
+    with pytest.raises(ValueError):
+        c._suppression_table(raw)

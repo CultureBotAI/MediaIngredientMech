@@ -1,0 +1,82 @@
+{
+  "at": "2026-11-08T11:32:21.943848+00:00",
+  "head": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "parent": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "frozen_blob_count": 4182,
+  "all_frozen_git_blob_hashes_reverified": true,
+  "changed_tracked_paths": [
+    "src/mediaingredientmech/curate/campaign_owner_apply.py",
+    "tests/test_campaign_owner_apply.py"
+  ],
+  "ast_preservation": [
+    {
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "old_named_definitions": 32,
+      "preserved": 31,
+      "changed": [
+        "_validate_records"
+      ],
+      "added": [],
+      "old_byte_prefix_preserved": false,
+      "old_bytes": 56195,
+      "old_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+      "new_sha256": "14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f"
+    },
+    {
+      "path": "tests/test_campaign_owner_apply.py",
+      "old_named_definitions": 51,
+      "preserved": 51,
+      "changed": [],
+      "added": [
+        "test_1252_completed_rejection_rechecks_final_owner",
+        "test_1252_unmapped_rejection_real_application_and_completed_replay",
+        "test_1252_unmapped_rejection_refuses_unsafe_variants_before_write",
+        "unmapped_rejection_case"
+      ],
+      "old_byte_prefix_preserved": true,
+      "old_bytes": 50699,
+      "old_sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569",
+      "new_sha256": "2ede1b72bd369898f2ed99f093ec0700da404a9a85342ea2f15883e29eb272ce"
+    }
+  ],
+  "record_stage_selection_order_and_all933_hashes_rechecked": true,
+  "kind_counts": {
+    "edit": 272,
+    "promote": 67,
+    "create": 594
+  },
+  "actual_two_W03_private_application_readback": [
+    {
+      "action_id": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "authentic_before_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+      "normalized_after_sha256": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f",
+      "receipt_sha256": "cba62af2fa7467d47d71e02a7ea5f7712061b04be561b410b4c76d60b46dbdf0",
+      "actual_receipt_state": "failed",
+      "recovery_required": true,
+      "actual_changed_paths": [
+        "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml"
+      ],
+      "quoted_guard_false_positive": true,
+      "actual_git_diff_output": "\"data/ingredients/unmapped/Poly-\\303\\237-hydroxybutyric_Acid.yaml\"\n",
+      "root_role": "Independent read-only hash/receipt/path reproduction; native prepare/apply attributed to skeptical subagent."
+    },
+    {
+      "action_id": "ORIGINAL-w03::c-r-polymer-tombstone",
+      "authentic_before_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+      "normalized_after_sha256": "33c80accdc68562e600e06b0d3abd7be4fc8b2e2d37d8bba01ad3865f65b0cdb",
+      "receipt_sha256": "e1689db14ac7e740b784f23b22a51a972a35654001e2001c189347f55795c433",
+      "actual_receipt_state": "complete",
+      "recovery_required": false,
+      "actual_changed_paths": [
+        "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml"
+      ],
+      "quoted_guard_false_positive": false,
+      "actual_git_diff_output": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml\n",
+      "root_role": "Independent read-only hash/receipt/path reproduction; native prepare/apply attributed to skeptical subagent."
+    }
+  ],
+  "finding": "REJECTION-CODE-001 confirmed; coupled preexisting quoted-path guard; not a new defect in changed status predicate itself.",
+  "own_head_and_clean_tracked_status_preserved": true,
+  "no_actual_campaign_application": true,
+  "scientific_review": false
+}

@@ -1,0 +1,193 @@
+"""Independent read-only lineage and exact actual-record boundary checks.
+
+This uses full frozen Git catalog bytes and archived W08 payload bytes. No
+maintained owner is written, and record-stage success is not campaign acceptance.
+"""
+from pathlib import Path
+import datetime
+import hashlib
+import importlib.util
+import io
+import json
+import subprocess
+import sys
+import tarfile
+import traceback
+
+OUT = Path(__file__).resolve().parent
+O = OUT.parent
+R = next(p for p in O.parents if (p / 'MAPPING_SEMANTICS.md').is_file())
+C = R.parents[2]
+I = C / 'integration/worktree'
+W = C / 'workers/w08/worktree/.temp/native-application-boundary-independent-v1'
+S = O / 'frozen-src'
+HEAD = 'd691c079cf3923daed89284b7579913b84c3a34c'
+PARENT = 'eac469f1d94f06bab0714fff891abf64b8ebdbe9'
+START = datetime.datetime.now(datetime.timezone.utc).isoformat()
+sys.path.insert(0, str(S / 'src'))
+from mediaingredientmech.curate import campaign_owner_apply as native
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_bytes())
+
+
+def save(name, obj):
+    path = OUT / name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    assert not path.exists(), str(path)
+    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + '\n')
+    return {'path': str(path.relative_to(R)), 'sha256': sha(path.read_bytes())}
+
+
+def git(*args):
+    return subprocess.check_output(['git', '-C', str(I), *args])
+
+
+def exact_copy(source, relative):
+    data = source.read_bytes()
+    target = OUT / relative
+    target.parent.mkdir(parents=True, exist_ok=True)
+    assert not target.exists()
+    target.write_bytes(data)
+    return {'source': str(source), 'path': str(target.relative_to(R)), 'sha256': sha(data)}
+
+
+def main():
+    assert sha(Path(native.__file__).read_bytes()) == '4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70'
+    assert git('rev-parse', HEAD + '^').decode().strip() == PARENT
+    assert git('diff', '--name-only', PARENT, HEAD).decode().splitlines() == [
+        'src/mediaingredientmech/curate/campaign_owner_apply.py', 'tests/test_campaign_owner_apply.py']
+    spec = importlib.util.spec_from_file_location('boundary_native_review', S / 'scripts/record_review.py')
+    helper = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(helper)
+    targets = [
+        {'target_id': 'native-owner-operator', 'path': 'src/mediaingredientmech/curate/campaign_owner_apply.py',
+         'label': 'Campaign owner operator at d691c079', 'kind': 'maintained',
+         'ownership_note': 'Maintained implementation; bounded code review, no ingredient scientific judgment.'},
+        {'target_id': 'native-owner-tests', 'path': 'tests/test_campaign_owner_apply.py',
+         'label': 'Campaign owner tests at d691c079', 'kind': 'maintained',
+         'ownership_note': 'Maintained regression tests for the native operator; no source-data ownership.'}]
+    extras = ['scripts/record_review.py', 'schema/record_review.yaml', 'docs/record-reviews.md',
+              'docs/record-review-profile.md', 'MAPPING_SEMANTICS.md',
+              'src/mediaingredientmech/schema/mediaingredientmech.yaml',
+              'src/mediaingredientmech/curate/publication_guard.py',
+              'src/mediaingredientmech/curate/apply_receipt.py']
+    inspection = helper.inspect_source(I, targets, extras)
+    assert inspection['source']['git_revision'] == HEAD
+    for item in inspection['source']['inputs']:
+        assert sha(git('show', HEAD + ':' + item['path'])) == item['sha256']
+    frozen = json.loads(json.dumps(inspection))
+    frozen['source']['state'] = 'git_commit'
+    frozen['source']['snapshot_id'] = 'PR1205-d691c079cf3923daed89284b7579913b84c3a34c'
+    helper.assert_current_source(I, frozen)
+    save('native-initial-inspection.json', inspection)
+    save('native-frozen-inspection.json', frozen)
+
+    manifest = read(W / 'MANIFEST.json')
+    for row in manifest['members']:
+        assert sha((W / row['path']).read_bytes()) == row['sha256'], row['path']
+    context = [exact_copy(W / name, 'w08-context/' + name) for name in [
+        'MANIFEST.json', 'HANDOFF.json', 'findings.json', 'ROUTE.md',
+        'selected-actions.json', 'actual-delta-matrix.json', 'input-ref-index.json',
+        'technical/receipt.json', 'skeptic/native-probes.json',
+        'science/row-coverage.json', 'science/source-read-ledger.json', 'science/clarification-v1.json']]
+    assert sha((W / 'findings.json').read_bytes()) == 'dd40f468b21ee641a30a87d5e20bbad78907632a9b08bf4a3b2c7b7b042b549d'
+    before = {}
+    with tarfile.open(fileobj=io.BytesIO(git('archive', HEAD, 'data/ingredients'))) as tar:
+        for member in tar.getmembers():
+            if member.isfile() and member.name.endswith('.yaml'):
+                assert len(Path(member.name).parts) == 4, member.name
+                before[member.name] = tar.extractfile(member).read()
+    observed = {p: f.content for p, f in native.inventory(I).items()}
+    assert observed == before, 'Current native inventory differs from frozen catalog, including ignored owners'
+    save('catalog-before-hashes.json', {p: sha(raw) for p, raw in sorted(before.items())})
+    refs = read(W / 'input-ref-index.json')['refs']
+    actions = read(W / 'selected-actions.json')['actions']
+    wanted = ['Nh42ni_So42', 'Nh42ni_So42_X_6_H2o', 'Niso4_X_6_H2o', 'Bacto_Soytone',
+              'Na2s2o4', 'Sodium_Dithionite', 'Trypticase_Soy_Broth', 'Angustmycin']
+    selected = {}
+    for name in wanted:
+        action = next(a for a in actions if a['destination_path'].endswith('/' + name + '.yaml'))
+        capture = action['candidate_payload']
+        bound = next(r for r in refs if r['sha256'] == capture['sha256'] and r['source'] == capture['path'])
+        source = W.parents[1] / bound['snapshot']
+        raw = source.read_bytes()
+        assert sha(raw) == capture['sha256']
+        oldpath = action['before_source_record']
+        assert sha(before[oldpath]) == action['before_yaml_sha256']
+        loc = OUT / 'actual-captures' / name
+        loc.mkdir(parents=True)
+        (loc / 'before.yaml').write_bytes(before[oldpath])
+        (loc / 'after.yaml').write_bytes(raw)
+        old, new = native.record(before[oldpath]), native.record(raw)
+        selected[name] = {'action': action, 'payload': raw, 'facts': {
+            'action_id': action['action_id'], 'before_path': oldpath,
+            'before_sha256': sha(before[oldpath]), 'after_sha256': sha(raw),
+            'archived_source': str(source), 'actual_source_original_capture': capture,
+            'old_identifier': old['identifier'], 'new_identifier': new['identifier'],
+            'old_term': old['preferred_term'], 'new_term': new['preferred_term'],
+            'old_status': old['mapping_status'], 'new_status': new['mapping_status'],
+            'history_prefix_preserved': new.get('curation_history', [])[:len(old.get('curation_history', []))] == old.get('curation_history', []),
+            'changed_fields': sorted(k for k in old.keys() | new.keys() if old.get(k) != new.get(k)),
+            'scientific_approval': False}}
+    save('actual-source-bindings.json', {k: x['facts'] for k, x in selected.items()})
+    tests = [('nickel-first', wanted[:1], True), ('nickel-second', wanted[1:2], True),
+             ('nickel-both', wanted[:2], True), ('nickel-reverse', wanted[1::-1], True),
+             ('six-maintenance', wanted[:6], True), ('six-maintenance-reverse', list(reversed(wanted[:6])), True),
+             ('live-rejected-dithionite', wanted[4:6], True), ('rejected-live-dithionite', wanted[5:3:-1], True),
+             ('TSB-genuine-collision', wanted[6:7], False), ('Angust-samepath-AMBIGUOUS', wanted[7:8], False)]
+    tests += [(name + '-samepath-REJECTED', [name], True) for name in wanted[2:5]]
+    results = []
+    for label, names, expected in tests:
+        ops, payloads = [], {}
+        for name in names:
+            item = selected[name]; a = item['action']
+            ops.append({'operation_id': a['action_id'], 'kind': a['native_kind'],
+                        'before_source_record': a['before_source_record'], 'source_record': a['destination_path']})
+            payloads[a['action_id']] = item['payload']
+        try:
+            native._validate_records(S, ops, payloads, before)
+            outcome = {'accepted': True}
+        except Exception as error:
+            outcome = {'accepted': False, 'exception': type(error).__name__, 'message': str(error),
+                       'traceback': traceback.format_exc()}
+        result = {'name': label, 'expected_accepted': expected, 'operations': ops,
+                  'payload_hashes': {k: sha(b) for k, b in payloads.items()}, **outcome}
+        result['expectation_met'] = outcome['accepted'] == expected
+        results.append(result)
+        save('probes/' + label + '.json', result)
+    assert all(r['expectation_met'] for r in results), results
+    assert 'new collision pair' in next(r['message'] for r in results if r['name'].startswith('TSB'))
+    assert 'Owner category differs' in next(r['message'] for r in results if r['name'].startswith('Angust'))
+    assert {p: f.content for p, f in native.inventory(I).items()} == before
+    native._check_loaded_producers()
+    save('lineage-and-actual-probes.json', {
+        'reviewer': '/root/boundary_assembly', 'started_at': START,
+        'finished_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'status': 'PASS_BOUNDED_ACTUAL_RECORD_STAGE_WITH_SCIENTIFIC_HOLDS',
+        'head': HEAD, 'parent': PARENT, 'operator_sha256': sha(Path(native.__file__).read_bytes()),
+        'original_W08_manifest_members_verified': len(manifest['members']), 'W08_context_copies': context,
+        'catalog_records': len(before), 'catalog_includes_ignored_native_owner_paths': True,
+        'search_boundary': 'Native inventory of data/ingredients/mapped and unmapped, compared byte-for-byte to the exact d691 Git tree. No private/history-wide absence claim.',
+        'results': results, 'actual_owner_source_bindings': 8, 'findings': [],
+        'retained_holds': [
+            'Nickel #1050 hydration/CAS and merge decision remains open; same-CURIE is not identity approval.',
+            'Niso4, Bacto Soytone and Na2s2o4 remain REJECTED; no representative or reactivation approval.',
+            'TSB still introduces a real active-owner identity collision and remains refused; scientific FAILED/HELD disposition retained.',
+            'Angustmycin samepath AMBIGUOUS remains refused; real unmapped relocation needs a separate demote design outside this commit.',
+            'Vitamin component contexts are outside the code correction; no owner/role/export/source application approval.'],
+        'native_prepare_or_apply_called': False, 'full_campaign_prepared': False,
+        'independent_scientific_approval_claimed': False, 'maintained_writes': False,
+        'complete_before_catalog_preserved': True,
+        'limitations': 'These are independent exact full-catalog record-stage calls, not actual campaign preparation or accepted-plan proof. Separate peers cover synthetic real prepare/apply/completed replay.'})
+    print(json.dumps({'status': 'PASS', 'catalog_records': len(before), 'actual_record_stage_probes': len(results),
+                      'W08_manifest_members': len(manifest['members']), 'all_expected': True}))
+
+
+if __name__ == '__main__':
+    main()

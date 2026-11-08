@@ -1,0 +1,200 @@
+diff --git a/src/mediaingredientmech/curate/campaign_owner_apply.py b/src/mediaingredientmech/curate/campaign_owner_apply.py
+index cba4f09b9..e765d6cdf 100644
+--- a/src/mediaingredientmech/curate/campaign_owner_apply.py
++++ b/src/mediaingredientmech/curate/campaign_owner_apply.py
+@@ -8,8 +8,9 @@ Inherited surviving collision pairs can receive same-path edits only with their
+ identifiers, preferred names and statuses preserved (#1251). Reviewed owners can
+ leave a family, but no new colliding pair inherits the old family exception.
+ Existing REJECTED owners can receive substantive same-path, same-key maintenance
+-while remaining REJECTED (#1252). Neither exception approves identity, a merge,
+-reactivation or demotion; other status/path and provenance guards still apply.
++while remaining REJECTED (#1252). An existing UNMAPPED owner may also be rejected
++at its unchanged unmapped path with its keys preserved. Neither route approves
++identity, a merge, reactivation or demotion; other provenance guards still apply.
+ """
+ 
+ from __future__ import annotations
+@@ -755,15 +756,24 @@ def _validate_records(root, operations, payloads, before_bytes):
+         history = data.get("curation_history")
+         if not isinstance(history, list) or not history:
+             raise ValueError("Missing curation history")
+-        # #1252: inherited tombstones may be maintained, never revived or
+-        # recreated through this exception. Other category rules stay intact.
++        # #1252: maintain existing tombstones or reject an existing unmapped
++        # owner in place. Neither route permits revival or a new tombstone.
+         if "REJECTED" in (old.get("mapping_status"), data.get("mapping_status")):
++            rejected_maintenance = (
++                old.get("mapping_status") == data.get("mapping_status") == "REJECTED"
++            )
++            unmapped_rejection = (
++                old.get("mapping_status") == "UNMAPPED"
++                and data.get("mapping_status") == "REJECTED"
++                and source is not None
++                and source.startswith("data/ingredients/unmapped/")
++            )
+             require(
+                 entry["kind"] == "edit"
+                 and source == entry["source_record"]
+-                and old.get("mapping_status") == data.get("mapping_status") == "REJECTED"
++                and (rejected_maintenance or unmapped_rejection)
+                 and retained_keys,
+-                "Rejected owner requires same-path, same-key rejected maintenance",
++                "Rejected owner requires same-path, same-key maintenance or unmapped rejection",
+             )
+         else:
+             require(
+diff --git a/tests/test_campaign_owner_apply.py b/tests/test_campaign_owner_apply.py
+index 8343e79c4..de5f373aa 100644
+--- a/tests/test_campaign_owner_apply.py
++++ b/tests/test_campaign_owner_apply.py
+@@ -1255,3 +1255,150 @@ def test_1251_reviewed_family_reduction_preserves_surviving_pairs(tmp_path, name
+             sibling[key] == original[key]
+             for key in ("identifier", "preferred_term", "mapping_status")
+         )
++
++
++def unmapped_rejection_case(root):
++    """#1252 comment6720840145: genuine published rejection, not a revival."""
++    plan = setup(root)
++    previous = owner.record((root / OLD).read_bytes())
++    rejected = copy.deepcopy(previous)
++    rejected["mapping_status"] = "REJECTED"
++    rejected["synonyms"] = [
++        {
++            "synonym_text": previous["preferred_term"],
++            "synonym_type": "REJECTED_LABEL",
++            "source": "fixture source retained without a mapping approval",
++        }
++    ]
++    change = event("ANNOTATED", "REJECTED")
++    change["previous_status"] = "UNMAPPED"
++    rejected["curation_history"].append(change)
++    render(root, "intake/payload-2.yaml", rejected)
++    proposals = json.loads((root / "intake/proposals.json").read_bytes())
++    proposals["proposals"][2]["after_capture"] = {
++        "root": "artifact",
++        **ref(root, "intake/payload-2.yaml"),
++    }
++    put(root, "intake/proposals.json", proposals)
++    run_git(root, "add", "intake")
++    run_git(
++        root,
++        "-c",
++        "user.email=fixture@example.invalid",
++        "-c",
++        "user.name=Fixture",
++        "commit",
++        "-qm",
++        "#1252 published in-place unmapped rejection fixture",
++    )
++    head = run_git(root, "rev-parse", "HEAD")
++    plan["baseline_commit"] = head
++    plan["intake_heads"] = {"worker-01": head}
++    plan["records"] = [plan["records"][2]]
++    plan["records"][0].update(kind="edit", source_record=OLD)
++    for binding in plan["bindings"]:
++        binding.update(ref(root, binding["path"]))
++        if binding["published_head"] is not None:
++            binding["published_head"] = head
++    plan["records"][0]["origins"][0]["head_sha"] = head
++    repin(root, plan)
++    return plan
++
++
++def test_1252_unmapped_rejection_real_application_and_completed_replay(tmp_path):
++    """Rejecting an authentic unmapped record retains its preimage and lineage."""
++    plan = unmapped_rejection_case(tmp_path)
++    before = owner.hashes(owner.inventory(tmp_path))
++    original = (tmp_path / OLD).read_bytes()
++    ready = prepare(tmp_path)
++    assert owner.hashes(owner.inventory(tmp_path)) == before
++    result = owner.apply(ready, tmp_path / "receipt", enabled=True)
++    proof = owner.verify_completed(
++        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++    )
++    data = owner.record((tmp_path / OLD).read_bytes())
++    previous = owner.record(original)
++    assert data["mapping_status"] == "REJECTED"
++    assert all(data[k] == previous[k] for k in ("identifier", "preferred_term"))
++    assert data["curation_history"][:-1] == previous["curation_history"]
++    assert data["synonyms"][0]["synonym_type"] == "REJECTED_LABEL"
++    assert proof["records"][0]["shape"] == "campaign_owner_edit"
++    assert proof["records"][0]["source_record"] == OLD
++    assert proof["records"][0]["before_source_record"] == OLD
++    assert proof["records"][0]["before_yaml_sha256"] == owner.digest(original)
++    assert proof["after_inventory"] == ready.after_inventory
++    assert all(
++        owner.digest((tmp_path / path).read_bytes()) == digest
++        for path, digest in before.items()
++        if path != OLD
++    )
++    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
++    assert result["state"] == "complete"
++    assert plan["records"][0]["origins"][0]["head_sha"] == run_git(tmp_path, "rev-parse", "HEAD")
++
++
++@pytest.mark.parametrize(
++    "fault",
++    [
++        "create",
++        "promote",
++        "relocate",
++        "preimage",
++        "identifier",
++        "name",
++        "history",
++        "status_type",
++        "stale_origin",
++    ],
++)
++def test_1252_unmapped_rejection_refuses_unsafe_variants_before_write(tmp_path, fault):
++    """The restored rejection route must not bypass native origin/write guards."""
++    plan = unmapped_rejection_case(tmp_path)
++    entry = plan["records"][0]
++    if fault == "create":
++        entry.update(kind="create", before_source_record=None, before_yaml_sha256=None)
++    elif fault == "promote":
++        entry.update(kind="promote", source_record=MOVED)
++    elif fault == "relocate":
++        entry["source_record"] = "data/ingredients/unmapped/Renamed.yaml"
++    elif fault == "preimage":
++        entry["before_yaml_sha256"] = "0" * 64
++    elif fault == "stale_origin":
++        entry["origins"][0]["head_sha"] = "0" * 40
++    else:
++        data = owner.record((tmp_path / entry["after_capture"]["path"]).read_bytes())
++        if fault == "identifier":
++            data["identifier"] = "UNMAPPED_0002"
++        elif fault == "name":
++            data["preferred_term"] = "Changed identity name"
++        elif fault == "history":
++            data["curation_history"][0]["changes"] = "Altered historic evidence"
++        else:
++            data["mapping_status"] = {"invalid": "REJECTED"}
++        # Deliberately malformed variants are test inputs, not validated writes.
++        put(tmp_path, "invalid-rejection.yaml", data)
++        entry["after_capture"] = ref(tmp_path, "invalid-rejection.yaml")
++    repin(tmp_path, plan)
++    before = owner.hashes(owner.inventory(tmp_path))
++    with pytest.raises(ValueError):
++        prepare(tmp_path)
++    assert owner.hashes(owner.inventory(tmp_path)) == before
++    assert not (tmp_path / "receipt").exists()
++
++
++@pytest.mark.parametrize("fault", ["revival", "identity", "history"])
++def test_1252_completed_rejection_rechecks_final_owner(tmp_path, fault):
++    unmapped_rejection_case(tmp_path)
++    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
++    data = owner.record((tmp_path / OLD).read_bytes())
++    if fault == "revival":
++        data["mapping_status"] = "UNMAPPED"
++    elif fault == "identity":
++        data["identifier"] = "UNMAPPED_0002"
++    else:
++        data["curation_history"][0]["changes"] = "Altered historic evidence"
++    render(tmp_path, OLD, data)
++    with pytest.raises(ValueError):
++        owner.verify_completed(
++            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
++        )

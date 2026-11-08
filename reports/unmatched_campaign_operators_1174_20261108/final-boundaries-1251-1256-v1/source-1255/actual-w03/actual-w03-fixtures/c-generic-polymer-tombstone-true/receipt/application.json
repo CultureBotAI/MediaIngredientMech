@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "operation": "apply_reviewed_campaign_owners",
+  "state": "complete",
+  "approval": "NONE: source application only; no scientific or mapping approval transfers",
+  "plan": {
+    "path": "plan.json",
+    "sha256": "ad4715e83a8e090a2c09c538e80e59913a179e21d2343e800eaa479213c16977"
+  },
+  "acceptance": {
+    "path": "acceptance.json",
+    "sha256": "a454ce9013f327267e7ba801ced5e330d8e3885f416a8aaf23c57be1483ca9ae"
+  },
+  "baseline_commit": "eb47a5d5256ce2d98a2d03d9403dd661afd05655",
+  "before_inventory": {
+    "data/ingredients/mapped/Sentinel.yaml": "6b039e8c6296d348c5cf6f68286e43f17fb18fe865b6587298c40f58e64a9729",
+    "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640"
+  },
+  "after_inventory": {
+    "data/ingredients/mapped/Sentinel.yaml": "6b039e8c6296d348c5cf6f68286e43f17fb18fe865b6587298c40f58e64a9729",
+    "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f"
+  },
+  "records": [
+    {
+      "operation_id": "rejection-proof",
+      "kind": "edit",
+      "before_source_record": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "source_record": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "before_yaml_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+      "after_capture": {
+        "path": "accepted-normalized.yaml",
+        "sha256": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f"
+      },
+      "origins": [
+        {
+          "worker_slot": "worker-03",
+          "head_sha": "784ee2541506c914b4c34f091de688d39784d548",
+          "proposal_id": "c-generic-polymer-tombstone",
+          "proposal_binding": "proposal",
+          "payload_binding": "payload",
+          "case_hashes": {
+            "KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba": "60659735ca2949f27515013453c384c018c2092af97d3ed2f60193bf67366d4d"
+          }
+        }
+      ],
+      "change": "Bounded mechanical fixture; no science approval",
+      "verification": "Independent native source transition test only",
+      "shape": "campaign_owner_edit",
+      "destination_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "source_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "before_capture": {
+        "path": "receipt/owner-before-0000.yaml",
+        "sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640"
+      },
+      "after_yaml_sha256": "c43e144e232ba0e754b1a28ba61bea42977a67e3a81c1af7fd205003c3074d4f"
+    }
+  ],
+  "checkpoint": {
+    "root": "receipt/checkpoint",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "2b9422cf57cff49e781575922ef41829b32fc90853eb7aae3d649209eb8f5a2f"
+    }
+  },
+  "protected_snapshot": {
+    "root": "receipt/protected",
+    "input_sha256": {
+      "mappings/ingredient_mappings.sssom.tsv": "2b9422cf57cff49e781575922ef41829b32fc90853eb7aae3d649209eb8f5a2f"
+    }
+  },
+  "completed_operations": [
+    "rejection-proof"
+  ],
+  "retired_sources": {},
+  "recovery_required": false
+}

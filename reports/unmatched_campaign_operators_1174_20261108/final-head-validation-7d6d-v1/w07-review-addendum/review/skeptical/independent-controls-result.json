@@ -1,0 +1,589 @@
+{
+  "reviewer": "/root/operator_final_skeptic",
+  "at": "2026-11-08T14:00:51.158935+00:00",
+  "helper_sha256": "a58533a3d85bfe3706f5a3cd80118039314da96c1e372bcd6ce48284524a22f7",
+  "binding_manifest_sha256": "80f4e6f5c29c63a6919331d830a626e406dd5da2fb33f0bd99e789cbd2beb6cf",
+  "actual_input_count": 23,
+  "controls": [
+    {
+      "name": "authentic_semantic_positive",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": false,
+      "refused": false,
+      "error": null,
+      "passed": true,
+      "changed_inputs": {},
+      "output_equals_authentic": true
+    },
+    {
+      "name": "wrong_failure_member_same_total",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong failed node membership",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "ac93e62aa01dd4b79bc052fabf68c2c7cdc1d3d3a23e6139827284dd011ed51c"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "ba85aecbc5a93d168a6a930fc4f01498809d6d2bd8d727a665d5d1326d48d140"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "integration_failure_injected_same_total",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong failed node membership",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "4bdf389615ae6bf2d8223acaafa7b31d5c4b62e96d458b9a657277b7e5683750"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "b83902692f8c44f466e7c167bb504d2a7731aa10ee89c42207abb80bce7883d3"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "missing_failure_member",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong failed node membership",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "875cb53cbbc61e28e70cb918e994e073cd6029704452e1390503f4bdedebd214"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "540ecb6d2de5c822b38e6e257741b5a3f0c569a112b3ac0d64b99153c20aa84b"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "duplicate_failure_member_same_total",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong failed node membership",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "5d6ace6f8a57c58bca32be9f0d1692bfa609f5203c262559f14248a21fd0c216"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "ac7c3a7e8c4a4b2d3b08bb84ff742e46fba7cf94d3c308940b143b342cac4a5d"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "original_false_complete_pass",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: original run is not exactly619PASS11FAIL",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "3cfb7c61ff6b29775ef5e7e8b06b95717ce8bcd5a687cf6a0e531c1210087eeb"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "5922f3de28a4fdf61be5c6b3daa32927e4094b710eadbe35ea3e83705ffc21df"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "original_arithmetic_union_false_pass",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: original run is not exactly619PASS11FAIL",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "34bd680ba9d6f43b118693376b9ca3635d327ad7e92bd55d5f73ba9d711b8db4"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "9ac10f1f45094cd782917d431ecf745b25f3a81969a67e618e86c3b89096ad68"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "original_duplicate_final_summary",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: missing or ambiguous final summary",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "b94b61bb87781498e14d16876fc007de2addaab0620997c9fe149eae2806a8fc"
+        },
+        "original-run.log": {
+          "before": "e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3",
+          "after": "e13222e15420f687ef884b9788689501bacaff04f2973cdf2143e09f70edb3ff"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "original_exit_zero",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: incorrect actual run exit code",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "2275bd9ffa037c141c722b8b54e2661b332174690a39158a09a4dbcaf6d9d4f0"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "original_before_after_drift",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: run input drift",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "51064d0ab404e0c0bd60b820f269de3b2c102adcd6279689f10afe72e6d00d21"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "original_receipt_log_mismatch",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: receipt/log mismatch",
+      "passed": true,
+      "changed_inputs": {
+        "original-run.json": {
+          "before": "24d4a340ec55d219dcb8e15ff8d8668dbb8b0ad08bb1db5dd6ba5f59e2aca8b1",
+          "after": "943b8d4897ec8aaaac03643122d868e265b3fe1f5f187a1073312e5ad5d91123"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "corrected_exit_one",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: incorrect actual run exit code",
+      "passed": true,
+      "changed_inputs": {
+        "corrected-run.json": {
+          "before": "85d08a011e108f8c2bdbf04ac39ad7c6ee72d55822acccf88cbe7cfc040824fb",
+          "after": "c583e34b235c6043410ef74a3408f5e00e2b70909c6eacdcddfc496308b03256"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "corrected_false_arithmetic_total",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: repaired run is not exactly13PASS",
+      "passed": true,
+      "changed_inputs": {
+        "corrected-run.json": {
+          "before": "85d08a011e108f8c2bdbf04ac39ad7c6ee72d55822acccf88cbe7cfc040824fb",
+          "after": "96cb4be85539dee54be1b06fad49c4c78853412803bdcae1296f64ef2cce13ea"
+        },
+        "corrected-run.log": {
+          "before": "a5263cfde5b22a373e2a63bca68f4fa38c4a183c47dd5306635232d88bf94c56",
+          "after": "d5dcf8c0946357518f0777d3932cd09ece464b66fd614586d00e885aa1c9e3b8"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "collection_duplicate_same_total",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: incorrect or duplicate collected membership",
+      "passed": true,
+      "changed_inputs": {
+        "collection.json": {
+          "before": "e6ed040bc503531d11e41d6aa7ebe79f3f13ba6c2a3376bd86b4d44d283d67b2",
+          "after": "33ddf232bdf0dba49b91363679a25b355665b1d8187b0195a317c001e2763f39"
+        },
+        "collection.log": {
+          "before": "5fa3b014ff48368c8a433312b8e567e93a5fc4dc153b835ca006460b3e5387a9",
+          "after": "6c0a1f805794d82f1bc13628225071a41aa080448e8b7860a3839196076b30d8"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "collection_group_changed_same_total",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong collected test groups",
+      "passed": true,
+      "changed_inputs": {
+        "collection.json": {
+          "before": "e6ed040bc503531d11e41d6aa7ebe79f3f13ba6c2a3376bd86b4d44d283d67b2",
+          "after": "9eb56b0496e0f9f77f4b73b078ecdbe1e0a79496e9289429a235a16cb30ecfc7"
+        },
+        "collection.log": {
+          "before": "5fa3b014ff48368c8a433312b8e567e93a5fc4dc153b835ca006460b3e5387a9",
+          "after": "4e9b0948fcdfd3a03ed04dce72bc5889e43cae93d47fe434bcf168f52822aaa4"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "failed_node_absent_from_collection",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: failed node absent from collected inputs",
+      "passed": true,
+      "changed_inputs": {
+        "collection.json": {
+          "before": "e6ed040bc503531d11e41d6aa7ebe79f3f13ba6c2a3376bd86b4d44d283d67b2",
+          "after": "306754f15f649b291d6180d77828ac23e924f06a739406b0648ef7aaa1287969"
+        },
+        "collection.log": {
+          "before": "5fa3b014ff48368c8a433312b8e567e93a5fc4dc153b835ca006460b3e5387a9",
+          "after": "677b81e97925667b393bba86b1d020ce35914b033fc32f29e78093cb79b8fd91"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "partial_review_expected_member_changed",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong corrected node membership",
+      "passed": true,
+      "changed_inputs": {
+        "collection.json": {
+          "before": "e6ed040bc503531d11e41d6aa7ebe79f3f13ba6c2a3376bd86b4d44d283d67b2",
+          "after": "d963198b61a99c1a9988d134994cbd9103e6eb7d2c0a071ca92e305c95120f82"
+        },
+        "collection.log": {
+          "before": "5fa3b014ff48368c8a433312b8e567e93a5fc4dc153b835ca006460b3e5387a9",
+          "after": "98b46465dc10bc3c9a6bcb7f83b4f4932b336169cc2920935ca9a5eb06672e66"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "full_trace_wrong_missing_path_rebound_hash",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: trace is for a different failure/input",
+      "passed": true,
+      "changed_inputs": {
+        "full-trace.stderr": {
+          "before": "d5c1c29b2af12ae4f7d6ee73d59ebffab57900d257b05d6287e517ff605e1c0f",
+          "after": "177a9b7d0d6ebf036ebd734eb81466d9e5907d250a95edad379bed1fe012db5d"
+        },
+        "trace-result.json": {
+          "before": "a3c47687b2da4406eba034c06de7e894729e0885d9123017cd55d771e4e2e889",
+          "after": "38837f5a5d3392676b025b88020f6c4ed0393ceb3b766a25062258214c50f588"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "full_trace_exception_changed_rebound_hash",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: trace is for a different failure/input",
+      "passed": true,
+      "changed_inputs": {
+        "full-trace.stderr": {
+          "before": "d5c1c29b2af12ae4f7d6ee73d59ebffab57900d257b05d6287e517ff605e1c0f",
+          "after": "f395e69c05b81a483ef9e79982574e6d143e4b73467c34a5a14acfdff7e84277"
+        },
+        "trace-result.json": {
+          "before": "a3c47687b2da4406eba034c06de7e894729e0885d9123017cd55d771e4e2e889",
+          "after": "4d47839a08c3fe785d1dc8687adc2ea3299dd1460141350e3e9ff1562f554195"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "full_trace_missing_header_rebound_hash",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: incomplete traceback",
+      "passed": true,
+      "changed_inputs": {
+        "full-trace.stderr": {
+          "before": "d5c1c29b2af12ae4f7d6ee73d59ebffab57900d257b05d6287e517ff605e1c0f",
+          "after": "b622080793ee29bdc80fce70f89a1d010f9418106b7256a66eecd757d6a06a69"
+        },
+        "trace-result.json": {
+          "before": "a3c47687b2da4406eba034c06de7e894729e0885d9123017cd55d771e4e2e889",
+          "after": "4c40396b4a98058d9b2456acdf54e6e1c230ffa62b050bcf6b89ecf94dafd4d6"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "trace_source_bytes_changed",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: trace source operator input mismatch",
+      "passed": true,
+      "changed_inputs": {
+        "trace-source-operator.py.txt": {
+          "before": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+          "after": "60f843df58532de3a529c912a421efe8350b9050964ec47b78dbdcf590e44be1"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "trace_publisher_bytes_changed",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: trace publisher input mismatch",
+      "passed": true,
+      "changed_inputs": {
+        "trace-publisher.py.txt": {
+          "before": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24",
+          "after": "a034e21d1405e78caf464d86f70509182ffd870615ea0d5322c660f092fe0de9"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "trace_provenance_frozen_false",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: trace lacks frozen input continuity",
+      "passed": true,
+      "changed_inputs": {
+        "trace-result.json": {
+          "before": "a3c47687b2da4406eba034c06de7e894729e0885d9123017cd55d771e4e2e889",
+          "after": "ceee342ba2260fd1368656a6be9a108a52994e07e9b39841a6e4dfe3b0884149"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "fixture_preservation_false",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: fixture diff proof is not exact",
+      "passed": true,
+      "changed_inputs": {
+        "fixture-diff-proof.json": {
+          "before": "126005e99e3c9866cdd78ec3f3381b58cc4500e0abfeeaf12667d162ae61c3de",
+          "after": "851cd419dc35f750d9739995e35bdbc0f60602f87fb6ea6bc3b77905975fdd29"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "wrong_finding_receipt",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: wrong finding receipt",
+      "passed": true,
+      "changed_inputs": {
+        "issue-receipt.json": {
+          "before": "ce7f45d1dde10d7a255bef51992330e7d22e58dd1a8b503d9417804881862be3",
+          "after": "5ad13b27d4e41bf4a745e3ec7563f253c94ea150a37979c147bfe8d0376926de"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "issue_GET_not_verified",
+      "boundary": "semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: issue is not GET verified",
+      "passed": true,
+      "changed_inputs": {
+        "issue-receipt.json": {
+          "before": "ce7f45d1dde10d7a255bef51992330e7d22e58dd1a8b503d9417804881862be3",
+          "after": "3be3656c42758d8d77bd9e84b5cc1c75ff370cc436e65f6e44b15741e0c3d64f"
+        }
+      },
+      "output_equals_authentic": null
+    },
+    {
+      "name": "loader_manifest_changed",
+      "boundary": "load_inputs pinned file captures",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: input binding manifest mismatch",
+      "passed": true
+    },
+    {
+      "name": "loader_capture_changed",
+      "boundary": "load_inputs pinned file captures",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: input hash/size mismatch: original-run.json",
+      "passed": true
+    },
+    {
+      "name": "loader_capture_missing",
+      "boundary": "load_inputs pinned file captures",
+      "expected_refusal": true,
+      "refused": true,
+      "error": "AccountingError: input is not a regular capture",
+      "passed": true
+    },
+    {
+      "name": "cli_positive",
+      "boundary": "exact frozen CLI",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/scripts/accounting_correction.py",
+        "--inputs",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/inputs",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_positive.json"
+      ],
+      "exit_code": 0,
+      "expected_refusal": false,
+      "passed": true,
+      "output_created": true,
+      "existing_or_absent_output_preserved": null,
+      "stdout": "controls/cli_positive.stdout",
+      "stderr": "controls/cli_positive.stderr"
+    },
+    {
+      "name": "cli_claim_original_PASS",
+      "boundary": "exact frozen CLI",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/scripts/accounting_correction.py",
+        "--inputs",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/inputs",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_claim_original_PASS.json",
+        "--claim",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_claim_original_PASS-claim.json"
+      ],
+      "exit_code": 1,
+      "expected_refusal": true,
+      "passed": true,
+      "output_created": false,
+      "existing_or_absent_output_preserved": true,
+      "stdout": "controls/cli_claim_original_PASS.stdout",
+      "stderr": "controls/cli_claim_original_PASS.stderr"
+    },
+    {
+      "name": "cli_claim_future_suite_PASS",
+      "boundary": "exact frozen CLI",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/scripts/accounting_correction.py",
+        "--inputs",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/inputs",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_claim_future_suite_PASS.json",
+        "--claim",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_claim_future_suite_PASS-claim.json"
+      ],
+      "exit_code": 1,
+      "expected_refusal": true,
+      "passed": true,
+      "output_created": false,
+      "existing_or_absent_output_preserved": true,
+      "stdout": "controls/cli_claim_future_suite_PASS.stdout",
+      "stderr": "controls/cli_claim_future_suite_PASS.stderr"
+    },
+    {
+      "name": "cli_claim_arithmetic_union632",
+      "boundary": "exact frozen CLI",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/scripts/accounting_correction.py",
+        "--inputs",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/inputs",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_claim_arithmetic_union632.json",
+        "--claim",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_claim_arithmetic_union632-claim.json"
+      ],
+      "exit_code": 1,
+      "expected_refusal": true,
+      "passed": true,
+      "output_created": false,
+      "existing_or_absent_output_preserved": true,
+      "stdout": "controls/cli_claim_arithmetic_union632.stdout",
+      "stderr": "controls/cli_claim_arithmetic_union632.stderr"
+    },
+    {
+      "name": "cli_existing_output_refused",
+      "boundary": "exact frozen CLI",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/all-unmatched-worker-07/venv/bin/python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/scripts/accounting_correction.py",
+        "--inputs",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/inputs",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-addendum-v2/review/skeptical/controls/cli_positive.json"
+      ],
+      "exit_code": 1,
+      "expected_refusal": true,
+      "passed": true,
+      "output_created": true,
+      "existing_or_absent_output_preserved": true,
+      "stdout": "controls/cli_existing_output_refused.stdout",
+      "stderr": "controls/cli_existing_output_refused.stderr"
+    }
+  ],
+  "total": 34,
+  "passed": 34,
+  "all_passed": true,
+  "scope": "Actual independent controls of frozen new private accounting helper. Semantic mutations rebind only run log hashes where declared to test meaning beyond checksum refusal. Pinned CLI/load boundary unchanged. No operator/source/test/full-suite execution or mutation.",
+  "native_original_scope": "Original619pass11fail and separate13pass remain unchanged; no final suite claim."
+}

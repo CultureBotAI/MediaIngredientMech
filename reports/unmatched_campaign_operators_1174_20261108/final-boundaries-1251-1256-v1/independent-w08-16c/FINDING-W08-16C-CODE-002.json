@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-08T11:46:29.148429+00:00",
+  "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "status": "CONFIRMED_FILE_READY_BEFORE_ANY_FIX",
+  "finding_id": "W08-16C-CODE-002",
+  "severity": "major",
+  "title": "Apply does not retain the accepted Git baseline after prepare",
+  "target": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "functions": [
+    "prepare",
+    "_recheck",
+    "apply"
+  ],
+  "description": "prepare verifies actual HEAD and clean tracked state once. _recheck does not repeat either check. A later empty commit is accepted, and a later unrelated tracked-file commit can be hidden because apply compares the final changed-path set to moving HEAD instead of the accepted baseline. Actual demotion apply and verify_completed return complete while accepted baseline differs from HEAD and the baseline diff includes an unrelated file. An uncommitted staged unrelated file is detected only after the owner was installed and retired, producing failed/recovery_required instead of refusal before owner mutation.",
+  "evidence": [
+    {
+      "path": ".temp/combined-16c-independent-v1/root-probes/late-head-results-v2.json",
+      "sha256": "090be4930969fde0b830419d1c27f21feb7e36653f9b769a24b33b67ffe0417e"
+    },
+    {
+      "path": ".temp/combined-16c-independent-v1/technical/results.json",
+      "sha256": "a4a3877e8c06e8dc6892bc42747020cb8d523044e4818a4805d347d63d984cb4"
+    }
+  ],
+  "independent_reproductions": [
+    "worker08:/root actual private prepare/apply + accepted-baseline versus current-HEAD diff and completed replay",
+    "worker08:/root/inorganics separate actual private prepare/apply late-empty-commit and dirty-state controls"
+  ],
+  "controls": [
+    "Unchanged baseline completes.",
+    "A moved HEAD before prepare is refused with Integration HEAD differs and no receipt.",
+    "Changed captured acceptance is refused before writes in technical probe.",
+    "Unrelated staged change after prepare eventually refuses, but only after owner mutation."
+  ],
+  "minimal_fix_scope": "Preserve accepted baseline HEAD through actual source apply and all mutation/completion rechecks. Check literal NUL-delimited tracked paths against that immutable baseline; before first mutation require pristine tracked context, and during operation permit only authorized transitions. Refuse late HEAD movement and unrelated tracked drift before proceeding; retain honest recovery on races already in flight. Do not impose an unconditional current-HEAD equality on historical verify_completed after separately valid later publication. Coordinate literal path handling with filed1255; this is a distinct freshness/root-cause defect.",
+  "required_tests": [
+    "Real prepare -> empty commit -> apply refuses before owner/receipt mutation.",
+    "Real prepare -> commit unrelated tracked file -> apply refuses before owner mutation.",
+    "Real prepare -> stage/modify unrelated tracked file -> apply refuses before owner mutation.",
+    "Inject HEAD change after reservation/within operation and before final receipt: no success-shaped receipt; preserve recovery if mutation occurred.",
+    "Positive unchanged ASCII/Unicode demotion and existing edit/create/promotion retain exact guards and complete.",
+    "Historical completed verification after legitimate mapping publication remains valid under its documented scope."
+  ],
+  "relationship_to_1255": "Independent late-baseline defect; ordinary path quoting defect remains REJECTION-CODE-001/#1255. Not fixed by NUL parsing alone.",
+  "introduced_by_16c": false,
+  "inherited_control_flow": "prepare-only HEAD/dirty check and final moving-HEAD diff are inherited; current combined16c code is affected.",
+  "application_or_scientific_approval": false,
+  "fix_applied": false,
+  "github_filed_by_reviewer": false,
+  "routing_owner": "Coordinator deduplicates/files before fixing.",
+  "harness_limit": "Root first harness failed on fifth control assuming nonexistent .gitignore; first four actual fixtures/receipts retained, independently read back. v2 completes fifth control with staged unrelated file; no native source changed."
+}
